@@ -175,7 +175,7 @@
 <td>Instant Messaging(IM)</td>
 <td><ul style="margin:0"><li>IMのシングルチャット、グループチャット、最大ユーザー数制限のないチャットルームを介して、チャットメッセージ、コメント、弾幕、ギフト、「いいね」などの機能を実装することができます</li><li>IMを介して、シグナリングのインタラクションを行い、通話の呼び出し、ルームユーザー統計などの機能を実装することができます</li></ul></td>
 <td>オンラインカスタマーサービス、インタラクティブライブストリーミング、インタラクティブ授業、リモートトレーニングなど</td>
-<td>IMは付加価値サービスであり、<a href="https://intl.cloud.tencent.com/document/product/1047">IM</a>によって課金されます。詳細については、<a href="https://intl.cloud.tencent.com/document/product/1047/34350">IM関連料金</a>をご参照ください</td>
+<td>IMは付加価値サービスであり、<a href="https://intl.cloud.tencent.com/document/product/1047">IM</a>によって課金されます。詳細については、<a href="https://intl.cloud.tencent.com/document/product/1047/34350">IM関連料金をご参照ください</a></td>
 </tr>
 <tr>
 <td>AI美顔</td>
