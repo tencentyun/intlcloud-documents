@@ -29,6 +29,6 @@ Anda dapat mengaktifkan switch untuk men-deploy aturan batas kecepatan yang diko
 ## Sampel Konfigurasi
 
 Konfigurasi batas kecepatan downstream `cloud.tencent.com` adalah sebagai berikut:
-![](https://main.qcloudimg.com/raw/7ee9a5167aa054c8e99c15267e38eba3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/814d50bbc8ca84e86bb5ac8c36dffc15.png)
 Jika pengguna mengakses sumber daya `http://cloud.tencent.com/test.mp4`, server akan mengembalikan konten dengan kecepatan downstream yang dikonfigurasi sebesar 200 KB/dtk.
 Jika pengguna mengakses sumber daya `http://cloud.tencent.com/test.flv`, server akan mengembalikan konten pada kecepatan downstream yang dikonfigurasi sebesar 400 KB/dtk.
