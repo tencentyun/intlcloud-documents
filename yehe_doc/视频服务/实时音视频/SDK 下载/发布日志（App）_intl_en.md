@@ -1,34 +1,68 @@
+###  Version 10.3 Released on July 8, 2022
+**New features:**
+- Windows: Added support for recording live streaming sessions and audio/video calls to local storage. For details, see the description of `ITXLiteAVLocalRecord`.
+- Windows & macOS: Added a parameter to `startMicDeviceTest`, which allows you to specify whether to play the audio captured during mic testing. For details, see the description of `startMicDeviceTest`.
+
+**Improvement:** 
+All platforms: Improved audio quality in the `Music` mode.
+
+**Bug fixing:**
+- All platforms: Fixed occasional errors for the user list callback.
+- Windows: Fixed the issue where videos sometimes freeze during playback.
+- Windows: Fixed occasional video playback failure.
+- Windows: Fixed the echo issue for custom audio capturing.
+
+### Version 10.2 Released on June 23, 2022
+
+**New features:**
+- All platforms: Launched a new API for stream mixing and relaying, which offers more powerful features and greater flexibility. For details, see the description of `startPublishMediaStream`.
+- All platforms: Added support for 3D spatial audio. For details, see the description of `enable3DSpatialAudioEffect`.
+- All platforms: Added support for voice activity detection. This feature works even when local audio is muted (`muteLoalAudio`) or the capturing volume is set to zero (`setAudioCaptureVolume`). It allows you to remind users when they are talking but have not turned their mics on. For details, see the description of `enableAudioVolumeEvaluation`.
+- All platforms: Added support for checking a user’s permission when they switch roles. For details, see the description of `switchRole(TRTCRoleType role, const char* privateMapKey)`.
+- iOS & macOS: The C++ API for custom pre-processing supported using textures for video processing.
+
+**Improvement:** 
+- Android: Optimized in-ear monitoring, reducing latency.
+- Android: Optimized audio capturing, fixing the issue of noise on some devices.
+- iOS: Optimized the processing of upstream video data, reducing CPU and GPU usage.
+- Windows & macOS: Improved encoding for screen sharing. The height and width of the output video are no longer limited by the window size.
+- Windows: Reduced memory fragmentation and performance overhead.
+
+**Bug fixing:** 
+- All platforms: Fixed the issue where data sometimes fails to be published after a switch to a different network type.
+- iOS: Fixed the issue of noise in recording files saved locally on some iOS 14 systems.
+
 ### Version 10.1 Released on June 6, 2022
 
 **New features:**
-- All platforms: Added supported for smooth role switch so that audio and video playback will not be interrupted momentarily while switching roles.
-- iOS: Added support for stereo audio capturing.
-- Android: Added support for audio playback by the capturing system on Android 10 and later (startSystemAudioLoopback).
+- All platforms: Supported smooth role switch so that audio and video playback will not be interrupted momentarily during role switch.
+- iOS: Supported stereo audio capturing.
+- Android: Added support for capturing system audio (`startSystemAudioLoopback`) on Android 10 and later.
 
 **Improvement:** 
-- All platforms: Optimized the echo cancellation capability in music scenarios to make the sound quality more natural. 
-- All platforms: Optimized the sound quality and startup effect when roles are switched and `muteLocalAudio` is called. 
+- All platforms: Optimized the echo cancellation capability in the music scenario to make the sound quality more natural.
+- All platforms: Optimized the sound quality and startup effect when the role is switched and `muteLocalAudio` is called.
 - All platforms: Optimized the callback for bandwidth prediction `onSpeedTest`.
 - iOS: Optimized memory management to avoid heap memory issues.
-- Android: Optimized the delay of in-ear monitoring on certain phones.
-- Windows: Optimized the performance of the video rendering linkage while receiving video. 
+- Android: Reduced the delay of in-ear monitoring on certain phones.
+- Windows: Optimized the rendering of downstream video data.
 - Windows: Optimized the stereo capturing logic to effectively avoid the problem of echo.
 
 **Bug fixing:**
 - All platforms: Fixed the `reason` exception of the callback for room exit (onExitRoom).
-- All platforms: Fixed the issue of black screen when the timestamps are equal while sending custom video.
-- All platforms: Fixed the audio crash that occurs when `muteLocalAudio` is called before `startLocalAudio`.
-- All platforms: Fixed the issue where 3A is turned on when custom audio capturing is enabled without manually setting 3A.
+- All platforms: Fixed the issue of black screen when the timestamps are equal during custom video sending.
+- All platforms: Fixed the crash issue when `muteLocalAudio` and `startLocalAudio` are called successively.
+- All platforms: Fixed the issue where 3A is turned on automatically when custom audio capturing is enabled.
 - All platforms: Fixed the occasional issue of noise in custom audio rendering.
 - iOS: Fixed a memory leak when the log path is set midway (setLogDirPath) and the sandbox changes.
-- iOS & macOS: Fixed the crash that occurs while playing continuous background music when the system audio service is abnormal. 
+- iOS & macOS: Fixed the crash in the continuous background music playback scenario when the system audio service is abnormal.
 - Android: Fixed the occasional issue where Bluetooth headsets constantly reconnect.
 - Android: Fixed the occasional no audio issue on certain phones.
 - Android: Fixed the crash caused by repeatedly plugging and unplugging the earphone on certain phones such as Redmi.
-- Windows & iOS: Fixed an issue that causes screencapturing failure. 
-- Windows: Fixed a crash when the VOD player is turned off after mirroring is turned on.
+- Windows & iOS: Fixed an issue that causes screencapturing failure.
+- Windows: Fixed the issue where, after the mirror mode is enabled for the VOD player, the SDK always crashes when the VOD player is closed.
 - Windows: Fixed the issue where `generateCustomPts` is not used in PTS streaming so multiple streams may cause PTS to roll back.
-- Windows: Fixed the occasional crash after the freezing feature is enabled.
+- Windows: Fixed the issue where the SDK occasionally crashes when video is disabled and an image is displayed.
 
 
 ### Version 10.0 Released on May 17, 2022
@@ -50,7 +84,7 @@
 **Improvement:** 
 - Windows: Optimized the video linkage to reduce performance overheads.
 - Windows: Optimized preprocessing for `Systemloopback` capturing to preserve the effect of two sound channels.
-- macOS: Reduced the crackling caused by a high capturing volume and improved the sound experience.
+- macOS: Reduced crackling caused by a high capturing volume, improving the sound experience.
 - macOS: Improved the quality of screen sharing (substream).
 - Android: Optimized the capturing delay and improved the in-ear monitoring experience.
 
@@ -142,8 +176,6 @@ All platforms: Fixed known issues, improving stability.
 - Windows: Updated the live streaming component from V1 to V2 APIs, improving its stability.
 - Windows: Improved compatibility with the GPUs of low-end devices.
 
->?For the release notes of earlier versions, click [More](https://cloud.tencent.com/document/product/647/46907).
-
 ### Version 9.5 Released on January 11, 2022
 
 **Bug fixing:**
@@ -180,7 +212,7 @@ All platforms: Fixed known issues, improving stability.
 
 ### Version 9.3 Released on November 3, 2021
 
-**Bug fixing**
+**Bug fixing:**
 - All platforms: fixed failure to obtain `point2PointDelay` (value is 0).
 - All platforms: fixed occasional parsing failure, which causes SEI messages to be lost.
 - macOS: fixed the issue where the camera does not output frames on macOS 12 beta.
@@ -188,7 +220,7 @@ All platforms: Fixed known issues, improving stability.
 - Windows: fixed the issue of aliasing when video is encoded in portrait mode and beauty filters are enabled.
 - Windows: fixed the issue where, when third-party beauty filters are used, no callback for custom rendering is returned after resolution change.
 
-**Improvement**
+**Improvement:**
 - All platforms: improved instant streaming performance under poor network conditions.
 - All platforms: optimized the QoS control policy under poor network conditions, ensuring smoother communication.
 - All platforms: improved the speed test to support testing the current bandwidth.
@@ -196,17 +228,17 @@ All platforms: Fixed known issues, improving stability.
 
 ### Version 9.2 Released on September 23, 2021
 
-**New features**
+**New features:**
 - Android & iOS: supported SOCKS5 proxies.
 - Windows: enabled adaptive echo cancellation for the `TRTCAudioQualityMusic` mode to automatically balance between audio quality and echo cancellation strength.
 - All platforms: allowed audio pitch setting.
 
-**Bug fixing**
+**Bug fixing:**
 - Windows: fixed the issue where some cameras do not output data on Windows installed on Mac.
 - Android: fixed the issue where there is no upstream audio after switch between CDN live streaming and TRTC.
 - iOS: fixed the issue where, when a screen is shared from web, users on iOS see blurry video if they enable custom rendering.
 
-**Improvement**
+**Improvement:**
 - Android: fixed the issue where the “Application Not Responding” error occurs during hardware decoding.
 - Android: fixed the compatibility issue for the rotation of local camera preview.
 - Android: improved instant streaming performance.
@@ -216,14 +248,14 @@ All platforms: Fixed known issues, improving stability.
 
 ### Version 9.1 Released on September 4, 2021
 
-**New features**
+**New features:**
 - All platforms: supported using a C++ API to set the format of called back audio frames.
 - Windows: supported streaming VOD files in AC3 format.
 - Windows: supported getting the resolutions supported by a camera. For details, please see [ITXDeviceCollection.getDeviceProperties](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450).
 - Windows: supported NVIDIA, Intel, and AMD hardware decoding.
 - macOS: supported recording local media.
 
-**Bug fixing**
+**Bug fixing:**
 - All platforms: fixed occasional failure to enter a room.
 - macOS: fixed the issue where, during screen sharing, the preview flickers when the resolution is changed.
 - Android: fixed display error of the substream video after switching from a sub-room to the main room.
@@ -231,7 +263,7 @@ All platforms: Fixed known issues, improving stability.
 - Windows: fixed failure to pull streams after audience switch to CDN playback.
 - Windows: fixed the issue where the image disappears when VOD files in certain formats are streamed.
 
-**Quality improvement**
+**Improvement:**
 - All platforms: improved experience under poor network conditions.
 - Android: improved audio status management during room exit.
 - Android: improved the logic of recovery in the case of audio capturing failure, to increase the success rate of audio capturing.
@@ -239,16 +271,16 @@ All platforms: Fixed known issues, improving stability.
 
 ### Version 9.0 Released on August 6, 2021
 
-**New features**
+**New features:**
 - iOS: allowed setting the capturing volume of system audio. For details, please see [setSystemAudioLoopbackVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae).
 - All platforms: allowed setting the volume of custom audio tracks. For details, please see [setMixExternalAudioVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418).
 - All platforms: separated audio and video packet loss in the status callback. For details, please see [TRTCRemoteStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics).
 
-**Quality improvement**
+**Improvement:**
 - All platforms: optimized the subscription process to improve instant streaming performance for manual subscription.
 - All platforms: fixed the issue of repeated `onExitRoom` callback in some scenarios.
 
-**Bug fixing**
+**Bug fixing:**
 - Android: fixed the issue where bitrate and frame rate settings during custom capturing do not take effect.
 - iOS: fixed failure to publish streams if users enable the screen sharing substream first and then turn the camera on.
 - iOS: fixed blurriness of recorded local video.
@@ -321,7 +353,7 @@ Android & macOS & iOS: allowed playing audio via peripheral devices. For details
 ### Version 8.5 Released on March 24, 2021
 **New features**
 - macOS: optimized the screen sharing feature. You can now share other windows along with the target window. For details, see the API [addIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2e101f0ff00c8752eea1fa9a1a432233).
-- All platforms: supported publishing VOD content. You can now bind [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer) with `TRTCCloud` and publish the content played by VOD via TRTC’s substream.
+- All platforms: supported publishing VOD content. You can now bind [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer) with `TRTCCloud` and publish the content played by VOD via TRTC’s substream.</li>
 - All platforms: supported custom capturing of substream data. For details, see the API [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629).
 - All platforms: supported custom audio mixing. You can feed a local audio track into the SDK’s audio processing. The SDK will mix the two tracks before publishing. For details, see the API [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f).
 - All platforms: supported mixing only video streams, allowing for more flexible stream mixing control.

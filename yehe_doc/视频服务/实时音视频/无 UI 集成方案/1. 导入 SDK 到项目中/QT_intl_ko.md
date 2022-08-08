@@ -1,6 +1,6 @@
 본 문서에서는 Tencent Cloud TRTC SDK(QT의 Windows 및 Mac 버전)를 프로젝트에 빠르게 통합할 수 있는 방법에 대해 소개합니다. 다음 절차에 따라 설정하면 SDK 통합 작업을 신속하게 완료할 수 있습니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/956dded61564c3a29ea8e93238d9a4e1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f85f7ee54d462d85290fc6f50e5ed96a.png)
 
 ## Windows 통합
 ### 개발 환경 요건
@@ -11,7 +11,7 @@
 ### 작업 단계
 본 섹션에서는 간단한 QT 프로젝트를 생성하는 예시를 통해 Visual Studio에 C++ SDK를 통합하는 방법을 소개합니다.
 
-### 1단계: SDK 다운로드
+#### 1단계: SDK 다운로드
 1. [SDK 다운로드](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip) 후, 압축을 풀고 엽니다.
 본 문서의 예시에서는 SDK 디렉터리에 있는 C++ 버전의 SDK 파일만 참조하면 됩니다. 64비트를 예로 들면 SDK 위치는 `./SDK/CPlusPlus/Win64/`이며 주로 다음 부분을 포함합니다.
 <table>
@@ -31,21 +31,21 @@
 </tr>
 </tbody></table>
 
-### 2단계: 프로젝트 생성[](id:using_cpp_qt_step2)
+#### 2단계: 프로젝트 생성[](id:using_cpp_qt_step2)
 Visual Studio 2015를 예로 들어 [QT](https://download.qt.io/archive/qt/5.9/5.9.1/qt-opensource-windows-x86-5.9.1.exe) 및 [VS 개발 플러그 인](https://download.qt.io/archive/vsaddin/2.6.0/qt-vsaddin-msvc2015-2.6.0.vsix)이 로컬에 설치되었다는 전제 하에 Visual Studio를 엽니다. 아래와 같이 'TRTCDemo'라는 새 QT 응용 프로그램을 만듭니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/fa665d6c78420db0da022ae81f2d7c68.png)
 신속하게 통합하는 방법을 쉽게 소개하기 위해, 마법사에서 **Qt Widgets Application** 유형을 선택하고 **확인**을 클릭한 후 프로젝트가 생성될 때까지 다음 페이지에서 **Next**를 클릭합니다.
 
-### 3단계: 파일 복사[](id:using_cpp_qt_step3)
+#### 3단계: 파일 복사[](id:using_cpp_qt_step3)
 다음 이미지와 같이 압축 해제한 SDK 폴더를 TRTCDemo.vcxproj가 있는 디렉터리에 복사합니다.
 >?현재는 C++ SDK만 필요하며 SDK 경로 아래의 CSharp 디렉터리는 삭제할 수 있습니다.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/49681d526061bdef063e878879d471a8.png)
 
-### 4단계: 프로젝트 구성 수정[](id:using_cpp_qt_step4)
+#### 4단계: 프로젝트 구성 수정[](id:using_cpp_qt_step4)
 TRTCDemo 속성 페이지를 열어 **솔루션 리소스 관리자** > **TRTCDemo 프로젝트 오른쪽 메뉴** > **속성**을 선택하고 다음 순서에 따라 설정합니다.
 1. **포함 디렉터리 추가:**
-**C/C++** > **일반** > **인클루젼 디렉터리 추가**에서 64비트를 예로 들어 아래와 같이 SDK 헤더 파일 디렉터리 `$(ProjectDir)SDK\CPlusPlus\Win64\include` 및 `$(ProjectDir)SDK\CPlusPlus\Win64\include\TRTC`를 추가합니다.
+**C/C++** > **일반** > **인클루젼 디렉터리 추가**에 64비트를 예로 들어 SDK 헤더 파일 디렉터리 `$(ProjectDir)SDK\CPlusPlus\Win64\include` 및 `$(ProjectDir)SDK\CPlusPlus\Win64\include\TRTC`를 추가합니다 아래와 같습니다:
 >?32비트인 경우 SDK 헤더 파일 디렉터리를 `$(ProjectDir)SDK\CPlusPlus\Win32\include` 및 `$(ProjectDir)SDK\CPlusPlus\Win32\include\TRTC`로 설정해야 합니다.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/61a49b758ecb52ab6ee576421da5800d.png)
@@ -63,7 +63,7 @@ TRTCDemo 속성 페이지를 열어 **솔루션 리소스 관리자** > **TRTCDe
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/c6cb6d0dfd935be7a74313881a306c5f.png)
 
-### 5단계: SDK 버전 번호 출력[](id:using_cpp_qt_step5)
+#### 5단계: SDK 버전 번호 출력[](id:using_cpp_qt_step5)
 1. `TRTCDemo.cpp` 파일 상단에 헤더 파일 가져오기를 추가합니다. 코드는 다음과 같습니다.
 ``` c++
 #include "ITRTCCloud.h"
