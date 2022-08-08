@@ -33,8 +33,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -57,6 +57,14 @@ response = client.select_object_content(
         }
     }
 )
+
+# 获取封装在响应结果中的 EventStream 实例
+event_stream = response['Payload']
+
+# 一次性获取全部检索结果
+# 注意, 因为 EventStream 对检索结果的获取是流式的, 所以当您再次调用 get_select_result() 方法时将返回空集
+result = event_stream.get_select_result()
+print(result)
 ```
 #### 全部参数请求示例
 
@@ -84,7 +92,7 @@ response = client.select_object_content(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 |
+| 参数名称   | 参数描述   |类型 | 是否必填 | 
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg|String|是|
@@ -95,23 +103,13 @@ response = client.select_object_content(
 |RequestProgress| 是否需要返回查询进度 QueryProgress 信息，如果选中 COS Select 将周期性返回查询进度| Dict|否|
 
 #### 返回结果说明
-对象的 Body 和元信息，类型为 dict。
+
+对象的检索结果，类型为 dict。
+
 ```python
 {
-    'Body': EventStream(),
-    'ETag': '"9a4802d5c99dafe1c04da0a8e7e166bf"',
-    'Last-Modified': 'Wed, 28 Oct 2014 20:30:00 GMT',
-    'Accept-Ranges': 'bytes',
-    'Content-Range': 'bytes 0-16086/16087',
-    'Cache-Control': 'max-age=1000000',
-    'Content-Type': 'application/octet-stream',
-    'Content-Disposition': 'attachment; filename="filename.jpg"',
-    'Content-Encoding': 'gzip',
-    'Content-Language': 'zh-cn',
-    'Content-Length': '16807',
-    'Expires': 'Wed, 28 Oct 2019 20:30:00 GMT',
-    'x-cos-meta-test': 'test',
-    'x-cos-version-id': 'MTg0NDUxODMzMTMwMDM2Njc1ODA',
-    'x-cos-request-id': 'NTg3NzQ3ZmVfYmRjMzVfMzE5N182NzczMQ=='
+    'Payload': EventStream()
 }
 ```
+
+返回结果中仅存在一条 Key 为`'Payload'`，Value 为`EventStream`实例的 Key-Value 对，对象的检索结果封装在`EventStream`实例里，您可以调用其`next_event()`、`get_select_result()`以及`get_select_result_to_file()`方法获取检索结果。

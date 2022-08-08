@@ -3,7 +3,7 @@
 
 Data can be migrated from Pika to Redis online with support for full sync and incremental sync. The [pika-migrate](https://github.com/Qihoo360/pika/tree/v3_2_7_migrate) tool is virtualized as the Pika replica to get data from the master and then forward the data to Redis. Incremental sync is supported to implement online hot migration.
 
-1. [pika-migrate](https://github.com/Qihoo360/pika/tree/v3_2_7_migrate) requests the full database data from the current Pika of the master and the corresponding binlog offsets through DBSync.
+1. [pika-migrate](https://github.com/Qihoo360/pika/tree/v3_2_7_migrate) requests the full database data of the master and the corresponding binlog offsets through DBSync.
 2. After getting the current full data from the master, the tool scans the database and then packages and forwards the data to Redis.
 3. The tool performs incremental sync from the master through the obtained binlog offsets. During the incremental sync, it reassembles the binlog obtained from the master into a Redis command and forward the command to Redis.
 

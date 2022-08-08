@@ -2,75 +2,99 @@
 
 Cloud Object Storage（COS）はメタデータアクセラレーション機能を有効にすることで、HDFSプロトコルによるアクセスが可能になります。メタデータアクセラレーション機能を有効にすると、COSはバケットにマウントポイントを作成し、お客様は[HDFSクライアント](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar)をダウンロードすることで、クライアントにこのマウントポイントを入力してCOSをマウントできます。ここでは、コンピューティングクラスターに、メタデータアクセラレーションを有効にしたバケットをマウントする方法について詳しくご説明します。
 
-##  前提条件
+>! 
+>- Hadoop-cosは、バージョン8.1.1以降、`cosn://bucketname-appid/`のメソッドをサポートして、メタデータアクセラレーションバケットにアクセスします。
+>- メタデータアクセラレーション機能は、バケット作成時にのみオンにすることができ、一度オンにするとオフにすることはできません。お客様のビジネスシーンに応じて、オンにするかどうか**慎重にご検討ください**。また、旧バージョンのHadoop-cosパッケージは、メタデータアクセラレーション機能がオンになっているバケットには正常にアクセスできませんのでご注意ください。
+
+## 前提条件
 
 - コンピューティングクラスター内のマウントしたいマシンまたはコンテナ内に、[Java 1.8](https://www.oracle.com/java/technologies/downloads/)がインストールされていることをご確認ください。
 - コンピューティングクラスター内のマウントしたいマシンまたはコンテナがアクセス権限を有していることをご確認ください。HDFS権限設定で、アクセス可能なVPCネットワークおよびIPアドレスを指定する必要があります。
+- 依存するJARパッケージの説明
+1. [chdfs_hadoop_plugin_network-2.8.jar](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) verison>=2.7;
+2. [cos_api-bundle.jar](https://search.maven.org/artifact/com.qcloud/cos_api-bundle/5.6.69/jar) version>=5.6.69;
+3. [Hadoop-cos](https://github.com/tencentyun/hadoop-cos/releases) version>=8.1.3
+4. ofs-java-sdk.jar (version >=1.0.4)はインストールを必要とせず、自動的にプルされます。hadoop fs lsを実行し成功すると、fs.cosn.trsf.fs.ofs.tmp.cache.dirで設定したディレクトリにおいて、対応するバージョンが想定どおりになっているかどうかを確認できます。
 
 ## 操作手順
 
 1. [Hadoopクライアントツールインストールパッケージ](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar)をダウンロードします。
-2. インストールパッケージをコンピューティング作業に対応するディレクトリ下に配置します。EMRクラスターの場合、すべてのノードの`/usr/local/service/hadoop/share/hadoop/common/lib/`ディレクトリ下に同期できます。
+2. タスクの起動時に正しくロードされるように、各ノードのclasspathにインストールパッケージを設定します。例えば、`$HADOOP_HOME/share/hadoop/common/lib/`下などです。
+>! EMR環境には独自の依存関係のあるjarパッケージがあるため、インストールする必要はなく、POSIXセマンティクスを介してメタデータアクセラレーションバケットに直接アクセスすることができます。s3プロトコルを使用する必要がある場合は、fs.cosn.posix_bucket.fs.impl設定項目を変更します。詳細については、下記をご参照ください。
 3. `core-site.xml`ファイルを編集し、次の基本設定を追加します。
 ```
-<!--chdfsの実装クラス-->
+<!--アカウントのAPIキー情報です。[CAMコンソール](https://console.cloud.tencent.com/capi)にログインすると、Tencent Cloud APIキーを確認することができます。-->
 <property>
-		 <name>fs.AbstractFileSystem.ofs.impl</name>
-		 <value>com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter</value>
+		 <name>fs.cosn.userinfo.secretId/secretKey</name>
+		 <value>AKIDxxxxxxxxxxxxxxxxxxxxx</value>
 </property>
 
-<!--chdfsの実装クラス-->
+<!--cosnの実装クラス-->
 <property>
-		 <name>fs.ofs.impl</name>
-		 <value>com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter</value>
+		 <name>fs.AbstractFileSystem.cosn.impl</name>
+		 <value>org.apache.hadoop.fs.CosN</value>
 </property>
 
-<!--ローカルcacheの一時ディレクトリ。データの読み取りと書き込みの場合、メモリcacheが不足すると、ローカルディスクに書き込まれます。このパスが存在しない場合は、自動的に作成されます-->
+<!--cosnの実装クラス-->
 <property>
-		 <name>fs.ofs.tmp.cache.dir</name>
-		 <value>/data/chdfs_tmp_cache</value>
+		 <name>fs.cosn.impl</name>
+		 <value>org.apache.hadoop.fs.CosFileSystem</value>
 </property>
 
-<!--ユーザーのappId。Tencent Cloudコンソール(https://console.cloud.tencent.com/developer)にログインして確認できます-->      
+<!--ユーザーバケットのリージョン情報です。フォーマットはap-guangzhou-->などです      
 <property>
-		 <name>fs.ofs.user.appid</name>
-		 <value>1250000000</value>
+		 <name>fs.cosn.bucket.region</name>
+		 <value>ap-guangzhou</value>
 </property>
 
-<!--flushセマンティクス。デフォルトではfalse(非同期フラッシュ)です。下図のデータ可視性および永続化についての詳細な説明をご参照ください -->      
+<!--プロセス実行中に生成される一時ファイル保存用のローカル一時ディレクトリ->      
 <property>
-		 <name>fs.ofs.upload.flush.flag</name>
-		 <value>false</value>
+		 <name>fs.cosn.tmp.dir</name>
+		 <value>/tmp/hadoop_cos</value>
 </property>
-
 ```
 4. `core-site.xml`をすべての`hadoop`ノードに同期します。
->?EMRクラスターの場合、EMRコンソールのコンポーネント管理で上記の手順3と4において、HDFSの設定を変更することができます。
+>?EMRクラスターの場合、EMRコンソールのコンポーネント管理で上記のステップ3と4において、HDFSの設定を変更することができます。
 >
-5. `hadoop fs`コマンドラインツールを使用して、`hadoop fs -ls ofs://${bucketname-appid}/`コマンドを実行します。この`bucketname-appid`はマウントアドレス、すなわちバケット名です。ファイルリストが正常にリストアップされている場合は、COSバケットが正常にマウントされたことを意味します。
+5. `hadoop fs`コマンドラインツールを使用して、`hadoop fs -ls cosn://${bucketname-appid}/`コマンドを実行します。この`bucketname-appid`はマウントアドレス、すなわちバケット名です。ファイルリストが正常にリストアップされている場合は、COSバケットが正常にマウントされたことを意味します。
 6. ユーザーは`hadoop`の他の設定項目または`mr`タスクを使用して、メタデータアクセラレーション機能を有効にしたCOSバケット上でデータタスクを実行することもできます。`mr`タスクの場合、`-Dfs.defaultFS=ofs://${bucketname-appid}/`によって、このタスクのデフォルトの入力・出力`FS`を対応するバケットに変更することができます。
-
-## ケースの説明
-
-### データ可視性および永続化
-
-メタデータアクセラレーション機能を有効にすると、`COS`をクラウド分散ファイルシステムとして使用することができるようになります。`Hadoop`クライアントツールでファイルを開くと、クライアントは一定のサイズ （通常は4MB）を満たす場合に非同期フラッシュを行い、データをパブリッククラウドの`COS`バケットに書き込みます。上位階層のコンピューティング業務がデータ出力ストリームの`Flush`インターフェースを自主的に呼び出した場合、**デフォルトのアクションは無視されます（通常のflushによる同期フラッシュのセマンティクスとは異なります）**。クライアントはその後、書き込み量が一定のサイズに達するのを待ってから非同期`flush`を行い、最後に`Close`を呼び出した時点で強制的に同期フラッシュします。 `Close`が正常に行われたデータは永続化されており、その後正常に読み取れることが保証されます。
-
-`Hadoop`クライアントツールがデフォルトで非同期`Flush`を選択する理由は、ローカルディスクに比べてクラウドではアクセス遅延が大きいため、非同期`Flush`とすることでクラウドとの対話を減らし、`Flush`操作によってユーザーの書き込み操作が妨げられることを防ぎ、書き込みパフォーマンスを大幅に向上させて作業時間を短縮することが可能になるためです。リスクとしては、最後に自主的に`Close`インターフェースを呼び出さなかった場合、フラッシュされなかったデータが失われる危険がある点です。
-
-このため、**リアルタイムに書き込みを必要とするデータについて、例えば、`Hbase Wal Log`、`Journal`ログの保存など、データの即時可視化とクラウドでの永続化を保証するケースでは、設定項目`fs.ofs.upload.flush.flag`の説明をご参照の上、同期`Flush`のオプションを有効にしてください。**
 
 ## 設定項目の説明
 
-|        設定項目      |                             説明                             |  デフォルト値   | 入力必須かどうか |
-| :------------------------------| :----------------------------------------------------| :-------| :------ |
-|       fs.ofs.tmp.cache.dir        |   一時データの保存    |    なし    |    はい    |
-|       fs.ofs.map.block.size       | クライアントはデータを複数の`Block`に分割して書き込みます。このパラメータはデータのblockサイズの制御に用いられ、単位はバイト、デフォルトは128MBです（mapのセグメンテーションにのみ影響を与え、CHDFS最下層のストレージロックサイズとは関係ありません） | 134217728 |    いいえ    |
-| fs.ofs.data.transfer.thread.count |               クライアントデータ転送時の並列スレッドの数                |    32     |    いいえ    |
-| fs.ofs.block.max.memory.cache.mb  | クライアントプラグインによって使用されるメモリ`Buffer`のサイズ。単位はMBです。（読み取りと書き込みのアクセラレーション効果あり） |    16     |    いいえ    |
-|  fs.ofs.block.max.file.cache.mb   |  CHDFSプラグインによって使用されるディスク`Buffer`のサイズ。単位はMBです。（書き込みにアクセラレーション効果あり）  |    256    |    いいえ    |
-|   fs.ofs.prev.read.block.count    | 読み取りの際の先行読み取りデータの`Block`の数（サイズは通常4MB）。ランダムリードの場合はこの数値を適宜少なくしてください。シーケンシャルリードの場合はこの数値およびメモリbufferのサイズを適宜大きくすることができます|     4     |    いいえ    |
-|  fs.ofs.prev.read.block.release.enable| すでに読みとった1つ前の`Block`のBufferをリリースするかどうか。シーケンシャルリードの場合はオンにすることをお勧めします。ランダムリードの場合は、ある部分のデータを繰り返し読み取る場合は煩雑になるため、オフにすることをお勧めします。オプション値は`true（オン）`、`false（オフ）`です | `true` | いいえ |
-|      fs.ofs.plugin.info.log       |          クライアントのデバッグログを印刷するかどうか。ログはinfoレベルで印刷されます。 オプション値はtrue（オン）、false（オフ）です |   false   |    いいえ    |
-|      fs.ofs.upload.flush.flag     | データを書き込み、出力ストリームの`Flush`インターフェースを呼び出す際、データを同期フラッシュするかどうか。デフォルトでは非同期データ出力（`false`）です。同期フラッシュが必要な場合は、`true`に設定してください | false | いいえ |
+### 1. 一般的な入力必須設定項目
+
+| 設定項目                              | 設定項目内容                         | 説明                                                         |
+| ----------------------------------- | ---------------------------------- | ------------------------------------------------------------ |
+| fs.cosn.userinfo.secretId/secretKey | フォーマット例：AKIDxxxxxxxxxxxxxxxxxxxx | お客様のアカウントのAPIキー情報を入力します。[CAMコンソール](https://console.cloud.tencent.com/capi)にログインすれば、Tencent Cloud APIキーを確認することができます。 |
+| fs.cosn.impl                        | org.apache.hadoop.fs.CosFileSystem | FileSystem用のcosn実装クラスは、固定されます。                          |
+| fs.AbstractFileSystem.cosn.impl     | org.apache.hadoop.fs.CosN          | FileSystem用のcosn実装クラスは、以下に固定されます。                |
+| fs.cosn.bucket.region               | フォーマット例：ap-beijing               | アクセスするバケットのリージョン情報を入力してください。列挙値については、[リージョンとアクセスドメイン名](https://intl.cloud.tencent.com/document/product/436/6224)のリージョンの略称をご参照ください。例えば、ap-beijing、ap-guangzhouなどです。元の設定：fs.cosn.userinfo.regionと互換性があります。 |
+| fs.cosn.tmp.dir                     | デフォルト/tmp/hadoop_cos                | 実際に存在するローカルディレクトリを設定してください。プロセス実行中に生成された一時ファイルは、一時的にここに保存されます。また、各ノードでこのディレクトリに十分なスペースと権限を割り当てることをお勧めします |
+
+
+
+### 2. POSIXアクセスメソッド入力必須設定項目
+
+| 設定項目                | 設定項目内容     | 説明 |
+| ------------------------ | ------------------ | ---------------- |
+| fs.cosn.posix_bucket.fs.impl         | com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter                |      POSIXメソッドのアクセス設定は、com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter S3プロトコルメソッドのアクセス設定は、org.apache.hadoop.fs.CosNFileSystemで、デフォルトはPOSIXメソッドでのアクセスです。               |
+| fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl | com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter                      |      メタデータバケットアクセス実装クラス                                             |
+| fs.cosn.trsf.fs.ofs.impl                    | com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter                |     メタデータバケットアクセス実装クラス                                                          |
+| fs.cosn.trsf.fs.ofs.tmp.cache.dir           | フォーマット例：/data/emr/hdfs/tmp/posix-cosn/  |実際に存在するローカルディレクトリを設定してください。プロセス実行中に生成された一時ファイルは、一時的にここに保存されます。また、各ノードでこのディレクトリに十分なスペースと権限を割り当てることをお勧めします。例："/data/emr/hdfs/tmp/posix-cosn/"                                                                      |
+| fs.cosn.trsf.fs.ofs.user.appid              | フォーマット例：12500000000  | 入力必須。ユーザーappid |
+| fs.cosn.trsf.fs.ofs.bucket.region           | フォーマット例：ap-beijing  | 入力必須。ユーザーbucketがregionに対応します |
+
+
+### 3. S3プロトコルアクセスメソッド入力必須設定項目
+
+| 設定項目                | 設定項目内容     | 説明 |
+| ------------------------ | ------------------ | ---------------- |
+| fs.cosn.posix_bucket.fs.impl         | org.apache.hadoop.fs.CosNFileSystem |      POSIXメソッドのアクセス設定は、com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter S3プロトコルメソッドのアクセス設定は、org.apache.hadoop.fs.CosNFileSystem、デフォルトはPOSIXメソッドでのアクセスです。                                        |
+
+### 4. その他の設定項目
+
+- [その他のHadoop-cos設定項目](https://intl.cloud.tencent.com/document/product/436/6884)
+- [その他のPOSIXメソッド設定項目](https://intl.cloud.tencent.com/document/product/1106/41965)、その他のPOSIXXメソッド設定項目は、「fs.cosn.trsf.」というプレフィックスを追加することでメタデータアクセラレーションバケットにアクセスすることができます。
+
+
 

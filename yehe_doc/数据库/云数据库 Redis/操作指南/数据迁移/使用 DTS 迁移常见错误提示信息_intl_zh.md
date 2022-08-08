@@ -166,7 +166,7 @@ config set client-output-buffer-limit 'slave 0 0 0'
 目标实例内存容量小于源库待迁移数据所占内存。 
 
 ### 解决方法
-扩容目标实例内容容量后再重新发起新 DTS 迁移任务。具体操作，请参见 [变更实例规格](https://intl.cloud.tencent.com/document/product/239/31934)。
+扩容目标实例内容存量后再重新发起新 DTS 迁移任务。具体操作，请参见 [变更实例规格](https://intl.cloud.tencent.com/document/product/239/31934)。
 
 ## 问题11
 ### 问题现象

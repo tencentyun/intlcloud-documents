@@ -5,12 +5,16 @@
 - 조건 연산자: 조건 결정 방법을 지정합니다.
 - 조건 값: 조건 키의 값을 지정합니다.
 
-자세한 내용은 [Condition](https://intl.cloud.tencent.com/document/product/598/10608)을 참고하십시오.
+자세한 내용은 [Conditions](https://intl.cloud.tencent.com/document/product/598/10608)를 참고하십시오.
+
+>? 
+>- 버킷 정책을 작성 시 조건 키를 사용할 때 최소 권한 원칙을 준수하고, 해당 조건 키를 해당 요청(action)에만 추가하며, 작업 지정(action) 시 “\*” 와일드 카드를 사용하지 마십시오. 와일드카드를 사용하면 요청이 실패합니다.
+>- 액세스 관리(CAM) 콘솔을 사용하여 정책을 생성할 때, version, principal, statement, effect, action, resource, condition 구문 요소의 첫 번째 글자는 대문자이거나 모두 소문자여야 합니다.
 
 
 ## 조건 예시
 
-다음 버킷 정책 예시에서 조건(Condition)은 `cos:PutObject` 권한 부여 작업이 10.217.182.3/24 또는 111.21.33.72/24 IP 범위에서만 완료될 수 있음을 지정합니다.
+다음 버킷 정책 예시에서 조건(condition)은 `cos:PutObject` 권한 부여 작업이 10.217.182.3/24 또는 111.21.33.72/24 IP 범위에서만 완료될 수 있음을 지정합니다.
 - **조건 키**는 `qcs:ip`이며 조건 유형이 IP임을 나타냅니다.
 - **조건 연산자**는 `ip_equal`로, 조건 판단 방법이 IP 주소 일치 여부를 판단하는 것임을 나타냅니다.
 - **조건 값**은 조건 결정을 위해 지정된 값을 나열하는 `["10.217.182.3/24","111.21.33.72/24"]` 배열입니다. 사용자의 IP가 어레이의 지정된 IP 범위에 있는 경우 조건은 true로 결정됩니다.
@@ -20,19 +24,19 @@
     "version":"2.0",
     "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "ip_equal":{
                     "qcs:ip":[
                         "10.217.182.3/24",
@@ -81,7 +85,7 @@ COS는 IP, VPC 및 HTTPS를 포함한 모든 요청에 적용 가능한 조건 �
 |조건 키   |적용 요청 | 요청 헤더 또는 요청 매개변수 확인 |유형|
 |:----------|:----------|:----------|:----------|
 |[cos:x-cos-storage-class](https://intl.cloud.tencent.com/document/product/436/46206#x-cos-storage-class) |PutObject<br>PostObject<br>InitiateMultipartUpload<br>AppendObject |요청 헤더: x-cos-storage-class |String|
-|[cos:versionid](https://intl.cloud.tencent.com/document/product/436/46206#versionid) |GetObject<br>DeleteObject<br>PostObjectRestore<br>PutObjectTagging<br>GetObjectTagging<br>DeleteObjectTagging<br>HeadObject |요청 매개변수: versionId |String|
+|[cos:versionid](https://intl.cloud.tencent.com/document/product/436/46206#versionid) |GetObject<br>DeleteObject<br>PostObjectRestore<br>PutObjectTagging<br>GetObjectTagging<br>DeleteObjectTagging<br>HeadObject |요청 매개변수: versionid |String|
 |[cos:prefix](https://intl.cloud.tencent.com/document/product/436/46206#prefix) |GetBucket（List Objects）<br>GET Bucket Object versions<br>List Multipart Uploads<br>ListLiveChannels |요청 매개변수: prefix |String|
 |[cos:x-cos-acl](https://intl.cloud.tencent.com/document/product/436/46206#x-cos-acl) |PutObject<br>PostObject<br>PutObjectACL<br>PutBucket<br>PutBucketACL<br>AppendObject<br>Initiate Multipart Upload |요청 헤더: x-cos-acl |String|
 |[cos:content-length](https://intl.cloud.tencent.com/document/product/436/46206#content-length) |이 요청 헤더는 적용 가능한 범위가 넓으며 일반적으로 요청 본문이 있는 요청 |요청 헤더: Content-Length |Numeric|
@@ -125,23 +129,23 @@ COS는 문자열(String), 숫자(Numeric), 부울(Boolean) 및 IP 유형의 조�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -149,9 +153,9 @@ COS는 문자열(String), 숫자(Numeric), 부울(Boolean) 및 IP 유형의 조�
 }
 ```
 
-아래 표는 조건 연산자 `string_equal` 및 `string_equal_if_exist`의 Condition 충족 및 요청 허용 세부 정보를 나열합니다.
+아래 표는 조건 연산자 `string_equal` 및 `string_equal_if_exist`의 condition 충족 및 요청 허용 세부 정보를 나열합니다.
 
-|조건 연산자  |요청 |Condition 충족 |요청 허용 여부|
+|조건 연산자  |요청 |condition 충족 |요청 허용 여부|
 |:----------|:----------|:----------|:----------|
 |string_equal |versionid 가 없는 경우 |FALSE |No |
 |string_equal_if_exist |versionid 가 없는 경우 |TRUE |Yes |
@@ -167,23 +171,23 @@ COS는 문자열(String), 숫자(Numeric), 부울(Boolean) 및 IP 유형의 조�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -191,9 +195,9 @@ COS는 문자열(String), 숫자(Numeric), 부울(Boolean) 및 IP 유형의 조�
 }
 ```
 
-아래 표는 조건 연산자 `string_equal` 및 `string_equal_if_exist`의 Condition 충족 및 요청 거부 세부 정보를 나열합니다.
+아래 표는 조건 연산자 `string_equal` 및 `string_equal_if_exist`의 condition 충족 및 요청 거부 세부 정보를 나열합니다.
 
-| 조건 연산자 |요청 |Condition 충족 |요청 거부 여부|
+| 조건 연산자 |요청 |condition 충족 |요청 거부 여부|
 |:----------|:----------|:----------|:----------|
 |string_equal |versionid 가 없는 경우 |FALSE |No |
 |string_equal_if_exist |versionid 가 없는 경우 |TRUE |Yes |
@@ -220,40 +224,40 @@ allow + string_equal의 경우 조건 키가 요청에 없으면 기본적으로
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
@@ -274,40 +278,40 @@ allow + string_equal_if_exist의 경우 조건 키가 요청에 없으면 기본
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
@@ -329,38 +333,38 @@ allow + string_equal_if_exist의 경우 조건 키가 요청에 없으면 기본
     "version":"2.0",
     "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
