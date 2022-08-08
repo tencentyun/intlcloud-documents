@@ -1,0 +1,6 @@
+﻿Container-based EMR delivers a new experience of deploying open-source big data components solely based on a container service. For example, you can deploy the Spark component to the cloud-native EKS and leverage its strengths in container application management to reduce the resource Ops costs and quickly create a cluster to run big data jobs. This is suitable for running unplanned Spark jobs or adjusting the Spark version at the job level to get new features and meet the version requirements of different businesses.
+
+## How it works
+When a container-based EMR cluster is created, a hidden EMR-dedicated EKS cluster will be automatically created in the selected region, and the EMR management system will automatically create container-based EMR cluster resources in the EKS cluster.
+When a Spark job is submitted in the container-based EMR cluster, SparkOperator will automatically create driver and executor Pod resources as needed and release the resources after the job is completed.
+![](https://qcloudimg.tencent-cloud.cn/raw/dea73f23e9b593528480bc60b091f89f.jpg)

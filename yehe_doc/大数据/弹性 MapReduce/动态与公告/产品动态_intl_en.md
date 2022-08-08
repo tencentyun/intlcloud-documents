@@ -1,3 +1,34 @@
+## July 2022
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Improved the availability of the automatic scaling feature.</td>
+<td>Scale-out rules support the hybrid deployment of multiple resource specifications as well as pay-as-you-go/spot instances.</td>
+<td>2022-07-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">Auto Scaling</a></td>
+</tr>	
+<tr>
+<td>Added support for the RIT fixing tool for HBase.</td>
+<td>Regions in the RIT status can be fixed.</td>
+<td>2022-07-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/48580" target="_blank">HBase RIT Fixing</a></td>
+</tr>	
+<tr>
+<td>Started the open beta test for container-based EMR clusters.</td>
+<td>Container-based EMR clusters become available in Beijing, Shanghai, and Guangzhou regions.</td>
+<td>2022-07-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582" target="_blank">Container-Based EMR</a></td>
+</tr>
+</tbody></table>
+
 ## June 2022
 <table>
 <thead>
@@ -10,13 +41,23 @@
 </thead>
 <tbody>
 <tr>
+<td>Optimized the configuration management feature.</td>
+<td><li>Configuration management is upgraded to support configuration filtering, categorization, and comparison.
+<li>The delivery priority rules for configurations at different levels are optimized to support delivery at the minimum level first.
+<li>A configuration group can be specified for the selected components.
+</td>
+<td>2022-06-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31109" target="_blank">Configuration Management</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/1026/31113" target="_blank">Cluster Scale-Out</a></td>
+</tr>	
+<tr>
 <td>Added support for Hive query management.</td>
 <td>The Hive service supports query management.</td>
 <td>2022-06-07</td>
-<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/47774" target="_blank">Hive Query Management</a></td>
 </tr>	
 <tr>
-<td>Optimized Yarn job query.</td>
+<td>Optimized YARN job query.</td>
 <td>YARN job query supports displaying task information and querying task logs.</td>
 <td>2022-06-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/41278" target="_blank">YARN Job Query</a></td>
@@ -28,7 +69,6 @@
 <td><a href="https://buy.intl.cloud.tencent.com/price/emr" target="_blank">Pricing | Elastic MapReduce</a></td>
 </tr>	
 </tbody></table>
-
 
 
 ## May 2022
@@ -46,7 +86,7 @@
 <td>Optimized the scaling feature.</td>
 <td><li>New subnets can be added to expand cluster node capacity.<li>The Kyuubi service supports scaling.</td>
 <td>2022-05-17</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31113" target="_blank">Cluster Scale-out</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31113" target="_blank">Cluster Scale-Out</a></td>
 </tr>	
 <tr>
 <td>Enhanced role management and user management.</td>
@@ -80,8 +120,13 @@
 <td>2022-04-22</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36880" target="_blank">HDFS Monitoring Metrics</a></td>
 </tr>	
+<tr>
+<td>Added support for container-based EMR clusters.</td>
+<td>Added support for Spark deployment based on EKS in Beijing, Shanghai, Guangzhou, and Nanjing regions.</td>
+<td>2022-04-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582" target="_blank">Overview</a></td>
+</tr>	
 </tbody></table>
-
 
 
 ## March 2022
@@ -99,7 +144,7 @@
 <td>Added the StarRocks cluster type.</td>
 <td>Added the StarRocks cluster type and integrated open-source StarRocks.</td>
 <td>2022-03-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46453" target="_blank">StarRocks Development Guide</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46453" target="_blank">StarRocks Overview</a></td>
 </tr>
 <tr>
 <td>Added support for adding nodes without assigning ApplicationMasters by default.</td>
@@ -134,7 +179,7 @@
 <td>Released a Doris cluster version - Doris v1.2.0.</td>
 <td>Released Doris 0.15.</td>
 <td>2022-01-21</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Product Releases and Component Versions</a></td>
 </tr>
 <tr>
 <td>Added support for sharing component configurations.</td>
@@ -178,7 +223,7 @@
 <td>Added four use cases for the Hadoop cluster type.</td>
 <td>Added the ZooKeeper, HBase, Presto, and Kudu use cases for the Hadoop cluster type to help you quickly create a cluster based on your business scenario.</td>
 <td>2021-12-17</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31094" target="_blank">Node Type Description</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31094" target="_blank">Cluster Types</a></td>
 </tr>
 <tr>
 <td>Launched a new purchase page.</td>
@@ -235,7 +280,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released a Hadoop cluster version - EMR v3.3.0.</td>
 <td>Added support for HBase v2.3.5, Phoenix v5.1.2, Kudu v1.15.0, Hue v4.10.0, Hudi v0.8.0, Tez v0.10.1, Livy v0.8.0, Ganglia v3.7.2, Kyuubi v1.1.0, and LDAP v2.4.44.</td>
 <td>2021-09-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
 <tr>
 <td>Added monitoring metrics.</td>
@@ -294,7 +339,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released a Hadoop cluster version - EMR v2.6.0.</td>
 <td>Added support for Spark v3.0.2, Impala v3.4.0, GooseFS v1.0.0, OpenLDAP v2.4.44, Kyuubi v1.1.0, etc.</td>
 <td>  2021-07-15</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
 </tbody></table>
 
@@ -369,13 +414,13 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released a Kafka cluster version - Kafka v1.0.0.</td>
 <td>Added support for Kafka v1.1.1, KafkaManager v2.0.0.2, Knox v1.2.0, and ZooKeeper v3.6.1.</td>
 <td>  2021-05-13</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/40256" target="_blank">Kafka Development Guide</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40256" target="_blank">Kafka Overview</a></td>
 </tr>
   <tr>
 <td>Released a Doris cluster version - Doris v1.0.0.</td>
 <td>Added support for Doris v0.13.0 and Knox v1.2.0.</td>
 <td> 2021-05-13 </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/40258" target="_blank">Doris Development Guide</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40258" target="_blank">Doris Overview</a></td>
 </tr>
 </tbody></table>
 
@@ -395,13 +440,13 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released a Hadoop cluster version - EMR v3.2.0.</td>
 <td>Added support for Hadoop v3.2.2, Spark v3.0.2, Presto v350, Flink v1.12.1, Alluxio v2.5.0, Ranger v2.1.0, Iceberg v0.11.0, and Hudi v0.7.0.</td>
 <td> 2021-04-30 </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
   <tr>
 <td>Added the **Start/Stop Services** feature.</td>
 <td>Added support for starting or stopping all services on a node.</td>
 <td> 2021-04-27 </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/40259" target="_blank">Starting/Stopping Services</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40259" target="_blank">Service Start/Stop</a></td>
 </tr>
 <tr>
 <td>Released a Hadoop cluster version - EMR v2.5.1.</td>
@@ -453,11 +498,11 @@ If you encounter any security issues related to the operating system of an exist
 <td>Added support for cross-model configuration change.</td>
 <td>You can select other models to change the node configuration when the current model is sold out.</td>
 <td>  2021-01-26  </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">  Adjusting Configuration</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">  Configuration Change</a></td>
 </tr>
 <tr>
-<td>Added the auto scaling feature.</td>
-<td>The auto scaling feature automatically adds or removes task nodes, helping you save costs while meeting the requirement for cluster computing power.</td>
+<td>Added the automatic scaling feature.</td>
+<td>The automatic scaling feature automatically adds or removes task nodes, helping you save costs while meeting the requirement for cluster computing power.</td>
 <td>  2021-01-26  </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">Auto Scaling</a></td>
 </tr>
@@ -490,7 +535,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released a Hadoop cluster version - EMR v3.1.0.</td>
 <td>Added support for Impala v3.4.0, Flink v1.10.0, HBase v2.3.3, Phoenix v5.0.0, Alluxio v2.3.0, Kudu v1.13.0, and ZooKeeper v3.6.1.</td>
 <td>2020-12-14</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
 </tbody></table>
 
@@ -509,7 +554,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released the EMR TianQiong edition.</td>
 <td>Added support for Spark materialized views.</td>
 <td>2020-11-27</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/38962" target="_blank">EMR TianQiong Introduction</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/38962" target="_blank">EMR TianQiong Introduction</a></td>
 </tr>
 <tr>
 <td>Optimized monitoring and alarming.</td>
@@ -518,7 +563,7 @@ If you encounter any security issues related to the operating system of an exist
 <li>Added support for subscribing to EMR event monitoring alarms in CM.
 </td>
 <td>2020-11-20</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/248/38461" target="_blank">Dashboard</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/248/38461" target="_blank">Overview</a></td>
 </tr>
 </tbody></table>
 
@@ -568,7 +613,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released a Hadoop cluster version - EMR v2.5.0.</td>
 <td>Upgraded the Alluxio component to the stable version 2.3.0, which delivers better performance in the use cases where compute and storage are separated.</td>
 <td>2020-09-17</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
 </tbody></table>
 
@@ -587,7 +632,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released a Hadoop cluster version - EMR v2.4.0.</td>
 <td>Added the Kudu component and upgraded some existing components.</td>
 <td>2020-08-27</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
 <tr>
 <td>Added support for data migration in ClickHouse clusters.</td>
@@ -737,7 +782,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released EMR v2.2.0.</td>
 <td>Upgraded Hadoop to v2.8.5. Upgraded common components such as Spark, Hive, and HBase. Added the Hudi, Superset, Livy, Impala, Zeppelin, and Kylin components.</td>
 <td>2020-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
 </tbody></table>
 
@@ -887,7 +932,7 @@ If you encounter any security issues related to the operating system of an exist
 <tbody><tr>
 <td>Released EMR v3.0.0.</td>
 <td>Released EMR v3.0.0 with updated versions of major components.</td><td>2019-10</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
 </tbody></table>
 
@@ -968,7 +1013,7 @@ If you encounter any security issues related to the operating system of an exist
 <tbody><tr>
 <td>Released the feature of HBase table-level monitoring.</td>
 <td>Added support for HBase table-level monitoring, which covers the number of read and write requests and storage of each table in HBase.</td><td>2019-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31118" target="_blank">Service Status</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31118" target="_blank">Service Monitoring</a></td>
 </tr>
 <tr>
 <td>Released EMR in new regions.</td>
@@ -1012,7 +1057,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released the feature of setting bootstrap actions.</td>
 <td>Added support for setting bootstrap actions.</td>
 <td>2019-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34521" target="_blank">Bootstrap Action</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34521" target="_blank">Bootstrap Actions</a></td>
 </tr>
 <tr>
 <td>Released the feature of delivering component parameter configuration to nodes.</td>
@@ -1042,13 +1087,13 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released EMR v2.1.0.</td>
 <td>Released EMR v2.1.0 with updated versions of main components.</td>
 <td>2019-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Version Overview</a></td>
 </tr>
 <tr>
 <td>Added support for Kerberos security clusters.</td>
 <td>Added support for creating security clusters. The open source components in clusters are launched in Kerberos security mode. In this security environment, only authenticated clients can access the services (such as HDFS) of the clusters.</td>
 <td>2019-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31163" target="_blank">Kerberos Introduction</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31163" target="_blank">Kerberos Overview</a></td>
 </tr>
 <tr>
 <td>Optimized monitoring metrics.</td>
@@ -1108,13 +1153,13 @@ If you encounter any security issues related to the operating system of an exist
 <td>Added support for router nodes.</td>
 <td>Added support for router nodes, which are mainly used to relieve the load of master nodes and as task submitters.</td>
 <td>2019-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31094" target="_blank">Node Type Description</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31094" target="_blank">Cluster Types</a></td>
 </tr>
 <tr>
 <td>Released the feature of adjusting node configuration.</td>
 <td>Added support for adjusting node configuration. Nodes can be upgraded to a higher configuration.</td>
 <td>2019-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Adjusting Configuration</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Configuration Change</a></td>
 </tr>
 </tbody></table>
 
@@ -1132,6 +1177,6 @@ If you encounter any security issues related to the operating system of an exist
 <td>Added new components to existing clusters.</td>
 <td>Added support for adding new components to existing clusters.</td>
 <td>2019-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31108" target="_blank">Adding Component</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31108" target="_blank">Adding Components</a></td>
 </tr>
 </tbody></table>

@@ -1,7 +1,7 @@
-## List of APIs Supporting Resource-Level Authorization
+## List of APIs supporting resource-level authorization
 EMR supports resource-level authorization. You can grant a specified sub-account the API permission of a specified resource.
 
->!A permission error may occur when new APIs are subsequently added. In case of such permission error, you can add the missing API permission in the policy based on the error message.
+>!A permission error may occur when new APIs are subsequently added. In case of such permission error, you can add the missing API permission in the policy according to the error message.
 
 APIs supporting resource-level authorization include:
 <table>
@@ -191,7 +191,7 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifyAutoScaleGlobalConf</td>
-<td >Updates the global configuration of auto scaling</td>
+<td >Updates the global configuration of automatic scaling</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeFlowStatusDetail</td>
@@ -223,15 +223,15 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleGlobalConf</td>
-<td >Gets the global configuration of auto scaling</td>
+<td >Gets the global configuration of automatic scaling</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleSpecs</td>
-<td >Gets auto scaling specification</td>
+<td >Gets automatic scaling specification</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifyAutoScaleSpecs</td>
-<td >Modifies auto scaling specification</td>
+<td >Modifies automatic scaling specification</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >AddMetricScaleStrategy</td>
@@ -239,15 +239,15 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DeleteAutoScaleSpec</td>
-<td >Deletes auto scaling specification</td>
+<td >Deletes automatic scaling specification</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleRecords</td>
-<td >Gets auto scaling history</td>
+<td >Gets automatic scaling history</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DeleteAutoScaleStrategy</td>
-<td >Deletes auto scaling rule</td>
+<td >Deletes automatic scaling rule</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifyStrategyPriority</td>
@@ -255,19 +255,19 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleMetaRange</td>
-<td >Gets auto scaling metadata</td>
+<td >Gets automatic scaling metadata</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleStrategies</td>
-<td >Gets auto scaling rules</td>
+<td >Gets automatic scaling rules</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifyAutoScaleStrategy</td>
-<td >Modifies auto scaling rule</td>
+<td >Modifies automatic scaling rule</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >AddAutoScaleSpec</td>
-<td >Adds auto scaling specification</td>
+<td >Adds automatic scaling specification</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >TerminateAutoScaleNodes</td>
@@ -371,7 +371,7 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ScaleOutRouter</td>
-<td >Scales out router nodes</td>
+<td >Adds router nodes</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeDestroyInfo</td>
@@ -516,10 +516,52 @@ APIs supporting resource-level authorization include:
 <td >Updates disk metadata in console</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr>
+<tr>
+<td >DescribeServiceConfsNew</td>
+<td >Gets the configuration information of component (configuration management page)</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td >DescribeConfFileList</td>
+<td >Gets the list of configuration files (configuration management page)</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td >DescribeServiceConfCategories</td>
+<td > Gets the configuration type of component (configuration management page)</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td >DescribeServiceConfDiff</td>
+<td > Compares configurations (configuration management page)</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td >DescribeConfigGroupList</td>
+<td > Queries the configuration group information of node type</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr><tr>
+<td >DescribeHbaseStatus</td>
+<td > Displays the information of `DescribeHbaseStatus`</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr><tr>
+<td >ModifyHbaseRit</td>
+<td >	Fixes HBase RIT issue</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr><tr>
+<td >TerminateSparkApp</td>
+<td >	Terminates Spark job</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr><tr>
+<td >DescribeAccessKey</td>
+<td >	Gets the `AccessKey` of cluster</td>
+<td >	emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
 </tbody>
 </table>
+		
 
-## List of APIs Supporting API-Level Authorization
+## List of APIs supporting API-level authorization
 <table>
 <thead>
 <tr>
@@ -692,4 +734,4 @@ APIs supporting resource-level authorization include:
 </tbody>
 </table>
 
-For more information on resource-level and API-level authorization, see [Authentication Granularity Scheme](https://intl.cloud.tencent.com/document/product/1026/44862).
+For more information on resource-level and API-level authorization, see [Authorization Granularity Scheme](https://intl.cloud.tencent.com/document/product/1026/44862).

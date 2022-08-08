@@ -1,3 +1,34 @@
+## 2022年07月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自动伸缩功能可用性提升</td>
+<td>扩容规则触发支持多种资源规格混合部署，以及按量计费和竞价实例混合部署</td>
+<td>2022-07-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">自动伸缩</a></td>
+</tr>	
+<tr>
+<td>HBase 支持 RIT 修复工具</td>
+<td>支持对处于 rit 状态的 region 进⾏修复</td>
+<td>2022-07-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/48580" target="_blank">HBase RIT 修复</a></td>
+</tr>	
+<tr>
+<td>EMR 容器版开放公测</td>
+<td>北京、上海、广州地域已正式开放 EMR 容器版功能</td>
+<td>2022-07-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582" target="_blank">EMR 容器版</a></td>
+</tr>
+</tbody></table>
+
 ## 2022年06月
 <table>
 <thead>
@@ -10,10 +41,20 @@
 </thead>
 <tbody>
 <tr>
+<td>配置管理功能优化</td>
+<td><li>配置管理体验升级，支持配置筛选、配置分类和配置对比
+<li>不同维度配置下发优先级规则优化，遵循最小维度优先原则
+<li>扩容组件支持指定配置组
+</td>
+<td>2022-06-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31109" target="_blank">配置管理</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/1026/31113" target="_blank">集群扩容</a></td>
+</tr>	
+<tr>
 <td>新增 Hive 查询管理</td>
 <td>Hive 服务支持查询管理功能</td>
 <td>2022-06-07</td>
-<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/47774" target="_blank">Hive 查询管理</a></td>
 </tr>	
 <tr>
 <td>Yarn 作业查询优化</td>
@@ -28,7 +69,6 @@
 <td><a href="https://buy.intl.cloud.tencent.com/price/emr" target="_blank">产品定价</a></td>
 </tr>	
 </tbody></table>
-
 
 
 ## 2022年05月
@@ -80,8 +120,13 @@
 <td>2022-04-22</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36880" target="_blank">HDFS 监控指标</a></td>
 </tr>	
+<tr>
+<td>支持 EMR 容器版</td>
+<td>北京、上海、广州、南京地域支持 Spark 基于弹性容器（EKS）部署</td>
+<td>2022-04-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582" target="_blank">EMR 容器版概述</a></td>
+</tr>	
 </tbody></table>
-
 
 
 ## 2022年03月
