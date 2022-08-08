@@ -29,6 +29,6 @@ Você pode ativar o botão de alternância para implantar a regra de limite de v
 ## Exemplos de configuração
 
 A configuração do limite de velocidade downstream de `cloud.tencent.com` é a seguinte:
-![](https://main.qcloudimg.com/raw/7ee9a5167aa054c8e99c15267e38eba3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/814d50bbc8ca84e86bb5ac8c36dffc15.png)
 Se um usuário acessar o recurso `http://cloud.tencent.com/test.mp4`, o servidor retornará o conteúdo na velocidade de downstream configurada de 200 KB/s.
 Se um usuário acessar o recurso `http://cloud.tencent.com/test.flv`, o servidor retornará o conteúdo na velocidade de downstream configurada de 400 KB/s.
