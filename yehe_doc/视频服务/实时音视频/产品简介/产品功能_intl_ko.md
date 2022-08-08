@@ -183,16 +183,4 @@
 <td>화상 통화, 인터랙티브 라이브 스트리밍, 라이브 쇼 스트리밍 등</td>
 <td>AI 뷰티 필터는 부가 가치 서비스이며 뷰티 필터 SDK에 의해 과금됩니다.</a></td>
 </tr>
-<tr>
-<td>음성 콘텐츠 조정</td>
-<td>콘텐츠 관련 위험 관리를 위한 음란물 및 기타 문제 오디오 콘텐츠 감지</td>
-<td>비즈니스 보안 보호, 컴플라이언스 등</td>
-<td>음성 콘텐츠 중재는 부가 가치 서비스이며 BSP(Business Security Protection)에서 요금을 과금합니다. 필요 시 <a href="https://intl.cloud.tencent.com/contact-us">고객센터</a>를 통해 신청</td>
-</tr>
-<tr>
-<td>비디오 콘텐츠 조정</td>
-<td>콘텐츠 관련 리스크 관리를 위한 음란물 및 기타 문제 동영상 콘텐츠 감지</td>
-<td>비즈니스 보안 보호, 컴플라이언스 등</td>
-<td>비디오 콘텐츠 조정은 부가 가치 서비스이며 <a href="https://intl.cloud.tencent.com/document/product/267">CSS</a>에서 비용을 과금합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/267/39607">스마트 성인물 감지</a> 참고</td>
-</tr>
 </tbody></table>
