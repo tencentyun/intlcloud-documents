@@ -5,7 +5,7 @@ TencentDB for Redis supports quickly clearing all instance data in the console. 
 ## Notes
 
 - Once cleared, the data cannot be recovered. Make sure you have backed up all data before submitting a clearing request.
-- Data clearing will affect the service provided by the instance, and the instance cannot be accessed during the clearing process.
+- The data clearing process will block database access. When a large number of data requests are made, the database will be disconnected and cannot be served. 
 - When a master instance in a global replication group is cleared up, all of the other instances in the group are cleared up as well.
 - In a global replication group, you can't clear up a read-only instance as clearup is a write operation. You can clear up the group after removing all read-only instances from it.
 
