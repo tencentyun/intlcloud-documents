@@ -1,5 +1,5 @@
 ## Overview
-TencentDB for Redis is compatible with Redis 2.8, 4.0, and 5.0. Upgrade to a compatible version and minor version upgrade are supported, so that you can upgrade your instance to a newer version for more features.
+TencentDB for Redis is compatible with Redis 2.8, 4.0, 5.0 and 6.0. Upgrade to a compatible version and minor version upgrade are supported, so that you can upgrade your instance to a newer version for more features.
 
 ## Version Differences
 
@@ -7,7 +7,7 @@ TencentDB for Redis is compatible with Redis 2.8, 4.0, and 5.0. Upgrade to a com
 | --------- | ------ | ------------------------------------------------------------ |
 | Redis 4.0 | 4.3.0 | <li>When a failed replica node is discovered in the cluster, messages can be sent to the cluster, making it quicker to locate faulty nodes. </li><li>Performance optimization: `zmalloc_get_rss()` is executed in the BIO thread to avoid blocking the main thread and increasing the request latency. </li><li>Fixed the issue where the `rdbLoadRio()` function might trigger a crash in some cases.</li> |
 | Redis 5.0 | 5.2.0  | <li>Performance optimization: `zmalloc_get_rss()` is executed in the BIO thread to avoid blocking the main thread and increasing the request latency. </li></li><li>Fixed the issue where the `rdbLoadRio()` function might trigger a crash in some cases.</li> |
-
+| Redis 6.0 | 6.0.0  | Compatible with Redis version 6.0. |
 ## Upgrade Description
 - Currently, only standard architecture instances can be upgraded to a compatible version, while cluster architecture instances cannot.
 - Instances can be upgraded from an earlier version to a later one; for example, you can upgrade from Redis 4.0 to 5.0.
