@@ -13,35 +13,35 @@ EdgeOne is billed on a calendar month basis. The bill of the current month is ge
 ## EdgeOne Plans
 EdgeOne provides the Standard and Enterprise plans. You can only specify one plan for one site. The details of the two plans are listed as below:
 
-| Item                                                   |                           Standard                           |                          Enterprise                          |
-| :----------------------------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| Price                                                  | The price of Standard plans differs depending on the acceleration region.Chinese mainland: 590 USD/month<br/>Globe (Chinese mainland not included): 699 USD/month |   [Contact us](https://intl.cloud.tencent.com/contact-us)    |
-| Traffic                                                |                             3 TB                             |                           ≥ 10 TB                            |
-| HTTP/HTTPS requests                                    |                           50,000K                            |                          ≥ 80,000K                           |
-| Global content delivery (outside the Chinese mainland) |                              ✓                               |                              ✓                               |
-| Smart acceleration                                     |                              ✓                               |                              ✓                               |
-| L4 proxy via CNAME                                     |                              ✕                               |                              ✓                               |
-| L4 proxy via static IP                                 |                              ✕                               |                              ✓                               |
-| DDoS mitigation                                        |                              ✓                               |                              ✓                               |
-| Enterprise DDoS mitigation (customizable)              |                              ✕                               |                              ✓                               |
-| Web protection - Managed rules                         |                              ✓                               |                              ✓                               |
-| Web protection - Rate limiting rules                   |                              5                               |                         Customizable                         |
-| Web protection - Custom rules                          |                              20                              |                         Customizable                         |
-| Bot management                                         |                           Optional                           |                           Optional                           |
-| Bot intelligence                                       |                   Free for a limited time                    |                   Free for a limited time                    |
-| Verification (JavaScript challenge and CAPTCHA)        |                              ✓                               |                              ✓                               |
-| Upload size limit                                      |                 500 MB (cannot be disabled)                  |                          Unlimited                           |
-| External certificate on edge node                      |                              ✓                               |                              ✓                               |
-| Load balancing tasks                                   |                              5                               |                              10                              |
-| Node cache TTL                                         |                Down to the millisecond level                 |                Down to the millisecond level                 |
-| Browser cache TTL                                      |                Down to the millisecond level                 |                Down to the millisecond level                 |
-| Purge cache (free for a limited time)                  | Matching type: Host and Prefix<br>Quota per request: 1,000<br>Daily quota: 10,000 | Matching type: Host and Prefix<br>Quota per request: 1,000<br>Daily quota: 20,000 |
-| Prefetch URL (free for a limited time)                 |       Quota per request: 1,000<br>Daily quota: 50,000        |       Quota per request: 5,000<br>Daily quota: 100,000       |
-| WebSockets                                             |                   Default timeout: 1-120s                    |                   Default timeout: 1-300s                    |
-| Max data query period                                  |                           90 days                            |                           180 days                           |
-| Real-time logging                                      |                           2 tasks                            |                           5 tasks                            |
-| Rule engine rules                                      |                             100                              |                             200                              |
-| DNS records                                            |                             500                              |                            1,000                             |
+| Item                                            |                           Standard                           |                          Enterprise                          |
+| :---------------------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| Price                                           | The price of Standard plans differs depending on the acceleration region.Chinese mainland: 590 USD/month<br/>Globe (Chinese mainland not included): 699 USD/month |   [Contact us](https://intl.cloud.tencent.com/contact-us)    |
+| Traffic                                         |                             3 TB                             |                           ≥ 10 TB                            |
+| HTTP/HTTPS requests                             |                           50,000K                            |                          ≥ 80,000K                           |
+| Content delivery network                        |                              ✓                               |                              ✓                               |
+| Smart acceleration                              |                              ✓                               |                              ✓                               |
+| L4 proxy via CNAME                              |                              ✕                               |                              ✓                               |
+| L4 proxy via static IP                          |                              ✕                               |                              ✓                               |
+| DDoS mitigation                                 |                              ✓                               |                              ✓                               |
+| Enterprise DDoS mitigation (customizable)       |                              ✕                               |                              ✓                               |
+| Web protection - Managed rules                  |                              ✓                               |                              ✓                               |
+| Web protection - Rate limiting rules            |                              5                               |                         Customizable                         |
+| Web protection - Custom rules                   |                              20                              |                         Customizable                         |
+| Bot management                                  |                           Optional                           |                           Optional                           |
+| Bot intelligence                                |                   Free for a limited time                    |                   Free for a limited time                    |
+| Verification (JavaScript challenge and CAPTCHA) |                              ✓                               |                              ✓                               |
+| Upload size limit                               |                 500 MB (cannot be disabled)                  |                          Unlimited                           |
+| External certificate on edge node               |                              ✓                               |                              ✓                               |
+| Load balancing tasks                            |                              5                               |                              10                              |
+| Node cache TTL                                  |                Down to the millisecond level                 |                Down to the millisecond level                 |
+| Browser cache TTL                               |                Down to the millisecond level                 |                Down to the millisecond level                 |
+| Purge cache (free for a limited time)           | Matching type: Host and Prefix<br>Quota per request: 1,000<br>Daily quota: 10,000 | Matching type: Host and Prefix<br>Quota per request: 1,000<br>Daily quota: 20,000 |
+| Prefetch URL (free for a limited time)          |       Quota per request: 1,000<br>Daily quota: 50,000        |       Quota per request: 5,000<br>Daily quota: 100,000       |
+| WebSockets                                      |                   Default timeout: 1-120s                    |                   Default timeout: 1-300s                    |
+| Max data query period                           |                           90 days                            |                           180 days                           |
+| Real-time logging                               |                           2 tasks                            |                           5 tasks                            |
+| Rule engine rules                               |                             100                              |                             200                              |
+| DNS records                                     |                             500                              |                            1,000                             |
 
 >!
 >- All features offered in Standard plan are included in the Enterprise plan.
