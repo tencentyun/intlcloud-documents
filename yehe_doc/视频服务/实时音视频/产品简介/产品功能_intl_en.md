@@ -183,16 +183,4 @@
 <td>Video call, interactive live streaming, showroom streaming</td>
 <td>AI-based beauty filters are charged by Tencent Effect SDK.</a></td>
 </tr>
-<tr>
-<td>Speech content moderation</td>
-<td>Detecting pornographic and other banned content in speech</td>
-<td>Content security check, compliance</td>
-<td>Speech content moderation is charged by Business Security Protection (BSP). If you want to use this feature, please <a href="https://intl.cloud.tencent.com/contact-us">contact us</a>.</td>
-</tr>
-<tr>
-<td>Video content moderation</td>
-<td>Detecting pornographic and other banned content in video</td>
-<td>Content security check, compliance</td>
-<td>Video content moderation is charged by <a href="https://intl.cloud.tencent.com/document/product/267">CSS</a>. For details, see <a href="https://intl.cloud.tencent.com/document/product/267/39607">Intelligent Porn Detection</a>.</td>
-</tr>
 </tbody></table>
