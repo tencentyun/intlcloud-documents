@@ -12,7 +12,7 @@
 
 ## Sequence Diagram (Simplified)
 
-![1](https://qcloudimg.tencent-cloud.cn/raw/f963c590fc88067f81da0b7ca3df50f8.png)
+![1](https://qcloudimg.tencent-cloud.cn/raw/97952f84b9b010959070ccbeb8551dbe.png)
 
 Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246) and [GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
 ## Sequence Diagram (Detailed)
@@ -20,6 +20,6 @@ Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/docu
 In the real case, you need to input the URL of the comparison image to the backend API for getting the token. For use instructions and causes, see [Passing Resources](https://intl.cloud.tencent.com/document/product/1061/46849?!editLang=en).
 *`CreateUploadUrl` serves as an independent role in the diagram*
 
-![2](https://qcloudimg.tencent-cloud.cn/raw/491abd12442624139fef0b39959a6745.png)
+![2](https://qcloudimg.tencent-cloud.cn/raw/872a25f5cbcd02d9b9e9418aed8cae2b.png)
 
 Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246), [GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246), and [CreateUploadUrl](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
