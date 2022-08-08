@@ -29,7 +29,7 @@ https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/2
 ### 图片盲水印
 
 盲水印功能是一种更安全的水印模式，您可将水印图以**不可见的形式**添加到原图信息中，同时不会对原图质量产生太大影响。在图片被盗取后，您可对疑似被盗取的资源进行盲水印提取，以此**验证图片归属**。盲水印的抗攻击能力极强，即使图片经过旋转、裁剪、涂抹、压缩等处理，解码算法在多数情况下仍然能够提取出水印信息。盲水印添加及提取过程如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/86134661e35b2cdc4b41be05bfbf5987.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e137d01c2095f3b500fce05215f20814.jpg)
 
 
 

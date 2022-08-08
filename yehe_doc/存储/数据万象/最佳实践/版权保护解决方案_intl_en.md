@@ -29,7 +29,7 @@ Visible watermarks are suitable for scenarios where the brand awareness is high 
 ### Blind image watermark
 
 The blind watermark feature is a more secure watermark mode. It allows you to add a watermark to the input image information **without displaying the watermark** or significantly affecting the image quality. If you think your image might have been stolen, you can extract the blind watermark from the suspected image to prove that the image **belongs to you**. A blind watermark has powerful protection capabilities. Even if an image is rotated, cropped, smeared, or compressed, the decoding algorithm can still extract the watermark information in most cases. The processes of adding and extracting a blind watermark are as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/86134661e35b2cdc4b41be05bfbf5987.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e137d01c2095f3b500fce05215f20814.jpg)
 
 
 
