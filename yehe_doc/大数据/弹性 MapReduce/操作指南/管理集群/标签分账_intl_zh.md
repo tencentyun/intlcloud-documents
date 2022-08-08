@@ -19,7 +19,7 @@
 	- 已有集群配置分账标签
 		- 集群添加分账标签：登录 [弹性 MapReduce 控制台](https://console.cloud.tencent.com/emr)，在集群列表页面中，选择需要编辑标签的集群，单击顶部的**更多操作 > 编辑标签**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/93bb213f6e6c4b6947529a3fa3fb86f9.png)
-		- 在弹出的“您已经选择2个云资源”窗口中，根据实际需求进行分账标签的添加、修改或者删除分类标签。
+		- 在弹出的“您已经选择2个云资源”窗口中，根据实际需求进行分账标签的添加、修改或者删除分账标签。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f0af8b0ff374614d42dca5dfb59a687f.png)
 
 >? 最多支持对20个集群进行标签的批量编辑操作。
@@ -33,7 +33,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/fb542f6be94dfb569e0a122d7cdf09ac.png)
 
 3. 查看节点分账标签
-对集群赋予的分账标签，会被集群中的 CBD（如元数据库）、CBS（系统盘、数据盘）、CVM（云服务器）自动继承。
+对集群赋予的分账标签，会被集群中的 CDB（如元数据库）、CBS（系统盘、数据盘）、CVM（云服务器）自动继承。
 	- 设置节点标签字段：集群列表 > 选择集群名称 > 资源管理 > 节点列表，单击**设置**图标。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5fd76595e1fe389c499977f74eaa0e3f.png)
 勾选标签字段显示，如下图所示：
