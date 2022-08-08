@@ -183,16 +183,4 @@
 <td>视频通话、互动直播、秀场直播等</td>
 <td>AI 美颜属于增值服务，由 腾讯特效 SDK 收取相关费用。</a></td>
 </tr>
-<tr>
-<td>语音内容审核</td>
-<td>支持语音鉴黄等违规内容安全检测，可用于业务内容安全检查</td>
-<td>业务安全检查，合规等</td>
-<td>语音内容审核属于增值服务，由 天御内容安收取 相关费用，如需使用请 <a href="https://intl.cloud.tencent.com/contact-us">联系我们</a> 申请开通</td>
-</tr>
-<tr>
-<td>视频内容审核</td>
-<td>支持视频鉴黄等违规内容安全检测，可用于业务内容安全检查</td>
-<td>业务安全检查，合规等</td>
-<td>视频内容审核属于增值服务，由 <a href="https://intl.cloud.tencent.com/document/product/267">云直播</a> 收取相关费用，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/267/39607">智能鉴黄相关费用</a></td>
-</tr>
 </tbody></table>
