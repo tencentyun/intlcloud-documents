@@ -7,14 +7,14 @@ For example, in the employee table `create table employee(id int, age int, gende
 
 ## Supported Versions
 Kernel version: MySQL 5.7 20210330 and above.
-
+>? Column compression for closed by default, if you want to use, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to open. 
 ## Use Cases
 If a table has many frequently accessed small fields and infrequently accessed large fields, you can compress the large field columns.
 
 ## Use Instructions
 ### Supported data types
 1. `BLOB` (including `TINYBLOB`, `MEDIUMBLOB`, and `LONGBLOB`)
-2. `TEXT` (including `TINYTEXT`, `MEDUUMTEXT`, and `LONGTEXT`)
+2. `TEXT` (including `TINYTEXT`, `MEDIUMTEXT`, and `LONGTEXT`)
 3. `VARCHAR`
 4. `VARBINARY`
 
