@@ -17,7 +17,7 @@ Solution: you can modify parameters on the **Database Management** > **Parameter
 ## Operation Specifications
 ### Notes
 - Do not use weak passwords for enhanced instance security.
-- Make sure that the CVM instance of the client and the TencentDB for MySQL instance are in the same region and under the same account when connecting to or logging in to databases over the private network.
+- The intranet connection login must ensure that the cloud server CVM on the client side and the cloud database mysql are machines with the same account, the same region and the same VPC.
 - Make sure that the client's MySQL version is the same as that of the TencentDB for MySQL instance when locally parsing the binlogs downloaded from the console; otherwise, garbled characters will be displayed during parsing. It is recommended to use mysqlbinlog v3.4 or higher.
 - Enclose the URL with quotation marks when downloading cold backup files to a CVM instance over the private network in the console; otherwise, a 404 error will occur.
 
