@@ -1,11 +1,42 @@
 バージョン番号「major.minor.patch」の具体的なルールは次のとおりです。
   - major：メジャーバージョン番号。メジャーバージョンのリファクタリングがある場合、このフィールドはインクリメントされます。通常、メジャーバージョン間のインターフェースには互換性がありません。
-  - minor：マイナーバージョン番号。マイナーバージョン番号間のインターフェースには互換性があります。新しいインターフェースまたは最適化されたインターフェースがある場合、フィールドはインクリメントされます。
-  - patch：パッチ番号。機能の改善または欠陥の修正がある場合、このフィールドはインクリメントされます。
+  - minor：マイナーバージョン番号です。マイナーバージョン番号間のインターフェースには互換性があります。新しいインターフェースまたは最適化されたインターフェースがある場合、フィールドはインクリメントされます。
+  - patch：パッチ番号です。機能の改善または欠陥の修正がある場合、このフィールドはインクリメントされます。
 
 >!
 > - 製品の安定性を高め、より良いオンラインサポートをご利用いただくため、速やかに最新バージョンに更新することをお勧めします。
 > - バージョンアップに関する注意事項については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
+
+## Version 4.13.0 @2022.07.08
+
+**Feature**
+ インターフェース[Client.destroy](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#destroy)を追加し、[Client](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html)のライフサイクルを改善しました。
+
+**Improvement**
+
+- スモールストリームエンコードのパフォーマンスを最適化し、スムーズさを向上させました。
+- キャプチャ自動回復の成功イベント[DEVICE_AUTO_RECOVERED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.DEVICE_AUTO_RECOVERED)を追加しました。
+
+**Bug Fixed**
+- [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)インターフェースでクラウドミクスストリーミングを開始した際に、30秒を超えた切断からネットワークが復旧すると、ミクスストリーミングが続行しない不具合を修正しました。
+- [Client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream)インターフェースがCDNにストリームをプッシュする際に、30秒を超えた切断からネットワークが復旧すると、CDNストリームが切断される不具合を修正しました。
+
+## Version 4.12.7 @2022.06.17
+
+**Improvement**
+- [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)mixUser.renderModeパラメータで設定されたミクスインストリームレンダリングモードをサポートしています。
+- デフォルトのvideo profileを`480p_2`に変更することで、画質を維持したままアップストリーム帯域幅の消費を抑えることができます。詳細については、[LocalStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setVideoProfile)をご参照ください。
+- オートレジューム再生の成功率を引き上げます。
+- 切断、再接続後のmute状態の精度を向上させます。
+- Mac Safari 15.1 muteVideoページのクラッシュ問題を回避しました。詳細については、[webkit bug](https://bugs.webkit.org/show_bug.cgi?id=232006)をご参照ください。
+
+**Bug Fixed**
+デュアルストリームのシナリオ（非オートサブスクリプション）でstream-addedイベントがスローされないことがある問題を修正しました。
+
+## Version 4.12.6 @2022.06.10
+
+**Improvement**
+client.joinは、重複入室防止ロジックが追加されました。詳細については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
 ## Version 4.12.5 @2022.05.20
 
@@ -26,7 +57,7 @@
 
 - stream-addedイベントがスローされないことがある問題を修正しました。
 - FirefoxでLogitechカメラを使用して480pでキャプチャを行えない問題を回避しました。
-- iPad WKWebviewへのSDKインポート時にエラーが発生する問題を修正しました。
+- iPad WKWebviewへのsdkインポート時にエラーが発生する問題を修正しました。
 
 ## Version 4.12.3 @2022.04.19
 
@@ -37,13 +68,15 @@
 - ダッシュボードのトラブルシューティングに役立つよう、Safari音量レポートを追加しました。
 
 **Bug Fixed**
+
 - liveモードでネットワーク切断後の再接続時に異常が発生することがある問題を修正しました。
 - iOS 11で音量取得に異常が発生する問題を修正しました。
 
 ## Version 4.12.2 @2022.04.02
 
 **Improvement**
-音量計算ロジックを最適化し、メモリ占有率およびパフォーマンスのオーバーヘッドを低減させました。
+
+- 音量計算ロジックを最適化し、メモリ占有率およびパフォーマンスのオーバーヘッドを低減させました。
 
 **Bug Fixed**
 
@@ -53,18 +86,22 @@
 ## Version 4.12.1 @2022.03.18
 
 **Note**
-このバージョンへのアップグレードの際は注意が必要です。[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
+
+- このバージョンへのアップグレードの際は注意が必要です。[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
 **Improvement**
+
 - [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play) 呼び出しの繰り返し、イメージ再生の設定、再生パラメータの動的変更をサポートしました。
 - キャプチャ自動回復ロジックを改善し、プッシュ時にウォーターマークが脱落することがある問題を回避しました。
 
 **Bug Fixed**
+
 - muteVideo/unmuteVideo後に、リモートのプルスモールストリームがブラックスクリーンになる問題を修正しました。
 - スモールストリームの切断後にstream-subscribedイベントがスローされる問題を修正しました。
 
 **Breaking Change**
-[TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream)インターフェースのmirrorプロパティを破棄しました。[stream.play(elementId, { mirror: true })](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play)をご使用ください。
+
+- [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream)インターフェースのmirrorプロパティを破棄しました。[stream.play(elementId, { mirror: true })](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play)をご使用ください。
 
 ## Version 4.12.0 @2022.03.04
 
@@ -72,7 +109,7 @@
 このバージョンへのアップグレードの際は注意が必要です。[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
 **Feature**
-[client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType)を非同期に変更して、Promiseを返すようにし、Promiseの状態によって大小のストリームの切り替えに成功したかどうかを判断できるようになりました。
+[client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType)を非同期に変更して、Promiseを返すようにし、Promiseの状態によってデュアルストリームの切り替えに成功したかどうかを判断できるようになりました。
 
 **Improvement**
 海外サービスのスケジューリングの正確性を最適化しました。
@@ -83,7 +120,6 @@ user_time_outを受信するとキックアウトされることがある問題�
 ## Version 4.11.13 @2022.02.17
 
 **Improvement**
-
 - npmパッケージのTypescriptステートメントファイルを更新しました。
 - [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play)パラメータの検証ロジックを最適化しました。
 
@@ -126,25 +162,29 @@ user_time_outを受信するとキックアウトされることがある問題�
 このバージョンへのアップグレードの際は注意が必要です。[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
 **Improvement**
+
 - SDKが自動再生に失敗した際に、自動再生失敗の問題を解決するためのインタラクティブポップアップの表示をサポートしました。詳細については、[制限された自動再生の処理に関するアドバイス](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html#h2-3)をご参照ください。
-- 【iOS 15.1でプッシュにcrashが起きる問題】の回避ロジックを最適化しました。詳細については、[iOS Safari 既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+- **iOS 15.1でプッシュにcrashが起きる問題**の回避ロジックを最適化しました。詳細については、[iOS Safariの既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
 - 無音になることがある問題を回避するため、[TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones)は、deviceIdが'communications'であるマイクを返さないようにしました。詳細については、[Chromeの既知の問題 case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2)をご参照ください。
 - switchDeviceポリシーを最適化しました。
 - webview環境におけるコーデックサポート検出の正確性を向上させました。
 - [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream)、[client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream)、[client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)および[client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopMixTranscode)インターフェースのパラメータ検証を改善しました。
 
 **Bug Fixed**
-client.publishでTRTCをサポートしていないというエラーが表示されることがある問題を修正しました。
+
+- client.publishでTRTCをサポートしていないというエラーが表示されることがある問題を修正しました。
 
 ## Version 4.11.8 @2021.11.05
 
 **Improvement**
-- iOS 15.0 で、偶発的にビデオ再生がブラックスクリーンになる問題を回避しました。詳細については、[iOS Safari 既知の問題 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
-- iOS 15.1 で、必ずプッシュにcrashが起きるという問題を回避しました。詳細については、[iOS Safari 既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+
+- iOS 15.0で、偶発的にビデオ再生がブラックスクリーンになる問題を回避しました。詳細については、[iOS Safariの既知の問題 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+- iOS 15.1で、必ずプッシュにcrashが起きるという問題を回避しました。詳細については、[iOS Safariの既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
 
 ## Version 4.11.7 @2021.09.30
 
 **Improvement**
+
 - キーインターフェースは、パラメータタイプの強力な検証を追加します。
 - 開発モード（LogLevelは[Debug](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.LogLevel)）での中国語のエラーメッセージプロンプトをサポートします。
 - デバイスの収集が異常な場合の、収集の自動回復の成功率を引き上げます。
@@ -154,15 +194,18 @@ client.publishでTRTCをサポートしていないというエラーが表示�
 ## Version 4.11.6 @2021.09.10
 
 **Improvement**
-シグナリングスケジューリングロジックを最適化し、弱いネットワーク環境での入室成功率を向上させました。v4.11.5はこのバージョンにアップグレードすることをお勧めします。
+
+- シグナリングスケジューリングロジックを最適化し、弱いネットワーク環境での入室成功率を向上させました。v4.11.5はこのバージョンにアップグレードすることをお勧めします。
 
 ## Version 4.11.5 @2021.09.04
 
 **Improvement**
+
 - シグナリングチャネルの動的スケジューリングをサポートし、弱いネットワーク環境での接続成功率を向上させました。
-- ルーム間のミクスストリーミングをサポートしました。[Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)をご参照ください。
+- ルーム間のミクスストリーミングをサポートしました。詳細については、[Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)をご参照ください。
 
 **Bug Fixed**
+
 - ネットワーク切断と再接続後に、stream-addedイベントを受信できないことがある問題を修正しました。
 - 長時間の画面共有時にフレームレートが0に低下することがある問題を修正しました。
 
@@ -170,32 +213,38 @@ client.publishでTRTCをサポートしていないというエラーが表示�
 ## Version 4.11.4 @2021.08.20
 
 **Improvement**
+
 - oppo＆vivo内蔵ブラウザでのH.264のサポートレベル検出の精度を向上させました。
 - キャプチャ自動回復ロジックを追加しました（デバイスのキャプチャが異常な場合にトリガーされます）。
 - subscribeインターフェースのタイムアウトロジックを追加しました。エラーコードについては、[API_CALL_TIMEOUT](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.API_CALL_TIMEOUT)をご参照ください。
 
 **Bug Fixed**
+
 - 旧バージョンの一部iOS Safariの偶発的なプル失敗の問題を修正しました。
 - デバイスの切り替え後、mute状態が不正確になる問題を修正しました。
 - 入室タイムアウト時に、入室インターフェースをもう一度呼び出すと、偶発的に異常が発生する問題を修正しました。
-- リモートがプッシュをキャンセルした後、速やかにオーディオ・ビデオプレーヤー破棄されない問題を修正しました。
+- リモートがプッシュをキャンセルした後、速やかにオーディオビデオプレーヤー破棄されない問題を修正しました。
 
 ## Version 4.11.3 @2021.07.30
 
 **Improvement**
+
 - publish & subscribeインターフェースのトラブルシューティングロジックを最適化しました。
 - ミキシングプラグインの復旧ポリシーを最適化しました。
 
 **Bug Fixed**
-peer-leave通知が不正確なことがある問題を修正しました。
+
+- 偶発的なpeer-leave通知が不正確な問題を修正しました。
 
 ## Version 4.11.2 @2021.07.23
 
 **Improvement**
+
 - turn serverスケジューリングをサポートし、接続成功率を向上させました。
 - [Client.getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteMutedState)に属性hasSmallを追加し、リモートのスモールプッシュの有無を識別します。
 
 **Bug Fixed**
+
 - LocalStorageが無効である場合に、SDKを使用できない問題を修正しました。
 - 偶発的にpublish異常が出現した場合に、インターフェースがrejectedされない問題を修正しました。
 
@@ -203,20 +252,24 @@ peer-leave通知が不正確なことがある問題を修正しました。
 ## Version 4.11.1 @2021.06.25
 
 **Improvement**
-- 美顔プラグインをサポートしました。[美顔を有効にする](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)をご参照ください。
+
+- 美顔プラグインをサポートしました。詳細については、[美顔を有効にする](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)をご参照ください。
 - データ統計の正確性を最適化しました。
 
 ## Version 4.11.0 @2021.06.18
 
 **Feature**
-ビッグスモールストリームをサポートしています。チュートリアル：[ビッグスモールストリームの伝送を有効にする](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)をご参照ください。
+
+デュアルストリームをサポートしました。チュートリアルについては、[デュアルストリームの伝送を有効にする](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)をご参照ください。
 
 **Improvement**
+
 イベント通知シーケンスを最適化しました。
 
 ## Version 4.10.3 @2021.06.11
 
 **Improvement**
+
 - 品質データ統計ロジックを最適化し、サーバーAPIによる通話品質データの取得をサポートします。
 - [ClientEvent.NETWORK_QUALITY](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.NETWORK_QUALITY)のイベントで、rttとlossデータを返します。
 - インターフェース検証ロジックを最適化し、呼び出しに異常が繰り返し出現することを防止しました。
@@ -225,34 +278,41 @@ peer-leave通知が不正確なことがある問題を修正しました。
 ## Version 4.10.2 @2021.05.24
 
 **Improvement**
+
 - switchDeviceインターフェースの実装ロジックを最適化して、Huaweiブラウザがフロントカメラを切り替えられないことがある問題を回避しました。
 - [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED)イベント通知の精度を向上させました。
 
 **Bug Fixed**
+
 - Native画面共有が再生できないことがある問題を修正しました。
 - 再接続後にstream-removedイベントを受信できないことがある問題を修正しました。
 
 ## Version 4.10.1 @2021.04.30
 
 **Feature**
+
 - Stream接続ステータスの変更の監視をサポートする[StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED)イベントを追加しました。
 - ダウンリンクRTT統計データを取得するため、[Client.getTransportStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getTransportStats)インターフェースをサポートしました。
 - サブストリーム（画面共有）の統計データを取得するため、[Client.getRemoteVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteVideoStats)インターフェースをサポートしました。
 
 **Improvement**
+
 [Client.switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#switchRole)インターフェースの実装ロジックを最適化しました。
 
 **Bug Fixed**
+
 - stream-addedが追加される前に、mute関連イベントがトリガーされることがある問題を修正しました。
 - ルーム参加時に無音になることがある問題を修正しました。
 
 ## Version 4.10.0 @2021.04.16
 
 **Feature**
+
 - インターフェース[Client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream)を追加し、ストリームをTencent Cloud CDNおよびサードパーティのCDNにプッシュできるようにしました。
 - インターフェース[Client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream)を追加し、Tencent Cloud CDNおよびサードパーティのCDNへのプッシュを停止できるようにしました。
 
 **Improvement**
+
 [LocalStream.switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#switchDevice)、[LocalStream.addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#addTrack)、[LocalStream.removeTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#removeTrack)インターフェースのパラメータ検証ロジックを最適化しました。
 
 ## Version 4.9.0 @ 2021.03.19
@@ -560,7 +620,7 @@ createClientにstreamId userdefinerecordidフィールドを追加しました�
 
 **Bug Fixes**
 
-Stream.resume()オーディオ・ビデオの再生シーケンスを調整し、iOSのWeChatブラウザでの自動再生異常の問題を修正しました。
+Stream.resume()オーディオビデオの再生シーケンスを調整し、iOSのWeChatブラウザでの自動再生異常の問題を修正しました。
 
 ## Version 4.3.5 @ 2020.02.05
 
@@ -604,7 +664,7 @@ turn URLプロトコル形式を修正しました
 **Bug Fixes**
 
 - WebSocketシグナリングチャネル1005の異常な再接続と再接続エラー処理を修正しました。
-- ダウンストリームパケット損失率レポートの問題を修正しました。
+- ダウンストリームパケットロス率レポートの問題を修正しました。
 
 ## Version 4.3.1 @ 2019.11.23
 
@@ -666,7 +726,7 @@ LocalStream.switchDevice()は、カメラ切り替え時のブラックスクリ
 **Bug Fixes**
 
 - 旧バージョンのChromeでのWebAudio Contextの数量制限の問題を修正しました。
-- replaceTrack()がローカルオーディオ・ビデオプレーヤーを再起動しない問題を修正しました。
+- replaceTrack()がローカルオーディオビデオプレーヤーを再起動しない問題を修正しました。
 - LocalStream.setScreenProfile()のカスタムプロパティ設定が有効にならない問題を修正しました。
 - audio/video playerの再起動とステータスレポートの問題を修正しました。
 
@@ -676,5 +736,5 @@ LocalStream.switchDevice()は、カメラ切り替え時のブラックスクリ
 リファクタリングされたバージョンは旧バージョンと互換性がありません。インターフェースの変更だけでなく、次の機能も提供しています。
 
 - ビデオのプロパティ（解像度、フレームレートおよびビットレート）は、SDKのLocalStream.setVideoProfile()インターフェースを介してAppによって完全に制御されます。旧バージョンは、Tencent Cloudコンソールの「画面設定 (Spear Role)」ではサポートされなくなりました。
-- SDKはオーディオ・ビデオプレーヤーをStreamオブジェクトにカプセル化し、オーディオ・ビデオの再生はSDKによって完全に制御されます。
-- リモートストリーミングのサブスクリプションおよびサブスクリプション解除機能を提供しています。開発者はClient.subscribe()/unsubscribe()インターフェースを介して、リモートストリームのオーディオ、ビデオまたはオーディオ・ビデオデータストリームの受信をフレキシブルにコントロールできます。
+- SDKはオーディオビデオプレーヤーをStreamオブジェクトにカプセル化し、オーディオビデオの再生はSDKによって完全に制御されます。
+- リモートストリーミングのサブスクリプションおよびサブスクリプション解除機能を提供しています。開発者はClient.subscribe()/unsubscribe()インターフェースを介して、リモートストリームのオーディオ、ビデオまたはオーディオビデオデータストリームの受信をフレキシブルにコントロールできます。
