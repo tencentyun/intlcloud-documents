@@ -7,6 +7,7 @@
 
 ## サポートするバージョン
 カーネルバージョン MySQL 5.7 20210330およびそれ以降
+>?カラム圧縮機能のデフォルトはクローズ状態です。使用する場合は[チケット提出](https://console.cloud.tencent.com/workorder/category)が開きます。
 
 ## ユースケース
 テーブル内にいくつかの大きなフィールドと他の多くの小さなフィールドがあり、小さなフィールドの読み取りと書き込みは頻繁に行われ、大きなフィールドへのアクセス頻度が低い場合、大きなフィールドを圧縮列に設定することができます。
@@ -14,7 +15,7 @@
 ## 利用説明
 ### サポートするデータタイプ
 1. `BLOB`（`TINYBLOB`、`MEDIUMBLOB`、`LONGBLOB`を含む）
-2. `TEXT`（`TINYTEXT`、`MEDUUMTEXT`、`LONGTEXT`を含む）
+2. `TEXT`（`TINYTEXT`、`MEDIUMTEXT`、`LONGTEXT`を含む）
 3. `VARCHAR`
 4. `VARBINARY`
 
