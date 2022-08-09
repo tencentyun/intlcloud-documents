@@ -2,7 +2,7 @@
 
 本文档提供关于盲水印的相关的 API 概览以及 SDK 示例代码。
 
-关于盲水印 API 文档请参见 [盲水印](https://cloud.tencent.com/document/product/436/46782)。
+关于盲水印 API 文档请参见盲水印。
 
 ## 添加盲水印
 
