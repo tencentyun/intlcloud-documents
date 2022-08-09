@@ -129,11 +129,11 @@ Audio/Video formats supported by different container formats are as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | ------------------ | ------------- | -------------- | ------ | -------- | ------ | ------------------------------------------------------------ |
-| Codec              | Request.Audio | Codec format     | String | No   | aac    | Valid values: `aac`, `mp3` |
-| Samplerate         | Request.Audio | Sample rate         | String | No   | 44100  | 1. Unit: Hz<br/>2. Valid values: `11025`, `22050`, `32000`, `44100`, `48000`, `96000`<br/>3. Different container formats support different MP3 sample rates, as shown in the table below.|
+| Codec              | Request.Audio | Codec format     | String | No   | aac    | Valid values: `aac`, `mp3`. |
+| Samplerate         | Request.Audio | Sample rate         | String | No   | 44100  | 1. Unit: Hz<br/>2. Valid values: `11025`, `22050`, `32000`, `44100`, `48000`, `96000`.<br/>3. Different container formats support different MP3 sample rates, as shown in the table below.|
 | Bitrate            | Request.Audio | Original audio bitrate   | String | No   | None     | 1. Unit: Kbps<br/>2. Value range: [8, 1000]|
 | Channels           | Request.Audio | Number of sound channels         | String | No   |  None      | 1. If `Codec` is `aac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.<br/>2. If `Codec` is `mp3`, the value can be `1` or `2`. |
-| Remove             | Request.Audio | Whether to delete the audio stream | String | No   | false    | Valid values: `true`, `false`                                             |
+| Remove             | Request.Audio | Whether to delete the audio stream | String | No   | false    | Valid values: `true`, `false`.                                             |
 
 >? Y indicates supported, and N indicates unsupported.
 

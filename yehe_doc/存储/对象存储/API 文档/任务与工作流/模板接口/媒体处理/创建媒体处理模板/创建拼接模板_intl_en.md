@@ -141,8 +141,8 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | ------------------ | --------------------------------- | ---------- | ------ | ---- | -------------- | ------------------------------------------------------------ |
-| Codec              | Request.ConcatTemplate.<br/>Audio | Codec format     | String | Yes   | Original codec of the file    | Valid values: `aac`, `mp3`                                                |
-| Samplerate         | Request.ConcatTemplate.<br/>Audio | Sample rate         | String | No   | Original sample rate of the file  | <ul  style="margin: 0;"><li>Unit: Hz</li><li>Valid values: `11025`, `22050`, `32000`, `44100`, `48000`, `96000`</li><li>Different container formats support different MP3 sample rates, as shown in the table below.</li></ul> |
+| Codec              | Request.ConcatTemplate.<br/>Audio | Codec format     | String | Yes   | Original codec of the file    | Valid values: `aac`, `mp3`.                                                |
+| Samplerate         | Request.ConcatTemplate.<br/>Audio | Sample rate         | String | No   | Original sample rate of the file  | <ul  style="margin: 0;"><li>Unit: Hz</li><li>Valid values: `11025`, `22050`, `32000`, `44100`, `48000`, `96000`.</li><li>Different container formats support different MP3 sample rates, as shown in the table below.</li></ul> |
 | Bitrate            | Request.ConcatTemplate.<br/>Audio | Audio bitrate   | String | No   | Original audio bitrate of the file   | <ul  style="margin: 0;"><li>Unit: Kbps</li><li>Value range: [8, 1000]</li></ul>                     |
 | Channels           | Request.ConcatTemplate.<br/>Audio | Number of sound channels         | String | No   | Original number of sound channels of the file      | <ul  style="margin: 0;"><li>If `Codec` is `aac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.</li><li>If `Codec` is `mp3`, the value can be `1` or `2`.</li></ul> |
 
@@ -170,7 +170,7 @@ Y indicates supported, and N indicates unsupported.
 | Fps                | Request.ConcatTemplate.<br/>Video | Frame rate                  | String | No   | Original video frame rate | <ul  style="margin: 0;"><li>Value range: (0, 60]</li><li>Unit: fps |
 | Bitrate            | Request.ConcatTemplate.<br/>Video | Bitrate of the video output file      | String | No   |  Original video bitrate           | <ul  style="margin: 0;"><li>Value range: [10, 50000]</li><li>Unit: Kbps    </li></ul>          |
 | Crf                | Request.ConcatTemplate.<br/>Video | Bitrate, which is a quality control factor  | String | No       | Original video bitrate           | <ul  style="margin: 0;"><li>Value range: (0, 51]</li><li> If `Crf` is set, the setting of `Bitrate` becomes invalid. </li><li> If `Bitrate` is empty, `25` is used for this parameter by default.</li></ul> |
-| Remove             | Request.ConcatTemplate.<br/>Video | Whether to delete the video stream     | String | No       | false        |  Valid values: `true`, `false`                                               |
+| Remove             | Request.ConcatTemplate.<br/>Video | Whether to delete the video stream     | String | No       | false        |  Valid values: `true`, `false`.                                               |
 | Rotate              | Request.Video | Rotation angle           | String | No   | None        | 1. Value range: [0, 360)<br/>2. Unit: degree |
 
 <span id="AudioMix"></span>
