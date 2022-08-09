@@ -1,6 +1,6 @@
 Tencent Cloud Short Message Service (SMS) enables you to quickly send SMS messages to recipients worldwide. Built on more than a decade of Tencent's SMS technology development and experience, Tencent Cloud SMS provides flexible and reliable service to over one hundred thousand customers, including platforms with hundreds of millions of users such as QQ and WeChat.
-- Through Chinese Mainland SMS, verification codes can be received in seconds with a 99% deliverability.
-- Through Global SMS, messages can be sent stably and reliably in over 200 countries and regions.
+- Tencent Cloud SMS features a 99% deliverability for verification code SMS.
+- Tencent Cloud Global SMS enables you to send messages to users in over 220 countries and regions.
 
 ## Features
 SMS supports the following features:
