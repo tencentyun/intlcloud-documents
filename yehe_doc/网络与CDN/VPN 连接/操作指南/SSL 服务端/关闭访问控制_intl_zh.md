@@ -3,7 +3,7 @@
 ## 创建 SSL 服务端时关闭
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 在左侧目录中单击 **VPN 连接** > **SSL 服务端**，进入管理页面。
-3. 在 SSL 服务端管理页面，单击**+新建**。
+3. 在 SSL 服务端管理页面，单击<b>+新建</b>。
 4. 在弹出的**新建 SSL 服务端**对话框中，完成其他参数配置时将**访问控制**选择**关闭**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/905cb18a7d7ba8b3208fb39bf7240bd0.png)
 5. 完成其他参数配置后，请单击**确定**。
