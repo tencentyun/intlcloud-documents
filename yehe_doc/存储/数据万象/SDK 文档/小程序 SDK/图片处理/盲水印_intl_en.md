@@ -1,20 +1,20 @@
-## 简介
+## Overview
 
-本文档提供关于盲水印的相关的 API 概览以及 SDK 示例代码。
+This document provides an overview of APIs and SDK code samples for blind watermarking.
 
-关于盲水印 API 文档请参见盲水印。
+For blind watermark APIs, see Blind Watermark.
 
-## 添加盲水印
+## Adding Blind Watermark
 
-#### 功能说明
+#### Feature description
 
-盲水印支持在上传时添加和下载时添加。
+You can add a blind watermark when uploading or downloading an object.
 
-#### 示例代码一：上传时添加盲水印
+#### Sample 1: Adding a blind watermark during upload
 
 ```html
 <view>
-  <button type="primary" bindtap="button">上传时添加盲水印</button>
+  <button type="primary" bindtap="button">Add a blind watermark during upload</button>
 </view>
 ```
 
@@ -36,7 +36,7 @@ Page({
                 Key: file.name,
                 Body: res.data,
                 Headers: {
-                  // 万象持久化接口，上传时持久化
+                  // CI's persistent processing API during upload
                   'Pic-Operations': '{"is_pic_info": 1, "rules": [{"fileid": "desample_photo.jpg", "rule": "watermark/3/type/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn"}]}',
                 },
               },
@@ -54,11 +54,11 @@ Page({
 });
 ```
 
-#### 示例代码二：下载时添加盲水印
+#### Sample 2: Adding a blind watermark during download
 
 ```html
 <view>
-  <button type="primary" bindtap="button">下载时添加盲水印</button>
+  <button type="primary" bindtap="button">Add a blind watermark during download</button>
 </view>
 ```
 

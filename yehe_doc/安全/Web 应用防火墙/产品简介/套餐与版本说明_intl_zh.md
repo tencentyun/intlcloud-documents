@@ -251,11 +251,11 @@
 <td>50000QPS</td>
 </tr>
 <tr>
- <td>带宽规格（云内/云外）</td>
-<td>60Mbps/20Mbps</td>
-<td>125Mbps/40Mbps</td>
-<td>250Mbps/80Mbps</td>
-<td>1250Mbps/400Mbps</td>
+ <td>带宽规格（云内）</td>
+<td>60Mbps</td>
+<td>125Mbps</td>
+<td>250Mbps</td>
+<td>1250Mbps</td>
 </tr>
 <tr>
  <td>多地域联动支持</td>
@@ -655,11 +655,11 @@
 <td>50000QPS</td>
 </tr>
 <tr>
- <td>带宽规格（云内/云外）</td>
-<td>60Mbps/20Mbps</td>
-<td>125Mbps/40Mbps</td>
-<td>250Mbps/80Mbps</td>
-<td>1250Mbps/400Mbps</td>
+ <td>带宽规格（云内）</td>
+<td>60Mbps</td>
+<td>125Mbps</td>
+<td>250Mbps</td>
+<td>1250Mbps</td>
 </tr>
 <tr>
  <td>多地域联动支持</td>

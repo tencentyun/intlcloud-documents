@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit a file moderation job. The file moderation feature is async. You can submit a job to moderate your files, and then use the [file moderation job querying API](https://intl.cloud.tencent.com/document/product/436/48259) or [file moderation callback API](https://intl.cloud.tencent.com/document/product/436/48260) to query the moderation results.
+This API is used to submit a file moderation job. The file moderation feature is async. You can submit a job to moderate your files, and then use the API for [Querying File Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48259) or [File Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48260) to query the moderation results.
 
 >?
 > - Moderate files stored in COS.
@@ -97,7 +97,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------- | :----------------------------------------------------------- | :----- | :------- |
-| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, adverting, and illegal information. For configuration guidelines, see [Setting Public Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation according to the scenes configured in the moderation policy. </br>If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
+| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, adverting, and illegal information. For configuration guidelines, see [Setting Public Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. </br>If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
 | DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). This parameter will no longer be maintained in the future. You can pass in multiple types and separate them by commas, such as `Porn,Ads`. If you need to moderate more scenes, use the `BizType` parameter. | String | No |
 | Callback | Request.Conf | The moderation result can be sent to your callback address in the form of a callback. Addresses starting with `http://` or `https://` are supported, such as `http://www.callback.com`.  | String | No |
 

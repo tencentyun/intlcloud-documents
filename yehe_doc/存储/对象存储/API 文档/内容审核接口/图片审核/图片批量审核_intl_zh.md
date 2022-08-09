@@ -8,7 +8,7 @@
 >
 
 <span id=1></span>
-支持根据不同的业务场景 [配置自定义的审核策略](https://cloud.tencent.com/document/product/460/56345)。
+支持根据不同的业务场景配置自定义的审核策略。
 
 ## 限制说明
 
