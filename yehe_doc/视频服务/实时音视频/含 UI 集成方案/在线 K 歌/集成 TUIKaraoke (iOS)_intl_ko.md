@@ -4,12 +4,7 @@ TUIKaraoke는 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로
 
 >?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
-<table>
-<tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/375d793b2b002b7479c64e71d9bcefcb.png"width="850"></td>
-</tr>
-</table>
-
+![](https://qcloudimg.tencent-cloud.cn/raw/c17771587a0803db28047796fcd0df11.png)
 
 ## 컴포넌트 통합
 ### 1단계: TUIKaraoke 컴포넌트 다운로드 및 가져오기
