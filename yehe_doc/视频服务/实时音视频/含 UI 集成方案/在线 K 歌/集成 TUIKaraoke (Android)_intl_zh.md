@@ -1,7 +1,7 @@
 ## 组件介绍
 TUIKaraoke 是一个开源的音视频 UI 组件，通过在项目中集成 TUIKaraoke 组件，您只需要编写几行代码就可以为您的应用添加在线 K 歌场景，体验 K 歌、麦位管理、收发礼物、文字聊天等 TRTC 在 KTV 场景下的相关能力。TUIKaraoke 同时支持 iOS 平台的源代码，基本功能如下图所示：
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c17771587a0803db28047796fcd0df11.png）
+![](https://qcloudimg.tencent-cloud.cn/raw/c17771587a0803db28047796fcd0df11.png)
 
 ## 组件集成
 ### 步骤一：下载并导入 TUIKaraoke 组件
