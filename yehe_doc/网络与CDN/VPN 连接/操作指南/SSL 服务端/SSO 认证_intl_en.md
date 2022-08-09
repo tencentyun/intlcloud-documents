@@ -11,7 +11,7 @@ You have created a user group, added a user, and granted the application access 
 2. Click **VPN Connections** > **SSL VPN server** on the left sidebar to enter the management page.
 3. Click **Create**.
 4. In the **Create an SSL VPN server** pop-up window, select **Certificate verification + Identity verification** for **Verification method** and select your EIAM application.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6701e435810e93e5e4d1e64d0fb4ff99.png" width="70%">
+![](https://qcloudimg.tencent-cloud.cn/raw/6701e435810e93e5e4d1e64d0fb4ff99.png)
 <table>
 <tr>
 <th>Parameter</th>
@@ -50,6 +50,7 @@ You have created a user group, added a user, and granted the application access 
 <td>SSL VPN server access control switch</td>
 </tr>
 </table>
+
 5. You can **enable access control** as needed. For more information, see [Enabling Access Control](https://intl.cloud.tencent.com/document/product/1037/48814).
 
 ## Enabling the feature after creating an SSL VPN server
