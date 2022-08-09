@@ -1,14 +1,14 @@
 ## Feature Description
 
-This API is used to submit an audio moderation job. The audio moderation feature is async. You can submit a job to moderate your audio files, and then use the [audio moderation job querying API](https://intl.cloud.tencent.com/document/product/436/48263) or [audio moderation callback API](https://intl.cloud.tencent.com/document/product/436/48264) to query the moderation results.
+This API is used to submit an audio moderation job. The audio moderation feature is async. You can submit a job to moderate your audio files, and then use the API for [Querying Audio Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48263) or [Audio Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48264) to query the moderation results.
 
-The API can:
+The API supports the following operations:
 >? 
 > - Moderate audio files stored in COS.
 > - Moderate audios at URLs of a third-party cloud storage vendor.
 >
 - Automatically detect audio files and recognize non-compliant content in ASR and sexy moaning dimensions based on the deep learning technology.
-- Get the detection results by setting the callback address `Callback` or calling the [audio moderation job result querying API](https://intl.cloud.tencent.com/document/product/1045/48267).
+- Get the detection results by setting the callback address `Callback` or calling the API for [Querying Audio Moderation Job Result](https://intl.cloud.tencent.com/document/product/1045/48267).
 - Recognize various non-compliant scenes, including pornographic, illegal, and adverting information.
 <span id=1></span>
 - Customize moderation policies based on different business scenarios.
@@ -17,8 +17,8 @@ The API can:
 
 - Each moderation scene is billed separately. For example, if you choose to moderate two scenes involving pornography and advertising, then **one audio file** will be moderated and billed **twice**.
 - Calling the API will incur audio moderation fees and [COS read request fees](https://intl.cloud.tencent.com/document/product/436/40100).
-- If the audio files are stored in COS STANDARD_IA storage class, calling the moderation API will incur [STANDARD_IA data retrieval fees](https://intl.cloud.tencent.com/document/product/436/40097).
-- Audio moderation is not supported for objects stored in the ARCHIVE or DEEP ARCHIVE storage classes. To moderate these objects, you need to [restore](https://intl.cloud.tencent.com/document/product/436/12633) them first.
+- If the audio files are stored in COS STANDARD_IA storage class, calling the moderation API will incur STANDARD_IA data retrieval fees as described in [Data Retrieval Fees](https://intl.cloud.tencent.com/document/product/436/40097).
+- Audio moderation is not supported for objects stored in the ARCHIVE or DEEP ARCHIVE storage classes. To moderate these objects, you first need to restore them as instructed in [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633).
 - Moderating audios at URLs of a third-party cloud storage vendor will incur downstream traffic fees charged by the vendor.
 
 ## Restrictions
@@ -28,7 +28,7 @@ The API can:
 - Supported audio bitrate: 128–256 Kbps.
 - Supported audio file formats: MP3, WAV, AAC, FLAC, AMR, 3GP, M4A, WMA, OGG, APE.
 - Supported audio languages: Mandarin, English, Cantonese.
-- When the input is a video file, the audio track can be extracted from it for audio content moderation.
+- When a video file is used as the input, the audio track can be extracted for audio content moderation.
 
 ## Request
 
@@ -108,7 +108,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------- | :----------------------------------------------------------- | :----- | :------- |
-| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, adverting, and illegal information. For configuration guidelines, see [Setting Public Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation according to the scenes configured in the moderation policy. </br>If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
+| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, adverting, and illegal information. For configuration guidelines, see [Setting Public Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. </br>If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
 | DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). This parameter will no longer be maintained in the future. You can pass in multiple types and separate them by commas, such as `Porn,Ads`. If you need to moderate more scenes, use the `BizType` parameter. | String | No |
 | Callback | Request.Conf | The moderation result can be sent to your callback address in the form of a callback. Addresses starting with `http://` or `https://` are supported, such as `http://www.callback.com`.  | String | No |
 | CallbackVersion | Request.Conf | Structure of the callback content. Valid values: Simple (the callback content contains basic information), Detail (the callback content contains detailed information). Default value: Simple. | string | No |

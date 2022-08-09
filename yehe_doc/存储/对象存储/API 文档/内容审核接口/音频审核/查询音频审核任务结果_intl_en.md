@@ -88,7 +88,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------------------ | :----------------------------------------------------------- | :-------- |
-| Code | Response.JobsDetail | Error code, which will be meaningful only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
+| Code | Response.JobsDetail | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
 | Message | Response.JobsDetail | Error description, which will be returned only if `State` is `Failed`. | String |
 | DataId | Response.JobsDetail | This field will return the original content in the moderation result, which can contain up to 512 bytes. You can use this field to uniquely identify the data to be moderated in your business. | String |
 | JobId | Response.JobsDetail | ID of the audio moderation job. | String |
@@ -96,8 +96,8 @@ The nodes are as described below:
 | CreationTime       | Response.JobsDetail | Creation time of the audio moderation job. | String |
 | Object             | Response.JobsDetail | If the moderated audio file is a file stored in COS, this field indicates its filename. | String |
 | Url                | Response.JobsDetail | If the moderated audio file is at a URL, this field indicates the URL. | String |
-| Label | Response.JobsDetail | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: **Normal**: normal; **Porn**: pornographic; **Ads**: advertising; and other types of unsafe or inappropriate content. | String |
-| Result | Response.JobsDetail | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: **0** (normal), **1** (sensitive), **2** (suspiciously sensitive, with human review recommended). | Integer |
+| Label | Response.JobsDetail | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. Returned values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
+| Result | Response.JobsDetail | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | AudioText          | Response.JobsDetail | This field is used to return the recognized text content of the audio file.                 | String  |
 | PornInfo | Response.JobsDetail | The moderation result of the **pornographic information** moderation scene. | Container |
 | AdsInfo | Response.JobsDetail | The moderation result of the **advertising information** moderation scene. | Container |
@@ -120,8 +120,8 @@ The nodes are as described below:
 | Text               | Response.JobsDetail.Section | This field is used to return the ASR text recognition result of the current audio segment. | String |
 | OffsetTime         | Response.JobsDetail.Section | This field is used to return the time where the current audio segment is in the entire audio in milliseconds, such as 5000 (i.e., 5000 milliseconds after the audio starts). | Integer |
 | Duration           | Response.JobsDetail.Section | Duration of the current audio segment in milliseconds. | Integer |
-| Label | Response.JobsDetail.Section | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: **Normal**: normal; **Porn**: pornographic; **Ads**: advertising; and other types of unsafe or inappropriate content. | String |
-| Result | Response.JobsDetail.Section | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: **0** (normal), **1** (sensitive), **2** (suspiciously sensitive, with human review recommended). | Integer |
+| Label | Response.JobsDetail.Section | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. Returned values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
+| Result | Response.JobsDetail.Section | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | PornInfo | Response.JobsDetail.Section | The moderation result of the **pornographic information** moderation scene. | Container |
 | AdsInfo | Response.JobsDetail.Section | The moderation result of the **advertising information** moderation scene. | Container |
 
