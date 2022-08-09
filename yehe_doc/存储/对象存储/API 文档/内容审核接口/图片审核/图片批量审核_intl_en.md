@@ -8,14 +8,14 @@ The batch image moderation API adopts a sync POST request method. You can use th
 >
 
 <span id=1></span>
-Customize moderation policies based on different business scenarios as instructed in [Setting Moderation Policy](https://cloud.tencent.com/document/product/460/56345).
+Customize moderation policies based on different business scenarios as instructed in Setting Moderation Policy.
 
 ## Restrictions
 
 - Supported image file size: < 32 MB. To moderate images larger than 5 MB in size, you need to use the `large-image-detect` parameter when calling the API.
 - Supported image quantity: Up to **100** images per request.
 - Supported image file resolution: A **resolution above 256x256** is recommended; otherwise, the recognition effect may be affected.
->- Supported image file formats: PNG, JPG, JPEG, BMP, GIF, WEBP. WEBP images involving advertising QR codes cannot be moderated currently.
+- Supported image file formats: PNG, JPG, JPEG, BMP, GIF, WEBP. WEBP images involving advertising QR codes cannot be moderated currently.
 - Supported image URL transfer protocols: HTTP, HTTPS.
 - Calling the API requires a signature. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
