@@ -11,7 +11,7 @@ SMS supports the following features:
      </tr>
 	 <tr>      
          <td><ul><li>Verification code, notification, and marketing SMS</li><li>Custom SMS signature and body</li><li>Single-recipient and bulk SMS</li><li>Upstream SMS</li><li>SMS delivery status check</li></td>   
-	     <td><ul><li>Secure HTTPS tunnels</li><li>Supports allowlist-based request IP filtering</li><li>Supports sensitive word-based SMS content filtering </li><li>Supports SMS sending frequency limit control</li><li>Supports multi-region deployment and nearby access</li></td>   
+	     <td><ul><li>Supports secure HTTPS tunnels</li><li>Supports allowlist-based request IP filtering</li><li>Supports sensitive word filtering in SMS content</li><li>Supports SMS sending frequency limit control</li><li>Supports multi-region deployment and nearby access</li></td>   
      </tr> 
 </table>
 
