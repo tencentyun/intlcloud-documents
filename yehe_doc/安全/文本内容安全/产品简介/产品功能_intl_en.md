@@ -4,19 +4,15 @@ TMS recognizes and filters text involving multiple types of porn, including vulg
 
 ### Terrorism Information Recognition
 
-TMS recognizes various types of actions, objects (e.g., guns, knives, and signs), and scenes (e.g., riots and war) suspected of violence or terrorism.
+TMS recognizes various types of figures, objects (e.g., guns, knives, and signs), and scenes (e.g., riots and war) suspected of violence or terrorism.
 
 ### Ad Recognition
 
-TMS filters various forms of ad text, such as online, product, spam, and prostitution ads.
+TMS filters various types of ads, such as normal product ads, spam ads, prostitution ads.
 
-### Sensitive Content Recognition
+### Language recognition
 
-TMS recognizes multiple forms of sensitive content, including sensitive figures, objects, and scenes.
-
-### Illegal and Non-Compliant Content Recognition
-
-TMS recognizes different types of illegal and non-compliant content, such as content involving smoking, drug use, gambling, superstition, subcultures, and vulgar scenes.
+It supports dozens of languages, including Chinese, English, French, German, Italian, Spain and more.
 
 ### Custom Content Recognition
 

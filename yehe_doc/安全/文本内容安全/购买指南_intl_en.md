@@ -1,6 +1,6 @@
 ## Billing Overview
 
-TMS is postpaid. For pricing details, consult your sales rep.
+Text Moderation System (TMS) adopts the daily pay-as-you-go mode. To get the quotation or activate the service, please [contact us](https://intl.cloud.tencent.com/contact-us). 
 
 ## Overdue Payment Policy
 

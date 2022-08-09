@@ -1,6 +1,6 @@
 ## Billing Overview
 
-AMS is **daily pay-as-you-go (postpaid)** by the actual usage.
+Audio Moderation System (AMS) adopts the daily pay-as-you-go mode. To get the quotation or activate the service, please [contact us](https://intl.cloud.tencent.com/contact-us). 
 
 ## Overdue Payment Policy
 
