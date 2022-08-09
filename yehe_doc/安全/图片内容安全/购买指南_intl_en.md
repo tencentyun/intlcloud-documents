@@ -1,6 +1,6 @@
 ## Billing Overview
 
-IMS is postpaid. For pricing details, consult your sales rep.
+Image Moderation System (IMS) adopts the daily pay-as-you-go mode. To get the quotation or activate the service, please [contact us](https://intl.cloud.tencent.com/contact-us). 
 
 
 ## Overdue Payment Policy
