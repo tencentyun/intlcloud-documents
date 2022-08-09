@@ -4,12 +4,7 @@ TUIKaraokeはオープンソースのオーディオビデオUIコンポーネ�
 
 >?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブにすると、デフォルトでは、100DAUまでサポートするIM SDK体験版もアクティブになります。
 
-<table>
-<tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/375d793b2b002b7479c64e71d9bcefcb.png"width="850"></td>
-</tr>
-</table>
-
+![](https://qcloudimg.tencent-cloud.cn/raw/c17771587a0803db28047796fcd0df11.png)
 
 ## コンポーネントの統合
 ### ステップ1：TUIKaraokeコンポーネントのダウンロードとインポート
