@@ -28,7 +28,7 @@ The API supports the following operations:
 
 - Supported image file size: < 32 MB. To moderate images larger than 5 MB in size, you need to use the `large-image-detect` parameter when calling the API.
 - Supported image file resolution: A **resolution above 256x256** is recommended; otherwise, the recognition effect may be affected.
->- Supported image file formats: PNG, JPG, JPEG, BMP, GIF, WEBP. WEBP images involving advertising QR codes cannot be moderated currently.
+- Supported image file formats: PNG, JPG, JPEG, BMP, GIF, WEBP. WEBP images involving advertising QR codes cannot be moderated currently.
 - Supported image URL transfer protocols: HTTP, HTTPS.
 - Calling the API requires a signature. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
