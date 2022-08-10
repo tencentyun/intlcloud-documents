@@ -63,7 +63,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -83,7 +83,7 @@ Operation: sharpen
 >
 
 
-#### Example 1: sharpening
+#### Example 1: Sharpening
 
 This example sharpens an image with the sharpening value of `70`:
 
@@ -94,7 +94,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/s
 Output image:
 ![](https://main.qcloudimg.com/raw/b599b8cc198d9682d2f6316aa0e44a9d.jpeg)
 
-#### Example 2: sharpening an image with a signature carried
+#### Example 2: Sharpening an image with a signature carried
 
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 

@@ -63,7 +63,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -79,7 +79,7 @@ Operation: contrast
 
 ## Examples
 
-#### Example 1: adjusting contrast
+#### Example 1: Adjusting contrast
 
 >? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
 >
@@ -93,7 +93,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/c
 Output image:
 ![](https://main.qcloudimg.com/raw/555a3a42dff976c0f4ef382de70eae79.jpg)
 
-#### Example 2: adjusting contrast with a signature carried
+#### Example 2: Adjusting contrast with a signature carried
 
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 

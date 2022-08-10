@@ -77,7 +77,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -123,7 +123,7 @@ The 3x3 grid position diagram is as follows. Once you specify the `gravity` para
 >
 
 
-#### Example 1: adding an image watermark
+#### Example 1: Adding an image watermark
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
@@ -132,7 +132,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/
 After an image watermark is added:
 ![](https://main.qcloudimg.com/raw/6412c0d6eaaadc5c193515f40d736dad.jpeg)
 
-#### Example 2: adding an image watermark with the tile mode and opacity specified
+#### Example 2: Adding an image watermark with the tile mode and opacity specified
 
 ```plaintext
 https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast/batch/1/degree/45/dissolve/40/
@@ -141,7 +141,7 @@ https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1
 The effect of an added image watermark rotated by 45 degrees and tiled with 40% opacity is as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d7e49b9cf7ea1dcc0459b2a5e3b2af8d.jpg)
 
-#### Example 3: adding an image watermark with a signature carried
+#### Example 3: Adding an image watermark with a signature carried
 
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 

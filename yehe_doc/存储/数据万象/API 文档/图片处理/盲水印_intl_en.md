@@ -66,7 +66,7 @@ Pic-Operations: <PicOperations>
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 #### Request headers
@@ -288,7 +288,7 @@ Pic-Operations: <PicOperations>
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 #### Request headers
@@ -459,7 +459,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 
 ## Extracting Blind Watermarks
 
-### Example 1: extracting upon upload
+### Example 1: Extracting upon upload
 
 #### Sample request
 
@@ -477,7 +477,7 @@ Pic-Operations: <PicOperations>
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 #### Request headers
@@ -605,7 +605,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 >
 
 
-### Example 2: extracting from an image stored in COS
+### Example 2: Extracting from an image stored in COS
 
 The request for extracting a blind watermark from an image stored in COS is the same as that used to [Process In-Cloud Data](https://intl.cloud.tencent.com/document/product/436/40592), except that you need to add the image processing parameter `Pic-Operations` to the request header and use the watermark extraction parameter `watermark/4`.
 
