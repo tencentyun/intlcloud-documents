@@ -13,7 +13,7 @@ COSリクエストツールは、Tencent Cloud COSが提供するWeb側デバッ
 [COSリクエストツール](https://console.cloud.tencent.com/api/explorer?Product=cos)ページをクリックし、「COS」製品を選択し、必要なAPIを選択します。このAPIの対応パラメータを入力し、リクエスト送信をクリックした後に対応するリクエストの応答結果を取得します。
 
 下図のように、COSリクエストツールの全体ページは、左から右の順に製品欄、API欄、パラメータ欄、結果欄があります。それぞれの欄で対応操作を実行できます。最後に結果欄でリクエストを送信し、応答結果と関連するプロセスパラメータ情報を取得します。
-![](https://main.qcloudimg.com/raw/6329b432ed56516ca311bcbe5720d13f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2304f363c6f61cef274e47804f34e3a4.png)
 
 COSリクエストツールの詳細操作については、以下の手順を参照してください。
 

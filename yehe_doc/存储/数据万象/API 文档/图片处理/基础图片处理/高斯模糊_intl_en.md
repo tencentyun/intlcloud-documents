@@ -63,7 +63,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -86,7 +86,7 @@ Operation: blur
 >
 
 
-#### Example 1: blurring an image with a radius of 8 and the sigma 5
+#### Example 1: Blurring an image with a radius of 8 and the sigma 5
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/blur/8x5
@@ -95,7 +95,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/b
 Output image:
 ![](https://main.qcloudimg.com/raw/d635efeeca1d160e773737361e375801.jpeg)
 
-#### Example 2: blurring an image with a radius of 8 and the sigma 5 with a signature carried
+#### Example 2: Blurring an image with a radius of 8 and the sigma 5 with a signature carried
 
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 

@@ -88,7 +88,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -130,7 +130,7 @@ The 3x3 grid position diagram is as follows. Once you specify the `gravity` para
 >
 
 
-#### Example 1: adding a text watermark
+#### Example 1: Adding a text watermark
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/2/text/6IW-6K6v5LqRwrfkuIfosaHkvJjlm74/fill/IzNEM0QzRA/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/45
@@ -139,7 +139,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/2/
 After text watermarks are added:
 ![](https://main.qcloudimg.com/raw/e2ea173afafb7b50a2a7824b9173edf2.jpeg)
 
-#### Example 2: adding a text watermark with a signature carried
+#### Example 2: Adding a text watermark with a signature carried
 
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 

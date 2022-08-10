@@ -2,7 +2,7 @@
 
 The COS request tool is a Web debugging tool provided by Cloud Object Storage (COS), which is integrated in the Cloud API 3.0 Explorer platform and can be used for API debugging.
 
->Requests sent by the COS request tool will be sent to the COS business server. **All operations are equivalent to real operations, so proceed with caution when you perform such operations as "DELETE".**
+>!Requests sent by the COS request tool will be sent to the COS business server. **All operations are equivalent to real operations, so proceed with caution when you perform such operations as "DELETE".**
 
 The COS request tool supports XML APIs, and does not support JSON APIs.
 -  JSON APIs are the APIs provided by COS for users to access COS before XML APIs are launched. JSON APIs have the same underlying architecture as the standard XML APIs. Their data is interoperable and can be cross-used, but the two APIs are incompatible.
@@ -13,7 +13,7 @@ The COS request tool supports XML APIs, and does not support JSON APIs.
 Click the [COS Request Tool](https://console.cloud.tencent.com/api/explorer?Product=cos) page, and then select the product **COS** and the desired API. Enter the corresponding parameters for the API, and click **Send Request** to get the response result.
 
 The COS request tool page shows the product, the API, the parameter and the result sections (from left to right). You can perform the corresponding operations in different sections, and send the request in the result section to get the response result and the process parameters, as shown below:
-![](https://main.qcloudimg.com/raw/6329b432ed56516ca311bcbe5720d13f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2304f363c6f61cef274e47804f34e3a4.png)
 
 The detailed operation procedure of the COS request tool is shown as follows.
 
@@ -21,7 +21,7 @@ The detailed operation procedure of the COS request tool is shown as follows.
 
 Click **Cloud Object Storage** in the leftmost product section, and then you can see the COS-related APIs in the API section.
 
->The COS request tool is integrated in the Cloud API 3.0 platform that provides the API debugging tools for many Tencent Cloud products. You can also select other products to debug their APIs on the platform as needed.
+>?The COS request tool is integrated in the Cloud API 3.0 platform that provides the API debugging tools for many Tencent Cloud products. You can also select other products to debug their APIs on the platform as needed.
 
 **2. Select the API to be debugged**.
 
@@ -37,13 +37,13 @@ The parameter section lists the corresponding parameters for the API you selecte
 
 API key is a required parameter for API calling. When using an API to operate resources such as buckets or objects, you need to enter your API key to authorize this API request. Your API key can be found on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page of the CAM Console.
 
->For each API, the COS request tool displays a red asterisk behind each required parameter to remind you that the parameter is required. You can also select **Only Required Parameters** to view the required parameters only in the parameter section.
+>?For each API, the COS request tool displays a red asterisk behind each required parameter to remind you that the parameter is required. You can also select **Only Required Parameters** to view the required parameters only in the parameter section.
 
 **4. Send request and view response result**.
 
 After selecting an API and entering the corresponding parameters, click **Send Request** in the **Online Call** tab. Your request will be sent to the server, and then the server will operate your buckets or objects according to your request.
 
->Requests sent by the COS request tool will be sent to the COS business server. **All operations are equivalent to real operations, so be careful when you perform operations such as "DELETE".**
+>?Requests sent by the COS request tool will be sent to the COS business server. **All operations are equivalent to real operations, so be careful when you perform operations such as "DELETE".**
 
 After the request is sent, the returned result and the request parameters will be displayed in the lower part of the result section. The **Request Parameters** lists your HTTP request body; the **Response Result** lists the response body of the request; the **Signature Process** lists the signature involved in the request and its generation process; and the **Curl** lists the statement called by Curl.
 

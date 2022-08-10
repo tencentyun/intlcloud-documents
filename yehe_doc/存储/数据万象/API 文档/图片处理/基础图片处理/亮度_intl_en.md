@@ -63,7 +63,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -83,7 +83,7 @@ Operation: bright
 >
 
 
-#### Example 1: adjusting brightness
+#### Example 1: Adjusting brightness
 
 This example increases the brightness of an image by 70:
 
@@ -95,7 +95,7 @@ Output image:
 
 ![](https://main.qcloudimg.com/raw/f0fac36084c6d6709ad832c91752ee28.jpg)	
 
-#### Example 2: adjusting brightness with a signature carried
+#### Example 2: Adjusting brightness with a signature carried
 
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 

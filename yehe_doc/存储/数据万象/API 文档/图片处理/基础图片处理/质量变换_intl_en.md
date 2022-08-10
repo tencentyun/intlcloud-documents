@@ -66,7 +66,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -89,7 +89,7 @@ Operation: quality
 >
 
 
-#### Example 1: setting absolute quality
+#### Example 1: Setting absolute quality
 
 This example sets the **absolute quality** to 60:
 ```plaintext
@@ -99,7 +99,7 @@ http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?imageMogr2/quality/60
 Output image:
 ![](https://main.qcloudimg.com/raw/499501182b2989899116d958f94368a5.jpeg)
 
-#### Example 2: setting relative quality
+#### Example 2: Setting relative quality
 
 This example sets the **relative quality** to 60:
 
@@ -110,7 +110,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/r
 Output image:
 ![](https://main.qcloudimg.com/raw/7b111c90aca02d94d0f11991d92e64cb.jpeg)
 
-#### Example 3: setting the relative quality to 60 with a signature carried
+#### Example 3: Setting the relative quality to 60 with a signature carried
 
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 

@@ -1,76 +1,100 @@
 ## Overview
 
-In COS, you can enable metadata acceleration to gain the HDFS protocol access capability. After metadata acceleration is enabled, COS generates a mount point for your bucket. Then you can download the [HDFS client](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) and use the mount point in the client to mount COS. This document introduces how to mount a bucket with metadata acceleration enabled to a computing cluster.
+COS can implement access over the HDFS protocol by enabling metadata acceleration for a bucket. Then, it will generate a mount target for the bucket. You can download the HDFS client from [GitHub](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) and enter the mount target information in the client to mount COS. This document describes how to mount a bucket with metadata acceleration enabled in a computing cluster.
+
+>! 
+>- Hadoop-COS supports access to metadata acceleration buckets in the format of `cosn://bucketname-appid/` starting from v8.1.1.
+>- The metadata acceleration feature can only be enabled during bucket creation and cannot be disabled once enabled. Therefore, **carefully consider** whether to enable it based on your business conditions. You should also note that legacy Hadoop-COS packages cannot access metadata acceleration buckets.
 
 ## Prerequisites
 
-- [Java 1.8](https://www.oracle.com/java/technologies/downloads/) is installed on the computing cluster's machine or container to be mounted.
-- The computing cluster's machine or container to be mounted is authorized with the access permission. You need to specify the VPC and IP that can be accessed in the HDFS permission configuration.
+- Java 1.8 available at [Java Downloads](https://www.oracle.com/java/technologies/downloads/) has been installed on the server or container that needs to be mounted in the computing cluster.
+- The server or container to be mounted in the computing cluster has been granted the access. To this end, you need to specify the accessible VPC and IP address in the HDFS permission configuration.
+- Descriptions of JAR dependency packages:
+1. [chdfs_hadoop_plugin_network-2.8.jar](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) v2.7 or later.
+2. [cos_api-bundle.jar](https://search.maven.org/artifact/com.qcloud/cos_api-bundle/5.6.69/jar) v5.6.69 or later.
+3. [Hadoop-COS](https://github.com/tencentyun/hadoop-cos/releases) v8.1.3 or later.
+4. ofs-java-sdk.jar v1.0.4 or later, which can be automatically pulled without installation required. You can run `hadoop fs ls` to check whether the versions meet the requirements in the directory configured by `fs.cosn.trsf.fs.ofs.tmp.cache.dir`.
 
 ## Directions
 
-1. Download the [Hadoop client installation package](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar).
-2. Place the installation package in the directory corresponding to the computing job. For an EMR cluster, it can be synced to the `/usr/local/service/hadoop/share/hadoop/common/lib/` directory of all nodes.
-3. Edit the `core-site.xml` file to add the following basic configuration:
+1. Download the Hadoop client tool installation package from [GitHub](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar).
+2. Put the installation package in the `classpath` of each node and make sure that the job can be started and loaded normally, such as `$HADOOP_HOME/share/hadoop/common/lib/`.
+>! The EMR environment comes with JAR dependency packages, which don't need to be installed manually. You can directly access a metadata acceleration bucket through POSIX semantics. If you need to use the S3 protocol for access, change the `fs.cosn.posix_bucket.fs.impl` configuration item as detailed below.
+3. Edit the `core-site.xml` file by adding the following basic configuration items:
 ```
-<!--Implementation class of CHDFS-->
+<!-- API key information of the account, which can be viewed in the [CAM console](https://console.cloud.tencent.com/capi). -->
 <property>
-		 <name>fs.AbstractFileSystem.ofs.impl</name>
-		 <value>com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter</value>
+		 <name>fs.cosn.userinfo.secretId/secretKey</name>
+		 <value>AKIDxxxxxxxxxxxxxxxxxxxxx</value>
 </property>
 
-<!--Implementation class of CHDFS-->
+<!-- COSN implementation class -->
 <property>
-		 <name>fs.ofs.impl</name>
-		 <value>com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter</value>
+		 <name>fs.AbstractFileSystem.cosn.impl</name>
+		 <value>org.apache.hadoop.fs.CosN</value>
 </property>
 
-<!--Temporary directory of the local cache. For data read/write, data will be written to the local disk when the memory cache is insufficient. This path will be created automatically if it does not exist-->
+<!-- COSN implementation class -->
 <property>
-		 <name>fs.ofs.tmp.cache.dir</name>
-		 <value>/data/chdfs_tmp_cache</value>
+		 <name>fs.cosn.impl</name>
+		 <value>org.apache.hadoop.fs.CosFileSystem</value>
 </property>
 
-<!--Your appId, which can be obtained in the Tencent Cloud console at https://console.cloud.tencent.com/developer-->      
+<!-- Bucket region in the format of `ap-guangzhou` -->      
 <property>
-		 <name>fs.ofs.user.appid</name>
-		 <value>1250000000</value>
+		 <name>fs.cosn.bucket.region</name>
+		 <value>ap-guangzhou</value>
 </property>
 
-<!--Flush semantics. Defaults to `false` (async flush). See the data visibility and persistence details in the figure below -->      
+<!-- Local temporary directory, which is used to store temporary files generated during execution. ->      
 <property>
-		 <name>fs.ofs.upload.flush.flag</name>
-		 <value>false</value>
+		 <name>fs.cosn.tmp.dir</name>
+		 <value>/tmp/hadoop_cos</value>
 </property>
-
 ```
-4. Sync `core-site.xml` to all Hadoop nodes.
->?For an EMR cluster, you only need to modify the HDFS configuration in component management in the EMR console for the above steps 3 and 4.
+4. Sync `core-site.xml` to all `hadoop` nodes.
+>?For steps 3 and 4 in an EMR cluster, you can simply modify the HDFS configuration in the component management section in the EMR console.
 >
-5. Use the `hadoop fs` command line tool to run the `hadoop fs -ls ofs://${bucketname-appid}/` command. Here, `bucketname-appid` is the mount address, i.e., bucket name. If the file list is output properly, the COS bucket has been mounted successfully.
-6. You can also use other configuration items of Hadoop or MR tasks to run data tasks on the bucket with metadata acceleration enabled. For an MR task, you can change the default input and output file systems of the task to the corresponding bucket through `-Dfs.defaultFS=ofs://${bucketname-appid}/`.
+5. Run the `hadoop fs -ls cosn://${bucketname-appid}/` command on the `hadoop fs` command line, where `bucketname-appid` is the mount address, i.e., the bucket name. If the file list is displayed normally, the COS bucket has been successfully mounted.
+6. You can also use other configuration items of `hadoop` or use an `mr` job to run data processing jobs in COS metadata acceleration buckets. For an `mr` job, you can run `-Dfs.defaultFS=ofs://${bucketname-appid}/` to change the default input/output file system of this job to the specified bucket.
 
-## Scenario Description
+## Configuration Item Description
 
-### Data visibility and persistence
+### 1. Required common configuration items
 
-With metadata acceleration enabled, COS can be used as a cloud distributed file system. When a file is opened using the Hadoop client tool, the client will asynchronously flush the file when a certain size (usually 4 MB) is reached and write the data to the COS bucket on the public cloud. If the upper-layer computing service proactively calls the flush API of the data output stream, **this call to the flush API is ignored by default (this behavior is different from the general sync flush semantics)**, and the client waits for the data to be written to reach a certain amount before asynchronously flushing the data. The client force executes sync flush when `Close` is called finally. After successful processing of 'Close', the data is persisted successfully and can be read properly in the future.
+| Configuration Item | Content | Description |
+| ----------------------------------- | ---------------------------------- | ------------------------------------------------------------ |
+| fs.cosn.userinfo.secretId/secretKey | A value in the format of `AKIDxxxxxxxxxxxxxxxxxxxx` | Enter the API key information of your account, which can be viewed in the [CAM console](https://console.cloud.tencent.com/capi). |
+| fs.cosn.impl                        | org.apache.hadoop.fs.CosFileSystem | COSN implementation class for `FileSystem`, which is fixed. |
+| fs.AbstractFileSystem.cosn.impl     | org.apache.hadoop.fs.CosN          | COSN implementation class for `AbstractFileSystem`, which is fixed. |
+| fs.cosn.bucket.region               | A value in the format of `ap-beijing` | Enter the region information of the bucket to be accessed, such as `ap-beijing` and `ap-guangzhou`. For enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). This parameter is compatible with the legacy parameter `fs.cosn.userinfo.region`. |
+| fs.cosn.tmp.dir                     | `/tmp/hadoop_cos` by default                | Set an existing local directory, where temporary files generated during execution will be placed. Meanwhile, be sure to configure sufficient space and permissions for this directory on each node. |
 
-The Hadoop client tool uses async flush by default because cloud access delay is higher than local disk access delay. Async flush reduces the interaction with the cloud and prevents flush operations from blocking user write operations, significantly improving write performance and reducing job time. The risk point is that if the `Close` API is not proactively called in the end, unflushed data may be lost.
 
-Therefore, **for data that needs to be written in real time to ensure immediate visibility and persistence to the cloud, such as `Hbase Wal Log` and `Journal` logs, enable sync flush by referring to the description of the configuration item `fs.ofs.upload.flush.flag`.**
 
-## Configuration Items
+### 2. Required configuration items for POSIX access mode
 
-|        Configuration Item      |                             Description                             |  Default Value   | Required |
-| :------------------------------| :----------------------------------------------------| :-------| :------ |
-|       fs.ofs.tmp.cache.dir        |   Stores temporary data    |    None     |    Yes    |
-|       fs.ofs.map.block.size       | The client divides data into blocks when writing the data, and this configuration item specifies the data block size, in bytes. The default value is 128 MB (this item only affects map segmentation and has nothing to do with the size of the underlying storage block of CHDFS) | 134217728 |    No    |
-| fs.ofs.data.transfer.thread.count |               Number of parallel threads when the client transfers data                |    32     |    No    |
-| fs.ofs.block.max.memory.cache.mb  | Size of the memory buffer used by the client plugin in MB (which accelerates both reads and writes) |    16     |    No    |
-|  fs.ofs.block.max.file.cache.mb   |  Size of the disk buffer used by the CHDFS plugin in MB (which accelerates writes)  |    256    |    No    |
-|   fs.ofs.prev.read.block.count    | Number of data blocks read ahead during reads (the block size is generally 4 MB). (For random read scenarios, decrease the value as needed. For sequential read scenarios, increase the value and the size of the memory buffer as needed.) |     4     |    No    |
-|  fs.ofs.prev.read.block.release.enable| Specifies whether to release the buffer of the last data block that has been read. For sequential read scenarios, enable this option. For random read scenarios, if certain data is frequently read, you are advised to disable this option. Valid values: `true` (enabled), `false` (disabled) | `true` | No |
-|      fs.ofs.plugin.info.log       |          Specifies whether to print client debugging logs. Logs are printed at the info level. Valid values: `true` (enabled), `false` (disabled) |   false   |    No    |
-|      fs.ofs.upload.flush.flag     | Specifies whether to flush data synchronously when the output stream flush API is called during data writes. The default value is `false` (async flush). If sync flush is required, set this configuration item to `true`. | false | No |
+| Configuration Item | Content | Description |
+| ------------------------ | ------------------ | ---------------- |
+| fs.cosn.posix_bucket.fs.impl         | com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter                |      This parameter is fixed at `com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter` for the POSIX access mode (default mode) or `org.apache.hadoop.fs.CosNFileSystem` for the S3 access mode, respectively. |
+| fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl | com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter                      |      Implementation class for metadata acceleration bucket access |
+| fs.cosn.trsf.fs.ofs.impl                    | com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter                |     Implementation class for metadata acceleration bucket access |
+| fs.cosn.trsf.fs.ofs.tmp.cache.dir           | A value in the format of `/data/emr/hdfs/tmp/posix-cosn/` | Set an existing local directory such as `/data/emr/hdfs/tmp/posix-cosn/`, where temporary files generated during execution will be placed. Meanwhile, be sure to configure sufficient space and permissions for this directory on each node. |
+| fs.cosn.trsf.fs.ofs.user.appid              | A value in the format of `12500000000`  | Your `appid`, which is required. |
+| fs.cosn.trsf.fs.ofs.bucket.region           | A value in the format of `ap-beijing`  | Your bucket region, which is required. |
+
+
+### 3. Required configuration items for S3 access mode
+
+| Configuration Item | Content | Description |
+| ------------------------ | ------------------ | ---------------- |
+| fs.cosn.posix_bucket.fs.impl         | org.apache.hadoop.fs.CosNFileSystem |      This parameter is fixed at `com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter` for the POSIX access mode (default mode) or `org.apache.hadoop.fs.CosNFileSystem` for the S3 access mode, respectively. |
+
+### 4. Other configuration items
+
+- For other Hadoop-COS configuration items, see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
+- For other POSIX configuration items, see [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965). You can access metadata acceleration buckets in POSIX mode by adding the `fs.cosn.trsf.` prefix to such configuration items.
+
+
 
