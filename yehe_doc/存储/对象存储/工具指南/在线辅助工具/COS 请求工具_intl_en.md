@@ -13,7 +13,7 @@ The COS request tool supports XML APIs, and does not support JSON APIs.
 Click the [COS Request Tool](https://console.cloud.tencent.com/api/explorer?Product=cos) page, and then select the product **COS** and the desired API. Enter the corresponding parameters for the API, and click **Send Request** to get the response result.
 
 The COS request tool page shows the product, the API, the parameter and the result sections (from left to right). You can perform the corresponding operations in different sections, and send the request in the result section to get the response result and the process parameters, as shown below:
-![](https://main.qcloudimg.com/raw/6329b432ed56516ca311bcbe5720d13f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2304f363c6f61cef274e47804f34e3a4.png)
 
 The detailed operation procedure of the COS request tool is shown as follows.
 
