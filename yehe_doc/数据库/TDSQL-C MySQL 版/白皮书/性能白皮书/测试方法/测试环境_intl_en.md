@@ -1,7 +1,7 @@
 This document describes the environment used for the TDSQL-C for MySQL performance test.
 
 ## Test Object: TDSQL-C for MySQL
-- Region/AZ: Guangzhou - Guangzhou Zone 6
+- Region/AZ: Beijing - Beijing Zone 6
 - Client
  - Client type: CVM
  - Client specification: S5.4XLARGE32 (Standard S5 with 16 CPU cores and 32 GB memory)
