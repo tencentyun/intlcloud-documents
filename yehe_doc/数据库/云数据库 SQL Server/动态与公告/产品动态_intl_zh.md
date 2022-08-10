@@ -13,14 +13,14 @@
 <thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
 <tbody><tr>
 <td>控制台及功能优化</td>
-<td>云数据库 SQL Server 技术团队针对产品功能及控制台展示进行如下优化，进一步改善和提升用户体验。<ul><li>支持按照时间范围批量删除手动备份。</li><li>备份名称字符长度支持到128字符。</li><li>日志备份频率调整为每10分钟。</li><li>优化控制台备份空间趋势图可视化显示。</li><li>支持按时间范围检索慢查询文件。</li><li>购买页 VPC、子网和项目列表支持搜索及模糊搜索。</li><li>调整控制台系统监控项显示顺序。</li><li>优化实例维护周期设置逻辑，须至少选择一个维护周期，确保数据库运维安全。</li><li>VPC 网络控制台新增快捷跳转，可快速查询到该 VPC 所绑定的 SQL Server 实例。</li></ul></td>
+<td>云数据库 SQL Server 技术团队针对产品功能及控制台展示进行如下优化，进一步改善和提升用户体验。<br><li>支持按照时间范围批量删除手动备份。<br><li>备份名称字符长度支持到128字符。<br><li>优化控制台备份空间趋势图可视化显示。<br><li>支持按时间范围检索慢查询文件。<br><li>购买页 VPC、子网和项目列表支持搜索及模糊搜索。<br><li>调整控制台系统监控项显示顺序。<br><li>优化实例维护周期设置逻辑，须至少选择一个维护周期，确保数据库运维安全。<br><li>VPC 网络控制台新增快捷跳转，可快速查询到该 VPC 所绑定的 SQL Server 实例。</td>
 <td>2022-06-22</td>
 <td>-</td></tr>
 <tbody><tr>
 <td>数据集成服务（SSIS）发布</td>
 <td>云数据库 SQL Server 商业智能服务器发布，目前已支持 SQL Server Integration Services（SSIS）数据集成服务，使用 Integration Services 可解决复杂的业务场景，例如合并来自异构数据存储区的数据、数据清洗和数据标准化、填充数据仓库和数据集、处理复杂商业逻辑的数据转换、支持管理功能和数据加载自动化等，帮助客户全链路解决商业智能分析、高价值数据挖掘、主数据管理体系建设等场景的问题。</td>
 <td>2022-06-10</td>
-<td><a href="https://cloud.tencent.com/document/product/238/75223" target="_blank">数据集成服务（SSIS）概述</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/48060" target="_blank">数据集成服务（SSIS）概述</a></td></tr>
 </tbody></table>
 
 ## 2022年05月
@@ -41,9 +41,9 @@
 <td>全新文档发布</td>
 <td>云数据库 SQL Server 新增常见问题、约束与限制、使用规范与建议等文档，帮助用户更好的使用 SQL Server。</td>
 <td>2022-05-27</td>
-<td><ul><li><a href="https://cloud.tencent.com/document/product/238/74374" target="_blank">常见问题</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/238/2021" target="_blank">约束与限制</a></li>
-<li><a href="https://cloud.tencent.com/document/product/238/74471" target="_blank">使用规范与建议</a></li></ul></td></tr>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/238/47719" target="_blank">常见问题</a>
+<li><a href="https://intl.cloud.tencent.com/document/product/238/2021" target="_blank">约束与限制</a>
+<li><a href="https://intl.cloud.tencent.com/document/product/238/48122" target="_blank">使用规范与建议</a></td></tr>
 </tbody></table>
 
 ## 2022年03月
@@ -118,7 +118,7 @@
 <td>数据迁移（新版）功能更新上线	</td>
 <td>数据迁移（新版）功能更新上线，数据迁移（旧版）功能已停止更新，将于2022年03月01日正式下线，新版数据迁移功能更加丰富。</td>
 <td>2021-11</td>
-<td><a href="https://cloud.tencent.com/document/product/571/61271" target="_blank">SQL Server 到 SQL Server 的迁移</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/571/42638" target="_blank">SQL Server 到 SQL Server 的迁移</a></td></tr>
 <tr>
 <td>重庆地域开服</td>
 <td>云数据库 SQL Server 新增开放重庆一区。</td>
@@ -148,12 +148,12 @@
 <td>备份文件支持单库备份上传 COS</td>
 <td>默认为将实例备份打包后上传至 COS，当选择单库备份文件后，会将该实例每个数据库的 .bak 文件不经打包直接上传至 COS 上进行保存，即支持直接下载数据库实例备份内每个单独数据库的备份文件。</td>
 <td>2021-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/238/45853">创建和查看备份任务</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35790">创建和查看备份任务</a></td></tr>
 <tr>
 <td>支持从实例进行备份任务</td>
 <td>2017/2019集群版实例，支持设置从实例进行备份任务。</td>
 <td>2021-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/238/45853">创建和查看备份任务</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35790">创建和查看备份任务</a></td></tr>
 <tr>
 <td>曼谷地域开服</td>
 <td>云数据库 SQL Server 新增开放曼谷一区、曼谷二区。</td>
@@ -213,7 +213,7 @@
 <td>发布系统维度监控指标及新增实例维度监控指标共11个</td>
 <td>新增内存、锁相关性能计数器监控4个，新增物理机系统维度监控指标7个，方便企业级用户全面监控数据库性能。</td>
 <td>2021-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/238/46503" target="_blank">监控功能</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7524" target="_blank">监控功能</a></td></tr>
 </tbody></table>
 
 ## 2021年06月
@@ -238,7 +238,7 @@
 <td>云数据库 SQL Server 2019 版正式发布</td>
 <td>云数据库 SQL Server 2019 版正式发布，支持基础版、高可用版、集群版实例，在性能、易用性、高可用性、安全性上显著增强。</td>
 <td>2021-05</td>
-<td><a href="https://cloud.tencent.com/document/product/238/3263" target="_blank">支持版本</a></td></tr>
+<td>-</td></tr>
 <tr>
 <td>北京七区开服</td>
 <td>云数据库 SQL Server 新增开放北京七区。</td>
@@ -281,8 +281,6 @@
 <td><li><a href="https://intl.cloud.tencent.com/document/product/238/39005" target="_blank">冷备迁移</a></li><li><a href="https://intl.cloud.tencent.com/document/product/238/39006" target="_blank">使用 DTS 迁移数据</a></li></td></tr>
 </tbody></table>
 
-
-
 ## 2020年07月
 <table>
 <thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
@@ -291,16 +289,6 @@
 <td>云数据库 SQL Server 基础版上线，支持云上 sysadmin 权限， 基础版提供了正版授权、高可用、高安全、高性能及轻运维的全套数据库解决方案。</td>
 <td>2020-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/238/3254" target="_blank">产品架构</a></td></tr>
-</tbody></table>
-
-## 2020年04月
-<table>
-<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
-<tbody><tr>
-<td>支持发布订阅</td>
-<td>发布与订阅功能，利用复制技术来实现数据同步，可以通过其提供的发布与订阅功能实现数据的读写分离和线下线上数据同步。</td>
-<td>2020-04</td>
-<td><li><a href="https://cloud.tencent.com/document/product/238/43326" target="_blank">发布订阅概述</a></li><li><a href="https://cloud.tencent.com/document/product/238/43327" target="_blank">管理发布订阅</a></li></td></tr>
 </tbody></table>
 
 ## 2020年03月
@@ -327,11 +315,6 @@
 <table>
 <thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
 <tbody><tr>
-<td>支持多可用区部署</td>
-<td>多可用部署可以满足客户多地容灾的需求，为用户提供更好的可用性保证。</td>
-<td>2019-12</td>
-<td><a href="https://cloud.tencent.com/document/product/238/43221" target="_blank">多可用区容灾</a></td></tr>
-<tr>
 <td>支持设置可维护时间</td>
 <td>支持设置可维护时间，为保证云数据库实例的稳定性，后台系统会不定期在维护时间内对实例进行维护操作。</td>
 <td>2019-12</td>
@@ -343,7 +326,7 @@
 <thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
 <tbody><tr>
 <td>支持安全组配置</td>
-<td><a href="https://cloud.tencent.com/doc/product/213/500">安全组</a> 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是重要的网络安全隔离手段。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/500?from_cn_redirect=1">安全组</a> 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是重要的网络安全隔离手段。</td>
 <td>2019-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/238/35789" target="_blank">配置安全组</a></td></tr>
 <tr>
@@ -399,8 +382,8 @@
 <tbody><tr>
 <td>支持2016版售卖</td>
 <td>云数据库 SQL Server 发布2016版本。</td>
-<td>2017-09</td>
-<td><a href="https://cloud.tencent.com/document/product/238/3263" target="_blank">支持版本</a></td></tr>
+  <td>2017-09</td><td>-</td>
+</tr>
 </tbody></table>
 
 ## 2016年12月
@@ -409,8 +392,8 @@
 <tbody><tr>
 <td>支持备机只读</td>
 <td>云数据库 SQL Server 推出备机只读，内存硬盘按需搭配，为业务贴身打造数据库规格；快照方式备机只读、助力线上数据分析；不增加成本、不影响主库性能、不破坏高可用。</td>
-<td>2016-12</td>
-<td><a href="https://cloud.tencent.com/document/product/238/3263" target="_blank">支持版本</a></td></tr>
+  <td>2016-12</td><td>-</td>
+</tr>
 </tbody></table>
 
 ## 2016年05月
@@ -419,8 +402,8 @@
 <tbody><tr>
 <td>支持2012企业版</td>
 <td>云数据库 SQL Server 发布2012企业版，兼容了2008版支持的所有功能。</td>
-<td>2016-05</td>
-<td><a href="https://cloud.tencent.com/document/product/238/3263" target="_blank">支持版本</a></td></tr>
+  <td>2016-05</td><td>-</td>
+</tr>
 </tbody></table>
 
 ## 2015年12月
