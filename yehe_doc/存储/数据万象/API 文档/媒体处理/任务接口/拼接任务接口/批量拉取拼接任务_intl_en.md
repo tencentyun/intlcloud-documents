@@ -1,5 +1,5 @@
 ## Feature Description
-The API (`DescribeMediaJobs`) is used to pull tasks that meet specified conditions.
+The API (`DescribeMediaJobs`) is used to pull jobs that meet specified conditions.
 
 ## Request
 
@@ -13,42 +13,46 @@ Authorization: <Auth String>
 
 ```
 
->?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 
 #### Request headers
 
 #### Common request headers
-This API uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API uses [common request headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Non-common request headers
-This API does not use any non-common request header.
+This request operation does not use any non-common request headers.
 
 #### Request body
 This request does not have a request body.
 
-The nodes are described as follows:
+The parameters are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
-| QueueId | None | ID of the queue from which tasks are pulled | String | Yes |
-| Tag | None | Task type: Concat | String | Yes |
-| OrderByTime | None | `Desc` (default) or `Asc` | String | No |
-| NextToken | None | Context token for pagination | String | No |
-| Size | None | Maximum number of tasks pulled. The default value is 10. The maximum value is 100. | Integer | No |
-| States | None | Status of the tasks to pull. If you enter multiple task states, separate them with commas (,). <br>Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel` | String | No |
-| StartCreationTime | None | Start time of the time range for task pulling. Format: `%Y-%m-%dT%H:%m:%S%z` | String | No |
-| EndCreationTime | None | End time of the time range for task pulling. Format: `%Y-%m-%dT%H:%m:%S%z` | String | No |
+| queueId | None | ID of the queue from which jobs are pulled | String | Yes |
+| tag                | None     | Job type: Concat                                     | String  | Yes       |
+| orderByTime | None | `Desc` (default) or `Asc`. | String | No |
+| nextToken | None | Context token for pagination. | String | No |
+| size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
+| States | None | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. <br>Valid values: All (default), Submitted, Running, Success, Failed, Pause, Cancel | String | No |
+| startCreationTime | None | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`. | String | No |
+| endCreationTime | None | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`.  | String | No |
 
 ## Response
 
 #### Response headers
 
 #### Common response headers
-This API uses [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This response contains common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Non-common response headers
-This API does not use any non-common response header.
+This response does not use any non-common response header.
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -61,7 +65,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -71,14 +75,14 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| JobsDetail | Response | Task details. Same as `Response.JobsDetail` in `PostJobs`. |  Container |
+| JobsDetail | Response | Job details. Same as `Response.JobsDetail` in `PostJobs`. |  Container |
 | NextToken             | Response | Context token for pagination | String    |
 
 #### Error codes
-The error message "The job provided can not be modified" may be returned for this request operation. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+The following error may be returned for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
 
-## Examples
+## Samples
 
 #### Request
 

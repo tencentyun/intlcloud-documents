@@ -1,5 +1,5 @@
 ## Feature Description
-This API (`DescribeMediaJob`) is used to query a specified task.
+This API (`DescribeMediaJob`) is used to query a specified job.
 
 ## Request
 
@@ -13,16 +13,20 @@ Authorization: <Auth String>
 
 ```
 
->?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 
 #### Request headers
 
 #### Common request headers
-This API uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API uses [common request headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Non-common request headers
-This API does not use any non-common request header.
+This request operation does not use any non-common request headers.
 
 #### Request body
 This request does not have a request body.
@@ -33,10 +37,10 @@ This request does not have a request body.
 #### Response headers
 
 #### Common response headers
-This API uses [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This response contains common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Non-common response headers
-This API does not use any non-common response header.
+This response does not use any non-common response header.
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -49,7 +53,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -59,14 +63,14 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| JobsDetail | Response | Task details. Same as `Response.JobsDetail` in `PostJobs`. |  Container |
-| NonExistJobIds | Response | List of non-existing task IDs queried. If all tasks exist, this node is not returned. |  String |
+| JobsDetail | Response | Job details. Same as `Response.JobsDetail` in `PostJobs`. |  Container |
+| NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node will not be returned. |  String |
 
 #### Error codes
-The error message "The job provided can not be modified" may be returned for this request operation. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+The following error may be returned for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
 
-## Examples
+## Samples
 
 #### Request
 
