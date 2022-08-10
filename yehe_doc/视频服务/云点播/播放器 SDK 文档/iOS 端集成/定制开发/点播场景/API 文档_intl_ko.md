@@ -50,8 +50,8 @@
 | [setRate](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__ios.html#a1d79db46540e804a7bb9fc8cd87a3d99) | VOD 재생 속도를 설정합니다. 기본값: 1.0.                                |
 | [bitrateIndex](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__ios.html#a9a325ed94acf6b545c88755855449a12) | 현재 재생 비트 레이트 인덱스를 반환합니다.                                     |
 | [setBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__ios.html#a1aa8e1f3a63b46c8a1166447e2457abc) | 원활한 해상도 전환을 위한 현재 재생 비트 레이트 인덱스를 설정합니다. <br>해상도를 전환하려면 잠시 기다려야 할 수도 있습니다. |
-| [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__ios.html#a3819261f776bfda7e95e3b0bf30445a4) | [이미지 채우기 모드](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae)를 설정합니다. |
-| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__ios.html#ade93023de1bcd8374b62f5a2bf4beeee) | [이미지 렌더링 각도](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f)를 설정합니다. |
+| [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__ios.html#a3819261f776bfda7e95e3b0bf30445a4) | [이미지 채우기 모드](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae)를 설정합니다. |
+| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__ios.html#ade93023de1bcd8374b62f5a2bf4beeee) | [이미지 렌더링 각도](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f)를 설정합니다. |
 
 ### 오디오 API
 
@@ -88,8 +88,8 @@ VOD 콜백 공지입니다.
 
 | API                                                          | 설명                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onPlayEvent](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayListener__ios.html#a6330db18bb40862fc2d66474fc34166b) | VOD 재생 이벤트 공지. 자세한 내용은 [재생 이벤트 목록](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a3c3fa833bb8585df2f362da5b70c610a) 및 [이벤트 매개변수](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a5cb5e37938b510270847d4f5c751a594)를 참고하십시오. |
-| [onNetStatus](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayListener__ios.html#a08721fef1ba130fd182de4bed3b4430e) | VOD 플레이어의 [네트워크 상태 공지](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#aa7190fc964cf23a567b56d9793ad5737)입니다. |
+| [onPlayEvent](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayListener__ios.html#a6330db18bb40862fc2d66474fc34166b) | VOD 재생 이벤트 공지. 자세한 내용은 [재생 이벤트 목록](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a3c3fa833bb8585df2f362da5b70c610a) 및 [이벤트 매개변수](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a5cb5e37938b510270847d4f5c751a594)를 참고하십시오. |
+| [onNetStatus](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayListener__ios.html#a08721fef1ba130fd182de4bed3b4430e) | VOD 플레이어의 [네트워크 상태 공지](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#aa7190fc964cf23a567b56d9793ad5737)입니다. |
 
 ## TXVodPlayConfig
 
