@@ -1,95 +1,75 @@
 ## 操作场景
-本文档能帮助您快速了解和接入视频处理服务。使用视频处理服务的主要步骤如下图：
-![](https://main.qcloudimg.com/raw/aed6a4e4f8b3bb99187e0d899ac05338.png)
+
+本文档能帮助您快速了解和接入媒体处理服务。使用媒体处理服务的主要步骤如下：
 
 ## 操作步骤
+
 ### 步骤1：注册与登录
+
 1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账户并完成实名认证。
-2. 登录腾讯云官网，选择【云产品】>【视频服务】>[【视频处理】](https://console.cloud.tencent.com/mps)，进入视频处理控制台。
+2. 登录腾讯云官网，选择 **云产品** > **视频服务** > [**媒体处理**](https://console.cloud.tencent.com/mps)，进入媒体处理控制台。
 
 ### 步骤2：授权管理
-由于视频处理服务需要对您上传到对象存储 COS 存储桶中的文件进行下载、转码和上传等读写操作，所以您需要创建服务角色，给视频处理授予 COS 的相关操作权限。
 
-进入 [视频处理控制台](https://console.cloud.tencent.com/mps)，如果您还未授权，则需要单击【前往访问管理】，跳转到控制台统一的权限管理页面进行授权操作。
-![]![](https://main.qcloudimg.com/raw/a3204a6470d3a9740a081849fc7324f3.png)
+由于媒体处理服务需要对您上传到对象存储 COS 存储桶中的文件进行下载、转码和上传等读写操作，所以您需要创建服务角色，给媒体处理授予 COS 的相关操作权限。
 
->!如果您未完成授权，则无法在视频处理控制台进行其他操作。
+进入 [媒体处理控制台](https://console.cloud.tencent.com/mps)，如果您还未授权，则需要单击 **前往访问管理**，跳转到控制台统一的权限管理页面进行授权操作。
+![img](https://qcloudimg.tencent-cloud.cn/raw/29d478d02a8cfcc701ef9ab67daaea38.png)
 
+>? 如果您未完成授权，则无法在媒体处理控制台进行其他操作。
 
+### 步骤3：模板设置
 
-### 步骤3：创建 Bucket
-由于视频处理是对您上传到 COS 上的视频文件进行转码和截图等处理的服务，所以您需要在 COS 控制台上创建存储桶（Bucket）。
+媒体处理的过程需要对音视频进行音视频转码、加水印、截图等操作，通过配置不同的模板可以控制不同的操作输出及操作方式，您可以到控制台模板管理中进行配置。
 
-进入 [COS 控制台](https://console.cloud.tencent.com/cos5) 的存储桶管理页面，单击【创建存储桶】，创建一个 Bucket，然后可以在该 Bucket 中创建文件夹和上传文件，详细请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
+### 步骤4：创建服务编排
 
- 
+服务编排可以帮助您按照预设的流程及步骤自动处理新上传至bucket中的媒体文件，在编排中可以设置转码规则、截图规则、处理流程、回调通知等内容。
 
-### 步骤4：创建工作流
-工作流可以通过创建的模板，帮助您自动处理新上传至 Bucket 中的视频文件。在工作流中可以设置转码任务、截图任务、转动图任务等。
-1. 登录 [视频处理控制台](https://console.cloud.tencent.com/mps)，单击【工作流管理】，进入“工作流管理”页面。
-2. 单击【创建工作流】，进入创建工作流页，您需要设置工作流名称、触发 Bucket、触发目录、输出 Bucket、输出目录、配置项和事件通知，具体配置方法请参见 [工作流配置说明](#workflow)。
-![](https://main.qcloudimg.com/raw/a2b3e7b0e7e41b68221ea1d2b874b06e.png)
-在创建工作流页面，需要配置的信息如下：
-<table>
-<tr><th>配置项<a id="workflow"></a></th><th>是否必填</th><th>配置说明</th></tr>
-<tr>
-<td>工作流</td>
-<td>是</td>
-<td>您可输入128个字符内中文、英文、数字和下划线加短横线<code>（_-）</code>的组合，例如“MPS”。</td>
-</tr><tr>
-<td>触发 Bucket</td>
-<td>是</td>
-<td>您可在此 APPID 下创建的 Bucket 中，选择一个作为触发 Bucket。工作流开启后，上传视频文件至此 Bucket 可以自动触发工作流的执行。</td>
-</tr><tr>
-<td>触发目录</td>
-<td>否</td>
-<td>以斜杠<code>（/）</code>结尾，如果不填写，则对触发 Bucket 下所有目录生效。</td>
-</tr><tr>
-<td>输出 Bucket</td>
-<td>是</td>
-<td>默认与触发 Bucket 相同，您可在此 APPID 下，与触发 Bucket 相同地域的 Bucket 中选择一个作为输出 Bucket，工作流处理完成后新生成视频文件将存储在该 Bucket 中。</td>
-</tr><tr>
-<td>输出目录</td>
-<td>否</td>
-<td>以斜杠<code>（/）</code>结尾，如果不填写，则输出目录与触发目录保持一致。</td>
-</tr><tr>
-<td>开启事件通知</td>
-<td>否</td>
-<td><ul style="margin:0"><li>默认关闭。若开启事件通知，具体配置方式请参见 <a href="#recall">回调方式类型配置</a>。</li><li>如需开启 CMQ 事件通知，请您前往 <a href="https://console.cloud.tencent.com/cmq">消息队列（CMQ）</a>开通服务并创建模型。开启事件通知后，指定的 CMQ 将接收视频处理的事件通知。</li></ul></td>
-</tr><tr>
-<td>配置项</td>
-<td>是</td>
-<td>您可在转码任务、截图任务、转动图任务、审核任务、内容识别任务和内容分析任务中，至少选择一项进行配置，详细请参见 <a href="https://intl.cloud.tencent.com/document/product/1041/33485#p1">任务配置说明</a>。</td>
-</tr></table>
-<table>
-<tr><th>回调方式类型<a id="recall"></a></th><th>配置说明</th></tr>
-<tr>
-<td>CMQ 回调</td>
-<td><ul style="margin:0"><li>CMQ 模型：默认选择队列模型。</li><li>CMQ 园区：可选择广州、上海、北京、上海金融、深圳金融、中国香港、成都、北美地区或美国西部。</li><li>队列名称：自定义。</li></ul></td>
-</tr><tr>
-<td>SCF 回调</td>
-<td>可单击【前往 SCF 操作】进行配置操作，具体配置方式请参见 <a href="https://intl.cloud.tencent.com/document/product/1041/40337">视频任务回调通知</a>。 <br>SCF 回调配置针对所有工作流，当前工作流不保存该配置状态。</td>
-</tr></table>
+1. 登录 [媒体处理控制台](https://console.cloud.tencent.com/mps)，进入 **工作流-服务编排管理** 页面。
+2. 点击**创建服务编排**按钮，进入创建创建服务编排页面，在该页面中，您需要设置服务编排名称、触发 Bucket、触发目录、输出 Bucket、输出目录、配置项和事件通知，具体配置方法请参见 [服务编排配置说明](https://intl.cloud.tencent.com/document/product/1041/48780)。
+![](https://qcloudimg.tencent-cloud.cn/raw/984a8ce5935f4e0263abcf1d10b55227.png)
 
+在创建服务编排页面，需要配置的信息如下：
 
-### 步骤5：启用工作流
-1. 工作流创建完成后，会出现“工作流创建成功”的提示。单击【管理工作流】，跳转至 [工作流管理](https://intl.cloud.tencent.com/document/product/1041/33485)。
-![](https://main.qcloudimg.com/raw/81ae87468f4c99773278fd6487e39bd4.png)
-2. 工作流默认为未启用状态，单击工作流所在行的状态按钮，可启用工作流。只有启用工作流后，在触发 Bucket 内上传视频才会触发工作流的自动执行。
+| 配置项       | 是否必填 | 配置说明                                                     |
+| :----------- | :------- | :----------------------------------------------------------- |
+| 服务编排名称 | 是       | 您可输入128个字符内中文、英文、数字和下划线加短横线`（_-）`的组合，例如“MPS”。 |
+| 触发 Bucket  | 是       | 您可在此 APPID 下创建的 Bucket 中，选择一个作为触发 Bucket。服务编排开启后，上传视频文件至此 Bucket 可以自动触发服务编排的执行。 |
+| 触发目录     | 否       | 以斜杠`（/）`结尾，如果不填写，则对触发 Bucket 下所有目录生效。 |
+| 输出 Bucket  | 是       | 默认与触发 Bucket 相同，您可在此 APPID 下，与触发 Bucket 相同地域的 Bucket 中选择一个作为输出 Bucket，服务编排处理完成后新生成视频文件将存储在该 Bucket 中。 |
+| 输出目录     | 否       | 以斜杠`（/）`结尾，如果不填写，则输出目录与触发目录保持一致。 |
+| 开启事件通知 | 否       | 默认关闭。若开启事件通知，具体配置方式请参见 [回调方式类型配置](https://intl.cloud.tencent.com/document/product/1041/33482#recall)。如需开启 TDMQ-CMQ 事件通知，请您前往 [消息队列TDMQ](https://console.cloud.tencent.com/tdmq/cmq-queue?rid=1) 开通服务并创建模型。开启事件通知后，指定的CMQ 将接收媒体处理的事件通知。 |
+| 配置项       | 是       | 您可在转码任务、截图任务、转动图任务、审核任务、内容识别任务和内容分析任务中，至少选择一项进行服务编排配置。 |
 
- 
+| 回调方式类型  | 配置说明                                                     |
+| :------------ | :----------------------------------------------------------- |
+| TDMQ-CMQ 回调 | TDMQ-CMQ 模型：可以选择队列模型或主题模型，默认选择队列模型。TDMQ-CMQ 园区：可选择广州、上海、背景、上海金融、深圳金融、中国香港、成都、北美地区或美国西部。队列名称/主题名称：自定义。 |
+| HTTP 回调     | 在调用任务的事件通知配置接口 [TaskNotifyConfig](https://intl.cloud.tencent.com/document/product/1041/33690#TaskNotifyConfig) 时，NotifyType 参数指定为 URL，并在 NotifyUrl 参数中填写 HTTP 回调地址。 |
+| SCF 回调      | 可单击 [前往 SCF 操作](https://console.cloud.tencent.com/scf/list-create?rid=1&ns=default&keyword=mps) 进行配置操作，具体配置方式请参见 [视频任务回调通知](https://intl.cloud.tencent.com/document/product/1041/40337)。 SCF 回调配置针对所有服务编排，当前服务编排不保存该配置状态。 |
 
-### 步骤6：上传视频
-1. 启用工作流后，进入 [COS 控制台](https://console.cloud.tencent.com/cos5)，单击左侧导航栏的【存储桶列表】，进入“存储桶列表”页面。
-2. 找到在工作流中设置的触发 Bucket，单击对应的存储桶名称，默认进入“文件列表”页面，上传需要处理的视频文件，视频处理服务将自动按照工作流中的设置处理新上传的视频。
->?工作流的自动执行，只对工作流启用后新上传至触发 Bucket 的视频文件生效，之前存放在触发 Bucket 中的文件不会被处理。 
+### 步骤5：启用服务编排
 
+1. 服务编排创建完成后，会出现“服务编排创建成功”的提示，并自动跳转至服务编排管理列表页，在服务编排列表中可以对创建的服务编排进行管理。
+2. 服务编排默认为未启用状态，单击服务编排所在行的状态按钮，可启用服务编排。只有启用服务编排后，在触发 Bucket 内上传视频才会触发服务编排自动执行。
 
-### 步骤7：查看处理完成的视频
-1. 视频处理完成后，进入 [COS 控制台](https://console.cloud.tencent.com/cos5)，单击左侧导航栏的【存储桶列表】，进入“存储桶列表”页面。
-2. 找到在工作流配置项中设置的输出 Bucket，单击对应的存储桶名称，默认进入“文件列表”页面，即可查看根据任务配置处理完成的视频文件。
+### 步骤6：发起任务
 
+当前支持发起任务的方式有三种：API调用任务发起接口、在绑定服务编排的 COS 目录上传视频文件、通过**任务管理** > [**创建任务**](https://console.cloud.tencent.com/mps/tasks/create) 手动创建任务。
 
+- **手动创建任务：**
+  1. 进入 [任务管理](https://console.cloud.tencent.com/mps/tasks) 页面。
+  2. 点击 [创建任务](https://console.cloud.tencent.com/mps/tasks/create)按钮，进入任务创建页面。
+  3. 选择需要处理的视频文件、输出路径、转码模板等信息，并发起任务。
+- **COS 视频自动触发：**
+  1. 启用服务编排后，进入 [COS 控制台](https://console.cloud.tencent.com/cos5)，单击左侧导航栏的 **存储桶列表**，进入“存储桶列表”页面。
+  2. 找到在服务编排中设置的触发 Bucket，单击对应的存储桶名称，默认进入“文件列表”页面，上传需要处理的视频文件，媒体处理服务将自动按照服务编排中的设置处理新上传的视频。
 
+>? 服务编排的自动执行，只对服务编排启用后新上传至触发 Bucket 的视频文件生效，之前存放在触发 Bucket 中的文件不会被处理。
 
+### 步骤7：管理任务
 
+1. 进入 [任务管理](https://console.cloud.tencent.com/mps/tasks) 页面，可以看到您所发起的全部任务的列表。
+2. 可以通过任务状态、任务ID等筛选需要处理的任务，点击展开详情可以查看子任务自信息、同时支持点击重启按钮重启排队中的任务、播放源视频等操作。
+3. 展开子任务列表，可以查看子任务相关信息，支持播放/查看子任务文件、下载子任务输出文件、查看子任务详细信息等操作。
+![img](https://qcloudimg.tencent-cloud.cn/raw/74e5076bc92486b61de0cce1283d6d58.png)

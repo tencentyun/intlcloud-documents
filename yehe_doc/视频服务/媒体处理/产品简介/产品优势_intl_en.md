@@ -1,26 +1,17 @@
-## Professional and Reliable
-MPS can handle all mainstream media formats. It supports H.264, H.265, and AV1 coding, as well as video splicing and remuxing. It can transcode and process videos of different bitrates with speed, offering professional and reliable media transcoding services. 
-
-## High Customizability
-Highly customizable media transcoding templates allow you to customize transcoding parameters and add watermarks to output videos, meeting diverse needs for video processing. 
-
-## High Efficiency and Stability
-MPS has an ultra-large and distributed transcoding cluster that supports multipart transcoding. It can divide a lengthy video into multiple parts for concurrent processing, which accelerates transcoding speed. It also boasts the capability to elastically adjust transcoding resources to respond to high concurrent transcoding demand. 
-
-## Ease of Use
-MPS provides a complete set of APIs and straightforward documentation for easy and quick integration. You can set triggers for automatic video processing upon file uploads, eliminating the need for manual API calls. 
-
-## Customizable Workflow
-MPS supports media workflow customization. Transcoding, screenshot taking, watermarking, and GIF conversion can all be customized into one workflow for streamlined media files processing. It also offers an integrated event callback mechanism which can keep you up to date on task progress. 
-
-## Cost Efficiency
-MPS is billed daily or monthly on a pay-as-you-go basis and has no minimum spending requirements. Without upfront investment and maintenance expense, you can significantly reduce your cost. 
+## Process orchestration
+MPS allows you to create custom schemes to orchestrate service processing for high numbers of media files and complete basic operations such as transcoding, screencapturing, and watermarking. You can use event callbacks to stay up to date with the progress of different tasks.
 
 ## TESHD
-MPS has identified dozens of video categories and uses deep learning models to put videos under different categories. It can then decide on the best encoding parameters for a video based on its brightness and complexity as well as the category it falls in, enhancing video quality. 
+MPS supports H.264, H.265, and AV1 encoding standards and ensures high video quality while reducing bandwidth costs by 50%. In addition, it supports real-time 4K and 8K encoding and delivers a smooth UHD viewing experience.
+
+## Accelerated transcoding
+MPS is deployed in global regions and supports automatic scaling to flexibly handle a high number of concurrent transcoding requests. It supports distributed transcoding to deliver up to 30 times faster transcoding for long videos, allowing you to transcode and release videos very quickly.
+
+## Image quality remastering
+By leveraging industry-leading video AI technologies, MPS supports digital remastering, SD to HD, and HD to 4K, allowing you to increase the quality and color richness of videos while greatly reducing video noise, glitches, and banding.
+
+## A Variety of Features
+MPS supports various capabilities such as audio/video transcoding, audio/video enhancement, video screencapturing, content discovery, moderation, and smart editing. It provides a variety of template configuration capabilities, which enable you to customize the configuration as needed.
 
 ## AI Technology
-Leveraging Tencent Cloud's cutting-edge AI technology, MPS offers services such as smart thumbnail generation, search by face, smart editing, and porn detection.  
-
-## Encryption for Security
-MPS provides digital rights management (DRM) encryption, multi-key encryption, and custom content encryption services to protect your video resources and prevent leakage or unauthorized use of your files.
+Based on Tencent Cloud's advanced AI technology, MPS provides diversified smart services for massive amounts of video content, including smart tagging, intelligent thumbnail generation, face recognition, speech/text recognition, smart editing, and security/quality moderation.
