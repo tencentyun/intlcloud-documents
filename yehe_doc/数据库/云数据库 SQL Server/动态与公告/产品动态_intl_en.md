@@ -13,14 +13,14 @@
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
 <tbody><tr>
 <td>Optimized the console and features</td>
-<td>The TencentDB for SQL Server team makes the following optimizations in the product feature and console UI to further improve the user experience.<ul><li>Manual backups in the specified time range can be batch deleted.</li><li>The backup name can contain up to 128 characters.</li><li>The log backup frequency is adjusted to once every ten minutes.</li><li>The visual display of the backup space trend chart is optimized in the console.</li><li>You can search for slow query files in the specified time range.</li><li>On the purchase page, VPC, subnet, and project lists support exact and fuzzy searches. </li><li>The display order of system monitoring metrics is adjusted in the console.</li><li>The logic to set the instance maintenance window is optimized. You need to select at least one maintenance cycle to guarantee the database Ops security.</li><li>A quick redirect link is added to the VPC console to quickly query the TencentDB for SQL Server instances bound to VPCs.</li></ul></td>
+<td>The TencentDB for SQL Server team makes the following optimizations in the product feature and console UI to further improve the user experience.<br><li>Manual backups in the specified time range can be batch deleted.<br><li>The backup name can contain up to 128 characters.<br><li>The visual display of the backup space trend chart is optimized in the console.<br><li>You can search for slow query files in the specified time range.<br><li>On the purchase page, VPC, subnet, and project lists support exact and fuzzy searches. <br><li>The display order of system monitoring metrics is adjusted in the console.<br><li>The logic to set the instance maintenance cycle is optimized. You need to select at least one maintenance cycle to guarantee the database Ops security.<br><li>A quick redirect link is added to the VPC console to quickly query the TencentDB for SQL Server instances bound to VPCs.</td>
 <td>2022-06-22</td>
 <td>-</td></tr>
 <tbody><tr>
 <td>Released the SSIS feature</td>
 <td>TencentDB for SQL Server business intelligence server is released, which supports SQL Server Integration Services (SSIS). SSIS can be used to sustain complex business scenarios, such as merging data from heterogeneous data stores, cleansing and standardizing data, populating data warehouses and datasets, transforming data for complex business logic, supporting management features, and automating data loading. It helps meet your diversified needs in various use cases, including BI analysis, high-value data mining, and primary data management system setup.</td>
 <td>2022-06-10</td>
-<td><a href="https://cloud.tencent.com/document/product/238/75223" target="_blank">SSIS Overview</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/48060" target="_blank">Overview</a></td></tr>
 </tbody></table>
 
 ## May 2022
@@ -41,10 +41,11 @@
 <td>Release new documents</td>
 <td>Documents such as FAQs, Constraints and Limits, Usage Specifications and Suggestions are added to help you better use TencentDB for SQL Server.</td>
 <td>2022-05-27</td>
-<td><ul><li><a href="https://cloud.tencent.com/document/product/238/74374" target="_blank">FAQs Overview</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/238/2021" target="_blank">Constraints and Limits</a></li>
-<li><a href="https://cloud.tencent.com/document/product/238/74471" target="_blank">Usage Specifications and Suggestions</a></li></ul></td></tr>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/238/47719" target="_blank">FAQs</a>
+<li><a href="https://intl.cloud.tencent.com/document/product/238/2021" target="_blank">Constraints and Limits</a>
+<li><a href="https://intl.cloud.tencent.com/document/product/238/48122" target="_blank">Usage Specifications and Suggestions</a></td></tr>
 </tbody></table>
+
 
 ## March 2022
 <table>
@@ -71,7 +72,7 @@
 <td>Optimized the system monitoring feature</td>
 <td>The system monitoring page in the TencentDB for SQL Server console is optimized to support full-screen data display, time comparison, monitoring granularity configuration, and data export.</td>
 <td>2022-02-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/238/46503" target="_blank">Viewing Monitoring Charts</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46503" target="_blank">Viewing Monitoring Chart</a></td></tr>
 <tbody><tr>
 </tbody></table>
 
@@ -118,7 +119,7 @@
 <td>Launched the updated data migration feature (new)	</td>
 <td>The updated data migration feature (new) is launched, and the old data migration feature has been disused and will be deactivated on March 1, 2022. The new feature has more data migration capabilities.</td>
 <td>2021-11</td>
-<td><a href="https://cloud.tencent.com/document/product/571/61271" target="_blank">Migration from SQL Server to TencentDB for SQL Server</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/571/42638" target="_blank">Migration from SQL Server to TencentDB for SQL Server</a></td></tr>
 <tr>
 <td>Launched the service in Chongqing region</td>
 <td>TencentDB for SQL Server is now available in Chongqing Zone 1.</td>
@@ -148,15 +149,15 @@
 <td>Supported unarchived backup files upload to COS</td>
 <td>By default, backup files (i.e., .bak files) will be archived into a .tar file and then uploaded to COS. If you select "Unarchived files" here, the .bak file of each database in the instance will be directly uploaded to COS without being archived, which means that you can now download the backup file of a single database.</td>
 <td>2021-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/238/45853">Setting Backup Task</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35790">Creating and Viewing Backup Task</a></td></tr>
 <tr>
 <td>Supported backup on the replica node</td>
 <td>You can now back up data at the replica node of a cluster edition 2017/2019 instance.</td>
 <td>2021-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/238/45853">Setting Backup Task</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35790">Creating and Viewing Backup Task</a></td></tr>
 <tr>
 <td>Launched the service in Bangkok region</td>
-<td>TencentDB for SQL Server is now available in Bangkok Zone 1 and Bangkok Zone 2.</td>
+<td>TencentDB for SQL Server is now available in Bangkok Zones 1 and 2.</td>
 <td>2021-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/238/7520">Regions and AZs</a></td></tr>
 <tr>
@@ -175,7 +176,7 @@
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
 <tbody><tr>
-<td>Launched the service in Beijing Zone 6</td>
+<td>Launched the service in Beijing Zone 6	</td>
 <td>	TencentDB for SQL Server is now available in Beijing Zone 6.</td>
 <td>2021-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
@@ -213,7 +214,7 @@
 <td>Launched 11 new system and instance monitoring metrics</td>
 <td>Four memory and lock performance counter monitoring metrics and seven physical machine system monitoring metrics are added for enterprise-grade users to comprehensively monitor database performance.</td>
 <td>2021-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/238/46503" target="_blank">Viewing Monitoring Charts</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7524" target="_blank">Monitoring</a></td></tr>
 </tbody></table>
 
 ## June 2021
@@ -238,7 +239,7 @@
 <td>Launched TencentDB for SQL Server 2019</td>
 <td>TencentDB for SQL Server 2019 is officially launched and supports Basic, High Availability, and Cluster Edition instances, which have great improvements in performance, ease of use, high availability, and security.</td>
 <td>2021-05</td>
-<td><a href="https://cloud.tencent.com/document/product/238/3263" target="_blank">Engines and Versions</a></td></tr>
+<td>-</td></tr>
 <tr>
 <td>Launched the service in Beijing Zone 7</td>
 <td>TencentDB for SQL Server is now available in Beijing Zone 7.</td>
@@ -253,7 +254,7 @@
 <td>Supported self-service version and architecture upgrade</td>
 <td>You can upgrade the version and architecture and scale instances in the console in a self-service manner to easily adjust instances based on your business needs.</td>
 <td>2020-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/238/44352" target="_blank">Adjusting Instance Configuration Overview</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/44352" target="_blank">Overview</a></td></tr>
 </tbody></table>
 
 ## November 2020
@@ -281,26 +282,14 @@
 <td><li><a href="https://intl.cloud.tencent.com/document/product/238/39005" target="_blank">Cold Backup Migration</a></li><li><a href="https://intl.cloud.tencent.com/document/product/238/39006" target="_blank">Migrating Data with DTS</a></li></td></tr>
 </tbody></table>
 
-
-
 ## July 2020
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
 <tbody><tr>
 <td>Launched TencentDB for SQL Server Basic (Standalone) Edition</td>
-<td>TencentDB for SQL Server Basic Edition is launched, which supports cloud `sysadmin` permissions. It provides a complete set of genuinely licensed database solutions with high availability, security, and performance and lightweight Ops.</td>
+<td>TencentDB for SQL Server Basic Edition is launched, which supports cloud `sysadmin` permissions. It provides a complete set of genuinely licensed database solutions with high availability, security, and performance and light Ops.</td>
 <td>2020-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/238/3254" target="_blank">Architecture</a></td></tr>
-</tbody></table>
-
-## April 2020
-<table>
-<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
-<tbody><tr>
-<td>Supported publish/subscribe</td>
-<td>The publish/subscribe feature adopts replication technology to implement read-write separation and online/offline data sync.</td>
-<td>2020-04</td>
-<td><li><a href="https://cloud.tencent.com/document/product/238/43326" target="_blank">Publish/Subscribe Overview</a></li><li><a href="https://cloud.tencent.com/document/product/238/43327" target="_blank">Managing Publish/Subscribe</a></li></td></tr>
 </tbody></table>
 
 ## March 2020
@@ -327,11 +316,6 @@
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
 <tbody><tr>
-<td>Supported multi-AZ deployment</td>
-<td>Multi-AZ deployment can meet the needs for disaster recovery in multiple locations and better guarantee the availability.</td>
-<td>2019-12</td>
-<td><a href="https://cloud.tencent.com/document/product/238/43221" target="_blank">Multi-AZ Disaster Recovery</a></td></tr>
-<tr>
 <td>Supported setting device maintenance time</td>
 <td>TencentDB for SQL Server supports setting the maintenance time. To ensure the stability of your TencentDB instance, the backend system performs maintenance operations on the instance during the maintenance time at irregular intervals.</td>
 <td>2019-12</td>
@@ -343,7 +327,7 @@
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
 <tbody><tr>
 <td>Supported configuring security groups</td>
-<td>A security group as described in <a href="https://cloud.tencent.com/doc/product/213/500">Overview</a> is a stateful virtual firewall capable of filtering. As an important means for network security isolation, it can be used to set network access controls for one or more TencentDB instances.</td>
+<td>A <a href="https://intl.cloud.tencent.com/document/product/213/500?from_cn_redirect=1">security group</a> is a stateful virtual firewall capable of filtering. As an important means for network security isolation, it can be used to set network access controls for one or more TencentDB instances.</td>
 <td>2019-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/238/35789" target="_blank">Configuring Security Group</a></td></tr>
 <tr>
@@ -399,8 +383,8 @@
 <tbody><tr>
 <td>Launched SQL Server 2016</td>
 <td>TencentDB for SQL Server is now available on SQL Server 2016.</td>
-<td>2017-09</td>
-<td><a href="https://cloud.tencent.com/document/product/238/3263" target="_blank">Engines and Versions</a></td></tr>
+<td>2017-09</td><td>-</td>
+</tr>
 </tbody></table>
 
 ## December 2016
@@ -409,8 +393,8 @@
 <tbody><tr>
 <td>Supported read-only mode for replica servers</td>
 <td>TencentDB for SQL Server supports read-only mode for replica servers. You can select memory and disks as needed to tailor the database specification for your actual business. The read-only mode is implemented through snapshots, facilitating online data analysis. It doesn't increase the costs, affect the primary database performance, or compromise high availability.</td>
-<td>2016-12</td>
-<td><a href="https://cloud.tencent.com/document/product/238/3263" target="_blank">Engines and Versions</a></td></tr>
+<td>2016-12</td><td>-</td>
+</tr>
 </tbody></table>
 
 ## May 2016
@@ -419,8 +403,8 @@
 <tbody><tr>
 <td>Supported SQL Server 2012 Enterprise Edition</td>
 <td>TencentDB for SQL Server is now available on SQL Server 2012 Enterprise Edition, which is compatible with all features of SQL Server 2008.</td>
-<td>2016-05</td>
-<td><a href="https://cloud.tencent.com/document/product/238/3263" target="_blank">Engines and Versions</a></td></tr>
+<td>2016-05</td><td>-</td>
+</tr>
 </tbody></table>
 
 ## December 2015
@@ -432,5 +416,3 @@
 <td>2015-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/238/2016" target="_blank">Product Overview</a></td></tr>
 </tbody></table>
-
-
