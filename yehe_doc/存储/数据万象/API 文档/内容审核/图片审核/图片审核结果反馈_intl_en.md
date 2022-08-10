@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to report moderation results that are not as expected. For example, when pornographic text is moderated and determined as normal, or normal text is determined as pornographic, you can directly report the result through this API.
+This API is used to report moderation results that are not as expected. For example, when a pornographic image is moderated and determined as normal, or a normal image is determined as pornographic, you can directly report the result through this API.
 
 This API will not directly modify the moderation result. The incorrect moderation result you report will be confirmed on the backend, and the confirmed result will take effect in subsequent moderation jobs.
 
@@ -42,7 +42,7 @@ This request requires the following request body:
     <ContentType></ContentType>
     <JobId></JobId>
     <ModerationTime></ModerationTime>
-    <Text></Text>
+    <Url></Url>
     <SuggestedLabel></SuggestedLabel>
     <Label></Label>
 </Request>
@@ -58,8 +58,8 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------ | :----------------------------------------------------------- | :------ | :------- |
-| ContentType | Request | Type of the data to be reported. The value for incorrect text sample is 1. | Integer | Yes |
-| Text | Request | Text sample. You need to enter Base64-encoded text content, which is required if `ContentType` is 1. | String | No |
+| ContentType | Request | Type of the data to be reported. The value for incorrect image sample is 2. | Integer | Yes |
+| Url | Request | Image sample. You need to enter the URL of the image, which is required if `ContentType` is 2. | String | No |
 | Label | Request | Tag of the moderation result returned by CI, such as `Porn`. | String | Yes |
 | SuggestedLabel | Request | Tag of the correct moderation result you expect, such as `Normal`. | String | Yes |
 | JobId | Request | Moderation job ID corresponding to the data sample, which is helpful for locating moderation records. | String | No |
@@ -109,7 +109,7 @@ Content-Length: 66
 Content-Type: application/xml
 <Request>
     <ContentType>1</ContentType>
-    <Text>6L+Z5piv5Li65LuA5LmI</Text>
+    <Url>http://www.example.com/abc.jpg</Url>
     <Label>Porn</Label>
     <SuggestedLabel>Normal</SuggestedLabel>
 </Request>
