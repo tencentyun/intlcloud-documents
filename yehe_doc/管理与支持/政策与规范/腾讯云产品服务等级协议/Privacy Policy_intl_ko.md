@@ -600,6 +600,7 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 41.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48241).
 42.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48289).
 43.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47314).
+44.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48827).
 
 ### 개정 기록
 [개인정보 처리방침](https://intl.cloud.tencent.com/document/product/301/43505)(버전1.0)
