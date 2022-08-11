@@ -145,6 +145,7 @@
 42.[语音合成](https://intl.cloud.tencent.com/document/product/1154/48243)。
 43.[语音识别](https://intl.cloud.tencent.com/document/product/1118/48290)。
 44.[云直播](https://intl.cloud.tencent.com/document/product/267/47315)。
+45.[实时音视频](https://intl.cloud.tencent.com/document/product/647/48828)。
 
 ## 特定司法管辖区要求
 
