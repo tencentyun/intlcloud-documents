@@ -29,10 +29,8 @@ CKafka 当前支持的事件类型有：
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏选择**实例管理** ，单击目标实例的“ID”，进入实例详情页面。
 3. 在页面上方选择“事件中心”页签，设置好时间范围（支持近6小时、近7天、近30天和自定义时间范围），选择需要查看的事件类型。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/5688fc7b881568ace27284fa9f99fa78.png)
    在事件详情页面，您可以进行以下操作：
    - 单击操作列的**查看详情**，您可以在右侧栏查看事件详情。
-![](https://qcloudimg.tencent-cloud.cn/raw/b43107fa6afc9c455ab9a0f328dc9352.png)
    - 单击操作列的**配置告警**，您可以为事件配置通知模板，将事件详情发送给目标对象。
    
 
