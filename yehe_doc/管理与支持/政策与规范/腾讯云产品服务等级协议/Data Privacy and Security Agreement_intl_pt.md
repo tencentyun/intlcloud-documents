@@ -145,6 +145,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 42.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48243).
 43.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48290).
 44.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47315).
+45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48828).
 
 ## Requisitos específicos da jurisdição
 
