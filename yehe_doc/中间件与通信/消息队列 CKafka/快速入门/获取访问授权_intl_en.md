@@ -33,9 +33,7 @@ A sub-account needs to be authorized in the following two aspects before it can 
 3. Click **Create Custom Policy**.
 4. In the **Select Policy Creation Method** pop-up window, select **Create by Policy Generator** to enter the **Create by Policy Generator** page.
 5. Enter the services, operations, resources, and other information in the policy as needed. You can refer to the figure below to generate the `ckafka_PassRole` policy. Then, click **Next**.
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/0bf81b139dfeb45e343736399b05c229.png" width="600px"> 
 6. Enter the policy name `ckafka_PassRole`, associate it with the target **user**, **user group** or **role**, and click **Complete**.
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/ed120499c2ab67ad1096562a67609268.png" width="600px"> 
 
 
 [](id:step2)
@@ -45,22 +43,18 @@ A sub-account needs to be authorized in the following two aspects before it can 
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) as the root account.
 2. On the left sidebar, click **Policies** to enter the policy management page.
-3. Search for `QcloudCKafkaFullAccess` on the right. ![](https://qcloudimg.tencent-cloud.cn/raw/57b9bbb251be3770a97b1444338adb02.png)
+3. Search for `QcloudCKafkaFullAccess` on the right. 
 4. In the search results, click the **Associated Users/Groups** of `QcloudCKafkaFullAccess` and select the sub-account to be authorized.
-![](https://qcloudimg.tencent-cloud.cn/raw/ed960435c7742e4105ea8a02b22ca7d4.png)
 
 :::
 ::: Permissions of specified resources
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka/) and find the CKafka instance resource that needs to be authorized.
-2. Get the ID of the instance as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/9ddc7d5cc0013faf67ddcf0020008a43.png)
+2. Get the ID of the instance.
 3. Log in to the [CAM console](https://console.cloud.tencent.com/cam) and click **Policies** on the left sidebar to enter the policy management list page.
 4. Click **Create Custom Policy**. In the **Select Policy Creation Method** pop-up window, select **Create by Policy Generator** to enter the **Create by Policy Generator** page.
-5. Enter the services, operations, resources, and other information in the policy as needed. Then, click **Add a six-segment resource description** as shown below:
-   ![](https://qcloudimg.tencent-cloud.cn/raw/6204c10413e966028e787c3b548b6e70.png)
-6. Enter the ID of the specified instance in the six-segment resource description:
-![](https://qcloudimg.tencent-cloud.cn/raw/0227b28724a37e320e6bd0e00e28e00a.png)
+5. Enter the services, operations, resources, and other information in the policy as needed. Then, click **Add a six-segment resource description**.
+6. Enter the ID of the specified instance in the six-segment resource description.
 7. Click **Next**, specify users or user groups for the policy, and click **Complete**.
 :::
 </dx-tabs>
