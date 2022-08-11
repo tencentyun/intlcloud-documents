@@ -599,3 +599,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 41.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48241).
 42.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48289).
 43.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47314).
+44.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48827).
