@@ -141,6 +141,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 42.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48243).
 43.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48290).
 44.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47315).
+45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48828).
 
 ## 法域特定の要件
 
