@@ -64,11 +64,11 @@ Below is the content of the schema file:
 1. Register the schema in the topic named `test`.
    The script below is an example of registering a schema by calling an API with the `curl` command in the environment deployed in Schema Registry.
 
-	```xml
+```xml
 	curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 	--data '{"schema": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"id\", \"type\": \"int\"}, {\"name\": \"name\",  \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]}"}' \
 	http://127.0.0.1:8081/subjects/test/versions
-	```
+```
 
 2. The Kafka producer sends messages.
 <dx-codeblock>
