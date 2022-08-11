@@ -64,11 +64,11 @@ CKafka 提供了数据共用一个 Schema 的方法：将 Schema 中的内容注
 1. 注册 schema 到对应 Topic（注册 Topic 名为 test）。
    下面的脚本是直接在 Schema Registry 部署的环境中使用 curl 命令调用对应 API 实现注册的一个示例：
 
-	```xml
+```xml
 	curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 	--data '{"schema": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"id\", \"type\": \"int\"}, {\"name\": \"name\",  \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]}"}' \
 	http://127.0.0.1:8081/subjects/test/versions
-	```
+```
 
 2. Kafka Producer 发送数据：
 <dx-codeblock>
