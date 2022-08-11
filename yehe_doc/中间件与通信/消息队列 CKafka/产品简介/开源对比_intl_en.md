@@ -1,4 +1,4 @@
-The performance comparison between CKafka and open-source Apache Kafka is detailed as follows:
+The performance comparison between CKafka and open-source Apache Kafka is as follows:
 
 | Feature       | CKafka                                                       | Apache Kafka                                                 |
 | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |

@@ -27,26 +27,26 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
 
 ### 准备工作
 
-- 下载并安装 Logstash，参考 [Download Logstash](https://www.elastic.co/guide/en/logstash/7.6/installing-logstash.html?spm=a2c4g.11186623.2.10.7d625287CKP6MX)。
-- 下载并安装 JDK 8，参考 [Download JDK 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)。
+- 下载并安装 Logstash，参见 [Download Logstash](https://www.elastic.co/guide/en/logstash/7.6/installing-logstash.html?spm=a2c4g.11186623.2.10.7d625287CKP6MX)。
+- 下载并安装 JDK 8，参见 [Download JDK 8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)。
 - 已 [创建 CKafka 实例](https://intl.cloud.tencent.com/document/product/597/39718)。
 
 ### 步骤1：获取 CKafka 实例接入地址
 
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
-2. 在左侧导航栏选择【实例列表】，单击实例的“ID”，进入实例基本信息页面。
-3. 在实例的基本信息页面的【接入方式】模块，可获取实例的接入地址。
+2. 在左侧导航栏选择**实例列表**，单击实例的“ID”，进入实例基本信息页面。
+3. 在实例的基本信息页面的**接入方式**模块，可获取实例的接入地址。
    ![](https://main.qcloudimg.com/raw/5905037c8e847781e495d2f202167d5c.png)
 
 ### 步骤2：创建 Topic
 
-1. 在实例基本信息页面，选择顶部【Topic管理】页签。
-2. 在 Topic 管理页面，单击【新建】，创建一个名为 logstash_test 的 Topic。
+1. 在实例基本信息页面，选择顶部**Topic管理**页签。
+2. 在 Topic 管理页面，单击**新建**，创建一个名为 logstash_test 的 Topic。
    ![](https://main.qcloudimg.com/raw/580d8f5577ea5d462f26061f7a50095c.png)
 
 ### 步骤3：接入 CKafka
 
->?您可以点击以下页签，查看 CKafka 作为 inputs 或者 outputs 接入的具体步骤。
+>?您可以单击以下页签，查看 CKafka 作为 inputs 或者 outputs 接入的具体步骤。
 
 <dx-tabs>
 :::作为\sinputs\s接入
@@ -91,17 +91,15 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
 
    ```bash
    input {
-       input {
-         stdin{}
-     }
+      stdin{}
    }
-   
-   output {
-      kafka {
-           bootstrap_servers => "xx.xx.xx.xx:xxxx"  // ckafka 实例接入地址
-           topic_id => "logstash_test" // ckafka topic 名称
-          }
-   }
+
+output {
+   kafka {
+        bootstrap_servers => "xx.xx.xx.xx:xxxx"  // ckafka 实例接入地址
+        topic_id => "logstash_test" // ckafka topic 名称
+       }
+}
    ```
 
 3. 执行如下命令启动 Logstash，向创建的 Topic 发送消息。
@@ -110,10 +108,10 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
    ./logstash -f output.conf
    ```
 
-![](https://mc.qcloudimg.com/static/img/1f28c9cac2800e211695307e7138d812/image.png)
+  ![](https://mc.qcloudimg.com/static/img/1f28c9cac2800e211695307e7138d812/image.png)
 
 4. 启动CKafka消费者，检验上一步的生产数据。
-![](https://mc.qcloudimg.com/static/img/ae85758a90a497235a90511770f959d2/10.png)
+   ![](https://mc.qcloudimg.com/static/img/ae85758a90a497235a90511770f959d2/10.png)
 
 :::
 

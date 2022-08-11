@@ -16,14 +16,14 @@ SSL 证书的核心功能是保护服务器-客户端通信。数据通过 SSL �
 
 ### 步骤1：控制台配置
 1. 创建接入点。
-	1. 在 **[实例列表](https://console.intl.cloud.tencent.com/ckafka/index)** 页面，单击目标实例 ID，进入实例详情页。
+	1. 在 **[实例列表](https://console.cloud.tencent.com/ckafka/index)** 页面，单击目标实例 ID，进入实例详情页。
 	2. 在 **基本信息** > **接入方式** 中，单击**添加路由策略**，在打开窗口中选择：`路由类型：公网域名接入`,`接入方式：SASL_SSL`。
 	![](https://qcloudimg.tencent-cloud.cn/raw/fb9e6cb8740ecff2f2c13c88a128c270.png)
 2. 创建角色。
 在**用户管理**页面新建角色，设置密码。
 ![](https://qcloudimg.tencent-cloud.cn/raw/c9e06ace7d959ae91331a241c2126cc5.png)
 3. 创建 Topic。
-在控制台 **topic 管理**页面新建 Topic（参见 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/32554)）。
+在控制台 **topic 管理**页面新建 Topic（参见 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/47584)）。
 
 
 ### 步骤2：添加配置文件
