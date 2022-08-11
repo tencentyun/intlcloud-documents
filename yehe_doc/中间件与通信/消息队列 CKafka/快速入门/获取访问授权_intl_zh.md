@@ -33,9 +33,7 @@
 3. 单击**新建自定义策略**。
 4. 在选择创建策略方式的弹出框中，单击**按策略生成器创建**，进入按策略生成器创建页。
 5. 根据需要填写策略中对应的服务、操作、资源等内容，您可参照下方图片，生成 ckafka_PassRole 策略，并单击**下一步**。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/0bf81b139dfeb45e343736399b05c229.png" width="600px"> 
 6. 填写策略名称 ckafka_PassRole 并将其关联给相应的**用户**、**用户组**或**角色**，点击**完成**。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/ed120499c2ab67ad1096562a67609268.png" width="600px"> 
 
 
 [](id:step2)
@@ -45,22 +43,18 @@
 
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)。
 2. 在左侧导航栏，单击**策略**，进入策略管理列表页。
-3. 在右侧搜索栏中，输入 QcloudCKafkaFullAccess 进行搜索。![](https://qcloudimg.tencent-cloud.cn/raw/57b9bbb251be3770a97b1444338adb02.png)
+3. 在右侧搜索栏中，输入 QcloudCKafkaFullAccess 进行搜索。
 4. 在搜索结果中，单击 QcloudCKafkaFullAccess 的**关联用户/组**，选择需要授权的子账号。
-![](https://qcloudimg.tencent-cloud.cn/raw/ed960435c7742e4105ea8a02b22ca7d4.png)
 
 :::
 ::: 指定资源权限
 
 1. 进入 [Ckafka控制台](https://console.cloud.tencent.com/ckafka/) 找到需要进行授权的 Ckafka 实例资源。
-2. 获取相应实例的 ID，如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/9ddc7d5cc0013faf67ddcf0020008a43.png)
+2. 获取相应实例的 ID。
 3. 进入[访问管理控制台](https://console.cloud.tencent.com/cam)，在左侧导航栏，单击**策略**，进入策略管理列表页。
 4. 单击**新建自定义策略**，在选择创建策略方式的弹出框中，单击**按策略生成器创建**，进入按策略生成器创建页。
-5. 根据需要填写策略中对应的服务、操作、资源等内容，单击添加资源六段式，参照下图所示。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/6204c10413e966028e787c3b548b6e70.png)
-6. 在资源六段式中填写指定的实例 ID：
-![](https://qcloudimg.tencent-cloud.cn/raw/0227b28724a37e320e6bd0e00e28e00a.png)
+5. 根据需要填写策略中对应的服务、操作、资源等内容，单击添加资源六段式。
+6. 在资源六段式中填写指定的实例 ID。
 7. 单击**下一步**，为策略指定相应的用户或用户组，单击**完成**。
 :::
 </dx-tabs>
