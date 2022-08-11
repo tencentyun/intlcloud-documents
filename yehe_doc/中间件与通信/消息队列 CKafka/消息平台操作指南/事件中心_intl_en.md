@@ -29,10 +29,8 @@ This document describes how to view event details and configure event notificati
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Click **Instance Management** on the left sidebar and click the **ID** of the target instance to enter the instance details page.
 3. Select the **Event Center** tab at the top of the page, set the time range (last 6 hours, last 7 days, last 30 days, or a custom time range), and select the target event type.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/5688fc7b881568ace27284fa9f99fa78.png)
    On the **Event Details** page, you can perform the following operations:
    - Click **View Details** in the **Operation** column to view the event details on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/b43107fa6afc9c455ab9a0f328dc9352.png)
    - Click **Configure Alarm Policy** in the **Operation** column to configure a notification template for the event and send event details to the target object.
    
 
