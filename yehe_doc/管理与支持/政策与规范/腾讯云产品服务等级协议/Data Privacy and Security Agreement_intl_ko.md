@@ -154,6 +154,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 42.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48243).
 43.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48290).
 44.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47315).
+45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48828).
 
 ## 관할권별 요구 사항
 
