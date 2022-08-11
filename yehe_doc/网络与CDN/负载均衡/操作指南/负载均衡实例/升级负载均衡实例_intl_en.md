@@ -16,7 +16,6 @@ CLB instance specifications include shared and LCU-supported instances. By defau
 
 ## Restrictions on Upgrade
 - Currently, the LCU-supported instance type is in beta. To upgrade to or purchase one, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
-- You can batch upgrade multiple pay-as-you-go shared instances.
 - Classic CLB instances cannot be upgraded to LCU-supported instances.
 - Classic network CLB instances cannot be upgraded to LCU-supported instances.
 - Currently, you cannot purchase or upgrade to private network LCU-supported instances. For the specific release time, check the Tencent Cloud official website regularly.
