@@ -24,7 +24,7 @@ Total Cost|Total cost = Original cost × (1 - Discount rate)
 Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
 >? If the component type is **VOD transcoding**, the transcoding template type is indicated in the instance ID. For example:
 >- `XXX_h265_sd_640_480` indicates a general transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
->- `XXX_h265_eshd_sd_640_480` indicates a TSC template with codec set to H.265 and resolution set to SD (640 × 480) and below.
+>- `XXX_h265_eshd_sd_640_480` indicates a TSC transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
 
 ### Bill Details
 
