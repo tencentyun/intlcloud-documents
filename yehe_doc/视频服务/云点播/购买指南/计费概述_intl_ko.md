@@ -8,7 +8,7 @@ VOD는 일별 및 월별 종량제 과금 방식을 지원합니다.
 
 ## 과금 구성
 VOD 과금 항목에는 스토리지, 트랜스코딩, 트래픽 및 기타 부가 가치 서비스가 포함됩니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/88e34a4e073f95935f08ef948b7b691a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/05216d02d02fadfd695c7f9105bb1c45.png)
 
 + 일 결산의 경우 당일 발생한 요금이 다음 날 12:00 - 18:00(UTC+8) 사이에 청구 및 차감됩니다.
 + 월 결산의 경우 당월 발생한 요금이 다음 달 1일에 청구 및 차감됩니다.
