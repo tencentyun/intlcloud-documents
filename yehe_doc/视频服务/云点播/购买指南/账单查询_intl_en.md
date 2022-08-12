@@ -4,8 +4,8 @@ To view your VOD bills and payment details, go to Tencent Cloud **Billing Center
 ## Bill Details
 
 The Bill Details page includes the **Bill by Instance** and **Bill Details** tabs:
-- Bill by Instance: displays aggregated bills by instance.
-- Bill Details: displays one record per bill without performing aggregation.
+- Bill by Instance: Displays aggregated bills by instance.
+- Bill Details: Displays one record per bill without performing aggregation.
 
 
 ### Bill by Instance
@@ -15,7 +15,7 @@ Click **All products** and then select **VOD** to view the VOD bills.
 #### Bill fields
 | Field | Description |
 -|-
-Billing Cycle| <ul style="margin:0;"><li >Daily billing cycle: fees are deducted daily<li >Monthly billing cycle: fees are deducted monthly
+Billing Cycle| <ul style="margin:0;"><li >Daily billing cycle: Fees are deducted daily<li >Monthly billing cycle: Fees are deducted monthly
 Configuration Description|VOD sub-features and their usage in this month. VOD sub-features include:<ul style="margin:0;"><li >VOD storage <li >VOD transcoding <li >VOD traffic <li >VOD bandwidth <li >VOD inappropriate content recognition
 Original Cost|Total fees of the sub-features used in this month
 Discount Rate|The user’s discount rate this month:<ul style="margin:0;"><li >Users on the daily billing cycle do not receive discounts. Their discount rate is 0.<li >Users on the monthly billing cycle should contact sales to inquire about discounts.
