@@ -118,8 +118,8 @@ Assume that you transcoded a video file of 100 minutes into 2560 x 1440 and 1280
 
 For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/266/38163).
 
-### Top Speed Codec (TSC) transcoding
-To learn about TSC transcoding, see [Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd).
+### Top Speed Codec transcoding
+To learn about Top Speed Codec (TSC) transcoding, see [Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd).
 #### Pricing
 
 TSC transcoding is charged based on the duration and short side (px) of the video generated after transcoding.
