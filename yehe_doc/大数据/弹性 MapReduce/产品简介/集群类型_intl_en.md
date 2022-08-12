@@ -108,9 +108,9 @@ EMR supports six cluster types and their respective use cases and defines five n
 <tbody><tr>
 <td >Default use case</td>
 <td >It provides an MPP analytical database product that supports sub-second queries on PB-scale, structured data. It is compatible with MySQL protocol and uses the standard SQL syntax. It is suitable for historical report analysis, real-time data analysis, interactive data analysis, etc.</td>
-<td><ul style="margin:0"><li/><b>Master node: </b>It is a frontend module and provides the Web UI feature. Processes such as FE Follower and Broker are deployed here. The number of master nodes is ≥1 in non-HA mode or ≥3 in HA mode.
-<li/><b>Core node: </b>It is a backend module and provides the data storage feature. Processes such as BE and Broker are deployed here. The number of core nodes is ≥3.
-<li/><b>Router node: </b>It is a frontend module and helps achieve high read/write availability. Processes such as FE Observer and Broker are deployed here. Router nodes can be scaled out but not scaled in.
+<td><ul style="margin:0"><li/><b>Master node: </b>It is a frontend module that provides the Web UI feature. Processes such as FE Follower and Broker are deployed here. The number of master nodes is ≥1 in non-HA mode or ≥3 in HA mode.
+<li/><b>Core node: </b>It is a backend module that provides the data storage feature. Processes such as BE and Broker are deployed here. The number of core nodes is ≥3.
+<li/><b>Router node: </b>It is a frontend module that helps achieve high read/write availability. Processes such as FE Observer and Broker are deployed here. Router nodes can be scaled out but not in.
 </ul></td>
 </tr>
 </tbody>
@@ -146,9 +146,9 @@ EMR supports six cluster types and their respective use cases and defines five n
 <tbody><tr>
 <td >Default use case</td>
 <td >StarRocks adopts full vectorization technology. It supports extremely fast and unified OLAP databases. It is suitable for many data analysis scenarios, such as multidimensional, real-time, and high-concurrency analysis.</td>
-<td><ul style="margin:0"><li/><b>Master node: </b>It is a frontend module and provides the Web UI feature. Processes such as FE Follower and Broker are deployed here. The number of master nodes is ≥1 in non-HA mode or ≥3 in HA mode.
-<li/><b>Core node: </b>It is a backend module and provides the data storage feature. Processes such as BE and Broker are deployed here. The number of core nodes is ≥3.
-<li/><b>Router node: </b>It is a frontend module and helps achieve high read/write availability. Processes such as FE Observer and Broker are deployed here. Router nodes can be scaled out but not scaled in.
+<td><ul style="margin:0"><li/><b>Master node: </b>It is a frontend module that provides the Web UI feature. Processes such as FE Follower and Broker are deployed here. The number of master nodes is ≥1 in non-HA mode or ≥3 in HA mode.
+<li/><b>Core node: </b>It is a backend module that provides the data storage feature. Processes such as BE and Broker are deployed here. The number of core nodes is ≥3.
+<li/><b>Router node: </b>It is a frontend module that helps achieve high read/write availability. Processes such as FE Observer and Broker are deployed here. Router nodes can be scaled out but not in.
 </ul></td>
 </tr>
 </tbody>

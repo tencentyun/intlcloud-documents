@@ -1,7 +1,7 @@
 ## List of APIs supporting resource-level authorization
 EMR supports resource-level authorization. You can grant a specified sub-account the API permission of a specified resource.
 
->!A permission error may occur when new APIs are subsequently added. In case of such permission error, you can add the missing API permission in the policy according to the error message.
+>!A permission error may occur when new APIs are subsequently added. In case of such permission error, you can add the missing API permission in the policy based on the error message.
 
 APIs supporting resource-level authorization include:
 <table>

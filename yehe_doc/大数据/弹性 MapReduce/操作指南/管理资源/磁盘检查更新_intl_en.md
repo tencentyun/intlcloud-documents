@@ -1,5 +1,5 @@
 ## Feature overview
-This feature checks whether the cluster disk information is consistent with the information displayed in the console and supports performing updates to ensure consistency.
+This feature checks whether the cluster disk information is consistent with that displayed in the console and supports performing updates to ensure consistency.
 
 ## Directions
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the **Cluster list** to enter the cluster details page.

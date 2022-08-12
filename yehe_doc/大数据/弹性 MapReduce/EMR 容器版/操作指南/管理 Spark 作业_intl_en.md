@@ -68,7 +68,7 @@ The following sample shows the complete process of compiling a Spark program, pa
 1. Prepare for development.
 You need to have a COS bucket for this job, which can be the bucket you selected when creating the cluster or a new bucket created in the same region as the previously selected bucket.
 2. Create a project with Maven.
-You need to create a project and then compile, package, and upload it. Maven is recommended for easier project dependency management.
+You need to create a project and then compile, package, and upload it. Maven is recommended because it can help you manage project dependency more easily.
 3. Write a WordCount program and add the following sample code:
 ```
 import java.util.Arrays;

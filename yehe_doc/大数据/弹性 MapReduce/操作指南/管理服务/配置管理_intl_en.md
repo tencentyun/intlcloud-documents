@@ -1,5 +1,5 @@
 ## Feature Overview
-Configuration management supports modifying key configuration parameters of commonly used open-source components such as HDFS, YARN, Hive, and Spark. The configuration of services can be modified as needed at the level of cluster, node, or configuration group. This document describes how to configure service parameters in the console.
+Configuration management allows you to modify key configuration parameters of popular open-source components like HDFS, YARN, Hive, and Spark. The configuration of services can be modified as needed at the level of cluster, node, or configuration group. This document describes how to configure service parameters in the console.
 >! 
 >- For security reasons, when a custom configuration file is deleted in **Configuration Management** in the console, it will not be deleted from the client.
 >- If you need to delete a custom configuration file from the client, you can use a cluster script to batch perform the operation on existing clusters.

@@ -6,7 +6,7 @@ Authentication is not required when Alluxio users access data from COS, HDFS, or
 
 ## Supported Versions
 - Supported service component version: Alluxio v2.8.0.
-- Product version: Hadoop 3.x Standard EMR 3.4.0.
+- Product version: Hadoop 3.x Standard EMR v3.4.0.
 
 ## Configuring Authentication
 ### Prerequisite configuration

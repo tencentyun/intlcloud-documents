@@ -3,7 +3,7 @@ In actual use, you may find that the configurations of the nodes in your cluster
 
 ## Prerequisites
 1. The instance will be shut down during the change. Note that the shutdown may affect the normal use of the cluster and even interrupt your business.
-2. After the configurations of pay-as-you-go nodes are changed, the billing tier will restart from the first tier.
+2. If the configuration of pay-as-you-go nodes is changed, the billing will start over again from the first tier.
 3. The configurations of local-disk models cannot be changed.
 4. The size of data disks and system disks cannot be changed.
 5. The target configurations must be higher than or equal to the current configurations.

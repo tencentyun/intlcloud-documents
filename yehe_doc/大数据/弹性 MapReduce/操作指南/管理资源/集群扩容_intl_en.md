@@ -25,6 +25,6 @@ When the compute and storage resources of your EMR cluster are insufficient, you
 - The default node specification is used for scale-out. You can adjust it by clicking **Set Node Specification**.
 3. After selecting the desired components and number of nodes to be added, click **Confirm** and make the payment. Then, the cluster will start scaling out, which usually takes 10 to 20 minutes.
 4. For ClickHouse cluster scale-out, you can add an even number of nodes in a high-availability (HA) instance, and unlimited nodes in a non-HA instance. You can choose an existing cluster or a new one for the nodes to be added.
->! There will be no data in the newly added nodes after the virtual ClickHouse cluster is scaled out. You need to migrate the data manually as the system won't automatically do it for you. In order to achieve data balance and improve resource utilization, migrate your data in time after successful cluster scale-out.
+>! There will be no data in the newly added nodes after the virtual ClickHouse cluster is scaled out. You need to migrate the data manually as the system won't automatically do it for you. In order to achieve data balance and improve resource utilization, migrate your data in time after the cluster is scaled out successfully.
 
 

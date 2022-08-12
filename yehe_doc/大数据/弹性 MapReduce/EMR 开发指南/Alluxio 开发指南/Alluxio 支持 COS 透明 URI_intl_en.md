@@ -48,10 +48,10 @@ Configure the COS information in each `--option`.
 | -------------------------------- | ----------------------------------------- |
 | fs.cosn.userinfo.secretId | COS secret ID |
 | fs.cosn.userinfo.secretKey | COS secret key |
-| fs.cosn.impl | Its value is always `org.apache.hadoop.fs.CosFileSystem`. |
-| fs.AbstractFileSystem.cosn.impl  | Its value is always `org.apache.hadoop.fs.CosN`. |
+| fs.cosn.impl | Fixed value: `org.apache.hadoop.fs.CosFileSystem`. |
+| fs.AbstractFileSystem.cosn.impl  | Fixed value: `org.apache.hadoop.fs.CosN`. |
 | fs.cosn.bucket.region cos region | Region name such as `ap-beijing` |
-| fs.cosn.userinfo.appid  | Root account's AppID |
+| fs.cosn.userinfo.appid  | The AppID of root account |
 | COS_BUCKET COS BUCKET | Bucket name without the AppID suffix |
 
  
