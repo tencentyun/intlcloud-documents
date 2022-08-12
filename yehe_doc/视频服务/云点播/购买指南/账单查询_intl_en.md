@@ -24,7 +24,7 @@ Total Cost|Total cost = Original cost × (1 - Discount rate)
 Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
 >? If the component type is **VOD transcoding**, the transcoding template type is indicated in the instance ID. For example:
 >- `XXX_h265_sd_640_480` indicates a general transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
->- `XXX_h265_eshd_sd_640_480` indicates a TESHD template with codec set to H.265 and resolution set to SD (640 × 480) and below.
+>- `XXX_h265_eshd_sd_640_480` indicates a TSC template with codec set to H.265 and resolution set to SD (640 × 480) and below.
 
 ### Bill Details
 
@@ -42,7 +42,7 @@ Total Cost| Total cost = Component’s original cost x (1 - Discount rate). <br>
 Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
 >? If the component type is **VOD transcoding**, the transcoding template type is indicated in the instance ID. For example:
 >- `XXX_h265_sd_640_480` indicates a general transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
->- `XXX_h265_eshd_sd_640_480` indicates a TESHD transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
+>- `XXX_h265_eshd_sd_640_480` indicates a TSC transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
 
 For example, suppose a user uses the template with codec set to H.264 and resolution set to HD (1280 × 720) and below, and the component’s published unit price is 0.0061 USD/min.
 - Component’s original cost = 0.00610000 × USD/Transcoding type 2/min × 2.00000000 min × 5.00000000 min = 0.03050000 (USD)
@@ -68,7 +68,7 @@ Traffic consumption is recorded every five minutes by calendar day, and the tota
 - Date: A calendar day
 - Appid: User account ID
 - Task ID: ID of the executed task
-- Transcoding type: General transcoding, TESHD transcoding, audio transcoding, and video editing.
+- Transcoding type: General transcoding, TSC transcoding, audio transcoding, and video editing.
 - Codec: H.264, H.265
 - Definition: The definition as specified in the transcoding template
 - Transcoding duration: Transcoding duration of the day
