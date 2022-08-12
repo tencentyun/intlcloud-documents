@@ -30,10 +30,8 @@
 1. 登录 [CMQ 控制台](https://console.cloud.tencent.com/cmq)。
 2. 在左侧导航栏选择**队列**，选择好**地域**后，单击页面上方的**同步到 TDMQ**。
 3. 在弹出的窗口中单击**启动**，将该地域下的所有队列和主题元数据迁移至 TDMQ CMQ 版中。
-   ![](https://main.qcloudimg.com/raw/0d1d65697c56dfa776c6036a52eb3d79.png)
 4. 迁移完成后，登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)。
 5. 在左侧导航栏选择**队列服务**，选择相同的**地域**可看到迁移到 TDMQ CMQ 版的队列。
-	 ![](https://main.qcloudimg.com/raw/f74407c4a979dc3b01cb18c4d37ed729.png)
 
 ### 步骤2：新建消费者
 
@@ -60,25 +58,18 @@ Consumer consumer = new Consumer();
         final String queue = "****";
 ```
 	- NameServerAddress：API 调用地址，在[ TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq) 的**队列服务** > **API请求地址**处复制。
-![](https://main.qcloudimg.com/raw/bbc5dc77a8475304377d00cc92028e01.png)
-
 	- SecretId、SecretKey：云API密钥，登录 [访问管理控制台](https://console.cloud.tencent.com/cam/overview)，在**访问密钥** > **API密钥管理**页面复制。
-		![](https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png)
 	- queue：填写队列名称。
 
 2. 运行代码，查看消费端服务是否能正常运行无报错。
 
 3. 通过 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq) 的**队列服务** > **发送消息**向消息接收侧发送测试消息，验证消费者服务是否可以正常消费。
-   ![](https://main.qcloudimg.com/raw/1c2f1532860b51440bbf2a42285fb644.png)
-如图则为正常消费：
-   ![](https://main.qcloudimg.com/raw/959a9b688673054d7449913d71f89b4b.png)
 
 
 ### 步骤3：切换生产流
 
 1. 将原生产者的 NameServer 修改为 TDMQ CMQ 版队列的接入地址，在 [TDMQ CMQ 版控制台](https://console.cloud.tencent.com/tdmq)的**队列服务** > **API请求地址**处复制。
 2. 运行生产消息程序，验证生产者服务是否可以正常发送消息。
-   ![](https://main.qcloudimg.com/raw/7c258f9b7cfd517f1bb6f735416c0f44.png)
 
 ### 步骤4：下线旧消费者
 
@@ -86,4 +77,3 @@ Consumer consumer = new Consumer();
 
 在 [CMQ 控制台](https://console.cloud.tencent.com/cmq) 的**队列服务** > **队列** > **监控**页面可查看 CMQ 队列中堆积的消息数量，当堆积消息数量为0时，代表原 CMQ 队列中的存量消息已被消费完成。
 
-![](https://main.qcloudimg.com/raw/30e7cd4d0a9ccad13a72a8d4c6bfe2e6.png)

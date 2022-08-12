@@ -30,10 +30,8 @@ You have deployed CMQ queue producer and consumer services as instructed in [SDK
 1. Log in to the [CMQ console](https://console.cloud.tencent.com/cmq).
 2. Select **Queue** on the left sidebar, select a **Region**, and click **Sync to TDMQ** at the top of the page.
 3. In the pop-up window, click **Start** to migrate all queue and topic metadata in the region to TDMQ for CMQ.
-   ![](https://main.qcloudimg.com/raw/0d1d65697c56dfa776c6036a52eb3d79.png)
 4. After the migration is completed, log in to the [TDMQ](https://console.cloud.tencent.com/tdmq) console.
 5. Select **Queue Service** on the left sidebar, select the same **Region**, and you can see the queues migrated to TDMQ for CMQ.
-	 ![](https://main.qcloudimg.com/raw/f74407c4a979dc3b01cb18c4d37ed729.png)
 
 ### Step 2. Create a consumer
 
@@ -60,25 +58,18 @@ Consumer consumer = new Consumer();
         final String queue = "****";
 ```
 	- NameServerAddress: API call address, which can be copied in **Queue Service** > **API Request Address** in the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq).
-![](https://main.qcloudimg.com/raw/bbc5dc77a8475304377d00cc92028e01.png)
-
 	- SecretId and SecretKey: TencentCloud API key, which can be copied in **Access Key** > **API Key Management** in the [CAM console](https://console.cloud.tencent.com/cam/overview).
-		![](https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png)
 	- queue: Queue name.
 
 2. Run the code and check whether the consumer service can run normally with no errors reported.
 
 3. In **Queue Service** > **Send Message** in the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq), send a test message to the message recipient to check whether the consumer service can consume normally.
-   ![](https://main.qcloudimg.com/raw/1c2f1532860b51440bbf2a42285fb644.png)
-Normal consumption is as shown below:
-   ![](https://main.qcloudimg.com/raw/959a9b688673054d7449913d71f89b4b.png)
 
 
 ### Step 3. Switch the production stream
 
 1. Change the `NameServer` value of the original producer to the access address of the TDMQ for CMQ queue, which can be copied in **Queue Service** > **API Request Address** in the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq).
 2. Run the message production program to check whether the producer service can send messages normally.
-   ![](https://main.qcloudimg.com/raw/7c258f9b7cfd517f1bb6f735416c0f44.png)
 
 ### Step 4. Deactivate the old consumer
 
@@ -86,4 +77,3 @@ After the old CMQ consumer has consumed all existing messages in the original CM
 
 On the **Monitoring** page in **Queue Service** > **Queue** in the [CMQ console](https://console.cloud.tencent.com/cmq), you can view the number of heaped messages in the CMQ queue. If it is 0, existing messages in the original CMQ queue have all been consumed.
 
-![](https://main.qcloudimg.com/raw/30e7cd4d0a9ccad13a72a8d4c6bfe2e6.png)
