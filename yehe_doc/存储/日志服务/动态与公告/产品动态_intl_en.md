@@ -143,7 +143,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Kafka real-time consumption</td><td>The Kafka consumption capability is now available in CLS. Users can use the Kafka real-time consumption feature to export log data to specified applications efficiently and conveniently.</td><td>2021-09-17</td><td><a href="https://cloud.tencent.com/document/product/614/63036">	Kafka Real-Time Consumption</a></td></tr>
+		<tr><td>Kafka real-time consumption</td><td>The Kafka consumption capability is now available in CLS. Users can use the Kafka real-time consumption feature to export log data to specified applications efficiently and conveniently.</td><td>2021-09-17</td><td><a href="https://intl.cloud.tencent.com/document/product/614/47570">	Kafka Real-Time Consumption</a></td></tr>
 	</tbody>
 </table>
 
