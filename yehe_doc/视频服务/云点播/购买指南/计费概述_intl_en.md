@@ -8,7 +8,7 @@ Upon service activation, the default billing mode will be **daily pay-as-you-go.
 
 ## Billable Items
 VOD billable items include storage, transcoding, traffic and other value-added services:
-![](https://qcloudimg.tencent-cloud.cn/raw/7b1548c644af721204bc854419352452.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/05216d02d02fadfd695c7f9105bb1c45.png)
 
 + For daily billing, fees incurred each day are billed and deducted between 12:00 and 18:00 (UTC+8) the following day.
 + For monthly billing, fees incurred each month are billed and deducted on the first day of the following month.
