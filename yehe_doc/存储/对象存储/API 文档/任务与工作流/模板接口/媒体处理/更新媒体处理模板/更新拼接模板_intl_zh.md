@@ -104,7 +104,7 @@ Content-Type: application/xml
 
 | 节点名称（关键字） | 父节点 | 描述           | 类型      |
 | :----------------- | :----- | :------------- | :-------- |
-| Request            | 无     |同创建拼接模板接口的 Request | Container | 是   |
+| Request            | 无     |同创建拼接模板接口的 Request | Container | 
 
 ## 响应
 
