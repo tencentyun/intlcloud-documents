@@ -104,7 +104,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Request            | None     | Same as the `Request` in the splicing template creation API. | Container | Yes   |
+| Request            | None     | Same as the `Request` in the splicing template creation API. | Container | 
 
 ## Response
 

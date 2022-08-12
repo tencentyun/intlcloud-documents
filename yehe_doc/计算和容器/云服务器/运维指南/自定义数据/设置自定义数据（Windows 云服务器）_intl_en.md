@@ -1,94 +1,98 @@
-## Introduction
+## Overview
 
-While you create a CVM instance, you have the option to define a script as **Custom Data** and use it to customize your instance configuration. When the instance starts up for the firs time, that custom data is passed on and executed. If you purchased multiple CVM instances, all instance will execute the script upon first launch.
-This article describes how to define a PowerShell script and use it to configure a Windows CVM instance.
+When creating a CVM, you can configure an instance by specifying **custom data**. During the **first launch** of the CVM, the custom data will be passed into the CVM in text format and be executed. If you purchase multiple CVMs at a time, the custom data text will be executed on all CVMs during their first launch.
 
-## Considerations
+This document describes an example in which a PowerShell script is passed during the first launch of a Windows CVM.
+
+## Supports and Limits
 
 - Windows operating systems that support custom data include:
- - Windows Server 2019 Datacenter Edition 64-bit Chinese/English version
- - Windows Server 2016 Datacenter Edition 64-bit Chinese/English version
- - Windows Server 2012 R2 Datacenter Edition 64-bit Chinese/English version
-- The script is executed when and only when the instance starts up for the first time.
+ - Windows Server 2019 IDC 64-bit Chinese/English version
+ - Windows Server 2016 IDC 64-bit Chinese/English version
+ - Windows Server 2012 R2 IDC 64-bit Chinese/English version
+- A command can be executed by passing text only when a CVM is launched for the first time.
 - Before Base64 encoding, the size of the custom data cannot exceed 16 KB.
-- Custom data is Base64 encoded and then passed. If you want a script file in its orginal form, do not select **The entry is Base64-encoded text**.
-- The custom configurations you defined in the custom data script take time to execute. We recommend that you wait for the configurations to complete and verify if the results.
-- Use the PowerShell tag, such as &lt;powershell&gt;&lt;/powershell&gt; to declare the content of the Windows PowerShell script.
+- Custom data is Base64 encoded and then passed. If you directly copy a non-Base64 script file, do not select “The entry is Base64-encoded text”.
+- During launch, executing specified tasks in custom data will increase the amount of time it takes to launch the CVM. We recommend that you wait for a few minutes, and after the tasks are completed, test whether the tasks have been successfully executed.
+- In this example, specify the Windows PowerShell script by using the PowerShell label, for example, the &lt;powershell&gt;&lt;/powershell&gt; label.
 
 ## Directions
 
-### Preparing a script
+### Preparing text
 
-Prepare a script that suit your needs:
+Prepare text based on your actual requirements:
 
-<span id="PowerShellScript"></span>
-#### PowerShell script
-Use the PowerShell tags to surround script content.
-For example, if you want to use the script to create a file called `tencentcloud.txt` with the content of “Hello Tencent Cloud.” in the C: drive, use the following tags:
-```
+
+#### PowerShell script[](id:PowerShellScript)
+Use the PowerShell label to prepare a PowerShell script.
+For example, if you need to create a “tencentcloud.txt” file with the content of “Hello Tencent Cloud.” in the C drive (C:), use the PowerShell label to prepare the following content:
+```shell
 <powershell>
 "Hello Tencent Cloud." | Out-File  C:\tencentcloud.txt
 </powershell>
 ```
 
-<span id="Base64Script"></span>
-#### Encoding the script with Base64
+
+#### Base64 encoded script[](id:Base64Script)
 
 1. Run the following command to create a PowerShell script named “script_text.ps1”.
-```
+```shell
 vi script_text.ps1
 ```
-2. Press **i** to switch to the editing mode, enter the following content, and save.
-```
+2. Press **i** to switch to the editing mode, refer to the following content, write it into the file, and save the “script_text.ps1” script.
+```shell
 <powershell>
 "Hello Tencent Cloud." | Out-File  C:\tencentcloud.txt
 </powershell>
 ```
-3. Run the following command to encode **script_text.ps1** with Base64.
-```
+3. Run the following command to perform the Base64 encoding operation on the “script_text.ps1” script.
+```shell
 base64 script_text.ps1
 ```
 The following information is returned:
-```
+```shell
 PHBvd2Vyc2hlbGw+CiJIZWxsbyBUZW5jZW50IENsb3VkLiIgfCBPdXQtRmlsZSAgQzpcdGVuY2VudGNsb3VkLnR4dAo8L3Bvd2Vyc2hlbGw+Cg==
 ```
 
-### Passing the script
+### Passing text
 
-We provide multiple methods to launch an instance. The following are the most used methods:
-- [Using the official website or the console](#Consoletrans)
-- [Using APIs](#APItrans)
+We provide multiple methods to launch an instance, and here we introduce two of them. Choose a method according to your requirements:
 
-<span id="Consoletrans"></span>
-#### Using the official website or the console
+<dx-tabs>
+::: Console[](id:Consoletrans)
 
-1. Use [Creating an Instance](https://intl.cloud.tencent.com/document/product/213/4855) as an reference and create a CVM instance. Click **Advanced Configuration** in **4. Configure Security Group and CVM**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/28baf2764488ecfaf5bbac791cec7ea3.png)
-2. In **Advanced Configuration**, enter script content in the **Custom Data** text box.
- - PowerShell script: enter the script content you entered in [PowerShell script](#PowerShellScript) in its original form.
- - Base64 encoded script: select **The entry is Base64-encoded text**, and enter the encoded script content you encoded in [Encoding the script with Base64](#Base64Script), as shown in the following figure:
+1. Refer to [Creating an Instance](https://intl.cloud.tencent.com/document/product/213/4855) to purchase an instance, and click **Advanced settings** in **2. Complete configuration**.
+![](https://qcloudimg.tencent-cloud.cn/raw/283fb3e0e1400d4ba5725c8b6a1ea279.png)
+2. In **Advanced settings**, enter the text content you have prepared in the **Custom data** text box.
+ - PowerShell script: Directly enter [PowerShell script](#PowerShellScript).
+ - Base64 encoded script: First select “The entry is Base64-encoded text”, and enter [Base64 encoded text](#Base64Script).
  ![](https://main.qcloudimg.com/raw/0b6b594f174568ca7d3312821c0571ed.png)
-4. Follow the instructions and complete the CVM creation.
-
-<span id="APItrans"></span>
-#### Using APIs
-
-If you choose to create an CVM instance using Tencent Cloud APIs, you can assign the the encoded result returned in [Encoding the script with Base64](#Base64Script) to the UserData parameter of RunInstances.
+3. Follow the prompts on the interface to complete CVM creation.
+:::
+::: API[](id:APItrans)
+When creating a CVM by using API, you can pass the text by assigning the value of the encoded result returned in [Base64 encoded script](#Base64Script) to the UserData parameter of the RunInstances API.
 The following is an sample CVM creation request with UserData:
-```
+```shell
 https://cvm.tencentcloudapi.com/?Action=RunInstances
-  &Version=2017-03-12
-  &Placement.Zone=ap-guangzhou-2
-  &ImageId=img-pmqg1cw7
-  &UserData=PHBvd2Vyc2hlbGw+CiJIZWxsbyBUZW5jZW50IENsb3VkLiIgfCBPdXQtRmlsZSAuXHRlbmNlbnRjbG91ZC50eHQKPC9wb3dlcnNoZWxsPgo=
-  &<Common request parameter>
+&Version=2017-03-12
+&Placement.Zone=ap-guangzhou-2
+&ImageId=img-pmqg1cw7
+&UserData=PHBvd2Vyc2hlbGw+CiJIZWxsbyBUZW5jZW50IENsb3VkLiIgfCBPdXQtRmlsZSAuXHRlbmNlbnRjbG91ZC50go=
+&<Common Request Parameters>
 ```
+:::
+</dx-tabs>
 
-### Verifying custom data configurations
 
-1. Log in to the CVM instance.
-2. Open the C: drive, and check whether `tencentcloud.txt` exists.
-If it does, the configuration is successful, as shown in the following figure:
+
+### Verifying custom data configuration
+
+1. Log in to your CVM.
+2. On the operating system interface, open the C drive (C:\), and check whether the `tencentcloud.txt` text file exists.
+If the `tencentcloud.txt` text file exists, the configuration is successful, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/9f94ec922111734a489b9730d66168c3.png)
 
+
+### Viewing execution logs
+You can view the `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloudbase-init.log` file to get the execution logs of the script.
 

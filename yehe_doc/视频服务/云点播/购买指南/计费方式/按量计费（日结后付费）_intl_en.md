@@ -81,7 +81,7 @@ Assume that on January 1, you stored media files in STANDARD in the Chinese main
 >- Minimum storage duration for DEEP ARCHIVE files: 180 days. Storage fees for 180 days will be charged even if a file is stored for shorter than the period.
 
 ## Media Processing
-VOD offers media processing capabilities including general transcoding, TSC transcoding, [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942), and video editing.
+VOD offers media processing capabilities including general transcoding, Top Speed Codec (TSC) transcoding, [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942), and video editing.
 
 ### General transcoding
 
@@ -118,8 +118,8 @@ Assume that you transcoded a video file of 100 minutes into 2560 x 1440 and 1280
 
 For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/266/38163).
 
-### Top Speed Codec transcoding
-To learn about Top Speed Codec (TSC) transcoding, see [Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd).
+### TSC transcoding
+To learn more about TSC transcoding, see [Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898).
 #### Pricing
 
 TSC transcoding is charged based on the duration and short side (px) of the video generated after transcoding.

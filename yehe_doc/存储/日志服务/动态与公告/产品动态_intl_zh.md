@@ -143,7 +143,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>支持 kafka 协议实时消费</td><td>CLS 上线 kafka 协议消费能力，您可以通过实时消费功能，高效便捷地将日志数据导出至指定应用中。</td><td>2021-09-17</td><td><a href="https://cloud.tencent.com/document/product/614/63036">	实时消费</a></td></tr>
+		<tr><td>支持 kafka 协议实时消费</td><td>CLS 上线 kafka 协议消费能力，您可以通过实时消费功能，高效便捷地将日志数据导出至指定应用中。</td><td>2021-09-17</td><td><a href="https://intl.cloud.tencent.com/document/product/614/47570">	实时消费</a></td></tr>
 	</tbody>
 </table>
 

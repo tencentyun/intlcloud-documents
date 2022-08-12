@@ -1,5 +1,5 @@
 ## 现象描述[](id:symptom)
-无法成功登录云服务器，且使用 VNC 方式登录后，查看系统启动失败且提示信息 “Welcome to emergency mode”。如下图所示：
+无法正常 SSH 远程登录 Linux 云服务器，但使用 VNC 方式登录后，查看系统启动失败且提示信息 “Welcome to emergency mode”。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/dea541a48d2a01503c1dbbc85b0d396f.png)
 
 
@@ -36,7 +36,7 @@ vi /etc/fstab
 </dx-alert>
 <img src="https://qcloudimg.tencent-cloud.cn/raw/1c238789186d7f24c0244e0307bc3a22.png"/>
 6. [](id:Step6)按 **Esc** 输入 **:wq** 后，按 **Enter** 保存设置并退出编辑器。
-7. 通过控制台重启实例，并在启动后验证是否可正常启动及登录。
+7. 通过控制台重启实例，并验证是否能正常启动及登录。
 <dx-alert infotype="explain" title="">
 通过控制台重启实例具体步骤请参见 [重启实例](https://intl.cloud.tencent.com/document/product/213/4928)。
 </dx-alert>
@@ -46,10 +46,10 @@ vi /etc/fstab
 ::: 方式2：使用救援模式[](id:useRescue)
 1. 参考 [使用救援模式](https://intl.cloud.tencent.com/document/product/213/46157)，进入实例救援模式。
 <dx-alert infotype="notice" title="">
-需执行 [使用救援模式进行系统修复](https://intl.cloud.tencent.com/document/product/213/46157?lang=en&pg=#using-rescue-mode-to-repair-system) 步骤中的 `mount` 及 `chroot` 相关命令，且确保已进入业务本身的系统。
+需执行 [使用救援模式进行系统修复](https://intl.cloud.tencent.com/document/product/213/46157#.E4.BD.BF.E7.94.A8.E6.95.91.E6.8F.B4.E6.A8.A1.E5.BC.8F.E8.BF.9B.E8.A1.8C.E7.B3.BB.E7.BB.9F.E4.BF.AE.E5.A4.8D) 步骤中的 `mount` 及 `chroot` 相关命令，且确保已进入业务本身的系统。
 </dx-alert>
 2. 按照方式1中的 [步骤3](#Step3) - [步骤6](#Step6)，修复 `/etc/fstab` 文件。
-3. 参考 [退出救援模式](https://intl.cloud.tencent.com/document/product/213/46157?lang=en&pg=#exiting-rescue-mode)，退出实例救援模式。
+3. 参考 [退出救援模式](https://intl.cloud.tencent.com/document/product/213/46157#.E9.80.80.E5.87.BA.E6.95.91.E6.8F.B4.E6.A8.A1.E5.BC.8F)，退出实例救援模式。
 4. 实例退出救援模式后将处于关机状态，请参考 [开机实例](https://intl.cloud.tencent.com/document/product/213/38168) 开机，并在启动后验证系统是否可正常启动及登录。
 5. 登录成功后，若您需设置磁盘自动挂载，则请参考 [配置 /etc/fstab 文件](https://intl.cloud.tencent.com/document/product/362/40001) 进行对应配置。
 

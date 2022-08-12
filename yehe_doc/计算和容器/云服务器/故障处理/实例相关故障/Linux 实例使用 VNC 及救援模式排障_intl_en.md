@@ -27,9 +27,9 @@ See [Steps](#ProcessingSteps1) to check the sshd process, locate and fix the pro
 1. [](id:ProcessingSteps1Step1) Follow the steps to log in to the Linux instance via VNC:
    i. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index), find the target Linux CVM, and click **Login** under the "Operation" column.
    ![](https://qcloudimg.tencent-cloud.cn/raw/93c135917fbe34913151bbefc5b48832.png)
- ii. In the **Standard Login | Linux Instance** window, click **Login via VNC**.
- iii. Enter the username after "login" and press **Enter**, and enter the password after "Password" and press **Enter**. The login is successful when the following information is displayed.
- ![](https://qcloudimg.tencent-cloud.cn/raw/0db1a72ceca22fbf56f8872f60baff4f.png)
+    ii. In the **Standard login | Linux instance** window, click **Login via VNC**.
+    iii. Enter the username after "login" and press **Enter**, and enter the password after "Password" and press **Enter**. The login is successful when the following information is displayed.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/0db1a72ceca22fbf56f8872f60baff4f.png)
 2. Run the following command to check whether the sshd process is running normally.
 ```shellsession
 ps -ef | grep sshd
@@ -62,7 +62,7 @@ The instance can be logged in remotely after a test of [Logging into Linux Insta
 ::: Using VNC to troubleshoot Linux system startup failures[](id:OSStartupFailed)
 
 #### Error description[](id:symptom)
-Error: Unable to log in to the CVM. After logging in to the CVM via VNC, you can check the system start-up failure and view the prompt message "Welcome to emergency mode".
+Error: Unable to remotely log in to the Linux CVM via SSH. After logging in to the CVM via VNC, you can check the system start-up failure and view the prompt message "Welcome to emergency mode".
 ![](https://qcloudimg.tencent-cloud.cn/raw/dea541a48d2a01503c1dbbc85b0d396f.png)
 
 
@@ -76,7 +76,7 @@ See [Steps](#ProcessingSteps2) to repair the `/etc/fstab` configuration file. Th
 
 
 #### Steps[](id:ProcessingSteps2)
-1. Follow the [step 1](#ProcessingSteps1Step1) to log in to the Linux instance via VNC:
+1. Follow the [step 1](#ProcessingSteps1Step1) to log in to the Linux instance via VNC.
 2. After entering the VNC interface, you see the interface shown in [Error Description](#symptom). Enter the root account password (which is not displayed by default) and press **Enter** to log in to the server.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7b9a8cdc6fe38ca6cb1e571790a54894.png)
 3. After entering the system, run the following command to check whether the drive letter information in the `fstab` file is correct.
@@ -96,8 +96,8 @@ vi /etc/fstab
 6. Press **i** to enter the edit mode. Move the cursor to the beginning of the error line and enter `#` to comment out this configuration.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a2d9e675d6586341e6b5e3a221ee7906.png)
 7. Press **ESC**, enter **:wq**, and press **Enter** to save the configuration and exit the editor.
-8. Restart the instance through the console. For more information, see [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928).
-9. Verify whether the instance can be started up and logged in normally.
+8. Restart the instance in the CVM console. For more information, see [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928).
+9. Check if it can be started and logged in properly.
 
 
 :::
@@ -124,7 +124,7 @@ See [Steps](#ProcessingSteps3) to enter the instance rescue mode through the con
 ![](https://qcloudimg.tencent-cloud.cn/raw/e695226792081b7cebe90507586a1d0f.png)
 3. [](id:step3)In the pop-up window, set the instance login password for the rescue mode.
 ![](https://qcloudimg.tencent-cloud.cn/raw/fdceacda011b0b0678c76c6c1f2a3c56.png)
-4. Click **Enter Rescue Mode**, and the instance status will change to "Entering rescue mode", which typically completes within a few minutes:
+4. Click **Enter rescue mode**, and the instance status will change to "Entering rescue mode", which typically completes within a few minutes:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d6ed01e61aeb960da1209040c9383cc7.png)
 The status of instance entered the rescue mode changes to "Rescue mode" with a red exclamation mark.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ca7c6bacd0f11471c23eb4980718f906.png)
@@ -165,7 +165,7 @@ When running the `chroot` command:
 cd /usr/bin/ && tar -zcvf bin.tar.gz *
 ```
 ```shellsession
-scp bin.tar.gz root@Exception instance ip：/mnt/vm1/usr/bin/
+scp bin.tar.gz root@abnormal instance ip：/mnt/vm1/usr/bin/
 ```
 <dx-alert infotype="explain" title="">
 If the instances have public network IPs, the copy can be performed through the public network; otherwise, the copy is performed through the private network.
@@ -184,7 +184,7 @@ chroot /mnt/vm1 /bin/bash
 ```
 The execution result is as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/90e4c3d4c06806f07401ec01863dcdfa.png)
-10. After repairing the instance, select **More** > **OPS and Check** > **Exit Rescue Mode** under the "Operation" column of the target instance.
+10. After repairing the instance, select **More** > **Ops and check** > **Exit rescue mode** under the **Operation** column of the target instance.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d9f8f26b745a654cb145bbfc4bb1cd2a.png)
 11. After exiting the rescue mode, the instance is in a shutdown status. Start up the instance to verify the system. As shown below, the system has been restored.
 ![](https://qcloudimg.tencent-cloud.cn/raw/705c27323e74f424b775f88567d7252c.png)
