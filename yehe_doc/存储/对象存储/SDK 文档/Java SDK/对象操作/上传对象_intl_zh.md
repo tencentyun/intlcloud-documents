@@ -125,6 +125,18 @@ File localFile = new File(localFilePath);
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 
+//若需要设置对象的自定义 Headers 可参照下列代码,若不需要可省略下面这几行,对象自定义 Headers 的详细信息可参考https://cloud.tencent.com/document/product/436/13361
+ObjectMetadata objectMetadata = new ObjectMetadata();
+
+//若设置Content-Type、Cache-Control、Content-Disposition、Content-Encoding、Expires这五个字自定义 Headers，推荐采用objectMetadata.setHeader()
+objectMetadata.setHeader(key, value);
+//若要设置 “x-cos-meta-[自定义后缀]” 这样的自定义 Header，推荐采用
+Map<String, String> userMeta = new HashMap<String, String>();
+userMeta.put("x-cos-meta-[自定义后缀]", "value");
+objectMetadata.setUserMetadata(userMeta);
+
+putObjectRequest.withMetadata(objectMetadata);
+
 try {
     // 高级接口会返回一个异步结果Upload
     // 可同步地调用 waitForUploadResult 方法等待上传完成，成功返回UploadResult, 失败抛出异常
@@ -158,7 +170,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 #### 返回值
 
@@ -247,7 +259,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 #### 返回值
 
@@ -373,7 +385,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 #### 返回值
 
@@ -472,7 +484,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 #### 返回值
 
