@@ -8,7 +8,7 @@
 
 ## 计费组成
 云点播的计费包括：存储费用、转码费用、流量费用和其他增值费用：
-![](https://qcloudimg.tencent-cloud.cn/raw/7b1548c644af721204bc854419352452.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/05216d02d02fadfd695c7f9105bb1c45.png)
 
 + 日结用户每日12:00 - 18:00对前一日产生费用进行结算，输出账单并进行扣费。
 + 月结用户每月1号对上一个月费用进行结算，输出账单并进行扣费。
