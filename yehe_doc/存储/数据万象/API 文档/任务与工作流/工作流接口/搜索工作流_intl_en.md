@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`Describe Workflow`) is used to search for workflows.
+This API (`Describe Workflow`) is used to search for a workflow.
 
 ## Request
 
@@ -15,12 +15,14 @@ Content-Length: <length>
 Content-Type: application/xml
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
->
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -30,16 +32,16 @@ The request body of this request is empty.
 
 | Parameter Name (Keyword) | Description                                                         | Type   | Required |
 | :----------------- | :--------------------------- | :----- | :------- |
-| ids                |  Workflow ID. If you enter multiple IDs, separate them with commas (,). | string | No       |
+| ids                |  Workflow ID. If you enter multiple IDs, separate them by comma. | string | No       |
 | name               |  Workflow name                   | string | No       |
 | pageNumber         | Page number                       | string | No       |
-| pageSize           | Number of records per page                     | string | No       |
+| pageSize           | Number of entries per page                     | string | No       |
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -334,28 +336,28 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None | Response container | Container |
+| Response           | None     | Response container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------------------------ | :-------- |
-| RequestId          | Response | Unique ID of the request                   | String    |
-| TotalCount         | Response | Total number of workflows                     | Int       |
-| PageNumber         | Response | Current page number. Same as `pageNumber` in the request. | Int       |
-| PageSize           | Response | Number of records per page. Same as `pageSize` in the request.    | Int       |
+| RequestId          | Response | Unique ID of the request.                   | String    |
+| TotalCount         | Response | Total number of workflows                       | Int       |
+| PageNumber         | Response | Current page number. Same as `pageNumber` in the request.                           | Int       |
+| PageSize           | Response | Number of entries per page. Same as `pageSize` in the request.   | Int       |
 | MediaWorkflowList  | Response | Workflow array                      | Container |
 
 `MediaWorkflowList` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | -------------------------- | ---------- | --------- | -------- | ---------------------------------------------------- |
-| Name               | Response.MediaWorkflowList | Workflow name | String    | Yes       | The value can be up to 128 characters in length and contain Chinese characters, letters, digits, dashes (–), and underscores (_).          |
-| WorkflowId         | Response.MediaWorkflowList | Workflow ID  | String    | Yes       | Unique ID of the workflow                                        |
+| Name               | Response.MediaWorkflowList | Workflow name. | String    | Yes       | The value can contain up to 128 letters, digits, hyphens, and underscores. |
+| WorkflowId         | Response.MediaWorkflowList | Workflow ID  | String    | Yes       | Unique workflow ID                                        |
 | State              | Response.MediaWorkflowList | Workflow status | String    | Yes       | 1. Active <br/>2. Paused<br/>                        |
 | CreateTime         | Response.MediaWorkflowList | Creation time   | String    | Yes       | None                                                   |
 | UpdateTime         | Response.MediaWorkflowList | Update time   | String    | Yes       | None                                                   |
@@ -363,11 +365,11 @@ The nodes are described as follows:
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
-#### Request 1: workflow ID
+#### Request 1: Workflow ID
 
 ```shell
 GET /workflow?ids=demo,demo1 HTTP/1.1
@@ -591,7 +593,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 </Response>
 ```
 
-#### Request 2: workflow list
+#### Request 2: Workflow list
 
 ```shell
 GET /workflow?pageNumber=1&pageSize=1 HTTP/1.1

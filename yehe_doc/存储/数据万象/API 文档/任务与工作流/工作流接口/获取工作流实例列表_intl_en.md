@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`Describe WorkflowExecutions`) is used to get the workflow instance list.
+This API (`Describe WorkflowExecution`) is used to get the list of workflow instances.
 
 ## Request
 
@@ -15,11 +15,14 @@ Content-Length: <length>
 Content-Type: application/xml
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -27,22 +30,22 @@ The request body of this request is empty.
 
 #### Request parameters
 
-| Parameter Name (Keyword) | Description                                                         | Type   | Required |
+| Parameter (Keyword) | Description | Type | Required |
 | :----------------- | :----------------------------------------------------------- | :----- | :------- |
 | workflowId         | Workflow ID                                                    | string | Yes       |
-| name               | File name                                                     | string | No       |
-| orderByTime        | Desc (default) or Asc                                 | string | No       |
-| size               | Maximum number of tasks pulled. The default value is 10. The maximum value is 100.                      | string | No       |
-| states             | Workflow instance status. If you enter multiple states, separate them with commas (,).<br> Valid values: `All` (default), `Success`, `Failed`, `Running`, `Cancel` | string | No       |
-| startCreationTime  | The pulling request creation time must be later than this time. Format: `%Y-%m-%dT%H:%m:%S%z`        | String | No       |
-| endCreationTime    | The pulling request creation time must be earlier than this time. Format: `%Y-%m-%dT%H:%m:%S%z`        | String | No       |
+| name               | Filename                                                     | string | No       |
+| orderByTime        | `Desc` (default) or `Asc`                                 | string | No       |
+| size               | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100.                      | string | No       |
+| states             | Workflow instance status. If you enter multiple statuses, separate them by comma.<br> Valid values: All, Success, Failed, Running, Cancel. Default value: All | string | No       |
+| startCreationTime  | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`        | String | No       |
+| endCreationTime    | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`        | String | No       |
 | nextToken          | Context token for pagination                   | String | No       |
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -61,11 +64,11 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None | Response container | Container |
+| Response           | None     | Response container | Container |
 
 `Response` has the following sub-nodes:
 
@@ -86,9 +89,9 @@ The nodes are described as follows:
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 

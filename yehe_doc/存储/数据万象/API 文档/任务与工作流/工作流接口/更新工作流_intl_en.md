@@ -17,17 +17,20 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
 This request requires the following request body: 
 
-#### Request body 1: updating the audio/video transcoding, top speed codec, frame capturing, smart cover, audio/video concatenation, video montage, voice separation, SDR-to-HDR, video enhancement, function customization, and audio/video segmentation workflows
+#### Request body 1: Updating the audio/video transcoding, top speed codec transcoding, frame capturing, intelligent thumbnail, splicing, video montage, voice/sound separation, SDR-to-HDR, video enhancement, function customization, and audio/video segmentation workflows
 
 ```plaintext
 <Request>
@@ -227,7 +230,7 @@ This request requires the following request body:
 </Request>
 ```
 
-#### Request body 2: updating the HLS adaptive packaging workflow
+#### Request body 2: Updating the HLS adaptive packaging workflow
 
 ```plaintext
 <Request>
@@ -325,13 +328,13 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
 The response body returns **application/xml** data. The following contains all the nodes:
 
-#### Response body 1: updating the audio/video transcoding, top speed codec, frame capturing, smart cover, audio/video concatenation, video montage, voice separation, SDR-to-HDR, video enhancement, function customization, and audio/video segmentation workflows
+#### Response body 1: Updating the audio/video transcoding, top speed codec transcoding, frame capturing, intelligent thumbnail, splicing, video montage, voice/sound separation, SDR-to-HDR, video enhancement, function customization, and audio/video segmentation workflows
 
 ```plaintext
 <Response>
@@ -534,7 +537,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-#### Response body 2: updating the HLS adaptive packaging workflow
+#### Response body 2: Updating the HLS adaptive packaging workflow
 
 ```plaintext
 <Response>
@@ -626,7 +629,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :--------------------------------------------- | :-------- | -------- |
@@ -634,11 +637,11 @@ The nodes are described as follows:
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
-#### Request 1: updating the audio/video transcoding, top speed codec, frame capturing, smart cover, audio/video concatenation, video montage, voice separation, SDR-to-HDR, video enhancement, function customization, and audio/video segmentation workflows
+#### Request 1: Updating the audio/video transcoding, top speed codec transcoding, frame capturing, intelligent thumbnail, splicing, video montage, voice/sound separation, SDR-to-HDR, video enhancement, function customization, and audio/video segmentation workflows
 
 ```plaintext
 PUT /workflow/<WorkflowId> HTTP/1.1
@@ -996,7 +999,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 </Response>
 ```
 
-#### Request 2: updating the HLS adaptive packaging workflow
+#### Request 2: Updating the HLS adaptive packaging workflow
 
 ```plaintext
 PUT /workflow/<WorkflowId> HTTP/1.1
@@ -1191,7 +1194,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 ```
 
 
-#### Request 3: disabling a workflow
+#### Request 3: Disabling a workflow
 
 ```plaintext
 PUT /workflow/<WorkflowId>?paused HTTP/1.1
@@ -1210,7 +1213,7 @@ Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 ```
 
-#### Request 4: enabling a workflow
+#### Request 4: Enabling a workflow
 
 ```plaintext
 PUT /workflow/<WorkflowId>?active HTTP/1.1

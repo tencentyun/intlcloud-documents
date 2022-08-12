@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 
 This API (`Trigger Workflow`) is used to manually trigger a workflow.
 
@@ -16,7 +16,10 @@ Content-Type: application/xml
 
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
 
 #### Request parameters
 
@@ -24,7 +27,7 @@ Content-Type: application/xml
 | :--------- | :------------------ | :----- | :------- |
 | workflowId | ID of the workflow to trigger | String | Yes       |
 |  object     |     Name of the object that requires workflow processing  | String | Yes       |
-| name       | Name of the existing triggered task, which can contain up to 128 letters, digits, hyphens, and underscores and is empty by default  | String    | No    |
+| name       | Batch data processing job name, which can contain up to 128 letters, digits, hyphens, and underscores and is empty by default  | String    | No    |
 
 
 
@@ -54,7 +57,7 @@ The response body returns **application/xml** data. The following contains all t
 <Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
@@ -71,7 +74,7 @@ The nodes are described as follows:
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
 ### Request
 
