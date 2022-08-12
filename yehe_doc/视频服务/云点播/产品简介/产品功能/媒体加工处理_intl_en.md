@@ -75,8 +75,8 @@ A player can dynamically select the most suitable bitrate for playback based on 
 - It supports different resolutions and bitrates for output streams, offering greater flexibility.
 
 
-### TESHD
-The Tencent Extreme Speed High Definition (TESHD) feature of VOD uses AI algorithms to determine the optimal encoding parameters, improving video quality and reducing bandwidth loss. It takes into account the scene recognition results, the bitrate, frame rate, resolution, texture, and motion of the original video, as well as server load and ROI detection results.
+### Top Speed Codec
+The Top Speed Codec (TSC) feature of VOD uses AI algorithms to determine the optimal encoding parameters, improving video quality and reducing bandwidth loss. It takes into account the scene recognition results, the bitrate, frame rate, resolution, texture, and motion of the original video, as well as server load and ROI detection results.
 
 Smart dynamic encoding, along with smart scene recognition, auto encoding parameter selection, and image enhancement technologies, allow you to stream content live or on demand in higher definition but at lower bitrate.
 
