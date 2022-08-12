@@ -1,21 +1,22 @@
 This document describes how to create a CKafka trigger and invoke a function.
 
-### 1. Create a function
-Log in to the [SCF console](https://console.cloud.tencent.com/scf/list-create?rid=1&ns=default) and upload and deploy your function code on the **Create** page.
+### Step 1. Create a function
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list-create?rid=1&ns=default).
+2. On the function creation page, select **Template**, search for `CKafka`, and select	
+**CkafkaSCFCOS** as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/d89b622a7b1ceecb4ed32811404f3940.png)
+2. Click **Next**.
 
-![](https://main.qcloudimg.com/raw/f3c1461afc4892119b77e288b833b337.png)
-
-The following takes the CKafka sample template as an example to create a function project. In the default creation process with the template, a trigger is directly configured. In actual use cases, you can also configure a trigger after creating the function. Here, configuration after function creation is used as an example for description:
-![](https://main.qcloudimg.com/raw/5188f999bd1f628c3ce2ab9491d2d762.png)
 
 
-### 2. Configure a trigger
-After selecting **CKafka Trigger**, configure the queue name, topic, and other information as prompted to create a trigger:
->! Note: make sure that your function and CKafka instance are in the same VPC.
+### Step 2. Configure a trigger
+On the **Function configuration** page, set the basic configurations of the function.
+1. In **Trigger configurations**, select **Custom** to create a trigger as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/ebce10b5fa8aa354cff54970c65b3c5d.png)
+Select **CKafka trigger** and configure the name, topic, and other information of the CKafka instance as the message source as prompted. You can also choose to [create a CKafka instance](https://console.cloud.tencent.com/ckafka/index?rid=1).
+>! Make sure that your function and CKafka instance are in the same VPC.
+>
+2. Click **Complete**.
 
-![](https://main.qcloudimg.com/raw/81777ea8d1b32707e2abf24d074f9d7e.png)
-
-### 3. Manage the trigger
-After successful creation, you can see the information of the created trigger on the **Trigger Management** page, where you can enable/disable the trigger.
-![](https://main.qcloudimg.com/raw/275d59c7cc1ddc644aeab9c032d61b7e.png)
-
+### Step 3. Manage the trigger
+After the function is created, go to the function details page, and you can see the created trigger in **Trigger management**. You can also turn triggers on or off there.

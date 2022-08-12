@@ -1,10 +1,10 @@
-This document summarizes the message structures of all trigger events that are connected to SCF. For more information on trigger configuration and restrictions, see [Trigger Management](https://intl.cloud.tencent.com/document/product/583/9704).
+This document summarizes the message structures of all trigger events that are connected to SCF. For more information on trigger configuration and restrictions, see [Trigger Management](https://www.tencentcloud.com/document/product/583/9704).
 >!The event structure of the input parameter passed in by a trigger has been partially defined and can be used directly. You can get and use the Java library through the [Java Cloud Event Definition](https://github.com/tencentyun/scf-java-libs) or the Go library through the [Go Cloud Event Definition](https://github.com/tencentyun/scf-go-lib/tree/master/events).
 >
 
-## Event Message Structures of Integration Request for API Gateway Trigger
+## Event Message Structure of Integration Request for API Gateway Trigger
 
-When an API Gateway trigger receives a request, event data will be sent to the bound SCF function in JSON format as shown below.
+When an API Gateway trigger receives a request, event data will be sent to the bound function in JSON format as shown below. For more information, see <a href="https://cloud.tencent.com/document/product/583/32550">API Gateway Trigger</a>.
 ```
 {
   "requestContext": {
@@ -63,7 +63,7 @@ When a function is invoked at a scheduled time, event data will be sent to the b
 
 ## Event Message Structure for COS Trigger
 
-When an object creation or deletion event occurs in the specified COS bucket, event data will be sent to the bound SCF function in JSON format as shown below.
+When an object creation or deletion event occurs in the specified COS bucket, event data will be sent to the bound function in JSON format as shown below. For more information, see <a href="https://cloud.tencent.com/document/product/583/59092">COS Trigger</a>.
 ```
 {
     "Records": [{
@@ -86,7 +86,7 @@ When an object creation or deletion event occurs in the specified COS bucket, ev
             },
             "cosNotificationId": "unkown"
         },
-        "event":{
+        "event": {
             "eventName": "cos:ObjectCreated:*",
             "eventVersion": "1.0",
             "eventTime": 1545205770,
@@ -107,7 +107,7 @@ When an object creation or deletion event occurs in the specified COS bucket, ev
 
 ## Event Message Structure for CKafka Trigger
 
-When the specified CKafka topic receives messages, the backend consumer module of SCF will consume the message in the CKafka topic and encapsulate the message into an event in JSON format like the one below, which triggers the bound function and pass the data content as input parameters to the function.
+When a specified CKafka topic receives a message, the backend consumption module of SCF will consume the message and encapsulate it into an event in JSON format like the one below, which will trigger the bound function and pass the data content as input parameters to the function. For more information, see <a href="https://cloud.tencent.com/document/product/583/59097">CKafka Trigger</a>.
 ```
 {
   "Records": [
@@ -133,9 +133,9 @@ When the specified CKafka topic receives messages, the backend consumer module o
 }
 ```
 
-## Event Structure for CMQ Topic Trigger
+## Event Message Structure for CMQ Topic Trigger
 
-When a specified CMQ topic receives a message, event data in JSON format like the example below will be sent to the bound SCF function.
+When a specified CMQ topic receives a message, event data will be sent to the bound function in JSON format as shown below. For more information, see <a href="https://intl.cloud.tencent.com/document/product/583/11517">CMQ Topic Trigger</a>.
 ```
 {
   "Records": [
@@ -157,9 +157,9 @@ When a specified CMQ topic receives a message, event data in JSON format like th
 ```
 
 
-## Event Message Structure for CLS Triggers
+## Event Message Structure for CLS Trigger
 
-When the specified CLS trigger receives a message, the CLS backend consumption module will consume the message and encapsulate it to asynchronously invoke your function. In order to ensure the efficiency of data transfer in a single triggering action, the value of the data field is a Base64-encoded ZIP document.
+When the specified CLS trigger receives a message, the CLS backend consumption module will consume the message and encapsulate it to asynchronously invoke your function. In order to ensure the efficiency of data transfer in a single triggering action, the value of the data field is a Base64-encoded ZIP document. For more information, see <a href="https://cloud.tencent.com/document/product/583/59090">CLS Trigger</a>.
 
 ```
 {
@@ -187,7 +187,7 @@ After being decoded and decompressed, the log data will look like the following 
 
 ## Event Message Structure for MPS Trigger
 
-When a specified MPS trigger receives a message, the event structures and fields will be as shown below (with the `WorkflowTask` task as an example):
+When a specified MPS trigger receives a message, the event structures and fields will be as shown below (with the `WorkflowTask` task as an example). For more information, see <a href="https://intl.cloud.tencent.com/document/product/583/39163">MPS Trigger</a>.
 
 ```
 {
@@ -442,10 +442,10 @@ When a specified MPS trigger receives a message, the event structures and fields
 
 ## Event Message Structure for CLB Trigger
 
-When a CLB trigger receives a request, event data will be sent to the bound function in JSON format as shown below.
+When a CLB trigger receives a request, event data will be sent to the bound function in JSON format as shown below. For more information, see <a href="https://intl.cloud.tencent.com/document/product/583/39849">CLB Trigger Description</a>.
 ```
 {  
-  "headers":{ 
+  "headers": { 
     "Content-type": "application/json",  
     "Host": "test.clb-scf.com",  
     "User-Agent": "Chrome",  
@@ -471,15 +471,15 @@ When a CLB trigger receives a request, event data will be sent to the bound func
 }  
 ```
 
-## Event Structure Passed in by EventBridge Trigger
-With [EventBridge](https://intl.cloud.tencent.com/products/eb), you can further expand the function event trigger sources and send events generated by EventBridge to SCF in the following form, where the content of the `"data"` field is determined by the event source. Here, TDMQ is used as an example:
+## Event Message Structure for EventBridge Trigger
+With [EventBridge](https://www.tencentcloud.com/products/eb), you can further expand the function event trigger sources and send events generated by EventBridge to SCF in the following form, where the content of the `"data"` field is determined by the event source. Here, TDMQ is used as an example:
 ```json
  {
   "specversion": "0",
   "id": "13a3f42d-7258-4ada-da6d-023a33******",
   "type": "connector:tdmq",
   "source": "tdmq.cloud.tencent",
-  "subject": "qcs::tdmq:$region:$account:topicName/$topicSets.clusterId/$topicSets.environmentId/$topicSets.topicName/$topicSets.subscriptionName",
+  "subjuect": "qcs::tdmq:$region:$account:topicName/$topicSets.clusterId/$topicSets.environmentId/$topicSets.topicName/$topicSets.subscriptionName",
   "time": "1615430559146",
   "region": "ap-guangzhou",
   "datacontenttype": "application/json;charset=utf-8",

@@ -11,7 +11,7 @@ A COS trigger always invokes a function asynchronously, and the result is not re
 
 
 
-## COS Trigger Configurations
+## COS Trigger Attributes
 
 - COS bucket (required): The configured COS bucket, which can only be a COS bucket in the same region.
 - Event type (required): It supports "file upload" and "file deletion" as well as finer-grained upload and deletion events. For specific event types, see the table below. The event type determines when the trigger triggers the function. For example, if "File upload" is selected, the function will be triggered when there is a file uploaded to the COS bucket.
@@ -74,22 +74,22 @@ A COS trigger always invokes a function asynchronously, and the result is not re
 - Prefix filtering (optional): Prefix filtering is usually used to filter file events in a specified directory. For example, if the prefix to be filtered is `test/`, only file events in the `test/` directory can trigger the function, while those in the `hello/` directory cannot.
 - Suffix filtering (optional): Suffix filtering is usually used to filter file events in a specified type or with a specified suffix. For example, if the suffix to be filtered is `.jpg`, only file events of the `.jpg` type can trigger the function, while those of the `.png/` type cannot.
 
-## COS Trigger Usage Limits
+## COS Trigger Use Limits
 
 - In order to avoid errors in COS event production and delivery, for the combination of each event (such as file upload/deletion) and prefix/suffix filter in each bucket, COS limits that the same rule can be bound to only one function that can be triggered. Therefore, when you create a COS trigger, do not configure repeated rules for the same COS bucket. For example, if you configure a `Created: *` event trigger in the test bucket for function A (with no filter rule configured), then the upload events (including `Created:Put` and `Created:Post`) in the test bucket cannot be bound to other functions, but you can configure an `ObjectRemove` event trigger in the test bucket for function B.
 
-- When using prefix and suffix filter rule, in order to ensure the uniqueness of the trigger events in the same bucket, it should be noted that the same bucket cannot use overlapping prefixes, overlapping suffixes, or overlapping combinations of prefixes and suffixes to define the filter rule for the same event type. For example, if you configure a `Created: *` trigger event with prefix filter of `Log` in the test bucket for function A, then you cannot configure a `Created: *` trigger event with prefix filter of `Log` in the test bucket.
+- When using prefix and suffix filter rule, in order to ensure the uniqueness of the triggering events in the same bucket, it should be noted that the same bucket cannot use overlapping prefixes, overlapping suffixes, or overlapping combinations of prefixes and suffixes to define the filter rule for the same event type. For example, if you configure a `Created: *` trigger event with prefix filter of `Log` in the test bucket for function A, then you cannot configure a `Created: *` trigger event with prefix filter of `Log` in the test bucket.
 
-- In addition, COS triggers can only trigger functions in the same region; for example, for an SCF function created in the Guangzhou region, you can only select a COS bucket in the Guangzhou region (South China) when configuring a COS trigger. To trigger a function through COS bucket events in a specific region, create a function in that region.
+- In addition, COS triggers can only trigger functions in the same region; for example, for an SCF function created in the Guangzhou region, you can only select a COS bucket in the Guangzhou region (South China) when configuring a COS trigger. If you want to trigger a function through COS bucket events in a specific region, create a function in that region.
 
 - A COS trigger has limits in two dimensions: SCF and COS, as detailed below:
  - SCF dimension: One function can be bound to 10 COS triggers at most.   
- - COS dimension: The same event and prefix/suffix rule of one COS bucket can be bound to only one function.
+ - COS dimension: Only one function can be bound to the same event and prefix/suffix rules in a single COS bucket.
 
 
 ## Event Message Structure for COS Trigger
 
-When an object creation or deletion event occurs in the specified COS bucket, event data will be sent to the bound SCF function in JSON format as shown below.
+When an object creation or deletion event occurs in the specified COS bucket, event data will be sent to the bound function in JSON format as shown below.
 
 ```
 {
@@ -114,7 +114,7 @@ When an object creation or deletion event occurs in the specified COS bucket, ev
 			},
 			"cosNotificationId": "unkown"
 		},
-		"event":{
+		"event": {
 			"eventName": "cos:ObjectCreated:*",
 			"eventVersion": "1.0",
 			"eventTime": 1545205770,
@@ -133,14 +133,14 @@ When an object creation or deletion event occurs in the specified COS bucket, ev
 }
 ```
 
-The data structure is described as follows:
+The data structures are as detailed below:
 
-| Structure Name | Description |
+| Structure | Description |
 | ---------- | --- |
 | Records | List structure. There may be multiple messages merged in the list. |
 | event | This records the event information, including event version, event source, event name, time, queue information, request parameters, and request ID. |
 | cos | This records the COS information corresponding to the event. |
-| cosBucket | This records the bucket of the specific event, including bucket name, region, and user `APPID`. |
+| cosBucket | This records the bucket of the specific event, including bucket name, region, and user `APPID` (which can be obtained on the [Account Info](https://console.cloud.tencent.com/developer) page). |
 | cosObject | This records the object of the specific event, including object file path, size, custom metadata, and access URL. |
 
 ## Sample

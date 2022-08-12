@@ -1,10 +1,10 @@
-本文档主要汇总所有对接云函数 SCF 的触发器事件的消息结构，触发器配置详情及限制请参考具体的 [触发器管理文档](https://intl.cloud.tencent.com/document/product/583/9704)。
+本文档主要汇总所有对接云函数 SCF 的触发器事件的消息结构，触发器配置详情及限制请参考具体的 [触发器管理文档](https://www.tencentcloud.com/document/product/583/9704)。
 >!触发器传递的入参事件结构已有部分定义，可直接使用。您可以通过 [java cloud event 定义](https://github.com/tencentyun/scf-java-libs) 获取 Java 的库并使用，通过 [go cloud event 定义](https://github.com/tencentyun/scf-go-lib/tree/master/events ) 获取 Golang 的库并使用。
 >
 
 ## API 网关触发器的集成请求事件消息结构
 
-在 API 网关触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的 SCF 函数。
+在 API 网关触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的 SCF 函数。详情见 <a href="https://cloud.tencent.com/document/product/583/32550">API 网关触发器</a>。
 ```
 {
   "requestContext": {
@@ -63,7 +63,7 @@
 
 ## COS 触发器的事件消息结构
 
-在指定的 COS Bucket 发生对象创建或对象删除事件时，会将类似以下的 JSON 格式事件数据发送给绑定的 SCF 函数。
+在指定的 COS Bucket 发生对象创建或对象删除事件时，会将类似以下的 JSON 格式事件数据发送给绑定的 SCF 函数。详情见 <a href="https://cloud.tencent.com/document/product/583/59092">COS 触发器</a>。
 ```
 {
     "Records": [{
@@ -107,7 +107,7 @@
 
 ## CKafka 触发器的事件消息结构
 
-在指定的 CKafka Topic 接收到消息时，云函数后台的消费者模块会消费 CKafka Topic 中的消息，并将消息组装为类似以下的 JSON 格式事件，触发绑定的函数并将数据内容作为入参传递给函数。
+在指定的 CKafka Topic 接收到消息时，云函数后台的消费者模块会消费 CKafka Topic 中的消息，并将消息组装为类似以下的 JSON 格式事件，触发绑定的函数并将数据内容作为入参传递给函数。详情见 <a href="https://cloud.tencent.com/document/product/583/59097">CKafka 触发器</a>。
 ```
 {
   "Records": [
@@ -135,7 +135,7 @@
 
 ## CMQ Topic 触发器的事件消息结构
 
-在指定的 CMQ Topic 接受到消息时，会将类似以下的 JSON 格式事件数据发送给绑定的 SCF 函数。
+在指定的 CMQ Topic 接受到消息时，会将类似以下的 JSON 格式事件数据发送给绑定的 SCF 函数。详情见 <a href="https://intl.cloud.tencent.com/document/product/583/11517">CMQ Topic 触发器</a>。
 ```
 {
   "Records": [
@@ -159,7 +159,7 @@
 
 ## CLS 触发器的事件消息结构
 
-在指定的 CLS 触发器接收到消息时，CLS 的后台消费者模块会消费消息，并将消息组装异步调用您的函数。为保证单次触发传递数据的效率，数据字段的值是 Base64 编码的 ZIP 文档。
+在指定的 CLS 触发器接收到消息时，CLS 的后台消费者模块会消费消息，并将消息组装异步调用您的函数。为保证单次触发传递数据的效率，数据字段的值是 Base64 编码的 ZIP 文档。详情见 <a href="https://cloud.tencent.com/document/product/583/59090">CLS 触发器</a>。
 
 ```
 {
@@ -187,7 +187,7 @@
 
 ## MPS 触发器的事件消息结构
 
-在指定的 MPS 触发器接收到消息时，事件结构与字段以 WorkflowTask 任务为例。示例如下：
+在指定的 MPS 触发器接收到消息时，事件结构与字段以 WorkflowTask 任务为例。详情见 <a href="https://intl.cloud.tencent.com/document/product/583/39163">MPS 触发器</a>。示例如下：
 
 ```
 {
@@ -442,7 +442,7 @@
 
 ## CLB 触发器的事件消息结构
 
-在 CLB 触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的 SCF 函数。
+在 CLB 触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的 SCF 函数。详情见 <a href="https://intl.cloud.tencent.com/document/product/583/39849">CLB 触发器说明</a>。
 ```
 {  
   "headers": { 
@@ -472,7 +472,7 @@
 ```
 
 ## 通过事件总线触发器传递的事件结构
-通过 [腾讯云事件总线](https://intl.cloud.tencent.com/products/eb)，可以进一步拓展函数事件触发源，通过事件总线产生的事件将以以下形式发送给云函数，其中`"data"` 字段里内容由事件源决定，此处以 TDMQ 为例：
+通过 [腾讯云事件总线](https://www.tencentcloud.com/products/eb)，可以进一步拓展函数事件触发源，通过事件总线产生的事件将以以下形式发送给云函数，其中`"data"` 字段里内容由事件源决定，此处以 TDMQ 为例：
 ```json
  {
   "specversion": "0",
