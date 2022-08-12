@@ -8,7 +8,7 @@
 Billable items:
 - **Storage**: Saving the files you upload to Tencent Cloud VOD as well as the files generated after transcoding. Storage fees are charged based on the storage space used and storage period.
 - **Video transcoding**: General transcoding of video files stored in Tencent Cloud VOD. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged if transcoding fails.
-- **Tencent Extreme Speed High Definition (TESHD)**: Transcoding video files stored in VOD according to TESHD standards. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for if transcoding fails.  
+- **Top Speed Codec (TSC)**: Transcoding video files stored in VOD according to TSC standards. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for if transcoding fails.  
 - **Video editing**: Using the [ComposeMedia](https://intl.cloud.tencent.com/document/product/266/34127) and [EditMedia](https://intl.cloud.tencent.com/document/product/266/34126) APIs to process video files stored in VOD. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is charged only once according to the specification. No fees will be charged if transcoding fails.  
 - **Watermark removal**: Removing watermarks from videos stored in VOD. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each watermark removal task is billed only once according to the specification. No fees will be charged if a task fails.  
 - **Video acceleration**: Using CDN for acceleration during video playback. This service is charged based on the downstream traffic consumed.
@@ -81,7 +81,7 @@ Assume that on January 1, you stored media files in STANDARD in the Chinese main
 >- Minimum storage duration for DEEP ARCHIVE files: 180 days. Storage fees for 180 days will be charged even if a file is stored for shorter than the period.
 
 ## Media Processing
-VOD offers media processing capabilities including general transcoding, TESHD transcoding, [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942), and video editing.
+VOD offers media processing capabilities including general transcoding, TSC transcoding, [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942), and video editing.
 
 ### General transcoding
 
@@ -118,11 +118,11 @@ Assume that you transcoded a video file of 100 minutes into 2560 x 1440 and 1280
 
 For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/266/38163).
 
-### TESHD transcoding
-To learn about TESHD transcoding, see [Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd).
+### Top Speed Codec (TSC) transcoding
+To learn about TSC transcoding, see [Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd).
 #### Pricing
 
-TESHD transcoding is charged based on the duration and short side (px) of the video generated after transcoding.
+TSC transcoding is charged based on the duration and short side (px) of the video generated after transcoding.
 
 |Codec|Resolution|Unit Price (USD/min)|
 |----------|-----------|-----------|
@@ -139,8 +139,8 @@ TESHD transcoding is charged based on the duration and short side (px) of the vi
 
 
 >!
->- TESHD transcoding is billed according to the resolution and duration of the output video.
->- Rules: TESHD transcoding fees are based on the duration and specification of the video file generated after TESHD transcoding. Video specification is determined by the codec used and short side (px) of the video generated.
+>- TSC transcoding is billed according to the resolution and duration of the output video.
+>- Rules: TSC transcoding fees are based on the duration and specification of the video file generated after TSC transcoding. Video specification is determined by the codec used and short side (px) of the video generated.
 >- The prices above apply only to daily billing. If you are billed monthly, please contact your sales rep to learn about the billing details.
 >- The billing rules are the same as those for general transcoding.
 
