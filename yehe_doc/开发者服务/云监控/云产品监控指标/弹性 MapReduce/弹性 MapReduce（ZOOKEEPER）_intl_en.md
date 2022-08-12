@@ -2,7 +2,7 @@
 
 Namespace=QCE/TXMR_ZOOKEEPER
 
-## Monitoring Metrics
+## Monitoring metrics
 
 | Parameter | Metric | Unit | Description | Dimension |
 | ---------------------------------------------- | ------------------------------------------- | --------------------- | --------------------------------------- | ------------------------------------------------ |
@@ -38,22 +38,22 @@ Namespace=QCE/TXMR_ZOOKEEPER
 | ZkDataCount<br>ZkWatchCount                    | Number of znodes\_zk_watch_count                  | -                    | Number of ZooKeeper watches                        | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
 | ZkDataCount<br>ZkZnodeCount                    | Number of znodes\_zk_znode_count                  | -                    | Number of ZooKeeper znodes                        | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
 | ZkDataCountZk<br>EphemeralsCount               | Number of znodes\_zk_ephemerals_count              | -                    | Number of ephemeral ZooKeeper nodes                       | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
-| ZkDataSizeZk<br>ApproximateDataSize            | Data volume\_zk_approximate_data_size          | Byte                  | Volume of data stored in ZooKeeper                           | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
+| ZkDataSizeZk<br>ApproximateDataSize            | Data volume\_zk_approximate_data_size          | B                  | Volume of data stored in ZooKeeper                           | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
 | ZkStateZkServerState                           | Node status\_zk_server_state                   | 1: primary, 0: secondary, 2: standalone | ZooKeeper node type                             | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
 | ZkPacketsZk<br>PacketsReceived                 | Number of received/sent packets\_zk_packets_received           | Packets/s                  | ZooKeeper package receiving rate                     | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
 | ZkPacketsZkPacketsSent                         | Number of received/sent packets\_zk_packets_sent               | Packets/s                  | ZooKeeper package sending rate                     | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
 | ZkRequestsOutstanding<br>ZkOutstandingRequests | Number of waiting requests\_zk_outstanding_requests         | -                    | Number of waiting requests                              | id4zookeeperzookeeper, <br>host4zookeeperzookeeper |
 
-## Dimension and Parameters
+## Dimensions and parameters
 
 | Parameter | Dimension | Dimension Description | Format |
 | :----------------------------- | :---------------------- | :--------------------------- | :----------------------------------------------------------- |
 | Instances.N.Dimensions.0.Name  | id4zookeeperzookeeper           | Dimension name of the EMR instance ID       | String-type dimension name, such as id4zookeeperzookeeper              |
-| Instances.N.Dimensions.0.Value | id4zookeeperzookeeper           | Specific EMR instance ID              | Specific EMR instance ID, such as emr-mm8bs222                |
+| Instances.N.Dimensions.0.Value | id4zookeeperzookeeper   | Specific EMR instance ID              | Specific EMR instance ID, such as emr-mm8bs222                |
 | Instances.N.Dimensions.1.Name  | host4zookeeperzookeeper        | Dimension name of the node IP in the EMR instance | String-type dimension name, such as host4zookeeperzookeeper            |
 | Instances.N.Dimensions.1.Value | host4zookeeperzookeeper      | Specific node IP in the EMR instance         | Specific node IP, which can be obtained by clicking **Instance** > **Cluster Resources** > **Resource Management** > **Node Private IP** in the [EMR console](https://console.cloud.tencent.com/emr) or calling the [DescribeClusterNodes](https://intl.cloud.tencent.com/document/product/1026/35198) API. |
 
-## Input Parameter Description
+## Input parameters
 
 To query the monitoring data of EMR (ZooKeeper), use the following input parameters:
 
@@ -62,4 +62,3 @@ Namespace=QCE/TXMR_ZOOKEEPER
 &Instances.N.Dimensions.0.Value=EMR instance ID 
 &Instances.N.Dimensions.1.Name=host4zookeeperzookeeper
 &Instances.N.Dimensions.1.Value=Specific node IP in the EMR instance 
-
