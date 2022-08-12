@@ -81,7 +81,7 @@ Assume that on January 1, you stored media files in STANDARD in the Chinese main
 >- Minimum storage duration for DEEP ARCHIVE files: 180 days. Storage fees for 180 days will be charged even if a file is stored for shorter than the period.
 
 ## Media Processing
-VOD offers media processing capabilities including general transcoding, Top Speed Codec (TSC) transcoding, [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942), and video editing.
+VOD offers media processing capabilities including general transcoding, TSC transcoding, [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942), and video editing.
 
 ### General transcoding
 
