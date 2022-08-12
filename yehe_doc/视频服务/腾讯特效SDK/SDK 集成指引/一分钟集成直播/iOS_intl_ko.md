@@ -6,7 +6,60 @@
 4. framework 서명 **General--> Masonry.framework** 및 **libpag.framework**에서 **Embed & Sign**을 선택합니다.
 5. 발급된 라이선스와 일치하도록 Bundle ID를 수정합니다.
 
+### 개발자 환경 요건
+
+- Xcode 11 이상: App Store 또는 [여기](https://developer.apple.com/xcode/resources/)에서 다운로드하십시오.
+- 권장 실행 환경:
+  - 기기 사양: iPhone 5 이상. iPhone 6 이하의 경우 전면 카메라는 720p까지 지원하며 1080p는 지원되지 않습니다.
+  - 시스템 요구 사항: iOS 10.0 이상.
+
+### C/C++ 레이어 개발 환경
+
+XCode 기본 C++ 환경.
+
+<table>
+<tr><th>유형</th><th>종속 라이브러리</th></tr>
+<tr>
+<td>시스템 종속 라이브러리</td>
+<td><ul style="margin:0">
+<li/>Accelerate
+<li/>AssetsLibrary
+<li/>AVFoundation
+<li/>CoreMedia  
+<li/>CoreFoundation
+<li/>CoreML
+<li/>Foundation
+<li/>JavaScriptCore
+<li/>libc++.tbd
+<li/>libz.b
+<li/>libresolv.tbd
+<li/>libsqlite3.0.tbd
+<li/>MetalPerformanceShaders
+<li/>MetalKit
+<li/>MobileCoreServices
+<li/>OpneAL
+<li/>OpneGLES
+<li/>ReplayKit
+<li/>SystemConfiguration
+<li/>UIKit
+</ul></td>
+</tr>
+<tr>
+<td>내장 라이브러리</td>
+<td><ul style="margin:0">
+<li/>YTCommon(인증 정적 라이브러리)
+<li/>XMagic(뷰티 필터 정적 라이브러리)
+<li/>libpag(비디오 디코딩 동적 라이브러리)
+<li/>Masonry(컨트롤 레이아웃 라이브러리)
+<li/>TXLiteAVSDK_Professional
+<li/>TXFFmpeg
+<li/>TXSoundTouch
+</ul></td>
+</tr>
+</table>
+
 ## SDK 인터페이스 통합 
+
 - [1단계](#step1) 및 [2단계](#step2)는 Demo 프로젝트의 ThirdBeautyViewController 클래스의 viewDidLoad, buildBeautySDK 메소드를 참고하시기 바라며, Xmagic 인증은 AppDelegate 클래스의 application 메소드에서 수행됩니다.
 - [4단계](#step4)부터 [7단계](#step7)까지 Demo 프로젝트의 ThirdBeautyViewController와 BeautyView 클래스의 해당 인스턴스 코드를 참고하시기 바랍니다.
 

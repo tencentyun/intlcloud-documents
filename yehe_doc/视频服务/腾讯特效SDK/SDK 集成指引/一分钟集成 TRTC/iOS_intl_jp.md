@@ -5,14 +5,67 @@
 3. framework署名の**General--> Masonry.framework**および**libpag.framework**で**Embed & Sign**を選択します。
 4. Bundle IDを、テスト用に申請した権限と同じものに変更します。
 
+### 開発者環境要件
+
+- 開発ツールXCode11以降：App Storeまたは[アドレスのダウンロード](https://developer.apple.com/xcode/resources/)をクリックします。
+- 推奨実行環境：
+  - デバイス要件：iPhone 5以上。iPhone 6およびそれ以下はフロントカメラのサポートは最大720pとし、1080pはサポートしていません。
+  - システム要件：iOS 10.0以降のバージョン。
+
+### C/C++レイヤー開発環境
+
+XCodeはデフォルトではC++環境となります。
+
+<table>
+<tr><th>タイプ</th><th>依存ライブラリ</th></tr>
+<tr>
+<td>システム依存ライブラリ</td>
+<td><ul style="margin:0">
+<li/>Accelerate
+<li/>AssetsLibrary
+<li/>AVFoundation
+<li/>CoreMedia  
+<li/>CoreFoundation
+<li/>CoreML
+<li/>Foundation
+<li/>JavaScriptCore
+<li/>libc++.tbd
+<li/>libz.b
+<li/>libresolv.tbd
+<li/>libsqlite3.0.tbd
+<li/>MetalPerformanceShaders
+<li/>MetalKit
+<li/>MobileCoreServices
+<li/>OpneAL
+<li/>OpneGLES
+<li/>Security
+<li/>ReplayKit
+<li/>SystemConfiguration
+<li/>UIKit
+</ul></td>
+</tr>
+<tr>
+<td>付属ライブラリ</td>
+<td><ul style="margin:0">
+<li/>YTCommon（認証静的ライブラリ）
+<li/>XMagic（美顔静的ライブラリ）
+<li/>libpag（ビデオデコード動的ライブラリ）
+<li/>Masonry（コントロールレイアウトライブラリ）
+<li/>TXLiteAVSDK_Professional
+<li/>TXFFmpeg
+<li/>TXSoundTouch
+</ul></td>
+</tr>
+</table>
+
 ## SDKインターフェースの統合 
 
-- [ステップ1](#step1)および[ステップ2](#step2)については、DemoプロジェクトのThirdBeautyViewControllerクラスのviewDidLoad、buildBeautySDKのメソッドを参照できます。AppDelegateクラスのapplicationメソッドはXmagic認証を実行します。
-- [ステップ4](#step4)から[ステップ7](#step7)までは、DemoプロジェクトのThirdBeautyViewController、BeautyViewクラスの関連インスタンスコードを参照できます。
+- [手順1](#step1)および[手順2](#step2)については、DemoプロジェクトのThirdBeautyViewControllerクラスのviewDidLoad、buildBeautySDKのメソッドを参照できます。AppDelegateクラスのapplicationメソッドはXmagic認証を実行します。
+- [手順4](#step4)から[手順7](#step7)までは、DemoプロジェクトのThirdBeautyViewController、BeautyViewクラスの関連インスタンスコードを参照できます。
 
-### ステップ1：権限の初期化[](id:step1)
+### 手順1：権限の初期化[](id:step1)
 
-1. まず初めにプロジェクトのAppDelegateのdidFinishLaunchingWithOptionsに次の認証コードを追加します。このうちLicenseURLおよびLicenseKeyはTencent Cloud公式サイトに権限承認を申請した際の情報とします。
+1. まず、プロジェクトAppDelegateのdidFinishLaunchingWithOptionsに次の認証コードを追加します。そのうち、LicenseURLとLicenseKeyは、Tencent Cloudの公式Webサイトによって申請される権限承認情報です。
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```
@@ -92,7 +145,7 @@
 </tr>
 </tbody></table>
 
-### ステップ2：SDK素材リソースパスの設定[](id:step2)
+### 手順2：SDK素材リソースパスの設定[](id:step2)
 
 ```objectivec
 CGSize previewSize = [self getPreviewSizeByResolution:self.currentPreviewResolution];
@@ -118,7 +171,7 @@ NSDictionary *assetsDict = @{@"core_name":@"LightCore.bundle",
 self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:assetsDict];
 ```
 
-### ステップ3：ログおよびイベント監視の追加[](id:step3)
+### 手順3：ログおよびイベント監視の追加[](id:step3)
 
 ```objectivec
  // Register log
@@ -126,26 +179,26 @@ self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:asset
 [self.beautyKit registerLoggerListener:self withDefaultLevel:YT_SDK_ERROR_LEVEL];
 ```
 
-### ステップ4：各種美顔効果の設定[](id:step4)
+### 手順4：各種美顔効果の設定[](id:step4)
 
 ```objectivec
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
-### ステップ5：レンダリング処理の実施[](id:step5)
+### 手順5：レンダリング処理の実施[](id:step5)
 ビデオフレームコールバックインターフェースで、YTProcessInputを作成してSDKに渡し、レンダリング処理を行います。DemoのThirdBeautyViewControllerを参照できます。
 ```objectivec
  [self.xMagicKit process:inputCPU withOrigin:YtLightImageOriginTopLeft withOrientation:YtLightCameraRotation0]
 ```
 
-### ステップ6：SDKの一時停止/再開[](id:step6)
+### 手順6：SDKの一時停止/再開[](id:step6)
 
 ```objectivec
 [self.beautyKit onPause];
 [self.beautyKit onResume];
 ```
 
-### ステップ7：レイアウトにSDK美顔パネルを追加[](id:step7)
+### 手順7：レイアウトにSDK美顔パネルを追加[](id:step7)
 ```objectivec
 UIEdgeInsets gSafeInset;
 #if __IPHONE_11_0 && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0

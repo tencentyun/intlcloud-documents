@@ -5,14 +5,56 @@
 3. framework 서명 **General--> Masonry.framework** 및 **libpag.framework**에서 **Embed & Sign**을 선택합니다.
 4. Bundle ID를 신청한 테스트 인증과 동일하게 수정합니다.
 
+### 개발자 환경 요건
+
+- Xcode 11 이상: App Store 또는 [여기](https://developer.apple.com/xcode/resources/)에서 다운로드하십시오.
+- 권장 실행 환경:
+  - 기기 사양: iPhone 5 이상. iPhone 6 이하의 경우 전면 카메라는 720p까지 지원하며 1080p는 지원되지 않습니다.
+  - 시스템 요구 사항: iOS 10.0 이상.
+
+### C/C++ 레이어 개발 환경
+
+XCode 기본 C++ 환경.
+
+<table>
+<tr><th>유형</th><th>종속 라이브러리</th></tr>
+<tr>
+<td>시스템 종속 라이브러리</td>
+<td><ul style="margin:0">
+<li/>Accelerate
+<li/>AssetsLibrary
+<li/>AVFoundation
+<li/>CoreFoundation
+<li/>CoreML
+<li/>JavaScriptCore
+<li/>libc++.tbd
+<li/>libmtasdk.a
+<li/>libresolv.tbd
+<li/>libsqlite3.tbd
+<li/>MetalPerformanceShaders
+</ul></td>
+</tr>
+<tr>
+<td>내장 라이브러리</td>
+<td><ul style="margin:0">
+<li/>YTCommon(인증 정적 라이브러리)
+<li/>XMagic(뷰티 필터 정적 라이브러리)
+<li/>libpag(비디오 디코딩 동적 라이브러리)
+<li/>Masonry(컨트롤 레이아웃 라이브러리)
+<li/>QCloudCore(객체 스토리지 라이브러리)
+<li/>QCloudCosXML(객체 스토리지 라이브러리)
+</ul></td>
+</tr>
+</table>
+
 ## SDK 인터페이스 통합 [](id:step)
 
 - [1단계](#step1) 및 [2단계](#step2)는 Demo 프로젝트의 UGCKitRecordViewController 클래스 viewDidLoad, buildBeautySDK 메소드를 참고하십시오.
 - [4단계](#step4)부터 [7단계](#step7)까지 Demo 프로젝트의 UGCKitRecordViewController 및 BeautyView 클래스 관련 인스턴스 코드를 참고하십시오.
 
 ### 1단계: 인증 초기화[](id:step1)
-1. AppDelegate의 didFinishLaunchingWithOptions에 다음 코드를 추가합니다(Tencent Cloud 웹사이트에서 얻은 인증 정보에 따라 LicenseURL과 LicenseKey를 설정):
-```
+AppDelegate의 didFinishLaunchingWithOptions에 다음 코드를 추가합니다(Tencent Cloud 웹사이트에서 얻은 인증 정보에 따라 LicenseURL과 LicenseKey를 설정):
+```objectivec
 [TXUGCBase setLicenceURL:LicenseURL key:LicenseKey];
 
 [TELicenseCheck setTELicense:@"https://license.vod2.myqcloud.com/license/v2/1258289294_1/v_cube.license" key:@"3c16909893f53b9600bc63941162cea3" completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
@@ -23,20 +65,25 @@
                }
        }];
 ```
-2. 인증 코드는 Demo의 UGCKitRecordViewController 클래스 viewDidLoad에 있는 인증 코드를 참고하십시오.
-```
-NSString *licenseInfo = [TXUGCBase getLicenceInfo];
-NSData *jsonData = [licenseInfo dataUsingEncoding:NSUTF8StringEncoding];
-NSError *err = nil;
-NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-options:NSJSONReadingMutableContainers error:&err];
-NSString *xmagicLicBase64Str = [dic objectForKey:@"TELicense"];
+**errorCode 인증 설명**:
 
-//xmagic 인증 초기화
-int authRet = [XMagicAuthManager initAuthByString:xmagicLicBase64Str withSecretKey:@""];// withSecretKey는 빈 문자열이며 내용을 채울 필요가 없습니다.
-NSLog(@"xmagic auth ret : %i", authRet);
-NSLog(@"xmagic auth version : %@", [XMagicAuthManager getVersion]);
-```
+| 에러 코드 | 설명                                                    |
+| :----- | :------------------------------------------------------ |
+| 0      | 성공. Success                                           |
+| -1     | 입력 매개변수가 잘못되었습니다. 예: URL 또는 KEY가 비어 있습니다                      |
+| -3     | 다운로드 실패. 네트워크 설정을 확인하십시오                            |
+| -4     | 로컬 시스템에서 읽은 TE SDK 인증 정보가 비어 있습니다. 이는 I/O 실패로 인해 발생할 수 있습니다        |
+| -5     | 읽은 VCUBE TEMP License 파일의 내용이 비어 있습니다. 이는 I/O 실패로 인해 발생할 수 있습니다 |
+| -6     | v_cube.license 파일의 JSON 필드가 올바르지 않습니다. 도움이 필요하면 Tencent Cloud에 문의하십시오 |
+| -7     | 서명 검증 실패. 도움이 필요하면 Tencent Cloud에 문의하십시오                      |
+| -8     | 암호 해독 실패. 도움이 필요하면 Tencent Cloud에 문의하십시오                          |
+| -9     | TELicense 필드의 JSON 필드가 올바르지 않습니다. 도움이 필요한 경우 Tencent Cloud에 문의하십시오  |
+| -10    | 네트워크에서 리졸브된 TE 인증 정보가 비어 있습니다. 도움이 필요한 경우 Tencent Cloud에 문의하십시오      |
+| -11    | 로컬 파일에 TE SDK 인증 정보 쓰기 실패. 이는 I/O 실패로 인해 발생할 수 있습니다      |
+| -12    | 다운로드 실패. 로컬 asset을 리졸브하지 못했습니다.                         |
+| -13    | 인증 실패                                                |
+| 기타   | 도움이 필요한 경우 Tencent Cloud에 문의하십시오                                    |
+
 
 ### 2단계: SDK 소재 리소스 경로 설정 [](id:step2)
 
@@ -65,15 +112,14 @@ self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:asset
 ```
 
 ### 3단계: 로그 및 이벤트 리스너 추가[](id:step3)
-```
+```objectivec
 // Register log
 [self.beautyKit registerSDKEventListener:self];
 [self.beautyKit registerLoggerListener:self withDefaultLevel:YT_SDK_ERROR_LEVEL];
 ```
 
 ### 4단계: 뷰티 필터의 다양한 효과 설정[](id:step4)
-
-```
+```objectivec
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
@@ -86,14 +132,13 @@ UGSV 사전 처리 프레임 콜백 인터페이스에서 YTProcessInput을 구�
 
 ### 6단계: SDK 일시 중지/복구 [](id:step6)
 
-```
+```objectivec
 [self.beautyKit onPause];
 [self.beautyKit onResume];
 ```
 
 ### 7단계: 레이아웃에 SDK 뷰티 필터 패널 추가[](id:step7)
-
-```
+```objectivec
 UIEdgeInsets gSafeInset;
 #if __IPHONE_11_0 && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
 if(gSafeInset.bottom > 0){

@@ -5,6 +5,59 @@
 3. framework 서명 **General--> Masonry.framework** 및 **libpag.framework**에서 **Embed & Sign**을 선택합니다.
 4. Bundle ID를 신청한 테스트 인증과 동일하게 수정합니다.
 
+### 개발자 환경 요건
+
+- Xcode 11 이상: App Store 또는 [여기](https://developer.apple.com/xcode/resources/)에서 다운로드하십시오.
+- 권장 실행 환경:
+  - 기기 사양: iPhone 5 이상. iPhone 6 이하의 경우 전면 카메라는 720p까지 지원하며 1080p는 지원되지 않습니다.
+  - 시스템 요구 사항: iOS 10.0 이상.
+
+### C/C++ 레이어 개발 환경
+
+XCode 기본 C++ 환경.
+
+<table>
+<tr><th>유형</th><th>종속 라이브러리</th></tr>
+<tr>
+<td>시스템 종속 라이브러리</td>
+<td><ul style="margin:0">
+<li/>Accelerate
+<li/>AssetsLibrary
+<li/>AVFoundation
+<li/>CoreMedia  
+<li/>CoreFoundation
+<li/>CoreML
+<li/>Foundation
+<li/>JavaScriptCore
+<li/>libc++.tbd
+<li/>libz.b
+<li/>libresolv.tbd
+<li/>libsqlite3.0.tbd
+<li/>MetalPerformanceShaders
+<li/>MetalKit
+<li/>MobileCoreServices
+<li/>OpneAL
+<li/>OpneGLES
+<li/>Security
+<li/>ReplayKit
+<li/>SystemConfiguration
+<li/>UIKit
+</ul></td>
+</tr>
+<tr>
+<td>내장 라이브러리</td>
+<td><ul style="margin:0">
+<li/>YTCommon(인증 정적 라이브러리)
+<li/>XMagic(뷰티 필터 정적 라이브러리)
+<li/>libpag(비디오 디코딩 동적 라이브러리)
+<li/>Masonry(컨트롤 레이아웃 라이브러리)
+<li/>TXLiteAVSDK_Professional
+<li/>TXFFmpeg
+<li/>TXSoundTouch
+</ul></td>
+</tr>
+</table>
+
 ## SDK 인터페이스 통합 
 
 - [1단계](#step1) 및 [2단계](#step2)는 Demo 프로젝트의 ThirdBeautyViewController 클래스의 viewDidLoad, buildBeautySDK 메소드를 참고하시기 바라며, Xmagic 인증은 AppDelegate 클래스의 application 메소드에서 수행됩니다.
@@ -12,7 +65,7 @@
 
 ### 1단계: 인증 초기화[](id:step1)
 
-1. 먼저 프로젝트 AppDelegate의 didFinishLaunchingWithOptions에 다음 인증 코드를 추가합니다. 여기서 LicenseURL 및 LicenseKey는 Tencent Cloud 공식 웹사이트에서 신청한 인증 정보입니다. 
+1. 프로젝트의 AppDelegate의 didFinishLaunchingWithOptions에 다음 인증 코드를 추가합니다. 여기서 LicenseURL과 LicenseKey는 Tencent Cloud 공식 웹사이트에서 얻은 인증 정보입니다.
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```
@@ -26,7 +79,7 @@
         }
     }];
 ```
-**errorCode 인증 설명**: 
+**errorCode 인증 설명**:
 <table>
 <thead>
 <tr>
@@ -44,11 +97,11 @@
 </tr>
 <tr>
 <td>-3</td>
-<td>다운로드 단계 실패, 네트워크 설정을 확인하십시오.</td>
+<td>다운로드 실패, 네트워크 설정 확인</td>
 </tr>
 <tr>
 <td>-4</td>
-<td>로컬에서 읽은 TE 인증 정보가 비어 있습니다. 이는 IO 실패로 인해 발생할 수 있습니다.</td>
+<td>로컬에서 읽은 TE 인증 정보가 비어 있음, 이는 IO 실패로 인해 발생한 것일 수 있습니다.</td>
 </tr>
 <tr>
 <td>-5</td>
@@ -60,27 +113,27 @@
 </tr>
 <tr>
 <td>-7</td>
-<td>서명 확인에 실패했습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>서명 인증 실패. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr>
 <tr>
 <td>-8</td>
-<td>복호화에 실패했습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>복호화 실패. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr>
 <tr>
 <td>-9</td>
-<td>TELicense 필드의 JSON 필드가 올바르지 않습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>TELicense 필드의 JSON 필드가 올바르지 않습니다. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr>
 <tr>
 <td>-10</td>
-<td>네트워크에서 리졸브된 TE 인증 정보가 비어 있습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>네트워크에서 리졸브된 TE 인증 정보가 비어 있습니다. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr>
 <tr>
 <td>-11</td>
-<td>IO 실패로 인해 로컬 파일에 TE 인증 정보를 쓰지 못했습니다.</td>
+<td>로컬 파일에 TE 인증 정보 쓰기 실패. 가능한 원인은 IO 실패입니다.</td>
 </tr>
 <tr>
 <td>-12</td>
-<td>다운로드 실패, 로컬 asset 구문 분석 실패</td>
+<td>다운로드에 실패했으며 로컬 asset의 리졸브도 실패했습니다.</td>
 </tr>
 <tr>
 <td>-13</td>
@@ -132,7 +185,7 @@ self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:asset
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
-### 5단계: [](id:step5) 렌더링
+### 5단계: 렌더링[](id:step5)
 비디오 프레임 콜백 인터페이스에서 YTProcessInput을 구성하고 렌더링 처리를 위해 SDK에 전달합니다. Demo의 ThirdBeautyViewController를 참고하십시오.
 ```objectivec
  [self.xMagicKit process:inputCPU withOrigin:YtLightImageOriginTopLeft withOrientation:YtLightCameraRotation0]

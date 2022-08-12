@@ -9,12 +9,13 @@
 -keep class org.extra.** { *;}
 -keep class com.gyailib.**{ *;}
 -keep class com.tencent.cloud.iai.lib.** { *;}
+-keep class com.tencent.beacon.** { *;}
+-keep class com.tencent.qimei.** { *;}
 ```
 
 [](id:que2)
 ### Android SDKをホストプロジェクトに統合するとgsonライブラリとの競合エラーが発生しましたが、解決するにはどうすればよいですか？
 ホストプロジェクトの`build.gradle`ファイルに次のコードを追加します：
-
 ```
 Android{
   configurations {
@@ -24,19 +25,29 @@ Android{
 ```
 
 [](id:que3)
+### Android targetSdkVersion 31以降のバージョンの場合、soライブラリが正常にロードされませんでしたか。
+Android targetSdkVersion 31以降のバージョンの場合、appモジュールの下に`AndroidManifest.xml`ファイルを見つけて、applicationタグ内に次のタグを追加してください。
+```xml
+  <uses-native-library
+            android:name="libOpenCL.so"
+            android:required="true" />
+```
+詳細については、[開発ガイド](https://developer.android.google.cn/guide/topics/manifest/uses-native-library-element?hl=zh-cn)をご参照ください。
+
+[](id:que4)
 ### iOSでのリソースインポート実行後のエラー：Xcode 12.Xバージョンのコンパイルで、「Building for iOS Simulator, but the linked and embedded framework '.framework'...」と表示されました。
 
 **Build Settings** > **Build Options** > **Validate Workspace** でYesに変更し、再度**実行**をクリックします。
 > ? Validate WorkspaceをYesに変更するとコンパイルが完了します。再びNoに変更しても正常に実行できます。そのため、ここではこの問題が発生した場合にのみ注意してください。
 
-[](id:que4)
-### フィルター設定が応答しません。
+[](id:que5)
+### フィルター設定が反応しません。
 設定値が正しいかどうか確認してください。範囲は0～100ですが、値が小さすぎると効果がわかりづらい場合があります。
 
-[](id:que5)
+[](id:que6)
 ### iOS Demoのコンパイルで、dSYMを生成する際にエラーが発生します。
 - **エラーメッセージ：**
-```
+```swift
 PhaseScriptExecution CMake\ PostBuild\ Rules build/XMagicDemo.build/Debug-iphoneos/XMagicDemo.build/Script-81731F743E244CF2B089C1BF.sh
     cd /Users/zhenli/Downloads/xmagic_s106
     /bin/sh -c /Users/zhenli/Downloads/xmagic_s106/build/XMagicDemo.build/Debug-iphoneos/XMagicDemo.build/Script-81731F743E244CF2B089C1BF.sh
@@ -49,14 +60,16 @@ Command /bin/sh failed with exit code 1
 	2. `$(which cmake)`をローカルcmakeの絶対パスに変更します。
 	3. 署名`Apple Development: ......`をご自身のアカウントに変更します。
 
-[](id:que6)
+[](id:que7)
+
 ### iOS Demoで、メインページに進むと権限承認エラーと表示されます。
 ログに表示された検証承認失敗のエラーコードを確認します。ローカルのLicenseファイルを使用している場合は、ファイルがプロジェクトに追加されているかをチェックします。
 
-[](id:que7)
+[](id:que8)
+
 ### iOS Demoのコンパイルにエラーが発生しました。
 - **エラーメッセージ：**
-```
+```swift
 unexpected service error: build aborted due to an internal error: unable to write manifest to-xxxx-manifest.xcbuild': mkdir(/data, S_IRWXU | S_IRWXG | S_IRWXO): Read-only file system (30):
 ```
 - **解決方法**：

@@ -9,12 +9,13 @@
 -keep class org.extra.** { *;}
 -keep class com.gyailib.**{ *;}
 -keep class com.tencent.cloud.iai.lib.** { *;}
+-keep class com.tencent.beacon.** { *;}
+-keep class com.tencent.qimei.** { *;}
 ```
 
 [](id:que2)
 ### 호스트 프로젝트에 통합된 Android SDK가 gson 라이브러리 충돌을 보고하면 어떻게 해야 하나요?
 호스트 프로젝트의 `build.gradle` 파일에 다음 코드를 추가합니다.
-
 ```
 Android{
   configurations  {
@@ -24,19 +25,29 @@ Android{
 ```
 
 [](id:que3)
+### Android targetSdkVersion 31 이상에서 so 라이브러리 로딩에 실패하는 이유는 무엇입니까?
+Android targetSdkVersion 31 이상에서는 app 모듈에서 `AndroidManifest.xml` 파일을 찾아 application 태그 아래에 다음 태그를 추가해야 합니다.
+```xml
+  <uses-native-library
+            android:name="libOpenCL.so"
+            android:required="true" />
+```
+자세한 내용은 [개발 가이드](https://developer.android.google.cn/guide/topics/manifest/uses-native-library-element?hl=zh-cn)를 참고하십시오.
+
+[](id:que4)
 ### iOS에서 리소스를 가져온 후 Xcode 12.X에서 컴파일하는 동안 "Building for iOS Simulator, but the linked and embedded framework '.framework'..."가 보고되면 어떻게 해야 하나요?
 
 **Build Settings** > **Build Options**로 이동하여 **Validate Workspace**를 Yes로 변경하고 **실행**을 클릭합니다.
 > ? 컴파일이 완료된 후 Yes에서 No로 Validate Workspace를 변경해도 정상적으로 실행됩니다.
 
-[](id:que4)
+[](id:que5)
 ### 필터 설정이 적용되지 않으면 어떻게 해야 하나요?
 값이 올바르게 설정되었는지 확인합니다(값 범위: 0–100). 값을 너무 작게 설정하여 효과가 명확하지 않을 수 있습니다.
 
-[](id:que5)
+[](id:que6)
 ### iOS Demo 컴파일 중 dSYM이 생성될 때 오류가 보고되면 어떻게 해야 하나요?
 - **오류 정보:**
-```
+```swift
 PhaseScriptExecution CMake\ PostBuild\ Rules build/XMagicDemo.build/Debug-iphoneos/XMagicDemo.build/Script-81731F743E244CF2B089C1BF.sh
     cd /Users/zhenli/Downloads/xmagic_s106
     /bin/sh -c /Users/zhenli/Downloads/xmagic_s106/build/XMagicDemo.build/Debug-iphoneos/XMagicDemo.build/Script-81731F743E244CF2B089C1BF.sh
@@ -49,14 +60,16 @@ Command /bin/sh failed with exit code 1
 	2. `$(what cmake)`를 로컬 cmake의 절대 경로로 변경합니다.
 	3. 'Apple Development: ......'를 자신의 계정 서명으로 바꿉니다.
 
-[](id:que6)
+[](id:que7)
+
 ### iOS Demo에서 홈페이지 인증 오류가 표시되면 어떻게 해야 하나요?
 로그에 인쇄된 라이선스 실패 오류 코드를 확인합니다. 로컬 License 파일을 사용 중이라면 해당 파일이 프로젝트에 추가되었는지 확인하세요.
 
-[](id:que7)
+[](id:que8)
+
 ### iOS Demo  에서 컴파일 오류가 보고되면 어떻게 해야 하나요?
 - **오류 정보:**
-```
+```swift
 unexpected service error: build aborted due to an internal error: unable to write manifest to-xxxx-manifest.xcbuild': mkdir(/data, S_IRWXU | S_IRWXG | S_IRWXO): Read-only file system (30):
 ```
 - **솔루션**:

@@ -1,10 +1,10 @@
 ### Tencent Effect SDKとは？
 
-Youtuの精密なAI機能とPituの豊富なエフェクトのリアルタイム処理に基づいて、さまざまなビデオ処理シナリオに多様な製品機能を提供します。
+Tencentが自社開発したAI能力とリアルタイムな特殊効果処理に基づき、各種動画処理シーンに豊富な製品能力を提供します。
 
 ### Tencent Effect SDKは有料ですか。どのように入手しますか？
 
-Tencent Effect SDKは具体的なシーンのニーズに応じて対応するSDKパッケージを購入し、権限を取得してから使用することができます。パッケージの料金の詳細については、[課金概要](https://intl.cloud.tencent.com/document/product/1143/45371)をご参照ください。担当者からご連絡いただくこともできます。
+Tencent Effect SDKは具体的なシーンのニーズに応じて対応するSDKパッケージを購入し、権限を取得してから使用することができます。パッケージの料金の詳細については、[課金概要](https://intl.cloud.tencent.com/document/product/1143/45371)をご参照ください。担当者を通じてご連絡いただくこともできます。
 
 ### Tencent Effect SDKの対応端末は？
 

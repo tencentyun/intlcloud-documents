@@ -12,5 +12,5 @@
 3D 기능, 프로세스 제어 및 애니메이션 효과 가져오기와 같은 뛰어난 방대한 소재 라이브러리와 풍부한 AI 기능을 제공하여 효과를 손쉽게 맞춤 설정할 수 있습니다.
 
 ## 편리한 사용
-MLVB, TRTC 및 UGSV에 효율적으로 통합하여 간단하고 빠른 방법으로 효과를 적용할 수 있습니다. 자세한 안내는 [Demos](https://intl.cloud.tencent.com/document/product/1143/45374)를 참고하십시오.
+CSS, TRTC 및 UGSV SDK에 효율적으로 통합하여 효과를 빠르고 쉽게 적용할 수 있습니다. 자세한 안내는 [Demo](https://intl.cloud.tencent.com/document/product/1143/45374)를 참고하십시오.
 

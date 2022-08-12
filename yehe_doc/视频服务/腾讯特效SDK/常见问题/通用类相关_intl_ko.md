@@ -1,10 +1,10 @@
 ### Tencent Effect SDK는 무엇인가요？
 
-Tencent Effect SDK는 YouTu의 정확한 AI 기능과 Pitu의 풍부한 실시간 효과를 활용하여 다양한 비디오 처리 사용 사례에 대한 풍부한 서비스를 제공합니다.
+Tencent Effect SDK는 Tencent의 독점 AI 기능과 실시간 효과를 활용하여 다양한 비디오 처리 시나리오에 대한 풍부한 서비스를 제공합니다.
 
 ### Tencent Effect SDK는 무료인가요? 어떻게 받나요?
 
-Tencent Effect SDK는 특정 비즈니스 시나리오에 따라 SDK 패키지를 구매하고 라이선스를 취득한 후에만 사용할 수 있습니다. 자세한 패키지 가격은 [Pricing Overview](https://intl.cloud.tencent.com/document/product/1143/45371)를 참고하거나 영업팀에 문의하십시오.
+Tencent Effect SDK는 특정 비즈니스 시나리오에 따라 SDK 패키지를 구매하고 라이선스를 취득한 후에만 사용할 수 있습니다. 자세한 패키지 가격은 [가격 리스트](https://intl.cloud.tencent.com/document/product/1143/45371)를 참고하거나 영업팀에 문의하십시오.
 
 ### Tencent Effect SDK는 어떤 플랫폼을 지원하나요?
 
@@ -16,7 +16,7 @@ Tencent Effect SDK는 라이브 스트리밍 및 쇼트 비디오 애플리케�
 
 ### Tencent Effect SDK는 어떻게 구매하나요?
 
-기본 및 고급의 두 가지 범주로 11개 버전으로 제공됩니다. 기능이 다르므로 요구 사항에 가장 적합한 버전을 선택합니다. 자세한 내용은 [Pricing Overview](https://intl.cloud.tencent.com/document/product/1143/45371)를 참고하십시오.
+기본 및 고급의 두 가지 범주로 11개 버전으로 제공됩니다. 기능이 다르므로 요구 사항에 가장 적합한 버전을 선택합니다. 자세한 내용은 [가격 리스트](https://intl.cloud.tencent.com/document/product/1143/45371)를 참고하십시오.
 
 ### 메이크업 모듈의 강점은 무엇인가요?
 

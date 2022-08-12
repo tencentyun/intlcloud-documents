@@ -16,15 +16,11 @@ XCode 기본 C++ 환경.
 <tr>
 <td>시스템 종속 라이브러리</td>
 <td><ul style="margin:0">
-<li/>AVFoundation
-<li/>Accelerate
-<li/>AssetsLibrary
-<li/>CoreML
-<li/>JavaScriptCore
-<li/>CoreFoundation
-<li/>MetalPerformanceShaders
 <li/>CoreTelephony
+<li/>JavaScriptCore
 <li/>libc++.tbd
+<li/>MetalPerformanceShaders
+<li/>VideoToolbox
 </ul></td>
 </tr>
 <tr>
@@ -33,9 +29,12 @@ XCode 기본 C++ 환경.
 <li/>YTCommon(인증 정적 라이브러리)
 <li/>XMagic(뷰티 필터 정적 라이브러리)
 <li/>libpag(비디오 디코딩 동적 라이브러리)
+<li/>Masonry(컨트롤 레이아웃 라이브러리)
+<li/>SSZipArchive(파일 압축 해제 라이브러리)
 </ul></td>
 </tr>
 </table>
+
 
 ## 리소스 가져오기
 ### 리소스
@@ -55,20 +54,20 @@ Info.plist 파일에 해당 권한에 대한 설명을 추가하십시오. 그�
 
 [](id:step1)
 ### 1단계: 서명 준비
-framework 서명은 General-->Masonry.framework 및 libpag.framework에서 Embed & Sign을 직접 선택할 수 있습니다.
+framework 서명의 경우 **General** >**Masonry.framework**를 선택하고 **libpag.framework**를 **Embed & Sign**로 설정합니다.
 [](id:step2)
 ### 2단계: 인증
 1. 라이선스를 신청하고 LicenseURL과 LicenseKEY를 받습니다.
->! 일반적인 상황에서는 app이 한 번만 성공적으로 연결되면 인증 프로세스를 완료할 수 있으므로 License 파일을 프로젝트의 프로젝트 디렉터리에 넣을 **필요가 없습니다**. 하지만 app이 인터넷에 연결되지 않은 상태에서도 SDK 관련 기능을 사용하려면 license 파일을 다운로드하여 프로젝트 디렉터리에 넣을 수 있으며, license 파일 이름은 반드시 v_cube.license여야 합니다.
+> ! 일반적인 상황에서는 App이 한 번만 성공적으로 연결되면 인증 프로세스를 완료할 수 있으므로 License 파일을 프로젝트의 프로젝트 디렉터리에 넣을 **필요가 없습니다**. 하지만 App이 인터넷에 연결되지 않은 상태에서도 SDK 관련 기능을 사용하려면 License 파일을 다운로드하여 프로젝트 디렉터리에 넣을 수 있으며, License 파일 이름은 반드시 `v_cube.license`여야 합니다.
 2. 해당 비즈니스 모듈의 초기화 코드에 URL과 KEY를 설정하여 license 다운로드를 트리거하여 사용 전에 임시로 다운로드하는 것을 피합니다. AppDelegate의 didFinishLaunchingWithOptions 메소드에서도 다운로드가 실행될 수 있습니다. 이 중 LicenseURL과 LicenseKey는 콘솔이 License에 바인딩될 때 생성되는 권한 정보입니다.
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
-       if (authresult == TELicenseCheckOk) {
-            NSLog(@"인증 성공");
-        } else {
-            NSLog(@"인증 실패");
-        }
-    }];
+	if (authresult == TELicenseCheckOk) {
+		NSLog(@"인증 성공");
+	} else {
+		NSLog(@"인증 실패");
+	}
+}];
 ```
 **errorCode 인증 설명**:
 <table>
@@ -198,10 +197,9 @@ Command /bin/sh failed with exit code 1
 ```
 - 문제 원인: `libpag.framework 및 Masonary.framework` 재서명 실패.
 - 해결 방법:
- 1. `demo/copy_framework.sh`를 엽니다.
- 2. 다음 명령을 사용하여 로컬 cmake의 경로를 확인하고 `$(what cmake)`를 로컬 cmake의 절대 경로로 변경합니다.
+1. `demo/copy_framework.sh`를 엽니다.
+2. 다음 명령을 사용하여 로컬 cmake의 경로를 확인하고 `$(what cmake)`를 로컬 cmake의 절대 경로로 변경합니다.
 ```
 which cmake
 ```
-
 3. 자신의 서명으로 모든 `Apple Development: ……`를 교체합니다.
