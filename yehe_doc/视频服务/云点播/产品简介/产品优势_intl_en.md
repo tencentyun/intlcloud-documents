@@ -43,7 +43,7 @@ VOD offers rich, easy-to-use image processing capabilities.
 
 ### Top Speed Codec
 
-Leveraging Tencent’s well-established technologies including audio/video encoding, intelligent scene recognition, dynamic encoding, and CTU/line/frame-level bitrate control, Top Speed Codec allows you to provide higher-definition live streaming and VOD services at lower bitrates (30% lower on average).
+Leveraging Tencent’s well-established technologies including audio/video encoding, intelligent scene recognition, dynamic encoding, and CTU/line/frame-level bitrate control, Top Speed Codec (TSC) allows you to provide higher-definition live streaming and VOD services at lower bitrates (30% lower on average).
 
 ### Superplayer
 
