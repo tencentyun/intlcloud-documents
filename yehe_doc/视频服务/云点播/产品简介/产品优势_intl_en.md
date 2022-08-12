@@ -14,7 +14,7 @@
 
 ### Transcoding
 + VOD has more than 12,000 distributed transcoding clusters and supports up to 2,000 concurrent transcoding tasks.
-+ You can use the TESHD transcoding feature to improve your video quality.
++ You can use the Top Speed Codec transcoding feature to improve your video quality.
 + You can add watermarks to your videos and transcode your videos to different formats.
 
 ### Distribution
@@ -41,9 +41,9 @@ VOD offers rich, easy-to-use image processing capabilities.
 + VOD can transcode videos into multiple bitrates and automatically select a bitrate for playback based on network conditions to ensure a smooth viewing experience.
 + VOD can make full use of bandwidth resources by dynamically selecting the optimal bitrate for playback.
 
-### TESHD
+### Top Speed Codec
 
-Leveraging Tencent’s well-established technologies including audio/video encoding, intelligent scene recognition, dynamic encoding, and CTU/line/frame-level bitrate control, TESHD allows you to provide higher-definition live streaming and VOD services at lower bitrates (30% lower on average).
+Leveraging Tencent’s well-established technologies including audio/video encoding, intelligent scene recognition, dynamic encoding, and CTU/line/frame-level bitrate control, Top Speed Codec allows you to provide higher-definition live streaming and VOD services at lower bitrates (30% lower on average).
 
 ### Superplayer
 
