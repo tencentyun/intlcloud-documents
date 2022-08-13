@@ -23,7 +23,7 @@ wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%
 
 ### Etapa 2. Descompacte o arquivo de backup
 Descompacte o arquivo de backup com xbstream.
->?xbstream pode ser baixado no [site oficial da Percona](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Selecione Percona XtraBackup v2.4.6 ou posterior. Para obter mais informações sobre instalação, consulte [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
+>?xbstream pode ser baixado no [site oficial da Percona](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Selecione Percona XtraBackup v2.4.6 ou posterior. Para obter mais informações sobre instalação, consulte [Percona XtraBackup 2.4](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
 ```
 xbstream -x < teste0.xb
 ```
@@ -38,7 +38,7 @@ O resultado da descompactação é mostrado abaixo:
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0"
 http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?Se um erro for exibido durante o download do `wget`, você pode ir ao [site oficial do QuickLZ](http://www.quicklz.com/) para baixar o qpress localmente e enviá-lo para a instância da CVM do Linux. Para obter mais informações, consulte [Upload de arquivos via SCP para uma CVM do Linux](https://intl.cloud.tencent.com/document/product/213/2133).
+
 2. Extraia os arquivos binários qpress executando o seguinte comando:
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
