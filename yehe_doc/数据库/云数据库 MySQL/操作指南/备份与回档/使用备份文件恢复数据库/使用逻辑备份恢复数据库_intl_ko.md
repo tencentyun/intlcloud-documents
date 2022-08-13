@@ -23,7 +23,7 @@ wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%
 
 ### 2단계: 백업 파일 언패킹
 xbstream을 사용해 백업 파일을 언패킹합니다.
->? xbstream 툴은 [Percona XtraBackup 공식 홈페이지](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)에서 다운로드할 수 있으며, Percona XtraBackup 2.4.6 이상의 버전을 선택하십시오. 설치에 대한 자세한 내용은 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)를 참조하십시오.
+>? xbstream 툴은 [Percona XtraBackup 공식 홈페이지](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)에서 다운로드할 수 있으며, Percona XtraBackup 2.4.6 이상의 버전을 선택하십시오. 설치에 대한 자세한 내용은 [Percona XtraBackup 2.4](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html)를 참조하십시오.
 ```
 xbstream -x < test0.xb
 ```
@@ -38,7 +38,7 @@ xbstream -x < test0.xb
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" 
 http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?wget 다운로드 시 오류 알림이 뜬다면 [quicklz](http://www.quicklz.com/)에서 qpress 툴을 로컬에 다운로드한 후 다시 Linux CVM에 업로드하시기 바랍니다. 자세한 내용은 [SCP로 Linux CVM에 파일 업로드하기](https://intl.cloud.tencent.com/document/product/213/2133)를 참조하십시오.
+
 2. 다음 명령어를 사용해 qpress 바이너리 파일을 압축 해제합니다.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
