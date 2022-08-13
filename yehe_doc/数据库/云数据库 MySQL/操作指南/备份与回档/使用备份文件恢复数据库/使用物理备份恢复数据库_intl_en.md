@@ -50,8 +50,7 @@ The unpacking result is as shown below:
 ```
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0 http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?If an error is displayed during the `wget` download, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download qpress locally and upload it to the Linux CVM instance. For more information, see [Uploading Files from Linux or MacOS to Linux CVM via SCP](https://intl.cloud.tencent.com/document/product/213/2133).
->
+
 2. Extract the qpress binary files by running the following command.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
