@@ -109,6 +109,6 @@ xbstream 및 qpress 툴을 사용한 압축 해제 방법은 [물리 백업을 �
 [](id:bfwt16)
 ### xbstream과 qpress 툴은 어떻게 다운로드하나요?
 - xbstream은 Percona의 xtrabackup 백업 툴 서브 프로그램으로, xbstream을 사용할 경우 먼저 Percona의 xtrabackup을 설치해야 합니다. yum이나 바이너리 설치를 통해 xtrabackup을 설치할 수 있습니다.
-- [qpress 다운로드 주소](http://www.quicklz.com/)에서 다운로드 후 tar 명령어로 qpress 바이너리 파일을 압축 해제합니다.
+- qpress를 다운로드한 후 tar 명령을 통해 qpress 바이너리 파일을 풀 수 있습니다.
 xtrabackup 및 qpress 설치 방법에 대한 자세한 내용은 [물리 백업을 사용하여 데이터베이스 복구](https://intl.cloud.tencent.com/document/product/236/31910)를 참조하십시오.
 
