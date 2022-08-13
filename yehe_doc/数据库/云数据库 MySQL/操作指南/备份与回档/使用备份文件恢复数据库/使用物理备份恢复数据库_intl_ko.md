@@ -51,7 +51,7 @@ xbstream -x -C /data < ~/test.xb
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?wget 다운로드 시 오류 알림이 뜬다면 [quicklz](http://www.quicklz.com/)에서 qpress 툴을 로컬에 다운로드한 후 다시 Linux CVM에 업로드하시기 바랍니다. 자세한 내용은 [SCP로 Linux CVM에 파일 업로드하기](https://intl.cloud.tencent.com/zh/document/product/213/2133)를 참조하십시오.
+
 2. 다음 명령어를 사용해 qpress 바이너리 파일을 압축 해제합니다.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
