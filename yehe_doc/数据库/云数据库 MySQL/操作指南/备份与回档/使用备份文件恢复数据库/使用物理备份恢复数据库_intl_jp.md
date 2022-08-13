@@ -50,8 +50,7 @@ xbstream -x --parallel=2  -C /data/mysql < /data/test.xb
 ```
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10. http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?wgetのダウンロードにエラーが発生した場合は、[quicklz](http://www.quicklz.com/) からqpressツールをローカルにダウンロードした後、qpressツールをLinux CVMインスタンスにアップロードしてください。詳細については、[SCPによるLinux CVMへのファイルのアップロード](https://intl.cloud.tencent.com/document/product/213/2133)をご参照ください。
->
+
 2. 次のコマンドを実行して、qpressバイナリーファイルを解凍します。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
