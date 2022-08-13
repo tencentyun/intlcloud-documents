@@ -18,8 +18,7 @@ Daily automatic backup is supported for instances in the following steps:
 On the instance details page, click **Manual Backup** in the top-right corner, edit the remarks, and click **OK**.
 
 ## Backup Download
->? Currently, you can only download backup files in Redis Standard Edition.
->
+
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance management page.
 2. On the instance management page, select the **Backup and Restoration** > **Backup List** tab and click **Download** in the **Operation** column.
 3. In the pop-up window, copy the download address or click **Download** to download the backup file. Cross-AZ download is not supported.
