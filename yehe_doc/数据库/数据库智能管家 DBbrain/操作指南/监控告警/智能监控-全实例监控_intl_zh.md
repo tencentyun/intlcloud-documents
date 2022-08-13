@@ -2,7 +2,7 @@
 
 >?全实例监控功能目前支持云数据库 MySQL（不含单节点 - 基础型）、云原生数据库 TDSQL-C（TDSQL-C for MySQL）、自建数据库 MySQL、云数据库 Redis、云数据库 MongoDB。
 
-![](https://main.qcloudimg.com/raw/87cc8bd8578ee13e2fd25347544cbf72.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1d7f3d7b55aac41fc641410c24e2ea8f.png)
 
 ## 切换地域
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择**监控告警** > **智能监控**，在上方选择对应数据库，然后选择**全实例监控**页。
@@ -11,7 +11,7 @@
 ## 切换监控指标
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择**监控告警** > **智能监控**，在上方选择对应数据库，然后选择**全实例监控**页。
 2. 通过上方的下拉菜单搜索控件，选择需要查看的监控指标，支持腾讯云 MySQL/TDSQL-C 云监控提供的所有监控指标及用户自建数据库的监控指标，全实例监控视图根据所选指标排序展示。
-![](https://main.qcloudimg.com/raw/ae4d123c71de10593fea06231a28317c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1edc65e72bf1ae84f4d6bf207ea42435.png)
 
 ## 查看实时/历史监控
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择**监控告警** > **智能监控**，在上方选择对应数据库，然后选择**全实例监控**页。
@@ -22,11 +22,10 @@
 2. 在全实例监控页，选择腾讯云 MySQL 数据库时，可按实例 ID、实例名和内网 IP 进行模糊搜索；选择腾讯云 TDSQL-C 数据库时，可按集群 ID、集群名、实例 ID、实例名和接入点地址进行模糊搜索；选择自建 MySQL 数据库时，可按实例 ID、实例名和 IP 地址进行模糊搜索。
 >?单击搜索栏右方的“标识符”，可查看实例搜索帮助文档。
 >
-![](https://main.qcloudimg.com/raw/31d45e4fd2f0df9f2e67677784438e80.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6054b1a4719e3e2b6df0c41876ff8ee7.png)
 
 ## 切换宫格
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择**监控告警** > **智能监控**，在上方选择对应数据库，然后选择**全实例监控**页。
 2. 在全实例监控页，可切换9宫格和36宫格的视图，用户实例较多的情况下建议使用**36宫格**视图，全局视角更明显，用户也可以更清晰地查看监控指标的波动状态。
-![](https://main.qcloudimg.com/raw/3eb6194a721b2d7a66f7f6ed4b70fbb1.png)
 单击实例右上角的展开按钮，可以查看清晰的实例信息和指标趋势详情。
-![](https://main.qcloudimg.com/raw/236209268a17b8dea994749521469e88.png)
+
