@@ -109,6 +109,6 @@ xbstreamとqpressツールで解凍およびアンパックする手順の詳細
 [](id:bfwt16)
 ### xbstreamおよびqpressツールをどのようにダウンロードしますか？
 - xbstreamはPerconaのxtrabackupバックアップツール下のサブプログラムで、xbstreamを使用するには、まずPerconaのxtrabackupをインストールする必要があります。yumを使用したインストールおよびバイナリーインストールの2種類の方式によりxtrabackupをインストールすることができます。
-- [qpressダウンロードアドレス](http://www.quicklz.com/)でダウンロードした後、tarコマンドによりqpressバイナリーファイルを解凍することができます。
+- qpressをダウンロードした後、tarコマンドによりqpressバイナリーファイルを解凍することができます。
 具体的なxtrabackupおよびqpressのインストール方法については、[物理バックアップによるデータベースの復元](https://intl.cloud.tencent.com/document/product/236/31910)をご参照ください。
 
