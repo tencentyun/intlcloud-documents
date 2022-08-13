@@ -109,6 +109,6 @@ For more information about how to unpack/decompress backup files with xbstream a
 [](id:bfwt16)
 ### How do I download xbstream and qpress?
 - xbstream is a subprogram of Percona XtraBackup. To use it, you need to install Percona XtraBackup from binaries or `yum` repositories.
-- Download qpress [here](http://www.quicklz.com/) and extract the qpress binary files by running the tar command.
+- Download qpress and extract the qpress binary files by running the tar command.
 For more information on XtraBackup and qpress installation, see [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910).
 
