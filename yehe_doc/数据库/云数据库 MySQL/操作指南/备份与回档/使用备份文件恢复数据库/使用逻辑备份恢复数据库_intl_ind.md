@@ -23,7 +23,7 @@ wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%
 
 ### Langkah 2. Buka paket file cadangan
 Buka paket file cadangan dengan xbstream.
->?xbstream dapat diunduh di [situs web resmi Percona](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Harap pilih Percona XtraBackup v2.4.6 atau yang lebih baru. Untuk informasi selengkapnya tentang penginstalan, harap lihat [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
+>?xbstream dapat diunduh di [situs web resmi Percona](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Harap pilih Percona XtraBackup v2.4.6 atau yang lebih baru. Untuk informasi selengkapnya tentang penginstalan, harap lihat [Percona XtraBackup 2.4](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
 ```
 xbstream -x < test0.xb
 ```
@@ -38,7 +38,7 @@ Hasil file yang dibuka ditampilkan dalam gambar di bawah ini:
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0"
 http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?Jika kesalahan ditampilkan selama pengunduhan `wget`, Anda dapat mengunjungi [situs web resmi QuickLZ](http://www.quicklz.com/) untuk mengunduh qpress secara lokal dan mengunggahnya ke instans CVM Linux. Untuk informasi selengkapnya, harap lihat [Mengunggah File melalui SCP ke CVM Linux dari Linux](https://intl.cloud.tencent.com/document/product/213/2133).
+
 2. Ekstrak file biner qpress dengan menjalankan perintah berikut:
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
