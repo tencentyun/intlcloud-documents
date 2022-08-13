@@ -1,17 +1,18 @@
 实例概览页展示了用户实例全局的大盘，可查看所有接入实例的任务执行、地域分布、实时性能以及健康评估等情况，同时用户还可根据自己的需求个性化设置实例概览展示。
 
->?实例概览目前支持云数据库 MySQL（不含单节点 - 基础型）。
+>?实例概览目前支持云数据库 MySQL（不含单节点 - 基础型）、云原生数据库 TDSQL-C（TDSQL-C for MySQL）、云数据库 Redis、自建数据库 MySQL、云数据库 MongoDB。
+>
 
-
-登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/board)，在左侧导航选择【实例概览】页，选择对应数据库后，可选择“全地域”视图或者按照地域查看数据，同时也支持查看“实时”和“历史”数据。
-![](https://main.qcloudimg.com/raw/bdc48d6beafc1c61323a1db9001e10a0.png)
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/board)，在左侧导航选择**实例概览**页，选择对应数据库后，可选择全地域视图或者按照地域查看数据，同时也支持查看实时和历史数据。
 
 ## 推荐功能
-顶部导航栏提供了 DBbrain 官方推荐的热门功能入口，单击【立即体验】，可快速跳转至对应功能详情页。
+顶部导航栏提供了 DBbrain 官方推荐的热门功能入口，可快速跳转至对应功能详情页。
+
+#### 自建实例接入
+自建数据库实例接入展示了该账号下，用户通过 agent 及直连两种方式接入 DBbrain 的自建数据库实例数，单击**快速接入**，可跳转至自建数据库实例接入页面。
 
 ## 个性化设置
-DBbrain 为用户提供了个性化设置功能，用户可以根据自己的需求个性化设置在概览中需要展示的实例，单击【个性化设置】，可跳转至实例管理页对其进行设置，请参见 [实例管理](https://intl.cloud.tencent.com/document/product/1035/36033)。
-![](https://main.qcloudimg.com/raw/5a863f31a370d7b11f76adffb5a0c2dc.png)
+DBbrain 为用户提供了个性化设置功能，用户可以根据自己的需求个性化设置在概览中需要展示的实例，单击**个性化设置**，可跳转至实例管理页对其进行设置，请参见 [实例管理](https://intl.cloud.tencent.com/document/product/1035/36033)。
 
 ## 异常告警
 DBbrain 的7 * 24小时异常诊断模块会实时发现数据库实例存在的问题，以及提供相应的优化方案，该模块展示近3小时和近24小时的异常告警总数量，单击可跳转至异常告警页查看详情。
@@ -22,3 +23,5 @@ DBbrain 定期为所有实例进行健康巡检打分，通过该页面可以查
 ## 监控情况排行
 资源监控排行中展示所选监控指标的消耗情况 TOP 排行，单击对应实例可查看异常诊断详情。
 - MySQL 数据库指标包括：CPU、内存、磁盘利用率、TPS、QPS、慢查询数、Connected Threads、Running Threads。
+- TDSQL-C 数据库指标包括：CPU、内存、存储利用率、TPS、QPS、慢查询数、Connected Threads、Running Threads。
+- Redis 数据库指标包括：CPU 使用率、内存使用率、链接使用率、入流量使用率、出流量使用率、读请求命中率。
