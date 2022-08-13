@@ -1,5 +1,5 @@
 ## 操作シナリオ
->ストレージ容量を節約するために、TencentDB for MySQLの物理バックアップファイル及び論理バックアップファイルは、まずqpressで圧縮し、次にxbstreamでパッケージング（xbstreamはPerconaのパッケージング/アンパッケージングツール）して圧縮とパッケージングを実行します。
+>?ストレージ容量を節約するために、TencentDB for MySQLの物理バックアップファイル及び論理バックアップファイルは、まずqpressで圧縮し、次にxbstreamでパッケージング（xbstreamはPerconaのパッケージング/アンパッケージングツール）して圧縮とパッケージングを実行します。
 
 TencentDB for MySQLは、[論理バックアップ](https://intl.cloud.tencent.com/document/product/236/37796) 方式をサポートしています。ユーザーはコンソールから手動でバックアップを行って論理バックアップファイルを生成し、全インスタンスまたは一部のデータベーステーブルの論理バックアップファイルをダウンロードすることができます。このドキュメントでは論理バックアップファイルを使用した手動による復元についてご紹介します。
 
@@ -23,7 +23,7 @@ wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%
 
 ### 手順2：バックアップファイルのアンパッケージング
 xbstreamを使用してバックアップファイルを解凍します。
->? xbstream ツールのダウンロードアドレスについては、 [Percona XtraBackup公式サイト](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)を参照し、Percona XtraBackup 2.4.6 およびそれ以上のバージョンを選択してください。インストール方法の紹介は、 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)をご参照ください。
+>? xbstream ツールのダウンロードアドレスについては、 [Percona XtraBackup公式サイト](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)を参照し、Percona XtraBackup 2.4.6 およびそれ以上のバージョンを選択してください。インストール方法の紹介は、 [Percona XtraBackup 2.4](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html)をご参照ください。
 ```
 xbstream -x < test0.xb
 ```
@@ -38,7 +38,7 @@ xbstream -x < test0.xb
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" 
 http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?wgetのダウンロードでエラーが表示された場合は、[quicklz](http://www.quicklz.com/) に進んでqpressツールをローカルにダウンロードした後、qpressツールをLinux CVMにアップロードできます。詳細については、[SCPによるLinux CVMへのファイルのアップロード](https://intl.cloud.tencent.com/document/product/213/2133)をご参照ください。
+
 2. 次のコマンドを使用して、qpressバイナリーファイルを解凍します。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
