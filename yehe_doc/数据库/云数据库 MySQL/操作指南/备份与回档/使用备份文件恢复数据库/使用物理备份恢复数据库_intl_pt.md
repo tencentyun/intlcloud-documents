@@ -50,8 +50,7 @@ O resultado da descompactação é mostrado abaixo:
 ```
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10. http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?Se um erro for exibido durante o download do `wget`, você pode ir ao [site oficial do QuickLZ](http://www.quicklz.com/) para baixar o qpress localmente e enviá-lo para a instância da CVM do Linux. Para obter mais informações, consulte [Enviar arquivos por upload do Linux ou MacOS para a CVM do Linux via SCP](https://intl.cloud.tencent.com/document/product/213/2133).
->
+
 2. Extraia os arquivos binários do qpress executando o seguinte comando.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
