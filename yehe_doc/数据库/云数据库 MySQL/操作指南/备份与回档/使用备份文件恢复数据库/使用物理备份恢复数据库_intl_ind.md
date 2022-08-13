@@ -50,8 +50,7 @@ Hasil file yang dibuka ditampilkan di bawah ini:
 ```
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10. http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?Jika kesalahan ditampilkan selama pengunduhan `wget`, Anda dapat mengunjungi [situs web resmi QuickLZ](http://www.quicklz.com/) untuk mengunduh qpress secara lokal dan mengunggahnya ke instans CVM Linux. Untuk informasi selengkapnya, lihat [Mengunggah File dari Linux atau MacOS ke CVM Linux melalui SCP](https://intl.cloud.tencent.com/document/product/213/2133).
->
+
 2. Ekstrak file biner qpress dengan menjalankan perintah berikut.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
