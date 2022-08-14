@@ -1,7 +1,6 @@
 
 ## Notes
 - To better distinguish between sessions and improve data security, we recommend you create a separate database account for data migration.
-- To avoid data inconsistency between the source and target databases due to business cutover failures, switch the business in the source database to a backup database before cutover.
 - As cutover requires pausing data writes into the source database, we recommend you cut over the business during off-peak hours. 
 
 ## Directions
