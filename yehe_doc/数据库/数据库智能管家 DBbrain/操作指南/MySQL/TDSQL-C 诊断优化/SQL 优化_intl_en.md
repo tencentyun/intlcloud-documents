@@ -15,11 +15,14 @@ The visual execution plan feature is added to help you understand the entire SQL
 2. On the **SQL Optimization** tab, you can view the information of database tables, SQL statements, and SQL execution.
    - The left section displays databases, tables, fields, and index names. You can filter databases by database name and click **Table Structure** next to a table to view its details.
    - The right section displays SQL details. You can filter data by database, table, or type and view data in the **Table** or **DDL** mode.
+![](https://qcloudimg.tencent-cloud.cn/raw/8865a29a40d50499b9a8b4ba86e90237.png)
 3. On the execution panel, you can enter or paste a SQL statement to execute it, format it, or view its execution plan and optimization suggestion. You can also clear it or cancel or redo your operations.
    Each operation can be controlled with a keyboard shortcut, which can be viewed by hovering over the corresponding button.
+![](https://qcloudimg.tencent-cloud.cn/raw/711ad625e4835fbcf2e51da58a3b83f5.png)
  - Click **Execute** to execute the entered SQL statement. You can also view the **Execution Result** and **Execution History** or clear the record of the execution result.
 >?You can only view the SQL execution plan if you are not logged in. To perform operations such as SQL optimization, log in to the target database instance first.
 >
+![](https://qcloudimg.tencent-cloud.cn/raw/a8d424ae064e067a2dccfdb73827d262.png)
  - Click **Execution History** to view the SQL execution history. You can also switch to view the history of the current session or all sessions.
  - Click **Execution Plan** to view the SQL execution plan details and optimization suggestion. For more information, see [Visual execution plan](#kshjhxq).
  - Click **Format** to format the selected SQL statement as shown below:
@@ -27,11 +30,13 @@ The visual execution plan feature is added to help you understand the entire SQL
 In the **Optimization Comparison** window, you can view the SQL statement's execution plan, index advice, rewriting advice, table structure, and performance before and after optimization.
    The performance of an optimized SQL statement is estimated based on the analysis of the statistics of database tables related to the statement, the OPTIMIZER_SWITCH configuration, and the index selectivity. A chart is used to visually show the decrease in the performance. You can also compare the execution plans before and after SQL optimization to further verify the optimization results.
 4. On the right of the execution panel, you can view the monitoring details, set the SQL query conditions, and view historical commands.
+![](https://qcloudimg.tencent-cloud.cn/raw/096c291675284c4c0ffd853cd7416145.png)
  - Click **Monitoring Details** on the right to view the monitoring information of the database instance.
  - Click **Set** on the right to set specific query conditions, including the **Execution Timeout Period** and **Max Returned Rows**.
  - Click **My Commands** on the right to view your favorites and system Ops SQL templates, including parameter/metric, user, information_schema, and other templates. These templates help you execute common Ops SQL statements easily and quickly.
 5. View the table analysis data.
 Select the target table on the left and click the **Analysis** tab to view the table analysis data on the right.
+![](https://qcloudimg.tencent-cloud.cn/raw/239e3cc5ab538bef6b93c6706d63044e.png)
 
 ## [Visual execution plan](id:kshjhxq)
 1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database type and an instance at the top, and select the **SQL Optimization** tab.
