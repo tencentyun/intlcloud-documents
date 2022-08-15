@@ -3,7 +3,7 @@
 This API is used by the app backend to view users' group messages in real time, including:
 - Records group messages in real time, for example, by recording a log or synchronizing the messages to other systems.
 - Blocks users' requests to send messages in a group.
-- Achieves the goal of content audit in combination with content audit products, for example, by filtering out sensitive words or adding custom information defined by the app.
+- If you have content security audit requirements and want to automatically identify and process unsafe and inappropriate message content, please use content callback.
 
 ## Notes
 
@@ -50,7 +50,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 {
     "CallbackCommand": "Group.CallbackBeforeSendMsg", // Callback command
     "GroupId": "@TGS#2J4SZEAEL", // Group ID
-    "Type": "Public", // Group type
+    "Type": "Community", // Group type
     "From_Account": "jared", // Sender
     "Operator_Account":"admin", // Request initiator
     "Random": 123456, // Random number
@@ -63,7 +63,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
             }
         }
     ],
-    "CloudCustomData": "your cloud custom data"
+    "CloudCustomData": "your cloud custom data",
+    "TopicId":"@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic"		// The ID of the topic. This option is only avaiable for the community that supports the topic feature.
 }
 ```
 
@@ -80,6 +81,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 |OnlineOnlyFlag|Integer|The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`.|
 | MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | CloudCustomData | String |  Message customized data (saved in the cloud, it will be sent to the peer end, and data can still be pulled after the program is unloaded and reinstalled) |
+| TopicId | String | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response
 
