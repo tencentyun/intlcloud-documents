@@ -6,7 +6,7 @@
 
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择**诊断优化**，在上方选择对应数据库，然后选择**异常诊断**页。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/566a461a4f05dcaeff934dc3b38df896.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1ac130124ec69d2200027666d7769bc2.png)
 
 ## 查看监控信息
 在异常诊断页主要展示 CPU 利用率、内存使用率、磁盘使用率、输入/输出流量、健康得分信息，其中，磁盘使用率详情可单击右上角的**详情**查看。数据库健康得分结合 AI，更贴合用户数据库真实运行状况。
