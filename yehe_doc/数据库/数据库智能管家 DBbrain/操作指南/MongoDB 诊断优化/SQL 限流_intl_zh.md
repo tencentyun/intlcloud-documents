@@ -27,7 +27,8 @@ SQL 限流功能适用于流量过高引起的 CPU 消耗过大的场景。通�
 数据库流量过高，导致实例 CPU 消耗过大。
 
 1. 通过控制台 mongotop 获取表级流量统计，从 mongotop 可以看出 test11 表流量过高，假设业务主要流量为 test.test10 表的读流量，test.test11 为异常流量。
+![](https://qcloudimg.tencent-cloud.cn/raw/31da85a5dd4435e6866ad42a7c02cad2.png)
 2. 随后开启 SQL 限流任务，对 test.test11表进行限流。
 3. 限流前后 CPU 性能趋势图如下，可看出限流后 CPU 消耗迅速下降。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b42387ee155cf4bdeb13763403189070.png)
  
