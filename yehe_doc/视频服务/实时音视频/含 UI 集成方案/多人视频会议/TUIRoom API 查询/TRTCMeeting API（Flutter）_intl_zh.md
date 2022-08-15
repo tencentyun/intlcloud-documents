@@ -730,7 +730,7 @@ Future<ActionCallback> sendRoomCustomMsg(String cmd, String message);
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| userVolumes | List | 所有正在说话的房间成员的音量，取值范围0 - 100。|
+| userVolumes | List | 所有正在说话的成员的音量，取值范围0 - 100。|
 | totalVolume | int | 所有远端成员的总音量, 取值范围0 - 100。|
 
 ## 成员进出事件回调
