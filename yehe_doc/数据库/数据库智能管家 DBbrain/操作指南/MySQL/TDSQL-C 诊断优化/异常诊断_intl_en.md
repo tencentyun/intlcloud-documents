@@ -6,7 +6,7 @@ The exception diagnosis feature provides you with real-time performance monitori
 
 Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database type and an instance at the top, and select the **Exception Diagnosis** tab.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/46142d574bdd2899c13d51c88457d7ff.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/566a461a4f05dcaeff934dc3b38df896.png)
 
 ## Viewing Monitoring Information
 The **Exception Diagnosis** tab displays **CPU Utilization**, **Memory Utilization**, **Inbound Traffic**, **Outbound Traffic**, and **Health Score**. To view details on disk utilization, click **Details** in the top-right corner. AI-based health scores can reflect the actual status of your databases.
