@@ -344,10 +344,6 @@ TRTC는 다양한 플랫폼에 대한 Demo 소스 코드를 제공하여 자신�
 ### TRTC에서 클라우드 녹화 및 재생을 활성화하려면 어떻게 해야 하나요?
 자세한 내용은 [클라우드 녹화 및 재생](https://intl.cloud.tencent.com/document/product/647/35426)을 참고하십시오.
 
-[](id:que72)
-### 서버 측에서 스트림을 어떻게 녹화하나요?
-서버 측 녹음은 아직 상용화되지 않은 Linux SDK에 의존합니다. SDK에 대해 궁금한 사항이 있거나 사용을 원하시면 colleenyu@tencent.com으로 연락주십시오.
-
 
 [](id:que73)
 ### TRTC는 뷰티 필터를 지원하나요?
