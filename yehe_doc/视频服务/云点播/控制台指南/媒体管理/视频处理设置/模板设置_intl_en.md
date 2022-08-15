@@ -1,7 +1,7 @@
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod) and select **Application Management** on the left sidebar.
 2. Select the target application.
 3. By default, you will enter the **Media Assets > Audio/Video Management > Uploaded** page.
-4. Select **Video Processing > Template Settings** on the left sidebar to create a **video transcoding template**, **TESHD template**, **audio transcoding template**, **remux template**, **adaptive bitrate streaming template**, **watermark template**, **screenshot template**, **animated image template**, or **moderation template**. All templates can be added to video processing workflows.
+4. Select **Video Processing > Template Settings** on the left sidebar to create a **video transcoding template**, **TSC template**, **audio transcoding template**, **remux template**, **adaptive bitrate streaming template**, **watermark template**, **screenshot template**, **animated image template**, or **moderation template**. All templates can be added to video processing workflows.
 
 
 ## Video Transcoding Template
@@ -27,9 +27,9 @@ The created template will be displayed in the template list. You can view, edit,
 #### Preset templates
 For information about the preset templates, see [Preset transcoding templates](https://intl.cloud.tencent.com/document/product/266/33932#preset-transcoding-templates).
 
-## TESHD Template
+## Top Speed Codec Template
 
-Select the **TESHD Template** tab and click **Create a Transcoding Template** to create a custom TESHD transcoding template.
+Select the **TSC Template** tab and click **Create a Transcoding Template** to create a custom TSC transcoding template.
 + Template name: Up to 64 characters; supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), and periods (.).
 + Encapsulation Format: MP4
 + Configuration items: Video and audio parameters
@@ -46,7 +46,7 @@ Select the **TESHD Template** tab and click **Create a Transcoding Template** to
 + Common template: Whether to mark the template as a common template
 
 The created template will be displayed in the template list. You can view, edit, or delete the template, or set it as a common template.
->? For information about the preset templates, see [Preset TESHD templates](https://intl.cloud.tencent.com/document/product/266/33932#preset-teshd-templates).
+>? For information about the preset templates, see [Preset TSC templates](https://intl.cloud.tencent.com/document/product/266/33932).
 
 
 ## Audio Transcoding Template[](id:yp)
