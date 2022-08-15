@@ -345,10 +345,6 @@ SDK 支持用户断线情况下自动重连（若持续30分钟都未重连成�
 ### 实时音视频如何实现云端录制与回放？
 具体请参见 [实现云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426)。
 
-[](id:que72)
-### 实时音视频如何实现服务端录制？
-服务端录制需要使用 Linux SDK。Linux SDK 暂未完全开放，若您需咨询或使用相关服务，请联系：colleenyu@tencent.com。
-
 
 [](id:que73)
 ### TRTC 支不支持美颜?
