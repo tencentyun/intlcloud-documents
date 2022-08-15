@@ -15,11 +15,11 @@ Create a client object and enter a room. For detailed directions, see [Entering 
 ## Step 2. Create a local stream
 Call [TRTC.createStream()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createStream) to create a local audio/video stream.
 
-| Parameter | Description | Notes | Data Type | Example | Default Value |
-|---------|---------|---------|---------|---------|---------|
-| userId | The user ID. | This parameter is **required** and must be the same as the user ID you pass in when creating the client. | string | “denny” or “123321”| - |
-| audio | Whether to capture audio. | This parameter is **required**. It specifies whether to capture audio from the mic. | boolean | true |  - |
-| video | Whether to capture video. | This parameter is **required**. It specifies whether to capture video from the camera. | boolean | true |  - |
+| Parameter | Description | Notes | Data Type | Example | Default Value |Remarks|
+|---------|---------|---------|---------|---------|---------|---------|
+| userId | The user ID. | This parameter is **required** and must be the same as the user ID you pass in when creating the client. | string | “denny” or “123321”| - |Required|
+| audio | Whether to capture audio. | This parameter is **required**. It specifies whether to capture audio from the mic. | boolean | true |  - | Required|
+| video | Whether to capture video. | This parameter is **required**. It specifies whether to capture video from the camera. | boolean | true |  - | Required|
 
 For more information on the parameters, see [TRTC.createStream()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createStream). 
 
