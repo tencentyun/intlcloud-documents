@@ -17,9 +17,9 @@ Call [TRTC.createStream()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.ht
 
 | Parameter | Description | Notes | Data Type | Example | Default Value |Remarks|
 |---------|---------|---------|---------|---------|---------|---------|
-| userId | The user ID. | This parameter is **required** and must be the same as the user ID you pass in when creating the client. | string | “denny” or “123321”| - |Required|
-| audio | Whether to capture audio. | This parameter is **required**. It specifies whether to capture audio from the mic. | boolean | true |  - | Required|
-| video | Whether to capture video. | This parameter is **required**. It specifies whether to capture video from the camera. | boolean | true |  - | Required|
+| userId | The user ID. | This parameter is **required** and must be the same as the user ID you pass in when creating the client. | string | “denny” or “123321”| - |**Required**|
+| audio | Whether to capture audio. | This parameter is **required**. It specifies whether to capture audio from the mic. | boolean | true |  - | **Required**|
+| video | Whether to capture video. | This parameter is **required**. It specifies whether to capture video from the camera. | boolean | true |  - | **Required**|
 
 For more information on the parameters, see [TRTC.createStream()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createStream). 
 
