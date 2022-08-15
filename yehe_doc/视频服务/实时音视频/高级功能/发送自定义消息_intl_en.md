@@ -25,11 +25,10 @@ Messages are sent by calling the `sendCustomCmdMsg` API of TRTCCloud, and the fo
 | reliable | Whether reliable sending is enabled; if yes, the receiver needs to temporarily store the data of a certain period to wait for re-sending, which will cause certain delay. |
 | ordered | Whether orderly sending is enabled, i.e., whether the data should be received in the same order in which it is sent; if yes, the receiver needs to temporarily store and sort messages, which will cause certain delay. |
 
->`reliable` and `ordered` must be set to the same value (`YES` or `NO`) and cannot be set to different values currently.
+>!`reliable` and `ordered` must be set to the same value (`YES` or `NO`) and cannot be set to different values currently.
 
-- **Objective-C**
-
-``` Objective-C
+<dx-codeblock>
+::: Objective-C ObjectiveC
 // Sample code for sending a custom message
 - (void)sendHello {
     // Command word for the custom message. A set of rules needs to be customized according to the business needs. 0x1 is used as an example to send a text broadcast message
@@ -38,11 +37,9 @@ Messages are sent by calling the `sendCustomCmdMsg` API of TRTCCloud, and the fo
     // `reliable` and `ordered` need to be consistent for now. Orderly sending is used as an example here
     [trtcCloud sendCustomCmdMsg:cmdID data:data reliable:YES ordered:YES];
 }
-```
 
-- **Java**
-
-``` java
+:::
+::: Java Java
 // Sample code for sending a custom message
 public void sendHello() {
     try {
@@ -57,11 +54,9 @@ public void sendHello() {
         e.printStackTrace();
     }
 }
-```
 
-- **C++**
-
-``` C++
+:::
+::: C++ C++
 // Sample code for sending a custom message
 void sendHello()
 {
@@ -74,10 +69,9 @@ void sendHello()
     // `reliable` and `ordered` need to be consistent for now. Orderly sending is used as an example here
     trtcCloud->sendCustomCmdMsg(cmdID, data, dataSize, true, true);
 }
-```
-- **C#**
 
-```c#
+:::
+::: C# C#
 // Sample code for sending a custom message
 private void sendHello()
 {
@@ -90,16 +84,16 @@ private void sendHello()
     // `reliable` and `ordered` need to be consistent for now. Orderly sending is used as an example here
     mTRTCCloud.sendCustomCmdMsg(cmdID, data, dataSize, true, true);
 }
-```
+:::
+</dx-codeblock>
 
 
 ## Receiving Messages
 
 After a user in a room uses `sendCustomCmdMsg` to send a custom message, other users in the room can receive the message through the `onRecvCustomCmdMsg` API in the SDK callback.
 
-- **Objective-C**
-
-``` Objective-C
+<dx-codeblock>
+::: Objective-C ObjectiveC
 // Receive and process messages sent by other users in the room
 - (void)onRecvCustomCmdMsgUserId:(NSString *)userId cmdID:(NSInteger)cmdId seq:(UInt32)seq message:(NSData *)message
 {
@@ -120,11 +114,8 @@ After a user in a room uses `sendCustomCmdMsg` to send a custom message, other u
     }
 }
 
-```
-
-- **Java**
-
-``` java
+:::
+::: Java Java
 // Inherit `TRTCCloudListener` and implement the `onRecvCustomCmdMsg` method to receive and process messages sent by others in the room
 public void onRecvCustomCmdMsg(String userId, int cmdId, int seq, byte[] message) {
 	// Receive the message sent by `userId`
@@ -143,11 +134,9 @@ public void onRecvCustomCmdMsg(String userId, int cmdId, int seq, byte[] message
         break;
     
 }
-```
 
-- **C++**
-
-``` C++
+:::
+::: C++ C++
 // Receive and process messages sent by other users in the room
 void TRTCCloudCallbackImpl::onRecvCustomCmdMsg(
                             const char* userId, int32_t cmdId, uint32_t seq, const uint8_t* msg, uint32_t msgSize)
@@ -168,11 +157,9 @@ void TRTCCloudCallbackImpl::onRecvCustomCmdMsg(
         break;
     }
 }
-```
 
-* **C#**
-
-```c#
+:::
+::: C# C#
 // Receive and process messages sent by other users in the room
 public void onRecvCustomCmdMsg(string userId, int cmdId, uint seq, byte[] msg, uint msgSize)
 {
@@ -192,7 +179,8 @@ public void onRecvCustomCmdMsg(string userId, int cmdId, uint seq, byte[] msg, u
         break;
     }
 }
-```
+:::
+</dx-codeblock>
 
 ## Use Limits
 
