@@ -28,7 +28,7 @@ Messages are sent by calling the `sendCustomCmdMsg` API of TRTCCloud, and the fo
 >!`reliable` and `ordered` must be set to the same value (`YES` or `NO`) and cannot be set to different values currently.
 
 <dx-codeblock>
-::: Objective-C ObjectiveC
+::: Objective-C
 // Sample code for sending a custom message
 - (void)sendHello {
     // Command word for the custom message. A set of rules needs to be customized according to the business needs. 0x1 is used as an example to send a text broadcast message
@@ -39,7 +39,7 @@ Messages are sent by calling the `sendCustomCmdMsg` API of TRTCCloud, and the fo
 }
 
 :::
-::: Java Java
+::: Java
 // Sample code for sending a custom message
 public void sendHello() {
     try {
@@ -56,7 +56,7 @@ public void sendHello() {
 }
 
 :::
-::: C++ C++
+::: C++
 // Sample code for sending a custom message
 void sendHello()
 {
@@ -71,7 +71,7 @@ void sendHello()
 }
 
 :::
-::: C# C#
+::: C#
 // Sample code for sending a custom message
 private void sendHello()
 {
@@ -93,7 +93,7 @@ private void sendHello()
 After a user in a room uses `sendCustomCmdMsg` to send a custom message, other users in the room can receive the message through the `onRecvCustomCmdMsg` API in the SDK callback.
 
 <dx-codeblock>
-::: Objective-C ObjectiveC
+::: Objective-C
 // Receive and process messages sent by other users in the room
 - (void)onRecvCustomCmdMsgUserId:(NSString *)userId cmdID:(NSInteger)cmdId seq:(UInt32)seq message:(NSData *)message
 {
@@ -115,7 +115,7 @@ After a user in a room uses `sendCustomCmdMsg` to send a custom message, other u
 }
 
 :::
-::: Java Java
+::: Java
 // Inherit `TRTCCloudListener` and implement the `onRecvCustomCmdMsg` method to receive and process messages sent by others in the room
 public void onRecvCustomCmdMsg(String userId, int cmdId, int seq, byte[] message) {
 	// Receive the message sent by `userId`
@@ -136,7 +136,7 @@ public void onRecvCustomCmdMsg(String userId, int cmdId, int seq, byte[] message
 }
 
 :::
-::: C++ C++
+::: C++
 // Receive and process messages sent by other users in the room
 void TRTCCloudCallbackImpl::onRecvCustomCmdMsg(
                             const char* userId, int32_t cmdId, uint32_t seq, const uint8_t* msg, uint32_t msgSize)
@@ -159,7 +159,7 @@ void TRTCCloudCallbackImpl::onRecvCustomCmdMsg(
 }
 
 :::
-::: C# C#
+::: C#
 // Receive and process messages sent by other users in the room
 public void onRecvCustomCmdMsg(string userId, int cmdId, uint seq, byte[] msg, uint msgSize)
 {
