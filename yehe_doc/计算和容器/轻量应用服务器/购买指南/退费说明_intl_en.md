@@ -2,7 +2,6 @@
 - **Standard returns**: Each account can return 30 instances of each Lighthouse bundle type and 199 cloud disks (used as data disks) per year, and get a refund of the unused part.
 
 <dx-alert infotype="notice" title="">
-- **5-day free return** is only available for the **first return** of a bundle type under a verified account. 
 - If you purchase the instance at a discount price, **only the actually paid amount is refundable**.
 - All the **refund amount** will be credited into your **Tencent Cloud account**.
 </dx-alert>
