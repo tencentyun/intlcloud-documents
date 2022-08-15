@@ -184,8 +184,7 @@ Since the release of v6.6 for app and v4.0 for web in August 2019, the new signa
 Upgrade/Switch:
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
 2. Click **Application Management** on the left sidebar, find your application, and click **Application Info**.
-3. Select the **Quick Start** tab and click **Upgrade**, **asymmetric encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
-  - Upgrade
+3. Select the **Quick Start** tab and click **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
   - Switch to the old algorithm ECDSA-SHA256:
       ![](https://main.qcloudimg.com/raw/49da46eea23847de79925a12e7a07102/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)4-%E8%BF%94%E8%BF%98.png)
   - Switch to the new algorithm HMAC-SHA256:
