@@ -14,4 +14,4 @@ TRTC offers reliable and secure network connection across the globe. It uses Ten
 TRTC reduces stutter through intelligent QoS control and optimized encoding. It guarantees high-quality, smooth, and stable audio/video communication even under poor network conditions (**packet loss over 80%** and **network jitter over 1,000 ms**).
 
 ### High video/audio quality
-TRTC supports **720p and 1080p** video and allows video calls even under a packet loss rate of 70%. It supports **48 kHz** audio and uses the industry-leading 3A technologies of Tencent Ethereal Audio Lab to remove echo and howling. End-to-end 192 Kbps bitrate and dual channels ensure a clear and immersive audio interaction experience.
+TRTC supports **720p and 1080p** video and allows video calls even under a packet loss rate of 70%. It supports **48 kHz** audio and uses the industry-leading 3A technologies of Tencent Ethereal Audio Lab to remove echo and howling. End-to-end 128 Kbps bitrate and dual channels ensure a clear and immersive audio interaction experience.
