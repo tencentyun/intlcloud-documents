@@ -344,10 +344,6 @@ TRTC offers demo source code for different platforms to allow you to quickly bui
 ### How do I enable on-cloud recording and playback in TRTC?
 Please see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
 
-[](id:que72)
-### How do I record streams on the server side?
-Server-side recording relies on the Linux SDK, which is not commercially available yet. If you have questions about the SDK or want to use it, please contact us at colleenyu@tencent.com.
-
 
 [](id:que73)
 ### Does TRTC support beauty filters?
