@@ -2,7 +2,7 @@
 DBbrain provides 24/7 diagnosis of database exceptions based on real-time information, ensuring their timely detection and troubleshooting. This helps build a new database health protection mechanism that features regular check, proactive detection, instant analysis and optimization.
 
 ### Security and efficiency
-DBbrain offers compliance audit, access exception detection, sensitive data discovery, data masking, and other certified services to ensure high database security. With non-intrusive design and encrypted transfer, it will not impact the database environment and performance.
+With non-intrusive design and encrypted transfer, it will not impact the database environment and performance.
 
 ### Measurable optimization
 DBbrain provides highly accurate data collection, exception analysis, diagnosis and optimization. Its suggestions are based on theoretical analysis of exceptions, and comparisons with the simulated optimization results. You can gauge the optimization effect more precisely.
