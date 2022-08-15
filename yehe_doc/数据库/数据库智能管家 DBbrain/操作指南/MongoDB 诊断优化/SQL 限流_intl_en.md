@@ -27,7 +27,9 @@ The SQL throttling feature is suitable for scenarios involving high CPU utilizat
 The database traffic was too high, resulting in a high CPU utilization.
 
 1. The **MongoTop** tab in the console shows that the traffic of the `test.test11` table was too high. If the main business traffic was the read traffic to the `test.test10` table, then the traffic to the `test.test11` table was abnormal traffic.
+![](https://qcloudimg.tencent-cloud.cn/raw/31da85a5dd4435e6866ad42a7c02cad2.png)
 2. SQL throttling was enabled to throttle the traffic to the `test.test11` table.
 3. As shown in the CPU performance trend chart below, CPU utilization dropped rapidly after throttling was enabled.
+![](https://qcloudimg.tencent-cloud.cn/raw/b42387ee155cf4bdeb13763403189070.png)
 
  
