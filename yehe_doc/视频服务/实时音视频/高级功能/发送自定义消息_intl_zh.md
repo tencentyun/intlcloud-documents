@@ -28,7 +28,7 @@ TRTC SDK 提供了发送自定义消息的功能，通过该功能，角色为�
 >!请将 reliable 和 ordered 同时设置为 YES 或 NO, 暂不支持交叉设置。
 
 <dx-codeblock>
-::: Objective-C ObjectiveC
+::: Objective-C
 //发送自定义消息的示例代码
 - (void)sendHello {
     // 自定义消息命令字, 这里需要根据业务定制一套规则，这里以0x1代表发送文字广播消息为例
@@ -39,7 +39,7 @@ TRTC SDK 提供了发送自定义消息的功能，通过该功能，角色为�
 }
 
 :::
-::: Java Java
+::: Java
 //发送自定义消息的示例代码
 public void sendHello() {
     try {
@@ -56,7 +56,7 @@ public void sendHello() {
 }
 
 :::
-::: C++ C++
+::: C++
 // 发送自定义消息的示例代码
 void sendHello()
 {
@@ -71,7 +71,7 @@ void sendHello()
 }
 
 :::
-::: C# C#
+::: C#
 // 发送自定义消息的示例代码
 private void sendHello()
 {
@@ -93,7 +93,7 @@ private void sendHello()
 当房间中的一个用户通过 `sendCustomCmdMsg` 发出自定义消息后，房间中其他的用户可以通过 SDK 回调中的 `onRecvCustomCmdMsg` 接口来接收这些消息。
 
 <dx-codeblock>
-::: Objective-C ObjectiveC
+::: Objective-C
 //接收和处理房间内其他人发送的消息
 - (void)onRecvCustomCmdMsgUserId:(NSString *)userId cmdID:(NSInteger)cmdId seq:(UInt32)seq message:(NSData *)message
 {
@@ -115,7 +115,7 @@ private void sendHello()
 }
 
 :::
-::: Java Java
+::: Java
 //继承 TRTCCloudListener，实现 onRecvCustomCmdMsg 方法接收和处理房间内其他人发送的消息
 public void onRecvCustomCmdMsg(String userId, int cmdId, int seq, byte[] message) {
 	// 接收到 userId 发送的消息
@@ -136,7 +136,7 @@ public void onRecvCustomCmdMsg(String userId, int cmdId, int seq, byte[] message
 }
 
 :::
-::: C++ C++
+::: C++
 // 接收和处理房间内其他人发送的消息
 void TRTCCloudCallbackImpl::onRecvCustomCmdMsg(
                             const char* userId, int32_t cmdId, uint32_t seq, const uint8_t* msg, uint32_t msgSize)
@@ -159,7 +159,7 @@ void TRTCCloudCallbackImpl::onRecvCustomCmdMsg(
 }
 
 :::
-::: C# C#
+::: C#
 // 接收和处理房间内其他人发送的消息
 public void onRecvCustomCmdMsg(string userId, int cmdId, uint seq, byte[] msg, uint msgSize)
 {
