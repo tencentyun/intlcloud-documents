@@ -5,6 +5,7 @@
 ## 整体概览
 
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择**诊断优化**，在上方选择对应数据库，然后选择**异常诊断**页。
+![](https://qcloudimg.tencent-cloud.cn/raw/a8f2508b2918b27bdedf4ffa44cdf84c.png)
 
 ## 查看监控概览
 
