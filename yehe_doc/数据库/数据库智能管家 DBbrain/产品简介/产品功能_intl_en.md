@@ -19,11 +19,6 @@ Intelligent optimization consists of the following features:
 - **Intelligent optimization**
 Intelligent optimization analyzes the performance problems of SQL statements, gives optimization suggestions, and provides SQL rewriting capabilities. It can also help you better understand the causes and details of performance differences through visual execution plans.
 
-## Database security
->?Included features: Compliance audit, security governance, sensitive data discovery, and data masking.
->
-The AI-powered data security engine of DBbrain can monitor, audit, and trigger alarms for various types of attacks and risky operations. Based on data asset and sensitive data discovery information, it can trigger alarms and rate security levels for users, behaviors, and data that severely deviate from the models. This helps administrators discover malicious operations and provides accurate threat analysis as well as security governance suggestions for database operations.
-
 ## Database management
 >?Included features: Instance overview, instance management, full instance monitoring, and database management center (DMC).
 
