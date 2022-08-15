@@ -5,6 +5,7 @@ The exception diagnosis feature provides you with real-time performance monitori
 ## Overview
 
 Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database type and an instance at the top, and select the **Exception Diagnosis** tab.
+![](https://qcloudimg.tencent-cloud.cn/raw/a8f2508b2918b27bdedf4ffa44cdf84c.png)
 
 ## Viewing the monitoring overview
 
