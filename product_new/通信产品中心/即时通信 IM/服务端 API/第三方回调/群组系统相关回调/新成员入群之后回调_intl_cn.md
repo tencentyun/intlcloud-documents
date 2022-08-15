@@ -98,5 +98,7 @@ App 后台同步数据后，返回应答包。
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
+- [群成员离开之后回调](https://intl.cloud.tencent.com/document/product/1047/34373)
+- [直播群在线状态回调](https://intl.cloud.tencent.com/document/product/1047/48734)
 - REST API：[增加群组成员](https://intl.cloud.tencent.com/document/product/1047/34921)
 
