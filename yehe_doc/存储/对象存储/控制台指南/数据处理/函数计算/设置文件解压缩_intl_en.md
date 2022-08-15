@@ -32,7 +32,7 @@ File decompression is a data processing solution provided by Tencent Cloud COS b
 >! If the destination prefix you configured overlaps with the trigger condition, a loop may be triggered, which should be avoided. For example, if the destination prefix is `prefix`, and the trigger condition is` pre`, a decompression loop will be triggered when you upload a `pref` package.
 >
  - **SCF Authorization**: Required. To decompress a compressed file, SCF should be authorized to read the package from your bucket and upload the decompressed files to the specified location.
-5. Click **Next** and perform configuration in the pop-up window, as shown below:
+6. Click **Next** and perform configuration in the pop-up window, as shown below:
 
  - **Decompression Format**: the decompression formats you are allowed to use. Currently, only ZIP files are supported.
  - **Destination Bucket**: a bucket to store the compressed files
@@ -44,7 +44,7 @@ File decompression is a data processing solution provided by Tencent Cloud COS b
 
     - Empty: decompresses the package directly to the destination path.
  - **Forbid Recursive Triggering**: **Enable** does not continue to decompress ZIP packages that are decompressed from the package, while **Disable** does.
-6. Click **Confirm**.
+7. Click **Confirm**.
 ![](https://main.qcloudimg.com/raw/cb968ff99051f2eb1e515dd74000c1ee.png)
 You can perform the following operations on the created function:
  - Click **View Logs** to view the historical running status of the decompression. If an error is reported, you can click **View Logs** to quickly redirect to the SCF console for viewing the error log details.
