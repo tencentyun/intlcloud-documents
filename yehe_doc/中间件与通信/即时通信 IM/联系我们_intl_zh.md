@@ -8,7 +8,7 @@
 
 Telegram交流群：[点击加入](https://t.me/tencent_imsdk)
 
-Discord交流群：[点击加入](https://discord.gg/8EmN2ma25W)
+
 
 ## 热线电话
 

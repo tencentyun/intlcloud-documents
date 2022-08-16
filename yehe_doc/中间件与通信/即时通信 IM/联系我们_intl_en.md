@@ -8,7 +8,6 @@ Join a Tencent Cloud IM developer group for:
 
 Telegram group: [join](https://t.me/tencent_imsdk)
 
-Discord group: [join](https://discord.gg/8EmN2ma25W)
 
 ## Hotline
 

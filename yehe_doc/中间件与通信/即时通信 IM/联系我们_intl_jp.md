@@ -8,7 +8,7 @@ Tencent Cloud IMテクノロジーコミュニケーショングループに参�
 
 Telegramコミュニケーショングループ：[クリックして参加](https://t.me/tencent_imsdk)
 
-Discordコミュニケーショングループ：[クリックして参加](https://discord.gg/8EmN2ma25W)
+
 
 ## ホットライン
 

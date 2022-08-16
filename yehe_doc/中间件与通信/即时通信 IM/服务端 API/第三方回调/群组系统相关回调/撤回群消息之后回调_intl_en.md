@@ -47,11 +47,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 {
     "CallbackCommand":"Group.CallbackAfterRecallMsg", // Callback command
     "Operator_Account":"admin", // Operator
-    "Type": "Public", // Group type
+    "Type": "Community", // Group type
     "GroupId":"1213456", // Group ID
     "MsgSeqList":[ // `MsgSeq` list of recalled messages           
         {"MsgSeq":130}
-    ]
+    ],
+    "TopicId":"@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic"		// The ID of the topic. This option is only avaiable for the community that supports the topic feature.
 }
 ```
 
@@ -64,6 +65,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
 | GroupId | String | Group ID |
 | MsgSeqList | Array | `MsgSeq` list of recalled messages |
+| TopicId | String  | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response
 
