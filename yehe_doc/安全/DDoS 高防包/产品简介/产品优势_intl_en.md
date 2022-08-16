@@ -18,4 +18,4 @@ With a 30-line BGP network encompassing ISPs across the Chinese mainland, Anti-D
 Anti-DDoS Pro provides multi-dimensional statistical reports to display clear and accurate protection traffic and attack details, helping you stay on top of attacks in real time.
 
 ## Lower Security Protection Costs
-Anti-DDoS Pro offers a simplified billing mode where you are only charged by "number of protected IPs + protected times" you set for your business size and protection needs. When high-traffic attacks occur, the maximum DDoS protection capability of Tencent Cloud in the region of the Anti-DDoS Pro instance is reachable without extra payments.
+Anti-DDoS Pro offers a simplified billing mode where you are only charged by "number of protected IPs" you set for your business size and protection needs. When high-traffic attacks occur, the maximum DDoS protection capability of Tencent Cloud in the region of the Anti-DDoS Pro instance is reachable without extra payments.
