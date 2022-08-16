@@ -16,7 +16,7 @@ Super Playerの署名は、App再生サービスによる端末の再生を承�
 | fileId |はい| String | ドキュメントID|
 | currentTimeStamp |はい| Integer | 配布された署名の Unixタイムスタンプ|
 | expireTimeStamp | いいえ | Integer | 配付された署名の有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します |
-| pcfg ｜ いいえ | String | 使用されるSuper Playerの設定名。 defaultの場合は空のままにします|
+| pcfg | いいえ | String | 使用されるSuper Playerの設定名。 defaultの場合は空のままにします|
 | urlAccessInfo | いいえ | Object| 再生リンクのリンク不正アクセス防止設定パラメータ、 [UrlAccessInfo タイプ](#p1) |
 | drmLicenseInfo | いいえ | Object | 暗号化コンテンツのキー設定パラメータ、 [DrmLicenseInfo タイプ](#p2) |
 
