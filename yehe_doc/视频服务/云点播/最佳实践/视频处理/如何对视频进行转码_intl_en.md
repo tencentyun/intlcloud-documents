@@ -104,7 +104,7 @@ Recommended bitrates, resolutions, and configuration ranges are shown below:
 | 2K      | 6000     | 2560 x 1440 | 2K (Image short side ≤ 1440 px)      |
 | 4K      | 8000     | 3840 x 2160 | 4K (Image short side ≤ 2160 px)     |
 
-Tencent Cloud VOD's unique TESHD is a solution integrating image quality repair and enhancement, adaptive parameter selection, and V265 encoder among other video processing features. It provides granular transcoding methods and ensures higher definition, and this solution requires low consumption of network resources while delivering better watch experience. VOD provides a wide range of preset clarity settings, with parameters detailed as follows:
+Tencent Cloud VOD's Top Speed Codec solution integrates image quality repair and enhancement, adaptive parameter selection, and V265 encoder among other video processing features. It provides granular transcoding methods and ensures higher definition, and this solution requires low consumption of network resources while delivering better watch experience. VOD provides a wide range of preset clarity settings, with parameters detailed as follows:
 
 | **Clarity** | **Recommended Bitrate** | **Recommended Resolution** | **Resolution Range**            |
 | ------- | -------- | --------- | -------------------- |
@@ -114,7 +114,7 @@ Tencent Cloud VOD's unique TESHD is a solution integrating image quality repair 
 | 2K      | 3500 or leave it empty  | 2560 x 1440 | 2K (Image short side ≤ 1440 px)    |
 | 4K      | 7500 or leave it empty  | 3840 x 2160 | 4K (Image short side ≤ 2160 px)    |
 
->? If the bitrate is left empty, TESHD will set the minimum bitrate based on intelligent analysis of the source video.
+>? If the bitrate is left empty, Top Speed Codec will set the minimum bitrate based on intelligent analysis of the source video.
 
 ## Initiating Transcoding Through the Console
 

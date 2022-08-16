@@ -130,7 +130,7 @@ Preset parameter templates for video conversion:
 </table>
 
 
-### Preset TESHD templates
+### Preset Top Speed Codec (TSC) templates
 
 <table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Clarity</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
 <tr><th colspan="1">Resolution</th><th colspan="1">Maximum Bitrate</th><th colspan="1">Frame Rate</th><th colspan="1">Code</th><th colspan="1">Bitrate</th><th colspan="1">Sample Rate</th><th colspan="1">Sound Channels</th><th colspan="1">Code</th></tr>

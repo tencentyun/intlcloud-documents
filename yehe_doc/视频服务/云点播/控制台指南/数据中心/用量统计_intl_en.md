@@ -31,13 +31,13 @@ In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **D
 - In **Transcoding types used**, you can view the percentages of different transcoding types by the number of tasks.
 - General transcoding statistics are real-time data.
 
-### TESHD
-- You can view TESHD statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
-- The duration (in minutes) and number of your TESHD transcoding tasks are displayed at the top.
-- The graph displays the duration trends (in minutes) of all TESHD transcoding types. You can also select a type to view its duration data.
-- In **Transcoding tasks**, you can view the duration and number of tasks under each TESHD transcoding type.
-- In **Transcoding types used**, you can view the percentages of different TESHD transcoding types by the number of tasks.
-- TESHD transcoding statistics are real-time data.
+### Top Speed Codec
+- You can view Top Speed Codec (TSC) statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
+- The duration (in minutes) and number of your TSC transcoding tasks are displayed at the top.
+- The graph displays the duration trends (in minutes) of all TSC transcoding types. You can also select a type to view its duration data.
+- In **Transcoding tasks**, you can view the duration and number of tasks under each TSC transcoding type.
+- In **Transcoding types used**, you can view the percentages of different TSC transcoding types by the number of tasks.
+- TSC transcoding statistics are real-time data.
 
 ### Adaptive bitrate streaming
 - You can see the statistics of adaptive bitrate streaming for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.

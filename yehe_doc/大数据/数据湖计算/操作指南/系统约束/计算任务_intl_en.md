@@ -1,0 +1,1 @@
+- A single SQL statement cannot exceed 2 MB in size.

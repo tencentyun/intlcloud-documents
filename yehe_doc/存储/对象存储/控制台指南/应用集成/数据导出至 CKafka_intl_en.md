@@ -5,7 +5,7 @@ Data export to CKafka is a data export solution provided by COS based on [SCF](h
 ## Notes
 
 - Data export to CKafka involves COS' data extraction APIs. For more information on the restrictions, see [SELECT Overview](https://intl.cloud.tencent.com/document/product/436/32472).
-- If you have added a data export to CKafka rule to your bucket in the COS console, the export function will appear in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **Do not** delete or modify the function; otherwise, your rule may not take effect.
+- If you have added a rule of data export to CKafka to your bucket in the COS console, the export function will appear in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **Do not** delete or modify the function; otherwise, your rule may not take effect.
 - Currently, the data export to CKafka feature is only supported in Guangzhou, Shanghai, Beijing, and Chengdu regions.
 - The data export to CKafka feature depends on the SCF service, which provides a [free tier](https://intl.cloud.tencent.com/document/product/583/12282). Excessive usage will be billed at SCF prices. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
 
@@ -36,8 +36,8 @@ Data export to CKafka is a data export solution provided by COS based on [SCF](h
 7. If you want to personalize log data extraction, click **Previous** to configure options. Generally, we recommend you directly click **Confirm** to add the function.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9e1ba247fd0515f8d30b056dd728d874.png)
    You can perform the following operations on the created function:
- - Click **Log** to view the historical running status of data export to CKafka. If an error is reported, you can click **Log** to quickly redirect to the SCF console for viewing the error log details.
+ - Click **Log** to view the historical running status of data export to CKafka. If an error is reported, you can click **Log** to quickly redirect to the SCF console to view its details.
  - Click **Details** to view the detailed configuration of the function.
- - Click **Edit** to modify a data export to CKafka rule.
+ - Click **Edit** to modify a rule of data export to CKafka.
  - Click **Trigger** and select an existing log in the bucket to directly trigger the export to CKafka.
- - Click **Delete** to delete an unwanted data export to CKafka rule.
+ - Click **Delete** to delete an unwanted rule of data export to CKafka.

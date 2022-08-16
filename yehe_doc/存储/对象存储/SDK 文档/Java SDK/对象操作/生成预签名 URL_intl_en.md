@@ -5,7 +5,7 @@ This document provides an overview of code samples for generating a pre-signed o
 For more information on how to use a pre-signed URL for uploads and downloads, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114) and [Download via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14116) respectively.
 
 >?
-> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to generate a pre-signed URL for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [principle of least privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to generate a pre-signed URL for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
 > - If you need to use a permanent key to generate a pre-signed URL, we recommend you limit the permission of the permanent key to uploads and downloads only to avoid risks.
 > - Get the signed/pre-signed URL function. By default, it is signed to the `host` header. You can also choose not to include the `host` header in the signature, but the request may fail or vulnerabilities may occur.
 > 
