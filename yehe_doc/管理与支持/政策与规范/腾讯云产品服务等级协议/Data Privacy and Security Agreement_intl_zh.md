@@ -146,7 +146,7 @@
 43.[语音识别](https://intl.cloud.tencent.com/document/product/1118/48290)。
 44.[云直播](https://intl.cloud.tencent.com/document/product/267/47315)。
 45.[实时音视频](https://intl.cloud.tencent.com/document/product/647/48828)。
-
+46.[前端性能监控](https://intl.cloud.tencent.com/document/product/1131/49155)。
 ## 特定司法管辖区要求
 
 **欧洲**
