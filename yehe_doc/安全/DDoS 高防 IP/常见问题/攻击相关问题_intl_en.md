@@ -19,10 +19,6 @@ DDoS attacks target your IP or business by attacking the server.
 ### Where to view attack logs for the attacked server?
 On the [Overview](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview/ddos) page, you can view attack logs for the attacked server over the selected time period.
 
-### Where to view details of the attack source IP?
-On the [Overview](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview/ddos) page, select an attack event you want to view, and then click **Attack Details** to check the attack source information, source region, attack traffic and attack packet size.
-![](https://qcloudimg.tencent-cloud.cn/raw/c969588e5aab0e2a213737de4179bf1d.png)
-
 ### What to do when the lightweight server is under DDoS attacks?
 We recommend getting an [Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297/37241) instance to defeat DDoS attacks and guarantee the availability of your server and business.
 
