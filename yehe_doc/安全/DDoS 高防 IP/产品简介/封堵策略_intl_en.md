@@ -13,9 +13,3 @@ The blocking duration is subject to the following factors:
 A DDoS attack usually does not stop immediately after the target IP is blocked and the attack duration varies. Tencent Cloud security team sets the default blocking duration based on big data analysis.
 
 Since the IP blocking takes effect in the ISP's network, Tencent Cloud is unable to monitor whether or not the attack traffic flow has been stopped. If the IP is recovered while the attack is still going on, the IP will be blocked again, where there’s a gap between the recovery and the re-blocking that the attack traffic can take advantage of to directly enter the Tencent Cloud's classic network, resulting in negative effects on other cloud users. In addition, the IP blocking is a service Tencent cloud purchased from ISPs with limited numbers of blocking and blocking frequency.
-
-## How to unblock my IP?
-IP blocking is a service Tencent cloud purchased from ISPs with limited numbers of blocking and blocking frequency.
->?Only **three** chances of self-service unblocking are provided for Anti-DDoS Advanced users every day. The system resets the chance counter daily at midnight. Unused chances cannot be accumulated for the next day.
-
- For more details, see [Unblocking an IP](https://intl.cloud.tencent.com/document/product/297/43395).
