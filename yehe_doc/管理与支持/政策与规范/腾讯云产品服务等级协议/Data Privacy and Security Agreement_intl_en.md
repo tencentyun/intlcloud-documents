@@ -215,6 +215,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 45.[TencentCloud Managed Service for Grafana](https://intl.cloud.tencent.com/document/product/1124/48403).
 46.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48828).
 47.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49155).
+48.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49480).
 
 ## 10.Jurisdiction-specific Requirements
 
