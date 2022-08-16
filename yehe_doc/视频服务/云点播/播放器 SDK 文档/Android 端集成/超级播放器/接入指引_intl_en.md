@@ -288,10 +288,11 @@ A video file ID is returned by the server after the video is uploaded.
 
 If the video you want to play is already saved with VOD, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media) to view its file ID.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
->!
->- For playback through `FileId`, you need to first use the Adaptive-HLS(10) transcoding template to transcode the video or use the Superplayer signature `psign` to specify the video to be played back; otherwise, the video may fail to be played back. For more information on how to transcode a video, see [Playing back Video Through Superplayer](https://intl.cloud.tencent.com/document/product/266/38098). For more information on how to generate a `psign`, see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099).
->- If a "no v4 play info" exception occurs during playback through `FileId`, the above problem may exist. In this case, we recommend you make adjustments as instructed above. You can also directly get the playback link of the source video for playback through [URL](#url).
->- **We recommend you transcode videos for playback because untranscoded videos may experience compatibility issues during playback.**
+<dx-alert infotype="notice">
+<li>- For playback through `FileId`, you need to first use the Adaptive-HLS(10) transcoding template to transcode the video or use the Superplayer signature `psign` to specify the video to be played back; otherwise, the video may fail to be played back. For more information on how to transcode a video, see [Playing back Video Through Superplayer](https://intl.cloud.tencent.com/document/product/266/38098). For more information on how to generate a `psign`, see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099).</li>
+<li>- If a "no v4 play info" exception occurs during playback through `FileId`, the above problem may exist. In this case, we recommend you make adjustments as instructed above. You can also directly get the playback link of the source video for playback through [URL](#url).</li>
+<li>- **We recommend you transcode videos for playback because untranscoded videos may experience compatibility issues during playback.**</li></dx-alert>
+
 <dx-codeblock>
 :::  java
 // If you haven't enabled hotlink protection and a "no v4 play info" error occurs, transcode your video using the Adaptive-HLS template (ID: 10) or get the playback URL of the video and play it by URL.
