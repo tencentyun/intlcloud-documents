@@ -99,7 +99,7 @@
 <td>支持 Topic 级别的限流</td>
 <td>您可以针对 Topic 进行限流，避免单个 Topic 流量过大而影响其他 Topic。</td>
 <td>2022-03-23</td>
-<td><a href="https://cloud.tencent.com/document/product/597/20247">Topic 管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></td>
 </tr>
 </table>
 
@@ -169,12 +169,12 @@
 <td>Topic 展示字段增加</td>
 <td>新建 Topic 时支持设置标签，支持查看生产者端连接关系。</td>
 <td>2022-01-07</td>
-<td><a href="https://cloud.tencent.com/document/product/597/20247">Topic 管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></td>
 </tr><tr>
 <td>支持控制台直接创建 Consumer Group 和发送消息</td>
 <td>支持用户在 CKafka 控制台直接创建 Consumer Group 和发送消息，无需在本地客户端操作。</td>
 <td>2022-01-07</td>
-  <td><li><a href="https://intl.cloud.tencent.com/document/product/597/44994">创建 Consumer Group</a></li><li><a href="https://cloud.tencent.com/document/product/597/20247">Topic 管理</a></li></td>
+  <td><li><a href="https://intl.cloud.tencent.com/document/product/597/44994">创建 Consumer Group</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></li></td>
 </tr><tr>
 <td>专业版实例支持展示实例连接信息</td>
 <td>CKafka 专业版 Dashboard 展示实例连接数信息，在实例连接数将满时，便于用户查看各个机器的连接数情况。</td>
@@ -244,7 +244,7 @@
 <td>Topic 高级设置支持retention.bytes</td>
 <td>支持在 Topic 的高级设置上设置 retention.bytes，与 retention.ms 配合使用。</td>
 <td>2021-11-24</td>
-<td><a href="https://cloud.tencent.com/document/product/597/20247">Topic 管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></td>
 </tr><tr>
 <td>可售卖上限提升至20000MB/s</td>
 <td>可售卖上限提升至20000MB/s，满足部分用户大促活动业务流量峰值期间的大量升配诉求。</td>
@@ -369,7 +369,7 @@
 <td>增加查看 Topic 详情和未同步副本</td>
 <td>支持在控制台查 Topic 和未同步副本的详情。</td>
 <td>2021-08-03</td>
-<td><a href="https://cloud.tencent.com/document/product/597/20247">Topic 管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></td>
 </tr><tr>
 <td>实例命名支持正则表达式</td>
 <td>购买多个实例时，支持创建实例后缀数字自动升序以及指定模式串功能。</td>
@@ -949,7 +949,7 @@
 <td>支持 Topic 高级参数配置</td>
 <td>您可以通过 CKafka 控制台，对实例下的 Topic 进行细粒度的参数配置。</td>
 <td>2018-12-28</td>
-<td><a href="https://cloud.tencent.com/document/product/597/20247">Topic 高级配置参数说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 高级配置参数说明</a></td>
 </tr></table>
 
 
