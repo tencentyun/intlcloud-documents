@@ -1,3 +1,5 @@
+>!高防资源将提供 CNAME，请将 DNS 解析地址修改为该 CNAME 高防资源。CNAME 解析目的高防 IP 将不定期更换。（不涉及三网资源）。
+
 ## 接入规则
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) ，在左侧目录中，单击**业务接入** > **端口接入**。
 2. 在端口接入页面，单击**开始接入**。
@@ -18,6 +20,7 @@
 ## 配置规则
 1. 在 [端口接入页面](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4)，选择所需规则，单击操作列的**配置**。
 2. 在配置四层转发规则页面，可修改相关参数，单击**确定**保存。
+
 
 ## 删除规则
 1. 在 [端口接入页面](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4)，支持删除单个或批量删除规则。
