@@ -6,12 +6,6 @@ Once the attack traffic exceeds the blocking threshold of a target IP, Tencent C
 
 In short, once the traffic attacking your IP goes over the maximum protection bandwidth Tencent Cloud provided, Tencent Cloud will block the IP from all public networks’ access.
 
-## How to unblock my IP?
-IP blocking is a service Tencent cloud purchased from ISPs with limited numbers of blocking and blocking frequency.
->?Only **three** chances of self-service unblocking are provided for Anti-DDoS Pro users every day. The system resets the chance counter daily at midnight. Unused chances cannot be accumulated for the next day.
-
-If you do not want to wait until the IP is unblocked automatically, see [An application was blocked due to high-traffic attacks](https://intl.cloud.tencent.com/document/product/1029/40511).
-
 ## Why is my IP blocked?
 Tencent Cloud reduces cloud costs by sharing infrastructure, with one public IP shared among all users. When a large traffic attack occurs, the entire Tencent Cloud network may be affected, not only the attack targets.
 
