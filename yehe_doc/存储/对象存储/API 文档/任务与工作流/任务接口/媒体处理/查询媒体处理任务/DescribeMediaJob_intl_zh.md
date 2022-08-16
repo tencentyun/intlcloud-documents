@@ -80,6 +80,7 @@ Container 节点 Response 的内容：
 
 对于不同的任务类型，JobsDetail 的内容不同，请参照以下链接：
 - <a href="https://cloud.tencent.com/document/product/460/76913#jobsDetail" target="_blank">音视频转码</a>
+- <a href="https://cloud.tencent.com/document/product/460/78248#jobsDetail" target="_blank">极速高清转码</a>
 - <a href="https://cloud.tencent.com/document/product/460/76900#jobsDetail" target="_blank">视频转动图</a>
 - <a href="https://cloud.tencent.com/document/product/460/76910#jobsDetail" target="_blank">视频截帧</a>
 - <a href="https://cloud.tencent.com/document/product/460/76909#jobsDetail" target="_blank">智能封面</a>
@@ -101,7 +102,7 @@ Container 节点 Response 的内容：
 
 
 
-</br>
+
 
 
 #### 错误码
@@ -237,6 +238,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
             <MediaInfo>
                 <Format>
                     <Bitrate>834.736000</Bitrate>
