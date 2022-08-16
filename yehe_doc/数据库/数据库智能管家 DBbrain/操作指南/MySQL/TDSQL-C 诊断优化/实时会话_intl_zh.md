@@ -7,7 +7,7 @@
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/session)，在左侧导航选择**诊断优化**，在上方选择对应数据库，然后选择**实时会话**页。
 
 默认15秒刷新一次，用户可根据不同场景进行设置，也可以停止刷新。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/fc9833aba2b9ccfa1f873b346e23f237.png)
 ## 活跃会话
 
 在活跃会话模块，用户可选择限制条数，进行字段筛选，是否显示 sleep 连接操作。
@@ -16,14 +16,14 @@
 - 字段筛选支持按照 ID、USER、HOST、STATE、DB、COMMAND、INFO、TIME 字段维度。
   其中线程可按照 all、not sleep、其他进行筛选。其他支持维度为 Binlog Dump、Change user、Close stmt、Connect、Connect Out、Create DB、Daemon、Debug、Delayed insert、Drop DB、Error、Execute、Fetch、Field List、Init DB、Kill、Long Data、Ping、Prepare、Processlist、Query、Quit、Refresh、Register Slave、Reset stmt、Set option、Shutdown、Sleep、Statistics、Table Dump、Time。
 - 支持显示 sleep 连接。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a6a97e76d66ac9aa6aae42ddd9c65e82.png)
 ## 结束（Kill）会话
 DBbrain 提供在线结束（Kill）会话的功能，方便用户对会话进行管理。
 
 **结束当前会话**
 勾选需要结束的会话，然后单击 **Kill 会话** 即可完成操作。
 目前支持对“单个会话”或“多个会话”进行 Kill 会话操作，单次批量操作上限暂时为100。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/f1ccf99011676360fb1eafc6f9bd3da1.png)
 **持续 Kill 会话**
 DBbrain 提供持续 Kill 会话的功能，用户可设置 Kill 会话的条件，当满足条件时，自动触发 Kill 会话操作。
 
@@ -33,8 +33,10 @@ DBbrain 提供持续 Kill 会话的功能，用户可设置 Kill 会话的条件
 >- 可输入一个或多个条件，各条件之间是“与”的关系，设置后可结束除系统连接外的所有满足设置条件的会话。
 >- 如仅填写 Time 及持续时长，将会一键 Kill 掉满足条件的全部会话，请谨慎操作。
 >
+![](https://main.qcloudimg.com/raw/4877a34820444c3cc521d4b5725f9a12.png)
 2. 会话预览。
    设置持续 Kill 任务后，生成会话预览，即可预览将被 Kill 掉的会话，开启持续 Kill 后，当生成的会话命中所填写的条件时，即可自动将会话 Kill 掉。
+![](https://main.qcloudimg.com/raw/5bf56f57f7f895853aa7470befdc4c96.png)
 3. 查看持续 Kill 详情。
    已设置持续 Kill 的任务，单击右上侧的**详情**，即可查看持续 Kill 详情。
 
@@ -55,21 +57,22 @@ DBbrain 提供 SQL 限流功能，您可以通过创建 SQL 限流任务，自�
 - 执行方式：支持“定时关闭”和“手动关闭”。
 - 限流时间：选择“定时关闭”时，需选择 SQL 限流的生效时间。
 - SQL 关键词：为需要限流的 SQL 关键词，当包含多个关键词时，需要以英文逗号分隔，逗号分隔的条件是逻辑与的关系，且逗号不能作为关键词。
-
+![](https://main.qcloudimg.com/raw/55f634cf8d9367c122f694b1e8fbc88b.png)
 SQL 限流列表中，包含 SQL 类型、状态、关键词、开始时间、剩余时间、最大并发数以及操作。
 
 - 单击**操作**列的**详情**，可以查看 SQL 限流详情。
 - 限流任务开启后，若还在所设置的限流时间以内，列表中的状态为**运行中**，单击**操作**列的**关闭**，可以提前关闭限流任务，状态列将变为**已终止**。
 - 限流任务开启后，若自动达到所设定的限流时间，列表中的状态将变为**已终止**。
 - 单击**操作**列的**删除**，可以对状态为**已终止**和**已完成**的限流任务进行删除。
-
+![](https://main.qcloudimg.com/raw/5925c45ce935ae8f7e990214ae4c568b.png)
 ## 热点更新保护
 
 DBbrain 提供热点更新保护功能，针对语句的排队机制，尽可能把具有相同冲突的语句放在内存队列排队，通过开启热点更新保护减少锁冲突的开销，提高高并发场景的数据库性能。
 >?热点更新保护仅支持云数据库 MySQL（不含基础版）。
 
 单击**创建任务**，可以创建热点更新保护任务，您可以自主设置等待超时阈值、执行方式，其中执行方式包括定时关闭和手动关闭，在定时关闭的执行方式下，您可以自主设置执行时间。
-
+![](https://main.qcloudimg.com/raw/0d25d8a3eeb8c4cf8542c66a7681dfc4.png)
 热点更新保护列表中，包含状态、开始时间、执行时间、剩余时间、等待超时阈值以及操作。
 - 当任务的状态处于**运行中**时，单击**操作**列的**关闭**，可以提前终止任务的执行。
 - 当任务的状态处于**已终止**或**已完成**时，单击**操作**列的**删除**，可以删除热点更新保护任务。
+![](https://qcloudimg.tencent-cloud.cn/raw/11bc030a620090e3bb020b9551a20c32.png)
