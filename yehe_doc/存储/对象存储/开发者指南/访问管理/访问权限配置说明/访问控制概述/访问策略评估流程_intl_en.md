@@ -9,6 +9,7 @@ Access policies in COS include user group policies, user policies, bucket access
 3. Policy context: whether a resource access request will succeed is finally determined based on the permission details recorded across the access policies of all types.
 
 ## Access Policy Evaluation Process
+![Access Policy Evaluation Process](https://main.qcloudimg.com/raw/18a0cdea71b4360eec7de739d67eeecc.png)
 
 When Tencent Cloud COS receives a request, it first confirms the identity of the requester and verifies that it has necessary permissions, including checking the user policy, bucket access policy, and resource-based ACL, and authenticating the request.
 
@@ -19,7 +20,6 @@ When COS receives a request, it first performs identity verification, the result
 3. Unidentified anonymous user: needs evaluation of resource permissions, including permissions to access the policies or ACLs of buckets and objects in a bucket. The resource access will be granted upon successful authentication.
 4. Access will be denied for any requesters other than the above types of users.
 
-![Access Policy Evaluation Process](https://main.qcloudimg.com/raw/18a0cdea71b4360eec7de739d67eeecc.png)
 
 ## How Access Policy Evaluation Works
 

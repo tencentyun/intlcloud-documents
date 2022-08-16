@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`CreateAIRecognitionJobs`) is used to submit an AI processing job.
+This API (`CreateAIRecognitionJobs`) is used to submit an AI-based processing job.
 
 ## Request
 
@@ -76,7 +76,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------- | --------------- | ------ | ---- | --- |
 | Object             | Request.Input | Source filename | String | Yes | Single file (docx/xlsx/html/markdown/txt): 8 million characters <br/>Number of pages (pdf/pptx): 300 pages <br/>Text file (txt): 10 MB <br/>Binary file (pdf/docx/pptx/xlsx): 60 MB<br/>|
-| Lang               | Request.Input | File language | String | Yes | zh: Simplified Chinese <br/>zh-hk: Traditional Chinese <br/>zh-tw: Traditional Chinese <br/>zh-tr: Traditional Chinese <br/>en: English <br/>ar: Arabic <br/>de: German <br/>es: Spanish <br/>fr: French <br/>id: Indonesian <br/>it: Italian <br/>ja: Japanese <br/>pt: Portuguese <br/>ru: Russian <br/>ko: Korean <br/>km: Khmer <br/>lo: Lao |
+| Lang               | Request.Input | File language | String | Yes | `zh`: Simplified Chinese <br/>`zh-hk`: Traditional Chinese <br/>`zh-tw`: Traditional Chinese <br/>`zh-tr`: Traditional Chinese <br/>`en`: English <br/>`ar`: Arabic <br/>`de`: German <br/>`es`: Spanish <br/>`fr`: French <br/>`id`: Indonesian <br/>`it`: Italian <br/>`ja`: Japanese <br/>`pt`: Portuguese <br/>`ru`: Russian <br/>`ko`: Korean <br/>`km`: Khmer <br/>`lo`: Lao |
 | Type               | Request.Input | File type | String | Yes | pdf<br/>docx<br/>pptx<br/>xlsx<br/>txt<br/>xml<br/>html: Only text nodes in HTML files can be translated, while nodes that need to be dynamically loaded through JS cannot.<br/>markdown |
 | BasicType         | Request.Input | Original file type | String | No   | This parameter can be used only if `Type` is `pdf`. Valid values: `docx`, `pptx`. |
 
