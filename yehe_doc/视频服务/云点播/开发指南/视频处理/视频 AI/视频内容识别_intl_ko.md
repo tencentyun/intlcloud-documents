@@ -1,3 +1,5 @@
+Tencent Cloud Video on Demand(VOD)는 2022년 8월 1일부터 비디오 콘텐츠 인식 기능에 대한 과금을 시작합니다. 자세한 내용은 [비디오 콘텐츠 인식 기능 유료 전환 공지](https://intl.cloud.tencent.com/document/product/266/47859)를 참고하십시오.
+
 비디오 콘텐츠 인식은 AI를 이용하여 오프라인에서 동영상 콘텐츠를 지능적으로 식별하는 작업입니다. 비디오 콘텐츠 인식을 통해 동영상 화면의 얼굴, 텍스트, 오픈 크레딧과 엔딩 크레딧, 음성 텍스트를 식별할 수 있습니다. 비디오 콘텐츠 인식 결과에 따라 정확하고 효과적으로 동영상을 관리할 수 있습니다. 비디오 콘텐츠 인식에는 다음과 같은 기능이 포함됩니다.
 
 | 기능 이름 | 기능 설명 | 적용 사례 |
@@ -7,7 +9,7 @@
 | 문자 텍스트 전체 인식 | 화면에 나타나는 모든 텍스트 인식 | 화면의 문자 텍스트에 대한 데이터 분석 수행  |
 | 음성 키워드 인식 | 음성에 존재하는 키워드 인식 | <li>음성에서 민감한 단어 조사</li><li>음성에서 언급된 특정 키워드 검색</li>  |
 | 문자 키워드 인식 | 화면에 존재하는 키워드 인식 | <li>화면에서 민감한 단어 조사</li><li>화면에 나타나는 특정 키워드 검색</li>  |
-| 동영상 오프닝 크레딧과 엔딩 크레딧 인식 | 동영상의 오프닝 크레딧과 엔딩 크레딧 인식 | <li>프로그래스 바에서 오프닝 크레딧, 엔딩 크레딧 및 본편 위치를 표시</li><li>동영상에서 불필요한 부분 일괄 처리</li> |
+| 동영상 오프닝 크레딧과 엔딩 크레딧 인식 | 동영상의 오프닝 크레딧과 엔딩 크레딧 인식 | <li>프로그래스 바에서 오프닝 크레딧, 엔딩 크레딧 및 본편 위치를 표시</li><li>동영상에서 불필요한 부분을 일괄 처리</li> |
 
 
 부분 콘텐츠 인식 기능은 공용 라이브러리와 사용자 정의 라이브러리 두 가지 소재 라이브러리를 기반으로 합니다.
@@ -40,11 +42,11 @@
 다음은 비디오 콘텐츠 인식을 시작하는 다양한 방식에 관한 설명입니다.
 
 * 서버 API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125)를 호출하여 작업 시작: 요청의 `AiRecognitionTask` 매개변수에 [비디오 콘텐츠 인식 템플릿](#sh)의 템플릿 ID를 지정합니다.
-* 서버 API [ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123)를 호출하여 작업 시작: 요청의 `AiRecognitionTask` 매개변수에 [비디오 콘텐츠 인식 템플릿](#sh)의 템플릿 ID를 지정합니다.
+* 서버 API [ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123)을 호출하여 작업 시작: 요청의 `AiRecognitionTask` 매개변수에 [비디오 콘텐츠 인식 템플릿](#sh)의 템플릿 ID를 지정합니다.
 * 콘솔을 통해 동영상에 대한 작업 시작: [서버 API](https://intl.cloud.tencent.com/document/product/266/34167)를 호출하여 태스크 플로우를 생성하고, 태스크 플로우에 비디오 콘텐츠 인식 작업(`MediaProcessTask.AiRecognitionTask`에서 지정)을 구성한 뒤, 콘솔에서 태스크 플로우를 사용하여 [비디오 처리 시작](https://intl.cloud.tencent.com/document/product/266/33892)을 진행합니다.
 * 서버 업로드 시 작업 지정: [서버 API](https://intl.cloud.tencent.com/document/product/266/34167)를 호출하여 태스크 플로우를 생성하고 태스크 플로우에 비디오 콘텐츠 인식(`MediaProcessTask.AiRecognitionTask`에서 지정) 작업을 구성한 뒤, [업로드 신청](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0)의 `procedure`를 이 태스크 플로우로 지정합니다.
 * 클라이언트 업로드 시 작업 지정: [서버 API](https://intl.cloud.tencent.com/document/product/266/34167)를 호출하여 태스크 플로우를 생성하고 태스크 플로우에 비디오 콘텐츠 인식(`MediaProcessTask.AiRecognitionTask`에서 지정) 작업을 구성한 뒤, [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922)의 `procedure`를 이 태스크 플로우로 지정합니다.
-* 콘솔 업로드: [서버 API](https://intl.cloud.tencent.com/document/product/266/34167)를 호출하여 태스크 플로우를 생성하고, 태스크 플로우에 비디오 콘텐츠 인식 작업(`MediaProcessTask.AiRecognitionTask`에서 지정)을 구성합니다. 콘솔을 통해 비디오를 업로드한 뒤 [업로드 중 비디오 처리](https://intl.cloud.tencent.com/document/product/266/33890)을 선택하고 동영상 업로드 후 이 태스크 플로우를 실행하도록 지정합니다.
+* 콘솔 업로드: [서버 API](https://intl.cloud.tencent.com/document/product/266/34167)를 호출하여 태스크 플로우를 생성하고, 태스크 플로우에 비디오 콘텐츠 인식 작업(`MediaProcessTask.AiRecognitionTask`에서 지정)을 구성합니다. 콘솔을 통해 비디오를 업로드한 뒤 [업로드 중 비디오 처리](https://intl.cloud.tencent.com/document/product/266/33890)를 선택하고 동영상 업로드 후 이 태스크 플로우를 실행하도록 지정합니다.
 
 ## 결과 가져오기
 

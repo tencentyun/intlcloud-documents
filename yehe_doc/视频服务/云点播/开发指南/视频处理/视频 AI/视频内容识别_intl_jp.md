@@ -1,4 +1,6 @@
-ビデオコンテンツ認識は、AIの力を借りてビデオコンテンツに対してインテリジェントな認識を行う機能であり、オフラインタスクです。ビデオコンテンツ認識を使用することで、ビデオ画面の中の人の顔、文字、オープニング・エンディング、音声の中の文字を認識することができ、このビデオコンテンツ認識の結果にもとづき、ビデオを的確かつ効果的に管理することができます。ビデオコンテンツ認識には以下の機能が含まれます。
+Tencent Cloud Video on Demand（VOD）サービスは2022年8月1日より、ビデオコンテンツ認識の課金項目を新設し、ユーザーが開始したビデオコンテンツ認識タスクに対する課金を正式に開始します。詳細については、[ビデオコンテンツ認識の正式商用化に関するお知らせ](https://intl.cloud.tencent.com/document/product/266/47859)をご参照ください。
+
+ビデオコンテンツ認識は、AIの力を借りてビデオコンテンツに対してインテリジェントな認識を行う機能であり、オフラインタスクです。ビデオコンテンツ認識を使用することで、ビデオ画面の中の人の顔、文字、オープニング・エンディング、音声の中の文字を認識することができ、このビデオコンテンツ認識の結果に基づき、ビデオを的確かつ効果的に管理することができます。ビデオコンテンツ認識には以下の機能が含まれます。
 
 | 機能名 | 機能説明 | 活用例 |
 | -- | -- | -- |
@@ -35,7 +37,7 @@
 
 ## タスクの開始
 
-ビデオコンテンツ認識タスクの開始には、「サーバーAPIから直接開始する」、「コンソールから直接開始する」、「アップロード時に実行したいタスクを指定する」の3種類の方法があります。詳細内容は、ビデオ処理の[タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。
+ビデオコンテンツ認識タスクの開始には、「サーバーAPIから直接開始」、「コンソールから直接開始」、「アップロード時に実行したいタスクを指定」の3種類の方法があります。詳細内容は、ビデオ処理の[タスクの開始](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。
 
 以下は、各方法のビデオコンテンツ認識タスク開始についての説明です。
 
@@ -43,7 +45,7 @@
 * サーバーAPI[ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123) の呼び出しによるタスク開始：リクエストの中の`AiRecognitionTask`パラメータで [ビデオコンテンツ認識テンプレート](#sh) のテンプレートIDを指定します。
 * コンソールでのビデオに対するタスク開始： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。コンソールでこのタスクフローを使用して [ビデオ処理を開始](https://intl.cloud.tencent.com/document/product/266/33892)します。
 * サーバーからのアップロード時にタスクを指定： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。[アップロードの申請](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) の中の`procedure`パラメータでこのタスクフローを指定します。
-* クライアントからのアップロード時にタスクを指定： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。[クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922) の中の`procedure`でこのタスクフローを指定します。
+* クライアントからのアップロード時にタスクを指定： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167)を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。[クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922) の中の`procedure`でこのタスクフローを指定します。
 * コンソールからのアップロード： [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34167) を呼び出してタスクフローを作成し、タスクフローの中でビデオコンテンツ認識タスクを設定します（`MediaProcessTask.AiRecognitionTask`の中で指定）。コンソールを介してビデオをアップロードし、 [アップロードと同時にビデオに対する処理操作を実行](https://intl.cloud.tencent.com/document/product/266/33890) を選択して、ビデオアップロード後にこのタスクフローの実行を指定します。
 
 ## 結果の取得

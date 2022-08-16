@@ -1,35 +1,51 @@
-Flutter용 Tencent Cloud RT-Cube Superplayer는 오픈 소스 Tencent Cloud 플레이어 컴포넌트입니다. 몇 줄의 코드로 Tencent Video와 유사한 강력한 재생 기능을 사용할 수 있습니다. 가로/세로 방향 전환, 화질 선택, 제스처 및 작은 창 재생과 같은 기본 기능과 비디오 버퍼링, 소프트웨어/하드웨어 디코딩 전환 및 재생 속도 조정 등 특수 기능이 있습니다. 시스템 기본 플레이어보다 더 많은 형식을 지원하고 더 나은 호환성과 기능을 제공합니다. 또한 라이브 스트림(flv + rtmp) 재생을 지원하고 첫 번째 프레임 바로 재생과 저지연 성능을 제공하며 끊김 없는 해상도 전환 및 라이브 타임 시프팅을 포함한 고급 기능을 제공합니다.
-
+Flutter용 Tencent Cloud RT-Cube Superplayer는 오픈 소스 Tencent Cloud 플레이어 컴포넌트입니다. 몇 줄의 코드로 Tencent Video와 유사한 강력한 재생 기능을 사용할 수 있습니다. 가로/세로 방향 전환, 화질 선택, 제스처 및 작은 창 재생과 같은 기본 기능과 비디오 버퍼링, 소프트웨어/하드웨어 디코딩 전환 및 재생 속도 조정 등 특수 기능이 있습니다. 시스템 기본 플레이어보다 더 많은 형식을 지원하고 더 나은 호환성과 기능을 제공합니다. 또한 라이브 스트림(FLV + RTMP) 재생을 지원하고 첫 번째 프레임 바로 재생과 저지연 성능을 제공하며 끊김 없는 해상도 전환 및 라이브 타임 시프팅을 포함한 고급 기능을 제공합니다.
 이 플레이어는 SuperPlayer의 Flutter 플러그 인을 기반으로 하며 Android와 iOS를 모두 지원합니다. 무료 오픈소스이며 재생주소의 출처를 제한하지 않으므로 원하는 대로 사용할 수 있습니다.
 
 ## SDK 다운로드
 
-Flutter용 Tencent Cloud RT-Cube Superplayer SDK는 [SuperPlayer Flutter](https://github.com/LiteAVSDK/Player_Flutter)에서 다운로드할 수 있습니다. 
+Flutter용 Tencent Cloud RT-Cube Superplayer SDK는 [SuperPlayer Flutter](https://github.com/LiteAVSDK/Player_Flutter/tree/main/Flutter)에서 다운로드할 수 있습니다.
 
-## 타겟 오디언스
+## 프로젝트 개요
 
-본 문서의 일부 내용은 Tencent Cloud의 독점적 기능이므로, 사용하기 전에 [Tencent Cloud](https://intl.cloud.tencent.com) 관련 서비스를 활성화해 주십시오. 미등록 사용자는 [무료 베타](https://intl.cloud.tencent.com/login) 계정에 가입하실 수 있습니다.
+RT-Cube·Player SDK는 Tencent Cloud의 강력한 백엔드 기능과 AI 기술을 기반으로 우수한 VOD 및 라이브 플레이어를 제공하는 RT-Cube의 하위 제품 SDK입니다. VOD 또는 CSS와 함께 사용하여 다양한 사용 사례에 대해 부드럽고 안정적인 재생을 빠르게 구현할 수 있습니다. 초고속 HD 재생 경험을 제공하면서 비즈니스에 집중할 수 있도록 지원합니다.
 
-## 통합 가이드[](id:Guide)
+이 프로젝트는 자신의 재생 서비스를 설정하는 데 사용할 수 있는 VOD 및 라이브 플레이어 SDK를 제공합니다:
 
-1. `pubspec.yaml`에 다음 구성을 추가합니다.
+- [VOD 플레이어 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md): `TXVodPlayerController`는 Android 및 iOS용 VOD 플레이어 SDK의 API를 캡슐화합니다. `TXVodPlayerController`를 통합하여 VOD 서비스를 개발할 수 있습니다. 자세한 코드 샘플은 `DemoTXVodPlayer`를 참고하십시오.
+
+- [라이브 플레이어 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md): `TXLivePlayerController`는 Android 및 iOS용 라이브 플레이어 SDK의 API를 캡슐화합니다. `TXLivePlayerController`를 통합하여 라이브 재생 서비스를 개발할 수 있습니다. 자세한 코드 샘플은 `DemoTXLivePlayer`를 참고하십시오.
+
+연결 비용을 줄이기 위해 example로 Superplayer 컴포넌트(UI가 있는 플레이어)가 제공됩니다. 몇 줄의 간단한 코드를 기반으로 자신의 비디오 재생 서비스를 설정할 수 있습니다. Superplayer 코드를 프로젝트에 적용하고 프로젝트 요구 사항에 따라 UI 및 인터랙션 세부 정보를 조정할 수 있습니다.
+
+- [Superplayer 컴포넌트](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E8%B6%85%E7%BA%A7%E6%92%AD%E6%94%BE%E5%99%A8.md): `SuperPlayerController`는 VOD와 라이브 플레이어 SDK를 결합한 Superplayer 컴포넌트입니다. 현재 베타 테스트 중이며 기능이 최적화되고 있습니다. 자세한 코드 샘플은 DemoSuperplayer를 참고하십시오.
+
+## 빠른 통합
+
+### pubspec.yaml 구성
+LiteAVSDK_Player(기본적으로 통합됨)를 통합하고 `pubspec.yaml`에 다음 구성을 추가합니다:
 ```yaml
-  super_player:
-    git:
-      url: https://github.com/LiteAVSDK/Player_Flutter
-      path: Flutter
+super_player:
+  git:
+    url: https://github.com/tencentyun/SuperPlayer
+    path: Flutter
+```
+2. LiteAVSDK_Professional을 통합하려면 `pubspec.yaml`의 구성을 다음과 같이 변경하십시오:
+```yaml
+super_player:
+  git:
+    url: https://github.com/tencentyun/SuperPlayer
+    path: Flutter
+    ref: Professional
+```
+3. 종속성 패키지를 업데이트합니다:
+```yaml
+flutter packages get
 ```
 
-2. 종속성 패키지를 업데이트합니다.
-```yaml
-   flutter pub upgrade
-```
-4. 네이티브 구성을 추가합니다.
+### 기본 구성 추가
 
-### Android 구성[](id:Android_config)
-
-Android의 `AndroidManifest.xml` 파일에 다음 구성을 추가합니다.
-
+#### Android 구성
+Android의 `AndroidManifest.xml` 파일에 다음 구성을 추가합니다:
 ```xml
 <!--네트워크 권한-->
 <uses-permission android:name="android.permission.INTERNET" />
@@ -42,253 +58,204 @@ Android의 `AndroidManifest.xml` 파일에 다음 구성을 추가합니다.
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-Android에서 Superplayer는 기본 플레이어 SDK에 따라 다릅니다. 디렉터리의 `example/android/superplayerkit` 폴더를 프로젝트 디렉터리에 복사하고 `include ':superplayerkit'`을 `setings.gradle`에 삽입합니다. 공식 웹 사이트에서 적절한 버전을 다운로드하여 가져올 수도 있습니다.
-
-### iOS 구성[](id:iOS_config)
-
-iOS의 `Info.plist` 파일에 다음 구성을 추가합니다.
+#### iOS 구성
+1. iOS의 `Info.plist` 파일에 다음 구성을 추가합니다.
 ```xml
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+2. iOS는 기본적으로 종속성을 위해 `pod`를 사용합니다. `podfile` 파일을 편집하고 플레이어 SDK 버전을 지정하십시오. TXLiteAVSDK_Player는 기본적으로 통합되어 있습니다.
+```xml
+pod 'TXLiteAVSDK_Player'        //Player 에디션
+```
+3. SDK Professional Edition을 통합합니다:
+```
+pod 'TXLiteAVSDK_Professional' //Professional 에디션
 ```
 
-iOS는 기본적으로 종속성을 위해 `pod`를 사용합니다. `podfile` 파일을 편집하고 플레이어 버전을 지정하십시오.
-```xml
-pod 'SuperPlayer/Player', '3.3.9'
-```
+에디션을 지정하지 않으면 기본적으로 최신 버전의 `TXLiteAVSDK_Player`가 설치됩니다.
 
-버전을 지정하지 않으면 기본적으로 최신 버전의 `SuperPlayer`가 설치됩니다.
+### 통합에 대한 FAQ
+- `flutter doctor` 명령을 실행하여, “No issues found!”가 표시될 때까지 런타임 환경을 확인하십시오.
+- `flutter pub get`을 실행하여 모든 종속 컴포넌트가 성공적으로 업데이트되었는지 확인하십시오.
 
-### Flutter 호출[](id:Flutter_call)
 
+## VOD 플레이어 사용
+VOD 플레이어의 핵심 클래스는 `TXVodPlayerController`입니다. 자세한 Demo는 `DemoTXVodPlayer`를 참고하십시오.
 ```dart
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:super_player/super_player.dart';
 
-class TestSuperPlayer extends StatefulWidget {
+class Test extends StatefulWidget {
   @override
-  _TestSuperPlayerState createState() => _TestSuperPlayerState();
+  State<StatefulWidget> createState() => _TestState();
 }
 
-class _TestSuperPlayerState extends State<TestSuperPlayer> {
+class _TestState extends State<Test> {
+  late TXVodPlayerController _controller;
 
-  SuperPlayerViewConfig _playerConfig;
-  SuperPlayerViewModel _playerModel;
-  SuperPlayerPlatformViewController _playerController;
-  String _url = "http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid_demo1080p.flv";
-  int _appId = 0;
-  String _fileId = "";
+  double _aspectRatio = 16.0 / 9.0;
+  String _url =
+          "http://1400329073.vod2.myqcloud.com/d62d88a7vodtranscq1400329073/59c68fe75285890800381567412/adp.10.m3u8";
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _playerConfig = SuperPlayerViewConfig();
-    _playerModel = SuperPlayerViewModel();
-    _playerModel.videoURL = _url;
+    String licenceUrl = ""; // 획득한 licence url
+    String licenseKey = ""; // 획득한 licence key
+    SuperPlayerPlugin.setGlobalLicense(licenceUrl, licenseKey);
+    _controller = TXVodPlayerController();
+    initPlayer();
   }
 
- @override
+  Future<void> initPlayer() async {
+    await _controller.initialize();
+    await _controller.startPlay(_url);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            ackgroundColor: Colors.blueGrey,
-            title: const Text('SuperPlayer'),
-        ),
-        body: Builder(
-        builder: (context) =>
-        SafeArea(
-            child: Container(
-            color: Colors.blueGrey,
-            child: Column(
-                children: [
-                AspectRatio(
-                    aspectRatio: 16.0/9.0,
-                    child:SuperPlayerVideo(
-                        onCreated: (SuperPlayerPlatformViewController vc) {
-                            _playerController = vc;
-                            await _playerController.setPlayConfig(_playerConfig);
-                            await _playerController.playWithModel(_playerModel);// 재생 시작
-                        },
-                    )
-                ),
-                ],
-            ),
-            ),
-        )
-        ),
-    );
+    return Container(
+            height: 220,
+            color: Colors.black,
+            child: AspectRatio(aspectRatio: _aspectRatio, child: TXPlayerVideo(controller: _controller)));
   }
-
+}
 ```
-
-
-
-## 플레이어 사용[](id:usePlayer)
-
-플레이어의 메인 클래스는 `SuperPlayerVideo`이며, 비디오를 생성한 후 재생할 수 있습니다.
-
+## Superplayer 사용
+Superplayer의 핵심 클래스는 `SuperPlayerVideo`이며, 비디오를 생성한 후 재생할 수 있습니다.
 ```dart
+import 'package:flutter/material.dart';
+import 'package:super_player/super_player.dart';
+
+/// flutter superplayer demo
+class DemoSuperplayer extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _DemoSuperplayerState();
+}
+
+class _DemoSuperplayerState extends State<DemoSuperplayer> {
+  List<SuperPlayerModel> videoModels = [];
+  bool _isFullScreen = false;
+  SuperPlayerController _controller;
+
+  @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _playerConfig = SuperPlayerViewConfig();
-    _playerModel = SuperPlayerViewModel();
-    _playerModel.videoURL = _url;
+    String licenceUrl = "구매한 license의 url 입력";
+    String licenseKey = "구매한 license의 key 입력";
+    SuperPlayerPlugin.setGlobalLicense(licenceUrl, licenseKey);
+    _controller = SuperPlayerController(context);
+    FTXVodPlayConfig config = FTXVodPlayConfig();
+    config.preferredResolution = 720 * 1280;
+    _controller.setPlayConfig(config);
+    _controller.onSimplePlayerEventBroadcast.listen((event) {
+      String evtName = event["event"];
+      if (evtName == SuperPlayerViewEvent.onStartFullScreenPlay) {
+        setState(() {
+          _isFullScreen = true;
+        });
+      } else if (evtName == SuperPlayerViewEvent.onStopFullScreenPlay) {
+        setState(() {
+          _isFullScreen = false;
+        });
+      } else {
+        print(evtName);
+      }
+    });
+    initData();
   }
-```
 
-```dart
-@override
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            ackgroundColor: Colors.blueGrey,
-            title: const Text('SuperPlayer'),
-        ),
-        body: Builder(
-            builder: (context) =>
-                SafeArea(
-                    child: Container(
-                        color: Colors.blueGrey,
-                        child: Column(
-                            children: [
-                                AspectRatio(
-                                    aspectRatio: 16.0/9.0,
-                                    child:SuperPlayerVideo(
-                                        onCreated: (SuperPlayerPlatformViewController vc) {
-                                            _playerController = vc;
-                                            await _playerController.setPlayConfig(_playerConfig);
-                                            await _playerController.playWithModel(_playerModel);// 재생 시작
-                                        },
-                                    )
-                                ),
-                            ],
-                        ),
-                    ),
-                )
-        ),
-    );
-  }
-```
-
-코드를 실행하면 비디오가 휴대폰에서 재생되며, 인터페이스 대부분의 기능을 사용할 수 있음을 확인할 수 있습니다.
-
-
-
-## 다중 해상도[](id:resolution)
-
-상기 샘플 코드에는 하나의 해상도만 지정되어 있습니다. 여러 해상도를 추가하는 것은 쉽습니다. 예를 들어 [CSS 콘솔](https://console.cloud.tencent.com/live/livemanage)을 열고 재생할 라이브 스트림을 찾은 다음 세부 정보 페이지로 들어갑니다.
-
-
-여기에서 서로 다른 해상도와 형식에 대해 서로 다른 재생 주소가 제공됩니다. 재생에는 FLV 주소를 사용하는 것이 좋습니다. 코드는 다음과 같습니다.
-
-```dart
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _playerConfig = SuperPlayerViewConfig();
-    _playerModel = SuperPlayerViewModel();
-    SuperPlayerUrl url1 = SuperPlayerUrl();
-    url1.title = "FHD";
-    url1.url = "http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4.flv";
-
-    SuperPlayerUrl url2 = SuperPlayerUrl();
-    url2.title = "FHD";
-    url2.url = "http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4.flv";
-
-    SuperPlayerUrl url3 = SuperPlayerUrl();
-    url3.title = "FHD";
-    url3.url = "http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4.flv";
-
-    _playerModel.multiVideoURLs = [url1, url2, url3];
-    _playerModel.videoURL = url1.url;// 재생을 위한 기본 해상도 설정
-  }
-```
-
-```dart
-@override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
-        title: const Text('SuperPlayer'),
-      ),
-      body: Builder(
-        builder: (context) =>
-        SafeArea(
-          child: Container(
-            color: Colors.blueGrey,
-            child: Column(
-              children: [
-                AspectRatio(
-                    aspectRatio: 16.0/9.0,
-                    child:SuperPlayerVideo(
-                      onCreated: (SuperPlayerPlatformViewController vc) async {
-                        _playerController = vc;
-                        await _playerController.setPlayConfig(_playerConfig);
-                        await _playerController.playWithModel(_playerModel);// 재생 시작
-                      },
-                    )
-                ),
-              ],
+    return WillPopScope(
+        child: Container(
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: _isFullScreen
+                ? null
+                : AppBar(
+                    backgroundColor: Colors.transparent,
+                    title: const Text('SuperPlayer'),
+                  ),
+            body: SafeArea(
+              child: Builder(
+                builder: (context) => getBody(),
+              ),
             ),
           ),
-        )
+        ),
+        onWillPop: onWillPop);
+  }
+
+  Future<bool> onWillPop() async {
+    return !_controller.onBackPress();
+  }
+
+  Widget getBody() {
+    return Column(
+      children: [_getPlayArea()],
+    );
+  }
+
+  Widget _getPlayArea() {
+    return SuperPlayerView(_controller);
+  }
+
+  Widget _getListArea() {
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: ListView.builder(
+        itemCount: videoModels.length,
+        itemBuilder: (context, i) => _buildVideoItem(videoModels[i]),
       ),
     );
   }
 
+  Widget _buildVideoItem(SuperPlayerModel playModel) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ListTile(
+            leading: Image.network(playModel.coverUrl),
+            title: new Text(
+              playModel.title,
+              style: TextStyle(color: Colors.white),
+            ),
+            onTap: () => playCurrentModel(playModel)),
+        Divider()
+      ],
+    );
+  }
+
+  void playCurrentModel(SuperPlayerModel model) {
+    _controller.playWithModel(model);
+  }
+
+  void initData() async {
+    SuperPlayerModel model = SuperPlayerModel();
+    model.videoURL = "http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/48d0f1f9387702299774251236/gZyqjgaZmnwA.m4v";
+    model.playAction = SuperPlayerModel.PLAY_ACTION_AUTO_PLAY;
+    model.title = "Tencent Cloud 오디오/비디오";
+    _controller.playWithModel(model);
+  }
+}
 ```
 
-플레이어에서 이러한 해상도를 보고 클릭하여 전환할 수 있습니다.
+## 사용자 정의 개발 가이드 
 
-## 타임 시프트 재생[](id:timeShift)
+Flutter 플러그 인용 Player SDK는 기본 플레이어 기능을 캡슐화합니다. 심층 사용자 정의 개발을 위해 다음 방법을 사용하는 것이 좋습니다.
 
-플레이어에 대한 시간 이동을 활성화하는 것은 쉽고 재생하기 전에 appId를 구성하기만 하면 됩니다.
+- VOD 플레이어 SDK(API 클래스는 `TXVodPlayerController`) 또는 라이브 플레이어 SDK(API 클래스는 `TXLivePlayerController`)를 기반으로 사용자 정의 개발을 수행합니다. 이 프로젝트는 example 프로젝트의 `DemoTXVodPlayer` 및 `DemoTXLivePlayer`에서 사용자 정의 개발 Demo를 제공합니다.
 
-```dart
-SuperPlayerViewModel playModel = SuperPlayerViewModel();
-playModel.appId = 1252463788;// 사용자의 appID로 변경
-```
+- Superplayer 컴포넌트 `SuperPlayerController`는 플레이어 SDK를 캡슐화하고 간단한 UI 인터랙션을 제공합니다. 코드는 example 디렉터리에 있습니다. 다음과 같이 Superplayer 컴포넌트를 사용자 정의할 수 있습니다.
 
->?appId는 [Tencent Cloud 콘솔]>[[계정 정보](https://console.cloud.tencent.com/developer)]에서 볼 수 있습니다.
+  `exmple/lib/superplayer`의 Superplayer 컴포넌트 코드를 사용자 지정 개발을 위해 프로젝트에 복사합니다.
 
-재생 중인 라이브 스트림 아래에 진행률 표시줄이 표시되고 원하는 지점으로 탐색할 수 있습니다. [라이브 스트림으로 돌아가기]를 클릭하여 최신 라이브 스트림을 볼 수도 있습니다.
-
-
-
->?타임 시프트 기능은 현재 베타 테스트 중입니다. 사용이 필요한 경우에는 [티켓 제출](https://console.cloud.tencent.com/workorder)하여 신청하십시오.
-
-## FileId를 통한 재생
-url을 입력하여 해상도를 설정하는 것 외에도 더 쉬운 방법은 fileId를 통해 재생하는 것입니다. 이 fileId는 일반적으로 비디오가 업로드된 후 서버에서 반환됩니다.
-1. 비디오가 클라이언트에 게시된 후 서버는 클라이언트에 fileId를 반환합니다.
-2. 동영상이 서버에 업로드되면 업로드 확인 알림에 해당 fileId가 포함됩니다.
-
-
-파일이 이미 Tencent Cloud에 있는 경우 [미디어 자산](https://console.cloud.tencent.com/vod/media)으로 이동하여 찾을 수 있습니다. 클릭 후 오른쪽의 동영상 세부정보에서 appId 및 fileId 매개변수를 볼 수 있습니다.
-
-
-fileId를 통한 재생 코드는 다음과 같습니다.
-
-```dart
-SuperPlayerViewModel playModel = SuperPlayerViewModel();
-playModel.appId = 1252463788;// 사용자의 appID로 변경
-SuperPlayerVideoId videoId = SuperPlayerVideoId();
-videoId.fileId = "4564972819219071679";
-playModel.videoId = videoId;
-
-_playerController.playWithModel(playModel);
-```
-
-비디오가 업로드되면 백엔드에서 자동으로 트랜스 코딩됩니다(모든 트랜스 코딩 형식은 [트랜스 코딩 템플릿](https://console.cloud.tencent.com/vod/video-process/template) 참고). 트랜스 코딩이 완료되면 플레이어는 자동으로 여러 해상도를 표시합니다.
-
-## 더 많은 기능[](id:moreFeature)
+## 추가 기능
 
 전체 기능을 사용하려면 비디오 클라우드 툴 킷을 다운로드하거나 프로젝트 Demo를 직접 실행하십시오.
 <img src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png" width="150">

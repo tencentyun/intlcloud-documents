@@ -1,14 +1,7 @@
 ## 제품 개요
 Android용 Tencent Cloud RT-Cube Superplayer는 Tencent Cloud의 오픈 소스 플레이어 컴포넌트입니다. 품질 모니터링, 비디오 암호화, TESHD, 해상도 전환 및 작은 창 재생을 통합하며 모든 VOD 및 라이브 재생 시나리오에 적합합니다. 전체 기능을 캡슐화하고 상위 계층 UI를 제공하여 인기 있는 비디오 App과 유사한 재생 프로그램을 빠르게 구축할 수 있습니다.
 
-## 버전 지원
-본 문서에서 설명된 기능에 대한 Tencent Cloud RT-Cube 지원 현황은 다음과 같습니다.
-
-| 버전 | Smart | Live | UGSV(User Generated Short Video) | TRTC(Tencent Real-Time Communication) | Player | 모든 기능 |
-| -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-| 지원 | -  | -  | -  | -  | &#10003;  | &#10003;                                                            |
-| SDK 다운로드 | [다운로드](https://vcube.cloud.tencent.com/home.html?sdk=basicLive) | [다운로드](https://vcube.cloud.tencent.com/home.html?sdk=interactivelive) | [다운로드](https://vcube.cloud.tencent.com/home.html?sdk=shortVideo) | [다운로드](https://vcube.cloud.tencent.com/home.html?sdk=video) | [다운로드](https://vcube.cloud.tencent.com/home.html?sdk=player) | [다운로드](https://vcube.cloud.tencent.com/home.html?sdk=allPart) |
-
+Superplayer 컴포넌트가 커스텀 니즈를 충족할 수 없고 개발 경험이 있는 경우 Player SDK를 통합하여 플레이어 UI 및 재생 기능을 사용자 정의할 수 있습니다.
 
 ## 준비 작업
 1. 완전한 플레이어 기능을 사용하려면 [VOD](https://intl.cloud.tencent.com/product/vod)를 활성화하는 것이 좋습니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login) 하십시오. VOD 서비스를 사용하지 않는 경우 이 단계를 건너뛰십시오. 그러나 통합 후에는 기본 플레이어 기능만 사용할 수 있습니다.
@@ -289,17 +282,16 @@ mSuperPlayerView.playWithModel(model);
 ```
 :::
 ::: FileID를 통한 VOD 재생[](id:fileid)
-비디오 FileId는 일반적으로 비디오 업로드 후 서버에서 반환됩니다.
+비디오 FileId는 일반적으로 비디오 업로딩 후 서버에서 반환됩니다.
 1. 클라이언트에서 비디오 배포 후 서버가 FileId를 클라이언트로 반환합니다.
-2. 비디오가 서버에 업로드되면 해당 FileId가 업로드 확인 알림에 포함됩니다.
+2. 비디오가 서버에 업로드되면 업로드 확인 알림에 해당 FileId가 포함됩니다.
 
 Tencent Cloud에 이미 파일이 존재하는 경우에는 [미디어 자산 관리](https://console.cloud.tencent.com/vod/media)에서 해당 파일을 찾아 FileId를 조회할 수 있습니다. 아래 이미지와 같이 ID는 FileId를 나타냅니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
-
->!
->- FileID를 통해 재생하려면 먼저 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 Superplayer 서명 psign을 사용하여 재생할 비디오를 지정해야 합니다. 그렇지 않으면 비디오가 재생되지 않을 수 있습니다. 비디오를 트랜스 코딩하는 방법에 대한 자세한 내용은 [Superplayer로 비디오 재생](https://intl.cloud.tencent.com/document/product/266/38098)을 참고하십시오. psign을 생성하는 방법에 대한 자세한 내용은 [Superplayer 서명](https://intl.cloud.tencent.com/document/product/266/38099)을 참고하십시오.
->- FileID를 통한 재생 중 ‘no v4 play info’ 예외가 발생하면 위와 같은 문제가 있을 수 있습니다. 이 경우 상기 지침에 따라 조정하는 것이 좋습니다. [URL](#url)을 통해 재생할 원본 비디오의 재생 링크를 직접 얻을 수도 있습니다.
->- **트랜스 코딩되지 않은 원본 비디오는 재생 중에 호환성 문제가 발생할 수 있으므로 재생을 위해 비디오를 트랜스 코딩하는 것이 좋습니다.**
+<dx-alert infotype="notice">
+<li>FileID를 통해 재생하려면 먼저 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 Superplayer 서명 psign을 사용하여 재생할 비디오를 지정해야 합니다. 그렇지 않으면 비디오가 재생되지 않을 수 있습니다. 비디오를 트랜스 코딩하는 방법에 대한 자세한 내용은 [Superplayer로 비디오 재생](https://intl.cloud.tencent.com/document/product/266/38098)을 참고하십시오. psign을 생성하는 방법에 대한 자세한 내용은 [Superplayer 서명](https://intl.cloud.tencent.com/document/product/266/38099)을 참고하십시오.</li>
+<li>FileID를 통한 재생 중 ‘no v4 play info’ 예외가 발생하면 위와 같은 문제가 있을 수 있습니다. 이 경우 상기 지침에 따라 조정하는 것이 좋습니다. [URL](#url)을 통해 재생할 원본 비디오의 재생 링크를 직접 얻을 수도 있습니다.</li>
+<li>**트랜스 코딩되지 않은 원본 비디오는 재생 중에 호환성 문제가 발생할 수 있으므로 재생을 위해 비디오를 트랜스 코딩하는 것이 좋습니다.**</li></dx-alert>
 <dx-codeblock>
 :::  java
 //링크 도용 방지가 비활성화된 재생 중에 ‘no v4 play info’ 예외가 발생하면 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 URL을 통해 재생할 원본 비디오의 재생 링크를 직접 가져오는 것이 좋습니다.
@@ -404,9 +396,8 @@ public void onQualityChange(VideoQuality quality) {
 
 ### 2. 플로팅 창 재생
 Superplayer는 사용자가 비디오 재생을 중단하지 않고 다른 앱으로 전환할 수 있도록 하는 작은 플로팅 창에서 재생을 지원합니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **플레이어** > **Superplayer**에서 왼쪽 상단 모서리에 있는 **Back**을 탭하여 사용해 볼 수 있습니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:25%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
 플로팅 창 재생은 AndroidManifest의 다음 권한에 의존합니다.
-
 ```java
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 ```
@@ -423,7 +414,7 @@ Superplayer는 첫 번째 비디오 프레임을 재생 콜백 수신 이전에 
 
 
 
-* Superplayer가 자동 재생 모드 `PLAY_ACTION_AUTO_PLAY`로 설정되면 비디오가 자동으로 재생되고 첫 번째 비디오 프레임이 로딩되기 전에 미리보기 이미지가 표시됩니다.
+* Superplayer가 자동 재생 모드 `PLAY_ACTION_AUTO_PLAY`로 설정되면 비디오가 자동으로 재생되고 첫 번째 비디오 프레임이 로딩되기 전에 미리보기 이미지가 표시됩니다;
 * Superplayer가 수동 재생 모드 `PLAY_ACTION_MANUAL_PLAY`로 설정된 경우 사용자가 **재생**을 탭한 후에만 비디오 재생이 시작됩니다. 썸네일은 첫 번째 비디오 프레임이 로딩될 때까지 표시됩니다.
 
 비디오 썸네일은 아래 지침에 따라 URL 또는 로컬 File 주소 사용을 지원합니다. FileID를 통해 비디오를 재생하면 VOD에서 비디오 썸네일을 직접 구성할 수 있습니다.
@@ -485,6 +476,8 @@ API 매개변수 설명
 ### 5. 비디오 미리보기
 
 Superplayer는 비VIP 회원 미리보기에 적합한 비디오 미리보기 기능을 지원합니다. 비디오 미리보기 지속 시간, 프롬프트 메시지 및 미리보기 최종 화면을 제어하기 위해 다른 매개변수를 전달할 수 있습니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **플레이어** > **Superplayer** > **미리보기 기능 데모**에서 사용해 볼 수 있습니다.
+
+
 
 ```java
  방법1:

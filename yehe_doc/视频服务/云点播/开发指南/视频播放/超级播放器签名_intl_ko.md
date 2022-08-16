@@ -2,15 +2,16 @@ Superplayer 서명은 App 재생 서비스가 클라이언트에 재생 권한�
 <img src="https://main.qcloudimg.com/raw/e5ae52f1b5f15f289b6f54aa28917da4.png" width="700" />
 
 >! 다음과 같은 경우 App 클라이언트는 비디오를 재생하기 위해 Superplayer 서명이 필요합니다.
->- 도메인 이름에  [KEY 링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986)가 활성화되어 있습니다.
->- default 이외의 [Superplayer 설정](https://intl.cloud.tencent.com/document/product/266/38296)이 사용됩니다.
->- [암호화](https://intl.cloud.tencent.com/document/product/266/38294)된 비디오가 재생됩니다.
+
+* 도메인 이름에  [KEY 링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986)가 활성화되어 있습니다.
+* default 이외의 [Superplayer 설정](https://intl.cloud.tencent.com/document/product/266/38296)이 사용됩니다.
+* [암호화](https://intl.cloud.tencent.com/document/product/266/38294)된 비디오가 재생됩니다.
 
 Superplayer 서명 매개변수 및 생성 규칙은 다음과 같습니다.
 
 ## 서명 매개변수
 
-| 매개변수 이름 | 필수 | 유형 | 설명 |
+| 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 | -- | -- | -- | -- |
 | appId | Yes | Integer | 계정 appId|
 | fileId | Yes | String | 파일 ID|
@@ -20,26 +21,25 @@ Superplayer 서명 매개변수 및 생성 규칙은 다음과 같습니다.
 | urlAccessInfo | No | Object | [UrlAccessInfo 유형](#p1)에 있는 재생 링크의 링크 도용 방지 설정 매개변수입니다. |
 | drmLicenseInfo | No | Object | [DrmLicenseInfo 유형](#p2)에 있는 암호화된 콘텐츠의 주요 설정 매개변수입니다. |
 
-<span id = "p1"></span>
-#### UrlAccessInfo 유형
+#### UrlAccessInfo 유형[](id:p1)
 
-| 매개변수 이름 | 필수 | 유형 | 설명 |
+| 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 | -- | -- | -- | -- |
 | t | No | String | <ul style="margin:0;"><li>링크 만료 시간을 나타내는 16진수 문자열.</li><li>특정 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 t 매개변수를 참고하십시오.</li><li>이 매개변수를 비워두면 링크가 만료되지 않습니다.</li>|
 | exper | No | Integer | <ul style="margin:0;"> <li>미리보기 시간(초 단위, 십진수). </li><li>미리보기 시간을 지정하려면 30초 이상이어야 합니다.</li><li>특정 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 exper 매개변수를 참고하십시오.</li> |
 | rlimit | No | Integer | <ul style="margin:0;"><li>재생에 허용되는 서로 다른 IP를 가진 클라이언트의 최대 십진수</li><li>구체적인 설명과 유효 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 rlimit 매개변수를 참고하십시오.</li> |
 | us | No | String | <ul style="margin:0;"><li>링크를 고유하게 식별할 수 있는 링크 ID</li><li>구체적인 설명과 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 us 매개변수를 참고하십시오.</li> |
+| uid | No | String | <ul style="margin:0;"><li>비디오를 재생하는 사용자의 ID로, 8자리의 16진법을 포함해야 합니다. 이 매개변수는 [Digital Watermark](https://intl.cloud.tencent.com/document/product/266/47920) 기능에 사용됩니다.</li><li>구체적인 설명 및 값 범위는 [링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 uid 매개변수를 참고하십시오.</li> |
 
-<span id = "p2"></span>
-#### DrmLicenseInfo 유형
+#### DrmLicenseInfo 유형[](id:p2)
 
-| 매개변수 이름 | 필수 | 유형 | 설명 |
+| 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 | -- | -- | -- | -- |
 | expireTimeStamp | No | Integer | Unix 키 만료 타임스탬프. 이 매개변수를 비워두면 서명이 만료되지 않습니다. |
 
 >?
 >- [서브 애플리케이션](https://intl.cloud.tencent.com/document/product/266/33987)을 사용한 경우 서브 애플리케이션의 AppId를 appId 매개변수로 설정합니다.
->- 서명 매개변수의 `t`, `exper`, `rlimit` 및 `us`의 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 설명과 동일합니다.
+>- 서명 매개변수의 `t`, `exper`, `rlimit`, `us` 및 `uid`의 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 설명과 동일합니다.
 
 ## 서명 계산
 
@@ -69,7 +69,8 @@ PayLoad는 JSON 형식이며 Superplayer 서명 매개변수를 나타냅니다.
   "urlAccessInfo": {
     "t": "5c2b5640",
     "rlimit": 3,
-    "us": "72d4cd1101"
+    "us": "72d4cd1101",
+    "uid": "1234abcd"
   }
 }
 ```
@@ -124,20 +125,17 @@ base64UrlEncode를 통해 처리된 결과는 다음과 같습니다.
   "urlAccessInfo": {
     "t": "5c2b5640",
     "rlimit": 3,
-    "us": "72d4cd1101"
+    "us": "72d4cd1101",
+    "uid": "1234abcd"
   }
 }
 ```
 base64UrlEncode를 통해 처리된 결과는 다음과 같습니다.
-```
-eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ
-```
+`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19`.
 3. `24FEQmTzro4V5u3D5epW`를 KEY로 사용하여 HMAC 계산을 수행하면 Signature는 다음과 같습니다.
-`TRdfy-ctQFRDJzknfKsT0di5tEaweAVumOgxsA8Qd-8`.
+`j3WJ9W3V4ve_N_Z157_B9AKkT0GhSmGAEdhv6YtoZSY`.
 4. 최종 Token은 다음과 같습니다.
-```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.TRdfy-ctQFRDJzknfKsT0di5tEaweAVumOgxsA8Qd-8
-```
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19.j3WJ9W3V4ve_N_Z157_B9AKkT0GhSmGAEdhv6YtoZSY`.
 
 ## 코드 예시
 
