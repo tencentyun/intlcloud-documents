@@ -23,6 +23,7 @@ The **Exception Diagnosis** tab displays **CPU Utilization**, **Memory Utilizati
    - Description: Includes problem snapshots and performance trends of the exception or health inspection event.
    - Intelligent Analysis: Analyzes the root cause of the performance exception to help you locate the specific operation.
    - Optimization Suggestion: Provides optimization suggestions, including but not limited to SQL optimization (index and rewrite), resource configuration optimization, and parameter fine-tuning.
+  ![](https://main.qcloudimg.com/raw/a4ea4112eb5d5899b5d65089f51848da.png)
 Click **Optimization Comparison** on the **Optimization Suggestion** tab. In the pop-up window, you can view the SQL statement's execution plan, index advice, table structure, and performance before and after SQL optimization.
 The performance of an optimized SQL statement is estimated based on the analysis of the statistics of database tables related to the statement, the OPTIMIZER_SWITCH configuration, and the index selectivity. A chart is used to visually show the decrease in the performance. You can also compare the execution plans before and after SQL optimization to further verify the optimization results.
 
