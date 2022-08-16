@@ -25,7 +25,7 @@ DBbrain allows you to kill sessions for easier session management.
 **Kill current sessions**
 Select target sessions and click **Kill Session**.
 You can kill 1–100 sessions at a time.
-![](https://qcloudimg.tencent-cloud.cn/raw/a23d6d6b859a22ed7f26f2ca6d2a52d5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f1ccf99011676360fb1eafc6f9bd3da1.png)
 **Kill sessions during a period**
 DBbrain offers the feature of killing sessions during a period. You can set the conditions for killing sessions, so that when the conditions are met, sessions will be killed automatically.
 
