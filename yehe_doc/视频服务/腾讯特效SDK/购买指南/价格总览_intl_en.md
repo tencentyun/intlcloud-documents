@@ -160,7 +160,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Advanced shaping</b><br>Eye enlarging, face narrowing, face slimming (natural, attractive, and handsome), chin slimming, chin adjustment, face shortening, face shape adjustment, hairline adjustment, eye enlarging, eye brightening, eye distance adjustment, eye tilting, nose slimming, nose wing narrowing, cheekbone slimming, nose position adjustment, teeth whitening, wrinkle removal, smile line removal, eye bag removal, mouth shape adjustment, lip thickness adjustment, lipstick, blush, and facial contouring</td>
+<td><b>Advanced shaping</b><br>Eye enlarging, face narrowing, face slimming (natural, attractive, and handsome), chin slimming, chin adjustment, face shortening, face shape adjustment, hairline adjustment, eye brightening, eye distance adjustment, eye tilting, nose slimming, nose wing narrowing, cheekbone slimming, nose position adjustment, teeth whitening, wrinkle removal, smile line removal, eye bag removal, mouth shape adjustment, lip thickness adjustment, lipstick, blush, and facial contouring</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
