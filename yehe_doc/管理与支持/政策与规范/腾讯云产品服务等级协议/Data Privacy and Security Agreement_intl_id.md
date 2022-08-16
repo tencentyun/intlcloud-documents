@@ -146,7 +146,7 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 43.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48290).
 44.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47315).
 45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48828).
-
+46.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49155).
 ## Persyaratan khusus yurisdiksi
 
 
