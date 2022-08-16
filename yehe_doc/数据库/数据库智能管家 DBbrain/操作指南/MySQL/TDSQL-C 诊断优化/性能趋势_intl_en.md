@@ -249,7 +249,7 @@ DBbrain's performance trends feature not only supports the selection of multiple
      - The real-time performance trends view displays the performance trends of the instance and is automatically refreshed by default. You can click **Disable refresh** to stop refreshing the trends in real time.
 ![](https://main.qcloudimg.com/raw/81e13852a0356469df194eb685f2a12a.png)
      - In the historical performance trends view, you can select a time range (**Last hour**, **Last 3 hours**, **Last 24 hours**, **Last 7 days**, or a custom time range) to display the performance trends over the selected time range.
-![](https://main.qcloudimg.com/raw/696f8ccd768423e1aefaed587e8da3c2.png)
+![](https://main.qcloudimg.com/raw/8883b09c4f7b2b28b60299ba61c6b5d7.png)    
         Click **Add Time Comparison** and select the desired time range for comparison to view the time comparison of multiple performance metric trends.
-![](https://main.qcloudimg.com/raw/8883b09c4f7b2b28b60299ba61c6b5d7.png)       
+![](https://main.qcloudimg.com/raw/696f8ccd768423e1aefaed587e8da3c2.png)   
         
