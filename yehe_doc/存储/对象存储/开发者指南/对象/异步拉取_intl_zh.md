@@ -5,7 +5,8 @@
 
 ## 为 COS 服务角色授权 
 
-异步拉取功能需要授权 COS 服务角色将指定源站的数据上传到指定的存储桶中，因此需要用户在存储桶中添加对应的存储桶策略。策略语法如下：
+异步拉取功能需要授权 COS 服务角色将指定源站的数据上传到指定的存储桶中，因此需要用户在存储桶中添加对应的存储桶策略。
+策略语法如下：
 
 ```
 {
@@ -53,7 +54,7 @@
 
 ### 使用 REST API
 
-您可以直接使用 REST API 发起异步拉取请求，详情请参见 [查询进度](https://intl.cloud.tencent.com/document/product/436/39775) 和 [发起离线回源](https://intl.cloud.tencent.com/document/product/436/39774)。
+您可以直接使用 REST API 发起异步拉取请求，详情请参见 [查询进度](https://intl.cloud.tencent.com/document/product/436/39775) 和 [发起离线回源](https://intl.cloud.tencent.com/document/product/436/39774) API 文档。
 
 ### 使用 SDK
 
