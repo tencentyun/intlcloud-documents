@@ -9,7 +9,7 @@
 -----
 
 ## 2. 云数据库 MySQL 的计费模式
-云数据库 MySQL 的计费模式为**按量计费**。您需要全面了解云数据库 MySQL 的计费模式，有利于您选择最优的计费方案。详情请参见 [计费概述](https://buy.cloud.tencent.com/price/cdb/overview)。
+云数据库 MySQL 的计费模式分为**按量计费**和**包年包月**。您需要全面了解云数据库 MySQL 的计费模式，有利于您选择最优的计费方案。详情请参见 [计费概述](https://buy.intl.cloud.tencent.com/price/cdb/overview)。
 
 -----
 
@@ -17,10 +17,8 @@
 #### 3.1 购买 MySQL 实例
 在使用云数据库 MySQL 之前，您需要注册腾讯云账号并且购买云数据库 MySQL 服务。详情请参见 [创建 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37785)。
 
-#### 3.2 初始化 MySQL 实例
-购买实例后，您需初始化 MySQL 实例。详情请参见 [初始化 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/3128)。
 
-#### 3.3 连接 MySQL 实例
+#### 3.2 连接 MySQL 实例
 初始化实例后，您可通过 Windows 云服务器或 Linux 云服务器，以内外网两种不同的方式访问云数据库 MySQL。详情请参见 [连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37788)。
 
 -----
