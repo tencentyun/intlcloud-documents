@@ -8,7 +8,7 @@ Sign up for a Tencent Cloud account as instructed in [Signing up for a Tencent C
 
 The account created when you [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) is the root account, which has the management permissions of all resources under it. If you need your team members to assist you in managing resources under your account, you can use the CAM feature to create one or more sub-accounts, bind permission policies to them, and then assign them to team members. For detailed directions, see [Creating Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
 
-A newly created sub-account has no permissions by default and requires the root account or admin to bind a policy to it before it can have the operation permissions of certain resources. You can configure access to IMS with CAM for sub-accounts as instructed in [CAM Authorization Guide](https://intl.cloud.tencent.com/document/product/1122/43814).
+A newly created sub-account has no permissions by default and requires the root account or admin to bind a policy to it before it can have the operation permissions of certain resources. You can configure access to IMS with CAM for sub-accounts as instructed in [CAM Authorization Guide](https://intl.cloud.tencent.com/document/product/1122/43794).
 
 ## Step 3. Activate the service
 
