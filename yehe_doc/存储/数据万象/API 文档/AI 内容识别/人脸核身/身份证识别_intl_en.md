@@ -3,7 +3,7 @@ This feature can recognize all fields on the front and back of a second-generati
 
 >?
 - Currently, the ID card recognition feature has the following image requirements: the image cannot exceed 7 MB after being Base64-encoded. A resolution above 500x800 is recommended. PNG, JPG, JPEG, and BMP image are supported. We recommend that the card part occupy more than 2/3 area of the image.
-- ID card recognition is a paid service. For billing details, see [Content Recognition Fees](https://cloud.tencent.com/document/product/460/58118).
+- ID card recognition is a paid service. For billing details, see Content Recognition Fees.
 - This feature currently can be used only through APIs.
 
 ## Request
@@ -19,7 +19,10 @@ Authorization: <Auth String>
 
 ```
 
-> ?Authorization: Auth String (for more information, see [Request Signature](https://cloud.tencent.com/document/product/436/7778)).
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Processing in-cloud data
 This feature can process an ID card image stored in COS and return the recognition result.
@@ -32,7 +35,10 @@ Authorization: <Auth String>
 
 ```
 
-> ?Authorization: Auth String (for more information, see [Request Signature](https://cloud.tencent.com/document/product/436/7778)).
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request parameters
 
@@ -47,7 +53,7 @@ Authorization: <Auth String>
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/460/42865).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -57,7 +63,7 @@ This request does not have a request body.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/460/42866). 
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610). 
 
 #### Response body
 
@@ -149,7 +155,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 ## Error Codes
 
-The following only lists the error codes for the business logic of this API. For other errors, see [Error Codes](https://cloud.tencent.com/document/product/460/42867).
+The following only lists the error codes for the business logic of this API. For other errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
 | Error Code | Description |
 | :----------------- | :------- |

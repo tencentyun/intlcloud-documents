@@ -28,8 +28,10 @@ Date: <GMT Date>
 Authorization: <Auth String>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/1045/33452)).
->
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 
 #### Request parameters
@@ -226,7 +228,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 	<RequestId>NTk0MjdmODlfMjQ4OGY3XzYzYzhf****</RequestId>
 	<TextDetections>
 		<Confidence>99</Confidence>
-		<DetectedText>Hello</DetectedText>
+		<DetectedText>你好</DetectedText>
 		<ItemPolygon>
 			<Height>64</Height>
 			<Width>123</Width>
@@ -250,7 +252,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			<Y>231</Y>
 		</Polygon>
 		<Words>
-			<Character>You</Character>
+			<Character>你</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -272,7 +274,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			</WordCoordPoint>
 		</Words>
 		<Words>
-			<Character>OK</Character>
+			<Character>好</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -296,7 +298,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 	</TextDetections>
 	<TextDetections>
 		<Confidence>99</Confidence>
-		<DetectedText>See you</DetectedText>
+		<DetectedText>再见</DetectedText>
 		<ItemPolygon>
 			<Height>43</Height>
 			<Width>245</Width>
@@ -320,7 +322,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			<Y>1487</Y>
 		</Polygon>
 		<Words>
-			<Character>See</Character>
+			<Character>再</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -342,7 +344,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			</WordCoordPoint>
 		</Words>
 		<Words>
-			<Character>You</Character>
+			<Character>见</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>

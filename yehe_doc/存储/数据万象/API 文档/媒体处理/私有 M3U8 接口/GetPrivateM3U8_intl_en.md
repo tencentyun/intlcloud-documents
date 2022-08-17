@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`GetPrivateM3U8`) is used to obtain the download authorization for M3U8 and TS resources (requests are forwarded to CI by COS).
+This API (`GetPrivateM3U8`) is used to get the download authorization for M3U8 and TS resources (requests are forwarded to CI by COS).
 
 ## Request
 
@@ -15,21 +15,24 @@ Content-Length: <length>
 
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request parameters
 
-The nodes are described as follows:
+The parameters are as described below:
 
 | Parameter | Description | Type | Required |
 |:--- | :--- | :--- | :--- |
-| ci-process | Operation type. Fixed to `pm3u8`. | String | Yes |
-| expires | Relative validity period of the download credential for the private TS resource URL, in seconds. Value range: [3600, 43200] | String | Yes |
+| ci-process | Operation type, which is fixed at `pm3u8`. | String | Yes |
+| expires | Relative validity period of the download credential for the private TS resource URL in seconds. Value range: [3600, 43200]. | String | Yes |
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 
 #### Request body
@@ -40,16 +43,16 @@ This request does not have a request body.
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body is the screenshot file content.
 
 #### Error codes
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
 
-## Examples
+## Samples
 
 #### Request
 
