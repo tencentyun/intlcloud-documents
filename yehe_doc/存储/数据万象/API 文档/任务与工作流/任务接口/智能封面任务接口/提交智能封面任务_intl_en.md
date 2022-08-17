@@ -17,13 +17,17 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product//436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
+
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product//1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -64,9 +68,9 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | Job type. Valid values: Transcode (transcoding), Animation (animated image), SmartCover (intelligent thumbnail), Snapshot (screenshot), Concat (splicing)                                 | String    | Yes   |
+| Tag                | Request | Job type. Valid values: Transcode (transcoding), Animation (animated image), SmartCover (intelligent thumbnail), Snapshot (screenshot), Concat (splicing).                                 | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to six operation rules are supported.                                                | Container | Yes   |
+| Operation          | Request | Operation rule. Up to six jobs can be performed on the same file.                                                | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
 | CallBack           | Request | Callback address                                                | String    | No   |
 
@@ -109,7 +113,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product//1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -165,16 +169,16 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
+| Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
+| Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag | Response.JobsDetail | Job type. Valid values: Transcode (transcoding), Animation (animated image), SmartCover (intelligent thumbnail), Snapshot (screenshot), Concat (splicing)                                 | String    |
-| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
+| Tag | Response.JobsDetail | Job type. Valid values: Transcode (transcoding), Animation (animated image), SmartCover (intelligent thumbnail), Snapshot (screenshot), Concat (splicing).                                 | String    |
+| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel. |  String |
 | CreationTime | Response.JobsDetail | Job creation time |  String |
 | EndTime | Response.JobsDetail | Job end time |  String |
 | QueueId            | Response.JobsDetail | Queue ID of the job                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the job                   | Container |
-| Operation | Response.JobsDetail | Operation rule. Up to six operation rules are supported. |  Container |
+| Operation | Response.JobsDetail | Operation rule. Up to six jobs can be performed on the same file. |  Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -191,13 +195,13 @@ Same as the `Request.Input` node in the request.
 Same as the `Request.Operation.Output` node in the request.
 
 `MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
+Same as the `Response.MediaInfo` node in the [GenerateMediaInfo](https://intl.cloud.tencent.com/document/product/1045/48569) API.
 
 #### Error codes
 
-There are no special error messages for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product//1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
 **Using a template ID**
 

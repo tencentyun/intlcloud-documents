@@ -33,7 +33,10 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request headers
 
@@ -68,7 +71,7 @@ This request requires the following request body:
 
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | ---- |
@@ -94,7 +97,7 @@ The nodes are as described below:
 | Width                | Request.Snapshot | Width | String    | No   |  Original video width | <li>Value range: [128, 4096]</li><li>Unit: px</li><li>If only `Width` is set, `Height` is calculated according to the original video aspect ratio. </li>|
 | Height                | Request.Snapshot | Height | String    | No  | Original video height  | <li>Value range: [128, 4096]</li><li>Unit: px</li><li>If only `Height` is set, `Width` is calculated according to the original video aspect ratio.</li> |
 | CIParam              | Request.Snapshot | Screenshot processing parameter  | String    | No  | None  | <li>See [Scaling](https://intl.cloud.tencent.com/document/product/1045/33713).</li><li>Example: imageMogr2/format/png |
-| IsCheckCount         | Request.Snapshot | Whether to force check the number of screenshots | String    | No   | false  | <li>When the custom interval mode is used to take screenshots, if the video is not long enough to take `Count` screenshots, the average mode can be switched to to take `Count` screenshots. |
+| IsCheckCount         | Request.Snapshot | Whether to force check the number of screenshots | String    | No   | false  | <li>When the custom interval mode is used to take screenshots, if the video is not long enough to take `Count` screenshots, the average mode can be switched to for taking `Count` screenshots. |
 | IsCheckBlack         | Request.Snapshot | Whether to enable black screen check | String    | No   | false  | true/false |
 | BlackLevel           | Request.Snapshot | Screenshot black screen check parameter  | String    | No   | None  | <li>Valid when `IsCheckBlack` is `true`.</li><li>Value range: [30,100], indicating the proportion of black pixels. The smaller the value, the smaller the proportion of black.</li><li> If `Start` is > 0, this parameter doesn't work, and black screen will not be checked.</li><li>If `Start` is 0, this parameter is valid, and frame capturing will start from the first non-black frame.  |
 | PixelBlackThreshold  | Request.Snapshot | Screenshot black screen check parameter  | String    | No   | None  | <li>Valid when `IsCheckBlack` is `true`.</li><li>The threshold to determine whether a pixel is black. Value range: [0, 255].  |

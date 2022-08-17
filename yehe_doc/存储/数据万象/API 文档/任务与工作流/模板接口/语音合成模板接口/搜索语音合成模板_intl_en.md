@@ -18,7 +18,7 @@ Content-Type: application/xml
 
 >? 
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -37,8 +37,8 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---           |:--       |:--                    |   :--     |   :--    |
 | Tag           | None        | Template type: Tts       | String    | Yes |
-| Category      | None   | Template category: Custom (default) or Official | String    |Yes|
-| Ids           | None        | Template ID. If you enter multiple IDs, separate them with commas (,).  | String     |No|
+| Category      | None   | Template category: `Custom`, `Official`. Default value: `Custom`. | String    |Yes|
+| Ids           | None        | Template ID. If you enter multiple IDs, separate them by comma.  | String     |No|
 | Name          | None        | Template name prefix              | String     |No|
 | PageNumber    | None        | Page number                   | Integer     |No|
 | PageSize      | None        | Number of entries per page                 | Integer     |No|

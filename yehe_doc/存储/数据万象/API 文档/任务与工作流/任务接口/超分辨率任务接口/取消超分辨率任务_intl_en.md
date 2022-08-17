@@ -1,5 +1,5 @@
 ## Feature Description
-This API (`CancelMediaJob`) is used to cancel a task.
+This API (`CancelMediaJob`) is used to cancel a job.
 
 ## Request
 
@@ -13,12 +13,16 @@ Authorization: <Auth String>
 
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request does not have a request body.
@@ -28,23 +32,23 @@ This request does not have a request body.
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 This request has no response body.
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 
 ```shell
 PUT /jobs/j-xxx-xxx-xxx-xxxx?cancel HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
 
 ```
 
@@ -59,4 +63,5 @@ Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 ```
+
 

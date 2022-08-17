@@ -17,12 +17,15 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -55,14 +58,14 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :---------------------------------------- | :-------- | ---- |
-| Request            | None | Request container | Container | Yes   |
+| Request            | None     | Request container | Container | Yes   |
 
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | Task type: Watermark                                   | String    | Yes   |
-| Name               | Request | Template name. The value can contain only Chinese characters, letters, digits, underscores (_), hyphens (-), and asterisks (\*).                                             | String    | Yes   |
+| Tag                | Request | Template type: Watermark                                   | String    | Yes   |
+| Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       |
 | Watermark           | Request| Watermark information                                              | Container | Yes   |
 
 
@@ -75,8 +78,8 @@ The nodes are described as follows:
 | LocMode             | Request.Watermark | Offset mode    | String    | Yes   | None  | <li>Relativity: proportionally<li>Absolute: fixed position |
 | Dx                  | Request.Watermark | Horizontal offset    | String    | Yes   | None  | 1. Image watermark with `Background` being `true`: If `locMode` is `Relativity`, the unit is %, and the value range is [-300, 0]. If `locMode` is `Absolute`, the unit is px, and the value range is [-4096, 0]. <br/> 2. Image watermark with `Background` being `false`: If `locMode` is `Relativity`, the unit is %, and the value range is [0, 100]. If `locMode` is `Absolute`, the unit is px, and the value range is [0, 4096].<br/>3. Text watermark: If `locMode` is `Relativity`, the unit is %, and the value range is [0, 100]. If `locMode` is `Absolute`, the unit is px, and the value range is [0, 4096]. |
 | Dy                  | Request.Watermark | Vertical offset    | String    | Yes   | None  | 1. Image watermark with `Background` being `true`: If `locMode` is `Relativity`, the unit is %, and the value range is [-300, 0]. If `locMode` is `Absolute`, the unit is px, and the value range is [-4096, 0]. <br/> 2. Image watermark with `Background` being `false`: If `locMode` is `Relativity`, the unit is %, and the value range is [0, 100]. If `locMode` is `Absolute`, the unit is px, and the value range is [0, 4096].<br/>3. Text watermark: If `locMode` is `Relativity`, the unit is %, and the value range is [0, 100]. If `locMode` is `Absolute`, the unit is px, and the value range is [0, 4096]. |
-| StartTime           | Request.Watermark | Watermark start time | String    | No   | 0   | <li>[0, Video duration] <br/><li>Unit: second <br/><li>Supports the float format, accurate to milliseconds. |
-| EndTime             | Request.Watermark | Watermark end time | String    | No   | Video end time  | <li>[0, Video duration] <br/><li>Unit: second <br/><li>Supports the float format, accurate to milliseconds. |
+| StartTime           | Request.Watermark | Watermark start time | String    | No   | 0   | <li>[0, video duration] <br/><li>Unit: second <br/><li>Supports the float format, accurate to the millisecond. |
+| EndTime             | Request.Watermark | Watermark end time | String    | No   | Video end time  | <li>[0, video duration] <br/><li>Unit: second <br/><li>Supports the float format, accurate to the millisecond. |
 | Image               | Request.Watermark | Image watermark node | Container    | No   | None  | None |
 | Text                | Request.Watermark | Text watermark node | Container    | No   | None  | None |
 
@@ -85,23 +88,23 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | ------------------  | ------- | -------------------------------------------------------- | --------- | ---- |---| ---- |
-| Url                 | Request.Watermark.<br/>Image | Watermark image address   | String    | Yes   | None  | If the watermark image is a private object, the URL must contain a signature. |
+| Url                 | Request.Watermark.<br/>Image | Watermark image URL   | String    | Yes   | None  | If the watermark image is a private object, the URL must contain a signature. |
 | Mode                 | Request.Watermark.<br/>Image | Dimension mode    | String    | Yes   | None   | <li>Original: original size <br/><li>Proportion: scaled proportionally <br/><li>Fixed: fixed size |
-| Width                | Request.Watermark.<br/>Image | Width         | String    | No   | None   | <li>If `Mode` is `Original`, the watermark image width cannot be set. <br/><li>If `Mode` is `Proportion`, the unit is %, the background image value range is [100, 300], and the foreground image value range is [1, 100].<br/><li>If `Mode` is `Fixed`, the unit is px, and the value range is [8, 4096]. If only `Width` is set, `Height` is calculated according to the original video proportion.<br/> |
-| Height               | Request.Watermark.<br/>Image | Height         | String    | No   | None   | <li>If `Mode` is `Original`, the watermark image height cannot be set. <br/><li>If `Mode` is `Proportion`, the unit is %, the background image value range is [100, 300], and the foreground image value range is [1, 100].<br/><li>If `Mode` is `Fixed`, the unit is px, and the value range is [128, 4096]. If only `Height` is set, the watermark image width is calculated according to the original video proportion.<br/>|
-| Transparency         | Request.Watermark.<br/>Image | Transparency      | String    | Yes   | None   | Value range: [0, 100]; unit: % |
-| Background           | Request.Watermark.<br/>Image | Whether it is a background image   | String    | No   | false   |  true, false |
+| Width                | Request.Watermark.<br/>Image | Width         | String    | No   | None   | <li>If `Mode` is `Original`, the watermark image width cannot be set. <br/><li>If `Mode` is `Proportion`, the unit is %, the background image value range is [100, 300], and the foreground image value range is [1, 100].<br/><li>If `Mode` is `Fixed`, the unit is px, and the value range is [8, 4096]. If only `Width` is set, `Height` is calculated according to the original video aspect ratio.<br/> |
+| Height                | Request.Watermark.<br/>Image | Height         | String    | No   | None   | <li>If `Mode` is `Original`, the watermark image height cannot be set. <br/><li>If `Mode` is `Proportion`, the unit is %, the background image value range is [100, 300], and the foreground image value range is [1, 100].<br/><li>If `Mode` is `Fixed`, the unit is px, and the value range is [128, 4096]. If only `Height` is set, `Width` is calculated according to the original video aspect ratio.<br/> |
+| Transparency         | Request.Watermark.<br/>Image | Transparency      | String    | Yes   | None   | Value range: [0, 100]. Unit: % |
+| Background           | Request.Watermark.<br/>Image | Whether it is a background image   | String    | No   | false   |  Valid values: true, false |
 
 
 `Text` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | ------------------  | ------- | -------------------------------------------------------- | --------- | ---- |---| ---- |
-| FontSize            | Request.Watermark.<br/>Text | Font size    | String    | Yes   | None  | Value range: [0, 100]; unit: px |
+| FontSize            | Request.Watermark.<br/>Text | Font size    | String    | Yes   | None  | Value range: [0, 100]. Unit: px |
 | FontType            | Request.Watermark.<br/>Text | Font type    | String    | Yes   | None  | See the table below. |
 | FontColor           | Request.Watermark.<br/>Text | Font color    | String    | Yes   | None  | Format: 0xRRGGBB |
-| Transparency        | Request.Watermark.<br/>Text | Transparency      | String    | Yes   | None  | Value range: [0, 100]; unit: %|
-| Text                | Request.Watermark.<br/>Text | Watermark content    | String    | Yes   | None  | The value can be up to 64 characters in length and contain only Chinese characters, letters, digits, underscores (_), hyphens (-), and asterisks (*). |
+| Transparency        | Request.Watermark.<br/>Text | Transparency      | String    | Yes   | None  | Value range: [0, 100]. Unit: % |
+| Text                | Request.Watermark.<br/>Text | Watermark content    | String    | Yes   | None  | The value can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*). |
 
 
 `FontType` has the following sub-nodes:
@@ -125,7 +128,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -159,24 +162,24 @@ The response body returns **application/xml** data. The following contains all t
 
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :----------------------------------------- | :-------- |
-| Response           | None     | Response container      |   Container   |
+| Response           | None     | Response container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :----------------------------- | :-------- |
-| TemplateId          | Response | Template ID                   | String    |
+| TemplateId         | Response | Template ID                                                      | String    |
 | Watermark           | Response| Watermark information. Same as `Watermark` in the request body.                                          | Container |
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 

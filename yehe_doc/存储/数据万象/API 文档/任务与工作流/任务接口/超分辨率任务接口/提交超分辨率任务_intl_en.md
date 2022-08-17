@@ -1,6 +1,6 @@
-## Overview
+## Feature Description
 
-This API (`CreateMediaJobs`) is used to submit a task.
+This API (`CreateMediaJobs`) is used to submit a job.
 
 ## Request
 
@@ -17,7 +17,11 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
 
 
 #### Request headers
@@ -58,10 +62,10 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | Task type: SuperResolution                            | String    | Yes   |
+| Tag                | Request | Job type: SuperResolution                            | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
-| QueueId            | Request | Queue ID of the task                                         | String    | Yes   |
+| QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
 | CallBack           | Request | Callback address                                                | String    | No   |
 
 `Input` has the following sub-nodes:
@@ -77,13 +81,13 @@ The nodes are described as follows:
 | SuperResolution    | Request.Operation | Super resolution template parameter                                         | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
-| TranscodeTemplateId| Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
+| TranscodeTemplateId| Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node first.           | String  | No|
 | Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |None|
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` first.          | String    | No |None|
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
->!`TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding task type parameter is used.
+>!`TemplateId` is used first. If `TemplateId` is unavailable, the corresponding job type parameter is used.
 
 `SuperResolution` has the following sub-nodes:
 
@@ -99,7 +103,7 @@ The nodes are described as follows:
 | Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (\*)    | string | Yes   |
 | Type               | Request.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only      | String | Yes |
 | Version            | Request.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only       | String | Yes |
-| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the task. Valid values: true, false (default)  |string | No   |
+| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: true, false (default).  |string | No   |
 
 `Output` has the following sub-nodes:
 
@@ -156,7 +160,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -166,24 +170,24 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| JobsDetail | Response | Task details |  Container |
+| JobsDetail | Response | Job details |  Container |
 
 
 `JobsDetail` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
-| JobId              | Response.JobsDetail | Task ID                               | String    |
-| Tag                | Response.JobsDetail | Task type: SuperResolution                              | String    |
-| State | Response.JobsDetail | Task status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
-| CreationTime | Response.JobsDetail | Task creation time |  String |
-| StartTime | Response.JobsDetail | Task start time |  String |
-| EndTime | Response.JobsDetail | Task end time |  String |
-| QueueId            | Response.JobsDetail | Queue ID of the task                       | String    |
-| Input              | Response.JobsDetail | Input resource address of the task                   | Container |
-| Operation | Response.JobsDetail | Operation rule. Up to six operation rules are supported. |  Container |
+| Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
+| Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
+| JobId              | Response.JobsDetail | Job ID                               | String    |
+| Tag                | Response.JobsDetail | Job type: SuperResolution                              | String    |
+| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel. |  String |
+| CreationTime | Response.JobsDetail | Job creation time |  String |
+| StartTime | Response.JobsDetail | Job start time |  String |
+| EndTime | Response.JobsDetail | Job end time |  String |
+| QueueId            | Response.JobsDetail | Queue ID of the job                       | String    |
+| Input              | Response.JobsDetail | Input resource address of the job                   | Container |
+| Operation | Response.JobsDetail | Operation rule. Up to six jobs can be performed on the same file. |  Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -192,11 +196,11 @@ Same as the `Request.Input` node in the request.
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| TemplateId | Response.JobsDetail.Operation | Task template ID |  String |
+| TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
 | Transcode          | Response.JobsDetail.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
-| TranscodeTemplateId| Response.JobsDetail.Operation  | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
+| TranscodeTemplateId| Response.JobsDetail.Operation  | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node first.           | String  | No|
 | Watermark          | Response.JobsDetail.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
-| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |None|
+| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` first.          | String    | No |None|
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
 | MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
@@ -206,7 +210,7 @@ Same as the `Request.Input` node in the request.
 Same as the `Request.Operation.Output` node in the request.
 
 `MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
+Same as the `Response.MediaInfo` node in the [GenerateMediaInfo](https://intl.cloud.tencent.com/document/product/1045/48569) API.
 
 `DigitalWatermark` has the following sub-nodes:
 
@@ -215,15 +219,15 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 | Message               | Response.Operation.DigitalWatermark |  The string in the digital watermark successfully embedded in the video, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (\*)    | string |
 | Type               | Response.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only      | String |
 | Version            | Response.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only      | String |
-| IgnoreError        | Response.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the task. Valid values: true, false (default)  |string |
-| State        | Response.Operation.DigitalWatermark | Whether the watermark is added successfully. Valid values: Running, Success, Failed  | string |
+| IgnoreError        | Response.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: true, false (default).  |string |
+| State        | Response.Operation.DigitalWatermark | Whether the watermark is added successfully. Valid values: Running, Success, Failed.  | string |
 
 
 #### Error codes
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
 
 #### Request 1. Using the super resolution template ID

@@ -14,8 +14,12 @@ Authorization: <Auth String>
 
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
+
 
 
 #### Request headers
@@ -37,7 +41,7 @@ The nodes are as described below:
 | orderByTime | None | `Desc` (default) or `Asc` | String | No |
 | nextToken | None | Context token for pagination | String | No |
 | size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
-| states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them with commas (,). Valid values: All (default), Submitted, Running, Success, Failed, Pause, Cancel | String | No |
+| states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | String | No |
 | startCreationTime | None | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`. | String | No |
 | endCreationTime | None | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`.  | String | No |
 

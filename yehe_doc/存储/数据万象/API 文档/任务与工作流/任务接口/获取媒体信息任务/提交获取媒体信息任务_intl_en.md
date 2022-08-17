@@ -20,7 +20,7 @@ Content-Type: application/xml
 
 >? 
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
 
@@ -114,11 +114,11 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
+| Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
+| Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
 | Tag | Response.JobsDetail | Job type: MediaInfo | String |
-| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
+| State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime | Response.JobsDetail | Job creation time |  String |
 | StartTime | Response.JobsDetail | Job start time |  String |
 | EndTime | Response.JobsDetail | Job end time |  String |

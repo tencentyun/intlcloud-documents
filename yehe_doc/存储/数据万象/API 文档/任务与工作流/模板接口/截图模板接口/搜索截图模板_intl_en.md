@@ -1,5 +1,24 @@
 ## Feature Description
+
 This API (`DescribeMediaTemplates`) is used to search for screenshot templates.
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateSnapshotTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## Request
 
@@ -15,35 +34,40 @@ Content-Type: application/xml
 
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
-
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
+
 The request body of this request is empty.
 
 #### Request parameters
-The nodes are described as follows:
+
+The parameters are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-|:---           |:--       |:--                    |   :--     |   :--    |
-| tag           | None        | Task type: Snapshot       | String    |Yes|
-| category      | None        | Template category: Custom (default) or Official  | String  |No|
-| ids           | None        | Template ID. If you enter multiple IDs, separate them with commas (,).  | String     |No|
-| name          | None        | Template name prefix              | String     |No|
-| pageNumber    | None        | Page number                   | Integer     |No|
-| pageSize      | None        | Records per page                 | Integer     |No|
+| :----------------- | :----- | :------------------------------- | :------ | :--- |
+| tag           | None        | Template type: Snapshot       | String    | Yes |
+| category      | None        | Template category: Custom (default) or Official  | String  | No |
+| ids       | None | Template ID. If you enter multiple IDs, separate them by comma.  | String     | No |
+| name          | None        | Template name prefix              | String     | No |
+| pageNumber    | None        | Page number                   | Integer     | No |
+| pageSize    | None | Number of entries per page                | Integer | No       |
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
+
 The response body returns **application/xml** data. The following contains all the nodes:
 
 ``` shell
@@ -69,7 +93,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
@@ -78,22 +102,22 @@ The nodes are described as follows:
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------- | :----------------------------- | :-------- |
-| RequestId          | Response | Unique ID of the request                   | String    |
+| :----------------- | :------- | :------------------------------ | :-------- |
+| RequestId          | Response | Unique ID of the request.                   | String    |
 | TotalCount         | Response | Total number of templates                       | Int       |
-| PageNumber         | Response | Current page number. Same as `pageNumber` in the request. | Int       |
-| PageSize           | Response | Number of records per page. Same as `pageSize` in the request.   | Int       |
-| TemplateList       | Response | Template array                       | Container |
+| PageNumber         | Response | Current page number. Same as `pageNumber` in the request.                           | Int       |
+| PageSize           | Response | Number of entries per page. Same as `pageSize` in the request.   | Int       |
+| TemplateList       | Response | Template array                        | Container |
 
 `TemplateList` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :-------------------- | :----------------------------------------------------------- | :-------- |
-| TemplateId         | Response.TemplateList | Template ID                                                      | String    |
-| Name               | Response.TemplateList | Template name                                                     | String    |
+| :----------------- | :-------------------- | :----------------------------- | :-------- |
+| TemplateId         | Response.TemplateList | Template ID                        | String    |
+| Name               | Response.TemplateList | Template name                       | String    |
 | BucketId           | Response.TemplateList | Template bucket                                                | String    |
 | Category           | Response.TemplateList | Template category: Custom or Official                                | String    |
-| Tag                | Response.TemplateList | Task type: Snapshot                                           | String    |
+| Tag                | Response.TemplateList | Template type: Snapshot                                        | String    |
 | UpdateTime         | Response.TemplateList | Update time                                                     | String    |
 | CreateTime         | Response.TemplateList | Creation time                                                     | String    |
 | Snapshot           | Response.TemplateList | Template parameters | Container |
@@ -101,22 +125,22 @@ The nodes are described as follows:
 `Snapshot` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |---| ---- |
-| Mode                | TemplateList.Snapshot | Screenshot mode | String    | Yes   | Interval | <li>Value range: {Interval, Average}</li><li>Interval, Average</li><li> Interval mode: the `Start`, `TimeInterval`, and `Count` parameters are valid. If `Count` is set and `TimeInterval` is not set, all frames will be captured, and the total number of images captured is specified by `Count`.</li><li>Average mode: the `Start` and `Count` parameters are valid, indicating that, from `Start` to the end of the video, capture a total of `Count` images at an average interval.</li>|
-| Start                | TemplateList.Snapshot | Start time | String    | Yes   | 0 | <li>[0, Video duration] </li><li>Unit: second </li><li>Supports the float format, accurate to milliseconds.</li> |
-| TimeInterval         | TemplateList.Snapshot | Screenshot time interval  | String    | No   | None  | <li>(0 3600] </li><li>Unit: second </li><li>Supports the float format, accurate to milliseconds.</li> |
-| Count                | TemplateList.Snapshot | Number of screenshots | String    | Yes   | None  | (0 10000] |
-| Width                | TemplateList.Snapshot | Width | String    | No   |  Original video width | <li>Value range: [128, 4096]</li><li>Unit: px</li><li>If only `Width` is set, `Height` is calculated according to the original video proportion.</li> |
-| Height                | TemplateList.Snapshot | Height | String    | No  | Original video height  | <li>Value range: [128, 4096]</li><li>Unit: px</li><li>If only `Height` is set, `Width` is calculated according to the original video proportion.</li> |
+| ------------------ | --------------------- | ------------ | ------ | ---- | ----------------- | ------------------------------------------------------------ |
+| Mode               | TemplateList.Snapshot | Screenshot mode | String    | Yes   | Interval | <li>Valid values: {Interval, Average}</li><li>Interval: Interval mode. Average: Average mode</li><li>Interval mode: The `Start`, `TimeInterval`, and `Count` parameters take effect. If `Count` is set and `TimeInterval` is not set, all frames will be captured, and the total number of images captured is specified by `Count`.</li><li>Average mode: The `Start` and `Count` parameters take effect, indicating to capture a total of `Count` images at an average interval from `Start` to the end of the video. |
+| Start              | TemplateList.Snapshot | Start time | String    | Yes   | 0 | <li>[0, video duration] </li><li>Unit: second </li><li>Supports the float format, accurate to the millisecond.</li> |
+| TimeInterval       | TemplateList.Snapshot | Screenshot time interval | String    | No   | None  | <li>(0, 3600] </li><li>Unit: second </li><li>Supports the float format, accurate to the millisecond.</li> |
+| Count              | TemplateList.Snapshot | Number of screenshots | String    | Yes   | None  | (0, 10000] |
+| Width              | TemplateList.Snapshot | Width | String    | No   |  Original video width | <li>Value range: [1, 4096]</li><li>Unit: px</li><li>If only `Width` is set, `Height` is calculated according to the original video aspect ratio. </li> |
+| Height             | TemplateList.Snapshot | Height | String    | No  | Original video height  | <li>Value range: [1, 4096]</li><li>Unit: px</li><li>If only `Height` is set, `Width` is calculated according to the original video aspect ratio.</li> |
 
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
-**Example 1: query by template ID**
+**Sample 1. Querying by template ID**
 
 #### Request
 
@@ -139,8 +163,6 @@ Connection: keep-alive
 Date: Thu, 15 Jun 2017 12:37:29 GMT
 Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
-
-
 
 <Response>
     <RequestId>NTk0MjdmODlfMjQ4OGY3XzYzYzh****=</RequestId>
@@ -165,7 +187,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 </Response>
 ```
 
-**Example 2: query by paginated list**
+**Sample 2. Querying by paginated list**
 
 #### Request
 
@@ -188,8 +210,6 @@ Connection: keep-alive
 Date: Thu, 15 Jun 2017 12:37:29 GMT
 Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
-
-
 
 <Response>
     <RequestId>NTk0MjdmODlfMjQ4OGY3XzYzYzh****=</RequestId>

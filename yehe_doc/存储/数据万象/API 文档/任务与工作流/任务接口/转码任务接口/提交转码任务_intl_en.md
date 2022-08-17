@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`CreateMediaJobs`) is used to submit a task.
+This API (`CreateMediaJobs`) is used to submit a job.
 
 ## Request
 
@@ -17,13 +17,17 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
+
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -51,17 +55,17 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | ---- |
-| Request            | None | Request container | Container | Yes   |
+| Request            | None     | Request container | Container | Yes   |
 
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | Task type: Transcode                                 | String    | Yes   |
-| Input              | Request | Information about the media to be operated                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to 6 tasks can be performed on the same file.                                                | Container | Yes   |
-| QueueId            | Request | ID of the queue where the task is in                                         | String    | Yes   |
-| CallBack           | Request | Callback address                 | String    | Yes   |
+| Tag                | Request | Job type. Valid values: Transcode (transcoding), Animation (animated image), SmartCover (intelligent thumbnail), Snapshot (screenshot), Concat (splicing).                                 | String    | Yes   |
+| Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
+| Operation          | Request | Operation rule. Up to six jobs can be performed on the same file.                                                | Container | Yes   |
+| QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
+| CallBack           | Request | Callback address                                                | String    | No   |
 
 `Input` has the following sub-nodes:
 
@@ -73,14 +77,15 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| Transcode                | Request.Operation | Transcoding template parameters                                    | Container | No   |
-| Watermark          | Request.Operation | Watermark template parameters. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. | Container | No |
+| Transcode          | Request.Operation | Transcoding template parameter             | Container | No   |
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`.  | Container | No |
 | RemoveWatermark              | Request.Operation | Whether to remove the watermark                                                         | Container | No   |
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Multiple watermark template IDs are supported.          | String    | No |
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Multiple watermark template IDs can be passed in.           | String    | No |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
->!`TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding task type parameter is used.
+>! `TemplateId` is used first. If `TemplateId` is unavailable, the corresponding job type parameter is used.
 >
 
 `Transcode` has the following sub-nodes:
@@ -97,10 +102,20 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :-------------------------- | -------------------------------------- | --------- | ---- |
-| Dx                 | Request.Operation.RemoveWatermark |  X-axis offset of the top-left corner origin. Value range: [1, 4096]   | string | Yes   |
-| Dy                 | Request.Operation.RemoveWatermark |  Y-axis offset of the top-left corner origin. Value range: [1, 4096]   | string | Yes   |
+| Dx                 | Request.Operation.RemoveWatermark |  x-axis offset of the origin in the top-left corner. Value range: [1, 4096]   | string | Yes   |
+| Dy                 | Request.Operation.RemoveWatermark |  y-axis offset of the origin in the top-left corner. Value range: [1, 4096]   | string | Yes   |
 | Width              | Request.Operation.RemoveWatermark |  Width. Value range: [1, 4096]                 | string | Yes   |
 | Height             | Request.Operation.RemoveWatermark |  Height. Value range: [1, 4096]                 | string | Yes   |
+
+`DigitalWatermark` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| ------------------ | :-------------------------- | -------------------------------------- | --------- | ---- |
+| Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*)    | string | Yes   |
+| Type               | Request.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only      | String | Yes |
+| Version            | Request.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only       | String | Yes |
+| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: true, false (default).  |string | Yes   |
+
 
 `Output` has the following sub-nodes:
 
@@ -108,7 +123,7 @@ The nodes are described as follows:
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Result file name                                             | String | Yes   |
+| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
 
 
 
@@ -116,7 +131,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -128,6 +143,7 @@ The response body returns **application/xml** data. The following contains all t
     <Message></Message>
     <JobId></JobId>
     <State></State>
+    <Progress></Progress>
     <CreationTime></CreationTime>
     <EndTime></EndTime>
     <QueueId></QueueId>
@@ -140,6 +156,12 @@ The response body returns **application/xml** data. The following contains all t
       <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
       <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
       <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
+      <DigitalWatermark>
+        <Type>Text</Type>
+        <Message>123456789ab</Message>
+        <Version>V1</Version>
+        <IgnoreError>false</IgnoreError>
+      </DigitalWatermark>
       <Output>
         <Region></Region>
         <Bucket></Bucket>
@@ -152,7 +174,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -162,24 +184,25 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| JobsDetail | Response | Task details |  Container |
+| JobsDetail | Response | Job details |  Container |
 
 
 `JobsDetail` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
-| JobId              | Response.JobsDetail | Task ID                               | String    |
-| Tag | Response.JobsDetail | Task type: Transcode  | String |
-| State | Response.JobsDetail | Task status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel` |  String |
-| CreationTime | Response.JobsDetail | Task creation time |  String |
-| StartTime | Response.JobsDetail | Task start time |  String |
-| EndTime | Response.JobsDetail | Task end time |  String |
-| QueueId            | Response.JobsDetail | ID of the queue where the task is in                       | String    |
-| Input              | Response.JobsDetail | Input resource address of the task                   | Container |
-| Operation | Response.JobsDetail | Operation rule. Up to 6 operation rules are supported. |  Container |
+| Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
+| Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
+| JobId              | Response.JobsDetail | Job ID                               | String    |
+| Tag | Response.JobsDetail | Job type. Valid values: Transcode (transcoding), Animation (animated image), SmartCover (intelligent thumbnail), Snapshot (screenshot), Concat (splicing)                                 | String    |
+| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel. |  String |
+| Progress | Response.JobsDetail | Task progress in percentage, which is returned only if `State` is `Submitted`, `Running`, `Success`, or `Pause`. Value range: [0, 100]. | String |
+| CreationTime | Response.JobsDetail | Job creation time |  String |
+| StartTime | Response.JobsDetail | Job start time |  String |
+| EndTime | Response.JobsDetail | Job end time |  String |
+| QueueId            | Response.JobsDetail | Queue ID of the job                       | String    |
+| Input              | Response.JobsDetail | Input resource address of the job                   | Container |
+| Operation | Response.JobsDetail | Operation rule. Up to six jobs can be performed on the same file. |  Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -188,23 +211,34 @@ Same as the `Request.Input` node in the request.
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| TemplateId | Response.JobsDetail.Operation | Task template ID |  String |
+| TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
-| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. Not returned when there is no output video. | Container |
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
+| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
 
 `Output` has the following sub-nodes:
 Same as the `Request.Operation.Output` node in the request.
 
 `MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
+Same as the `Response.MediaInfo` node in the [GenerateMediaInfo](https://intl.cloud.tencent.com/document/product/1045/48569) API.
+
+`DigitalWatermark` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+| ------------------ | :-------------------------- | -------------------------------------- | --------- |
+| Message               | Response.Operation.DigitalWatermark |  The string in the digital watermark successfully embedded in the video, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*)    | string |
+| Type               | Response.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only      | String |
+| Version            | Response.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only      | String |
+| IgnoreError        | Response.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: true, false (default).  |string |
+| State        | Response.Operation.DigitalWatermark | Whether the watermark is added successfully. Valid values: Running, Success, Failed.  | string |
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
-#### Request 1: using the transcoding template ID
+#### Request 1. Using the transcoding template ID
 
 ```shell
 POST /jobs HTTP/1.1
@@ -261,6 +295,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <Message>Success</Message>
     <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
     <State>Submitted</State>
+    <Progress>0</Progress>
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
     <EndTime></EndTime>
     <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
@@ -273,6 +308,12 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
+        <DigitalWatermark>
+          <Type>Text</Type>
+          <Message>123456789ab</Message>
+          <Version>V1</Version>
+          <IgnoreError>false</IgnoreError>
+        </DigitalWatermark>
         <Output>
             <Region>ap-beijing</Region>
             <Bucket>examplebucket-1250000000</Bucket>
@@ -293,7 +334,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 
 
-#### Request 2: using transcoding processing parameters
+#### Request 2. Using the transcoding processing parameter
 
 ```shell
 POST /jobs HTTP/1.1
@@ -376,6 +417,13 @@ Content-Type: application/xml
             <Transparency>30</Transparency>
         </Image>
     </Watermark>
+    <DigitalWatermark>
+        <State>Success</State>
+        <Type>Text</Type>
+        <Message>123456789ab</Message>
+        <Version>V1</Version>
+        <IgnoreError>false</IgnoreError>
+    </DigitalWatermark>
     <Output>
       <Region>ap-beijing</Region>
       <Bucket>examplebucket-1250000000</Bucket>
@@ -406,6 +454,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <Message>Success</Message>
     <JobId>jabcxxxxfeipplsdfwe</JobId>
     <State>Submitted</State>
+    <Progress>0</Progress>
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
     <StartTime></StartTime>
     <EndTime></EndTime>
@@ -481,6 +530,13 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Transparency>30</Transparency>
             </Image>
         </Watermark>
+        <DigitalWatermark>
+          <State>Success</State>
+          <Type>Text</Type>
+          <Message>123456789ab</Message>
+          <Version>V1</Version>
+          <IgnoreError>false</IgnoreError>
+          </DigitalWatermark>
         <Output>
             <Region>ap-beijing</Region>
             <Bucket>examplebucket-1250000000</Bucket>

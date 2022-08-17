@@ -1,6 +1,24 @@
 ## Feature Description
 This API (`DeleteMediaTemplate`) is used to delete a screenshot template.
 
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateSnapshotTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 ## Request
 
 #### Sample request
@@ -15,12 +33,13 @@ Content-Type: application/xml
 
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
-
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request headers
-
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 The request body of this request is empty.
@@ -29,7 +48,7 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -41,7 +60,7 @@ The response body returns **application/xml** data. The following contains all t
 <Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
@@ -50,15 +69,14 @@ The nodes are described as follows:
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------- | :--------------- | :----- |
+| :----------------- | :------- | :---------------- | :----- |
 | RequestId          | Response | Unique ID of the request     | String |
 | TemplateId         | Response | ID of the deleted template | String |
 
 #### Error codes
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
-
-## Examples
+## Samples
 
 #### Request
 

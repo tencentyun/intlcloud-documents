@@ -17,8 +17,12 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
+
 
 
 #### Request headers
@@ -79,7 +83,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ---------------- | :-------------------------- | -------------------------------------- | --------- | ---- |
-| InputType        | Request.Operation.TtsConfig | Input type. Valid values: Url, Text.                      | String | Yes   |
+| InputType        | Request.Operation.TtsConfig | Input type. Valid values: `Url`, `Text`.                      | String | Yes   |
 | Input            | Request.Operation.TtsConfig | 1. When `InputType` is `URL`, the value must be a valid COS address, and the file must be UTF-8 encoded and no more than 10 MB in size. If the synthesis method specified in the template is sync processing, the file can contain up to 300 UTF-8 characters; if the method is async processing, the file can contain up to 10,000 UTF-8 characters. <br/>2. When `InputType` is `Text`, the input can be up to 300 UTF-8 characters.                                 | String | Yes |
 
 `Output` has the following sub-nodes:
@@ -143,11 +147,11 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Code               | Response.JobsDetail | Error code, which will be meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which will be meaningful only if `State` is `Failed`   | String    |
+| Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
+| Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
 | Tag | Response.JobsDetail | Job type: Tts | String |
-| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
+| State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime | Response.JobsDetail | Job creation time |  String |
 | StartTime | Response.JobsDetail | Job start time |  String |
 | EndTime | Response.JobsDetail | Job end time |  String |
@@ -160,7 +164,7 @@ There are no special error messages for this request. For common error messages,
 
 ## Samples
 
-#### Sample 1: Using the text-to-speech template ID
+#### Sample 1. Using the text-to-speech template ID
 
 #### Request
 
@@ -229,7 +233,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 
 
-#### Sample 2: Using the text-to-speech processing parameter
+#### Sample 2. Using the text-to-speech processing parameter
 
 #### Request
 
