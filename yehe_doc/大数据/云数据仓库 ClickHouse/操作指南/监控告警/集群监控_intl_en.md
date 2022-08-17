@@ -3,9 +3,9 @@ You can monitor the performance of ClickHouse clusters in the following two ways
 - Use the default monitoring page if you don't enable Grafana monitoring when purchasing a cluster.
 - Use the advanced monitoring system with cluster alarm policies if you enable Grafana monitoring when purchasing a cluster.
 
-## Grafana Monitoring Not Enabled 
-Go to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/cdwch), click a **Cluster ID/Name** in the **Cluster List** to enter the cluster details page, and switch to the **Cluster Monitoring** tab to view performance metrics.
-![](https://main.qcloudimg.com/raw/b118e48c21c4c50fd4ed0328c3c8173e.png)
+## Grafana Monitoring Disabled 
+Go to the [CDWCH console](https://console.cloud.tencent.com/cdwch), click a **Cluster ID/Name** in the **Cluster List** to enter the cluster details page, and switch to the **Cluster Monitoring** tab to view performance metrics.
+![](https://qcloudimg.tencent-cloud.cn/raw/6d8f62029b442b16dbf475a171730512.jpg)
 
 | Metric                  | Description                                                 |
 | ----------------------- | ---------------------------------------------------- |
@@ -26,31 +26,31 @@ Go to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/cdwch
 ### Monitoring dashboard
 ClickHouse is preconfigured with four monitoring dashboards (**ClickHouse cluster**, **Single-Node server**, **Multi-Node server**, and **Node overview**). You can also customize dashboards as needed. The following describes the metrics and formulas for each dashboard.
 
-**Clickhouse cluster dashboard**: see [Metric Description](#jump) for details. Click **ClickHouse Monitoring** in the top-right corner to switch to other dashboards.
-![](https://main.qcloudimg.com/raw/4179816a544d5062f37b46c2c8776d2d.jpg)
-**Single-Node server dashboard**: details server metrics by IP.
-![](https://main.qcloudimg.com/raw/74ca1b4edc14ed14feca9d9604349774.png)
-**Multi-Node server dashboard**: horizontally compares 8 basic server metrics by IP.
-![](https://main.qcloudimg.com/raw/2d2ea643bf8fdf775ec2fe094bc50471.png)
-**Node overview dashboard**: summarizes the basic server conditions of all nodes to offer a holistic picture of the entire cluster.
-![](https://main.qcloudimg.com/raw/50d4694409bb52f038a86ee86470557a.png)
+**Clickhouse cluster dashboard**: See [Metric Description](#jump) for details. Click **ClickHouse Monitoring** in the top-right corner to switch to other dashboards.
+![](https://qcloudimg.tencent-cloud.cn/raw/261ff6f8db9452239c457cce9d6dcf7a.jpg)
+**Single-node server dashboard**: Details server metrics by IP.
+![](https://qcloudimg.tencent-cloud.cn/raw/a8d9339c5a62a31daa2aa18e89ca1f31.jpg)
+**Multi-node server dashboard**: Horizontally compares 8 basic server metrics by IP.
+![](https://qcloudimg.tencent-cloud.cn/raw/bceca0ed8c620a5cf5d2e723756c3afd.jpg)
+**Node overview dashboard**: Summarizes the basic server conditions of all nodes to offer a holistic picture of the entire cluster.
+![](https://qcloudimg.tencent-cloud.cn/raw/7ca6d1d8b44a0254acd4ce06f1661126.jpg)
 
 ### Metric calculation formula
 Click a dashboard name and select **Explore** in the drop-down list to learn the details of a metric.
-![](https://main.qcloudimg.com/raw/b554c5a628664413d31e63d1db224cc5.png)
-In a specific calculation, `node_cppu_seconds_total` is the metric. For more metrics, see [system.metrics](https://clickhouse.tech/docs/en/operations/system-tables/metrics/).
+![](https://qcloudimg.tencent-cloud.cn/raw/1ccf1fe1e7c42ba1b3a0262cc3b575f4.jpg)
+In a specific calculation, `node_cppu_seconds_total` is the metric. For more metrics, see [metrics](https://clickhouse.tech/docs/en/operations/system-tables/metrics/).
 ![](https://main.qcloudimg.com/raw/48e230b468108fd6d639b446bd8a3081.png)
 
 
 ### Custom panel configuration
 You can personalize a panel to fit your usage habits.
 1. Click **+** on the left sidebar and select **Dashboard** in the drop-down list.
-![](https://main.qcloudimg.com/raw/5860ae80ed2f08c3265515e426946cc3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4ca2892b94280df1ce1d05c421d3e7d5.jpg)
 2. Click **+ Add new panel**.
 ![](https://main.qcloudimg.com/raw/6203ab9604542e0007cf4d1138ef96b9.png)
 3. Enter a metric or click **Metrics** to view the calculated metrics.
-![](https://main.qcloudimg.com/raw/cd72539e6d9322f50d4ab697ac74719a.png)
-4. You can select a display style on the right. For more information, see [Panel overview](https://grafana.com/docs/grafana/latest/panels/).
+![](https://qcloudimg.tencent-cloud.cn/raw/e6ce321e705dd7a6806ac8b391649831.jpg)
+4. You can select a display style on the right. For more information, see [About Grafana panels](https://grafana.com/docs/grafana/latest/panels/).
 ![](https://main.qcloudimg.com/raw/6155e7249b8e20b3d02007301eafee03.png)
 5. Click **Apply** in the top-right corner and click **Save**.
 

@@ -4,8 +4,8 @@ ClickHouse 的集群性能监控存在两种形式，具体如下：
 - 集群购买时开启了 Grafana 监控项，可使用高级版的集群监控系统，并支持集群告警策略配置。
 
 ## 未启用 Grafana 监控 
-进入 [云数据仓库 ClickHouse 控制台](https://console.cloud.tencent.com/cdwch)，在集群列表页中单击集群【ID/名称】进入集群详情页，在【集群监控】中可以查看集群的各项性能指标。
-![](https://main.qcloudimg.com/raw/b118e48c21c4c50fd4ed0328c3c8173e.png)
+进入 [云数据仓库 ClickHouse 控制台](https://console.cloud.tencent.com/cdwch)，在集群列表页中单击集群 **ID/名称**进入集群详情页，在**集群监控**中可以查看集群的各项性能指标。
+![](https://qcloudimg.tencent-cloud.cn/raw/6d8f62029b442b16dbf475a171730512.jpg)
 
 | 指标名                  | 释义                                                 |
 | ----------------------- | ---------------------------------------------------- |
@@ -26,33 +26,33 @@ ClickHouse 的集群性能监控存在两种形式，具体如下：
 ### 监控看板说明
 ClickHouse 集群监控信息共内置4个监控看板，用户也可按需配置个性化的监控看板。内置监控看板分别为 Clickhouse 集群看板、主机单节点详情、主机多节点详情和主机节点概览，下面针对每个看板的指标及公式进行详细说明。
 
-**Clickhouse 集群看板**，详细说明见 [指标项说明](#jump)。单击右上角【Clickhouse 监控】，可切换至集群的其他监控看板。
-![](https://main.qcloudimg.com/raw/4179816a544d5062f37b46c2c8776d2d.jpg)
+**Clickhouse 集群看板**，详细说明见 [指标项说明](#jump)。单击右上角 **Clickhouse 监控**，可切换至集群的其他监控看板。
+![](https://qcloudimg.tencent-cloud.cn/raw/261ff6f8db9452239c457cce9d6dcf7a.jpg)
 **主机单节点详情**，可以根据 IP 查询主机层面指标的详情。
-![](https://main.qcloudimg.com/raw/74ca1b4edc14ed14feca9d9604349774.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a8d9339c5a62a31daa2aa18e89ca1f31.jpg)
 **主机多节点详情**，可以根据 IP 勾选，横向比较8个基础主机指标。
-![](https://main.qcloudimg.com/raw/2d2ea643bf8fdf775ec2fe094bc50471.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bceca0ed8c620a5cf5d2e723756c3afd.jpg)
 **主机节点概览**，可以概览所有节点的主机基础情况，方便了解集群整体情况。
-![](https://main.qcloudimg.com/raw/50d4694409bb52f038a86ee86470557a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7ca6d1d8b44a0254acd4ce06f1661126.jpg)
 
 ### 指标计算公式
-用户如果需要了解看板的某个指标的具体释义，可单击看板标题，在下拉菜单中选择【Explore】。
-![](https://main.qcloudimg.com/raw/b554c5a628664413d31e63d1db224cc5.png)
+用户如果需要了解看板的某个指标的具体释义，可单击看板标题，在下拉菜单中选择**Explore**。
+![](https://qcloudimg.tencent-cloud.cn/raw/1ccf1fe1e7c42ba1b3a0262cc3b575f4.jpg)
 Metrics 中的公式即为具体计算方式，node_cppu_seconds_total 即为具体指标，具体指标的含义可参见 [ClickHouse 官网 metrics](https://clickhouse.tech/docs/en/operations/system-tables/metrics/)。
 ![](https://main.qcloudimg.com/raw/48e230b468108fd6d639b446bd8a3081.png)
 
 
 ### 配置个性化指标看板
 若现有看板不满足用户的使用习惯，可自行新建看板或者面板。
-1. 在左侧菜单栏单击【+】，并在下拉菜单中单击【Dashboard】。
-![](https://main.qcloudimg.com/raw/5860ae80ed2f08c3265515e426946cc3.png)
-2. 然后单击【+ Add new panel】新建看板。
+1. 在左侧菜单栏单击**+**，并在下拉菜单中单击 **Dashboard**。
+![](https://qcloudimg.tencent-cloud.cn/raw/4ca2892b94280df1ce1d05c421d3e7d5.jpg)
+2. 然后单击**+ Add new panel** 新建看板。
 ![](https://main.qcloudimg.com/raw/6203ab9604542e0007cf4d1138ef96b9.png)
-3. 输入指标或者单击【Metrics】查看计算的指标。
-![](https://main.qcloudimg.com/raw/cd72539e6d9322f50d4ab697ac74719a.png)
+3. 输入指标或者单击 **Metrics** 查看计算的指标。
+![](https://qcloudimg.tencent-cloud.cn/raw/e6ce321e705dd7a6806ac8b391649831.jpg)
 4. 右侧可以选择展示样式，具体可参见 [Grafana 官网](https://grafana.com/docs/grafana/latest/panels/)。
 ![](https://main.qcloudimg.com/raw/6155e7249b8e20b3d02007301eafee03.png)
-5. 单击右上角【Apply】即可完成看板的配置，最后单击【Save】保存看板。
+5. 单击右上角 **Apply** 即可完成看板的配置，最后单击 **Save** 保存看板。
 
 [](id:jump)
 ### 指标项说明
