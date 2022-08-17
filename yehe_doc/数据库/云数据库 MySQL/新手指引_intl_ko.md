@@ -9,7 +9,7 @@
 -----
 
 ## 2. TencentDB for MySQL 과금 방식
-TencentDB for MySQL의 과금 방식은 **종량제**입니다. 과금 방식을 정확히 이해한 후 가장 적합한 방식을 선택하시기 바랍니다. 자세한 내용은 [과금 개요](https://buy.cloud.tencent.com/price/cdb/overview)를 참조하십시오.
+TencentDB for MySQL의 과금 방식은 **정액 과금제** 및 **종량제**입니다. 과금 방식을 정확히 이해한 후 가장 적합한 방식을 선택하시기 바랍니다. 자세한 내용은 [과금 개요](https://buy.intl.cloud.tencent.com/price/cdb/overview)를 참조하십시오.
 
 -----
 
@@ -17,10 +17,8 @@ TencentDB for MySQL의 과금 방식은 **종량제**입니다. 과금 방식을
 #### 3.1 MySQL 인스턴스 구매
 TencentDB for MySQL 사용 전, Tencent Cloud 계정을 생성하고 TencentDB for MySQL 서비스를 구매해야 합니다. 자세한 내용은 [MySQL 인스턴스 생성](https://intl.cloud.tencent.com/document/product/236/37785)을 참조하십시오.
 
-#### 3.2. MySQL 인스턴스 초기화
-인스턴스 구매 후, MySQL 인스턴스를 초기화해야 합니다. 자세한 내용은 [MySQL 인스턴스 초기화](https://intl.cloud.tencent.com/document/product/236/3128)를 참조하십시오.
 
-#### 3.3 MySQL 인스턴스 연결
+#### 3.2 MySQL 인스턴스 연결
 인스턴스 초기화 후, Windows CVM 또는 Linux CVM을 통해 내부/공인 네트워크로 CVM의 TencentDB for MySQL에 액세스할 수 있습니다. 자세한 내용은 [MySQL 인스턴스 연결](https://intl.cloud.tencent.com/document/product/236/37788)을 참조하십시오.
 
 -----
