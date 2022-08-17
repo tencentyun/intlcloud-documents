@@ -53,8 +53,8 @@ For more information on two-level partitioning, see [Overview](https://intl.clou
     - Data Update: data updates of the selected objects are subscribed to, including INSERT, UPDATE, and DELETE operations.
     - Structure Update: creation, modification, and deletion of the structures of all objects in the instance are subscribed to.
     - Full: data and structure updates of all objects in the instance are subscribed to.
- - Kafka Partitioning Strategy: select **By Table Name** or **By Table Name + Primary Key**.
- - Custom Partitioning Strategy: customize partitions as needed.
+ - Kafka Partitioning Policy: select **By table name** or **By table name + primary key**.
+ - Custom Partitioning P: customize partitions as needed.
 >?Subscription objects exclude the system tables and databases named `test`, as DTS does not support subscription to system tables, and `test` databases are recognized as test data by DTS.
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/2965c8182bd59e73e4a54dbfc7b5e1ca.png)
