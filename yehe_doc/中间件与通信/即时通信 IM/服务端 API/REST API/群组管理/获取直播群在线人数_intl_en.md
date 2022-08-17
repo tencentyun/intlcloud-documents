@@ -16,7 +16,7 @@ Above are the IM built-in groups. For more information, see [Group system](https
 > !
 >
 > - The number of online users is updated every 10s.
-> - When the group size is greater than or equal to 300, or when there are web users, the number of online users will be updated 10s to 20s after a user joins or quits the group.
+> - When there are web users, the number of online users will be updated 10s to 20s after a user joins or quits the group.
 > - When the group size is less than 300 and when there are no web users, the number of online users is updated immediately after a user joins or quits the group.
 
 
