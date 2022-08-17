@@ -9,7 +9,7 @@ This document helps you get started with TencentDB for MySQL.
 -----
 
 ## 2. TencentDB for MySQL Billing Modes
-TencentDB for MySQL adopts the **pay-as-you-go** billing mode. Please see [Product Pricing](https://buy.cloud.tencent.com/price/cdb/overview) for details.
+TencentDB for MySQL adopts the **pay-as-you-go** and  **monthly subscription** billing modes. Please see [Product Pricing](https://buy.intl.cloud.tencent.com/price/cdb/overview) for details.
 
 -----
 
@@ -17,10 +17,9 @@ TencentDB for MySQL adopts the **pay-as-you-go** billing mode. Please see [Produ
 #### 3.1 Purchasing a TencentDB for MySQL instance
 Before using TencentDB for MySQL, you need to sign up for a Tencent Cloud account and purchase a TencentDB for MySQL instance. For more information, please see [Creating MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37785).
 
-#### 3.2 Initializing the TencentDB for MySQL instance
-After a TencentDB for MySQL instance is purchased, you need to initialize it. For more information, please see [Initializing MySQL Instance](https://intl.cloud.tencent.com/document/product/236/3128).
 
-#### 3.3 Connecting to the TencentDB for MySQL instance
+
+#### 3.2 Connecting to the TencentDB for MySQL instance
 After initialization, you can access the TencentDB for MySQL instance over both the private and public networks from a Windows or Linux CVM instance. For more information, please see [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37788).
 
 -----
