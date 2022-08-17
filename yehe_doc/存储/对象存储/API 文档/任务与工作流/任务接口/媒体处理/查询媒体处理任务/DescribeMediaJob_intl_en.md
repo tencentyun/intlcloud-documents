@@ -80,6 +80,7 @@ The nodes are as described below:
 
 The content of `JobsDetail` varies by job type. For more information, see the following documents:
 - <a href="https://cloud.tencent.com/document/product/460/76913#jobsDetail" target="_blank">Submitting Video Transcoding Job</a>
+- <a href="https://cloud.tencent.com/document/product/460/78248#jobsDetail" target="_blank">Top Speed Codec Transcoding</a>
 - <a href="https://cloud.tencent.com/document/product/460/76900#jobsDetail" target="_blank">Submitting Video-to-Animated Image Conversion Job</a>
 - <a href="https://cloud.tencent.com/document/product/460/76910#jobsDetail" target="_blank">Submitting Screenshot Job</a>
 - <a href="https://cloud.tencent.com/document/product/460/76909#jobsDetail" target="_blank">Submitting Intelligent Thumbnail Job</a>
@@ -171,6 +172,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
