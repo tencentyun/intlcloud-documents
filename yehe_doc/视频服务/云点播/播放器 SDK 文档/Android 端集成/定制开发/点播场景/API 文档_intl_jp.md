@@ -56,8 +56,8 @@
 | [setRate](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#add2bcd36c051900d697853155494865b) | オンデマンドの再生レートを設定します。デフォルトは1.0です。                                |
 | [getBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#af6f9e1e680baa611642fb168007b1c45) | 現在再生されているビットレートのインデックスを返します。                                     |
 | [setBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a61f524a6ed275edaf9e9a0997f64d491) | 現在再生されているビットレートインデックスを設定し、シャープネスをシームレスに切り替えます。シャープネスの切り替えには、しばらく待つ必要がある場合があります。|
-| [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a6e1e1e12120b92f4884d3ea1a8e2cc94) | [画像タイル表示モード](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae)を設定します。|
-| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a1ae55363f74a78d935d63ea7b44130a8) | [画像レンダリング角度](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f)を設定します。|
+| [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a6e1e1e12120b92f4884d3ea1a8e2cc94) | [画像タイル表示モード](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae)を設定します。|
+| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a1ae55363f74a78d935d63ea7b44130a8) | [画像レンダリング角度](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f)を設定します。|
 
 ### 音声に関連するインターフェース
 
@@ -97,8 +97,8 @@ Tencent Cloudオンデマンドのコールバック通知。
 
 | API                                                          | 説明                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onPlayEvent](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#aad1d875808cd4a68d429762e492aad05) | オンデマンド再生イベント通知については、[再生イベントリスト](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a3c3fa833bb8585df2f362da5b70c610a)、[イベントパラメータ](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a5cb5e37938b510270847d4f5c751a594)をご参照ください。|
-| [onNetStatus](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#a2be0a0294ae21e68e736ac8fa4d3085d) | オンデマンドプレーヤー[ネットワークステータス通知](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#aa7190fc964cf23a567b56d9793ad5737)。|
+| [onPlayEvent](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#aad1d875808cd4a68d429762e492aad05) | オンデマンド再生イベント通知については、[再生イベントリスト](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a3c3fa833bb8585df2f362da5b70c610a)、[イベントパラメータ](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a5cb5e37938b510270847d4f5c751a594)をご参照ください。|
+| [onNetStatus](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#a2be0a0294ae21e68e736ac8fa4d3085d) | オンデマンドプレーヤー[ネットワークステータス通知](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#aa7190fc964cf23a567b56d9793ad5737)。|
 
 ## TXVodPlayConfig
 
