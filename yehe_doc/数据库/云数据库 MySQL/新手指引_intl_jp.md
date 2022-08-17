@@ -9,7 +9,7 @@
 -----
 
 ## 2. TencentDB for MySQLの課金モード
-TencentDB for MySQL の課金モードは**従量課金**です。TencentDB for MySQLの課金モードを全面的に理解し、ご自身に最も適した課金プランを選択できるようにしてください。詳細については、 [課金概要](https://buy.cloud.tencent.com/price/cdb/overview)をご参照ください。
+TencentDB for MySQL の課金モードは**年額/月額課金**と**従量課金**です。TencentDB for MySQLの課金モードを全面的に理解し、ご自身に最も適した課金プランを選択できるようにしてください。詳細については、 [課金概要](https://buy.intl.cloud.tencent.com/price/cdb/overview)をご参照ください。
 
 -----
 
@@ -17,10 +17,9 @@ TencentDB for MySQL の課金モードは**従量課金**です。TencentDB for 
 #### 3.1 TencentDB for MySQLインスタンスの購入
 TencentDB for MySQLを使用する前に、Tencent Cloudアカウントを登録し、TencentDB for MySQLのサービスを購入する必要があります。詳細については、[MySQL インスタンスの作成](https://intl.cloud.tencent.com/document/product/236/37785)をご参照ください。
 
-#### 3.2 TencentDB for MySQL インスタンスの初期化
-インスタンスを購入した後、MySQL インスタンスを初期化する必要があります。詳細については、 [MySQL インスタンスの初期化](https://intl.cloud.tencent.com/document/product/236/3128)をご参照ください。
 
-#### 3.3 TencentDB for MySQL インスタンスへの接続
+
+#### 3.2 TencentDB for MySQL インスタンスへの接続
 インスタンスを初期化した後、Windows CVMまたはLinux CVMを介して、プライベートネットワークとパブリックネットワークの異なる2種類の方式でTencentDB for MySQLにアクセスが可能になります。詳細については、[MySQL インスタンスへの接続](https://intl.cloud.tencent.com/document/product/236/37788)をご参照ください。
 
 -----
