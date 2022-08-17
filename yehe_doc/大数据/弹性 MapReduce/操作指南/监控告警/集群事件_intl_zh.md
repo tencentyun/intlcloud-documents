@@ -309,7 +309,7 @@
 </tr>
 <tr>
 <td>NameNode 发生主备切换</td>
-<td>NameNode 发生主备切换</td>
+<td>NameNod 发生主备切换</td>
 <td>排查 NameNode 切换的原因</td>
 <td>-</td>
 <td>严重</td>
@@ -698,7 +698,7 @@
 <td>是</td>
 <td>否</td>
 </tr><tr>
-<td rowspan="4"><strong>Impala</strong></td>
+<td rowspan="8"><strong>Impala</strong></td>
 <td>ImpalaCatalog JVM 内存使用率持续高于阈值</td>
 <td>ImpalaCatalog JVM 内存使用率>=m，持续时间 t秒(300<=t<=604800)</td>
 <td>调整 ImpalaCatalog 堆内存大小</td>
@@ -730,6 +730,38 @@
 <td>严重</td>
 <td>是</td>
 <td>是</td>
+</tr><tr>
+<td>Query 运行时长超过阈值</td>
+<td>Query 运行时长超过阈值>=m(seconds)</td>
+<td>人工排查</td>
+<td>-</td>
+<td>严重</td>
+<td>是</td>
+<td>否</td>
+</tr><tr>
+<td>执行 Query 失败总数高于阈值 </td>
+<td>执行 Query 失败率高于阈值>=m，统计时间粒度t秒(300<=t<=604800)	</td>
+<td>人工排查</td>
+<td>m=1，t=300</td>
+<td>严重</td>
+<td>是</td>
+<td>否</td>
+</tr><tr>
+<td>提交 Query 总数高于阈值</td>
+<td>执行 Query 失败总数高于阈值>=m，统计时间粒度t秒(300<=t<=604800)</td>
+<td>人工排查</td>
+<td>m=1，t=300</td>
+<td>严重</td>
+<td>是</td>
+<td>否</td>
+</tr><tr>
+<td>执行 Query 失败率高于阈值</td>
+<td>提交 Query 总数高于阈值 >=m，统计时间粒度t秒(300<=t<=604800)</td>
+<td>人工排查</td>
+<td>m=1，t=300</td>
+<td>严重</td>
+<td>是</td>
+<td>否</td>
 </tr>
 <tr>
 <td rowspan="7"><strong>PrestoSQL</strong></td>

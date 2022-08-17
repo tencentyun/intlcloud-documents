@@ -27,8 +27,8 @@ metadata:
   name: test1
 spec:
   hadoopConf:
-    "fs.cosn.userinfo.secretId": "AKID42oPq570fAXihVuXt30mS3SgiYBcJwpW"
-    "fs.cosn.userinfo.secretKey": "e7TddT7atzta5OXYN416IYvDRUP8ey62" 
+    "fs.cosn.userinfo.secretId":"$SecretId"
+    "fs.cosn.userinfo.secretKey":"$SecretKey" 
   type: Scala
   mode: cluster
   mainClass: org.apache.spark.examples.SparkPi
@@ -37,7 +37,7 @@ spec:
 For more information on the parameters used in this sample, visit [GitHub](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/v1beta2-1.2.0-3.0.0/docs/api-docs.md).
 - `apiVersion` and `kind` are the resource version and type in K8s, which cannot be changed here.
 - `metadata.name` defines the job name, which is `test1` here and can be customized.
-- `spec.hadoopConf` defines the configuration information of Hadoop. Interacting with COS requires configuring the key information, which can be obtained on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page.
+- `spec.hadoopConf` defines the configuration information of Hadoop. Interacting with COS requires configuring the key information, which can be obtained on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page. The `$SecretId` and `$Secretkey` in the code should be replaced with your actual `SecretId` and `Secretkey`.
 - `type` defines the type of the Spark program, which can be Java, Scala, Python, or R. It is Scala here and can be selected as needed.
 - `mode` defines the deployment mode of `sparkApplication`, which can be cluster or client. It is cluster here and can be selected as needed.
 - `driver` and `executor` define the Spark driver and executor respectively. They are automatically generated on the backend as follows by default: 
@@ -107,8 +107,8 @@ metadata:
   name: test2
 spec:
   hadoopConf:
-    "fs.cosn.userinfo.secretId": "AKID42oPq570fAXihVuXt30mS3SgiYBcJwpW"
-    "fs.cosn.userinfo.secretKey": "e7TddT7atzta5OXYN416IYvDRUP8ey62" 
+    "fs.cosn.userinfo.secretId":"$SecretId"
+    "fs.cosn.userinfo.secretKey":"$SecretKey" 
   type: Java
   mode: cluster
   mainClass: com.tencent.WordCountOnCos
@@ -129,15 +129,15 @@ metadata:
   name: test3
 spec:
   hadoopConf:
-    "fs.cosn.userinfo.secretId": "AKID42oPq570fAXihVuXt30mS3SgiYBcJwpW"
-    "fs.cosn.userinfo.secretKey": "e7TddT7atzta5OXYN416IYvDRUP8ey62"
+    "fs.cosn.userinfo.secretId":"$SecretId"
+    "fs.cosn.userinfo.secretKey":"$SecretKey" 
   type: Java
   mode: cluster
   mainClass: com.tencent.WordCountOnCos
-  mainApplicationFile: "hdfs://10.0.130.70:4007/sparkapp/jar/wordcount.jar"
+  mainApplicationFile: "hdfs://$ip:$port/sparkapp/jar/wordcount.jar"
   arguments:
     - "cosn://kt-test-251007880/sparkapp/input/input"
-    - "hdfs://10.0.130.70:4007/sparkapp/output"
+    - "hdfs://$ip:$port/sparkapp/output"
 
 ```
 >! If you store the JAR package in HFDS, HDFS should be in the same VPC as the container-based cluster.
@@ -163,8 +163,8 @@ metadata:
   name: test4
 spec:
   hadoopConf:
-    "fs.cosn.userinfo.secretId": "AKID42oPq570fAXihVuXt30mS3SgiYBcJwpW"
-    "fs.cosn.userinfo.secretKey": "e7TddT7atzta5OXYN416IYvDRUP8ey62" 
+    "fs.cosn.userinfo.secretId":"$SecretId"
+    "fs.cosn.userinfo.secretKey":"$SecretKey" 
   type: Java
   mode: cluster
   mainClass: com.tencent.WordCountOnCos
@@ -175,9 +175,6 @@ spec:
     - "cosn://kt-test-251007880/sparkapp/output"
 ```
 Here, `image` is the image you created through packaging, and `mainApplicationFile` is the path of the JAR package in the image.
-
-
-
 
 
 

@@ -1,9 +1,9 @@
-## Feature Description
+## Feature overview
 Cluster events include event lists and event policies.
 - Event list: It records key change events and abnormal events occurring in the cluster.
 - Event policy: Event monitoring trigger policies can be customized based on the actual business conditions. Events with monitoring enabled can be set as cluster inspection items.
 
-## Viewing Event List
+## Viewing the event list
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page.
 2. On the cluster details page, select **Cluster Monitoring** > **Cluster Events** > **Event List** to view all operation events in the current cluster.
 ![](https://main.qcloudimg.com/raw/5060d9a929e662b5b14c8fa78f3b6843.png)
@@ -15,7 +15,7 @@ The severity divides into the following:
 3. Click the value in the **Triggers today** column to view the event's trigger records, metrics, logs, and snapshots.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d184a9581e1c72055b921964df069ec8.png)
 
-## Setting Event Policy
+## Setting an event policy
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page.
 2. On the cluster details page, select **Cluster Monitoring** > **Cluster Events** > **Event Policy** and you can customize the event monitoring trigger policies.
 3. The event configuration list contains the event name, event trigger policy, severity (fatal, severe, and moderate), and option to enable/disable monitoring, which can be modified and saved.
@@ -698,7 +698,7 @@ The severity divides into the following:
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
-<td rowspan="4"><strong>Impala</strong></td>
+<td rowspan="8"><strong>Impala</strong></td>
 <td>The ImpalaCatalog JVM memory utilization exceeds the threshold continuously</td>
 <td>The ImpalaCatalog JVM memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 604,800) seconds continuously</td>
 <td>Adjust the ImpalaCatalog heap memory size</td>
@@ -730,6 +730,38 @@ The severity divides into the following:
 <td>Severe</td>
 <td>Yes</td>
 <td>Yes</td>
+</tr><tr>
+<td>The query execution duration exceeds the threshold</td>
+<td>The query execution duration exceeds m seconds</td>
+<td>Troubleshoot</td>
+<td>-</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>No</td>
+</tr><tr>
+<td>The total number of failed queries exceeds the threshold</td>
+<td>The total number of failed queries has been greater than or equal to m for t seconds (300 ≤ t ≤ 604,800)	</td>
+<td>Troubleshoot</td>
+<td>m=1, t=300</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>No</td>
+</tr><tr>
+<td>The total number of committed queries exceeds the threshold</td>
+<td>The total number of committed queries has been greater than or equal to m for t seconds (300 ≤ t ≤ 604,800)</td>
+<td>Troubleshoot</td>
+<td>m=1, t=300</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>No</td>
+</tr><tr>
+<td>The query execution failure rate exceeds the threshold</td>
+<td>The query execution failure rate has been greater than or equal to m for t seconds (300 ≤ t ≤ 604,800)</td>
+<td>Troubleshoot</td>
+<td>m=1, t=300</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>No</td>
 </tr>
 <tr>
 <td rowspan="7"><strong>PrestoSQL</strong></td>

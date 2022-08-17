@@ -1,4 +1,4 @@
-## Feature Description
+## Feature overview
 The log search feature collects component operation logs. Then, you can search for core service logs of the current cluster and node system logs by keyword to quickly view key service logs without logging in to nodes.
 
 ## Directions
@@ -8,10 +8,10 @@ Or, on the cluster details page, select **Cluster Service** > target component b
 ![](https://qcloudimg.tencent-cloud.cn/raw/4fa74b5977eaa40b2939623c4813d344.png)
 Click a **Node IP** to enter the **Node Status** page, or click **Log Source** to enter the page where the node monitoring metrics are displayed.
 ![](https://qcloudimg.tencent-cloud.cn/raw/737555cb56ee015c2dd507d647db5c79.png)
-3. During troubleshooting, you usually need to pay attention to contextual logs of keywords. On the **Log Search** page, click **View Context** to enter the **Log Context** page.
+3. During troubleshooting, you usually need to check contextual logs of keywords. On the **Log Search** page, click **View Context** to enter the **Log Context** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c2966e28bae088a80856e822f2a45e77.png)
 
-## Service Types Supported for Log Search
+## Service types supported for log search
 >!
 >- Currently, only logs in the past 15 days can be searched for.
 >- If log collection has not been enabled on your cluster, you can contact your Tencent Cloud rep for assistance.
@@ -32,7 +32,7 @@ Click a **Node IP** to enter the **Node Status** page, or click **Log Source** t
 <td >NameNode runtime log</td>
 </tr><tr>
 <td >ZKFC</td>
-<td >	/data/emr/hdfs/logs/hadoop-hadoop-zkfc.log</td>
+<td >/data/emr/hdfs/logs/hadoop-hadoop-zkfc.log</td>
 <td >ZKFC runtime log</td>
 </tr><tr>
 <td >DataNode</td>
@@ -194,7 +194,16 @@ Click a **Node IP** to enter the **Node Status** page, or click **Log Source** t
 </tr>
 </table>
 
-## Query Rule for Minimum Log Level
+## Minimum log level supported by services
+
+| Service | Default Minimum Log Level | 
+|---------|---------|
+| Impala and Kudu | 	INFO| 
+| Other services 	| WARN| 
+
+
+
+## Query rule for the minimum log level
 <table>
 <thread>
 <tr>

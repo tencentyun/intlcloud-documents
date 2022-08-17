@@ -10,6 +10,45 @@
 </thead>
 <tbody>
 <tr>
+<td>Launched the overview page in the console.</td>
+<td>The cluster overview page displays various information, such as cluster status, health status of running services, and event statistics.</td>
+<td>2022-07-22</td>
+<td>-</td>
+</tr>	
+<tr>
+<td>Upgraded the cluster overview feature.</td>
+<td><li>The cluster directory navigation is optimized and upgraded.</li><li>The health status information of deployed services is refined to display real-time statistics of cluster events.
+</li></td>
+<td>2022-07-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31117" target="_blank">Cluster Overview</a></td>
+</tr>	
+<tr>
+<td>Added new Impala query dimension and inspection items.</td>
+<td><li>Dimensions of session ID, coordinator, and single-point memory peak are added.
+</li><li>Four inspection items are added for Impala: query timeouts, total query failures, total query commits, and query execution failure rate.
+</li></td>
+<td>2022-07-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41279" target="_blank">Impala Query Management</a></td>
+</tr>	
+<tr>
+<td>Added the Impala daemon role.</td>
+<td>Over 70 visual Impala daemon metrics are added, which can trigger alarms in CM.</td>
+<td>2022-07-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/42358" target="_blank">Impala Monitoring Metrics</a></td>
+</tr>	
+<tr>
+<td>Added new application APIs.</td>
+<td>The API for collecting YARN application queue statistics is added.</td>
+<td>2022-07-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/47538" target="_blank">DescribeInstancesList</a></td>
+</tr>	
+<tr>
+<td>Released a Hadoop cluster version - EMR v2.7.0.</td>
+<td>Added support for Hive 2.3.9, Spark 3.2.1, HBase 2.4.5, Flink 1.14.3, Trino 385, ZooKeeper 3.6.3, Iceberg 0.13.0, Hudi 0.11.0, Alluxio 2.8.0, Zeppelin 0.10.1, Superset 1.4.1, and Ranger 2.1.0.</td>
+<td>2022-07-18</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Product Releases and Component Versions</a></td>
+</tr>	
+<tr>
 <td>Improved the availability of the automatic scaling feature.</td>
 <td>Scale-out rules support the hybrid deployment of multiple resource specifications as well as pay-as-you-go/spot instances.</td>
 <td>2022-07-07</td>
@@ -694,7 +733,7 @@ If you encounter any security issues related to the operating system of an exist
 </tr>
 <tr>
 <td>Added support for cluster events and cluster inspections.</td>
-<td>Added support for recording major change events and exception events in clusters in the console for improved efficiency of cluster troubleshooting. Added support for one-time inspections and periodical inspections, making it easier to keep track of the health of your clusters and to deal with exceptions and risks in time.
+<td>Added support for recording major change events and exception events in clusters in the console for improved efficiency of cluster troubleshooting. Added support for one-time inspections and scheduled inspections, making it easier to keep track of the health of your clusters and to deal with exceptions and risks in time.
  </td><td>2020-06-04</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">Cluster Inspection</a></td>
 </tr>
