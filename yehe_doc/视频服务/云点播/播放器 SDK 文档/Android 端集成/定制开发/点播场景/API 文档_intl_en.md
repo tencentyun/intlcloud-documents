@@ -56,8 +56,8 @@ The player has the following capabilities:
 | [setRate](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#add2bcd36c051900d697853155494865b) | Sets the VOD playback speed. Default value: 1.0.                                |
 | [getBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#af6f9e1e680baa611642fb168007b1c45) | Returns the current playback bitrate index.                                     |
 | [setBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a61f524a6ed275edaf9e9a0997f64d491) | Sets the current playback bitrate index for seamless definition switch. You may need to wait momentarily to switch the definition. |
-| [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a6e1e1e12120b92f4884d3ea1a8e2cc94) | Sets the [image fill mode](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae). |
-| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a1ae55363f74a78d935d63ea7b44130a8) | Sets the [image rendering angle](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f). |
+| [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a6e1e1e12120b92f4884d3ea1a8e2cc94) | Sets the [image fill mode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae). |
+| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a1ae55363f74a78d935d63ea7b44130a8) | Sets the [image rendering angle](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f). |
 
 ### Audio APIs
 
@@ -97,8 +97,8 @@ VOD callback notifications.
 
 | API                                                                                                              | Description                                                                                                                                                          |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onPlayEvent](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#aad1d875808cd4a68d429762e492aad05) | VOD playback event notification. For more information, see the [playback event list](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a3c3fa833bb8585df2f362da5b70c610a) and [event parameters](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a5cb5e37938b510270847d4f5c751a594). |
-| [onNetStatus](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#a2be0a0294ae21e68e736ac8fa4d3085d) | [Network status notification](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#aa7190fc964cf23a567b56d9793ad5737) of the VOD player. |
+| [onPlayEvent](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#aad1d875808cd4a68d429762e492aad05) | VOD playback event notification. For more information, see the [playback event list](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a3c3fa833bb8585df2f362da5b70c610a) and [event parameters](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a5cb5e37938b510270847d4f5c751a594). |
+| [onNetStatus](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#a2be0a0294ae21e68e736ac8fa4d3085d) | [Network status notification](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#aa7190fc964cf23a567b56d9793ad5737) of the VOD player. |
 
 ## TXVodPlayConfig
 
