@@ -2,9 +2,9 @@
 This feature can recognize all fields on the front and back of a second-generation Chinese ID card, including name, gender, ethnicity, date of birth, address, ID number, issuing authority, and validity period. It can also crop ID card photos and face photos, as well as warn about photographed, doctored, and photocopied images, edge and frame occlusions, temporary ID cards, and invalid validity periods.
 
 >?
-- Currently, the ID card recognition feature has the following image requirements: the image cannot exceed 7 MB after being Base64-encoded. A resolution above 500x800 is recommended. PNG, JPG, JPEG, and BMP image are supported. We recommend that the card part occupy more than 2/3 area of the image.
-- ID card recognition is a paid service. For billing details, see Content Recognition Fees.
-- This feature currently can be used only through APIs.
+>- Currently, the ID card recognition feature has the following image requirements: the image cannot exceed 7 MB after being Base64-encoded. A resolution above 500x800 is recommended. PNG, JPG, JPEG, and BMP image are supported. We recommend that the card part occupy more than 2/3 area of the image.
+>- ID card recognition is a paid service. For billing details, see Content Recognition Fees.
+>- This feature currently can be used only through APIs.
 
 ## Request
 
