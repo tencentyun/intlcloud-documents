@@ -153,7 +153,7 @@ Assume that, on January 1, 2021, you transcoded a 1-hour segment of live stream 
 
 Daily transcoding fee = 0.3636 (USD/hour) x 1 (hour) + 0.1818 (USD/hour) x 0.5 (hour) = 0.4545 USD
 
-### Top speed codec transcoding
+### Top Speed Codec transcoding
 
 #### Pricing
 
