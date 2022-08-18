@@ -87,11 +87,11 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 
 [](id:C_topspeed)
 
-### Creating a top speed codec transcoding template
+### Creating a TSC transcoding template
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Top Speed Codec Transcoding** for transcoding type, and complete the following configuration:
   - Basic configuration: Template name, video bitrate, video resolution, etc. For details, see [Basic Configuration for TSC Transcoding](#C_topspeed_normal).
-  - Advanced configuration (optional): Click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for Top Speed Codec Transcoding](#C_topspeed_high).
+  - Advanced configuration (optional): Click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for TSC Transcoding](#C_topspeed_high).
 3. Click **Save**.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/54a0334f1d24f7e0acb4e4f923b27d23.png)
@@ -101,7 +101,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </tr><tr>
 <td>Transcoding Type</td>
 <td>Yes</td>
-<td>The transcoding type, which can be standard transcoding, <b>top speed codec transcoding</b>, or audio-only transcoding.</td>
+<td>The transcoding type, which can be standard transcoding, <b>TSC transcoding</b>, or audio-only transcoding.</td>
 </tr><tr>
 <td>Template Name</td>
 <td>Yes</td>
