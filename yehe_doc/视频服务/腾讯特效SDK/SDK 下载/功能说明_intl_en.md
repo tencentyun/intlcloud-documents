@@ -24,7 +24,7 @@ Basic A editions offer common beautification features for customers with basic r
 <tbody>
 <tr>
 <td rowspan=4 width=8%>Basic</td>
-<td><b>Basic beauty filters</b><br>Brightening, skin smoothing, and blush</td>
+<td><b>Basic beauty filters</b><br>Brighten, smooth skin, and rosy skin</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -42,7 +42,7 @@ Basic A editions offer common beautification features for customers with basic r
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Basic beautification</b><br>Eye enlarging and face slimming (natural, attractive, and handsome)</td>
+<td><b>Basic beautification</b><br>Big eyes and slim face (natural, woman, and man)</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -70,7 +70,7 @@ Basic A editions offer common beautification features for customers with basic r
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>General beautification SDKs</b><br>(Face narrowing/Chin reshaping/Hairline adjustment/Nose narrowing)</td>
+<td><b>General beautification SDKs</b><br>(Face width/Chin/Hairline/Slim nose)</td>
 <td>-</td>
 <td>-</td>
 <td>&#10003;</td>
@@ -135,7 +135,7 @@ Advanced S editions offer enhanced beautification features (including stickers a
 <tbody>
 <tr>
 <td rowspan=7 width=8%>Basic</td>
-<td><b>Basic beauty filters</b><br>Brightening, skin smoothing, and blush</td>
+<td><b>Basic beauty filters</b><br>Brighten, smooth skin, and rosy skin</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -151,7 +151,7 @@ Advanced S editions offer enhanced beautification features (including stickers a
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Advanced beautification</b><br>Eye enlarging, face narrowing, face slimming (natural, attractive, and handsome), chin slimming, chin reshaping, face shortening, face reshaping, hairline adjustment, eye brightening, eye distance adjustment, eye corner adjustment, nose slimming, nose wing narrowing, cheekbone slimming, nose repositioning, teeth whitening, wrinkle removal, smile line removal, eye bag removal, mouth reshaping, lip thickness adjustment, lipstick application, blush, and facial contouring</td>
+<td><b>Advanced beautification</b><br>Big eyes, face width, slim face (natural, woman, and man), V shape, chin, face length, face shape, hairline, bright eyes, eye distance, eye corners, slim nose, nose wings, cheekbones, nose position, white teeth, wrinkles, smile lines, eye bags, lip shape, lip height, lipstick, blush, and contour</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
