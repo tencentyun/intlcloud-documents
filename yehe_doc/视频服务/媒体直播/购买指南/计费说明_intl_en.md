@@ -15,8 +15,8 @@
 <td>Daily pay-as-you-go</td>
 </tr>
 <tr>
-<td>Top speed codec transcoding</td>
-<td><li>Incurred for using the top speed codec transcoding feature during live streaming<li>Billed based on the transcoding duration and aspect ratio of output video</td>
+<td>Top Speed Codec transcoding</td>
+<td><li>Incurred for using the Top Speed Codec transcoding feature during live streaming<li>Billed based on the transcoding duration and aspect ratio of output video</td>
 <td>Daily pay-as-you-go</td>
 </tr>
 <tr>
@@ -33,9 +33,9 @@
 
 ## Live Transcoding
 
-StreamLive offers the **standard transcoding**, **top speed codec transcoding**, and **audio transcoding** features, which are billed separately based on the transcoding duration and resolution (aspect ratio) of output video during live streaming.
+StreamLive offers the **standard transcoding**, **Top Speed Codec transcoding**, and **audio transcoding** features, which are billed separately based on the transcoding duration and resolution (aspect ratio) of output video during live streaming.
 
-The top speed codec transcoding feature leverages intelligent and dynamic transcoding technologies and a high-precision bitrate control model to produce high-definition video at lower bitrate. For details, please see [Top Speed Codec Transcoding](https://intl.cloud.tencent.com/document/product/267/39604#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81).
+The Top Speed Codec transcoding feature leverages intelligent and dynamic transcoding technologies and a high-precision bitrate control model to produce high-definition video at lower bitrate. For details, please see [Top Speed Codec Transcoding](https://intl.cloud.tencent.com/document/product/267/39604#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81).
 
 The transcoding fees incurred vary depending on the transcoding method, as detailed below.
 
