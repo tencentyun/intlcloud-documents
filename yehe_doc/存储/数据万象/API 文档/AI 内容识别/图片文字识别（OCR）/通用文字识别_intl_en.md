@@ -228,7 +228,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 	<RequestId>NTk0MjdmODlfMjQ4OGY3XzYzYzhf****</RequestId>
 	<TextDetections>
 		<Confidence>99</Confidence>
-		<DetectedText>你好</DetectedText>
+		<DetectedText>Hello</DetectedText>
 		<ItemPolygon>
 			<Height>64</Height>
 			<Width>123</Width>
@@ -252,7 +252,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			<Y>231</Y>
 		</Polygon>
 		<Words>
-			<Character>你</Character>
+			<Character>You</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -274,7 +274,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			</WordCoordPoint>
 		</Words>
 		<Words>
-			<Character>好</Character>
+			<Character>OK</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -298,7 +298,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 	</TextDetections>
 	<TextDetections>
 		<Confidence>99</Confidence>
-		<DetectedText>再见</DetectedText>
+		<DetectedText>See you</DetectedText>
 		<ItemPolygon>
 			<Height>43</Height>
 			<Width>245</Width>
@@ -322,7 +322,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			<Y>1487</Y>
 		</Polygon>
 		<Words>
-			<Character>再</Character>
+			<Character>See</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -344,7 +344,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			</WordCoordPoint>
 		</Words>
 		<Words>
-			<Character>见</Character>
+			<Character>You</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
