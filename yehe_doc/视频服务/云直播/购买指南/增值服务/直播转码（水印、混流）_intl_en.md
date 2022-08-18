@@ -1,4 +1,4 @@
-CSS provides [standard transcoding](#n_trans), [top speed codec transcoding](#s_trans), and [audio transcoding](#a_trans) services, which are billed by the codec, live stream image resolution (size), and transcoding duration. Enabling **watermarking** or **stream mixing** may also incur transcoding fees, which are billed by the resolution of the output live streams.
+CSS provides [standard transcoding](#n_trans), [Top Speed Codec (TSC) transcoding](#s_trans), and [audio transcoding](#a_trans) services, which are billed by the codec, live stream image resolution (size), and transcoding duration. Enabling **watermarking** or **stream mixing** may also incur transcoding fees, which are billed by the resolution of the output live streams.
 
 ## Notes
 
@@ -107,7 +107,7 @@ Daily live transcoding fees = 0.0057 (USD/min) × 60 (min) + 0.0028 (USD/min) ×
 		
 <span id="s_trans"></span>
 
-## Top Speed Codec Transcoding
+## TSC Transcoding
 
 ### Pricing
 
@@ -153,17 +153,17 @@ Daily live transcoding fees = 0.0057 (USD/min) × 60 (min) + 0.0028 (USD/min) ×
 
 ### Billing overview
 
-- Billing rules: the fees are calculated by multiplying the top speed codec transcoding duration on a day and the corresponding unit price.
+- Billing rules: the fees are calculated by multiplying the TSC transcoding duration on a day and the corresponding unit price.
 
 
 ### Billing formula
 
-Top speed codec transcoding fees = Transcoding duration x Price of the corresponding codec and resolution. 
+TSC transcoding fees = Transcoding duration x Price of the corresponding codec and resolution. 
 
 ### Billing example
 
-If you used the top speed codec transcoding service on January 1, 2021, where live stream A was transcoded to a top speed codec output at 720p for 1 hour and live stream B was transcoded to a top speed codec output at 480p for 30 minutes, then the top speed codec transcoding fees you would need to pay on January 2, 2021 would be as follows:
-Daily top speed codec transcoding fees = 0.0222 (USD/min) × 60 (min) + 0.0116 (USD/min) × 30 (min) = 1.68 USD.
+If you used the TSC transcoding service on January 1, 2021, where live stream A was transcoded to a TSC output at 720p for 1 hour and live stream B was transcoded to a TSC output at 480p for 30 minutes, then the TSC transcoding fees you would need to pay on January 2, 2021 would be as follows:
+Daily TSC transcoding fees = 0.0222 (USD/min) × 60 (min) + 0.0116 (USD/min) × 30 (min) = 1.68 USD.
 
 >? If you have a large-scale live streaming business, then a daily billing mode may not meet your needs. Please contact Tencent Cloud sales or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to determine the best billing mode for you.
 
