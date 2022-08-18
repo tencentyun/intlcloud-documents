@@ -82,10 +82,10 @@ Basic service fees include LVB fees and LEB fees.
 	<li/>Monthly pay-as-you-go
 </td>
 </tr><tr>
-<td>Top speed codec transcoding</td>
+<td>Top Speed Codec transcoding</td>
 <td><ul style="margin:0">
 <li/>Fees for using the speed codec transcoding feature
-<li/>Top speed codec transcoding fees are charged if you use the <a href="https://intl.cloud.tencent.com/document/product/267/31071">top speed codec transcoding</a> feature.
+<li/>Top Speed Codec transcoding fees are charged if you use the <a href="https://intl.cloud.tencent.com/document/product/267/31071">Top Speed Codec transcoding</a> feature.
 <li/>The fees are based on the <b>transcoding duration</b> and resolution of the output stream.
 </ul><td>
 <li><a href="https://intl.cloud.tencent.com/document/product/267/39604">Daily pay-as-you-go</a></li>
