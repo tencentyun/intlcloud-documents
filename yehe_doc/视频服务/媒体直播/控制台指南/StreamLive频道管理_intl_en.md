@@ -90,11 +90,11 @@ f. Set audio transcoding. You are allowed to configure multiple audio transcodin
 
 ![img](https://main.qcloudimg.com/raw/c092adee1a2aeca7f9e98f18659b4aef.png)
 
-g. Set video transcoding. Create a video template, specifying the name, encoder type (only H264 is supported currently), bitrate (value range: 50000-40000000 bps), resolution, frame rate, etc. Top speed codec transcoding is a high-performance video transcoding service developed by Tencent Cloud. It uses AI algorithms to calculate in real time the optimal encoding parameters based on the business scenario to ensure high-quality transcoding at low bitrate. Bitrate compression ratio is the percentage by which video bitrate is expected to be reduced.
+g. Set video transcoding. Create a video template, specifying the name, encoder type (only H264 is supported currently), bitrate (value range: 50000-40000000 bps), resolution, frame rate, etc. Top Speed Codec transcoding is a high-performance video transcoding service developed by Tencent Cloud. It uses AI algorithms to calculate in real time the optimal encoding parameters based on the business scenario to ensure high-quality transcoding at low bitrate. Bitrate compression ratio is the percentage by which video bitrate is expected to be reduced.
 
 ![img](https://main.qcloudimg.com/raw/92242c0a054e342a1071794db28600de.png)
 
->? You can enable top speed codec if you want a better codec with smart video compression algorithms. It uses AI algorithms to calculate in real time the optimal encoding parameters based on the business scenario to ensure high-quality transcoding at low bitrate.
+>? You can enable Top Speed Codec if you want a better codec with smart video compression algorithms. It uses AI algorithms to calculate in real time the optimal encoding parameters based on the business scenario to ensure high-quality transcoding at low bitrate.
 
 h. Assemble outputs by combining the audio and video transcoding templates created. You can enable SCTE-35 to pass SCTE-35 information in HLS or DASH file tags.
 
