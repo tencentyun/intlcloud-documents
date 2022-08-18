@@ -34,44 +34,48 @@ COSFS는 패키지 방식과 컴파일 소스 코드 방식의 두 가지 설치
 Github 다운로드 링크:
 ```plaintext
 #Ubuntu14.04
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb
 #Ubuntu16.04
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb
 #Ubuntu18.04
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb
 #Ubuntu20.04
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb
+
 ```
 CDN 다운로드 링크:
-[cosfs_1.0.19-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb)
-[cosfs_1.0.19-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb)
-[cosfs_1.0.19-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb)
-[cosfs_1.0.19-ubuntu20.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb)
+[cosfs_1.0.20-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb)
+[cosfs_1.0.20-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb)
+[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb)
+[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb)
+
 2. 설치. (예시: Ubuntu16.04).
 ```shell
-sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
+sudo dpkg -i cosfs_1.0.20-ubuntu16.04_amd64.deb
 ```
 
 #### CentOS 시스템
 
 1. 종속 설치
 ```plaintext
-sudo yum install  libxml2-devel libcurl-devel -y
+sudo yum install libxml2-devel libcurl-devel -y
 ```
 2. 시스템 버전에 따라 해당하는 설치 패키지를 선택합니다. 현재 지원하는 CentOS 릴리스 버전은 CentOS6.5, CentOS7.0을 포함합니다.
 Github 다운로드 링크:
 ```plaintext
 #CentOS6.5
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm
 #CentOS7.0
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm
+
 ```
 CDN 다운로드 링크:
-[cosfs-1.0.19-centos6.5.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm)
-[cosfs-1.0.19-centos7.0.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm)
+[cosfs-1.0.20-centos6.5.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm)
+[cosfs-1.0.20-centos7.0.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm)
+
 3. 설치. (예시: CentOS7.0)
 ```shell
-sudo rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo rpm -ivh cosfs-1.0.20-centos7.0.x86_64.rpm
 ```
 >? 설치 시 오류가 보고되고 `conflicts with file from package fuse-libs-*`가 표시되는 경우, `--force` 매개변수를 추가한 후 다시 설치합니다.
 >
