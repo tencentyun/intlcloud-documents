@@ -20,7 +20,7 @@
 | Type                  | Description                                                         |
 | --------------------------- | ------------------------------------------------------------ |
 | [General transcoding](#ntrans_page)  | Each general transcoding resource pack contains **a certain number of minutes** and can be used to deduct **general transcoding and adaptive bitrate streaming durations**, regardless of the region. |
-| [TESHD](#strans_page)  | Each TESHD transcoding resource pack contains **a certain number of minutes** and can be used to deduct **TESHD transcoding durations**, regardless of the region. |
+| [Top Speed Codec transcoding](#strans_page)  | Each TSC transcoding resource pack contains **a certain number of minutes** and can be used to deduct **TSC transcoding durations**, regardless of the region. |
 
 You can view your media processing usages in the [MPS console](https://console.cloud.tencent.com/mps). To buy a resource pack, go to the [MPS purchase page](https://buy.cloud.tencent.com/mps).
 
@@ -78,9 +78,9 @@ The higher the output video resolution, the faster your resource pack will be us
 
 [](id:strans_page)
 
-## TESHD Transcoding Resource Pack
+## TSC Transcoding Resource Pack
 
-A TESHD transcoding resource pack can deduct your usage of the **TESHD transcoding** feature of MPS. If you have bought multiple packs, the one that expires first will be used first. The system will calculate your total usage of TESHD transcoding each day and will deduct some or all of it (depending on the remaining minutes of your resource packs) from the applicable resource packs. The usage not deducted by resource packs will be billed at [pay-as-you-go rates](https://intl.cloud.tencent.com/document/product/1041/33478).
+A TSC transcoding resource pack can deduct your usage of the **TSC transcoding** feature of MPS. If you have bought multiple packs, the one that expires first will be used first. The system will calculate your total usage of TSC transcoding each day and will deduct some or all of it (depending on the remaining minutes of your resource packs) from the applicable resource packs. The usage not deducted by resource packs will be billed at [pay-as-you-go rates](https://intl.cloud.tencent.com/document/product/1041/33478).
 
 **Deduction rules**: The same deduction ratios apply to transcoding usage inside and outside the Chinese mainland.
 
@@ -88,15 +88,15 @@ A TESHD transcoding resource pack can deduct your usage of the **TESHD transcodi
 
 | Resource Pack           | Price (USD) |
 | :------------------- | :--------- |
-| TESHD transcoding - 50 hours     | 26         |
-| TESHD transcoding - 100 hours     | 53         |
-| TESHD transcoding - 1,000 hours     | 312         |
-| TESHD transcoding - 10,000 hours     | 2,645         |
-| TESHD transcoding - 100,000 hours     | 17,637         |
+| TSC transcoding - 50 hours     | 26         |
+| TSC transcoding - 100 hours     | 53         |
+| TSC transcoding - 1,000 hours     | 312         |
+| TSC transcoding - 10,000 hours     | 2,645         |
+| TSC transcoding - 100,000 hours     | 17,637         |
 
 ### Deduction ratios
 
-A TESHD transcoding pack can be used to deduct durations for different TESHD transcoding types, but at different ratios.
+A TSC transcoding pack can be used to deduct durations for different TSC transcoding types, but at different ratios.
 
 | Codec | Resolution                      | Deduction Ratio                         |
 | :------- | :-------------------------- | :--------- |
@@ -118,7 +118,7 @@ A TESHD transcoding pack can be used to deduct durations for different TESHD tra
 
 ### Examples
 
-- Suppose the TESHD transcoding feature was used to transcode a video of one minute. The H.264 codec was used and the output resolution was 640 x 480 px. One minute would be deducted from a TESHD transcoding resource pack.
-- Suppose the TESHD transcoding feature was used to transcode a video of one minute. The H.264 codec was used and the output resolution was 1280 x 720 px. Two minutes would be deducted from a TESHD transcoding resource pack.
+- Suppose the TSC transcoding feature was used to transcode a video of one minute. The H.264 codec was used and the output resolution was 640 x 480 px. One minute would be deducted from a TSC transcoding resource pack.
+- Suppose the TSC transcoding feature was used to transcode a video of one minute. The H.264 codec was used and the output resolution was 1280 x 720 px. Two minutes would be deducted from a TSC transcoding resource pack.
 
 The higher the output video resolution, the faster your resource pack will be used up. 
