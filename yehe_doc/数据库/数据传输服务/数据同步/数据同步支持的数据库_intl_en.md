@@ -1,7 +1,7 @@
 DTS supports sync of self-built, TencentDB, and third-party cloud databases. Below are the specific network connection methods:
 
 - Public Network: the source database can be accessed through a public IP.
-- Self-Build on CVM: the source database is deployed in a [CVM](https://intl.cloud.tencent.com/document/product/213) instance.
+- Self-Built on CVM: the source database is deployed in a [CVM](https://intl.cloud.tencent.com/document/product/213) instance.
 - Direct Connect: the source database can be interconnected with VPCs through [Direct Connect](https://intl.cloud.tencent.com/document/product/216). 
 - VPN Access: the source database can be interconnected with VPCs through [VPN Connection](https://intl.cloud.tencent.com/document/product/1037). 
 - VPC: the source and target databases are both deployed in Tencent Cloud [VPCs](https://intl.cloud.tencent.com/document/product/215). The data sync feature supports the VPC access type. To use it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
