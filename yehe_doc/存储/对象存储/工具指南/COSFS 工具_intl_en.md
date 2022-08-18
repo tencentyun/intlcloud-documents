@@ -34,22 +34,24 @@ You can install COSFS with an installation package or by compiling the source co
 Download from GitHub:
 ```plaintext
 #Ubuntu14.04
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb
 #Ubuntu16.04
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb
 #Ubuntu18.04
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb
 #Ubuntu20.04
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb
+
 ```
 Download from CDN:
-[cosfs_1.0.19-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb)
-[cosfs_1.0.19-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb)
-[cosfs_1.0.19-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb)
-[cosfs_1.0.19-ubuntu20.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb)
+[cosfs_1.0.20-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb)
+[cosfs_1.0.20-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb)
+[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb)
+[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb)
+
 2. Install the package. The following takes Ubuntu 16.04 as an example.
 ```shell
-sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
+sudo dpkg -i cosfs_1.0.20-ubuntu16.04_amd64.deb
 ```
 
 #### CentOS
@@ -62,16 +64,18 @@ sudo yum install libxml2-devel libcurl-devel -y
 Download from GitHub:
 ```plaintext
 #CentOS6.5
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm
 #CentOS7.0
-sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm
+
 ```
 Download from CDN:
-[cosfs-1.0.19-centos6.5.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm)
-[cosfs-1.0.19-centos7.0.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm)
+[cosfs-1.0.20-centos6.5.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm)
+[cosfs-1.0.20-centos7.0.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm)
+
 3. Install the package. The following takes CentOS 7.0 as an example.
 ```shell
-sudo rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo rpm -ivh cosfs-1.0.20-centos7.0.x86_64.rpm
 ```
 >? If the system reports the error `conflicts with file from package fuse-libs-*` during installation, add the `--force` parameter and install the package again.
 >
