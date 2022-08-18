@@ -4,14 +4,14 @@
 - Billing cycle: Daily billing cycle. Traffic fees generated each day are deducted the following day. For the actual fee deduction and bill generation time, see your billing statement.
 - **The default mode for new users of LVB is bill-by-traffic.**
 - Billing regions outside the Chinese mainland:
-  - Asia Pacific 1: Hong Kong (China), Singapore, Macao (China), Vietnam, Thailand, Nepal, Cambodia
+  - Asia Pacific 1: Hong Kong (China), Singapore, Macao (China), Vietnam, Thailand, Nepal, Cambodia, Pakistan
   - Asia Pacific 2: Taiwan (China), Japan, Malaysia, Indonesia, South Korea
   - Asia Pacific 3: Philippines, India, Australia
   - North America: United States, Canada, Mexico
   - Europe: Netherlands, Germany, Russia, United Kingdom, Ireland, Italy, Spain, France
-  - Middle East: United Arab Emirates, Turkey, Qatar, Saudi Arabia, Bahrain
+  - Middle East: United Arab Emirates, Turkey, Qatar, Saudi Arabia, Bahrain, Iraq
   - Africa: South Africa
-  - South America: Brazil, Colombia
+  - South America: Brazil, Colombia, Argentina
 - The conversion factor for units of traffic/bandwidth is 1,000. For example, 1 TB = 1,000 GB.
 - A CSS service day is 00:00-23:59 (UTC+08:00).
 - **At 00:00 (UTC+08:00), January 4, 2022**, CSS adjusted the daily billing prices and pricing tiers of LVB’s basic services and started billing usage outside the Chinese mainland by region instead of at a unified price. For details, see [Notice: CSS to Adjust Prices of Basic Services](https://intl.cloud.tencent.com/document/product/267/43055).
