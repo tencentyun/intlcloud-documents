@@ -25,8 +25,8 @@ The table below lists the types of media processing templates you can create and
         <td>Transcode audio/video files</td>
     </tr>
      <tr>
-        <td>TESHD transcoding</td>
-        <td>Transcode videos according to TESHD standards, reducing video size without compromising quality.</td>
+        <td>TSC transcoding</td>
+        <td>Transcode videos according to Top Speed Codec (TSC) standards, reducing video size without compromising quality.</td>
     </tr>
     <tr>
         <td>Adaptive bitrate streaming</td>
