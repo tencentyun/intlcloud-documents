@@ -20,6 +20,7 @@
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) ，获取您的项目 SecretId 和 SecretKey。
 4. 配置 CORS 规则，AllowHeader 需配成`*`，ExposeHeaders 需要 ETag、Content-Length 以及其他 js 需要读取的 header 字段，如下图所示。操作详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
 
+![CORS例](https://main.qcloudimg.com/raw/925cef63c1a4a5e849f464984e0446e7.png)
 
 >? 
 > - 关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
@@ -76,6 +77,7 @@ var Region = 'COS_REGION';     /* 存储桶所在地域，必须字段 */
 var cos = new COS({
     // getAuthorization 必选参数
     getAuthorization: function (options, callback) {
+        // 初始化时不会调用，只有调用cos方法（比如cos.putObject）时才会进入
         // 异步获取临时密钥
         // 服务端 JS 和 PHP 例子：https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/
         // 服务端其他语言参考 COS STS SDK ：https://github.com/tencentyun/qcloud-cos-sts-sdk
@@ -119,7 +121,7 @@ var cos = new COS({
 
 - 格式一（推荐）：后端通过获取临时密钥给到前端，前端计算签名。
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -158,7 +160,7 @@ var cos = new COS({
 
 - 格式二（推荐）：细粒度控制权限，后端通过获取临时密钥给到前端，只有在相同请求时，前端才重复使用临时密钥，后端可以通过 Scope 细粒度控制权限。
 
-[//]: # (.cssg-snippet-global-init-sts-scope)
+[//]: # ".cssg-snippet-global-init-sts-scope"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -196,7 +198,7 @@ var cos = new COS({
 
 - 格式三（不推荐）：前端每次请求前都需要通过 getAuthorization 获取签名，后端使用固定密钥或临时密钥计算签名返回至前端。该格式分块上传权限不便控制，不推荐您使用此格式。
 
-[//]: # (.cssg-snippet-global-init-signature)
+[//]: # ".cssg-snippet-global-init-signature"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -236,7 +238,7 @@ var cos = new COS({
 
 - 格式四（不推荐）：前端使用固定密钥计算签名，该格式适用于前端调试，若使用此格式，请避免泄露密钥。
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```js
 var COS = require('cos-js-sdk-v5');
 
@@ -255,7 +257,7 @@ var cos = new COS({
 | SecretKey              | 用户的 SecretKey，建议只在前端调试时使用，避免暴露密钥       | String   | 否   |
 | FileParallelLimit      | 同一个实例下上传的文件并发数，默认值3                        | Number   | 否   |
 | ChunkParallelLimit     | 同一个上传文件的分块并发数，默认值3                          | Number   | 否   |
-| ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值3（加第一次，请求共4次） | Number   | 否   |
+| ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值2（加第一次，请求共3次） | Number   | 否   |
 | ChunkSize              | 分块上传时，每片的字节数大小，默认值1048576（1MB）           | Number   | 否   |
 | SliceSize              | 使用 uploadFiles 批量上传时，文件大小大于该数值将使用按分块上传，否则将调用简单上传，单位 Byte，默认值1048576（1MB） | Number   | 否   |
 | CopyChunkParallelLimit | 进行分块复制操作中复制分块上传的并发数，默认值20             | Number   | 否   |
@@ -367,9 +369,9 @@ function myDelete() {
 
 ### 上传对象
 
-简单上传接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/43552) 文档。
+简单上传接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://www.tencentcloud.com/document/product/436/43552) 文档。
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -387,7 +389,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -402,7 +404,7 @@ cos.getBucket({
 
 > !该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体请参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31540) 文档。
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -415,7 +417,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */

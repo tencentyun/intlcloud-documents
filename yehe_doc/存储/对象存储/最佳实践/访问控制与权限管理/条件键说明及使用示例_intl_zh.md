@@ -427,7 +427,7 @@ RFC 2616中定义的 HTTP 请求内容类型（MIME），例如`application/xml`
 
 #### 示例1: 限定上传对象（PutObject）的 Content-Type 必须为 “image/jpeg”
 
-假设主账号（uin:100000000001）拥有存储桶 examplebucket-1250000000，可以通过`cos:content-length`条件键限制子用户（uin:100000000002）上传请求的 Content-Type 头的具体内容。
+假设主账号（uin:100000000001）拥有存储桶 examplebucket-1250000000，可以通过`cos:content-type`条件键限制子用户（uin:100000000002）上传请求的 Content-Type 头的具体内容。
 
 下面这个存储桶策略的含义是：限制使用 PutObject 上传对象必须携带 Content-Type 头部，且 Content-Type 的值为“image/jpeg”。
 
@@ -620,7 +620,7 @@ GetObject 接口支持加入请求参数`response-content-type`，用于设置�
 
 您可以通过条件键`cos:x-cos-storage-class`限制请求头部`x-cos-storage-class`，进而限制可能修改存储类型的请求。
 
-COS 的存储类型字段包括：`STANDARD`, `STANDARD_IA`、`INTELLIGENT_TIERING`、``ARCHIVE`、`DEEP_ARCHIVE`。
+COS 的存储类型字段包括：`STANDARD`, `STANDARD_IA`、`INTELLIGENT_TIERING`、`ARCHIVE`、`DEEP_ARCHIVE`。
 
 #### 示例1：要求 PutObject 时必须将存储类型设置为标准类型
 

@@ -57,6 +57,7 @@ var request = require('request');
 var COS = require('cos-nodejs-sdk-v5');
 var cos = new COS({
     getAuthorization: function (options, callback) {
+        // 初始化时不会调用，只有调用cos方法（比如cos.putObject）时才会进入
         // 异步获取临时密钥
         request({
             url: 'https://example.com/sts',
@@ -92,7 +93,7 @@ var cos = new COS({
 | SecretKey              | 用户的 SecretKey                                             | String   | 是   |
 | FileParallelLimit      | 同一个实例下上传的文件并发数，默认值3                        | Number   | 否   |
 | ChunkParallelLimit     | 同一个上传文件的分块并发数，默认值3                          | Number   | 否   |
-| ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值3（加第一次，请求共4次） | Number   | 否   |
+| ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值2（加第一次，请求共3次） | Number   | 否   |
 | ChunkSize              | 分块上传时，每块的字节数大小，默认值1048576（1MB）           | Number   | 否   |
 | SliceSize              | 使用 uploadFiles 批量上传时，文件大小大于该数值将使用按分片上传，否则将调用简单上传，单位 Byte，默认值1048576（1MB） | Number   | 否   |
 | CopyChunkParallelLimit | 进行分块复制操作中复制分块上传的并发数，默认值20             | Number   | 否   |
@@ -210,7 +211,7 @@ function myDelete() {
 
 ### 创建存储桶
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
@@ -222,7 +223,7 @@ cos.putBucket({
 
 ### 查询存储桶列表
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```js
 cos.getService(function (err, data) {
     console.log(data && data.Buckets);
@@ -231,9 +232,9 @@ cos.getService(function (err, data) {
 
 ### 上传对象
 
-该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/43551) 文档。
+该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://www.tencentcloud.com/document/product/436/43551) 文档。
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -251,7 +252,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -264,7 +265,7 @@ cos.getBucket({
 
 ### 下载对象
 
-[//]: # (.cssg-snippet-get-object-stream)
+[//]: # ".cssg-snippet-get-object-stream"
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -278,7 +279,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
