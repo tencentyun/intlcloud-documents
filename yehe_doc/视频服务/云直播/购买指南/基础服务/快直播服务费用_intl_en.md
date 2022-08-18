@@ -2,14 +2,14 @@
 - Billing mode: **Daily pay-as-you-go**
 - Billing cycle: Daily billing cycle. Traffic fees generated each day are deducted the following day. For the actual fee deduction and bill generation time, see your billing statement.
 - **Billing regions outside the Chinese mainland**:
-  - Asia Pacific 1: Hong Kong (China), Singapore, Macao (China), Vietnam, Thailand, Nepal, Cambodia
+  - Asia Pacific 1: Hong Kong (China), Singapore, Macao (China), Vietnam, Thailand, Nepal, Cambodia, Pakistan
   - Asia Pacific 2: Taiwan (China), Japan, Malaysia, Indonesia, South Korea
   - Asia Pacific 3: Philippines, India, Australia
   - North America: United States, Canada, Mexico
   - Europe: Netherlands, Germany, Russia, United Kingdom, Ireland, Italy, Spain, France
-  - Middle East: United Arab Emirates, Turkey, Qatar, Saudi Arabia, Bahrain
+  - Middle East: United Arab Emirates, Turkey, Qatar, Saudi Arabia, Bahrain, Iraq
   - Africa: South Africa
-  - South America: Brazil, Colombia
+  - South America: Brazil, Colombia, Argentina
 - The conversion factor for units of traffic/bandwidth is 1,000. For example, 1 TB = 1,000 GB.
 - A CSS service day is 00:00-23:59 (UTC+08:00).
 - Because LEB uses channels with ultra-low latency, its traffic/bandwidth fees are slightly higher than those of LVB.
