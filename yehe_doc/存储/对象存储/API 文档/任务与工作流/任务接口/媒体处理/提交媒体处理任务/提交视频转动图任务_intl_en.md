@@ -1,418 +1,277 @@
-## Feature Description
+## Description 
 
-This API is used to submit an animated image job.
+COSFS allows you to mount COS buckets to local and work with the COS objects as you do with a local file system. COSFS supports the following features:
+- Most features of the POSIX file system, such as reading/writing files, operations on directories/links, permission management, and uid/gid management.
+- Multipart upload of large files.
+- Data verification with MD5.
+- Upload data to COS using [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) or [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
 
-<div class="rno-api-explorer">
-    <div class="rno-api-explorer-inner">
-        <div class="rno-api-explorer-hd">
-            <div class="rno-api-explorer-title">
-                API Explorer is recommended.
-            </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateAnimationTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
-        </div>
-        <div class="rno-api-explorer-body">
-            <div class="rno-api-explorer-cont">
-                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
-            </div>
-        </div>
-    </div>
-</div>
+## Limitations
+**COSFS is built on S3FS. As the disk is required for COSFS' read and write operations, COSFS is only suitable for simple management of the mounted files and does not support all features of a local file system. Besides, it cannot outperform Cloud Block Storage (CBS) or Cloud File Storage (CFS).** To use COSFS, note that:
+
+- Randomly writing data or appending data to a file may lead to the re-download/re-upload of the entire file. To avoid this, you can use a CVM in the same region as the bucket to accelerate the upload and download.
+- When a COS bucket is mounted to multiple clients, you need to coordinate the behaviors of these clients, for example, to prevent the clients from simultaneously writing data to the same file.
+- `Rename` operation on a file/folder is not atomic.
+- For metadata operations such as `list directory`, COSFS performs unsatisfactorily as it requires remote access to the COS server.
+- COSFS does not support hard links and is inapplicable to high-concurrency reads/writes.
+- Mounting and unmounting files cannot be performed on the same mount target at the same time. You can use the `cd` command to switch to another directory and then mount and unmount the files at the mount target.
+
+## Operating Environments
+Mainstream Ubuntu, CentOS, SUSE, and macOS
 
 
+## Installation
+You can install COSFS with an installation package or by compiling the source code.
 
-## Request
 
-#### Sample request
+### Method 1: Install with an installation package
+>? This installation method supports only mainstream Ubuntu and CentOS.
+>
 
+#### Ubuntu
+
+1. Download the appropriate installation package according to your system version. Currently, Ubuntu 14.04, 16.04, 18.04, and 20.04 are supported.
+Download from GitHub:
+```plaintext
+#Ubuntu14.04
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb
+#Ubuntu16.04
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb
+#Ubuntu18.04
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb
+#Ubuntu20.04
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb
+
+```
+Download from CDN:
+[cosfs_1.0.20-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb)
+[cosfs_1.0.20-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb)
+[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb)
+[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb)
+
+2. Install the package. The following takes Ubuntu 16.04 as an example.
 ```shell
-POST /jobs HTTP/1.1
-Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
-Date: <GMT Date>
-Authorization: <Auth String>
-Content-Length: <length>
-Content-Type: application/xml
-
-<body>
+sudo dpkg -i cosfs_1.0.20-ubuntu16.04_amd64.deb
 ```
 
->?
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+#### CentOS
+
+1. Install dependencies.
+```plaintext
+sudo yum install libxml2-devel libcurl-devel -y
+```
+2. Download the appropriate installation package according to your system version. Currently, CentOS 6.5 and 7.0 are supported.
+Download from GitHub:
+```plaintext
+#CentOS6.5
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm
+#CentOS7.0
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm
+
+```
+Download from CDN:
+[cosfs-1.0.20-centos6.5.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm)
+[cosfs-1.0.20-centos7.0.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm)
+
+3. Install the package. The following takes CentOS 7.0 as an example.
+```shell
+sudo rpm -ivh cosfs-1.0.20-centos7.0.x86_64.rpm
+```
+>? If the system reports the error `conflicts with file from package fuse-libs-*` during installation, add the `--force` parameter and install the package again.
+>
+
+### Method 2: Install by compiling the source code
+
+>? This installation method supports mainstream Ubuntu, CentOS, SUSE, and macOS.
+>
+
+
+#### 1. Install the dependency software 
+The compilation and installation of COSFS depend on software packages such as `automake`, `git`, `libcurl-devel`, `libxml2-devel`, `fuse-devel`, `make`, and `openssl-devel`. The following describes how to install dependency software on Ubuntu, CentOS, SUSE, and macOS:
+
+- Install dependency software on the Ubuntu system:
+```shell
+sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config fuse
+```
+- Install dependency software on the CentOS system:
+```shell
+sudo yum install automake gcc-c++ git libcurl-devel libxml2-devel fuse-devel make openssl-devel fuse
+```
+- Install dependency software on the SUSE system:
+```shell
+sudo zypper install gcc-c++ automake make libcurl-devel libxml2-devel openssl-devel pkg-config
+```
+- Install dependency software on the macOS system:
+```shell
+brew install automake git curl libxml2 make pkg-config openssl 
+brew install cask osxfuse
+```
+
+#### 2. Obtain the source code 
+
+Download the [COSFS Source Code](https://github.com/tencentyun/cosfs) from GitHub to a specified directory. The following uses `/usr/cosfs` as an example. You can use another directory as needed.
+```shell
+sudo git clone https://github.com/tencentyun/cosfs /usr/cosfs
+```
+
+
+#### 3. Compile and install COSFS 
+Open the installation directory, and execute the following command to compile and install COSFS:
+```shell
+cd /usr/cosfs
+sudo ./autogen.sh
+sudo ./configure
+sudo make
+sudo make install
+cosfs --version  #View the COSFS version number
+```
+
+#### 4. Troubleshoot configure issues
+
+Messages displayed during the `configure` operation vary depending on the OS. If your FUSE version is earlier than 2.8.4, the following error message will be displayed:
+```shell
+checking for common_lib_checking... configure: error: Package requirements (fuse >= 2.8.4 libcurl >= 7.0 libxml-2.0 >= 2.6) were not met:
+  Requested 'fuse >= 2.8.4' but version of fuse is 2.8.3 
+```
+In this case, you need to manually install fuse 2.8.4 or later as shown below:
+```shell
+sudo yum -y remove fuse-devel
+sudo wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
+tar -zxvf fuse-2.9.4.tar.gz
+cd fuse-2.9.4
+sudo ./configure
+sudo make
+sudo make install
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/pkgconfig
+modprobe fuse   # Mount FUSE's kernel module.
+echo "/usr/local/lib" >> /etc/ld.so.conf
+ldconfig   # Update the dynamic-link library.
+pkg-config --modversion fuse  #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
+```
+- Install FUSE 2.8.4 or later on the SUSE system manually, as shown below:
+>! During installation, you need to comment out the content of line 222 in `example/fusexmp.c` by using `/*content*/`. Otherwise, an error will be reported when you use Make.
+>
+```shell
+zypper remove fuse libfuse2
+sudo wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
+tar -zxvf fuse-2.9.4.tar.gz
+cd fuse-2.9.4
+sudo ./configure
+sudo make 
+sudo make install
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/pkgconfig
+modprobe fuse   # Mount FUSE's kernel module.
+echo "/usr/local/lib" >> /etc/ld.so.conf
+ldconfig   # Update the dynamic-link library.
+pkg-config --modversion fuse   #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
+```
+- When the "configure" operation is performed on macOS, the following may be displayed:
+```shell
+configure: error: Package requirements (fuse >= 2.7.3 libcurl >= 7.0 libxml-2.0 >2.6 libcrypto >= 0.9) were not met
+No package 'libcrypto' found
+```
+ In this case, you need to set the variable PKG_CONFIG_PATH, so that the pkg-config tool can find openssl. The command is as follows:
+```shell
+brew info openssl 
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig #You may need to modify this command based on the message displayed for the previous command.
+```
+
+
+## How to Use
+
+### 1. Configure the key file
+Write the bucket information in the `/etc/passwd-cosfs` file, including the bucket name (in `BucketName-APPID` format) &lt;SecretId&gt;, as well as &lt;SecretKey&gt;, and use colons (:) to separate them. To avoid compromising your key, you need to set permissions for the key file to 640. You can run the following command to configure the `/etc/passwd-cosfs` key file:
+```shell
+sudo su  # Switch to the root account to modify the /etc/passwd-cosfs file. Skip this step if you have already logged in with the root account
+echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
+chmod 640 /etc/passwd-cosfs
+```
+
+>?You need to replace the content enclosed in &lt;&gt; with the actual information.
+>- &lt;BucketName-APPID&gt; indicates the name of the bucket. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).
+>- &lt;SecretId&gt; and &lt;SecretKey&gt; are information about the key, which can be obtained and created at [Manage API Key](https://console.cloud.tencent.com/cam/capi) in the CAM console.
+>- You can configure the key in `$HOME/.passwd-cosfs`. Alternatively, you can run `-opasswd_file=[path]` to specify the directory of the key file and then set permissions of the key file to 600.
 > 
 
-
-#### Request headers
-
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
-
-#### Request body
-
-This request requires the following request body:
+**Sample:**
 
 ```shell
-<Request>
-    <Tag>Animation</Tag>
-    <Input>
-        <Object>input/demo.mp4</Object>
-    </Input>
-    <Operation>
-        <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.gif</Object>
-        </Output>
-        <UserData>This is my data.</UserData>
-    </Operation>
-    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-    <CallBack>http://callback.demo.com</CallBack>
-    <CallBackFormat>JSON<CallBackFormat>
-</Request>
+echo examplebucket-1250000000:AKIDHTVVaVR6e3****:PdkhT9e2rZCfy6**** > /etc/passwd-cosfs
+chmod 640 /etc/passwd-cosfs
 ```
 
-The nodes are described as follows:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------ | -------------- | --------- | -------- |
-| Request            | None     | Request container | Container | Yes       |
-
-`Request` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------- | ------------------------------------------------------------ | --------- | -------- |
-| Tag                | Request | Job type: Animation | String    | Yes       |
-| Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
-| Operation          | Request | Operation rule                                  | Container | Yes   |
-| QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
-| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
-
-`Input` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------------- | ---------- | ------ | -------- |
-| Object             | Request.Input | Media filename | String | Yes   |
-
-<span id="operation"></span>
-`Operation` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ----------------- | ---------------- | --------- | -------- |
-| Animation                    | Request.Operation | Job type parameter                                     | Container | No   |
-| TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
-| Output                       | Request.Operation | Result output address                                        | Container | Yes   |
-| UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
-
->! `TemplateId` is used first. If `TemplateId` is unavailable, `Animation` is used.
-
-`Animation` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | :-------------------------- | ------------------------------------------------------------ | --------- | -------- |
-| Container          | Request.Operation.Animation | Same as `Request.Container` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#Container" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Video              | Request.Operation.Animation | Same as `Request.Video` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#Video" target="_blank">CreateMediaTemplate</a>.        | Container | No   |
-| TimeInterval       | Request.Operation.Animation | Same as `Request.TimeInterval` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#TimeInterval" target="_blank">CreateMediaTemplate</a>. | Container | No   |
-
-`Output` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------------------------ | ---------------- | ------ | -------- |
-| Region             | Request.Operation.Output | Bucket region | String | Yes   |
-| Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Output result filename | String | Yes   |
+>! If your COSFS version is v1.0.5 or earlier, the configuration file format is &lt;BucketName>:&lt;SecretId>:&lt;SecretKey>.
+>
 
 
-
-## Response
-
-#### Response headers
-
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
-
-#### Response body
-
-The response body returns **application/xml** data. The following contains all the nodes:
+### 2. Run the tool
+You can run the following command to mount the bucket configured in the key file to a specified directory:
 
 ```shell
-<Response>
-    <JobsDetail>
-        <Code>Success</Code>
-        <Message/>
-        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
-        <State>Submitted</State>
-        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
-        <StartTime>-</StartTime>
-        <EndTime>-</EndTime>
-        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>Animation</Tag>
-        <Input>
-            <BucketId>test-123456789</BucketId>
-            <Object>input/demo.mp4</Object>
-            <Region>ap-chongqing</Region>
-        </Input>
-        <Operation>
-            <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
-            <TemplateName>animation_demo</TemplateName>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
-            </Output>
-            <UserData>This is my data.</UserData>
-        </Operation>
-    </JobsDetail>
-</Response>
+cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
+On the **Stream Interruption Records** page:
+- &lt;MountPoint&gt; is the mount target, for example, `/mnt`.
+- &lt;Region&gt; is the abbreviation for the region, such as `ap-guangzhou` and `eu-frankfurt`. For more information about region abbreviations, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+- `-odbglevel` specifies the log level. The default value is `crit`. Available options are `crit`, `error`, `warn`, `info`, and `debug`.
+- `-oallow_other` allows other users to access the mount target.
 
-The nodes are as described below:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
-
-`Response` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------- | :------------- | :-------- |
-| JobsDetail         | Response | Job details | Container |
-
-<span id="jobsDetail"></span>
-`JobsDetail` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------------------ | :----------------------------------------------------------- | :-------- |
-| Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
-| JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag | Response.JobsDetail | Job type: Animation | String |
-| State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
-| CreationTime       | Response.JobsDetail | Job creation time                         | String    |
-| StartTime | Response.JobsDetail | Job start time |  String |
-| EndTime | Response.JobsDetail | Job end time |  String |
-| QueueId            | Response.JobsDetail | ID of the queue which the job is in                       | String    |
-| Input              | Response.JobsDetail | Input resource address of the job                   | Container |
-| Operation          | Response.JobsDetail | Operation rule                           | Container |
-
-`Input` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| ------------------ | ------------------------ | ---------------- | ------ |
-| Region             | Response.JobsDetail.Input | Bucket region     | String |
-| Bucket             | Response.JobsDetail.Input | Result storage bucket | String |
-| Object             | Response.JobsDetail.Input | Output result filename | String |
-
-`Operation` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
-| TemplateName        | Response.JobsDetail.Operation | Job template name, which will be returned if `TemplateId` exists. | String    |
-| Animation             | Response.JobsDetail.Operation | Same as `Request.Operation.Animation` in the request.  | Container |
-| Output             | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request.  | Container |
-| MediaInfo           | Response.JobsDetail.Operation | Media information of the output file, which will not be returned when the job is not completed. | Container |
-| MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
-| UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
-
-`MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
-
-`MediaResult` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| OutputFile         | Response.Operation.MediaResult | Basic information of the output file. | Container |
-
-`OutputFile` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| Bucket             | Response.Operation.MediaResult.OutputFile | Bucket of the output file.           | String |
-| Region             | Response.Operation.MediaResult.OutputFile | Bucket region of the output file.  | String |
-| ObjectName         | Response.Operation.MediaResult.OutputFile | Output filename. There may be multiple values.         | String array |
-| Md5Info            | Response.Operation.MediaResult.OutputFile | MD5 information of the output file. | Container array |
-
-`Md5Info` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | Output filename.         | String |
-| Md5                | Response.Operation.MediaResult.OutputFile.Md5Info | MD5 value of the output file.    | Container |
-
-#### Error codes
-
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
-
-## Samples
-
-**Using the animated image template ID**
-
-#### Request
+**Sample:**
 
 ```shell
-POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
-Content-Length: 166
-Content-Type: application/xml
-
-<Request>
-    <Tag>Animation</Tag>
-    <Input>
-        <Object>input/demo.mp4</Object>
-    </Input>
-    <Operation>
-        <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.gif</Object>
-        </Output>
-    </Operation>
-    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-    <CallBack>http://callback.demo.com</CallBack>
-    <CallBackFormat>JSON<CallBackFormat>
-</Request>
+mkdir -p /mnt/cosfs
+cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr -oallow_other
 ```
 
-#### Response
+>!
+>- To improve performance, COSFS uses the system disk by default for the temporary cache of uploaded and downloaded files and releases space after files are closed. When a large number of concurrent files are opened or large files are read or written, COSFS uses hard disk space as much as possible to improve performance. By default, only 100 MB of free hard disk space is reserved for other applications. You can use the `oensure_diskfree=[size]` option to set the size of available hard disk space in MB reserved by COSFS. For example, `-oensure_diskfree=1024` indicates that COSFS will reserve 1024 MB of free space.
+>- If your COSFS is v1.0.5 or earlier, use the following mount command: `cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other`.
+>
+
+
+### 3. Unmount a bucket
+
+Unmount a bucket using the following commands:
 
 ```shell
-HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 230
-Connection: keep-alive
-Date: Mon, 28 Jun 2022 15:23:12 GMT
-Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
-
-<Response>
-    <JobsDetail>
-        <Code>Success</Code>
-        <Message/>
-        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
-        <State>Submitted</State>
-        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
-        <StartTime>-</StartTime>
-        <EndTime>-</EndTime>
-        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>Animation</Tag>
-        <Input>
-            <BucketId>test-123456789</BucketId>
-            <Object>input/demo.mp4</Object>
-            <Region>ap-chongqing</Region>
-        </Input>
-        <Operation>
-            <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
-            <TemplateName>animation_demo</TemplateName>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
-            </Output>
-            <UserData>This is my data.</UserData>
-        </Operation>
-    </JobsDetail>
-</Response>
+Method 1: Use `fusermount -u /mnt, fusermount` to unmount a FUSE file system 
+Method 2: Use `umount -l /mnt`. The unmount operation will be performed when no program is using any file in the file system.
+Method 3: Use `umount /mnt`. If any program is using a file in the file system during the unmount, an error will be reported.
 ```
 
+## Common Mounting Options
 
-**Using the animated image processing parameter**
+#### -omultipart_size=[size]
+Specifies the size (in MB) of each part for the multipart upload. It is 10 MB by default. Up to 10,000 parts are allowed for a file in a multipart upload. If the file is larger than 100 GB (10 MB \* 10000), you need to adjust this parameter accordingly.
 
-#### Request
+#### -oallow_other
+Allows other users to access the folder to which the bucket is mounted.
 
-```shell
-POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
-Content-Length: 166
-Content-Type: application/xml
+#### -odel_cache
+By default, to ensure optimal performance, the COSFS does not clear local cached data after a bucket is unmounted. To enable the COSFS to automatically clear cached data upon its exit, you can add this option during mounting.
 
-<Request>
-    <Tag>Animation</Tag>
-    <Input>
-        <Object>input/demo.mp4</Object>
-    </Input>
-    <Operation>
-        <Animation>
-            <Container>
-                <Format>gif</Format>
-            </Container>
-            <Video>
-                <Codec>gif</Codec>
-                <Width>1280</Width>
-                <Height>960</Height>
-                <Fps>15</Fps>
-                <AnimateOnlyKeepKeyFrame>true</AnimateOnlyKeepKeyFrame>
-            </Video>
-            <TimeInterval>
-                <Start>0</Start>
-                <Duration>60</Duration>
-            </TimeInterval>
-        </Animation>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.gif</Object>
-        </Output>
-        <UserData>This is my data.</UserData>
-    </Operation>
-    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-    <CallBack>http://callback.demo.com</CallBack>
-    <CallBackFormat>JSON<CallBackFormat>
-</Request>
-```
+#### -onoxattr
+Disables getattr/setxattr. For the COSFS earlier than 1.0.9, you cannot set or obtain extended attributes. If the use_xattr option is used during mounting, the files may fail to be copied to the bucket.
 
-#### Response
+#### -opasswd_file=[path]
+Specifies the path for the COSFS key file. You need to set the permission for the key file to 600.
 
-```shell
-HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 230
-Connection: keep-alive
-Date: Mon, 28 Jun 2022 15:23:12 GMT
-Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+#### -odbglevel=[dbg|info|warn|err|crit]
 
-<Response>
-    <JobsDetail>
-        <Code>Success</Code>
-        <Message/>
-        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
-        <State>Submitted</State>
-        <CreationTime>2022-06-27T15:23:12+0800</CreationTime>
-        <StartTime>-</StartTime>
-        <EndTime>-</EndTime>
-        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>Animation</Tag>
-        <Input>
-            <BucketId>test-123456789</BucketId>
-            <Object>input/demo.mp4</Object>
-            <Region>ap-chongqing</Region>
-        </Input>
-        <Operation>
-            <Animation>
-                <Container>
-                    <Format>gif</Format>
-                </Container>
-                <Video>
-                    <Codec>gif</Codec>
-                    <Width>1280</Width>
-                    <Height>960</Height>
-                    <Fps>15</Fps>
-                    <AnimateOnlyKeepKeyFrame>true</AnimateOnlyKeepKeyFrame>
-                </Video>
-                <TimeInterval>
-                    <Start>0</Start>
-                    <Duration>60</Duration>
-                </TimeInterval>
-            </Animation>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
-            </Output>
-            <UserData>This is my data.</UserData>
-        </Operation>
-    </JobsDetail>
-</Response>
-```
+Sets the log level for COSFS. Valid values are `info`, `dbg`, `warn`, `err`, and `crit`. We recommend you set it to `info` in the production environment, and `dbg` for debugging. If you do not clear system logs regularly, or numerous logs will be generated due to a huge access volume, you can set it to `err` or `crit`.
+
+#### -oumask=[perm]
+
+Removes the permission of a specified type of users to operate files in the mounting destination directory. For example, when -oumask=755, the permission for the mounting destination directory is changed to 022.
+
+#### -ouid=[uid]
+Allows the user whose ID is [uid] to access all files in the mounting destination directory without being restricted by the file permission bits.
+You can obtain the `uid` of a user by using the ID command `id -u username`. For example, you can run `id -u user_00` to obtain the `uid` of user 00.
+
+#### -oensure_diskfree=[size]
+
+To improve performance, COSFS uses the system disk by default for the temporary cache of uploaded and downloaded files and releases space after files are closed. When a large number of concurrent files are opened or large files are read or written, COSFS uses hard disk space as much as possible to improve performance. By default, only 100 MB of free hard disk space is reserved for other applications. You can use the `oensure_diskfree=[size]` option to set the size of available hard disk space in MB reserved by COSFS. For example, `-oensure_diskfree=1024` indicates that COSFS will reserve 1024 MB of free space.
+
+
+## FAQs
+If you have any questions about COSFS, see [COSFS](https://intl.cloud.tencent.com/document/product/436/30587).
