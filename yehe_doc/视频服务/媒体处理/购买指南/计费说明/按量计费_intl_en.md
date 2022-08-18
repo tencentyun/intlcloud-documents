@@ -35,7 +35,7 @@ Pricing: Fees are calculated by multiplying the video duration (minutes) after t
 |Remuxing|-|0.0011|0.0028|0.0026|0.0026|0.0028|
 
 
-#### TESHD transcoding
+#### TSC transcoding
  
 Pricing: Fees are calculated by multiplying the video duration (minutes) after transcoding by the corresponding unit price.
 
