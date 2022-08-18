@@ -1,7 +1,7 @@
 ## Video Websites
 MPS covers all mainstream video formats and supports multiple resolutions and bitrates, enabling video websites to deliver a smooth and consistent user experience to users with different bandwidth options.
 **Strengths:**
-- Provides an ultimate encoding experience and supports TESHD transcoding, which greatly reduces the storage and bandwidth costs.
+- Provides an ultimate encoding experience and supports Top Speed Codec (TSC) transcoding, which greatly reduces the storage and bandwidth costs.
 - Supports adaptive bitrate streaming to enhance playback on various devices under different network conditions.
 - Offers a wide variety of feature templates to meet diverse needs for media processing such as content capturing, editing, recognition, and moderation.
 - Uses schemes for flexible service process orchestration and integrates the event callback mechanism, which enables you to keep up to date with the task progress.
