@@ -38,8 +38,8 @@ Templates created are displayed in the template list. You can view, edit, or del
 <tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled × 2160</td><td colspan="1" rowspan="2">6000</td></tr>
 <tr><td colspan="1">100280</td><td colspan="1">HLS</td></tr></tbody></table>
 
-### TESHD transcoding[](id:svtrans)
-MPS provides preset Tencent Extreme Speed High Definition (TESHD) templates, which can be added directly to a scheme. You can also click **Create template** to customize your own TESHD templates.
+### TSC transcoding[](id:svtrans)
+MPS provides preset Top Speed Codec (TSC) templates, which can be added directly to a scheme. You can also click **Create template** to customize your own TSC templates.
 
 | Item | Description |
 | --- | ----|
@@ -58,7 +58,7 @@ MPS provides preset Tencent Extreme Speed High Definition (TESHD) templates, whi
 
 
 >?
->- You can view **preset** TESHD transcoding templates in [Template Management > Audio/Video Transcoding Templates](https://console.cloud.tencent.com/mps/templates?tab=tehd) of the MPS console.
+>- You can view **preset** TSC transcoding templates in [Template Management > Audio/Video Transcoding Templates](https://console.cloud.tencent.com/mps/templates?tab=tehd) of the MPS console.
 >- If the container format is set to MP4, FLV, or HLS, video parameters are required.
 
 Templates created are displayed in the template list. You can filter, view, edit, or delete custom templates, but preset templates can be viewed only, not edited or deleted.
