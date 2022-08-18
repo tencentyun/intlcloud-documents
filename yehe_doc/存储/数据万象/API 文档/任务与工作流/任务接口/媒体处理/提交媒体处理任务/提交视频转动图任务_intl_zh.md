@@ -1,6 +1,6 @@
 ## 功能描述
 
-提交一个人声分离任务。
+提交一个动图任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -47,21 +47,20 @@ Content-Type: application/xml
 
 #### 请求体
 
-该请求操作的实现需要有如下请求体：
+该请求操作的实现需要有如下请求体。
 
 ```shell
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>Animation</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out.gif</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -79,15 +78,14 @@ Content-Type: application/xml
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                          | 类型      | 是否必选 |
-| ------------------ | ------- | ----------------------------- | --------- | -------- |
-| Tag                | Request | 创建任务的 Tag：VoiceSeparate | String    | 是       |
-| Input              | Request | 待操作的媒体信息              | Container | 是       |
-| Operation          | Request | 操作规则                                                     | Container | 是       |
-| QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
+| 节点名称（关键字） | 父节点  | 描述                                                         | 类型      | 是否必选 |
+| ------------------ | ------- | ------------------------------------------------------------ | --------- | -------- |
+| Tag                | Request | 创建任务的 Tag：Animation                                     | String    | 是       |
+| Input              | Request | 待操作的媒体信息                                             | Container | 是       |
+| Operation          | Request | 操作规则                                                    | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID                                            | String    | 是       |
 | CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
 | CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
-
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -100,27 +98,30 @@ Container 类型 Operation 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点            | 描述             | 类型      | 是否必选 |
 | ------------------ | ----------------- | ---------------- | --------- | -------- |
-| VoiceSeparate      | Request.Operation | 指定转码模板参数 | Container | 否       |
+| Animation          | Request.Operation | 指定该任务的参数 | Container | 否       |
 | TemplateId         | Request.Operation | 指定的模板 ID    | String    | 否       |
 | Output             | Request.Operation | 结果输出地址     | Container | 是       |
+| UserData           | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024 | String | 否 |
 
->! 优先使用 TemplateId，无 TemplateId 时使用 VoiceSeparate。
+>!优先使用 TemplateId，无 TemplateId 时使用 Animation。
 
-Container 类型 VoiceSeparate 的具体数据描述如下：
+Container 类型 Animation 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                          | 描述                                                         | 类型      | 是否必选 |
-| ------------------ | :------------------------------ | ------------------------------------------------------------ | --------- | -------- |
-| AudioMode          | Request.Operation.VoiceSeparate | 同创建人声分离模板 <a href="https://cloud.tencent.com/document/product/460/77098#Request" target="_blank">CreateMediaTemplate</a> 接口中的 Request.AudioMode | Container | 否       |
-| AudioConfig        | Request.Operation.VoiceSeparate | 同创建人声分离模板 <a href="https://cloud.tencent.com/document/product/460/77098#AudioConfig" target="_blank">CreateMediaTemplate</a> 接口中的 Request.AudioConfig | Container | 否       |
+| 节点名称（关键字） | 父节点                      | 描述                                                         | 类型      | 是否必选 |
+| ------------------ | :-------------------------- | ------------------------------------------------------------ | --------- | -------- |
+| Container          | Request.Operation.Animation | 同动图模板 <a href="https://cloud.tencent.com/document/product/460/77088#Container" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Container | Container | 否       |
+| Video              | Request.Operation.Animation | 同动图模板 <a href="https://cloud.tencent.com/document/product/460/77088#Video" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Video   | Container | 否       |
+| TimeInterval       | Request.Operation.Animation | 同动图模板 <a href="https://cloud.tencent.com/document/product/460/77088#TimeInterval" target="_blank">CreateMediaTemplate</a> 接口中的 Request.TimeInterval | Container | 否       |
 
 Container 类型 Output 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                     | 描述                                       | 类型   | 是否必选 |
-| ------------------ | -------------------------- | ------------------------------------------ | ------ | -------- |
-| Region             | Request.Operation.Output   | 存储桶的地域                               | String | 是       |
-| Bucket             | Request.Operation.Output   | 存储结果的存储桶                           | String | 是       |
-| Object             | Request.Operation.Output   | 背景音结果文件名，不能与 AuObject 同时为空 | String | 否       |
-| AuObject           | Request.Operation.AuObject | 人声结果文件名，不能与 Object 同时为空     | String | 否       |
+| 节点名称（关键字） | 父节点                   | 描述             | 类型   | 是否必选 |
+| ------------------ | ------------------------ | ---------------- | ------ | -------- |
+| Region             | Request.Operation.Output | 存储桶的地域     | String | 是       |
+| Bucket             | Request.Operation.Output | 存储结果的存储桶 | String | 是       |
+| Object             | Request.Operation.Output | 输出结果的文件名 | String | 是       |
+
+
 
 ## 响应
 
@@ -137,26 +138,25 @@ Container 类型 Output 的具体数据描述如下：
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>Animation</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>voiceseparate_demo</TemplateName>
+            <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
+            <TemplateName>animation_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
@@ -184,7 +184,7 @@ Container 节点 JobsDetail 的内容：
 | Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
 | JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
-| Tag                | Response.JobsDetail | 新创建任务的 Tag：VoiceSeparate                              | String    |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：Animation                                  | String    |
 | State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String    |
 | CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
 | StartTime          | Response.JobsDetail | 任务的开始时间                                               | String    |
@@ -207,14 +207,14 @@ Container 节点 Operation 的内容：
 | :----------------- | :---------------------------- | :------------------------------- | :-------- |
 | TemplateId         | Response.JobsDetail.Operation | 任务的模板 ID                    | String    |
 | TemplateName       | Response.JobsDetail.Operation | 任务的模板名称, 当 TemplateId 存在时返回 | String    |
-| VoiceSeparate      | Response.JobsDetail.Operation | 同请求中的 Request.Operation.VoiceSeparate | Container |
-| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output        | Container |
-| MediaInfo          | Response.JobsDetail.Operation | 转码输出视频的信息，任务未完成时不返回 | Container |
-| MediaResult         | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
-| UserData            | Response.JobsDetail.Operation | 透传用户信息                      | String |
+| Animation          | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Animation | Container |
+| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output    | Container |
+| MediaInfo          | Response.JobsDetail.Operation | 输出文件的媒体信息，任务未完成时不返回 | Container |
+| MediaResult        | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
+| UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
 
 Container 节点 MediaInfo 的内容：
-同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
+同 GenerateMediaInfo接口中的 Response.MediaInfo 节点。
 
 Container 节点 MediaResult 的内容：
 
@@ -236,7 +236,7 @@ Container 节点 Md5Info 的内容：
 | 节点名称（关键字） | 父节点                              | 描述                                                         | 类型   |
 | ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
 | ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件名          | String |
-| Md5                | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件的 MD5 值    | Container |
+| Md5                | Response.Operation.MediaResult.OutputFile.Md5Info  | 输出文件的 MD5 值    | Container |
 
 #### 错误码
 
@@ -244,29 +244,29 @@ Container 节点 Md5Info 的内容：
 
 ## 实际案例
 
-#### 请求1：使用人声分离模板 ID
+**使用动图模板 ID**
+
+#### 请求
 
 ```shell
 POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
 Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>Animation</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out.gif</Object>
         </Output>
-        <UserData>This is my data.</UserData>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -274,7 +274,7 @@ Content-Type: application/xml
 </Request>
 ```
 
-#### 响应1
+#### 响应
 
 ```shell
 HTTP/1.1 200 OK
@@ -283,32 +283,31 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
 <Response>
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>Animation</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>voiceseparate_demo</TemplateName>
+            <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
+            <TemplateName>animation_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
@@ -316,36 +315,44 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 </Response>
 ```
 
-#### 请求2：使用人声分离参数
 
+**使用动图处理参数**
+
+#### 请求
 
 ```shell
 POST /jobs HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>Animation</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <VoiceSeparate>
-            <AudioConfig>
-                    <Bitrate>500</Bitrate>
-                    <Channels>2</Channels>
-                    <Codec>mp3</Codec>
-                    <Samplerate>44100</Samplerate>
-            </AudioConfig>
-            <AudioMode>AudioAndBackground</AudioMode>
-        </VoiceSeparate>
+        <Animation>
+            <Container>
+                <Format>gif</Format>
+            </Container>
+            <Video>
+                <Codec>gif</Codec>
+                <Width>1280</Width>
+                <Height>960</Height>
+                <Fps>15</Fps>
+                <AnimateOnlyKeepKeyFrame>true</AnimateOnlyKeepKeyFrame>
+            </Video>
+            <TimeInterval>
+                <Start>0</Start>
+                <Duration>60</Duration>
+            </TimeInterval>
+        </Animation>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out.gif</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -364,43 +371,48 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
 <Response>
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <CreationTime>2022-06-27T15:23:12+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>Animation</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <VoiceSeparate>
-                <AudioConfig>
-                    <Bitrate>500</Bitrate>
-                    <Channels>2</Channels>
-                    <Codec>mp3</Codec>
-                    <Samplerate>44100</Samplerate>
-                </AudioConfig>
-                <AudioMode>AudioAndBackground</AudioMode>
-            </VoiceSeparate>
+            <Animation>
+                <Container>
+                    <Format>gif</Format>
+                </Container>
+                <Video>
+                    <Codec>gif</Codec>
+                    <Width>1280</Width>
+                    <Height>960</Height>
+                    <Fps>15</Fps>
+                    <AnimateOnlyKeepKeyFrame>true</AnimateOnlyKeepKeyFrame>
+                </Video>
+                <TimeInterval>
+                    <Start>0</Start>
+                    <Duration>60</Duration>
+                </TimeInterval>
+            </Animation>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
     </JobsDetail>
 </Response>
 ```
-

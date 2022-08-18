@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit a screenshot job.
+This API is used to submit an animated image job.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -51,17 +51,16 @@ This request requires the following request body:
 
 ```shell
 <Request>
-    <Tag>Snapshot</Tag>
+    <Tag>Animation</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/snapshot-${Number}.jpg</Object>
-            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            <Object>output/out.gif</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -81,7 +80,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ------------------------------------------------------------ | --------- | -------- |
-| Tag                | Request | Job type: Snapshot                              | String    | Yes   |
+| Tag                | Request | Job type: Animation | String    | Yes       |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
@@ -98,22 +97,30 @@ The nodes are described as follows:
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ----------------- | ------------------------------------------------------------ | --------- | -------- |
-| Snapshot                     | Request.Operation | Job type parameter. Same as `Request.Snapshot` in the screenshot template creation API <a href="https://cloud.tencent.com/document/product/460/77091#Snapshot " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| ------------------ | ----------------- | ---------------- | --------- | -------- |
+| Animation                    | Request.Operation | Job type parameter                                     | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 | UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
 
->! `TemplateId` is used first. If `TemplateId` is unavailable, `Snapshot` is used.
+>! `TemplateId` is used first. If `TemplateId` is unavailable, `Animation` is used.
+
+`Animation` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| ------------------ | :-------------------------- | ------------------------------------------------------------ | --------- | -------- |
+| Container          | Request.Operation.Animation | Same as `Request.Container` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#Container" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| Video              | Request.Operation.Animation | Same as `Request.Video` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#Video" target="_blank">CreateMediaTemplate</a>.        | Container | No   |
+| TimeInterval       | Request.Operation.Animation | Same as `Request.TimeInterval` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#TimeInterval" target="_blank">CreateMediaTemplate</a>. | Container | No   |
 
 `Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
+| ------------------ | ------------------------ | ---------------- | ------ | -------- |
+| Region             | Request.Operation.Output | Bucket region | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Result filename. **${Number} must be included in the filename.** For example, you can set `Object` to `snapshot-${Number}.jpg`. | String | No   |
-| SpriteObject       | Request.Operation.Output | Image sprite name. **${Number} must be included in the filename.** **For example, you can set `sprite-${Number}.jpg`.\*\* Only the .jpg format is supported. | String | No   |
+| Object             | Request.Operation.Output | Output result filename | String | Yes   |
+
 
 
 ## Response
@@ -131,26 +138,25 @@ The response body returns **application/xml** data. The following contains all t
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>Snapshot</Tag>
+        <Tag>Animation</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>snapshot_demo</TemplateName>
+            <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
+            <TemplateName>animation_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/snapshot-${Number}.jpg</Object>
-                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+                <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
@@ -178,7 +184,7 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag | Response.JobsDetail | Job type: Snapshot | String |
+| Tag | Response.JobsDetail | Job type: Animation | String |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
 | StartTime | Response.JobsDetail | Job start time |  String |
@@ -201,10 +207,14 @@ The nodes are as described below:
 | :----------------- | :---------------------------- | :------------------------------- | :-------- |
 | TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
 | TemplateName        | Response.JobsDetail.Operation | Job template name, which will be returned if `TemplateId` exists. | String    |
-| Snapshot             | Response.JobsDetail.Operation | Same as `Request.Operation.Snapshot` in the request.  | Container |
+| Animation             | Response.JobsDetail.Operation | Same as `Request.Operation.Animation` in the request.  | Container |
 | Output             | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request.  | Container |
+| MediaInfo           | Response.JobsDetail.Operation | Media information of the output file, which will not be returned when the job is not completed. | Container |
 | MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
+
+`MediaInfo` has the following sub-nodes:
+Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 `MediaResult` has the following sub-nodes:
 
@@ -234,7 +244,9 @@ There are no special error messages for this request. For common error messages,
 
 ## Samples
 
-#### Request 1. Using the screenshot template ID
+**Using the animated image template ID**
+
+#### Request
 
 ```shell
 POST /jobs HTTP/1.1
@@ -244,19 +256,17 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>Snapshot</Tag>
+    <Tag>Animation</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/snapshot-${Number}.jpg</Object>
-            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            <Object>output/out.gif</Object>
         </Output>
-        <UserData>This is my data.</UserData>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -279,26 +289,25 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>Snapshot</Tag>
+        <Tag>Animation</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>snapshot_demo</TemplateName>
+            <TemplateId>t1f16e1dfbdc994105b31292d45710642a</TemplateId>
+            <TemplateName>animation_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/snapshot-${Number}.jpg</Object>
-                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+                <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
@@ -306,7 +315,10 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 </Response>
 ```
 
-#### Request 2. Using the screenshot processing parameter
+
+**Using the animated image processing parameter**
+
+#### Request
 
 ```shell
 POST /jobs HTTP/1.1
@@ -316,32 +328,31 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>Snapshot</Tag>
+    <Tag>Animation</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <Snapshot>
-            <BlackLevel>0</BlackLevel>
-            <Count>10</Count>
-            <IsCheckBlack>false</IsCheckBlack>
-            <IsCheckCount>false</IsCheckCount>
-            <Mode>Interval</Mode>
-            <PixelBlackThreshold>0</PixelBlackThreshold>
-            <SnapshotOutMode>SnapshotAndSprite</SnapshotOutMode>
-            <SpriteSnapshotConfig>
-                <Color>Azure</Color>
-                <Columns>3</Columns>
-                <Lines>2</Lines>
-            </SpriteSnapshotConfig>
-            <Start>1</Start>
-            <TimeInterval>2</TimeInterval>
-        </Snapshot>
+        <Animation>
+            <Container>
+                <Format>gif</Format>
+            </Container>
+            <Video>
+                <Codec>gif</Codec>
+                <Width>1280</Width>
+                <Height>960</Height>
+                <Fps>15</Fps>
+                <AnimateOnlyKeepKeyFrame>true</AnimateOnlyKeepKeyFrame>
+            </Video>
+            <TimeInterval>
+                <Start>0</Start>
+                <Duration>60</Duration>
+            </TimeInterval>
+        </Animation>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/snapshot-${Number}.jpg</Object>
-            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            <Object>output/out.gif</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -366,40 +377,39 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <CreationTime>2022-06-27T15:23:12+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>Snapshot</Tag>
+        <Tag>Animation</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <Snapshot>
-                <BlackLevel>0</BlackLevel>
-                <Count>10</Count>
-                <IsCheckBlack>false</IsCheckBlack>
-                <IsCheckCount>false</IsCheckCount>
-                <Mode>Interval</Mode>
-                <PixelBlackThreshold>0</PixelBlackThreshold>
-                <SnapshotOutMode>SnapshotAndSprite</SnapshotOutMode>
-                <SpriteSnapshotConfig>
-                    <Color>Azure</Color>
-                    <Columns>3</Columns>
-                    <Lines>2</Lines>
-                </SpriteSnapshotConfig>
-                <Start>1</Start>
-                <TimeInterval>2</TimeInterval>
-            </Snapshot>
+            <Animation>
+                <Container>
+                    <Format>gif</Format>
+                </Container>
+                <Video>
+                    <Codec>gif</Codec>
+                    <Width>1280</Width>
+                    <Height>960</Height>
+                    <Fps>15</Fps>
+                    <AnimateOnlyKeepKeyFrame>true</AnimateOnlyKeepKeyFrame>
+                </Video>
+                <TimeInterval>
+                    <Start>0</Start>
+                    <Duration>60</Duration>
+                </TimeInterval>
+            </Animation>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/snapshot-${Number}.jpg</Object>
-                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+                <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>

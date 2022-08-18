@@ -1,6 +1,6 @@
 ## 功能描述
 
-提交一个精彩集锦任务。
+提交一个拼接任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -40,18 +40,17 @@ Content-Type: application/xml
 > - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
 > 
 
-
 #### 请求头
 
 此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 
-该请求操作的实现需要有如下请求体：
+该请求操作的实现需要有如下请求体。
 
 ```shell
 <Request>
-    <Tag>VideoMontage</Tag>
+    <Tag>Concat</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
@@ -78,12 +77,12 @@ Content-Type: application/xml
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                         | 类型      | 是否必选 |
-| ------------------ | ------- | ---------------------------- | --------- | -------- |
-| Tag                | Request | 创建任务的 Tag：VideoMontage | String    | 是       |
-| Input              | Request | 待操作的媒体信息             | Container | 是       |
-| Operation          | Request | 操作规则                     | Container | 是       |
-| QueueId            | Request | 任务所在的队列 ID            | String    | 是       |
+| 节点名称（关键字） | 父节点  | 描述                                                    | 类型      | 是否必选 |
+| ------------------ | ------- | ------------------------------------------------------- | --------- | -------- |
+| Tag                | Request | 创建任务的 Tag：Concat                                  | String    | 是       |
+| Input              | Request | 待操作的媒体信息                                        | Container | 否      |
+| Operation          | Request | 操作规则                                                     | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
 | CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
 | CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
 
@@ -96,25 +95,36 @@ Container 类型 Input 的具体数据描述如下：
 <span id="operation"></span>
 Container 类型 Operation 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点            | 描述                 | 类型      | 是否必选 |
-| ------------------ | ----------------- | -------------------- | --------- | -------- |
-| VideoMontage       | Request.Operation | 指定精彩集锦模板参数  | Container | 否       |
-| TemplateId         | Request.Operation | 指定的模板 ID        | String    | 否       |
-| Output             | Request.Operation | 结果输出地址         | Container | 是       |
-| UserData           | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024                  | String    | 否 |
+| 节点名称（关键字） | 父节点            | 描述                                                         | 类型      | 是否必选 |
+| ------------------ | ----------------- | ------------------------------------------------------------ | --------- | -------- |
+| ConcatTemplate     | Request.Operation | 指定拼接参数                                                 | Container | 否       |
+| TemplateId         | Request.Operation | 指定的模板 ID                                                | String    | 否       |
+| Output             | Request.Operation | 结果输出地址                                                 | Container | 是       |
+
+>!优先使用 TemplateId，无 TemplateId 时使用 ConcatTemplate。
+
+Container 类型 ConcatTemplate 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点                                | 描述                                                         | 类型           | 是否必选 | 默认值 | 限制                           |
+| ------------------ | ------------------------------------- | ------------------------------------------------------------ | -------------- | -------- | ------ | ------------------------------ |
+| ConcatFragment     | Request.Operation.<br/>ConcatTemplate | 拼接节点                                                     | Container 数组 | 否       | 无     | 支持多个文件，按照文件顺序拼接 |
+| Audio              | Request.Operation.<br/>ConcatTemplate | 音频参数，同创建拼接模板 <a href="https://cloud.tencent.com/document/product/460/77089#Audio" target="_blank">CreateMediaTemplate</a> 接口中的 Request.ConcatTemplate.Audio | Container      | 否       | 无     | 无                             |
+| Video              | Request.Operation.<br/>ConcatTemplate | 视频参数，同创建拼接模板 <a href="https://cloud.tencent.com/document/product/460/77089#Video" target="_blank">CreateMediaTemplate</a> 接口中的 Request.ConcatTemplate.Video | Container      | 否       | 无     | 无                             |
+| Container          | Request.Operation.<br/>ConcatTemplate | 封装格式，同创建拼接模板 <a href="https://cloud.tencent.com/document/product/460/77089#Container" target="_blank">CreateMediaTemplate</a> 接口中的 Request.ConcatTemplate.Container | Container      | 是       | 无     | 无                             |
+| AudioMix           | Request.Operation.<br/>ConcatTemplate | 混音参数，同创建拼接模板 <a href="https://cloud.tencent.com/document/product/460/77089#AudioMix" target="_blank">CreateMediaTemplate</a> 接口中的 Request.ConcatTemplate.AudioMix  | Container      | 否       |无      | 仅在 Audio.Remove 为 false 时生效 |
+| Index              | Request.Operation.<br/>ConcatTemplate | Input 节点位于 ConcatFragment 序列索引                       | String         | 否       | 0      | 不能大于 ConcatFragment 长度   |
+| DirectConcat       | Request.Operation.<br/>ConcatTemplate | 简单拼接方式（不转码直接拼接），其他的视频和音频参数失效     | String         | 否       | false  | true、false                    |
+
+Container 类型 ConcatFragment 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点                                                    | 描述               | 类型   | 是否必选 | 默认值   | 限制                                     |
+| ------------------ | --------------------------------------------------------- | ------------------ | ------ | -------- | -------- | ---------------------------------------- |
+| Url                | Request.Operation.<br/>ConcatTemplate.<br/>ConcatFragment | 拼接对象地址       | String | 是       | 无       | 同 bucket 对象文件                       |
+| FragmentIndex      | Request.Operation.<br/>ConcatTemplate.<br/>ConcatFragment | 拼接对象的索引位置 | String | 否       | 0        | 大于等于0的整数                          |
+| StartTime          | Request.Operation.<br/>ConcatTemplate.<br/>ConcatFragment | 开始时间           | String | 否       | 视频开始 | <li>[0 视频时长] </li><li>单位为秒 </li> |
+| EndTime            | Request.Operation.<br/>ConcatTemplate.<br/>ConcatFragment | 结束时间           | String | 否       | 视频结束 | <li>[0 视频时长] </li><li>单位为秒 </li> |
 
 
->!优先使用 TemplateId，无 TemplateId 时使用 VideoMontage。
-
-Container 类型 VideoMontage 的具体数据描述如下：
-
-| 节点名称（关键字） | 父节点                         | 描述                                                         |
-| ------------------ | :----------------------------- | ------------------------------------------------------------ |
-| Container          | Request.Operation.VideoMontage | 同创建精彩集锦模板 CreateMediaTemplate 接口中的 Request.Container |
-| Video              | Request.Operation.VideoMontage | 同创建精彩集锦模板 CreateMediaTemplate 接口中的 Request.Video |
-| Duration           | Request.Operation.VideoMontage | 同创建精彩集锦模板 CreateMediaTemplate 接口中的 Request.Duration |
-| Audio              | Request.Operation.VideoMontage | 同创建精彩集锦模板 CreateMediaTemplate 接口中的 Request.Audio |
-| AudioMix           | Request.Operation.VideoMontage | 同创建精彩集锦模板 CreateMediaTemplate 接口中的 Request.AudioMix |
 
 Container 类型 Output 的具体数据描述如下：
 
@@ -123,6 +133,8 @@ Container 类型 Output 的具体数据描述如下：
 | Region             | Request.Operation.Output | 存储桶的地域     | String | 是       |
 | Bucket             | Request.Operation.Output | 存储结果的存储桶 | String | 是       |
 | Object             | Request.Operation.Output | 输出结果的文件名 | String | 是       |
+
+
 
 ## 响应
 
@@ -145,7 +157,7 @@ Container 类型 Output 的具体数据描述如下：
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoMontage</Tag>
+        <Tag>Concat</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
@@ -153,7 +165,7 @@ Container 类型 Output 的具体数据描述如下：
         </Input>
         <Operation>
             <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>videomontage_demo</TemplateName>
+            <TemplateName>concat_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
@@ -185,14 +197,14 @@ Container 节点 JobsDetail 的内容：
 | Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
 | JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
-| Tag                | Response.JobsDetail | 新创建任务的 Tag：VideoMontage                               | String    |
-| State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String    |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：Concat                                     | String    |
+| State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、<br/>Failed、Pause、Cancel 其中一个 | String    |
 | CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
 | StartTime          | Response.JobsDetail | 任务的开始时间                                               | String    |
 | EndTime            | Response.JobsDetail | 任务的结束时间                                               | String    |
 | QueueId            | Response.JobsDetail | 任务所属的队列 ID                                            | String    |
 | Input              | Response.JobsDetail | 该任务的输入资源地址                                         | Container |
-| Operation          | Response.JobsDetail | 该任务的规则                                                 | Container |
+| Operation          | Response.JobsDetail | 该任务的规则                                                | Container |
 
 Container 节点 Input 的内容：
 
@@ -206,16 +218,16 @@ Container 节点 Operation 的内容：
 
 | 节点名称（关键字） | 父节点                        | 描述                             | 类型      |
 | :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| VideoMontage       | Response.JobsDetail.Operation | 同请求中的 Request.Operation.VideoMontage | Container |
-| TemplateId         | Response.JobsDetail.Operation | 任务的模板 ID                     | String    |
-| TemplateName       | Response.JobsDetail.Operation | 任务的模板名称, 当 TemplateId 存在时返回 | String    |
-| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output  | Container |
-| MediaInfo          | Response.JobsDetail.Operation | 转码输出视频的信息，任务未完成时不返回 | Container |
+| TemplateId         | Response.JobsDetail.Operation | 任务的模板 ID                    | String    |
+| TemplateName       | Response.JobsDetail.Operation | 任务的模板名称, 当 TemplateId 存在时返回      | String    |
+| ConcatTemplate     | Response.JobsDetail.Operation | 同请求中的 Request.Operation.ConcatTemplate | Container |
+| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output         | Container |
+| MediaInfo          | Response.JobsDetail.Operation | 输出文件的媒体信息，任务未完成时不返回 | Container |
 | MediaResult        | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
 | UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
 
 Container 节点 MediaInfo 的内容：
-同GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
+同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
 
 Container 节点 MediaResult 的内容：
 
@@ -239,25 +251,27 @@ Container 节点 Md5Info 的内容：
 | ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件名          | String |
 | Md5                | Response.Operation.MediaResult.OutputFile.Md5Info  | 输出文件的 MD5 值    | Container |
 
+
+
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
 
 ## 实际案例
 
-#### 案例一：使用精彩集锦模板 ID
+#### 请求1：使用拼接模板 ID
 
 #### 请求
 
 ```shell
 POST /jobs HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR98****-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
+Host:test-123456789.ci.ap-chongqing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoMontage</Tag>
+    <Tag>Concat</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
@@ -285,7 +299,7 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
 <Response>
     <JobsDetail>
@@ -297,7 +311,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoMontage</Tag>
+        <Tag>Concat</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
@@ -305,7 +319,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         </Input>
         <Operation>
             <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>videomontage_demo</TemplateName>
+            <TemplateName>concat_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
@@ -317,47 +331,58 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 </Response>
 ```
 
-#### 案例二：使用精彩集锦处理参数
+
+#### 请求2：使用拼接参数
 
 #### 请求
 
-
 ```shell
 POST /jobs HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR98****-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
+Host:test-123456789.ci.ap-chongqing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoMontage</Tag>
+    <Tag>Concat</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <VideoMontage>
-            <Container>
-                <Format>mp4</Format>
-            </Container>
+        <ConcatTemplate>
+            <ConcatFragment>
+                <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/start.mp4</Url>
+            </ConcatFragment>
+            <ConcatFragment>
+                <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/end.mp4</Url>
+            </ConcatFragment>
+            <Audio>
+                <Codec>mp3</Codec>
+            </Audio>
             <Video>
                 <Codec>H.264</Codec>
                 <Bitrate>1000</Bitrate>
                 <Width>1280</Width>
-                <Height></Height>
+                <Height>720</Height>
+                <Fps>30</Fps>
             </Video>
-            <Audio>
-                <Codec>aac</Codec>
-                <Samplerate>44100</Samplerate>
-                <Bitrate>128</Bitrate>
-                <Channels>4</Channels>
-            </Audio>
+            <Container>
+                <Format>mp4</Format>
+            </Container>
             <AudioMix>
                 <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
                 <MixMode>Once</MixMode>
                 <Replace>true</Replace>
+                <EffectConfig>
+                    <EnableStartFadein>true</EnableStartFadein>
+                    <StartFadeinTime>3</StartFadeinTime>
+                    <EnableEndFadeout>false</EnableEndFadeout>
+                    <EndFadeoutTime>0</EndFadeoutTime>
+                    <EnableBgmFade>true</EnableBgmFade>
+                    <BgmFadeTime>1.7</BgmFadeTime>
+                </EffectConfig>
             </AudioMix>
-            <Duration>15</Duration>
-        </VideoMontage>
+        </ConcatTemplate>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
@@ -380,48 +405,60 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
 <Response>
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j8d121820f5e411ec926ef19d53ba9c5d</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoMontage</Tag>
+        <Tag>Concat</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <VideoMontage>
-                <Container>
-                    <Format>mp4</Format>
-                </Container>
+            <ConcatTemplate>
+                <ConcatFragment>
+                    <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/start.mp4</Url>
+                </ConcatFragment>
+                <ConcatFragment>
+                    <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/end.mp4</Url>
+                </ConcatFragment>
+                <Audio>
+                    <Codec>mp3</Codec>
+                </Audio>
                 <Video>
                     <Codec>H.264</Codec>
                     <Bitrate>1000</Bitrate>
                     <Width>1280</Width>
-                    <Height></Height>
+                    <Height>720</Height>
+                    <Fps>30</Fps>
                 </Video>
-                <Audio>
-                    <Codec>aac</Codec>
-                    <Samplerate>44100</Samplerate>
-                    <Bitrate>128</Bitrate>
-                    <Channels>4</Channels>
-                </Audio>
+                <Container>
+                    <Format>mp4</Format>
+                </Container>
                 <AudioMix>
-                    <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+                    <AudioSource>https://test-123456789.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
                     <MixMode>Once</MixMode>
                     <Replace>true</Replace>
+                    <EffectConfig>
+                        <EnableStartFadein>true</EnableStartFadein>
+                        <StartFadeinTime>3</StartFadeinTime>
+                        <EnableEndFadeout>false</EnableEndFadeout>
+                        <EndFadeoutTime>0</EndFadeoutTime>
+                        <EnableBgmFade>true</EnableBgmFade>
+                        <BgmFadeTime>1.7</BgmFadeTime>
+                    </EffectConfig>
                 </AudioMix>
-                <Duration>15</Duration>
-            </VideoMontage>
+                <Index>1</Index>
+            </ConcatTemplate>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
@@ -433,3 +470,106 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 </Response>
 ```
 
+#### 请求3：多文件拼接
+
+#### 请求
+
+```shell
+POST /jobs HTTP/1.1
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR98****-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
+Host:test-123456789.ci.ap-chongqing.myqcloud.com
+Content-Length: 166
+Content-Type: application/xml
+
+<Request>
+    <Tag>Concat</Tag>
+    <Operation>
+        <ConcatTemplate>
+            <ConcatFragment>
+                <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/start.mp4</Url>
+                <FragmentIndex>0</FragmentIndex>
+                <StartTime>0</StartTime>
+                <EndTime>6</EndTime>
+            </ConcatFragment>
+            <ConcatFragment>
+                <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/middle.mp4</Url>
+                <FragmentIndex>1</FragmentIndex>
+            </ConcatFragment>
+            <ConcatFragment>
+                <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/end.mp4</Url>
+                <FragmentIndex>2</FragmentIndex>
+                <StartTime>5</StartTime>
+                <EndTime>10</EndTime>
+            </ConcatFragment>
+            <Container>
+                <Format>mp4</Format>
+            </Container>
+        </ConcatTemplate>
+        <Output>
+            <Region>ap-chongqing</Region>
+            <Bucket>test-123456789</Bucket>
+            <Object>output/out.mp4</Object>
+        </Output>
+        <UserData>This is my data.</UserData>
+    </Operation>
+    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+    <CallBack>http://callback.demo.com</CallBack>
+    <CallBackFormat>JSON<CallBackFormat>
+</Request>
+```
+
+#### 响应
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 230
+Connection: keep-alive
+Date: Mon, 28 Jun 2022 15:23:12 GMT
+Server: tencent-ci
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+
+<Response>
+    <JobsDetail>
+        <Code>Success</Code>
+        <Message/>
+        <JobId>j8d121820f5e411ec926ef19d53ba9c5d</JobId>
+        <State>Submitted</State>
+        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <StartTime>-</StartTime>
+        <EndTime>-</EndTime>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <Tag>Concat</Tag>
+        <Input>
+            <BucketId>test-123456789</BucketId>
+            <Object>input/demo.mp4</Object>
+            <Region>ap-chongqing</Region>
+        </Input>
+        <Operation>
+            <ConcatTemplate>
+                <ConcatFragment>
+                    <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/start.mp4</Url>
+                    <StartTime>0</StartTime>
+                    <EndTime>6</EndTime>
+                </ConcatFragment>
+                <ConcatFragment>
+                    <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/middle.mp4</Url>
+                </ConcatFragment>
+                <ConcatFragment>
+                    <Url>http://test-123456789.cos.ap-chongqing.myqcloud.com/end.mp4</Url>
+                    <StartTime>5</StartTime>
+                    <EndTime>10</EndTime>
+                </ConcatFragment>
+                <Container>
+                    <Format>mp4</Format>
+                </Container>
+            </ConcatTemplate>
+            <Output>
+                <Region>ap-chongqing</Region>
+                <Bucket>test-123456789</Bucket>
+                <Object>output/out.mp4</Object>
+            </Output>
+        </Operation>
+    </JobsDetail>
+</Response>
+```

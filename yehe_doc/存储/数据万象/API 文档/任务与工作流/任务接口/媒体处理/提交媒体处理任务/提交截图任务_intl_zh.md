@@ -1,6 +1,24 @@
 ## 功能描述
 
-CreateMediaJobs 用于提交一个截图任务。
+提交一个截图任务。
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                推荐使用 API Explorer
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateAnimationTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## 请求
 
@@ -17,8 +35,7 @@ Content-Type: application/xml
 <body>
 ```
 
-
->? 
+>?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
 > 
@@ -29,68 +46,74 @@ Content-Type: application/xml
 此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
+
 该请求操作的实现需要有如下请求体。
 
 ```shell
 <Request>
-  <Tag>Snapshot</Tag>
-  <Input>
-    <Object></Object>
-  </Input>
-  <Operation>
-    <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-    <Output>
-      <Region></Region>
-      <Bucket></Bucket>
-      <Object></Object>
-      <SpriteObject></SpriteObject>
-    </Output>
-  </Operation>
-  <QueueId></QueueId>
-  <CallBack></CallBack>
+    <Tag>Snapshot</Tag>
+    <Input>
+        <Object>input/demo.mp4</Object>
+    </Input>
+    <Operation>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <Output>
+            <Region>ap-chongqing</Region>
+            <Bucket>test-123456789</Bucket>
+            <Object>output/snapshot-${Number}.jpg</Object>
+            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+        </Output>
+        <UserData>This is my data.</UserData>
+    </Operation>
+    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+    <CallBack>http://callback.demo.com</CallBack>
+    <CallBackFormat>JSON<CallBackFormat>
 </Request>
 ```
 
 具体的数据描述如下：
 
 | 节点名称（关键字） | 父节点 | 描述           | 类型      | 是否必选 |
-| ------------------ | ------ | -------------- | --------- | ---- |
-| Request            | 无     | 保存请求的容器 | Container | 是   |
+| ------------------ | ------ | -------------- | --------- | -------- |
+| Request            | 无     | 保存请求的容器 | Container | 是       |
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                                                     | 类型      | 是否必选 |
-| ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | 创建任务的 Tag：Transcode（转码）、Animation（动图）、SmartCover（智能封面）、Snapshot（截图）、Concat（拼接）                                 | String    | 是   |
-| Input              | Request | 待操作的媒体信息                                         | Container | 是   |
-| Operation          | Request | 操作规则，支持对单个文件执行多个不同任务，最多可填写6个                                                | Container | 是   |
-| QueueId            | Request | 任务所在的队列 ID                                         | String    | 是   |
-| CallBack           | Request | 回调地址                 | String    | 否   |
+| 节点名称（关键字） | 父节点  | 描述                                                         | 类型      | 是否必选 |
+| ------------------ | ------- | ------------------------------------------------------------ | --------- | -------- |
+| Tag                | Request | 创建任务的 Tag：Snapshot                                      | String    | 是       |
+| Input              | Request | 待操作的媒体信息                                              | Container | 是       |
+| Operation          | Request | 操作规则                                                     | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
+| CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
+| CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
 
 Container 类型 Input 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点        | 描述            | 类型   | 是否必选 |
-| ------------------ | ------------- | --------------- | ------ | ---- |
-| Object             | Request.Input | 媒体文件名 | String | 是   |
+| 节点名称（关键字） | 父节点        | 描述       | 类型   | 是否必选 |
+| ------------------ | ------------- | ---------- | ------ | -------- |
+| Object             | Request.Input | 媒体文件名 | String | 是       |
 
+<span id="operation"></span>
 Container 类型 Operation 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点            | 描述                                                         | 类型      | 是否必选 |
-| ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| Snapshot                     | Request.Operation | 指定该任务的参数，同创建截图模板 CreateMediaTemplate <br/>接口中的 Request.Snapshot   | Container | 否   |
-| TemplateId                   | Request.Operation | 指定的模板 ID                                        | String    | 否   |
-| Output                       | Request.Operation | 结果输出地址                                                              | Container | 是   |
+| ------------------ | ----------------- | ------------------------------------------------------------ | --------- | -------- |
+| Snapshot           | Request.Operation | 指定该任务的参数，同创建截图模板 <a href="https://cloud.tencent.com/document/product/460/77091#Snapshot " target="_blank">CreateMediaTemplate</a> <br/>接口中的 Request.Snapshot | Container | 否       |
+| TemplateId         | Request.Operation | 指定的模板 ID                                                | String    | 否       |
+| Output             | Request.Operation | 结果输出地址                                                 | Container | 是       |
+| UserData           | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024                  | String    | 否 |
 
->!优先使用 TemplateId，无 TemplateId 时使用对应任务类型的参数。
+>!优先使用 TemplateId，无 TemplateId 时使用 Snapshot。
 
 Container 类型 Output 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                   | 描述                                                         | 类型   | 是否必选 |
-| ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| Region             | Request.Operation.Output | 存储桶的地域                                                | String | 是   |
-| Bucket             | Request.Operation.Output | 存储结果的存储桶                                              | String | 是   |
-| Object             | Request.Operation.Output | 结果文件的名字。<br/>**当任务类型为 Snapshot时，必须包含 ${Number} 参数。**<br/>如 Object 为 snapshot-${Number}.jpg | String | 否   |
-| SpriteObject       | Request.Operation.Output | 雪碧图的名字。<br/>**当任务类型为 Snapshot使用，必须包含 ${Number} 参数。**<br/>如 Object 为 snapshot-${Number}.jpg **<br/>仅支持jpg格式 | String | 否   |
+| ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
+| Region             | Request.Operation.Output | 存储桶的地域                                                 | String | 是       |
+| Bucket             | Request.Operation.Output | 存储结果的存储桶                                             | String | 是       |
+| Object             | Request.Operation.Output | 结果文件的名字。<br/>**必须包含 ${Number} 参数。**<br/>如 Object 为 snapshot-${Number}.jpg | String | 否       |
+| SpriteObject       | Request.Operation.Output | 雪碧图的名字。<br/>**必须包含 ${Number} 参数。**<br/>如 Object 为 sprite-${Number}.jpg \*\*<br/>仅支持 jpg 格式 | String | 否       |
 
 
 ## 响应
@@ -100,82 +123,110 @@ Container 类型 Output 的具体数据描述如下：
 此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
+
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
 ```shell
 <Response>
-  <JobsDetail>
-    <Code></Code>
-    <Message></Message>
-    <JobId></JobId>
-    <State></State>
-    <CreationTime></CreationTime>
-    <EndTime></EndTime>
-    <QueueId></QueueId>
-    <Tag>Snapshot</Tag>
-    <Input>
-      <Object></Object>
-    </Input>
-    <Operation>
-      <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-      <Output>
-        <Region></Region>
-        <Bucket></Bucket>
-        <Object></Object>
-        <SpriteObject></SpriteObject>
-      </Output>
-      <MediaInfo>
-      </MeidaInfo>
-    </Operation>
-  </JobsDetail>
+    <JobsDetail>
+        <Code>Success</Code>
+        <Message/>
+        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <State>Submitted</State>
+        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <StartTime>-</StartTime>
+        <EndTime>-</EndTime>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <Tag>Snapshot</Tag>
+        <Input>
+            <BucketId>test-123456789</BucketId>
+            <Object>input/demo.mp4</Object>
+            <Region>ap-chongqing</Region>
+        </Input>
+        <Operation>
+            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+            <TemplateName>snapshot_demo</TemplateName>
+            <Output>
+                <Region>ap-chongqing</Region>
+                <Bucket>test-123456789</Bucket>
+                <Object>output/snapshot-${Number}.jpg</Object>
+                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            </Output>
+            <UserData>This is my data.</UserData>
+        </Operation>
+    </JobsDetail>
 </Response>
 ```
 
 具体的数据内容如下：
 
-|节点名称（关键字）|父节点|描述|类型|
-|:---|:-- |:--|:--|
-| Response |无| 保存结果的容器 | Container |
+| 节点名称（关键字） | 父节点 | 描述           | 类型      |
+| :----------------- | :----- | :------------- | :-------- |
+| Response           | 无     | 保存结果的容器 | Container |
 
 Container 节点 Response 的内容：
 
-|节点名称（关键字）|父节点|描述|类型|
-|:---|:-- |:--|:--|
-| JobsDetail | Response | 任务的详细信息 |  Container |
+| 节点名称（关键字） | 父节点   | 描述           | 类型      |
+| :----------------- | :------- | :------------- | :-------- |
+| JobsDetail         | Response | 任务的详细信息 | Container |
 
-
+<span id="jobsDetail"></span>
 Container 节点 JobsDetail 的内容：
 
-|节点名称（关键字）|父节点|描述|类型|
-|:---|:-- |:--|:--|
-| Code | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义 |  String |
-| Message | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义 |  String |
-| JobId | Response.JobsDetail | 新创建任务的 ID |  String |
-| Tag | Response.JobsDetail | 新创建任务的 Tag：Transcode（转码）、Animation（动图）、SmartCover（智能封面）、Snapshot（截图）、Concat（拼接） | String |
-| State | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 |  String |
-| CreationTime | Response.JobsDetail | 任务的创建时间 |  String |
-| StartTime | Response.JobsDetail | 任务的开始时间 |  String |
-| EndTime | Response.JobsDetail | 任务的结束时间 |  String |
-| QueueId | Response.JobsDetail | 任务所属的队列 ID |  String |
-| Input | Response.JobsDetail | 该任务的输入资源地址 |  Container |
-| Operation | Response.JobsDetail | 该任务的规则，支持对单个文件执行多个不同任务，最多可填写6个 |  Container |
+| 节点名称（关键字） | 父节点              | 描述                                                         | 类型      |
+| :----------------- | :------------------ | :----------------------------------------------------------- | :-------- |
+| Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
+| Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
+| JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：Snapshot                                   | String    |
+| State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String    |
+| CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
+| StartTime          | Response.JobsDetail | 任务的开始时间                                               | String    |
+| EndTime            | Response.JobsDetail | 任务的结束时间                                               | String    |
+| QueueId            | Response.JobsDetail | 任务所属的队列 ID                                            | String    |
+| Input              | Response.JobsDetail | 该任务的输入资源地址                                         | Container |
+| Operation          | Response.JobsDetail | 该任务的规则                                                 | Container |
 
 Container 节点 Input 的内容：
-同请求中的 Request.Input 节点。
+
+| 节点名称（关键字） | 父节点                   | 描述             | 类型   |
+| ------------------ | ------------------------ | ---------------- | ------ |
+| Region             | Response.JobsDetail.Input | 存储桶的地域     | String |
+| Bucket             | Response.JobsDetail.Input | 存储结果的存储桶 | String |
+| Object             | Response.JobsDetail.Input | 输出结果的文件名 | String |
 
 Container 节点 Operation 的内容：
 
-|节点名称（关键字）|父节点|描述|类型|
-|:---|:-- |:--|:--|
-| TemplateId | Response.JobsDetail.Operation | 任务的模板 ID |  String |
-| Output | Response.JobsDetail.Operation | 文件的输出地址 |  Container |
-| MediaInfo | Response.JobsDetail.Operation | 转码输出视频的信息，没有时不返回 |  Container |
+| 节点名称（关键字） | 父节点                        | 描述                             | 类型      |
+| :----------------- | :---------------------------- | :------------------------------- | :-------- |
+| TemplateId         | Response.JobsDetail.Operation | 任务的模板 ID                    | String    |
+| TemplateName       | Response.JobsDetail.Operation | 任务的模板名称, 当 TemplateId 存在时返回 | String    |
+| Snapshot           | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Snapshot | Container |
+| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output   | Container |
+| MediaResult        | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回  | Container |
+| UserData           | Response.JobsDetail.Operation | 透传用户信息                          | String |
 
-Container 节点 Output 的内容：
-同请求中的 Request.Operation.Output 节点。
+Container 节点 MediaResult 的内容：
 
-Container 节点 MediaInfo 的内容：
-同 [GenerateMediaInfo](https://intl.cloud.tencent.com/document/product/1045/48569) 接口中的 Response.MediaInfo 节点。
+| 节点名称（关键字） | 父节点                              | 描述                                                         | 类型   |
+| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
+| OutputFile         | Response.Operation.MediaResult | 输出文件的基本信息 | Container |
+
+Container 节点 OutputFile 的内容：
+
+| 节点名称（关键字） | 父节点                              | 描述                                                         | 类型   |
+| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
+| Bucket             | Response.Operation.MediaResult.OutputFile | 输出文件所在的存储桶           | String |
+| Region             | Response.Operation.MediaResult.OutputFile | 输出文件所在的存储桶所在的园区  | String |
+| ObjectName         | Response.Operation.MediaResult.OutputFile | 输出文件名，可能有多个         | String 数组 |
+| Md5Info            | Response.Operation.MediaResult.OutputFile | 输出文件的 MD5 信息 | Container 数组 |
+
+Container 节点 Md5Info 的内容：
+
+| 节点名称（关键字） | 父节点                              | 描述                                                         | 类型   |
+| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
+| ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件名          | String |
+| Md5                | Response.Operation.MediaResult.OutputFile.Md5Info  | 输出文件的 MD5 值    | Container |
 
 #### 错误码
 
@@ -183,9 +234,7 @@ Container 节点 MediaInfo 的内容：
 
 ## 实际案例
 
-**使用截图模板 ID**
-
-#### 请求
+#### 请求1：使用截图模板 ID
 
 ```shell
 POST /jobs HTTP/1.1
@@ -194,24 +243,24 @@ Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
-
-
 <Request>
-  <Tag>Snapshot</Tag>
-  <Input>
-    <Object>test.mp4</Object>
-  </Input>
-  <Operation>
-    <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-    <Output>
-      <Region>ap-beijing</Region>
-      <Bucket>abc-1250000000</Bucket>
-      <Object>snapshot-${Number}.jpg</Object>
-      <SpriteObject></SpriteObject>
-    </Output>
-  </Operation>
-  <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-  <CallBack>https://www.callback.com</CallBack>
+    <Tag>Snapshot</Tag>
+    <Input>
+        <Object>input/demo.mp4</Object>
+    </Input>
+    <Operation>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <Output>
+            <Region>ap-chongqing</Region>
+            <Bucket>test-123456789</Bucket>
+            <Object>output/snapshot-${Number}.jpg</Object>
+            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+        </Output>
+        <UserData>This is my data.</UserData>
+    </Operation>
+    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+    <CallBack>http://callback.demo.com</CallBack>
+    <CallBackFormat>JSON<CallBackFormat>
 </Request>
 ```
 
@@ -222,43 +271,42 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 230
 Connection: keep-alive
-Date: Thu, 15 Jun 2017 12:37:29 GMT
+Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
-
-
 <Response>
-  <JobsDetail>
-    <Code>Success</Code>
-    <Message>Success</Message>
-    <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
-    <State>Submitted</State>
-    <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <EndTime></EndTime>
-    <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>Snapshot</Tag>
-    <Input>
-      <Object>test.mp4</Object>
-    </Input>
-    <Operation>
-      <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-      <Output>
-        <Region>ap-beijing</Region>
-        <Bucket>abc-1250000000</Bucket>
-        <Object>snapshot-${Number}.jpg</Object>
-        <SpriteObject></SpriteObject>
-      </Output>
-    </Operation>
-  </JobsDetail>
+    <JobsDetail>
+        <Code>Success</Code>
+        <Message/>
+        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <State>Submitted</State>
+        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <StartTime>-</StartTime>
+        <EndTime>-</EndTime>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <Tag>Snapshot</Tag>
+        <Input>
+            <BucketId>test-123456789</BucketId>
+            <Object>input/demo.mp4</Object>
+            <Region>ap-chongqing</Region>
+        </Input>
+        <Operation>
+            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+            <TemplateName>snapshot_demo</TemplateName>
+            <Output>
+                <Region>ap-chongqing</Region>
+                <Bucket>test-123456789</Bucket>
+                <Object>output/snapshot-${Number}.jpg</Object>
+                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            </Output>
+            <UserData>This is my data.</UserData>
+        </Operation>
+    </JobsDetail>
 </Response>
 ```
 
-
-
-**使用截图处理参数**
-
-#### 请求
+#### 请求2：使用截图处理参数
 
 ```shell
 POST /jobs HTTP/1.1
@@ -267,40 +315,39 @@ Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
-
-
 <Request>
-  <Tag>Snapshot</Tag>
-  <Input>
-    <Object>test.mp4</Object>
-  </Input>
-  <Operation>
-    <Snapshot>
-        <Mode>Interval</Mode>
-        <Width>1280</Width>
-        <Height></Height>
-        <Start>0</Start>
-        <TimeInterval></TimeInterval>
-        <Count>1</Count>
-        <SpriteSnapshotConfig>
-            <CellHeight>128</CellHeight>
-            <CellWidth>128</CellWidth>
-            <Color>White</Color>
-            <Columns>10</Columns>
-            <Lines>10</Lines>
-            <Margin>0<Margin/>
-            <Padding>0<Padding/>
-        </SpriteSnapshotConfig>
-    </Snapshot>
-    <Output>
-      <Region>ap-beijing</Region>
-      <Bucket>abc-1250000000</Bucket>
-      <Object>snapshot-${Number}.jpg</Object>
-      <SpriteObject></SpriteObject>
-    </Output>
-  </Operation>
-  <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-  <CallBack>https://www.callback.com</CallBack>
+    <Tag>Snapshot</Tag>
+    <Input>
+        <Object>input/demo.mp4</Object>
+    </Input>
+    <Operation>
+        <Snapshot>
+            <BlackLevel>0</BlackLevel>
+            <Count>10</Count>
+            <IsCheckBlack>false</IsCheckBlack>
+            <IsCheckCount>false</IsCheckCount>
+            <Mode>Interval</Mode>
+            <PixelBlackThreshold>0</PixelBlackThreshold>
+            <SnapshotOutMode>SnapshotAndSprite</SnapshotOutMode>
+            <SpriteSnapshotConfig>
+                <Color>Azure</Color>
+                <Columns>3</Columns>
+                <Lines>2</Lines>
+            </SpriteSnapshotConfig>
+            <Start>1</Start>
+            <TimeInterval>2</TimeInterval>
+        </Snapshot>
+        <Output>
+            <Region>ap-chongqing</Region>
+            <Bucket>test-123456789</Bucket>
+            <Object>output/snapshot-${Number}.jpg</Object>
+            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+        </Output>
+        <UserData>This is my data.</UserData>
+    </Operation>
+    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+    <CallBack>http://callback.demo.com</CallBack>
+    <CallBackFormat>JSON<CallBackFormat>
 </Request>
 ```
 
@@ -311,51 +358,51 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 230
 Connection: keep-alive
-Date: Thu, 15 Jun 2017 12:37:29 GMT
+Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
-
-
 <Response>
-  <JobsDetail>
-    <Code>Success</Code>
-    <Message>Success</Message>
-    <JobId>jabcxxxxfeipplsdfwe</JobId>
-    <State>Submitted</State>
-    <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <EndTime></EndTime>
-    <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>Snapshot</Tag>
-    <Input>
-      <Object>test.mp4</Object>
-    </Input>
-    <Operation>
-        <Snapshot>
-            <Mode>Interval</Mode>
-            <Width>1280</Width>
-            <Height></Height>
-            <Start>0</Start>
-            <TimeInterval></TimeInterval>
-            <Count>1</Count>
-            <SnapshotOutMode>OnlySnapshot</SnapshotOutMode>
-            <SpriteSnapshotConfig>
-                <CellHeight>128</CellHeight>
-                <CellWidth>128</CellWidth>
-                <Color>White</Color>
-                <Columns>10</Columns>
-                <Lines>10</Lines>
-                <Margin>0<Margin/>
-                <Padding>0<Padding/>
-            </SpriteSnapshotConfig>
-        </Snapshot>
-        <Output>
-            <Region>ap-beijing</Region>
-            <Bucket>abc-1250000000</Bucket>
-            <Object>snapshot-${Number}.jpg</Object>
-            <SpriteObject></SpriteObject>
-        </Output>
-    </Operation>
-  </JobsDetail>
+    <JobsDetail>
+        <Code>Success</Code>
+        <Message/>
+        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <State>Submitted</State>
+        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <StartTime>-</StartTime>
+        <EndTime>-</EndTime>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <Tag>Snapshot</Tag>
+        <Input>
+            <BucketId>test-123456789</BucketId>
+            <Object>input/demo.mp4</Object>
+            <Region>ap-chongqing</Region>
+        </Input>
+        <Operation>
+            <Snapshot>
+                <BlackLevel>0</BlackLevel>
+                <Count>10</Count>
+                <IsCheckBlack>false</IsCheckBlack>
+                <IsCheckCount>false</IsCheckCount>
+                <Mode>Interval</Mode>
+                <PixelBlackThreshold>0</PixelBlackThreshold>
+                <SnapshotOutMode>SnapshotAndSprite</SnapshotOutMode>
+                <SpriteSnapshotConfig>
+                    <Color>Azure</Color>
+                    <Columns>3</Columns>
+                    <Lines>2</Lines>
+                </SpriteSnapshotConfig>
+                <Start>1</Start>
+                <TimeInterval>2</TimeInterval>
+            </Snapshot>
+            <Output>
+                <Region>ap-chongqing</Region>
+                <Bucket>test-123456789</Bucket>
+                <Object>output/snapshot-${Number}.jpg</Object>
+                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            </Output>
+            <UserData>This is my data.</UserData>
+        </Operation>
+    </JobsDetail>
 </Response>
 ```

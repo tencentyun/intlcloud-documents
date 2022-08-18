@@ -1,6 +1,6 @@
 ## 功能描述
 
-提交一个人声分离任务。
+提交一个 SDR to HDR 任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -47,21 +47,25 @@ Content-Type: application/xml
 
 #### 请求体
 
-该请求操作的实现需要有如下请求体：
+该请求操作的实现需要有如下请求体。
 
 ```shell
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>SDRtoHDR</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <SDRtoHDR>
+            <HdrMode>HLG</HdrMode>
+        </SDRtoHDR>
+        <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+        <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+        <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -79,15 +83,14 @@ Content-Type: application/xml
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                          | 类型      | 是否必选 |
-| ------------------ | ------- | ----------------------------- | --------- | -------- |
-| Tag                | Request | 创建任务的 Tag：VoiceSeparate | String    | 是       |
-| Input              | Request | 待操作的媒体信息              | Container | 是       |
-| Operation          | Request | 操作规则                                                     | Container | 是       |
-| QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
+| 节点名称（关键字） | 父节点  | 描述                                                    | 类型      | 是否必选 |
+| ------------------ | ------- | ------------------------------------------------------- | --------- | -------- |
+| Tag                | Request | 创建任务的 Tag：SDRtoHDR                                | String    | 是       |
+| Input              | Request | 待操作的媒体信息                                        | Container | 是       |
+| Operation          | Request | 操作规则                                                | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID                                       | String    | 是       |
 | CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
 | CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
-
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -98,29 +101,45 @@ Container 类型 Input 的具体数据描述如下：
 <span id="operation"></span>
 Container 类型 Operation 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点            | 描述             | 类型      | 是否必选 |
-| ------------------ | ----------------- | ---------------- | --------- | -------- |
-| VoiceSeparate      | Request.Operation | 指定转码模板参数 | Container | 否       |
-| TemplateId         | Request.Operation | 指定的模板 ID    | String    | 否       |
-| Output             | Request.Operation | 结果输出地址     | Container | 是       |
+| 节点名称（关键字）  | 父节点            | 描述                                                         | 类型      | 是否必选 |
+| ------------------- | ----------------- | ------------------------------------------------------------ | --------- | -------- |
+| SDRtoHDR            | Request.Operation | 指定 SDRtoHDR 参数                                           | Container | 是       |
+| Transcode           | Request.Operation | 指定转码模板参数，不能与 TranscodeTemplateId 同时为空          | Container | 否       |
+| TranscodeTemplateId | Request.Operation | 指定的转码模板 ID，优先使用模板 ID，不能与 Transcode 同时为空   | String    | 否       |
+| Watermark           | Request.Operation | 指定水印模板参数，同创建水印模板 <a href="https://cloud.tencent.com/document/product/460/77099#Watermark" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Watermark, 最多传3个 | Container 数组 | 否       |
+| WatermarkTemplateId | Request.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 ID | String 数组    | 否       |
+| Output              | Request.Operation | 结果输出地址                                                 | Container | 是       |
+| UserData            | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024                                           | String | 否 |
 
->! 优先使用 TemplateId，无 TemplateId 时使用 VoiceSeparate。
+>? 提交 SDRtoHDR 任务必须传入转码参数。对于转码参数，优先使用 TranscodeTemplateId，无 TranscodeTemplateId 时使用 Transcode；对于水印参数，可以使用 WatermarkTemplateId 或Watermark 设置，WatermarkTemplateId 优先级更高。
+>
 
-Container 类型 VoiceSeparate 的具体数据描述如下：
+Container 类型 SDRtoHDR 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                          | 描述                                                         | 类型      | 是否必选 |
-| ------------------ | :------------------------------ | ------------------------------------------------------------ | --------- | -------- |
-| AudioMode          | Request.Operation.VoiceSeparate | 同创建人声分离模板 <a href="https://cloud.tencent.com/document/product/460/77098#Request" target="_blank">CreateMediaTemplate</a> 接口中的 Request.AudioMode | Container | 否       |
-| AudioConfig        | Request.Operation.VoiceSeparate | 同创建人声分离模板 <a href="https://cloud.tencent.com/document/product/460/77098#AudioConfig" target="_blank">CreateMediaTemplate</a> 接口中的 Request.AudioConfig | Container | 否       |
+| 节点名称（关键字） | 父节点                     | 描述     | 类型   | 是否必选 | 限制                |
+| ------------------ | :------------------------- | -------- | ------ | -------- | ------------------- |
+| HdrMode            | Request.Operation.SDRtoHDR | HDR 标准 | string | 是       | 1. HLG<br/>2. HDR10 |
+
+Container 类型 Transcode 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点                            | 描述                                                         | 类型   | 必选 |
+| ------------------ | :------------------------------ | ------------------------------------------------------------ | ------ | ---- |
+| TimeInterval       | Request.Operation.Transcode     | 同创建转码模板 <a href="https://cloud.tencent.com/document/product/460/77093#TimeInterval " target="_blank">CreateMediaTemplate</a> 接口中的 Request.TimeInterval | Container | 是 |
+| Container          | Request.Operation.Transcode     | 同创建转码模板 <a href="https://cloud.tencent.com/document/product/460/77093#Container " target="_blank">CreateMediaTemplate</a> 接口中的 Request.Container    | Container | 否 |
+| Video              | Request.Operation.Transcode     | 同创建转码模板 <a href="https://cloud.tencent.com/document/product/460/77093#Video " target="_blank">CreateMediaTemplate</a> 接口中的 Request.Video        | Container | 否 |
+| Audio              | Request.Operation.Transcode     | 同创建转码模板 <a href="https://cloud.tencent.com/document/product/460/77093#Audio " target="_blank">CreateMediaTemplate</a> 接口中的 Request.Audio        | Container | 否 |
+| TransConfig        | Request.Operation.Transcode     | 同创建转码模板 <a href="https://cloud.tencent.com/document/product/460/77093#TransConfig " target="_blank">CreateMediaTemplate</a> 接口中的 Request.TransConfig  | Container | 否 |
+
 
 Container 类型 Output 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                     | 描述                                       | 类型   | 是否必选 |
-| ------------------ | -------------------------- | ------------------------------------------ | ------ | -------- |
-| Region             | Request.Operation.Output   | 存储桶的地域                               | String | 是       |
-| Bucket             | Request.Operation.Output   | 存储结果的存储桶                           | String | 是       |
-| Object             | Request.Operation.Output   | 背景音结果文件名，不能与 AuObject 同时为空 | String | 否       |
-| AuObject           | Request.Operation.AuObject | 人声结果文件名，不能与 Object 同时为空     | String | 否       |
+| 节点名称（关键字） | 父节点                   | 描述             | 类型   | 是否必选 |
+| ------------------ | ------------------------ | ---------------- | ------ | -------- |
+| Region             | Request.Operation.Output | 存储桶的地域     | String | 是       |
+| Bucket             | Request.Operation.Output | 存储结果的存储桶 | String | 是       |
+| Object             | Request.Operation.Output | 输出结果的文件名 | String | 是       |
+
+
 
 ## 响应
 
@@ -132,31 +151,35 @@ Container 类型 Output 的具体数据描述如下：
 
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
-```shell
+``` shell
 <Response>
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <CreationTime>2022-06-27T14:44:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>SDRtoHDR</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>voiceseparate_demo</TemplateName>
+            <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
+            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
+            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
+            <SDRtoHDR>
+                <HdrMode>HDR10</HdrMode>
+            </SDRtoHDR>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
@@ -184,7 +207,7 @@ Container 节点 JobsDetail 的内容：
 | Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
 | JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
-| Tag                | Response.JobsDetail | 新创建任务的 Tag：VoiceSeparate                              | String    |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：SDRtoHDR                                   | String    |
 | State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String    |
 | CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
 | StartTime          | Response.JobsDetail | 任务的开始时间                                               | String    |
@@ -203,15 +226,13 @@ Container 节点 Input 的内容：
 
 Container 节点 Operation 的内容：
 
-| 节点名称（关键字） | 父节点                        | 描述                             | 类型      |
-| :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| TemplateId         | Response.JobsDetail.Operation | 任务的模板 ID                    | String    |
-| TemplateName       | Response.JobsDetail.Operation | 任务的模板名称, 当 TemplateId 存在时返回 | String    |
-| VoiceSeparate      | Response.JobsDetail.Operation | 同请求中的 Request.Operation.VoiceSeparate | Container |
-| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output        | Container |
-| MediaInfo          | Response.JobsDetail.Operation | 转码输出视频的信息，任务未完成时不返回 | Container |
-| MediaResult         | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
-| UserData            | Response.JobsDetail.Operation | 透传用户信息                      | String |
+| 节点名称（关键字） | 父节点                        | 描述                                  | 类型      |
+| :----------------- | :---------------------------- | :------------------------------------ | :-------- |
+| SDRtoHDR           | Response.JobsDetail.Operation | 同请求中的 Request.Operation.SDRtoHDR | Container |
+| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output   | Container |
+| MediaInfo          | Response.JobsDetail.Operation | 输出文件的媒体信息，任务未完成时不返回 | Container |
+| MediaResult        | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
+| UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
 
 Container 节点 MediaInfo 的内容：
 同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
@@ -236,7 +257,7 @@ Container 节点 Md5Info 的内容：
 | 节点名称（关键字） | 父节点                              | 描述                                                         | 类型   |
 | ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
 | ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件名          | String |
-| Md5                | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件的 MD5 值    | Container |
+| Md5                | Response.Operation.MediaResult.OutputFile.Md5Info  | 输出文件的 MD5 值    | Container |
 
 #### 错误码
 
@@ -244,108 +265,31 @@ Container 节点 Md5Info 的内容：
 
 ## 实际案例
 
-#### 请求1：使用人声分离模板 ID
+#### 请求
 
 ```shell
 POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
-Content-Length: 166
-Content-Type: application/xml
-
-<Request>
-    <Tag>VoiceSeparate</Tag>
-    <Input>
-        <Object>input/demo.mp4</Object>
-    </Input>
-    <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
-        </Output>
-        <UserData>This is my data.</UserData>
-    </Operation>
-    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-    <CallBack>http://callback.demo.com</CallBack>
-    <CallBackFormat>JSON<CallBackFormat>
-</Request>
-```
-
-#### 响应1
-
-```shell
-HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 230
-Connection: keep-alive
-Date: Mon, 28 Jun 2022 15:23:12 GMT
-Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
-
-<Response>
-    <JobsDetail>
-        <Code>Success</Code>
-        <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
-        <State>Submitted</State>
-        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
-        <StartTime>-</StartTime>
-        <EndTime>-</EndTime>
-        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
-        <Input>
-            <BucketId>test-123456789</BucketId>
-            <Object>input/demo.mp4</Object>
-            <Region>ap-chongqing</Region>
-        </Input>
-        <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>voiceseparate_demo</TemplateName>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
-            </Output>
-            <UserData>This is my data.</UserData>
-        </Operation>
-    </JobsDetail>
-</Response>
-```
-
-#### 请求2：使用人声分离参数
-
-
-```shell
-POST /jobs HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
 Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>SDRtoHDR</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <VoiceSeparate>
-            <AudioConfig>
-                    <Bitrate>500</Bitrate>
-                    <Channels>2</Channels>
-                    <Codec>mp3</Codec>
-                    <Samplerate>44100</Samplerate>
-            </AudioConfig>
-            <AudioMode>AudioAndBackground</AudioMode>
-        </VoiceSeparate>
+        <SDRtoHDR>
+            <HdrMode>HLG</HdrMode>
+        </SDRtoHDR>
+        <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+        <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+        <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -370,37 +314,33 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>SDRtoHDR</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <VoiceSeparate>
-                <AudioConfig>
-                    <Bitrate>500</Bitrate>
-                    <Channels>2</Channels>
-                    <Codec>mp3</Codec>
-                    <Samplerate>44100</Samplerate>
-                </AudioConfig>
-                <AudioMode>AudioAndBackground</AudioMode>
-            </VoiceSeparate>
+            <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
+            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
+            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
+            <SDRtoHDR>
+                <HdrMode>HDR10</HdrMode>
+            </SDRtoHDR>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
     </JobsDetail>
 </Response>
 ```
-

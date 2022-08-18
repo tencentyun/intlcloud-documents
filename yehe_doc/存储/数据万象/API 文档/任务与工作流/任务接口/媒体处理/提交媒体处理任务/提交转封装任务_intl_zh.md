@@ -1,6 +1,6 @@
 ## 功能描述
 
-提交一个人声分离任务。
+提交一个转封装任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -47,21 +47,27 @@ Content-Type: application/xml
 
 #### 请求体
 
-该请求操作的实现需要有如下请求体：
+该请求操作的实现需要有如下请求体。
 
 ```shell
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>Segment</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <Segment>
+            <Format>hls</Format>
+            <Duration>5</Duration>
+            <HlsEncrypt>
+                <IsHlsEncrypt>true</IsHlsEncrypt>
+                <UriKey>test-key</UriKey>
+            </HlsEncrypt>
+        </Segment>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -79,15 +85,13 @@ Content-Type: application/xml
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                          | 类型      | 是否必选 |
-| ------------------ | ------- | ----------------------------- | --------- | -------- |
-| Tag                | Request | 创建任务的 Tag：VoiceSeparate | String    | 是       |
-| Input              | Request | 待操作的媒体信息              | Container | 是       |
-| Operation          | Request | 操作规则                                                     | Container | 是       |
-| QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
-| CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
-| CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
-
+| 节点名称（关键字） | 父节点  | 描述                    | 类型      | 是否必选 |
+| ------------------ | ------- | ----------------------- | --------- | -------- |
+| Tag                | Request | 创建任务的 Tag：Segment | String    | 是       |
+| Input              | Request | 待操作的媒体信息        | Container | 是       |
+| Operation          | Request | 操作规则                | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID       | String    | 是       |
+| CallBack           | Request | 回调地址                | String    | 否       |
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -98,29 +102,34 @@ Container 类型 Input 的具体数据描述如下：
 <span id="operation"></span>
 Container 类型 Operation 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点            | 描述             | 类型      | 是否必选 |
-| ------------------ | ----------------- | ---------------- | --------- | -------- |
-| VoiceSeparate      | Request.Operation | 指定转码模板参数 | Container | 否       |
-| TemplateId         | Request.Operation | 指定的模板 ID    | String    | 否       |
-| Output             | Request.Operation | 结果输出地址     | Container | 是       |
+| 节点名称（关键字） | 父节点            | 描述           | 类型      | 是否必选 |
+| ------------------ | ----------------- | -------------- | --------- | -------- |
+| Segment            | Request.Operation | 指定转封装参数 | Container | 是       |
+| Output             | Request.Operation | 结果输出地址   | Container | 是       |
 
->! 优先使用 TemplateId，无 TemplateId 时使用 VoiceSeparate。
+Container 类型 Segment 的具体数据描述如下：
 
-Container 类型 VoiceSeparate 的具体数据描述如下：
+| 节点名称（关键字） | 父节点                    | 描述                 | 类型      | 是否必选 | 限制                                         |
+| ------------------ | :------------------------ | -------------------- | --------- | -------- | -------------------------------------------- |
+| Format             | Request.Operation.Segment | 封装格式             | String    | 是       | aac、mp3、flac、mp4、ts、mkv、avi、hls、m3u8 |
+| Duration           | Request.Operation.Segment | 转封装时长，单位：秒 | String    | 否       | 不小于5的整数                                |
+| HlsEncrypt         | Request.Operation.Segment | hls 加密配置         | Container | 否       | 无, 只有当封装格式为 hls 时生效  |
 
-| 节点名称（关键字） | 父节点                          | 描述                                                         | 类型      | 是否必选 |
-| ------------------ | :------------------------------ | ------------------------------------------------------------ | --------- | -------- |
-| AudioMode          | Request.Operation.VoiceSeparate | 同创建人声分离模板 <a href="https://cloud.tencent.com/document/product/460/77098#Request" target="_blank">CreateMediaTemplate</a> 接口中的 Request.AudioMode | Container | 否       |
-| AudioConfig        | Request.Operation.VoiceSeparate | 同创建人声分离模板 <a href="https://cloud.tencent.com/document/product/460/77098#AudioConfig" target="_blank">CreateMediaTemplate</a> 接口中的 Request.AudioConfig | Container | 否       |
+Container 类型 HlsEncrypt 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点                               | 描述              | 类型   | 必选 | 默认值 | 限制                                                   |
+| ------------------ | ------------------------------------ | ----------------- | ------ | ---- | ------ | ------------------------------------------------------ |
+| IsHlsEncrypt       | Request.Operation.Segment.HlsEncrypt | 是否开启 HLS 加密 | String | 否   | false  | 1. true/false <br/>2. Segment.Format 为 HLS 时支持加密 |
+| UriKey             | Request.Operation.Segment.HlsEncrypt | HLS 加密的 key    | String | 否   | 无     | 当 IsHlsEncrypt 为 true 时，该参数才有意义             |
 
 Container 类型 Output 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                     | 描述                                       | 类型   | 是否必选 |
-| ------------------ | -------------------------- | ------------------------------------------ | ------ | -------- |
-| Region             | Request.Operation.Output   | 存储桶的地域                               | String | 是       |
-| Bucket             | Request.Operation.Output   | 存储结果的存储桶                           | String | 是       |
-| Object             | Request.Operation.Output   | 背景音结果文件名，不能与 AuObject 同时为空 | String | 否       |
-| AuObject           | Request.Operation.AuObject | 人声结果文件名，不能与 Object 同时为空     | String | 否       |
+| 节点名称（关键字） | 父节点                   | 描述                                                         | 类型   | 是否必选 |
+| ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
+| Region             | Request.Operation.Output | 存储桶的地域                                                 | String | 是       |
+| Bucket             | Request.Operation.Output | 存储结果的存储桶                                             | String | 是       |
+| Object             | Request.Operation.Output | 输出结果的文件名，如果设置了Duration, 且 Format 不为 HLS 或 m3u8 时, 文件名必须包含${Number}参数作为自定义转封装后每一小段音/视频流的输出序号 | String | 是       |
+
 
 ## 响应
 
@@ -132,7 +141,7 @@ Container 类型 Output 的具体数据描述如下：
 
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
-```shell
+``` shell
 <Response>
     <JobsDetail>
         <Code>Success</Code>
@@ -143,23 +152,31 @@ Container 类型 Output 的具体数据描述如下：
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>Segment</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>voiceseparate_demo</TemplateName>
+            <Segment>
+                <Format>hls</Format>
+                <Duration>5</Duration>
+                <HlsEncrypt>
+                    <IsHlsEncrypt>true</IsHlsEncrypt>
+                    <UriKey>test-key</UriKey>
+                </HlsEncrypt>
+            </Segment>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out-${Number}</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <CallBack>http://callback.demo.com</CallBack>
+        <CallBackFormat>JSON<CallBackFormat>
     </JobsDetail>
 </Response>
 ```
@@ -184,7 +201,7 @@ Container 节点 JobsDetail 的内容：
 | Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
 | JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
-| Tag                | Response.JobsDetail | 新创建任务的 Tag：VoiceSeparate                              | String    |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：Segment                                    | String    |
 | State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String    |
 | CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
 | StartTime          | Response.JobsDetail | 任务的开始时间                                               | String    |
@@ -203,15 +220,13 @@ Container 节点 Input 的内容：
 
 Container 节点 Operation 的内容：
 
-| 节点名称（关键字） | 父节点                        | 描述                             | 类型      |
-| :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| TemplateId         | Response.JobsDetail.Operation | 任务的模板 ID                    | String    |
-| TemplateName       | Response.JobsDetail.Operation | 任务的模板名称, 当 TemplateId 存在时返回 | String    |
-| VoiceSeparate      | Response.JobsDetail.Operation | 同请求中的 Request.Operation.VoiceSeparate | Container |
-| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output        | Container |
-| MediaInfo          | Response.JobsDetail.Operation | 转码输出视频的信息，任务未完成时不返回 | Container |
-| MediaResult         | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
-| UserData            | Response.JobsDetail.Operation | 透传用户信息                      | String |
+| 节点名称（关键字） | 父节点                        | 描述                                 | 类型      |
+| :----------------- | :---------------------------- | :----------------------------------- | :-------- |
+| Segment            | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Segment | Container |
+| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output  | Container |
+| MediaInfo          | Response.JobsDetail.Operation | 转码输出视频的信息，没有时不返回     | Container |
+| MediaResult        | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
+| UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
 
 Container 节点 MediaInfo 的内容：
 同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
@@ -235,7 +250,7 @@ Container 节点 Md5Info 的内容：
 
 | 节点名称（关键字） | 父节点                              | 描述                                                         | 类型   |
 | ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件名          | String |
+| ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件名         | String |
 | Md5                | Response.Operation.MediaResult.OutputFile.Md5Info | 输出文件的 MD5 值    | Container |
 
 #### 错误码
@@ -244,27 +259,29 @@ Container 节点 Md5Info 的内容：
 
 ## 实际案例
 
-#### 请求1：使用人声分离模板 ID
+#### 请求1：mp4转封装
 
-```shell
+```plaintext
 POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>Segment</Tag>
     <Input>
-        <Object>input/demo.mp4</Object>
+        <Object>input/demo.mkv</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <Segment>
+            <Format>mp4</Format>
+            <Duration>15</Duration>
+        </Segment>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -295,57 +312,59 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>Segment</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
-            <Object>input/demo.mp4</Object>
+            <Object>input/demo.mkv</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>voiceseparate_demo</TemplateName>
+            <Segment>
+                <Format>mp4</Format>
+                <Duration>15</Duration>
+            </Segment>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out-${Number}</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <CallBack>http://callback.demo.com</CallBack>
+        <CallBackFormat>JSON<CallBackFormat>
     </JobsDetail>
 </Response>
 ```
 
-#### 请求2：使用人声分离参数
 
+#### 请求2：hls转封装并加密
 
-```shell
+```plaintext
 POST /jobs HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
 Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>Segment</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <VoiceSeparate>
-            <AudioConfig>
-                    <Bitrate>500</Bitrate>
-                    <Channels>2</Channels>
-                    <Codec>mp3</Codec>
-                    <Samplerate>44100</Samplerate>
-            </AudioConfig>
-            <AudioMode>AudioAndBackground</AudioMode>
-        </VoiceSeparate>
+        <Segment>
+            <Format>hls</Format>
+            <Duration>5</Duration>
+            <HlsEncrypt>
+                <IsHlsEncrypt>true</IsHlsEncrypt>
+                <UriKey>test-key</UriKey>
+            </HlsEncrypt>
+        </Segment>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -355,7 +374,7 @@ Content-Type: application/xml
 </Request>
 ```
 
-#### 响应
+#### 响应2
 
 ```shell
 HTTP/1.1 200 OK
@@ -376,31 +395,31 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>Segment</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <VoiceSeparate>
-                <AudioConfig>
-                    <Bitrate>500</Bitrate>
-                    <Channels>2</Channels>
-                    <Codec>mp3</Codec>
-                    <Samplerate>44100</Samplerate>
-                </AudioConfig>
-                <AudioMode>AudioAndBackground</AudioMode>
-            </VoiceSeparate>
+            <Segment>
+                <Format>hls</Format>
+                <Duration>5</Duration>
+                <HlsEncrypt>
+                    <IsHlsEncrypt>true</IsHlsEncrypt>
+                    <UriKey>test-key</UriKey>
+                </HlsEncrypt>
+            </Segment>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <CallBack>http://callback.demo.com</CallBack>
+        <CallBackFormat>JSON<CallBackFormat>
     </JobsDetail>
 </Response>
 ```
-

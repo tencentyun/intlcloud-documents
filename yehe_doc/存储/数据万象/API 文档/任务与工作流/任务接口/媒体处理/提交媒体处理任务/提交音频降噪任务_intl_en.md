@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit a voice/sound separation job.
+This API is used to submit an audio noise cancellation job.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -40,7 +40,6 @@ Content-Type: application/xml
 > - When this feature is used by a sub-account, relevant permissions must be granted.
 > 
 
-
 #### Request headers
 
 This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
@@ -51,17 +50,15 @@ This request requires the following request body:
 
 ```shell
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>NoiseReduction</Tag>
     <Input>
-        <Object>input/demo.mp4</Object>
+        <Object>input/demo.mp3</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out.wav</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -74,53 +71,41 @@ This request requires the following request body:
 The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------ | -------------- | --------- | -------- |
-| Request            | None     | Request container | Container | Yes       |
+| ------------------ | ------ | -------------- | --------- | ---- |
+| Request            | None     | Request container | Container | Yes   |
 
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------- | ----------------------------- | --------- | -------- |
-| Tag                | Request | Job type: VoiceSeparate                              | String    | Yes   |
+| ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
+| Tag                | Request | Job type: NoiseReduction                              | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
 | CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
 | CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
 
-
 `Input` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------------- | ---------- | ------ | -------- |
-| Object             | Request.Input | Media filename | String | Yes   |
+| ------------------ | ------------- | --------------- | ------ | ---- |
+| Object             | Request.Input | Name of the media file on which to execute the audio noise reduction job. </br>1. Currently, only audio files within 10 MB in size are supported. </br>2. If the input is a video file or a multi-channel audio, only mono-channel audio streams will be retained.</br>3. M3U8 input audios are not supported. | String | Yes |
 
 <span id="operation"></span>
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ----------------- | ---------------- | --------- | -------- |
-| VoiceSeparate                | Request.Operation | Transcoding template parameter                                    | Container | No   |
-| TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
+| ------------------| ----------------- | ------------------------------------------------------------ | --------- | ---- |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
-
->! `TemplateId` is used first. If `TemplateId` is unavailable, `VoiceSeparate` is used.
-
-`VoiceSeparate` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | :------------------------------ | ------------------------------------------------------------ | --------- | -------- |
-| AudioMode        | Request.Operation.VoiceSeparate | Same as `Request.AudioMode` in the voice/sound separation template creation API <a href="https://cloud.tencent.com/document/product/460/77098#Request" target="_blank">CreateMediaTemplate</a>.  | Container | No   |
-| AudioConfig        | Request.Operation.VoiceSeparate | Same as `Request.AudioConfig` in the voice/sound separation template creation API <a href="https://cloud.tencent.com/document/product/460/77098#AudioConfig" target="_blank">CreateMediaTemplate</a>.  | Container | No   |
 
 `Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | -------------------------- | ------------------------------------------ | ------ | -------- |
+| ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Background audio result filename. This node and `AuObject` cannot be empty at the same time.                  | String | No   |
-| AuObject             | Request.Operation.AuObject | Voice/Sound result filename. This node and `Object` cannot be empty at the same time.                  | String | No   |
+| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
+
 
 ## Response
 
@@ -143,20 +128,17 @@ The response body returns **application/xml** data. The following contains all t
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>NoiseReduction</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>voiceseparate_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out.wav</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
@@ -184,14 +166,13 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag | Response.JobsDetail | Job type: VoiceSeparate | String |
+| Tag | Response.JobsDetail | Job type: NoiseReduction | String |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
-| StartTime | Response.JobsDetail | Job start time |  String |
 | EndTime | Response.JobsDetail | Job end time |  String |
 | QueueId            | Response.JobsDetail | ID of the queue which the job is in                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the job                   | Container |
-| Operation          | Response.JobsDetail | Operation rule                           | Container |
+| Operation | Response.JobsDetail | Operation rule |  Container |
 
 `Input` has the following sub-nodes:
 
@@ -204,39 +185,11 @@ The nodes are as described below:
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
-| TemplateName        | Response.JobsDetail.Operation | Job template name, which will be returned if `TemplateId` exists. | String    |
-| VoiceSeparate             | Response.JobsDetail.Operation | Same as `Request.Operation.VoiceSeparate` in the request.  | Container |
+| ------------------ | ----------------------------- | -------------------------------- | --------- |
 | Output             | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request.  | Container |
-| MediaInfo | Response.JobsDetail.Operation | Output video information, which will not be returned when the job is not completed. |  Container |
-| MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
 
-`MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
-`MediaResult` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| OutputFile         | Response.Operation.MediaResult | Basic information of the output file. | Container |
-
-`OutputFile` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| Bucket             | Response.Operation.MediaResult.OutputFile | Bucket of the output file.           | String |
-| Region             | Response.Operation.MediaResult.OutputFile | Bucket region of the output file.  | String |
-| ObjectName         | Response.Operation.MediaResult.OutputFile | Output filename. There may be multiple values.         | String array |
-| Md5Info            | Response.Operation.MediaResult.OutputFile | MD5 information of the output file. | Container array |
-
-`Md5Info` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | Output filename.         | String |
-| Md5                | Response.Operation.MediaResult.OutputFile.Md5Info | MD5 value of the output file.    | Container |
 
 #### Error codes
 
@@ -244,7 +197,7 @@ There are no special error messages for this request. For common error messages,
 
 ## Samples
 
-#### Request 1. Using the voice/sound separation template ID
+#### Request
 
 ```shell
 POST /jobs HTTP/1.1
@@ -254,98 +207,15 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VoiceSeparate</Tag>
+    <Tag>NoiseReduction</Tag>
     <Input>
-        <Object>input/demo.mp4</Object>
+        <Object>input/demo.mp3</Object>
     </Input>
     <Operation>
-        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
-        </Output>
-        <UserData>This is my data.</UserData>
-    </Operation>
-    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-    <CallBack>http://callback.demo.com</CallBack>
-    <CallBackFormat>JSON<CallBackFormat>
-</Request>
-```
-
-#### Response 1
-
-```shell
-HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 230
-Connection: keep-alive
-Date: Mon, 28 Jun 2022 15:23:12 GMT
-Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
-
-<Response>
-    <JobsDetail>
-        <Code>Success</Code>
-        <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
-        <State>Submitted</State>
-        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
-        <StartTime>-</StartTime>
-        <EndTime>-</EndTime>
-        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
-        <Input>
-            <BucketId>test-123456789</BucketId>
-            <Object>input/demo.mp4</Object>
-            <Region>ap-chongqing</Region>
-        </Input>
-        <Operation>
-            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
-            <TemplateName>voiceseparate_demo</TemplateName>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
-            </Output>
-            <UserData>This is my data.</UserData>
-        </Operation>
-    </JobsDetail>
-</Response>
-```
-
-#### Request 2. Using the voice/sound separation parameter
-
-
-```shell
-POST /jobs HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
-Content-Length: 166
-Content-Type: application/xml
-
-<Request>
-    <Tag>VoiceSeparate</Tag>
-    <Input>
-        <Object>input/demo.mp4</Object>
-    </Input>
-    <Operation>
-        <VoiceSeparate>
-            <AudioConfig>
-                    <Bitrate>500</Bitrate>
-                    <Channels>2</Channels>
-                    <Codec>mp3</Codec>
-                    <Samplerate>44100</Samplerate>
-            </AudioConfig>
-            <AudioMode>AudioAndBackground</AudioMode>
-        </VoiceSeparate>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/backgroud.mp3</Object>
-            <AuObject>output/audio.mp3</AuObject>
+            <Object>output/out.wav</Object>
         </Output>
         <UserData>This is my data.</UserData>
     </Operation>
@@ -364,7 +234,7 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhfMjc=
 
 <Response>
     <JobsDetail>
@@ -376,31 +246,20 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VoiceSeparate</Tag>
+        <Tag>NoiseReduction</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <VoiceSeparate>
-                <AudioConfig>
-                    <Bitrate>500</Bitrate>
-                    <Channels>2</Channels>
-                    <Codec>mp3</Codec>
-                    <Samplerate>44100</Samplerate>
-                </AudioConfig>
-                <AudioMode>AudioAndBackground</AudioMode>
-            </VoiceSeparate>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/backgroud.mp3</Object>
-                <AuObject>output/audio.mp3</AuObject>
+                <Object>output/out.wav</Object>
             </Output>
             <UserData>This is my data.</UserData>
         </Operation>
     </JobsDetail>
 </Response>
 ```
-
