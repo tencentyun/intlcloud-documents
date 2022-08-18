@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`UpdateMediaQueue`) is used to update a media processing queue.
+This API (`UpdateMediaQueue`) is used to update a queue.
 
 ## Request
 
@@ -17,12 +17,16 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
+
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -74,7 +78,7 @@ The nodes are described as follows:
    <tr>
       <td>Name</td>
       <td>Request</td>
-      <td>Template Name</td>
+      <td>Template name</td>
       <td>String</td>
       <td>Yes</td>
       <td>Length limit: 100 characters</td>
@@ -94,7 +98,7 @@ The nodes are described as follows:
       <td>String</td>
       <td>Yes</td>
       <td>
-        1. Active: jobs in the channel will be scheduled and transcoded by the media transcoding service. <br>2. Paused: the channel is paused, and jobs in the channel will no longer be scheduled and transcoding. All jobs in the channel remain in the submitted state, and the tasks being transcoded will continue to be transcoded without being affected.
+        1. Active: Jobs in the channel will be scheduled and executed for transcoding by the media transcoding service. <br>2. Paused: The channel is paused, and jobs in it will no longer be scheduled and executed. All jobs in the channel will remain in the `Submitted` status, while jobs being executed will continue without being affected.
       </td>
    </tr>
    <tr>
@@ -129,7 +133,7 @@ The nodes are described as follows:
    <tr>
       <td>Type</td>
       <td>Request.NotifyConfig</td>
-      <td>Callback type, normal callback: URL</td>
+      <td>Callback type. General callback: Url</td>
       <td>String</td>
       <td>No</td>
       <td>Length limit: 100 characters</td>
@@ -137,7 +141,7 @@ The nodes are described as follows:
    <tr>
       <td>Event</td>
       <td>Request.NotifyConfig</td>
-      <td>Task completed: TaskFinish; workflow completed: WorkflowFinish</td>
+      <td>Job completed: TaskFinish; workflow completed: WorkflowFinish</td>
       <td>String</td>
       <td>No</td>
       <td>Length limit: 100 characters</td>
@@ -145,7 +149,7 @@ The nodes are described as follows:
    <tr>
       <td>State</td>
       <td>Request.NotifyConfig</td>
-      <td>Callback switch: Off, On</td>
+      <td>Callback switch: `Off` or `On`</td>
       <td>String</td>
       <td>No</td>
       <td>Length limit: 100 characters</td>
@@ -158,7 +162,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610). 
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610). 
 
 #### Response body
 
@@ -182,24 +186,24 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None | Response container | Container |
+| Response           | None     | Response container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------- | :----------------------------------------------------------- | :-------- |
-| RequestId          | Response | Unique ID of the request                                                | String    |
+| :----------------- | :------- | :------------------------------------------------ | :-------- |
+| RequestId          | Response | Unique ID of the request.                   | String    |
 | Queue              | Response | Queue information. Same as `Response.QueueList` in [DescribeMediaQueues](https://intl.cloud.tencent.com/document/product/1045/43672).  | Container |
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 
