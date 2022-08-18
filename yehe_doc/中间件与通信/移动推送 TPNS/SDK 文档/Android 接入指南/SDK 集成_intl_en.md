@@ -215,7 +215,7 @@ You need to configure the permissions required for proper operation of the TPNS 
     <!-- **Required** TPNS service -->
     <service
         android:name="com.tencent.android.tpush.service.XGVipPushService"
-        android:persistent="true"
+       android:exported="false"
         android:process=":xg_vip_service"></service>
 
     <!-- **Required** Notification service. Change the android:name to the package name.XGVIP_PUSH_ACTION -->
@@ -246,6 +246,7 @@ You need to configure the permissions required for proper operation of the TPNS 
     <!-- **(Optional)** Receiver implemented by the application, which is used to receive in-app messages and call back operation results. Add it as needed -->
     <!-- Change YOUR_PACKAGE_PATH.CustomPushReceiver to your own receiver： -->
     <receiver android:name="application package name.MessageReceiver">
+         android:exported="false">
         <intent-filter>
             <!-- Receive in-app messages -->
             <action android:name="com.tencent.android.xg.vip.action.PUSH_MESSAGE" />
