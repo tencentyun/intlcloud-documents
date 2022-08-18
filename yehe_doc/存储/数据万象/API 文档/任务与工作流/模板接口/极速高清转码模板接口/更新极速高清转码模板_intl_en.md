@@ -1,5 +1,5 @@
 ## Feature Description
-This API (`UpdateMediaTemplate`) is used to update a top speed codec template.
+This API (`UpdateMediaTemplate`) is used to update a top speed codec transcoding template.
 
 ## Request
 
@@ -16,12 +16,16 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
+
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -74,19 +78,19 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description |
 | ------------------ | ------- | ----------------------------------------------------- |
-| Tag                | Request | Same as `Request.Tag` in the top speed codec template creation API `CreateMediaTemplate`.     | 
-| Name               | Request | Same as `Request.Name` in the top speed codec template creation API `CreateMediaTemplate`.    | 
-| TimeInterval       | Request| Same as `Request.TimeInterval` in the top speed codec template creation API `CreateMediaTemplate`. |
-| Container          | Request| Same as `Request.Container` in the top speed codec template creation API `CreateMediaTemplate`. |
-| Video              | Request| Same as `Request.Video` in the top speed codec template creation API `CreateMediaTemplate`. |
-| Audio              | Request| Same as `Request.Audio` in the top speed codec template creation API `CreateMediaTemplate`. |
-| TransConfig        | Request| Same as `Request.TransConfig` in the top speed codec template creation API `CreateMediaTemplate`. |
+| Tag                | Request | Same as `Request.Tag` in the top speed codec transcoding template creation API `CreateMediaTemplate`.     |
+| Name               | Request | Same as `Request.Name` in the top speed codec transcoding template creation API `CreateMediaTemplate`.    |
+| TimeInterval       | Request| Same as `Request.TimeInterval` in the top speed codec transcoding template creation API `CreateMediaTemplate`. |
+| Container          | Request| Same as `Request.Container` in the top speed codec transcoding template creation API `CreateMediaTemplate`. |
+| Video              | Request| Same as `Request.Video` in the top speed codec transcoding template creation API `CreateMediaTemplate`. |
+| Audio              | Request| Same as `Request.Audio` in the top speed codec transcoding template creation API `CreateMediaTemplate`. |
+| TransConfig        | Request| Same as `Request.TransConfig` in the top speed codec transcoding template creation API `CreateMediaTemplate`.  |
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -136,18 +140,18 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :----------------------------------------- | :-------- |
-| Response           | None     | Response container. Same as `Response` in `CreateMediaTemplate`.  | Container |
+| Response           | None     | Response container. Same as `Response` in `CreateMediaTemplate`. | Container |
 
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 

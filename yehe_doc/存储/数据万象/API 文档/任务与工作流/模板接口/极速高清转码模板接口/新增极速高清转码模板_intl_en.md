@@ -1,5 +1,5 @@
 ## Feature Description
-This API (`CreateMediaTemplate`) is used to create a top speed codec template.
+This API (`CreateMediaTemplate`) is used to create a top speed codec transcoding template.
 
 ## Request
 
@@ -16,12 +16,15 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
->
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
+
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -76,45 +79,45 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- | ---- |
-| Tag                | Request | Task type: HighSpeedHd                                    | String    | Yes   | None   |
-| Name               | Request | Template name. The value can contain only Chinese characters, letters, digits, underscores (_), hyphens (-), and asterisks (\*).                    | String    | Yes   | None |
-| Container          | Request | Container format                                                 | Container | Yes   | None   |
+| Tag                | Request | Template type: HighSpeedHd                                | String    | Yes   | None |
+| Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       | None                             |
+| Container          | Request | Container format                                    | Container | Yes       | None                             |
 | Video              | Request | Video information                                                 | Container | Yes   | None   |
-| TimeInterval       | Request | Time interval                                                 | Container | No   | None   |
+| TimeInterval       | Request | Time interval                                    | Container | No       | None                             |
 | Audio              | Request | Audio information                                                 | Container | Yes   | None   |
-| TransConfig        | Request | Transcoding configuration                                                 | Container | No   | None   |
+| TransConfig        | Request | Transcoding configuration                                    | Container | No       | None                             |
 
 <br/>
 `Container` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | -------------------| ------- | ------------------------------------| --------- | ---- |
-| Format             | Request.Container | Container format: mp4, flv, hls   | String    | Yes   |
+| Format             | Request.Container | Container format. Valid values: mp4, flv, hls | String | Yes       |
 
 Audio/Video formats supported by different container formats are as follows:
 
 | Container                  | Audio Codecs  | Video Codecs          |
-| -------------------------- | ------------- | --------------------- | 
-| MP4/HLS                    | AAC, MP3      | H.264, H.265          |
-| FLV                        | AAC, MP3      | H.264                 |
+| -------------------------- | ------------- | --------------------- |
+| mp4/hls                    | AAC, MP3      | H.264, H.265          |
+| flv                        | AAC, MP3      | H.264                 |
 
 
 `Video` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | -------------------------- | ------------- | --------------------- | ------ | ---- | ------------ | ------------------------------------------------------------ |
-| Codec                      | Request.Video | Codec format            | String | No   | H.264        |  H.264, H.265  |
-| Width                      | Request.Video | Width                    | String | No   | Original video width | 1. Value range: [128, 4096]<br/>2. Unit: px<br/>3. If only `Width` is set, `Height` is calculated according to the original video proportion. <br/>4. The value must be an even number. |
-| Height                     | Request.Video | Height                    | String | No   | Original video height | 1. Value range: [128, 4096]<br/>2. Unit: px<br/>3. If only `Height` is set, `Width` is calculated according to the original video proportion. 4. The value must be an even number. |
-| Fps                        | Request.Video | Frame rate                  | String | No   | None           | 1. Value range: (0, 60]<br>2. Unit: fps | 
-| Profile                    | Request.Video | Encoding format              | String | No   | high         | 1. Valid values: baseline, main, high <br/>2. baseline: suitable for mobile devices<br/>3. main: suitable for standard resolution devices <br/>4. high: suitable for high resolution devices <br/>5. Only H.264 supports this parameter. |
-| Bitrate                    | Request.Video | Bitrate of the video output file    | String | No   |  None          | 1. Value range: [10, 50000]<br/>2. Unit: Kbps |
-| Crf                        | Request.Video | Bit rate, which is a quality control factor  | String | No       | None           | 1. Value range: (0, 51]<br/>2. If `Crf` is set, the setting of `Bitrate` becomes invalid. <br/>3. If `Bitrate` is empty, `25` is used for this parameter by default. |
-| Gop                        | Request.Video | Maximum number of frames between two key frames      | String | No   |  None          | Value range: [0, 100000] |
-| Preset                     | Request.Video | Video algorithm preset        | String | No   | medium       | 1. Only H.264 supports this parameter. <br/>2. Valid values: veryfast, fast, medium, slow, slower |
+| Codec                      | Request.Video | Codec format             | String | No   |   H.264 | H.264, H.265  |
+| Width              | Request.Video | Width                 | String | No       | Original video width | 1. Value range: [128, 4096]<br/>2.Unit: px<br/>3.If only `Width` is set, `Height` is calculated according to the original video aspect ratio.<br/>4.This parameter must be an even number. |
+| Height             | Request.Video | Height                 | String | No   | Original video height | 1. Value range: [128, 4096]<br/>2.Unit: px<br/>3. If only `Height` is set, `Width` is calculated according to the original video aspect ratio.<br/>4. This parameter must be an even number. |
+| Fps                        | Request.Video | Frame rate                  | String | No   | None           | 1. Value range: (0, 60]<br>2. Unit: fps |
+| Profile                    | Request.Video | Encoding level              | String | No   | high         | 1. Valid values: baseline, main, high <br/>2. baseline: Suitable for mobile devices<br/>3. main: Suitable for standard resolution devices <br/>4. high: Suitable for high resolution devices <br/>5. Only H.264 supports this parameter. |
+| Bitrate            | Request.Video | Bitrate of the video output file | String | No       | None           | 1. Value range: [10, 50000]<br/>2. Unit: Kbps                  |
+| Crf                | Request.Video | Bitrate, which is a quality control factor  | String | No       | None           | 1. Value range: (0, 51]<br/>2. If `Crf` is set, the setting of `Bitrate` becomes invalid.<br/>3. If `Bitrate` is empty, `25` is used for this parameter by default. |
+| Gop                | Request.Video | Maximum number of frames between two keyframes   | String | No       | None           | Value range: [0, 100000]                                       |
+| Preset                     | Request.Video | Video algorithm preset        | String | No   | medium       |  1. Only H.264 supports this parameter.<br/>2. Valid values: veryfast, fast, medium, slow, slower |
 | Bufsize                    | Request.Video | Buffer size            | String | No   | None           | 1. Value range: [1000, 128000]<br/>2. Unit: Kb<br/> |
 | Maxrate                    | Request.Video | Peak video bitrate          | String | No   | None           | 1. Value range: [10, 50000]<br/>2. Unit: Kbps<br/> |
-| HlsTsTime                  | Request.Video | HLS segment time           | String | No   | 5            | 1. (0, Video duration] <br/> 2. Unit: second |
+| HlsTsTime                  | Request.Video | HLS segment time          | String | No   | 5            | 1. (0, video duration] <br/>2.Unit: second |
 | Pixfmt                     | Request.Video | Video color format          | String | No   | None           | yuv420p |
 
 
@@ -122,8 +125,8 @@ Audio/Video formats supported by different container formats are as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | ------------------ | --------------------| -------- | --------- | ---- |--------| ----- |
-| Start              | Request.TimeInterval | Start time | String    | No   | None     | 1. [0, Video duration] <br/> 2. Unit: second <br/> 3. Supports the float format, accurate to milliseconds. |
-| Duration           | Request.TimeInterval | Duration | String    | No   | None     | 1. [0, Video duration] <br/> 2. Unit: second <br/> 3. Supports the float format, accurate to milliseconds. |
+| Start              | Request.TimeInterval | Start time | String    | No   | None     | 1. [0, video duration] <br/> 2. Unit: second <br/> 3. Supports the float format, accurate to the millisecond. |
+| Duration           | Request.TimeInterval | Duration | String    | No   | None     | 1. [0, video duration] <br/> 2. Unit: second <br/> 3. Supports the float format, accurate to the millisecond. |
 
 
 `Audio` has the following sub-nodes:
@@ -133,26 +136,26 @@ Audio/Video formats supported by different container formats are as follows:
 | Codec              | Request.Audio | Codec format     | String | No   | aac    | Valid values: aac, mp3 |
 | Samplerate         | Request.Audio | Sample rate         | String | No   | 44100  | 1. Unit: Hz<br/>2. Valid values: 11025, 22050, 32000, 44100, 48000, 96000<br/>3. Different container formats support different MP3 sample rates, as shown in the table below.|
 | Bitrate            | Request.Audio | Original audio bitrate   | String | No   | None     | 1. Unit: Kbps<br/>2. Value range: [8, 1000]|
-| Channels           | Request.Audio | Number of sound channels         | String | No   | None     | 1. If `Codec` is `aac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`. <br/>2. If `Codec` is `mp3`, the value can be `1` or `2`. |
+| Channels           | Request.Audio | Number of sound channels         | String | No   |  None      | 1. If `Codec` is `aac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.<br/>2. If `Codec` is `mp3`, the value can be `1` or `2`. |
 
 
 >? Y indicates supported, and N indicates unsupported.
 >
 
-| Container Format/Audio Sample Rate| 11025 | 22050 | 32000 | 44100 | 48000 | 96000 |
+| Container Format/Audio Sample Rate | 11025 | 22050 | 32000 | 44100 | 48000 | 96000 |
 | ------------------ | ----- | ----- | ----- | ----- | ------| ------|
-| FLV             | Y     | Y    | N    | Y    | N    | N    |
-| MP4                | N     | Y    | Y    | Y    | Y    | N    |
-| HLS                | Y     | Y    | Y    | Y    | Y    | N    |
+| flv	             | Y     | 	Y    | 	N    | 	Y    | 	N    | 	N    |
+| mp4                | N     | 	Y    | 	Y    | 	Y    | 	Y    | 	N    |
+| hls                | Y     | 	Y    | 	Y    | 	Y    | 	Y    | 	N    |
 
 
 `TransConfig` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | --------------------- | ------------------- | ---------------- | ------ | ---- | ------ | ---- |
-| IsCheckReso           | Request.TransConfig | Whether to check the resolution   | String | No   | false  | 1. true, false <br/> 2. If the value is `false`, transcoding is performed based on settings. |
-| ResoAdjMethod         | Request.TransConfig | Resolution adjustment mode   | String | No   | 0      | 1. Valid values: `0`, `1`. `0` indicates to use the original video resolution. `1` indicates to return the transcoding failure message.<br/>2. This parameter is valid only when `IsCheckReso` is `true`. |
-| IsHdr2Sdr             | Request.TransConfig | Whether to enable HDR-to-SDR conversion | String | No   | false        | Valid values: true, false |
+| IsCheckReso           | Request.TransConfig                        | Whether to check the resolution               | String    | No       | false  | 1. Valid values: true, false <br/> 2. If the value is `false`, transcoding is performed based on settings.      |
+| ResoAdjMethod         | Request.TransConfig                        | Resolution adjustment method               | String    | No       | 0      | 1. Valid values: 0, 1. `0` indicates to use the original video resolution. `1` indicates to return the transcoding failure message.<br/>2. This parameter is valid only when `IsCheckReso` is `true`. |
+| IsHdr2Sdr             | Request.TransConfig                        | Whether to enable HDR-to-SDR conversion             | String    | No       | false  | Valid values: true, false                                                   |
 
 
 
@@ -160,7 +163,7 @@ Audio/Video formats supported by different container formats are as follows:
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -210,7 +213,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :----------------------------------------------------- | :-------- |
@@ -225,7 +228,7 @@ The nodes are described as follows:
 | Name               | Response.Template     | Template name                                                     | String    |
 | BucketId           | Response.Template     | Template bucket                                                | String    |
 | Category           | Response.Template     | Template category: Custom or Official                                | String    |
-| Tag                | Response.Template     | Task type: HighSpeedHd                                          | String    |
+| Tag                | Response.Template | Template type: HighSpeedHd                                       | String    |
 | UpdateTime         | Response.Template     | Update time                                                     | String    |
 | CreateTime         | Response.Template     | Creation time                                                     | String    |
 | HighSpeedHd        | Response.Template     | Template parameters                                                | Container |
@@ -244,9 +247,9 @@ The nodes are described as follows:
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 

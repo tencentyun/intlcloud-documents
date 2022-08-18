@@ -2,6 +2,24 @@
 
 This API (`DescribeMediaTemplates`) is used to search for super resolution templates.
 
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateAnimationTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 ## Request
 
 #### Sample request
@@ -16,36 +34,41 @@ Content-Type: application/xml
 
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
-
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+>
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
+
 The request body of this request is empty.
 
 #### Request parameters
-The nodes are described as follows:
+
+The parameters are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-|:---           |:--       |:--                    |   :--     |   :--    |
-| Tag           | None        | Task type: SuperResolution       | String    |Yes|
-| Category      | None        | Template category: Custom (default) or Official  | String  |Yes|
-| Ids           | None        | Template ID. If you enter multiple IDs, separate them with commas (,).  | String     |No|
-| Name          | None        | Template name prefix              | String     |No|
-| PageNumber    | None        | Page number                   | Integer     |No|
-| PageSize      | None        | Records per page                 | Integer     |No|
+| :----------------- | :----- | :------------------------------- | :------ | :------- |
+| tag           | None        | Template type: SuperResolution     | String    | Yes |
+| category      | None        | Template category: Custom (default) or Official  | String  | Yes |
+| ids       | None | Template ID. If you enter multiple IDs, separate them by comma.  | String     | No |
+| name          | None        | Template name prefix              | String     | No |
+| pageNumber    | None        | Page number                   | Integer     | No |
+| pageSize    | None | Number of entries per page                | Integer | No       |
 
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
+
 The response body returns **application/xml** data. The following contains all the nodes:
 
 ```shell
@@ -61,6 +84,7 @@ The response body returns **application/xml** data. The following contains all t
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
@@ -68,49 +92,42 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None | Response container | Container |
+| Response           | None     | Response container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------- | :----------------------------- | :-------- |
-| RequestId          | Response | Unique ID of the request                   | String    |
+| :----------------- | :------- | :------------------------------ | :-------- |
+| RequestId          | Response | Unique ID of the request.                   | String    |
 | TotalCount         | Response | Total number of templates                       | Int       |
 | PageNumber         | Response | Current page number. Same as `pageNumber` in the request.                           | Int       |
-| PageSize           | Response | Number of records per page. Same as `pageSize` in the request.                             | Int       |
-| TemplateList       | Response | Template array                       | Container |
+| PageSize           | Response | Number of entries per page. Same as `pageSize` in the request.   | Int       |
+| TemplateList       | Response | Template array                        | Container |
 
 `TemplateList` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :-------------------- | :----------------------------------------------------------- | :-------- |
-| TemplateId         | Response.TemplateList | Template ID                                                      | String    |
-| Name               | Response.TemplateList | Template name                                                     | String    |
+| :----------------- | :-------------------- | :----------------------------- | :-------- |
+| TemplateId         | Response.TemplateList | Template ID                        | String    |
+| Name               | Response.TemplateList | Template name                       | String    |
 | BucketId           | Response.TemplateList | Template bucket                                                | String    |
 | Category           | Response.TemplateList | Template category: Custom or Official                                | String    |
-| Tag                | Response.TemplateList     | Task type: SuperResolution                                     | String    |
+| Tag                | Response.TemplateList | Template type: SuperResolution                                        | String    |
 | UpdateTime         | Response.TemplateList | Update time                                                     | String    |
 | CreateTime         | Response.TemplateList | Creation time                                                     | String    |
-| SuperResolution    | Response.TemplateList     | Template parameters                                                | Container |
-
-`SuperResolution` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description |
-| :----------------- | :----------------------------- | :------- |
-| Resolution         | Response.TemplateList.SuperResolution | Same as `Request.Resolution` in the super resolution template creation API `CreateMediaTemplate`. |
-| EnableScaleUp      | Response.TemplateList.SuperResolution | Same as `Request.EnableScaleUp` in the super resolution template creation API `CreateMediaTemplate`. |
+| SuperResolution    | Response.TemplateList | Same as `Response.SuperResolution` in the super resolution template creation API `CreateMediaTemplate`.  | Container |
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
-**Example 1: query by template ID**
+**Sample 1. Querying by template ID**
 
 #### Request
 
@@ -142,6 +159,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
@@ -153,7 +171,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 </Response>
 ```
 
-**Example 2: query by paginated list**
+**Sample 2. Querying by paginated list**
 
 #### Request
 
@@ -188,6 +206,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>

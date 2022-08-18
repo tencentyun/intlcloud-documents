@@ -1,5 +1,5 @@
 ## Feature Description
-This API (`DeleteMediaTemplate`) is used to delete a concatenation template.
+This API (`DeleteMediaTemplate`) is used to delete a splicing template.
 
 ## Request
 
@@ -15,16 +15,19 @@ Content-Type: application/xml
 
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
 
 
 #### Request headers
 
 #### Common request headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Non-common request headers
-This API does not use any non-common request header.
+This request operation does not use any non-common request headers.
 
 #### Request body
 The request body of this request is empty.
@@ -34,10 +37,10 @@ The request body of this request is empty.
 #### Response headers
 
 #### Common response headers
-This response contains [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This response contains common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Non-common response headers
-This API does not use any non-common response header.
+This response does not use any non-common response header.
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -49,7 +52,7 @@ The response body returns **application/xml** data. The following contains all t
 <Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
@@ -64,9 +67,9 @@ The nodes are described as follows:
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 

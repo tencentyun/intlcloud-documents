@@ -17,11 +17,14 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+> 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -32,6 +35,7 @@ This request requires the following request body:
     <Name>TemplateName</Name>
     <Resolution>sdtohd</Resolution>
     <EnableScaleUp>true</EnableScaleUp>
+    <Version>Enhance</Version>
 </Request>
 
 ```
@@ -40,23 +44,24 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | ---- |
-| Request            | None | Request container | Container | Yes   |
+| Request            | None     | Request container | Container | Yes   |
 
 
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------- | ----------------------------------------------------- | --------- | ---- | ---- |
-| Tag                | Request | Task type: SuperResolution                              | String    | Yes   | No |
-| Name               | Request | Template name. The value can contain only Chinese characters, letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       | None                             |
-| Resolution         | Request | Resolution option                                             | String    | Yes   | 1. `sdtohd`: SDT to HD<br>2. `hdto4k`: HD to 4K |
-| EnableScaleUp      | Request |   Whether to enable auto scaling. Auto scaling is disabled by default.                                    | String    | No   | Valid values: `true`, or `false` | 
+| Tag                | Request | Template type: SuperResolution                                | String    | Yes   | None |
+| Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       | None |
+| Resolution         | Request | Resolution option                                             | String    | Yes   | 1. sdtohd: SD to HD<br>2. hdto4k: HD to 4K |
+| EnableScaleUp      | Request |   Whether to enable automatic scaling, which is disabled by default.                                    | String    | No   | true, false |
+| Version            | Request | Version. Default value: Base. | String | No | 1. Base: Basic version<br>2. Enhance: Enhanced version |
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -70,6 +75,7 @@ The response body returns **application/xml** data. The following contains all t
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
@@ -77,11 +83,11 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :----------------------------------------------------- | :-------- |
-| Response           | None | Response container | Container |
+| Response           | None     | Response container | Container |
 
 
 `Response` has the following sub-nodes:
@@ -92,7 +98,7 @@ The nodes are described as follows:
 | Name               | Response.Template     | Template name                                                     | String    |
 | BucketId           | Response.Template     | Template bucket                                                | String    |
 | Category           | Response.Template     | Template category: Custom or Official                                | String    |
-| Tag                | Response.Template     | Task type: SuperResolution                                     | String    |
+| Tag                | Response.Template | Template type: SuperResolution                                       | String    |
 | UpdateTime         | Response.Template     | Update time                                                     | String    |
 | CreateTime         | Response.Template     | Creation time                                                     | String    |
 | SuperResolution    | Response.Template     | Template parameters                                                | Container |
@@ -108,9 +114,9 @@ The nodes are described as follows:
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 
@@ -126,6 +132,7 @@ Content-Type: application/xml
     <Name>TemplateName</Name>
     <Resolution>sdtohd</Resolution>
     <EnableScaleUp>true</EnableScaleUp>
+    <Version>Enhance</Version>
 </Request>
 ```
 
@@ -148,6 +155,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>

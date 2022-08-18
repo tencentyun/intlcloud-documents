@@ -1,5 +1,24 @@
 ## Feature Description
-This API (`UpdateMediaTemplate`) is used to update a concatenation template.
+
+This API (`UpdateMediaTemplate`) is used to update a splicing template.
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateConcatTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## Request
 
@@ -16,25 +35,30 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
-
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted.
+>
 
 #### Request headers
 
 #### Common request headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+
+This API uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Non-common request headers
-This API does not use any non-common request header.
+
+This request operation does not use any non-common request headers.
 
 #### Request body
+
 This request requires the following request body:
 
 ```shell
 <Request>
-   <Tag>Concat</Tag>
-   <Name>TemplateName</Name>
-   <ConcatTemplate>
+    <Tag>Concat</Tag>
+    <Name>TemplateName</Name>
+    <ConcatTemplate>
         <ConcatFragment>
             <Mode>Start</Mode>
             <Url>http://bucket-1250000000.cos.ap-beijing.myqcloud.com/start.mp4</Url>
@@ -59,7 +83,20 @@ This request requires the following request body:
         <Container>
             <Format>mp4</Format>
         </Container>
-   </ConcatTemplate>
+        <AudioMix>
+            <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+            <MixMode>Once</MixMode>
+            <Replace>true</Replace>
+            <EffectConfig>
+                <EnableStartFadein>true</EnableStartFadein>
+                <StartFadeinTime>3</StartFadeinTime>
+                <EnableEndFadeout>false</EnableEndFadeout>
+                <EndFadeoutTime>0</EndFadeoutTime>
+                <EnableBgmFade>true</EnableBgmFade>
+                <BgmFadeTime>1.7</BgmFadeTime>
+            </EffectConfig>
+        </AudioMix>
+    </ConcatTemplate>
 </Request>
 ```
 
@@ -67,76 +104,16 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
-
-
-`Request` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | Task type: Concat                                   | String    | Yes   |
-| Name               | Request | Template name. The value can contain only Chinese characters, letters, digits, underscores (_), hyphens (-), and asterisks (*).                     | String    | Yes   |
-| ConcatTemplate     | Request | Concatenation template                                                | Container | Yes   |
-
-
-`ConcatTemplate` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------  | ------- | -------------------------------------------------------- | --------- | ---- |---| ---- |
-| ConcatFragment      | Request.ConcatTemplate | Concatenation node    | Container    | Yes   | None  | None |
-| Audio               | Request.ConcatTemplate | Audio parameter    | Container    | No   | None  | If the target file does not require audio information, set `Audio.Remove` to `true`. |
-| Video               | Request.ConcatTemplate | Video parameter    | Container    | No   | None  | If the target file does not require video information, set `Video.Remove` to `true`. |
-| Container           | Request.ConcatTemplate | Container format     | Container    | Yes   | None  | None |
-
-
-`ConcatFragment` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------  | ------- | -------------------------------------------------------- | --------- | ---- |---| ---- |
-| Url                 | Request.ConcatTemplate.<br/>ConcatFragment | Concatenation object address   | String    | Yes   | None   | Same as the address of the bucket object file. |
-| Mode                | Request.ConcatTemplate.<br/>ConcatFragment | Node type      | String    | Yes   | None   | <li>Start </br><li>End |
-
-
-`Audio` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------  | ------- | -------------------------------------------------------- | --------- | ---- |---| ---- |
-| Codec              | Request.ConcatTemplate.<br/>Audio | Codec format     | String | No   | Original code of the file    | Valid values: `aac`, `mp3`                                                |
-| Samplerate         | Request.ConcatTemplate.<br/>Audio | Sample rate         | String | No   | Original sample rate of the file  | <li>Unit: Hz<br/><li>Valid values: `11025`, `22050`, `32000`, `44100`, `48000`, `96000`<br/><li>Different container formats support different MP3 sample rates, as shown in the table below.|
-| Bitrate            | Request.ConcatTemplate.<br/>Audio | Audio bitrate   | String | No   | Original audio bitrate of the file   | <li>Unit: Kbps<br/><li>Value range: [8, 1000]                       |
-| Channels           | Request.ConcatTemplate.<br/>Audio | Number of sound channels         | String | No   | Original number of sound channels of the file      | <li>If `Codec` is `aac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.<br/><li>If `Codec` is `mp3`, the value can be `1` or `2`. |
-
-Y indicates supported, and N indicates unsupported.
-
-| Container Format/Audio Sample Rate | 11025  | 22050|  32000 | 44100|  48000|   96000 |
-| ------------------ | ------- | ------- | ------- | ------- |------------| ------------- |
-| mp3     | Y       | Y| Y| Y| Y| N|
-
-`Container` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------- | ---------------------------------------------------- | --------- | ---- |
-| Format                | Request.ConcatTemplate.<br/>Container | Container format: mp4, flv, hls, ts, mp3, aac   | String    | Yes   |
-
-`Video` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| -------------------------- | ------------- | --------------------- | ------ | ---- | ------------ | ------------------------------------------------------------ |
-| Codec                      | Request.ConcatTemplate.<br/>Video | Codec format             | String | No   |   H.264 | H.264                                          |
-| Width                      | Request.ConcatTemplate.<br/>Video | Width                    | String | No   | Original video width | <li>Value range: [128, 4096]<br/><li>Unit: px<br/><li>If only `Width` is set, `Height` is calculated according to the original video proportion. |
-| Height                     | Request.ConcatTemplate.<br/>Video | Height                    | String | No   | Original video height | <li>Value range: [128, 4096]<br/><li>Unit: px<br/><li>If only `Height` is set, `Width` is calculated according to the original video proportion. |
-| Fps                        | Request.ConcatTemplate.<br/>Video | Frame rate                  | String | No   | Original video frame rate | <li>Value range: (0, 60]<br><li>Unit: fps |
-| Bitrate                    | Request.ConcatTemplate.<br/>Video | Bitrate of the video output file      | String | No   |  Original video bitrate           | <li>Value range: [10, 50000]<br/><li>Unit: Kbps    </li>                 |
-| Remove                     | Request.ConcatTemplate.<br/>Video | Whether to delete the video stream         | String | No   | false        | Valid values: `true`, `false`
+| Request            | None     | Same as `Request` in the splicing template creation API `CreateMediaTemplate`. | Container | Yes   |
 
 ## Response
 
 #### Response headers
 
 #### Common response headers
-This response contains [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This response contains common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 #### Non-common response headers
-This API does not use any non-common response header.
+This response does not use any non-common response header.
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -172,6 +149,19 @@ The response body returns **application/xml** data. The following contains all t
             <Container>
                 <Format>mp4</Format>
             </Container>
+            <AudioMix>
+                <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+                <MixMode>Once</MixMode>
+                <Replace>true</Replace>
+                <EffectConfig>
+                    <EnableStartFadein>true</EnableStartFadein>
+                    <StartFadeinTime>3</StartFadeinTime>
+                    <EnableEndFadeout>false</EnableEndFadeout>
+                    <EndFadeoutTime>0</EndFadeoutTime>
+                    <EnableBgmFade>true</EnableBgmFade>
+                    <BgmFadeTime>1.7</BgmFadeTime>
+                </EffectConfig>
+            </AudioMix>
         </ConcatTemplate>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
@@ -179,27 +169,17 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :----- | :----------------------------------------- | :-------- |
-| Response           | None     | Response container
-
-`Response` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------- | :----------------------------- | :-------- |
-| TemplateId         | Response | Template ID                                                  | String    |
-| TotalCount         | Response | Total number of templates                                                 | Int       |
-| PageNumber         | Response | Current page number. Same as `pageNumber` in the request.                             | Int       |
-| PageSize           | Response | Number of records per page. Same as `pageSize` in the request.                               | Int       |
-| ConcatTemplate     | Response | Concatenation information. Same as `ConcatTemplate` in the request body.   | Container |
+| :----------------- | :----- | :----------------------------------------------------- | :-------- |
+| Response           | None     | Same as `Response` in the splicing template creation API `CreateMediaTemplate`. | Container |
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 
@@ -210,12 +190,10 @@ Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 1666
 Content-Type: application/xml
 
-
-
 <Request>
-   <Tag>Concat</Tag>
-   <Name>TemplateName</Name>
-   <ConcatTemplate>
+    <Tag>Concat</Tag>
+    <Name>TemplateName</Name>
+    <ConcatTemplate>
         <ConcatFragment>
             <Mode>Start</Mode>
             <Url>http://bucket-1250000000.cos.ap-beijing.myqcloud.com/start.mp4</Url>
@@ -240,7 +218,20 @@ Content-Type: application/xml
         <Container>
             <Format>mp4</Format>
         </Container>
-   </ConcatTemplate>
+        <AudioMix>
+            <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+            <MixMode>Once</MixMode>
+            <Replace>true</Replace>
+            <EffectConfig>
+                <EnableStartFadein>true</EnableStartFadein>
+                <StartFadeinTime>3</StartFadeinTime>
+                <EnableEndFadeout>false</EnableEndFadeout>
+                <EndFadeoutTime>0</EndFadeoutTime>
+                <EnableBgmFade>true</EnableBgmFade>
+                <BgmFadeTime>1.7</BgmFadeTime>
+            </EffectConfig>
+        </AudioMix>
+    </ConcatTemplate>
 </Request>
 ```
 
@@ -254,8 +245,6 @@ Connection: keep-alive
 Date: Thu, 15 Jun 2017 12:37:29 GMT
 Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
-
-
 
 <Response>
     <Template>
@@ -287,6 +276,19 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
             <Container>
                 <Format>mp4</Format>
             </Container>
+            <AudioMix>
+                <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+                <MixMode>Once</MixMode>
+                <Replace>true</Replace>
+                <EffectConfig>
+                    <EnableStartFadein>true</EnableStartFadein>
+                    <StartFadeinTime>3</StartFadeinTime>
+                    <EnableEndFadeout>false</EnableEndFadeout>
+                    <EndFadeoutTime>0</EndFadeoutTime>
+                    <EnableBgmFade>true</EnableBgmFade>
+                    <BgmFadeTime>1.7</BgmFadeTime>
+                </EffectConfig>
+            </AudioMix>
         </ConcatTemplate>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
