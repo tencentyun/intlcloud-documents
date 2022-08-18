@@ -1,7 +1,7 @@
 ## Process orchestration
 MPS allows you to create custom schemes to orchestrate service processing for high numbers of media files and complete basic operations such as transcoding, screencapturing, and watermarking. You can use event callbacks to stay up to date with the progress of different tasks.
 
-## TESHD
+## Top Speed Codec
 MPS supports H.264, H.265, and AV1 encoding standards and ensures high video quality while reducing bandwidth costs by 50%. In addition, it supports real-time 4K and 8K encoding and delivers a smooth UHD viewing experience.
 
 ## Accelerated transcoding
