@@ -2,23 +2,23 @@
 ### DNS validity verification
 
 You can use [DNS Checker](https://www.whatsmydns.net/) to verify whether your DNS configuration is valid.
-
+ 
 [](id:add)
 ### Email address validity
 The email bounce rate is a rigid metric for email scoring by ISPs. The most possible reason for email bounce is invalid email address; that is, the email is sent to an incorrect address. If the bounce rate stays high, the ISP will determine the sender as malicious and then put emails in the spam folder or block sender IPs. A good bounce rate should not exceed 5%. If the addresses of your recipients are of poor quality, you need to process and filter them in advance.
 
 [](id:garbage)
 ### Spam folder
-No sender can guarantee that an email will not go to the recipient's spam folder. Especially, when the sender's domain name is newly registered and thus has no reputation with the ISP, it is normal for emails to go to the spam folder. It requires a good warm-up and user engagement to improve the reputation of the domain name. The ISP will dynamically adjust the spam policy based on the reputation and eventually send emails to the recipient's inbox. Therefore, we recommend you add the prompt "If you don't see the email, please check your spam folder".
+No sender can guarantee that an email will not go to the recipient's spam folder. Especially, when the sender's domain name is newly registered and thus has no reputation with the ISP, it is normal for emails to go to the spam folder. It requires a good warm-up and user engagement to improve the reputation of the domain name. The ISP will dynamically adjust the spam policy based on the reputation and eventually send emails to the recipient's inbox. Therefore, we recommend you add the prompt "If you don't receive the email, check your spam folder" in your email.
 
 [](id:avoid)
 ### Measures to prevent emails from being marked as spam
 1. Write appropriate email subjects and avoid using unusual or obviously marketing words.
 2. Avoid obvious "spam" and illegal content and excessively commercialized words, such as lucky draw for top-up, gambling, pornography, drugs, and obscenity.
 3. Balance the number of words and images, do not use too many images, and avoid emails where there is only a large image with no text.
-4. It is better not to add URLs in the email content; otherwise, the email can be easily identified as spam.
+4. It is better not to add URLs and redirects in the email content; otherwise, the email can be easily identified as spam.
 5. Use regular fonts instead of various colors or artistic fonts in the email content.
-6. Be sure to add an easily visual unsubscription button in the email content. Doing so can prevent users from being disgusted with your emails when they don't need the products or services you provide, as they can simply click the unsubscription button instead of reporting or blocking your emails. This will leave a positive impression on users and reduce the chance of your emails being recognized as spam.
+6. Add an unsubscription button in the email content. Doing so can prevent users from being disgusted with your emails when they don't need the products or services you provide, as they can simply click the unsubscription button instead of reporting or blocking your emails. This will leave a positive impression on users and reduce the chance of your emails being recognized as spam.
 7. Standardize the email HTML code, as non-compliant code may be identified as spam by the email filter. You need to have professional coders or use professional email templates.
 8. Encourage customers to add you as a friend or contact. In this way, your emails will definitely go to their inbox instead of spam folder.
 9. Clean the recipient list regularly. When you find that your email fails to deliver to many of your recipients, the spam filters of most email service providers will give your domain name or IP a higher spam index score.
@@ -27,6 +27,6 @@ No sender can guarantee that an email will not go to the recipient's spam folder
 [](id:multiple)
 ### Batch sending
 1. The **Batch** feature in the console is suitable for batch sending of marketing or notification emails. To send trigger-based emails (such as authentication and transactional emails), you are advised to call the `SendEmail` API.
-2. Automatic warm-up is built in the batch sending feature to intelligently determine the reputation of the sender domain/IP and the maximum number of sent emails allowed per day. When this daily limit is reached, email sending will stop and extra emails will enter the cache queue and be sent 24 hours later. For the daily email limit for a domain/IP that has not been warmed up, see [Standard Warm-up Plan](https://intl.cloud.tencent.com/document/product/1084/43285#default).
+2. The automatic warm-up feature is built in batch sending. For more information, see [Getting Started > What is warm-up?](https://intl.cloud.tencent.com/document/product/1084/42368).
 3. You can use a single domain for multiple sending tasks. When the total email volume exceeds the maximum number allowed per day, extra emails will enter the cache queue and be sent the next day.
 4. When a task enters the cache queue, its status is **Paused** and the sending progress bar remains static. After you restart the task the next day, its status becomes **Sending** and the progress bar grows.
