@@ -2,15 +2,15 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 
 **You can create a transcoding template in two ways:**
 
-- Create a transcoding template in the CSS console. For detailed directions, see [Creating standard transcoding template](#C_trans), [Creating top speed codec transcoding template](#C_topspeed), and [Creating audio-only transcoding template](#C_audio).
+- Create a transcoding template in the CSS console. For detailed directions, see [Creating a standard transcoding template](#C_trans), [Creating a TSC transcoding template](#C_topspeed), and [Creating an audio-only transcoding template](#C_audio).
 - Create a transcoding template for live channels using an API. For the API parameters and examples, see [CreateLiveTranscodeTemplate](https://intl.cloud.tencent.com/document/product/267/30790).
 
 
 ## Notes
-- CSS supports standard transcoding, top speed codec transcoding, and audio-only transcoding. Please read the billing overview before using the service.
+- CSS supports standard transcoding, Top Speed Codec (TSC) transcoding, and audio-only transcoding. Please read the billing overview before using the service.
    - [Live Transcoding > Standard Transcoding](https://intl.cloud.tencent.com/document/product/267/39604)
-   - [Live Transcoding > Top Speed Codec Transcoding](https://intl.cloud.tencent.com/document/product/267/39604)
-- Compared with **standard transcoding**, **top speed codec transcoding** provides higher video quality at lower bitrate. Leveraging technologies including intelligent scene recognition, dynamic encoding, and CTU/line/frame-level bitrate control, top speed codec transcoding allows you to provide higher-definition streaming services at lower bitrates (30% lower on average). It is widely used for game streaming, showroom streaming, and event streaming.
+   - [Live Transcoding > TSC Transcoding](https://intl.cloud.tencent.com/document/product/267/39604)
+- Compared with **standard transcoding**, **TSC transcoding** provides higher video quality at lower bitrate. Leveraging technologies including intelligent scene recognition, dynamic encoding, and CTU/line/frame-level bitrate control, TSC transcoding allows you to provide higher-definition streaming services at lower bitrates (30% lower on average). It is widely used for game streaming, showroom streaming, and event streaming.
 - After creating a template, you can bind it with a playback domain name. The binding takes effect in 5-10 minutes.
 - You can append the name of a transcoding template to the `StreamName` of a live stream to generate a URL of the transcoded stream. If you have specified the height and width or short and long sides of the transcoded stream, keep the original resolution as close to the values set as possible to prevent image distortion.
 - On the **Live Transcoding** page of the console, you can view the domain a template is bound to, as well as finer-granularity bindings performed via APIs. You can also [unbind](#untie) a template here.
@@ -35,7 +35,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 <tr>
 <td>Transcoding Type</td>
 <td>Yes</td>
-<td>The transcoding type, which can be <b>standard transcoding</b>, top speed codec transcoding, or audio-only transcoding.</td>
+<td>The transcoding type, which can be <b>standard transcoding</b>, TSC transcoding, or audio-only transcoding.</td>
 </tr><tr>
 <td>Template Name</td>
 <td>Yes</td>
@@ -90,14 +90,14 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 ### Creating a top speed codec transcoding template
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Top Speed Codec Transcoding** for transcoding type, and complete the following configuration:
-  - Basic configuration: Template name, video bitrate, video resolution, etc. For details, see [Basic Configuration for Top Speed Codec Transcoding](#C_topspeed_normal).
+  - Basic configuration: Template name, video bitrate, video resolution, etc. For details, see [Basic Configuration for TSC Transcoding](#C_topspeed_normal).
   - Advanced configuration (optional): Click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for Top Speed Codec Transcoding](#C_topspeed_high).
 3. Click **Save**.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/54a0334f1d24f7e0acb4e4f923b27d23.png)
 
 <table  id="C_topspeed_normal">
-<tr><th width="20%">Basic Configuration for Top Speed Codec Transcoding</th><th>Required</th><th>Description</th>
+<tr><th width="20%">Basic Configuration for TSC Transcoding</th><th>Required</th><th>Description</th>
 </tr><tr>
 <td>Transcoding Type</td>
 <td>Yes</td>
@@ -126,7 +126,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </table>
 
 <table  id="C_topspeed_high">
-<tr><th width="20%">Advanced Configuration for Top Speed Codec Transcoding</th><th>Required</th><th>Description</th>
+<tr><th width="20%">Advanced Configuration for TSC Transcoding</th><th>Required</th><th>Description</th>
 </tr><tr>
 <td>Codec</td>
 <td>No</td>
@@ -158,7 +158,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 </tr><tr>
 <td>Transcoding Type</td>
 <td>Yes</td>
-<td>The transcoding type, which can be standard transcoding, top speed codec transcoding, or <strong>audio-only transcoding</strong>.</td>
+<td>The transcoding type, which can be standard transcoding, TSC transcoding, or <strong>audio-only transcoding</strong>.</td>
 </tr>
 <tr>
 <td>Template Name</td>
