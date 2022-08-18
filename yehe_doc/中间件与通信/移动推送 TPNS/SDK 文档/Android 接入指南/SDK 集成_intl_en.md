@@ -245,7 +245,7 @@ You need to configure the permissions required for proper operation of the TPNS 
 
     <!-- **(Optional)** Receiver implemented by the application, which is used to receive in-app messages and call back operation results. Add it as needed -->
     <!-- Change YOUR_PACKAGE_PATH.CustomPushReceiver to your own receiver： -->
-    <receiver android:name="application package name.MessageReceiver">
+    <receiver android:name="application package name.MessageReceiver"
          android:exported="false">
         <intent-filter>
             <!-- Receive in-app messages -->
