@@ -1,5 +1,5 @@
 ## Overview
-This page shows the general transcoding and TESHD transcoding resource packs you have purchased and their usage.
+This page shows the general transcoding and Top Speed Codec (TSC) transcoding resource packs you have purchased and their usage.
 ## Viewing Resource Packs
 Log in to the [MPS console](https://console.cloud.tencent.com/mps) and select [Resource Pack Management](https://console.cloud.tencent.com/mps/resources?tab=package) on the left sidebar. Under the **Resource packs** tab, you can view the information of the resource packs you have purchased.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c81fcdc9a8c3fe4e2c31713c38661039.png)
@@ -27,7 +27,7 @@ Log in to the [MPS console](https://console.cloud.tencent.com/mps) and select [R
 </tr>
 <tr>
 <td>Type</td>
-<td>The resource pack type, which may be general transcoding or TESHD transcoding. You can view only your general transcoding packs or TESHD transcoding packs by selecting the corresponding type.</td>
+<td>The resource pack type, which may be general transcoding or TSC transcoding. You can view only your general transcoding packs or TSC transcoding packs by selecting the corresponding type.</td>
 </tr>
 <tr>
 <td>Total minutes</td>
