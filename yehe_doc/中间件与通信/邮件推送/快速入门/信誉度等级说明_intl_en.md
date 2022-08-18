@@ -34,12 +34,13 @@ You can view the reputation level of each sender domain and the corresponding da
 SES dynamically determines the reputation level of a sender domain based on the email delivery quality, which is measured against the **invalid address rate, spam bounce rate, spam complaint rate, and email open rate**.
 
 **The level will be raised when any one of the following rules is satisfied, and the raised daily email sending limit will take effect immediately:**
-- The daily number of emails actually sent reaches 70% of the daily email sending limit for the current level, with a deliverability above 90%, a spam complaint rate below 0.1%, an invalid address rate below 5%, and a spam bounce rate below 2.5%.
+- The daily number of emails actually sent reaches 70% of the daily email sending limit for the current level, with a deliverability above 92%, a spam complaint rate below 0.1%, an invalid address rate below 5%, and a spam bounce rate below 2.5%.
 - The daily number of emails actually sent reaches 70% of the daily email sending limit for the current level, with a deliverability above 90%, a spam complaint rate below 0.1%, and an email open rate above 50%.
 
 **The level will be lowered when any one of the following rules is satisfied, and the lowered daily email sending limit will take effect the next day:**
 - The daily number of emails actually sent exceeds 300, with an invalid address rate above 9%.
-- The daily number of emails actually sent exceeds 300, with a spam bounce rate above 10%.
+- The daily number of emails actually sent exceeds 300, with a deliverability below 65%.
+- The daily number of emails actually sent exceeds 300, with a spam bounce rate above 5%.
 - The daily number of emails actually sent exceeds 300, with a spam complaint rate above 0.5%.
 
 You can view the email delivery quality information in the [**Statistics**](https://console.cloud.tencent.com/ses/stats) module in the SES console. To protect your sender IP address and domain, the SES has the right to adjust the rules and values and update the description properly.
