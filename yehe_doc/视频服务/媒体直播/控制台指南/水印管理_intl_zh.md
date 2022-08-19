@@ -18,7 +18,7 @@
 ### 添加文字水印
 - **Watermark Text**：添加文字水印时为必选项，即要叠加在视频上的文字。
 - **Front Size**：字体大小。
-- **Coloer**：字体颜色。
+- **Color**：字体颜色。
 ![](https://qcloudimg.tencent-cloud.cn/raw/41770c54a01cb9b2eebeaf48c266a981.png)
 输入完毕后点击**Confirm**按钮完成创建。
 
