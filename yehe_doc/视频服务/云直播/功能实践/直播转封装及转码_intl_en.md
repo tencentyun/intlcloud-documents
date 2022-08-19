@@ -159,7 +159,7 @@ Live transcoding (including both video transcoding and audio transcoding) is the
 
 ## Top Speed Codec Transcoding
 
-Based on years of experience in audio/video encoding, intelligent scenario recognition, dynamic encoding, and three-level (CTU/line/frame) precise bitrate control model among other technologies, Tencent Video Cloud provides higher-definition streaming services at lower bitrates (30% less on average) for live streaming, on-demand content, etc.
+Based on years of experience in audio/video encoding, intelligent scenario recognition, dynamic encoding, the three-level (CTU/line/frame) precise bitrate control model, and other technologies, the Top Speed Codec (TSC) transcoding feature provides higher-definition streaming at lower bitrates (30% less on average) for live streaming and video on-demand.
 
 ### Use cases
 
@@ -169,17 +169,17 @@ If the live push bitrate is high and the image is complex, you can use the intel
 
 As users of various video platforms have an ever-increasing requirement for high video source definition and smooth watch experience, in the current live streaming industry, 1080p resolution and 3-10 Mbps bitrate have gradually become the mainstream configuration, and the bandwidth costs are taking a large part in the total video platform costs. In this case, the reduction of the video bitrate can effectively reduce the bandwidth costs.
 **Example:**
-Suppose you held a live session at 3 Mbps for 4 hours with 200 viewers. The codec is H.264 and top speed codec transcoding is not used. The peak bandwidth is 600 Mbps. The bandwidth cost for this live session is 600 x 0.2118 = 127.08 USD.
+Suppose you held a live session at 3 Mbps for 4 hours with 200 viewers. The codec is H.264 and TSC transcoding is not used. The peak bandwidth is 600 Mbps. The bandwidth cost for this live session is 600 x 0.2118 = 127.08 USD.
 
-- If top speed codec transcoding is used to reduce the bitrate, the incurred bandwidth fees will be around 127.08 x (100% - 30%) = 88.956 USD.
-- Top speed codec transcoding fees: 0.0443 x 240 = 10.632 USD (published price without any discount applied).
+- If TSC transcoding is used to reduce the bitrate, the incurred bandwidth fees will be around 127.08 x (100% - 30%) = 88.956 USD.
+- TSC transcoding fees: 0.0443 x 240 = 10.632 USD (published price without any discount applied).
 - Total fees: 88.956 + 10.632 = 99.588 USD.
 
-Therefore, top speed codec transcoding can effectively reduce the platform bandwidth costs while delivering a better watch experience.
+Therefore, TSC transcoding can effectively reduce the platform bandwidth costs while delivering a better watch experience.
 
 ### Key parameters
 
-The parameters of top speed codec transcoding are configured basically in the same way as standard live transcoding parameters. For more information, please see [Video transcoding parameters](#parameter).
+The parameters of TSC transcoding are configured basically in the same way as standard live transcoding parameters. For more information, please see [Video transcoding parameters](#parameter).
 
 
 
@@ -235,7 +235,7 @@ Note: Using the watermark feature will incur standard transcoding fees.
 You can set transcoding parameters via the [CSS console](#T_control) or [server APIs](#T_api). Either way, you will mainly use watermark templates, transcoding templates, and transcoding rules for the configuration.
 <span id="T_control"></span>
 #### CSS console
-1. Go to **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)** to add a transcoding configuration template. You can add a [standard transcoding](https://intl.cloud.tencent.com/document/product/267/31071) or [top speed codec transcoding](https://intl.cloud.tencent.com/document/product/267/31071) template.
+1. Go to **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)** to add a transcoding configuration template. You can add a [standard transcoding](https://intl.cloud.tencent.com/document/product/267/31071) or [TSC transcoding](https://intl.cloud.tencent.com/document/product/267/31071) template.
 2. Create the corresponding transcoding type and set transcoding parameters as needed. You can use the system's default parameters, and a corresponding transcoding template ID will be generated.
 3. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** to find the target pull domain name, and click **Manage** > **Template Configuration** to bind it with the transcoding template. For more information, please see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31062).
 
@@ -261,7 +261,7 @@ For a push with stream ID of `1234_test`, the original stream and watermarked st
 
 - **Original stream:** `http://liveplay.tcloud.com/live/1234_test.flv?authentication string`
 - **Standard transcoding stream (watermarked):** `http://liveplay.tcloud.com/live/1234_test_sd.flv?authentication string`
-- **Top speed codec transcoding stream (watermarked):** `http://liveplay.tcloud.com/live/1234_test_hd.flv?authentication string`
+- **TSC transcoding stream (watermarked):** `http://liveplay.tcloud.com/live/1234_test_hd.flv?authentication string`
 
 >! To play back a watermarked stream, you need to bind the corresponding push domain name to the created watermark template.
 
