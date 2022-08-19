@@ -116,7 +116,7 @@ The nodes are described as follows:
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Transcode          | Request.Operation | Transcoding template parameter             | Container | No   |
 | WatermarkTemplateId| Request.Operation | Watermark template ID. Multiple watermark template IDs can be passed in.           | String    | No |
-| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API <a href="https://cloud.tencent.com/document/product/460/77099#Watermark" target="_blank">CreateMediaTemplate</a>.  | Container | No |
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API CreateMediaTemplate.  | Container | No |
 | RemoveWatermark              | Request.Operation | Whether to remove the watermark                                                         | Container | No   |
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
@@ -129,11 +129,11 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :------------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#TimeInterval " target="_blank">CreateMediaTemplate</a>.    | Container | Yes   |
-| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#Container " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#Video " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#Audio " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#TransConfig " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API CreateMediaTemplate.    | Container | Yes   |
+| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
+| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
+| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
+| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
 
 
 `RemoveWatermark` has the following sub-nodes:

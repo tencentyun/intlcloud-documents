@@ -110,8 +110,8 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :------------------------------ | ------------------------------------------------------------ | --------- | -------- |
-| AudioMode        | Request.Operation.VoiceSeparate | Same as `Request.AudioMode` in the voice/sound separation template creation API <a href="https://cloud.tencent.com/document/product/460/77098#Request" target="_blank">CreateMediaTemplate</a>.  | Container | No   |
-| AudioConfig        | Request.Operation.VoiceSeparate | Same as `Request.AudioConfig` in the voice/sound separation template creation API <a href="https://cloud.tencent.com/document/product/460/77098#AudioConfig" target="_blank">CreateMediaTemplate</a>.  | Container | No   |
+| AudioMode        | Request.Operation.VoiceSeparate | Same as `Request.AudioMode` in the voice/sound separation template creation API CreateMediaTemplate.  | Container | No   |
+| AudioConfig        | Request.Operation.VoiceSeparate | Same as `Request.AudioConfig` in the voice/sound separation template creation API CreateMediaTemplate.  | Container | No   |
 
 `Output` has the following sub-nodes:
 

@@ -106,7 +106,7 @@ The nodes are described as follows:
 | SDRtoHDR             | Request.Operation | SDR-to-HDR parameter                                             | Container | Yes   |
 | Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
 | TranscodeTemplateId | Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node first.           | String  | No|
-| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API <a href="https://cloud.tencent.com/document/product/460/77099#Watermark" target="_blank">CreateMediaTemplate</a>. Up to three watermarks can be passed in. | Container array | No |
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API CreateMediaTemplate. Up to three watermarks can be passed in. | Container array | No |
 | WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` first.          | String array    | No |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 | UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
@@ -124,11 +124,11 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :------------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#TimeInterval " target="_blank">CreateMediaTemplate</a>.    | Container | Yes   |
-| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#Container " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#Video " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#Audio " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API <a href="https://cloud.tencent.com/document/product/460/77093#TransConfig " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API CreateMediaTemplate    | Container | Yes   |
+| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
+| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
+| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
+| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
 
 
 `Output` has the following sub-nodes:

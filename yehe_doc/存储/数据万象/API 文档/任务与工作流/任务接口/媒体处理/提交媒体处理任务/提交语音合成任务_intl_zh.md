@@ -104,11 +104,11 @@ Container 类型 TtsTpl 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                      | 描述                                   | 类型      | 是否必选 |
 | ---------------- | :-------------------------- | -------------------------------------- | --------- | ---- |
-| Mode        | Request.Operation.TtsTpl | 创建语音合成模板 <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a> 中 Request.Mode      | String | 否   |
-| Codec       | Request.Operation.TtsTpl | 创建语音合成模板 <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a> 中 Request.Codec     | String | 否   |
-| VoiceType   | Request.Operation.TtsTpl | 创建语音合成模板 <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a> 中 Request.VoiceType | String | 否   |
-| Volume      | Request.Operation.TtsTpl | 创建语音合成模板 <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a> 中 Request.Volume    | String | 否   |
-| Speed       | Request.Operation.TtsTpl | 创建语音合成模板 <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a> 中 Request.Speed     | String | 否   |
+| Mode        | Request.Operation.TtsTpl | 创建语音合成模板 CreateMediaTemplate 中 Request.Mode      | String | 否   |
+| Codec       | Request.Operation.TtsTpl | 创建语音合成模板 CreateMediaTemplate 中 Request.Codec     | String | 否   |
+| VoiceType   | Request.Operation.TtsTpl | 创建语音合成模板 CreateMediaTemplate 中 Request.VoiceType | String | 否   |
+| Volume      | Request.Operation.TtsTpl | 创建语音合成模板 CreateMediaTemplate 中 Request.Volume    | String | 否   |
+| Speed       | Request.Operation.TtsTpl | 创建语音合成模板 CreateMediaTemplate 中 Request.Speed     | String | 否   |
 
 Container 类型 TtsConfig 的具体数据描述如下：
 

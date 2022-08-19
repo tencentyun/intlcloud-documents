@@ -104,11 +104,11 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ---------------- | :-------------------------- | -------------------------------------- | --------- | ---- |
-| Mode        | Request.Operation.TtsTpl | Same as `Request.Mode` in the text-to-speech template creation API <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a>.      | String | No   |
-| Codec       | Request.Operation.TtsTpl | Same as `Request.Codec` in the text-to-speech template creation API <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a>.      | String | No   |
-| VoiceType       | Request.Operation.TtsTpl | Same as `Request.VoiceType` in the text-to-speech template creation API <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a>.      | String | No   |
-| Volume       | Request.Operation.TtsTpl | Same as `Request.Volume` in the text-to-speech template creation API <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a>.      | String | No   |
-| Speed       | Request.Operation.TtsTpl | Same as `Request.Speed` in the text-to-speech template creation API <a href="https://cloud.tencent.com/document/product/460/77095#Request" target="_blank">CreateMediaTemplate</a>.      | String | No   |
+| Mode        | Request.Operation.TtsTpl | Same as `Request.Mode` in the text-to-speech template creation API CreateMediaTemplate.      | String | No   |
+| Codec       | Request.Operation.TtsTpl | Same as `Request.Codec` in the text-to-speech template creation API CreateMediaTemplate.      | String | No   |
+| VoiceType       | Request.Operation.TtsTpl | Same as `Request.VoiceType` in the text-to-speech template creation API CreateMediaTemplate.      | String | No   |
+| Volume       | Request.Operation.TtsTpl | Same as `Request.Volume` in the text-to-speech template creation API CreateMediaTemplate.      | String | No   |
+| Speed       | Request.Operation.TtsTpl | Same as `Request.Speed` in the text-to-speech template creation API CreateMediaTemplate.      | String | No   |
 
 `TtsConfig` has the following sub-nodes:
 

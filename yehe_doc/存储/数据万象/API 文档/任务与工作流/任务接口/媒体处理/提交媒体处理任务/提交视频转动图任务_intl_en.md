@@ -109,9 +109,9 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :-------------------------- | ------------------------------------------------------------ | --------- | -------- |
-| Container          | Request.Operation.Animation | Same as `Request.Container` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#Container" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Video              | Request.Operation.Animation | Same as `Request.Video` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#Video" target="_blank">CreateMediaTemplate</a>.        | Container | No   |
-| TimeInterval       | Request.Operation.Animation | Same as `Request.TimeInterval` in the animated image template creation API <a href="https://cloud.tencent.com/document/product/460/77088#TimeInterval" target="_blank">CreateMediaTemplate</a>. | Container | No   |
+| Container          | Request.Operation.Animation | Same as `Request.Container` in the animated image template creation API CreateMediaTemplate.    | Container | No   |
+| Video              | Request.Operation.Animation | Same as `Request.Video` in the animated image template creation API  CreateMediaTemplate.        | Container | No   |
+| TimeInterval       | Request.Operation.Animation | Same as `Request.TimeInterval` in the animated image template creation API CreateMediaTemplate. | Container | No   |
 
 `Output` has the following sub-nodes:
 

@@ -99,7 +99,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | -------- |
-| Snapshot                     | Request.Operation | Job type parameter. Same as `Request.Snapshot` in the screenshot template creation API <a href="https://cloud.tencent.com/document/product/460/77091#Snapshot " target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| Snapshot                     | Request.Operation | Job type parameter. Same as `Request.Snapshot` in the screenshot template creation API CreateMediaTemplate.    | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 | UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
