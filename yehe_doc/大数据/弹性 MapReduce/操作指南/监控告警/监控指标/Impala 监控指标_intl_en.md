@@ -111,11 +111,7 @@
 <td >-</td>
 <td >Number of daemon threads</td>
 </tr><tr>
-<td rowspan=2>CPU utilization</td>
-<td >ProcessCpuLoad</td>
-<td >%</td>
-<td >Process CPU utilization</td>
-</tr><tr>
+<td rowspan=1>CPU utilization</td>
 <td >SystemCpuLoad</td>
 <td >-</td>
 <td >System CPU Utilization</td>
@@ -252,11 +248,7 @@
 <td >-</td>
 <td >Number of opened file descriptors</td>
 </tr><tr>
-<td rowspan=2>CPU utilization</td>
-<td >ProcessCpuLoad</td>
-<td >%</td>
-<td >Process CPU utilization</td>
-</tr><tr>
+<td rowspan=1>CPU utilization</td>
 <td >SystemCpuLoad</td>
 <td >-</td>
 <td >System CPU Utilization</td>
