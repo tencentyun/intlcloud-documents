@@ -118,25 +118,25 @@ The nodes are as described below:
 | NextToken             | Response | Context token for pagination | String    |
 
 The content of `JobsDetail` varies by job type. For more information, see the following documents:
-- <a href="https://cloud.tencent.com/document/product/460/76913#jobsDetail" target="_blank">Submitting Video Transcoding Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76900#jobsDetail" target="_blank">Submitting Video-to-Animated Image Conversion Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76910#jobsDetail" target="_blank">Submitting Screenshot Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76909#jobsDetail" target="_blank">Submitting Intelligent Thumbnail Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76901#jobsDetail" target="_blank">Submitting Audio/Video Splicing Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76918#jobsDetail" target="_blank">Submitting Voice/Sound Separation Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76915#jobsDetail" target="_blank">Submitting Video Montage Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76907#jobsDetail" target="_blank">Submitting SDR-to-HDR Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76916#jobsDetail" target="_blank">Submitting Video Enhancement Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76912#jobsDetail" target="_blank">Submitting Super Resolution Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76908#jobsDetail" target="_blank">Submitting Remuxing Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76902#jobsDetail" target="_blank">Submitting Digital Watermark Adding Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76903#jobsDetail" target="_blank">Submitting Digital Watermark Extracting Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76917#jobsDetail" target="_blank">Submitting Video Tagging Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76904#jobsDetail" target="_blank">Submitting Media Information Query Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76911#jobsDetail" target="_blank">Submitting Stream Separation Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76906#jobsDetail" target="_blank">Submitting Video Quality Scoring Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76914#jobsDetail" target="_blank">Submitting Text-to-Speech Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76905#jobsDetail" target="_blank">Submitting Audio Noise Cancellation Job</a>
+- Submitting Video Transcoding Job
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49569" target="_blank">Submitting Video-to-Animated Image Conversion Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48938" target="_blank">Submitting Screenshot Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48937" target="_blank">Submitting Intelligent Thumbnail Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48929" target="_blank">Submitting Audio/Video Splicing Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48946" target="_blank">Submitting Voice/Sound Separation Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48943" target="_blank">Submitting Video Montage Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48935" target="_blank">Submitting SDR-to-HDR Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">Submitting Video Enhancement Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">Submitting Super Resolution Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">Submitting Remuxing Job</a>
+- Submitting Digital Watermark Adding Job
+- Submitting Digital Watermark Extracting Job
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">Submitting Video Tagging Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">Submitting Media Information Query Job</a>
+- Submitting Stream Separation Job
+- Submitting Video Quality Scoring Job
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">Submitting Text-to-Speech Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">Submitting Audio Noise Cancellation Job</a>
 
 
 

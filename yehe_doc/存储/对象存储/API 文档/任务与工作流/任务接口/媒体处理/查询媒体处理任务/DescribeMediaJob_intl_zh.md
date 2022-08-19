@@ -79,26 +79,26 @@ Container 节点 Response 的内容：
 | NonExistJobIds     | Response | 查询的 ID 中不存在任务，所有任务都存在时不返回               | String    |
 
 对于不同的任务类型，JobsDetail 的内容不同，请参照以下链接：
-- <a href="https://cloud.tencent.com/document/product/460/76913#jobsDetail" target="_blank">音视频转码</a>
-- <a href="https://cloud.tencent.com/document/product/460/78248#jobsDetail" target="_blank">极速高清转码</a>
-- <a href="https://cloud.tencent.com/document/product/460/76900#jobsDetail" target="_blank">视频转动图</a>
-- <a href="https://cloud.tencent.com/document/product/460/76910#jobsDetail" target="_blank">视频截帧</a>
-- <a href="https://cloud.tencent.com/document/product/460/76909#jobsDetail" target="_blank">智能封面</a>
-- <a href="https://cloud.tencent.com/document/product/460/76901#jobsDetail" target="_blank">音视频拼接</a>
-- <a href="https://cloud.tencent.com/document/product/460/76918#jobsDetail" target="_blank">人声分离</a>
-- <a href="https://cloud.tencent.com/document/product/460/76915#jobsDetail" target="_blank">精彩集锦</a>
-- <a href="https://cloud.tencent.com/document/product/460/76907#jobsDetail" target="_blank">SDR to HDR</a>
-- <a href="https://cloud.tencent.com/document/product/460/76916#jobsDetail" target="_blank">视频增强</a>
-- <a href="https://cloud.tencent.com/document/product/460/76912#jobsDetail" target="_blank">超分辨率</a>
-- <a href="https://cloud.tencent.com/document/product/460/76908#jobsDetail" target="_blank">音视频转封装</a>
-- <a href="https://cloud.tencent.com/document/product/460/76902#jobsDetail" target="_blank">数字水印</a>
-- <a href="https://cloud.tencent.com/document/product/460/76903#jobsDetail" target="_blank">提取数字水印</a>
-- <a href="https://cloud.tencent.com/document/product/460/76917#jobsDetail" target="_blank">视频标签</a>
-- <a href="https://cloud.tencent.com/document/product/460/76904#jobsDetail" target="_blank">获取媒体信息</a>
-- <a href="https://cloud.tencent.com/document/product/460/76911#jobsDetail" target="_blank">音视频流分离</a>
-- <a href="https://cloud.tencent.com/document/product/460/76906#jobsDetail" target="_blank">视频质量分析</a>
-- <a href="https://cloud.tencent.com/document/product/460/76914#jobsDetail" target="_blank">语音合成</a>
-- <a href="https://cloud.tencent.com/document/product/460/76905#jobsDetail" target="_blank">音频降噪</a>
+- 音视频转码
+- 极速高清转码
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49569" target="_blank">视频转动图</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48938" target="_blank">视频截帧</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48937" target="_blank">智能封面</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48929" target="_blank">音视频拼接</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48946" target="_blank">人声分离</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48943" target="_blank">精彩集锦</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48935" target="_blank">SDR to HDR</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">视频增强</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">超分辨率</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">音视频转封装</a>
+- 数字水印
+- 提取数字水印
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">视频标签</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">获取媒体信息</a>
+- 音视频流分离
+- 视频质量分析
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">语音合成</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">音频降噪</a>
 
 
 
