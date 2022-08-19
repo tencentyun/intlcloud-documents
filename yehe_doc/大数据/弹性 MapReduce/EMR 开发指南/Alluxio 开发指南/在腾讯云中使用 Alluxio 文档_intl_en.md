@@ -2,8 +2,7 @@
 Tencent Cloud EMR comes with the ready-to-use Alluxio service, helping you accelerate distributed memory-level caching and simplify data management. You can also use the configuration delivery feature to configure multi-level caching and manage metadata via the EMR console or APIs. In addition, EMR offers one-stop monitoring and alarming.
 
 ## Preparations
-- Tencent Cloud EMR Hadoop Standard v2.1.0 or above
-- Tencent Cloud EMR Hadoop TianQiong v1.0 or above
+Tencent Cloud EMR Hadoop Standard v2.1.0 or above.
 
 For specific Alluxio versions supported in EMR, see [Component Version](https://intl.cloud.tencent.com/document/product/1026/31095).
 
@@ -31,7 +30,7 @@ Tencent Cloud EMR provides the compute and storage separation capability based o
 COS is deployed on Tencent Cloud EMR clusters by default and serves as the dependent JAR package of UFS. You only need to grant EMR clusters the permission to access COS and mount COS to Alluxio.
 
 ### Authorization
-If COS is not enabled for the current cluster, you can go to **[CAM console > Roles](https://console.cloud.tencent.com/cam/role/grant?roleName=EMR_QCSRole&policyName=QcloudAccessForEMRRoleInApplicationDataAccess&principal=eyJzZXJ2aWNlIjoiZW1yLmNsb3VkLnRlbmNlbnQuY29tIn0=&serviceType=EMR&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Femr%2Fstatic%2Fframework%2Femr-g9qk9p0g%3Ftype%3DinstanceDetail%26regionId%3D8)** to grant permission. After authorization, EMR nodes can access the data in COS using temporary keys.
+If COS is not enabled for the current cluster, you can go to **[CAM console > Roles](https://console.cloud.tencent.com/cam/role)** to grant permission. After authorization, EMR nodes can access the data in COS using temporary keys.
 ![](https://main.qcloudimg.com/raw/6c5cc63c26123355119ed4e4302ef8a4.png)
 ![](https://main.qcloudimg.com/raw/41f988eba10c0e1b88a86cffe3c67e67.png)
 
