@@ -51,7 +51,7 @@
 #### 管理任务
 
 - 控制台方式：您可使用对象存储控制台，可视化创建任务，使用详情请参见 [创建任务](https://intl.cloud.tencent.com/document/product/436/46409)。
-- API 方式：您可使用 API 接口创建、删除、查询、搜索媒体处理任务，使用详情请参见 [API 文档](https://intl.cloud.tencent.com/document/product/436/46881)。
+- API 方式：您可使用 API 接口创建、删除、查询、搜索媒体处理任务，使用详情请参见 [API 文档](https://www.tencentcloud.com/document/product/436/49192)。
 
 ### 工作流
 
