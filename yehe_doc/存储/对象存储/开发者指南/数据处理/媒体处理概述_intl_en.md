@@ -51,7 +51,7 @@ You can create a media processing job for existing data stored in COS.
 #### Managing job
 
 - Console: You can create jobs visually in the COS console as instructed in [Configuring Job](https://intl.cloud.tencent.com/document/product/436/46409).
-- API: You can create, delete, query, and search for media processing jobs through APIs as instructed in [Job APIs](https://intl.cloud.tencent.com/document/product/436/46881).
+- API: You can create, delete, query, and search for media processing jobs through APIs as instructed in [Job APIs](https://www.tencentcloud.com/document/product/436/49192).
 
 ### Workflow
 
