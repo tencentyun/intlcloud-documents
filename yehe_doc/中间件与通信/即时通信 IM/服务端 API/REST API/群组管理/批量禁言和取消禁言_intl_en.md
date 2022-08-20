@@ -78,6 +78,7 @@ To unmute members, set `MuteTime` to `0`.
 | GroupId | String | Yes | The ID of the group to be queried |
 | Members_Account | Array | Yes | The member accounts to be muted. A maximum of 500 accounts are supported. |
 | MuteTime | Integer | Yes | Unsigned type. The muting period in seconds. `0` indicates to unmute members. `4294967295` indicates to permanently mute members. |
+| TopicId | String | Optional | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response packet
 
