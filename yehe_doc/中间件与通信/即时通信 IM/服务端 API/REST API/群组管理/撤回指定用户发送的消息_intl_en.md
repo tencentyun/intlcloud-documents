@@ -57,6 +57,7 @@ Recall group messages. Specifically, recall messages sent by a certain user with
 |---------|---------|---------|---------|
 | GroupId | String | Required | ID of the group for which messages are to be recalled |
 | Sender_Account | String | Required | ID of the sender whose messages are to be recalled |
+| TopicId | String | Optional | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response packet body
 ```
