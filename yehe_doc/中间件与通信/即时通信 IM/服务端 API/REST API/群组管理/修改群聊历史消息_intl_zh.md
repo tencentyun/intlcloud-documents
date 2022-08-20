@@ -85,7 +85,7 @@ https://xxxxxx/v4/openim/modify_group_msg?sdkappid=88888888&identifier=admin&use
 | MsgSeq | Integer | 必填 | 请求修改的消息 seq  |
 | MsgBody | Array |选填| 消息内容，具体格式请参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)（注意，一条消息可包括多种消息元素，MsgBody 为 Array 类型）  |
 | CloudCustomData | String |选填| 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
-
+|TopicId|String|选填|话题的 ID, 仅支持话题的社群适用此选项|
 
 #### 应答包体示例
 
