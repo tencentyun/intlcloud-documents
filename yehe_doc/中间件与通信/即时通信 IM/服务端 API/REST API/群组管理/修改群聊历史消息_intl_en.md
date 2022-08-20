@@ -85,7 +85,7 @@ The following table describes only the modified parameters when this API is call
 | MsgSeq | Integer | Yes | Sequence number of the message to be modified  |
 | MsgBody | Array | No | Message body. For format details, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). (Note: a message can contain multiple message elements, in which case `MsgBody` is an array.) |
 | CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
-
+| TopicId | String | No | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 #### Sample response
 
