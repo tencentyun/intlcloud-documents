@@ -101,6 +101,7 @@ The messages must be imported in ascending order by timestamp, and the timestamp
 | MsgBody | Array | Yes | TIM message. For more information, see the definition of `TIMMsgElement` in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | MsgType | String | Yes | TIM message object type. Valid values: `TIMTextElem` (text message), `TIMFaceElem` (emoji message), `TIMLocationElem` (location message), `TIMCustomElem` (custom message) |
 | MsgContent | Object | Yes | TIM message object. For more information, see the definition of `TIMMsgElement` in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| TopicId | String | Optional | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response
 
