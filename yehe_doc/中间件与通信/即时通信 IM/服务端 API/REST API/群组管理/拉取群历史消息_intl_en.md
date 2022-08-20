@@ -78,6 +78,7 @@ The seq of the returned messages is less than or equal to the `ReqMsgNumber` of 
 | ReqMsgNumber | Integer | Yes | The number of historical messages to be pulled. At present, a maximum of 20 historical messages can be returned per request. Therefore, please set the value of this field to 20 or less. |
 | ReqMsgSeq | Integer | No | The maximum seq of the messages to be pulled |
 | WithRecalledMsg | Integer | Optional | Whether to pull recalled messages. `1`: pull recalled messages. Recalled messages are not pulled by default. |
+| TopicId | String | Optional | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response packet
 ```
