@@ -76,6 +76,7 @@ To specify who can receive the system notification, set the recipients in `ToMem
 | GroupId | String | Yes | ID of the group to which the notification will be sent |
 | ToMembers_Account | Array | Yes | List of recipients. Up to 500 recipient UserIDs are supported. You can leave this field empty to send the notification to all members. |
 | Content | String | Yes | Content of the notification |
+| TopicId | String | Optional | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response
 
