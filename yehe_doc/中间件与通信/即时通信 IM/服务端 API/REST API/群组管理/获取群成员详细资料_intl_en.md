@@ -62,6 +62,8 @@ You can use the `Limit` and `Offset` fields to control the pagination mode:
 }
 ```
 
+>! The community currently does not support paging to get the group member details.
+
 - **Batch**
 You can use the `Limit` and `Next` fields to control the batch mode:
  - `Limit`: specifies the maximum number of members in the `MemberList` array in the response. Maximum value: 100
@@ -89,7 +91,7 @@ You can use the `Limit` and `Next` fields to control the batch mode:
     "Next": "" // Start pulling from the position where the last pulling ends
 }
 ```
-
+>! Only the community supports obtaining group member details in batches.
 
 - **Specifying information to pull**
 You can use the `MemberInfoFilter` filter field to specify fields to pull. Fields that are not specified in it will not be pulled.
