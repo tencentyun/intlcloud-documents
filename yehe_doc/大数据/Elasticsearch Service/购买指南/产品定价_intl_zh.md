@@ -420,8 +420,8 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
 <table>
 	<tbody>
 		<tr>
-            <th style="width: 10%;" rowspan="2">地域</th>
-            <th style="width: 50%;" colspan="3">云硬盘类型</th>
+            <th style="width: 15%;" rowspan="2">地域</th>
+            <th style="width: 40%;" colspan="3">云硬盘类型</th>
      </tr>
       <tr>
                 <th>高性能云硬盘</th>
