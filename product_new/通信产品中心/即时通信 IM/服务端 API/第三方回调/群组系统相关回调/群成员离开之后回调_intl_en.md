@@ -96,5 +96,7 @@ The app backend returns the response packet after synchronizing data.
 ## References
 
 - [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
+- [Callback After a User Joins a Group](https://intl.cloud.tencent.com/document/product/1047/34372)
+- [Callback for Online and Offline Status of Audio-Video Group Members](https://intl.cloud.tencent.com/document/product/1047/48734)
 - RESTful APIs: [Deleting a group member](https://intl.cloud.tencent.com/document/product/1047/34949)
 
