@@ -1,6 +1,6 @@
 CI offers a limited free tier for all users, which can be used to deduct the fees incurred by most CI features. Usage in excess of the free tier will be billed separately.
 
-> Note:
+>?
 >
 > - Currently, most of CI's billable items provide a free tier, while some don't.
 > - If your service is suspended due to violations or overdue payment, you will not be eligible for the free tier before the service is resumed.
@@ -38,7 +38,7 @@ The free tier is only applicable to **public cloud regions**. For more informati
 | File preview | 6,000 pages   | 2 months  | One-time |
 | Privacy protection | 2 GB      | 2 months  | One-time |
 
-### 
+
 
 ## Claim and Query
 
