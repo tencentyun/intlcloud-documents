@@ -71,7 +71,7 @@ Yes. The upper-layer semantics need to distinguish the required operations in th
 * The invitation operation can be considered as a **connection request** by upper-layer semantics.
 * The hang-up operation can be considered as a **hang-up request** by upper-layer semantics.
 
-You can call the **invite** API of the IM SDK to initiate an invitation and specify the current invitation as a **connection or hang-up request** in the custom data of the API. Then, IM passes through the invitation to the peer for processing. You can refer to the hang-up logic of the component TUICalling ([iOS](https://github.com/TencentCloud/TIMSDK/blob/master/iOS/TUIKit/TUICalling/Source/Model/Impl/TRTCCalling%2BSignal.m) | [Android](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUICalling/tuicalling/src/main/java/com/tencent/liteav/trtccalling/model/TRTCCalling.java)).
+You can call the **invite** API of the IM SDK to initiate an invitation and specify the current invitation as a **connection or hang-up request** in the custom data of the API. Then, IM passes through the invitation to the peer for processing. 
 
 ### 4. What is the handling logic when a sent signaling invitation times out?
 
