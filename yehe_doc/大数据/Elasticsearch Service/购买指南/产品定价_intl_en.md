@@ -479,7 +479,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
             </tr>
 <tr>
                 <td>Beijing Finance Zone</td>
-                <td>0.0002</td>
+                <td>0.0001</td>
                 <td>0.0003</td>
                 <td>0.0003</td>
             </tr>		
