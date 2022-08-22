@@ -26,12 +26,12 @@ If you have activated the new version of resource billing, you can query bill de
 
 4. On the **Bill Details** page, select **Cloud Infinite** as the product to view CI bills by instance and detailed bills.
 
-   > Note:
+   >?
    >
    > Select **Bill Overview** to view the billing trends and summary. Select **Bill Download** to download generated bills by month.
 
 5. On the **Bill by Instance** tab, view your fees by sub-product, region, AZ, or billing mode. If you select **Hide 0 USD Items**, the Billing Center will automatically hide the bills of 0 USD items.
-   ![img](https://qcloudimg.tencent-cloud.cn/raw/023c0e349184531a5138be5d3334debb.jpeg)
+![](https://qcloudimg.tencent-cloud.cn/raw/e9390f5ad73fb612db8650c9be3c6c6e.png)
 
    Available options are as described below:
 
