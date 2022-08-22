@@ -50,7 +50,8 @@ This is used to obtain the list of muted members in the group, and only the grou
 
 | Field | Type | Property | Description |
 |---------|---------|---------|---------|
-| GroupId | String | Required | ID of the group, in which the list of muted members needs to be obtained |
+| GroupId | String | Required | ID of the group, in which the list of muted members needs to be obtained. |
+| TopicId | String | Optional | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response packet body
 ```
