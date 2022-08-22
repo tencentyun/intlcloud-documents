@@ -422,7 +422,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
 	<tbody>
 		<tr>
             <th style="width: 15%;" rowspan="2">Region</th>
-            <th style="width: 40%;" colspan="3">Disk Type</th>
+            <th style="text-align: center;"style="width: 40%;" colspan="3">Disk Type</th>
      </tr>
       <tr>
                 <th>Premium Cloud Storage</th>
