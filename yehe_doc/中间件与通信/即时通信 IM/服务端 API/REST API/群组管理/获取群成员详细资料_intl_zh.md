@@ -90,6 +90,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
 }
 ```
 
+>!仅社群支持分批获取群成员详细资料。
 
 - **指定拉取的信息**
 通过 MemberInfoFilter 过滤器字段选择需要拉取的字段。没有在过滤器中指明的字段将不被拉取。
