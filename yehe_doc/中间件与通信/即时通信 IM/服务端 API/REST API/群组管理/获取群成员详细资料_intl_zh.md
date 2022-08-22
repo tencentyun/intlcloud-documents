@@ -62,6 +62,8 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
 }
 ```
 
+>!社群目前不支持分页获取群成员详细资料。
+
 - **分批获取**
 使用 Limit 和 Next 两个值用于控制分页拉取：
  - Limit 限制回包中 MemberList 数组中成员的个数，不得超过100。
