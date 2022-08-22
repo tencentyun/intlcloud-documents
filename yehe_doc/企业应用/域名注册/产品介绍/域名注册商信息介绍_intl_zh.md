@@ -16,7 +16,7 @@
 
 ## 域名后缀对应注册商
 
->- 以下数据更新于**2021年10月18日**。
+- 以下数据更新于**2021年10月18日**。
 
 <table>
 <thead>
@@ -106,14 +106,6 @@
 </table>
 
 
-## 常见问题
-### 如何查看自己的域名是哪家注册商？
-- 已注册域名
-登录腾讯云 [域名注册控制台](https://console.cloud.tencent.com/domain) 即可查看。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/cc1cce7972716f880142ae7e83bf381e.png)
-- 未注册域名
-登录 [域名注册页面](https://dnspod.cloud.tencent.com/?from=qcloudHpProductDns/)，输入并查询您需注册的域名，将鼠标光标移动至![](https://qcloudimg.tencent-cloud.cn/raw/816b4a6a9dc18e4373cc57b02e1495a0.png)即可查看。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/7ef7ec8a9dcc293742539d1b619b2262.png)
 
 
 
