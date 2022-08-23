@@ -10,7 +10,6 @@ As a many-to-one sync task consists of multiple one-way sync tasks to establish 
 
 ## Application Restrictions
 - DDL statements in the configurations of multiple sync tasks should not form a ring.
-- Currently, a many-to-one sync task can be created between two MySQL databases, two TDSQL-C for MySQL databases, or one MySQL database and one TDSQL-C for MySQL database.
 
 ## DDL Configuration Principles
 - DDL statements in the configurations of multiple sync tasks should not form a ring; otherwise, they will loop in the system, causing errors.
