@@ -1,8 +1,8 @@
 ## Overview
 Prometheus mainly uses PULL to scrape the monitoring APIs exposed by the target service; therefore, you need to configure the corresponding scrape task to request the monitoring data and write it into the storage provided by Prometheus. Currently, Prometheus provides the configurations of the following tasks:
 - Native job configuration: the native scrape job configuration of Prometheus is provided.
-- PodMonitor: it collects the corresponding monitoring data in Pods based on Prometheus Operator in the K8s ecosystem.
-- ServiceMonitor: it collects the monitoring data in the corresponding Endpoints of Services based on Prometheus Operator in the K8s ecosystem.
+- PodMonitor: It collects the corresponding monitoring data in Pods based on Prometheus Operator in the K8s ecosystem.
+- ServiceMonitor: It collects the monitoring data in the corresponding Endpoints of Services based on Prometheus Operator in the K8s ecosystem.
 
 >? Configuration items in `[]` are optional.
 
@@ -25,13 +25,13 @@ job_name: <job_name>
 [ metrics_path: <path> | default = /metrics ]
 
 # Solve the conflict between the scraped label and the label added to Prometheus on the backend
-# true: retain the scraped label and ignore the label conflicting with Prometheus on the backend
-# false: add `exported_<original-label>` before the scraped label to add the label on the Prometheus backend
+# true: Retain the scraped label and ignore the label conflicting with Prometheus on the backend
+# false: Add `exported_<original-label>` before the scraped label to add the label on the Prometheus backend
 [ honor_labels: <boolean> | default = false ]
 
 # Whether to use the time generated on the scrape target
-# true: use the time on the target
-# false: directly ignore the time on the target
+# true: Use the time on the target
+# false: Directly ignore the time on the target
 [ honor_timestamps: <boolean> | default = true ]
 
 # Scrape protocol: HTTP or HTTPS
@@ -60,21 +60,21 @@ tls_config:
 # Use a proxy service to scrape metrics on the target and enter the corresponding proxy service address
 [ proxy_url: <string> ]
 
-# Use static configuration to specify the target. For more information, please see the description below
+# Use static configuration to specify the target. For more information, see the description below
 static_configs:
   [ - <static_config> ... ]
 
-# Set the CVM scrape configuration. For more information, please see the description below
+# Set the CVM scrape configuration. For more information, see the description below
 cvm_sd_configs:
   [ - <cvm_sd_config> ... ]
 
 # After scraping the data, change the label on the target through the relabeling mechanism and run multiple relabeling rules in sequence
-# For more information on `relabel_config`, please see the description below
+# For more information on `relabel_config`, see the description below
 relabel_configs:
   [ - <relabel_config> ... ]
 
 # After the data is scraped and before it is written, use the relabeling mechanism to change the label value and run multiple relabeling rules in sequence
-# For more information on `relabel_config`, please see the description below
+# For more information on `relabel_config`, see the description below
 metric_relabel_configs:
   [ - <relabel_config> ... ]
 
@@ -125,13 +125,14 @@ CVM scrape configuration description:
 
 <dx-codeblock>
 :::  yaml
-# Tencent Cloud region. For the region list, please visit https://cloud.tencent.com/document/api/213/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8.
+# Tencent Cloud region. For the region list, visit https://cloud.tencent.com/document/api/213/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8.
 region: <string> 
 
 # Custom endpoint.
 [ endpoint: <string> ]
 
 # Credential information for accessing TencentCloud API. If it is not set, the values of the `TENCENT_CLOUD_SECRET_ID` and `TENCENT_CLOUD_SECRET_KEY` environment variables will be used.
+# Leave it empty if you use a CVM scrape task in **Integration Center** for configuration.
 [ secret_id: <string> ]
 [ secret_key: <secret> ]
 
@@ -142,12 +143,14 @@ region: <string>
 ports: 
   - [ <int> | default = 80 ]
 
-# CVM list filtering rule. For more information on the supported filtering rules, please visit https://cloud.tencent.com/document/api/213/15728#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.
+# CVM list filtering rule. For more information on the supported filtering rules, visit https://cloud.tencent.com/document/api/213/15728#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.
 filters:
   [ - name: <string>
       values: <string>, [...] ]
 :::
 </dx-codeblock>
+	
+>?If a CVM scrape task in **Integration Center** is used to configure `cvm_sd_configs`, the integration automatically uses the preset role authorization of the service for security considerations. You don't need to manually enter the `secret_id`, `secret_key`, and `endpoint` parameters.
 
 #### Sample
 
@@ -218,14 +221,14 @@ spec:
   [ targetLimit: uint64 ]
   # Configure the Prometheus HTTP port to be exposed and scraped. You can configure multiple Endpoints
   podMetricsEndpoints:
-  [ - <endpoint_config> ... ] # For more information, please see the endpoint description below
+  [ - <endpoint_config> ... ] # For more information, see the endpoint description below
   # Select the namespace where the Pod to be monitored resides. If it is not specified, all namespaces will be selected
   [ namespaceSelector: ]  
     # Whether to select all namespaces
     [ any: bool ]
     # List of namespace to be selected
     [ matchNames: []string ]
-  # Enter the label of the Pod to be monitored to locate the target Pod. For more information, please see [LabelSelector v1 meta](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
+  # Enter the label of the Pod to be monitored to locate the target Pod. For more information, see [LabelSelector v1 meta](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
   selector:  
     [ matchExpressions: array ]
       [ example: - {key: tier, operator: In, values: [cache]} ]
@@ -299,14 +302,14 @@ spec:
   [ targetLimit: uint64 ]
   # Configure the Prometheus HTTP port to be exposed and scraped. You can configure multiple Endpoints
   endpoints:
-  [ - <endpoint_config> ... ] # For more information, please see the endpoint description below
+  [ - <endpoint_config> ... ] # For more information, see the endpoint description below
   # Select the namespace where the Pod to be monitored resides. If it is not specified, all namespaces will be selected
   [ namespaceSelector: ]  
     # Whether to select all namespaces
     [ any: bool ]
     # List of namespace to be selected
     [ matchNames: []string ]
-  # Enter the label of the Pod to be monitored to locate the target Pod. For more information, please see [LabelSelector v1 meta](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
+  # Enter the label of the Pod to be monitored to locate the target Pod. For more information, see [LabelSelector v1 meta](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
   selector:  
     [ matchExpressions: array ]
       [ example: - {key: tier, operator: In, values: [cache]} ]
@@ -348,7 +351,7 @@ spec:
 	:::
 </dx-codeblock>
 
-## `endpoint_config` Configuration
+### endpoint_config configuration
 
 The relevant configuration items are as detailed below:
 
@@ -377,29 +380,29 @@ The relevant configuration items are as detailed below:
 # You can use the corresponding K8s secret key to read the bearer token. Note that the secret namespace must be the same with that of the PodMonitor/ServiceMonitor
 [ bearerTokenSecret: string ]
 # Solve the conflict between the scraped label and the label added to Prometheus on the backend
-# true: retain the scraped label and ignore the label conflicting with Prometheus on the backend
-# false: add `exported_<original-label>` before the scraped label to add the label on the Prometheus backend
+# true: Retain the scraped label and ignore the label conflicting with Prometheus on the backend
+# false: Add `exported_<original-label>` before the scraped label to add the label on the Prometheus backend
 [ honorLabels: bool | default = false ]
 # Whether to use the time generated on the scrape target
-# true: use the time on the target
-# false: directly ignore the time on the target
+# true: Use the time on the target
+# false: Directly ignore the time on the target
 [ honorTimestamps: bool | default = true ]
 # `basic auth` authentication information. Enter the corresponding K8s secret key value for `username/password`. Note that the secret namespace must be the same as that of the PodMonitor/ServiceMonitor
 [ basicAuth: BasicAuth ]
 # Use a proxy service to scrape metrics on the target and enter the corresponding proxy service address
 [ proxyUrl: string ]
 # After scraping the data, change the label on the target through the relabeling mechanism and run multiple relabeling rules in sequence
-# For more information on `relabel_config`, please see the description below
+# For more information on `relabel_config`, see the description below
 relabelings:
 [ - <relabel_config> ...]
 # After the data is scraped and before it is written, use the relabeling mechanism to change the label value and run multiple relabeling rules in sequence
-# For more information on `relabel_config`, please see the description below
+# For more information on `relabel_config`, see the description below
 metricRelabelings: 
 [ - <relabel_config> ...]
 	:::
 </dx-codeblock>
 
-## `relabel_config` Configuration
+### relabel_config configuration
 
 The relevant configuration items are as detailed below:
 
@@ -426,13 +429,13 @@ The relevant configuration items are as detailed below:
 [ replacement: <string> | default = $1 ]
 
 # Perform an action based on the value matched by the regex. Valid values of `action` are as follows (the default value is `replace`):
-# replace: replace the matched value with that defined in `replacement` if the regex has any match and use `target_label` to set the value and add the corresponding label 
-# keep: drop the value if the regex has no matches
-# drop: drop the value if the regex has any match
-# hashmod: calculate the modulus of the MD5 value of the source label based on the value specified by `modulus` and add a label whose name is specified by `target_label`
-# labelmap: use `replacement` to replace the corresponding label name if the regex has any match
-# labeldrop: delete the corresponding label name if the regex has any match
-# labelkeep: delete the corresponding label name if the regex has no matches
+# replace: Replace the matched value with that defined in `replacement` if the regex has any match and use `target_label` to set the value and add the corresponding label 
+# keep: Drop the value if the regex has no matches
+# drop: Drop the value if the regex has any match
+# hashmod: Calculate the modulus of the MD5 value of the source label based on the value specified by `modulus` and add a label with the name specified by `target_label`
+# labelmap: Use `replacement` to replace the corresponding label name if the regex has any match
+# labeldrop: Delete the corresponding label name if the regex has any match
+# labelkeep: Delete the corresponding label name if the regex has no matches
 [ action: <relabel_action> | default = replace ]
 	:::
 </dx-codeblock>
