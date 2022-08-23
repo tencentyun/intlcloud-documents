@@ -97,6 +97,14 @@
 			ap-mumbai
         </td>
     </tr>
+   <tr>
+        <td>
+            印度尼西亚雅加达             
+        </td>
+        <td>
+			ap-jakarta
+        </td>
+    </tr>
     <tr>
         <td>
             韩国首尔             
