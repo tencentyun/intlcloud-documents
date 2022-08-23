@@ -28,5 +28,7 @@
     - 在 Access-Control-Request-Headers 中指定的每个 Header，都必须在 Allowed-Header 中有对应项。
  - **Expose-Headers**：Expose-Header 里返回的是 COS 的常用 Header，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728)。具体的配置需要根据应用的需求确定，默认推荐填写 Etag。不允许使用通配符，大小写不敏感，支持多行且每行只能填写一个。
  - **超时 Max-Age**：设置 OPTIONS 请求得到结果的有效期（秒）。数值必须为正整数，例如600。
+ - **返回 Vary: Origin**：设置是否返回 Vary: Origin Header。如果浏览器同时存在 CORS 和非 CORS 请求，请启用该选项，否则会出现跨域问题。
+ >!勾选`Vary: Origin`后可能会造成浏览器访问或者 CDN 回源增加。
 6. 设置完成后，单击**提交**即可。此时您可以看到跨域访问规则已添加完成。如需修改，可单击**修改**进行设置。
 ![](https://main.qcloudimg.com/raw/c4399193611b4f81e57a549634ea865a.png)
