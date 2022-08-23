@@ -100,7 +100,7 @@ The created app is a Vue project.
                   'q-signature': opt.qSignature,
                };
                // If the server uses a temporary key for calculation, you need to pass in `x-cos-security-token`.
-               if (opt.securityToken) formData['x-cos-security-token'] = formData.securityToken;
+               if (opt.securityToken) formData['x-cos-security-token'] = opt.securityToken;
                uni.uploadFile({
                   url: 'https://' + opt.cosHost, // This is only an example, not the real API address.
                   filePath: opt.filePath,
