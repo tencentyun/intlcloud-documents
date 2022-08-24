@@ -183,7 +183,7 @@ var cos = new COS({
 var cos = new COS({
     // 必选参数
     getAuthorization: function (options, callback) {
-        // 服务端获取签名，请参考对应语言的 COS SDK：https://cloud.tencent.com/document/product/436/6474
+        // 服务端获取签名，请参考对应语言的 COS SDK：https://intl.cloud.tencent.com/document/product/436/6474
         // 注意：这种有安全风险，后端需要通过 method、pathname 严格控制好权限，例如不允许 put / 等
         wx.request({
             url: 'https://example.com/server/auth.php',
@@ -296,6 +296,21 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 1. 实例化时，传入 SecretId、SecretKey，每次需要签名都由实例内部计算。
 2. 实例化时，传入 getAuthorization 回调，每次需要签名通过这个回调计算完返回签名给实例。
 3. 实例化时，传入 getSTS 回调，每次需要临时密钥通过这个回调回去完返回给实例，在每次请求时实例内部使用临时密钥计算得到签名。
+
+### 开启 beacon 上报
+
+为了持续跟踪和优化 SDK 的质量，给您带来更好的使用体验，我们在 SDK 中引入了 [腾讯灯塔](https://beacon.tencent.com/) SDK。
+>? 腾讯灯塔只对 COS 侧的请求性能进行监控，不会上报业务侧数据。
+>
+
+若是想开启该功能，请先确保 SDK 版本升级到1.4.0及以上，然后在初始化中指定 EnableTracker 为 true。
+并在小程序域名白名单中 request 合法域名里添加：`https://h.trace.qq.com;https://oth.str.beacon.qq.com;https://otheve.beacon.qq.com;`。
+
+```js
+new COS({
+  EnableTracker: true,
+})
+```
 
 ### 使用技巧
 

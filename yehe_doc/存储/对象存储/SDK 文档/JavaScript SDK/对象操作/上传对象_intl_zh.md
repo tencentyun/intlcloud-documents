@@ -2,6 +2,9 @@
 
 本文档提供关于对象的简单操作、分块操作的 API 概览以及 SDK 示例代码，并举例如何使用。
 
+>? 常见上传错误排查，请参考 [常见问题](https://intl.cloud.tencent.com/document/product/436/40775)。
+>
+
 **简单操作**
 
 | API                                                          | 操作名         | 操作描述                                 |
@@ -42,7 +45,7 @@ PUT Object 接口可以上传一个对象至指定存储桶中。该操作需要
 
 简单上传文件，适用于小文件上传：
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -60,7 +63,7 @@ cos.putObject({
 
 上传字符串作为文件内容：
 
-[//]: # (.cssg-snippet-put-object-string)
+[//]: # ".cssg-snippet-put-object-string"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -74,7 +77,7 @@ cos.putObject({
 
 上传base64作为文件内容：
 
-[//]: # (.cssg-snippet-put-object-string)
+[//]: # ".cssg-snippet-put-object-string"
 ```js
 var base64Url = 'data:image/png;base64,iVBORw0KGgo.....';
 var dataURLtoBlob = function (dataurl) {
@@ -102,7 +105,7 @@ cos.putObject({
 
 创建目录a：
 
-[//]: # (.cssg-snippet-put-object-folder)
+[//]: # ".cssg-snippet-put-object-folder"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -134,7 +137,7 @@ cos.putObject({
 
 >?关于上传对象的限速说明，请参见 [单链接限速](https://intl.cloud.tencent.com/document/product/436/34072)。
 
-[//]: # (.cssg-snippet-put-object-traffic-limit)
+[//]: # ".cssg-snippet-put-object-traffic-limit"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -220,7 +223,7 @@ function(err, data) { ... }
 
 初次追加上传对象:
 
-[//]: # (.cssg-snippet-append-object)
+[//]: # ".cssg-snippet-append-object"
 ```js
 cos.appendObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -235,7 +238,7 @@ cos.appendObject({
 
 判断存储桶内的对象是否可追加对象:
 
-[//]: # (.cssg-snippet-append-object)
+[//]: # ".cssg-snippet-append-object"
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -243,7 +246,7 @@ cos.headObject({
     Key: 'test.txt',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
 }, function(err, data) {
     if (err) return console.log(err);
-    // data.headers没有x-cos-object-type字段需要配置expose-headers，参考文档：https://cloud.tencent.com/document/product/436/13318
+    // data.headers没有x-cos-object-type字段需要配置expose-headers，参考文档：https://intl.cloud.tencent.com/document/product/436/13318
     var objectType = data.headers['x-cos-object-type'];
     console.log(objectType === 'appendable');
 });
@@ -251,7 +254,7 @@ cos.headObject({
 
 查询可追加对象的Position并追加上传:
 
-[//]: # (.cssg-snippet-append-object)
+[//]: # ".cssg-snippet-append-object"
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -271,7 +274,7 @@ cos.headObject({
     function(err, data) {
         if (err) return console.log(err);
         // 也可以取到下一次上传的position继续追加上传
-        // data.headers没有x-cos-next-append-position字段需要配置expose-headers，参考文档：https://cloud.tencent.com/document/product/436/13318
+        // data.headers没有x-cos-next-append-position字段需要配置expose-headers，参考文档：https://intl.cloud.tencent.com/document/product/436/13318
         var nextPosition = data.headers['x-cos-next-append-position'];
         console.log(nextPosition);
     })
@@ -318,7 +321,7 @@ function(err, data) { ... }
 | - headers    | 请求返回的头部信息                                           | Object |
 | - RequestId  | 请求的唯一 ID                   | String    |
 
-  
+
 ### 表单上传对象
 
 JS SDK 未提供 POST Object 接口对应的方法，如果需要使用该接口，请参见 [Web 端直传实践](https://intl.cloud.tencent.com/document/product/436/9067) 里的“方案 B：使用 Form 表单上传”。
@@ -336,7 +339,7 @@ List Multipart Uploads 用来查询正在进行中的分块上传信息。单次
 
 获取前缀为 a 的未完成的 UploadId 列表，示例如下：
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```js
 cos.multipartList({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -406,13 +409,12 @@ Initiate Multipart Upload 请求实现初始化分块上传，成功执行此请
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```js
 cos.multipartInit({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-    UploadId: 'exampleUploadId',
     Body: fileObject
 }, function(err, data) {
     console.log(err || data);
@@ -466,7 +468,7 @@ Upload Part 接口请求实现在初始化以后的分块上传，支持的块�
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```js
 cos.multipartUpload({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -520,7 +522,7 @@ List Parts 用来查询特定分块上传中的已上传的块，即列出指定
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```js
 cos.multipartListPart({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -595,7 +597,7 @@ Complete Multipart Upload 接口请求用来实现完成整个分块上传。当
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```js
 cos.multipartComplete({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -651,7 +653,7 @@ Abort Multipart Upload 用来实现终止一个分块上传操作并删除已上
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```js
 cos.multipartAbort({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -699,7 +701,7 @@ function(err, data) { ... }
 Upload File实现高级上传，传入参数 SliceSize 可以控制文件大小超出一个数值（默认1MB）时自动使用分块上传，否则使用简单上传。
 #### 使用示例
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```js
 cos.uploadFile({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -777,7 +779,7 @@ Slice Upload File 可用于实现文件的分块上传，适用于大文件上�
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```js
 cos.sliceUploadFile({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -858,7 +860,7 @@ function(err, data) { ... }
 
 调用 uploadFiles 操作：
 
-[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+[//]: # ".cssg-snippet-transfer-batch-upload-objects"
 ```js
 cos.uploadFiles({
     files: [{
@@ -938,8 +940,8 @@ function(err, data) { ... }
 
 JavaScript SDK 针对 putObject 和 sliceUploadFile 发起的上传任务都有记录队列里，队列相关方法如下。
 
-1. cos.getTaskList 可以获取任务列表。
-2. cos.pauseTask、cos.restartTask、cos.cancelTask 操作任务。
+1. var taskList = cos.getTaskList() 可以获取任务列表。
+2. cos.pauseTask()、cos.restartTask()、cos.cancelTask() 操作任务。
 3. cos.on('list-update', callback); 可以监听列表和进度变化。
 
 完整的队列使用示例请参见 [demo-queue](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo/queue)。
@@ -950,7 +952,7 @@ JavaScript SDK 针对 putObject 和 sliceUploadFile 发起的上传任务都有�
 
 **使用示例**
 
-[//]: # (.cssg-snippet-transfer-upload-cancel)
+[//]: # ".cssg-snippet-transfer-upload-cancel"
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.cancelTask(taskId);
@@ -968,7 +970,7 @@ cos.cancelTask(taskId);
 
 **使用示例**
 
-[//]: # (.cssg-snippet-transfer-upload-pause)
+[//]: # ".cssg-snippet-transfer-upload-pause"
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.pauseTask(taskId);
@@ -986,7 +988,7 @@ cos.pauseTask(taskId);
 
 **使用示例**
 
-[//]: # (.cssg-snippet-transfer-upload-resume)
+[//]: # ".cssg-snippet-transfer-upload-resume"
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.restartTask(taskId);

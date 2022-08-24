@@ -30,7 +30,7 @@ COSFS 主要提供两种安装方式：通过安装包方式安装和通过编�
 
 #### Ubuntu 系统
 
-1. 根据系统版本选择对应的安装包，目前支持的 Ubuntu 发行版包括 Ubuntu14.04、Ubuntu16.04、Ubuntu18.04、Ubuntu20.04。
+1. 根据系统版本选择对应的安装包，目前支持的 Ubuntu 发行版包括 Ubuntu14.04、Ubuntu16.04、Ubuntu18.04、 Ubuntu20.04。
 Github下载地址：
 ```plaintext
 #Ubuntu14.04
@@ -41,13 +41,13 @@ sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.
 sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb
 #Ubuntu20.04
 sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb
-
 ```
 CDN 下载地址：
 [cosfs_1.0.20-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb)
 [cosfs_1.0.20-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb)
 [cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb)
 [cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb)
+
 2. 安装。以 Ubuntu16.04 为例：
 ```shell
 sudo dpkg -i cosfs_1.0.20-ubuntu16.04_amd64.deb
@@ -74,7 +74,6 @@ CDN下载地址：
 ```shell
 sudo rpm -ivh cosfs-1.0.20-centos7.0.x86_64.rpm
 ```
-
 >? 如果安装时报错，提示`conflicts with file from package fuse-libs-*`，则加`--force`参数再次安装。
 >
 
