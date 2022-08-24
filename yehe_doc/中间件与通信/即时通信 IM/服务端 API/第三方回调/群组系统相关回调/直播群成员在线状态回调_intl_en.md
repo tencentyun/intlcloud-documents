@@ -90,6 +90,7 @@ A response is returned after the app backend syncs the data.
 ## References
 
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
-- RESTful API: [Deleting Group Members](https://intl.cloud.tencent.com/document/product/1047/34949)
+- [Callback After a User Joins a Group](https://intl.cloud.tencent.com/document/product/1047/34372)
+- [Callback After a User Leaves a Group](https://intl.cloud.tencent.com/document/product/1047/34373)
 
 

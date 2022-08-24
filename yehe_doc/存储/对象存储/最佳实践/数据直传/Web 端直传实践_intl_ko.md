@@ -7,7 +7,7 @@
 ## 전제 조건
 
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인한 후 버킷을 생성하고 Bucket(버킷 이름)과 Region(리전 이름)을 획득합니다. 자세한 내용은 [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309) 문서를 참조하십시오.
-2. 버킷 상세 페이지로 이동하여 [보안 관리] 탭을 클릭합니다. 페이지를 아래로 내려 [크로스 도메인 액세스 CORS 설정] 항목을 찾아 [규칙 추가]를 클릭한 후, 다음 이미지와 같이 설정합니다. 자세한 내용은 [크로스 도메인 액세스 설정](https://intl.cloud.tencent.com/document/product/436/13318) 문서를 참조하십시오.
+2. 버킷 상세 페이지로 이동하여 **보안 관리** 탭을 클릭합니다. 페이지를 아래로 내려 **크로스 도메인 액세스 CORS 설정** 항목을 찾아 **규칙 추가**를 클릭한 후, 다음 이미지와 같이 설정합니다. 자세한 내용은 [크로스 도메인 액세스 설정](https://intl.cloud.tencent.com/document/product/436/13318) 문서를 참조하십시오.
 ![](https://main.qcloudimg.com/raw/eb73177a2302ad976be301254bcd9630.png)
 3. [CAM 콘솔](https://console.cloud.tencent.com/cam/capi)에 로그인한 뒤 프로젝트의 SecretId와 SecretKey를 획득합니다.
 

@@ -120,7 +120,7 @@ conf = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=
 rsa_key_pair = RSAProvider.get_rsa_key_pair('public_key_value', 'private_key_value')
 
 # Method 2: initializing the encryption client using the key path
-rsa_key_pair = RSAProvider.get_rsa_key_pair('public_key_path', 'private_key_path')
+rsa_key_pair = RSAProvider.get_rsa_key_pair_path('public_key_path', 'private_key_path')
 
 rsa_provider = RSAProvider(key_pair_info=rsa_key_pair)
 client_for_rsa = CosEncryptionClient(conf, rsa_provider)

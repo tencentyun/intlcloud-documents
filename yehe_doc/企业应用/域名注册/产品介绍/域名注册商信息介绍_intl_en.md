@@ -16,7 +16,7 @@ A domain name registrar is a service provider delegated by a registry to provide
 
 ## Extensions and Respective Registrars
 
->- The following data was updated on **October 18, 2021**.
+- The following data was updated on **October 18, 2021**.
 
 <table>
 <thead>
@@ -106,14 +106,7 @@ A domain name registrar is a service provider delegated by a registry to provide
 </table>
 
 
-## FAQs
-### How can I check the registrar of my domain names?
-- Registered domain names
-You can log in to the [Domains console](https://console.cloud.tencent.com/domain) to check it, as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/cc1cce7972716f880142ae7e83bf381e.png)
-- Unregistered domain names
-You can log in to [Domains](https://dnspod.cloud.tencent.com/?from=qcloudHpProductDns/), search for the domain you want to register, and move the pointer over ![](https://qcloudimg.tencent-cloud.cn/raw/816b4a6a9dc18e4373cc57b02e1495a0.png) to view the registrar, as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/7ef7ec8a9dcc293742539d1b619b2262.png)
+
 
 
 

@@ -97,6 +97,14 @@ VODでは世界中の複数のリージョンにストレージノードがあ�
 			ap-mumbai
         </td>
     </tr>
+   <tr>
+        <td>
+            インドネシアジャカルタ            
+        </td>
+        <td>
+			ap-jakarta
+        </td>
+    </tr>	
     <tr>
         <td>
             韓国ソウル             

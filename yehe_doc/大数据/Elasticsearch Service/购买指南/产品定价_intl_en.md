@@ -417,12 +417,151 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
 
 
 ## Prices of Node Storage
-The following lists the prices in some regions:
 
-| Storage Type   |Beijing/Shanghai/Guangzhou ($USD/GB/hour) | Silicon Valley ($USD/GB/hour)|
-| :--------- | :------------------------- | :----------------- |
-| SSD Cloud Storage    | 0.0003                     | 0.0004             |
-| Premium Cloud Storage | 0.0002                     | 0.0002             |
+<table>
+	<tbody>
+		<tr>
+            <th style="width: 15%;" rowspan="2">Region</th>
+            <th style="text-align: center;"style="width: 40%;" colspan="3">Disk Type</th>
+     </tr>
+      <tr>
+                <th>Premium Cloud Storage</th>
+                <th>SSD</th>
+                <th>Enhanced SSD</th>
+            </tr>
+            <tr>
+                <td>Guangzhou</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Shanghai</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>    
+                   <tr>
+                <td>Nanjing</td>
+                <td>0.0001</td>
+                <td>0.0002</td>
+                <td>0.0003</td>
+            </tr> 
+            <tr>
+                <td>Beijing</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Chengdu</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Chongqing</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+<tr>
+                <td>Shanghai Finance Zone</td>
+                <td>0.0002</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Shenzhen Finance Zone</td>
+                <td>0.0002</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+<tr>
+                <td>Beijing Finance Zone</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>		
+            <tr>
+                <td>Hong Kong (China)</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Toronto</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Singapore</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+ <tr>
+                <td>Jakarta</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Silicon Valley</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Frankfurt</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Seoul</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>India</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+            <tr>
+                <td>Virginia</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>        
+            <tr>
+                <td>Bangkok</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+ <tr>
+                <td>Moscow</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+            </tr>
+ <tr>
+                <td>Tokyo</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>
+   <tr>
+                <td>Sao Paulo</td>
+                <td>0.0001</td>
+                <td>0.0003</td>
+                <td>0.0003</td>   
+            </tr>
+        </tbody>
+    </table>
 
 For other regions, please see [Pricing List](https://intl.cloud.tencent.com/document/product/362/2413).
 

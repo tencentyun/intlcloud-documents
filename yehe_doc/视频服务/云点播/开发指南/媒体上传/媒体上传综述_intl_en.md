@@ -97,6 +97,14 @@ VOD has storage nodes in multiple regions around the globe. During media upload,
 			ap-mumbai
         </td>
     </tr>
+   <tr>
+        <td>
+            Jakarta (Indonesia)            
+        </td>
+        <td>
+			ap-jakarta
+        </td>
+    </tr>	
     <tr>
         <td>
             Seoul             

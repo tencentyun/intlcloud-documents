@@ -61,6 +61,7 @@ Messages that have been recalled cannot be restored. Therefore, use this API wit
 | GroupId | String | Required | ID of the target group |
 | MsgSeqList | Array | Required | List of the sequence numbers of messages to be recalled. A single request can recall up to 10 messages. |
 | MsgSeq | Integer | Required | Sequence number of the message to be recalled by the request |
+| TopicId | String | Optional | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response packet body
 

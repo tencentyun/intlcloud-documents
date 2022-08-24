@@ -100,7 +100,7 @@
                   'q-signature': opt.qSignature,
                };
                // 서버가 계산을 위해 임시 키를 사용하는 경우 x-cos-security-token 전달 필요
-               if (opt.securityToken) formData['x-cos-security-token'] = formData.securityToken;
+               if (opt.securityToken) formData['x-cos-security-token'] = opt.securityToken;
                uni.uploadFile({
                   url: 'https://' + opt.cosHost, // 실제 API 주소가 아닌 예시
                   filePath: opt.filePath,

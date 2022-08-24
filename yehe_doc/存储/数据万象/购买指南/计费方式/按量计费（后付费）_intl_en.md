@@ -2,10 +2,6 @@ CI is pay-as-you-go (postpaid) by default in all regions as described in [Region
 
 
 
-## Pricing
-
-For detailed **CI** pricing, see Product Pricing.
-
 
 
 ## Billable Items
