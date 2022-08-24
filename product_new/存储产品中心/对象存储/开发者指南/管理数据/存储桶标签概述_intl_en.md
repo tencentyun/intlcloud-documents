@@ -4,22 +4,22 @@ A bucket tag is a key-value pair (key = value), which is comprised of a tag key 
 
 ## Specifications and Limits
 
-### Limits on Tag Keys
+#### Limits on Tag Keys
 
 - A tag key starting with "qcs:" or "project" is a default tag key and cannot be created.
 - A tag key can only contain characters encoded in UTF-8, spaces, numbers, or special characters including `+ - = . _ : / @`.
 - A tag key should be a combination of 0-127 characters encoded in UTF-8.
 - Tag keys are case sensitive.
 
-### Limits on Tag Values
+#### Limits on Tag Values
 
 - A tag value can only contain characters encoded in UTF-8, spaces, numbers, or special characters including `+ - = . _ : / @`.
 - A tag value should be a combination of 0-255 characters encoded in UTF-8.
 - Tag values are case sensitive.
 
-### Limits on the Number of Tags
+#### Limits on the Number of Tags
 
-- Bucket dimension: A resource has at most 10 different bucket tags.
+- Bucket dimension: A resource has at most 50 different bucket tags.
 - Tag dimension:
     - A user has at most 1,000 different keys. 
     - A key has at most 1,000 values.
@@ -29,11 +29,11 @@ A bucket tag is a key-value pair (key = value), which is comprised of a tag key 
 
 You can set bucket tags using the console or APIs.
 
-### Via the COS Console
+#### Via the COS Console
 
 For more information about setting a bucket tag using the COS console, see [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928) in Console Guide.
 
-### Via REST APIs
+#### Via REST APIs
 
 Manage bucket tags using the following APIs:
 
