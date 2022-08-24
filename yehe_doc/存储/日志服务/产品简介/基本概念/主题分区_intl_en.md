@@ -10,7 +10,7 @@ Basic attributes of a partition:
   - Read-write: the current partition allows read and write.
   - Read-only: the current partition is read-only and no data can be written to it.
 
->? Topic partitioning is a complex concept. You are advised to use the [Auto Split]() function in actual practice. CLS automatically adjusts topic partitioning based on the volume of log data.
+>? Topic partitioning is a complex concept. You are advised to use the [Auto Split](https://intl.cloud.tencent.com/document/product/614/39587) function in actual practice. CLS automatically adjusts topic partitioning based on the volume of log data.
 >
 
 ## Partition Range
@@ -69,10 +69,10 @@ A partition can be in **read-write** or **read-only** mode. Only read-write part
 Two adjacent read-write partitions can be merged into one partition. After two partitions are merged, the two original partitions become read-only, which only allow data consumption, but not data writing. The new partition is readable and writable and covers the range of the two original partitions.
 
 
-![](https://main.qcloudimg.com/raw/450faaa7fd7e8e3a8a4f4e4197c86778.png)
+
 
 #### Splitting a partition
 
 A read-write partition can be split into two partitions with smaller ranges. When splitting a partition, you need to specify the MD5 value of a split point, which must be larger than the value of the start point and smaller than the value of the end point. After a partition is split, the original partition becomes read-only, which only allows data consumption, but not data writing. The new partition is readable and writable and covers the range of the original partition.
 
-![](https://main.qcloudimg.com/raw/80b47765d6f7c0f22366246d95f3e6e1.png)
+
