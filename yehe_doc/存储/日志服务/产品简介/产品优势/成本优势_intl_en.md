@@ -5,16 +5,16 @@ The following table compares the costs with an assumption that 100 million piece
 
 | Product | List Price | Description |
 |---------|---------|---------|
-| CLS | 38 USD/month | <li>Write traffic: 0.074 USD/day<br /> <li>Index traffic: 0.694 USD/day<br /> <li>Log storage: 0.084 USD/day<br /> <li>Index storage: 0.403 USD/day<br /> <li>Service request: 0.003 USD/day<br /> <li>Topic partition tenant: 0.014 USD/day<br />For more information, please see the <b>Billing Example</b> section in [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509). |
+| CLS | 38 USD/month |  <ul  style="margin: 0;"><li>Write traffic: 0.074 USD/day<br /> </li><li>Index traffic: 0.694 USD/day<br /> </li><li>Log storage: 0.084 USD/day<br /> </li><li>Index storage: 0.403 USD/day<br /> </li><li>Service request: 0.003 USD/day<br /> </li><li>Topic partition tenant: 0.014 USD/day<br />For more information, please see the <b>Billing Example</b> section in [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509). |
 | Self-built logging system of the Elasticsearch Service | 244 USD/month | <li>Node model: 125 USD/month<br /> <li>Node storage: 119 USD/month |
 
 ## Billing Description
 
 Elasticsearch involves the following fees:
-#### Node model fees
+**Node model fees**
 125 USD/month (assume that you purchased the ES.S1.MEDIUM8 model with a 2-core CPU and 4 GB memory for the three nodes)
 
-#### Node storage fees
+**Node storage fees**
  - According to the [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845/19551) documentation, using 1 replica improves data reliability, and reserving 50% of the storage capacity maintains service stability. In this case, the actual storage will be as follows:
  - Actual capacity:
    Storage capacity = Source data × (1 + Number of replicas) × 1.45 × (1 + reserved capacity) ​≈ Source data × (1 + Number of replicas) × 2.2 = 614.46 GB
