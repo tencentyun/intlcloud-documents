@@ -4,7 +4,12 @@
 
 数据一致性校验需要在 DTS 任务步骤进行到**同步增量**时，才可以创建。
 
->?当前仅支持从自建 MySQL 、腾讯云数据库 MySQL、第三方云厂商 MySQL 迁移到腾讯云数据库 MySQL/TDSQL-C 过程中进行数据一致性校验。
+>?当前支持数据一致性校验的链路如下：
+>- MySQL/MariaDB/Percona/TDSQL MySQL > MySQL 
+>- MySQL/MariaDB/Percona/TDSQL MySQL > MariaDB
+>- MySQL/MariaDB/Percona  > TDSQL-C MySQL
+>- MySQL/MariaDB/Percona/TDSQL MySQL  > TDSQL MySQL
+>- MySQL/MariaDB/Percona/TDSQL TDStore  > TDSQL TDStore 
 
 ## 注意事项
 - 数据一致性校验的范围，仅对源数据库和迁移到目标数据库的内容进行对比，如果用户在迁移过程中向目标库进行数据写入，则这部分数据不包含在校验范围内。
@@ -16,29 +21,29 @@
 ## 约束限制
 当前校验任务对 DDL 操作不感知，如果在迁移过程中，用户对源库做了 DDL 操作，会出现校验结果不一致，需要用户重新发起校验任务才能得到准确的对比结果。
 
-## 操作步骤
-#### 创建数据一致性校验任务
+## 创建数据一致性校验任务
 1. 登录 [DTS 控制台](https://console.cloud.tencent.com/dts/migration)。
 2. 在**数据迁移**页面，选择需要校验的迁移任务，单击任务 ID，进入**任务详情**页。
-![](https://qcloudimg.tencent-cloud.cn/raw/0af144b0e8cb179934b28c2c45d567e2.png)
+![](https://main.qcloudimg.com/raw/d6aa1c05241017e346c11ff4cd1348ea.png)
 3. 切换页签，单击**数据一致性校验**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/976fc2ce2f0374756b923134dda370d9.png" style="zoom:50%;" />
+<img src="https://main.qcloudimg.com/raw/30055344719ea37e3c8f1b6c45d1bc9d.png" style="zoom:50%;" />
 4. 单击**创建数据一致性校验**。
 >?数据一致性校验需要在 DTS 任务步骤进行到**同步增量**时，才可以创建。如果界面按钮呈灰色，则 DTS 任务状态不满足条件，如任务未进行到**同步增量**步骤、任务失败、任务终止。
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/ee3616aae11c9f83adf25c902db03c09.png)
+![](https://main.qcloudimg.com/raw/de6bc3d875d5055ec78397fce0b64560.png)
 5. 在弹出的对话框中，单击**确定**。
-![](https://qcloudimg.tencent-cloud.cn/raw/b785c2ca36159ead67d9a72bc9c910e9.png)
+<img src="https://main.qcloudimg.com/raw/55b8c0bc502105ea07ff7cc6988aa096.png" style="zoom:50%;" />
 6. 配置数据一致性校验参数后，单击**启动数据对比**。
 迁移对象可以选择**全部迁移对象**，或者**自定义选择**。
-![](https://qcloudimg.tencent-cloud.cn/raw/33f22832c023c6e5c823482cba5ae8fe.png)
+<img src="https://main.qcloudimg.com/raw/802c91085f7d7df0021e6d71e08b404d.png" style="zoom:67%;" />
 
-#### 查看数据一致性校验结果
+## 查看数据一致性校验结果
 1. 在迁移任务首页，**最后一次校验结果**列，单击**查看更多**。
+    ![](https://main.qcloudimg.com/raw/15df5cbb4a080c17be20753d46dbdaff.png)
 2. 单击**查看**，即可查看校验结果。
-![](https://qcloudimg.tencent-cloud.cn/raw/1c0f1f80e884f70371b8de3cce0b9296.png)
-校验一致的结果示例：
-![](https://qcloudimg.tencent-cloud.cn/raw/01651c2a2edb7dc770e04b2ffd5fe6ba.png)
-
-
+    ![](https://main.qcloudimg.com/raw/841f0c33491e71e922ce9ec86c2237f5.png)
+    校验一致的结果示例：
+    ![](https://qcloudimg.tencent-cloud.cn/raw/90daaff527ea15c306c72e0c20d0c355.png)<br>
+    校验不一致的结果示例：
+   ![](https://qcloudimg.tencent-cloud.cn/raw/c8464bd6d8c6c7416a3407a637588815.png)
 

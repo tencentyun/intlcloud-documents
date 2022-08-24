@@ -2,6 +2,9 @@
 
 本文档重点提供关于对象的简单操作、其他操作相关的 API 概览以及 SDK 示例代码，并且举例如何使用。
 
+>? 常见上传错误排查，请参考 [常见问题](https://intl.cloud.tencent.com/document/product/436/38958)。
+> 
+
 **简单操作**
 
 | API                                                          | 操作名         | 操作描述                                 |
@@ -39,7 +42,7 @@ PUT Object 接口可以上传一个对象至指定存储桶中。该操作需要
 
 传字符串作为文件内容：
 
-[//]: # (.cssg-snippet-put-object-string)
+[//]: # ".cssg-snippet-put-object-string"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -53,7 +56,7 @@ cos.putObject({
 
 创建目录：
 
-[//]: # (.cssg-snippet-put-object-folder)
+[//]: # ".cssg-snippet-put-object-folder"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -69,7 +72,7 @@ cos.putObject({
 
 >?关于上传对象的限速说明，请参见 [单链接限速](https://intl.cloud.tencent.com/document/product/436/34072)。
 
-[//]: # (.cssg-snippet-put-object-traffic-limit)
+[//]: # ".cssg-snippet-put-object-traffic-limit"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -153,7 +156,7 @@ function(err, data) { ... }
 
 初次追加上传对象:
 
-[//]: # (.cssg-snippet-append-object)
+[//]: # ".cssg-snippet-append-object"
 ```js
 cos.appendObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -168,7 +171,7 @@ cos.appendObject({
 
 判断存储桶内的对象是否可追加对象:
 
-[//]: # (.cssg-snippet-append-object)
+[//]: # ".cssg-snippet-append-object"
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -176,7 +179,7 @@ cos.headObject({
     Key: 'test.txt',              /* 必须 */
 }, function(err, data) {
     if (err) return console.log(err);
-    // data.headers没有x-cos-object-type字段需要配置expose-headers，参考文档：https://cloud.tencent.com/document/product/436/13318
+    // data.headers没有x-cos-object-type字段需要配置expose-headers，参考文档：https://intl.cloud.tencent.com/document/product/436/13318
     var objectType = data.headers['x-cos-object-type'];
     console.log(objectType === 'appendable');
 });
@@ -184,7 +187,7 @@ cos.headObject({
 
 查询可追加对象的Position并追加上传:
 
-[//]: # (.cssg-snippet-append-object)
+[//]: # ".cssg-snippet-append-object"
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -204,7 +207,7 @@ cos.headObject({
     function(err, data) {
         if (err) return console.log(err);
         // 也可以取到下一次上传的position继续追加上传
-        // data.headers没有x-cos-next-append-position字段需要配置expose-headers，参考文档：https://cloud.tencent.com/document/product/436/13318
+        // data.headers没有x-cos-next-append-position字段需要配置expose-headers，参考文档：https://intl.cloud.tencent.com/document/product/436/13318
         var nextPosition = data.headers['x-cos-next-append-position'];
         console.log(nextPosition);
     })
@@ -263,7 +266,7 @@ POST Object 接口请求可以将用户 wx.chooseImage 选择的文件对象（O
 
 简单上传文件
 
-[//]: # (.cssg-snippet-post-object)
+[//]: # ".cssg-snippet-post-object"
 ```js
 cos.postObject({
     Bucket: 'examplebucket-1250000000',
@@ -350,7 +353,7 @@ List Multiparts Uploads 用来查询正在进行中的分块上传信息。单�
 
 获取前缀为 exampleobject 的未完成的 UploadId 列表，示例如下：
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```js
 cos.multipartList({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -420,7 +423,7 @@ Initiate Multipart Uploads 请求实现初始化分块上传，成功执行此�
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```js
 cos.multipartInit({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -477,7 +480,7 @@ Upload Part 接口请求实现在初始化以后的分块上传，支持的块�
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```js
 cos.multipartUpload({
    Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -531,7 +534,7 @@ List Parts 用来查询特定分块上传中的已上传的块，即列出指定
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```js
 cos.multipartListPart({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -606,7 +609,7 @@ Complete Multipart Upload 接口请求用来实现完成整个分块上传。当
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```js
 cos.multipartComplete({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -662,7 +665,7 @@ Abort Multipart Upload 用来实现终止一个分块上传操作并删除已上
 
 #### 使用示例
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```js
 cos.multipartAbort({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -705,12 +708,12 @@ function(err, data) { ... }
 ### 高级上传
 
 #### 功能说明
-    
+
 Upload File 实现高级上传，传入参数 SliceSize 可以控制文件大小超出一个数值（默认1MB）时自动使用分块上传，否则使用简单上传。
     
 #### 使用示例
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```js
 var uploadFile = function(file) {
     cos.uploadFile({
@@ -792,7 +795,7 @@ function(err, data) { ... }
 #### 功能说明
 Slice Upload File 可用于实现文件的分块上传，适用于大文件上传。
 #### 使用示例
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 ```js
 var sliceUploadFile = function (file) {
     var key = file.name;
@@ -886,7 +889,7 @@ function(err, data) { ... }
 
 调用 uploadFiles 操作：
 
-[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+[//]: # ".cssg-snippet-transfer-batch-upload-objects"
 ```js
 var uploadFiles = function(files) {
     var fileList = files.map(function(file) {
@@ -982,7 +985,7 @@ function(err, data) { ... }
 
 **使用示例**
 
-[//]: # (.cssg-snippet-transfer-upload-cancel)
+[//]: # ".cssg-snippet-transfer-upload-cancel"
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.cancelTask(taskId);
@@ -1000,7 +1003,7 @@ cos.cancelTask(taskId);
 
 **使用示例**
 
-[//]: # (.cssg-snippet-transfer-upload-pause)
+[//]: # ".cssg-snippet-transfer-upload-pause"
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.pauseTask(taskId);
@@ -1018,7 +1021,7 @@ cos.pauseTask(taskId);
 
 **使用示例**
 
-[//]: # (.cssg-snippet-transfer-upload-resume)
+[//]: # ".cssg-snippet-transfer-upload-resume"
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.restartTask(taskId);
@@ -1029,3 +1032,4 @@ cos.restartTask(taskId);
 | 参数名 | 参数描述                                                     | 类型   | 是否必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | taskId | 文件上传任务的编号，在调用 putObject 方法时，其 TaskReady 回调将返回该上传任务的 taskId | String | 是 |
+

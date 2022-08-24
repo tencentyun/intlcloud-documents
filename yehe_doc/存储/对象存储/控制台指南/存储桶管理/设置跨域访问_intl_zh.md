@@ -12,7 +12,7 @@
 4. 在左侧导航栏中，选择**安全管理 > 跨域访问 CORS 设置**，在**跨域访问 CORS 设置**栏中，单击**添加规则**。
 ![](https://main.qcloudimg.com/raw/1659089c942ec8fadd77c880f1d4f492.png)
 5. 添加规则信息（带 * 号的为必填项），配置项说明如下：
- ![](https://main.qcloudimg.com/raw/6a1f4bed7f42fba69449514822759c42.png)
+![](https://main.qcloudimg.com/raw/6a1f4bed7f42fba69449514822759c42.png)
  - **来源 Origin**：允许跨域请求的来源。支持添加域名和 IP 地址。
     - 域名末尾不需要携带`/`。
     - 可以同时指定多个来源，每行只能填写一个。

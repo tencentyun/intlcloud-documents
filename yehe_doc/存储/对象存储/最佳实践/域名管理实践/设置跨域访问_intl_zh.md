@@ -1,7 +1,9 @@
 ## 同源策略
+
 同源策略限制从一个源加载的文档或脚本与来自另一个源的资源进行交互的方式，是用于隔离潜在恶意文件的关键安全机制。同协议、同域名（或 IP）、以及同端口视为同一个域，一个域内的脚本仅仅具有本域内的权限，即本域脚本只能读写本域内的资源，而无法访问其它域的资源。这种安全限制称为同源策略。 
 
 #### 同源的定义
+
 两个页面的协议、域名和端口（若指定了端口）相同，则视为同源。如下表给出了相对`http://www.example.com/dir/page.html`的同源检测示例：
 
 | **URL** | **结果** | **原因** |
@@ -83,7 +85,7 @@ curl http://corstest-125xxxxxxx.cos.ap-beijing.myqcloud.com/test.txt
 </body>
 </html>
 ```
- 2. 在浏览器中打开该 HTML 文件，单击【Test CORS】发送请求后，出现以下错误，错误提示：无权限访问，原因是没有找到 Access-Control-Allow-Origin 这个 Header。显然，这是因为服务器没有配置 CORS。
+ 2. 在浏览器中打开该 HTML 文件，单击 **Test CORS** 发送请求后，出现以下错误，错误提示：无权限访问，原因是没有找到 Access-Control-Allow-Origin 这个 Header。显然，这是因为服务器没有配置 CORS。
 ![](https://main.qcloudimg.com/raw/db84b59f4e48ec50b3b577fa116fe7ba.jpg)
  3. 访问失败，再进入 Header 界面检查原因，可见浏览器发送了带 Origin 的 Request，因此是一个跨域请求。
 ![](https://main.qcloudimg.com/raw/0ba03fd90d9e6bb59785a6ba3b17d812.jpg)
@@ -92,20 +94,20 @@ curl http://corstest-125xxxxxxx.cos.ap-beijing.myqcloud.com/test.txt
 ### 设置 CORS
 确定访问不成功的原因之后，可以通过设置存储桶相关的 CORS 来解决以上问题。COS 控制台可以进行 CORS 设置，本示例使用控制台来完成 CORS 的设置。若您的 CORS 设置不是特别复杂，也建议使用控制台来完成 CORS 设置。
 
-1. 登录 [COS 控制台](https://console.cloud.tencent.com/cos5) ，单击【存储桶列表】，进入相关的存储桶，单击【安全管理】页签，下拉页面即可找到“跨域访问 CORS 设置”。
-2. 单击【添加规则】，添加第一条规则，使用最宽松的配置如下：
-![](https://main.qcloudimg.com/raw/e042f4e6b6513aa1309929c384c8b5d1.png)
+1. 登录 [COS 控制台](https://console.cloud.tencent.com/cos5) ，单击**存储桶列表**，进入相关的存储桶，单击**安全管理**页签，下拉页面即可找到“跨域访问 CORS 设置”。
+2. 单击**添加规则**，添加第一条规则，使用最宽松的配置如下：
+![](https://main.qcloudimg.com/raw/6a1f4bed7f42fba69449514822759c42.png)
 >! CORS 设置是由一条一条规则组成的，会从第一条开始逐条匹配，以最早匹配上的规则为准。
 
 #### 验证结果
 配置完成后，重新尝试访问 test.txt 文本文件。结果如下，可以正常访问请求。
-![](https://main.qcloudimg.com/raw/a887521f8561ea2a83a5416f11c00fb1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b3725a24d973dd4799ec58ddb081dffd.jpg)
 
 ### 故障排除及建议
 若想要排除跨域带来的访问问题，可以将 CORS 设置为以上最宽松的配置，该配置允许所有的跨域请求。该配置下依然出错，则表明错误出现在其他部分而不是 CORS。
 
 除了最宽松的配置之外，您还可以配置更精细的控制机制来实现针对性的控制。例如，对于本示例可以使用如下最小的配置匹配成功：
-![](https://main.qcloudimg.com/raw/6256632c56b643e3aadcc1fe94bb9eaa.png)
+![](https://main.qcloudimg.com/raw/6a1f4bed7f42fba69449514822759c42.png)
 因此对于大部分场景来说，推荐您根据自己的使用场景来使用最小的配置以保证安全性。
 
 

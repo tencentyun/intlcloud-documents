@@ -35,8 +35,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -50,7 +50,7 @@ response = client.delete_object(
 
 #### 请求示例2：删除目录
 
-对象存储中，目录是特殊的路径以“/”结尾的 object。可直接调用 Delete Object 接口实现删除目录。
+对象存储中，目录是特殊的路径以“/”结尾的 object。可直接调用 Delete Object 接口实现删除目录。注意，仅支持删除空目录，如果要删除非空目录，请参考“前缀批量删除”。
 
 ```python
 # -*- coding=utf-8
@@ -66,8 +66,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -98,8 +98,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -133,11 +133,11 @@ response = client.delete_object(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 |
+| 参数名称   | 参数描述   |类型 | 是否必填 | 
 | -------------- | -------------- |---------- | ----------- |
-| Bucket  |存储桶名称，由 BucketName-APPID 构成 |  String |  是 |
-| Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是 |
-| VersionId   | 开启版本控制后，指定对象的具体版本  | String  | 否 |
+ | Bucket  |存储桶名称，由 BucketName-APPID 构成 |  String |  是 | 
+ | Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是 |
+ | VersionId   | 开启版本控制后，指定对象的具体版本  | String  | 否 | 
 
 #### 返回结果说明
 
@@ -150,10 +150,10 @@ response = client.delete_object(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 |
-| -------------- | -------------- |---------- |
+| 参数名称   | 参数描述   |类型 | 
+| -------------- | -------------- |---------- | 
 | x-cos-version-id | 删除对象的版本号 | String |
-| x-cos-delete-marker | 标识删除的对象是否为 delete marker | String |
+| x-cos-delete-marker | 标识删除的对象是否为 delete marker | String | 
 
 ## 删除多个对象
 
@@ -182,8 +182,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -226,14 +226,14 @@ response = client.delete_objects(
 
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 |
+| 参数名称   | 参数描述   |类型 | 是否必填 | 
 | -------------- | -------------- |---------- | ----------- |
-| Bucket  | Bucket 名称，由 BucketName-APPID 构成 |  String |  是 |
-| Delete  | 说明本次删除的返回结果方式和目标 Object | Dict | 是 |
-| Object  | 说明每个将要删除的目标 Object 信息 | List | 是 |
-| Key     | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg| String|否|
-| VersionId | 开启版本控制后，目的对象的版本号 | String |否|
-| Quiet   |指明删除的返回结果方式，可选值为 true、false，默认为 false。设置为 true 只返回失败的错误信息，设置为 false 时返回成功和失败的所有信息|String|否|
+ | Bucket  | Bucket 名称，由 BucketName-APPID 构成 |  String |  是 | 
+ | Delete  | 说明本次删除的返回结果方式和目标 Object | Dict | 是 | 
+ | Object  | 说明每个将要删除的目标 Object 信息 | List | 是 | 
+ | Key     | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg| String|否|
+ | VersionId | 开启版本控制后，目的对象的版本号 | String |否|
+ | Quiet   |指明删除的返回结果方式，可选值为 true、false，默认为 false。设置为 true 只返回失败的错误信息，设置为 false 时返回成功和失败的所有信息|String|否|
 
 #### 返回结果说明
 批量删除对象的结果，类型为 dict：
@@ -261,18 +261,18 @@ response = client.delete_objects(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 |
+| 参数名称   | 参数描述   |类型 | 
 | -------------- | -------------- |---------- |
-| Deleted  |  删除成功的 Object 信息|  List |
-| Key     | 删除成功的 Object 的路径| String|
-| VersionId     | 删除成功的 Object 的版本号| String|
-| DeleteMarker     | 删除成功的 Object 是否为 delete marker| String|
-| DeleteMarkerVersionId | 删除成功的 Object 的 delete marker 的版本号| String|
-| Error  |  删除失败的 Object 信息| List |
-| Key     | 删除失败的 Object 的路径| String|
-| VersionId     | 删除失败的 Object 的版本号| String|
-| Code     | 删除失败的 Object 对应的错误码| String|
-| Message   |删除失败的 Object 对应的错误信息| String|
+ | Deleted  |  删除成功的 Object 信息|  List |
+ | Key     | 删除成功的 Object 的路径| String|
+ | VersionId     | 删除成功的 Object 的版本号| String|
+ | DeleteMarker     | 删除成功的 Object 是否为 delete marker| String|
+ | DeleteMarkerVersionId | 删除成功的 Object 的 delete marker 的版本号| String|
+ | Error  |  删除失败的 Object 信息| List |
+ | Key     | 删除失败的 Object 的路径| String|
+ | VersionId     | 删除失败的 Object 的版本号| String|
+ | Code     | 删除失败的 Object 对应的错误码| String|
+ | Message   |删除失败的 Object 对应的错误信息| String|
 
 
 ## 批量删除对象（删除目录）
@@ -299,8 +299,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)

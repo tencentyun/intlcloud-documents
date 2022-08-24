@@ -1,6 +1,6 @@
 ## 简介
 
-COS 提供了 AWS S3 兼容的 API，因此当您的数据从 S3 迁移到 COS 之后，只需要进行简单的配置修改，即可让您的客户端应用轻松兼容 COS 服务。本文主要介绍不同开发平台的 S3 SDK 的适配步骤。在完成添加适配步骤后，您就可以使用 S3 SDK 的接口来访问 COS 上的文件了。
+对象存储（Cloud Object Storage，COS）提供了 AWS S3 兼容的 API，因此当您的数据从 S3 迁移到 COS 之后，只需要进行简单的配置修改，即可让您的客户端应用轻松兼容 COS 服务。本文主要介绍不同开发平台的 S3 SDK 的适配步骤。在完成添加适配步骤后，您就可以使用 S3 SDK 的接口来访问 COS 上的文件了。
 
 #### 准备工作
 
@@ -81,8 +81,8 @@ AWSServiceConfiguration* configuration = [[AWSServiceConfiguration alloc]
 var AWS = require('aws-sdk');
 
 AWS.config.update({
-    accessKeyId: "<腾讯云的 SecretID>",
-    secretAccessKey: "<腾讯云的 SecretKey>",
+    accessKeyId: "COS_SECRETID",
+    secretAccessKey: "COS_SECRETKEY",
     region: "ap-guangzhou",
     endpoint: 'https://cos.ap-guangzhou.myqcloud.com',
 });
@@ -96,9 +96,9 @@ s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
 #### 1. 修改 AWS 配置和证书文件
 
->下面以 Linux 为例，修改 AWS 配置和证书文件。
+> ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`）中添加以下配置信息：
 ```
@@ -109,8 +109,8 @@ addressing_style = virtual
 - 在证书文件（文件位置是`~/.aws/credentials`）中配置腾讯云的密钥：  
 ```
 [default]  
-aws_access_key_id = [腾讯云的 SecretID]  
-aws_secret_access_key = [腾讯云的 SecretKey] 
+aws_access_key_id = [COS_SECRETID]  
+aws_secret_access_key = [COS_SECRETKEY] 
 ```
 
 #### 2. 代码中设置 Endpoint
@@ -130,22 +130,22 @@ AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
 
 #### 1. 修改 AWS 配置和证书文件
 
->下面以 Linux 为例，修改 AWS 配置和证书文件。
+> ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
 [default]  
 s3 =   
 	signature_version = s3
-	addressing_style = virtuall
+	addressing_style = virtual
 ```
 - 在证书文件（文件位置是`~/.aws/credentials`）中配置腾讯云的密钥：  
 ```
 [default]  
-aws_access_key_id = [腾讯云的 SecretID]  
-aws_secret_access_key = [腾讯云的 SecretKey] 
+aws_access_key_id = [COS_SECRETID]  
+aws_secret_access_key = [COS_SECRETKEY] 
 ```
 
 #### 2. 代码中设置 Endpoint
@@ -153,7 +153,7 @@ aws_secret_access_key = [腾讯云的 SecretKey]
 以存储桶所在地域是`ap-guangzhou`为例：
 
 ```
-client = boto3.client('s3', endpoint_url='"https://cos.ap-guangzhou.myqcloud.com"')
+client = boto3.client('s3', endpoint_url='https://cos.ap-guangzhou.myqcloud.com')
 ```
 
 ## PHP
@@ -162,9 +162,9 @@ client = boto3.client('s3', endpoint_url='"https://cos.ap-guangzhou.myqcloud.com
 
 #### 1. 修改 AWS 配置和证书文件
 
->下面以 Linux 为例，修改 AWS 配置和证书文件。
+> ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
@@ -175,8 +175,8 @@ addressing_style = virtual
 - 在证书文件（文件位置是`~/.aws/credentials`）中配置腾讯云的密钥：  
 ```
 [default]  
-aws_access_key_id = [腾讯云的 SecretID]  
-aws_secret_access_key = [腾讯云的 SecretKey] 
+aws_access_key_id = [COS_SECRETID]  
+aws_secret_access_key = [COS_SECRETKEY] 
 ```
 
 #### 2. 代码中设置 Endpoint
@@ -199,8 +199,8 @@ $S3Client = new S3Client([
 初始化实例时设置腾讯云密钥和 Endpoint，以存储桶所在地域是`ap-guangzhou`为例：
 
 ```
-string sAccessKeyId = "<腾讯云的 SecretID>";
-string sAccessKeySecret = "<腾讯云的 SecretKey>";
+string sAccessKeyId = "COS_SECRETID";
+string sAccessKeySecret = "COS_SECRETKEY";
 string region = "ap-guangzhou";
   
 var config = new AmazonS3Config() { ServiceURL = "https://cos." + region + ".myqcloud.com" };
@@ -217,7 +217,7 @@ var client = new AmazonS3Client(sAccessKeyId, sAccessKeySecret, config);
 以存储桶所在地域是`ap-guangzhou`为例：
 ```golang
 func newSession() (*session.Session, error) {
-	creds := credentials.NewStaticCredentials("<腾讯云的 SecretID>", "<腾讯云的 SecretKey>", "")
+	creds := credentials.NewStaticCredentials("COS_SECRETID", "COS_SECRETKEY", "")
 	region := "ap-guangzhou"
 	endpoint := "http://cos.ap-guangzhou.myqcloud.com"
 	config := &aws.Config{
@@ -237,15 +237,15 @@ sess, _ := newSession()
 service := s3.New(sess)
 
 // 以上传文件为例
-fp, _ := os.Open("s3_test.go")
+fp, _ := os.Open("yourLocalFilePath")
 defer fp.Close()
 
 ctx, cancel := context.WithTimeout(context.Background(), time.Duration(30)*time.Second)
 defer cancel()
 
 service.PutObjectWithContext(ctx, &s3.PutObjectInput{
-	Bucket: aws.String("alangz-1250000000"),
-	Key:    aws.String("test/s3_test.go"),
+	Bucket: aws.String("examplebucket-1250000000"),
+	Key:    aws.String("exampleobject"),
 	Body:   fp,
 })
 ```
@@ -256,9 +256,9 @@ service.PutObjectWithContext(ctx, &s3.PutObjectInput{
 
 #### 1. 修改 AWS 配置和证书文件
 
->下面以 Linux 为例，修改 AWS 配置和证书文件。
+> ?下面以 Linux 为例，修改 AWS 配置和证书文件。
 
-AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
+AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
@@ -269,8 +269,8 @@ addressing_style = virtual
 - 在证书文件（文件位置是`~/.aws/credentials`）中配置腾讯云的密钥：  
 ```
 [default]  
-aws_access_key_id = [腾讯云的 SecretID]  
-aws_secret_access_key = [腾讯云的 SecretKey] 
+aws_access_key_id = [COS_SECRETID]  
+aws_secret_access_key = [COS_SECRETKEY] 
 ```
 
 #### 2. 代码中设置 Endpoint

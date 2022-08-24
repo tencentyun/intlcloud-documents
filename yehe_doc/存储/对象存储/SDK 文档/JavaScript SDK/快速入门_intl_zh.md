@@ -19,8 +19,7 @@
 2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) ，获取您的项目 SecretId 和 SecretKey。
 4. 配置 CORS 规则，AllowHeader 需配成`*`，ExposeHeaders 需要 ETag、Content-Length 以及其他 js 需要读取的 header 字段，如下图所示。操作详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
-
-![CORS例](https://main.qcloudimg.com/raw/925cef63c1a4a5e849f464984e0446e7.png)
+![](https://main.qcloudimg.com/raw/6a1f4bed7f42fba69449514822759c42.png)
 
 >? 
 > - 关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
@@ -333,6 +332,20 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 2. 实例化时，传入 getAuthorization 回调，每次需要签名通过这个回调计算完，返回签名至实例。
 3. 实例化时，传入 getAuthorization 回调，调用回调时返回临时密钥凭证，在临时密钥凭证过期后会再次调用该回调。
 
+### 开启 beacon 上报
+
+为了持续跟踪和优化 SDK 的质量，给您带来更好的使用体验，我们在 SDK 中引入了 [腾讯灯塔](https://beacon.tencent.com/) SDK。
+>? 腾讯灯塔只对 COS 侧的请求性能进行监控，不会上报业务侧数据。
+>
+
+若是想开启该功能，请先确保 SDK 版本升级到1.4.0及以上，然后在初始化中指定 EnableTracker 为 true。
+
+```js
+new COS({
+  EnableTracker: true,
+})
+```
+
 ### 使用技巧
 
 通常情况下我们只需要创建一个 COS SDK 实例，然后在需要调用SDK方法的地方直接使用这个实例即可，示例代码如下：
@@ -369,7 +382,7 @@ function myDelete() {
 
 ### 上传对象
 
-简单上传接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://www.tencentcloud.com/document/product/436/43552) 文档。
+简单上传接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://www.tencentcloud.com/document/product/436/12259) 文档。
 
 [//]: # ".cssg-snippet-put-object"
 ```js
