@@ -3,16 +3,15 @@
 ## 配置说明
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【插件中心】，单击定时刷新预热插件功能卡片，开通定时刷新预热，即可进入任务配置页面。首次开通之后，也可以单击卡片底部的【基础配置】进入定时刷新预热的任务列表页面进行配置。
-![](https://main.qcloudimg.com/raw/49e04ecee478d20c0f468dc3e5d74179.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b9280a8a6abff68fcd732651482e4aeb.png)
 
 在新建定时任务界面，选择相应的任务类型、设置 Cron 定时表达式（见下文）、输入对应的刷新/预热 URL，并进行 SCF 授权，系统即可自动生成对应的 SCF 云函数，并按时触发对应的任务。
-![](https://main.qcloudimg.com/raw/e479f06fe9b4f2b29262abd33ef5e523.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f3ebd58524dbe4c0892c3a587c05b1f1.png)
 
 >!请不要在 SCF 控制台删除该云函数！
 
-
 在任务状态页面，可以查看定时任务最近一次的执行情况。
-![](https://main.qcloudimg.com/raw/5fdc643b188954e36db4c0942059225b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/80c812e712164b648b3cb57da98a8e51.png)
 
 ## Cron 表达式
 
@@ -120,4 +119,4 @@ Cron 表达式一共包含7个位值，每个位值之间必须用空格隔开�
 
 ## 费用说明
 
-定时刷新预热功能本身免费，但是会调用 SCF 创建定时任务，超过 SCF 免费试用额度可能会产生云函数费用，具体请见 [SCF免费额度](https://intl.cloud.tencent.com/document/product/583/12282) 。
+定时刷新预热功能本身免费，但是会调用 SCF 创建定时任务，SCF为收费服务，具体请见 [云函数计费说明](https://intl.cloud.tencent.com/document/product/583/17299) 。
