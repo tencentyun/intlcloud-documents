@@ -11,13 +11,13 @@ Tencent Cloud View Cube·Player+はオーディオビデオ端末SDK（Tencent C
 
 このプロジェクトではVOD Player+とライブストリーミングPlayer+をご提供します。プレーヤーをベースに、ご自身の再生業務を構築することができます。
 
-- [VOD Player+](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md)：`TXVodPlayerController`でAndroidおよびiOSの2つのプラットフォームのVOD Player+に対しインターフェースのパッケージ化を行います。`TXVodPlayerController`を統合することで、VOD再生業務の開発を行うことができます。詳細な使用例については、`DemoTXVodPlayer`をご参照ください。
+- [VOD Player+](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE-EN.md)：`TXVodPlayerController`でAndroidおよびiOSの2つのプラットフォームのVOD Player+に対しインターフェースのパッケージ化を行います。`TXVodPlayerController`を統合することで、VOD再生業務の開発を行うことができます。詳細な使用例については、`DemoTXVodPlayer`をご参照ください。
 
-- [ライブストリーミングPlayer+](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md)：`TXLivePlayerController`でAndroidおよびiOSの2つのプラットフォームのライブストリーミングPlayer+に対しインターフェースのパッケージ化を行います。`TXLivePlayerController`を統合することで、ライブストリーミング再生業務の開発を行うことができます。詳細な使用例については、`DemoTXLivePlayer`をご参照ください。
+- [ライブストリーミングPlayer+](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE-EN.md)：`TXLivePlayerController`でAndroidおよびiOSの2つのプラットフォームのライブストリーミングPlayer+に対しインターフェースのパッケージ化を行います。`TXLivePlayerController`を統合することで、ライブストリーミング再生業務の開発を行うことができます。詳細な使用例については、`DemoTXLivePlayer`をご参照ください。
 
 接続コストを削減するため、exampleでSuper Playerコンポーネント（UI付きのプレーヤー）をご提供しています。Super Playerの簡単な数行のコードによってビデオ再生業務を構築できます。ご自身のプロジェクトのニーズに基づいて、Super Playerの関連コードをプロジェクトに適用し、ニーズに応じてUIとインタラクションの細部を調整することができます。
 
-- [Super Playerコンポーネント](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E8%B6%85%E7%BA%A7%E6%92%AD%E6%94%BE%E5%99%A8.md)：`SuperPlayerController`Super Playerコンポーネントは、VOD Player+とライブストリーミングPlayer+を再パッケージ化し、スピーディーで簡単な統合を可能にします。現在はベータ版のため、機能はまだ整備中です。詳細な使用例については、`DemoSuperplayer`をご参照ください。
+- [Super Playerコンポーネント](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E6%92%AD%E6%94%BE%E5%99%A8%E7%BB%84%E4%BB%B6-EN.md)：`SuperPlayerController`Super Playerコンポーネントは、VOD Player+とライブストリーミングPlayer+を再パッケージ化し、スピーディーで簡単な統合を可能にします。現在はベータ版のため、機能はまだ整備中です。詳細な使用例については、`DemoSuperplayer`をご参照ください。
 
 ## クイックインテグレーション
 
