@@ -58,6 +58,15 @@ eks.tke.cloud.tencent.com/cpu: '8'
 eks.tke.cloud.tencent.com/mem: '16Gi' # 内存一定要以 Gi 为单位，以 G 为单位则会报参数错误
 ```
 
+
+### 指定系统盘大小
+
+超级节点上运行的 Pod 默认免费提供20G系统盘，系统盘生命周期与 Pod 的生命周期一致，可满足通用场景的系统盘资源诉求，若特殊场景下用户需要额外扩容系统盘大小，支持通过 Annotation 来声明所需系统盘的大小，注意，此时超过20G的部分将按照 CBS 高性能云盘按量计费的刊例价进行计费，计费详情见 [云硬盘定价说明](https://intl.cloud.tencent.com/pricing/cbs)。系统盘大小注解示例如下：
+```yaml
+eks.tke.cloud.tencent.com/root-cbs-size: '50'  # 指定系统盘大小，超过20 Gi 额外计费
+```
+
+
 ### 规格自动升配
 
 超级节点上运行的 Pod 会按照 request 与 limit 自动计算出匹配的底层资源规格。如果对应的规格底层无相应资源，则会创建失败并在事件中提示资源不足 (insufficient resource)。如果用户接受使用更高规格的资源来创建 Pod，则可在 Pod 添加如下注解，开启自动升配，计费将按照升配后的规格计算。
@@ -167,6 +176,19 @@ eks.tke.cloud.tencent.com/cbs-reuse-key: 'image-name'
 eks.tke.cloud.tencent.com/use-image-cache: 'auto'
 ```
 
+指定镜像缓存创建出来的盘类型：
+
+```yaml
+eks.tke.cloud.tencent.com/image-cache-disk-type: 'CLOUD_SSD'  # 指定镜像缓存创建出来的盘类型，可取值如下：CLOUD_BASIC为普通云硬盘，CLOUD_PREMIUM为高性能云硬盘（默认），CLOUD_SSD为SSD云硬盘，CLOUD_HSSD为增强型SSD云硬盘，CLOUD_TSSD为极速型SSD云硬盘
+```
+
+
+指定镜像缓存创建出来的盘的大小：
+
+```yaml
+eks.tke.cloud.tencent.com/image-cache-disk-size: '50' # 指定镜像缓存创建出来的盘的大小，默认是镜像缓存创建时设置的大小，可以调大，不能调小
+```
+
 用户也可以手动指定镜像缓存实例，不使用自动匹配：
 
 ```yaml
@@ -216,7 +238,7 @@ eks.tke.cloud.tencent.com/host-modprobe: 'toa'
 
 超级节点所在集群虚拟机内的 agent 会上报心跳给控制面，如果上报超时（默认 5min)，一般说明 Pod 内进程已经无法正常工作了，故障原因通常是高负载，这时集群默认会自动迁移虚拟机（对当前虚拟机关机并自动创建新虚拟机，让 Pod 迁移到新虚拟机里去运行），从而实现自愈。
 
-如果用户不希望自动重建（比如用于保留现场），可以在 Pod 上添加如下注解：
+如果用户不希望自动重建（如用于保留现场），可以在 Pod 上添加如下注解：
 
 ```yaml
 eks.tke.cloud.tencent.com/recreate-node-lost-pod: "false"

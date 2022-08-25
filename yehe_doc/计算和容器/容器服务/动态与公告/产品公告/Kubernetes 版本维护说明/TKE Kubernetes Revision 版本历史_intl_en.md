@@ -4,6 +4,11 @@
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
   <tbody>
+	   <tr>
+    <td>2022-07-27</td>
+    <td>v1.20.6-tke.21</td>
+    <td><li>CBS supports native nodes. (kubelet)</li><li>Optimized EKS virtual node HPA.</li></td>
+  </tr>
 	 <tr>
     <td>2022-06-16</td>
     <td>v1.20.6-tke.20</td>
@@ -57,6 +62,11 @@ Optimizes EKS scheduling. (kube-scheduler)
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
 <tbody>
+	 <tr>
+    <td>2022-07-27</td>
+    <td>v1.18.4-tke.26</td>
+    <td>CBS supports native nodes. (kubelet)</td>
+  </tr>
 <tr><td>2022-03-18</td><td>v1.18.4-tke.23</td><td><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/92878" target="_blank">pr92878</a>, which allows to print alarm information only when the Owership of ConfigMap/Secret volume is set to be more than 30 seconds, avoiding excessive log information. (kubelet) </li><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/106906" target="_blank">pr106906</a>, which detects whether the network storage volume subpath has been deleted, preventing the Pod from being in terminating status all the time. (kubelet) </li><li> The EKS super nodes are ignored when the anti-affinity scheduling is performed based on the hostname. (kube-scheduler) </li><li> Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/93026" target="_blank">pr93026</a>, which fixed the problem where DefaultPodTopologySpread cannot obtain replicaset information. (kube-scheduler)</li></td></tr>
 <tr><td>2022-01-20</td><td>v1.18.4-tke.20</td><td><li>EKS rescheduling optimization: Lower the score for super nodes that have been drained in the same availability zone. (kube-scheduler) </li><li>The apiserver supports integration of ExternalName 556 type external services. (kube-apiserver)  </li><li>Supports binding the LB addresses to the ipvs ENIs. (kube-proxy)</li></td></tr>
 <tr><td>2021-12-09</td><td>v1.18.4-tke.17</td><td><li>Fixes the issue where kube-controller-manager's access to api-server is restricted when there are a large number of volume attachment objects. (kube-controller-manager)</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/95650">PR95650</a>, so that HPA ignores deleted Pods when counting replicas. (kube-controller-manager)</li><li>Fixes the inconsistency between EKS and frontend when calculating CPU resources. (kube-scheduler)</li></td></tr>
@@ -188,6 +198,11 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
 <tbody>
+	 <tr>
+    <td>2022-07-27</td>
+    <td>v1.16.3-tke.28</td>
+    <td><li>EKS virtual nodes are ignored when anti-affinity scheduling is performed based on hostname. (kube-scheduler)</li><li>EKS: The sandbox feature is retained. (kube-scheduler)</li><li>CBS supports native nodes. (kubelet)</li></td>
+  </tr>
 <tr><td>2022-03-18</td><td>v1.16.3-tke.27</td><td><li>Supports specifying a Pod when scaling in. (kube-controller-manager) </li><li>Optimization of super node scheduling algorithm. (kube-scheduler)</li></td></tr>
 <tr><td>2022-01-20</td><td>v1.16.3-tke.25</td><td><li>Supports binding the LB addresses to the ipvs ENIs. (kube-proxy) </li><li>The apiserver supports integration of ExternalName type external services. (kube-apiserver) </li><li>Optimization of EKS scheduling. (kube-scheduler)</li></td></tr>
 <tr><td>2021-12-09</td><td>v1.16.3-tke.24</td><td>Fixes the issue where the EKS local replica quantity policy fails on StatefulSet Pods. (kube-scheduler)</td></tr>

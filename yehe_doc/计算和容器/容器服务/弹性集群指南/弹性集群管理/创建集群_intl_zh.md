@@ -1,5 +1,5 @@
 ## 操作场景
-本文介绍通过腾讯云容器服务控制台创建弹性集群，开始使用弹性容器服务。
+本文介绍通过腾讯云容器服务控制台创建 Serverless 集群，开始使用 Serverless 容器服务。
 
 
 
@@ -7,27 +7,32 @@
 请前往 [CAM 管理控制台](https://console.cloud.tencent.com/cam/overview) 开通相应的服务权限。
 
 ## 操作步骤
-1. 登录容器服务控制台，选择左侧导航栏中的**[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)**。
-2. 在页面上方选择需创建弹性集群的地域，并单击**新建**。如下图所示：
+1. 登录容器服务控制台 ，选择左侧导航栏中的 [**集群**](https://console.cloud.tencent.com/tke2)。
+2. 在页面上方选择需创建集群的地域，并单击**新建**。如下图所示：
 ![](https://main.qcloudimg.com/raw/155688ae1758a0df4a0428067bf9acde.png)
-3. 在“创建弹性集群”页面，根据以下提示设置集群信息。如下图所示：
-![](https://main.qcloudimg.com/raw/1692f78fa60e4565b0f60db76911968f.png)
+3. 在“选择集群类型”弹窗中，选择 **Serverless 集群类型**，单击**创建**。
+4. 在“创建集群”页面，根据以下提示设置集群信息。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/9ca63f71013ca61fde3ef67927f72895.png)
  -  **集群名称**：创建的弹性集群名称，不超过60个字符。
- -  **Kubernetes版本**：弹性集群支持1.12以上的多个 Kubernetes 版本选择，各版本特性对比请查看 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/)。
+ -  **Kubernetes版本**：弹性集群支持1.16以上的多个 Kubernetes 版本选择，各版本特性对比请查看 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/)。
  - **所在地域**：建议您根据所在地理位置选择靠近的地域，可降低访问延迟，提高下载速度。
- - **集群网络**：已创建的弹性集群 VPC 网络，您可以选择私有网络中的子网用于弹性集群的容器网络，详情请参见 [私有网络（VPC）](https://intl.cloud.tencent.com/document/product/215/535) 。
- - **容器 CIDR**：为集群内容器分配在容器网络地址范围内的 IP 地址。弹性集群的 Pod 会直接占用 VPC 子网 IP，请尽量选择 IP 数量充足且与其他产品使用无冲突的子网。详情请参见 [容器网络说明](#ContainerNetwork)。
+ - **集群网络**：该字段展示所在地域下您已创建的全部 VPC 网络，请选择合适的网络作为集群网络，若无可用网络信息或现有网络不合适，可跳转至控制台新建私有网络，详情请参见 [私有网络（VPC）](https://www.tencentcloud.com/document/product/215/535)，私有网络中的子网将用于 serverless 集群的容器网络。
+ - **超级节点配置**：
+    - **可用区**：选择超级节点所在的可用区。
+    - **计费模式**：全地域支持按量计费模式。
+    - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。集群内超级节点的 Pod 会直接占用 VPC 子网 IP（剩余 IP 数将限制调度至超级节点上的 Pod 数），请尽量选择 IP 数量充足且与其他产品使用无冲突的子网。超级节点上的 Pod 会直接运行在用户已指定的 VPC 网络上，每个 Pod 在生命周期内都会绑定一个指定 VPC 内的弹性网卡。您可前往 [弹性网卡列表](https://console.cloud.tencent.com/vpc/eni) 查看 Pod 关联的网卡。
+    按量计费模式下，支持选择多个子网，每个子网对应创建一个按量计费的超级节点，按量计费的超级节点创建时不计费，当实际创建工作负载后 Pod 调度至按量计费超级节点时开始按照 Pod 规格和实际运行时长计费。
+    <dx-alert infotype="notice" title="">
+- 建议为容器网络配置多个可用区，这样您的工作负载在部署时会自动打散分布在多个可用区，可用性更高。
+- 请确保为容器网络分配 IP 充足的子网，避免创建大规模工作负载时因为 IP 资源耗尽无法创建 Pod。
+</dx-alert>
  - **Service CIDR**：集群的 ClusterIP Service 默认分配在所选 VPC 子网中，请尽量选择 IP 数量充足且与其他产品使用无冲突的子网。
  - **集群描述**：创建集群的相关信息，该信息将显示在“集群信息”页面。
- - **DNS Forward 配置**：可注册上游 DNS 信息，支持填写期望由上游 DNS 解析的域名，例如 “example.org”，以及上游 DNS 的地址，例如“10.0.0.1:53”。
- >! 上游 DNS 的地址务必和集群网络互通。
-4. 单击**完成**即可开始创建，可在“弹性集群”列表页面查看集群的创建进度。
+ - **高级设置**：
+     - CoreDNS：会自动在集群命名空间 kube-system 中部署 2 副本的 Deployment:coredns，该服务默认不收取费用，同时不建议进行修改。
+     - 标签：腾讯云标签服务，用于从不同维度对资源分类管理。
 
-<span id="ContainerNetwork"></span>
+5. 单击**完成**即可开始创建，可在“集群”列表页面查看集群的创建进度。
 
-## 容器网络说明
-弹性容器服务的 Pod 会直接运行在用户已指定的 VPC 网络上，每个 Pod 在生命周期内都会绑定一个指定 VPC 内的弹性网卡。您可前往 [弹性网卡列表](https://console.cloud.tencent.com/vpc/eni) 查看 Pod 关联的网卡。
 
->?
->- 建议为容器网络配置多个可用区，这样您的工作负载在部署时会自动打散分布在多个可用区，可用性更高。
->- 请确保为容器网络分配 IP 充足的子网，避免创建大规模工作负载时因为 IP 资源耗尽无法创建 Pod。
+

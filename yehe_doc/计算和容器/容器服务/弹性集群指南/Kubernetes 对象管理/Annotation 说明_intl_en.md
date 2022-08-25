@@ -55,8 +55,17 @@ By default, Pods running on super nodes automatically calculate the specificatio
 
 ```yaml
 eks.tke.cloud.tencent.com/cpu: '8'
-eks.tke.cloud.tencent.com/mem: '16Gi' # The memory needs to be measured in GiB. If GB is used, parameter errors will be reported.
+eks.tke.cloud.tencent.com/mem: '16Gi' # The memory needs to be measured in Gi. If G is used, parameter errors will be reported.
 ```
+
+
+### Specifying system disk size
+
+A Pod running on a super node provides 20 Gi of free system disk size by default. The lifecycle of the system disk is the same as that of the Pod. If you need more system disk size, please specify the size via the annotation. Note that the part of the size exceeding 20 Gi is billed according to the list price of a pay-as-you-go CBS Premium Cloud Storage cloud disk. For billing details, see [Cloud Block Storage Pricing](https://intl.cloud.tencent.com/pricing/cbs). See below for the annotation example:
+```yaml
+eks.tke.cloud.tencent.com/root-cbs-size: '50'  # Specify the system disk size. Additional charges are applied for the part of the size exceeding 20 Gi
+```
+
 
 ### Automatically upgrading the specification
 
@@ -157,7 +166,7 @@ By default, the system disk is reused on super nodes to speed up the startup, sp
 eks.tke.cloud.tencent.com/cbs-reuse-key: 'image-name'
 ```
 
-### Caching an image
+### Image cache
 
 Super nodes provide [image cache capabilities](https://intl.cloud.tencent.com/document/product/457/44484), where an image cache instance is created in advance, the target image is automatically downloaded, and the cloud disk snapshot is created. Then you can enable the image cache when creating a Pod. The snapshot of the image cache instance is automatically matched by image name, allowing you to use the snapshot image content and saving the need to download the image a second time, thereby speeding up the startup.
 
@@ -165,6 +174,19 @@ The annotation to enable the image cache is as follows:
 
 ```yaml
 eks.tke.cloud.tencent.com/use-image-cache: 'auto'
+```
+
+Specify the type of cloud disk created with the image cache:
+
+```yaml
+eks.tke.cloud.tencent.com/image-cache-disk-type: 'CLOUD_SSD'  # Specify the type of cloud disk created with the image cache. Valid values: `CLOUD_BASIC` (HDD cloud disk), `CLOUD_PREMIUM` (Premium Cloud Storage, it is the default value), `CLOUD_SSD` (SSD), `CLOUD_HSSD` (Enhanced SSD), `CLOUD_TSSD` (Tremendous SSD).
+```
+
+
+Specify the size of cloud disk created with the image cache:
+
+```yaml
+eks.tke.cloud.tencent.com/image-cache-disk-size: '50' # Specify the size of cloud disk created with the image cache. The default size is the one set when the cloud disk was created. The size can only be increased, but cannot be decreased.
 ```
 
 You can choose to manually specify the image cache instance instead of having it automatically matched:
@@ -232,7 +254,7 @@ eks.tke.cloud.tencent.com/heartbeat-lost-period: 1m
 
 When the disk usage on the super node becomes too high, a cleanup process is automatically triggered to release the space. You can view the disk usage through `df -h`.
 
-Common causes of insufficient disk space include the following:
+Common causes of insufficient disk space include:
 - The business has a lot of temporary outputs. You can confirm this with the `du` command.
 - The business holds deleted file descriptors, so disk space is not freed up. You can confirm this with the `lsof` command.
 
@@ -247,40 +269,40 @@ failed to garbage collect required amount of images. Wanted to free 7980402688 b
 To customize the cleanup threshold, add the following annotation to the Pod: 
 
 ```yaml
-eks.tke.cloud.tencent.com/image-gc-high-threshold: '80' # It indicates that the container image cleanup is triggered when the disk usage reaches 80%.
+eks.tke.cloud.tencent.com/image-gc-high-threshold: '80' # When the disk usage reaches 80%, image cleanup is triggered.
 eks.tke.cloud.tencent.com/image-gc-low-threshold: '75' # After triggered, the container image cleanup stops when 5% (high-threshold - low-threshold) of the space is released.
 eks.tke.cloud.tencent.com/image-gc-period: '3m' # The disk space is checked once every three minutes by default.
 ```
 
 ### Cleaning up an exited container
 
-If your business has been upgraded in-place or a container has abnormally exited, the exited container will be retained until the disk usage reaches 85%. The cleanup threshold can be adjusted with the following annotation:
+If your business has been upgraded in-place or a container has abnormally exited, the exited container will be retained until the disk utilization reaches 85%. The cleanup threshold can be adjusted with the following annotation:
 
 ```yaml
 eks.tke.cloud.tencent.com/container-gc-threshold: "85"
 ```
 
-If you don't want to have the exited container automatically cleaned up (for example, you need the exit information for further troubleshooting), you can disable the automatic cleanup with the following annotation; however, the disk space cannot be automatically freed up in this case:
+If you don't want to have the exited container automatically cleaned up (for example, you need the exit information for further troubleshooting), you can disable the automatic cleanup with the following annotation; however, the disk space cannot be automatically freed up in this case.
 
 ```yaml
 eks.tke.cloud.tencent.com/must-keep-last-container: "true"
 ```
 
-### Restarting a Pod with high disk usage
+### Restarting the Pods with high disk usage
 
-To restart a Pod after the container's system disk usage exceeds a certain percentage, configure the following annotation:
+You need to restart a Pod with the following annotation after the container's system disk usage exceeds a certain percentage:
 
 ```yaml
 eks.tke.cloud.tencent.com/pod-eviction-threshold: "85" # This feature is enabled after set. It is not enabled by default.
 ```
 
-Only the Pod will be restarted, and the server will not be rebuilt. Normal GraceStop, PreStop, and health checks are performed for the exit and startup.
+Only the Pod is restarted, but the host will not be rebuilt. Normal gracestop, prestop, and health checks are performed for the exit and startup.
 
->! This feature was launched on April 27, 2022 and can be enabled on Pods created earlier only after they are rebuilt.
+>! This feature was launched on April 27, 2022 (UTC +8). The Pods created before that date must be rebuilt to enable the feature.
 
 ## Monitoring Metrics
 
-### Port 9100 issue
+### 9100 port issue
 
 Pods on super nodes expose monitoring data via port 9100 by default, and you can access 9100/metrics to get the data by running the following command:
 
@@ -306,7 +328,7 @@ You can customize the port number to be used for exposing monitoring data to avo
 eks.tke.cloud.tencent.com/metrics-port: "9110"
 ```
 
->? If the Pod has a public EIP, you need to set the security group. Pay attention to the issue with port 9100 and open the required ports.
+>? If the Pod has a public EIP, you need to set up a security group. Pay attention to port 9100 and open required ports.
 
 ### Monitoring data reporting frequency
 
@@ -332,7 +354,7 @@ By default, a Pod uses the `eth0` ENI. To rename the ENI, add the following anno
 internal.eks.tke.cloud.tencent.com/pod-eth-idx: '1' # Name the ENI `eth1`. 
 ```
 
-## Customizing the DNS
+## Custom DNS
 
 By default, the host of the Pod uses the DNS of `183.60.83.19` and `183.60.82.98` in the VPC. To modify it, configure the following annotation:
 
@@ -349,7 +371,7 @@ eks.tke.cloud.tencent.com/resolv-conf: |
 Super nodes allow you to use open-source log collection components to collect logs to Kafka. If files in containers are collected or [multi-line merging](https://intl.cloud.tencent.com/document/product/457/40216) is used during collection, you need to properly configure the line size that defaults to 2 MB. If it exceeds 2 MB, the log in the line is discarded. The line size can be adjusted with the following annotation:
 
 ```yaml
-internal.eks.tke.cloud.tencent.com/tail-buffer-max-size: '2M' # A single-line log can be up to 2 MB.
+internal.eks.tke.cloud.tencent.com/tail-buffer-max-size: '2M' # A single-line log with the maximum size of 2M is supported by default.
 ```
 
 When logs are collected to Kafka, the field of the log content is `log`. To configure it to `message`, use the following annotation:
