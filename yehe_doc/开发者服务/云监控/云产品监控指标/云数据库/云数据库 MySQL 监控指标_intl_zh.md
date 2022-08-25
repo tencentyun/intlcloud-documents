@@ -15,7 +15,7 @@ Namespace=QCE/CDB
 | IOPS          | IOPS         | 每秒的输入输出量(或读写次数)                                 | 次/秒 | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 | MemoryUse     | 内存占用     | 允许闲时超用，实际内存占用可能大于购买规格                   | MB     | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 | MemoryUseRate | 内存利用率   | 允许闲时超用，内存利用率可能大于100%                         | %     | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
-| RealCapacity  | 磁盘使用空间 | 仅包括 MySQL 数据目录，不含  binlog、relaylog、undolog、errorlog、slowlog 日志空间 | MB    | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
+| RealCapacity  | 数据使用空间 | 仅包括 MySQL 数据目录，不含  binlog、relaylog、undolog、errorlog、slowlog 日志空间 | MB    | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 | VolumeRate    | 磁盘利用率   | 磁盘使用空间/实例购买空间                                    | %     | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 
 ### 引擎监控（普通）- MyISAM
@@ -31,7 +31,7 @@ Namespace=QCE/CDB
 | ------------------ | ------------------------------------- | ---------------------------------- | ----- | -------------------------------- | ---------------------------- |
 | InnodbCacheHitRate | innodb 缓存命中率                     | Innodb 引擎的缓存命中率            | %     | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 | InnodbCacheUseRate | innodb 缓存使用率                     | Innodb 引擎的缓存使用率            | %     | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
-| InnodbNumOpenFiles | InnoDB 总页数当前 InnoDB 打开表的数量 | Innodb 引擎当前打开表的数量        | 个    | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s         |
+| InnodbNumOpenFiles |当前 InnoDB 打开表的数量 | Innodb 引擎当前打开表的数量        | 个    | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s         |
 | InnodbOsFileReads  | innodb 读磁盘数量                     | Innodb 引擎每秒读磁盘文件的次数    | 次/秒 | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 | InnodbOsFileWrites | innodb 写磁盘数量                     | Innodb 引擎每秒写磁盘文件的次数    | 次/秒 | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 | InnodbOsFsyncs     | innodbfsync 数量                      | Innodb 引擎每秒调用 fsync 函数次数 | 次/秒 | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
@@ -157,7 +157,7 @@ Namespace=QCE/CDB
 | MasterSlaveSyncDistance | 主从延迟距离 | 主从 binlog 差距 | MB                                  | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 | SecondsBehindMaster     | 主从延迟时间 | 主从延迟时间     | 秒                                  | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 | SlaveIoRunning          | IO 线程状态  | IO 线程运行状态  | 状态值（0-Yes，1-No，2-Connecting） | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
-| SlaveSqlRunning         | SQL 线程状态 | SQL 线程运行状态 | 状态值（0-Yes，1-No）               | InstanceId、InstanceTyp          | 5s、60s、300s、3600s、86400s |
+| SlaveSqlRunning         | SQL 线程状态 | SQL 线程运行状态 | 状态值（0-Yes，1-No）               | InstanceId、InstanceType（选填） | 5s、60s、300s、3600s、86400s |
 
 > ?每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
 
@@ -172,7 +172,7 @@ Namespace=QCE/CDB
 
 > ? InstanceType 说明：
 >
-> - 假设 InstanceId 入参值为主实例的ID，仅 InstanceType 支持拉取主机（取值为1）、从机（取值为2）、第二从机（取值为3）的监控数据。
+> - 假设 InstanceId 入参值为主实例的ID，仅 InstanceType 支持拉取主机（取值为1）、从机（取值为2）、只读实例（取值为3）、第二从机（取值为4）的监控数据。
 > - 假设 InstanceId 入参值为主实例的ID，InstanceType入参为 2 （从机），且该主实例是三节点（一主两从）。由于拉取从机监控数据仅支持单节点和双节点，会导致缺少一个监控节点数据。
 > - 若需要拉取只读实例监控数据，InstanceId 需入参为只读实例 ID。
 

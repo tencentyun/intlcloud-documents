@@ -7,43 +7,43 @@ Namespace=QCE/WAF
 
 ## Monitoring Metrics
 
-| Metric | Description | Unit | Dimension |
+| Parameter | Metric Name | Unit | Dimension |
 | ----------- | --------------- | ---- | --------------- |
-| Access | Total access attempts | - | domain, edition |
-| Attack | Web attacks | - | domain, edition |
-| Cc | CC attacks | - | domain, edition |
-| Down | Downstream bandwidth | B/S | domain, edition |
-| Qps | Requests per second | - | domain, edition |
-| Up | Upstream bandwidth | B/S | domain, edition |
-| 4xx | 4xx status codes | - | domain, edition |
-| 5xx | 5xx status codes | - | domain, edition |
-| U4xx | Real server 4xx status codes | - | domain, edition |
-| U5xx | Real server 5xx status codes | - | domain, edition |
-| Bot | Bot attacks | - | domain, edition |
-| Ratio5xx | 5XX ratio | % | domain, edition |
-| Ratio4xx | 4XX ratio | % | domain, edition |
-| RatioAttack | Web attack ratio | % | domain, edition |
-| RatioBot | Bot attack ratio | % | domain, edition |
-| RatioCc | CC attack ratio | % | domain, edition |
+| Access | Total access attempts | Count | domain and edition |
+| Attack | Web attacks | Count | domain and edition |
+| Cc | CC attacks | Count | domain and edition |
+| Down | Downstream bandwidth | Byte/sec | domain and edition |
+| Qps | Requests per second | Count | domain and edition |
+| Up | Upstream bandwidth | Byte/sec | domain and edition |
+| 4xx | 4xx status code | Count | domain and edition |
+| 5xx | 5xx status code | Count | domain and edition |
+| U4xx | Origin server 4xx status code | Count | domain and edition |
+| U5xx | Origin server 5xx status code | Count | domain and edition |
+| Bot | Bot attacks | Count | domain and edition |
+| Ratio5xx | 5XX percentage | % | domain and edition |
+| Ratio4xx | 4XX percentage | % | domain and edition |
+| RatioAttack | Web attack percentage | % | domain and edition |
+| RatioBot | Bot attack percentage | % | domain and edition |
+| RatioCc | CC attack percentage | % | domain and edition |
+| InBandwidth   | Inbound bandwidth    |  MB   | domain and edition |
+| OutBandwidth     | Outbound bandwidth    |  MB | domain and edition |
+|MetricnameCustomSecurity|Number of custom policy attacks|Count|domain and edition |
 
-## Overview of Parameters in Each Dimension
+## Dimensions and Parameters
 
 | Parameter | Dimension | Dimension Description | Format |
 | ------------------------------ | -------- | ----------------------------- | ------------------------------------------------------- |
-| Instances.N.Dimensions.0.Name | domain | Domain dimension name of client attack | Enter a String-type dimension name: domain |
-| Instances.N.Dimensions.0.Value | domain | Specific domain name in client attack | Enter a specific domain name in the client attack, such as `www.cloud.tencent.com` |
-| Instances.N.Dimensions.0.Name  | edition  | WAF instance type dimension name | Enter a String-type dimension name: edition                       |
-| Instances.N.Dimensions.0.Value | edition  | Specific WAF instance type     | Enter a specific WAF instance type, such as SaaS WAF (with input parameter value of 0) or CLB WAF (with input parameter value of 1) |
+| Instances.N.Dimensions.0.Name | domain | Dimension name of the domain name in the client attack | Enter a string-type dimension name, such as `domain` |
+| Instances.N.Dimensions.0.Value | domain | Domain name in the client attack | Enter the domain name in the client attack, such as `www.cloud.tencent.com` |
+| Instances.N.Dimensions.1.Name | edition | Dimension name of the WAF instance type | Enter a string-type dimension name, such as `edition` |
+| Instances.N.Dimensions.1.Value | edition | Type of the WAF instance | Enter a type of the WAF instance, such as `SaaS WAF` (with input parameter value being 0) or `CLB WAF` (with input parameter value being 1) |
 
-## Input Parameter Description
+## Input Parameters
 
-**To query the monitoring data by domain name in the client attack, use the following input parameters:**
+**Values of the input parameters for pulling WAF monitoring data:**
 &Namespace=QCE/WAF
-&Instances.N.Dimensions.0.Name=domain
-&Instances.N.Dimensions.0.Value=Specific domain name in client attack
-
-**To query the monitoring data by WAF instance, use the following input parameters:**
-&Namespace=QCE/WAF
-&Instances.N.Dimensions.0.Name=edition
-&Instances.N.Dimensions.0.Value=Specific WAF instance type
+&Instances.N.Dimensions.0.Name = `domain`
+&Instances.N.Dimensions.0.Value = Domain name in the client attack
+&Instances.N.Dimensions.1.Name = `edition`
+&Instances.N.Dimensions.1.Value = Type of the WAF instance
 
