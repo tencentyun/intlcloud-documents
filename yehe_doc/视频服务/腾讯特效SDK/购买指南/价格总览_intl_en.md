@@ -77,7 +77,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>General beautification SDKs</b><br>(Face width/Chin/Hairline/Slim nose)</td>
+<td><b>General beautification</b><br>(Face width/Chin/Hairline/Slim nose)</td>
 <td>-</td>
 <td>-</td>
 <td>&#10003;</td>
