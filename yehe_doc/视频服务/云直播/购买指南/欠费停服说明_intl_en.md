@@ -1,8 +1,8 @@
-## Overdue Accounts
+## Overdue Payments
 - The current day's CSS pay-as-you-go daily billing items will be generated the morning of the next day. Bills for the pay-as-you-go monthly billing items will be generated on the first day of the next month. For billing details, see [Viewing Bills](https://intl.cloud.tencent.com/document/product/267/36278).
 - Tencent Cloud will send you a notification if a payment becomes overdue due to insufficient account balance. If you top up your account balance within 24 hours after receiving the notification, the CSS service will not be suspended. Otherwise, the service will be suspended.
-- When your account balance becomes insufficient, CSS will not terminate any ongoing live streams, which will continue to incur costs as usual.
-- If your VOD service is suspended due to overdue payments, the CSS recording feature will be affected, while related service fees will continue to be billed as usual.
+- When a payment in your account becomes overdue, CSS will not terminate any ongoing live streams, which will continue to incur costs as usual.
+- If your VOD service is suspended due to an overdue payment, the CSS recording feature will be affected, while related service fees will continue to be billed as usual.
 
 
 
