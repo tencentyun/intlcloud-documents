@@ -11,13 +11,13 @@
 
 此项目提供了点播播放器和直播播放器 SDK，您可以基于播放器搭建自己的播放业务：
 
-- [点播播放器 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md)：`TXVodPlayerController`对 Android 和 iOS 两个平台的点播播放器 SDK 进行接口封装， 你可以通过集成`TXVodPlayerController`进行点播播放业务开发。详细使用例子可以参见`DemoTXVodPlayer`。
+- [点播播放器 SDK]()：`TXVodPlayerController`对 Android 和 iOS 两个平台的点播播放器 SDK 进行接口封装， 你可以通过集成`TXVodPlayerController`进行点播播放业务开发。详细使用例子可以参见`DemoTXVodPlayer`。
 
-- [直播播放器 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md)：`TXLivePlayerController`对 Android 和 iOS 两个平台的直播播放器 SDK 进行接口封装， 你可以通过集成`TXLivePlayerController`进行直播播放业务开发。详细使用例子可以参见`DemoTXLivePlayer`。
+- [直播播放器 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE-EN.md)：`TXLivePlayerController`对 Android 和 iOS 两个平台的直播播放器 SDK 进行接口封装， 你可以通过集成`TXLivePlayerController`进行直播播放业务开发。详细使用例子可以参见`DemoTXLivePlayer`。
 
 为了减少接入成本， 在 example 里提供了超级播放器组件（带 UI 的播放器），基于超级播放器简单的几行代码就可以搭建视频播放业务。您可以根据自己项目的需求， 把超级播放器的相关代码应用到项目中去，根据需求进行调整 UI 和交互细节。
 
-- [超级播放器组件](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E8%B6%85%E7%BA%A7%E6%92%AD%E6%94%BE%E5%99%A8.md)：`SuperPlayerController` 超级播放器组件，对点播和直播 SDK 进行了二次封装，可以方便你快速简单集成。目前是 Beta 版本，功能还在完善中。详细使用例子可以参见`DemoSuperplayer`。
+- [超级播放器组件](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E6%92%AD%E6%94%BE%E5%99%A8%E7%BB%84%E4%BB%B6-EN.md)：`SuperPlayerController` 超级播放器组件，对点播和直播 SDK 进行了二次封装，可以方便你快速简单集成。目前是 Beta 版本，功能还在完善中。详细使用例子可以参见`DemoSuperplayer`。
 
 ## 快速集成
 
