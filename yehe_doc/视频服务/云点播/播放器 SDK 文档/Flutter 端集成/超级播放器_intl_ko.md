@@ -11,13 +11,13 @@ RT-Cube·Player SDK는 Tencent Cloud의 강력한 백엔드 기능과 AI 기술�
 
 이 프로젝트는 자신의 재생 서비스를 설정하는 데 사용할 수 있는 VOD 및 라이브 플레이어 SDK를 제공합니다:
 
-- [VOD 플레이어 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md): `TXVodPlayerController`는 Android 및 iOS용 VOD 플레이어 SDK의 API를 캡슐화합니다. `TXVodPlayerController`를 통합하여 VOD 서비스를 개발할 수 있습니다. 자세한 코드 샘플은 `DemoTXVodPlayer`를 참고하십시오.
+- [VOD 플레이어 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE-EN.md): `TXVodPlayerController`는 Android 및 iOS용 VOD 플레이어 SDK의 API를 캡슐화합니다. `TXVodPlayerController`를 통합하여 VOD 서비스를 개발할 수 있습니다. 자세한 코드 샘플은 `DemoTXVodPlayer`를 참고하십시오.
 
-- [라이브 플레이어 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md): `TXLivePlayerController`는 Android 및 iOS용 라이브 플레이어 SDK의 API를 캡슐화합니다. `TXLivePlayerController`를 통합하여 라이브 재생 서비스를 개발할 수 있습니다. 자세한 코드 샘플은 `DemoTXLivePlayer`를 참고하십시오.
+- [라이브 플레이어 SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE-EN.md): `TXLivePlayerController`는 Android 및 iOS용 라이브 플레이어 SDK의 API를 캡슐화합니다. `TXLivePlayerController`를 통합하여 라이브 재생 서비스를 개발할 수 있습니다. 자세한 코드 샘플은 `DemoTXLivePlayer`를 참고하십시오.
 
 연결 비용을 줄이기 위해 example로 Superplayer 컴포넌트(UI가 있는 플레이어)가 제공됩니다. 몇 줄의 간단한 코드를 기반으로 자신의 비디오 재생 서비스를 설정할 수 있습니다. Superplayer 코드를 프로젝트에 적용하고 프로젝트 요구 사항에 따라 UI 및 인터랙션 세부 정보를 조정할 수 있습니다.
 
-- [Superplayer 컴포넌트](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E8%B6%85%E7%BA%A7%E6%92%AD%E6%94%BE%E5%99%A8.md): `SuperPlayerController`는 VOD와 라이브 플레이어 SDK를 결합한 Superplayer 컴포넌트입니다. 현재 베타 테스트 중이며 기능이 최적화되고 있습니다. 자세한 코드 샘플은 DemoSuperplayer를 참고하십시오.
+- [Superplayer 컴포넌트](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E6%92%AD%E6%94%BE%E5%99%A8%E7%BB%84%E4%BB%B6-EN.md): `SuperPlayerController`는 VOD와 라이브 플레이어 SDK를 결합한 Superplayer 컴포넌트입니다. 현재 베타 테스트 중이며 기능이 최적화되고 있습니다. 자세한 코드 샘플은 DemoSuperplayer를 참고하십시오.
 
 ## 빠른 통합
 
