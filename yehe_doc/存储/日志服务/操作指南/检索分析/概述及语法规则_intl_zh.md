@@ -31,7 +31,7 @@
  - [配置索引](https://intl.cloud.tencent.com/document/product/614/39594) 时为需要检索的字段开启了键值索引且**开启统计**。
 
 
-
+<span id="RetrievesConditionalRules"></span>
 ## 检索条件语法规则
 
 ### 语法规则
@@ -102,7 +102,7 @@
 - 使用 SQL中的 LIKE 语法：例如 `* | select * where host like '%test%'`，但这种方式相比检索条件性能较差，不适合日志数据量过大的场景。
 
 
-
+<span id="SQLRules"></span>
 ## SQL 语句语法规则
 
 ### 语法规则
@@ -119,14 +119,17 @@
 | [嵌套子查询](https://intl.cloud.tencent.com/document/product/614/42718) | 针对一些复杂的统计分析场景，需要先对原始数据进行一次统计分析，再针对该分析结果进行二次统计分析，这时候需要在一个 SELECT 语句中嵌套另一个 SELECT 语句，这种查询方式称为嵌套子查询。例如`* | select compare(PV, 86400) from (select count(*) as PV)` |
 
 >!
->- SQL 语句对大小写不敏感，`SELECT`等效于`select`。
->- 单引号`''`表示字符串，双引号`""`表示字段和别名。
->- 不需要在末尾加分号表示 SQL 结束。
+> - SQL 语句对大小写不敏感，SELECT 等效于 `select`。
+> - 字符串必须使用单引号`''`包裹，无符号包裹或被双引号`""`包裹的字符表示字段或列名。例如`'status'`表示字符串 status，`status`或`"status"`表示日志字段 status。
+> - 字符串内本身包含单引号`'`时，需使用`''`（两个单引号）代表单引号本身。例如`'{''version'': ''1.0''}'`表示原始字符串{'version': '1.0'}。字符串内本身包含双引号`"`时无需特殊处理。
+> - 不需要在末尾加分号表示 SQL 结束。
+> 
+
 
 
 ### SQL 函数
 
-日志服务支持大量的 SQL 函数，全部函数详见 [SQL函数](https://intl.cloud.tencent.com/document/product/614/36745)，此处列举一些常用的函数：
+日志服务支持大量的 SQL 函数，全部函数详见 [SQL 函数](https://www.tencentcloud.com/document/product/614/36745)，此处列举一些常用的函数：
 
 | 语法 | 说明 |
 | ------------------------------------------------------------ | ----------------------------------------------------------- |
@@ -187,5 +190,5 @@
 
 - [检索不到日志](https://intl.cloud.tencent.com/document/product/614/38446)
 - [检索条件不生效](https://intl.cloud.tencent.com/document/product/614/45244)
-- [检索结果不准确](https://intl.cloud.tencent.com/document/product/614/42754)
+- [检索结果不准确](https://intl.cloud.tencent.com/document/product/614/38446)
 - [检索分析报错](https://intl.cloud.tencent.com/document/product/614/44224)
