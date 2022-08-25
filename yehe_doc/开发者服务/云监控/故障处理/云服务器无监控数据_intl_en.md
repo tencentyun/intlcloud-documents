@@ -161,7 +161,7 @@ Tencent Cloud provides reliable private network DNS servers in different regions
 3. Right-click **Ethernet** and select **Properties** to open the **Ethernet Properties** window.
 4. In the **Ethernet Properties** window, double-click **Internet Protocol Version 4 (TCP/IPv4)** as shown below:
    ![](https://main.qcloudimg.com/raw/58280feb376db039922bfe7cdbbc49c5.png)
-5. Select **Use the following DNS server addresses** and modify the DNS IP based on the corresponding region in the [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225) list. After the modification, click **OK**.
+5. Select **Use the following DNS server addresses** and modify the DNS IP based on the corresponding region in the [Private Network Access > Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225) list. After the modification, click **OK**.
    ![](https://main.qcloudimg.com/raw/2252fbae5a0ed17fcd9dcd981183b486.png)
 6. If the method above does not work, you can add the following configuration to the `C:\Windows\System32\drivers\etc\hosts` file:
    ```
@@ -205,7 +205,7 @@ cd /usr/local/qcloud/monitor/barad/admin
 After the CVM instance is shut down, the instance's agents will be taken offline and thus no data will be reported.
 When you perform CVM Ops operations such as restart, upgrade, reinstallation, or image creation through the CVM console or through logging in to the CVM instance, the reporting of the CVM monitoring data may time out and the agents will be taken offline.
 
-**Troubleshooting:** you can access the detail page of the CVM instance and view the operation logs to determine whether any relevant Ops operations were performed on the CVM instance at that time.
+**Troubleshooting:** You can access the detail page of the CVM instance and view the operation logs to determine whether any relevant Ops operations were performed on the CVM instance at that time.
 
 ![](https://main.qcloudimg.com/raw/9b38b21ec502a64a27785777c5892f9b.png)
 
