@@ -380,3 +380,6 @@ We offer API examples for different platforms to help you quickly learn how to u
     </a>
 </div>
 
+
+## Questions & Feedback
+If you have any questions, join our Telegram group chat to talk to our engineers.
