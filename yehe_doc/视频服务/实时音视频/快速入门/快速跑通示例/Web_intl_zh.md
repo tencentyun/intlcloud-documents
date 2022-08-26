@@ -21,10 +21,7 @@ TRTC Web SDK 基于 WebRTC 实现，目前支持桌面端和移动端的主流�
 | 本地开发环境 | file:///         | 支持       | 支持       | 支持     |     -     |
 
 ### 防火墙限制
-TRTC Web SDK 依赖以下端口及域名进行数据传输，请将其加入防火墙白名单。配置完成后，您可以通过访问并体验 [官网 Demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) 检查配置是否生效。具体请参见 [应对防火墙限制相关](https://intl.cloud.tencent.com/document/product/647/35164)。
-- TCP 端口：8687
-- UDP 端口：8000，8080，8800，843，443，16285
-- 域名：`*.rtc.qq.com`，`yun.tim.qq.com`
+在使用 TRTC Web SDK 时，用户可能因防火墙限制导致无法正常进行音视频通话，请参考 [应对防火墙限制相关](https://www.tencentcloud.com/document/product/647/35164) 将相应端口及域名添加至防火墙白名单中。
 
 
 ## 前提条件
@@ -87,6 +84,7 @@ TRTC Web 快速运行 Demo (Vue3 版本) 集成了 TRTC Web SDK 的基础音视�
 
 3. 运行 Demo：
 使用 Chrome 浏览器打开 Demo 根目录下的 `index.html` 文件即可运行 Demo。
+
 <dx-alert infotype="notice">
 <li>一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口` 访问。</li>
 <li>目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。</li></dx-alert>
