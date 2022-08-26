@@ -193,10 +193,10 @@ TRTC SDK 6.6(Web SDK 4.0) 버전(2019년 08월)부터 새로운 서명 알고리
       ![](https://main.qcloudimg.com/raw/fbb69de98ae6ec0c6e1d09c8d95d57b7/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)5-%E8%BF%94%E8%BF%98.png)
 
 ### 2. 클라이언트에서 ‘RtcError: no valid ice candidate found’ 오류가 발생합니다. 어떻게 처리해야 합니까?
-해당 오류는 TRTC Web SDK STUN 홀 펀칭 실패 시 발생합니다. [환경 요건](#requirements)에 따라 방화벽 설정을 확인해 주십시오.
+해당 오류는 TRTC Web SDK STUN 홀 펀칭 실패 시 발생합니다. [방화벽 제한 처리](https://www.tencentcloud.com/ko/document/product/647/35164)에 따라 방화벽 설정을 확인해 주십시오.
 
 ### 3. 클라이언트에서 ‘RtcError: ICE/DTLS Transport connection failed’ 또는 ‘RtcError: DTLS Transport connection timeout’ 오류가 발생합니다. 어떻게 처리해야 합니까?
-해당 오류는 TRTC Web SDK MediaConnect 터널 구축 실패 시 발생합니다. [환경 요건](#requirements)에 따라 방화벽 설정을 확인해 주십시오.
+해당 오류는 TRTC Web SDK MediaConnect 터널 구축 실패 시 발생합니다. [방화벽 제한 처리](https://www.tencentcloud.com/ko/document/product/647/35164)에 따라 방화벽 설정을 확인해 주십시오.
 
 ### 4. 10006 error가 발생합니다. 어떻게 처리해야 합니까?
 ‘Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it’ 오류가 발생하는 경우 TRTC 애플리케이션의 서버 상태가 정상인지 확인합니다.
