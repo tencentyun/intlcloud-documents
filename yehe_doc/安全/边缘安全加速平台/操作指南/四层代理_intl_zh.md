@@ -9,7 +9,7 @@
 
 ## 新建四层代理服务
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**四层代理**。
-2. 在流量分析页面，选择所需站点，单击**新建四层代理服务**。
+2. 在四层代理页面，选择所需站点，单击**新建四层代理服务**。
 3. 在新建四层代理服务页面，配置**服务配置**参数。
 ![](https://qcloudimg.tencent-cloud.cn/raw/8486449940ac85f2af3802548c9a0dae.png)
 
@@ -19,7 +19,7 @@
     - CNAME（推荐）：采用 CNAME 作为接入地址，DDoS 防护能力更强，支持就近接入加速及四层转发加速。
     - Anycast IP：采用 Anycast IP 作为接入地址，支持 DDoS 防护及四层转发加速。
 >?如果 Host 同时开启了站点加速，调度模式只能选择 CNAME。
->
+
  - 代理模式：配置四层代理模式。
     - DDoS 高防：三四层 DDoS 防护能力。默认启用，无法关闭，您可前往 [DDoS防护](https://console.cloud.tencent.com/edgeone/security/ddos) 页面修改默认 DDoS 策略。
     - 四层加速：四层转发加速功能，降低网络传输时延。可选择开启/关闭。
@@ -32,9 +32,9 @@
  - 转发协议：支持选择 TCP/UDP。
  - 转发端口：支持端口范围1-64999（除去36000和56000），支持输入多个端口，用分号隔开，支持连字符输入端口段，一个转发规则最多可输入20个端口。
 >?如果 Host 同时开启了站点加速，则转发端口不能包含 80/443。
->
+
  - 源站类型/源站信息：
-    - 手动添加：手动以**源站地址:端口**的格式输入源站信息，支持输入多个源站，用分号隔开。
+    - 单一源站：手动以**源站地址:端口**的格式输入源站信息，支持输入多个源站，用分号隔开。
     - 源站组：从已有的 [源站组](https://intl.cloud.tencent.com/document/product/1145/46159) 中选择源站，只能选中带有回源端口信息的源站组，也可以在此新建源站组。
  - 传递客户端 IP：选择四层代理节点回源时，真实客户端 IP 的携带方式。
      - TOA：通过 TCP Option (type 200) 传递客户端 IP。支持 TCP 协议，不支持 UDP 协议。
@@ -47,19 +47,20 @@
 ## 批量导入转发规则[](id:batch)
 新建或查看四层代理服务时，支持批量导入转发规则。
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**四层代理**。
-2. 在流量分析页面，选择所需站点，单击**新建四层代理服务**。
+2. 在四层代理页面，选择所需站点，单击**新建四层代理服务**。
 3. 在新建四层代理服务页面的转发规则模块中，单击**批量导入**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/1fc717b9c79c057b1fddd1d8dddb93a3.png)
 4. 在批量导入转发规则窗口中，输入所需规则，单击**提交**。
-![](https://qcloudimg.tencent-cloud.cn/raw/f71aa062bb33e7a1343b88fe75017d18.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f71aa062bb33e7a1343b88fe75017d18.png" style="zoom:80%;" />
+
  - 批量导入格式说明：
      - 一行对应一条转发规则，最多可输入 100 条。
      - 每行包含 4 个字段，字段之间以空格分开，不区分大小写。
      - 字段含义从左到右依次为：
       - 转发协议:端口，如 tcp:123。
-      - 源站信息，单一源站输入格式为test.origin.com:456，源站组输入格式为 og:OriginGroupName。
-      - 传递IP方式，可输入 TOA/PPv1/PPv2/off。
+      - 源站信息，单一源站输入格式为 test.origin.com:456，源站组输入格式为 og:OriginGroupName。
       - 会话保持状态，可输入 on/off。
+      - 传递 IP 方式，可输入 TOA/PPv1/PPv2/off。
  - 输入示例： 
 ```js.
 tcp:123 test.origin.com:456 on ppv1

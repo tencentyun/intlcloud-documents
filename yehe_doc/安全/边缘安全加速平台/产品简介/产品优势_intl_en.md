@@ -1,7 +1,7 @@
 ## Integrated Platform
 EdgeOne is an integrated edge security and acceleration platform offering 3D protection from layers 3 to 7.
-- Anti-DDoS: It detects and cleanses DDoS attack traffic and guarantees the business availability based on diverse measures, for example, IP blocklist/allowlist and port blocking policies. Up to 2 Tbps protection bandwidth is provided.
-- Rate limit: It uses mechanisms such as HTTP field match and access frequency monitoring to effectively cleanse CC attack traffic. Up to 70K QPS is provided.
+- Anti-DDoS: It detects and cleanses DDoS attack traffic and guarantees the business availability based on diverse measures, for example, IP blocklist/allowlist and port blocking policies.
+- Rate limit: It uses mechanisms such as HTTP field match and access frequency monitoring to effectively cleanse CC attack traffic.
 - Web security protection: It effectively prevents top 10 OWASP web ricks like SQL injection and cross-site scripting (XSS) and quickly identifies and blocks bot behaviors.
 - API security protection: It guarantees API access security based on a secure and reliable access authentication mechanism.
 
@@ -25,7 +25,7 @@ Based on many years of experience in CC attack prevention and research on cuttin
 
  
 #### Automatic API recognition
-An accurate automatic API recognition model is set up based on characteristic comparison in multiple dimensions such as UA, root directory, and CGI through in-depth analysis of big data. It can automatically recognize APIs to avoid mistakenly killing normal APIs and apps, greatly improving the API protection capabilities.
+An accurate automatic API recognition model is set up based on characteristic comparison in multiple dimensions such as UA, root directory, and CGI through in-depth analysis of big data. It can automatically recognize APIs to avoid mistakenly killing APIs, greatly improving the API protection capabilities.
 
 #### Attack backtracking
 As an important component in response during and after security events, attack backtracking analyzes and collects evidence from the attack traffic to reveal the attack means used by attackers and get important information like attack source IPs and attack methods. This helps with subsequent protection policy adjustment and attack source tracing to avoid secondary attacks.

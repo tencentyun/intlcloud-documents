@@ -1,5 +1,5 @@
 ### What connection methods does EdgeOne support?
-It supports connection over TCP and UDP at layer 4 and connection over domain at layer 7.
+EdgeOne supports NS and CNAME connection.
 
 ### What security capabilities does EdgeOne have?
 It can prevent web application layer, DDoS, CC, bot, and crawler attacks and allows you to configure complicated custom access control rules based on your business needs.
@@ -7,7 +7,7 @@ It can prevent web application layer, DDoS, CC, bot, and crawler attacks and all
 ### Does EdgeOne support line acceleration in each region?
 If you run your business in different regions, you may easily encounter problems such as network jitters and packet losses in cross-region and cross-ISP data transfer. EdgeOne deploys edge nodes in multiple regions outside the Chinese mainland to fully meet your cross-region business needs. For specific available regions, [contact us](https://intl.cloud.tencent.com/contact-us).
 
-### Does EdgeOne provide protection for businesses deployed outside Tencent Cloud?
+### Does EdgeOne allow non-Tencent Cloud business?
 Yes. For more details, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
 ### Does EdgeOne support API operations?
