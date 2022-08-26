@@ -11,33 +11,33 @@ This document summarizes the FAQs, causes, and solutions regarding EKS clusters.
 
 ### How do I create or modify the container network of an EKS cluster?[](id:FAQ2)
 
-When creating a cluster, you need to select a VPC as the cluster network and specify a subnet as the container network. For more information, see [Notes on the Container Network](https://intl.cloud.tencent.com/document/product/457/34048). The Pod of EKS directly occupies an IP address of the container network subnet. When using the cluster, you can create or modify the container network through creating or removing the virtual node. The detailed instructions are shown below.
+When creating a cluster, you need to select a VPC as the cluster network and specify a subnet as the container network. For more information, see [Notes on the Container Network](https://intl.cloud.tencent.com/document/product/457/34048). The Pod of EKS directly occupies an IP address of the container network subnet. When using the cluster, you can create or modify the container network through creating or removing the super node. The detailed instructions are shown below.
 
-#### Step 1: Create a virtual node to add a container network[](id:create)
+#### Step 1: Create a super node to add a container network[](id:create)
 
 1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster for which you need to modify the container network.
-2. On the cluster details page, click **Virtual node** in the left sidebar to enter the **Virtual node** page, and click **Create virtual node**.
-3. On the **Create virtual node** page, select the container network with sufficient IP addresses and click **OK**.
+2. On the cluster details page, click **super node** in the left sidebar to enter the **super node** page, and click **Create super node**.
+3. On the **Create super node** page, select the container network with sufficient IP addresses and click **OK**.
    ![](https://qcloudimg.tencent-cloud.cn/raw/28da152bf95cd0c8eb1898c50955547c.png)
 
 
-#### Step 2: Remove the virtual node to delete the container network
+#### Step 2: Remove the super node to delete the container network
 
 <dx-alert infotype="notice" title=" ">
-Make sure that at least one virtual node remains in the elastic cluster after the removal. If there is only one virtual node, you cannot remove it.
+Make sure that at least one super node remains in the elastic cluster after the removal. If there is only one super node, you cannot remove it.
 </dx-alert>
 
-Before removing a virtual node, you need to drain all Pods on it (excluding those managed by DaemonSet) to other virtual nodes. After the draining is completed, you can remove the virtual node; otherwise, the removal will fail. The detailed directions are as shown below.
+Before removing a super node, you need to drain all Pods on it (excluding those managed by DaemonSet) to other super nodes. After the draining is completed, you can remove the super node; otherwise, the removal will fail. The detailed directions are as shown below.
 
-1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster from which you need to remove the virtual node.
-2. On the cluster details page, select **Virtual node** in the left sidebar, and click **More** > **Drain** on the right of the node name.
+1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster from which you need to remove the super node.
+2. On the cluster details page, select **Super node** in the left sidebar, and click **More** > **Drain** on the right of the node name.
    ![](https://qcloudimg.tencent-cloud.cn/raw/e6f6450c760f8d76f5b45146b74238d8.png)
 3. In the **Drain node** window, click **OK**.
    <dx-alert infotype="notice" title=" ">
    Note that Pods will be rebuilt once the node is drained.
    </dx-alert>
     After the node is drained, it will enter the "Blocked" status, and no more Pods can be scheduled to it.
-4. On the **Virtual node** page, click **Remove** on the right of the node name.
+4. On the **Super node** page, click **Remove** on the right of the node name.
 5. In the **Delete node** pop-up window, click **OK**.
 
 ---
@@ -54,7 +54,7 @@ When a Pod fails to be scheduled due to insufficient subnet IP addresses, you ca
 
 
 
-You can query the YAML of the virtual node in the [TKE console](https://console.cloud.tencent.com/tke2/ecluster?rid=1) or by running the following command in the command line tool.
+You can query the YAML of the super node in the [TKE console](https://console.cloud.tencent.com/tke2/ecluster?rid=1) or by running the following command in the command line tool.
 
 ```sh
 kubectl get nodes -oyaml
@@ -79,7 +79,7 @@ spec:
       type: NetworkUnavailable
 ```
 
-It shows that the Pod fails to be scheduled due to insufficient subnet IP addresses of the container network. In this case, you need to create virtual nodes to add subnets and available IP ranges. For how to create a virtual node, see [Creating Virtual Node](#create).
+It shows that the Pod fails to be scheduled due to insufficient subnet IP addresses of the container network. In this case, you need to create super nodes to add subnets and available IP ranges. For how to create a super node, see [Creating Super Node](#create).
 
 ---
 
