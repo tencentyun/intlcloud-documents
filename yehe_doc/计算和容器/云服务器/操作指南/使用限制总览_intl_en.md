@@ -1,12 +1,8 @@
 ## Account-level Limits for Purchasing CVM Instances
 
-<<<<<<< HEAD
-- A Tencent Cloud account is required. For more information, see [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
-- If you create a pay-as-you-go CVM instance, the system will freeze the cost of one-hour CVM usage. Make sure that your account has sufficient balance for the order.
-=======
 - You need to sign up for a Tencent Cloud account. For more information, see [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
 - If you create a pay-as-you-go CVM, the system will freeze the cost of one-hour CVM usage. Make sure that your account has sufficient balance for the order.
->>>>>>> 31327dfb17d3a2dd7011d541986fb32a296f54c9
+
 
 ## CVM Instance Use Limits
 
