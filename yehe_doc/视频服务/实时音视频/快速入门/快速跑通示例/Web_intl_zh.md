@@ -192,10 +192,10 @@ TRTC SDK 6.6（Web SDK 4.0）版本（2019年08月）开始启用新的签名算
       ![](https://main.qcloudimg.com/raw/fbb69de98ae6ec0c6e1d09c8d95d57b7/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)5-%E8%BF%94%E8%BF%98.png)
 
 ### 2. 出现客户端错误：“RtcError: no valid ice candidate found”该如何处理？
-出现该错误说明 TRTC Web SDK 在 STUN 打洞失败，请根据 [环境要求](#requirements) 检查防火墙配置。
+出现该错误说明 TRTC Web SDK 在 STUN 打洞失败，请根据 [应对防火墙限制相关](https://www.tencentcloud.com/document/product/647/35164) 检查防火墙配置。
 
 ### 3. 出现客户端错误："RtcError: ICE/DTLS Transport connection failed" 或 “RtcError: DTLS Transport connection timeout”该如何处理？
-出现该错误说明 TRTC Web SDK 在建立媒体传输通道时失败，请根据 [环境要求](#requirements) 检查防火墙配置。
+出现该错误说明 TRTC Web SDK 在建立媒体传输通道时失败，请根据 [应对防火墙限制相关](https://www.tencentcloud.com/document/product/647/35164) 检查防火墙配置。
 
 ### 4. 出现10006 error 该如何处理？
 如果出现"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"，请确认您的实时音视频应用的服务状态是否为正常状态。
