@@ -21,10 +21,7 @@ The TRTC SDK for web is based on WebRTC, which was originally released by Google
 | Local development | file:///         | Supported         | Supported         | Supported     |      |
 
 ## Firewall Configuration
-The TRTC SDK for Web uses the following ports for data transfer, which should be added to the whitelist of the firewall.
-- TCP port: 8687
-- UDP ports: 8000, 8080, 8800, 843, 443, 16285
-- Domain name: qcloud.rtc.qq.com
+Firewall restrictions may cause audio/video calls to fail. To avoid this, add the ports and domains specified in [Firewall Restrictions]( https://www.tencentcloud.com/document/product/647/35164) to the allowlist of your firewall.
 
 ## Integrating the TRTC SDK for Web
 

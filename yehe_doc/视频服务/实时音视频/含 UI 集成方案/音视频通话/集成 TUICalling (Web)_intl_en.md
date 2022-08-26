@@ -166,10 +166,7 @@ The component does not support login of multiple instances or **offline signalin
 ### What are the environment requirements?
 The desktop version of Chrome offers better support for the features of the TRTC web SDK; therefore, Chrome is recommended for the demo.
 
-`TRTCCalling` uses the following ports and domain name for data transfer, which should be added to the allowlist of the firewall. After configuration, please use the [official demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html) to check whether the configuration has taken effect.
-- **TCP port**: 8687
-- **UDP ports**: 8000, 8080, 8800, 843, 443, 16285
-- **Domain name**: qcloud.rtc.qq.com. For details, see [Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
+- Firewall restrictions may cause audio/video calls to fail. To avoid this, add the ports and domains specified in [Firewall Restrictions]( https://www.tencentcloud.com/document/product/647/35164) to the allowlist of your firewall.
 - **Supported platforms**: Currently, this solution supports the following platforms:
 <table>
 <thead><tr><th>OS</th><th> Browser</th><th>Minimum Browser Version Requirement</th></tr></thead>

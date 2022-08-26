@@ -195,10 +195,7 @@ The table below lists the supported domain names and protocols.
 | Local development | `http://[local IP address]`  | Supported         | Not supported       | Not supported   |   -   |
 
 ### Firewall configuration
-`TUIPusher` and `TUIPlayer` rely on the following ports and domain for data transfer, which should be added to the allowlist of your firewall.
-- TCP port: 8687
-- UDP ports: 8000, 8080, 8800, 843, 443, 16285
-- Domain name: qcloud.rtc.qq.com
+Firewall restrictions may cause audio/video calls to fail. To avoid this, add the ports and domains specified in [Firewall Restrictions]( https://www.tencentcloud.com/document/product/647/35164) to the allowlist of your firewall.
 
 ## Summary
 In future versions, we plan to add support for communication between the web components and TRTC native SDKs (such as the iOS SDK and Android SDK), as well as introduce features such as co-anchoring, advanced filters, custom layout, relaying to multiple platforms, and image/text/music upload.

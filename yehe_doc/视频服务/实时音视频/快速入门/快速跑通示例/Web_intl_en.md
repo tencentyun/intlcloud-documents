@@ -21,10 +21,7 @@ Because of the security policies of browsers, when you use WebRTC, there are req
 | Local development | file:///         | Supported         | Supported         | Supported     |   -   |
 
 ### Firewall configuration
-The TRTC web SDK uses the following ports and domain names for data transfer, which should be added to the allowlist of your firewall. You can use our [demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) to check whether the configuration has taken effect. For details, see [Dealing with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
-- TCP port: 8687
-- UDP ports: 8000, 8080, 8800, 843, 443, 16285
-- Domain names: `*.rtc.qq.com`, `yun.tim.qq.com`
+Firewall restrictions may cause audio/video calls to fail. To avoid this, add the ports and domains specified in [Firewall Restrictions]( https://www.tencentcloud.com/document/product/647/35164) to the allowlist of your firewall.
 
 
 ## Prerequisites
@@ -87,6 +84,7 @@ Directory: `TRTC_Web/base-js`
 
 3. Run the demo:
 Open `index.html` in the root directory of the demo with Chrome to run the demo.
+
 <dx-alert infotype="notice">
 <li>Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.</li>
 <li>Currently, the desktop version of Chrome offers better support for the features of the TRTC web SDK; therefore, Chrome is recommended.</li></dx-alert>
@@ -191,10 +189,10 @@ Upgrade/Switch:
       ![](https://main.qcloudimg.com/raw/fbb69de98ae6ec0c6e1d09c8d95d57b7/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)5-%E8%BF%94%E8%BF%98.png)
 
 ### 2. What should I do if the client error "RtcError: no valid ice candidate found" occurs?
-This error indicates that the TRTC web SDK failed with regard to hole punching via Session Traversal Utilities for NAT (STUN). Please check your firewall configuration against the [Environment Requirements](#requirements).
+This error indicates that the TRTC web SDK failed with regard to hole punching via Session Traversal Utilities for NAT (STUN). Please check your firewall configuration against the [Firewall Restrictions](https://www.tencentcloud.com/document/product/647/35164).
 
 ### 3. What should I do if the client error "RtcError: ICE/DTLS Transport connection failed" or "RtcError: DTLS Transport connection timeout" occurs?
-It indicates that the TRTC web SDK failed to establish a media transmission channel. Please check your firewall configuration against the [Environment Requirements](#requirements).
+It indicates that the TRTC web SDK failed to establish a media transmission channel. Please check your firewall configuration against the [Firewall Restrictions](https://www.tencentcloud.com/document/product/647/35164).
 
 ### 4. What should I do if a 10006 error occurs?
 If the error "Join room failed result: 10006 error: service is suspended, if charge is overdue,renew it" occurs, check whether the TRTC service status for your application is “normal”.

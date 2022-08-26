@@ -23,10 +23,7 @@ WebRTC 技术由 Google 最先提出， Chrome 、Edge 、 Firefox、Safari 、O
 | 本地开发环境 | file:///         | 支持         | 支持         | 支持     |      |
 
 ## 防火墙限制
-TRTC Web SDK 依赖以下端口进行数据传输，请将其加入防火墙白名单。
-- TCP 端口：8687
-- UDP 端口：8000，8080，8800，843，443，16285
-- 域名：qcloud.rtc.qq.com
+在使用 TRTC Web SDK 时，用户可能因防火墙限制导致无法正常进行音视频通话，请参考 [应对防火墙限制相关](https://www.tencentcloud.com/document/product/647/35164) 将相应端口及域名添加至防火墙白名单中。
 
 ## 集成 TRTC Web SDK
 
