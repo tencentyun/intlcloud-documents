@@ -8,5 +8,5 @@ To conduct financial accounting by projects, please take the following into the 
 ### Notes
 
 1. We recommend you allocate all the resources in a cluster to the same project.
-2. If you need to distribute the CVMs in a cluster to different projects, go to the CVM Console to migrate projects.
-3. If CVMs belong to different projects, they belong to different `security group instances`. Try to configure the same `security group rules` for the CVMs in the same cluster.
+2. If you need to distribute the CVMs in a cluster to different projects, go to the CVM Console to migrate projects. For more information, see [Adjusting Project Configuration](https://intl.cloud.tencent.com/document/product/213/16514).
+3. If CVMs belong to different projects, they belong to different `security group instances`. Try to configure the same `security group rules` for the CVMs in the same cluster. For more information, see [Changing Security Group](https://intl.cloud.tencent.com/document/product/213/16564).
