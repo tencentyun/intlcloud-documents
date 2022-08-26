@@ -1,7 +1,7 @@
 ## TkeServiceConfig
 `TkeServiceConfig` is a custom resource definition (CRD) provided by TKE to help you manage the various configurations of CLB with an Ingress more flexibly.
 
-### Use cases
+### Use cases 
 The CLB parameters and features that cannot be defined by the semantics of `Ingress YAML` can be configured through `TkeServiceConfig`.
 
 ### Configuration instructions
@@ -26,7 +26,7 @@ There can be multiple domain names under each layer-7 listener and multiple forw
 
 
 ## Association between Ingress and TkeServiceConfig
-1. If you set `**ingress.cloud.tencent.com/tke-service-config-auto:&lt;true&gt;**` when creating an Ingress, `&lt;IngressName>-auto-ingress-config` will be created automatically. You can also specify the `TkeServiceConfig` you created on your own directly through `**ingress.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**`. The two annotations cannot be used at the same time. 
+1. If you set `ingress.cloud.tencent.com/tke-service-config-auto:&lt;true&gt;` when creating an Ingress, `&lt;IngressName>-auto-ingress-config` will be created automatically. You can also specify the `TkeServiceConfig` you created on your own directly through `ingress.cloud.tencent.com/tke-service-config:&lt;config-name&gt;`. The two annotations cannot be used at the same time.  
 2. The name of the custom configuration you use for a Service/Ingress cannot be suffixed with `-auto-service-config` or `-auto-ingress-config`.
 3. The automatically created `TkeServiceConfig` has the following sync behaviors:
   - When a layer-7 forwarding rule is added during Ingress resource update, `Ingress-Controller` will automatically add the corresponding `TkeServiceConfig` configuration segment for the rule if it doesn't exist.
@@ -41,7 +41,7 @@ There can be multiple domain names under each layer-7 listener and multiple forw
   - If the Ingress listener cannot find the corresponding configuration, the listener will not be modified.
   - If the Ingress listener finds the corresponding configuration, but the configuration doesn't contain declared attributes, the listener will not be modified.
 
-## Example
+## Examples
 
 ### Sample deployment: jetty-deployment.yaml
 ```yaml
@@ -172,6 +172,7 @@ spec:
             enable: false
     - protocol: HTTPS
       port: 443
+      defaultServer: "sample.tencent.com" # Default domain name
       domains:
       - domain: "sample.tencent.com"
         rules:
@@ -182,7 +183,8 @@ spec:
             sessionExpireTime: 3600
           healthCheck:
             enable: true
-            intervalTime: 10
+            intervalTime: 10 # `intervalTime` must be greater than `timeout`; otherwise, an error will occur.
+            timeout: 5 # `timeout` must be smaller than `intervalTime`; otherwise, an error will occur.
             healthNum: 2
             unHealthNum: 2
             httpCheckPath: "/checkHealth"

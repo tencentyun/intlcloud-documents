@@ -1,17 +1,17 @@
 
-## Billable Items
+### Billable Items
 The service fees for TKE consists of two parts, **cluster management fees** and **Tencent Cloud service resources fees**.
 - **Cluster management fees**
 >! Tencent Cloud starts charging for managed clusters from 10:00, March 21, 2022 (UTC +8). See [Starting Charging for Managed Clusters](https://intl.cloud.tencent.com/zh/document/product/457/45156).
 >
-**Managed clusters** incur the cluster management fees based on their cluster models. For more information, see [Cluster Management Fees](#cluster).
+**Managed clusters** incur the cluster management fees based on their cluster models. For more information, see [Cluster Management Fees].(#cluster).
 
 - **Tencent Cloud service resources fees**
 Other Tencent Cloud services resources (such as CVM, CBS and CLB) created during the usage of TKE will be charged based on the billing mode for each resource. For more information, see [Tencent Cloud Services Resources Fees](#cloudproducts).
 
 ## Cluster Management Fees[](id:cluster)
 
-### Billing mode
+### Billing Mode
 The billing mode of pay-as-you-go is usually adopted for TKE.
 
 | Billing Item    | Billing Mode | Payment Method                                                     | Billing Unit |
@@ -19,18 +19,17 @@ The billing mode of pay-as-you-go is usually adopted for TKE.
 | Number of clusters | Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis | USD/hour |
 
 ### Recommendations for small clusters
-- If your cluster has only a few nodes (less than 20), we highly recommend you use [Elastic Kubernetes Service](https://intl.cloud.tencent.com/document/product/457/34040) (EKS). With EKS, you can deploy workloads and pay for actual container usage, with no need to purchase nodes and pay cluster management fees.
+- If your cluster has only a small number of nodes (less than 20), we highly recommend you use [Elastic Kubernetes Service](https://intl.cloud.tencent.com/document/product/457/34040) (EKS). With EKS, you can deploy workloads and pay for actual container usage, with no need to purchase nodes and pay cluster management fees.
 - You can choose to migrate your existing TKE clusters as needed in the following ways:
-	- Conduct smooth business migration through [supernodes](https://intl.cloud.tencent.com/document/product/457/39759) to reduce the number of nodes in the TKE cluster and thereby lower the cluster management fees (such fees are not charged for supernodes; for more information, see [Pricing](#price) below).
-	- Completely migrate the TKE cluster to the EKS cluster through the migration tool. For more information, see [Guide on Migrating Resources in a TKE Managed Cluster to an EKS Cluster](https://intl.cloud.tencent.com/document/product/457/47002) . You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
-
+	- Conduct smooth business migration through [super nodes](https://intl.cloud.tencent.com/document/product/457/39759) to reduce the number of nodes in the TKE cluster and thereby lower the cluster management fees (such fees are not charged for super nodes; for more information, see [Pricing](#price) below).
+	- Completely migrate the TKE cluster to the EKS cluster through the migration tool as instructed in [Guide on Migrating Resources in a TKE Managed Cluster to an EKS Cluster](https://intl.cloud.tencent.com/document/product/457/47002). If you encounter any problems, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
 
 
 ### Pricing[](id:price)
 >! 
 >- The unit prices are varied depending on the region. Please refer to the prices displayed in the console. 
-- Please read the [Purchase Instructions](https://intl.cloud.tencent.com/document/product/457/45158) carefully before you choose the specification.
-
+- Read the [Purchase Instructions](https://intl.cloud.tencent.com/document/product/457/45158) carefully before you select the specification.
+>- The billing cycle of a cluster starts when the cluster is created. You can view the cluster creation time by going to the **TKE console** > **Basic Information**.
 
 
 

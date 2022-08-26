@@ -1,14 +1,12 @@
-## 操作场景
 
-集群管理员可使用 StorageClass 为容器服务集群定义不同的存储类型。容器服务已默认提供块存储类型的 StorageClass，您可通过 StorageClass 配合 PersistentVolumeClaim 动态创建需要的存储资源。
 
-本文介绍通过控制台、Kubectl 两种方式创建云硬盘 CBS 类型的 StorageClass，自定义云硬盘使用所需的模板。
+集群管理员可使用 StorageClass 为容器服务集群定义不同的存储类型。容器服务已默认提供块存储类型的 StorageClass，您可通过 StorageClass 配合 PersistentVolumeClaim 动态创建需要的存储资源。本文介绍通过控制台、Kubectl 两种方式创建云硬盘 CBS 类型的 StorageClass，自定义云硬盘使用所需的模板。
 
-## 操作步骤
-### 控制台操作指引
 
-#### 创建 StorageClass[](id:create)
-1. 登录[ 容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧栏中的**集群**。
+## 控制台操作指引
+
+### 创建 StorageClass[](id:create)
+1. 登录[ 容器服务控制台  ](https://console.cloud.tencent.com/tke2)，选择左侧栏中的**集群**。
 2. 在“集群管理”页中，单击需创建 StorageClass 的集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的**存储** > **StorageClass**。如下图所示：
 ![](https://main.qcloudimg.com/raw/9c08551ba5e4fe254cebf30eb34a01e1.png)
@@ -25,12 +23,12 @@
 	- **卷绑定模式**：提供**立即绑定**和**等待调度**两种卷绑定模式，不同模式所支持的卷绑定策略不同，请参考以下信息进行选择：
 		- **立即绑定**：通过该 storageclass 创建的 PVC 将直接进行 PV 的绑定和分配。
 		- **等待调度**：通过该 storageclass 创建的 PVC 将延迟与 PV 的绑定和分配，直到使用该 PVC 的 Pod 被创建。
-	- **定期备份**：设置定期备份可有效保护数据安全，备份数据将产生额外费用，详情请见 [快照概述](https://intl.cloud.tencent.com/document/product/362/31638)。
+	- **定期备份**：设置定期备份可有效保护数据安全，备份数据将产生额外费用，详情请见 [快照概述 ](https://intl.cloud.tencent.com/document/product/362/31638)。
 >? 容器服务默认提供的 default-policy 备份策略的配置包括：执行备份的日期、执行备份的时间点和备份保留的时长。
 >
 5. 单击**新建StorageClass**即可完成创建。
 
-#### 使用指定 StorageClass 创建 PVC[](id:createPVC)
+### 使用指定 StorageClass 创建 PVC[](id:createPVC)
 1. 在“集群管理”页面，选择需创建 PVC 的集群 ID。
 2. 在集群详情页面，选择左侧菜单栏中的**存储** > **PersistentVolumeClaim**，进入 “PersistentVolumeClaim” 信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/1ebfd35584e86e4ca050c03ffc0a979c.png)
@@ -57,7 +55,7 @@
    - **费用**：根据上述参数计算创建对应云盘的所需费用，详情参考 [计费模式](https://intl.cloud.tencent.com/document/product/362/32415)。
 4. 单击**创建PersistentVolumeClaim**，即可完成创建。
 
-#### 创建 StatefulSet 挂载 PVC 类型数据卷
+### 创建 StatefulSet 挂载 PVC 类型数据卷
 >?该步骤以创建工作负载 StatefulSet 为例。
 >
 1. 在目标集群详情页，选择左侧菜单栏中的**工作负载** > **StatefulSet**，进入 “StatefulSet” 页面。
@@ -74,11 +72,11 @@
 4. 单击**创建Workload**，即可完成创建。
 >! 如使用 CBS 的 PVC 挂载模式，则数据卷只能挂载到一台 Node 主机上。
 
-### Kubectl 操作指引
+## Kubectl 操作指引
 您可参考本文提供的示例模板，使用 Kubectl 进行 StorageClass 创建操作。
 
 
-#### 创建 StorageClass
+### 创建 StorageClass
 以下 YAML 文件示例为集群内默认存在 name 为 cbs 的 StorageClass：
 ```yaml
 apiVersion: storage.k8s.io/v1
@@ -88,16 +86,16 @@ metadata:
   #   storageclass.beta.kubernetes.io/is-default-class: "true"
   #   如果有这一条，则会成为 default-class，创建 PVC 时不指定类型则自动使用此类型
    name: cloud-premium
-provisioner: cloud.tencent.com/qcloud-cbs ## TKE 集群自带的 provisioner
+
+# 安装了 CBS-CSI 组件的TKE集群请填写 provisioner 为 com.tencent.cloud.csi.cbs
+# 未安装 CBS-CSI 组件请填写 provisioner 为 cloud.tencent.com/qcloud-cbs
+provisioner: com.tencent.cloud.csi.cbs 
+
 parameters:
    type: CLOUD_PREMIUM
-  # 支持 CLOUD_PREMIUM,CLOUD_SSD,CLOUD_HSSD 如果不识别则当做 CLOUD_PREMIUM
-  # renewflag: NOTIFY_AND_AUTO_RENEW
-  # renewflag为云硬盘的续费模式，NOTIFY_AND_AUTO_RENEW模式支持通知过期且按月自动续费，NOTIFY_AND_MANUAL_RENEW模式支持通知过期但不支持自动续费，DISABLE_NOTIFY_AND_MANUAL_RENEW模式支持不通知过期也不自动续费。不指定该字段则默认为NOTIFY_AND_MANUAL_RENEW模式。
-  # paymode: PREPAID
-  # paymode为云盘的计费模式，PREPAID模式，默认是 POSTPAID（按量计费：支持 Retain 保留和 Delete 删除策略，Retain 仅在高于1.8的集群版本生效）
-  # aspid:asp-123
-  # 支持指定快照策略，创建云盘后自动绑定此快照策略,绑定失败不影响创建
+   renewflag: NOTIFY_AND_AUTO_RENEW
+   paymode: PREPAID
+   aspid: asp-123
 ```
 支持参数如下表：
 <table>
@@ -108,13 +106,13 @@ parameters:
 <td>type</td> <td>包括 CLOUD_PREMIUM（高性能云硬盘）和 CLOUD_SSD（SSD 云硬盘）、CLOUD_HSSD（增强型 SSD 云硬盘）。</td>
 </tr>
 <tr>
-<td>zone</td> <td>用于指定可用区。如果指定，则云硬盘将创建到此可用区。如果不指定，则拉取所有 Node 的可用区信息，进行随机选取。 腾讯云各地域标识符请参见 <a href="https://intl.cloud.tencent.com/document/product/213/6091">地域和可用区</a>。</td>
+<td>zone</td> <td>用于指定可用区。如果指定，则云硬盘将创建到此可用区。如果不指定，则拉取所有 Node 的可用区信息，进行随机选取。  腾讯云各地域标识符请参见 <a href="https://intl.cloud.tencent.com/document/product/213/6091">地域和可用区</a>。</td>
 </tr>
 <tr>
 <td>paymode</td> <td>云硬盘的计费模式，默认设置为 <code>POSTPAID</code> 模式，即按量计费，支持 Retain 保留和 Delete 删除策略，Retain 仅在高于1.8的集群版本生效。</td>
 </tr>
 <tr>
-<td>renewflag</td> <td>云硬盘的续费模式。默认为 <code>NOTIFY_AND_MANUAL_RENEW</code> 模式。<ul><li><code>NOTIFY_AND_AUTO_RENEW</code> 模式代表所创建的云硬盘支持通知过期且按月自动续费。</li><li><code>NOTIFY_AND_MANUAL_RENEW</code> 模式代表所创建的云硬盘支持通知过期但不自动续费。</li><li> <code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code> 模式则代表所创建的云硬盘不通知过期也不自动续费。</li></ul></td>
+<td>renewflag</td> <td>云硬盘的续费模式。默认为 <code>NOTIFY_AND_MANUAL_RENEW</code> 模式。<li><code>NOTIFY_AND_AUTO_RENEW</code> 模式代表所创建的云硬盘支持通知过期且按月自动续费。</li><li><code>NOTIFY_AND_MANUAL_RENEW</code> 模式代表所创建的云硬盘支持通知过期但不自动续费。</li><li> <code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code> 模式则代表所创建的云硬盘不通知过期也不自动续费。</li></td>
 </tr>
 <tr>
 <td>aspid</td> <td>指定快照 ID，创建云硬盘后自动绑定此快照策略，绑定失败不影响创建。</td>
@@ -122,10 +120,11 @@ parameters:
 </table>
 
 
-#### 创建多实例 StatefulSet
+
+### 创建多实例 StatefulSet
 
 使用云硬盘创建多实例 StatefulSet，YAML 文件示例如下：
-<dx-alert infotype="explain" title="">
+<dx-alert infotype="explain" title=" ">
 资源对象的 apiVersion 可能因为您集群的 Kubernetes 版本不同而不同，您可通过 `kubectl api-versions` 命令查看当前资源对象的 apiVersion。
 </dx-alert>
 ```yaml
