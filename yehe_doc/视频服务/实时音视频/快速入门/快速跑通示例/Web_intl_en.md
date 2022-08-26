@@ -21,10 +21,7 @@ Because of the security policies of browsers, when you use WebRTC, there are req
 | Local development | file:///         | Supported         | Supported         | Supported     |   -   |
 
 ### Firewall configuration
-The TRTC web SDK uses the following ports and domain names for data transfer, which should be added to the allowlist of your firewall. You can use our [demo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html) to check whether the configuration has taken effect. For details, see [Dealing with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
-- TCP port: 8687
-- UDP ports: 8000, 8080, 8800, 843, 443, 16285
-- Domain names: `*.rtc.qq.com`, `yun.tim.qq.com`
+Firewall restrictions may cause audio/video calls to fail. To avoid this, add the ports and domains specified in [Firewall Restrictions]( https://www.tencentcloud.com/document/product/647/35164) to the allowlist of your firewall.
 
 
 ## Prerequisites
@@ -87,6 +84,7 @@ Directory: `TRTC_Web/base-js`
 
 3. Run the demo:
 Open `index.html` in the root directory of the demo with Chrome to run the demo.
+
 <dx-alert infotype="notice">
 <li>Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.</li>
 <li>Currently, the desktop version of Chrome offers better support for the features of the TRTC web SDK; therefore, Chrome is recommended.</li></dx-alert>
