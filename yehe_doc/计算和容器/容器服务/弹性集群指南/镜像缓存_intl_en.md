@@ -60,12 +60,33 @@ The image cache add-on needs to be installed in the cluster if you want to creat
 <dx-tabs>
 ::: Creating ImageCache
 Sample:
-```
-kubectl apply -f manifests/samples/eks_v1_imagecache.yaml
+``` yaml
+apiVersion: eks.cloud.tencent.com/v1
+kind: ImageCache
+metadata:
+  name: imagecache-sample
+spec:
+  images:
+    - nginx
+#  imageCacheSize: 30
+  # TODO(user): Add fields here
 ```
 Sample with more parameters:
-```
-kubectl apply -f manifests/samples/eks_v1_imagecache_more_para.yaml
+``` yaml
+apiVersion: eks.cloud.tencent.com/v1
+kind: ImageCache
+metadata:
+  annotations:
+    "eks.tke.cloud.tencent.com/eip-attributes": '{"InternetMaxBandwidthOut":2}' # created automatically eip
+  name: imagecache-sample-more-para
+spec:
+  images:
+    - nginx
+    - mysql
+  imageCacheSize: 30
+  retentionDays: 7
+  imagePullSecrets:
+    - imc-operator-system/qcloudregistrykey
 ```
 :::
 ::: Checking ImageCache
