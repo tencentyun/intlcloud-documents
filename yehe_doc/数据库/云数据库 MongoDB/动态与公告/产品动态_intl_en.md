@@ -1,3 +1,51 @@
+
+## July 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Optimized the purchase process</td>
+<td>The purchase process of TencentDB for MongoDB is optimized to improve the user experience.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/3551">Creating TencentDB for MongoDB Instance</a></td></tr>
+<tr>
+<td>Redesigned the **Instance Details** page</td>
+<td>After purchasing an instance, you can quickly view its details in the console, such as the status, capacity usage, primary/secondary nodes in the cluster, and network status. You can also perform Ops and management operations efficiently.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/44179">Viewing Instance Details</a></td></tr>
+<tr>
+<td>Added the node management feature</td>
+<td>TencentDB for MongoDB allows you to view the instance node information. In addition, it supports node management operations, such as adjusting node specification, promoting replica node to primary node, enabling read-only replica, and configuring primary/secondary failover. You can use node management to efficiently manage instance nodes and locate node exceptions.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/49134">Node Management</a></td></tr>
+</tbody></table>
+
+
+## June 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Supported SSL authentication</td>
+<td>TencentDB for MongoDB supports SSL authentication to implement encrypted data transfer.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/48468" target="">SSL Authentication</td></tr>
+</table>
+
+## May 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Added MongoDB index recommendation</td>
+<td>Real-time log information can be collected and analyzed automatically. The optimal index will be recommended and ranked by its impact on performance, which can be operated online.</td>
+<td><a href="https://cloud.tencent.com/document/product/1130/74591">Index Recommendation</a></td></tr>
+<tr>
+<td>Supported MongoDB SQL throttling</td>
+<td>You can control the database requests and SQL concurrency by restrictions on SQL type, maximum concurrency, throttling duration, and SQL keywords to ensure the fast business restoration when excessive CPU is consumed due to high traffic.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48614">SQL Throttling</a></td></tr>
+<tr>
+<td>Enhanced MongoDB basic capabilities</td>
+<td><li>SQL template samples and detailed template records are added for slow SQL analysis feature.</li><li>Slow SQL details can be queried.</li><li>Top table trend and information are added; top database and table search is supported for space analysis.</li></td>
+<td><a href="">-</a></td></tr>
+</tbody></table>
+
+
 ## March 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
