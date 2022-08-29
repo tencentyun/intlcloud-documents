@@ -1,8 +1,8 @@
-﻿## 前提条件
+## 前提条件
 购买前需要实名认证，请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 ## 控制台购买
-1. 登录 [MySQL 购买页](https://buy.Intl.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击**立即购买**。
+1. 登录 [MySQL 购买页](https://buy.intl.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击**立即购买**。
  - **计费模式**：支持包年包月和按量计费。
     - 若业务量有较稳定的长期需求，建议选择包年包月。
     - 若业务量有瞬间大幅波动场景，建议选择按量计费。
@@ -12,7 +12,7 @@
     - InnoDB：最常用的 OLTP 存储引擎，拥有完整的事务支持与强大的读写高并发能力。
     - RocksDB：key-value 存储引擎，以高效写入能力与高压缩存储著称，选择 RocksDB 引擎后架构为双节点。
   - **架构**：提供双节点、三节点、单节点，各架构介绍请参见 [数据库架构](https://intl.cloud.tencent.com/document/product/236/38328)。
-  - **数据复制方式**：提供异步复制、半同步复制、强同步复制三种方式，请参见?[数据库实例复制](https://intl.cloud.tencent.com/document/product/236/7913)。
+  - **数据复制方式**：提供异步复制、半同步复制、强同步复制三种方式，请参见 [数据库实例复制](https://intl.cloud.tencent.com/document/product/236/7913)。
  - **主可用区和备可用区**：选择主备可用区不同时（即 [多可用区部署](https://intl.cloud.tencent.com/document/product/236/8459)），可保护数据库以防发生故障或可用区中断。
 >?
 >- 主备机处于不同可用区，可能会增加2ms - 3ms的同步网络延迟。
@@ -26,8 +26,9 @@
  - **安全组**：安全组创建与管理请参见 [云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470)。
 >?安全组入站规则需要放通 MySQL 实例的3306端口。MySQL 内网默认端口为3306，同时支持自定义端口，若修改过默认端口号，安全组中需放通 MySQL 新端口信息。
  - **参数模板**：除提供的系统参数模板外，您也可以创建自定义参数模板，请参见 [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906)。
-  - **字符集**：支持 LATIN1 、GBK、UTF8 、UTF8MB4 字符集，默认字符集编码格式是 UTF8。购买完成后，亦可在控制台实例详情页修改字符集，更多说明请参见?[字符集说明](https://intl.cloud.tencent.com/document/product/236/7259)。
+  - **字符集**：支持 LATIN1 、GBK、UTF8 、UTF8MB4 字符集，默认字符集编码格式是 UTF8。购买完成后，亦可在控制台实例详情页修改字符集，更多说明请参见 [字符集说明](https://intl.cloud.tencent.com/document/product/236/7259)。
  - **表名大小写敏感**：表名是否大小写敏感，默认为开启。
+ - **密码复杂度**：支持设置密码复杂度以提升数据库安全性，默认为关闭。更多说明请参见 [设置密码复杂度](https://intl.cloud.tencent.com/document/product/236/49197)。
  - **root密码**：新创建的 MySQL 数据库的用户名默认为 root，此处用来设置该 root 帐号的密码。选择**创建后设置**时，可在创建完实例后再 [重置密码](https://intl.cloud.tencent.com/document/product/236/31901)。
  - **告警策略**：创建告警用于在云产品状态改变时触发警报并发送相关消息，请参见 [告警策略](https://intl.cloud.tencent.com/document/product/236/8457)。
  - **指定项目**：选择数据库实例所属的项目，缺省设置为默认项目。
@@ -40,11 +41,9 @@
 2. 支付完成后，返回实例列表，会看到实例显示**发货中**（大概需要3min - 5min中，请耐心等待），待实例状态变为**运行中**，即可进行正常操作。
 
 ##  API 购买
-通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15871)。
+通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15865)。
 
 ## 后续操作
 [连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37788)
-
-
 
 
