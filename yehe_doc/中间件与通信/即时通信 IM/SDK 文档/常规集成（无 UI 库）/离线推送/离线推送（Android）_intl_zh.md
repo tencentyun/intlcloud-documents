@@ -12,7 +12,7 @@ TUIKitDemo 已经按照如下步骤接入了离线推送功能，文档中已有
 
 ### 步骤1：注册应用到厂商推送平台
 
-离线推送功能依赖厂商原始通道，您需要将自己的应用注册到各个厂商的推送平台，得到 AppID 和 AppKey 等参数。目前支持的手机厂商有：[Google FCM](https://firebase.google.com/) ，[小米](https://dev.mi.com/console/doc/detail?pId=68)、[华为](https://developer.huawei.com/consumer/en/hms/huawei-pushkit)、[OPPO](https://developers.oppomobile.com/newservice/capability?pagename=push)、[VIVO](https://dev.vivo.com.cn/documentCenter/doc/281)、[魅族](http://open-wiki.flyme.cn/doc-wiki/index#id?129) 。
+离线推送功能依赖厂商原始通道，您需要将自己的应用注册到各个厂商的推送平台，得到 AppID 和 AppKey 等参数。目前支持的手机厂商有：[Google FCM](https://firebase.google.com/) ，[小米](https://dev.mi.com/console/doc/detail?pId=68)、[华为](https://developer.huawei.com/consumer/en/hms/huawei-pushkit)、[OPPO](https://developers.oppomobile.com/newservice/capability?pagename=push)、[VIVO](https://dev.vivo.com.cn/documentCenter/doc/281)、魅族 。
 
 
 ### 步骤2：IM 控制台配置
@@ -291,7 +291,7 @@ public class GoogleFCMMsgService extends FirebaseMessagingService {
 ```
 
 - **推送证书和 token 上报后台**
-调用 [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) 接口上报推送 token。构造 V2TIMOfflinePushConfig 类，需设置 businessID 为对应厂商的证书 ID，isTPNSToken 为 false，上报注册厂商推送服务获取的 token。注意：如果使用 [TPNS](https://cloud.tencent.com/document/product/548/36645) 接入离线推送，请设置 isTPNSToken 为 true，上报注册 TPNS 推送服务获取的 token，推送会由 TPNS 提供服务。
+调用 [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) 接口上报推送 token。构造 V2TIMOfflinePushConfig 类，需设置 businessID 为对应厂商的证书 ID，isTPNSToken 为 false，上报注册厂商推送服务获取的 token。注意：如果使用 TPNS 接入离线推送，请设置 isTPNSToken 为 true，上报注册 TPNS 推送服务获取的 token，推送会由 TPNS 提供服务。
 ```
 V2TIMOfflinePushConfig v2TIMOfflinePushConfig = null;
 // 需要设置 businessID 为对应厂商的证书 ID，isTPNSToken 为 false，上报注册厂商推送服务获取的 token。  
@@ -448,8 +448,8 @@ Disacord交流群：[点击加入](https://discord.com/invite/8EmN2ma25W)
 ### 收不到离线推送怎么排查？
 #### 1、OPPO 手机
 OPPO 手机收不到推送一般有以下几种情况：
-- 按照 OPPO 推送官网要求，在 Android 8.0 及以上系统版本的 OPPO 手机上必须配置 ChannelID，否则推送消息无法展示。配置方法可以参见 [OPPO 推送配置](https://cloud.tencent.com/document/product/269/44516#oppo-.E6.8E.A8.E9.80.81)。
-- 在消息中 [透传的离线推送的自定义内容](https://cloud.tencent.com/document/product/269/44516#.E9.80.8F.E4.BC.A0.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.85.E5.AE.B93) 不是 JSON 格式，会导致 OPPO 手机收不到推送。
+- 按照 OPPO 推送官网要求，在 Android 8.0 及以上系统版本的 OPPO 手机上必须配置 ChannelID，否则推送消息无法展示。配置方法可以参见 [OPPO 推送配置](https://intl.cloud.tencent.com/document/product/1047/39156#oppo-.E6.8E.A8.E9.80.81)。
+- 在消息中 [透传的离线推送的自定义内容](https://intl.cloud.tencent.com/document/product/1047/39156#.E9.80.8F.E4.BC.A0.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.85.E5.AE.B93) 不是 JSON 格式，会导致 OPPO 手机收不到推送。
 - OPPO 安装应用通知栏显示默认关闭，需要确认下开关状态。
 
 #### 2、发送消息为自定义消息
