@@ -92,7 +92,7 @@ In the step above, the `CreateAudioModerationTask` API is called to create an au
 	Pay attention to the following:
 
    - **BizType**
-      You can create different moderation policies in [Policy Management](https://console.cloud.tencent.com/cms/livevideo/strategy) of the CMS console. When you activate CMS, a policy whose BizType is `default` is created automatically. You can pass in this value for testing.
+      You can create different moderation policies in [Policy Management](https://console.intl.cloud.tencent.com/cms/video/strategy) of the CMS console. When you activate CMS, a policy whose BizType is `default` is created automatically. You can pass in this value for testing.
       ![](https://qcloudimg.tencent-cloud.cn/raw/a51558764405f17280c46fa8ca90cf97.png)
    - **Type**
       Set this parameter according to the scenario of your TRTC application. For example, for audio chat room, the API of AMS (Audio Moderation System) is used, and you should set this parameter to `LIVE_AUDIO`; for video chat, the API of VMS (Video Moderation System) is used, and you should set this parameter to `LIVE_VIDEO`.
