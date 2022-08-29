@@ -12,7 +12,7 @@ The TUIKit demo has integrated the offline push feature as described below. You 
 
 ### Step 1. Register your app with vendor push platforms
 
-The offline push feature depends on vendors' original channels. You need to register your app with each vendor's push platform to obtain parameters such as `AppID` and `AppKey`. Currently, mobile phone vendors supported are [Google FCM](https://firebase.google.com/), [Mi](https://dev.mi.com/console/doc/detail?pId=68), [Huawei](https://developer.huawei.com/consumer/en/hms/huawei-pushkit), [OPPO](https://developers.oppomobile.com/newservice/capability?pagename=push), [vivo](https://dev.vivo.com.cn/documentCenter/doc/281), and [Meizu](http://open-wiki.flyme.cn/doc-wiki/index#id?129).
+The offline push feature depends on vendors' original channels. You need to register your app with each vendor's push platform to obtain parameters such as `AppID` and `AppKey`. Currently, mobile phone vendors supported are [Google FCM](https://firebase.google.com/), [Mi](https://dev.mi.com/console/doc/detail?pId=68), [Huawei](https://developer.huawei.com/consumer/en/hms/huawei-pushkit), [OPPO](https://developers.oppomobile.com/newservice/capability?pagename=push), [vivo](https://dev.vivo.com.cn/documentCenter/doc/281), and Meizu.
 
 
 ### Step 2. Create resources in the IM console
@@ -291,7 +291,7 @@ public class GoogleFCMMsgService extends FirebaseMessagingService {
 ```
 
 - **Reporting the push certificate and token to the backend**
-Call the [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) API to report the push token. Construct the V2TIMOfflinePushConfig class, where you need to set `businessID` as the certificate ID of the vendor and `isTPNSToken` as `false` and report the token obtained after successful registration of the vendor push service. Note: If you use the offline push service of [TPNS](https://cloud.tencent.com/document/product/548/36645), set `isTPNSToken` as `true` and report the token obtained after successful registration of the TPNS push service. Then, TPNS will provide the push service.
+Call the [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) API to report the push token. Construct the V2TIMOfflinePushConfig class, where you need to set `businessID` as the certificate ID of the vendor and `isTPNSToken` as `false` and report the token obtained after successful registration of the vendor push service. Note: If you use the offline push service of TPNS, set `isTPNSToken` as `true` and report the token obtained after successful registration of the TPNS push service. Then, TPNS will provide the push service.
 ```
 V2TIMOfflinePushConfig v2TIMOfflinePushConfig = null;
 // Set `businessID` as the certificate ID of the vendor and `isTPNSToken` as `false`, and report the token obtained after registration of the vendor push service.  
@@ -448,8 +448,8 @@ SDK v6.1.2155 or a later version supports customizing alert tones on devices of 
 ### How could I troubleshoot if I cannot receive offline push messages?
 #### 1. OPPO devices
 This generally occurs for the following reasons:
-- According to requirements on the official website of OPPO Push, ChannelID must be configured on OPPO mobile phones that run Android 8.0 or later versions. Otherwise, push messages cannot be displayed. For the configuration method, see [OPPO Push configuration](https://cloud.tencent.com/document/product/269/44516#oppo-.E6.8E.A8.E9.80.81).
-- The [custom content in the message for pass-through offline push](https://cloud.tencent.com/document/product/269/44516#.E9.80.8F.E4.BC.A0.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.85.E5.AE.B93) is not in the JSON format. As a result, OPPO mobile phones do not receive push messages.
+- According to requirements on the official website of OPPO Push, ChannelID must be configured on OPPO mobile phones that run Android 8.0 or later versions. Otherwise, push messages cannot be displayed. For the configuration method, see [OPPO Push configuration](https://intl.cloud.tencent.com/document/product/1047/39156#oppo-.E6.8E.A8.E9.80.81).
+- The [custom content in the message for pass-through offline push](https://intl.cloud.tencent.com/document/product/1047/39156#.E9.80.8F.E4.BC.A0.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.85.E5.AE.B93) is not in the JSON format. As a result, OPPO mobile phones do not receive push messages.
 - The notification bar display feature is disabled by default for applications installed on the OPPO device. If this is the case, check the feature button status.
 
 #### 2. Sending custom messages
