@@ -4,7 +4,7 @@ This document describes how to create a TencentDB for MySQL instance in the cons
 ## Prerequisites
 You have registered a Tencent Cloud account and completed identity verification.
 - To register a Tencent Cloud account:
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Click here to sign up for a Tencent Cloud account</a></div>
 - To verify your identity:
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
 
@@ -23,10 +23,10 @@ You have registered a Tencent Cloud account and completed identity verification.
  - **Source AZ** and **Replica AZ**: Select different source and replica AZs (i.e., [multi-AZ deployment](https://intl.cloud.tencent.com/document/product/236/8459)) to protect your database from failures and AZ outages.
 >?
 >- If the source and replica are in different AZs, the network sync delay may increase by 2–3 ms.
->- When purchasing Tencent Cloud services, we recommend you choose the region closest to your end users to reduce access latency and improve download speed.
+>- When you purchase Tencent Cloud services, we recommend you select the region closest to your end users to minimize access latency and improve download speed.
 >
  - **Instance Type**: General or dedicated. For more information, see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
- - **Instance Specification**: Select specifications as needed.
+ - **Instance Specs**: Select specifications as needed.
  - **Hard Disk**: The disk space is used to store the files required by MySQL execution.
  - **Network**: Select the network where the TencentDB for MySQL instance resides, which is "Default-VPC (default)" by default. We recommend you select the same VPC in the same region as the CVM instance to be connected to. Otherwise, the MySQL instance cannot connect to the CVM instance over the private network.
  - **Custom Port**: The database access port, which is 3306 by default.
@@ -35,16 +35,17 @@ You have registered a Tencent Cloud account and completed identity verification.
  - **Parameter Template**: Besides the system parameter template provided by TencentDB, you can create a custom parameter template. For more information, see [Managing Parameter Template](https://intl.cloud.tencent.com/document/product/236/31906).
   - **Character Set**: LATIN1, GBK, UTF8, and UTF8MB4 character sets are supported. The default value is UTF8. After purchasing the instance, you can change the character set on the instance details page in the console. For more information, see [Use Limits > Notes on character set](https://intl.cloud.tencent.com/document/product/236/7259).
  - **Table Name Case Sensitivity**: Whether the table name is case sensitive. The default value is **Enabled**.
+ - **Password Complexity**: You can set the password complexity to improve the database security, which is disabled by default. For more information, see [Setting Password Complexity](https://intl.cloud.tencent.com/document/product/236/49197).
  - **Root Password**: Set the password of the root account (the default user name for a new MySQL database is "root"). If you select **Set After Creation**, you can [reset the password](https://intl.cloud.tencent.com/document/product/236/31901) after creating the instance.
  - **Alarm Policy**: You can create an alarm policy to trigger alarms and send messages when the Tencent Cloud resource state changes. For more information, see [Alarm Policies (Cloud Monitor)](https://intl.cloud.tencent.com/document/product/236/8457).
  - **Project**: Select a project to which the TencentDB instance belongs. The default project is used.
- - **Tag**: Categorize and manage resources with tags. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/236/31917).
+ - **Tag**: Categorize and manage resources with tags. For more information, see [Tag Overview](https://intl.cloud.tencent.com/document/product/236/31917).
  - **Instance Name**: Name the instance now or later.
- - **Quantity**: You can purchase up to 10 pay-as-you-go instances in each AZ.
+ - **Quantity**: You can purchase up to ten pay-as-you-go instances in each AZ.
  - **Purchase Period**: Select the desired duration according to your business needs. The billing mode is monthly subscription, and the longer the purchase period, the higher the discount.
  - **Auto-Renewal**: Auto-renew the device monthly upon expiration if your account has sufficient balance in the monthly subscription billing mode.
  - **Terms of Service**: For more information, see [Terms of Service](https://intl.cloud.tencent.com/document/product/236/35543).
 2. You will be returned to the instance list after you purchase the instance. The instance will be in the **Delivering** status. You can use the instance after around 3–5 minutes when its status changes to **Running**.
 
-## Subsequent Operations
+## Subsequent operations
 You can access the TencentDB for MySQL instance over both private and public networks from a Windows or Linux CVM instance. For more information, see [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37788).

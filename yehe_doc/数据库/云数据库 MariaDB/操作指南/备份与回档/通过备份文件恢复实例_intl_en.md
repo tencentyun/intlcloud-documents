@@ -1,11 +1,12 @@
-You can use the rollback feature of TencentDB for MariaDB to view historical data. To restore your database instance locally, restore the historical data by following the steps in this document.
+
+You can view historical data by using the rollback feature of TencentDB for MariaDB. To restore your database instance locally, you can do so by following the instructions below.
 
 ## Prerequisites
 ### Preparing a server
-If you need to restore the database instance locally, please ensure that the basic configuration of the server meets the following requirements:
+To restore the database instance locally, ensure that the basic configuration of the server meets the following requirements:
 - CPU: 2 or more cores.
 - Memory: 4 GB or above.
-- Disk capacity: it must exceed the database size plus the temporary capacity needed by the system.
+- Disk capacity: It must be greater than the used space of the database and leave enough temporary space for the system.
 - Operating system: CentOS
 
 ### Preparing a database
@@ -33,14 +34,14 @@ yum info MariaDB-server
 ```
 yum install MariaDB-server
 ```
->?If the system prompts a conflict with a legacy version, you need to remove the previously installed package by running `yum remove mariadb-libs` for example.
+>?If the system prompts a conflict with a legacy version, you need to remove the previously installed package, such as`yum remove mariadb-libs`.
 
 ### Installing the auxiliary tool
-1. Install the MariaDB client.
+1. Install the MariaDB client
 ```
 yum install MariaDB-client
 ```
-- Install the LZ4 decompression program. For more information, please see [Decompressing Backup and Log Files](https://intl.cloud.tencent.com/document/product/237/2088). LZ4 is installed in the `mysqlagent/bin` directory by default. You can also install it in the `/usr/bin` directory and import it as an environment variable.
+- Install the LZ4 decompression software. For more information, see [Decompressing Backups and Logs] (https://intl.cloud.tencent.com/document/product/237/2088). LZ4 is installed in the `mysqlagent/bin` directory by default. You can also install it in the `/usr/bin` directory and import it as an environment variable.
 ```
 yum install -y lz4
 percona-xtrabackup
@@ -49,8 +50,8 @@ yum install percona-xtrabackup
 ```
 
 ### Downloading a backup
-In the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID/name to enter the instance management page and get the backup download address on the **Backup and Restore** tab.
-Sample of a download command:
+In the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID to enter the instance management page, and get the backup download address on the **Backup and Restoration** tab.
+Sample download command:
 ```
 wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_587/1464552298xxxxxxxx'
 ```
@@ -75,7 +76,7 @@ After the decompression, the directories and files are as shown below:
 mkdir /root/dblogs_tmp
 innobackupex --apply-log  --use-memory=1G --tmpdir='/root/dblogs_tmp/' /root/xtrabackuptmp/
 ```
-After the operation succeeds, `completed OK!` will be displayed as shown below:
+After the operation succeeds, `completed OK!` will be displayed.
 ![](https://main.qcloudimg.com/raw/80a99e3a653a840655be806f92e5e434.png)
 
 #### [4. Stop the database and clear data files](id:tingzhi_qingkong)
@@ -89,7 +90,7 @@ mv /var/lib/mysql/* /var/lib/mysql-backup
 ```
 
 #### 5. Modify the database parameter file
-Modify the database parameter file `(/etc/my.cnf.d/server.cnf)`. For specific parameter values, please see parameters in the extracted `backup-my.cnf` file. **Do not directly replace the parameter file with `backup-my.cnf`.**
+Modify the database parameter file `(/etc/my.cnf.d/server.cnf)`. For specific parameter values, see parameters in the extracted `backup-my.cnf` file. **Do not directly replace the parameter file with `backup-my.cnf`.**
 ```
 [mysqld]
 skip-name-resolve
@@ -108,7 +109,7 @@ innodb_undo_tablespaces=0
 ```
 innobackupex --defaults-file=/etc/my.cnf --move-back /root/xtrabackuptmp/
 ```
-After loading succeeds, `completed OK!` will be displayed as shown below:
+After loading succeeds, `completed OK!` will be displayed.
 ![](https://main.qcloudimg.com/raw/f193ec9e3d4693e103038ca9a1f280e1.png)
 
 #### 7. Start the database
@@ -122,77 +123,8 @@ If you fail to start the database, you need to check and fix the error, and then
 After starting the database, you may need to connect to the database with the original account and password to view data.
 
 ## Restoring Databases from Backup Files (Encrypted)
-Transparent Data Encryption (TDE) is currently supported only in Percona 5.7. You can access it in TencentDB for MariaDB. Please download and install the critical tool needed by the restoration. Below is the encryption process:
+TDE is only supported for Percona 5.7 in Hong Kong region, but it will be available to more kernel versions in the future. You can access **Data Security** > **Data Encryption** on the instance management page in the [TencentDB for MariaDB console] (https://console.cloud.tencent.com/mariadb)
 
-#### 1. Decompress the backup file to the temporary directory
-For more information, please see [Enter the cold backup file download directory and decompress the file with LZ4](#mulu_jieya) and [Decompress the file to a temporary directory `xtrabackuptmp` with xbstream tool](#gongju_jieya).
-
-In this example, the backup file is decompressed to the temporary directory `./backup_dir`. LZ4 is installed in the `mysqlagent/bin` directory by default. You can also install it in the `/usr/bin` directory and import it as an environment variable.
-
-#### 2. Get the data key plaintext
-You can use an API of Key Management Service (KMS) for this step.
-```
-innobackupex --apply-log --rebuild-indexes  --use-memory=1G  --tmpdir=/tmp ./backup_dir/
-```
-
-#### 3. Prepare for data restoration
-For more information, please see [Stop database and clear data file](#tingzhi_qingkong).
-
-#### 4. Get the data key plaintext
->?To use the [SSL Connection Encryption](https://intl.cloud.tencent.com/zh/document/product/237) feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-
-Before decrypting the data, you need to query the data key ciphertext in **Data Security** > **Connection Encryption** on the instance management page in the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb). Then, you can use either of the following two schemes to decrypt the data key ciphertext to get the **data key plaintext**.
-- Use a KMS API to get the data key plaintext on your own. For more information, please see the [KMS API documentation](https://intl.cloud.tencent.com/document/product/1030/32172).
-- Use the Python script `./kms_tool.py` provided by Tencent Cloud to get the data key plaintext.
- - Descriptions of parameters:
-    - --role: this parameter is in a fixed format. Enter `kmsTDSQLRole` here.
-    - --secret_id, --secret_key: authorization information, which can be queried in [API Key Management](https://console.cloud.tencent.com/cam/capi) in **CAM**.
-    - --region: region information, which can be queried in KMS [Common Parameters](https://intl.cloud.tencent.com/document/product/1030/32175).
-    - --ciphertext: data key ciphertext.
-![](https://main.qcloudimg.com/raw/c0b8552753c094fc6b0257c57e59872e.png)
- - Below is a demo:
-```
-python ./kms_tool.py --role="qcs::cam::uin/xxxxxxxxx:roleName/kmsTDSQLRole" 
---secret_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" --secret_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
---region="ap-hongkong" --ciphertext="CtFlCxx0+LilyvZ5xxqSIA/KEhVexxIGfBwzXiMShQZxxxWAUsHcfLQ0xxxDH2D49/nOw==-k-fKVP3WxxxMW4jEkQ==-k-zudP3Tz4jxrxxxKkuKU+0V/gVVaxxIaRl/+83qCinaBxxU5e1MpW4q/IJKpxxb9N9/rO
-5Es03fxxxn8Sjex6mnl+YKV1SMQog+RJ1xxxNmwx/22hhHb/1B5LGpwB8tbXKD3gL0tZwSxxxUnONh5+6ssb2cxxxBhGj9oXtbL6OC74PuDO1D/AsQ6qBxxxTSA68s8Q="
-```
-
-#### 5. Generate the data key file again
-After getting the data key plaintext, you can use either of the following two schemes to generate the data key file.
-- Use an open-source TDE tool compatible with Percona to generate the file.
-- Use the tool `./keyring_tool` provided by Tencent Cloud to generate the data key file. The basic command format of `./keyring_tool` is `./keyring_tool "[ciphertext]"  [File Path]`.
- ![](https://main.qcloudimg.com/raw/6c4556b8a0f0362c922c37c62e7f4286.png)
- - Use double quotation marks to enclose the ciphertext of the data key string.
- - `keyring_tool`depends on `libboost_program_options.so.1.53.0`. If this lib does not exist in the system, you need to run `export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH` first before using `keyring_tool`.
-
-#### 6. Use the `./innobackupex` tool to apply the backup file
-The figure below shows performing the `apply` operation on the backup file through `./innobackupex` till the end. During the operation, you need to use `--keyring-file-data=key_file` to specify the key by entering an absolute path.
-
-xtrabackup mentioned in this document is the xtrabackup built in Tencent Cloud's proprietary TDSQL, which is stored in the `xtrabackup` directory in the TDSQL installation package directory by default.
-
-Below is a demo of using this tool:
-```
-./innobackupex --apply-log  --use-memory=1G  --tmpdir=/tmp  --keyring-file-data=/data/home/test/key_file   ./backup/ 
-```
-![](https://main.qcloudimg.com/raw/97e34bfc2f7e44f6056bda395873e93e.png)
-
-#### 7. Use the `./innobackupex` tool to copy the backup file to the data directory
-The figure below shows moving the backup file with `./innobackupex`. You are recommended to use the permissions of the user who starts MySQL.
-Below is a demo of using this tool:
-```
-./innobackupex --defaults-file='/data/home/seven/tdsqlinstall/percona-5.7.17/etc/my_8003.cnf' --move-back ./backup_dir/
-```
-![](https://main.qcloudimg.com/raw/32c59981a400f7e4bfc8c9096c476466.png)
-
-#### 8. Use the `keyring_file` tool to configure the generated key file to MySQL
-The figure below shows how to configure the generated key file to MySQL. Please pay attention to the configuration in the red box. You are recommended to run `keyring_file` with the permissions of the user who starts MySQL.
-![](https://main.qcloudimg.com/raw/2b4b6098a2f527902409fb3bac19fb61.png)
-
-#### 9. Restart MySQL
-The figure below shows the start script that comes with TencentDB. You can also use other schemes to start MySQL.
-![](https://main.qcloudimg.com/raw/4c6cba9793eb01299b39c672b8bbab84.png)
-
-#### 10. Access the encrypted table
-After the encrypted backup is successfully restored, you can directly access the encrypted table. If the key is missing, the backup can still be restored, but the error message `can't find master key from keying, please check keyring plugin is loaded` will be displayed (for open-source MySQL or Percona, "Error" will be displayed) if you access the encrypted table.
-
+After data encryption is enabled, the database instances can’t be restored from a backup file. It is recommended to restore them as instructed in [Rolling back Databases] (https://intl.cloud.tencent.com/document/product/237/8719). 
+>?To use the data encryption feature, [submit a ticket] (https://console.cloud.tencent.com/workorder/category) to apply for it.
+>

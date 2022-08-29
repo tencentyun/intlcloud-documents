@@ -4,7 +4,7 @@
 ## 前提条件
 已注册腾讯云账号并完成实名认证。
 - 如需注册腾讯云账号：
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">点此注册腾讯云账号</a></div>
 - 如需完成实名认证：
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 
@@ -35,6 +35,7 @@
  - **参数模板**：除提供的系统参数模板外，您也可以创建自定义参数模板，请参见 [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906)。
   - **字符集**：支持 LATIN1 、GBK、UTF8 、UTF8MB4 字符集，默认字符集编码格式是 UTF8。购买完成后，亦可在控制台实例详情页修改字符集，更多说明请参见 [字符集说明](https://intl.cloud.tencent.com/document/product/236/7259)。
  - **表名大小写敏感**：表名是否大小写敏感，默认为开启。
+ - **密码复杂度**：支持设置密码复杂度以提升数据库安全性，默认为关闭。更多说明请参见 [设置密码复杂度](https://intl.cloud.tencent.com/document/product/236/49197)。
  - **root密码**：新创建的 MySQL 数据库的用户名默认为 root，此处用来设置该 root 帐号的密码。选择**创建后设置**时，可在创建完实例后再 [重置密码](https://intl.cloud.tencent.com/document/product/236/31901)。
  - **告警策略**：创建告警用于在云产品状态改变时触发警报并发送相关消息，请参见 [告警策略](https://intl.cloud.tencent.com/document/product/236/8457)。
  - **指定项目**：选择数据库实例所属的项目，缺省设置为默认项目。
