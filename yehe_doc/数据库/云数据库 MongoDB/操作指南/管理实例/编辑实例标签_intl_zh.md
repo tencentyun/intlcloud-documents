@@ -7,7 +7,7 @@
 云数据库 MongoDB 4.2、4.0、3.6、3.2版本均支持标签管理。
 
 ## 计费说明
-标签管理是腾讯云为您的腾讯云账户提供的免费服务之一，不另行收费。可直接进入 [控制台](https://console.cloud.tencent.com/tag/resources) 使用产品 。
+标签管理是腾讯云为您的腾讯云账户提供的免费服务之一，不另行收费。可直接进入 [控制台](https://console.cloud.tencent.com/tag/resources) 使用产品。
 
 ## 使用须知
 - 1个标签包含1个标签键和1个标签值（tagKey:tagValue）。

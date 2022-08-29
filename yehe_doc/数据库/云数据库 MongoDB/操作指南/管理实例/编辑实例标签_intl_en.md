@@ -1,9 +1,9 @@
 TencentDB for MongoDB allows you to edit instance tags in the console for easier instance management.
 
 ## Background
-A tag consists of a tag key and value. It can be used to tag TencentDB for MongoDB instances. If you have multiple types of resources under your Tencent Cloud account which are correlated in many ways, and your resources are growing and becoming increasingly difficult to manage, you can use tags to group and categorize resources that have the same purpose or are associated with each other. In this way, when performing daily OPS or locating problems, you can quickly search for resources and perform batch operations for more efficient OPS.
+A tag consists of a tag key and value. It can be used to tag TencentDB for MongoDB instances. If you have multiple types of resources under your Tencent Cloud account which are correlated in many ways, and your resources are growing and becoming increasingly difficult to manage, you can use tags to group and categorize resources that serve the same purpose or are associated with each other. In this way, when performing daily Ops or troubleshooting, you can quickly search for resources and perform batch operations for more efficient Ops.
 
-## Version Description
+## Version requirements
 Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support tag management.
 
 ## Billing
@@ -15,11 +15,11 @@ Tag management is a free service provided by Tencent Cloud for your Tencent Clou
 - For each instance, a tag key can correspond to only one tag value.
 
 ## Prerequisites
-You have [created for a TencentDB for MongoDB instance](https://intl.cloud.tencent.com/document/product/240/3551).
+You have [created a TencentDB for MongoDB instance](https://intl.cloud.tencent.com/document/product/240/3551).
 
 ## Directions
 1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb).
-2. In the **MongoDB** drop-down list on the left sidebar, select **Replica Set Instance** or **Sharded Instance**. The directions for the two types of instances are similar.
+2. In the **MongoDB** drop-down list on the left sidebar, select **Replica Set Instance** or **Sharded Cluster Instance**. The directions for the two types of instances are similar.
 3. Above the instance list on the right, select the region.
 4. In the instance list, find the target instance.
 5. Enter the **Edit Tag** page in any of the following ways:
