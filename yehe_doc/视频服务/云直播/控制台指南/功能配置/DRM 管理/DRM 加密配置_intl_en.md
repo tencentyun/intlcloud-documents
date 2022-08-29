@@ -9,7 +9,6 @@ Tencent Cloud only encrypts videos. DRM licenses are offered by the third party 
 
 ## Console Settings
 [](id:step1)
-
 ### Configuring DRM key information
 1. Log in to the CSS console and select **Feature Configuration** > [DRM management](https://console.cloud.tencent.com/live/config/drm) on the left sidebar.
 2. Click **Edit** and enter the UID, SecretID, and SecretKey (the information is provided by SDMC).
@@ -18,7 +17,7 @@ Tencent Cloud only encrypts videos. DRM licenses are offered by the third party 
 [](id:step2)
 ### Creating a transcoding template and binding a domain
 1. Select **Feature Configuration** > [Live Transcoding](https://console.cloud.tencent.com/live/config/transcode) on the left sidebar.
-2. Click **Create Transcoding Template** and enable DRM encryption for the template.
+2. Click **Create Transcoding Template** and toggle **DRM encryption** on.
 ![](https://qcloudimg.tencent-cloud.cn/raw/048b9d46b1b5305605b2cd41a0a85b75.png)
 
 <table>
@@ -33,7 +32,6 @@ Tencent Cloud only encrypts videos. DRM licenses are offered by the third party 
 <td>Widevine, Fairplay, or NomalAES. For FairPlay encryption, you need to upload the certificate you obtain from Apple to your player. For details, see <a href="https://intl.cloud.tencent.com/document/product/267/48069">Obtaining a FairPlay certificate</a>.</td>
 </tr>
 </tbody></table>
-
 3. Click **Bind Domain Name** to bind the template to your playback domain.
 ![](https://qcloudimg.tencent-cloud.cn/raw/96151a6cb6428abceca9e85a66728f99.png)
 
@@ -49,3 +47,5 @@ For the DRM encryption feature to work, your player must meet the following requ
 - It must have been equipped by [SDMC](https://www.xmediacloud.com/contact-us/) with the ability to obtain and decrypt license information from video data.
 - Use FairPlay encryption for iOS players and Widevine or NormalAES for Android players.
 - For iOS players, you need to obtain a certificate from Apple and upload it to [SDMC](https://www.xmediacloud.com/contact-us/)’s platform.
+
+>? If you have any questions, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).

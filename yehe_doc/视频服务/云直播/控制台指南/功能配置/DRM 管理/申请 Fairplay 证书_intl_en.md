@@ -19,7 +19,7 @@ I am using a 3rd party DRM company and the company has already built and tested 
  [](id:step2)
 ### Step 2. Create a private key and a certificate signing request (CSR)
 Create a private key file (`privatekey.pem`) and a CSR file (`certreq.csr`) as instructed in the FPS certificate generation guide. The following describes the OpenSSL method in the guide.
->? Make sure OpenSSL is installed on the computer or server environment where this process is performed.
+>! Make sure OpenSSL is installed on the computer or server environment where this process is performed.
 
 1. **Create a private key file (`privatekey.pem`)**:
 	1. Run the command below to create a private key file:[](id:step1_1)
@@ -61,3 +61,6 @@ openssl req -new -sha1 -key privatekey.pem -out certreq.csr -subj "/CN=SubjectNa
 ![](https://qcloudimg.tencent-cloud.cn/raw/b6e7c92bab1dc0c7efa7b8bbfc179303.png)
 3. Upload the FPS certificate, private key file, private key password file, and ASK file, and click **OK**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c318449d607d21ed74d2aaaa89119f9e.png)
+
+
+>? If you have any questions, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).

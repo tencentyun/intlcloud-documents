@@ -58,8 +58,8 @@
 
 您可根据业务场景将生成好的推流地址输入到对应的推流软件中。
 - PC 端推流，建议使用 OBS 推流，需要先配置 [OBS 插件](https://intl.cloud.tencent.com/document/product/267/42131)，配置完插件后续操作请参见[ OBS 推流](https://intl.cloud.tencent.com/document/product/267/31569)。。
-- Web 端推流，建议使用 **辅助工具** > [**Web 推流**](https://console.cloud.tencent.com/live/tools/webpush)，选择您需推流的域名，填写自定义的流名称 StreamName，选择地址过期时间，打开摄像头，单击 **开始推流** 即可。
-- 移动端推流，下载安装 TCToolkit App，打开选择 **移动直播 MLVB** > **推流演示（摄像头推流）**，手动输入或扫描二维码录入推流地址到地址编辑框内，单击 **开始推流** 即可。
+- Web 端推流，建议使用 [**Web 推流**](https://console.cloud.tencent.com/live/tools/webpush)，选择您需推流的域名，填写自定义的流名称 StreamName，选择地址过期时间，打开摄像头，单击 **开始推流** 即可。
+- 移动端推流，下载安装 TCToolkit App，打开选择 **直播推流** > **直播推流**，手动输入或扫描二维码录入推流地址到地址编辑框内，单击 **开始推流** 即可。
 
 >? 
 >
@@ -69,7 +69,7 @@
 [](id:step4)
 ## 步骤4：获取播放地址
 
-1. 推流成功后，选择 [**流管理**](https://console.cloud.tencent.com/live/streammanage)> **在线流**，查看推流地址状态，单击 **测试** 在线播放观看。
+1. 推流成功后，选择 [**流管理**](https://console.cloud.tencent.com/live/streammanage)> **在线流**，查看推流地址状态，单击 **预览** 在线播放观看。
 2. 选择 **直播工具箱** > [**地址生成器**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 获取播放地址，在该页面进行如下配置：
    1. 选择生成类型，例如：播放域名。
    2. 选择您在域名管理中已添加的播放域名。
@@ -79,7 +79,7 @@
    5. 单击  **生成地址** 即可生成播放地址，快直播拉流 URL 格式为 `webrtc://domain/path/stream_id`。
 ![](https://main.qcloudimg.com/raw/5025e22cd8c4c555d7de3e0360e13d11.png)
 3. 您可以根据业务场景使用以下方式测试直播流是否能正常播放：
-   - **Web 端直播流测试**：建议您使用 [WebRTC Live Demo](https://tcplayer.vcube.tencent.com/webrtc-demo/index.html) 工具进行播放体验。
+   - **Web 端直播流测试**：建议您使用 [TCPlayer Demo](https://tcplayer.vcube.tencent.com) 工具进行播放体验。
 >?
 >- WebRTC Live Demo 支持多清晰度功能，可在云直播控制台 **功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode) 配置高清-HD、标清-SD 的转码模板，将带有转码模板的 WebRTC 流地址填入 Demo 中对应的栏目后测试播放（如不需要测试此功能则只需要在 Demo 中填入一条 WebRTC 原始流即可）。
 >- 直播转码操作指引及转码计费内容，请参见文档 [直播转码](https://intl.cloud.tencent.com/document/product/267/31071)。

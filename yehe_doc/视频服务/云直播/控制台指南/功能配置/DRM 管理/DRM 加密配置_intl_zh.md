@@ -9,7 +9,6 @@
 
 ## 控制台配置
 [](id:step1)
-
 ### 设置访问 DRM 密钥信息
 1. 登录云直播控制台，进入 **功能配置** > [DRM 管理](https://console.cloud.tencent.com/live/config/drm)。
 2. 单击 **编辑** 设置用户访问华曦达（SDMC）DRM 密钥信息，需要设置 UID、SecretID、SecretKey，这些密钥信息需要从证书的第三方服务商处获取：
@@ -33,7 +32,6 @@
 <td>支持 Widevine、Fairplay、NomalAES，使用 Fairplay 需要在播放器端上传从 Apple 申请的证书，具体请参见 <a href="https://intl.cloud.tencent.com/document/product/267/48069">申请 Fairplay 证书</a></td>
 </tr>
 </tbody></table>
-
 3. 单击 **绑定域名** 将对应转码模板与播放域名绑定。
 ![](https://qcloudimg.tencent-cloud.cn/raw/96151a6cb6428abceca9e85a66728f99.png)
 
@@ -47,5 +45,7 @@
 ### 配置播放器
 使用直播 DRM 加密功能对播放器有一定要求：
 - 播放器需要与 [华曦达（SDMC）](https://www.xmediacloud.com/contact-us/) 做对接，实现通过视频信息获取 License 并解密的能力。
-- iOS 平台支持 Fairplay ，Android平台支持 WideVine 及 NomalAES。
+- iOS 平台支持 Fairplay ，Android 平台支持 WideVine 及 NomalAES。
 - iOS 平台需要申请证书并上传至 [华曦达（SDMC）平台](https://www.xmediacloud.com/contact-us/)。
+
+>? 在您对接 DRM 或者华曦达的过程中的任何问题，都可以提工单 [联系我们](https://console.cloud.tencent.com/workorder/category)，我们全程负责帮您解决。

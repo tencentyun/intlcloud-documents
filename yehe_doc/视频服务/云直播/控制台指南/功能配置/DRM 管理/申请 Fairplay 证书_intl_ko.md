@@ -61,3 +61,6 @@ openssl req -new -sha1 -key privatekey.pem -out certreq.csr -subj "/CN=SubjectNa
 ![](https://qcloudimg.tencent-cloud.cn/raw/b6e7c92bab1dc0c7efa7b8bbfc179303.png)
 3. FPS 인증서, 개인 키 파일, 개인 키 암호 파일, ASK 파일을 업로드하고 **OK**를 클릭합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c318449d607d21ed74d2aaaa89119f9e.png)
+
+
+>? 질문이 있으시면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 하십시오.
