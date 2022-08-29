@@ -42,6 +42,7 @@ trtc://trtc.tencentcloudapi.com/moderation?sdk_app_id=xxxx&room_id=xxxx&user_id=
 <td>No</td>
 <td>The data type of the room ID parameter. Valid values: string, number.</td>
 </tr></tbody></table>
+
 3. Call the [CreateAudioModerationTask](https://intl.cloud.tencent.com/document/product/1139/46101) API to start a content moderation task for the room.
 <table>
 <thead><tr><th>Parameter</th><th>Required</th><th>Type</th><th>Description</th></tr></thead>
