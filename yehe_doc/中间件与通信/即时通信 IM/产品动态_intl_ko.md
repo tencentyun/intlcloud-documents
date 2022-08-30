@@ -1,7 +1,132 @@
+## 2022년 06월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="44%">업데이트 설명</th><th width="15%">배포일</th><th width="21%">관련 문서</th>
+</tr> 
+<tr>
+    <td> SDK 6.3.2619 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+	<li> 토픽 목록을 가져올 때 가끔 크래쉬가 발생하는 문제 수정 </li>
+	<li> 토픽 삭제 후 대화 목록 가져오기가 비정상적인 문제 수정 </li>
+    </ul></td>
+    <td> 2022-06-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr>
+<tr>
+    <td>SDK 2.20.1 버전 배포(Web)</td>
+    <td><li> 라이브 그룹 외 그룹에서 퇴장/강제 퇴장되거나, 라이브 그룹 외 그룹이 해산된 경우 그룹 기록만 삭제되고 해당 그룹 대화는 삭제되지 않으며, native와 매칭</li><li> <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteMessage">deleteMessage</a> 그룹 시스템 삭제 알림을 지원하지 않으며, 특정 오류 메시지가 표시됩니다. </li><li>프라이빗 배포된 리치 미디어 메시지는 HTTP 프로토콜 지원</li><li>C2C 대화 lastMessage가 비정상적으로 업데이트되는 문제 수정</li></td>
+    <td> 2022-06-27 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK 다운로드</a></td>
+</tr>
+<tr>
+    <td> SDK 6.3.2609 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+	<li> 온라인 상태 및 사용자 정의 상태 추가 </li>
+	<li> 라이브 그룹은 최대 1000명까지 그룹 참석자 목록 풀링 지원</li>
+	<li> at all 메시지 토픽 지원 </li>
+	<li> 크로스 플랫폼 버전 sql 실행 오류 수정 </li> 
+	<li> 크로스 플랫폼 SDK에 커뮤니티 토픽 관련 인터페이스 추가 </li>
+	<li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">업데이트 로그</a> 참고</li>
+    </ul></td>
+    <td> 2022-06-16 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr>
+<tr>
+    <td>SDK 2.20.0 버전 배포(Web)</td>
+    <td><ul style="margin:0">
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage">modifyMessage</a>, 메시지 변경 지원
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping">getMessageListHopping</a>, 지정된 메시지 sequence 또는 메시지 시간에 따라 대화의 메시지 목록 풀링 지원
+<li>하나 이상의 C2C 메시지 발송에 대한 수신 확인 지원 (플래그십 에디션 필요)
+<li>C2C 대화 lastMessage의 추가 필드 isPeerRead는 피어 읽음 여부 식별에 사용 <li>더 많은 업데이트 콘텐츠는 <a href="https://cloud.tencent.com/document/product/269/38492">업데이트 로그</a>참고</li>
+    </ul></td>
+    <td> 2022-06-09 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK 다운로드</a></td>
+</tr>
+</table>
+
+
+## 2022년 05월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="44%">업데이트 설명</th><th width="15%">배포일</th><th width="21%">관련 문서</th>
+</tr> 
+<tr>
+    <td>SDK 2.19.0 버전 배포(Web)</td>
+    <td><ul style="margin:0">
+<li><a href="https://intl.cloud.tencent.com/document/product/1047/33529">커뮤니티(Community)</a>에서 토픽(Topic) 생성 지원, 더 강한 인터랙션 시나리오 지원</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getJoinedCommunityList">getJoinedCommunityList</a> 토픽 지원 커뮤니티 목록 가져오기</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTopicInCommunity">createTopicInCommunity</a> 토픽 생성</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity">deleteTopicFromCommunity</a> 토픽 삭제</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile">updateTopicProfile</a> 토픽 프로필 설정</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList">getTopicList</a> 토픽 목록 가져오기</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/Topic.html">Topic</a> 이름, 공지사항, 소개, 읽지 않은 메시지 등 토픽의 속성을 설명하는 커뮤니티 토픽 객체</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED">TIM.EVENT.TOPIC_CREATED</a> 토픽 생성 시 트리거되는 이벤트</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED">TIM.EVENT.TOPIC_DELETED</a> 토픽 삭제 시 트리거되는 이벤트</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED">TIM.EVENT.TOPIC_UPDATED</a> 토픽 프로필 업데이트 시 트리거되는 이벤트</li></li>
+    </ul></td>
+    <td> 2022-05-07 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK 다운로드</a></td>
+</tr>
+</table>
+
 ## 2022년 04월
 <table>
 <tr><th width="20%">업데이트 명칭</th>  <th width="44%">업데이트 설명</th><th width="15%">배포일</th><th width="21%">관련 문서</th>
 </tr> 
+<tr>
+    <td> SDK 6.2.2363 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+	<li> 커뮤니티 토픽 기능 추가</li>
+	<li> 메시지 편집 인터페이스 추가</li>
+	<li> C2C 메시지 수신 확인 지원</li>
+	<li> 글로벌 포털의 네트워크 품질 최적화</li> 
+	<li> 메시지를 읽은 후 언마운트하고 재설치한 다음 메시지를 다시 풀링하면 읽음 상태가 읽지 않음이 되는 문제 수정</li>
+	<li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">업데이트 로그</a> 참고</li>
+    </ul></td>
+    <td> 2022-04-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr>
+<tr>
+    <td>SDK 2.18.2 버전 배포(미니프로그램 및 Web)</td>
+    <td><ul style="margin:0">
+<li>라이브 그룹 사용 경험 최적화 </li><li>일부 시나리오에서 부정확한 통계 문제 수정</li><li>호출 인터페이스에서 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList">getGroupMessageReadMemberList</a> 반환 결과가 부정확한 문제 수정<li> 더 많은 업데이트 콘텐츠는 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">업데이트 로그</a> 참고</li>
+    </ul></td>
+    <td> 2022-04-22 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK 다운로드</a></td>
+</tr>
+<td>Flutter SDK 3.9.3</td>
+<td><ul style="margin:0">
+  <li>그룹 음소거 tips boolValue 유실 문제 수정
+    <ul>
+      <li>현재 그룹 정보 변경 콜백에서 반환되는 데이터는 key(string)-value(string) 형식이며, key(string)-boolValue(bool) 형식이 추가됨</li>
+    </ul>
+  </li>
+  <li>대화 인스턴스가 nameCard 필드를 적게 리졸브하는 문제 수정
+  <li>그룹 수신 확인 관련 인터페이스 추가
+    <ul>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessageReadReceipts.html">sendMessageReadReceptes</a> 그룹 메시지 수신 확인 발송</li>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getMessageReadReceipts.html">getMessageReadReceptes</a> 자신이 발송한 메시지에 대한 수신 확인 가져오기</li>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getGroupMessageReadMemberList.html">getgroupMessageReadMemeberList</a> 자신이 발송한 그룹 메시지의 읽은(읽지 않은) 그룹 구성원 목록 가져오기</li>
+    </ul>
+  </li>
+  <li>Flutter for Web 개선
+</ul>
+</td>
+<td>2022-04-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">프레임워크 SDK 다운로드</a></td>
+<tr>
+    <td>SDK 2.18.0 버전 배포(미니프로그램 및 Web)</td>
+    <td><ul style="margin:0">
+<li>그룹 메시지 수신 확인 발송을 위한 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#sendMessageReadReceipt">sendMessageReadReceipt</a> 추가</li>
+<li>그룹 메시지 수신 확인 목록을 가져오기 위한 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageReadReceiptList">getMessageReadReceiptList</a> 추가</li>
+<li>그룹 메시지를 읽은(읽지 않은) 구성원 목록을 가져오기 위한 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList">getGroupMessageReadMemberList</a> 추가</li>
+<li>messageID로 대화에서 로컬 메시지를 쿼리하기 위한 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#findMessage">findMessage</a> 추가.
+NativeIM과 일치하는 추가된 메시지 회수 후 읽지 않은 메시지 수 업데이트 경험 개선</li><li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">업데이트 로그</a> 참고</li>
+    </ul></td>
+    <td> 2022-04-08 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK 다운로드</a></td>
+</tr>
+
+
+
 <tr>
     <td> SDK 6.1.2166 인핸스드 버전 배포</td>
     <td><ul style="margin:0">
@@ -17,6 +142,8 @@
     <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
 </tr>
 </table>
+
+
 
 ## 2022년 03월
 <table>
