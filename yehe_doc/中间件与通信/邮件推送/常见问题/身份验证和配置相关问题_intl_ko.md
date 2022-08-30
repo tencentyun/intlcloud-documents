@@ -18,8 +18,8 @@ SES는 DKIM(DomainKeys Identified Mail), SPF(Sender Policy Framework), DMARC(Dom
 3. [발신자 도메인](https://console.cloud.tencent.com/ses/domain) 구성 페이지로 돌아가서 **확인**을 클릭합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/305ea2b8c9b3c5f10e0dbbe6135b3666.png)
 4. 팝업 창에 표시된 ‘레코드 값’을 기록합니다.[](id:step4)
->?아래는 예시입니다. 실제 내용은 해당 페이지에 표시된 대로입니다.
->
+<dx-alert infotype="explain" title="">아래는 예시입니다. 실제 내용은 해당 페이지에 표시된 대로입니다.
+</dx-alert>
 ![](https://qcloudimg.tencent-cloud.cn/raw/70bfe55a17122848c7f829c5b4b86653.png)
 5. Tencent Cloud로 도메인을 호스팅하는 경우 [DNSPod 콘솔](https://console.cloud.tencent.com/cns)에 로그인하여 인증 정보를 구성합니다. 발신자 도메인을 클릭하여 구성 페이지로 이동할 수 있습니다.
 <dx-alert infotype="explain" title="">
@@ -42,14 +42,8 @@ SES는 DKIM(DomainKeys Identified Mail), SPF(Sender Policy Framework), DMARC(Dom
 - 기본이 아닌 도메인(예: abc.sampledomain.com)의 경우 호스트 레코드는 abc여야 합니다.
 - 여러 이메일 푸시 서비스 제공 업체가 있는 경우 이러한 모든 서비스 제공 업체의 도메인을 포함해야 합니다(예: v=spf1 include:qcloudmail.com include:domain1.com ~all ). 여기서 domain1.com은 다른 이메일 푸시 서비스 제공 업체의 도메인을 나타냅니다. 발신 도메인의 DNS 구성에 SPF 레코드가 하나만 있는지 확인합니다.
 </dx-alert>
-  - DKIM 인증의 경우 두 개의 레코드가 필요:
-    - 호스트 레코드: `mail._domainkey`
-  레코드 유형: TXT
-  레코드 값은 귀하의 ‘레코드 값’이어야 합니다.
-<dx-alert infotype="explain" title="">
-기본이 아닌 도메인(예: abc.sampledomain.com)의 경우 호스트 레코드는 mail._domainkey.abc여야 합니다.
-</dx-alert>
-- 호스트 레코드: `qcloud._domainkey`
+  - DKIM 인증의 경우 :
+  호스트 레코드: `qcloud._domainkey`
     레코드 유형: TXT
   레코드 값은 귀하의 ‘레코드 값’이어야 합니다.
   <dx-alert infotype="explain" title="">
