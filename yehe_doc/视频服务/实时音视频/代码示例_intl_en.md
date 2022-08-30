@@ -278,4 +278,5 @@
 </div>
 
 ## Questions & Feedback
-If you have any questions, join our Telegram group chat to talk to our engineers.
+If you have any questions, click [here](https://t.me/+EPk6TMZEZMM5OGY1) or scan the QR code to join our Telegram group chat to talk to our engineers.
+![](https://qcloudimg.tencent-cloud.cn/raw/acf42c4f1a472f9f77da9412a045995a.jpg)

@@ -3,7 +3,7 @@
 - [数据迁移功能描述](https://intl.cloud.tencent.com/document/product/571/13711)。
 - [数据迁移支持的数据库](https://intl.cloud.tencent.com/document/product/571/42647)。
 
-## 整理流程
+## 整体流程
 | **操作流程**              | **说明**                                                     |
 | ------------------------- | ------------------------------------------------------------ |
 | 1. 准备工作               | 迁移任务前，需要对源库、目标库和网络环境做一些 [准备工作](https://intl.cloud.tencent.com/document/product/571/42652)，以满足环境要求。 |
@@ -14,10 +14,10 @@
 ## 数据迁移任务示例
 
 1. 登录 [DTS 控制台](https://console.cloud.tencent.com/dts/migration)，在左侧导航选择**数据迁移**页，单击**新建迁移任务**，进入新建迁移任务页面。
-2. 在新建迁移任务页面，选择迁移的目标实例所属地域，单击**0美元购买**，目前 DTS 数据迁移功能免费使用。
+2. 在新建迁移任务页面，选择迁移的源实例类型和所属地域，目标实例类型和所属地域，规格等，然后单击**立即购买**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/1dd520b47977a736e4b7a70e9771ab51.png)
 3. 在设置源和目标数据库页面，完成任务设置、源库设置和目标库设置，测试源库和目标库连通性通过后，单击**新建**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/d5c7ca05686e039f5b2074c0d2609597.png"  style="margin:0;">
+![](https://qcloudimg.tencent-cloud.cn/raw/d5c7ca05686e039f5b2074c0d2609597.png)
 4. 在设置迁移选项及选择迁移对象页面，设置迁移类型、对象，单击**保存**。
 >? 库表选择勾选对象时，每次最多支持勾选6000个对象。
 >

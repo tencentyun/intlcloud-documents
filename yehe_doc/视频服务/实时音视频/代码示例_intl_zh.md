@@ -277,4 +277,5 @@
 </div>
 
 ## 交流&反馈
-接入和使用过程中遇到的问题可以加入Telegram Group与我们的工程师直接沟通。
+接入和使用过程中遇到的问题可以通过以下方式加入Telegram Group与我们的工程师直接沟通
+[点击链接](https://t.me/+EPk6TMZEZMM5OGY1)，或者扫描二维码![](https://qcloudimg.tencent-cloud.cn/raw/acf42c4f1a472f9f77da9412a045995a.jpg)
