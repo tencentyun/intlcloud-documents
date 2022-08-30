@@ -5,6 +5,7 @@ TencentDB for MariaDB can be accessed in the following ways:
 >!
 >- Currently, public network is enabled in Guangzhou, Shanghai, Beijing, Chengdu and Nanjing.
 >- For public network access, the database instance's public IP needs to be enabled, which may expose your database service to attacks or intrusions on the public network. Therefore, it is recommended to log in to the database over the private network.
+>- Security groups must be bound to enable Internet access. For details, see [Security Group Configuration](https://intl.cloud.tencent.com/document/product/237/35446).
 
 ## Prerequisites
 No matter whether you access the instance from the private or public network, you need to [create an account](https://intl.cloud.tencent.com/document/product/237/7054) first.
