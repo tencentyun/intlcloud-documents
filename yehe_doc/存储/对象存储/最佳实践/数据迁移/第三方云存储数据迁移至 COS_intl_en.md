@@ -1,33 +1,32 @@
 ## Background
 
-COS offers the following two migration methods to help you quickly migrate data in a non-Tencent Cloud storage platform to COS.
+If you use a third-party cloud storage service, COS can help you quickly migrate the data stored on the third-party cloud platform to COS.
 
 
-| Migration Method | Interactive Form | Threshold for Small Files | Migration Concurrence | HTTPS Secure Transfer |
-| ------------------------------------------------------------ | -------------------------- | ------------------ | ------------------------------ | -------------------------------------- |
-| [Migration Service Platform (MSP)](#msp) | Visual operations | Default configuration | The same for all files | Enabled |
-| [COS Migration](#cos) | Non-visual operations by modifying configuration files | Customizable | Different for large and small files | Optional; disabling it can speed up migration |
+| Migration Method | Interactivity | Threshold for Large/Small Files | Concurrence | HTTPS Secure Transfer |
+| ------------------------------------------------------------ | -------------- | ------------------ | ---------- | -------------- |
+| [Migration Service Platform (MSP)](#msp) | Visual operations | Default configuration | Same for all files | Enabled |
 
 
-Both migration methods support viewing data migration progress, checking file consistency, uploading again after failure, resuming upload from breakpoint and other features, which can meet your basic migration requirements. However, the two differ in interactivity, specific features, and other aspects as shown in the table above. You can choose an appropriate method in light of the comparisons.
+This tool allows you to view the data migration progress, check file consistency, upload again after failure, and use checkpoint restart and other features, which can meet your basic migration requirements.
 
 
-## Migration Practice
+## Migration Practices
 
-<span id=msp>
+<span id=msp></span>
 
-###  Migration Service Platform (MSP)
+### MSP
 
-MSP is a platform that integrates multiple migration tools and provides visual interfaces to help you monitor and manage large-scale data migration tasks with ease. The File Migration Tool on it can help you migrate data from various public clouds or data origin servers to COS.
+MSP is a platform that integrates multiple migration tools and provides visual UIs to help you monitor and manage large-scale data migration jobs with ease. The File Migration Tool on it enables you to migrate data from various public clouds or data origins to COS.
 
 The steps are as follows:
 
 1. Log in to the [MSP console](https://console.cloud.tencent.com/msp).
-2. Click **Object Storage Migration** in the left sidebar.
-3. Click **Create a Task** to create a task and configure the task as needed.
-4. Start the task.
+2. Click **Object Storage Migration** on the left sidebar.
+3. Click **Create Job** to create a job and configure the job as needed.
+4. Start the job.
 
-For more information, please see the following documents:
+For more information, see the following documents:
 
 - [Migrating from Alibaba Cloud OSS](https://intl.cloud.tencent.com/document/product/1036/35578)
 - Migrating from Huawei OBS
@@ -35,56 +34,13 @@ For more information, please see the following documents:
 - Migrating from UCloud UFile
 - Migrating from Kingsoft Cloud KS3
 - Migrating from Baidu AI Cloud BOS
-- [Migrating from AWS S3](https://intl.cloud.tencent.com/document/product/1036/32522)
+- [AWS S3 Migration Tutorial](https://intl.cloud.tencent.com/document/product/1036/32522)
 
 #### Tips
 
-During data migration, how fast the data source can be read depends on the network connection, and selecting a higher QPS concurrence value when creating a file migration task will help speed up the migration.
-
+During data migration, how fast the data source can be read depends on the network connection, and selecting a higher QPS concurrency value during file migration job creation helps speed up the migration.
 
 <span id=cos>
-
-### COS Migration 
-
-COS Migration is an all-in-one tool integrating COS data migration features. You can migrate data to COS quickly after simple configurations.
-
-The steps are as follows:
-
-1. Install the Java environment
-2. Install the COS Migration tools
-3. Modify the configuration file
-4. Start the tools
-
-For more information, please see [COS Migration Tool](https://intl.cloud.tencent.com/document/product/436/15392).
-
-#### Tips
-
-Here describes how to configure COS Migration to maximize the migration speed:
-
-1. Adjust the threshold and concurrence of large/small files based on your network environment to implement optimal migration where large files are split into multiple parts and small files are transferred concurrently. Adjust the tool execution time and set a bandwidth limit to ensure that bandwidth usage by data migration will not affect your business operations. Such adjustments can be made by modifying the following parameters in the `[common]` section of the `config.ini` configuration file:
-<table>
-   <tr>
-      <th>Parameter Name</td>
-      <th>Parameter Description</td>
-   </tr>
-   <tr>
-      <td>smallFileThreshold</td>
-      <td>Threshold for small files. If the size of a file is higher than or equal to this threshold, multipart upload will be used; The default value is 5 MB.</td>
-   </tr>
-   <tr>
-      <td>bigFileExecutorNum</td>
-      <td>Concurrence of large files, which is 8 by default. <br>If COS is connected to over the public network with low bandwidth, reduce this value.</td>
-   </tr>
-   <tr>
-      <td>smallFileExecutorNum</td>
-      <td>Concurrence of small files, which is 64 by default.<br>If COS is connected to over the public network with low bandwidth, reduce this value.</td>
-   </tr>
-   <tr>
-      <td>executeTimeWindow</td>
-      <td>This parameter defines the time range when the migration tool will execute a task every day, which will enter sleep mode at other times. In sleep mode, the migration will be paused and the migration progress will be retained until the next time window when the migration will be resumed automatically.</td>
-   </tr>
-</table>
-2. Distributed parallel transfer can further speed up the migration. You can install COS Migration on multiple machines and performing separate migration tasks for different sources.
 
 
 
