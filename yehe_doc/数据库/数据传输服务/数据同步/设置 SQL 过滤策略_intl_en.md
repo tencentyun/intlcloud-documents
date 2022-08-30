@@ -25,9 +25,8 @@ You can set a WHERE conditional filter for a single table. To filter multiple ta
      - If you select **DDL** but not **Custom DDL**, all the DDL operations in the source database will be synced to the target database.
      - If you select both **DDL** and **Custom DDL**, you can select specific DDL policies, and only the selected policies will be synced to the target database.
      - If you don't select **DDL**, all the DDL operations will not be synced to the target database.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/d8a552de769ff3fe7062ffb4ae2485f4.png" style="zoom:70%;" /> 
-2. In **Selected Object** on the right of **Sync Object Option**, select the target table and click the edit button on the right to set the WHERE conditional filter.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6ebdcf5b24f2038f6037e919b58638ab.png" style="zoom:50%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/7d7820a993882bd048e665db3e5c45c6.png" style="zoom:70%;" /> 
+2. In **Selected Object** on the right of **Sync Object Option**, select the target table and click the edit button on the right to set the WHERE conditional filter
 >?Rules for setting a WHERE conditional filter:
 >- For INSERT operations, the data to be inserted must meet the condition for the filter rule to take effect. For DELETE operations, the data to be deleted must meet the condition for the filter rule to take effect. For UPDATE operations, both the data before and after the update must meet the condition for the filter rule to take effect.
 >- The entered rule must be a valid Boolean expression, which is more stringent than MySQL. Some syntaxes that are supported in MySQL but may trigger a warning (such as comparing a string with a number, and c1 + c2 < "abc") are not supported here. The rules and priority levels of logical, arithmetic, and comparison operations are the same as those in MySQL. The priority levels of operations can be changed through parentheses. Even if there is a NULL, the operation rules are still the same as those in MySQL. The DTS system will verify the entered conditional filter rule and issue an alert if the rule is invalid.

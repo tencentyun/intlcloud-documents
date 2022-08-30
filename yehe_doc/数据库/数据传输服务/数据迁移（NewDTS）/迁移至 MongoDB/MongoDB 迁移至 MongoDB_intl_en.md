@@ -78,7 +78,7 @@ db.createUser({
 >
 **As there are many cross-scenarios of source database deployment modes and access types, the migration steps for different scenarios are similar. The following only provides configuration examples for typical scenarios. For other scenarios, configure by referring to the examples.**
 **Example 1**: Migrate a local self-built MongoDB instance (sharded cluster) to a TencentDB instance over Direct Connect.
-![](https://qcloudimg.tencent-cloud.cn/raw/0fcfb59e920ad50f6cbca9885811fa99.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c867347ff1dff2dc8643a13013c0f47f.png)
 <table>
 <thead><tr><th width="10%">Setting Type</th><th width="15%">Configuration Item</th><th width="75%">Description</th></tr></thead>
 <tbody>
@@ -137,7 +137,8 @@ db.createUser({
 <td>Password</td><td>Password of the target database.</td></tr>
 </tbody></table>
 <b>Example 2</b>: Migrate between two TencentDB instances.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ec050f3bc45cc7975219b5d3581d4ce7.png" >
+<img src="https://qcloudimg.tencent-cloud.cn/raw/7b7d3b493950ac63761a7389e42b8fac.png" >
+
 <table>
 <thead><tr><th width="10%">Setting Type</th><th width="15%">Configuration Item</th><th width="75%">Description</th></tr></thead>
 <tbody>
@@ -242,9 +243,7 @@ db.createUser({
 </tbody></table>
 4. Test the connectivity between the source and target instances.
 If the connectivity test fails, fix the problem as instructed in [Failed Connectivity Test](https://intl.cloud.tencent.com/document/product/571/47306).
-![](https://main.qcloudimg.com/raw/43d1d1717e76331a9d2048428515cf75.png)
 5. On the **Set migration options and select migration objects** page, set the migration options and migration objects (you can select specified databases and tables).
-<img src="https://main.qcloudimg.com/raw/0392c50e0aa030d890c20f119e714579.png"  style="zoom:80%;">
 <table>
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
@@ -262,14 +261,12 @@ If the connectivity test fails, fix the problem as instructed in [Failed Connect
 If the verification fails, fix the problem as instructed in [Fix for Verification Failure](https://intl.cloud.tencent.com/document/product/571/42552) and initiate the verification task again.
  - Failed: It indicates that a check item fails and the task is blocked. You need to fix the problem and run the verification task again.
  - Alarm: It indicates that a check item doesn't completely meet the requirements, and the task can be continued, but the business will be affected. You need to assess whether to ignore the alarm or fix the problem and continue the task based on the alarm message.
-![](https://main.qcloudimg.com/raw/1182ccb4cfaa066e95e499c44f4363fe.png)
 7. Return to the migration task list. After the incremental sync is 100% complete, click **Complete** in the **Operation** column to complete the migration task.
  - Select **Structural migration** or **Full migration**: Once completed, the task will be stopped automatically.
  - Select **Full + Incremental migration**: After full migration is completed, the migration task will automatically enter the incremental data sync stage, which will not stop automatically. You need to click **Complete** to manually stop the incremental data sync.
    - Manually complete incremental data sync and business switchover at appropriate time.
     - Observe whether the migration task is in the incremental sync stage and is not in the lag status. If so, stop writing data to the source database for a few minutes.
     - Manually complete incremental sync when the data gap between the target and the source databases is 0 MB and the time lag between them is 0 seconds.
-![](https://main.qcloudimg.com/raw/2a14237df7258733a5c14ff68fc19cf3.png)
 8. (Optional) If you want to view, delete, or perform other operations on a task, click the task and select the target operation in the **Operation** column. For more information, see [Task Management](https://intl.cloud.tencent.com/document/product/571/42637).
 9. After the migration task status becomes **Task successful**, you can formally cut over the business. For more information, see [Cutover Description](https://intl.cloud.tencent.com/document/product/571/42612).
 

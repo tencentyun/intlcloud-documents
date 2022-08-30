@@ -11,11 +11,9 @@
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)。
 2. 在左侧导航栏中，选择**用户** > **用户列表**，进入用户列表管理页面。 
 3. 单击**新建用户**，进入新建用户页面。
-4. 在新建用户页面，选择创建方式。以快速创建为例，操作步骤如下：
-![](https://main.qcloudimg.com/raw/2d440534f58569616876781850a85fea.png)
+4. 在新建用户页面，选择创建方式。
 6. 在**快速新建用户**页面，设置子用户名称、访问方式、用户权限等。
-![](https://main.qcloudimg.com/raw/c4f8ec4822377cf67d96bc7a4f44dd83.png)
-   - 控制台登录：可选择**控制台登录访问**和**编程访问**。
+- 控制台登录：可选择**控制台登录访问**和**编程访问**。
    - 用户权限：用户可根据情况选择，如果选择 **QcloudDTSFullAccess**，表示授权子用户访问 DTS 服务的全部读写权限。如果选择 **QcloudDTSReadOnlyAccess**，表示仅授权读访问权限。
 7. 单击**创建用户**。
 8. 进入成功新建用户页面，您可以通过以下两种方法获取子用户信息。
@@ -24,6 +22,5 @@
 
 ## 已有子用户，给子用户授权使用 DTS
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，在用户列表选择对应子用户，单击**授权**。
-![](https://main.qcloudimg.com/raw/aad4942744471bc4ff29c9f2f01b242d.png)
 2. 在弹出的对话框，选择**QcloudDTSFullAccess 数据传输服务（DTS）全读写访问权限**预设策略，单击**确定**，即可完成子用户授权。
-![](https://main.qcloudimg.com/raw/03bc84152430e6df16ced69af52a7a48.png)
+

@@ -4,7 +4,12 @@
 
 데이터 일관성 검증 작업은 해당 DTS 작업이 **증분 동기화** 단계에 있는 경우에만 생성할 수 있습니다.
 
->?현재 데이터 일관성 검증은 자체 구축 MySQL, TencentDB for MySQL 및 타사 MySQL에서 TencentDB for MySQL/TDSQL-C로 마이그레이션하는 경우에만 지원됩니다.
+>?현재 데이터 일관성 검사를 지원하는 연결은 다음과 같습니다.
+>- MySQL/MariaDB/Percona/TDSQL MySQL > MySQL 
+>- MySQL/MariaDB/Percona/TDSQL MySQL > MariaDB
+>- MySQL/MariaDB/Percona  > TDSQL-C MySQL
+>- MySQL/MariaDB/Percona/TDSQL MySQL  > TDSQL MySQL
+>- MySQL/MariaDB/Percona/TDSQL TDStore  > TDSQL TDStore 
 
 ## 주의 사항
 - 데이터 일관성은 원본 데이터베이스에서 대상 데이터베이스로 마이그레이션된 데이터만 비교합니다. 마이그레이션 중에 대상 데이터베이스에 데이터를 쓰는 경우 작성된 데이터는 일관성 검증에 포함되지 않습니다.
@@ -16,8 +21,7 @@
 ## 제한
 현재 검증 작업은 DDL 작업에서 감지할 수 없습니다. 마이그레이션 중에 원본 데이터베이스에서 DDL 작업을 수행하면 확인 결과가 실제 데이터와 일치하지 않으며 정확한 비교 결과를 얻으려면 다른 확인 작업을 시작해야 합니다.
 
-## 작업 단계
-#### 데이터 일관성 검증 작업 생성
+## 데이터 일관성 검증 작업 생성
 1. [DTS 콘솔](https://console.cloud.tencent.com/dts/migration)에 로그인합니다.
 2. **데이터 마이그레이션** 페이지에서 확인하려는 마이그레이션 작업을 선택하고 작업 ID를 클릭하여 **작업 세부 정보** 페이지로 들어갑니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0af144b0e8cb179934b28c2c45d567e2.png)
@@ -28,17 +32,16 @@
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/ee3616aae11c9f83adf25c902db03c09.png)
 5. 팝업 창에서 **확인**을 클릭합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/b785c2ca36159ead67d9a72bc9c910e9.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b785c2ca36159ead67d9a72bc9c910e9.png" style="zoom:90%;" />
 6. 데이터 일관성 검증 매개변수를 구성한 후 **데이터 비교 시작**을 클릭합니다.
 마이그레이션 객체에 대해 **모든 마이그레이션 객체** 또는 **사용자 정의 선택**할 수 있습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/33f22832c023c6e5c823482cba5ae8fe.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/33f22832c023c6e5c823482cba5ae8fe.png" style="zoom:90%;" />
 
-#### 데이터 일관성 검증 결과 조회
-1. 마이그레이션 작업 홈페이지의 **마지막 검증 결과** 열에서 **더보기**를 클릭합니다.
+## 데이터 일관성 검증 결과 조회
+1. 마이그레이션 작업 홈페이지의 **마지막 검증 결과** 열에서 **더 보기**를 클릭합니다.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/47b3914523ff745c3acd2d9852dd0a1b.png)
 2. **조회**를 클릭하면 검증 결과를 볼 수 있습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/1c0f1f80e884f70371b8de3cce0b9296.png)
-데이터가 일관되면 결과는 다음과 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/01651c2a2edb7dc770e04b2ffd5fe6ba.png)
-
-
+    ![](https://qcloudimg.tencent-cloud.cn/raw/d29df913b865c78894eb626162540a2c.png)
+    데이터가 일관되면 결과는 다음과 같습니다.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/d3240dd21121889c53285e590fc32b13.png)
 

@@ -78,7 +78,7 @@ db.createUser({
 >
 **因源数据库部署形态和接入类型的交叉场景较多，各场景迁移步骤类似，如下仅提供典型场景的配置示例，其他场景请用户参考配置。**
 **示例一**：将本地自建 MongoDB（分片集群）通过专线接入方式迁移至腾讯云数据库。
-![](https://qcloudimg.tencent-cloud.cn/raw/0fcfb59e920ad50f6cbca9885811fa99.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c867347ff1dff2dc8643a13013c0f47f.png)
 <table>
 <thead><tr><th width="10%">设置类型</th><th width="15%">配置项</th><th width="75%">说明</th></tr></thead>
 <tbody>
@@ -137,7 +137,8 @@ db.createUser({
 <td>密码</td><td>目标库的数据库帐号的密码。</td></tr>
 </tbody></table>
 <b>示例二</b>：将腾讯云数据库迁移至腾讯云数据库。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ec050f3bc45cc7975219b5d3581d4ce7.png" >
+<img src="https://qcloudimg.tencent-cloud.cn/raw/7b7d3b493950ac63761a7389e42b8fac.png" >
+
 <table>
 <thead><tr><th width="10%">设置类型</th><th width="15%">配置项</th><th width="75%">说明</th></tr></thead>
 <tbody>
@@ -242,9 +243,7 @@ db.createUser({
 </tbody></table>
 4. 测试源实例和目标实例的连通性。
 如果连通性测试未通过，请参考 [连通性测试不通过](https://intl.cloud.tencent.com/document/product/571/47306) 进行处理。
-![](https://main.qcloudimg.com/raw/43d1d1717e76331a9d2048428515cf75.png)
 5. 在设置迁移选项及选择迁移对象页面，设置迁移选项和迁移对象（可选择部分库表）。
-<img src="https://main.qcloudimg.com/raw/0392c50e0aa030d890c20f119e714579.png"  style="zoom:80%;">
 <table>
 <thead><tr><th>配置项</th><th>说明</th></tr></thead>
 <tbody><tr>
@@ -262,14 +261,12 @@ db.createUser({
 如果校验任务不通过，可以参考 [校验不通过处理方法](https://intl.cloud.tencent.com/document/product/571/42552) 修复问题后重新发起校验任务。
  - 失败：表示校验项检查未通过，任务阻断，需要修复问题后重新执行校验任务。
  - 警告：表示检验项检查不完全符合要求，可以继续任务，但对业务有一定的影响，用户需要根据提示自行评估是忽略警告项还是修复问题再继续。
-![](https://main.qcloudimg.com/raw/1182ccb4cfaa066e95e499c44f4363fe.png)
 7. 返回迁移任务列表，待增量同步完成100%，在**操作**列单击**完成**，即可完成迁移任务。
  - 选择**结构迁移**或者**全量迁移**：任务完成后会自动结束，不需要手动结束。
  - 选择**全量 + 增量迁移**：全量迁移完成后会自动进入增量数据同步阶段，增量数据同步不会自动结束，需要您手动单击**完成**结束增量数据同步。
    - 请选择合适时间手动完成增量数据同步，并完成业务切换。
     - 观察迁移阶段为增量同步，并显示无延迟状态，将源库停写几分钟。
     - 目标与源库数据差距为0MB及目标与源库时间延迟为0秒时，手动完成增量同步。
-![](https://main.qcloudimg.com/raw/2a14237df7258733a5c14ff68fc19cf3.png)
 8. （可选）如果您需要进行查看任务、删除任务等操作，请单击对应的任务，在**操作**列进行操作，详情可参考 [任务管理](https://intl.cloud.tencent.com/document/product/571/42637)。
 9. 当迁移任务状态变为**任务成功**时，即可对业务进行正式割接，更多详情可参考 [割接说明](https://intl.cloud.tencent.com/document/product/571/42612)。
 

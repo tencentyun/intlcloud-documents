@@ -4,6 +4,8 @@
 | ------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | MySQL | MySQL 5.5.x, 5.6.x, 5.7.x, 8.0.x | <li>데이터 업데이트<li>구조 업데이트<li>전체 인스턴스 |
 | MariaDB           | MariaDB 10.0.10, MariaDB 10.1.9 | <li>데이터 업데이트<li>구조 업데이트<li>전체 인스턴스 |
-| MariaDB(Percona) | MariaDB(Percona)5.6.x, 5.7.x | <li>데이터 업데이트<li>구조 업데이트<li>전체 인스턴스 |
-| TDSQL MySQL | TDSQL MySQL 5.6.x, 5.7.x, 8.0.18 | <li>데이터 업데이트<li>구조 업데이트<li>전체 인스턴스 |
+| MariaDB(Percona) | MariaDB(Percona) 5.7.17 | <li>데이터 업데이트<li>구조 업데이트<li>전체 인스턴스 |
+| TDSQL MySQL | MySQL 8.0.18, Percona 5.7.17  | <li>데이터 업데이트<li>구조 업데이트<li>전체 인스턴스 |
+| TDSQL-C MySQL | TDSQL-C MySQL 5.7.x, 8.0.x | <li>데이터 업데이트<li>구조 업데이트<li>전체 인스턴스 |
+| TDSQL PostgreSQL 버전 | PostgreSQL 버전 | 데이터 업데이트 |
 

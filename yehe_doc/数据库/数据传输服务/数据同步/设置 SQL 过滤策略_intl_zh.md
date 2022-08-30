@@ -25,9 +25,8 @@ Where 条件过滤支持对单张表进行设置，需要对多张表进行过�
      - 勾选 **DDL**，不勾选 **DDL 自定义**开关，则同步源数据库的所有 DDL 到目标数据库。
      - 勾选 **DDL**，同时勾选 **DDL 自定义**开关，可以自定义选择具体的 DDL 策略，只有勾选的策略会同步到目标库。
      - 不勾选 **DDL**，则所有的 DDL 都不会同步到目标库。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/d8a552de769ff3fe7062ffb4ae2485f4.png" style="zoom:70%;" /> 
+  <img src="https://qcloudimg.tencent-cloud.cn/raw/7d7820a993882bd048e665db3e5c45c6.png" style="zoom:70%;" /> 
 2. 在同步对象选项右侧的已选对象中，选择对应的表，单击右边的编辑按钮，设置 Where 条件过滤。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6ebdcf5b24f2038f6037e919b58638ab.png" style="zoom:50%;" />
 >?Where 条件过滤设置规则说明：
 >- 对于 INSERT 操作，需要插入的数据满足条件过滤规则才能生效，对于 DELETE 操作，需要删除的数据满足条件过滤规则才能生效，对于 UPDATE 操作，则需要更新前后的数据都满足条件过滤规则才能生效。
 >- 输入的规则必须是一个合法的 BOOL 表达式，并且表达式的规则相对于 MySQL 更为严格，一些在 MySQL 中支持但可能产生 WARNING 的语法（如字符串同数字比较，c1 + c2 < "abc" ），此处不支持。逻辑运算、算术运算、比较运算规则和优先级同 MySQL 一致，支持通过括号改变运算优先级，操作数中有 NULL 时，运算规则也同 MySQL 一致。DTS 系统会对输入的条件过滤规则进行验证，如果不合法会给出提醒。

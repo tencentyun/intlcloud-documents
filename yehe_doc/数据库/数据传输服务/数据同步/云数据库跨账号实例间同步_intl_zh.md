@@ -20,26 +20,26 @@
 1. 使用源数据库所属的腾讯云主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam/role)（如果子账号子有CAM和角色相关的权限，也可以使用子账号登录）。
 2. 左侧导航单击**角色**，进入角色管理页面，然后单击**新建角色**。
 3. 在选择角色载体页面，选择**腾讯云账户**方式。<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b5fd492a4790c8ece15f4830b85e2df1.png" style="zoom:40%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/383f4bd0086637b5346b03797d022a2e.png" style="zoom:40%;" />
 4. 在**输入角色载体信息**页面，配置相关信息，单击**下一步**。
-![](https://qcloudimg.tencent-cloud.cn/raw/33617c62891531013942e82ce179499d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/77f8a29b40f48f4e6cc77ed7f191af13.png)
    - 云账号类型：选择**其他主账号**。
    - 账号 ID：填入目标数据库所属的腾讯云主账号 ID，主账号 ID 可在 **[账号信息](https://console.cloud.tencent.com/developer)** 中查看。目标数据库实例属于子账号名下时，此处也填写主账号 ID。
    - 外部 ID：可依据情况，选择性开启。  
 >?如果使用了外部 ID，请用户自行记录和保存该 ID。无法通过 DTS 服务查询到该 ID。
 5. 在**配置角色策略**页面，输入 QcloudDTSReadOnlyAccess，选中 **QcloudDTSReadOnlyAccess** 预设策略，单击**下一步**。
-![](https://qcloudimg.tencent-cloud.cn/raw/a70b000b9f51652c472fe223711d04d4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5d039c19c35e1d8a107a023ed5321010.png)
 6. 在**审阅**页面，设置角色名称，单击**完成**后该角色创建完成。
 >?配置后记录该名称，后续创建同步任务时需要输入。
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/b85ad44d6d8cac11bab863216c696fd2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/acb68a6dfa00e5ccd41fdd511a0fcfd6.png)
 >?如果执行同步任务的账号为主账号，授权步骤到此结束；如果为子账号，还需要请求当前主账号持有人，对子账号进行如下策略授权。
 7. （可选）使用目标数据库所属的腾讯云子账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam/role)，在左侧导航单击**策略**，然后在右侧单击**新建自定义策略**，并选择**按策略语法创建**。<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/98feaf82b12346e6b106864be12c929e.png" style="zoom:40%;" />      
+<img src="https://qcloudimg.tencent-cloud.cn/raw/050a9318db3118de54ffefb57c144c12.png" style="zoom:40%;" />      
 8. （可选）选择**空白模板**，然后单击**下一步**。
-![](https://qcloudimg.tencent-cloud.cn/raw/22f37e1ed65e7394c3b0d32b73a8d724.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/3e779e1daa8394da22d8ee3200c10370.png)  
 9. （可选）创建一个策略，策略的名称以及描述可以根据自己的需求填写，策略内容复制示例代码后，将红框中的内容替换成对应的信息。<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/0b516baa18d7b242160f99ffb844681a.png" style="zoom:50%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9f877d283df7104ab5be9506d338b4a3.png" style="zoom:50%;" />
 <br>策略语法示例：  
 ```
 {
@@ -54,16 +54,16 @@
 }
 ```
 10. （可选）单击**完成**后返回到策略列表页，在列表页中单击**关联用户/组**。
-![](https://qcloudimg.tencent-cloud.cn/raw/a61a3c28aa711662db854e8963024d56.png) 
+![](https://qcloudimg.tencent-cloud.cn/raw/ad8eb259b437793ac5a8dfe20c97b627.png) 
 11. （可选）选择目标数据库实例所属子账号（即执行同步任务的子账号），单击**确定**，如下图所示。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5a56dd3c69f3c2688bc9c36ddead59e5.png" style="zoom:80%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b28690185058f58e03eb44e6dd84161c.png" style="zoom:80%;" />
 
 ## 创建同步任务
 1. 使用目标数据库实例所属腾讯云账号，登录 [DTS 控制台](https://console.cloud.tencent.com/dts/overview)。
 2. 选择**数据同步** > **新建同步任务**，购买一个新的同步任务。
 3. 购买完成后，返回数据同步列表，单击**操作**列的**配置**，进入配置同步任务页面。
 4. 在设置源和目标数据页面，配置源库和目标库信息。下面以 MySQL 到 MySQL 的同步为例进行介绍。
-![](https://qcloudimg.tencent-cloud.cn/raw/87b6e9567d9e5ea078d144640498ee0d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/28ba920ca242e72be84f81fc4bee665e.png)
 跨账号关键参数配置如下：
    - 接入类型：选择**云数据库**，表示源数据库属于腾讯云数据库实例。
    - 是否跨账号：选择**跨账号**。
@@ -82,12 +82,10 @@
 请确认**跨腾讯云账号 ID**（应该为源数据库的主账号 ID）和**跨账号授权角色名称**（应该为 [授权账号](#sqzh) 步骤6中创建的**角色名称**）配置是否正确。
 
 #### 2. 跨账号拉取实例列表报错：you are not authorized to perform operation (sts:AssumeRole) ，resource (qcs::cam::uin/1xx5:roleName/xxxx) has no permission
-![](https://main.qcloudimg.com/raw/16dee616c668dde14d10b892918d42a1.png)
 **出错原因**：您当前创建同步任务使用的账号是子账号，并且当前子账号没有 sts:AssumeRole 权限。
 **解决方法**：
-
 - 使用主账号来创建同步任务。
 - 请求目标数据库所属的主账号持有人，参考 [授权账号](#sqzh) 对子账号授权，策略语法中的 resource，填写报错框中蓝色字段部分。
-![](https://main.qcloudimg.com/raw/d978acb50ab95f7b8091854f8b8e17f7.png)
+
 
 
