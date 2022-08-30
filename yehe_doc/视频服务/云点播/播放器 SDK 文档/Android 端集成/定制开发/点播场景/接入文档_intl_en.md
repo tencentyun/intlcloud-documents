@@ -150,8 +150,8 @@ mVodPlayer.seek(time);
 You can specify the playback start time before calling `startPlay` for the first time.
 
 ```java
-float startTimeInMS = 600; // In ms
-mVodPlayer.setStartTime(startTimeInMS);   // Set the playback start time
+float startTimeInSecond = 60; // In ms
+mVodPlayer.setStartTime(startTimeInSecond);   // Set the playback start time
 mVodPlayer.startPlay(url);
 ```
 
