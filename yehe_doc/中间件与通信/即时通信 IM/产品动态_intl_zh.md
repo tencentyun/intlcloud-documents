@@ -1,7 +1,132 @@
+## 2022年06月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 6.3.2619 增强版本发布</td>
+    <td><ul style="margin:0">
+	<li> 修复获取话题列表偶现的崩溃问题 </li>
+	<li> 修复删除话题后，获取会话列表异常问题 </li>
+    </ul></td>
+    <td> 2022-06-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 2.20.1 版本发布（ Web 端）</td>
+    <td><li>退出/被踢出非直播群，或非直播群被解散，只删除群组记录，不删除对应的群会话，体验对齐 native</li><li> <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteMessage">deleteMessage</a> 不支持删除群系统通知，并给出具体错误信息。</li><li>私有化部署的富媒体消息支持 HTTP 协议</li><li>修复C2C 会话 lastMessage 被异常更新问题</li></td>
+    <td> 2022-06-27 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+<tr>
+    <td> SDK 6.3.2609 增强版本发布</td>
+    <td><ul style="margin:0">
+	<li> 新增在线状态及自定义状态 </li>
+	<li> 直播群支持拉取群成员列表，最大支持1000人</li>
+	<li> 话题支持 at all 消息 </li>
+	<li> 修复跨平台版本 sql 执行错误问题 </li> 
+	<li> 跨平台 SDK 增加社群话题相关接口 </li>
+	<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>
+    </ul></td>
+    <td> 2022-06-16 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 2.20.0 版本发布（Web 端）</td>
+    <td><ul style="margin:0">
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage">modifyMessage</a>，支持消息变更
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping">getMessageListHopping</a>，支持根据指定的消息 sequence 或消息时间拉取会话的消息列表
+<li>支持针对单条或多条 C2C 消息发送已读回执（需开通旗舰版）
+<li>C2C 会话 lastMessage 新增字段 isPeerRead，用于标识对端是否已读<li>更多更新内容请参考 <a href="https://cloud.tencent.com/document/product/269/38492">更新日志</a></li>
+    </ul></td>
+    <td> 2022-06-09 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+</table>
+
+
+## 2022年05月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 2.19.0 版本发布（Web 端）</td>
+    <td><ul style="margin:0">
+<li>支持 <a href="https://intl.cloud.tencent.com/document/product/1047/33529">社群（Community）</a>下创建话题（Topic），支持互动性更强的场景</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getJoinedCommunityList">getJoinedCommunityList</a> 获取支持话题的社群列表</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTopicInCommunity">createTopicInCommunity</a> 创建话题</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity">deleteTopicFromCommunity</a> 删除话题</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile">updateTopicProfile</a> 设置话题资料</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList">getTopicList</a> 获取话题列表</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/Topic.html">Topic</a> 社群话题对象，用于描述话题具有的属性，如名称、公告、简介、未读数等信息</li>
+<li>事件 <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED">TIM.EVENT.TOPIC_CREATED</a> 创建话题时触发</li>
+<li>事件 <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED">TIM.EVENT.TOPIC_DELETED</a> 删除话题时触发</li>
+<li>事件 <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED">TIM.EVENT.TOPIC_UPDATED</a> 话题资料更新时触发</li></li>
+    </ul></td>
+    <td> 2022-05-07 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+</table>
+
 ## 2022年04月
 <table>
 <tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
 </tr> 
+<tr>
+    <td> SDK 6.2.2363 增强版本发布</td>
+    <td><ul style="margin:0">
+	<li> 新增社群话题功能</li>
+	<li> 新增消息编辑接口</li>
+	<li> 支持 C2C 消息已读回执</li>
+	<li> 优化国际站的联网质量</li> 
+	<li> 修复消息已读后，卸载重装再拉取该消息，已读状态为未读的问题</li>
+	<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>
+    </ul></td>
+    <td> 2022-04-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 2.18.2 版本发布（小程序和 Web 端）</td>
+    <td><ul style="margin:0">
+<li>优化直播群使用体验</li><li>修复部分场景下统计不准确的问题</li><li>修复调用接口 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList">getGroupMessageReadMemberList</a> 返回结果不准确的问题<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a></li>
+    </ul></td>
+    <td> 2022-04-22 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+<td>Flutter SDK 3.9.3</td>
+<td><ul style="margin:0">
+  <li>修复群禁言群 tips boolValue 丢失问题
+    <ul>
+      <li>目前群信息变更回调返回的数据为 key(string)-value(string) 形式，新增 key(string)-boolValue(bool) 形式</li>
+    </ul>
+  </li>
+  <li>修复会话实例少解析了 nameCard 字段问题
+  <li>新增群已读回执相关接口
+    <ul>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessageReadReceipts.html">sendMessageReadReceptes</a> 发送群消息已读回执</li>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getMessageReadReceipts.html">getMessageReadReceptes</a> 获取自己发送消息的已读回执</li>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getGroupMessageReadMemberList.html">getgroupMessageReadMemeberList</a> 获取自己发送的群消息已读（未读）群成员列表</li>
+    </ul>
+  </li>
+  <li>Flutter for Web 完善
+</ul>
+</td>
+<td>2022-04-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+<tr>
+    <td> SDK 2.18.0 版本发布（小程序和 Web 端）</td>
+    <td><ul style="margin:0">
+<li>新增 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#sendMessageReadReceipt">sendMessageReadReceipt</a> 发送群消息已读回执</li>
+<li>新增 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageReadReceiptList">getMessageReadReceiptList</a> 拉取群消息已读回执列表</li>
+<li>新增 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList">getGroupMessageReadMemberList</a> 拉取群消息已读（或未读）群成员列表</li>
+<li>新增 <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#findMessage">findMessage</a> 根据 messageID 查询会话的本地消息。
+新增消息被撤回后，会话未读数的变更体验对齐 NativeIM</li><li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a></li>
+    </ul></td>
+    <td> 2022-04-08 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+
+
+
 <tr>
     <td> SDK 6.1.2166 增强版本发布</td>
     <td><ul style="margin:0">
@@ -17,6 +142,7 @@
     <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
 </tr>
 </table>
+
 
 ## 2022年03月
 <table>
