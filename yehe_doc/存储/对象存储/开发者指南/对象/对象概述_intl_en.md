@@ -23,7 +23,7 @@ For example, in an object's access address `examplebucket-1250000000.cos.ap-guan
 - Refrain from using special symbols such as `*` and `%` in the filename.
 
 >? If the name of the uploaded file or folder contains Chinese characters, when you access or request the file or folder, the Chinese characters will be converted into a percent-encoded string based on URL-encoding rules.
-> For example, when you access `文档.doc`, the object key is `文档.doc`, but the percent-encoded string actually read is `%e6%96%87%e6%a1%a3.doc`.
+> For example, when you access `TestSample.doc`, the object key is `TestSample.doc`, but the percent-encoded string actually read is `%e6%96%87%e6%a1%a3.doc`.
 > 
 
 
