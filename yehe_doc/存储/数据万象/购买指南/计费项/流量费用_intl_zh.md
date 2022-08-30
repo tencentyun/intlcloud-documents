@@ -47,13 +47,13 @@
 
 A.用户访问带有图片处理参数的COS域名，要求调整图片宽高为原图50%，则产生以下费用:
 
-![图片生成a](https://qcloudimg.tencent-cloud.cn/raw/ca99325d03c75c3a7f930cce3c1e450e.png)
+![图片生成a](https://qcloudimg.tencent-cloud.cn/raw/340a74554f0cbcc330678e54d961cfb6.jpg)
 
 
 
 B.用户访问CI域名，如对图片进行缩放操作，调整图片宽高为原图50%，则产生以下费用:
 
-![图片生成a](https://qcloudimg.tencent-cloud.cn/raw/91acea0f063a5ff685588deae08f71fa.png)
+![图片生成a](https://qcloudimg.tencent-cloud.cn/raw/c21e1f8e10f8194ddd1d8e03e8329753.jpg)
 
 说明：
 
