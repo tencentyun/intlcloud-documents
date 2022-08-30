@@ -1,3 +1,8 @@
+## 1.7.5 @2022.05.23
+- Added APIs for group message read receipts.
+- Fixed the issue where the field with a value of `null` was ignored by Newtonsoft serialization.
+- Fixed the issue where the `uint64` field in `GroupPendencyResult` was changed to `ulong`.
+
 ## 1.6.4 @2022.01.13
 - Added SDK support for package manager import.
 - Added the feature of adding dependencies after iOS compilation.

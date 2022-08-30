@@ -1,5 +1,15 @@
+## IM Flutter SDK 3.9.3 @2022.4.20
+- 発言禁止のグループのtips boolValueが失われたという問題を修正しました
+ - 現在、グループ情報変更のコールバックによって返されるデータは、key(string)-value(string)の形式であり、key(string)-boolValue(bool)の形式が新しく追加されています
+- セッションインスタンスでnameCardフィールドが解析されていないという問題を修正しました
+- グループ開封確認関連のインターフェースを追加しました
+ - [sendMessageReadReceptes](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessageReadReceipts.html)では、グループメッセージの開封確認を送信できるようになりました
+ - [getMessageReadReceptes](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getMessageReadReceipts.html)では、自分から送信したメッセージの開封確認を取得できるようになりました
+ - [getgroupMessageReadMemeberList](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getGroupMessageReadMemberList.html)では、自分から送信したグループメッセージの既読（未読）グループメンバーリストを取得できるようになりました
+- Flutter for Webを最適化しました
+
 ## IM Flutter SDK 3.9.1 @2022.3.24
-- 下層データベースのバージョンを6.1.2155にアップグレードします
+- 下層データベースのバージョンを6.1.2155にアップグレードしました
 
 ## IM Flutter SDK 3.9.0 @2022.3.22
 - grouplistenerを修正します
@@ -11,21 +21,21 @@
 - interfaceを更新します
 
 ## IM Flutter SDK 3.8.3 @2022.3.1
-- 環境に応じてtokenエンコーディングを切り替えます
+- 環境に応じてtokenエンコーディングを切り替えました
 
 ## IM Flutter SDK 3.8.2 @2022.2.21
-- グループメンバーパラメータの制約を更新します
+- グループメンバーパラメータの制約を更新しました
 
 ## IM Flutter SDK 3.8.0 @2022.2.17
-- 下層interfaceの依存関係をアップグレードします
+- 下層interfaceの依存関係をアップグレードしました
 
 ## IM Flutter SDK 3.7.8 @2022.2.15
-- 強制解凍により引き起こされる異常を修正します
+- 強制解凍により引き起こされる異常を修正しました
 
 ## IM Flutter SDK 3.7.7 @2022.2.10
-- Swiftコードwarningを修正します
+- Swiftコードwarningを修正しました
 - Swiftの強制解凍コードを書き直します
-- sendMessageインターフェースにより返されるmessageインスタンスにidフィールドを追加します
+- sendMessageインターフェースにより返されるmessageインスタンスにidフィールドを追加しました
 
 
 ## IM Flutter SDK 3.7.5 @2022.01.23
@@ -62,7 +72,7 @@
 - java文法エラーを修正しました
 
 ## IM Flutter SDK 3.6.4  @2021.12.17
-- Androidの非同期登録イベントで返されないbugを修正しました
+- Androidの非同期登録イベントが何も返されないbugを修正しました
 - 基礎監視イベントが削除されるエラーを修正しました
 - メッセージプログレスイベントに送信中のメッセージのuuidを追加しました
 
@@ -133,7 +143,7 @@ add web support
 
 ## IM Flutter SDK 3.5.0 @2021.10.1
 - いくつかの既知の問題を修正しました
-- 次のインターフェースを追加しました：
+- 次のインターフェースを追加しました
  - callExperimentalAPI
  - clearC2CHistoryMessage
  - clearGroupHistoryMessage

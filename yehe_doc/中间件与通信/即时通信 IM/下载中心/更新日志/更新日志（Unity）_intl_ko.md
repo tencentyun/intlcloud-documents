@@ -1,3 +1,8 @@
+## 1.7.5 @2022.05.23
+- 그룹 메시지 수신 확인 관련 인터페이스 추가
+- Newtonsoft 직렬화 시 null 값이 있는 필드 무시
+- GroupPendencyResult의 uint64 필드가 ulong으로 변경되는 것을 수정
+
 ## 1.6.4 @2022.01.13
 - SDK는 package manager 가져오기 지원
 - iOS 컴파일 후 종속성 추가 기능 추가

@@ -1,3 +1,13 @@
+## IM Flutter SDK 3.9.3 @2022.4.20
+- Fixed the issue where the `boolValue` of a group muting tip was lost.
+ - Added the `key(string)-boolValue(bool)` format in addition to the existing `key(string)-value(string)` in the callback for group information modification.
+- Fixed the issue where the `nameCard` field of a conversation was not parsed by the instance.
+- Added APIs for group message read receipts.
+ - Added [sendMessageReadReceptes](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessageReadReceipts.html) to send a read receipt for a group message.
+ - Added [getMessageReadReceptes](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getMessageReadReceipts.html) to get the read receipt for a sent message.
+ - Added [getgroupMessageReadMemeberList](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getGroupMessageReadMemberList.html) to get the list of group members who have or have not read a sent group message.
+- Improved the Flutter for web.
+
 ## IM Flutter SDK 3.9.1 @2022.3.24
 - Upgraded the underlying library to v6.1.2155.
 
@@ -30,7 +40,7 @@
 
 ## IM Flutter SDK 3.7.5 @2022.01.23
 - Upgraded the underlying library to v6.0.1975.
-- Supported the TPNS token for offline push configuration.
+- Supported the Tencent Push Notification Service token for offline push configuration.
 
 
 ## IM Flutter SDK 3.7.1 @2022.01.12
@@ -62,7 +72,7 @@
 - Fixed syntax errors in Java.
 
 ## IM Flutter SDK 3.6.4  @2021.12.17
-- Fixed the bug for Android where no message was returned for an async registration event.
+- Fixed the issue where there was no return for Android async registration events.
 - Fixed the issue where removing a general listening event triggered an error.
 - Added the UUID of a message being sent in its progress event.
 
@@ -181,7 +191,7 @@ Added support for web.
 - Modified the SDK compression configuration.
 - Fixed signaling callback bugs.
 - Modified the return data of custom messages.
-- [Important] Modified the format of content returned for a signaling message. Please upgrade to this version or later to use signaling.
+- [Important] Modified the format of content returned for a signaling message. Upgrade to this version or later to use signaling.
 
 
 ## IM Flutter SDK 1.0.4 @2021.01.14

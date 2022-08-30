@@ -21,27 +21,25 @@
 >?이미 애플리케이션이 있는 경우 SDKAppID를 기록하고 [키 정보 가져오기](#step2)를 합니다.
 >동일한 Tencent Cloud 계정으로 최대 300개의 IM 애플리케이션을 만들 수 있습니다. 이미 300개의 애플리케이션이 있는 경우 신규 애플리케이션 생성 전에 사용하지 않는 애플리케이션을 [비활성화 및 삭제](https://intl.cloud.tencent.com/document/product/1047/34540)합니다. **애플리케이션 삭제 후에는 SDKAppID에 해당하는 모든 데이터 및 서비스를 복구할 수 없으므로 주의하시기 바랍니다.**
 >
-2. **애플리케이션 생성**을 클릭하고 **애플리케이션 생성** 대화 상자에 애플리케이션 이름을 입력하고 **확인**을 클릭합니다.
+2. **애플리케이션 생성**을 클릭하고 **애플리케이션 생성** 대화 상자에 애플리케이션 이름을 입력한 후 **확인**을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
-3. 왼쪽 사이드바에서 **[보조 툴](https://console.cloud.tencent.com/im-detail/tool-usersig)** > **UserSig Generation & Verification**을 클릭하여 UserID 및 해당 UserSig를 생성하고 서명 정보를 복사하여 [5단계](#step5)에서 사용합니다.
+3. 왼쪽 사이드바에서 **[보조 툴](https://console.cloud.tencent.com/im/tool-usersig)** > **UserSig Generation & Verification**을 클릭하여 UserID 및 해당 UserSig를 생성하고 서명 정보를 복사하여 [5단계](#step5)에서 사용합니다.
 ![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
 
 [](id:step2)
 ### 2단계: Unity 프로젝트 생성
 Unity를 사용하여 Unity 프로젝트를 생성합니다. 프로젝트의 위치를 ​​기억하십시오.
-![](https://qcloudimg.tencent-cloud.cn/raw/f07ae1bb4db4ca5f43f6acc563aafa8c.png)
 
 [](id:step3)
 ### 3단계: 종속성 파일 수정
 1. IDE(예시: Visual Studio Code)를 통해 프로젝트를 엽니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/4ea52e320700dc37770a5405ac14d1a7.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/1a21933037a72a6bd4c8ed14f08c6ca7.png)
 2. 디렉터리에 따라 Packages/manifest.json을 찾아 종속성을 다음과 같이 수정합니다.
 ```json
 {
-	"dependencies":{
-    "com.tencent.imsdk.unity":"1.6.4" // 최신 버전, 모든 버전으로 지정: https://www.npmjs.com/package/com.tencent.imsdk.unity
-  },
-  "registry": "https://registry.npmjs.org"
+    "dependencies":{
+    "com.tencent.imsdk.unity":"https://github.com/TencentCloud/TIMSDK.git#unity" 
+  }
 }
 ```
 
@@ -52,12 +50,13 @@ Unity Editor에서 프로젝트를 열고 종속성 로딩이 완료되기를 �
 
 [](id:step5)
 ### 5단계: 스크립트 테스트
-1. [테스트 스크립트 다운로드](https://imgcache.qq.com/operation/dianshi/other/Demo.1fdc6bd474aa3d12f0f3061155d4a5accdf30c7b.zip
-) 후, 파일의 압축 해제 후 프로젝트에 넣고 TestApi.cs를 임의의 시나리오에 바인딩합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/b4d770775523fdd76b75f1d80f07c925.jpg)
-2. 시나리오를 선택하여 실행하고 [1단계](#step1)에서 SDKAppID, UserID, UserSig를 설정하여 테스트를 시작합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/940da8044cd80db27d08a7b0dff45b94.png)
+1. [테스트 스크립트(TestApi.cs)](https://github.com/TencentCloud/TIMSDK/blob/master/Unity/im_unity_sdk_plus/Assets/Demo/TestApi.cs) 및 [구성 파일(Config.cs)](https://github.com/TencentCloud/TIMSDK/blob/master/Unity/im_unity_sdk_plus/Assets/Demo/Config.cs)을 가져오고, Config.cs 에서 SDKAppID, UserID, UserSig, toUserID 매개변수를 최적화한 후 TestApi.cs를 테스트 시나리오의 Camera에 바인딩합니다.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b4d770775523fdd76b75f1d80f07c925.jpg)
 
+2. Unity Editor 실행 버튼을 클릭하여 시나리오 실행을 시작합니다. Init(SDK 초기화), Login(IM에 로그인) 및 기타 테스트 버튼을 클릭하여 테스트합니다.
+
+  <img src="https://qcloudimg.tencent-cloud.cn/raw/40fb0f381096840418b66b804d403140.png" alt="image-20220616115353114" style="zoom:50%;" />
+	
 ## FAQ
 
 ### 어떤 플랫폼이 지원됩니까?

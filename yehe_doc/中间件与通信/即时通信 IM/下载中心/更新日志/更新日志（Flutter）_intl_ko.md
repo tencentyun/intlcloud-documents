@@ -1,3 +1,13 @@
+## IM Flutter SDK 3.9.3 @2022.4.20
+- 그룹 음소거 tips boolValue 유실 문제 수정
+ - 현재 그룹 정보 변경 콜백에서 반환되는 데이터는 key(string)-value(string) 형식이며, key(string)-boolValue(bool) 형식이 추가됨
+- 대화 인스턴스가 nameCard 필드를 적게 리졸브하는 문제 수정
+- 그룹 수신 확인 관련 인터페이스 추가
+ - [sendMessageReadReceptes](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessageReadReceipts.html) 그룹 메시지 수신 확인 발송
+ - [getMessageReadReceptes](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getMessageReadReceipts.html) 자신이 발송한 메시지에 대한 수신 확인 가져오기
+ - [getgroupMessageReadMemeberList](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getGroupMessageReadMemberList.html) 자신이 발송한 그룹 메시지의 읽은(읽지 않은) 그룹 구성원 목록 가져오기
+- Flutter for Web 개선
+
 ## IM Flutter SDK 3.9.1 @2022.3.24
 - 기본 라이브러리를 v6.1.2155로 업그레이드
 
@@ -62,7 +72,7 @@
 - java 구문 오류 수정
 
 ## IM Flutter SDK 3.6.4  @2021.12.17
-- Android 비동기화 가입 이벤트가 반환되지 않는 bug 수정
+- Android 비동기 등록 이벤트에 대한 반환이 없는 bug 수정
 - 기본 리스너 이벤트 삭제 시 오류 수정
 - 메시지 진행률 이벤트에 전송 중 메시지 uuid 추가
 

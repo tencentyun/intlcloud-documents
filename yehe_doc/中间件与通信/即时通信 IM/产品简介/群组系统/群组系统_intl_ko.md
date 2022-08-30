@@ -1,22 +1,24 @@
 ## 그룹 시스템 소개
 그룹 시스템은 다중 사용자 채팅을 지원하는 인스턴트 메시징 시스템으로 기본적으로 다음과 같은 기능이 있습니다.
+
 - 완벽한 [그룹 관리](https://intl.cloud.tencent.com/document/product/1047/33530) 기능: 그룹 생성/해산, 구성원 관리, 그룹 정보 관리, 구성원 프로필 정보 관리 등. 
-- 안정적이고 신뢰도 높은 메시지 수발신 기능, 완벽한 [그룹 메시지](https://intl.cloud.tencent.com/document/product/1047/33526) 관리 메커니즘: 권한 제어, 음소거, 비속어 필터링, 메시지 콜백, 메시지 로밍 등.
+- 안정적이고 신뢰도 높은 메시지 수발신 기능, 완벽한 [그룹 메시지](https://intl.cloud.tencent.com/document/product/1047/33526) 관리 메커니즘: 권한 제어, 음소거, 메시지 콜백, 메시지 로밍 등.
 - 자주 사용되는 시나리오에 따라 **업무 그룹(Work)**, **퍼블릭 소셜 그룹(Public)**, **회의 그룹(Meeting)**, **방송 그룹(AVChatRoom)** 및 **커뮤니티(Community)**의 5가지 그룹 유형으로 기본 설정되어 있습니다.
 - 그룹 인원 제한:
   - 업무 그룹(Work), 퍼블릭 소셜 그룹(Public) 및 회의 그룹(Meeting)의 인원 제한은 유료로 최대 6000명까지 확장 가능합니다. 자세한 내용은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
   - 커뮤니티(Community)는 최대 10만 명을 지원합니다.
   - 라이브 방송 그룹(AVChatRoom)은 인원 제한이 없습니다. 
-- Web/미니프로그램에서는 라이브 방송 그룹(AVChatRoom) 사용자가 게스트 신분(로그인 필요 없음)으로 메시지를 받을 수 있도록 지원합니다.
+
 
 >!
 >- 라이브 방송 그룹(AVChatRoom)은 인원 제한은 없지만 그룹 구성원이 단시간에 급증할 것으로 예상되는 시나리오(대규모 온라인 이벤트 등 단일 그룹 구성원 수 5만 명 이상)의 경우, 서비스 리소스 확보를 위해 미리 세일즈 담당 직원에게 연락하여 SDKAppID 및 이벤트 예상 시간 등을 알려주시기 바랍니다. 
->- 현재는 라이브 방송 그룹 외 그룹만 메시지 기록 저장 기능을 지원합니다(체험판 및 프로 버전 패키지: 기본 7일, 울티메이트 버전: 30일). 저장 기간 연장이 필요하시면, [콘솔](https://console.cloud.tencent.com/im)에서 메시지 기록 저장 시간을 수정할 수 있습니다. 메시지 기록 저장 시간 연장은 유료 부가 가치 서비스로 과금 관련 자세한 내용은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
->- 커뮤니티(Community) 기능은 SDK5.8.1668 인핸스드 버전 이상에서만 지원되며, 울티메이트 버전 패키지를 구매하고 [활성화 신청](https://intl.cloud.tencent.com/document/product/1047/37275) 후 사용 가능합니다.
+>- 현재는 라이브 방송 그룹 외 그룹만 메시지 기록 저장 기능을 지원합니다(체험판 및 프로 버전: 기본 7일, 플래그십 에디션: 30일). 저장 기간 연장이 필요하시면, [콘솔](https://console.cloud.tencent.com/im)에서 메시지 기록 저장 시간을 수정할 수 있습니다. 메시지 기록 저장 시간 연장은 유료 부가 가치 서비스로 과금 관련 자세한 내용은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+>- 커뮤니티(Community)는 엔터테인먼트 협업을 위한 새로운 도구입니다. 같은 커뮤니티 내에서 서로 다른 그룹과 주제를 나눌 수 있고, 메시지를 서로 분리할 수 있으며, 계층적 커뮤니케이션을 수행할 수 있습니다. 대규모의 참석자를 수용하고 친구 관계를 공유하여 고유한 소셜 확장 통로를 찾을 수 있도록 지원합니다. 또한 참석자를 그룹화하고 참석자 그룹의 보기, 말하기 및 관리 등에 대한 권한을 설정할 수 있는 효율적인 사용자 운영 도구입니다. 취미, 친구 사귀기, 게임, 소셜, 팬 운영, 조직 관리 등의 시나리오에 적합합니다.
+>- 커뮤니티(Community) 기능은 터미널 SDK 5.8.1668 인핸스드 버전 이상, Web SDK 2.17.0 이상에서만 지원되며, [플래그십 에디션 구매](https://www.tencentcloud.com/document/product/1047/34577) 및 [활성화 신청](https://intl.cloud.tencent.com/document/product/1047/44322) 후 사용 가능합니다.
 
 IM 그룹 시스템은 다음과 같이 높은 수준의 커스터마이징이 가능합니다. 
 
-- [사용자 정의 메시지 형식](https://intl.cloud.tencent.com/document/product/1047/33527)
+- [사용자 정의 메시지 요소](https://intl.cloud.tencent.com/document/product/1047/33527)
 - [사용자 정의 그룹 ID](https://intl.cloud.tencent.com/document/product/1047/33529)
 - [사용자 정의 필드](https://intl.cloud.tencent.com/document/product/1047/33529)
 - [사용자 정의 콜백](https://intl.cloud.tencent.com/document/product/1047/33529)
@@ -51,12 +53,12 @@ IM 그룹 시스템은 다음과 같이 높은 수준의 커스터마이징이 �
 |기능 항목|업무 그룹(Work)|공개 그룹(Public)|회의 그룹(Meeting)|라이브 방송 그룹(AVChatRoom)|커뮤니티(Community)|
 |--- |-- |-- |-- |-- |-- |
 |구성원 역할|그룹 소유자<br>일반 구성원<br>App 관리자|그룹 소유자<br>관리자<br>일반 구성원<br>App 관리자|그룹 소유자<br>관리자<br>일반 구성원<br>App 관리자|그룹 소유자|그룹 소유자<br>관리자<br>일반 구성원<br>App 관리자|
-|그룹 프로필 정보 수정 권한|일반 구성원|그룹 관리자 <br>그룹 소유자<br>App 관리자|그룹 소유자<br>App 관리자|App 관리자|그룹 소유자<br>App 관리자|
+|그룹 프로필 정보 수정 권한|일반 구성원|그룹 관리자 <br>그룹 소유자<br>App 관리자|그룹 소유자<br>App 관리자|그룹 소유자<br>App 관리자|관리자<br>그룹 소유자<br>App 관리자|
 |정보 가져오기 가능한 구성원|전체 그룹 구성원|전체 구성원|전체 구성원|그룹 구성원 정보 저장하지 않음 |전체 구성원|
 |그룹 해산 권한|App 관리자|그룹 소유자 및 App 관리자|그룹 소유자 및 App 관리자|그룹 소유자 및 App 관리자|그룹 소유자 및 App 관리자|
 
 >?
->- SDK의 새 버전은 그룹 유형이 전면 업그레이드 되었습니다. 새 그룹 유형은 **업무 그룹(Work)**, **공개 그룹(Public)**, **회의 그룹(Meeting)**, 라이브 방송 그룹(AVChatRoom)**, 및 **커뮤니티(Community)**의 5가지 그룹 유형 입니다. 이전 그룹 버전(Public, Private, ChatRoom, AVChatRoom)의 Private 유형은 새로운 그룹 유형 Work(업무 그룹)에 해당되며, ChatRoom 유형은 새로운 그룹 유형 Meeting(회의 그룹)에 해당됩니다.
+>- SDK의 새 버전은 그룹 유형이 전면 업그레이드 되었습니다. 새 그룹 유형은 **업무 그룹(Work)**, **공개 그룹(Public)**, **회의 그룹(Meeting), 라이브 방송 그룹(AVChatRoom)**, 및 **커뮤니티(Community)**의 5가지 그룹 유형 입니다. 이전 그룹 버전(Public, Private, ChatRoom, AVChatRoom)의 Private 유형은 새로운 그룹 유형 Work(업무 그룹)에 해당되며, ChatRoom 유형은 새로운 그룹 유형 Meeting(회의 그룹)에 해당됩니다.
 >- 업무 그룹(Work)의 경우, 일반 구성원은 그룹 이름, 소개, 공지, 그룹 프로필 사진 URL만 수정할 수 있으며 기타 그룹 프로필 정보는 수정할 수 없습니다.
 >- 그룹 유형 역할이 귀하의 비즈니스 니즈를 충족하지 못하는 경우, 그룹 구성원 [사용자 정의 필드](https://intl.cloud.tencent.com/document/product/1047/33529) 설정을 통해 새로운 역할을 추가할 수 있습니다. 
 >- 일부 그룹 구성원 정보 가져오기는, 일반적으로 라이브 방송 그룹(AVChatRoom)에서 일부 그룹 구성원 리스트만 표시하는 시나리오에 사용됩니다.
@@ -91,12 +93,12 @@ IM 그룹 시스템은 다음과 같이 높은 수준의 커스터마이징이 �
 ### 그룹 제한의 차이점
 |기능 항목|업무 그룹(Work)/ 공개 그룹(Public)/ 회의 그룹(Meeting)|라이브 방송 그룹(AVChatRoom)|커뮤니티(Community)|
 |--- |--- |--- |--- |
-|인원 제한|<ul style="margin:0;"><li>체험판: 20명/그룹</li><li>프로 버전: 기본 200명/그룹. [부가 가치 서비스](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 구매 시 최대 2000명/그룹까지 확장 가능</li><li>울티메이트 버전: 기본 2000명/그룹 [부가 가치 서비스](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 구매 시 최대 6000명/그룹까지 확장 가능</li></ul>|무제한|<li>체험판: 미지원</li><li>프로 버전: 미지원</li><li>울티메이트 버전: 기본 10만명/그룹</li>|
-|그룹 수량 제한|<ul style="margin:0;"><li>체험판: 총 그룹 수 최대 100개, 해산된 그룹 제외</li><li>프로 버전 또는 울티메이트 버전: 무제한</li></ul>|<ul style="margin:0;"><li>체험판: 최대 10개, 해산된 그룹 제외</li><li>프로 버전: 최대 50개, 해산된 그룹 제외 [부가 가치 서비스](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 구매 시 라이브 방송 그룹 생성 수량 무제한</li><li>울티메이트 버전: 무제한</li></ul>|<li>체험판: 미지원</li><li>프로 버전: 미지원</li><li>울티메이트 버전: 기본 100000개</li>|
+|인원 제한|<ul style="margin:0;"><li>체험판: 20명/그룹</li><li>프로 버전: 기본 200명/그룹. [부가 가치 서비스](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 구매 시 최대 2000명/그룹까지 확장 가능</li><li>플래그십 에디션: 기본 2000명/그룹 [부가 가치 서비스](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 구매 시 최대 6000명/그룹까지 확장 가능</li></ul>|무제한|<li>체험판: 미지원</li><li>프로 버전: 미지원</li><li>플래그십 에디션: 기본 10만명/그룹</li>|
+|그룹 수량 제한|<ul style="margin:0;"><li>체험판: 총 그룹 수 최대 100개, 해산된 그룹 제외</li><li>프로 버전 또는 플래그십 에디션: 무제한</li></ul>|<ul style="margin:0;"><li>체험판: 최대 10개, 해산된 그룹 제외</li><li>프로 버전: 최대 50개, 해산된 그룹 제외 [부가 가치 서비스](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 구매 시 라이브 방송 그룹 생성 수량 무제한</li><li>플래그십 에디션: 무제한</li></ul>|<li>체험판: 미지원</li><li>프로 버전: 미지원</li><li>플래그십 에디션: 기본 100000개</li>|
 
 >!
->- 프로 버전 또는 울티메이트 버전 SDKAppID의 모든 그룹 유형의 일일 증가 그룹 수(생성 그룹 수에서 해산된 그룹 수 차감) 제한은 1만 개입니다.
->- 프로 버전 또는 울티메이트 버전 SDKAppID의 무상 피크 그룹 수는 10만 개/월이며, 무상 수량을 초과하면 [무료 한도 초과 요금](https://intl.cloud.tencent.com/document/product/1047/34350#jc)이 발생하므로 불필요한 그룹은 해산할 것을 권장합니다. 
+>- 프로 버전 또는 플래그십 에디션 SDKAppID의 모든 그룹 유형의 일일 증가 그룹 수(생성 그룹 수에서 해산된 그룹 수 차감) 제한은 1만 개입니다.
+>- 프로 버전 또는 플래그십 에디션 SDKAppID의 무상 피크 그룹 수는 10만 개/월이며, 무상 수량을 초과하면 [무료 한도 초과 요금](https://intl.cloud.tencent.com/document/product/1047/34350#jc)이 발생하므로 불필요한 그룹은 해산할 것을 권장합니다. 
 
 
 ### 메시지 기능의 차이점
@@ -104,17 +106,18 @@ IM 그룹 시스템은 다음과 같이 높은 수준의 커스터마이징이 �
 |기능 항목|업무 그룹(Work)|공개 그룹(Public)|회의 그룹(Meeting)|라이브 방송 그룹(AVChatRoom)|커뮤니티(Community)|
 |--- |--- |--- |--- |--- |--- |
 |읽지 않은 메시지 통계|지원|지원|미지원|미지원|지원|
-|그룹 참여 전 메시지 기록 조회|미지원|미지원|지원|미지원|지원|
 |메시지 기록 저장|지원|지원|지원|미지원|지원|
-|구성원 변경 알림|지원|지원|미지원|지원|지원|
+| 그룹 참여 전 로밍 메시지 보기 지원 여부 | 기본 설정: 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                              | 기본 설정: 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                              | 기본 설정: 활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                              | 미지원                                                                                                                                  | 기본 설정: 활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                              |
+| 그룹 구성원 변경 알림       | 기본 설정: 그룹 초대, 그룹 가입 신청, 내보내기, 그룹 탈퇴 알림 활성화, 로밍 저장, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                  | 기본 설정: 그룹 초대, 그룹 가입 신청, 내보내기, 그룹 탈퇴 알림 활성화, 로밍 저장, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                  | 기본 설정: 그룹 초대, 그룹 가입 신청, 내보내기, 그룹 탈퇴 알림 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                      | 기본 설정: 그룹 초대, 그룹 가입 신청, 내보내기, 그룹 탈퇴 알림 활성화, 로밍 저장하지 않음                                                                                                             | 기본 설정: 그룹 초대, 그룹 가입 신청, 내보내기, 그룹 탈퇴 알림 활성화, 로밍 저장, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                  |
+| 그룹 프로필 변경 알림       | 기본 설정: 그룹 이름, 그룹 공지, 그룹 소개, 그룹 프로필 사진, 그룹 소유자 변경 알림 활성화, 로밍 저장, 그룹 음소거 변경 알림 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원 | 기본 설정: 그룹 이름, 그룹 공지, 그룹 소개, 그룹 프로필 사진, 그룹 소유자 변경 알림 활성화, 로밍 저장, 그룹 음소거 변경 알림 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원 | 기본 설정: 그룹 이름, 그룹 공지, 그룹 소개, 그룹 프로필 사진, 그룹 소유자 변경 알림 활성화, 로밍 저장, 그룹 음소거 변경 알림 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원 | 기본 설정: 그룹 이름, 그룹 공지, 그룹 소개, 그룹 프로필 사진, 그룹 소유자 변경 알림 활성화, 로밍 저장하지 않음, 그룹 음소거 변경 알림 비활성화                                                                                              | 기본 설정: 그룹 이름, 그룹 공지, 그룹 소개, 그룹 프로필 사진, 그룹 소유자 변경 알림 활성화, 로밍 저장, 그룹 음소거 변경 알림은 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원 |
+| 그룹 회원 프로필 변경 알림     | 기본 설정: 그룹 회원 음소거, 그룹 관리자 변경 알림 활성화, 로밍 저장, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                     | 기본 설정: 그룹 회원 음소거, 그룹 관리자 변경 알림 활성화, 로밍 저장, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                     | 기본 설정: 그룹 회원 음소거, 그룹 관리자 변경 알림 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                         | 기본 설정: 그룹 회원 음소거, 그룹 관리자 변경 알림 비활성화, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원 | 기본 설정: 그룹 회원 음소거, 그룹 관리자 변경 알림 활성화, 로밍 저장, [콘솔](https://console.cloud.tencent.com/im/qun-setting) 설정 지원                     |
 |그룹 생성 후, 메시지를 발송하여 활성화|필요|불필요|불필요|불필요|불필요|
 |기본 메시지 수신 옵션| 온/오프라인 푸시 수신 |온/오프라인 푸시 수신|온라인 푸시 메시지만 수신|온라인 푸시 메시지만 수신|온/오프라인 푸시 수신|
-|사용자가 게스트 신분(로그인 필요 없음)으로 그룹 메시지 수신|미지원|미지원|미지원|지원|미지원|
 
 >!
 >- 활성화가 필요한 그룹은 그룹 소유자가 메시지를 발송하기 전에는 비활성화 상태로, 그룹 소유자 외 다른 구성원들에게는 보이지 않습니다. 활성화가 필요 없는 그룹은 생성 후 바로 모든 그룹 구성원에게 노출됩니다.
 >- 현재 오프라인 푸시는 Android(Android 오프라인 푸시) 및 iOS(APNs 푸시)만 지원합니다.
->- 업무 그룹(Work), 공개 그룹(Public), 회의 그룹(Meeting) 및 커뮤니티(Community)는 메시지 기록 저장 기능이 있으며 무상으로 7일(울티메이트 버전은 기본 30일)동안 저장할 수 있습니다. 저장 기간을 연장이 필요하시면, [콘솔](https://console.cloud.tencent.com/im)에서 메시지 저장 시간을 수정할 수 있습니다. 메시지 기록 저장 시간 연장은 유료 부가 가치 서비스로 자세한 내용은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오. 
+>- 업무 그룹(Work), 공개 그룹(Public), 회의 그룹(Meeting) 및 커뮤니티(Community)는 메시지 기록 저장 기능이 있으며 무상으로 7일(플래그십 에디션은 기본 30일)동안 저장할 수 있습니다. 저장 기간을 연장이 필요하시면, [콘솔](https://console.cloud.tencent.com/im)에서 메시지 저장 시간을 수정할 수 있습니다. 메시지 기록 저장 시간 연장은 유료 부가 가치 서비스로 자세한 내용은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오. 
 
 
 ### 일괄 가져오기 및 자동 삭제 기능 관련 차이점
@@ -124,7 +127,7 @@ IM 그룹 시스템은 다음과 같이 높은 수준의 커스터마이징이 �
 |그룹, 그룹 구성원 및 그룹 메시지 가져오기|지원, 서드 파티 플랫폼에서 이전 그룹을 IM으로 마이그레이션 가능|미지원, 기존 그룹, 그룹 구성원 및 그룹 메시지만 사용 가능|
 |그룹 자동 삭제 시간(초)|그룹 소유자의 그룹 해산 또는 모든 구성원 퇴장의 경우를 제외하고 백엔드에서 그룹을 삭제하지 않습니다(그룹 해산 관련: 그룹 소유자 해산 또는 자동 회수 설정 후, 비정기적인 그룹 순회 도중 n초 이상 발언하지 않았거나 그룹 정보가 수정된 경우 백엔드가 그룹을 해산합니다. 이 외의 경우 백엔드는 그룹을 자동 해산하지 않습니다)|그룹 소유자의 그룹 해산 또는 모든 구성원 퇴장의 경우를 제외하고 백엔드에서 그룹을 삭제하지 않음|
 
->!그룹 삭제 기능을 활성화하려면 [IM 설정 변경 요청 티켓 템플릿](https://intl.cloud.tencent.com/document/product/1047/37275#.E8.87.AA.E5.8A.A8.E5.9B.9E.E6.94.B6.E7.BE.A4.E7.BB.84)에 따라 티켓을 제출하여 신청하십시오. 설정 후에는 그룹 유형에 따라 미활성 그룹(발언자, 구성원 변경이 없는 그룹)을 삭제합니다.
+>!그룹 삭제 기능을 활성화하려면 [IM 설정 변경 요청 티켓 템플릿](https://intl.cloud.tencent.com/document/product/1047/44322)에 따라 티켓을 제출하여 신청하십시오. 설정 후에는 그룹 유형에 따라 미활성 그룹(발언자, 구성원 변경이 없는 그룹)을 삭제합니다.
 
 ## 그룹 데이터 구조 소개
 ### 그룹 프로필 정보[](id:GroupBaseInfoFilter)
@@ -142,7 +145,7 @@ IM 그룹 시스템은 다음과 같이 높은 수준의 커스터마이징이 �
 |InfoSeq|Integer|그룹 정보가 변경될 때마다 값 증가|읽기 전용|
 |LastInfoTime|Integer|그룹 정보 마지막 변경 시간|읽기 전용|
 |LastMsgTime|Integer|그룹 내 메시지 마지막 발송 시간|읽기 전용|
-|NextMsgSeq|Integer|그룹 내 다음 메시지의 Seq|읽기 전용<br>그룹 내 모든 메시지는 유일한 메시지 Seq가 있으며 해당 Seq는 메시지 발송 순서에 따라 연속 생성됩니다. 1부터 시작하며 그룹 내에서 메시지가 하나씩 증가할 때마다 NextMsgSeq도 1씩 증가합니다.|
+|NextMsgSeq|Integer|그룹 내 다음 메시지의 Seq|읽기 전용<br>그룹 내 모든 메시지는 유일한 메시지 Seq가 있으며 해당 Seq는 메시지 발송 순서에 따라 연속 생성됩니다. 1부터 시작하며 그룹 내에서 메시지가 하나씩 증가할 때마다 NextMsgSeq도 1씩 증가(기본적으로 그룹 가입 및 탈퇴 알림과 같은 시스템 메시지도 메시지이므로 NextMsgSeq가 1 증가합니다)|
 |MemberNum|Integer|현재 구성원 수|읽기 전용|
 |MaxMemberNum|Integer|구성원 인원 제한|기본 값: 유료 패키지의 인원 제한. 예를 들어, 체험판(인원 제한:20명)에서 패키지 업그레이드하는 경우 수정된 그룹의 기본 정보에 따라 이 필드를 수정해야 합니다.|
 |ApplyJoinOption|String|그룹 참여 신청 옵션|그룹 참여 신청 옵션은 다음 유형을 포함합니다: <ul style="margin:0;"><li>DisableApply: 참여 신청 금지</li><li>NeedPermission: 그룹 소유자 또는 관리자 승인 필요</li><li>FreeAccess: 승인 없이 자유롭게 참여 가능</li></ul>|
@@ -162,7 +165,7 @@ IM 그룹 시스템은 다음과 같이 높은 수준의 커스터마이징이 �
 |MsgSeq|Integer|해당 구성원이 현재 읽은 메시지 Seq|읽기 전용|
 |MsgFlag|String|메시지 수신 옵션|메시지 수신 옵션은 다음 유형을 포함합니다: <ul style="margin:0;"><li>AcceptAndNotify: 수신 및 알림</li><li>AcceptNotNotify: 알림 없이 수신(APNs 원격 푸시 트리거하지 않음)</li><li>Discard 그룹 메시지 차단(클라이언트에 메시지 푸시 안함)</li></ul>|
 |LastSendMsgTime|Integer|마지막 메시지 발송 시간|3개 일반 그룹 지원, 라이브 방송 그룹 미지원|
-|NameCard|String|그룹 명함|읽기/쓰기 가능|
+|NameCard|String|그룹 이름 카드|읽기/쓰기 가능. 최대 50바이트, 변경 불가.|
 
 ## 사용자 정의 그룹 ID
 

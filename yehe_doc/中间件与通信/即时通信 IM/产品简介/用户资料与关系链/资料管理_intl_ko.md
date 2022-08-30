@@ -65,7 +65,7 @@ IM은 다음과 같은 표준 프로필 정보 필드를 지원합니다.
 				<td> string</td>
 				<td> 닉네임</td>
 				<td> 있음</td>
-				<td> 최대 길이: 500 바이트. </td>
+				<td> 최대 길이: 500 바이트</td>
 			</tr>
 			<tr>
 				<td> Tag_Profile_IM_Gender</td>
@@ -91,13 +91,13 @@ IM은 다음과 같은 표준 프로필 정보 필드를 지원합니다.
 				<td> 소재지</td>
 				<td> 있음</td>
 				<td>
-					최대 길이: 16 바이트. 권장 사용 방법: <br>
-					App의 숫자 세트-지명 간의 매핑 관계 로컬 정의.<br>
-					백엔드에서 4개의 uint32_t 숫자 저장.<br>
-					첫 번째 uint32_t는 ‘국가’를 표시.<br>
-					두 번째 uint32_t는 ‘도’ 또는 ‘지역’을 표시.<br>
-					세 번째 uint32_t는 ‘시’를 표시.<br>
-					네 번째 uint32_t는 ‘군’, ‘구’를 표시.<br>
+					최대 길이: 16 바이트. 권장 사용 방법:<br>
+					App의 숫자 세트-지명 간의 매핑 관계 로컬 정의<br>
+					백엔드에서 4개의 uint32_t 숫자 저장<br>
+					첫 번째 uint32_t는 ‘국가’를 표시<br>
+					두 번째 uint32_t는 ‘도’ 또는 ‘지역’을 표시<br>
+					세 번째 uint32_t는 ‘시’를 표시<br>
+					네 번째 uint32_t는 ‘군’, ‘구’를 표시<br>
 				</td>
 			</tr>
 			<tr>
@@ -105,7 +105,7 @@ IM은 다음과 같은 표준 프로필 정보 필드를 지원합니다.
 				<td> string</td>
 				<td> 개인 서명</td>
 				<td> 있음</td>
-				<td> 최대 길이: 500 바이트.</td>
+				<td> 최대 길이: 500 바이트</td>
 			</tr>
 			<tr>
 				<td> Tag_Profile_IM_AllowType</td>
@@ -113,9 +113,9 @@ IM은 다음과 같은 표준 프로필 정보 필드를 지원합니다.
 				<td> 친구 추가 인증 방식</td>
 				<td> 있음</td>
 				<td>
-					AllowType_Type_NeedConfirm: 친구 요청 수동 승인 후 친구 추가. <br>
-					AllowType_Type_AllowAny: 모든 친구 요청 자동 승인.<br>
-					AllowType_Type_DenyAny: 모든 친구 요청 거부. <br>
+					AllowType_Type_NeedConfirm: 친구 요청 수동 승인 후 친구 추가<br>
+					AllowType_Type_AllowAny: 모든 친구 요청 자동 승인<br>
+					AllowType_Type_DenyAny: 모든 친구 요청 거부<br>
 				</td>
 			</tr>
 			<tr>
@@ -123,33 +123,23 @@ IM은 다음과 같은 표준 프로필 정보 필드를 지원합니다.
 				<td> uint32</td>
 				<td> 언어</td>
 				<td> 있음</td>
-				<td> 없음</td>
+				<td> App 로컬에서 숫자와 언어의 매핑 관계를 정의합니다. App 로컬에서 언어에 해당 숫자를 문자로 변환해야 함</td>
 			</tr>
 			<tr>
 				<td> Tag_Profile_IM_Image</td>
 				<td> string</td>
 				<td> 프로필 사진 URL</td>
 				<td> 있음</td>
-				<td> 최대 길이: 500 바이트. </td>
-			</tr>
-			<tr>
-				<td> Tag_Profile_IM_MsgSettings</td>
-				<td> uint32</td>
-				<td> 메시지 설정</td>
-				<td> 있음</td>
-				<td>
-					플래그 비트: <br>
-					Bit0: 0은 메시지 수신, 1은 메시지를 수신하지 않음을 의미함. <br>
-				</td>
+				<td> 최대 길이: 500 바이트</td>
 			</tr>
 			<tr>
 				<td> Tag_Profile_IM_AdminForbidType</td>
 				<td> string</td>
-				<td> 관리자가 친구 추가 태그 지정을 금지함.</td>
+				<td> 관리자가 친구 추가 태그 지정을 금지함</td>
 				<td> 있음</td>
 				<td>
-					AdminForbid_Type_None: 기본값, 친구 추가 요청 발송 허용.<br>
-					AdminForbid_Type_SendOut: 친구 추가 요청 발송 금지. <br>
+					AdminForbid_Type_None: 기본값, 친구 추가 요청 발송 허용<br>
+					AdminForbid_Type_SendOut: 친구 추가 요청 발송 금지<br>
 				</td>
 			</tr>
 			<tr>
@@ -157,14 +147,14 @@ IM은 다음과 같은 표준 프로필 정보 필드를 지원합니다.
 				<td> uint32</td>
 				<td> 레벨</td>
 				<td> 있음</td>
-				<td> 일반적으로 한 개의 UINT-8 데이터는 한 레벨의 정보 저장 가능. <br>분할 저장을 통해 레벨의 여러 역할 정보 저장 가능.</td>
+				<td> 일반적으로 한 개의 UINT-8 데이터는 한 레벨의 정보 저장 가능. <br>분할 저장을 통해 레벨의 여러 역할 정보 저장 가능</td>
 			</tr>
 			<tr>
 				<td> Tag_Profile_IM_Role</td>
 				<td> uint32</td>
 				<td> 역할</td>
 				<td> 있음</td>
-				<td> 일반적으로 한 개의 UINT-8 데이터는 한 개의 역할 정보 저장 가능. <br>분할 저장을 통해 여러 역할 정보 저장 가능. </td>
+				<td> 일반적으로 한 개의 UINT-8 데이터는 한 개의 역할 정보 저장 가능. <br>분할 저장을 통해 여러 역할 정보 저장 가능</td>
 			</tr>
 		</tbody>
 	</table>
@@ -173,10 +163,10 @@ IM은 다음과 같은 표준 프로필 정보 필드를 지원합니다.
 사용자 정의 프로필 정보 필드는 App이 비즈니스 니즈에 따라 설정한 사용자 데이터입니다. App은 사용자 프로필 정보에 부가 데이터를 추가하고, 기존 인터페이스를 통해 읽기/쓰기 작업을 할 수 있습니다. 
 
 ### 사용자 정의 프로필 정보 필드 신청
-App 관리자는 IM [콘솔](https://console.cloud.tencent.com/im)>**애플리케이션 설정**>**기능 설정**을 통해 사용자 정의 프로필 정보 필드를 신청할 수 있으며 신청 제출 후 5분 내에 적용됩니다. 
+App 관리자는 IM [콘솔](https://console.cloud.tencent.com/im)>**애플리케이션 설정**>**기능 설정**을 통해 사용자 정의 프로필 필드를 신청할 수 있으며 신청 제출 후 5분 내에 적용됩니다. 
 사용자 정의 프로필 정보 필드 신청 시, 모든 사용자 정의 프로필 정보 필드는 다음 정보를 제출해야 합니다. 
-- 사용자 정의 프로필 정보 필드 이름(Key). 자세한 내용은 [사용자 정의 프로필 정보 필드 이름 생성 규칙](#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5.E7.9A.84.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83)을 참고하십시오.
-- 사용자 정의 프로필 정보 필드 유형(Value). 자세한 내용은 [프로필 정보 필드](#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)를 참고하십시오.
+- 사용자 정의 프로필 필드 이름(Key). 자세한 내용은 [사용자 정의 프로필 정보 필드 이름 생성 규칙](#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5.E7.9A.84.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83)을 참고하십시오.
+- 사용자 정의 프로필 필드 유형(Value). 자세한 내용은 [프로필 정보 필드](#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)를 참고하십시오.
 - 사용자 정의 프로필 정보 필드 읽기 및 쓰기 권한. 자세한 내용은 [프로필 정보 필드](#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)를 참고하십시오.
 
 ### 사용자 정의 프로필 정보 필드의 이름 생성 규칙
@@ -188,6 +178,7 @@ App 관리자는 IM [콘솔](https://console.cloud.tencent.com/im)>**애플리�
 
 ## 관련 문서
 
-- [사용자 프로필 정보 및 관계망(Android)](https://intl.cloud.tencent.com/document/product/1047/34332)
-- [사용자 프로필 정보 및 관계망(iOS)](https://intl.cloud.tencent.com/document/product/1047/34333)
-- [사용자 프로필 정보(Web & 미니프로그램)](https://intl.cloud.tencent.com/document/product/1047/34334)
+- [사용자 프로필 및 관계망(Android)](https://intl.cloud.tencent.com/document/product/1047/48162)
+- [사용자 프로필 및 관계망(iOS)](https://intl.cloud.tencent.com/document/product/1047/48162)
+- [사용자 프로필(Web)](https://intl.cloud.tencent.com/document/product/1047/48161)
+

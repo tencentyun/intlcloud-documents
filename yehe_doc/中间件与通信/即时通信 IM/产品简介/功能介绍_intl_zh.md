@@ -8,10 +8,9 @@
 | iOS     | 兼容 iOS 8.0 以上版本  | 支持     | -     | 支持     |
 | Mac     | 兼容 OS X 10.10 以上版本  | 支持     | -     | -     |
 | Windows | 包含C 、C++ ，兼容 Windows 7、Windows 8/8.1、Windows 10；全面支持32位和64位程序接入 | - | - | - |
-| Web     | 支持 IE 11+，Chrome 7+，FireFox 3.6+，Opera 12+ 和 Safari 6+  | 支持     | - | - |
-| 小程序   | 支持   | 支持     | - | 支持 |
+| Web     | 支持 IE 11+，Chrome 7+，FireFox 3.6+，Opera 12+ 和 Safari 6+  | 支持     | - | 支持 |
 |Unity|支持 2020.2.7f1c1 及以上版本|支持|-|-|
-|Flutter|Flutter 2 & dart 2.12及以上版本|支持|-|-|
+|Flutter|Flutter 2 & dart 2.12及以上版本|支持|-|支持|
 |Electron|支持|支持|-|-|
 
 
@@ -129,12 +128,15 @@
 
 ### 群组功能
 即时通信 IM 根据常见使用场景，默认配置了以下群组类型：
-- 好友工作群（Work）：类似普通微信群，创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批；
-- 陌生人社交群（Public）：类似 QQ 群，创建后群主可以指定群管理员，用户搜索群 ID 发起加群申请后，需要群主或管理员审批通过才能入群；
+- 好友工作群（Work）：创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批；
+- 陌生人社交群（Public）：创建后群主可以指定群管理员，用户搜索群 ID 发起加群申请后，需要群主或管理员审批通过才能入群；
 - 临时会议群（Meeting）：创建后可以随意进出，且支持查看入群前消息；适合用于音视频会议场景、在线教育场景等与实时音视频产品结合的场景；
 - 直播群（AVChatRoom）：创建后可以随意进出，没有群成员数量上限，但不支持历史消息存储；适合与直播产品结合，用于弹幕聊天场景。
 - 社群（Community）：创建后可以随意进出，最多支持100000人，支持历史消息存储，用户搜索群 ID 发起加群申请后，无需管理员审批即可进群。
->?社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需购买旗舰版套餐包并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用。
+>?
+>- 社群（Community），娱乐协作新利器。同一社群内，既可划分不同分组、话题，将消息相互区隔，进行分层级沟通；又可容纳超大规模成员，共用一套好友关系，助您摸索出一条独特的社交扩张路径；还可将成员分组，设置成员组的查看、发言、管理等权限，成为您的高效用户运营工具。适用于兴趣交友、游戏社交、粉丝运营、组织管理等场景。
+>- 社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用。
+
 
 每个群组类型的默认功能差异如下表示意：
 
@@ -228,22 +230,45 @@
     <td>不支持</td>
 <td><li>群管理员</li><li>群主 </li><li>App 管理员</li></td>
    </tr>
-		 	   <tr>
-     <td>是否支持查看入群前历史消息</td>
-     <td>不支持</td>
-    <td>不支持</td>
+	 		 	   <tr>
+     <td>历史消息存储</td>
+     <td>支持</td>
+    <td>支持</td>
     <td>支持</td>
     <td>不支持</td>
 <td>支持</td>
    </tr>
-		 	   <tr>
-     <td>成员变更通知</td>
-     <td>全员</td>
-    <td>全员</td>
-    <td>无</td>
-    <td>全员</td>
-<td>全员</td>
-   </tr>
+<td>是否支持查看入群前漫游消息</td>
+<td>默认关闭查看入群前漫游消息，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>默认关闭查看入群前漫游消息，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>默认开启查看入群前漫游消息，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>不支持</td>
+<td>默认开启查看入群前漫游消息，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+</tr>
+<tr>
+<td>群成员变更通知</td>
+<td>邀请进群，申请进群，踢人，退群默认下发通知且存漫游，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>邀请进群，申请进群，踢人，退群默认下发通知且存漫游，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>邀请进群，申请进群，踢人，退群默认关闭通知，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>邀请进群，申请进群，踢人，退群下发通知且不存漫游</td>
+<td>邀请进群，申请进群，踢人，退群默认下发通知且存漫游，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+</tr>
+<tr>
+<td>群资料变更通知</td>
+<td>群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>群名称，群通知，群简介，群头像，群主变更下发通知且不存漫游，群禁言变更关闭通知</td>
+<td>群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+</tr>
+<tr>
+<td>群成员资料变更通知</td>
+<td>群成员禁言，群管理员变更默认下发通知且存漫游，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>群成员禁言，群管理员变更默认下发通知且存漫游，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>群成员禁言，群管理员变更默认关闭通知，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>群成员禁言，群管理员变更默认关闭通知，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+<td>群成员禁言，群管理员变更默认下发通知且存漫游，支持 <a href="https://console.cloud.tencent.com/im/qun-setting">控制台</a> 配置</td>
+</tr>
 		 	   <tr>
      <td>群组激活</td>
      <td>消息激活</td>
@@ -267,22 +292,6 @@
     <td>不支持</td>
     <td>不支持</td>
 <td>	支持</td>
-   </tr>
-		 	   <tr>
-     <td>游客身份接收消息</td>
-     <td>不支持</td>
-    <td>不支持</td>
-    <td>不支持</td>
-    <td>支持</td>
-<td>不支持</td>
-   </tr>
-		 	   <tr>
-     <td>历史消息存储</td>
-     <td>支持</td>
-    <td>支持</td>
-    <td>支持</td>
-    <td>不支持</td>
-<td>支持</td>
    </tr>
 		 	   <tr>
      <td>默认消息接收选项</td>

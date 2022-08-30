@@ -1,4 +1,4 @@
-ここでは、主にTencent Cloud IM Demo（Unity)を素早く実行する方法をご紹介します。
+ここでは、主にTencent Cloud IM Demo(Unity)を素早く実行する方法をご紹介します。
 
 ## 環境要件
 
@@ -16,51 +16,50 @@
 
 
 [](id:step1)
-### ステップ1：IMアプリケーションの作成
+### 手順1：IMアプリケーションの作成
 1. [IMコンソール](https://console.cloud.tencent.com/im)にログインします。
 >?アプリケーションをすでに保有している場合は、そのSDKAppIDを記録してから[キー情報の取得](#step2)を実行してください。
 >同じTencent Cloudのアカウントで、最大300個のIMアプリケーションを作成することができます。すでにアプリケーションが300個ある場合は、使用する必要のないアプリケーションを[使用停止して削除](https://intl.cloud.tencent.com/document/product/1047/34540)すると、新しいアプリケーションを作成することができます。**アプリケーションを削除した後、そのSDKAppIDに対応するすべてのデータとサービスは失われます。慎重に操作を行ってください。**
 >
 2. **新しいアプリケーションの作成**をクリックし、**アプリケーションの作成**のダイアログボックスにアプリケーション名を入力し、**OK**をクリックします。
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
-3. 左側ナビゲーションバーで **[支援ツール](https://console.cloud.tencent.com/im-detail/tool-usersig)** > **UserSig生成&検証**の順にクリックし、UserIDおよびそれに対応するUserSigを作成します。署名情報をコピーして、[ステップ5](#step5)で使用します。
+3. 左側ナビゲーションバーで **[支援ツール](https://console.cloud.tencent.com/im/tool-usersig)** > **UserSig生成&検証**の順にクリックし、UserIDおよびそれに対応するUserSigを作成します。署名情報をコピーして、[手順5](#step5)で使用します。
 ![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
 
 [](id:step2)
 ### 手順2：Unityプロジェクトの作成
 UnityからUnityプロジェクトを作成し、プロジェクトのある場所を記録しておきます。
-![](https://qcloudimg.tencent-cloud.cn/raw/f07ae1bb4db4ca5f43f6acc563aafa8c.png)
 
 [](id:step3)
-### ステップ3：依存ファイルの修正
+### 手順3：依存ファイルの修正
 1. IDE（例：Visual Studio Code）からプロジェクトを開きます。
-![](https://qcloudimg.tencent-cloud.cn/raw/4ea52e320700dc37770a5405ac14d1a7.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/1a21933037a72a6bd4c8ed14f08c6ca7.png)
 2. ディレクトリに基づいてPackages/manifest.jsonを見つけて次のように依存を修正します。
 ```json
 {
-	"dependencies":{
-    "com.tencent.imsdk.unity":"1.6.4" // 最新バージョンを指定すれば完了です。すべてのバージョン：https://www.npmjs.com/package/com.tencent.imsdk.unity
-  },
-  "registry": "https://registry.npmjs.org"
+    "dependencies":{
+    "com.tencent.imsdk.unity":"https://github.com/TencentCloud/TIMSDK.git#unity" 
+  }
 }
 ```
 
 [](id:step4)
-### ステップ4：依存のロード
+### 手順4：依存のロード
 Unity Editorでプロジェクトを開き、依存のロードが完了してから、Tencent Cloud IMのロードが完了したことを確認します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d98dfb17bbee6c0319e370de6f2ba9dd.jpg)
 
 [](id:step5)
-### ステップ5：スクリプトのテスト
-1. [テストスクリプトのダウンロード](https://imgcache.qq.com/operation/dianshi/other/Demo.1fdc6bd474aa3d12f0f3061155d4a5accdf30c7b.zip)からダウンロードし、ファイルを解凍してからプロジェクトに追加して、TestApi.csの任意のシナリオにバインドします。
-★
-![](https://qcloudimg.tencent-cloud.cn/raw/b4d770775523fdd76b75f1d80f07c925.jpg)
-2. シナリオを選択して実行し、[ステップ1](#step1)のSDKAppID、UserID、UserSigを設定してテストを開始します。
-![](https://qcloudimg.tencent-cloud.cn/raw/940da8044cd80db27d08a7b0dff45b94.png)
+### 手順5：スクリプトのテスト
+1. [テストスクリプト(TestApi.cs)](https://github.com/TencentCloud/TIMSDK/blob/master/Unity/im_unity_sdk_plus/Assets/Demo/TestApi.cs)および[構成ファイル(Config.cs)](https://github.com/TencentCloud/TIMSDK/blob/master/Unity/im_unity_sdk_plus/Assets/Demo/Config.cs)を取得し、Config.csでパラメータSDKAppID、UserID、UserSig、toUserIDを完了してから、TestApi.csとテストシナリオのCameraを関連付けます。
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b4d770775523fdd76b75f1d80f07c925.jpg)
 
+2. Unity Editorの[実行]ボタンをクリックして、当該シナリオでの実行を開始します。[Init]（SDKの初期化）、[Login]（IMにログイン）、およびその他のテストボタンをクリックしてテストを行います。
+
+  <img src="https://qcloudimg.tencent-cloud.cn/raw/40fb0f381096840418b66b804d403140.png" alt="image-20220616115353114" style="zoom:50%;" />
+	
 ## よくあるご質問
 
-### サポートされているプラットフォームはどれですか。
+### サポートされているプラットフォームはどれ？
 現時点ではiOS、Android、Windows、Macをサポートしています。
 
 ### AndroidでBuild And Runをクリックすると、使用できるデバイスが見つからないというエラーが発生します。
