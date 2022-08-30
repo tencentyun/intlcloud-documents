@@ -4,7 +4,7 @@ Object tagging is designed to help you group and manage objects in your bucket b
 
 ## Notes
 
->! Object tagging is a paid feature. For detailed pricing, see [Pricing | Cloud Object Storage](https://intl.cloud.tencent.com/pricing/cos?lang=en&pg=).
+- Object tagging is a paid feature. For detailed pricing, see [Pricing | Cloud Object Storage](https://intl.cloud.tencent.com/pricing/cos?lang=en&pg=).
 - You can add up to ten unique tags for an object.
 - Tag keys and tag values are case-sensitive. Both of them can contain 1–127 UTF-8 letters, spaces, digits, or special symbols `+ - = ._ : / @ `.
 For more restrictions, see [Object Tag Overview](https://intl.cloud.tencent.com/document/product/436/35665).
