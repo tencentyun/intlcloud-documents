@@ -1,5 +1,5 @@
 ## Prerequisites
-1. Activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://cloud.tencent.com/login) first.
+1. Activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://intl.cloud.tencent.com/login) first.
 2. Download and install Xcode from App Store.
 3. Download and install CocoaPods as instructed at the [CocoaPods website](https://cocoapods.org/).
 
@@ -12,8 +12,66 @@
 [](id:step1)
 
 ### Step 1. Download the SDK ZIP file
+<dx-tabs>
+::: Integrate via CocoaPods[](id:cocoapods)
+Directly integrate `TXLiteAVSDK_Player` as a Pod:
+```objective-c
+ pod 'TXLiteAVSDK_Player'
+```
+To specify a version, you can add the following dependency to the `podfile` file:
+```objective-c
+ pod 'TXLiteAVSDK_Player', '~> 10.3.11513'
+```
 
-[Download](https://vcube.cloud.tencent.com/home.html) the SDK ZIP file and integrate the SDK into your application as instructed in the SDK integration document.
+:::
+::: Manually download the SDK[](id:manual)
+
+1. Download the package of the SDK and demo on the latest version [here](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_iOS_latest.zip).
+2. Add `SDK/TXLiteAVSDK_Player.framework` to the project to be integrated and select **Do Not Embed**.
+3. You need to configure `-ObjC` of the project target; otherwise, the SDK will crash as the SDK category cannot be loaded.
+```objective-c
+Open Xcode, select the target, select the **Build Settings** tab, search for "Other Link Flag", and enter "-ObjC".
+```
+2. Add library files (in the SDK directory)
+ **TXFFmpeg.xcframework**: Add the .xcframework file to the project, set it to **Embed & Sign** in **General** > **Frameworks, Libraries, and Embedded Content**, and check whether **Code Sign On Copy** is selected in **Build Phases** > **Embed Frameworks** in your **project settings** as shown below:
+ **TXSoundTouch.xcframework**: Add the .xcframework file to the project, set it to **Embed & Sign** in **General** > **Frameworks, Libraries, and Embedded Content**, and check whether **Code Sign On Copy** is selected in **Build Phases** > **Embed Frameworks** in your **project settings** as shown below:<br>
+ <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b226decc76c33eff8c3f5b4cc4246bea.png" />
+<br>
+Then, select **Build Settings** > **Search Paths** in Xcode and add the path of the above frameworks in **Framework Search Paths**.
+
+<b>MetalKit.framework</b>: Open Xcode, go to your **project settings**, select **Build Phases** > **Link Binary With Libraries**, click **+** in the bottom-left corner, and enter "MetalKit" to add it to the project as shown below:<br>
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/8ab7576dcc8bbe7b36396955ca06b186.png" />
+<br>
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/8480798e5ba897077ed3cef8ebc12f2e.png" />
+<br>
+
+<b>ReplayKit.framework</b>: Open Xcode, go to your **project settings**, select **Build Phases** > **Link Binary With Libraries**, click **+** in the bottom-left corner, and enter "ReplayKit" to add it to the project as shown below:<br>
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/aa07f3d4963ee703505a14a743f61a68.png" />
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/12491d4a64aa6df44e6a966e80ca54de.png" />
+<br>
+
+Add the following system libraries in the same way:
+
+<br><b>System frameworks</b>: SystemConfiguration, CoreTelephony, VideoToolbox, CoreGraphics, AVFoundation, Accelerate, and MobileCoreServices<br>
+<b>System libraries:</b> libz, libresolv, libiconv, libc++, and libsqlite3
+
+<h4>Picture-in-Picture (PiP) feature</h4>
+
+To use the PiP feature, configure as shown below. If you don’t need the PiP feature, skip this part.
+<br>
+1. To use the PiP feature of iOS, upgrade the SDK to 10.3 or later.
+<br>
+2. To use the PiP feature, you need to enable the background mode. In Xcode, select the target, click **Signing & Capabilities** > **Background Modes**, and select **Audio, AirPlay, and Picture in Picture** as shown below:
+<br>
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/116e1e741f80d810502221fd143d8434.png" />
+<br>
+:::
+</dx-tabs>
+
+
+
+
+​        
 
 [](id:step2)
 
@@ -73,7 +131,7 @@ p.fileId = @"4564972819220421305";
 [_txVodPlayer startPlayWithParams:p];
 ```
 You can go to [Media Assets](https://console.cloud.tencent.com/vod/media) and find it. After clicking it, you can view its `fileId` in the video details on the right.
-Play back the video through the `fileId`, and the player will request the backend for the real playback URL. If the network is abnormal or the `fileId` doesn't exist, the `PLAY_ERR_GET_PLAYINFO_FAIL` event will be received; otherwise, `PLAY_EVT_GET_PLAYINFO_SUCC` will be received, indicating that the request succeeded.
+Play back the video through the `fileId`, and the player will request the backend for the real playback address. If the network is abnormal or the `fileId` doesn't exist, the `PLAY_ERR_GET_PLAYINFO_FAIL` event will be received; otherwise, `PLAY_EVT_GET_PLAYINFO_SUCC` will be received, indicating that the request succeeded.
 :::
 </dx-tabs>
 
@@ -140,7 +198,7 @@ float startTimeInMS = 600; // In ms
 
 
 ### 2. Image adjustment
-- **view: size and position**
+- **view: Size and position**
 You can modify the size and position of the view by adjusting the size and position of the parameter `view` of setupVideoWidget. The SDK will automatically adjust the size and position of the view based on your configuration.
 - **setRenderMode: Aspect fill or aspect fit**
 <table>
@@ -196,13 +254,13 @@ The VOD player supports adjustable-speed playback. You can use the `setRate` API
 ### 5. Muting/Unmuting
 
 ```objective-c
-// Mute or unmute the player. true: mute; false: unmute
+// Mute or unmute the player. true: Mute; false: Unmute
 [_txVodPlayer setMute:true];
 ```
 
 ### 6. Screencapturing
 
-Call **snapshot** to take a screenshot of the current video. This method captures a frame of the video. To capture the UI, use the corresponding API of the iOS system.
+Call **snapshot** to take a screenshot of the current video frame. This method captures only the video frame. To capture the UI, use the corresponding API of the iOS system.
 
 
 ### 7. Roll image ad
@@ -347,7 +405,7 @@ _player_B.isAutoPlay = NO;
 
 After video A ends and video B is automatically or manually switched to, you can call the `resume` function to immediately play back video B.
 
->! After `autoPlay` is set to `false`, make sure that video B has been prepared before calling `resume`, that is, you should call it only after the `PLAY_EVT_VOD_PLAY_PREPARED` event of video B (2013: the player has been prepared, and the video can be played back) is detected.
+>! After `autoPlay` is set to `false`, make sure that video B has been prepared before calling `resume`, that is, you should call it only after the `PLAY_EVT_VOD_PLAY_PREPARED` event of video B (2013: The player has been prepared, and the video can be played back) is detected.
 
 ```objectivec
 -(void) onPlayEvent:(TXVodPlayer *)player event:(int)EvtID withParam:(NSDictionary*)param
@@ -559,6 +617,7 @@ You can bind a `TXVodPlayListener` listener to the `TXVodPlayer` object to use `
 |PLAY_EVT_PLAY_PROGRESS |  2005|  Video playback progress. The current playback progress, loading progress, and total video duration will be notified of.      |
 |PLAY_EVT_PLAY_LOADING|  2007|  The video is being loaded. The `LOADING_END` event will be reported if video playback resumes. |
 |PLAY_EVT_VOD_LOADING_END   |  2014|  Video loading ended, and video playback resumed.                        |
+| VOD_PLAY_EVT_SEEK_COMPLETE | 2019 | Seeking was completed. The seeking feature is supported by v10.3 or later. |
 
 #### Stop events
 | Event ID | Code | Description |
@@ -673,7 +732,7 @@ Below is the sample code of using `onNetStatus` to get the video playback inform
 
 ### 1. SDK-based demo component
 
-Based on the Player SDK, Tencent Cloud has developed a [player component](https://intl.cloud.tencent.com/document/product/266/33976). It integrates quality monitoring, video encryption, TESHD, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
+Based on the Player SDK, Tencent Cloud has developed a [player component](https://intl.cloud.tencent.com/document/product/266/33976). It integrates quality monitoring, video encryption, TSC, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
 
 ### 2. Open-source GitHub projects
 

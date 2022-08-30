@@ -12,9 +12,10 @@
 ### Step 1. Download the SDK ZIP file[](id:step1)
 [Download](https://vcube.cloud.tencent.com/home.html) the SDK ZIP file and integrate the SDK into your application as instructed in the SDK integration document.
 
-[](id:addview)
 
-### Step 2. Add a view[](id:step2)
+
+
+### Step 2. Add a view
 The SDK provides `TXCloudVideoView` for video rendering by default. First, add the following code to the layout XML file:
 ```xml
 <com.tencent.rtmp.ui.TXCloudVideoView
@@ -63,6 +64,13 @@ mVodPlayer.startPlay(localFile);
 :::
 ::: Through `FileId`
 ```objectivec
+// We recommend you use the following new API:
+TXPlayInfoParams playInfoParam = new TXPlayInfoParams(1252463788, // `appId` of the Tencent Cloud account
+    "4564972819220421305", // `fileId` of the video
+    "psignxxxxxxx"); // This parameter must be specified for an encrypted video.
+mVodPlayer.startPlay(playInfoParam);
+
+// Legacy API, which is not recommended
 TXPlayerAuthBuilder authBuilder = new TXPlayerAuthBuilder();
 authBuilder.setAppId(1252463788);
 authBuilder.setFileId("4564972819220421305");
@@ -91,7 +99,7 @@ public void onDestroy() {
     mPlayerView.onDestroy(); 
 }
 ```
->?The boolean parameter of `stopPlay` indicates whether to clear the last-frame image. Early versions of the live player of the RTMP SDK don't have the concept of pause; therefore, this boolean value is used to clear the last-frame image.
+>?The boolean parameter of `stopPlay` indicates whether to clear the last-frame image. Early versions of the live player of the RTMP SDK don't have an official pause feature; therefore, this boolean value is used to clear the last-frame image.
 
 If you want to retain the last-frame image after VOD stops, simply do nothing after receiving the playback stop event; playback will stop at the last frame by default.
 
@@ -132,7 +140,7 @@ When the user drags the progress bar, `seek` can be called to start playback at 
 
 ```java
 int time = 600; // In seconds if the value is of `int` type
-// float time = 600; // In ms if the value is of `float` type
+// float time = 600; // In seconds if the value is of `float` type
 // Adjust the playback progress
 mVodPlayer.seek(time);
 ```
@@ -149,9 +157,8 @@ mVodPlayer.startPlay(url);
 
 ### 2. Image adjustment
 
-- **view: size and position**
+- **view: Size and position**
 You can modify the size and position of video images by adjusting the size and position of the `video_view` control added in the [Add a view](#addview) step during SDK integration.
-
 - **setRenderMode: Aspect fill or aspect fit**
 <table>
 <thead>
@@ -162,14 +169,13 @@ You can modify the size and position of video images by adjusting the size and p
 </thead>
 <tbody><tr>
 <td>RENDER_MODE_FULL_FILL_SCREEN</td>
-<td>Images are scaled to fill the entire screen, and the excess parts are cropped. There are no black bars in this mode, but images may not be displayed in whole.</td>
+<td>Images are scaled to fill the entire screen, and the excess parts are cropped. There are no black bars in this mode, but images may not be displayed entirely.</td>
 </tr>
 <tr>
 <td>RENDER_MODE_ADJUST_RESOLUTION</td>
-<td>Images are scaled as large as the longer side can go. Neither side exceeds the screen after scaling. Images are centered, and there may be black bars.</td>
+<td>Images are scaled as so that the long side of the video fits the screen. Neither side exceeds the screen after scaling. Images are centered, and there may be black bars.</td>
 </tr>
 </tbody></table>
-
 - **setRenderRotation: Image rotation**
 <table>
 <thead>
@@ -187,7 +193,6 @@ You can modify the size and position of video images by adjusting the size and p
 <td>Clockwise rotation of the image by 270 degrees (the Home button is on the left of the video image)</td>
 </tr>
 </tbody></table>
-
 ```java
  // Fill the screen at the original aspect ratio
 mVodPlayer.setRenderMode(TXLiveConstants.RENDER_MODE_FULL_FILL_SCREEN);
@@ -218,13 +223,15 @@ mVodPlayer.isLoop();
 ### 5. Muting/Unmuting
 
 ```java
-// Mute or unmute the player. true: mute; false: unmute
+// Mute or unmute the player. true: Mute; false: Unmute
 mVodPlayer.setMute(true);
 ```
 
 ### 6. Screencapturing
 
-Call **snapshot** to take a screenshot of the current video. This method captures a frame of the video. To capture the UI, use the corresponding API of the Android system.
+Call **snapshot** to take a screenshot of the current video frame. This method captures only the video frame. To capture the UI, use the corresponding API of the Android system.
+
+
 
 ```java
 // Take a screenshot
@@ -288,6 +295,7 @@ During playback, you can call `mVodPlayer.setBitrateIndex(int)` at any time to s
 There are two metrics for the VOD progress: **loading progress** and **playback progress**. Currently, the SDK notifies the two progress metrics in real time through event notifications. For more information on the event notification content, see [Event Listening](#listening).
 
 You can bind a **TXVodPlayerListener** listener to the `TXVodPlayer` object, and the progress notification will be called back to your application through the **PLAY_EVT_PLAY_PROGRESS** event. The event information contains the above two progress metrics.
+
 
 
 
@@ -407,13 +415,13 @@ if (sdcardDir != null) {
 
 >?The `TXVodPlayConfig#setMaxCacheItems` API used for configuration on earlier versions has been deprecated and is not recommended.
 
-## Advanced Feature Usage
+## Using Advanced Features
 
 ### 1. Video preloading
 
 #### Step 1. Use video preloading
 
-In UGSV playback scenarios, the preloading feature contributes to a smooth viewing experience: When a video is being played, you can load the next video to be played back on the backend. When users switch to the next video, it will have been loaded and can be played back immediately.
+In UGSV playback scenarios, the preloading feature contributes to a smooth viewing experience: When a video is being played, you can load the next video to be played back on the backend. When a user switches to the next video, it will already be loaded and can be played back immediately.
 
 Video preloading can deliver an instant playback effect but has certain performance overheads. If your business needs to preload many videos, we recommend you use this feature together with [video predownloading](#download).
 
@@ -481,8 +489,8 @@ You can download part of the video content in advance without creating a player 
 Before using the playback service, make sure that [video cache](#cache) has been set.
 
 >? 
->1. `TXPlayerGlobalSetting` is the global cache setting API, and the original `TXVodConfig` API has been disused.
->2. The global cache directory and size settings have a higher priority than those configured in `TXVodConfig` of the player.
+> 1. `TXPlayerGlobalSetting` is the global cache setting API, and the original `TXVodConfig` API has been disused.
+> 2. The global cache directory and size settings have a higher priority than those configured in `TXVodConfig` of the player.
 
 Sample:
 
@@ -500,12 +508,12 @@ String palyrl = "http://****";
 final TXVodPreloadManager downloadManager = TXVodPreloadManager.getInstance(getApplicationContext());
 final int taskID = downloadManager.startPreload(playUrl, 3, 1920*1080, new ITXVodPreloadListener() {
     @Override
-    public void onComplete(String url) {
+    public void onComplete(int taskID, String url) {
         Log.d(TAG, "preload: onComplete: url: " + url);
     }
 
     @Override
-    public void onError(String url, int code, String msg) {
+    public void onError(int taskID, String url, int code, String msg) {
         Log.d(TAG, "preload: onError: url: " + url + ", code: " + code + ", msg: " + msg);
     }
 
@@ -544,7 +552,7 @@ You need to pass in the download URL at least. Only the non-nested HLS format is
 downloader.startDownloadUrl("http://1500005830.vod2.myqcloud.com/43843ec0vodtranscq1500005830/00eb06a88602268011437356984/video_10_0.m3u8", "");
 ```
 :::
-::: Through Fileid[](id:fileid)
+::: Through `Fileid`[](id:fileid)
 For download through `Fileid`, you need to pass in `AppID`, `Fileid`, and `qualityId` at least. For signed videos, you also need to pass in `pSign`. If no specific value is passed in to `userName`, it will be `default` by default.
 ```java
 //  QUALITYOD // Original resolution
@@ -569,12 +577,12 @@ downloader.setListener(this);
 You may receive the following task callbacks:
 
 | Callback Message | Description |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+|---------|---------|
 | void onDownloadStart(TXVodDownloadMediaInfo mediaInfo)       | The task started, that is, the SDK started the download.                              |
 | void onDownloadProgress(TXVodDownloadMediaInfo mediaInfo)    | Task progress. During download, the SDK will frequently call back this API. You can use `mediaInfo.getProgress()` to get the current progress. |
 | void onDownloadStop(TXVodDownloadMediaInfo mediaInfo)        | The task stopped. When you call `stopDownload` to stop the download, if this message is received, the download is stopped successfully. |
-| void onDownloadFinish(TXVodDownloadMediaInfo mediaInfo)      | Download was completed. If this callback is received, the entire file has been downloaded, and the downloaded file can be played back by `TXVodPlayer`. |
-| void onDownloadError(TXVodDownloadMediaInfo mediaInfo, int error, String reason) | Download error. If the network is disconnected during download, this API will be called back and the download task will stop. The error code is in `TXVodDownloadManager`.  |
+|  void onDownloadFinish(TXVodDownloadMediaInfo mediaInfo) |  Download was completed. If this callback is received, the entire file has been downloaded, and the downloaded file can be played back by `TXVodPlayer`. |
+| void onDownloadError(TXVodDownloadMediaInfo mediaInfo, int error, String reason) | Download error. If the network is disconnected during download, this API will be called back and the download task will stop. The error code is in `TXVodDownloadManager`. |
 
 
 As the downloader can download multiple files at a time, the callback API carries the `TXVodDownloadMediaInfo` object. You can access the URL or `dataSource` to determine the download source and get other information such as download progress and file size.
@@ -668,61 +676,69 @@ You can bind a `TXVodPlayListener` listener to the `TXVodPlayer` object to use `
 
 ### Playback event notifications (onPlayEvent)
 
-#### Playback events
-| Event ID | Code | Description |
-| ---------------------------- | ---- | ---------------------------------------------------------- |
-| PLAY\_EVT\_PLAY\_BEGIN       | 2004 | Video playback started.                                               |
-| PLAY\_EVT\_PLAY\_PROGRESS    | 2005 | Video playback progress (including the current playback progress, loading progress, and total video duration).      |
-| PLAY\_EVT\_PLAY\_LOADING     | 2007 | The video is being loaded. The `LOADING_END` event will be reported if video playback resumes. |
-| PLAY\_EVT\_VOD\_LOADING\_END | 2014 | Video loading ended, and video playback resumed.                        |
 
+| Event ID | Code | Description |
+| ----------------------------------------- | ---- | ---------------------------------------------------------- |
+| PLAY\_EVT\_PLAY\_BEGIN                    | 2004 | Video playback started.                                               |
+| PLAY\_EVT\_PLAY\_PROGRESS                 | 2005 | Video playback progress. The current playback progress, loading progress, and total video duration will be notified of.      |
+| PLAY\_EVT\_PLAY\_LOADING                  | 2007 | The video is being loaded. The `LOADING_END` event will be reported if video playback resumes. |
+| PLAY\_EVT\_VOD\_LOADING\_END              | 2014 | Video loading ended, and video playback resumed.                        |
+| TXVodConstants.VOD_PLAY_EVT_SEEK_COMPLETE | 2019 | Seeking was completed. The seeking feature is supported by v10.3 or later. |
 
 #### Stop events
 | Event ID | Code | Description |
-| :---------------------- | :---- | :----------------------------------------------------- |
-| PLAY_EVT_PLAY_END       | 2006  | Video playback ended.                                           |
-| PLAY_ERR_NET_DISCONNECT | -2301 | The network was disconnected and could not be reconnected after multiple retries. You can restart the player to perform more connection retries. |
-| PLAY_ERR_HLS_KEY        | -2305 | Failed to get the HLS decryption key.                                  |
+| :-------------------  |:-------- |  :------------------------ |
+|PLAY_EVT_PLAY_END      |  2006|  Video playback ended.      |
+|PLAY_ERR_NET_DISCONNECT |  -2301  | The network was disconnected and could not be reconnected after multiple retries. You can restart the player to perform more connection retries. |
+|PLAY_ERR_HLS_KEY       | -2305 | Failed to get the HLS decryption key.                                  |
 
 #### Warning events
 You can ignore the following events, which are only used to notify you of some internal events of the SDK.
 
 | Event ID | Code | Description |
-| :-------------------------------- | :--- | :----------------------------------------------------------- |
+| :-------------------  |:-------- |  :------------------------ |
 | PLAY_WARNING_VIDEO_DECODE_FAIL   |  2101  | Failed to decode the current video frame.  |
 | PLAY_WARNING_AUDIO_DECODE_FAIL   |  2102  | Failed to decode the current audio frame.  |
 | PLAY_WARNING_RECONNECT           |  2103  | The network was disconnected, and automatic reconnection was performed (the `PLAY_ERR_NET_DISCONNECT` event will be thrown after three failed attempts). |
-| PLAY_WARNING_HW_ACCELERATION_FAIL | 2106 | Failed to start the hardware decoder, and the software decoder was used instead.   |
+| PLAY_WARNING_HW_ACCELERATION_FAIL|  2106  | Failed to start the hardware decoder, and the software decoder was used instead.   |
 
 #### Connection events
 The following server connection events are mainly used to measure and collect the server connection time:
 
 | Event ID | Code | Description |
-| :------------------------- | :--- | :----------------------------------------------------------- |
+| :-----------------------  |:-------- |  :------------------------ |
 | PLAY_EVT_VOD_PLAY_PREPARED | 2013 | The player has been prepared and can start playback. If `autoPlay` is set to `false`, you need to call `resume` after receiving this event to start playback. |
-| PLAY_EVT_RCV_FIRST_I_FRAME | 2003 | The network received the first renderable video data packet (IDR).  |
+| PLAY_EVT_RCV_FIRST_I_FRAME|  2003    | The network received the first renderable video data packet (IDR).  |
 
 
 #### Image quality events
 The following events are used to get image change information:
 
 | Event ID | Code | Description |
-| ----------------------------- | ---- | ---------------- |
-| PLAY\_EVT\_CHANGE\_RESOLUTION | 2009 | The video resolution changed.   |
+| ----------------------------- | ---- | ---------- |
+| PLAY\_EVT\_CHANGE\_RESOLUTION | 2009 | The video resolution changed.    |
 | PLAY\_EVT\_CHANGE\_ROTATION   | 2011 | The MP4 video was rotated. |
 
 #### Video information events
 | Event ID | Code | Description |
-| :----------------------------------------- | :--- | :------------------- |
-| TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC | 2010 | Obtained the information of the file played back successfully. |
+| :-----------------------  |:-------- |  :------------------------ |
+|TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC   | 2010 | Obtained the information of the file played back successfully. |
 
-If you play back a video through `fileId` and the playback request succeeds, the SDK will notify the upper layer of some request information, and you can parse `param` to get the video information after receiving the `TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC` event.
+If you play back a video through `fileId` and the playback request succeeds (called API: startPlay(TXPlayerAuthBuilder authBuilder)), the SDK will notify the upper layer of some request information, and you can parse `param` to get the video information after receiving the `TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC` event.
 
 | Video Information | Description |
-| --------------------- | ------------ |
+| ------------------------------------------- | ---------------------------------------------- |
 | EVT\_PLAY\_COVER\_URL | Video thumbnail URL |
-| EVT\_PLAY\_URL        | Video playback URL |
-| EVT\_PLAY\_DURATION   | Video duration |
+| EVT\_PLAY\_URL | Video playback address |
+| EVT\_PLAY\_DURATION | Video duration |
+| EVT_TIME | Event occurrence time |
+| EVT_UTC_TIME | UTC time |
+| EVT_DESCRIPTION | Event description |
+| EVT_PLAY_NAME  | Video name |
+| TXVodConstants.EVT_IMAGESPRIT_WEBVTTURL | Download URL of the image sprite WebVTT file, which is supported by v10.2 or later |
+| TXVodConstants.EVT_IMAGESPRIT_IMAGEURL_LIST | Download URL of the image sprite image, which is supported by v10.2 or later |
+| TXVodConstants.EVT_DRM_TYPE | Encryption type, which is supported by v10.2 or later |
+
 
 Below is the sample code of using `onPlayEvent` to get the video playback information:
 
@@ -806,7 +822,7 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
 
 ### 1. SDK-based demo component
 
-Based on the Player SDK, Tencent Cloud has developed a [player component](https://intl.cloud.tencent.com/document/product/266/33975). It integrates quality monitoring, video encryption, TESHD, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
+Based on the Player SDK, Tencent Cloud has developed a [player component](https://intl.cloud.tencent.com/document/product/266/33975). It integrates quality monitoring, video encryption, TSC, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
 
 ### 2. Open-source GitHub projects
 

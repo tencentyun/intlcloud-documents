@@ -1,23 +1,23 @@
-Tencent Cloud RT-Cube Superplayer for Flutter is an open-source Tencent Cloud player component. It can provide powerful playback functionality similar to Tencent Video with just a few lines of code. It has basic features such as landscape/portrait orientation switching, definition selection, gestures, and small window playback, as well as special features such as video buffering, software/hardware decoding switching, and adjustable-speed playback. It supports more formats and has better compatibility and functionality than system-default players. In addition, it supports live stream (FLV + RTMP) playback, features instant broadcasting of the first frame and low latency, and offers advanced capabilities, including seamless definition switch and live time shifting.
-This player is based on a Flutter plugin of SuperPlayer and supports both Android and iOS. It is open-source and free of charge and does not restrict the source of playback addresses, so you can use it as desired.
+Tencent Cloud RT-Cube Player for Flutter is an open-source Tencent Cloud player component. It can provide powerful playback functionality similar to Tencent Video with just a few lines of code. It has basic features such as landscape/portrait orientation switching, definition selection, gestures, and small window playback, as well as special features such as video buffering, software/hardware decoding switching, and adjustable-speed playback. It supports more formats and has better compatibility and functionality than system-default players. In addition, it supports live stream (FLV + RTMP) playback, features instant broadcasting of the first frame and low latency, and offers advanced capabilities, including seamless definition switch and live time shifting.
+This player is based on a Flutter plugin of VOD and live playback and supports both Android and iOS. It is open-source, free of charge, and does not restrict the source of playback addresses, so you can use it as desired.
 
 ## SDK Download
 
-You can download the Tencent Cloud RT-Cube Superplayer SDK for Flutter [here](https://github.com/LiteAVSDK/Player_Flutter/tree/main/Flutter).
+The Tencent Cloud RT-Cube Player SDK for Flutter can be downloaded [here](https://github.com/LiteAVSDK/Player_Flutter).
 
 ## Project Overview
 
 The RT-Cube Player SDK is a subproduct SDK of RT-Cube, which provides excellent VOD and live players based on Tencent Cloud's powerful backend capabilities and AI technologies. It can be used with VOD or CSS to quickly implement smooth and stable playback for various use cases. It allows you to focus on your business while delivering an ultra fast HD playback experience.
 
-This project provides the VOD and live player SDKs which you can use to set up your own playback services.
+This project provides the VOD and live playback which you can use to set up your own playback services.
 
-- [VOD player SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE-EN.md): `TXVodPlayerController` encapsulates the APIs of the VOD player SDKs for Android and iOS. You can integrate it to develop your VOD service. For the detailed code sample, see `DemoTXVodPlayer`.
+- [VOD playback](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE.md): `TXVodPlayerController` encapsulates the APIs of the VOD player SDKs for Android and iOS. You can integrate it to develop your VOD service. For the detailed code sample, see `DemoTXVodPlayer`.
 
-- [Live player SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE-EN.md): `TXLivePlayerController` encapsulates the APIs of the live player SDKs for Android and iOS. You can integrate it to develop your live playback service. For the detailed code sample, see `DemoTXLivePlayer`.
+- [Live playback](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE.md): `TXLivePlayerController` encapsulates the APIs of the live player SDKs for Android and iOS. You can integrate it to develop your live playback service. For the detailed code sample, see `DemoTXLivePlayer`.
 
-To reduce the connection costs, the Superplayer component (player with UIs) is provided in `example`. You can set up your own video playback service based on a few lines of simple code. You can apply the Superplayer code to your project and adjust UI and interaction details based on your project requirements.
+To reduce the connection costs, the Player component (player with UIs) is provided in `example`. You can set up your own video playback service based on a few lines of simple code. You can apply the Player component's code to your project and adjust UI and interaction details based on your project requirements.
 
-- [Superplayer component](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E6%92%AD%E6%94%BE%E5%99%A8%E7%BB%84%E4%BB%B6-EN.md): `SuperPlayerController` is the Superplayer component, which combines the VOD and live player SDKs. It is currently in beta testing, and its features are being optimized. For the detailed code sample, see `DemoSuperplayer`.
+- [Player component](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E6%92%AD%E6%94%BE%E5%99%A8%E7%BB%84%E4%BB%B6.md): `SuperPlayerController` is the Player component, which combines VOD and live playback. It is currently in beta testing, and its features are being optimized. For the detailed code sample, see `DemoSuperplayer`.
 
 ## Quick Integration
 
@@ -26,14 +26,14 @@ To reduce the connection costs, the Superplayer component (player with UIs) is p
 ```yaml
 super_player:
   git:
-    url: https://github.com/tencentyun/SuperPlayer
+    url: https://github.com/LiteAVSDK/Player_Flutter
     path: Flutter
 ```
 2. To integrate `LiteAVSDK_Professional`, change the configuration in `pubspec.yaml` as follows:
 ```yaml
 super_player:
   git:
-    url: https://github.com/tencentyun/SuperPlayer
+    url: https://github.com/LiteAVSDK/Player_Flutter
     path: Flutter
     ref: Professional
 ```
@@ -83,6 +83,8 @@ If no edition is specified, the latest version of `TXLiteAVSDK_Player` will be i
 - Run `flutter pub get` to ensure that all dependent components have been updated successfully.
 
 
+
+
 ## Using the VOD Player
 The core class of the VOD player is `TXVodPlayerController`. For the detailed demo, see `DemoTXVodPlayer`.
 ```dart
@@ -125,8 +127,9 @@ class _TestState extends State<Test> {
   }
 }
 ```
-## Using Superplayer
-The core class of Superplayer is `SuperPlayerVideo`, and videos can be played back after it is created.
+## How to Use the Player Component
+
+The core class of the Player component is `SuperPlayerVideo`, and videos can be played back after it is created.
 ```dart
 import 'package:flutter/material.dart';
 import 'package:super_player/super_player.dart';
@@ -242,6 +245,13 @@ class _DemoSuperplayerState extends State<DemoSuperplayer> {
     model.title = "Tencent Cloud Audio/Video";
     _controller.playWithModel(model);
   }
+  
+  @override
+  void dispose() {
+    // must invoke when page exit.
+    _controller.releasePlayer();
+    super.dispose();
+  }
 }
 ```
 
@@ -249,11 +259,11 @@ class _DemoSuperplayerState extends State<DemoSuperplayer> {
 
 The Player SDK for Flutter plugin encapsulates native player capabilities. We recommend you use the following methods for deep custom development:
 
-- Perform custom development based on the VOD player SDK (the API class is `TXVodPlayerController`) or live player SDK (the API class is `TXLivePlayerController`). The project provides custom development demos in `DemoTXVodPlayer` and `DemoTXLivePlayer` in the `example` project.
+- Perform custom development based on VOD playback (the API class is `TXVodPlayerController`) or live playback (the API class is `TXLivePlayerController`). The project provides custom development demos in `DemoTXVodPlayer` and `DemoTXLivePlayer` in the `example` project.
 
-- The Superplayer component `SuperPlayerController` encapsulates the Player SDK and provides simple UI interaction. The code is in the `example` directory. You can customize the Superplayer component as follows:
+- The Player component `SuperPlayerController` encapsulates VOD and live playback and provides simple UI interaction. The code is in the `example` directory. You can customize the Player component as follows:
 
-  Copy the Superplayer component code in `example/lib/superplayer` to your project for custom development.
+  Copy the Player component code in `exmple/lib/superplayer` to your project for custom development.
 
 ## More features
 

@@ -12,9 +12,10 @@
 ### 步骤1：下载 SDK 开发包[](id:step1)
 [下载](https://vcube.cloud.tencent.com/home.html) SDK 开发包，并按照 SDK 集成指引 将 SDK 嵌入您的 App 工程中。
 
-[](id:addview)
 
-### 步骤2: 添加 View[](id:step2)
+
+
+### 步骤2: 添加 View
 SDK 默认提供 TXCloudVideoView 用于视频渲染，我们第一步要做的就是在布局 xml 文件里加入如下一段代码：
 ```xml
 <com.tencent.rtmp.ui.TXCloudVideoView
@@ -63,6 +64,13 @@ mVodPlayer.startPlay(localFile);
 :::
 ::: 通过 FileId 方式
 ```objectivec
+// 推荐使用下面的新接口
+TXPlayInfoParams playInfoParam = new TXPlayInfoParams(1252463788, // 腾讯云账户的appId
+    "4564972819220421305", // 视频的fileId
+    "psignxxxxxxx"); // 如果是加密视频，必须填写
+mVodPlayer.startPlay(playInfoParam);
+
+// 旧接口，不推荐使用
 TXPlayerAuthBuilder authBuilder = new TXPlayerAuthBuilder();
 authBuilder.setAppId(1252463788);
 authBuilder.setFileId("4564972819220421305");
@@ -132,7 +140,7 @@ mVodPlayer.stopPlay(true);
 
 ```java
 int time = 600; // int类型时，单位为 秒
-// float time = 600; // float 类型时单位为 毫秒
+// float time = 600; // float 类型时单位为 秒
 // 调整进度
 mVodPlayer.seek(time);
 ```
@@ -151,7 +159,6 @@ mVodPlayer.startPlay(url);
 
 - **view：大小和位置**
 如需修改画面的大小及位置，直接调整 SDK 集成时 [添加 View](#addview) 中添加的 “video_view” 控件的大小和位置即可。
-
 - **setRenderMode：铺满或适应**
 <table>
 <thead>
@@ -169,7 +176,6 @@ mVodPlayer.startPlay(url);
 <td>将图像等比例缩放，适配最长边，缩放后的宽和高都不会超过显示区域，居中显示，画面可能会留有黑边</td>
 </tr>
 </tbody></table>
-
 - **setRenderRotation：画面旋转**
 <table>
 <thead>
@@ -187,7 +193,6 @@ mVodPlayer.startPlay(url);
 <td>画面顺时针旋转270度（Home 键在画面正左方）</td>
 </tr>
 </tbody></table>
-
 ```java
  // 将图像等比例铺满整个屏幕
 mVodPlayer.setRenderMode(TXLiveConstants.RENDER_MODE_FULL_FILL_SCREEN);
@@ -290,6 +295,7 @@ mVodPlayer.setBitrateIndex(-1); //index 参数传入-1
 点播播放中的进度信息分为2种：**加载进度**和**播放进度**，SDK 目前是以事件通知的方式将这两个进度实时通知出来的。更多事件通知内容参见[事件监听](#listening)。
 
 您可以为 TXVodPlayer 对象绑定一个 **TXVodPlayerListener** 监听器，进度通知会通过 **PLAY_EVT_PLAY_PROGRESS** 事件回调到您的应用程序，该事件的附加信息中即包含上述两个进度指标。
+
 
 
 
@@ -483,8 +489,8 @@ mVodPlayer.setConfig(config);  // 把config 传给 mVodPlayer
 在使用播放服务前，请确保先设置好 [视频缓存](#cache)。
 
 >? 
->1. TXPlayerGlobalSetting 是全局缓存设置接口，原有 TXVodConfig 的缓存配置接口废弃。
->2.  全局缓存目录和大小设置的优先级高于播放器 TXVodConfig 配置的缓存设置。
+> 1. TXPlayerGlobalSetting 是全局缓存设置接口，原有 TXVodConfig 的缓存配置接口废弃。
+> 2.  全局缓存目录和大小设置的优先级高于播放器 TXVodConfig 配置的缓存设置。
 
 使用示例：
 
@@ -502,12 +508,12 @@ String palyrl = "http://****";
 final TXVodPreloadManager downloadManager = TXVodPreloadManager.getInstance(getApplicationContext());
 final int taskID = downloadManager.startPreload(playUrl, 3, 1920*1080, new ITXVodPreloadListener() {
     @Override
-    public void onComplete(String url) {
+    public void onComplete(int taskID, String url) {
         Log.d(TAG, "preload: onComplete: url: " + url);
     }
 
     @Override
-    public void onError(String url, int code, String msg) {
+    public void onError(int taskID, String url, int code, String msg) {
         Log.d(TAG, "preload: onError: url: " + url + ", code: " + code + ", msg: " + msg);
     }
 
@@ -570,13 +576,13 @@ downloader.setListener(this);
 
 可能收到的任务回调有：
 
-| 回调信息                                                     | 说明                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| void onDownloadStart(TXVodDownloadMediaInfo mediaInfo)       | 任务开始，表示 SDK 已经开始下载                              |
-| void onDownloadProgress(TXVodDownloadMediaInfo mediaInfo)    | 任务进度，下载过程中，SDK 会频繁回调此接口，您可以通过`mediaInfo.getProgress()` 获取当前进度 |
-| void onDownloadStop(TXVodDownloadMediaInfo mediaInfo)        | 任务停止，当您调用 `stopDownload` 停止下载，收到此消息表示停止成功 |
-| void onDownloadFinish(TXVodDownloadMediaInfo mediaInfo)      | 下载完成，收到此回调表示已全部下载。此时下载文件可以给 TXVodPlayer 播放 |
-| void onDownloadError(TXVodDownloadMediaInfo mediaInfo, int error, String reason) | 下载错误，下载过程中遇到网络断开会回调此接口，同时下载任务停止。错误码位于`TXVodDownloadManager`中 |
+| 回调信息 | 说明 |
+|---------|---------|
+| void onDownloadStart(TXVodDownloadMediaInfo mediaInfo) | 任务开始，表示 SDK 已经开始下载 |
+| void onDownloadProgress(TXVodDownloadMediaInfo mediaInfo) | 任务进度，下载过程中，SDK 会频繁回调此接口，您可以通过`mediaInfo.getProgress()` 获取当前进度 |
+| void onDownloadStop(TXVodDownloadMediaInfo mediaInfo) | 任务停止，当您调用 `stopDownload` 停止下载，收到此消息表示停止成功 |
+|  void onDownloadFinish(TXVodDownloadMediaInfo mediaInfo) |  下载完成，收到此回调表示已全部下载。此时下载文件可以给 TXVodPlayer 播放 |
+| void onDownloadError(TXVodDownloadMediaInfo mediaInfo, int error, String reason) | 下载错误，下载过程中遇到网络断开会回调此接口，同时下载任务停止。错误码位于`TXVodDownloadManager`中|
 
 
 由于 downloader 可以同时下载多个任务，所以回调接口里带上了`TXVodDownloadMediaInfo`对象，您可以访问 URL 或 dataSource 判断下载源，同时还可以获取到下载进度、文件大小等信息。
@@ -670,61 +676,69 @@ mVodPlayer.setConfig(config);  // 把config 传给 mVodPlayer
 
 ### 播放事件通知（onPlayEvent）
 
-#### 播放事件
-| 事件 ID                      | 数值 | 含义说明                                                   |
-| ---------------------------- | ---- | ---------------------------------------------------------- |
-| PLAY\_EVT\_PLAY\_BEGIN       | 2004 | 视频播放开始                                               |
-| PLAY\_EVT\_PLAY\_PROGRESS    | 2005 | 视频播放进度，会通知当前播放进度、加载进度 和总体时长      |
-| PLAY\_EVT\_PLAY\_LOADING     | 2007 | 视频播放 loading，如果能够恢复，之后会有 LOADING\_END 事件 |
-| PLAY\_EVT\_VOD\_LOADING\_END | 2014 | 视频播放 loading 结束，视频继续播放                        |
 
+| 事件 ID                                   | 数值 | 含义说明                                                   |
+| ----------------------------------------- | ---- | ---------------------------------------------------------- |
+| PLAY\_EVT\_PLAY\_BEGIN                    | 2004 | 视频播放开始                                               |
+| PLAY\_EVT\_PLAY\_PROGRESS                 | 2005 | 视频播放进度，会通知当前播放进度、加载进度 和总体时长      |
+| PLAY\_EVT\_PLAY\_LOADING                  | 2007 | 视频播放 loading，如果能够恢复，之后会有 LOADING\_END 事件 |
+| PLAY\_EVT\_VOD\_LOADING\_END              | 2014 | 视频播放 loading 结束，视频继续播放                        |
+| TXVodConstants.VOD_PLAY_EVT_SEEK_COMPLETE | 2019 | Seek 完成，10.3版本开始支持|
 
 #### 结束事件
-| 事件 ID                 | 数值  | 含义说明                                               |
-| :---------------------- | :---- | :----------------------------------------------------- |
-| PLAY_EVT_PLAY_END       | 2006  | 视频播放结束                                           |
-| PLAY_ERR_NET_DISCONNECT | -2301 | 网络断连,且经多次重连亦不能恢复,更多重试请自行重启播放 |
-| PLAY_ERR_HLS_KEY        | -2305 | HLS 解密 key 获取失败                                  |
+| 事件 ID                 |    数值  |  含义说明                |
+| :-------------------  |:-------- |  :------------------------ |
+|PLAY_EVT_PLAY_END      |  2006|  视频播放结束   |
+|PLAY_ERR_NET_DISCONNECT |  -2301  |  网络断连,且经多次重连亦不能恢复,更多重试请自行重启播放 |
+|PLAY_ERR_HLS_KEY       | -2305 | HLS 解密 key 获取失败 |
 
 #### 警告事件
 如下的这些事件您可以不用关心，它只是用来告知您 SDK 内部的一些事件。
 
-| 事件 ID                           | 数值 | 含义说明                                                     |
-| :-------------------------------- | :--- | :----------------------------------------------------------- |
-| PLAY_WARNING_VIDEO_DECODE_FAIL    | 2101 | 当前视频帧解码失败                                           |
-| PLAY_WARNING_AUDIO_DECODE_FAIL    | 2102 | 当前音频帧解码失败                                           |
-| PLAY_WARNING_RECONNECT            | 2103 | 网络断连, 已启动自动重连 (重连超过三次就直接抛送 PLAY_ERR_NET_DISCONNECT 了) |
-| PLAY_WARNING_HW_ACCELERATION_FAIL | 2106 | 硬解启动失败，采用软解                                       |
+| 事件 ID                 |    数值  |  含义说明                    |
+| :-------------------  |:-------- |  :------------------------ |
+| PLAY_WARNING_VIDEO_DECODE_FAIL   |  2101  | 当前视频帧解码失败  |
+| PLAY_WARNING_AUDIO_DECODE_FAIL   |  2102  | 当前音频帧解码失败  |
+| PLAY_WARNING_RECONNECT           |  2103  | 网络断连, 已启动自动重连 (重连超过三次就直接抛送 PLAY_ERR_NET_DISCONNECT 了) |
+| PLAY_WARNING_HW_ACCELERATION_FAIL|  2106  | 硬解启动失败，采用软解   |
 
 #### 连接事件
 连接服务器的事件，主要用于测定和统计服务器连接时间：
 
-| 事件 ID                    | 数值 | 含义说明                                                     |
-| :------------------------- | :--- | :----------------------------------------------------------- |
-| PLAY_EVT_VOD_PLAY_PREPARED | 2013 | 播放器已准备完成，可以播放。设置了 autoPlay 为 false 之后，需要在收到此事件后，调用 resume 才会开始播放 |
-| PLAY_EVT_RCV_FIRST_I_FRAME | 2003 | 网络接收到首个可渲染的视频数据包（IDR）                      |
+| 事件 ID                     |    数值  |  含义说明                    |
+| :-----------------------  |:-------- |  :------------------------ |
+| PLAY_EVT_VOD_PLAY_PREPARED     |  2013    | 播放器已准备完成，可以播放。设置了 autoPlay 为 false 之后，需要在收到此事件后，调用 resume 才会开始播放     |
+| PLAY_EVT_RCV_FIRST_I_FRAME|  2003    | 网络接收到首个可渲染的视频数据包（IDR）  |
 
 
 #### 画面事件
 以下事件用于获取画面变化信息：
 
-| 事件 ID                       | 数值 | 含义说明         |
-| ----------------------------- | ---- | ---------------- |
-| PLAY\_EVT\_CHANGE\_RESOLUTION | 2009 | 视频分辨率改变   |
+| 事件 ID                         | 数值   | 含义说明       |
+| ----------------------------- | ---- | ---------- |
+| PLAY\_EVT\_CHANGE\_RESOLUTION | 2009 | 视频分辨率改变    |
 | PLAY\_EVT\_CHANGE\_ROTATION   | 2011 | MP4 视频旋转角度 |
 
 #### 视频信息事件
-| 事件 ID                                    | 数值 | 含义说明             |
-| :----------------------------------------- | :--- | :------------------- |
-| TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC | 2010 | 成功获取播放文件信息 |
+| 事件 ID                     |    数值  |  含义说明                    |
+| :-----------------------  |:-------- |  :------------------------ |
+|TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC   | 2010 | 成功获取播放文件信息 |
 
-如果通过 fileId 方式播放且请求成功，SDK 会将一些请求信息通知到上层。您可以在收到`TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC`事件后，解析 param 获取视频信息。
+如果通过 fileId 方式播放且请求成功（接口：startPlay(TXPlayerAuthBuilder authBuilder)），SDK 会将一些请求信息通知到上层。您可以在收到`TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC`事件后，解析 param 获取视频信息。
 
-| 视频信息              | 含义说明     |
-| --------------------- | ------------ |
-| EVT\_PLAY\_COVER\_URL | 视频封面地址 |
-| EVT\_PLAY\_URL        | 视频播放地址 |
-| EVT\_PLAY\_DURATION   | 视频时长     |
+| 视频信息                                    | 含义说明                                       |
+| ------------------------------------------- | ---------------------------------------------- |
+| EVT\_PLAY\_COVER\_URL                       | 视频封面地址                                   |
+| EVT\_PLAY\_URL                              | 视频播放地址                                   |
+| EVT\_PLAY\_DURATION                         | 视频时长                                       |
+| EVT_TIME                                    | 事件发生时间                                   |
+| EVT_UTC_TIME                                | UTC 时间                                        |
+| EVT_DESCRIPTION                             | 事件说明                                       |
+| EVT_PLAY_NAME                               | 视频名称                                       |
+| TXVodConstants.EVT_IMAGESPRIT_WEBVTTURL     | 雪碧图 web vtt 描述文件下载 URL，10.2版本开始支持 |
+| TXVodConstants.EVT_IMAGESPRIT_IMAGEURL_LIST | 雪碧图图片下载URL，10.2版本开始支持            |
+| TXVodConstants.EVT_DRM_TYPE                 | 加密类型，10.2版本开始支持                     |
+
 
 通过 onPlayEvent 获取视频播放过程信息示例：
 
