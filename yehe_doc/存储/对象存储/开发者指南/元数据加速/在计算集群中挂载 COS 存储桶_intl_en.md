@@ -3,7 +3,7 @@
 COS can implement access over the HDFS protocol by enabling metadata acceleration for a bucket. Then, it will generate a mount target for the bucket. You can download the HDFS client from [GitHub](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) and enter the mount target information in the client to mount COS. This document describes how to mount a bucket with metadata acceleration enabled in a computing cluster.
 
 >! 
->- Hadoop-COS supports access to metadata acceleration buckets in the format of `cosn://bucketname-appid/` starting from v8.1.1.
+>- Hadoop-COS supports access to metadata acceleration buckets in the format of `cosn://bucketname-appid/` starting from v8.1.5.
 >- The metadata acceleration feature can only be enabled during bucket creation and cannot be disabled once enabled. Therefore, **carefully consider** whether to enable it based on your business conditions. You should also note that legacy Hadoop-COS packages cannot access metadata acceleration buckets.
 
 ## Prerequisites
@@ -13,15 +13,17 @@ COS can implement access over the HDFS protocol by enabling metadata acceleratio
 - Descriptions of JAR dependency packages:
 1. [chdfs_hadoop_plugin_network-2.8.jar](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) v2.7 or later.
 2. [cos_api-bundle.jar](https://search.maven.org/artifact/com.qcloud/cos_api-bundle/5.6.69/jar) v5.6.69 or later.
-3. [Hadoop-COS](https://github.com/tencentyun/hadoop-cos/releases) v8.1.3 or later.
+3. [Hadoop-COS](https://github.com/tencentyun/hadoop-cos/releases) v8.1.5 or later.
 4. ofs-java-sdk.jar v1.0.4 or later, which can be automatically pulled without installation required. You can run `hadoop fs ls` to check whether the versions meet the requirements in the directory configured by `fs.cosn.trsf.fs.ofs.tmp.cache.dir`.
 
 ## Directions
-
-1. Download the Hadoop client tool installation package from [GitHub](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar).
-2. Put the installation package in the `classpath` of each node and make sure that the job can be started and loaded normally, such as `$HADOOP_HOME/share/hadoop/common/lib/`.
->! The EMR environment comes with JAR dependency packages, which don't need to be installed manually. You can directly access a metadata acceleration bucket through POSIX semantics. If you need to use the S3 protocol for access, change the `fs.cosn.posix_bucket.fs.impl` configuration item as detailed below.
-3. Edit the `core-site.xml` file by adding the following basic configuration items:
+1. Download the Hadoop client tool installation package from [GitHub](https://github.com/tencentyun/hadoop-cos/releases).
+2. Download the POSIX Hadoop client tool installation package from [GitHub](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar).
+3. Download the [COS JAVA SDK installation package](https://search.maven.org/artifact/com.qcloud/cos_api-bundle/5.6.69/jar).
+4. Put the installation package in the `classpath` of each node and make sure that the job can be started and loaded normally, such as `$HADOOP_HOME/share/hadoop/common/lib/`.
+>! The EMR environment comes with JAR dependency packages, which don't need to be installed manually. You can directly access metadata acceleration buckets through POSIX semantics. If you need to use the S3 protocol for access, change the `fs.cosn.posix_bucket.fs.impl` configuration item as detailed below.
+>
+5. Edit the `core-site.xml` file by adding the following basic configuration items:
 ```
 <!-- API key information of the account, which can be viewed in the [CAM console](https://console.cloud.tencent.com/capi). -->
 <property>
@@ -29,13 +31,13 @@ COS can implement access over the HDFS protocol by enabling metadata acceleratio
 		 <value>AKIDxxxxxxxxxxxxxxxxxxxxx</value>
 </property>
 
-<!-- COSN implementation class -->
+<!--COSN implementation class-->
 <property>
 		 <name>fs.AbstractFileSystem.cosn.impl</name>
 		 <value>org.apache.hadoop.fs.CosN</value>
 </property>
 
-<!-- COSN implementation class -->
+<!--COSN implementation class-->
 <property>
 		 <name>fs.cosn.impl</name>
 		 <value>org.apache.hadoop.fs.CosFileSystem</value>
@@ -73,7 +75,7 @@ COS can implement access over the HDFS protocol by enabling metadata acceleratio
 
 
 
-### 2. Required configuration items for POSIX access mode
+### 2. Required configuration items for POSIX access mode (recommended)
 
 | Configuration Item | Content | Description |
 | ------------------------ | ------------------ | ---------------- |
@@ -93,8 +95,12 @@ COS can implement access over the HDFS protocol by enabling metadata acceleratio
 
 ### 4. Other configuration items
 
-- For other Hadoop-COS configuration items, see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
+- For other Hadoop-COS configuration items, see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884)
 - For other POSIX configuration items, see [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965). You can access metadata acceleration buckets in POSIX mode by adding the `fs.cosn.trsf.` prefix to such configuration items.
 
+### 5. Notes
+
+1. You cannot use a legacy Hadoop-COS JAR package to access metadata acceleration buckets.
+2. To access metadata acceleration buckets in POSIX mode of Hadoop-COS 8.1.5 or earlier, you need to disable ranger verification in the console.
 
 

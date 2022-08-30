@@ -1,4 +1,4 @@
-## Notes:
+## Notes
 
 - In the pay-as-you-go billing mode, fees are charged based on the actual usage of each billable item, which you can view in the [VOD console](https://console.cloud.tencent.com/vod/overview).
 - About daily billing:
@@ -14,52 +14,51 @@ Billable items:
 - **Video acceleration**: Using CDN for acceleration during video playback. This service is charged based on the downstream traffic consumed.
 - **Data retrieval:** Retrieving media from ARCHIVE or DEEP_ARCHIVE. This service is charged based on the retrieval mode and size of the file retrieved.
 - **Media AI:** Using AI capabilities (content analysis and recognition) on media files stored in VOD. This service is charged based on the duration of output files. Each task is billed only once. No fees will be charged if a task fails.
-- **Copyright protection:** Using VOD’s copyright protection capabilities (source tracking based on digital watermarks and DRM encryption) on media stored in VOD. For the billing details, see [Copyright protection](https://intl.cloud.tencent.com/document/product/266/33965). 
+- **Copyright protection:** Using VOD’s copyright protection capabilities (source tracking based on digital watermarks and DRM encryption) on media stored in VOD. For the billing details, see [Media Encryption and Protection](https://intl.cloud.tencent.com/document/product/266/33965). 
 
-## Storage
+## Storage[](id:media_storage)
 ### Pricing
-
 <table>
    <tr>
       <th width="150px" >Storage Class</td>
-      <th width="0px" >	Regions</td>
+      <th width="0px" >Region</td>
       <th width="0px"  >Price (USD/GB/Day)</td>
    </tr>
 	   <tr>
     <td rowspan='2' >STANDARD</td>
-      <td >Chinese mainland</td>
-      <td >	0.0006</td>
-   </tr>
-	 	   <tr>
-      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok) </td>
-      <td >	0.0009</td>
-   </tr>
-	 	   <tr>
-    <td rowspan='2' >STANDARD_IA<br>(at least 30 days)</td>
-      <td >Chinese mainland</td>
-      <td >	0.0004</td>
-   </tr>
-	 	   <tr>
-      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok) </td>
-      <td >	0.0006</td>
-   </tr>
-	 	 	   <tr>
-    <td rowspan='2' >ARCHIVE<br>(at least 90 days)</td>
-      <td >Chinese mainland</td>
-      <td >	0.0002</td>
-   </tr>
-	 	   <tr>
-      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok) </td>
-      <td >	0.0003</td>
-   </tr>
-	 	 	 	   <tr>
-    <td rowspan='2' >DEEP_ ARCHIVE<br>(at least 180 days)</td>
-      <td >Chinese mainland</td>
-      <td >	0.00006</td>
+      <td>Chinese mainland</td>
+      <td >0.0006</td>
    </tr>
 	 	   <tr>
       <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>
-      <td >		0.0001</td>
+      <td>0.0009</td>
+   </tr>
+	 	   <tr>
+    <td rowspan='2' >STANDARD_IA<br>(at least 30 days)</td>
+      <td>Chinese mainland</td>
+      <td >0.0004</td>
+   </tr>
+	 	   <tr>
+      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>
+      <td >0.0006</td>
+   </tr>
+	 	 	   <tr>
+    <td rowspan='2' >ARCHIVE<br>(at least 90 days)</td>
+      <td>Chinese mainland</td>
+      <td >0.0002</td>
+   </tr>
+	 	   <tr>
+      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>
+      <td >0.0003</td>
+   </tr>
+	 	 	 	   <tr>
+    <td rowspan='2' >DEEP_ ARCHIVE<br>(at least 180 days)</td>
+      <td>Chinese mainland</td>
+      <td >0.00006</td>
+   </tr>
+	 	   <tr>
+      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>
+      <td >0.0001</td>
    </tr>
 </table>
 
@@ -69,7 +68,7 @@ Billable items:
 - Rules: Storage fees are charged based on the storage class and peak storage space used per day. **Storage fees for regions inside and outside the Chinese mainland are charged separately**.
 - Billing formula: Daily storage fee = Peak storage space used in the Chinese mainland (GB) x Unit price (USD/GB/day) + Peak storage space used outside the Chinese mainland (GB) x Unit price (USD/GB/day).
 
-### Example
+### Examples
 
 Assume that on January 1, you stored media files in STANDARD in the Chinese mainland and the peak storage usage was 100 GB. You also stored media files in STANDARD_IA in Mumbai and the peak storage usage was 50 GB. On January 2, the storage fee billed for January 1 would be as follows:
 100 (GB) x 0.0006 (USD/GB) + 50 (GB) x 0.0006 (USD/GB) = 0.06 (USD) + 0.03 (USD) = 0.09 (USD)
@@ -139,7 +138,7 @@ TSC transcoding is charged based on the duration and short side (px) of the vide
 
 
 >!
->- TSC transcoding is billed according to the resolution and duration of the output video.
+>- TSC transcoding is billed according to the resolution and duration of transcoded video.
 >- Rules: TSC transcoding fees are based on the duration and specification of the video file generated after TSC transcoding. Video specification is determined by the codec used and short side (px) of the video generated.
 >- The prices above apply only to daily billing. If you are billed monthly, please contact your sales rep to learn about the billing details.
 >- The billing rules are the same as those for general transcoding.
@@ -149,22 +148,25 @@ TSC transcoding is charged based on the duration and short side (px) of the vide
 ### Adaptive bitrate streaming
 
 #### Pricing
+
 Adaptive bitrate streaming is charged based on the duration and specification of the video generated after transcoding. Video specification is determined by the codec used and short side (px) of the video generated.
-
 #### Billing details
-**The billing rules are the same as those for general transcoding**. Output videos of different resolutions are charged separately.
 
+**The billing rules are the same as those for general transcoding**. Output videos of different resolutions are charged separately.
 #### Example
+
 Assume that on January 1, you used VOD’s adaptive bitrate streaming service to transcode a video of 100 minutes into three resolutions: FHD (1920 x 1080), HD (1280 x 720), and SD (640 x 480). On January 2, the fee billed for January 1 would be as follows:
 0.0121 (USD/min) x 100 (min) + 0.0061 (USD/min) x 100 (min) + 0.003 (USD/min) x 100 (min) = 2.21 (USD)
 
 >? Because the video is transcoded into three specifications, each specification is charged and the fee is the sum of the three.
 
+
+
 ### Video editing
 
 #### Pricing
 - Video editing is billed according to the codec, duration, and resolution of the output file.
-- The resolution-based unit prices for video editing are the same as those for [general transcoding](#p2).
+- The resolution-specific unit prices for video editing are the same as those for [general transcoding](#p2).
 
 #### Billing details
 - Rules: Charges are based on the resolution and duration of the output file. **Each video editing task is billed once according to the specification**.
@@ -315,14 +317,14 @@ To access media assets stored in ARCHIVE or DEEP_ARCHIVE, you must retrieve them
 - Rules: Data retrieval fees are charged daily based on the retrieval mode and the size of the files retrieved from DEEP_ARCHIVE or ARCHIVE to STANDARD.
 - Billing formula: Daily retrieval fee = File size (GB) x Retrieval unit price (USD/GB).
 
-### Example
+### Examples
 
 Assume that on January 1, you retrieved 100 GB of data from **DEEP_ARCHIVE storage** in the **bulk retrieval mode** in the Chinese mainland. On January 2, the retrieval fee billed for January 1 would be as follows:
 100 (GB) x 0.0026 (USD/GB) = 0.26 USD
 
 ## Media AI
 
-VOD offers media AI capabilities including content analysis and content recognition.
+Media AI services include content moderation, content analysis, and content recognition.
 
 ### Content analysis
 
@@ -333,10 +335,10 @@ The video analysis feature is billed monthly in the pay-as-you-go mode. We calcu
 Billable items:
 
 - Intelligent highlights generation and video segmentation: Splitting videos into shots or scenes. This feature can be optimized for your needs. **Highlights generation and video segmentation use different APIs and are billed separately**.
-- Intelligent labeling and classification: Intelligent face, speech, and optical character recognition; automatically generating labels, categories, and summaries. **Video labeling and classification use different APIs and are billed separately**.
+- Intelligent labeling and classification: Intelligent face, speech, and optical character recognition; automatically generating labels, categories, and synopses. **Video labeling and classification use different APIs and are billed separately**.
 - Intelligent thumbnail generation: Capturing one or more frames from a video to use as the thumbnail.
 
-The billing details are as follows:
+The unit price is as follows:
 
 | Item       | Billed By                 | Price (USD/Min) |
 | :----------- | :----------------------- | :---------------- |
@@ -353,11 +355,11 @@ The fee incurred = 100 x 0.0572 + 100 x 0.0572 = 11.4 USD**
 
 >!
 >- Currently, the content analysis feature is only offered to customers billed monthly. To change from daily to monthly billing, please contact sales.
->-A duration less than 1 minute is counted as 1 minute.
+>- Video duration is rounded up to the nearest minute.
 
 ### Content recognition
 
-The video content recognition feature of VOD leverages AI technologies to recognize faces and text in video images, text in opening and closing credits, and speech, helping you manage your media assets more accurately and efficiently.
+The video content recognition feature of VOD leverages AI technologies to recognize faces and text in video images, opening and closing video segments, and speech, helping you manage your media assets more accurately and efficiently.
 
 #### Pricing
 
@@ -369,7 +371,7 @@ The video content recognition feature of VOD leverages AI technologies to recogn
 
 User A used VOD’s content recognition feature on video B, whose length was 60 minutes. The fee incurred would be 60 (minutes) x 0.0572 (USD/min) = 3.432 (USD).
 
-## Copyright protection
+## Copyright Protection
 
 VOD offers digital watermark and DRM encryption capabilities to help protect your content. 
 
@@ -396,10 +398,10 @@ Assume that you found your video (length: 60 minutes; resolution: 2560 x 1440) d
 
 Source tracking fee = 0.22 x 60 (minutes) = 13.2 USD
 
->!
+>?
 >- No fees will be charged if source tracking fails.
->- Videos are transcoded when you add digital watermarks to them, which incurs transcoding fees. For details, see [Media Processing](#media-processing).
->- The videos generated after transcoding will take up storage space, which will incur storage fees. For details, see [Media Processing](#storage).
+>- When you add a digital watermark to a video, the video will be transcoded, which will incur transcoding fees. For details, see [Media Processing](#media-processing).
+>- Transcoded streams take up storage space, which incurs storage fees. For details, see [Storage](#storage).
 
 ### DRM encryption
 
@@ -425,9 +427,9 @@ Assume that on January 1, you transcoded a video (length: 10 minutes; resolution
 
 DRM playback fee on January 1 = 50 (requests) x 0.0012 (USD/request) = 0.06 USD
 
->!
+>?
 >- DRM transcoding is billed in the same way as general transcoding. DRM transcoding fees are incurred each time you encrypt a video.
->- Storage fees are charged for videos stored in VOD. For details, see [Media Processing](#storage).
+>- Encrypted videos take up storage space, which incurs storage fees. For details, see [Storage](#storage).
 
 ## Others
 
