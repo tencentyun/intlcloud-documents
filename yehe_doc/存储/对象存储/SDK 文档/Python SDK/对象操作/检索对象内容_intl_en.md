@@ -8,7 +8,7 @@ This document provides an overview of APIs and SDK code samples for object conte
 
 ## Extracting Object Content
 
-#### Description
+#### Feature description
 
 This API is used to extract content from a specific object.
 
@@ -29,13 +29,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -57,6 +57,14 @@ response = client.select_object_content(
         }
     }
 )
+
+# Get the `EventStream` instance encapsulated in the response
+event_stream = response['Payload']
+
+# Get all extraction results at once
+# Note that as `EventStream` fetches extraction results in a streaming manner, when you call the `get_select_result()` method again, an empty set will be returned.
+result = event_stream.get_select_result()
+print(result)
 ```
 #### Sample request with all parameters
 
@@ -84,34 +92,24 @@ response = client.select_object_content(
 ```
 #### Parameter description
 
-| Parameter | Description | Type | Required |
+| Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 | Key | Object key, which uniquely identifies an object in a bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
-|Expression| SQL statement, which represents the extract operation you want to perform | String| Yes |
+|Expression| SQL statement, which represents the extract operation you want to perform. | String| Yes |
 | ExpressionType | Statement type, which is an extension. Currently, only SQL statements and parameters are supported. | String | Yes |
-|InputSerialization| Format of the object to extract. For more information, see [Sample request](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82)| Dict | Yes|
-|OutputSerialization| Output format of the extraction results. For more information, see [Sample request](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82)| Dict | Yes|
+|InputSerialization| Format of the object to extract. For more information, see [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82). | Dict | Yes|
+|OutputSerialization| Output format of the extraction results. For more information, see [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82). | Dict | Yes|
 | RequestProgress | Whether to return the query progress (QueryProgress). If this feature is enabled, COS Select will return the query progress periodically. | Dict| No |
 
 #### Response description
-The response contains the content and metadata of the object in dict format.
+
+The extraction result is in dict format.
+
 ```python
 {
-    'Body': EventStream(),
-    'ETag': '"9a4802d5c99dafe1c04da0a8e7e166bf"',
-    'Last-Modified': 'Wed, 28 Oct 2014 20:30:00 GMT',
-    'Accept-Ranges': 'bytes',
-    'Content-Range': 'bytes 0-16086/16087',
-    'Cache-Control': 'max-age=1000000',
-    'Content-Type': 'application/octet-stream',
-    'Content-Disposition': 'attachment; filename="filename.jpg"',
-    'Content-Encoding': 'gzip',
-    'Content-Language': 'zh-cn',
-    'Content-Length': '16807',
-    'Expires': 'Wed, 28 Oct 2019 20:30:00 GMT',
-    'x-cos-meta-test': 'test',
-    'x-cos-version-id': 'MTg0NDUxODMzMTMwMDM2Njc1ODA',
-    'x-cos-request-id': 'NTg3NzQ3ZmVfYmRjMzVfMzE5N182NzczMQ=='
+    'Payload': EventStream()
 }
 ```
+
+In the response, there is only one key-value pair where the key is `'Payload'` and the value is the `EventStream` instance. The extraction result of the object is encapsulated in the `EventStream` instance. You can call the `next_event()`, `get_select_result()`, and `get_select_result_to_file()` methods to get the extraction result.

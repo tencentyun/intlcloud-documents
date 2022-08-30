@@ -3,7 +3,7 @@
 Cloud Object Storage（COS）はメタデータアクセラレーション機能を有効にすることで、HDFSプロトコルによるアクセスが可能になります。メタデータアクセラレーション機能を有効にすると、COSはバケットにマウントポイントを作成し、お客様は[HDFSクライアント](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar)をダウンロードすることで、クライアントにこのマウントポイントを入力してCOSをマウントできます。ここでは、コンピューティングクラスターに、メタデータアクセラレーションを有効にしたバケットをマウントする方法について詳しくご説明します。
 
 >! 
->- Hadoop-cosは、バージョン8.1.1以降、`cosn://bucketname-appid/`のメソッドをサポートして、メタデータアクセラレーションバケットにアクセスします。
+>- Hadoop-cosは、バージョン8.1.5以降、`cosn://bucketname-appid/`メソッドによるメタデータアクセラレーションバケットへのアクセスをサポートしています。
 >- メタデータアクセラレーション機能は、バケット作成時にのみオンにすることができ、一度オンにするとオフにすることはできません。お客様のビジネスシーンに応じて、オンにするかどうか**慎重にご検討ください**。また、旧バージョンのHadoop-cosパッケージは、メタデータアクセラレーション機能がオンになっているバケットには正常にアクセスできませんのでご注意ください。
 
 ## 前提条件
@@ -13,15 +13,17 @@ Cloud Object Storage（COS）はメタデータアクセラレーション機能
 - 依存するJARパッケージの説明
 1. [chdfs_hadoop_plugin_network-2.8.jar](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) verison>=2.7;
 2. [cos_api-bundle.jar](https://search.maven.org/artifact/com.qcloud/cos_api-bundle/5.6.69/jar) version>=5.6.69;
-3. [Hadoop-cos](https://github.com/tencentyun/hadoop-cos/releases) version>=8.1.3
+3. [Hadoop-cos](https://github.com/tencentyun/hadoop-cos/releases) version>=8.1.5
 4. ofs-java-sdk.jar (version >=1.0.4)はインストールを必要とせず、自動的にプルされます。hadoop fs lsを実行し成功すると、fs.cosn.trsf.fs.ofs.tmp.cache.dirで設定したディレクトリにおいて、対応するバージョンが想定どおりになっているかどうかを確認できます。
 
 ## 操作手順
-
-1. [Hadoopクライアントツールインストールパッケージ](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar)をダウンロードします。
-2. タスクの起動時に正しくロードされるように、各ノードのclasspathにインストールパッケージを設定します。例えば、`$HADOOP_HOME/share/hadoop/common/lib/`下などです。
->! EMR環境には独自の依存関係のあるjarパッケージがあるため、インストールする必要はなく、POSIXセマンティクスを介してメタデータアクセラレーションバケットに直接アクセスすることができます。s3プロトコルを使用する必要がある場合は、fs.cosn.posix_bucket.fs.impl設定項目を変更します。詳細については、下記をご参照ください。
-3. `core-site.xml`ファイルを編集し、次の基本設定を追加します。
+1. [Hadoopクライアントツールインストールパッケージ](https://github.com/tencentyun/hadoop-cos/releases)をダウンロードします。
+2. [POSIX Hadoopクライアントツールインストールパッケージ](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar)をダウンロードします。
+3. [cos java sdkインストールパッケージ](https://search.maven.org/artifact/com.qcloud/cos_api-bundle/5.6.69/jar)をダウンロードします。
+4. タスクの起動時に正しくロードされるように、各ノードのclasspathにインストールパッケージを設定します。例えば、`$HADOOP_HOME/share/hadoop/common/lib/`下などです。
+>! EMR環境には独自の依存関係のあるjarパッケージがあるため、インストールする必要はなく、POSIXセマンティクスを介してメタデータアクセラレーションバケットに直接アクセスすることができます。s3プロトコルを使用してアクセスする必要がある場合は、fs.cosn.posix_bucket.fs.impl設定項目を変更します。詳細については、下記をご参照ください。
+>
+5. `core-site.xml`ファイルを編集し、次の基本設定を追加します。
 ```
 <!--アカウントのAPIキー情報です。[CAMコンソール](https://console.cloud.tencent.com/capi)にログインすると、Tencent Cloud APIキーを確認することができます。-->
 <property>
@@ -73,7 +75,7 @@ Cloud Object Storage（COS）はメタデータアクセラレーション機能
 
 
 
-### 2. POSIXアクセスメソッド入力必須設定項目
+### 2. POSIXアクセスメソッド入力必須設定項目（推奨方式）
 
 | 設定項目                | 設定項目内容     | 説明 |
 | ------------------------ | ------------------ | ---------------- |
@@ -96,5 +98,9 @@ Cloud Object Storage（COS）はメタデータアクセラレーション機能
 - [その他のHadoop-cos設定項目](https://intl.cloud.tencent.com/document/product/436/6884)
 - [その他のPOSIXメソッド設定項目](https://intl.cloud.tencent.com/document/product/1106/41965)、その他のPOSIXXメソッド設定項目は、「fs.cosn.trsf.」というプレフィックスを追加することでメタデータアクセラレーションバケットにアクセスすることができます。
 
+### 5. 注意事項
+
+1. 古いhadoop cos jarパッケージを使用してメタデータアクセラレーションbucketにアクセスすることはできません。
+2. Hadoop cos <= バージョン8.1.5のposixメソッドを使用してメタデータアクセラレーションバケットにアクセスする場合は、コンソールのrangerチェックを無効にしておく必要があります。
 
 
