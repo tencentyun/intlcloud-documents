@@ -191,8 +191,8 @@ int time = 600; // In seconds if the value is of `int` type
 You can specify the playback start time before calling `startPlay` for the first time.
 
 ```objective-c
-float startTimeInMS = 600; // In ms
-[_txVodPlayer setStartTime:startTimeInMS];  // Set the playback start time
+float startTimeInSecond = 60; // In ms
+[_txVodPlayer setStartTime:startTimeInSecond];  // Set the playback start time
 [_txVodPlayer startPlay:url];
 ```
 
