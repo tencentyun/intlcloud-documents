@@ -5,7 +5,7 @@ For files already in a bucket, you can create a job for media processing, speech
 >?
 > - Currently, jobs can process 3GP, ASF, AVI, DV, FLV, F4V, M3U8, M4V, MKV, MOV, MP4, MPG, MPEG, MTS, OGG, RM, RMVB, SWF, VOB, WMV, WEBM, MP3, AAC, FLAC, AMR, M4A, WMA, and WAV files. When initiating a media processing request, you must enter the complete file name and extension; otherwise, the format cannot be recognized and processed.
 > - Currently, the job feature can only manipulate **existing files**. To manipulate files during **upload**, use the workflow feature as described in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
-> - After a job is created, feature fees will be charged by CI. For billing details, see Media Processing Fees.
+> - After a job is created, feature fees will be charged by CI. For billing details, see [Media Processing Fees](https://cloud.tencent.com/document/product/460/58120).
 > 
 
 ## Viewing Job
@@ -334,7 +334,8 @@ You can use the video-to-animated image conversion feature to convert a video to
 The intelligent thumbnail feature intelligently analyzes the quality, brilliance, and content relevance of video frames by understanding the video content with Tencent Media Lab's advanced AI technologies. Then, it extracts optimal frames to generate thumbnails to make the content more engaging.
 
 >?
-> - The intelligent thumbnail feature is a paid service and billed by the original video duration. For billing details, see Media Processing Fees.
+> - The intelligent thumbnail feature is a paid service and billed by the original video duration. For billing details, see [Media Processing Fees](https://cloud.tencent.com/document/product/460/58120).
+> - When this service is used for the first time under an account, CI will issue a free resource pack of 1,000 minutes valid for two months, and any excessive usage and usage after the resource pack expires will be billed.
 > - Three optimal keyframes will be output through smart analysis of each video file.
 > 
 
@@ -355,6 +356,21 @@ The intelligent thumbnail feature intelligently analyzes the quality, brilliance
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
+## Creating Digital Watermark Adding Job
+
+This feature can embed an invisible digital watermark into a video for copyright protection.
+
+#### Directions
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. Click **Bucket List** on the left sidebar.
+3. Click the name of the bucket that you want to manipulate.
+4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
+5. Select the **Media Processing** tab, select **Copyright Protection > Digital Watermark Adding** as the job type, click **Create Job**, and configure as follows:
+
+ - **Source File**: Enter the path of the source file, which must begin with but cannot end with `/`. Different folders are separated with `/`.
+ - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queue](https://intl.cloud.tencent.com/document/product/1045/43607).
+
 ## Creating Digital Watermark Extraction Job
 
 You can use the media processing service to extract the digital watermark from a watermarked video.
@@ -367,7 +383,11 @@ You can use the media processing service to extract the digital watermark from a
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Copyright Protection > Digital Watermark Extraction** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d06366d7bea0a7b3d612af4f1bd65090.png)
- - **Source File**: Enter the path of the source file, which must begin with but cannot end with `/`. Different folders are separated with `/`.
+ - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
+ - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
+ - **Digital Watermark Content**: Enter the digital watermark content for traceability during extraction.
+ - **Destination Path**: Storage path of the smart thumbnails.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queue](https://intl.cloud.tencent.com/document/product/1045/43607).
    
 ## Creating Speech Recognition Job

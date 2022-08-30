@@ -1,9 +1,134 @@
+## 2022年06月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
+</tr> 
+<tr>
+    <td> SDK 6.3.2619拡張版をリリース</td>
+    <td><ul style="margin:0">
+	<li>トピックリストを取得するときにクラッシュが偶発的に発生するという問題を修正しました</li>
+	<li>トピック削除後のセッションリストの取得エラーを修正しました</li>
+    </ul></td>
+    <td> 2022-06-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+<tr>
+    <td>SDK 2.20.1をリリースしました（Web端末）</td>
+    <td><li>非ライブ配信グループを終了するか非ライブ配信グループから削除される、または非ライブ配信グループが解散されると、グループ履歴のみが削除され、対応するグループセッションは削除されません。nativeに合わせて同じような体験が提供されます。</li><li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteMessage">deleteMessage</a>は、グループシステム通知の削除をサポートしていません。また、具体的なエラーメッセージが返されます。</li><li>プライベートにデプロイされたリッチメディアメッセージはHTTPプロトコルをサポートします</li><li>C2CセッションlastMessageが異常に更新されるという問題を修正しました</li></td>
+    <td> 2022-06-27 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 6.3.2609拡張版をリリース</td>
+    <td><ul style="margin:0">
+	<li>オンラインステータスとカスタムステータスを追加しました</li>
+	<li>ライブ配信グループは、グループメンバー（最大1000人まで）リストのプルをサポートするようになりました</li>
+	<li>トピックはat allメッセージをサポートするようになりました</li>
+	<li>クロスプラットフォームバージョンのsql実行エラーを修正しました</li> 
+	<li>クロスプラットフォームSDKの、コミュニティトピック関連のインターフェースを追加しました</li>
+	<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新ログ</a>をご参照ください</li>
+    </ul></td>
+    <td>2022/06/16</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+<tr>
+    <td>SDK 2.20.0をリリースしました（Web端末）</td>
+    <td><ul style="margin:0">
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage">modifyMessage</a>は、メッセージの変更をサポートするようになりました
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping">getMessageListHopping</a>は、指定されたメッセージsequenceまたはメッセージ時間によってセッションのメッセージリストをプルすることをサポートするようになりました
+<li>単一または複数のC2Cメッセージの開封確認の送信をサポートするようになりました（Ultimate Editionを有効にしてください）
+<li>C2CセッションlastMessageで、対向側がメッセージを開封したかどうかを識別するために使用されるフィールドisPeerReadを追加しました<li>更新内容の詳細については、<a href="https://cloud.tencent.com/document/product/269/38492">変更ログ</a></li>をご参照ください
+    </ul></td>
+    <td> 2022-06-09 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+</table>
+
+
+## 2022年05月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
+</tr> 
+<tr>
+    <td>SDK 2.19.0をリリースしました（Web端末）</td>
+    <td><ul style="margin:0">
+<li><a href="https://intl.cloud.tencent.com/document/product/1047/33529">コミュニティ（Community）</a>の下でのトピックの作成をサポートし、よりインタラクティブなシナリオをサポートできるようになりました</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getJoinedCommunityList">getJoinedCommunityList</a>では、トピックをサポートするコミュニティのリストを取得できるようになりました</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTopicInCommunity">createTopicInCommunity</a>では、トピックを作成できるようになりました</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity">deleteTopicFromCommunity</a>では、トピックを削除できるようになりました</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile">updateTopicProfile</a>では、トピックデータを設定できるようになりました</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList">getTopicList</a>では、トピックリストを取得できるようになりました</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/en/Topic.html">Topic</a>：コミュニティのトピック対象であり、名称、お知らせ、概要、未読数などの情報を含むトピックのプロパティを説明するためのものです</li>
+<li>イベント<a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED">TIM.EVENT.TOPIC_CREATED</a>は、トピックの作成時にトリガーされます</li>
+<li>イベント<a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED">TIM.EVENT.TOPIC_DELETED</a>は、トピックの削除時にトリガーされます</li>
+<li>イベント<a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED">TIM.EVENT.TOPIC_UPDATED</a>は、トピックデータの更新時にトリガーされます</li></li>
+    </ul></td>
+    <td> 2022-05-07 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+</table>
+
 ## 2022年04月
 <table>
 <tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
 </tr> 
 <tr>
-    <td> SDK 6.1.2166拡張版をリリースしました</td>
+    <td> SDK 6.2.2363拡張版をリリース</td>
+    <td><ul style="margin:0">
+	<li>コミュニティトピック機能を追加しました</li>
+	<li>メッセージ編集インターフェースを追加しました</li>
+	<li>C2Cメッセージの開封確認をサポートするようになりました</li>
+	<li>国際サイトのネットワーク品質を最適化しました</li> 
+	<li>メッセージ既読後、アンインストールして再インストールし、当該メッセージをプルすると、既読ステータスが未読になるという問題を修正しました</li>
+	<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新ログ</a>をご参照ください</li>
+    </ul></td>
+    <td> 2022-04-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+<tr>
+    <td> SDK 2.18.2をリリースしました（ミニプログラムとWeb端末）</td>
+    <td><ul style="margin:0">
+<li>ライブ配信グループのユーザー体験を最適化しました</li><li>一部のシナリオにおける不正確な統計の問題を修正しました</li><li>呼び出しインターフェース<a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList">getGroupMessageReadMemberList</a>が不正確な結果を戻す問題を修正しました<li>更新内容の詳細については、<a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新ログ</a></li>をご参照ください
+    </ul></td>
+    <td> 2022-04-22 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+<td>Flutter SDK 3.9.3</td>
+<td><ul style="margin:0">
+  <li>発言禁止のグループのtips boolValueが失われたという問題を修正しました
+    <ul>
+      <li>現在、グループ情報変更のコールバックによって返されるデータは、key(string)-value(string)の形式であり、key(string)-boolValue(bool)の形式が新しく追加されています</li>
+    </ul>
+  </li>
+  <li>セッションインスタンスでnameCardフィールドが解析されていないという問題を修正しました
+  <li>グループ開封確認関連のインターフェースを追加しました
+    <ul>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessageReadReceipts.html">sendMessageReadReceptes</a>では、グループメッセージの開封確認を送信できるようになりました</li>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getMessageReadReceipts.html">getMessageReadReceptes</a>では、自分から送信したメッセージの開封確認を取得できるようになりました</li>
+      <li><a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getGroupMessageReadMemberList.html">getgroupMessageReadMemeberList</a>では、自分から送信したグループメッセージの既読（未読）グループメンバーリストを取得できるようになりました</li>
+    </ul>
+  </li>
+  <li>Flutter for Webを最適化しました
+</ul>
+</td>
+<td>2022-04-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+<tr>
+    <td> SDK 2.18.0をリリースしました（ミニプログラムとWeb端末）</td>
+    <td><ul style="margin:0">
+<li>グループメッセージの開封確認を送信するための<a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#sendMessageReadReceipt">sendMessageReadReceptes</a>を追加しました</li>
+<li>グループメッセージの開封確認リストをプルするための<a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageReadReceiptList">getMessageReadReceiptList</a>を追加しました</li>
+<li>グループメッセージの既読（未読）グループメンバーリストをプルするための<a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList">getGroupMessageReadMemberList</a>を追加しました</li>
+<li>messageIDに基づいてセッションのローカルメッセージを検索するための<a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#findMessage">findMessage</a>を追加しました。
+メッセージが取り消された後、NativeIMに合わせて同じようなセッション未読数の変更体験が提供される機能を追加しました</li><li>更新内容の詳細については、<a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新ログ</a></li>をご参照ください
+    </ul></td>
+    <td> 2022-04-08 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+
+
+
+<tr>
+    <td> SDK 6.1.2166拡張版をリリース</td>
     <td><ul style="margin:0">
 	<li> ローカルメッセージを検索し、senderUserIDListを2つ以上渡す場合にデータが見つからないという問題を修正しました</li>
 	<li> rest apiで一度に複数のメッセージを取り消したが、Android sdkで1件だけコールバックしたという問題を修正しました</li>
@@ -17,6 +142,8 @@
     <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
 </tr>
 </table>
+
+
 
 ## 2022年03月
 <table>

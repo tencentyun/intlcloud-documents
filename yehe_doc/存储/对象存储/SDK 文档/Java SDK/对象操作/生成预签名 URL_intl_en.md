@@ -33,7 +33,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // Set the request protocol to `http` or `https`.
@@ -78,7 +78,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // Set the request protocol to `http` or `https`.
@@ -146,7 +146,7 @@ cosClient.shutdown();
 
 #### Parameter description
 
-| Parameter | Description | Type | Required |
+| Parameter | Description | Type | Required |        
 | -------- | ------------ | --------------------------- | --------- |
 | method          | HTTP method. Valid values: `GET`, `POST`, `PUT`, `DELETE`, `HEAD`.                | HttpMethodName          | Yes |
 | bucketName | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
@@ -255,8 +255,6 @@ COSCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, ses
 String bucketName = "examplebucket-1250000000";
 // Object key, which is the unique identifier of the object in the bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
-// If the `key` does not start with "/", you need to add "/" at the beginning; otherwise, the `resource_path` will be the `key`.
-String resource_path="/" + key;
 
 ClientConfig clientConfig = new ClientConfig(new Region("ap-beijing-1"));
 
@@ -279,7 +277,7 @@ headers.put("header1", "value1");
 // HTTP method of the request, which is `PUT` for an upload request, `GET` for a download request, and `DELETE` for a deletion request.
 HttpMethodName method = HttpMethodName.GET;
 
-String sign = signer.buildAuthorizationStr(method, resource_path, headers, params, cred, expirationDate, true);
+String sign = signer.buildAuthorizationStr(method, key, headers, params, cred, expirationDate, true);
 ```
 
 ### Using permanent key
@@ -295,8 +293,6 @@ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 String bucketName = "examplebucket-1250000000";
 // Object key, which is the unique identifier of the object in the bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
-// If the `key` does not start with "/", you need to add "/" at the beginning; otherwise, the `resource_path` will be the `key`.
-String resource_path="/" + key;
 
 ClientConfig clientConfig = new ClientConfig(new Region("ap-beijing-1"));
 
@@ -319,7 +315,7 @@ headers.put("header1", "value1");
 // HTTP method of the request, which is `PUT` for an upload request, `GET` for a download request, and `DELETE` for a deletion request.
 HttpMethodName method = HttpMethodName.GET;
 
-String sign = signer.buildAuthorizationStr(method, resource_path, headers, params, cred, expirationDate, true);
+String sign = signer.buildAuthorizationStr(method, key, headers, params, cred, expirationDate, true);
 ```
 
 ### Generating pre-signed download URL with speed limit
@@ -352,7 +348,7 @@ public static void GenerateSimplePresignedDownloadUrl() {
         req.setExpiration(expirationDate);
 
         // Enter the parameters of the current request.
-        // Set the speed limit value, such as 128KB/s.
+        // Set the speed limit value, such as 128 KB/s.
         req.addRequestParameter("x-cos-traffic-limit", "1048576");
 
         // Enter the headers of the current request. `Host` is required.
