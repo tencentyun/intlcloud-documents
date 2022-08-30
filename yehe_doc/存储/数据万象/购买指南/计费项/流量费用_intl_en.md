@@ -47,13 +47,13 @@ When you access CI at COS domain names with CI data processing parameters or at 
 
 A. When you access a COS domain name with image processing parameters to request adjusting the width and height of an image to 50% of the original values, the following fees will be incurred:
 
-![a](https://qcloudimg.tencent-cloud.cn/raw/ca99325d03c75c3a7f930cce3c1e450e.png)
+![a](https://qcloudimg.tencent-cloud.cn/raw/340a74554f0cbcc330678e54d961cfb6.jpg)
 
 
 
 B. When you access a CI domain name to request adjusting the width and height of an image to 50% of the original values, the following fees will be incurred:
 
-![a](https://qcloudimg.tencent-cloud.cn/raw/91acea0f063a5ff685588deae08f71fa.png)
+![a](https://qcloudimg.tencent-cloud.cn/raw/c21e1f8e10f8194ddd1d8e03e8329753.jpg)
 
 Note:
 
