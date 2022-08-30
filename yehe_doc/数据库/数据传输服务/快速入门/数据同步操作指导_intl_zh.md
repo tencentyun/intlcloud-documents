@@ -3,7 +3,7 @@
 - [数据同步功能描述](https://intl.cloud.tencent.com/document/product/571/42667)。
 - [数据同步支持的数据库](https://intl.cloud.tencent.com/document/product/571/42579)。
 
-## 整理流程
+## 整体流程
 
 | **操作流程**              | **说明**                                                     |
 | ------------------------- | ------------------------------------------------------------ |
@@ -14,16 +14,15 @@
 
 ## 数据同步任务示例
 
-1. 登录 [数据同步购买页](https://buy.intl.cloud.tencent.com/migration)，选择相应配置，单击**立即购买**。
+1. 登录 [数据同步购买页](https://buy.intl.cloud.tencent.com/replication)，选择相应配置，单击**立即购买**。
 2. 购买完成后，返回 [数据同步列表](https://console.cloud.tencent.com/dts/replication)，可看到刚创建的数据同步任务，刚创建的同步任务需要进行配置后才可以使用。
 3. 在数据同步列表，单击**操作**列的**配置**，进入配置同步任务页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/afe583b0dd3569cad36da0f3f19acba0.png)
 4. 在配置同步任务页面，配置源端实例、帐号密码，配置目标端实例、帐号和密码，测试连通性后，单击**下一步**。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dcad48b082c4bfc8bc25b2aff7a0f579.png"  style="margin:0;">
 5. 在设置同步选项和同步对象页面，将对数据初始化选项、数据同步选项、同步对象选项进行设置，在设置完成后单击**保存并下一步**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/a8df8150f387ffd56e11f60a6384adba.png"  style="margin:0;">
-<strong>库表映射</strong>：在已选对象中，鼠标放在右侧将出现编辑按钮，单击后可在弹窗中填写映射名。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/fb3dfa032310e444729a805b503e019b.png"  style="margin:0;">
+![](https://qcloudimg.tencent-cloud.cn/raw/a8df8150f387ffd56e11f60a6384adba.png)
+<strong>库表重命名</strong>：如需要修改目标库中的对象名称，请在已选对象中，鼠标放在右侧将出现编辑按钮，单击后可在弹窗中填写新的名称。
 6. 在校验任务页面，完成校验并全部校验项通过后，单击**启动任务**。
 >?在校验结果中出现告警项不影响启动任务，但推荐单击**查看详情**获取建议进行调整。
 >
@@ -32,4 +31,3 @@
 >?选择**操作**列的**更多** > **结束**可关闭同步任务，请您确保数据同步完成后再关闭任务。
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/058cf11d354d64ae32e881a421e0d686.png)
-

@@ -1,5 +1,5 @@
 ## 概述
-数据传输服务（Data Transmission Service，DTS）支持 MySQL、MariaDB、PostgreSQL、Redis、MongoDB 等多种关系型数据库及 NoSQL 数据库迁移，可帮助用户在业务不停服的前提下轻松完成数据库迁移上云，利用实时同步通道轻松构建高可用的数据库容灾架构，通过数据订阅来满足商业数据挖掘、业务异步解耦等场景需求。
+数据传输服务（Data Transmission Service，DTS）支持 MySQL、MariaDB、Percona、TDSQL-C、TDSQL MySQL、PostgreSQL、Redis、MongoDB、SQL Server 等多种数据库类型，可帮助用户在业务不停服的前提下轻松完成数据库迁移上云，利用实时同步通道轻松构建高可用的数据库容灾架构，通过数据订阅来满足商业数据挖掘、业务异步解耦等场景需求。
 
 
 
@@ -14,3 +14,4 @@
 
 - [**数据订阅**](https://intl.cloud.tencent.com/document/product/571/13713)
 数据订阅是指获取数据库中关键业务的数据变化信息，将这些信息包装为消息对象推送到 Kafka 中，方便下游业务订阅、获取和消费。腾讯云 DTS 支持通过 Kafka Client 直接消费数据，方便用户搭建云数据库和异构系统之间的数据同步，如缓存更新，ETL（数据仓库技术）实时同步，业务异步解耦等。
+

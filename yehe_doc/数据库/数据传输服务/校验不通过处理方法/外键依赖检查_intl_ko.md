@@ -1,17 +1,19 @@
-
-## MySQL/TDSQL-C 확인 사항
-- 외래 키 종속성은 ‘NO ACTION’, ‘RESTRICT’ 또는 ‘CASCADE’로만 설정할 수 있습니다.
-- 일부 테이블 마이그레이션 시 외래 키 종속성이 있는 테이블을 마이그레이션해야 합니다.
-
-## TDSQL MySQL 확인 사항
+## MySQL/MariaDB/Percona/TDSQL-C/TDSQL MySQL 확인 세부 정보
 
 - 외래 키 종속성은 ‘NO ACTION’ 또는 ‘RESTRICT’로만 설정할 수 있습니다.
 - 일부 테이블 마이그레이션 시 외래 키 종속성이 있는 테이블을 마이그레이션해야 합니다.
 
+## TDSQL MySQL(TDStore) 확인 세부 정보
+
+외래 키 종속 데이터는 지원되지 않습니다. 소스 데이터베이스에 외래 키 데이터가 있는 경우 작업 확인에서 오류를 보고합니다.
+
 ## 수정 방법
 
+- MySQL/MariaDB/Percona/TDSQL-C/TDSQL MySQL: 외래 키 매개변수를 DTS에서 지원하는 값 유형으로 수정하십시오.
+- TDSQL MySQL(TDStore): 해당 외래 키 매개변수 내용을 삭제하십시오.
+
 ### 외래 키 규칙 수정
-MySQL에서 외래 키를 설정할 때 ON DELETE 및 ON UPDATE 열에 대해 4가지 값을 선택할 수 있습니다. 
+MySQL에서 외래 키를 설정할 때 ON DELETE 및 ON UPDATE에 대해 4가지 값을 선택할 수 있습니다. 
 - ‘CASCADE’: 상위 테이블에서 레코드가 삭제되거나 업데이트되면 관련 레코드도 하위 테이블에서 삭제되거나 업데이트됩니다.
 - ‘SET NULL’: 부모 테이블에서 레코드가 삭제되거나 업데이트되면 관련 레코드의 외래 키 필드 열이 자식 테이블에서 ‘null’로 설정됩니다(자식 테이블 외래 키는 ‘not null’로 설정할 수 없음).
 - ‘RESTRICT’: 부모 테이블에서 레코드가 삭제되거나 업데이트될 때 자식 테이블의 레코드와 연결되어 있으면 상위 테이블의 삭제 요청이 거부됩니다.
@@ -40,7 +42,7 @@ on delete cascade on update cascade;
 
 ### 마이그레이션 객체 완성
 마이그레이션 작업 구성 수정 시 마이그레이션 객체에 연결된 객체를 선택합니다.
-1. [DTS 콘솔](https://console.cloud.tencent.com/dts/migration)에 로그인하고 해당 마이그레이션 **작업**을 선택한 다음, 작업 열에서 **더보기** > **수정**을 클릭합니다. 
+1. [DTS 콘솔](https://console.cloud.tencent.com/dts/migration)에 로그인하고 해당 마이그레이션 **작업**을 선택한 다음, 작업 열에서 **더 보기** > **수정**을 클릭합니다. 
 2. **마이그레이션 객체**에서 연결된 객체를 확인합니다.
 3. 확인 작업을 다시 실행합니다. 
 
