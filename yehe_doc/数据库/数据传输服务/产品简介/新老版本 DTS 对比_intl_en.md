@@ -3,9 +3,6 @@ The legacy version of DTS implements incremental data sync through cloud native 
 
 The new version of DTS uses a new proprietary kernel and comprehensively improves the product features to provide more stable, available, flexible, and secure data transfer capabilities for better ease of use. Its capabilities are polished for data transfer, with advanced feature such as heterogeneous database migration and cross-account data migration. 
 
-> ?The data migration feature of DTS was fully upgraded to the new version (NewDTS) at 24:00 on January 19, 2022, Beijing time. The old version is no longer provided for database linkages except for Redis.
-> - If you are still using the old version of the data migration feature, upgrade to the new version as soon as possible. Maintenance support for the old version was discontinued after January 19, 2022.
-> - If you need help during the version upgrade, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ## Feature Comparison
 ### Data migration
