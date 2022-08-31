@@ -60,7 +60,7 @@ The SQL service of the source database is running, and the login identity's buil
 <td>Select the target database region.</td></tr>
 <tr>
 <td>Specification</td>
-<td>Select the specification of the migration link based on your business conditions. For the performance and billing details of different specification, see <a href="https://intl.cloud.tencent.com/document/product/571/35322">Billing Overview</a>.</td></tr>
+<td>Select the specification of the migration link based on your business conditions.</td></tr>
 </tbody></table>
 3. On the **Set source and target databases** page, configure the task, source database, and target database settings. After the source and target databases pass the connectivity test, click **Create**.
 >?If the connectivity test fails, troubleshoot and fix the problem as prompted and as instructed in [Database Connection Check](https://intl.cloud.tencent.com/document/product/571/42552) and try again.
