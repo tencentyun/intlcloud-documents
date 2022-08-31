@@ -1,5 +1,5 @@
 ## 준비 작업
-1. [VOD](https://intl.cloud.tencent.com/)를 활성화합니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login) 하십시오.
+1. [VOD](https://intl.cloud.tencent.com/)를 활성화합니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login)을 하십시오.
 2. App Store에서 Xcode를 다운로드합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 3. [Cocoapods 웹 사이트](https://cocoapods.org/)의 가이드에 따라 Cocoapods를 다운로드하여 설치합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 
@@ -12,8 +12,66 @@
 [](id:step1)
 
 ### 1단계: SDK ZIP 파일 다운로드
+<dx-tabs>
+::: Cocoapods를 통한 통합[](id:cocoapods)
+Pod 모드는 TXLiteAVSDK_Player를 직접 통합합니다.
+```objective-c
+ pod 'TXLiteAVSDK_Player'
+```
+특정 버전을 지정해야 하는 경우 podfile 파일에 다음 종속성을 추가할 수 있습니다.
+```objective-c
+ pod 'TXLiteAVSDK_Player', '~> 10.3.11513'
+```
 
-[다운로드](https://vcube.cloud.tencent.com/home.html) SDK ZIP 파일을 다운로드하고 SDK 통합 가이드의 지침에 따라 SDK를 App에 통합합니다.
+:::
+::: 수동 SDK 다운로드[](id:manual)
+
+1. [최신 버전](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_iOS_latest.zip) 의 SDK + Demo 개발 패키지를 다운로드합니다.
+2. 통합할 프로젝트에 SDK/TXLiteAVSDK_Player.framework를 추가하고, `Do Not Embed`를 선택합니다.
+3. 프로젝트 Target의 -ObjC를 구성해야 합니다. 그렇지 않으면 SDK 유형을 로딩할 수 없기 때문에 Crash가 발생합니다.
+```objective-c
+Xcode 열기 -> 해당 Target 선택 -> "Build Setting" Tab 선택 -> "Other Link Flag" 검색 -> "-ObjC" 입력
+```
+2. 해당 라이브러리 파일 추가(SDK 디렉터리에 있음)
+ **TXFFmpeg.xcframework**: .xcframework 파일을 프로젝트에 추가하고, “General - Frameworks, Libraries, and Embedded Content”에서 “Embed&Sign”으로 설정하고, “Project Setting - Build Phases - Embed Frameworks”에서 확인하고, ”Code Sign On Copy“ 옵션을 선택 상태로 설정합니다. 다음 이미지와 같습니다.
+ **TXSoundTouch.xcframework**: .xcframework 파일을 프로젝트에 추가하고, “General - Frameworks, Libraries, and Embedded Content”에서 “Embed&Sign”으로 설정하고, “Project Setting - Build Phases - Embed Frameworks”에서 확인하고, “Code Sign On Copy” 옵션을 선택 상태로 설정합니다. 다음 이미지와 같습니다.<br>
+ <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b226decc76c33eff8c3f5b4cc4246bea.png" />
+<br>
+동시에, Xcode의 “Build Settings - Search Paths”로 전환하고, “Framework Search Paths”에서 위의 Framework가 있는 경로를 추가합니다.
+
+<b>MetalKit.framework</b>: Xcode를 열고, “project setting - Build  Phases - Link Binary With Libraries”로 전환하고, “+” 기호를 선택하고, “MetalKit”을 입력하여 프로젝트에 추가합니다. 아래 이미지와 같습니다.<br>
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/8ab7576dcc8bbe7b36396955ca06b186.png" />
+<br>
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/8480798e5ba897077ed3cef8ebc12f2e.png" />
+<br>
+
+<b>ReplayKit.framework</b>: Xcode를 열고, “project setting - Build  Phases - Link Binary With Libraries”로 전환하고, 왼쪽 하단 모서리에 있는 “+” 기호를 선택하여, “ReplayKit”을 입력하고, 프로젝트에 추가합니다. 아래 이미지와 같습니다.<br>
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/aa07f3d4963ee703505a14a743f61a68.png" />
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/12491d4a64aa6df44e6a966e80ca54de.png" />
+<br>
+
+같은 방식으로 다음 시스템 라이브러리를 추가합니다.
+
+<br><b>시스템 Framework 라이브러리</b>：SystemConfiguration, CoreTelephony, VideoToolbox, CoreGraphics, AVFoundation, Accelerate, MobileCoreServices<br>
+<b>시스템 Library:</b> libz, libresolv,  libiconv, libc++, libsqlite3
+
+<h4>PIP(Picture-in-Picture) 기능</h4>
+
+PIP 기능을 사용해야 하는 경우 아래 이미지와 같이 구성하고, 해당 기능이 없으면 생략해도 됩니다.
+<br>
+1. iOS용 PIP를 사용하려면 SDK를 버전 10.3 이상으로 업그레이드하십시오.
+<br>
+2. PIP 기능을 사용할 때 백그라운드 모드를 활성화해야 합니다. XCode는 해당 Target -> Signing & Capabilities -> Background Modes를 선택하고 "Audio, AirPlay, and Picture in Picture"를 확인합니다. 아래 이미지와 같습니다.
+<br>
+<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/116e1e741f80d810502221fd143d8434.png" />
+<br>
+:::
+</dx-tabs>
+
+
+
+
+​        
 
 [](id:step2)
 
@@ -53,7 +111,7 @@ view의 크기와 위치를 변경하여 비디오 이미지의 크기를 조정
 
 [](id:step4)
 
-### 4단계: 재생 시작
+### 4단계: 재생 실행
 
 TXVodPlayer는 필요에 따라 선택할 수 있는 두 가지 재생 모드를 지원합니다.
 
@@ -120,7 +178,7 @@ fileId를 통해 비디오를 재생하면 플레이어가 실제 재생 URL에 
 
 #### 재생 진행률 조정(Seek)
 
-사용자가 진행 표시줄을 드래그하면 seek을 호출하여 지정된 위치에서 재생을 시작할 수 있습니다. 플레이어 SDK는 정확한 seek을 지원합니다.
+사용자가 진행 표시줄을 드래그하면 seek를 호출하여 지정된 위치에서 재생을 시작할 수 있습니다. 플레이어 SDK는 정확한 seek를 지원합니다.
 
 ```objective-c
 int time = 600; // 값이 int 유형인 경우, 단위: 초
@@ -142,7 +200,7 @@ float startTimeInMS = 600; // 단위: 밀리초
 ### 2. 이미지 조정
 - **view: 크기 및 위치**
 setupVideoWidget의 view 매개변수의 크기와 위치를 조정하여 view의 크기와 위치를 수정할 수 있습니다. SDK는 구성에 따라 view의 크기와 위치를 자동으로 조정합니다.
-- **setRenderMode: 가로 세로 채우기 또는 가로 세로 맞춤**
+- **setRenderMode: 가로 세로 채우기 또는 가로 세로 맞추기**
 <table>
 <tr><th>값</th><th>설명</th></tr>
 <tr>
@@ -204,6 +262,7 @@ VOD 플레이어는 조정 가능한 속도 재생을 지원합니다. 'setRate'
 
 **snapshot**을 호출하여 현재 비디오의 스크린샷을 캡처합니다. 이 방법은 비디오의 프레임을 캡처합니다. UI를 캡처하려면 iOS 시스템의 해당 API를 사용하십시오.
 
+
 ### 7. 롤 이미지 광고
 플레이어 SDK를 사용하면 다음과 같이 광고용 UI에 롤 이미지를 추가할 수 있습니다.
 * 'autoPlay'가 NO로 설정된 경우 플레이어는 비디오를 정상적으로 로딩하지만 즉시 재생을 시작하지는 않습니다.
@@ -211,11 +270,11 @@ VOD 플레이어는 조정 가능한 속도 재생을 지원합니다. 'setRate'
 * 광고 표시 중지 조건이 충족되면 resume API가 호출되어 비디오 재생이 시작됩니다.
 
 ### 8. HTTP-REF
-TXVodPlayConfig의 headers는 URL이 임의로 복사되는 것을 방지하기 위해 일반적으로 사용되는 Referer 필드(Tencent Cloud는 보다 안전한 서명 기반 링크 도용 방지 솔루션 제공)와 클라이언트 인증을 위한 Cookie 필드와 같이 HTTP 요청 헤더를 설정하는 데 사용할 수 있습니다.
+TXVodPlayConfig의 headers는 URL이 임의로 복사되는 것을 방지하기 위해 일반적으로 사용되는 Referer 필드(Tencent Cloud는 보다 안전한 서명 기반 링크 도용 방지 솔루션 제공) 및 클라이언트 인증을 위한 Cookie 필드와 같이 HTTP 요청 헤더를 설정하는 데 사용할 수 있습니다.
 ### 9. 하드웨어 가속
 소프트웨어 디코딩만 사용하면 Blu-ray(1080p) 이상 화질의 비디오를 원활하게 재생하기가 매우 어렵습니다. 따라서 주요 시나리오가 게임 라이브 스트리밍인 경우 하드웨어 가속을 사용하는 것이 좋습니다.
 
-소프트웨어와 하드웨어 디코딩 간에 전환하기 전에 먼저 **stopPlay**를 호출한 다음 전환 후 **startPlay**를 호출해야 합니다. 그렇지 않으면 심한 흐림 현상이 발생합니다.
+소프트웨어와 하드웨어 디코딩 간에 전환하기 전에 먼저 **stopPlay**를 호출해야 하고, 전환 후 **startPlay**를 호출해야 합니다. 그렇지 않으면 심한 흐림 현상이 발생합니다.
 
 ```objectivec
 [_txVodPlayer stopPlay];
@@ -267,9 +326,9 @@ VOD 진행률에는 **로딩 진행률** 및 **재생 진행률**의 두 가지 
 
 * 'onNetStatus'의 'NET_SPEED'를 사용하여 현재 네트워크 속도를 확인할 수 있습니다. 자세한 사용 방법은 [재생 상태 피드백(onNetStatus)](#status)을 참고하십시오.
 * `PLAY_EVT_PLAY_LOADING` 이벤트가 감지된 후 현재 네트워크 속도가 표시됩니다.
-* `PLAY_EVT_VOD_LOADING_END` 이벤트 수신 후 현재 네트워크 속도를 보여주는 view가 숨겨집니다.
+* `PLAY_EVT_VOD_LOADING_END` 이벤트 수신 후 현재 네트워크 속도를 보여주는 화면이 숨겨집니다.
 
-### 14. 비디오 해상도 획득
+### 14. 비디오 해상도 가져오기
 
 플레이어 SDK는 URL 문자열을 통해 비디오를 재생합니다. URL에는 비디오 정보가 포함되어 있지 않으며 이러한 정보를 로딩하려면 클라우드 서버에 액세스해야 합니다. 따라서 SDK는 비디오 정보를 이벤트 알림으로만 애플리케이션에 보낼 수 있습니다. 자세한 내용은 [이벤트 리스닝](#listening)을 참고하십시오.
 
@@ -285,7 +344,7 @@ VOD 진행률에는 **로딩 진행률** 및 **재생 진행률**의 두 가지 
 
 ### 15. 플레이어 버퍼 크기
 
-일반 동영상 재생 시 네트워크에서 버퍼링되는 데이터의 최대 크기를 미리 조절할 수 있습니다. 최대 버퍼 크기가 구성되지 않은 경우 플레이어는 기본 버퍼 정책을 사용하여 원활한 재생 환경을 보장합니다.
+일반 비디오 재생 시 네트워크에서 버퍼링되는 데이터의 최대 크기를 미리 조절할 수 있습니다. 최대 버퍼 크기가 구성되지 않은 경우 플레이어는 기본 버퍼 정책을 사용하여 원활한 재생 환경을 보장합니다.
 
 ```java
 TXVodPlayConfig *_config = [[TXVodPlayConfig alloc]init];
@@ -300,7 +359,7 @@ TXVodPlayConfig *_config = [[TXVodPlayConfig alloc]init];
 - **활성화 시간:** SDK는 기본적으로 캐싱 기능을 활성화하지 않습니다. 대부분의 비디오를 한 번만 시청하는 시나리오에서는 활성화하지 않는 것이 좋습니다.
 - **활성화 방법:** 활성화하려면 로컬 캐시 디렉터리 및 캐시 크기의 두 가지 매개변수를 구성해야 합니다.
 ```objectivec
-// 재생 엔진의 전역 캐시 디렉터리 설정
+//재생 엔진의 전역 캐시 디렉터리 설정
 NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 NSString *documentsDirectory = [paths objectAtIndex:0];
 NSString *preloadDataPath = [documentsDirectory stringByAppendingPathComponent:@"/preload"];
@@ -310,7 +369,7 @@ if (![[NSFileManager defaultManager] fileExistsAtPath:preloadDataPath]) {
                                                 attributes:nil
                                                      error:&error];
 [TXPlayerGlobalSetting setCacheFolderPath:preloadDataPath];
-// 재생 엔진 캐시 크기 설정
+//재생 엔진 캐시 크기 설정
 [TXPlayerGlobalSetting setMaxCacheSize:200];
 // ...
 // 재생 시작
@@ -323,11 +382,11 @@ if (![[NSFileManager defaultManager] fileExistsAtPath:preloadDataPath]) {
 
 ### 1. 비디오 사전 로딩
 
-#### 1단계: 동영상 사전 로딩 사용
+#### 1단계: 비디오 사전 로딩 사용
 
 UGSV 재생 시나리오에서 사전 로딩 기능은 원활한 시청 환경에 기여합니다. 비디오를 시청하는 동안 백엔드에서 재생할 다음 비디오의 URL을 로딩할 수 있습니다. 다음 비디오로 전환되면 미리 로딩되어 즉시 재생할 수 있습니다.
 
-비디오 사전 로딩은 즉각적인 재생 효과를 제공할 수 있지만 특정 성능 오버헤드가 있습니다. 회사에서 많은 동영상을 미리 로딩해야 하는 경우 [동영상 사전 다운로드](#download)와 함께 이 기능을 사용하는 것이 좋습니다.
+비디오 사전 로딩은 즉각적인 재생 효과를 제공할 수 있지만 특정 성능 오버헤드가 있습니다. 회사에서 많은 비디오를 사전 로딩해야 하는 경우 [비디오 사전 다운로드](#download)와 함께 이 기능을 사용하는 것이 좋습니다.
 
 이것이 비디오 재생에서 매끄러운 전환이 작동하는 방식입니다. TXVodPlayer에서 isAutoPlay를 사용하여 다음과 같이 기능을 구현할 수 있습니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/b2bd645f29af403bf2740156aee44092.jpg" width=850px>
@@ -344,14 +403,14 @@ _player_B.isAutoPlay = NO;
 [_player_B startPlay:url_B];
 ```
 
-비디오 A가 종료되고 비디오 B가 자동 또는 수동으로 전환된 후 resum 기능을 호출하여 비디오 B를 즉시 재생할 수 있습니다.
+비디오 A가 종료되고 비디오 B가 자동 또는 수동으로 전환된 후 resume 기능을 호출하여 비디오 B를 즉시 재생할 수 있습니다.
 
->! autoPlay를 false로 설정한 후 resume을 호출하기 전에 비디오 B가 준비되었는지 확인하십시오. 즉, 비디오 B(2013, 플레이어가 준비되었으며 비디오를 재생할 수 있음)의 PLAY_EVT_VOD_PLAY_PREPARED 이벤트가 감지된 후에만 호출해야 합니다.
+>! autoPlay를 false로 설정한 후 resume을 호출하기 전에 비디오 B가 준비되었는지 확인하십시오. 즉, 비디오 B의 PLAY_EVT_VOD_PLAY_PREPARED (2013, 플레이어가 준비되었으며 비디오를 재생할 수 있음) 이벤트가 감지된 후에만 호출해야 합니다.
 
 ```objectivec
 -(void) onPlayEvent:(TXVodPlayer *)player event:(int)EvtID withParam:(NSDictionary*)param
 {
-    // 비디오 A가 끝나면 끊김 없는 전환을 위해 비디오 B 재생을 직접 시작합니다.
+    // 비디오 A가 끝나면 끊김 없는 전환을 위해 비디오 B 재생을 직접 시작
     if (EvtID == PLAY_EVT_PLAY_END) {
             [_player_A stopPlay];
             [_player_B setupVideoWidget:mVideoContainer insertIndex:0];
@@ -465,7 +524,7 @@ dataSource.auth = auth;
 
 
 [](id:offline3)
-#### Step 3: 작업 정보 받기 
+#### 3단계: 작업 정보 받기 
 
 작업 정보를 받기 전에 먼저 콜백 delegate를 설정해야 합니다.
 
@@ -495,7 +554,7 @@ downloader.delegate = self;
 </tr>
 <tr>
 <td>-[TXVodDownloadDelegate onDownloadError:errorMsg:]</td>
-<td> 다운로드 오류. 다운로드 중에 네트워크 연결이 끊어지면 이 API가 다시 호출되고 다운로드 작업이 중지됩니다. 모든 오류 코드는 <code>TXDownloadError</code>를 참고하십시오.</td>
+<td>다운로드 오류. 다운로드 중에 네트워크 연결이 끊어지면 이 API가 다시 호출되고 다운로드 작업이 중지됩니다. 모든 오류 코드는 <code>TXDownloadError</code>를 참고하십시오.</td>
 </tr>
 </tbody></table>
 
@@ -527,11 +586,11 @@ TXVodPlayConfig *_config = [[TXVodPlayConfig alloc]init];
 
 ##### 재생 시작 시 해상도 지정
 
- HLS 다중 비트 레이트 비디오 소스를 재생할 때 비디오 스트림 해상도 정보를 미리 알고 있으면 재생이 시작되기 전에 기본 해상도를 지정할 수 있으며 플레이어는 기본 해상도 이하에서 스트림을 선택하여 재생합니다. 이렇게 재생이 시작된 후 필요한 비트스트림으로 전환하기 위해 setBitrateIndex를 호출할 필요가 없습니다.
+ HLS 다중 비트 레이트 비디오 소스를 재생할 때 비디오 스트림 해상도 정보를 미리 알고 있으면 재생이 시작되기 전에 기본 해상도를 지정할 수 있으며 플레이어는 기본 해상도 이하에서 스트림을 선택하여 재생합니다. 이렇게 하면 재생이 시작된 후 필요한 비트스트림으로 전환하기 위해 setBitrateIndex를 호출할 필요가 없습니다.
 
 ```java
 TXVodPlayConfig *_config = [[TXVodPlayConfig alloc]init];
-// 전달된 매개변수는 비디오 너비와 높이의 곱(너비 * 높이)입니다. 사용자 정의 값을 전달할 수 있음
+// 전달된 매개변수는 비디오 너비와 높이의 곱(너비 * 높이)입니다. 사용자 정의 값을 전달할 수 있습니다.
 [_config setPreferredResolution:720*1280];
 [_txVodPlayer setConfig:_config];  // config를 _txVodPlayer에 전달
 ```
@@ -558,6 +617,7 @@ TXVodPlayListener 리스너를 TXVodPlayer 객체에 바인딩하여 onPlayEvent
 |PLAY_EVT_PLAY_PROGRESS |  2005|  비디오 재생 진행률. 현재 재생 진행률, 로딩 진행률, 총 동영상 재생 시간을 알려줌     |
 |PLAY_EVT_PLAY_LOADING  |  2007|  비디오을 loading하는 중입니다. 비디오 재생이 재개되면 LOADING_END 이벤트가 보고됨 |
 |PLAY_EVT_VOD_LOADING_END   |  2014|  비디오 loading이 종료되고 비디오 재생이 재개됨|
+| VOD_PLAY_EVT_SEEK_COMPLETE | 2019 | Seek 완료, 10.3 버전 부터 지원|
 
 #### 이벤트 중지
 | 이벤트 ID                 |    코드  |  설명                |
@@ -661,7 +721,7 @@ fileId를 통해 비디오를 재생하고 재생 요청이 성공하면 SDK는 
     int videoBitRate = [[param objectForKey:@"VIDEO_BITRATE"] intValue];
     //스트리밍 미디어의 현재 오디오 비트 레이트 가져오기, 단위: kbps
     int audioBitRate = [[param objectForKey:@"AUDIO_BITRATE"] intValue];
-    //버퍼(jitterbuffer) 크기 가져오기, 현재 버퍼 길이가 0이므로 곧 랙 발생
+    //버퍼(jitterbuffer) 크기 가져오기, 현재 버퍼 길이가 0이므로 곧 지연이 발생함
     int jitterbuffer = [[param objectForKey:@"V_SUM_CACHE_SIZE"] intValue];
     //연결된 서버 IP 가져오기
     NSString *ip = [param objectForKey:@"SERVER_IP"];

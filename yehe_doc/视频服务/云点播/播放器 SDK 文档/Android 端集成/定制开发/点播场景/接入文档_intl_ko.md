@@ -12,9 +12,10 @@
 ### 1단계: SDK ZIP 파일 다운로드[](id:step1)
 [다운로드](https://vcube.cloud.tencent.com/home.html) SDK ZIP 파일을 다운로드하고 SDK 통합 가이드의 지침에 따라 SDK를 애플리케이션에 통합합니다.
 
-[](id:addview)
 
-### 2단계: View 추가[](id:step2)
+
+
+### 2단계: View 추가
 SDK는 기본적으로 비디오 렌더링을 위한 TXCloudVideoView를 제공합니다. 먼저 레이아웃 xml 파일에 다음 코드를 추가합니다.
 ```xml
 <com.tencent.rtmp.ui.TXCloudVideoView
@@ -63,6 +64,13 @@ mVodPlayer.startPlay(localFile);
 :::
 ::: FileId 방식
 ```objectivec
+// 아래의 새(new) 인터페이스 사용 권장
+TXPlayInfoParams playInfoParam = new TXPlayInfoParams(1252463788, // Tencent Cloud 계정의 appId
+    "4564972819220421305", // 비디오 fileId
+    "psignxxxxxxx"); // 암호화된 비디오인 경우, 필수 입력 사항
+mVodPlayer.startPlay(playInfoParam);
+
+// 구(old) 인터페이스, 사용 권장하지 않음
 TXPlayerAuthBuilder authBuilder = new TXPlayerAuthBuilder();
 authBuilder.setAppId(1252463788);
 authBuilder.setFileId("4564972819220421305");
@@ -132,7 +140,7 @@ mVodPlayer.stopPlay(true);
 
 ```java
 int time = 600; // 값이 int 유형인 경우, 단위: 초
-// float time = 600; // 값이 float 유형인 경우, 단위: 밀리초
+// float time = 600; // 값이 float 유형인 경우, 단위: 초
 // 재생 진행률 조정
 mVodPlayer.seek(time);
 ```
@@ -151,7 +159,6 @@ mVodPlayer.startPlay(url);
 
 - **view: 크기 및 위치**
 SDK 연동 시 [View 추가](#addview) 단계에서 추가한 “video_view” 컨트롤의 크기와 위치를 조정하여 비디오 이미지의 크기와 위치를 수정할 수 있습니다.
-
 - **setRenderMode: 가로 세로 채우기 또는 가로 세로 맞추기**
 <table>
 <thead>
@@ -169,7 +176,6 @@ SDK 연동 시 [View 추가](#addview) 단계에서 추가한 “video_view” �
 <td>이미지는 더 긴 면의 크기로 조정됩니다. 크기 조정 후 어느 쪽도 화면을 초과하지 않습니다. 이미지가 중앙에 표시되며 검은색 막대가 있을 수 있습니다.</td>
 </tr>
 </tbody></table>
-
 - **setRenderRotation: 이미지 회전**
 <table>
 <thead>
@@ -187,7 +193,6 @@ SDK 연동 시 [View 추가](#addview) 단계에서 추가한 “video_view” �
 <td>이미지를 시계 방향으로 270도 회전(Home 버튼은 비디오 이미지 왼쪽에 있음)</td>
 </tr>
 </tbody></table>
-
 ```java
  // 원래 화면 비율로 화면 채우기
 mVodPlayer.setRenderMode(TXLiveConstants.RENDER_MODE_FULL_FILL_SCREEN);
@@ -287,10 +292,9 @@ mVodPlayer.setBitrateIndex(-1); //index 매개변수에 -1 전달
 
 ### 12. 재생 진행 리스닝
 
-VOD 진행률에는 두 가지 지표가 있습니다. *로딩 진행률** 및 **재생 진행률**. 현재 SDK는 이벤트 알림을 통해 실시간으로 두 가지 진행률 지표를 알려줍니다. 이벤트 알림 내용에 대한 자세한 내용은 [이벤트 리스닝](#listening)을 참고하십시오.
+VOD 진행률에는 두 가지 지표가 있습니다. **로딩 진행률** 및 **재생 진행률**. 현재 SDK는 이벤트 알림을 통해 실시간으로 두 가지 진행률 지표를 알려줍니다. 이벤트 알림 내용에 대한 자세한 내용은 [이벤트 리스닝](#listening)을 참고하십시오.
 
 **TXVodPlayerListener** 리스너를 TXVodPlayer 객체에 바인딩할 수 있으며 진행 알림은 **PLAY_EVT_PLAY_PROGRESS** 이벤트를 통해 애플리케이션에 다시 호출됩니다. 이벤트 정보에는 위의 두 가지 진행률 지표가 포함됩니다.
-
 
 
 
@@ -323,7 +327,7 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
 
 ### 13. 재생 네트워크 속도 리스닝
 
-[이벤트 리스닝](#listening)를 통해 비디오가 지연될 때 현재 네트워크 속도를 표시할 수 있습니다.
+[이벤트 리스닝](#listening)을 통해 비디오가 지연될 때 현재 네트워크 속도를 표시할 수 있습니다.
 
 * 'onNetStatus'의 'NET_STATUS_NET_SPEED'를 사용하여 현재 네트워크 속도를 확인할 수 있습니다. 자세한 지침은 [재생 상태 피드백(onNetStatus)](#status)을 참고하십시오.
 * `PLAY_EVT_PLAY_LOADING` 이벤트가 감지된 후 현재 네트워크 속도가 표시됩니다.
@@ -385,7 +389,7 @@ mVodPlayer.getHeight();
 
 ```java
 TXVodPlayConfig config = new TXVodPlayConfig();
-config.setMaxBufferSize(10);  // 재생 중 최대 버퍼 크기, 단위: MB
+config.setMaxBufferSize(10);  // 재생 중 최대 버퍼 크기. 단위: MB
 mVodPlayer.setConfig(config);  // config를 mVodPlayer에 전달
 ```
 
@@ -422,7 +426,7 @@ UGSV 재생 시나리오에서 사전 로딩 기능은 원활한 시청 환경�
 비디오 사전 로딩은 즉각적인 재생 효과를 제공할 수 있지만 특정 성능 오버헤드가 있습니다. 회사에서 많은 비디오를 사전 로딩해야 하는 경우 [비디오 사전 다운로드](#download)와 함께 이 기능을 사용하는 것이 좋습니다.
 
 이것이 비디오 재생에서 매끄럽게 전환이 작동하는 방식입니다. TXVodPlayer에서 setAutoPlay를 사용하여 다음과 같이 기능을 구현할 수 있습니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b2bd645f29af403bf2740156aee44092.jpg" style="zoom:70%;" />
+![](https://qcloudimg.tencent-cloud.cn/raw/b2bd645f29af403bf2740156aee44092.jpg)
 
 ```java
 // 재생 비디오 A: autoPlay가 true로 설정되어 있으면 startPlay가 호출될 때 비디오가 즉시 로딩되어 재생됩니다.
@@ -485,8 +489,8 @@ mVodPlayer.setConfig(config);  // config를 mVodPlayer에 전달
 재생 서비스를 이용하시기 전에 [비디오 캐시](#cache)가 설정되어 있는지 확인하십시오.
 
 >? 
->1. TXPlayerGlobalSetting은 전역 캐시 설정 API이며, 원래 TXVodConfig API는 사용하지 않았습니다.
->2.  전역 캐시 디렉터리 및 크기 설정은 플레이어의 TXVodConfig에 구성된 것보다 우선 순위가 높습니다.
+> 1. TXPlayerGlobalSetting은 전역 캐시 설정 API이며, 원래 TXVodConfig API는 사용하지 않았습니다.
+> 2. 전역 캐시 디렉터리 및 크기 설정은 플레이어의 TXVodConfig에 구성된 것보다 우선 순위가 높습니다.
 
 사용 예시:
 
@@ -504,12 +508,12 @@ String palyrl = "http://****";
 final TXVodPreloadManager downloadManager = TXVodPreloadManager.getInstance(getApplicationContext());
 final int taskID = downloadManager.startPreload(playUrl, 3, 1920*1080, new ITXVodPreloadListener() {
     @Override
-    public void onComplete(String url) {
+    public void onComplete(int taskID, String url) {
         Log.d(TAG, "preload: onComplete: url: " + url);
     }
 
     @Override
-    public void onError(String url, int code, String msg) {
+    public void onError(int taskID, String url, int code, String msg) {
         Log.d(TAG, "preload: onError: url: " + url + ", code: " + code + ", msg: " + msg);
     }
 
@@ -572,8 +576,8 @@ downloader.setListener(this);
 
 다음 작업 콜백을 받을 수 있습니다.
 
-| 콜백 메시지                                                     | 설명                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 콜백 정보 | 설명 |
+|---------|---------|
 | void onDownloadStart(TXVodDownloadMediaInfo mediaInfo)       | 작업 시작. 즉, SDK가 다운로드를 시작하였습니다.                              |
 | void onDownloadProgress(TXVodDownloadMediaInfo mediaInfo)    | 작업 진행 상황. 다운로드하는 동안 SDK는 이 API를 자주 호출합니다. `mediaInfo.getProgress()`를 사용하여 현재 진행 상황을 가져올 수 있습니다. |
 | void onDownloadStop(TXVodDownloadMediaInfo mediaInfo)        | 작업 중지. 'stopDownload'를 호출하여 다운로드를 중지할 때 이 메시지가 수신되면 다운로드가 성공적으로 중지됩니다. |
@@ -641,7 +645,7 @@ statPlay를 호출하기 전에 setConfig를 호출하여 플레이어 연결 �
 TXVodPlayConfig config = new TXVodPlayConfig();
 config.setEnableAccurateSeek(true);  // 정확한 seek 활성화 여부 설정, 기본값: true
 config.setMaxCacheItems(5);  // 캐시된 파일의 최대 수를 5로 설정
-config.setProgressInterval(200);  // 진행 콜백 간격 설정, 단위: 밀리초
+config.setProgressInterval(200);  // 진행 콜백 간격을 설정합니다. 단위: 밀리초
 config.setMaxBufferSize(50);  // 최대 사전 로딩 버퍼 크기 설정, 단위: MB
 mVodPlayer.setConfig(config);  // config를 mVodPlayer에 전달
 ```
@@ -672,61 +676,69 @@ TXVodPlayListener 리스너를 TXVodPlayer 객체에 바인딩하여 onPlayEvent
 
 ### 재생 이벤트 공지(onPlayEvent)
 
-#### 재생 이벤트
-| 이벤트 ID                      | 코드 | 설명                                                   |
-| ---------------------------- | ---- | ---------------------------------------------------------- |
+
+| 이벤트 ID                                   | 코드 | 설명                                                   |
+| ----------------------------------------- | ---- | ---------------------------------------------------------- |
 | PLAY\_EVT\_PLAY\_BEGIN       | 2004 | 비디오 재생 시작됨                                               |
 | PLAY\_EVT\_PLAY\_PROGRESS    | 2005 | 비디오 재생 진행률(현재 재생 진행률, 로딩 진행률 및 총 비디오 지속 시간 포함)      |
 | PLAY\_EVT\_PLAY\_LOADING     | 2007 | 비디오 loading 중. 비디오 재생이 재개되면 LOADING\_END 이벤트가 보고됨 |
 | PLAY\_EVT\_VOD\_LOADING\_END | 2014 | 비디오 loading이 종료되고 비디오 재생이 재개됨                        |
-
+| TXVodConstants.VOD_PLAY_EVT_SEEK_COMPLETE | 2019 | Seek 완료, 10.3 버전부터 지원|
 
 #### 이벤트 중지
-| 이벤트 ID                 | 코드  | 설명                                               |
-| :---------------------- | :---- | :----------------------------------------------------- |
-| PLAY_EVT_PLAY_END       | 2006  | 비디오 재생 종료                                           |
-| PLAY_ERR_NET_DISCONNECT | -2301 | 네트워크 연결이 끊겼고 여러 번 재시도한 후에도 다시 연결할 수 없음. 플레이어를 다시 시작하여 연결을 재시도할 수 있음. |
-| PLAY_ERR_HLS_KEY        | -2305 | HLS 암호 해독 key 가져오기 실패                                  |
+| 이벤트 ID                 |    코드  |  설명                |
+| :-------------------  |:-------- |  :------------------------ |
+|PLAY_EVT_PLAY_END      |  2006|  비디오 재생 종료   |
+|PLAY_ERR_NET_DISCONNECT |  -2301  |  네트워크 연결 끊김 및 여러 번 재시도한 후에도 다시 연결 불가. 플레이어를 다시 시작하여 연결 재시도 가능. |
+|PLAY_ERR_HLS_KEY       | -2305 | HLS 암호 해독 key를 가져오기 실패 |
 
 #### 경고 이벤트
 SDK의 일부 내부 이벤트를 알리는 데만 사용되는 다음 이벤트는 무시할 수 있습니다.
 
-| 이벤트 ID                           | 코드 | 설명                                                     |
-| :-------------------------------- | :--- | :----------------------------------------------------------- |
-| PLAY_WARNING_VIDEO_DECODE_FAIL    | 2101 | 현재 비디오 프레임 디코딩 실패                                           |
-| PLAY_WARNING_AUDIO_DECODE_FAIL    | 2102 | 현재 오디오 프레임 디코딩 실패                                           |
-| PLAY_WARNING_RECONNECT            | 2103 | 네트워크 연결 끊김 및 자동 재연결 수행(PLAY_ERR_NET_DISCONNECT 이벤트는 세 번의 시도 실패 후에 발생함) |
-| PLAY_WARNING_HW_ACCELERATION_FAIL | 2106 | 하드웨어 디코더 시작 실패, 소프트웨어 디코더가 대신 사용됨                                       |
+| 이벤트 ID                 |    코드  |  설명                    |
+| :-------------------  |:-------- |  :------------------------ |
+| PLAY_WARNING_VIDEO_DECODE_FAIL   |  2101  | 현재 비디오 프레임 디코딩 실패  |
+| PLAY_WARNING_AUDIO_DECODE_FAIL   |  2102  | 현재 오디오 프레임 디코딩 실패  |
+| PLAY_WARNING_RECONNECT            |  2103  | 네트워크 연결 끊김 및 자동 재연결 수행(PLAY_ERR_NET_DISCONNECT 이벤트는 세 번의 시도 실패 후에 발생함) |
+| PLAY_WARNING_HW_ACCELERATION_FAIL|  2106  | 하드웨어 디코더 시작 실패, 소프트웨어 디코더가 대신 사용됨   |
 
 #### 연결 이벤트
 다음 서버 연결 이벤트는 주로 서버 연결 시간을 측정하고 수집하는 데 사용됩니다.
 
-| 이벤트 ID                    | 코드 | 설명                                                     |
-| :------------------------- | :--- | :----------------------------------------------------------- |
-| PLAY_EVT_VOD_PLAY_PREPARED | 2013 | 플레이어가 준비되었으며 재생 시작 가능. autoPlay가 false로 설정된 경우 이 이벤트를 수신한 후 resume을 호출하여 재생을 시작해야 함 |
-| PLAY_EVT_RCV_FIRST_I_FRAME | 2003 | 네트워크는 첫 번째 렌더링 가능한 비디오 데이터 패킷(IDR)을 수신                      |
+| 이벤트 ID                     |    코드  |  설명                    |
+| :-----------------------  |:-------- |  :------------------------ |
+| PLAY_EVT_VOD_PLAY_PREPARED     |  2013    | 플레이어가 준비되었으며 재생 시작 가능. autoPlay가 false로 설정되어 있으면 이 이벤트를 수신한 후 resume을 호출하여 재생을 시작해야함     |
+| PLAY_EVT_RCV_FIRST_I_FRAME|  2003    | 네트워크는 첫 번째 렌더링 가능한 비디오 데이터 패킷(IDR)을 수신함  |
 
 
 #### 이미지 품질 이벤트
 다음 이벤트는 이미지 변경 정보를 가져오는 데 사용됩니다.
 
-| 이벤트 ID                       | 코드 | 설명         |
-| ----------------------------- | ---- | ---------------- |
+| 이벤트 ID                           | 코드   | 설명       |
+| ----------------------------- | ---- | ---------- |
 | PLAY\_EVT\_CHANGE\_RESOLUTION | 2009 | 비디오 해상도가 변경됨   |
 | PLAY\_EVT\_CHANGE\_ROTATION   | 2011 | MP4 비디오가 회전됨 |
 
 #### 비디오 정보 이벤트
-| 이벤트 ID                                    | 코드 | 설명             |
-| :----------------------------------------- | :--- | :------------------- |
+| 이벤트 ID                     |    코드  |  설명                    |
+| :-----------------------  |:-------- |  :------------------------ |
 | TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC | 2010 | 재생된 파일의 정보 가져오기 성공 |
 
-fileId를 통해 비디오를 재생한 후 재생 요청이 성공하면 SDK는 일부 요청 정보를 상위 레이어에 알리고 `TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC` 이벤트를 수신한 후 param을 구문 분석하여 비디오 정보를 얻을 수 있습니다.
+fileId를 통해 비디오를 재생한 후 재생 요청이 성공하면(인터페이스: startPlay(TXPlayerAuthBuilder authBuilder)), SDK는 일부 요청 정보를 상위 레이어에 알리고 `TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC` 이벤트를 수신한 후 param을 구문 분석하여 비디오 정보를 얻을 수 있습니다.
 
-| 비디오 정보              | 설명     |
-| --------------------- | ------------ |
-| EVT\_PLAY\_COVER\_URL | 비디오 썸네일 URL |
-| EVT\_PLAY\_URL        | 비디오 재생 URL |
-| EVT\_PLAY\_DURATION   | 비디오 지속 시간     |
+| 비디오 정보                                    | 설명                                       |
+| ------------------------------------------- | ---------------------------------------------- |
+| EVT\_PLAY\_COVER\_URL                       | 비디오 썸네일 URL                                   |
+| EVT\_PLAY\_URL                              | 비디오 재생 URL                                   |
+| EVT\_PLAY\_DURATION                         | 비디오 지속 시간                                       |
+| EVT_TIME                                    | 이벤트 발생 시간                                   |
+| EVT_UTC_TIME                                | UTC 시간                                        |
+| EVT_DESCRIPTION                             | 이벤트 설명                                       |
+| EVT_PLAY_NAME                               | 비디오 이름                                       |
+| TXVodConstants.EVT_IMAGESPRIT_WEBVTTURL     | 스프라이트 이미지 web vtt 설명 파일 다운로드 URL, 10.2 버전부터 지원 |
+| TXVodConstants.EVT_IMAGESPRIT_IMAGEURL_LIST | 스프라이트 이미지 다운로드 URL, 10.2 버전부터 지원            |
+| TXVodConstants.EVT_DRM_TYPE                 | 암호화 유형, 10.2 버전부터 지원                     |
+
 
 다음은 onPlayEvent를 사용하여 비디오 재생 정보를 가져오는 예시 코드입니다.
 

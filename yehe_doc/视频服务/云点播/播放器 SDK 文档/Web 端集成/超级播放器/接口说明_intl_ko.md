@@ -1,5 +1,5 @@
 
-본 문서는 [통합 가이드](https://intl.cloud.tencent.com/document/product/266/33977)와 함께 사용해야 하는 VOD의 Web **Superplayer의 매개변수와 API**에 대해 설명합니다. 이 문서는 JavaScript에 대한 기본 지식이 있는 개발자를 대상으로 합니다.
+본 문서는 라이브 및 VOD 재생을 위한 Web SuperPlayer( TCPlayer )의 관련 매개변수 및 API를 소개합니다. 본 문서는 JavaScript에 대한 기본 지식이 있는 개발자를 대상으로 합니다.
 
 ## 초기화 매개변수
 플레이어를 초기화하기 위해 두 개의 매개변수, 즉 플레이어 컨테이너 ID와 함수 매개변수 객체를 전달해야 합니다.
@@ -14,25 +14,29 @@ options 객체에 대해 구성할 수 있는 매개변수는 다음과 같습�
 |------------|-----------------------------------|-----------------------------------|---------------------------------------|
 |  appID|  String |   없음 |필수.|
 |  fileID|  String|없음|필수.|
+|  sources|  Array|없음|플레이어 재생 주소, 형식: [{ src: '//path/to/video.mp4', type: 'video/mp4' }]|
 |  width|  String/Number|  없음| 플레이어 영역 너비(픽셀). 필요에 따라 설정해야 하며 CSS를 통해 플레이어 크기를 제어할 수 있습니다.|
 |  height |  String/Number|  없음|  플레이어 영역 높이(픽셀). 필요에 따라 설정해야 하며 CSS를 통해 플레이어 크기를 제어할 수 있습니다.|
 |  controls|  Boolean|  true|  플레이어의 컨트롤 바 표시 여부입니다.|
-|  poster|  String|  없음|  커버 이미지의 전체 주소를 설정합니다(업로드된 비디오에 이미 생성된 커버가 있는 경우 우선 사용됩니다. 자세한 내용은 [VOD - 비디오 관리](https://intl.cloud.tencent.com/document/product/266/33896)를 참고하십시오).|
+|  poster|  String|  없음|  커버 이미지의 전체 주소를 설정합니다. 업로드된 비디오에 이미 생성된 커버가 있는 경우 우선 사용됩니다. 자세한 내용은 [VOD - 비디오 관리](https://intl.cloud.tencent.com/document/product/266/33896)를 참고하십시오.|
 |  autoplay|  Boolean|  false|  자동 재생 여부입니다.|
-|  playbackRates|  Array| [0.5，1，1.25，1.5，2]|  HTML5에서만 사용할 수 있는 조정 가능한 속도 재생 옵션을 설정합니다.|
+|  playbackRates|  Array| [0.5, 1, 1.25, 1.5, 2]|  HTML5에서만 사용할 수 있는 조정 가능한 속도 재생 옵션을 설정합니다.|
 |  loop|Boolean|  false|  비디오 반복 재생 여부입니다.|
 |  muted|  Boolean|  false|  비디오 음소거 여부입니다.|
 |  preload|  String|  auto|  사전 로딩 필요 여부입니다. "auto", "meta" 및 "none"의 세 가지 속성이 있습니다. 시스템 제한으로 인해 auto는 모바일 장치에 적용되지 않습니다.|
 |  swf|  String|  없음|  Flash 플레이어에 있는 swf 파일의 URL입니다.|
 |  posterImage|  Boolean|  true|  커버 표시 여부입니다.|
 |  bigPlayButton|  Boolean|  true|  중앙에 있는 재생 버튼 표시 여부(브라우저 하이재킹에 의해 포함된 재생 버튼은 제거할 수 없음)입니다.|
-|  language|  String|  "zh-CN"|  언어를 설정합니다.|
+|  language|  String|  "zh-CN" |  언어 설정, 옵션 값: "zh-CN"/"en" |
 |  languages|  Object|  없음|  다국어 사전을 설정합니다.|
 |  controlBar|  Object|  없음|  아래에 자세히 설명된 대로 컨트롤 바 속성의 매개변수 조합을 설정합니다.|
+|  reportable|  Boolean |  true | 데이터 리포트 활성화 여부를 설정합니다.|
 |  plugins|  Object|  없음|  플러그인 기능 속성의 매개변수 조합을 아래와 같이 설정합니다.|
 |  hlsConfig|  Object|  없음|  hls.js 시작 구성입니다. 자세한 내용은 [hls.js](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning)를 참고하십시오.|
+|  webrtcConfig|  Object|  없음|  webrtc의 시작 구성, 아래 자세한 소개가 있습니다.|
 
->! 브라우저 하이재킹 재생 중에는 controls playbackRates loop preload posterImage 매개변수가 적용되지 않습니다.
+
+>! 브라우저 하이재킹 재생 중에는 controls, playbackRates, loop, preload, posterImage 매개변수가 적용되지 않습니다.
 
 #### controlBar 매개변수 목록
 controlBar 매개변수는 플레이어의 컨트롤 바 기능을 구성할 수 있습니다. 지원되는 속성은 다음과 같습니다.
@@ -56,28 +60,48 @@ plugins 매개변수는 플레이어 플러그 인의 기능을 구성할 수 �
 
 | 이름    | 유형                      | 기본값                        |설명 |
 |------------|-----------------------------------|-----------------------------------|---------------------------------------|
-|  ContinuePlay|  Object|  없음|  재생 재개 기능을 제어합니다. 지원되는 속성은 다음과 같습니다. <br><li>auto: false(재생 도중 자동 재개 여부).<br><li>text: "마지막 재생 위치"(프롬프트 텍스트). <br><li>btnText: "재개"(버튼 텍스트). <br>|
+|  ContinuePlay|  Object|  없음|  재생 재개 기능을 제어합니다. 지원되는 속성은 다음과 같습니다: <br><li>auto: Boolean 재생 중에 자동 재개 여부<br><li>text: String 프롬프트 텍스트<br><li>btnText: String 버튼 텍스트|
+| VttThumbnail | Object | 없음 | 썸네일 표시를 제어합니다. 지원되는 속성은 다음과 같습니다: <br><li>vttUrl: String vtt 파일 절대 주소, 필수<br><li>basePath: String 이미지 경로, 옵션, 전달되지 않은 경우 vttUrl의 path 사용<br><li>imgUrl: String 이미지 절대 주소, 옵션 |
+| ProgressMarker | Boolean | 없음 | 진행률 표시 제어 |
+| DynamicWatermark | Object | 없음 | 동적 워터마크 표시를 제어합니다. 지원되는 속성은 다음과 같습니다: <br><li>content: String 텍스트 워터마크 콘텐츠, 필수<br><li>speed: Number 워터마크 이동 속도, 값 범위 0-1, 옵션 |
+| ContextMenu | Object | 없음 | 옵션값은 다음과 같습니다: <br><li>mirror: Boolean 미러 표시 지원 여부 제어<br><li>statistic: Boolean 데이터 패널 표시 지원 여부 제어<br><li>levelSwitch: Object 해상도 전환 시 텍스트 프롬프트 제어<br><li>&emsp;{<br><li>&emsp;&emsp;open: Boolean 프롬프트 활성화 여부<br><li>&emsp;&emsp;switchingText: String, 해상도 전환 시 프롬프트 텍스트<br><li>&emsp;&emsp;switchedText: String, 전환 성공 시 프롬프트 텍스트<br><li>&emsp;&emsp;switchErrorText: String, 전환 실패 시 프롬프트 텍스트<br><li>&emsp;}|
+
+
+#### webrtcConfig 매개변수 리스트
+webrtcConfig 매개변수는 webrtc 재생 중 동작을 제어합니다. 지원되는 속성은 다음과 같습니다.
+
+| 이름    | 유형                      | 기본값                        |설명 |
+|------------|-----------------------------------|-----------------------------------|---------------------------------------|
+|  connectRetryCount| Number|  3|  SDK와 서버 간 재접속 시도 횟수|
+|  connectRetryDelay|  Number| 1|  SDK와 서버 간 재접속 딜레이|
+|  receiveVideo|  Boolean|  true|  비디오 스트림 풀링 여부|
+|  receiveAudio|  Boolean|  true|  오디오 스트림 풀링 여부|
+|  showLog|  Boolean|  false|  콘솔에 로그 출력 여부|
+
+
+<br>
 
 ## 객체 메소드
 다음은 플레이어 초기화에서 반환된 객체의 메소드 목록입니다.
 
 | 이름    | 매개변수 및 유형                 | 반환 값 및 유형                        |설명 |
 |------------|-----------------------------------|-----------------------------------|---------------------------------------|
+|  src()|  (String)|  없음|  재생 주소를 설정합니다.|
 |  ready(function)|  (Function)|  없음|  플레이어가 초기화된 후 콜백을 설정합니다.|
 |  play()|  없음|  없음|  비디오를 재생하고 다시 시작합니다.|
 |  pause()|  없음|  없음|  비디오를 일시 중지합니다.|
 |  currentTime(seconds)|  (Number)|  (Number)|  현재 재생 시점을 가져오거나 비디오 지속 시간을 초과할 수 없는 재생 시점을 설정합니다.|
 |  duration()|  없음|  (Number)|  비디오 길이를 가져옵니다.|
-|  volume(percent)|  (Number)[0，1][옵션]|  (Number)/설정 시 반환되지 않음|  플레이어 볼륨을 가져오거나 설정합니다.|
+|  volume(percent)|  (Number)[0, 1][옵션]|  (Number)/설정 시 반환되지 않음|  플레이어 볼륨을 가져오거나 설정합니다.|
 |  poster(src)|  (String)|  (String)/설정 시 반환되지 않음|  플레이어 커버를 가져오거나 설정합니다.|
 |  requestFullscreen()|  없음|  없음|  전체 화면 모드로 들어갑니다.|
 |  exitFullscreen()|  없음|  없음|  전체 화면 모드를 종료합니다.|
 |  isFullscreen()|  없음|  Boolean|  전체 화면 모드로 전환되었는지 여부를 반환합니다.|
-|  on(type，listerner)|  (String, Function)|  없음|  이벤트를 수신합니다.|
-|  one(type，listerner)|  (String, Function)|  없음|  이벤트를 수신합니다. 이벤트 핸들러는 최대 한 번만 실행할 수 있습니다.|
-|  off(type，listerner)|  (String, Function)|  없음|  이벤트 수신을 바인딩 해제합니다.|
+|  on(type, listener)|  (String, Function)|  없음|  이벤트를 수신합니다.|
+|  one(type, listener)|  (String, Function)|  없음|  이벤트를 수신합니다. 이벤트 핸들러는 최대 한 번만 실행할 수 있습니다.|
+|  off(type, listener)|  (String, Function)|  없음|  이벤트 수신을 바인딩 해제합니다.|
 |  buffered()|  없음|  TimeRanges|  비디오 버퍼링의 시간 범위를 반환합니다.|
-|  bufferedPercent()|  없음|  값 범위[0，1]|  비디오 지속 시간에서 버퍼링된 길이의 백분율을 반환합니다.|
+|  bufferedPercent()|  없음|  값 범위[0, 1]|  비디오 지속 시간에서 버퍼링된 길이의 백분율을 반환합니다.|
 |  width()|  (Number)[옵션]|  (Number)/설정 시 반환되지 않음|  플레이어 영역의 너비를 가져오거나 설정합니다. CSS를 통해 플레이어 크기를 설정하면 이 방법이 적용되지 않습니다.|
 |  height()|  (Number)[옵션]|  (Number)/설정 시 반환되지 않음|  플레이어 영역의 높이를 가져오거나 설정합니다. CSS를 통해 플레이어 크기를 설정하면 이 방법이 적용되지 않습니다.|
 |  videoWidth()|  없음|  (Number)|  비디오 해상도의 너비를 가져옵니다.|
@@ -120,6 +144,34 @@ player.on('error', function(error) {
 |  resolutionswitching|  해상도 전환이 진행 중입니다.|
 |  resolutionswitched|  해상도 전환이 완료되었습니다.|
 |  fullscreenchange| 전체 화면 모드가 전환될 때 트리거됩니다.|
+|  webrtcevent | webrtc 재생 시 이벤트 컬렉션입니다.|
+|  webrtcstats | webrtc 재생 시 통계 데이터입니다.|
+
+
+### WebrtcEvent 리스트
+
+플레이어는 webrtcevent를 통해 webrtc 재생 과정에서 모든 이벤트를 가져올 수 있습니다. 예시는 다음과 같습니다.
+```
+var player = TCPlayer('player-container-id', options);
+player.on('webrtcevent', function(event) {
+   // 콜백 매개변수 event에서 이벤트 상태 코드 및 관련 데이터 가져오기
+});
+```
+webrtcevent 상태 코드는 다음과 같습니다
+
+| 상태 코드 | 콜백 매개변수 | 소개 |
+|------|-------|-------|
+| 1001 | 없음 | 풀 스트림 시작 |
+| 1002 | 없음 | 서버에 연결됨 |
+| 1003 | 없음 | 비디오 재생 시작 |
+| 1004 | 없음 | 풀 스트림 중지, 비디오 재생 종료 |
+| 1005 | 없음 | 서버 접속 실패, 자동 재접속 복구가 시작됨 |
+| 1006 | 없음 | 가져온 스트림 데이터가 비어 있음 |
+| 1007 | localSdp | 신호 서버 요청 시작 |
+| 1008 | remoteSdp | 신호 서버 요청 성공 |
+| 1009 | 없음 | 버퍼링 대기 중 풀 스트림 랙 |
+| 1010 | 없음 | 풀 스트림 랙 종료 및 재생 복구 |
+
 
 ## 오류 코드
 플레이어가 error 이벤트를 트리거하면 리스너가 오류 코드를 반환합니다. 3자리 이상의 오류 코드는 미디어 데이터 API용입니다. 다음은 오류 코드 목록입니다.
@@ -142,3 +194,4 @@ player.on('error', function(error) {
 | 16   | HTML5 + hls.js 모드에서 hls 비디오를 재생하는 동안 리먹싱 예외가 발생했습니다. 예외 세부 정보는 event.source에서 볼 수 있습니다. 자세한 내용은 [Mux Errors](https://github.com/video-dev/hls.js/blob/master/docs/API.md#mux-errors)를 참고하십시오.     |
 | 17   | HTML5 + hls.js 모드에서 hls 비디오를 재생하는 동안 다른 유형의 예외가 발생했습니다. 예외 세부 정보는 event.source에서 볼 수 있습니다. 자세한 내용은 [Other Errors](https://github.com/video-dev/hls.js/blob/master/docs/API.md#other-errors)를 참고하십시오.     |
 | 10008| 미디어 데이터 서비스가 재생 매개변수에 해당하는 미디어 데이터를 찾지 못했습니다. 요청 매개변수 appID와 fileID가 올바른지, 해당 미디어 데이터가 삭제되었는지 확인하십시오. |
+
