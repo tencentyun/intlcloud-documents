@@ -106,7 +106,7 @@ S3 프로토콜 액세스 모드는 다음과 같은 설정이 필요하며, 기
 | fs.cosn.posix_bucket.fs.impl         | org.apache.hadoop.fs.CosNFileSystem |      POSIX 모드 액세스 구성은 com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter입니다. S3 프로토콜 모드 액세스 구성은 기본 POSIX 모드 액세스인 org.apache.hadoop.fs.CosNFileSystem입니다.                                        |
 
 
-### 5. 주의사항
+### 4. 주의사항
 1. 이전 hadoop cos jar 패키지를 사용하여 메타데이터 가속이 활성화된 버킷에 액세스할 수 없습니다.
 2. Hadoop cos ≤ 8.1.5 버전 posix를 사용하여 메타데이터 가속이 활성화된 버킷에 액세스하려면 콘솔에서 ranger 인증을 해제해야 합니다. 8.1.5 이상 버전에서는 콘솔에서 ranger 인증을 열 수 있습니다.
 
