@@ -60,7 +60,7 @@
 <td>选择目标数据库所属地域。</td></tr>
 <tr>
 <td>规格</td>
-<td>根据业务情况选择迁移链路的规格，不同规格的性能和计费详情请参考<a href="https://intl.cloud.tencent.com/document/product/571/35322">计费概述</a>。</td></tr>
+<td>根据业务情况选择迁移链路的规格。</td></tr>
 </tbody></table>
 3. 在设置源和目标数据库页面，完成任务设置、源库设置和目标库设置，测试源库和目标库连通性通过后，单击**新建**。
 >?如果连通性测试失败，请根据提示和 [修复指导](https://intl.cloud.tencent.com/document/product/571/42552) 进行排查和解决，然后再次重试。
