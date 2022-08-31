@@ -29,7 +29,7 @@ This operation involves multiple account information configuration items. The fo
 >?If an external ID is used, record and keep the ID on your own, as it cannot be queried in DTS.
 5. On the **Configure Role Policy** page, enter **QcloudDTSReadOnlyAccess**, select the **QcloudDTSReadOnlyAccess** preset policy, and click **Next**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5d039c19c35e1d8a107a023ed5321010.png)
-6. On the **Review** page, set the role name and click **Complete**.
+6. Set the role tag keys and values, then click Next. On the **Review** page, set the role name and click **Complete**.
 >?Record the configured name, which needs to be entered when you create the sync task later.
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/acb68a6dfa00e5ccd41fdd511a0fcfd6.png)
