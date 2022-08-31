@@ -27,7 +27,7 @@ DragonDisk 是一个免费的文件管理工具，提供类似 Windows 资源管
  - Access key：输入访问密钥信息 SecretId，可前往 [云 API 密钥](https://console.cloud.tencent.com/capi) 中创建和获取。
  - Secret key：输入访问密钥信息 Secretkey，可前往 [云 API 密钥](https://console.cloud.tencent.com/capi) 中创建和获取。
 4. 账户信息添加完成后，在 Root 中选择之前设置的用户名，可查看该用户名下的存储桶列表，即表示已配置完成。
-![](https://qcloudimg.tencent-cloud.cn/raw/95aa5d0160953181856e1531b8e4039b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/aa2cf3f681233d692d58ddcc7f16a833.png)
 
 ## 管理 COS 文件
 
@@ -62,7 +62,7 @@ DragonDisk 是一个免费的文件管理工具，提供类似 Windows 资源管
 ### 下载对象
 
 在存储桶列表中找到对象所在的存储桶，然后将对象拖拽到右侧本地计算机的文件夹中，即可完成下载操作。
-![](https://qcloudimg.tencent-cloud.cn/raw/abfa0db54ecfef0e6dd658a964bed0a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/45fcab5119da7ab87d958853e8b6100a.png)
 
 
 ### 复制对象
