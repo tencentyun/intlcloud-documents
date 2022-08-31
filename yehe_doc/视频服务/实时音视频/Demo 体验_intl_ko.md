@@ -190,8 +190,8 @@ ul.rno-tabs-operation {
         </div>
         <div class="demo-item-download">
             <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">음성/영상 통화</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">스트리밍 푸셔</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html');reportEvent({name: 'demo-click-web', ext1: 'player'});">스트리밍 플레이어</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">스트리밍 푸셔</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'player'});">스트리밍 플레이어</div>
         </div>
     </div>
     <div class="preview-demo-item style-qrcode">
