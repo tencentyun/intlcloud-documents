@@ -22,5 +22,6 @@ You can skip this section if you don't need to manage the permissions of DTS res
 
 ## Authorizing Existing Sub-user to Use DTS
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) with the root account, locate the target sub-user in the user list, and click **Authorize**.
+![](https://qcloudimg.tencent-cloud.cn/raw/7afe15f6ae3fab3ccad803127d532925.png)
 2. In the pop-up window, select the **QcloudDTSFullAccess** preset policy and click **OK** to complete the authorization.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d63b4700d77fa9505f0154468203703a.png)
