@@ -22,5 +22,6 @@
 
 ## 已有子用户，给子用户授权使用 DTS
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，在用户列表选择对应子用户，单击**授权**。
+![](https://qcloudimg.tencent-cloud.cn/raw/7afe15f6ae3fab3ccad803127d532925.png)
 2. 在弹出的对话框，选择**QcloudDTSFullAccess 数据传输服务（DTS）全读写访问权限**预设策略，单击**确定**，即可完成子用户授权。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d63b4700d77fa9505f0154468203703a.png)
