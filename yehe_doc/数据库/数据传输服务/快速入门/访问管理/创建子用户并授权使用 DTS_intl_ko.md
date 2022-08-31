@@ -22,5 +22,7 @@ CVM, VPC 및 TencentDB와 같은 다양한 Tencent Cloud 서비스를 관리하�
 
 ## 기존 서브 계정에게 DTS 사용 권한 부여
 1. [CAM 콘솔](https://console.cloud.tencent.com/cam)에 루트 계정으로 로그인하여 사용자 목록에서 대상 서브 계정를 찾은 후 **권한 부여**를 클릭합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/7afe15f6ae3fab3ccad803127d532925.png)
 2. 팝업 창에서 **QcloudDTSFullAccess DTS 전체 읽기/쓰기 액세스 권한** 사전 설정 정책을 선택하고 **확인**을 클릭하여 서브 계정 권한 부여를 완료합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/d63b4700d77fa9505f0154468203703a.png)
 
