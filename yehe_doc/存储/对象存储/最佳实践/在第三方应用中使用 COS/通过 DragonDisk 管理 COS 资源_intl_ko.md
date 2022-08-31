@@ -27,7 +27,7 @@ Windows, Mac OS X 및 다양한 Linux 릴리스 버전에서 사용할 수 있�
  - Access key: 액세스 키 정보 SecretId를 입력합니다. [Tencent Cloud API 키](https://console.cloud.tencent.com/capi)로 이동하여 생성 및 획득할 수 있습니다.
  - Secret key: 액세스 키 정보 Secretkey를 입력합니다. [Tencent Cloud API 키](https://console.cloud.tencent.com/capi)로 이동하여 생성 및 획득할 수 있습니다.
 4. 계정 정보 추가 완료 후 Root에서 이전에 설정한 사용자 이름을 선택하면 해당 사용자 이름 아래에 있는 버킷 리스트를 볼 수 있습니다. 이는 구성이 완료되었음을 의미합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/95aa5d0160953181856e1531b8e4039b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/aa2cf3f681233d692d58ddcc7f16a833.png)
 
 ## COS 파일 관리
 
@@ -62,7 +62,7 @@ Root에서 이전에 설정한 사용자 이름을 선택하여 사용자 이름
 ### 객체 다운로드
 
 버킷 리스트에서 객체가 위치한 버킷을 찾아 우측 로컬 컴퓨터의 폴더로 드래그하면 다운로드가 완료됩니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/abfa0db54ecfef0e6dd658a964bed0a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/45fcab5119da7ab87d958853e8b6100a.png)
 
 
 ### 객체 복사
