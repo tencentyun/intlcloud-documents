@@ -166,3 +166,37 @@ Value range: 1-2,048 Mbps
  
 
 
+---
+### service.cloud.tencent.com/security-groups
+
+**Note:**
+This annotation is used to bind security groups to CLB-type Services. Up to five security groups can be bound to a CLB.
+
+**Notes:**
+
+- For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/214/14733) of CLB security groups.
+- Usually, the "Allow Traffic by Default" feature must be enabled, with which the traffic forwarding between CLB and CVM is allowed by default. Traffic coming from the CLB only needs to be verified by the security group bound to the CLB. The annotation is `service.cloud.tencent.com/pass-to-target`.
+- When [Using Existing CLBs](https://intl.cloud.tencent.com/document/product/457/36835), logic conflicts may occur if different security groups are configured for multiple Services.
+
+**Use case:**
+`service.cloud.tencent.com/security-groups: "sg-xxxxxx,sg-xxxxxx"`
+
+---
+
+### service.cloud.tencent.com/pass-to-target
+
+**Note:**
+This annotation is used to configure the "Allow Traffic by Default" feature for the CLB-type Services. The traffic forwarding between CLB and CVM is allowed by default. Traffic coming from the CLB only needs to be verified by the security group bound to the CLB.
+
+**Notes:**
+
+- For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/214/14733) of CLB security groups.
+- Usually, the feature of binding a security group is required. The annotation is `service.cloud.tencent.com/security-groups`.
+- When [Using Existing CLBs](https://intl.cloud.tencent.com/document/product/457/36835), logic conflicts may occur if different “Allow Traffic” configurations are configured for multiple Services.
+
+
+
+**Use case:**
+`service.cloud.tencent.com/pass-to-target: "true"`
+
+
