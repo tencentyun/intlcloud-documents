@@ -26,7 +26,7 @@ flush privileges;
 - 数据订阅源是 TDSQL MySQL版 的订阅任务，各个分片的 DDL 操作都会被订阅并投递到 Kafka，所以对于一个分表的 DDL 操作，会出现重复的 DDL 语句。例如，实例 A 有3个分片，订阅了一个分表 tableA，那么对于表 tableA 的 DDL 语句会订阅到3条。
 
 - Kafka 中的每条消息的消息头中都带有分片信息，以 key/value 的形式存在消息头中，key 是 ShardId，value 是 SQL 透传 ID，可根据 SQL 透传 ID 区分该消息来自哪个分片。用户可以在 **[TDSQL 控制台](https://console.cloud.tencent.com/tdsqld/instance-tdmysql) > 实例列表 > 分片管理**中查看 SQL 透传 ID。
-![](https://qcloudimg.tencent-cloud.cn/raw/0a9f59f37b4cdd11ae325a77201e4bab.png)
+
 
 ## 支持订阅的 SQL 操作
 |  操作类型 | 支持的 SQL 操作 |
@@ -47,11 +47,13 @@ flush privileges;
  - 实例：选择对应数据库实例，只读实例和灾备实例不支持数据订阅。
  - 数据库帐号：添加订阅实例的帐号和密码，帐号具有订阅任务需要的权限，包括 REPLICATION CLIENT、REPLICATION SLAVE、PROCESS 和全部对象的 SELECT 权限。
  - kafka 分区数量：设置 kafka 分区数量，增加分区数量可提高数据写入和消费的速度。单分区可以保障消息的顺序，多分区无法保障消息顺序，如果您对消费到消息的顺序有严格要求，请选择 kafka 分区数量为1。
+![](https://qcloudimg.tencent-cloud.cn/raw/446919183ce38d907da99cc4c0161d80.png)
 5. 在订阅类型和对象选择页面，选择订阅类型，单击**保存配置**。
 订阅类型，包括数据更新、结构更新和全实例。
    - 数据更新：订阅选择对象的数据更新，包括数据 INSERT、UPDATE、DELETE 操作。
    - 结构更新：订阅实例中全部对象的结构创建、修改和删除。
    - 全实例：包括该订阅实例的全部对象的数据更新和结构更新。
+![](https://qcloudimg.tencent-cloud.cn/raw/cbd4df4f9652aa3ddb9f6845764f617b.png)
 6. 在预校验页面，预校验任务预计会运行2分钟 - 3分钟，预校验通过后，单击**启动**完成数据订阅任务配置。
 >?如果校验失败，请参考 [校验不通过处理方法](https://intl.cloud.tencent.com/document/product/571/42551) 进行修复，并重新进行校验。
 >
