@@ -95,9 +95,16 @@ To play the DRM-encrypted video using the VOD player, just pass in the file ID o
 Import the player’s style file and script files into the webpage.
 
 ```
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/tcplayer.min.css" rel="stylesheet">
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/libs/hls.min.1.1.5.js"></script>
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/tcplayer.v4.5.3.min.js"></script>
+ <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+  
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
+ 
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
 ```
 
 #### Step 2. Add a player container

@@ -38,25 +38,25 @@ The example below shows how to enable key hotlink protection for the default dis
 
 ## Step 2. Encrypt a Video
 
-1. In the VOD console, select **Media Assets** > [Video/Audio Management](https://console.cloud.tencent.com/vod/media) on the left sidebar, select the target video (in this example, the file ID of the video encrypted is `387702299667618135`), and click **Process**.
+1. In the VOD console, select **Media Assets** > [Video/Audio Management](https://console.cloud.tencent.com/vod/media) on the left sidebar, select the target video (in this example, the file ID of the video encrypted is `387702304941991610`), and click **Process**.
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/acec4a201227c5aa0c54712d049187e9.png)
 
 2. On the video processing page:
  - Select **Task Flow** as the **Processing Type**.
- - Select **WidevineFairPlayPreset** as the **Task Flow Template**.
- ![image-20220425192205432](https://qcloudimg.tencent-cloud.cn/raw/cef2c1e79343ea9688654791b6fb6762.png)
+ - Select **SDMC-WidevineFairPlayPreset** as the **Task Flow Template**.
+ ![image-20220425192205432]( https://qcloudimg.tencent-cloud.cn/raw/6b9ff24b55a5ca98f1a26ba4051e79d3.png )
 
 >?
->- `WidevineFairPlayPreset` is a preset task flow. It uses the adaptive bitrate streaming template 11 or 13, the time point screenshot template 10 (for thumbnail generation), and the image sprite template 10.
->- The adaptive bitrate streaming template 11 generates multi-bitrate streams encrypted by FairPlay, and the adaptive bitrate streaming template 13 generates multi-bitrate streams encrypted by Widevine.
+>- `SDMC-WidevineFairPlayPreset` is a preset task flow. It uses the adaptive bitrate streaming template 31 or 41, the time point screenshot template 10 (for thumbnail generation), and the image sprite template 10.
+>- The adaptive bitrate streaming template 31 generates multi-bitrate streams encrypted by FairPlay, and the adaptive bitrate streaming template 41 generates multi-bitrate streams encrypted by Widevine.
 
 3. Click **Confirm** and wait until the **Video Status** changes from "Processing" to "Normal", which indicates that video processing is completed.
 <img src="https://main.qcloudimg.com/raw/885b68427d36faefe8f2bb5b489e1e19.png" width="" />
 4. Click **Manage** in the **Operation** column of the video.
- - Under the **Basic Info** tab, you can view the thumbnail generated and outputs of adaptive bitrate streaming (template ID: 11 & 13).
+ - Under the **Basic Info** tab, you can view the thumbnail generated and outputs of adaptive bitrate streaming (template ID: 31 & 41).
 
-   ![image-20220426201159056](https://qcloudimg.tencent-cloud.cn/raw/696e894ed0c3665990c12cc57ebf23bf.png)
+   ![image-20220426201159056](  https://qcloudimg.tencent-cloud.cn/raw/74fccd53426cfbebdb5c91d9c480dc02.png  )
 
  - Under the **Screenshot Info** tab, you can view the image sprite generated (template ID: 10).
 
@@ -99,9 +99,17 @@ To play the DRM-encrypted video using the VOD player, just pass in the file ID o
 Import the player’s style file and script files into the webpage.
 
 ```
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/tcplayer.min.css" rel="stylesheet">
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/libs/hls.min.1.1.5.js"></script>
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/tcplayer.v4.5.3.min.js"></script>
+<link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
+ 
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+  
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
 ```
 
 #### Step 2. Add a player container

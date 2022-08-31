@@ -23,6 +23,13 @@
 
 8. 提交华曦达的用户密钥信息（包括Uid、SecretID、SecretKey 以及 FairPlay 证书地址）。
 
+    点击展开左侧导航栏`视频处理设置`，点击` 商业级 DRM 配置 `，点击右侧`华曦达用户密钥信息配置`中的  `编辑`：
+    
+     ![](https://qcloudimg.tencent-cloud.cn/raw/cf92bbe8ad649b609ed6b71a54e3ec67.png)
+    
+    填写用户密钥信息并保存：
+    
+    ![](https://qcloudimg.tencent-cloud.cn/raw/42a17f61100e06b909c4e5da4747eff5.png)
 
 ## 总结
 

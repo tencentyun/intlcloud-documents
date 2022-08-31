@@ -95,9 +95,17 @@
 在适当的地方引入播放器样式文件与相关脚本文件：
 
 ```
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/tcplayer.min.css" rel="stylesheet">
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/libs/hls.min.1.1.5.js"></script>
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/tcplayer.v4.5.3.min.js"></script>
+<link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+  
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
+ 
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
+
 ```
 
 #### step 2：放置播放器容器

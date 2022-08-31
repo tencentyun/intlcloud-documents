@@ -23,6 +23,14 @@ If you use the third-party (SDMC) DRM scheme, you need to obtain the user ID, se
 
 8. Enter the information you obtained, including the user ID, secret ID, secret key, and FairPlay certificate URL.
 
+    Select **Media Processing > DRM Configuration** on the left sidebar and click **Edit** on the `SDMC DRM`.
+    
+     ![](https://qcloudimg.tencent-cloud.cn/raw/cf92bbe8ad649b609ed6b71a54e3ec67.png)
+    
+    Enter the information and click **Save**.
+    
+    ![](https://qcloudimg.tencent-cloud.cn/raw/42a17f61100e06b909c4e5da4747eff5.png)
+
 
 ## Summary
 

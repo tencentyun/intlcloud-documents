@@ -38,25 +38,25 @@
 
 ## 步骤2：对视频进行 DRM 加密
 
-1. 登录云点播控制台，选择 **媒资管理**>[**音视频管理**](https://console.cloud.tencent.com/vod/media)，勾选要处理的视频（FileId 为387702299667618135），单击 **音视频处理**。
+1. 登录云点播控制台，选择 **媒资管理**>[**音视频管理**](https://console.cloud.tencent.com/vod/media)，勾选要处理的视频（FileId 为387702304941991610），单击 **音视频处理**。
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/acec4a201227c5aa0c54712d049187e9.png)
 
 2. 在视频处理界面：
  - **处理类型** 选择 **任务流**。
- - **任务流模板** 选择 **WidevineFairPlayPreset**。
- ![image-20220425192205432](https://qcloudimg.tencent-cloud.cn/raw/cef2c1e79343ea9688654791b6fb6762.png)
+ - **任务流模板** 选择 **SDMC-WidevineFairPlayPreset**。
+ ![image-20220425192205432]( https://qcloudimg.tencent-cloud.cn/raw/6b9ff24b55a5ca98f1a26ba4051e79d3.png )
 
 >?
->- WidevineFairPlayPreset 是预置任务流：分别使用11、13模板转自适应码流，10模板截图做封面，10模板截雪碧图。
->- 11模板自适应码流是加密类型为 `FairPlay` 的多码率输出，13模板自适应码流是加密类型为 `Widevine` 的多码率输出。
+>- SDMC-WidevineFairPlayPreset 是预置任务流：分别使用31、41模板转自适应码流，10模板截图做封面，10模板截雪碧图。
+>- 31模板自适应码流是加密类型为 `FairPlay` 的多码率输出，41模板自适应码流是加密类型为 `Widevine` 的多码率输出。
 
 3. 单击 **确定**，等待“视频状态”栏从“处理中”变为“正常”，表示视频已处理完毕：
 <img src="https://main.qcloudimg.com/raw/885b68427d36faefe8f2bb5b489e1e19.png" width="" />
 4. 单击视频“操作”栏下的 **管理**，进入管理页面：
- - 选择“基本信息”页签，可以看到生成的封面，以及 DRM 加密的自适应码流输出（模板 ID 为11和13）。
+ - 选择“基本信息”页签，可以看到生成的封面，以及 DRM 加密的自适应码流输出（模板 ID 为31和41）。
 
-   ![image-20220426201159056](https://qcloudimg.tencent-cloud.cn/raw/696e894ed0c3665990c12cc57ebf23bf.png)
+   ![image-20220426201159056](  https://qcloudimg.tencent-cloud.cn/raw/74fccd53426cfbebdb5c91d9c480dc02.png )
 
  - 选择“截图信息”页签，可以看到生成的雪碧图（模板 ID 为10）。
 
@@ -68,21 +68,22 @@
 
 ```json
 {
-  "appId": 1500012416,
-  "fileId": "387702299667618135",
-  "currentTimeStamp": 1650886156,
-  "expireTimeStamp": 1966435200,
+  "appId": 1500014561,
+  "fileId": "387702304941991610",
+  "currentTimeStamp": 1661163373,
+  "expireTimeStamp": 2648557919,
+  "pcfg": "SDMC-advanceDrmPreset",
   "urlAccessInfo": {
     "t": "75356B80",
     "us": "72d4cd1101"
-  },
-  "pcfg":"advanceDrmPreset"
+  }
+
 }
 ```
 
 本教程的 Key 为 `testtest`时，生成的播放器签名（`psign`）如下：
 
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDg4NjE1NiwiZXhwaXJlVGltZVN0YW1wIjoxOTY2NDM1MjAwLCJ1cmxBY2Nlc3NJbmZvIjp7InQiOiI3NTM1NkI4MCIsInVzIjoiNzJkNGNkMTEwMSJ9LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.kkyOyscuV3WIlFV0IFPsPPWomZEcuNGclaBzpEO8DEg`
+`eyJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6MTUwMDAxNDU2MSwiZmlsZUlkIjoiMzg3NzAyMzA0OTQxOTkxNjEwIiwiY3VycmVudFRpbWVTdGFtcCI6MTY2MTE2MzM3MywiZXhwaXJlVGltZVN0YW1wIjoyNjQ4NTU3OTE5LCJwY2ZnIjoiU0RNQy1hZHZhbmNlRHJtUHJlc2V0IiwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNzUzNTZCODAiLCJ1cyI6IjcyZDRjZDExMDEifX0.aXINQ6IUE_UpkA00QSAj468nd_61QlQz3hv8UMKtZ7s`
 
 
 ## 步骤4：使用播放器播放 DRM 加密视频。
@@ -99,9 +100,18 @@
 在适当的地方引入播放器样式文件与相关脚本文件：
 
 ```
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/tcplayer.min.css" rel="stylesheet">
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/libs/hls.min.1.1.5.js"></script>
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.3/tcplayer.v4.5.3.min.js"></script>
+<link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
+ 
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+  
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
+
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
+
 ```
 
 #### step 2：放置播放器容器
