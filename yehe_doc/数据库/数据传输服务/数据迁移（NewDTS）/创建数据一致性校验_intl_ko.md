@@ -26,13 +26,17 @@
 2. **데이터 마이그레이션** 페이지에서 확인하려는 마이그레이션 작업을 선택하고 작업 ID를 클릭하여 **작업 세부 정보** 페이지로 들어갑니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0af144b0e8cb179934b28c2c45d567e2.png)
 3. 탭을 전환하고 **데이터 일관성 검증**을 클릭합니다.
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/976fc2ce2f0374756b923134dda370d9.png" style="zoom:50%;" />
+
 4. **데이터 일관성 검증 생성**을 클릭합니다.
 >?데이터 일관성 검증 생성을 클릭합니다. 데이터 일관성 검증 작업은 해당 DTS 작업이 **증분 동기화** 단계에 있는 경우에만 생성할 수 있습니다. 버튼이 회색으로 표시되면 DTS 작업 상태가 요구 사항을 충족하지 않는 것입니다. 예를 들어 작업이 **증분 동기화** 단계에 들어가지 않았거나 실패했거나 종료되었습니다.
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/ee3616aae11c9f83adf25c902db03c09.png)
 5. 팝업 창에서 **확인**을 클릭합니다.
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/b785c2ca36159ead67d9a72bc9c910e9.png" style="zoom:90%;" />
+
 6. 데이터 일관성 검증 매개변수를 구성한 후 **데이터 비교 시작**을 클릭합니다.
 마이그레이션 객체에 대해 **모든 마이그레이션 객체** 또는 **사용자 정의 선택**할 수 있습니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/33f22832c023c6e5c823482cba5ae8fe.png" style="zoom:90%;" />
