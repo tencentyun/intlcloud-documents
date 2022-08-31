@@ -27,7 +27,7 @@ Windows、Mac OS Xおよび各種のLinuxディストリビューションに適
  - Access key：アクセスキー情報SecretIdを入力し、[Tencent Cloud APIキー](https://console.cloud.tencent.com/capi) に進んで作成と取得を行うことができます。
  - Secret key：アクセスキー情報Secretkeyを入力し、 [Tencent Cloud APIキー](https://console.cloud.tencent.com/capi) に進んで作成と取得を行うことができます。
 4. アカウント情報の追加が完了したら、Root内で以前設定したユーザー名を選択すると、そのユーザー名下のバケットリストを確認することができ、これは設定が完了したことを意味します。
-![](https://qcloudimg.tencent-cloud.cn/raw/95aa5d0160953181856e1531b8e4039b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/aa2cf3f681233d692d58ddcc7f16a833.png)
 
 ## COSファイルの管理
 
@@ -62,7 +62,7 @@ Root内で以前設定したユーザー名を選択すると、そのユーザ�
 ### オブジェクトのダウンロード
 
 バケットリスト内でオブジェクトがあるバケットを探し、次にオブジェクトを右側のローカルコンピュータのフォルダ内にドラッグすれば、ダウンロードの操作が完了します。
-![](https://qcloudimg.tencent-cloud.cn/raw/abfa0db54ecfef0e6dd658a964bed0a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/45fcab5119da7ab87d958853e8b6100a.png)
 
 
 ### オブジェクトのコピー
