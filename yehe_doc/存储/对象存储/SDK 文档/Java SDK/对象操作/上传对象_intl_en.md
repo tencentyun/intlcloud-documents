@@ -10,20 +10,20 @@ This document provides an overview of APIs and SDK code samples for object uploa
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading object by using HTML form | Uploads object by using HTML form. |
 | [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 	Appending parts  |	Uploads object by appending parts.   |
 
-**Multipart upload operations**
+**Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries multipart uploads in progress. |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing multipart upload operation | Initializes multipart upload operation. |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads object in parts. |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying part | Copies object as part. |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts of multipart upload. |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing multipart upload | Completes multipart upload. |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting multipart upload | Aborts multipart upload operation and deletes uploaded parts. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts. |
 
 
-## Advanced API (Recommended)
+## Advanced APIs (Recommended)
 
 The advanced APIs encapsulate simple APIs via the TransferManager class to provide APIs for easier operations. Internally, a thread pool is used to concurrently accept and process requests from you, so you can choose to execute jobs asynchronously after submitting multiple jobs.
 
@@ -52,7 +52,7 @@ Before using the advanced API, you must create a TransferManager instance first.
 // Create a TransferManager instance, which is used to call the advanced API later.
 TransferManager createTransferManager() {
     // Create a COSClient client, which is the basic instance for accessing the COS service.
-    // For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+    // For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
     COSClient cosClient = createCOSClient();
 
     // Set the thread pool size. We recommend you set the size of your thread pool to 16 or 32 to maximize network resource utilization, provided your client and COS networks are sufficient (for example, uploading a file to a COS bucket from a CVM instance in the same region).
@@ -112,7 +112,7 @@ public Upload upload(final PutObjectRequest putObjectRequest)
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** > **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -125,9 +125,21 @@ File localFile = new File(localFilePath);
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 
+// If you need to set the custom headers of the object, refer to the following code; otherwise, omit the following lines. For more information on custom headers, visit https://cloud.tencent.com/document/product/436/13361.
+ObjectMetadata objectMetadata = new ObjectMetadata();
+
+// To set `Content-Type`, `Cache-Control`, `Content-Disposition`, `Content-Encoding`, or `Expires` as a custom header, use `objectMetadata.setHeader()`.
+objectMetadata.setHeader(key, value);
+// To set a custom header like `x-cos-meta-[custom suffix]`, use:
+Map<String, String> userMeta = new HashMap<String, String>();
+userMeta.put("x-cos-meta-[custom suffix]", "value");
+objectMetadata.setUserMetadata(userMeta);
+
+putObjectRequest.withMetadata(objectMetadata);
+
 try {
     // The advanced API will return an async result `Upload`.
-    // You can call the `waitForUploadResult` method to wait for the upload to complete. If the upload is successful, `UploadResult` will be returned; otherwise, an exception will be thrown.
+    // You can synchronously call the `waitForUploadResult` method to wait for the upload to complete. If the upload is successful, `UploadResult` will be returned; otherwise, an exception will be reported.
     Upload upload = transferManager.upload(putObjectRequest);
     UploadResult uploadResult = upload.waitForUploadResult();
 } catch (CosServiceException e) {
@@ -139,7 +151,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -158,12 +170,12 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int |
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
 
 #### Returned values
 
 - Success: `Upload` is returned. You can query whether the upload is complete, or wait for the upload to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
@@ -194,7 +206,7 @@ public Upload upload(final PutObjectRequest putObjectRequest)
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** > **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -216,7 +228,7 @@ PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, inputS
 
 try {
     // The advanced API will return an async result `Upload`.
-    // You can call the `waitForUploadResult` method to wait for the upload to complete. If the upload is successful, `UploadResult` will be returned; otherwise, an exception will be thrown.
+    // You can synchronously call the `waitForUploadResult` method to wait for the upload to complete. If the upload is successful, `UploadResult` will be returned; otherwise, an exception will be reported.
     Upload upload = transferManager.upload(putObjectRequest);
     UploadResult uploadResult = upload.waitForUploadResult();
 } catch (CosServiceException e) {
@@ -228,7 +240,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -247,12 +259,12 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
 
 #### Returned values
 
 - Success: `Upload` is returned. You can query whether the upload is complete, or wait for the upload to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
@@ -315,7 +327,7 @@ The sample code combined with the file upload operation is as follows:
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** > **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -344,7 +356,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -373,12 +385,12 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
 
 #### Returned values
 
 - Success: `Upload` is returned. You can query whether the upload is complete, or wait for the upload to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
@@ -414,7 +426,7 @@ public Upload upload(final PutObjectRequest putObjectRequest)
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** > **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -453,7 +465,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -472,12 +484,12 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
 
 #### Returned values
 
 - Success: `Upload` is returned. You can query whether the upload is complete, or wait for the upload to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
@@ -510,7 +522,7 @@ public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirec
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** > **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
@@ -523,7 +535,7 @@ String dir_path = "/path/to/localdir";
 Boolean recursive = false;
 
 try {
-    // Return an async result `Upload`. You can synchronously call `waitForUploadResult` to wait for the upload to complete. If the upload is successful, `UploadResult` will be returned; otherwise, an exception will be thrown.
+    // Return an async result `Upload`. You can synchronously call `waitForUploadResult` to wait for the upload to complete. If the upload is successful, `UploadResult` will be returned; otherwise, an exception will be reported.
     MultipleFileUpload upload = transferManager.uploadDirectory(bucketName, cos_path, new File(dir_path), recursive);
 
     // You can choose to view the upload progress. For more information on the function, see **Advanced API** > **Uploading file** > **Displaying the upload progress**.
@@ -540,7 +552,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -556,20 +568,20 @@ shutdownTransferManager(transferManager);
 #### Returned values
 
 - Success: `MultipleFileUpload` is returned. You can query whether the upload is complete, or wait for the upload to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ## Simple Operations
 
-Requests for simple operations need to be initiated through COSClient instances. You need to create a COSClient instance before performing simple operations.
+Requests for simple operations need to be initiated through `COSClient` instances. You need to create a `COSClient` instance before performing simple operations.
 
-COSClient instances are concurrency safe. We recommend you create only one COSClient instance for a process and then shut it down when it is no longer used to initiate requests.
+`COSClient` instances are concurrency safe. We recommend you create only one `COSClient` instance for a process and then shut it down when it is no longer used to initiate requests.
 
 ### Creating COSClient instance
 
-Before calling the COS API, you must create a COSClient instance first.
+Before calling the COS API, first create a `COSClient` instance.
 
 ```java
-// Create a COSClient instance, which is used to initiate requests later.
+// Create a `COSClient` instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Set the user identity information.
     // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SECRETID` and `SECRETKEY` of your project.
@@ -585,8 +597,8 @@ COSClient createCOSClient() {
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // Set the request protocol to `http` or `https`.
-    // For 5.6.53 and earlier versions, HTTPS is recommended.
-    // Starting from 5.6.54, HTTPS is used by default.
+    // For v5.6.53 or earlier, HTTPS is recommended.
+    // For v5.6.54 or later, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
     // The following settings are optional:
@@ -607,12 +619,12 @@ COSClient createCOSClient() {
 
 ### Creating COSClient instance with temporary key
 
-If you want to request COS with a temporary key, you need to create a COSClient instance with the temporary key.
+If you want to request COS with a temporary key, you need to create a `COSClient` instance with the temporary key.
 This SDK does not generate temporary keys. For directions on how to generate a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ```java
 
-// Create a COSClient instance, which is used to initiate requests later.
+// Create a `COSClient` instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Here, the temporary key information is needed.
     // For directions on how to generate a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
@@ -630,8 +642,8 @@ COSClient createCOSClient() {
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // Set the request protocol to `http` or `https`.
-    // For 5.6.53 and earlier versions, HTTPS is recommended.
-    // Starting from 5.6.54, HTTPS is used by default.
+    // For v5.6.53 or earlier, HTTPS is recommended.
+    // For v5.6.54 or later, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
     // The following settings are optional:
@@ -671,8 +683,8 @@ public PutObjectResult putObject(PutObjectRequest putObjectRequest)
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -696,7 +708,7 @@ try {
     e.printStackTrace();
 }
 
-// After confirming that the process no longer uses the COSClient instance, shut it down.
+// After confirming that the process no longer uses the `COSClient` instance, shut it down.
 cosClient.shutdown();
 ```
 
@@ -730,7 +742,7 @@ The `ObjectMetadata` class is used to record the metadata of an object. Its main
 #### Response description
 
 - Success: `PutObjectResult` is returned, including the file `eTag`.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
@@ -765,8 +777,8 @@ public PutObjectResult putObject(PutObjectRequest putObjectRequest)
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -797,7 +809,7 @@ try {
     e.printStackTrace();
 }
 
-// After confirming that the process no longer uses the COSClient instance, shut it down.
+// After confirming that the process no longer uses the `COSClient` instance, shut it down.
 cosClient.shutdown();
 ```
 
@@ -831,7 +843,7 @@ The `ObjectMetadata` class is used to record the metadata of an object. Its main
 #### Response description
 
 - Success: `PutObjectResult` is returned, including the file `eTag`.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
@@ -850,14 +862,14 @@ The `PutObjectResult` class is used to return the result information. Its main m
 COS does not have the concept of directory itself, but you can consider object paths separated with slashes (/) as virtual directories.
 
 >?
-> - If you need a directory, you can upload a file to the desired directory, and the directory will be automatically created. For example, if you upload a file like `/dir/example.txt`, the `/dir` directory will be generated automatically. For more information, see "Uploading local file" on this page.
+> - If you need a directory, you can upload a file to the desired directory, and the directory will be automatically created. For example, if you upload a file like `/dir/example.txt`, the `/dir` directory will be generated automatically. For more information, see "Uploading local file" in this document.
 > 
 
 If you need a directory with no files, you can upload an empty stream to a path ending with a slash (/), and then you will have a virtual directory.
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -885,7 +897,7 @@ try {
     e.printStackTrace();
 }
 
-// After confirming that the process no longer uses the COSClient instance, shut it down.
+// After confirming that the process no longer uses the `COSClient` instance, shut it down.
 cosClient.shutdown();
 ```
 
@@ -903,8 +915,8 @@ public AppendObjectResult appendObject(AppendObjectRequest appendObjectRequest)
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -958,7 +970,7 @@ The members of `AppendObjectRequest` are as described below:
 #### Response description
 
 - Success: `AppendObjectResult`.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
@@ -1109,7 +1121,7 @@ try {
 }
 ```
 
-## Multipart Upload Operations
+## Multipart Operations
 
 When a large file is uploaded, the file is uploaded as a series of parts to address the possible interruptions caused by the long upload time of the large file.
 
@@ -1150,8 +1162,8 @@ public InitiateMultipartUploadResult initiateMultipartUpload(
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
@@ -1193,7 +1205,7 @@ The request members are as described below:
 #### Response description
 
 - Success: `InitiateMultipartUploadResult` is returned, including the `uploadId` that identifies the multipart upload.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Querying multipart uploads
 
@@ -1210,8 +1222,8 @@ public MultipartUploadListing listMultipartUploads(
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
@@ -1268,16 +1280,16 @@ The request members are as described below:
 | prefix | Specifies that the returned object key must be prefixed with this value. Note that when you use a prefix to query object keys, the returned key will contain the same prefix. | String |
 | uploadIdMarker | The `UploadId` after which the listing should begin | String |
 | maxUploads | The maximum number of multipart uploads that can be returned. Value range: 1–1000. | String |
-| encodingType | Encoding type of the returned value. Valid value: url | String |
+| encodingType | Encoding type of the returned value. Valid value: `url`. | String |
 
 #### Response description
 
 - Success: `MultipartUploadListing` is returned, including the information of the ongoing multipart uploads.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Uploading parts
 
-This API is used to upload an object in parts.
+This API (`Upload Part`) is used to upload an object in parts.
 
 #### Method prototype
 
@@ -1288,8 +1300,8 @@ public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest) throws C
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
@@ -1353,7 +1365,7 @@ The request members are as described below:
 #### Response description
 
 - Success: `UploadPartResult` is returned, including the ETags of the uploaded parts.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
@@ -1367,7 +1379,7 @@ The `UploadPartResult` class is used to return the result information. Its main 
 
 ### Querying uploaded parts
 
-This API is used to query the uploaded parts of a multipart upload.
+This API (`List Parts`) is used to query the uploaded parts of a multipart upload.
 
 #### Method prototype
 
@@ -1379,8 +1391,8 @@ public PartListing listParts(ListPartsRequest request)
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
@@ -1425,11 +1437,11 @@ do {
 #### Response description
 
 - Success: `PartListing` is returned, including the ETag and number of each part as well as the starting marker of the next listing.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Completing multipart upload
 
-This API is used to complete a multipart upload.
+This API (`Complete Multipart Upload`) is used to complete the multipart upload of a file.
 
 >? After the multipart upload is completed, the multipart upload job will be deleted, and the `UploadId` will be no longer valid.
 >
@@ -1443,8 +1455,8 @@ public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUp
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
@@ -1485,7 +1497,7 @@ cosClient.shutdown();
 #### Response description
 
 - Success: `CompleteMultipartUploadResult` is returned, including the ETag of the completed object.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Aborting multipart upload
 
@@ -1503,8 +1515,8 @@ public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws Co
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
@@ -1537,4 +1549,4 @@ cosClient.shutdown();
 #### Response description
 
 - Success: No value is returned.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
