@@ -61,14 +61,14 @@ This document describes how to use the data migration feature of DTS to migrate 
 <td>Tags are used to manage resources by category in different dimensions. If the existing tags do not meet your requirements, go to the console to create more.</td></tr>
 <tr>
 <td rowspan=7>Source Database Settings</td>
-<td>Source Database Type</td><td>Select your source database type. In this document, select **SQL Server**.</td></tr>
+<td>Source Database Type</td><td>Select your source database type. In this document, select <b>SQL Server</b>.</td></tr>
 <td>Access Type</td><td>Select a type based on your scenario.
 <ul><li>Public Network: the source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: the source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: the source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
 <li>VPN Access: the source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1037">VPN Connection</a>.</li>
 <li>Database: the source database is a TencentDB database.</li>
-</ul>For a third-party cloud database, you can select **Public Network** generally or select **VPC Access**, **Direct Connect**, or **CCN** based on your actual network conditions. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.</td></tr>
+</ul>For a third-party cloud database, you can select <b>Public Network</b>generally or select <b>VPC Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.</td></tr>
 <tr>
 <td>Region</td><td>The region where the source database resides is the outbound region of the DTS service. Select a region nearest to your self-built database.</td></tr>
 <tr>
@@ -81,9 +81,9 @@ This document describes how to use the data migration feature of DTS to migrate 
 <td>Password</td><td>Password of the source SQL Server database.</td></tr>
 <tr>
 <td rowspan=6>Target Database Settings</td>
-<td>Target Database Type</td><td>Select **SQL Server**.</td></tr>
+<td>Target Database Type</td><td>Select <b>SQL Server</b>.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this document, select **Database**.</td></tr>
+<td>Access Type</td><td>Select a type based on your scenario. In this document, select <b>Database</b>.</td></tr>
 <tr>
 <td>Region</td><td>Select the same region as in the source database settings.</td></tr>
 <tr>
@@ -101,7 +101,7 @@ This document describes how to use the data migration feature of DTS to migrate 
 <td>Select a type based on your scenario.<ul><li>Full migration:the entire database will be migrated.</li><li>Full + incremental migration: the entire database and subsequent incremental data will be migrated. If there are data writes during migration, and you want to smoothly migrate the data in a non-stop manner, select this option.</li></ul></td></tr>
 <tr>
 <td>Specify object</td>
-<td>Only database-level migration is supported; that is, all objects in the specified database must be migrated together. Select the database to be migrated in **Source Database Object** and move it to the **Selected Object** box.</td></tr>
+<td>Only database-level migration is supported; that is, all objects in the specified database must be migrated together. Select the database to be migrated in <b>Source Database Object</b> and move it to the <b>Selected Object</b> box.</td></tr>
 </tbody></table>
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
     If the verification failed, fix the problem as instructed in [Fix for Verification Failure](https://intl.cloud.tencent.com/document/product/571/42552) and initiate the verification task again.
