@@ -59,13 +59,13 @@ db.createUser({
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. In this scenario, select **MongoDB**.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. In this scenario, select <b>MongoDB</b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. In this scenario, select **MongoDB**.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. In this scenario, select <b>MongoDB</b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -73,6 +73,7 @@ db.createUser({
 <td>Specification</td>
 <td>Select the specification of the migration linkage according to your business conditions. For the performance and billing details of different specifications, see <a href="https://intl.cloud.tencent.com/document/product/571/35322">Billing Overview</a>.</td></tr>
 </tbody></table>
+
 3. On the **Set source and target databases** page, configure the task, source database, and target database settings.  
 >?Create a read-only account in the source instance for migration; otherwise, the precheck will fail.
 >
@@ -95,7 +96,7 @@ db.createUser({
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. This scenario takes **Direct Connect** as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>Select a type based on your scenario. This scenario takes <b>Direct Connect</b> as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
@@ -103,7 +104,7 @@ db.createUser({
 <li>Database: The source database is a TencentDB instance.</li>
 <li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li><li>VPC: Both the source and target databases are deployed in Tencent Cloud and have <a hrref="https://intl.cloud.tencent.com/document/product/215">VPCs</a>.</li></ul></td></tr>
 <tr>
-<td>Architecture</td><td>Select the architecture of the source database. This scenario takes **Cluster Migration** as an example.</td></tr>
+<td>Architecture</td><td>Select the architecture of the source database. This scenario takes <b>Cluster Migration</b> as an example.</td></tr>
 <tr>
 <td>VPC-based Direct Connect Gateway</td><td>Only VPC-based direct connect gateway is supported. Confirm the network type associated with the gateway.</tr>
 <tr>
@@ -121,14 +122,14 @@ db.createUser({
 <tr>
 <td>Authentication Mechanism</td><td>Currently, SCRAM-SHA-1 is supported.</td></tr>
 <tr>
-<td>Account & Password Selection</td><td>If the three nodes of mongod, mongos, and config server in the source database have the same account and password, select **Same account & password**; otherwise, select **Different accounts & passwords** and enter their respective accounts and passwords.</td></tr>
+<td>Account & Password Selection</td><td>If the three nodes of mongod, mongos, and config server in the source database have the same account and password, select <b>Same account & password</b>; otherwise, select <b>Different accounts & passwords</b> and enter their respective accounts and passwords.</td></tr>
 <tr>
 <td rowspan=6>Target Database Settings</td>
 <td>Target Database Type</td><td>The target database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>In this scenario, select **Database**.</td></tr>
+<td>Access Type</td><td>In this scenario, select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 <tr>
@@ -158,7 +159,7 @@ db.createUser({
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>If the source database is a TencentDB instance, select **Database**. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>If the source database is a TencentDB instance, select <b>Database</b>. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
@@ -166,7 +167,7 @@ db.createUser({
 <li>Database: The source database is a TencentDB instance.</li>
 <li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li><li>VPC: Both the source and target databases are deployed in Tencent Cloud and have <a hrref="https://intl.cloud.tencent.com/document/product/215">VPCs</a>.</li></ul></td></tr>
 <tr>
-<td>Cross-/Intra-Account</td><td>This parameter needs to be configured when **TencentDB** is selected as the access type. <ul><li>Intra-account: The source and target database instances belong to the same Tencent Cloud root account. </li><li>Cross-account: The source and target database instances belong to different Tencent Cloud root accounts.</li></ul></td></tr>
+<td>Cross-/Intra-Account</td><td>This parameter needs to be configured when <b>TencentDB</b> is selected as the access type. <ul><li>Intra-account: The source and target database instances belong to the same Tencent Cloud root account. </li><li>Cross-account: The source and target database instances belong to different Tencent Cloud root accounts.</li></ul></td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the source database.</td></tr>
 <tr>
@@ -179,7 +180,7 @@ db.createUser({
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>In this scenario, select **Database**.</td></tr>
+<td>Access Type</td><td>In this scenario, select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 <tr>
@@ -204,7 +205,7 @@ db.createUser({
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions. This scenario takes **Public Network** as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>For a third-party cloud database, you can select <b>Public Network</b> generally or select <b>VPN Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions. This scenario takes <b>Public Network</b> as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
@@ -212,7 +213,7 @@ db.createUser({
 <li>Database: The source database is a TencentDB instance.</li>
 <li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li><li>VPC: Both the source and target databases are deployed in Tencent Cloud and have <a hrref="https://intl.cloud.tencent.com/document/product/215">VPCs</a>.</li></ul></td></tr>
 <tr>
-<td>Architecture</td><td>Select the architecture of the source database. This scenario takes **Cluster Migration** as an example.</td></tr>
+<td>Architecture</td><td>Select the architecture of the source database. This scenario takes <b>Cluster Migration</b> as an example.</td></tr>
 <tr>
 <td>Node - mongod</td><td>Enter the IP and port of the mongod node and separate multiple nodes by line breaks, such as `186.3.55.77:6379`.</td></tr>
 <tr>
@@ -226,14 +227,14 @@ db.createUser({
 <tr>
 <td>Authentication Mechanism</td><td>Currently, SCRAM-SHA-1 is supported.</td></tr>
 <tr>
-<td>Account & Password Selection</td><td>If the three nodes of mongod, mongos, and config server in the source database have the same account and password, select **Same account & password**; otherwise, select **Different accounts & passwords** and enter their respective accounts and passwords.</td></tr>
+<td>Account & Password Selection</td><td>If the three nodes of mongod, mongos, and config server in the source database have the same account and password, select <b>Same account & password</b>; otherwise, select <b>Different accounts & passwords</b> and enter their respective accounts and passwords.</td></tr>
 <tr>
 <td rowspan=6>Target Database Settings</td>
 <td>Target Database Type</td><td>The target database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>In this scenario, select **Database**.</td></tr>
+<td>Access Type</td><td>In this scenario, select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 <tr>
@@ -241,6 +242,7 @@ db.createUser({
 <tr>
 <td>Password</td><td>Password of the target database.</td></tr>
 </tbody></table>
+
 4. Test the connectivity between the source and target instances.
 If the connectivity test fails, fix the problem as instructed in [Failed Connectivity Test](https://intl.cloud.tencent.com/document/product/571/47306).
 5. On the **Set migration options and select migration objects** page, set the migration options and migration objects (you can select specified databases and tables).
@@ -255,8 +257,9 @@ If the connectivity test fails, fix the problem as instructed in [Failed Connect
 <li>Specified objects: Migrate specified objects.</li></ul> </td></tr>
 <tr>
 <td>Specified objects</td>
-<td>Select the objects to be migrated in **Source Database Object** and move them to the **Selected Object** box.</td></tr>
+<td>Select the objects to be migrated in <b>Source Database Object</b> and move them to the <b>Selected Object</b> box.</td></tr>
 </tbody></table>
+
 6. On the **Verify task** page, complete the precheck and click **Start Task**.
 If the verification fails, fix the problem as instructed in [Fix for Verification Failure](https://intl.cloud.tencent.com/document/product/571/42552) and initiate the verification task again.
  - Failed: It indicates that a check item fails and the task is blocked. You need to fix the problem and run the verification task again.
