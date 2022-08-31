@@ -26,15 +26,20 @@
 2. 在**数据迁移**页面，选择需要校验的迁移任务，单击任务 ID，进入**任务详情**页。
 ![](https://qcloudimg.tencent-cloud.cn/raw/0af144b0e8cb179934b28c2c45d567e2.png)
 3. 切换页签，单击**数据一致性校验**。
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/976fc2ce2f0374756b923134dda370d9.png" style="zoom:50%;" />
+
 4. 单击**创建数据一致性校验**。
 >?数据一致性校验需要在 DTS 任务步骤进行到**同步增量**时，才可以创建。如果界面按钮呈灰色，则 DTS 任务状态不满足条件，如任务未进行到**同步增量**步骤、任务失败、任务终止。
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/ee3616aae11c9f83adf25c902db03c09.png)
 5. 在弹出的对话框中，单击**确定**。
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/b785c2ca36159ead67d9a72bc9c910e9.png" style="zoom:90%;" />
+
 6. 配置数据一致性校验参数后，单击**启动数据对比**。
 迁移对象可以选择**全部迁移对象**，或者**自定义选择**。
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/33f22832c023c6e5c823482cba5ae8fe.png" style="zoom:90%;" />
 
 ## 查看数据一致性校验结果
