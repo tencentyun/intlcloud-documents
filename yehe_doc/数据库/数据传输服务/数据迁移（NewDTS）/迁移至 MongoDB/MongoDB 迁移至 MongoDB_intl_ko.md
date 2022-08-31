@@ -73,6 +73,7 @@ db.createUser({
 <td>사양</td>
 <td>귀하의 업무 여건에 따라 마이그레이션 연계 사양을 선택합니다. 다양한 사양의 성능 및 결제 세부 정보는 <a href="https://intl.cloud.tencent.com/document/product/571/35322">과금 개요</a>를 참고하십시오.</td></tr>
 </tbody></table>
+
 3. 원본 및 타깃 데이터베이스 설정 페이지에서 작업, 원본 데이터베이스 및 타깃 데이터베이스 설정을 구성합니다.  
 >?마이그레이션을 위해 원본 데이터베이스에 읽기 전용 계정을 만듭니다. 그렇지 않으면 사전 확인에 실패합니다.
 >
@@ -187,6 +188,7 @@ db.createUser({
 <tr>
 <td>비밀번호</td><td>타깃 데이터베이스의 암호입니다.</td></tr>
 </tbody></table>
+
 <b>예시3</b>: ApsaraDB for MongoDB 인스턴스(분할된 클러스터)를 TencentDB 인스턴스로 마이그레이션합니다.
 <table>
 <thead><tr><th width="10%">설정 유형</th><th width="15%">설정 항목</th><th width="75%">설명</th></tr></thead>
@@ -241,6 +243,7 @@ db.createUser({
 <tr>
 <td>비밀번호</td><td>타깃 데이터베이스의 암호입니다.</td></tr>
 </tbody></table>
+
 4. 원본 인스턴스와 객체 인스턴스의 연결성을 테스트합니다.
 연결 테스트가 실패하면 [Failed Connectivity Test](https://intl.cloud.tencent.com/document/product/571/47306)의 안내에 따라 문제를 해결합니다.
 5. 마이그레이션 옵션 설정 및 마이그레이션 객체 페이지에서 마이그레이션 옵션과 마이그레이션 객체를 설정합니다(일부 샤딩 선택 가능).
@@ -257,6 +260,7 @@ db.createUser({
 <td>객체 지정</td>
 <td>원본 데이터베이스 객체에서 마이그레이션할 객체를 선택하고 선택한 객체 상자로 이동합니다.</td></tr>
 </tbody></table>
+
 6. 작업 확인 페이지에서 사전 확인을 완료하고 **작업 시작**을 클릭합니다.
 확인이 실패한 경우 [확인 실패 수정](https://intl.cloud.tencent.com/document/product/571/42552) 설명 대로 문제를 수정하고 확인 작업을 다시 시작합니다.
  - 실패: 확인 항목 실패로 작업이 차단되었음을 나타냅니다. 문제를 수정하고 확인 작업을 다시 실행해야 합니다.
