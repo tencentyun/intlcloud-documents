@@ -18,8 +18,8 @@ SES supports all industry-standard authentication mechanisms, including DomainKe
 3. Go back to the [Sender Domain](https://console.cloud.tencent.com/ses/domain) page and click **Verify**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/305ea2b8c9b3c5f10e0dbbe6135b3666.png)
 4. Record the `Record Value` shown on the pop-up window.[](id:step4)
->?Below is an example. The actual content is as displayed on the corresponding page.
->
+<dx-alert infotype="explain" title="">Below is an example. The actual content is as displayed on the corresponding page.
+</dx-alert>
 ![](https://qcloudimg.tencent-cloud.cn/raw/70bfe55a17122848c7f829c5b4b86653.png)
 5. If your domain is hosted with Tencent Cloud, log in to the [DNSPod console](https://console.cloud.tencent.com/cns) to configure verification information. You can click a sender domain to go to the configuration page.
 <dx-alert infotype="explain" title="">
@@ -42,14 +42,8 @@ If your domain is hosted with another domain service provider, configure it as i
 - For a non-primary domain, for example, `abc.sampledomain.com`, the Host record should be `abc`.
 - If you have multiple email push service providers, you need to include domains of all these service provides in the record value, for example, `v=spf1 include:qcloudmail.com include:domain1.com ~all`, where `domain1.com` represents the domain of another email push service provider. Make sure that there is only one SPF record in your sender domain's DNS configuration.
 </dx-alert>
-  - For DKIM authentication, two records are required:
-    - Host record: `mail._domainkey`
-  Record type: TXT
-  Record value: Your record value.
-<dx-alert infotype="explain" title="">
-For a non-primary domain, for example, `abc.sampledomain.com`, the Host record should be `mail._domainkey.abc`.
-</dx-alert>
-- Host record: `qcloud._domainkey`
+  - DKIM authentication:
+ Host record: `qcloud._domainkey`
     Record type: TXT
   Record value: Your record value.
   <dx-alert infotype="explain" title="">

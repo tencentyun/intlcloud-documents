@@ -18,8 +18,8 @@ SESは、DomainKeys Identified Mail(DKIM)、Sender Policy Framework(SPF)、ド�
 3. [送信ドメイン名](https://console.cloud.tencent.com/ses/domain)の設定ページに戻り、**検証**をクリックします。
 ![](https://qcloudimg.tencent-cloud.cn/raw/305ea2b8c9b3c5f10e0dbbe6135b3666.png)
 4. 画面にポップアップされる「レコード値」の内容を記録します。[](id:step4)
->?下図はサンプルです。実際の画面に表示される内容に従ってください。
->
+<dx-alert infotype="explain" title="">下図はサンプルです。実際の画面に表示される内容に従ってください。
+</dx-alert>
 ![](https://qcloudimg.tencent-cloud.cn/raw/70bfe55a17122848c7f829c5b4b86653.png)
 5. ドメイン名がTencent Cloudでホストされている場合は、[DNS解決DNSPodコンソール](https://console.cloud.tencent.com/cns)に進んで検証情報を設定してください。対応する送信ドメイン名のアドレスをクリックすると、設定詳細ページに進むことができます。
 <dx-alert infotype="explain" title="">
@@ -42,14 +42,8 @@ SESは、DomainKeys Identified Mail(DKIM)、Sender Policy Framework(SPF)、ド�
 - 送信ドメイン名がメインドメイン名ではなく、例えばabc.sampledomain.comの場合、ホストレコードにはabcと入力します。
 - 同時に複数のSESサービスプロバイダを使用している場合は、それらすべてのサービスプロバイダのドメイン名をレコード値の中に含めておく必要があります。例えば、 v=spf1 include:qcloudmail.com include:domain1.com ~allのうち、domain1.comは他のSESサービスプロバイダのドメイン名です。送信ドメイン名のDNS設定に、SPFレコードが1つしかないことを確認してください。
 </dx-alert>
-  - DKIM検証では2つのレコードを入力します。
-    - ホストレコードへの入力：`mail._domainkey`
-  レコードタイプの選択：TXT
-  レコード値にはご自身の「レコード値」を入力します。
-<dx-alert infotype="explain" title="">
-送信ドメイン名がメインドメイン名ではなく、例えばabc.sampledomain.comの場合、ホストレコードにはmail._domainkey.abcと入力します。
-</dx-alert>
-- ホストレコードへの入力：`qcloud._domainkey`
+  - DKIM検証：
+ ホストレコードへの入力：`qcloud._domainkey`
     レコードタイプの選択：TXT
   レコード値にはご自身の「レコード値」を入力します。
   <dx-alert infotype="explain" title="">

@@ -36,7 +36,7 @@ O SES pode ser pré-pago ou pós-pago.
 </escape>
 
 ## Pagamento conforme o uso
-Você será cobrado de acordo com seu uso real no valor de US$ 0.00028 por e-mail. Por padrão, até 300 mil e-mails podem ser enviados por dia. É possível aumentar essa quantidade.
+Você será cobrado de acordo com seu uso real no valor de US$ 0.00028 por e-mail. 
 ## Camada gratuita
 Cada conta da Tencent Cloud tem direito a uma camada gratuita de mil e-mails. Você será cobrado pelos e-mails enviados que ultrapassarem a camada gratuita.
 ## Regras para suspensão de serviço

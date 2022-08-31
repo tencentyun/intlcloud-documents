@@ -36,7 +36,7 @@ SES bisa berupa prabayar atau pascabayar.
 </escape>
 
 ## Bayar sesuai Pemakaian
-Anda akan dikenakan biaya sesuai dengan penggunaan aktual Anda dengan harga 0.00028 USD/email. Hingga 300.000 email dapat dikirim per hari secara default. Jumlah ini dapat ditingkatkan.
+Anda akan dikenakan biaya sesuai dengan penggunaan aktual Anda dengan harga 0.00028 USD/email. 
 ## Tier Gratis
 Setiap akun Tencent Cloud berhak atas tier gratis 1.000 email. Anda akan ditagih untuk email yang dikirim melebihi tier gratis.
 ## Aturan untuk Penangguhan Layanan

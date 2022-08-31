@@ -17,9 +17,10 @@
 </dx-alert>
 3. 返回至 [发信域名](https://console.cloud.tencent.com/ses/domain) 设置页面，单击**验证**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/305ea2b8c9b3c5f10e0dbbe6135b3666.png)
-4. 记录弹出界面中“记录值”的内容。[](id:step4)
->?下图为示例，请以您界面中看到的内容为准。
->
+
+4. 记录弹出界面中“记录值”的内容。[](id:step4)  
+<dx-alert infotype="explain" title="">下图为示例，请以您界面中看到的内容为准。
+</dx-alert>
 ![](https://qcloudimg.tencent-cloud.cn/raw/70bfe55a17122848c7f829c5b4b86653.png)
 5. 如果您的域名托管在腾讯云，请进入  [DNS 解析 DNSPod 控制台](https://console.cloud.tencent.com/cns) 配置验证信息，单击对应的发信域名地址，可进入配置详情页。
 <dx-alert infotype="explain" title="">
@@ -42,14 +43,8 @@
 - 如果发信域名非主域名，例如：abc.sampledomain.com，主机记录中填入：abc
 - 如果您同时使用多个邮件推送服务商，记录值中需要保留多个服务商的域名，例如： v=spf1 include:qcloudmail.com include:domain1.com ~all ，其中 domain1.com 是其他邮件推送服务商的域名。请确保您发信域名的 DNS 配置中只有1条 SPF 记录。
 </dx-alert>
-  - DKIM 验证，填入2条记录：
-    - 主机记录填入：`mail._domainkey`
-  记录类型选择：TXT
-  记录值中填入您的“记录值”。
-<dx-alert infotype="explain" title="">
-如果发信域名非主域名，例如：abc.sampledomain.com，主机记录中填入：mail._domainkey.abc。
-</dx-alert>
-- 主机记录填入：`qcloud._domainkey`
+  - DKIM 验证：
+   主机记录填入：`qcloud._domainkey`
     记录类型选择：TXT
   记录值中填入您的“记录值”。
   <dx-alert infotype="explain" title="">
