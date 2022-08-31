@@ -26,13 +26,17 @@ Currently, check tasks are imperceptible to the DDL operations. If you perform D
 2. On the **Data Migration** page, select a migration task you want to check and click the task ID to enter the **Task Details** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0af144b0e8cb179934b28c2c45d567e2.png)
 3. Switch the tab and click **Data Consistency Check**.
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/976fc2ce2f0374756b923134dda370d9.png" style="zoom:50%;" />
+
 4. Click **Create Data Consistency Check**.
 >?A data consistency check task can be created only when the corresponding DTS task is in the **incremental sync** step. If the button is grayed out, the DTS task status does not meet the requirement; for example, the task has not entered the **incremental sync** step, has failed, or is terminated.
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/ee3616aae11c9f83adf25c902db03c09.png)
 5. In the pop-up window, click **OK**.
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/b785c2ca36159ead67d9a72bc9c910e9.png" style="zoom:90%;" />
+
 6. After configuring the data consistency check parameters, click **Start Data Comparison**.
 You can select **All Migration Objects** or **Custom** for the migration objects.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/33f22832c023c6e5c823482cba5ae8fe.png" style="zoom:90%;" />
