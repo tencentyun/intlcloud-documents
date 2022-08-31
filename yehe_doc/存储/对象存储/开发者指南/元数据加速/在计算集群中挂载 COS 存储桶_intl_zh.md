@@ -106,7 +106,7 @@ S3协议访问方式需要设置如下配置，其他可选项请参见 [Hadoop-
 | fs.cosn.posix_bucket.fs.impl         | org.apache.hadoop.fs.CosNFileSystem |      POSIX 方式访问配置为 com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter S3 协议方式访问配置为 org.apache.hadoop.fs.CosNFileSystem， 默认 POSIX 方式访问。                                        |
 
 
-### 5. 注意事项
+### 4. 注意事项
 1. 不能使用旧的 hadoop cos jar 包访问开启元数据加速的存储桶。
 2. 使用 Hadoop cos ≤ 8.1.5 版本 posix 方式访问已开启元数据加速的存储桶需要在控制台关闭 ranger 校验，8.1.5以上版本可支持在控制台打开 ranger 校验。
 
