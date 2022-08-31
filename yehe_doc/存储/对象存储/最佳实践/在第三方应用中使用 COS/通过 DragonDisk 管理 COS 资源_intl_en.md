@@ -27,7 +27,7 @@ The configuration items are as described below:
  - Access key: Enter the `SecretId`, which can be created and obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
  - Secret key: Enter the `Secretkey`, which can be created and obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
 4. After adding the account information, select the configured username in **Root** to view the list of buckets under the username. At this point, the configuration is completed.
-![](https://qcloudimg.tencent-cloud.cn/raw/95aa5d0160953181856e1531b8e4039b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/aa2cf3f681233d692d58ddcc7f16a833.png)
 
 ## Managing COS File
 
@@ -62,7 +62,7 @@ In the bucket list, select the destination bucket or path, select the object to 
 ### Downloading object
 
 Find the target bucket in the bucket list and drag and drop the object to a folder on the local computer on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/abfa0db54ecfef0e6dd658a964bed0a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/45fcab5119da7ab87d958853e8b6100a.png)
 
 
 ### Copying object
