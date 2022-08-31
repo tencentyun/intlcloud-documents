@@ -106,7 +106,7 @@ S3プロトコルによるアクセス方式は以下の設定が必要です。
 | fs.cosn.posix_bucket.fs.impl         | org.apache.hadoop.fs.CosNFileSystem |      POSIXメソッドのアクセス設定は、com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter S3プロトコルメソッドのアクセス設定は、org.apache.hadoop.fs.CosNFileSystem、デフォルトはPOSIXメソッドでのアクセスです。                                        |
 
 
-### 5. 注意事項
+### 4. 注意事項
 1. 古いhadoop cos jarパッケージを使用してメタデータアクセラレーションのバケットにアクセスすることはできません。
 2. Hadoop cos ≤ 8.1.5バージョンのposix方式を使用してメタデータアクセラレーションのバケットへのアクセスが有効な場合は、コンソールでranger検証を無効にする必要があります。8.1.5以上のバージョンはコンソールでranger検証を有効にすることをサポートしています。
 
