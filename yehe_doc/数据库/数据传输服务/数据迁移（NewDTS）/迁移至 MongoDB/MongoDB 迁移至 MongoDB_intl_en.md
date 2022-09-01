@@ -71,7 +71,7 @@ db.createUser({
 <td>Select the target database region.</td></tr>
 <tr>
 <td>Specification</td>
-<td>Select the specification of the migration linkage according to your business conditions. For the performance and billing details of different specifications, see <a href="https://intl.cloud.tencent.com/document/product/571/35322">Billing Overview</a>.</td></tr>
+<td>Select the specification of the migration linkage according to your business conditions.</td></tr>
 </tbody></table>
 
 3. On the **Set source and target databases** page, configure the task, source database, and target database settings.  
