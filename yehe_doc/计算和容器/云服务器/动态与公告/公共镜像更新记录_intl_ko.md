@@ -43,6 +43,14 @@ OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](h
 		<td>최신 시스템 패치 업데이트.</td>
 	</tr>
 	<tr>
+		<td>CentOS 8.3</td>
+		<td>이미지 ID:
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-5w4qozfr">img-5w4qozfr</a>
+		<br />현재 커널 버전: 4.18.0-348.7.1.el8_5.x86_64</td>
+		<td>2022-04-22</td>
+		<td>이미지 런칭.</td>
+	</tr>
+	<tr>
 		<td>CentOS 8.2</td>
 		<td>이미지 ID:
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&amp;id=img-n7nyt2d7">img-n7nyt2d7</a>
@@ -153,9 +161,9 @@ OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](h
   <tr>
 	<td>Ubuntu 20.04</td>
 	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&amp;id=img-22trbn9x&amp;searchParams=rid%3D1%26tab%3DPUBLIC_IMAGE%26imageType%3DPUBLIC_IMAGE%26page%3D2">img-22trbn9x</a>
-	<br />현재 커널 버전: 5.4.0-109-generic</td>
-	<td>2022-05-06</td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-22trbn9x">img-22trbn9x</a>
+	<br />현재 커널 버전: 5.4.0-121-generic</td>
+	<td>2022-07-12</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
   <tr>

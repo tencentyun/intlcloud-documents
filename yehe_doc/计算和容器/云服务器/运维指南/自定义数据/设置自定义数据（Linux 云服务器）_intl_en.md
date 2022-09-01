@@ -1,79 +1,91 @@
-## Scenario
+## Overview
 
-When creating a CVM, you can configure an instance by specifying **custom data**. During the **first launch** of the CVM, the custom data will be passed into the CVM in text format and be executed. If you purchase multiple CVMs at a time, all CVMs will execute the custom data upon their first launch.
-This article describes how to pass a Shell script when launching a Linux CVM for the first time.
+When creating a CVM instance, you can configure an instance by specifying **custom data**. During the **first launch** of the CVM, the custom data will be passed into the CVM in text format and be executed. If you purchase multiple CVM instances at a time, the custom data text will be executed on all CVM instances during their first launch.
+
+This document describes how to transfer a shell script when a CVM instance for Linux is started for the first time.
 
 ## Notes
 - Linux operating systems that support custom data include:
-	- 64-bit operating system: CentOS 6.8 64-bit or later versions, Ubuntu Server 14.04.1 LTS 64-bit or later versions, and suse42.3x86_64
-	- 32-bit operating system: CentOS 6.8 32-bit or later versions
-- A command can be executed by passing text only when a CVM is launched for the first time.
-- Custom data must be Base64 encoded and then passed. **For a compatible format, encode the custom data in Linux environment.**
-- Execute the custom data as `root`. Therefore, the `sudo` command is not required in the script. The `root` user can access all the files you created. If you need to grant other users with the access permission, modify the permission in the script.
-- During launch, executing custom data tasks will increase the startup time of the CVM. Please wait a few minutes until the tasks are completed, and then test whether the tasks are executed successfully
-* In this example, Shell script must start with `#!` and the path to the interpreter reading the script (usually `/bin/bash`).
+	- 64-bit OSs: CentOS 6.8 and later, Ubuntu Server 14.04.1 LTS and later, and openSUSE 42.3 x86
+	- 32-bit OSs: CentOS 6.8 and later
+- A command can be executed by passing text only when a CVM instance is launched for the first time.
+- The text to be transferred must be Base64-encoded. **Perform encoding in a Linux environment to avoid format incompatibility**.
+- Execute the user input as `root`. Therefore, the `sudo` command is not required in the script. The `root` user can access all the files you created. If you need to grant other users with the access permission, modify the permission in the script.
+- During launch, executing specified tasks in custom data will increase the amount of time it takes to launch the CVM. We recommend that you wait for a few minutes, and after the tasks are completed, test whether the tasks have been successfully executed.
+- In this sample, the shell script must start with `#!` and the path directing to the interpreter of the script to be read (generally starting with `/bin/bash`).
 
 ## Directions
 
-### Writing a Shell script
-1. Run the following command to create a Shell script named “script_text.sh”.
-```
+### Writing a shell script
+1. Run the following command to create a shell script named "script_text.sh".
+```shellsession
 vi script_text.sh
 ```
-2. Press **i** to switch to the editing mode, enter the following and save the “script_text.sh” script.
-```
+2. Press **i** to switch to the editing mode, refer to the following content, write it into the file, and save the "script_text.sh" script.
+```bash
 #!/bin/bash
 echo "Hello Tencent Cloud."
 ```
-> Shell script must start with `#!` and the path to the interpreter reading the script (usually `/bin/bash`). For more information on Shell script, see BASH Programming of the Linux Documentation Project (tldp.org) (http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html).
+<dx-alert infotype="notice" title="">
+The shell script must start with `#!` and the path directing to the interpreter of the script to be read (generally starting with `/bin/bash`). For more information on the shell script, see [BASH Programming - Introduction HOW-TO](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html).
+</dx-alert>
 
-<span id="Base64Script"></span>
-### Encoding the script with Base64
 
-1. Run the following command to encode the “script_text.sh” script with Base64.
-```
-# Base64 encoded script
+
+
+### Base64-encoding the script file[](id:Base64Script)
+
+1. Run the following command to Base64-encode the "script_text.sh" script.
+```shellsession
+# Base64-encode the script
 base64 script_text.sh
 ```
-You will see the following information:
-```
-# Encoded result
+The following information is returned:
+```shellsession
+# Result returned after the encoding
 IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==
 ```
-2. Run the following command to verify the Base64 encoded result of the script.
-```
-# Decode the returned result with Base64 and verify whether it is the command to be executed.
+2. Run the following command to verify the result returned after the script is Base64-encoded.
+```shellsession
+# Base64-decode the returned result to verify the command
 echo "IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==" | base64 -d
 ```
 
-### Passing the text
+### Passing text
 
-You can launch an instance through multiple methods, and here we introduce two of them. Choose a method according to your requirements:
+We provide multiple methods to launch an instance, and here we introduce two of them. Choose a method according to your requirements:
 <dx-tabs>
 ::: Using the official website or the console[](id:Consoletrans)
-
-1. Refer to [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855) to purchase an instance, and click **Advanced Settings** in “2. Complete Configuration”, as shown below:
+1. Purchase an instance as instructed in [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855) and click **Advanced Settings** in "2. Complete configuration".
 ![](https://main.qcloudimg.com/raw/28baf2764488ecfaf5bbac791cec7ea3.png)
-2. In **Advanced Settings**, enter the returned result of [Base64 encoded script](#Base64Script) in the Custom Data text box, as shown below:
-For example, the Base64 encoded result of the `script_text` script is `IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==`.
+2. In the text box in **Advanced Settings**, enter the encoded result returned in the [Base64-encoded script](#Base64Script).
+For example, the encoded result of the `script_text` script with Base64 is `IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==`.
 ![](https://main.qcloudimg.com/raw/0b6b594f174568ca7d3312821c0571ed.png)
-3. Create an CVM instance as prompted by the page.
-<dx-alert infotype="explain" title="">	
-Tencent Cloud CVM executes the script using the open-source software cloud-init. For more information about cloud-init, see [cloud-init's official website](https://cloud-init.io/).
+3. Follow the prompts on the interface to complete CVM creation.
+<dx-alert infotype="explain" title="">
+CVM will run the script through the open-source software cloud-init. For more information on cloud-init, visit the [cloud-init website](https://cloud-init.io/).
 </dx-alert>
-	
+
+
 :::
 ::: Using API[](id:APItrans)
-
-When creating a CVM by using API, you can pass the text by assigning the value of the encoded result returned in [Base64 encoded script](#Base64Script) to the UserData parameter of the RunInstances API.
-The following is a sample CVM creation request with UserData:
+When creating a CVM instance through APIs, you can pass the text by assigning the value of the encoded result returned in the [Base64-encoded script](#Base64Script) to the `UserData` parameter of the `RunInstances` API.
+The following is an sample CVM creation request with UserData:
 ```
 https://cvm.tencentcloudapi.com/?Action=RunInstances
   &Version=2017-03-12
   &Placement.Zone=ap-guangzhou-2
   &ImageId=img-pmqg1cw7
   &UserData=IyEvYmluL2Jhc2gKZWNobyAiSGVsbG8gVGVuY2VudCBDbG91ZC4iCg==
-  &<Common request parameters>
+  &<Common Request Parameters>
 ```
+
 :::
 </dx-tabs>
+
+### Viewing execution logs
+After the CVM instance is created successfully, you can run the following command to view the script execution log:
+```shellsession
+cat /var/log/cloud-init-output.log
+```
+

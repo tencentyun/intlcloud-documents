@@ -27,9 +27,16 @@
 6. 在弹出的提示框中，单击**确定**。
 7. 按照界面提示，配置实例信息并完成实例创建。
 地域和镜像信息已自动填充，请根据需要配置其他实例信息，详细信息请参见 [通过云服务器购买页创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
-> 如果您选择的自定义镜像中包含一个或多个数据盘快照，系统会自动根据这些快照创建相同数量的云硬盘作为数据盘，每个云硬盘容量与对应的快照相同。您可以增加云硬盘容量，但不能缩小。
->
+<dx-alert infotype="explain" title="">
+如果您选择的自定义镜像中包含一个或多个数据盘快照，系统会自动根据这些快照创建相同数量的云硬盘作为数据盘，每个云硬盘容量与对应的快照相同。您可以增加云硬盘容量，但不能缩小。
+</dx-alert>
+
+
 
 ## 相关文档
+您还可通过调用 [创建实例 RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) API 接口，使用自定义镜像创建实例。
 
-您还可以使用 RunInstances 接口创建自定义镜像。详细信息请参见 [创建实例 API 文档](https://intl.cloud.tencent.com/document/product/213/33237)。
+
+<dx-alert infotype="explain" title="">
+若您使用整机镜像创建实例，则请先调用 [查看镜像列表 DescribeImages](https://intl.cloud.tencent.com/document/product/213/33272) 接口获取与镜像关联的快照 ID，并在调用创建实例 RunInstances 接口时，传入快照 ID 参数。否则将会导致创建的云硬盘和对应的快照 ID 无法匹配，快照数据无法回滚，数据盘上无数据且无法正常挂载。
+</dx-alert>

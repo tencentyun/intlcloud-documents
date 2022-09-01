@@ -43,6 +43,14 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<td>最新のシステムパッチを更新します。</td>
 	</tr>
 	<tr>
+		<td>CentOS 8.3</td>
+		<td>イメージID：
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-5w4qozfr">img-5w4qozfr</a>
+		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
+		<td>2022-04-22</td>
+		<td>イメージがリリースされました。</td>
+	</tr>
+	<tr>
 		<td>CentOS 8.2</td>
 		<td>イメージID：
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&amp;id=img-n7nyt2d7">img-n7nyt2d7</a>
@@ -153,9 +161,9 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
   <tr>
 	<td>Ubuntu 20.04</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&amp;id=img-22trbn9x&amp;searchParams=rid%3D1%26tab%3DPUBLIC_IMAGE%26imageType%3DPUBLIC_IMAGE%26page%3D2">img-22trbn9x</a>
-	<br />現在のカーネルバージョン：5.4.0-109-generic</td>
-	<td>2022-05-06</td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-22trbn9x">img-22trbn9x</a>
+	<br />現在のカーネルバージョン：5.4.0-121-generic</td>
+	<td>2022-07-12</td>
 	<td>最新のシステムパッチを更新します。</td>
   </tr>
   <tr>

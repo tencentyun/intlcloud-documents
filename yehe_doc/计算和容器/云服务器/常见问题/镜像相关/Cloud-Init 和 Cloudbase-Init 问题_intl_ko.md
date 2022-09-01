@@ -9,30 +9,30 @@ Tencent Cloud의 모든 Linux 공용 이미지에 Cloud-Init 서비스가 사전
 
 #### Cloud-Init 서비스 실행 문제 해결 방법[](id:checkcloud-init)
 
-[표준 로그인 방법을 사용하여 Linux 인스턴스에 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/5436)을 참고하여 인스턴스에 로그인하고 다음 명령어를 차례대로 실행한 후 오류 여부를 모니터링합니다. 실행 결과가 나타나면 서비스가 정상적으로 작동됨을 의미하고, 반대의 경우 오류 원인을 보고합니다. 보고된 내용에 따라 문제를 해결하시기 바랍니다.
+[Linux 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/5436)을 참고하여 인스턴스에 로그인하고 다음 명령어를 차례대로 실행한 후 오류 여부를 모니터링합니다. 실행 결과가 나타나면 서비스가 정상적으로 작동됨을 의미하고, 반대의 경우 오류 원인을 보고합니다. 보고된 내용에 따라 문제를 해결하시기 바랍니다.
 <dx-alert infotype="explain" title="">
 이 단계는 Linux 공용 이미지를 사용하여 생성된 CVM 인스턴스에만 적용됩니다. Cloud-Init을 직접 설치하셨다면, 실제 상황에 맞게 실행 명령어를 조정하시기 바랍니다.
 </dx-alert>
 
 
 1. cloud-init 캐시 디렉터리를 삭제합니다.
-```
+```shellsession
 rm -rf /var/lib/cloud
 ```
 2. 완전한 cloud-init 초기화를 실행합니다.
-```
+```shellsession
 /usr/bin/cloud-init init --local
 ```
 3. 설정된 데이터 소스에 따라 데이터를 가져옵니다.
-```
+```shellsession
 /usr/bin/cloud-init init
 ```
 4. Cloud-Init 초기화는 여러 개의 stage로 나뉘며, 각 stage의 종속이 완전하도록 cloud-init modules가 config stage를 지정하여 실행합니다.
-```
+```shellsession
 /usr/bin/cloud-init modules --mode=config
 ```
 5. cloud-init modules가 final stage를 지정하여 실행합니다.
-```
+```shellsession
 /usr/bin/cloud-init modules --mode=final
 ```
 
@@ -50,7 +50,7 @@ Tencent Cloud는 Cloud-Init를 통해 인스턴스의 모든 초기화 작업을
   <tr>
 	<td>hostname의 초기화</td>
 	<td>인스턴스 
-	<b>최초 실행</b>시, Cloud-Init는  
+	<b>최초 시작</b>시, Cloud-Init는  
 	<code>vendor_data.json</code> 중의 hostname 정보에 근거하여 인스턴스의 hostname을 설정합니다.</td>
 	<td>
 	사용자 정의 이미지를 사용해 인스턴스를 생성 또는 재설치할 때, 해당 이미지 내부의 hostname 사용자 정의 
@@ -112,7 +112,7 @@ Tencent Cloud는 Cloud-Init를 통해 인스턴스의 모든 초기화 작업을
   <tr>
 	<td>NTP 초기화</td>
 	<td>인스턴스 
-	<b>최초 시작</b>시, Cloud-Init는  
+	<b>최초 시작</b> 시, Cloud-Init는  
 	<code>vendor_data.json</code> 중의 NTP Server 정보에 근거하여 인스턴스의 NTP 서버 구성을 설정하고 NTP 
 	Service를 가져옵니다.</td>
 	<td>사용자가 사용자 정의 이미지를 사용해 인스턴스를 생성 또는 재설치할 때, 사용자가 사용자 정의 이미지 내부 NTP 
@@ -124,7 +124,7 @@ Tencent Cloud는 Cloud-Init를 통해 인스턴스의 모든 초기화 작업을
   <tr>
 	<td>비밀번호 초기화</td>
 	<td>인스턴스 
-	<b>최초 실행</b>시, Cloud-Init는  
+	<b>최초 시작</b>시, Cloud-Init는  
 	<code>vendor_data.json</code> 중의 chpasswd 정보에 근거하여 인스턴스의 기본 계정 비밀번호를 설정합니다.</td>
 	<td>
 	사용자가 사용자 정의 이미지를 사용해 인스턴스를 생성 또는 재설치할 때, 사용자가 사용자 정의 이미지 내부 사용자 정의의 기본 계정 비밀번호를 유지하려면 사용자 정의 이미지 생성 전 	
@@ -147,7 +147,7 @@ Tencent Cloud는 Cloud-Init를 통해 인스턴스의 모든 초기화 작업을
   <tr>
 	<td>네트워크 초기화(비 DHCP 시나리오)</td>
 	<td>인스턴스 
-	<b>최초 시작</b>시, Cloud-Init는  
+	<b>최초 시작</b> 시, Cloud-Init는  
 	<code>network_data.json</code> 중의 정보에 근거하여 인스턴스의 IP, GATEWAY, MASK 등을 설정합니다.</td>
 	<td>
 	사용자가 사용자 정의 이미지를 사용해 인스턴스를 생성 또는 재설치할 때, 사용자가 사용자 정의 이미지 내부 사용자 정의의 네트워크 정보를 유지하려면 사용자 정의 이미지 생성 전 	
@@ -194,6 +194,7 @@ Cloud-Init 설치 시, Python 인터프리터는 기본으로 Python2(즉 `/usr/
 ### Cloudbase-Init란 무엇인가요?
 Cloud-Init와 유사한 Cloudbase-Init는 Windows CVM 인스턴스와 통신하는 통로입니다. 인스턴스 최초 실행 시 Cloudbase-Init 서비스가 실행되며, 해당 서비스는 인스턴스의 초기화 설정 정보를 읽고 인스턴스에 대한 초기화 작업을 진행합니다. 또한 이후의 비밀번호 설정, IP 수정 등의 기능 모두 Cloudbase-Init를 통해 구현할 수 있습니다.
 
+
 ### Windows 인스턴스 내부의 Cloudbase-Init 서비스의 정상적인 작동 여부는 어떻게 확인하나요?
 
 
@@ -215,6 +216,11 @@ Cloud-Init와 유사한 Cloudbase-Init는 Windows CVM 인스턴스와 통신하�
 ![](https://main.qcloudimg.com/raw/16106e540d8cf4ef39e5dccb44251350.png)
  - CD-ROM의 로딩이 비활성화되었는지 확인합니다. 아래의 그림과 같이 CD 드라이버 장치를 볼 수 있으면 정상적으로 로딩됨을 의미하고, 반대의 경우 비활성화를 의미하므로 비활성화를 취소해야 합니다.
 ![](https://main.qcloudimg.com/raw/7707e694b475ba4d70b4d1d52a6c98bb.png)
+
+### Cloudbase-Init 실행 로그를 보는 방법은 무엇입니까?
+운영 체제에 따라 다음 로그 파일을 볼 수 있습니다:
+- Linux 시스템: `/var/log/cloud-init-output.log`
+- Windows 시스템: `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloudbase-init.log`
 
 ### Cloudbase-Init의 일반적인 문제는 어떻게 해결하나요?
 #### 비밀번호 초기화 및 재설정 실패

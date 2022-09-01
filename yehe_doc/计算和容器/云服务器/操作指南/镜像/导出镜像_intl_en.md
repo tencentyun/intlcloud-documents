@@ -1,38 +1,80 @@
 ## Overview
 Tencent Cloud allows you to export created custom images to [COS](https://intl.cloud.tencent.com/document/product/436/6222) buckets.
 
-## Prerequisites
-- [Submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to activate this feature.
-- Activate the COS service in the [COS console](https://console.cloud.tencent.com/cos).
-- Create a bucket in the same region as of the custom image to export. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+## Preparations
+- Currently, before using the feature, you need to [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to apply for it.
+- You have activated the COS service in the [COS console](https://console.cloud.tencent.com/cos).
+- You have created a bucket for the region where the custom image to export resides. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
 
 
-## Limits
-- Windows custom images cannot be exported.
+## Notes
+- Currently, Windows custom images cannot be exported.
 - For a custom image, the capacity of a system disk or data disk cannot be greater than 500 GB.
 - When the image of an entire CVM instance is exported, the CVM instance cannot contain more than 5 data disks.
 
 
 ## Billing Description[](id:feeDescription)
 If you use other services such as COS when using CVM, fees will be calculated according to the billing rules of the actually used services.
-- Fees involved for exporting images to COS buckets:
- - **[Storage usage fee](https://intl.cloud.tencent.com/document/product/436/40099)**: Storing images in COS buckets will incur a storage usage fee, which is calculated according to the object size, storage class and region.
- - **[Request fee](https://intl.cloud.tencent.com/document/product/436/40100)**: Exporting images to COS buckets will incur a write request fee, which is calculated according to the number of write requests.
- - **[Traffic fee](https://intl.cloud.tencent.com/document/product/436/33776)**: Exporting images to COS buckets will generate upstream traffic. Upstream traffic over both the public and private networks are free of charge.
-- Fees involved for downloading images from COS buckets
- - **[Request fee](https://intl.cloud.tencent.com/document/product/436/40100)**: Downloading images from COS buckets will incur a write request fee, which is calculated according to the number of write requests.
- - **[Traffic fees](https://intl.cloud.tencent.com/document/product/436/33776)**: Downloading images from COS buckets will generate downstream traffic. COS will calculate the traffic volume. Downstream traffic over the private network is free of charge, but that over the public network is charged.
+- The fees are as described below:
+<table>
+<tr>
+<th width="19%">Scenario</th>
+<th>Billed</th>
+<th width="12%">Document</th>
+</tr>
+<tr>
+<td rowspan=3>Exporting an image to a COS bucket</td>
+<td><b>Storage usage fees</b>. Storing an image in a COS bucket will incur storage usage fees. COS will calculate the object size and charge fees based on the storage type and region of the target object.
+</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40099">Storage Usage Fees</a></td>
+</tr>
+<tr>
+<td><b>Request fees</b>. Exporting an image to a COS bucket will incur write request fees. COS will calculate the number of write requests and charge fees accordingly.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40100">Request Fees</a></td>
+</tr>
+<tr>
+<td><b>Traffic fees</b>. Exporting an image to a COS bucket will generate upstream traffic. COS will calculate the traffic volume. Private network upstream traffic and public network upstream traffic are free of charge.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/33776">Traffic Fees</a></td>
+</tr>
+<tr>
+<td rowspan=2>Downloading an image from a COS bucket</td>
+<td><b>Request fees</b>. Downloading an image from a COS bucket will incur write request fees. COS will calculate the number of write requests and charge fees accordingly.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40100">Request Fees</a></td>
+</tr>
+<tr>
+<td><b>Traffic fees</b>. Downloading an image from a COS bucket will generate downstream traffic. COS will calculate the traffic volume. Private network downstream traffic is free of charge, while public network downstream traffic is not.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/33776">Traffic Fees</a></td>
+</tr>
+</table>
 
 ## Directions
-1. Log in to the CVM console and select **[Images](https://console.cloud.tencent.com/cvm/image)** on the left sidebar.
+1. Log in to the CVM console and select **[Image](https://console.cloud.tencent.com/cvm/image)** on the left sidebar.
 2. In the upper part of the **Images** page, select the region where the custom image to export resides and click the **Custom Image** tab.
-3. Find the target image and select **More** > **Export image**.
+3. Locate the image to export and choose **More** > **Export Image**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/67a493d7ae96d92b514f5c124619821c.png)
-4. In the **Export image** pop-up window, set parameters as follows:
+4. In the **Export image** pop-up window, set the parameters as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/4cf1d41610772605ac5867be12353b5a.png)
- - **COS Bucket**: Select the bucket to store the image. Note that the bucket and the image must be in the same region.
- - **Prefix of the files to export**: Customize the prefix of the file to export.
- Select **Agree to authorize CVM to access my COS bucket**.
+ - **COS Bucket**: Select the bucket where the image to export resides. Make sure that the bucket is in the same region as the image to export.
+ - **Export File Prefix**: Customize the prefix of the file to export.
+ Select to **agree to authorize CVM to access my COS bucket**.
 5. Click **OK** to start exporting the image.
 6. In the pop-up window, click **OK**.
-The export duration depends on the size of the image file and the length of the export task queue. Once exported, the image file is stored in the destination bucket with the name similar to `Custom prefix_xvda.raw`. To check the image, go to the [Bucket List](https://console.cloud.tencent.com/cos/bucket) page, and click the ID of the destination bucket to go to the bucket details page. 
+The export duration depends on the size of the image file and the length of the export task queue. After the export task is completed, the image file will be stored in the destination bucket. You can go to the **[Bucket List](https://console.cloud.tencent.com/cos/bucket)** page and click the ID of the destination bucket to go to the bucket details page. On the bucket details page, the image file just exported is displayed as `Custom prefix_xvda.raw`.
+
+
+## FAQs
+#### 1. How is the public network downstream traffic in COS generated and billed?
+
+Public network downstream traffic is the traffic generated by data transfer from COS to the client over the internet. Traffic generated by downloading an object directly through an object link or by browsing an object at a static website endpoint is public network downstream traffic. For billing details, see [Cloud Object Storage](https://www.tencentcloud.com/document/product/436/40096) and [Pricing | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos).
+
+#### 2. Will downloading files through the COS console, tools, API, or SDK incur public network downstream traffic fees?
+
+The traffic (private or public network traffic) generated by accessing COS is subject to the use case, and only access to COS from a Tencent Cloud product in the same region will be over the private network by default with no public network downstream traffic fees incurred. For more information on how to identify private network access, see [Overview](https://intl.cloud.tencent.com/document/product/436/30613).
+
+#### 3. What is public network traffic in COS?
+
+Public network downstream traffic is the traffic generated by data transfer from COS to the client over the internet. Downloading a file stored in COS in the COS console, accessing or downloading an object through a tool, object address, or custom domain name, and previewing an object in a browser will generate public network downstream traffic. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30613).
+
+#### 4. Will accessing COS over the private network incur fees?
+
+Accessing COS over the private network will incur **storage usage fees** and **request fees** but not **traffic fees**. For billing details, see [Cloud Object Storage](https://www.tencentcloud.com/document/product/436/40096).

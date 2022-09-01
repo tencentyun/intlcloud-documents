@@ -1,28 +1,50 @@
-Tencent Cloud allows users to purchase CVMs either from the console or via API. This document describes these two purchase methods in detail.
+Tencent Cloud allows users to purchase CVM instances either from the console or via API. This document describes these two purchase methods in detail.
 
-## Purchasing from the console
+## Purchasing an Instance at the Official Website
 
-All users can purchase CVMs on [Tencent Cloud Console](http://manage.qcloud.com/shoppingcart/shop.php?tab=cvm). Based on different billing methods, you can purchase two types of CVMs: pay-as-you-go instance (billing is accurate to seconds and settled on an hourly basis) and spot instance (billing is accurate to seconds and settled on an hourly basis). For more information, see [Pricing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
-Below describes how to purchase these two types of CVMs from the console.
+All users can purchase CVM instances on the [Tencent Cloud CVM purchase page](http://manage.qcloud.com/shoppingcart/shop.php?tab=cvm). There are two types of CVM instances available: pay-as-you-go instance (billed by second and settled hourly) and spot instance (billed by second and settled hourly). For billing details, see [Billing Plans](https://intl.cloud.tencent.com/document/product/213/2180).
+The following describes how to purchase these two types of CVM instances at the official website.
 
-> 
->- For detailed prices, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176), [Price Overview of CBS](https://intl.cloud.tencent.com/document/product/213/2255) and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578) to purchase CVMs based on your actual needs.
->- For more purchase instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998).
 
 ### Pay-as-you-go
- 
-1. Log in to the [CVM purchase page](http://manage.qcloud.com/shoppingcart/shop.php?tab=cvm).
-2. Under **Custom Configuration**, select **Pay as you go** as **Billing Mode** when selecting a model.
-3. Select region, availability zone, network type, instance and other configuration information as needed and prompted by the page.
-4. After confirming the order, you can pay with credit card and other methods.
-5. The CVM is enabled immediately after the payment is completed. The IP address will be displayed in 10 minutes, and you can log in to the CVM to manage it.
 
->
->- After activating the pay-as-you-go CVM, make sure that your account has sufficient balance. Overdue CVMs may be repossessed by Tencent Cloud.
->- For more information, see [Overdue Payment](https://intl.cloud.tencent.com/document/product/213/2181).
->- For detailed prices, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176), [Price Overview of CBS](https://intl.cloud.tencent.com/document/product/213/2255) and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578) to purchase CVMs based on your actual needs.
->- For more purchase instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998).
+1. Log in to the [Tencent Cloud CVM purchase page](http://manage.qcloud.com/shoppingcart/shop.php?tab=cvm).
+2. Select **Pay-as-you-go** for **Billing mode**.
+3. Select the region, availability zone, network type, instance and other configuration information.
+4. After confirming the order, make the payment with your account balance or online banking.
+5. The CVM instance is activated immediately after the payment is made. The IP address will be displayed in 1–5 minutes, and you can log in to the CVM instance to manage it.
 
-## Purchasing via API
-For more information on how to purchase a CVM via API, see [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) API documentation.
+
+
+<dx-alert infotype="notice" title="">
+- After activating the pay-as-you-go CVM instance, make sure that your account balance is sufficient. An insufficient balance may cause overdue payments or even instance repossession. For more information, see [Payment Overdue](https://intl.cloud.tencent.com/document/product/213/2181).
+- You can purchase CVM instances as needed by referring to [Billing Overview](https://intl.cloud.tencent.com/document/product/213/2176), [Pricing List](https://intl.cloud.tencent.com/document/product/213/2255), and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578).
+- For more purchase instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998).
+</dx-alert>
+
+
+
+
+
+### Spot instance
+
+1. Log in to the [Tencent Cloud CVM purchase page](http://manage.qcloud.com/shoppingcart/shop.php?tab=cvm).
+2. Select **Spot instance** for **Billing mode**.
+3. Select the region, availability zone, network type, instance and other configuration information.
+4. After confirming the order, make the payment with your account balance or online banking.
+5. The CVM instance is activated immediately after the payment is made. The IP address will be displayed in 1–5 minutes, and you can log in to the CVM instance to manage it.
+
+
+
+<dx-alert infotype="notice" title="">
+- After activating the CVM spot instance, make sure that your account balance is sufficient. An insufficient balance may cause overdue payments or even instance repossession.
+- You can purchase CVM instances as needed by referring to [Billing Overview](https://intl.cloud.tencent.com/document/product/213/2176), [Pricing List](https://intl.cloud.tencent.com/document/product/213/2255), and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578).
+- For more purchase instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998).
+</dx-alert>
+
+
+
+
+## Purchasing Instances via an API
+You can purchase a CVM instance through an API as instructed in [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237).
 

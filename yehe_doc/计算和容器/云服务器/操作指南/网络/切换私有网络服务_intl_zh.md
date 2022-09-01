@@ -5,10 +5,10 @@
  - **基础网络切换私有网络**：腾讯云提供单台云服务器和批量云服务器的基础网络切换至私有网络服务。
  - **私有网络 A 切换私有网络 B**：腾讯云提供单台云服务器和批量云服务器的私有网络 A 切换至私有网络 B 服务。
 - 设置自定义 IP
-- 自主选择保留 HostName 能力
+- 自主选择保留实例原内网 IP 及 HostName 能力
 
 ## 前提条件
-迁移前，请自行解绑内外网 CLB 以及弹性网卡，并释放主网卡的辅助 IP，迁移后再进行绑定。
+迁移前，请自行解绑内外网 CLB 以及所有辅助网卡，并释放主网卡的辅助 IP，迁移后再进行绑定。
 
 
 ## 操作步骤
@@ -39,35 +39,32 @@
 2. 在“实例”页面，为目标实例切换私有网络。
 <dx-tabs>
 ::: 列表视图
-
-#### 切换单个实例私有网络
+ - **切换单个实例私有网络**
 选择待切换网络的目标实例，在右侧操作栏，选择**更多** > **资源调整** > **切换私有网络**。如下图所示：
-	![](https://main.qcloudimg.com/raw/e688912e2ad9ea46ce7027f17e1a8045.png)
-
-
-#### 切换批量实例私有网络
+![](https://main.qcloudimg.com/raw/e688912e2ad9ea46ce7027f17e1a8045.png)
+ - **切换批量实例私有网络**
 如需将目标实例批量切换私有网络，可勾选待切换网络的实例，在实例列表上方，选择**更多操作** > **资源调整** > **切换私有网络**。如下图所示：
 <dx-alert infotype="notice" title="">
 批量云服务器切换网络类型时，所选中的云服务器必须处于同一可用区。
-</dx-alert>
-<img src="https://main.qcloudimg.com/raw/b15f3e4e6c212ff496d38c3753c9a4da.png"/>
+</dx-alert> <img src="https://main.qcloudimg.com/raw/b15f3e4e6c212ff496d38c3753c9a4da.png"/>
+
 :::
 ::: 页签视图
 选择待切换网络的目标实例页签，选择右上角的**更多操作** > **资源调整** > **切换私有网络**。如下图所示：
-![](https://main.qcloudimg.com/raw/e688912e2ad9ea46ce7027f17e1a8045.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8bc05f6667b7fe673bd19d77f9e26082.png)
 :::
 </dx-tabs>
 
 3. 在弹出的“切换私有网络”窗口中，确认注意事项，单击**下一步**。
 4. 选择私有网络以及相应子网，单击**下一步**。
 ![](https://main.qcloudimg.com/raw/acaca8c4343d8e5357bd33b75f1f5f68.png)
-5. 根据实际需求，在所选子网下设置预分配 IP 地址，并设置 HostName 选项，单击**下一步**。
-<dx-alert infotype="explain" title="">
-- 若未填写“预分配IP地址”，系统将自动分配。
-- 设置 HostName 选项时，您可以选择切换私有网络的同时重置实例 HostName，也可以选择保留实例原有 HostName。
-</dx-alert>
-<img src="https://main.qcloudimg.com/raw/c3908fef18c46a5f88aebfca2204f5c0.png"/>
-6. 根据关机提示进行操作，并单击**开始迁移**，在控制台页面实例修改状态为“修改实例vpc属性”。如下图所示：
+5. 根据实际需求，在所选子网下设置内网 IP 地址及HostName 选项。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/5a95f5ddfc02b56ec59bba7870ea9d78.png)
+主要参数如下：
+  - **预分配IP地址**：若不保留实例原内网 IP，则可填写“预分配IP地址”。若不填写，系统将自动分配。
+  - **是否保留实例原内网IP**：您可按需选择是否保留实例原始内网 IP 地址。
+  - **HostName选项**：您可按需选择是否保留实例原有 HostName。 
+6. 单击**下一步**，根据关机提示进行操作，单击**开始迁移**，在控制台页面实例修改状态为“修改实例vpc属性”。如下图所示：
 <dx-alert infotype="notice" title="">
 - 迁移过程中，主机实例需要进行重启，请勿进行其他操作。
 - 迁移后，请注意检查实例运行状态，内网访问以及远程登录是否正常。

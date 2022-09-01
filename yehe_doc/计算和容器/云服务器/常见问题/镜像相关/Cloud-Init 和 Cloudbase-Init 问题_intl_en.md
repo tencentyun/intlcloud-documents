@@ -1,4 +1,4 @@
-## Cloud-init
+## cloud-init
 
 ### What is cloud-init?
 Cloud-init is an open source tool that runs inside a CVM instance as a non-resident service. It is executed at startup and exits immediately after execution. It does not listen to any ports.
@@ -16,23 +16,23 @@ This step only applies to CVM instances created with public Linux images. If you
 
 
 1. Delete the cloud-init cache directory.
-```
+```shellsession
 rm -rf /var/lib/cloud
 ```
 2. Perform complete cloud-init initialization.
-```
+```shellsession
 /usr/bin/cloud-init init --local
 ```
 3. Pull data from the configured data source.
-```
+```shellsession
 /usr/bin/cloud-init init
 ```
 4. Cloud-init initialization involves multiple stages. To ensure sufficient dependency between the stages, config stage is specified for the cloud-init modules.
-```
+```shellsession
 /usr/bin/cloud-init modules --mode=config
 ```
 5. Specify final stage for the cloud-init modules.
-```
+```shellsession
 /usr/bin/cloud-init modules --mode=final
 ```
 
@@ -97,8 +97,6 @@ Tencent Cloud implements all instance initialization operations through cloud-in
 </table>
 
 
-
-
 ### How can I fix issues related to cloud-init? 
 
 #### 1. Error due to the unmounting of the cloud-init dependencies
@@ -134,27 +132,33 @@ Do not use symbolic links. Point directly to a specific interpreter.
 ### What is Cloudbase-Init?
 Like cloud-init, Cloudbase-Init is a bridge by which you can communicate with Windows CVM instances. The Cloudbase-Init service is run when an instance boots up for the first time. The service will read the initialization configuration information of the instance and initialize it. Following operations such as resetting password and modifying IP addresses are also done via Cloudbase-Init.
 
+
 ### How do I check whether the Cloudbase-Init service inside a Windows instance is working properly?
 
 
 #### Troubleshooting cloudbase-init service errors[](id:checkcloudbase-init)
 1. Log in to the instance.
 <dx-alert infotype="explain" title="">
-If you forget your password or fail to reset your password because of Cloudbase-Init service exceptions, you can reset your password by following [step 2](#step02). 
+If you forget your password or fail to reset your password because of cloudbase-init service exceptions, you can reset your password by the following [step 2](#step02). 
 </dx-alert>
 2. [](id:step02)Open **Control panel** > **Administrative tools** > **Services**.
 3. Find the cloudbase-init service, right-click it, and go to **Properties**.
- - Check "Startup type" and make sure it is set to "Automatic". See the figure below.
+ - Check **Startup type** and make sure it is set to **Automatic**.
 ![](https://main.qcloudimg.com/raw/310a278dd2eaf2124d0d52055e0b5b6f.png)
- - View "Logon identity" and ensure that "Local System account" is selected. See the figure below.
+ - View **Log on as** to ensure that **Local System account** is selected.
 ![](https://main.qcloudimg.com/raw/5a3f623aaf44d55cfe2eaa6aeadb4c12.png)
  - Manually start the Cloudbase-Init service and see if any error is returned.
 If any error is returned, you need to fix the issue first and check whether you have installed any security software which may stop Cloudbase-Init from performing related operations. 
 ![](https://main.qcloudimg.com/raw/dbbe8f9fc05b07d8011705d9d217b76c.png)
- - Open the registry, find all "LocalScriptsPlugin", and make sure its value is 2. See the figure below.
+ - Open the registry, find all "LocalScriptsPlugin", and make sure that its value is `2`.
 ![](https://main.qcloudimg.com/raw/16106e540d8cf4ef39e5dccb44251350.png)
- - Check whether CD-ROM loading is disabled. If there is an optical disc drive as shown in the figure below, it means that the loading has not been disabled; otherwise, it means that it has been disabled and needs to be enabled.
+ - Check whether CD-ROM loading is disabled. If there is a CD drive, it means that the loading has not been disabled; otherwise, it has been disabled and needs to be enabled.
 ![](https://main.qcloudimg.com/raw/7707e694b475ba4d70b4d1d52a6c98bb.png)
+
+### How do I view cloudbase-init execution logs?
+You can view the log files for different operating systems:
+- Linux: `/var/log/cloud-init-output.log`
+- Windows: `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\cloudbase-init.log`
 
 ### How do I fix common issues related to Cloudbase-Init?
 #### Failed to reset password during initialization
