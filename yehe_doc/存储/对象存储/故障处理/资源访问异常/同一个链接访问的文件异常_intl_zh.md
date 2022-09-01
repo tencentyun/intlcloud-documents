@@ -13,7 +13,7 @@
 
 ### 检查 CDN 缓存是否过期
 
-参考 [如何判断用户访问是否命中 CDN Cache？](https://intl.cloud.tencent.com/document/product/228/11207) 文档，判断 CDN 缓存是否过期。
+参考 [CDN 缓存配置](https://intl.cloud.tencent.com/document/product/228/11203) 常见问题文档，判断 CDN 缓存是否过期。
  - 是，请 [检查浏览器是否禁用本地缓存](#DisableCaching)。
  - 否，请参考 [缓存刷新](https://intl.cloud.tencent.com/document/product/228/6299) 文档，刷新 CDN URL 或 CDN 目录。
 
@@ -33,7 +33,5 @@
 ### 检查访问的文件是否被劫持
 
 当您访问的资源内容和预期的不一致时（例如，文件的 content-length 不一样，响应的 header 不一致等），即表示被劫持。建议您使用 HTTPS 协议访问该文件。
-
-
 
 

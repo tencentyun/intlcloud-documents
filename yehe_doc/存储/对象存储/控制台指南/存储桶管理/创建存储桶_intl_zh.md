@@ -20,10 +20,10 @@
 >? 该设置项为可选，您可按需进行设置。
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/f8acbd14ecadbbdf0445f567f5853898.png)
-	- **版本控制**：开启后，上传的同名对象将保存历史版本。
+    - **版本控制**：开启后，上传的同名对象将保存历史版本。
 	- **日志存储**：为您记录跟存储桶操作相关的各种请求日志。
-	- **存储桶标签**：存储桶标签作为管理存储桶的一个标识，您可以为存储桶设置标签，便于分组管理存储桶，详情请参见 [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)。
-	- **服务端加密**：目前存储桶的加密方式支持 SSE-COS 加密（即由 COS 托管密钥的服务端加密）。关于服务端加密的介绍，请参见 [服务端加密概述](https://intl.cloud.tencent.com/document/product/436/18145)。
+  	- **存储桶标签**：存储桶标签作为管理存储桶的一个标识，您可以为存储桶设置标签，便于分组管理存储桶，详情请参见 [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)。
+  	- **服务端加密**：目前存储桶的加密方式支持 SSE-COS 加密（即由 COS 托管密钥的服务端加密）。关于服务端加密的介绍，请参见 [服务端加密概述](https://intl.cloud.tencent.com/document/product/436/18145)。
  3. 确认配置
 ![](https://qcloudimg.tencent-cloud.cn/raw/20e65888c7a948dfe5ce67402df5167b.png)
 对存储桶的配置信息进行确认。如需修改，单击**上一步**即可。

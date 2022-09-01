@@ -2,7 +2,7 @@ COS offers the INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARC
 
 > !
 >
-> - If you did not specify the storage class when uploading an object, it will be uploaded to **STANDARD** by default.
+> - If you don't specify the storage class for an object upon upload, it will be uploaded to **STANDARD** by default.
 
 
 ## ARCHIVE
@@ -16,7 +16,7 @@ COS supports the following three restoration modes for ARCHIVE:
 - Bulk: Restores objects within 5-12 hours.                      
 
 > ? 
-> - For more information about object restoration, see [Restoring Archived Objects](https://intl.cloud.tencent.com/document/product/436/30961).
+> - For more information on object restoration, see [Restoring Archived Objects](https://intl.cloud.tencent.com/document/product/436/30961).
 > - The QPS for restoration requests is limited to 100.
 
 **Use cases**
@@ -27,7 +27,7 @@ Use cases that require long-term data retention, such as archival data, medical 
 
 ## DEEP ARCHIVE
 
-COS DEEP ARCHIVE is a highly reliable object storage service that offers the lowest storage costs and long-term data retention. This storage class has a minimum storage duration of 180 days. To read data stored in DEEP ARCHIVE, you need to restore it to STANDARD first. For more information, see [Overview - DEEP ARCHIVE](https://intl.cloud.tencent.com/document/product/436/38304).
+COS DEEP ARCHIVE is a highly reliable object storage service that offers the lowest storage costs and long-term data retention. This storage class has a minimum storage duration of 180 days. To read data stored in DEEP ARCHIVE, you need to restore it to STANDARD first. For more information, see [DEEP ARCHIVE Overview](https://intl.cloud.tencent.com/document/product/436/38304).
 
 COS supports the following two restoration modes for DEEP ARCHIVE:
 
@@ -45,7 +45,7 @@ Use cases that require long-term data retention, such as medical images, view da
 ## Storage Class Comparison
 
 | Metric          | INTELLIGENT<br>TIERING                                        | STANDARD           | STANDARD_IA                     | ARCHIVE                                                     | DEEP ARCHIVE                                                 |
-| ---------------- | ------------------------ | ------------------------ | ---------------- | ------------------------------------------------------- | ------------------ | 
+| ---------------- | ------------------------ | ------------------------ | ---------------- | ------------------------------------------------------- | ------------------ |
 | Durability       |     99.9999999<br>99%                                       | 99.9999999<br>99%  | 99.9999999<br>99%            | 99.9999999<br>99%                                            | 99.9999999<br>99%                                            |
 | Availability        |  99.99%                                                  | 99.95%             | 99.9%                        | 99.9%                                                        | 99.9%                                                        |
 | Response             | Milliseconds                                   | Milliseconds             | Milliseconds                       | Requires restoration in advance using one of these three restoration modes:<br><li>Expedited: Restores an object within 1-5 minutes.<br><li>Standard: Restores an object within 3-5 hours.<br><li>Bulk: Restores multiple objects within 5-12 hours. | Requires restoration in advance using either of these restoration modes:<br><li>Standard: Restores an object within 12-24 hours.<br><li>Bulk: Restores multiple objects within 24-48 hours.</li> |

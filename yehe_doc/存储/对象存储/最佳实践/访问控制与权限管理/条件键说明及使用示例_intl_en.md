@@ -1,4 +1,4 @@
-When using access policies to grant permissions, you can specify policy conditions to restrict user access sources and the storage classes of uploaded files as instructed in [Access Policy Language > Overview](https://intl.cloud.tencent.com/document/product/436/18023).
+When using access policies to grant permissions, you can specify policy conditions to restrict user access sources and the storage classes of uploaded files as instructed in [Overview](https://intl.cloud.tencent.com/document/product/436/18023).
 
 This document provides common examples of using COS condition keys in bucket policies. You can view all the condition keys supported by COS and applicable requests in [Conditions](https://intl.cloud.tencent.com/document/product/436/46205).
 
@@ -427,7 +427,7 @@ You can use the `cos:content-type` condition key to restrict the `Content-Type` 
 
 #### Sample 1: Restricting the `Content-Type` of `PutObject` requests to "image/jpeg"
 
-Assume that the root account with UIN 100000000001 that owns the `examplebucket-1250000000` bucket uses the `cos:content-length` condition key to restrict the content of the `Content-Type` header in upload requests initiated by the sub-account with UIN 100000000002.
+Assume that the root account with UIN 100000000001 that owns the `examplebucket-1250000000` bucket uses the `cos:content-type` condition key to restrict the content of the `Content-Type` header in upload requests initiated by the sub-account with UIN 100000000002.
 
 The bucket policy in this example is to require that object upload requests (`PutObject`) carry the `Content-Type` header with the value `image/jpeg`.
 

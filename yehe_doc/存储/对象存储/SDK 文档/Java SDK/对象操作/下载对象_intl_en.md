@@ -4,9 +4,9 @@ This document provides an overview of APIs and SDK code samples for downloading 
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading object | Downloads object. |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
 
-## Advanced API (Recommended)
+## Advanced APIs (Recommended)
 
 The advanced API allows you to pause, resume (via checkpoint restart), or cancel a download task.
 
@@ -21,7 +21,7 @@ Before using the advanced API, you must create a TransferManager instance first.
 // Create a TransferManager instance, which is used to call the advanced API later.
 TransferManager createTransferManager() {
     // Create a COSClient client, which is the basic instance for accessing the COS service.
-    // For the detailed code, see **Simple Operations** -> **Creating COSClient instance** on this page.
+    // For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
     COSClient cosClient = createCOSClient();
 
     // Set the thread pool size. We recommend you set the size of your thread pool to 16 or 32 to maximize network resource utilization, provided your client and COS networks are sufficient (for example, uploading a file to a COS bucket from a CVM instance in the same region).
@@ -39,12 +39,12 @@ TransferManager createTransferManager() {
 
 The `TransferManagerConfiguration` class is used to record the configuration information of the advanced API. Its main members are as described below:
 
-| Member Name | Configuration Method | Description | Type |
+| Member | Configuration Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
-| minimumUploadPartSize | `set` method | Part size of the multipart upload in bytes. Default value: 5 MB. | long |
-| multipartUploadThreshold | `set` method | If a file is greater than or equal to this value in bytes, it will be uploaded in concurrent parts. Default value: 5 MB. | long |
-| multipartCopyThreshold | `set` method | If a file is greater than or equal to this value in bytes, it will be replicated in concurrent parts. Default value: 5 GB. | long |
-| multipartCopyPartSize | `set` method | Part size in bytes for multipart replication. Default value: 100 MB. | long |
+| minimumUploadPartSize | Set method | Part size of the multipart upload in bytes. Default value: 5 MB. | long |
+| multipartUploadThreshold | Set method | If a file is greater than or equal to this value in bytes, it will be uploaded in concurrent parts. Default value: 5 MB. | long |
+| multipartCopyThreshold | Set method | If a file is greater than or equal to this value in bytes, it will be copied in concurrent parts. Default value: 5 GB. | long |
+| multipartCopyPartSize | Set method | Part size in bytes for multipart copy. Default value: 100 MB. | long |
 
 ### Shutting down TransferManager instance
 
@@ -72,7 +72,7 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** -> **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -85,7 +85,7 @@ File downloadFile = new File(localFilePath);
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 try {
-    // Return an async result `Download`. You can synchronously call `waitForCompletion` to wait for the download to complete. If the download is successful, `void` will be returned; otherwise, an exception will be thrown.
+    // Return an async result `Download`. You can synchronously call `waitForCompletion` to wait for the download to complete. If the download is successful, `void` will be returned; otherwise, an exception will be reported.
     Download download = transferManager.download(getObjectRequest, downloadFile);
     download.waitForCompletion();
 } catch (CosServiceException e) {
@@ -97,7 +97,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** -> **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -120,7 +120,7 @@ The request members are as described below:
 #### Returned values
 
 - Success: `Download` is returned. You can query whether the download is complete, or wait for the download to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Downloading object via checkpoint restart
 
@@ -142,7 +142,7 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** -> **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -155,7 +155,7 @@ File downloadFile = new File(localFilePath);
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 try {
-    // Return an async result `Download`. You can synchronously call `waitForCompletion` to wait for the download to complete. If the download is successful, `void` will be returned; otherwise, an exception will be thrown.
+    // Return an async result `Download`. You can synchronously call `waitForCompletion` to wait for the download to complete. If the download is successful, `void` will be returned; otherwise, an exception will be reported.
     Download download = transferManager.download(getObjectRequest, downloadFile, true);
     download.waitForCompletion();
 } catch (CosServiceException e) {
@@ -167,7 +167,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** -> **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -194,7 +194,7 @@ The request members are as described below:
 #### Returned values
 
 - Success: `Download` is returned. You can query whether the download is complete, or wait for the download to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Displaying download progress
 
@@ -211,10 +211,9 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 ```java
 // You can adjust the following sample code as needed to form your own code.
 void showTransferProgress(Transfer transfer) {
-    // Here, `Transfer` is the parent class of the async upload result `Upload`.
     System.out.println(transfer.getDescription());
 
-    // Use `transfer.isDone()` to check whether the upload is complete.
+    // Use `transfer.isDone()` to check whether the download is complete.
     while (transfer.isDone() == false) {
         try {
             // Get the progress every two seconds.
@@ -235,11 +234,11 @@ void showTransferProgress(Transfer transfer) {
 }
 ```
 
-The sample code combined with the file upload operation is as follows:
+The sample code combined with the file download operation is as follows:
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** -> **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -252,9 +251,9 @@ File downloadFile = new File(localFilePath);
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 try {
-    // Return an async result `Download`. You can synchronously call `waitForCompletion` to wait for the download to complete. If the download is successful, `void` will be returned; otherwise, an exception will be thrown.
+    // Return an async result `Download`. You can synchronously call `waitForCompletion` to wait for the download to complete. If the download is successful, `void` will be returned; otherwise, an exception will be reported.
     Download download = transferManager.download(getObjectRequest, downloadFile);
-    // Print the upload progress until the upload is complete.
+    // Print the download progress until the download is complete.
     showTransferProgress(download);
     // Capture possible exceptions.
     download.waitForCompletion();
@@ -267,19 +266,19 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** -> **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
 #### Progress acquisition description
 
-You can use the `getProgress` method of the `Upload` class to get the `TransferProgress` class, which has the following three methods to get the upload progress:
+You can use the `getProgress` method of the `download` class to get the `TransferProgress` class, which has the following three methods to get the download progress:
 
 | Method | Description | Type |
-| ----------------------- | ------------------ | -----   |
-| getBytesTransferred     | Gets the number of uploaded bytes.  | long   |
+| ----------------------- |-------------| -----   |
+| getBytesTransferred     | Gets the number of downloaded bytes.  | long   |
 | getTotalBytesToTransfer | Gets the total number of bytes of the file. | long   |
-| getPercentTransferred   | Gets the percentage of the number of uploaded bytes.  | double |
+| getPercentTransferred   | Gets the percentage of the number of downloaded bytes.  | double |
 
 #### Parameter description
 
@@ -300,7 +299,7 @@ The request members are as described below:
 #### Returned values
 
 - Success: `Download` is returned. You can query whether the download is complete, or wait for the download to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Pausing, resuming, or canceling download
 
@@ -316,7 +315,7 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** -> **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -329,14 +328,14 @@ File downloadFile = new File(localFilePath);
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 
 try {
-    // Return an async result `copy`. You can synchronously call `waitForCompletion` to wait for the download to complete. If the download is successful, `void` is returned; otherwise, an exception will be thrown.
+    // Return an async result `copy`. You can synchronously call `waitForCompletion` to wait for the download to complete. If the download is successful, `void` will be returned; otherwise, an exception will be reported.
     Download download = transferManager.download(getObjectRequest, downloadFile);
     // Wait three seconds for part of the file to be downloaded.
     Thread.sleep(3000L);
     // Pause the download and get a `PersistableUpload` instance for resuming the download later.
     PersistableDownload persistableDownload = download.pause();
     // Complex pausing and resuming:
-    // `PersistableDownload` instance can be used to serialize the file content and store it and then deserialize it to resume the upload.
+    // `PersistableDownload` instance can be used to serialize the file content and store it and then deserialize it to resume the download.
     // persistableDownload.serialize(out);
     // Resume download.
     download = transferManager.resumeDownload(persistableDownload);
@@ -354,7 +353,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** -> **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -377,7 +376,7 @@ The request members are as described below:
 #### Returned values
 
 - Success: `Download` is returned. You can query whether the download is complete, or wait for the download to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Downloading directory
 
@@ -394,7 +393,7 @@ public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefi
 
 ```java
 // Before using the advanced API, you must make sure that the process contains a TransferManager instance; if not, then create one.
-// For the detailed code, see **Advanced API** -> **Creating TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Creating TransferManager instance** in this document.
 TransferManager transferManager = createTransferManager();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
@@ -424,7 +423,7 @@ try {
 }
 
 // After confirming that the process no longer uses the TransferManager instance, shut it down.
-// For the detailed code, see **Advanced API** -> **Shutting down TransferManager instance** on this page.
+// For the detailed code, see **Advanced API** > **Shutting down TransferManager instance** in this document.
 shutdownTransferManager(transferManager);
 ```
 
@@ -432,27 +431,27 @@ shutdownTransferManager(transferManager);
 
 | Parameter | Description | Type |
 | ------------------------- | -------------------- | ---------------- |
-| bucketName                | Name of the bucket in COS. | GetObjectRequest |
+| bucketName                | Name of the bucket in COS | GetObjectRequest |
 | keyPrefix                 | Prefix of the objects in COS.  | String           |
 | destinationDirectory      | Absolute path of the destination directory. | File             |
 
 #### Returned values
 
 - Success: `MultipleFileUpload` is returned. You can query whether the download is complete, or wait for the download to complete.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ## Simple Operations
 
 Requests for simple operations need to be initiated through `COSClient` instances. You need to create a `COSClient` instance before performing simple operations.
 
-`COSClient` instances are concurrency safe. We recommend you create only one COSClient instance for a process and then shut it down when it is no longer used to initiate requests.
+`COSClient` instances are concurrency safe. We recommend you create only one `COSClient` instance for a process and then shut it down when it is no longer used to initiate requests.
 
 ### Creating COSClient instance
 
-Before calling the COS API, you must create a COSClient instance first.
+Before calling the COS API, first create a `COSClient` instance.
 
 ```java
-// Create a COSClient instance, which is used to initiate requests later.
+// Create a `COSClient` instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Set the user identity information.
     // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SECRETID` and `SECRETKEY` of your project.
@@ -464,12 +463,12 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // Set the request protocol to `http` or `https`.
-    // For 5.6.53 and earlier versions, HTTPS is recommended.
-    // Starting from 5.6.54, HTTPS is used by default.
+    // For v5.6.53 or earlier, HTTPS is recommended.
+    // For v5.6.54 or later, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
     // The following settings are optional:
@@ -490,12 +489,12 @@ COSClient createCOSClient() {
 
 ### Creating COSClient instance with temporary key
 
-If you want to request COS with a temporary key, you need to create a COSClient instance with the temporary key.
+If you want to request COS with a temporary key, you need to create a `COSClient` instance with the temporary key.
 This SDK does not generate temporary keys. For directions on how to generate a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ```java
 
-// Create a COSClient instance, which is used to initiate requests later.
+// Create a `COSClient` instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Here, the temporary key information is needed.
     // For directions on how to generate a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
@@ -509,12 +508,12 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // Set the request protocol to `http` or `https`.
-    // For 5.6.53 and earlier versions, HTTPS is recommended.
-    // Starting from 5.6.54, HTTPS is used by default.
+    // For v5.6.53 or earlier, HTTPS is recommended.
+    // For v5.6.54 or later, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
     // The following settings are optional:
@@ -550,8 +549,8 @@ public COSObject getObject(GetObjectRequest getObjectRequest)
 #### Sample request
 
 ```java
-// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
-// For the detailed code, see **Simple Operations** -> **Creating COSClient instance** on this page.
+// Before using the COS API, make sure that the process contains a `COSClient` instance; if not, create one.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** in this document.
 COSClient cosClient = createCOSClient();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
@@ -586,7 +585,7 @@ try {
 }
 
 // Do not shut down the COSClient instance before the stream processing is completed.
-// After confirming that the process no longer uses the COSClient instance, shut it down.
+// After confirming that the process no longer uses the `COSClient` instance, shut it down.
 cosClient.shutdown();
 ```
 
@@ -610,13 +609,13 @@ The request members are as described below:
 #### Response description
 
 - Success: The `COSObject` class is returned, including the input stream and object attributes.
-- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameter description
 
 The `COSObject` class is used to return request results. Its main members are as described below:
 
-| Member Name | Description | Type |
+| Member | Description | Type |
 | --------------- | --------------------------------------------------- | ------------------- |
 | bucketName |  Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 | key | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, its key is `doc/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |

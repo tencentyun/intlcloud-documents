@@ -17,14 +17,14 @@ This tool allows you to view the data migration progress, check file consistency
 
 ### MSP
 
-MSP is a platform that integrates multiple migration tools and provides visual UIs to help you monitor and manage large-scale data migration jobs with ease. The File Migration Tool on it enables you to migrate data from various public clouds or data origins to COS.
+MSP is a platform that integrates multiple migration tools and provides visual UIs to help you monitor and manage large-scale data migration tasks with ease. The File Migration Tool on it enables you to migrate data from various public clouds or data origins to COS.
 
 The steps are as follows:
 
 1. Log in to the [MSP console](https://console.cloud.tencent.com/msp).
 2. Click **Object Storage Migration** on the left sidebar.
-3. Click **Create Job** to create a job and configure the job as needed.
-4. Start the job.
+3. Click **Create Task** to create a task and configure it as needed.
+4. Start the task.
 
 For more information, see the following documents:
 
@@ -38,7 +38,7 @@ For more information, see the following documents:
 
 #### Tips
 
-During data migration, how fast the data source can be read depends on the network connection, and selecting a higher QPS concurrency value during file migration job creation helps speed up the migration.
+During data migration, how fast the data source can be read depends on the network connection, and selecting a higher QPS concurrency value during file migration task creation helps speed up the migration.
 
 <span id=cos>
 

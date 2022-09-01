@@ -21,7 +21,7 @@
 >? 
 > - For the definitions of parameters such as `SecretId`, `SecretKey`, and `Bucket`, see [Introduction](https://intl.cloud.tencent.com/document/product/436/7751).
 > - If you use cross-platform frameworks such as uni-app and encounter problems when packaging the iOS or Android app, use the iOS SDK or Android SDK instead.
-> - SDKs on versions earlier than v1.2.0 support the `XCosSecurityToken` field only. For later SDKs, use `SecurityToken` instead.
+> - SDKs on versions earlier than 1.2.0 support the `XCosSecurityToken` field only. For later SDKs, use `SecurityToken` instead.
 > 
 
 
@@ -72,6 +72,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 var cos = new COS({
     // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of allowed domain names to be configured. The region domain name will be used for requests.
     getAuthorization: function (options, callback) {
+        // It will not be called during initialization and will be entered only when a COS method such as `cos.putObject` is called.
         // Get a temporary key asynchronously.
         wx.request({
             url: 'https://example.com/server/sts.php',
@@ -87,7 +88,7 @@ var cos = new COS({
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
-                    // For SDKs on versions earlier than v1.2.0, use `XCosSecurityToken` instead of `SecurityToken`.
+                    // For SDKs on versions earlier than 1.2.0, use `XCosSecurityToken` instead of `SecurityToken`.
                     SecurityToken: credentials.sessionToken,
                     // We recommend you use the server time as the signature start time, so as to avoid signature errors due to time deviations.
                     StartTime: data.startTime, // Timestamp in seconds, such as 1580000000.
@@ -104,7 +105,7 @@ var cos = new COS({
 
 ### Configuration items
 
-#### Samples
+#### Sample code
 
 Create a COS SDK instance in the following ways:
 
@@ -129,9 +130,9 @@ var cos = new COS({
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
-                    // For SDKs on versions earlier than v1.2.0, use `XCosSecurityToken` instead of `SecurityToken`.
+                    // For SDKs on versions earlier than 1.2.0, use `XCosSecurityToken` instead of `SecurityToken`.
                     SecurityToken: credentials.sessionToken,
-                    // We recommend that you use the server time as the signature start time to avoid signature errors caused by time deviations.
+                    // We recommend you use the server time as the signature start time, so as to avoid signature errors due to time deviations.
                     StartTime: data.startTime, // Timestamp in seconds, such as 1580000000.
                     ExpiredTime: data.expiredTime, // Timestamp in seconds, such as 1580000900.
                 });
@@ -160,7 +161,7 @@ var cos = new COS({
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
-                    // For SDKs on versions earlier than v1.2.0, use `XCosSecurityToken` instead of `SecurityToken`.
+                    // For SDKs on versions earlier than 1.2.0, use `XCosSecurityToken` instead of `SecurityToken`.
                     SecurityToken: credentials.sessionToken,
                     // We recommend you use the server time as the signature start time, so as to avoid signature errors due to time deviations.
                     StartTime: data.startTime, // Timestamp in seconds, such as 1580000000.
@@ -176,13 +177,13 @@ var cos = new COS({
 >? For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 >
 
-- Option3 (not recommended): The frontend needs to get a signature through `getAuthorization` before each request, and the backend uses a permanent or temporary key to calculate the signature and returns it to the frontend. This option makes it difficult to control permissions for multipart upload and thus is not recommended.
+- Option 3 (not recommended): The frontend needs to get a signature through `getAuthorization` before each request, and the backend uses a permanent or temporary key to calculate the signature and returns it to the frontend. This option makes it difficult to control permissions for multipart upload and thus is not recommended.
 
 ```js
 var cos = new COS({
     // Required parameter
     getAuthorization: function (options, callback) {
-        // The server obtains a signature. For more information, see the COS SDK for the corresponding programming language at https://cloud.tencent.com/document/product/436/6474.
+        // The server obtains a signature. For more information, see the COS SDK for the corresponding programming language at https://intl.cloud.tencent.com/document/product/436/6474.
         // Note: There may be a security risk associated with this option. The backend needs to strictly control permissions through `method` and `pathname`, such as prohibiting `put /`.
         wx.request({
             url: 'https://example.com/server/auth.php',
@@ -192,7 +193,7 @@ var cos = new COS({
                 if (!data || !data.authorization) return console.error('authorization invalid');
                 callback({
                     Authorization: data.authorization,
-                    // For SDKs on versions earlier than v1.2.0, use `XCosSecurityToken` instead of `SecurityToken`.
+                    // For SDKs on versions earlier than 1.2.0, use `XCosSecurityToken` instead of `SecurityToken`.
                     // SecurityToken: data.sessionToken, // If a temporary key is used, `sessionToken` needs to be passed to `SecurityToken`.
                 });
             }
@@ -217,8 +218,8 @@ var cos = new COS({
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
 | SecretId | Your `SecretId`. | String | No |
 | SecretKey | Your `SecretKey`. We recommend you only use it for frontend debugging and avoid disclosing it. | String | No |
-| FileParallelLimit | Number of concurrent file uploads in the same instance. Default value: 3. | Number | No |
-| ChunkParallelLimit | Number of concurrent part uploads for the same uploaded file. Default value: 3. | Number | No |
+| FileParallelLimit | Number of concurrent file uploads in the same instance. Default value: `3`. | Number | No |
+| ChunkParallelLimit | Number of concurrent part uploads for the same uploaded file. Default value: `3`. | Number | No |
 | ChunkRetryTimes | Number of retries upon multipart upload/copy failure. Default value: `2` (a request will be made three times in total, including the initial one). | Number | No |
 | ChunkSize | Part size in the multipart upload in bytes. Default value: `1048576` (1 MB). | Number | No |
 | SliceSize | When files are uploaded in batches through `uploadFiles`, if the file size is greater than the value of this parameter, multipart upload (sliceUploadFile) will be used; otherwise, simple upload (putObject) will be used. Default value: `1048576` (1 MB). | Number | No |
@@ -229,11 +230,12 @@ var cos = new COS({
 | Protocol | The protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` will be used when the current page is determined to be in `http:`; otherwise, `https:` will be used. | String | No |
 | ServiceDomain | The request domain name when the `getService` method is called, such as `service.cos.myqcloud.com`. | String | No |
 | Domain | The custom request domain name used to call an API to manipulate a bucket or object. A template can be used, such as `"{Bucket}.cos.{Region}.myqcloud.com"`, which will use the bucket and region passed in the parameters for replacement when an API is called. | String | No |
-| UploadQueueSize | The maximum size of the upload queue. Excess tasks will be cleared if their status is not `waiting`, `checking`, or `uploading`. Default value: `10000`. | Number | No |
+| UploadQueueSize | The maximum size of the upload queue. Excessive tasks will be cleared if their status is not `waiting`, `checking`, or `uploading`. Default value: `10000`. | Number | No |
 | ForcePathStyle | Whether to forcibly use a suffix when sending requests. The suffixed bucket will be placed in the pathname after the domain name, and the bucket will be added to the signature pathname for calculation. Default value: `false`. | Boolean | No |
 | UploadCheckContentMd5  | Whether to forcibly verify `Content-MD5` for file uploads, which will calculate the MD5 checksum of the file request body and place it in the `Content-MD5` field of the header. Default value: `false`. | Boolean | No |
 | getAuthorization | The callback method for getting the signature. If there is no `SecretId` or `SecretKey`, this parameter will be required. <br>**Note: This callback method is passed in during instance initialization and is only executed to obtain the signature when the instance calls APIs.** | Function | No |
 | UseAccelerate          | Whether to enable a global acceleration endpoint. Default value: `false`. If you set the value to `true`, you need to enable global acceleration for the bucket. For more information, see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406). | Boolean | No   |
+| SimpleUploadMethod     | The name of the method for simply uploading small files during advanced upload and batch upload. Valid values: `postObject`, `putObject`. Default value: `postObject`. This parameter is supported starting from v1.3.0. | String | No |
 
 #### getAuthorization callback function description (format 1)
 
@@ -256,7 +258,7 @@ After the temporary key is obtained, the callback will return an object. The par
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
 | TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | Yes |
-| SecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header. Use `XCosSecurityToken` instead of `SecurityToken` for SDKs on versions earlier than v1.2.0. | String | Yes |
+| SecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header. Use `XCosSecurityToken` instead of `SecurityToken` for SDKs on versions earlier than 1.2.0. | String | Yes |
 | StartTime | The timestamp in seconds when the key is obtained, such as `1580000000`. Passing in this parameter as the signature start time can avoid signature expiration issues due to time deviation on the frontend. | String | No   |
 | ExpiredTime | `expiredTime` of the obtained temporary key in seconds, i.e., the timeout timestamp, such as 1580000900. | String | Yes |
 
@@ -285,7 +287,7 @@ Format 2: An object with the following parameters:
 | Parameter | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | Authorization     | Calculated signature string                                         | String | Yes   |
-| SecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header. Use `XCosSecurityToken` instead of `SecurityToken` for SDKs on versions earlier than v1.2.0. | String | No |
+| SecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header. Use `XCosSecurityToken` instead of `SecurityToken` for SDKs on versions earlier than 1.2.0. | String | No |
 
 #### Getting authentication credential
 
@@ -294,6 +296,21 @@ There are three ways to get the authentication credentials for your instance by 
 1. During instantiation, pass in your `SecretId` and `SecretKey`. Each time a signature is required, it will be internally calculated by the instance.
 2. During instantiation, pass in the `getAuthorization` callback function. Each time a signature is required, it will be calculated and returned to the instance through this callback.
 3. During instantiation, pass in the `getSTS` callback. Each time a temporary key is required, it will be returned to the instance for signature calculation within the instance during each request.
+
+### Enabling DataInsight
+
+We have introduced [DataInsight](https://beacon.tencent.com/) into the SDK to track and optimize the SDK quality for a better user experience.
+>? DataInsight only monitors the COS request performance but doesn't report the business data.
+>
+
+To enable this feature, make sure that the SDK version is 1.4.0 or later and specify `EnableTracker` as `true` during initialization.
+Then, add the following to the valid request domain name allowlist of the mini program: `https://h.trace.qq.com;https://oth.str.beacon.qq.com;https://otheve.beacon.qq.com;`.
+
+```js
+new COS({
+  EnableTracker: true,
+})
+```
 
 ### Tips
 

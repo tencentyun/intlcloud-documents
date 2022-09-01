@@ -168,7 +168,7 @@
    </tr>
    <tr>
       <td>监控与告警</td>
-      <td>COS 的读写请求量、流量等数据是基于 <a href="https://intl.cloud.tencent.com/document/product/248">云监控</a> 来进行统计和展示的。用户可以在云监控的 <a href="https://console.cloud.tencent.com/monitor/product/COS">控制台</a> 查看到 COS 的读写请求量、流量等详细的监控数据，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/31649">监控与告警</a>。</td>
+      <td>COS 的读写请求量、流量等数据是基于 <a href="https://www.tencentcloud.com/document/product/248">云监控</a> 来进行统计和展示的。用户可以在云监控的 <a href="https://console.cloud.tencent.com/monitor/product/COS">控制台</a> 查看到 COS 的读写请求量、流量等详细的监控数据，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/31649">监控与告警</a>。</td>
    </tr>
    <tr>
       <td>查看数据概览</td>
@@ -189,27 +189,19 @@
    </tr>
    <tr>
       <td nowrap="nowrap">图片处理</td>
-      <td>COS 集成了数据万象（Cloud Infinite，CI）专业的一体化媒体解决方案，涵盖图片处理、审核、识别等功能。您可以通过 COS 的上传和处理接口来进行媒体数据的处理操作，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/35280">图片处理概述</a>；此外还支持图片高级压缩和盲水印功能，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/40115">图片高级压缩概述</a> 和 盲水印概述。</td>
+      <td>COS 集成了数据万象（Cloud Infinite，CI）专业的一体化媒体解决方案，涵盖图片处理、审核、识别等功能。您可以通过 COS 的上传和处理接口来进行媒体数据的处理操作，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/35280">图片处理概述</a>；此外还支持图片高级压缩和盲水印功能，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/40115">图片高级压缩概述</a> 和 <a href="https://intl.cloud.tencent.com/document/product/436/46325">盲水印概述</a>。</td>
    </tr>
    <tr>
       <td>文档预览</td>
-      <td>文档预览服务基于腾讯云数据万象，开启之后，存储桶中的文档类型文件即可在线预览无需下载，解决文档内容的页面展示问题，详情请参见文档预览概述。</td>
+      <td>文档预览服务基于腾讯云数据万象，开启之后，存储桶中的文档类型文件即可在线预览无需下载，解决文档内容的页面展示问题，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/49159">文档预览概述</a>。</td>
    </tr>
    <tr>
       <td>媒体处理</td>
-      <td>媒体处理是 COS 基于数据万象推出的多媒体文件处理服务，涵盖音视频转码、视频截帧、音视频拼接、视频转动图、视频元信息获取等视频处理服务，以及结合腾讯云先进 AI 技术的智能封面高级处理服务，详情请参见媒体处理概述和 数据工作流概述。</td>
+      <td>媒体处理是 COS 基于数据万象推出的多媒体文件处理服务，涵盖音视频转码、视频截帧、音视频拼接、视频转动图、视频元信息获取等视频处理服务，以及结合腾讯云先进 AI 技术的智能封面高级处理服务，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/48303">媒体处理概述</a> 和 <a href="https://intl.cloud.tencent.com/document/product/436/46387">数据工作流概述</a>。</td>
    </tr>
    <tr>
       <td>语音识别</td>
       <td>语音识别服务基于腾讯云数据万象，开启之后，可识别存储桶中的录音文件，异步返回识别文本，详情请参见语音识别概述。</td>
-   </tr>
-   <tr>
-      <td>文件解压缩</td>
-      <td>文件解压缩功能是 COS 基于 SCF 为用户提供的数据处理解决方案。添加文件解压缩功能后，当压缩文件上传到 COS 时，将自动触发 COS 为您预配置的云函数，自动将文件解压到指定的存储桶和目录中，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/35663"> 文件解压缩</a>。</td>
-   </tr>
-   <tr>
-      <td>CDN 缓存刷新</td>
-      <td>CDN 缓存刷新是 COS 基于 SCF 为用户提供的数据刷新功能，可以协助用户自动刷新 CDN 边缘节点上的缓存数据，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/37273"> CDN 缓存刷新</a>。</td>
    </tr>
 </table>
 
@@ -248,6 +240,14 @@
    <tr>
       <td>日志清洗</td>
       <td>日志清洗是 COS 基于 SCF 为用户提供的日志文件处理解决方案。当用户开启日志管理服务或自行上传日志文件时，将自动触发对象存储为您预配置的云函数，通过函数中您预先指定的 SQL 检索语句，自动将文件中的日志信息进行过滤清洗，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/39925">日志清洗</a>。</td>
+   </tr>
+   <tr>
+      <td>文件解压缩</td>
+      <td>文件解压缩功能是 COS 基于 SCF 为用户提供的数据处理解决方案。添加文件解压缩功能后，当压缩文件上传到 COS 时，将自动触发 COS 为您预配置的云函数，自动将文件解压到指定的存储桶和目录中，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/35663"> 文件解压缩</a>。</td>
+   </tr>
+   <tr>
+      <td>CDN 缓存刷新</td>
+      <td>CDN 缓存刷新是 COS 基于 SCF 为用户提供的数据刷新功能，可以协助用户自动刷新 CDN 边缘节点上的缓存数据，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/37273"> CDN 缓存刷新</a>。</td>
    </tr>
 </table>
 
