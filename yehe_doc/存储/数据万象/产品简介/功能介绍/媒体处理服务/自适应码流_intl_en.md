@@ -19,5 +19,5 @@ CI provides the workflow service. You can enable a workflow for a bucket or a sp
 You can create a workflow through the console or API:
 
 - Console: You can create a workflow in the console to use the HLS adaptive muxing feature. For more information, see Workflow.
-- API: You can use an API to create an HLS adaptive muxing workflow. For more information, see the API documentation.
+- API: You can use an API to create an HLS adaptive muxing workflow. For more information, see the [API documentation](https://intl.cloud.tencent.com/document/product/1045/43733).
 
