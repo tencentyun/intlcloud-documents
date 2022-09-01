@@ -157,7 +157,7 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 需要您执行以下操作：
 
 1. 根据操作系统类型，查看客户端当前时间。
- - Windows 系统（以 Windwos Server 2012 为例）：**![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png) > 控制面板 > 时钟、语言和区域 > 设置日期和时间**。
+ - Windows 系统（以 Windwos Server 2012 为例）：![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png) > **控制面板 > 时钟、语言和区域 > 设置日期和时间**。
 
  - Linux 系统：执行 `date -R` 命令。
 ![](https://main.qcloudimg.com/raw/88288162bd1de8c2ec0b640f0df6799e.png)
