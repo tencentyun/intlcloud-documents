@@ -28,8 +28,7 @@ You can create a video to animated image conversion job for existing data stored
 - Console: You can create a job visually in the [CI console](https://console.cloud.tencent.com/ci) as instructed in the video to animated image conversion job documentation.
 - API: You can use APIs to create a video to animated image conversion job as instructed in [Submitting Animated Image Job](https://intl.cloud.tencent.com/document/product//1045/43687).
 
-#### Deleting, querying, and searching for job
-You can [delete](https://intl.cloud.tencent.com/document/product//1045/43694), [query](https://intl.cloud.tencent.com/document/product//1045/43696), and [search for](https://intl.cloud.tencent.com/document/product//1045/43697) jobs by filters through APIs.
+
 
 
 ### Workflow
@@ -38,7 +37,7 @@ CI provides the workflow service, which can automatically process videos when th
 #### Creating workflow
 You can create a workflow in the CI console as instructed in Creating Workflow.
 
-#### Deleting, querying, and searching for workflow
-You can [delete workflows](https://intl.cloud.tencent.com/document/product//1045/43734), [search for specified workflows](https://intl.cloud.tencent.com/document/product//1045/43735), [get workflow details](https://intl.cloud.tencent.com/document/product//1045/43736), and [get the list of workflow instances](https://intl.cloud.tencent.com/document/product//1045/43737) through APIs.
+#### Creating, Deleting, querying, and searching for workflow
+You can [Create workflows](https://intl.cloud.tencent.com/document/product/1045/43733), [delete workflows](https://intl.cloud.tencent.com/document/product//1045/43734), [search for specified workflows](https://intl.cloud.tencent.com/document/product//1045/43735), [get workflow details](https://intl.cloud.tencent.com/document/product//1045/43736), and [get the list of workflow instances](https://intl.cloud.tencent.com/document/product//1045/43737) through APIs.
 
 
