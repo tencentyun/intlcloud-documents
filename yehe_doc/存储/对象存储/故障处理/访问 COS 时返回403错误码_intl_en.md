@@ -157,7 +157,7 @@ If the following message is displayed when you access COS:
 You can:
 
 1. Check the client-side time based on the OS as follows:
- - Windows (with Windwos Server 2012 as an example): Click **![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png) > **Control Panel** > **Clock, Language, and Region** > **Set the time and date**.
+ - Windows (with Windwos Server 2012 as an example): Click ![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png) > **Control Panel** > **Clock, Language, and Region** > **Set the time and date**.
 
  - Linux: Run the `date -R` command.
 ![](https://main.qcloudimg.com/raw/88288162bd1de8c2ec0b640f0df6799e.png)
