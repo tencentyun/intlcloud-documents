@@ -5,7 +5,7 @@
 ## 查看异常告警
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在左侧导航选择**监控告警** > **异常告警**页，在上方选择对应数据库。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/271dc10b324bc8b433c1d33789725f8a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ab190bb3e5df5d6f50cadf4c7c6fa678.png)
 
 - 在上方展示了风险等级分布和异常告警分布图。多个实例时，可在异常告警分布图中，输入数据库实例 ID 进行过滤。
 
@@ -18,7 +18,7 @@
 忽略、取消忽略功能用于辅助用户筛选查看异常告警信息，该功能仅针对诊断项为非“健康巡检”的异常告警。
 
 - 在异常告警列表的“操作”列，单击**忽略**可忽略此实例该条诊断项的告警，且该实例下由相同根因产生的诊断项也将被忽略。
-![](https://qcloudimg.tencent-cloud.cn/raw/a4844131bb54b519b1e8948e0d59ef97.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/29627772b0dc4dae9590a61b3666db4e.png)
 - 对于已被忽略的异常告警，将会被置为灰色，单击**取消忽略**可取消该忽略，且该实例下由相同根因产生的诊断项也将被取消忽略。
 
 
@@ -28,14 +28,14 @@
 - 单击消息通知中的**查看异常诊断详情**，可以查看该实例具体的诊断详情及优化建议。
 - 勾选消息通知中的**今日不再提醒**，则当天您账号下的数据库实例发生异常诊断问题时，将不会弹窗为您推送异常告警消息。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1cb194e587fac9ea2eaa054c3bae5559.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a4d8080a0370a3ae8e1d4f17eb378f7b.png)
 
 ### 方式二
 登录 [MySQL控制台](https://console.cloud.tencent.com/cdb)，在左侧导航选择**实例列表**、**任务列表**、**参数模板**、**回收站**或**置放群组**页，在右上角单击**异常告警**，可展开异常告警历史消息列表，按钮旁边展示了用户账号下实例所产生的告警问题数量。
-![](https://qcloudimg.tencent-cloud.cn/raw/c0ad52c441e4407a7f057d194f0b82f5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b1a3c12440f576f74c0730349f5e6f68.png)
 
 在展开的异常告警历史消息列表，可以查看到所有被推送过的异常告警历史消息，支持切换地域查看，支持按告警级别进行过滤。单击每条告警消息，可查看各异常告警事件的异常诊断详情。
-![](https://qcloudimg.tencent-cloud.cn/raw/fae9c6f7b70160351d353fac7872ac58.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b544758765be4e6d5ed77be62f6e9b83.png)
 
 
 ## 诊断项详细说明
