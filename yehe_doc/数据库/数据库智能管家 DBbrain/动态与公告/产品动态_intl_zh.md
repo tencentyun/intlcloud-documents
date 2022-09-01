@@ -1,3 +1,248 @@
+## 2022年07月
+
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持自治服务</td>
+<td>支持对 MySQL 数据库进行自动限流与 KILL 功能。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48633">自治服务</a></td></tr>
+</tbody></table>
+
+## 2022年06月
+
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持事件通知</td>
+<td>支持将 MySQL 数据库的异常诊断模块的诊断结果通知给用户。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/39608">事件通知</a></td></tr>
+<tr>
+<td>多个功能增强</td>
+<td><ul><li>MySQL/TDSQL-C SQL 优化窗口增加表分析功能
+</li><li>Redis 增加 proxy 节点聚合视图</li><li>优化 Redis 延迟分布数据，显示为数值 + 百分比</li><li>Redis Kill 会话增加邮件通知</li><li>异常告警分布图增加单实例检索</li><li>Redis 内存分析增加 KEY 前缀分析</li><li>SQL 优化建议增加 forceindex 语法、binary concat 语法等</li><li>自建 MySQL 实例支持健康报告订阅及发送</li><li>多项提示分类与易用体验优化合集发布</li></ul></td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2022年05月
+
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>MongoDB 索引推荐</td>
+<td>支持对实时日志慢查信息的收集，进行自动分析，推出全局最优索引、按照性能影响进行排列，并可在线一键操作。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48613">MongoDB 索引推荐</a></td></tr>
+<tr>
+<td>MongoDB SQL 限流</td>
+<td>支持对 SQL 类型、最大并发数、限流时间、SQL 关键词的限制，来控制数据库的请求访问量和 SQL 并发量，保证在流量过高引起的 CPU 消耗过大的场景下业务快速恢复稳定。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48613">MongoDB SQL 限流</a></td></tr>
+<tr>
+<td>MongoDB 基础能力增强</td>
+<td><ul><li>慢 SQL 分析功能，增加 SQL 模板样例、模板对应明细记录。</li><li>支持慢 SQL 明细查询。</li><li>空间分析增加 TOP 表趋势及表信息、TOP 库、表检索。</li></ul></td>
+<td><a href="">-</a></td></tr>
+</tbody></table>
+
+## 2022年04月
+
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>多个功能增强 </td>
+<td>
+<ul><li>实例管理增加批量健康报告设置。</li>
+<li>DBbrain 各平台异常推送窗口增加异常级别筛选。</li>
+<li>慢 SQL 分析界面优化，增加导出快捷键选择按钮。</li>
+<li>实时会话增加是否显示 sleep 快捷设置。</li>
+<li>实时会话增加一键 KILL 能力。</li>
+<li>SQL 优化增加多个快捷操作键。</li>
+<li>空间分析（表/库/无主键表）均增加导出设置。</li>
+<li>实时会话 - SQL 限流功能支持 MySQL 8.0 版本。</li>
+<li>死锁诊断增加关联审计分析结果。</li></ul></td>
+<td>-</td></tr>
+<tr>
+<td>新增 API 接口 </td>
+<td>新增如下 API 接口：
+<ul><li>SQL 限流相关（MySQL）：查询实例 SQL 限流任务列表、删除实例 SQL 限流任务、创建实例 SQL 限流任务、更改实例限流任务状态。</li>
+<li>大 KEY 分析（Redis）：查询 Redis 实例大 KEY 列表。</li>
+<li>帮助 SQL 转换成 SQL 模板：查询 SQL 模板。</li>
+<li>数据库无主键表：查询实例无主键表。</li>
+<li>权限：验证用户数据库账号权限。</li></ul></td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2022年03月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持对未提交事务内容进行审计 </td>
+<td>异常诊断中支持对未提交事务的诊断项，并对未提交事务的内容做分析聚合。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48634">审计日志分析</a></td></tr>
+</tbody></table>
+
+## 2022年02月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持死锁可视化分析</td>
+<td>支持对发生死锁的事务和锁关系进行可视化拓扑图展示；支持展示锁的范围，锁住的数据详情；支持结合执行计划，表结构，SQL 解析对执行行为进行推测，帮助用户避免死锁产生。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48632">死锁可视化</a></td></tr>
+</tbody></table>
+
+## 2022年01月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>DBbrain 支持 MongoDB</td>
+<td>支持功能包括：副本集和分片类型的，概览、管理、巡检、异常告警、监控大盘、实时会话、性能趋势（10-100毫秒区域阶梯范围的内分布延迟）、（Tencent MongoDB Status、Tencent MongoDB Top工具）、集合空间管理、副本集实例3D异常架构图等。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48620">MongoDB 特有诊断优化</a></td></tr>
+<tr>
+<td>持续 Kill 接口发布</td>
+<td>MySQL、TDSQL-C MySQL版、Redis 持续 Kill 接口发布。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/44869">Redis 持续 Kill 接口</a></td></tr>
+<tr>
+<td>体验优化</td>
+<td>增加全实例监控自定义大盘，批量搜索并添加实例、监控图单排多排切换、监控图拖动面积放大、右侧分析结果窗口自由调整比例或全局放大等，27处体验优化。</td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2021年12月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>Redis 即时大 KEY 分析升级</td>
+<td>Redis 即时大 KEY 分析支持（单片/多片）自定义分析。</td>
+<td>-</td></tr>
+<tr>
+<td>异常推送</td>
+<td>支持 MySQL 数据库单实例的异常推送。</td>
+<td>-</td></tr>
+<tr>
+<td>慢 SQL 明细</td>
+<td>发布 MySQL、TDSQL-C MySQL版 慢 SQL 明细功能（单明细、分析结果明细）。</td>
+<td>-</td></tr>
+<tr>
+<td>审计日志升级</td>
+<td>增加实时审计日志分析，明细记录。需要先开通审计日志。</td>
+<td>-</td></tr>
+<tr>
+<td>未提交事务审计</td>
+<td>增加异常诊断，未提交事务 SQL 明细、上下文、单 SQL 性能分析结果等能力。</td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2021年11月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持云监控 DBbrain 告警</td>
+<td>支持云监控 MySQL 数据库智能告警策略。</td>
+<td>-</td></tr>
+<tr>
+<td>指标优化</td>
+<td>优化 Redis 引擎，内存分析指标，更精确。</td>
+<td>-</td></tr>
+<tr>
+<td>可视化分析优化</td>
+<td>优化 MySQL、TDSQL-C MySQL版 可视化执行计划分析能力，支持子查询可视化分析。</td>
+<td>-</td></tr>
+<tr>
+<td>异常诊断增加场景</td>
+<td>增加 MySQL、TDSQL-C MySQL版 更多指标联动性异常场景触发。</td>
+<td>-</td></tr>
+<tr>
+<td>异常效验算法优化</td>
+<td>优化 DBbrain 异常算法与效验算法，对准确性进行加成，并将部分触发后立即恢复，闪现类异常问题进行记录分析。</td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2021年10月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>可视化执行计划上线</td>
+<td>支持 MySQL、TDSQL-C MySQL版、自建 MySQL，执行计划可视化能力。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48635">SQL 优化</a></td></tr>
+<tr>
+<td>innodb 死锁解析</td>
+<td>完善了 innodb 死锁解析，增加了 decimal,timestanp 等多种类型数据解析能力。</td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2021年09月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>高阶审计能力 TDSQL-C P99/P95 上线</td>
+<td>除全量请求分析能力外，TDSQL-C MySQL版 还额外支持<strong>请求耗时(P99)分析</strong>和<strong>请求耗时(P95)分析</strong>更加精准深入，为用户提供针对 SQL 访问延迟的高阶分析能力。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48634" target="_blank">审计日志</a></td></tr>
+<tr>
+<td>健康报告配置中心</td>
+<td>DBbrain 为用户提供自定义健康报告能力，可以根据您的需要定期生成和接收健康报告，可自定义配置健康报告与 kill 报告规则，指定联系人和联系组同时发送。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/36042" target="_blank">健康报告</a></td></tr>
+<tr>
+<td>Redis  即时大 Key 分析</td>
+<td>DBbrain for Redis 上线即时大 Key 分析能力，用户可以根据需要随时触发大 Key 分析。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48625" target="_blank">大 Key 分析</a></td></tr>
+</tbody></table>
+
+## 2021年08月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tr>
+<td>批量持续 kill</td>
+<td>增加 MySQL、TDSQL-C MySQL版 批量持续 kill 能力。</td>
+<td>-</td></tr>
+<tr>
+<td>审计日志任务时间放大</td>
+<td>单次审计日志任务时间执行范围，从半小时升级到2小时。</td>
+<td>-</td></tr>
+<tr>
+<td>慢日志优化</td>
+<td>慢 SQL 分析支持跨天选择。</td>
+<td>-</td></tr>
+<tr>
+<td>体验优化</td>
+<td>Redis 慢查展示和时间显示优化。</td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2021年07月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tr>
+<td>DBbrain 支持 Redis</td>
+<td>DBbrain 支持 Redis，支持功能包括：实例概览、实例管理、数据库巡检、异常告警、监控大盘、性能监控（性能趋势、实时性能）、实时会话、内存分析（Key 分析、大 Key 分析）、访问分析（热 Key 分析、延迟分析、命令行分析）、慢日志分析、实时日志分析、健康报告等。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48626" target="_blank">Redis 特有诊断优化</a></td></tr>
+<tr>
+<td>体验优化</td>
+<td>增加全实例监控卡片单实例跳转。</td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2021年05月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tr>
+<td>新增 Kill 历史记录及详情</td>
+<td>DBbrain 支持查看 Kill 会话历史记录，持续 Kill 会话执行方式支持手动关闭和定时关闭两种方式，且支持查看持续 Kill 详情。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48638" target="_blank">实时会话</a></td></tr>
+<tr>
+<td>支持用户自建数据库自治</td>
+<td>DBbrain 支持直连接入或者将 DBbrain agent 部署在用户主机上这两种方式接入自建数据库，使得多种类型的自建数据库（包括腾讯云 CVM 自建数据库、用户本地 IDC 自建数据库、其他云厂商虚拟机上的自建数据库等）也能拥有 DBbrain 提供的监控告警、诊断优化、数据库管理等自治服务能力。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/40594" target="_blank">自建数据库接入简介</a></td></tr>
+</table>
+
+
 ## 2021年03月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
