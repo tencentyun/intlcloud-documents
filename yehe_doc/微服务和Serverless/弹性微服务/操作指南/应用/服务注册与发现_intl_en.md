@@ -6,7 +6,7 @@ This document describes how to register and discover a Spring Cloud application 
 ### Operations in console
 
 1. Log in to the [TEM console](https://console.cloud.tencent.com/tem).
-2. On the left sidebar, click **Application Management** to enter the application management page and select a deployment region for your application.
+2. On the left sidebar, click **Application management** to enter the application management page and select a deployment region for your application.
 3. Click **Create** to go to the application creation page and enter the application information for deployment. For more information, see [Creating and Deploying Application](https://intl.cloud.tencent.com/document/product/1094/40362).
 4. For a Spring Cloud application, if a registry is associated with the selected **release environment**, you can select **Auto Inject Registry Info**.
 
@@ -47,7 +47,7 @@ spec:
 
 TEM will inject different parameters for different registries:
 <dx-tabs>
-::: ZooKeeper
+::: zookeeper
 Suppose the requested ZooKeeper address is `10.0.1.30:2181`:
 <dx-codeblock>
 :::  bash
@@ -63,7 +63,7 @@ metadata:
 </dx-codeblock>
 :::
 
-::: Eureka
+::: eureka
 Suppose the requested Eureka address is `10.0.1.31:8083`:
 <dx-codeblock>
 :::  bash
@@ -78,7 +78,19 @@ metadata:
 :::
 </dx-codeblock>
 :::
-
+::: nacos
+Suppose the requested Nacos address is `10.0.120.11:8848`:
+<dx-codeblock>
+:::  bash
+apiVersion: v1
+data:
+  tse-default-spring-cloud-config.properties: |
+    spring.cloud.nacos.discovery.server-addr=10.0.120.11:8848
+kind: ConfigMap
+metadata:
+  name: tse-config
+:::
+</dx-codeblock>
 :::
 </dx-tabs>
 
@@ -96,22 +108,28 @@ If a `PodName` is mapped by the Pod IP in TEM, that is, if `preferIpAddress=true
 
 The [SPRING_CONFIG_ADDITIONAL-LOCATION](https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/boot-features-external-config.html#boot-features-external-config-application-property-files) environment variable automatically added by TEM enables you to externally customize the configuration of a Spring Boot application, but it takes effect only in Spring Boot v2.0 or later.
 
-If you use Spring Boot v1.x, please add the mounted directory `/config/tse-default-spring-cloud-config.properties` to the [SPRING_CONFIG_LOCATION](https://docs.spring.io/spring-boot/docs/1.5.22.RELEASE/reference/html/boot-features-external-config.html#boot-features-external-config-application-property-files) environment variable on your own.
+If you use Spring Boot 1.x, add the mounted directory `/config/tse-default-spring-cloud-config.properties` to the [SPRING_CONFIG_LOCATION](https://docs.spring.io/spring-boot/docs/1.5.22.RELEASE/reference/html/boot-features-external-config.html#boot-features-external-config-application-property-files) environment variable on your own.
 
 You can also set this by directly adding the JVM launch parameters as follows:
 <dx-tabs>
-::: ZooKeeper
+::: zookeeper
 ```bash
 # Suppose the requested ZooKeeper address is `10.0.1.30:2181`
 -Dspring.cloud.zookeeper.connectString=10.0.1.30:2181 
 -Dspring.cloud.zookeeper.discovery.preferIpAddress=true
 ```
 :::
-::: Eureka
+::: eureka
 ```bash
 # Suppose the requested Eureka address is `10.0.1.31:8083`
 -Deureka.client.serviceUrl.defaultZone=http://10.0.1.31:8083/eureka/ 
 -Deureka.instance.preferIpAddress=true
+```
+:::
+::: nacos
+```bash
+# Suppose the requested Nacos address is `10.0.120.11:8848`
+-Dspring.cloud.nacos.discovery.server-addr=10.0.120.11:8848
 ```
 :::
 </dx-tabs>

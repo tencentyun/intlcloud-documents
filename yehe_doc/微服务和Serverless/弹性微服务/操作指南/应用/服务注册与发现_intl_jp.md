@@ -1,6 +1,6 @@
-## 概要
+## 操作シナリオ
 
-ここでは主に、TEMコンソールでSpringCloudアプリケーションサービスの登録と検出を実装するための具体的な手順を紹介します。
+ここでは、主にTEMコンソールでSpringCloudアプリケーションサービスの登録と検出を実装するための具体的な手順を紹介します。
 
 ## 操作手順
 ### コンソール操作
@@ -78,7 +78,19 @@ metadata:
 :::
 </dx-codeblock>
 :::
-
+::: nacos
+申請するnacosのアドレスを10.0.120.11:8848と仮定します。
+<dx-codeblock>
+:::  bash
+apiVersion: v1
+data:
+  tse-default-spring-cloud-config.properties: |
+    spring.cloud.nacos.discovery.server-addr=10.0.120.11:8848
+kind: ConfigMap
+metadata:
+  name: tse-config
+:::
+</dx-codeblock>
 :::
 </dx-tabs>
 
@@ -112,6 +124,12 @@ JVM起動パラメータを直接追加して設定することもできます�
 # 申請するeurekaのアドレスを10.0.1.31:8083と仮定します
 -Deureka.client.serviceUrl.defaultZone=http://10.0.1.31:8083/eureka/ 
 -Deureka.instance.preferIpAddress=true
+```
+:::
+::: nacos
+```bash
+# 申請するnacosのアドレスを10.0.120.11:8848と仮定します
+-Dspring.cloud.nacos.discovery.server-addr=10.0.120.11:8848
 ```
 :::
 </dx-tabs>
