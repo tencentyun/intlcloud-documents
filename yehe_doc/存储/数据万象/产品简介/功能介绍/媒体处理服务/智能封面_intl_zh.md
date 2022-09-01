@@ -30,10 +30,9 @@
 
 您可使用数据万象控制台创建工作流，详情请见创建工作流控制台文档。
 
-#### 删除、查询、搜索工作流
+#### API 创建、删除、查询、更新工作流
 
-您可使用 API 接口进行 [删除工作流](https://intl.cloud.tencent.com/document/product//1045/43734)、[搜索指定工作流](https://intl.cloud.tencent.com/document/product//1045/43735)、[获取工作流详情](https://intl.cloud.tencent.com/document/product//1045/43736)、[获取工作流实例列表](https://intl.cloud.tencent.com/document/product//1045/43737) 操作。
-
+您可使用 API 接口进行 [创建工作流](https://intl.cloud.tencent.com/document/product/1045/43733)、[删除工作流](https://intl.cloud.tencent.com/document/product//1045/43734)、查询工作流、[更新工作流](https://intl.cloud.tencent.com/document/product/1045/43738) 操作。
 
 
 ### 任务
