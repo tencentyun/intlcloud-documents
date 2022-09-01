@@ -28,8 +28,6 @@
 - 控制台方式：您可使用 [数据万象控制台](https://console.cloud.tencent.com/ci) 可视化创建任务，使用详情请见视频转动图任务文档。
 -  API 方式：您可使用 API 接口创建视频转动图任务，使用详情请见 [ API 文档](https://intl.cloud.tencent.com/document/product//1045/43687)。
 
-#### 删除、查询、搜索任务
-您可使用 API 接口方式对任务进行 [删除](https://intl.cloud.tencent.com/document/product//1045/43694)、[查询](https://intl.cloud.tencent.com/document/product//1045/43696) 任务信息、[搜索](https://intl.cloud.tencent.com/document/product//1045/43697) 指定条件下的任务操作。
 
 
 ### 工作流
@@ -38,7 +36,8 @@
 #### 创建工作流
 您可使用数据万象控制台创建工作流，详情请见创建工作流文档。
 
-#### 删除、查询、搜索工作流
-您可使用 API 接口进行 [删除工作流](https://intl.cloud.tencent.com/document/product//1045/43734)、[搜索指定工作流](https://intl.cloud.tencent.com/document/product//1045/43735)、[获取工作流详情](https://intl.cloud.tencent.com/document/product//1045/43736)、[获取工作流实例列表](https://intl.cloud.tencent.com/document/product//1045/43737) 操作。
+#### API 创建、删除、查询、搜索工作流
+
+您可使用 API 接口进行 [创建工作流](https://intl.cloud.tencent.com/document/product/1045/43733)、[删除工作流](https://intl.cloud.tencent.com/document/product//1045/43734)、[搜索指定工作流](https://intl.cloud.tencent.com/document/product//1045/43735)、[获取工作流详情](https://intl.cloud.tencent.com/document/product//1045/43736)、[获取工作流实例列表](https://intl.cloud.tencent.com/document/product//1045/43737) 操作。
 
 
