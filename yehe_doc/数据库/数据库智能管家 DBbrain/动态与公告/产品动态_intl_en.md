@@ -1,4 +1,249 @@
 
+## July 2022
+
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported the autonomy service</td>
+<td>DBbrain supports automatic throttling and killing for MySQL databases.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48633">Autonomy Service</a></td></tr>
+</tbody></table>
+
+## June 2022
+
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported event notification</td>
+<td>DBbrain can send you the diagnosis results in the exception diagnosis module for MySQL databases.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/39608">Event Notification</a></td></tr>
+<tr>
+<td>Enhanced multiple features</td>
+<td><ul><li>The table analysis feature is added in the optimization window for TencentDB for MySQL and TDSQL-C for SQL.
+</li><li>The proxy node aggregate view is added for TencentDB for Redis. </li><li>The latency distribution data is optimized to display value + percentage for TencentDB for Redis. </li><li>The email notification capability is added to the session killing feature for TencentDB for Redis. </li><li>Instances can be searched for in the exception distribution module. </li><li>Key prefix analysis is added to memory analysis for TencentDB for Redis. </li><li>SQL optimization suggestion is supported for `forceindex` and `binary concat` statements. </li><li>Health report subscription and sending are supported for self-built MySQL instances. </li><li>Multiple prompt categories and user experience optimizations are released.</li></ul></td>
+<td>-</td></tr>
+</tbody></table>
+
+## May 2022
+
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Added TencentDB for MongoDB index recommendation</td>
+<td>Real-time log information can be collected and analyzed automatically. The optimal index will be recommended and ranked by its impact on performance, which can be operated online.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48613">Index Recommendation</a></td></tr>
+<tr>
+<td>Supported SQL throttling for TencentDB for MongoDB</td>
+<td>You can control the database requests and SQL concurrency by restrictions on SQL type, maximum concurrency, throttling duration, and SQL keywords to ensure the fast business restoration when excessive CPU is consumed due to high traffic.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48613">SQL Throttling</a></td></tr>
+<tr>
+<td>Enhanced basic capabilities for TencentDB for MongoDB</td>
+<td><ul><li>SQL template samples and detailed template records are added for the slow SQL analysis feature.</li><li>Slow SQL details can be queried.</li><li>Top table trend and information are added; top database and table retrieval is supported for space analysis.</li></ul></td>
+<td><a href="">-</a></td></tr>
+</tbody></table>
+
+## April 2022
+
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Enhanced multiple features</td>
+<td>
+<ul><li>Batch health report settings are added for instance management. </li>
+<li>Exception-level filtering is supported in the exception push window for various database types covered by DBbrain. </li>
+<li>The slow SQL analysis page is optimized to add the **Export** button. </li>
+<li>The **Show Sleep Connection** button is added on the real-time session page. </li>
+<li>The one-click kill capability is added to the real-time session module. </li>
+<li>Multiple quick buttons are added to the SQL optimization module. </li>
+<li>Space analysis data (table/database/table without primary key) can be exported. </li>
+<li>The real-time session - SQL throttling feature is supported for MySQL 8.0. </li>
+<li>Audit analysis results are associated with deadlock diagnosis. </li></ul></td>
+<td>-</td></tr>
+<tr>
+<td>Added APIs</td>
+<td>The following APIs are added:
+<ul><li>SQL throttling (MySQL): Query the SQL throttling task list of an instance; delete a SQL throttling task for an instance; create a SQL throttling task for an instance; change the SQL throttling task status of an instance. </li>
+<li>Big key analysis (TencentDB for Redis): Query the big key list of a TencentDB for Redis instance. </li>
+<li>SQL template conversion: Query SQL templates. </li>
+<li>Table without primary key: Query tables without primary key in an instance.</li>
+<li>Permissions: Verify the database account permissions of a user. </li></ul></td>
+<td>-</td></tr>
+</tbody></table>
+
+## March 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported auditing uncommitted transactions</td>
+<td>The exception diagnosis module can diagnose uncommitted transactions and analyze and aggregate their contents. </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48634">Audit Log Analysis</a></td></tr>
+</tbody></table>
+
+## February 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported visual deadlock analysis</td>
+<td>The topology of transactions with deadlocks and their lock relationships can be visually displayed. This feature can display the lock scope and details of locked data. It can also infer about executions based on execution plans, table structures, and SQL parsing to help you avoid deadlocks. </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48632">Deadlock Visualization</a></td></tr>
+</tbody></table>
+
+## January 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported TencentDB for MongoDB</td>
+<td>Features supported for replica set and sharded instances include the overview, management, inspection, exception alarm, monitoring dashboard, real-time session, performance trends (distribution of request types with 10–100 ms latency), MongoStatus and MongoTop tools, collection space management, and 3D exception diagram (for replica set instances only). </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48620">Performance Optimization for MongoDB</a></td></tr>
+<tr>
+<td>Released the API for killing sessions during a period</td>
+<td>The API for killing sessions during a period is released for TencentDB for MySQL, TDSQL-C for MySQL, and TencentDB for Redis. </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/44869">CreateProxySessionKillTask</a></td></tr>
+<tr>
+<td>Optimized the user experience</td>
+<td>27 experience optimizations are added, such as the capabilities to customize dashboards for full instance monitoring, batch search for and add instances, single/multi-column switch in the monitoring view, drag the monitoring view in a larger area, adjust the size of the analysis result window on the right, and globally zoom in the view.</td>
+<td>-</td></tr>
+</tbody></table>
+
+## December 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Upgraded ad hoc analysis of big key for TencentDB for Redis</td>
+<td>The ad hoc analysis of big key feature for TencentDB for Redis (single-shard/multi-shard) supports custom analysis. </td>
+<td>-</td></tr>
+<tr>
+<td>Supported exception push</td>
+<td>Exceptions in individual MySQL database instances can be pushed. </td>
+<td>-</td></tr>
+<tr>
+<td>Supported slow SQL details</td>
+<td>The slow SQL details feature is released for TencentDB for MySQL and TDSQL-C for MySQL (SQL details and analysis result details). </td>
+<td>-</td></tr>
+<tr>
+<td>Upgraded audit logs</td>
+<td>Real-time audit log analysis and detailed records are added. Log audit should be enabled first.</td>
+<td>-</td></tr>
+<tr>
+<td>Supported uncommitted transaction audit</td>
+<td>Exception diagnosis, uncommitted transaction SQL details, context, SQL statement performance analysis results, and other capabilities are added. </td>
+<td>-</td></tr>
+</tbody></table>
+
+## November 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported alarming in CM</td>
+<td>You can configure CM smart alarm policies for TencentDB for MySQL in DBbrain. </td>
+<td>-</td></tr>
+<tr>
+<td>Optimized metrics</td>
+<td>The memory analysis metrics for TencentDB for Redis are optimized to be more accurate. </td>
+<td>-</td></tr>
+<tr>
+<td>Optimized visual analysis</td>
+<td>The visual execution plan analysis capabilities are optimized to support the visual analysis of subqueries for TencentDB for MySQL and TDSQL-C for MySQL. </td>
+<td>-</td></tr>
+<tr>
+<td>Added more exception diagnosis scenarios</td>
+<td>More metric interactions are added to trigger exception diagnosis for TencentDB for MySQL and TDSQL-C for MySQL. </td>
+<td>-</td></tr>
+<tr>
+<td>Optimized the exception analysis and verification algorithms</td>
+<td>DBbrain's exception analysis and verification algorithms are optimized to increase the accuracy and log and analyze some exceptions such as immediate resolution after triggering and crash.</td>
+<td>-</td></tr>
+</tbody></table>
+
+## October 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Released the visual execution plan feature</td>
+<td>Execution plan visualization is supported for TencentDB for MySQL, TDSQL-C for MySQL, and self-built MySQL. </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48635">SQL Optimization</a></td></tr>
+<tr>
+<td>Supported InnoDB deadlock parsing</td>
+<td>InnoDB deadlock parsing is improved to parse more types of data such as decimal and timestamp. </td>
+<td>-</td></tr>
+</tbody></table>
+
+## September 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Released P99/P95 advanced audit capabilities for TDSQL-C for MySQL</td>
+<td>In addition to the all request analysis feature, DBbrain also supports <strong>request time consumed analysis (P99)</strong> and <strong>request time consumed analysis (P95)</strong> for TDSQL-C for MySQL, which are more accurate and in-depth and provide advanced analysis capabilities for SQL access latency.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48634" target="_blank">Audit Log</a></td></tr>
+<tr>
+<td>Released the health report configuration center</td>
+<td>DBbrain allows you to customize health reports. You can generate and receive health reports regularly as needed. You can also customize the rules of health reports and kill reports and specify recipients and recipient groups for report sending. </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/36042" target="_blank">Health Report Management</a></td></tr>
+<tr>
+<td>Supported ad hoc analysis of big key for TencentDB for Redis</td>
+<td>DBbrain supports ad hoc analysis of big key for TencentDB for Redis, so you can trigger big key analysis at any time as needed. </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48625" target="_blank">Big Key Analysis</a></td></tr>
+</tbody></table>
+
+## August 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tr>
+<td>Supported batch killing sessions during a period</td>
+<td>The capability of batch killing sessions during a period is added for TencentDB for MySQL and TDSQL-C for MySQL. </td>
+<td>-</td></tr>
+<tr>
+<td>Extended the audit log task execution time</td>
+<td>The execution time range of a single audit log task is extended from half an hour to two hours. </td>
+<td>-</td></tr>
+<tr>
+<td>Optimized slow log analysis</td>
+<td>Slow SQL analysis supports cross-day time selection. </td>
+<td>-</td></tr>
+<tr>
+<td>Optimized the user experience</td>
+<td>Slow query display and time display are optimized for TencentDB for Redis. </td>
+<td>-</td></tr>
+</tbody></table>
+
+## July 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tr>
+<td>Supported TencentDB for Redis</td>
+<td>The following features are supported for TencentDB for Redis: instance overview, instance management, database inspection, exception alarm, monitoring dashboard, performance monitoring (including performance trends and real-time performance monitoring), real-time session, memory analysis (including key analysis and big key analysis), access analysis (including hot key analysis, latency analysis, and command line analysis), slow log analysis, real-time log analysis, health report, etc.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48626" target="_blank">Performance Optimization for Redis</a></td></tr>
+<tr>
+<td>Optimized the user experience</td>
+<td>You can redirect to a specific instance from the full instance monitoring section.</td>
+<td>-</td></tr>
+</tbody></table>
+
+## May 2021
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tr>
+<td>Added kill records and details</td>
+<td>DBbrain allows you to view the records and details of killed sessions. The "Kill Sessions during a Period" execution mode supports manual stop and scheduled stop. You can also view the details of sessions killed during a period.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/48638" target="_blank">Real-Time Session</a></td></tr>
+<tr>
+<td>Supported self-built database autonomy</td>
+<td>DBbrain supports self-built database access through direct connection or the deployment of DBbrain Agent on users' database hosts. This enables multiple types of self-built databases (including CVM-based self-built databases, self-built databases in local IDCs, and self-built databases on VMs of other cloud vendors) to enjoy database autonomy capabilities provided by DBbrain, such as monitoring and alarming, performance optimization, and database management.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/40594" target="_blank">Self-Built Database Access</a></td></tr>
+</table>
+
+
 ## March 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
