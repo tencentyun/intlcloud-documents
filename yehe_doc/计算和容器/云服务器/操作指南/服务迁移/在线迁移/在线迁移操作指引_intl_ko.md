@@ -1,22 +1,20 @@
 본문은 CVM 콘솔 온라인 마이그레이션 기능을 통해 온라인 서버 마이그레이션을 수행하는 방법에 대해 설명합니다.
-<dx-alert infotype="explain" title="">
-콘솔 온라인 마이그레이션 서비스는 현재 베타 테스트 기간 중이며, 이용을 원하시면 [문의하기](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 QQ 그룹을 추가하여 서비스 활성화를 신청하십시오.
-</dx-alert>
+
 
 ## 마이그레이션 프로세스
 온라인 마이그레이션 절차는 다음과 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/0e290646e08b6af1b509ce324ea6e096.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c0b85e5806f44052ca86649c31d788c6.png)
 
 ## 준비 사항[](id:prerequisites)
 
 - Tencent Cloud 계정이 있어야 합니다.
-- 서브 계정으로 콘솔 마이그레이션하는 경우, 루트 계정을 사용하여 [CAM 콘솔](https://console.cloud.tencent.com/cam/policy)에 로그인하고 서브 계정에 'QcloudCSMFullAccess' 권한을 부여해야 합니다.
+- 서브 계정으로 콘솔 마이그레이션하는 경우, 루트 계정을 사용하여 [CAM 콘솔](https://console.cloud.tencent.com/cam/policy)에 로그인하고 서브 계정에 'QcloudCSMFullAccess' 및 `QcloudCVMFullAccess` 권한을 부여해야 합니다.
 - [API 키 관리](https://console.cloud.tencent.com/cam/capi) 페이지에서 'SecretId' 및 'SecretKey'를 생성 및 획득합니다.
 - 마이그레이션 툴 압축 패키지를 [다운로드](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)합니다.
 - 마이그레이션할 때, 현재 사용하고 있는 애플리케이션에 영향을 줄 수 있으므로, 원본 서버의 애플리케이션 사용을 잠시 중지할 것을 권장합니다.
 - 마이그레이션하기 전에 다음과 같은 방법으로 데이터를 백업하는 것이 좋습니다.
  - 원본 호스트: 원본 서버 스냅샷 기능 등의 방식을 선택해 데이터를 백업할 수 있습니다.
- - 대상 CVM: [스냅샷 생성](https://intl.cloud.tencent.com/document/product/362/5755) 등의 방식을 선택해 대상 CVM 데이터를 백업할 수 있습니다.
+ - 대상 CVM: [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) 등의 방식을 선택해 대상 CVM 데이터를 백업할 수 있습니다.
 
 ## 마이그레이션 과정
 
@@ -35,10 +33,20 @@
 		<li>Virtio 확인 및 설치, 작업의 세부 사항은 다음을 참고하십시오. 
 		<a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux 시스템 Virtio 드라이버 확인</a>.</li>
 		<li>실행 
-		<code>which rsync</code> rsync가 설치되어 있는지 확인하는 명령어입니다. 설치되어 있지 않다면 <a href="https://intl.cloud.tencent.com/document/product/213/32395#installRsync">Rsync 설치 방법</a>을 참고하여 설치를 진행하십시오.</li>
-		<li>SELinux의 활성화 여부를 확인하십시오. SELinux가 활성화되어 있으면 <a href="https://intl.cloud.tencent.com/document/product/213/32395#closeSELinux">SELinux 비활성화 방법</a>을 참고하여 비활성화하십시오.</li>
+		<code>which rsync</code> rsync가 설치되어 있는지 확인하는 명령어입니다. 설치되어 있지 않다면 <a href="https://intl.cloud.tencent.com/document/product/213/32395#installRsync">Rsync는 어떻게 설치하나요?</a>를 참고하여 설치를 진행하십시오.</li>
+		<li>SELinux의 활성화 여부를 확인하십시오. SELinux가 활성화되어 있으면 <a href="https://intl.cloud.tencent.com/document/product/213/32395#closeSELinux">SELinux를 비활성화하는 방법은 무엇입니까?</a>를 참고하여 비활성화하십시오.</li>
 		<li>Tencent Cloud API로 마이그레이션 요청이 이루어진 후 Cloud API는 현재의 UNIX 타임을 사용하여 생성된 
 		Token을 검사합니다. 현재 시스템 시간이 올바른지 확인하십시오.</li>
+	  </ol>
+	</td>
+ </tr>
+  <tr>
+	<th>Windows 소스 서버</th>
+	<td>
+	  <ol style="margin: 0;">
+		<li>Virtio 확인 및 설치, 작업의 세부 사항은 다음을 참고하십시오. 
+		<a href="https://intl.cloud.tencent.com/document/product/213/17815">Windows 시스템 Virtio 드라이버 확인</a>.</li>
+		<li>(옵션) Cloudbase-Init를 확인 및 설치합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/32364"> Windows 운영 체제에서 Cloudbase-Init 설치</a>를 참고하십시오. 마이그레이션 전에 소스 서버에 설치하거나 마이그레이션 후에 타깃 인스턴스에 설치하도록 선택할 수 있습니다. <br>마이그레이션 이전에 설치한 경우 마이그레이션 후에 자동으로 네트워크 구성 및 활성화와 같은 초기화 작업이 수행됩니다. <br>마이그레이션 이전에 설치하지 않은 경우 <a href="https://intl.cloud.tencent.com/document/product/213/32496">  VNC를 사용하여 Windows 인스턴스 로그인</a>하고 네트워크 구성을 수동으로 수정해야 할 수 있습니다.</li>
 	  </ol>
 	</td>
   </tr>
@@ -51,9 +59,6 @@
 		<li>보안 그룹: 443 포트 및 80 포트는 보안 그룹에서 제한할 수 없습니다.</li>
 		<li>
 		대역폭 설정: 더 빠른 마이그레이션을 위해 양쪽 끝의 대역폭을 최대한 늘리는 것이 좋습니다. 마이그레이션 과정에서 대략 데이터 양만큼의 트래픽 소모가 발생하게 되며, 필요한 경우 미리 네트워크 과금 모드를 변경하시기 바랍니다.</li>
-		<li>
-		대상 ECS와 원본 호스트의 운영 체제 유형이 동일한지 여부: 운영 체제가 일치하지 않으면 후속 이미지의 정보가 실제 운영 체제와 일치하지 않을 수 있으므로 대상 CVM의 운영 체제는 원본 호스트의 운영 체제 유형과 일치하는 것이 좋습니다. 예를 들어 CentOS
-		7 시스템의 원본 호스트를 마이그레이션할 때 CentOS 7 시스템의 CVM을 마이그레이션 대상으로 선택합니다.</li>
 	  </ol>
 	</td>
   </tr>
@@ -90,7 +95,7 @@ cd go2tencentcloud-linux
 2. (옵션)원본 CVM에서 마이그레이션하지 않을 파일 또는 디렉터리를 제외합니다.
 Linux 원본 호스트에 마이그레이션할 필요가 없는 파일 또는 디렉터리가 있는 경우 [rsync_excludes_linux.txt 파일](https://intl.cloud.tencent.com/document/product/213/44340)에 추가합니다.
 3. 마이그레이션 소스를 가져옵니다.
-   1. 64비트 Linux 소스 서버에서는 root 사용자로 다음 명령을 순서대로 실행하여 툴을 실행합니다.
+   1. 64비트 Linux 소스 서버에서 root 사용자로 다음 명령을 순서대로 실행하여 툴을 실행합니다.
 ```shellsession
 chmod +x go2tencentcloud_x64
 ```
@@ -103,7 +108,7 @@ sudo ./go2tencentcloud_x64
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f9cf0fd99504aba51ebf82b0cab250b8.png"/>
 <br><a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">온라인 마이그레이션 콘솔</a>에 로그인하여 가져온 마이그레이션 소스가 ‘온라인’ 상태임을 확인할 수 있습니다. 아래 이미지와 같습니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/11b1e6cada0384dae292e89378629ddc.png"/>
-Import source server successfully 메시지가 표시되지 않으면 마이그레이션 원본을 가져오지 못한 것이므로 문제 해결을 위해 로그(기본적으로 마이그레이션 툴 디렉터리에 있는 logs/log 파일)를 볼 수 있습니다. 그런 다음 마이그레이션 툴을 실행하여 마이그레이션 소스를 다시 가져옵니다.
+Import source server successfully 메시지가 표시되지 않으면 마이그레이션 원본을 가져오지 못한 것이므로 문제 해결을 위해 로그(기본적으로 마이그레이션 도구 디렉터리에 있는 logs/log 파일)를 볼 수 있습니다. 그런 다음 마이그레이션 도구를 실행하여 마이그레이션 소스를 다시 가져옵니다.
 <dx-alert infotype="notice" title="">
 마이그레이션 소스를 성공적으로 가져온 후 마이그레이션 작업이 완료될 때까지 인스턴스에서 마이그레이션 툴을 닫지 마십시오. 그렇지 않으면 마이그레이션 소스가 오프라인되어 마이그레이션 작업을 완료할 수 없습니다.
 </dx-alert>
@@ -180,7 +185,7 @@ Import source server successfully 메시지가 표시되지 않으면 마이그�
     <ul>
     <li><b>공용 네트워크를 통한 전송</b>: 공용 네트워크를 통해 대상 CVM 또는 릴레이 인스턴스로 데이터를 전송합니다.
     </li>
-    <li><b>내부 네트워크를 통해 전송</b>: 내부 네트워크를 통해 대상 CVM 또는 릴레이 인스턴스로 데이터를 전송합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/44341">내부 네트워크 마이그레이션 튜토리얼</a>을 참고하십시오.
+    <li><b>내부 네트워크를 통해 전송</b>: 내부 네트워크를 통해 대상 CVM 또는 릴레이 인스턴스로 데이터를 전송합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/44341">사설망 마이그레이션</a>을 참고하십시오.
       <br>VPC: CVM 이미지로 마이그레이션할 때 VPC에 릴레이 인스턴스를 생성합니다.
       <br>서브넷: CVM 이미지로 마이그레이션할 때 서브넷에 릴레이 인스턴스를 생성합니다.
     </li>
@@ -190,12 +195,12 @@ Import source server successfully 메시지가 표시되지 않으면 마이그�
 <tr>
 <td>전송 한도(KB/초)</td>
 <td>No</td>  
-<td>마이그레이션 중 데이터 전송을 위한 대역폭 범위는 [0, 25600]KB/s입니다. 전송 속도는 기본적으로 무제한입니다.</td>
+<td>마이그레이션 중 데이터 전송을 위한 대역폭 범위는 [0, 25600]KB/s입니다. 전송 속도는 기본적으로 무제한입니다. 이 옵션은 현재 Windows 마이그레이션에서 지원되지 않습니다.</td>
 </tr>
 <tr>
 <td>Checksum 확인</td>
 <td>No</td>  
-<td>활성화되면 데이터 일관성 검사를 향상시킬 수 있지만 전송 속도가 느려질 수 있습니다.</td>
+<td>활성화되면 데이터 일관성 검사가 향상되지만 전송 속도가 느려질 수 있습니다. 이 옵션은 현재 Windows 마이그레이션에서 지원되지 않습니다.</td>
 </tr>
 </tbody></table>
 2. 마이그레이션 작업을 실행합니다.
@@ -213,6 +218,7 @@ Import source server successfully 메시지가 표시되지 않으면 마이그�
 
 
 ### 마이그레이션 작업 종료 대기
+
 
 마이그레이션 작업의 상태가 ‘성공’이면 마이그레이션이 성공적으로 완료되었음을 나타냅니다. 아래 이미지와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
@@ -233,7 +239,7 @@ Import source server successfully 메시지가 표시되지 않으면 마이그�
  - 마이그레이션 대상이 CVM인 경우, 정상 실행 여부, 데이터가 원본 호스트와 일치하는지, 네트워크 정상 여부 또는 다른 시스템 서비스의 정상 여부 등을 확인하시기 바랍니다.
  - 마이그레이션 타깃이 CVM 이미지인 경우 마이그레이션 작업이 있는 행의 ‘CVM 이미지 ID’를 클릭하여 [CVM 이미지 페이지](https://console.cloud.tencent.com/cvm/image/index)로 이동하여 이미지 정보를 볼 수 있으며, 이미지를 활용하여 CVM을 생성할 수 있습니다.
 
-문의 사항이나 마이그레이션 오류 문제 등이 있다면 [서비스 마이그레이션 관련 FAQ](https://intl.cloud.tencent.com/document/product/213/32395)를 조회하거나 [문의하기](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 해결하실 수 있습니다.
+문의 사항이나 마이그레이션 오류 문제 등이 있다면 [서비스 마이그레이션 관련 FAQ](https://intl.cloud.tencent.com/document/product/213/32395)를 조회하거나 [Contact Us](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 해결하실 수 있습니다.
 
 
 

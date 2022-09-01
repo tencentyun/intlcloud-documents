@@ -1,11 +1,11 @@
 ## 작업 시나리오
 Tencent Cloud에서 제공하는 공용 이미지 외에도 동일한 구성으로 CVM 인스턴스를 만들 수 있는 사용자 정의 이미지를 만들 수도 있습니다.
 
+
 <dx-alert infotype="explain" title="">
 이미지는 데이터 저장을 위해 CBS 스냅샷 서비스를 사용합니다. 
-
  - 사용자 정의 이미지를 생성하면 해당 이미지와 연결된 스냅샷이 기본 생성됩니다. 사용자 정의 이미지 보관은 일정 스냅샷 요금이 발생합니다. 자세한 내용은 [Billing Overview](https://intl.cloud.tencent.com/document/product/362/32415)를 참고하십시오.
-    </dx-alert>
+</dx-alert>
 
 
 
@@ -34,9 +34,9 @@ Tencent Cloud에서 제공하는 공용 이미지 외에도 동일한 구성으�
   - 필요하지 않은 경우, [사용자 정의 이미지 생성](#createOS) 단계를 진행합니다.
 2. 인스턴스의 관리 페이지에서 실제 사용된 뷰 모드에 따라 작업합니다.
   - **리스트 뷰**: 인스턴스가 위치한 행의 오른쪽에서 **더 보기** > **인스턴스 상태** > **종료**를 선택합니다. 아래 이미지와 같습니다.
-![종료](https://main.qcloudimg.com/raw/cc0bb1c82b96cca94cb7c1c011b664a7.png)
+![](https://main.qcloudimg.com/raw/cc0bb1c82b96cca94cb7c1c011b664a7.png)
   - **탭 뷰**: 인스턴스 세부 정보 페이지에서 아래와 같이 **종료**를 선택합니다.
-![종료](https://qcloudimg.tencent-cloud.cn/raw/bd0d10a80c75a653adee564105a9820b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd0d10a80c75a653adee564105a9820b.png)
 
 
 #### 사용자 정의 이미지 생성[](id:createOS)
@@ -47,7 +47,9 @@ Tencent Cloud에서 제공하는 공용 이미지 외에도 동일한 구성으�
    ![](https://qcloudimg.tencent-cloud.cn/raw/27d7f6f19bc115c501bb1157ebe37cab.png)
 2. ‘사용자 정의 이미지 생성’ 팝업 창에서 다음 정보를 참고하여 설정합니다.
   - **이미지 이름** 및 **이미지 설명**: 이름과 설명을 사용자 정의합니다.
-  - **시스템 디스크 이미지만 생성**: 인스턴스에 시스템 디스크만 있는 경우 이 옵션이 나타나지 않습니다. 인스턴스에 데이터 디스크가 있는 경우 필요에 따라 선택합니다.
+  - **태그**: 리소스의 분류, 검색 및 취합을 위해 필요에 따라 태그를 추가할 수 있습니다. 자세한 내용은 [Tag](https://intl.cloud.tencent.com/document/product/651/13334)를 참고하십시오.
+  - **시스템 디스크 이미지만 생성**: 이 기능을 사용하려면 [티켓 제출](https://console.intl.cloud.tencent.com/workorder/category)을 통해 활성화를 신청하십시오. 
+    인스턴스에 시스템 디스크만 있는 경우 이 옵션이 나타나지 않습니다. 인스턴스에 데이터 디스크가 있는 경우 필요에 따라 선택합니다.
      - 선택 시, 인스턴스 시스템 디스크 이미지만 생성됩니다.
      - 미선택 시, 인스턴스에 데이터 디스크가 있는 경우 데이터 디스크의 스냅샷이 동시에 생성됩니다.
 3. **이미지 생성**을 클릭합니다.

@@ -1,24 +1,30 @@
->?해당 제품은 유동적인 가격 조회 및 비용 예산을 제공합니다. 이와 관련한 자세한 정보는 [가격 센터](https://intl.cloud.tencent.com/pricing/cvm/calculator)에 방문하여 관련 비용을 조회 및 예산을 측정해 보십시오.
+[CVM 가격 계산기](https://intl.cloud.tencent.com/pricing/cvm/calculator)를 사용하여 필요한 각 제품의 구성과 가격을 확인하고, 예상 리소스 비용을 계산해 볼 수 있습니다. 구매 예산 목록에 원하는 상품을 추가한 뒤 원클릭으로 구입할 수도 있습니다.
+
+<dx-alert infotype="notice" title="">
+정확한 계산을 위해 로그인 후 계산기를 이용하십시오.
+</dx-alert>
+
+
+
 ## 과금 방식
 
-Tencent Cloud는 종량제 방식과 스팟 인스턴스 방식의 CVM 구매 방식을 제공합니다. 자세한 내용은 [인스턴스 과금 방식](https://intl.cloud.tencent.com/document/product/213/2180)을 참조하십시오.
-CVM은 예약 인스턴스 방식을 제공합니다. 
+Tencent Cloud는 다양한 시나리오의 사용자 요구에 적합한 종량제 및 스팟 인스턴스의 두 가지 유형의 CVM 구매 방법을 제공합니다. 자세한 내용은 [과금 방식](https://intl.cloud.tencent.com/document/product/213/2180)을 참고하십시오.
+
 ## 인스턴스
 
 인스턴스는 인스턴스에 사용하는 호스트의 하드웨어 설정을 결정합니다. Tencent Cloud는 인스턴스 유형별로 서로 다른 컴퓨팅과 스토리지 능력을 제공해 사용자가 제공하는 서비스 규모에 따라 인스턴스 컴퓨팅 능력, 스토리지 용량, 네트워크 액세스 방식을 선택할 수 있습니다.
-Tencent Cloud는 현재 기본 하드웨어에 따라 다양한 모델 사양을 제공하고 있으며, 자세한 내용은 [인스턴스 사양](https://intl.cloud.tencent.com/document/product/213/11518)을 참조하십시오.
+Tencent Cloud는 현재 기본 하드웨어에 따라 다양한 모델 사양을 제공하고 있으며, 자세한 내용은 [인스턴스 스펙](https://intl.cloud.tencent.com/document/product/213/11518)을 참조하십시오.
 
-인스턴스 유형별 가격은 [인스턴스 과금 방식](https://intl.cloud.tencent.com/document/product/213/2180)을 참조하십시오.
+인스턴스 유형별 가격은 [과금 방식](https://intl.cloud.tencent.com/document/product/213/2180)을 참조하십시오.
 
 ## 스토리지
 
 Tencent Cloud는 CVM 인스턴스에 각 유형별로 유연하고 경제적이며 사용하기 쉬운 데이터 스토리지 디바이스를 제공합니다. 각 스토리지 디바이스별로 서로 다른 성능과 가격을 제공하여 다양한 시나리오에 적용할 수 있습니다. 스토리지는 각 용도에 따라 다음과 같이 분할할 수 있습니다.
-
 - 사용 시나리오에 따라 시스템 디스크와 데이터 디스크로 분할
 - 구성 모드에 따라 클라우드 디스크, 로컬 디스크, 객체 스토리지로 분할
 
-Tencent Cloud는 현재 프리미엄 CBS와 SSD CBS 두 가지 클라우드 디스크 유형을 제공하며, 과금 방식은 정액 과금제와 종량제 두 가지 방식이 있습니다.
-디스크 가격에 관한 자세한 정보는 [디스크 가격 리스트](https://intl.cloud.tencent.com/document/product/213/2255)를 참조하십시오.
+Tencent Cloud는 현재 프리미엄 CBS와 SSD CBS 두 가지 클라우드 디스크 유형을 제공하며, 과금 방식은 종량제입니다.
+디스크 가격에 관한 자세한 정보는 [CBS 가격 리스트](https://intl.cloud.tencent.com/document/product/213/2255)를 참조하십시오.
 
 ## 네트워크 대역폭
 
@@ -27,6 +33,4 @@ Tencent Cloud가 제공하는 모든 네트워크 유형의 통신사 액세스�
 - 트래픽 과금제: 공용 네트워크의 전송 데이터 총량(단위: GB)에 따라 과금되며, 대역폭 이용률이 10% 미만인 경우 트래픽 과금제 선택을 우선적으로 고려할 수 있습니다.
 
 각종 네트워크의 대역폭 과금 방식에 대한 자세한 정보는 [공용 네트워크 과금 방식](https://intl.cloud.tencent.com/document/product/213/10578)을 참조하십시오.
-
-
 

@@ -1,35 +1,36 @@
 ## 지원되는 운영 체제
 
-현재 온라인 마이그레이션 툴에서는 다음과 같은 소스 CVM 운영 체제(32비트 혹은 64비트)를 지원합니다.
+현재 온라인 마이그레이션 툴에서는 다음과 같은 소스 CVM 운영 체제를 지원합니다.
 
 <table>
 	<tr><th>Linux 운영 체제</th><th>Windows 운영 체제</th></tr>
-	<tr><td>CentOS 5/6/7/8</td><td rowspan=7>지원되지 않음</td></tr>
+	<tr><td>CentOS 5/6/7/8</td><td rowspan=8>Windows Server 2008<br>Windows Server 2012<br>Windows Server 2016<br>Windows Server 2019<br>Windows Server 2022</td></tr>
 	<tr><td>Ubuntu 10/12/14/16/18/20 </td></tr>
 	<tr><td>Debian 7/8/9/10</td></tr>
 	<tr><td>SUSE 11/12/15</td></tr>
 	<tr><td>openSUSE 42</td></tr>
 	<tr><td>Amazon Linux AMI</td></tr>
-	<tr><td>Red Hat 7/8</td></tr>
+	<tr><td>Red Hat 5/6/7/8</td></tr>
+	<tr><td>Oracle Linux 5/6/7/8</td></tr>
 </table>
 
 ## 지원하는 마이그레이션 모드
 
 <dx-tabs>
-::: 공용 네트워크 마이그레이션 모드[](id:publicMigration)
-사용자의 소스 CVM과 대상 CVM 모두 공용 네트워크 액세스 기능이 있다면 공용 네트워크 마이그레이션 모드의 마이그레이션을 사용할 수 있습니다.
-현재 공용 네트워크 마이그레이션 모드에서는, 소스 CVM에서 인터넷을 통해 Tencent Cloud API에 액세스하여 마이그레이션 요청을 보낸 다음, 대상 CVM에 데이터를 전송함으로써 소스 CVM을 Tencent Cloud의 대상 CVM으로 마이그레이션합니다. 공용 네트워크 마이그레이션 시나리오는 다음 이미지와 같습니다.
- ![](https://main.qcloudimg.com/raw/5203e535f5ba947bb67c1f91dee52f1f.jpg)
+::: 공중망 마이그레이션 모드[](id:publicMigration)
+사용자의 소스 CVM과 대상 CVM 모두 공중망 액세스 기능이 있다면 공중망 마이그레이션 모드의 마이그레이션을 사용할 수 있습니다.
+현재 공중망 마이그레이션 모드에서는, 소스 CVM에서 인터넷을 통해 Tencent Cloud API에 액세스하여 마이그레이션 요청을 보낸 다음, 대상 CVM에 데이터를 전송함으로써 소스 CVM을 Tencent Cloud의 대상 CVM으로 마이그레이션합니다. 공중망 마이그레이션 시나리오는 다음 이미지와 같습니다.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/c9831a91ebaa47c0cc88b95decb0f5cc.png)
 :::
-::: 내부 네트워크 마이그레이션 모드[](id:intranetMigration)
-사용자의 소스 CVM이나 대상 CVM이 특정 내부 네트워크나 VPC에 있다면 인터넷을 통해 소스 CVM을 대상 CVM에 바로 연결할 수 없으므로, 툴의 내부 네트워크 마이그레이션 모드로 마이그레이션할 수 있습니다. 내부 네트워크 마이그레이션을 사용하려면 [Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) 혹은 [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216) 등의 방법으로 소스 CVM과 대상 CVM 간의 통로를 생성해야 합니다.
+::: 사설망 마이그레이션 모드[](id:intranetMigration)
+사용자의 소스 CVM이나 대상 CVM이 특정 사설망이나 VPC에 있다면 인터넷을 통해 소스 CVM을 대상 CVM에 바로 연결할 수 없으므로, 툴의 사설망 마이그레이션 모드로 마이그레이션할 수 있습니다. 사설망 마이그레이션을 사용하려면 [Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) 또는 [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216) 등의 방법으로 소스 CVM과 대상 CVM 간의 통로를 생성해야 합니다.
 
-- [](id:Scenario1)**시나리오1**: (이 시나리오는 [툴 마이그레이션 사용](https://intl.cloud.tencent.com/document/product/213/35640)만 지원) 사용자의 소스 CVM 혹은 대상 CVM이 공용 네트워크에 액세스할 수 없다면, 게이트웨이 같이 공용 네트워크 액세스 기능을 갖춘 호스트에서 인터넷을 통해 Tencent Cloud API를 호출하여 마이그레이션을 요청한 다음, 터널을 연결하여 데이터를 대상 CVM으로 마이그레이션 할 수 있습니다. 이 시나리오에서는 소스 CVM과 대상 CVM의 공용 네트워크 액세스 기능이 필요하지 않습니다.
-![](https://main.qcloudimg.com/raw/19300ddf557d4534b1cd77fcbf64ef6a.jpg)
-- [](id:Scenario2)**시나리오2**: 사용자의 소스 CVM이 공용 네트워크에 액세스할 수 있다면, 먼저 소스 CVM에서 인터넷을 통해 Tencent Cloud API를 호출하여 마이그레이션을 요청한 다음, 터널을 연결하여 데이터를 대상 CVM으로 마이그레이션 할 수 있습니다. 이 시나리오에서는 소스 CVM의 공용 네트워크 액세스 기능이 필요하며 대상 CVM은 해당 기능이 필요하지 않습니다.  
-![](https://main.qcloudimg.com/raw/90bf988ba7cddb9b80307efb30eaad29.jpg)
-- [](id:Scenario3)**시나리오3**: 사용자의 소스 CVM이 프록시를 통해 공용 네트워크에 액세스할 수 있다면, 먼저 소스 CVM에서 네트워크 프록시를 통해 Tencent Cloud API를 호출하여 마이그레이션을 요청한 다음, 터널을 연결하여 데이터를 대상 CVM으로 마이그레이션 할 수 있습니다. 이 시나리오에서는 소스 CVM과 대상 CVM의 공용 네트워크 액세스 기능이 필요하지 않습니다.
-![](https://main.qcloudimg.com/raw/14f81f2c4e6cfff80d912841451c5b69.jpg)
+- [](id:Scenario1)**시나리오1**: (이 시나리오는 [툴 마이그레이션 사용](https://intl.cloud.tencent.com/document/product/213/35640)만 지원) 사용자의 소스 CVM 혹은 대상 CVM이 공중망에 액세스할 수 없다면, 게이트웨이 같이 공중망 액세스 기능을 갖춘 호스트에서 인터넷을 통해 Tencent Cloud API를 호출하여 마이그레이션을 요청한 다음, 터널을 연결하여 데이터를 대상 CVM으로 마이그레이션 할 수 있습니다. 이 시나리오에서는 소스 CVM과 대상 CVM의 공중망 액세스 기능이 필요하지 않습니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/db4fd7a73d1bbdf3503f30b33a0aa36d.png)
+- [](id:Scenario2)**시나리오2**: 사용자의 소스 CVM이 공중망에 액세스할 수 있다면, 먼저 소스 CVM에서 인터넷을 통해 Tencent Cloud API를 호출하여 마이그레이션을 요청한 다음, 터널을 연결하여 데이터를 대상 CVM으로 마이그레이션 할 수 있습니다. 이 시나리오에서는 소스 CVM의 공중망 액세스 기능이 필요하며 대상 CVM은 해당 기능이 필요하지 않습니다.  
+![](https://qcloudimg.tencent-cloud.cn/raw/e1514bac7273534850e5bb2eabb23361.png)
+- [](id:Scenario3)**시나리오3**: 사용자의 소스 CVM이 프록시를 통해 공중망에 액세스할 수 있다면, 먼저 소스 CVM에서 네트워크 프록시를 통해 Tencent Cloud API를 호출하여 마이그레이션을 요청한 다음, 터널을 연결하여 데이터를 대상 CVM으로 마이그레이션 할 수 있습니다. 이 시나리오에서는 소스 CVM과 대상 CVM의 공중망 액세스 기능이 필요하지 않습니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/ed7f52caea6340f142ca7f740f52c202.png)
 :::
 </dx-tabs>
 
@@ -39,6 +40,7 @@
 <table>
 	<tr><th width="30%">파일 이름</th><th>설명</th></tr>
 	<tr><td>go2tencentcloud-linux.zip</td><td>Linux 시스템용 마이그레이션 zip.</td></tr>
+	<tr><td>go2tencentcloud-windows.zip</td><td>Windows 시스템용 마이그레이션 zip.</td></tr>
 	<tr><td>readme.txt</td><td>디렉터리 소개 파일.</td></tr>
 	<tr><td>release_notes.txt</td><td>마이그레이션 툴 변경 로그.</td></tr>
 </table>
@@ -53,6 +55,15 @@
 	<tr><td>rsync_excludes_linux.txt</td><td>rsync 구성 파일로, Linux 시스템에서 마이그레이션 하지 않을 파일 디렉터리를 제외합니다.</td></tr>
 </table>
 
+`go2tencentcloud-windows.zip` 압축 해제 후 파일 설명은 다음과 같습니다.
+<table>
+	<tr><th width="30%">파일 이름</th><th>설명</th></tr>
+	<tr><td>go2tencentcloud_x64.exe</td><td>64비트 Windows 시스템의 마이그레이션 툴에서 실행 가능한 프로그램입니다.</td></tr>
+	<tr><td>user.json</td><td>마이그레이션의 사용자 정보입니다.</td></tr>
+	<tr><td>client.json</td><td>마이그레이션 툴의 구성 파일입니다.</td></tr>
+	<tr><td>client.exe</td><td>Windows 시스템의 마이그레이션 실행 가능 프로그램입니다.</td></tr>
+</table>
+
 <dx-alert infotype="notice" title="">
 삭제할 수 없는 구성 파일은 go2tencentcloud의 실행 가능 프로그램과 같은 단계의 디렉터리로 이동해 놓으시기 바랍니다. 
 </dx-alert>
@@ -63,8 +74,8 @@ user.json 구성 파일은 다음과 같이 설명됩니다.
 
 <table>
 	<tr><th>매개변수 이름</th><th>유형</th><th>필수 입력 여부</th><th>설명</th></tr>
-	<tr><td>SecretId</td><td>String</td><td>Yes</td><td>계정 API 호출 키 SecretId. 이에 관한 세부 정보는 <a href="https://intl.cloud.tencent.com/document/product/598/32675">액세스 키</a>를 참고 바랍니다.</td></tr>
-	<tr><td>SecretKey</td><td>String</td><td>Yes</td><td>계정 API 호출 키 SecretKey. 이에 관한 세부 정보는 <a href="https://intl.cloud.tencent.com/document/product/598/32675">액세스 키</a>를 참고 바랍니다.</td></tr>
+	<tr><td>SecretId</td><td>String</td><td>Yes</td><td>계정 API 호출 키 SecretId. 이에 관한 세부 정보는 <a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</a>를 참고 바랍니다.</td></tr>
+	<tr><td>SecretKey</td><td>String</td><td>Yes</td><td>계정 API 호출 키 SecretKey. 이에 관한 세부 정보는 <a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</a>를 참고 바랍니다.</td></tr>
 </table>
 
 ### client.json 파일 매개변수 설명[](id:clientJsonState)
@@ -98,25 +109,25 @@ client.json 구성 파일은 다음과 같이 설명됩니다.
 	<td> Client.Net.Proxy.Ip</td>
 	<td>String</td>
 	<td>No</td>
-	<td>기본값은 비어 있습니다. 프라이빗 네트워크 마이그레이션 <a href="#Scenario3">시나리오 3</a>에서는 네트워크 프록시의 IP 주소를 구성해야 합니다.</td>
+	<td>기본값은 비어 있습니다. 사설망 마이그레이션 <a href="#Scenario3">시나리오 3</a>에서는 네트워크 프록시의 IP 주소를 구성해야 합니다.</td>
   </tr>
   <tr>
 	<td> Client.Net.Proxy.Port</td>
 	<td>String</td>
 	<td>No</td>
-	<td>기본값은 비어 있습니다. 프라이빗 네트워크 마이그레이션 <a href="#Scenario3">시나리오 3</a>에서는 네트워크 프록시의 포트를 구성해야 합니다.</td>
+	<td>기본값은 비어 있습니다. 사설망 마이그레이션 <a href="#Scenario3">시나리오 3</a>에서는 네트워크 프록시의 포트를 구성해야 합니다.</td>
   </tr>
    <tr>
 	<td> Client.Net.Proxy.User</td>
 	<td>String</td>
 	<td>No</td>
-	<td>기본값은 비어 있습니다. 프라이빗 네트워크 마이그레이션 <a href="#Scenario3">시나리오 3</a>에서 네트워크 프록시를 확인해야 하는 경우 네트워크 프록시의 사용자 이름을 구성합니다.</td>
+	<td>기본값은 비어 있습니다. 사설망 마이그레이션 <a href="#Scenario3">시나리오 3</a>에서 네트워크 프록시를 확인해야 하는 경우 네트워크 프록시의 사용자 이름을 구성합니다.</td>
   </tr>
    <tr>
 	<td> Client.Net.Proxy.Password</td>
 	<td>String</td>
 	<td>No</td>
-	<td>기본값은 비어 있습니다. 프라이빗 네트워크 마이그레이션 <a href="#Scenario3">시나리오 3</a>에서 네트워크 프록시를 확인해야 하는 경우 네트워크 프록시의 암호를 구성합니다.</td>
+	<td>기본값은 비어 있습니다. 사설망 마이그레이션 <a href="#Scenario3">시나리오 3</a>에서 네트워크 프록시를 확인해야 하는 경우 네트워크 프록시의 암호를 구성합니다.</td>
   </tr>
 </table>
 
