@@ -31,7 +31,7 @@ implementation 'com.qcloud.cos:cloud-infinite:1.2.1'
 CloudInfinite cloudInfinite = new CloudInfinite();
 // Perform transformation according to the basic feature options of CI you select;
 CITransformation transform = new CITransformation();
-transform.format(CIImageFormat.TPG, CIImageLoadOptions.LoadTypeAcceptHeader);
+transform.format(CIImageFormat.TPG, CIImageLoadOptions.LoadTypeUrlFooter);
 // Build the image `CIImageLoadRequest`
 CIImageLoadRequest request = cloudInfinite.requestWithBaseUrlSync(url, transform);
 ```
