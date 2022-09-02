@@ -150,12 +150,15 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Virginia Zone 2 (Nodes in Virginia can cover Eastern US)<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td rowspan="1">Europe (Frankfurt)<br>eu-frankfurt</td>
+			<td rowspan="2">Europe (Frankfurt)<br>eu-frankfurt</td>
 			<td>Frankfurt Zone 1 (Nodes in Frankfurt can cover Europe)<br>eu-frankfurt-1</td>
 		</tr>
 		<tr>
+			<td>Frankfurt Zone 2 (Nodes in Frankfurt can cover Europe)<br>eu-frankfurt-2</td>	
+		</tr>
+		<tr>
 		<td >Europe (Moscow)<br>eu-moscow</td>
-		<td>Moscow Zone 1 (Nodes in Moscow can cover Europe)<br>eu-moscow-1</td>
+		<td>Northeast Europe Zone 1 (Nodes in Moscow can cover Europe)<br>eu-moscow-1</td>
 		</tr>
 	</tbody>
 </table>
