@@ -1,4 +1,4 @@
-﻿| Item | Windows System | Linux System|
+| Item | Windows System | Linux System|
 |---------|---------|---------|
 | Program installation directory | C:\program files\qcloud\yunjing\ydeyes <br>C:\program files\qcloud\yunjing\ydlive | /usr/local/qcloud/YunJing/ |
 | Process name   |  <br>YDService CWPP main service process <br>YDLive daemon <br>YDPython vulnerability & baseline scan plugin <br>YDQuaraV2 Trojan isolation plugin <br>qtflame assets collection plugin | YDService CWPP main service process<br>YDLive daemon<br>YDPython vulnerability & baseline scan plugin<br>YDUtils process scan plugin<br>YDQuaraV2 Trojan isolation plugin<br>qtflame assets collection plugin<br>tcss-agent container baseline scan plugin<br>tcss-scan container image scan plugin | 
