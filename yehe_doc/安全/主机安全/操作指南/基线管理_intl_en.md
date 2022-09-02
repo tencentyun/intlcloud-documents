@@ -69,9 +69,10 @@ Field description:
 	- View details:
 	 - In the baseline check result list, locate the desired baseline, and then click **Details** in the Action column on the right to open the baseline details page.
 	 - The baseline details page shows the description and threat level of the baseline, as well as the list of affected servers.
-		![](https://qcloudimg.tencent-cloud.cn/raw/5eca48d5d7ff1b44ab9060074851359e.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/5eca48d5d7ff1b44ab9060074851359e.png)
  - The check details page shows the basic information including baseline name, server name, and check items.
-		![](https://qcloudimg.tencent-cloud.cn/raw/97129205f6845ec9204000e347ef336f.png)
+ 
+	![](https://qcloudimg.tencent-cloud.cn/raw/fb698185a7af8c4540849d761fd6f35d.png)
 
 	- You can run a "Recheck" or select "Ignore" for multiple check items.
 	- You can filter check items by threat level or status.
