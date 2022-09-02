@@ -16,7 +16,7 @@ At this point, you have activated VOD.
 
 ### Obtaining FairPlay certificate information
 
-See [Obtaining FairPlay Certificate Information]().
+See [Obtaining FairPlay Certificate Information](https://intl.cloud.tencent.com/document/product/266/46643).
 
 ### Submitting the certificate information
 
