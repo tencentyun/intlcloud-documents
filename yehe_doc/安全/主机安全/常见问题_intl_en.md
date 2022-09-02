@@ -1,52 +1,45 @@
-### What will happen when a server is intruded?
-- Business interruption: databases and files are tampered with or deleted, resulting in service unavailability and system corruption.
-- Data theft: hackers steal your data and sell it publicly, leading to leaks of your end users' private data, damage to your brand image, and customer loss.
-- Data encryption by ransomware: hackers who intrude into your servers encrypt your data and extort ransom by embedding irreversible encryption ransomware.
-- Service instability: hackers run cryptomining and DDoS trojan programs on your server to consume considerable system resources, making the servers unable to provide services normally.
+﻿This topic lists FAQs about CWPP.
 
-<span id="kzbf"></span>
-### How do I achieve automatic data backup through quick snapshots?
-Snapshot is a data backup method provided by Tencent Cloud. It can create a fully available duplicate of the specified source cloud disk whose lifecycle is independent of the source cloud disk. You can create snapshots on a regular basis to quickly recover data in case of accidental data loss.
-You can create a snapshot in the console in the following steps:
-1. Log in to the [CBS Console](https://console.cloud.tencent.com/cvm/cbs/index?rid=1).
-2. Locate the row of the instance for which you want to create a snapshot and click **Create Snapshot**.
-3. Confirm the relevant information on the snapshot creating page, name the snapshot, click **Submit**, and wait for the snapshot to be created.
+## Purchase
+[](id:RHGMYZJAQZYB)
+### How can I purchase CWPP Pro and CWPP Ultimate?
+See [Purchasing Protection Licenses](https://intl.cloud.tencent.com/document/product/296/48331).
 
-For more information, please see [Snapshot Overview](https://intl.cloud.tencent.com/document/product/362/31638) and [Creating Snapshot](https://intl.cloud.tencent.com/document/product/362/5755).
+### Does CWPP conflict with other security products?
+CWPP does not conflict with other security products. It protects servers by providing security capabilities in different dimensions than other products.
 
-### What should I do if my password is compromised by brute force attacks?
-If your password is compromised, your server may have been intruded with backdoor programs embedded into it.
-- Check the server security status to see whether there are other unknown accounts and trojan files, and if yes, delete them immediately and change the server login password. For more information, please see [Intrusions on Linux](https://intl.cloud.tencent.com/document/product/296/34230) and [Intrusions on Windows](https://intl.cloud.tencent.com/document/product/296/34231).
-- If necessary, you are recommended to reset the server and then set a complex password containing at least 15 letters, digits, and special characters.
+### How do I disable CWPP Pro or CWPP Ultimate?
+Log in to the [CWPP Console](https://console.tencentcloud.com/cwp) and select **License Management** in the left navigation pane. Search for the servers for which you want to disable CWPP Pro or CWPP Ultimate, and then click **Unbind** in the operation column to disable the service. See [License Management](https://console.tencentcloud.com/cwp/setting/authorize).
 
-### What should I do if suspicious logins are detected?
-CWP judges whether a login attempt is intended according to the list of usual login locations for admins. Please check the login log carefully. If a login was not intended, the password may have been compromised. In this case, you need to perform a thorough security check on your server.
+### How do I uninstall CWPP Agent?
+Log in to the [CWPP Console](https://console.tencentcloud.com/cwp) and select **Server List** in the left navigation pane. Search for the servers from which you want to uninstall CWPP Agent, and then click **Unbind** in the operation column to uninstall CWPP Agent (the latest status will by synced in about 10 minutes.)
 
-### Why does a CWP agent go offline? And how do I solve this issue?
-The CWP agent is not connected to the server, which causes it to be displayed as offline on the backend. You are recommended to download and install the agent again. The agent may go offline for the following reasons:
-- The agent is blocked by the firewall policy of the server. Please configure the firewall policy to allow the CWP backend access address.
-- The agent is corrupted by a third-party malware on the server. In this case, please reinstall the agent.
+## Features
+### How often are the virus and vulnerability libraries updated?
+Virus library: updated at 00:00 every day.
+Vulnerability library: updated from time to time.
 
-### What should I do if my server has trojan files?
-For more information on how to deal with trojan files detected, please see [Trojan Operation and Handling](https://intl.cloud.tencent.com/document/product/296/13008).
+### Why may the detection results be different between multiple scans of the vulnerabilities of Jar packages?
+The detection of Jar package vulnerabilities, for example, Struts2 vulnerability highly dependent on whether the Jar package is loaded. The vulnerability cannot be detected when the package is not loaded. When the service is running, the Webserver loads the Jar package in two modes — dynamic loading and static loading. In the dynamic loading mode, the Struts2 vulnerability can only be detected when the Jar package is running, so the check results are different between periods. It is recommended to scan for high-risk Jar package vulnerabilities multiple times to improve the accuracy of the check results.
 
-### What should I do if trojans are not successfully detected (false negative)?
-If you find an undetected trojan file, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=635&source=0&data_title=%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8(%E4%BA%91%E9%95%9C)&step=1) to contact the Tencent Cloud security team for fast identification.
+### What is the scanning frequency of files in the malicious file scan?
+You can set the scanning frequency of files. For more information, see [Malicious File Scan](https://intl.cloud.tencent.com/document/product/296/13008).
 
-### How do I uninstall the CWP agent?
-Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing), select **Asset Management** > **Server List** on the left sidebar, find the server from which you want to uninstall CWP, and click **Uninstall**. Or, open the installation directory and use the uninstaller there for uninstallation.
+### How does the security scoring mechanism work?
+See [Security Score Overview](https://intl.cloud.tencent.com/document/product/296/49373).
 
-### What should I do if there is a problem with identity verification for my Tencent Cloud account?
-Make sure you have completed real-name registration before you purchased resources for the Chinese mainland. If you have encountered a problem related to the Tencent Cloud account when using CWP, please see the [account documentation](https://intl.cloud.tencent.com/document/product/378?from_cn_redirect=1).
+### How long does it take for security baselines to take effect once they are configured in the product?
+The security baselines take effect immediately after their configuration.
 
-### How can I reduce the probability of server intrusion?
-- Fix high-risk vulnerabilities and baseline issues in a timely manner.
-- Set strong passwords to defend against brute force attacks.
-- Regularly inspect accounts, permissions, and ports and resolve alarms in the [CWP Console](https://console.cloud.tencent.com/cwp) in a timely manner.
-- Perform [snapshot backup](#kzbf) regularly.
+### What should be done if the result of a security baseline check item is "Failed"?
+1. Go to [Baseline Management](https://intl.cloud.tencent.com/document/product/296/45862), filter out the check items with a result of "Failed", and click **View Details** to open the details pop-up window.
+![](https://qcloudimg.tencent-cloud.cn/raw/3c43d5f355b502f4f8a544587b920672.png)
+2. In the check item details pop-up window, you can see the affected servers. Click **Details** in the operation column of a server to open the check result pop-up window.
+![](https://qcloudimg.tencent-cloud.cn/raw/6fe28add56b1f6c2757370e11ef017da.png)
+3. In the check result pop-up window, you can view the suggestions on how to fix the failed baseline items.
+![](https://qcloudimg.tencent-cloud.cn/raw/849fd2ec448f52acad8f5c78aab238f2.png)
 
-### How long does it take before the security baseline takes effect after the product is configured?
-The security baseline takes effect immediately after the product is configured
 
-### How do I fix a false positive where an intended login is mistakenly marked as suspicious?
-You can log in to the [CWP Console](https://console.cloud.tencent.com/cwp/manage/loginLog), select **Intrusion Detection** > **Login Audit** on the left sidebar, and click **Suspicious Logins** on the login audit page to find the login log that is defined as suspicious. In the "Operation" column on its right, click **Allowlist** to add it to the allowlist and eliminate the false positive.
+### Will I be notified if CWPP detects attacks such as vulnerabilities and Trojans?
+Yes. You will get alarms if CWPP detects attacks such as Trojans and critical vulnerabilities, and will be notified via Message Center, SMS, email, or WeCom. You can set your notification channel in [Alarm Settings](https://console.tencentcloud.com/cwp/setting).
+
