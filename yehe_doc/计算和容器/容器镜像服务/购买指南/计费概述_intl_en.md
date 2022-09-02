@@ -5,7 +5,7 @@ TCR provides the pay-as-you-go billing mode:
 
 |Billing Mode | Payment Method | Billing Unit | Use Cases|
 |---------|---------|---------|  |
-| Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/zh/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis. | USD/hour | The unit price is high. This billing mode is applicable to scenarios such as temporary test. |
+| Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/zh/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis. | USD/hour | This billing mode is applicable to scenarios such as temporary test. |
 
 
 
