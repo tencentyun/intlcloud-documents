@@ -3,10 +3,9 @@ TCR Enterprise supports the pay-as-you-go billing mode. You can go to the [TCR P
 ## Billing Mode for TCR Enterprise
 TCR provides the pay-as-you-go billing mode:
 
-|Billing Mode | Payment Method | Billing Unit | Use Cases|
-|---------|---------|---------|  |
-| Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/zh/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis. | USD/hour | The unit price is high. This billing mode is applicable to scenarios such as temporary test. |
-
+|Billing Mode | Payment Method | Billing Unit | 
+|---------|---------|---------|
+| Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/zh/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis. | USD/hour | 
 
 
 
@@ -21,17 +20,16 @@ TCR provides the pay-as-you-go billing mode:
 <tr>
 <td>Instance purchasing</td>
 <td>TCR Enterprise instances support pay-as-you-go billing mode. The managed service charges differ according to selected regions and specifications.</td>
-td>Please refer to <a href="#price">TCR Enterprise Pricing</a>. </td>
 </tr>
 <tr>
 <td>Storage fees</td>
 <td>The cloud native artifacts of the TCR Enterprise managed instance, such as container images and Helm charts, are stored in your COS Bucket. Storage and access fees will apply based on actual usage with the selected COS billing mode. Go to the <a href="https://console.cloud.tencent.com/expense/overview">Billing Center</a> to learn more.
-<td>Please refer to <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
+<td>See <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
 </tr>
 <tr>
 <td>Traffic</td>
 <td>Using the public network to upload and download the cloud native artifacts such as container images and Helm charts will generate public network traffic fees in COS. <br><b>Note: </b>using the instance synchronization feature for cross-regional synchronization of container images and Helm charts will not generate COS public network traffic fees.</td></td>
-<td>Please refer to <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
+<td>See <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
 </tr>
 </table>
 

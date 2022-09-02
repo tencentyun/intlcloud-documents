@@ -89,8 +89,14 @@
 			<td>成都二区<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-			<td rowspan="1">港澳台地区（中国香港）<br>ap-hongkong</td>
+			<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
+			<td>香港一区（中国香港节点可用于覆盖港澳台地区）（已售罄）<br>ap-hongkong-1</td>
+	</tr>
+	<tr>
 			<td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td>
+	</tr>
+	<tr>
+			<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td>
 	</tr>
 	<tr>
 </tbody>
@@ -106,15 +112,24 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td  rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="4">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
 			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>
 		</tr>
 		<tr>
-			<td>亚太东南（雅加达）<br>ap-jakarta</td>
+			<td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td>
+		</tr>
+		<tr>
+			<td>新加坡四区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+			<td rowspan="2">亚太东南（雅加达）<br>ap-jakarta</td>
 			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td>雅加达二区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
@@ -123,24 +138,38 @@
 		<tr>
 			<td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td>
 		</tr>
-		<tr >
-			<td rowspan="1">亚太东北（东京）<br>ap-tokyo</td>
+		<tr>
+			<td rowspan="2">亚太东北（东京）<br>ap-tokyo</td>
+			<td>东京一区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-1</td>
+		</tr>
+                <tr>
 			<td>东京二区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-2</td>
 		</tr>
-       <tr>
+                <tr>
 			<td  rowspan="2">亚太南部（孟买）<br>ap-mumbai</td>
 			<td>孟买一区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-1</td>
 		</tr>
-       <tr>
+                <tr>
 			<td>孟买二区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-2</td>
 		</tr>
 		<tr>
 		  	<td rowspan="1">亚太东南（曼谷）<br>ap-bangkok </td>
-				 <td>曼谷一区  （曼谷节点用户覆盖亚太东南地区）<br>ap-bangkok-1</td>
+			<td>曼谷一区  （曼谷节点用户覆盖亚太东南地区）<br>ap-bangkok-1</td>
 		</tr>
 		<tr>
 			<td>北美地区（多伦多）<br>na-toronto</td>
 			<td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td>
+		</tr>
+		<tr>
+			<td>南美地区（圣保罗）<br>sa-saopaulo</td>
+			<td>圣保罗一区（圣保罗节点可用于覆盖南美地区）<br>sa-saopaulo-1</td>
+		</tr>
+		<tr>
+			<td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
+			<td>硅谷一区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-1</td>
+		</tr>
+		<tr>
+			<td>硅谷二区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-2</td>
 		</tr>
 		<tr>
 			<td rowspan="2">美国东部（弗吉尼亚）<br>na-ashburn</td>
@@ -150,12 +179,15 @@
 			<td>弗吉尼亚二区 （弗吉尼亚节点用户覆盖美国东部地区）<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td rowspan="1">欧洲地区（法兰克福）<br>eu-frankfurt</td>
+			<td rowspan="2">欧洲地区（法兰克福）<br>eu-frankfurt</td>
 			<td>法兰克福一区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-1</td>
 		</tr>
 		<tr>
+			<td>法兰克福二区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-2</td>
+		</tr>
+		<tr>
 		<td >欧洲地区（莫斯科）<br>eu-moscow</td>
-		<td>莫斯科一区（莫斯科节点可用区覆盖欧洲地区）<br>eu-moscow-1</td>
+		<td>欧洲东北一区（莫斯科节点可用区覆盖欧洲地区）<br>eu-moscow-1</td>
 		</tr>
 	</tbody>
 </table>

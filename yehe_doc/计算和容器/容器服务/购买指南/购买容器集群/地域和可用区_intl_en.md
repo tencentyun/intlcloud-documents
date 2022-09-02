@@ -89,8 +89,14 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Chengdu Zone 2<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-			<td rowspan="1">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
-			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
+			<td rowspan="3">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
+			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions) (Sold out)<br>ap-hongkong-1</td>
+	</tr>
+	<tr>
+		        <td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
+	</tr>
+	<tr>
+		        <td>Hong Kong Zone 3 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-3</td>
 	</tr>
 	<tr>
 </tbody>
@@ -106,15 +112,24 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<th>Availability Zone</th>
 		</tr>
 		<tr>
-			<td  rowspan="2">Southeast Asia (Singapore)<br>ap-singapore</td>
+			<td  rowspan="4">Southeast Asia (Singapore)<br>ap-singapore</td>
 			<td>Singapore Zone 1 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-1</td>
 		</tr>
 		<tr>
 			<td>Singapore Zone 2 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-2</td>
 		</tr>
 		<tr>
-			<td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
+			<td>Singapore Zone 3 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-3</td>
+		</tr>
+		<tr>
+			<td>Singapore Zone 4 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+			<td  rowspan="2">Southeast Asia (Jakarta)<br>ap-jakarta</td>
 			<td>Jakarta Zone 1 (Nodes in Jakarta can cover Southeast Asia)<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td>Jakarta Zone 2 (Nodes in Jakarta can cover Southeast Asia)<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
@@ -124,14 +139,17 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Seoul Zone 2 (Nodes in Seoul can cover Northeast Asia)<br>ap-seoul-2</td>
 		</tr>
 		<tr>
-			<td rowspan="1">Northeast Asia (Tokyo)<br>ap-tokyo</td>
+			<td rowspan="2">Northeast Asia (Tokyo)<br>ap-tokyo</td>
+			<td>Tokyo Zone 1 (Tokyo nodes can cover services in Northeast Asia)<br>ap-tokyo-1</td>
+		</tr>
+                <tr>
 			<td>Tokyo Zone 2 (Tokyo nodes can cover services in Northeast Asia)<br>ap-tokyo-2</td>
 		</tr>
-       <tr>
+                <tr>
 			<td  rowspan="2">South Asia (Mumbai)<br>ap-mumbai</td>
 			<td>Mumbai Zone 1 (Nodes in Mumbai can cover South Asia)<br>ap-mumbai-1</td>
 		</tr>
-       <tr>
+                <tr>
 			<td>Mumbai Zone 2 (Nodes in Mumbai can cover South Asia) <br>ap-mumbai-2</td>
 		</tr>
 		<tr>
@@ -143,6 +161,17 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Toronto Zone 1 (Nodes in Toronto can cover North America)<br>na-toronto-1</td>
 		</tr>
 		<tr>
+			<td>South America（Saopaulo）<br>sa-saopaulo</td>
+			<td>Saopaulo Zone 1（Nodes in Saopaulo can cover South America）<br>sa-saopaulo-1</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Western United States（Siliconvalley）<br>na-siliconvalley</td>
+			<td>Siliconvalley Zone 1（Nodes in Siliconvalley can cover Western United States）<br>na-siliconvalley-1</td>
+		</tr>
+		<tr>
+			<td>Siliconvalley Zone 2（Nodes in Siliconvalley can cover Western United States）<br>na-siliconvalley-2</td>
+		</tr>
+		<tr>
 			<td rowspan="2">Eastern US (Virginia)<br>na-ashburn</td>
 			<td>Virginia Zone 1 (Nodes in Virginia can cover Eastern US)<br>na-ashburn-1</td>
 		</tr>
@@ -150,12 +179,15 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Virginia Zone 2 (Nodes in Virginia can cover Eastern US)<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td rowspan="1">Europe (Frankfurt)<br>eu-frankfurt</td>
+			<td rowspan="2">Europe (Frankfurt)<br>eu-frankfurt</td>
 			<td>Frankfurt Zone 1 (Nodes in Frankfurt can cover Europe)<br>eu-frankfurt-1</td>
 		</tr>
 		<tr>
+			<td>Frankfurt Zone 2 (Nodes in Frankfurt can cover Europe)<br>eu-frankfurt-2</td>	
+		</tr>
+		<tr>
 		<td >Europe (Moscow)<br>eu-moscow</td>
-		<td>Moscow Zone 1 (Nodes in Moscow can cover Europe)<br>eu-moscow-1</td>
+		<td>Northeast Europe Zone 1 (Nodes in Moscow can cover Europe)<br>eu-moscow-1</td>
 		</tr>
 	</tbody>
 </table>
