@@ -139,13 +139,13 @@ Establish interconnections as instructed in [Connecting Network Instances Under 
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. Here, select **MySQL**.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. Here, select <b>MySQL</b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. Here, select **MySQL**.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. Here, select <b>MySQL</b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -172,11 +172,11 @@ Establish interconnections as instructed in [Connecting Network Instances Under 
 <td rowspan=12>Source Database Settings</td>
 <td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Service Provider</td><td>Select **Others**.</td></tr>
+<td>Service Provider</td><td>Select <b>Others</b>.</td></tr>
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select **CCN**. For more information on access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.</td></tr>
+<td>Access Type</td><td>Select <b>CCN</b>. For more information on access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.</td></tr>
 <tr>
 <td>Host Address</td><td>IP address or domain name for accessing the source MySQL database.</td></tr>
 <tr>
@@ -200,7 +200,7 @@ Establish interconnections as instructed in [Connecting Network Instances Under 
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select **Database**.</td></tr>
+<td>Access Type</td><td>Select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target TencentDB database.</td></tr>
 <tr>
@@ -220,7 +220,7 @@ Establish interconnections as instructed in [Connecting Network Instances Under 
 <li>Specified objects: Migrate specified objects.</li></ul> </td></tr>
 <tr>
 <td>Specified objects</td>
-<td>Select the objects to be migrated in **Source Database Object** and move them to the **Selected Object** box.</td></tr>
+<td>Select the objects to be migrated in <b>Source Database Object</b> and move them to the <b>Selected Object</b> box.</td></tr>
 </tbody></table>
 
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
