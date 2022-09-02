@@ -25,12 +25,12 @@ td>Please refer to <a href="#price">TCR Enterprise Pricing</a>. </td>
 <tr>
 <td>Storage fees</td>
 <td>The cloud native artifacts of the TCR Enterprise managed instance, such as container images and Helm charts, are stored in your COS Bucket. Storage and access fees will apply based on actual usage with the selected COS billing mode. Go to the <a href="https://console.cloud.tencent.com/expense/overview">Billing Center</a> to learn more.
-<td>Please refer to <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
+<td>See <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
 </tr>
 <tr>
 <td>Traffic</td>
 <td>Using the public network to upload and download the cloud native artifacts such as container images and Helm charts will generate public network traffic fees in COS. <br><b>Note: </b>using the instance synchronization feature for cross-regional synchronization of container images and Helm charts will not generate COS public network traffic fees.</td></td>
-<td>Please refer to <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
+<td>See <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
 </tr>
 </table>
 
