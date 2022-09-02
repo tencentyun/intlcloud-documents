@@ -1,4 +1,4 @@
-> ? TCMG will end the beta test and start billing at 00:00:00 on September 15, 2022. You should upgrade your instances created during the beta test to paid instances before you can continue using them. For billing details, see below.
+> ? TCMG will end the beta test and start billing at 00:00:00 on October 17, 2022. You should upgrade your instances created during the beta test to paid instances before you can continue using them. For billing details, see below.
 
 
 ## Billing mode
