@@ -16,7 +16,7 @@ This document describes how to set notification rules for metric alarms, includi
 <tr>
 <td>Remarks</td><td>Enter custom policy remarks.</td></tr>
 <tr>
-<td>Monitoring Type</td><td>Select **Tencent Cloud services**.</td></tr>
+<td>Monitoring Type</td><td>Select <b>Tencent Cloud services</b>.</td></tr>
 <tr>
 <td>Policy Type</td>
 <td>Select the desired policy type of the Tencent Cloud service to be monitored. Here, select <strong>DTS/Data sync</strong>.
@@ -30,9 +30,9 @@ This document describes how to set notification rules for metric alarms, includi
 <td>Alarm Object</td>
 <td>
 <ul>
-<li>If you select **Instance ID**, the alarm policy will be associated with the selected instance.</li>
-<li>If you select **Instance Group**, the alarm policy will be associated with the selected instance group.</li>
-<li>If you select **All Objects**, the alarm policy will be associated with all instances under the current account.</li></ul></td>
+<li>If you select <b>Instance ID</b>, the alarm policy will be associated with the selected instance.</li>
+<li>If you select <b>Instance Group</b>, the alarm policy will be associated with the selected instance group.</li>
+<li>If you select <b>All Objects</b>, the alarm policy will be associated with all instances under the current account.</li></ul></td>
 <tr>
 <td>Configure manually<br></td>
 <td>
@@ -42,7 +42,7 @@ This document describes how to set notification rules for metric alarms, includi
 <li>Alarm frequency: You can customize the frequency for repeated alarm notifications, such as once every hour, 2 hours, or day.</li></ul></td></tr>
 <tr>
 <td>Select template</td>
-<td>Click **Select template** and select a configured template from the drop-down list. For detailed configurations, see <a href="https://intl.cloud.tencent.com/document/product/248/38911">Configuring Trigger Condition Template</a>. If a newly created template is not displayed, click <strong>Refresh</strong> on the right.</td></tr>
+<td>Click <b>Select template</b> and select a configured template from the drop-down list. For detailed configurations, see <a href="https://intl.cloud.tencent.com/document/product/248/38911">Configuring Trigger Condition Template</a>. If a newly created template is not displayed, click <strong>Refresh</strong> on the right.</td></tr>
 <tr>
 <td>Configure Alarm Notification</td>
 <td>Notification Template</td>
