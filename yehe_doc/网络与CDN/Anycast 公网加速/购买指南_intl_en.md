@@ -27,29 +27,51 @@ An Anycast EIP that is not bound to cloud resources incurs IP resource fees. For
 ### [Public network fee](id:widthcost)
 When an Anycast EIP is created, AIA BGP bandwidth package is automatically created as well. Billing details are as follows:
 <table>
-<thead>
 <tr>
-<th align="left" width="50%">Anycast EIP Region</th>
-<th align="left">Acceleration Region</th>
-<th align="left" width="25%">Unit Price (USD/Mbps/month)</th>
+<th align="left"rowspan="2">Anycast EIP Region</th>
+<th align="left" width="35%" colspan="4">Acceleration Region(Unit Price (USD/Mbps/month))</th>
 </tr>
-</thead>
-<tbody><tr>
-<td align="left">Asia (Hong Kong (China), Singapore, Bangkok, Mumbai, Seoul, and Tokyo)<br/>
-North America (Silicon Valley)<br/>
-Europe (Frankfurt and Moscow)
-</td>
-<td align="left">Regions outside the Chinese mainland
-</td>
+<tr>
+<td align="left">Asia</td>
+<td align="left">Europe</td>
+<td align="left">North America</td>
+<td align="left">South America</td>
+</tr>
+<tr>
+<td align="left">Asia (Hong Kong (China), Singapore, Bangkok, Mumbai, Seoul, and Tokyo）</td>
 <td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">44</td>
 </tr>
-</tbody></table>
+<tr>
+<td align="left">Europe (Frankfurt and Moscow)</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">26</td>
+</tr>
+<tr>
+<td align="left">North America (Silicon Valley)</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">26</td>
+</tr>
+<tr>
+<td align="left">South America(Sao Paulo)</td>
+<td align="left">44</td>
+<td align="left">26</td>
+<td align="left">26</td>
+<td align="left">21</td>
+</tr>
+</table>
 
 >?
 >- AIA only provides acceleration services for regions outside the Chinese mainland. It does not accelerate the transmission between the Chinese mainland and other regions.
 >- AIA adopts the aggregated billing, which generates bills in the Guangzhou region.
 >- After creating an Anycast EIP in the console, the automatically generated AIA BGP bandwidth package only records the bandwidth usage details in the region, which is not used for billing.
->- All Anycast EIPs in a single region are aggregated into the bandwidth package of the region, which is subdivided into bandwidth packages corresponding to the acceleration region. Assume you create an Anycast EIP in the Asia Pacific region (Hong Kong, China), the bill lists three bandwidth packages: Asia to Asia, Asia to North America, and Asia to Europe.
+>- All Anycast EIPs in a single region are aggregated into the bandwidth package of the region, which is subdivided into bandwidth packages corresponding to the acceleration region. Assume you create an Anycast EIP in the Asia Pacific region (Hong Kong, China), the bill lists four bandwidth packages: Asia to Asia, Asia to North America, and Asia to Europe, Asia to South America .
 
 
 ## Billing Examples
