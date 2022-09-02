@@ -106,15 +106,24 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<th>Availability Zone</th>
 		</tr>
 		<tr>
-			<td  rowspan="2">Southeast Asia (Singapore)<br>ap-singapore</td>
+			<td  rowspan="4">Southeast Asia (Singapore)<br>ap-singapore</td>
 			<td>Singapore Zone 1 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-1</td>
 		</tr>
 		<tr>
 			<td>Singapore Zone 2 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-2</td>
 		</tr>
 		<tr>
-			<td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
+			<td>Singapore Zone 3 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-3</td>
+		</tr>
+		<tr>
+			<td>Singapore Zone 4 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+			<td  rowspan="2">Southeast Asia (Jakarta)<br>ap-jakarta</td>
 			<td>Jakarta Zone 1 (Nodes in Jakarta can cover Southeast Asia)<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td>Jakarta Zone 2 (Nodes in Jakarta can cover Southeast Asia)<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
@@ -124,14 +133,17 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Seoul Zone 2 (Nodes in Seoul can cover Northeast Asia)<br>ap-seoul-2</td>
 		</tr>
 		<tr>
-			<td rowspan="1">Northeast Asia (Tokyo)<br>ap-tokyo</td>
+			<td rowspan="2">Northeast Asia (Tokyo)<br>ap-tokyo</td>
+			<td>Tokyo Zone 1 (Tokyo nodes can cover services in Northeast Asia)<br>ap-tokyo-1</td>
+		</tr>
+                <tr>
 			<td>Tokyo Zone 2 (Tokyo nodes can cover services in Northeast Asia)<br>ap-tokyo-2</td>
 		</tr>
-       <tr>
+                <tr>
 			<td  rowspan="2">South Asia (Mumbai)<br>ap-mumbai</td>
 			<td>Mumbai Zone 1 (Nodes in Mumbai can cover South Asia)<br>ap-mumbai-1</td>
 		</tr>
-       <tr>
+                <tr>
 			<td>Mumbai Zone 2 (Nodes in Mumbai can cover South Asia) <br>ap-mumbai-2</td>
 		</tr>
 		<tr>
