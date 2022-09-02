@@ -1,4 +1,4 @@
-﻿|名称 | Windows 系统 | Linux 系统 |
+|名称 | Windows 系统 | Linux 系统 |
 |---------|---------|---------|
 | 程序安装目录  | C:\program files\qcloud\yunjing\ydeyes <br>C:\program files\qcloud\yunjing\ydlive  | /usr/local/qcloud/YunJing/  |
 | 进程名称   |  <br>YDService 云镜主服务进程 <br>YDLive 守护进程 <br>YDPython 漏洞&基线扫描插件 <br>YDQuaraV2 木马隔离插件 <br>qtflame 资产采集插件   | YDService 云镜主服务进程<br>YDLive 守护进程<br>YDPython 漏洞&基线扫描插件<br>YDUtils 进程扫描插件<br>YDQuaraV2 木马隔离插件<br>qtflame 资产采集插件<br>tcss-agent 容器基线扫描插件<br>tcss-scan 容器镜像扫描插件  | 
