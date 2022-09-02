@@ -16,7 +16,7 @@
 
 ### 申请 FairPlay 证书信息
 
-请参考 [如何申请 FairPlay 证书信息]()。
+请参考 [如何申请 FairPlay 证书信息](https://intl.cloud.tencent.com/document/product/266/46643)。
 
 ### 提交 FairPlay 证书信息
 
