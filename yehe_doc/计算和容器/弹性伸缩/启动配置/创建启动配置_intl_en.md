@@ -1,38 +1,36 @@
-During scale-out, Auto Scaling needs to know in advance the configurations used to produce CVM instances. Therefore, you must predefine related resources such as images, data on data disks, instance configurations, key pairs, security groups, and block storage devices.
+## Overview
+AS needs to know in advance the configurations used to create CVM instances during scale-out. Therefore, you should specify resources such as images, data on data disks, instance configurations, key pairs, security groups, and block storage devices.
 
-A launch configuration is a template based on which instances will be produced during automatic scale-out. **Creating a launch configuration itself will not produce any instances, so it is completely free to use.**
+It is worth noting that a launch configuration is just a template based on which instances will be produced during automatic scale-out. **Creating a launch configuration itself will not produce any instances, so it is completely free to use.**
 
-Log in to the [Auto Scaling console](https://console.cloud.tencent.com/autoscaling/config) and click **Launch Configuration** in the left sidebar.
 
-### Step 1. Select a region
+## Directions
+Log in to the [AS console](https://console.cloud.tencent.com/autoscaling/config) and click **Launch Configuration** on the left sidebar.
 
-On the menu at the top of the page, select a region for your scaling group based on your requirements.
+### Selecting a region
 
-> Select the region of the CVM instances to which you want to bind the scaling group as the launch configuration and the scaling group are both region-based. For example, when the Guangzhou region is specified for the launch configuration, only CVM instances in Guangzhou will be automatically added in the scaling group.
->
+On the topbar, select the target region.
+<dx-alert infotype="notice" title="">
+You should select the region of the target CVM instance, as both the launch configuration and scaling group are region-specific. For example, if Guangzhou region is specified for the launch configuration, instances can be bound only to the scaling group in Guangzhou region, and only instances in Guangzhou region can be automatically added.
+</dx-alert>
+
 ![](https://main.qcloudimg.com/raw/014744e64c1b5bb3f251a478baa84540.png)
 
-### Step 2. Specify parameters
+### Specifying parameters
 
-1. Click **Create** and follow the instructions to create a launch configuration in the same steps as purchasing a CVM.
+1. On the **Launch Configuration** page, click **Create**.
+2. Enter the **Launch configuration name**, such as "Configuration A of the frontend server cluster".
+3. Select a model, such as 2-core 2 GB MEM, which indicates two CPU cores and 2 GB memory.
+4. Select an image. You can select a clean "public image" or a "custom image" where your application has already been deployed.
+To make an instance available directly after creation, it is highly recommended that you deploy your business application in a custom image. **In addition, the application in the image should be set to run at system launch**, so that the instances produced by AS can be automated.
+5. Select the capacities of system disk and data disks.
+If you want the data disk of the produced instance to have your own data, you can specify a data disk snapshot, so that the instance comes with the data in the snapshot upon production.
+<dx-alert infotype="notice" title="">
+- As instances in a scaling group are generally stateless, we recommend you put your own data into a custom image for convenience. If the system disk is not large enough, you can apply for a larger one by submitting a ticket.
+ - If you want to use the data disk to store data, you need to set it to be automatically mounted, so that scale-out can be left unattended. For detailed directions, see [FAQs](https://intl.cloud.tencent.com/document/product/377/4166).
+</dx-alert>
+6. Select the bandwidth just like when you purchase a CVM instance.
+7. Set the username, password, and security group.
+8. Click **Completed**.
+8. Create a scaling group based on the launch configuration. The launch configuration determines the instances to be created during scale-out, while the scaling group determines when to scale out.
 
-1. Enter a **configuration name** such as "frontend server cluster configuration A".
-
-2. Select a model such as 1-core 1G, which means 1-core CPU and 1 GB memory.
-
-3. Select an image. You can either select a clean "public image" or a "custom image" where your application has already been deployed.
-To make an instance available directly after creation, we strongly recommend that you deploy your business application in a custom image. **In addition, the application in the image needs to be set to run upon system startup**, so that the instances produced by AS can be automated.
-
-4. Select the capacities of system disk and data disks.
-If you want the data disk of the produced instance to have your own data, you can specify a data disk snapshot so that the instance comes with the data in the snapshot upon production.
->
-> - Since the instances in a scaling group are generally stateless, we recommend that you load your own data into a custom image for convenience. If the capacity of the system disk is insufficient, you can apply for a larger disk by submitting a ticket.
-> - If you want to use the data disk to store data, you need to set it to be automatically mounted, so that scale-out can be unattended. For more information, see [the specific method](https://intl.cloud.tencent.com/document/product/377/4166).
->
-5. Select the bandwidth in a similar way of purchasing a CVM instance.
-
-6. Set the username, password, and security group.
-
-7. Click **Confirm**.
-
-8. Create a scaling group based on the launch configuration. The launch configuration determines the instances to be created during scale-out, whereas the scaling group determines when to scale out.
