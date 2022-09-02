@@ -55,7 +55,7 @@ You can go to the [TCR Purchase Page](https://buy.intl.cloud.tencent.com/tcr) to
 >? TCR is currently unavailable in some regions. To learn more, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
 
 ## Specification
-The TCR specifications are as follows (**✓**: supported; **-**: not supported).
+The TCR specifications are as follows (**✓**: Supported; **-**: Not supported).
 
 <dx-alert infotype="notice" title="">
 When the instance is using the features of Standard or Advanced edition, it is not allowed to degrade the instance specifications to editions which do not support the features. If you want to degrade the specifications, please delete related feature configurations manually first.
@@ -118,13 +118,13 @@ When the instance is using the features of Standard or Advanced edition, it is n
 <td>Helm chart hosting</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Namespace quota</td><td>10</td><td>50</td><td>100</td><td>500<br>(you can apply to increase the quota)</td>
+<td>Namespace quota</td><td>10</td><td>50</td><td>100</td><td>500<br>Submit a ticket to increase the quota.</td>
 </tr>
 <tr>
-<td>Image repository quota</td><td>Guangzhou region: 500, other regions: 100</td><td>1000</td><td>3000</td><td>5000 <br>(you can apply to increase the quota)</td>
+<td>Image repository quota</td><td>Guangzhou region: 500, Other regions: 100</td><td>1000</td><td>3000</td><td>5000 <br>Submit a ticket to increase the quota.</td>
 </tr>
 <tr>
-<td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>(you can apply to increase the quota)</td>
+<td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>Submit a ticket to increase the quota.</td>
 </tr>
 <tr>
 <td rowspan="7">Data security</td>
