@@ -143,6 +143,17 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Toronto Zone 1 (Nodes in Toronto can cover North America)<br>na-toronto-1</td>
 		</tr>
 		<tr>
+			<td>South America（Saopaulo）<br>sa-saopaulo</td>
+			<td>Saopaulo Zone 1（Nodes in Saopaulo can cover South America）<br>sa-saopaulo-1</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Western United States（Siliconvalley）<br>na-siliconvalley</td>
+			<td>Siliconvalley Zone 1（Nodes in Siliconvalley can cover Western United States）<br>na-siliconvalley-1</td>
+		</tr>
+		<tr>
+			<td>Siliconvalley Zone 2（Nodes in Siliconvalley can cover Western United States）<br>na-siliconvalley-2</td>
+		</tr>
+		<tr>
 			<td rowspan="2">Eastern US (Virginia)<br>na-ashburn</td>
 			<td>Virginia Zone 1 (Nodes in Virginia can cover Eastern US)<br>na-ashburn-1</td>
 		</tr>
