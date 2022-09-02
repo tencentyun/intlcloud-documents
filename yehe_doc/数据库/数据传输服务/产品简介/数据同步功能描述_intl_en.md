@@ -1,9 +1,9 @@
-## Feature Overview
+## Feature overview
 The data sync feature refers to real-time data sync between two database sources. It is suitable for cloud-local active-active, multi-site active-active, and cross-border data sync as well as real-time data warehousing.   
 
 Unlike data migration which is a one-time short-term task to migrate the entire database, data sync is a continuous task. After a task is created, the data will be continuously synced (almost in real time) to keep consistency between the source and target databases. 
 
-## How to Implement
+## How it works
 The following takes MySQL sync as an example to describe the data sync feature, where data is exported from the source database and imported into the target database, and key steps include structure initialization, full data initialization, and incremental data processing.
 
 - Structure initialization
@@ -17,7 +17,7 @@ The following takes MySQL sync as an example to describe the data sync feature, 
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/f516a016acb92a1f466e4bc84e16be0b.png)
 
-## Supported Topologies
+## Supported topologies
 The basic unit of the sync service is one-way sync. During configuration, you can choose to use data definition language (DDL) or data manipulation language (DML) for sync. By combining one-way sync tasks, you can customize various complex topologies.
 In a complex topology, technical measures will be used for DML operations to avoid data loop. However, for DDL, the data sync service will check for loop during configuration to avoid forming DDL loop. 
 
@@ -31,12 +31,12 @@ Below are some common topologies, which you can customize by purchasing multiple
 - Many-to-One one-way sync
 <img src="https://qcloudimg.tencent-cloud.cn/raw/3edfb237c1519f1f92ec285c9a5db702.png" style="zoom:55%;" />
 - Two-Way sync
-<img src="https://qcloudimg.tencent-cloud.cn/raw/2fc3834ed3bb8f1e0711b0ae6afba498.png" style="zoom:70%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/2fc3834ed3bb8f1e0711b0ae6afba498.png" style="zoom:55%;" />
 - Cascaded two-way sync<br>
 <img src="https://qcloudimg.tencent-cloud.cn/raw/4fc9624a1965feb250e33f31789539ca.png" style="zoom:55%;" />
 
 
-## Typical Use Cases
+## Typical use cases
 By using DTS, you can sync data between MySQL databases in multiple regions to implement multi-site active-active deployment. Database instances in each region can run in the cloud or your self-built IDC.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f1e3638e92d99b6e51b61e0980e96a83.png" style="zoom:67%;" />
 
@@ -46,20 +46,23 @@ You can implement two-way sync by combining one-way sync tasks, but the followin
 - If a data sync conflict occurs, DTS will process the data strictly according to the selected conflict processing policy. You need to confirm whether the corresponding policy meets your business expectation during configuration.
 - DML statements support two-way sync, but DDL statements support only one-way sync. To create two-way sync, ensure that DDL sync is disabled in one of the one-way instances.
 
-## Supported Database Types
-For more information on the source and target database types, versions, and sync types supported for data sync, see [Databases Supported for Data Sync](https://intl.cloud.tencent.com/document/product/571/42579).
+## Supported database types
+For more information on the source and target database types, versions, and sync types supported for data sync, see [Databases Supported by Data Sync](https://intl.cloud.tencent.com/document/product/571/42579).
 
-## Supported Advanced Features
+## Supported advanced features
 
 | **Feature**          | **Description**                        | **Documentation**                           |
 | -------------------------- | -------------------------------------- | ----------------------------------------------- |
-| Two-Way sync, ring sync, and many-to-one sync | -         | [Databases Supported for Data Sync](https://intl.cloud.tencent.com/document/product/571/42579) |
-| Cross-version sync of most databases              | The target database version should be equal to or above the source database version; for example, data on v5.5.x can be synced to v5.5.x, v5.6.x, or above. The last digit in the version number is the minor version number, which is not restricted. | -                                   |
+| Two-way sync, ring sync, and many-to-one sync | Complex sync topologies such as two-way sync, ring sync, and many-to-one sync are supported. | [Databases Supported by Data Sync](https://intl.cloud.tencent.com/document/product/571/42579) |
+| Cross-account sync | Data sync between instances under different Tencent Cloud accounts is supported.  | [Cross-account TencentDB Instance Sync](https://intl.cloud.tencent.com/document/product/571/47336) |
+| Cross-version sync of most databases              | The target database version should be equal to or later than the source database version; for example, data on v5.5.x can be synced to v5.5.x, v5.6.x, or later. The last digit in the version number is the minor version number, which is not restricted. | -                                   |
 | Table conflict check                   | The duplicate table name check policy is provided.             | -                               |
-| Primary key conflict check                   | The following three primary key conflict processing policies are supported: <br/><li>Report: if a primary key conflict of tables is found during data sync, it will report an error and pause the data sync task. <br> <li>Ignore: if a primary key conflict is found during data sync, it will keep the primary key record in the target database. <br/> <li>Overwrite: if a primary key conflict is found during data sync, it will use the primary key record in the source database to overwrite that in the target database. | -                                          |
-| DML and DDL filtering | You can select the data types to be synced, such as INSERT, UPDATE, DELETE, and DDL statements. | - |
+| Primary key conflict check                   | The following three primary key conflict processing policies are supported: <br/><li>Report: If a primary key conflict of tables is found during data sync, it will report an error and pause the data sync task. <br> <li>Ignore: If a primary key conflict is found during data sync, it will keep the primary key record in the target database. <br/> <li>Overwrite: If a primary key conflict is found during data sync, it will use the primary key record in the source database to overwrite that in the target database. | -                                          |
+| DML and DDL filtering | <li>You can select the data types to be synced, such as `INSERT`, `UPDATE`, and `DELETE` statements.<li>You can select the specific DDL operation, such as `CREATE TABLE`, `CREATE VIEW`, and `DROP INDEX`. | [Setting SQL Sync Policy](https://intl.cloud.tencent.com/document/product/571/47342) |
+| WHERE conditional filter | You can customize a filter for a single table. | [Setting SQL Sync Policy](https://intl.cloud.tencent.com/document/product/571/47342) |
+| Sync of views and advanced objects | Views, stored procedures, functions, triggers, and events can be synced. | - |
 | Task progress visualization                 | Information such as sync steps and progress can be displayed.            | -                               |
-| Metric monitoring and default alarm policy          | <li>Data sync metrics can be monitored. <li>Default configuration is supported for data sync event monitoring to automatically notify you of exceptional events. | [Supported Events and Metrics](https://intl.cloud.tencent.com/document/product/571/42611)                   |
+| Metric monitoring and default alarm policy          | <li>Data sync metrics can be monitored. <li>Default configuration is supported for data sync event monitoring to automatically notify you of abnormal events. | [Supported Events and Metrics](https://intl.cloud.tencent.com/document/product/571/42611)                   |
 | Database restart or upgrade          | During incremental data sync, the source and target databases can be restarted or upgraded.           | -               |
 | HA switch         | <li>HA switch of the source database is supported if GTID is enabled. <li>HA switch of the target database is supported.</li> | -           |
 

@@ -3,12 +3,12 @@
 
 ## 实现原理
 如下以 MySQL 为例进行介绍。数据订阅通过实时拉取源实例的 Binlog 增量日志，将增量数据解析成 Kafka message，然后存储到 Kafka Server。用户可以通过 Kafka  Client 来消费数据，Kafka 作为一种开源的消息中间件，支持多数据通道消费和多种 SDK 语言，降低用户的使用成本。
-![](https://main.qcloudimg.com/raw/93f09b55d3bec10074fd4527016bc089.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d63b2f34aa9ea1b313e703e5881ccf2.jpg)
 
 ## 典型应用场景
 #### 数据归档存储
 使用 DTS 的数据订阅特性，您可将云数据库的增量更新数据实时地流式推送到归档数据库或数据仓库。
-<img src="https://main.qcloudimg.com/raw/7a33220dab9880544d723535e7a51351.png" style="zoom:90%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0c7f8ecfef25e793aa410660548fd1c3.jpg" style="zoom:90%;" />
 
 ## 约束限制
 - 订阅的消息内容目前默认保存时间为最近1天，超过保存时间的数据会被清除，请用户及时消费，避免数据在消费完之前就被清除。
@@ -30,6 +30,7 @@ DTS 支持订阅对象选择的粒度为库、表，具体支持如下三种订�
 | 支持指标监控和默认告警策略 | <li>支持对数据订阅的各项指标进行监控。<li>支持对数据订阅事件的监控进行默认配置，事件异常时自动通知用户。 | [支持的事件和指标](https://intl.cloud.tencent.com/document/product/571/42611) |
 | 支持多数据通道消费         | 单个实例支持创建多个数据通道，通过创建消费组实现多个通道同时消费。 | -                    |
 | 支持分区消费               | 单 Topic 数据支持分区存储，多个分区的数据并发消费，提升消费效率。 | -                    |
-
+| 支持自定义路由策略 | 支持将数据字段按照自定义规则路由到 Kafka 分区。 | - |
+| 支持修改消费位点 | 支持修改消费位点 Offset。 | [修改消费位点](https://intl.cloud.tencent.com/document/product/571/39535) |
 
 
