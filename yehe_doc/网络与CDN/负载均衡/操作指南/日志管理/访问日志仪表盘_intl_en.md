@@ -18,7 +18,7 @@ Each log topic has its own dashboard, which contains data of following metrics.
 - Top requested domain names
 
 ## Preparations
-> Create logsets for CLB. See [Creating Logsets and Log Topics](https://intl.cloud.tencent.com/document/product/214/40509).
+ Create logsets for CLB. See [Creating Logsets and Log Topics](https://intl.cloud.tencent.com/document/product/214/40509).
 
 ## Directions
 1. Log in to the [CLB console](https://console.cloud.tencent.com/clb) and select **Access Logs** on the left sidebar.
