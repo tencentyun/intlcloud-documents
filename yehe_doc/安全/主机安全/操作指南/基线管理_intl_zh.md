@@ -69,9 +69,10 @@
 	- 查看详情：
 	 - 在基线检测结果列表中，找到目标基线，在右侧操作栏，单击**查看详情**，进入基线详情页。
 	 - 在基线详情页面，可查看该基线的描述信息和威胁等级，同时可查看影响服务器的列表。
-		![](https://qcloudimg.tencent-cloud.cn/raw/5eca48d5d7ff1b44ab9060074851359e.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/5eca48d5d7ff1b44ab9060074851359e.png)
  - 在检测详情页可查看基本信息，包括基线名称、服务器名称和检测项详情列表。
-		![](https://qcloudimg.tencent-cloud.cn/raw/97129205f6845ec9204000e347ef336f.png)
+ 
+	![](https://qcloudimg.tencent-cloud.cn/raw/fb698185a7af8c4540849d761fd6f35d.png)
 
 	- 列表支持对多个检测项“重新检测”和“忽略”。
 	- 支持对检测项的威胁等级筛选和处理状态筛选。
