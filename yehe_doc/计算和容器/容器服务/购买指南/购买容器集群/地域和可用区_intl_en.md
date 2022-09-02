@@ -89,8 +89,14 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Chengdu Zone 2<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-			<td rowspan="1">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
-			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
+			<td rowspan="3">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
+			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions) (Sold out)<br>ap-hongkong-1</td>
+	</tr>
+	<tr>
+		        <td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
+	</tr>
+	<tr>
+		        <td>Hong Kong Zone 3 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-3</td>
 	</tr>
 	<tr>
 </tbody>
