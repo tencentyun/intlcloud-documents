@@ -40,7 +40,7 @@ Establish interconnections as instructed in [Connecting Network Instances Under 
 <td>VPC-based CCN Instance</td><td>CCN instance name.</td><td>ccn6-xxxx7d</td></tr>
 <tr>
 <td>Accessed VPC</td>
-<td>The accessed VPC refers to the VPC in CCN over which the migration/sync linkage is connected. You need to select a CCN-associated VPC other than the VPC where the source database resides.<br>For example, if the database in Guangzhou region is selected as the source database, you should select **VPC-Chengdu** or **VPC-Shanghai** as the **accessed VPC**. Here, **Chengdu-VPC** is selected.</td>
+<td>The accessed VPC refers to the VPC in CCN over which the migration/sync linkage is connected. You need to select a CCN-associated VPC other than the VPC where the source database resides.<br>For example, if the database in Guangzhou region is selected as the source database, you should select <b>VPC-Chengdu</b> or <b>VPC-Shanghai</b> as the <b>accessed VPC</b>. Here, <b>Chengdu-VPC</b> is selected.</td>
 <td>VPC-Chengdu</td></tr>
 <tr>
 <td>Subnet</td>
