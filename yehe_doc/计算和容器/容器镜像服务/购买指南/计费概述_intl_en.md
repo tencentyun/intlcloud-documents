@@ -3,10 +3,9 @@ TCR Enterprise supports the pay-as-you-go billing mode. You can go to the [TCR P
 ## Billing Mode for TCR Enterprise
 TCR provides the pay-as-you-go billing mode:
 
-|Billing Mode | Payment Method | Billing Unit | Use Cases|
-|---------|---------|---------|  |
-| Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/zh/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis. | USD/hour | This billing mode is applicable to scenarios such as temporary test. |
-
+|Billing Mode | Payment Method | Billing Unit | 
+|---------|---------|---------|
+| Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/zh/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis. | USD/hour | 
 
 
 
