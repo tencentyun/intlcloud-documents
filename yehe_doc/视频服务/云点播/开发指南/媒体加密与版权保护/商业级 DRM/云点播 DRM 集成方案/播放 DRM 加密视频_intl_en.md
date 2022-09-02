@@ -30,12 +30,12 @@ The example below shows how to enable key hotlink protection for the default dis
 
 1. Log in to the VOD console, select **Distribution and Playback** > [Domain Name](https://console.cloud.tencent.com/vod/distribute-play/domain) on the left sidebar. Find the default distribution domain, click **Set** on the right, and select the **Access Control** tab.
    <img src="https://main.qcloudimg.com/raw/06259e41a62ea14ce8eb19ef6480182c.png" width="800" />
-2. Toggle on **Key Hotlink Protection**. In the pop-up window, click **Generate** to generate a random key (suppose it is `testtest`). Copy the key and click **Confirm**. You will use the key later to generate playback signatures.
+2. Toggle on **Key Hotlink Protection**. In the pop-up window, click **Generate** to generate a random key (suppose it is `vodtestkey`). Copy the key and click **Confirm**. You will use the key later to generate playback signatures.
    ![image-KEY](https://qcloudimg.tencent-cloud.cn/raw/1b4f1f0d9e3d36c153b1e91f64160f00.png)
 
 ## Step 2. Encrypt a Video
 
-1. In the VOD console, select **Media Assets** > [Video/Audio Management](https://console.cloud.tencent.com/vod/media) on the left sidebar, select the target video (in this example, the file ID of the video encrypted is `387702299667618135`), and click **Process**.
+1. In the VOD console, select **Media Assets** > [Video/Audio Management](https://console.cloud.tencent.com/vod/media) on the left sidebar, select the target video (in this example, the file ID of the video encrypted is `387702304941991610`), and click **Process**.
 
    ![image-20220426211316803](https://qcloudimg.tencent-cloud.cn/raw/4eab2858c67f4efbf1383a3b03810428.png)
 
@@ -65,21 +65,17 @@ You will need the player signature to query past playback information. For direc
 
 ```json
 {
-  "appId": 1500012416,
-  "fileId": "387702299667618135",
-  "currentTimeStamp": 1650886156,
-  "expireTimeStamp": 1966435200,
-  "urlAccessInfo": {
-    "t": "75356B80",
-    "us": "72d4cd1101"
-  },
+  "appId": 1500014561,
+  "fileId": "387702304941991610",
+  "currentTimeStamp": 1661163373,
+  "expireTimeStamp": 2648557919,
   "pcfg":"advanceDrmPreset"
 }
 ```
 
-The key generated for the example in this document is `testtest`, and the player signature (`psign`) generated is as follows:
+The key generated for the example in this document is `vodtestkey`, and the player signature (`psign`) generated is as follows:
 
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDg4NjE1NiwiZXhwaXJlVGltZVN0YW1wIjoxOTY2NDM1MjAwLCJ1cmxBY2Nlc3NJbmZvIjp7InQiOiI3NTM1NkI4MCIsInVzIjoiNzJkNGNkMTEwMSJ9LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.kkyOyscuV3WIlFV0IFPsPPWomZEcuNGclaBzpEO8DEg`
+`eyJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6MTUwMDAxNDU2MSwiZmlsZUlkIjoiMzg3NzAyMzA0OTQxOTkxNjEwIiwiY3VycmVudFRpbWVTdGFtcCI6MTY2MTE2MzM3MywiZXhwaXJlVGltZVN0YW1wIjoyNjQ4NTU3OTE5LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.rEZLhjgsoLc2htIUI_HckxvhVmdBhQyf5d-2Kku1JeA`
 
 ## Step 4. Play the DRM-encrypted video
 
@@ -124,9 +120,9 @@ Add the following script to your page initialization code and pass in the requir
 
 ```
 var player = TCPlayer('player-container-id', {
-    appID: '1500012416' // The appID of your VOD account (required).
-    fileID: '387702299667618135', // The file ID of the video to play (required).
-    psign: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDg4NjE1NiwiZXhwaXJlVGltZVN0YW1wIjoxOTY2NDM1MjAwLCJ1cmxBY2Nlc3NJbmZvIjp7InQiOiI3NTM1NkI4MCIsInVzIjoiNzJkNGNkMTEwMSJ9LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.kkyOyscuV3WIlFV0IFPsPPWomZEcuNGclaBzpEO8DEg',
+    appID: '1500014561' // The appID of your VOD account (required).
+    fileID: '387702304941991610', // The file ID of the video to play (required).
+    psign: 'eyJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6MTUwMDAxNDU2MSwiZmlsZUlkIjoiMzg3NzAyMzA0OTQxOTkxNjEwIiwiY3VycmVudFRpbWVTdGFtcCI6MTY2MTE2MzM3MywiZXhwaXJlVGltZVN0YW1wIjoyNjQ4NTU3OTE5LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.rEZLhjgsoLc2htIUI_HckxvhVmdBhQyf5d-2Kku1JeA',
     // For other parameters, see https://intl.cloud.tencent.com/document/product/266/39105
 });
 ```
