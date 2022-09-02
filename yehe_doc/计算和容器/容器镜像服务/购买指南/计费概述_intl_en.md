@@ -20,7 +20,6 @@ TCR provides the pay-as-you-go billing mode:
 <tr>
 <td>Instance purchasing</td>
 <td>TCR Enterprise instances support pay-as-you-go billing mode. The managed service charges differ according to selected regions and specifications.</td>
-td>Please refer to <a href="#price">TCR Enterprise Pricing</a>. </td>
 </tr>
 <tr>
 <td>Storage fees</td>
