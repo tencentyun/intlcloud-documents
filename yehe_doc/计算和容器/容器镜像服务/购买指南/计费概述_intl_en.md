@@ -1,11 +1,11 @@
-TCR Enterprise supports the pay-as-you-go billing mode. You can go to the [TCR Purchase Page](https://buy.intl.cloud.tencent.com/tcr) to purchase a TCR Enterprise instance. Tencent Cloud COS will be used at the same time with the instance and costs will be incurred based on your actual usage.
+TCR Enterprise supports the pay-as-you-go billing mode. You can go to the [TCR Purchase Page](https://buy.intl.cloud.tencent.com/tcr) to purchase a TCR Enterprise instance. Note that you will also be charged for the usage of Tencent Cloud COS, which is used in combination with TCR Enterprise.
 
 ## Billing Mode for TCR Enterprise
 TCR provides the pay-as-you-go billing mode:
 
 |Billing Mode | Payment Method | Billing Unit | 
 |---------|---------|---------|
-| Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/zh/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis. | USD/hour | 
+| Pay-as-you-go |The service is billed at an hourly basis. Upon activation of the service, a certain amount of your balance will be frozen. See [Prepay Account Freeze](https://intl.cloud.tencent.com/zh/document/product/555/12039).| USD/hour | 
 
 
 
@@ -28,7 +28,7 @@ TCR provides the pay-as-you-go billing mode:
 </tr>
 <tr>
 <td>Traffic</td>
-<td>Using the public network to upload and download the cloud native artifacts such as container images and Helm charts will generate public network traffic fees in COS. <br><b>Note: </b>using the instance synchronization feature for cross-regional synchronization of container images and Helm charts will not generate COS public network traffic fees.</td></td>
+<td>Using the public network to upload and download the cloud native artifacts such as container images and Helm charts will generate public network traffic fees in COS. <br><b>Note: </b>Using the instance synchronization feature for cross-regional synchronization of container images and Helm charts will not generate COS public network traffic fees.</td></td>
 <td>See <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
 </tr>
 </table>
