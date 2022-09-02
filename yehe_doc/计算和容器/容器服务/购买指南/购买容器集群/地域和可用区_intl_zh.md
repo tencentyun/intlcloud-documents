@@ -143,6 +143,17 @@
 			<td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td>
 		</tr>
 		<tr>
+			<td>南美地区（圣保罗）<br>sa-saopaulo</td>
+			<td>圣保罗一区（圣保罗节点可用于覆盖南美地区）<br>sa-saopaulo-1</td>
+		</tr>
+		<tr>
+			<td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
+			<td>硅谷一区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-1</td>
+		</tr>
+		<tr>
+			<td>硅谷二区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-2</td>
+		</tr>
+		<tr>
 			<td rowspan="2">美国东部（弗吉尼亚）<br>na-ashburn</td>
 			<td>弗吉尼亚一区 （弗吉尼亚节点用户覆盖美国东部地区）<br>na-ashburn-1</td>
 		</tr>
