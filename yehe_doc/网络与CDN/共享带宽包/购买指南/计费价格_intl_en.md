@@ -55,18 +55,45 @@ Tencent Cloud offers the following bandwidth packages according to the bandwidth
 ## AIA BGP Bandwidth Package
 >?For more information about its billing details, see [AIA Purchase Guide](https://intl.cloud.tencent.com/document/product/644/12617).
 <table>
-<thead>
 <tr>
-<th align="left">Regions</th>
-<th align="left" width="35%">Unit Price (USD/Mbps/month)</th>
+<th align="left"rowspan="2">Anycast EIP Region</th>
+<th align="left" width="35%" colspan="4">Acceleration Region(Unit Price (USD/Mbps/month))</th>
 </tr>
-</thead>
-<tbody><tr>
-<td align="left">Hong Kong (China), Singapore, Bangkok, Mumbai, Seoul, Tokyo, Silicon Valley, Frankfurt, and Moscow
-</td>
+<tr>
+<td align="left">Asia</td>
+<td align="left">Europe</td>
+<td align="left">North America</td>
+<td align="left">South America</td>
+</tr>
+<tr>
+<td align="left">Asia (Hong Kong (China), Singapore, Bangkok, Mumbai, Seoul, and Tokyo）</td>
 <td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">44</td>
 </tr>
-</tbody></table>
+<tr>
+<td align="left">Europe (Frankfurt and Moscow)</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">26</td>
+</tr>
+<tr>
+<td align="left">North America (Silicon Valley)</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">18.86</td>
+<td align="left">26</td>
+</tr>
+<tr>
+<td align="left">South America(Sao Paulo)</td>
+<td align="left">44</td>
+<td align="left">26</td>
+<td align="left">26</td>
+<td align="left">21</td>
+</tr>
+</table>
 
 
 
