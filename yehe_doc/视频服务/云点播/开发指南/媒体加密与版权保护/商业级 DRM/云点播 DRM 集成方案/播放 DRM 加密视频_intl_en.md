@@ -120,7 +120,7 @@ Add a player container to wherever you want to display the player:
 
 #### Step 3. Add the initialization code
 
-Add the following script to your page initialization code and pass in the required initialization parameters:
+Add the following script to your page initialization code and pass in the required initialization parameters (including the Player Signature `psign` generated in Step 3):
 
 ```
 var player = TCPlayer('player-container-id', {
@@ -133,17 +133,17 @@ var player = TCPlayer('player-container-id', {
 
 ### iOS
 
-To play the DRM-encrypted video on iOS, refer to [Integration Guide](https://intl.cloud.tencent.com/document/product/266/49669#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) (Through `FileId`).
+To play the DRM-encrypted video on iOS, refer to [Integration Guide](https://intl.cloud.tencent.com/document/product/266/49669#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) (Through `FileId`). You need to use the player signature (`psign`)  generated in Step 3 (Generate a Player Signature).
 
->? Please submit a ticket for the player SDK that supports DRM.
+>? Please  [submit a ticket](https://console.cloud.tencent.com/workorder/category) for the player SDK that supports DRM.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/1cba8f5fffad9827a267314ced65d078.png)
 
 ### Android
 
-To play the DRM-encrypted video on Android, refer to [Integration Guide](https://intl.cloud.tencent.com/document/product/266/49670#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) (Through `FileId`).
+To play the DRM-encrypted video on Android, refer to [Integration Guide](https://intl.cloud.tencent.com/document/product/266/49670#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) (Through `FileId`). You need to use the player signature (`psign`)  generated in Step 3 (Generate a Player Signature).
 
->? Please submit a ticket for the player SDK that supports DRM.
+>? Please  [submit a ticket](https://console.cloud.tencent.com/workorder/category) for the player SDK that supports DRM.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/77ec9a38fc9530305affa447df8f9e14.png)
 

@@ -121,7 +121,7 @@
 
 #### step 3：初始化代码
 
-在页面初始化的代码中加入以下初始化脚本，传入必须的初始化参数，代码如下：
+在页面初始化的代码中加入以下初始化脚本，传入必须的初始化参数（其中包含步骤3中生成的播放器签名`psign`），代码如下：
 
 ```
 var player = TCPlayer('player-container-id', {
@@ -134,17 +134,17 @@ var player = TCPlayer('player-container-id', {
 
 ### iOS 端
 
-请参考 [接入指引](https://intl.cloud.tencent.com/document/product/266/49669#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) 中`通过 FileId 方式`的使用方式播放 DRM 加密视频。
+请参考 [接入指引](https://intl.cloud.tencent.com/document/product/266/49669#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) （通过 FileId 方式）播放 DRM 加密视频。其中，这一过程中需要使用到步骤3中生成的播放器签名`psign`。
 
-> ? 在接入前，请您提交工单联系我们获取支持 DRM 功能的 SDK 。
+> ? 在接入前，请您提交工单 [联系我们](https://console.cloud.tencent.com/workorder/category)获取支持 DRM 功能的 SDK 。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/1cba8f5fffad9827a267314ced65d078.png)
 
 ### Android 端
 
-请参考 [接入指引](https://intl.cloud.tencent.com/document/product/266/49670#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) 中`通过 FileId 方式`的使用方式播放 DRM 加密视频。
+请参考 [接入指引](https://intl.cloud.tencent.com/document/product/266/49670#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) （通过 FileId 方式）播放 DRM 加密视频。其中，这一过程中需要使用到步骤3中生成的播放器签名`psign`。
 
-> ? 在接入前，请您提交工单联系我们获取支持 DRM 功能的 SDK 。
+> ? 在接入前，请您提交工单 [联系我们](https://console.cloud.tencent.com/workorder/category)获取支持 DRM 功能的 SDK 。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/77ec9a38fc9530305affa447df8f9e14.png)
 
@@ -152,4 +152,4 @@ var player = TCPlayer('player-container-id', {
 
 学习本教程后，您已经掌握如何对视频进行 DRM 加密，并使用播放器播放加密后的视频。
 
-> ? 在您对接 DRM 或者华曦达的过程中的任何问题，都可以提工单 [联系我们](https://console.cloud.tencent.com/workorder/category)，我们全程负责帮您解决。
+> ? 在您对接 DRM 或者华曦达的过程中的任何问题，都可以提工单[联系我们](https://console.cloud.tencent.com/workorder/category)，我们全程负责帮您解决。
