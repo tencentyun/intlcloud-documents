@@ -4,7 +4,6 @@
 </dx-alert>
 
 
-
 ## OpenCloudOS
 OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ](https://intl.cloud.tencent.com/document/product/213/46208)をご参照ください。
 
@@ -158,6 +157,14 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
         <th style="width: 14%;">最終更新時間</th>
         <th style="width: 26%;">最終更新内容</th>
     </tr>
+	<tr>
+	<td>Ubuntu 22.04</td>
+	<td>イメージID：
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-487zeit5">img-487zeit5</a>
+	<br />現在のカーネルバージョン：5.15.0-40-generic</td>
+	<td>2022-07-22</td>
+	<td>イメージがリリースされました。</td>
+  </tr>
   <tr>
 	<td>Ubuntu 20.04</td>
 	<td>イメージID：
@@ -170,8 +177,8 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 	<td>Ubuntu 18.04</td>
 	<td>イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-pi0ii46r">img-pi0ii46r</a>
-	<br />現在のカーネルバージョン：4.15.0-159-generic</td>
-	<td>2022-01-23</td>
+	<br />現在のカーネルバージョン：4.15.0-180-generic</td>
+	<td>2022-07-22</td>
 	<td>最新のシステムパッチを更新します。</td>
   </tr>
   <tr>
@@ -219,6 +226,76 @@ img-6rrx0ymd</a>
 	<br />現在のカーネルバージョン：4.9.0-17-amd64</td>
 	<td>2011-02-15</td>
 	<td>最新のシステムパッチを更新します。</td>
+  </tr>
+</table>
+
+
+## AlmaLinux
+<table>
+<tr>
+        <th style="width: 20%;">イメージバージョン</th>
+        <th style="width: 35%;">イメージ情報</th>
+        <th style="width: 14%;">最終更新時間</th>
+        <th style="width: 26%;">最終更新内容</th>
+    </tr>
+	  <tr>
+	<td>AlmaLinux 8.5</td>
+	<td>イメージID：
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-4ogcw28j">	
+img-4ogcw28j</a>
+	<br />現在のカーネルバージョン：4.18.0-348.20.1.el8_5.x86_64</td>
+	<td>2022-04-29</td>
+	<td>イメージがリリースされました。</td>
+  </tr>
+</table>
+
+
+
+## FreeBSD
+<table>
+<tr>
+        <th style="width: 20%;">イメージバージョン</th>
+        <th style="width: 35%;">イメージ情報</th>
+        <th style="width: 14%;">最終更新時間</th>
+        <th style="width: 26%;">最終更新内容</th>
+    </tr>
+	<tr>
+	<td>FreeBSD 12.3</td>
+	<td>イメージID：
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-j9m732cx">	
+img-j9m732cx</a>
+	<br />現在のカーネルバージョン：12.3-RELEAS</td>
+	<td>2022-01-20</td>
+	<td>イメージがリリースされました。</td>
+  </tr>
+	<tr>
+	<td>FreeBSD 12.2</td>
+	<td>イメージID：
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-pi37fg9j">	
+img-pi37fg9j</a>
+	<br />現在のカーネルバージョン：12.2-RELEAS</td>
+	<td>2022-01-20</td>
+	<td>イメージがリリースされました。</td>
+  </tr>
+</table>
+
+
+## Rocky
+<table>
+<tr>
+        <th style="width: 20%;">イメージバージョン</th>
+        <th style="width: 35%;">イメージ情報</th>
+        <th style="width: 14%;">最終更新時間</th>
+        <th style="width: 26%;">最終更新内容</th>
+    </tr>
+	  <tr>
+	<td>Rocky 8.5</td>
+	<td>イメージID：
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">	
+img-qd4bf0jb</a>
+	<br />現在のカーネルバージョン：4.18.0-348.20.1.el8_5.x86_64</td>
+	<td>2022-04-29</td>
+	<td>イメージがリリースされました。</td>
   </tr>
 </table>
 

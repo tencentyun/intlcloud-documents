@@ -4,7 +4,6 @@
 </dx-alert>
 
 
-
 ## OpenCloudOS
 OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](https://intl.cloud.tencent.com/document/product/213/46208)를 참고하십시오.
 
@@ -158,6 +157,14 @@ OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](h
         <th style="width: 14%;">마지막 업데이트 시간</th>
         <th style="width: 26%;">마지막 업데이트 내용</th>
     </tr>
+	<tr>
+	<td>Ubuntu 22.04</td>
+	<td>이미지 ID:
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-487zeit5">img-487zeit5</a>
+	<br />현재 커널 버전: 5.15.0-40-generic</td>
+	<td>2022-07-22</td>
+	<td>이미지 런칭.</td>
+  </tr>
   <tr>
 	<td>Ubuntu 20.04</td>
 	<td>이미지 ID:
@@ -170,8 +177,8 @@ OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](h
 	<td>Ubuntu 18.04</td>
 	<td>이미지 ID:
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-pi0ii46r">img-pi0ii46r</a>
-	<br />현재 커널 버전: 4.15.0-159-generic</td>
-	<td>2022-01-23</td>
+	<br />현재 커널 버전: 4.15.0-180-generic</td>
+	<td>2022-07-22</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
   <tr>
@@ -219,6 +226,76 @@ img-6rrx0ymd</a>
 	<br />현재 커널 버전: 4.9.0-17-amd64</td>
 	<td>2011-02-15</td>
 	<td>최신 시스템 패치 업데이트.</td>
+  </tr>
+</table>
+
+
+## AlmaLinux
+<table>
+<tr>
+        <th style="width: 20%;">이미지 버전</th>
+        <th style="width: 35%;">이미지 정보</th>
+        <th style="width: 14%;">마지막 업데이트 시간</th>
+        <th style="width: 26%;">마지막 업데이트 내용</th>
+    </tr>
+	  <tr>
+	<td>AlmaLinux 8.5</td>
+	<td>이미지 ID:
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-4ogcw28j">	
+img-4ogcw28j</a>
+	<br />현재 커널 버전: 4.18.0-348.20.1.el8_5.x86_64</td>
+	<td>2022-04-29</td>
+	<td>이미지 런칭.</td>
+  </tr>
+</table>
+
+
+
+## FreeBSD
+<table>
+<tr>
+        <th style="width: 20%;">이미지 버전</th>
+        <th style="width: 35%;">이미지 정보</th>
+        <th style="width: 14%;">마지막 업데이트 시간</th>
+        <th style="width: 26%;">마지막 업데이트 내용</th>
+    </tr>
+	<tr>
+	<td>FreeBSD 12.3</td>
+	<td>이미지 ID:
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-j9m732cx">	
+img-j9m732cx</a>
+	<br />현재 커널 버전: 12.3-RELEAS</td>
+	<td>2022-01-20</td>
+	<td>이미지 런칭.</td>
+  </tr>
+	<tr>
+	<td>FreeBSD 12.2</td>
+	<td>이미지 ID:
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-pi37fg9j">	
+img-pi37fg9j</a>
+	<br />현재 커널 버전: 12.2-RELEAS</td>
+	<td>2022-01-20</td>
+	<td>이미지 런칭.</td>
+  </tr>
+</table>
+
+
+## Rocky
+<table>
+<tr>
+        <th style="width: 20%;">이미지 버전</th>
+        <th style="width: 35%;">이미지 정보</th>
+        <th style="width: 14%;">마지막 업데이트 시간</th>
+        <th style="width: 26%;">마지막 업데이트 내용</th>
+    </tr>
+	  <tr>
+	<td>Rocky 8.5</td>
+	<td>이미지 ID:
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">	
+img-qd4bf0jb</a>
+	<br />현재 커널 버전: 4.18.0-348.20.1.el8_5.x86_64</td>
+	<td>2022-04-29</td>
+	<td>이미지 런칭.</td>
   </tr>
 </table>
 
