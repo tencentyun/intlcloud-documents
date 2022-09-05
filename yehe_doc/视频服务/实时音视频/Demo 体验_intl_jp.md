@@ -488,3 +488,6 @@ if(Aegis) {
 }
 function reportEvent(options){ aegis && aegis.reportEvent(options); }
 </script>
+
+## 問い合わせとフィードバック
+アクセスと利用中に何か不明点などがありましたら、Telegram Groupに参加し、エンジニアに連絡してください。[リンクをクリック](https://t.me/+EPk6TMZEZMM5OGY1)して、または、QRコードをスキャンしてください。
