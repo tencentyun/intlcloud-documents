@@ -216,6 +216,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 46.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48828).
 47.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49155).
 48.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49480).
+49.[Penetration Test Service](https://intl.cloud.tencent.com/document/product/1146/49938).
 
 ## 10.Jurisdiction-specific Requirements
 
