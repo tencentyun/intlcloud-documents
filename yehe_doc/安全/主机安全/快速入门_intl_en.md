@@ -1,7 +1,5 @@
-﻿This document describes how to quickly get started with CWPP.
+This document describes how to quickly get started with CWPP.
 
-## 限制说明
-所有腾讯云用户均可按本文接入主机安全。
 
 ## Operation Guide
 1. Log in to the [CWPP console](https://console.intl.cloud.tencent.com/cwp).
