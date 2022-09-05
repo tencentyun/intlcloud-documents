@@ -21,11 +21,7 @@ TRTC Web SDKはWebRTCに基づき実現され、現在、デスクトップと�
 | ローカル開発環境 | file:///         | サポートあり         | サポートあり         | サポートあり     |  -    |
 
 ### ファイアウォールの制限
-TRTC Web SDKは次のポートとドメイン名に依存してデータ転送を行い、ファイアウォールのホワイトリストに追加してください。設定が完了したら、[公式サイトDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html)にアクセスし体験して設定が有効になっているかを確認することができます。具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
-- TCPポート：8687
-- UDPポート：8000、8080、8800、843、443、16285
-- ドメイン名：`*.rtc.qq.com`，`yun.tim.qq.com`
-
+TRTC Web SDKを使用する時、ユーザはファイアーフォールの制限でオーディオビデオ通話を利用できない可能性がありますので、[ファイアウォール制限への対応](https://www.tencentcloud.com/document/product/647/35164) を参照し、関連するポートとドメイン名をファイアウォールのホワイトリストに追加してください。
 
 ## 前提条件
 [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)を行い、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)が完了済みであること。
