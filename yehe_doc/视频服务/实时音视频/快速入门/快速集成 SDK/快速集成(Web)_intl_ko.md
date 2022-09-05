@@ -23,10 +23,7 @@ Tencent Cloud TRTC Web SDK의 상세 지원 관련 내용은 [지원 플랫폼](
 | 로컬 개발 환경 | file:///         | 지원         | 지원         | 지원     |      |
 
 ## 방화벽 제한
-TRTC Web SDK는 다음 포트에 종속되어 데이터를 전송합니다. 다음 포트를 방화벽 얼로우리스트에 추가하십시오.
-- TCP 포트: 8687
-- UDP 포트: 8000, 8080, 8800, 843, 443, 16285
-- 도메인: qcloud.rtc.qq.com
+TRTC Web SDK 사용 시 방화벽 제한으로 인해 음성 및 영상 통화가 안될 수 있으니 [방화벽 제한 처리](https://www.tencentcloud.com/document/product/647/35164)를 참고하여 해당 포트 및 도메인 이름을 방화벽 얼로우리스트에 추가하시기 바랍니다.
 
 ## TRTC Web SDK 통합
 
