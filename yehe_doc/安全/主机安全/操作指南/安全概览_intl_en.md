@@ -1,10 +1,8 @@
-﻿This document describes how to use Security Dashboard.
+This document describes how to use Security Dashboard.
 
 ## Overview
 As the homepage of Cloud Workload Protection Platform (CWPP), Security Dashboard displays security score, pending risks, security protection status, risk trend, and new security events; pushes security notices to keep you updated with the latest threat intelligence of CWPP; provides documentation and suggestions to help you defend against intrusion and attacks and ensure your server security.
 
-## 限制说明
-所有腾讯云用户均可使用该功能。
 
 ## Operation Guide
 1. Log in to the [CWPP console](https://console.intl.cloud.tencent.com/cwp).
