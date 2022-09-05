@@ -167,10 +167,7 @@ trtcCalling.hangup()
 ### 환경 요구 사항은 무엇입니까?
 Chrome의 데스크톱 버전은 TRTC Web SDK의 기능에 대한 더 나은 지원을 제공합니다. 따라서 데모에는 Chrome을 권장합니다.
 
-TRTCCalling은 방화벽의 얼로우리스트에 추가되어야 하는 데이터 전송을 위해 다음 포트와 도메인 이름을 사용합니다. 구성 후 [공식 Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)를 사용하여 구성이 적용되었는지 확인하십시오.
-- **TCP 포트**: 8687
-- **UDP 포트**: 8000, 8080, 8800, 843, 443, 16285
-- **도메인**: qcloud.rtc.qq.com. 자세한 내용은 [방화벽 제한 처리](https://intl.cloud.tencent.com/document/product/647/35164)를 참고하십시오.
+- TRTCCalling 사용 시 방화벽 제한으로 인해 음성 및 영상 통화가 안될 수 있으니 [방화벽 제한 처리](https://www.tencentcloud.com/document/product/647/35164)를 참고하여 해당 포트 및 도메인 이름을 방화벽 얼로우리스트에 추가하시기 바랍니다.
 - **지원되는 플랫폼**: 현재 이 솔루션은 다음 플랫폼을 지원합니다.
 <table>
 <thead><tr><th>OS</th><th>브라우저</th><th>최소 브라우저 버전 요구 사항</th></tr></thead>
