@@ -489,3 +489,6 @@ if(Aegis) {
 }
 function reportEvent(options){ aegis && aegis.reportEvent(options); }
 </script>
+
+## 기술 교류&피드백
+Telegram Group에서 액세스 및 사용 관련 문제에 대해 엔지니어와 직접 소통할 수 있습니다. [링크를 클릭](https://t.me/+EPk6TMZEZMM5OGY1)하거나 QR 코드를 스캔하십시오.
