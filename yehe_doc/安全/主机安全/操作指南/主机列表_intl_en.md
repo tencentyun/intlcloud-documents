@@ -6,8 +6,8 @@ Server List presents the information of all servers on which CWPP is installed t
 ## Important Notes
 - Server List is available to all Tencent Cloud users.
 - Servers running in a hybrid cloud environment are supported.
- - Tencent Cloud: CVMs, Lighthouse servers, and ECMs.
- - Non-Tencent Cloud: Third-party cloud servers and IDC servers.
+  - Tencent Cloud: CVMs, Lighthouse servers, and ECMs.
+  - Non-Tencent Cloud: Third-party cloud servers and IDC servers.
 
 ## Operation Guide
 1. Log in to the [CWPP console](https://console.intl.cloud.tencent.com/cwp).
@@ -16,7 +16,7 @@ Server List presents the information of all servers on which CWPP is installed t
 ### Server Status
 The **Host Status** section shows the total number of servers, the number of protected servers, the number of servers at risk, the number of unprotected servers, and the number of servers with licenses that are about to expire.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c0aa4c18e30f2a4f1aebb70583b119ed.png)
-Click **Connect to Multiple Servers** or **Install CWPP Agent** to open the CWPP Agent installation guide pop-up window. For more information, see [Installing Agent]().
+Click **Connect to Multiple Servers** or **Install CWPP Agent** to open the CWPP Agent installation guide pop-up window. For more information, see [Installing Agent](https://intl.cloud.tencent.com/document/product/296/49374).
 Click **Purchase License** to go to the [CWPP Purchase Page](https://buy.intl.cloud.tencent.com/yunjing) to purchase licenses.
 
 ### Server List
@@ -40,20 +40,20 @@ Click **Download** to export the list of filtered servers.
 - Operating System: Windows, Linux (CentOS, Debian, Gentoo, RedHat, Ubuntu, TencentOS, CoreOS, FreeBSD, SUSE)
 - Risk Status: Safe, Risky, and Unknown.
 - Protection Status
- - Unprotected: CWPP agent is not installed on the server.
- - Protected: CWPP agent is installed on the server and is online.
- - Offline: CWPP agent is installed on the server but is offline.
- - Shutdown: The server is shut down (only applicable to Tencent Cloud servers). 
+  - Unprotected: CWPP agent is not installed on the server.
+  - Protected: CWPP agent is installed on the server and is online.
+  - Offline: CWPP agent is installed on the server but is offline.
+  - Shutdown: The server is shut down (only applicable to Tencent Cloud servers). 
 - Risk Count
- - Intrusion Detection: The total of risks detected in Malicious File Scan, Anti-Unusual Login, Anti-Password Cracking, Anti-Malicious Requests, High-risk Command Detection, Anti-Local Privilege Escalation, and Anti-Reverse Shell.
- - Vulnerability Risks: The total number of Linux software vulnerabilities, Windows system vulnerabilities, Web-CMS vulnerabilities, and application vulnerabilities.
- - Baseline Risks: The total number of failed baseline check items.
- - Network Risks: The total number of attack events detected.
+  - Intrusion Detection: The total of risks detected in Malicious File Scan, Anti-Unusual Login, Anti-Password Cracking, Anti-Malicious Requests, High-risk Command Detection, Anti-Local Privilege Escalation, and Anti-Reverse Shell.
+  - Vulnerability Risks: The total number of Linux software vulnerabilities, Windows system vulnerabilities, Web-CMS vulnerabilities, and application vulnerabilities.
+  - Baseline Risks: The total number of failed baseline check items.
+  - Network Risks: The total number of attack events detected.
 - Tags: The tags to be associated with servers (a tag can be associated with multiple servers).
 - **Operation**
- - License Management: Click to go to [License Management](https://console.tencentcloud.com/cwp/setting/authorize).
- - Reinstall: Click to open the CWPP Agent installation guide pop-up window. For more information, see [Installing Agent](https://intl.cloud.tencent.com/document/product/296/49374).
- - Uninstall: Open a confirmation pop-up window. It takes about 10 minutes to synchronize CWPP agent status after you confirm uninstallation. (For a server bound to a CWPP license, it must be unbound from the license before CWPP can be uninstalled.)
+  - License Management: Click to go to [License Management](https://console.tencentcloud.com/cwp/setting/authorize).
+  - Reinstall: Click to open the CWPP Agent installation guide pop-up window. For more information, see [Installing Agent](https://intl.cloud.tencent.com/document/product/296/49374).
+  - Uninstall: Open a confirmation pop-up window. It takes about 10 minutes to synchronize CWPP agent status after you confirm uninstallation. (For a server bound to a CWPP license, it must be unbound from the license before CWPP can be uninstalled.)
 
 ### Server Details
 **Server Details** shows the risk information of the server.

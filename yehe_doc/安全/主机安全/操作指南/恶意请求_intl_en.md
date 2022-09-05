@@ -1,4 +1,4 @@
-﻿This document describes how to use the Anti-Malicious Requests feature.
+This document describes how to use the Anti-Malicious Requests feature.
 
 ## Overview
 The Anti-Malicious Requests feature monitors requests sent to the external domains in real time to identify and handle the requests to malicious domains. If a request sent to a malicious domain is detected, you will receive an alert in real time.
@@ -22,12 +22,12 @@ Field description:
 - **Last requested**: The time when the last request was sent to the malicious domain.
 - **Status**: **Pending processed**, **Added to allowlist**, **Processed** and **Ignored**
 - **Operation**
- - **Details**: You can view more information about the request to the malicious domain, such as process information, command lines, and risk description.
- - **Actions**
-  - **Mark as processed**: Please handle the risk manually by referring to "Solutions" in the event details, and then mark the event as "Handled".
-  - **Add to Allowlist**: Once an event is added to the allowlist, no alert will be sent if the same event occurs again. 
-  - **Ignore**: Only ignore this alert event. If the same event occurs again, an alert will be sent again.
-  - Delete Record: Once deleted, the event record will no longer be displayed on the console and cannot be recovered.  
+  - **Details**: You can view more information about the request to the malicious domain, such as process information, command lines, and risk description.
+  - **Actions**
+    - **Mark as processed**: Please handle the risk manually by referring to "Solutions" in the event details, and then mark the event as "Handled".
+    - **Add to Allowlist**: Once an event is added to the allowlist, no alert will be sent if the same event occurs again. 
+    - **Ignore**: Only ignore this alert event. If the same event occurs again, an alert will be sent again.
+    - Delete Record: Once deleted, the event record will no longer be displayed on the console and cannot be recovered.  
 
 ### Allowlist Management
 In **Allowlist Management**, you can add/delete items to/from the allowlist, or edit and check the allowlist.
@@ -38,8 +38,8 @@ Field description:
 - **Creation time**: The time when the allowlist was created.
 - **Update time**: The time when the allowlist was last updated.
 - **Operation**
-  - **Edit**: Edit the allowed domain names and remarks.
-  - **Delete**: Delete items from the allowlist.
+   - **Edit**: Edit the allowed domain names and remarks.
+   - **Delete**: Delete items from the allowlist.
 
 <dx-alert infotype="explain" title="">
 The allowlist takes effect on all servers (Pro/Ultimate).

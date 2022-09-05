@@ -6,8 +6,8 @@ Based on Tencent Cloud's tens of billions of samples, Malicious File Scan suppor
 ## Important Notes
 The Malicious File Scan feature is available only if you have at least one server bound to a (CWPP Pro/Ultimate) license.
 - Detection method.
- - Webshell detection: Detects common Webshells in languages such as ASP, PHP, JSP, and Python.
- - Binary detection: Detects binary executable viruses and Trojans, such as DDoS Trojans, remote control, and mining software for .exe, .dll, and .bin files, and sends alerts to users.
+  - Webshell detection: Detects common Webshells in languages such as ASP, PHP, JSP, and Python.
+  - Binary detection: Detects binary executable viruses and Trojans, such as DDoS Trojans, remote control, and mining software for .exe, .dll, and .bin files, and sends alerts to users.
 
 
 ## Operation Guide

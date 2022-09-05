@@ -1,4 +1,4 @@
-﻿This document describes the features of different CWPP editions.
+This document describes the features of different CWPP editions.
 
 ## Features 
 The features of different CWPP editions are listed below.    
@@ -35,7 +35,7 @@ The features of different CWPP editions are listed below.
 <td>Displays the information of all servers connected to CWPP, helping you get a full picture of the security status of your assets.</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
-<td>&#10003;<br>Supports servers running in a hybrid cloud and server detection</td>
+<td>&#10003;</td>
 </tr>
 <tr>
 <td>Asset Fingerprint</td>
@@ -51,7 +51,7 @@ The features of different CWPP editions are listed below.
 <li>Binary virus and Trojan detection: Detects binary executable viruses and Trojans such as DDoS Trojans, remote control, and mining software on .exe, .ddl, and .bin files, and sends alarms.</li></ul></td>
 <td>&#10003;<br>Detects at most 5 risks for free</td>
 <td>&#10003;<br>Supports detection (no auto isolation)</td>
-<td>&#10003;<br>Supports detection, auto isolation, and tracing</td>
+<td>&#10003;<br>Supports detection, and auto isolation</td>
 </tr>
 <tr>
 <td>Password Cracking</td>
