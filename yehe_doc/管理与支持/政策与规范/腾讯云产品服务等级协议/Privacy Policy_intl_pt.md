@@ -601,3 +601,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 43.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47314).
 44.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48827).
 45.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49154).
+46.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49479).
