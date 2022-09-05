@@ -147,6 +147,8 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 44.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47315).
 45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48828).
 46.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49155).
+47.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49480).
+
 ## Requisitos específicos da jurisdição
 
 **Europa**
