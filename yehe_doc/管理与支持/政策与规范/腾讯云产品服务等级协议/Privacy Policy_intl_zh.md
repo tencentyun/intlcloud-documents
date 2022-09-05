@@ -601,3 +601,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 43.[云直播](https://intl.cloud.tencent.com/document/product/267/47314)。
 44.[实时音视频](https://intl.cloud.tencent.com/document/product/647/48827)。
 45.[前端性能监控](https://intl.cloud.tencent.com/document/product/1131/49154)。
+46.[账号风控平台](https://intl.cloud.tencent.com/document/product/1148/49479)。
