@@ -1,4 +1,4 @@
-﻿This document describes how to use the Anti-Local Privilege Escalation feature.
+This document describes how to use the Anti-Local Privilege Escalation feature.
 
 ## Overview
 Local privilege escalation happens when a user with a low privilege or an unprivileged user has access to a compromised machine and gains administrator or SYSTEM level privileges to fully control the machine. The Anti-Local Privilege Escalation feature monitors privilege escalation events on your servers in real time, and allows you to view the event details, handle the events, and create allowlist of permitted privilege escalation events.
@@ -21,12 +21,12 @@ Field description:
 - Detected At: The time when the local privilege escalation was detected.
 - Status: Pending, Allowlisted, Handled, or Ignored
 - **Operation**
- - **Details**: You can view more information about high-risk commands, such as process information, command lines, and risk description.
- - **Actions**
-   - **Mark as processed**: Please handle the risk manually by referring to "Solutions" in the event details, and then mark the event as "Handled".
-   - Add to Allowlist: Once an event is added to the allowlist, no alert will be sent if the same event occurs again.  
-   - Ignore: Only ignore this alert event. If the same event occurs again, an alert will be sent again.
-   - Delete Record: Once deleted, the event record will no longer be displayed on the console and cannot be recovered.  
+  - **Details**: You can view more information about high-risk commands, such as process information, command lines, and risk description.
+  - **Actions**
+    - **Mark as processed**: Please handle the risk manually by referring to "Solutions" in the event details, and then mark the event as "Handled".
+    - Add to Allowlist: Once an event is added to the allowlist, no alert will be sent if the same event occurs again.  
+    - Ignore: Only ignore this alert event. If the same event occurs again, an alert will be sent again.
+    - Delete Record: Once deleted, the event record will no longer be displayed on the console and cannot be recovered.  
 
 ### Allowlist Management
 In **Allowlist Management**, you can add/delete items to/from the allowlist, or edit and check the allowlist.
@@ -38,5 +38,5 @@ Field description:
 - **Creation time**: The time when the allowlist was created.
 - **Update time**: The time when the allowlist was last updated.
 - **Operation**
-  - Edit: Edit the conditions of privilege escalation.
-  - Delete: Delete items from the allowlist.
+   - Edit: Edit the conditions of privilege escalation.
+   - Delete: Delete items from the allowlist.
