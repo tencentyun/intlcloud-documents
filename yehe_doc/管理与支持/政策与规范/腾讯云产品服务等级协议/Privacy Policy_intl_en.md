@@ -607,6 +607,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48827).
 46.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49154).
 47.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49479).
+48.[Penetration Test Service](https://intl.cloud.tencent.com/document/product/1146/49937).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
