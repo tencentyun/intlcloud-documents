@@ -49,7 +49,7 @@ For more information on relevant APIs, see [TRTCKaraoke (iOS)](https://intl.clou
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **SecretKey**: **TRTC application key**. Each secret key corresponds to an `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
 - **userId**: Current user ID, which is a custom string that can contain up to 32 bytes of letters and digits (special characters are not supported).
-- **userSig**: The security protection signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to directly generate a debugging `userSig` online or calculate it yourself by referring to the [TUIKaraoke demo project](https://github.com/tencentyun/TUICalling/blob/main/Android/App/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- **userSig**: The security protection signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to directly generate a debugging `userSig` online. For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 
 ### Step 4. Implement the online karaoke scenario
