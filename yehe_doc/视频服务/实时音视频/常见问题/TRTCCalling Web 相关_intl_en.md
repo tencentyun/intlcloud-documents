@@ -103,7 +103,7 @@ Please see [Network Quality Check Before Calls](https://web.sdk.qcloud.com/trtc/
 - **Cause**: TRTCCalling has no access to the camera/mic or the camera/mic does not exist.
 - **Solution**:
      - Run the [TRTC support level test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html).
-     - Check in [Chrome Settings] (chrome://settings/content) whether your Chrome has allowed the website using TRTCCalling to access the camera/mic.
+     - Check in Chrome Settings (chrome://settings/content) whether your Chrome has allowed the website using TRTCCalling to access the camera/mic.
 
 [](id:i12)
 ### Does TRTCCalling for web support receiving messages offline?
