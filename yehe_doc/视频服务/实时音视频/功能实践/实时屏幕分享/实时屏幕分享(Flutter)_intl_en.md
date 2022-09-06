@@ -30,29 +30,6 @@ By setting the first parameter `encParams` in [startScreenCapture()](https://pub
 >- If the screen you share contains a large amount of text, you can increase the resolution and bitrate accordingly.
 >- The highest bitrate (`videoBitrate`) refers to the highest output bitrate when a shared screen changes dramatically. If the shared content does not change a lot, the actual encoding bitrate will be lower.
 
-#### Displaying a floating window
-Since Android 7.0, apps running in the background tend to be killed by the system if they consume CPU. To prevent your app from being killed when it is sharing the screen in the background, you need to create a floating window when screen sharing starts, which also serves the purpose of reminding the user to avoid displaying personal information as his or her screen is being shared.
-
-##### Method: displaying a common floating window
-The code in tool.dart offers an example of how to create a mini floating window similar to the one in VooV Meeting:
-```
-// Create a floating window when screen sharing starts to prevent the app from being killed when running in the background
-  static void showOverlayWindow() {
-    SystemWindowHeader header = SystemWindowHeader(
-      title: SystemWindowText(
-          text: "Screen being shared", fontSize: 14, textColor: Colors.black45),
-      decoration: SystemWindowDecoration(startColor: Colors.grey[100]),
-    );
-    SystemAlertWindow.showSystemWindow(
-      width: 18,
-      height: 95,
-      header: header,
-      margin: SystemWindowMargin(top: 200),
-      gravity: SystemWindowGravity.TOP,
-    );
-  }
-```
-
 ## iOS
 - **[In-app sharing](#Internal)**
 With in-app sharing, sharing is limited to the views of the current app. This feature is supported on iOS 13 and above. As content outside the current app cannot be shared, this feature is suitable for scenarios with high requirements on privacy protection.
