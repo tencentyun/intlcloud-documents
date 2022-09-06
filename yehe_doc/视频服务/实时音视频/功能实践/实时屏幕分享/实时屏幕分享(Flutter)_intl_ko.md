@@ -34,7 +34,7 @@ manifest 파일에 다음 activity를 붙여넣습니다. 프로젝트 코드에
 Android 7.0 시스템부터 백그라운드에서 실행되는 일반적인 App 프로세스는 CPU가 사용되고 있을 경우 시스템에 의해 강제 종료되는 현상이 쉽게 발생합니다. 그러므로 App이 백그라운드에서 화면을 공유하고 있을 때 플로팅 창 팝업을 통해 시스템에 의해 강제 종료되는 것을 막을 수 있습니다. 또한 휴대폰 화면에 플로팅 창을 표시하면 사용자에게 현재 화면 공유 중임을 알려 사용자의 프라이버시 노출을 방지할 수 있습니다.
 
 ##### 방법: 일반 플로팅 창 팝업
-'VooV Meeting'과 유사한 미니 플로팅 창을 팝업합니다. 예시 코드 [tool.dart](https://github.com/c1avie/trtc_demo/blob/master/lib/page/trtcmeetingdemo/tool.dart)를 참고하십시오.
+'VooV Meeting'과 유사한 미니 플로팅 창을 팝업합니다. 예시 코드 tool.dart를 참고하십시오.
 ```
 //화면 공유 시 미니 플로팅 창을 팝업해 백그라운드 애플리케이션으로 전환되어 강제 종료되는 현상 방지
   static void showOverlayWindow() {
