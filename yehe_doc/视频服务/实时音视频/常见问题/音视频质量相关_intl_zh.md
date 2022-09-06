@@ -6,7 +6,7 @@
 - TRTCVideoFillMode_Fill：图像铺满屏幕，超出显示视窗的视频部分将被截掉，所以画面显示可能不完整。
 - TRTCVideoFillMode_Fit：图像长边填满屏幕，短边区域会被填充黑色，但画面的内容肯定是完整的。
 
-[](idv2:)
+[](id:v2)
 ### TRTC 出现卡顿怎么排查？
 可以通过对应的 RoomID、UserID 在实时音视频控制台的 **[监控仪表盘](https://console.cloud.tencent.com/trtc/monitor)** 页面查看通话质量：
 - 通过接受端视角查看发送端和接收端用户情况。
