@@ -18,7 +18,7 @@ Cloud Virtual Machine(CVM)
 예약 인스턴스를 지원하는 모델 사양, 매칭 규칙 및 가격 설명은 CVM 제품 설명을 참조 바랍니다.
 과금형 예약 인스턴스로 구매할 수 있는 가용존 및 인스턴스 사양은 [가격 센터](https://intl.cloud.tencent.com/pricing/cvm) 또는 API[DescribeReservedInstancesOfferings](https://intl.cloud.tencent.com/document/product/213/30575)에서 조회할 수 있습니다. 
 [과금형 예약 인스턴스 매칭 규칙](https://intl.cloud.tencent.com/document/product/213/37265)과 그에 대한 더 많은 내용은 [과금형 예약 인스턴스 개요](https://intl.cloud.tencent.com/document/product/213/30571)를 참조 바랍니다.
-CVM에서 지원하는 과금형 예약 인스턴스의 가격 정보는 [예약 인스턴스 가격 리스트](https://intl.cloud.tencent.com/document/product/213/30619)를 참조 바랍니다. 
+ 
 
 **결제 유형:**
 
