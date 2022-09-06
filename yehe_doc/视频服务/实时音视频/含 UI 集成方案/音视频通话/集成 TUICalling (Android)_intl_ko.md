@@ -97,7 +97,7 @@ TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**입니다. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
 - **userId**: 문자열이며 최대 32바이트의 문자와 숫자를 포함할 수 있는 현재 사용자 ID입니다(특수 기호는 지원되지 않음). 실제 계정 시스템에 따라 사용자 정의할 수 있습니다.
-- **userSig**: SDKAppID, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool) 를 클릭하여 디버깅 userSig를 온라인으로 직접 생성하거나 [TUICalling 데모 프로젝트](https://github.com/tencentyun/TUICalling/blob/main/Android/app/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://cloud.tencent.com/document/product/647/17275)를 참고하십시오.
+- **userSig**: SDKAppID, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool) 를 클릭하여 디버깅 userSig를 온라인으로. 자세한 내용은 [UserSig](https://cloud.tencent.com/document/product/647/17275)를 참고하십시오.
 
 
 ### 4단계: 음성/영상 통화 걸기
@@ -114,7 +114,7 @@ callingImpl.call(["1111"], TUICalling.Type.VIDEO);
 
 ### 5단계: 오프라인 푸시 기능 추가(옵션)
 
-상기 4단계가 완료되면 음성/영상 통화를 걸고 받을 수 있습니다. 그러나 비즈니스 시나리오에서 ‘App 프로세스가 종료’되거나 ‘백그라운드에서 실행’된 후에도 음성/영상 통화 요청을 정상적으로 수신하려면 TUICalling 컴포넌트에 오프라인 푸시 기능을 추가해야 합니다. 자세한 내용은 [**Android 오프라인 푸시 연결 가이드**](https://github.com/tencentyun/TUICalling/blob/main/Android/Android%E7%A6%BB%E7%BA%BF%E6%8E%A8%E9%80%81%E6%8E%A5%E5%85%A5%E6%8C%87%E5%BC%95.md)를 참고하십시오.
+상기 4단계가 완료되면 음성/영상 통화를 걸고 받을 수 있습니다. 그러나 비즈니스 시나리오에서 ‘App 프로세스가 종료’되거나 ‘백그라운드에서 실행’된 후에도 음성/영상 통화 요청을 정상적으로 수신하려면 TUICalling 컴포넌트에 오프라인 푸시 기능을 추가해야 합니다. 
 
 ### 6단계: 상태 수신 기능 추가(옵션)
 비즈니스에서 통화 시작 및 종료 등 [통화 상태 수신](https://intl.cloud.tencent.com/document/product/647/43140)을 위해서는 다음 이벤트를 수신해야 합니다.
