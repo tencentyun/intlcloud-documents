@@ -1,6 +1,6 @@
 ## Available Regions 
 
-TCMG is available in major regions as listed on the [TCMG purchase page](https://buy.cloud.tencent.com/grafana). Different regions may offer different discounts, and prices on the purchase page shall prevail. The following describes the original prices of each TCMG edition and the billing example.
+Different regions may offer different discounts, and prices on the purchase page shall prevail. The following describes the original prices of each TCMG edition and the billing example.
 
 
 
