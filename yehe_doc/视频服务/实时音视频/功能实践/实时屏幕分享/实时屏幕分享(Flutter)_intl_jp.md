@@ -30,29 +30,6 @@ Androidデバイスでの画面共有は、`TRTCCloud`の[startScreenCapture()](
 >- 共有したい画面コンテンツに大量のテキストが含まれている場合、解像度とビットレートを適宜引き上げることができます。
 >- 最高ビットレート(videoBitrate)とは、画面が大きく変化したときの最高出力ビットレートのことです。画面コンテンツの変化が少ない場合、実際のエンコードビットレートは低くなります。
 
-#### フローティングウィンドウのポップアップで強制終了を回避
-Android 7.0以降のシステムから、バックグラウンドで実行されている通常のアプリプロセスに切り替わりますが、CPUのアクティビティがある場合、常にシステムによって強制終了されやすくなります。従って、アプリをバックグラウンドに切り替えてサイレントで画面共有すると、フローティングウィンドウのポップアップというソリューションによって強制終了を回避することができます。また、携帯電話の画面にフローティングウィンドウを表示することは、ユーザーが今、画面共有を行っていることをユーザーに知らせ、プライバシー情報の漏えい防止につながります。
-
-##### 方法：通常のフローティングウィンドウをポップアップする
-「TencentMeeting」に似たミニフローティングウィンドウのポップアップは、サンプルコード tool.dart 中の実装を参考とすることができます。
-```
-//画面共有でミニフローティングウィンドウをポップアップした時、バックエンドに切り替えられたアプリケーションが強制終了されることを防止します。
-  static void showOverlayWindow() {
-    SystemWindowHeader header = SystemWindowHeader(
-      title: SystemWindowText(
-          text: 「画面共有中」, fontSize: 14, textColor: Colors.black45),
-      decoration: SystemWindowDecoration(startColor: Colors.grey[100]),
-    );
-    SystemAlertWindow.showSystemWindow(
-      width: 18,
-      height: 95,
-      header: header,
-      margin: SystemWindowMargin(top: 200),
-      gravity: SystemWindowGravity.TOP,
-    );
-  }
-```
-
 ## iOSプラットフォームの場合
 - **[アプリケーション内の共有](#Internal)**
 現在のアプリの画面のみを共有できます。この特性をサポートするには、iOSのバージョン13以降のOSが必要です。現在のアプリ以外の画面コンテンツを共有できないため、高度なプライバシー保護が必要なシーンに適しています。
