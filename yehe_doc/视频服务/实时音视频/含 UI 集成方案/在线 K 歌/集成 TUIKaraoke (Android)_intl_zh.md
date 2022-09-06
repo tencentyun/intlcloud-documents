@@ -65,7 +65,7 @@ ext {
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**：**TRTC 应用密钥**，和 SDKAppId 对应，进入 [TRTC 应用管理](https://console.cloud.tencent.com/trtc/app) 后，SecretKey 信息如上图所示。
 - **userId**：当前用户的 ID，字符串类型，长度不超过32字节，不支持使用特殊字符，建议使用英文或数字，可结合业务实际账号体系自行设置。
-- **userSig**：根据 SDKAppId、userId，Secretkey 等信息计算得到的安全保护签名，您可以单击 [这里](https://console.cloud.tencent.com/trtc/usersigtool) 直接在线生成一个调试的 UserSig，也可以参照我们的 [TUICalling示例工程](https://github.com/tencentyun/TUICalling/blob/main/Android/App/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)自行计算，更多信息见 [如何计算及使用 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
+- **userSig**：根据 SDKAppId、userId，Secretkey 等信息计算得到的安全保护签名，您可以单击 [这里](https://console.cloud.tencent.com/trtc/usersigtool) 直接在线生成一个调试的 UserSig，更多信息见 [如何计算及使用 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 ### 步骤四：实现在线KTV场景
 1. **主播创建房间 [TUIKaraoke.createRoom](https://intl.cloud.tencent.com/document/product/647/41943)**
@@ -176,6 +176,6 @@ mTRTCKaraokeRoom.setDelegate(new TRTCKaraokeRoomDelegate() {
 
 ## 常见问题
 ### TUIKaraoke 组件支持变声、变调、混响等音效功能吗？
-支持，具体请参见 [TUIKaraoke 示例工程](https://github.com/tencentyun/TUIKaraoke/blob/main/Android/Source/src/main/java/com/tencent/liteav/tuikaraoke/ui/audio/AudioEffectPanel.java)。
+支持。
 
 >? 如果有任何需要或者反馈，您可以联系：colleenyu@tencent.com。
