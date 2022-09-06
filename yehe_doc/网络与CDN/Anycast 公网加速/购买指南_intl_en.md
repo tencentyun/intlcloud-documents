@@ -1,5 +1,5 @@
 This document describes the billing details of AIA.
->?Anycast Internet Acceleration (AIA) is currently in beta.To try it out,please [submit an application](https://console.cloud.tencent.com/workorder/category).
+>?Anycast Internet Acceleration is a monthly-billed pay-as-you-go service. To activate the service, please contact your sales rep. 
 >
 
 
