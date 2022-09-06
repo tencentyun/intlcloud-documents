@@ -38,10 +38,10 @@ The web real-time communication technology has the following compatibility requi
 	<tr><td>Other browsers</td><td>Android 7+, where Chrome is supported, but QQ Browser and UC Browser are not</td></tr>
 </table>
 
-Note:
-
-1. Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices don't support the real-time communication technology.
-2. Under circumstances where the real-time communication technology isn't supported, web face recognition will switch from reflection-based liveness detection to video recording mode, so as to ensure that the user can properly complete the identity verification process.
+>!
+>
+>1. Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices don't support the real-time communication technology.
+>2. Under circumstances where the real-time communication technology isn't supported, web face recognition will switch from reflection-based liveness detection to video recording mode, so as to ensure that the user can properly complete the identity verification process.
 
 ##### Mode switch description
 
