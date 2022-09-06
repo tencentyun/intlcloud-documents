@@ -97,7 +97,7 @@ TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **SecretKey**: **TRTC application key**. Each secret key corresponds to an `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
 - **userId**: Current user ID, which is a custom string that can contain up to 32 bytes of letters and digits (special characters are not supported).
-- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing or calculate it on your own by referring to our [TUICalling demo project](https://github.com/tencentyun/TUICalling/blob/main/Android/app/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing. For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 
 ### Step 4. Make an audio/video call
@@ -114,7 +114,7 @@ callingImpl.call(["1111"], TUICalling.Type.VIDEO);
 
 ### Step 5. Implement offline push notifications (optional)
 
-You can make audio/video calls after completing the above four steps. However, if you want your users to be able to receive call invitations even when your app is in the background or after it is closed, then you need to also implement the offline push notification feature. For details, see [Implementing Offline Push Notifications in TUICalling for Android](https://github.com/tencentyun/TUICalling/blob/main/Android/Android%E7%A6%BB%E7%BA%BF%E6%8E%A8%E9%80%81%E6%8E%A5%E5%85%A5%E6%8C%87%E5%BC%95.md).
+You can make audio/video calls after completing the above four steps. However, if you want your users to be able to receive call invitations even when your app is in the background or after it is closed, then you need to also implement the offline push notification feature.
 
 ### Step 6. Listen for call status (optional)
 If you want to be notified of [call status](https://intl.cloud.tencent.com/document/product/647/43140) (for example, the start and end of a call), register the following listeners:
