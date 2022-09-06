@@ -1,5 +1,5 @@
 This document describes the use limits of bandwidth packages.
->?BWP is currently in beta. To try it out, please apply for beta eligibility.
+>?Bandwidth Package is a monthly-billed pay-as-you-go service. To activate the service, please contact your sales rep.
 
 ## Account Types
 To learn about your account type, see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
