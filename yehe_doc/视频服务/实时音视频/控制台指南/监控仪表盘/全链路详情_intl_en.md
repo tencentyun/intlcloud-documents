@@ -73,7 +73,7 @@ The normal volume range is 40-80 dB. If the volume is lower than 40 dB, and the 
 
 [](id:resolution)
 #### Resolution
-The resolutions of video and screen sharing are additional information used mainly to analyze relayed live streaming and the replay of recorded streams. Fluctuations in resolutions indicate that audience watching relayed live streams via [CDN](https://cloud.tencent.com/product/cdn?from=10680) or replaying recorded videos, especially web users, may be experiencing player compatibility issues such as stuttering or pixelated video.
+The resolutions of video and screen sharing are additional information used mainly to analyze relayed live streaming and the replay of recorded streams. Fluctuations in resolutions indicate that audience watching relayed live streams via [CDN](https://intl.cloud.tencent.com/product/cdn) or replaying recorded videos, especially web users, may be experiencing player compatibility issues such as stuttering or pixelated video.
 
 
 
