@@ -180,7 +180,7 @@ The costs of CDN relayed live streaming include **playback fees** and **transcod
 ### Transcoding fees: cost of mixing multiple channels of streams
 Stream mixing involves data decoding and encoding, so if you enable [stream mixing](#mixCDN), an additional stream mixing and transcoding fee will be incurred, which is charged based on the resolution and duration of the streams transcoded. The higher resolution an anchor uses, and the longer co-anchoring (the most common application scenario for stream mixing) lasts, the higher the cost. For details, see [CSS > Billing of LVB](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#lvb-transcoding).
 
->Suppose you use [`setVideoEncodrParam()`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) to set the bitrate (`videoBitrate`) for anchors to 1,500 Kbps and resolution to 720p, and an anchor co-anchored with a viewer for 1 hour, during which [stream mixing](#mixCDN) was enabled. The transcoding fee incurred will be `0.0057 USD/min × 60 min=0.342 USD`.
+>Suppose you use `setVideoEncodrParam()` to set the bitrate (`videoBitrate`) for anchors to 1,500 Kbps and resolution to 720p, and an anchor co-anchored with a viewer for 1 hour, during which [stream mixing](#mixCDN) was enabled. The transcoding fee incurred will be `0.0057 USD/min × 60 min=0.342 USD`.
 
 ## FAQ
 **Why is the video choppy and blurry when there is only one user in the room?**
