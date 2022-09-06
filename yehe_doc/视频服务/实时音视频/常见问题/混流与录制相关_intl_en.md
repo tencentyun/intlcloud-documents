@@ -39,7 +39,7 @@ If the following conditions are met and `mcumix = 1` is printed in the client lo
 
 [](id:r5)
 ### When are recording files and callbacks generated?
-- A recording file is saved to the [VOD](https:/intl.cloud.tencent.com/product/vod) platform and recording callback triggered 5 minutes after recording finishes.
+- A recording file is saved to the [VOD](https://www.tencentcloud.com/products/vod) platform and recording callback triggered 5 minutes after recording finishes.
 - If a resumption timeout period is specified, the time to wait will be 5 minutes plus the timeout period. Before the timeout period elapses, recording will not end even if the stream is interrupted. No recording file or callback will be generated either.
 - There is an upper limit (which can be configured in the console) to the duration of recording files in MP4, FLV, or AAC format. Whenever this limit is exceeded, a recording file and callback will be generated, and the recording will continue.
 
