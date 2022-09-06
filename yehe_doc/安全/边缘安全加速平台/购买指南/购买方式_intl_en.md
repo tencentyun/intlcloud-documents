@@ -1,4 +1,4 @@
-﻿## Prerequisite
+## Prerequisite
 [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985).
 
 ## Standard Plan Activation
