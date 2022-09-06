@@ -315,7 +315,7 @@ TRTC callback API classes
 | [onConnectionLost](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onConnectionLost) | Callback for the disconnection of the SDK from the server |
 | [onTryToReconnect](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onTryToReconnect) | Callback for the SDK trying to reconnect to the server |
 | [onConnectionRecovery](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onConnectionRecovery) | Callback for the reconnection of the SDK to the server |
-| [onSpeedTest](https://web.sdk.qcloud.com/trtc/electron/doc/en/trtc_electron_sdk/TRTCCallback.html#event:onSpeedTest) | Callback of server speed test results (deprecated). The SDK tests the speed of multiple server addresses, and the result of each test is returned through this callback. |
+| onSpeedTest | Callback of server speed test results (deprecated). The SDK tests the speed of multiple server addresses, and the result of each test is returned through this callback. |
 | [onSpeedTestResult](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onSpeedTestResult) | Callback of network speed test results. |
 
 
@@ -325,7 +325,7 @@ TRTC callback API classes
 |-----|-----|
 | [onCameraDidReady](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onCameraDidReady) | Callback for the camera being ready |
 | [onMicDidReady](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onMicDidReady) | Callback for the mic being ready |
-| [onUserVoiceVolume](https://web.sdk.qcloud.com/trtc/electron/doc/en/trtc_electron_sdk/TRTCCallback.html#event:onUserVoiceVolume) | Callback of volumes, including the volume of each user (`userId`) and the total remote volume. If `userid` is ``, it indicates the local user. |
+| onUserVoiceVolume | Callback of volumes, including the volume of each user (`userId`) and the total remote volume. If `userid` is ``, it indicates the local user. |
 | [onDeviceChange](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onDeviceChange) | Callback for the connection/disconnection of a local device |
 | [onTestMicVolume](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onTestMicVolume) | Volume callback for mic testing |
 | [onTestSpeakerVolume](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onTestSpeakerVolume) | Volume callback for speaker testing |
