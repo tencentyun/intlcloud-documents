@@ -1,4 +1,4 @@
-﻿## 前提条件
+## 前提条件
 使用腾讯云 EdgeOne 前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 
 ## 开通标准版
