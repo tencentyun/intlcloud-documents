@@ -6,7 +6,7 @@ TRTCVideoFillMode_Fill（フィル）を設定すれば解決できます。TRTC
 - TRTCVideoFillMode_Fill：画像を画面一杯に広げ、表示するビューウィンドウからはみ出た映像部分はカットされます。よって画面の表示は完全にはなりません。
 - TRTCVideoFillMode_Fit：画像の長辺が画面一杯になるように広げ、短辺の部分はブラックで補います。ただし、画面のコンテンツは完全なものになります。
 
-[](idv2:)
+[](id:v2)
 ### TRTCにラグが発生した場合はどのように調べればいいですか？
 通話品質は、対応するRoomIDとUserIDを用いて、TRTCコンソールの**[監視ダッシュボード](https://console.cloud.tencent.com/trtc/monitor)**ページで確認することができます：
 - 受信端末の視点から送信端末と受信端末ユーザーの状況を確認します。
