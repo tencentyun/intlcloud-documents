@@ -12,19 +12,19 @@
 
 ## Sequence Diagram (Simplified)
 
-![1](https://qcloudimg.tencent-cloud.cn/raw/f963c590fc88067f81da0b7ca3df50f8.png)
+![1](https://qcloudimg.tencent-cloud.cn/raw/97952f84b9b010959070ccbeb8551dbe.png)
 
-Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246) and [GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+Backend APIs: [ApplyWebVerificationToken](https://www.tencentcloud.com/document/product/1061/49953) and [GetWebVerificationResult](https://www.tencentcloud.com/document/product/1061/49950)
 ## Sequence Diagram (Detailed)
 
-In the real case, you need to input the URL of the comparison image to the backend API for getting the token. For use instructions and causes, see [Passing Resources](https://console.intl.cloud.tencent.com/faceid).
+In the real case, you need to input the URL of the comparison image to the backend API for getting the token. For use instructions and causes, see [Passing Resources](https://intl.cloud.tencent.com/document/product/1061/46849?!editLang=en).
 *`CreateUploadUrl` serves as an independent role in the diagram*
 
-![2](https://qcloudimg.tencent-cloud.cn/raw/491abd12442624139fef0b39959a6745.png)
+![2](https://qcloudimg.tencent-cloud.cn/raw/872a25f5cbcd02d9b9e9418aed8cae2b.png)
 
-Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246), [GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246), and [CreateUploadUrl](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+Backend APIs: [ApplyWebVerificationToken](https://www.tencentcloud.com/document/product/1061/49953), [GetWebVerificationResult](https://www.tencentcloud.com/document/product/1061/49950), and [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648)
 
-### Compatibility description
+##### Compatibility description
 
 The web real-time communication technology has the following compatibility requirements for browsers and mobile operating systems:
 
@@ -38,12 +38,12 @@ The web real-time communication technology has the following compatibility requi
 	<tr><td>Other browsers</td><td>Android 7+, where Chrome is supported, but QQ Browser and UC Browser are not</td></tr>
 </table>
 
+Note:
 
->!
->1. Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices don't support the real-time communication technology.
->2. Under circumstances where the real-time communication technology isn't supported, web face recognition will switch from reflection-based liveness detection to video recording mode, so as to ensure that the user can properly complete the identity verification process.
+1. Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices don't support the real-time communication technology.
+2. Under circumstances where the real-time communication technology isn't supported, web face recognition will switch from reflection-based liveness detection to video recording mode, so as to ensure that the user can properly complete the identity verification process.
 
-### Mode switch description
+##### Mode switch description
 
 In the web face recognition process, reflection-based liveness detection mode will be used first. However, if the real-time communication compatibility requirements cannot be met, the process will automatically switch to video-based liveness detection mode. The service processes in the two modes are as follows:
 
@@ -55,7 +55,7 @@ Web face recognition process in video-based liveness detection mode:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/7ea4ecb0d5815ef727df1b9ee97d1935.png)
 
-### Camera access description for reflection-based liveness detection
+##### Camera access description for reflection-based liveness detection
 
 When you call the web face recognition service, reflection-based liveness detection mode requires the user's camera access. If the user denies the access request, the face recognition and access request process needs to be entered again. Certain browsers cannot pull the access granting page; in this case, the user can try clearing the browser's cache.
 
