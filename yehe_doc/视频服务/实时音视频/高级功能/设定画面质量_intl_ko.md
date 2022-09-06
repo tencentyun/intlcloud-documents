@@ -1,9 +1,9 @@
 ## 콘텐츠 소개
 
 TRTCCloud에서 다음 방식을 통해 화질을 조정할 수 있습니다.
-- [TRTCCloud.enterRoom]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)의 TRTCAppScene 매개변수: 응용 시나리오 선택에 사용합니다.
-- [TRTCCloud.setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e): 인코딩 매개변수 설정에 사용합니다.
-- [TRTCCloud.setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9): 네트워크 제어 정책 설정에 사용합니다.
+- [TRTCCloud.enterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)의 TRTCAppScene 매개변수: 응용 시나리오 선택에 사용합니다.
+- [TRTCCloud.setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e): 인코딩 매개변수 설정에 사용합니다.
+- [TRTCCloud.setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9): 네트워크 제어 정책 설정에 사용합니다.
 
 본 문서에서는 위의 매개변수를 설정하여 귀하의 프로젝트 수요에 맞게 TRTC SDK의 화질 효과를 조정하는 방법을 소개합니다.
 다음 Demo를 참고할 수 있습니다.
