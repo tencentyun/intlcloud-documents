@@ -50,7 +50,7 @@ Yes. They just need to use the same [SDKAppID](https://console.cloud.tencent.com
 
 [](id:que13)
 ### Can both anchors and audience members initiate co-anchoring during live streaming?
-Yes. Both anchors and audience can initiate co-anchoring using the same logic. For more information, see [Live Streaming Mode (Android)](https://intl.cloud.tencenxt.com/document/product/647/35108).
+Yes. Both anchors and audience can initiate co-anchoring using the same logic. For more information, see [Live Streaming Mode (Android)](https://intl.cloud.tencent.com/document/product/647/35108).
 
 [](id:que14)
 ### In the audio/video conference scenario, can mobile users and web users enter the same room?
