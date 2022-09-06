@@ -457,7 +457,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 ### Version 8.0 @ 2020.11.13
 
 **새로운 기능**
-- 전체 플랫폼에 C++ 통합 API가 추가되었습니다. cpp_interface/[ITRTCCloud.h](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html)를 참고하십시오.
+- 전체 플랫폼에 C++ 통합 API가 추가되었습니다. cpp_interface/ITRTCCloud.h를 참고하십시오.
 - 전체 플랫폼이 문자열 방 번호를 지원합니다. TRTCParams.strRoomId를 참고 바랍니다.
 - 전체 플랫폼에 TXDeviceManager 장치 관리 유형이 추가되었습니다.
 - 전체 플랫폼에 API TRTCCloud.switchRoom이 추가되어 샘플링을 정지하지 않고도 방을 바꿀 수 있게 되었습니다.
