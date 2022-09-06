@@ -1,6 +1,6 @@
 This document describes how to create a device bandwidth package under your bill-by-CVM account.
 
->?BWP is currently in beta. To try it out, please submit an application to be added to the beta list.
+>?Bandwidth Package is a monthly-billed pay-as-you-go service. To activate the service, please contact your sales rep.
 >
 
 ## Restrictions
