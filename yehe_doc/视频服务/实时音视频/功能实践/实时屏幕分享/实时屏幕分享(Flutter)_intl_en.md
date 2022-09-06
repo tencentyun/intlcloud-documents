@@ -34,7 +34,7 @@ By setting the first parameter `encParams` in [startScreenCapture()](https://pub
 Since Android 7.0, apps running in the background tend to be killed by the system if they consume CPU. To prevent your app from being killed when it is sharing the screen in the background, you need to create a floating window when screen sharing starts, which also serves the purpose of reminding the user to avoid displaying personal information as his or her screen is being shared.
 
 ##### Method: displaying a common floating window
-The code in [tool.dart](https://github.com/c1avie/trtc_demo/blob/master/lib/page/trtcmeetingdemo/tool.dart) offers an example of how to create a mini floating window similar to the one in VooV Meeting:
+The code in tool.dart offers an example of how to create a mini floating window similar to the one in VooV Meeting:
 ```
 // Create a floating window when screen sharing starts to prevent the app from being killed when running in the background
   static void showOverlayWindow() {
@@ -115,7 +115,7 @@ dependencies:
 
 [](id:createGroup)[](id:Step1)
 #### Step 1. Create an App Group
-Log in to [**https://developer.apple.com/**](https://develop.apple.com) and do the following. **You need to download the provisioning profile again afterwards**.
+Log in to [**https://developer.apple.com/**](https://developer.apple.com/) and do the following. **You need to download the provisioning profile again afterwards**.
 
 1. Click **Certificates, IDs & Profiles**.
 2. Click "+" next to **Identifiers**.
@@ -268,7 +268,7 @@ onShareClick() async {
 
 ## Watching Shared Screen
 - **Watch screens shared by Android/iOS users**
-  When an Android/iOS user starts screen sharing, the screen is shared via the primary stream, and other users in the room will be notified through [onUserVideoAvailable](https://pub.flutter-io.cn/documentation/tencent_trtc_cloud/latest/trtc_cloud_listener/TRTCCloudListener-class.html) in `TRTCCloudListener`.
+  When an Android/iOS user starts screen sharing, the screen is shared via the primary stream, and other users in the room will be notified through onUserVideoAvailable in `TRTCCloudListener`.
   Users who want to watch the shared screen can call the [startRemoteView](https://pub.flutter-io.cn/documentation/tencent_trtc_cloud/latest/trtc_cloud/TRTCCloud/startRemoteView.html) API to start rendering the primary stream of the remote user.
 
 ## FAQs
