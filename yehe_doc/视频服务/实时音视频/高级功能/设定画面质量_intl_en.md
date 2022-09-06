@@ -1,9 +1,9 @@
 ## Introduction
 
 In TRTCCloud, you can adjust the video quality in the following ways:
-- `TRTCAppScene` in [TRTCCloud.enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d): used to select your application scenario.
-- [TRTCCloud.setVideoEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e): used to set the encoding parameter.
-- [TRTCCloud.setNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9): used to set the network control policy.
+- `TRTCAppScene` in [TRTCCloud.enterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d): used to select your application scenario.
+- [TRTCCloud.setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e): used to set the encoding parameter.
+- [TRTCCloud.setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9): used to set the network control policy.
 
 This document describes how to configure these parameters to make the video quality of the TRTC SDK meet your project-specific needs.
 You can also see the following demos:
