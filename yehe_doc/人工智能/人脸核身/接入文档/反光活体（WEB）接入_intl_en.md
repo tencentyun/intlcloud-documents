@@ -14,7 +14,7 @@
 
 ![1](https://qcloudimg.tencent-cloud.cn/raw/97952f84b9b010959070ccbeb8551dbe.png)
 
-Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246) and [GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+Backend APIs: [ApplyWebVerificationToken](https://www.tencentcloud.com/document/product/1061/49953) and [GetWebVerificationResult](https://www.tencentcloud.com/document/product/1061/49950)
 ## Sequence Diagram (Detailed)
 
 In the real case, you need to input the URL of the comparison image to the backend API for getting the token. For use instructions and causes, see [Passing Resources](https://intl.cloud.tencent.com/document/product/1061/46849?!editLang=en).
@@ -22,7 +22,7 @@ In the real case, you need to input the URL of the comparison image to the backe
 
 ![2](https://qcloudimg.tencent-cloud.cn/raw/872a25f5cbcd02d9b9e9418aed8cae2b.png)
 
-Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246), [GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246), and [CreateUploadUrl](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+Backend APIs: [ApplyWebVerificationToken](https://www.tencentcloud.com/document/product/1061/49953), [GetWebVerificationResult](https://www.tencentcloud.com/document/product/1061/49950), and [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648)
 
 ##### Compatibility description
 
