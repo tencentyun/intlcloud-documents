@@ -6,7 +6,7 @@ You can solve this problem by setting `TRTCVideoFillMode_Fill` (rendering mode).
 - TRTCVideoFillMode_Fill: The image fills the entire screen, and the excess parts are cropped. The image may not be displayed in whole.
 - TRTCVideoFillMode_Fit: The image is stretched as large as the long side can go, and the blank area is filled with black bars. The image is displayed in whole.
 
-[](idv2:)
+[](id:v2)
 ### How do I fix stutter?
 You can check call quality by room ID or user ID in **[Monitoring Dashboard](https://console.cloud.tencent.com/trtc/monitor)** in the TRTC console.
 - Check the send and receive statistics from the recipient’s perspective.
