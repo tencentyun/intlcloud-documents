@@ -30,29 +30,6 @@
 >- 如果您要分享的屏幕内容包含大量文字，可以适当提高分辨率和码率设置。
 >- 最高码率（videoBitrate）是指画面在剧烈变化时的最高输出码率，如果屏幕内容变化较少，实际编码码率会比较低。
 
-#### 弹出悬浮窗以避免被强杀
-从 Android 7.0 系统开始，切入到后台运行的普通 App 进程，但凡有 CPU 活动，都很容易会被系统强杀掉。 所以当 App 在切入到后台默默进行屏幕分享时，通过弹出悬浮窗的方案，可以避免被系统强杀掉。 同时，在手机屏幕上显示悬浮窗也有利于告知用户当前正在做屏幕分享，避免用户泄漏个人隐私。
-
-##### 方案：弹出普通的悬浮窗
-要弹出类似“腾讯会议”的迷你悬浮窗，您只需要参考示例代码 [tool.dart](https://github.com/c1avie/trtc_demo/blob/master/lib/page/trtcmeetingdemo/tool.dart) 中的实现即可：
-```
-//屏幕分享时弹出小浮窗，防止切换到后台应用被杀死
-  static void showOverlayWindow() {
-    SystemWindowHeader header = SystemWindowHeader(
-      title: SystemWindowText(
-          text: "屏幕分享中", fontSize: 14, textColor: Colors.black45),
-      decoration: SystemWindowDecoration(startColor: Colors.grey[100]),
-    );
-    SystemAlertWindow.showSystemWindow(
-      width: 18,
-      height: 95,
-      header: header,
-      margin: SystemWindowMargin(top: 200),
-      gravity: SystemWindowGravity.TOP,
-    );
-  }
-```
-
 ## 基于 iOS 平台
 - **[应用内分享](#Internal)**
 即只能分享当前 App 的画面，该特性需要 iOS 13 及以上版本的操作系统才能支持。由于无法分享当前 App 之外的屏幕内容，因此适用于对隐私保护要求高的场景。
