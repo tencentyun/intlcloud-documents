@@ -2,8 +2,8 @@ CSS provides [standard transcoding](#n_trans), [Top Speed Codec (TSC) transcodin
 
 ## Notes
 
-- Billing mode: pay-as-you-go.
-- Billing cycle: daily billing cycle. The fees for a day will be deducted at 10 AM the next day. For users on the monthly billing cycle, this month's transcoding bill will be generated between the 1st and 5th day of the next month.
+- Billing mode: Pay-as-you-go.
+- Billing cycle: Daily billing cycle. The fees for a day will be deducted at 10 AM the next day. For users on the monthly billing cycle, this month's transcoding bill will be generated between the 1st and 5th day of the next month.
 - Transcoding is disabled by default and can be enabled and configured via the [CSS console](https://intl.cloud.tencent.com/document/product/267/31071) or through [TencentCloud APIs](https://intl.cloud.tencent.com/document/product/267/30790).
 - The transcoding duration will be rounded up to the nearest 1 minute for billing.
 - If the transcoding service is not used, no fees will be incurred.
@@ -91,7 +91,7 @@ CSS provides [standard transcoding](#n_trans), [Top Speed Codec (TSC) transcodin
 
 ### Billing overview
 
-- Billable item: the duration of live transcoding (or the duration of stream mixing or the watermarked live stream if the stream mixing or watermarking feature is enabled).
+- Billable item: The duration of live transcoding (or the duration of stream mixing or the watermarked live stream if the stream mixing or watermarking feature is enabled).
 - Billing rules:
   - The fees are calculated by multiplying the transcoding duration by the codec and resolution on a day and the corresponding unit price.
   - Live transcoding is triggered by stream pulling, and playback will incur standard transcoding fees. Live watermarking is triggered by pushing and live stream mixing is triggered by signaling. Using live watermarking and stream mixing will generate standard transcoding fees, even if the stream is not played back.
@@ -153,7 +153,7 @@ Daily live transcoding fees = 0.0057 (USD/min) × 60 (min) + 0.0028 (USD/min) ×
 
 ### Billing overview
 
-- Billing rules: the fees are calculated by multiplying the TSC transcoding duration on a day and the corresponding unit price.
+- Billing rules: Fees are calculated by multiplying the TSC transcoding duration on a day and the corresponding unit price.
 
 
 ### Billing formula
@@ -181,8 +181,8 @@ CSS offers an audio transcoding service. The service offers high-quality audio t
 
 ### Billing overview
 
-- Billable item: the audio transcoding duration.
-- Billing rules: the fees are calculated by multiplying the audio transcoding duration on a day and the corresponding unit price.
+- Billable item: The audio transcoding duration.
+- Billing rules: Fees are calculated by multiplying the audio transcoding duration on a day and the corresponding unit price.
 
 ### Billing formula
 
