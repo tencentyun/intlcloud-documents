@@ -28,7 +28,7 @@ When granting the `PassRole` permission to your sub-account, please make sure th
 | Permission Description | Granted Policy |
 |---------|---------|
 | The sub-account needs to be granted access to CAM before granting the `PassRole` permission to the sub-account by the root account can take effect | `QcloudCamReadOnlyAccess` <br> or `QcloudCamFullAcces` |
-| The Cloud Monitor policy depends on the Tencent Cloud service policy; therefore, before granting the `PassRole` permission to the sub-account, you need to make sure that the sub-account can normally access TKE resources | For more information, please see <a href="https://cloud.tencent.com/document/product/457/11526">Permission Management |
+| The Cloud Monitor policy depends on the Tencent Cloud service policy; therefore, before granting the `PassRole` permission to the sub-account, you need to make sure that the sub-account can normally access TKE resources | For more information, please see <a href="https://www.tencentcloud.com/zh/document/product/457/37361">Permission Management |
 
 To ensure that the above permissions are granted successfully, please grant the `cam:PassRole` permission to the sub-account in the following steps.
 
