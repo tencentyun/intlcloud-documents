@@ -78,7 +78,7 @@ TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**：**TRTC 应用密钥**和 SDKAppId 对应，进入 [TRTC 应用管理](https://console.cloud.tencent.com/trtc/app) 后，SecretKey 信息如上图所示。
 - **userId**：当前用户的 ID，字符串类型，只允许包含英文字母（a-z 和 A-Z）、数字（0-9）、连词符（-）和下划线（\_）。建议结合业务实际账号体系自行设置。
-- **userSig**：根据 SDKAppId、userId，Secretkey等信息计算得到的安全保护签名，您可以单击 [这里](https://console.cloud.tencent.com/trtc/usersigtool) 直接在线生成一个调试的userSig，也可以参照我们的 [示例工程](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88) 自行计算，更多信息见 [如何计算及使用 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
+- **userSig**：根据 SDKAppId、userId，Secretkey等信息计算得到的安全保护签名，您可以单击 [这里](https://console.cloud.tencent.com/trtc/usersigtool) 直接在线生成一个调试的userSig，更多信息见 [如何计算及使用 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 
 ### 步骤四：实现多人音视频互动
@@ -126,7 +126,7 @@ public void onRemoteUserLeave(String userId) {
 ```
 
 ### 步骤六：屏幕分享（可选）
-实现屏幕分享 [TUIRoomCore#startScreenCapture](intl.cloud.tencent.com/document/product/647/37281)。
+实现屏幕分享 [TUIRoomCore#startScreenCapture](https://www.tencentcloud.com/document/product/647/45483)。
 ```java
 // 1.在 AndroidManifest.xml 文件中添加 SDK 录屏功能的 activity 和权限
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />

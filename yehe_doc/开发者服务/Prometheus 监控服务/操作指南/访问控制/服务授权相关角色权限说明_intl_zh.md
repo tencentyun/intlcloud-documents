@@ -28,7 +28,7 @@ QcloudAccessForCMRoleInPromHostingService：Prometheus 监控服务所需要的�
 | 权限说明 | 授予策略 |
 |---------|---------|
 | 需授予子账号访问 CAM 权限，主账号授予子账号的 PassRole 权限才会生效 | QcloudCamReadOnlyAccess <br>或 QcloudCamFullAcces|
-| 云监控策略依赖于云产品策略，因此授予子账号 PassRole 权限前，需确保子账号可在 TKE 下正常访问 TKE 资源 | 详情请参考 <a href="https://cloud.tencent.com/document/product/457/11526"> 容器服务（TKE） 权限管理 |
+| 云监控策略依赖于云产品策略，因此授予子账号 PassRole 权限前，需确保子账号可在 TKE 下正常访问 TKE 资源 | 详情请参考 <a href="https://www.tencentcloud.com/zh/document/product/457/37361"> 容器服务（TKE） 权限管理 |
 
 为确保上述权限授予成功，请参考以下步骤授予子账号 cam:PassRole 权限。
 

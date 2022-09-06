@@ -97,7 +97,7 @@ TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**：**TRTCアプリケーションキー**であり、SDKAppIdに対応しています。[TRTCアプリケーション管理](https://console.cloud.tencent.com/trtc/app)に進むと、SecretKey情報が上の図のように表示されます。
 - **userId**：現在のユーザーのIDです。文字列タイプであり、長さは32バイト以内とし、特殊文字の使用はサポートしていません。英語または数字の使用をお勧めします。業務の実際のアカウントシステムと組み合わせてご自身で設定することができます。
-- **userSig**：SDKAppId、userId，Secretkeyなどの情報に基づく計算によって得られるセキュリティ保護署名です。[ここ](https://console.cloud.tencent.com/trtc/usersigtool)をクリックするとデバッグ用のUserSigがオンラインで直接生成されます。また当社の[TUICallingデモプロジェクト](https://github.com/tencentyun/TUICalling/blob/main/Android/app/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)を参照してご自身で計算することもできます。その他の情報については、[UserSigの計算、使用方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+- **userSig**：SDKAppId、userId，Secretkeyなどの情報に基づく計算によって得られるセキュリティ保護署名です。[ここ](https://console.cloud.tencent.com/trtc/usersigtool)をクリックするとデバッグ用のUserSigがオンラインで直接生成されます。[UserSigの計算、使用方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 
 ### ステップ4：オーディオビデオ通話の実装
@@ -114,7 +114,7 @@ callingImpl.call(["1111"], TUICalling.Type.VIDEO);
 
 ### ステップ5：オフラインプッシュ（オプション）
 
-上記の4ステップが完了すると、オーディオビデオ通話の発信と接続が実現できますが、業務シーン上、`Appのプロセスが強制終了された後`または`APPがバックエンドに戻った後`も、オーディオビデオ通話リクエストを正常に受信できる必要がある場合は、TUICallingコンポーネントにオフラインプッシュ機能を追加してください。詳細については、[**Androidオフラインプッシュ統合ガイド**](https://github.com/tencentyun/TUICalling/blob/main/Android/Android%E7%A6%BB%E7%BA%BF%E6%8E%A8%E9%80%81%E6%8E%A5%E5%85%A5%E6%8C%87%E5%BC%95.md)をご参照ください。
+上記の4ステップが完了すると、オーディオビデオ通話の発信と接続が実現できますが、業務シーン上、`Appのプロセスが強制終了された後`または`APPがバックエンドに戻った後`も、オーディオビデオ通話リクエストを正常に受信できる必要がある場合は、TUICallingコンポーネントにオフラインプッシュ機能を追加してください。
 
 ### ステップ6：ステータスの監視（オプション）
 業務上、通話の開始や終了などの[通話ステータスの監視](https://intl.cloud.tencent.com/document/product/647/43140)が必要な場合は、次のイベントを監視することができます。

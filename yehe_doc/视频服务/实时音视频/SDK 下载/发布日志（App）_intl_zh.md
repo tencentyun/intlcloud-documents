@@ -457,7 +457,7 @@ Android&Mac&iOS：支持外部接管音频播放，请参见 API [enableCustomAu
 ### Version 8.0 @ 2020.11.13
 
 **新增**
-- 全平台新增 C++ 统一 API，请参见 cpp_interface/[ITRTCCloud.h](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html)。
+- 全平台新增 C++ 统一 API，请参见 cpp_interface/ITRTCCloud.h。
 - 全平台支持字符串房间号，请参见 TRTCParams.strRoomId。
 - 全平台新增 TXDeviceManager 设备管理类。
 - 全平台新增 API TRTCCloud.switchRoom，支持不停止采集，直接切换房间。

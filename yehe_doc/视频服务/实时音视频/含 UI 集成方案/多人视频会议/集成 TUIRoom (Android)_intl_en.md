@@ -78,7 +78,7 @@ TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**: **TRTC application key**. Each secret key corresponds to a `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
 - **userId**: ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_). We recommend that you keep it consistent with your user account system.
-- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing or calculate it on your own by referring to our [demo project](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing. For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 
 ### Step 4. Implement group audio/video communication
@@ -126,7 +126,7 @@ public void onRemoteUserLeave(String userId) {
 ```
 
 ### Step 6. Implement screen sharing (optional)
-Call [TUIRoomCore#startScreenCapture](intl.cloud.tencent.com/document/product/647/37281) to implement screen sharing.
+Call [TUIRoomCore#startScreenCapture](https://www.tencentcloud.com/document/product/647/45483) to implement screen sharing.
 ```java
 // 1. Add the SDK’s screen sharing activity and permission in `AndroidManifest.xml`
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />

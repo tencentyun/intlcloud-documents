@@ -457,7 +457,7 @@ Optimized the business logic of custom capturing:
 ### Version 8.0 Released on November 13, 2020
 
 **Added**
-- All platforms: added cross-platform C++ APIs. For more information, see cpp_interface/[ITRTCCloud.h](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html).
+- All platforms: added cross-platform C++ APIs. For more information, see cpp_interface/ITRTCCloud.h.
 - All platforms: supported string-type room IDs. For more information, see `TRTCParams.strRoomId`.
 - All platforms: added the device management class `TXDeviceManager`.
 - All platforms: added the `TRTCCloud.switchRoom` API to allow room switching with capturing uninterrupted.

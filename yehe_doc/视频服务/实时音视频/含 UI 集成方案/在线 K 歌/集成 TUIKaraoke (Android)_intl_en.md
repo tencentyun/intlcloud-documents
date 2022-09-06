@@ -65,7 +65,7 @@ For more information on relevant APIs, see [TUIKaraoke](https://intl.cloud.tence
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**: **TRTC application key**, which corresponds to `SDKAppID`. On the [Application Management](https://console.cloud.tencent.com/trtc/app) page in the TRTC console, the `SecretKey` is as shown below:
 - **userId**: Current user ID, which is a string and can contain up to 32 bytes of letters and digits (special symbols are not supported). You can customize it based on your actual account system.
-- **userSig**: Security protection signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to directly generate a debugging `userSig` online or calculate it on your own by referring to the [TUIKaraoke demo project](https://github.com/tencentyun/TUICalling/blob/main/Android/App/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- **userSig**: Security protection signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to directly generate a debugging `userSig` online. For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 ### Step 4. Implement the online karaoke scenario
 1. **The anchor creates a room through [TUIKaraoke.createRoom](https://intl.cloud.tencent.com/document/product/647/41943)**.
@@ -176,6 +176,6 @@ mTRTCKaraokeRoom.setDelegate(new TRTCKaraokeRoomDelegate() {
 
 ## FAQs
 ### Does the `TUIKaraoke` component support sound effect features such as voice change, tone change, and reverb?
-Yes. For more information, see the [TUIKaraoke demo project](https://github.com/tencentyun/TUIKaraoke/blob/main/Android/Source/src/main/java/com/tencent/liteav/tuikaraoke/ui/audio/AudioEffectPanel.java).
+Yes. 
 
 >? If you have any requirements or feedback, contact colleenyu@tencent.com.

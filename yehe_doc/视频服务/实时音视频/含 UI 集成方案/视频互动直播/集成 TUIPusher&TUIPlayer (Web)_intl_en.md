@@ -1,6 +1,6 @@
 ## Overview
 
-`TUIPusher` and `TUIPlayer` are our web-based open-source components for interactive live streaming (UI included). You can use them together with our basic SDKs such as [TRTC](https://cloud.tencent.com/product/trtc) and [IM](https://cloud.tencent.com/product/im) to quickly equip your live streaming applications (corporate live streaming, live shopping, vocational training, remote teaching, etc.) with web-based publishing and playback capabilities.
+`TUIPusher` and `TUIPlayer` are our web-based open-source components for interactive live streaming (UI included). You can use them together with our basic SDKs such as [TRTC](https://intl.cloud.tencent.com/product/trtc) and [IM](https://intl.cloud.tencent.com/product/im) to quickly equip your live streaming applications (corporate live streaming, live shopping, vocational training, remote teaching, etc.) with web-based publishing and playback capabilities.
 
 >? All components of TUIKit use two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, IM and the trial edition of the IM SDK (which supports only 100 DAUs) will be activated automatically. For the billing details of IM, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 

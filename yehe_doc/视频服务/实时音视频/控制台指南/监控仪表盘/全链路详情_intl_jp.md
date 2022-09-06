@@ -73,7 +73,7 @@ CPU使用率は、システム全体のCPU使用率およびアプリのCPU使�
 
 [](id:resolution)
 #### 解像度
-ビデオと画面共有の解像度は補助的な情報で、主にRelayed live streamingおよびレコーディングファイルを再生するための判断に用いられます。ビデオの解像度に変動がある場合、[CDN](https://cloud.tencent.com/product/cdn?from=10680) 経由でRelayed live streamingを視聴する視聴者またはビデオ再生を視聴する視聴者（特にWebユーザー）には、画面のフリーズ、ぼやけるなどの再生装置との互換性による問題が存在する可能性があります。
+ビデオと画面共有の解像度は補助的な情報で、主にRelayed live streamingおよびレコーディングファイルを再生するための判断に用いられます。ビデオの解像度に変動がある場合、[CDN](https://intl.cloud.tencent.com/product/cdn) 経由でRelayed live streamingを視聴する視聴者またはビデオ再生を視聴する視聴者（特にWebユーザー）には、画面のフリーズ、ぼやけるなどの再生装置との互換性による問題が存在する可能性があります。
 
 
 

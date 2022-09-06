@@ -74,7 +74,7 @@ TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
 - **userId**: 현재 사용자의 ID로, 문자(a-z 및 A-Z), 숫자(0-9), 하이픈(-) 및 언더바(\_)만 포함할 수 있는 문자열입니다. 사용자 계정 시스템과 일관성을 유지하는 것이 좋습니다.
-- **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 userSig를 온라인으로 직접 생성하거나 [데모 프로젝트](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://cloud.tencent.com/document/product/647/17275)를 참고하십시오.
+- **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 userSig를 온라인으로. 자세한 내용은 [UserSig](https://cloud.tencent.com/document/product/647/17275)를 참고하십시오.
 
 
 ### 4단계: 그룹 오디오/비디오 인터랙션 구현
@@ -122,7 +122,7 @@ public void onRemoteUserLeave(String userId) {
 ```
 
 ### 6단계: 화면 공유(옵션)
-[TUIRoomCore#startScreenCapture](intl.cloud.tencent.com/document/product/647/37281)를 통해 화면 공유를 구현합니다.
+[TUIRoomCore#startScreenCapture](https://www.tencentcloud.com/document/product/647/45483)를 통해 화면 공유를 구현합니다.
 ```java
 // 1. AndroidManifest.xml 파일에 SDK 녹화 기능의 activity 및 권한 추가
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />

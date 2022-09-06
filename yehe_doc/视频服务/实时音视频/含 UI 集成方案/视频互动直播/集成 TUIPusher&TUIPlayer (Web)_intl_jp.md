@@ -1,6 +1,6 @@
 ## コンポーネントの説明
 
-TUIPusher & TUIPlayerは、Web端末オープンソースの、UIを備えたライブストリーミングインタラクションコンポーネントです。TUIPusher & TUIPlayerは[TRTC](https://cloud.tencent.com/product/trtc)、 [IM](https://cloud.tencent.com/product/im)などの基本SDKを統合し、企業によるライブストリーミング、eコマースマーケティング、業界研修、リモート教育などの様々なライブストリーミングシーン向けに、すぐにリリースできるWeb端末ライブストリーミングプッシュプルストリーミングツールによるソリューションをご提供します。
+TUIPusher & TUIPlayerは、Web端末オープンソースの、UIを備えたライブストリーミングインタラクションコンポーネントです。TUIPusher & TUIPlayerは[TRTC](https://intl.cloud.tencent.com/product/trtc)、 [IM](https://intl.cloud.tencent.com/product/im)などの基本SDKを統合し、企業によるライブストリーミング、eコマースマーケティング、業界研修、リモート教育などの様々なライブストリーミングシーン向けに、すぐにリリースできるWeb端末ライブストリーミングプッシュプルストリーミングツールによるソリューションをご提供します。
 
 >?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期してアクティブ化することができます。 IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブ化すると、関連するIM SDKの体験版がデフォルトでアクティブ化されます。これは100 DAUのみをサポートします。
 

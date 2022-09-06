@@ -16,9 +16,9 @@ CSS can record live streams and store them in VOD. Using live recording will inc
 
 ### Billing Overview
 
-- Billable item: the number of live recording channels.
-- Billing mode: pay-as-you-go.
-- Billing cycle: monthly billing cycle. The current month's bill will be generated between the 1st and 5th day of the next month. Please refer to your actual billing statement for details.
+- Billable item: Number of live recording channels.
+- Billing mode: Pay-as-you-go.
+- Billing cycle: Monthly billing cycle. The current month's bill will be generated between the 1st and 5th day of the next month. Please refer to your actual billing statement for details.
 
 
 ### Calculation Formula

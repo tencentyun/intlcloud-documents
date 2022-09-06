@@ -16,7 +16,7 @@
     - [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/) 설치.
 
 ## SDK 통합
-1. SDK 및 관련 [SDK 소스 코드](https://comm.qq.com/sdk/trtc/UE4/TRTCSDK.zip)를 다운로드합니다(문의 사항은 QQ 그룹 번호: 764231117 추가 후 상담).
+1. SDK 및 관련 SDK 소스 코드.
 2. 압축 해제 후 프로젝트의 'TRTCSDK' 폴더를 프로젝트의 **Source/[project_name]** 디렉터리에 복사합니다. 여기서 **[project_name]**은 프로젝트 이름입니다.
 3. 프로젝트에서 **[project_name].Build.cs** 파일을 편집합니다. 다음 함수를 추가합니다.
 ```

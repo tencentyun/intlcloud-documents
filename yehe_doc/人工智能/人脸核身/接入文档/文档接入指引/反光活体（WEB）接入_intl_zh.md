@@ -14,15 +14,15 @@
 
 ![1](https://qcloudimg.tencent-cloud.cn/raw/97952f84b9b010959070ccbeb8551dbe.png)
 
-相关后台接口：[ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+相关后台接口：[ApplyWebVerificationToken](https://www.tencentcloud.com/document/product/1061/49953)，[GetWebVerificationResult](https://www.tencentcloud.com/document/product/1061/49950)
 ## 时序图（详）
 
-实际使用时，后台获取token的接口需要传入比对图URL，具体使用和原因可以见[如何传递资源](https://console.intl.cloud.tencent.com/faceid) 。
+实际使用时，后台获取token的接口需要传入比对图URL，具体使用和原因可以见[如何传递资源](https://www.tencentcloud.com/document/product/1061/46849) 。
 *CreateUploadUrl在图中将作为一个独立的参与角色*
 
 ![2](https://qcloudimg.tencent-cloud.cn/raw/872a25f5cbcd02d9b9e9418aed8cae2b.png)
 
-相关后台接口：[ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[CreateUploadUrl](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+相关后台接口：[ApplyWebVerificationToken](https://www.tencentcloud.com/document/product/1061/49953)，[GetWebVerificationResult](https://www.tencentcloud.com/document/product/1061/49950)，[CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648)
 
 
 ### 兼容性说明

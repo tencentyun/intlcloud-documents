@@ -1,9 +1,9 @@
 ## 内容紹介
 
 TRTRTCCloudでは、以下の方式で画質を調整できます。
-- [TRTCCloud.enterRoom]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) のTRTCAppScene パラメータ：アプリケーションユースケースを使用するのに使用します。
-- [TRTCCloud.setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)：エンコードのパラメータを設定するのに使用します。
-- [TRTCCloud.setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9)：ネットワークの制御ポリシーを設定するのに使用します。
+- [TRTCCloud.enterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) のTRTCAppScene パラメータ：アプリケーションユースケースを使用するのに使用します。
+- [TRTCCloud.setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)：エンコードのパラメータを設定するのに使用します。
+- [TRTCCloud.setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9)：ネットワークの制御ポリシーを設定するのに使用します。
 
 ここでは、主に上述のパラメータを設定し、TRTC SDKの画質効果を項目のニーズに適合させる方法を紹介します。
 以下のDemoを参照することもできます。

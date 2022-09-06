@@ -48,7 +48,7 @@ pod install
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**입니다. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
 - **userId**: 문자열이며 최대 32바이트의 문자와 숫자를 포함할 수 있는 현재 사용자 ID입니다(특수 기호는 지원되지 않음). 실제 계정 시스템에 따라 사용자 정의할 수 있습니다.
-- **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 UserSig를 온라인으로 직접 생성하거나 [TUIKaraoke 데모 프로젝트](https://github.com/tencentyun/TUICalling/blob/main/Android/App/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://cloud.tencent.com/document/product/647/17275)를 참고하십시오.
+- **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 UserSig를 온라인으로. 자세한 내용은 [UserSig](https://cloud.tencent.com/document/product/647/17275)를 참고하십시오.
 
 
 ### 4단계: 온라인 노래방 시나리오 구현

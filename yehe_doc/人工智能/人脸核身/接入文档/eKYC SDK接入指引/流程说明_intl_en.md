@@ -16,4 +16,4 @@ Major roles involved are as shown below:
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/728a228977a5c7bfa67d2a5af098722b.png)
 
-Backend APIs: [ApplySdkVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246) and [GetSdkVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+Backend APIs: [ApplySdkVerificationToken](https://www.tencentcloud.com/document/product/1061/49954) and [GetSdkVerificationResult](https://www.tencentcloud.com/document/product/1061/49951)

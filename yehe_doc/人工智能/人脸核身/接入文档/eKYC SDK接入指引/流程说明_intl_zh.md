@@ -16,4 +16,4 @@
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/728a228977a5c7bfa67d2a5af098722b.png)
 
-相关后台接口：[ApplySdkVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[GetSdkVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+相关后台接口：[ApplySdkVerificationToken](https://www.tencentcloud.com/document/product/1061/49954)，[GetSdkVerificationResult](https://www.tencentcloud.com/document/product/1061/49951)

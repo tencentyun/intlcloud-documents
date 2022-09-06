@@ -30,29 +30,6 @@ manifest 파일에 다음 activity를 붙여넣습니다. 프로젝트 코드에
 >- 공유하는 화면 콘텐츠에 텍스트가 많이 포함되어 있는 경우 해상도와 비트 레이트를 알맞게 높이는 것이 좋습니다.
 >- 최대 비트 레이트(videoBitrate)란 화면 변화가 심할 때 최대로 출력되는 비트 레이트를 의미하며, 화면 콘텐츠의 변화가 적은 경우 실제 인코딩 비트 레이트는 비교적 낮습니다.
 
-#### 팝업 플로팅 창의 강제 종료 방지
-Android 7.0 시스템부터 백그라운드에서 실행되는 일반적인 App 프로세스는 CPU가 사용되고 있을 경우 시스템에 의해 강제 종료되는 현상이 쉽게 발생합니다. 그러므로 App이 백그라운드에서 화면을 공유하고 있을 때 플로팅 창 팝업을 통해 시스템에 의해 강제 종료되는 것을 막을 수 있습니다. 또한 휴대폰 화면에 플로팅 창을 표시하면 사용자에게 현재 화면 공유 중임을 알려 사용자의 프라이버시 노출을 방지할 수 있습니다.
-
-##### 방법: 일반 플로팅 창 팝업
-'VooV Meeting'과 유사한 미니 플로팅 창을 팝업합니다. 예시 코드 [tool.dart](https://github.com/c1avie/trtc_demo/blob/master/lib/page/trtcmeetingdemo/tool.dart)를 참고하십시오.
-```
-//화면 공유 시 미니 플로팅 창을 팝업해 백그라운드 애플리케이션으로 전환되어 강제 종료되는 현상 방지
-  static void showOverlayWindow() {
-    SystemWindowHeader header = SystemWindowHeader(
-      title: SystemWindowText(
-          text: "화면 공유 중", fontSize: 14, textColor: Colors.black45),
-      decoration: SystemWindowDecoration(startColor: Colors.grey[100]),
-    );
-    SystemAlertWindow.showSystemWindow(
-      width: 18,
-      height: 95,
-      header: header,
-      margin: SystemWindowMargin(top: 200),
-      gravity: SystemWindowGravity.TOP,
-    );
-  }
-```
-
 ## iOS 플랫폼 기반
 - **[애플리케이션 내 공유](#Internal)**
 현재 App의 화면만 공유할 수 있다는 의미입니다. 해당 기능은 iOS 13 버전 이상의 운영 체제에서만 지원됩니다. 현재 App 이외의 화면 콘텐츠를 공유할 수 없으므로 높은 수준의 개인 정보 보호가 필요한 시나리오에 적합합니다.

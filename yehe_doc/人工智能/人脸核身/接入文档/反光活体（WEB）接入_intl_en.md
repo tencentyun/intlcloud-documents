@@ -14,7 +14,7 @@
 
 ![1](https://qcloudimg.tencent-cloud.cn/raw/97952f84b9b010959070ccbeb8551dbe.png)
 
-Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246) and [GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+Backend APIs: [ApplyWebVerificationToken](https://www.tencentcloud.com/document/product/1061/49953) and [GetWebVerificationResult](https://www.tencentcloud.com/document/product/1061/49950)
 ## Sequence Diagram (Detailed)
 
 In the real case, you need to input the URL of the comparison image to the backend API for getting the token. For use instructions and causes, see [Passing Resources](https://intl.cloud.tencent.com/document/product/1061/46849?!editLang=en).
@@ -22,7 +22,7 @@ In the real case, you need to input the URL of the comparison image to the backe
 
 ![2](https://qcloudimg.tencent-cloud.cn/raw/872a25f5cbcd02d9b9e9418aed8cae2b.png)
 
-Backend APIs: [ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246), [GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246), and [CreateUploadUrl](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+Backend APIs: [ApplyWebVerificationToken](https://www.tencentcloud.com/document/product/1061/49953), [GetWebVerificationResult](https://www.tencentcloud.com/document/product/1061/49950), and [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648)
 
 ##### Compatibility description
 
@@ -38,10 +38,10 @@ The web real-time communication technology has the following compatibility requi
 	<tr><td>Other browsers</td><td>Android 7+, where Chrome is supported, but QQ Browser and UC Browser are not</td></tr>
 </table>
 
-Note:
-
-1. Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices don't support the real-time communication technology.
-2. Under circumstances where the real-time communication technology isn't supported, web face recognition will switch from reflection-based liveness detection to video recording mode, so as to ensure that the user can properly complete the identity verification process.
+>!
+>
+>1. Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices don't support the real-time communication technology.
+>2. Under circumstances where the real-time communication technology isn't supported, web face recognition will switch from reflection-based liveness detection to video recording mode, so as to ensure that the user can properly complete the identity verification process.
 
 ##### Mode switch description
 

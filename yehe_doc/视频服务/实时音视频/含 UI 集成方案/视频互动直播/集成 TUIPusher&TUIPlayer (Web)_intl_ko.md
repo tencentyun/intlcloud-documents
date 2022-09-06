@@ -1,6 +1,6 @@
 ## 컴포넌트 개요
 
-TUIPusher & TUIPlayer는 Web 기반 오픈 소스 라이브 스트리밍 컴포넌트(UI 포함)입니다. 이를 [TRTC](https://cloud.tencent.com/product/trtc) 및 [IM](https://cloud.tencent.com/product/im)과 같은 Tencent Cloud의 기본 SDK에 통합하여 라이브 스트리밍 애플리케이션(기업 라이브 스트리밍, 라이브 쇼핑, 직업 교육, 원격 교육 등)에 Web 기반 게시 및 재생 기능을 신속하게 장착할 수 있습니다.
+TUIPusher & TUIPlayer는 Web 기반 오픈 소스 라이브 스트리밍 컴포넌트(UI 포함)입니다. 이를 [TRTC](https://intl.cloud.tencent.com/product/trtc) 및 [IM](https://intl.cloud.tencent.com/product/im)과 같은 Tencent Cloud의 기본 SDK에 통합하여 라이브 스트리밍 애플리케이션(기업 라이브 스트리밍, 라이브 쇼핑, 직업 교육, 원격 교육 등)에 Web 기반 게시 및 재생 기능을 신속하게 장착할 수 있습니다.
 
 >?TUIKit의 모든 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
