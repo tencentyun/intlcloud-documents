@@ -1,4 +1,4 @@
-腾讯特效 SDK 提供了 11 种版本的 SDK，分别为 6 种基础版 SDK 和 5 种高级版 SDK。了解 11 个版本 SDK 的关系和各版本功能差异请参见 [计费概述](https://cloud.tencent.com/document/product/616/36807)。
+腾讯特效 SDK 提供了 11 种版本的 SDK，分别为 6 种基础版 SDK 和 5 种高级版 SDK。了解 11 个版本 SDK 的关系和各版本功能差异请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1143/45371)。
 
 > ! 腾讯特效 SDK 下载 iOS 平台 ZIP 包内囊括 SDK 和 Demo工程，若需使用 iOS 端口的 Demo 工程，可在此下载 iOS 端 ZIP 包。
 
@@ -22,8 +22,8 @@ A 系列基础套餐提供通用美型功能，适用于对脸部美颜调整要
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.2.112/xmagic_res_a101_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.2.320/xmagic_A1-01_android_2.4.2.320.zip">DOWNLOAD</a></td>
 <td rowspan=6>
-<li/><a href="https://cloud.tencent.com/document/product/616/65894">iOS DOC</a>
-<li/><a href="https://cloud.tencent.com/document/product/616/65891">Android DOC</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
 </td>
 <td >
 <b>iOS 包大小：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：10.6m</ul><br>
@@ -93,8 +93,8 @@ S 系列高级套餐提供高级美型功能，适用于对脸部美颜调整需
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.2.112/xmagic_res_s100_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.2.320/xmagic_S1-00_android_2.4.2.320.zip">DOWNLOAD</a></td>
 <td rowspan=5>
-<li/><a href="https://cloud.tencent.com/document/product/616/65894">iOS DOC</a>
-<li/><a href="https://cloud.tencent.com/document/product/616/65891">Android DOC</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
 </td>
 <td >
 <b>iOS 包大小：</b><ul style="margin:0"><li>arm64：31M  </li><li>bundle：10.6M  </li></ul><br>
@@ -144,4 +144,4 @@ S 系列高级套餐提供高级美型功能，适用于对脸部美颜调整需
 </tr>
 </tbody></table>
 
-> ! 包体大小瘦身，请参见 [SDK 包体瘦身（Android）](https://cloud.tencent.com/document/product/616/73016)。
+> ! 包体大小瘦身，请参见 [SDK 包体瘦身（Android）](https://intl.cloud.tencent.com/document/product/1143/47831)。

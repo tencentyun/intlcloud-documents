@@ -2,7 +2,7 @@ This document describes how to create an IP bandwidth package under your bill-by
 
 
 ## Restrictions
-- BWP is currently in beta. To try it out, please submit an application to be added to the beta list.
+- Bandwidth Package is a monthly-billed pay-as-you-go service. To activate the service, please contact your sales rep.
 - A bill-by-IP account only supports creating an IP bandwidth package. If you have a bill-by-CVM account and want to use IP bandwidth packages, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to change to bill-by-IP account. To determine your account type, see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
 - Tencent Cloud provides the following bandwidth packages according to the bandwidth type.
 <table>

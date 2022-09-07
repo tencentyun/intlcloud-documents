@@ -22,8 +22,8 @@ Basic A 시리즈 패키지는 얼굴 보정에 대한 일반적인 요구 사�
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.2.112/xmagic_res_a101_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.2.320/xmagic_A1-01_android_2.4.2.320.zip">DOWNLOAD</a></td>
 <td  rowspan=6>
-<li/><a href="https://cloud.tencent.com/document/product/616/65894">iOS DOC</a>
-<li/><a href="https://cloud.tencent.com/document/product/616/65891">Android DOC</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
 </td>
 <td>
 <b>iOS 패키지 크기:</b><ul style="margin:0"><li/>arm64: 39.8m<li/>bundle: 10.6m</ul><br>
@@ -93,8 +93,8 @@ Basic A 시리즈 패키지는 얼굴 보정에 대한 일반적인 요구 사�
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.2.112/xmagic_res_s100_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.2.320/xmagic_S1-00_android_2.4.2.320.zip">DOWNLOAD</a></td>
 <td rowspan=5>
-<li/><a href="https://cloud.tencent.com/document/product/616/65894">iOS DOC</a>
-<li/><a href="https://cloud.tencent.com/document/product/616/65891">Android DOC</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
 </td>
 <td>
 <b>iOS 패키지 크기:</b><ul style="margin:0"><li>arm64: 31M  </li><li>bundle: 10.6M  </li></ul><br>
