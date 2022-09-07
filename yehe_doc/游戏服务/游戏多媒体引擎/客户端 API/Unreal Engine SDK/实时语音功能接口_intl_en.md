@@ -519,7 +519,7 @@ This API is used to add an ID to the audio data blocklist. It only works on the 
 - If B blocks neither A nor C, B can hear both of them;
 - If C blocks neither A nor B, C can hear both of them.
 
-此接口适用于在语音房间中将某用户禁言的场景。
+
 
 
 
@@ -881,8 +881,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 
 This API is used to get the speaker status. `0`: speaker off; `1`: speaker on; `2`: in the progress of changing speaker status
 
-- 返回值0为关闭扬声器状态。
-- 返回值1为打开扬声器状态。
+
 
 #### Function prototype  
 
@@ -1023,7 +1022,7 @@ iter->second.level = ITMGContextGetInstance()->GetAudioCtrl()->GetRecvStreamLeve
 ### SetSpeakerVolume
 
 This API is used to set the speaker volume.
-参数 volume 用于设置扬声器的音量，当数值为0时，表示静音，当数值为100时，表示音量不增不减，默认数值为 100。
+
 
 #### Function prototype  
 
