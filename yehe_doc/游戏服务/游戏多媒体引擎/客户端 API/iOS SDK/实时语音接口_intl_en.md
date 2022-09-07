@@ -687,7 +687,7 @@ This API is used to add an ID to the audio data blocklist. This operation blocks
 - If B blocks neither A nor C, B can hear both of them;
 - If C blocks neither A nor B, C can hear both of them.
 
-此接口适用于在语音房间中将某用户禁言的场景。
+
 
 #### Function prototype  
 
