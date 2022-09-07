@@ -27,7 +27,7 @@
 ## 애플리케이션 설정
 
 생성된 애플리케이션은 서비스 관리 페이지의 ‘애플리케이션 목록’에 표시됩니다. **설정**을 클릭하여 애플리케이션 세부 정보 페이지로 이동합니다.
-![](https://main.qcloudimg.com/raw/0715f8d18cfda55cadabef8c89cd8fec.jpg)
+
 
 ### 애플리케이션 정보 수정
 
@@ -47,10 +47,10 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/667413c114bec5fc5f73cb0f08c3d472.png)
 
 > ?
-- 여기에서 권한 키는 SDK 연결 시 매개변수로 사용됩니다. 
-- 키 재설정 후 15분 - 1시간 이내에 적용됩니다. 자주 바꾸는 것은 권장하지 않습니다.
-- **키 재설정** 옵션은 게임 생성 계정, 루트 계정, 글로벌 협업 파트너만 가능합니다.
-- 인증에 대한 자세한 내용은 [Authentication Key](https://www.tencentcloud.com/zh/document/product/607/12218)를 참고하십시오.
+>- 여기에서 권한 키는 SDK 연결 시 매개변수로 사용됩니다. 
+>- 키 재설정 후 15분 - 1시간 이내에 적용됩니다. 자주 바꾸는 것은 권장하지 않습니다.
+>- **키 재설정** 옵션은 게임 생성 계정, 루트 계정, 글로벌 협업 파트너만 가능합니다.
+>- 인증에 대한 자세한 내용은 [Authentication Key](https://www.tencentcloud.com/zh/document/product/607/12218)를 참고하십시오.
 
 
 
