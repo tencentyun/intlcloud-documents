@@ -2,7 +2,7 @@
 
 ## 変更履歴
 
-開発者がTencent Cloud GME製品を容易に導入するために、SDKをダウンロードする前に、［製品の最新情報］(https://intl.cloud.tencent.com/zh/document/product/607/35323)をご参照ください。
+開発者がTencent Cloud GME製品を容易に導入するために、SDKをダウンロードする前に、[製品の最新情報](https://intl.cloud.tencent.com/zh/document/product/607/35323)をご参照ください。
 
 ## 初心者向け（入門編）
 
@@ -23,7 +23,7 @@ Demoプロジェクトを使用してデバッグを行ってください。問�
 - 入室失敗に関する問題については[リアルタイム音声ルーム失敗に関する質問](https://intl.cloud.tencent.com/document/product/607/39523)をご参照ください。
 - 無音問題については、[リアルタイム音声の無音とオーディオに関する質問](https://intl.cloud.tencent.com/document/product/607/39524)をご参照ください。
 - サービス呼び出しエラーについては、[エラーコード](https://intl.cloud.tencent.com/document/product/607/33223)をご参照ください。
-- この問題を解決できない場合は、ログを取得した後、[チケットを提出]（https://console.cloud.tencent.com/workorder/category）でGME開発者にご連絡ください。
+- この問題を解決できない場合は、ログを取得した後、[チケットを提出](https://console.cloud.tencent.com/workorder/category)でGME開発者にご連絡ください。
 
 
 
