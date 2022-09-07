@@ -1,6 +1,11 @@
 This document provides a detailed description that makes it easy for Android voice message developers to debug and integrate the APIs for Tencent Cloud’s Game Multimedia Engine (GME).
 
-> ?This document applies to GME SDK v2.8.
+
+
+<dx-alert infotype="explain" title="">
+This document applies to GME SDK version 2.9.
+</dx-alert>
+
 
 ## Key Considerations for Using GME
 
@@ -8,6 +13,7 @@ GME provides two services: voice chat service and voice message and speech-to-te
 
 <dx-alert infotype="notice" title="Note on Init API">
 If you need to use voice chat and voice message services at the same time, **you only need to call `Init` API once**.
+The billing will not start after initialization. Receiving or sending a voice message in speech-to-text service is counted as a voice message DAU.
 </dx-alert>
 
 ![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
@@ -30,7 +36,7 @@ If you need to use voice chat and voice message services at the same time, **you
 - After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
 - The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error code, please see <dx-tag-link link="https://cloud.tencent.com/document/product/607/15173" tag="ErrorCode">Error Codes</dx-tag-link>.
+- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
 
 ### Voice message for Android class
 
@@ -46,7 +52,7 @@ Before the initialization, the SDK is in the uninitialized status, and **you nee
 **You need to call the `Init` API before calling any APIs of GME.**
 
 
-If you have any questions when using the service, please see [General FAQs](https://intl.cloud.tencent.com/document/product/607/30254).
+If you have any questions when using the service, please see [General Issues](https://intl.cloud.tencent.com/document/product/607/30254).
 
 | API | Description |
 | ------ | :----------: |
@@ -56,8 +62,14 @@ If you have any questions when using the service, please see [General FAQs](http
 | Resume | Resumes the system |
 | Uninit | Uninitializes GME |
 
->!If you need to switch the account, please call `UnInit` to uninitialize the SDK.
->
+
+
+<dx-alert infotype="notice" title="">
+If you need to switch the account, please call `UnInit` to uninitialize the SDK. No fee is incurred for calling Init API.
+</dx-alert>
+
+
+
 
 
 ### Getting singleton
@@ -73,7 +85,7 @@ ITMGContext.getInstance(this);
 
 ### Registering callback
 
-The API class uses the `Delegate` method to send callback notifications to the application. Register the callback function to the SDK to receive callback messages.
+The API class uses the `Delegate` method to send callback notifications to the application. Register the callback function to the SDK for receiving callback messages.
 
 #### Function prototype
 
@@ -84,7 +96,7 @@ static public abstract class ITMGDelegate {
 }
 ```
 
-| Parameter | Type | Description |
+| Parameter |               Type               | Description                     |
 | ---- | :------------------------------: | ------------------------ |
 | type | ITMGContext.ITMG_MAIN_EVENT_TYPE | Event type in the callback response |
 | data | Intent message type | Callback message, i.e., event data |
@@ -100,7 +112,7 @@ itmgDelegate = new ITMGContext.ITMGDelegate() {
     public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
         if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ENTER_ROOM == type)
         {
-            // Analyze the returned result
+            // Analyze the returned data
             int nErrCode = data.getIntExtra("result" , -1);
             String strErrMsg = data.getStringExtra("error_info");
 				}
@@ -116,7 +128,7 @@ itmgDelegate = new ITMGContext.ITMGDelegate() {
 public abstract int SetTMGDelegate(ITMGDelegate delegate);
 ```
 
-| Parameter | Type | Description |
+| Parameter     |     Type     | Description         |
 | -------- | :----------: | ------------ |
 | delegate | ITMGDelegate | SDK callback function |
 
@@ -129,9 +141,17 @@ ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 
 ### [Initializing SDK](id:Init)
 
-- This API is used to initialize the GME service. It is recommended to call it when initializing the application.
-- **For more information on how to get the `sdkAppId` parameter, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698)**.
+- This API is used to initialize the GME service. It is recommended to call it when initializing the application. No fee is incurred for calling this API.
+- **For more information on how to get the `sdkAppID` parameter, please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**.
 - **The openID uniquely identifies a user with the rules stipulated by the application developer and unique in the application (currently, only INT64 is supported)**.
+
+
+
+<dx-alert infotype="notice" title="">
+The Init API must be called in the same thread with other APIs. It is recommended to call all APIs in the main thread.
+</dx-alert>
+
+
 
 #### Function prototype
 
@@ -139,7 +159,7 @@ ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 public abstract int Init(String sdkAppId, String openId);
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                                                         |
 | -------- | :----: | ------------------------------------------------------------ |
 | sdkAppId | String | `AppId` provided by the GME service from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme) |
 | OpenId |String | `OpenId` can only be in Int64 type, which is passed after being converted to a string. |
@@ -171,6 +191,14 @@ if(ret != 0){
 Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
 You can refer to the `EnginePollHelper.java` file in the demo.
 
+
+<dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
+The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
+</dx-alert>
+
+
+
+
 #### Function prototype
 
 ```java
@@ -196,6 +224,7 @@ private Runnable mRunnable = new Runnable() {
 ### Pausing the system
 
 When a `Pause` event occurs in the system, the engine should also be notified for pause.
+If you need to pause the audio when switching to the background, you can call the `Pause` API in the listening code used to switch to the background, and call the `Resume` API in the listening event used to resume the foreground.
 
 #### Function prototype
 
@@ -228,9 +257,19 @@ public abstract int Uninit();
 
 ## Speech-to-Text
 
-Voice message refers to recording and sending a voice message. At the same time, the voice message can be converted to text and translated.
+Voice message refers to recording and sending a voice message. At the same time, the voice message can be converted to text and translated, as shown below:
 
->?It is recommended to use the streaming voice-to-text service.
+
+
+
+
+<dx-alert infotype="explain" title="">
+
+- It is recommended to use the streaming speech-to-text service.
+- You do not need to enter a voice chat room when using the voice message service.
+</dx-alert>
+
+
 
 #### Voice message and speech-to-text conversion flowchart
 
@@ -267,11 +306,18 @@ Voice message refers to recording and sending a voice message. At the same time,
 | SpeechToText | Converts speech to text |
 
 
-### Initializing SDK
+
+<dx-alert infotype="alarm" title="Maximum recording duration">
+The maximum recording duration of a voice message is 58 seconds by default, and the minimum recording duration cannot be less than 1 second. If you want to customize the recording duration, for example, to modify the maximum recording duration to 10 seconds, please call the `SetMaxMessageLength` API to set it after initialization.
+</dx-alert>
+
+
+
+### Initializing the SDK
 
 Before the initialization, the SDK is in the uninitialized status, and you need to initialize it through the `Init` API before you can use the voice chat and voice message services.
 
-If you have any questions when using the service, please see [Speech-to-Text Conversion](https://intl.cloud.tencent.com/document/product/607/39716).
+For details, please see [Speech-to-text Conversion](https://intl.cloud.tencent.com/document/product/607/39716#.E7.A6.BB.E7.BA.BF.E8.AF.AD.E9.9F.B3.E7.9A.84.E6.96.87.E4.BB.B6.E8.83.BD.E5.90.A6.E8.87.AA.E8.A1.8C.E4.B8.8B.E8.BD.BD.EF.BC.9F).
 
 ### Authentication information
 
@@ -284,9 +330,9 @@ To get authentication for voice message and speech-to-text, the room ID paramete
 AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String openId, String key)
 ```
 
-| Parameter | Type | Description |
+| Parameter   |  Type  | Description                                                         |
 | ------ | :----: | ------------------------------------------------------------ |
-| appId | int | `AppId` from the Tencent Cloud console. |
+| appId | int | `AppId` from the Tencent Cloud console.|
 | roomId | string | The room ID parameter must be set to `null`. |
 | openId | string | User ID, which is the same as `openId` during initialization. |
 | key | string | Permission key from the Tencent Cloud [console](https://console.cloud.tencent.com/gamegme). |
@@ -365,10 +411,14 @@ The event message will be identified in the `OnEvent function` based on the actu
 | result | A return code for judging whether the streaming speech recognition is successful. |
 | text | Text converted from speech |
 | file_path | Local path of stored recording file |
-| file_id | Backend URL address of recording file, which will be retained for 90 days |
+| file_id | Backend URL address of recording file, which will be retained for 90 days. `fileid` is fixed at `http://gme-v2-` |
 
->!The file_id is empty when the 'ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRecognition_IS_RUNNING' message is listened.
->
+
+
+<dx-alert infotype="notice" title="">
+The file_id is empty when the 'ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRecognition_IS_RUNNING' message is listened.
+</dx-alert>
+
 
 #### Error codes
 
@@ -418,7 +468,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 
 ## Voice Message Recording
-
+**The recording process is as follows: start recording -> stop recording -> return recording callback -> start the next recording.**
 ### Specifying the maximum duration of voice message
 
 This API is used to specify the maximum duration of a voice message, which can be up to 58 seconds.
@@ -429,7 +479,7 @@ This API is used to specify the maximum duration of a voice message, which can b
 public abstract int SetMaxMessageLength(int msTime);
 ```
 
-| Parameter | Type | Description |
+| Parameter   | Type | Description                                            |
 | ------ | :--: | ----------------------------------------------- |
 | msTime | int | Audio duration in ms. Value range: 1000 < msTime <= 58000 |
 
@@ -449,7 +499,7 @@ This API is used to start recording. The recording file must be uploaded first b
 public abstract int StartRecording(String filePath);
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description           |
 | -------- | :----: | -------------- |
 | filePath | String | Path of stored audio file |
 
@@ -477,6 +527,9 @@ ITMGContext.GetInstance(this).GetPTT().StopRecording();
 
 
 ### Callback for recording start
+
+A callback will be executed through a delegate function to pass a message when recording is completed.
+
 
 **To stop recording, call `StopRecording`**. The callback for recording start will be returned after the recording is stopped.
 
@@ -685,7 +738,7 @@ public abstract int PlayRecordedFile(String filePath);public abstract int PlayRe
 | Parameter | Type | Description |
 | ---------------- | :----: | ------------------------------------------------------------ |
 | downloadFilePath | String | Local audio file path |
-| voicetype | int | Voice changer type. For more information, please see [Real-time Sound Effect](https://intl.cloud.tencent.com/document/product/607/31503). |
+| voicetype |  int   | voice changing type, please see [Voice Changing Effects](https://intl.cloud.tencent.com/document/product/607/44995#.E8.AF.AD.E9.9F.B3.E6.B6.88.E6.81.AF.E5.8F.98.E5.A3.B0) |
 
 #### Error codes
 
@@ -719,7 +772,7 @@ The passed parameter includes `result` and `file_path`.
 public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 	if(ITMGContext.ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE== type)
        	 	{
-			//Callback for audio playback 
+			// Callback for audio playback 
 		}
 }
 ```
@@ -754,7 +807,7 @@ This API is used to get the size of an audio file.
 public abstract int GetFileSize(String filePath);
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                             |
 | -------- | :----: | -------------------------------- |
 | filePath | string | Path of audio file, which is a local path. |
 
@@ -774,7 +827,7 @@ This API is used to get the duration of an audio file in milliseconds.
 public abstract int GetVoiceFileDuration(String filePath);
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                             |
 | -------- | :----: | -------------------------------- |
 | filePath | string | Path of audio file, which is a local path. |
 
@@ -797,7 +850,7 @@ This API is used to upload an audio file.
 public abstract int UploadRecordedFile(String filePath);
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                             |
 | -------- | :----: | -------------------------------- |
 | filePath | String | Path of uploaded audio file, which is a local path. |
 
@@ -830,7 +883,7 @@ The passed parameters include `result`, `file_path`, and `file_id`.
 public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 	if(ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE== type)
        	 {
-           	//Callback for audio file upload completion
+           	// Callback for audio file upload completion
        	 }
 }
 ```
@@ -845,7 +898,7 @@ This API is used to download an audio file.
 public abstract int DownloadRecordedFile(String fileID, String filePath);
 ```
 
-| Parameter | Type | Description |
+| Parameter             |  Type  | Description               |
 | ---------------- | :----: | ------------------ |
 | fileID | String | File URL path |
 | downloadFilePath | string | Local path of saved file |
@@ -898,7 +951,7 @@ This API is used to convert a specified audio file to text.
 public abstract int SpeechToText(String fileID);
 ```
 
-| Parameter | Type | Description |
+| Parameter   |  Type  | Description         |
 | ------ | :----: | ------------ |
 | fileID | String | Audio file URL |
 
@@ -996,10 +1049,10 @@ public abstract ITMG_RECORD_PERMISSION  CheckMicPermission();
 
 | Parameter | Value | Description |
 | ----------------------------- | ---- | ---------------------------- |
-| ITMG_PERMISSION_GRANTED | 0 | Mic permission is granted |
-| ITMG_PERMISSION_Denied | 1 | Mic is disabled |
-| ITMG_PERMISSION_NotDetermined | 2 | No authorization box has been popped up to request the permission |
-| ITMG_PERMISSION_ERROR | 3 | An error occurred while calling the API |
+| ITMG_PERMISSION_GRANTED | 0 | Mic permission is granted. |
+| ITMG_PERMISSION_Denied | 1 | Mic is disabled. |
+| ITMG_PERMISSION_NotDetermined | 2 | No authorization box has been popped up to request the permission. |
+| ITMG_PERMISSION_ERROR | 3 | An error occurred while calling the API. |
 
 #### Sample code  
 
@@ -1011,7 +1064,7 @@ ITMGContext.GetInstance(this).CheckMicPermission();
 
 ### Setting log printing level
 
-This API is used to set the level of logs to be printed. It is recommended to keep the default level.
+This API is used to set the level of logs to be printed, and needs to be called before the initialization. It is recommended to keep the default level.
 
 #### Function prototype
 
@@ -1026,7 +1079,7 @@ public abstract int SetLogLevel(int levelWrite, int levelPrint);
 | levelWrite | ITMG_LOG_LEVEL | Sets the level of logs to be written. `TMG_LOG_LEVEL_NONE` indicates not to write. Default value: TMG_LOG_LEVEL_INFO |
 | levelPrint | ITMG_LOG_LEVEL | Sets the level of logs to be printed. `TMG_LOG_LEVEL_NONE` indicates not to print. Default value: TMG_LOG_LEVEL_ERROR |
 
-
+#### ITMG_LOG_LEVEL
 
 | ITMG_LOG_LEVEL | Description |
 | --------------------- | -------------------- |
@@ -1068,7 +1121,7 @@ ITMGContext.GetInstance(this).SetLogPath(path);
 
 ### Message list
 
-| Message | Description |
+| Message | Description |   
 | ------------- |:-------------:|
 | ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE | Indicates that PTT recording is completed. |
 | ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE | Indicates that PTT upload is completed. |

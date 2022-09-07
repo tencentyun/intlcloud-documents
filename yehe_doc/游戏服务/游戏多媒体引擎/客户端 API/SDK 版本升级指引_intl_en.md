@@ -1,47 +1,72 @@
 
-This document describes the upgrade of GME.
 
+This document describes the upgrade of GME.
+## Upgrade from GME 2.x to 2.9
+
+### SDK updates
+- Dynamic library split
+- Rename Android package
+
+The GME SDK is updated with the following new library files in addition to libgmesdk.
+
+### Library files' corresponding features
+
+The new version of GME splits the dynamic libraries to reduce the package size. You can only import the library files you need. For example, if you only need the voice changing feature, to import `libgme_soundtouch` is good.
+
+| Library File | Feature |
+|----|-----|
+|libgmefdkaac| 1. Used to enter an SD or HD voice room. 2. Used to play back accompaniment files in ACC format |
+|libgmefaad2| Used to play back accompaniment files in MP4 format |
+|libgmeogg| Used to play back accompaniment files in OGG format |
+|libgmelamemp3| Used to play back accompaniment files in MP3 format |
+|libgmesoundtouch| Used for voice changing and pitch changing |
+
+### Upgrade Notice
+
+For iOS upgrade, please see [iOS Project Upgrade guide](https://intl.cloud.tencent.com/document/product/607/46015).
+For Android upgrade, you need to rename package(change Tencent into GME) and modify obfuscation configuration. Please see [Project Export](https://intl.cloud.tencent.com/document/product/607/40862).
+For Unity upgrade, if you used SD or HD sound quality, or accompaniment, please see [Using HD Sound Quality](https://intl.cloud.tencent.com/document/product/607/46016).
 
 
 ## Upgrade from GME 2.2 to 2.3.5 
 ### SDK updates
 **New features**
-- Voice messaging and speech-to-text conversion can now be used during voice chat now.
-- Voice chat can now be filtered for terrorism, pornographic, and politically sensitive information.
-- HTML5-based voice chat is now supported, making voice chat available across all operating systems.
-- Android v8a architecture is now supported.
-- Low-latency capturing and playback are now adapted to Android.
+- Offline voice can be used during voice chat now.
+- Voice chat can filter offensive, insecure, or inappropriate information.
+- HTML5-based voice chat is supported now, making voice chat available across all operating systems.
+- Android v8a architecture is supported now.
+- Low-latency capture and playback is adaptive to Android now.
 
 **Optimizations**
-- The range voice APIs of the SDK are optimized to lower the access threshold.
-- Noise reduction for voice is optimized.
-- Memory usage by the SDK is greatly reduced.
+- Optimized the range voice APIs of the SDK to lower the access threshold.
+- Optimized noise reduction for voice.
+- Greatly reduced memory usage by the SDK.
 
-### Changes in major APIs
+### Changes in Major APIs
 #### EnterRoom 
-The room entry operation has been changed from sync to async. If the returned value is 0, the async delivery is successful and waiting to be processed by the callback function; otherwise, the async delivery fails.
+The room entering operation has been changed from sync to async. If the return value is 0, the async delivery is successful and waiting to be processed by the callback function; otherwise, the async delivery fails.
 
 ```
 public abstract int EnterRoom();
 ```
 
 #### ExitRoom 
-The room exit operation has been changed from sync to async. It is handled in the same way as the `RoomExitComplete` callback function. If the returned value is `AV_OK`, the async delivery is successful.
+The room exiting operation has been changed from sync to async. It is handled in the same way as the RoomExitComplete callback function. If the return value is AV_OK, the async delivery is successful.
 
->If there is a scenario in the application where room entry is performed immediately after room exit, you don't need to wait for the `RoomExitComplete` callback notification from the `ExitRoom` API during API call; instead, you can directly call the API.
+>! If there is a scenario in the application where room entry is performed immediately after room exit, you don't need to wait for the `RoomExitComplete` callback notification from the `ExitRoom` API during API call; instead, you can directly call the API.
 
 ```
 public abstract int ExitRoom();
 ```
 
-### Changes in error codes
-- If you need to handle all error codes uniformly, use `!AV_OK`. 
-- If you need to handle each type of errors separately, pay attention to the error type returned by the API.
+### Changes in Error Codes
+- For uniform processing of all error codes, use !AV_OK. 
+- To handle the errors separately, focus on the type of error returned by the API.
 
->Error code "1" has no specific meaning and will no longer be returned since v2.3.5, so it has been deleted.
+>? Error code "1" has no specific meaning and will no longer be returned since v2.3.5, so it has been deleted. 
 
 
-### Changes in other APIs
+### Changes in Other APIs
 #### PauseAudio/ResumeAudio 
 
 ```
@@ -49,18 +74,18 @@ public int PauseAudio()
 public int ResumeAudio()
 ```
 
-If the `ITMGAudioCtrl::PauseAudio` or `ResumeAudio` API is called in an SDK below version 2.3, please see the table below for version comparison.
+If the `ITMGAudioCtrl::PauseAudio` or `ResumeAudio` API is called in an SDK before v2.3, please see the table below for version comparison.
 
 
-| Version Below 2.3 | Version 2.3 |
+| Before v2.3 | v2.3 |
 |---|---|
-| For mutual exclusivity with other modules | Change `PauseAudio` to `Pause` and change `ResumeAudio` to `Resume` |
-| For using voice messaging and speech-to-text in voice chat | Delete `PauseAudio` and `ResumeAudio` |
+| For mutual exclusivity with other modules | Change PauseAudio to Pause and change ResumeAudio to Resume |
+| For using offline voice in voice chat | Delete PauseAudio and ResumeAudio |
 
 
-#### Changes in SetLogLevel API parameters
+#### Changes in the Parameters of the SetLogLevel API
 
-**Legacy API**
+**Original API**
 ```
 ITMGContext virtual void SetLogLevel(int logLevel, bool enableWrite, bool enablePrint)
 ```
@@ -74,18 +99,18 @@ ITMGContext virtual void SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL l
 
 | Parameter | Type | Description |
 |---|---|---|
-|levelWrite|ITMG_LOG_LEVEL| Sets the level of logs to be written. `TMG_LOG_LEVEL_NONE` indicates not to write |
-|levelPrint|ITMG_LOG_LEVEL| Sets the level of logs to be printed. `TMG_LOG_LEVEL_NONE` indicates not to print |
+| levelWrite | ITMG_LOG_LEVEL | Sets the level of logs to be written, TMG_LOG_LEVEL_NONE means not to write |
+| levelPrint | ITMG_LOG_LEVEL | Sets the level of logs to be printed, TMG_LOG_LEVEL_NONE means not to print |
 
-**`ITMG_LOG_LEVEL` type**
+**ITMG_LOG_LEVEL Type**
 
 |ITMG_LOG_LEVEL| Description |
 |-------------------------------|-------------|
-|TMG_LOG_LEVEL_NONE=0		| Does not print logs			|
+|TMG_LOG_LEVEL_NONE=0		| Do not print logs			|
 |TMG_LOG_LEVEL_ERROR=1		| Prints error logs (default)	|
-|TMG_LOG_LEVEL_INFO=2			| Prints info logs		|
-|TMG_LOG_LEVEL_DEBUG=3		| Prints debug logs	|
-|TMG_LOG_LEVEL_VERBOSE=4		| Prints verbose logs		|
+|TMG_LOG_LEVEL_INFO=2			| Prints prompt logs		|
+|TMG_LOG_LEVEL_DEBUG=3		| Prints development and debugging logs	|
+|TMG_LOG_LEVEL_VERBOSE=4		| Prints high-frequency logs		|
 
 ## Upgrade from GME 2.3.5 to 2.5.1 
 ### New APIs
@@ -116,10 +141,11 @@ PlayRecordedFile
 SpeechToText
 ```
 
-## Upgrade from GME 2.5 to 2.7
+## Upgrade from GME 2.5 to 2.7 
 ### New APIs
 #### PlayRecordedFile(const char* filePath, ITMG_VOICE_TYPE voiceType)
-This API is used to play voice messages with voice-changing effects.
+This API is used to playback voice message with voice changing effects.
 
-#### SetAccompanyKey(int nKey)
-This API is used to adjust the key for accompaniment in voice chat.
+## SetAccompanyKey(int nKey)
+This API is used to set the voice chat accompaniment up and down.
+

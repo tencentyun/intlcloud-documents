@@ -1,4 +1,4 @@
-This document provides a detailed description that makes it easy for Unity speech-to-text service developers to debug and integrate the APIs for Tencent Cloud's Game Multimedia Engine (GME).
+This document provides a detailed description that makes it easy for Unity speech-to-text service developers to debug and integrate the APIs for Tencent Cloud’s Game Multimedia Engine (GME).
 
 
 
@@ -16,7 +16,7 @@ If you need to use voice chat and voice message services at the same time, **you
 The billing will not start after initialization. Receiving or sending a voice message in speech-to-text service is counted as a voice message DAU.
 </dx-alert>
 
-![](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
 
 ### Directions
 
@@ -36,7 +36,7 @@ The billing will not start after initialization. Receiving or sending a voice me
 - After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
 - The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/zh/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
+- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
 
 ### C# classes
 
@@ -52,7 +52,7 @@ Before the initialization, the SDK is in the uninitialized status, and **you nee
 **You need to call the `Init` API before calling any APIs of GME.**
 
 
-If you have any questions when using the service, please see [General](https://intl.cloud.tencent.com/zh/document/product/607/30254).
+If you have any questions when using the service, please see [General Issues](https://intl.cloud.tencent.com/document/product/607/30254).
 
 | API | Description |
 | ------ | :----------: |
@@ -83,7 +83,7 @@ Get the `Context` instance by using the `ITMGContext` method instead of `QAVCont
 ### [Initializing SDK](id:Init)
 
 - This API is used to initialize the GME service. It is recommended to call it when initializing the application. No fee is incurred for calling this API.
-- **Get the `sdkAppID` parameter.**
+- **For more information on how to get the `sdkAppID` parameter, please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**.
 - **The openID uniquely identifies a user with the rules stipulated by the application developer and unique in the application (currently, only INT64 is supported)**.
 
 
@@ -101,7 +101,7 @@ The Init API must be called in the same thread with other APIs. It is recommende
 public abstract int Init(string sdkAppID, string openID);
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                                                         |
 | -------- | :----: | ------------------------------------------------------------ |
 | sdkAppId | string | `AppID` provided by the GME service from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme) |
 | openId | string | `openId` can only be in Int64 type, which is passed after being converted to a string. |
@@ -141,8 +141,8 @@ if (ret != QAVError.OK)
 
 ### [Triggering event callback](id:Poll)
 
-Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
-Refer to the `EnginePollHelper` file in the [demo](https://intl.cloud.tencent.com/zh/document/product/607/18521).
+Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
+Refer to the EnginePollHelper file in [Demo](https://intl.cloud.tencent.com/document/product/607/18521).
 
 
 <dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
@@ -204,7 +204,7 @@ ITMGContext public abstract int Uninit()
 
 Voice message refers to recording and sending a voice message. At the same time, the voice message can be converted to text and translated, as shown below:
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/IMB_DsvaLv.gif" width="50%">
+
 
 
 
@@ -262,11 +262,11 @@ The maximum recording duration of a voice message is 58 seconds by default, and 
 
 Before the initialization, the SDK is in the uninitialized status, and you need to initialize it through the `Init` API before you can use the voice chat and voice message services.
 
-If you have any questions when using the service, please see [Speech-to-text Conversion](https://intl.cloud.tencent.com/zh/document/product/607/39716#.E7.A6.BB.E7.BA.BF.E8.AF.AD.E9.9F.B3.E7.9A.84.E6.96.87.E4.BB.B6.E8.83.BD.E5.90.A6.E8.87.AA.E8.A1.8C.E4.B8.8B.E8.BD.BD.EF.BC.9F).
+For details, please see [Speech-to-text Conversion](https://intl.cloud.tencent.com/document/product/362/32409#.E4.BA.91.E7.A1.AC.E7.9B.98.E4.BD.BF.E7.94.A8.E4.B8.8A.E6.9C.89.E4.BB.80.E4.B9.88.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.EF.BC.9F).
 
 ### Generating authentication information
 
-Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/zh/document/product/607/12218).    
+Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 
 
 #### Function prototype
@@ -277,7 +277,7 @@ QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter   |  Type  | Description                                                         |
 | ------ | :----: | ------------------------------------------------------------ |
 | appId | int | `AppId` from the Tencent Cloud console.|
 | roomId | string | Enter null |
@@ -331,8 +331,8 @@ ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speec
 | Parameter | Type | Description |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath | String | Path of stored audio file |
-| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/zh/document/product/607/30260) |
-| translateLanguage | String | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/zh/document/product/607/30260) (This parameter is currently unavailable. Enter the same value as that of `speechLanguage`) |
+| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) |
+| translateLanguage | String | Language parameters for translation into the specified text, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260)(The parameter is not available now. Please enter the same parameter as speechLanguage） |
 
 #### Sample code  
 
@@ -374,7 +374,7 @@ The file_id is empty when the 'ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRecognition_IS_
 | 32777 | Streaming speech-to-text conversion failed, but recording and upload succeeded.| The message returned contains a backend URL after successful upload. Call the `SpeechToText` API to perform speech-to-text conversion. |
 | 32786 | Streaming speech-to-text conversion failed. | During streaming recording, wait for the execution result of the streaming recording API to return. |
 
-If the error code 4098 is reported, please see [FAQs](https://intl.cloud.tencent.com/zh/document/product/607/39716#.E5.BC.80.E5.A7.8B.E5.BD.95.E9.9F.B3.E4.B9.8B.E5.90.8E.EF.BC.8C.E6.98.BE.E7.A4.BA-4098-.E7.9A.84.E9.94.99.E8.AF.AF.E7.A0.81.EF.BC.8C.E5.BA.94.E8.AF.A5.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.EF.BC.9F) for solutions.
+- If there is an 4098 error code, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/33223#.E5.BC.80.E5.A7.8B.E5.BD.95.E9.9F.B3.E4.B9.8B.E5.90.8E.EF.BC.8C.E6.98.BE.E7.A4.BA-4098-.E7.9A.84.E9.94.99.E8.AF.AF.E7.A0.81.EF.BC.8C.E5.BA.94.E8.AF.A5.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.EF.BC.9F).
 
 #### Sample code  
 
@@ -421,7 +421,7 @@ ITMGPTT int StartRecording(string fileDir)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter    |  Type  | Description           |
 | ------- | :----: | -------------- |
 | fileDir | string | Path of stored audio file |
 
@@ -469,7 +469,7 @@ public abstract event QAVRecordFileCompleteCallback OnRecordFileComplete;
 
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                      |
 | -------- | :----: | ------------------------- |
 | code | string | 0: recording is completed |
 | filepath | string | Path of stored recording file, which must be accessible and cannot be the `fileid` |
@@ -644,10 +644,10 @@ ITMGPTT PlayRecordedFile(string filePath,int voiceType);
 
 ```
 
-| Parameter | Type | Description |
+| Parameter      |  Type  | Description                                                         |
 | --------- | :----: | ------------------------------------------------------------ |
 | filePath | string | Local audio file path |
-| voicetype | int | Voice changer type. For more information, please see [Voice Changing Effect Access Guide](https://intl.cloud.tencent.com/document/product/607/44995). |
+| voicetype |  int   | Voice changing type, please see [Voice Changing Effects](https://intl.cloud.tencent.com/document/product/607/44995#.E8.AF.AD.E9.9F.B3.E6.B6.88.E6.81.AF.E5.8F.98.E5.A3.B0) |
 
 #### Error codes
 
@@ -676,7 +676,7 @@ public abstract event QAVPlayFileCompleteCallback OnPlayFileComplete;
 
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                    |
 | -------- | :----: | ----------------------- |
 | code | int | 0: playback is completed |
 | filepath | string | Path of stored recording file |
@@ -769,7 +769,7 @@ ITMGPTT GetFileSize(string filePath)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                             |
 | -------- | :----: | -------------------------------- |
 | filePath | string | Path of audio file, which is a local path. |
 
@@ -791,7 +791,7 @@ ITMGPTT int GetVoiceFileDuration(string filePath)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                             |
 | -------- | :----: | -------------------------------- |
 | filePath | string | Path of audio file, which is a local path. |
 
@@ -816,7 +816,7 @@ ITMGPTT int UploadRecordedFile (string filePath)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                             |
 | -------- | :----: | -------------------------------- |
 | filePath | String | Path of uploaded audio file, which is a local path. |
 
@@ -841,7 +841,7 @@ public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete;
 
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                    |
 | -------- | :----: | ----------------------- |
 | code | int | 0: recording is completed |
 | filepath | string | Path of stored recording file |
@@ -882,7 +882,7 @@ ITMGPTT DownloadRecordedFile (string fileID, string downloadFilePath)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter             |  Type  | Description               |
 | ---------------- | :----: | ------------------ |
 | fileID | String | File URL path |
 | downloadFilePath | String | Local path of saved file, which must be accessible and cannot be the `fileid`                    |
@@ -908,7 +908,7 @@ public abstract event QAVDownloadFileCompleteCallback OnDownloadFileComplete;
 
 ```
 
-| Parameter | Type | Description |
+| Parameter     |  Type  | Description                                    |
 | -------- | :----: | --------------------------------------- |
 | code | int | 0: recording is completed |
 | filepath | string | Path of stored recording file |
@@ -955,7 +955,7 @@ ITMGPTT int SpeechToText(String fileID)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter   |  Type  | Description         |
 | ------ | :----: | ------------ |
 | fileID | String | Audio file URL |
 
@@ -975,15 +975,15 @@ This API can specify a language for recognition or translate the information rec
 #### Function prototype  
 
 ```
-ITMGPTT int SpeechToText(String fileID,String speechLanguage,String translatelanguage )
+ITMGPTT int SpeechToText(String fileID,String speechLanguage)
 
 ```
 
 | Parameter | Type | Description |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | fileID | String | URL of audio file, which will be retained on the server for 90 days |
-| speechLanguage    | String | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/zh/document/product/607/30260). |
-| translatelanguage | String | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/zh/document/product/607/30260). This parameter is currently unavailable. Enter the same value as that of speechLanguage. |
+| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
+| translatelanguage | String | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). This parameter is currently unavailable. Enter the same value as that of speechLanguage. |
 
 #### Sample code  
 
@@ -1008,7 +1008,7 @@ public abstract event QAVSpeechToTextCallback OnSpeechToTextComplete;
 
 ```
 
-| Parameter | Type | Description |
+| Parameter   |  Type  | Description                                 |
 | ------ | :----: | ------------------------------------ |
 | code | int | 0: recording is completed |
 | fileid | string | URL of recording file, which will be retained on the server for 90 days |
@@ -1072,7 +1072,7 @@ ITMGPTT int SetMaxMessageLength(int msTime)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter   | Type | Description                                            |
 | ------ | :--: | ----------------------------------------------- |
 | msTime | int | Audio duration in ms. Value range: 1000 < msTime <= 58000 |
 
