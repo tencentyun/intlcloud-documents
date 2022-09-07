@@ -30,6 +30,6 @@ SSL encryption is free of charge.
 9. Wait for the **Enable SSL** status to become **Enabled** and click **Download Certificate**.
 If you receive a certificate expiration warning message, and the certificate has expired, please click **Refresh Certificate** to update the certificate file.
 10. In the bottom-left corner of the page, obtain certificate **MongoDB-CA.crt**
-11. You can use Mongo Shell to connect to TencentDB for MongoDB. For detailed directions, see [Using Mongo Shell to Connect to Database by SSL Authentication] [https://intl.cloud.tencent.com/document/product/240/48469）
-You can use multi-language SDKs to connect to TencentDB for MongoDB. For detailed directions, see [Using Multi-Language SDKs to Connect to Database by SSL Authentication] (https://intl.cloud.tencent.com/document/product/240/48470)
+11. You can use Mongo Shell to connect to TencentDB for MongoDB. For detailed directions, see [Using Mongo Shell to Connect to Database by SSL Authentication](https://intl.cloud.tencent.com/document/product/240/48469)
+You can use multi-language SDKs to connect to TencentDB for MongoDB. For detailed directions, see [Using Multi-Language SDKs to Connect to Database by SSL Authentication](https://intl.cloud.tencent.com/document/product/240/48470)
 
