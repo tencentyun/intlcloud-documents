@@ -50,10 +50,7 @@
    - Unhealthy/Healthy Threshold: it indicates the number of consecutive failed/successful checks before the origin server is deemed unhealthy/healthy.
 
 
-
-
-
-Step 5: Binding an Origin Server
+## Step 5: Binding an Origin Server
 
 1. Select a listener, and click **Bind origin** in the operation column.
 2. Add all origin servers to be bound in the list on the left to the box on the right and then enter the origin server port number.
