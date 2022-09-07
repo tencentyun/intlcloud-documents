@@ -1,5 +1,5 @@
 This document describes the public network prices under different billing modes and helps you choose the billing plan that best suits your business.
->? Note that the network fees mentioned in the document are only applied to general BGP IPs. For the prices of premium BGP IPs, accelerated IPs, and static single-line IPs, see [Bandwidth Package](#bwp).
+>? Note that the network fees mentioned in the document are only applied to general BGP IPs. For the prices of premium BGP IPs and accelerated IPs,  see [Bandwidth Package](#bwp).
 >
 ## [Bill-by-Traffic](id:by-traffic)
 Fees are pay-as-you-go on an hourly billing cycle based on the public network traffic used. Bill-by-traffic is suitable for scenarios where the peak business traffic fluctuates greatly at varying times.
