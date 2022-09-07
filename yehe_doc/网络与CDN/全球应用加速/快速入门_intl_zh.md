@@ -1,14 +1,15 @@
-## 步骤1：产品使用开通申请
+## 步骤1：开通服务
 
-单击 [**立即申请**](https://intl.cloud.tencent.com/apply/p/k47b8r3qt2)，填写产品申请单并提交审核（当前仅支持企业认证账号）,申请通过后，登录 [GAAP 控制台](https://console.intl.cloud.tencent.com/gaap) 即可使用。
+1.单击 [立即使用](https://console.intl.cloud.tencent.com/gaap) 登录 GAAP 控制台（当前暂仅支持腾讯云企业认证账号）。
+2.初次使用时需**阅读**相关条款后**勾选**已阅读，再单击**开通服务**，即可开始使用。
+![](https://qcloudimg.tencent-cloud.cn/raw/62b6b8948187de155cbb3bd3846f0516.png)
 
 ## 步骤2：添加源站
 
-1. 申请通过后，登录 [全球应用加速控制台](https://console.intl.cloud.tencent.com/gaap)。
-2. 单击**源站管理** > **新增**，设置名称，填写源站 IP 或域名，（可选）添加标签。可将所有要加速访问的服务器信息添加到**源站管理**，且支持一次性填写多个源站。
-3. 单击**确定**保存。
+1. 单击**源站管理** > **新增**，设置名称，填写源站 IP 或域名，（可选）添加标签。可将所有要加速访问的服务器信息添加到**源站管理**，且支持一次性填写多个源站。
+2. 单击**确定**保存。
 ![](https://main.qcloudimg.com/raw/700758b2be655f701f88ddc2f72857fc.png)
-4. （可选）给源站添加别名，方便后续使用：单击源站名字旁边的**编辑**图标，填写名字，单击**确认**保存。
+3. （可选）给源站添加别名，方便后续使用：单击源站名字旁边的**编辑**图标，填写名字，单击**确认**保存。
 ![](https://main.qcloudimg.com/raw/c72f5506cc15b41a93fb8ce64767108f.png)
 
 ## 步骤3：创建加速通道
@@ -81,4 +82,3 @@
     **七层协议：**源站可直接从 HTTP 请求头中X-Real-IP或 X-Forwarded-For 字段中获取客户端真实 IP，此为默认生效功能，支持从[“回源HTTP请求头配置”](https://intl.cloud.tencent.com/document/product/608/17539)自定义。若从源站到程序还有中间链路 (如CLB,自建nginx)，则需要自行配置，以防字段被中间链路覆盖。
 5. **查看统计数据**
    可在统计数据页面查看当前和历史的统计数据。更多操作说明，请参见 [统计数据](https://intl.cloud.tencent.com/document/product/608/14425)。
-
