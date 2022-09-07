@@ -33,7 +33,7 @@ If you select “full + incremental migration”, tables in the source database 
 - To avoid migration failure by unsupported extensions, the extensions must be the same in both the source and the target.
 - Most extensions have no impact on the migration, but the pre-migration check will check whether there is a different extension in the target database. If yes, the extension will be created in the target database during migration. If it is not created successfully, the migration will fail.
 - The migration user in the source database must have permissions on all objects; otherwise the data export will fail.
-- Ensure that the rules on character set and translation are same in the source and target database; otherwise the query result will be different. For details, see [Parameter Configuration Conflict Check] (https://intl.cloud.tencent.com/document/product/571/42566). If language and collation is “C”, and the counterpart is “UTF8” in other database, you can ignore this note.
+- Ensure that the rules on character set and translation are same in the source and target database; otherwise the query result will be different. For details, see [Parameter Configuration Conflict Check](https://intl.cloud.tencent.com/document/product/571/42566). If language and collation is “C”, and the counterpart is “UTF8” in other database, you can ignore this note.
 - It is recommended that all tables in the source database have a primary key. If not, the migration efficiency will be reduced, and same data will occur in extreme scenarios.
 
 ## Directions
@@ -58,20 +58,21 @@ Download address: [x86_64 9.4](https://postgresql-1258344699.cos.ap-shanghai.myq
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>It is selected based on the source database type, and can’t be modified after purchase. In this document, select **PostgreSQL**.</td></tr>
+<td>It is selected based on the source database type, and can’t be modified after purchase. In this document, select <b>PostgreSQL</b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>It is selected based on the target database type, and can’t be modified after purchase. In this document, select **PostgreSQL**.</td></tr>
+<td>It is selected based on the target database type, and can’t be modified after purchase. In this document, select <b>PostgreSQL</b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
 <tr>
 <td>Specification</td>
-<td>Select the specification of the migration linkage based on your business conditions. For the performance and billing details of different specifications, see <a href="https://intl.cloud.tencent.com/document/product/571/35322">Billing Overview</a>.</td></tr>
+<td>Select the specification of the migration linkage based on your business conditions. </td></tr>
 </tbody></table>
+
 4. Complete task configuration, source database settings, and target database settings on the “Set source and target databases” page. After the connectivity test for the source and target databases is passed, click **Create**.
 >?If the connectivity test fails, troubleshoot as prompted or as instructed in [Database Connection Check](https://intl.cloud.tencent.com/document/product/571/42552) and try again.
 >
@@ -95,7 +96,7 @@ Download address: [x86_64 9.4](https://postgresql-1258344699.cos.ap-shanghai.myq
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which can’t be modified.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this document, **TencentDB** is selected as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>. <br>To ensure migration efficiency, the data of CVM-based self-built instances cannot be migrated across regions over the private network. If you need to migrate data across regions, you can do so over the public network.
+<td>Access Type</td><td>Select a type based on your scenario. In this document, <b>TencentDB</b> is selected as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>. <br>To ensure migration efficiency, the data of CVM-based self-built instances cannot be migrated across regions over the private network. If you need to migrate data across regions, you can do so over the public network.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Built on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
@@ -136,6 +137,7 @@ Download address: [x86_64 9.4](https://postgresql-1258344699.cos.ap-shanghai.myq
 <td>Specified objects</td>
 <td>Select the object to be migrated in the “Source Database Object” box, and drag it to the “Selected Object” box.</td></tr>
 </tbody></table>
+
 6. Verify the migration task on the “Verify task” page. After the task is verified, click **Start**.
     If the verification failed, fix the problem as instructed in [Fix for Verification Failure](https://intl.cloud.tencent.com/document/product/571/42551) and initiate the verification task again.
   - Failed: It indicates that a check item failed and the task is blocked. You need to fix the problem and run the verification task again.
