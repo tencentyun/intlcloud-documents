@@ -1,4 +1,4 @@
-Tencent Effect SDK is available on 11 editions, including 6 basic and 5 advanced SDKs. Their relationships and feature differences are as detailed in [Billing Overview](https://cloud.tencent.com/document/product/616/36807).
+Tencent Effect SDK is available on 11 editions, including 6 basic and 5 advanced SDKs. Their relationships and feature differences are as detailed in [Billing Overview](https://intl.cloud.tencent.com/document/product/1143/45371).
 
 >! The ZIP package of the Tencent Effect SDK for iOS includes the SDK and demo project. If you need to use the demo for iOS, download the ZIP package for iOS here.
 
@@ -22,8 +22,8 @@ Basic A editions offer common beautification features for customers with basic r
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.2.112/xmagic_res_a101_ios.zip">Download</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.2.320/xmagic_A1-01_android_2.4.2.320.zip">Download</a></td>
 <td rowspan=6>
-<li/><a href="https://cloud.tencent.com/document/product/616/65894">iOS documentation</a>
-<li/><a href="https://cloud.tencent.com/document/product/616/65891">Android documentation</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS documentation</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android documentation</a>
 </td>
 <td >
 <b>iOS package size:</b><ul style="margin:0"><li/>arm64: 39.8 MB<li/>bundle: 10.6 MB</ul><br>
@@ -93,8 +93,8 @@ Advanced S editions offer enhanced beautification features to meet high requirem
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.2.112/xmagic_res_s100_ios.zip">Download</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.2.320/xmagic_S1-00_android_2.4.2.320.zip">Download</a></td>
 <td rowspan=5>
-<li/><a href="https://cloud.tencent.com/document/product/616/65894">iOS documentation</a>
-<li/><a href="https://cloud.tencent.com/document/product/616/65891">Android documentation</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS documentation</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android documentation</a>
 </td>
 <td >
 <b>iOS package size:</b><ul style="margin:0"><li>arm64: 31 MB  </li><li>bundle: 10.6 MB  </li></ul><br>
@@ -144,4 +144,4 @@ Advanced S editions offer enhanced beautification features to meet high requirem
 </tr>
 </tbody></table>
 
-> ! For more information on package downsizing, see [SDK Package Downsizing (Android)](https://cloud.tencent.com/document/product/616/73016).
+> ! For more information on package downsizing, see [SDK Package Downsizing (Android)](https://intl.cloud.tencent.com/document/product/1143/47831).
