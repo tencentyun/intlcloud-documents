@@ -1,10 +1,12 @@
-用户可通过云数据库 MariaDB 控制台下载云数据库的冷备数据、Binlog。
 
-## 下载备份文件和 Binlog
-1. 登录 [MariaDB 控制台](https://console.cloud.tencent.com/mariadb)，单击实例 ID 进入实例管理页，选择**备份与恢复**页，选择冷备列表或 Binlog列表。
-2. 选择需要下载的备份，在操作列单击**下载**。
-3. 在弹出的下载对话框，提供了在 VPC 内网中下载此备份的地址，单击**复制**获取地址。
-4. [登录到云数据库所在 VPC 下的 CVM（Linux 系统） ](https://intl.cloud.tencent.com/document/product/213/10517)中，运用 wget 命令进行下载。
+用户可通过云数据库 MariaDB 控制台下载云数据库的冷备数据、binlog。
+
+## 下载备份文件和 binlog
+1. 登录 [MariaDB 控制台](https://console.cloud.tencent.com/mariadb)，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
+2. 选择**备份与恢复** > **冷备列表** 或 **Binlog列表**。
+3. 选择需要下载的备份，在**操作**列单击**下载**。
+4. 在弹出的对话框，提供了在 VPC 内网中下载此备份的地址，单击**获取下载链接**。
+5. [登录到云数据库所在 VPC 下的 CVM（Linux 系统） ](https://intl.cloud.tencent.com/document/product/213/10517)中，运用 wget 命令进行下载。
 >?
 >- wget 命令格式：wget -c '备份文件下载地址'。
 >- 地址有效期为15分钟，过期后请重新刷新页面获取，仅能从同 VPC 网络中进行下载。
@@ -12,11 +14,12 @@
 ![](https://main.qcloudimg.com/raw/c4dd3fd398fe0367dd4c7b9a4fc3dea4.png)
 
 ## 下载慢查询日志
-1. 登录 [MariaDB 控制台](https://console.cloud.tencent.com/mariadb)，单击实例 ID 进入实例管理页，选择**性能优化**>**慢查询日志**页。
-2. 选择需要下载的备份，在**操作**列单击**下载**。
+1. 登录 [MariaDB 控制台](https://console.cloud.tencent.com/mariadb)，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
+2. 选择**性能优化** > **慢查询日志**页。
+3. 选择需要下载的备份，在**操作**列单击**下载**。
 >?若备份大小为0KB，无慢查询记录，则无法下载。
-3. 在弹出的下载对话框，提供了在 VPC 内网中下载此备份的地址，单击**复制**获取地址。
-4. [登录到云数据库所在 VPC 下的 CVM（Linux 系统） ](https://intl.cloud.tencent.com/document/product/213/10517)中，运用 wget 命令进行下载。
+4. 在弹出的对话框，提供了在 VPC 内网中下载此日志的地址，单击**获取下载链接**。
+5. [登录到云数据库所在 VPC 下的 CVM（Linux 系统） ](https://intl.cloud.tencent.com/document/product/213/10517)中，运用 wget 命令进行下载。
 >?
 >- wget 命令格式：wget -c '备份文件下载地址'。
 >- 地址有效期为15分钟，过期后请重新刷新页面获取，仅能从同 VPC 网络中进行下载。
