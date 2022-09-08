@@ -12,9 +12,11 @@ Contoh berikut menggunakan tiga disk cloud elastis untuk membuat sistem file yan
 
 ![](https://main.qcloudimg.com/raw/81086e80477ff7e374e7c3f0fe9d2788.png)
 </dx-alert>
+
 ### Langkah 1: buatlah physical volume (volume fisik/PV)
 1.[Masuk ke instance CVM Linux](https://intl.cloud.tencent.com/document/product/213/5436) sebagai pengguna root.
 2.Jalankan perintah berikut untuk membuat PV.
+
 ```plaintext
 pvcreate <disk path 1> ... <disk path N>
 ​``` 
@@ -24,6 +26,7 @@ pvcreate /dev/vdc /dev/vdd /dev/vde
 ​``` 
 Pembuatan yang berhasil akan tampak seperti gambar berikut:
 ![](https://main.qcloudimg.com/raw/5b92a6c7878e22906599af48bfa09d95.png)
+
 3.Jalankan perintah berikut untuk melihat volume fisik sistem.
 ​```plaintext
 lvmdiskscan | grep LVM
@@ -62,6 +65,7 @@ lvcreate -L 8G -n lv_0 lvm_demo0
 ​``` 
 Pembuatan yang berhasil akan tampak seperti gambar berikut:
 ![](https://main.qcloudimg.com/raw/ed6d2f827ae7c4a4630bf17e24d90df2.png)
+
 <dx-alert infotype="explain" title="">
 Jalankan perintah `pvs`.Anda dapat melihat bahwa hanya kapasitas disk `/dev/vdc` yang dikurangi sebesar 8 GB, seperti yang terlihat di bawah ini:
 ![](https://main.qcloudimg.com/raw/2718d08f7c74b7b469a23473a1398dfe.png)
@@ -84,6 +88,7 @@ Pemasangan yang berhasil akan tampak seperti gambar berikut:
 ![](https://main.qcloudimg.com/raw/34af8440192a1fa74f85ea44b6354194.png)
 
 ### Langkah 5: ubah ukuran volume logis dan sistem file secara dinamis
+
 <dx-alert infotype="notice" title="">
 LV dapat diperluas secara dinamis hanya jika kapasitas VG tidak habis digunakan.Setelah meningkatkan kapasitas LV, Anda perlu memperluas sistem file yang dibuat pada LV ini.
 </dx-alert>
@@ -98,6 +103,7 @@ lvextend -L +4G /dev/lvm_demo0/lv_0
 ​``` 
 Perluasan yang berhasil akan tampak seperti gambar berikut:
 ![](https://main.qcloudimg.com/raw/eccd7d6aec587eb90ec655a384367595.png)
+
 <dx-alert infotype="explain" title="">
 Jalankan perintah `pvs`.Anda akan melihat bahwa kapasitas disk `/dev/vdc` telah habis digunakan dan kapasitas disk `/dev/vdd` telah digunakan sebesar 2 GB, seperti yang terlihat di bawah ini:
 
