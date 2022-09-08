@@ -18,8 +18,8 @@ This document describes how to create multiple namespaces in TDMQ for Pulsar to 
 1. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq) and enter the **Namespace** page.
 2. On the **Namespace** page, select the region and click **Create** to enter the **Create Namespace** page.
 3. In the **Create Namespace** window, configure the namespace attributes:
-   - Namespace Name: Enter the namespace name, which is required and cannot be modified after creation. The name can contain up to 128 letters, digits, and special symbols (-_=:.).
-   - Message TTL: Set the ACK timeout of an unconsumed message. The message will not be processed if it is not acknowledged within the ACK timeout. Value range: 60 seconds–24 hours.
+   - Namespace Name: Enter the namespace name, which is required and cannot be modified after creation. The name can contain up to 128 letters, digits, and special symbols (-\_=:.).
+   - Message TTL: Set the ACK timeout of an unconsumed message. The message will not be processed if it is not acknowledged within the ACK timeout. Value range: 60 seconds ~ 24 hours.
    - Message Retention Policy
      - Deletion after consumption: Messages will be cleared within a certain period of time after being acknowledged successfully to save the storage space. If there is no subscription to the topic, async clearing will be directly applied to the messages just produced.
      - Persistent retention: No matter whether messages are consumed or not, they will be stored persistently within the maximum retention period and maximum storage space and then deleted chronologically after the limit is reached.
