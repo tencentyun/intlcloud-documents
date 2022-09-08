@@ -46,7 +46,7 @@ Configure JWT authentication in a Go client:
 ```  go
 client, err := NewClient(ClientOptions{
       // Access address, which can be copied from the access point list in **Cluster Management**
-		 URL:            "http://*",  
+		 URL: "http://*",  
 		 // Replace it with the role token displayed on the **Role Management** page
       Authentication: NewAuthenticationToken("eyJh****"),  
 })
@@ -56,11 +56,11 @@ client, err := NewClient(ClientOptions{
 ```  go
 client, err := NewClient(ClientOptions{
       // Access address, which can be copied from the access point list in **Cluster Management**
-		 URL:            "pulsar://*.*.*.*:6000",  
+		 URL: "pulsar://*.*.*.*:6000",  
 		 // Replace it with the role token displayed on the **Role Management** page
       Authentication: NewAuthenticationToken("eyJh****"),  
 		 // Replace the value of `custom:` with the route ID in the access point list in **Cluster Management**
-      ListenerName:   "custom:1300*****0/vpc-******/subnet-********",  
+      ListenerName: "custom:1300*****0/vpc-******/subnet-********",
 })
 ```
 :::
