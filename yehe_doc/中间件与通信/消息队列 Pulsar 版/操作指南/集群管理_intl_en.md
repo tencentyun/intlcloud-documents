@@ -4,10 +4,8 @@ Cluster is a resource dimension in TDMQ for Pulsar, and namespaces, topics, and 
 
 Clusters are divided into virtual clusters and exclusive clusters:
 
-- **Virtual cluster**
-  Virtual computing and storage resources are used and automatically allocated based on usage. There are certain use limits. You don't need to pay for resources, and you can create up to 5 virtual clusters under each account.
-- **Exclusive cluster**
-  Physical resources are exclusive, and data is secure. There are almost no use limits. Resource usage fees will be charged even if resources are idle.
+- **Virtual cluster**: Virtual computing and storage resources are used and automatically allocated based on usage. There are certain use limits. You don't need to pay for resources, and you can create up to 5 virtual clusters under each account.
+- **Exclusive cluster**: Physical resources are exclusive, and data is secure. There are almost no use limits. Resource usage fees will be charged even if resources are idle.
 
 > ?
 >
