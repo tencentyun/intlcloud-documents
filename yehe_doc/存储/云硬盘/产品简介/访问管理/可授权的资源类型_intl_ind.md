@@ -6,10 +6,12 @@ Jenis sumber daya yang dapat diotorisasi di Cloud Access Management (CAM) adalah
 | [API CBS](#CBSCorrelation) |  ` qcs::cvm:$region::volume/* `|
 
 [API CBS](#CBSCorrelation) menjelaskan operasi API CBS yang saat ini mendukung izin tingkat sumber daya serta sumber daya dan kunci kondisi yang didukung oleh setiap operasi.**Saat mengonfigurasi jalur sumber daya,** Anda perlu mengganti parameter variabel seperti `$region` dan `$account` dengan parameter aktual Anda.Anda juga dapat menggunakan kartubebas `*` di jalur.Untuk informasi selengkapnya, lihat [Contoh Konsol](https://intl.cloud.tencent.com/document/product/213/10312).
->! Operasi API CBS yang tidak tercantum dalam tabel tidak mendukung izin tingkat sumber daya.Anda masih dapat mengotorisasi pengguna untuk melakukan operasi ini, tetapi elemen sumber daya dari pernyataan kebijakan harus ditetapkan sebagai `*`.
->
 
-<span id="CBSCorrelation"></span>
+<dx-alert infotype="notice" title="">
+Operasi API CBS yang tidak tercantum dalam tabel tidak mendukung izin tingkat sumber daya.Anda masih dapat mengotorisasi pengguna untuk melakukan operasi ini, tetapi elemen sumber daya dari pernyataan kebijakan harus ditetapkan sebagai `*`.
+</dx-alert>
+
+[](id:CBSCorrelation)
 ### API CBS
 <table>
 <thead>

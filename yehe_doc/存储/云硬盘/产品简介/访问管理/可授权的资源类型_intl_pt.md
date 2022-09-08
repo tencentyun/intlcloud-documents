@@ -6,10 +6,12 @@ Os tipos de recursos que podem ser autorizados no Cloud Access Management (CAM) 
 | [APIs do CBS](#CBSCorrelation) |  ` qcs::cvm:$region::volume/* `|
 
 As [APIs do CBS](#CBSCorrelation) descrevem as operações das APIs do CBS que atualmente são compatíveis com as permissões no nível dos recursos, assim como recursos e chaves de condição compatíveis com cada operação. **Ao configurar o caminho do recurso**, é necessário substituir os parâmetros variáveis como `$region` e `$account` pelos seus parâmetros reais. Você também pode usar o asterisco `*` no caminho. Para obter mais informações, consulte [Exemplo do console](https://intl.cloud.tencent.com/document/product/213/10312).
->! As operações de APIs do CBS não listadas na tabela não são compatíveis com permissões no nível dos recursos. Você ainda pode autorizar os usuários a realizar essas operações, mas o elemento de recurso da instrução da política deve ser especificado como `*`.
->
 
-<span id="CBSCorrelation"></span>
+<dx-alert infotype="notice" title="">
+As operações de APIs do CBS não listadas na tabela não são compatíveis com permissões no nível dos recursos. Você ainda pode autorizar os usuários a realizar essas operações, mas o elemento de recurso da instrução da política deve ser especificado como `*`.
+</dx-alert>
+
+[](id:CBSCorrelation)
 ### APIs do CBS
 <table>
 <thead>

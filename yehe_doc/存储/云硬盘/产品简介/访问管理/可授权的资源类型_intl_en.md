@@ -6,10 +6,12 @@ The types of resources that can be authorized in Cloud Access Management (CAM) a
 | [CBS APIs](#CBSCorrelation) |  ` qcs::cvm:$region::volume/* `|
 
 [CBS APIs](#CBSCorrelation) describe CBS API operations that currently support resource-level permissions as well as resources and condition keys supported by each operation. **When configuring the resource path,** you need to replace variable parameters such as `$region` and `$account` with your actual parameters. You can also use the `*` wildcard in the path. For more information, see [Console Example](https://intl.cloud.tencent.com/document/product/213/10312).
->! CBS API operations not listed in the table do not support resource-level permissions. You can still authorize users to perform these operations, but the resource element of the policy statement must be specified as `*`.
->
 
-<span id="CBSCorrelation"></span>
+<dx-alert infotype="notice" title="">
+CBS API operations not listed in the table do not support resource-level permissions. You can still authorize users to perform these operations, but the resource element of the policy statement must be specified as `*`.
+</dx-alert>
+
+[](id:CBSCorrelation)
 ### CBS APIs
 <table>
 <thead>
