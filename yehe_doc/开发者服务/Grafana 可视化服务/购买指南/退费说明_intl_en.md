@@ -13,7 +13,7 @@ All of the above operations can be perform in the [TCMG console](https://console
 ## 5-Day Unconditional Refund
 - Under one single account, you can return **one** TCMG instance unconditionally within five (included) days after purchase.
 - **Tencent Cloud has the right to reject any suspected abnormal or malicious application for return.**
-- For an order that meets the five-day unconditional return policy, the refunded amount is all the amount paid for purchase, including the cash amount, earnings amount, and trial credit amount.
+- For an order that meets the 5-day unconditional return policy, the refunded amount is all the amount paid for purchase, including the cash amount, earnings amount, and trial credit amount.
 
 >!
 >- Discounts and vouchers will not be returned.
@@ -41,4 +41,5 @@ Fees for consumed resources will be deducted from the refund. The remaining amou
 
 1. Log in to the [TCMG console](https://console.cloud.tencent.com/Grafana), select the TCMG instance to be returned in the instance list, and click **More** > **Instance Status** > **Terminate/Return** on the right.
 2. Confirm the return in the pop-up window.
+
 3. Then, the instance will enter the suspended status for seven days, during which you can renew the instance to continuously use the service.
