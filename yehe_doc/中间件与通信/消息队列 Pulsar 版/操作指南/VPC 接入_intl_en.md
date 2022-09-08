@@ -18,8 +18,7 @@ You have purchased CVM or TKE resources and configured a VPC.
 	- Subnet: select an appropriate subnet according to your IP allocation method.
 	- Remarks (optional): enter the remarks of up to 128 characters.
 4. Click **Submit**.
-5. Configure a security group policy.
-   Make sure that the security group of the test program has opened TCP ports 6000–7000.
+5. Configure a security group policy. Make sure that the security group of the test program has opened TCP ports 6000–7000.
 
 You can see the created access point in the access point list, which contains the parameters to be configured in the client (route ID and address). For more information, see the [SDK documentation](https://intl.cloud.tencent.com/document/product/1110/42945).
 
