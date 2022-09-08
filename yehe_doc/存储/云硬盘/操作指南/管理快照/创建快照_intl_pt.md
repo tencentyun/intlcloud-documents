@@ -22,7 +22,7 @@ Para resolver esse problema, execute o comando `sync` para forçar a gravação 
 ![](https://main.qcloudimg.com/raw/e1b0ac245e325281a0693f7ae43946ff.png)
 
 
-e<span id="CreateSnapshot"></span>
+<span id="CreateSnapshot"></span>
 ## Procedimento
 ### Criação de um snapshot no console
 1. Faça login no [Console do CBS](https://console.cloud.tencent.com/cvm/cbs).
