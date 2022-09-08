@@ -39,7 +39,7 @@ Fees for consumed resources will be deducted from the refund. The remaining amou
 [](id:step1)
 ## Self-Service Return Operation
 
-1. Log in to the [TCMG console](https://console.cloud.tencent.com/Grafana), select the TCMG instance to be returned in the instance list, and click **More** > **Instance Status** > **Terminate/Return** on the right.
+1. Log in to the TCMG console, select the TCMG instance to be returned in the instance list, and click **More** > **Instance Status** > **Terminate/Return** on the right.
 2. Confirm the return in the pop-up window.
 
 3. Then, the instance will enter the suspended status for seven days, during which you can renew the instance to continuously use the service.
