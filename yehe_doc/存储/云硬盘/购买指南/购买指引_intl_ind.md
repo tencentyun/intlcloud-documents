@@ -2,8 +2,8 @@
 
 Tencent Cloud menyediakan dua cara bagi Anda untuk membeli disk cloud, baik melalui konsol atau melalui API.
 
-<span id="CreateDisk"></span>
-### Membeli langsung melalui konsol
+
+### Membeli langsung melalui konsol[](id:CreateDisk)
 1.Masuk ke [Konsol CBS](https://console.cloud.tencent.com/cvm/cbs), pilih wilayah dan klik **Create** (Buat).
 2.Konfigurasikan jenis dan kapasitas disk cloud.
 3.Pilih metode penagihan.
@@ -14,8 +14,10 @@ Tencent Cloud menyediakan dua cara bagi Anda untuk membeli disk cloud, baik mela
 Jika Anda ingin menyimpan data snapshot dari disk data ke disk baru secara default, Anda dapat menggunakan snapshot untuk membuat disk cloud di [Daftar Snapshot](https://console.cloud.tencent.com/cvm/snapshot ).Anda juga dapat mengonfigurasi parameter **Snapshot** untuk menentukan snapshot target untuk membuat disk saat Anda [membelinya secara terpisah melalui konsol](#CreateDisk).
 1.Buka [Daftar Snapshot](https://console.cloud.tencent.com/cvm/snapshot) di konsol.
 2.Di baris snapshot target, pilih **More**>**Create new disk** (Selengkapnya > Buat disk baru).
+<dx-alert infotype="explain" title="">
 3.Konfigurasikan jenis dan kapasitas disk cloud.
->Saat Anda menggunakan snapshot untuk membuat disk cloud, ukuran kapasitas tidak boleh lebih kecil dari ukuran snapshot.Jika Anda tidak menentukan kapasitas disk cloud, kapasitasnya akan sama dengan kapasitas snapshot secara default.
+Saat Anda menggunakan snapshot untuk membuat disk cloud, ukuran kapasitas tidak boleh lebih kecil dari ukuran snapshot.Jika Anda tidak menentukan kapasitas disk cloud, kapasitasnya akan sama dengan kapasitas snapshot secara default.
+</dx-alert>
 4.Pilih metode penagihan.
 5.Konfirmasi pesanan lalu bayar.
 6.Disk cloud dibuat segera setelah pembayaran pesanan.Disk cloud dapat digunakan setelah dipasang dan diinisialisasi.

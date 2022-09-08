@@ -7,9 +7,10 @@ Por exemplo, você pode adquirir 3 discos em nuvem elásticos de 4 TB e usar o L
 Quando a capacidade do VG do LVM não consegue atender às suas necessidades, você pode adquirir um disco em nuvem elástico à parte, montá-lo na sua instância do CVM e escalonar seu VG adicionando o disco em nuvem a ele.
 
 ## Criação do LVM
->?Os exemplos a seguir usam 3 discos em nuvem elásticos para criar um sistema de arquivos redimensionável de forma dinâmica por meio do LVM:
+<dx-alert infotype="explain" title="">
+Os exemplos a seguir usam 3 discos em nuvem elásticos para criar um sistema de arquivos redimensionável de forma dinâmica por meio do LVM:
 ![](https://main.qcloudimg.com/raw/81086e80477ff7e374e7c3f0fe9d2788.png)
-
+</dx-alert>
 ### Etapa 1: criar um volume físico (PV)
 1. [Faça login no seu CVM do Linux](https://intl.cloud.tencent.com/document/product/213/5436) como usuário raiz.
 2. Execute o seguinte comando para criar os PVs:
@@ -61,10 +62,10 @@ lvcreate -L 8G -n lv_0 lvm_demo0.
 
 A figura a seguir mostra a saída do comando quando a criação obtém êxito:
 ![](https://main.qcloudimg.com/raw/ed6d2f827ae7c4a4630bf17e24d90df2.png)
-
->?Execute `pvs` e você verá que os 8 GB vêm apenas de `/dev/vdc`, conforme mostrado abaixo:
+<dx-alert infotype="explain" title="">
+Execute `pvs` e você verá que os 8 GB vêm apenas de `/dev/vdc`, conforme mostrado abaixo:
 ![](https://main.qcloudimg.com/raw/2718d08f7c74b7b469a23473a1398dfe.png)
-
+</dx-alert>
 ### Etapa 4: criar e montar um sistema de arquivos
 1. Crie um sistema de arquivos em um LV existente usando o comando:
 ```
@@ -78,8 +79,9 @@ A figura a seguir mostra a saída do comando quando a montagem obtém êxito:
 ![](https://main.qcloudimg.com/raw/2a7701636c2604d67e0743de4f9a6af1.png)
 
 ### Etapa 5: realizar escalonamento dinâmico no seu volume lógico e no sistema de arquivos
->!LVs podem ser escalonados de forma dinâmica apenas quando a capacidade do VG não está totalmente utilizada. Ao escalonar a capacidade de um LV, você também precisa escalonar o sistema de arquivos criado nesse LV.
-
+<dx-alert infotype="notice" title="">
+LVs podem ser escalonados de forma dinâmica apenas quando a capacidade do VG não está totalmente utilizada. Ao escalonar a capacidade de um LV, você também precisa escalonar o sistema de arquivos criado nesse LV.
+</dx-alert>
 1. Escalone um LV executando este comando:
 ```
 lvextend [-L +/- <capacity amount>] <LV path>.
@@ -91,9 +93,10 @@ lvextend -L +4G /dev/lvm_demo0/lv_0.
 
 A figura a seguir mostra a saída do comando quando o escalonamento obtém êxito:
 ![](https://main.qcloudimg.com/raw/eccd7d6aec587eb90ec655a384367595.png)
-
->?Execute `pvs` e você verá que `/dev/vdc` foi totalmente usado, e 2 GB foram usados de `/dev/vdd`, conforme mostrado abaixo:
+<dx-alert infotype="explain" title="">
+Execute `pvs` e você verá que `/dev/vdc` foi totalmente usado, e 2 GB foram usados de `/dev/vdd`, conforme mostrado abaixo:
 ![](https://main.qcloudimg.com/raw/189155ca377ef9550c4587ca78ab5b27.png)
+</dx-alert>
 
 2. Escalone o sistema de arquivos com o comando
 

@@ -1,6 +1,9 @@
 ## HDD Cloud Disk
->The HDD cloud disk is phased out currently. The following guide is only for reference when you are using the HDD cloud disk.
->
+
+<dx-alert infotype="explain" title="">
+The HDD cloud disk is phased out currently. The following guide is only for reference when you are using the HDD cloud disk.
+</dx-alert>
+
 HDD cloud disks are the first generation of cloud disks provided by Tencent Cloud. It is suitable for business scenarios with low I/O loads where data is not accessed frequently. It uses magnetic storage, and a three-copy distributed mechanism to implement highly reliable data storage.
 
 ### Performance metrics
@@ -23,8 +26,6 @@ HDD cloud disks are the first generation of cloud disks provided by Tencent Clou
 </tr>
 </table>
 
-### Price overview
-For more information about the price of HDD cloud disks, see [Pricing List](https://intl.cloud.tencent.com/document/product/362/2413).
 
 ### Use cases
 For scenarios with infrequent requests, such as system logs, enterprise work files, data warehouses, small-sized blogs, and BBS, we recommend using HDD cloud disks to reduce costs.

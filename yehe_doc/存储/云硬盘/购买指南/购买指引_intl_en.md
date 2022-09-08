@@ -2,8 +2,8 @@
 
 Tencent Cloud provides two ways for you to purchase cloud disks, either through the console or via API. 
 
-<span id="CreateDisk"></span>
-### Purchasing directly through the console
+
+### Purchasing directly through the console[](id:CreateDisk)
 1. Log in to the [CBS Console](https://console.cloud.tencent.com/cvm/cbs), select a region and click **Create**.
 2. Configure the cloud disk type and capacity.
 3. Select a billing method.
@@ -15,7 +15,9 @@ If you want to save the snapshot data of a data disk to a new disk by default, y
 1.Go to [Snapshot List](https://console.cloud.tencent.com/cvm/snapshot) on the console.
 2. In the row of the target snapshot, select **More**>**Create new disk**.
 3. Configure the cloud disk type and capacity.
- >When you use snapshot to create a cloud disk, the capacity size must not be smaller than the snapshot size. If you do not specify the cloud disk capacity, the capacity will be the same as that of the snapshot by default.
+<dx-alert infotype="explain" title="">
+When you use snapshot to create a cloud disk, the capacity size must not be smaller than the snapshot size. If you do not specify the cloud disk capacity, the capacity will be the same as that of the snapshot by default.
+</dx-alert>
 4. Select a billing method.
 5. Confirm the order and then pay.
 6. The cloud disk is created immediately after the order payment. Cloud disk can be used after being mounted and initialized.
