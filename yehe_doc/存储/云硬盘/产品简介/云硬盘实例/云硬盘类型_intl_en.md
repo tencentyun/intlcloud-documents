@@ -1,4 +1,4 @@
-Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into five types: **Premium Cloud Disk**, **General Purpose SSD**, **SSD**, **Enhanced SSD**, and **Tremendous SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
+Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into five types: **Premium Cloud Disk**, **Balanced SSD**, **SSD**, **Enhanced SSD**, and **Tremendous SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
 
 ## Must-knows
 - Currently, Enhanced SSD is only available in certain availability zones. It will be supported in more availability zones.
@@ -14,8 +14,8 @@ Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, 
 ## Overview
 - **Premium Cloud Disk**
 Tencent Cloud Premium Cloud Disk is a hybrid storage type. It adopts the Cache mechanism to provide a high-performance SSD-like storage, and employs a three-copy distributed mechanism to ensure data reliability. Premium Cloud Disk is suitable for small and medium applications with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, as well as small and medium sites.
-- **General Purpose SSD**
-Tencent Cloud General Purpose SSD is an entry-level all-flash block storage product. It's highly cost-effective and suitable for medium-sized scenarios with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, KV services, as well as basic database services.
+- **Balanced SSD**
+Tencent Cloud Balanced SSD is an entry-level all-flash block storage product. It's highly cost-effective and suitable for medium-sized scenarios with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, KV services, as well as basic database services.
 - **SSD**
 SSD is an all-flash cloud disk using NVMe SSD as the storage media, and employs a three-copy distributed mechanism. It provides storage service with low latency, high random IOPS, high throughput I/O, and data security up to 99.9999999%, making it suitable for applications with high requirements for I/O performance.
 - **Enhanced SSD**
@@ -34,7 +34,7 @@ The table below compares the performances of the five CBS services.
 <th>Tremendous SSD</th>
 <th>Enhanced SSD</th>
 <th>SSD</th>
-<th>General Purpose SSD</th>
+<th>Balanced SSD</th>
 <th>Premium Cloud Disk</th>
 </tr>
 </thead>
@@ -132,7 +132,7 @@ The table below compares the performances of the five CBS services.
 - Medium databases: Medium and large relational database applications, such as MySQL.
 - Image processing: Support data analysis and storage businesses, such as image processing.
 
-**General Purpose SSD is mainly suitable for the following data scenarios**:
+**Balanced SSD is mainly suitable for the following data scenarios**:
 Medium-sized scenarios with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, KV services, as well as basic database services.
 
 **Premium Cloud Disk is mainly suitable for the following data scenarios**:
