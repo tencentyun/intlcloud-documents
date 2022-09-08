@@ -3,13 +3,6 @@ The maintenance task feature aims to provide a standard authorized failure maint
 A maintenance task helps you stay on top of and handle sudden problems with instances, improve your system stability and maintenance efficiency, and reduce the maintenance costs. You can back up the data promptly before executing system events to get prepared at the application layer. In addition, you can query the processed maintenance tasks in the last month to get data such as failure processing and recovery time.
 
 
-<dx-alert infotype="explain" title="">
-To use the maintenance task feature, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for application.
-</dx-alert>
-
-
-
-
 ## Strengths
 
 #### Free enablement
