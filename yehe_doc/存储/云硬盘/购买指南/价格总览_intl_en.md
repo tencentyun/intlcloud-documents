@@ -8,11 +8,11 @@
             <th style="width: 50%;" colspan="4">Monthly Subscription Price (Unit: USD/GB/month)</th>
      </tr>
       <tr>
-                <th>Premium Cloud Storage</th>
+                <th>Premium Cloud Disk</th>
                 <th>SSD</th>
                 <th>Enhanced SSD</th>
  <th>Tremendous SSD</th>
-                <th>Premium Cloud Storage</th>
+                <th>Premium Cloud Disk</th>
                 <th>SSD</th>
 <th>Enhanced SSD</th>
  <th>Tremendous SSD</th>
