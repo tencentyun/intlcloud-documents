@@ -10,6 +10,7 @@ When the LVM VG capacity cannot meet your needs, you can purchase a elastic clou
 <dx-alert infotype="explain" title="">
 The following example uses three elastic cloud disks to create a dynamically resizable file system through LVM.
 </dx-alert>
+
 ![](https://main.qcloudimg.com/raw/81086e80477ff7e374e7c3f0fe9d2788.png)
 
 ### Step 1: create a physical volume (PV)
@@ -65,6 +66,7 @@ The result of a successful creation is shown below:
 Run the `pvs` command. You can see that only the capacity of the `/dev/vdc` disk is reduced by 8 GB, as shown below:
 [](https://main.qcloudimg.com/raw/2718d08f7c74b7b469a23473a1398dfe.png)
 </dx-alert>
+
 ### Step 4: create and mount a file system
 1. Run the following command to create a file system on an existing LV.
 ​```plaintext
