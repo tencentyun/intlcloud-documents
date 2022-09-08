@@ -106,10 +106,10 @@ A retry message carries the following attributes:
 }
 ```
 
-- `REAL_TOPIC`: original topic
-- `ORIGIN_MESSAGE_ID`: ID of the initially produced message
-- `RETRY_TOPIC`: retry letter topic
-- `RECONSUMETIMES`: number of retries performed for the message
+- `REAL_TOPIC`: original topic.
+- `ORIGIN_MESSAGE_ID`: ID of the initially produced message.
+- `RETRY_TOPIC`: retry letter topic.
+- `RECONSUMETIMES`: number of retries performed for the message.
 
 
 
