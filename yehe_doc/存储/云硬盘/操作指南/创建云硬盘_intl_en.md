@@ -22,7 +22,7 @@ You can create different types of CBS cloud disks based on business needs. For m
      </tr> 
 	 <tr>
          <td>Cloud Disk Type</td>
-         <td>Required.</br>Four CBS cloud disk types are available:<ul><li>Premium Cloud Storage</li><li>SSD</li><li>Enhanced SSD</li><li>Tremendous SSD. This type can only be purchased with the Standard Storage Optimized S5se CVM instance.</li></ul></td>
+         <td>Required.</br>Four CBS cloud disk types are available:<ul><li>Premium Cloud Disk</li><li>SSD</li><li>Enhanced SSD</li><li>Tremendous SSD. This type can only be purchased with the Standard Storage Optimized S5se CVM instance.</li></ul></td>
      </tr>
 		 <tr>
 			 <td>Quick Disk Creation</td>
@@ -32,7 +32,7 @@ You can create different types of CBS cloud disks based on business needs. For m
 		 </tr>
 	 <tr>
          <td>Capacity</td>
-         <td>Required.</br>CBS provides the following cloud disk capacity and specifications:<ul><li>Premium Cloud Storage: 10 to 32,000 GB</li><li>SSD: 20 to 32,000 GB</li><li>Enhanced SSD: 20 to 32,000 GB</li></ul>When you create a cloud disk using a snapshot, the disk capacity cannot be smaller than that of the snapshot. If you do not specify this parameter, the disk capacity is equal to that of the snapshot by default.</td>
+         <td>Required.</br>CBS provides the following cloud disk capacity and specifications:<ul><li>Premium Cloud Disk: 10 to 32,000 GB</li><li>SSD: 20 to 32,000 GB</li><li>Enhanced SSD: 20 to 32,000 GB</li></ul>When you create a cloud disk using a snapshot, the disk capacity cannot be smaller than that of the snapshot. If you do not specify this parameter, the disk capacity is equal to that of the snapshot by default.</td>
      </tr>
 	 <tr>
 	 <tr>
