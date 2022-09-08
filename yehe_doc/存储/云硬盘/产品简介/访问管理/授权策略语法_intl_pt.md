@@ -2,7 +2,7 @@
 <span id = "celueyufa"></span>
 ## Sintaxe da política
 Política do CAM:
-```
+```json
 {	 
         "version":"2.0", 
         "statement": 
@@ -23,8 +23,8 @@ Política do CAM:
  3. **condition (condição)**: é opcional. Descreve as condições necessárias para que a política entre em vigor. Uma condição é composta por operador, chave de operação e valor de operação. Um valor de condição pode conter informações, como hora e endereço IP. Alguns serviços permitem que você especifique outras informações nas condições.
  4. **effect (efeito)**: é **obrigatório**. Descreve o resultado retornado pela instrução, ou seja, se a permissão é autorizada ("allow" – permitir) ou negada ("deny" – negar).
 
-<span id = "caozuo"></span>
-## Operações do CBS
+
+## Operações do CBS[](id:caozuo)
 
 Em uma instrução de política do CAM, você pode especificar qualquer operação de API a partir de qualquer serviço compatível com CAM. Para o CBS, use as APIs com o prefixo `name/cvm:`, por exemplo, `name/cvm:CreateDisks` ou `name/cvm:DescribeDisks`.
 Para especificar várias operações em uma única instrução, separe-as com vírgulas, conforme mostrado abaixo.
@@ -40,8 +40,8 @@ Para especificar todas as operações do CVM, use o asterisco `*` da seguinte fo
 "action":["name/cvm:*"]
 ```
 
-<span id = "ziyuanlujing"></span> 
-### Caminhos de recursos do CBS
+
+### Caminhos de recursos do CBS[](id:ziyuanlujing)
 Toda instrução de política do CAM contém os recursos a serem aplicados à política em si. O formato geral do caminho de um recurso é mostrado abaixo.
 ```
 qcs:project_id:service_type:region:account:resource
@@ -70,8 +70,8 @@ Para especificar vários recursos em uma instrução, separe-os com vírgulas. N
 "resource":["resource1","resource2"]
 ```
 
-<span id = "tiaojianmiyue"></span>
-### Chaves de condição do CBS
+
+## Chaves de condição do CBS[](id:tiaojianmiyue)
 Em uma instrução de política, você pode especificar as condições necessárias para que a política entre em vigor. Cada condição contém um ou mais pares de chave-valor. As chaves de condição não diferenciam letras maiúsculas e minúsculas.
 
 - Se você especificar várias condições ou várias chaves em uma mesma condição, a condição é avaliada com o operador lógico "AND".
@@ -117,7 +117,7 @@ em que <code>region</code> indica uma região (por exemplo, "ap-guangzhou").</p>
 <p>String</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>cvm:disk_type=<code>disk_type</code></p>
+<p>cvm_disk_type=<code>disk_type</code></p>
 </div>
 <div class="ulist">
 <ul>

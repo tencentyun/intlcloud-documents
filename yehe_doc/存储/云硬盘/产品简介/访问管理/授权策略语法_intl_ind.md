@@ -2,20 +2,21 @@
 <span id = "celueyufa"></span>
 ### Sintaks Kebijakan
 Kebijakan CAM:
-```
+```json
 {	 
-"version":"2.0",
-"statement":
+        "version":"2.0", 
+        "statement": 
         [ 
            { 
-"effect":"effect",
-"action":["action"],
-"resource":["resource"],
-"condition": {"key":{"value"}}
+              "effect":"effect", 
+              "action":["action"], 
+              "resource":["resource"], 
+               "condition": {"key":{"value"}} 
            } 
        ] 
 } 
 ```
+
 - **version** (versi): wajib diisi.Saat ini, satu-satunya nilai yang valid adalah `"2.0"`.
 - **statement** (pernyataan): menjelaskan informasi mendetail dari satu atau beberapa izin.Setiap izin terdiri dari satu set elemen termasuk efek, tindakan, sumber daya, dan kondisi.Sebuah kebijakan hanya memiliki satu elemen pernyataan.
 1. **action** (tindakan): **wajib diisi**.Ini menjelaskan operasi yang diizinkan atau ditolak, yang dapat berupa API (dijelaskan dengan awalan "name") atau set fitur (satu set API tertentu yang dijelaskan dengan awalan "permid").
@@ -23,8 +24,8 @@ Kebijakan CAM:
 3. **condition** (kondisi): opsional.Ini menjelaskan kondisi untuk kebijakan yang akan berlaku.Kondisi terdiri dari operator, kunci operasi, dan nilai operasi.Nilai kondisi dapat berisi informasi seperti waktu dan alamat IP.Beberapa layanan memungkinkan Anda untuk menentukan informasi lain dalam kondisi.
 4. **effect** (efek): **wajib diisi.** Ini menjelaskan hasil yang dikembalikan oleh pernyataan, yaitu, apakah izin diizinkan ("allow") atau ditolak ("deny").
 
-<span id = "caozuo"></span>
-## Operasi CBS
+
+## Operasi CBS[](id:caozuo)
 
 Dalam pernyataan kebijakan CAM, Anda dapat menentukan berbagai operasi API dari berbagai layanan yang mendukung CAM.Untuk CBS, gunakan API yang diawali dengan `name/cvm:`, misalnya, `name/cvm:CreateDisks` atau `name/cvm:DescribeDisks`.
 Untuk menentukan beberapa operasi dalam satu pernyataan, pisahkan dengan koma, seperti yang ditunjukkan di bawah ini.
@@ -40,8 +41,8 @@ Untuk menentukan semua operasi di CVM, gunakan kartubebas `*` sebagai berikut.
 "action":["name/cvm:*"]
 ```
 
-<span id = "ziyuanlujing"></span>
-## Jalur Sumber Daya CBS
+
+## Jalur Sumber Daya CBS[](id:ziyuanlujing)
 Setiap pernyataan kebijakan CAM berisi sumber daya yang berlaku untuk kebijakan itu sendiri.Format umum jalur sumber daya ditunjukkan di bawah ini.
 ```
 qcs:project_id:service_type:region:account:resource
@@ -70,8 +71,8 @@ Untuk menentukan beberapa sumber daya dalam satu pernyataan, pisahkan dengan kom
 "resource":["resource1","resource2"]
 ```
 
-<span id = "tiaojianmiyue"></span>
-## Kunci Kondisi CBS
+
+## Kunci Kondisi CBS[](id:tiaojianmiyue)
 Dalam pernyataan kebijakan, Anda dapat memilih untuk menentukan kondisi agar kebijakan diterapkan.Setiap kondisi berisi satu atau beberapa pasangan nilai-kunci.Kunci kondisi tidak peka huruf besar/kecil.
 
 - Jika Anda menentukan beberapa kondisi atau kunci dalam satu kondisi, kondisi dievaluasi dengan operator logika "AND".
@@ -79,9 +80,10 @@ Dalam pernyataan kebijakan, Anda dapat memilih untuk menentukan kondisi agar keb
 Tabel berikut menjelaskan kunci kondisi CBS yang digunakan untuk layanan tertentu.
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width:15%;">
-<col style="width:15%;">
-<col style="width:70%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 70%;">
+
 </colgroup>
 <thead>
 <tr>
@@ -117,7 +119,7 @@ dengan <code>region</code> menunjukkan wilayah (misalnya, "ap-guangzhou").</p>
 <p>String</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>cvm:disk_type=<code>disk_type</code></p>
+<p>cvm_disk_type=<code>disk_type</code></p>
 </div>
 <div class="ulist">
 <ul>

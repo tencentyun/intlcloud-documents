@@ -2,7 +2,7 @@
 <span id = "celueyufa"></span>
 ## Policy Syntax
 CAM policy:
-```
+```json
 {	 
         "version":"2.0", 
         "statement": 
@@ -23,8 +23,8 @@ CAM policy:
  3. **condition**: Optional. It describes the conditions for the policy to take effect. A condition consists of an operator, operation key, and operation value. A condition value may contain information such as a time and IP address. Some services allow you to specify other information in conditions.
  4. **effect**: Required. It describes the result returned by the statement, that is, whether the permission is allowed ("allow") or denied ("deny").
 
-<span id = "caozuo"></span>
-## CBS Operations
+
+## CBS Operations[](id:caozuo)
 
 In a CAM policy statement, you can specify any API operation from any service that supports CAM. For CBS, use the APIs prefixed with `name/cvm:`, for example, `name/cvm:CreateDisks` or `name/cvm:DescribeDisks`.
 To specify multiple operations in a single statement, separate them with commas, as shown below.
@@ -40,8 +40,8 @@ To specify all operations in CVM, use the wildcard `*` as follows.
 "action":["name/cvm:*"]
 ```
 
-<span id = "ziyuanlujing"></span> 
-## CBS Resource Paths
+
+## CBS Resource Paths[](id:ziyuanlujing)
 Every CAM policy statement contains the resources applicable to the policy itself. The general format of a resource path is shown below.
 ```
 qcs:project_id:service_type:region:account:resource
@@ -70,8 +70,9 @@ To specify multiple resources in one statement, separate them with commas. In th
 "resource":["resource1","resource2"]
 ```
 
-<span id = "tiaojianmiyue"></span>
-## CBS Condition Keys
+
+## CBS Condition Keys(id:tiaojianmiyue)
+
 In a policy statement, you can choose to specify the conditions for the policy to take effect. Each condition contains one or more key-value pairs. Condition keys are case-insensitive.
 
 - If you specify multiple conditions or keys in one condition, the condition is evaluated with the "AND" logical operator.
@@ -117,7 +118,7 @@ where <code>region</code> indicates a region (for example, "ap-guangzhou").</p>
 <p>String</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>cvm:disk_type=<code>disk_type</code></p>
+<p>cvm_disk_type=<code>disk_type</code></p>
 </div>
 <div class="ulist">
 <ul>
