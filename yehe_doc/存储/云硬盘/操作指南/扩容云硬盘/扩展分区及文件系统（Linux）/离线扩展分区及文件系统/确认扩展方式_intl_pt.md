@@ -1,8 +1,9 @@
 ## Visão geral
 Um disco em nuvem é um dispositivo de armazenamento expansível na nuvem. Depois que um disco em nuvem é criado, é possível expandir sua capacidade a qualquer momento para aumentar sua capacidade de armazenamento sem perder nenhum dado nele.
 Depois de [expandir a capacidade do disco em nuvem](https://intl.cloud.tencent.com/document/product/362/5747) no console, é preciso fazer login na instância do CVM para atribuir sua capacidade expandida a uma partição existente usando um método apropriado, conforme necessário. Este documento descreve como determinar o método de expansão em um CVM do Linux.
->!Estender o sistema de arquivos pode afetar os dados existentes. É altamente recomendável que você [crie um snapshot](https://intl.cloud.tencent.com/document/product/362/5755) manualmente para fazer backup de seus dados antes da operação.
->
+<dx-alert infotype="notice" title="">
+Estender o sistema de arquivos pode afetar os dados existentes. É altamente recomendável que você [crie um snapshot](https://intl.cloud.tencent.com/document/product/362/5755) manualmente para fazer backup de seus dados antes da operação.
+</dx-alert>
 
 
 ## Pré-requisitos
@@ -12,7 +13,7 @@ Depois de [expandir a capacidade do disco em nuvem](https://intl.cloud.tencent.c
 
 ## Instruções
 1. Execute o seguinte comando como usuário raiz para visualizar o formato da partição do disco em nuvem.[](id:fdisk)
-```
+```shellsession
 fdisk -l
 ```
  - Se o resultado mostrar apenas `/dev/vdb` sem uma partição, é preciso estender o sistema de arquivos.
@@ -23,10 +24,10 @@ fdisk -l
  - Se o resultado for o mostrado na figura a seguir (que pode variar de acordo com o sistema operacional), o formato de partição MBR deve ser usado.
 ![](https://main.qcloudimg.com/raw/0e336cd3354c098cf5e70d0672e6f625.png)
 2. Escolha o método de expansão correspondente ao formato de partição obtido na [etapa 1](#fdisk).
->!
->- A partição MBR é compatível com disco com capacidade máxima de 2 TB.
->- Ao particionar o disco com capacidade superior a 2 TB, recomendamos que você crie e monte um novo disco de dados e use o formato de partição GPT para copiar os dados. 
->
+<dx-alert infotype="notice" title="">
+- A partição MBR é compatível com disco com capacidade máxima de 2 TB.
+- Ao particionar o disco com capacidade superior a 2 TB, recomendamos que você crie e monte um novo disco de dados e use o formato de partição GPT para copiar os dados. 
+</dx-alert>
 <table>
      <tr>
          <th nowrap="nowrap">Formato da partição</th>  

@@ -1,8 +1,9 @@
 ## Ikhtisar
 Disk cloud adalah perangkat penyimpanan yang dapat diperluas di cloud.Setelah disk cloud dibuat, Anda dapat memperluas kapasitasnya kapan saja untuk meningkatkan kapasitas penyimpanannya tanpa kehilangan data apa pun di dalamnya.
 Setelah [memperluas kapasitas disk cloud](https://intl.cloud.tencent.com/document/product/362/5747) di konsol, Anda harus masuk ke instance CVM untuk menetapkan kapasitas yang diperluas ke partisi yang ada menggunakan metode yang tepat sesuai kebutuhan.Dokumen ini menjelaskan cara menentukan metode perluasan pada CVM Linux.
->!Memperluas sistem file dapat memengaruhi data yang ada.Kami sangat menyarankan Anda untuk secara manual [membuat snapshot](https://intl.cloud.tencent.com/document/product/362/5755) untuk mencadangkan data Anda sebelum melakukan operasi tersebut.
->
+<dx-alert infotype="notice" title="">
+Memperluas sistem file dapat memengaruhi data yang ada.Kami sangat menyarankan Anda untuk secara manual [membuat snapshot](https://intl.cloud.tencent.com/document/product/362/5755) untuk mencadangkan data Anda sebelum melakukan operasi tersebut.
+</dx-alert>
 
 
 ## Prasyarat
@@ -12,7 +13,7 @@ Setelah [memperluas kapasitas disk cloud](https://intl.cloud.tencent.com/documen
 
 ## Petunjuk
 1.Jalankan perintah berikut sebagai pengguna root untuk melihat format partisi disk cloud.[](id:fdisk)
-```
+```shellsession
 fdisk -l
 ```
 - Jika hasilnya hanya menampilkan `/dev/vdb` tanpa partisi, Anda perlu memperluas sistem file.
@@ -23,10 +24,10 @@ fdisk -l
 - Jika hasilnya seperti yang ditunjukkan pada gambar berikut (yang dapat berbeda sesuai dengan sistem operasi), format partisi MBR harus digunakan.
 ![](https://main.qcloudimg.com/raw/0e336cd3354c098cf5e70d0672e6f625.png)
 2.Pilih metode perluasan yang sesuai dengan format partisi yang diperoleh di [langkah 1](#fdisk).
->!
->- Partisi MBR mendukung disk dengan kapasitas maksimum 2 TB.
->- Saat Anda mempartisi disk dengan kapasitas lebih besar dari 2 TB, kami menyarankan Anda membuat dan memasang disk data baru dan menggunakan format partisi GPT untuk menyalin data.
->
+<dx-alert infotype="notice" title="">
+- Partisi MBR mendukung disk dengan kapasitas maksimum 2 TB.
+- Saat Anda mempartisi disk dengan kapasitas lebih besar dari 2 TB, kami menyarankan Anda membuat dan memasang disk data baru dan menggunakan format partisi GPT untuk menyalin data.
+</dx-alert>
 <table>
 <tr>
 <th nowrap="nowrap">Format partisi</th>

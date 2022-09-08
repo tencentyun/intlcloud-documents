@@ -1,8 +1,9 @@
 ## Overview
 A cloud disk is an expandable storage device on cloud. After a cloud disk is created, you can expand its capacity at any time to increase its storage capacity without losing any data in it.
 After [expanding cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/5747) on the console, you need to log in to the CVM instance to assign its expanded capacity to an existing partition using an appropriate method as needed. This document describes how to determine the expansion method on a Linux CVM.
->!Extending the file system may affect the existing data. We strongly recommend you to manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before the operation.
->
+<dx-alert infotype="notice" title="">
+Extending the file system may affect the existing data. We strongly recommend you to manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before the operation.
+</dx-alert>
 
 
 ## Prerequisites
@@ -12,7 +13,7 @@ After [expanding cloud disk capacity](https://intl.cloud.tencent.com/document/pr
 
 ## Directions
 1. Run the following command as the root user to view the partition format of the cloud disk.[](id:fdisk)
-```
+```shellsession
 fdisk -l
 ```
  - If the result only shows `/dev/vdb` without a partition, you need to extend the file system.
@@ -23,10 +24,10 @@ fdisk -l
  - If the result is as shown in the following figure (which may vary according to the operating system), the MBR partition format should be used.
 ![](https://main.qcloudimg.com/raw/0e336cd3354c098cf5e70d0672e6f625.png)
 2. Choose the expansion method corresponding to the partition format obtained in [step 1](#fdisk).
->!
->- MBR partition supports disk with a maximum capacity of 2 TB.
->- When you partition disk with a capacity greater than 2 TB, we recommend that you create and mount a new data disk and use the GPT partition format to copy data. 
->
+<dx-alert infotype="notice" title="">
+- MBR partition supports disk with a maximum capacity of 2 TB.
+- When you partition disk with a capacity greater than 2 TB, we recommend that you create and mount a new data disk and use the GPT partition format to copy data. 
+</dx-alert>
 <table>
      <tr>
          <th nowrap="nowrap">Partition format</th>  
