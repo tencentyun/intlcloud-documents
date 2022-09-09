@@ -1,0 +1,21 @@
+## 功能描述
+
+群组搜索只能搜索本地存储过的群组，例如已加入的群组列表，拉取过的群组资料等。
+
+## 搜索本地群组
+
+您可以调用接口 `searchGroups` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#searchGroups)) 搜索本地群组。
+您可以设置搜索关键字 `keywordList`，并指定搜索的范围，即是否搜索群组的 `userID`、`groupName` 字段。
+
+示例代码如下：
+
+```javascript
+// 通过关键搜索群组
+const searchGroup = await groupManager.searchGroups({
+  keywordList: ["关键词"],
+  isSearchGroupID: true,
+  isSearchGroupName: true,
+});
+```
+
+
