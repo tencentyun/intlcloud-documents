@@ -30,7 +30,6 @@
 | Duration Unit                               | 时长单位                                                     |
 | Reserved Instances                          | 预留实例                                                     |
 | OriginalCost                                | 原始总价<br/> Original Cost = Component List Price * Component Usage * Usage Duration |
-| OriginalCost (After Coupon)                 | 原始总价（券后）<br/>Original Cost（After Coupon）= Amount Before Tax  / DiscountRate |
 | DiscountRate                                | 伙伴折扣                                                     |
 | Currency                                    | 币种                                                         |
 | Total Amount After Discount (Excluding Tax) | 折后税前总费用 <br/>Total Amount After Discount (Excluding Tax) = OriginalCost * DiscountRate |
