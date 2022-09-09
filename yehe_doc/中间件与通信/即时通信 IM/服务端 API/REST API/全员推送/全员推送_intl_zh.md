@@ -1,3 +1,4 @@
+全员推送，用户运营利器，不仅支持全员发送特定内容，还可根据标签、属性，针对特定用户群体发送个性化内容，如会员活动、区域通知等，助力拉新、转化、促活等各个阶段运营工作的有效进行。
 ## 功能说明
 - 支持全员推送。
 - 支持按用户属性推送。
@@ -7,6 +8,7 @@
 - 支持消息离线存储，不支持漫游。
 - 由于全员推送需要下发的帐号数量巨大，下发完全部帐号需要一定时间（根据帐号总数而定，一般在一分钟内）。
 - 支持只推在线用户，需要将 MsgLifeTime 参数设置为0。
+>?“全员推送”为 IM 旗舰版功能，[购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) 后可使用，详见 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 ## 接口调用说明
 本功能仅针对旗舰版客户开放（如您降级为专业版将无法使用），请参见 [配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322) 指引，提交全员推送开通申请。申请通过后，该功能将在**48小时**后开启。
@@ -15,7 +17,6 @@
 ```
 https://xxxxxx/v4/all_member_push/im_push?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
 ```
-
 ### 请求参数说明
 
 | 参数               | 说明                                 |
@@ -30,7 +31,7 @@ https://xxxxxx/v4/all_member_push/im_push?usersig=xxx&identifier=admin&sdkappid=
 | contenttype        | 固定值为：json                       |
 
 ### 调用频率
-本接口包含全员/属性/标签推送，默认每天最多调用100次，每两次推送间隔必须大于1s。有特别频率需求的（如需提高频率），请在申请工单中说明。
+本接口包含全员/属性/标签推送，默认每天最多调用100次，每两次推送间隔必须大于1s。
 
 ### 请求包示例
 - **全员推送示例**
@@ -261,7 +262,7 @@ https://xxxxxx/v4/all_member_push/im_push?usersig=xxx&identifier=admin&sdkappid=
 | 91000 | 服务内部错误，请重试。|
 
 ## 接口调试工具
-通过 [REST API 在线调试](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/all_member_push/im_push) 工具调试本接口。
+通过 [REST API 在线调试](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 工具调试本接口。
 
 ## 参考
 - [全员推送接口说明](https://intl.cloud.tencent.com/document/product/1047/37165) 

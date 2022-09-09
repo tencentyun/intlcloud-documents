@@ -1,0 +1,24 @@
+## Feature Description
+Only locally stored group members can be searched for, such as the list of group members or group member profiles that have been pulled.
+
+> ? This feature is supported by the SDK for Flutter on v3.8.0 or later. It cannot be used for audio-video groups (AVChatRoom) as the group members are not stored locally.
+
+## Searching a Local Group
+Call the `searchGroupMembers` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/searchGroupMembers.html)) to search for a local group member.
+You can set the search keyword `keywordList` and specify the search scope to set whether to search by the `memberUserID`, `memberNickName`, `memberRemark`, and `memberNameCard` fields of a group member.
+
+Depending on whether `groupIDList` of the `V2TIMGroupMemberSearchParam` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_search_param/V2TimGroupMemberSearchParam-class.html)) in `searchGroupMembers` is empty (`null`/`nil`), there are two cases:
+- If `groupIDList` is left empty, members in all the groups will be searched for and returned by `groupID`.
+- If `groupIDList` is not left empty, members in the specified group will be searched for.
+
+Sample code:
+
+
+
+```dart
+// Search for group members by the keyword and group ID
+V2TimValueCallback<V2GroupMemberInfoSearchResult> searchGroupMem = await groupManager.searchGroupMembers(param: V2TimGroupMemberSearchParam(groupIDList: ['The group ID can be specified'],keywordList: ['Keyword'],isSearchMemberNameCard: true,isSearchMemberNickName: true,isSearchMemberRemark: true,isSearchMemberUserID: true,));
+```
+
+
+
