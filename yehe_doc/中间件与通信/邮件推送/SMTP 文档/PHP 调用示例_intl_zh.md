@@ -24,7 +24,7 @@ try {
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     //$mail->AuthType   = 'LOGIN';                
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.qcloudmail.com';                  //Set the SMTP server to send through
+    $mail->Host       = 'sg-smtp.qcloudmail.com';                  //Set the SMTP server to send through
     $mail->Username   = 'abc@qq.aa.com';          //SMTP username
     $mail->Password   = '123456';                  //SMTP password
 
