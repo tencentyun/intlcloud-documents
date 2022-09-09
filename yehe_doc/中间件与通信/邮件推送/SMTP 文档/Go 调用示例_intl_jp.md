@@ -12,7 +12,7 @@ import (
 
 // Test465  for port 465
 func Test465() error {
-	host := "smtp.qcloudmail.com"
+	host := "sg-smtp.qcloudmail.com"
 	port := 465
     //コンソールで作成された送信元アドレス
 	email := "abc@cd.com" 
