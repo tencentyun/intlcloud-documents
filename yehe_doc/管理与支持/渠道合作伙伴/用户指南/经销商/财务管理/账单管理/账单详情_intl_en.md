@@ -30,7 +30,6 @@
 | Duration Unit                               | Duration unit                                                     |
 | Reserved Instances                          | Reserved instances                                                     |
 | OriginalCost                                | Original cost (= Component List Price * Component Usage * Usage Duration) |
-| OriginalCost (After Coupon)                 | Original cost (after coupon redemption) (= Amount Before Tax / DiscountRate) |
 | DiscountRate                                | Partner discount                                                     |
 | Currency                                    | Currency                                                          |
 | Total Amount After Discount (Excluding Tax) | Discounted amount (pretax) (= OriginalCost * DiscountRate) |
