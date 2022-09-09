@@ -1,0 +1,86 @@
+## Feature Description
+
+To group friends into categories such as "Classmates at university" and "Coworkers", call the following APIs.
+
+## Friend List
+
+### Creating a friend list
+
+Call the `createFriendGroup` API ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#createFriendGroup)) to create a friend list.
+
+Sample code:
+
+```javascript
+// Create a friend list and add a friend to the list
+const groupName = "Friend list 1";
+const userIDList = ["user1"];
+const friendgroups = await friendshipManager.createFriendGroup(
+  groupName,
+  userIDList
+);
+```
+
+### Deleting a friend list
+
+Call the `deleteFriendGroup` API ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#deleteFriendGroup)) to delete a friend list.
+
+Sample code:
+
+```javascript
+// Delete a friend list
+const deleteFriendsgroup = await friendshipManager.deleteFriendGroup(["Friend list 1"]);
+```
+
+### Renaming a friend list
+
+Call the `renameFriendGroup` API ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#renameFriendGroup)) to rename a friend list.
+
+Sample code:
+
+```javascript
+// Rename a friend list
+const rename = await friendshipManager.renameFriendGroup("New friend list 1", "Friend list 1");
+```
+
+### Getting a friend list
+
+Call the `getFriendGroups` API ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#getFriendGroups)) to get a friend list.
+
+Sample code:
+
+```javascript
+// Get the information of a friend list by list name
+const friendGrous = await friendshipManager.getFriendGroups(["Friend list 1"]);
+```
+
+### Adding a friend to a list
+
+Call the `addFriendsToFriendGroup` API ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#addFriendsToFriendGroup)) to add a friend to a list.
+
+Sample code:
+
+```javascript
+// Add a friend to a friend list
+const groupName = ["Friend list 1"];
+const userIDList = ["user1"];
+const addToFrindgroups = await friendshipManager.addFriendsToFriendGroup(
+  groupName,
+  userIDList
+);
+```
+
+### Removing a friend from a list
+
+Call `deleteFriendsFromFriendGroup` ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#deleteFriendsFromFriendGroup)) to remove a friend from a list.
+
+Sample code:
+
+```javascript
+// Remove a friend from a list
+const groupName = ["Friend list 1"];
+const userIDList = ["user1"];
+const deletefromFriendsGrousps =
+  await friendshipManager.deleteFriendsFromFriendGroup(groupName, userIDList);
+```
+
+
