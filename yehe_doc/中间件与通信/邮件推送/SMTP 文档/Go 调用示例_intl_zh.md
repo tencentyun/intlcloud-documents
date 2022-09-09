@@ -12,7 +12,7 @@ import (
 
 // Test465  for port 465
 func Test465() error {
-	host := "smtp.qcloudmail.com"
+	host := "sg-smtp.qcloudmail.com"
 	port := 465
     //控制台创建的发信地址
 	email := "abc@cd.com" 
