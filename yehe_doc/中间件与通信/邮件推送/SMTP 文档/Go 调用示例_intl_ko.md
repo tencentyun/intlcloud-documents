@@ -12,7 +12,7 @@ import (
 
 // Test465  for port 465
 func Test465() error {
-	host := "smtp.qcloudmail.com"
+	host := "sg-smtp.qcloudmail.com"
 	port := 465
     //콘솔에서 생성된 발신자 주소
 	email := "abc@cd.com" 
