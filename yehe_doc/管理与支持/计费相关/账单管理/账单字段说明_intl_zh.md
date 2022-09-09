@@ -42,7 +42,7 @@
 | Currency                                    | 组件结算使用的货币种类                                       |
 | Total Amount After Discount (Excluding Tax) | 资源的折后不含税价总价，等于组件原价 * 折扣率，等于组件单价 * 用量 * 时长 |
 | Voucher Deduction                           | 优惠后总价（税前）中使用代金券抵扣的金额                     |
-| Amount Before Tax                           | 优惠后总价（税前）中使用现金抵扣的金额                       |
+| Amount Before Tax                           | 扣完代金券税前金额                     |
 | Tax Rate                                    | 税率                                                         |
 | Tax Amount                                  | 税额                                                         |
 | Total Cost (Including Tax)                  | 资源的折后含税总价，等于组件原价 * 折扣率 * （1+税率），等于组件单价 * 用量 * 时长 * （1+税率） |
