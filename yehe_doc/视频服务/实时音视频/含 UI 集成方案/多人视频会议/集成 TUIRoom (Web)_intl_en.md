@@ -45,7 +45,7 @@ The `TUIRoom` component is developed using Vue 3 + TypeScript + Pinia + Element 
 ```bash
 npm create vite@latest TUIRoom-demo -- --template vue
 ```
-<dx-alert infotype="notice">During the creation process, press Enter first, select "Vue", and then select "vue-ts".
+<dx-alert infotype="notice">During the creation process, press Enter first, select "Vue", and then select "vue-ts".</dx-alert>
 
 After the template is generated, run the script below:
 
