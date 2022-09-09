@@ -42,7 +42,7 @@
 | Currency                                    | Currency used for the settlement of a component                                      |
 | Total Amount After Discount (Excluding Tax) | Total resource cost after discount (before tax), which is "Component original cost × Discount multiplier" or "Component unit price × Usage × Usage duration" |
 | Voucher Deduction | Amount deducted using vouchers from the total cost after discount (before tax) |
-| Amount Before Tax | Amount deducted using cash from the total cost after discount (before tax) |
+| Amount Before Tax | Pretax amount after voucher deduction |
 | Tax Rate                                    | Tax rate                                                         |
 | Tax Amount                                  | Tax                                                         |
 | Total Cost (Including Tax)                  | Total resource cost after discount (after tax), which is "Component original cost × Discount multiplier × (1 + Tax rate)" or "Component unit price × Usage × Usage duration × (1 + Tax rate)" |
