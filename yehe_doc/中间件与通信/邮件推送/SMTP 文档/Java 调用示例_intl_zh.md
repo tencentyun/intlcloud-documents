@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 public class SampleMail {
-    private static final String SMTP_HOST = "smtp.qcloudmail.com";
+    private static final String SMTP_HOST = "sg-smtp.qcloudmail.com";
     private static final String SMTP_PORT = "465";
 
     public static void main(String[] args) {
@@ -102,7 +102,7 @@ import java.util.Properties;
 import java.util.UUID;
 
 public class SampleMailAttach {
-    private static final String SMTP_HOST = "smtp.qcloudmail.com";
+    private static final String SMTP_HOST = "sg-smtp.qcloudmail.com";
     private static final String SMTP_PORT = "465";
 
     public static void main(String[] args) {
