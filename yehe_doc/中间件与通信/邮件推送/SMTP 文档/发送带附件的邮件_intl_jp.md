@@ -184,7 +184,7 @@ import (
 // Test465Attachment  for port 465
 func Test465Attachment() error {
 	boundary := "GoBoundary"
-	host := "smtp.qcloudmail.com"
+	host := "sg-smtp.qcloudmail.com"
 	port := 465
 	email := "abc@cd.com"
 	password := "***"
