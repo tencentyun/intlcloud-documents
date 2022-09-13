@@ -11,11 +11,11 @@
                 <th>Premium Cloud Disk</th>
                 <th>SSD</th>
                 <th>Enhanced SSD</th>
- <th>Tremendous SSD</th>
+ <th>UlTra SSD</th>
                 <th>Premium Cloud Disk</th>
                 <th>SSD</th>
 <th>Enhanced SSD</th>
- <th>Tremendous SSD</th>
+ <th>UlTra SSD</th>
             </tr>
             <tr>
                 <td>South China (Guangzhou)</td>
