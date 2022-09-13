@@ -1,6 +1,6 @@
 ## Spot Mode Overview 
 
-You can purchase resources with low costs in the spot mode of Elastic Kubernetes Service. In some scenarios, you can pay a price lower than that of the pay-as-you-go instances to run Pods until they are interrupted and repossessed by Tencent Cloud, greatly reducing the costs.
+You can purchase resources with low costs in the spot mode of TKE Serverless Cluster. In some scenarios, you can pay a price lower than that of the pay-as-you-go instances to run Pods until they are interrupted and repossessed by Tencent Cloud, greatly reducing the costs.
 
 When using the spot mode, you can deploy workloads in containers just like you are using other pay-as-you-go resources.
 
@@ -10,7 +10,7 @@ When using the spot mode, you can deploy workloads in containers just like you a
 
 ### Price policy
 
-A **fixed discount (80% off)** is used by the spot mode of Elastic Kubernetes Service. That means the Pod resources with all specifications are sold at the fixed discount (80% off) of the original prices defined in [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055).
+A **fixed discount (80% off)** is used by the spot mode of TKE Serverless Cluster. That means the Pod resources with all specifications are sold at the fixed discount (80% off) of the original prices defined in [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055).
 
 
 
