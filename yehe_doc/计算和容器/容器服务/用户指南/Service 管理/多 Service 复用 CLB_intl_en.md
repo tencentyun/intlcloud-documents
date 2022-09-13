@@ -10,7 +10,7 @@ You can use the feature for sharing the same CLB among multiple Services to supp
 For a cluster where the CLB sharing feature is enabled, the CLBs created by its Services are configured with the `<serviceUUID>:tke-lb-serviceId` and `<serviceUUID>_<lb_listener_id>:<lb_listener_id>` tags by default. Each CLB has its own key and value, so there are many tags. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to request that we disable the CLB sharing feature for this kind of cluster and clear the tags.
 - **For TKE clusters created after Aug. 17, 2020, the feature of multiple Services sharing the same CLB is disabled by default.**
 For a cluster where the CLB sharing feature is disabled, the CLBs created by its Services are configured with the `tke-lb-serviceuuid:<serviceUUID>` tag by default. All Services use the same batch of tag keys, and the number of tag keys can be controlled. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to request that we enable the CLB sharing feature.
-- **If it is an EKS cluster, the CLB sharing is enabled by default. Notes:**
+- **If it is an TKE Serverless cluster, the CLB sharing is enabled by default. Notes:**
 	1. The shared CLB must be manually purchased by the user instead of automatically purchased by EKS.
 	2. The following two annotations must be added to the Service once the CLB is purchased:
 		- service.kubernetes.io/qcloud-share-existed-lb:"true"
@@ -21,7 +21,6 @@ For a cluster where the CLB sharing feature is disabled, the CLBs created by its
 ## Usage Limits
 - In a scenario where multiple Services share the same CLB, the number of listeners managed by a single CLB cannot exceed 10.
 - In scenarios where a Service is reused, only the user-created Cloud Load Balancer (CLB) can be used. This is because when the CLB created in the TKE cluster is reused, CLB resources may not be released, leading to a resource leak.
-- To reuse CLB resources created by the current TKE, you can add `service.kubernetes.io/tke-existed-lbid` annotation to the current Service, and delete the `tke-createdBy-flag = yes` tag of this CLB.
 >! After reusing CLB resources created by the current TKE, you need to manually manage the CLB resources, because the CLB's life cycle will not be controlled by the TKE due to the lack of the tag.
 
 
