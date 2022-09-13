@@ -1,7 +1,4 @@
-## Overview
-This document describes how to create a Serverless cluster in the TKE console.
-
-
+This document describes how to create a TKE Serverless cluster in the TKE console.
 
 ## Prerequisite
 You have activated required permissions for EKS in the [CAM console](https://console.cloud.tencent.com/cam/overview).
@@ -26,6 +23,7 @@ You have activated required permissions for EKS in the [CAM console](https://con
 - We recommend that you configure multiple availability zones for the container network so that your workloads can be automatically distributed to multiple availability zones, which improves usability.
 - Ensure that the subnet assigned to the container network has sufficient available IPs, so as to prevent pod creation failure caused by insufficient IPs when creating a large-scale workload.
 </dx-alert>
+ 
  - **Service CIDR block**: The ClusterIP Service of the cluster defaults to be assigned in the selected VPC subnet. Please select a subnet with sufficient available IPs and without conflict with that of other services.
  - **Cluster description**: Specify the information about the cluster to be created. This description will be displayed on the **Cluster information** page.
  - **Advanced settings**:
