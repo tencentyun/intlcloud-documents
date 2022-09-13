@@ -15,7 +15,7 @@ Tencent Cloud places quota limits on users’ cloud disks. For more information,
 
 ## Features
 Tencent Cloud provides a variety of long-term storage devices, allowing the user to select an appropriate type of cloud disk to store files, build databases, etc.
-- Tencent Cloud CBS comes with the following disk types: Premium Cloud Disk, SSD, Enhanced SSD, and UlTra SSD.
+- Tencent Cloud CBS comes with the following disk types: Premium Cloud Disk, SSD, Enhanced SSD, and ulTra SSD.
 - Elastic mounting and unmounting: all types of elastic cloud disks support elastic mounting and unmounting. You can mount multiple cloud disks on a CVM to build a file system with high capacity.
 - Elastic expansion: a single disk supports a maximum capacity of 32 TB. You can scale up the disk at any time.
 - Snapshot backup: you can create and roll back a snapshot to back up data. You can also create a cloud disk from the snapshot to accelerate your business deployment.
