@@ -3,7 +3,7 @@
 
 | Status   | Description                                     |
 | :----- | :--------------------------------------- |
-| Creating | You are creating the EKS cluster and applying for cloud resources.         |
+| Creating | You are creating the TKE Serverless cluster and applying for cloud resources.         |
 | Running | The cluster is running properly.                            |
 | Idle | The cluster is idle.                        |
 | Activating | The cluster is changing from the idle status to the running status.  |
@@ -13,7 +13,7 @@
 
 ## Idle Cluster Status Description
 
-To make the most of idle cluster resources, we have launched the idle cluster repossession feature in EKS, which displays clusters without legacy Pods and Pod creation or deletion operations for seven consecutive days as "idle" clusters.
+To make the most of idle cluster resources, we have launched the idle cluster repossession feature in TKE Serverless, which displays clusters without legacy Pods and Pod creation or deletion operations for seven consecutive days as "idle" clusters.
 
 A cluster is considered idle if:
 
