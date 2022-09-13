@@ -3,7 +3,7 @@
 
 ## 前提条件
 
-登录 [弹性容器服务控制台](https://console.cloud.tencent.com/tke2/ops/list?rid=8)，并为弹性集群开启日志采集功能。操作详情请参见 [开启日志采集](https://intl.cloud.tencent.com/document/product/457/40950)。
+登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/ops/list?rid=8)，并为弹性集群开启日志采集功能。操作详情请参见 [开启日志采集](https://intl.cloud.tencent.com/document/product/457/40950)。
 
 
 
