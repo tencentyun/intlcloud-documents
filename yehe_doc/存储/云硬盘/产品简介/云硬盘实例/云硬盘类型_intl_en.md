@@ -1,13 +1,13 @@
-Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into five types: **Premium Cloud Disk**, **Balanced SSD**, **SSD**, **Enhanced SSD**, and **UlTra SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
+Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into five types: **Premium Cloud Disk**, **Balanced SSD**, **SSD**, **Enhanced SSD**, and **ulTra SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
 
 ## Must-knows
 - Currently, Enhanced SSD is only available in certain availability zones. It will be supported in more availability zones.
 - The performance of Enhanced SSD is only guaranteed when it’s attached to S5, M5, and SA2 models created after August 1, 2020, and all later generation models.
-- UlTra SSD is only available in certain availability zones in China. 
-- **UlTra SSD can only be purchased and used with the Standard Storage Optimized S5se CVM instance.**
-- Enhanced SSD and UlTra SSD cannot be used as the system disk.
-- Enhanced SSD and UlTra SSD cannot be encrypted.
-- Enhanced SSD and UlTra SSD cannot be upgraded from other disk types.
+- ulTra SSD is only available in certain availability zones in China. 
+- **ulTra SSD can only be purchased and used with the Standard Storage Optimized S5se CVM instance.**
+- Enhanced SSD and ulTra SSD cannot be used as the system disk.
+- Enhanced SSD and ulTra SSD cannot be encrypted.
+- Enhanced SSD and ulTra SSD cannot be upgraded from other disk types.
 
 
 
@@ -20,8 +20,8 @@ Tencent Cloud Balanced SSD is an entry-level all-flash block storage product. It
 SSD is an all-flash cloud disk using NVMe SSD as the storage media, and employs a three-copy distributed mechanism. It provides storage service with low latency, high random IOPS, high throughput I/O, and data security up to 99.9999999%, making it suitable for applications with high requirements for I/O performance.
 - **Enhanced SSD**
 Enhanced SSD is based on Tencent Cloud’s latest storage engine, NVMe SSD storage media and the latest network infrastructure. It employs a three-copy distributed mechanism to provide high-performance storage with low latency, high random IOPS, high throughput I/O, and data security up to 99.9999999%, making it suitable for I/O-intensive applications with high requirements for latency, such as large databases and NoSQL. Uniquely, the performance and capacity of Enhanced SSD cloud disks can be independently adjusted to meet your requirements.
-- **UlTra SSD**
-UlTra SSD is powered by Tencent Cloud’s latest high-performance distributed storage engine, high-speed network infrastructure, and the latest storage hardware. It boasts long-term and stable performance with ultra low latency. It is suitable for I/O-intensive and throughput-intensive workloads that require ultra low latency, such as large databases (MySQL, HBase, Cassandra, etc.), key-value storage models (etcd, rocksdb, etc.), log search service (Elasticsearch, etc.), and real-time high-bandwidth businesses (video processing, live streaming, etc.). It performs well in key transaction workloads, core database services, large-scale OLTP services, video processing, and other scenarios. The performance and capacity of UlTra SSD cloud disks can be independently adjusted to meet your requirements.
+- **ulTra SSD**
+ulTra SSD is powered by Tencent Cloud’s latest high-performance distributed storage engine, high-speed network infrastructure, and the latest storage hardware. It boasts long-term and stable performance with ultra low latency. It is suitable for I/O-intensive and throughput-intensive workloads that require ultra low latency, such as large databases (MySQL, HBase, Cassandra, etc.), key-value storage models (etcd, rocksdb, etc.), log search service (Elasticsearch, etc.), and real-time high-bandwidth businesses (video processing, live streaming, etc.). It performs well in key transaction workloads, core database services, large-scale OLTP services, video processing, and other scenarios. The performance and capacity of ulTra SSD cloud disks can be independently adjusted to meet your requirements.
 
 
 ## Performance metrics[](id:performance)
@@ -31,7 +31,7 @@ The table below compares the performances of the five CBS services.
 <thead>
 <tr>
 <th>Metric</th>
-<th>UlTra SSD</th>
+<th>ulTra SSD</th>
 <th>Enhanced SSD</th>
 <th>SSD</th>
 <th>Balanced SSD</th>
@@ -88,7 +88,7 @@ The table below compares the performances of the five CBS services.
 </tr>
 <tr>
 <td>Note</td>
-<td>UlTra SSD cloud disks can only be purchased with Standard Storage Optimized S5se instances as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/11518">Instance Types</a>.</td>
+<td>ulTra SSD cloud disks can only be purchased with Standard Storage Optimized S5se instances as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/11518">Instance Types</a>.</td>
 <td>
 <ul style="margin:0px">
 <li>The performance of Enhanced SSD is only guaranteed when it's attached to S5, M5, and SA2 models and all later generation models.</li>
@@ -118,8 +118,8 @@ The table below compares the performances of the five CBS services.
 - Video service: Suitable for applications with high requirements for storage bandwidth, such as audio/video encoding and decoding, live streaming and recording playback.
 - Big data analysis: Suitable for data analysis, data mining, business intelligence, and other fields. Provide distributed processing capabilities for data at TB and PB levels.
 
-**UlTra SSD is more suitable for latency-sensitive scenarios that require ultra low latency**, including:
-- Key-value (KV) storage: Support rocksdb, etcd, etc. The KV storage service generally writes data to disk in the serial I/O mode, which requires ultra low latency. The single thread latency determines the overall system performance. UlTra SSD guarantees the latency as low as tens of microseconds, making it fit for core business systems with high requirements for data reliability and availability.
+**ulTra SSD is more suitable for latency-sensitive scenarios that require ultra low latency**, including:
+- Key-value (KV) storage: Support rocksdb, etcd, etc. The KV storage service generally writes data to disk in the serial I/O mode, which requires ultra low latency. The single thread latency determines the overall system performance. ulTra SSD guarantees the latency as low as tens of microseconds, making it fit for core business systems with high requirements for data reliability and availability.
 - Large databases: Support medium and large relational database applications that contain tables with millions of rows, such as MySQL, Oracle, SQL Server, and MongoDB.
 - Large NoSQL: Support NoSQL businesses such as HBase and Cassandra.
 - Elasticsearch: Support low-latency ES storage.

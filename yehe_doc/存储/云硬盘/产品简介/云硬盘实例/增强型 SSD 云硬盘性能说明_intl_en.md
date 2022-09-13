@@ -39,7 +39,7 @@ If you have a higher performance requirement, you can enable extra performance.
 
 The following requirements must be met to enable extra performance:
 
-- Currently, this feature is only available to **Enhanced SSD** and **UlTra SSD** disks.
+- Currently, this feature is only available to **Enhanced SSD** and **ulTra SSD** disks.
 - The extra performance can be configured only after either basic performance metric reaches its maximum value. In other words, the disk capacity must be greater than 460 GB according to the basic performance formula.
 
 ### Extra performance formula
