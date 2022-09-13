@@ -148,7 +148,7 @@
 45.[实时音视频](https://intl.cloud.tencent.com/document/product/647/48828)。
 46.[前端性能监控](https://intl.cloud.tencent.com/document/product/1131/49155)。
 47.[账号风控平台](https://intl.cloud.tencent.com/document/product/1148/49480)。
-48.[应用云渲染](https://intl.cloud.tencent.com/document/product/1158/50008).
+48.[应用云渲染](https://intl.cloud.tencent.com/document/product/1158/50008)。
 
 ## 特定司法管辖区要求
 
