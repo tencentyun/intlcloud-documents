@@ -3,7 +3,7 @@ Tencent Cloud Block Storage (CBS) is a highly available and highly reliable bloc
 We recommend CBS when the data frequently changes and you want to persistently store them at a faster read/write speed. CBS can be attached to any running instance in the same availability zone, enabling you to use an instance’s file system and database storage without following the instance lifecycle. For more information on the CBS operations, see [Operation Overview](https://intl.cloud.tencent.com/document/product/362/33140).
 
 ### What are the features of Tencent Cloud CBS?
-Tencent Cloud CBS comes with four disk types: Premium Cloud Disk, SSD, Enhanced SSD, and UlTra SSD. All four types offer the following features:
+Tencent Cloud CBS comes with four disk types: Premium Cloud Disk, SSD, Enhanced SSD, and ulTra SSD. All four types offer the following features:
 - Elastic attaching and detaching: Elastic cloud disks can be attached and detached. Up to 20 elastic cloud disks can be attached to a CVM as data disks. 
 - Elastic expansion: A single disk supports a maximum capacity of 32 TB. You can scale up the disk at any time.
 - Snapshot backup: You can create a snapshot to back up data. This improves data reliability and allows rapid data restoration when necessary. You can also create a cloud disk from the snapshot to accelerate your business deployment.
