@@ -1,7 +1,7 @@
 
 ## Overview
 
-EKS provides out-of-the-box event dashboards and can automatically configure the event overview dashboard and aggregated exception search dashboard for the cluster with event storage enabled. With user-defined filters and built-in CLS global event search, EKS makes it convenient for you to comprehensively observe, find, analyze, and locate problems in the EKS console.
+TKE Serverless provides out-of-the-box event dashboards and can automatically configure the event overview dashboard and aggregated exception search dashboard for the cluster with event storage enabled. With user-defined filters and built-in CLS global event search, TKE Serverless makes it convenient for you to comprehensively observe, find, analyze, and locate problems in the TKE console.
 
 
 ## Feature Description
@@ -9,7 +9,7 @@ EKS provides out-of-the-box event dashboards and can automatically configure the
 Three dashboards are configured in **Event Search**, namely **Event Overview**, **Aggregated Exception Search**, and **Global Search**. Follow the steps below to enter the **Event Search** page and use the features:
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Enable **Event Storage**. For more information, see [Event Storage](https://intl.cloud.tencent.com/document/product/457/39121).
-3. On the left sidebar, select **Cluster Ops** > **Event Search**.
+3. On the left sidebar, select **Log Management** > **Event Search**.
 
 
 ### Event overview
