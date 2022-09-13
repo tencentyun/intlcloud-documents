@@ -1,7 +1,4 @@
-## 操作场景
 本文介绍通过腾讯云容器服务控制台创建 TKE Serverless 集群。
-
-
 
 ## 前提条件
 请前往 [CAM 管理控制台](https://console.cloud.tencent.com/cam/overview) 开通相应的服务权限。
