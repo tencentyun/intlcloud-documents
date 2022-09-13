@@ -3,7 +3,7 @@
 ### Memory edition
 >?
 >- As a trial version, the 256 MB specification on v4.0 or v5.0 is only suitable for product verification in testing environments but not recommended for use in production environments. It is available only in:
->Guangzhou (Zones 6 and 7), Shanghai (Zones 2, 3, 4 and 5), and Beijing (Zones 1, 2, 3, 4, 5, 6, and 7). Other 1 GB and above specifications cannot be downgraded to the 256 MB specification.
+>Guangzhou (Zones 6 and 7), Shanghai (Zones 2, 3, 4 and 5), and Beijing (Zones 1, 2, 3, 4, 5, 6, and 7). Other 1 GB and above specifications can be downgraded to the 256 MB specification.
 >- v2.8 is unavailable currently, and v4.0 or later is recommended. To purchase v2.8, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 <table>
 <thead><tr>
