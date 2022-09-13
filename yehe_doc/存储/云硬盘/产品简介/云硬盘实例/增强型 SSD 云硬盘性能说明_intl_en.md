@@ -7,7 +7,7 @@ This document introduces basic performance and extra performance.
 ## Overall Performance
 
 For a single Enhanced SSD disk, its performance consists of two parts: **basic performance** and **extra performance**. The following table specifies the maximum performance, regardless of the performance proportion.
-
+Premium Cloud Disk
 | Performance Metric | Maximum Value |
 | --------------------- | ------ |
 | Random IOPS             | 100000 |
@@ -39,7 +39,7 @@ If you have a higher performance requirement, you can enable extra performance.
 
 The following requirements must be met to enable extra performance:
 
-- Currently, this feature is only available to **Enhanced SSD** and **Tremendous SSD** disks.
+- Currently, this feature is only available to **Enhanced SSD** and **UlTra SSD** disks.
 - The extra performance can be configured only after either basic performance metric reaches its maximum value. In other words, the disk capacity must be greater than 460 GB according to the basic performance formula.
 
 ### Extra performance formula
