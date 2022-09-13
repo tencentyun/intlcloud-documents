@@ -33,6 +33,8 @@ The instance will be billed hourly based on the new specification on the next ho
 >- To expand the capacity of a Memory Edition instance in standard architecture, if the remaining available capacity of the physical machine is insufficient, a migration will occur, which will not affect your access to the instance. However, if the instance is running on Redis 2.8, a momentary disconnection will occur after the migration is completed, so we recommend that your business have a reconnection mechanism.
 >- As the maximum capacity of a Memory Edition instance in standard architecture is 64 GB, you cannot expand its capacity beyond that limit.
 >- To avoid failure in capacity reduction, the capacity after reduction must be at least 1.3 times the amount of existing data. After the capacity reduction, you will receive an automatic refund.
+>- As a trial version, the 256 MB specification on v4.0 or v5.0 is only suitable for product verification in testing environments but not recommended for use in production environments. It is available only in:
+>Guangzhou (Zones 6 and 7), Shanghai (Zones 2, 3, 4 and 5), and Beijing (Zones 1, 2, 3, 4, 5, 6, and 7). Other 1 GB and above specifications can be downgraded to the 256 MB specification.
 
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis).
 2. Above the instance list on the right, select the region.
