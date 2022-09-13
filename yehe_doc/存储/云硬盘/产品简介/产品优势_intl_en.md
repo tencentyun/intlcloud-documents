@@ -8,7 +8,7 @@ The maximum capacity of cloud disks is 32 TB. A single CVM can attach up to 20 e
 
 ## High Performance
 
-Premium Cloud Storage uses a cache mechanism to satisfy the normal business requirements of users. SSD uses NVMe standards and can provide 26,000 random read-write Input/Output Operations per Second (IOPS) on a single disk. This is suitable for scenarios with high requirements for I/O capability.
+Premium Cloud Disk uses a cache mechanism to satisfy the normal business requirements of users. SSD uses NVMe standards and can provide 26,000 random read-write Input/Output Operations per Second (IOPS) on a single disk. This is suitable for scenarios with high requirements for I/O capability.
 				
 ## Easy-to-Use
 You can easily manage and use your cloud disks through simple operations such as creation, attaching, detaching, and deletion, reducing both costs and business deployment time.
