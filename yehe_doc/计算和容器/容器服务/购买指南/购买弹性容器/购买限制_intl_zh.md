@@ -1,12 +1,12 @@
 ## 使用要求
 
-在使用弹性容器服务 EKS 前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在使用TKE Serverless集群前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 
 
 
 ## 支持地域
-EKS 支持的地域请参见 [地域和可用区](https://intl.cloud.tencent.com/document/product/457/41125)，资源规格信息请参考 [资源规格](https://intl.cloud.tencent.com/document/product/457/34057)。
+TKE Serverless集群支持的地域请参见 [地域和可用区](https://intl.cloud.tencent.com/document/product/457/41125)，资源规格信息请参考 [资源规格](https://intl.cloud.tencent.com/document/product/457/34057)。
 
 ## 资源配额
 | 资源 | 限制（个） | 说明 |
@@ -20,6 +20,6 @@ EKS 支持的地域请参见 [地域和可用区](https://intl.cloud.tencent.com
 
 #### 申请提升配额操作指引
 1. 请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1)，选择**其他问题** > **立即创建**，进入创建工单信息填写页面。
-2. 在问题描述中填写“期望提升弹性集群配额”，注明目标地区及目标配额，并按照页面提示填写您可用的手机号等信息。
+2. 在问题描述中填写“期望提升 Serverless 集群配额”，注明目标地区及目标配额，并按照页面提示填写您可用的手机号等信息。
 3. 填写完成后，单击**在线咨询**即可。
 
