@@ -22,7 +22,7 @@ You can create different types of CBS cloud disks based on business needs. For m
      </tr> 
 	 <tr>
          <td>Cloud Disk Type</td>
-         <td>Required.</br>Four CBS cloud disk types are available:<ul><li>Premium Cloud Disk</li><li>SSD</li><li>Enhanced SSD</li><li>UlTra SSD. This type can only be purchased with the Standard Storage Optimized S5se CVM instance.</li></ul></td>
+         <td>Required.</br>Four CBS cloud disk types are available:<ul><li>Premium Cloud Disk</li><li>SSD</li><li>Enhanced SSD</li><li>ulTra SSD. This type can only be purchased with the Standard Storage Optimized S5se CVM instance.</li></ul></td>
      </tr>
 		 <tr>
 			 <td>Quick Disk Creation</td>
