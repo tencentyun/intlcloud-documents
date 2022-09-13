@@ -1,9 +1,9 @@
-This document describes how to use CRD to configure the log collection feature of EKS cluster via YAML.
+This document describes how to use CRD to configure the log collection feature of TKE Serverless cluster via YAML.
 
 
 ## Prerequisites
 
-Log in to the [EKS console](https://console.cloud.tencent.com/tke2/ops/list?rid=8), and enable the log collection feature for the EKS cluster. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/document/product/457/40950).
+Log in to the [TKE console](https://console.cloud.tencent.com/tke2/ops/list?rid=8), and enable the log collection feature for the TKE Serverless cluster. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/document/product/457/40950).
 
 
 

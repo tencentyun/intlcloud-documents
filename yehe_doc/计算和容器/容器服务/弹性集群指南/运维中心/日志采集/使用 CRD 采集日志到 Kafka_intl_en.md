@@ -1,6 +1,6 @@
 
 
-EKS not only supports uploading logs to CLS, but also supports collecting logs to self-built Kafka or CKafka.
+TKE Serverless not only supports uploading logs to CLS, but also supports collecting logs to self-built Kafka or CKafka.
 
 ## Creating the CRD
 If you want to collect logs to Kafka, you only need to define the CRD. The template is as follows:
