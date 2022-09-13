@@ -1,4 +1,3 @@
-## Overview
 This document describes how to connect a local Client to an TKE Serverless cluster through kubectl, which is the Kubernetes command-line tool.
 
 
