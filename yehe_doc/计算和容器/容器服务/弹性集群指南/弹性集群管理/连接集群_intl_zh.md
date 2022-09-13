@@ -1,4 +1,3 @@
-## 操作场景
 本文档介绍如何通过 Kubernetes 命令行工具 Kubectl 从本地客户端机器连接到 TKE Serverless 集群。
 
 
