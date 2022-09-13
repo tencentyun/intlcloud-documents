@@ -23,11 +23,11 @@ This document describes how to use a snapshot to create a cloud disk on the [Sna
      </tr>
      <tr>
          <td>Cloud Disk Type</td>
-         <td>Required.</br>The values include:<ul><li>Premium Cloud Storage</li><li>SSD Cloud Storage</li></ul></td>
+         <td>Required.</br>The values include:<ul><li>Premium Cloud Disk</li><li>SSD </li></ul></td>
      </tr>
      <tr>
          <td>Capacity</td>
-         <td>Required.</br>CBS provides the following cloud disk capacity and specifications:<ul><li>Premium Cloud Storage: 50 to 16,000 GB</li><li>SSD Cloud Storage: 100 to 16,000 GB</li></ul>When you create a cloud disk using a snapshot, the disk capacity cannot be smaller than that of the snapshot. If you do not specify this parameter, the disk capacity is equal to that of the snapshot by default.</td>
+         <td>Required.</br>CBS provides the following cloud disk capacity and specifications:<ul><li>Premium Cloud Disk: 50 to 16,000 GB</li><li>SSD: 100 to 16,000 GB</li></ul>When you create a cloud disk using a snapshot, the disk capacity cannot be smaller than that of the snapshot. If you do not specify this parameter, the disk capacity is equal to that of the snapshot by default.</td>
      </tr>
 	<tr>
          <td>Snapshots</td>
