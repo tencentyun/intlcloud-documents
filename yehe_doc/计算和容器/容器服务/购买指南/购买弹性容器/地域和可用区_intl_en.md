@@ -4,7 +4,7 @@
 
 A region is the physical location of an IDC. In Tencent Cloud, regions are fully isolated from each other, ensuring cross-region stability and fault tolerance. We recommend that you choose the region closest to your end users to minimize access latency and improve access speed.
 
-The following table describes the regions, availability zones, and resource types that are currently supported by EKS.
+The following table describes the regions, availability zones, and resource types that are currently supported by TKE Serverless Cluster.
 
 ### Characteristics
 
