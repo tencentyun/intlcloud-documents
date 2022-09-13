@@ -144,6 +144,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48828).
 46.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49155).
 47.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49480).
+48.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50008).
 
 ## 法域特定の要件
 
