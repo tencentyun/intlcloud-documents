@@ -602,3 +602,4 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 44.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48827).
 45.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49154).
 46.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49479).
+47.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50007).
