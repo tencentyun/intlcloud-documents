@@ -1,14 +1,14 @@
 
-EKS specifies the maximum resources allocated to a pod using [annotation specification](#Annotation) or [automatic Request and Limit calculation](#RequestLimit). You can select either method.
+TKE Serverless Cluster specifies the maximum resources allocated to a pod using [annotation specification](#Annotation) or [automatic Request and Limit calculation](#RequestLimit). You can select either method.
 
 
 
 
 ## Specifying by Annotation[](id:Annotation)
-EKS can add `template annotation` in the YAML file of a workload to explicitly specify the pod resource specifications. For more information, see [Annotation Description](https://intl.cloud.tencent.com/document/product/457/36162).
+TKE Serverless Cluster can add `template annotation` in the YAML file of a workload to explicitly specify the pod resource specifications. For more information, see [Annotation Description](https://intl.cloud.tencent.com/document/product/457/36162).
 
 ## Automatically Calculating by Request and Limit[](id:RequestLimit)
-EKS can calculate the Request and Limit parameters set for a workload to determine the resources required for running pods. The calculation method varies depending on the pod resource type. For more information on how to automatically calculate specified resource specifications based on the Request and Limit parameters, see [CPU specification calculation methods for pods](#CPUpod) and [GPU specification calculation methods for pods](#GPUpod).
+TKE Serverless Cluster can calculate the Request and Limit parameters set for a workload to determine the resources required for running pods. The calculation method varies depending on the pod resource type. For more information on how to automatically calculate specified resource specifications based on the Request and Limit parameters, see [CPU specification calculation methods for pods](#CPUpod) and [GPU specification calculation methods for pods](#GPUpod).
 
 
 
@@ -94,7 +94,7 @@ resources:
 Total CPU value: max((2+1),max(4,1)) = 4 cores
 Total memory value: max((4+2),max(4,2)) = 6 GiB
 
-**Result**: EKS does not support pod specifications of 4 cores and 6 GiB, and 6 GiB is less than the minimum memory value in the specifications with 4 CPU cores. Therefore, adjust the minimum memory value in the specifications with 4 CPU cores. The selected pod specifications are 4 cores and 8 GiB.
+**Result**: TKE Serverless Cluster does not support pod specifications of 4 cores and 6 GiB, and 6 GiB is less than the minimum memory value in the specifications with 4 CPU cores. Therefore, adjust the minimum memory value in the specifications with 4 CPU cores. The selected pod specifications are 4 cores and 8 GiB.
 :::
 </dx-tabs>
 
