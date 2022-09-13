@@ -9,8 +9,8 @@
 		<td> 1. Currently, Enhanced SSD is only available in some availability zones. <br>2. The performance of Enhanced SSD is only guaranteed when it’s attached to S5, M5, and SA2 models created after August 1, 2020, and all later generation models. <br>3. Enhanced SSD cannot be used as the system disk.<br>4. Enhanced SSD cannot be encrypted.<br>5. Enhanced SSD cannot be upgraded from other disk types.</td>
 	</tr>
 <tr>
-	  <td>Tremendous SSD usage</td>
-		<td> 1. Currently, Tremendous SSD is only available in certain availability zones, as shown in the CBS purchase page. It will be supported in more availability zones.<br>2. <b>Tremendous SSD can only be purchased with the Standard Storage Optimized S5se CVM instance.</b><br>3. Tremendous SSD cannot be purchased independently.<br>4. Tremendous SSD cannot be used as the system disk.<br>5. Tremendous SSD cannot be encrypted.<br>6. Tremendous SSD cannot be upgraded from other disk types.</td>
+	  <td>UlTra SSD usage</td>
+		<td> 1. Currently, UlTra SSD is only available in certain availability zones, as shown in the CBS purchase page. It will be supported in more availability zones.<br>2. <b>UlTra SSD can only be purchased with the Standard Storage Optimized S5se CVM instance.</b><br>3. UlTra SSD cannot be purchased independently.<br>4. UlTra SSD cannot be used as the system disk.<br>5. UlTra SSD cannot be encrypted.<br>6. UlTra SSD cannot be upgraded from other disk types.</td>
 	</tr>
 	<tr>
 		<td>Elastic cloud disk capability</td>
