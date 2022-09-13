@@ -1,7 +1,4 @@
-## Overview
 This document describes how to create a TKE Serverless cluster in the TKE console.
-
-
 
 ## Prerequisite
 You have activated required permissions for EKS in the [CAM console](https://console.cloud.tencent.com/cam/overview).
