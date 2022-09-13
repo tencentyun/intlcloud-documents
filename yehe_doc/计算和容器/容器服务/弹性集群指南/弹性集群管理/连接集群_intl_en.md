@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to connect a local Client to an elastic cluster through kubectl, which is the Kubernetes command-line tool.
+This document describes how to connect a local Client to an TKE Serverless cluster through kubectl, which is the Kubernetes command-line tool.
 
 
 ## Prerequisites
@@ -61,8 +61,8 @@ Client Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2", GitCommi
 ### Configuring kubeconfig
 
 
-1. Log in to the TKE console and select **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar.
-2. On the **Elastic Cluster** list page, click the ID of the target cluster that you want to connect to go to the management page of the cluster.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar.
+2. On the **Cluster** list page, click the ID of the target cluster that you want to connect to go to the management page of the Serverless cluster.
 3. Click **Basic Information** in the left sidebar to go to the **Basic Information** page, as shown in the following figure.
 4. In **Cluster APIServer information** section, enable the **Internet Access** or **Private Network Access**, and view information such as the access address, and kubeconfig access credential of the cluster. 
  - Access entry: configure the access entry as needed.
