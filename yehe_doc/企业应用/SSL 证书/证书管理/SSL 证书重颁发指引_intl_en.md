@@ -23,7 +23,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
 <dx-tabs>
 ::: Wotrus/DNSPod（OV/EV）
 **Reissuing Wotrus international standard certificates and DNSPod SM (SM2) OV/EV certificates**
-1. On the **Certificate re-issuance application** page, select a CSR algorithm, enter and confirm the configurations, and click ****Next**.
+1. On the **Certificate re-issuance application** page, select a CSR algorithm, enter and confirm the configurations, and click **Next**.
   - **Using the CSR of the original certificate**: Use the CSR of the original certificate.
   - **Generating a CSR online**: Generate and manage the CSR by Tencent Cloud SSL Certificate Service.
   - **Using an existing CSR**: Paste the content of an existing CSR to the certificate.
@@ -31,17 +31,18 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
   - **Selecting an algorithm**: Select the encryption algorithm for the certificate to be reissued.
   - **Key length**: Select the key length for the certificate to be reissued.
   - **Private key password**: To ensure the security of your private key, **password recovery is NOT supported**, so keep the password in mind.
->?If you need to deploy Tencent Cloud services such as CLB and CDN, don′t enter the private key password.
+<b>Note：</b>
+If you need to deploy Tencent Cloud services such as CLB and CDN, don′t enter the private key password.
 
   - **Reissue reason**: Enter the reissue reason in brief.
 2. In the pop-up window, click **Confirm**.
 3. Validate the domain ownership on the “Domain Ownership Validation” page, and click **Validate Now** after operations are completed.
 4. Manual approval is required upon domain ownership validation, and then the certificate will be reissued. For validation instructions, see Domain Ownership Validation.
 
->?
->- If you have successfully applied for this certificate, manual approval is omitted when the enterprise info submitted in re-application is consistent with that recorded in the system.
->- If the span between the reissue submission time and original issue time is less than 3 days, domain ownership validation is not required.
->- If the submitted CSR is different from that of the original certificate, domain ownership needs to be validated. If they are the same, validation is not needed.
+<b>Note：</b>
+- If you have successfully applied for this certificate, manual approval is omitted when the enterprise info submitted in re-application is consistent with that recorded in the system.
+- If the span between the reissue submission time and original issue time is less than 3 days, domain ownership validation is not required.
+- If the submitted CSR is different from that of the original certificate, domain ownership needs to be validated. If they are the same, validation is not needed.
 
 :::
 ::: OV/EV certificates of other brands
@@ -54,7 +55,9 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
   - **Selecting an algorithm**: Select the encryption algorithm for the certificate to be reissued.
   - **Key length**: Select the key length for the certificate to be reissued.
   - **Private key password**: To ensure the security of your private key, **password recovery is NOT supported**, so keep the password in mind.
->?If you need to deploy Tencent Cloud services such as CLB and CDN, don′t enter the private key password.
+
+<b>Note：</b>
+If you need to deploy Tencent Cloud services such as CLB and CDN, don′t enter the private key password.
 
   - **Reissue reason**: Enter the reissue reason in brief.
 2. In the pop-up window, click **Confirm**.
@@ -62,7 +65,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
 :::
 ::: Paid DV certificates
 **Reissuing paid DV certificates**
-1. On the **Certificate re-issuance application** page, select a CSR algorithm, enter and confirm the configurations, and click ****Confirm**.
+1. On the **Certificate re-issuance application** page, select a CSR algorithm, enter and confirm the configurations, and click **Confirm**.
   - **Using the CSR of the original certificate**: Use the CSR of the original certificate.
   - **Generating a CSR online**: Generate and manage the CSR by Tencent Cloud SSL Certificate Service.
   - **Using an existing CSR**: Paste the content of an existing CSR to the certificate.
@@ -70,18 +73,22 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
   - **Selecting an algorithm**: Select the encryption algorithm for the certificate to be reissued.
   - **Key length**: Select the key length for the certificate to be reissued.
   - **Private key password**: To ensure the security of your private key, **password recovery is NOT supported**, so keep the password in mind.
->?If you need to deploy Tencent Cloud services such as CLB and CDN, don′t enter the private key password.
+
+<b>Note：</b>
+If you need to deploy Tencent Cloud services such as CLB and CDN, don′t enter the private key password.
 
   - **Reissue reason**: Enter the reissue reason in brief.
 2. In the pop-up window, click **Confirm**.
 3. Validate the domain ownership on the “Domain Ownership Validation” page, and click **Validate Now** after operations are completed. For validation methods, see Domain Ownership Validation.
->?If your DV certificate is purchased from TrustAsia (2-year or 3-year wildcard domain) and have configured auto-DNS verification or auto-file verification for the domain you are applying for, ownership verification is not required.
+
+<b>Note：</b>
+If your DV certificate is purchased from TrustAsia (2-year or 3-year wildcard domain) and have configured auto-DNS verification or auto-file verification for the domain you are applying for, ownership verification is not required.
 4. After the domain is verified, the reissue is completed.
 
->?
->- In the last 13 months, if domain ownership verification has been completed for the certificate to be reissued using the same organization name, domain ownership verification is not required.
->- If the span between the reissue submission time and original issue time is less than 3 days, domain ownership validation is not required.
->- If the submitted CSR is different from that of the original certificate, domain ownership needs to be verified. If they are the same, verification is not needed.
+<b>Note：</b>
+- In the last 13 months, if domain ownership verification has been completed for the certificate to be reissued using the same organization name, domain ownership verification is not required.
+- If the span between the reissue submission time and original issue time is less than 3 days, domain ownership validation is not required.
+- If the submitted CSR is different from that of the original certificate, domain ownership needs to be verified. If they are the same, verification is not needed.
 
 :::
 ::: Free DV certificates
@@ -89,7 +96,8 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
 1. On the **Certificate re-issuance application** page, enter and confirm the configurations, and click **Next**.
   - **Selecting an algorithm**: Select the encryption algorithm for the certificate to be reissued.
   - **Private key password**: To ensure the security of your private key, please keep the password in mind as **password recovery is NOT supported**.
->?If you need to deploy Tencent Cloud services such as CLB and CDN, don′t enter the private key password.
+<b>Note：</b>
+If you need to deploy Tencent Cloud services such as CLB and CDN, don′t enter the private key password.
 2. In the pop-up window, click **Confirm**.
 3. Go to the **Domain ownership validation** page. The validation method that is used when you first applied for this certificate will be used. You can perform validation as you did before.
 4. The certificate will be reissued upon successful domain ownership validation. For domain ownership validation, see instructions for domain ownership validation.
