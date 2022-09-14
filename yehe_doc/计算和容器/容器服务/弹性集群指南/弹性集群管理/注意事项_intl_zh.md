@@ -48,4 +48,4 @@ TKE Serverless 集群中的 Pod 拥有与云服务器完全一致的安全隔离
 由于 TKE Serverless 集群没有节点，虽然集群依旧兼容 Pod 中与 Host 相关的参数（例如 Hostpath、Hostnetwork: true、DnsPolicy: ClusterFirstWithHostNet 等），但不一定能满足预期效果。例如您希望使用 Hostpath 共享数据，但可能调度到同一个超级节点上的两个 Pod 实际为不同子机的 Hostpath。因此建议您在 TKE Serverless 集群运行的任务，不要强依赖与 Host 相关的参数。
 
 ## 端口限制
-在 TKEServerless集群中，9100端口被保留，不可使用。
+在 TKE Serverless集群中，9100端口被保留，不可使用。
