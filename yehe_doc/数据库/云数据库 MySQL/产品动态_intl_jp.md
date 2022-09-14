@@ -1,3 +1,36 @@
+## 2022年6月
+<table>
+<thead><tr><th width=20%>ダイナミックネーム</th><th width=50%>動的記述</th><th width=15%>リリース時間</th><th width=15%>関連ドキュメント</th></tr></thead>
+<tbody>
+<tr>
+<td>SSL暗号化をサポートしています</td>
+<td>TencentDB for MySQLは、SSL暗号化をサポートしています。暗号化伝送チャネル確立を実現し、通信データの安全性と完全性を向上させました</td>
+<td>2022-06-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/48452" target="_blank">SSL暗号化設定</a></td></tr>
+</tbody></table>
+
+## 2022年4月
+<table>
+<thead><tr><th width=20%>ダイナミックネーム</th><th width=50%>動的記述</th><th width=15%>リリース時間</th><th width=15%>関連ドキュメント</th></tr></thead>
+<tbody>
+<tr>
+<td>スマートパラメータチューニングをサポートしています</td>
+<td>TencentDB for MySQLは、スマートパラメータチューニング機能をサポートしています。ユーザーによるデータベース機能の向上を支援します。</td>
+<td>2022-04-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47701" target="_blank">スマートパラメータチューニング</a></td></tr>
+<tr>
+<td>TXRocksエンジンをサポートしています</td>
+<td>TencentDB for MySQLは、TXRocksトランザクション型ストレージエンジンをサポートしています。性能はInnoDBとほぼ同じですが、ストレージ容量はInnoDBと比べてさらに節約されているため、トランザクションの読み取り/書き込みにパフォーマンスが要求され、データのストレージ量が大きい業務に適しています。</td>
+<td>2022-04-18</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47015" target="_blank">TXRocks概要</a></td></tr>
+<tr>
+<td>定期バックアップをサポートしています</td>
+<td>定期バックアップを使用することにより、2つのサイクルプランでバックアップされます。単一サイクルでのバックアップポリシーと比べて、より一層のコスト節約を実現できます。</td>
+<td>2022-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37796" target="_blank">バックアップデータベース</a></td></tr>
+</tbody></table>
+
+
 ## 2022年02月
 <table>
 <tr><th width=20%>ニュース名</th><th width=50%>ニュース概要</th><th width=10%>リリース時間</th><th width=20%>関連記事</th></tr>
