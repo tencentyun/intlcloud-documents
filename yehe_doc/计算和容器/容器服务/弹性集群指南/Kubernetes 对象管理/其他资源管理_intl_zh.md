@@ -1,11 +1,10 @@
-## 操作场景
 本文档介绍通过腾讯云容器服务控制台管理其他 Kubernetes 资源，例如命名空间、配置、存储等。
 
 ## 前提条件
 已创建状态为“运行中”的 Serverless 集群，详情请参见  [创建集群](https://intl.cloud.tencent.com/document/product/457/34048)。
 
 ## 操作步骤
-1. 登录容器服务控制台，选择左侧导航栏中的**[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的**[集群](https://console.cloud.tencent.com/tke2/ecluster)**。
 2. 在集群管理页面，单击 Serverless 集群 ID。
 3. 在集群详情页面，您可参考以下文档进行其他资源管理：
  - 命名空间的操作管理请参考 [Namespaces](https://intl.cloud.tencent.com/document/product/457/30660)。
