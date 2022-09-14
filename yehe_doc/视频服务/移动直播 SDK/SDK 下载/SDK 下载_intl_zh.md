@@ -1,8 +1,8 @@
-直播 SDK 提供国际版 SDK，了解国际版 SDK 功能及其 License 使用可参见 [功能说明](https://intl.cloud.tencent.com/document/product/1071/38149)。
+直播 SDK 提供专业版 SDK，了解专业版 SDK 功能及其 License 使用可参见 [功能说明](https://intl.cloud.tencent.com/document/product/1071/38149)。
 
 
-<h2 id="International">国际版（International）</h2>
-国际版集合了包含移动直播在内的多个音视频相关的核心功能，这包括 [实时音视频 SDK](https://intl.cloud.tencent.com/product/trtc)、直播推拉流和基础美颜能力。
+<h2 id="International">专业版（International）</h2>
+专业版集合了包含移动直播在内的多个音视频相关的核心功能，这包括 [实时音视频 SDK](https://intl.cloud.tencent.com/product/trtc)、直播推拉流和基础美颜能力。
 
 <table>
    <tr>
@@ -28,7 +28,7 @@
    </tr>
 </table>
 
->? 根据您具体使用的服务，使用国际版需先购买对应产品授权，您可按需选购：
->- 使用其中的移动直播请购买  [直播 SDK 国际版 License](https://intl.cloud.tencent.com/document/product/1071/38114)。
+>? 根据您具体使用的服务，使用专业版需先购买对应产品授权，您可按需选购：
+>- 使用其中的移动直播请购买  [直播 SDK 专业版 License](https://intl.cloud.tencent.com/document/product/1071/38114)。
 >- 使用其中的实时音视频请购买 [实时音视频套餐包](https://intl.cloud.tencent.com/document/product/647/34610)。
 
