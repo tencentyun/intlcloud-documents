@@ -1,0 +1,4 @@
+Video looping is a typical use case of input switch. For how to configure input switch, see the previous document. You can use this feature to play teasers on loop before a live stream starts or replay a live streaming session repeatedly after it ends.
+
+The video looping feature plays existing videos, so the input type should be **MP4_PULL** or **HLS_PULL**. If your channel is not currently bound with such inputs, add one first before you configure an input switch event. The figure below shows the configuration for a typical input switch event for PULL inputs. You can specify two inputs for failover. Enter a public URL or a Tencent Cloud COS address with public read access.
+![](https://qcloudimg.tencent-cloud.cn/raw/566b69f59c72fc9230a5a87748455b97.png)
