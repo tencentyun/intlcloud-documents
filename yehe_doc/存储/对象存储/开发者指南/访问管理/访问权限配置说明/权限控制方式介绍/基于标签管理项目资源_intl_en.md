@@ -11,8 +11,8 @@ COS uses the tag service for compatibility with the legacy project feature. In t
 
 > ?
 > - If you need to manage buckets in a categorized manner, we recommend you directly use tags instead of projects to implement tasks such as permission control and cost allocation. For more information on how to add tags in the console, see [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928).
-> - For more information on projects, see [Project and Tag](https://cloud.tencent.com/document/product/598/32738). For more information on the tag service, see [Tag](https://cloud.tencent.com/document/product/651).
-> - For more information on benefits of tags, see [Project and Tag](https://cloud.tencent.com/document/product/598/32738).
+> - For more information on projects, see Project and Tag. For more information on the tag service, see [Tag](https://www.tencentcloud.com/document/product/651).
+> - For more information on benefits of tags, see Project and Tag.
 > 
 
 ## Granting Sub-Account Access to Project
