@@ -7,8 +7,8 @@ The following table provides the billing instructions for different CWPP protect
 | Protection license | Billing instructions |
 |---------|---------|
 | CWPP Basic | Free of charge. A server that comes with a CWPP agent enjoys basic protection.<br> A CWPP agent is automatically installed for the purchased CVM, Lighthouse, and ECM by default. |
-| CWPP Pro | Monthly subscription: 12 USD/month.<br>The subscription fee is deducted directly when the order is placed. |
-| CWPP Ultimate | Monthly subscription: 27 USD/month.<br>The subscription fee is deducted directly when the order is placed. It cannot be downgraded to CWPP Pro. |
+| CWPP Pro | Monthly subscription: 12 USD/license/month.<br>The subscription fee is deducted directly when the order is placed. |
+| CWPP Ultimate | Monthly subscription: 27 USD/license/month.<br>The subscription fee is deducted directly when the order is placed. It cannot be downgraded to CWPP Pro. |
 
 <dx-alert infotype="explain" title="">
 The fee of protection licenses is deducted based on the actual number of licenses purchased, regardless of whether the license is bound to a server or whether the server is powered on.
