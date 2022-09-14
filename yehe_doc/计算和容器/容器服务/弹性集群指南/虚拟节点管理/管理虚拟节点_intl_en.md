@@ -1,5 +1,3 @@
-## Overview
-
 This document describes how to manage super nodes in the elastic cluster on the TKE console.
 
 
