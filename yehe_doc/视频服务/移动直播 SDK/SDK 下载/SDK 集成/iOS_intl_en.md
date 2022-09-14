@@ -66,7 +66,7 @@ An XCWORKSPACE project file integrated with LiteAVSDK will be generated. Double-
 ![](https://qcloudimg.tencent-cloud.cn/raw/5f0a196dd78a7858fca4f098bf3e3591.png)
 3. Expand **Link Binary with Libraries** and click **+** at the bottom to add the libraries to depend on.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2e5db146788005de31337cd266315406.png)
-4. Add the downloaded `TXLiteAVSDK_International.framework` and the libraries it depends on:
+4. Add the downloaded `TXLiteAVSDK_Professional.framework` and the libraries it depends on:
 ```
 libz.tbd
 libc++.tbd
@@ -90,11 +90,11 @@ To use the audio/video features of the SDK, you need to grant it mic and camera 
 There are two ways to import the SDK in your project code.
 - **Method 1:** import the SDK module in the files that need to use the SDK’s APIs in your project
 ```
-@import TXLiteAVSDK_International;
+@import TXLiteAVSDK_Professional;
 ```
 - **Method 2:** import a specific header file in the files that need to use the SDK’s APIs in your project
 ```
-#import "TXLiteAVSDK_International/TXLiteAVSDK.h"
+#import "TXLiteAVSDK_Professional/TXLiteAVSDK.h"
 ```
 
 ## Configuring License
@@ -104,7 +104,7 @@ Log in to the CSS console, go to **MLVB SDK** > **[License Management](https://c
 Before you use LiteAVSDK features in your application, complete the following configurations (preferably in `- [AppDelegate application:didFinishLaunchingWithOptions:]`):
 
 ```objc
-@import TXLiteAVSDK_International;
+@import TXLiteAVSDK_Professional;
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString * const licenceURL = @"<The license URL obtained>";
