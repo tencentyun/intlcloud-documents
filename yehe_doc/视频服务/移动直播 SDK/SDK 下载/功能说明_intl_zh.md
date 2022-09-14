@@ -1,8 +1,8 @@
-移动直播目前为国际站用户特别提供**国际版 SDK**，可通过移动直播国际版 License 使用相应的直播功能，包括直播推流、直播播放和基础美颜（美白、磨皮等）等。
+移动直播目前为国际站用户特别提供**专业版 SDK**，可通过移动直播专业版 License 使用相应的直播功能，包括直播推流、直播播放和基础美颜（美白、磨皮等）等。
 
 ### SDK 与授权 License
 
-您可以通过申请测试的移动直播国际版 License，或购买正式的移动直播国际版 License 对移动直播国际版 SDK 进行使用。
+您可以通过申请测试的移动直播专业版 License，或购买正式的移动直播专业版 License 对移动直播专业版 SDK 进行使用。
 
 ### SDK 功能列表
 
@@ -12,7 +12,7 @@
 <th align="center">功能模块</th>
 <th align="center">功能项</th>
 <th align="center">功能简介</th>
-<th align="center">国际版 International</th>
+<th align="center">专业版 International</th>
 </tr>
 </thead>
 <tbody><tr>
