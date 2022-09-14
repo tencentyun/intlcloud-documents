@@ -7,7 +7,7 @@ This document describes how to validate a domain when you apply for a certificat
 During file validation, pay attention to the following:
 >!
 >- Due to changes of the policies for SSL certificate domain validation, Tencent Cloud discontinued the file validation mode for wildcard certificates on **November 21, 2021**. For more information, see [Domain Ownership Validation Policy Update](https://intl.cloud.tencent.com/document/product/1007/40857).
-- If the domain that you apply for is a primary domain, **www** must also be validated. For example, if the domain applied for is `tencent.com`, `www.tencent.com` must also be validated.
+>- If the domain that you apply for is a primary domain, **www** must also be validated. For example, if the domain applied for is `tencent.com`, `www.tencent.com` must also be validated.
 >- If the domain that you apply for contains **www**, the domain name following **www** must also be validated, regardless of the domain levels. For example, if the target domain is `www.a.tencent.com`, `a.tencent.com` must also be validated.
 >- If the domain that you apply for does not contain **www** and is not a primary domain, only the current domain needs to be validated. For example, if the target domain is `cloud.tencent.com`, only `cloud.tencent.com` needs to be validated.
 >
@@ -29,7 +29,7 @@ During file validation, pay attention to the following:
 
 ### Step 2. Add a file record
 1. Log in to the server and make sure that the domain name points to the server and the corresponding website is enabled.
->? If your **DNS Service Provider** is Tencent Cloud, for how to point the domain to your server, see [A Record](https://cloud.tencent.com/document/product/302/3449).
+>? If your **DNS Service Provider** is Tencent Cloud, for how to point the domain to your server, see A Record.
 >
 2. Create the specified file in the root directory of the website, including the file directory, name, and content.
 >?
@@ -55,6 +55,5 @@ The root directory of your website is `C:/inetpub/wwwroot`. You can create a fil
 > 
 4. Wait for the CA's review. After the certificate is issued or the domain name information is approved, the file and directory can be cleared.
 
->!请确保域名未做国外限制，国外 IP 可以解析至域名的 A 记录并进行访问，否则将导致 CA 机构无法进行扫描审核。
 
 
