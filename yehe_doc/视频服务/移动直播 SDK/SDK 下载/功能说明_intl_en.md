@@ -1,8 +1,8 @@
-We offer **MLVB International** for users outside the Chinese mainland. You need an international license to unlock live streaming features such as publishing, playback, and basic filters (skin brightening and smoothing, etc.).
+We offer **MLVB Professional** for users outside the Chinese mainland. You need an international license to unlock live streaming features such as publishing, playback, and basic filters (skin brightening and smoothing, etc.).
 
 ### SDK and license
 
-You can apply for a free trial license or purchase a license to use MLVB International.
+You can apply for a free trial license or purchase a license to use MLVB Professional.
 
 ### Features
 
@@ -12,7 +12,7 @@ You can apply for a free trial license or purchase a license to use MLVB Interna
 <th align="center">Module</th>
 <th align="center">Feature</th>
 <th align="center">Description</th>
-<th align="center">MLVB International</th>
+<th align="center">MLVB Professional</th>
 </tr>
 </thead>
 <tbody><tr>
