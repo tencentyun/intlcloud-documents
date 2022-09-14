@@ -3,7 +3,7 @@
 Backup space is used to store the backup files of all TencentDB for SQL Server instances in a region, including automatic data backups, manual data backups, and log backups.
 
 **Backup space range**
-The backup space of an account is used to store the backup files of all TencentDB for SQL Server (Basic Edition/High Availability Edition/Cluster Edition) instances in a region. It is calculated separately for each region; that is, the backup files of all instances in the Beijing and Shanghai regions are calculated in two different resource pools.
+The backup space of an account is a resource pool used to store the backup files of all TencentDB for SQL Server (Basic Edition/High Availability Edition/Cluster Edition) instances in a region. It is calculated separately for each region; that is, the backup files of all instances in the Beijing and Shanghai regions are calculated in two different resource pools.
 
 **Backup space composition**
 Backup files in backup space include automatic data backups, manual data backups, and log backups.
@@ -13,7 +13,6 @@ Total size of backup files in one region = Data backup volume (automatic + manua
 
 **Free backup space**
 TencentDB for SQL Server offers a certain amount of backup space free of charge by region, which is equivalent to the sum of storage spaces of all Basic Edition, High Availability Edition, and Cluster Edition primary instances in a region. For calculation examples, see [Backup Space Calculation Formula](#bfkjjsgs).
-
 >?
 >- Free backup space is only available when you purchase a primary instance.
 >- The backup space can be viewed on the database backup page in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver).
@@ -23,7 +22,7 @@ Backups beyond the free tier (100% disk storage) are pay-as-you-go by region at 
 >?Billable space of less than 1 GB is not billed, and a billable time period of less than one hour is counted as one hour.
 
 ## Billing Schedule for Backup Space
-Billing will officially start at 00:00 on June 1, 2022 for backups beyond the free tier.
+Billing will officially start at 00:00 on July 10, 2022 for backups beyond the free tier.
 
 ## [Backup Space Calculation Formula](id:bfkjjsgs)
 **Free backup space in one region = Sum of the 100% disk storage space (billable space) of all TencentDB for SQL Server instances in the region
@@ -41,6 +40,7 @@ If your data backups reach 800 GB and log backups reach 100 GB in the current ho
 
 ## Backup Lifecycle
 The backups of a running or isolated instance will be billed until it is deactivated.
+
 
 **Pay-as-you-go instance**
 - Backups are subject to change over the instance lifecycle.
@@ -61,10 +61,10 @@ The backups of a running or isolated instance will be billed until it is deactiv
 | All-instance-level backup statistics overview | Not supported. | It is supported and makes it easier for you to view the backup space statistics and trends of all instances in each region under your account, free tier usages, as well as the real-time backup space statistics of each instance, including: <li>Total backups: Displays the statistics and overview of all backups, data backups, and log backups.<br><li>Real-time backup statistics: Displays the real-time size statistics of the backup space of each instance in each dimension. |
 | Isolated instance | Backups cannot be viewed or downloaded. | Backups can be viewed and downloaded. |
 | Single-database backup optimization | 	/ | <li>Databases can be searched for by name.<li>Single-database backups can be sorted by size in ascending or descending order.<li>The size of single-database backup files can be displayed in an aggregated manner. |
-| Backup list optimization | 	/ | <li>Backups can be filtered and viewed by time period, including all, today, past seven days, past 15 days, past 30 days, and custom time period.<li>Backups can be displayed as and searched for by files.</li> |
+| Backup list optimization | 	/ | <li>Backups can be filtered and viewed by time period, including all, today, last 7 days, last 15 days, last 30 days, and custom time period.<li>Backups can be displayed as and searched for by files.</li> |
 
-## Suggestions for Reducing Backup Costs
-- Delete manual backups that are no longer used (on the **Instance Management** > **Backup Management** page in the [TencentDB for SQL Server](https://console.cloud.tencent.com/sqlserver)). 
+## Suggestions for Reducing Backup Costs[](id:JSBFKXJYSERVER)
+- Delete manual backups that are no longer used (on the **Instance Management** > **Backup Management** page in the [TencentDB for SQL Server](https://console.cloud.tencent.com/sqlserver) console). 
 - Reduce the frequency of automatic data backup for non-core businesses (you can adjust the backup cycle and backup file retention period in the console, which should be at least twice a week).
 >?The [rollback feature](https://intl.cloud.tencent.com/document/product/238/7522) relies on the backup cycle and retention period of data backups and log backups, but reducing the frequency and retention period of automatic backups will affect the rollback time range for instance data, you need to configure backup appropriately based on your actual needs.
 >
@@ -77,4 +77,7 @@ The backups of a running or isolated instance will be billed until it is deactiv
 | Archival businesses | Seven days. We recommend you manually back up data based on your actual business needs and delete the backups promptly after use |
 | Testing businesses | Seven days. We recommend you manually back up data based on your actual business needs and delete the backups promptly after use |
 
+## References
+- [Configuring Automatic Backup](https://intl.cloud.tencent.com/document/product/238/45855)
+- [Viewing Backup Space](https://intl.cloud.tencent.com/document/product/238/45850)
 
