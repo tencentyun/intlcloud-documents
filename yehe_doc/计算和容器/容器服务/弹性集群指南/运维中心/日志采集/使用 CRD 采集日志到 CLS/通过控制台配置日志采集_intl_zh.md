@@ -1,11 +1,8 @@
-本文介绍通过控制台方式使用 CRD 配置 EKS 集群的日志采集功能。
-
-
-
+本文介绍使用 CRD 配置 TKEServerless 集群的日志采集功能。
 
 ## 前提条件
 
-登录 [弹性容器服务控制台](https://console.cloud.tencent.com/tke2/ops/list?rid=8)，并为弹性集群开启日志采集功能。操作详情请参见 [开启日志采集](https://intl.cloud.tencent.com/zh/document/product/457/40950)。
+登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/ops/list?rid=8)，并为 Serverless 集群开启日志采集功能。操作详情请参见 [开启日志采集](https://intl.cloud.tencent.com/zh/document/product/457/40950)。
 
 
 
@@ -16,7 +13,7 @@
 
 开启日志采集后，需要配置日志规则，确认日志源、消费端、日志解析方式等。
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择左侧导航栏中的**集群运维** > **[日志规则](https://console.cloud.tencent.com/tke2/ops/list?rid=1)**。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择左侧导航栏中的**日志管理** > **[日志规则](https://console.cloud.tencent.com/tke2/ops/list?rid=1)**。
 2. 在“日志采集”页面上方选择地域和需要配置日志采集规则的 EKS 集群，单击**新建**。如下图所示：
 ![](https://main.qcloudimg.com/raw/38f9678feea9197bd6127a732919f4e4.png)
 3. 在“新建日志采集规则”页面中，选择采集类型，并配置日志源、消费端、日志解析方式。目前采集类型支持 [容器标准输出](#stout) 和 [容器文件路径](#insideDocker)。
@@ -154,7 +151,7 @@
 
 ### 更新日志规则
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择左侧导航栏中的**集群运维** > **[日志规则](https://console.cloud.tencent.com/tke2/ops/list?rid=1)**。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择左侧导航栏中的**日志管理** > **[日志规则](https://console.cloud.tencent.com/tke2/ops/list?rid=1)**。
 2. 在“日志规则”页面中，选择需要更新的日志规则，单击右侧的**编辑收集规则**。如下图所示：
    ![](https://qcloudimg.tencent-cloud.cn/raw/2465a04d72d0cf7bc485755bd11b342f.png)
 3. 根据需求更新相应配置，单击**完成**，完成更新。
