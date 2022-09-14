@@ -22,8 +22,7 @@ The billing modes supported for each billable item are as follows:
 |Video acceleration|√|√|
 |Media AI - content analysis|×|√|
 |Media AI - content recognition|√|√|
-|Copyright protection - source tracking based on digital watermarks|√|√|
-|Copyright protection - DRM playback license|√|√|
+|Copyright protection |√|√|
 |VOD resources used for UGSV SDK|√|√|
 
 
