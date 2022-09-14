@@ -1,4 +1,4 @@
-﻿This document describes different of CWPP protection
+This document describes the pricing of CWPP protection licenses and how a purchase is made.
 
 ## Overview
 
