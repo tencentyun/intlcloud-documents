@@ -2,7 +2,7 @@
 
 ### Applying for trial license
 
-You can apply for a trial license to try out MLVB International. The license is valid for 14 days and can be renewed once (for another 14 days).
+You can apply for a trial license to try out MLVB Professional. The license is valid for 14 days and can be renewed once (for another 14 days).
 
 >! If you renew a trial license within the first 14 days, the license will expire 28 days after the time of license application; if you renew a trial license that has expired once, the renewed license will expire 14 days after renewal.
 > - For example, if you apply for a trial license at 10:28:41 on August 12, 2021, it will expire 14 days later at 10:28:41 on August 26, 2021.
@@ -42,7 +42,7 @@ As shown below, the validity period has been extended.
 
 ### Purchasing official license
 
-1. [Purchase an official license](https://buy.intl.cloud.tencent.com/mlvb) for one-year access to the MLVB International SDK. An official license expires at 00:00:00 the next day after the purchase date a year later. For pricing details, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1071/38114).
+1. [Purchase an official license](https://buy.intl.cloud.tencent.com/mlvb) for one-year access to the MLVB Professional SDK. An official license expires at 00:00:00 the next day after the purchase date a year later. For pricing details, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1071/38114).
 
 >? For example, assume that you purchased an official license at 14:16:52 on December 1, 2021. The license would expire at 00:00:00 on December 2, 2022.
 
