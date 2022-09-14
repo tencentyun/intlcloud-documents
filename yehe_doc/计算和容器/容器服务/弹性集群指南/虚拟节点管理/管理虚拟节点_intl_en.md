@@ -12,7 +12,7 @@ This document describes how to manage super nodes in the serverless cluster on t
 ### Deleting a super node
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
-2. On the list page of clusters, click the desired cluster ID to open the **Deployment** page.
+2. On the management page of clusters, click the serverless cluster ID to open the basic information page.
 3. Click **Super Node** in the left sidebar to open **Super Nodes** list page.
 4. On the list page, click **Remove** on the right side of the selected super node.
 5. Click **OK** to delete the node on the **Delete Node** pop-up window
