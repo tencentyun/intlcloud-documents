@@ -134,7 +134,7 @@ for (int i = 0; i < 10; i++) {
 | topic_name | Topic name, which can be copied under the **`Topic`** tab on the cluster details page in the console. |
 | TAG        | A parameter used to set the message tag.                                       |
 
->?For more information on batch sending or other scenarios, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
+>?For more information on batch sending or other scenarios, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1).
 
 
 ### Step 3. Consume messages
@@ -184,7 +184,7 @@ pullConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
 | secretKey  | Role name, which can be copied on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. |
 | accessKey  | Role token, which can be copied in the **Token** column on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![img](	https://qcloudimg.tencent-cloud.cn/raw/709c03c8959d357a49833f87ed457c77.png) |
 
->?For more consumption mode information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
+>?For more consumption mode information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1).
 
 #### 2. Subscribe to messages
 The subscription modes vary by consumption mode.
@@ -241,4 +241,4 @@ try {
 Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/671cacbb946883f1777c0417e59fe424.png)
 
->?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/)
+>?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1)

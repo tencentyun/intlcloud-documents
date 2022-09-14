@@ -1,3 +1,36 @@
+## 2022年06月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持 SSL 加密</td>
+<td>云数据库 MySQL 支持 SSL 加密，实现加密传输通道建立，提升通信数据的安全性和完整性。</td>
+<td>2022-06-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/48452" target="_blank">设置 SSL 加密</a></td></tr>
+</tbody></table>
+
+## 2022年04月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持智能参数调优</td>
+<td>云数据库 MySQL 支持智能参数调优功能，帮助用户提升数据库的性能。</td>
+<td>2022-04-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47701" target="_blank">智能参数调优</a></td></tr>
+<tr>
+<td>支持 TXRocks 引擎</td>
+<td>云数据库 MySQL 支持 TXRocks 事务型存储引擎，性能与 InnoDB 保持接近，但存储空间相⽐ InnoDB 可节省更多，适合对事务读写性能有要求，且数据存储量⼤的业务。</td>
+<td>2022-04-18</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47015" target="_blank">TXRocks 概述</a></td></tr>
+<tr>
+<td>支持定期备份</td>
+<td>使用定期备份可以实现通过两个周期规划进行备份，对比单周期备份策略更节省成本。</td>
+<td>2022-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37796" target="_blank">备份数据库</a></td></tr>
+</tbody></table>
+
+
 ## 2022年02月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>

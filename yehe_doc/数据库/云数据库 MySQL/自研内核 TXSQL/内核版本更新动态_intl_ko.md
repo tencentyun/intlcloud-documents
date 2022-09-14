@@ -254,8 +254,8 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 ### 20200331
 #### 새로운 기능:
 - 공식 MySQL 5.7.22 버전의 JSON 시리즈 함수를 신규 추가하였습니다.
-- 이커머스 타임 세일 시나리오에 대한 [Hotspot Update](https://intl.cloud.tencent.com/document/product/1035/36037#.E7.83.AD.E7.82.B9.E6.9B.B4.E6.96.B0.E4.BF.9D.E6.8A.A4) 기능을 지원합니다.
-- [SQL Throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81)을 지원합니다.
+- 이커머스 타임 세일 시나리오에 대한 핫스팟 업데이트 기능을 지원합니다.
+- SQL 스로틀링을 지원합니다.
 - 데이터 암호화 기능으로 KMS 사용자 지정 키 암호화를 지원합니다.
 
 #### bug 수정:
@@ -347,6 +347,10 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 비동기화 모드에서 속도 제한 플러그 인을 사용할 수 없는 문제 수정.
 
 ## MySQL 5.6
+### 20220302
+#### Bug 수정:
+- sql_update.cc에서 메모리 유출을 수정했습니다.
+
 ### 20220301
 #### 새로운 기능:
 - 스핀 주기의 동적 구성을 지원합니다. 스핀 주기(0~100)는 동적 매개변수 innodb_spin_wait_pause_multiplier를 통해 동적으로 조정할 수 있습니다.
@@ -394,7 +398,7 @@ innodb_print_dead_lock_loop_info 매개변수를 통해 활성화하고 활성�
 
 ### 20200915
 #### 새로운 기능:
-- [SQL Throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81) 기능을 지원합니다.
+- SQL 스로틀링을 지원합니다.
 
 #### 성능 최적화:   
 - buffer pool 초기화 가속을 최적화하였습니다.

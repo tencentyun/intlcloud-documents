@@ -1,55 +1,6 @@
 This document describes the MySQL kernel version updates. For information on how to upgrade the kernel, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 
 ## MySQL 8.0
-### 20220331
-
-#### Bug fixes
-
-- Fixed the crash caused by dereferencing wild pointers in the thread pool.
-
-### 20220330
-
-#### New features
-
-- Enabled writeset parallel replication by default.
-- Supported extended resource groups to control the I/O, memory utilization, and SQL timeout policy by user.
-- Supported flashback query to query data at any time point within the UNDO time range.
-- Supported RETURNING in a DELETE, INSERT, or REPLACE statement to retrieve the data rows modified by the statement.
-- Supported the GTID replication feature extension in row mode.
-- Supported transaction lock optimization.
-- Enhanced the recycle bin to support TRUNCATE TABLE and automatic cleanup of tables in the recycle bin.
-- Supported parallel DDL to speed up DDL operations for which to create indexes through three-phase parallel operations.
-- Supported quick index column modification.
-- Supported automatic statistics collection and cross-server statistics collection.
-
-#### Performance optimizations
-
-- Optimized the GTID lock conflicts when transactions were committed if `binlog_order_commits` was disabled.
-- Accelerated MySQL startup by changing the InnoDB startup phase from single-threaded creation of Rsegs to multi-threaded creation.
-
-#### Bug fixes
-
-- Fixed the issue where the transaction did not end when the connection was closed after deadlock or lock wait.
-- Fixed the issue where the `innodb_row_lock_current_waits` value was abnormal.
-- Fixed the SQL type error in the audit plugin without USE DATABASE.
-- Fixed the issue where tables smaller than `innodb_async_table_size` were also renamed during async drop of big tables.
-- Fixed the issue with incorrect escape characters in the audit plugin.
-- Fixed the issue of rollback after quick column modification.
-- Fixed the possible crash when `trx_sys close` carried `xa`.
-- Fixed the crash when merging derived tables.
-- Fixed the issue with modifying `binlog_format` after writeset was enabled.
-- Fixed the error (error code: 1032) caused by hash scans with A->B->A->C update on the same row.
-- Fixed the issue where the sort index might be invalid in prepared statement mode.
-- Fixed the issue where the operator that consumed the materialized result might be merged into the returned value path of the materialized operator and result in incorrect comprehension and display of the execution plan.
-- Fixed exceptions in extreme cases for async drop of big tables.
-- Fixed the abnormal error message when setting a SQL filter.
-- Fixed the syntax error reported during stored procedure parsing.
-- Fixed the issue where historical histograms couldn't be applied.
-- Fixed the compatibility issue caused by the role column display in `SHOW SLAVE HOSTS(show replicas)`.
-- Fixed the crash of `Item_in_subselect::single_value_transformer` when the number of columns was incorrect.
-- Fixed the crash caused by memory leaks during cascading update if a subtable contained virtual columns and foreign key columns.
-
-
 ### 20211202
 #### New features
 - Supported quick column modification.
@@ -148,7 +99,7 @@ This document describes the MySQL kernel version updates. For information on how
 
 ### 20200630
 #### New features
-- Supported async drop of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by dropping big tables. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supported async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supported automatic killing of idle tasks to reduce resource conflicts. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supported transparent data encryption (TDE).
 
@@ -159,23 +110,6 @@ This document describes the MySQL kernel version updates. For information on how
 - Fixed the crash caused by phrase search under multi-byte character sets in full-text index.
 
 ## MySQL 5.7
-### 20211230
-
-#### New features
-
-- Supported the official updates of MySQL [5.7.19](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-19.html) to [5.7.36](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-36.html).
-- Supported source-replica buffer pool sync to speed up the performance recovery after HA switch (around 90 seconds faster than that in native mode).
-- Added the backup lock feature to provide lightweight metadata locks to improve the service availability during backup.
-
-#### Performance optimizations
-
-- Made functions related to `utf8/utf8mb4 my_charpos` inline to optimize the performance of UTF_8 functions in read_write scenarios.
-- Upgraded jemalloc to v5.2.1.
-- Optimized file number acquisition during binlog rotation.
-- Optimized semi-sync replica I/O.
-- Optimized hash scan aggregation.
-- Accelerated the startup of crash recovery for large transactions.
-
 ### 20211102
 #### New features
 - Fixed the exception of the third-party data subscription tool caused by subscription to the comparison SQL for internal data consistency during tool usage.
@@ -240,7 +174,7 @@ This document describes the MySQL kernel version updates. For information on how
 - Supported the manual clearing of page cache occupied by log files by using the `posix_fadvise()` function based on the sliding window technique, so as to lower the memory pressure on the operating system and improve instance stability.
 
 #### Performance optimizations
-- Optimized the parallelism of CREATE INDEX: A merge sort is needed in a temp table in the process of creating indexes, which is time-consuming. To solve the issue, the parallel temp-table merge sort algorithm is now supported, reducing the time by more than 50%.
+- Optimized the parallelism of CREATE INDEX: An merge sort is needed in a temp table in the process of creating indexes, which is time-consuming. To solve the issue, the parallel temp-table merge sort algorithm is now supported, reducing the time by more than 50%.
 - Optimized the mechanism of scanning and flushing the dirty pages tracked in the flush list, so as to solve the performance fluctuation issue while creating indexes and thus improve the system stability.
 
 #### Bug fixes
@@ -320,8 +254,8 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 ### 20200331
 #### New features
 - Added the official MySQL 5.7.22 JSON series functions.
-- Supported the hotspot update feature as described in [Real-Time Session](https://intl.cloud.tencent.com/document/product/1035/48638) feature for ecommerce flash sale scenarios.
-- Supported SQL throttling as described in [Real-Time Session](https://intl.cloud.tencent.com/document/product/1035/48638).
+- Supported the real-time session feature for ecommerce flash sale scenarios.
+- Supported SQL throttling.
 - Supported encryption with custom KMS keys.
 
 #### Bug fixes
@@ -360,9 +294,9 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 
 ### 20190203
 #### New features
-- Supported async drop of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by dropping big tables. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supported async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supported CATS lock scheduling.
-- Supported creating and dropping temp tables and CTS syntax in transactions when GTID is enabled. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supported creating and deleting temp tables and CTS syntax in transactions when GTID is enabled. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supported implicit primary keys. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supported users without super privileges to kill sessions of other users by configuring the `cdb_kill_user_extra` parameter (default value: `root@%`).
 - Supported enterprise-grade encryption functions. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
@@ -375,7 +309,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 ### 20180918
 #### New features
 - Supported automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-- Supported automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
+- Supported automatically changing the storage engine from MEMORY to InnoDB: If the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
 - Supported invisible indexes.
 - Supported memory management with jemalloc, which can replace the jlibc memory management module to reduce memory usage and improve allocation efficiency.
   
@@ -400,7 +334,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 #### Bug fixes
 - Fixed the issue where switch failed due to inconsistent checkpoints between `relay_log_pos` and `master_log_pos`.
 - Fixed the crash caused by `Crash on UPDATE ON DUPLICATE KEY`.
-- Fixed the `Invalid escape character in string.` error when a JSON column was imported.
+- Fixed the "Invalid escape character in string." error when a JSON column was imported.
   
 ### 20171130
 #### New features
@@ -409,7 +343,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Supported the thread pool. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 #### Bug fixes
-- Fixed the error of `innodb_buffer_pool_pages_data` parameter overflow by calculating it based on `bytes_data`.
+- Fixed the error of `innodb_buffer_pool_pages_data` overflow by calculating it based on `bytes_data`.
 - Fixed the issue where speed limit plugin became unavailable in async mode.
 
 ## MySQL 5.6
@@ -464,7 +398,7 @@ After this feature is enabled through the parameter `innodb_print_dead_lock_loop
 
 ### 20200915
 #### New features
-- Supported SQL throttling as described in [Real-Time Session](https://intl.cloud.tencent.com/document/product/1035/48638).
+- Supported SQL throttling.
 
 #### Performance optimizations   
 - Optimized the initialization acceleration of buffer pool.
@@ -495,14 +429,14 @@ After this feature is enabled through the parameter `innodb_print_dead_lock_loop
 ### 20190530
 #### Bug fixes
 - Fixed the issue where dirty data might be read in RC mode.
-- Fixed the issue where replica instance replay might fail due to the drop of temp table.
+- Fixed the issue where replica instance replay might fail due to the deletion of temp table.
 - Fixed the error of deadlock under high concurrency.
   
 ### 20190203
 #### New features
-- Supported async drop of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by dropping big tables. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supported async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supported users without super privileges to kill sessions of other users by configuring the `cdb_kill_user_extra` parameter (default value: `root@%`).
-- Supported creating and dropping temp tables and CTS syntax in transactions when GTID is enabled. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supported creating and deleting temp tables and CTS syntax in transactions when GTID is enabled. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
   
 #### Performance optimizations   
 - Optimized the replication and replay of partitioned tables to improve efficiency.
@@ -514,7 +448,7 @@ After this feature is enabled through the parameter `innodb_print_dead_lock_loop
 
 ### 20180915
 #### New features
-- Supported automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
+- Supported automatically changing the storage engine from MEMORY to InnoDB: If the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
 - Supported automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
   
 #### Bug fixes

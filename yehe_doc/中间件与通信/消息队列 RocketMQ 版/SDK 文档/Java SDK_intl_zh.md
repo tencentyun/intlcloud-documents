@@ -134,7 +134,7 @@ for (int i = 0; i < 10; i++) {
 | topic_name | 在控制台集群管理中 **`Topic`** 页签中复制具体 Topic 名称。 |
 | TAG        | 用来设置消息的TAG。                                       |
 
->?批量发送及其他情况可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/)。
+>?批量发送及其他情况可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1)。
 
 
 ### 步骤3：消费消息
@@ -184,7 +184,7 @@ pullConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
 | secretKey  | 角色名称，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制。 |
 | accessKey  | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/709c03c8959d357a49833f87ed457c77.png) |
 
->?更多消费类型可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/) 。
+>?更多消费类型可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1) 。
 
 #### 2. 订阅消息
 根据消费模式不同，订阅方式也有所区别。
@@ -241,4 +241,4 @@ try {
 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，在**集群管理** > **Group** 页面，可查看与 Group 连接的客户端列表，单击操作列的**查看详情**，可查看消费者详情。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/671cacbb946883f1777c0417e59fe424.png)
 
->?上述是对消息的发布和订阅方式的简单介绍。更多操作可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/)。
+>?上述是对消息的发布和订阅方式的简单介绍。更多操作可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1)。

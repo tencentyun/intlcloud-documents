@@ -1,3 +1,36 @@
+## 2022년 06월
+<table>
+<thead><tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=15%>배포일</th><th width=15%>관련 문서</th></tr></thead>
+<tbody>
+<tr>
+<td>SSL 암호화 지원</td>
+<td>TencentDB for MySQL은 SSL 암호화를 지원하여 암호화된 전송 터널을 구축하고 통신 데이터의 보안성 및 완전성을 향상시킵니다.</td>
+<td>2022-06-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/48452" target="_blank">SSL 암호화 설정</a></td></tr>
+</tbody></table>
+
+## 2022년 04월
+<table>
+<thead><tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=15%>배포일</th><th width=15%>관련 문서</th></tr></thead>
+<tbody>
+<tr>
+<td>스마트 매개변수 튜닝 지원</td>
+<td>TencentDB for MySQL은 사용자가 데이터베이스 성능을 향상시키는 데 도움이 되는 스마트 매개변수 튜닝 기능을 지원합니다.</td>
+<td>2022-04-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47701" target="_blank">스마트 매개변수 튜닝</a></td></tr>
+<tr>
+<td>TXRocks 엔진 지원</td>
+<td>TencentDB for MySQL은 TXRocks 트랜잭션 스토리지 엔진을 지원합니다. 성능은 InnoDB와 비슷하지만 InnoDB에 비해 저장 공간을 더 많이 절약할 수 있어 트랜잭션 읽기/쓰기 성능이 필요하고 데이터 저장량이 많은 비즈니스에 적합합니다.</td>
+<td>2022-04-18</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47015" target="_blank">TXRocks 개요</a></td></tr>
+<tr>
+<td>정기 백업 지원</td>
+<td>이 기능은 2개 주기를 예약하여 데이터를 백업할 수 있으므로 단일 주기 백업 정책에 비해 비용이 절감됩니다.</td>
+<td>2022-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37796" target="_blank">데이터베이스 백업</a></td></tr>
+</tbody></table>
+
+
 ## 2022년 02월
 <table>
 <tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=10%>배포일</th><th width=20%>관련 문서</th></tr>

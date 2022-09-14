@@ -2,12 +2,12 @@ TencentDB for MySQL supports quick adjustment of instance specification and allo
 
 ## Instance Disk Space Description
 - To ensure the normal operation of your business, upgrade database instance specification or purchase more disk storage in time when your disk is going to run out of space.
->?You can view disk space on the instance details page in the [MySQL console](https://console.cloud.tencent.com/cdb), or receive disk alarms according to the [Alarm Policies (Cloud Monitor)](https://intl.cloud.tencent.com/document/product/236/8457).
+>?You can view disk space on the instance details page in the [MySQL console](https://console.cloud.tencent.com/cdb), or receive disk alarms by configuring alarms as instructed in [Alarm Policies (Cloud Monitor)](https://intl.cloud.tencent.com/document/product/236/8457).
 - When the data size stored on the instance exceeds capacity limit, the instance is locked and only allows reading data (writing data is not allowed). You need to expand the capacity or delete some of the database tables on console to remove the read-only status.
 - To avoid the database from triggering the lock status repeatedly, a locked instance will be unlocked and allowed for reads and writes only when its remaining available capacity is more than 20% of its total capacity or over 50 GB.
 
 ## Configuration Adjustment Description
-By default, the instance configuration is adjusted in the normal mode, which requires a data migration for the adjustment to complete after you adjust the instance configuration in the console. But if the physical machine where the instance is located has sufficient remaining resources (aka local resources), you can choose the QuickChange mode. The adjustment process is as follows:
+By default, the instance configuration is adjusted in the normal mode, which requires a data migration for the adjustment to complete after you adjust the instance configuration in the console. But if the physical machine where the instance is located has sufficient remaining resources (i.e., local resources), you can choose the QuickChange mode. The adjustment process is as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/8e7702c81886573a459dbf73b2846701.png)
 
 - **Normal mode**: To adjust the instance configuration, instance data needs to be migrated from the original physical machine to a new one. Because adjustment in this mode requires data migration, comparison, and verification, the overall adjustment process will take a long time in case of a huge amount of data. Besides, an instance switch may occur after the adjustment is completed.
@@ -18,8 +18,9 @@ By default, the instance configuration is adjusted in the normal mode, which req
 
 ## Notes
 - A read-only instance with an exclusive VIP enabled does not support QuickChange.
-- If a read-only instance group (RO group) enables the "Remove Delayed RO Instances" feature, read-only instances whose delay exceeds the specified threshold will be removed from the RO group until the number of remaining ones reaches the allowed minimum number. If the number of the remaining available read-only instances in an RO group is less than or equal to the allowed minimum number, none of those instances will support QuickChange.
-- If an RO group only has one read-only instance, the instance does not support QuickChange.
+- If a read-only instance group (read-only group) enables the "Remove Delayed RO Instances" feature, read-only instances with a delay exceeding the specified threshold will be removed from the read-only group until the number of remaining ones reaches the allowed minimum number. If the number of the remaining available read-only instances in a read-only group is less than or equal to the allowed minimum number, none of those instances will support QuickChange.
+- If a read-only group only has one read-only instance, the instance does not support QuickChange.
+- If the kernel minor version of the instance is not the latest when the configuration is adjusted, it will be upgraded to the latest. In this case, enabling the QuickChange mode may cause the instance to restart, as prompted on the **QuickChange** page.
 
 ## [Configuration Adjustment Rules](id:guize)
 - You can adjust the configuration of a TencentDB for MySQL instance and its associated read-only and disaster recovery instances only when they are in normal status (running) and are not executing any task.
@@ -27,7 +28,7 @@ By default, the instance configuration is adjusted in the normal mode, which req
 - The name, access IP, and access port of an instance will remain the same after configuration adjustment.
 - During configuration adjustment, you should avoid such operations as modifying MySQL's global parameters and user password.
 - Data migration may be involved in configuration adjustment. During data migration, the TencentDB for MySQL instance can be accessed normally and the business will not be affected.
-- Instance switchover may be needed after configuration adjustment is completed (i.e., the MySQL instance may be disconnected for seconds). It is recommended that applications be configured with auto reconnection feature and that instance switchover be conducted during the instance maintenance period. For more information, see [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
+- Instance switchover may be needed after configuration adjustment is completed (i.e., the MySQL instance may be disconnected for seconds). We recommend you use applications configured with automatic reconnection feature and conduct the switch during the instance maintenance time. For more information, see [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 - Basic single-node TencentDB for MySQL instances are unavailable for about 15 minutes in the process of configuration adjustment. We recommend you adjust instance configuration during off-peak hours.
 
 ## Instance Specification and Storage Table
@@ -119,7 +120,7 @@ By default, the instance configuration is adjusted in the normal mode, which req
 <td>90-core 720000 MB</td><td>150000</td></tr>
 </tbody></table>	
 
-## Adjusting Instance Configuration in Console
+## Adjusting the Instance Configuration in the Console
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), locate the target instance in the instance list, and select **More** > **Adjust Configurations** in the **Operation** column.
 2. In the pop-up window, select the target configuration and click **Submit**.
 >?
@@ -130,7 +131,7 @@ By default, the instance configuration is adjusted in the normal mode, which req
 >
 ![](https://main.qcloudimg.com/raw/ef2bf519dabe88cb23b9c73993602b9b.png)
 
-## Adjusting Instance Configuration Through API
+## Adjusting the Instance Configuration Through an API
 You can adjust the instance configuration using the `UpgradeDBInstance` API. For more information, see [UpgradeDBInstance](https://intl.cloud.tencent.com/document/product/236/15876).
 
 ## FAQs
@@ -146,7 +147,7 @@ It may be because you select **During maintenance time** as the **Switch Time** 
 To switch immediately, you can locate the target instance in the instance list and click **Switch Now** in the **Operation** column. The switch causes a short disconnection lasting for just seconds. Ensure that your business has a reconnection mechanism.
 
 #### How long does it take to upgrade instance configuration?
-The time it takes depends on the instance's data volume and the read requests to replicate data.
+The time it takes depends on the instance's data volume and data replication speed.
 Instances can still be accessed during the upgrade, but a VIP switch causes a short disconnection lasting for just seconds after the upgrade completes.
 
 #### How do I view the progress of instance configuration adjustment?
@@ -179,7 +180,8 @@ APIs do not support QuickChange for the time being, so instance configuration ca
 The `innodb_buffer_pool_size` parameter will be modified according to the configuration changes.
 
 #### Will database parameters be modified during database configuration adjustment in the QuickChange mode?
-It is the same as the normal mode. In the QuickChange mode, some parameters will be modified according to the configuration changes.
+It is the same as the normal mode. In the QuickChange mode, some parameters will be modified in response to the configuration changes.
 
 #### What is the difference between QuickChange mode and normal mode?
 The QuickChange mode requires no data migration, so it takes less time to adjust instance configuration.
+

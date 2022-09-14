@@ -8,7 +8,7 @@ Cloud Object Storage(COS)는 타사 클라우드 스토리지 플랫폼의 데�
 | [MSP](#msp)                                     | 시각화 페이지 작업 | 기본 설정 사용       | 전역 통합   | 활성화           |
 
 
-이 플랫폼은 데이터 마이그레이션 진행 상황, 파일 일치성 검증, 실패 시 재전송, 체크포인트 재시작 등의 기능을 지원하여 사용자의 데이터 마이그레이션에 대한 기본적인 수요를 충족합니다. 그러나 해당 두 마이그레이션 방법은 위와 같이 인터랙티브 방식과 기능적 특징 등의 방면으로 차이점이 있습니다. 사용자는 해당 차이점을 비교하여 가장 적합한 방식을 선택해 데이터 마이그레이션을 구현할 수 있습니다.
+이 플랫폼은 기본 마이그레이션 요구 사항을 충족할 수 있는 데이터 마이그레이션 진행률 조회, 파일 일관성 확인, 실패 후 다시 업로드, 체크포인트 업로드 재개 및 기타 기능을 지원합니다.
 
 
 ## 마이그레이션 실행
@@ -34,7 +34,7 @@ Migration Service Platform(MSP)은 여러 마이그레이션 툴을 통합하여
 - UCLOUD UFile 마이그레이션
 - KS Cloud KS3 마이그레이션
 - Baidu Cloud BOS 마이그레이션
-- [AWS S3 마이그레이션](https://intl.cloud.tencent.com/document/product/1036/32522)
+- [AWS S3 Migration Tutorial](https://intl.cloud.tencent.com/document/product/1036/32522)
 
 #### 작업 팁
 

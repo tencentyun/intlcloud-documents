@@ -1,3 +1,36 @@
+## June 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported SSL encryption</td>
+<td>TencentDB for MySQL supports SSL encryption to create encrypted data transfer channels and thus improve the security and integrity of communication data.</td>
+<td>2022-06-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/48452" target="_blank">Setting SSL Encryption</a></td></tr>
+</tbody></table>
+
+## April 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported intelligent parameter tuning</td>
+<td>TencentDB for MySQL supports the intelligent parameter tuning feature to help you improve the database performance. </td>
+<td>2022-04-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47701" target="_blank">Intelligent Parameter Tuning</a></td></tr>
+<tr>
+<td>Supported the TXRocks engine</td>
+<td>TencentDB for MySQL supports the TXRocks transactional storage engine, which has a performance comparable to that of InnoDB but requires a much smaller storage space. It is suitable for businesses with a large data volume and high requirements for the transactional read/write performance.</td>
+<td>2022-04-18</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47015" target="_blank">Overview</a></td></tr>
+<tr>
+<td>Supported archive backup</td>
+<td>You can use the archive backup feature to back up data by scheduling two cycles, which reduces the costs compared with a single-cycle backup policy.</td>
+<td>2022-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37796" target="_blank">Backing up Databases</a></td></tr>
+</tbody></table>
+
+
 ## February 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
