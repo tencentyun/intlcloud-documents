@@ -1,18 +1,22 @@
-## Overview
+## Use Cases
 
-Cross-bucket replication enables you to replicate objects from a source bucket to a destination bucket. This feature is well suited for use cases such as remote disaster recovery, industry compliance, data migration and backup, access latency reduction, and access to the data located in different regions.
+Cross-bucket replication enables you to replicate objects from a source bucket to a destination bucket. This feature is well suited for use cases such as remote disaster recovery, industry compliance, data migration and backup, access latency reduction, and access to data located in different regions.
+
+Special use cases:
+- Multi-region backup: You can configure multiple replication rules for the source bucket to replicate objects to buckets in different regions for multi-region backup and disaster recovery.
+- Two-way replication: You can create replication rules in the source and destination buckets respectively to implement two-way data replication.
 
 >!Once versioning is enabled, you can create multiple versions for any new object uploaded. Each of these versions occupies your storage capacity and is billed for storage equally.
 
-## Usage
+## Directions
 
-### Using COS console
+### Using the COS console
 
-For information on how to configure a cross-bucket replication rule in the COS console, see [Setting Cross-Bucket Replication](https://intl.cloud.tencent.com/document/product/436/19235).
+You can configure a cross-bucket replication rule in the COS console as instructed in [Setting Cross-Bucket Replication](https://intl.cloud.tencent.com/document/product/436/19235).
 
-### Using REST APIs
+### Using RESTful APIs
 
-Configure and manage your cross-bucket replication rules through REST APIs as described in the following API documentation:
+You can configure and manage cross-bucket replication rules through RESTful APIs as described in the following API documents:
 
 - [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) 
 - [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) 
@@ -20,13 +24,13 @@ Configure and manage your cross-bucket replication rules through REST APIs as de
 
 ### Using SDKs
 
-Directly call the cross-bucket replication method in the SDKs. For more information, see the SDK documentation for the corresponding programming language below:
+You can directly call the cross-bucket replication method in SDKs. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [Android SDK](https://intl.cloud.tencent.com/document/product/436/36196)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31519)
-- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35272)
-- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/12301)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/43245)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/30601)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37696)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/10199)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35805)
