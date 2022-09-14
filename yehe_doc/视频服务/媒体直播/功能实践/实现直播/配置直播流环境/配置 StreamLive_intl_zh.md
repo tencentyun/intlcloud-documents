@@ -24,7 +24,7 @@
 
 6. 在**Output Group Setting**中进行该频道的转码及输出配置：
 - 首先配置基本信息，为**Output Group** 命名，输出类型按照协议和形式不同分为三组六项，本文选择HLS_STREAM_PACKAGE 类型，在下方**Destination Information**中填入刚才记录的**StreamPackage Channel ID**，即可快速打通直播转码及包装的工作流程，简化配置工作。
-![](https://qcloudimg.tencent-cloud.cn/raw/04e6469dc287247e50bf0ff198b04c78.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c65352a34d5b860552f989838a6b0b2f.png)
 - 进一步完善**Segment Information**切片信息，包括切片类型、切片时长、切片数量等。其中针对一些特殊的设备，如AppleTV，若存在H.265的播放需求，则这里的切片类型Segment Type 需要选为fmp4，同时H.265打包类型Packing Type 需要选为hvc1。
 ![](https://qcloudimg.tencent-cloud.cn/raw/407322c8d120feec4f2fab998f33e4a6.png)
 
