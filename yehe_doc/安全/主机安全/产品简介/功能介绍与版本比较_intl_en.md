@@ -8,8 +8,8 @@ The features of different CWPP editions are listed below.
 <th width="10%">Feature</th>
 <th width="30%">Description</th>
 <th width="13%">CWPP Basic<br>Free of charge</th>
-<th width="13%">CWPP Pro<br>Monthly subscription: 12 USD/month</th>
-<th width="13%">CWPP Ultimate<br>Monthly subscription: 27 USD/month</th>
+<th width="13%">CWPP Pro<br>Monthly subscription: 12 USD/license/month</th>
+<th width="13%">CWPP Ultimate<br>Monthly subscription: 27 USD/license/month</th>
 </tr>
 </tr>
 </thead>
