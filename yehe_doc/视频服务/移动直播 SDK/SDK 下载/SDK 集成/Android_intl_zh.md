@@ -18,7 +18,7 @@
 <dx-codeblock>
 :::  jar
 dependencies {
-	implementation 'com.tencent.liteav:LiteAVSDK_International:latest.release'
+	implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release'
 }
 ::: 
 </dx-codeblock>
@@ -26,7 +26,7 @@ dependencies {
 <dx-codeblock>
 :::  jar
 dependencies {
-	implementation 'com.tencent.liteav:LiteAVSDK_International:latest.release@aar'
+	implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release@aar'
 }
 ::: 
 </dx-codeblock>
@@ -53,7 +53,7 @@ defaultConfig {
 4. 添加 LiteAVSDK 依赖，在 app/build.gradle 中，添加引用 aar 包的代码。
     ![](https://qcloudimg.tencent-cloud.cn/raw/ad7f3e2ce465c7d47f7d71f020cb02a2.png)
 ```
-implementation(name:'LiteAVSDK_International_8.7.10102', ext:'aar')
+implementation(name:'LiteAVSDK_Professional_8.7.10102', ext:'aar')
 ```
 5. 在 `app/build.gradle` 的 defaultConfig 中，指定 App 使用的 CPU 架构（目前 LiteAVSDK 支持 armeabi 、armeabi-v7a 和 arm64-v8a）。
 ```
@@ -68,7 +68,7 @@ defaultConfig {
 ## 集成 SDK（jar）
 如果您不想集成 aar 库，也可以通过导入 jar 和 so 库的方式集成 LiteAVSDK：
 
-1. 下载 [LiteAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。在 SDK 目录下找到 `LiteAVSDK_International_xxx.zip`（其中 `xxx` 为 LiteAVSDK 的版本号）：
+1. 下载 [LiteAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。在 SDK 目录下找到 `LiteAVSDK_Professional_xxx.zip`（其中 `xxx` 为 LiteAVSDK 的版本号）：
     ![](https://main.qcloudimg.com/raw/aae5879bccd31e8c082eebc24aa4ff7c.png)
     解压后得到 libs 目录，里面主要包含 jar 文件和 so 文件夹，文件清单如下：
     ![](https://main.qcloudimg.com/raw/e916aaddf844785991dc25f78776d773.png)
