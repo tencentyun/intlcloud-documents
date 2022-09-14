@@ -14,17 +14,17 @@ MLVB Professional integrates multiple core audio/video features of Tencent Cloud
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_ios_international") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_International_iOS_latest.zip">Download</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_ios_international") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">Download</a></td>
       <td style="text-align:center">Yes</td>
       <td style="text-align:center">4.08 MB (arm64)</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">Document</a></td>
+      <td style="text-align:center"><a href="https://www.tencentcloud.com/document/product/1071/41933">Document</a></td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_android_international") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_International_Android_latest.zip">Download</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_android_international") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">Download</a></td>
       <td style="text-align:center">Yes</td>
       <td style="text-align:center">jar: 1.5 MB<br> so (armeabi): 6.5 MB<br> so (armv7): 6.1 MB<br>so (arm64): 7.3 MB</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">Document</a></td>
+      <td style="text-align:center"><a href="https://www.tencentcloud.com/document/product/1071/41933">Document</a></td>
    </tr>
 </table>
 
