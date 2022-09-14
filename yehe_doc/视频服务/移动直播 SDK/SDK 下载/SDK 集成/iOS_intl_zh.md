@@ -31,7 +31,7 @@ pod init
   platform :ios, '9.0'
   
   target 'App' do
-  pod 'TXLiteAVSDK_International', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_International.podspec'
+  pod 'TXLiteAVSDK_Professional', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
   end
 :::
 </dx-codeblock>
@@ -42,7 +42,7 @@ pod init
    source 'https://github.com/CocoaPods/Specs.git'
    
    target 'App' do
-   pod 'TXLiteAVSDK_International'
+   pod 'TXLiteAVSDK_Professional'
    end
 :::
 </dx-codeblock>
@@ -66,7 +66,7 @@ pod 命令执行完后，会生成集成了 SDK 的 `.xcworkspace` 后缀的工�
 ![](https://qcloudimg.tencent-cloud.cn/raw/5f0a196dd78a7858fca4f098bf3e3591.png)
 3. 单击 **Link Binary with Libraries** 项展开，单击底下的【+】添加依赖库。
 ![](https://qcloudimg.tencent-cloud.cn/raw/2e5db146788005de31337cd266315406.png)
-4. 依次添加所下载的 `TXLiteAVSDK_International.framework` 及其所需依赖库 :
+4. 依次添加所下载的 `TXLiteAVSDK_Professional.framework` 及其所需依赖库 :
 ```
 libz.tbd
 libc++.tbd
@@ -90,11 +90,11 @@ OpenAL.framework
 项目代码中使用 SDK 有两种方式：
 - **方式一：** 在项目需要使用 SDK API 的文件里，添加模块引用。
 ```
-@import TXLiteAVSDK_International;
+@import TXLiteAVSDK_Professional;
 ```
 - **方式二：**在项目需要使用 SDK API 的文件里，引入具体的头文件。
 ```
-#import "TXLiteAVSDK_International/TXLiteAVSDK.h"
+#import "TXLiteAVSDK_Professional/TXLiteAVSDK.h"
 ```
 
 ## 给 SDK 配置 License 授权
@@ -104,7 +104,7 @@ OpenAL.framework
 在您的 App 调用 LiteAVSDK 的相关功能之前（建议在 `- [AppDelegate application:didFinishLaunchingWithOptions:]` 中）进行如下设置：
 
 ```objc
-@import TXLiteAVSDK_International;
+@import TXLiteAVSDK_Professional;
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString * const licenceURL = @"<获取到的licenseUrl>";
