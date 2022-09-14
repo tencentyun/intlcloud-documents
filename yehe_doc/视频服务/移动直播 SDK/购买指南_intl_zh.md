@@ -7,7 +7,7 @@
 
 ### 直播 License 授权费
 
-直播 SDK 国际版 License 用于解锁直播 SDK 国际版在 iOS 和 Android 上的使用权限。 
+直播 SDK 专业版 License 用于解锁直播 SDK 专业版在 iOS 和 Android 上的使用权限。 
 
 >! 本产品属于国际站包年预付费产品，**新用户首次下单购买前需要联系产品或者 [联系商务](https://intl.cloud.tencent.com/contact-sales) 添加白名单进行开白**，否则可能导致购买失败。详细购买流程请参见 [新增与续期 License](https://intl.cloud.tencent.com/document/product/1071/38546) 。
 
@@ -15,13 +15,13 @@
 
 | 计费类型                                   | 价格（美元/年） |
 | ------------------------------------------ | --------------- |
-| 直播 SDK 国际版 License<br>有效期：1年 | 699             |
+| 直播 SDK 专业版 License<br>有效期：1年 | 699             |
 
 #### 计费说明
 
-- 每个账号可**免费申请1次**国际版 License 进行测试体验产品功能，首次申请会先提供14天有效期，可在控制台中再续期14天，共计28天。您可以现在就通过 [云直播控制台](https://console.cloud.tencent.com/live/license) 注册账号，参照 [License 指引](https://intl.cloud.tencent.com/document/product/1071/38546) 开通体验。
-- **每个直播 SDK 国际版 License 可以绑定一个 iOS 包名（Bundle ID）和一个 Android 包名（Package Name），不区分业务环境**。若有多个包名需要接入，需购买对应数量的正式国际版 License 进行绑定。
-- 国际版 License 有效期自购买日起计算，可以用于绑定新的包名，或者替换已经绑定包名的直播 SDK 国际版 License，替换后该包名更新为新直播 SDK 国际版 License 的有效期，原绑定的直播 SDK 国际版 License 被替换后为未绑定状态，有效期不变。
+- 每个账号可**免费申请1次**专业版 License 进行测试体验产品功能，首次申请会先提供14天有效期，可在控制台中再续期14天，共计28天。您可以现在就通过 [云直播控制台](https://console.cloud.tencent.com/live/license) 注册账号，参照 [License 指引](https://intl.cloud.tencent.com/document/product/1071/38546) 开通体验。
+- **每个直播 SDK 专业版 License 可以绑定一个 iOS 包名（Bundle ID）和一个 Android 包名（Package Name），不区分业务环境**。若有多个包名需要接入，需购买对应数量的正式专业版 License 进行绑定。
+- 专业版 License 有效期自购买日起计算，可以用于绑定新的包名，或者替换已经绑定包名的直播 SDK 专业版 License，替换后该包名更新为新直播 SDK 专业版 License 的有效期，原绑定的直播 SDK 专业版 License 被替换后为未绑定状态，有效期不变。
 
 ### 云直播服务
 
@@ -29,7 +29,7 @@
 
 ## 退款说明
 
-直播 SDK 国际版 License 不支持退款。
+直播 SDK 专业版 License 不支持退款。
 
 ## 欠费停服说明
 
