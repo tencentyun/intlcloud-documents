@@ -1,17 +1,17 @@
-This document describes how to manage super nodes in the elastic cluster on the TKE console.
+This document describes how to manage super nodes in the serverless cluster on the TKE console.
 
 
 
 ## Prerequisites
 
-- Please ensure the elastic cluster has been created.
+- Please ensure the serverless cluster has been created.
 - You have known [Notes on Scheduling Pod to Super Node](https://intl.cloud.tencent.com/zh/document/product/457/39760).
 
 
 
 ### Deleting a super node
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Elastic Container** > **Elastic Cluster** in the left sidebar to go to the list page of elastic clusters.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the list page of clusters, click the desired cluster ID to open the **Deployment** page.
 3. Click **Super Node” in the left sidebar to open **Super Nodes** list page.
 4. On the list page, click **Remove** on the right side of the selected super node.
@@ -25,16 +25,16 @@ This document describes how to manage super nodes in the elastic cluster on the 
 ### Managing a super node
 
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Elastic Container** > **Elastic Cluster** in the left sidebar to go to the list page of elastic clusters.
-2. On the list page of clusters, click the desired cluster ID to open the **Deployment** page.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
+2. On the management page of clusters, click the serverless cluster ID to open the basic information page.
 3. Click **Super Node” in the left sidebar to open **Super Nodes** list page.
 5. Click the super node name to open its details page. You can manage the Pods on the super node, and view super node events, YAML and other information.
 
 
 ### Modifying configuration of a super node
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Elastic Container** > **Elastic Cluster** in the left sidebar to go to the list page of elastic clusters.
-2. On the list page of clusters, click the desired cluster ID to open the **Deployment** page.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
+2. On the management page of clusters, click the serverless cluster ID to open the basic information page.
 3. Click **Super Node” in the left sidebar to open **Super Nodes** list page.
 4. Select the desired node, and click **Edit Label & Taint** on the right side of the super node.
 5. In the **Modify Super Node Label & Taint** pop-up, modify the Label&Taint configuration of the super node.
