@@ -95,7 +95,7 @@ TencentDB for SQL Server is billed on a pay-as-you-go basis.
 <th>Beijing, Shanghai, Guangzhou, Nanjing</th>
 <th>Hong Kong (China)</th></tr>
 <tbody>
-<tr><td>Per GB</td><td>0.0001296</td><td>0.000324</td></tr>
+<tr><td>Per GB</td><td>0.0390528</td><td>0.0783</td></tr>
 </tbody></table>
 
 ## Storage Space (Disk Capacity) Pricing for a Read-Only Instance
