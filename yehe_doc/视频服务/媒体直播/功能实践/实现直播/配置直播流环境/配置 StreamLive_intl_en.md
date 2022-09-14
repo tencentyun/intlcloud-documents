@@ -24,7 +24,7 @@ We will show you how to configure security groups, inputs, and channels (require
 
 6. In the **Output Group Setting** step, configure transcoding templates and outputs for the channel.
 - For **Basic Information**, enter an output group name and select an output group type (two protocols and three output types are supported). In the **Destination Information** area, enter the **StreamPackage Channel ID** you noted previously. This allows you to quickly implement transcoding and packaging for your live streams.
-![](https://qcloudimg.tencent-cloud.cn/raw/04e6469dc287247e50bf0ff198b04c78.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c65352a34d5b860552f989838a6b0b2f.png)
 - You can also specify the **Segment Information** on this page, including the segment type, segment duration, and segment number. For some devices, such as Apple TV, to play H.265-encoded videos, you need to select **fmp4** as the **Segment Type** and **hvc1** as the **Packaging Type**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/407322c8d120feec4f2fab998f33e4a6.png)
 
