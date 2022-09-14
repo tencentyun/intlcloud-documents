@@ -33,13 +33,12 @@
 >- 使用其中的移动直播请购买  [直播 SDK 专业版 License](https://intl.cloud.tencent.com/document/product/1071/38114)。
 >- 使用其中的实时音视频请购买 [实时音视频套餐包](https://intl.cloud.tencent.com/document/product/647/34610)。
 >- 在使用 MLVB SDK时，您需要先设置相关环境。相关示例代码如下：
-
-Android：
-```
-V2TXLivePremier.setEnvironment("GDPR");
-```
-iOS：
-```
-[V2TXLivePremier setEnvironment:@"GDPR"];
-```
+>Android：
+>```
+>V2TXLivePremier.setEnvironment("GDPR");
+>```
+>iOS：
+>```
+>[V2TXLivePremier setEnvironment:@"GDPR"];
+>```
 
