@@ -7,21 +7,21 @@ You must activate CSS to use the MLVB SDK. You may be charged the following fees
 
 ### MLVB License Fee
 
-You need an MLVB International license to access the MLVB Professional SDK on iOS and Android. 
+You need an MLVB Professional license to access the MLVB Professional SDK on iOS and Android. 
 
->! MLVB International is an annual subscription-based service. **For first-time purchase, you need to [contact sales](https://intl.cloud.tencent.com/contact-sales) to add your account to the allowlist.** For detailed directions, see [New License and Renewal](https://intl.cloud.tencent.com/zh/document/product/1071/38546).
+>! MLVB Professional is an annual subscription-based service. **For first-time purchase, you need to [contact sales](https://intl.cloud.tencent.com/contact-sales) to add your account to the allowlist.** For detailed directions, see [New License and Renewal](https://intl.cloud.tencent.com/zh/document/product/1071/38546).
 
 #### Pricing
 
 | Billable Item                                   | Price (USD/Year) |
 | ------------------------------------------ | --------------- |
-| MLVB International license<br>Validity period: 1 year | 699             |
+| MLVB Professional license<br>Validity period: 1 year | 699             |
 
 #### Notes
 
-- Each account can **apply for 1 free trial license** to try out MLVB International. A trial license is valid for 14 days, after which you can renew the license in the console for another 14 days. In other words, you can use the trial license for up to 28 days. Sign up for an account in the [CSS console](https://console.cloud.tencent.com/live/license) now and follow the directions in [License User Guide](https://intl.cloud.tencent.com/document/product/1071/38546) to try out MLVB.
-- **Each MLVB International license can be bound to 1 iOS bundle ID and 1 Android package name, whether you use it in the development or production environment.** If you have multiple projects that need to use the MLVB SDK, you have to purchase multiple licenses.
-- An MLVB International license becomes valid from the day of purchase and can be bound to a new project (bundle ID/package name) or replace an existing MLVB International license. After replacement, the validity period of the new license will apply to the project in question. The replaced license will be unbound from the project and its validity period will remain unchanged.
+- Each account can **apply for 1 free trial license** to try out MLVB Professional. A trial license is valid for 14 days, after which you can renew the license in the console for another 14 days. In other words, you can use the trial license for up to 28 days. Sign up for an account in the [CSS console](https://console.cloud.tencent.com/live/license) now and follow the directions in [License User Guide](https://intl.cloud.tencent.com/document/product/1071/38546) to try out MLVB.
+- **Each MLVB Professional license can be bound to 1 iOS bundle ID and 1 Android package name, whether you use it in the development or production environment.** If you have multiple projects that need to use the MLVB SDK, you have to purchase multiple licenses.
+- An MLVB Professional license becomes valid from the day of purchase and can be bound to a new project (bundle ID/package name) or replace an existing MLVB Professional license. After replacement, the validity period of the new license will apply to the project in question. The replaced license will be unbound from the project and its validity period will remain unchanged.
 
 ### CSS
 
@@ -29,7 +29,7 @@ If you use the MLVB SDK together with CSS, you will also be charged CSS basic se
 
 ## Refunds
 
-MLVB International does not allow refunds.
+MLVB Professional does not allow refunds.
 
 ## Overdue Payments
 
