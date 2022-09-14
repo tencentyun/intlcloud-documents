@@ -12,7 +12,7 @@ This document only describes how to add a custom acceleration domain name and en
 3. Click **Domains and Transfer** > **Custom CDN Acceleration Domain** on the left, click **Add Domain**, and configure the following options:
 >? If you have enabled **Custom Domain** in the legacy console, you will see **Custom Domain** instead of **Custom CDN Acceleration Domain** displayed in the current console.
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/6d05c90f04b276e21df88135af93f917.png)
+![](https://main.qcloudimg.com/raw/1278367aed8eada850c00fa4d5e18a4b.png)
   - **Domain Name**: Enter the target custom domain name (such as `www.example.com`). Make sure that an ICP filing has been obtained and a CNAME record has been configured at the DNS service provider for the entered domain. For more information, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121). If the custom CDN acceleration domain you are connecting is in the following situations, you need to verify your domain ownership as instructed in [Domain Name Ownership Verification](https://intl.cloud.tencent.com/document/product/228/42693).
      - The domain name is being connected for the first time.
      - The domain name has been connected by another user.
