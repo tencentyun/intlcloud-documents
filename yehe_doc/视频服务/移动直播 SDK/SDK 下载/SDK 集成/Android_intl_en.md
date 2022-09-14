@@ -18,7 +18,7 @@ Open your project with Android Studio and modify the `build.gradle` file as desc
 <dx-codeblock>
 :::  jar
 dependencies {
-	implementation 'com.tencent.liteav:LiteAVSDK_International:latest.release'
+	implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release'
 }
 ::: 
 </dx-codeblock>
@@ -26,7 +26,7 @@ Or
 <dx-codeblock>
 :::  jar
 dependencies {
-	implementation 'com.tencent.liteav:LiteAVSDK_International:latest.release@aar'
+	implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release@aar'
 }
 ::: 
 </dx-codeblock>
@@ -53,7 +53,7 @@ If you have problem accessing Maven Central, you can manually download the SDK a
 4. Add the LiteAVSDK dependency and, in `app/build.gradle`, add code that references the AAR file.
     ![](https://qcloudimg.tencent-cloud.cn/raw/ad7f3e2ce465c7d47f7d71f020cb02a2.png)
 ```
-implementation(name:'LiteAVSDK_International_8.7.10102', ext:'aar')
+implementation(name:'LiteAVSDK_Professional_8.7.10102', ext:'aar')
 ```
 5. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application. Currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a.
 ```
@@ -68,7 +68,7 @@ defaultConfig {
 ## Integrating the SDK (JAR)
 If you do not want to import the AAR library, you can also integrate LiteAVSDK by importing JAR and SO libraries.
 
-1. Download [LiteAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) and decompress the file. In the SDK directory, find `LiteAVSDK_International_xxx.zip` (`xxx` indicates the version number of LiteAVSDK).
+1. Download [LiteAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) and decompress the file. In the SDK directory, find `LiteAVSDK_Professional_xxx.zip` (`xxx` indicates the version number of LiteAVSDK).
     ![](https://main.qcloudimg.com/raw/aae5879bccd31e8c082eebc24aa4ff7c.png)
     Decompress the file, and you will find a `libs` directory that contains a JAR file and several SO folders, as shown below:
     ![](https://main.qcloudimg.com/raw/e916aaddf844785991dc25f78776d773.png)
