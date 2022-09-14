@@ -6,7 +6,7 @@
 ## Tool and version descriptions
 
 - Migration tool: [Siphon](https://github.com/imneov/ssdb-port). It applies to all SSDB kernel versions.
-- If SSDB involves big keys or over 100 million keys, you need to use the modified version [Siphon v2](https://tendis-public-1258272208.cos.ap-guangzhou.myqcloud.com/siphon_v2?_ga=1.232745567.178482833.1609230100) to increase the data sync efficiency.
+- If SSDB involves big keys or over 100 million keys, you need to [submit ticket](https://console.tencentcloud.com/workorder/category) to obtain the modified Siphon V2 version to improve data synchronization efficiency 
 
 > ?The modified tool solves the problem of inefficiency of the native edition in data sync. In particular, it increases the efficiency in syncing big keys such as hashes and sorted sets (zsets) by about 12 times.
 
