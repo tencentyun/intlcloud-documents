@@ -31,4 +31,15 @@ MLVB Professional integrates multiple core audio/video features of Tencent Cloud
 >? Different authorization is required to use different features of MLVB Professional:
 >- To use MLVB features, you must purchase an [MLVB Professional license](https://intl.cloud.tencent.com/document/product/1071/38114).
 >- To use TRTC features, you must purchase a [TRTC package](https://intl.cloud.tencent.com/document/product/647/34610).
+>- Before you use the MLVB SDK, you need to set up the GDPR environment:
+
+Android：
+```
+V2TXLivePremier.setEnvironment("GDPR");
+```
+iOS：
+```
+[V2TXLivePremier setEnvironment:@"GDPR"];
+```
+
 
