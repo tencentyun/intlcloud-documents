@@ -1,12 +1,11 @@
-## Overview
-Elastic Kubernetes Service (EKS) collects and displays metrics for clusters, workloads, pods, and containers.
+TKE Serverless Cluster collects and displays metrics for clusters, workloads, pods, and containers.
 
 ## Prerequisites
-An elastic cluster has been created and is in the Running state. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/34048).
+An TKE Serverless cluster has been created and is in the Running state. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/34048).
 
 ## Procedure
 1. Log in to the TKE console and click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar.
-2. On the **Elastic Cluster** page that appears, click the ID of the cluster that you want to manage.
+2. On the **Cluster Management** page that appears, click the ID of the TKE Serverless cluster.
 3. On the cluster resource management page, view the metrics and configure alarms for them. For more information, see the following documents:
  - [Viewing Metrics](https://intl.cloud.tencent.com/document/product/457/30689)
  - [Setting Alarms](https://intl.cloud.tencent.com/document/product/457/30690)
