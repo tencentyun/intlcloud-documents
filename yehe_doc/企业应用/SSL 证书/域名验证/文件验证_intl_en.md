@@ -1,16 +1,16 @@
 
 ## Overview
-This document describes how to validate a domain when you apply for a certificate or add a domain in the certificate management console and the domain validation mode is file validation.
+This document describes how to validate a domain when you apply for a certificate or add a domain in the SSL Certificate Service console and the domain validation mode is file validation.
 
 ## Validation Rules
-### Domain name validation rules
+### Domain validation rules
 During file validation, pay attention to the following:
 >!
+>- Due to changes of the policies for SSL certificate domain validation, Tencent Cloud discontinued the file validation mode for wildcard certificates on **November 21, 2021**. For more information, see [Domain Ownership Validation Policy Update](https://intl.cloud.tencent.com/document/product/1007/40857).
+- If the domain that you apply for is a primary domain, **www** must also be validated. For example, if the domain applied for is `tencent.com`, `www.tencent.com` must also be validated.
+>- If the domain that you apply for contains **www**, the domain name following **www** must also be validated, regardless of the domain levels. For example, if the target domain is `www.a.tencent.com`, `a.tencent.com` must also be validated.
+>- If the domain that you apply for does not contain **www** and is not a primary domain, only the current domain needs to be validated. For example, if the target domain is `cloud.tencent.com`, only `cloud.tencent.com` needs to be validated.
 >
->- Due to SSL certificate domain validation policy changes, Tencent Cloud discontinued the file validation mode for wildcard certificates on **November 21, 2021**. For more information, please see [Domain Validation Policy Update](https://intl.cloud.tencent.com/document/product/1007/40857).
->- If the domain that you apply for is a primary domain, **www** must also be validated. For example, if the domain applied for is `tencent.com`, `www.tencent.com` must also be validated.
->- If the domain that you apply for contains **www**, the domain name following **www** must also be validated, regardless of the domain levels. For example, if the domain applied for is `www.a.tencent.com`, `a.tencent.com` must also be validated.
->- If the domain that you apply for does not contain **www** and is not a primary domain, only the current domain needs to be validated. For example, if the domain applied for is `cloud.tencent.com`, only `cloud.tencent.com` needs to be validated.
 
 ### CA validation rules
 - During DNS query, you must recursively query the authoritative NS server of each domain on the authoritative root server, and then query the corresponding A, AAAA, or CNAME records from the NS server.
@@ -27,10 +27,9 @@ During file validation, pay attention to the following:
 1. Log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview).
 2. Select a certificate in the **Validating** state. On the **Validate Domain** page displayed, follow instructions on the page to complete validation within a specific period of time.
 
-
 ### Step 2. Add a file record
 1. Log in to the server and make sure that the domain name points to the server and the corresponding website is enabled.
->?If your domain name is hosted with Tencent Cloud, point the domain name to your server. For more information, please see **A Record**.
+>? If your **DNS Service Provider** is Tencent Cloud, for how to point the domain to your server, see [A Record](https://cloud.tencent.com/document/product/302/3449).
 >
 2. Create the specified file in the root directory of the website, including the file directory, name, and content.
 >?
@@ -41,13 +40,14 @@ During file validation, pay attention to the following:
 The root directory of your website is `C:/inetpub/wwwroot`. You can create a file as shown in the following table in the `wwwroot` folder.
 <table>
 <tr><th>File Directory</th><th>File Name</th><th>File Content</th></tr>
-<tr><td>/.well-known/pki-validation</td><td>fileauth.txt</td><td>2019080603......ep939jlu32alzeo</td></tr>
+<tr><td>/.well-known/pki-validation</td><td>The file content shown on the validation page. Example: A32CF****7EEtrust-provider.comTT**bu6</td><td>201908060**alzeo</td></tr>
 </table>
  - **Note**
- On Windows, you need to create a file and folder that begin with a dot by running commands.
+    - The above is for reference only, and both the filename and content are random values. The values shown on your validation page shall prevail.
+    - On Windows, you need to create a file and folder that begin with a dot by running commands.
  For example, to create a `.well-known` folder, open a command prompt window and execute the command `mkdir .well-known` to create it. See the following figure.
  ![](https://qcloudimg.tencent-cloud.cn/raw/92896d96c4909390ed1e92a60155b2ff.png)
-3. On the **Validate Domain** page, you can click **View Domain Validation Status** to check whether the configuration is successful.
+3. On the **Validate Domain** page, you can click **View Domain Ownership Validation Status** to check whether the configuration is successful.
 >?
 >- Both HTTP and HTTPS are supported, and either can be accessed.
 >- File verification does not support any redirection. Instead, it directly returns the status code 200 and file content.
@@ -55,5 +55,6 @@ The root directory of your website is `C:/inetpub/wwwroot`. You can create a fil
 > 
 4. Wait for the CA's review. After the certificate is issued or the domain name information is approved, the file and directory can be cleared.
 
+>!请确保域名未做国外限制，国外 IP 可以解析至域名的 A 记录并进行访问，否则将导致 CA 机构无法进行扫描审核。
 
 

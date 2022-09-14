@@ -7,7 +7,7 @@ Tencent Cloud provides the following brands of SSL certificates for sale:
 </tr>
 <tr>
 <td>SecureSite</td>
-<td><li>SecureSite is the world's largest information security service provider and most reputable digital certificate issuer. It provides a wide spectrum of content and network security solutions to individuals, businesses, and service providers.</li><li>93% of Fortune Global 500 companies choose VeriSign SSL digital certificates. SecureSite acquired VeriSign in August 2010, changed VeriSign's product name and brand logo in April 2012, and since then has been providing the VeriSign verification service.</li></td>
+<td><li>SecureSite is the world's largest information security service provider and most reputable certificate authority. It provides a wide spectrum of content and network security solutions to individuals, businesses, and service providers.</li><li>93% of Fortune Global 500 companies choose VeriSign SSL digital certificates. SecureSite acquired VeriSign in August 2010, changed VeriSign's product name and brand logo in April 2012, and since then has been providing the VeriSign verification service.</li></td>
 </tr>
 <tr>
 <td>GeoTrust</td>
@@ -27,19 +27,23 @@ Tencent Cloud provides the following brands of SSL certificates for sale:
 </tr>
 <tr>
 <td>DNSPod GM (SM2)</td>
-<td>Tencent’s DNSPod adopts the GM standard and is completely China-developed. Supported by well-reputed CAs in China, it is highly convenient and efficient, and meets the regulatory requirements of China.</td>
+<td>Tencent Cloud’s DNSPod certificate adopts the GM standards and is completely China-developed. Supported by well-reputed CAs in China, it is highly convenient and efficient and complies with regulatory requirements of China.</td>
+</tr>
+<tr>
+<td>DNSPod International (SM2)</td>
+<td>Tencent Cloud's DNSPod provides the international standard certificates on the basis of the SM certificates, balancing SM algorithm compliance and universal application.</td>
 </tr>
 </table>
 
 ## Brand Differences
-The certificates of different brands vary depending on the browser address bar, encryption level, and the level guaranteed compensation. The most important difference lies in their root certificates. For example:
-- A TrustAsia wildcard certificate is issued using a Sectigo root certificate. Sectigo serves more than 150 countries/regions and is the world's leading CA with a long history. Sectigo also supports OCSP nodes in the Chinese mainland with faster response.
-- A GeoTrust wildcard certificate is issued using a GeoTrust root certificate, a SecureSite wildcard certificate is issued using a SecureSite root certificate, and a DigiCert wildcard certificate is issued using a DigiCert root certificate.
-- A GlobalSign wildcard certificate is issued using a GlobalSign root certificate. A DNSPod certificate is issued using a WoTrus root certificate, and a WoTrus wildcard certificate is issued using a Sectigo root certificate.
+The certificates of different brands vary depending on the browser address bar, encryption level, and the level guaranteed compensation. The most important difference lies in their root certificates as follows:
+- A TrustAsia wildcard certificate is issued using a Sectigo root certificate. Serving more than 150 countries/regions, Sectigo is a world-leading CA with a long history. It also supports OCSP nodes in the Chinese mainland with faster response.
+- A GeoTrust wildcard certificate is issued using a GeoTrust root certificate, a SecureSite wildcard certificate using a SecureSite root certificate, and a DigiCert wildcard certificate using a DigiCert root certificate.
+- A GlobalSign wildcard certificate is issued using a GlobalSign root certificate, a DNSPod certificate using a WoTrus root certificate, and a WoTrus wildcard certificate using a Sectigo root certificate.
 
-From a technical point of view, the differences between SecureSite (formerly VeriSign) and GeoTrust are as follows:
-- Compatibility: SecureSite outperforms GeoTrust. SecureSite is compatible with all browsers on the market as well as many mobile devices.
+From a technical point of view, the differences between SecureSite (former VeriSign) and GeoTrust are as follows:
+- Compatibility: SecureSite outperforms GeoTrust. SecureSite is compatible with all browsers commercially available and many mobile devices.
 - OCSP response speed: SecureSite outperforms GeoTrust.
 - CA security: SecureSite outperforms GeoTrust. As an internationally renowned security vendor, SecureSite provides the best CA security in the world.
-- Data security: in addition to encrypted data transmission, SecureSite certificates provide malware scanning and vulnerability assessment features.
-- Certificate commercial insurance compensation: SecureSite (up to 1.75 million USD) outperforms GeoTrust (up to 1.5 million USD).
+- Data security: In addition to encrypted data transmission, SecureSite certificates provide malware scanning and vulnerability assessment.
+- Commercial insurance compensation for certificate: SecureSite (up to 1.75 million USD) outperforms GeoTrust (up to 1.5 million USD).

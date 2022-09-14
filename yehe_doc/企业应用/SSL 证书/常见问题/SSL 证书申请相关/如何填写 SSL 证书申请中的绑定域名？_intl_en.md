@@ -1,9 +1,11 @@
 
-### How to fill in the domains bound to an SSL certificate during the application?
-After purchasing the SSL certificate, you need to go to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview) to submit the materials for review. The SSL Certificate Service console will prompt you the type and number of domain names based on the certificate you purchased, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/87f999fc76247c6ba04dbf364cd27cc0.png)
+### How to fill in the Bound Domain during the certificate application?
+After purchasing the SSL certificate, you need to go to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview) to submit the materials for review. The console will prompt you the type and number of domain names based on the certificate you purchased.
 
->? To ensure that your SSL certificate can be issued and HTTPS can be used properly, please fill in information about the bound domains correctly.
+>? 
+>- Unable to bind a **.ru** domain name to an SSL certificate.
+>- To ensure that your SSL certificate can be issued and HTTPS can be used properly, fill in correct information about the bound domains.
+>- Some certificates can be bound with IP addresses. For details, see [SSL Certificates Supporting IP Address Binding](https://intl.cloud.tencent.com/document/product/1007/43937).
 
 Based on the brand of your certificate and the domains bound, SSL Certificate Service will offer the corresponding parent domain for free. Details are described as follows:
 
@@ -19,7 +21,7 @@ Based on the brand of your certificate and the domains bound, SSL Certificate Se
 </thead>
 <tbody>
   <tr>
-    <td>If the bound domain is not prefixed with `www.`, the `www.` sub-domain is offered for free.</td>
+    <td>If the bound domain is not prefixed with `www.`, the respective `www.` sub-domain is offered for free.</td>
     <td>No</td>
     <td>If the bound domain is a primary domain, the `www.` sub-domain is offered for free.</td>
     <td>If the bound domain is a primary domain, the `www.` sub-domain is offered for free.</td>
@@ -38,9 +40,10 @@ Based on the brand of your certificate and the domains bound, SSL Certificate Se
 >?
 >- If the bound domain is a primary domain, some brands will offer the `www.` sub-domain for free. For example, if the bound domain is `tencent.com`, the `www.tencent.com` sub-domain will be offered for free.
 >- If the bound domain is a general or wildcard domain, some brands will offer the corresponding parent domain for free. For example, if the bound domain is `*.tencent.com`, `tencent.com` will be offered for free.
->- A parent domain will only be offered for free if the general or wildcard domain is of level three or above.
+>- A parent domain will be offered for free only if the general or wildcard domain is of level three or above.
 
 
 ### Wildcard domains
-A wildcard domain is one with a wildcard, for example, `*.tencent.com` and `*.cloud.tencent.com`. It includes all sub-domains at the same level.
+A wildcard domain is one with a wildcard, such as `*.tencent.com` and `*.cloud.tencent.com`. It includes all sub-domains at the same level.
 >!Cross-level domains are not supported. For example, `*.tencent.com` does not include the `*.cloud.tencent.com` child domains.
+
