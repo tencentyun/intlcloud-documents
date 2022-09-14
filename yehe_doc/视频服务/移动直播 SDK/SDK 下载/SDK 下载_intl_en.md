@@ -1,8 +1,8 @@
-We offer the MLVB International SDK for users outside the Chinese mainland. To learn about its features and the license required to use it, see [Features](https://intl.cloud.tencent.com/document/product/1071/38149).
+We offer the MLVB Professional SDK for users outside the Chinese mainland. To learn about its features and the license required to use it, see [Features](https://intl.cloud.tencent.com/document/product/1071/38149).
 
 
-<h2 id="International">MLVB International</h2>
-MLVB International integrates multiple core audio/video features of Tencent Cloud, including MLVB, [TRTC](https://intl.cloud.tencent.com/product/trtc), live publishing/playback, and basic filters.
+<h2 id="International">MLVB Professional</h2>
+MLVB Professional integrates multiple core audio/video features of Tencent Cloud, including MLVB, [TRTC](https://intl.cloud.tencent.com/product/trtc), live publishing/playback, and basic filters.
 
 <table>
    <tr>
@@ -28,7 +28,7 @@ MLVB International integrates multiple core audio/video features of Tencent Clou
    </tr>
 </table>
 
->? Different authorization is required to use different features of MLVB International:
->- To use MLVB features, you must purchase an [MLVB International license](https://intl.cloud.tencent.com/document/product/1071/38114).
+>? Different authorization is required to use different features of MLVB Professional:
+>- To use MLVB features, you must purchase an [MLVB Professional license](https://intl.cloud.tencent.com/document/product/1071/38114).
 >- To use TRTC features, you must purchase a [TRTC package](https://intl.cloud.tencent.com/document/product/647/34610).
 
