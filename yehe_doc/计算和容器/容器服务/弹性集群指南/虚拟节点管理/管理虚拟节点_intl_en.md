@@ -13,7 +13,7 @@ This document describes how to manage super nodes in the serverless cluster on t
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the list page of clusters, click the desired cluster ID to open the **Deployment** page.
-3. Click **Super Node” in the left sidebar to open **Super Nodes** list page.
+3. Click **Super Node** in the left sidebar to open **Super Nodes** list page.
 4. On the list page, click **Remove** on the right side of the selected super node.
 5. Click **OK** to delete the node on the **Delete Node** pop-up window
 <dx-alert infotype="explain" title="">
@@ -35,7 +35,7 @@ This document describes how to manage super nodes in the serverless cluster on t
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the management page of clusters, click the serverless cluster ID to open the basic information page.
-3. Click **Super Node” in the left sidebar to open **Super Nodes** list page.
+3. Click **Super Node** in the left sidebar to open **Super Nodes** list page.
 4. Select the desired node, and click **Edit Label & Taint** on the right side of the super node.
 5. In the **Modify Super Node Label & Taint** pop-up, modify the Label&Taint configuration of the super node.
 6. Click **OK** to complete the modification.
