@@ -7,7 +7,7 @@ You must activate CSS to use the MLVB SDK. You may be charged the following fees
 
 ### MLVB License Fee
 
-You need an MLVB International license to access the MLVB International SDK on iOS and Android. 
+You need an MLVB International license to access the MLVB Professional SDK on iOS and Android. 
 
 >! MLVB International is an annual subscription-based service. **For first-time purchase, you need to [contact sales](https://intl.cloud.tencent.com/contact-sales) to add your account to the allowlist.** For detailed directions, see [New License and Renewal](https://intl.cloud.tencent.com/zh/document/product/1071/38546).
 
