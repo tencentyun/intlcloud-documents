@@ -23,7 +23,7 @@
 ```
 {
 	"version": "2.0",
-	"principal": {
+	"principal":{
 		"qcs": ["qcs::cam::uin/100000000001:uin/100000000002"]
 	},
 	"statement": [{
@@ -32,7 +32,7 @@
 		"resource": ["qcs::cos:ap-beijing:uid/1250000000:examplebucket-bj-1250000000/*",
 			"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
 		],
-		"condition": {
+		"condition":{
 			"ip_equal":{
 				"qcs:ip": "10.*.*.10/24"
 			}
@@ -56,10 +56,10 @@
 {
   "statement": [
     {
-      "action": [
+      "action":[
         "name/cos:*"
       ],
-      "condition": {
+      "condition":{
         "string_equal":{
           "vpc:requester_vpc": [
             "vpc-aqp5jrc1"
@@ -67,12 +67,12 @@
         }
       },
       "effect": "allow",
-      "principal": {
+      "principal":{
         "qcs":[
           "qcs::cam::uin/100000000001:uin/100000000002"
         ]
       },
-      "resource": [
+      "resource":[
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
       ]
     }
@@ -191,7 +191,7 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 1. versionid가 전달되지 않으면 기본적으로 조건이 충족된 것으로 간주(true)되어 allow 정책이 적용되어 요청이 allow됩니다.
 2. versionid가 빈 문자열(`“”`)인 경우 allow 정책도 적용되며 최신 버전의 객체 다운로드 요청만 승인됩니다.
 ```
-	"condition": {
+	"condition":{
 		"string_equal_if_exist": {
 			"cos:versionid": ""
 		}
@@ -427,7 +427,7 @@ Content-Type은 `application/xml` 및 `image/jpeg`와 같이 RFC 2616(MIME)에 �
 
 #### 예시1: PutObject 요청의 Content-Type을 "image/jpeg"로 제한
 
-버킷 examplebucket-1250000000을 소유하는 uin이 100000000001인 루트 계정이 cos:content-length 조건 키를 사용하여 uin이 100000000002인 서브 계정이 시작한 업로드 요청에서 Content-Type 헤더의 콘텐츠를 제한한다고 가정합니다.
+버킷 examplebucket-1250000000을 소유하는 uin이 100000000001인 루트 계정이 `cos:content-type` 조건 키를 사용하여 uin이 100000000002인 서브 계정이 시작한 업로드 요청에서 Content-Type 헤더의 콘텐츠를 제한한다고 가정합니다.
 
 이 예시의 버킷 정책은 객체 업로드 요청(PutObject)이 Content-Type 헤더와 ‘image/jpeg’ 값을 포함해야 하는 것을 제한하는 것입니다.
 
@@ -620,7 +620,7 @@ GetObject API를 사용하면 요청 매개변수인 `response-content-type`을 
 
 조건 키 `cos:x-cos-storage-class`를 사용하여 요청 헤더 `x-cos-storage-class`를 제한하여 스토리지 클래스 수정 요청을 제한할 수 있습니다.
 
-COS의 스토리지 클래스 필드에는 `STANDARD`, `STANDARD_IA`, `INTELLIGENT_TIERING`, ``ARCHIVE` 및 `DEEP_ARCHIVE`가 있습니다.
+COS의 스토리지 클래스 필드에는 `STANDARD`, `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE` 및 `DEEP_ARCHIVE`가 있습니다.
 
 #### 예시1: PutObject 요청 시 스토리지 클래스를 반드시 STANDARD로 설정
 

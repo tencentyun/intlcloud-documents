@@ -427,7 +427,7 @@ RFC 2616で定義されたHTTPリクエストのコンテンツタイプ（MIME�
 
 #### 事例1: オブジェクトのアップロード（PutObject）のContent-Typeを必ず「image/jpeg」とするよう限定する
 
-ルートアカウント（uin:100000000001）がバケットexamplebucket-1250000000を所有している場合、`cos:content-length`条件キーによってサブユーザー（uin:100000000002）のアップロードリクエストのContent-Typeヘッダーの具体的な内容を制限することができます。
+ルートアカウント（uin:100000000001）がバケットexamplebucket-1250000000を所有している場合、`cos:content-type`条件キーによってサブユーザー（uin:100000000002）のアップロードリクエストのContent-Typeヘッダーの具体的な内容を制限することができます。
 
 以下のこのバケットポリシーの意味は、PutObjectを使用してオブジェクトをアップロードする場合に、必ずContent-Typeヘッダーを含め、かつContent-Typeの値を「image/jpeg」とするよう制限するものです。
 
@@ -620,7 +620,7 @@ GetObjectインターフェースは、リクエストパラメータ`response-c
 
 条件キー`cos:x-cos-storage-class`によって、リクエストヘッダー`x-cos-storage-class`を制限し、それによりストレージタイプを変更する可能性のあるリクエストを制限することができます。
 
-COSのストレージタイプフィールドには、`STANDARD`, `STANDARD_IA`、`INTELLIGENT_TIERING`、``ARCHIVE`、`DEEP_ARCHIVE`があります。
+COSのストレージタイプフィールドには、`STANDARD`, `STANDARD_IA`、`INTELLIGENT_TIERING`、`ARCHIVE`、`DEEP_ARCHIVE`があります。
 
 #### 事例1：PutObjectの際にストレージタイプを必ず標準タイプに設定するよう要求する
 
