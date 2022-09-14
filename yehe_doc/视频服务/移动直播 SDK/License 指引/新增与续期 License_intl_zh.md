@@ -42,9 +42,9 @@
 
 ### 购买正式版 License
 
-1. [购买直播 SDK 国际版 License](https://buy.intl.cloud.tencent.com/mlvb)，获得正式的国际版 License 一年使用授权（有效期至到期次日的00:00:00止），计费价格请参见 [购买指南](https://intl.cloud.tencent.com/document/product/1071/38114)。
+1. [购买直播 SDK 专业版 License](https://buy.intl.cloud.tencent.com/mlvb)，获得正式的专业版 License 一年使用授权（有效期至到期次日的00:00:00止），计费价格请参见 [购买指南](https://intl.cloud.tencent.com/document/product/1071/38114)。
 
->?  例如，您在2021年12月01日 14:16:52 购买了正式的国际版 License 一年有效期，该 License 于2022年12月02日 00:00:00 到期。
+>?  例如，您在2021年12月01日 14:16:52 购买了正式的专业版 License 一年有效期，该 License 于2022年12月02日 00:00:00 到期。
 
 2. 进入 **直播 SDK** > **[License 管理](https://console.intl.cloud.tencent.com/live/license)** ，单击 **Create** 按钮。填写 `App Name`、`Package Name` 和 `Bundle ID` ，完成后单击 **Confirm**。
 
@@ -52,7 +52,7 @@
 
    >? 
    >- 单击 **确定** 前需要再次确认 Bundle ID 和 Package Name，如与提交到商店的不一致请提前进行修改，**一旦提交成功将无法再修改 License 信息**。
-   >- **正式的国际版 License 不支持信息修改**，若您需要修改 License 信息，购买资源包后请勿用于续期 License，请单击 **Create** 重新创建 License 绑定新的包名信息。
+   >- **正式的专业版 License 不支持信息修改**，若您需要修改 License 信息，购买资源包后请勿用于续期 License，请单击 **Create** 重新创建 License 绑定新的包名信息。
 
 3. 正式版 License 成功创建后，页面会显示生成的正式版 License 信息。在 SDK 初始化配置时需要传入 Key 和 License URL 两个参数，请妥善保存以下信息。
 
@@ -60,7 +60,7 @@
 
 ### 更新正式版 License有效期
 
-您可以登录 **直播 SDK**>**[License 管理](https://console.intl.cloud.tencent.com/live/license)** 页面查看国际版 License 的有效期，若您的国际版 License 已到期，可进行如下操作进行续期：
+您可以登录 **直播 SDK**>**[License 管理](https://console.intl.cloud.tencent.com/live/license)** 页面查看专业版 License 的有效期，若您的专业版 License 已到期，可进行如下操作进行续期：
 
 1. 选择您需要更新有效期的 License，单击 **Renew**。
 
@@ -72,5 +72,5 @@
 
 3. 查看更新后的有效期情况。
 
-   >! **正式的国际版 License 不支持信息修改**，若您需要修改 License 信息，购买资源包后请勿用于续期 License，请单击 **Create** 重新创建 License 绑定新的包名信息。
+   >! **正式的专业版 License 不支持信息修改**，若您需要修改 License 信息，购买资源包后请勿用于续期 License，请单击 **Create** 重新创建 License 绑定新的包名信息。
 
