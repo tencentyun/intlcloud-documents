@@ -1,4 +1,4 @@
-We offer **MLVB Professional** for users outside the Chinese mainland. You need an international license to unlock live streaming features such as publishing, playback, and basic filters (skin brightening and smoothing, etc.).
+We offer **MLVB Professional** for users outside the Chinese mainland. You need an professional license to unlock live streaming features such as publishing, playback, and basic filters (skin brightening and smoothing, etc.).
 
 ### SDK and license
 
