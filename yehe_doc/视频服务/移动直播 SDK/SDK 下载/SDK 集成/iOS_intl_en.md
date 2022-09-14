@@ -31,7 +31,7 @@ There are two ways to edit the Podfile:
   platform :ios, '9.0'
   
   target 'App' do
-  pod 'TXLiteAVSDK_International', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_International.podspec'
+  pod 'TXLiteAVSDK_Professional', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
   end
 :::
 </dx-codeblock>
@@ -42,7 +42,7 @@ COCOAPOD
    source 'https://github.com/CocoaPods/Specs.git'
    
    target 'App' do
-   pod 'TXLiteAVSDK_International'
+   pod 'TXLiteAVSDK_Professional'
    end
 :::
 </dx-codeblock>
