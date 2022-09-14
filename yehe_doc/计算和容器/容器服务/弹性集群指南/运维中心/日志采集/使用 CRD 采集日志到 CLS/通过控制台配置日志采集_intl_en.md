@@ -1,11 +1,11 @@
-This document describes how to use CRD to configure the log collection feature of EKS cluster via the console.
+This document describes how to use CRD to configure the log collection feature of TKE Serverless cluster.
 
 
 
 
 ## Prerequisites
 
-Log in to the [TKE console](https://console.cloud.tencent.com/tke2/ops/list?rid=8), and enable the log collection feature for the EKS cluster. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/zh/document/product/457/40950).
+Log in to the [TKE console](https://console.cloud.tencent.com/tke2/ops/list?rid=8), and enable the log collection feature for the serverless cluster. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/zh/document/product/457/40950).
 
 
 
@@ -16,8 +16,8 @@ You can take the following actions to configure after enabling the log collectio
 
 After enabling the log collection, you need to configure the log rules including the log source, consumer end, log parsing method, and so on.
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4), and select **Cluster OPS** > **[Log Collection Rules](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** in the left sidebar.
-2. At the top of the **Log Rules** page, select the region and the EKS cluster where you want to configure the log collection rules and click **Create**, as shown in the figure below:
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4), and select **Log Management** > **[Log Collection Rules](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** in the left sidebar.
+2. At the top of the **Log Rules** page, select the region and the TKE Serverless cluster where you want to configure the log collection rules and click **Create**, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/38f9678feea9197bd6127a732919f4e4.png)
 3. On the "Create Log Collecting Policy" page, select the collection type and configure the log source, consumer end, log parsing method. Currently, the following collection types are supported: [container standard output](#stout) and [container file path](#insideDocker).
 <dx-tabs>
@@ -154,7 +154,7 @@ Currently, one log topic supports only one collection configuration. Ensure that
 
 ### Updating the log rules
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4), and select **Cluster OPS** > **[Log Collection Rules](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** in the left sidebar.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4), and select **Log Management** > **[Log Collection Rules](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** in the left sidebar.
 2. In the **Log Collection Rules** page, select the log rule to update, and click **Edit Collecting Rule** on the right side of the rule, as shown below:
    ![](https://qcloudimg.tencent-cloud.cn/raw/2465a04d72d0cf7bc485755bd11b342f.png)
 3. Update the configuration as needed and click **Done**.
