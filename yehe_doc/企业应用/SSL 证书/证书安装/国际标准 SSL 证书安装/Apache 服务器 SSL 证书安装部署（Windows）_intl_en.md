@@ -45,8 +45,8 @@ This document describes how to install an SSL certificate on an Apache server.
     - `cloud.tencent.com.csr`: CSR file
 >?The CSR file is uploaded by you or generated online by the system and is provided to the certificate authority (CA) when you apply for the certificate. It is not relevant to installation.
 3. Log in to the Apache server via the RDP port.
-- For upload instructions, see [Uploading Files from Linux to Windows CVM using RDP](https://intl.cloud.tencent.com/document/product/213/34822).
->
+>? For upload instructions, see [Uploading Files from Linux to Windows CVM using RDP](https://intl.cloud.tencent.com/document/product/213/34822).
+
 4. Copy the `root_bundle.crt`  certificate file, `cloud.tencent.com.crt` certificate file, and `cloud.tencent.com.key` private secret file from the local directory to the `ssl.crt` and `ssl.key` folders under the `\conf` directory of the Apache server, respectively.
  ![](https://qcloudimg.tencent-cloud.cn/raw/4fa32ebe21bd423c0b11ff8fc4ac4f16.png)
 <table>
