@@ -1,4 +1,3 @@
-## Introduction
 This document describes how to manage other Kubernetes resources in the TKE console, including namespaces, configuration, and storage.
 
 ## Prerequisites
