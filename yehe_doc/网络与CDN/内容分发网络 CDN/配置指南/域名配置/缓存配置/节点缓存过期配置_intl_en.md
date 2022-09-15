@@ -37,15 +37,15 @@ After a resource on the origin server is updated, its cache on the CDN node must
 </thead>
 <tbody><tr>
 <td>Type</td>
-<td>You can select **All Files**, **File Extension**, **File Directory**, **Full Path**, or **Homepage**.<br> All Files: Set the rule for all files. This is the default option.<br> File Extension: Set the rule for the specified file extension.<br> File Directory: Set the rule for the specified file directory.<br> Full Path: Set the rule for the specified full file path.<br> Homepage: Set the rule for the specified domain name root directory.</td>
+<td>You can select <b>All Files</b>, <b>File Extension</b>, <b>File Directory</b>, <b>Full Path</b>, or <b>Homepage</b>.<br> All Files: Set the rule for all files. This is the default option.<br> File Extension: Set the rule for the specified file extension.<br> File Directory: Set the rule for the specified file directory.<br> Full Path: Set the rule for the specified full file path.<br> Homepage: Set the rule for the specified domain name root directory.</td>
 </tr>
 <tr>
 <td>Content</td>
-<td>Enter the content based on the selected file type.</br>If **Type** is **All Files**, the content is fixed to all files.</br>If **Type** is **File Extension**, you can enter one or multiple file extensions separated by ";", such as `jpg;png;css`.</br>If **Type** is **File Directory**, you can enter one or multiple file directories separated by ";", and the entered content cannot end with "/", such as `/test;/a/b/c`.</br>If **Type** is **Full Path**, you can enter one or multiple full file paths separated by ";", such as `/index.html;/test/.jpg`.</td>
+<td>Enter the content based on the selected file type.</br>If <b>Type</b> is <b>All Files</b>, the content is fixed to all files.</br>If <b>Type</b> is <b>File Extension</b>, you can enter one or multiple file extensions separated by ";", such as `jpg;png;css`.</br>If <b>Type</b> is <b>File Directory</b>, you can enter one or multiple file directories separated by ";", and the entered content cannot end with "/", such as `/test;/a/b/c`.</br>If <b>Type</b> is <b>Full Path</b>, you can enter one or multiple full file paths separated by ";", such as `/index.html;/test/.jpg`.</td>
 </tr>
 <tr>
 <td>Cache Option</td>
-<td>You can select **Follow Origin Server**, **Cache**, or **Do not cache**.<br> Follow Origin Server: The CDN node cache validity period will be set based on the `Cache-Control` origin server header, and heuristic caching can be enabled.<br>Cache: You can customize the CDN node cache validity period and enable force cache.<br>Do not cache: CDN nodes will not cache any resources.<br></td>
+<td>You can select <b>Follow Origin Server</b>, <b>Cache</b>, or <b>Do not cache</b>.<br> Follow Origin Server: The CDN node cache validity period will be set based on the `Cache-Control` origin server header, and heuristic caching can be enabled.<br>Cache: You can customize the CDN node cache validity period and enable force cache.<br>Do not cache: CDN nodes will not cache any resources.<br></td>
 </tr>
 </tbody></table>
 
@@ -66,7 +66,7 @@ The cache validity period will be set on CDN nodes based on the `Cache-Control` 
 		 <br>
 		 <img src="https://qcloudimg.tencent-cloud.cn/raw/80612ba1e40f345e14b188939cb7b557.png" width="450px">
 		 <br>
-		 ii. **Custom Policy**: You can customize the heuristic cache validity period.
+		 ii. <b>Custom Policy</b>: You can customize the heuristic cache validity period.
 		 <br>
 		 <img src="https://qcloudimg.tencent-cloud.cn/raw/06629eb849a9e56ee0c16db1f8bfe3c6.png" width="450px">
 		 <br>
@@ -98,8 +98,8 @@ If multiple cache rules are configured, the lower the rule position, **the highe
 ### Recommended configuration
 - For seldom updated static files, such as images and large files, we recommend you set the cache validity period to 30 days.
 - For frequently updated static files, such as .js and .css files, we recommend you set the cache validity period based on the update frequency of your business.
-- For dynamic files, such as .php, .jsp, .asp, and .aspx files, **you need to set Cache Option to Do not cache**.
-- For other requests involving direct interaction with the origin server, such as **site login** (`/wp-admin` directory for WordPress backend login, for example) or **API-based query**, *you need to set Cache Option to Do not cache**; otherwise, an access error may occur.
+- For dynamic files, such as .php, .jsp, .asp, and .aspx files, <b>you need to set Cache Option to Do not cache</b>.
+- For other requests involving direct interaction with the origin server, such as **site login** (`/wp-admin` directory for WordPress backend login, for example) or **API-based query**, <b>you need to set Cache Option to Do not cache</b>; otherwise, an access error may occur.
 
 	
 ### Configuration limitations
