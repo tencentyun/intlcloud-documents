@@ -11,8 +11,8 @@
 本操作中涉及多处账号信息配置，如下列出了主要配置逻辑，以方便用户理解和正确配置。
 - 数据同步方向：源数据库（其他账号的数据库实例）> 目标数据库（本账号的数据库实例）。
 - 执行同步任务的账号可以是目标数据库的主账号，也可以目标数据库的子账号。
-   - 目标数据库属于主账号名下，使用主账号执行同步任务。操作任务前，需要请求源数据所属主账号持有人进行角色授权（给目标数据库的主账号），使目标数据库主账号可以访问源数据库。
-   - 目标数据库属于子账号名下，使用子账号执行同步任务。操作任务前，需要先请求源数据所属主账号持有人进行角色授权（给目标数据库的主账号），使目标数据库主账号可以访问源数据库。然后再请求目标数据库所属主账号持有人进行策略授权（对目标数据库的子账号），使目标数据库子账号可以访问源数据库。
+   - 使用主账号执行同步任务。操作任务前，需要请求源数据所属主账号持有人进行角色授权（给目标数据库的主账号），使目标数据库主账号可以访问源数据库。
+   - 使用子账号执行同步任务。操作任务前，需要先请求源数据所属主账号持有人进行角色授权（给目标数据库的主账号），使目标数据库主账号可以访问源数据库。然后再请求目标数据库所属主账号持有人进行策略授权（对目标数据库的子账号），使目标数据库子账号可以访问源数据库。
 
 ## [授权账号](id:sqzh)
 **使用主账号执行同步任务，请操作步骤1 - 6，使用子账号执行同步任务，请操作步骤1 - 11。**
@@ -20,14 +20,16 @@
 1. 使用源数据库所属的腾讯云主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam/role)（如果子账号子有CAM和角色相关的权限，也可以使用子账号登录）。
 2. 左侧导航单击**角色**，进入角色管理页面，然后单击**新建角色**。
 3. 在选择角色载体页面，选择**腾讯云账户**方式。<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/383f4bd0086637b5346b03797d022a2e.png" style="zoom:40%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/383f4bd0086637b5346b03797d022a2e.png" style="zoom:90%;" />
 4. 在**输入角色载体信息**页面，配置相关信息，单击**下一步**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/77f8a29b40f48f4e6cc77ed7f191af13.png)
    - 云账号类型：选择**其他主账号**。
    - 账号 ID：填入目标数据库所属的腾讯云主账号 ID，主账号 ID 可在 **[账号信息](https://console.cloud.tencent.com/developer)** 中查看。目标数据库实例属于子账号名下时，此处也填写主账号 ID。
    - 外部 ID：可依据情况，选择性开启。  
 >?如果使用了外部 ID，请用户自行记录和保存该 ID。无法通过 DTS 服务查询到该 ID。
-5. 在**配置角色策略**页面，输入 QcloudDTSReadOnlyAccess，选中 **QcloudDTSReadOnlyAccess** 预设策略，单击**下一步**。
+5. 在**配置角色策略**页面，选择 DTS 策略和源数据库服务对应策略，单击**下一步**。
+ - DTS 策略选择 QcloudDTSReadOnlyAccess（数据传输服务（DTS）只读访问权限）。
+ - 源数据库服务对应策略，即源数据库所属的腾讯云服务策略。例如源数据库为云数据库 MySQL，则添加 QcloudAccessForMySQLRole（云数据库(MySQL)操作权限），如下以云数据库 MySQL 为例，其他场景请用户根据实际情况选择配置。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5d039c19c35e1d8a107a023ed5321010.png)
 6. 在**审阅**页面，设置角色名称，单击**完成**后该角色创建完成。
 >?配置后记录该名称，后续创建同步任务时需要输入。
@@ -35,7 +37,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/acb68a6dfa00e5ccd41fdd511a0fcfd6.png)
 >?如果执行同步任务的账号为主账号，授权步骤到此结束；如果为子账号，还需要请求当前主账号持有人，对子账号进行如下策略授权。
 7. （可选）使用目标数据库所属的腾讯云子账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam/role)，在左侧导航单击**策略**，然后在右侧单击**新建自定义策略**，并选择**按策略语法创建**。<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/050a9318db3118de54ffefb57c144c12.png" style="zoom:40%;" />      
+<img src="https://qcloudimg.tencent-cloud.cn/raw/050a9318db3118de54ffefb57c144c12.png" style="zoom:90%;" />      
 8. （可选）选择**空白模板**，然后单击**下一步**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3e779e1daa8394da22d8ee3200c10370.png)  
 9. （可选）创建一个策略，策略的名称以及描述可以根据自己的需求填写，策略内容复制示例代码后，将红框中的内容替换成对应的信息。<br>
@@ -78,12 +80,20 @@
 >?选择**操作**列的**更多** > **结束**可关闭同步任务，请您确保数据同步完成后再关闭任务。
 
 ## [常见问题](id:cjwt)
-#### 1. 跨账号拉取实例列表报错：role not exist[InternalError.GetRoleError]
-请确认**跨腾讯云账号 ID**（应该为源数据库的主账号 ID）和**跨账号授权角色名称**（应该为 [授权账号](#sqzh) 步骤6中创建的**角色名称**）配置是否正确。
 
-#### 2. 跨账号拉取实例列表报错：you are not authorized to perform operation (sts:AssumeRole) ，resource (qcs::cam::uin/1xx5:roleName/xxxx) has no permission
-**出错原因**：您当前创建同步任务使用的账号是子账号，并且当前子账号没有 sts:AssumeRole 权限。
+#### 1. 跨账号拉取实例列表报错：role not exist[InternalError.GetRoleError]
+请确认**跨腾讯云账号 ID**（应该为源数据库的主账号 ID）和**跨账号授权角色名称**（应该为 [授权账号](#sqzh) 步骤6中创建的**角色名称**）配置是否正确。如果还无法拉取，可能没有授权源数据库的服务权限（参考 [授权账号](#sqzh) 中的步骤5）。
+
+#### 2. 获取云数据库实例列表失败：InternalError:InternalInnerCommonError
+
+#### 角色中没有授权源数据库所属的腾讯云服务策略，请参考 [授权账号](#sqzh) 中的步骤5进行授权。
+
+#### 3. 跨账号拉取实例列表报错：you are not authorized to perform operation (sts:AssumeRole) ，resource (qcs::cam::uin/1xx5:roleName/xxxx) has no permission
+
+ **出错原因**：您当前创建同步任务使用的账号是子账号，并且当前子账号没有 sts:AssumeRole 权限。
+
 **解决方法**：
+
 - 使用主账号来创建同步任务。
 - 请求目标数据库所属的主账号持有人，参考 [授权账号](#sqzh) 对子账号授权，策略语法中的 resource，填写报错框中蓝色字段部分。
 
