@@ -52,7 +52,7 @@ After a resource on the origin server is updated, its cache on the CDN node must
 [](id:m1)	
 ### CDN cache rule and priority
 #### **Cache Option** is **Follow Origin Server**
-<img src="" width="850px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0d0086b11c0e9968707865af46a4c23d.jpg" width="850px">
 
 
 
@@ -72,7 +72,7 @@ The cache validity period will be set on CDN nodes based on the `Cache-Control` 
 		 <br>
 
 #### **Cache Option** is **Cache**
-<img src="" width="850px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dc781cff77d79f57fa3c9df800e21a4d.jpg" width="850px">
 
 You can customize the cache validity period on the CDN node.	
 - If force cache is disabled:
