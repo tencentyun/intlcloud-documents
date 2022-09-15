@@ -66,7 +66,7 @@ CDN 节点将遵循源站响应头 Cache-Control 头部设置缓存时间。
 		 <br>
 		 <img src="https://qcloudimg.tencent-cloud.cn/raw/80612ba1e40f345e14b188939cb7b557.png" width="450px">
 		 <br>
-		 ii. **自定义策略**：可自定义设置启发式缓存的时间。
+		 ii. <b>自定义策略</b>：可自定义设置启发式缓存的时间。
 		 <br>
 		 <img src="https://qcloudimg.tencent-cloud.cn/raw/06629eb849a9e56ee0c16db1f8bfe3c6.png" width="450px">
 		 <br>
