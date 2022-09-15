@@ -29,7 +29,7 @@
 1. **客户端初始化云渲染 SDK**：
 无论您使用的哪种客户端，在初始化 SDK 成功后都可以获取到 ClientSession。ClientSession 将用于后续业务 Server 获取 ServerSession，各端具体初始化及获取方式如下：
    - **JS SDK**：调用 [TCGSDK.init(params)](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.init(params)) 接口完成初始化构建。初始化完成后，客户端调用 [TCGSDK.getClientSession()](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.getclientsession()) 函数，获取 Client 端的 ClientSession。
-   - **Android SDK**：通过 `TcgSdk.Bulider(Context, APP_ID, ITcgMobileListener, SimpleGameView)` 接口完成初始化构建。初始化完成后，客户端在回调接口 [ITcgListener.onInitSuccess(String clientSession) ](https://intl.cloud.tencent.com/document/product/1158/49628#ITcgListener.onInitSuccess(clientSession))里，获取 Client 端的 ClientSession。
+   - **Android SDK**：通过 `TcrSdk.getInstance().init(context, null, new AsyncCallback<Void>())`  接口完成初始化构建。初始化完成后，客户端在回调接口 初始化完成后，客户端在回调接口[TcrSession.init(AsyncCallback)](https://tencentyun.github.io/cloudgame-android-sdk/tcrsdk/com/tencent/tcr/sdk/api/TcrSession.html#init(com.tencent.tcr.sdk.api.AsyncCallback))里，获取 Client 端的 ClientSession。
 2. **后台服务锁定应用云渲染并发**：
 您的后台服务调用云渲染 API [ApplyConcurrent()](https://intl.cloud.tencent.com/document/product/1158/49969) 锁定云渲染并发，收到成功回调后执行下一步。
 3. **后台服务获取 ServerSession**：
@@ -37,5 +37,5 @@
 4. **启动云渲染服务**：
 各端 SDK 在收到 ServerSession 后启动云渲染服务的调用方式略有不同，请根据您的需求查看对应指引。
    - **JS SDK**：客户端调用 [TCGSDK.start(ServerSession)](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.start(serversession)) 函数启动云渲染。
-   - **Android SDK**：客户端调用 [ITcgSdk.start(ServerSession)](https://intl.cloud.tencent.com/document/product/1158/49628#ITcgSdk.start(ServerSession)) 函数启动云渲染。
+   - **Android SDK**：客户端调用 [TcrSession.start(ServerSession, AsyncCallback)](https://tencentyun.github.io/cloudgame-android-sdk/tcrsdk/com/tencent/tcr/sdk/api/TcrSession.html#start(java.lang.String,com.tencent.tcr.sdk.api.AsyncCallback)) 函数启动云渲染。
 
