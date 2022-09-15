@@ -52,7 +52,7 @@ CDNはノードのキャッシュの有効期限の設定で指定された有�
 [](id:m1)	
 ### Tencent Cloud CDNキャッシュルールと優先度
 #### キャッシュオプション：オリジンサーバーと同様
-<img src="https://qcloudimg.tencent-cloud.cn/raw/63c7c6f26a6de6e5a228c12ad5d71256.png" width="850px">
+<img src="" width="850px">
 
 
 
@@ -63,24 +63,24 @@ CDNノードで、オリジンサーバーのレスポンスヘッダーCache-Co
 		- ヒューリスティックキャッシュが無効になり、オリジンサーバーのレスポンスヘッダーにCache-ControlまたはExpiresがない場合、キャッシュの有効期限は600秒とします。
 		- ヒューリスティックキャッシュが有効になり、オリジンサーバーのレスポンスヘッダーにCache-ControlまたはExpiresがない場合、以下のルールに従ってヒューリスティックキャッシュの有効期限を設定します。
 		 i. デフォルト設定：オリジンサーバーのレスポンスヘッダーにLast-Modifiedがある場合、キャッシュの有効期限は（現在の時間-Last-Modified）\* 0.1とします。オリジンサーバーのレスポンスヘッダーにLast-Modifiedがない場合、キャッシュの有効期限はデフォルトで600秒とします。
-<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/80612ba1e40f345e14b188939cb7b557.png" width="450px">
-<br>
-		ii. **カスタムポリシー**：ヒューリスティックキャッシュの有効期限を設定できます。
-<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/06629eb849a9e56ee0c16db1f8bfe3c6.png" width="450px">
-<br>
+		 <br>
+		 <img src="https://qcloudimg.tencent-cloud.cn/raw/80612ba1e40f345e14b188939cb7b557.png" width="450px">
+		 <br>
+		 ii. **カスタムポリシー**：ヒューリスティックキャッシュの有効期限を設定できます。
+		 <br>
+		 <img src="https://qcloudimg.tencent-cloud.cn/raw/06629eb849a9e56ee0c16db1f8bfe3c6.png" width="450px">
+		 <br>
 
 #### キャッシュオプション：キャッシュを格納する
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ed0412425850b620b66db4eeb373c86c.png" width="850px">
+<img src="" width="850px">
 
 CDNノードのキャッシュの有効期限を設定します。	
 - 強制キャッシュの無効化：
 	- オリジンサーバーのレスポンスヘッダーCache-Controlのフィールドがmax-ageである場合、または、オリジンサーバーのレスポンスヘッダーにCache-Controlがない場合、設定したCDNノードのキャッシュルールに従ってキャッシュを実行します。
 	- オリジンサーバーのレスポンスヘッダーCache-Controlのフィールドがno-cache 、no-storeまたはprivateである場合、CDNノードでリソースをキャッシュしません。
-<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/35f0cf1d08f6395e541ec9c1c5ae364b.png" width="450px">
-<br>
+	<br>
+	<img src="https://qcloudimg.tencent-cloud.cn/raw/35f0cf1d08f6395e541ec9c1c5ae364b.png" width="450px">
+	<br>
 - 強制キャッシュの有効化：オリジンサーバーのレスポンスヘッダーCache-Controlを無視し、設定したCDNノードのキャッシュルールに従ってキャッシュを実行します。
 <br>
 <img src="https://qcloudimg.tencent-cloud.cn/raw/fb2670449e6c40f5df4e8231c8f050b0.png" width="450px">
@@ -129,9 +129,9 @@ CDNノードでリソースをキャッシュしないことを設定します�
 	- ファイルの拡張子がjpg、pngのリソースのキャッシュの有効期限は10日とし、強制キャッシュを有効にします。
 	- ファイルの拡張子がphp;jsp;asp;aspxのリソースをキャッシュしません。
 	- 他のすべてのファイルのキャッシュの有効期限は30日とします。
-<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/bfc24f2fca1ab9a184b0bf415c85a0f4.png" width="850px">
-<br>
+	<br>
+	<img src="https://qcloudimg.tencent-cloud.cn/raw/bfc24f2fca1ab9a184b0bf415c85a0f4.png" width="850px">
+	<br>
 	実際のキャッシュ状況は以下のとおりです：
 	-  オリジンサーバーのレスポンスヘッダーCache-Controlのフィールドがno-cache、no-storeまたはprivateにもかかわらず、ノードにおける、`www.test.com/abc.jpg`リソースのキャッシュの有効期限は10日です。
 	-  `www.test.com/def.php`リソースはノードにキャッシュされません。
@@ -163,8 +163,8 @@ CDNノードでリソースをキャッシュしないことを設定します�
 	- ファイルの拡張子がphp;jsp;asp;aspxのリソースをキャッシュしません。
 	- 他のすべてのファイルのキャッシュの有効期限は30日とします。
 	<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/da6e9921da144c97f7b80e569f2d8444.png" width="850px">
-<br>
+	<img src="https://qcloudimg.tencent-cloud.cn/raw/da6e9921da144c97f7b80e569f2d8444.png" width="850px">
+	<br>
 
 ## よくあるご質問
 - [オリジンサーバーでファイルが変更された後、CDNアクセラレーションノード上のキャッシュはリアルタイムで自動的に更新されますか？](https://intl.cloud.tencent.com/document/product/228/11203)
