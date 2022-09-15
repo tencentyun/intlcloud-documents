@@ -170,7 +170,8 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">インタラクティブライブストリーミング</h3>
                 <p style="color:#586376;" ;>ショーステージ、eコマース、イベントなどのビデオ・インタラクティブストリーミングシーンをローコードですばやく実現</p>
-                <a href="https://github.com/tencentyun/TUILiveRoom">GitHub</a>
+                <a href="https://github.com/tencentyun/TUILiveRoom/blob/main/README.en.md
+">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">ドキュメントにアクセス</a>
             </div>
         </div>
@@ -195,7 +196,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">ボイスチャットルーム</h3>
                 <p style="color:#586376;" ;>コンポーネント化されたUIによって、ボイスチャットルームシーンをローコードですばやく実現</p>
-                <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHub</a>
+                <a href="https://github.com/tencentyun/TUIVoiceRoom/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37287">ドキュメントにアクセス</a>
             </div>
         </div>
@@ -226,7 +227,7 @@
                 <h3 style="color:191919;">インタラクティブ授業</h3>
                 <p style="color:#586376" ;>Electronクロスプラットフォームコンポーネントによってスピーディーな授業実施を支援</p>
                 <a
-                    href="https://github.com/TencentCloud/trtc-education-electron">GitHub</a>
+                    href="https://github.com/TencentCloud/trtc-education-electron/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37278">ドキュメントにアクセス</a>
             </div>
         </div>
@@ -243,7 +244,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">多人数オーディオビデオルーム</h3>
                 <p style="color:#586376" ;>コンポーネント化されたUIによって、オーディオビデオルームシーンをローコードですばやく実現</p>
-                <a href="https://github.com/tencentyun/TUIMeeting">GitHub</a>
+                <a href="https://github.com/tencentyun/TUIRoom/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">ドキュメントにアクセス</a>
             </div>
         </div>
@@ -256,7 +257,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">音声通話</h3>
                 <p style="color:#586376" ;>コンポーネント化されたUIによって、「WeChatのような」音声通話シーンなどをすばやく実現</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub</a>
+                <a href="https://github.com/tencentyun/TUICallKit/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36067">ドキュメントにアクセス</a>
             </div>
         </div>
@@ -269,7 +270,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">ビデオ通話</h3>
                 <p style="color:#586376" ;>コンポーネント化されたUIによって、「WeChatのような」ビデオ通話シーンなどをすばやく実現</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub</a>
+                <a href="https://github.com/tencentyun/TUICallKit/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">ドキュメントにアクセス</a>
             </div>
         </div>
