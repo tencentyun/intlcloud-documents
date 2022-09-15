@@ -52,7 +52,7 @@ CDN은 노드 캐시 유효성 구성 캐시 만료 시간에 따라 CDN 노드�
 [](id:m1)	
 ### Tencent Cloud CDN 캐시 규칙 및 우선 순위
 #### 캐시 옵션: 원본 서버 따르기
-<img src="" width="850px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0d0086b11c0e9968707865af46a4c23d.jpg" width="850px">
 
 
 
@@ -72,7 +72,7 @@ CDN 노드는 원본 서버 응답 헤더의 Cache-Control 헤더에 따라 캐�
 		 <br>
 
 #### 캐시 옵션: 캐시
-<img src="" width="850px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dc781cff77d79f57fa3c9df800e21a4d.jpg" width="850px">
 
 CDN 노드의 캐시 시간을 사용자 정의합니다.	
 - 강제 캐시 비활성화:
