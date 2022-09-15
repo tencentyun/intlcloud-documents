@@ -11,11 +11,13 @@ Before deleting custom images, please note the following items:
 ## Directions
 <dx-tabs>
 ::: Delete\simages\sthrough\sthe\sconsole
-1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
-2. On the left sidebar, click **Images** and select the **Custom Image** tab to enter the custom image management page.
+1. Log in to the CVM Console, on the left sidebar, click [**Images**](https://console.cloud.tencent.com/cvm/).
+2. Select the **Custom Image** tab to enter the custom image management page.
 3. Select the method to delete custom images based on actual needs.
- - Deleting a single image: locate the custom image to be deleted in the image list and click **More** > **Delete**.
- - Deleting multiple images: select all custom images to be deleted in the image list and click **Delete** on the top.
+ - **Deleting a single image**: locate the custom image to be deleted in the image list and click **More** > **Delete**.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/1211de56434b4b6034dccb1ff9ce4aa1.png)
+ - **Deleting multiple images**: select all custom images to be deleted in the image list and click **Delete** on the top.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/9f002d5cce1cfa2c94931ea3bca25ac2.png)
 4. In the pop-up window, click **OK**.
 If the deletion fails, possible reasons will be prompted.
 :::
