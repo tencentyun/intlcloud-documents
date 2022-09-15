@@ -52,7 +52,7 @@ CDNはノードのキャッシュの有効期限の設定で指定された有�
 [](id:m1)	
 ### Tencent Cloud CDNキャッシュルールと優先度
 #### キャッシュオプション：オリジンサーバーと同様
-<img src="" width="850px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0d0086b11c0e9968707865af46a4c23d.jpg" width="850px">
 
 
 
@@ -72,7 +72,7 @@ CDNノードで、オリジンサーバーのレスポンスヘッダーCache-Co
 		 <br>
 
 #### キャッシュオプション：キャッシュを格納する
-<img src="" width="850px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dc781cff77d79f57fa3c9df800e21a4d.jpg" width="850px">
 
 CDNノードのキャッシュの有効期限を設定します。	
 - 強制キャッシュの無効化：
