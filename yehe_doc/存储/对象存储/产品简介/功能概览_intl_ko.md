@@ -79,7 +79,7 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    </tr>
    <tr>
       <td nowrap="nowrap">클라우드 데이터베이스 백업</td>
-      <td>클라우드 데이터베이스 백업은 COS가 사용자를 위해 Serverless Cloud Function(SCF) 기반으로 제공하는 데이터베이스 백업 기능으로, 사용자가 Tencent Cloud 데이터베이스의 백업 파일을 COS로 전송하여 영구 저장하여 데이터 손실이나 손상을 방지할 수 있도록 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/41112">백업 설정</a>을 참고하십시오.</td>
+      <td>클라우드 데이터베이스 백업은 COS가 사용자를 위해 Serverless Cloud Function(SCF) 기반으로 제공하는 데이터베이스 백업 기능으로, 사용자가 Tencent Cloud 데이터베이스의 백업 파일을 COS로 전송하여 영구 저장하여 데이터 손실이나 손상을 방지할 수 있도록 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/41112">MySQL 데이터 백업</a>을 참고하십시오.</td>
    </tr>
 </table>
 
@@ -109,7 +109,7 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    </tr>
    <tr>
       <td>크로스 도메인 액세스</td>
-      <td>COS는 HTML5 표준의 크로스 도메인 액세스 설정을 제공하여 크로스 도메인 액세스를 돕습니다. COS는 크로스 도메인 액세스를 위한 OPTIONS 요청 응답을 지원하며, 개발자가 설정한 규칙에 따라 브라우저에 구체적인 설정 규칙을 반환합니다. 자세한 작업 방법은 <a href="https://intl.cloud.tencent.com/document/product/436/13318">크로스 도메인 액세스 설정</a>을 참고하십시오.</td>
+      <td>COS는 HTML5 표준의 크로스 도메인 액세스 설정을 제공하여 크로스 도메인 액세스를 돕습니다. COS는 크로스 도메인 액세스를 위한 OPTIONS 요청 응답을 지원하며, 개발자가 설정한 규칙에 따라 브라우저에 구체적인 설정 규칙을 반환합니다. 자세한 작업 방법은 <a href="https://intl.cloud.tencent.com/document/product/436/13318">CORS 설정</a>을 참고하십시오.</td>
    </tr>
    <tr>
       <td>Origin-pull 기능</td>
@@ -168,11 +168,11 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    </tr>
    <tr>
       <td>모니터링 및 알람</td>
-      <td>COS의 읽기/쓰기 요청량, 트래픽 등의 데이터는 <a href="https://intl.cloud.tencent.com/document/product/248">클라우드 모니터링</a>을 기반으로 통계 및 표시합니다. 클라우드 모니터링 <a href="https://console.cloud.tencent.com/monitor/product/COS">콘솔</a>에서 COS의 읽기/쓰기 요청량, 트래픽 등 자세한 모니터링 데이터를 확인할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/31649">모니터링 및 알람</a>을 참고하십시오.</td>
+      <td>COS의 읽기/쓰기 요청량, 트래픽 등의 데이터는 <a href="https://www.tencentcloud.com/document/product/248">Cloud Monitor</a>를 기반으로 통계 및 표시합니다. 클라우드 모니터 <a href="https://console.cloud.tencent.com/monitor/product/COS">콘솔</a>에서 COS의 읽기/쓰기 요청량, 트래픽 등 자세한 모니터링 데이터를 확인할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/31649">모니터링 및 알람</a>을 참고하십시오.</td>
    </tr>
    <tr>
       <td>데이터 조회 개요</td>
-      <td>COS는 저장 데이터에 대한 모니터링 능력을 제공하며, 데이터 모니터링 창에서 시간대별로 스토리지 유형에 따른 데이터 양과 추세를 확인할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/36542">데이터 조회 개요</a> 및 <a href="https://intl.cloud.tencent.com/document/product/436/31634">데이터 모니터링 조회</a>를 참고하십시오.</td>
+      <td>COS는 저장 데이터에 대한 모니터링 능력을 제공하며, 데이터 모니터링 창에서 시간대별로 스토리지 유형에 따른 데이터 양과 추세를 확인할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/36542">데이터 개요 조회</a> 및 <a href="https://intl.cloud.tencent.com/document/product/436/31634">데이터 모니터링 조회</a>를 참고하십시오.</td>
    </tr>
    <tr>
       <td>모니터링 알람 설정</td>
@@ -189,27 +189,19 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    </tr>
    <tr>
       <td nowrap="nowrap">이미지 처리</td>
-      <td>COS는 전문 올인원 미디어 솔루션인 Cloud Infinite(CI)를 통합하여 이미지 처리, 콘텐츠 심사, 식별 등 더 많은 서비스를 수행합니다. COS 업로드 및 처리 API를 사용하여 미디어 데이터를 처리할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/35280">이미지 처리 개요</a>를 참고하십시오. 또한 고급 이미지 압축 및 블라인드 워터마크 기능도 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/40115">이미지 고급 압축 개요</a> 및 블라인드 워터마크 개요를 참고하십시오.</td>
+      <td>COS는 전문 통합 미디어 솔루션인 Cloud Infinite(CI)를 통합하여 이미지 처리, 조정, 식별 등 다양한 서비스를 수행합니다. COS 업로드 및 처리 API를 사용하여 미디어 데이터를 처리할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/35280">이미지 처리 개요</a>를 참고하십시오. 또한 이미지 고급 압축 및 블라인드 워터마크 기능도 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/40115">이미지 압축 개요</a> 및 <a href="https://intl.cloud.tencent.com/document/product/436/46325">블라인드 워터마크 개요</a>를 참고하십시오.</td>
    </tr>
    <tr>
       <td>문서 미리보기</td>
-      <td>문서 미리보기 서비스는 Tencent Cloud CI를 기반으로 하며 활성화된 후 버킷의 문서 유형 파일을 다운로드하지 않고 온라인으로 미리 볼 수 있어 문서 콘텐츠의 페이지 표시 문제를 해결합니다. 자세한 내용은 문서 미리보기 개요를 참고하십시오.</td>
+      <td>파일 미리보기는 CI를 기반으로 합니다. 활성화되면 버킷의 문서 파일을 다운로드하지 않고 온라인에서 직접 미리 볼 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/49159">파일 미리보기 개요</a>를 참고하십시오.</td>
    </tr>
    <tr>
       <td>미디어 처리</td>
-      <td>미디어 처리는 COS가 CI 기반으로 출시한 멀티미디어 파일 처리 서비스로, 멀티미디어 트랜스 코딩, 비디오 프레임 캡처, 오디오 및 비디오 결합, 애니메이션 이미지, 비디오 메타데이터 수집 등 비디오 처리 서비스 및 Tencent Cloud의 첨단 AI 기술과 결합된 스마트 커버의 고급 처리 서비스를 포함합니다. 자세한 내용은 미디어 처리 개요 및 데이터 워크플로 개요를 참고하십시오.</td>
+      <td>미디어 처리는 COS에서 CI 기반으로 제공하는 멀티미디어 파일 처리 서비스로서, 오디오/비디오 트랜스코딩, 비디오 프레임 캡처, 오디오/비디오 스플라이싱, 비디오 gif 변환, 비디오 메타데이터 수집 등 비디오 처리 서비스를 포함합니다. Tencent Cloud의 최첨단 AI 기술을 결합한 스마트 썸네일 고급 처리 서비스도 제공합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/48303">미디어 처리 개요</a> 및 <a href="https://intl.cloud.tencent.com/document/product/436/46387">Data Workflow Overview</a>를 참고하십시오.</td>
    </tr>
    <tr>
       <td>음성 인식</td>
       <td>음성 인식 서비스는 Tencent Cloud CI를 기반으로 하며 활성화된 후 버킷의 녹음 파일을 인식하고 인식된 텍스트를 비동기적으로 반환할 수 있습니다. 자세한 내용은 음성 인식 개요를 참고하십시오.</td>
-   </tr>
-   <tr>
-      <td>파일 압축 해제</td>
-      <td>파일 압축 해제 기능은 COS가 SCF를 기반으로 제공하는 데이터 처리 솔루션입니다. 활성화되면 압축 파일이 COS에 업로드될 때 SCF가 자동으로 트리거되어 파일을 지정된 디렉터리 및 버킷으로 압축 해제합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/35663">파일 압축 해제</a>를 참고하십시오.</td>
-   </tr>
-   <tr>
-      <td>CDN 캐시 퍼지</td>
-      <td>이 COS 기능은 CDN 에지 서버에 캐시된 데이터를 자동으로 제거하는 데 도움이 되도록 SCF를 통해 제공됩니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/37273">CDN 캐시 퍼지</a>를 참고하십시오.</td>
    </tr>
 </table>
 
@@ -249,6 +241,14 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
       <td>로그 클리닝</td>
       <td>로그 클리닝은 SCF를 기반으로 사용자를 위한 COS 기반 로그 파일 처리 솔루션입니다. 사용자가 로그 관리 서비스를 활성화하거나 로그 파일을 업로드할 때 미리 설정한 SCF로 자동 트리거 객체를 저장하고 미리 지정한 SQL 인덱스 명령을 통해 자동으로 로그 정보를 필터링하고 클리닝합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/39925">로그 클리닝</a>을 참고하십시오.</td>
    </tr>
+   <tr>
+      <td>파일 압축 해제</td>
+      <td>파일 압축 해제 기능은 COS가 SCF를 기반으로 제공하는 데이터 처리 솔루션입니다. 활성화되면 압축 파일이 COS에 업로드될 때 SCF가 자동으로 트리거되어 파일을 지정된 디렉터리 및 버킷으로 압축 해제합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/35663">파일 압축 해제</a>를 참고하십시오.</td>
+   </tr>
+   <tr>
+      <td>CDN 캐시 퍼지</td>
+      <td>이 COS 기능은 CDN 에지 서버에 캐시된 데이터를 자동으로 제거하는 데 도움이 되도록 SCF를 통해 제공됩니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/37273">CDN 캐시 퍼지</a>를 참고하십시오.</td>
+   </tr>
 </table>
 
 ## 툴
@@ -273,7 +273,7 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    </tr>
    <tr>
       <td nowrap="nowrap">다양한 API 및 SDK</td>
-      <td><ul  style="margin: 0;"><li>API: COS는 기능 인터페이스의 사용 방법 및 매개변수를 포함해 다양한 API 인터페이스와 요청 사례, 응답 사례, 에러 코드 소개를 제공합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/10111">작업 리스트</a>를 참고하십시오. </li><li>COS에서는 Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, 미니프로그램 SDK의 다양한 개발 언어를 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK 개요</a>를 참고하십시오.</li></ul></td>
+      <td><ul  style="margin: 0;"><li>API: COS는 기능 인터페이스의 사용 방법 및 매개변수를 포함해 다양한 API 인터페이스와 요청 사례, 응답 사례, 에러 코드 소개를 제공합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/10111">Operation List</a>를 참고하십시오. </li><li>COS에서는 Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, 미니프로그램 SDK의 다양한 개발 언어를 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK 개요</a>를 참고하십시오.</li></ul></td>
    </tr>
 </table>
 

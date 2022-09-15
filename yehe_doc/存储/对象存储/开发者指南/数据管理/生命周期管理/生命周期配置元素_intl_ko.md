@@ -87,7 +87,7 @@
 
 #### 다중 필터링 조건 통합 사용
 
-Tencent Cloud COS는 AND의 로직을 통해 다중 필터링 조건을 통합 사용할 수 있습니다. 예를 들어, logs/를 접두사로 하면서 객체 태그의 key=type과 value=image를 필터링 조건으로 한 객체를 설정합니다.
+Tencent Cloud COS(Cloud Object Storage)는 AND의 로직을 통해 다중 필터링 조건을 통합 사용할 수 있습니다. 예를 들어, logs/를 접두사로 하면서 객체 태그의 key=type과 value=image를 필터링 조건으로 한 객체를 설정합니다.
 ```xml
 <LifecycleConfiguration>
     <Rule>
@@ -131,6 +131,10 @@ Tencent Cloud COS는 AND의 로직을 통해 다중 필터링 조건을 통합 �
 ```
 
 ### 미완성 멀티파트 업로드
+
+
+>! 동일한 라이프사이클 규칙에서 객체 태그 지정과 업로드 완료되지 않은 파일 조각 정리를 동시에 설정할 수 없습니다.
+>
 
 미리 정의된 기간 내에 성공적으로 완료되지 않은 경우 특정 UploadId가 있는 멀티파트 업로드 작업을 삭제하려면 AbortIncompleteMultipartUpload 작업을 지정하십시오. 이 경우 이러한 작업도 재개하거나 인덱싱할 수 없습니다. 예를 들어, 7일 이내에 성공적으로 완료되지 않은 멀티파트 업로드 작업을 중단합니다.
 ```xml
