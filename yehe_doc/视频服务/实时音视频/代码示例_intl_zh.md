@@ -169,7 +169,8 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">互动直播</h3>
                 <p style="color:#586376;" ;>低代码快速实现视频互动直播场景，如：秀场，电商，赛事</p>
-                <a href="https://github.com/tencentyun/TUILiveRoom">GitHub 源码</a>
+                <a href="https://github.com/tencentyun/TUILiveRoom/blob/main/README.en.md
+">GitHub 源码</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">接入文档</a>
             </div>
         </div>
@@ -194,7 +195,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">语音聊天室</h3>
                 <p style="color:#586376;" ;>组件化 UI 助您低代码快速实现语音聊天室场景</p>
-                <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHub 源码</a>
+                <a href="https://github.com/tencentyun/TUIVoiceRoom/blob/main/README.en.md">GitHub 源码</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37287">接入文档</a>
             </div>
         </div>
@@ -225,7 +226,7 @@
                 <h3 style="color:191919;">互动课堂</h3>
                 <p style="color:#586376" ;>Electron 跨平台组件帮您快速搞定教育课堂</p>
                 <a
-                    href="https://github.com/TencentCloud/trtc-education-electron">GitHub 源码</a>
+                    href="https://github.com/TencentCloud/trtc-education-electron/blob/main/README.en.md">GitHub 源码</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37278">接入文档</a>
             </div>
         </div>
@@ -242,7 +243,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">多人音视频房间</h3>
                 <p style="color:#586376" ;>组件化 UI 助您低代码快速实现音视频房间场景</p>
-                <a href="https://github.com/tencentyun/TUIMeeting">GitHub 源码</a>
+                <a href="https://github.com/tencentyun/TUIRoom/blob/main/README.en.md">GitHub 源码</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">接入文档</a>
             </div>
         </div>
@@ -255,7 +256,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">语音通话</h3>
                 <p style="color:#586376" ;>组件化 UI 帮助您快速实现一个“类微信”等语音通话场景</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub 源码</a>
+                <a href="https://github.com/tencentyun/TUICallKit/blob/main/README.en.md">GitHub 源码</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36067">接入文档</a>
             </div>
         </div>
@@ -268,7 +269,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">视频通话</h3>
                 <p style="color:#586376" ;>组件化 UI 帮助您快速实现一个“类微信”等视频通话场景</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub 源码</a>
+                <a href="https://github.com/tencentyun/TUICallKit/blob/main/README.en.md">GitHub 源码</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">接入文档</a>
             </div>
         </div>
