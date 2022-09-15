@@ -22,10 +22,9 @@
 下面轻松两步，即可开启客户端上传加速功能：
 1. 参照客户端上传加速的 [控制台操作](https://intl.cloud.tencent.com/document/product/266/18874) 指引，开启“全球链路加速”，并按需开启“QUIC 传输”。
 2. Android 和 iOS 平台需确保在 App 启动时调用了 [预上传](https://intl.cloud.tencent.com/document/product/266/37548) 。若开启“QUIC 传输”，Android 平台需使用版本不低于 9.6 的 SDK，iOS 平台需使用版本不低于 10.4 的 SDK。
-
 >?
->- Web 端暂不支持上传加速。
->- 小程序端暂不支持 QUIC 传输。
+>- Android、iOS 上传 SDK，可同时支持上传加速和 QUIC 传输；
+>- Web 端、小程序端上传 SDK，仅支持上传加速，当前暂不支持 QUIC 传输。
 
 ## 费用相关
 使用客户端上传加速，将涉及以下费用：

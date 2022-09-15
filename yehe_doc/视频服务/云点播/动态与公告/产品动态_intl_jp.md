@@ -33,9 +33,6 @@
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
-</tr>
-</tr>
-</thead>
 <tbody><tr>
 <td>VOD画像リアルタイム処理機能のリリース</td>
 <td>VOD画像のリアルタイム処理機能がリリースされました。VODメディア資産の中のオリジナル画像をトリミングまたはサムネイルにし，処理結果を迅速に出力する機能をサポートしています。</td> 
@@ -43,6 +40,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/266/42094">画像のリアルタイム処理</a></td>
 </tr>
 </tbody></table>
+
 
 
 ## 2021年11月
@@ -59,8 +57,7 @@
 <td>V3.8バージョンをリリース</td>
 <td>	VOD機能体験モジュールがリリースされました。VODをサポートする最新機能をいち早く体験してください。</td> 
  <td>2021-11</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/49085">機能の体験</a>
-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/49085">機能の体験</a></td>
 </tr>
 </tbody></table>
 
@@ -104,19 +101,6 @@
 ## 2021年6月
 <table>
 <thead>
-<tr>
-<th width="20%">ダイナミックネーム</th>
-<th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
-<th width="15%">関連ドキュメント</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>V3.3バージョンをリリース</td>
-<td>VODがCMに全面的に接続されました。</td> 
- <td>2021-05</td> 
-<td>CDN指標のモニタリングとアラートの設定方法</td>
-</tr>
 <tr>
 <td>V3.4バージョンをリリース</td>
 <td>VODがメディア資産冷却機能をサポートしました。</td>
@@ -201,7 +185,7 @@
 <tbody>
 <tr>
 <td>V2.6バージョンをリリース</td>
-<td>VODコンソールの中国国外エリアでの課金およびデータ統計を正式にリリースしました。</td>
+<td>VODコンソールの中国本土以外のエリアでの課金およびデータ統計を正式にリリースしました。</td>
  <td>2020-11</td> 
 <td>
 <a href="https://intl.cloud.tencent.com/document/product/266/30421">使用量の統計</a>
@@ -239,7 +223,7 @@
 <td>VODメディア資産管理の新バージョンのサービスを開始しました。</td>
  <td>2020-09</td> 
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/266/36828">ビデオ管理</a>
+<a href="https://cloud.tencent.com/document/product/266/45507">ビデオ管理</a>
 </td>
 </tr>
 </tbody></table>
@@ -285,21 +269,18 @@
 <tr>
 <td>V1.9バージョンをリリース</td>
 <td><ul style="margin:0;">
-<li >コンソールでSuper Player設定機能が開始されました。
-<li >コンソールでSuper Playerのプレビュー機能が開始されました。</td>
+<li >コンソールでプレーヤー設定機能が開始されました。
+<li >コンソールでプレーヤーのプレビュー機能が開始されました。</td>
  <td>2020-06</td> 
 <td>
 <ul style="margin:0;">
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">Super Playerの設定</a>
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">Super Playerのプレビュー</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">プレーヤーの設定</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">プレーヤーのプレビュー</a>
 </td>
 </tr>
 </tbody></table>
 
-
-
 ## 2019年10月
-
 
 <table>
 <thead>
@@ -491,7 +472,7 @@
 </thead>
 <tbody><tr>
 <td>オーディオビデオの加速再生機能をリリース</td>
-<td>オーディオビデオの加速再生は、Tencent CloudのグローバルCDNコンテンツ配信ネットワークをベースとしており、オーディオビデオ再生のビジネスシナリオ向けに大幅に最適化されています。Tencent CloudのプレーヤーSDKと連携して、スムーズかつ安定したクリアな再生エクスペリエンスを提供します。</td>
+<td>オーディオビデオの加速再生は、Tencent CloudのグローバルCDNコンテンツ配信ネットワークをベースとしており、オーディオビデオ再生のビジネスシナリオ向けに大幅に最適化されています。Tencent CloudのPlayer+と連携して、スムーズかつ安定したクリアな再生エクスペリエンスを提供します。</td>
  <td>2017-08</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/35768">デフォルト配信設定</a></td>
 </tr>

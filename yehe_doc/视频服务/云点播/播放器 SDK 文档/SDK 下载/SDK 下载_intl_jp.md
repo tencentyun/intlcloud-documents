@@ -1,60 +1,512 @@
-Tencent Cloud View Cube Player（以下、Playerと略記）は、Web、iOS、Android、Flutterという4大端末をサポートしており、VODはお客様に完全なDemoとPlayerのダウンロードを提供しています。
-[](id:downloadSDK)
-## SDKダウンロードおよびDemo 
-<table>
-   <tr>
-      <th width="120px" style="text-align:center">端末タイプ</td>
-      <th width="70px" style="text-align:center">プレーヤータイプ</td>
-      <th width="0px"  style="text-align:center">SDK & Demoダウンロードアドレス</td>
-      <th width="0px" style="text-align:center">Demo表示</td>
-      <th width="0px"  style="text-align:center">	使用ドキュメント</td>
-   </tr>
-   <tr>
-      <td style="text-align:center" rowspan='2'>Web端末</td>
-      <td>Super Player</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/33977">SDK</a></td>
-      <td style="text-align:center"><a href="https://tcplayer.vcube.tencent.com/">Demo</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/33977">Web - Super Player</a></td>
-   </tr>
-   <tr>
-      <td style="text-align:center">Super Player Adapter</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/42095">SDK</a></td>
-      <td style="text-align:center">-</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/42095">Web - Super Player Adapter</a></td>
-   </tr>
-   <tr>
-      <td style="text-align:center" rowspan='2'>iOS端末</td>
-      <td>Super Player</td>
-      <td style="text-align:center"><a href="https://github.com/LiteAVSDK/Player_iOS">SDK + Demo</a></td>
-      <td><a><button style="width:120px;height: 120px;border:none;background-image:url(https://main.qcloudimg.com/raw/12c7da97cc910eda673cb19b66fc7cb3.png);background-size: cover;">
-</button></a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/33976">iOS - Super Player</a></td>
-   </tr>
-   <tr>
-      <td>Super Player Adapter</td>
-      <td style="text-align:center"><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_iOS.zip">SDK</a></td>
-      <td style="text-align:center">-</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/42096">iOS - Super Player Adapter</a></td>
-   </tr>
-   <tr>
-      <td style="text-align:center" rowspan='2'>Android端末</td>
-      <td>Super Player</td>
-      <td style="text-align:center"><a href="https://github.com/LiteAVSDK/Player_Android">SDK + Demo</a></td>
-      <td><a><button style="width:120px;height: 120px;border:none;background-image:url(https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png);background-size: cover;">
-</button></a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/33975">Android - Super Player</a></td>
-   </tr>
-   <tr>
-      <td>Super Player Adapter</td>
-      <td style="text-align:center"><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_Android.zip">SDK</a></td>
-      <td style="text-align:center">-</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/42097">Android - Super Player Adapter</a></td>
-   </tr>
-   <tr>
-      <td  style="text-align:center">Flutter端末</td>
-      <td>Super Player</td>
-      <td style="text-align:center"><a href="https://github.com/LiteAVSDK/Player_Flutter">SDK + Demo</a></td>
-	     <td style="text-align:center"><a href="https://github.com/LiteAVSDK/Player_Flutter">Demo</a></td>
-	     <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/266/42099">Flutter - Super Player</a></td>
-   </tr>
+<style>
+    .card-container {
+        width: 350px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        text-align: center;
+    }
+    
+    .markdown-text-box img {
+        box-shadow: none;
+    }
+
+
+    .titlename {
+                color:#191919;
+        position: relative;
+        top: -2px;
+                font-weight: bolder;
+                font-size: larger;
+    }
+        
+        @media (max-width: 768px){
+                .card-container,
+                .scene-card-container{
+                        width: 100%;
+                }
+                .scene-card > div{
+                        width: 100%!important;
+                        margin-left: 0!important;
+                }
+                img {
+        box-shadow: none;
+    }
+        }
+</style>
+
+## SDKのダウンロード
+Player+は、Tencent Cloud View Cube製品ファミリーのサブ製品の一つで、ライブストリーミングやオンデマンドのシナリオに対応したビデオ再生機能を提供します。
+SDKがサポートする機能のリストは、[製品の機能](https://intl.cloud.tencent.com/document/product/266/42965)でご確認いただけます。[Demo体験](https://intl.cloud.tencent.com/document/product/266/42091)では、各端末のDemoを取得して機能を体験することができます。このページでは、各端末のSDKをダウンロードし、Demoソースコードを取得できます。
+
+### Web SDK
+
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+  <div class="card-container">
+      <div class="card">
+        <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
+        <p class="titlename">Web Player+</p>
+        <p style="color:#586376;">ライブストリーミング再生とオンデマンド再生の両方で使用でき、PC端末ブラウザとモバイル端末で使用可能です。</p>
+        <a onclick="reportEvent({name: 'download-click-web', ext1: 'zip'})" target="_blank" href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/release.zip">ZIPダウンロード</a>
+        <a style="margin-left: 10px;" onclick="reportEvent({name: 'download-click-web', ext1: 'github'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/266/38071">統合ガイド</a>
+        <a style="margin-left: 10px;" onclick="reportEvent({name: 'download-click-web', ext1: 'doc-sdk'})" target="_blank" href="https://tcplayer.vcube.tencent.com">Demo事例</a>
+      </div>
+  </div>
+</div>
+
+### iOS & Android SDK
+
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+        <div class="card-container">
+            <div class="card">
+                            <img src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                                <p class="titlename">iOS Player+</p>
+                <p style="color:#586376;">オンデマンド再生とライブストリーミング再生の機能があります。共通コンポーネントとシナリオベースのDemoソースコードを提供し、アプリを素早く構築できるようにします。</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_iOS_latest.zip">ZIPダウンロード</a>
+                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/42005">統合ガイド</a>
+                                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/Player_iOS">Demoソースコード</a>
+            </div>
+        </div>
+			  <div class="card-container">
+            <div class="card">
+                                <img class="icon" src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                                <p class="titlename">Android Player+</p>
+                <p style="color:#586376;">オンデマンド再生とライブストリーミング再生の機能があります。共通コンポーネントとシナリオベースのDemoソースコードを提供し、アプリを素早く構築できるようにします。</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_Android_latest.zip">ZIPダウンロード</a>
+                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/41755">統合ガイド</a>
+                                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/Player_Android">Demoソースコード</a>
+            </div>
+        </div>
+</div>
+
+
+### クロスプラットフォームSDK
+
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+        <div class="card-container">
+            <div class="card">
+									<img src="https://qcloudimg.tencent-cloud.cn/raw/3b6929f89ce1113bc2005873f2338de9.png" data-nonescope="true"/>
+									<p class="titlename">Flutter Player+</p>
+                <p style="color:#586376;">FlutterアーキテクチャパッケージをベースにしたPlayer+です。一連のコードを使用して、各プラットフォームで実行可能なAppをスピーディーに作成できます。</p>
+								<a href="https://github.com/LiteAVSDK/Player_Flutter">ZIPダウンロード</a>
+								<a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/42098">統合ガイド</a>
+                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/Player_Flutter">GitHub</a>
+            </div>
+        </div>
+</div>
+
+
+
+## SDK機能リスト
+<table selecttype="cells" ><colgroup><col  ><col width="155.63" ><col  ><col  ><col  ><col  ></colgroup>
+<tbody>
+<tr  ><th style="width:5%">機能モジュール</td>
+<th style="width:20%">機能項目</td>
+<th style="width:70%">機能概要</td>
+<th style="width:1%">Web</td>
+<th style="width:1%">iOS & Android</td>
+<th style="width:1%">Flutter</td>
+</tr>
+<tr  ><td colspan="1" rowspan="14" >再生プロトコル/形式</td>
+<td>オンデマンドまたはライブストリーミングのサポート</td>
+<td>オンデマンド再生とライブストリーミング再生機能を同時にサポート</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>サポートされているライブストリーミング再生形式</td>
+<td>RTMP、FLV、HLS、DASH、WebRTCなどのライブストリーミングビデオ形式をサポートしています</td>
+<td>WebRTC,FLV,HLS,DASH</td>
+<td>RTMP,FLV,HLS</td>
+<td>RTMP,FLV,HLS</td>
+</tr>
+<tr  ><td>サポートされているオンデマンド再生形式</td>
+<td>HLS、DASH、MP4およびMP3などのオンデマンドオーディオビデオ形式をサポートしています</td>
+<td>HLS,MP4,MP3,FLV,DASH</td>
+<td>MP4,MP3,HLS,DASH</td>
+<td>MP4,MP3,HLS,DASH</td>
+</tr>
+<tr  ><td><a href="https://intl.cloud.tencent.com/document/product/267/41225">ライブイベントストリーミング</a></td>
+<td>Tencent Cloudのミリ秒レベルの超低遅延ライブイベントストリーミング再生をサポートしています</td>
+<td>&#10003;</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr  ><td>DASHプロトコルのサポート</td>
+<td>標準プロトコルのDASHビデオ再生をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Quicアクセラレーション</td>
+<td>Quic通信プロトコルをサポートし、ビデオ伝送効率をアップします</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>SDR/HDRビデオ</td>
+<td>SDRビデオおよびHDR 10/HLG規格のHDRビデオの再生をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>H.264再生およびソフト/ハードウェアデコード</td>
+<td>H.264ビデオソースの再生とともに、ソフト/ハードウェアデコードをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>H.265ハードウェアデコード</td>
+<td>H.265ビデオソースのハードウェアデコード再生をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ピュアオーディオの再生</td>
+<td>MP3などのピュアオーディオ再生をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ダブルサウンドチャンネルオーディオ</td>
+<td>ダブルサウンドチャンネルオーディオ再生をサポートしています</td>
+<td>×</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Http Headerの設定</td>
+<td>ビデオリソースをリクエストする際、HTTP Headersコンテンツをカスタマイズします</td>
+<td>×</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HTTPSをサポートしています</td>
+<td>HTTPSビデオリソースの再生をサポートしています</td>|
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HTTP 2.0</td>
+<td>HTTP 2.0プロトコルをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="6" >再生性能</td>
+<td>プリダウンロード</td>
+<td>指定したビデオファイルのコンテンツの事前ダウンロードをサポートするとともに、プリダウンロードしたビデオファイルのサイズと解像度の設定をサポートしています。最初のフレームの所要時間を大幅に短縮でき、さらに低消費電力に向けた最適化により、パフォーマンス向上につながります</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>再生とキャッシュの同時実行</td>
+<td>再生中での後続コンテンツの同時キャッシュとダウンロードをサポートしています。ネットワーク使用量を減らし、キャッシュポリシーを設定することができます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>正確なseek</td>
+<td>プログレスバー上の指定位置にジャンプして再生する機能をサポートしています。モバイル端末ではフレームレベル、Web端末ではミリ秒レベルの正確さを保証します</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>リアルタイムダウンロード速度</td>
+<td>ダウンロード速度のリアルタイム取得をサポートしています。これにより、消費者市場ユーザーが業務上の必要性に応じてラグが発生している場合に、ダウンロード速度を表示することができます。また、アダプティブビットレート帯域幅予測モジュールを使用するための前提条件でもあります</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>マルチインスタンス</td>
+<td>1つのインターフェースに複数のプレーヤーを追加した同時再生をサポートします</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ダイナミックフレームトラッキング</td>
+<td>ラグが発生した場合、「早送り」のような方法で現在のライブストリーミングの進捗に追いつくことができ、ライブストリーミング画面のリアルタイム性を確保します</td>
+<td>&#10003;</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr  ><td colspan="1" rowspan="25" >再生制御</td>
+<td>URL再生</td>
+<td>オンラインビデオのURL方式による再生をサポートしています。URLは、オンデマンド再生アドレスまたはライブストリーミングのプルストリーミングアドレスにすることができます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>FileID再生</td>
+<td>Video on DemandのFileIDによるビデオ再生をサポートしています。これには、複数の解像度のビデオ、サムネイル、キーモーメントなどの情報が含まれます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ローカルビデオの再生</td>
+<td>ローカルにストレージされたビデオファイルの再生をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr><td>基本制御</td>
+<td>開始、終了、一時停止、再開といった再生制御機能をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ピクチャーインピクチャー（ミニウィンドウ）再生</td>
+<td>ピクチャーインピクチャーへの切り替えは、ミニウィンドウ形式による再生をサポートしています。モバイル端末は、統合App内外でのピクチャーインピクチャーの再生を同時にサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>cache内seek</td>
+<td>キャッシュされたビデオコンテンツをseek時にクリアせず、高速seekする機能をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>CSSタイムシフト</td>
+<td>CSSタイムシフトのビデオストリーム再生をサポートしており、開始、終了、および現在のサポート時間を設定でき、ドラッグに対応しています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>×</td>
+</tr>
+<tr  ><td>プログレスバーマーカーとサムネイルプレビュー</td>
+<td>プログレスバーへのマーク情報の追加とサムネイル（スプライトイメージ）のプレビューをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>カバーの設定</td>
+<td>再生ビデオのタイトル画像設定をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>リプレイ</td>
+<td>ビデオ再生終了時の手動トリガーによるリプレイをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ループ再生</td>
+<td>ビデオ再生終了時の自動リプレイをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>リストの再生</td>
+<td>ビデオリスト内のビデオの連続再生や繰り返し再生をサポートしています。これはすなわち、ビデオリストの最後のビデオの再生が終了した後、リストの最初のビデオが再生されるということです</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ブレークポイント再開</td>
+<td>前回再生を終了した位置からの再生再開をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>再生開始時間のカスタマイズ</td>
+<td>ビデオ再生開始時間のカスタマイズをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>倍速再生</td>
+<td>0.5倍速から3倍速までの可変速再生をサポートし、オーディオはピッチを変えることなく可変速を実現します</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>バックエンド再生</td>
+<td>インターフェースがバックエンドに切り替わった後のオーディオビデオ再生をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>再生コールバック</td>
+<td>再生ステータスコールバック、最初のフレームコールバック、再生完了または失敗コールバックをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>再生のリトライに失敗しました</td>
+<td>再生失敗時の自動リトライ、ライブストリーミングの自動リトライ機能をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ボリューム設定</td>
+<td>システムボリュームのリアルタイム調整とミュート操作をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>解像度の切り替え</td>
+<td>ユーザーによるHLSビデオの複数の解像度ストリームのスムーズかつラグのない切り替えをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>解像度の命名</td>
+<td>さまざまな解像度ストリームのカスタム命名をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr><td>スクリーンキャプチャ機能</td>
+<td>再生画面の任意のフレームのキャプチャをサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>プレビュー機能</td>
+<td>プレビュー機能を有効にしたビデオ再生をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>弾幕</td>
+<td>ビデオ上方での弾幕表示をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>字幕インポート</td>
+<td>カスタム字幕ファイルのインポートをサポートしています</td>
+<td>&#10003;</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr  ><td colspan="1" rowspan="8" ><a href="https://intl.cloud.tencent.com/document/product/266/38131">ビデオセキュリティ</a></td>
+<td>refererブラックリスト/ホワイトリスト</td>
+<td>再生リクエストに含まれるRefererフィールドを介してリクエストの送信元を識別し、ブラックリストまたはホワイトリストで送信元リクエストを制御する機能をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Keyリンク不正アクセス防止</td>
+<td>再生リンクへの制御パラメータの追加、リンクの有効時間、プレビュー時間、再生が許可されるIP数などの制御をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HLS暗号化</td>
+<td>HLSに基づいて提供されるAES encryptionスキームをサポートし、キーペアを使用してビデオデータを暗号化します</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HLSプライベート暗号化</td>
+<td>VODのプライベートプロトコルによるビデオの暗号化をサポートし、復号されたビデオのみPlayer+での再生を可能にします。さまざまなブラウザのプラグインやグレーツールによるクラッキングを効果的に防止できます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>商用DRM</td>
+<td>Apple Fairplay、Google Widevineのネイティブ暗号化方式を提供しています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>セキュアなダウンロード</td>
+<td>暗号化されたビデオのオフラインダウンロードをサポートした後は、ビデオはPlayer+を介してのみ復号と再生ができます</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ダイナミックウォーターマーク</td>
+<td>再生インターフェースに不規則に動くテキストウォーターマークを追加し、効果的な不正録画防止をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>トレーサビリティウォーターマーク</td>
+<td>不正録画者の追跡をわずかなコストでサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="8" >表示結果</td>
+<td>カスタマイズUI</td>
+<td>SDKはUIを含む統合方式とUIインターフェースを含む共通の再生コンポーネントを提供していますので、ご自身のニーズに応じて選択することができます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>画面の塗りつぶし</td>
+<td>スクリーンサイズに合わせてビデオ画像の各種塗りつぶしモードの選択をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>プレーヤーサイズの設定</td>
+<td>プレーヤーの幅と高さのカスタマイズをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr><td>ロール画像</td>
+<td>一時停止した際の広告表示用のピクチャロール画像の追加をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>ビデオイメージ</td>
+<td>水平、垂直方向などのイメージをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>ビデオ回転</td>
+<td>角度に応じたビデオ画面の回転をサポートするとともに、ビデオファイルの内部rotateパラメータに基づいたビデオの自動回転をサポートしています</td>
+<td>x</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>画面のロック</td>
+<td>ロックの回転やインターフェース要素の非表示など、画面のロック機能をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>明るさ調整</td>
+<td>ビデオ再生時のシステムの明るさ調節をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="2" >付加価値機能</td>
+<td>端末超高速HD（TESHD）</td>
+<td>超解像度技術をベースとした端末の超高速HD（TESHD）ソリューションを提供しています。オンラインビデオの再生側でポストプロセッシングをリアルタイムに行い、画質を確保した上で帯域幅を節約したり、同じ帯域幅条件でビデオ再生の解像度や主観品質を向上させたりします。</td>
+<td>x</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>再生品質モニタリング</td>
+<td>再生データのレポートをベースに、VODとCSSサービスと組み合わせることによって、再生フルリンクのデータ統計、品質モニタリング、ビジュアル化分析サービスを提供します。</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+</tbody>
 </table>
+
+>! 表の「-」は、端末が対応する機能を備える必要がないか、関連する概念がないことを意味します。

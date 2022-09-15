@@ -16,7 +16,7 @@
 </tr>
 </tbody>
 <tbody ><tr>
-<td>Launched a commercial-grade DRM scheme.</td>
+<td>Launched the commercial-grade DRM feature.</td>
 <td>VOD offers an easy-to-use DRM scheme that is built on established DRM solutions and integrates a full range of features including DRM encryption, license management, license distribution, decryption, and playback.</td>
 <td>2022-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/266/46658">DRM Encryption</a></td>
@@ -33,16 +33,14 @@
 <th width="15%">Documentation</th>
 </tr>
 </thead>
-</tr>
-</tr>
-</thead>
 <tbody><tr>
 <td>Launched the real-time image processing feature.</td>
-<td>You can now quickly crop or scale an image in VOD.</td> 
+<td>You can now quickly crop or scale images in VOD media assets.</td> 
  <td>2022-05</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/42094">Real-Time Image Processing</a></td>
 </tr>
 </tbody></table>
+
 
 
 ## November 2021
@@ -56,11 +54,10 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Released v3.8</td>
+<td>Released v3.8.</td>
 <td>Launched the feature trial module, which allows you to try out the latest VOD features.</td> 
  <td>2021-11</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/49085">Feature Tryout</a>
-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/49085">Feature Trial</a></td>
 </tr>
 </tbody></table>
 
@@ -78,13 +75,13 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Released v3.5</td>
+<td>Released v3.5.</td>
 <td>Optimized VOD features for live recording files by connecting live recording with VOD cold storage policies and adding support for binding task flows.</td> 
  <td>July 2021</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/267/34223">Live Recording</a></td>
 </tr>
 <tr>
-<td>Released v3.6</td>
+<td>Released v3.6.</td>
 <td>Released Tencent Cloud player demo which supports all product UI and business source code.</td>
  <td>August 2021</td> 
 <td>
@@ -92,7 +89,7 @@
 </td>
 </tr>
 <tr>
-<td>Released v3.7</td>
+<td>Released v3.7.</td>
 <td>Released the new-version price calculator.</td>
  <td>August 2021</td> 
 <td>
@@ -105,20 +102,7 @@
 <table>
 <thead>
 <tr>
-<th width="20%">Update</th>
-<th width="50%">Description</th>
- <th width="15%">Release Date</th> 
-<th width="15%">Documentation</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Released v3.3</td>
-<td>VOD integrated with Cloud Monitor.</td> 
- <td>May 2021</td> 
-<td>How to configure CDN metrics for monitoring and alarming.</td>
-</tr>
-<tr>
-<td>Released v3.4</td>
+<td>Released v3.4.</td>
 <td>Added support for cold storage.</td>
  <td>June 2021</td> 
 <td>
@@ -138,7 +122,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Released v3.0</td>
+<td>Released v3.0.</td>
 <td>Released task management system which supports query for task details.</td> 
  <td>March 2021</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/39706">Task Management</a></td>
@@ -147,9 +131,7 @@
 <td>Released v3.1</td>
 <td>Upgraded image management system which supports filtering, search and custom list, etc.</td>
  <td>March 2021</td> 
-<td>
-<a href = "https://intl.cloud.tencent.com/document/product/266/37899">Image Management</a>
-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/37899">Image Management</a></td>
 </tr>
 <tr>
 <td>Released v3.2</td>
@@ -160,6 +142,7 @@
 </td>
 </tr>
 </tbody></table>
+
 
 ## February 2021
 <table>
@@ -172,13 +155,13 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Released v2.8</td>
-<td>Added support for Top Speed Codec.</td> 
+<td>Released v2.8.</td>
+<td>Added support for VOD TSC transcoding configuration.</td> 
  <td>January 2021</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/14059">Top Speed Codec</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14059">Template Settings</a></td>
 </tr>
 <tr>
-<td>Released v2.9</td>
+<td>Released v.2.9.</td>
 <td>Upgraded and provided VOD’s CDN configuration capability, and added support for acceleration only outside Chinese mainland.</td>
  <td>2021-02</td> 
 <td>
@@ -239,7 +222,7 @@
 <td>Launched new-version Media Asset Management.</td>
  <td>2020-09</td> 
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/266/36828">Managing Video</a>
+<a href="https://cloud.tencent.com/document/product/266/45507">Video Management</a>
 </td>
 </tr>
 </tbody></table>
@@ -260,7 +243,7 @@
 <td>Released v2.2</td>
 <td>Images can be directly set as video thumbnails.</td> 
  <td>August 2020</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33896">Managing Audio/Video Files</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33896">Managing Video</a></td>
 </tr>
 </tbody></table>
 
@@ -278,28 +261,25 @@
 </thead>
 <tbody><tr>
 <td>Released v2.0</td>
-<td>Added an image management module to the console.</td> 
+<td>The image management feature is launched in the console.</td> 
  <td>June 2020</td> 
 <td><a href = "https://intl.cloud.tencent.com/document/product/266/37900">Image Management</a></td>
 </tr>
 <tr>
 <td>Released v1.9</td>
 <td><ul style="margin:0;">
-<li >Added superplayer configuration to the console.
-<li >Added superplayer preview to the console.</td>
+<li >The player configuration feature is launched in the console.
+<li >The player preview feature is launched in the console.</td>
  <td>June 2020</td> 
 <td>
 <ul style="margin:0;">
 <li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">Superplayer Configuration</a>
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">Superplayer Preview</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">Managing Video</a>
 </td>
 </tr>
 </tbody></table>
 
-
-
 ## October 2019
-
 
 <table>
 <thead>
@@ -313,7 +293,7 @@
 <tbody><tr>
 <td>Released v1.7</td>
 <td><ul style="margin:0;"><li >Launched statistics collection feature for video clipping.
-<li >Launched TESHD template.
+<li >Launched TSC transcoding template.
 <li >Fixed exceptions in error code mapping.
 <li >Fixed the error where domain names without ICP filing could not be deleted.
 <li >Fixed exceptions in storage region name display.
@@ -349,8 +329,8 @@
 <tbody><tr>
 <td>Released the dedicated Intelligent Video Recognition Edition</td>
 <td><ul style="margin:0;"><li >Intelligent video recognition can be used through custom templates in the console.
-<li >Added support for detecting pornographic content.
-<li >You can view in a list the timestamps of non-compliant content and violation details.
+<li >Porn content can be moderated.
+<li >Time points and violation details of non-compliant content detected by content moderation can be viewed on the intelligent video recognition list.
 </td>
  <td>September 15, 2019</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/33897">Intelligent Video Recognition</a></td>

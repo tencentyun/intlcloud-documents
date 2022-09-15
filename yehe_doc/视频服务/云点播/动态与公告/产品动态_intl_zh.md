@@ -33,9 +33,6 @@
 <th width="15%">相关文档</th>
 </tr>
 </thead>
-</tr>
-</tr>
-</thead>
 <tbody><tr>
 <td>发布点播图片即时处理功能</td>
 <td>点播图片即时处理功能上线，支持对点播媒资中的原始图片进行裁剪或缩略，并快速输出处理结果的功能。</td> 
@@ -43,6 +40,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/266/42094">图片即时处理</a></td>
 </tr>
 </tbody></table>
+
 
 
 ## 2021年11月
@@ -59,8 +57,7 @@
 <td>发布 V3.8 版本</td>
 <td>	云点播功能体验模块上线，支持点播最新功能率先体验。</td> 
  <td>2021-11</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/49085">功能体验</a>
-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/49085">功能体验</a></td>
 </tr>
 </tbody></table>
 
@@ -104,19 +101,6 @@
 ## 2021年6月
 <table>
 <thead>
-<tr>
-<th width="20%">动态名称</th>
-<th width="50%">动态描述</th>
- <th width="15%">发布时间</th> 
-<th width="15%">相关文档</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>发布 V3.3 版本</td>
-<td>云点播全面接入云监控。</td> 
- <td>2021-05</td> 
-<td>如何配置CDN指标监控和告警</td>
-</tr>
 <tr>
 <td>发布 V3.4 版本</td>
 <td>云点播支持媒资降冷能力。</td>
@@ -239,7 +223,7 @@
 <td>点播媒资管理新版上线。</td>
  <td>2020-09</td> 
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/266/36828">视频管理</a>
+<a href="https://cloud.tencent.com/document/product/266/45507">视频管理</a>
 </td>
 </tr>
 </tbody></table>
@@ -285,17 +269,16 @@
 <tr>
 <td>发布 V1.9 版本</td>
 <td><ul style="margin:0;">
-<li >控制台上线超级播放器配置功能。
-<li >控制台上线超级播放器预览功能。</td>
+<li >控制台上线播放器配置功能。
+<li >控制台上线播放器预览功能。</td>
  <td>2020-06</td> 
 <td>
 <ul style="margin:0;">
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">超级播放器配置</a>
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">超级播放器预览</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">播放器配置</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">播放器预览</a>
 </td>
 </tr>
 </tbody></table>
-
 
 
 ## 2019年10月

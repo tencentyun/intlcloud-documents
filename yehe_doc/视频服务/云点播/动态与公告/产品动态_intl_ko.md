@@ -33,9 +33,6 @@
 <th width="15%">관련 문서</th>
 </tr>
 </thead>
-</tr>
-</tr>
-</thead>
 <tbody><tr>
 <td>VOD 이미지 실시간 처리 기능 배포</td>
 <td>VOD 이미지의 실시간 처리 기능이 출시되었습니다. VOD 미디어 자산 이미지를 자르거나 압축하고 처리 결과를 신속하게 출력하는 기능을 지원합니다.</td> 
@@ -43,6 +40,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/266/42094">이미지 실시간 처리</a></td>
 </tr>
 </tbody></table>
+
 
 
 ## 2021년 11월
@@ -59,8 +57,7 @@
 <td>V3.8 버전 배포</td>
 <td>VOD 기능 체험 모듈이 출시되었습니다. VOD 최신 기능을 먼저 체험해 보십시오. </td> 
  <td>2021-11</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/49085">기능 체험</a>
-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/49085">기능 체험</a></td>
 </tr>
 </tbody></table>
 
@@ -104,19 +101,6 @@
 ## 2021년 6월
 <table>
 <thead>
-<tr>
-<th width="20%">업데이트 명칭</th>
-<th width="50%">업데이트 설명</th>
- <th width="15%">배포일</th> 
-<th width="15%">관련 문서</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>V3.3 버전 배포</td>
-<td>클라우드 모니터링에 VOD 통합 연결.</td> 
- <td>2021-05</td> 
-<td>CDN 지표 모니터링 및 알림 설정 방법</td>
-</tr>
 <tr>
 <td>V3.4 버전 배포</td>
 <td>VOD는 미디어 자산 콜드 스토리지 기능을 지원합니다.</td>
@@ -239,7 +223,7 @@
 <td>새로운 버전의 미디어 자산 관리를 배포했습니다.</td>
  <td>2020-09</td> 
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/266/36828">비디오 관리</a>
+<a href="https://cloud.tencent.com/document/product/266/45507">비디오 관리</a>
 </td>
 </tr>
 </tbody></table>
@@ -285,21 +269,19 @@
 <tr>
 <td>V1.9 버전 배포</td>
 <td><ul style="margin:0;">
-<li >콘솔에 Superplayer 설정 기능이 배포되었습니다.
-<li >콘솔에 Superplayer 미리보기 기능이 배포되었습니다.</td>
+<li >콘솔에 Player 설정 기능이 배포되었습니다.
+<li >콘솔에 Player 미리보기 기능이 배포되었습니다.</td>
  <td>2020-06</td> 
 <td>
 <ul style="margin:0;">
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">Superplayer 설정</a>
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">Superplayer 미리보기</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">Player 설정</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">Player 미리보기</a>
 </td>
 </tr>
 </tbody></table>
 
 
-
 ## 2019년 10월
-
 
 <table>
 <thead>
