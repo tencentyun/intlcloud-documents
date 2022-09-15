@@ -6,9 +6,10 @@ Tencent Cloud IMテクノロジーコミュニケーショングループに参�
 - 詳細な製品情報を入手できる
 - ­業界の有識者と密にコミュニケーションできる
 
-Telegramコミュニケーショングループ：[クリックして参加](https://t.me/tencent_imsdk)
-
-
+Telegramコミュニケーショングループ（EN）：[クリックして参加](https://t.me/+1doS9AUBmndhNGNl)
+WhatsAppコミュニケーショングループ（EN）：[クリックして参加](https://chat.whatsapp.com/Gfbxk7rQBqc8Rz4pzzP27A)
+Telegramコミュニケーショングループ（ZH）：[クリックして参加](https://t.me/tencent_imsdk)
+WhatsAppコミュニケーショングループ（ZH）：[クリックして参加](https://chat.whatsapp.com/IVa11ZkVmKTEwSWsAzSyik)
 
 ## ホットライン
 
