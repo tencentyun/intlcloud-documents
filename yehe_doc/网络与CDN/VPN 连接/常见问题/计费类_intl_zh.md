@@ -1,6 +1,6 @@
 ### VPN 连接的计费模式是什么？
 - VPN 通道和对端网关免费使用，VPN 网关需要付费使用。
-- VPN 网关提供“按量后付费”的计费模式，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1037/32685)。
+- VPN 网关提供按量后付费的计费模式，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1037/32685)。
 
 有关私有网络的更多计费信息，详情请参见 [私有网络计费概述](https://intl.cloud.tencent.com/document/product/215/35500)。
 
@@ -11,7 +11,8 @@ VPN 网关的续费、升级操作不可以同时进行，如果用户有未支�
 关于 VPN 网关的到期提醒，详情请参见 [到期提醒](https://intl.cloud.tencent.com/document/product/1037/32687)。
 
 ### 是否支持 SSL VPN？
-支持，SSL VPN 内测已结束，将于2022年4月6日正式商用。
+SSL VPN 内测中，如需体验，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+
 
 
 
