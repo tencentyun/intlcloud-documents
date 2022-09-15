@@ -66,7 +66,7 @@ CDN 노드는 원본 서버 응답 헤더의 Cache-Control 헤더에 따라 캐�
 		 <br>
 		 <img src="https://qcloudimg.tencent-cloud.cn/raw/80612ba1e40f345e14b188939cb7b557.png" width="450px">
 		 <br>
-		 ii. **사용자 정의 정책**: 휴리스틱 캐시의 시간을 사용자 정의할 수 있습니다.
+		 ii. <b>사용자 정의 정책</b>: 휴리스틱 캐시의 시간을 사용자 정의할 수 있습니다.
 		 <br>
 		 <img src="https://qcloudimg.tencent-cloud.cn/raw/06629eb849a9e56ee0c16db1f8bfe3c6.png" width="450px">
 		 <br>
