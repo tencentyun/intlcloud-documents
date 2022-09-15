@@ -170,7 +170,8 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Interactive Live Video Broadcasting(ILVB)</h3>
                 <p style="color:#586376;" ;>로우 코드로 쇼, 이커머스, 경기와 같은 비디오 인터랙티브 라이브 방송 시나리오를 빠르게 구현합니다.</p>
-                <a href="https://github.com/tencentyun/TUILiveRoom">GitHub</a>
+                <a href="https://github.com/tencentyun/TUILiveRoom/blob/main/README.en.md
+">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">문서 바로가기</a>
             </div>
         </div>
@@ -195,7 +196,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">음성 채팅방</h3>
                 <p style="color:#586376;" ;>컴포넌트화된 UI를 통해 로우 코드로 음성 채팅방 시나리오를 빠르게 구현하도록 지원합니다.</p>
-                <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHub</a>
+                <a href="https://github.com/tencentyun/TUIVoiceRoom/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37287">문서 바로가기</a>
             </div>
         </div>
@@ -226,7 +227,7 @@
                 <h3 style="color:191919;">인터랙션 클래스</h3>
                 <p style="color:#586376" ;>Electron 크로스 플랫폼 컴포넌트는 클래스를 신속하게 구축하도록 지원합니다.</p>
                 <a
-                    href="https://github.com/TencentCloud/trtc-education-electron">GitHub</a>
+                    href="https://github.com/TencentCloud/trtc-education-electron/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37278">문서 바로가기</a>
             </div>
         </div>
@@ -243,7 +244,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">그룹 멀티미디어 룸</h3>
                 <p style="color:#586376" ;>컴포넌트화된 UI를 통해 로우 코드로 멀티미디어 룸 시나리오를 빠르게 구현하도록 지원합니다.</p>
-                <a href="https://github.com/tencentyun/TUIMeeting">GitHub</a>
+                <a href="https://github.com/tencentyun/TUIRoom/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">문서 바로가기</a>
             </div>
         </div>
@@ -256,7 +257,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">음성 통화</h3>
                 <p style="color:#586376" ;>컴포넌트화된 UI를 통해 ‘WeChat과 유사한’ 음성 통화 시나리오를 빠르게 구현하도록 지원합니다.</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub</a>
+                <a href="https://github.com/tencentyun/TUICallKit/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36067">문서 바로가기</a>
             </div>
         </div>
@@ -269,7 +270,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">영상 통화</h3>
                 <p style="color:#586376" ;>컴포넌트화된 UI를 통해 ‘WeChat과 유사한’ 영상 통화 시나리오를 빠르게 구현하도록 지원합니다.</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub</a>
+                <a href="https://github.com/tencentyun/TUICallKit/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">문서 바로가기</a>
             </div>
         </div>

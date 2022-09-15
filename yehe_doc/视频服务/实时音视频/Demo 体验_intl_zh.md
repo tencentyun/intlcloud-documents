@@ -192,6 +192,7 @@ ul.rno-tabs-operation {
             <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">音视频通话</div>
             <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">互动直播推流</div>
             <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'player'});">互动直播拉流</div>
+                        <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'player'});">多人音视频会议</div>
         </div>
     </div>
     <div class="preview-demo-item style-qrcode">
@@ -275,8 +276,8 @@ ul.rno-tabs-operation {
             音视频通话·多人会议<br>屏幕分享等
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-windows-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'windows'});">下载 Windows 版</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-mac-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'mac'});">下载 Mac OS 版</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/TUIRoom-Electron/TUIRoom-Electron-windows-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'windows'});">下载 Windows 版</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/TUIRoom-Electron/TUIRoom-Electron-mac-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'mac'});">下载 Mac OS 版</div>
         </div>
     </div>
 </div> 

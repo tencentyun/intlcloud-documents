@@ -11,11 +11,13 @@ Sebelum menghapus citra kustom, harap perhatikan item berikut:
 ## Petunjuk
 
 ### Hapus citra melalui konsol
-1. Login ke [Konsol CVM](https://console.cloud.tencent.com/cvm/).
-2. Di bilah kiri, klik **Images** (Citra) dan pilih tab **Custom Image** (Citra Kustom) untuk masuk ke halaman manajemen citra kustom.
+1. Login ke Konsol CVM. Di bilah kiri, klik [**Images**](https://console.cloud.tencent.com/cvm/) (Citra)
+2. Dan pilih tab **Custom Image** (Citra Kustom) untuk masuk ke halaman manajemen citra kustom.
 3. Pilih metode untuk menghapus citra kustom berdasarkan kebutuhan aktual.
- - Menghapus satu citra: cari citra khusus yang akan dihapus dalam daftar citra dan klik **More** (Lainnya) > **Delete** (Hapus).
- - Menghapus banyak citra: pilih semua citra kustom yang akan dihapus dalam daftar citra, lalu klik **Delete** (Hapus) di bagian atas.
+ - **Menghapus satu citra**: cari citra khusus yang akan dihapus dalam daftar citra dan klik **More** (Lainnya) > **Delete** (Hapus).
+  ![](https://qcloudimg.tencent-cloud.cn/raw/1211de56434b4b6034dccb1ff9ce4aa1.png) 
+ - **Menghapus banyak citra**: pilih semua citra kustom yang akan dihapus dalam daftar citra, lalu klik **Delete** (Hapus) di bagian atas.
+  ![](https://qcloudimg.tencent-cloud.cn/raw/9f002d5cce1cfa2c94931ea3bca25ac2.png) 
 4. Di jendela pop-up, klik **OK** (OKE).
 Jika penghapusan gagal, kemungkinan akan ditampilkan alasannya.
 
