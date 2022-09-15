@@ -52,7 +52,7 @@ CDN 会根据节点缓存过期配置的缓存过期时间，判断 CDN 节点�
 [](id:m1)	
 ### 腾讯云 CDN 缓存规则及优先级
 #### 缓存选项为：遵循源站
-<img src="" width="850px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0d0086b11c0e9968707865af46a4c23d.jpg" width="850px">
 
 
 
@@ -72,7 +72,7 @@ CDN 节点将遵循源站响应头 Cache-Control 头部设置缓存时间。
 		 <br>
 
 #### 缓存选项为：缓存
-<img src="" width="850px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dc781cff77d79f57fa3c9df800e21a4d.jpg" width="850px">
 
 自定义设置 CDN 节点的缓存时间。	
 - 关闭强制缓存：
