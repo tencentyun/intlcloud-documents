@@ -257,7 +257,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Audio Call</h3>
                 <p style="color:#586376" ;>Component-based UI design to help you quickly implement WeChat-like audio call applications</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub</a>
+                <a href="https://github.com/tencentyun/TUICallKit/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36067">Integration guide</a>
             </div>
         </div>
@@ -270,7 +270,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Video Call</h3>
                 <p style="color:#586376" ;>Component-based UI design to help you quickly implement WeChat-like video call applications</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub</a>
+                <a href="https://github.com/tencentyun/TUICallKit/blob/main/README.en.md">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">Integration guide</a>
             </div>
         </div>
