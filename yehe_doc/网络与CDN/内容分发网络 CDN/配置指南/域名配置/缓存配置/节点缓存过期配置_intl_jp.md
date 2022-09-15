@@ -66,7 +66,7 @@ CDNノードで、オリジンサーバーのレスポンスヘッダーCache-Co
 		 <br>
 		 <img src="https://qcloudimg.tencent-cloud.cn/raw/80612ba1e40f345e14b188939cb7b557.png" width="450px">
 		 <br>
-		 ii. **カスタムポリシー**：ヒューリスティックキャッシュの有効期限を設定できます。
+		 ii. <b>カスタムポリシー</b>：ヒューリスティックキャッシュの有効期限を設定できます。
 		 <br>
 		 <img src="https://qcloudimg.tencent-cloud.cn/raw/06629eb849a9e56ee0c16db1f8bfe3c6.png" width="450px">
 		 <br>
