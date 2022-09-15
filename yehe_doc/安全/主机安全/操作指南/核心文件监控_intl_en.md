@@ -1,15 +1,15 @@
-﻿This document describes how to use the Core File Monitoring feature.
+﻿This document describes how to use the Critical File Monitor feature.
 
 ## Overview
 Based on Tencent Cloud's adaptive learning technology, this feature allows you to monitor critical files in real time based on system rules and custom rules. If suspicious access to a file is detected, the system will send you an alert in real time.
 
 ## Limits
-The Core File Monitoring feature is available only if you have at least one server bound to a (CWPP Pro/Ultimate) license.
+The Critical File Monitor feature is available only if you have at least one server bound to a (CWPP Pro/Ultimate) license.
 - Only Linux kernel 3.10 or above is supported.
 
 ## Operation Guide
 1. Log in to the [CWPP console](https://console.tencentcloud.com/cwp).
-2. Click **Advanced Defense** > **Core File Monitoring** on the left sidebar. The fields and operations related to the feature are described as follows.
+2. Click **Advanced Defense** > **Critical File Monitor** on the left sidebar. The fields and operations related to the feature are described as follows.
 
 ### Event List
 In the **Event List**, you can view and handle the risks related to core files (file is tampered with or files are added) that are detected by CWPP.
