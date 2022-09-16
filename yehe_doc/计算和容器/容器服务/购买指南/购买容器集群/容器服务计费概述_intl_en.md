@@ -19,10 +19,10 @@ The billing mode of pay-as-you-go is usually adopted for TKE.
 | Number of clusters | Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis | USD/hour |
 
 ### Recommendations for small clusters
-- If your cluster has only a small number of nodes (less than 20), we highly recommend you use [Elastic Kubernetes Service](https://intl.cloud.tencent.com/document/product/457/34040) (EKS). With EKS, you can deploy workloads and pay for actual container usage, with no need to purchase nodes and pay cluster management fees.
-- You can choose to migrate your existing TKE clusters as needed in the following ways:
-	- Conduct smooth business migration through [super nodes](https://intl.cloud.tencent.com/document/product/457/39759) to reduce the number of nodes in the TKE cluster and thereby lower the cluster management fees (such fees are not charged for super nodes; for more information, see [Pricing](#price) below).
-	- Completely migrate the TKE cluster to the EKS cluster through the migration tool as instructed in [Guide on Migrating Resources in a TKE Managed Cluster to an EKS Cluster](https://intl.cloud.tencent.com/document/product/457/47002). If you encounter any problems, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
+- If your cluster has only a small number of nodes (less than 20), we highly recommend you use [TKE Serverless Cluster](https://intl.cloud.tencent.com/document/product/457/34040) . With TKE Serverless cluster, you can deploy workloads and pay for actual container usage, with no need to purchase nodes and pay cluster management fees.
+- You can choose to migrate your existing TKE general clusters as needed in the following ways:
+	- Conduct smooth business migration through [super nodes](https://intl.cloud.tencent.com/document/product/457/39759) to reduce the number of nodes in the TKE general cluster and thereby lower the cluster management fees (such fees are not charged for super nodes; for more information, see [Pricing](#price) below).
+	- Completely migrate the TKE general cluster to the TKE serverless cluster through the migration tool as instructed in [Guide on Migrating Resources in a TKE Managed Cluster to an TKE Serverless Cluster](https://intl.cloud.tencent.com/document/product/457/47002). If you encounter any problems, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
 
 
 ### Pricing[](id:price)
