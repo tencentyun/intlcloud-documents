@@ -2,7 +2,7 @@ CAR is billed by application rendering **concurrency**. A concurrency represents
 
 ## CAR concurrency scales
 
-| Concurrency scale | CPU        | Memory      | GPU         | Video Memory    | Bandwidth    |
+| Concurrency Scale | CPU        | Memory      | GPU         | Video Memory    | Bandwidth    |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
 | S - For rendering small applications    | 4-core vCPU or above  | 8 GB or above  | 2 TF SP/30T INT or above   | 4 GB or above  | Up to 8 Mbps |
 | M - For rendering medium-sized applications    | 4-core vCPU or above  | 16 GB or above | 4 TF SP/30T INT or above   | 6 GB or above  | Up to 8 Mbps |
@@ -22,9 +22,9 @@ CAR is billed by application rendering **concurrency**. A concurrency represents
 <th>Billing Mode</th>
 <th>Billable Item</th>
 <th>Billing Cycle</th>
-<th>Singapore (USD/Concurrencies/Cycle)</th>
-<th>Japan (USD/Concurrencies/Cycle)</th>
-<th>South Korea (USD/Concurrencies/Cycle)</th>
+<th>Singapore (USD/Concurrency/Cycle)</th>
+<th>Japan (USD/Concurrency/Cycle)</th>
+<th>South Korea (USD/Concurrency/Cycle)</th>
 </tr>
 </thead>
 <tbody><tr>

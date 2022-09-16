@@ -1,5 +1,5 @@
 ## Low latency
-CAR adopts Tencent Cloud's proprietary Real-Time Cloud Rendering technology and is optimized and tailored in depth for real-time cloud application rendering scenarios.
+CAR adopts Tencent Cloud's proprietary Real-Time Cloud Rendering technology and is optimized specifically for real-time cloud application rendering scenarios.
 
 ## High image quality
 
@@ -11,8 +11,8 @@ Based on adaptive encoding and elastic frame rate as well as supporting technolo
 
 ## Quick integration for various devices
 
-CAR provides the lightweight SDK for JavaScript and other SDKs so you can implement your CAR service on PC, mobile phones, tablets, and set-top boxes (STB). You can quickly set up a CAR demo within only two to three days.
+CAR provides the lightweight SDK for JavaScript and other SDKs so you can implement your CAR service on PC, mobile phones, tablets, TV boxes, or other devices. You can quickly set up a CAR demo within only two to three days.
 
 ## Self-service application deployment and update
 
-CAR offers a complete set of custom capabilities such as application upload, update, and version management, so you can easily deploy and manage your business application in the CAR console.
+CAR offers a complete set of custom capabilities such as application upload, update, and version management, so you can deploy and manage your business application easily from the CAR console.
