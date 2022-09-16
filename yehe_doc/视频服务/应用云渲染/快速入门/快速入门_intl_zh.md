@@ -3,7 +3,7 @@
 
 ## 应用云渲染接入
 ### 接入准备
-
+![](https://qcloudimg.tencent-cloud.cn/raw/7c03a9fc66cfa851e742b6bdb79a738b.jpg)
 
 [](id:step1)
 
