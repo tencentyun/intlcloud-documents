@@ -35,7 +35,7 @@ Before purchasing a CAR concurrency pack, you need to perform the following step
 <td>Select the amount of time that the CAR concurrency pack will be used.</td>
 </tr><tr>
 <td>Auto-renew (optional)</td>
-<td>When <b>Auto-renew</b> is enabled, your concurrency pack will be automatically renewed monthly upon expiration if your Tencent Cloud account balance is sufficient.<b>Note: Concurrency packs billed on a daily basis don't support automatic renewal.</b></td>
+<td>When <b>Auto-renew</b> is enabled, your concurrency pack will be automatically renewed monthly upon expiration if your Tencent Cloud account balance is sufficient. <b>Note: Concurrency packs billed on a daily basis don't support automatic renewal.</b></td>
 </tr><tr>
 <td>Pack name</td>
 <td>Name the CAR concurrency pack.</td>
