@@ -1,5 +1,5 @@
 应用云渲染 PaaS 服务，帮助您实现应用云端运行，用户无需下载，即可通过视频流操作云上应用。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6db9536d93dfad8c4a3113229b9144ce.jpg)
 
 ## 云 API
 - **云 API：**云 API [3.0 版本](https://intl.cloud.tencent.com/product/api) 是腾讯云开放生态的基石，具备易于自动化、易于远程调用、兼容性强及对系统要求低等优势。通过云 API，您只需少量的代码即可快速操作云产品，针对频繁调用的功能可以提高效率。您还可将云 API 进行组合，实现更高级的功能。
@@ -17,7 +17,7 @@
 
 ## 接入服务能力
 应用云渲染都是前后端一体的 PaaS 产品，提供后端 API 和各终端 SDK，您需要搭建自己的客户端程序以及后台服务，才能为您的用户提供服务。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/eddd4735374bf4605d1b233561c239aa.jpg)
 
 - **后台 API：**
 应用云渲染提供了业务所需调用的后台 [云 API](https://intl.cloud.tencent.com/document/product/1158/49958) ，通过云 API 您的业务后台可以完成请求您的并发资源以及创建会话等功能。
