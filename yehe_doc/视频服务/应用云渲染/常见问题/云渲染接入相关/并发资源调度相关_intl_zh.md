@@ -18,7 +18,7 @@
 
 ### ApplyConcurrent 和 CreateSession 能不能重复调用? 重复调用是连接到新并发还是原来并发？
 可以重复调用。如果原有并发没有被回收，则连接原来并发，同时会断开原来的客户端连接； 如果原来并发已经被回收，则连接新并发。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/291399f70ba46fb36457dfb7835cf469.jpg)
 
 ### 用户长期不操作是否会断开连接？
 应用云渲染服务不会主动断开用户连接，需要业务根据 SDK 回调主动断开连接。空闲操作时间可以自定义 [init 接口](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.init(params)) 中的 idleThreshold 参数，业务侧收到回调时可以调用 [DestroySession](https://intl.cloud.tencent.com/document/product/1158/49967) 来释放并发。
