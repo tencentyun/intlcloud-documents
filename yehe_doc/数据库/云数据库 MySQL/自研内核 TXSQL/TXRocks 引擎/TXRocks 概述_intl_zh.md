@@ -32,7 +32,7 @@ InnoDB 采⽤ In-Place 的修改⽅式，即使仅修改⼀⾏记录也可能要
 TXRocks 采⽤ Append-Only ⽅式，相⽐⽽⾔写⼊放⼤更低。因此 TXRocks 对于擦写次数有限的 SSD 等产品更友好。
 
 ## 适用场景
-TXRocks ⾮常适合对存储成本⽐较敏感，读多写少但对事务读写性能有要求的，数据存储量⼤的业务场景。
+TXRocks ⾮常适合对存储成本⽐较敏感，写多读少但对事务读写性能有要求的，数据存储量⼤的业务场景。
 
 ## 如何使用 TXRocks 存储引擎
 请参见 [TXRocks 引擎使用须知](https://intl.cloud.tencent.com/document/product/236/47014)。
