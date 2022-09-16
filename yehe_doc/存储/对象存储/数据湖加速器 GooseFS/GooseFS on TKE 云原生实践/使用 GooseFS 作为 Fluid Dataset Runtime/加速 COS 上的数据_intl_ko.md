@@ -44,7 +44,7 @@ spec:
         high: "0.9"
         low: "0.2"
 ```
-AK 등 키 정보의 보안을 위해, secret 사용을 통한 관련 키 정보 저장을 권장하며, secret 사용은 <a href="https://cloud.tencent.com/document/product/436/59502">매개변수를 사용하여 암호화하기</a>를 참고하시기 바랍니다.
+AK 등 키 정보의 보안을 위해, secret 사용을 통한 관련 키 정보 저장을 권장하며, secret 사용은 <a href="https://intl.cloud.tencent.com/document/product/436/42239">매개변수를 사용하여 암호화하기</a>를 참고하시기 바랍니다.
 ```yaml
 apiVersion: v1
 kind: Secret
