@@ -1,5 +1,5 @@
 CAR PaaS allows you to run your application in the cloud, so that users can access and interact with the cloud application through a video stream, with no need to download the application on their own device.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6db9536d93dfad8c4a3113229b9144ce.jpg)
 
 ## TencentCloud API
 - **TencentCloud API:** TencentCloud API [3.0](https://intl.cloud.tencent.com/product/api) is the basis of Tencent Cloud open ecosystem and boasts strengths such as ease of automation and remote call, high compatibility, and low system requirements. It enables you to quickly manipulate Tencent Cloud products with only a small amount of code, and improves the efficiency for frequently called features. You can also combine different TencentCloud APIs to implement more advanced features. 
@@ -17,7 +17,7 @@ An access key is a TencentCloud API key, which is a security credential used for
 
 ## Service Integration Capabilities
 CAR is a frontend/backend integrated PaaS product. It provides backend APIs and client SDKs. You need to set up your own client program and backend service to serve your users.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/eddd4735374bf4605d1b233561c239aa.jpg)
 
 - **Backend APIs:**
 CAR provides backend [TencentCloud APIs](https://intl.cloud.tencent.com/document/product/1158/49958) that can be called to perform operations such as applying for a concurrency and creating a session.
