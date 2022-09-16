@@ -6,15 +6,15 @@ Please do not purchase the Service unless and until you have fully read, and com
 ### 1.1 Cloud Application Rendering, CAR
 Refers to the real-time rendering of your application, software, platform and any related contents deployed on the Cloud Application Rendering concurrency, where “concurrency” means a collection of a series of virtual computing resources, including CPU, bandwidth, disk, GPU, etc. The real-time rendering operation is completed on the server-side of Cloud Application Rendering concurrency, and Tencent Cloud will encode the rendered results into audio and video streams for transmission to the user's device through the network, and the device transmits the user's operation information to the cloud server and the application for real-time interaction.
 
-### 1.2 CAR Concurrent Packet(s)
-If you purchase n CAR Concurrent Packets, it means the Service will contain n cloud application rendering concurrency. The Service Availability (as defined below) is calculated by CAR Concurrent Packets.
+### 1.2 CAR Concurrencies
+If you purchase N CAR concurrencies, it means the Service will contain N cloud application rendering concurrencies. The Service Availability (as defined below) is calculated by CAR concurrencies.
 ### 1.3 Total Number of Minutes within Service Month(s)
 Total Number of Minutes within Service Month(s) = the total number of days of the Service Month(s) × 24 (hours) × 60 (minutes).
 ### 1.4 Service Unavailability
 When the Service is in a non-maintenance state, but the access to the Service with any IP address in both directions (outgoing/incoming) by UDP protocol fails, and such downtime lasts for more than one minute, the Service is deemed as unavailable (“Service Unavailability”) within such minute.
 ### 1.5 Service Downtime Calculated in Minutes
 Service Downtime Calculated in Minutes = the time the Service Unavailability is fixed – the time the Service Unavailability starts.
-The service downtime is calculated in minutes. If the service failure is back to normal within one minute, i.e., if the duration of Service Unavailability of the CAR Concurrent Packet does not exceed one minute, such duration is not counted as Service Downtime Calculated in Minutes. If the duration of Service Unavailability is longer than one minute but less than two minutes, Service Downtime Calculated in Minutes in such duration would be one minute. For example, if the service downtime lasts for one minute and one second, the Service Downtime Calculated in Minutes would be one minute.
+The service downtime is calculated in minutes. If the service failure is back to normal within one minute, i.e., if the duration of Service Unavailability of the CAR concurrencies does not exceed one minute, such duration is not counted as Service Downtime Calculated in Minutes. If the duration of Service Unavailability is longer than one minute but less than two minutes, Service Downtime Calculated in Minutes in such duration would be one minute. For example, if the service downtime lasts for one minute and one second, the Service Downtime Calculated in Minutes would be one minute.
 ### 1.6 Service Month(s)
 Service Month(s) refers to the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The Service Availability will be calculated separately for each Service Month.
 ### 1.7 Monthly Service Fee
@@ -35,9 +35,9 @@ In respect of the Service, if the Service fails to meet the Service Availability
 
 (2) If the Service Availability Standard is not met for any Service Month, the amount of compensation will be calculated for each such Service Month independently, and the aggregate amount shall be no more than the Monthly Service Fee you pay for the Service in the Service Month in which the Service Availability fails to meet the Service Availability Standard (the Monthly Service Fee referred to herein shall exclude the portion deducted by vouchers, coupons, service fee reduction or exemption, etc.). 
 Service Availability in a Service Month	Value of Compensational Voucher
-Less than 99% but is or higher than 97%	5% of the Monthly Service Fee
-Less than 97% but is or higher than 95%	10% of the Monthly Service Fee
-Less than 95%	20% of the Monthly Service Fee
+Less than 99% but is or higher than 97%: Compensation is 5% of the Monthly Service Fee
+Less than 97% but is or higher than 95%: Compensation is	10% of the Monthly Service Fee
+Less than 95%:Conpensation is	20% of the Monthly Service Fee
 ### 3.2 Time Limit for Compensation Application
 (1) If the Service Availability in a Service Month fails to meet the Service Availability standard, you may apply for compensation only through the Tencent Cloud ticket system under your relevant account after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, both parties agree that the back-end record of Tencent Cloud shall prevail.
 
