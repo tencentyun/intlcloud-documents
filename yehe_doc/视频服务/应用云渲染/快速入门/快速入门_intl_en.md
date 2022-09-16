@@ -3,7 +3,7 @@ CAR runs your application client (application with an engine such as UE or Unity
 
 ## CAR Integration
 ### Preparations for Access
-
+![](https://qcloudimg.tencent-cloud.cn/raw/7c03a9fc66cfa851e742b6bdb79a738b.jpg)
 
 [](id:step1)
 
