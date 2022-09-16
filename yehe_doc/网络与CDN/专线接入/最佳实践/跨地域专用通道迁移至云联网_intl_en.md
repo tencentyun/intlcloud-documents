@@ -42,8 +42,8 @@ The switching aims to implement cross-region resource interconnection based on C
 4. Traffic migration
 >?This step is to migrate your real traffic to CCN, and your business will be interrupted for a short time. We recommend performing the migration during off-peak hours. If you have any questions, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
-  4.1 [Switch the IDC-to-VPC traffic path](#4-1).
-  4.2 [Switch the VPC-to-IDC traffic path](#4-2).
+   4.1 [Switch the IDC-to-VPC traffic path](#4-1).
+   4.2 [Switch the VPC-to-IDC traffic path](#4-2).
 5. [HA drill after migration](#5)
 To ensure the HA of your business, you are advised to perform an HA drill again after the business runs stably after traffic switching.
 6. [Deletion of legacy resources](#6)
@@ -67,14 +67,14 @@ This example shows how to migrate business from a local IDC to the cloud by usin
 1. (Optional) Perform an HA drill.[](id:1-1)
 To ensure business availability and rollback capability during switchover, you are advised to perform a fault redundancy drill before the switchover. That is, perform a primary/secondary connection and loaded line switchover to ensure business availability. Perform subsequent cutover operations after the drill is completed.
 2. View the VPC route configuration.[](id:1-2)
-  1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?fromNav).
-  2. Click **Route Table** in the left sidebar, select the VPC region, select the VPC, and click the **route table ID**.
+   1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?fromNav).
+   2. Click **Route Table** in the left sidebar, select the VPC region, select the VPC, and click the **route table ID**.
 ![]()
- 3. On the page displayed, you can view the VPC route table configuration details.
+   3. On the page displayed, you can view the VPC route table configuration details.
 ![]()
 3. View the dedicated tunnel configuration.[](id:1-3)
-  1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc).
-  2. Click **Dedicated Tunnel** in the left sidebar, and click the **dedicated tunnel ID** to enter the dedicated tunnel details page.
+   1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc).
+   2. Click **Dedicated Tunnel** in the left sidebar, and click the **dedicated tunnel ID** to enter the dedicated tunnel details page.
 ![]()
 4. Click the **Advanced Configuration** tab to view the advanced configuration of the dedicated tunnel.
 ![]()
@@ -158,8 +158,8 @@ After resource creation, you need to verify the basic configuration and business
 >?
 >1. If the dedicated tunnel uses the static routing mode, and you want to switch IDC-to-VPC traffic to a CCN dedicated tunnel path, you only need to direct CPE routes to the new sub-interface CCN dedicated tunnel.
 >2. If the dedicated tunnel uses the BGP routing mode, there are two cases if you switch to CCN:
->  1. If the direct connect gateway was created after September 15, 2020, the CCN instance sends a VPC CIDR block to the direct connect gateway, and the original cloud tunnel also sends a VPC CIDR block to the IDC, the local router obtains the VPC CIDR block based on the BGP protocol. You need to manually enable or disable the VPC or direct connect gateway route in the CCN instance to control the IDC-to-VPC traffic path. For more information, see [Direct Connect Gateway Overview](https://intl.cloud.tencent.com/document/product/216/38746).
->  2. If the direct connect gateway is created before September 15, 2020, the CCN instance sends a subnet CIDR block to the direct connect gateway, and  the local router obtains the subnet CIDR block based on the BGP protocol. The original cloud tunnel sends a VPC CIDR block to the IDC, and the local router obtains the VPC CIDR block based on the BGP protocol. According to the rule where the route with the longest mask will be matched, IDC-to-VPC traffic will be automatically switched to the CCN instance. For more information, see [Direct Connect Gateway Overview](https://intl.cloud.tencent.com/document/product/216/38746).
+>    1. If the direct connect gateway was created after September 15, 2020, the CCN instance sends a VPC CIDR block to the direct connect gateway, and the original cloud tunnel also sends a VPC CIDR block to the IDC, the local router obtains the VPC CIDR block based on the BGP protocol. You need to manually enable or disable the VPC or direct connect gateway route in the CCN instance to control the IDC-to-VPC traffic path. For more information, see [Direct Connect Gateway Overview](https://intl.cloud.tencent.com/document/product/216/38746).
+>    2. If the direct connect gateway is created before September 15, 2020, the CCN instance sends a subnet CIDR block to the direct connect gateway, and  the local router obtains the subnet CIDR block based on the BGP protocol. The original cloud tunnel sends a VPC CIDR block to the IDC, and the local router obtains the VPC CIDR block based on the BGP protocol. According to the rule where the route with the longest mask will be matched, IDC-to-VPC traffic will be automatically switched to the CCN instance. For more information, see [Direct Connect Gateway Overview](https://intl.cloud.tencent.com/document/product/216/38746).
 
 #### Switch the VPC-to-IDC traffic path[](id:4-2)
 1. Click the route table whose ID is `rtb-2kanpxjb` and view the [VPC route table policy changes](https://console.cloud.tencent.com/vpc/route?rid=8). The VPC can automatically sync the CCN route table, and equivalent routes added later are disabled by default. The original dedicated tunnel is still used as the VPC-to-IDC traffic path.
@@ -170,13 +170,13 @@ Now, the VPC-to-IDC traffic path is switched to the CCN dedicated tunnel.
 >!When changing the routing policy, the VPC-to-IDC traffic is interrupted. To ensure business security, you need to perform the operation in a time window where the business can be interrupted.
 >
 To perform a smooth switchover, perform the steps below:
- 1. Split the IDC route into two detailed routes: In this example, split 192.168.0.0/24 into 192.168.0.0/25 and 192.168.0.128/25.
- 2. Add the two detailed routing policies to the VPC route table.
+   1. Split the IDC route into two detailed routes: In this example, split 192.168.0.0/24 into 192.168.0.0/25 and 192.168.0.128/25.
+   2. Add the two detailed routing policies to the VPC route table.
 ![]()
- 3. The VPC-to-IDC traffic will choose the 25-bit mask detailed routing policy. Now, the routing policy where the next hop of the destination IP range 192.168.0.0/24 is the direct connect gateway is invalid, and you can disable or delete the routing policy.
- 4. Enable the routing policy where the next hop is the CCN IP range 192.168.0.0/24 in the VPC route table. Then, the VPC-to-IDC traffic still chooses the detailed route routing policy of the original direct connect gateway.
+   3. The VPC-to-IDC traffic will choose the 25-bit mask detailed routing policy. Now, the routing policy where the next hop of the destination IP range 192.168.0.0/24 is the direct connect gateway is invalid, and you can disable or delete the routing policy.
+   4. Enable the routing policy where the next hop is the CCN IP range 192.168.0.0/24 in the VPC route table. Then, the VPC-to-IDC traffic still chooses the detailed route routing policy of the original direct connect gateway.
 ![]()    
- 5. Disable or delete the routing policies of the detailed routes one by one. Then the VPC-to-IDC traffic will be switched to the CCN tunnel accordingly.
+   5. Disable or delete the routing policies of the detailed routes one by one. Then the VPC-to-IDC traffic will be switched to the CCN tunnel accordingly.
 ![]()
 
 ### HA drill after migration[](id:5)
