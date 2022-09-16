@@ -1,4 +1,4 @@
-A project is the unique credential for scheduling in CAR. A project will be associated with an application, and you can allocate a concurrency pack to the project. Simply with an application (content) and a concurrency pack (computing power), you can enjoy the CAR service.
+A project is the unique credential for scheduling in CAR. After you have uploaded an application, you need to associate it with a project, and then you can allocate a concurrency pack (computing power) to your project, after which you can enjoy the CAR service.
 
 ## Directions
 
