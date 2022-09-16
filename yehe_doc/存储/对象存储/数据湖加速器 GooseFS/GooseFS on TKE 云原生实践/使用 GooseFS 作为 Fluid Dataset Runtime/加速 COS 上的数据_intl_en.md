@@ -44,7 +44,7 @@ spec:
         high: "0.9"
         low: "0.2"
 ```
-To ensure the security of key information such as AK, you are advised to use `secret` to save related key information. For details about how to use `secret`, see <a href="https://cloud.tencent.com/document/product/436/59502">Using Parameters for Encryption</a>.
+To ensure the security of key information such as AK, you are advised to use `secret` to save related key information. For details about how to use `secret`, see <a href="https://intl.cloud.tencent.com/document/product/436/42239">Using Parameters for Encryption</a>.
 ```yaml
 apiVersion: v1
 kind: Secret

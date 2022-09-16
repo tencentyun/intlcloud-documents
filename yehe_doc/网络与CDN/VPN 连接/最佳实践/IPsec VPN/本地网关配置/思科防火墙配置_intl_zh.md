@@ -1,17 +1,14 @@
 使用 IPsec VPN 建立腾讯云 VPC 到用户 IDC 的连接时，在配置完腾讯云 VPN 网关后，您还需要在用户 IDC 本地站点的网关设备中进行 VPN 配置。本文以思科防火墙为例，介绍如何在本地站点中进行 VPN 配置。
 
 >!
->- 本文仅支持 IKEv1 协议的配置。
+>- 本文为 Cisco ASA 系列防火墙通用配置，所有版本均支持。
 >- 本文所有IP、接口等参数取值均仅用于举例，请具体配置时，使用实际值进行替换。
 
 ## 前提条件
-
 请确保您已经在腾讯云 VPC 内[ 创建 VPN](https://intl.cloud.tencent.com/document/product/1037/39688)，并完成 [VPN 通道配置](https://intl.cloud.tencent.com/document/product/1037/39635)。
 
 ## 数据准备
-
 本文 IPsec VPN 配置数据举例如下：
-
 <table>
 <th colspan="3">配置项</th>
 <th>示例值</th>
@@ -115,9 +112,8 @@
 
 
 ## 操作步骤
-
 <dx-tabs>
-::: 适用于基于&#160;SPD&#160;策略转发的&#160;VPN（IKEv1）
+::: 适用于基于&nbsp;SPD&nbsp;策略转发的&nbsp;VPN（IKEv1）
 
 1. 登录防火墙设备命令配置界面。
    <dx-codeblock>
@@ -220,9 +216,11 @@ ASA(config)#
 
 10. 测试 VPN 连通性。
     执行 Ping 命令测试 VPN 的连通性。
+    ![]()
+
 :::
 
-::: 适用于基于路由转发的&#160;VPN（IKEv1）
+::: 适用于基于路由转发的&nbsp;VPN（IKEv1）
 
 1. 登录防火墙设备命令配置界面。
    <dx-codeblock>
@@ -317,9 +315,10 @@ ASA(config)#
    </dx-codeblock>
 9. 测试 VPN 连通性。
    执行 Ping 命令测试 VPN 的连通性。
+   ![]()
    :::
 
-::: 适用于基于&#160;SPD&#160;策略转发的&#160;VPN（IKEv2）
+::: 适用于基于&nbsp;SPD&nbsp;策略转发的&nbsp;VPN（IKEv2）
 
 1. 登录防火墙设备命令配置界面。
    <dx-codeblock>
@@ -431,9 +430,10 @@ ASA(config)#
     </dx-codeblock>
 11. 测试 VPN 连通性。
     执行 Ping 命令测试 VPN 的连通性。
+    ![]()
     :::
 
-::: 适用于基于路由转发的&#160;VPN（IKEv2）
+::: 适用于基于路由转发的&nbsp;VPN（IKEv2）
 
 1. 登录防火墙设备命令配置界面。
    <dx-codeblock>
@@ -541,7 +541,8 @@ ASA(config)#
    </dx-codeblock>
 
 10. 测试 VPN 连通性。
-   执行 Ping 命令测试 VPN 的连通性。
-   :::
-   </dx-tabs>
+      执行 Ping 命令测试 VPN 的连通性。
+      ![]()
+      :::
+      </dx-tabs>
 

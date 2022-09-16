@@ -1,23 +1,20 @@
-To connect your IDC to a Tencent Cloud VPC via IPsec VPN connection, you need to load the VPN configurations to the network device of your local IDC after configuring the VPN gateway on Tencent Cloud. This document provides an example on how to load the IPsec VPN configuration to a Cisco firewall.
+To connect your IDC to a Tencent Cloud VPC via IPsec VPN connection, you need to configure the VPN on the gateway device of your local IDC after configuring the VPN gateway on Tencent Cloud. This document introduces how to configure the VPN on a Cisco firewall of the local IDC.
 
 >!
->- This document is only for the configuration of an IKEv1 VPN.
+>- This document introduces the common configurations of Cisco ASA firewalls.
 >- Replace all the IPs, ports, and other parameters given in this document with your actual values for configurations.
 
 ## Prerequisites
+You have created a VPN connection as instructed in [Creating VPN Gateways](https://intl.cloud.tencent.com/document/product/1037/39688) in a Tencent Cloud VPC, and configured the VPN tunnel as instructed in [Creating VPN tunnel](https://intl.cloud.tencent.com/document/product/1037/39635).
 
-You have [created a VPN connection](https://intl.cloud.tencent.com/document/product/1037/39688) in a Tencent Cloud VPC, and configured the [VPN tunnel](https://intl.cloud.tencent.com/document/product/1037/39635).
-
-## Data Collection
-
+## Data Preparations
 The following table describes the IPsec VPN configuration data.
-
 <table>
-<th colspan="3">Configuration Item</th>
+<th colspan="3">Configuration item</th>
 <th>Sample value</th>
 <tr>
 <td rowspan="4">Network</td>
-<td rowspan="2">VPC</td>
+<td rowspan="2">VPC information</td>
 <td>Subnet CIDR block</td>
 <td>10.1.1.0/24 </td>
 </tr>
@@ -26,7 +23,7 @@ The following table describes the IPsec VPN configuration data.
 <td>159.xx.xx.242</td>
 </tr>
 <tr>
-<td rowspan="2">IDC</td>
+<td rowspan="2">IDC information</td>
 <td>Private CIDR block</td>
 <td>172.16.0.0/16</td>
 </tr>
@@ -38,10 +35,10 @@ The following table describes the IPsec VPN configuration data.
 <td rowspan="17">IPsec VPN connection </td>
 <td rowspan="10">IKE</td>
 <td>Version</td>
-<td>IKEV1</td>
+<td>IKEV1 </td>
 </tr>
 <tr>
-<td>ID verification methods</td>
+<td>Identity verification method</td>
 <td>Pre-shared key</td>
 </tr>
 <tr>
@@ -49,31 +46,31 @@ The following table describes the IPsec VPN configuration data.
 <td>tencent@123</td>
 </tr>
 <tr>
-<td>Encryption algorithm</td>
+<td>Encryption agorithm</td>
 <td>AES-128</td>
 </tr>
 <tr>
-<td>Verification algorithm</td>
+<td>Authentication algorithm</td>
 <td>MD5</td>
 </tr>
 <tr>
-<td>Negotiation model</td>
+<td>Negotiation mode</td>
 <td>main</td>
 </tr>
 <tr>
-<td>Local identifier</td>
-<td>IP Address: 120.xx.xx.76</td>
+<td>Local ID</td>
+<td>IP address: 120.xx.xx.76</td>
 </tr>
 <tr>
 <td>Remote ID</td>
-<td>IP Address: 159.xx.xx.242</td>
+<td>IP address: 159.xx.xx.242</td>
 </tr>
 <tr>
 <td>DH group</td>
 <td>DH2</td>
 </tr>
 <tr>
-<td>IKE SA Lifetime</td>
+<td>IKE SA lifetime</td>
 <td>86400</td>
 </tr>
 <tr>
@@ -82,11 +79,11 @@ The following table describes the IPsec VPN configuration data.
 <td>AES-128</td>
 </tr>
 <tr>
-<td>Verification algorithm</td>
+<td>Authentication algorithm</td>
 <td>MD5</td>
 </tr>
 <tr>
-<td>Packet encapsulation Mode</td>
+<td>Packet encapsulation mode</td>
 <td>Tunnel</td>
 </tr>
 <tr>
@@ -98,11 +95,11 @@ The following table describes the IPsec VPN configuration data.
 <td>disable</td>
 </tr>
 <tr>
-<td>IPsec SA Lifetime (in seconds)</td>
+<td>IPsec SA lifetime (in seconds)</td>
 <td>3600 s</td>
 </tr>
 <tr>
-<td>IPsec SA Lifetime (in KB)</td>
+<td>IPsec SA lifetime (in KB)</td>
 <td>1843200 KB</td>
 </tr>
 <tr>
@@ -115,9 +112,8 @@ The following table describes the IPsec VPN configuration data.
 
 
 ## Directions
-
 <dx-tabs>
-::: SPD\spolicy-based\sVPN\s(IKEv1)
+::: SPD policy-based VPN (IKEv1)
 
 1. Log in to the command-line interface of the firewall device.
    <dx-codeblock>
@@ -128,21 +124,21 @@ The following table describes the IPsec VPN configuration data.
 
 User Access Verification
 Username: admin
-Password: *******
+Password: ********
 Type help or '?' for a list of available commands.   
 
 # Enter the username and password to enter the user mode.
 
 ASA>  
-ASA> enable  
+ASA> en  
 Password:       
 
 # Input “enable” and its password to enter the privileged EXEC mode in which you can view information only.
 
 ASA# conf t   
-ASA(config ter)#
+ASA(config)#
 
-# Input “config ter” to enter the global mode in which you can configure the firewall.
+# Input "config ter" to enter the global mode in which you can configure the firewall.
 
 :::
 </dx-codeblock>
@@ -161,13 +157,13 @@ ASA(config ter)#
 3. Configure an ISAKMP policy.
    <dx-codeblock>
    :::  sh
-   crypto ikev1 enable outside  # Enable IKE on the “outside” interface.
+   crypto ikev1 enable outside  # Enable IKE on the "outside" interface.
    crypto ikev1 policy 10  # Define the phase 1 negotiation policy for IKEv1. Enter a number between 1-65535. The smaller the number, the higher the priority. The number 10 is used here.
-   authentication pre-share  # Set the authentication method to pre-shared keys.
-   encryption AES-128  # Specify the packet encapsulation encryption algorithm for the phase 1 negotiation. It defaults to “AES-128”.
-   hash MD5  # Set the hash algorithm to “MD5” for the IKE policy. It defaults to “SHA”.
-   group 2  # Use Diffie-Hellman group 2 for the IKE policy. It defaults to “group 2”.
-   lifetime 86400  # Specify the SA lifetime. It defaults to “86400” seconds.
+   authentication pre-share  # Set the authentication method to authentication via pre-shared keys.
+   encryption AES-128  # Specify the packet encapsulation encryption algorithm for the phase 1 negotiation. It defaults to "AES-128".
+   hash MD5  # Set the hash algorithm to “MD5” for the IKE policy. It defaults to "SHA".
+   group 2  # Use Diffie-Hellman group 2 for the IKE policy. It defaults to "group 2".
+   lifetime 86400  # Specify the SA lifetime. It defaults to "86400" seconds.
    :::
    </dx-codeblock>
 
@@ -207,7 +203,7 @@ ASA(config ter)#
 8. Apply the IPsec policy.
    <dx-codeblock>
    :::  sh
-   rypto map CMAP interface outside  # Apply the crypto map configured in the previous step to the “outside” interface.
+   rypto map CMAP interface outside  # Apply the crypto map configured in the previous step to the "outside" interface.
    :::
    </dx-codeblock>
 
@@ -220,9 +216,11 @@ ASA(config ter)#
 
 10. Test the VPN connectivity.
     You can use the `ping` command to test the VPN connectivity.
+    ![]()
+
 :::
 
-::: Route-based\sVPN\s(IKEv1)
+::: Route-based VPN (IKEv1)
 
 1. Log in to the command-line interface of the firewall device.
    <dx-codeblock>
@@ -233,21 +231,21 @@ ASA(config ter)#
 
 User Access Verification
 Username: admin
-Password: *******
+Password: ********
 Type help or '?' for a list of available commands.
 
 # Enter the username and password to enter the user mode.
 
 ASA>  
-ASA> enable  
+ASA> en  
 Password: 
 
-# Input “enable” and its password to enter the privileged EXEC mode in which you can view information only.
+# Input "enable" and its password to enter the privileged EXEC mode in which you can view information only.
 
 ASA# conf t   
-ASA(config ter)#
+ASA(config)#
 
-# Input “config ter” to enter the global mode in which you can configure the firewall.
+# Input "config ter" to enter the global mode in which you can configure the firewall.
 
 :::
 </dx-codeblock>
@@ -266,11 +264,11 @@ ASA(config ter)#
    <dx-codeblock>
    :::  sh
     crypto ikev1 policy 10  # Define the phase 1 negotiation policy for IKEv1. Enter a number between 1-65535. The smaller the number, the higher the priority. The number 10 is used here.
-    authentication pre-share  # Set the authentication method to pre-shared keys.
-    encryption AES-128  # Specify the packet encapsulation encryption algorithm for the phase 1 negotiation. It defaults to “AES-128”.
-    hash MD5  # Set the hash algorithm to “MD5” for the IKE policy. It defaults to “SHA”.
-    group 2  # Use Diffie-Hellman group 2 for the IKE policy. It defaults to “group 2”.
-    lifetime 86400  # Specify the SA lifetime. It defaults to “86400” seconds.
+    authentication pre-share  # Set the authentication method to authentication via pre-shared keys.
+    encryption AES-128  # Specify the packet encapsulation encryption algorithm for the phase 1 negotiation. It defaults to "AES-128".
+    hash MD5  # Set the hash algorithm to “MD5” for the IKE policy. It defaults to "SHA".
+    group 2  # Use Diffie-Hellman group 2 for the IKE policy. It defaults to "group 2".
+    lifetime 86400  # Specify the SA lifetime. It defaults to "86400" seconds.
    :::
    </dx-codeblock>
 4. Configure the pre-shared key.
@@ -302,7 +300,7 @@ ASA(config ter)#
    <dx-codeblock>
    :::  sh
    interface Tunnel100
-   tunnel source interface outside  # Configure the source VPN that comes from the “outside” interface. 
+   tunnel source interface outside  # Configure the source VPN that comes from the "outside" interface. 
    tunnel destination 159.XX.XX.242  # Configure the public IP address of the destination VPN. The public IP address of Tencent Cloud VPN is used here.
    tunnel mode ipsec ipv4  # Configure the protocol for the tunnel interface.
    tunnel protection ipsec profile PROFILE1  # Use the IPsec policy to protect data passing through the tunnel interface.
@@ -317,9 +315,10 @@ ASA(config ter)#
    </dx-codeblock>
 9. Test the VPN connectivity.
    You can use the `ping` command to test the VPN connectivity.
+   ![]()
    :::
 
-::: SPD\spolicy-based\sVPN\s(IKEv2)
+::: SPD policy-based VPN (IKEv2)
 
 1. Log in to the command-line interface of the firewall device.
    <dx-codeblock>
@@ -330,21 +329,21 @@ ASA(config ter)#
 
 User Access Verification
 Username: admin
-Password: *******
+Password: ********
 Type help or '?' for a list of available commands.
 
 # Enter the username and password to enter the user mode.
 
 ASA>  
-ASA> enable  
+ASA> en  
 Password: 
 
-# Input “enable” and its password to enter the privileged EXEC mode in which you can view information only.
+# Input "enable" and its password to enter the privileged EXEC mode in which you can view information only.
 
 ASA# conf t   
 ASA(config)#
 
-# Input “config ter” to enter the global mode in which you can configure the firewall.
+# Input "config ter" to enter the global mode in which you can configure the firewall.
 
 :::
 </dx-codeblock>
@@ -363,12 +362,12 @@ ASA(config)#
 3. Configure an ISAKMP policy.
    <dx-codeblock>
    :::  sh
-   crypto ikev2 enable outside  # Enable IKEv2 on the “outside” interface.
+   crypto ikev2 enable outside  # Enable IKEv2 on the "outside" interface.
    crypto ikev1 policy 10  # Define the phase 1 negotiation policy for IKEv2. Enter a number between 1-65535. The smaller the number, the higher the priority. This document uses 10.
-   authentication pre-share  # Set the authentication method to pre-shared keys.
-   encryption AES-128  # Specify the packet encapsulation encryption algorithm for the phase 1 negotiation. It defaults to “AES-128”.
-   integrity MD5  #   # Set the hash  algorithm to “MD5” for the IKE policy. It defaults to “SHA”.
-   group 2  # Use Diffie-Hellman group 2 for the IKE policy. It defaults to “group 2”.
+   authentication pre-share  # Set the authentication method to authentication via pre-shared keys.
+   encryption AES-128  # Specify the packet encapsulation encryption algorithm for the phase 1 negotiation. It defaults to "AES-128".
+   integrity MD5  #   # Set the hash  algorithm to “MD5” for the IKE policy. It defaults to "SHA".
+   group 2  # Use Diffie-Hellman group 2 for the IKE policy. It defaults to "group 2".
    prf sha # Set the encryption algorithm.
    lifetime seconds 86400  # Set the SA lifetime. It defaults to 86400s.
    :::
@@ -420,7 +419,7 @@ ASA(config)#
 9. Apply the IPsec policy.
    <dx-codeblock>
    :::  sh 
-   rypto map CMAP interface outside  # Apply the crypto map configured in the previous step to the “outside” interface.
+   rypto map CMAP interface outside  # Apply the crypto map configured in the previous step to the "outside" interface.
    :::
    </dx-codeblock>
 10. Configure static routes.
@@ -431,9 +430,10 @@ ASA(config)#
     </dx-codeblock>
 11. Test the VPN connectivity.
     You can use the `ping` command to test the VPN connectivity.
+    ![]()
     :::
 
-::: Route-based\sVPN\s(IKEv2)
+::: Route-based VPN (IKEv2)
 
 1. Log in to the command-line interface of the firewall device.
    <dx-codeblock>
@@ -444,21 +444,21 @@ ASA(config)#
 
 User Access Verification
 Username: admin
-Password: *******
+Password: ********
 Type help or '?' for a list of available commands.
 
 # Enter the username and password to enter the user mode.
 
 ASA>  
-ASA> enable  
+ASA> en  
 Password: 
 
-# Input “enable” and its password to enter the privileged EXEC mode in which you can view information only.
+# Input "enable" and its password to enter the privileged EXEC mode in which you can view information only.
 
 ASA# conf t   
-ASA(config ter)#
+ASA(config)#
 
-# Input “config ter” to enter the global mode in which you can configure the firewall.
+# Input "config ter" to enter the global mode in which you can configure the firewall.
 
 :::
 </dx-codeblock>
@@ -469,7 +469,7 @@ ASA(config ter)#
    :::  sh
    interface GigabitEthernet0/0
    nameif outside  # Specify the security domain of the interface.
-   security-level 0 # Specify the security domain level of the interface.
+   security-level 0  # Specify the security domain level of the interface.
    ip address 120.XX.XX.76 255.255.255.252  # Configure the public IP address of the Tencent Cloud VPN to connect.
    interface Tunnel100
    nameif vti
@@ -481,9 +481,9 @@ ASA(config ter)#
    <dx-codeblock>
    :::  sh
    crypto ikev2 policy 1  # Define the phase 1 negotiation policy for IKEv2. Enter a number between 1-65535. The smaller the number, the higher the priority. The number 1 is used here.
-   encryption AES-128  # Set “AES-128” as the packet encapsulation encryption algorithm for the phase 1 negotiation. It defaults to “AES-128”.
+   encryption AES-128  # Set "AES-128" as the packet encapsulation encryption algorithm for the phase 1 negotiation. It defaults to "AES-128".
    integrity MD5  /# Set the hash algorithm to “MD5” for the IKE policy. It defaults to “SHA”.
-   group 2  # Use Diffie-Hellman group 2 for the IKE policy. It defaults to “group 2”.
+   group 2  # Use Diffie-Hellman group 2 for the IKE policy. It defaults to "group 2".
    prf sha # Configure the encryption algorithm.
    lifetime seconds 86400  # Configure the SA lifetime (namely, lifecycle). It defaults to 86400s.
    :::
@@ -527,7 +527,7 @@ ASA(config ter)#
    <dx-codeblock>
    :::  sh
    interface Tunnel100
-   tunnel source interface outside  # Configure the source VPN that comes from the “outside” interface. 
+   tunnel source interface outside  # Configure the source VPN that comes from the "outside" interface. 
    tunnel destination 159.XX.XX.242  # Configure the public IP address of the destination VPN. The public IP address of Tencent Cloud VPN is used here.
    tunnel mode ipsec ipv4  # Configure the protocol for the tunnel interface.
    tunnel protection ipsec profile PROFILE1  # Use the IPsec policy to protect data passing through the tunnel interface.
@@ -541,7 +541,8 @@ ASA(config ter)#
    </dx-codeblock>
 
 10. Test the VPN connectivity.
-   You can use the `ping` command to test the VPN connectivity.
-   :::
-   </dx-tabs>
+      You can use the `ping` command to test the VPN connectivity.
+      ![]()
+      :::
+      </dx-tabs>
 

@@ -45,7 +45,7 @@ spec:
         low: "0.2"
 ```
 
-为了 AK 等密钥信息的安全性，建议使用 secret 来保存相关密钥信息，secret 使用请参考 <a href="https://cloud.tencent.com/document/product/436/59502">使用参数加密</a>。
+为了 AK 等密钥信息的安全性，建议使用 secret 来保存相关密钥信息，secret 使用请参考 <a href="https://intl.cloud.tencent.com/document/product/436/42239">使用参数加密</a>。
 ```yaml
 apiVersion: v1
 kind: Secret

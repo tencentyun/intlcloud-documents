@@ -1,6 +1,6 @@
 ### What's the billing mode for VPN connections?
 - VPN tunnels and customer gateways are free of charge, but VPN gateways are charged.
-- VPN gateways can be billed in "pay-as-you-go" mode. For details, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1037/32685).
+- VPN gateways can be billed in pay-as-you-go mode. For details, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1037/32685).
 
 For additional VPC pricing information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/215/35500).
 
@@ -11,7 +11,8 @@ A VPN gateway cannot be renewed and upgraded at the same time. If you have an un
 For more information, please see [Expiration Notifications](https://intl.cloud.tencent.com/document/product/1037/32687).
 
 ### Is SSL VPN supported?
-Yes. The SSL VPN beta test has ended, and it will be officially commercialized on April 6, 2022.
+The SSL VPN is in a beta test. To try it out, please [submit a ticket] (https://console.cloud.tencent.com/workorder/category).
+
 
 
 
