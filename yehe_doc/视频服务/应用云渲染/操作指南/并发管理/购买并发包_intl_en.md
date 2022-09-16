@@ -12,7 +12,7 @@ To purchase and manage concurrencies for your application, you need to purchase 
 <tr><th style="width: 23%;">Configuration Item</th><th>Description</th></tr>
 <tbody><tr>
 <td>Project</td>
-<td>Select the project of the concurrency pack based on your business needs. You can select **To be allocated** first and allocate the concurrency pack on the **Project management** or **Concurrency management** page later.</td>
+<td>Select the project of the concurrency pack based on your business needs. You can select <b>To be allocated</b> first and allocate the concurrency pack on the <b>Project management</b> or <b>Concurrency management</b> page later.</td>
 </tr>
 <tr>
 <td>Billing mode</td>
