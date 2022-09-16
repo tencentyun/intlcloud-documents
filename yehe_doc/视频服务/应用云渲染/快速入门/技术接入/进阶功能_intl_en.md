@@ -1,7 +1,7 @@
 ## Queue Feature
 This section describes how to integrate the user queue system. We recommend you integrate the user queue system to improve the user experience when the number of users requesting your application becomes greater than the max number of concurrencies.
 ### Sequence diagram
-
+![](https://qcloudimg.tencent-cloud.cn/raw/ef3d594d9fe81d0f98e856cbc289491c.jpg)
 
 ### Directions
 1. The client calls the [TCGSDK.init()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.init(params)) API to perform initialization. After initialization, it calls the [TCGSDK.getClientSession()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.getClientSession()) API to get `ClientSession` of the client.
@@ -19,17 +19,16 @@ This section describes how to integrate the user queue system. We recommend you 
 ## Application Heartbeat Connection
 This section describes how to maintain a heartbeat connection between the client and the backend. The heartbeat can be used to detect whether the user is still connected and used to collect and manage data such as user connection duration. In this way, if the user exits due to an error, the backend can more quickly repossess the concurrency the user was occupying, and make it available to other users.
 ### Sequence diagram
-
+![](https://qcloudimg.tencent-cloud.cn/raw/ff17676e26edbdda33036b615fe6d55a.jpg)
 
 ### Directions
 1. The client regularly sends heartbeat messages to the backend. The backend maintains the user connectivity based on the heartbeat messages.
 2. The backend regularly checks whether the user is still connected. If the user heartbeat times out, the backend will call the [DestroySession()](https://intl.cloud.tencent.com/document/product/1158/49967) API to terminate the session and close the application, and the client will disconnect from the application.
 
----
 ## Data Channel
 This document describes how to use a data channel to establish communication between the client and a cloud application.
 ### Sequence diagram
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d30a87c7f0069f555992b253ecf190e2.jpg)
 
 ### Directions
 1. [](id:step4_1)Create a UDP service for the cloud application to listen on a local UDP port (recommended port range: 10000–20000 for `localhost 127.0.0.1`) and wait to receive UDP packets.
@@ -41,7 +40,7 @@ This document describes how to use a data channel to establish communication bet
 ## Application Reconnection
 This section describes how to reconnect to an application. If a user directly closes the client but doesn't actively call the application close feature, APIs for applying for a concurrency and creating a session can be called again to reconnect to the application.
 ### Sequence diagram
-
+![](https://qcloudimg.tencent-cloud.cn/raw/01990988def83c87a9e35693ebcf857e.jpg)
 
 ### Directions
 1. After the client is closed, it will disconnect from the cloud application. If the backend doesn't actively call the API to close the application, the concurrency will wait for 90 seconds by default, so that there is time to reconnect.
