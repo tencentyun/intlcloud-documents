@@ -5,7 +5,7 @@ A GPU instance consists of three major parts: network, storage (system disks and
 GPU Cloud Computing is available in the following instance types: Computing GN6S, GN7, GN8, GN10X, and GN10Xp. You can select the GPU instances that best meet your use case according to the specifications and prices. For more information on GPU instance types, please see [NVIDIA GPU Instances](https://intl.cloud.tencent.com/document/product/560/19700).
 
 >!
-> The prices on this page are for Guangzhou Zone 3. Prices are different depending on the AZ and OS. Please refer to the prices on the purchase page.
+> The prices on this page are for Guangzhou Zone 3. Prices are different depending on the AZ and OS. Please refer to the prices on the [purchase page](https://www.tencentcloud.com/pricing/cvm).
 >
 
 
