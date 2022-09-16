@@ -5,19 +5,19 @@ You can configure alarm rules for the connection, dedicated tunnel and direct co
 2. Click **Create** on the **Alarm Policy** page.
 ![]()
 3. Configure a new alarm policy as instructed below.
- 1. Edit **Policy name** and **Remarks**. Select **Connection**, **Dedicated tunnel** or **Direct connect gateway** for **Policy type** as needed.
+   1. Edit **Policy name** and **Remarks**. Select **Connection**, **Dedicated tunnel** or **Direct connect gateway** for **Policy type** as needed.
 <dx-alert infotype="explain" title="">
 If **Direct connect gateway** is selected, the policy is VPC-based.
 </dx-alert>
  <img src="" style="zoom:80%;" />
- 2. Choose a project to which the alarm policy belongs. Each project supports creating a maximum of 300 alarm policies.
- 3. Select the alarm object.
-     - If you select **All objects**, the alarm policy will be associated with all instances under the current account.
-     - If you select **Instance ID** and select instances in the pop-up window, the alarm policy will be associated with the selected instances.
-     - If you select **Instance group**, the alarm policy will be associated with the selected instance group. If there is no available instance group, you can click **Create instance group** to configure one.
+   2. Choose a project to which the alarm policy belongs. Each project supports creating a maximum of 300 alarm policies.
+   3. Select the alarm object.
+      - If you select **All objects**, the alarm policy will be associated with all instances under the current account.
+      - If you select **Instance ID** and select instances in the pop-up window, the alarm policy will be associated with the selected instances.
+      - If you select **Instance group**, the alarm policy will be associated with the selected instance group. If there is no available instance group, you can click **Create instance group** to configure one.
       ![]()
- 4. Configure the trigger condition using either of:
-    - Template
+   4. Configure the trigger condition using either of:
+     - Template
 	 Click **Select template** and select a configured template in the drop-down list.
 	  <dx-alert infotype="explain" title="">
 	 You can click **Add trigger condition template** to configure a new trigger condition template. For more information about the configurations, please see [Configuring Trigger Condition Template](https://intl.cloud.tencent.com/document/product/248/38911). If the new template is not displayed in the list, click **Refresh**.
