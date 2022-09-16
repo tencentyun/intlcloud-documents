@@ -32,7 +32,7 @@ InnoDB uses the in-place change mode, where the entire page may be flushed to th
 TXRocks uses the append-only change mode, which has a lower write amplification; therefore, it is more friendly to devices such as SSD with a limited number of write cycles.
 
 ## Use Cases
-TXRocks is very suitable for businesses that are sensitive to the storage costs, have much more reads than writes and a large data volume, and require a high transaction read/write performance.
+TXRocks is very suitable for businesses that are sensitive to the storage costs, have much more writes than reads and a large data volume, and require a high transaction read/write performance.
 
 ## How to Use TXRocks
 For more information, see [Instructions](https://intl.cloud.tencent.com/document/product/236/47014).

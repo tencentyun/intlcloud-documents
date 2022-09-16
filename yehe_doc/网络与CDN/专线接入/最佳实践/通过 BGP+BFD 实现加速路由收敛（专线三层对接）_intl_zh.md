@@ -1,7 +1,7 @@
 通过在本地 IDC 中心的网络交换机上启动 BGP 路由协议，以及在腾讯云专线网关上配置双向转发检测（BFD），实现本地 IDC 与专有网络之间的路由快速收敛。
 
 ## 背景信息
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/bc455a9ac71c934c7e6908d3c4819af1.jpg)
 >! 静态路由对接场景下，推荐静态路由 +BFD/NQA 实现路由收敛。
 >
 - 物理专线分别连接 IDC 侧交换机与腾讯云交换机的三层网络子接口，打通 IDC 与 腾讯云网络。 
@@ -16,14 +16,14 @@
 ## 配置指引
 ### 步骤一：[创建专线网关](https://intl.cloud.tencent.com/document/product/216/19256) 
 1. 在左侧导航栏单击**专线网关**。
-2. 在**专线网关**页面上方选择地域和私有网络，然后单击**+新建**。
+2. 在**专线网关**页面上方选择地域和私有网络，然后单击<b>+新建</b>。
 ![]()
 3. 在**创建专线网关**对话框中配置网关详情，完成后单击**确定**。
 ![]()
 
 ### 步骤二：[创建专用通道](https://intl.cloud.tencent.com/document/product/216/19250) 
 1. 登录 [专线接入 - 专用通道](https://console.cloud.tencent.com/dc/dcConn) 控制台。
-2. 在**专用通道**页面上方单击**+新建**，并配置名称、专线类型、接入网络、地域、关联的专线网关等基名称本配置，完成后单击**下一步**。
+2. 在**专用通道**页面上方单击<b>+新建</b>，并配置名称、专线类型、接入网络、地域、关联的专线网关等基名称本配置，完成后单击**下一步**。
  <img src="" width="70%">
 3. 在**高级配置**页面配置以下参数，然后单击**确定**。
  <img src="" width="70%">
@@ -129,3 +129,13 @@ peer <bgp_peer_address> bfd min-tx-interval
 1000 min-rx-interval 1000 detect-multiplier 3
 commit
 ```
+
+
+
+## 关于 Keepalive 及 holdtime 参数配置指南
+对等体间建立了 BGP 连接后，会定时向对端发送 Keepalive 消息，以维持 BGP 连接的有效性。如果路由器在设定的连接保持时间（Holdtime）内未收到对端的 Keepalive 消息或任何其它类型的报文，则认为此 BGP 连接已中断，从而中断此 BGP 连接。
+
+keepalive-time 值和 hold-time 值是通过双方协商来确定。其中，取双方 Open 报文中的 hold-time 较小值为最终的 hold-time 值；取**协商的 hold-time 值 ÷ 3**和本地配置的 keepalive-time 值中较小者作为最终 keepalive-time 值。
+接入时推荐配置的 Holdtime 时间60 x 3=180秒（大部分厂商的缺省值）。
+
+如果配置的保持时间小于30秒，链路正常情况下也可能会造成邻居会话的中断，需要进行链路抖动检测，建议通过使能 BFD 来提高收敛性能。
