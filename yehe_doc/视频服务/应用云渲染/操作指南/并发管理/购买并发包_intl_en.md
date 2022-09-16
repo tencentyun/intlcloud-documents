@@ -6,7 +6,7 @@ To purchase and manage concurrencies for your application, you need to purchase 
 2. Click **Concurrency management** on the left sidebar and click **Buy concurrency pack** on the **Concurrency management** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bcffcfe3feb201d385411a2fa27d078c.jpg)
 3. On the **purchase page**, set the following configuration items:
-![](https://qcloudimg.tencent-cloud.cn/raw/bcffcfe3feb201d385411a2fa27d078c.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/47d894a750a9fe7070427a458528c7e5.jpg)
 
 <table>
 <tr><th style="width: 23%;">Configuration Item</th><th>Description</th></tr>
