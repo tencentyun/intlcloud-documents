@@ -22,9 +22,9 @@ CAR is billed by application rendering **concurrency**. A concurrency represents
 <th>Billing Mode</th>
 <th>Billable Item</th>
 <th>Billing Cycle</th>
-<th>Singapore (USD/Concurrencies/Cycle)</th>
-<th>Japan (USD/Concurrencies/Cycle)</th>
-<th>South Korea (USD/Concurrencies/Cycle)</th>
+<th>Singapore (USD/Concurrency/Cycle)</th>
+<th>Japan (USD/Concurrency/Cycle)</th>
+<th>South Korea (USD/Concurrency/Cycle)</th>
 </tr>
 </thead>
 <tbody><tr>
