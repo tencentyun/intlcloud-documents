@@ -4,7 +4,10 @@
 
 1. 进入 [应用云渲染控制台](https://console.cloud.tencent.com/car)。
 2. 单击左侧导航栏的 **应用管理**，在应用管理页面的对应条目中单击 **启动参数配置**。
+![](https://qcloudimg.tencent-cloud.cn/raw/7b168cd24cb530becd116bb87b1a4892.jpg)
 3. 填写配置信息：
+![](https://qcloudimg.tencent-cloud.cn/raw/c752b6496ae1730dbc20a485dd9e6656.jpg)
+
 <table>
 <thead>
 <tr>
