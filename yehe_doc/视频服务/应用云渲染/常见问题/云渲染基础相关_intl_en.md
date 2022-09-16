@@ -4,7 +4,7 @@ Cloud rendering technology allows you to run your application client (applicatio
 
 ### What development steps should I take to integrate CAR PaaS?
 Connect to TencentCloud APIs on the backend and integrate the SDK on the business frontend.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6db9536d93dfad8c4a3113229b9144ce.jpg)
 
 ### Does CAR support on-premises deployment?
 No.
