@@ -17,7 +17,7 @@ Before purchasing a CAR concurrency pack, you need to perform the following step
 </tr>
 <tr>
 <td>Project</td>
-<td>Allocate the concurrency pack to one of your projects, or select **To be allocated** to allocate it later.<b>After the concurrency pack is allocated to a project, you can still transfer it to another project later.</b></td>
+<td>Allocate the concurrency pack to one of your projects, or select **To be allocated** to allocate it later. <b>After the concurrency pack is allocated to a project, you can still transfer it to another project later.</b></td>
 </tr><tr>
 <td>Billing mode</td>
 <td>Select the billing mode for the concurrency pack. Currently, CAR supports two prepayment modes: monthly and daily.</td>
