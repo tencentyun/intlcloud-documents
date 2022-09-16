@@ -108,6 +108,7 @@ The procedure for enabling a shared dedicated tunnel is as follows:
 If the new tunnel and existing tunnel are redundant, it is recommended to publish other IP ranges for "CPE IP Range", and complete test for new tunnel with the IDC devices. And then publish the final service IP range via "Change Tunnel", to prevent effects against traffic in running redundant tunnel.</td>
 </tr>
 </table>
+
 >?[](id:Breakup)If **Static** is selected as the routing mode, do not directly publish the following routes: `9.0.0.0/8, `10.0.0.0/8`, `11.0.0.0/8`, `30.0.0.0/8`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12` and `192.168.0.0/16` when configuring IDC IP ranges. Instead, you need to first split them as follows.
 >- `9.0.0.0/8` is split into `9.0.0.0/9` + `9.128.0.0/9`.
 >- `10.0.0.0/8` is split into `10.0.0.0/9` + `10.128.0.0/9`.
@@ -118,6 +119,7 @@ If the new tunnel and existing tunnel are redundant, it is recommended to publis
 >- `172.16.0.0/12` is split into `172.16.0.0/13` + `172.24.0.0/13`.
 >- `192.168.0.0/16` is split into `192.168.0.0/17` + `192.168.128.0/17`.
 >
+
 4. Configure IDC devices. You can click **Download configuration guide** to download related files and complete the configurations as instructed in the guide.
 ![]()
 <table>
