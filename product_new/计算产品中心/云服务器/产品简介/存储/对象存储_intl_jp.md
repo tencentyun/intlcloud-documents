@@ -2,4 +2,4 @@ Cloud Object Storage(COS)は、Tencent Cloud が提供する大量のファイ�
 
 CVMを使用するユーザーは、インスタンス内から、またはネットワーク上のいつでも、どこからでも必要な量だけデータを格納および取得できます。COSは、複数のアベイラビリティ ゾーンにわたってデータを冗長的に保存し、複数のクライアントまたはアプリケーション スレッドがデータに対して読み取り処理と書き込み処理を同時に実行できるようにします。Tencent Cloud COS はCVMを使用するユーザーに業界トップクラスのスケーラビリティ、低コスト、安全なデータストレージソリューションを提供します。
 
-Tencent Cloud COSに関する詳細情報は、[COS 製品ドキュメント](https://cloud.tencent.com/document/product/436) をご参照ください。
+Tencent Cloud COSに関する詳細情報は、[COS 製品ドキュメント](https://intl.cloud.tencent.com/document/product/436) をご参照ください。
