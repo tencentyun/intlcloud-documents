@@ -4,7 +4,10 @@ CAR supports self-service startup parameter configuration. A newly created cloud
 
 1. Go to the [CAR console](https://console.cloud.tencent.com/car).
 2. Click **Application management** on the left sidebar. On the **Application management** page, click **Startup parameters** of the target application.
+![](https://qcloudimg.tencent-cloud.cn/raw/7b168cd24cb530becd116bb87b1a4892.jpg)
 3. Enter the configuration information:
+![](https://qcloudimg.tencent-cloud.cn/raw/c752b6496ae1730dbc20a485dd9e6656.jpg)
+
 <table>
 <thead>
 <tr>
