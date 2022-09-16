@@ -6,9 +6,17 @@
 
 1. 进入 [应用云渲染控制台](https://console.cloud.tencent.com/car)。
 2. 单击左侧导航栏的 **应用管理**，在应用管理页面中的列表中单击**版本管理**。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/d11f734b85598eedb76ee3df42bdd5f0.jpg)
 3. 在应用版本管理弹框中单击**上传新版应用**。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/897c0cf2628af3ab9201a7f0e14f6a8c.jpg)
 4. 选择上传方式，支持选择文件上传、拖拽上传和填写 URL 上传。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/d81bd77505af877930282cf51e16cf68.jpg)
 5. 提交后应用版本将被立即创建，上传进度可在应用版本管理中查看。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/0f4b19c2aa2e2966f434f4a3d92e5f97.jpg)
 6. 创建完成后可根据新版本的版本 ID 在业务环境下进行测试，测试完成后即可单击**发布**。
 
 
@@ -18,5 +26,11 @@
 
 1. 进入 [应用云渲染控制台](https://console.cloud.tencent.com/car)。
 2. 单击左侧导航栏的 **应用管理**，在应用管理页面中的列表中单击 **版本管理**。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/a1a312a41418748c8b1733778df0c7c9.jpg)
 3. 在**应用版本管理**弹框中选择老版本，单击**回滚至该版本**。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/33a061df30e389ddce897862cce56e09.jpg)
 4. 在版本回滚确认弹框中确认信息无误后单击**回滚**，即可完成版本回滚操作。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/c8afbeff1c2c5394fc0125ca79804def.jpg
