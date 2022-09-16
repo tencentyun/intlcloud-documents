@@ -5,7 +5,7 @@ GPU 实例包括网络、存储（系统盘、数据盘）、计算（CPU 、内
 GPU 云服务器提供如下实例类型：计算型GN6S、GN7、GN8、GN10X、GN10Xp，用户可通过综合了解实例配置与价格来购买符合实际需要的 GPU 实例。了解如何选型可参考 [NVIDIA 系列实例](https://intl.cloud.tencent.com/document/product/560/19700)。
 
 >!
->- 请以购买页实际价格为准。
+> 本页为广州三区实例价格，不同可用区、操作系统价格有所不同，请以[购买页](https://buy.tencentcloud.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=1&zoneId=100003&instanceType=GN7.8XLARGE128&platform=CentOS&systemDiskType=CLOUD_BSSD&systemDiskSize=50&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=5&bandwidthPackage=bwp-7ztaygy0&templateCreateMode=createLt)实际价格为准。
 >
 
 
@@ -48,8 +48,6 @@ GPU 云服务器提供如下实例类型：计算型GN6S、GN7、GN8、GN10X、G
 
 | 实例规格          | GPU(Tesla V100-NVLINK-32G) | GPU 显存 | vCPU  | 内存 | 按量计费    |
 | ----------------- | -------------------------- | -------- | ----- | ------ | ----------- |
-| GN10X.MEDIUM10 | 1/4颗 vGPU | 8GB | 2核 | 10GB | 0.67USD/hr |
-| GN10X.LARGE20 | 1/2颗 vGPU | 16GB | 4核 | 20GB | 1.34USD/hr  |
 | GN10X.2XLARGE40   | 1颗                       | 32GB    | 8核  | 40GB  | 2.68USD/hr |
 | GN10X.4XLARGE80 | 2颗 | 64GB | 18核 | 80GB | 5.43USD/hr |
 | GN10X.9XLARGE160  | 4颗                       | 128GB   | 36核 | 160GB | 10.86USD/hr |
