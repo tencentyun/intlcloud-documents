@@ -4,7 +4,9 @@ To purchase and manage concurrencies for your application, you need to purchase 
 ### Directions
 1. Go to the [CAR console](https://console.cloud.tencent.com/car).
 2. Click **Concurrency management** on the left sidebar and click **Buy concurrency pack** on the **Concurrency management** page.
+![](https://qcloudimg.tencent-cloud.cn/raw/bcffcfe3feb201d385411a2fa27d078c.jpg)
 3. On the **purchase page**, set the following configuration items:
+![](https://qcloudimg.tencent-cloud.cn/raw/bcffcfe3feb201d385411a2fa27d078c.jpg)
 
 <table>
 <tr><th style="width: 23%;">Configuration Item</th><th>Description</th></tr>
