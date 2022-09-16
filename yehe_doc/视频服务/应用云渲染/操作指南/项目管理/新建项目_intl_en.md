@@ -4,7 +4,10 @@ A project is the unique credential for scheduling in CAR. A project will be asso
 
 1. Go to the [CAR console](https://console.cloud.tencent.com/car).
 2. Click **Project management** on the left sidebar and click **Create project** on the **Project management** page.
+![](https://qcloudimg.tencent-cloud.cn/raw/cbcb31c6ac5df48a6866e9be70d5dea5.jpg)
 3. On the **Create project** page, set the following configuration items:
+![](https://qcloudimg.tencent-cloud.cn/raw/59ecfd6ab7688afabdf6cedaaffaaf5b.png)
+
 <table>
 <thead>
 <tr>
