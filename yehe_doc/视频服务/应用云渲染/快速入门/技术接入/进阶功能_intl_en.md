@@ -6,11 +6,11 @@ This section describes how to integrate the user queue system. We recommend you 
 ### Directions
 1. The client calls the [TCGSDK.init()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.init(params)) API to perform initialization. After initialization, it calls the [TCGSDK.getClientSession()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.getClientSession()) API to get `ClientSession` of the client.
 2. [](id:step2)The client requests the backend to start the application based on parameters passed in such as `UserId` and `ClientSession`. Here, `UserId` is the unique user identifier and should remain unchanged during user queuing and application reconnection. The business backend needs to perform the following operations based on the current queuing status: 
-	- If the queue isn't empty, add the user to the queue and return the current queue ranking information. The client regularly initiates requests after receiving the queue information and repeats [step 2](#step2) until the application is started successfully.
-	- If the queue is empty or the user ranks the first, proceed to [step 3](#step3).
+	- If the queue isn't empty, add the user to the queue and return the current queue ranking information. The client regularly initiates requests after receiving the queue information and repeats **step 2** until the application is started successfully.
+	- If the queue is empty or the user ranks the first, proceed to **step 3**.
 3. [](id:step3)The backend calls the [ApplyConcurrent()](https://intl.cloud.tencent.com/document/product/1158/49969) API to apply to reserve a CAR concurrency and perform the following steps based on the returned result:
-	- If there are no idle concurrencies or an error is returned, add the user to the queue, return the current queue ranking information, and go back to [step 2](#step2) to initiate a request again.
-	- If a concurrency is obtained successfully, proceed to [step 4](#step4).
+	- If there are no idle concurrencies or an error is returned, add the user to the queue, return the current queue ranking information, and go back to **step 2** to initiate a request again.
+	- If a concurrency is obtained successfully, proceed to **step 4**.
 4. [](id:step4)The backend calls the [CreateSession()](https://intl.cloud.tencent.com/document/product/1158/49968) API to create a session and returns `ServerSession` to the business client.
 
 5. The client calls the [TCGSDK.start()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.start(serverSession)) API to start the cloud application. After the application is connected, the SDK will trigger the `onConnectSuccess()` callback. We recommend you call the data channel creation API and APIs for other features after this callback.
@@ -34,9 +34,9 @@ This document describes how to use a data channel to establish communication bet
 ### Directions
 1. [](id:step4_1)Create a UDP service for the cloud application to listen on a local UDP port (recommended port range: 10000–20000 for `localhost 127.0.0.1`) and wait to receive UDP packets.
 2. The client calls the [TCGSDK.start()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.start(serverSession)) API to start the cloud application. After the application is connected, the SDK will trigger the `onConnectSuccess()` callback. We recommend the client create a data channel after this callback.
-3. The client calls the [TCGSDK.createCustomDataChannel()](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.createcustomdatachannel(.7Bdestport.2Conmessage.7D)) API to create a passthrough channel. The target port parameter in the API must be the port listened on by the cloud application in [step 1](#step4_1). If the data channel fails to be created, repeat this step until it is created successfully.
+3. The client calls the [TCGSDK.createCustomDataChannel()](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.createcustomdatachannel(.7Bdestport.2Conmessage.7D)) API to create a passthrough channel. The target port parameter in the API must be the port listened on by the cloud application in **step 1**. If the data channel fails to be created, repeat this step until it is created successfully.
 4. [](id:step4_4)After the data channel is created successfully, the client can call `sendMessage()` to send a customized data packet. The UDP service of the cloud application receives the request and parses the UDP source address.
-5. The cloud application sends a custom data packet to the UDP source address obtained in [step 4](#step4_4). The data packet will then be returned through the created data channel. The client can process the returned packet in the `onMessage()` callback API.
+5. The cloud application sends a custom data packet to the UDP source address obtained in **step 4**. The data packet will then be returned through the created data channel. The client can process the returned packet in the `onMessage()` callback API.
 
 ## Application Reconnection
 This section describes how to reconnect to an application. If a user directly closes the client but doesn't actively call the application close feature, APIs for applying for a concurrency and creating a session can be called again to reconnect to the application.
