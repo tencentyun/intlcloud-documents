@@ -12,7 +12,7 @@ If you don't have a Tencent Cloud account yet, [sign up for one](https://intl.cl
 
 [](id:step2)
 ### Step 2. Apply to activate CAR
-After [applying to activate CAR](https://intl.cloud.tencent.com/apply/p/ombzi6237bn), you can go to its console.
+After [applying to activate CAR](https://intl.cloud.tencent.com/apply/p/ombzi6237bn), you can start using the CAR console.
 
 [](id:step3)
 ### Step 3. Perform operations in the console
