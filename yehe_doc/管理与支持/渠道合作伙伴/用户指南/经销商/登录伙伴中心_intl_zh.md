@@ -1,6 +1,6 @@
 ### 登录伙伴中心
 
-第一步：登录[经销商账号](https://intl.cloud.tencent.com/login)。
+第一步：登录[经销商账号](https://intl.cloud.tencent.com/login)（注：只有经销商主帐号可登录合作伙伴控制台，子帐号不可登录合作伙伴控制台）
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/8bf71e6530c1fcacdef9147748f69035.png)
 
