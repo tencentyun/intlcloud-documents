@@ -1,7 +1,7 @@
 ## 排队功能
 本节主要介绍如何引入用户排队系统。当用户在线数大于资源并发数量时，建议业务引入用户排队系统，提升用户体验。
 ### 时序图
-
+![](https://qcloudimg.tencent-cloud.cn/raw/ef3d594d9fe81d0f98e856cbc289491c.jpg)
 
 ### 步骤说明
 1. 业务客户端调用 [TCGSDK.init()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.init(params)) 接口完成初始化构建。初始化完成后，再调用 [TCGSDK.getClientSession()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.getClientSession()) 获取 Client 端的 ClientSession。
@@ -19,17 +19,16 @@
 ## 应用心跳连接
 本节主要介绍如何维持服务心跳连接。建议业务通过心跳来感知用户连接情况，可以收集管理用户连接时长等数据，当客户端异常退出之后业务后台可以快速回收资源，更合理利用并发资源。
 ### 时序图
-
+![](https://qcloudimg.tencent-cloud.cn/raw/ff17676e26edbdda33036b615fe6d55a.jpg)
 
 ### 步骤说明
 1. 业务客户端定时向业务后台发送心跳上报，业务后台根据心跳上报维护用户连接状态。
 2. 业务后台定时检查用户连接状态，如果有用户心跳超时，业务后台通过云渲染 API 调用 [DestroySession()](https://intl.cloud.tencent.com/document/product/1158/49967) 销毁会话，业务云端应用将被主动关闭，业务客户端断开与云应用连接。
 
----
 ## 数据通道
 本节主要介绍如何使用数据通道与云端运行的应用直接进行通信。当业务需要建立客户端与云端应用的通信时，可以使用数据通道能力。
 ### 时序图
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d30a87c7f0069f555992b253ecf190e2.jpg)
 
 ### 步骤说明
 1. [](id:step4_1)业务云端应用创建 UDP 服务，监听一个本地 UDP 端口（`localhost 127.0.0.1` 端口范围建议为 10000 - 20000），并开始等待接收 UDP 包。
@@ -41,7 +40,7 @@
 ## 重连应用
 本节主要介绍如何重连应用。当用户直接关闭客户端而未主动调用关闭应用功能时，业务可以通过再次调用申请并发和创建会话接口实现重连应用功能。
 ### 时序图
-
+![](https://qcloudimg.tencent-cloud.cn/raw/01990988def83c87a9e35693ebcf857e.jpg)
 
 ### 步骤说明
 1. 业务客户端关闭后会断开与业务云端应用的连接，若非主动调用接口关闭云端应用，则默认保持 90s 的重连时间等待重连。
