@@ -4,7 +4,7 @@
 
 ### 接入云渲染 PaaS 服务需要做哪些开发工作？
 后台接入云 API，业务前端集成 SDK。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6db9536d93dfad8c4a3113229b9144ce.jpg)
 
 ### 云渲染是否支持私有化部署？
 云渲染暂不支持私有化部署。
