@@ -1,7 +1,7 @@
 ## 启动应用
 本节主要介绍如何启动云应用。
 ### 时序图
-
+![](https://qcloudimg.tencent-cloud.cn/raw/dec8b73715e1a2e80f62a298fffba0e0.jpg)
 
 其中：
 
@@ -24,7 +24,7 @@
 本节主要介绍如何主动关闭云应用。建议业务及时释放并发资源，更合理利用并发资源。
 
 ### 时序图
-
+![](https://qcloudimg.tencent-cloud.cn/raw/403c7649a628776ffdc0b12fbfee85f1.jpg)
 
 ### 步骤说明
 1. 业务客户端向业务后台主动请求关闭应用。
