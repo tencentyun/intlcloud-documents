@@ -5,7 +5,7 @@ GPU 实例包括网络、存储（系统盘、数据盘）、计算（CPU 、内
 GPU 云服务器提供如下实例类型：计算型GN6S、GN7、GN8、GN10X、GN10Xp，用户可通过综合了解实例配置与价格来购买符合实际需要的 GPU 实例。了解如何选型可参考 [NVIDIA 系列实例](https://intl.cloud.tencent.com/document/product/560/19700)。
 
 >!
-> 本页为广州三区实例价格，不同可用区、操作系统价格有所不同，请以[购买页](https://buy.tencentcloud.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=1&zoneId=100003&instanceType=GN7.8XLARGE128&platform=CentOS&systemDiskType=CLOUD_BSSD&systemDiskSize=50&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=5&bandwidthPackage=bwp-7ztaygy0&templateCreateMode=createLt)实际价格为准。
+> 本页为广州三区实例价格，不同可用区、操作系统价格有所不同，请以[购买页](https://www.tencentcloud.com/pricing/cvm)实际价格为准。
 >
 
 
