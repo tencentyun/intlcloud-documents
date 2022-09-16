@@ -17,17 +17,13 @@ A region is the physical location of an IDC. Availability zone (AZ) refers to th
 | Region | Value |
 | -------------------- | ---------------- |
 | Southeast Asia (Singapore) | ap-singapore |
-| Southeast Asia (Jakarta) | ap-jakarta |
 | Northeast Asia (Seoul) | ap-seoul |
 | Northeast Asia (Tokyo) | ap-tokyo |
 | South Asia (Mumbai) | ap-mumbai |
 | Southeast Asia (Bangkok) | ap-bangkok |
 | North America (Toronto) | na-toronto |
-| South America (Sao Paulo) | sa-saopaulo |
 | US West (Silicon Valley) | na-siliconvalley|
-| US East (Virginia) | na-ashburn |
 | Europe (Frankfurt) | eu-frankfurt |
-| Europe (Moscow) | eu-moscow |
 
 
 
