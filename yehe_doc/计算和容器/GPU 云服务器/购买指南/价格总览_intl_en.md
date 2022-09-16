@@ -5,7 +5,7 @@ A GPU instance consists of three major parts: network, storage (system disks and
 GPU Cloud Computing is available in the following instance types: Computing GN6S, GN7, GN8, GN10X, and GN10Xp. You can select the GPU instances that best meet your use case according to the specifications and prices. For more information on GPU instance types, please see [NVIDIA GPU Instances](https://intl.cloud.tencent.com/document/product/560/19700).
 
 >!
->- The actual prices indicated on the purchase page shall prevail.
+> The prices on this page are for Guangzhou Zone 3. Prices are different depending on the AZ and OS. Please refer to the prices on the purchase page.
 >
 
 
@@ -48,8 +48,6 @@ GPU Cloud Computing is available in the following instance types: Computing GN6S
 
 | Instance Specification | GPU (Tesla V100-NVLINK-32G) | GPU Video Memory | vCPU | Memory | Pay-as-You-Go |
 | ----------------- | -------------------------- | -------- | ----- | ------ | ----------- |
-| GN10X.MEDIUM10 | 1/4 vGPU | 8 GB | 2 cores | 10 GB | 0.67 USD/hr |
-| GN10X.LARGE20 | 1/2 vGPU | 16 GB | 4 cores | 20 GB | 1.34 USD/hr  |
 | GN10X.2XLARGE40   | 1                       | 32 GB    | 8 cores  | 40 GB  | 2.68 USD/hr |
 | GN10X.4XLARGE80 | 2 | 64 GB | 18 cores | 80 GB | 5.43 USD/hr |
 | GN10X.9XLARGE160  | 4                       | 128 GB   | 36 cores | 160 GB | 10.86 USD/hr |
