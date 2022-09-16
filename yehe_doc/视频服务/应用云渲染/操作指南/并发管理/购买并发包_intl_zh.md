@@ -4,7 +4,9 @@
 ### 操作步骤
 1. 进入 [应用云渲染控制台](https://console.cloud.tencent.com/car)。
 2. 单击左侧导航栏的 **并发管理**，在项目管理页面中单击**购买并发包**。
+![](https://qcloudimg.tencent-cloud.cn/raw/bcffcfe3feb201d385411a2fa27d078c.jpg)
 3. **购买页面**下进行如下配置：
+![](https://qcloudimg.tencent-cloud.cn/raw/47d894a750a9fe7070427a458528c7e5.jpg)
 
 <table>
 <tr><th style="width: 23%;">配置项</th><th>说明</th></tr>
