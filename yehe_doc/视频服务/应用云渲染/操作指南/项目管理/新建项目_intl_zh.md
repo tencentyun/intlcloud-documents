@@ -4,7 +4,9 @@
 
 1. 进入 [应用云渲染控制台](https://console.cloud.tencent.com/car)。
 2. 单击左侧导航栏的 **项目管理**，在项目管理页面中单击**新建项目**。
+![](https://qcloudimg.tencent-cloud.cn/raw/cbcb31c6ac5df48a6866e9be70d5dea5.jpg)
 3. **新建项目页面**下进行如下配置：
+![](https://qcloudimg.tencent-cloud.cn/raw/59ecfd6ab7688afabdf6cedaaffaaf5b.png)
 
 <table>
 <thead>
