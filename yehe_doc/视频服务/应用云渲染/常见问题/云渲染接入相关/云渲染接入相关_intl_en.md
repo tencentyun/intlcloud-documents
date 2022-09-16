@@ -1,10 +1,10 @@
 ### What preparations should I make before integration?
-For more information, see [Integration Preparations](https://intl.cloud.tencent.com/document/product/1158/49607).
+Please see [Integration Preparations](https://intl.cloud.tencent.com/document/product/1158/49607).
 
 ### Does the `Region` parameter in CAR TencentCloud APIs indicate the concurrency pack region?
 No. `Region` is a common parameter of CAR TencentCloud APIs and doesn't need to be specified, as CAR will select the optimal access region based on `UserIP`.
 
-### Does CAR support a user queue?
+### Does CAR support user queuing?
 The queue page of CAR needs to be developed by you. For more information, see [Queue Feature](https://intl.cloud.tencent.com/document/product/1158/49615#.E6.8E.92.E9.98.9F.E5.8A.9F.E8.83.BD).
 
 ### What do `UserId` and `RequestId` mean respectively?
