@@ -1,6 +1,7 @@
 ## Starting an Application
 This section describes how to start a cloud application.
 ### Sequence diagram
+![](https://qcloudimg.tencent-cloud.cn/raw/dec8b73715e1a2e80f62a298fffba0e0.jpg)
 
 Refer to the following, which appear in the diagram:
 
@@ -23,7 +24,7 @@ Refer to the following, which appear in the diagram:
 This section describes how to close the application. We recommend you release concurrencies promptly when the application is closed, so that the concurrencies can be made available to other users more quickly.
 
 ### Sequence diagram
-
+![](https://qcloudimg.tencent-cloud.cn/raw/403c7649a628776ffdc0b12fbfee85f1.jpg)
 
 ### Directions
 1. The business client actively requests the business backend to close the application.
