@@ -1,5 +1,5 @@
 ## CAR Description
-CAR runs your application client (application with an engine such as UE or Unity) on a cloud computing resource with GPU and enables users to access the cloud application through a video stream. Before reading this document, you need to understand the [basic technical concepts](https://intl.cloud.tencent.com/document/product/1158/49611) of CAR.
+CAR runs your application client (application with an engine such as UE or Unity) on a cloud computing resource with GPU and enables users to access the cloud application through a video stream. Before reading this document, make sure you understand the [basic technical concepts](https://intl.cloud.tencent.com/document/product/1158/49611) of CAR.
 
 ## CAR Integration
 ### Preparations for Access
