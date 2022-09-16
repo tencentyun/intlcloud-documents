@@ -1,10 +1,10 @@
-## Feature overview
+## Feature Description
 Cluster events include event lists and event policies.
 - Event list: It records key change events and abnormal events occurring in the cluster.
 - Event policy: Event monitoring trigger policies can be customized based on the actual business conditions. Events with monitoring enabled can be set as cluster inspection items.
 
-## Viewing the event list
-1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page.
+## Viewing Event List
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of a cluster in the cluster list to enter the cluster details page.
 2. On the cluster details page, select **Cluster Monitoring** > **Cluster Events** > **Event List** to view all operation events in the current cluster.
 ![](https://main.qcloudimg.com/raw/5060d9a929e662b5b14c8fa78f3b6843.png)
 The severity divides into the following:
@@ -15,7 +15,7 @@ The severity divides into the following:
 3. Click the value in the **Triggers today** column to view the event's trigger records, metrics, logs, and snapshots.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d184a9581e1c72055b921964df069ec8.png)
 
-## Setting an event policy
+## Setting Event Policy
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page.
 2. On the cluster details page, select **Cluster Monitoring** > **Cluster Events** > **Event Policy** and you can customize the event monitoring trigger policies.
 3. The event configuration list contains the event name, event trigger policy, severity (fatal, severe, and moderate), and option to enable/disable monitoring, which can be modified and saved.
@@ -26,13 +26,13 @@ The severity divides into the following:
 <table>
 <thead>
 <tr>
-<th ><strong>Type</strong></th>
-<th><strong>Event</strong></th>
+<th><strong>Category</strong></th>
+<th><strong>Event Name</strong></th>
 <th><strong>Description</strong></th>
-<th><strong>Recommended Measure</strong></th>
+<th><strong>Recommendations and Measure</strong></th>
 <th><strong>Default Value</strong></th>
 <th><strong>Severity</strong></th>
-<th><strong>Disableable</strong></th>
+<th><strong>Disabling Allowed</strong></th>
 <th><strong>Enabled by Default</strong></th>
 </tr>
 </thead>
@@ -51,7 +51,7 @@ The severity divides into the following:
 <td>The average server CPU utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -69,7 +69,7 @@ The severity divides into the following:
 <td>The 1-minute CPU load has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=8, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -96,7 +96,7 @@ The severity divides into the following:
 <td>The server swap memory has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=0.1, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -114,12 +114,12 @@ The severity divides into the following:
 <td>The average total number of fork subprocesses in the last t (300 ≤ t ≤ 2,592,000) seconds has been greater than or equal to m</td>
 <td>Troubleshoot</td>
 <td>m=5000, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
 <tr>
-<td>The process does not exist due to OOM</td>
+<td>No Process OOM</td>
 <td>An OOM error occurred in the process</td>
 <td>Adjust the process heap memory size</td>
 <td>-</td>
@@ -137,7 +137,7 @@ The severity divides into the following:
 <td>Yes</td>
 </tr>
 <tr>
-<td>The average disk space utilization exceeds the threshold continuously</td>
+<td>The average disk utilization exceeds the threshold continuously</td>
 <td>The average disk space utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=85, t=1800</td>
@@ -146,8 +146,8 @@ The severity divides into the following:
 <td>Yes</td>
 </tr>
 <tr>
-<td>The average disk I/O device utilization exceeds the threshold continuously</td>
-<td>The average disk I/O device utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
+<td>The average disk I/O utilization exceeds the threshold continuously</td>
+<td>The average disk I/O utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td> 
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=85, t=1800</td>
 <td>Severe</td>
@@ -159,7 +159,7 @@ The severity divides into the following:
 <td>The node file handle utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -168,7 +168,7 @@ The severity divides into the following:
 <td>The number of TCP connections to the node has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Check whether there are connection leaks</td>
 <td>m=10000, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -185,7 +185,7 @@ The severity divides into the following:
 <td>The node service process is unavailable</td>
 <td>View the service logs to find out why the service failed to be pulled</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -199,7 +199,7 @@ The severity divides into the following:
 <td>Yes</td>
 </tr>
 <tr>
-<td>Incorrect hostname</td>
+<td>The hostname is incorrect</td>
 <td>The node's hostname is incorrect</td>
 <td>Troubleshoot</td>
 <td>-</td>
@@ -217,7 +217,7 @@ The severity divides into the following:
 <td>-</td>
 </tr>
 <tr>
-<td>The single disk space utilization exceeds the threshold continuously</td>
+<td>The utilization of a single disk exceeds the threshold continuously</td>
 <td>The single disk space utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=0.85, t=1800</td>
@@ -226,7 +226,7 @@ The severity divides into the following:
 <td>Yes</td>
 </tr>
 <tr>
-<td>The single disk I/O device utilization exceeds the threshold continuously</td>
+<td>The I/O utilization of a single disk exceeds the threshold continuously</td>
 <td>The single disk I/O device utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=0.85, t=1800</td>
@@ -285,7 +285,7 @@ The severity divides into the following:
 <td>The number of data nodes marked as dead has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=1, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -330,7 +330,7 @@ The severity divides into the following:
 <td>The number of current NameNode connections has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=2000, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -357,7 +357,7 @@ The severity divides into the following:
 <td>The RPC request processing latency has been greater than or equal to m milliseconds for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=300, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -366,7 +366,7 @@ The severity divides into the following:
 <td>The number of current DataNode connections has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=2000, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -375,7 +375,7 @@ The severity divides into the following:
 <td>A full GC event occurred on a NameNode</td>
 <td>Fine-tune the parameter settings</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -384,7 +384,7 @@ The severity divides into the following:
 <td>The NameNode JVM memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Adjust the DataNode heap memory size</td>
 <td>m=85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -403,7 +403,7 @@ The severity divides into the following:
 <td>The number of currently missing NodeManagers in the cluster has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Check the NodeManager process status and check whether the network connection is smooth</td>
 <td>m=1, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -412,14 +412,14 @@ The severity divides into the following:
 <td>The number of pending containers has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Reasonably specify resources that can be used by YARN jobs</td>
 <td>m=90, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
 <tr>
 <td>The cluster memory utilization exceeds the threshold continuously</td>
 <td>The memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
-<td>Expand the cluster capacity</td>
+<td>Scale out clusters</td>
 <td>m=85, t=1800</td>
 <td>Severe</td>
 <td>Yes</td>
@@ -428,7 +428,7 @@ The severity divides into the following:
 <tr>
 <td>The average cluster memory utilization exceeds the threshold</td>
 <td>The average memory utilization in the last t (300 ≤ t ≤ 2,592,000) seconds has been greater than or equal to m</td>
-<td>Expand the cluster capacity</td>
+<td>Scale out clusters</td>
 <td>m=85, t=1800</td>
 <td>Severe</td>
 <td>Yes</td>
@@ -437,7 +437,7 @@ The severity divides into the following:
 <tr>
 <td>The cluster CPU utilization exceeds the threshold continuously</td>
 <td>The CPU utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
-<td>Expand the cluster capacity</td>
+<td>Scale out clusters</td>
 <td>m=85, t=1800</td>
 <td>Severe</td>
 <td>Yes</td>
@@ -446,7 +446,7 @@ The severity divides into the following:
 <tr>
 <td>The average cluster CPU utilization exceeds the threshold</td>
 <td>The average CPU utilization in the last t (300 ≤ t ≤ 2,592,000) seconds has been greater than or equal to m</td>
-<td>Expand the cluster capacity</td>
+<td>Scale out clusters</td>
 <td>m=85, t=1800</td>
 <td>Severe</td>
 <td>Yes</td>
@@ -457,7 +457,7 @@ The severity divides into the following:
 <td>The number of available CPU cores in each queue has been less than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Assign more resources to the queue</td>
 <td>m=1, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -466,7 +466,7 @@ The severity divides into the following:
 <td>The available memory in each queue has been less than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Assign more resources to the queue</td>
 <td>m=1024, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -502,7 +502,7 @@ The severity divides into the following:
 <td>A full GC event occurred in a NodeManager</td>
 <td>Fine-tune the parameter settings</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -511,7 +511,7 @@ The severity divides into the following:
 <td>The available memory in a single NodeManager has been less than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Adjust the NodeManager heap memory size</td>
 <td>m=1, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -520,7 +520,7 @@ The severity divides into the following:
 <td>The NodeManager JVM memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Adjust the NodeManager heap memory size</td>
 <td>m=85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -539,7 +539,7 @@ The severity divides into the following:
 <td>The number of dead RegionServers has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=1, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -548,7 +548,7 @@ The severity divides into the following:
 <td>The average number of regions in each RegionServer in the cluster has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=300, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -557,7 +557,7 @@ The severity divides into the following:
 <td>A full GC event occurred on HMaster</td>
 <td>Fine-tune the parameter settings</td>
 <td>m=5, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -575,7 +575,7 @@ The severity divides into the following:
 <td>The number of current HMaster connections has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=1000, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -593,7 +593,7 @@ The severity divides into the following:
 <td>The RegionServer JVM memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Adjust the RegionServer heap memory size</td>
 <td>m=85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -602,7 +602,7 @@ The severity divides into the following:
 <td>The number of current RPC connections to RegionServer has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=1000, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -611,7 +611,7 @@ The severity divides into the following:
 <td>The number of RegionServer StoreFiles has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Run the major compaction</td>
 <td>m=50000, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -629,7 +629,7 @@ The severity divides into the following:
 <td>The HBase Thrift JVM memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Adjust the HBase Thrift heap memory size</td>
 <td>m=85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -666,7 +666,7 @@ The severity divides into the following:
 <td>A full GC event occurred in HiveMetaStore</td>
 <td>Fine-tune the parameter settings</td>
 <td>m=5, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -675,7 +675,7 @@ The severity divides into the following:
 <td>A full GC event occurred in HiveWebHcat</td>
 <td>Fine-tune the parameter settings</td>
 <td>m=5, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
@@ -685,7 +685,7 @@ The severity divides into the following:
 <td>The number of ZooKeeper connections has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=65535, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr>
@@ -694,7 +694,7 @@ The severity divides into the following:
 <td>The number of ZNodes has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=2000, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -703,7 +703,7 @@ The severity divides into the following:
 <td>The ImpalaCatalog JVM memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 604,800) seconds continuously</td>
 <td>Adjust the ImpalaCatalog heap memory size</td>
 <td>m=0.85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -711,7 +711,7 @@ The severity divides into the following:
 <td>The Impala daemon JVM memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 604,800) seconds continuously	</td>
 <td>Adjust the ImpalaDaemon heap memory size	</td>
 <td>m=0.85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -793,7 +793,7 @@ The severity divides into the following:
 <td>A full GC event occurred in a PrestoSQLCoordinator</td>
 <td>Fine-tune the parameter settings</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -809,7 +809,7 @@ The severity divides into the following:
 <td>A full GC event occurred on a PrestoSQL worker</td>
 <td>Fine-tune the parameter settings</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -850,7 +850,7 @@ The severity divides into the following:
 <td>A full GC event occurred on a PrestoSQL coordinator</td>
 <td>Fine-tune the parameter settings</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -858,7 +858,7 @@ The severity divides into the following:
 <td>The Presto coordinator JVM memory utilization has been greater than or equal to m for t (300 ≤ t ≤ 604,800) seconds continuously</td>
 <td>Adjust the Presto coordinator heap memory size</td>
 <td>m=0.85, t=1800</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr><tr>
@@ -866,7 +866,7 @@ The severity divides into the following:
 <td>A full GC event occurred on a Presto worker</td>
 <td>Fine-tune the parameter settings</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -899,7 +899,7 @@ The severity divides into the following:
 <td>A full GC event occurred on an Alluxio master</td>
 <td>Troubleshoot</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -915,7 +915,7 @@ The severity divides into the following:
 <td>A full GC event occurred on an Alluxio worker</td>
 <td>Troubleshoot</td>
 <td>-</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -927,12 +927,12 @@ The severity divides into the following:
 <td>Yes</td>
 <td>Yes</td>
 </tr><tr>
-<td rowspan="10"><strong>Kudu</strong></td>
+<td rowspan="10"><strong>kudu</strong></td>
 <td>The cluster replica skew exceeds the threshold</td>
 <td>The cluster replica skew has been greater than or equal to the threshold for t (300 ≤ t ≤ 3,600) seconds continuously</td>
 <td>Run the `rebalance` command to balance the replicas</td>
 <td>m=100, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr><tr>
@@ -940,7 +940,7 @@ The severity divides into the following:
 <td>The hybrid clock error has been greater than or equal to the threshold for t (300 ≤ t ≤ 3,600) seconds continuously</td>
 <td>	Make sure that the NTP daemon is running and the network communication with the NTP server is normal</td>
 <td>m=5000000, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr><tr>
@@ -948,7 +948,7 @@ The severity divides into the following:
 <td>The number of running tablets has been greater than or equal to m for t (300 ≤ t ≤ 3,600) seconds continuously</td>
 <td>	Too many tablets on a node can affect the performance. We recommend you clear unnecessary tables and partitions or expand the capacity as needed</td>
 <td>	m=1000, t=300	</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr><tr>
@@ -956,7 +956,7 @@ The severity divides into the following:
 <td>The number of failed tablets has been greater than or equal to m for t (300 ≤ t ≤ 3,600) seconds continuously	</td>
 <td>Check whether any disk is unavailable or data file is corrupted</td>
 <td>	m=1, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr><tr>
@@ -980,7 +980,7 @@ The severity divides into the following:
 <td>The number of write requests rejected due to queue overloading has been greater than or equal to m for t (300 ≤ t ≤ 3,600) seconds continuously		</td>
 <td>Check whether the number of write hotspots or worker threads is small</td>
 <td>m=10, t=300	</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
@@ -988,7 +988,7 @@ The severity divides into the following:
 <td>The number of expired scanners has been greater than or equal to m for t (300 ≤ t ≤ 3,600) seconds continuously</td>
 <td>Be sure to call the method for closing a scanner after reading data</td>
 <td>m=100, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr><tr>
@@ -996,7 +996,7 @@ The severity divides into the following:
 <td>The number of error logs has been greater than or equal to m for t (300 ≤ t ≤ 3,600) seconds continuously</td>
 <td>Troubleshoot</td>
 <td>m=10, t=300	</td>
-<td>Moderate</td>
+<td>Normal</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr><tr>
@@ -1004,7 +1004,44 @@ The severity divides into the following:
 <td>The number of RPC requests that timed out while waiting in the queue has been greater than or equal to m for t (300 ≤ t ≤ 3,600) seconds continuously</td>
 <td>Check whether the system load is too high</td>
 <td>m=100, t=300</td>
-<td>Moderate</td>
+<td>Normal</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td rowspan=4><strong>Cluster</strong></td>
+<td>Auto-scaling failure</td>
+<td>Node operation failed during the auto-scaling</td>
+<td>Troubleshoot</td>
+<td>-</td>
+<td>Severe</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The node process is unavailable</td>
+<td>The node process is unavailable</td>
+<td>Troubleshoot</td>
+<td>-</td>
+<td>Normal</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The process is killed by OOMKiller.</td>
+<td>The process OOM is killed by OOMKiller.</td>
+<td>Adjust the process heap memory size</td>
+<td>-</td>
+<td>Severe</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>JVM or OLD exception.</td>
+<td>JVM or OLD exception.</td>
+<td>Troubleshoot</td>
+<td>1. The OLD utilization reaches 80% for 5 consecutive minutes <br>Or 2. The JVM memory utilization reaches 90%.</td>
+<td>Severe</td>
 <td>Yes</td>
 <td>Yes</td>
 </tr>
