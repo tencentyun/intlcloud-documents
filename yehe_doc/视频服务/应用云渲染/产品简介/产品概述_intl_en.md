@@ -1,1 +1,2 @@
 Based on Tencent Cloud's abundant edge computing nodes, flexible vGPU technology, and stable and low-latency audio/video streaming capabilities, CAR helps you cloudify your application so that users can interact with your cloud application through a streamed video with no need to download the application on their own device. CAR provides TencentCloud APIs and SDKs for various client types to support different devices in different business scenarios.
+![](https://qcloudimg.tencent-cloud.cn/raw/6db9536d93dfad8c4a3113229b9144ce.jpg)
