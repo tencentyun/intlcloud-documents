@@ -71,10 +71,12 @@
 <td >西南地区（重庆）<br>ap-chongqing</td>
 <td>重庆一区<br>ap-chongqing-1</td></tr>
 <tr>
-<td rowspan="2">港澳台地区（中国香港）<br>ap-hongkong</td>
+<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
 <td>香港一区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-1</td></tr>
 <tr>
 <td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td></tr></tr>
+<tr>
+<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td></tr></tr>
 </tbody></table>
 
 
