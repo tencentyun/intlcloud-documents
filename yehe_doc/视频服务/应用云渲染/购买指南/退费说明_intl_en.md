@@ -4,12 +4,12 @@ If you are dissatisfied after purchasing a CAR concurrency pack, you may be able
 
 If you are dissatisfied after purchasing a concurrency pack, you may be able to return it unconditionally within five days after purchase. The specific rules are as detailed below:
 
-1. You can return one CAR concurrent pack unconditionally within five (included) days after purchase.
+1. You can return one CAR concurrent pack unconditionally within five days after purchase.
 2. In the event that any return request is suspected to be abnormal/malicious, Tencent Cloud reserves the right to reject the request.
 
 ### Rules
 
-For an order that meets the five-day unconditional return policy, the refunded amount is the **total amount paid for purchase**, including cash amount, earnings amount, and credit amount.
+For an order that meets the five-day unconditional return policy, the refunded amount is the **total amount paid for purchase**, including cash and credit amount.
 
 ## Standard Return
 For orders that are not eligible for the five-day unconditional return policy, the refund policy is as follows:
