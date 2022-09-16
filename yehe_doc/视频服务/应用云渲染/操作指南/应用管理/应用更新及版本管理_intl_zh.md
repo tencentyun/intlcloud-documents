@@ -33,4 +33,4 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/33a061df30e389ddce897862cce56e09.jpg)
 4. 在版本回滚确认弹框中确认信息无误后单击**回滚**，即可完成版本回滚操作。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c8afbeff1c2c5394fc0125ca79804def.jpg
+![](https://qcloudimg.tencent-cloud.cn/raw/c8afbeff1c2c5394fc0125ca79804def.jpg)
