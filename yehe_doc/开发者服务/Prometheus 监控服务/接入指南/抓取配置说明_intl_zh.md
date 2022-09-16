@@ -149,8 +149,10 @@ filters:
       values: <string>, [...] ]
 :::
 </dx-codeblock>
-	
->?使用集成中心的 CVM 抓取任务配置 cvm_sd_configs 时，该集成自动使用服务预设角色授权确保安全性，无需您手动填写如下参数：secret_id、secret_key、endpoint。
+
+<dx-alert infotype="explain" title="">	
+使用集成中心的 CVM 抓取任务配置 cvm_sd_configs 时，该集成自动使用服务预设角色授权确保安全性，无需您手动填写如下参数：secret_id、secret_key、endpoint。
+</dx-alert>
 
 #### 例子
 
@@ -228,7 +230,7 @@ spec:
     [ any: bool ]
     # 需要选取 namespace 列表
     [ matchNames: []string ]
-  # 填写要监控 Pod 的 Label 值，以定位目标 Pod  [K8S metav1.LabelSelector](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
+  # 填写要监控 Pod 的 Label 值，以定位目标 Pod  [K8S metav1.LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#labelselector-v1-meta)
   selector:  
     [ matchExpressions: array ]
       [ example: - {key: tier, operator: In, values: [cache]} ]
