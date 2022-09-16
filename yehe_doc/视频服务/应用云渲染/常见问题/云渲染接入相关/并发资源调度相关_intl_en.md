@@ -18,7 +18,7 @@ You can troubleshoot as follows:
 
 ### Can I call `ApplyConcurrent` and `CreateSession` repeatedly? Will a new concurrency or the original one be connected to in a repeated call?
 `ApplyConcurrent` and `CreateSession` can be called repeatedly. If the original concurrency hasn’t been repossessed, it will be connected to, and the original client connection will close. If the original concurrency has already been repossessed, a new concurrency will be connected to.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/291399f70ba46fb36457dfb7835cf469.jpg)
 
 ### Will the connection close if the user performs no operations for a long time?
 CAR doesn't actively close the user connection, so you need to actively close the connection based on the SDK callback. To set the duration after which the concurrency will become considered idle (i.e., the duration a user is idle and performs no operations), you can customize the `idleThreshold` parameter in the [init](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.init(params)) API. After you receive the callback, you can call [DestroySession](https://intl.cloud.tencent.com/document/product/1158/49967) to release the concurrency.
