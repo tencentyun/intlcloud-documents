@@ -1,27 +1,25 @@
 This document describes how to use the online migration feature in the CVM console to migrate a server online.
-<dx-alert infotype="explain" title="">
-Currently, the online migration service in the console is in beta test. To try it out, [contact us](https://intl.cloud.tencent.com/document/product/213/34837) for application.
-</dx-alert>
+
 
 ## Migration Process
 The online migration procedure is shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/0e290646e08b6af1b509ce324ea6e096.png)
 
-## Prerequisites[](id:prerequisites)
+## Preparation[](id:prerequisites)
 
-- You have a Tencent Cloud account.
-- If you want to use a sub-account to perform migration in the console, you need to log in to the [CAM console](https://console.cloud.tencent.com/cam/policy) with the root account and associate the `QcloudCSMFullAccess` policy with the sub-account.
-- You can create a key and obtain the `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
-- [Click here](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) to download the compressed migration tool package.
-- Stop applications on the source server to prevent existing applications from being affected by the migration.
-- We recommend you back up your data in the following ways before migrating:
+- Register on Tencent Cloud International.
+- If you want to migrate using a sub-account, ask the root account owner to assign the sub-account with the `QcloudCSMFullAccess` and `QcloudCVMFullAccess` permissions in [CAM console](https://console.cloud.tencent.com/cam/policy).
+- Create a key and obtain the `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
+- [Download](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) the compressed migration tool package.
+- Stop all applications on the source server to prevent them from being affected by the migration.
+- Back up your data in the following ways before migrating:
  - Source server: You can use the source server snapshot feature or other methods to back up data.
  - Destination CVM: You can create a snapshot as instructed in [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) or use other methods to back up data.
 
 ## Migration Directions
 
 
-## Checking Before the Migration
+### Checking before the migration
 
 Before migration, you need to check the following configuration based on the actual conditions:
  - If the migration destination is a CVM instance, you need to check the source server and destination CVM.
@@ -41,19 +39,26 @@ Before migration, you need to check the following configuration based on the act
 		token. You need to make sure that the current system time is correct.</li>
 	  </ol>
 	</td>
+ </tr>
+  <tr>
+	<th>Windows source server</th>
+	<td>
+	  <ol style="margin: 0;">
+		<li>Check and install Virtio. For more information, see  
+		<a href="https://intl.cloud.tencent.com/document/product/213/17815">Checking or installing the Virtio driver</a>.</li>
+		<li>(Optional) Check and install Cloudbase-Init. For details, see <a href="https://intl.cloud.tencent.com/document/product/213/32364">Installing Cloudbase-Init on Windows</a>. You can install it on the source server before the migration, or install it on the destination instance after the migration.<br>If you install it before the migration, network configuration and activation are performed automatically after the migration.<br>If you do not install it before the migration, you need to <a href="https://intl.cloud.tencent.com/document/product/213/32496">Log into Windows Instance via VNC</a>, and modify the network configuration manually.</li>
+	  </ol>
+	</td>
   </tr>
   <tr>
 	<th style="width: 15%;">Destination CVM (optional)</th>
 	<td>
 	  <ol style="margin: 0;">
 		<li>
-		Storage space: The cloud disks (including the system disk and data disk) of the target CVM must offer sufficient storage space for saving data from the source server.</li>
+		Storage space: The cloud disks (including the system disk and data disk) of the destination CVM must offer sufficient storage space for saving data from the source server.</li>
 		<li>Security group: Port 443 and port 80 cannot be restricted in the security group.</li>
 		<li>
 		Bandwidth setting: It is recommended that you maximize bandwidths at the 2 ends to speed up the migration. During the process, the traffic consumed is approximately the amount of data migrated. Adjust the billing mode before the migration if necessary.</li>
-		<li>
-		OS consistency: If the OSs of the source server and destination CVM are inconsistent, the created image may be inconsistent with the actual OS. We recommend that the OS of the destination CVM be the same as that of the source server. For example, to migrate a CentOS 7 source server, select a CentOS 7 CVM as the destination.
-		</li>
 	  </ol>
 	</td>
   </tr>
@@ -142,10 +147,10 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 <td>Migration task description.</td>
 </tr>
 <tr>
-<td>Target type</td>
+<td>Destination Type</td>
 <td>Yes</td>
 <td>
-  Set the target type for the source server to be migrated to Tencent Cloud.
+  Set the destination type for the source server to be migrated to Tencent Cloud.
     <ul>
     <li><b>CVM Image</b>: A destination CVM image will be generated for the migration source after the migration task ends.
       <br>Image name: Name of the destination CVM image that will be generated for the migration source. If an image with the same name already exists in the destination region, the migration task will automatically add the task ID to the name.
@@ -190,12 +195,12 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 <tr>
 <td>Transfer Restriction (KB/s)</td>
 <td>No</td>  
-<td>The bandwidth for data transfer during the migration ranges from 0 to 25600 KB/s. The transfer rate is unlimited by default.</td>
+<td>The bandwidth for data transfer during the migration ranges from 0 to 25600 KB/s. The transfer rate is unlimited by default. This item is not available for migration on Windows.</td>
 </tr>
 <tr>
 <td>Checksum Verification</td>
 <td>No</td>  
-<td>After it is enabled, data consistency check will be enhanced, but the transfer speed may be reduced.</td>
+<td>When it is enabled, data consistency check is enhanced, but the transfer speed may be reduced. This item is not available for migration on Windows.</td>
 </tr>
 </tbody></table>
 2. Start the migration task
@@ -214,6 +219,7 @@ You can click <b>Start/Retry</b> on the right of the task to start it, click <b>
 
 ### Waiting for migration task to end
 
+
 After the migration task status becomes **Successful**, the migration is completed successfully as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
 
@@ -230,8 +236,8 @@ After the migration task status becomes **Successful**, the migration is complet
 - **Failed migration**:
 - Check the error information in log files (under the migration tool directory by default), operation guides, or FAQs about [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After troubleshooting, click **Start/Retry** under the operation column to restart the migration task.
 - **Successful migration**:
- - If the migration destination is a CVM, check whether the destination CVM starts up normally, whether data on the CVM is consistent with that on the source server, and whether the network and other system services are normal.
- - If the migration destination is a CVM image, you can click the **CVM image ID** on the row of the migration task to enter the [CVM image page](https://console.cloud.tencent.com/cvm/image/index) and view the image information. You can use it to create CVM instances.
+ - Migrating to a CVM: Check whether the destination CVM starts up normally, whether data on the CVM is consistent with that on the source server, and whether the network and other system services are normal.
+ - Migrating to a CVM image: Click the **CVM image ID** on the row of the migration task to enter the [CVM image page](https://console.cloud.tencent.com/cvm/image/index) and view the image information. You can use this image to create CVM instances.
 
 If you have any questions or the migration has an exception, see FAQs about [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) or [Contact Us](https://intl.cloud.tencent.com/document/product/213/34837).
 

@@ -1,11 +1,11 @@
 ## Overview
 Besides public images, you can also create custom images, with which you can create CVM instances with the same configurations.
 
+
 <dx-alert infotype="explain" title="">
 Images use the CBS snapshot service for data storage:
-
  - Upon the creation of a custom image, a snapshot is automatically created and associated with the image. As a result, retaining custom images incurs costs. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/362/32415).
-    </dx-alert>
+</dx-alert>
 
 
 
@@ -34,9 +34,9 @@ For CVMs created based on public images after July 2018, you can create images w
   - If the instance doesn’t need to be shut down, please proceed to [Create a custom image](#createOS).
 2. On the instance management page, proceed according to the actually used view mode:
   - **List view**: In the row of the target instance, select **More** > **Instance status** > **Shut down** on the right as shown below:
-![Shut down](https://main.qcloudimg.com/raw/cc0bb1c82b96cca94cb7c1c011b664a7.png)
+![](https://main.qcloudimg.com/raw/cc0bb1c82b96cca94cb7c1c011b664a7.png)
   - **Tab view**: Select **Shut down** on the instance details page.
-![Shut down](https://qcloudimg.tencent-cloud.cn/raw/bd0d10a80c75a653adee564105a9820b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd0d10a80c75a653adee564105a9820b.png)
 
 
 #### Create a custom image [](id:createOS)
@@ -47,7 +47,9 @@ For CVMs created based on public images after July 2018, you can create images w
    ![](https://qcloudimg.tencent-cloud.cn/raw/27d7f6f19bc115c501bb1157ebe37cab.png)
 2. In the **Create a custom image** popup window, complete the configuration.
   - **Image name** and **Image description**: Custom name and description.
-  - **Create a system disk image only**: If your instance only has a system disk, this option will not appear. If your instance has a data disk, select it as needed.
+  - **Tag**: You can add tags for the instance as needed, which are used to categorize, search for, and aggregate cloud resources. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/651/13334).
+  - **Create only system disk image**: To use the feature, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to apply for it. 
+    If your instance only has a system disk, this option will not appear. If your instance has a data disk, select it as needed.
      - If checked, only a system disk image of the instance will be created.
      - If unchecked, a data disk snapshot will be created at the same time when the instance has a data disk mounted.
 3. Click **Create image**.

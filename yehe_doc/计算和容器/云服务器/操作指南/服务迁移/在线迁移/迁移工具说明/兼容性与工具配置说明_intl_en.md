@@ -1,16 +1,17 @@
 ## Supported OS
 
-Operating systems supported by the online migration tool include but are not limited to the following (32-bit or 64-bit):
+Operating systems supported by the online migration tool include but not limited to the following:
 
 <table>
 	<tr><th>Linux</th><th>Windows</th></tr>
-	<tr><td>CentOS 5/6/7/8</td><td rowspan=7>Unsupported</td></tr>
+	<tr><td>CentOS 5/6/7/8</td><td rowspan=8>Windows Server 2008<br>Windows Server 2012<br>Windows Server 2016<br>Windows Server 2019<br>Windows Server 2022</td></tr>
 	<tr><td>Ubuntu 10/12/14/16/18/20 </td></tr>
 	<tr><td>Debian 7/8/9/10</td></tr>
 	<tr><td>SUSE 11/12/15</td></tr>
 	<tr><td>openSUSE 42</td></tr>
 	<tr><td>Amazon Linux AMI</td></tr>
-	<tr><td>Red Hat 7/8</td></tr>
+	<tr><td>Red Hat 5/6/7/8</td></tr>
+	<tr><td>Oracle Linux 5/6/7/8</td></tr>
 </table>
 
 ## Supported Migration Modes
@@ -39,6 +40,7 @@ After `go2tencentcloud.zip` is decompressed, it contains the following files:
 <table>
 	<tr><th width="30%">File Name</th><th>Description</th></tr>
 	<tr><td>go2tencentcloud-linux.zip</td><td>The migration zip for Linux system.</td></tr>
+	<tr><td>go2tencentcloud-windows.zip</td><td>The migration zip for Windows system.</td></tr>
 	<tr><td>readme.txt</td><td>Directory overview file.</td></tr>
 	<tr><td>release_notes.txt</td><td>Migration tool change log.</td></tr>
 </table>
@@ -46,11 +48,20 @@ After `go2tencentcloud.zip` is decompressed, it contains the following files:
 After `go2tencentcloud-linux.zip` is decompressed, it contains the following files:
 <table>
 	<tr><th width="30%">File Name</th><th>Description</th></tr>
-	<tr><td>go2tencentcloud_x64</td><td>Executable program of the migration tool for the 64-bit Linux operating system</td></tr>
-	<tr><td>go2tencentcloud_x32</td><td>Executable program of the migration tool for the 32-bit Linux operating system</td></tr>
-	<tr><td>user.json</td><td>User information in a migration.</td></tr>
+	<tr><td>go2tencentcloud_x64</td><td>Executable program of the migration tool for the 64-bit Linux operating system.</td></tr>
+	<tr><td>go2tencentcloud_x32</td><td>Executable program of the migration tool for the 32-bit Linux operating system.</td></tr>
+	<tr><td>user.json</td><td>User information in the migration.</td></tr>
 	<tr><td>client.json</td><td>Configuration file of the migration tool.</td></tr>
 	<tr><td>rsync_excludes_linux.txt</td><td>rsync configuration file, which excludes files and directories that do not need to be migrated in the Linux system.</td></tr>
+</table>
+
+After `go2tencentcloud-windows.zip` is decompressed, it contains the following files:
+<table>
+	<tr><th width="30%">File Name</th><th>Description</th></tr>
+	<tr><td>go2tencentcloud_x64.exe</td><td>Executable program of the migration tool for the 64-bit Windows operating system.</td></tr>
+	<tr><td>user.json</td><td>User information in the migration.</td></tr>
+	<tr><td>client.json</td><td>Configuration file of the migration tool.</td></tr>
+	<tr><td>client.exe</td><td>Executable program of the migration tool for the Windows operating system.</td></tr>
 </table>
 
 <dx-alert infotype="notice" title="">

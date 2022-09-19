@@ -1,11 +1,11 @@
 ## 操作场景
 除了使用腾讯云提供的公共镜像外，您还可以创建自定义镜像。创建自定义镜像后，您可以在腾讯云控制台快速创建与该镜像相同配置的腾讯云云服务器实例。
 
+
 <dx-alert infotype="explain" title="">
 由于镜像底层使用了云硬盘快照服务：
-
  - 在创建自定义镜像时会默认创建关联该镜像的快照，且保留自定义镜像会产生一定的快照费用，详情请参见 [快照计费概述](https://intl.cloud.tencent.com/document/product/362/32415)。
-    </dx-alert>
+</dx-alert>
 
 
 
@@ -34,9 +34,9 @@
   - 不需要，请执行 [制作自定义镜像](#createOS) 步骤。
 2. 在实例的管理页面，根据实际使用的视图模式进行操作：
   - **列表视图**：选择实例所在行右侧的**更多** > **实例状态** > **关机**。如下图所示：
-![关机](https://main.qcloudimg.com/raw/cc0bb1c82b96cca94cb7c1c011b664a7.png)
+![](https://main.qcloudimg.com/raw/cc0bb1c82b96cca94cb7c1c011b664a7.png)
   - **页签视图**：选择实例详情页面中的**关机**。如下图所示：
-![关机](https://qcloudimg.tencent-cloud.cn/raw/bd0d10a80c75a653adee564105a9820b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd0d10a80c75a653adee564105a9820b.png)
 
 
 #### 制作自定义镜像[](id:createOS)
@@ -47,7 +47,9 @@
    ![](https://qcloudimg.tencent-cloud.cn/raw/27d7f6f19bc115c501bb1157ebe37cab.png)
 2. 在弹出的“制作自定义镜像”窗口中，参考以下信息进行配置：
   - **镜像名称**及**镜像描述**：自定义名称及描述。
-  - **仅创建系统盘镜像**：若您的实例仅具备系统盘，则不会出现该选项。若您的实例具备数据盘，则请按需勾选。
+  - **标签**：可按需增加标签，用于资源的分类、搜索和聚合。更多信息请参见 [标签](https://intl.cloud.tencent.com/document/product/651/13334)。
+  - **仅创建系统盘镜像**：如需使用此功能，请[提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请开通。 
+    若您的实例仅具备系统盘，则不会出现该选项。若您的实例具备数据盘，则请按需勾选。
      - 勾选，则仅创建实例系统盘镜像。
      - 不勾选，若实例具备数据盘，则会同时创建数据盘快照。
 3. 单击**制作镜像**即可。
