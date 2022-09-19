@@ -96,9 +96,9 @@ Bucket API 정책의 resource는 다음과 같을 수 있습니다.
 - 모든 리전의 버킷에 대한 작업
 정책의 resource를 `*`로 설정하며, **해당 정책에서 한정하는 리소스 범위의 권한 범위가 너무 커 데이터 보안 리스크가 발생할 수 있으므로 설정에 유의하십시오**.
 - 특정 리전 버킷의 작업만 허용
-APPID가 1250000000이고, 리전이 베이징(ap-beijing)인 버킷 examplebucket-1250000000의 작업만 허용하는 경우, 정책의 resource는 `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*`가 됩니다.
+APPID가 1250000000이고, 리전이 베이징(ap-beijing)인 버킷 examplebucket-1250000000의 작업만 허용하는 경우, 정책의 resource는 `qcs::cos:ap-beijing:uid/1250000000:*`가 됩니다.
 - 특정 리전의 특정 이름 버킷 작업만 허용
-APPID가 1250000000이고, 리전이 ap-beijing이며, 이름이 examplebucket-1250000000인 버킷의 작업만 허용하는 경우, 정책의 resource는 `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/`가 됩니다.
+APPID가 1250000000이고, 리전이 ap-beijing이며, 이름이 examplebucket-1250000000인 버킷의 작업만 허용하는 경우, 정책의 resource는 `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*`가 됩니다.
 
 Bucket API 정책의 action은 작업에 따라 값이 달라집니다. 다음은 Bucket API 권한 부여 정책에 관한 예시로, 기타 Bucket API 권한 부여 정책에 참고할 수 있습니다.
 
