@@ -110,22 +110,38 @@
 >- 如需要单独关闭域名包自动续费，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 处理。
 >- 安全日志服务包日志容量，建议按照业务 QPS 用量进行购买，建议每月每800QPS 购买1T 的日志容量。
 
-### BOT 行为管理[](id:bot)
+### BOT 流量管理[](id:bot)
 <table>
 <thead>
 <tr>
-<th width="70%"> BOT行为管理详情</th>
+<th width="70%">BOT 流量管理详情</th>
 <th width="30%">费用 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><li>购买后，用户可以通过 <a href="https://intl.cloud.tencent.com/document/product/627/15340">BOT 行为管理 </a> 对友好及恶意机器人程序进行甄别分类，并采取针对性的流量管理策略。</li><li>例如，放通搜索引擎类机器人流量，对恶意爬取商品信息流量采取不响应、减缓响应或差异化响应策略，还能够应对恶意机器人程序爬取带来的资源消耗、信息泄露及无效营销问题，同时也保障友好机器人程序（如搜索引擎，广告程序）的正常运行。</li></td>
+<td><li>购买后，用户可以通过 <a href="https://intl.cloud.tencent.com/document/product/627/15340">BOT 流量管理 </a> 对友好及恶意机器人程序进行甄别分类，并采取针对性的流量管理策略。</li><li>例如，放通搜索引擎类机器人流量，对恶意爬取商品信息流量采取不响应、减缓响应或差异化响应策略，还能够应对恶意机器人程序爬取带来的资源消耗、信息泄露及无效营销问题，同时也保障友好机器人程序（如搜索引擎，广告程序）的正常运行。</li></td>
 <td> 1600美元/实例/月</td>
 </tr>
 </tbody></table>
 
 >?
->- 开通 BOT 行为管理后，弹性扩展包单价将有对应上涨。
->- BOT行为管理默认仅支持 2500 QPS。如有更大的 QPS 检出需求，请  [提交工单](https://console.cloud.tencent.com/workorder/category)  申请。
+>- 开通 BOT 流量管理后，弹性扩展包单价将有对应上涨。
+>- BOT 流量管理默认仅支持 2500 QPS。如有更大的 QPS 检出需求，请购买 [BOT 业务扩展包](#botq) 。
+
+### BOT 业务扩展包（QPS 扩展包）[](id:botq)
+<table>
+<thead>
+<tr>
+<th width="70%"> BOT 业务扩展包（QPS 扩展包）详情</th>
+<th width="30%">费用 </th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><li>每个 QPS 扩展包支持扩展增加1000QPS。</li></td>
+<td align="left">500美元/月</td>
+</tr>
+</tbody></table>
+
+
 

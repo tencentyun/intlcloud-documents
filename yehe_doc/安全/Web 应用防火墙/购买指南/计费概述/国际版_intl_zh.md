@@ -87,6 +87,7 @@
 
 
 
+
 ## 套餐增值能力价格说明
 ### 安全日志服务包[](id:rz)
 <table>
@@ -111,11 +112,11 @@
 >- 如需要单独关闭域名包自动续费，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 处理。
 >- 安全日志服务包日志容量，建议按照业务 QPS 用量进行购买，建议每月每800QPS 购买1T 的日志容量。
 
-### BOT 行为管理[](id:bot)
+### BOT 流量管理[](id:bot)
 <table>
 <thead>
 <tr>
-<th width="70%"> BOT行为管理详情</th>
+<th width="70%"> BOT流量管理详情</th>
 <th width="30%">费用 </th>
 </tr>
 </thead>
@@ -128,8 +129,22 @@
 
 
 >?
->- 开通 BOT 行为管理后，弹性扩展包单价将有对应上涨。
->- BOT行为管理默认仅支持 2500 QPS。如有更大的 QPS 检出需求，请  [提交工单](https://console.cloud.tencent.com/workorder/category)  申请。
+>- 开通 BOT 流量管理后，弹性扩展包单价将有对应上涨。
+>- BOT 流量管理默认仅支持 2500 QPS。如有更大的 QPS 检出需求，请购买 [BOT 业务扩展包](#botq) 。
+
+### BOT 业务扩展包（QPS 扩展包）[](id:botq)
+<table>
+<thead>
+<tr>
+<th width="70%"> BOT 业务扩展包（QPS 扩展包）详情</th>
+<th width="30%">费用 </th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><li>每个 QPS 扩展包支持扩展增加1000QPS。</li></td>
+<td align="left">750美元/月</td>
+</tr>
+</tbody></table>
 
 
 
