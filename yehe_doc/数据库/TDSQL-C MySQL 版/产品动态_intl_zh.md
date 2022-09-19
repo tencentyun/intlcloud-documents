@@ -1,3 +1,44 @@
+## 2022年08月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tr>
+<td>支持自定义密码强度</td>
+<td>TDSQL-C MySQL 版支持自定义密码强度，保障数据库的安全性，满足企业等保安全规范要求。</td>
+<td>2022-08-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/49981" target="_blank">自定义密码强度简介</a></td></tr>
+<tr>
+<td>监控告警功能优化</td>
+<td>TDSQL-C MySQL 版新增监控指标，优化监控项中文名、监控项英文名、单位、采集方式、计算方法、数据聚合方式，优化监控入口，优化监控页面，接入事件总线告警，增加系统的稳定性，提升运维效率，减少运维成本，帮助您全面掌控数据库的资源使用及运行情况。</td>
+<td>2022-08-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/44598" target="_blank">监控与告警简介</a></td></tr>
+</table>
+
+## 2022年07月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tr>
+<td>支持数据库代理</td>
+<td>TDSQL-C MySQL 版支持数据库代理，数据库代理是位于云数据库服务和应用服务之间的网络代理服务，用于代理应用服务访问数据库时的所有请求，通过代理集群中转访问数据库的主从节点，进行读写分离，降低主库的负载。</td>
+<td>2022-07-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/50004" target="_blank">数据库代理</a></td></tr>
+</table>
+
+## 2022年05月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tr>
+<td>支持查询和下载慢日志</td>
+<td>TDSQL-C MySQL 版支持查询和下载慢日志明细，支持下载 csv 和原生格式（开源分析工具可识别）两种格式的文件，可通过排查和优化低效 SQL 语句来进行效率提升和性能优化。</td>
+<td>2022-05-31</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/48375" target="_blank">查询和下载慢日志明细</a></td></tr>
+<tr>
+<td>备份管理功能优化 </td>
+<td>TDSQL-C MySQL 版优化备份管理功能，支持逻辑备份与快照备份、下载与删除手动备份、设置和修改备份保留时间等，提升数据备份与回档功能完整性。</td>
+<td>2022-05-30</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/48391" target="_blank">备份与回档概述</a></td></tr>
+</table>
+
+
 ## 2022年03月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
@@ -44,7 +85,7 @@
 <td>支持数据订阅 </td>
 <td>数据传输服务（DTS）支持 TDSQL-C MySQL版 等多种关系型数据库及 NoSQL 数据库迁移，可通过数据订阅来满足商业数据挖掘、业务异步解耦等场景需求。</td>
 <td>2021-10</td>
-<td><a href="https://cloud.tencent.com/document/product/571/52412" target="_blank">数据订阅</a></td></tr>
+<td>-></td></tr>
 <td>支持自动回收碎片空间 </td>
 <td>TDSQL-C MySQL版 支持自动回收碎片空间，数据删除后自动回收碎片空间，降低存储成本。</td>
 <td>2021-10</td>
