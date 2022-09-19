@@ -1,7 +1,7 @@
-AI evaluation is a module provided in bot behavior management. This feature applies AI models, built based on AI technology and Tencent's experiences in controlling risks and fighting cyber crimes, to quickly identify and deal with malicious access from sophisticated bots, advanced persistent threat bots and distributed bots.
+AI evaluation is a module provided in bot traffic management. This feature applies AI models, built based on AI technology and Tencent's experiences in controlling risks and fighting cyber crimes, to quickly identify and deal with malicious access from sophisticated bots, advanced persistent threat bots and distributed bots.
 
 ## Prerequisites
-You have purchased a WAF plan and subscribed to [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799). Meanwhile, you have added a domain name to WAF.
+You have purchased a WAF plan and subscribed to [bot traffic management](https://intl.cloud.tencent.com/document/product/627/47799). Meanwhile, you have added a domain name to WAF.
 
 ## Protection Configuration
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration Center** > **Bot and Application Security** on the left sidebar.
