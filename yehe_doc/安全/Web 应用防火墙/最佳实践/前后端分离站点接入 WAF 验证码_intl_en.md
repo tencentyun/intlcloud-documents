@@ -1,6 +1,6 @@
 You can connect WAF CAPTCHA to frontend-backend separated sites or app sites to dynamically send CAPTCHAs from such sites.
 
-You can connect a frontend-backend separated site to the WAF CAPTCHA process to dynamically verify human operations for the site in various scenarios, including custom rule hit, CC attack protection, and bot behavior management. Both iOS and Android apps are connected through web frontend HTML5.
+You can connect a frontend-backend separated site to the WAF CAPTCHA process to dynamically verify human operations for the site in various scenarios, including custom rule hit, CC attack protection, and bot traffic management. Both iOS and Android apps are connected through web frontend HTML5.
 
 
 ## Prerequisites
