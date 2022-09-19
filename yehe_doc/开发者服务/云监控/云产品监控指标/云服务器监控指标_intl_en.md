@@ -33,8 +33,8 @@ Namespace=QCE/CVM
 | LanIntraffic | Private inbound bandwidth | Average inbound traffic of the private ENI per second | Mbps | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
 | LanOutpkg | Private outbound packets | Average number of outbound packets of the private ENI per second | Count/s | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
 | LanInpkg | Private inbound packets | Average number of inbound packets of the private ENI per second | Count/s | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
-| WanOuttraffic | Public outbound bandwidth | Average outbound traffic rate over the public network per second. The value at the minimum granularity is calculated by 10-second total traffic/10 seconds. This value is the sum of public network outbound bandwidth of EIP, CLB, and CVM | Mbps | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
-| WanIntraffic | Public inbound bandwidth | Average inbound traffic rate over the public network per second. The value at the minimum granularity is 10-second total traffic divided by 10 seconds. This value is the sum of public network inbound bandwidth of EIP, CLB, and CVM | Mbps | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
+| WanOuttraffic | Public outbound bandwidth | Average outbound traffic rate over the public network per second. The value at the minimum granularity is calculated by 10-second total traffic/10 seconds. This value is the sum of public network outbound/inbound bandwidth of EIP, CLB, and CVM | Mbps | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
+| WanIntraffic | Public inbound bandwidth | Average inbound traffic rate over the public network per second. The value at the minimum granularity is 10-second total traffic divided by 10 seconds. This value is the sum of public network outbound/inbound bandwidth of EIP, CLB, and CVM | Mbps | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
 | WanOutpkg | Public outbound packets | Average number of outbound packets of the public ENI per second | Count/s | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
 | WanInpkg | Public inbound packets | Average number of inbound packets of the public ENI per second | Count/s | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
 | AccOuttraffic | Public outbound traffic | Average outbound traffic of the public ENI per second | MB | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
@@ -50,26 +50,29 @@ Namespace=QCE/CVM
 ### Disk monitoring
 | Parameter | Metric | Description | Unit | Dimension | Statistical Period |
 | ---------- | ---------- | ------------------------------------------------------------ | ---- | ---------- | ---------------------------------- |
-|CvmDiskUsage    | Disk utilization | Percentage of the used capacity of the largest disk partition to the total capacity | % |InstanceId|   60s, 300s|
+|CvmDiskUsage    | Disk utilization | Percentage of the used capacity of all disks to the total capacity | % |InstanceId|   60s, 300s|
+
 
 > ?
-> 1. Basic metric data (such as CPU and memory) and alarm time (local time of your CVM instance) can be obtained only after the [CVM monitoring component Agent](https://intl.cloud.tencent.com/document/product/248/6211) is installed. If the local time of you CVM instance is not UTC/GMT+08:00, the time of the monitoring data of the instance will not be the local time (UTC/GMT+08:00) of the instance.
+> 1. Basic metric data (such as CPU and memory) and alarm time (local time of your CVM instance) can be obtained only after the CVM monitoring component Agent as described in [Installing CVM Agents](https://intl.cloud.tencent.com/document/product/248/6211) is installed. If the local time of you CVM instance is not UTC/GMT+08:00, the time of the monitoring data of the instance will not be the local time (UTC/GMT+08:00) of the instance.
 > 2. Ways of installing Agent:
 >  - Select Cloud Monitor when purchasing a CVM instance to automatically install Agent.
->  - Manually [install Agent](https://intl.cloud.tencent.com/document/product/248/6211).
+>  - Manually install the Agent as instructed in [Installing CVM Agents](https://intl.cloud.tencent.com/document/product/248/6211).
 >3. The statistical granularity (`period`) may vary by metric. You can call the [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API to obtain the `period` supported by each metric.
 
 
-## Overview of Parameters in Each Dimension
+## Dimensions and Parameters
 
-| Parameter | Dimension | Dimension Description | Format |
+| Parameter | Dimension | Description | Format |
 | ------------------------------ | ---------- | -------------------------- | ------------------------------------ |
 | Instances.N.Dimensions.0.Name | InstanceId | Dimension name of the CVM instance ID | Enter a string-type dimension name, such as `InstanceId` |
-| Instances.N.Dimensions.0.Value | InstanceId | Specific CVM instance ID      | Enter a specific instance ID, such as ins-mm8bs222  |
+| Instances.N.Dimensions.0.Value | InstanceId | Specific CVM instance ID      | Enter a specific instance ID, such as `ins-mm8bs222`  |
 
-## Input Parameter Description
+
+## Input Parameters
 
 **To query the monitoring data of a CVM instance, use the following input parameters:**
 &Namespace=QCE/CVM
 &Instances.N.Dimensions.0.Name=InstanceId
-&Instances.N.Dimensions.0.Value=specific CVM instance ID 
+&Instances.N.Dimensions.0.Value=Specific CVM instance ID 
+
