@@ -1,6 +1,6 @@
 This document describes how to add APIs or API rule files using the API security feature to protect your APIs.
 ## Overview
-Using API security, you can add APIs or API rule files, so that WAF will run security checks on the API requests and allow the APIs that meet specified requirements. This module provides protection for APIs by cooperating with the [AI engine](https://console.cloud.tencent.com/guanjia/tea-baseconfig) and [bot behavior management](https://console.cloud.tencent.com/guanjia/tea-botconfig) modules.
+Using API security, you can add APIs or API rule files, so that WAF will run security checks on the API requests and allow the APIs that meet specified requirements. This module provides protection for APIs by cooperating with the [AI engine](https://console.cloud.tencent.com/guanjia/tea-baseconfig) and [bot traffic management](https://console.cloud.tencent.com/guanjia/tea-botconfig) modules.
 >! AI security is a beta feature, which is currently free of charge and will begin charging at the list price after it is released officially.
 
 ## Directions
