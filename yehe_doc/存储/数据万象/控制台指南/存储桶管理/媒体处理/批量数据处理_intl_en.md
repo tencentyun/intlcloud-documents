@@ -18,7 +18,7 @@ CI supports batch processing of files stored in COS. You can specify a workflow 
   - **Scope**: Determine the data scope for batch processing, which is the current bucket file list by default.
   - **Time**: Select the default audio/video/image file filter rule or a custom workflow rule. You can also select all files to process all objects in the bucket.
   - **Prefix**: Scan files with the specified prefix to perform operations specified in the processing settings.
-  - **Processing Type**: Set operations for data within the specified range. You can select a workflow or independent node. For configurations for independent nodes, see [Job](https://cloud.tencent.com/document/product/460/46489).
+  - **Processing Type**: Set operations for data within the specified range. You can select a workflow or independent node. For configurations for independent nodes, see [Job](https://www.tencentcloud.com/document/product/1045/43605).
   - **Select Workflow**: Select the workflow to be executed.
 
 

@@ -125,7 +125,7 @@
 <td>智能工具箱上线</td>
 <td>智能工具箱是对象存储与数据万象联合打造的简单、易用的数据处理工具，包含图片压缩、视频转码、文档预览、AI 内容识别等。</td>
 <td>2022-03-21</td>
-<td><a href="https://cloud.tencent.com/document/product/436/71665">智能工具箱使用指南</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/49714">智能工具箱使用指南</a></td>
 </tr>
 <tr>
 <td>自定义函数常用功能模板上线</td>

@@ -1,10 +1,10 @@
 ## Overview
 
-For files already in a bucket, you can create a job for media processing operations. Currently, the following jobs are supported: **audio/video transcoding**, **top speed codec transcoding**, **broadcast media format transcoding**, **highlights generation (also known as video montage)**, **voice separation (also known as voice/sound separation)**, **text to speech**, **audio/video splicing**, **video frame capturing**, **video-to-animated image conversion**, **intelligent thumbnail**, **video enhancement**, **super resolution**, **audio/video segmentation**, **SDR to HDR**, **image processing**, and **digital watermark extraction**, which can be created by template. You can use CI's preset templates or customize templates. For more information, see [Template](https://cloud.tencent.com/document/product/460/46490).
+For files already in a bucket, you can create a job for media processing operations. Currently, the following jobs are supported: **audio/video transcoding**, **top speed codec transcoding**, **broadcast media format transcoding**, **highlights generation (also known as video montage)**, **voice separation (also known as voice/sound separation)**, **text to speech**, **audio/video splicing**, **video frame capturing**, **video-to-animated image conversion**, **intelligent thumbnail**, **video enhancement**, **super resolution**, **audio/video segmentation**, **SDR to HDR**, **image processing**, and **digital watermark extraction**, which can be created by template. You can use CI's preset templates or customize templates. For more information, see [Template](https://www.tencentcloud.com/document/product/1045/43606).
 
 >?
 > - Currently, jobs can process 3GP, ASF, AVI, DV, FLV, F4V, M3U8, M4V, MKV, MOV, MP4, MPG, MPEG, MTS, OGG, RM, RMVB, SWF, VOB, WMV, WEBM, MP3, AAC, FLAC, AMR, AWB, M4A, WMA, and WAV files. When initiating a media processing request, you must enter the complete file name and extension; otherwise, the format cannot be recognized and processed.
-> - Currently, the job feature can only manipulate **existing files**. To manipulate files during **upload**, use the workflow feature as described in [Workflow](https://cloud.tencent.com/document/product/460/46488).
+> - Currently, the job feature can only manipulate **existing files**. To manipulate files during **upload**, use the workflow feature as described in [Workflow](https://www.tencentcloud.com/document/product/1045/43604).
 > - After a job is created, feature fees will be charged. For billing details, see [Media Processing Fees](https://intl.cloud.tencent.com/document/product/1045/49489).
 > - To use the media processing service, make sure that resources are available. Do not enable input image protection (as described in [Configuring Buckets](https://intl.cloud.tencent.com/document/product/1045/37767)), hotlink protection (as described in [Managing Domain Names](https://intl.cloud.tencent.com/document/product/1045/33444)), and other access control features.
 >
@@ -219,7 +219,7 @@ SDR to HDR is a video dynamic range conversion feature provided by CI. You can u
 > 
    - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
    - **HDR Standard**: Select HLG or HDR10.
-   - **Transcoding Template**: Select an H.265 transcoding template. If there are no templates, create an audio/video transcoding template and select H.265 as the encoding format. For more information on how to create a template and configure parameters, see [Template](https://cloud.tencent.com/document/product/460/46490#.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81).
+   - **Transcoding Template**: Select an H.265 transcoding template. If there are no templates, create an audio/video transcoding template and select H.265 as the encoding format. For more information on how to create a template and configure parameters, see [Template](https://www.tencentcloud.com/document/product/1045/43606#.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81).
    - **Watermark**: Add an image or text watermark as needed.
    - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
    - **Destination Path**: Storage path of the output file.
@@ -285,9 +285,9 @@ Video frame capturing is a screenshot feature provided by CI to capture the fram
 5. Select **Transcoding** > **Video Frame Capturing** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/9b7322d5facc1b48cef33f9a1a77c729.png)
    - **Source File Path**: Enter the path of the source file, which must begin with but cannot end with `/`. Different folders are separated by `/`.
-   - **Template Type**: You can select preset or custom template. For more information, see [Template](https://cloud.tencent.com/document/product/460/46490).
+   - **Template Type**: You can select preset or custom template. For more information, see [Template](https://www.tencentcloud.com/document/product/1045/43606).
    - **Template**: Select the specified template.
-   - **Output**: If the video frame capturing job is enabled in the console, screenshots in JPG format will be output by default. If captured frame compression is used, screenshots in HEIF or TPG format can be output. If you use the video frame capturing API, you can choose to output JPG or PNG screenshots. For more information, see [GenerateSnapshot](https://cloud.tencent.com/document/product/460/38934).
+   - **Output**: If the video frame capturing job is enabled in the console, screenshots in JPG format will be output by default. If captured frame compression is used, screenshots in HEIF or TPG format can be output. If you use the video frame capturing API, you can choose to output JPG or PNG screenshots. For more information, see [GenerateSnapshot](https://www.tencentcloud.com/document/product/1045/48855).
    - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
    - **Destination Path**: Storage path of the video screenshots.
    - **Destination Filename**: Name of the output file. Note that as more than one files are output by **smart video frame capturing**, the output filename must contain the ${Number} parameter as the sequence number of the screenshot. For example, if the destination file path is set to `test-${Number}.jpg` and the job captures two screenshots, the actual names of the output files will be `test-0.jpg` and `test-1.jpg`.
@@ -309,7 +309,7 @@ You can use the video-to-animated image conversion feature to convert a video to
 5. Select **Transcoding** > **Video-to-Animated Image Conversion** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/12f93dfb3a9a6da63dbbf25ef88fba53.png)
     - **Source File Path**: Enter the path of the source file, which must begin with but cannot end with `/`. Different folders are separated by `/`.
-    - **Template Type**: You can select preset or custom template. For more information, see [Template](https://cloud.tencent.com/document/product/460/46490).
+    - **Template Type**: You can select preset or custom template. For more information, see [Template](https://www.tencentcloud.com/document/product/1045/43606).
     - **Template**: Select the specified template.
     - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
     - **Destination Path**: Storage path of the animated images.
@@ -323,7 +323,7 @@ The intelligent thumbnail feature intelligently analyzes the quality, brilliance
 >?
 >- The intelligent thumbnail feature is a paid service and billed by the video duration. For billing details, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1045/33431).
 >- Three optimal keyframes will be output through smart analysis of each video file.
->- CI also provides an API for creating jobs, which can be configured based on parameters. For more information, see [Submitting Audio/Video Transcoding Job](https://cloud.tencent.com/document/product/460/38936).
+>- CI also provides an API for creating jobs, which can be configured based on parameters. For more information, see [Submitting Audio/Video Transcoding Job](https://intl.cloud.tencent.com/document/product/1045/48941).
 >
 
 #### Directions

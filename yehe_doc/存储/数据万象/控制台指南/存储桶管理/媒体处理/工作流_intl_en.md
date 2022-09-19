@@ -7,7 +7,7 @@ You can use a data processing workflow to implement the following features: **au
 
 >!
 > - Currently, workflows can process 3GP, ASF, AVI, DV, FLV, F4V, M3U8, M4V, MKV, MOV, MP4, MPG, MPEG, MTS, OGG, RM, RMVB, SWF, VOB, WMV, WEBM, MP3, AAC, FLAC, AMR, M4A, WMA, and WAV files. When initiating a media processing request, you must enter the complete file name and extension; otherwise, the format cannot be recognized and processed.
-> - Currently, the workflow feature can manipulate existing files and files being uploaded. To perform media processing operations on existing data in the cloud, use the batch processing job feature as described in [Triggering Job (Workflow)](https://cloud.tencent.com/document/product/460/71295).
+> - Currently, the workflow feature can manipulate existing files and files being uploaded. To perform media processing operations on existing data in the cloud, use the batch processing job feature as described in [Triggering Job (Workflow)](https://www.tencentcloud.com/document/product/1045/47029).
 > 
 
 ## Directions
@@ -27,7 +27,7 @@ You can use a data processing workflow to implement the following features: **au
   - **Format**: Select the default audio/video/image file filter rule or a custom workflow rule. You can also select all files to process all objects in the bucket.
   - **Queue**: It is required. When you activate the service, the system will automatically create a user queue for you. When you submit a job, the job will be arranged in the queue first and executed in sequence according to the priority and order of submission.
   - **Callback**: You can use the queue callback, i.e., callback URL bound to the queue. To modify it, go to the corresponding queue list.
-  - **Configure Workflow**: Click **+** on the right to add any of the following nodes: **audio/video transcoding (including top speed codec transcoding and broadcast media format transcoding)**, **video frame capturing**, **video-to-animated image conversion**, **intelligent thumbnail**, **audio/video splicing**, **voice separation**, **highlights generation**, **HLS adaptive multi-bitrate**, **SDR to HDR**, **video enhancement**, **super resolution**, **audio/video segmentation**, **custom function**, and **image processing**. You need to configure at least one job node in a workflow and set the destination bucket, filename (see [Workflow Variable Description](#1)), path, and job template for each job node. For more information on templates and how to set them, see [Template](https://cloud.tencent.com/document/product/460/46490).
+  - **Configure Workflow**: Click **+** on the right to add any of the following nodes: **audio/video transcoding (including top speed codec transcoding and broadcast media format transcoding)**, **video frame capturing**, **video-to-animated image conversion**, **intelligent thumbnail**, **audio/video splicing**, **voice separation**, **highlights generation**, **HLS adaptive multi-bitrate**, **SDR to HDR**, **video enhancement**, **super resolution**, **audio/video segmentation**, **custom function**, and **image processing**. You need to configure at least one job node in a workflow and set the destination bucket, filename (see [Workflow Variable Description](#1)), path, and job template for each job node. For more information on templates and how to set them, see [Template](https://www.tencentcloud.com/document/product/1045/43606).
 <dx-tabs>
 ::: Audio/Video transcoding
 ![](https://qcloudimg.tencent-cloud.cn/raw/6a07affd8bcc7a14fd23123a4daf1216.png)

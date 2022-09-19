@@ -125,7 +125,7 @@
 <td>Launched Smart Toolbox</td>
 <td>Smart Toolbox is an easy-to-use data processing tool integrating both COS and CI features, including image compression, video transcoding, file preview, and AI-enabled content recognition.</td>
 <td>2022-03-21</td>
-<td><a href="https://cloud.tencent.com/document/product/436/71665">Smart Toolbox Guide</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/49714">Smart Toolbox Guide</a></td>
 </tr>
 <tr>
 <td>Launched common feature templates for custom functions</td>

@@ -2,7 +2,7 @@
 
 When using the media processing feature, you usually need to set a series of parameters, which can be combined through a template. This **simplifies your operations** and allows you to reuse the configured parameters with no need to enter them repeatedly.
 
-For media processing features such as audio/video transcoding, audio/video splicing, video frame capturing, and video-to-animated image conversion, you need to specify a template when creating a [job](https://cloud.tencent.com/document/product/460/46489) or [workflow](https://cloud.tencent.com/document/product/460/46488) in CI. The template page provides **preset templates**, and you can also **customize templates** based on your business needs.
+For media processing features such as audio/video transcoding, audio/video splicing, video frame capturing, and video-to-animated image conversion, you need to specify a template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605) or [workflow](https://www.tencentcloud.com/document/product/1045/43604) in CI. The template page provides **preset templates**, and you can also **customize templates** based on your business needs.
 
 ## Preset Templates
 
@@ -102,7 +102,7 @@ The configuration information of the audio/video transcoding template is as foll
    - **Audio Parameters**: Customize audio parameters as needed.
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can apply the audio/video transcoding template when creating a [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81) in CI.
+>? You can apply the audio/video transcoding template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81) in CI.
 >
 
 
@@ -132,7 +132,7 @@ The configuration information of the video frame capturing template is as follow
    - Output Image Size: The default output screenshot size is the same as that of the input video image. If you select custom image size, you must enter an integer between 128 and 4096 for the width and height respectively.
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list. You can click **Preview** to view the position and dimensions of the watermark in videos of three common resolutions and quickly adjust the template.
->? You can apply the video frame capturing template when creating a [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E8.A7.86.E9.A2.91.E6.88.AA.E5.B8.A7.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488) in CI.
+>? You can apply the video frame capturing template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E8.A7.86.E9.A2.91.E6.88.AA.E5.B8.A7.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604) in CI.
 >
 
 
@@ -163,7 +163,7 @@ The configuration information of the video-to-animated image conversion template
    - Output Animated Image Size: The default output animated image size is the same as that of the input video. If you select custom width and height, you must enter an integer between 128 and 4096 for the width and height respectively. 
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can apply the video-to-animated image conversion template when creating a [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E8.A7.86.E9.A2.91.E8.BD.AC.E5.8A.A8.E5.9B.BE.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488) in CI.
+>? You can apply the video-to-animated image conversion template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E8.A7.86.E9.A2.91.E8.BD.AC.E5.8A.A8.E5.9B.BE.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604) in CI.
 >
 
 
@@ -181,7 +181,7 @@ The highlights generation feature automatically extracts highlights from a video
 5. Select **Highlights Generation** and click **Create Highlights Generation Template**.
 6. In the **Create Highlights Generation Template** pop-up window, configure the following items:
 
->? Currently, highlights generation can be used only for landscape, food, street, and vlog scenarios and will support more scenarios in the future. If you want to customize this feature, [contact us](https://cloud.tencent.com/online-service) for assistance.
+>? Currently, highlights generation can be used only for landscape, food, street, and vlog scenarios and will support more scenarios in the future. If you want to customize this feature, [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
 >
 The configuration information of the highlights generation template is as follows:
    - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
@@ -195,7 +195,7 @@ The configuration information of the highlights generation template is as follow
    - **Audio Parameters**: Customize audio parameters as needed.
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can apply the highlights generation template when creating a [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E7.B2.BE.E5.BD.A9.E9.9B.86.E9.94.A6.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488) in CI.
+>? You can apply the highlights generation template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E7.B2.BE.E5.BD.A9.E9.9B.86.E9.94.A6.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604) in CI.
 >
 
 
@@ -268,7 +268,7 @@ The configuration information of the top speed codec transcoding template is as 
    - **Audio Parameters**: Customize audio parameters as needed.
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can apply the top speed codec transcoding template when creating a [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488) in CI.
+>? You can apply the top speed codec transcoding template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604) in CI.
 >
 
 ### Broadcast media format transcoding
@@ -297,7 +297,7 @@ The configuration information of the broadcast media format transcoding template
    - **Audio Parameters**: Customize audio parameters as needed.
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can apply the top speed codec transcoding template when creating a [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488) in CI.
+>? You can apply the top speed codec transcoding template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604) in CI.
 
 
 
@@ -373,7 +373,7 @@ After successfully creating the template, you can **view**, **edit**, or **delet
 
 The video watermark feature adds a text or image watermark to a video during transcoding.
 
->? Currently, you can add up to three watermarks in the console or five via API at a time. To add more watermarks, [contact us](https://cloud.tencent.com/online-service?from=doc_460) for assistance.
+>? Currently, you can add up to three watermarks in the console or five via API at a time. To add more watermarks, [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
 >
 
 #### Directions
@@ -420,7 +420,7 @@ The video watermark feature adds a text or image watermark to a video during tra
       - Font Color: It is in the format of `0xRRGGBB`.
 7. Click **OK**.
 After successfully creating the template, you can **preview**, **view**, **edit**, or **delete** it in the custom template list. You can click **Preview** to view the position and dimensions of the watermark in videos of three common resolutions and quickly adjust the template.
->? You can apply the video watermark template when creating an audio/video transcoding [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81) in CI.
+>? You can apply the video watermark template when creating an audio/video transcoding [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81) in CI.
 >
 
 
@@ -439,7 +439,7 @@ The video/audio splicing feature adds the specified video/audio segment at the b
 
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can apply the audio/video splicing template when creating a [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E6.8B.BC.E6.8E.A5.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81) in CI.
+>? You can apply the audio/video splicing template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E6.8B.BC.E6.8E.A5.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81) in CI.
 >
 
 
@@ -458,6 +458,6 @@ The image processing feature supports flexible image editing, such as rotation, 
 
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can apply the image processing template when creating a [job](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E6.8B.BC.E6.8E.A5.E4.BB.BB.E5.8A.A1) or [workflow](https://cloud.tencent.com/document/product/460/46488#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81) in CI.
+>? You can apply the image processing template when creating a [job](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E6.8B.BC.E6.8E.A5.E4.BB.BB.E5.8A.A1) or [workflow](https://www.tencentcloud.com/document/product/1045/43604#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81) in CI.
 >
 

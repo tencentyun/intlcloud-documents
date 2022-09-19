@@ -2,7 +2,7 @@
 
 您在使用媒体处理功能时，通常需要设定一系列参数，模板的作用就是将这一系列参数组合在一起。设置模板能**简化您的操作**，使得您设置的参数可被复用而无需重复填写。
 
-针对媒体处理功能（例如音视频转码、音视频拼接、视频截帧和视频转动图等），您需要在数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489) 或 [工作流](https://cloud.tencent.com/document/product/460/46488) 时，指定使用的模板，模板页为您提供了**系统预设模板**，您也可根据自身业务需求**自定义模板**。
+针对媒体处理功能（例如音视频转码、音视频拼接、视频截帧和视频转动图等），您需要在数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604) 时，指定使用的模板，模板页为您提供了**系统预设模板**，您也可根据自身业务需求**自定义模板**。
 
 ## 系统预设模板
 
@@ -102,7 +102,7 @@
    - **音频参数**：音频参数可根据用户需求自定义。
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**查看模板信息**、**编辑**、**删除**的操作。
->? 您可使用数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81)，对音视频转码模板进行应用。
+>? 您可使用数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81)，对音视频转码模板进行应用。
 >
 
 
@@ -132,7 +132,7 @@
    - 输出图片尺寸：默认输出截图尺寸为原视频图片尺寸；若您选择自定义图片大小，注意输入宽高为128-4096之间的整数。
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**查看**、**编辑**、**删除**的操作。单击预览可查看水印在三种常用分辨率视频中的位置和大小，便于您快速调整模板。
->? 您可使用数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E8.A7.86.E9.A2.91.E6.88.AA.E5.B8.A7.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488)，对视频截帧模板进行应用。
+>? 您可使用数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E8.A7.86.E9.A2.91.E6.88.AA.E5.B8.A7.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604)，对视频截帧模板进行应用。
 >
 
 
@@ -163,7 +163,7 @@
    - 输出动图尺寸：默认输出动图尺寸为原视频尺寸；若您选择自定义宽高，注意输入宽高为128 - 4096之间的整数。 
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**查看模板信息**、**编辑**、**删除**的操作。
->? 您可使用数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E8.A7.86.E9.A2.91.E8.BD.AC.E5.8A.A8.E5.9B.BE.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488)，对视频转动图模板进行应用。
+>? 您可使用数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E8.A7.86.E9.A2.91.E8.BD.AC.E5.8A.A8.E5.9B.BE.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604)，对视频转动图模板进行应用。
 >
 
 
@@ -181,7 +181,7 @@
 5. 选择**精彩集锦**，单击**创建精彩集锦模板**。
 6. 在弹出的创建精彩集锦模板窗口，进行自定义配置。
 
->? 目前精彩集锦仅适用于风景、美食、街拍、Vlog 场景，其他场景能力陆续开放中，如有定制需求，请 [联系我们](https://cloud.tencent.com/online-service) 咨询。
+>? 目前精彩集锦仅适用于风景、美食、街拍、Vlog 场景，其他场景能力陆续开放中，如有定制需求，请 [联系我们](https://intl.cloud.tencent.com/contact-sales) 咨询。
 >
 精彩集锦模板配置信息如下：
    - 模板名称：长度不超过64字符，仅支持中文、英文、数字、下划线`_`、中划线`-`和`*`。
@@ -195,7 +195,7 @@
    - **音频参数**：音频参数可根据用户需求自定义。
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**查看模板信息**、**编辑**、**删除**的操作。
->? 您可使用数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E7.B2.BE.E5.BD.A9.E9.9B.86.E9.94.A6.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488)，对视频转动图模板进行应用。
+>? 您可使用数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E7.B2.BE.E5.BD.A9.E9.9B.86.E9.94.A6.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604)，对视频转动图模板进行应用。
 >
 
 
@@ -268,7 +268,7 @@
    - **音频参数**：音频参数可根据用户需求自定义。
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**查看模板信息**、**编辑**、**删除**的操作。
->? 您可使用数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488)，对极速高清转码模板进行应用。
+>? 您可使用数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604)，对极速高清转码模板进行应用。
 >
 
 ### 广电专业格式转码转码
@@ -297,7 +297,7 @@
    - **音频参数**：选择音频参数。
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**查看模板信息**、**编辑**、**删除**的操作。
->? 您可使用数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488)，对极速高清转码模板进行应用。
+>? 您可使用数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604)，对极速高清转码模板进行应用。
 
 
 
@@ -373,7 +373,7 @@
 
 视频水印基于音视频转码功能，能够在音视频转码过程中同步为视频添加图片或文字水印。
 
->? 目前支持一次转码操作同时添加多个水印，其中控制台方式支持一次添加三个水印，API方式支持一次添加五个水印。若您有更多的水印数量需求，请 [联系我们](https://cloud.tencent.com/online-service?from=doc_460) 获取支持。
+>? 目前支持一次转码操作同时添加多个水印，其中控制台方式支持一次添加三个水印，API方式支持一次添加五个水印。若您有更多的水印数量需求，请 [联系我们](https://intl.cloud.tencent.com/contact-sales) 获取支持。
 >
 
 #### 操作步骤
@@ -420,7 +420,7 @@
       - 字体颜色：格式为0xRRGGBB。
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**预览**、**查看**、**编辑**、**删除**的操作。点击预览可查看水印在三种常用分辨率视频中的位置和大小，便于您快速调整模板。
->? 您可使用数据万象创建音视频转码 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81)，对视频水印模板进行应用。
+>? 您可使用数据万象创建音视频转码 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81)，对视频水印模板进行应用。
 >
 
 
@@ -439,7 +439,7 @@
 
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**查看模板信息**、**编辑**、**删除**的操作。
->? 您可使用数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E6.8B.BC.E6.8E.A5.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81)，对音视频拼接模板进行应用。
+>? 您可使用数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E6.8B.BC.E6.8E.A5.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81)，对音视频拼接模板进行应用。
 >
 
 
@@ -458,6 +458,6 @@
 
 7. 单击**确定**，完成模板创建。
 创建成功后，您可以在自定义模板列表中对新建的模板进行**查看模板信息**、**编辑**、**删除**的操作。
->? 您可使用数据万象创建 [任务](https://cloud.tencent.com/document/product/460/46489#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E6.8B.BC.E6.8E.A5.E4.BB.BB.E5.8A.A1) 或 [工作流](https://cloud.tencent.com/document/product/460/46488#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81)，对图片处理模板进行应用。
+>? 您可使用数据万象创建 [任务](https://www.tencentcloud.com/document/product/1045/43605#.E5.88.9B.E5.BB.BA.E9.9F.B3.E8.A7.86.E9.A2.91.E6.8B.BC.E6.8E.A5.E4.BB.BB.E5.8A.A1) 或 [工作流](https://www.tencentcloud.com/document/product/1045/43604#.E5.88.9B.E5.BB.BA.E5.B7.A5.E4.BD.9C.E6.B5.81)，对图片处理模板进行应用。
 >
 
