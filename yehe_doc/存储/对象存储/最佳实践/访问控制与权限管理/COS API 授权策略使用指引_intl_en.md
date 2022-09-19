@@ -96,9 +96,9 @@ The `resource` field for bucket API policies is outlined in further detail below
 - To allow access to buckets in all regions
 The `resource` field should be set to `*`. **Use this option with caution as it may present data security risks due to excessive permissions.**
 - To allow access only to buckets in a specified region
-For example, to grant access to `examplebucket-1250000000` under the APPID `1250000000` in the region `ap-beijing`, the `resource` field should be set to `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*`.
+For example, to grant access to `examplebucket-1250000000` under the APPID `1250000000` in the region `ap-beijing`, the `resource` field should be set to `qcs::cos:ap-beijing:uid/1250000000:*`.
 - To allow access only to a bucket with a specified name in a specified region
-- For example, to grant access to the bucket named `examplebucket-1250000000` under the APPID `1250000000` in the region `ap-beijing`, the `resource` field should be set to `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/`.
+- For example, to grant access to the bucket named `examplebucket-1250000000` under the APPID `1250000000` in the region `ap-beijing`, the `resource` field should be set to `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*`.
 
 The `action` field in bucket API policies varies by operation. The following lists several bucket API policies for your reference.
 
