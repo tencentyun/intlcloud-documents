@@ -1,7 +1,7 @@
-Threat intelligence is a module provided in bot behavior management. Relying on Tencent's nearly 20 years of network security experience and big data intelligence, this feature accurately identifies malicious IP and IDC access by monitoring the IP status in real time and adopting a risk scoring system, while intelligently identifying malicious bot characteristics to block access initiated by malicious bots, distributed bots, proxies, credential stuffing, and bargain hunting.
+Threat intelligence is a module provided in bot traffic management. Relying on Tencent's nearly 20 years of network security experience and big data intelligence, this feature accurately identifies malicious IP and IDC access by monitoring the IP status in real time and adopting a risk scoring system, while intelligently identifying malicious bot characteristics to block access initiated by malicious bots, distributed bots, proxies, credential stuffing, and bargain hunting.
 
 ## Prerequisites
-You have purchased a WAF plan and subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E) service.
+You have purchased a WAF plan and subscribed to the [bot traffic management](https://intl.cloud.tencent.com/document/product/627/47799#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E) service.
 
 ## Protection Configuration
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-baseconfig) and select **Configuration Center** > **Bot and Application Secuirty** on the left sidebar.
