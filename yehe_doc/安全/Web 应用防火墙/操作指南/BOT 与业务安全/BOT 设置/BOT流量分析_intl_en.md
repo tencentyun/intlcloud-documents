@@ -1,5 +1,5 @@
 ## Overview
-Bot behavior management identifies friendly and malicious bots, and take appropriate traffic management strategies. It can allow traffic from search engine bots, ignore traffic from malicious bots crawling product information, slow down its response or take different response strategies, and deal with resource consumption, information leakage and ineffective marketing caused by malicious bot crawling. Meanwhile, it protects friendly bot programs (such as search engines and advertising programs).
+Bot traffic management identifies friendly and malicious bots, and take appropriate traffic management strategies. It can allow traffic from search engine bots, ignore traffic from malicious bots crawling product information, slow down its response or take different response strategies, and deal with resource consumption, information leakage and ineffective marketing caused by malicious bot crawling. Meanwhile, it protects friendly bot programs (such as search engines and advertising programs).
 
 With rich data provided by this module, bot traffic analysis can quickly analyze how domain names are affected by bots in terms of the following metrics: types of bots, types of actions, distribution of bot scores, top statistics by bot requests, and vulnerable URLs.
 
@@ -34,7 +34,7 @@ With rich data provided by this module, bot traffic analysis can quickly analyze
  - Region: Location of the access source.
  - Domain name: Accessed domain name.
  - Request path: URI of the access request.
- - Action: Action taken by the bot behavior management module.
+ - Action: Action taken by the bot traffic management module.
  - Number of accesses: Number of sessions.
  - Hit module: Modules that are hit.
  - Bot score: Bot score of the access request.
