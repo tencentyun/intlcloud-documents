@@ -121,7 +121,7 @@
 </thead>
 <tbody>
 <tr>
-<td><li>After purchase, you can differentiate between friendly and malicious bots and crawlers and implement targeted traffic management policies through <a href="https://intl.cloud.tencent.com/document/product/627/15340">bot behavior management</a>. </li><li>For example, you can let through the traffic of search engine bots, block the traffic of malicious item information crawlers, delay responses, or adopt different response time periods. This feature reduces resource consumption, information leakage, and failed marketing caused by malicious bots and crawlers on the one hand and ensures normal operations of friendly ones (such as search engine bots and advertising programs) on the other hand.</li></td>
+<td><li>After purchase, you can differentiate between friendly and malicious bots and crawlers and implement targeted traffic management policies through <a href="https://intl.cloud.tencent.com/document/product/627/15340">bot traffic management</a>. </li><li>For example, you can let through the traffic of search engine bots, block the traffic of malicious item information crawlers, delay responses, or adopt different response time periods. This feature reduces resource consumption, information leakage, and failed marketing caused by malicious bots and crawlers on the one hand and ensures normal operations of friendly ones (such as search engine bots and advertising programs) on the other hand.</li></td>
 <td>2000 USD/month</td>
 </tr>
 </tbody></table>
