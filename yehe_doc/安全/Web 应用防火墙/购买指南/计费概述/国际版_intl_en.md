@@ -100,7 +100,6 @@
 <tbody>
 <tr>
 <td>One security log package contains:<li>1 TB log storage capacity: You can search for and download access logs of protected domain names within the configured log retention period (1–30 days). <strong>If the storage capacity corresponding to the configured period exceeds 1 TB, you can only perform such operations on the logs in the 1 TB storage space.</strong></li><li>Storage of access logs within 180 days: Access logs can be stored for 180 days; however, <strong>they are stored in COS and cannot be searched for or downloaded in the security log pack console. You can only <a href="https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=864&radio_title=%E8%AE%A1%E8%B4%B9/%E4%BB%B7%E6%A0%BC%E5%92%A8%E8%AF%A2&queue=3026&scene_code=30040&step=2">submit a ticket</a> for downloading the log data.<strong></li></td>
- 下载数据。<strong></li></td>
 <td> 150 USD/month</td>
 </tr>
 </tbody></table>
