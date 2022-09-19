@@ -10,35 +10,39 @@
 更多镜像类型介绍详见 [镜像类型简介](https://intl.cloud.tencent.com/document/product/213/4941)。
 
 ## 镜像计费[](id:mirrorBilling)
-使用镜像会产生一定的费用，各类型镜像费用说明如下：
+使用镜像可能会产生一定的费用，费用说明请参见 [镜像计费概述](https://intl.cloud.tencent.com/document/product/213/2179)。
+
+## 镜像部署 VS 手动部署
+
 <table style="width:717px;">
+<thead>
 <tr>
-<th width="16%">镜像类型</th><th>说明</th>
+<th style="width:85px;height:45px;position:relative;font-weight:700;" valign="top"><div style="position:absolute;width:1px;height:102px;top:0;left:0;background-color: #d9d9d9;transform: rotate(-55deg);transform-origin:top;"></div><div style="position:relative;left:30px">方式</div><div style="position:relative;left:-10px">比较项</th>
+<th><strong>镜像部署</strong></th>
+<th><strong>手动部署</strong></th>
 </tr>
-<tr>
-<td>公共镜像</td>
-<td><ul style="margin:0px">
-<li>中国大陆地区外的其他地域，Windows 类型镜像计费与实例规格大小有关，以创建实例的实际情况为准。</li>
-<li>其他镜像全部免费。</li>
-</ul>
-</td>
-</tr>
-<td>自定义镜像</td>
-<td>
-计费包含以下两部分：
-<ul style="margin:0px">
-<li>快照费用：由于镜像底层使用了云硬盘快照服务，保留自定义镜像会产生一定的快照费用。详情请参见 <a href="https://intl.cloud.tencent.com/document/product/362/32415">快照计费概述</a>。</li>
-<li>镜像费用：若自定义镜像的最终来源为付费镜像，且您使用了该自定义镜像，则需要收取镜像费用。</li>
-</ul>
-</td>
+</thead>
+<tbody><tr>
+<td>部署时长</td>
+<td>3分钟 - 5分钟</td>
+<td>1天 - 2天</td>
 </tr>
 <tr>
-<td>共享镜像</td>
-<td>共享镜像是将创建好的自定义镜像分享给其他腾讯云账户的镜像。若该镜像最终来源为付费镜像且使用了该共享镜像，则收取镜像费用。</td>
+<td>部署过程</td>
+<td>根据成熟的服务市场方案或已使用过的方案，快速创建合适的云服务器。</td>
+<td>选择合适的操作系统、数据库、应用软件、插件等，并需要安装和调试。</td>
 </tr>
-</table>
-
-
+<tr>
+<td>安全性</td>
+<td>除共享镜像来源需要用户自行甄别，其他公共镜像、自定义镜像都经过腾讯云测试和审核。</td>
+<td>依赖开发部署人员的水平。</td>
+</tr>
+<tr>
+<td>适用情况</td>
+<td>公共镜像：正版操作系统，包含腾讯云提供的初始化组件。<br>自定义镜像：快速创建跟已有云服务器相同软件环境，或进行环境备份。<br>共享镜像：快速创建跟其他用户已有云服务器相同软件环境。</td>
+<td>完全自行配置，无基础设置。</td>
+</tr>
+</tbody></table>
 
 ## 镜像应用
  - **部署特定软件环境**
@@ -51,5 +55,5 @@
 ## 镜像生命周期
 
 下图总结了自定义镜像的生命周期。创建或导入了一个新自定义镜像之后，用户可以将其用于启动新实例（用户也可从现有的公共镜像启动实例）。自定义镜像可以被复制到同账号的其他地域下，成为该地域下独立的镜像。用户还可以将自定义镜像共享给其他用户。
-![](http://mc.qcloudimg.com/static/img/b11a8e644fd89ce844c8fb0b69e7044a/image.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fc696f071652956e00c62c273fc5dde3.png)
 

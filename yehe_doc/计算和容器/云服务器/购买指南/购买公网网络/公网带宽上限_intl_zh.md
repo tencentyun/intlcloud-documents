@@ -5,32 +5,20 @@
 您设置的公网网络带宽上限默认为出网带宽上限，即从云服务器流出的带宽。公网网络的带宽上限根据不同的网络计费模式有所不同。具体信息如下：
 - 2020年2月24日00:00以后创建的机器按以下规则执行：
 <table>
-<tbody><tr><th rowspan="2" style="
-    width: 20%;
-">网络计费模式</th><th colspan="2">实例</th><th rowspan="2" style="width:35%">带宽上限的可设置范围（Mbps）</th></tr>
-<tr><th style="
-    width: 20%;
-">实例计费模式</th><th style="
-    width: 25%;
-">实例配置</th></tr>
+<tbody><tr><th rowspan="2" style="width: 20%;">网络计费模式</th><th colspan="2">实例</th><th rowspan="2" style="width:35%">带宽上限的可设置范围（Mbps）</th></tr>
+<tr><th style="width: 20%;">实例计费模式</th><th style="width: 25%;">实例配置</th></tr>
 <tr><td>按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr
 <tr><td>共享带宽包</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
 </tbody></table>
 
 - 2020年2月24日00:00以前创建的机器按以下规则执行：
 <table>
-<tbody><tr><th rowspan="2" style="
-    width: 20%;
-">网络计费模式</th><th colspan="2">实例</th><th rowspan="2" style="width:35%">带宽上限的可设置范围（Mbps）</th></tr>
-<tr><th style="
-    width: 20;
-">实例计费模式</th><th style="
-    width: 25%;
-">实例配置</th></tr>
-<tr><td rowspan="1">按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td rowspan="3">按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>共享带宽包</td><td>ALL</td><td>0 - 1000</td></tr>
+<tbody><tr><th rowspan="2" style="width: 20%;">网络计费模式</th><th colspan="2">实例</th><th rowspan="2" style="width:35%">带宽上限的可设置范围（Mbps）</th></tr>
+<tr><th style="width: 20;">实例计费模式</th><th style="width: 25%;">实例配置</th></tr>
+<tr><td>按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>共享带宽包</td><td colspan="2">ALL</td><td>0 - 1000</td></tr>
 </tbody></table>
 
 
@@ -38,8 +26,11 @@
 ## 入网带宽上限（上行带宽）
 
 公网的入网带宽是指流入云服务器实例的带宽。
-- 用户购买的带宽大于10Mbps时，腾讯云会分配与购买的带宽相等的外网入方向带宽。
-- 用户购买的带宽小于等于10Mbps时，腾讯云会分配10Mbps外网入方向带宽。
+- 按流量计费的公网 IP：
+ - 用户购买的带宽小于等于10Mbps时，腾讯云会分配10Mbps外网入方向带宽。
+ - 用户购买的带宽大于10Mbps时，腾讯云会分配与购买的带宽相等的外网入方向带宽。
+- 按共享带宽包计费的公网 IP：
+腾讯云会分配与购买的带宽相等的外网入方向带宽。
 
 ## 带宽峰值
 带宽峰值主要分为按流量计费和按带宽计费两种类型。不同类型的带宽峰值含义有所不同，具体区别如下：
