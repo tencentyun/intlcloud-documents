@@ -1,11 +1,11 @@
 ## Overview
-With data provided by the bot behavior management module, bot traffic analysis quickly analyzes the bot impacts on domain names in terms of bot feature metrics, including the types of bots, proportion of actions, bot score distribution, top data by request count and URLs that may be affected. You can click **View details** to view the bot details of an access source, and its access characteristics and exceptions detected.
+With data provided by the bot traffic management module, bot traffic analysis quickly analyzes the bot impacts on domain names in terms of bot feature metrics, including the types of bots, proportion of actions, bot score distribution, top data by request count and URLs that may be affected. You can click **View details** to view the bot details of an access source, and its access characteristics and exceptions detected.
 
 The bot traffic details section displays the bot traffic details of top 10 access sources. You can also view their session access information and logs if session settings are configured, and the information of these access sources/IPs by retrieval.
 
 
 ## Prerequisites
-You have subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799) service and enabled bot traffic analysis.
+You have subscribed to the [bot traffic management](https://intl.cloud.tencent.com/document/product/627/47799) service and enabled bot traffic analysis.
 
 ## Directions
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-flowanalysis) and select **Bot Traffic Analysis** on the left sidebar. Open the **Bot traffic details** tab.
