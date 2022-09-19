@@ -1,5 +1,5 @@
 ## Prerequisites
-You have subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799) service.
+You have subscribed to the [bot traffic management](https://intl.cloud.tencent.com/document/product/627/47799) service.
 
 ## Directions
 1.Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration Center** > **Bot and Application Security** on the left sidebar.
@@ -10,5 +10,5 @@ You have subscribed to the [bot behavior management](https://intl.cloud.tencent.
  - Enable bot rule management: The switch is disabled by default. You can enable it as needed.
 >?Bot traffic analysis takes effect only when the WAF switch is enabled.
 
- - Enabled modules: It displays the number of modules enabled for bot analysis. Bot behavior management provides four modules, which are browser bot defense, threat intelligence, AI evaluation, and bot flow statistics.
+ - Enabled modules: It displays the number of modules enabled for bot analysis. Bot traffic management provides four modules, which are browser bot defense, threat intelligence, AI evaluation, and bot flow statistics.
  - Custom rules: It displays the number of bot custom rules enabled. You can click to view the configuration of bot custom rules under the current domain name.
