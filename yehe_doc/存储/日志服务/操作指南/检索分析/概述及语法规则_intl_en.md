@@ -190,5 +190,5 @@ CLS supports a large number of SQL functions. For all the SQL functions, see [An
 
 - [Log Search Failure](https://intl.cloud.tencent.com/document/product/614/38446)
 - [Search Criteria Do Not Take Effect](https://intl.cloud.tencent.com/document/product/614/45244)
-- [检索结果不准确](https://intl.cloud.tencent.com/document/product/614/38446)
+- [Log Search Failure](https://intl.cloud.tencent.com/document/product/614/38446)
 - [Search Analysis Error](https://intl.cloud.tencent.com/document/product/614/44224)
