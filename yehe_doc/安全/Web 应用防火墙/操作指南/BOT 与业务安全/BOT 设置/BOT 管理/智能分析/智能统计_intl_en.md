@@ -1,8 +1,8 @@
-Bot flow statistics is a module provided in bot behavior management. This feature identifies malicious users by monitoring and analyzing the traffic characteristics of your user groups.
+Bot flow statistics is a module provided in bot traffic management. This feature identifies malicious users by monitoring and analyzing the traffic characteristics of your user groups.
 
 ## Prerequisites
 
-You have purchased a WAF plan and subscribed to [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E). Meanwhile, you have added a domain name to WAF.
+You have purchased a WAF plan and subscribed to [bot traffic management](https://intl.cloud.tencent.com/document/product/627/47799#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E). Meanwhile, you have added a domain name to WAF.
 
 ## Protection Configuration
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration Center** > **Bot and Application Security** on the left sidebar.
@@ -25,7 +25,7 @@ You have purchased a WAF plan and subscribed to [bot behavior management](https:
   - Mode: The probability thresholds of the metrics vary with different detection modes.
 	 - If the detection mode is quite strict, the detection rate is higher, but the detection accuracy is lower.
      - If the detection mode is quite loose, the detection rate is lower, but the detection accuracy is higher.
-     - The Auto mode is a mode produced by bot behavior management using the historical website traffic patterns. This mode switches from Loose to Strict automatically according to the bot situation of the website.
+     - The Auto mode is a mode produced by bot traffic management using the historical website traffic patterns. This mode switches from Loose to Strict automatically according to the bot situation of the website.
     - On/Off: It controls whether to enable feature metrics. If one feature metric is disabled, it will not be counted toward the bot score.
 
 ## Best Practices
