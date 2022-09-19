@@ -31,16 +31,16 @@ Key features supported by different LogListener versions are as listed below. Fo
 
 ### 1. Downloading and installing LogListener
 
-Download links of the latest version LogListener: [Download by public network](https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.7.10.tar.gz), [Download by private network](http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.7.10.tar.gz)
+Download links of the latest version LogListener: [Download by public network](https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.8.2.tar.gz), [Download by private network](http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.8.2.tar.gz)
 
 Download the LogListener installation package and decompress it to the installation path (`/usr/local/` in this example). Then go to the LogListener directory `loglistener/tools` and run the following installation command.
 - Operation command for the public network:
 ```plaintext
-wget https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.7.10.tar.gz  && tar -zxvf loglistener-linux-x64-2.7.10.tar.gz -C /usr/local && cd /usr/local/loglistener-2.7.10/tools && ./loglistener.sh install
+wget https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.8.2.tar.gz  && tar -zxvf loglistener-linux-x64-2.8.2.tar.gz -C /usr/local && cd /usr/local/loglistener-2.8.2/tools && ./loglistener.sh install
 ```
 - Operation command for the private network:
 ```plaintext
-wget http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.7.10.tar.gz  && tar -zxvf loglistener-linux-x64-2.7.10.tar.gz -C /usr/local && cd /usr/local/loglistener-2.7.10/tools && ./loglistener.sh install
+wget http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.8.2.tar.gz  && tar -zxvf loglistener-linux-x64-2.8.2.tar.gz -C /usr/local && cd /usr/local/loglistener-2.8.2/tools && ./loglistener.sh install
 ```
 
 ### 2. Initializing LogListener
@@ -158,7 +158,7 @@ cp -r /tmp/loglistener-backup/data loglistener-<version>/
 ```
  Change the value of `<version>` as required. The following is an example:
 ```plaintext
-cp -r /tmp/loglistener-backup/data loglistener-2.7.10/
+cp -r /tmp/loglistener-backup/data loglistener-2.8.2/
 ```
 6. Run the start command to start the latest version of LogListener.
 
