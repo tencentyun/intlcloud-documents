@@ -1,32 +1,60 @@
-本文介绍 URL 函数的语法及示例。
+本文介绍数学计算函数的语法及示例。
 
+日志服务（Cloud Log Service，CLS）日志分析功能支持对于以 int、long、double 为类型的字段通过数学统计函数和数学计算函数进行日志分析。
 
-## 语法格式
+>?
+> - 数学计算函数支持运算符+—\*/%。
+> - 以下函数中的 x、y 可以为数字、日志字段或计算结果为数字的表达式。
+> 
 
-URL 函数支持从标准 HTTP URL 路径中提取字段，一个标准的 URL 如下：
+## 基本语法
 
+| 函数名称                   | 说明                             |
+| -------------------------- | -------------------------------- |
+| abs(x)                     | 计算数字的绝对值。               |
+| cbrt(x)                    | 计算数字的立方根。               |
+| sqrt(x)                    | 计算数字的平方根。               |
+| cosine_similarity(x,y)     | 计算 x 和 y 之间的余弦相似度。       |
+| degrees(x)                 | 将弧度转换为度。                 |
+| radians(x)                 | 将度转换为弧度。                 |
+| e()                        | 计算数字的自然对数。             |
+| exp(x)                     | 返回自然对数的指数。             |
+| ln(x)                      | 计算数字的自然对数。             |
+| log2(x)                    | 计算以2为底的对数。              |
+| log10(x)                   | 计算以10为底的对数。             |
+| log(x,b)                   | 计算以 b 为底的对数。              |
+| pi()                       | 返回包含14个小数位的π值。        |
+| pow(x,b)                   | 计算数字的 b 次幂。                |
+| rand()                     | 返回随机数。                     |
+| random(0,n)                | 返回[0,n)之间的随机数。          |
+| round(x)                   | 返回四舍五入后的取值。           |
+| round(x, N)                | 保留数字的 N 位小数。              |
+| floor(x)                   | 向下取整数。                     |
+| ceiling(x）                | 向上取整数。                     |
+| from_base(varchar, bigint) | 根据 BASE 编码将字符串转为数字。   |
+| to_base(x, radix)          | 根据 BASE 编码将数字转为字符串。   |
+| truncate(x)                | 截断数字的小数部分。             |
+| acos(x)                    | 计算数字的反余弦。               |
+| asin(x)                    | 计算数字的反正弦。               |
+| atan(x)                    | 计算数字的反正切。               |
+| atan2(y,x)                 | 计算两个数字相除的结果的反正切。 |
+| cos(x)                     | 计算数字的余弦。                 |
+| sin(x)                     | 计算数字的正弦。                 |
+| cosh(x)                    | 计算数字的双曲余弦。             |
+| tan(x)                     | 计算数字的正切。                 |
+| tanh(x)                    | 计算数字的双曲正切。             |
+| infinity()                 | 返回正无穷的数值。               |
+| is_nan(x)                  | 判断目标值是否为非数值。         |
+| nan()                |  返回一个 NaN 值（Not a Number）。        |
+| mod(x, y)                | 用于计算 x 与 y 相除的余数。         |
+| sign(x)                | 返回 x 的符号，通过1、0、-1表示。         |
+| width_bucket(x, bound1, bound2, n)                |  将一段数值（bound1 - bound2）划分成大小相同的 n 个 Bucket，返回 x 所属的 Bucket。 </br>例如`* | select timeCost,width_bucket(timeCost,10,1000,5)`        |
+| width_bucket(x, bins)                |  使用数组（bins）指定 Bucket 的范围，返回 x 所属的 Bucket。 </br>例如`* | select timeCost,width_bucket(timeCost,array[10,100,1000])`        |
+
+## 示例
+
+同比今天和昨天的访问 PV，并使用百分数表示。查询和分析语句如下：
 ```
-[protocol:][//host[:port]][path][?query][#fragment]
+* | SELECT diff [1] AS today, round((diff [3] -1.0) * 100, 2) AS growth FROM (SELECT compare(pv, 86400) as diff FROM (SELECT COUNT(*) as pv FROM log))
 ```
-
->! 提取的字段中不包含 URL 分割符 `:` 或 `?`。
->
-
-
-## 常见 URL 函数
-
-| 函数名              | 说明                                 | 示例                              | 输出结果                                |
-| ---------------- | ---------------------------- | ------------------------- | --------------------------------- |
-| url_extract_fragment(url)        | 提取出 URL 中的 fragment，结果为 varchar 类型。                   | `* | select url_extract_fragment('https://console.cloud.tencent.com/#/project/dashboard-demo/categoryList')` | `/project/dashboard-demo/categoryList`                       |
-| url_extract_host(url)            | 提取出 URL 中的 host，结果为 varchar 类型。                       | `* | select url_extract_host('https://console.cloud.tencent.com/cls')` | `console.cloud.tencent.com`                                  |
-| url_extract_parameter(url, name) | 提取出 URL 中的 query 对应的参数值，结果为 varchar 类型。    | `* | select url_extract_parameter('https://console.cloud.tencent.com/cls?region=ap-chongqing','region')` | `ap-chongqing`                                               |
-| url_extract_path(url)            | 提取出 URL 中的 path，结果为 varchar 类型。                       | `* | select url_extract_path('https://console.cloud.tencent.com/cls?region=ap-chongqing')` | `cls`                                                        |
-| url_extract_port(url)            | 提取出 URL 中的端口，结果为 bigint 类型。                        | `* | select url_extract_port('https://console.cloud.tencent.com:80/cls?region=ap-chongqing')` | `80`                                                         |
-| url_extract_protocol(url)        | 提取出 URL 中的协议，结果为 varchar 类型。                       | `* | select url_extract_protocol('https://console.cloud.tencent.com:80/cls?region=ap-chongqing')` | `https`                                                      |
-| url_extract_query(url)           | 提取出 URL 中的 query，结果为 varchar 类型。                      | `* | select url_extract_query('https://console.cloud.tencent.com:80/cls?region=ap-chongqing')` | `region=ap-chongqing`                                        |
-| url_encode(value)                | 对 value 进行转义编码，使之能应用在 URL_query 中。<ul  style="margin: 0;"><li>字母不会被解码。</li><li>.-\*\_不会被编码。</li><li>空格被解码为+。</li><li>其他字符被解码为 UTF8 格式。</li></ul> | `* | select url_encode('https://console.cloud.tencent.com:80/cls?region=ap-chongqing')` | `https%3A%2F%2Fconsole.cloud.tencent.com%3A80%2Fcls%3Fregion%3Dap-chongqing` |
-| url_decode(value)                | 对 URL 进行解码。                                              | `* | select url_decode('https%3A%2F%2Fconsole.cloud.tencent.com%3A80%2Fcls%3Fregion%3Dap-chongqing')` | `https://console.cloud.tencent.com:80/cls?region=ap-chongqing` |
-
-
-
 
