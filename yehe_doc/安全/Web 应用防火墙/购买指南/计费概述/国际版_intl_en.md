@@ -1,4 +1,4 @@
-﻿## Basic Plan Pricing
+## Basic Plan Pricing
 
 <table>
 <thead>
@@ -25,7 +25,7 @@
  </tr>
 <tr>
  <td>Exclusive</td>
-<td>You can get the price information only by <a href="https://console.cloud.tencent.com/workorder/category?level1_id=141&amp;level2_id=642&amp;source=0&amp;data_title=T-Sec-Web应用防火墙&amp;level3_id=864&amp;radio_title=计费/价格咨询&amp;queue=3026&amp;scene_code=30040&amp;step=2">submitting a ticket</a>.</td>
+<td>You can get the price information only by <a href="https://www.tencentcloud.com/account/login?s_url=https%3A%2F%2Fconsole.tencentcloud.com%2Fworkorder%2Fcategory;step=2">submitting a ticket</a>.</td>
  </tr>
 <tr>
 <td rowspan=4>CLB WAF</td>
@@ -43,7 +43,7 @@
  </tr>
 <tr>
  <td>Exclusive</td>
-<td>You can get the price information only by <a href="https://console.cloud.tencent.com/workorder/category?level1_id=141&amp;level2_id=642&amp;source=0&amp;data_title=T-Sec-Web应用防火墙&amp;level3_id=864&amp;radio_title=计费/价格咨询&amp;queue=3026&amp;scene_code=30040&amp;step=2">submitting a ticket</a>.</td>
+<td>You can get the price information only by <a href="https://www.tencentcloud.com/account/login?s_url=https%3A%2F%2Fconsole.tencentcloud.com%2Fworkorder%2Fcategory;step=2">submitting a ticket</a>.</td>
  </tr>
 </tbody></table>
 
