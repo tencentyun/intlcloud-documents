@@ -1,6 +1,6 @@
 # Release Notes at Tencent Cloud International
 
-To improve the business connection and protection configuration experience outside the Chinese mainland, WAF was upgraded on June 2, 2022, with the web console 2.0 released. After the upgrade, connection is more stable, protection is more powerful, and traffic management is more refined, with value-added capabilities of bot behavior management and log service supported. In addition, the console allows you to switch between regions in and outside the Chinese mainland to better manage instance resources by region. 
+To improve the business connection and protection configuration experience outside the Chinese mainland, WAF was upgraded on June 2, 2022, with the web console 2.0 released. After the upgrade, connection is more stable, protection is more powerful, and traffic management is more refined, with value-added capabilities of bot traffic management and log service supported. In addition, the console allows you to switch between regions in and outside the Chinese mainland to better manage instance resources by region. 
 
 Different types of WAF instances are impacted as follows:
 
@@ -49,6 +49,6 @@ The precise allowlist feature implements refined traffic management during routi
 
  
 
-### Value-added capability upgrade - commercial release of bot behavior management
+### Value-added capability upgrade - commercial release of bot traffic management
 
 The newly upgraded bot protection system integrates the browser bot defense module, threat intelligence module, as well as big data and AI algorithm model and analysis engine. It provides visualized traffic analysis by risk level and more intuitive threat handling policies.
