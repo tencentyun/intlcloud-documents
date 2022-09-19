@@ -1,6 +1,22 @@
-This document describes the TDSQL-C for MySQL kernel version updates. For information on how to upgrade the kernel, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/1098/44617?).
+This document describes the TDSQL-C for MySQL kernel version updates. For information on how to upgrade the kernel, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/1098/44617).
 
 ## TDSQL-C for MySQL 8.0
+### 3.1.3
+#### Feature updates
+- Supported adding the binlog with the specified filename to an index file.
+- Added a backup lock in the syntax of LOCK TABLES FOR BACKUP, UNLOCK TABLES.
+- Added a binlog lock in the syntax of LOCK BINLOG FOR BACKUP, UNLOCK BINLOG.
+
+#### Fixes
+- Fixed the bug where dynamic metadata persistence caused instance table corruptions or visibility errors.
+- Merged the official bugfix #32897503 to solve the issue where the execution path of some query statements was incorrect under the `prepare` statement.
+- Merged the official bugfix to solve the crash when `set resource group` failed.
+- Fixed the bug where the previous `gtid` was empty after HA switch.
+- Fixed the bug where an auto-increment column could be set to a value smaller than the inserted maximum value.
+- Fixed the issue where explicit transactions in read-only instances would block the replay thread from replaying DDL logs.
+- Fixed the issue where tables with "-" in the name might crash when replicated in a read-only instance after DDL.
+- Fixed the crash caused by the `undo` request to the DDL log system table when a read-only instance experienced DDL recovery upon startup.
+
 ### 3.1.2
 #### Feature updates
 - Supported MySQL 8.0 for read-only nodes and source-replica physical replication.
@@ -50,11 +66,6 @@ This document describes the TDSQL-C for MySQL kernel version updates. For inform
 - Optimized redo log flushing.
 - Optimized the buffer pool initialization time.
 - Optimized the clearing of adaptive hash indexes (AHI) during the `drop table` operations on big tables.
-- Optimized the `BINLOG LOCK_done` conflict to improve write performance.
-- Optimized the `trx_sys mutex` conflict by using lock free hash and improve performance.
-- Optimized redo log flushing.
-- Optimized the buffer pool initialization time.
-- Optimized the clearing of adaptive hash indexes (AHI) during the `drop table` operations on big tables.
 
 #### Fixes
 - Fixed the deadlocks caused by the modification of the `offline_mode` and `cdb_working_mode` parameters.
@@ -74,6 +85,13 @@ This document describes the TDSQL-C for MySQL kernel version updates. For inform
 - Added the `innodb_max_temp_data_file_size` read-only parameter. Its default value is 128 MB. If its value is greater than 0, it indicates the maximum size of the temp tablespace in the local storage.
 
 ## TDSQL-C for MySQL 5.7
+### 2.0.17
+#### Feature updates
+- Supported adding the binlog with the specified filename to an index file.
+
+#### Fixes
+- Merged the official bugfix #25865525 to solve the issue where `LOAD DATA INFILE` failed to read escape characters plus UTF8 characters.
+
 ### 2.0.16
 #### Feature updates
 - Optimized `undo space truncate` to improve the speed of `undo truncate` on large-spec instances.
@@ -113,7 +131,7 @@ This document describes the TDSQL-C for MySQL kernel version updates. For inform
 - Fixed the issue where when multiple tables had complex foreign key dependencies and the foreign key attribute was `ON DELETE CASCADE`, the corresponding record in a child table might be deleted twice when a record was delete in its parent table with DELETE.
 - Fixed the issue where the process exited due to operations such as CREATE USER in a read-only instance.
 - Fixed the issue where SHOW VOLUME STATUS in a read-only instance might trigger an assertion failure.
-- Fixed the issue where a read-only instance had exceptional query results and crashed when DDL operations were performed in partitioned tables frequently.
+- Fixed the issue where a read-only instance had abnormal query results and crashed when DDL operations were performed in partitioned tables frequently.
 - Fixed the issue where the process crashed during historical version construction when an read-only instance scanned a purged undo log.
 
 ### 2.0.13
@@ -139,8 +157,8 @@ This document describes the TDSQL-C for MySQL kernel version updates. For inform
 #### Fixes
 - Fixed official bugs in full-text index, including BUG#24938374, BUG#21625016, BUG#27082268, BUG#27155294, BUG#27326796, BUG#27304661, BUG#25289359, BUG#29717909, and BUG#30787535.
 - Fixed official bugs where concurrent update might cause system crashes, including BUG#30950714, BUG#31205266, and BUG#25669686.
-- Fixed the official bug BUG#28104394 where uncommitted INSERT operations would affect the range scan created by an index and made it return an incorrect number of rows.
-- Fixed the official bug BUG#30488700 where an incorrect query execution plan of a derived table could result in a poor performance.
+- Fixed the official bug #28104394 where uncommitted INSERT operations would affect the range scan created by an index and made it return an incorrect number of rows.
+- Fixed the official bug #30488700 where an incorrect query execution plan of a derived table could result in a poor performance.
 - Fixed the issue where the process exited when a read-only instance replayed statistics logs after the source (read-write) instance executed a DDL statement.
 - Fixed the issue where RENAME TABLE was performed on a database that did not exist.
 - Fixed the issue where a read-only instance might exit when OPTIMIZE TABLE was used for the source instance.
@@ -158,7 +176,7 @@ This document describes the TDSQL-C for MySQL kernel version updates. For inform
 
 #### Fixes
 - Fixed the issue where the process crashed during OPEN TABLE due to incorrect index structure mapping.
-- Fixed the issue where read-only instance replication was exceptional during XA transaction rollback.
+- Fixed the issue where read-only instance replication was abnormal during XA transaction rollback.
 - Fixed the issue where startup crashed when binlog replication was started in a read-only instance.
 - Fixed the memory leak caused by FLUSH LOGS.
 - Fixed the shutdown failure of `mysqladmin shutdown`.
@@ -166,3 +184,4 @@ This document describes the TDSQL-C for MySQL kernel version updates. For inform
 - Fixed the issue where data could still be input after space restriction was triggered when a BLOB was inserted.
 - Fixed the issue of read-only instance replication availability that might be caused by DDL statements in big tables or slow log storage in the source instance.
 - Fixed the issue where storage wasted small tables after `innodb_max_temp_data_file_size` was set for a temp table.
+

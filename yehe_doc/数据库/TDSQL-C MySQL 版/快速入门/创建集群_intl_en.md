@@ -4,7 +4,7 @@ This document describes how to create a cluster in the TDSQL-C for MySQL console
 To make a purchase, you need to complete identity verification first. For more information, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
-1. Log in to the [purchase page](https://buy.Intl.cloud.tencent.com/cynosdb?regionId=8), complete the **Database Configuration** settings, and click **Next**.
+1. Log in to the [purchase page](https://buy.intl.cloud.tencent.com/cynosdb#/), complete the **Database Configuration** settings, and click **Next**.
    - **Compute Billing Mode**: Monthly subscription, pay-as-you-go, and serverless billing modes are supported.
    - **Region**: Select a region for database deployment.
    - **Source AZ**: Select an AZ for deployment. Specific AZs in the selected region are shown on the actual purchase page.
@@ -21,7 +21,9 @@ To make a purchase, you need to complete identity verification first. For more i
    - **Storage Billing Mode**:
      - Pay-as-you-go billing is supported, which means you don't need to specify a storage option when you buy. TDSQL-C for MySQL is billed by the actual storage used per hour.
      - Monthly subscription billing is supported, which means you need to purchase monthly-subscribed storage space now (billed in the entirety regardless of whether it is used up).
->?Monthly-subscribed storage space can be purchased only after you select the monthly subscription billing mode.
+>?
+>- Monthly-subscribed storage space can be purchased only after you select the monthly subscription billing mode.
+>- For more information on how to select an appropriate billing mode for storage space, see [Selecting Billing Mode for Storage Space](https://intl.cloud.tencent.com/document/product/1098/47633).
    - **Auto-Renewal**: Auto-renew the device monthly upon expiration if your account has sufficient balance.
 2. Complete the **Basic Info** and **Advanced Configuration** settings, select the **Validity Period**, confirm the fees, and click **Buy Now**.
    - **Basic Info**
@@ -49,6 +51,6 @@ To make a purchase, you need to complete identity verification first. For more i
 >
 3. After the purchase is completed, you will be redirected to the cluster list. After the status of the cluster becomes **Running**, it can be used normally.
 
-## Subsequent Operations
+## Subsequent operations
 After purchasing the TDSQL-C for MySQL cluster, you can connect to it through its private or public network address or DMC. For more information, see [Connecting to Cluster](https://intl.cloud.tencent.com/document/product/1098/40627).
 
