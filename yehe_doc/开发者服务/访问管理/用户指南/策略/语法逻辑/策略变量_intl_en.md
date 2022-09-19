@@ -1,41 +1,42 @@
-### Use Cases
+## Overview
 
-Suppose you want to grant every CAM user the permission to access resources they create; for example, you want a user that created a COS resource to have the access to the resource by default.
-If the resource owner (root account) authorizes the resources to resource creators individually, the owner needs to write policies for each resource and authorize them to creators one by one, which leads to high authorization costs. You can use policy variables to this end. Specifically, in the resource definition of the policy, add a placeholder for the creator information, which is the policy variable. During authentication, the policy variable will be replaced with the contextual information from the request.
+Suppose you want to grant every CAM user the permission to access resources they create; for example, you want a user who created a COS resource to have the access to the resource by default.
+If the resource owner (root account) authorizes the resources to the resource creator one by one, the owner needs to write policies for each resource and authorize it to the creator, which leads to high authorization costs. In this case, you can use policy variables to meet your requirements. A policy variable is a placeholder that describes the creator’s sub-account UIN in the resource definition. During authentication, the policy variable will be replaced by the contextual information of the request.
     
-The policy for granting the read permission to a creator is described as follows:
-```
-{	 
-        "version":"2.0", 
-        "statement": [       
-         { 
-            "effect":"allow", 
-            "action":"name/cos:Read*", 
-            "resource":"qcs::cos:$region:uid/$appid:prefix//$appid/$bucketname" 
-         }
-        ]
+The policy for granting resource access permissions to a creator is described as follows: 
+```json
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "effect": "allow",
+            "action": "cmqqueue:*",
+            "resource": "qcs::cmqqueue::uin/1000001:queueName/uin/${uin}/*"
+        }
+    ]
 }
 ```
 
-- The policy variable carries the creator's `uid` (i.e., `APPID`) in the path of each resource. If the account with the `APPID` of 125000000 creates a bucket named `examplebucket` in the Chengdu region, the corresponding resource description will be as follows:
+- A policy variable carries the creator’s sub-account UIN in every resource path. For example, if a sub-account (with its own UIN being `125000000` and its root account’s UIN being `1000001`) has created a CMQ message queue named `queueName/uin/125000000` in Chengdu region, the resource will be described as follows: 
 ```
-qcs::cos:ap-chengdu:uid/125000000:prefix//125000000/examplebucket
-```
-
-- When the user with the `uin` of 125000000 accesses this resource, the placeholder of the corresponding policy information will be replaced with the visitor information during the authentication process, that is:
-```
- qcs::cos::uid/125000000:prefix//125000000/examplebucket
+qcs::cmqqueue:ap-chengdu:uin/1000001:queueName/uin/125000000
 ```
 
-- The resource `qcs::cos::uid/125000000:prefix//125000000/examplebucket` in the policy can access the resource `qcs::cos:ap-chengdu:uid/125000000:prefix//125000000/examplebucket` through prefix matching.
+- When the above sub-account accesses this resource, the placeholder of the corresponding policy information will be replaced by the visitor during the authentication process, that is, 
+```
+qcs::cmqqueue::uin/1000001:queueName/uin/125000000
+```
 
-### Using Policy Variables
+- The resource `qcs::cmqqueue::uin/1000001:queueName/uin/125000000` in the policy can access the resource `qcs::cmqqueue:ap-chengdu:uin/1000001:queueName/uin/125000000` through prefix matching. 
+
+## Location of Policy Variable
+
+**Resource element location**: A policy variable can be in the last segment in a [6-segment resource description](https://intl.cloud.tencent.com/document/product/598/10606).
+**Condition element location**: A policy variable can be used in condition values.
     
-**Resource Element**: policy variables can be used as the last segment in a [six-segment resource description](https://intl.cloud.tencent.com/document/product/598/10606).
-**Condition Element**: policy variables can be used in condition values.
-    
-The following policy indicates that a VPC creator has the access permission:
-```
+The following policy indicates that the VPC creator has the access permission:
+
+```json
 {  
         "version":"2.0", 
         "statement": [       
@@ -48,13 +49,15 @@ The following policy indicates that a VPC creator has the access permission:
       ]
 }
 ```
+>?The 6-segment resource description of COS is `qcs::cos:$region:uid/$appid:$bucketname-$appid/$ResourcesPath`, in which `$ResourcesPath` indicates the specific resource path. The above policy variable cannot be used in `$ResourcesPath`. A complete 6-segment resource description of a COS bucket is as follows:
+>`qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/path_1/path_2/pic.jpeg`
 
-### Policy Variable List
-    
-Currently supported policy variables are as follows:
+## Policy Variable List
 
-| Name | Description | 
-|---------|---------|
-| ${uin} | `uin` of the current visitor's sub-account. If the visitor is a root account, this is the `uin` of the root account. | 
-| ${owner_uin} | `uin` of the root account to which the current visitor belongs. | 
-| ${app_id} | `APPID` of the root account to which the current visitor belongs. | 
+Below is a list of supported policy variables:
+
+| Variable       | Description                                                     |
+| ------------ | ------------------------------------------------------------ |
+| ${uin} | The current visitor’s sub-account UIN, or the root account UIN (if the visitor is a root account). |
+| ${owner_uin} | UIN of the root account to which the current visitor belongs. |
+| ${app_id}    | APPID of the root account to which the current visitor belongs. |
