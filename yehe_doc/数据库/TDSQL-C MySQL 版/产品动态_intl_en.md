@@ -1,3 +1,44 @@
+## August 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tr>
+<td>Supported the custom password strength feature</td>
+<td>TDSQL-C for MySQL supports the custom password strength feature to protect the database security and meet your needs for compliance with applicable regulations.</td>
+<td>2022-08-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/49981" target="_blank">Overview</a></td></tr>
+<tr>
+<td>Optimized the monitoring and alarming feature</td>
+<td>TDSQL-C for MySQL adds new monitoring metrics, optimizes metric names, parameters, units, collection/calculation/aggregation methods, the entry to the monitoring feature, and the monitoring page, and is connected to the alarming feature of EventBridge. This improves the system stability and Ops efficiency and reduces the Ops costs, helping you easily stay up to date with the overall database resource usage and status.</td>
+<td>2022-08-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/44598" target="_blank">Monitoring Feature</a></td></tr>
+</table>
+
+## July 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tr>
+<td>Supported database proxy</td>
+<td>TDSQL-C for MySQL supports database proxy. Database proxy is a network proxy service between the TencentDB service and the application service. It is used to proxy all requests when the application service accesses the database. The cluster uses the proxy to relay access requests to the source and replica database nodes, so as to isolate read/write requests and reduce the load on the source database.</td>
+<td>2022-07-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/50004" target="_blank">Overview</a></td></tr>
+</table>
+
+## May 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tr>
+<td>Supported slow log query and download</td>
+<td>TDSQL-C for MySQL supports slow log details query and download. You can download log files in CSV format or native format (recognizable by open-source analysis tools) to identify and optimize inefficient SQL statements and thus improve the efficiency and performance.</td>
+<td>2022-05-31</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/48375" target="_blank">Querying and Downloading Slow Log Details</a></td></tr>
+<tr>
+<td>Optimized the backup management feature</td>
+<td>TDSQL-C for MySQL optimizes the backup management feature. It supports logical backup and snapshot backup, manual backup download and deletion, and backup retention period customization. This improves the integrity of the data backup and rollback features.</td>
+<td>2022-05-30</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/48391" target="_blank">Backup and Rollback Overview</a></td></tr>
+</table>
+
+
 ## March 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
@@ -44,7 +85,7 @@
 <td>Supported data subscription</td>
 <td>DTS supports the migration of various relational databases including TDSQL-C for MySQL as well as NoSQL databases. You can use data subscription to meet your requirements for commercial data mining and async business decoupling.</td>
 <td>2021-10</td>
-<td><a href="https://cloud.tencent.com/document/product/571/52412" target="_blank">Data Subscription</a></td></tr>
+<td>-</td></tr>
 <td>Supported automatic fragmented space reclaim</td>
 <td>TDSQL-C for MySQL can automatically reclaim fragmented space after data deletion, which reduces the storage costs.</td>
 <td>2021-10</td>
