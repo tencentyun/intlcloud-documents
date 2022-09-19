@@ -1,11 +1,11 @@
-This document describes how to quickly connect to the bot behavior management feature and defend against malicious traffic during routine operations.
+This document describes how to quickly connect to the bot traffic management feature and defend against malicious traffic during routine operations.
 
 ## Prerequisites
-To connect to bot behavior management, you need to purchase an [extra pack](https://intl.cloud.tencent.com/document/product/627/47799) of WAF.
->? Currently, WAF Enterprise and Ultimate users are offered a free trial of the bot behavior management feature to observe how bots affect websites.
+To connect to bot traffic management, you need to purchase an [extra pack](https://intl.cloud.tencent.com/document/product/627/47799) of WAF.
+>? Currently, WAF Enterprise and Ultimate users are offered a free trial of the bot traffic management feature to observe how bots affect websites.
 
 ## Parsing CAPTCHA
-When you use applications, mini programs, and clients as well as cross-domain scheduling, the CAPTCHA issued by the WAF instance cannot be parsed and recognized. Therefore, the bot behavior management feature cannot parse and pop up the CAPTCHA for verification. After multiple CAPTCHAs are triggered, the access requests of normal users will be blocked, affecting the business.
+When you use applications, mini programs, and clients as well as cross-domain scheduling, the CAPTCHA issued by the WAF instance cannot be parsed and recognized. Therefore, the bot traffic management feature cannot parse and pop up the CAPTCHA for verification. After multiple CAPTCHAs are triggered, the access requests of normal users will be blocked, affecting the business.
 
 Therefore, when configuring a CAPTCHA action, you need to modify the frontend/client business accordingly as instructed in [Connecting Frontend-Backend Separated Site to WAF CAPTCHA](https://intl.cloud.tencent.com/document/product/627/47522).
 
@@ -58,7 +58,7 @@ In **Bot flow statistics module** on the **Bot management** page, click ![](http
 ![](https://qcloudimg.tencent-cloud.cn/raw/69a1bd85122d64107667db288f204ae4.png)
 
 **Use instructions**
- - **Mode**: By default, there are loose, moderate, strict, and custom modes. The first three modes are preset, representing different recommended categories and handling policies for bots at different malicious levels in bot behavior management. Once modified, they become the custom mode.
+ - **Mode**: By default, there are loose, moderate, strict, and custom modes. The first three modes are preset, representing different recommended categories and handling policies for bots at different malicious levels in bot traffic management. Once modified, they become the custom mode.
  - **Score range**: A score ranges from 0 to 100. Ten score entries can be added to each range, which is left-closed and right-open and cannot be overlapped. You can set a range to null, and then no action will be processed in it.
  - **Action**: You can set an action to **Trust**, **Monitor**, **Redirect** (to a certain website URL), **CAPTCHA** (verification code), or **Block**.
  - **Tag**: You can set the tag to **Friendly bots**, **Malicious bots**, **Normal traffic**, or **Suspicious bots**.
