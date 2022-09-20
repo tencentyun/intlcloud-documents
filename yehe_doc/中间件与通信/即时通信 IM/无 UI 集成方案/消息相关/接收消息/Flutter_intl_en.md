@@ -7,7 +7,7 @@
 ### Advanced message listener
 
 #### Adding a listener
-The receiver calls the `addAdvancedMsgListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addAdvancedMsgListener.html)) to add the advanced message listener. We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
+The receiver calls the `addAdvancedMsgListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) to add the advanced message listener. We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
 
 Sample code:
 
@@ -27,7 +27,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().addAdvancedMsgListener(
 
 
 #### Removing a listener
-To stop receiving messages, the receiver can call `removeAdvancedMsgListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/removeAdvancedMsgListener.html)) to remove the advanced message listener.
+To stop receiving messages, the receiver can call `removeAdvancedMsgListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/removeAdvancedMsgListener.html)) to remove the advanced message listener.
 
 Sample code:
 
@@ -56,7 +56,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().removeAdvancedMsgListener(li
 
 The receiver can receive a one-to-one or group text message by using the advanced message listener in the following steps:
 1. Call `addAdvancedMsgListener` to set the event listener.
-2. Listen for the `onRecvNewMessage` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimAdvancedMsgListener/V2TimAdvancedMsgListener/onRecvNewMessage.html)) to receive text messages.
+2. Listen for the `onRecvNewMessage` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRecvNewMessageCallback.html)) to receive text messages.
 3. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
 Sample code:
@@ -87,7 +87,7 @@ V2TimAdvancedMsgListener listener = V2TimAdvancedMsgListener(
 
 The receiver can receive a custom one-to-one or group message by using the advanced message listener in the following steps:
 1. Call `addAdvancedMsgListener` to set the event listener.
-2. Listen for the `onRecvNewMessage` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimAdvancedMsgListener/V2TimAdvancedMsgListener/onRecvNewMessage.html)) to receive custom messages.
+2. Listen for the `onRecvNewMessage` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRecvNewMessageCallback.html)) to receive custom messages.
 3. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
 Sample code:
@@ -119,7 +119,7 @@ V2TimAdvancedMsgListener listener = V2TimAdvancedMsgListener(
 ## Receiving a Rich Media Message
 The receiver can receive a rich media message **only by using** the advanced message listener in the following steps:
 1. Call the `addAdvancedMsgListener` API to set the advanced message listener.
-2. Listen for the `onRecvNewMessage` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimAdvancedMsgListener/V2TimAdvancedMsgListener/onRecvNewMessage.html)) to receive the `V2TimMessage` message.
+2. Listen for the `onRecvNewMessage` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRecvNewMessageCallback.html)) to receive the `V2TimMessage` message.
 3. Parse the `elemType` attribute in the `V2TIMMessage` message and then parse the message again according to the type to get the specific content of the elements in the message.
 4. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
@@ -256,7 +256,7 @@ if(message.elemType == MessageElemType.V2TIM_ELEM_TYPE_LOCATION){
 
 ### Emoji message
 
-The SDK provides a passthrough channel only for emoji messages. For message content fields, see the definition of `faceElem` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_face_elem/V2TimFaceElem-class.html)). Here, `index` and `data` can be customized.
+The SDK provides a passthrough channel only for emoji messages. For message content fields, see the definition of `faceElem` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimFaceElem.html)). Here, `index` and `data` can be customized.
 
 For example, the sender can set `index` to `1` and `data` to `x12345` to indicate the smile emoji.
 The receiver parses the received emoji message as `1` and `x12345` and displays the message as the smile emoji according to the preset rules.
@@ -278,7 +278,7 @@ Group tip messages are tips received by users in addition to ordinary messages i
 
 > ? Group tip messages will be received by only group members but not one-to-one chat parties.
 
-There are many types of group tip messages. For more information, see the definition of `V2TIMGroupTipsType` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_tips_elem/V2TimGroupTipsElem-class.html)).
+There are many types of group tip messages. For more information, see the definition of `V2TIMGroupTipsType` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupTipsElem.html)).
 
 After receiving a group tip message, the receiver generally needs to:
 1. Parse each field in `V2TIMGroupTipsElem`.

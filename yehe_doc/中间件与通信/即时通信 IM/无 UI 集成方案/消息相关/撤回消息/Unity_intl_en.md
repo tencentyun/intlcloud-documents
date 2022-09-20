@@ -1,6 +1,6 @@
 ## Feature Description
-- The method for recalling a message is `MsgRevoke` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgRevoke_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_com_tencent_imsdk_unity_callback_NullValueCallback_)).
-- The receiver listens for a message recall notification through `SetMsgRevokeCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetMsgRevokeCallback_com_tencent_imsdk_unity_callback_MsgRevokeCallback_com_tencent_imsdk_unity_callback_MsgRevokeStringCallback_)).
+- The method for recalling a message is `MsgRevoke` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgRevoke.html)).
+- The receiver listens for a message recall notification through `SetMsgRevokeCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetMsgRevokeCallback.html)).
 
 ## Recalling a Message
 The sender can recall a successfully sent message.
@@ -10,7 +10,7 @@ By default, the sender can recall a message sent within two minutes. You can cha
 Message recall can be implemented through the receiver UI code: When a message is recalled, the receiver will receive the `MsgRevokeCallback` notification which contains the `msgID` of the recalled message. You can identify the recalled message at the UI layer based on the `msgID` and change the bubble for the message to the "Message recalled" status.
 
 ### Recalling a message (by the sender)
-The sender calls `MsgRevoke` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgRevoke_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_com_tencent_imsdk_unity_callback_NullValueCallback_)) to recall a message.
+The sender calls `MsgRevoke` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgRevoke.html)) to recall a message.
 
 Sample code:
 
@@ -25,7 +25,7 @@ Sample code:
 
 
 ### Noticing a message recall (by the receiver)
-- The receiver receives a message recall notification through `SetMsgRevokeCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetMsgRevokeCallback_com_tencent_imsdk_unity_callback_MsgRevokeCallback_com_tencent_imsdk_unity_callback_MsgRevokeStringCallback_)).
+- The receiver receives a message recall notification through `SetMsgRevokeCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetMsgRevokeCallback.html)).
 
 Sample code:
 

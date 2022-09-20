@@ -23,18 +23,18 @@ In the [IM console](https://console.cloud.tencent.com/im), you can view all your
 [](id:SDKConfig)
 ### Setting the LogLevelEnum
 
-Before initializing the SDK, you need to initialize the `LogLevelEnum` object ([Dart](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/enum_log_level_enum/LogLevelEnum.html)), which is used to set the SDK log level.
+Before initializing the SDK, you need to initialize the `LogLevelEnum` object ([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Enum/LogLevelEnum.html)), which is used to set the SDK log level.
 
 #### Setting the log level
 The IM SDK supports the following log levels:
 
-| Log Level | Log Output |
-|---------|---------|
-| LogLevelEnum.V2TIM_LOG_NONE  | No log is output.                                                 |
+| Log Level                    | Log Output                                                                          |
+| ---------------------------- | ----------------------------------------------------------------------------------- |
+| LogLevelEnum.V2TIM_LOG_NONE  | No log is output.                                                                   |
 | LogLevelEnum.V2TIM_LOG_DEBUG | Logs at the DEBUG, INFO, WARNING, and ERROR levels are output (default log levels). |
-| LogLevelEnum.V2TIM_LOG_INFO  | Logs at the INFO, WARNING, and ERROR levels are output.                           |
-| LogLevelEnum.V2TIM_LOG_WARN  | Logs at the WARNING and ERROR levels are output.                                 |
-| LogLevelEnum.V2TIM_LOG_ERROR | Logs at the ERROR level are output.                                          |
+| LogLevelEnum.V2TIM_LOG_INFO  | Logs at the INFO, WARNING, and ERROR levels are output.                             |
+| LogLevelEnum.V2TIM_LOG_WARN  | Logs at the WARNING and ERROR levels are output.                                    |
+| LogLevelEnum.V2TIM_LOG_ERROR | Logs at the ERROR level are output.                                                 |
 
 SDK log storage rules are as follows:
 - Local IM SDK logs are retained for seven days by default, after which the logs will be automatically cleared during the SDK initialization.
@@ -51,18 +51,18 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 
 ### Setting the SDK event listener
 After the initialization, the SDK will report such events as connection status and login ticket expiration through `V2TimSDKListener`.
-We recommend you pass in `V2TimSDKListener` ([Dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimSDKListener/V2TimSDKListener-class.html)) when calling `initSDK` to add the SDK event listener and perform logic processing in the callback.
+We recommend you pass in `V2TimSDKListener` ([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimSDKListener.html)) when calling `initSDK` to add the SDK event listener and perform logic processing in the callback.
 
 `V2TimSDKListener` callbacks are as follows:
 
-| Event Callback | Description | Recommended Operation |
-|---------|---------|---------|
-| onConnecting | The SDK is connecting to the CVM instance. | Display the "connecting" status on the UI.                                  |
-| onConnectSuccess | The SDK is successfully connected to the CVM instance. | -                                                                   |
-| onConnectFailed | The SDK failed to connect to the CVM instance. | Notify the user that the network connection is currently unavailable.                                         |
-| onKickedOffline | The current user is kicked offline. | Display the "You are already logged in on another device. Are you sure you want to log in again?" message on the UI. |
-| onUserSigExpired | The login ticket expired. | Log in with a new `UserSig`. |
-| onSelfInfoUpdated | The current user's profile is updated. | Update the profile photo and nickname on the UI. |
+| Event Callback    | Description                                            | Recommended Operation                                                                                                |
+| ----------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| onConnecting      | The SDK is connecting to the CVM instance.             | Display the "connecting" status on the UI.                                                                           |
+| onConnectSuccess  | The SDK is successfully connected to the CVM instance. | -                                                                                                                    |
+| onConnectFailed   | The SDK failed to connect to the CVM instance.         | Notify the user that the network connection is currently unavailable.                                                |
+| onKickedOffline   | The current user is kicked offline.                    | Display the "You are already logged in on another device. Are you sure you want to log in again?" message on the UI. |
+| onUserSigExpired  | The login ticket expired.                              | Log in with a new `UserSig`.                                                                                         |
+| onSelfInfoUpdated | The current user's profile is updated.                 | Update the profile photo and nickname on the UI.                                                                     |
 
 >! If you receive the `onUserSigExpired` callback, the `UserSig` that you use for login has expired. In this case, you need to use a new `UserSig` to log in again. If you continue to use the expired `UserSig`, the IM SDK will be in an infinite login loop.
 
@@ -70,7 +70,7 @@ We recommend you pass in `V2TimSDKListener` ([Dart](https://pub.dev/documentatio
 
 
 ### Calling the initialization API
-After performing the above steps, you can call `initSDK` ([Dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/initSDK.html)) to initialize the SDK.
+After performing the above steps, you can call `initSDK` ([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/initSDK.html)) to initialize the SDK.
 
 Sample code:
 
@@ -99,7 +99,7 @@ TencentImSDKPlugin.v2TIMManager.initSDK(
 Generally, if your application's lifecycle is the same as the IM SDK's lifecycle, you don't need to uninitialize the IM SDK before exiting the application.
 However, you can uninitialize the IM SDK in special cases, for example, only after you enter a specific UI and no longer use it after exiting the UI.
 
-You can perform the uninitialization by calling the uninitialization API `unInitSDK` ([Dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/unInitSDK.html)).
+You can perform the uninitialization by calling the uninitialization API `unInitSDK` ([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/unInitSDK.html)).
 
 Sample code:
 

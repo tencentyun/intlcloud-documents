@@ -6,9 +6,9 @@ You can implement the feature of merging and forwarding messages in the followin
 
 The title and digest are needed to display the merged message, as shown below:
 
-| Merge and Forward | Display of Merged Message | Click Merged Message to Download Message List for Display |
-|---------|---------|---------|
-|<img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "300"/>|
+| Merge and Forward                                                                                       | Display of Merged Message                                                                               | Click Merged Message to Download Message List for Display                                              |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "300"/> |
 
 
 ## Merging and Forwarding Messages
@@ -19,12 +19,12 @@ A merged message can be created by setting the message list along with the merge
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
-| Attribute |  Description | Remarks |
-| --- |  --- | --- |
-| merge_elem_message_array | List of original messages | List of original messages to be merged and forwarded |
-| merge_elem_title | Title | Title of the merged message, such as "Chat History of xixiyah and Hello" as shown above |
-| merge_elem_abstract_array | Digest list | Digest list of the merged message as shown above. The original message digests need to be displayed for the merged message, which will be unfolded after the user clicks the cell. |
-| merge_elem_compatible_text | Compatibility text message | If the SDK on an early version does not support the merged message, the user will receive a text message with the content `merge_elem_compatible_text` by default. |
+| Attribute                  | Description                | Remarks                                                                                                                                                                            |
+| -------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| merge_elem_message_array   | List of original messages  | List of original messages to be merged and forwarded                                                                                                                               |
+| merge_elem_title           | Title                      | Title of the merged message, such as "Chat History of xixiyah and Hello" as shown above                                                                                            |
+| merge_elem_abstract_array  | Digest list                | Digest list of the merged message as shown above. The original message digests need to be displayed for the merged message, which will be unfolded after the user clicks the cell. |
+| merge_elem_compatible_text | Compatibility text message | If the SDK on an early version does not support the merged message, the user will receive a text message with the content `merge_elem_compatible_text` by default.                 |
 
 Sample code for creating and sending a merged message:
 
@@ -88,7 +88,7 @@ TencentIMSDK.AddRecvNewMsgCallback((List<Message> messages, string user_data)=>{
 #### Parsing a message
 After the listener is added, the receiver will receive the merged message `Message` in `RecvNewMsgCallback`.
 You can use the merged message element to get the `merge_elem_title` and `merge_elem_abstract_array` for UI display.
-Then, when the user clicks the merged message, you can call the `MsgDownloadMergerMessage` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgDownloadMergerMessage_com_tencent_imsdk_unity_types_Message_com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_Message___)) to download the merged message list for UI display.
+Then, when the user clicks the merged message, you can call the `MsgDownloadMergerMessage` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgDownloadMergerMessage.html)) to download the merged message list for UI display.
 
 Sample code:
 
@@ -107,7 +107,7 @@ if(elem.TIMElemType == TIMElemType.kTIMElem_Merge){
 
 
 ## Forwarding Messages One by One
-To forward a single message, create a message identical to the original message first, and then call the `MsgSendMessage` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessage_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_System_Text_StringBuilder_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_Message__)) to send the message.
+To forward a single message, create a message identical to the original message first, and then call the `MsgSendMessage` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) to send the message.
 
 
 

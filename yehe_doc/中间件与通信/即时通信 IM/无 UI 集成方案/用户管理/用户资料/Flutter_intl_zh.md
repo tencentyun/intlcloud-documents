@@ -3,9 +3,9 @@
 
 
 ## 关系链事件监听器
-您可以调用 `addFriendListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addFriendListener.html)) 添加关系链事件监听器。
+您可以调用 `addFriendListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/addFriendListener.html)) 添加关系链事件监听器。
 
-当不想再接收关系链事件时，可调用 `removeFriendListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/removeFriendListener.html)) 移除关系链事件监听器。
+当不想再接收关系链事件时，可调用 `removeFriendListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/removeFriendListener.html)) 移除关系链事件监听器。
 
 > ! 只有预先设置好关系链事件监听器，才能正常接收到下文中的各种事件通知。
 
@@ -32,10 +32,10 @@ V2TimFriendshipListener frindshipListener = V2TimFriendshipListener(
 
 ## 用户资料管理
 ### 查询和修改自己的资料
-您可以调用 `getUsersInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getUsersInfo.html)) 接口查询个人资料，其中参数 `userIDList` 需填入自己的 UserID。
+您可以调用 `getUsersInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/getUsersInfo.html)) 接口查询个人资料，其中参数 `userIDList` 需填入自己的 UserID。
 
-您可以调用 `setSelfInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setSelfInfo.html)) 接口修改个人资料。
-资料修改成功后，您会收到 `onSelfInfoUpdated` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimSDKListener/V2TimSDKListener/onSelfInfoUpdated.html)) 回调。
+您可以调用 `setSelfInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/setSelfInfo.html)) 接口修改个人资料。
+资料修改成功后，您会收到 `onSelfInfoUpdated` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimSDKListener.html#onselfinfoupdated)) 回调。
 
 示例代码如下：
 
@@ -52,19 +52,19 @@ TencentImSDKPlugin.v2TIMManager.getUsersInfo(userIDList: [self.data]);
 
 
 ### 查询非好友用户资料
-您可以调用 `getUsersInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getUsersInfo.html)) 接口查询非好友资料，其中参数 `userIDList` 填入非好友的 UserID 即可。
+您可以调用 `getUsersInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/getUsersInfo.html)) 接口查询非好友资料，其中参数 `userIDList` 填入非好友的 UserID 即可。
 
 > ? 不能修改非好友的资料。
 
 ### 查询和修改好友资料
-您可以调用 `getFriendsInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getFriendsInfo.html)) 接口查询指定的好友资料，从回调信息中通过 `V2TIMFriendInfoResult` 的 `relation` 字段可以得到该用户与自己的关系：
+您可以调用 `getFriendsInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/getFriendsInfo.html)) 接口查询指定的好友资料，从回调信息中通过 `V2TIMFriendInfoResult` 的 `relation` 字段可以得到该用户与自己的关系：
 
-| relation | 与自己的关系 |
-| --- | --- |
-| `V2TIM_FRIEND_RELATION_TYPE_NONE` | 表示不是好友。|
-| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY` | 表示互为好友。|
-| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST` | 表示对方在我的好友列表中。|
-| `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | 表示我在对方的好友列表中。|
+| relation                                          | 与自己的关系               |
+| ------------------------------------------------- | -------------------------- |
+| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | 表示不是好友。             |
+| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | 表示互为好友。             |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | 表示对方在我的好友列表中。 |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | 表示我在对方的好友列表中。 |
 
 
 
@@ -74,7 +74,7 @@ V2TimValueCallback<List<V2TimFriendInfoResult>> friendsInfo = await friendshipMa
 ```
 
 
-您可以调用 `setFriendInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setFriendInfo.html)) 接口修改好友备注等资料。
+您可以调用 `setFriendInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/setFriendInfo.html)) 接口修改好友备注等资料。
 
 
 

@@ -122,7 +122,7 @@
  [createGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/createGroup.html) （简单创建群组自3.6.0开始弃用，请使用 groupManager 下的高级创建群组）。
 
 #### 高级版接口
-如果您想在创建群组的同时初始化群的信息，例如群简介、群头像、以及最初的几个群成员等，可以调用 `V2TIMGroupManager` 管理类中的 [createGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/createGroup.html) 接口实现，其中 `V2TIMGroupManager` 管理类可以通过 `TencentImSDKPlugin.v2TIMManager.getGroupManager()` 获取。
+如果您想在创建群组的同时初始化群的信息，例如群简介、群头像、以及最初的几个群成员等，可以调用 `V2TIMGroupManager` 管理类中的 [createGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createGroup.html) 接口实现，其中 `V2TIMGroupManager` 管理类可以通过 `TencentImSDKPlugin.v2TIMManager.getGroupManager()` 获取。
 
 
 ```dart
@@ -154,22 +154,22 @@
 ### 加入群组
 不同类型的群，加群的方法不同，下面根据加群流程从简单到复杂进行逐一介绍：
 
-| 类型         | 好友工作群（Work）| 陌生人社交群（Public）| 临时会议群（Meeting）| 社群（Community）|直播群（AVChatRoom）|
-|---------|---------|---------|---------|---------|---------|
-| 加群方法 | 必须由其他群成员邀请 | 用户申请，群主或管理员审批 | 用户可随意加入 |用户可随意加入 | 用户可随意加入 |
+| 类型     | 好友工作群（Work）   | 陌生人社交群（Public）     | 临时会议群（Meeting） | 社群（Community） | 直播群（AVChatRoom） |
+| -------- | -------------------- | -------------------------- | --------------------- | ----------------- | -------------------- |
+| 加群方法 | 必须由其他群成员邀请 | 用户申请，群主或管理员审批 | 用户可随意加入        | 用户可随意加入    | 用户可随意加入       |
 
 #### 场景一：用户可以自由进出群
 临时会议群（Meeting）和直播群（AVChatRoom）主要用于满足成员进进出出的交互场景，例如在线会议，秀场直播等。因此，这两种类型群的入群流程最为简单。
 
-用户调用 [joinGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/joinGroup.html) 即可加入该群，加群成功后，全体群成员（包括加群者）都会收到 [onMemberEnter](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberEnter.html) 回调。 
+用户调用 [joinGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html) 即可加入该群，加群成功后，全体群成员（包括加群者）都会收到 [onMemberEnter](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberEnterCallback.html) 回调。 
 
 #### 场景二：需被邀请才能进入群
 好友工作群（Work）类似微信群和企业微信群，适用于工作交流，在交互设计上限制用户主动加入，只能由现有的群成员邀请才能加群。
 
-现有的群成员调用 [inviteUserToGroup](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/inviteUserToGroup.html) 邀请另一个用户入群，全体群成员（包括邀请者自己）会收到 [onMemberInvited](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberInvited.html) 回调。
+现有的群成员调用 [inviteUserToGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/inviteUserToGroup.html) 邀请另一个用户入群，全体群成员（包括邀请者自己）会收到 [onMemberInvited](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberInvitedCallback.html) 回调。
 
 #### 场景三：需要审批才能进入群
-陌生人社交群（Public）类似 QQ 中的各种兴趣群和部落区，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。陌生人社交群默认需要群主或管理员进行审批才能加群的，但群主或管理员也可以通过 [setGroupInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/setSelfInfo.html) 接口调整加群选项（`GroupAddOptType`），可以设置为更严格的“禁止任何人加群”，也可以设置为更宽松的“放开审批流程”。
+陌生人社交群（Public）类似 QQ 中的各种兴趣群和部落区，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。陌生人社交群默认需要群主或管理员进行审批才能加群的，但群主或管理员也可以通过 [setGroupInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html) 接口调整加群选项（`GroupAddOptType`），可以设置为更严格的“禁止任何人加群”，也可以设置为更宽松的“放开审批流程”。
 - GroupAddOptTypeEnum.V2TIM_GROUP_ADD_FORBID ：禁止任何人加群。
 - GroupAddOptTypeEnum.V2TIM_GROUP_ADD_AUTH ：需要群主或管理员审批才能加入（默认值）。
 - GroupAddOptTypeEnum.V2TIM_GROUP_ADD_ANY ：取消审批流程，任何用户都可以加入。
@@ -178,22 +178,22 @@
 ![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 1. **申请者提出加群申请**
-申请者调用 [joinGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/joinGroup.html) 申请加群。
+申请者调用 [joinGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html) 申请加群。
 2. **群主或管理员处理加群申请**
-群主或管理员在收到加群申请的回调 [onReceiveJoinApplication](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onReceiveJoinApplication.html) 后调用接口 [getGroupApplicationList](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/getGroupApplicationList.html) 获取加群申请列表，然后通过 [acceptGroupApplication](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/acceptGroupApplication.html) 或者 [refuseGroupApplication](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/refuseGroupApplication.html) 来同意或者拒绝某一条加群请求。
+群主或管理员在收到加群申请的回调 [onReceiveJoinApplication](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnReceiveJoinApplicationCallback.html) 后调用接口 [getGroupApplicationList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupApplicationList.html) 获取加群申请列表，然后通过 [acceptGroupApplication](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/acceptGroupApplication.html) 或者 [refuseGroupApplication](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/refuseGroupApplication.html) 来同意或者拒绝某一条加群请求。
 3. **申请者收到处理结果**
- 请求加群被同意或者拒绝后，请求者会收到  [V2TimGroupListener](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener-class.html) 中的 [onApplicationProcessed](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onApplicationProcessed.html) 回调，其中 `isAgreeJoin` 为 `true` 表示同意加群，反之被拒绝。同意加群后，全员（包括请求者）收到 [onMemberEnter](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberEnter.html) 回调。
+ 请求加群被同意或者拒绝后，请求者会收到  [V2TimGroupListener](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimGroupListener.html) 中的 [onApplicationProcessed](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnApplicationProcessedCallback.html) 回调，其中 `isAgreeJoin` 为 `true` 表示同意加群，反之被拒绝。同意加群后，全员（包括请求者）收到 [onMemberEnter](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberEnterCallback.html) 回调。
 
 
 
 [](id:quit)
 ### 退出群组
-调用 [quitGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/quitGroup.html) 可以退出群组，退群者会收到 [onQuitFromGroup](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onQuitFromGroup.html) 回调，群其他成员会收到 [onMemberLeave](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberLeave.html) 回调。
+调用 [quitGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/quitGroup.html) 可以退出群组，退群者会收到 [onQuitFromGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnQuitFromGroupCallback.html) 回调，群其他成员会收到 [onMemberLeave](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberLeaveCallback.html) 回调。
 >?对于陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom），群主不可以退群的，群主只能 [解散群组](#dismiss)。
 
 [](id:dismiss)
 ### 解散群组
-调用 [dismissGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/dismissGroup.html) 可以解散群组，全员会收到  [onGroupDismissed](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupDismissed.html) 回调。
+调用 [dismissGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/dismissGroup.html) 可以解散群组，全员会收到  [onGroupDismissed](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupDismissedCallback.html) 回调。
 
 >?
 >- 对于陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom），群主随时可以解散群。
@@ -201,14 +201,14 @@
 
 
 ### 获取已加入的群组
-调用 [getJoinedGroupList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getJoinedGroupList.html) 可以获取已加入的好友工作群（Work）、陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）列表，但直播群（AVChatRoom）不包含在此列表中。
+调用 [getJoinedGroupList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedGroupList.html) 可以获取已加入的好友工作群（Work）、陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）列表，但直播群（AVChatRoom）不包含在此列表中。
 
 ## 群资料和群设置
 ### 获取群资料
-调用 [getGroupsInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getJoinedGroupList.html) 可以获取群资料，该接口支持批量获取。您可以一次传入多个 `groupID` 获取多个群的群资料。
+调用 [getGroupsInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedGroupList.html) 可以获取群资料，该接口支持批量获取。您可以一次传入多个 `groupID` 获取多个群的群资料。
 
 ### 修改群资料
-调用 [setGroupInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/setGroupInfo.html) 可以修改群资料。群资料被修改后，全员会收到 [onGroupInfoChanged](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupInfoChanged.html) 回调。
+调用 [setGroupInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html) 可以修改群资料。群资料被修改后，全员会收到 [onGroupInfoChanged](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupInfoChangedCallback.html) 回调。
 >?
 > - 好友工作群（Work）所有群成员都可以修改群基础资料。
 > - 陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）只有群主或管理员可以修改群基础资料。
@@ -235,7 +235,7 @@
 ```
 
 ### 设置群消息的接收选项
-任何群成员都可以调用 [setGroupReceiveMessageOpt](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/setGroupReceiveMessageOpt.html) 接口修改群消息接收选项。群消息接收选项包括：
+任何群成员都可以调用 [setGroupReceiveMessageOpt](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/setGroupReceiveMessageOpt.html) 接口修改群消息接收选项。群消息接收选项包括：
 - ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE：在线正常接收消息，离线时会有厂商的离线推送通知。
 - ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE：不会接收到群消息。
 - ReceiveMsgOptEnum.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE：在线正常接收消息，离线不会有推送通知。
@@ -246,7 +246,7 @@
 - **接收群内消息但不提醒，在会话列表界面显示小圆点，而不显示未读数**
 >?此方式需使用未读计数功能，因此仅适用于好友工作群（Work）和陌生人社交群（Public）。
 >
-群消息接收选项设置为 `ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE`，当群内收到新消息，会话列表需要更新时，可以通过会话中的  [unreadCount](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_conversation/V2TimConversation/unreadCount.html) 获取到消息未读数。根据 [recvOpt](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_info/V2TimGroupInfo/recvOpt.html) 判断获取到的群消息接收选项为 `ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE` 时显示小红点而非消息未读数。
+群消息接收选项设置为 `ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE`，当群内收到新消息，会话列表需要更新时，可以通过会话中的  [unreadCount](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#unreadcount) 获取到消息未读数。根据 [recvOpt](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#recvopt) 判断获取到的群消息接收选项为 `ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE` 时显示小红点而非消息未读数。
 
 ## 群属性（群自定义字段）
 我们设计了全新的群自定义字段，我们称之为 "群属性"，其特性如下：
@@ -259,35 +259,35 @@
 基于群属性，我们可以做语聊房的麦位管理，当有人上麦的时候，可以设置一个群属性管理上麦人信息，当有人下麦的时候，可以删除对应群属性，其他成员可以通过获取群属性列表来展示麦位列表。
 
 ### 初始化群属性
-调用 [initGroupAttributes](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/initGroupAttributes.html) 接口可以初始化群属性，如果该群之前有群属性，会先清空原来的群属性。
+调用 [initGroupAttributes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/initGroupAttributes.html) 接口可以初始化群属性，如果该群之前有群属性，会先清空原来的群属性。
 
 ### 设置群属性
 
-调用 [setGroupAttributes](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/setGroupAttributes.html) 接口可以设置群属性，如果设置的群属性不存在，会自动添加该群属性。
+调用 [setGroupAttributes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupAttributes.html) 接口可以设置群属性，如果设置的群属性不存在，会自动添加该群属性。
 
 ### 删除群属性
-调用 [deleteGroupAttributes](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/deleteGroupAttributes.html) 接口可以删除指定群属性，如果 `keys` 字段填 `null` ，则会清空所有的群属性。
+调用 [deleteGroupAttributes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/deleteGroupAttributes.html) 接口可以删除指定群属性，如果 `keys` 字段填 `null` ，则会清空所有的群属性。
 
 ### 获取群属性
-调用 [getGroupAttributes](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupAttributes.html) 接口可以获取指定群属性，如果 `keys` 字段填 `null` ，则会获取所有的群属性。
+调用 [getGroupAttributes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupAttributes.html) 接口可以获取指定群属性，如果 `keys` 字段填 `null` ，则会获取所有的群属性。
 
 ### 群属性更新
-群属性有任何的更新变化，都会通过 [onGroupAttributeChanged](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupAttributeChanged.html) 回调出来所有的群属性字段。
+群属性有任何的更新变化，都会通过 [onGroupAttributeChanged](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupAttributeChangedCallback.html) 回调出来所有的群属性字段。
 
 ##  群成员管理
 ### 获取群成员列表
-调用 [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) 可以获取某个群的群成员列表，该列表中包含了各个群成员的资料信息，例如用户ID（`userID`）、群名片（`nameCard`）、头像（`faceUrl`）、昵称（`nickName`）、进群时间（`joinTime`）等信息。
+调用 [getGroupMemberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) 可以获取某个群的群成员列表，该列表中包含了各个群成员的资料信息，例如用户ID（`userID`）、群名片（`nameCard`）、头像（`faceUrl`）、昵称（`nickName`）、进群时间（`joinTime`）等信息。
 一个群中的成员人数可能很多（例如5000+），群成员列表的拉取接口支持过滤器（`filter`）和分页拉取（`nextSeq`）两个高级特性。
 
 #### 过滤器（filter）
-在调用  [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) 接口时，您可以指定 `filter` 确定是否仅拉取特定角色的信息列表。
+在调用  [getGroupMemberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) 接口时，您可以指定 `filter` 确定是否仅拉取特定角色的信息列表。
 
-| 过滤器 | 过滤类型 |
-|---------|---------|
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ALL | 拉取所有群成员的信息列表 |
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_OWNER | 仅拉取群主的信息列表|
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ADMIN | 仅拉取群管理员的信息列表|
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_COMMON | 仅拉取普通群成员的信息列表|
+| 过滤器                                                     | 过滤类型                   |
+| ---------------------------------------------------------- | -------------------------- |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ALL    | 拉取所有群成员的信息列表   |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_OWNER  | 仅拉取群主的信息列表       |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ADMIN  | 仅拉取群管理员的信息列表   |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_COMMON | 仅拉取普通群成员的信息列表 |
 
 ```dart
 //示例代码：通过 filter 参数指定只拉取群主的资料
@@ -303,9 +303,9 @@
 #### 分页拉取（nextSeq）
 很多情况下，用户界面上并不需要展示全部的群成员信息，只需展示群成员列表的第一页即可，等用户单击**下一页**或在列表页下拉刷新时，才需要拉取更多的群成员。针对此类场景，您可以使用分页拉取。
 
-在调用 [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) 接口时，一次最多返回50个成员，您可以通过 `nextSeq` 参数分页拉取成员列表，`nextSeq`参数为分页拉取标志，第一次拉取时请填0。当首次拉取群成员信息成功后，`getGroupMemberList` 的回调结果 [V2TIMGroupMemberInfoResult](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult-class.html) 中会包含 [nextSeq](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult/nextSeq.html) 接口。
-- 如果 [nextSeq](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult/nextSeq.html) 返回0，表示已经拉取全部的群成员列表。
-- 如果 [nextSeq](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult/nextSeq.html)  返回 >0 的数值，表示还有更多的群成员信息可以拉取。您可以根据用户在 UI 上的操作，选择是否进行第二次接口调用以拉取更多的群成员信息。当您进行第二次拉取时，需要将上一次拉取返回的 `V2TIMGroupMemberInfoResult` 中的  [nextSeq](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult-class.html)  作为参数，传入  [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) 接口。
+在调用 [getGroupMemberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) 接口时，一次最多返回50个成员，您可以通过 `nextSeq` 参数分页拉取成员列表，`nextSeq`参数为分页拉取标志，第一次拉取时请填0。当首次拉取群成员信息成功后，`getGroupMemberList` 的回调结果 [V2TIMGroupMemberInfoResult](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html) 中会包含 [nextSeq](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html#nextseq) 接口。
+- 如果 [nextSeq](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html#nextseq) 返回0，表示已经拉取全部的群成员列表。
+- 如果 [nextSeq](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html#nextseq)  返回 >0 的数值，表示还有更多的群成员信息可以拉取。您可以根据用户在 UI 上的操作，选择是否进行第二次接口调用以拉取更多的群成员信息。当您进行第二次拉取时，需要将上一次拉取返回的 `V2TIMGroupMemberInfoResult` 中的  [nextSeq](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html)  作为参数，传入  [getGroupMemberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) 接口。
 
 ```dart
 //示例代码：通过 nextSeq 参数进行分页拉取
@@ -331,31 +331,31 @@
 
 
 ### 获取群成员资料
-调用 [getGroupMembersInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMembersInfo.html) 可以获取群成员资料，该接口支持批量获取，您可以一次传入多个 `userID` 获取多个群成员的资料，从而提升网络传输效率。
+调用 [getGroupMembersInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMembersInfo.html) 可以获取群成员资料，该接口支持批量获取，您可以一次传入多个 `userID` 获取多个群成员的资料，从而提升网络传输效率。
 
 ### 修改群成员资料
-群主或管理员可以调用 [setGroupMemberInfo](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/setGroupMemberInfo.html) 接口修改群成员的群名片（`nameCard`）、 群成员角色（`role`）、禁言时间（`muteUntil`）以及自定义字段等与群成员相关的资料。
+群主或管理员可以调用 [setGroupMemberInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberInfo.html) 接口修改群成员的群名片（`nameCard`）、 群成员角色（`role`）、禁言时间（`muteUntil`）以及自定义字段等与群成员相关的资料。
 
 [](id:mute)
 ### 禁言
-群主或管理员可以通过 [muteGroupMember](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/muteGroupMember.html) 禁言某一个群成员并设置禁言时间，禁言时间单位为秒，禁言信息存储于群成员的 [muteUtil](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_full_info/V2TimGroupMemberFullInfo/muteUntil.html) 属性字段中。群成员被禁言后，全员（包括被禁言的群成员）都会收到 [onMemberInfoChanged](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberInfoChanged.html) 事件回调。
-群主或管理员也可以通过 [setGroupInfo](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/setGroupInfo.html) 接口对整个群进行禁言，将 [isAllMuted](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_info/V2TimGroupInfo/isAllMuted.html) 属性字段设置为 `true` 即可。全群禁言没有时间限制，需通过将群资料 `setAllMuted(false)` 解除禁言。
+群主或管理员可以通过 [muteGroupMember](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html) 禁言某一个群成员并设置禁言时间，禁言时间单位为秒，禁言信息存储于群成员的 [muteUtil](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberFullInfo.html#muteuntil) 属性字段中。群成员被禁言后，全员（包括被禁言的群成员）都会收到 [onMemberInfoChanged](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberInfoChangedCallback.html) 事件回调。
+群主或管理员也可以通过 [setGroupInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html) 接口对整个群进行禁言，将 [isAllMuted](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#isallmuted) 属性字段设置为 `true` 即可。全群禁言没有时间限制，需通过将群资料 `setAllMuted(false)` 解除禁言。
 
 
 [](id:kick)
 ### 踢人
-群主或管理员调用 [kickGroupMember](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/kickGroupMember.html) 接口可以实现踢人。由于直播群（AVChatRoom）对进群没有限制，因此直播群（AVChatRoom）没有支持踢人的接口，您可以使用 [muteGroupMember](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/muteGroupMember.html) 达到同样的目的。
-成员被踢后，全员（包括被踢人）会收到 [onMemberKicked](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberKicked.html) 回调。
+群主或管理员调用 [kickGroupMember](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/kickGroupMember.html) 接口可以实现踢人。由于直播群（AVChatRoom）对进群没有限制，因此直播群（AVChatRoom）没有支持踢人的接口，您可以使用 [muteGroupMember](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html) 达到同样的目的。
+成员被踢后，全员（包括被踢人）会收到 [onMemberKicked](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberKickedCallback.html) 回调。
 
 ### 切换群成员角色
-群主调用 [setGroupMemberRole](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/setGroupMemberRole.html) 可以对陌生人社交群（Public）或临时会议群（Meeting）中的群成员进行角色切换，可切换角色包括普通成员、管理员。
-- 被设置为管理员后，全员（包括被设置的成员）会收到 [onGrantAdministrator](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGrantAdministrator.html)  回调。
-- 被取消管理员后，全员（包括被设置的成员）会收到 [onRevokeAdministrator](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onRevokeAdministrator.html) 回调。
+群主调用 [setGroupMemberRole](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberRole.html) 可以对陌生人社交群（Public）或临时会议群（Meeting）中的群成员进行角色切换，可切换角色包括普通成员、管理员。
+- 被设置为管理员后，全员（包括被设置的成员）会收到 [onGrantAdministrator](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGrantAdministratorCallback.html)  回调。
+- 被取消管理员后，全员（包括被设置的成员）会收到 [onRevokeAdministrator](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRevokeAdministratorCallback.html) 回调。
 
 [](id:transfer)
 ### 转让群主
-群主可以调用 [transferGroupOwner](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/transferGroupOwner.html) 把群主转让给其他群成员。
-群主转让后，全员会收到 [onGroupInfoChanged](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupInfoChanged.html) 回调，其中 `V2TIMGroupChangeInfo` 的 type 为 `GroupChangeInfoType.V2TIM_GROUP_INFO_CHANGE_TYPE_OWNER`，value 值为新群主的 UserID。
+群主可以调用 [transferGroupOwner](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/transferGroupOwner.html) 把群主转让给其他群成员。
+群主转让后，全员会收到 [onGroupInfoChanged](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupInfoChangedCallback.html) 回调，其中 `V2TIMGroupChangeInfo` 的 type 为 `GroupChangeInfoType.V2TIM_GROUP_INFO_CHANGE_TYPE_OWNER`，value 值为新群主的 UserID。
 
 ## 常见问题
 

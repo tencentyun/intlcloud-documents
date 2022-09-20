@@ -4,15 +4,15 @@ Flutter TUIKit 是基于 Flutter IM SDK 实现的一套 UI 组件，其中包含
 
 目前包含的组件如下：
 
-- [TIMUIKitCore](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitcore) 核心
-- [TIMUIKitConversation](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitconversation) 会话
-- [TIMUIKitChat](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitchat) 聊天
-- [TIMUIKitContact](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitcontact) 联系人
-- [TIMUIKitProfile](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitprofile) 好友管理
-- [TIMUIKitGroupProfile](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitgroupprofile) 群管理
-- [TIMUIKitGroup](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitgroup) 我的群聊
-- [TIMUIKitBlackList](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitblacklist) 黑名单
-- [TIMUIKitNewContact](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitnewcontact) 新的联系人
+- [TIMUIKitCore](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitCore/readme.html) 核心
+- [TIMUIKitConversation](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitConversation/TIMUIKitConversation-Implementation.html) 会话
+- [TIMUIKitChat](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitChat/TIMUIKitChat-Implementation.html) 聊天
+- [TIMUIKitContact](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitContact/TIMUIKitContact-Implementation.html) 联系人
+- [TIMUIKitProfile](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitProfile/TIMUIKitProfile-Implementation.html) 好友管理
+- [TIMUIKitGroupProfile](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitGroupProfile/TIMUIKitGroupProfile-Implementation.html) 群管理
+- [TIMUIKitGroup](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitGroup/TIMUIKitGroup-Implementation.html) 我的群聊
+- [TIMUIKitBlackList](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitBlackList/TIMUIKitBlackList-Implementation.html) 黑名单
+- [TIMUIKitNewContact](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitNewContact/TIMUIKitNewContact-Implementation.html) 新的联系人
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/8a59b20de79c7dc670f64ff0a6de8ecc.png)
 上图项目源码：[im-flutter-uikit](https://github.com/tencentyun/TIMSDK/tree/master/Flutter/Demo/im-flutter-uikit)，项目已开源，您可直接使用。

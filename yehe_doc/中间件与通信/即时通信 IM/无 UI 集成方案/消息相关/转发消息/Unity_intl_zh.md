@@ -6,9 +6,9 @@
 
 合并消息的展示还需要标题和摘要信息，如下图所示：
 
-| 合并转发 | 合并消息展示 | 点击合并消息下载合并消息列表展示 |
-|---------|---------|---------|
-|<img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "300"/>|
+| 合并转发                                                                                                | 合并消息展示                                                                                            | 点击合并消息下载合并消息列表展示                                                                       |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "300"/> |
 
 
 ## 合并转发消息
@@ -19,12 +19,12 @@
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.pngg" width = "450" />
 
-| 属性 |  含义 | 说明 |
-| --- |  --- | --- |
-| merge_elem_message_array | 原始消息列表 | 合并转发的原始消息列表 |
-| merge_elem_title | 标题 | 合并消息的标题，如上图所示 “xixiyah 和 Hello 的聊天记录” |
-| merge_elem_abstract_array | 摘要列表 | 合并消息的摘要信息，如上图所示，合并消息需要预先展示原始消息的摘要信息，当用户点击 Cell 后才去展示完整消息内容|
-| merge_elem_compatible_text | 兼容文本信息 | 低版本 SDK 如果不支持合并消息，默认会收到一条文本消息，文本消息的内容为 merge_elem_compatible_text |
+| 属性                       | 含义         | 说明                                                                                                           |
+| -------------------------- | ------------ | -------------------------------------------------------------------------------------------------------------- |
+| merge_elem_message_array   | 原始消息列表 | 合并转发的原始消息列表                                                                                         |
+| merge_elem_title           | 标题         | 合并消息的标题，如上图所示 “xixiyah 和 Hello 的聊天记录”                                                       |
+| merge_elem_abstract_array  | 摘要列表     | 合并消息的摘要信息，如上图所示，合并消息需要预先展示原始消息的摘要信息，当用户点击 Cell 后才去展示完整消息内容 |
+| merge_elem_compatible_text | 兼容文本信息 | 低版本 SDK 如果不支持合并消息，默认会收到一条文本消息，文本消息的内容为 merge_elem_compatible_text             |
 
 创建并发送合并消息示例代码如下：
 
@@ -88,7 +88,7 @@ TencentIMSDK.AddRecvNewMsgCallback((List<Message> messages, string user_data)=>{
 #### 解析消息
 添加监听器后，接收方会在 `RecvNewMsgCallback` 中收到合并消息 `Message`。
 可以先通过合并消息元素获取 `merge_elem_title` 和  `merge_elem_abstract_array`  UI 展示。
-当用户点击合并消息的时候再调用 `MsgDownloadMergerMessage`([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgDownloadMergerMessage_com_tencent_imsdk_unity_types_Message_com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_Message___)) 接口下载合并消息列表 UI 展示。
+当用户点击合并消息的时候再调用 `MsgDownloadMergerMessage`([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgDownloadMergerMessage.html)) 接口下载合并消息列表 UI 展示。
 
 示例代码如下：
 
@@ -107,7 +107,7 @@ if(elem.TIMElemType == TIMElemType.kTIMElem_Merge){
 
 
 ## 逐条转发消息
-如果您需要转发单条消息，可以先创建一条和原消息内容完全一样的转发消息，再调用 `MsgSendMessage` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessage_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_System_Text_StringBuilder_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_Message__)) 接口把转发消息发送出去。
+如果您需要转发单条消息，可以先创建一条和原消息内容完全一样的转发消息，再调用 `MsgSendMessage` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) 接口把转发消息发送出去。
 
 
 

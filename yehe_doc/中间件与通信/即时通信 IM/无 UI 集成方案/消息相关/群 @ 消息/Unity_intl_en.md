@@ -6,8 +6,8 @@ In the group chat list of the receiver's conversation UI, the identifier `"someo
 
 ## Feature Demonstration
 
-| Listening for the @ character for group member selection | Editing and sending the group @ message | Receiving the group @ message |
-|---------|---------|---------|
+| Listening for the @ character for group member selection                 | Editing and sending the group @ message                                  | Receiving the group @ message                                            |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
 | ![](https://main.qcloudimg.com/raw/870063a7d732d5df29971609b39d4796.png) | ![](https://main.qcloudimg.com/raw/f4ace5e8b7d697be14c18c8b08de0b36.png) | ![](https://main.qcloudimg.com/raw/0291a12d3ce8edfb880dab2e4b9541c8.png) |
 
 Figure 1: When the @ character is detected in the input box on the chat UI, the user is redirected to the group member selection UI to select the target group members.
@@ -17,7 +17,7 @@ Figure 3: If a user is mentioned, the user receives the conversation update, and
 ## Sending a Group @ Message
 
 1. The sender listens for the text input box on the chat UI and launches the group member selection UI. After group members are selected, the ID and nickname information of the members is called back. The ID is used to create the `Message` object, while the nickname is to be displayed in the text box.
-2. The sender calls the `MsgSendMessage` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessage_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_System_Text_StringBuilder_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_Message__)) to create a text @ message, create the `Message` message object, specify the target group members, and send the message object.
+2. The sender calls the `MsgSendMessage` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) to create a text @ message, create the `Message` message object, specify the target group members, and send the message object.
 
 Sample code:
 
@@ -45,8 +45,8 @@ TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_Group,
 
 ## Receiving a Group @ Message
 
-1. When the conversation is loaded and updated, call the `conv_group_at_info_array` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.ConvInfo.html#com_tencent_imsdk_unity_types_ConvInfo_conv_group_at_info_array)) of `ConvInfo` to get the @ data list of the conversation.
-2. Call the `conv_group_at_info_at_type` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.GroupAtInfo.html#com_tencent_imsdk_unity_types_GroupAtInfo_conv_group_at_info_at_type)) of the `GroupAtInfo` object in the list to get the @ data type and update it to the @ information of the conversation.
+1. When the conversation is loaded and updated, call the `conv_group_at_info_array` API ([c#](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convgroupatinfoarray)) of `ConvInfo` to get the @ data list of the conversation.
+2. Call the `conv_group_at_info_at_type` API ([c#](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupAtInfo.html)) of the `GroupAtInfo` object in the list to get the @ data type and update it to the @ information of the conversation.
 
 Sample code:
 

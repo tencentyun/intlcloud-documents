@@ -4,7 +4,7 @@ To group friends into categories such as "Classmates at university" and "Coworke
 ## Friend List
 
 ### Creating a friend list
-Call the `createFriendGroup` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/createFriendGroup.html)) to create a friend list.
+Call the `createFriendGroup` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/createFriendGroup.html)) to create a friend list.
 
 Sample code:
 
@@ -16,7 +16,7 @@ V2TimValueCallback<List<V2TimFriendOperationResult>> friendgroups = await friend
 
 
 ### Deleting a friend list
-Call the `deleteFriendGroup` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/deleteFriendGroup.html)) to delete a friend list.
+Call the `deleteFriendGroup` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/deleteFriendGroup.html)) to delete a friend list.
 
 Sample code:
 
@@ -28,7 +28,7 @@ V2TimCallback deleteFriendsgroup = await friendshipManager.deleteFriendGroup(gro
 
 
 ### Renaming a friend list
-Call the `renameFriendGroup` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/renameFriendGroup.html)) to rename a friend list.
+Call the `renameFriendGroup` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/renameFriendGroup.html)) to rename a friend list.
 
 Sample code:
 
@@ -40,7 +40,7 @@ V2TimCallback rename = await friendshipManager.renameFriendGroup(newName: "New f
 
 
 ### Getting a friend list
-Call the `getFriendGroupList` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getFriendGroups.html)) to get a friend list.
+Call the `getFriendGroups` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/getFriendGroups.html)) to get a friend list.
 
 Sample code:
 
@@ -52,7 +52,7 @@ V2TimValueCallback<List<V2TimFriendGroup>> friendGrous = await friendshipManager
 
 
 ### Adding a friend to a list
-Call the `addFriendsToFriendGroup` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addFriendsToFriendGroup.html)) to add a friend to a list.
+Call the `addFriendsToFriendGroup` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/addFriendsToFriendGroup.html)) to add a friend to a list.
 
 Sample code:
 
@@ -64,7 +64,7 @@ V2TimValueCallback<List<V2TimFriendOperationResult>> addToFrindgroups = await fr
 
 
 ### Removing a friend from a list
-Call `deleteFriendsFromFriendGroup` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/deleteFriendsFromFriendGroup.html)) to remove a friend from a list.
+Call `deleteFriendsFromFriendGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/deleteFriendsFromFriendGroup.html)) to remove a friend from a list.
 
 Sample code:
 
