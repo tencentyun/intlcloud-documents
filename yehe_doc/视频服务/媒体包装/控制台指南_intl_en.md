@@ -1,165 +1,172 @@
-## Overview
+## Overview 
 
-StreamPackage is a premium high-quality video muxing and origin-pull platform newly launched by Tencent Cloud, which provides professional, stable, and secure video muxing and delivery services for global users. It simplifies video packaging and delivery and enhances the origin resiliency, which enables video content providers to stream videos securely and stably on a large scale.
+StreamPackage is a high-quality video packaging and origin platform. It offers professional, stable, secure, and easy-to-use video packaging and delivery services globally and helps you enhance origin resilience. You can use StreamPackage to securely and reliably distribute video streams at a large scale.
 
-The StreamPackage service is managed at the channel level in the StreamPackage console. By reshaping the video content, it puts the encoded and compressed video tracks and audio tracks in the live streaming origin server in a certain format, so that video content providers can stream videos securely and stably on a large scale.
+StreamPackage manages tasks at the channel level. It packages compressed and encoded audio and video tracks into certain formats for distribution.
 
-## Console overview
+## Console Overview
 
-The StreamPackage console provides a rich set of useful features and a simple and flexible access experience. The StreamPackage service is managed at the channel level in the StreamPackage console in four modules: channel, input, endpoint, and CDN.
+The StreamPackage console provides a rich set of easy-to-use and flexible features. It manages tasks at the channel level and functions through four main sections: channel, input, endpoint, and CDN.
 
 ![img](https://main.qcloudimg.com/raw/2d70be467d74639158d0be4ea94692d2.png)
 
 ## Prerequisites
 
-- You have a domain name used for CDN playback (if you need to use Tencent Cloud LVB CDN for content distribution).
-- You have [activated the LVB service](https://console.cloud.tencent.com/live).
-- Log in to the [StreamPackage console](https://console.cloud.tencent.com/mdp/channel).
+- You have a domain for playing videos from CDNs (if you want to use Tencent Cloud’s live streaming CDN for content distribution).
+- You have activated [CSS](https://console.cloud.tencent.com/live).
+- You have logged in to the [StreamPackage console](https://console.cloud.tencent.com/mdp/channel).
+
 
 ## Directions
 
-### 1.   Select an AZ
+### 1. Select an AZ
 
-Currently, StreamPackage is available in three AZs: Mumbai (India), Bangkok (Thailand), and Seoul (Korea), which you can choose as needed. It will be available in AZs such as Tokyo (Japan) soon. If you need to use the service in other AZs, please [contact us](https://intl.cloud.tencent.com/contact-sales).
+Currently, StreamPackage services are available in Mumbai (India), Bangkok (Thailand), Seoul (South Korea), Tokyo (Japan), Frankfurt (Germany), and Singapore. If you want to deploy your business in other regions, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
-![img](https://main.qcloudimg.com/raw/d939a324316775e3ccef4c4658599b48.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/14e4406387923306e201024a529f3d2b.png)
 
-### 2.   Create a channel
+### 2. Create a channel
 
-A channel holds the basic input/output stream configurations in StreamPackage. You can create and configure a channel to input a live stream with a specified protocol, or create an origin-pull endpoint to output the live stream.
+A channel holds basic information about inputs and outputs. You can configure a channel to receive live streams that use a specific protocol. You can also create endpoints to generate content to be distributed.
 
-1. Click "Create Channel" to create a channel.
-
-2. Enter a channel name and select an input protocol (HLS and DASH supported).
+1. Click **Create Channel**.
+2. Enter a channel name and select an input protocol (HLS and DASH are supported).
 
 ![img](https://main.qcloudimg.com/raw/f545e69458ff80b55c6775219d574374.png)
 
-3. Enter the relevant parameters of the selected HLS or DASH protocol.
+3. Complete other HLS/DASH settings.
 
-- **Max Segment Duration** indicates the maximum segment duration of the ts/m4s segments of the HLS or DASH stream pushed to this channel, which is 15s by default.
-- **Max Playlist Duration** indicates the maximum total duration of the m3u8/mpd list of the HLS or DASH stream pushed to this channel, which is 600s by default and can be customized as needed.
+- **Max Segment Duration** indicates the maximum duration of HLS TS segments or DASH M4S segments pushed to this channel. The default is 15 seconds.
+- **Max Playlist Duration** indicates the maximum total duration of the HLS M3U8 or DASH MPD playlist pushed to this channel. The default is 600 seconds.
 
->? If the channel you are creating pushes primary and backup streams at the same time, in order to quickly switch to the backup stream when the primary stream is exceptional, we recommend you set this parameter to be slightly greater than the actual maximum segment duration so as to achieve better and faster switching.
+>? If you are sending two streams, one primary stream and one backup stream, to the channel for failover, we recommend you set **Max Segment Duration** slightly longer than actually needed.
 
-4. Click "Create" to complete the creation.
 
-### 3.   View a channel
+4. Click **Create**.
 
-#### View channel information
+### 3. View channel information
 
-After the channel is created, you will be redirected to the channel details page (you can also get there by clicking the channel name or "Info" on the right). This page displays the channel's name, ID (automatically generated by the backend), specified input protocol, and related configuration parameters. At the same time, two inputs are automatically generated based on the specified protocol.
+#### Viewing channel information
+
+After the channel is created, you will be directed to the channel details page (you can also go to the details page by clicking the channel name or **Info** on the right). This page displays the channel's name, ID (automatically generated), input protocol, and other settings. StreamPackage will generate two inputs of the specified protocol for the channel.
 
 ![img](https://main.qcloudimg.com/raw/d962c942d07f8303832d070c7d0d2a26.png)
 
-#### View an input
+#### Viewing inputs
 
-Input is the basic unit of channel. Based on the channel you created, the backend will automatically generate two inputs and corresponding URLs to which you can push the live stream.
+An input is the basic unit of the content StreamPackage receives. After a channel is created, StreamPackage will automatically generate two inputs as well as two input URLs for the channel. You can send streams to the URLs.
 
 ![img](https://main.qcloudimg.com/raw/9fc040a6cb575be7411327476f0fe7a1.png)
 
-The input component supports authentication. You can configure authentication for each input. Click "Authentication" in the "Operation" column of an input to open a pop-up window, and click ![img](file:///C:/Users/JACKYS~1/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg) to enable the authentication configuration. The backend will automatically generate a username and password for it and authenticate streams by using HTTP authentication. Then, click "Rotate credentials" to complete the authentication configuration.
+You can enable authentication for an input: Click **Authentication** in the **Operation** column. In the pop-up window, toggle on ![img](file:///C:/Users/JACKYS~1/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg). StreamPackage will generate a username and a password for HTTP authentication. Click **Rotate credentials** to complete the configuration.
 
 ![img](https://main.qcloudimg.com/raw/6927ebe8232a26cb341aa1b69f008e45.png)
 
->! Once you rotate credentials, the credentials of existing channels will become invalid.
+>! Once you rotate credentials, the existing credentials of the channel will become invalid.
 
-#### Create an endpoint
+#### Creating an endpoint
 
-You can create an endpoint to pull streams from an origin server.
+You can create endpoints for a channel so that streams can be pulled from the channel.
 
-1. Click "Create Endpoint".
+1. Click **Create Endpoint**.
 
 ![img](https://main.qcloudimg.com/raw/ce143b55735dee33f7e708c5ea19f89a.png)
 
-2. Enter the endpoint name and type. By default, the endpoint type is the same as the input protocol.
+2. Enter an endpoint name. The endpoint type is the same as the channel’s input type by default. If the input type is HLS, you can also select CMAF as the endpoint type. This means StreamPackage can package HLS streams into CMAF streams (DASH).
 
-3. Enable/Disable the IP blocklist/allowlist and AuthKey as needed.
+![](https://qcloudimg.tencent-cloud.cn/raw/fef800b9890ad8c7df531792d20657d7.png)  
 
-- IP blocklist/allowlist: you can allow only authorized IPs to push or reject exceptional IPs to push.
-- AuthKey: you can perform authentication by using http-header through X-TENCENT-PACKAGE.
+3. You can also enable IP allowlist/blocklist and AuthKey if necessary.
 
-![img](https://main.qcloudimg.com/raw/d6a261b21e2c020365f6aa789c95e0dd.png)
+- IP allowlist/blocklist: Allow only specific IP address ranges to push or disallow specific IP address ranges to push.
 
-4. Click "Create" to save the settings and complete the creation. You can modify or delete an endpoint and use the generated endpoint URL to pull streams from an origin server and distribute them.
+- AuthKey: Perform authentication using the HTTP header field X-TENCENT-PACKAGE.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/3255d5b26c1ad65a64102fbd6a302157.png)  
+
+
+
+4. Click **Create** and the endpoint is created. You can modify or delete the endpoint. From the endpoint URL generated, you can pull streams and distribute them.
 
 ![img](https://main.qcloudimg.com/raw/219346607e144822c43173ba1e055905.png)
 
-#### Configure CDN
+#### Configuring a CDN distribution
 
-StreamPackage supports configuring LVB CDN in channels. After the configuration is completed, you can directly distribute live streams in the channels through LVB CDN. This requires you to activate the LVB service and complete the **two-way authorization** between StreamPackage and LVB first.
+You can create a CDN distribution for a StreamPackage channel to distribute the streams in the channel via Tencent Cloud’s live streaming CDN. To achieve this, you need to activate CSS and **grant CSS access to StreamPackage and StreamPackage access to CSS**.
 
-Understand the following terms first:
+Before we proceed, make sure you understand the following terms:
 
-- LVB CDN: CDN service in Tencent Cloud LVB. StreamPackage integrates and reuses this capability, so that the live streams in your StreamPackage channels can be quickly distributed and played back through LVB CDN.
-- CDN domain name/CDN playback domain name: a playback domain name in LVB CDN used for live stream distribution.
+- LVB CDN: StreamPackage allows you to quickly distribute streams in a channel via the LVB CDN.
+- CDN domain/CDN playback domain: A playback domain in the LVB CDN, which can be used to distribute live streams.
 
-1. Activate the LVB service
 
-Before configuring CDN, please make sure that you have activated the [LVB service](https://console.cloud.tencent.com/live?from=product-banner-use-lvb).
+1. Activate CSS
 
-2. Authorize StreamPackage to access LVB
+Before you configure a CDN distribution, make sure you have activated [CSS](https://console.cloud.tencent.com/live?from=product-banner-use-lvb).
 
-Go back to the StreamPackage console, open the details page of the channel for which you need to configure CDN, select the CDN tab, and click "Authorization" below to start authorizing StreamPackage to access the LVB service.
+2. Grant StreamPackage access to CSS
 
->? After completing the authorization for StreamPackage to access LVB, StreamPackage can create a LVB playback domain name for the channel.
+In the StreamPackage console, go to the details page of the channel for which you want to configure a CDN distribution, select the **CDN** tab, and click **Authorization**.
+
+>? After the authorization, you will be able to configure a CSS playback domain for a StreamPackage channel.
 
 ![img](https://main.qcloudimg.com/raw/d0f1bc546937e0fbbb111bd6d97f2557.png)
 
-**Click "Click here" to authorize StreamPackage to use LVB CDN.** If you want to use the StreamPackage feature, you need to allow StreamPackage to access your certain resources, and it will access these authorized resources through service roles to implement the feature. Click "Authorize Now" to redirect to "Role Management", and click "Grant" to grant StreamPackage the permission to access related service APIs.
+Click **Click here**. To distribute streams via the LVB CDN, you need to allow StreamPackage to access certain resources. This is achieved via a service role. Click **Authorize Now** to go to the **Role Management** page, and click **Grant** to grant StreamPackage the permission to use related APIs.
 
-![img](https://main.qcloudimg.com/raw/c2e6a9006094003091539f31d1d4c63c.png)
-
-![img](https://main.qcloudimg.com/raw/a6476145b574ebbfe7f828dbbbfce984.png)
+![img](https://main.qcloudimg.com/raw/c2e6a9006094003091539f31d1d4c63c.png)![img](https://main.qcloudimg.com/raw/a6476145b574ebbfe7f828dbbbfce984.png)
 
 ![img](https://main.qcloudimg.com/raw/b18b2fbb7440d557ee82093d44660258.png)
 
-You will be automatically redirected back to the StreamPackage console. Click "Authorization completed" to indicate that StreamPackage has been authorized to use LVB CDN.
+You will be directed back to the StreamPackage console. Click **Authorization completed**.
 
 ![img](https://main.qcloudimg.com/raw/2e7a6e29600485b593323658cf738b7d.png)
 
-![img](https://main.qcloudimg.com/raw/3374604fff9c19ec580eb6a43af7f86e.png)
+![img](https://main.qcloudimg.com/raw/3374604fff9c19ec580eb6a43af7f86e.png) 
 
-Click "Next".
+Click **Next**.
 
-3. Authorize LVB to access StreamPackage
+3. Grant CSS access to StreamPackage
 
-**Click "Click here" to go to the CDN console and authorize LVB CDN to use StreamPackage. Then, the authorization status in the LVB console will become "Activated".**
+Click **Click here** to go to the CDN console and allow the LVB CDN to use StreamPackage. After the authorization, you will see that the authorization status for StreamPackage has become **Activated** in the CSS console.
 
 ![img](https://main.qcloudimg.com/raw/3be8efcd4c8302b15df46be54daebed4.png)
 
 ![img](https://main.qcloudimg.com/raw/c63def0152b6d95901929b7abc093d59.png)
 
-Go back to the StreamPackage console. Click “Completed”
+Return to the StreamPackage console and click **Completed**.
 
 ![img](https://main.qcloudimg.com/raw/2616575aa0b6d56323eafcfac0aec9f8.png)
 
-At this point, the system shows that LVB CDN is authorized to use StreamPackage. Click "Authorization Completed" below. **So far, you have completed the two-way authorization between StreamPackage and LVB (which means that you can quickly create a CDN playback domain name through a StreamPackage channel, and LVB can also pull streams from the channel for distribution).**
+
+Click **Authorization Completed**. **You have now granted the LVB CDN access to StreamPackage and StreamPackage access to the LVB CDN (which means you can now configure a CDN playback domain for a StreamPackage channel and the LVB CDN can pull streams from a StreamPackage channel).**
 
 ![img](https://main.qcloudimg.com/raw/5e3084a78e0ce61a0a9eabd5a61c9a90.png)
 
-4. Quickly configure a CDN playback domain name
 
-After completing the above two-way authorization, open the CDN tab and click "Edit Configuration" to quickly configure CDN.
+4. Configure a CDN playback domain
+
+After completing the authorization, under the **CDN** tab, click **Edit Configuration** to configure a CDN distribution.
 
 ![img](https://main.qcloudimg.com/raw/4d2031b1fe8c42a1a05c7b619291e1dd.png)
 
-Enter the domain name used for CDN playback and click "Confirm" to complete the configuration.
+Enter the domain you want to use for CDN playback and click **Confirm**.
 
 ![img](https://main.qcloudimg.com/raw/ee8a3bf7ab68b655bba010df76bac910.png)
 
 ![img](https://main.qcloudimg.com/raw/1fd6d414ef8fb41cee52c0a489c79395.png)
 
 >?
->- After the newly created playback domain name is added successfully, the system will automatically assign it a CNAME domain name (suffixed with .liveplay.myqcloud.com), which cannot be accessed directly before you complete the CNAME configuration at your domain name service provider. After the configuration takes effect, LVB can be used properly. For more information on the CNAME operations, please visit [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057。).
->- The playback region of the CDN playback domain name configured in StreamPackage is outside the Chinese mainland (including Hong Kong/Macao/Taiwan (China)) by default. If you need to distribute live streams in the Chinese mainland, according to applicable laws and regulations, you need to get an ICP filing for the playback domain name. Please click "Go to LVB CDN console" to do so.
+>- After a new playback domain is added, the system will assign it a CNAME which ends with `.liveplay.myqcloud.com`. To make the CNAME accessible, you need to add a CNAME record for the domain at your DNS provider. For detailed directions, see [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057).
+>- The default acceleration region for a CDN playback domain configured in the StreamPackage console is outside the Chinese mainland. If you need to distribute live streams inside the Chinese mainland, according to relevant laws and regulations, ICP filing is required for your domain. You can click **Go to the CSS CDN Console to Perform More Actions**.
 
-#### Play back through the configured playback domain name
+#### Playing streams via the configured playback domain
 
-After the StreamPackage channel is bound to the CDN playback domain name, replace the domain name in the endpoint's playback address with the CDN playback domain name to play back normally.
+To achieve playback via the configured playback domain, after you associate a StreamPackage channel with a CDN playback domain, replace the domain in the channel’s endpoint URL with the CDN playback domain.
 
 For example:
 
-If the endpoint pull address of your channel is:
+Suppose the endpoint URL of your channel is:
 
 http://123456789.ap-seoul.streampackage.srclivepull.myqcloud.com/v1/017697a3513109df73abda3c4b26/017697a918bf09dfabc033b04d43/main.m3u8
 
@@ -169,10 +176,10 @@ http://CDN playback domain name/v1/017697a3513109df73abda3c4b26/017697a918bf09df
 
 After the configuration is completed, please contact us for configuration optimization to ensure a better experience for you.
 
->? Using LVB CDN for distribution and playback will incur LVB traffic fees. For more information, please see [LVB Billing Overview](https://intl.cloud.tencent.com/zh/document/product/267/2818?lang=zh&pg=).
+>? Using the LVB CDN for distribution will incur playback traffic fees. For details, see [Billing of LVB](https://www.tencentcloud.com/document/product/267/2818?lang=en&pg=).
 
-### 4.   Edit and delete a channel
+### 4. Edit and delete a channel
 
-On the channel list page, you can manage all channels that have been created. You can click "Info", "Edit", or "Delete" in the "Operation" column on the right to view channel details and modify or delete a channel. To delete a channel associated with endpoints, delete all endpoints first.
+You can manage created channels on the **Channel Management** page. Click **Info** in the **Operation** column to view channel details. Click **Edit** to edit a channel, and click **Delete** to delete a channel. Note that you cannot delete a channel bound with endpoints. Delete the endpoints first before deleting a channel.
 
 ![img](https://main.qcloudimg.com/raw/bd7b3e8c0033d6591f5b61b2974dc12a.png)
