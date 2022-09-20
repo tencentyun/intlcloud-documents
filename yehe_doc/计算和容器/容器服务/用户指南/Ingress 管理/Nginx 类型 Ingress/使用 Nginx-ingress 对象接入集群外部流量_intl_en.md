@@ -17,7 +17,8 @@
 4. Select **Services and Routes** -> **Ingress** to go to the Ingress information page.
 5. Click **Create** to go to the "Create an Ingress" page.
 6. Set the Ingress parameters based on actual needs.
- - **Ingress type**: select **IngressController**.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b43a14d57bab7b87d99f843ca8d30743.png)
+ - **Ingress type**: select **Nginx Ingress Controller**.
  - **Forwarding Configuration**: configure the forwarding rules.
  - Annotation: set the annotation. For the configurable annotation, see [Configuring Annotation for the Nginx Ingress Object](#annotation).
 7. Click **Create Ingress**.
