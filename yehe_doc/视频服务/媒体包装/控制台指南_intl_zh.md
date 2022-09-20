@@ -58,7 +58,7 @@ Input是Channel输入的基本单位，后台会基于创建完成的Channel自�
 
 ![img](https://main.qcloudimg.com/raw/9fc040a6cb575be7411327476f0fe7a1.png)
 
-Input模块支持Authentication操作，用户可对每个输入点独立做Authentication配置。用户点击操作栏的【Authentication】进入弹框，单击![img](file:///C:/Users/JACKYS~1/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)打开Authentication配置后，后台会对该输入节点自动生成Username和Password，通过http认证模式进行鉴权。点击【Rotate credentials】完成Authentication配置。
+Input模块支持Authentication操作，用户可对每个输入点独立做Authentication配置。用户点击操作栏的【Authentication】进入弹框，打开Authentication配置后，后台会对该输入节点自动生成Username和Password，通过http认证模式进行鉴权。点击【Rotate credentials】完成Authentication配置。
 
 ![img](https://main.qcloudimg.com/raw/6927ebe8232a26cb341aa1b69f008e45.png)
 

@@ -58,7 +58,7 @@ An input is the basic unit of the content StreamPackage receives. After a channe
 
 ![img](https://main.qcloudimg.com/raw/9fc040a6cb575be7411327476f0fe7a1.png)
 
-You can enable authentication for an input: Click **Authentication** in the **Operation** column. In the pop-up window, toggle on ![img](file:///C:/Users/JACKYS~1/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg). StreamPackage will generate a username and a password for HTTP authentication. Click **Rotate credentials** to complete the configuration.
+You can enable authentication for an input: Click **Authentication** in the **Operation** column.  StreamPackage will generate a username and a password for HTTP authentication. Click **Rotate credentials** to complete the configuration.
 
 ![img](https://main.qcloudimg.com/raw/6927ebe8232a26cb341aa1b69f008e45.png)
 
