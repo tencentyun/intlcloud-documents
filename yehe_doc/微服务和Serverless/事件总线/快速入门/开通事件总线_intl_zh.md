@@ -27,7 +27,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/24be8712c315ec7e9e35c9538f52193d.png)
 
 3. 选择**按策略语法创建** > **空白模板**，自定义名称后，在策略内容中输入下列语法内容：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6a91543cd00f96e184697733b7e84a8d.png" width="450">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/324a5819ecf3e52015dc3d1301d6f03f.png" width="450">
 ```json
 {
     "version": "2.0",
@@ -67,10 +67,11 @@
                 "monitor:GetMonitorData",
                 "monitor:DescribeAlarmNotices",
                 "cam:CreateRole",
-                "cloudaudit:DescribeEventBridgeTracks",
-                "cloudaudit:DescribeProducts",
-                "cloudaudit:ModifyAuditTrack",
-                "cloudaudit:CreateEventBridgeTrack"
+                "cloudaudit:*",
+                "dts:DescribeSubscribes"
+                 "es:DescribeInstances",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues"
             ],
             "resource": "*"
         }
