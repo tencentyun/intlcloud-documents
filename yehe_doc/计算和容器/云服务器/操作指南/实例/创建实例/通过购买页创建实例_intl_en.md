@@ -192,12 +192,6 @@ Before creating a CVM instance, you need to complete the following steps:
 	CM is activated by default. You can install add-ons to get CVM monitoring metrics and display them in visual charts. You can also specify custom alarm thresholds. In addition, you can configure three-dimensional CVM data monitoring, smart data analysis, real-time fault alarms, and custom data reports to precisely monitor Tencent Cloud services and the health conditions of CVM instances.</td>
   </tr>
   <tr>
-	<td>Automation Assistant</td>
-	<td>No</td>
-	<td>It is enabled for free by default. As the native Ops and deployment tool of CVM, it can automatically run shell commands in batches and complete various tasks
-	such as running automated Ops scripts, polling processes, installing/uninstalling software, updating applications, and installing patches, without the need to connect to the instance remotely.</td>
-  </tr>
-   <tr>
 	<td>Advanced Settings</td>
 	<td>No</td>
 	<td>Configure additional settings for the instance as needed.
