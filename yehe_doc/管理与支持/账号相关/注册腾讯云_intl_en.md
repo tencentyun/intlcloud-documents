@@ -8,7 +8,7 @@
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/b774b2e6e95263f0cfa51adb45cfd961.png)
 
-   >? Each mobile number can be used for at most five accounts. When the limit is reached, you can modify the mobile number bound to an existing account and try again. For detailed directions, see [Verifying and Modifying Your Verification Mobile Number](https://intl.cloud.tencent.com/document/product/378/36000).
+   >? Each mobile number can be used for at most five accounts. When the limit is reached, you can modify the mobile number bound to an existing account and try again. For detailed directions, see [Verifying and Modifying Your Verification Mobile Number](https://intl.cloud.tencent.com/document/product/378/48918).
 
 3. Enter your credit/debit card information and click **Bind Credit Card**. 
 
