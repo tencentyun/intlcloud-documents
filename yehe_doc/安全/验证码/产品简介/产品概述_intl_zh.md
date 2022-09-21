@@ -12,7 +12,7 @@
 ### 滑块验证码
 
 用户轻轻一滑，完成图片拼图操作，即可快速通过验证。滑动拼图操作简单，风控能力强，适用于大部分人机识别验证场景。
-![](https://qcloudimg.tencent-cloud.cn/raw/869e4bb476380a2845a1eaee58886456.gif) 
+![](https://qcloudimg.tencent-cloud.cn/raw/54a2f521f5dd2df8093be42e80791b58.png) 
 
 ### 智能免验证
 
