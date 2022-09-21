@@ -104,7 +104,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 A public group (Public) is similar to the interest group and clan group of QQ. Anyone can join it on request and on approval from the group owner or admin.
 
 The steps to join a group on request and on approval are as follows:
-![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
+![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 Description of process:
 1. The user calls `joinGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html)) to request to join the group.
