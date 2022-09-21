@@ -4,15 +4,15 @@
 > ? 仅Flutter sdk 4.0.0 及以上版本支持。
 
 ## 变更消息
-会话参与者可以调用 `modifyMessage`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/modifyMessage.html)) 接口对会话里的消息做二次修改。
+会话参与者可以调用 `modifyMessage`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/modifyMessage.html)) 接口对会话里的消息做二次修改。
 修改消息时，IM SDK 仅限制了会话参与者才能修改，如果您需要更多限制，例如限制只有消息发送者才能修改，可以自行在业务层处理。
 
 目前消息支持修改的信息如下：
-1、`localCustomData` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage/localCustomData.html)) 
-2、`localCustomInt` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage/localCustomInt.html)) 
-3、`cloudCustomData` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage/cloudCustomData.html)) 
-4、`V2TIMTextElem` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_text_elem/V2TimTextElem-class.html)) 
-5、`V2TIMCustomElem` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_custom_elem/V2TimCustomElem-class.html))
+1、`localCustomData` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#localcustomdata)) 
+2、`localCustomInt` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#localcustomint)) 
+3、`cloudCustomData` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#cloudcustomdata)) 
+4、`V2TIMTextElem` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimTextElem.html)) 
+5、`V2TIMCustomElem` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimCustomElem.html))
 
 示例代码如下：
 
@@ -38,9 +38,9 @@ V2TimValueCallback<List<V2TimMessage>> msgListRes = await TencentImSDKPlugin.v2T
 
 
 ## 监听消息变更回调
-会话的参与者调用 `addAdvancedMsgListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addAdvancedMsgListener.html)) 添加高级消息监听器。
+会话的参与者调用 `addAdvancedMsgListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) 添加高级消息监听器。
 
-当会话里的消息被修改后，会话的参与者都会收到 `onRecvMessageModified`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_callbacks/OnRecvMessageModified.html)) 回调，回调里面会携带修改之后的消息对象。
+当会话里的消息被修改后，会话的参与者都会收到 `onRecvMessageModified`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRecvMessageModified.html)) 回调，回调里面会携带修改之后的消息对象。
 
 示例代码如下：
 

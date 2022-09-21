@@ -7,7 +7,7 @@ The conversation list features include getting the conversation list and process
 This section describes how to implement such features.
 
 ## Getting the Conversation List
-You can call `ConvGetConvList` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvGetConvList_com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_ConvInfo___)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `TIMConvEventCallback` callback.
+You can call `ConvGetConvList` ([c#](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `TIMConvEventCallback` callback.
 
 User conversations are returned in a list that stores `ConvInfo` objects.
 
@@ -29,7 +29,7 @@ You can get the updated conversation list in the following steps:
 3. Remove the conversation listener. This step is optional and can be performed as needed.
 
 ### Adding a conversation listener
-Call `SetConvEventCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetConvEventCallback_com_tencent_imsdk_unity_callback_ConvEventCallback_com_tencent_imsdk_unity_callback_ConvEventStringCallback_)) to add a conversation listener to receive conversation change events.
+Call `SetConvEventCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) to add a conversation listener to receive conversation change events.
 
 Sample code:
 
@@ -40,21 +40,21 @@ TencentIMSDK.SetConvEventCallback((TIMConvEvent conv_event, List<ConvInfo> conv_
 ```
 
 
-You can listen for the event in `TIMConvEvent` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.enums.TIMConvEvent.html)) to get the notification of a conversation list change.
+You can listen for the event in `TIMConvEvent` ([c#](https://comm.qq.com/im/doc/unity/en/enums/TIMConvEvent.html)) to get the notification of a conversation list change.
 
 Currently, the IM SDK supports the following conversation change events:
 
-| Event                             | Description                 | Suggestion                                                                                                                         |
-| --- | --- | --- |
-|kTIMConvEvent_Add | A new conversation was added.           | Re-sort the conversations when the user receives a one-to-one message from a new colleague or is invited to a new group.  |
-|kTIMConvEvent_Del | A conversation was deleted. | Trigger this event when the user deletes a conversation.|
-|kTIMConvEvent_Update | A conversation was updated. | Trigger this event when the unread count of a conversation changes or a new message is received.|
-|kTIMConvEvent_Start | A conversation was started. ||
-|kTIMConvEvent_Finish | A conversation was ended. ||
+| Event                | Description                   | Suggestion                                                                                                               |
+| -------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| kTIMConvEvent_Add    | A new conversation was added. | Re-sort the conversations when the user receives a one-to-one message from a new colleague or is invited to a new group. |
+| kTIMConvEvent_Del    | A conversation was deleted.   | Trigger this event when the user deletes a conversation.                                                                 |
+| kTIMConvEvent_Update | A conversation was updated.   | Trigger this event when the unread count of a conversation changes or a new message is received.                         |
+| kTIMConvEvent_Start  | A conversation was started.   |                                                                                                                          |
+| kTIMConvEvent_Finish | A conversation was ended.     |                                                                                                                          |
 
 
 ### Removing a conversation listener
-Pass in `null` for `SetConvEventCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetConvEventCallback_com_tencent_imsdk_unity_callback_ConvEventCallback_com_tencent_imsdk_unity_callback_ConvEventStringCallback_)) to remove a conversation listener to stop receiving conversation change events.
+Pass in `null` for `SetConvEventCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) to remove a conversation listener to stop receiving conversation change events.
 This step is optional and can be performed as needed.
 
 Sample code:
@@ -69,7 +69,7 @@ TencentIMSDK.SetConvEventCallback(null);
 ### Sending a message without updating the conv_last_msg
 On the UI of conversation list, it is usually necessary to display the preview and send time of the latest message in each conversation. In this case, you can use `conv_last_msg` of `ConvInfo` as the data source for implementation. However, in some cases, if you don't want some messages (such as system tips) to be displayed as the latest message in a conversation, you can set `message_excluded_from_last_message` to `false`/`no` when calling `MsgSendMessage`.
 
-For directions on how to send a message, see [MsgSendMessage(String, TIMConvType, Message, StringBuilder, ValueCallback<Message>)](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessage_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_System_Text_StringBuilder_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_Message__).
+For directions on how to send a message, see [MsgSendMessage(String, TIMConvType, Message, StringBuilder, ValueCallback<Message>)](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html).
 
 
 

@@ -38,7 +38,7 @@ StringBuilder messageId = new StringBuilder(128);
 
 
 ### Sending a message read receipt (by the receiver)
-After receiving the message, the receiver determines whether the message requires a read receipt based on the `message_need_read_receipt` field in `Message` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.Message.html#com_tencent_imsdk_unity_types_Message_message_need_read_receipt)). If yes, after the user reads the message, the receiver calls the `MsgSendMessageReadReceipts` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessageReadReceipts_System_Collections_Generic_List_com_tencent_imsdk_unity_types_Message__com_tencent_imsdk_unity_callback_NullValueCallback_)) to send a read receipt.
+After receiving the message, the receiver determines whether the message requires a read receipt based on the `message_need_read_receipt` field in `Message` ([c#](https://comm.qq.com/im/doc/unity/en/types/MessageAttributes/Message.html#com_tencent_imsdk_unity_types_Message_message_need_read_receipt)). If yes, after the user reads the message, the receiver calls the `MsgSendMessageReadReceipts` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessageReadReceipts.html)) to send a read receipt.
 
 Sample code:
 
@@ -51,7 +51,7 @@ TIMResult res = TencentIMSDK.MsgSendMessageReadReceipts(msg_array, (int code, st
 
 
 ### Listening for a message read receipt notification (by the sender)
-After the receiver sends a message read receipt, the sender can listen for a receipt notification through the `SetMsgReadedReceiptCallback` callback ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetMsgReadedReceiptCallback_com_tencent_imsdk_unity_callback_MsgReadedReceiptCallback_com_tencent_imsdk_unity_callback_MsgReadedReceiptStringCallback_)) and update the UI based on the notification to display the message as, for example, "Read by two members".
+After the receiver sends a message read receipt, the sender can listen for a receipt notification through the `SetMsgReadedReceiptCallback` callback ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetMsgReadedReceiptCallback.html)) and update the UI based on the notification to display the message as, for example, "Read by two members".
 
 Sample code:
 
@@ -64,7 +64,7 @@ TIMResult res = TencentIMSDK.SetMsgReadedReceiptCallback(msg_array, (List<Messag
 
 
 ### Pulling message read receipt information (by the sender)
-After entering the message list, the sender pulls historical messages first, and then calls the `MsgGetMessageReadReceipts` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgGetMessageReadReceipts_System_Collections_Generic_List_com_tencent_imsdk_unity_types_Message__com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_MessageReceipt___)) to pull the message read receipt information.
+After entering the message list, the sender pulls historical messages first, and then calls the `MsgGetMessageReadReceipts` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgGetMessageReadReceipts.html)) to pull the message read receipt information.
 
 
 Sample code:
@@ -78,7 +78,7 @@ TIMResult res = TencentIMSDK.MsgGetMessageReadReceipts(msg_array, (int code, str
 
 
 ### Pulling the list of members who have or have not read a group message (by the sender)
-To view the list of members who have or have not read a group message, the sender can call the `GetMsgGroupMessageReadMemberList` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GetMsgGroupMessageReadMemberList_com_tencent_imsdk_unity_types_Message_com_tencent_imsdk_unity_enums_TIMGroupMessageReadMembersFilter_System_UInt64_System_Int32_com_tencent_imsdk_unity_callback_MsgGroupMessageReadMemberListCallback_com_tencent_imsdk_unity_callback_MsgGroupMessageReadMemberListStringCallback_)) to pull the member list by page.
+To view the list of members who have or have not read a group message, the sender can call the `GetMsgGroupMessageReadMemberList` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/GetMsgGroupMessageReadMemberList.html)) to pull the member list by page.
 
 
 

@@ -10,7 +10,7 @@ If the last message is deleted, the `lastMessage` in the conversation will becom
 
 ### Clearing one-to-one messages
 
-Call `clearC2CHistoryMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/clearC2CHistoryMessage.html)) to clear one-to-one messages.
+Call `clearC2CHistoryMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/clearC2CHistoryMessage.html)) to clear one-to-one messages.
 
 
 Sample code:
@@ -25,7 +25,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().clearC2CHistoryMessage(userI
 
 ### Clearing group messages
 
-Call `clearGroupHistoryMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/clearGroupHistoryMessage.html)) to clear group messages.
+Call `clearGroupHistoryMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/clearGroupHistoryMessage.html)) to clear group messages.
 
 Sample code:
 

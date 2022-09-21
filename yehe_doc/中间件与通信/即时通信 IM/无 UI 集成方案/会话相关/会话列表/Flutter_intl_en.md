@@ -7,7 +7,7 @@ The conversation list features include getting the conversation list and process
 This section describes how to implement such features.
 
 ## Getting the Conversation List
-You can call `getConversationList` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/getConversationList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `V2TIMConversationListener` callback.
+You can call `getConversationList` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/getConversationList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `V2TIMConversationListener` callback.
 
 User conversations are returned in a list that stores `V2TIMConversation` objects. Currently, the IM SDK sorts conversations according to the following rules:
 * Starting from the SDK for Flutter 3.8.0, the conversations obtained through this API are sorted based on the `orderKey` conversation object by default. The greater the `orderKey` value of a conversation, the higher position the conversation is in the list. The `orderKey` field is an integer that increases as the conversation is activated when a message is sent/received, a draft is set, or the conversation is pinned to the top.
@@ -64,7 +64,7 @@ You can get the updated conversation list in the following steps:
 3. Remove the conversation listener. This step is optional and can be performed as needed.
 
 ### Adding a conversation listener
-Call `addConversationListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addConversationListener.html)) to add a conversation listener to receive conversation change events.
+Call `addConversationListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/addConversationListener.html)) to add a conversation listener to receive conversation change events.
 
 Sample code:
 
@@ -81,14 +81,14 @@ You can listen for the event in `V2TIMConversationListener` to get the notificat
 
 Currently, the IM SDK supports the following conversation change events:
 
-| Event                             | Description                 | Suggestion                                                                                                                         |
-| --- | --- | --- |
-|onSyncServerStart | Server conversation sync started.  | Listen for such an event when the user logged in successfully or the network was disconnected and reconnected and display the progress on the UI.                                 |
-| onSyncServerFinish               | Server conversation sync was completed.   | Notify a conversation change through the `onNewConversation`/`onConversationChanged` callback.                                                |
-|onSyncServerFailed | Server conversation sync failed.   | Listen for such an event and display the exception on the UI.                                                                                   |
-|onNewConversation | A new conversation was added.           | Re-sort the conversations when the user receives a one-to-one message from a new colleague or is invited to a new group.                                     |
-|onConversationChanged | A conversation was updated.           | Re-sort the conversations when the unread count changes or the last message is updated. |
-|onTotalUnreadMessageCountChanged | The total unread count of the conversation changed.  | For more information, see [unreadCount property](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_conversation/V2TimConversation/unreadCount.html). |
+| Event                            | Description                                         | Suggestion                                                                                                                                        |
+| -------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onSyncServerStart                | Server conversation sync started.                   | Listen for such an event when the user logged in successfully or the network was disconnected and reconnected and display the progress on the UI. |
+| onSyncServerFinish               | Server conversation sync was completed.             | Notify a conversation change through the `onNewConversation`/`onConversationChanged` callback.                                                    |
+| onSyncServerFailed               | Server conversation sync failed.                    | Listen for such an event and display the exception on the UI.                                                                                     |
+| onNewConversation                | A new conversation was added.                       | Re-sort the conversations when the user receives a one-to-one message from a new colleague or is invited to a new group.                          |
+| onConversationChanged            | A conversation was updated.                         | Re-sort the conversations when the unread count changes or the last message is updated.                                                           |
+| onTotalUnreadMessageCountChanged | The total unread count of the conversation changed. | For more information, see [unreadCount property](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#unreadcount).  |
 
 > ? To ensure that the conversations are sorted by the last message, you need to re-sort the data sources each time a conversation is changed/added.
 > * If you use the SDK for Flutter earlier than v3.8.0, you can sort the conversations by `lastMessage`, but note that sometimes `lastMessage` may be empty (such as when messages in a conversation are cleared).
@@ -113,7 +113,7 @@ TencentImSDKPlugin.v2TIMManager.getConversationManager().addConversationListener
 
 
 ### Removing a conversation listener
-Call `removeConversationListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/removeConversationListener.html)) to remove a conversation listener to stop receiving conversation change events.
+Call `removeConversationListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/removeConversationListener.html)) to remove a conversation listener to stop receiving conversation change events.
 This step is optional and can be performed as needed.
 
 Sample code:
@@ -128,7 +128,7 @@ conversationManager.removeConversationListener(conversationListener);
 ### Sending a message without updating the lastMessage
 On UI of the conversation list, it is usually necessary to display the preview and send time of the latest message in each conversation. In this case, you can use `lastMessage` of `V2TIMConversation` as the data source for implementation. However, in some cases, if you don't want some messages (such as system tips) to be displayed as the latest message in a conversation, you can set `isExcludedFromLastMessage` to `false`/`no` when calling `sendMessage`.
 
-For directions on how to send a message, see [sendMessage method](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/sendMessage.html).
+For directions on how to send a message, see [sendMessage method](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html).
 
 
 >? `isExcludedFromLastMessage` is supported only by the SDK for Flutter on v4.0.0 or later.

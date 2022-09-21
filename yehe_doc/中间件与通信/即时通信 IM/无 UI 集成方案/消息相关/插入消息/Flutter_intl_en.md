@@ -6,7 +6,7 @@ This API is used to insert tips into a conversation, such as "You have left the 
 
 ### Inserting a local message between one-to-one messages
 
-Call `insertC2CMessageToLocalStorage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/insertC2CMessageToLocalStorage.html)) to insert a local message between one-to-one messages. Currently, the SDK for Flutter only supports inserting custom messages.
+Call `insertC2CMessageToLocalStorage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/insertC2CMessageToLocalStorage.html)) to insert a local message between one-to-one messages. Currently, the SDK for Flutter only supports inserting custom messages.
 
 Sample code:
 
@@ -19,7 +19,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().insertC2CMessageToLocalStora
 
 ### Inserting a local message between group messages
 
-Call `insertGroupMessageToLocalStorage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/insertGroupMessageToLocalStorage.html)) to insert a local message between group messages.
+Call `insertGroupMessageToLocalStorage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/insertGroupMessageToLocalStorage.html)) to insert a local message between group messages.
 
 Sample code:
 

@@ -266,7 +266,7 @@ Group tip messages are tips received by users in addition to ordinary messages i
 
 > ? Group tip messages will be received by only group members but not one-to-one chat parties.
 
-There are many types of group tip messages. For more information, see the definition of `GroupTipsElem` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.GroupTipsElem.html)).
+There are many types of group tip messages. For more information, see the definition of `GroupTipsElem` ([c#](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupTipsElem.html)).
 
 After receiving a group tip message, the receiver generally needs to:
 1. Parse each field in `GroupTipsElem`.

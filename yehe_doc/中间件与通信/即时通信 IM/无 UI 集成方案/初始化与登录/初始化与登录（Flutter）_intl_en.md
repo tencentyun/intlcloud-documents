@@ -1,5 +1,5 @@
 ## Initialization and Login
-[V2TIMManager](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager-class.html) is a core class and also an entry class of the IM SDK. It implements features such as IM SDK initialization and login, message sending and receiving, group creation, and group leaving. You can call [initSDK](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/initSDK.html) to complete initialization:
+[V2TIMManager](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager-class.html) is a core class and also an entry class of the IM SDK. It implements features such as IM SDK initialization and login, message sending and receiving, group creation, and group leaving. You can call [initSDK](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/initSDK.html) to complete initialization:
 
 ```
 import 'package:tencent_im_sdk_plugin/enum/V2TimSDKListener.dart';
@@ -25,31 +25,31 @@ You can view all `SDKAppIDs` in the [IM console](https://console.cloud.tencent.c
 ### LogLevelEnum
 [LogLevelEnum](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/enum_log_level_enum/LogLevelEnum.html) is used to set the log output level, which is described as below:
 
-| Log Level | Log Output |
-|---------|---------|
-| V2TIM_LOG_NONE | No log is output. |
+| Log Level       | Log Output                                                     |
+| --------------- | -------------------------------------------------------------- |
+| V2TIM_LOG_NONE  | No log is output.                                              |
 | V2TIM_LOG_DEBUG | Logs of the DEBUG, INFO, WARNING, and ERROR levels are output. |
-| V2TIM_LOG_INFO | Logs of the INFO, WARNING, and ERROR levels are output. |
-| V2TIM_LOG_WARN | Logs of the WARNING and ERROR levels are output. |
-| V2TIM_LOG_ERROR | Logs of the ERROR level are output. |
+| V2TIM_LOG_INFO  | Logs of the INFO, WARNING, and ERROR levels are output.        |
+| V2TIM_LOG_WARN  | Logs of the WARNING and ERROR levels are output.               |
+| V2TIM_LOG_ERROR | Logs of the ERROR level are output.                            |
 
 
 ### Listener
 [V2TimSDKListener](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimSDKListener/V2TimSDKListener-class.html) is used to listen for network status and user information changes.
 
-| Event Callback | Event Description | Recommended Operation |
-|---------|---------|---------|
-| onConnecting | The SDK is connecting to the CVM instance. | The "Connecting" status can be displayed on the UI. |
-| onConnectSuccess | The SDK is successfully connected to the CVM instance. | - |
-| onConnectFailed | The SDK fails to connect to the CVM instance. | The user can be notified that the network connection is currently unavailable. |
-| onKickedOffline | The current user is kicked offline. | The "You have already logged in to the SDK on another device using the current account. Are you sure you want to log in again?" message can be displayed on the UI. |
-| onUserSigExpired | The `UserSig` expired. | Use a new `UserSig` for login. |
-| onSelfInfoUpdated | The information of the current user is updated. | Update your profile photo and nickname on the UI. |
+| Event Callback    | Event Description                                      | Recommended Operation                                                                                                                                               |
+| ----------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onConnecting      | The SDK is connecting to the CVM instance.             | The "Connecting" status can be displayed on the UI.                                                                                                                 |
+| onConnectSuccess  | The SDK is successfully connected to the CVM instance. | -                                                                                                                                                                   |
+| onConnectFailed   | The SDK fails to connect to the CVM instance.          | The user can be notified that the network connection is currently unavailable.                                                                                      |
+| onKickedOffline   | The current user is kicked offline.                    | The "You have already logged in to the SDK on another device using the current account. Are you sure you want to log in again?" message can be displayed on the UI. |
+| onUserSigExpired  | The `UserSig` expired.                                 | Use a new `UserSig` for login.                                                                                                                                      |
+| onSelfInfoUpdated | The information of the current user is updated.        | Update your profile photo and nickname on the UI.                                                                                                                   |
 
 >! If you receive the `onUserSigExpired` callback, the `UserSig` that you use for login has expired. In this case, you need to update the `UserSig` and then log in again. If you continue to use the expired `UserSig`, the SDK will be in an infinite login loop.
 
 ## Login
-You can call the [login (userID, userSig)](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/login.html) function of `v2TIMManager` to log in to the SDK. The features of the IM SDK are available to you only after you successfully log in to it.
+You can call the [login (userID, userSig)](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/login.html) function of `v2TIMManager` to log in to the SDK. The features of the IM SDK are available to you only after you successfully log in to it.
 
 ```
     V2TimCallback res = await TencentImSDKPlugin.v2TIMManager.login (
@@ -76,7 +76,7 @@ You do not need to call the `login` function in the following scenarios:
 You cannot use the same account to log in on two mobile phones of the same model. For example, you cannot use the same account for login on two iPhones. However, one Android phone and one iPhone are considered as two different devices, and you can use the same account to log in on these two devices. For more information on configurations related to multi-client login, see the **Login settings** section in [Feature Configuration](https://intl.cloud.tencent.com/document/product/1047/34419).
 
 ## Logout
-| To log out, call the [logout()](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/logout.html) function. |
+| To log out, call the [logout()](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/logout.html) function. |
 
 
 

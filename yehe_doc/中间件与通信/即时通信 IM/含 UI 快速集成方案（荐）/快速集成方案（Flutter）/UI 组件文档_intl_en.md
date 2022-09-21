@@ -75,7 +75,7 @@ _coreInstance.setTheme(TUITheme theme: theme) // Set the theme color
 - **TIMUIKitCore.getInstance()**:
 Returns a `CoreServicesImpl` instance.
 - **TIMUIKitCore.getSDKInstance()**:
-Returns a `V2TIMManager` SDK instance. For the usage details, see [Flutter IM SDK documentation](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/initSDK.html).
+Returns a `V2TIMManager` SDK instance. For the usage details, see [Flutter IM SDK documentation](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/initSDK.html).
 
 
 [](id:timuikitconversation)

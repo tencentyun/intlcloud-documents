@@ -10,7 +10,7 @@
 
 ## 发送群定向消息
 定向消息是指，向群内部分指定的成员发送消息，而未被指定的群成员无法收到该消息。可以按照下面的方式实现：
-调用 `MsgSendMessage` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessage_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_System_Text_StringBuilder_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_Message__)) 接口指定消息接收成员列表并发送定向消息。
+调用 `MsgSendMessage` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) 接口指定消息接收成员列表并发送定向消息。
 
 示例代码如下：
 

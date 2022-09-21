@@ -1,5 +1,5 @@
 ## 初始化与登录
-类 [V2TIMManager](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager-class.html) 是 IM SDK 主核心类也是 IM SDK 的入口类，负责 IM SDK 的初始化、登录、消息收发，建群退群等功能。调用 [initSDK](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/initSDK.html) 接口即可完成初始化：
+类 [V2TIMManager](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager-class.html) 是 IM SDK 主核心类也是 IM SDK 的入口类，负责 IM SDK 的初始化、登录、消息收发，建群退群等功能。调用 [initSDK](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/initSDK.html) 接口即可完成初始化：
 
 ```
 import 'package:tencent_im_sdk_plugin/enum/V2TimSDKListener.dart';
@@ -25,31 +25,31 @@ SDKAppID 即应用 ID，它是腾讯云 IM 服务用于区分客户帐号的唯�
 ### loglevel
 参数 `loglevel` 用于对日志级别的设置，即 [logLevel](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/enum_log_level_enum/LogLevelEnum.html) 参数，日志级别如下表所示：
 
-| 日志级别 | LOG 输出量 |
-|---------|---------|
-| V2TIM_LOG_NONE | 不输出任何 log |
+| 日志级别        | LOG 输出量                                  |
+| --------------- | ------------------------------------------- |
+| V2TIM_LOG_NONE  | 不输出任何 log                              |
 | V2TIM_LOG_DEBUG | 输出 DEBUG，INFO，WARNING，ERROR 级别的 log |
-| V2TIM_LOG_INFO | 输出 INFO，WARNING，ERROR 级别的 log |
-| V2TIM_LOG_WARN | 输出 WARNING，ERROR 级别的 log |
-| V2TIM_LOG_ERROR | 输出 ERROR 级别的 log |
+| V2TIM_LOG_INFO  | 输出 INFO，WARNING，ERROR 级别的 log        |
+| V2TIM_LOG_WARN  | 输出 WARNING，ERROR 级别的 log              |
+| V2TIM_LOG_ERROR | 输出 ERROR 级别的 log                       |
 
 
 ### 事件监听器
 [V2TimSDKListener](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimSDKListener/V2TimSDKListener-class.html) 提供了网络状态以及用户信息变更的监听：
 
-| 事件回调 | 事件描述 | 推荐操作 |
-|---------|---------|---------|
-| onConnecting | 正在连接到腾讯云服务器 | 适合在 UI 上展示“正在连接”状态。 |
-| onConnectSuccess | 已经成功连接到腾讯云服务器 | - |
-| onConnectFailed | 连接腾讯云服务器失败 | 可以提示用户当前网络连接不可用。 |
-| onKickedOffline | 当前用户被踢下线 | 此时可以 UI 提示用户“您已经在其他端登录了当前帐号，是否重新登录？” |
-| onUserSigExpired | 登录票据已经过期 | 请使用新签发的 UserSig 进行登录。  |
-| onSelfInfoUpdated | 当前用户的资料发生了更新 | 可以在 UI 上更新自己的头像和昵称。 |
+| 事件回调          | 事件描述                   | 推荐操作                                                           |
+| ----------------- | -------------------------- | ------------------------------------------------------------------ |
+| onConnecting      | 正在连接到腾讯云服务器     | 适合在 UI 上展示“正在连接”状态。                                   |
+| onConnectSuccess  | 已经成功连接到腾讯云服务器 | -                                                                  |
+| onConnectFailed   | 连接腾讯云服务器失败       | 可以提示用户当前网络连接不可用。                                   |
+| onKickedOffline   | 当前用户被踢下线           | 此时可以 UI 提示用户“您已经在其他端登录了当前帐号，是否重新登录？” |
+| onUserSigExpired  | 登录票据已经过期           | 请使用新签发的 UserSig 进行登录。                                  |
+| onSelfInfoUpdated | 当前用户的资料发生了更新   | 可以在 UI 上更新自己的头像和昵称。                                 |
 
 >!若收到 `onUserSigExpired` 回调，说明您登录用的 UserSig 票据已经过期，请更新后重新登录。如果继续使用过期的 UserSig，会导致 SDK 登录死循环。
 
 ## 登录
-调用 `v2TIMManager` 的 [login(userID, userSig)](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/login.html) 函数可以进行登录，只有在 SDK 登录成功后，才能使用 IM SDK 的各项能力。
+调用 `v2TIMManager` 的 [login(userID, userSig)](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/login.html) 函数可以进行登录，只有在 SDK 登录成功后，才能使用 IM SDK 的各项能力。
 
 ```
     V2TimCallback res = await TencentImSDKPlugin.v2TIMManager.login(
@@ -76,7 +76,7 @@ SDKAppID 即应用 ID，它是腾讯云 IM 服务用于区分客户帐号的唯�
 同样类型的两台手机不能同时登录一个帐号，例如两台苹果手机不能同时登录一个帐号。但是一台 Android 手机和一台苹果手机会被认为是两端，可以同时登录。多端登录相关配置请参考 [登录设置](https://intl.cloud.tencent.com/document/product/1047/34419)。
 
 ## 登出
-登出比较简单，使用 [logout()](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/logout.html) 函数即可。
+登出比较简单，使用 [logout()](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/logout.html) 函数即可。
 
 
 

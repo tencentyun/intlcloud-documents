@@ -9,7 +9,7 @@ In certain cases, you might want a message to be received by the receiver only w
 
 ### Implementing the feature of "The other party is typing..."
 
-In one-to-one chats, you can call the `MsgSendMessage` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessage_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_System_Text_StringBuilder_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_Message__)) to send the prompt "Typing...". After receiving the prompt message, the receiver can display "The other party is typing..." on the UI.
+In one-to-one chats, you can call the `MsgSendMessage` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) to send the prompt "Typing...". After receiving the prompt message, the receiver can display "The other party is typing..." on the UI.
 
 Sample code:
 

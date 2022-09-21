@@ -14,7 +14,7 @@
 如果是群消息已读回执，需要先在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) >**功能配置**>**登录与消息**>**群已读消息回执配置** 中设置支持已读回执消息的群类型。
     
 ### 发送端设置消息需要已读回执
-发送端创建消息后，先通过消息对象 `V2TimMessage` 的 `needReadReceipt`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage/needReadReceipt.html)) 字段设置消息需要已读回执，再发送消息到会话中。
+发送端创建消息后，先通过消息对象 `V2TimMessage` 的 `needReadReceipt`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#needreadreceipt)) 字段设置消息需要已读回执，再发送消息到会话中。
 
 示例代码如下：
 
@@ -32,7 +32,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes =
 
 
 ### 接收端发送消息已读回执
-接收端收到消息后，可以通过消息对象 `V2TIMMessage` 的 `needReadReceipt`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage/needReadReceipt.html))  字段判断消息是否需要已读回执，如果需要已读回执，当用户查看消息后，调用 `sendMessageReadReceipts`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessageReadReceipts.html)) 接口发送消息已读回执。
+接收端收到消息后，可以通过消息对象 `V2TIMMessage` 的 `needReadReceipt`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#needreadreceipt))  字段判断消息是否需要已读回执，如果需要已读回执，当用户查看消息后，调用 `sendMessageReadReceipts`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessageReadReceipts.html)) 接口发送消息已读回执。
 
 示例代码如下：
 
@@ -48,7 +48,7 @@ V2TimCallback sendMessageReadReceipts = await TencentImSDKPlugin.v2TIMManager.ge
 
 
 ### 发送端监听消息已读回执通知
-接收端发送消息已读回执后，发送端可以通过 `V2TimAdvancedMsgListener` 的 `onRecvMessageReadReceipts`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_callbacks/OnRecvMessageReadReceipts.html)) 回调监听消息已读回执通知，在通知中更新 UI，例如更新为 “2 人已读”。
+接收端发送消息已读回执后，发送端可以通过 `V2TimAdvancedMsgListener` 的 `onRecvMessageReadReceipts`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRecvMessageReadReceipts.html)) 回调监听消息已读回执通知，在通知中更新 UI，例如更新为 “2 人已读”。
 
 示例代码如下：
 
@@ -67,18 +67,18 @@ onRecvMessageReadReceipts: (List<V2TimMessageReceipt> receiptList) {
 
 
 ### 发送端主动拉取消息已读回执信息
-发送端从其他界面进入消息列表后，先拉取历史消息，再调用 `getMessageReadReceipts`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getMessageReadReceipts.html)) 接口拉取消息已读回执信息。
+发送端从其他界面进入消息列表后，先拉取历史消息，再调用 `getMessageReadReceipts`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getMessageReadReceipts.html)) 接口拉取消息已读回执信息。
 
 其中已读回执信息 `V2TimessageReceipt` 字段含义如下：
 
-| 属性 |  含义 | 说明 |
-| --- |  --- | --- |
-| msgID | 消息 ID | 消息唯一 ID|
-| userID | 对端用户 ID | 如果是单聊，该字段表示对端用户 ID|
-| timestamp | 对端用户标记会话已读时间| 该字段在消息已读场景无效，如果是单聊，当对端用户调用 markC2CMessageAsRead 接口标记会话已读时，自己会收到的 onRecvC2CReadReceipt 回调，回调里会携带 timestamp 信息 |
-| groupID | 群组 ID | 如果是群聊，该字段为群组 ID|
-| readCount | 群消息已读人数 | 如果是群聊，该字段为群消息已读人数|
-| unreadCount | 群消息未读人数 | 如果是群聊，该字段为群消息未读人数|
+| 属性        | 含义                     | 说明                                                                                                                                                              |
+| ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgID       | 消息 ID                  | 消息唯一 ID                                                                                                                                                       |
+| userID      | 对端用户 ID              | 如果是单聊，该字段表示对端用户 ID                                                                                                                                 |
+| timestamp   | 对端用户标记会话已读时间 | 该字段在消息已读场景无效，如果是单聊，当对端用户调用 markC2CMessageAsRead 接口标记会话已读时，自己会收到的 onRecvC2CReadReceipt 回调，回调里会携带 timestamp 信息 |
+| groupID     | 群组 ID                  | 如果是群聊，该字段为群组 ID                                                                                                                                       |
+| readCount   | 群消息已读人数           | 如果是群聊，该字段为群消息已读人数                                                                                                                                |
+| unreadCount | 群消息未读人数           | 如果是群聊，该字段为群消息未读人数                                                                                                                                |
 
 示例代码如下：
 
@@ -100,7 +100,7 @@ V2TimValueCallback<List<V2TimMessageReceipt>> getMessageReadReceipts = await  Te
 
 
 ### 发送端主动拉取群消息已读或未读成员列表
-发送端在需要查看群消息已读或未读成员列表时，可以调用 `getGroupMessageReadMemberList`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupMessageReadMemberList.html)) 接口分页拉取消息已读或未读群成员列表。
+发送端在需要查看群消息已读或未读成员列表时，可以调用 `getGroupMessageReadMemberList`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getGroupMessageReadMemberList.html)) 接口分页拉取消息已读或未读群成员列表。
 
 
 

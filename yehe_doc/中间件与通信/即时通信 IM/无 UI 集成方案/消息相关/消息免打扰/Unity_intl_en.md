@@ -2,11 +2,11 @@
 You can set the message receiving option for a **one-to-one or group chat** to implement the notification muting feature.
 The IM SDK supports the following three message receiving options as defined in `TIMReceiveMessageOpt`:
 
-| Message Receiving Option | Feature Description |
-|---------|---------|
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive | Messages will be received when the user is online, and offline push notifications will be received when the user is offline.   |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive | Messages will not be received no matter whether the user is online or offline.                       |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Notify | Messages will be received when the user is online, and offline push notifications will not be received when the user is offline. |
+| Message Receiving Option                        | Feature Description                                                                                                              |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive     | Messages will be received when the user is online, and offline push notifications will be received when the user is offline.     |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive | Messages will not be received no matter whether the user is online or offline.                                                   |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Notify  | Messages will be received when the user is online, and offline push notifications will not be received when the user is offline. |
 
 Different `TIMReceiveMessageOpt` options can be used to implement group message notification muting:
 **No messages will be received.**
@@ -14,14 +14,14 @@ After the message receiving option is set to `kTIMRecvMsgOpt_Not_Receive`, no on
 
 **Messages will be received but will not be notified to the user, and a badge without the unread count will be displayed on the conversation list UI.**
 1. The message receiving option is set to `kTIMRecvMsgOpt_Not_Notify`.
-2. When the receiver receives a one-to-one or group message and needs to update the conversation list, it can get the unread count through the `total_unread_count` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.callback.ConvTotalUnreadMessageCountChangedCallback.html)) in the `SetConvTotalUnreadMessageCountChangedCallback` callback for a change in the total unread count of a conversation.
-3. The receiver displays a badge rather than the unread count when identifying the message receiving option as `kTIMRecvMsgOpt_Not_Notify` based on the `conv_recv_opt` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.ConvInfo.html#com_tencent_imsdk_unity_types_ConvInfo_conv_recv_opt)) in `ConvInfo`.
+2. When the receiver receives a one-to-one or group message and needs to update the conversation list, it can get the unread count through the `total_unread_count` ([c#](https://comm.qq.com/im/doc/unity/en/callback/ConvTotalUnreadMessageCountChangedCallback.html)) in the `SetConvTotalUnreadMessageCountChangedCallback` callback for a change in the total unread count of a conversation.
+3. The receiver displays a badge rather than the unread count when identifying the message receiving option as `kTIMRecvMsgOpt_Not_Notify` based on the `conv_recv_opt` ([c#](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html)) in `ConvInfo`.
 
 > ? As this method requires the unread count feature, it applies only to work groups (Work) and public groups (Public). For more information on group types, see Group Overview.
 
 
 ## Setting the Message Receiving Option for a One-to-One Chat
-Call the `MsgSetC2CReceiveMessageOpt` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSetC2CReceiveMessageOpt_System_Collections_Generic_List_System_String__com_tencent_imsdk_unity_enums_TIMReceiveMessageOpt_com_tencent_imsdk_unity_callback_NullValueCallback_)) to set the message receiving option for a one-to-one chat.
+Call the `MsgSetC2CReceiveMessageOpt` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSetC2CReceiveMessageOpt.html)) to set the message receiving option for a one-to-one chat.
 You can use the `userIDList` parameter to specify up to 30 users at a time.
 
 > ! This API can be called up to 5 times every second.
@@ -38,7 +38,7 @@ TIMResult res = TencentIMSDK.MsgSetC2CReceiveMessageOpt(user_id_list, TIMReceive
 
 
 ## Getting the Message Receiving Option for a One-to-One Chat
-Call the `MsgGetC2CReceiveMessageOpt` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgGetC2CReceiveMessageOpt_System_Collections_Generic_List_System_String__com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_GetC2CRecvMsgOptResult___)) to get the message receiving option for a one-to-one chat.
+Call the `MsgGetC2CReceiveMessageOpt` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgGetC2CReceiveMessageOpt.html)) to get the message receiving option for a one-to-one chat.
 
 Sample code:
 
@@ -52,7 +52,7 @@ TIMResult res = TencentIMSDK.MsgGetC2CReceiveMessageOpt(user_id_list, (int code,
 
 
 ## Setting the Message Receiving Option for a Group Chat
-Call the `MsgSetGroupReceiveMessageOpt` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSetGroupReceiveMessageOpt_System_String_com_tencent_imsdk_unity_enums_TIMReceiveMessageOpt_com_tencent_imsdk_unity_callback_NullValueCallback_)) to set the message receiving option for a group chat.
+Call the `MsgSetGroupReceiveMessageOpt` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSetGroupReceiveMessageOpt.html)) to set the message receiving option for a group chat.
 
 Sample code:
 

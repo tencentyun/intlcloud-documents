@@ -56,7 +56,7 @@ TencentIMSDK.GroupSearchGroups(searchparam,(int code, string desc, string json_p
 
 ### Searching for group members
 
-You can call [GroupSearchGroupMembers](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupSearchGroupMembers_com_tencent_imsdk_unity_types_GroupMemberSearchParam_com_tencent_imsdk_unity_callback_ValueCallback_) to search for group members. For parameter details, see [GroupMemberSearchParam](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.GroupMemberSearchParam.html).
+You can call [GroupSearchGroupMembers](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupSearchGroupMembers_com_tencent_imsdk_unity_types_GroupMemberSearchParam_com_tencent_imsdk_unity_callback_ValueCallback_) to search for group members. For parameter details, see [GroupMemberSearchParam](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupMemberSearchParam.html).
 
 ```c#
 GroupSearchParam searchparam  = new GroupMemberSearchParam();

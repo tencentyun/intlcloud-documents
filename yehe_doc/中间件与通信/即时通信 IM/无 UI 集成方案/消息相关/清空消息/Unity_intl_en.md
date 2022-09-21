@@ -10,7 +10,7 @@ If the last message is deleted, the `lastMessage` in the conversation will becom
 
 ### Clearing one-to-one messages
 
-Call `MsgClearHistoryMessage` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgClearHistoryMessage_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_callback_NullValueCallback_)) to clear one-to-one messages.
+Call `MsgClearHistoryMessage` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgClearHistoryMessage.html)) to clear one-to-one messages.
 
 
 Sample code:
@@ -27,7 +27,7 @@ TIMResult res = TencentIMSDK.MsgClearHistoryMessage(conv_id, TIMConvType.kTIMCon
 
 ### Clearing group messages
 
-Call `MsgClearHistoryMessage` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgClearHistoryMessage_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_callback_NullValueCallback_)) to clear group messages.
+Call `MsgClearHistoryMessage` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgClearHistoryMessage.html)) to clear group messages.
 
 Sample code:
 

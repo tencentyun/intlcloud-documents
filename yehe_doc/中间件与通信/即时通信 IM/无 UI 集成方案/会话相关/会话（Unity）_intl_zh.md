@@ -4,7 +4,7 @@
 
 ## 拉取会话列表
 
-用户可以通过 [ConvGetConvList](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvGetConvList_com_tencent_imsdk_unity_callback_ValueCallback_) 拉取全部的会话列表，Unity SDK 暂时不支持对会话进行分页。
+用户可以通过 [ConvGetConvList](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvList.html) 拉取全部的会话列表，Unity SDK 暂时不支持对会话进行分页。
 
 ## 会话更新
 
@@ -26,7 +26,7 @@ TencentIMSDK.ConvEventCallback((TIMConvEvent conv_event, List<ConvInfo> conv_lis
 
 ## 获取所有会话未读数
 
-可以通过 [ConvGetTotalUnreadMessageCount](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvGetTotalUnreadMessageCount_com_tencent_imsdk_unity_callback_ValueCallback_) 获取所有会话未读数，调用如下：
+可以通过 [ConvGetTotalUnreadMessageCount](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetTotalUnreadMessageCount.html) 获取所有会话未读数，调用如下：
 
 ```c#
 TencentIMSDK.ConvGetTotalUnreadMessageCount((int code, string desc, string json_param, string user_data)=>{
@@ -36,7 +36,7 @@ TencentIMSDK.ConvGetTotalUnreadMessageCount((int code, string desc, string json_
 
 ## 设置所有会话已读
 
-Unity SDK 提供一键设置会话已读功能，可以调用 [MsgMarkAllMessageAsRead](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgMarkAllMessageAsRead_com_tencent_imsdk_unity_callback_ValueCallback_)。
+Unity SDK 提供一键设置会话已读功能，可以调用 [MsgMarkAllMessageAsRead](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgMarkAllMessageAsRead.html)。
 
 ```c#
 TencentIMSDK.MsgMarkAllMessageAsRead((int code, string desc, string json_param, string user_data)=>{
@@ -46,8 +46,8 @@ TencentIMSDK.MsgMarkAllMessageAsRead((int code, string desc, string json_param, 
 
 ## 置顶会话
 
-会话置顶指的是把特定的好友或者群会话固定在会话列表的最前面，新版本 SDK 增加了主动设置或者取消会话置顶的接口 [ConvPinConversation](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvPinConversation_System_String_com_tencent_imsdk_unity_enums_TIMConvType_System_Boolean_com_tencent_imsdk_unity_callback_ValueCallback_)，同时支持漫游和多端同步。
-会话对象 [ConvInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.ConvInfo.html) 新增了字段 [conv_is_pinned](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.ConvInfo.html#com_tencent_imsdk_unity_types_ConvInfo_conv_is_pinned)，用于判断会话的置顶状态。当会话的置顶状态发生变更的时候，SDK 会向您的 App 回调 [ConvEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.ConvEventCallback.html)。
+会话置顶指的是把特定的好友或者群会话固定在会话列表的最前面，新版本 SDK 增加了主动设置或者取消会话置顶的接口 [ConvPinConversation](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvPinConversation.html)，同时支持漫游和多端同步。
+会话对象 [ConvInfo](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html) 新增了字段 [conv_is_pinned](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convispinned)，用于判断会话的置顶状态。当会话的置顶状态发生变更的时候，SDK 会向您的 App 回调 [ConvEventCallback](https://comm.qq.com/im/doc/unity/en/callback/ConvEventCallback.html)。
 
 ```c#
 TencentIMSDK.ConvPinConversation(conv_id,conv_type,is_pinned,(int code, string desc, string json_param, string user_data)=>{
@@ -57,7 +57,7 @@ TencentIMSDK.ConvPinConversation(conv_id,conv_type,is_pinned,(int code, string d
 
 ## 删除会话
 
-调用 [ConvDelete](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvDelete_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_callback_ValueCallback_) 接口可以删除某个会话，会话删除默认关闭多端同步，可在控制台开启多端同步，删除会话时默认删除本地和服务器历史消息，且无法恢复。
+调用 [ConvDelete](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvDelete.html) 接口可以删除某个会话，会话删除默认关闭多端同步，可在控制台开启多端同步，删除会话时默认删除本地和服务器历史消息，且无法恢复。
 
 ```c#
 TencentIMSDK.ConvDelete(conv_id,conv_type,(int code, string desc, string json_param, string user_data)=>{
@@ -67,7 +67,7 @@ TencentIMSDK.ConvDelete(conv_id,conv_type,(int code, string desc, string json_pa
 
 ## 草稿箱
 
-在发送消息时，可能会遇到消息尚未编辑完就要切换至其它聊天窗口的情况，这些未编辑完的消息可通过 [ConvSetDraft](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvSetDraft_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_DraftParam_) 接口保存，以便于回到聊天界面使用 [ConvInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.ConvInfo.html) 的 [conv_draft](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.ConvInfo.html#com_tencent_imsdk_unity_types_ConvInfo_conv_draft) 字段 继续编辑内容。
+在发送消息时，可能会遇到消息尚未编辑完就要切换至其它聊天窗口的情况，这些未编辑完的消息可通过 [ConvSetDraft](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvSetDraft.html) 接口保存，以便于回到聊天界面使用 [ConvInfo](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html) 的 [conv_draft](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convdraft) 字段 继续编辑内容。
 
 ## 常见问题
 

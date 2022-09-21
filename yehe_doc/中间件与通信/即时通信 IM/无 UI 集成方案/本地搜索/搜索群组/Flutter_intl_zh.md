@@ -4,7 +4,7 @@
 > ? flutter sdk 3.8.0支持
 
 ## 搜索本地群组
-您可以调用接口 `searchGroups` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/searchGroups.html)) 搜索本地群组。
+您可以调用接口 `searchGroups` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/searchGroups.html)) 搜索本地群组。
 您可以设置搜索关键字 `keywordList`，并指定搜索的范围，即是否搜索群组的 `userID`、`groupName` 字段。
 
 示例代码如下：

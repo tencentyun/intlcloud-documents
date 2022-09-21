@@ -6,25 +6,25 @@
 
 合并消息的展示还需要标题和摘要信息，如下图所示：
 
-| 合并转发 | 合并消息展示 | 点击合并消息下载合并消息列表展示 |
-|---------|---------|---------|
-|<img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/>|
+| 合并转发                                                                                                | 合并消息展示                                                                                            | 点击合并消息下载合并消息列表展示                                                                       |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/> |
 
 
 ## 合并转发消息
 ### 创建并发送合并转发消息
 
 我们在创建一条合并消息的时候不仅要设置合并消息列表，还要设置标题和摘要信息，实现流程如下：
-1. 调用 `createMergerMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/createMergerMessage.html)) 接口创建一条合并消息，创建合并消息的时候需要设置原始消息列表，合并消息标题、合并消息摘要等信息。
+1. 调用 `createMergerMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createMergerMessage.html)) 接口创建一条合并消息，创建合并消息的时候需要设置原始消息列表，合并消息标题、合并消息摘要等信息。
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
-| 属性 |  含义 | 说明 |
-| --- |  --- | --- |
-| msgIDList | 原始消息ID列表 | 合并转发的原始消息ID列表 |
-| title | 标题 | 合并消息的标题，如上图所示 “xixiyah 和 Hello 的聊天记录” |
-| abstractList | 摘要列表 | 合并消息的摘要信息，如上图所示，合并消息需要预先展示原始消息的摘要信息，当用户点击 Cell 后才去展示完整消息内容|
-| compatibleText | 兼容文本信息 | 低版本 SDK 如果不支持合并消息，默认会收到一条文本消息，文本消息的内容为 compatibleText |
+| 属性           | 含义           | 说明                                                                                                           |
+| -------------- | -------------- | -------------------------------------------------------------------------------------------------------------- |
+| msgIDList      | 原始消息ID列表 | 合并转发的原始消息ID列表                                                                                       |
+| title          | 标题           | 合并消息的标题，如上图所示 “xixiyah 和 Hello 的聊天记录”                                                       |
+| abstractList   | 摘要列表       | 合并消息的摘要信息，如上图所示，合并消息需要预先展示原始消息的摘要信息，当用户点击 Cell 后才去展示完整消息内容 |
+| compatibleText | 兼容文本信息   | 低版本 SDK 如果不支持合并消息，默认会收到一条文本消息，文本消息的内容为 compatibleText                         |
 
 创建并发送合并消息示例代码如下：
 
@@ -54,7 +54,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createMergerMessageResult =
 ### 接收合并转发消息
 
 #### 添加监听器
-接收方调用 `addAdvancedMsgListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addAdvancedMsgListener.html)) 添加高级消息监听器。
+接收方调用 `addAdvancedMsgListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) 添加高级消息监听器。
 一般建议在比较靠前的时间点调用，例如例如聊天消息界面初始化后，确保 App 能及时收到消息。
 
 示例代码如下：
@@ -69,8 +69,8 @@ TencentImSDKPlugin.v2TIMManager
 
 #### 解析消息
 添加监听器后，接收方会在 `onRecvNewMessage` 中收到合并消息 `V2TimMessage`。
-可以先通过合并消息元素 `V2TimMergerElem` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_merger_elem/V2TimMergerElem-class.html)) 获取 `title` 和  `abstractList`  UI 展示。
-当用户点击合并消息的时候再调用 `downloadMergerMessage`([dart](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/downloadMergerMessage.html)) 接口下载合并消息列表 UI 展示。
+可以先通过合并消息元素 `V2TimMergerElem` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMergerElem.html)) 获取 `title` 和  `abstractList`  UI 展示。
+当用户点击合并消息的时候再调用 `downloadMergerMessage`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/downloadMergerMessage.html)) 接口下载合并消息列表 UI 展示。
 
 示例代码如下：
 
@@ -90,7 +90,7 @@ if(message.elemType == MessageElemType.V2TIM_ELEM_TYPE_MERGER){
 
 
 ## 逐条转发消息
-如果您需要转发单条消息，可以先通过 `createForwardMessage` ([dart](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/createForwardMessage.html)) 接口创建一条和原消息内容完全一样的转发消息，再调用 `sendMessage` ([dart](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessage.html)) 接口把转发消息发送出去。
+如果您需要转发单条消息，可以先通过 `createForwardMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createForwardMessage.html)) 接口创建一条和原消息内容完全一样的转发消息，再调用 `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) 接口把转发消息发送出去。
 
 示例代码如下：
 

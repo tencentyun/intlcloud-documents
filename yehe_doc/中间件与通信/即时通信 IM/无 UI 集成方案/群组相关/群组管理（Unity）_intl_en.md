@@ -115,7 +115,7 @@ The following table describes the features and limitations of each group type:
 
 ## Creating a Group
 
-If you want to initialize group information (for example, group introduction, group profile photo, and initial group members) when creating a group, call the [GroupCreate](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupCreate_com_tencent_imsdk_unity_types_CreateGroupParam_com_tencent_imsdk_unity_callback_ValueCallback_) API. For parameter details, see [CreateGroupParam](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.CreateGroupParam.html).
+If you want to initialize group information (for example, group introduction, group profile photo, and initial group members) when creating a group, call the [GroupCreate](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupCreate.html) API. For parameter details, see [CreateGroupParam](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/CreateGroupParam.html).
 
 ```c#
 TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_param, string user_data)=>{
@@ -127,25 +127,25 @@ TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_pa
 
 The processes for joining groups of different types are described as follows:
 
-| Type         | Work Group (Work) | Public Group (Public) | Meeting Group (Meeting) | Community Group (Community) | Audio-Video Group (AVChatRoom) |
-| :------- | :------------------- | :------------------------- | :-------------------- | :---------------- | :------------------- |
+| Type              | Work Group (Work)                        | Public Group (Public)                                                     | Meeting Group (Meeting)                   | Community Group (Community)               | Audio-Video Group (AVChatRoom)            |
+| :---------------- | :--------------------------------------- | :------------------------------------------------------------------------ | :---------------------------------------- | :---------------------------------------- | :---------------------------------------- |
 | How to join group | Users must be invited to join the group. | users join the group after requests are approved by group owner or admin. | Users can join and quit the group freely. | Users can join and quit the group freely. | Users can join and quit the group freely. |
 
 ### Scenario 1: users can join and quit the group freely
 
 Meeting groups (Meeting) and audio-video groups (AVChatRoom) can be used for interactive scenarios where users join and exit groups frequently, such as online conferencing and show live streaming. The group joining procedure is therefore the simplest.
 
-After a user successfully joins a group by calling [GroupJoin](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupJoin_System_String_System_String_com_tencent_imsdk_unity_callback_ValueCallback_), all group members (including the joined user) receive the [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.html#grouptipseventcallback) callback.
+After a user successfully joins a group by calling [GroupJoin](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupJoin.html), all group members (including the joined user) receive the [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) callback.
 
 ### Scenario 2: users must be invited to join the group
 
 Resembling WeChat and WeCom groups, work groups (Work) are suitable for communication in work environments. The interaction pattern is designed to disable proactive group joining and only allows users to be invited to join the group by group members.
 
-A group member calls [GroupInviteMember](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupInviteMember_com_tencent_imsdk_unity_types_GroupInviteMemberParam_com_tencent_imsdk_unity_callback_ValueCallback_) to invite a user to join the group, then all group members (including the inviter) receive the [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) callback.
+A group member calls [GroupInviteMember](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupInviteMember.html) to invite a user to join the group, then all group members (including the inviter) receive the [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) callback.
 
 ### Scenario 3: users join the group after requests are approved
 
-Public groups (Public) are similar to the interest groups and tribes in QQ. Any user can request to join the group, but will not become a member of the group until the request is approved by the group owner or admin. While approval is required by default, the group owner or admin can call the [GroupModifyGroupInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyGroupInfo_com_tencent_imsdk_unity_types_GroupModifyInfoParam_com_tencent_imsdk_unity_callback_ValueCallback_) API to set the group joining option ([TIMGroupAddOption](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.enums.TIMGroupAddOption.html)) to **forbid anyone to join**, which is tighter, or to **disable the approval process**, which is more flexible.
+Public groups (Public) are similar to the interest groups and tribes in QQ. Any user can request to join the group, but will not become a member of the group until the request is approved by the group owner or admin. While approval is required by default, the group owner or admin can call the [GroupModifyGroupInfo](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyGroupInfo.html) API to set the group joining option ([TIMGroupAddOption](https://comm.qq.com/im/doc/unity/en/enums/TIMGroupAddOption.html)) to **forbid anyone to join**, which is tighter, or to **disable the approval process**, which is more flexible.
 
 - kTIMGroupAddOpt_Forbid: forbid anyone to join the group.
 - kTIMGroupAddOpt_Auth (default): group owner or admin approval is required for group joining.
@@ -153,13 +153,13 @@ Public groups (Public) are similar to the interest groups and tribes in QQ. Any 
 
 ## Quitting a group
 
-Call [GroupQuit](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupQuit_System_String_com_tencent_imsdk_unity_callback_ValueCallback_) to quit a group. Then all group members receive the [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) callback.
+Call [GroupQuit](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupQuit.html) to quit a group. Then all group members receive the [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) callback.
 
 >!For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner is not allowed to quit the group but can delete the group.
 
 ## Deleting Groups
 
-Call [GroupDelete](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupDelete_System_String_com_tencent_imsdk_unity_callback_ValueCallback_) to delete a group. Then all group members receive the [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) callback.
+Call [GroupDelete](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupDelete.html) to delete a group. Then all group members receive the [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) callback.
 
 >!
 >- For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner can delete the group at any time.
@@ -167,17 +167,17 @@ Call [GroupDelete](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.i
 
 ## Getting the List of Joined Groups
 
-Call [GroupGetJoinedGroupList](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupGetJoinedGroupList_com_tencent_imsdk_unity_callback_ValueCallback_) to get a list of work groups (Work), public groups (Public), meeting groups (Meeting), and community groups (Community) the current user has joined. Audio-video groups (AVChatRoom) will not be included in this list.
+Call [GroupGetJoinedGroupList](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetJoinedGroupList.html) to get a list of work groups (Work), public groups (Public), meeting groups (Meeting), and community groups (Community) the current user has joined. Audio-video groups (AVChatRoom) will not be included in this list.
 
 ## Group Profiles and Group Settings
 
 ### Getting group profiles
 
-Call [GroupGetGroupInfoList](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupGetGroupInfoList_System_Collections_Generic_List_System_String__com_tencent_imsdk_unity_callback_ValueCallback_) to get the group profile of one or more groups at a time. To get the group profiles of multiple groups by a single call, pass in multiple `groupID` at a time.
+Call [GroupGetGroupInfoList](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetGroupInfoList.html) to get the group profile of one or more groups at a time. To get the group profiles of multiple groups by a single call, pass in multiple `groupID` at a time.
 
 ### Modifying group profiles
 
-Call [GroupModifyGroupInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyGroupInfo_com_tencent_imsdk_unity_types_GroupModifyInfoParam_com_tencent_imsdk_unity_callback_ValueCallback_) to modify the group profile. When the modification is completed, all group members receive the [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) callback.
+Call [GroupModifyGroupInfo](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyGroupInfo.html) to modify the group profile. When the modification is completed, all group members receive the [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) callback.
 
 >?
 >- For work groups (Work), all group members can modify the basic group profile.
@@ -186,7 +186,7 @@ Call [GroupModifyGroupInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.
 
 ## Setting the Group Message Receiving Option
 
-Any group member can call the [MsgSetGroupReceiveMessageOpt](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSetGroupReceiveMessageOpt_System_String_com_tencent_imsdk_unity_enums_TIMReceiveMessageOpt_com_tencent_imsdk_unity_callback_ValueCallback_) API to modify the group message receiving option. Available group message receiving options are as follows:
+Any group member can call the [MsgSetGroupReceiveMessageOpt](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSetGroupReceiveMessageOpt.html) API to modify the group message receiving option. Available group message receiving options are as follows:
 
 - TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive: messages will be received when the user is online, and push notifications will be received when the user is offline.
 - TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive: no group messages will be received.

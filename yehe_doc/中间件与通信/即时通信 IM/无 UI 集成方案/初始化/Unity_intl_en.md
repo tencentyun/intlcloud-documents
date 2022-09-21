@@ -23,7 +23,7 @@ In the [IM console](https://console.cloud.tencent.com/im), you can view all your
 [](id:SDKConfig)
 ### Setting the SdkConfig
 
-Before initializing the SDK, you need to initialize the [SdkConfig](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.SdkConfig.html) object, which is used to set the local SDK cache and log position.
+Before initializing the SDK, you need to initialize the [SdkConfig](https://comm.qq.com/im/doc/unity/en/types/SDKSetConfigAttributes/SdkConfig.html) object, which is used to set the local SDK cache and log position.
 
 You need to configure the storage path of the IM runtime logs and data.
 
@@ -38,7 +38,7 @@ It is the storage path of the IM logs.
 >!The application needs read-write access to this path.
 
 ### Calling the initialization API
-After performing the above steps, you can call `InitSDK` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_Init_System_Int64_com_tencent_imsdk_unity_types_SdkConfig_)) to initialize the SDK.
+After performing the above steps, you can call `InitSDK` ([c#](https://comm.qq.com/im/doc/unity/en/api/IMSDKInit/Init.html)) to initialize the SDK.
 
 Below is the sample code:
 
@@ -61,29 +61,29 @@ We recommend you register a global event listener immediately after calling `ini
 
 The callbacks are as described below:
 
-| Event Callback | Description |
-|---------|---------|
-| RecvNewMsgCallback | Callback for receiving a new message |
-| MsgReadedReceiptCallback | Callback for a message read receipt |
-| MsgRevokeCallback | Callback for recalling a message |
-| MsgElemUploadProgressCallback | Callback for the upload progress of a message element |
-| GroupTipsEventCallback | Callback for a group system message |
-| GroupAttributeChangedCallback | Callback for a group attribute change |
-| ConvTotalUnreadMessageCountChangedCallback | Callback for a change in the unread message count of a conversation |
-| NetworkStatusListenerCallback | Callback for listening on the network connection status |
-| KickedOfflineCallback | Callback for being kicked offline |
-| UserSigExpiredCallback | Callback for ticket expiration |
-| OnAddFriendCallback | Callback for adding a friend |
-| OnDeleteFriendCallback | Callback for deleting a friend |
-| UpdateFriendProfileCallback | Callback for updating the profile of a friend |
-| FriendAddRequestCallback | Callback for a friend request |
-| FriendApplicationListDeletedCallback | Callback for deleting a friend request |
-| FriendApplicationListReadCallback | Callback for reading a friend request |
-| FriendBlackListAddedCallback | Callback for adding a friend to the blocklist |
-| FriendBlackListDeletedCallback | Callback for removing a friend from the blocklist |
-| LogCallback | Log callback |
-| MsgUpdateCallback | Callback for a message update |
-| MsgGroupMessageReadMemberListCallback | Callback for getting the list of group members who have read a group message |
+| Event Callback                             | Description                                                                  |
+| ------------------------------------------ | ---------------------------------------------------------------------------- |
+| RecvNewMsgCallback                         | Callback for receiving a new message                                         |
+| MsgReadedReceiptCallback                   | Callback for a message read receipt                                          |
+| MsgRevokeCallback                          | Callback for recalling a message                                             |
+| MsgElemUploadProgressCallback              | Callback for the upload progress of a message element                        |
+| GroupTipsEventCallback                     | Callback for a group system message                                          |
+| GroupAttributeChangedCallback              | Callback for a group attribute change                                        |
+| ConvTotalUnreadMessageCountChangedCallback | Callback for a change in the unread message count of a conversation          |
+| NetworkStatusListenerCallback              | Callback for listening on the network connection status                      |
+| KickedOfflineCallback                      | Callback for being kicked offline                                            |
+| UserSigExpiredCallback                     | Callback for ticket expiration                                               |
+| OnAddFriendCallback                        | Callback for adding a friend                                                 |
+| OnDeleteFriendCallback                     | Callback for deleting a friend                                               |
+| UpdateFriendProfileCallback                | Callback for updating the profile of a friend                                |
+| FriendAddRequestCallback                   | Callback for a friend request                                                |
+| FriendApplicationListDeletedCallback       | Callback for deleting a friend request                                       |
+| FriendApplicationListReadCallback          | Callback for reading a friend request                                        |
+| FriendBlackListAddedCallback               | Callback for adding a friend to the blocklist                                |
+| FriendBlackListDeletedCallback             | Callback for removing a friend from the blocklist                            |
+| LogCallback                                | Log callback                                                                 |
+| MsgUpdateCallback                          | Callback for a message update                                                |
+| MsgGroupMessageReadMemberListCallback      | Callback for getting the list of group members who have read a group message |
 
 >! If you receive the `UserSigExpiredCallback` callback, the `UserSig` that you use for login has expired. In this case, you need to use a new `UserSig` to log in again. If you continue to use the expired `UserSig`, the IM SDK will be in an infinite login loop.
 
@@ -91,7 +91,7 @@ The callbacks are as described below:
 Generally, if your application's lifecycle is the same as the IM SDK's lifecycle, you don't need to uninitialize the IM SDK before exiting the application.
 However, you can uninitialize the IM SDK in special cases, for example, only after you enter a specific UI and no longer use it after exiting the UI.
 
-You can perform the uninitialization by calling the uninitialization API `unInitSDK` ([Dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/unInitSDK.html)).
+You can perform the uninitialization by calling the uninitialization API `unInitSDK` ([c#](https://comm.qq.com/im/doc/unity/en/api/IMSDKInit/Uninit.html)).
 
 Below is the sample code:
 
