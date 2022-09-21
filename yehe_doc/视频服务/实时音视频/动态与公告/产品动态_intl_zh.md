@@ -278,7 +278,7 @@
 </tr><tr>
 <td>Version 8.7 版本发布</td>
 <td>全平台：<ul style="margin:0">
-<li>增加外接音频设备的异常检测。注册 onStatistics 回调后， 您可以用 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics">TRTCLocalStatistics</a> 中的 audioCaptureState 来实时检测长时间静音、破音、异常间断问题。</li>
+<li>增加外接音频设备的异常检测。注册 onStatistics 回调后， 您可以用 TRTCLocalStatistics 中的 audioCaptureState 来实时检测长时间静音、破音、异常间断问题。</li>
 <li>优化 BGM 资源管理，及时释放内存占用。</li>
 <li>推流端退后台暂停视频上行时，播放端能及时收到 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> 的通知。</li>
 </ul><br>Mac：<ul style="margin:0">
@@ -317,8 +317,8 @@
 <td>Version 8.5 版本发布</td>
 <td>全平台：<ul style="margin:0">
 <li>新增播片功能，您可以使用 TXVODPlayer 与 TRTCCloud 绑定，把点播正在播放的内容通过 TRTC 的辅路推流分享出去。</li>
-<li>新增辅路自定义采集，请参见 API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a>。</li>
-<li>新增自定义混音功能，您可以将自己的一路音轨混入 SDK 的音频处理流程中，SDK 会先将两路音轨混合后再一起发布出去，请参见 API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a>。</li>
+<li>新增辅路自定义采集。</li>
+<li>新增自定义混音功能，您可以将自己的一路音轨混入 SDK 的音频处理流程中，SDK 会先将两路音轨混合后再一起发布出去。</li>
 <li>支持指定纯视频混流，混流控制更灵活。</li>
 <li>状态回调增加端到端延迟。</li>
 </ul>
@@ -396,7 +396,7 @@ iOS&Android：<ul style="margin:0">新增回调混合本地采集与所有播放
 </ul>
 <br>Mac&iOS：<ul style="margin:0">自定义渲染的模式下也可以调用 TRTCCloud.snapshotVideo 截取视频流图片。</ul>
 <br>Windows：<ul style="margin:0">
-	<li/>支持本地摄像头采集和播放远端视频流截图，请参见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8cf480979530c705c04d3c1715787f6c">ITRTCCloud.snapshotVideo</a>。
+	<li/>支持本地摄像头采集和播放远端视频流截图。
 	<li/>屏幕分享支持通过 addExcludedShareWindow 和 addIncludedShareWindow 接口排除或强制包含您所指定的窗口，从而实现更灵活的屏幕分享能力。
 	<li/>优化回声消除算法，进一步提升回声消除的效果。
 </ul>
@@ -431,7 +431,7 @@ iOS&Android：<ul style="margin:0">新增回调混合本地采集与所有播放
 <td>Version 8.0 版本发布</td>
 <td>
 全平台：<ul style="margin:0">
-	<li/>新增 C++ 统一 API，请参见 cpp_interface/<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html">ITRTCCloud.h</a>。
+	<li/>新增 C++ 统一 API。
 	<li/>支持字符串房间号，请参见 TRTCParams.strRoomId。
 	<li/>新增 TXDeviceManager 设备管理类。
 	<li/>新增 API TRTCCloud.switchRoom，支持不停止采集，直接切换房间。
@@ -521,7 +521,7 @@ Android：<ul style="margin:0">
 </ul>
 <br>Windows：<ul style="margin:0">
 <li>新增支持跨屏指定区域进行屏幕分享。
-<li>新增窗口分享支持过滤指定窗口进行抗遮挡，详见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff">TRTCCloud.addExcludedShareWindow</a> 和 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf">TRTCCloud.removeExcludedShareWindow</a>。
+<li>新增窗口分享支持过滤指定窗口进行抗遮挡。
 <li>新增系统音量变化回调，详见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>。
 <li>兼容虚拟摄像头 e2eSoft Vacm。
 <li>支持同时调用 startLocalPreview 和 startCameraDeviceTest。
