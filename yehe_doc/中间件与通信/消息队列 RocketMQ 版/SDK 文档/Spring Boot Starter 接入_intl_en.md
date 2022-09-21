@@ -76,7 +76,7 @@ server:
 </thead>
 <tbody><tr>
 <td align="left">name-server</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
 </tr>
 <tr>
 <td align="left">group</td>
