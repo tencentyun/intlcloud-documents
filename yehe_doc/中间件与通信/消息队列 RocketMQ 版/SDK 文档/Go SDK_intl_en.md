@@ -70,11 +70,11 @@ go get github.com/apache/rocketmq-client-go/v2
 </tr>
 <tr>
 <td align="left">nameSpace</td>
-<td align="left">The namespace name can be copied under the <code>Topic</code> tab on the **Cluster** page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/823fb2bd90d17ecb24960ffea027a910.png" alt=""></li></td>
+<td align="left">The namespace name can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/823fb2bd90d17ecb24960ffea027a910.png" alt=""></li></td>
 </tr>
 <tr>
 <td align="left">serverAddress</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list. (<strong>Note: Add `http://` or `https://` before the access address; otherwise, it cannot be resolved.</strong>). <img src="https://qcloudimg.tencent-cloud.cn/raw/5ec413fb25af95bbd7ce9beb17cc62f6.png" alt=""></td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list. (<strong>Note: Add `http://` or `https://` before the access address; otherwise, it cannot be resolved.</strong>). <img src="https://qcloudimg.tencent-cloud.cn/raw/5ec413fb25af95bbd7ce9beb17cc62f6.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">groupName</td>
@@ -114,7 +114,7 @@ go get github.com/apache/rocketmq-client-go/v2
 </thead>
 <tbody><tr>
 <td align="left">topicName</td>
-<td align="left">Topic name, which can be copied under the <code>Topic</code> tab on the **Cluster** page in the console. <img src="https://qcloudimg.tencent-cloud.cn/raw/2b52e1983fb576cc10b074cd7f1a15a8.png" alt=""></td>
+<td align="left">Topic name, which can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console. <img src="https://qcloudimg.tencent-cloud.cn/raw/2b52e1983fb576cc10b074cd7f1a15a8.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">TAG</td>
@@ -135,7 +135,9 @@ Release the resources.
       }
 :::
 </dx-codeblock>
->?For more information on async sending and one-way sending, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-go-sdk-demo.zip) or [RocketMQ-Client-Go Examples](https://github.com/apache/rocketmq-client-go/tree/master/examples).
+
+>? For more information on async sending and one-way sending, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-go-sdk-demo.zip) or [RocketMQ-Client-Go Examples](https://github.com/apache/rocketmq-client-go/tree/master/examples).
+
 4. Create a consumer.
 <dx-codeblock>
 :::  go
@@ -190,11 +192,11 @@ Release the resources.
 </tr>
 <tr>
 <td align="left">nameSpace</td>
-<td align="left">The namespace name can be copied under the <code>Topic</code> tab on the **Cluster** page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/dd397f141e6388407e99018e7d4fc8a7.png" alt=""></li></td>
+<td align="left">The namespace name can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/dd397f141e6388407e99018e7d4fc8a7.png" alt=""></li></td>
 </tr>
 <tr>
 <td align="left">serverAddress</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list. (<strong>Note: Add `http://` or `https://` before the access address; otherwise, it cannot be resolved.</strong>). <img src="https://qcloudimg.tencent-cloud.cn/raw/baf2bd3e35110f2fae6b936eaa2f723b.png" alt=""></td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list. (<strong>Note: Add `http://` or `https://` before the access address; otherwise, it cannot be resolved.</strong>). <img src="https://qcloudimg.tencent-cloud.cn/raw/baf2bd3e35110f2fae6b936eaa2f723b.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">groupName</td>
