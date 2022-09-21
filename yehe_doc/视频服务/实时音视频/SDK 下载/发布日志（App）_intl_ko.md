@@ -372,7 +372,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 **새로운 기능**
 - Mac: Windows와 동일하게 Mac 운영 체제의 출력 사운드를 수집하는 기능인 SystemLoopback 기능을 지원합니다. 이 기능은 SDK가 현재 시스템의 사운드를 수집할 수 있도록 하는 기능으로, 기능을 활성화하면 호스트가 손쉽게 다른 사용자에게 음악이나 영화 파일 라이브 방송을 할 수 있습니다.
 -  Mac: 화면 공유 시 로컬 미리보기 기능을 지원합니다. 미니 창을 통해 공유할 화면 콘텐츠를 미리 볼 수 있습니다.
--  Windows: 프로세스 볼륨 조절 기능이 추가되었습니다. [setApplicationPlayVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1)을 통해 시스템 볼륨 믹서의 볼륨을 조절할 수 있습니다.
+-  Windows: 프로세스 볼륨 조절 기능이 추가되었습니다. setApplicationPlayVolume 을 통해 시스템 볼륨 믹서의 볼륨을 조절할 수 있습니다.
 -  전체 플랫폼: 로컬 멀티미디어 녹화 기능이 추가되었습니다. 호스트는 푸시 스트림 중에 로컬 오디오 및 비디오를 mp4 파일로 녹음 및 녹화할 수 있습니다. 이와 관련한 내용은 [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b)을 참고하십시오.
 
 **품질 최적화**
@@ -525,7 +525,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Mac: 시스템 음량 변화 콜백이 추가되었습니다. 세부 사항은 [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)를 참고하십시오.
 - Windows: 크로스 스크린을 지원하여 지정된 영역에 화면을 공유하는 기능이 추가되었습니다.
 - Windows: 창 공유가 필터 기능을 지원하여 지정된 창에 대한 차폐 방지 기능이 추가되었습니다. 세부 사항은 [TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) 및 [TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)를 참고하십시오.
-- Windows: 시스템 음량 변화 콜백이 추가되었습니다. 세부 사항은 [ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12)를 참고하십시오.
+- Windows: 시스템 음량 변화 콜백이 추가되었습니다. 
 
 **최적화**
 - iOS: VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
@@ -578,7 +578,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - iOS: 저가형 iPhone 또는 iPad에서 오디오 재생 시 간혹 재생에 실패하는 버그가 수정되었습니다.
 - iOS: iPad Pro에서 화면 공유 기능으로 인해 공유된 화면이 늘어나는 문제가 수정되었습니다.
 - iOS: 사용자가 권한을 거절했음에도 App 내부 화면 기여가 계속해서 화면 녹화 권한을 요청하는 문제가 수정되었습니다.
-- Windows: 노트북 또는 데스크톱이 장기간 휴면 상태일 때, 나가기 [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) 이벤트 알림이 콜백되지 않는 문제가 수정되었습니다.
+- Windows: 노트북 또는 데스크톱이 장기간 휴면 상태일 때, 나가기 onExitRoom 이벤트 알림이 콜백되지 않는 문제가 수정되었습니다.
 - Windows: Music 음질 모듈에서 시스템 오디오 루프백 [stopSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23)을 활성화하면 에코가 누출되는 문제가 수정되었습니다.
 - Windows: enterRoom과 exitRoom을 빠르게 호출하여 방 입장/퇴장을 할 경우 간혹 소리가 들리지 않는 버그가 수정되었습니다.
 - Windows: Visual Stuido 2010 프로젝트에서 SDK의 편집 호환성 문제가 수정되었습니다.
