@@ -63,11 +63,11 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </tr>
 <tr>
 <td align="left">groupName</td>
-<td align="left">Producer group name, which can be copied under the <code>Group</code> tab on the **Cluster** page in the console.</td>
+<td align="left">Producer group name, which can be copied under the <code>Group</code> tab on the <strong>Cluster</strong>page in the console.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -100,7 +100,7 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </thead>
 <tbody><tr>
 <td align="left">topic_name</td>
-<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the **Cluster** page in the console.</td>
+<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">TAG</td>
@@ -152,7 +152,7 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </thead>
 <tbody><tr>
 <td align="left">topic_name</td>
-<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the **Cluster** page in the console.</td>
+<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">TAG</td>
@@ -179,7 +179,7 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </thead>
 <tbody><tr>
 <td align="left">topic_name</td>
-<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the **Cluster** page in the console.</td>
+<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">TAG</td>
@@ -217,11 +217,11 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </tr>
 <tr>
 <td align="left">groupName</td>
-<td align="left">Producer group name, which can be copied under the <code>Group</code> tab on the **Cluster** page in the console.</td>
+<td align="left">Producer group name, which can be copied under the <code>Group</code> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -259,11 +259,11 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </tr>
 <tr>
 <td align="left">groupName</td>
-<td align="left">Producer group name, which can be copied under the <code>Group</code> tab on the **Cluster** page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
+<td align="left">Producer group name, which can be copied under the <code>Group</code> tab on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list.</td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -274,7 +274,9 @@ Introduce dependencies in a Java project and add the following dependencies to t
 <td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/709c03c8959d357a49833f87ed457c77.png" alt="img"></td>
 </tr>
 </tbody></table>
->?For more consumption mode information, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
+
+>? For more consumption mode information, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
+
 2. Subscribed to messages. The subscription modes vary by consumption mode.
    - Subscription in push mode
    <dx-codeblock>
@@ -301,11 +303,11 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </thead>
 <tbody><tr>
 <td align="left">topic_name</td>
-<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the **Cluster** page in the console.</td>
+<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">"*"</td>
-<td align="left">If the subscription expression is left empty or specified as asterisk (*), all messages are subscribed to. `tag1 || tag2 || tag3` means subscribing to multiple types of tags.</td>
+<td align="left">If the subscription expression is left empty or specified as asterisk (*), all messages are subscribed to. <code>tag1 || tag2 || tag3</code> means subscribing to multiple types of tags.</td>
 </tr>
 </tbody></table>
    - Subscription in pull mode
@@ -335,11 +337,11 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </thead>
 <tbody><tr>
 <td align="left">topic_name</td>
-<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the **Cluster** page in the console.</td>
+<td align="left">Topic name, which can be copied under the <strong><code>Topic</code></strong> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">"*"</td>
-<td align="left">If the subscription expression is left empty or specified as asterisk (*), all messages are subscribed to. `tag1 || tag2 || tag3` means subscribing to multiple types of tags.</td>
+<td align="left">If the subscription expression is left empty or specified as asterisk (*), all messages are subscribed to. <code>tag1 || tag2 || tag3</code> means subscribing to multiple types of tags.</td>
 </tr>
 </tbody></table>
 
