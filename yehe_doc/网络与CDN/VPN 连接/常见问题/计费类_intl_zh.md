@@ -1,6 +1,6 @@
 ### VPN 连接的计费模式是什么？
 - VPN 通道和对端网关免费使用，VPN 网关需要付费使用。
-- VPN 网关提供按量后付费的计费模式，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1037/32685)。
+- VPN 网关“按量后付费”的计费模式，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1037/32685)。
 
 有关私有网络的更多计费信息，详情请参见 [私有网络计费概述](https://intl.cloud.tencent.com/document/product/215/35500)。
 
@@ -11,8 +11,7 @@ VPN 网关的续费、升级操作不可以同时进行，如果用户有未支�
 关于 VPN 网关的到期提醒，详情请参见 [到期提醒](https://intl.cloud.tencent.com/document/product/1037/32687)。
 
 ### 是否支持 SSL VPN？
-SSL VPN 内测中，如需体验，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+支持，SSL VPN 内测已结束，将于2022年4月6日正式商用。
 
-
-
-
+### VPN 已经删除了，为什么还在扣费？
+VPN 按量计费模式下的扣费是按小时后付费（按小时结算，不满一小时按一小时计算）。如果您在12:02-13:20期间使用，按照结算方式会产生2笔扣费（12:00-13:00、13:00-14:00）。另外按量资源扣费时间不唯一，可能会产生延迟扣费，可能会在14点多或者15点多才会扣取最后一笔费用。
