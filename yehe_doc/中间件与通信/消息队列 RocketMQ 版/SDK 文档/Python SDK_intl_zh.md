@@ -13,7 +13,7 @@
 
 ### 步骤1：准备环境
 
-Rocketmq-client Python 基于 [rocketmq-client-cpp](https://github.com/apache/rocketmq-client-cpp) 进行包装，因此需要先安装 **`librocketmq`**。
+Rocketmq-client Python 基于 [rocketmq-client-cpp](https://github.com/apache/rocketmq-client-cpp) 进行包装，因此需要先安装 <strong>`librocketmq`</strong>。
 
 1. 安装 librocketmq （版本2.0.0及以上）， 安装教程参见 [librocketmq 安装](https://github.com/apache/rocketmq-client-python)。
 2. 执行如下命令安装 rocketmq-client-python。
