@@ -36,7 +36,7 @@ This operation involves multiple account information configuration items. The fo
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/acb68a6dfa00e5ccd41fdd511a0fcfd6.png)
 >?To execute a sync task with the root account, just follow the steps above; to execute a sync task with a sub-account, you also need to ask the root account to authorize the sub-account as follows:
-7. (Optional) Log in to the [CAM console](https://console.cloud.tencent.com/cam/role) with the Tencent Cloud sub-account of the target database and click **Policies** on the left sidebar. Then, click **Create Custom Policy** on the right and select **Create by Policy Syntax**.<br>
+7. (Optional) Log in to the [CAM console](https://console.cloud.tencent.com/cam/role) with the Tencent Cloud root account of the target database and click **Policies** on the left sidebar. Then, click **Create Custom Policy** on the right and select **Create by Policy Syntax**.<br>
 <img src="https://qcloudimg.tencent-cloud.cn/raw/050a9318db3118de54ffefb57c144c12.png" style="zoom:90%;" />      
 8. (Optional) Select **Blank Template** and click **Next**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3e779e1daa8394da22d8ee3200c10370.png)  
