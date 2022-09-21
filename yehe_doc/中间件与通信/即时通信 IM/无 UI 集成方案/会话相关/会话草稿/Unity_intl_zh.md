@@ -6,7 +6,7 @@
 > 2. 草稿仅在本地保存，不会存储到服务器，因此不能多端同步，程序卸载重装会失效。
 
 ## 设置会话草稿
-通过调用 `ConvSetDraft`([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvSetDraft_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_DraftParam_)) 接口，设置会话草稿。
+通过调用 `ConvSetDraft`([c#](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvSetDraft.html)) 接口，设置会话草稿。
 
 示例代码如下：
 
