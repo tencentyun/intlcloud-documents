@@ -372,7 +372,7 @@ Android&Mac&iOS：オーディオ再生の外部接続や制御をサポート�
 **機能追加**
 - Mac：Macのオペレーティングシステムの出力音声のキャプチャのサポートが開始されました。これはWindows端末と同一のSystemLoopback機能で、この機能を使用するとSDKは現在のシステムの音声をキャプチャすることができます。この機能を有効化すると、キャスターは他のユーザーに対して音楽または映画ファイルのライブストリーミングを実行することが容易になります。
 -  Mac：画面共有ではローカルプレビュー機能のサポートを開始しました。画面共有のプレビュー内容を、小さなウィンドウを介してユーザーに表示することができます。
--  Windows：プロセスの音量調節機能を追加しました。[setApplicationPlayVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1)を使用すると、システムの音量ミキサーの音量を設定することができます。
+-  Windows：プロセスの音量調節機能を追加しました。setApplicationPlayVolumeを使用すると、システムの音量ミキサーの音量を設定することができます。
 -  すべてのプラットフォーム：ローカルのオーディオビデオ録画機能を追加しました。キャスターはプッシュ中にローカルのオーディオおよびビデオからmp4ファイルを作成することができます。[startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b)をご参照ください。
 
 **品質の最適化**
@@ -525,7 +525,7 @@ Android&Mac&iOS：オーディオ再生の外部接続や制御をサポート�
 - Mac：システム音量の変化コールバックを追加しました。詳細は[TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)をご参照ください。
 - Windows：スクリーン間で指定したエリアの画面共有を新たにサポートしました。
 - Windows：ウィンドウ共有で、指定したウィンドウをフィルターする遮蔽対策をサポートしました。詳細については[TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06)および[TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)をご参照ください。
-- Windows：システム音量変化コールバックを追加しました。詳細は[ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12)をご参照ください。
+- Windows：システム音量変化コールバックを追加しました。
 
 **最適化**
 - iOS： VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除去をサポートしました。
@@ -578,7 +578,7 @@ Android&Mac&iOS：オーディオ再生の外部接続や制御をサポート�
 - iOS：再生オーディオ効果がローエンドのiPhoneまたはiPadで失敗することがあるBUGを修正しました。
 - iOS：iPad Proの画面共有の画面に変形、伸びが生じるという問題を修正しました。
 - iOS： ユーザーの権限拒否後にも、App内のスクリーンがスクリーンレコーディングの権限申請の表示を繰り返しポップアップし続けるという問題を修正しました。
-- Windows：ノートブックまたはデスクトップ式パソコンが長時間スリープすると、退室[onExitRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd)イベント通知がコールバックされない問題を解決しました。
+- Windows：ノートブックまたはデスクトップ式パソコンが長時間スリープすると、退室onExitRoomイベント通知がコールバックされない問題を解決しました。
 - Windows：Music音質モードで、システムミックス[stopSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23)を有効にすると、エコーが漏れる問題を修正しました。
 - Windows：enterRoomおよびexitRoomを呼び出してすばやく入退室するとき、再生側で音声が出ないというBUGを修正しました。
 - Windows：SDKでVisual Stuido 2010プロジェクトのコンパイルの互換性の問題を修正しました。
