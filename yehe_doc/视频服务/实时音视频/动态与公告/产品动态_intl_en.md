@@ -278,7 +278,7 @@ Reduced the CPU usage of screen sharing when mouse cursor capturing is enabled.
 </tr><tr>
 <td>SDK 8.7 release</td>
 <td>All platforms:<ul style="margin:0">
-<li>Supported anomaly detection for peripheral audio devices. After registering the `onStatistics` callback, you can detect in real time when there is no audio for a long time and when audio cracks or is interrupted via the `audioCaptureState` field of <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics">TRTCLocalStatistics</a>.</li>
+<li>Supported anomaly detection for peripheral audio devices. After registering the `onStatistics` callback, you can detect in real time when there is no audio for a long time and when audio cracks or is interrupted via the `audioCaptureState` field of TRTCLocalStatistics.</li>
 <li>Improved the management of background music resources, ensuring that memory is freed up in a timely manner.</li>
 <li>Ensured that audience receive the <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> callback in a timely manner after stream publishing is paused because the application is switched to the background.</li>
 </ul><br>macOS:<ul style="margin:0">
@@ -317,8 +317,8 @@ Added native support for Apple M1.
 <td>SDK 8.5 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Supported publishing VOD content. You can now bind `TXVodPlayer` with `TRTCCloud` and publish the content played by VOD via TRTC’s substream.</li>
-<li>Supported custom capturing of substream data. For details, please see the API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a>.</li>
-<li>Supported custom audio mixing. You can feed a custom audio track into the SDK’s audio processing. The SDK will mix the two tracks before publishing. For details, please see the API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a>.</li>
+<li>Supported custom capturing of substream data.</li>
+<li>Supported custom audio mixing. You can feed a custom audio track into the SDK’s audio processing. The SDK will mix the two tracks before publishing.</li>
 <li>Supported mixing only video streams, allowing more flexible stream mixing control.</li>
 <li>Added end-to-end latency to status callback.</li>
 </ul>
@@ -396,7 +396,7 @@ iOS & Android: <ul style="margin:0">Supported the callback of the combination of
 </ul>
 <br>macOS & iOS: <ul style="margin:0">Supported calling `TRTCCloud.snapshotVideo` to take screenshots in the custom rendering mode.</ul>
 <br>Windows:<ul style="margin:0">
-	<li/>Supported taking screenshots of video captured by the local camera and played back remote videos. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8cf480979530c705c04d3c1715787f6c">ITRTCCloud.snapshotVideo</a>.
+	<li/>Supported taking screenshots of video captured by the local camera and played back remote videos.
 	<li/>Supported using `addExcludedShareWindow` and `addIncludedShareWindow` to exclude or include windows you specify, increasing the flexibility of screen sharing.
 	<li/>Optimized the AEC algorithm.
 </ul>
@@ -431,7 +431,7 @@ All platforms: <ul style="margin:0">
 <td>SDK 8.0 release</td>
 <td>
 All platforms: <ul style="margin:0">
-	<li/>Added cross-platform C++ APIs. For more information, please see cpp_interface/<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html">ITRTCCloud.h</a>.
+	<li/>Added cross-platform C++ APIs.
 	<li/>Supported string-type room IDs. For more information, please see `TRTCParams.strRoomId`.
 	<li/>Added the device management class `TXDeviceManager`.
 	<li/>Added the `TRTCCloud.switchRoom` API, which allows room switching with capturing uninterrupted.
@@ -521,7 +521,7 @@ Supported pushing a specified image when stream pushing pauses. For more informa
 </ul>
 <br>Windows:<ul style="margin:0">
 <li>Supported specifying content for screen sharing across screens.
-<li>Supported filtering out specified windows from screen sharing to prevent the target window from being covered. For more information, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff">TRTCCloud.addExcludedShareWindow</a> and <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf">TRTCCloud.removeExcludedShareWindow</a>.
+<li>Supported filtering out specified windows from screen sharing to prevent the target window from being covered.
 <li>Added the callback of system volume change. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>.
 <li>Made the SDK compatible with the virtual webcam e2eSoft VCam.
 <li>Allowed calling `startLocalPreview` and `startCameraDeviceTest` at the same time.
