@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-- [完成资源创建与准备](https://intl.cloud.tencent.com/document/product/1113/43119)
+- [完成资源创建与准备](https://intl.cloud.tencent.com/document/product/1112/43069)
 - [安装 Python](https://www.python.org/downloads/)
 - [安装 pip](https://pip-cn.readthedocs.io/en/latest/installing.html)
 - [下载 Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-python-sdk-demo.zip)
@@ -13,13 +13,13 @@
 
 ### 步骤1：准备环境
 
-Rocketmq-client Python 基于 [rocketmq-client-cpp](https://github.com/apache/rocketmq-client-cpp) 进行包装，因此需要先安装 **librocketmq**。
+Rocketmq-client Python 基于 [rocketmq-client-cpp](https://github.com/apache/rocketmq-client-cpp) 进行包装，因此需要先安装 **`librocketmq`**。
 
-1. 安装 librocketmq （版本2.0.0及以上）， 安装教程参见  [librocketmq 安装](https://github.com/apache/rocketmq-client-python)。
+1. 安装 librocketmq （版本2.0.0及以上）， 安装教程参见 [librocketmq 安装](https://github.com/apache/rocketmq-client-python)。
 2. 执行如下命令安装 rocketmq-client-python。
 <dx-codeblock>
 :::  shell
-   pip install rocketmq-client-python
+pip install rocketmq-client-python
 :::
 </dx-codeblock>
 
@@ -31,80 +31,71 @@ Rocketmq-client Python 基于 [rocketmq-client-cpp](https://github.com/apache/ro
 :::  python
 from rocketmq.client import Producer, Message
 
-# 初始化生产者，并设置生产组信息
-producer = Producer(groupName)
-# 设置服务地址
-producer.set_name_server_address(nameserver)
-# 设置权限（角色名和密钥）
-producer.set_session_credentials(
- 	accessKey,  # 角色密钥
-    secretKey,  # 角色名称
-    ''
-)
-# 启动生产者
-producer.start()
+   # 初始化生产者，并设置生产组信息，组名称使用全称，例：rocketmq-xxx|namespace_python%group1
+   producer = Producer(groupName)
+   # 设置服务地址
+   producer.set_name_server_address(nameserver)
+   # 设置权限（角色名和密钥）
+   producer.set_session_credentials(
+    	accessKey,  # 角色密钥
+       secretKey,  # 角色名称
+       ''
+   )
+   # 启动生产者
+   producer.start()
 
-# 组装消息   topic名称为  命名空间全称拼接上topic名称后的全名称  例：rocketmq-xxx|namespace_python%topic1
-msg = Message(topicName)
-# 设置keys
-msg.set_keys(TAGS)
-# 设置tags
-msg.set_tags(KEYS)
-# 消息内容
-msg.set_body('This is a new message.')
+   # 组装消息   topic名称为  命名空间全称拼接上topic名称后的全名称  例：rocketmq-xxx|namespace_python%topic1
+   msg = Message(topicName)
+   # 设置keys
+   msg.set_keys(TAGS)
+   # 设置tags
+   msg.set_tags(KEYS)
+   # 消息内容
+   msg.set_body('This is a new message.')
 
-# 发送同步消息
-ret = producer.send_sync(msg)
-print(ret.status, ret.msg_id, ret.offset)
-# 资源释放
-producer.shutdown()
+   # 发送同步消息
+   ret = producer.send_sync(msg)
+   print(ret.status, ret.msg_id, ret.offset)
+   # 资源释放
+   producer.shutdown()
 :::
 </dx-codeblock>
-</dx-codeblock>
 <table>
-    <tr>
-        <th>参数</th>
-        <th>说明</th>
-    </tr>
-    <tr>
-        <td>groupName</td>
-        <td>生产者组名称。在控制台集群管理中 Group 页签中获取。</td>
-    </tr>
-    <tr>
-        <td>nameserver</td>
-        <td>集群接入地址，在<b>集群管理</b>页面操作列的<b>接入地址</b>获取。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/424026465647068a89a2e1d1a9a67c4a.png" style="width: 100%">
-        </td>
-    </tr>
-    <tr>
-        <td>secretKey</td>
-        <td>角色名称，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制。</td>
-    </tr>
-    <tr>
-        <td>accessKey</td>
-        <td>角色密钥，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制<b>密钥</b>列复制。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/07ea422573eee1705f90227fe2f608b2.png" style="width: 100%">
-        </td>
-    </tr>
-    <tr>
-        <td>topicName</td>
-        <td>topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。
-				<ul style = "margin-bottom: 0px;"><li>命名空间全称可在控制台集群管理命名空间页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理命名空间页签中复制具体 Topic 名称。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/9c90672b68c79e44f9b6e6e3d902338e.png" style="width: 100%">
-						</li>
-						</ul>
-        </td>
-    </tr>
-    <tr>
-        <td>TAGS</td>
-        <td>用来设置订阅消息的 TAG。</td>
-    </tr>
-		 <tr>
-        <td>KEYS</td>
-        <td>设置消息业务 key。</td>
-    </tr>
-</table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">groupName</td>
+<td align="left">生产者组名称。在控制台集群管理中 <code>Group</code> tab 中获取。</td>
+</tr>
+<tr>
+<td align="left">nameserver</td>
+<td align="left">集群接入地址，在控制台<strong>集群管理</strong>页面操作列的<strong>获取接入地址</strong>获取。新版共享集群与专享集群命名接入点地址在<strong>命名空间</strong>列表获取。<img src="https://qcloudimg.tencent-cloud.cn/raw/424026465647068a89a2e1d1a9a67c4a.png" alt=""></td>
+</tr>
+<tr>
+<td align="left">secretKey</td>
+<td align="left">角色名称，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制。</td>
+</tr>
+<tr>
+<td align="left">accessKey</td>
+<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/07ea422573eee1705f90227fe2f608b2.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left">topicName</td>
+<td align="left">topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。<li> 命名空间全称在控制台集群管理中 <code>Topic</code> 页签中页面复制，格式是**集群 ID +</li></td>
+</tr>
+<tr>
+<td align="left">TAGS</td>
+<td align="left">用来设置消息的 TAG。</td>
+</tr>
+<tr>
+<td align="left">KEYS</td>
+<td align="left">设置消息业务 key。</td>
+</tr>
+</tbody></table>
 
 ### 步骤3：消费消息
 
@@ -113,88 +104,80 @@ producer.shutdown()
 :::  python
 import time
 
-from rocketmq.client import PushConsumer, ConsumeStatus
+   from rocketmq.client import PushConsumer, ConsumeStatus
 
 
-# 消息处理回调
-def callback(msg):
-    # 模拟业务
-    print('Received message. messageId: ', msg.id, ' body: ', msg.body)
-    # 消费成功回复CONSUME_SUCCESS
-    return ConsumeStatus.CONSUME_SUCCESS
-    # 消费成功回复消息状态
-    # return ConsumeStatus.RECONSUME_LATER
+   # 消息处理回调
+   def callback(msg):
+       # 模拟业务
+       print('Received message. messageId: ', msg.id, ' body: ', msg.body)
+       # 消费成功回复CONSUME_SUCCESS
+       return ConsumeStatus.CONSUME_SUCCESS
+       # 消费成功回复消息状态
+       # return ConsumeStatus.RECONSUME_LATER
 
 
-# 初始化消费者，并设置消费者组信息 (消费者组信息为命名空间全称拼接上group名称， 例：rocketmq-xxx|namespace_python%group11)
-consumer = PushConsumer(groupName)
-# 设置服务地址
-consumer.set_name_server_address(nameserver)
-# 设置权限（角色名和密钥）
-consumer.set_session_credentials(
-	accessKey,	 # 角色密钥
-    secretKey,   # 角色名称
-    ''
-)
-# 订阅topic
-consumer.subscribe(topicName, callback, TAGS)
-print(' [Consumer] Waiting for messages.')
-# 启动消费者
-consumer.start()
+   # 初始化消费者，并设置消费者组信息 (消费者组信息为命名空间全称拼接上group名称， 例：rocketmq-xxx|namespace_python%group11)
+   consumer = PushConsumer(groupName)
+   # 设置服务地址
+   consumer.set_name_server_address(nameserver)
+   # 设置权限（角色名和密钥）
+   consumer.set_session_credentials(
+   	accessKey,	 # 角色密钥
+       secretKey,   # 角色名称
+       ''
+   )
+   # 订阅topic
+   consumer.subscribe(topicName, callback, TAGS)
+   print(' [Consumer] Waiting for messages.')
+   # 启动消费者
+   consumer.start()
 
-while True:
-    time.sleep(3600)
-# 资源释放
-consumer.shutdown()
+   while True:
+       time.sleep(3600)
+   # 资源释放
+   consumer.shutdown()
 :::
 </dx-codeblock>
 <table>
-    <tr>
-        <th>参数</th>
-        <th>说明</th>
-    </tr>
-    <tr>
-        <td>groupName</td>
-        <td>消费者组信息为命名空间全称拼接上 group 名称， 例如：<code>rocketmq-xxx|namespace_python%group11</code>。命名空间名称和 Group 名称可在控制台中的命名空间和 Group 页签中获取。</td>
-    </tr>
-    <tr>
-        <td>nameserver</td>
-        <td>集群接入地址，在<b>集群管理</b>页面操作列的<b>接入地址</b>获取。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/36a804b55313aebf8e1c7e3968904a03.png" style="width: 100%">
-        </td>
-    </tr>
-    <tr>
-        <td>secretKey</td>
-        <td>角色名称，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制。</td>
-    </tr>
-    <tr>
-        <td>accessKey</td>
-        <td>角色密钥，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制<b>密钥</b>列复制。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ef9c950f6792fedd472c323ba9d6fb9e.png" style="width: 100%">
-        </td>
-    </tr>
-    <tr>
-        <td>topicName</td>
-        <td>topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。
-				<ul style = "margin-bottom: 0px;"><li>命名空间全称可在控制台集群管理 Topic 页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理 Topic 页签中复制具体 Topic 名称。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" style="width: 100%">
-						</li>
-						</ul>
-        </td>
-    </tr>
-    <tr>
-        <td>TAGS</td>
-        <td>设置订阅消息的 tag，默认为 <code>*</code>，表示订阅所有消息。</td>
-    </tr>
-</table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">groupName</td>
+<td align="left">消费者组信息为命名空间全称拼接上 group 名称， 例：rocketmq-xxx|namespace_python%group11。topic 名称和名称空间名称可在控制台中的<code>命名空间</code>  和 <code>G</code>roup tab 中获取</td>
+</tr>
+<tr>
+<td align="left">nameserver</td>
+<td align="left">集群接入地址，在控制台<strong>集群管理</strong>页面操作列的<strong>获取接入地址</strong>获取。新版共享集群与专享集群命名接入点地址在<strong>命名空间</strong>列表获取。<img src="https://qcloudimg.tencent-cloud.cn/raw/36a804b55313aebf8e1c7e3968904a03.png" alt=""></td>
+</tr>
+<tr>
+<td align="left">secretKey</td>
+<td align="left">角色名称，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制。</td>
+</tr>
+<tr>
+<td align="left">accessKey</td>
+<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/ef9c950f6792fedd472c323ba9d6fb9e.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left">topicName</td>
+<td align="left">topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。<li> 命名空间全称在控制台集群管理中 <code>Topic</code> 页签中页面复制，格式是<strong>集群 ID +｜+命名空间</strong>。<img src="https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" alt=""> </li> <li> Topic 名称在控制台集群管理中 <code>Topic</code> 页签中复制具体 Topic 名称。<img src="https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" alt=""></li></td>
+</tr>
+<tr>
+<td align="left">TAGS</td>
+<td align="left">设置订阅消息的tag，默认为<code>"*"</code>，表示订阅所有消息</td>
+</tr>
+</tbody></table>
 
 
 
 ### 步骤4：查看消费详情
 
 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，在**集群管理** > **Group** 页面，可查看与 Group 连接的客户端列表，单击操作列的**查看详情**，可查看消费者详情。
-![](https://qcloudimg.tencent-cloud.cn/raw/a9516801b649c49bd3d65edc6bc7b5e9.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/a9516801b649c49bd3d65edc6bc7b5e9.png)
 
->?上述是对消息的发布和订阅方式的简单介绍。更多操作可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-python-sdk-demo.zip) 或 [RocketMQ-Client-Python 示例](https://github.com/apache/rocketmq-client-python/tree/master/samples) 。
+>?上述是对消息的发布和订阅方式的简单介绍。更多操作可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-python-sdk-demo.zip) 或 [RocketMQ-Client-Python示例](https://github.com/apache/rocketmq-client-python/tree/master/samples) 。
 
