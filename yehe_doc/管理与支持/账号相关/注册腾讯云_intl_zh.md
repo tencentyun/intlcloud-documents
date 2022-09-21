@@ -1,16 +1,18 @@
 1. [注册腾讯云账号](https://intl.cloud.tencent.com/account/register)，根据账号使用情况选择注册企业账号或个人账号，输入注册信息。
 
->? 当前一个手机号最多注册5个腾讯云账号，如达到限制，请修改原账号手机后重试，详情流程请参考 [修改手机和邮箱](https://intl.cloud.tencent.com/document/product/378/36000)。
+   >? 支持直接用谷歌账号注册腾讯云个人账号，只需完成绑卡即可注册成功。
 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/6f0e489dbcfff16af04e59e29f6e6b90.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/c6d09c7e214eadee14915aa379d83e5a.png)
 
 2. 根据页面提示填写账号详细信息，并认真阅读服务协议和隐私协议，如同意并勾选，可进行下一步。
 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/228ee9e45e75d270a56efc48d290b443.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b774b2e6e95263f0cfa51adb45cfd961.png)
+
+   >? 当前一个手机号最多注册5个腾讯云账号，如达到限制，请修改原账号手机后重试，详情流程请参考 [修改手机和邮箱](https://intl.cloud.tencent.com/document/product/378/36000)。
 
 3. 请正确输入您的卡号信息进行绑卡 。 
 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/0ee33d34a4fbb1f8c42e092b6f473e37.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/71f58dfeccf98f99aaeb7fd1eb166f44.png)
 
 4. 绑卡成功，请点击【继续】完成注册。
 
@@ -18,7 +20,7 @@
 
 5. 注册成功，您可以开始 [登陆控制台](https://intl.cloud.tencent.com/login) 体验腾讯云的产品了。
 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/fd807364118f6e49d48541985ed7576e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/dcd23ce0affcb862e10a9d5b5eb86035.png)
 
 新账号注册完后需尽快到 [国际站控制台](https://console.intl.cloud.tencent.com/developer) 进行手机验证，否则将影响部分功能的使用。
 
