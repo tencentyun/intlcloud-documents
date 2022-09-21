@@ -10,10 +10,10 @@ A commission statement complies with Tencent’s commission incentive policies. 
 
 ### Directions
 1. Log in to the Tencent Cloud console with a reseller account.
-2. Go to Partner Center -> Commission Management -> Statement
+2. Go to **Partner Center -> Commission Management -> Statement**
 3. Perform operations on a statement as needed.
   - View details: Click to view the commission details.
   - Download: Click to download the Excel statement file for the specified month.
   - Confirm: Confirm the statement after checking it. You must confirm or reject the statement in 15 days after it is issued; otherwise, it will be confirmed by default.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/5455e8c04d2fdbd2e5eeac5b49a20d9e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6aa27e7b307aecb4bd12c1a791a19182.png)
