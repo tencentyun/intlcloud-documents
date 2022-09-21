@@ -5,10 +5,10 @@
 
 ### 操作步骤
 1、使用经销商账号登录腾讯云
-2、进入菜单：Partner Center -> Rebate Management-> Rebate Detail
+2、进入菜单：**Partner Center -> Rebate Management-> Rebate Detail**
 3、返佣明细相关操作:
 
    - 查看明细：按照月份查看返佣明细，此明细与对账单下载总数一致，仅数据颗粒度不同。
    - 明细下载：下载对应月份明细的查询结果数据。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1ad462e8766530af1890121e69153335.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0d9f7c0b6f73cfeb7bf4dba5cb6f86b1.png)
