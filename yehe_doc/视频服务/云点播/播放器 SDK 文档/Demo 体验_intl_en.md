@@ -5,7 +5,7 @@ Tencent Cloud RT-Cube player demo provides complete product-grade interactive UI
 The player for web supports video playback in PC and mobile browsers. Its rich and flexible APIs can be quickly integrated with your own web applications.
 
 ### Demo download
-[Superplayer for web - VOD playback demo](https://tcplayer.vcube.tencent.com/)
+[Superplayer for web - VOD playback demo](https://tcplayer.vcube.tencent.com/intl/index.html)
 
 [](id:mobile)
 ## Mobile
