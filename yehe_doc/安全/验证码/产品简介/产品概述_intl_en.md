@@ -12,7 +12,7 @@ This service helps you solve the following security problems:
 ### Slider CAPTCHA
 
 This feature allows users to quickly complete verification by simply sliding the knob. Its ease of use and powerful risk control make it suitable for most human verification scenarios.
-![](https://qcloudimg.tencent-cloud.cn/raw/869e4bb476380a2845a1eaee58886456.gif) 
+![](https://qcloudimg.tencent-cloud.cn/raw/54a2f521f5dd2df8093be42e80791b58.png) 
 
 ### Smart verification
 
