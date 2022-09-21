@@ -278,7 +278,7 @@ mixExternalAudioFrame의 사용 편의성이 최적화되어 더 이상 호출 �
 </tr><tr>
 <td>Version 8.7 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-<li>외부 연결 오디오 장치에 대한 예외 점검이 추가되었습니다. onStatistics 콜백 등록 후, <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics">TRTCLocalStatistics</a>의 audioCaptureState로 장시간 음소거, 파음, 끊김 문제를 실시간으로 점검할 수 있습니다.</li>
+<li>외부 연결 오디오 장치에 대한 예외 점검이 추가되었습니다. onStatistics 콜백 등록 후, TRTCLocalStatistics</a>의 audioCaptureState로 장시간 음소거, 파음, 끊김 문제를 실시간으로 점검할 수 있습니다.</li>
 <li>BGM 리소스 관리가 최적화되어 메모리 점유율을 적시에 릴리스합니다.</li>
 <li>푸시 스트리밍측 백그라운드 전환 후 비디오 업스트림을 일시 중지하면 재생측에서 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> 알림을 즉시 수신할 수 있습니다.</li>
 </ul><br>Mac: <ul style="margin:0">
@@ -317,8 +317,8 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 <td>Version 8.5 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>VOD 파일 재생 기능이 추가되었습니다. TXVODPlayer와 TRTCCloud를 바인딩하여 현재 재생 중인 VOD 콘텐츠를 TRTC 서브 채널 푸시 스트림을 통해 공유할 수 있습니다.</li>
-<li>서브 채널 사용자 정의 수집이 추가되었습니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a> API를 참고하십시오.</li>
-<li>사용자 정의 믹싱 기능이 추가되었습니다. 사용자의 오디오 트랙을 SDK의 오디오 처리 프로세스에 믹싱할 수 있으며, SDK가 먼저 두 오디오 트랙을 믹싱한 후 다시 배포합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a> API를 참고하십시오.</li>
+<li>서브 채널 사용자 정의 수집이 추가되었습니다. </li>
+<li>사용자 정의 믹싱 기능이 추가되었습니다. 사용자의 오디오 트랙을 SDK의 오디오 처리 프로세스에 믹싱할 수 있으며, SDK가 먼저 두 오디오 트랙을 믹싱한 후 다시 배포합니다. </li>
 <li>지정 퓨어 비디오 혼합 스트림을 지원하여 더 효율적으로 혼합 스트림을 제어합니다.</li>
 <li>상태 콜백에 end to end 딜레이가 추가되었습니다.</li>
 </ul>
@@ -396,7 +396,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 </ul>
 <br>Mac&iOS: <ul style="margin:0">사용자 정의 렌더링 모드에서도 TRTCCloud.snapshotVideo를 호출하여 비디오 스트림 이미지를 추출할 수 있습니다.</ul>
 <br>Windows: <ul style="margin:0">
-	<li/>로컬 카메라 수집과 원격 비디오 스트림 캡처 재생을 지원합니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8cf480979530c705c04d3c1715787f6c">ITRTCCloud.snapshotVideo</a>를 참고하십시오.
+	<li/>로컬 카메라 수집과 원격 비디오 스트림 캡처 재생을 지원합니다. 
 	<li/>화면 공유에서 addExcludedShareWindow와 addIncludedShareWindow 인터페이스를 통해 지정된 창 제외 또는 강제 포함 기능을 지원하여 보다 유연한 화면 공유 기능을 제공합니다.
 	<li/>에코 제거 알고리즘 최적화로 에코 제거 효과가 향상되었습니다.
 </ul>
@@ -431,7 +431,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 <td>Version 8.0 버전 배포</td>
 <td>
 전체 플랫폼: <ul style="margin:0">
-	<li/>C++ 통합 API가 추가되었습니다. 자세한 내용은 cpp_interface/<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html">ITRTCCloud.h</a>를 참고하십시오.
+	<li/>C++ 통합 API가 추가되었습니다. 
 	<li/>문자열 방 번호를 지원합니다. TRTCParams.strRoomId를 참고하십시오.
 	<li/>TXDeviceManager 장치 관리 클래스가 추가되었습니다.
 	<li/>API TRTCCloud.switchRoom이 추가되어 수집을 중단하지 않고 직접 방을 전환할 수 있습니다.
@@ -521,7 +521,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 </ul>
 <br>Windows: <ul style="margin:0">
 <li>스크린 간 영역을 지정하여 화면을 공유하는 기능이 추가되었습니다.
-<li>창 공유에 지정 창 필터링 차단 기능을 추가하였습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff">TRTCCloud.addExcludedShareWindow</a> 및 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf">TRTCCloud.removeExcludedShareWindow</a>를 참고하십시오.
+<li>창 공유에 지정 창 필터링 차단 기능을 추가하였습니다. 
 <li>시스템 볼륨 변화 콜백이 추가되었습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>를 참고하십시오.
 <li>가상 카메라 e2eSoft Vacm과 호환됩니다.
 <li>startLocalPreview와 startCameraDeviceTest 동시 호출을 지원합니다.
