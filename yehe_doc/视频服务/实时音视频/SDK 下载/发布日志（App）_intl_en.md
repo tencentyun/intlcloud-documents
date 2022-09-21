@@ -372,7 +372,7 @@ Android & macOS & iOS: allowed playing audio via peripheral devices. For details
 **New features**
 - macOS: supported capturing system audio, i.e., the system loopback feature that is enabled on Windows. The feature allows the SDK to capture system audio so that anchors can stream local audio or video files to other users.
 - macOS: supported local preview for screen sharing. You can now display screen sharing preview in a small window.
-- Windows: supported setting the volume of the current process. You can now use [setApplicationPlayVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1) to set the volume of the volume mixer.
+- Windows: supported setting the volume of the current process. You can now use setApplicationPlayVolume to set the volume of the volume mixer.
 - All platforms: supported local recording. An anchor can now record local audio and video into an MP4 file during streaming. For details, see [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b).
 
 **Quality improvement**
@@ -525,7 +525,7 @@ Optimized the business logic of custom capturing:
 - macOS: added the callback of system volume change. For details, please see [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f).
 - Windows: supported specifying content for screen sharing across screens.
 - Windows: supported filtering out specified windows from screen sharing to prevent the target window from being covered. For more information, please see [TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) and [TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2).
-- Windows: added the callback of system volume change. For details, please see [ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12).
+- Windows: added the callback of system volume change. 
 
 **Optimization**
 - iOS: allowed using VODPlayer and TRTC at the same time with AEC enabled.
@@ -578,7 +578,7 @@ Optimized the business logic of custom capturing:
 - iOS: fixed occasional failure to play audio effects on earlier generations of iPhone or iPad devices.
 - iOS: fixed distorted screen sharing images on iPad Pro.
 - iOS: fixed the issue where the application keeps requesting screen recording permission after the user denies it.
-- Windows: fixed the issue where [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) fails after laptops or desktops remain in sleep mode for a long time.
+- Windows: fixed the issue where onExitRoom fails after laptops or desktops remain in sleep mode for a long time.
 - Windows: fixed echo after system audio capturing is enabled via the calling of [startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) in the music mode.
 - Windows: fixed the issue where no audio is played sometimes when a user uses `enterRoom` and `exitRoom` to enter and leave the room in a short period of time.
 - Windows: fixed project compilation problems with Visual Studio 2010.
