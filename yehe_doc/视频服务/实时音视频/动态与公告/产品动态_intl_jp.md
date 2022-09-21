@@ -278,7 +278,7 @@ mixExternalAudioFrameの使いやすさを最適化したため、呼び出し�
 </tr><tr>
 <td>Version 8.7リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
-<li>外部接続オーディオデバイスの異常検出を追加しました。onStatisticsコールバックを登録した後、<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics">TRTCLocalStatistics</a>のaudioCaptureStateを使用して、長時間のミュート、音割れ、異常な中断といった問題をリアルタイムで検出できます。</li>
+<li>外部接続オーディオデバイスの異常検出を追加しました。onStatisticsコールバックを登録した後、TRTCLocalStatisticsのaudioCaptureStateを使用して、長時間のミュート、音割れ、異常な中断といった問題をリアルタイムで検出できます。</li>
 <li>BGMリソース管理を最適化し、メモリ使用量を速やかに解放します。</li>
 <li>プッシュ側がバックエンドに戻ってビデオのアップロードを一時停止すると、再生側は<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> の通知を速やかに受信できます。</li>
 </ul><br>Mac: <ul style="margin:0">
@@ -317,8 +317,8 @@ Apple M1アーキテクチャのネイティブサポートを追加しました
 <td>Version 8.5リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>ビデオ放送機能を追加しました。TXVODPlayerを使用してTRTCCloudとバインドし、オンデマンド再生中のコンテンツをTRTCのサブストリームプッシュで共有することができます。</li>
-<li>サブストリームのユーザー定義キャプチャを追加しました。API<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a>をご参照ください。</li>
-<li>カスタムサウンドミキサー機能を追加しました。自身のオーディオトラックをSDKのオーディオ処理フロー中にミキシングすることができます。SDKはまず2つのオーディオトラックをミキシングし、その後、同時に公開します。API<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a>をご参照ください。</li>
+<li>サブストリームのユーザー定義キャプチャを追加しました。</li>
+<li>カスタムサウンドミキサー機能を追加しました。自身のオーディオトラックをSDKのオーディオ処理フロー中にミキシングすることができます。SDKはまず2つのオーディオトラックをミキシングし、その後、同時に公開します。</li>
 <li>ビデオのみのミクスストリーミング指定をサポートし、ミクスストリーミングの制御がさらに柔軟になりました。</li>
 <li>ステータスのコールバックによりエンドツーエンド遅延が増加します。</li>
 </ul>
@@ -396,7 +396,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 </ul>
 <br>Mac&iOS：<ul style="margin:0">カスタムレンダリングモードでもTRTCCloud.snapshotVideoを呼び出してビデオストリームの画像をキャプチャすることができます。</ul>
 <br>Windows: <ul style="margin:0">
-	<li/>ローカルカメラによるリモートビデオストリームのスクリーンキャプチャの収集および再生をサポートしています。<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8cf480979530c705c04d3c1715787f6c">ITRTCCloud.snapshotVideo</a>をご参照ください。
+	<li/>ローカルカメラによるリモートビデオストリームのスクリーンキャプチャの収集および再生をサポートしています。
 	<li/>画面共有は、addExcludedShareWindowインターフェースおよびaddIncludedShareWindowインターフェースによって、指定したウィンドウを排除または強制的に含むことをサポートすることで、よりフレキシブルな画面共有機能を実現します。
 	<li/>エコー除去アルゴリズムを最適化し、エコー除去効果をさらに向上させます。
 </ul>
@@ -431,7 +431,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 <td>Version 8.0リリース</td>
 <td>
 すべてのプラットフォーム：<ul style="margin:0">
-	<li/>C++の統一APIを追加しました。 cpp_interface/<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html">ITRTCCloud.h</a>をご参照ください。
+	<li/>C++の統一APIを追加しました。
 	- 文字列によるルーム番号をサポートしています。TRTCParams.strRoomIdをご参照ください。
 	<li/>TXDeviceManagerデバイス管理タイプを追加しました。
 	<li/>API TRTCCloud.switchRoomを追加しました。収集を止めずに、直接ルームを切り替えできるようになりました。
@@ -521,7 +521,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 </ul>
 <br>Windows: <ul style="margin:0">
 <li>スクリーン間で指定したエリアの画面共有をサポートします。
-<li>ウィンドウ共有を追加し、指定したウィンドウをフィルターする遮蔽対策をサポートしています。詳細については <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac2a8a65dc2c1d0e4ffbd89eeae768fff">TRTCCloud.addExcludedShareWindow</a> および <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0bbbff5ea3cd764dbaaad0db887760bf">TRTCCloud.removeExcludedShareWindow</a>をご参照ください。
+<li>ウィンドウ共有を追加し、指定したウィンドウをフィルターする遮蔽対策をサポートしています。
 <li>システム音量変化コールバックを追加しました。詳細については<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>をご参照ください。
 <li>バーチャルカメラe2eSoft Vacmと互換性を持たせました。
 <li>startLocalPreviewとstartCameraDeviceTestを同時に呼び出せるようにしました。
