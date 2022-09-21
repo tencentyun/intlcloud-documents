@@ -372,7 +372,7 @@ Android&Mac&iOS：支持外部接管音频播放，请参见 API [enableCustomAu
 **功能新增**
 - Mac：开始支持采集 Mac 操作系统的输出声音，也就是跟 Windows 端一样的 SystemLoopback 能力，该功能可以让 SDK 采集当前系统的声音，开启这个功能后，主播就可以很方便地向其他用户直播音乐或者电影文件。
 -  Mac：屏幕分享开始支持本地预览功能，您可以通过一个小窗口像用户展示屏幕分享的预览内容。
--  Windows：新增进程音量调整能力，使用 [setApplicationPlayVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1) 可以设置系统的音量合成器的音量大小。
+-  Windows：新增进程音量调整能力，使用 setApplicationPlayVolume 可以设置系统的音量合成器的音量大小。
 -  全平台：新增本地音视频录制功能，主播可以在推流过程中把本地的音频和视频录制成一个 mp4 文件，请参见 [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b)。
 
 **质量优化**
@@ -525,7 +525,7 @@ Android&Mac&iOS：支持外部接管音频播放，请参见 API [enableCustomAu
 - Mac：新增系统音量变化回调，详见 [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)。
 - Windows：新增支持跨屏指定区域进行屏幕分享。
 - Windows：新增窗口分享支持过滤指定窗口进行抗遮挡，详见 [TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) 和 [TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)。
-- Windows：新增系统音量变化回调，详见 [ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12)。
+- Windows：新增系统音量变化回调。
 
 **优化**
 - iOS：支持 VODPlayer 和 trtc 一起使用，并且支持回声消除。
@@ -578,11 +578,11 @@ Android&Mac&iOS：支持外部接管音频播放，请参见 API [enableCustomAu
 - iOS：修复播放音效在低端 iPhone 或 iPad 上可能会失败的 BUG。
 - iOS：修复 iPad Pro 屏幕分享出的画面出现变形拉伸的问题。
 - iOS：修复 App 内屏幕贡献在用户拒绝权限之后，还会持续弹出几次屏幕录制权限申请提示的问题。
-- Windows：解决笔记本或者台式机在长时间休眠后，退房 [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) 事件通知不会回调的问题。
-- Windows：修复在 Music 音质模式下，开启系统混音 [stopSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) 后会导致漏回声的问题。
+- Windows：解决笔记本或者台式机在长时间休眠后，退房 onExitRoom 事件通知不会回调的问题。
+- Windows：修复在 Music 音质模式下，开启系统混音 stopSystemAudioLoopback 后会导致漏回声的问题。
 - Windows：修复在快速调用 enterRoom 和 exitRoom 进退房的情况下，偶现的播放端无声的 BUG。
 - Windows：修复 SDK 对 Visual Stuido 2010 项目的编译兼容性问题。
-- Windows：修复手动接收模式（即 [setDefaultStreamRecvMode(false，false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5)）下会重复收到 onUserVideoAvailable 事件回调的问题。
+- Windows：修复手动接收模式（即 setDefaultStreamRecvMode(false，false）下会重复收到 onUserVideoAvailable 事件回调的问题。
 
 
 ### Version 7.6 @ 2020.08.21
