@@ -10,7 +10,7 @@
 
 ### 清空单聊消息
 
-您可以调用 `clearC2CHistoryMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/clearC2CHistoryMessage.html)) 清空单聊消息。
+您可以调用 `clearC2CHistoryMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/clearC2CHistoryMessage.html)) 清空单聊消息。
 
 
 示例代码如下：
@@ -25,7 +25,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().clearC2CHistoryMessage(userI
 
 ### 清空群聊消息
 
-您可以调用 `clearGroupHistoryMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/clearGroupHistoryMessage.html)) 清空群聊消息。
+您可以调用 `clearGroupHistoryMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/clearGroupHistoryMessage.html)) 清空群聊消息。
 
 示例代码如下：
 

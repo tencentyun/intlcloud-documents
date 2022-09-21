@@ -6,7 +6,7 @@
 
 ### 向单聊插入本地消息
 
-您可以调用 `insertC2CMessageToLocalStorage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/insertC2CMessageToLocalStorage.html)) 向单聊插入本地消息。目前Flutter端仅支持插入自定义消息。
+您可以调用 `insertC2CMessageToLocalStorage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/insertC2CMessageToLocalStorage.html)) 向单聊插入本地消息。目前Flutter端仅支持插入自定义消息。
 
 示例代码如下：
 
@@ -19,7 +19,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().insertC2CMessageToLocalStora
 
 ### 向群聊插入本地消息
 
-您可以调用 `insertGroupMessageToLocalStorage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/insertGroupMessageToLocalStorage.html)) 向群聊插入本地消息。
+您可以调用 `insertGroupMessageToLocalStorage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/insertGroupMessageToLocalStorage.html)) 向群聊插入本地消息。
 
 示例代码如下：
 

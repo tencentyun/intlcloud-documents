@@ -122,7 +122,7 @@ The following table describes the features and limitations of each group type:
  The simple API [createGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/createGroup.html) for group creation is disused after v3.6.0. Please use the advanced API for group creation in `groupManager` instead.
 
 #### Advanced API
-If you want to initialize group information (for example, group introduction, group profile photo, and initial group members) when creating a group, call the [createGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/createGroup.html) API in the `V2TIMGroupManager` management class. The `V2TIMGroupManager` management class can be obtain via `TencentImSDKPlugin.v2TIMManager.getGroupManager()`.
+If you want to initialize group information (for example, group introduction, group profile photo, and initial group members) when creating a group, call the [createGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createGroup.html) API in the `V2TIMGroupManager` management class. The `V2TIMGroupManager` management class can be obtain via `TencentImSDKPlugin.v2TIMManager.getGroupManager()`.
 
 
 ```dart
@@ -154,22 +154,22 @@ If you want to initialize group information (for example, group introduction, gr
 ### Joining a group
 The processes for joining groups of different types are described as follows:
 
-| Type         | Work Group (Work) | Public Group (Public) | Meeting Group (Meeting) | Community Group (Community) | Audio-Video Group (AVChatRoom) |
-|---------|---------|---------|---------|---------|---------|
+| Type              | Work Group (Work)                        | Public Group (Public)                                                     | Meeting Group (Meeting)                   | Community Group (Community)               | Audio-Video Group (AVChatRoom)            |
+| ----------------- | ---------------------------------------- | ------------------------------------------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | How to join group | Users must be invited to join the group. | users join the group after requests are approved by group owner or admin. | Users can join and quit the group freely. | Users can join and quit the group freely. | Users can join and quit the group freely. |
 
 #### Scenario 1: users can join and quit the group freely
 Meeting groups (Meeting) and audio-video groups (AVChatRoom) can be used for interactive scenarios where users join and exit groups frequently, such as online conferencing and show live streaming. The group joining procedure is therefore the simplest.
 
-After a user successfully joins a group by calling [joinGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/joinGroup.html), all group members (including the joined user) receive the [onMemberEnter](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberEnter.html) callback. 
+After a user successfully joins a group by calling [joinGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html), all group members (including the joined user) receive the [onMemberEnter](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberEnterCallback.html) callback. 
 
 #### Scenario 2: users must be invited to join the group
 Resembling WeChat and WeCom groups, work groups (Work) are suitable for communication in work environments. The interaction pattern is designed to disable proactive group joining and only allows users to be invited to join the group by group members.
 
-A group member calls [inviteUserToGroup](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/inviteUserToGroup.html) to invite a user to group, then all group members (including the inviter) receive the [onMemberInvited](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberInvited.html) callback.
+A group member calls [inviteUserToGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/inviteUserToGroup.html) to invite a user to group, then all group members (including the inviter) receive the [onMemberInvited](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberInvitedCallback.html) callback.
 
 #### Scenario 3: users join the group after requests are approved
-Public groups (Public) are similar to the interest groups and tribes in QQ. Any user can request to join the group, but will not become a member of the group until the request is approved by the group owner or admin. While approval is required by default, the group owner or admin can call the [setGroupInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/setSelfInfo.html) API to set the group joining option (`GroupAddOptType`) to **forbid anyone to join**, which is tighter, or to **disable the approval process**, which is more flexible.
+Public groups (Public) are similar to the interest groups and tribes in QQ. Any user can request to join the group, but will not become a member of the group until the request is approved by the group owner or admin. While approval is required by default, the group owner or admin can call the [setGroupInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html) API to set the group joining option (`GroupAddOptType`) to **forbid anyone to join**, which is tighter, or to **disable the approval process**, which is more flexible.
 - GroupAddOptTypeEnum.V2TIM_GROUP_ADD_FORBID: forbid anyone to join the group.
 - GroupAddOptTypeEnum.V2TIM_GROUP_ADD_AUTH (default): group owner or admin approval is required for group joining.
 - GroupAddOptTypeEnum.V2TIM_GROUP_ADD_ANY: disable the approval process to allow any user to join the group.
@@ -178,22 +178,22 @@ The following diagram illustrates the process of group joining that requires app
 ![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 1. **The user sends a request to join the group**
-The user calls [joinGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/joinGroup.html) to request to join the group.
+The user calls [joinGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html) to request to join the group.
 2. **The group owner or admin processes the group joining request**
-After receiving the [onReceiveJoinApplication](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onReceiveJoinApplication.html) callback, the group owner or admin calls the [getGroupApplicationList](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/getGroupApplicationList.html) API to get the list of group joining requests, and accepts or rejects a request with [acceptGroupApplication](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/acceptGroupApplication.html) or [refuseGroupApplication](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/refuseGroupApplication.html).
+After receiving the [onReceiveJoinApplication](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnReceiveJoinApplicationCallback.html) callback, the group owner or admin calls the [getGroupApplicationList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupApplicationList.html) API to get the list of group joining requests, and accepts or rejects a request with [acceptGroupApplication](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/acceptGroupApplication.html) or [refuseGroupApplication](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/refuseGroupApplication.html).
 3. **The user receives the result**
- The user receives the [onApplicationProcessed](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onApplicationProcessed.html) callback in [V2TimGroupListener](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener-class.html). If `isAgreeJoin` is `true`, the request is accepted. Otherwise, the request is rejected. If the request is accepted, all members (including the requester) receive the [onMemberEnter](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberEnter.html) callback.
+ The user receives the [onApplicationProcessed](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnApplicationProcessedCallback.html) callback in [V2TimGroupListener](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimGroupListener.html). If `isAgreeJoin` is `true`, the request is accepted. Otherwise, the request is rejected. If the request is accepted, all members (including the requester) receive the [onMemberEnter](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberEnterCallback.html) callback.
 
 
 
 [](id:quit)
 ### Quitting a group
-Call [quitGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/quitGroup.html) to quit a group. The user who quits the group then receives the [onQuitFromGroup](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onQuitFromGroup.html) callback and other group members receive the [onMemberLeave](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberLeave.html) callback.
+Call [quitGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/quitGroup.html) to quit a group. The user who quits the group then receives the [onQuitFromGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnQuitFromGroupCallback.html) callback and other group members receive the [onMemberLeave](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberLeaveCallback.html) callback.
 >?For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner is not allowed to quit the group but can [delete the group](#dismiss).
 
 [](id:dismiss)
 ### Deleting a group
-Call [dismissGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/dismissGroup.html) to delete a group. Then all group members receive the [onGroupDismissed](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupDismissed.html) callback.
+Call [dismissGroup](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/dismissGroup.html) to delete a group. Then all group members receive the [onGroupDismissed](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupDismissedCallback.html) callback.
 
 >?
 >- For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner can delete the group at any time.
@@ -201,14 +201,14 @@ Call [dismissGroup](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/m
 
 
 ### Getting the list of joined groups
-Call [getJoinedGroupList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getJoinedGroupList.html) to get a list of work groups (Work), public groups (Public), meeting groups (Meeting), and community group (Community) the current user has joined. Audio-video groups (AVChatRoom) will not be included in this list.
+Call [getJoinedGroupList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedGroupList.html) to get a list of work groups (Work), public groups (Public), meeting groups (Meeting), and community group (Community) the current user has joined. Audio-video groups (AVChatRoom) will not be included in this list.
 
 ## Group Profiles and Group Settings
 ### Getting group profiles
-Call [getGroupsInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getJoinedGroupList.html) to get the group profile of one or more groups at a time. To get the group profiles of multiple groups by a single call, pass in multiple `groupID` at a time.
+Call [getGroupsInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedGroupList.html) to get the group profile of one or more groups at a time. To get the group profiles of multiple groups by a single call, pass in multiple `groupID` at a time.
 
 ### Modifying group profiles
-Call [setGroupInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/setGroupInfo.html) to modify the group profile. When the modification is complete, all group members receive the [onGroupInfoChanged](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupInfoChanged.html) callback.
+Call [setGroupInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html) to modify the group profile. When the modification is complete, all group members receive the [onGroupInfoChanged](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupInfoChangedCallback.html) callback.
 >?
 > - For work groups (Work), all group members can modify the basic group profile.
 > - For public groups (Public), meeting groups (Meeting), and community groups (Community), only the group owner and admin can modify the group profile.
@@ -235,7 +235,7 @@ Call [setGroupInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/m
 ```
 
 ### Setting the group message receiving option
-Any group member can call the [setGroupReceiveMessageOpt](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/setGroupReceiveMessageOpt.html) API to modify the group message receiving option. Available group message receiving options are as follows:
+Any group member can call the [setGroupReceiveMessageOpt](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/setGroupReceiveMessageOpt.html) API to modify the group message receiving option. Available group message receiving options are as follows:
 - ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE: messages will be received when the user is online, and push notifications will be received when the user is offline.
 - ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE: no group messages will be received.
 - ReceiveMsgOptEnum.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE: messages will be received when the user is online, and no push notification will be received when the user is offline.
@@ -246,7 +246,7 @@ With the group message receiving option set to `ReceiveMsgOptEnum.V2TIM_NOT_RECE
 - **Group messages will be received but the user will not be notified. A badge without the unread count will be displayed on the conversation list interface**
 >?This mode requires the unread count feature and therefore it applies only to work groups (Work) and public groups (Public).
 >
-With the group message receiving option set to `ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE`, when new group messages are received and the conversation list needs to be updated, you can get the unread count through [unreadCount](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_conversation/V2TimConversation/unreadCount.html). Use [recvOpt](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_info/V2TimGroupInfo/recvOpt.html) to verify that a red dot instead of the unread count is displayed when the group message receiving option is `ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE`.
+With the group message receiving option set to `ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE`, when new group messages are received and the conversation list needs to be updated, you can get the unread count through [unreadCount](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#unreadcount). Use [recvOpt](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#recvopt) to verify that a red dot instead of the unread count is displayed when the group message receiving option is `ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE`.
 
 ## Group Attributes (Custom Group Fields)
 New custom group fields, also called group attributes, are designed. They have the following features:
@@ -259,34 +259,34 @@ New custom group fields, also called group attributes, are designed. They have t
 With group attributes, you can manage the seats of audio chat rooms. When a user mics on, you can set a group attribute to manage the information of the user. When the user mics off, you can delete the group attribute. Other members can get the list of group attributes to display the seat list.
 
 ### Initializing group attributes
-Call the [initGroupAttributes](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/initGroupAttributes.html) API to initialize group attributes. If the group has existing group attributes, they will be deleted first.
+Call the [initGroupAttributes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/initGroupAttributes.html) API to initialize group attributes. If the group has existing group attributes, they will be deleted first.
 
 ### Setting group attributes
 
-Call the [setGroupAttributes](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/setGroupAttributes.html) API to set group attributes. If the group attributes to set do not exist, they will be automatically added.
+Call the [setGroupAttributes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupAttributes.html) API to set group attributes. If the group attributes to set do not exist, they will be automatically added.
 
 ### Deleting group attributes
-Call the [deleteGroupAttributes](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/deleteGroupAttributes.html) API to delete specified group attributes. If you set the `keys` field to `null`, all group attributes will be deleted.
+Call the [deleteGroupAttributes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/deleteGroupAttributes.html) API to delete specified group attributes. If you set the `keys` field to `null`, all group attributes will be deleted.
 
 ### Getting group attributes
-Call the [getGroupAttributes](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupAttributes.html) API to get specified group attributes. If you set the `keys` field to `null`, all group attributes will be returned.
+Call the [getGroupAttributes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupAttributes.html) API to get specified group attributes. If you set the `keys` field to `null`, all group attributes will be returned.
 
 ### Updating group attributes
-If any group attribute is updated, all group attribute fields will be called back via [onGroupAttributeChanged](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupAttributeChanged.html).
+If any group attribute is updated, all group attribute fields will be called back via [onGroupAttributeChanged](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupAttributeChangedCallback.html).
 
 ## Group Member Management
 ### Getting the group member list
-Call [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) to get the list of group members of a given group. The list contains profile information about individual members, such as user ID (`userID`), group name card (`nameCard`), profile photo (`faceUrl`), nickname (`nickName`), and time of joining group (`joinTime`).
+Call [getGroupMemberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) to get the list of group members of a given group. The list contains profile information about individual members, such as user ID (`userID`), group name card (`nameCard`), profile photo (`faceUrl`), nickname (`nickName`), and time of joining group (`joinTime`).
 As a group might have a large number of members (for example, 5,000+), this API supports two advanced attributes: `filter` and `nextSeq`.
 
 #### Filters
-When calling the [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) API, you can specify `filter` to pull the information of certain roles.
+When calling the [getGroupMemberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) API, you can specify `filter` to pull the information of certain roles.
 
-| Filter | Description |
-|---------|---------|
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ALL | Pull the information list of all group members |
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_OWNER | Pull the information list of the group owner |
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ADMIN | Pull the information list of the group admin |
+| Filter                                                     | Description                                         |
+| ---------------------------------------------------------- | --------------------------------------------------- |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ALL    | Pull the information list of all group members      |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_OWNER  | Pull the information list of the group owner        |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ADMIN  | Pull the information list of the group admin        |
 | GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_COMMON | Pull the information list of ordinary group members |
 
 ```dart
@@ -303,9 +303,9 @@ When calling the [getGroupMemberList](https://pub.dev/documentation/tencent_im_s
 #### Pulling paginated results with nextSeq
 In many cases, it makes more sense for the user interface to display the first page of the group member list instead of the complete list. More group members can be pulled when the user clicks **Next Page** or pull the list to refresh. For this scenario, you can apply the method of pulling paginated results.
 
-The [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) API returns a maximum of 50 members at a time. You can use the pagination flag `nextSeq` to pull the paginated group member list. In the first attempt to pull the group member list, enter 0 for `nextSeq`. When the first pull succeeds, `getGroupMemberList`'s callback result [V2TIMGroupMemberInfoResult](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult-class.html) contains the [nextSeq](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult/nextSeq.html) field.
-- If [nextSeq](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult/nextSeq.html) returns 0, the complete group member list has been pulled.
-- If [nextSeq](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult/nextSeq.html) returns a value greater than 0, there remains group member information to be pulled. You can then decide whether to make another call to pull group member information based on the user's action on the UI. In the second pull, you need to pass the [nextSeq](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_info_result/V2TimGroupMemberInfoResult-class.html) in `V2TIMGroupMemberInfoResult` returned from the previous pull as parameter to the [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) API.
+The [getGroupMemberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) API returns a maximum of 50 members at a time. You can use the pagination flag `nextSeq` to pull the paginated group member list. In the first attempt to pull the group member list, enter 0 for `nextSeq`. When the first pull succeeds, `getGroupMemberList`'s callback result [V2TIMGroupMemberInfoResult](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html) contains the [nextSeq](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html#nextseq) field.
+- If [nextSeq](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html#nextseq) returns 0, the complete group member list has been pulled.
+- If [nextSeq](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html#nextseq) returns a value greater than 0, there remains group member information to be pulled. You can then decide whether to make another call to pull group member information based on the user's action on the UI. In the second pull, you need to pass the [nextSeq](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberInfoResult.html) in `V2TIMGroupMemberInfoResult` returned from the previous pull as parameter to the [getGroupMemberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) API.
 
 ```dart
 // Sample code: pull the paginated group member list using nextSeq
@@ -331,31 +331,31 @@ The [getGroupMemberList](https://pub.dev/documentation/tencent_im_sdk_plugin/lat
 
 
 ### Getting group member profiles
-Call [getGroupMembersInfo](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMembersInfo.html) to get the profile of group members in batches. You can pass in multiple `userID` at a time to improve network transmission efficiency.
+Call [getGroupMembersInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMembersInfo.html) to get the profile of group members in batches. You can pass in multiple `userID` at a time to improve network transmission efficiency.
 
 ### Modifying group member profiles
-The group owner or admin can call the [setGroupMemberInfo](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/setGroupMemberInfo.html) API to modify the group-related information of members, including the group name card (`nameCard`), group member role (`role`), muting duration (`muteUntil`), and custom fields.
+The group owner or admin can call the [setGroupMemberInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberInfo.html) API to modify the group-related information of members, including the group name card (`nameCard`), group member role (`role`), muting duration (`muteUntil`), and custom fields.
 
 [](id:mute)
 ### Muting group members
-The group owner or admin can mute a group member and set muting duration (in seconds) via [muteGroupMember](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/muteGroupMember.html). Muting information is stored in the [muteUtil](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_member_full_info/V2TimGroupMemberFullInfo/muteUntil.html) attribute field of the group member. After the group member is muted, all group members (including the muted member) receive the [onMemberInfoChanged](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberInfoChanged.html) event callback.
-The group owner or admin can mute the entire group via the [setGroupInfo](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/setGroupInfo.html) API by setting the [isAllMuted](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_info/V2TimGroupInfo/isAllMuted.html) attribute field to `true`. There is no time limit for group muting. The group can be unmuted through `setAllMuted(false)` in the group profile.
+The group owner or admin can mute a group member and set muting duration (in seconds) via [muteGroupMember](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html). Muting information is stored in the [muteUtil](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberFullInfo.html#muteuntil) attribute field of the group member. After the group member is muted, all group members (including the muted member) receive the [onMemberInfoChanged](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberInfoChangedCallback.html) event callback.
+The group owner or admin can mute the entire group via the [setGroupInfo](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html) API by setting the [isAllMuted](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#isallmuted) attribute field to `true`. There is no time limit for group muting. The group can be unmuted through `setAllMuted(false)` in the group profile.
 
 
 [](id:kick)
 ### Removing group members
-The group owner or admin can call the [kickGroupMember](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/kickGroupMember.html) API to remove a group member. As an audio-video group (AVChatRoom) can have unlimited members, it does not support the API. You can use [muteGroupMember](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/muteGroupMember.html) to achieve the same effect instead.
-After the member is removed, all group members (including the kicked member) receive the [onMemberKicked](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberKicked.html) callback.
+The group owner or admin can call the [kickGroupMember](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/kickGroupMember.html) API to remove a group member. As an audio-video group (AVChatRoom) can have unlimited members, it does not support the API. You can use [muteGroupMember](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html) to achieve the same effect instead.
+After the member is removed, all group members (including the kicked member) receive the [onMemberKicked](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberKickedCallback.html) callback.
 
 ### Changing group member roles
-The group owner can call [setGroupMemberRole](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/setGroupMemberRole.html) to change the role of a member of a public group (Public) or meeting group (Meeting). Roles available for changing are ordinary member and group admin.
-- After a member is set as group admin, all group members (including the new admin) receive the [onGrantAdministrator](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGrantAdministrator.html) callback.
-- After the admin role is removed for a member, all group members (including the member with admin role removed) receive the [onRevokeAdministrator](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onRevokeAdministrator.html) callback.
+The group owner can call [setGroupMemberRole](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberRole.html) to change the role of a member of a public group (Public) or meeting group (Meeting). Roles available for changing are ordinary member and group admin.
+- After a member is set as group admin, all group members (including the new admin) receive the [onGrantAdministrator](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGrantAdministratorCallback.html) callback.
+- After the admin role is removed for a member, all group members (including the member with admin role removed) receive the [onRevokeAdministrator](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRevokeAdministratorCallback.html) callback.
 
 [](id:transfer)
 ### Transferring a group
-The group owner can call [transferGroupOwner](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/transferGroupOwner.html) to transfer the ownership of group to other group members.
-After the group ownership is transferred, all group members receive the [onGroupInfoChanged](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupInfoChanged.html) callback, where the type of `V2TIMGroupChangeInfo` is `GroupChangeInfoType.V2TIM_GROUP_INFO_CHANGE_TYPE_OWNER` and the value is the UserID of the new group owner.
+The group owner can call [transferGroupOwner](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/transferGroupOwner.html) to transfer the ownership of group to other group members.
+After the group ownership is transferred, all group members receive the [onGroupInfoChanged](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupInfoChangedCallback.html) callback, where the type of `V2TIMGroupChangeInfo` is `GroupChangeInfoType.V2TIM_GROUP_INFO_CHANGE_TYPE_OWNER` and the value is the UserID of the new group owner.
 
 ## FAQs
 

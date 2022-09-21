@@ -3,8 +3,8 @@
 为了防止某些监控指标达到一定值后，影响您系统的正常运行。您可以对这些监控指标设定告警规则促使告警系统自动检查监控数据，并在监控数据满足条件时，发送告警通知给管理员，帮助您第一时间了解业务异常，并迅速解决。 
 
 ## 计费说明
-- 云监控服务配置告警策略以监控实例各项关键指标，可免费试用。
-- 目前只针对**告警短信**收费，具体信息，请参见 [购买指南](https://intl.cloud.tencent.com/document/product/248/18728)。
+- 云监控服务配置告警策略以监控实例各项关键指标，可免费使用。
+- 目前只针对**告警短信、电话告警**收费，具体信息，请参见 [云监控计费概述](https://cloud.tencent.com/document/product/248/50130)。
 
 ## 前提条件
 - 开通云监控（Cloud Monitor，CM）服务。
@@ -17,7 +17,7 @@
 3. 在实例列表中，找到目标实例。
 4. 在目标实例所在行，通过以下任一方式进入云监控的**新建告警策略**页面。
    - 单击**监控/状态/任务**列中的<img src="https://qcloudimg.tencent-cloud.cn/raw/8e01de7cd5dd07c6d2626aaba4c2288c.png" style="zoom: 50%;" />，在实例监控数据面板的右上角，单击**配置告警**。
-     ![](https://main.qcloudimg.com/raw/ee9553aef95de034ecb4c505a573d75f.png)
+     <img src="https://main.qcloudimg.com/raw/ee9553aef95de034ecb4c505a573d75f.png" style="zoom:150%;" />
    - 单击蓝色字体的**实例 ID**，进入**实例详情**页面，单击**系统监控**页签，再选择**监控指标**页签，单击**设置告警**。
      ![](https://qcloudimg.tencent-cloud.cn/raw/9b942bdb2f05a028fda4639c3946065b.png)
 5.  在**新建告警策略** 页面，请参见下表，配置告警策略。告警策略的基本概念，请参见 [新建告警策略](https://intl.cloud.tencent.com/document/product/248/38916)。
@@ -38,19 +38,21 @@
 <td>给告警策略指定项目，您可以在告警策略列表快速筛选该项目下的所有告警策略。</td></tr>
 <tr>
 <td>告警对象</td>
-<td>支持根据<strong>实例ID</strong>、<strong>实例分组</strong>选择告警对象，实例分组的相关信息，请参见 <a href="https://intl.cloud.tencent.com/document/product/248/35268">实例分组</a>。</td></tr>
+<td><ul><li>选择<strong>实例 ID</strong>：则该告警策略绑定指定的数据库实例。</li><li>选择<strong>实例分组</strong>：则该告警策略绑定指定的数据库实例组。如何创建实例组，请参见 <a href="https://intl.cloud.tencent.com/document/product/248/35268">实例分组</a>。</li><li>选择<strong>全部对象</strong>：则该告警策略绑定当前账号拥有权限的全部实例。</li><li>选择<strong>标签</strong>：则该告警策略绑定当前标签键与标签值所关联的全部实例。</li></ul></td></tr>
 <tr>
 <td>触发条件</td>
-<td>支持<strong>选择模板</strong>或者<strong>手动配置</strong>的方式，配置告警的触发条件。具体信息，请参见 <a href="https://intl.cloud.tencent.com/document/product/248/38916">新建告警策略</a>。</td></tr>
+<td><ul><li>选中<strong>选择模板</strong>：在下拉列表选择模板文件，将根据模板文件预置的触发条件上报告警，具体配置，请参阅 <a href="https://intl.cloud.tencent.com/document/product/248/38911">配置触发条件模板 </a>；选中<strong>手动配置</strong>的方式，需在下方<strong>指标告警</strong>区域，逐一配置每一条指标触发告警的阈值条件。</li>
+<li><strong>指标告警</strong>区域的<strong>阈值类型</strong>：选择静态：人为设定恒定阈值，在达到触发条件后发送告警；选择<strong>动态</strong>：动态阈值基于机器学习算法算出的阈值边界来判断异常。</li>更多信息，请参见 <a href="https://intl.cloud.tencent.com/document/product/248/38916">新建告警策略</a>。</ul></td>
+</tr>
 <tr>
 <td>告警通知</td>
 <td>支持选择系统预设通知模板和用户自定义通知模板，每个告警策略最多只能绑定三个通知模板。详情请参考<a href="https://cloud.tencent.com/document/product/248/50394"> 通知模板</a>。</td></tr>
 </tbody></table>
-6. 确认配置无误，单击**完成**。更多告警介绍，请参见 [告警概述](https://Intl.cloud.tencent.com/document/product/248/6126) 。
+6. 确认配置无误，单击**完成**。更多告警介绍，请参见 [告警概述](https://cloud.tencent.com/document/product/248/6126) 。
 
 ## 相关 API
 | API 接口名称                                                 | API 接口功能描述     |
 | :----------------------------------------------------------- | :------------------- |
-| [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/product/248/39326) | 创建云监控告警策略 |
+| [CreateAlarmPolicy](https://cloud.tencent.com/document/api/248/51287) | 创建云监控告警策略 |
 
 

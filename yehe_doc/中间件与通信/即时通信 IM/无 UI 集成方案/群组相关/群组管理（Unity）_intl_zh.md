@@ -115,7 +115,7 @@
 
 ## 创建群组
 
-如果您想在创建群组的同时初始化群的信息，例如群简介、群头像、以及最初的几个群成员等，可以调用 [GroupCreate](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupCreate_com_tencent_imsdk_unity_types_CreateGroupParam_com_tencent_imsdk_unity_callback_ValueCallback_) 接口实现。参数请参见 [CreateGroupParam](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.CreateGroupParam.html)。
+如果您想在创建群组的同时初始化群的信息，例如群简介、群头像、以及最初的几个群成员等，可以调用 [GroupCreate](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupCreate.html) 接口实现。参数请参见 [CreateGroupParam](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/CreateGroupParam.html)。
 
 ```c#
 TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_param, string user_data)=>{
@@ -135,17 +135,17 @@ TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_pa
 
 临时会议群（Meeting）和直播群（AVChatRoom）主要用于满足成员进进出出的交互场景，例如在线会议，秀场直播等。因此，这两种类型群的入群流程最为简单。
 
-用户调用 [GroupJoin](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupJoin_System_String_System_String_com_tencent_imsdk_unity_callback_ValueCallback_) 即可加入该群，加群成功后，全体群成员（包括加群者）都会收到 [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.html#grouptipseventcallback) 回调。
+用户调用 [GroupJoin](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupJoin.html) 即可加入该群，加群成功后，全体群成员（包括加群者）都会收到 [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) 回调。
 
 ### 场景二：需被邀请才能进入群
 
 好友工作群（Work）类似微信群和企业微信群，适用于工作交流，在交互设计上限制用户主动加入，只能由现有的群成员邀请才能加群。
 
-现有的群成员调用 [GroupInviteMember](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupInviteMember_com_tencent_imsdk_unity_types_GroupInviteMemberParam_com_tencent_imsdk_unity_callback_ValueCallback_) 邀请另一个用户入群，全体群成员（包括邀请者自己）会收到 [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) 回调。
+现有的群成员调用 [GroupInviteMember](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupInviteMember.html) 邀请另一个用户入群，全体群成员（包括邀请者自己）会收到 [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) 回调。
 
 ### 场景三：需要审批才能进入群
 
-陌生人社交群（Public）类似 QQ 中的各种兴趣群和部落区，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。陌生人社交群默认需要群主或管理员进行审批才能加群的，但群主或管理员也可以通过[GroupModifyGroupInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyGroupInfo_com_tencent_imsdk_unity_types_GroupModifyInfoParam_com_tencent_imsdk_unity_callback_ValueCallback_)接口调整加群选项（[TIMGroupAddOption](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.enums.TIMGroupAddOption.html)），可以设置为更严格的“禁止任何人加群”，也可以设置为更宽松的“放开审批流程”。
+陌生人社交群（Public）类似 QQ 中的各种兴趣群和部落区，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。陌生人社交群默认需要群主或管理员进行审批才能加群的，但群主或管理员也可以通过[GroupModifyGroupInfo](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyGroupInfo.html)接口调整加群选项（[TIMGroupAddOption](https://comm.qq.com/im/doc/unity/en/enums/TIMGroupAddOption.html)），可以设置为更严格的“禁止任何人加群”，也可以设置为更宽松的“放开审批流程”。
 
 - kTIMGroupAddOpt_Forbid ：禁止任何人加群。
 - kTIMGroupAddOpt_Auth ：需要群主或管理员审批才能加入（默认值）。
@@ -153,13 +153,13 @@ TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_pa
 
 ## 退出群组
 
-调用 [GroupQuit](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupQuit_System_String_com_tencent_imsdk_unity_callback_ValueCallback_) 可以退出群组，群内成员可收到 [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html)。
+调用 [GroupQuit](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupQuit.html) 可以退出群组，群内成员可收到 [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html)。
 
 >!对于陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom），群主不可以退群的，群主只能解散群组。
 
 ## 解散群组
 
-调用 [GroupDelete](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupDelete_System_String_com_tencent_imsdk_unity_callback_ValueCallback_) 可以解散群组，全员会收到 [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) 回调。
+调用 [GroupDelete](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupDelete.html) 可以解散群组，全员会收到 [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) 回调。
 
 >!
 >- 对于陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom），群主随时可以解散群。
@@ -167,17 +167,17 @@ TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_pa
 
 ## 获取即加入的群组
 
-调用 [GroupGetJoinedGroupList](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupGetJoinedGroupList_com_tencent_imsdk_unity_callback_ValueCallback_) 可以获取已加入的好友工作群（Work）、陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）列表，但直播群（AVChatRoom）不包含在此列表中。
+调用 [GroupGetJoinedGroupList](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetJoinedGroupList.html) 可以获取已加入的好友工作群（Work）、陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）列表，但直播群（AVChatRoom）不包含在此列表中。
 
 ## 群资料和群设置
 
 ### 获取群资料
 
-调用 [GroupGetGroupInfoList](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupGetGroupInfoList_System_Collections_Generic_List_System_String__com_tencent_imsdk_unity_callback_ValueCallback_) 可以获取群资料，该接口支持批量获取。您可以一次传入多个 `groupID` 获取多个群的群资料。
+调用 [GroupGetGroupInfoList](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetGroupInfoList.html) 可以获取群资料，该接口支持批量获取。您可以一次传入多个 `groupID` 获取多个群的群资料。
 
 ### 修改群资料
 
-调用 [GroupModifyGroupInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyGroupInfo_com_tencent_imsdk_unity_types_GroupModifyInfoParam_com_tencent_imsdk_unity_callback_ValueCallback_) 可以修改群资料。群资料被修改后，全员会收到 [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) 回调。
+调用 [GroupModifyGroupInfo](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyGroupInfo.html) 可以修改群资料。群资料被修改后，全员会收到 [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html) 回调。
 
 >?
 >- 好友工作群（Work）所有群成员都可以修改群基础资料。
@@ -186,7 +186,7 @@ TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_pa
 
 ## 设置群消息的接收选项
 
-任何群成员都可以调用 [MsgSetGroupReceiveMessageOpt](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSetGroupReceiveMessageOpt_System_String_com_tencent_imsdk_unity_enums_TIMReceiveMessageOpt_com_tencent_imsdk_unity_callback_ValueCallback_) 接口修改群消息接收选项。群消息接收选项包括：
+任何群成员都可以调用 [MsgSetGroupReceiveMessageOpt](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSetGroupReceiveMessageOpt.html) 接口修改群消息接收选项。群消息接收选项包括：
 
 - TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive：在线正常接收消息，离线时会有厂商的离线推送通知。
 - TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive：不会接收到群消息。

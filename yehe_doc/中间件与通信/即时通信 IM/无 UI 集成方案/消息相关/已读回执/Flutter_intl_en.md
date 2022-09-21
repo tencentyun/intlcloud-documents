@@ -15,7 +15,7 @@ Log in to the [IM console](https://console.cloud.tencent.com/im), select **Featu
 
     
 ### Specifying that a message requires a read receipt (by the sender)
-After creating a message, the sender specifies that the message requires a read receipt through the `needReadReceipt` field in `V2TimMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage/needReadReceipt.html)) and then sends the message to the conversation.
+After creating a message, the sender specifies that the message requires a read receipt through the `needReadReceipt` field in `V2TimMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#needreadreceipt)) and then sends the message to the conversation.
 
 Sample code:
 
@@ -33,7 +33,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes =
 
 
 ### Sending a message read receipt (by the receiver)
-After receiving the message, the receiver determines whether the message requires a read receipt based on the `needReadReceipt` field in `V2TIMMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage/needReadReceipt.html)). If yes, after the user reads the message, the receiver calls the `sendMessageReadReceipts` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessageReadReceipts.html)) to send a read receipt.
+After receiving the message, the receiver determines whether the message requires a read receipt based on the `needReadReceipt` field in `V2TIMMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#needreadreceipt)). If yes, after the user reads the message, the receiver calls the `sendMessageReadReceipts` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessageReadReceipts.html)) to send a read receipt.
 
 Sample code:
 
@@ -49,7 +49,7 @@ V2TimCallback sendMessageReadReceipts = await TencentImSDKPlugin.v2TIMManager.ge
 
 
 ### Listening for a message read receipt notification (by the sender)
-After the receiver sends a message read receipt, the sender can listen for a receipt notification through `onRecvMessageReadReceipts` in `V2TimAdvancedMsgListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_callbacks/OnRecvMessageReadReceipts.html)) and update the UI based on the notification to display the message as, for example, "Read by two members".
+After the receiver sends a message read receipt, the sender can listen for a receipt notification through `onRecvMessageReadReceipts` in `V2TimAdvancedMsgListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRecvMessageReadReceipts.html)) and update the UI based on the notification to display the message as, for example, "Read by two members".
 
 Sample code:
 
@@ -68,18 +68,18 @@ onRecvMessageReadReceipts: (List<V2TimMessageReceipt> receiptList) {
 
 
 ### Pulling message read receipt information (by the sender)
-After entering the message list, the sender pulls historical messages first, and then calls the `getMessageReadReceipts` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getMessageReadReceipts.html)) to pull the message read receipt information.
+After entering the message list, the sender pulls historical messages first, and then calls the `getMessageReadReceipts` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getMessageReadReceipts.html)) to pull the message read receipt information.
 
 The `V2TimessageReceipt` field of the message read receipt is as described below:
 
-| Attribute | Definition | Description |
-| --- |  --- | --- |
-| msgID | Message ID | Unique message ID |
-| userID | ID of the receiver | If the message is a one-to-one message, this field indicates the ID of the receiver. |
-| timestamp | Time when the receiver marks the message as read | This field is invalid when a message is read. If the message is a one-to-one message, when the receiver calls the `markC2CMessageAsRead` API to mark the message as read, the sender will receive the `onRecvC2CReadReceipt` callback which contains the `timestamp` information. |
-| groupID | Group ID | If the message is a group message, this field indicates the group ID. |
-| readCount | Number of members who have read the group message | If the message is a group message, this field indicates the number of members who have read the message. |
-| unreadCount | Number of members who have not read the group message | If the message is a group message, this field indicates the number of members who have not read the message. |
+| Attribute   | Definition                                            | Description                                                                                                                                                                                                                                                                       |
+| ----------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgID       | Message ID                                            | Unique message ID                                                                                                                                                                                                                                                                 |
+| userID      | ID of the receiver                                    | If the message is a one-to-one message, this field indicates the ID of the receiver.                                                                                                                                                                                              |
+| timestamp   | Time when the receiver marks the message as read      | This field is invalid when a message is read. If the message is a one-to-one message, when the receiver calls the `markC2CMessageAsRead` API to mark the message as read, the sender will receive the `onRecvC2CReadReceipt` callback which contains the `timestamp` information. |
+| groupID     | Group ID                                              | If the message is a group message, this field indicates the group ID.                                                                                                                                                                                                             |
+| readCount   | Number of members who have read the group message     | If the message is a group message, this field indicates the number of members who have read the message.                                                                                                                                                                          |
+| unreadCount | Number of members who have not read the group message | If the message is a group message, this field indicates the number of members who have not read the message.                                                                                                                                                                      |
 
 Sample code:
 
@@ -101,7 +101,7 @@ V2TimValueCallback<List<V2TimMessageReceipt>> getMessageReadReceipts = await  Te
 
 
 ### Pulling the list of members who have or have not read a group message (by the sender)
-To view the list of members who have or have not read a group message, the sender can call the `getGroupMessageReadMemberList`API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupMessageReadMemberList.html)) to pull the member list by page.
+To view the list of members who have or have not read a group message, the sender can call the `getGroupMessageReadMemberList`API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getGroupMessageReadMemberList.html)) to pull the member list by page.
 
 
 

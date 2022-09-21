@@ -4,7 +4,7 @@ After logging in to the app, you can display a list of recent conversations like
 
 ## Pulling the Conversation List
 
-You can call [ConvGetConvList](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvGetConvList_com_tencent_imsdk_unity_callback_ValueCallback_) to pull the list of all conversations. The Unity SDK currently does not support pagination for the conversation list.
+You can call [ConvGetConvList](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvList.html) to pull the list of all conversations. The Unity SDK currently does not support pagination for the conversation list.
 
 ## Updating the Conversation List
 
@@ -26,7 +26,7 @@ Update scenarios include:
 
 ## Obtaining the Total Unread Message Count of All Conversations
 
-You can call [ConvGetTotalUnreadMessageCount](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvGetTotalUnreadMessageCount_com_tencent_imsdk_unity_callback_ValueCallback_) to get the total unread count of all conversations. The call details are as follows:
+You can call [ConvGetTotalUnreadMessageCount](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetTotalUnreadMessageCount.html) to get the total unread count of all conversations. The call details are as follows:
 
 ```c#
 TencentIMSDK.ConvGetTotalUnreadMessageCount((int code, string desc, string json_param, string user_data)=>{
@@ -36,7 +36,7 @@ TencentIMSDK.ConvGetTotalUnreadMessageCount((int code, string desc, string json_
 
 ## Marking All Conversations Read
 
-The Unity SDK provides the [MsgMarkAllMessageAsRead](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgMarkAllMessageAsRead_com_tencent_imsdk_unity_callback_ValueCallback_) API to mark unread messages of all conversations as read.
+The Unity SDK provides the [MsgMarkAllMessageAsRead](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgMarkAllMessageAsRead.html) API to mark unread messages of all conversations as read.
 
 ```c#
 TencentIMSDK.MsgMarkAllMessageAsRead((int code, string desc, string json_param, string user_data)=>{
@@ -46,8 +46,8 @@ TencentIMSDK.MsgMarkAllMessageAsRead((int code, string desc, string json_param, 
 
 ## Pinning a Conversation to the Top
 
-You can pin a one-to-one or group conversation to the top of the conversation list so you can quickly find it. The new SDK version has added the [ConvPinConversation](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvPinConversation_System_String_com_tencent_imsdk_unity_enums_TIMConvType_System_Boolean_com_tencent_imsdk_unity_callback_ValueCallback_) API to pin/unpin conversations to/from the top. It also supports roaming and multi-client synchronization.
-The [ConvInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.ConvInfo.html) conversation object has added the [conv_is_pinned](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.ConvInfo.html#com_tencent_imsdk_unity_types_ConvInfo_conv_is_pinned) field, which is used to determine whether a conversation is pinned on top. When the pinned-on-top status of a conversation changes, the SDK will call back [ConvEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.ConvEventCallback.html) to your app.
+You can pin a one-to-one or group conversation to the top of the conversation list so you can quickly find it. The new SDK version has added the [ConvPinConversation](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvPinConversation.html) API to pin/unpin conversations to/from the top. It also supports roaming and multi-client synchronization.
+The [ConvInfo](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html) conversation object has added the [conv_is_pinned](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convispinned) field, which is used to determine whether a conversation is pinned on top. When the pinned-on-top status of a conversation changes, the SDK will call back [ConvEventCallback](https://comm.qq.com/im/doc/unity/en/callback/ConvEventCallback.html) to your app.
 
 ```c#
 TencentIMSDK.ConvPinConversation(conv_id,conv_type,is_pinned,(int code, string desc, string json_param, string user_data)=>{
@@ -57,7 +57,7 @@ TencentIMSDK.ConvPinConversation(conv_id,conv_type,is_pinned,(int code, string d
 
 ## Deleting a Conversation
 
-You can call the [ConvDelete](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvDelete_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_callback_ValueCallback_) API to delete a conversation. Conversation deletion cannot be synchronized across multiple clients by default. You can enable the multi-client synchronization feature in the console. When a conversation is deleted, the message history of this conversation will be deleted from the local storage and the server by default, and cannot be recovered.
+You can call the [ConvDelete](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvDelete.html) API to delete a conversation. Conversation deletion cannot be synchronized across multiple clients by default. You can enable the multi-client synchronization feature in the console. When a conversation is deleted, the message history of this conversation will be deleted from the local storage and the server by default, and cannot be recovered.
 
 ```c#
 TencentIMSDK.ConvDelete(conv_id,conv_type,(int code, string desc, string json_param, string user_data)=>{
@@ -67,7 +67,7 @@ TencentIMSDK.ConvDelete(conv_id,conv_type,(int code, string desc, string json_pa
 
 ## Drafts
 
-When sending a message, you may need to switch to another chat window before message editing is completed. In this case, you can call the [ConvSetDraft](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvSetDraft_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_DraftParam_) API to save the unfinished message. Later, you can return to the original chat window and use the [conv_draft](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.ConvInfo.html#com_tencent_imsdk_unity_types_ConvInfo_conv_draft) field in [ConvInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.types.ConvInfo.html) to continue editing the message.
+When sending a message, you may need to switch to another chat window before message editing is completed. In this case, you can call the [ConvSetDraft](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvSetDraft.html) API to save the unfinished message. Later, you can return to the original chat window and use the [conv_draft](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convdraft) field in [ConvInfo](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html) to continue editing the message.
 
 ## FAQs
 

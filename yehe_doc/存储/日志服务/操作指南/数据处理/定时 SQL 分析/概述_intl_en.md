@@ -6,7 +6,7 @@
 
 Scheduled SQL analysis can be simply understood as crontab SQL. You can configure a scheduling policy, and the system will execute SQL queries on the source log topic regularly based on the policy and save query results to the specified target log topic. 
 
-![](https://qcloudimg.tencent-cloud.cn/raw/36a9fc18fe303535d62a7d5600735839.png)
+
 
 ## Prerequisites
 
@@ -26,5 +26,5 @@ For example, aggregating 1-minute historical logs into 1-hour logs can effective
 ## Use limits
 
 - Up to 10,000 results can be returned per query, and the excess will be truncated.
-- The query start time cannot be before the current time. Historical start time will be supported on the next version.
+
 - Cross-region query is not supported. The source and target log topics must be in the same region.

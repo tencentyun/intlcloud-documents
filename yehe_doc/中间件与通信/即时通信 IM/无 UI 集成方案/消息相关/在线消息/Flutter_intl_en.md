@@ -9,7 +9,7 @@ In certain cases, you might want a message to be received by the receiver only w
 
 ### Implementing the feature of "The other party is typing..."
 
-In one-to-one chats, you can call the `sendMessage` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html)) to send the prompt "Typing...". After receiving the prompt message, the receiver can display "The other party is typing..." on the UI.
+In one-to-one chats, you can call the `sendMessage` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the prompt "Typing...". After receiving the prompt message, the receiver can display "The other party is typing..." on the UI.
 
 Sample code:
 

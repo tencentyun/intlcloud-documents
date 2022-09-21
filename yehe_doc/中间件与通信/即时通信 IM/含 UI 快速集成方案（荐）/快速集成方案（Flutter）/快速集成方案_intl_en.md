@@ -4,15 +4,15 @@ Flutter TUIKit is a set of TUI components based on Flutter IM SDKs. It provides 
 
 Currently, Flutter TUIKit contains the following components:
 
-- [TIMUIKitCore](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitcore) (core)
-- [TIMUIKitConversation](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitconversation) (conversations)
-- [TIMUIKitChat](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitchat) (chats)
-- [TIMUIKitContact](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitcontact) (contacts)
-- [TIMUIKitProfile](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitprofile) (friend management)
-- [TIMUIKitGroupProfile](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitgroupprofile) (group management)
-- [TIMUIKitGroup](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitgroup) (my group chats)
-- [TIMUIKitBlackList](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitblacklist) (blocklist)
-- [TIMUIKitNewContact](https://intl.cloud.tencent.com/document/product/1047/46297#timuikitnewcontact) (new contacts)
+- [TIMUIKitCore](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitCore/readme.html) (core)
+- [TIMUIKitConversation](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitConversation/TIMUIKitConversation-Implementation.html) (conversations)
+- [TIMUIKitChat](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitChat/TIMUIKitChat-Implementation.html) (chats)
+- [TIMUIKitContact](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitContact/TIMUIKitContact-Implementation.html) (contacts)
+- [TIMUIKitProfile](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitProfile/TIMUIKitProfile-Implementation.html) (friend management)
+- [TIMUIKitGroupProfile](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitGroupProfile/TIMUIKitGroupProfile-Implementation.html) (group management)
+- [TIMUIKitGroup](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitGroup/TIMUIKitGroup-Implementation.html) (my group chats)
+- [TIMUIKitBlackList](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitBlackList/TIMUIKitBlackList-Implementation.html) (blocklist)
+- [TIMUIKitNewContact](https://comm.qq.com/im/doc/flutter/en/TUIKit/TIMUIKitNewContact/TIMUIKitNewContact-Implementation.html) (new contacts)
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/8a59b20de79c7dc670f64ff0a6de8ecc.png)
 For the source code of the project in the figure above, see [im-flutter-uikit](https://github.com/tencentyun/TIMSDK/tree/master/Flutter/Demo/im-flutter-uikit). The project is open source and can be used directly.

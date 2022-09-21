@@ -4,7 +4,7 @@
 * `V2TimMessage` can contain different sub-types to indicate different types of messages.
 
 ## Key API Description
-The `sendMessage` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html)) is one of core APIs for message sending. It supports sending messages of all types.
+The `sendMessage` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) is one of core APIs for message sending. It supports sending messages of all types.
 
 > ? The advanced message sending API mentioned below refers to `sendMessage`.
 
@@ -130,8 +130,8 @@ The ordinary API is as described below, while the advanced API is `sendMessage` 
 #### Advanced API
 
 The advanced API can be called to send a one-to-one text message in two steps:
-1. Call `createTextMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/createTextMessage.html)) to create a text message.
-2. Call `sendMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html)) to send the message.
+1. Call `createTextMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 ```dart
@@ -159,8 +159,8 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createTextAtMessageRes = await Tenc
 #### Advanced API
 
 The advanced API can be called to send a group text message in two steps:
-1. Call `createTextMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/createTextMessage.html)) to create a text message.
-2. Call `sendMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html)) to send the message.
+1. Call `createTextMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 ```dart
@@ -184,7 +184,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createTextAtMessageRes = await Tenc
 ## Sending a Custom Message
 
 Custom messages include one-to-one messages and group messages, which are different in terms of API and parameters. The ordinary and advanced APIs can be used to send custom messages.
-The advanced API is the `sendMessage` mentioned above ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html)), which supports more sending parameters (such as priority and offline push message) than the ordinary API.
+The advanced API is the `sendMessage` mentioned above ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)), which supports more sending parameters (such as priority and offline push message) than the ordinary API.
 
 
 ### Custom one-to-one message
@@ -193,8 +193,8 @@ The advanced API is the `sendMessage` mentioned above ([dart](https://pub.dev/do
 #### Advanced API
 
 The advanced API can be called to send a custom one-to-one message in two steps:
-1. Call `createCustomMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
-2. Call `sendMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html)) to send the message.
+1. Call `createCustomMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 ```java
@@ -222,8 +222,8 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes = await Tenc
 #### Advanced API
 
 The advanced API can be called to send a custom group message in two steps:
-1. Call `createCustomMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/createCustomMessage.html)) to create a custom message.
-2. Call `sendMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html)) to send the message.
+1. Call `createCustomMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 ```java
@@ -251,7 +251,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes = await Tenc
 A rich media message can be sent only by using the advanced API in the following steps:
 
 1. Call `createXxxMessage` to create a rich media message object of a specified type. Here, `Xxx` indicates the specific message type.
-2. Call `sendMessage` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html)) to send the message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 3. Get the callback for message sending success or failure.
 
 ### Image message

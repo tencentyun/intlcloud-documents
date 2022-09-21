@@ -23,7 +23,7 @@ SDKAppID 是腾讯云 IM 服务用于区分客户帐号的唯一标识。我们�
 [](id:SDKConfig)
 ### 设置 SdkConfig。
 
-初始化 SDK 前，您需要初始化一个 [SdkConfig](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.SdkConfig.html) 对象。该对象用于设置本地 SDK 缓存、日志位置。
+初始化 SDK 前，您需要初始化一个 [SdkConfig](https://comm.qq.com/im/doc/unity/en/types/SDKSetConfigAttributes/SdkConfig.html) 对象。该对象用于设置本地 SDK 缓存、日志位置。
 
 配置即时通信 IM 运行时的日志、数据的存储路径。
 
@@ -38,7 +38,7 @@ SDKAppID 是腾讯云 IM 服务用于区分客户帐号的唯一标识。我们�
 >!该路径需要应用有可读写权限。
 
 ### 调用初始化接口
-操作完上述步骤后，您可以调用 `InitSDK`([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_Init_System_Int64_com_tencent_imsdk_unity_types_SdkConfig_)) 进行 SDK 初始化。
+操作完上述步骤后，您可以调用 `InitSDK`([c#](https://comm.qq.com/im/doc/unity/en/api/IMSDKInit/Init.html)) 进行 SDK 初始化。
 
 示例代码如下：
 
@@ -61,29 +61,29 @@ SDK 初始化后，会通过诸如 `NetworkStatusListenerCallback`，`UserSigExp
 
 相关回调如下表所示：
 
-| 事件回调 | 事件描述 |
-|---------|---------|
-| RecvNewMsgCallback | 注册收到新消息回调 |
-| MsgReadedReceiptCallback | 设置消息已读回执回调 |
-| MsgRevokeCallback | 设置接收的消息被撤回回调 |
-| MsgElemUploadProgressCallback |设置消息内元素相关文件上传进度回调 |
-| GroupTipsEventCallback | 设置群组系统消息回调 |
-| GroupAttributeChangedCallback | 设置群组属性变更回调 |
-| ConvTotalUnreadMessageCountChangedCallback | 设置会话未读消息总数变更的回调 |
-| NetworkStatusListenerCallback | 设置网络连接状态监听回调 |
-| KickedOfflineCallback | 设置被踢下线通知回调 |
-| UserSigExpiredCallback | 设置票据过期回调 |
-| OnAddFriendCallback | 设置添加好友的回调 |
-| OnDeleteFriendCallback | 设置删除好友的回调 |
-| UpdateFriendProfileCallback | 设置更新好友资料的回调 |
-| FriendAddRequestCallback | 设置好友添加请求的回调 |
-| FriendApplicationListDeletedCallback | 设置好友申请被删除的回调 |
-| FriendApplicationListReadCallback | 设置好友申请已读的回调 |
-| FriendBlackListAddedCallback | 设置黑名单新增的回调 |
-| FriendBlackListDeletedCallback | 设置黑名单删除的回调 |
-| LogCallback | 设置日志回调 |
-| MsgUpdateCallback | 设置消息在云端被修改后回传回来的消息更新通知回调 |
-| MsgGroupMessageReadMemberListCallback | 获取群消息已读群成员列表 |
+| 事件回调                                   | 事件描述                                         |
+| ------------------------------------------ | ------------------------------------------------ |
+| RecvNewMsgCallback                         | 注册收到新消息回调                               |
+| MsgReadedReceiptCallback                   | 设置消息已读回执回调                             |
+| MsgRevokeCallback                          | 设置接收的消息被撤回回调                         |
+| MsgElemUploadProgressCallback              | 设置消息内元素相关文件上传进度回调               |
+| GroupTipsEventCallback                     | 设置群组系统消息回调                             |
+| GroupAttributeChangedCallback              | 设置群组属性变更回调                             |
+| ConvTotalUnreadMessageCountChangedCallback | 设置会话未读消息总数变更的回调                   |
+| NetworkStatusListenerCallback              | 设置网络连接状态监听回调                         |
+| KickedOfflineCallback                      | 设置被踢下线通知回调                             |
+| UserSigExpiredCallback                     | 设置票据过期回调                                 |
+| OnAddFriendCallback                        | 设置添加好友的回调                               |
+| OnDeleteFriendCallback                     | 设置删除好友的回调                               |
+| UpdateFriendProfileCallback                | 设置更新好友资料的回调                           |
+| FriendAddRequestCallback                   | 设置好友添加请求的回调                           |
+| FriendApplicationListDeletedCallback       | 设置好友申请被删除的回调                         |
+| FriendApplicationListReadCallback          | 设置好友申请已读的回调                           |
+| FriendBlackListAddedCallback               | 设置黑名单新增的回调                             |
+| FriendBlackListDeletedCallback             | 设置黑名单删除的回调                             |
+| LogCallback                                | 设置日志回调                                     |
+| MsgUpdateCallback                          | 设置消息在云端被修改后回传回来的消息更新通知回调 |
+| MsgGroupMessageReadMemberListCallback      | 获取群消息已读群成员列表                         |
 
 >! 如果收到 `UserSigExpiredCallback` 回调，说明您登录用的 UserSig 票据已经过期，请使用新签发的 UserSig 进行重新登录。如果继续使用过期的 UserSig，会导致 IM SDK 登录进入死循环。
 
@@ -91,7 +91,7 @@ SDK 初始化后，会通过诸如 `NetworkStatusListenerCallback`，`UserSigExp
 普通情况下，如果您的应用生命周期跟 IM SDK 生命周期一致，退出应用前可以不进行反初始化。
 但有些特殊场景，例如您只在进入特定界面后才初始化 IM SDK，退出界面后不再使用，可以对 IM SDK 进行反初始化。
 
-反初始化需要操作一个步骤：调用反初始化接口 `unInitSDK`([Dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/unInitSDK.html))
+反初始化需要操作一个步骤：调用反初始化接口 `unInitSDK`([c#](https://comm.qq.com/im/doc/unity/en/api/IMSDKInit/Uninit.html))
 
 示例代码如下：
 
