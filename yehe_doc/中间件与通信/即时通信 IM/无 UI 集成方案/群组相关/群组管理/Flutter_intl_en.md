@@ -6,9 +6,9 @@ The group management feature allows creating a group, joining a group, getting t
 ## Group Event Listener
 In the group management feature as described below, the IM SDK will automatically trigger the group event notification callback, for example, when someone joins or leaves a group.
 
-Call `addGroupListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addGroupListener.html)) to add a group event listener.
+Call `addGroupListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/addGroupListener.html)) to add a group event listener.
 
-To stop receiving group events, call `removeGroupListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/removeGroupListener.html)) to remove the group event listener.
+To stop receiving group events, call `removeGroupListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/removeGroupListener.html)) to remove the group event listener.
 
 > ! You need to set the group event listener in advance to receive group event notifications.
 
@@ -21,7 +21,7 @@ TencentImSDKPlugin.v2TIMManager.setGroupListener(listener: V2TimGroupListener())
 
 
 ## Creating a Group
-To initialize the group information such as group introduction, group profile photo, and existing group members when creating a group, call the `createGroup` advanced API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/method_channel_im_flutter/MethodChannelIm/createGroup.html)), and the `groupID` will be returned in the callback for successful creation.
+To initialize the group information such as group introduction, group profile photo, and existing group members when creating a group, call the `createGroup` advanced API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createGroup.html)), and the `groupID` will be returned in the callback for successful creation.
 
 Sample code:
 
@@ -61,8 +61,8 @@ The following describes how to join the groups in an easy-to-hard sequence.
 
 #### Free to join a group
 Meeting groups (Meeting), audio-video groups (AVChatRoom), and communities are mainly used for free interaction scenarios, such as online meeting and live show. The process of joining such groups is the simplest:
-1. The user calls `joinGroup` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/joinGroup.html)) to join the group.
-2. After the user has successfully joined the group, all the group members (including the user) will receive the `onMemberEnter` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberEnter.html)).
+1. The user calls `joinGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html)) to join the group.
+2. After the user has successfully joined the group, all the group members (including the user) will receive the `onMemberEnter` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberEnterCallback.html)).
 
 Sample code:
 
@@ -83,8 +83,8 @@ TencentImSDKPlugin.v2TIMManager.joinGroup(groupID: "groupID",message: "hello",gr
 Work groups (Work) are suitable for communication in work environments. The interaction pattern is designed to disable proactive group joining and only allow users to be invited to join the group by group members.
 The steps to join a group are as follows:
 
-1. A group member calls `inviteUserToGroup` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/inviteUserToGroup.html)) to invite a user to the group.
-2. All the group members (including the inviter) receive the `onMemberInvited` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberInvited.html)), which can contain some UI tips.
+1. A group member calls `inviteUserToGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/inviteUserToGroup.html)) to invite a user to the group.
+2. All the group members (including the inviter) receive the `onMemberInvited` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberInvitedCallback.html)), which can contain some UI tips.
 
 Sample code:
 
@@ -107,15 +107,15 @@ The steps to join a group on request and on approval are as follows:
 ![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
 
 Description of process:
-1. The user calls `joinGroup` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/joinGroup.html)) to request to join the group.
+1. The user calls `joinGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html)) to request to join the group.
 
-2. The group owner or admin receives the `onReceiveJoinApplication` group join request notification ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onReceiveJoinApplication.html)) and calls `getGroupApplicationList` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupApplicationList.html)) to get the group join request list.
+2. The group owner or admin receives the `onReceiveJoinApplication` group join request notification ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnReceiveJoinApplicationCallback.html)) and calls `getGroupApplicationList` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupApplicationList.html)) to get the group join request list.
 
-3. The group owner or admin traverses the group join request list and calls `acceptGroupApplication` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/acceptGroupApplication.html)) to approve a request or `refuseGroupApplication` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/refuseGroupApplication.html)) to reject it.
+3. The group owner or admin traverses the group join request list and calls `acceptGroupApplication` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/acceptGroupApplication.html)) to approve a request or `refuseGroupApplication` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/refuseGroupApplication.html)) to reject it.
 
-4. After the request to join the group is approved or rejected, the user will receive the `onApplicationProcessed` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onApplicationProcessed.html)). Here, if `isAgreeJoin` is `true`, the request is approved; otherwise, it is rejected.
+4. After the request to join the group is approved or rejected, the user will receive the `onApplicationProcessed` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnApplicationProcessedCallback.html)). Here, if `isAgreeJoin` is `true`, the request is approved; otherwise, it is rejected.
    
-5. On approval, all the group members (including the user) will receive the `onMemberEnter` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberEnter.html)), notifying the group members that someone joined the group.
+5. On approval, all the group members (including the user) will receive the `onMemberEnter` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberEnterCallback.html)), notifying the group members that someone joined the group.
 
 Sample code:
 
@@ -155,7 +155,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 ```
 
 
-The group owner or admin can also call the `setGroupInfo` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setGroupInfo.html)) to change the group join option (`V2TIMGroupAddOpt`) to "no group join" or "no approval required".
+The group owner or admin can also call the `setGroupInfo` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html)) to change the group join option (`V2TIMGroupAddOpt`) to "no group join" or "no approval required".
 
 `V2TIMGroupAddOpt` has the following options:
 
@@ -167,7 +167,7 @@ The group owner or admin can also call the `setGroupInfo` API ([dart](https://pu
 
 
 ## Getting the Joined Groups
-Call `getJoinedGroupList` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getJoinedGroupList.html)) to get the list of joined work groups (Work), public groups (Public), meeting groups (Meeting), and communities (Community, which **don't support** the topic feature). Audio-video groups (AVChatRoom) and communities (Community, which **support** the topic feature) are not included in this list.
+Call `getJoinedGroupList` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedGroupList.html)) to get the list of joined work groups (Work), public groups (Public), meeting groups (Meeting), and communities (Community, which **don't support** the topic feature). Audio-video groups (AVChatRoom) and communities (Community, which **support** the topic feature) are not included in this list.
 
 Sample code:
 
@@ -182,9 +182,9 @@ V2TimValueCallback<List<V2TimGroupInfo>> groupRes  =await groupManager.getJoined
 
 ## Leaving a Group
 
-Call `quitGroup` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/quitGroup.html)) to leave a group.
-The member who left the group will receive the `onQuitFromGroup` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onQuitFromGroup.html)).
-Other group members will receive the `onMemberLeave` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onMemberLeave.html)).
+Call `quitGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/quitGroup.html)) to leave a group.
+The member who left the group will receive the `onQuitFromGroup` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnQuitFromGroupCallback.html)).
+Other group members will receive the `onMemberLeave` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberLeaveCallback.html)).
 
 > ! The group owner **cannot** leave a public group (Public), meeting group (Meeting), community, or audio-video group (AVChatRoom) and can only [disband it](#dismiss).
 
@@ -206,9 +206,9 @@ TencentImSDKPlugin.v2TIMManager.quitGroup(groupID: "groupID");
 
 ## Disbanding a Group
 
-Call `dismissGroup` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/dismissGroup.html)) to disband a group, and all the group members will receive the `onGroupDismissed` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupDismissed.html)).
+Call `dismissGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/dismissGroup.html)) to disband a group, and all the group members will receive the `onGroupDismissed` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupDismissedCallback.html)).
 
-If you have allowed automatically disbanding an inactive group on the server, when the group is automatically disbanded by the server, the SDK will receive the `onGroupRecycled` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupRecycled.html)).
+If you have allowed automatically disbanding an inactive group on the server, when the group is automatically disbanded by the server, the SDK will receive the `onGroupRecycled` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupRecycledCallback.html)).
 
 Sample code:
 
