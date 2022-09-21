@@ -135,7 +135,9 @@ go get github.com/apache/rocketmq-client-go/v2
       }
 :::
 </dx-codeblock>
->?异步发送、单向发送等，可参见 [demo 示例](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-go-sdk-demo.zip) 或参见 [rocketmq-client-go 示例](https://github.com/apache/rocketmq-client-go/tree/master/examples)。
+
+>? 异步发送、单向发送等，可参见 [demo 示例](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-go-sdk-demo.zip) 或参见 [rocketmq-client-go 示例](https://github.com/apache/rocketmq-client-go/tree/master/examples)。
+
 4. 创建消费者。
 <dx-codeblock>
 :::  go
