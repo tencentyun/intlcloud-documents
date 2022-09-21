@@ -8,7 +8,7 @@
 
    ![](https://qcloudimg.tencent-cloud.cn/raw/b774b2e6e95263f0cfa51adb45cfd961.png)
 
-   >? 当前一个手机号最多注册5个腾讯云账号，如达到限制，请修改原账号手机后重试，详情流程请参考 [修改手机和邮箱](https://intl.cloud.tencent.com/document/product/378/36000)。
+   >? 当前一个手机号最多注册5个腾讯云账号，如达到限制，请修改原账号手机后重试，详情流程请参考 [安全手机验证与修改](https://intl.cloud.tencent.com/document/product/378/48918)。
 
 3. 请正确输入您的卡号信息进行绑卡 。 
 
