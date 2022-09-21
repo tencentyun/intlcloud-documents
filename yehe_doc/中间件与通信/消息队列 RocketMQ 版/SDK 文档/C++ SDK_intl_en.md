@@ -39,11 +39,11 @@ This document describes how to use open-source SDK to send and receive messages 
 </thead>
 <tbody><tr>
 <td align="left">groupName</td>
-<td align="left">Producer group name, which can be obtained under the <code>Group</code> tab on the **Cluster** page in the console.</td>
+<td align="left">Producer group name, which can be obtained under the <code>Group</code> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list. <img src="https://qcloudimg.tencent-cloud.cn/raw/450608d93e6980799de91b27acbe98bc.png" alt=""></td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list. <img src="https://qcloudimg.tencent-cloud.cn/raw/450608d93e6980799de91b27acbe98bc.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -55,7 +55,7 @@ This document describes how to use open-source SDK to send and receive messages 
 </tr>
 <tr>
 <td align="left">namespace</td>
-<td align="left">The namespace name can be copied under the <code>Topic</code> tab on the **Cluster** page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/084551ffba9253f9d0280d872018289e.png" alt=""></td>
+<td align="left">The namespace name can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/084551ffba9253f9d0280d872018289e.png" alt=""></td>
 </tr>
 </tbody></table>
 3. Send messages.
@@ -88,7 +88,7 @@ This document describes how to use open-source SDK to send and receive messages 
 </thead>
 <tbody><tr>
 <td align="left">topicName</td>
-<td align="left">Topic name, which can be copied under the <code>Topic</code> tab on the **Cluster** page in the console. <img src="https://qcloudimg.tencent-cloud.cn/raw/307921e6fea2543af0fc5ebc02cb4d21.png" alt=""></td>
+<td align="left">Topic name, which can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console. <img src="https://qcloudimg.tencent-cloud.cn/raw/307921e6fea2543af0fc5ebc02cb4d21.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">TAGS</td>
@@ -159,11 +159,11 @@ This document describes how to use open-source SDK to send and receive messages 
 </thead>
 <tbody><tr>
 <td align="left">groupName</td>
-<td align="left">Consumer group name, which can be obtained under the <code>Group</code> tab on the **Cluster** page in the console.</td>
+<td align="left">Consumer group name, which can be obtained under the <code>Group</code> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list. <img src="https://qcloudimg.tencent-cloud.cn/raw/de47c97b9e1609ee6357e28bd7e1ad12.png" alt=""></td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new shared or exclusive clusters can be copied from the <strong>Namespace</strong> list. <img src="https://qcloudimg.tencent-cloud.cn/raw/de47c97b9e1609ee6357e28bd7e1ad12.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -175,11 +175,11 @@ This document describes how to use open-source SDK to send and receive messages 
 </tr>
 <tr>
 <td align="left">namespace</td>
-<td align="left">The namespace name can be copied under the <code>Topic</code> tab on the **Cluster** page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/fc317c3c1dbe637456e45d1974e1c6e4.png" alt=""></td>
+<td align="left">The namespace name can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/fc317c3c1dbe637456e45d1974e1c6e4.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">topicName</td>
-<td align="left">Topic name, which can be copied under the <code>Topic</code> tab on the **Cluster** page in the console. <img src="https://qcloudimg.tencent-cloud.cn/raw/1eb1505b6a40857b4b9145af8426bf48.png" alt=""></td>
+<td align="left">Topic name, which can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console. <img src="https://qcloudimg.tencent-cloud.cn/raw/1eb1505b6a40857b4b9145af8426bf48.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">TAGS</td>
