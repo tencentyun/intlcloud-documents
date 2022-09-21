@@ -5,7 +5,7 @@ Tencent Cloud View Cube Player Demoは、完全な製品レベルのインタラ
 Web端末プレーヤーは、PC端末とモバイル端末のブラウザでビデオを再生することをサポートします。豊富で柔軟なインターフェースにより、ユーザーは独自のWebアプリケーションとの統合をすばやく実行できます。
 
 ### Demoダウンロード
-[Web端末Super Player - DemoのVOD再生](https://tcplayer.vcube.tencent.com/)
+[Web端末Super Player - DemoのVOD再生](https://tcplayer.vcube.tencent.com/intl/index.html)
 
 [](id:mobile)
 ## モバイル端末
