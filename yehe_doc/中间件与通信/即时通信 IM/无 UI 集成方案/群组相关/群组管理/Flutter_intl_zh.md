@@ -104,7 +104,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 陌生人社交群（Public）类似 QQ 中的各种兴趣群和部落群，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。
 
 邀请且审批加群的流程如下：
-![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
+![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 流程说明：
 1. 申请者调用 `joinGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html)) 申请加群。
