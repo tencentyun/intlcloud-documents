@@ -19,6 +19,7 @@ The IM SDK supports the following three message receiving options:
 >- If the message notification type is set to mute message notifications, messages will be received when the user is online and will not be received when the user is offline (with offline push supported).
 >- If the message notification type is set to reject messages, no messages will be received no matter whether the user is online or offline, and messages sent by the sender can be obtained through [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList).
 >- Starting from v2.19.1, this API can be used to set the message notification type for a community topic by passing in `topicID` for `groupID`, and this setting will be ignored if `TIM.TYPES.MSG_REMIND_DISCARD` is set for the community of the topic.
+>- Since v2.21.0, multi-terminal and multi-instance synchronization of group session messages and topic messages is supported. 
 
 **API**
 
