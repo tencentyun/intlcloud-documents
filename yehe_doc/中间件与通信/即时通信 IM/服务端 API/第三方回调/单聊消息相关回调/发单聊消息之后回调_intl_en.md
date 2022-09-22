@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used by the app backend to view users' one-to-one messages in real time, including:
+This API is used by the app backend to operate users' one-to-one messages in real time, including:
 - Records one-to-one messages in real time, for example, by recording a log or synchronizing the messages to other systems.
 - Collects statistics on one-to-one messages, for example, in terms of the number of users or the number of messages.
 
@@ -85,7 +85,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | MsgRandom | Integer | Random number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
 | MsgTime | Integer | Timestamp in seconds indicating when the message is sent. <br>One-to-one messages are preferentially sorted by `MsgTime`. Messages sent in the same second are sorted by `MsgSeq`. Messages with larger values of `MsgSeq` are after those with smaller values of `MsgSeq`. |
 | MsgKey | String | Unique identifier of the message. It can be used to [recall the message](https://intl.cloud.tencent.com/document/product/1047/35015) via a RESTful API call. |
-| OnlineOnlyFlag | Integer | The value is `1` if it is an online message and `0` if it's not. |
+| OnlineOnlyFlag | Integer | The value is `1` if it means only to online users and `0` if it's not. |
 | SendMsgResult | Integer | Message sending result. `0`: successful; other values: failed. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
 | ErrorInfo | String | Error information related to the failure to send the message. If the message is sent successfully, the value of this field is `send msg succeed`. |
 | UnreadMsgNum | Integer | Total number of unread one-to-one messages of `To_Account` (including all one-to-one conversations). If the message fails to be sent, for example, due to filtering of restricted words, the value of this field is `-1`.|
