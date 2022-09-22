@@ -89,6 +89,6 @@ The system charged the user in the morning on July 1, 2020.
 
 ## Other Services
 
-When creating an ECM instance, you can choose to activate CWP and CM free of charge.
-- CWP: you can install the agent to activate CWP Basic.
+When creating an ECM instance, you can choose to activate CWPP and CM free of charge.
+- CWPP: you can install the agent to activate CWPP Basic.
 - CM: CM supports monitoring, analysis, and alarming for Tencent Cloud services. You can install the agent to get server monitoring metrics.
