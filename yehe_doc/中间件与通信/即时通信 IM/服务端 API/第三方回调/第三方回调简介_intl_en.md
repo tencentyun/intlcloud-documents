@@ -81,9 +81,9 @@ To ensure a high callback success rate, third-party apps need to process callbac
 
 ## Handling Policy for Callback Timeouts Before Event Occurrence
 
-If a callback times out before event occurrence, the subsequent processing policy is the same as that for the case where no callback is configured.
+If a callback times out before event occurrence, the default policy is to deliver the message.
 
-You can configure the handling policy for callback timeouts before event occurrence in the console. For example, when a callback timeout occurs before a group message is sent, you can specify whether to deliver the message. The default policy is to deliver the message.
+You can configure the handling policy for callback timeouts before event occurrence in the console. For example, when a callback timeout occurs before a group message is sent, you can specify whether to deliver the message. 
 
 ## Security Considerations
 
