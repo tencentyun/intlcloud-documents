@@ -12,7 +12,7 @@ VSS is built on the basis of Tencent Security's 20 years of experience in combat
 - VSS has a vast built-in protocol and fingerprint library, through which it can quickly and accurately identify assets' operating systems, open ports, and service components.
 
 ## Integrated Monitoring-Defense Collaboration
-Once VSS finds a security risk, it can collaborate with [CWP](https://intl.cloud.tencent.com/document/product/296) and [WAF](https://intl.cloud.tencent.com/document/product/627) in the cloud to form a closed loop from risk monitoring to risk handling.
+Once VSS finds a security risk, it can collaborate with [CWPP](https://intl.cloud.tencent.com/document/product/296) and [WAF](https://intl.cloud.tencent.com/document/product/627) in the cloud to form a closed loop from risk monitoring to risk handling.
 
 ## Professional Security Team
 - Tencent Security's expert team can provide professional repair suggestions for discovered security risks and regularly detect known threats to ensure that they have been eliminated.
