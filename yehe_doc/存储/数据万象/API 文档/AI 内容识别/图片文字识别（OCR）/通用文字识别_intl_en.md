@@ -6,7 +6,7 @@ This API adopts the sync GET request method.
 
 ## Billing Description
 
-- Calling the API successfully will incur OCR fees and [COS read request fees](https://intl.cloud.tencent.com/document/product/436/40100).
+- Calling the API successfully will incur OCR fees and COS read request fees as described in [Content Recognition Fees]() and [Request Fees](https://intl.cloud.tencent.com/document/product/436/40100) respectively.
 - If the image files are stored in COS STANDARD_IA storage class, calling the API successfully will incur [STANDARD_IA data retrieval fees](https://intl.cloud.tencent.com/document/product/436/40097).
 - Image processing is not supported for objects stored in the ARCHIVE or DEEP ARCHIVE storage classes. To process these objects, you need to restore them first as instructed in [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633).
 
@@ -30,7 +30,7 @@ Authorization: <Auth String>
 
 >? 
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
@@ -39,13 +39,13 @@ Authorization: <Auth String>
 | Parameter | Description | Type | Required |
 | :------------------ | :----------------------------------------------------------- | :------ | :------- |
 | ObjectKey | Object name, such as `folder/document.jpg`. | String  | Yes |
-| ci-process | CI's processing capability, which is fixed at `OCR` for  COR. | String | Yes |
-| type | OCR recognition type. Valid values: general (general print recognition), accurate (high-precision print recognition), efficient (simplified print recognition), fast (high-speed print recognition), handwriting (handwriting recognition). Default value: general. | String | No |
+| ci-process | CI's processing capability, which is fixed at `OCR` for OCR. | String | Yes |
+| type | OCR recognition type. Valid values: `general` (general print recognition), `accurate` (high-precision print recognition), `efficient` (simplified print recognition), `fast` (high-speed print recognition), `handwriting` (handwriting recognition). Default value: `general`. | String | No |
 | language-type | Language type. This parameter takes effect only if `type` is `general`. The language can be automatically recognized or manually specified. Chinese-English mix (`zh`) is selected by default. Mixed characters in English and each supported language can be recognized together. For valid values, see [Recognizable language types](#language-type). | String | No |
-| ispdf               | Whether to enable PDF recognition. This parameter takes effect only if `type` is `general` or `fast`. Valid values: true, false. Default value: false. After this feature is enabled, images and PDF files can be recognized at the same time.   | Boolean | No       |
+| ispdf               | Whether to enable PDF recognition. This parameter takes effect only if `type` is `general` or `fast`. Valid values: `true`, `false`. Default value: `false`. After this feature is enabled, images and PDF files can be recognized at the same time.   | Boolean | No       |
 | pdf-pagenumber      | Page number of the PDF page to be recognized. This parameter takes effect only if `type` is `general` or `fast`, the uploaded file is a PDF, and `ispdf` is `true`. Only one single PDF page can be recognized. Default value: 1. | Integer | No       |
-| isword | Whether to return the word information after recognition. This parameter takes effect only if `type` is `general` or `accurate`. Valid values: true, false. Default value: false. | Boolean | No |
-| enable-word-polygon | Whether to output four-point word coordinates. This parameter takes effect only if `type` is `handwriting`. Valid values: true, false. Default value: false. | Boolean | No |
+| isword | Whether to return the word information after recognition. This parameter takes effect only if `type` is `general` or `accurate`. Valid values: `true`, `false`. Default value: `false`. | Boolean | No |
+| enable-word-polygon | Whether to output four-point word coordinates. This parameter takes effect only if `type` is `handwriting`. Valid values: `true`, `false`. Default value: `false`. | Boolean | No |
 
 <span id="language-type"></span>
 
@@ -68,7 +68,7 @@ Authorization: <Auth String>
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
 
 #### Request body
 
@@ -78,7 +78,7 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
 
 #### Response body
 
@@ -199,7 +199,7 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 
@@ -228,7 +228,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 	<RequestId>NTk0MjdmODlfMjQ4OGY3XzYzYzhf****</RequestId>
 	<TextDetections>
 		<Confidence>99</Confidence>
-		<DetectedText>Hello</DetectedText>
+		<DetectedText>Hey you</DetectedText>
 		<ItemPolygon>
 			<Height>64</Height>
 			<Width>123</Width>
@@ -252,7 +252,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			<Y>231</Y>
 		</Polygon>
 		<Words>
-			<Character>You</Character>
+			<Character>Hey</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -274,7 +274,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			</WordCoordPoint>
 		</Words>
 		<Words>
-			<Character>OK</Character>
+			<Character>You</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -298,7 +298,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 	</TextDetections>
 	<TextDetections>
 		<Confidence>99</Confidence>
-		<DetectedText>See you</DetectedText>
+		<DetectedText>Bye bye</DetectedText>
 		<ItemPolygon>
 			<Height>43</Height>
 			<Width>245</Width>
@@ -322,7 +322,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			<Y>1487</Y>
 		</Polygon>
 		<Words>
-			<Character>See</Character>
+			<Character>Bye</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
@@ -344,7 +344,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 			</WordCoordPoint>
 		</Words>
 		<Words>
-			<Character>You</Character>
+			<Character>Bye</Character>
 			<Confidence>99</Confidence>
 			<WordCoordPoint>
 				<WordCoordinate>
