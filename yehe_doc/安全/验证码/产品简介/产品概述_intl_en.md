@@ -64,9 +64,9 @@ TenDI Captcha provides data that is updated every minute so that you can keep tr
     <td class="tg-0pky">The number of passed verifications.</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Verification requests blocked（The number of blocked verification requests）
+    <td class="tg-0pky">Verification requests blocked
 </td>
-    <td class="tg-0pky">The number of failed and blocked verifications.</td>
+    <td class="tg-0pky">The number of blocked verification requests.</td>
   </tr>
   <tr>
     <td class="tg-0pky">Failed verifications for wrong responses</td>
@@ -87,9 +87,9 @@ TenDI Captcha provides data that is updated every minute so that you can keep tr
     <td class="tg-0pky">The number of passed ticket verifications.</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Ticket verification requests blocked（The number of blocked ticket verification requests）
+    <td class="tg-0pky">Ticket verification requests blocked
 </td>
-    <td class="tg-0pky">The number of failed ticket verifications.</td>
+    <td class="tg-0pky">The number of blocked ticket verification requests.</td>
   </tr>
 </tbody>
 </table>
