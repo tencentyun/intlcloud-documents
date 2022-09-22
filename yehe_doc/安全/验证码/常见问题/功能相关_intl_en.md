@@ -38,7 +38,7 @@ Possible reasons and solutions are as follows:
 - The user is malicious or in a malicious environment and is blocked by the policies. TenDI Captcha ensures secure verification using multi-dimensional policy models consisting of user environments, verification history, and device fingerprints.
 - Check whether the CaptchaAppId used for the business client integration belongs to a CAPTCHA created by the console. For how to create a valid CaptchaAppId, please see [Operation Guide](https://intl.cloud.tencent.com/document/product/1159/49686).
 
-- If this problem is reported by multiple users, the policies may be too strict. You can log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical), select the CAPTCHA in use, and click **Security configuration**. On the CAPTCHA details page, select the **Security configuration** tab, and change the risk control level to "Experience-Oriented".
+- If this problem is reported by multiple users, the policies may be too strict. You can log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical), select the CAPTCHA in use, and click **Security configuration**. On the CAPTCHA details page, select the **Security configuration** tab, and change the risk control level to "Loose".
 
 ### How can I grant permission to sub-accounts to use TenDI Captcha?
 
