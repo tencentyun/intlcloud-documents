@@ -12,42 +12,41 @@
 >! 该示例未展示调用票据校验 API 的逻辑。业务客户端完成验证码接入后，业务服务端需二次核查验证码票据结果（未接入票据校验，会导致黑产轻易伪造验证结果，失去验证码人机对抗效果），详情请参见：[接入票据校验（Web 及 App）](https://intl.cloud.tencent.com/document/product/1159/49682)。
 
 ```
+<!DOCTYPE html>
+<html lang="en">
 
-  <!DOCTYPE html>
-  <html lang="en">
-  
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web frontend access code sample</title>
-    <!-- (Required) Dependency of the CAPTCHA program, which cannot be modified. If you use local caching or other methods to skip loading of the CAPTCHA, the CAPTCHA will not update and work properly, even triggering false positives. -->
+    <title>Web 前端接入示例</title>
+    <!-- 验证码程序依赖(必须)。请勿修改以下程序依赖，如通过其他手段规避加载，会导致验证码无法正常更新，对抗能力无法保证，甚至引起误拦截。 -->
     <script src="https://sg.captcha.qcloud.com/TCaptcha-global.js"></script>
-  </head>
-  
-  <body>
-    <button id="CaptchaId" type="button">Verify</button>
-  </body>
-  
-  <script>
-  
-      // Define the callback function
-      function callback(res) {
-          // The callback output returned by the first passed parameter, which is as follows
-          // ret         Int       Verification result. The value 0 indicates a successful verification. The value 2 indicates that the CAPTCHA is disabled by the user.
-          // ticket      String    A verified ticket. The field value is not null only when ret = 0.
-          // CaptchaAppId       String    ID of the CAPTCHA.
-          // bizState    Any       The defined transparent transmission parameter.
-          // randstr     String    The random string verified, which is required for subsequent ticket verification.
-          console.log('callback:', res);
-  
-  
-          // res（The user disables the CAPTCHA）= {ret: 2, ticket: null}
-          // res（Verified） = {ret: 0, ticket: "String", randstr: "String"}
-          // res（Return a disaster recovery ticket prefixed with "error_" when the verification request fails） = {ret: 0, ticket: "String", randstr: "String",  errorCode: Number, errorMessage: "String"}
-          // Here is the code snippet of the verification result. Modify it based on the actual ticket and errorCode
-          if (res.ret === 0) {
-            // Copy result to clipboard
+</head>
+
+<body>
+    <button id="CaptchaId" type="button">验证</button>
+</body>
+
+<script>
+
+    // 定义回调函数
+    function callback(res) {
+        // 第一个参数传入回调结果，结果如下：
+        // ret         Int       验证结果，0：验证成功。2：用户主动关闭验证码。
+        // ticket      String    验证成功的票据，当且仅当 ret = 0 时 ticket 有值。
+        // CaptchaAppId       String    验证码应用ID。
+        // bizState    Any       自定义透传参数。
+        // randstr     String    本次验证的随机串，后续票据校验时需传递该参数。
+        console.log('callback:', res);
+
+
+        // res（用户主动关闭验证码）= {ret: 2, ticket: null}
+        // res（验证成功） = {ret: 0, ticket: "String", randstr: "String"}
+        // res（请求验证码发生错误，验证码自动返回terror_前缀的容灾票据） = {ret: 0, ticket: "String", randstr: "String",  errorCode: Number, errorMessage: "String"}
+        // 此处代码仅为验证结果的展示示例，真实业务接入，建议基于ticket和errorCode情况做不同的业务处理
+        if (res.ret === 0) {
+            // 复制结果至剪切板
             var str = '【randstr】->【' + res.randstr + '】      【ticket】->【' + res.ticket + '】';
             var ipt = document.createElement('input');
             ipt.value = str;
@@ -55,43 +54,43 @@
             ipt.select();
             document.execCommand("Copy");
             document.body.removeChild(ipt);
-            alert('1. Return result（randstr、ticket）Copied successfully. You can press Ctrl+V to paste the result to view。2. Open the console from your browser and view the result returned。');
-          }
-      }
-  
-      // Define the function that handles TCaptcha-global.js loading errors
-      function loadErrorCallback() {
-        var appid = ''
-        // Generate a disaster recovery ticket or execute other operations
-        var ticket = 'terror_1001_' + appid + Math.floor(new Date().getTime() / 1000);
-        callback({
-          ret: 0,
-          randstr: '@'+ Math.random().toString(36).substr(2),
-          ticket: ticket,
-          errorCode: 1001,
-          errorMessage: 'jsload_error',
-        });
-      }
-  
-      // Define the event that triggers CAPTCHA
-      window.onload = function(){
+            alert('1. 返回结果（randstr、ticket）已复制到剪切板，ctrl+v 查看。\n2. 打开浏览器控制台，查看完整返回结果。');
+        }
+    }
+
+    // 定义验证码js加载错误处理函数
+    function loadErrorCallback() {
+      var appid = ''
+       // 生成容灾票据或自行做其它处理
+      var ticket = 'terror_1001_' + appid + Math.floor(new Date().getTime() / 1000);
+      callback({
+        ret: 0,
+        randstr: '@'+ Math.random().toString(36).substr(2),
+        ticket,
+        errorCode: 1001,
+        errorMessage: 'jsload_error',
+      });
+    }
+
+    // 定义验证码触发事件
+    window.onload = function(){
         document.getElementById('CaptchaId').onclick = function(){
-          try {
-            // Generate a CAPTCHA object
-            // CaptchaAppId：Log in to the Captcha console and enter the [Manage CAPTCHA] page. If no CAPTCHAs has been created, create one first.
-            //callback：Defined callback function
-            var captcha = new TencentCaptcha('CaptchaAppId', callback, {});
-            // Call the method to display the CAPTCHA
-            captcha.show(); 
-          } catch (error) {
-            // Load error. Please call the  load error handling function
-            loadErrorCallback();
-            }
-          }
-      }
-  </script>
-  
-  </html>
+            try {
+      			// 生成一个验证码对象
+      			// CaptchaAppId：登录验证码控制台，从【验证管理】页面进行查看。如果未创建过验证，请先新建验证。
+      			//callback：定义的回调函数
+      			var captcha = new TencentCaptcha('你的验证码CaptchaAppId', callback, {});
+      			// 调用方法，显示验证码
+      			captcha.show(); 
+    		} catch (error) {
+    		// 加载异常，调用验证码js加载错误处理函数
+      			loadErrorCallback();
+    		}
+        }
+    }
+</script>
+
+</html>
 ```
 ## 接入说明
 
