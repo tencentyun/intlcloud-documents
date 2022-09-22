@@ -8,7 +8,7 @@
 
 | 监听 @ 字符选择群成员                                                    | 编辑群 @ 消息发送                                                        | 收到群 @ 消息                                                            |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| ![](https://main.qcloudimg.com/raw/870063a7d732d5df29971609b39d4796.png) | ![](https://main.qcloudimg.com/raw/f4ace5e8b7d697be14c18c8b08de0b36.png) | ![](https://main.qcloudimg.com/raw/0291a12d3ce8edfb880dab2e4b9541c8.png) |
+| ![](https://qcloudimg.tencent-cloud.cn/raw/ed60cac72b215f6e7128cf2533bab2f7.jpg) | ![](https://qcloudimg.tencent-cloud.cn/raw/fbabe9cac382a7944676565242b29b59.jpg) | ![](https://qcloudimg.tencent-cloud.cn/raw/b20c30564c78b9fec9ab25260110641f.jpg) |
 
 图一：在聊天界面监听到输入框输入 "@" 字符后，可以跳转到群成员选择界面，选择需要 @ 的群成员。
 图二：在群成员选择完成后，重新返回聊天界面，继续编辑群 @ 消息发送。
