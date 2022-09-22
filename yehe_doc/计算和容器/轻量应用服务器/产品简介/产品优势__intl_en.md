@@ -14,5 +14,5 @@ Lighthouse provides stable network bandwidth, latency, and download/upload speed
 Lighthouse provides a wide variety of dedicated high-quality application images and operating system images as well as a rich-featured image ecosystem, helping you easily and efficiently configure and manage various applications.
 
 ## Security Protection
-Anti-DDoS Basic and [CWP Basic](https://intl.cloud.tencent.com/document/product/296/2222) are activated by default to help you build a server security protection system. The resources of different users are fully isolated to ensure the security of your resources in the cloud, and firewall services are provided to implement network security protection and guarantee the secure and stable operations of your business.
+Anti-DDoS Basic and [CWPP Basic](https://intl.cloud.tencent.com/document/product/296/2222) are activated by default to help you build a server security protection system. The resources of different users are fully isolated to ensure the security of your resources in the cloud, and firewall services are provided to implement network security protection and guarantee the secure and stable operations of your business.
 
