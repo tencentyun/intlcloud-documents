@@ -164,11 +164,11 @@ See below for the lifecycles of system disks and data disks.
 
 
 ## Secure service
-Anti-DDoS Basic and [Cloud Workload Protection (CWP) Basic](https://intl.cloud.tencent.com/document/product/296/2222) are activated by default for Lighthouse instances.
+Anti-DDoS Basic and [Cloud Workload Protection Platform (CWPP) Basic](https://intl.cloud.tencent.com/document/product/296/2222) are activated by default for Lighthouse instances.
 <dx-alert infotype="explain" title="">
 
 - Anti-DDoS: To check the DDoS protection status, go to the [Anti-DDoS Basic](https://console.cloud.tencent.com/ddos/ddos-basic) console, and select **Lighthouse** at the top.
-- CWP Basic: To check the details , go to the CWP console, open the [Server List](https://console.cloud.tencent.com/cwp/asset/machine) page, and select **Lighthouse**.
+- CWPP Basic: To check the details , go to the CWPP console, open the [Server List](https://console.cloud.tencent.com/cwpp/asset/machine) page, and select **Lighthouse**.
 </dx-alert>
 
 
