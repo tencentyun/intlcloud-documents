@@ -29,20 +29,23 @@ Instructions:
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky">Requests</td>
+    <td class="tg-0pky">Load requests
+</td>
     <td class="tg-0pky">The number of times the client loads verification.</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Verifications</td>
+    <td class="tg-0pky">Verification requests
+</td>
     <td class="tg-0pky">The number of verifications initiated after a user responds to the verification question.</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Passed verifications</td>
+    <td class="tg-0pky">Verification requests passed
+</td>
     <td class="tg-0pky">The number of passed verifications.</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Failed verifications</td>
-    <td class="tg-0pky">The number of failed and blocked verifications.</td>
+    <td class="tg-0pky">Verification requests blocked</td>
+    <td class="tg-0pky">The number of blocked verification requests.</td>
   </tr>
   <tr>
     <td class="tg-0pky">Failed verifications for wrong responses</td>
@@ -53,16 +56,18 @@ Instructions:
     <td class="tg-0pky">The number of verifications blocked by security policies.</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Ticket verifications</td>
+    <td class="tg-0pky">Requests to verify tickets
+</td>
     <td class="tg-0pky">The number of ticket verifications initiated by a server.</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Passed ticket verifications</td>
+    <td class="tg-0pky">Ticket verification requests passed
+</td>
     <td class="tg-0pky">The number of passed ticket verifications.</td>
   </tr>
   <tr>
-    <td class="tg-0pky">Failed ticket verifications</td>
-    <td class="tg-0pky">The number of failed ticket verifications.</td>
+    <td class="tg-0pky">Ticket verification requests blocked</td>
+    <td class="tg-0pky">The number of blocked ticket verification requests.</td>
   </tr>
 </tbody>
 </table>
