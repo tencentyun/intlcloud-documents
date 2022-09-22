@@ -28,7 +28,7 @@ This is because the Captcha service blocks suspected malicious users. You may ha
 ### Android uses the Web frontend HTML5 method for integration. During the debugging process, a blank background pops up first and then the CAPTCHA page. How do I change that?
 
 - During the debugging process, normally, the webview is called first to load the webpage and then the CAPTCHA page pops up.
-- If the blank background pops up first and then the Image CAPTCHA page, the reasons are as follows:
+- If the blank background pops up first and then the CAPTCHA page, the reasons are as follows:
    - The time of loading the Captcha JS results in a white screen.
    - The page has no content, so the loaded webview is displayed. In this case, it is necessary to display the webview after the ready event is triggered.
 - Therefore, Android needs to load the page without displaying it, wait for the ready callback, and then display the page after being notified to do so. For ready configuration instructions, see [Web Integration - Create Captcha Object](https://intl.cloud.tencent.com/document/product/1159/49680).
