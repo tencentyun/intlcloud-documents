@@ -14,7 +14,7 @@ During the verification, ten security protection mechanisms are used to defend a
 
 ### Why can't TenDI Captcha effectively block unusual requests?
 
-If you want to block more malicious requests from the black market, you can log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical), select the CAPTCHA to configure, and click **Security configuration**. On the CAPTCHA details page, select the **Security configuration** tab, and change the risk control level to "Security-Focused". Then, TenDI Captcha will block unusual verification requests with stricter risk control policies.
+If you want to block more malicious requests from the black market, you can log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical), select the CAPTCHA to configure, and click **Security configuration**. On the CAPTCHA details page, select the **Security configuration** tab, and change the risk control level to "Strict". Then, TenDI Captcha will block unusual verification requests with stricter risk control policies.
 
 ### Does TenDI Captcha support multiple languages?
 
