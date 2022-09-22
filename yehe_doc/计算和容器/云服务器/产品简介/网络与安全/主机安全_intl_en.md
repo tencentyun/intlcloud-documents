@@ -1,5 +1,5 @@
 ## Overview
-Based on Tencent Security's massive amounts of threat data, Tencent Cloud Workload Protection (CWP) leverages machine learning to provide a wide variety of security services ranging from intrusion detection to vulnerability alerting. It offers various security features such as brute force attack prevention, unusual login location reminding, trojan protection, and high-risk vulnerability detection, helping build a security protection system to cope with major network security risks faced by servers and prevent data leakage.
+Based on Tencent Security's massive amounts of threat data, Tencent Cloud Workload Protection Platform（CWPP) leverages machine learning to provide a wide variety of security services ranging from intrusion detection to vulnerability alerting. It offers various security features such as brute force attack prevention, unusual login location reminding, trojan protection, and high-risk vulnerability detection, helping build a security protection system to cope with major network security risks faced by servers and prevent data leakage.
 
 CWP is available in Basic and Pro editions. When creating a CVM instance, you can choose to activate CWP Basic by default.
 
