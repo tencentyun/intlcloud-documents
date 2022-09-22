@@ -146,7 +146,7 @@ Definitions:
 
 | Product | Abbreviation in CAM | Authorization Granularity | Console | Authorization by Tag | Service Role |Reference Document |
 | ------------------------------------- -------- | ------------- | -------- | -------- | ---------------- | -------- | ------------------------------------------------------------ |
-| [Cloud Workload Protection (CWP)](https://intl.cloud.tencent.com/document/product/296) | cwp | Operation level   | &#10003; | -                | &#10003; | -        |
+| [Cloud Workload Protection Platform (CWPP)](https://intl.cloud.tencent.com/document/product/296) | cwpp | Operation level   | &#10003; | -                | &#10003; | -        |
 
 
 
