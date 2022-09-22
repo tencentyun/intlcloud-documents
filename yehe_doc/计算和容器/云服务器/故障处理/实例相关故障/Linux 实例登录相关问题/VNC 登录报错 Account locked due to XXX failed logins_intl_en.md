@@ -78,6 +78,6 @@ sed -i "s/.*pam_tally.*/#&/" /etc/pam.d/login
  - Change the default sshd port 22 to a less common port between 1024-65525. For more information, see [Modifying the Default Remote Port of CVM](https://intl.cloud.tencent.com/document/product/213/35376).
  - Manage the associated security group rules to open only ports and protocols required by your business. For more information, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272).
  - Close the port for internet access for core applications such as MySQL and Redis databases. 
- - Install security software (such as CWP agent), and configure real-time alarms to get notices about suspicious logins instantly.
+ - Install security software (such as CWPP agent), and configure real-time alarms to get notices about suspicious logins instantly.
 
 
