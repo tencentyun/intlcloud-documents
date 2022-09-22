@@ -18,7 +18,7 @@ After the free quota is used up, you will be billed on a **postpaid daily** basi
 <table>
 <thead>
 <tr>
-<th align="left">Ticket Verifications (Times)</th>
+<th align="left">Ticket Verifications (Times/day)</th>
 <th>USD/Time</th>
 </tr>
 </thead>
