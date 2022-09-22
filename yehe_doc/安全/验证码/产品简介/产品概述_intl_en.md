@@ -26,7 +26,7 @@ During the verification, ten security protection mechanisms such as dynamic encr
 
 #### Controllable risk control level
 
-TenDI Captcha supports three risk control levels — Experience-Oriented, Balanced, and Security-Focused.
+TenDI Captcha supports three risk control levels — Loose, General, and Strict.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/5bfbe8fe70ada4e6feb5014ad304f95b.png)
 
