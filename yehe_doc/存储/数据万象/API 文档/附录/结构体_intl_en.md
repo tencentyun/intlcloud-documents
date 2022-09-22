@@ -6,6 +6,7 @@
 | ObjectPrefix      | Object prefix                                | String    | Yes       | None                       |
 | QueueId           | Queue ID                                    | String    | Yes       | None                       |
 | PicProcessQueueId | Image processing queue ID                             | String    | Yes if there is an image processing node        | None |
+| SpeechRecognitionQueueId | Speech recognition queue ID                      | String    | Yes if there is a speech recognition node        | None |
 | NotifyConfig      | Callback information. If none is specified, the queue callback information is used. | Container | No       | None   |
 | ExtFilter         | Filename extension filter.                           | Container | No       | None   |
 
@@ -15,9 +16,12 @@
 | Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
 | ------------------  | -------- | ------ | -------- | ------ | ------------------------------------------------------------ |
 | Url                 | Callback address | String | Yes   | None | The callback address cannot be a private network address.                                               |
-| Type                | Callback type | String | Yes   | None |  Url: URL callback                                         |
-| Event               | Callback information | String | Yes       | None     | <ul  style="margin: 0;"><li>TaskFinish: Job completed </li><li>WorkflowFinish: Workflow completed </li><li>You can configure multiple events separated by comma.</li></ul> |
+| Type                | Callback type | String | Yes   | None |  <ul  style="margin: 0;"><li>Url: URL callback </li><li>TDMQ: TDMQ message callback</li></ul> |
+| Event               | Callback information | String | Yes       | None     | <ul  style="margin: 0;"><li>TaskFinish: Job completed </li><li>WorkflowFinish: Workflow completed </li><li>You can configure multiple events separated by comma. |
 | ResultFormat        | Callback format | String | No       | XML    | <ul  style="margin: 0;"><li>XML </li><li>JSON</li></ul>                      |
+| MqRegion            | TDMQ region | String | No  | None    | Yes if the callback type is TDMQ. For supported regions, see <a href="https://intl.cloud.tencent.com/document/product/406/12667">Request Domain Description</a>. |
+| MqMode              | TDMQ mode | String | No  | None    | Yes if the callback type is TDMQ. <ul  style="margin: 0;"><li>Topic: Topic subscription </li><li>Queue: Queue service </li></ul>           |
+| MqName              | TDMQ topic name | String | No  | None    | Yes if the callback type is TDMQ.                      |
 
 <span id="MediaWorkflow_Topology_Nodes_Start_Input_ExtFilter"></span>
 `ExtFilter` has the following sub-nodes:
@@ -30,7 +34,7 @@
 | Image              | Require an image extension.    | String | No   | false  | false/true                                                   |
 | ContentType        | Require a content type. | String | No   | false  | false/true                                                   |
 | Custom             | Require a custom extension.  | String | No   | false  | false/true                                                   |
-| CustomExts         | Custom extension.          | String | No   | None     | <ul  style="margin: 0;"><li>Separate filename extensions by slash (/). Up to ten extensions are supported.</li><li>If `Custom` is `true`, this parameter is required. </li></ul> |
+| CustomExts         | Custom extension.          | String | No   | None     | <ul  style="margin: 0;"><li>Separate filename extensions with slashes (/). Up to ten extensions are supported.</li><li>If `Custom` is `true`, this parameter is required. </li></ul> |
 | AllFile    | All files          |  String  |  No   | false    |  false/true  |
 
 ## MediaWorkflow_Topology_Nodes_\*\*\*_Operation_Output
@@ -42,7 +46,7 @@
 | Bucket             | Bucket name | String | Yes       | None |
 | Object             | Result filename | String  | Yes       | <ul  style="margin: 0;"><li>If the workflow node type is `Snapshot` or `SmartCover`, and there are more than one result file, `${Number} $` must be included. </li><li>If the workflow node type is `Segment`, `Duration` is specified, and `Format` is not `HLS` or `m3u8`, `${Number}` must be included. </li></ul>   |
 | SpriteObject       | Image sprite name | String  | No       | If the workflow node type is `Snapshot` and the image sprite feature is enabled, this field is required. |
-| AuObject           | Voice result filename | String | Yes     | If the workflow node type is `VoiceSeparate` and there is a voice output, this field is required.  |
+| AuObject           | Voice result filename | String | No     | If the workflow node type is `VoiceSeparate` and there is a voice output, this field is required.  |
 
 ## MediaWorkflow_Topology_Nodes_Snapshot\_\*\*\*_Operation
 <span id="MediaWorkflow_Topology_Nodes_Snapshot_Operation"></span>
@@ -82,7 +86,13 @@
 | RemoveWatermark     | Watermark removal parameter | Container. For more information, see [RemoveWatermark](#RemoveWatermark). | No       | None   |
 | DigitalWatermark    | Digital watermark parameter | Container. For more information, see [DigitalWatermark](#DigitalWatermark). | No       | None   |
 | Output             | Output address     | Container. For more information, see [Output](#Operation_Output). | Yes       | None   |
+| Input               | Input configuration     | Container | No       | None   |
 
+`MediaWorkflow_Topology_Nodes_Transcode\_\*\*\*_Operation.Input` has the following sub-nodes:
+
+| Node Name (Keyword) | Description | Type | Required | Constraints |
+| ------------------ | --------------- | ------ | ---- | ----------------- |
+| SpeedTranscodingQueueId  | Accelerated transcoding queue  | String | No   | None        |
 
 ## MediaWorkflow_Topology_Nodes_Concat\_\*\*\*_Operation
 <span id="MediaWorkflow_Topology_Nodes_Concat_Operation"></span>
@@ -259,6 +269,67 @@
 | VideoStreamName    | Video substream name                                              | String | Yes   | It must be consistent with the existing video node. |
 | BandWidth          | Video substream bandwidth limit. Unit: b/s. Value range: [0, 2000000000], where 0 indicates no limit. | String | No   | The value must be equal to or greater than 0. The default value is 0.     |
 
+## AudioMix
+<span id="AudioMix"></span>
+
+| Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
+| ------------------ | ------------------------------------------- | --------- | ---- | ------ | ------------------------------------------------- |
+| AudioSource        | Address of the audio track file to be mixed | String | Yes | None | It must be stored in the same bucket as the input media file. |
+| MixMode            | Audio mix mode  | String | No   | Repeat | <li>Repeat: Repeats the background sound <br/><li>Once: Plays back the background sound once |
+| Replace            | Whether to replace the original audio of the input media file with the mixed audio track | String | No | false  | true/false                                        |
+| EffectConfig       | Audio mix transition configuration  | Container | No   | false  | None |
+
+`EffectConfig ` has the following sub-nodes:
+
+| Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
+| ------------------ | --------------- | ------ | ---- | ------ | ----------------- |
+| EnableStartFadein  | Enables fade-in  | String | No   | false       | true/false |
+| StartFadeinTime    | Fade-in duration  | String | No   | None    | A floating point number above 0 |
+| EnableEndFadeout   | Enables fade-out  | String | No   | false       | true/false |
+| EndFadeoutTime     | Fade-out duration  | String | No   | None    | A floating point number above 0 |
+| EnableBgmFade      | Enables fade-in for background music transition  | String | No   | false       | true/false |
+| BgmFadeTime        | Fade-in duration for background music transition  | String | No   | None    | A floating point number above 0 |
+
+
+## CallBackMqConfig
+<span id="CallBackMqConfig"></span>
+
+| Node Name (Keyword) | Description | Type | Required |
+| ------------------ | ---------------- | ------ | -------- |
+| MqRegion           | Message queue region. Valid values: `sh` (Shanghai), `bj` (Beijing), `gz` (Guangzhou), `cd` (Chengdu), `hk` (Hong Kong, China). | String | Yes |
+| MqMode             | Message queue mode. Default value: `Queue`. <br/>Topic: Topic subscription <br/>Queue: Queue service </td> | String | Yes |
+| MqName             | TDMQ topic name                                                                        | String | Yes | 
+
+
+## DigitalWatermark
+<span id="DigitalWatermark"></span>
+
+| Node Name (Keyword) | Description | Type | Required | Constraints |
+| ------------------ | -------------------------------------- | ------ | -------- | ------------------------------------------------------- |
+| Message            | The watermark information embedded by the digital watermark | String | Yes       | It can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).   |
+| Type               | Digital watermark type | String | Yes       | It currently can be set to `Text` only.   |
+| Version            | Digital watermark version | String | Yes       | It currently can be set to `V1` only.   |
+| IgnoreError        | Whether to ignore the watermarking failure and continue the job. | String | Yes       | Valid values: `true`, `false`.   |
+| State              | Whether the watermark is added successfully. Valid values: `Running`, `Success`, `Failed`.  | string | No | This field cannot be set actively; instead, it will be returned after the job is submitted successfully. |
+
+
+## DashEncrypt
+<span id="DashEncrypt"></span>
+
+| Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
+| -----------------| --------------- | ------ | ---- | ------ | ------------------------------------------------------------ |
+| IsEncrypt        | Whether to enable DASH encryption | String    | No       | false  | true/false                                                   |
+| UriKey           | DASH encryption key    | String | No   | None     | This parameter will take effect only when `IsEncrypt` is `true`.                       |
+
+
+## HlsEncrypt 
+<span id="HlsEncrypt"></span>
+
+| Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
+| -----------------| --------------- | ------ | ---- | ------ | ------------------------------------------------------------ |
+| IsEncrypt        | Whether to enable HLS encryption | String    | No       | false  | true/false                                                   |
+| UriKey           | HLS encryption key    | String | No   | None     | This parameter will take effect only when `IsEncrypt` is `true`.                       |
+
 
 ## RemoveWatermark
 <span id="RemoveWatermark"></span>
@@ -271,40 +342,8 @@
 | Height              | Watermark height            | String | Yes       | <ul  style="margin: 0;"><li>Value range: (0, 4096]</li><li>Unit: px</li></ul> |
 
 
-## DigitalWatermark
-<span id="DigitalWatermark"></span>
-
-| Node Name (Keyword) | Description | Type | Required | Constraints |
-| ------------------ | -------------------------------------- | ------ | -------- | ------------------------------------------------------- |
-| Message            | The watermark information embedded by the digital watermark | String | Yes       | It can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).  |
-| Type               | Digital watermark type | String | Yes       | It currently can be set to `Text` only.   |
-| Version            | Digital watermark version | String | Yes       | It currently can be set to `V1` only.   |
-| IgnoreError        | Whether to ignore the watermarking failure and continue the job. | String | Yes       | Valid values: `true`, `false`.   |
-| State              | Whether the watermark is added successfully. Valid values: `Running`, `Success`, `Failed`.  | string | No | This field cannot be set actively; instead, it will be returned after the job is submitted successfully. |
-
-
-## HlsEncrypt
-<span id="HlsEncrypt"></span>
-
-| Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
-| -----------------| --------------- | ------ | ---- | ------ | ------------------------------------------------------------ |
-| IsEncrypt        | Whether to enable HLS encryption | String    | No       | false  | true/false                                                   |
-| UriKey           | HLS encryption key    | String | No   | None     | This parameter will take effect only when `IsEncrypt` is `true`.                       |
-
-
-## DashEncrypt
-<span id="DashEncrypt"></span>
-
-| Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
-| -----------------| --------------- | ------ | ---- | ------ | ------------------------------------------------------------ |
-| IsEncrypt        | Whether to enable DASH encryption | String    | No       | false  | true/false                                                   |
-| UriKey           | DASH encryption key    | String | No   | None     | This parameter will take effect only when `IsEncrypt` is `true`.                       |
-
-
 ## SmartCover
 <span id="SmartCover"></span>
-
-`SmartCover` has the following sub-nodes:
 
 | Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
 | -------------------- | -------------------- | --------- | -------- | ----------------- | ------------------------------------------------------------ |
@@ -313,3 +352,4 @@
 | Height               | Height | String    | No  | Original video height  | <ul  style="margin: 0;"><li>Value range: [128, 4096]</li><li>Unit: px</li><li>If only `Height` is set, `Width` is calculated based on the original video aspect ratio.</li></ul> |
 | Count                | Number of screenshots             | String    | No       | 3                | [1,10]  |
 | DeleteDuplicates     | Whether to deduplicate thumbnails.    | String | No  | false | true/false |
+
