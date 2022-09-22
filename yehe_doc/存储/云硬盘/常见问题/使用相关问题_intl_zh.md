@@ -30,7 +30,7 @@
 ### 如何查看云硬盘详细信息？
 1. 登录 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs/index)。
 2. 在“云硬盘”列表页面上方，选择需查看云硬盘所在地域。
-3. 在列表中找到目标云硬盘， 可查看该盘相关信息。如下图所示：
+3. 在列表中找到目标云硬盘， 可查看该盘相关信息。
 可单击 ID 进入该盘详情页，查看更多信息。
 
 
@@ -40,6 +40,7 @@
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/instance/index)，进入“实例”列表页面。
 2. 选择需查看的实例 ID，进入实例详情页面。
 3. 在实例详情页面，选择**监控**页签，即可查看该实例下云硬盘使用情况。
+
 
 ### 关于云硬盘的常用操作有哪些？
 详情请参见云硬盘 [操作总览](https://intl.cloud.tencent.com/document/product/362/33140)。
@@ -78,11 +79,11 @@
  </tr>
  <tr>
  <td nowrap="nowrap">快照容量 < 云硬盘容量 ≤ 2TB<br/>或者<br/>2TB < 快照容量 < 云硬盘容量</td>
-<td><ul class="params"><li>挂载至 Windows 云服务器：<a href="https://cloud.tencent.com/document/product/362/6737">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/39995">扩展分区及文件系统（Linux）</a></li></ul></td>
+<td><ul class="params"><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/39995">扩展分区及文件系统（Linux）</a></li></ul></td>
  </tr> 
  <tr>
  <td>快照容量 ≤ 2TB < 云硬盘容量</td>
-<td nowrap="nowrap"><ul class="params"><li>若快照中使用 MBR 分区形式：</li>需参考 <a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a>使用 GPT 重新分区，<b>该操作将会删除原有数据</b><li>若快照中使用 GPT 分区形式：<ul><li>挂载至 Windows 云服务器：<a href="https://cloud.tencent.com/document/product/362/6737">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a></li></ul></td>
+<td nowrap="nowrap"><ul class="params"><li>若快照中使用 MBR 分区形式：</li>需参考 <a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a>使用 GPT 重新分区，<b>该操作将会删除原有数据</b><li>若快照中使用 GPT 分区形式：<ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/39995">扩展分区及文件系统（Linux）</a></li></ul></td>
  </tr> 
  </table>
 
@@ -167,13 +168,14 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 </dx-alert>
 
 
-1. 登录  [云服务器控制台](https://console.cloud.tencent.com/cvm/instance/index) ，进入“实例”列表页面。
+1. 登录  [云服务器控制台](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) ，进入“实例”列表页面。
 2. 选择需调整实例所在行右侧的**更多** > **实例状态** > **关机**，进行关机操作。
 3. 待实例关机后，选择**更多** > **资源调整** > **调整硬盘介质**。
 4. 在弹出的“调整硬盘介质”窗口中，选择目标云硬盘类型，勾选同意说明并单击**立即转换**。
 5. 核对信息后，完成可能需要支付的订单，即可完成调整。
 <dx-alert infotype="explain" title="">
 - 更换磁盘介质的更多信息，请参见 [调整硬盘介质](https://intl.cloud.tencent.com/document/product/213/32365)。
+- 调整所需支付费用，请参见 [硬盘介质调整费用说明](https://intl.cloud.tencent.com/document/product/213/45462)。
 </dx-alert>
 
 
@@ -204,6 +206,14 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 ### 云硬盘到期后系统如何处理？
 以下说明仅适用于支持卸载的弹性云硬盘，不支持卸载的非弹性云硬盘与云服务器有完全一致的生命周期，可参考 [云服务器欠费说明](https://intl.cloud.tencent.com/document/product/213/2181)。
 <dx-tabs>
+::: 包年包月云硬盘
+ - 资源到期前7天开始，系统会陆续给您发送到期预警以及续费提醒通知。
+ - 账户余额充足的情况下，若您已设置自动续费，云硬盘在到期当天会自动续费。
+ - 若您的云硬盘在到期前（包括到期当天）未进行续费，系统将在到期时间点开始对其性能进行限制。您在使用云硬盘时将会发现其性能有显著下降。
+ - 若您的云硬盘在到期后7 × 24小时之内仍未进行续费，系统将对云硬盘作停服处理（云硬盘不可用，仅保留数据），并**强制解除**与云服务器的关联关系（如有），云硬盘进入回收站。您仍可以在回收站对云硬盘进行续费找回，但**被续费找回的云硬盘续费周期的起始时间为上一个周期的到期日**。
+ - 若您的云硬盘进入回收站后7 × 24小时之内仍未进行续费找回，系统将开始释放资源，到期云硬盘中的数据将被清除且**不可找回**。
+
+:::
 ::: 按量计费云硬盘
  - 从您的账户余额被扣为负值时刻起，按量计费云硬盘在2小时内可继续使用且继续扣费，2小时后云硬盘将作停服处理（云硬盘不可用，仅保留数据），并在数据被彻底清除前按照正常使用的计费标准持续计费（即使您的账户余额已为负值）。
  - 若云硬盘停服后15天内，您的腾讯云账户充值到余额大于0，云硬盘可恢复使用。
@@ -222,7 +232,7 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 能。云硬盘支持容量调整功能，可 [扩容](https://intl.cloud.tencent.com/document/product/362/31600) 但不可缩容。
 
 ### 扩容操作前云服务器需要关机吗？
-不需要关机。请注意，在扩容完成后，需根据云服务的操作系统类型，执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)或 [扩展分区及文件系统（Linux）](https://cloud.tencent.com/document/product/362/6738)操作，将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成新的独立分区。
+不需要关机。请注意，在扩容完成后，需根据云服务的操作系统类型，执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)或 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39995)操作，将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成新的独立分区。
 
 ### 扩容文件系统有什么条件？
 只有云硬盘支持扩容，本地盘无法扩容，具体操作指引请参考 [扩容场景介绍](https://intl.cloud.tencent.com/document/product/362/31600)。
@@ -276,7 +286,8 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 - 数据盘（即弹性云硬盘）的生命周期独立于云服务器，可以独立删除。具体操作请参考 [销毁云硬盘](https://intl.cloud.tencent.com/document/product/362/32399)。
 
 ### 系统盘能否进行分区操作？
-系统盘不支持分区操作。
+支持，但不建议您对系统盘进行分区操作。
+如果您强行使用第三方工具对系统盘做分区操作，可能引发系统崩溃和数据丢失等未知风险。您可在扩容系统盘后做扩展分区操作，具体操作，请参见 [在线扩展系统盘分区及文件系统](https://intl.cloud.tencent.com/document/product/362/50063)。
 
 
 ### 需要更新挂载点的挂载信息时应如何操作？

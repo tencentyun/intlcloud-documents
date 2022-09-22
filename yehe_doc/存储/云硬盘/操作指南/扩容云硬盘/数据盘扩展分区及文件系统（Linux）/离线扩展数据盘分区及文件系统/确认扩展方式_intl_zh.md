@@ -1,6 +1,7 @@
 ## 操作场景
 云硬盘是云上可扩展的存储设备，您可以在创建云硬盘后随时扩展其大小，以增加存储空间，同时不失去云硬盘上原有的数据。
 在通过控制台完成 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747) 后，您还需要在云服务器实例内部将扩容部分的容量划分至已有分区内，您需要结合实际需求选择最佳的云硬盘扩展方式。本文档介绍了在 Linux 云服务器上如何确定云硬盘的扩展方式。
+
 <dx-alert infotype="notice" title="">
 扩容文件系统操作不慎可能影响已有数据，因此建议您在操作前手动 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 备份数据。
 </dx-alert>
@@ -42,20 +43,20 @@ fdisk -l
      </tr>
 	 <tr>      
          <td rowspan="2">GPT</td>   
-	     <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/362/39997#Add">将扩容部分的容量划分至原有 GPT 分区</a></td>
+	     <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/362/39997">将扩容部分的容量划分至原有 GPT 分区</a></td>
 	     <td>可用于格式化后未分区的云硬盘。</td>
      </tr> 
 	 <tr>
-         <td><a href="https://intl.cloud.tencent.com/document/product/362/39997#New">将扩容部分的容量格式化成独立的 GPT 分区</a></td> 
+         <td><a href="https://intl.cloud.tencent.com/document/product/362/39997">将扩容部分的容量格式化成独立的 GPT 分区</a></td> 
 	     <td>可保持原有分区不变，使用扩容部分新建 GPT 分区。</td>
      </tr> 
 	 <tr>
          <td rowspan="2">MBR</td>   
-	     <td><a href="https://intl.cloud.tencent.com/document/product/362/39998#Add">将扩容部分的容量划分至原有 MBR 分区</a></td> 
+	     <td><a href="https://intl.cloud.tencent.com/document/product/362/39998">将扩容部分的容量划分至原有 MBR 分区</a></td> 
 	     <td>可用于格式化后未分区的云硬盘。</td>
      </tr> 
 	 <tr>
-         <td><a href="https://intl.cloud.tencent.com/document/product/362/39998#New">将扩容部分的容量格式化成独立的 MBR 分区</a></td> 
+         <td><a href="https://intl.cloud.tencent.com/document/product/362/39998">将扩容部分的容量格式化成独立的 MBR 分区</a></td> 
 	     <td>可保持原有分区不变，使用扩容部分新建 MBR 分区。</td>
      </tr> 
 </table>

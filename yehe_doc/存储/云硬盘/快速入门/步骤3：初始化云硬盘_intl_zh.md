@@ -6,7 +6,7 @@
 
 
 ## 注意事项
-您可先了解 [云硬盘使用注意事项](https://intl.cloud.tencent.com/document/product/362/32409#.E4.BA.91.E7.A1.AC.E7.9B.98.E4.BD.BF.E7.94.A8.E4.B8.8A.E6.9C.89.E4.BB.80.E4.B9.88.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.EF.BC.9F) 后再对云硬盘进行相关操作，以免损坏重要数据。
+您可先了解 [云硬盘使用注意事项](https://intl.cloud.tencent.com/document/product/362/32409) 后再对云硬盘进行相关操作，以免损坏重要数据。
 
 ## 前提条件
 已将云硬盘 `cbs-test` 挂载至云服务器，详情请参见 [步骤2：挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/39991)。
@@ -14,9 +14,11 @@
 ## 操作步骤
 <dx-tabs>
 ::: 格式化、创建文件系统并写入文件（Windows）
+
 <dx-alert infotype="explain" title="">
 本文使用的 Windows 云服务器操作系统以 Windows Server 2012 R2 数据中心版 64位中文版为例，不同版本操作系统步骤有一定区别，请您结合实际情况进行操作。
 </dx-alert>
+
 
 1. 以管理员身份登录 Windows 云服务器，详情请参见 [使用 RDP 登录 Windows 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5435)。 
 2. 在云服务器桌面，右键单击左下角的 <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-6px 0px">。
@@ -35,10 +37,12 @@
 9. 选择文件系统及格式化分区，单击**下一步**。
 
 10. 单击**完成**。
- 目标磁盘显示正在格式化，需要等待片刻让系统完成初始化操作。当卷状态为“状态良好”时，表示初始化磁盘成功。初始化成功后，在**计算机**界面可以看到新分区的数据盘。
-11. 进入新分区的数据盘，新建文件 `qcloud.txt`，输入您需要的内容，选择 **文件**> **保存**。
+ 目标磁盘显示正在格式化，需要等待片刻让系统完成初始化操作。当卷状态为“状态良好”时，表示初始化磁盘成功。初始化成功后，在“计算机”界面可以看到新分区的数据盘。
+11. 进入新分区的数据盘，新建文件 `qcloud.txt`，输入您需要的内容，选择**文件** > **保存**。
+
 :::
 ::: 格式化、创建文件系统并写入文件（Linux）
+
 
 <dx-alert infotype="notice" title="">
 - 本文使用的 Linux 云服务器操作系统以 CentOS 7.8 为例，不同版本操作系统步骤有一定区别，请您结合实际情况进行操作。
@@ -46,16 +50,17 @@
 - Linux 云服务器重启或开机后，不会自动挂载数据盘。您可参考 [步骤9](#Step09) -  [步骤14](#Step14) 设置磁盘开机自动挂载。
 </dx-alert>
 
+
 1. 以 root 用户登录 Linux 云服务器，详情请参见 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. 执行以下命令，查看连接到实例的磁盘名称。
- ```
+```
 fdisk -l
-​``` 
+```
 回显信息如下图所示，则表示当前的云服务器有两块磁盘，`/dev/vda` 是系统盘，`/dev/vdb` 是新增数据盘。
 本文连接到实例的磁盘名称以 `/dev/vdb` 为例。如下图所示：
 ![](https://main.qcloudimg.com/raw/969d3ca3d95b16d47103886e11714868.png)
 3. 执行以下命令，格式化该磁盘。
- ```
+```
 mkfs.ext4 /dev/vdb
 ```
 4. 执行以下命令，将该磁盘挂载到 `/data` 挂载点。
@@ -65,7 +70,7 @@ mount /dev/vdb /data
 5. 依次执行以下命令，进入该磁盘，并新建文件 `qcloud.txt`。
 ```
 cd /data
-``` 
+```
 ```
 vi qcloud.txt
 ```
@@ -85,7 +90,7 @@ vi /etc/fstab
 ```
 11. 按 **i** 进入编辑模式。
 12. 将光标移至文件末尾，按 **Enter**，添加如下内容。
-​```plaintext
+```plaintext
 <设备信息> <挂载点> <文件系统格式> <文件系统安装选项> <文件系统转储频率> <启动时的文件系统检查顺序>
 ​``` 以使用弹性云硬盘的软链接自动挂载为例，结合前文示例则添加：
 ```
@@ -108,4 +113,6 @@ mount -a
 ## 下一步操作
 云硬盘是云上可扩展的存储设备，您可根据业务需求随时扩展其容量，同时不失去云硬盘上原有数据。具体操作请参见 [步骤4：扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/31646)。
 
+ 
 
+```

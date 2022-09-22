@@ -2,7 +2,7 @@
 
 
 <dx-alert infotype="notice" title="">
-当前云硬盘加密功能为试用阶段，如有需要请通过 [在线支持](https://intl.cloud.tencent.com/support) 进行申请。
+当前云硬盘加密功能为试用阶段，如有需要请通过 [在线支持](https://intl.cloud.tencent.com/contact-sales) 进行申请。
 </dx-alert>
 
 

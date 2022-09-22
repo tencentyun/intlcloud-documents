@@ -12,8 +12,8 @@
 <dx-alert infotype="notice" title="">
 源云硬盘的数据将回滚到创建快照时刻的数据，此时刻之后的数据将被清除，请谨慎操作！
 </dx-alert>
-3. 在“回滚数据”页面中，确认回滚信息并单击**确定**即可开始回滚。如下图所示：
-![](https://main.qcloudimg.com/raw/a0d222f81cceb78fcfd721d21b703007.png)
- 
+3. 在“回滚数据”页面中，确认回滚信息并单击**确定**即可开始回滚。
+
 ### 使用 API 回滚快照
 您可以使用 ApplySnapshot 接口创建快照，具体操作请参考 [回滚快照](https://intl.cloud.tencent.com/document/product/362/15643)。
+

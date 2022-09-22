@@ -1,16 +1,16 @@
 ## 地域
 地域是指物理的数据中心的地理区域。腾讯云不同地域之间完全隔离，保证不同地域间最大程度的稳定性和容错性。为了降低访问时延、提高下载速度，建议您选择最靠近您客户的地域。
 地域具备以下特性：
-
 - 不同地域之间网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
-- 不同地域之间云产品可以通过 [公网服务](https://intl.cloud.tencent.com/document/product/213/5224) 进行 Internet 访问。处于私有网络中的云产品也可以通过腾讯云提供的 [对等连接](https://intl.cloud.tencent.com/document/product/553) 经由腾讯云高速互联网络通信，以获得比 Internet 访问更稳定高速的互联。
-- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通跨地域绑定负载均衡功能，则可支持负载均衡跨地域绑定云服务器。
+- 不同地域之间云产品可以通过 [公网服务](https://intl.cloud.tencent.com/document/product/213/5224) 进行 Internet 访问。处于私有网络中的云产品也可以通过腾讯云提供的 [对等连接](https://www.tencentcloud.com/document/product/553) 经由腾讯云高速互联网络通信，以获得比 Internet 访问更稳定高速的互联。
+- [负载均衡](https://www.tencentcloud.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定负载均衡](https://www.tencentcloud.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
+
 
 
 ## 可用区
 可用区（Zone）是指腾讯云在同一地域内电力和网络互相独立的物理数据中心。目标是能够保证可用区间故障相互隔离（大型灾害或者大型电力故障除外），不出现故障扩散，使得用户的业务持续在线服务。通过启动独立可用区内的实例，用户可以保护应用程序不受单一位置故障的影响。
 可用区具备以下特性：
-- 同一腾讯云账户下相同地域不同可用区，但在同一个 [VPC（私有网络）](https://intl.cloud.tencent.com/document/product/215) 下的云产品之间均通过内网互通，可以直接使用 [内网服务](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
+- 同一腾讯云账户下相同地域不同可用区，但在同一个 [VPC（私有网络）](https://www.tencentcloud.com/document/product/215) 下的云产品之间均通过内网互通，可以直接使用 [内网服务](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
 - 不同腾讯云账户下相同地域不同可用区的资源内网完全隔离。
 
 [](id:MainlandChina)
@@ -22,7 +22,7 @@
 		<th>可用区</th>
 	</tr>
 	<tr>
-		<td rowspan="5">华南地区（广州）<br> ap-guangzhou</td>
+		<td rowspan="6">华南地区（广州）<br> ap-guangzhou</td>
 		<td>广州一区（已售罄）<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -38,8 +38,11 @@
 		<td>广州六区<br> ap-guangzhou-6</td>
 	</tr>
 	<tr>
-		<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
-		<td>上海一区<br>ap-shanghai-1</td>
+		<td>广州七区<br> ap-guangzhou-6</td>
+	</tr>
+	<tr>
+		<td rowspan="6">华东地区（上海）<br>ap-shanghai</td>
+		<td>上海一区（已售罄）<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
 		<td>上海二区<br>ap-shanghai-2</td>
@@ -50,64 +53,71 @@
 	<tr>
 		<td>上海四区<br>ap-shanghai-4</td>
 	</tr>
-	<tr>
+ <tr>
 		<td>上海五区<br>ap-shanghai-5</td>
 	</tr>
 	<tr>
-		<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
-		<td>南京一区<br>ap-nanjing-1</td>
+		<td>上海八区<br>ap-shanghai-8</td>
+	</tr>
+		<tr>
+			<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
+			<td>南京一区<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
-		<td>南京二区<br>ap-nanjing-2</td>
+			<td>南京二区<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-		<td>南京三区<br>ap-nanjing-3</td>
+			<td>南京三区<br>ap-nanjing-3</td>
+	</tr>
+		<tr>
+			<td rowspan="7">华北地区（北京）<br>ap-beijing</td>
+			<td>北京一区（已售罄）<br>ap-beijing-1</td>
 	</tr>
 	<tr>
-		<td rowspan="7">华北地区（北京）<br>ap-beijing</td>
-		<td>北京一区<br>ap-beijing-1</td>
+			<td>北京二区<br>ap-beijing-2</td>
 	</tr>
 	<tr>
-		<td>北京二区<br>ap-beijing-2</td>
+			<td>北京三区<br>ap-beijing-3</td>
 	</tr>
 	<tr>
-		<td>北京三区<br>ap-beijing-3</td>
+			<td>北京四区<br>ap-beijing-4</td>
 	</tr>
 	<tr>
-		<td>北京四区<br>ap-beijing-4</td>
+			<td>北京五区<br>ap-beijing-5</td>
 	</tr>
-	<tr>
-		<td>北京五区<br>ap-beijing-5</td>
+		<tr>
+			<td>北京六区<br>ap-beijing-6</td>
 	</tr>
-	<tr>
-		<td>北京六区<br>ap-beijing-6</td>
-	</tr>
-	<tr>
-		<td>北京七区<br>ap-beijing-7</td>
+		<tr>
+			<td>北京七区<br>ap-beijing-7</td>
 	</tr>
 	<tr>
 		<td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
 		<td>成都一区<br>ap-chengdu-1</td>
 	</tr>
 	<tr>
-		<td>成都二区<br>ap-chengdu-2</td>
+			<td>成都二区<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-		<td >西南地区（重庆）<br>ap-chongqing</td>
-		<td>重庆一区<br>ap-chongqing-1</td>
+			<td >西南地区（重庆）<br>ap-chongqing</td>
+			<td>重庆一区<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-		<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
-		<td>香港一区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-1</td>
+			<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
+			<td>香港一区（中国香港节点可用于覆盖港澳台地区）（已售罄）<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
-		<td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td>
+			<td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td>
 	</tr>
-	<tr>
-		<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td>
+		<tr>
+			<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td>
 	</tr>
 </tbody>
-</table>	
+</table>
+
+<dx-alert infotype="explain" title="">
+济南、杭州、福州、武汉、长沙、石家庄地域目前处于内测中，如需使用，请提交内测申请进行开通。
+</dx-alert>
 
 [](id:InternationalArea)
 ## 其他国家和地区	
@@ -118,15 +128,24 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td  rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="4">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
 			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>
 		</tr>
 		<tr>
-			<td>亚太东南（雅加达）<br>ap-jakarta</td>
+			<td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td>
+		</tr>
+		<tr>
+			<td>新加坡四区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+			<td rowspan="2">亚太东南（雅加达）<br>ap-jakarta</td>
 			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
@@ -150,11 +169,18 @@
 			<td>孟买二区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-		  	<td >亚太东南（曼谷）<br>ap-bangkok </td>
+		  	<td rowspan=2>亚太东南（曼谷）<br>ap-bangkok </td>
 				 <td >曼谷一区  （曼谷节点用户覆盖亚太东南地区）<br>ap-bangkok-1</td>
+		</tr>
+		<tr>
+				 <td >曼谷二区  （曼谷节点用户覆盖亚太东南地区）<br>ap-bangkok-2</td>
 		<tr>
 			<td>北美地区（多伦多）<br>na-toronto</td>
 			<td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td>
+		</tr>
+		<tr>
+			<td>南美地区（圣保罗）<br>sa-saopaulo</td>
+			<td>圣保罗一区（圣保罗节点可用于覆盖南美地区）<br>sa-saopaulo-1</td>
 		</tr>
 		<tr>
 			<td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
@@ -178,7 +204,7 @@
 			<td>法兰克福二区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-2</td>
 		</tr>
 		<td >欧洲地区（莫斯科）<br>eu-moscow</td>
-		<td>莫斯科一区（莫斯科节点可用区覆盖欧洲地区）<br>eu-moscow-1</td>
+		<td>欧洲东北一区（莫斯科节点可用区覆盖欧洲地区）<br>eu-moscow-1</td>
 		</tr>
 	</tbody>
 </table>

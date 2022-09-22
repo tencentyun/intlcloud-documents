@@ -60,7 +60,7 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 </dx-alert>
  1. 在“扩容分区及文件系统”步骤中，查阅注意事项，单击**开始调整**即可。
 
- 2. 完成控制台扩容操作后，请登录实例确认是否已自动扩展文件系统。若未扩展，则请参考在线扩展系统盘及文件系统进行扩容分区及文件系统操作。
+ 2. 完成控制台扩容操作后，请登录实例确认是否已自动扩展文件系统。若未扩展，则请参考 [在线扩展系统盘及文件系统](https://intl.cloud.tencent.com/document/product/362/50063) 进行扩容分区及文件系统操作。
 
 :::
 </dx-tabs>
@@ -76,7 +76,7 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 2. 执行以下命令，查看到云硬盘与设备名之间的对应关系。
 ```
 ls -l /dev/disk/by-id
-​```
+​```返回结果如下图所示：
 ![](https://main.qcloudimg.com/raw/66b6a19695ef4ba21b74ce0cd96503db.png)
 其中，`disk-xxxx` 为云硬盘 ID，您可前往 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs) 查看。
 :::
@@ -91,8 +91,8 @@ wmic diskdrive get caption,deviceid,serialnumber
 
 ```
 wmic path win32_physicalmedia get SerialNumber,Tag
-```
-
+```返回结果如下图所示：
+![](https://main.qcloudimg.com/raw/e91aa2f938ddda304844d7ac28840859.png)
 其中，`disk-xxxx` 为云硬盘 ID，您可前往 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs) 查看。
 :::
 </dx-tabs>
@@ -102,7 +102,7 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 <dx-tabs>
 ::: 查看\sLinux\s实例\scloudinit\s配置[](id:confirmLinuxConfig)
 完成扩容操作后，请 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 确认 `/etc/cloud/cloud.cfg` 是否包含 growpart 及 resizefs 配置项。
- - 是，则无需进行其他操作。
+ - 是，则无需进行其他操作。如下图所示：
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
     - **growpart**：扩展分区大小到磁盘大小。
     - **resizefs**：扩展调整`/`分区文件系统到分区大小。
@@ -114,3 +114,7 @@ wmic path win32_physicalmedia get SerialNumber,Tag
  - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
 :::
 </dx-tabs>
+
+
+
+```

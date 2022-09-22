@@ -11,11 +11,12 @@
 
 ## 前提条件
 - 已具备云硬盘 `cbs-test`，详情请参见 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/31647)。
-- 请确保云硬盘所在可用区（本示例为北京二区）下有可用状态的云服务器。
+- 请确保云硬盘所在可用区（本示例为北京二区）下有可用状态的云服务器。关于如何购买并启动云服务器，请参见 [快速配置 Linux 云服务器](https://www.tencentcloud.com/document/product/213/10517) 及 [快速配置 Windows 云服务器](https://www.tencentcloud.com/document/product/213/10516)。
 
 ## 操作步骤
 1. 登录云服务器控制台，选择左侧导航栏中的 **[云硬盘](https://console.cloud.tencent.com/cvm/cbs)**。
 2. 在云硬盘列表页上方选择“北京”，并选择云硬盘 `cbs-test` 所在行的右侧的**更多** > **挂载**。
+
 3. 在弹出框中选择云硬盘待挂载的云服务器，并选择**下一步** > **开始挂载**。
 <dx-alert infotype="explain" title="">
 可根据实际情况勾选“随实例释放”。
@@ -25,8 +26,6 @@
 
 ## 下一步操作
 云硬盘挂载完成后，云硬盘作为云服务器的数据盘使用，默认为脱机状态。您需要对数据盘进行格式化、分区及创建文件系统等初始化操作，具体操作请参考 [步骤3：初始化云硬盘](https://intl.cloud.tencent.com/document/product/362/31645)。
-
-
 
 
 

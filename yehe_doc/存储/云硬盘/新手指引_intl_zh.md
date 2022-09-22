@@ -14,7 +14,7 @@
 
 ## 4. 新手入门
 #### 4.1 注册与认证
-在使用腾讯云云硬盘之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内腾讯云云硬盘资源。
+在使用腾讯云云硬盘之前，您需要 [注册腾讯云账号](https://www.tencentcloud.com/en/account/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 #### 4.2 创建云硬盘
 完成注册与实名认证后，您可在云服务器所在的可用区按需选择云硬盘类型、容量、计费模式、购买时长、自动续费及到期/欠费保护，以确保满足您的实际业务需求。详情请参见 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/31647)。
@@ -30,7 +30,10 @@
 
 
 
-## 5. 控制台功能概述
+## 5. 控制台界面
+![](https://qcloudimg.tencent-cloud.cn/raw/0911469301e8401592905c3955e067c4.png)
+
+## 6. 控制台功能概述
 
 | 如果您想 | 您可以阅读 |
 |---------|---------|
@@ -45,7 +48,7 @@
 |删除无需使用的快照。|[删除快照](https://intl.cloud.tencent.com/document/product/362/5758)|
 |回滚快照数据至创建该快照的云硬盘，使该云硬盘的数据恢复到创建快照时的状态。|[从快照回滚数据](https://intl.cloud.tencent.com/document/product/362/5756)|
 
-## 6. 新手常见问题
+## 7. 新手常见问题
 #### 云硬盘使用相关问题
 - [不同的云硬盘分别适用于什么场景？](https://intl.cloud.tencent.com/document/product/362/32409)
 - [如何查看云硬盘详细信息？](https://intl.cloud.tencent.com/document/product/362/32409#.E5.A6.82.E4.BD.95.E6.9F.A5.E7.9C.8B.E4.BA.91.E7.A1.AC.E7.9B.98.E8.AF.A6.E7.BB.86.E4.BF.A1.E6.81.AF.EF.BC.9F)
@@ -62,8 +65,11 @@
 - [销毁云硬盘的时候，关联快照会被删除吗？](https://intl.cloud.tencent.com/document/product/362/17820)
 
 
-## 7. 反馈与建议
+## 8. 反馈与建议
 使用腾讯云云硬盘产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 
-- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧**文档反馈**或选中存在问题的内容进行反馈。
+- 如果遇到产品相关问题，您可咨询 [在线支持](https://intl.cloud.tencent.com/contact-sales) 来寻求帮助。
+
+
+
