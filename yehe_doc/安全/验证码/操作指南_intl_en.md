@@ -1,5 +1,5 @@
 ## [Create CAPTCHA](id:xjyz)
-1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **Image CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane.
+1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane.
 2. On the Manage CAPTCHA page, click **Create CAPTCHA**.
 >? Up to 50 CAPTCHAs can be created in the Captcha console. You can create multiple CAPTCHAs according to different business requirements and configure different client types and security policies for each CAPTCHA. For Captcha integration process, please see [Quick Start](https://intl.cloud.tencent.com/document/product/1159/49678).
 
@@ -14,9 +14,9 @@ Instructions:
  - Click **Statistics Details** to view data such as requests, passed ticket verifications, and failed ticket verifications. For more information, please see [Statistics](#sjtj).
 
 ## [Statistics](id:sjtj)
-- On the **[Image CAPTCHA](https://console.cloud.tencent.com/captcha/graphical)** -> **CAPTCHA Statistics** page, you can view the statistics of all CAPTCHAs.
+- On the **[CAPTCHA](https://console.cloud.tencent.com/captcha/graphical)** -> **CAPTCHA Statistics** page, you can view the statistics of all CAPTCHAs.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bc017cc74c15f80454f5315da65135bb.png)
-- On the **[Image CAPTCHA](https://console.cloud.tencent.com/captcha/graphical)** -> **Manage CAPTCHA** page, you can go to the CAPTCHA you want to view and click **Statistics** to go to the **CAPTCHA Details** -> **Statistics** tab to view the statistics of the CAPTCHA.
+- On the **[CAPTCHA](https://console.cloud.tencent.com/captcha/graphical)** -> **Manage CAPTCHA** page, you can go to the CAPTCHA you want to view and click **Statistics** to go to the **CAPTCHA Details** -> **Statistics** tab to view the statistics of the CAPTCHA.
   ![](https://qcloudimg.tencent-cloud.cn/raw/c898f461b84ee966689158c42cd9fa63.png)
 
 - You can view the following metrics in the Captcha console:
@@ -73,7 +73,7 @@ Instructions:
 </table>
 
 ## [Security configuration](id:aqpz)
-1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **Image CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane.
+1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane.
 2. On the Manage CAPTCHA page, select the CAPTCHA you want to configure and click **Security Configuration**.
 3. On the Security Configuration tab, configure related parameters and click **Save Changes**.
     ![](https://qcloudimg.tencent-cloud.cn/raw/c80269cac802ef1af9c91a210f6330ac.png)
@@ -84,14 +84,14 @@ Instructions:
   - **Smart Verification**: You can enable or disable this feature.
 
 ## [Appearance configuration](id:ygpz)
-1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **Image CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane.
+1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane.
 2. On the Manage CAPTCHA page, select the verification you want to configure and click **Appearance Configuration**.
 3. On the Appearance Configuration tab, configure the CAPTCHA prompt language and click **Save Changes**.
     ![](https://qcloudimg.tencent-cloud.cn/raw/ac055652129a1c228fabf8cd6fda592f.png)
 4. Captcha also allows you to configure the hidden help button at the time of client code integration. For more information, please see [Web Integration](https://intl.cloud.tencent.com/document/product/1159/49680).
 
 ## [Basic configuration](id:jcpz)
-1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **Image CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane.
+1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane.
 2. On the Manage CAPTCHA page, select the CAPTCHA you want to configure and click **Basic Configuration**.
 3. On the Basic Configuration tab, click **Edit** to modify the CAPTCHA name, set information such as the verification scenario and domain name, and click **Save**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/61ba4b683ee944a87ebd290848643b1d.png)
