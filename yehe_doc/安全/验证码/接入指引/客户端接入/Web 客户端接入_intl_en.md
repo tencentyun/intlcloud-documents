@@ -12,41 +12,42 @@ The following sample code demonstrates a page where **Verify** is clicked to act
 >! This sample does not include the logic to call the ticket verification API. After TenDI Captcha is integrated into the business client, the business server needs to verify the CAPTCHA ticket (if ticket verification is not integrated, the black market can easily forge verification results, which defeats the purpose of human verification via CAPTCHAs). For more information, please see [Integration to Ticket Verification (Web and App)](https://intl.cloud.tencent.com/document/product/1159/49682).
 
 ```
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web frontend integration example</title>
-    <!-- Captcha program dependency (required). Do not modify the following program dependency. If you use other methods to avoid loading, CAPTCHAs cannot be updated and consequently some legitimate requests rather than malicious requests might be blocked. -->
+    <title>Web frontend access code sample</title>
+    <!-- (Required) Dependency of the CAPTCHA program, which cannot be modified. If you use local caching or other methods to skip loading of the CAPTCHA, the CAPTCHA will not update and work properly, even triggering false positives. -->
     <script src="https://sg.captcha.qcloud.com/TCaptcha-global.js"></script>
-</head>
-
-<body>
+  </head>
+  
+  <body>
     <button id="CaptchaId" type="button">Verify</button>
-</body>
-
-<script>
-
-    // Define a callback function
-    function callback(res) {
-        // The callback result is passed in the first parameter as follows:
-        // ret         Int       Verification result. The possible values are 0 (Verification is successful) and 2 (CAPTCHA is closed by the user).
-        // ticket      String    The ticket of a successful verification. ticket has a value only when ret is 0.
-        // CaptchaAppId       String    The CAPTCHA's app ID.
-        // bizState    Any       The custom pass-through parameter.
-        // randstr     String    The random string for this verification. This parameter is required for ticket verification.
-        console.log('callback:', res);
-
-
-        // res (CAPTCHA is closed by the user) = {ret: 2, ticket: null}
-        // res (Verification is successful) = {ret: 0, ticket: "String", randstr: "String"}
-        // res (An error occurs while requesting a CAPTCHA. A disaster recovery ticket with the prefix terror_ is returned.) = {ret: 0, ticket: "String", randstr: "String",  errorCode: Number, errorMessage: "String"}
-        // This code shows an example of verification results. When you integrate TenDI Captcha into your business, take appropriate measures based on ticket and errorCode.
-        if (res.ret === 0) {
-            // Copy the results to clipboard
+  </body>
+  
+  <script>
+  
+      // Define the callback function
+      function callback(res) {
+          // The callback output returned by the first passed parameter, which is as follows
+          // ret         Int       Verification result. The value 0 indicates a successful verification. The value 2 indicates that the CAPTCHA is disabled by the user.
+          // ticket      String    A verified ticket. The field value is not null only when ret = 0.
+          // CaptchaAppId       String    ID of the CAPTCHA.
+          // bizState    Any       The defined transparent transmission parameter.
+          // randstr     String    The random string verified, which is required for subsequent ticket verification.
+          console.log('callback:', res);
+  
+  
+          // res（The user disables the CAPTCHA）= {ret: 2, ticket: null}
+          // res（Verified） = {ret: 0, ticket: "String", randstr: "String"}
+          // res（Return a disaster recovery ticket prefixed with "error_" when the verification request fails） = {ret: 0, ticket: "String", randstr: "String",  errorCode: Number, errorMessage: "String"}
+          // Here is the code snippet of the verification result. Modify it based on the actual ticket and errorCode
+          if (res.ret === 0) {
+            // Copy result to clipboard
             var str = '【randstr】->【' + res.randstr + '】      【ticket】->【' + res.ticket + '】';
             var ipt = document.createElement('input');
             ipt.value = str;
@@ -54,41 +55,44 @@ The following sample code demonstrates a page where **Verify** is clicked to act
             ipt.select();
             document.execCommand("Copy");
             document.body.removeChild(ipt);
-            alert('1. The returned results (randstr, ticket) have been copied to clipboard. Press ctrl+v to view them.\ n2. Open the console in your browser to view the complete returned results.') ;
-        }
-    }
-
-    // Define the CAPTCHA js load error handling function
-    function loadErrorCallback() {
-      var appid = ''
-       // Generate a disaster recovery ticket or use another handling technique
-      var ticket = 'terror_1001_' + appid + Math.floor(new Date().getTime() / 1000);
-      callback({
-        ret: 0,
-        randstr: '@'+ Math.random().toString(36).substr(2),
-        ticket,
-        errorCode: 1001,
-        errorMessage: 'jsload_error',
-      });
-    }
-
-    // Define the CAPTCHA trigger event
-    window.onload = function(){
+            alert('1. Return result（randstr、ticket）Copied successfully. You can press Ctrl+V to paste the result to view。2. Open the console from your browser and view the result returned。');
+          }
+      }
+  
+      // Define the function that handles TCaptcha-global.js loading errors
+      function loadErrorCallback() {
+        var appid = ''
+        // Generate a disaster recovery ticket or execute other operations
+        var ticket = 'terror_1001_' + appid + Math.floor(new Date().getTime() / 1000);
+        callback({
+          ret: 0,
+          randstr: '@'+ Math.random().toString(36).substr(2),
+          ticket: ticket,
+          errorCode: 1001,
+          errorMessage: 'jsload_error',
+        });
+      }
+  
+      // Define the event that triggers CAPTCHA
+      window.onload = function(){
         document.getElementById('CaptchaId').onclick = function(){
-            try {
-      			// Generate a CAPTCHA object
-      			// CaptchaAppId: Log in to the Captcha console and view it on the **Manage CAPTCHA** page. If no CAPTCHAs exist, create one first.
-      			//callback: Defined callback function
-      			var captcha = new TencentCaptcha('Your CAPTCHA's CaptchaAppId', callback, {});
-      			// Call the method to show the CAPTCHA
-      			captcha.show() 
-    		} catch (error) {
-    		// Load error. Call the CAPTCHA js load error handling function.
-      			loadErrorCallback();
-    		}
-        }
-    }
-</script>
+          try {
+            // Generate a CAPTCHA object
+            // CaptchaAppId：Log in to the Captcha console and enter the [Manage CAPTCHA] page. If no CAPTCHAs has been created, create one first.
+            //callback：Defined callback function
+            var captcha = new TencentCaptcha('CaptchaAppId', callback, {});
+            // Call the method to display the CAPTCHA
+            captcha.show(); 
+          } catch (error) {
+            // Load error. Please call the  load error handling function
+            loadErrorCallback();
+            }
+          }
+      }
+  </script>
+  
+  </html>
+  
 
 </html>
 ```
