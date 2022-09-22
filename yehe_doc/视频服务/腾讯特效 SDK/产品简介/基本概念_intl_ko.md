@@ -33,3 +33,10 @@ package="com.huawei.player"
 android:versionCode="20181111"
 android:versionName="1.0">
 ```
+
+### 지원 플랫폼
+
+| 플랫폼 | 환경 요건 개발 |
+|---------|------------------|
+| Android | <li> Android Studio 3.5+ <li> Android 7.0(API Level 24) 이상 시스템 사용 권장 |
+|iOS | <li> XCode 9.0+ <li> iOS 12.2 이상 시스템 사용 권장<li>유효한 개발자 서명, 장치 환경 구성|

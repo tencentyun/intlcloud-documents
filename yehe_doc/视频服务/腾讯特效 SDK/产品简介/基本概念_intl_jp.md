@@ -33,3 +33,10 @@ package="com.huawei.player"
 android:versionCode="20181111"
 android:versionName="1.0">
 ```
+
+### サポートされているプラットフォーム
+
+| プラットフォーム | 開発環境の要件 |
+|---------|------------------|
+| Android | <li> Android Studio 3.5+ <li> Android 7.0（APIレベル24） 及びそれ以降のバージョンを使用することをお勧めします。 |
+|iOS | <li> XCode 9.0+ <li> iOS 12.2及びそれ以降のバージョンを使用することをお勧めします。<li> 有効な開発者の署名と実際のiOSデバイスを構成します。|

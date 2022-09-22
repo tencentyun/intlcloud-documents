@@ -33,3 +33,10 @@ package="com.huawei.player"
 android:versionCode="20181111"
 android:versionName="1.0">
 ```
+
+### 平台支持
+
+| 平台 | 开发环境要求 |
+|---------|------------------|
+| Android | <li> Android Studio 3.5+ <li> 建议使用 Android 7.0（API Level24）及以上的系统|
+|iOS | <li> XCode 9.0+ <li> 建议使用iOS 12.2及以上系统<li> 配置有效的开发者签名，真机环境|
