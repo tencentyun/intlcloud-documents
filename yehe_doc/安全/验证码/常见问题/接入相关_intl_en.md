@@ -23,7 +23,7 @@
 This is because the Captcha service blocks suspected malicious users. You may have frequently and intensively accessed the Captcha service of the same scenario in the same network environment, resulting in small-scale risk control blocking. Solutions:
 - Perform the test again after 10-20 minutes.
 - Change the IP or device and try again.
-- Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical), go to the **Security Configuration** page of the verification, and adjust the malicious request blocking level to **Experience-Oriented**.
+- Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical), go to the **Security Configuration** page of the verification, and adjust the malicious request blocking level to **Loose**.
 
 ### Android uses the Web frontend HTML5 method for integration. During the debugging process, a blank background pops up first and then the CAPTCHA page. How do I change that?
 
