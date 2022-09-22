@@ -1,5 +1,5 @@
 ## Overview
-Starting from v1.3.3.0, the TPNS SDK supports connection to the HONOR Push channel. This channel is a system-level push channel officially provided by HONOR. On an HONOR phone, push messages can be delivered through HONOR's system channel without opening the application. For more information, see [HONOR Push Overview](https://developer.hihonor.com/doc/guides/100220).
+Starting from v1.3.3.0, the Tencent Push Notification Service SDK supports connection to the HONOR Push channel. The HONOR channel is a system-level push channel officially provided by HONOR. On an HONOR phone, push messages can be delivered through HONOR's system channel without opening the application. For more information, see [HONOR Push Overview](https://developer.hihonor.com/doc/guides/100220).
 
 >?
 > - Currently, the HONOR channel only supports HONOR devices on Magic UI 6.0 or later, while older HONOR devices can use the Huawei Push channel instead. In the future, the HONOR channel will also support HONOR devices on Magic UI 5.0 and 4.0.
@@ -11,21 +11,21 @@ Starting from v1.3.3.0, the TPNS SDK supports connection to the HONOR Push chann
 ### Step 1. Get the key
 1. Sign up for an HONOR developer account [here](https://developer.hihonor.com/) and log in. For more information, see [Registration](https://developer.hihonor.com/cn/doc/guides/100084). (To use HONOR Push, you need to register a business/organization developer account.)
 2. Create an application on the HONOR Developers platform, enter the application information such as application package name and certificate fingerprint, and activate the push service. For more information, see [here](https://developer.hihonor.com/doc/guides/100221). For how to get the application certificate fingerprint, see the **1.1 Development Environment** section in [HONOR Push Android Development Documentation](https://developer.hihonor.com/doc/guides/100223).
-3. Copy and paste the `AppId`, `Client ID`, and `Client Secret` parameters of the application into corresponding fields in **[TPNS console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **HONOR Official Push Channel**.
+3. Copy the application's `AppId`, `Client ID`, and `Client Secret` and paste them into the `AppId`, `ClientId`, and `SecretKey` fields in **[Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **HONOR Official Push Channel**.
 
 
 ### Step 2. Configure items
 Choose either of the following integration methods.
 #### Integrating through Android Studio
 
-Complete the configuration required by TPNS in the `build.gradle` file in the **Application** module and then add the following nodes:
+Complete the configuration required by Tencent Push Notification Service in the `build.gradle` file in the **Application** module and then add the following nodes:
 1. Configure the HONOR Push `AppID`. The sample code is as follows:
 ```xml
  manifestPlaceholders = [
 	 HONOR_APPID  : "xxxx"
         ]
 ```
-2. Import the HONOR Push dependencies. The sample code is as follows:
+2. Import the dependencies related to HONOR. The sample code is as follows:
 ```groovy
 implementation 'com.tencent.tpns:honor:[VERSION]-release'
 ```
@@ -35,12 +35,12 @@ implementation 'com.tencent.tpns:honor:[VERSION]-release'
 > - HONOR Push is compatible with the preset `<queries>` tag on Android 11. Upgrade Android Studio to v3.6.1 or later, and upgrade the Android Gradle plugin to v3.5.4 or later; otherwise, an error may occur when you build the project.
 
 
-#### Integrating through Eclipse
-After getting the TPNS SDK package for HONOR Push, configure the major TPNS version and the following content in the manual integration method detailed on TPNS official website.
+### Integrating through Eclipse
+After getting the Tencent Push Notification Service SDK package for HONOR Push, configure the major Tencent Push Notification Service version and the following content in the manual integration method detailed on Tencent Push Notification Service's official website.
 
 1. Download the [SDK installation package](https://console.cloud.tencent.com/tpns/sdkdownload).
-2. Open the `Other-Push-jar` folder and import the HONOR Push JAR package.
-2. Add the following configuration to the `Androidmanifest.xml` file:
+2. Open the `Other-Push-jar` folder and import the HONOR Push-related jar package.
+3. Add the following configuration to the `Androidmanifest.xml` file:
 ```xml
     <application>
         <receiver
@@ -93,7 +93,7 @@ After getting the TPNS SDK package for HONOR Push, configure the major TPNS vers
 
 
 ### Step 3. Enable HONOR Push
-Enable the third-party push API before calling TPNS' `XGPushManager.registerPush`:
+Enable the third-party push API before calling Tencent Push Notification Service's `XGPushManager.registerPush`:
 ```java
 // Enable third-party push
 XGPushConfig.enableOtherPush(getApplicationContext(), true);
@@ -121,12 +121,14 @@ I/TPush: [PushServiceBroadcastHandler] >> bind OtherPushToken success ack with [
 >? Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
 >
 
+### Step 5. Configure arrival receipt for HONOR channel
+The arrival receipt for the HONOR channel should be configured by yourself. After configuring this feature as instructed in [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246), you can view the arrival data for the HONOR push channel in the push records.
 
 ## Troubleshooting
 
-### Querying HONOR Push registration error code
+### Querying HONOR Push registration error codes
 
-If you observe logs similar to the following, it indicates that registration with the HONOR channel fails. In this case, you can use the method described below to get the HONOR Push registration error code.
+If you observe logs similar to the following, it indicates that registration with the HONOR channel fails. In this case, you can use the method described to get the HONOR Push registration error code.
 ```
 [OtherPushClient] handleUpdateToken other push token is :  other push type: honor
 ```
