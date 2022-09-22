@@ -177,7 +177,7 @@ The options parameter sets the CAPTCHA appearance. It can be left empty by defau
 | Parameter         | Value type                | Description                                                         |
 | :------------- | :-------------------- | :----------------------------------------------------------- |
 | bizState       | Any                   | The custom pass-through parameter, which can be used to pass a small amount of data. The parameter value will be included in the callback object. |
-| enableDarkMode | Boolean &#124; String | Enables the adaptive dark mode or force dark mode.<li> Adaptive dark mode: {"enableDarkMode": true}</li><li> Force dark mode: {"enableDarkMode": 'force'}</li> |
+| enableDarkMode | Boolean/String | Enables the adaptive dark mode or force dark mode.<li> Adaptive dark mode: {"enableDarkMode": true}</li><li> Force dark mode: {"enableDarkMode": 'force'}</li> |
 | ready          | Function              | The CAPTCHA loading completion callback. The callback parameters are the actual CAPTCHA width and height:<br>{"sdkView": {<br>"width": number,<br>"height": number<br>}}<br>This parameter only displays the CAPTCHA width and height, and **cannot be used to set the width and height directly**. |
 | needFeedBack   | String | Custom help link: {"needFeedBack": 'url' } |
 |loading|Boolean| Indicates whether to display a loading overlay while the CAPTCHA is loading. If the parameter is not specified, a loading overlay is displayed by default.<li> Display a loading overlay: {"loading": true}</li><li> Don't display a loading overlay: {"loading": false}</li>|
