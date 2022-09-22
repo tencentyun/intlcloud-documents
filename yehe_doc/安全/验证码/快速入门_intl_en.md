@@ -13,7 +13,7 @@ The sequence diagram of the web and app calling Captcha is as follows:
 
 ### Step 1. Create CAPTCHA and obtain the CAPTCHA key.
 
-1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **Image CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane to go to the Manage CAPTCHA page.
+1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **CAPTCHA** -> **Manage CAPTCHA** on the left navigation pane to go to the Manage CAPTCHA page.
 2. Click **Create CAPTCHA** and set parameters such as CAPTCHA name according to your business requirements.
 3. Click **OK** to complete the CAPTCHA creation. Then you can view the CAPTCHA key (CaptchaAppId and AppSecretKey) in the CAPTCHA list.
 
