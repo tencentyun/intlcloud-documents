@@ -1,7 +1,7 @@
 ## Prerequisites
 Before you can integrate TenDI Captcha into a client, you need to create a CAPTCHA and obtain its CaptchaAppId and AppSecretKey from the **CAPTCHA list**. Follow the steps below:
 
-1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **Image CAPTCHA** -> **Manage CAPTCHA** in the left navigation pane to enter the CAPTCHA management page.
+1. Log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **CAPTCHA** -> **Manage CAPTCHA** in the left navigation pane to enter the CAPTCHA management page.
 2. Click **Create CAPTCHA** and set parameters such as CAPTCHA name according to your business requirements.
 3. Click **OK** to complete the creation. You can view its CaptchaAppId and AppSecretKey in the CAPTCHA list.
 
