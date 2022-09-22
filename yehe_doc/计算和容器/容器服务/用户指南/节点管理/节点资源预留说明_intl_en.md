@@ -31,12 +31,12 @@ Allocable = Capacity - Reserved - Eviction - Threshold
   <tr>
     <td>64c &lt; CPU &lt;= 128c</td>
     <td>0.1c is reserved for the 4c part, 2.5% for the 4c to 64c part, and 1.25% for the excessive part.</td>
-    <td>For example, if CPU = 96c, <br>reserved resources = 0.1 + (64 - 4) * 2.5% + (96 - 64) * 1.25% = 1.2c.</td>
+    <td>For example, if CPU = 96c, <br>reserved resources = 0.1 + (64 - 4) * 2.5% + (96 - 64) * 1.25% = 2c.</td>
   </tr>
   <tr>
     <td>CPU &gt; 128c</td>
     <td>0.1c is reserved for the 4c part, 2.5% for the 4c to 64c part, 1.25% for the 64c to 128c part, and 0.5% for the excessive part.</td>
-    <td>For example, if CPU = 196c, <br>reserved resources = 0.1 + (64 - 4) * 2.5% + (96 - 64) * 1.25% + (196 - 128) * 0.5% = 1.54c.</td>
+    <td>For example, if CPU = 196c, <br>reserved resources = 0.1 + (64 - 4) * 2.5% + (128 - 64) * 1.25% + (196 - 128) * 0.5% = 2.74c.</td>
   </tr>
 </tbody>
 </table>
@@ -55,7 +55,7 @@ Allocable = Capacity - Reserved - Eviction - Threshold
   <tr>
     <td>1 GB &lt;= Memory &lt;= 4 GB</td>
     <td>25% is reserved.</td>
-    <td>For example, if memory = 2 GB, <br>reserved resources = 2 * 25% = 500 MB.</td>
+    <td>For example, if memory = 2 GB, <br>reserved resources = 2 * 25% = 512 MB.</td>
   </tr>
   <tr>
     <td>4 GB &lt; Memory &lt;= 8 GB</td>
@@ -65,7 +65,7 @@ Allocable = Capacity - Reserved - Eviction - Threshold
   <tr>
     <td>8 GB &lt; Memory &lt;= 16 GB</td>
     <td>25% is reserved for the 4 GB part, 20% for the 4 GB to 8 GB part, and 10% for the excessive part.</td>
-    <td>For example, if memory = 12 GB, <br>reserved resources = 4 * 25% + (8 - 4) * 20% + (16 - 8) * 10% = 2,252 MB.</td>
+    <td>For example, if memory = 12 GB, <br>reserved resources = 4 * 25% + (8 - 4) * 20% + (12 - 8) * 10% = 2,252 MB.</td>
   </tr>
   <tr>
     <td>16 GB &lt; Memory &lt;= 128 GB</td>
