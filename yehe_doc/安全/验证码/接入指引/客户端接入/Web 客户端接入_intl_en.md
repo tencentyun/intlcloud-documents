@@ -93,8 +93,6 @@ The following sample code demonstrates a page where **Verify** is clicked to act
   
   </html>
   
-
-</html>
 ```
 ## Integration steps
 
