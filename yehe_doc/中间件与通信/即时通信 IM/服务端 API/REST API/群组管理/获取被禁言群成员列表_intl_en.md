@@ -98,7 +98,7 @@ The list below contains error codes specific to this API:
 
 ## API Debugging Tool
 
-Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/get_group_shutted_uin) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to debug this API.
 
 ## Reference
 Batch muting and unmuting group members ([v4/group_open_http_svc/forbid_send_msg](https://intl.cloud.tencent.com/document/product/1047/34951))
