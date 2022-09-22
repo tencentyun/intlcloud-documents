@@ -1,6 +1,6 @@
 ### How do I check the fees incurred?
 
-1. Captcha is billed based on the number of ticket verifications initiated by the server. You can log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **Image CAPTCHA** -> **CAPTCHA Statistics** on the left navigation pane to view the ticket verifications trend.
+1. Captcha is billed based on the number of ticket verifications initiated by the server. You can log in to the [Captcha console](https://console.cloud.tencent.com/captcha/graphical) and select **CAPTCHA** -> **CAPTCHA Statistics** on the left navigation pane to view the ticket verifications trend.
 2. Log in to the console and go to **Cost Center** -> **Bills** -> **Bill Details** to view the details of the generated bills.
 
 ### I am already using the Captcha service, why are no fees deducted?
