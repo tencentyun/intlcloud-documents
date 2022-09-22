@@ -1,4 +1,4 @@
-为方便 Unreal Engine 开发者调试和接入腾讯云游戏多媒体引擎客户端 API，本文为您介绍适用于 Unreal Engine 语音消息服务及转文本服务的接入技术。
+为方便 Windows 开发者调试和接入腾讯云游戏多媒体引擎客户端 API，本文为您介绍适用于 Windows 语音消息服务及转文本服务的接入技术。
 
 ## 使用 GME 重要事项
 
@@ -9,7 +9,7 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 - 已完成 GME 应用创建，并获取 SDK AppID 和 Key。请参考 [服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782)。
 - 已开通 **GME 实时语音服务、语音消息服务以及转文本服务**。请参考 [服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782)。
 - GME 使用前请对工程进行配置，否则 SDK 不生效。
-- GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
+- GME 的接口调用成功后返回值为 QAVError.OK，数值为0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
 - 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
@@ -31,12 +31,14 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 -<dx-tag-link link="#UnInit" tag="接口：UnInit">反初始化 GME</dx-tag-link>
 </dx-steps>
 
+
 ### C++ 类
 
 | 类          |           含义           |
 | ----------- | :----------------------: |
 | ITMGContext |         核心接口         |
 | ITMGPTT     | 语音消息及转文本相关接口 |
+
 
 ## 核心接口
 
@@ -49,57 +51,66 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 | Uninit | 反初始化 GME |
 
 
-### 准备工作
-
-接入 GME 首先需要引入头文件 tmg_sdk.h，头文件类继承 ITMGDelegate 以进行消息的传递及回调。
-
-#### 示例代码  /
+### 引入头文件
 
 ```
+#include "auth_buffer.h"
 #include "tmg_sdk.h"
+#include "AdvanceHeaders/tmg_sdk_adv.h"
+#include <vector>
+```
 
-class UEDEMO1_API AUEDemoLevelScriptActor : public ALevelScriptActor, public ITMGDelegate
+### 回调
+
+#### 设置回调示例代码
+
+```
+//在初始化 SDK 时候
+m_pTmgContext = ITMGContextGetInstance();
+m_pTmgContext->SetTMGDelegate(this);
+
+//在析构函数中
+CTMGSDK_For_AudioDlg::~CTMGSDK_For_AudioDlg()
 {
-public:
-...
-private:
-...
-｝
-```
-
-### 设置单例
-
-在 EnterRoom 函数调用之前要先获取 ITMGContext ，所有调用都从 ITMGContext 开始，由ITMGDelegate 回调回传给应用，必须首先设置。
-
-#### 示例代码 
+			ITMGContextGetInstance()->SetTMGDelegate(NULL);
+}
 
 ```
-ITMGContext* context = ITMGContextGetInstance();
-context->SetTMGDelegate(this);
-```
 
-### 消息传递
+#### 消息传递
 
 接口类采用 Delegate 方法用于向应用程序发送回调通知，消息类型参考 ITMG_MAIN_EVENT_TYPE，data 在 Windows 平台下是 json 字符串格式， 具体 key-value 参见说明文档。
+
+```
+//头文件中声明
+virtual void OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data);
+//示例代码
+void CTMGSDK_For_AudioDlg::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* data)
+{
+			switch(eventType)
+			{
+			case ITMG_MAIN_EVENT_TYPE_XXXX_XXXX:
+				{
+					//对回调进行处理
+				}
+				break;
+			}
+}
+```
+
+### 获取单例
+GME SDK 以单例的形式提供，所有调用都从 ITMGContext 开始，通过 ITMGDelegate 回调回传给应用，必须首先设置。
 
 #### 示例代码  
 
 ```
-//函数实现：
-//UEDemoLevelScriptActor.h:
-class UEDEMO1_API AUEDemoLevelScriptActor : public ALevelScriptActor, public SetTMGDelegate
-{
-public:
-	void OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* data);
-｝
-
-//UEDemoLevelScriptActor.cpp:
-void AUEDemoLevelScriptActor::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* data){
-	//在此对eventType进行判断及操作
-}
+ITMGContext* m_pTmgContext;
+m_pTmgContext->Init(AppID, OpenID);
 ```
 
-### [初始化 SDK](id:Init)
+
+[](id:Init)
+### 初始化 SDK
 
 未初始化前，SDK 处于未初始化阶段，**需要通过接口 Init 初始化 SDK**，才可以使用实时语音服务、语音消息服务及转文本服务。调用 Init 接口的线程必须于其他接口在同一线程,建议都在主线程调用接口。
 
@@ -126,20 +137,22 @@ ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
 - 7015错误码是通过 md5 进行判断，在接入过程中若出现此错误，请根据提示检查 SDK 文件是否完整、SDK 文件版本是否一致。
 - 出现返回值 AV_ERR_SDK_NOT_FULL_UPDATE 时，此返回值**只有提示作用**，并不会造成初始化失败。
 - 由于第三方加固、Unity 打包机制等因素会影响库文件 md5，造成误判，所以**正式发布请在逻辑中忽略此错误**，并尽量不在 UI 中提示。
-  </dx-alert>
+</dx-alert>
 
 #### 示例代码 
 
 ```
-std::string appid = TCHAR_TO_UTF8(CurrentWidget->editAppID->GetText().ToString().operator*());
-std::string userId = TCHAR_TO_UTF8(CurrentWidget->editUserID->GetText().ToString().operator*());
-ITMGContextGetInstance()->Init(appid.c_str(), userId.c_str());
+#define SDKAPPID3RD "14000xxxxxx"
+cosnt char* openId="10001";
+ITMGContext* context = ITMGContextGetInstance();
+context->Init(SDKAPPID3RD, openId);
 ```
 
 [](id:Poll)
 ### 触发事件回调
 
-通过在 update 里面周期的调用 Poll 可以触发事件回调。Poll 是 GME 的消息泵，GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。详情请参见 [Sample Project](https://intl.cloud.tencent.com/document/product/607/18521)  中的 EnginePollHelper 文件。
+通过在 update 里面周期的调用 Poll 可以触发事件回调。Poll 是 GME 的消息泵，GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。
+可参考 Demo 中的 EnginePollHelper.cpp 文件。
 
 <dx-alert infotype="alarm" title="务必周期性调用 Poll 接口">
 务必周期性调用 Poll 接口且在主线程调用，以免接口回调异常。
@@ -160,12 +173,9 @@ public:
 #### 示例代码
 
 ```
-//头文件中的声明
-virtual void Tick(float DeltaSeconds);
-
-void AUEDemoLevelScriptActor::Tick(float DeltaSeconds) {
-	Super::Tick(DeltaSeconds);	
-	ITMGContextGetInstance()->Poll();
+void TMGTestScene::update(float delta)
+{
+    ITMGContextGetInstance()->Poll();
 }
 ```
 
@@ -199,6 +209,7 @@ ITMGContext int Resume()
 ```
 ITMGContext int Uninit()
 ```
+
 
 ## 语音消息服务及转文本服务
 
@@ -241,10 +252,10 @@ int  QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int dwSdkAppID, const char* strRoo
 | ------------- | :---: | ------------------------------------------------------------ |
 | dwSdkAppID    |  int  | 来自腾讯云控制台的 AppId 号码。                              |
 | strRoomID     | const char* | 填 null 或者空字符串。 |
-| strOpenID     | const char* | 用户标识。与 Init 时候的 openID相同。                        |
+| strOpenID     | const char* | 用户标识。与 Init 时候的 openID 相同。                        |
 | strKey        | const char* | 来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥。 |
-| strAuthBuffer | const char* | 返回的 authbuff                                              |
-| bufferLength  |  int  | 传入的 authbuff 长度，建议为 500                             |
+| strAuthBuffer | const char* | 返回的 authbuff。                                              |
+| bufferLength  |  int  | 传入的 authbuff 长度，建议为500。                             |
 
 ### 应用鉴权
 
@@ -408,7 +419,7 @@ void CTMGSDK_For_AudioDlg::HandleSTREAM2TEXTComplete(const char* data, bool isCo
 
 ## 语音消息录制
 
-**录制的流程为：录音->停止录音->录音回调返回->启动下一次录音。**
+**录制的流程为：录音 > 停止录音 > 录音回调返回 > 启动下一次录音。**
 
 
 
@@ -445,6 +456,7 @@ char buffer[256]={0};
 snprintf(buffer, sizeof(buffer), "%sunreal_ptt_local.file", getFilePath().c_str());
 ITMGContextGetInstance()->GetPTT()->StartRecording(buffer);
 ```
+
 
 [](id:Stop)
 ### 停止录音
@@ -491,21 +503,19 @@ ITMGContextGetInstance()->GetPTT()->StopRecording();
 
 ```
 void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-	...
-		else if (eventType == ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE) {
-			int32 result = JsonObject->GetIntegerField(TEXT("result"));
-			FString filepath = JsonObject->GetStringField(TEXT("file_path"));
-			std::string path = TCHAR_TO_UTF8(filepath.operator*());
-			int duration = 0;
-			int filesize = 0;
-			if (result == 0) {
-				duration = ITMGContextGetInstance()->GetPTT()->GetVoiceFileDuration(path.c_str());
-				filesize = ITMGContextGetInstance()->GetPTT()->GetFileSize(path.c_str());
-			}
-			onPttRecordFileCompleted(result, filepath, duration, filesize);
-		}
-	}
+				switch (eventType) {
+					case ITMG_MAIN_EVENT_TYPE_ENTER_ROOM:
+					{
+					//进行处理
+					break;
+						}
+					...
+							case ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE:
+					{
+					//进行处理
+					break;
+					}
+				}
 }
 ```
 
@@ -624,17 +634,22 @@ ITMGContextGetInstance()->GetPTT()->UploadRecordedFile(filePath);
 
 ```
 void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-	...
-		else if (eventType == ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE) {
-			int32 result = JsonObject->GetIntegerField(TEXT("result"));
-			FString filepath = JsonObject->GetStringField(TEXT("file_path"));
-			FString fileid = JsonObject->GetStringField(TEXT("file_id"));
-			onPttUploadFileCompleted(result, filepath, fileid);
+		switch (eventType) {
+			case ITMG_MAIN_EVENT_TYPE_ENTER_ROOM:
+			{
+			//进行处理
+			break;
+				}
+			...
+					case ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE:
+			{
+			//进行处理
+			break;
+			}
 		}
-	}
 }
 ```
+
 
 ### 下载语音文件
 
@@ -681,20 +696,17 @@ ITMGContextGetInstance()->GetPTT()->DownloadRecordedFile(fileID,filePath);
 | 12295    | 获取下载参数过程中，回包解包失败  | 检查设备网络是否可以正常访问外网环境                         |
 | 12297    | 没有设置 appinfo                  | 检查鉴权密钥是否正确，检查是否有初始化离线语音               |
 
+
 #### 示例代码
 
 ```
 void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-	...
-		else if (eventType == ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE) {
-			int32 result = JsonObject->GetIntegerField(TEXT("result"));
-			FString filepath = JsonObject->GetStringField(TEXT("file_path"));
-			FString fileid = JsonObject->GetStringField(TEXT("file_id"));
-			onPttDownloadFileCompleted(result, filepath, fileid);
-		}
-	}
-}
+		switch (eventType) {
+			case ITMG_MAIN_EVENT_TYPE_ENTER_ROOM:
+			{
+			//进行处理
+			break;
+				}
 ```
 
 ### 播放语音
@@ -885,7 +897,7 @@ ITMGContextGetInstance()->GetPTT()->SpeechToText(filePath,"cmn-Hans-CN","cmn-Han
 | 参数   |  类型   | 含义                                 |
 | ------ | :-----: | ------------------------------------ |
 | result |  int32  | 当 code 为0时，录制完成              |
-| fileid | FString | 语音文件 url，录音在服务器存放 90 天 |
+| fileid | FString | 语音文件 url，录音在服务器存放90天 |
 | text   | FString | 转换的文本结果                       |
 
 #### 错误码
@@ -906,15 +918,19 @@ ITMGContextGetInstance()->GetPTT()->SpeechToText(filePath,"cmn-Hans-CN","cmn-Han
 
 ```
 void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-	...
-		else if (eventType == ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE) {
-			int32 result = JsonObject->GetIntegerField(TEXT("result"));
-			FString text = JsonObject->GetStringField(TEXT("text"));
-			FString fileid = JsonObject->GetStringField(TEXT("file_id"));
-			onPttSpeech2TextCompleted(result, fileid, text);
+		switch (eventType) {
+			case ITMG_MAIN_EVENT_TYPE_ENTER_ROOM:
+			{
+			//进行处理
+			break;
+				}
+			...
+					case ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE:
+			{
+			//进行处理
+			break;
+			}
 		}
-	}
 }
 ```
 
@@ -1139,4 +1155,3 @@ context->SetLogPath(logDir);
 | ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING |语音消息正在流式转文本中|result; file_path; text;file_id          | {"file_id":"","file_path":","text":"","result":0}            |
 | ITMG_MAIN_EVNET_TYPE_PTT_TEXT2SPEECH_COMPLETE		|文本转语音完成消息|result; text;file_id                | {"file_id":"","text":"","result":0}                          |
 | ITMG_MAIN_EVNET_TYPE_PTT_TRANSLATE_TEXT_COMPLETE	|文本翻译完成消息|result; text;file_id                | {"file_id":"","text":"","result":0}                          |
-

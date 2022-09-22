@@ -1,0 +1,512 @@
+为方便开发者调试和接入腾讯云游戏多媒体引擎产品 API，本文为您介绍 GME 范围语音的接入技术。
+
+## 使用场景
+
+GME 范围语音是专门为有范围需求的语音场景提供的功能，主要的适用场景如下：
+
+1. 提供**大逃杀类型游戏、生存射击类手游**中特有的“仅小队”或“所有人”的语音模式。
+2. 在一个语音房间内，用户可以与一定距离内的其他用户进行实时语音通话，同时房间内所有用户可以听到主持人说话声音，适用于**游戏演唱会场景**。
+
+## 体验效果
+
+可以到 [Demo 体验](https://intl.cloud.tencent.com/document/product/607/50219) 中下载体验程序，体验 3D 音效及范围语音的效果。
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/23cd82f978016559de9c40a413dc23b9.png"  width="70%"/></img>
+
+## 基本概念
+
+使用范围语音功能，涉及到**语音模式**、**语音接收范围**以及 **TeamID** 这三个概念。
+
+### 语音模式
+
+当进入范围语音房间时，有两种语音模式可供选择：
+
+| 语音模式 | 参数名称               | 功能                                                         |
+| -------- | ---------------------- | ------------------------------------------------------------ |
+| 所有人   | RANGE_AUDIO_MODE_WORLD | <li>设置后玩家附近一定范围的人都能听到该玩家讲话，如果范围内也有玩家设置为此模式，则也可以互相通话。</li> <li>队友可以互相听到 |
+| 仅小队   | RANGE_AUDIO_MODE_TEAM  | <li>仅队友可以互相听到                                       |
+
+> ! 队友之间的通话不受距离以及语音模式的影响。
+
+### 语音接收范围
+
+![](https://main.qcloudimg.com/raw/fccdd2f96b75e350adf9de934590b4f7.png)
+如果设置的语音模式为**所有人(RANGE_AUDIO_MODE_WORLD)**，此时的语音接收范围受 UpdateAudioRecvRange 接口影响。
+
+假设以下两个玩家 A 与 B 为不同的小队，且设置的语音模式为**所有人(RANGE_AUDIO_MODE_WORLD)**：
+
+| 玩家坐标   | 语音接收范围 | 与另一玩家声音可达情况                                   | 与队友声音可达情况         |
+| ---------- | ------------ | -------------------------------------------------------- | -------------------------- |
+| A（0,0,0） | 10米         | 可以听到玩家 B 的声音，因为 B 玩家距离 A 玩家在10米内    | 不影响同一小队成员互相通话 |
+| B（0,8,0） | 5米          | 不可以听到玩家 A 的声音，因为 A 玩家与 B 玩家距离超过5米 | 不影响同一小队成员互相通话 |
+
+<dx-alert infotype="explain" title="">
+具体玩家声音可达情况请参见 [附录](https://intl.cloud.tencent.com/document/product/607/17972)。
+</dx-alert>
+
+### TeamID
+
+使用范围语音，需要调用 SetRangeAudioTeamID 接口设置小队号 TeamID，再调用 EnterRoom 接口进入语音房间。
+
+- 当进入语音房间时指定的 TeamID != 0 时，进入范围语音房间模式。如果某成员使用 TeamID = 1 进入语音房间，当他设置语音模式为 RANGE_AUDIO_MODE_TEAM，则只有 TeamID = 1 的成员能听到他的声音；如果他设置的语音模式为 RANGE_AUDIO_MODE_WORLD，则除了  TeamID = 1 的成员，一定范围内的玩家也能听到他的声音。
+
+<table>
+   <tr>
+      <th>TeamID 情况</th>
+      <th>语音模式</th>
+			<th>范围</th>
+      <th>声音可达情况</th>
+   </tr>
+   <tr>
+      <td  rowspan="2">TeamID != 0，假设 TeamID = 1 </td>
+      <td> RANGE_AUDIO_MODE_TEAM</td>
+			  <td> 10米</td>
+      <td>声音只能和 TeamID = 1 的成员互通</td>
+   </tr>
+   <tr>
+      <td> RANGE_AUDIO_MODE_WORLD</td>
+      <td> 10米</td>
+			 <td>声音能和 TeamID = 1 的成员、以及语音模式设置为 RANGE_AUDIO_MODE_WORLD 的同房间10米范围内成员互通</td>
+   </tr>
+</table>   
+
+
+
+
+
+- 如果某成员使用 TeamID = 0 进入语音房间，则为范围语音主持人模式，房间内所有人（不论语音模式是所有人还是仅小队）都可以听到该成员的声音。
+
+<table>
+   <tr>
+      <th>TeamID 情况</th>
+      <th>TeamID 修改时机</th>
+			<th>范围</th>
+      <th>声音可达情况</th>
+   </tr>
+   <tr>
+      <td  rowspan="2">TeamID = 0 </td>
+      <td> 进房前 TeamID != 0，进房后修改 TeamID = 0  </td>
+			  <td> 10米</td>
+      <td><li>说话声音全房间成员（不论语音模式是所有人还是仅小队）都能听到<li>能与  TeamID = 0  的成员互相沟通<li>能听到设置为 RANGE_AUDIO_MODE_WORLD 的同房间10米范围内成员声音</td>
+   </tr>
+   <tr>
+      <td> 进房前 TeamID = 0，以 TeamID = 0 进入房间</td>
+      <td> 10米</td>
+			 <td><li>说话声音全房间成员（不论语音模式是所有人还是仅小队）都能听到<li>能与  TeamID = 0  的成员互相沟通<li>不能听到房间内其他人说话声音</td>
+   </tr>
+</table>   
+
+
+
+### 示例场景
+
+- **大逃杀游戏**：例如一个大逃杀类型的游戏，每4个人为一个队伍，则这4个人需要设置一个小队号 TeamID，每100人为一个对局房间，一个对局共25个小队，则25个小队都进去一个语音房间。在对局中，如果某玩家想和10米范围内的陌生人沟通，则将语音距离范围设置为10，将语音模式设置为 RANGE_AUDIO_MODE_WORLD，同时打开麦克风及扬声器。如果他只想和小队成员沟通，不和非小队的成员沟通，则只需要将语音模式设置为  RANGE_AUDIO_MODE_TEAM。
+- **游戏演唱会**：在游戏中如果需要举办演唱会，歌手不需要和游戏玩家有互动，可以让游戏玩家通过 TeamID = OpenID 进入范围语音房间，设置语音模式为 RANGE_AUDIO_MODE_WORLD，依照游戏玩法设置语音距离范围，这样游戏玩家可以和附近玩家沟通交流；歌手将 TeamID 设置为 0 后进入房间，歌手的声音整个房间的人都能听见，但歌手听不见其他人的声音。
+- **主持人模式**：在游戏中例如虚拟桌游场景，主持人说话声音即要房间内所有人听见，也要听见范围内玩家说话的声音，可以让主持人先以 TeamID != 0 的形式进入房间，进房后将 TeamID 设置为 0，此时主持人说话全房间的人都能听见，主持人也能听见范围内玩家说话的声音。
+
+
+
+## 前提条件
+
+- **已开通实时语音服务**：可参见 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782)。
+- **已接入GME SDK**：包括核心接口和实时语音接口的接入，详情可参见 [Native SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/40858)、[Unity SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/44544)、[Unreal SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/44545)。
+
+## 使用流程
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/4f531ae31457f031b0034d8dc39eda3c.png"  width="60%"/></img>
+
+> !
+>
+> - 请务必参照此流程调用接口。
+> - 流程图中蓝色部分为范围语音所需流程。
+> - 有别于普通小队语音房间，在使用范围语音能力时，**必须使用流畅音质进房**。
+> - 在进房成功后，调用 UpdateAudioRecvRange（至少一次），及每帧调用 UpdateSelfPosition。
+
+
+[](id:step0)
+### 1. 设置 TeamID
+
+- 进房前，通过此接口设置队伍号，影响下一次进房。
+- 进房后，可通过此接口修改队伍号，设置后立即生效。
+- 退房后，TeamID 不会自动重置为0，所以一旦决定调用此语音模式，请在每次 EnterRoom 之前都调用此方法设置 TeamID。
+- 退房后再进房，请在退房成功回调回来之后再调用设置队伍号接口。
+
+#### 函数原型
+
+```
+ITMGContext SetRangeAudioTeamID(int teamID)
+```
+
+|参数     | 类型         |意义|
+| ------------- |:-------------:|-------------|
+| teamID		| int    		| 队伍号，专供范围语音模式中使用。当 TeamID 为0时，通话模式为普通小队语音，默认0。
+
+### 2. 设置语音模式
+
+- 进房前，通过调用此接口修改语音模式，影响下一次进房。
+- 进房后，通过调用此接口修改语音模式，将直接改变当前用户的语音模式。
+- 退房后，此参数不会自动重置为 MODE_WORLD，所以一旦决定调用此方法，请在每次 EnterRoom 之前都调用此方法设置语音模式。
+
+#### 函数原型
+
+```
+ITMGRoom int SetRangeAudioMode(RANGE_AUDIO_MODE rangeAudioMode)
+```
+
+| 参数           | 类型 | 意义                                                  |
+| -------------- | :--: | ----------------------------------------------------- |
+| rangeAudioMode | int  | 0(MODE_WORLD) 代表“所有人”，1(MODE_TEAM) 代表"仅小队" |
+
+### 3. 进入语音房间
+
+在调用 EnterRoom 之前，需调用以下两个 API：SetRangeAudioTeamID、 SetRangeAudioMode。
+
+#### 函数原型
+
+```
+ITMGContext.GetInstance(this).EnterRoom(roomId,ITMG_ROOM_TYPE_FLUENCY, authBuffer); 
+```
+
+一定要使用流畅音质进入语音房间，随后监听进房的回调并进行处理。
+
+```
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ENTER_ROOM == type)
+        {
+           	//对事件返回的 Data 进行解析
+            int nErrCode = data.getIntExtra("result" , -1);
+            String strErrMsg = data.getStringExtra("error_info");
+
+            if (nErrCode == AVError.AV_OK)
+            {
+                //收到进房信令，进房成功，可以操作设备
+                ScrollView_ShowLog("EnterRoom success");
+                Log.i(TAG,"EnterRoom success!");
+            }
+            else
+            {
+                //进房失败，需分析返回的错误信息
+                ScrollView_ShowLog("EnterRoom fail :" + strErrMsg);
+                Log.i(TAG,"EnterRoom fail!");
+            }  
+        }
+	}
+```
+
+在进房成功后，调用 UpdateAudioRecvRange（至少调用一次），及每帧调用 UpdateSelfPosition。
+
+### 4. 设置接收语音距离范围
+
+- 通过此方法用于设置接收的语音范围（距离以游戏引擎为准），只支持在**进房成功后调用**。
+- 此方法必须配合 UpdateSelfPosition 更新声源方位联合使用。
+- 此方法只需调用一次即可生效，支持修改。
+
+#### 函数原型 
+
+```
+ITMGRoom int UpdateAudioRecvRange(int range)
+```
+
+| 参数  | 类型 | 意义                                       |
+| ----- | ---- | ------------------------------------------ |
+| range | int  | 最大可以接收音频的范围，单位为引擎距离单位 |
+
+#### 示例代码  
+
+```
+ITMGContext.GetInstance().GetRoom().UpdateAudioRecvRange(300);
+```
+
+### 5. 更新声源方位
+
+更新声源方位，目的是告诉服务器本端位置，通过**本端世界坐标+本端接收音频的范围**，与**其他端世界坐标+其他端接收音频的范围**进行判断，达到范围语音效果。
+
+- 此函数用于更新声源位置信息，只支持在**进房成功后调用**，且需要**每帧调用**，以 Unity 引擎为例，此接口需要在 Update 中调用。
+- 使用范围语音一定要更新声源方位，如果不需要范围判断能力，**也需要进房后调用此接口一次**。
+- 如果需要同时使用 3D 音效效果，此接口中的参数 axisForward、axisRight 及 axisUp 需要按照下文 [3D 语音部分](https://intl.cloud.tencent.com/document/product/607/17972) 进行设置。
+
+#### 函数原型
+
+```
+public abstract int UpdateSelfPosition(int position[3], float axisForward[3], float axisRight[3], float axisUp[3])
+```
+
+| 参数        | 类型    | 意义                                       |
+| ----------- | ------- | ------------------------------------------ |
+| position    | int[]   | 自身在世界坐标系中的坐标，顺序是前、右、上 |
+| axisForward | float[] | 在本产品中无需关注                         |
+| axisRight   | float[] | 在本产品中无需关注                         |
+| axisUp      | float[] | 在本产品中无需关注                         |
+
+## 范围语音结合 3D 音效
+
+上文所介绍的范围语音功能，即通过距离来进行控制声音的可达性，如果需要更加沉浸式的体验，建议配合 3D 音效一起使用。
+
+## 使用流程
+
+使用范围语音的同时，如果需要同时使用 3D 音效功能，需要以下几个步骤，在进房后使用范围语音步骤1、2、3完成后，初始化 3D 引擎以及打开3D音效。
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/39fb54637b7957509d00ed440f7ae0a9.png"  width="60%"/></img>
+
+> ?流程图中绿色部分为3D语音所需流程。
+
+### 前提条件
+
+参考 [范围语音使用流程](#step0)，完成步骤1、2、3。
+
+### 1. 初始化 3D 音效引擎
+
+此函数用于初始化 3D 音效引擎，在进房后调用。在使用 3D 音效之前必须先调用此接口，只接收 3D 音效而不发出 3D 音效的用户也需要调用此接口。
+
+#### 函数原型 
+
+```
+public abstract int InitSpatializer(string modelPath)
+```
+
+| 参数      | 类型   | 意义                                                         |
+| --------- | ------ | ------------------------------------------------------------ |
+| modelPath | string | 3D 音效资源文件路径，3D 音效模型文件请在此路径 [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/pubilc/GME_2.X_3d_model)，md5: d0b76aa64c46598788c2f35f5a8a8694，存放于本地中，并通过该参数将存放路径传递给 SDK。必须使用官方提供的文件。 |
+
+### 2. 开启或关闭 3D 音效
+
+此函数用于开启或关闭 3D 音效。开启之后可以听到 3D 音效。
+
+#### 函数原型
+
+```
+public abstract int EnableSpatializer(bool enable, bool applyToTeam)
+
+```
+
+| 参数        | 类型 | 意义                                               |
+| ----------- | ---- | -------------------------------------------------- |
+| enable      | bool | 开启之后可以听到 3D 音效                           |
+| applyToTeam | bool | 3D 语音是否作用于小队内部，仅 enble 为 true 时有效 |
+
+通过 IsEnableSpatializer 接口获取 3D 音效状态。
+
+### 3. 设置接收语音距离范围（3D）
+
+- 通过此方法用于设置接收的语音范围（距离以游戏引擎为准），只支持在**进房成功后调用**。
+- 此方法必须配合 UpdateSelfPosition 更新声源方位联合使用。
+- 此方法只需调用一次即可生效。
+- 3D 音效中，音源音量的大小与音源距离有一定的衰减关系。单位距离超过 range 之后，音量衰减到几乎为零。
+- 距离与声音衰减的关系参考文档附录。
+
+#### 函数原型 
+
+```
+ITMGRoom int UpdateAudioRecvRange(int range)
+
+```
+
+| 参数  | 类型 | 意义                                       |
+| ----- | ---- | ------------------------------------------ |
+| range | int  | 最大可以接收音频的范围，单位为引擎距离单位 |
+
+#### 示例代码  
+
+```
+ITMGContext.GetInstance().GetRoom().UpdateAudioRecvRange(300);
+
+```
+
+### 4. 更新声源方位（3D）
+
+更新声源方位，目的是告诉服务器本端位置，通过**本端世界坐标+本端接收音频的范围**，与**其他端世界坐标+其他端接收音频的范围**进行判断，达到范围语音效果。
+
+
+
+- 此函数用于更新声源位置信息，只支持在**进房成功后调用**，且需要**每帧调用**，以 Unity 引擎为例，此接口需要在 Update 中调用。
+- **请直接复制并调用示例代码使用此功能**。
+
+#### 函数原型
+
+```
+public abstract int UpdateSelfPosition(int position[3], float axisForward[3], float axisRight[3], float axisUp[3])
+
+```
+
+| 参数        | 类型    | 意义                                       |
+| ----------- | ------- | ------------------------------------------ |
+| position    | int[]   | 自身在世界坐标系中的坐标，顺序是前、右、上 |
+| axisForward | float[] | 自身坐标系前轴的单位向量                   |
+| axisRight   | float[] | 自身坐标系右轴的单位向量                   |
+| axisUp      | float[] | 自身坐标系上轴的单位向量                   |
+
+#### 示例代码
+
+**Unreal**
+
+```
+FVector cameraLocation = UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->GetCameraLocation();
+FRotator cameraRotation = UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->GetCameraRotation();
+int position[] = { 
+    (int)cameraLocation.X,
+    (int)cameraLocation.Y,
+    (int)cameraLocation.Z };
+FMatrix matrix = ((FRotationMatrix)cameraRotation);
+float forward[] = { 
+    matrix.GetColumn(0).X,
+    matrix.GetColumn(1).X,
+    matrix.GetColumn(2).X };
+float right[] = { 
+    matrix.GetColumn(0).Y,
+    matrix.GetColumn(1).Y,
+    matrix.GetColumn(2).Y };
+float up[] = { 
+    matrix.GetColumn(0).Z,
+    matrix.GetColumn(1).Z,
+    matrix.GetColumn(2).Z};
+ITMGContextGetInstance()->GetRoom()->UpdateSelfPosition(position, forward, right, up); 
+
+```
+
+**Unity**
+
+```
+Transform selftrans = currentPlayer.gameObject.transform;
+Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, selftrans.rotation, Vector3.one);
+int[] position = new int[3] { 
+    selftrans.position.z,
+    selftrans.position.x,
+    selftrans.position.y};
+float[] axisForward = new float[3] { 
+    matrix.m22,
+    matrix.m02,
+    matrix.m12 };
+float[] axisRight = new float[3] { 
+    matrix.m20,
+    matrix.m00,
+    matrix.m10 };
+float[] axisUp = new float[3] { 
+    matrix.m21,
+    matrix.m01,
+    matrix.m11 };
+ITMGContext.GetInstance().GetRoom().UpdateSelfPosition(position, axisForward, axisRight, axisUp);
+
+```
+
+## 附录
+
+### 不同语音模式
+
+不同语音模式下，玩家声音可达情况：
+
+- 假设 A 玩家状态为“所有人”，对应 B 玩家在不同语音模式下声音可达情况：
+
+<table>
+<thead>
+<tr>
+<th >是否同一小队</th>
+<th>是否范围内</th>
+<th>语音模式</th>
+<th>A与B 是否能相互听到对方的声音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td rowspan="4">同一小队</td>
+<td rowspan="2">是</td>
+<td>MODE_WORLD</td>
+<td>是</td>
+</tr>
+<tr>
+<td>MODE_TEAM</td>
+<td>是</td>
+</tr>
+<tr>
+<td rowspan="2">否</td>
+<td>MODE_WORLD</td>
+<td>是</td>
+</tr>
+<tr>
+<td>MODE_TEAM</td>
+<td>是</td>
+</tr>
+<tr>
+<td rowspan="4">不同小队</td>
+<td rowspan="2">是</td>
+<td>MODE_WORLD</td>
+<td>是</td>
+</tr>
+<tr>
+<td>MODE_TEAM</td>
+<td>否</td>
+</tr>
+<tr>
+<td rowspan="2">否</td>
+<td>MODE_WORLD</td>
+<td>否</td>
+</tr>
+<tr>
+<td>MODE_TEAM</td>
+<td>否</td>
+</tr>
+</tbody></table>
+
+
+
+- 假设 A 玩家状态为“仅小队”，对应 B 玩家在不同语音模式下声音可达情况：
+
+<table>
+<thead>
+<tr>
+<th >是否同一小队</th>
+<th>是否范围内</th>
+<th>语音状态</th>
+<th>A与B 是否能相互听到对方的声音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td rowspan="4">同一小队</td>
+<td rowspan="2">是</td>
+<td>MODE_WORLD</td>
+<td>是</td>
+</tr>
+<tr>
+<td>MODE_TEAM</td>
+<td>是</td>
+</tr>
+<tr>
+<td rowspan="2">否</td>
+<td>MODE_WORLD</td>
+<td>是</td>
+</tr>
+<tr>
+<td>MODE_TEAM</td>
+<td>是</td>
+</tr>
+<tr>
+<td rowspan="4">不同小队</td>
+<td rowspan="2">是</td>
+<td>MODE_WORLD</td>
+<td>否</td>
+</tr>
+<tr>
+<td>MODE_TEAM</td>
+<td>否</td>
+</tr>
+<tr>
+<td rowspan="2">否</td>
+<td>MODE_WORLD</td>
+<td>否</td>
+</tr>
+<tr>
+<td>MODE_TEAM</td>
+<td>否</td>
+</tr>
+</tbody></table>
+
+
+
+### 距离与声音衰减的关系
+
+3D 音效中，音源音量的大小与音源距离有一定的衰减关系。单位距离超过 range 之后，音量衰减到几乎为零。
+
+| 距离范围（引擎单位） | 衰减公式                     |
+| -------------------- | ---------------------------- |
+| 0 < N < range/10     | 衰减系数：1.0 （音量无衰减） |
+| N ≥ range/10         | 衰减系数：range/10/N         |
+
+![](https://main.qcloudimg.com/raw/4a71a93f7c91ecd70f50968875f95087.png)

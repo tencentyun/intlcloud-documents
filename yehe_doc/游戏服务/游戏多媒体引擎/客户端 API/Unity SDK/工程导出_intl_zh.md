@@ -55,7 +55,7 @@ OpenAL.framework
 <img src="https://main.qcloudimg.com/raw/ee0a20a0b0ad99f30fa87855d1b17f0f.jpg"  width="60%" /></img>
 
 #### 6. 导出问题
-导出问题请参见 [iOS 导出问题](https://intl.cloud.tencent.com/zh/document/product/607/39522) 进行解决。
+导出问题请参见 [iOS 导出问题](https://intl.cloud.tencent.com/document/product/607/39522) 进行解决。
 
 
 
@@ -70,29 +70,53 @@ GME Unity SDK 默认提供 arm64-v8a、armeabi-v7a 及 x86 的 lib 文件，请�
 如果导出可执行文件 apk 文件后，打开后黑屏闪退，一般为缺少相应架构的 lib 文件，请根据工程进行添加或者删减。
 
 #### 2. 权限配置
-导出 Android 可执行文件需要在 AndroidManifest.xml 中配置好相关权限，以免出现音频错误或者权限错误。
+**2.1 必要权限**
+请务必在工程 AndroidManifest.xml 文件中添加以下权限：
+
 ```
-  <uses-permission android:name="android.permission.RECORD_AUDIO" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-  <uses-permission android:name="android.permission.BLUETOOTH"/>
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 ```
-以上权限中，读写权限不是必须添加的。
-```
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-```
+
+**2.2 根据需求添加权限**
+请根据需求在工程 AndroidManifest.xml 文件中添加以下权限：
+<dx-tabs>
+::: 读写权限
+读写权限不是必须添加的，请根据以下规则进行判断是否添加：
+
 - 如果使用的是默认的日志路径（/sdcard/Android/data/xxx.xxx.xxx/files），即表示未对 SetLogPath 进行调用，则不需要 WRITE_EXTERNAL_STORAGE 权限。
 - 如果调用 SetLogPath 接口将日志路径放在外部存储设备，以及使用语音消息功能在录制时的存储路径是在外部存储设备，则需要向用户申请 WRITE_EXTERNAL_STORAGE 权限，并得到用户明确批准。
 
+```
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
+:::
+::: 蓝牙权限
+需要根据以下规则判断如何添加蓝牙权限：
+
+- 如果工程中的 targetSDKVersion 为 30 或者以下：
+```
+<uses-permission android:name="android.permission.BLUETOOTH"/>
+```
+
+- 如果工程中的 targetSDKVersion 为 31 或者以上：
+```
+<uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+```
+:::
+</dx-tabs>
+
+
 #### 3. 导出问题
-导出问题请参见 [Android 导出问题](https://intl.cloud.tencent.com/zh/document/product/607/39522) 进行解决。
+导出问题请参见 [Android 导出问题](https://intl.cloud.tencent.com/document/product/607/39522) 进行解决。
 
 
 ### 导出 Windows 平台
 
 
-导出问题请参见 [Windows 导出问题](https://intl.cloud.tencent.com/zh/document/product/607/39522) 进行解决。
+导出问题请参见 [Windows 导出问题](https://intl.cloud.tencent.com/document/product/607/39522) 进行解决。
 
