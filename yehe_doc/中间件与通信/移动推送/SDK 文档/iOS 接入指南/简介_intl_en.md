@@ -18,9 +18,9 @@ Pushing messages to iOS devices involves client application (Client App), APNs (
 
 - Supports iOS 8.0 and later
 - For iOS 10.0 and later
- - You need to introduce `UserNotification.framework`.
- - We recommend you use Xcode 8.0 and later
- - If you use Xcode 7 or an earlier version , you need to configure the SDK for iOS on your own to support the compilation of the `UserNotification` framework.
+   - You need to introduce `UserNotification.framework`.
+   - We recommend you use Xcode 8.0 and later
+   - If you use Xcode 7 or an earlier version , you need to configure the SDK for iOS on your own to support the compilation of the `UserNotification` framework.
 
 
 
