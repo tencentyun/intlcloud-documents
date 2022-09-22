@@ -177,7 +177,7 @@ options 参数用于对验证码进行定制外观设置，默认可以设置为
 | 配置名         | 值类型                | 说明                                                         |
 | :------------- | :-------------------- | :----------------------------------------------------------- |
 | bizState       | Any                   | 自定义透传参数，业务可用该字段传递少量数据，该字段的内容会被带入 callback 回调的对象中。 |
-| enableDarkMode | Boolean &#124; String | 开启自适应深夜模式或强制深夜模式。<li>开启自适应深夜模式: {"enableDarkMode": true}</li><li>强制深夜模式: {"enableDarkMode": 'force'}</li> |
+| enableDarkMode | Boolean/String | 开启自适应深夜模式或强制深夜模式。<li>开启自适应深夜模式: {"enableDarkMode": true}</li><li>强制深夜模式: {"enableDarkMode": 'force'}</li> |
 | ready          | Function              | 验证码加载完成的回调，回调参数为验证码实际的宽高：<br>{"sdkView": {<br>"width": number,<br>"height": number<br>}}<br>该参数仅为查看验证码宽高使用，**请勿使用此参数直接设定宽高**。 |
 | needFeedBack   | String | 自定义帮助链接: {"needFeedBack": 'url地址' } |
 |loading|Boolean|是否在验证码加载过程中显示loading框。不指定该参数时，默认显示loading框。<li>显示loading框: {"loading": true}</li><li>不显示loading框: {"loading": false}</li>|
