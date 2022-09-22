@@ -4,8 +4,8 @@
 
 The sequence diagram of the web and app calling Captcha is as follows:
 
-- Business client: needs to integrate to Captcha to display the verification page on the client.
-- Business server: needs to call the ticket verification API to verify the client verification result. 
+- Customer front end: needs to integrate to Captcha to display the verification page on the client.
+- Customer back end: needs to call the ticket verification API to verify the client verification result. 
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/6cb8455c3891dc4574fa72144366013d.png)
 
