@@ -93,6 +93,7 @@ TenDI Captcha provides data that is updated every minute so that you can keep tr
   </tr>
 </tbody>
 </table>
+
 ## Use limits
 
 ### QPS limit
