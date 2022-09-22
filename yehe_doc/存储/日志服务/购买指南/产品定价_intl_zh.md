@@ -1,4 +1,8 @@
-日志服务（Cloud Log Service，CLS）支持按量计费（后付费），即根据用户的实际使用资源情况进行计量，然后按日进行费用扣除。计费项详细说明参考 [计费概述](https://intl.cloud.tencent.com/document/product/614/37509)。
+## 按量计费定价
+
+- 按量计费方式是您在开始使用 CLS 服务时，CLS 默认采用的计费方式。关于按量计费方式的介绍，请参见 [按量计费（后付费）](https://www.tencentcloud.com/document/product/614/49672)。
+- 您在了解 [CLS 计费项](https://intl.cloud.tencent.com/document/product/614/37509) 后， 可根据自身业务需求，评估所需的资源量（例如每月流量、存储量、请求次数等）。您也可以通过 [CLS 价格计算器](https://buy.intl.cloud.tencent.com/price/cls/calculator)，根据您每日日志量或者云产品请求次数来帮助您估算费用，并给出按量计费的购买建议，同时还支持导出预算清单。
+- 关于 CLS 费用的整体概括，包括计费方式、计费周期等，请参见 [计费概述](https://intl.cloud.tencent.com/document/product/614/37509)。关于按量计费的费用案例，亦可参考计费概述中的计费案例。
 
 <table>
    <tr>
@@ -134,7 +138,6 @@
       <td>0.026</td>
       <td>0.007</td>
      <td>0.034</td>
-
    </tr>
     <tr>
       <td>欧洲地区</td>
@@ -153,3 +156,4 @@
      <td>0.028</td>
    </tr>
 </table>
+

@@ -172,7 +172,7 @@
 
 
 | 地域     | 简称             | 内网域名                         | 外网域名                                 |
-| ------- | --------------- | -------------------------------- | ---------------------------------------- |
+| :------- | :--------------- | -------------------------------- | ---------------------------------------- |
 | 北京     | ap-beijing       | cls.internal.tencentcloudapi.com | cls.ap-beijing.tencentcloudapi.com       |
 | 广州     | ap-guangzhou     | cls.internal.tencentcloudapi.com | cls.ap-guangzhou.tencentcloudapi.com     |
 | 上海     | ap-shanghai      | cls.internal.tencentcloudapi.com | cls.ap-shanghai.tencentcloudapi.com      |
@@ -194,9 +194,10 @@
 | 圣保罗   | sa-saopaulo      | cls.internal.tencentcloudapi.com | cls.sa-saopaulo.tencentcloudapi.com       |
 
 :::
-::: 日志服务API2017 [](id:API2017)
+::: API 上传日志 [](id:API2017)
 
-[日志服务 API 2017](https://intl.cloud.tencent.com/document/product/614/16907) 是日志服务旧版本 API，不建议单独使用，其所使用的域名如下：
+以下域名用于 API 上传日志，具体域名如下：（除上传日志外的其他接口，请更新至日志服务 API 3.0。）
+
 
 <table>
 <thead>
@@ -450,7 +451,7 @@
 :::
 ::: Kafka 消费日志 [](id:Kafka_Consume)
 
-[使用 Kafka 协议消费日志](https://cloud.tencent.com/document/product/614/72651) 支持使用 Kafka Consumer SDK 和其他大数据组件消费到用户的数据仓库，其所使用的域名如下：
+[使用 Kafka 协议消费日志](https://intl.cloud.tencent.com/document/product/614/42752) 支持使用 Kafka Consumer SDK 和其他大数据组件消费到用户的数据仓库，其所使用的域名如下：
 
 <table>
 <thead>

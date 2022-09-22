@@ -22,6 +22,53 @@
 >? 如果您使用的 Loglistener 为2.6.5以前的版本，则需要加上 "cls:listLogset" 权限。
 >
 
+### 使用自建 k8s 上传数据
+
+用户可以使用 Logagent 采集自建 k8s 环境的日志数据，且具备上传的能力（本示例展示自建 k8s 上传日志的最小权限）。
+
+```
+{
+  "version": "2.0",
+  "statement": [
+    {
+      "action": [
+        "cls:pushLog",
+		"cls:agentHeartBeat",
+        "cls:getConfig",
+        "cls:CreateConfig",
+        "cls:DeleteConfig",
+        "cls:ModifyConfig",
+        "cls:DescribeConfigs",
+        "cls:DescribeMachineGroupConfigs",
+        "cls:DeleteConfigFromMachineGroup",
+        "cls:ApplyConfigToMachineGroup",
+        "cls:DescribeConfigMachineGroups",
+        "cls:ModifyTopic",
+        "cls:DeleteTopic",
+        "cls:CreateTopic",
+        "cls:DescribeTopics",
+        "cls:CreateLogset",
+        "cls:DeleteLogset",
+        "cls:DescribeLogsets",
+        "cls:CreateIndex",
+        "cls:ModifyIndex",
+        "cls:CreateMachineGroup",
+        "cls:DeleteMachineGroup",
+        "cls:DescribeMachineGroups",
+        "cls:ModifyMachineGroup",
+        "cls:CreateConfigExtra",
+        "cls:DeleteConfigExtra",
+        "cls:DescribeConfigExtras",       
+        "cls:ModifyConfigExtra"
+      ],
+      "resource": "*",
+      "effect": "allow"
+    }
+  ]
+}
+```
+
+
 ### 使用 API 上传数据
 
 用户可以通过 API 上传日志到 CLS（本示例展示使用 API 上传日志的最小权限）。
@@ -472,6 +519,7 @@
 
 用户可以管理包含指定标签的仪表盘，包括创建、编辑和删除仪表盘，并能够通过仪表盘查看包含指定标签的日志主题的数据。
 
+```
 	{
 	    "version": "2.0",
 	    "statement": [
@@ -518,6 +566,7 @@
 	        }
 	    ]
 	}
+	```
 
 #### 管理权限：对指定资源的日志主题及仪表盘具备管理权限
 
@@ -753,9 +802,9 @@
 }
 ```
 
+## 数据处理
 
-
-## 数据加工相关
+### 数据加工相关
 
 #### 管理权限：对所有数据加工任务具备管理权限
 
@@ -833,6 +882,95 @@
 }
 ```
 
+### 定时 SQL 分析相关
+
+
+#### 管理权限：对所有日志主题具备定时 SQL 分析的权限
+
+```
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "effect": "allow",
+            "action": [
+                "cls:DescribeLogsets",
+                "cls:DescribeTopics"
+            ],
+            "resource": [
+                "*"
+            ]
+        },
+        {
+            "effect": "allow",
+            "action": [
+                "tag:DescribeResourceTagsByResourceIds",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues",
+                "cls:SearchLog",
+                "cls:DescribeScheduledSqlInfo",
+                "cls:DescribeScheduledSqlProcessInfo",
+                "cls:CreateScheduledSql",
+                "cls:DeleteScheduledSql",
+                "cls:ModifyScheduledSql",
+                "cls:RetryScheduledSqlTask",
+                "cam:ListAttachedRolePolicies"
+            ],
+            "resource": [
+                "*"
+            ]
+        }
+    ]
+}
+```
+
+#### 管理权限：对指定标签日志主题具备 Kafka 协议消费权限
+
+```
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "effect": "allow",
+            "action": [
+                "cls:DescribeLogsets",
+                "cls:DescribeTopics"
+            ],
+            "resource": [
+                "*"
+            ],
+            "condition": {
+                "for_any_value:string_equal": {
+                    "qcs:resource_tag": [
+                        "key&value"
+                    ]
+                }
+            }
+        },
+        {
+            "effect": "allow",
+            "action": [
+                "tag:DescribeResourceTagsByResourceIds",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues",
+                "cls:SearchLog",
+                "cls:DescribeScheduledSqlInfo",
+                "cls:DescribeScheduledSqlProcessInfo",
+                "cls:CreateScheduledSql",
+                "cls:DeleteScheduledSql",
+                "cls:ModifyScheduledSql",
+                "cls:RetryScheduledSqlTask",
+                "cam:ListAttachedRolePolicies"
+            ],
+            "resource": [
+                "*"
+            ]
+        }
+    ]
+}
+```
+
+
 ## 数据投递/消费相关
 
 ### 投递 Ckafka
@@ -858,6 +996,9 @@
                 "tag:DescribeTagKeys",
                 "tag:DescribeTagValues",
                 "cam:ListAttachedRolePolicies",
+                "cam:AttachRolePolicy",
+                "cam:CreateRole",
+                "cam:DescribeRoleList",
                 "ckafka:DescribeInstances",
                 "ckafka:DescribeTopic",
                 "ckafka:DescribeInstanceAttributes",
@@ -899,6 +1040,9 @@
                 "tag:DescribeTagKeys",
                 "tag:DescribeTagValues",
                 "cam:ListAttachedRolePolicies",
+                "cam:AttachRolePolicy",
+                "cam:CreateRole",
+                "cam:DescribeRoleList",
                 "ckafka:DescribeInstances",
                 "ckafka:DescribeTopic",
                 "ckafka:DescribeInstanceAttributes",
@@ -1015,8 +1159,11 @@
                 "cls:DeleteShipper",
                 "cls:DescribeShipperTasks",
                 "cls:RetryShipperTask",
+                "cos:GetService",
                 "cam:ListAttachedRolePolicies",
-                "cos:GetService"
+                "cam:AttachRolePolicy",
+                "cam:CreateRole",
+                "cam:DescribeRoleList"
             ],
             "resource": "*"
         }
@@ -1058,8 +1205,11 @@
                 "cls:DeleteShipper",
                 "cls:DescribeShipperTasks",
                 "cls:RetryShipperTask",
+                "cos:GetService",
                 "cam:ListAttachedRolePolicies",
-                "cos:GetService"
+                "cam:AttachRolePolicy",
+                "cam:CreateRole",
+                "cam:DescribeRoleList"
             ],
             "resource": "*"
         }
@@ -1288,11 +1438,11 @@
 }
 ```
 
-### kafka协议消费
+### Kafka 协议消费
 
-#### 管理权限：对所有日志主题具备Kafka协议消费权限
+#### 管理权限：对所有日志主题具备 Kafka 协议消费权限
 
-具备所有日志主题Kafka协议消费权限。
+具备所有日志主题 Kafka 协议消费权限。
 
 ```
 {
@@ -1310,6 +1460,9 @@
         {
             "effect": "allow",
             "action": [
+                "tag:DescribeResourceTagsByResourceIds",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues",
                 "cls:DescribeKafkaConsumer",
                 "cls:CloseKafkaConsumer",
                 "cls:ModifyKafkaConsumer",
@@ -1324,9 +1477,9 @@
 }
 ```
 
-#### 管理权限：对指定标签日志主题具备Kafka协议消费权限
+#### 管理权限：对指定标签日志主题具备 Kafka 协议消费权限
 
-具备指定标签日志主题Kafka协议消费的管理权限。
+具备指定标签日志主题 Kafka 协议消费的管理权限。
 
 ```
 {
@@ -1352,6 +1505,9 @@
         {
             "effect": "allow",
             "action": [
+                "tag:DescribeResourceTagsByResourceIds",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues",
                 "cls:DescribeKafkaConsumer",
                 "cls:CloseKafkaConsumer",
                 "cls:ModifyKafkaConsumer",

@@ -1,6 +1,6 @@
 ## 简介
 
-您可以将日志主题的数据投递到腾讯云 Ckafka，然后用于您的实时流计算、或者入库等场景。如果您没有购买腾讯云 Ckafka 实例，可以考虑使用日志服务（Cloud Log Service，CLS）自带的 [Kafka 协议消费功能](https://intl.cloud.tencent.com/document/product/614/42752)， 二者费用相同。
+您可以将日志主题的数据投递到腾讯云 Ckafka，然后用于您的实时流计算、或者入库等场景。如果您没有购买腾讯云 Ckafka 实例，可以考虑使用日志服务（Cloud Log Service，CLS）自带的 [Kafka 协议消费功能](https://intl.cloud.tencent.com/document/product/614/42752)。
 
 ## 前提条件
 
@@ -11,7 +11,7 @@
 ## 操作步骤
 
 1. 在日志主题同地域下，创建一个 Ckafka 实例。详情请参见 [创建实例](https://intl.cloud.tencent.com/document/product/597/39718)。
-2. 在日志主题同地域下，根据如下配置参数，创建一个 Topic。详情请参见创建 Topic。
+2. 在日志主题同地域下，根据如下配置参数，创建一个 Topic。详情请参见 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/47584)。
 
  - **预设ACL策略**：关闭预设 ACL 策略。
  - **展示高级配置**：
@@ -37,5 +37,5 @@
 
 #### 提示没有读写 Ckafka Topic 的权限，怎么办？
 
-如果您直接使用 API 接口投递数据到 Ckafka，可能会存在读写 Ckafka Topic 的权限问题。因为，如果您在控制台使用该功能，系统会引导您完成相关授权，如果您直接调用 API 投递，则需要手动授权。具体的排查和解决方案请参见 [投递权限查看及配置](https://intl.cloud.tencent.com/document/product/614/46142)。
+如果您直接使用 API 接口投递数据到 Ckafka，可能会存在读写 Ckafka Topic 的权限问题。因为，如果您在控制台使用该功能，系统会引导您完成相关授权，如果您直接调用 API 投递，则需要手动授权。具体的排查和解决方案请参见 [投递权限查看及配置](https://www.tencentcloud.com/document/product/614/46142)。
 

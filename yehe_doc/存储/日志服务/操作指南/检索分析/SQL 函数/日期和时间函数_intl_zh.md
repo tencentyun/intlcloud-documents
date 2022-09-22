@@ -43,7 +43,7 @@ histogram(time_column, interval)
 | 参数        | 说明                                                         |
 | ----------- | ------------------------------------------------------------ |
 | time_column | 时间列（KEY），例如 \_\_TIMESTAMP\_\_。该列的值必须为毫秒的 LONG 类型 UNIX 时间戳或 TIMESTAMP 类型的日期时间表达式。</br>如果时间列不符合上述要求，可以使用 cast 函数将 ISO8601 格式的时间字符串转换为 TIMESTAMP 类型，例如`cast('2020-08-19T03:18:29.000Z' as timestamp)`，或使用 [date_parse](#date_parse) 函数转换其他自定义类型时间字符串。</br>时间列使用 TIMESTAMP 时，其对应的日期时间表达式需要为 UTC+0 时区。如果日期时间表达式本身为其他时区，需通过计算调整为 UTC+0 时区。例如原始时间为北京时间（UTC+8）时，使用`cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour`进行调整。 |
-| interval    | 时间间隔，支持单位为 SECOND（秒）、MINUTE（分）、HOUR（小时）、DAY（天）、MONTH（月）、YEAR（年）。例如时间间隔5分钟，即 INTERVAL 5 MINUTE。 |
+| interval    | 时间间隔，支持单位为 SECOND（秒）、MINUTE（分）、HOUR（小时）、DAY（天）。例如时间间隔5分钟，即 INTERVAL 5 MINUTE。 |
 
 **示例**
 
@@ -52,7 +52,6 @@ histogram(time_column, interval)
 ```
 * | select histogram(__TIMESTAMP__, INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
 ```
-
 
 
 
@@ -218,7 +217,6 @@ Format 说明：
 | %a     | 星期的缩写。例如 Sun、Sat。                             |
 | %b     | 月份的缩写。例如 Jan、Dec。                             |
 | %c     | 月份。数值类型，取值范围为1 - 12。                      |
-| %D     | 每月的第几天。需加上后缀，例如 0th、1st、2nd、3rd。     |
 | %d     | 每月的第几天。十进制格式，取值范围为01 - 31。           |
 | %e     | 每月的第几天。十进制格式，取值范围为1 - 31。            |
 | %f     | 毫秒，取值范围0 - 000000。                              |
@@ -230,20 +228,17 @@ Format 说明：
 | %k     | 小时。取值范围为0 - 23。                                |
 | %l     | 小时。取值范围为1 - 12。                                |
 | %M     | 月份的英文表达，例如 January、December。                |
-| %m     | 月份的英文表达，例如 January、December。                |
+| %m     | 月份的数字表达，例如 01、02。                |
 | %p     | AM、PM。                                                |
 | %r     | 时间。12小时制，格式为`hh:mm:ss AM/PM`。                |
 | %S     | 秒。取值范围为00 - 59。                                 |
 | %s     | 秒。取值范围为00 - 59。                                 |
 | %T     | 时间。24小时制，格式为`hh:mm:ss`。                      |
-| %V     | 每年的第几周，星期日是一周的第一天。取值范围为01 - 53。 |
 | %v     | 每年的第几周，星期一是一周的第一天。取值范围为01 - 53。 |
 | %W     | 星期几的名称。例如 Sunday、Saturday。                   |
-| %w     | 一周的第几天，星期日为第0天。                           |
 | %Y     | 4位数的年份。例如2020。                                 |
 | %y     | 2位数的年份。例如20。                                   |
 | %%     | %的转义字符。                                           |
-| %x     | 任意值。                                                |
 
 **示例**
 
