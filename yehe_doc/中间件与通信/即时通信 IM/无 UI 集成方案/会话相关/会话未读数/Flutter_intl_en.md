@@ -84,7 +84,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().addAdvancedMsgListener(liste
 
 
 ### Group chat
-Call `markGroupMessageAsRead` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/markGroupMessageAsRead.html)) to clear the unread count of a specified group conversation.
+Call `markGroupMessageAsRead` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/markGroupMessageAsRead.html)) to clear the unread count of a specified group conversation.
 
 Sample code:
 

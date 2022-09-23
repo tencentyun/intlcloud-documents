@@ -84,7 +84,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().addAdvancedMsgListener(liste
 
 
 ### 群聊
-您可以调用 `markGroupMessageAsRead`([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/markGroupMessageAsRead.html)) 清空指定群聊会话的未读消息数。
+您可以调用 `markGroupMessageAsRead`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/markGroupMessageAsRead.html)) 清空指定群聊会话的未读消息数。
 
 示例代码如下：
 

@@ -5,18 +5,18 @@ Group member management includes pulling the member list, muting group members, 
 
 ## Getting the Group Member List
 
-Call `GroupGetMemberInfoList` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupGetMemberInfoList_com_tencent_imsdk_unity_types_GroupGetMemberInfoListParam_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_GroupGetMemberInfoListResult__)) to get the list of members in a specified group. This list contains the profile information of each member, such as user ID (`group_member_info_identifier`), group name card (`group_member_info_name_card`), profile photo (`group_member_info_face_url`), nickname (`group_member_info_nick_name`), and time for joining the group (`group_member_info_join_time`).
+Call `GroupGetMemberInfoList` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetMemberInfoList.html)) to get the list of members in a specified group. This list contains the profile information of each member, such as user ID (`group_member_info_identifier`), group name card (`group_member_info_name_card`), profile photo (`group_member_info_face_url`), nickname (`group_member_info_nick_name`), and time for joining the group (`group_member_info_join_time`).
 
 A group may have a large number of members (for example, more than 5,000). In this case, you can use the filter (`group_get_members_info_list_param_option`) and paged pull (`group_get_members_info_list_param_next_seq`) advanced features of the API for pulling the group member list.
 
 ### Filter (`filter`)
-When calling the `GroupGetMemberInfoList` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupGetMemberInfoList_com_tencent_imsdk_unity_types_GroupGetMemberInfoListParam_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_GroupGetMemberInfoListResult__)), you can specify to pull the list of the information of specified roles.
+When calling the `GroupGetMemberInfoList` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetMemberInfoList.html)), you can specify to pull the list of the information of specified roles.
 
-| Filter                           | Type                 |
-| -------------------------------- | --------------------- |
-| TIMGroupMemberRoleFlag.kTIMGroupMemberRoleFlag_All | Pull the list of the information of all the group members   |
-| TIMGroupMemberRoleFlag.kTIMGroupMemberRoleFlag_Owner | Pull the list of the information of the group owner       |
-| TIMGroupMemberRoleFlag.kTIMGroupMemberRoleFlag_Admin |  Pull the list of the information of the group admin   |
+| Filter                                                | Type                                                       |
+| ----------------------------------------------------- | ---------------------------------------------------------- |
+| TIMGroupMemberRoleFlag.kTIMGroupMemberRoleFlag_All    | Pull the list of the information of all the group members  |
+| TIMGroupMemberRoleFlag.kTIMGroupMemberRoleFlag_Owner  | Pull the list of the information of the group owner        |
+| TIMGroupMemberRoleFlag.kTIMGroupMemberRoleFlag_Admin  | Pull the list of the information of the group admin        |
 | TIMGroupMemberRoleFlag.kTIMGroupMemberRoleFlag_Member | Pull the list of the information of ordinary group members |
 
 Sample code:
@@ -78,12 +78,12 @@ TIMResult res = TencentIMSDK.GroupGetMemberInfoList(param, (int code, string des
 ## Muting
 
 ### Muting a specified group member
-The group owner or admin can call `GroupModifyMemberInfo` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyMemberInfo_com_tencent_imsdk_unity_types_GroupModifyMemberInfoParam_com_tencent_imsdk_unity_callback_NullValueCallback_)) to mute a specified group member and set the muting period in seconds. The muting information is stored in the `group_member_info_shutup_time` attribute of the group member.
+The group owner or admin can call `GroupModifyMemberInfo` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyMemberInfo.html)) to mute a specified group member and set the muting period in seconds. The muting information is stored in the `group_member_info_shutup_time` attribute of the group member.
 
-After a group member is muted, all the group members (including the muted member) will receive the `GroupTipsEventCallback` callback ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html)).
+After a group member is muted, all the group members (including the muted member) will receive the `GroupTipsEventCallback` callback ([c#](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html)).
 
 ### Muting the entire group
-The group owner or admin can also call the `GroupModifyGroupInfo` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyGroupInfo_com_tencent_imsdk_unity_types_GroupModifyInfoParam_com_tencent_imsdk_unity_callback_NullValueCallback_)) to mute the entire group by setting the `group_modify_info_param_is_shutup_all` attribute to `true`. The entire group can be muted for an unlimited period of time and needs to be unmuted by changing `group_modify_info_param_is_shutup_all` to `false`.
+The group owner or admin can also call the `GroupModifyGroupInfo` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyGroupInfo.html)) to mute the entire group by setting the `group_modify_info_param_is_shutup_all` attribute to `true`. The entire group can be muted for an unlimited period of time and needs to be unmuted by changing `group_modify_info_param_is_shutup_all` to `false`.
 
 > ? Only the group owner can mute the admin.
 
@@ -119,11 +119,11 @@ TIMResult res = TencentIMSDK.GroupModifyGroupInfo(param, (int code, string desc,
 
 [](id:kickGroupMember)
 ## Removing a Group Member
-The group owner or admin calls the `GroupDeleteMember` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupDeleteMember_com_tencent_imsdk_unity_types_GroupDeleteMemberParam_com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_GroupDeleteMemberResult___)) to remove a specified ordinary group member from the group.
+The group owner or admin calls the `GroupDeleteMember` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupDeleteMember.html)) to remove a specified ordinary group member from the group.
 
-After the ordinary group member is removed, all the members (including the removed member) will receive the `GroupTipsEventCallback` callback ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html)).
+After the ordinary group member is removed, all the members (including the removed member) will receive the `GroupTipsEventCallback` callback ([c#](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html)).
 
-As an audio-video group (AVChatRoom) can be joined freely, there is no API for removing a group member from an audio-video group (AVChatRoom). You can use `GroupModifyMemberInfo` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyMemberInfo_com_tencent_imsdk_unity_types_GroupModifyMemberInfoParam_com_tencent_imsdk_unity_callback_NullValueCallback_)) to mute a specified member to implement similar controls.
+As an audio-video group (AVChatRoom) can be joined freely, there is no API for removing a group member from an audio-video group (AVChatRoom). You can use `GroupModifyMemberInfo` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyMemberInfo.html)) to mute a specified member to implement similar controls.
 
 > ? Only the group owner can remove the admin from the group.
 
@@ -147,7 +147,7 @@ TIMResult res = TencentIMSDK.GroupDeleteMember(param, (int code, string desc, Li
 
 
 ## Setting an Admin
-The group owner can call `GroupModifyMemberInfo` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyMemberInfo_com_tencent_imsdk_unity_types_GroupModifyMemberInfoParam_com_tencent_imsdk_unity_callback_NullValueCallback_)) to set a group member in a public group (Public) or meeting group (Meeting) as the admin.
+The group owner can call `GroupModifyMemberInfo` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyMemberInfo.html)) to set a group member in a public group (Public) or meeting group (Meeting) as the admin.
 
 An ordinary member set as the admin has the admin permission to perform the following operations:
 * Modify the basic group profile
@@ -157,7 +157,7 @@ An ordinary member set as the admin has the admin permission to perform the foll
 
 For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
-After an ordinary member is set/unset as the admin, all the members (including the ordinary member) will receive the `GroupTipsEventCallback` callback ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html)).
+After an ordinary member is set/unset as the admin, all the members (including the ordinary member) will receive the `GroupTipsEventCallback` callback ([c#](https://comm.qq.com/im/doc/unity/en/callback/GroupTipsEventCallback.html)).
 
 Sample code:
 
@@ -179,7 +179,7 @@ TIMResult res = TencentIMSDK.GroupModifyMemberInfo(param, (int code, string desc
 [](id:transfer)
 
 ## Transferring the Group Ownership
-The group owner can call `GroupModifyMemberInfo` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyMemberInfo_com_tencent_imsdk_unity_types_GroupModifyMemberInfoParam_com_tencent_imsdk_unity_callback_NullValueCallback_)) to transfer the group ownership to a group member.
+The group owner can call `GroupModifyMemberInfo` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyMemberInfo.html)) to transfer the group ownership to a group member.
 
 
 Sample code:
@@ -201,7 +201,7 @@ TIMResult res = TencentIMSDK.GroupModifyMemberInfo(param, (int code, string desc
 
 
 ## Getting the Number of Online Group Members
-Call `GroupGetOnlineMemberCount` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupGetOnlineMemberCount_System_String_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_GroupGetOnlineMemberCountResult__)) to get the number of online group members.
+Call `GroupGetOnlineMemberCount` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetOnlineMemberCount.html)) to get the number of online group members.
 
 > ?
 > 1. Currently, only the number of online members in an audio-video group (AVChatRoom) can be obtained.
