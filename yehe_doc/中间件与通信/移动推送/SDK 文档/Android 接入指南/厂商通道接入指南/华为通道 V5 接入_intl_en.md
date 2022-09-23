@@ -141,7 +141,7 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 
 ## Code Obfuscation
 1. Add the following obfuscation rules in the `proguard-rules.pro` file at the application project level.
-```plaintext
+```
 -ignorewarnings
 -keepattributes *Annotation* 
 -keepattributes Exceptions 
