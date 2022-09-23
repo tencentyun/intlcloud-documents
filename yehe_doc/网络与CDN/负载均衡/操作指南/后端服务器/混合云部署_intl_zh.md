@@ -1,5 +1,5 @@
 在混合云部署的场景中，可以使用负载均衡直接绑定云下本地数据中心（IDC）内 IP，实现跨 VPC 与 IDC 之间的后端云服务器的绑定。
-目前该功能处于内测阶段，如需体验，请提交 [内测申请](https://intl.cloud.tencent.com/apply/p/mzjxboiv2yq)。
+目前该功能处于内测阶段，如果您需要体验该功能，境内跨地域绑定请通过 [内测申请](https://intl.cloud.tencent.com/apply/p/mzjxboiv2yq)，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
 
 ## 方案优势
 - 快速搭建混合云，无缝连接云上云下，负载均衡可将请求同时转发至云上 VPC 内云服务器和云下 IDC 机房内云服务器。
@@ -11,10 +11,12 @@
 ## 限制条件
 - 跨网互联绑定云服务器暂不支持传统型负载均衡。
 - 该功能仅标准账户类型支持。若您无法确定账户类型，请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。
+- 仅 VPC 支持，基础网络不支持。
+- IPv4 和 IPv6 NAT64 版本的负载均衡实例支持该功能。IPv6 版本的实例需开启双栈混绑功能，开启后七层监听器可以同时绑定 IPv4 和 IPv6 的后端服务器，当七层监听器混绑 IPv4 IP 时，支持跨地域绑定2.0和混合云部署。
 - 跨地域绑定2.0和混合云部署，不支持[ 安全组默认放通](https://intl.cloud.tencent.com/document/product/214/14733)，请在后端服务器上放通 Client IP 和服务端口。
 - 跨地域绑定2.0和混合云部署不支持绑定其它负载均衡实例（即不支持 CLB 绑定 CLB ）。
-- 目前仅广州、深圳、上海、济南、杭州、北京、天津、成都、重庆、中国香港、新加坡、硅谷地域支持该功能。
-- TCP 和 TCP SSL 监听器需在 RS 上通过通用 TOA 获取源 IP，详情请参见 [TOA 模块加载方法](https://intl.cloud.tencent.com/document/product/608/18945)。
+- 目前仅广州、深圳、上海、济南、杭州、合肥、北京、天津、成都、重庆、中国香港、新加坡、硅谷地域支持该功能。
+- TCP 和 TCP SSL 监听器需在 RS 上通过通用 TOA 获取源 IP，详情请参见 [混合云部署场景下通过 TOA 获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/214/45530)。
 - HTTP 和 HTTPS 监听器需通过 X-Forwarded-For（XFF）获取源 IP。
 - UDP 监听器不支持获取源 IP。
 

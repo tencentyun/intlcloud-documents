@@ -1,5 +1,5 @@
 In hybrid cloud deployment scenarios, you can directly bind CLB instances to IPs in the local IDC off the cloud so as to bind them to real servers across VPCs and IDCs.
-This feature is currently in beta test. If you want to try it out, please [submit an application](https://intl.cloud.tencent.com/apply/p/mzjxboiv2yq).
+This feature is in beta test. To try it out, for cross-region binding in the Chinese mainland, [submit a ticket](https://intl.cloud.tencent.com/apply/p/mzjxboiv2yq); for cross-region binding outside the Chinese mainland, [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ## Solution Strengths
 - A hybrid cloud can be built quickly to seamlessly connect the environments in and off the cloud. CLB can forward requests to CVM instances in the in-cloud VPC and the off-cloud IDC at the same time.
@@ -11,10 +11,12 @@ This feature is currently in beta test. If you want to try it out, please [submi
 ## Limits
 - Cross-network CVM instance binding is currently not supported for classic CLB instances.
 - This feature is available only to bill-by-IP accounts. To check your account type, please see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
+- This feature is only supported by VPC, not by classic networks.
+- This feature is supported on IPv4 and IPv6 NAT64 CLB instances. The layer-7 IPv6 CLB instance needs to enable the dual-stack binding to bind the IPv4 and IPv6 CVM instances simultaneously for supporting cross-region binding 2.0 and hybrid cloud deployment.
 - Cross-region binding 2.0 and hybrid cloud deployment do not support [Allow Traffic by Default in security groups](https://intl.cloud.tencent.com/document/product/214/14733), for which you need to allow the client IP and service port on the real server.
 - CLB instances cannot be bound with each other in cross-region binding 2.0 and hybrid cloud deployment scenarios.
-- This feature is only available in Guangzhou, Shenzhen, Shanghai, Jinan, Hangzhou, Beijing, Tianjin, Chengdu, Chongqing, Hong Kong (China), Singapore and Silicon Valley.
-- TCP and TCP SSL listeners need to use TOA on the real server to get the source IP. For more information, please see [TOA Module Loading Method](https://intl.cloud.tencent.com/document/product/608/18945).
+- This feature is only available in Guangzhou, Shenzhen, Shanghai, Jinan, Hangzhou, Hefei, Beijing, Tianjin, Chengdu, Chongqing, Hong Kong (China), Singapore and Silicon Valley.
+- TCP and TCP SSL listeners need to use TOA on the real server to get the source IP. For more information, please see [Obtaining Real Client IPs via TOA in Hybrid Cloud Deployment](https://intl.cloud.tencent.com/document/product/214/45530).
 - HTTP and HTTPS listeners need to use `X-Forwarded-For` (XFF) to get the source IP.
 - UDP listeners cannot get the source IP.
 
@@ -48,5 +50,5 @@ This feature is currently in beta test. If you want to try it out, please [submi
 <img src="" width="60%"/>
 
 
-## Relevant Documentation
+## References
 [Cross-Region Binding 2.0 (New)](https://intl.cloud.tencent.com/document/product/214/38441)

@@ -1,12 +1,18 @@
 This document describes how the layer-4 (only TCP) CLB service obtains the real client IP through TOA in hybrid cloud deployment and NAT64 CLB scenarios.
 <dx-steps>
--[Load TOA](#load-toa)
--[Adapt the real server](#adapt-rs)
--[(Optional) Monitor TOA status](#monitor-toa)
+- [Enable TOA in the console](#loadopentoa)
+- [Load TOA](#load-toa)
+- [Adapt the real server](#adapt-rs)
+- [(Optional) Monitor TOA status](#monitor-toa)
 </dx-steps>
 
->?Layer-4 (TCP) CLB can obtain the real client IP through TOA, while Layer-4 (UDP) and layer-7 (HTTP/HTTPS) CLB cannot.
+>?
+>- Only the Beijing region supports obtaining the real client source IP via TOA.
+>- Layer-4 (TCP) CLB can obtain the real client source IP via TOA, while Layer-4 (UDP) and layer-7 (HTTP/HTTPS) CLB cannot.
+>- This feature is in beta test. To try it out, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1068&radio_title=%E9%85%8D%E9%A2%9D/%E7%99%BD%E5%90%8D%E5%8D%95&queue=96&scene_code=41669&step=2).
 >
+
+
 ## Use Cases
 ### Hybrid cloud deployment
 In [hybrid cloud deployment](https://intl.cloud.tencent.com/document/product/214/38442) scenarios, IPs of the IDC and VPC may overlap with each other, so an SNAT IP is required. For the server, the real client IP is invisible, and it needs to be obtained through TOA.
@@ -32,6 +38,13 @@ In this case, the real client IP can be obtained through TOA, that is, the TCP p
  - Tencent Cloud TOA is embedded in TencentOS and can be used to obtain the real source IP in hybrid cloud deployment scenarios. If the server is run on TencentOS and deployed in a hybrid cloud, you can directly execute the command `modprobe toa` to load TOA. If the server is run on Linux, Linux TOA should be used instead.
 :::
 </dx-accordion>
+
+## Enable TOA in the console[](id:loadopentoa)
+1. Create a NAT64 CLB instance. For more information, see [Creating IPv6 NAT64 CLB Instances](https://intl.cloud.tencent.com/document/product/214/34556).
+2. Log in to the [CLB console](https://console.cloud.tencent.com/clb) to create a TCP listener. For more information, see [Configuring TCP Listener](https://intl.cloud.tencent.com/document/product/214/32517).
+3. Enable TOA in the "Create listener " window.
+![]()
+
 
 
 
@@ -250,12 +263,10 @@ if (ret == 0) {  
 
 ## [(Optional) Monitor TOA Status](id:monitor-toa)
 To ensure execution stability, this kernel module allows you to monitor status. After inserting the `toa.ko` kernel module, you can monitor the TOA working status on the host of the container in either of the following ways.
-
 <dx-accordion>
-
 ::: Method 1: Check the IPv6 address stored in TOA
 Run the following command to check the IPv6 address stored in TOA.
-- Executing this command may degrade performance. Please proceed with caution.
+>!Executing this command may degrade performance. Please proceed with caution.
 
 ```
 cat /proc/net/toa_table
