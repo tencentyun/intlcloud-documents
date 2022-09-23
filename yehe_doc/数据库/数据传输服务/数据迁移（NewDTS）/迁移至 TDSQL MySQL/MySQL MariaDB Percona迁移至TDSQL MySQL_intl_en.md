@@ -105,13 +105,13 @@ GRANT INSERT, UPDATE, DELETE, DROP, SELECT, INDEX, ALTER, CREATE ON `__tencentdb
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. In this scenario, select **MySQL**.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. In this scenario, select <b>MySQL</b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. In this scenario, select **TDSQL for MySQL**.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. In this scenario, select <b>TDSQL for MySQL</b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -137,17 +137,17 @@ GRANT INSERT, UPDATE, DELETE, DROP, SELECT, INDEX, ALTER, CREATE ON `__tencentdb
 <td rowspan=8>Source Database Settings</td>
 <td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select **Others**. For a third-party cloud database, select the corresponding service provider. <br>In this scenario, select **Others** (with a local self-built database as an example).</td></tr>
+<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select <b>Others</b>. For a third-party cloud database, select the corresponding service provider. <br>In this scenario, select <b>Others</b> (with a local self-built database as an example).</td></tr>
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Public Network**. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Public Network</b>. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
 <li>VPN Access: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1037">VPN Connections</a>.</li>
 <li>Database: The source database is a TencentDB instance.</li>
-<li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li></ul>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions.</td></tr>
+<li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li></ul>For a third-party cloud database, you can select <b>Public Network</b> generally or select <b>VPN Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions.</td></tr>
 <tr>
 <td>Host Address</td><td>IP address or domain name for accessing the source MySQL database.</td></tr>
 <tr>
@@ -162,7 +162,7 @@ GRANT INSERT, UPDATE, DELETE, DROP, SELECT, INDEX, ALTER, CREATE ON `__tencentdb
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select **Database**.</td></tr>
+<td>Access Type</td><td>Select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the target TDSQL for MySQL instance ID.</td></tr>
 <tr>
@@ -187,7 +187,7 @@ GRANT INSERT, UPDATE, DELETE, DROP, SELECT, INDEX, ALTER, CREATE ON `__tencentdb
 <li>Specified objects: Migrate specified objects.</li></ul> </td></tr>
 <tr>
 <td>Specified objects</td>
-<td>Select the objects to be migrated in **Source Database Object** and move them to the **Selected Object** box.</td></tr>
+<td>Select the objects to be migrated in <b>Source Database Object</b> and move them to the <b>Selected Object</b> box.</td></tr>
 </tbody></table>
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
 If the verification fails, fix the problem as instructed in [Check Item Overview](https://intl.cloud.tencent.com/document/product/571/42551) and initiate the verification again.
