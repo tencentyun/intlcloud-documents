@@ -117,13 +117,13 @@ GRANT SELECT ON `mysql`.* TO 'migration account'@'%';
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. In this scenario, select **MySQL**.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. In this scenario, select <b>MySQL<b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. In this scenario, select **TDSQL-C for MySQL**.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. In this scenario, select <b>TDSQL-C for MySQL</b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -149,17 +149,17 @@ GRANT SELECT ON `mysql`.* TO 'migration account'@'%';
 <td rowspan=8>Source Database Settings</td>
 <td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select **Others**. For a third-party cloud database, select the corresponding service provider. In this scenario, select **Others** (with a self-built database as an example).</td></tr>
+<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select <b>Others</b>. For a third-party cloud database, select the corresponding service provider. In this scenario, select <b>Others</b> (with a self-built database as an example).</td></tr>
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
  <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Public Network**.
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Public Network</b>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://cloud.tencent.com/document/product/216">Direct Connect</a>. If you select this type, you need to configure VPN-IDC interconnection as instructed in <a href="https://intl.cloud.tencent.com/document/product/571/42651">Direct Connect or VPN Access: Configuring VPN-IDC Interconnection</a>.</li>
 <li>VPN Access: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1037">VPN Connections</a>. If you select this type, you need to configure VPN-IDC interconnection as instructed in <a href="https://intl.cloud.tencent.com/document/product/571/42651">Direct Connect or VPN Access: Configuring VPN-IDC Interconnection</a>.</li>
 <li>Database: The source database is a TencentDB instance.</li>
-<li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>. If you select this type, you need to configure VPC-IDC interconnection as instructed in <a href="https://intl.cloud.tencent.com/document/product/571/42650">CCN Access: Configuring VPC-IDC Interconnection Through CCN</a>. </li></ul>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions.</td></tr>
+<li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>. If you select this type, you need to configure VPC-IDC interconnection as instructed in <a href="https://intl.cloud.tencent.com/document/product/571/42650">CCN Access: Configuring VPC-IDC Interconnection Through CCN</a>. </li></ul>For a third-party cloud database, you can select <b>Public Network</b> generally or select <b>VPN Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions.</td></tr>
 <tr>
 <td>Host Address</td><td>IP address or domain name for accessing the source MySQL database.</td></tr>
 <tr>
@@ -174,7 +174,7 @@ GRANT SELECT ON `mysql`.* TO 'migration account'@'%';
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select **Database**.</td></tr>
+<td>Access Type</td><td>Select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the target TDSQL-C for MySQL instance ID.</td></tr>
 <tr>
@@ -195,12 +195,12 @@ GRANT SELECT ON `mysql`.* TO 'migration account'@'%';
 <td><ul><li>Structural migration: Structured data such as databases and tables in the database will be migrated. </li><li>Full migration: The entire database will be migrated. The migrated data will include only the existing data from the source database when the task is started, not incremental data written to the source database after the task is started. </li><li>Full + Incremental migration: The migrated data will include the existing data from the source database when the task is started as well as the incremental data written to the source database after the task is started. If there are data writes to the source database during migration, and you want to smoothly migrate the data in a non-stop manner, select this type.</li></ul></td></tr>
 <tr>
 <td>Migration Object</td>
-<td>Select **Entire instance** if you need to migrate the entire instance, but system databases such as `information_schema`, `mysql`, `performance_schema`, and `sys` won't be migrated <br>Select specified object if you need to migrate specified tables.</td></tr>
+<td>Select <b>Entire instance</b> if you need to migrate the entire instance, but system databases such as `information_schema`, `mysql`, `performance_schema`, and `sys` won't be migrated <br>Select specified object if you need to migrate specified tables.</td></tr>
 <tr>
 <td>Migrate Account</td>
 <td>Select this feature if you want to migrate the account information of the source database.</td></tr><tr>
 <td>Selected Object</td>
-<td><ul><li>Database/Table mapping (renaming) is supported. Hover over a database or table name, click the displayed **Edit** icon, and enter a new name in the pop-up window.</li><li>When advanced objects are selected for migration, we recommend you not rename databases/tables; otherwise, migration of the advanced objects may fail.</li><li>Online DDL temp tables can be migrated (through tools such as gh-ost or pt-online-schema-change). Click **Edit** of a table and select a temp table name in the pop-up window. For more information, see <a href="https://cloud.tencent.com/document/product/571/75889">Migrating Online DDL Temp Table</a>.</li></ul></td></tr>
+<td><ul><li>Database/Table mapping (renaming) is supported. Hover over a database or table name, click the displayed <b>Edit</b> icon, and enter a new name in the pop-up window.</li><li>When advanced objects are selected for migration, we recommend you not rename databases/tables; otherwise, migration of the advanced objects may fail.</li><li>Online DDL temp tables can be migrated (through tools such as gh-ost or pt-online-schema-change). Click <b>Edit</b> of a table and select a temp table name in the pop-up window. For more information, see <a href="https://cloud.tencent.com/document/product/571/75889">Migrating Online DDL Temp Table</a>.</li></ul></td></tr>
 </tbody></table>
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
  - If the verification fails, fix the problem as instructed in [Check Item Overview](https://intl.cloud.tencent.com/document/product/571/42551) and initiate the verification again.
