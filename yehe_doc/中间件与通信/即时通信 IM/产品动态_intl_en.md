@@ -1,14 +1,225 @@
+
+## August 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td>SDK 6.6.3002 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+    <li> Supported marking a member of an audio-video group. </li>
+    <li> Supported removing a member from an audio-video group.</li>
+    <li> Fixed the occasional crash of the topic update callback for Android.</li>
+    <li> Fixed incorrect enumerated values of the notifications for group join option changes.</li> 
+    <li> Fixed the issue where no callback for `onTopicInfoChanged` was received after custom topic fields were set. </li>     
+    <li> Fixed the issue for Android where the network IP was requested repeatedly.</li>
+    <li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Native</a></li>    
+        </ul></td>
+    <td> August 18, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr> 
+<tr>
+    <td> SDK 2.22.0 release (Mini Program and Web)</td>
+<td data-sheets-value="" ><li>Supported packaging the uni-app into the native app for offline push. For details, see <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#registerPlugin">registerPlugin</a><br>
+<li>Supported getting the list of online members of an audio-video group. For details, see <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberList">getGroupMemberList </a> (Ultimate edition required).<br>
+<li>Supported blocking a member of an audio-video group. For details, see <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteGroupMember">deleteGroupMember</a> (Ultimate edition required).<br>
+Added <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setConversationCustomData"><li>setConversationCustomData </a>for setting custom conversation fields.<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34281">Web, Mini Program, and Uni-App</a></td></td>
+    <td> August 18, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+<tr>
+    <td> SDK 2.21.1 release (Mini Program and Web)</td>
+    <td>
+<li>Fixed the possible message duplication caused by <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#resendMessage">resendMessage.</a></li>
+<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34281">Web, Mini Program, and Uni-App.</a></td>
+    <td>August 3, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+</table>
+
+## July 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td>SDK 6.5.2816 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+    <li> Optimized the split zone selection policy for India.</li>
+    <li> Optimized the callback for the upload/download progress of a rich media message.</li>
+    <li> Optimized the compliance required for obtaining the device process information at an Android client.</li>
+    <li> Fixed the crash that occurred when several topics were created one after another.</li> 
+    <li> Fixed the occasional crash occurred in the Windows based packet sending.</li>     
+    <li> Fixed the crash that occurred in the Android v7a architecture when a friend in the blocked list is added again.</li>
+    <li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Native</a></li>    
+        </ul></td>
+    <td>July 29, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr> 
+<tr>
+    <td> SDK 2.21.0 release (Mini Program and Web)</td>
+    <td>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setSelfStatus">setSelfStatus</a> for setting a custom self status.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getUserStatus">getUserStatus</a> for querying the user status.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getUserStatus">getUserStatus</a> for subscribing the user status.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#unsubscribeUserStatus">unsubscribeUserStatus</a> for unsubscribing the user status.</li>
+<li>Added a feature of <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType">setMessageRemindType</a>: Sync the settings of group and topic message muting across clients and instances.</li>
+<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34281">Web, Mini Program, and Uni-App.</a></td>
+    <td>July 28, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+<tr>
+    <td>SDK 6.5.2803 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+	<li> Supported <a href="https://intl.cloud.tencent.com/document/product/1047/48853">Conversation Tag</a>.
+	<li> Supported <a href="https://intl.cloud.tencent.com/document/product/1047/48854">Conversation Grouping</a>.
+	<li> Supported custom conversation fields.</li>
+	<li> Added the advanced API <a href="https://cloud.tencent.com/document/product/269/75366#.E8.8E.B7.E5.8F.96.E4.BC.9A.E8.AF.9D.E5.88.97.E8.A1.A8.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3"> for getting the conversation list.</a>    
+	<li> Supported receiving broadcast messages of an audio-video group.</li> 
+	<li> Supported delivering the notifications for group join option changes.</li>     
+	<li> Supported synchronizing changes of the group message receiving option across clients.</li>
+	<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Native</a>.</li>    
+    </ul></td>
+    <td>July 15, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+</table>
+
+
+## June 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td>SDK 6.3.2619 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+	<li>Fixed the occasional crashes when the topic list was obtained.</li>
+	<li>Fixed the exception in getting the conversation list after a topic was deleted.</li>
+    </ul></td>
+    <td> 2022-06-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+<tr>
+    <td>SDK 2.20.1 release (web)</td>
+    <td><li>Aligned with the native SDK experience, where only group records are deleted and group conversations are not deleted after users leave or are kicked out of a non-audio-video group or the group is deleted.</li><li>Made <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteMessage">deleteMessage</a> unable to delete group system notifications; if a deletion attempt is made, an error message will be reported.</li><li>Supported HTTP for rich media messages of the on-premises deployment.</li><li>Fixed the issue where `lastMessage` of the one-to-one conversation was abnormally updated.</li></td>
+    <td> 2022-06-27 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+<tr>
+    <td>SDK 6.3.2609 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+	<li>Added the online status and custom status.</li>
+	<li>Supported pulling the list of up to 1,000 members of an audio-video group.</li>
+	<li>Supported @ all in a topic.</li>
+	<li>Fixed the cross-platform SQL execution error.</li> 
+	<li>Added community topic APIs for the cross-platform SDK.</li>
+	<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Native</a>.</li>
+    </ul></td>
+    <td> 2022-06-16 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+<tr>
+    <td> SDK 2.20.0 release (web)</td>
+    <td><ul style="margin:0">
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage">modifyMessage</a> to support message modification.
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping">getMessageListHopping</a> to pull the conversation message list by specified sequence or time range.
+<li>Supported read receipts for one or more one-to-one messages (supported only by the Ultimate edition).
+<li>Added the `isPeerRead` field for `lastMessage` of one-to-one conversation to indicate whether a message was read by the receiver.<li>For more information on updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34281">Web, Mini Program, and uni-app</a>.</li>
+    </ul></td>
+    <td> 2022-06-09 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+</table>
+
+
+## May 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td> SDK 2.19.0 release (web)</td>
+    <td><ul style="margin:0">
+<li>Supported topic creation in a <a href="https://intl.cloud.tencent.com/document/product/1047/33529">community</a> for stronger interactions.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getJoinedCommunityList">getJoinedCommunityList</a> to get the list of topic-enabled communities.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTopicInCommunity">createTopicInCommunity</a> to create a topic.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity">deleteTopicFromCommunity</a> to delete a topic.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile">updateTopicProfile</a> to set the topic profile.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList">getTopicList</a> to get the topic list.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Topic.html">Topic</a>, which indicates the topic object of a community and is used to describe topic attributes such as name, notice, introduction, and unread count.</li>
+<li>Added the <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED">TIM.EVENT.TOPIC_CREATED</a> event, which will be triggered when a topic is created.</li>
+<li>Added the <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED">TIM.EVENT.TOPIC_DELETED</a> event, which will be triggered when a topic is deleted.</li>
+<li>Added the <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED">TIM.EVENT.TOPIC_UPDATED</a> event, which will be triggered when the topic profile is updated.</li></li>
+    </ul></td>
+    <td> 2022-05-07 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+</table>
+
 ## April 2022
 <table>
 <tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
 </tr> 
 <tr>
-    <td> SDK 6.1.2166 release (enhanced edition)</td>
+    <td>SDK 6.2.2363 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+	<li>Added the community topic feature.</li>
+	<li>Added the message editing API.</li>
+	<li>Supported read receipts for one-to-one messages.</li>
+	<li>Optimized the network quality of Tencent Cloud International customers.</li> 
+	<li>Fixed the issue where a read message was displayed as unread after the application was uninstalled and reinstalled.</li>
+	<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Native</a>.</li>
+    </ul></td>
+    <td> 2022-04-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+<tr>
+    <td>SDK 2.18.2 release (Mini Program and Web)</td>
+    <td><ul style="margin:0">
+<li>Optimized the audio-video group user experience.</li><li>Fixed the issue where the statistics in certain use cases were inaccurate.</li><li>Fixed the issue where the result returned by the <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList">getGroupMessageReadMemberList</a> API was inaccurate.<li>For more information on updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34281">Web</a>.</li>
+    </ul></td>
+    <td> 2022-04-22 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+<td>Flutter SDK 3.9.3</td>
+<td><ul style="margin:0">
+  <li>Fixed the issue where the `boolValue` of a group muting tip was lost.
+    <ul>
+      <li>Added the `key(string)-boolValue(bool)` format in addition to the existing `key(string)-value(string)` in the callback for group information modification.</li>
+    </ul>
+  </li>
+  <li>Fixed the issue where the `nameCard` field of a conversation was not parsed by the instance.
+  <li>Added APIs for group message read receipts.
+    <ul>
+      <li>Added <a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessageReadReceipts.html">sendMessageReadReceptes</a> to send a read receipt for a group message.</li>
+      <li>Added <a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getMessageReadReceipts.html">getMessageReadReceptes</a> to get the read receipt for a sent message.</li>
+      <li>Added <a href="https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_message_manager/V2TIMMessageManager/getGroupMessageReadMemberList.html">getgroupMessageReadMemeberList</a> to get the list of group members who have or have not read a sent group message.</li>
+    </ul>
+  </li>
+  <li>Improved the Flutter for web.
+</ul>
+</td>
+<td>2022-04-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+<tr>
+    <td> SDK 2.18.0 release (Mini Program and Web)</td>
+    <td><ul style="margin:0">
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#sendMessageReadReceipt">sendMessageReadReceipt</a> to send a read receipt for a group message.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageReadReceiptList">getMessageReadReceiptList</a> to pull the list of read receipts for a group message.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList">getGroupMessageReadMemberList</a> to pull the list of group members who have or have not read a group message.</li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#findMessage">findMessage</a> to query local messages in a conversation by `messageID`.
+Aligned with the native IM experience of the conversation unread count change after a message is recalled.</li><li>For more information on updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34281"> Web </a>.</li>
+    </ul></td>
+    <td> 2022-04-08 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+
+
+
+<tr>
+    <td>SDK 6.1.2166 release (enhanced edition)</td>
     <td><ul style="margin:0">
 	<li> Fixed the issue where no data was returned when two or more userIDs were entered for `senderUserIDList` to search for local messages.</li>
 	<li> Fixed the issue where the SDK for Android called back only one message when a user recalled multiple messages with the RESTful API.</li>
 	<li> Fixed occasional crashes in quickly clearing unread messages for Windows.</li>
-	<li> Released the International Edition demo.</li>
+	<li> Released the International edition demo.</li>
 	<li> Switched the demo's offline push back to vendor channels.</li>
 	<li> Switched the demo's login with mobile number to the aPaaS service.</li>
 	<li> Fixed the failure of audio/video call sync across multiple clients.</li>
@@ -17,6 +228,8 @@
     <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
 </tr>
 </table>
+
+
 
 ## March 2022
 <table>
