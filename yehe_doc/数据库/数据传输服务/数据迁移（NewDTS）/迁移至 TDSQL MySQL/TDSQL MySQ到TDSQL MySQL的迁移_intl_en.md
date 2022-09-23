@@ -105,13 +105,13 @@ GRANT INSERT, UPDATE, DELETE, DROP, SELECT, INDEX, ALTER, CREATE ON `__tencentdb
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. In this scenario, select **TDSQL for MySQL**.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. In this scenario, select <b>TDSQL for MySQL<b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. In this scenario, select **TDSQL for MySQL**.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. In this scenario, select <b>TDSQL for MySQL<b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -139,7 +139,7 @@ GRANT INSERT, UPDATE, DELETE, DROP, SELECT, INDEX, ALTER, CREATE ON `__tencentdb
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select **Database**.</td></tr>
+<td>Access Type</td><td>Select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the source database.</td></tr>
 <tr>
@@ -152,7 +152,7 @@ GRANT INSERT, UPDATE, DELETE, DROP, SELECT, INDEX, ALTER, CREATE ON `__tencentdb
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select **Database**.</td></tr>
+<td>Access Type</td><td>Select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the target TDSQL for MySQL instance ID.</td></tr>
 <tr>
@@ -177,7 +177,7 @@ GRANT INSERT, UPDATE, DELETE, DROP, SELECT, INDEX, ALTER, CREATE ON `__tencentdb
 <li>Specified objects: Migrate specified objects.</li></ul> </td></tr>
 <tr>
 <td>Specified objects</td>
-<td>Select the objects to be migrated in **Source Database Object** and move them to the **Selected Object** box.</td></tr>
+<td>Select the objects to be migrated in <b>Source Database Object</b> and move them to the <b>Selected Object</b> box.</td></tr>
 </tbody></table>
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
 If the verification fails, fix the problem as instructed in [Check Item Overview](https://intl.cloud.tencent.com/document/product/571/42551) and initiate the verification again.
