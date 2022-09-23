@@ -15,9 +15,9 @@ You can set a custom ringtone by creating a notification channel.
 2. Call the Tencent Push Notification Service push API and specify the same notification channel `n_ch_id` for push. For a vendor channel, you must specify the vendor channel ID. That is, for Huawei channel, specify `hw_ch_id`; for Mi channel, specify `xm_ch_id`.
 
 >?
-- Currently, only Huawei, Mi, FCM, and Tencent Push Notification Service channels support custom ringtones.
-- For some vendor channels, before using the push channels of some vendors, you need to apply for notification classification permissions. For details and application steps, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
-- For Huawei push channel, if you select China as the data processing location when you apply for the Huawei push service for your application in the Huawei push console, the channel customization feature is no longer applicable to your application. That is, you cannot use the notification channel capability to customize notification ringtones. For more information, see [Notification Channel Customization](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122).
+>- Currently, only Huawei, Mi, FCM, and Tencent Push Notification Service channels support custom ringtones.
+>- For some vendor channels, before using the push channels of some vendors, you need to apply for notification classification permissions. For details and application steps, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+>- For Huawei push channel, if you select China as the data processing location when you apply for the Huawei push service for your application in the Huawei push console, the channel customization feature is no longer applicable to your application. That is, you cannot use the notification channel capability to customize notification ringtones. For more information, see [Notification Channel Customization](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122).
 
 ### How do I disable the session keep-alive feature of Tencent Push Notification Service?
 
@@ -200,10 +200,10 @@ The display effect after adaption is as shown below. [We recommend you draw an i
 
 
 >?
-- The small icon must be a PNG image with an alpha channel.
-- The background must be transparent.
-- Do not leave too much padding around the icon.
-- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
+>- The small icon must be a PNG image with an alpha channel.
+>- The background must be transparent.
+>- Do not leave too much padding around the icon.
+>- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
 
 
 ### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or earlier?
