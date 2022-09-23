@@ -15,9 +15,9 @@ b. 涉及 PendingIntent 的打开目标为 SDK 内部静态广播，且已添加
 2. 在 移动推送 推送 REST API 指定相同的通知渠道`n_ch_id `进行推送,厂商通道需指定厂商渠道 ID，如华为通道需指定`hw_ch_id`,小米通道需指定`xm_ch_id`。
 
 >?
-- 目前仅华为、小米、FCM 和 移动推送自建通道支持自定义铃声。
-- 部分厂商推送通道使用通道渠道需要先进行通知分类权限申请，相关说明和申请步骤可参见 [厂商通道消息分类功能使用说明](https://intl.cloud.tencent.com/document/product/1024/36250)。
-- 针对华为推送通道，如果您的应用在华为推送控制台申请开通华为推送服务时，选择的数据处理位置为中国区，自定义渠道功能将不再适用于您的应用，即不支持利用通知渠道能力进行通知铃声自定义，详见 [自定义通知渠道](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122)。
+>- 目前仅华为、小米、FCM 和 移动推送自建通道支持自定义铃声。
+>- 部分厂商推送通道使用通道渠道需要先进行通知分类权限申请，相关说明和申请步骤可参见 [厂商通道消息分类功能使用说明](https://intl.cloud.tencent.com/document/product/1024/36250)。
+>- 针对华为推送通道，如果您的应用在华为推送控制台申请开通华为推送服务时，选择的数据处理位置为中国区，自定义渠道功能将不再适用于您的应用，即不支持利用通知渠道能力进行通知铃声自定义，详见 [自定义通知渠道](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122)。
 
 ### 如何关闭 移动推送 的保活功能？
 
@@ -200,10 +200,10 @@ android:value="true" />
 
 
 >?
-- small icon 必须是带 Alpha 透明通道的 PNG 图片。
-- 背景必须是透明。
-- 周围不宜留过多 padding。
-- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
+>- small icon 必须是带 Alpha 透明通道的 PNG 图片。
+>- 背景必须是透明。
+>- 周围不宜留过多 padding。
+>- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
 
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
