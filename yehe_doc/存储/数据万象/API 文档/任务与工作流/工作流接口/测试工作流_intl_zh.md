@@ -1,6 +1,6 @@
 ## 功能描述
 
-删除工作流。
+测试工作流。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -25,18 +25,31 @@
 #### 请求示例
 
 ```plaintext
-DELETE /workflow/<WorkflowId> HTTP/1.1
+POST /triggerworkflow?workflowId=xxx&object=xxx HTTP/1.1
 Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
 Content-Length: <length>
 Content-Type: application/xml
+
 ```
+
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 >
+
+
+#### 请求参数
+
+| 名称       | 描述                | 类型   | 是否必选 |
+| :--------- | :------------------ | :----- | :------- |
+| workflowId | 需要触发的工作流 ID | String | 是       |
+| object     | 需要进行工作流处理的对象名称, 需要进行 url 编码  | String | 是       |
+| name       | 存量触发任务名称，支持中文、英文、数字、—和_，长度限制128字符，默认为空  | String    | 否    |
+
+
 
 #### 请求头
 
@@ -59,7 +72,7 @@ Content-Type: application/xml
 ```plaintext
 <Response>
     <RequestId>NjJmMWZmMzRfOTBmYTUwNjRfNjVmOF8x</RequestId>
-    <WorkflowId>A</WorkflowId>
+    <InstanceId>i6fc78ca77d6011eba0ac5254008618d9=</InstanceId>
 <Response>
 ```
 
@@ -71,10 +84,10 @@ Content-Type: application/xml
 
 Container 节点 Response 的内容：
 
-| 节点名称（关键字） | 父节点   | 描述              | 类型   |
-| :----------------- | :------- | :---------------- | :----- |
+| 节点名称（关键字） | 父节点   | 描述             | 类型   |
+| :----------------- | :------- | :--------------- | :----- |
 | RequestId          | Response | 请求的唯一 ID     | String |
-| WorkflowId         | Response | 被删除的工作流 ID | String |
+| InstanceId         | Response | 实例 ID           | String |
 
 #### 错误码
 
@@ -85,11 +98,12 @@ Container 节点 Response 的内容：
 #### 请求
 
 ```plaintext
-DELETE /workflow/we59a9648e62e48ffb25e4b41f3721799 HTTP/1.1
+POST /triggerworkflow?workflowId=we59a9648e62e48ffb25e4b41f3721799&object=test.mp4 HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
 Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 Content-Length: 0
 Content-Type: application/xml
+
 ```
 
 #### 响应
@@ -105,6 +119,6 @@ x-ci-request-id: NjJmMWZmMzRfOTBmYTUwNjRfNjVmOF8x
 
 <Response>
     <RequestId>NjJmMWZmMzRfOTBmYTUwNjRfNjVmOF8x</RequestId>
-    <WorkflowId>we59a9648e62e48ffb25e4b41f3721799</WorkflowId>
+    <InstanceId>i6fc78ca77d6011eba0ac5254008618d9=</InstanceId>
 <Response>
 ```
