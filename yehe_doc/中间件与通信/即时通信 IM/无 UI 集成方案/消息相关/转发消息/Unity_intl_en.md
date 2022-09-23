@@ -63,7 +63,7 @@ TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_Group,
 ### Receiving a merged message
 
 #### Adding a listener
-The receiver calls `AddRecvNewMsgCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_AddRecvNewMsgCallback_com_tencent_imsdk_unity_callback_RecvNewMsgCallback_com_tencent_imsdk_unity_callback_RecvNewMsgStringCallback_)) to add a message listener.
+The receiver calls `AddRecvNewMsgCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to add a message listener.
 We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
 
 Sample code:

@@ -4,7 +4,7 @@ The group profile refers to the information about the group, which can be [obtai
 [](id:getGroupInfo)
 
 ## Getting the Group Profile
-Call `GroupGetGroupInfoList` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupGetGroupInfoList_System_Collections_Generic_List_System_String__com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_GetGroupInfoResult___)) to get the group profile. This API supports passing in multiple `group_id_list` values at a time to batch get group profiles.
+Call `GroupGetGroupInfoList` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetGroupInfoList.html)) to get the group profile. This API supports passing in multiple `group_id_list` values at a time to batch get group profiles.
 
 Sample code:
 
@@ -21,19 +21,19 @@ TIMResult res = TencentIMSDK.GroupGetGroupInfoList(group_id_list, TIMReceiveMess
 
 ## Modifying the Group Profile
 
-Call `GroupModifyGroupInfo` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyGroupInfo_com_tencent_imsdk_unity_types_GroupModifyInfoParam_com_tencent_imsdk_unity_callback_NullValueCallback_)) to modify the group profile.
+Call `GroupModifyGroupInfo` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyGroupInfo.html)) to modify the group profile.
 
-If you have called `SetGroupTipsEventCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetGroupTipsEventCallback_com_tencent_imsdk_unity_callback_GroupTipsEventCallback_com_tencent_imsdk_unity_callback_GroupTipsEventStringCallback_)) to add a group event listener, after the group profile is modified, all the group members will receive the callback data.
+If you have called `SetGroupTipsEventCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetGroupTipsEventCallback.html)) to add a group event listener, after the group profile is modified, all the group members will receive the callback data.
 
 Member roles that can modify the group profile vary by group type as follows:
 
-| Group Type | Member Roles Allowed to Modify the **Basic Group Profile** |
-| --- | --- |
-| Work group (Work) | All group members |
-| Public group (Public)| Group owner and admin |
-| Meeting group (Meeting)| Group owner and admin |
-| Community (Community)| Group owner and admin |
-| Audio-video group (AVChatRoom)| Group owner |
+| Group Type                     | Member Roles Allowed to Modify the **Basic Group Profile** |
+| ------------------------------ | ---------------------------------------------------------- |
+| Work group (Work)              | All group members                                          |
+| Public group (Public)          | Group owner and admin                                      |
+| Meeting group (Meeting)        | Group owner and admin                                      |
+| Community (Community)          | Group owner and admin                                      |
+| Audio-video group (AVChatRoom) | Group owner                                                |
 
 Sample code:
 
@@ -53,15 +53,15 @@ TIMResult res = TencentIMSDK.GroupModifyGroupInfo(param, (int code, string desc,
 
 
 ## Setting the Group Message Receiving Option
-Any group member can call the `MsgSetGroupReceiveMessageOpt` API ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSetGroupReceiveMessageOpt_System_String_com_tencent_imsdk_unity_enums_TIMReceiveMessageOpt_com_tencent_imsdk_unity_callback_NullValueCallback_)) to change the group message receiving option.
+Any group member can call the `MsgSetGroupReceiveMessageOpt` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSetGroupReceiveMessageOpt.html)) to change the group message receiving option.
 
 `TIMReceiveMessageOpt` has the following options:
 
-| Message Receiving Option | Description |
-| --- | --- |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive | Messages will be received when the user is online, and push notifications will be received when the user is offline. |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive | No group messages will be received. |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Notify | Messages will be received when the user is online, and no push notifications will be received when the user is offline. |
+| Message Receiving Option                        | Description                                                                                                             |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive     | Messages will be received when the user is online, and push notifications will be received when the user is offline.    |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive | No group messages will be received.                                                                                     |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Notify  | Messages will be received when the user is online, and no push notifications will be received when the user is offline. |
 
 Different `TIMReceiveMessageOpt` options can be used to implement group message notification muting:
 
@@ -70,8 +70,8 @@ After the group message receiving option is set to `kTIMRecvMsgOpt_Not_Receive`,
 
 **Group messages will be received but will not be notified to the user, and a badge without the unread count will be displayed on the conversation list UI.**
 1. The group message receiving option is set to `kTIMRecvMsgOpt_Not_Notify`.
-2. When the receiver receives a new group message and needs to update the conversation list, it can get the unread count through `conv_unread_num` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.ConvInfo.html#com_tencent_imsdk_unity_types_ConvInfo_conv_unread_num)) in `ConvInfo` of the conversation.
-3. The receiver displays a badge rather than the unread count when identifying the message receiving option as `kTIMRecvMsgOpt_Not_Notify` based on the `conv_recv_opt` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.ConvInfo.html#com_tencent_imsdk_unity_types_ConvInfo_conv_recv_opt)) in `ConvInfo`.
+2. When the receiver receives a new group message and needs to update the conversation list, it can get the unread count through `conv_unread_num` ([c#](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convunreadnum)) in `ConvInfo` of the conversation.
+3. The receiver displays a badge rather than the unread count when identifying the message receiving option as `kTIMRecvMsgOpt_Not_Notify` based on the `conv_recv_opt` ([c#](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convrecvopt)) in `ConvInfo`.
 
 > ? As this method requires the unread count feature, it applies only to work groups (Work) and public groups (Public).
 

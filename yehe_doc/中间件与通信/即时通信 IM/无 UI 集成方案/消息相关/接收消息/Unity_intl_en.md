@@ -4,10 +4,10 @@
 
 ## Setting a Message Listener
 ### Adding a listener
-The receiver calls the `AddRecvNewMsgCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_AddRecvNewMsgCallback_com_tencent_imsdk_unity_callback_RecvNewMsgCallback_com_tencent_imsdk_unity_callback_RecvNewMsgStringCallback_)) to add a message listener. We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
+The receiver calls the `AddRecvNewMsgCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to add a message listener. We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
 
 ### Removing a listener
-To stop receiving messages, the receiver can call `RemoveRecvNewMsgCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_RemoveRecvNewMsgCallback)) to remove the message listener.
+To stop receiving messages, the receiver can call `RemoveRecvNewMsgCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to remove the message listener.
 
 ## Receiving a Text Message
 

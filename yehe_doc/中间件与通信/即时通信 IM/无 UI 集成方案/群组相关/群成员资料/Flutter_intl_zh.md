@@ -5,7 +5,7 @@
 
 ## 获取群成员资料
 
-您可以调用 `getGroupMembersInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupMembersInfo.html)) 获取群成员资料。该接口支持批量获取，您可以一次传入多个 `userID` 获取多个群成员的资料，从而提升网络传输效率。
+您可以调用 `getGroupMembersInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMembersInfo.html)) 获取群成员资料。该接口支持批量获取，您可以一次传入多个 `userID` 获取多个群成员的资料，从而提升网络传输效率。
 
 示例代码如下：
 
@@ -20,7 +20,7 @@ V2TimValueCallback<List<V2TimGroupMemberFullInfo>> memberInfos = await groupMana
 
 ## 修改群成员资料
 
-群主或管理员可以调用 `setGroupMemberInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setGroupMemberInfo.html)) 接口修改群成员的群名片（`nameCard`）、自定义字段（`customInfo`）等与群成员相关的资料。
+群主或管理员可以调用 `setGroupMemberInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberInfo.html)) 接口修改群成员的群名片（`nameCard`）、自定义字段（`customInfo`）等与群成员相关的资料。
 
 示例代码如下：
 

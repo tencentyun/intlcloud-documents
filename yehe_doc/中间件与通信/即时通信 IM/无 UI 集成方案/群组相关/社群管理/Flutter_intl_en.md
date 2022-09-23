@@ -13,8 +13,8 @@ A community is used to manage members. All its topics are shared among members, 
 
 You need to perform two steps to create a community group that supports topics:
 
-1. Create the `V2TIMGroupInfo` object ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_info/V2TimGroupInfo-class.html)) and set `groupType` to `Community` and `isSupportTopic` to `true`/`YES`.
-2. Call the `createGroup` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/createGroup.html)) to create a community.
+1. Create the `V2TIMGroupInfo` object ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html)) and set `groupType` to `Community` and `isSupportTopic` to `true`/`YES`.
+2. Call the `createGroup` API ([dart](https://comm.qq.c om/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createGroup.html)) to create a community.
 
 Sample code:
 
@@ -25,7 +25,7 @@ groupManager.createGroup(groupType: "Community", groupName: "Community",isSuppor
 
 
 ### Getting the list of joined communities
-Call `getJoinedCommunityList` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getJoinedCommunityList.html)) to get the list of joined topic-enabled communities.
+Call `getJoinedCommunityList` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedCommunityList.html)) to get the list of joined topic-enabled communities.
 
 Sample code:
 
@@ -46,40 +46,40 @@ Other features can be used in the same way as an ordinary group feature and invo
 <tr>
 <td rowspan="5">Community management</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#joinGroup">Joins a community</a></td>
-<td>joinGroup (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/joinGroup.html">dart</a>)</td>
+<td>joinGroup (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html">dart</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#quitGroup">Leaves a community</a></td>
-<td>quitGroup (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/quitGroup.html">dart</a>)</td>
+<td>quitGroup (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/quitGroup.html">dart</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#dismissGroup">Disbands a community</a></td>
-<td>dismissGroup (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/dismissGroup.html">dart</a>)</td>
+<td>dismissGroup (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/dismissGroup.html">dart</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#getGroupsInfo">Gets the community profile</a></td>
-<td>getGroupsInfo (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupsInfo.html">dart</a>)</td>
+<td>getGroupsInfo (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupsInfo.html">dart</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#setGroupInfo">Modifies the community profile</a></td>
-<td>setGroupInfo (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setGroupInfo.html">dart</a>)</td>
+<td>setGroupInfo (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html">dart</a>)</td>
 </tr>
 <tr>
 <td rowspan="4">Community group member management</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#getGroupMemberList">Gets the list of community members</a></td>
-<td>getGroupMemberList (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupMemberList.html">dart</a>)</td>
+<td>getGroupMemberList (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html">dart</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#getGroupMembersInfo">Gets the profiles of the community members</a></td>
-<td>getGroupMembersInfo (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupMembersInfo.html">dart</a>)</td>
+<td>getGroupMembersInfo (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMembersInfo.html">dart</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#setGroupMemberInfo">Modifies the profile of a community member</a></td>
-<td>setGroupMemberInfo (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setGroupMemberInfo.html">dart</a>)</td>
+<td>setGroupMemberInfo (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberInfo.html">dart</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#kickGroupMember">Removes a member from the community</a></td>
-<td>kickGroupMember (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/kickGroupMember.html">dart</a>)</td>
+<td>kickGroupMember (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/kickGroupMember.html">dart</a>)</td>
 </tr>
 </table>
 
@@ -89,8 +89,8 @@ Other features can be used in the same way as an ordinary group feature and invo
 ### Creating a topic
 
 You need to perform two steps to create a topic:
-1. Create the `V2TIMTopicInfo` object ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_V2_tim_topic_info/V2TimTopicInfo-class.html)).
-2. Call the `createTopicInCommunity` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/createTopicInCommunity.html)) to create a topic.
+1. Create the `V2TIMTopicInfo` object ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html)).
+2. Call the `createTopicInCommunity` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createTopicInCommunity.html)) to create a topic.
 
 Sample code:
 
@@ -104,7 +104,7 @@ groupManager.createTopicInCommunity(groupID: "groupID", topicInfo: V2TimTopicInf
 
 
 ### Deleting a topic
-Call the `deleteTopicFromCommunity` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/deleteTopicFromCommunity.html)) to delete a topic.
+Call the `deleteTopicFromCommunity` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/deleteTopicFromCommunity.html)) to delete a topic.
 
 Sample code:
 
@@ -118,8 +118,8 @@ groupManager.deleteTopicFromCommunity(groupID: "",topicIDList:["topicID"]);
 ### Modifying the information of a topic
 You need to perform two steps to modify the information of a topic:
 
-1. Create the `V2TIMTopicInfo` object ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_V2_tim_topic_info/V2TimTopicInfo-class.html)) and set the fields to be modified.
-2. Call the `setTopicInfo` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setTopicInfo.html)) to modify the information of a topic.
+1. Create the `V2TIMTopicInfo` object ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html)) and set the fields to be modified.
+2. Call the `setTopicInfo` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setTopicInfo.html)) to modify the information of a topic.
 
 Sample code:
 
@@ -133,7 +133,7 @@ groupManager.setTopicInfo(topicInfo:V2TimTopicInfo.fromJson({
 
 
 ### Getting the topic list[](id:getTopicList)
-Call the `getTopicInfoList` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getTopicInfoList.html)) to get the topic list.
+Call the `getTopicInfoList` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getTopicInfoList.html)) to get the topic list.
 - If `topicIDList` is an empty array, the list of all topics in the community will be obtained.
 - If `topicIDList` contains the IDs of specified topics, the list of the specified topics will be obtained.
 
@@ -151,14 +151,14 @@ The community mode (a new powerful tool for entertainment collaboration) support
 
 
 
-The [`customInfo`](https://comm.qq.com/im/doc/flutter/api/keyClass/group/v2timgroupinfo.html#customInfo) of a community saves the topic group list of the community, while the [`customString`](https://comm.qq.com/im/doc/flutter/api/keyClass/topic/v2timtopicinfo.html#customstring) field of each topic stores the topic group.
+The [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) of a community saves the topic group list of the community, while the [`customString`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html#customstring) field of each topic stores the topic group.
 
-- When a community is loaded, the [`customInfo`](https://comm.qq.com/im/doc/flutter/api/keyClass/group/v2timgroupinfo.html#customInfo) field for the topic group list of the community (group) is used to display the group list. We recommend you store the field in the `List<String>` format.
-- To get the topics in each group, traverse the topic list and get the group of each topic through the [`customString`](https://comm.qq.com/im/doc/flutter/api/keyClass/topic/v2timtopicinfo.html#customstring) of [`V2TimTopicInfo`](https://comm.qq.com/im/doc/flutter/api/keyClass/topic/v2timtopicinfo.html#customstring).
+- When a community is loaded, the [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) field for the topic group list of the community (group) is used to display the group list. We recommend you store the field in the `List<String>` format.
+- To get the topics in each group, traverse the topic list and get the group of each topic through the [`customString`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html#customstring) of [`V2TimTopicInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html#customstring).
 
 >? 
 >
-> You can customize the `key` value of the [`customInfo`](https://comm.qq.com/im/doc/flutter/api/keyClass/group/v2timgroupinfo.html#customInfo) field for the topic group list of the community (group).
+> You can customize the `key` value of the [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) field for the topic group list of the community (group).
 > The following sample code names it `categoryList`.
 
 #### Getting the list of groups in the community
@@ -232,7 +232,7 @@ addCategoryForTopic(String groupID, String categoryName) {
 Use the `customString` after [getting the topic list](#getTopicList).
 
 ### Listening for a topic callback
-In `V2TIMGroupListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener-class.html)), topic callback methods such as `onTopicCreated`, `onTopicDeleted`, and `onTopicInfoChanged` are added to listen for topic events. 
+In `V2TIMGroupListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimGroupListener.html)), topic callback methods such as `onTopicCreated`, `onTopicDeleted`, and `onTopicInfoChanged` are added to listen for topic events. 
 
 Sample code:
 
@@ -266,27 +266,27 @@ Topic messages can be used in the same way as ordinary messages and involve the 
 </tr>
 <tr>
 <td>Sends a message</td>
-<td>sendMessage (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html">dart</a>)</td>
+<td>sendMessage (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html">dart</a>)</td>
 <td>Set `groupID` to the topic ID.</td>
 </tr>
 <tr>
 <td>Receives a message</td>
-<td>The `onRecvNewMessage` method in `V2TIMAdvancedMsgListener` (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimAdvancedMsgListener/enum_V2TimAdvancedMsgListener-library.html">dart</a>)</td>
+<td>The `onRecvNewMessage` method in `V2TIMAdvancedMsgListener` (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimAdvancedMsgListener.html">dart</a>)</td>
 <td>Set `groupID` in the message to the topic ID.</td>
 </tr>
 <tr>
 <td>Marks a message as read</td>
-<td>markGroupMessageAsRead (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/markGroupMessageAsRead.html">dart</a></td>
+<td>markGroupMessageAsRead (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/markGroupMessageAsRead.html">dart</a></td>
 <td>Set `groupID` to the topic ID.</td>
 </tr>
 <tr>
 <td>Gets historical messages</td>
-<td>getGroupHistoryMessageList (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupHistoryMessageList.html">dart</a></td>
+<td>getGroupHistoryMessageList (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getGroupHistoryMessageList.html">dart</a></td>
 <td>Set `groupID` to the topic ID.</td>
 </tr>
 <tr>
 <td>Recalls a message</td>
-<td>revokeMessage (<a href="https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/revokeMessage.html">dart</a>)</td>
+<td>revokeMessage (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/revokeMessage.html">dart</a>)</td>
 <td>Set `groupID` to the topic ID.</td>
 </tr>
 </table>

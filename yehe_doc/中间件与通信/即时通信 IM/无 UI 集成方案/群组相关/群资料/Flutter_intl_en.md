@@ -4,7 +4,7 @@ The group profile refers to the information about the group, which can be obtain
 [](id:getGroupsInfo)
 
 ## Getting the Group Profile
-Call `getGroupsInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getGroupsInfo.html)) to get the group profile. This API supports passing in multiple `groupID` values at a time to batch get group profiles.
+Call `getGroupsInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupsInfo.html)) to get the group profile. This API supports passing in multiple `groupID` values at a time to batch get group profiles.
 
 Sample code:
 
@@ -19,19 +19,19 @@ V2TimValueCallback<List<V2TimGroupInfoResult>> groupinfos = await groupManager.g
 
 ## Modifying the Group Profile
 
-Call `setGroupInfo` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setGroupInfo.html)) to modify the group profile.
+Call `setGroupInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html)) to modify the group profile.
 
-If you have called `addGroupListener` to add a group event listener in advance, after the group profile is modified, all the group members will receive the `onGroupInfoChanged` callback ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimGroupListener/V2TimGroupListener/onGroupInfoChanged.html)).
+If you have called `addGroupListener` to add a group event listener in advance, after the group profile is modified, all the group members will receive the `onGroupInfoChanged` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupInfoChangedCallback.html)).
 
 Member roles that can modify the group profile vary by group type as follows:
 
-| Group Type | Member Roles Allowed to Modify the **Basic Group Profile** |
-| --- | --- |
-| Work group (Work) | All group members |
-| Public group (Public)| Group owner and admin |
-| Meeting group (Meeting)| Group owner and admin |
-| Community (Community)| Group owner and admin |
-| Audio-video group (AVChatRoom)| Group owner |
+| Group Type                     | Member Roles Allowed to Modify the **Basic Group Profile** |
+| ------------------------------ | ---------------------------------------------------------- |
+| Work group (Work)              | All group members                                          |
+| Public group (Public)          | Group owner and admin                                      |
+| Meeting group (Meeting)        | Group owner and admin                                      |
+| Community (Community)          | Group owner and admin                                      |
+| Audio-video group (AVChatRoom) | Group owner                                                |
 
 Sample code:
 
@@ -50,15 +50,15 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 
 ## Setting the Group Message Receiving Option
-Any group member can call the `setGroupReceiveMessageOpt` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/setGroupReceiveMessageOpt.html)) to change the group message receiving option.
+Any group member can call the `setGroupReceiveMessageOpt` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/setGroupReceiveMessageOpt.html)) to change the group message receiving option.
 
 `V2TIMReceiveMessageOpt` has the following options:
 
-| Message Receiving Option | Description |
-| --- | --- |
-| ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE | Messages will be received when the user is online, and push notifications will be received when the user is offline.|
-| ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE | No group messages will be received.|
-| ReceiveMsgOptEnum.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and no push notifications will be received when the user is offline.|
+| Message Receiving Option                           | Description                                                                                                             |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and push notifications will be received when the user is offline.    |
+| ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE        | No group messages will be received.                                                                                     |
+| ReceiveMsgOptEnum.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and no push notifications will be received when the user is offline. |
 
 Different `V2TIMReceiveMessageOpt` options can be used to implement group message notification muting:
 
@@ -67,8 +67,8 @@ With the group message receiving option set to `V2TIM_NOT_RECEIVE_MESSAGE`, no g
 
 **Group messages will be received but will not be notified to the user, and a badge without the unread count will be displayed on the conversation list UI.**
 1. The group message receiving option is set to `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE`.
-2. When the receiver receives a new group message and needs to update the conversation list, it can get the unread count through `unreadCount` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_conversation/V2TimConversation/unreadCount.html)) in `V2TIMConversation`.
-3. The receiver displays a badge rather than the unread count when identifying the group message receiving option as `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE` based on the `recvOpt` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_info/V2TimGroupInfo/recvOpt.html)](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a851651878491c64d73aa83131134e6cc)) of `V2TIMConversation`.
+2. When the receiver receives a new group message and needs to update the conversation list, it can get the unread count through `unreadCount` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#unreadcount)) in `V2TIMConversation`.
+3. The receiver displays a badge rather than the unread count when identifying the group message receiving option as `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE` based on the `recvOpt` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#recvopt)) of `V2TIMConversation`.
 
 > ? As this method requires the unread count feature, it applies only to work groups (Work) and public groups (Public).
 
