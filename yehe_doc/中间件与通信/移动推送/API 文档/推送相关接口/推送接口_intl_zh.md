@@ -1,4 +1,4 @@
-## 接口说明
+- ## 接口说明
 
 **请求方式**：POST。
 
@@ -183,15 +183,13 @@ Android 平台具体字段如下表：
 | vibrate        | Integer | android | 1      | 否   | 是否使用震动：<li>0：没有震动</li><li>1：有震动</li>           |
 | lights         | Integer | android | 1      | 否   | 是否使用呼吸灯：<li>0：不使用呼吸灯</li><li>1：使用呼吸灯</li> |
 | clearable      | Integer | android | 1      | 否   | 通知栏是否可清除                                             |
-| icon_type      | Integer | android | 0      | 否   | 通知栏缩略图显示的是应用内图标还是上传图标：<li>0：应用内图标</li><li>1：上传图标</li> 仅 TPNS、FCM、华为、荣耀通道支持 |
-| icon_res       | String  | android | 无     | 否   | 上传的通知栏缩略图 url 地址，仅 TPNS、FCM、华为、荣耀通道支持。缩略图格式要求可参考 [富媒体通知文档](https://intl.cloud.tencent.com/document/product/1024/37858) |
+| icon_type      | Integer | android | 0      | 否   | 指定通知栏缩略图显示的是应用内图标还是网络资源图标 ：<li>0：应用内图标，仅对 TPNS 通道有效</li><li>1：网络资源图标，仅 TPNS、FCM、华为、荣耀通道支持 |
+| icon_res       | String  | android | 无     | 否   | 指定通知栏缩略图的具体图片资源 ：<li>当 icon_type = 0：填写 Android 应用内的图片资源文件名称（不带文件后缀），仅对 TPNS 通道有效</li><li>当前 icon_type = 1：填写缩略图 url 地址，缩略图格式要求可参见 [富媒体通知文档](https://intl.cloud.tencent.com/document/product/1024/37858)，仅 TPNS、FCM、华为、荣耀通道支持 |
 | style_id       | Integer | android | 1      | 否   | 设置是否覆盖指定编号的通知样式                               |
 | small_icon     | String  | android | 无     | 否   | 消息在状态栏显示的图标，若不设置，则显示应用图标             |
 | icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色 <li>仅 TPNS 通道有效</li> <li>需要使用 RGB 颜色的十进制值，例如 RGB 颜色 #01e240，请填入123456 </li> |
 | action         | Object  | android | 有     | 否   | 设置点击通知栏之后的行为，默认为打开 App，详情参考  [action 参数说明](#action) |
-| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）获取方式详见 [通知点击跳转-客户端获取参数](https://intl.cloud.tencent.com/document/product/1024/38354)<br><dx-alert infotype="explain" title="">
-华为官方通知：「2021年9月30日起停用V2协议」。TPNS 已将华为推送协议升级到V5，V5协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 Intent 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发。
-</dx-alert>|
+| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）获取方式详见 [通知点击跳转-客户端获取参数](https://intl.cloud.tencent.com/document/product/1024/38354)<br><dx-alert infotype="explain" title="">华为官方通知：「2021年9月30日起停用V2协议」。移动推送已将华为推送协议升级到V5，V5协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 Intent 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发。</dx-alert>|
 | show_type      | Integer | android | 2      | 否   | 应用前台时，是否展示通知 。 默认展示，仅对 TPNS 通道、FCM 通道有效 <li>1：不展示</li><li>2：展示</br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</li> |
 
 
@@ -263,7 +261,7 @@ Android 平台具体字段如下表：
 								"pf": 0  // PendingIntent的Flag属性
 						},
 						"browser": {
-								"url": "https://intl.cloud.tencent.com ", // 仅支持http、https
+								"url": "https://cloud.tencent.com ", // 仅支持http、https
 								"confirm": 1 // 是否需要用户确认
 						},
 						"intent": "xgscheme://com.tpns.push/notify_detail" //SDK版本需要大于等于1.0.9，然后在客户端的intent配置data标签，并设置scheme属性
@@ -513,8 +511,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | 字段名      | 类型    | 注释                                                         |
 | ----------- | -------| ------------------------------------------------------------ |
 | seq         | Integer | 与请求包一致（如果请求包无该字段，则该字段返回为0）              |
-| push_id     | String | 推送 ID                                                      |
-| invalid_targe_list | Array      |  仅推送目标为 token_list 且 ignore_invalid_token 值为1时返回，该字段会存储被过滤的无效 token ，有效 token 会正常下发。  |
+| push_id     | String | 推送 ID  <br>注意：如果您是循环推送类型，则会返回多个 pushid 放在一个数组类型里                                                     |
+| invalid_targe_list | Array      |  仅对 token 列表推送和单 token 推送 且 ignore_invalid_token 值为1时返回，该字段会存储被过滤的无效 token ，有效 token 会正常下发  |
 | ret_code    | Integer | 错误码，详细参照错误码对照表                                 |
 | environment | String  | 用户指定推送环境，仅支持 iOS<li>product： 生产环境</li><li>dev： 开发环境 </li> |
 | err_msg     | String  | 请求出错时的错误信息                                         |
