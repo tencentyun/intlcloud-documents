@@ -5,7 +5,7 @@
 已 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) ，并 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629) 成功。
 
 ## 控制台购买
-1. 登录 [ Grafana 可视化服务购买页 ](https://buy.cloud.tencent.com/grafana) ，根据实际需求选择各项配置信息。
+1. 登录 Grafana 可视化服务购买页，根据实际需求选择各项配置信息。
 <table>
     <tr>
         <th style = "width:10%">
