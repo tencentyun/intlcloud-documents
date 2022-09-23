@@ -51,9 +51,9 @@
 
 
 
-## TPNS Token 及注册结果
+## 移动推送 Token 及注册结果
 
-### 查询 TPNS Token
+### 查询移动推送 Token
 
 #### 接口说明
 
@@ -69,6 +69,8 @@
 NSString *token = [[XGPushTokenManager defaultTokenManager] xgTokenString];
 ```
 
+>! token 的获取应该在 xgPushDidRegisteredDeviceToken:error:  返回正确之后被调用。
+
 ### 注册结果回调
 
 #### 接口说明
@@ -82,7 +84,7 @@ SDK 启动之后，通过此方法回调来返回注册结果及 Token。
 #### 返回参数说明
 
 - deviceToken：APNs 生成的 Device Token。
-- xgToken：TPNS 生成的 Token，推送消息时需要使用此值。TPNS 维护此值与 APNs 的 Device Token 的映射关系。
+- xgToken：移动推送生成的 Token，推送消息时需要使用此值。移动推送维护此值与 APNs 的 Device Token 的映射关系。
 - error：错误信息，若 error 为 nil，则注册推送服务成功。
 
 ### 注册失败回调
@@ -120,7 +122,7 @@ SDK 1.3.1.0 新增，通知弹窗授权的结果会走此回调。
 
 #### 接口说明
 
-若原来没有该类型账号，则添加；若原来有，则覆盖。（TPNS SDK1.2.9.0+ 新增）
+若原来没有该类型账号，则添加；若原来有，则覆盖。（移动推送 SDK1.2.9.0+ 新增）
 
 ```Objective-C
 - (void)upsertAccountsByDict:(nonnull NSDictionary<NSNumber *, NSString *> *)accountsDict;
@@ -178,7 +180,7 @@ NSString *account = @"account";
 
 #### 接口说明
 
-接口说明：删除指定账号类型下的所有账号。（TPNS SDK1.2.9.0+ 新增）
+接口说明：删除指定账号类型下的所有账号。（移动推送 SDK1.2.9.0+ 新增）
 
 ```Objective-C
 - (void)delAccountsByKeys:(nonnull NSSet<NSNumber *> *)accountsKeys;
@@ -247,7 +249,7 @@ NSSet *accountsKeys = [[NSSet alloc] initWithObjects:@(accountType), nil];
 >?
 > - 此接口为追加方式。
 > - 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
-> - 单个应用最多可以有10000个自定义 tag， 每个设备 Token 最多可绑定100个自定义 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category)，每个自定义 tag 可绑定的设备 Token 数量无限制。
+> - 单个应用最多可以有10000个自定义 tag， 每个设备 Token 最多可绑定100个自定义 tag，如需提高该限制，请联系 [在线客服](https://intl.cloud.tencent.com/support)，每个自定义 tag 可绑定的设备 Token 数量无限制。
 > 
 
 #### 参数说明
@@ -477,7 +479,7 @@ attributeKeys：用户属性 key 组成的集合，字符串不允许有空格�
 
 #### 接口说明
 
-当应用本地角标值更改后，需调用此接口将角标值同步到 TPNS 服务器，下次推送时以此值为基准，此功能在管理台位置（【新建推送】>【高级设置】>【角标数字】）。
+当应用本地角标值更改后，需调用此接口将角标值同步到移动推送服务器，下次推送时以此值为基准，此功能在管理台位置（【新建推送】>【高级设置】>【角标数字】）。
 
 ```objective-c
 - (void)setBadge:(NSInteger)badgeNumber;
@@ -488,7 +490,7 @@ attributeKeys：用户属性 key 组成的集合，字符串不允许有空格�
 
 badgeNumber：应用的角标数。
 
-> ! 当本地应用角标设置后需调用此接口同步角标值到 TPNS 服务器，并在下次推送时生效，此接口必须在 TPNS 长链接建立后调用（xgPushNetworkConnected）。
+> ! 当本地应用角标设置后需调用此接口同步角标值到移动推送服务器，并在下次推送时生效，此接口必须在移动推送长链接建立后调用（xgPushNetworkConnected）。
 
 #### 示例代码
 
@@ -578,7 +580,7 @@ handler：查询结果的返回方法。
 
 #### 接口说明
 
-开发者如果发现推送相关功能异常，可以调用该接口，触发本地 push 日志的上报，通过[提交工单](https://console.cloud.tencent.com/workorder/category) 反馈问题时，请将文件地址提供给我们，便于排查问题。
+开发者如果发现推送相关功能异常，可以调用该接口，触发本地 push 日志的上报，通过联系 [在线客服](https://intl.cloud.tencent.com/support) 反馈问题时，请将文件地址提供给我们，便于排查问题。
 
 ```
 /// @note TPNS SDK1.2.4.1+
@@ -598,11 +600,11 @@ handler：查询结果的返回方法。
 
 ```
 
-## TPNS 日志托管
+## 移动推送日志托管
 
 #### 接口说明
 
-可以在此方法获取 TPNS 的 log 日志。此方法和 XGPush > enableDebug 无关。
+可以在此方法获取移动推送的 log 日志。此方法和 XGPush > enableDebug 无关。
 
 #### 参数说明
 
