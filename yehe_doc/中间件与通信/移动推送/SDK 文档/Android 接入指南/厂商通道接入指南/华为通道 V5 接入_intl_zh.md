@@ -141,7 +141,7 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 
 ## 代码混淆
 1. 将以下混淆规则添加在 App 项目级别的 proguard-rules.pro 文件中。
-```plaintext
+```
 -ignorewarnings
 -keepattributes *Annotation* 
 -keepattributes Exceptions 
