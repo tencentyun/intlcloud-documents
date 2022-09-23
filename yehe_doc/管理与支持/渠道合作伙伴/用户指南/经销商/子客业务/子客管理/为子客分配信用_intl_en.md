@@ -2,7 +2,7 @@
 
 You can query all your customers under your account and view their basic information and available credit.
 
-Step 1. Contact your sales rep to apply for customer credits.
+Step 1. Step 1. Contact your sales rep to apply for customer credits. (Note: The credits here are different from the reseller’s self-use credits. Please inform your sales rep that the credits you apply for will be allocated to customers.)
 
 Step 2. Use your partner account to log in to [Tencent Cloud](https://intl.cloud.tencent.com/login) and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
 
