@@ -5,7 +5,7 @@ This document describes how to purchase a TCMG instance.
 You have signed up for a Tencent Cloud account and completed identity verification as instructed in [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985) and [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629) respectively.
 
 ## Purchasing in the console
-1. Log in to the [TCMG purchase page](https://buy.cloud.tencent.com/grafana) and configure the following items:
+1. Log in to the TCMG purchase page and configure the following items:
 <table>
     <tr>
         <th style = "width:10%">
