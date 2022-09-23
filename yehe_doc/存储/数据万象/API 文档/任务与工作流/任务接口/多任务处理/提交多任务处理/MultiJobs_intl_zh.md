@@ -127,12 +127,12 @@ Container 类型 Input 的具体数据描述如下：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">视频增强</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">超分辨率</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">音视频转封装</a>
-- <a href="https://cloud.tencent.com/document/product/460/76902#operation" target="_blank">数字水印</a>
-- <a href="https://cloud.tencent.com/document/product/460/76903#operation" target="_blank">提取数字水印</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48930" target="_blank">数字水印</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48931" target="_blank">提取数字水印</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">视频标签</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">获取媒体信息</a>
-- <a href="https://cloud.tencent.com/document/product/460/76911#operation" target="_blank">音视频流分离</a>
-- <a href="https://cloud.tencent.com/document/product/460/76906#operation" target="_blank">视频质量分析</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48939" target="_blank">音视频流分离</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48934" target="_blank">视频质量分析</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">语音合成</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">音频降噪</a>
 
@@ -259,12 +259,12 @@ Container 节点 Response 的内容：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">视频增强</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">超分辨率</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">音视频转封装</a>
-- <a href="https://cloud.tencent.com/document/product/460/76902#jobsDetail" target="_blank">数字水印</a>
-- <a href="https://cloud.tencent.com/document/product/460/76903#jobsDetail" target="_blank">提取数字水印</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48930" target="_blank">数字水印</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48931" target="_blank">提取数字水印</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">视频标签</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">获取媒体信息</a>
-- <a href="https://cloud.tencent.com/document/product/460/76911#jobsDetail" target="_blank">音视频流分离</a>
-- <a href="https://cloud.tencent.com/document/product/460/76906#jobsDetail" target="_blank">视频质量分析</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48939" target="_blank">音视频流分离</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48934" target="_blank">视频质量分析</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">语音合成</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">音频降噪</a>
 

@@ -127,12 +127,12 @@ The content of `Operation` varies by job type. For more information, see the fol
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">Submitting Video Enhancement Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">Submitting Super Resolution Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">Submitting Remuxing Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76902#operation" target="_blank">Submitting Digital Watermark Adding Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76903#operation" target="_blank">Submitting Digital Watermark Extracting Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48930" target="_blank">Submitting Digital Watermark Adding Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48931" target="_blank">Submitting Digital Watermark Extracting Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">Submitting Video Tagging Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">Submitting Media Information Query Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76911#operation" target="_blank">Submitting Stream Separation Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76906#operation" target="_blank">Submitting Video Quality Scoring Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48939" target="_blank">Submitting Stream Separation Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48934" target="_blank">Submitting Video Quality Scoring Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">Submitting Text-to-Speech Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">Submitting Audio Noise Cancellation Job</a>
 
@@ -259,12 +259,12 @@ The content of `JobsDetail` varies by job type. For more information, see the fo
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">Submitting Video Enhancement Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">Submitting Super Resolution Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">Submitting Remuxing Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76902#jobsDetail" target="_blank">Submitting Digital Watermark Adding Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76903#jobsDetail" target="_blank">Submitting Digital Watermark Extracting Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48930" target="_blank">Submitting Digital Watermark Adding Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48931" target="_blank">Submitting Digital Watermark Extracting Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">Submitting Video Tagging Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">Submitting Media Information Query Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76911#jobsDetail" target="_blank">Submitting Stream Separation Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/76906#jobsDetail" target="_blank">Submitting Video Quality Scoring Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48939" target="_blank">Submitting Stream Separation Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48934" target="_blank">Submitting Video Quality Scoring Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">Submitting Text-to-Speech Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">Submitting Audio Noise Cancellation Job</a>
 
