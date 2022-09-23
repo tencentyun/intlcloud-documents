@@ -7,7 +7,8 @@ The source or target database connectivity test fails when you create a data mig
   - [The source IP addresses are blocked in the source database.](#2)
   - [The source database port is not opened.](#3)
   - [There is a network conflict, such as IP range conflict or incorrect parameter configuration.](#4)
-
+  - [After an access type is selected and the connectivity verification is passed, the access type is changed.](#7)
+  
 - If the Telnet test is passed, but the database connection fails, the causes may be:
   - [There is an account authorization problem.](#5)
   - [The account or password is incorrect.](#6)
@@ -62,8 +63,8 @@ host    all             all             0.0.0.0/0               md5
 host    all             all             172.x.x.0/20          md5
 ```
 
-#### MongoDB
-For self-built database, you need to check the `bind-address` configuration in the database. If it is not `0.0.0.0`, the IP is blocked.
+#### MongoDB/Redis
+For self-built database, you need to check the `bind` configuration in the database. If it is not `0.0.0.0`, the IP is blocked.
 
 ### Fix
 #### [MySQL](id:MySQL)
@@ -106,6 +107,11 @@ pg_ctl -D $PGDATA restart
 #### MongoDB
 Configure `bind-address` as instructed in [MySQL](#MySQL).
 
+#### Redis
+
+1. Disable the `bind` configuration in `redis.conf` or change it to `0.0.0.0`.
+2. Restart the database to make the configuration take effect and execute the verification task again.
+
 ## [Closed Network Port](id:3)
 Below are the default ports for common databases. You need to check whether they are opened, and if not, open them based on the actual conditions:
 
@@ -121,9 +127,12 @@ If the source database is SQL Server, you need to open the file sharing service 
 If you select the [VPN/Direct Connect](https://intl.cloud.tencent.com/document/product/571/42651) or [CCN](https://intl.cloud.tencent.com/document/product/571/42650) access method, you can refer to the documentation for troubleshooting.
 
 ## [Migration Account Authorization](id:5)
-Authorize the account again as instructed in the corresponding scenario in [Migration from MySQL to TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/42645).
+Authorize the migration account again as instructed in the corresponding scenario in [Migration from MySQL to TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/42645) and [Sync from MySQL/MariaDB/Percona to TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47344).
 
 ## [Incorrect Database Account or Password](id:6) 
 Log in to the source database to check whether the account and password are correct.
 
+## [Access Type Change](id:7)
+
+For the same source and target databases, if an access type such as **Public Network** is selected and the connectivity verification is passed, you cannot switch to another access type such as **Direct Connect**; otherwise, an error will be reported during connectivity verification.
 
