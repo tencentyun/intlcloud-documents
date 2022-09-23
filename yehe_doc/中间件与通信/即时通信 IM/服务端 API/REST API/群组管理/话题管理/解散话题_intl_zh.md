@@ -13,24 +13,26 @@ App 管理员可以通过该接口解散话题。
 | Community（社群） | 只有支持话题的社群才适用此 API |
 
 
-即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://cloud.tencent.com/document/product/269/1502)。
+即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
 ### 请求 URL 示例
 
 ```https
-https://console.tim.qq.com/v4/million_group_open_http_svc/destroy_topic?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/million_group_open_http_svc/destroy_topic?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数                                         | 说明                                                         |
 | -------------------------------------------- | ------------------------------------------------------------ |
+| https   | 请求协议为 HTTPS，请求方式为 POST       |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
 | v4/million_group_open_http_svc/destroy_topic | 请求接口                                                     |
 | sdkappid                                     | 创建应用时即时通信 IM 控制台分配的 SDKAppID                  |
-| identifier                                   | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98) |
-| usersig                                      | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688) |
+| identifier                                   | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517) |
+| usersig                                      | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385) |
 | random                                       | 请输入随机的32位无符号整数，取值范围0 - 4294967295           |
 | contenttype                                  | 请求格式固定值为`json`                                       |
 
@@ -94,7 +96,7 @@ https://console.tim.qq.com/v4/million_group_open_http_svc/destroy_topic?sdkappid
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 含义说明                                                     |
@@ -108,7 +110,7 @@ https://console.tim.qq.com/v4/million_group_open_http_svc/destroy_topic?sdkappid
 | 10015  | 请求的群组ID无效，请根据错误信息检查请求参数                 |
 | 10021  | 群组 ID 已被其他人使用，请选择其他的群组 ID                  |
 | 10025  | 该群组 ID 已经由您自己使用过，请您先解散该群组或者选择其他的群组 ID |
-| 11000  | 表示当前群组不支持社群话题，需购买 [旗舰版套餐包](https://buy.cloud.tencent.com/avc?from=17473) 并 [申请开通](https://cloud.tencent.com/document/product/269/3916) 后方可使用 |
+| 11000  | 表示当前群组不支持社群话题，需购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用 |
 | 110002 | 解散话题失败，请根据错误信息进行检查                         |
 | 110003 | 解散话题失败，话题已经被解散                                 |
 
@@ -118,4 +120,4 @@ https://console.tim.qq.com/v4/million_group_open_http_svc/destroy_topic?sdkappid
 
 ## 可能触发的回调
 
-- [解散话题之后回调](https://cloud.tencent.com/document/product/269/78208)
+- [解散话题之后回调](https://intl.cloud.tencent.com/document/product/1047/49465)

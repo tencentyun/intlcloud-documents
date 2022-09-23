@@ -13,7 +13,7 @@ App 管理员可以通过该接口创建话题。
 | Community（社群） | 只有支持话题的社群才适用此 API |
 
 
-即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://cloud.tencent.com/document/product/269/1502)。
+即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
 ### 请求 URL 示例
 
@@ -23,7 +23,7 @@ https://xxxxxx/v4/million_group_open_http_svc/create_topic?sdkappid=88888888&ide
 
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
@@ -31,8 +31,8 @@ https://xxxxxx/v4/million_group_open_http_svc/create_topic?sdkappid=88888888&ide
 | xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
 | v4/million_group_open_http_svc/create_topic | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 |contenttype|请求格式固定值为`json`|
 
@@ -65,7 +65,7 @@ https://xxxxxx/v4/million_group_open_http_svc/create_topic?sdkappid=88888888&ide
 
 [](id:customiz)
 - **自定义话题 ID**
-为了使得话题 ID 更加简单，腾讯云支持 App 在通过 REST API 创建话题时自定义话题 ID。自定义话题 ID 的形式为“GroupId+@TOPIC#_+自定义部分”。详情请参阅 [自定义话题 ID](https://cloud.tencent.com/document/product/269/1502#customize)
+为了使得话题 ID 更加简单，腾讯云支持 App 在通过 REST API 创建话题时自定义话题 ID。自定义话题 ID 的形式为“GroupId+@TOPIC#_+自定义部分”。详情请参阅 [自定义话题 ID](https://intl.cloud.tencent.com/document/product/1047/33529#customize)
 ```json
 {
     "GroupId": "@TGS#_@TGS#cQVLVHIM62CJ", // 话题所属的群ID（必填）
@@ -75,7 +75,7 @@ https://xxxxxx/v4/million_group_open_http_svc/create_topic?sdkappid=88888888&ide
 ```
 
 - **仅包含话题维度的自定义信息**
-创建话题，并包含话题维度的自定义信息。其中 TopicDefinedData 和群共享自定义字段，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)
+创建话题，并包含话题维度的自定义信息。其中 TopicDefinedData 和群共享自定义字段，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)
 ```json
 {
     "GroupId": "@TGS#_@TGS#cQVLVHIM62CJ", // 话题所属的群ID（必填）
@@ -124,14 +124,14 @@ https://xxxxxx/v4/million_group_open_http_svc/create_topic?sdkappid=88888888&ide
 | 字段 | 类型 | 属性 |说明|
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |需要创建的话题所属的群组ID|
-| TopicId | String | 选填 |为了使得话题 ID 更加简单，便于记忆传播，腾讯云支持 App 在通过 REST API 创建话题时 [自定义话题 ID](https://cloud.tencent.com/document/product/269/1502#customize) |
+| TopicId | String | 选填 |为了使得话题 ID 更加简单，便于记忆传播，腾讯云支持 App 在通过 REST API 创建话题时 [自定义话题 ID](https://intl.cloud.tencent.com/document/product/1047/33529#customize) |
 | TopicName | String | 必填 |话题名称，最长30字节，使用 UTF-8 编码，1个汉字占3个字节 |
 | From_Account | uint64 | 选填 |表示需要创建话题的用户帐号 |
 | CustomString | String | 选填 |自定义字符串，最长3000个字节，使用 UTF-8 编码，1个汉字占3个字节 |
 | FaceUrl | String | 选填 |话题头像 URL，最长100字节 |
 | Notification | String | 选填 |话题公告，最长300字节，使用 UTF-8 编码，1个汉字占3个字节 |
 | Introduction | String | 选填 |话题简介，最长240字节，使用 UTF-8 编码，1个汉字占3个字节 |
-| TopicDefinedData | Array | 选填 |话题维度的自定义信息，TopicDefinedData 和群共享自定义字段，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
+| TopicDefinedData | Array | 选填 |话题维度的自定义信息，TopicDefinedData 和群共享自定义字段，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
 
 
 ### 应答包体示例
@@ -167,7 +167,7 @@ https://xxxxxx/v4/million_group_open_http_svc/create_topic?sdkappid=88888888&ide
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 含义说明 |
@@ -182,17 +182,17 @@ https://xxxxxx/v4/million_group_open_http_svc/create_topic?sdkappid=88888888&ide
 | 10015 | 请求的群组ID无效，请根据错误信息检查请求参数 |
 | 10016 | App 后台通过第三方回调拒绝本次操作，请检查您的回调服务“创建话题之前回调”的返回值 |
 |10025 | 该群组 ID 已经由您自己使用过，请您先解散该群组或者选择其他的群组 ID |
-| 10036 | 创建的音视频聊天室数量超过限制，请先解散部分音视频聊天室或者参考 [价格说明](https://cloud.tencent.com/document/product/269/11673) 购买升级 |
-| 10037 |超过预付费创建话题的数量限制，请解散部分话题或者参考 [价格说明](https://cloud.tencent.com/document/product/269/11673) 购买升级|
-|11000|表示当前群组不支持社群话题，需购买 [旗舰版套餐包](https://buy.cloud.tencent.com/avc?from=17473) 并 [申请开通](https://cloud.tencent.com/document/product/269/3916) 后方可使用|
+| 10036 | 创建的音视频聊天室数量超过限制，请先解散部分音视频聊天室或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级 |
+| 10037 |超过预付费创建话题的数量限制，请解散部分话题或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
+|11000|表示当前群组不支持社群话题，需购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用|
 |80001|未通过安全检查，请根据错误信息检查请求参数|
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/create_group) 调试本接口。
 
 ## 可能触发的回调
 
-- [创建话题之前回调](https://cloud.tencent.com/document/product/269/78206)
-- [创建话题之后回调](https://cloud.tencent.com/document/product/269/78207)
+- [创建话题之前回调](https://intl.cloud.tencent.com/document/product/1047/49463)
+- [创建话题之后回调](https://intl.cloud.tencent.com/document/product/1047/49464)
 
