@@ -1,39 +1,37 @@
 ## 操作场景
-在弹性容器服务 EKS 中，用户可以通过环境变量配置日志采集，按行采集日志、不解析。也可以通过 [自定义资源定义（CustomResourceDefinitions，CRD）的方式配置日志采集](https://intl.cloud.tencent.com/document/product/457/40585)。
+在 TKE Serverless 集群中，用户可以通过环境变量配置日志采集，按行采集日志、不解析。也可以通过 [自定义资源定义（CustomResourceDefinitions，CRD）的方式配置日志采集](https://intl.cloud.tencent.com/document/product/457/40585)。
 
-本文介绍如何通过环境变量实现 EKS 集群的日志采集功能。该功能支持将集群内服务的日志发送至 [日志服务 CLS](https://intl.cloud.tencent.com/product/cls) 或用户自建 Kafka，适用于需要对 EKS 集群内服务日志进行存储和分析的用户。
+本文介绍如何通过环境变量实现 TKE Serverless 集群的日志采集功能。该功能支持将集群内服务的日志发送至 [日志服务 CLS](https://www.tencentcloud.com/products/cls) 或用户自建 Kafka，适用于需要对 TKE Serverless 集群内服务日志进行存储和分析的用户。
 
-EKS 日志采集功能需要在创建工作负载时手动开启。您可根据以下操作开启日志采集功能：
+TKE Serverless 集群日志采集功能需要在创建工作负载时手动开启。您可根据以下操作开启日志采集功能：
 - [通过控制台配置日志采集](#output)
 - [通过 yaml 配置日志采集](#yaml)
 - [更新日志采集](#new)
 
 
 #### 说明事项
-EKS 日志采集功能开启后，日志采集 Agent 根据您配置的采集路径和消费端，将采集到的日志以 JSON 的形式发送到您指定的消费端。消费端及采集路径说明如下：
+TKE Serverless 集群日志采集功能开启后，日志采集 Agent 根据您配置的采集路径和消费端，将采集到的日志以 JSON 的形式发送到您指定的消费端。消费端及采集路径说明如下：
   - **消费端**：日志采集服务支持 Kafka 或 CLS 作为日志的消费端。
-  - **采集路径**：需要采集的日志的路径。采集路径支持采集标准输出（stdout）和绝对路径，支持 * 通配，多个采集路径以“,”分隔。 
+  - **采集路径**：需要采集的日志的路径。采集路径支持采集标准输出（stdout）和绝对路径，支持 * 通配，多个采集路径以“,”分隔。  
 
 ## 前提条件
 
 - 需确认 Kubernetes 集群能够访问日志消费端。
 - 日志长度限制为单条2M，如果超过则会截断。
-  <dx-alert infotype="notice" title="">
-若日志输出速率过快，为避免 OOM，需要调整此参数配置，详情请参见 [如何调整日志采集配置](https://intl.cloud.tencent.com/document/product/457/40587)。
-</dx-alert>
+  <dx-alert infotype="notice" title=" ">
+  若日志输出速率过快，为避免 OOM，需要调整此参数配置，详情请参见 [如何调整日志采集配置](https://intl.cloud.tencent.com/document/product/457/40587)。
+  </dx-alert>
 
 
 
 
 ## 操作步骤
 
-[](id:output)
 
-### 通过控制台配置日志采集
-
-EKS 日志采集功能采集到的日志信息将会以 JSON 格式输出到您指定的消费端，并会附加相关的 Kubernetes metadata，包括容器所属 pod 的 label 和 annotation 等信息。具体操作步骤如下：
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**弹性集群**。
-2. 进入“弹性集群”页面，选择需要日志采集的集群 ID，进入集群管理页面。
+### 通过控制台配置日志采集[](id:output)
+TKE Serverless 集群日志采集功能采集到的日志信息将会以 JSON 格式输出到您指定的消费端，并会附加相关的 Kubernetes metadata，包括容器所属 Pod 的 label 和 annotation 等信息。具体操作步骤如下：
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
+2. 在集群管理页面，单击 Serverless 集群 ID，进入集群详情页。
 3. 在左侧“工作负载”中选择需要的工作负载类型，进入对应页面后选择**新建**。
 4. 在“实例内容器”中选择**显示高级设置**，并勾选“开启”日志采集。如下图所示：
 ![](https://main.qcloudimg.com/raw/2359897f61c9c663d31db1cdca03f3c4.png)
@@ -43,11 +41,11 @@ EKS 日志采集功能采集到的日志信息将会以 JSON 格式输出到您�
 1. 选择 CLS 作为日志消费端，并选择日志集和日志主题。如下图所示：
 ![](https://main.qcloudimg.com/raw/37623ea379501b3b431fac609b9681c0.png)
 若无合适的日志集，请参考 [新建日志集及日志主题](https://intl.cloud.tencent.com/document/product/614/31592)。
-<dx-alert infotype="notice" title="">
+<dx-alert infotype="notice" title=" ">
 日志服务 CLS 目前仅支持同地域的容器集群进行日志采集上报。
 </dx-alert>
 2. 打开日志主题的**日志索引**。索引配置是使用日志服务 CLS 进行检索分析的必要条件。若未开启，则无法查看日志。配置索引的详细操作，请参见 [日志服务配置索引](https://intl.cloud.tencent.com/document/product/614/39594)。
-您可在**[日志服务控制台](https://console.cloud.tencent.com/cls/topic?region=ap-guangzhou)**>**日志主题**中，选择日志主题名称，在“索引配置”页面开启索引。如下图所示：
+您可在 **[日志服务控制台](https://console.cloud.tencent.com/cls/topic?region=ap-guangzhou)**>**日志主题**中，选择日志主题名称，在“索引配置”页面开启索引。如下图所示：
 ![](https://main.qcloudimg.com/raw/a6f481ce07cafd4ecb8d13ac05950b99.png)
 
 :::
@@ -55,7 +53,7 @@ EKS 日志采集功能采集到的日志信息将会以 JSON 格式输出到您�
 选择 Kafka 为消费端，推荐使用 CKafka，消费、生产方式与原生版体验一致，并支持配置告警。
 在容器配置中填写 Kafka 的 Broker 地址及 Topic，需要保证集群内所有资源都能够访问用户指定的 Kafka Topic。如下图所示：
 ![](https://main.qcloudimg.com/raw/27e5173a642dfd0e2c84c93c0b319bcc.png)
-<dx-alert infotype="notice" title="">
+<dx-alert infotype="notice" title=" ">
 Kafka 的 Topic 配置中 `cleanup.policy` 参数需选择 delete，选择 compact 会导致 CLS 无法上报到 Kafka 而造成数据丢失。如下图所示：
 ![](https://main.qcloudimg.com/raw/01e49f01c82fd0cf13229fbade701641.png)
 </dx-alert>
@@ -63,51 +61,46 @@ Kafka 的 Topic 配置中 `cleanup.policy` 参数需选择 delete，选择 compa
 </dx-tabs>
 
 6. 选择角色或者密钥进行授权。
-
-<dx-alert infotype="notice"> 
-<li>同一 pod 下的容器只能选择同一种授权方式，以您最后修改的授权方式为准。例如第一个容器选择了密钥授权，第二个选择了角色授权，最终两个容器都是角色授权。</li>
-<li>同一 pod 下的容器只能选择同一个角色授权。</li>
-</dx-alert>
-
+>! 
+ - 同一 pod 下的容器只能选择同一种授权方式，以您最后修改的授权方式为准。例如第一个容器选择了密钥授权，第二个选择了角色授权，最终两个容器都是角色授权。
+ - 同一 pod 下的容器只能选择同一个角色授权。
+>
 <dx-tabs>
 ::: 角色授权
  - 选择具有访问日志服务 CLS 权限的角色名称，如下图所示：
 ![](https://main.qcloudimg.com/raw/890940885a3fd7502cf28aa62f970e2c.png)
  - 若无合适的角色，创建过程参考以下步骤：
-    **新建策略**[](id:policy)
+    **新建策略 **[](id:policy)
    在新建角色之前，您需要创建一个策略，该策略决定了您的角色具备的权限。
-  1. 登录访问管理控制台，在左侧导航栏选择[策略](https://console.cloud.tencent.com/cam/policy)。
+  1. 登录访问管理控制台，在左侧导航栏选择 **[策略](https://console.cloud.tencent.com/cam/policy)**。
   2. 在“策略”页面，单击**新建自定义策略**。
-  3. 在“选择创建策略方式” 弹窗中，选择****按策略生成器创建**。
+  3. 在“选择创建策略方式” 弹窗中，选择****按策略生成器创建****。
   4. 在“可视化策略生成器”中，“服务”选择 “日志服务(cls)”，“操作”选择“写操作:pushLog”，如下图所示：
+
     ![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
   5. 单击**下一步**，进入“关联用户/用户组”页面。
-  6. 确认策略名称，单击【完成】即可创建策略。
+  6. 确认策略名称，单击**完成**即可创建策略。
 
   **新建角色**
 	创建策略完成后，需要将该策略绑定至一个角色，使得该角色具备策略相应的权限。
-
-  1. 登录访问管理控制台，在左侧导航栏选择**[角色](https://console.cloud.tencent.com/cam/role)**。
+  1. 登录访问管理控制台，在左侧导航栏选择 **[角色](https://console.cloud.tencent.com/cam/role)**。
   2. 在“角色”页面，单击**新建角色**。
-  3. 在“选择角色载体” 弹窗中，选择【腾讯云产品服务】，进入**新建自定义角色**页面。
+  3. 在“选择角色载体” 弹窗中，选择**腾讯云产品服务**，进入**新建自定义角色**页面。
   4. 在“输入角色载体信息”步骤中，选择**绑定**云服务器（cvm）**载体**，单击**下一步**。
 
-    <dx-alert infotype="notice" title="">
-必须选择**云服务器（cvm）**作为角色载体，选择容器服务则无法完成授权。
+    <dx-alert infotype="notice" title=" ">
+  必须选择**云服务器（cvm）**作为角色载体，选择容器服务则无法完成授权。
     </dx-alert>
-
-  5. 在“配置角色策略”步骤中，选择[已创建的策略](#policy)，单击**下一步**。
+  5. 在“配置角色策略”步骤中，选择 [已创建的策略](#policy)，单击**下一步**。
   6. 在“审阅”步骤中，输入您的角色名称，审阅您即将创建角色的相关信息，单击**完成**后即完成自定义角色创建。详情请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
 :::
 ::: 密钥授权
 - 选择您利用账号 API 密钥的 SecretId 和 SecretKey 作为变量值进行创建的集群 Secret 配置名称。
 ![](https://main.qcloudimg.com/raw/c03d348d34fc5c5d2666b1e883138bab.png)
 - 若无合适的 Secret，需新建 Secret。详情请参见 [Secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。其中 SecretId 和 SecretKey 可在 [API 密钥](https://console.cloud.tencent.com/cam/capi) 中查看。
-<dx-alert infotype="notice"> API 密钥对应的用户需具备访问日志服务 CLS 的权限。若无 API 密钥，需新建 API 密钥。详情请参见 [访问密钥](https://intl.cloud.tencent.com/document/product/598/34228)。
-</dx-alert>
+>! API 密钥对应的用户需具备访问日志服务 CLS 的权限。若无 API 密钥，需新建 API 密钥。详情请参见 [访问密钥](https://www.tencentcloud.com/document/product/598/34227)。
 :::
 </dx-tabs>
-
 7. 配置采集路径。如下图所示：
 ![](https://main.qcloudimg.com/raw/4f9fb3635b7a3c3ab35e8387d877a08b.png)
 至此已完成日志采集功能配置，您可按需进行该工作负载的其他配置。
@@ -196,18 +189,23 @@ labels:
 	</tr>
 	<tr>
 		<td>EKS_LOGS_KAFKA_MESSAGE_KEY</td> <td>非必填。支持指定一个 key，将日志投递到指定分区。<li>对于未开启按 key 投递，日志将随机投递到不同分区里。</li><li>开启按 key 投递，带有同样 key 的日志，将投递到相同的分区里。</li>
-<b>注意</b>：此处 key 从 Pod 的字段获取变量值，以上示例皆以 Pod name 为例，同时还支持 namespace、PodIP 等，详情可参见 <a href="https://kubernetes.io/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/">kubernetes 社区文档</a>。 </td>
+<b>注意</b>：此处 key 从 Pod 的字段获取变量值，以上示例皆以 Pod name 为例，同时还支持 namespace、PodIP 等，详情可参见 <a href="https://kubernetes.io/zh/docs/tasks/inject-data-application/environment-variable-expose-pod-information/">kubernetes 社区文档</a>。  </td>
 	</tr>
 </table>
 
+对于开启按 key 投递到 kafka 指定分区，验证方式如下：
+- 未开启时，查询消息不显示 key，如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/2b9c03bafbc0694ee03e817cd5e771f6.png)
+- 当开启后，查询消息显示 key，如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/5814b84c37d6b90590bbdb7fabd08c6d.png)
 
 :::
 
 
 ::: 通过secret采集日志到CLS
 #### 创建 secret[](id:z)
-<dx-alert infotype="notice"> 以下示例为通过 yaml 手动创建 secret。如通过控制台创建 secret，则不需要进行64编码，详情请参考 [secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。
-</dx-alert>
+>! 以下示例为通过 yaml 手动创建 secret。如通过控制台创建 secret，则不需要进行64编码，详情请参考 [secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。
+>
 通过 kubectl 执行以下命令，获取进行 base64编码的 secretid 和 secretkey。其中，secretid 及 secretkey 请替换为您账号的 secretid 和 secretkey，可在 [API 密钥](https://console.cloud.tencent.com/cam/capi) 中查看。
 ```shell
 $ echo -n 'secretid' | base64
@@ -342,13 +340,12 @@ spec:
 
 
 ::: 通过role采集日志到CLS
-#### 创建角色  
 #### 步骤1：创建角色  
-**新建策略**[](id:policy)
+**新建策略 **[](id:policy)
 在新建角色之前，您需要创建一个策略，该策略决定了您的角色具备的权限。
-1. 登录访问管理控制台，在左侧导航栏选择**[策略](https://console.cloud.tencent.com/cam/policy)**。
+1. 登录访问管理控制台，在左侧导航栏选择 **[策略](https://console.cloud.tencent.com/cam/policy)**。
 2. 在“策略”页面，单击**新建自定义策略**。
-3. 在“选择创建策略方式” 弹窗中，选择**按策略生成器创建****。
+3. 在“选择创建策略方式” 弹窗中，选择****按策略生成器创建****。
 4. 在“可视化策略生成器”中，“服务”选择 “日志服务(cls)“，”操作“选择”写操作:pushLog“，如下图所示：
 ![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
 5. 单击**下一步**，进入”关联用户/用户组“页面。
@@ -356,15 +353,17 @@ spec:
 
 **新建角色**
 创建策略完成后，需要将该策略绑定至一个角色，使得该角色具备策略相应的权限。
-1. 登录访问管理控制台，在左侧导航栏选择**[角色](https://console.cloud.tencent.com/cam/role)**。
+1. 登录访问管理控制台，在左侧导航栏选择 **[角色](https://console.cloud.tencent.com/cam/role)**。
 2. 在“角色”页面，单击**新建角色**。
 3. 在“选择角色载体” 弹窗中，选择**腾讯云产品服务**，进入**新建自定义角色**页面。
 4. 在“输入角色载体信息”步骤中，选择**绑定**云服务器（cvm）**载体**，单击**下一步**。
-    <dx-alert infotype="notice" title="">
-必须选择**云服务器（cvm）**作为角色载体，选择容器服务则无法完成授权。
+    <dx-alert infotype="notice" title=" ">
+    必须选择**云服务器（cvm）**作为角色载体，选择容器服务则无法完成授权。
     </dx-alert>
 5. 在“配置角色策略”步骤中，选择 [已创建的策略](#policy)，单击**下一步**。
 6. 在“审阅”步骤中，输入您的角色名称，审阅您即将创建角色的相关信息，单击**完成**后即完成自定义角色创建。详情请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
+
+
 完成创建角色步骤后，需要在 pod template 中新增 annotation，指定 role 的名称，获取该 role 包含的权限策略。
 ```shell
 template:
@@ -468,9 +467,9 @@ spec:
 
 <dx-tabs>
 ::: 通过控制台更新日志采集
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**弹性集群**。
-2. 选择需要配置日志采集的集群 ID，进入集群管理页面。
-3. 选择左侧**工作负载**，单击需要更新日志采集的工作负载所在行右侧的**更新Pod配置**>**显示高级设置**，修改对应的配置。如下图所示：
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
+2. 在集群管理页面，单击 Serverless 集群 ID，进入集群详情页。
+3. 选择左侧**工作负载**，单击需要更新日志采集的工作负载所在行右侧的**更新Pod配置** > **显示高级设置**，修改对应的配置。如下图所示：
 ![](https://main.qcloudimg.com/raw/6e82866759f9704fd49d7695f57dfa47.png)
 4. 单击**完成**即可更新。
 
@@ -483,4 +482,4 @@ spec:
 </dx-tabs>
 
 ## 常见问题
-如遇问题，您可先查询 [弹性集群日志采集相关问题](https://intl.cloud.tencent.com/document/product/457/40582)。如果您的问题仍未解决，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) 联系我们。
+如遇问题，您可先查询 [Serverless 集群日志采集相关问题](https://intl.cloud.tencent.com/document/product/457/40582)。如果您的问题仍未解决，请 [联系我们](https://intl.cloud.tencent.com/document/product/457/46718)。

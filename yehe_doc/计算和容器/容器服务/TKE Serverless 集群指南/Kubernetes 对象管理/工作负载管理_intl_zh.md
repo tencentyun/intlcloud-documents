@@ -1,13 +1,11 @@
-## 操作场景
-本文介绍如何在弹性集群中选择多种工作负载形式来运行您的服务。
+
+本文介绍如何在 TKE Serverless 集群中选择多种工作负载形式来运行您的服务。
 >! 
-> - 弹性集群没有 Node，工作负载在创建时会根据参数设置为每个 Pod 分配实际的资源。详情请参见 [指定资源规格](https://intl.cloud.tencent.com/document/product/457/36161)。
+> - Serverless 集群没有 Node，工作负载在创建时会根据参数设置为每个 Pod 分配实际的资源。详情请参见 [指定资源规格](https://intl.cloud.tencent.com/document/product/457/36161)。
 > - 如果您需要通过 yaml 来创建、管理您的 Kubernetes 对象，可通过指定 annotation 完成。详情请参见 [Annotation 说明](https://intl.cloud.tencent.com/document/product/457/36162)。
 
 
-## 前提条件
-- 已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/34048)。
-- 集群有合适的且为 Active 状态的命名空间。
+
 
 ## 工作负载类型介绍
 ### Deployment
@@ -34,12 +32,17 @@ Cron 格式说明如下：
 # * * * * *
 ```
 
+
+## 前提条件
+- 已创建状态为“运行中”的 Serverless 集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/34048)。
+- 集群有合适的且为 Active 状态的命名空间。
+
 ## 操作步骤
-1. 登录容器服务控制台，选择左侧导航栏中的 **[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)**。
-2. 在 “弹性集群” 列表页面，单击需创建工作负载的集群 ID，进入集群 “Deployment” 页面。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/dd712bafab8210a8904b4f57c1302d2a.png)
-3. 单击**新建**，进入 “新建Workload” 页面。
-4. 填写工作负载名，并选择要创建的工作负载类型。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
+2. 在集群管理页面，选择 Serverless 集群 ID，进入该集群基本信息页面。
+3. 在左侧导航中选择工作负载类型，单击**新建**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/57d9524c56c30ee5c7d435b1af29820b.png)
+4. 在“新建Workload” 页面。填写工作负载名，并选择要创建的工作负载类型。
   - 各类型工作负载的具体参数设置请参考：
      - [Deployment 管理](https://intl.cloud.tencent.com/document/product/457/30662)
      - [StatefulSet 管理](https://intl.cloud.tencent.com/document/product/457/30663)
@@ -49,4 +52,4 @@ Cron 格式说明如下：
      - [设置工作负载的资源限制](https://intl.cloud.tencent.com/document/product/457/30667)
      - [设置工作负载的调度规则](https://intl.cloud.tencent.com/document/product/457/30668)
      - [设置工作负载的健康检查](https://intl.cloud.tencent.com/document/product/457/30669)
-        - [设置工作负载的运行命令和参数](https://intl.cloud.tencent.com/document/product/457/30670)
+     - [设置工作负载的运行命令和参数](https://intl.cloud.tencent.com/document/product/457/30670)
