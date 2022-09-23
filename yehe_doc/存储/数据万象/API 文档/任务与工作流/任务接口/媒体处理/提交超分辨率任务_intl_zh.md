@@ -1,6 +1,6 @@
 ## 功能描述
 
-提交一个视频增强任务。
+提交一个超分辨率任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -47,19 +47,19 @@ Content-Type: application/xml
 
 #### 请求体
 
-该请求操作的实现需要有如下请求体：
+该请求操作的实现需要有如下请求体。
 
 ```shell
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>SuperResolution</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-        <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
-        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
-        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+        <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+        <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
         <DigitalWatermark>
             <Type>Text</Type>
             <Message>123456789ab</Message>
@@ -88,12 +88,12 @@ Content-Type: application/xml
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                                                    | 类型      | 是否必选 |
-| ------------------ | ------- | ------------------------------------------------------- | --------- | -------- |
-| Tag                | Request | 创建任务的 Tag：VideoProcess                            | String    | 是       |
-| Input              | Request | 待操作的媒体信息                                        | Container | 是       |
-| Operation          | Request | 操作规则                                                     | Container | 是       |
-| QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
+| 节点名称（关键字） | 父节点  | 描述                            | 类型      | 是否必选 |
+| ------------------ | ------- | ------------------------------- | --------- | -------- |
+| Tag                | Request | 创建任务的 Tag：SuperResolution | String    | 是       |
+| Input              | Request | 待操作的媒体信息                | Container | 是       |
+| Operation          | Request | 操作规则                        | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID               | String    | 是       |
 | CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
 | CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型                    | String | 否 |
 | CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
@@ -111,25 +111,28 @@ Container 类型 Operation 的具体数据描述如下：
 
 | 节点名称（关键字）  | 父节点            | 描述                                                         | 类型      | 是否必选 |
 | ------------------- | ----------------- | ------------------------------------------------------------ | --------- | -------- |
-| VideoProcess        | Request.Operation | 指定视频增强模板参数，不能与 TemplateId 同时为空                   | Container | 否       |
-| TemplateId          | Request.Operation | 指定的模板 ID ，不能与 VideoProcess 同时为空                      | String    | 否       |
-| Transcode           | Request.Operation | 指定转码模板参数，不能与 TranscodeTemplateId 同时为空        | Container | 否       |
-| TranscodeTemplateId | Request.Operation | 指定的转码模板 ID，优先使用模板 ID，不能与 Transcode 同时为空 | String 数组 | 否       |
-| Watermark           | Request.Operation | 指定水印模板参数，同创建水印模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49917" target="_blank">CreateMediaTemplate</a> 接口的 Request.Watermark, 最多传3个 | Container 数组 | 否 |
-| WatermarkTemplateId | Request.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 ID | String    | 否       |
-| DigitalWatermark    | Request.Operation | 指定数字水印参数                                             | Container | 否       |
-| Output              | Request.Operation | 结果输出地址                                                 | Container | 是       |
+| SuperResolution     | Request.Operation | 指定超分辨率模板参数，不能与 TemplateId 同时为空                                        | Container | 否 |
+| TemplateId          | Request.Operation | 指定的超分辨率模 ID，优先使用模板 ID，不能与 SuperResolution 同时为空                    | String | 否 |
+| Transcode           | Request.Operation | 指定转码模板参数，不能与 TranscodeTemplateId 同时为空                                   | Container | 否 |
+| TranscodeTemplateId | Request.Operation | 指定的转码模板 ID，优先使用模板 ID，不能与 Transcode 同时为空                            | String    | 否 |
+| Watermark           | Request.Operation | 指定水印模板参数，同创建水印模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49917" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Watermark，最多传3个 | Container 数组 | 否 |
+| WatermarkTemplateId | Request.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 ID                      | String 数组 | 否 |
+| DigitalWatermark    | Request.Operation | 指定数字水印参数                                                                      | Container | 否 |
+| Output              | Request.Operation | 结果输出地址                                                                          | Container | 是 |
+| UserData            | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024                                           | String | 否 |
 | JobLevel            | Request.Operation | 任务优先级，级别限制：0 、1 、2。级别越大任务优先级越高，默认为0 | String | 否   |
 
->? 提交视频增强任务必须传入转码参数。对于视频增强参数，优先使用 TemplateId，无 TemplateId 时使用 VideoProcess；对于转码参数，优先使用 TranscodeTemplateId，无 TranscodeTemplateId时使用 Transcode；对于水印参数，可以使用 WatermarkTemplateId 或 Watermark 设置，WatermarkTemplateId 优先级更高。
+
+>? 提交超分辨率任务必须传入转码参数。对于超分辨率参数，优先使用 TemplateId，无 TemplateId 时使用 SuperResolution；对于转码参数，优先使用 TranscodeTemplateId，无 TranscodeTemplateId 时使用 Transcode；对于水印参数，可以使用 WatermarkTemplateId 或 Watermark 设置，WatermarkTemplateId 优先级更高。
 >
 
-Container 类型 VideoProcess 的具体数据描述如下：
+Container 类型 SuperResolution 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                         | 描述                                                         |
-| ------------------ | :----------------------------- | ------------------------------------------------------------ |
-| ColorEnhance       | Request.Operation.VideoProcess | 同创建视频增强模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49915" target="_blank">CreateMediaTemplate</a> 接口中的 Request.ColorEnhance |
-| MsSharpen          | Request.Operation.VideoProcess | 同创建视频增强模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49915" target="_blank">CreateMediaTemplate</a> 接口中的 Request.MsSharpen |
+| 节点名称（关键字） | 父节点                            | 描述                                                         | 类型   | 必选 |
+| ------------------ | :-------------------------------- | ------------------------------------------------------------ | ------ | ---- |
+| Resolution         | Request.Operation.SuperResolution | 同创建超分辨率模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Resolution    | String | 是 |
+| EnableScaleUp      | Request.Operation.SuperResolution | 同创建超分辨率模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a> 接口中的 Request.EnableScaleUp | String | 否 |
+| Version            | Request.Operation.SuperResolution | 同创建超分辨率模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Version       | String | 否 |
 
 Container 类型 Transcode 的具体数据描述如下：
 
@@ -146,11 +149,10 @@ Container 类型 DigitalWatermark 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                             | 描述                                                         | 类型   | 必选 |
 | ------------------ | :--------------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Message            | Request.Operation.DigitalWatermark | 数字水印嵌入的字符串信息，长度不超过64个字符，仅支持中文、英文、数字、\_、-和\* | string | 是   |
+| Message            | Request.Operation.DigitalWatermark | 数字水印嵌入的字符串信息，长度不超过64个字符，仅支持中文、英文、数字、\_、-和\* | String | 是   |
 | Type               | Request.Operation.DigitalWatermark | 水印类型，当前仅可设置为 Text                                | String | 是   |
 | Version            | Request.Operation.DigitalWatermark | 水印版本，当前仅可设置为 V1                                  | String | 是   |
-| IgnoreError        | Request.Operation.DigitalWatermark | 当添加水印失败是否忽略错误继续执行任务，限制为 true/false，默认为 false | string | 是   |
-
+| IgnoreError        | Request.Operation.DigitalWatermark | 当添加水印失败是否忽略错误继续执行任务，限制为 true/false，默认 false | string | 否   |
 
 Container 类型 Output 的具体数据描述如下：
 
@@ -172,7 +174,7 @@ Container 类型 Output 的具体数据描述如下：
 
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
-``` shell
+```shell
 <Response>
     <JobsDetail>
         <Code>Success</Code>
@@ -183,32 +185,32 @@ Container 类型 Output 的具体数据描述如下：
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
+        <Tag>SuperResolution</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-            <TemplateName>videoprocess_demo</TemplateName>
-            <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
-            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
-            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
-            <DigitalWatermark>
-                <Type>Text</Type>
-                <Message>123456789ab</Message>
-                <Version>V1</Version>
-                <IgnoreError>false</IgnoreError>
-                <State>Running</State>
-            </DigitalWatermark>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
-            </Output>
-            <UserData>This is my data.</UserData>
-            <JobLevel>0</JobLevel>
+              <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+              <TemplateName>superresolution_demo</TemplateName>
+              <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+              <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+              <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
+              <DigitalWatermark>
+                  <Type>Text</Type>
+                  <Message>123456789ab</Message>
+                  <State>Running</State>
+                  <Version>V1</Version>
+                  <IgnoreError>false</IgnoreError>
+              </DigitalWatermark>
+              <Output>
+                  <Region>ap-chongqing</Region>
+                  <Bucket>test-123456789</Bucket>
+                  <Object>output/out.mp4</Object>
+              </Output>
+              <UserData>This is my data.</UserData>
+              <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -234,8 +236,8 @@ Container 节点 JobsDetail 的内容：
 | Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
 | JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
-| Tag                | Response.JobsDetail | 新创建任务的 Tag：VideoProcess                               | String    |
-| State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String  |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：SuperResolution                            | String    |
+| State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String   |
 | CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
 | StartTime          | Response.JobsDetail | 任务的开始时间                                               | String    |
 | EndTime            | Response.JobsDetail | 任务的结束时间                                               | String    |
@@ -253,18 +255,22 @@ Container 节点 Input 的内容：
 
 Container 节点 Operation 的内容：
 
-| 节点名称（关键字） | 父节点                        | 描述                             | 类型      |
-| :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| VideoProcess       | Response.JobsDetail.Operation | 同请求中的 Request.Operation.VideoProcess | String    |
-| TemplateId         | Response.JobsDetail.Operation | 任务的模板 ID                    | String    |
-| TemplateName       | Response.JobsDetail.Operation | 任务的模板名称, 当 TemplateId 存在时返回 | String    |
-| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output       | Container |
-| DigitalWatermark   | Response.JobsDetail.Operation | 指定数字水印参数                 | Container |
-| MediaInfo          | Response.JobsDetail.Operation | 输出文件的媒体信息，任务未完成时不返回 | Container |
-| MediaResult        | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
-| DigitalWatermark   | Response.JobsDetail.Operation | 指定数字水印参数                  | Container |
-| UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
-| JobLevel           | Response.JobsDetail.Operation | 任务优先级                                                   | String |
+| 节点名称（关键字）  | 父节点                        | 描述                                                         | 类型      |
+| :------------------ | :---------------------------- | :----------------------------------------------------------- | :-------- |
+| SuperResolution     | Response.JobsDetail.Operation | 同请求中的 Request.Operation.SuperResolution                 | Container |
+| TemplateId          | Response.JobsDetail.Operation | 任务的模板 ID                                                | String    |
+| TemplateName        | Response.JobsDetail.Operation | 任务的模板名称, 当 TemplateId 存在时返回 | String    |
+| Transcode           | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Transcode                       | Container |
+| TranscodeTemplateId | Response.JobsDetail.Operation | 指定的转码模板 ID                                             | String    |
+| Watermark           | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Watermark                       | Container 数组 |
+| WatermarkTemplateId | Response.JobsDetail.Operation | 指定的水印模板 ID                                             | String 数组    |
+| Output              | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output                           | Container |
+| MediaInfo           | Response.JobsDetail.Operation | 输出文件的媒体信息，任务未完成时不返回                             | Container |
+| MediaResult         | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回                             | Container |
+| DigitalWatermark    | Response.JobsDetail.Operation | 指定数字水印参数                                               | Container |
+| UserData            | Response.JobsDetail.Operation | 透传用户信息                                                   | String |
+| JobLevel            | Response.JobsDetail.Operation | 任务优先级                                                   | String |
+
 
 Container 节点 MediaInfo 的内容：
 同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
@@ -299,7 +305,8 @@ Container 类型 DigitalWatermark 的具体数据描述如下：
 | Type               | Response.Operation.DigitalWatermark | 水印类型，当前仅可设置为 Text                                | String |
 | Version            | Response.Operation.DigitalWatermark | 水印版本，当前仅可设置为 V1                                  | String |
 | IgnoreError        | Response.Operation.DigitalWatermark | 当添加水印失败是否忽略错误继续执行任务，限制为 true/false，默认 false | string |
-| State              | Response.Operation.DigitalWatermark | 添加水印是否成功，执行中为 Running，成功为 Success，失败为 Failed | string |
+| State              | Response.Operation.DigitalWatermark | 添加水印是否成功，执行中为Running，成功为 Success，失败为 Failed | string |
+
 
 #### 错误码
 
@@ -307,8 +314,8 @@ Container 类型 DigitalWatermark 的具体数据描述如下：
 
 ## 实际案例
 
-#### 请求1：使用视频增强模板 ID
 
+#### 请求1：使用超分辨率模板 ID
 
 ```shell
 POST /jobs HTTP/1.1
@@ -318,15 +325,15 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>SuperResolution</Tag>
     <Input>
-        <Object>input/demo.mp4</Object>
+        <Object>test.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-        <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
-        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
-        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+        <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+        <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
         <DigitalWatermark>
             <Type>Text</Type>
             <Message>123456789ab</Message>
@@ -336,7 +343,7 @@ Content-Type: application/xml
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/out.mp4</Object>
+            <Object>output/sr.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
@@ -347,7 +354,7 @@ Content-Type: application/xml
 </Request>
 ```
 
-#### 响应
+#### 响应1
 
 ```shell
 HTTP/1.1 200 OK
@@ -362,35 +369,35 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T14:44:10+0800</CreationTime>
+        <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
+        <Tag>SuperResolution</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-            <TemplateName>videoprocess_demo</TemplateName>
-            <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
-            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
-            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+            <TemplateName>superresolution_demo</TemplateName>
+            <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+            <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+            <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
             <DigitalWatermark>
+                <State>Running</State>
                 <Type>Text</Type>
                 <Message>123456789ab</Message>
                 <Version>V1</Version>
                 <IgnoreError>false</IgnoreError>
-                <State>Running</State>
             </DigitalWatermark>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
+                <Object>output/sr.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
@@ -399,34 +406,27 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 </Response>
 ```
 
-#### 请求2：使用视频增强处理参数
 
+#### 请求2：使用超分辨率处理参数
 
 ```shell
 POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
 Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>SuperResolution</Tag>
     <Input>
-        <Object>input/demo.mp4</Object>
+        <Object>test.mp4</Object>
     </Input>
     <Operation>
-        <VideoProcess>
-            <ColorEnhance>
-                <Contrast>50</Contrast>
-                <Correction>100</Correction>
-                <Enable>true</Enable>
-                <Saturation>100</Saturation>
-            </ColorEnhance>
-            <MsSharpen>
-                <Enable>true</Enable>
-                <SharpenLevel>5</SharpenLevel>
-            </MsSharpen>
-        </VideoProcess>
+        <SuperResolution>
+            <Resolution>sdtohd</Resolution>
+            <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
+        </SuperResolution>
         <Transcode>
             <Container>
                 <Format>mp4</Format>
@@ -480,7 +480,7 @@ Content-Type: application/xml
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/out.mp4</Object>
+            <Object>output/sr.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
@@ -491,7 +491,7 @@ Content-Type: application/xml
 </Request>
 ```
 
-#### 响应
+#### 响应2
 
 ```shell
 HTTP/1.1 200 OK
@@ -506,31 +506,24 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T14:44:10+0800</CreationTime>
+        <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
+        <Tag>SuperResolution</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <VideoProcess>
-                <ColorEnhance>
-                    <Contrast>50</Contrast>
-                    <Correction>100</Correction>
-                    <Enable>true</Enable>
-                    <Saturation>100</Saturation>
-                </ColorEnhance>
-                <MsSharpen>
-                    <Enable>true</Enable>
-                    <SharpenLevel>5</SharpenLevel>
-                </MsSharpen>
-            </VideoProcess>
+            <SuperResolution>
+                <Resolution>sdtohd</Resolution>
+                <EnableScaleUp>true</EnableScaleUp>
+                <Version>Enhance</Version>
+            </SuperResolution>
             <Transcode>
                 <Container>
                     <Format>mp4</Format>
@@ -576,6 +569,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 </Text>
             </Watermark>
             <DigitalWatermark>
+                <State>Running</State>
                 <Type>Text</Type>
                 <Message>123456789ab</Message>
                 <Version>V1</Version>
@@ -584,7 +578,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
+                <Object>output/sr.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
@@ -592,4 +586,3 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     </JobsDetail>
 </Response>
 ```
-

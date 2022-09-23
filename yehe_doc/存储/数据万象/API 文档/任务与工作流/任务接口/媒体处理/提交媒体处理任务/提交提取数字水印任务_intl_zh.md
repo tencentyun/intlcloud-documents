@@ -1,6 +1,6 @@
 ## 功能描述
 
-提交一个音频降噪任务。
+提交一个提取数字水印任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -40,6 +40,7 @@ Content-Type: application/xml
 > - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
+
 #### 请求头
 
 此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
@@ -50,16 +51,15 @@ Content-Type: application/xml
 
 ```shell
 <Request>
-    <Tag>NoiseReduction</Tag>
+    <Tag>ExtractDigitalWatermark</Tag>
     <Input>
-        <Object>input/demo.mp3</Object>
+        <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.wav</Object>
-        </Output>
+        <ExtractDigitalWatermark>
+            <Type>Text</Type>
+            <Version>V1</Version>
+        </ExtractDigitalWatermark>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -72,17 +72,17 @@ Content-Type: application/xml
 具体的数据描述如下：
 
 | 节点名称（关键字） | 父节点 | 描述           | 类型      | 是否必选 |
-| ------------------ | ------ | -------------- | --------- | ---- |
-| Request            | 无     | 保存请求的容器 | Container | 是   |
+| ------------------ | ------ | -------------- | --------- | -------- |
+| Request            | 无     | 保存请求的容器 | Container | 是       |
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                                                     | 类型      | 是否必选 |
-| ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | 创建任务的 Tag：NoiseReduction                                   | String    | 是   |
-| Input              | Request | 待操作的媒体信息                                         | Container | 是   |
-| Operation          | Request | 操作规则                                                 | Container | 是   |
-| QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
+| 节点名称（关键字） | 父节点  | 描述                                    | 类型      | 是否必选 |
+| ------------------ | ------- | --------------------------------------- | --------- | -------- |
+| Tag                | Request | 创建任务的 Tag：ExtractDigitalWatermark | String    | 是       |
+| Input              | Request | 待操作的媒体信息                        | Container | 是       |
+| Operation          | Request | 操作规则                                | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID                | String    | 是       |
 | CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
 | CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型                    | String | 否 |
 | CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
@@ -91,27 +91,26 @@ Container 类型 Request 的具体数据描述如下：
 
 Container 类型 Input 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点        | 描述            | 类型   | 是否必选 |
-| ------------------ | ------------- | --------------- | ------ | ---- |
-| Object             | Request.Input | 执行音频降噪任务的媒体文件名 </br>1.目前只支持文件大小在10M之内的音频 </br>2. 如果输入为视频文件或者多通道的音频，只会保留单通道的音频流 </br>3. 目前暂不支持m3u8格式输入 | String | 是   |
+| 节点名称（关键字） | 父节点        | 描述       | 类型   | 是否必选 |
+| ------------------ | ------------- | ---------- | ------ | -------- |
+| Object             | Request.Input | 媒体文件名 | String | 是       |
 
 <span id="operation"></span>
 Container 类型 Operation 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点            | 描述                                                         | 类型      | 是否必选 |
-| ------------------| ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| Output             | Request.Operation | 结果输出地址                                                            | Container | 是   |
-| JobLevel           | Request.Operation | 任务优先级，级别限制：0 、1 、2 。级别越大任务优先级越高，默认为0 | String | 否   |
-| UserData           | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024 | String | 否 |
+| 节点名称（关键字）      | 父节点            | 描述         | 类型      | 是否必选 |
+| ----------------------- | ----------------- | ------------ | --------- | -------- |
+| ExtractDigitalWatermark | Request.Operation | 提取数字水印配置 | Container | 是       |
+| JobLevel                | Request.Operation | 任务优先级，级别限制：0 、1 、2。级别越大任务优先级越高，默认为0 | String | 否   |
+| UserData                | Request.Operation | 透传用户信息，可打印的 ASCII 码, 长度不超过1024 | String | 否 |
 
 
-Container 类型 Output 的具体数据描述如下：
+Container 类型 ExtractDigitalWatermark 的具体数据类型描述如下：
 
-| 节点名称（关键字） | 父节点                   | 描述                                                         | 类型   | 是否必选 |
-| ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| Region             | Request.Operation.Output | 存储桶的地域                                                | String | 是   |
-| Bucket             | Request.Operation.Output | 存储结果的存储桶                                              | String | 是   |
-| Object             | Request.Operation.Output | 输出结果的文件名                                             | String | 是   |
+| 节点名称（关键字） | 父节点                                    | 描述     | 类型   | 是否必选  | 限制 |
+| ------------------ | ----------------------------------------- | -------- | ------ | -------- | ---- |
+| Type               | Request.Operation.ExtractDigitalWatermark | 水印类型 | String | 是        | Text |
+| Version            | Request.Operation.ExtractDigitalWatermark | 水印版本 | String | 是        | V1   |
 
 
 ## 响应
@@ -135,18 +134,17 @@ Container 类型 Output 的具体数据描述如下：
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>NoiseReduction</Tag>
+        <Tag>ExtractDigitalWatermark</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.wav</Object>
-            </Output>
+            <ExtractDigitalWatermark>
+                <Type>Text</Type>
+                <Version>V1</Version>
+            </ExtractDigitalWatermark>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
         </Operation>
@@ -174,7 +172,7 @@ Container 节点 JobsDetail 的内容：
 | Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
 | JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
-| Tag                | Response.JobsDetail | 新创建任务的 Tag：NoiseReduction                           | String    |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：ExtractDigitalWatermark                    | String    |
 | State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String    |
 | CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
 | EndTime            | Response.JobsDetail | 任务的结束时间                                               | String    |
@@ -192,12 +190,19 @@ Container 节点 Input 的内容：
 
 Container 节点 Operation 的内容：
 
-| 节点名称（关键字） | 父节点                        | 描述                             | 类型      |
-| ------------------ | ----------------------------- | -------------------------------- | --------- |
-| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output  |Container |
-| UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
-| JobLevel           | Response.JobsDetail.Operation | 任务优先级                                                   | String |
+| 节点名称（关键字）      | 父节点                        | 描述         | 类型      |
+| ----------------------- | ----------------------------- | ------------ | --------- |
+| ExtractDigitalWatermark | Response.JobsDetail.Operation | 数字水印配置 | Container |
+| UserData                | Response.JobsDetail.Operation | 透传用户信息 | String    |
+| JobLevel                | Response.JobsDetail.Operation | 任务优先级   | String |
 
+Container 类型 ExtractDigitalWatermark 的具体数据类型描述如下：
+
+| 节点名称（关键字） | 父节点                                                | 描述                       | 类型   |
+| ------------------ | ----------------------------------------------------- | -------------------------- | ------ |
+| Message            | Response.JobsDetail.Operation.ExtractDigitalWatermark | 提取出的数字水印字符串信息   | string |
+| Type               | Response.JobsDetail.Operation.ExtractDigitalWatermark | 水印类型                   | String |
+| Version            | Response.JobsDetail.Operation.ExtractDigitalWatermark | 水印版本                   | String |
 
 
 #### 错误码
@@ -206,26 +211,26 @@ Container 节点 Operation 的内容：
 
 ## 实际案例
 
+
 #### 请求
 
 ```shell
 POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
 Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>NoiseReduction</Tag>
+    <Tag>ExtractDigitalWatermark</Tag>
     <Input>
-        <Object>input/demo.mp3</Object>
+        <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.wav</Object>
-        </Output>
+        <ExtractDigitalWatermark>
+            <Type>Text</Type>
+            <Version>V1</Version>
+        </ExtractDigitalWatermark>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -244,7 +249,7 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhfMjc=
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
 <Response>
     <JobsDetail>
@@ -256,18 +261,17 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhfMjc=
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>NoiseReduction</Tag>
+        <Tag>ExtractDigitalWatermark</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.wav</Object>
-            </Output>
+            <ExtractDigitalWatermark>
+                <Type>Text</Type>
+                <Version>V1</Version>
+            </ExtractDigitalWatermark>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
         </Operation>

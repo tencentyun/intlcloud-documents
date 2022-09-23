@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit a video enhancement job.
+This API is used to submit a super resolution job.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -51,15 +51,15 @@ This request requires the following request body:
 
 ```shell
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>SuperResolution</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-        <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
-        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
-        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+        <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+        <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
         <DigitalWatermark>
             <Type>Text</Type>
             <Message>123456789ab</Message>
@@ -89,8 +89,8 @@ The nodes are described as follows:
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------- | ------------------------------------------------------- | --------- | -------- |
-| Tag                | Request | Job tag: VideoProcess                                | String    | Yes   |
+| ------------------ | ------- | ------------------------------- | --------- | -------- |
+| Tag                | Request | Job tag: SuperResolution                            | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
@@ -111,25 +111,28 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------- | ----------------- | ------------------------------------------------------------ | --------- | -------- |
-| VideoProcess       | Request.Operation | Video enhancement template parameter. This node and `TemplateId` cannot be empty at the same time.                                          | Container | No   |
-| TemplateId                   | Request.Operation | Template ID. This node and `VideoProcess` cannot be empty at the same time.                                        | String    | No  |
+| SuperResolution    | Request.Operation | Super resolution template parameter. This node and `TemplateId` cannot be empty at the same time.                                         | Container | No   |
+| TemplateId                   | Request.Operation | Super resolution template ID, which is used first. This node and `SuperResolution` cannot be empty at the same time.                                        | String    | No  |
 | Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
-| TranscodeTemplateId | Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node first.           | String array  | No|
+| TranscodeTemplateId | Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node first.           | String  | No|
 | Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49917" target="_blank">CreateMediaTemplate</a>. Up to three watermarks can be passed in. | Container array | No |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` first.          | String | No |
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` first.          | String array    | No |
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
 | JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
->? To submit a video enhancement job, you must pass in the transcoding parameter. For the video enhancement parameter, `TemplateId` is used first, and if `TemplateId` is unavailable, `VideoProcess` is used. For the transcoding parameter, `TranscodeTemplateId` is used first, and if `TranscodeTemplateId` is unavailable, `Transcode` is used. For the watermark parameter, `WatermarkTemplateId` or `Watermark` can be used for configuration, and `WatermarkTemplateId` is used first.
+
+>? To submit a super resolution job, you must pass in the transcoding parameter. For the super resolution parameter, `TemplateId` is used first, and if `TemplateId` is unavailable, `SuperResolution` is used. For the transcoding parameter, `TranscodeTemplateId` is used first, and if `TranscodeTemplateId` is unavailable, `Transcode` is used. For the watermark parameter, `WatermarkTemplateId` or `Watermark` can be used for configuration, and `WatermarkTemplateId` is used first.
 >
 
-`VideoProcess` has the following sub-nodes:
+`SuperResolution` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description |
-| ------------------ | :----------------------------- | ------------------------------------------------------------ |
-| ColorEnhance       | Request.Operation.VideoProcess | Same as `Request.ColorEnhance` in the video enhancement template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49915" target="_blank">CreateMediaTemplate</a>. |
-| MsSharpen          | Request.Operation.VideoProcess | Same as `Request.MsSharpen` in the video enhancement template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49915" target="_blank">CreateMediaTemplate</a>. |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| ------------------ | :-------------------------------- | ------------------------------------------------------------ | ------ | ---- |
+| Resolution         | Request.Operation.SuperResolution | Same as `Request.Resolution` in the super resolution template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a>.    | String | Yes |
+| EnableScaleUp         | Request.Operation.SuperResolution | Same as `Request.EnableScaleUp` in the super resolution template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a>.    | String | No |
+| Version         | Request.Operation.SuperResolution | Same as `Request.Version` in the super resolution template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a>.    | String | No |
 
 `Transcode` has the following sub-nodes:
 
@@ -146,11 +149,10 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :--------------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (\*).    | string | Yes   |
+| Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (\*).    | String | Yes   |
 | Type               | Request.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only.      | String | Yes |
 | Version            | Request.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only.       | String | Yes |
-| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default value).  | string | Yes   |
-
+| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default value).  | string | No   |
 
 `Output` has the following sub-nodes:
 
@@ -172,7 +174,7 @@ This API only returns common response headers. For more information, see [Common
 
 The response body returns **application/xml** data. The following contains all the nodes:
 
-``` shell
+```shell
 <Response>
     <JobsDetail>
         <Code>Success</Code>
@@ -183,32 +185,32 @@ The response body returns **application/xml** data. The following contains all t
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
+        <Tag>SuperResolution</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-            <TemplateName>videoprocess_demo</TemplateName>
-            <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
-            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
-            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
-            <DigitalWatermark>
-                <Type>Text</Type>
-                <Message>123456789ab</Message>
-                <Version>V1</Version>
-                <IgnoreError>false</IgnoreError>
-                <State>Running</State>
-            </DigitalWatermark>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
-            </Output>
-            <UserData>This is my data.</UserData>
-            <JobLevel>0</JobLevel>
+              <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+              <TemplateName>superresolution_demo</TemplateName>
+              <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+              <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+              <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
+              <DigitalWatermark>
+                  <Type>Text</Type>
+                  <Message>123456789ab</Message>
+                  <State>Running</State>
+                  <Version>V1</Version>
+                  <IgnoreError>false</IgnoreError>
+              </DigitalWatermark>
+              <Output>
+                  <Region>ap-chongqing</Region>
+                  <Bucket>test-123456789</Bucket>
+                  <Object>output/out.mp4</Object>
+              </Output>
+              <UserData>This is my data.</UserData>
+              <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -234,7 +236,7 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag| Response.JobsDetail | Job tag: VideoProcess | String |
+| Tag                | Response.JobsDetail | Job tag: SuperResolution                              | String    |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
 | StartTime | Response.JobsDetail | Job start time |  String |
@@ -254,17 +256,21 @@ The nodes are as described below:
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| VideoProcess             | Response.JobsDetail.Operation | Same as `Request.Operation.VideoProcess` in the request.  | Container |
+| :------------------ | :---------------------------- | :----------------------------------------------------------- | :-------- |
+| SuperResolution             | Response.JobsDetail.Operation | Same as `Request.Operation.SuperResolution` in the request.  | Container |
 | TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
 | TemplateName        | Response.JobsDetail.Operation | Job template name, which will be returned if `TemplateId` exists. | String    |
+| Transcode             | Response.JobsDetail.Operation | Same as `Request.Operation.Transcode` in the request.  | Container |
+| TranscodeTemplateId | Response.JobsDetail.Operation | Transcoding template ID.                                                 | String    |
+| Watermark             | Response.JobsDetail.Operation | Same as `Request.Operation.Watermark` in the request.  | Container array |
+| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID.          | String array   |
 | Output             | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request.  | Container |
-| DigitalWatermark   | Response.JobsDetail.Operation | Digital watermark parameter.                 | Container |
 | MediaInfo           | Response.JobsDetail.Operation | Media information of the output file, which will not be returned when the job is not completed. | Container |
 | MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
 | DigitalWatermark   | Response.JobsDetail.Operation | Digital watermark parameter.                 | Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
 | JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
+
 
 `MediaInfo` has the following sub-nodes:
 Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
@@ -301,14 +307,15 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 | IgnoreError        | Response.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default value).  |string |
 | State        | Response.Operation.DigitalWatermark | Whether the watermark is added successfully. Valid values: `Running`, `Success`, `Failed`.  | string |
 
+
 #### Error codes
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 
-#### Request 1. Using the video enhancement template ID
 
+#### Request 1. Using the super resolution template ID
 
 ```shell
 POST /jobs HTTP/1.1
@@ -318,15 +325,15 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>SuperResolution</Tag>
     <Input>
-        <Object>input/demo.mp4</Object>
+        <Object>test.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-        <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
-        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
-        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+        <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+        <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+        <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
         <DigitalWatermark>
             <Type>Text</Type>
             <Message>123456789ab</Message>
@@ -336,7 +343,7 @@ Content-Type: application/xml
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/out.mp4</Object>
+            <Object>output/sr.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
@@ -347,7 +354,7 @@ Content-Type: application/xml
 </Request>
 ```
 
-#### Response
+#### Response 1
 
 ```shell
 HTTP/1.1 200 OK
@@ -362,35 +369,35 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T14:44:10+0800</CreationTime>
+        <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
+        <Tag>SuperResolution</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-            <TemplateName>videoprocess_demo</TemplateName>
-            <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
-            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
-            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+            <TemplateName>superresolution_demo</TemplateName>
+            <TranscodeTemplateId>t160606b9752148c4absdfaf2f55163b1f</TranscodeTemplateId>
+            <WatermarkTemplateId>t146d70eb241c44c63b6efc1cc93ccfc5d</WatermarkTemplateId>
+            <WatermarkTemplateId>t12a74d11687d444deba8a6cc52051ac27</WatermarkTemplateId>
             <DigitalWatermark>
+                <State>Running</State>
                 <Type>Text</Type>
                 <Message>123456789ab</Message>
                 <Version>V1</Version>
                 <IgnoreError>false</IgnoreError>
-                <State>Running</State>
             </DigitalWatermark>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
+                <Object>output/sr.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
@@ -399,34 +406,27 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 </Response>
 ```
 
-#### Request 2. Using the video enhancement processing parameter
 
+#### Request 2. Using the super resolution processing parameter
 
 ```shell
 POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
 Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>SuperResolution</Tag>
     <Input>
-        <Object>input/demo.mp4</Object>
+        <Object>test.mp4</Object>
     </Input>
     <Operation>
-        <VideoProcess>
-            <ColorEnhance>
-                <Contrast>50</Contrast>
-                <Correction>100</Correction>
-                <Enable>true</Enable>
-                <Saturation>100</Saturation>
-            </ColorEnhance>
-            <MsSharpen>
-                <Enable>true</Enable>
-                <SharpenLevel>5</SharpenLevel>
-            </MsSharpen>
-        </VideoProcess>
+        <SuperResolution>
+            <Resolution>sdtohd</Resolution>
+            <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
+        </SuperResolution>
         <Transcode>
             <Container>
                 <Format>mp4</Format>
@@ -480,7 +480,7 @@ Content-Type: application/xml
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/out.mp4</Object>
+            <Object>output/sr.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
@@ -491,7 +491,7 @@ Content-Type: application/xml
 </Request>
 ```
 
-#### Response
+#### Response 2
 
 ```shell
 HTTP/1.1 200 OK
@@ -506,31 +506,24 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T14:44:10+0800</CreationTime>
+        <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
+        <Tag>SuperResolution</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <VideoProcess>
-                <ColorEnhance>
-                    <Contrast>50</Contrast>
-                    <Correction>100</Correction>
-                    <Enable>true</Enable>
-                    <Saturation>100</Saturation>
-                </ColorEnhance>
-                <MsSharpen>
-                    <Enable>true</Enable>
-                    <SharpenLevel>5</SharpenLevel>
-                </MsSharpen>
-            </VideoProcess>
+            <SuperResolution>
+                <Resolution>sdtohd</Resolution>
+                <EnableScaleUp>true</EnableScaleUp>
+                <Version>Enhance</Version>
+            </SuperResolution>
             <Transcode>
                 <Container>
                     <Format>mp4</Format>
@@ -576,6 +569,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 </Text>
             </Watermark>
             <DigitalWatermark>
+                <State>Running</State>
                 <Type>Text</Type>
                 <Message>123456789ab</Message>
                 <Version>V1</Version>
@@ -584,7 +578,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
+                <Object>output/sr.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
@@ -592,4 +586,3 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     </JobsDetail>
 </Response>
 ```
-

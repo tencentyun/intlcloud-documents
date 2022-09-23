@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit an audio noise cancellation job.
+This API is used to submit a video quality analysis job.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -50,16 +50,11 @@ This request requires the following request body:
 
 ```shell
 <Request>
-    <Tag>NoiseReduction</Tag>
+    <Tag>QualityEstimate</Tag>
     <Input>
-        <Object>input/demo.mp3</Object>
+        <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.wav</Object>
-        </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -79,7 +74,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | Job type: NoiseReduction                              | String    | Yes   |
+| Tag                | Request | Job tag: QualityEstimate                           | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
@@ -89,30 +84,20 @@ The nodes are described as follows:
 | CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 
-`Input` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------------- | --------------- | ------ | ---- |
-| Object             | Request.Input | Name of the media file on which to execute the audio noise reduction job. </br>1. Currently, only audio files within 10 MB in size are supported. </br>2. If the input is a video file or a multi-channel audio, only mono-channel audio streams will be retained.</br>3. M3U8 input audios are not supported. | String | Yes |
-
 <span id="operation"></span>
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------| ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| Output                       | Request.Operation | Result output address                                        | Container | Yes   |
-| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
+| ------------------ | ----------------- | ---------------- | --------- | -------- |
 | UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
 
-`Output` has the following sub-nodes:
+`Input` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
-| Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
-
+| ------------------ | ------------- | --------------- | ------ | ---- |
+| Object             | Request.Input | Media filename | String | Yes   |
 
 ## Response
 
@@ -129,24 +114,19 @@ The response body returns **application/xml** data. The following contains all t
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>NoiseReduction</Tag>
+        <Tag>QualityEstimate</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.wav</Object>
-            </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
         </Operation>
@@ -174,13 +154,14 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag | Response.JobsDetail | Job type: NoiseReduction | String |
+| Tag                | Response.JobsDetail | Job tag: QualityEstimate                            | String    |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
+| StartTime | Response.JobsDetail | Job start time |  String |
 | EndTime | Response.JobsDetail | Job end time |  String |
 | QueueId            | Response.JobsDetail | ID of the queue which the job is in                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the job                   | Container |
-| Operation | Response.JobsDetail | Operation rule |  Container |
+| Operation          | Response.JobsDetail | Operation rule                           | Container |
 
 `Input` has the following sub-nodes:
 
@@ -193,12 +174,16 @@ The nodes are as described below:
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-| ------------------ | ----------------------------- | -------------------------------- | --------- |
-| Output             | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request.  | Container |
+| :----------------- | :---------------------------- | :--------------------------------- | :-------- |
+| MediaInfo | Response.JobsDetail.Operation | Output video information, which will not be returned when the job is not completed. |  Container |
+| QualityEstimate    | Response.JobsDetail.Operation | Video analysis result, which will not be returned when the job is not completed. |  Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
-| JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
 
+`QualityEstimate` has the following sub-nodes:
 
+| Node Name (Keyword) | Parent Node | Description | Type |
+| :----------------- | :---------------------------- | :--------------------------------- | :-------- |
+| Score           | Response.JobsDetail.Operation.QualityEstimate | Video quality score up to 10. If the score reaches 6, the video quality can be considered good. | String |
 
 #### Error codes
 
@@ -216,16 +201,11 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>NoiseReduction</Tag>
+    <Tag>QualityEstimate</Tag>
     <Input>
-        <Object>input/demo.mp3</Object>
+        <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.wav</Object>
-        </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -244,30 +224,25 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhfMjc=
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 <Response>
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>NoiseReduction</Tag>
+        <Tag>QualityEstimate</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.wav</Object>
-            </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
         </Operation>

@@ -37,12 +37,12 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
 
 #### 请求体
 
@@ -59,6 +59,7 @@ Content-Type: application/xml
             <Scenario>Stream</Scenario>
         </VideoTag>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -80,8 +81,10 @@ Container 类型 Request 的具体数据描述如下：
 | Input              | Request | 待操作的媒体信息                                        | Container | 是       |
 | Operation          | Request | 操作规则                                                     | Container | 是       |
 | QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
-| CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
 | CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
+| CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型                    | String | 否 |
+| CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
+| CallBackMqConfig   | Request | 任务回调 TDMQ 配置，当 CallBackType 为 TDMQ 时必填。详情见 [CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945)                | Container | 否 |
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -95,6 +98,8 @@ Container 类型 Operation 的具体数据描述如下：
 | 节点名称（关键字） | 父节点            | 描述                     | 类型      | 是否必选 |
 | ------------------ | ----------------- | ------------------------ | --------- | -------- |
 | VideoTag           | Request.Operation | 指定该 VideoTag 任务参数 | Container | 是       |
+| JobLevel           | Request.Operation | 任务优先级，级别限制：0 、1 、2。级别越大任务优先级越高，默认为0 | String | 否   |
+| UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |  否   |
 
 Container 类型 VideoTag 的具体数据描述如下：
 
@@ -107,7 +112,7 @@ Container 类型 VideoTag 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
 
 #### 响应体
 
@@ -135,6 +140,7 @@ Container 类型 VideoTag 的具体数据描述如下：
                 <Scenario>Stream</Scenario>
             </VideoTag>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -184,6 +190,7 @@ Container 节点 Operation 的内容：
 | VideoTag           | Response.JobsDetail.Operation | 同请求中的 Request.Operation.VideoTag | Container |
 | VideoTagResult     | Response.JobsDetail.Operation | 视频标签分析结果,任务未完成时不返回     | Container |
 | UserData           | Response.JobsDetail.Operation | 透传用户信息                          | String |
+| JobLevel           | Response.JobsDetail.Operation | 任务优先级                                                   | String |
 
 Container 节点 VideoTagResult 的内容：
 
@@ -287,7 +294,7 @@ Container 节点 Object 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 ## 实际案例
 
@@ -310,6 +317,7 @@ Content-Type: application/xml
             <Scenario>Stream</Scenario>
         </VideoTag>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -349,6 +357,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Scenario>Stream</Scenario>
             </VideoTag>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>

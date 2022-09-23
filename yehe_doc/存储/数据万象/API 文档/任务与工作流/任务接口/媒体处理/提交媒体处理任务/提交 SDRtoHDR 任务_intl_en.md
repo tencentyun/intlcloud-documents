@@ -37,13 +37,13 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
 
 #### Request body
 
@@ -68,6 +68,7 @@ This request requires the following request body:
             <Object>output/out.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -85,12 +86,15 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ------------------------------------------------------- | --------- | -------- |
-| Tag                | Request | Job type: SDRtoHDR                                   | String    | Yes   |
+| Tag                | Request | Job tag: SDRtoHDR                                   | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
 | CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945#CallBackMqConfig), which is required if `CallBackType` is `TDMQ`.                | Container | No |
+
 
 `Input` has the following sub-nodes:
 
@@ -106,10 +110,12 @@ The nodes are described as follows:
 | SDRtoHDR             | Request.Operation | SDR-to-HDR parameter                                             | Container | Yes   |
 | Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
 | TranscodeTemplateId | Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node first.           | String  | No|
-| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API CreateMediaTemplate. Up to three watermarks can be passed in. | Container array | No |
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49917" target="_blank">CreateMediaTemplate</a>. Up to three watermarks can be passed in. | Container array | No |
 | WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` first.          | String array    | No |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 | UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
+
 
 >?To submit an SDR-to-HDR job, you must pass in the transcoding parameter. For the transcoding parameter, `TranscodeTemplateId` is used first, and if `TranscodeTemplateId` is unavailable, `Transcode` is used. For the watermark parameter, `WatermarkTemplateId` or `Watermark` can be used for configuration, and `WatermarkTemplateId` is used first.
 >
@@ -118,18 +124,18 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | :------------------------- | -------- | ------ | -------- | ------------------- |
-| HdrMode            | Request.Operation.SDRtoHDR | HDR mode | string | Yes       | 1. HLG<br/>2. HDR10 |
+| HdrMode            | Request.Operation.SDRtoHDR | HDR mode | String | Yes       | 1. HLG<br/>2. HDR10 |
 
 `Transcode` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :------------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API CreateMediaTemplate    | Container | Yes   |
-| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
-| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
-| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
-| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API CreateMediaTemplate.    | Container | No   |
-
+| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| AudioMix           | Request.Operation.Transcode     | Audio mix parameter as described in <a href="https://intl.cloud.tencent.com/document/product/1045/49945" target="_blank">Structure</a>.                                    | Container array | No |
 
 `Output` has the following sub-nodes:
 
@@ -145,7 +151,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
 
 #### Response body
 
@@ -182,6 +188,7 @@ The response body returns **application/xml** data. The following contains all t
                 <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -207,7 +214,7 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag                | Response.JobsDetail | Job type: SDRtoHDR                              | String    |
+| Tag                | Response.JobsDetail | Job tag: SDRtoHDR                              | String    |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
 | StartTime | Response.JobsDetail | Job start time |  String |
@@ -233,6 +240,7 @@ The nodes are as described below:
 | MediaInfo           | Response.JobsDetail.Operation | Media information of the output file, which will not be returned when the job is not completed. | Container |
 | MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
+| JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
 
 `MediaInfo` has the following sub-nodes:
 Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
@@ -261,7 +269,7 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 
@@ -292,6 +300,7 @@ Content-Type: application/xml
             <Object>output/out.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -340,6 +349,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>

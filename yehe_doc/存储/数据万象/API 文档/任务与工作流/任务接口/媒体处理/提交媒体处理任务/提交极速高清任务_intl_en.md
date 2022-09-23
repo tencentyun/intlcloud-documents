@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit a video enhancement job.
+This API is used to submit a top speed codec transcoding job.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -51,15 +51,15 @@ This request requires the following request body:
 
 ```shell
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>Transcode</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-        <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
         <DigitalWatermark>
             <Type>Text</Type>
             <Message>123456789ab</Message>
@@ -89,8 +89,8 @@ The nodes are described as follows:
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ------- | ------------------------------------------------------- | --------- | -------- |
-| Tag                | Request | Job tag: VideoProcess                                | String    | Yes   |
+| ------------------ | ------- | ------------------------------------------------------------ | --------- | -------- |
+| Tag                | Request | Job tag: Transcode | String    | Yes       |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
@@ -111,42 +111,23 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------- | ----------------- | ------------------------------------------------------------ | --------- | -------- |
-| VideoProcess       | Request.Operation | Video enhancement template parameter. This node and `TemplateId` cannot be empty at the same time.                                          | Container | No   |
-| TemplateId                   | Request.Operation | Template ID. This node and `VideoProcess` cannot be empty at the same time.                                        | String    | No  |
-| Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
-| TranscodeTemplateId | Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node first.           | String array  | No|
-| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49917" target="_blank">CreateMediaTemplate</a>. Up to three watermarks can be passed in. | Container array | No |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` first.          | String | No |
+| TemplateId                   | Request.Operation | ID of the top speed codec transcoding template.                                        | String    | No  |
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Multiple watermark template IDs can be passed in.           | String    | No |
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49917" target="_blank">CreateMediaTemplate</a>.  | Container | No |
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
 | JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
->? To submit a video enhancement job, you must pass in the transcoding parameter. For the video enhancement parameter, `TemplateId` is used first, and if `TemplateId` is unavailable, `VideoProcess` is used. For the transcoding parameter, `TranscodeTemplateId` is used first, and if `TranscodeTemplateId` is unavailable, `Transcode` is used. For the watermark parameter, `WatermarkTemplateId` or `Watermark` can be used for configuration, and `WatermarkTemplateId` is used first.
+
+>? For the watermark parameter, `WatermarkTemplateId` or `Watermark` can be used for configuration, and `WatermarkTemplateId` is used first.
 >
-
-`VideoProcess` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description |
-| ------------------ | :----------------------------- | ------------------------------------------------------------ |
-| ColorEnhance       | Request.Operation.VideoProcess | Same as `Request.ColorEnhance` in the video enhancement template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49915" target="_blank">CreateMediaTemplate</a>. |
-| MsSharpen          | Request.Operation.VideoProcess | Same as `Request.MsSharpen` in the video enhancement template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49915" target="_blank">CreateMediaTemplate</a>. |
-
-`Transcode` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | :------------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
-| AudioMix           | Request.Operation.Transcode     | Audio mix parameter as described in <a href="https://intl.cloud.tencent.com/document/product/1045/49945" target="_blank">Structure</a>.                                    | Container array | No |
 
 `DigitalWatermark` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :--------------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (\*).    | string | Yes   |
+| Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).    | string | Yes   |
 | Type               | Request.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only.      | String | Yes |
 | Version            | Request.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only.       | String | Yes |
 | IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default value).  | string | Yes   |
@@ -179,22 +160,23 @@ The response body returns **application/xml** data. The following contains all t
         <Message/>
         <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T14:44:10+0800</CreationTime>
+        <Progress>0</Progress>
+        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
+        <Tag>Transcode</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-            <TemplateName>videoprocess_demo</TemplateName>
-            <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
+            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+            <TemplateName>high_993874</TemplateName>
             <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
             <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
             <DigitalWatermark>
                 <Type>Text</Type>
                 <Message>123456789ab</Message>
@@ -234,8 +216,9 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag| Response.JobsDetail | Job tag: VideoProcess | String |
+| Tag                | Response.JobsDetail | Job tag: Transcode                               | String    |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
+| Progress | Response.JobsDetail | Task progress in percentage, which is returned only if `State` is `Submitted`, `Running`, `Success`, or `Pause`. Value range: [0, 100]. | String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
 | StartTime | Response.JobsDetail | Job start time |  String |
 | EndTime | Response.JobsDetail | Job end time |  String |
@@ -255,16 +238,16 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| VideoProcess             | Response.JobsDetail.Operation | Same as `Request.Operation.VideoProcess` in the request.  | Container |
 | TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
 | TemplateName        | Response.JobsDetail.Operation | Job template name, which will be returned if `TemplateId` exists. | String    |
+| Watermark             | Response.JobsDetail.Operation | Same as `Request.Operation.Watermark` in the request.  | Container array |
+| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID.          | String array   |
 | Output             | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request.  | Container |
-| DigitalWatermark   | Response.JobsDetail.Operation | Digital watermark parameter.                 | Container |
 | MediaInfo           | Response.JobsDetail.Operation | Media information of the output file, which will not be returned when the job is not completed. | Container |
 | MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
 | DigitalWatermark   | Response.JobsDetail.Operation | Digital watermark parameter.                 | Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
-| JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
+| JobLevel            | Response.JobsDetail.Operation | Job priority.                            | String |
 
 `MediaInfo` has the following sub-nodes:
 Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
@@ -295,7 +278,7 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| Message               | Response.Operation.DigitalWatermark |  The string in the digital watermark successfully embedded in the video, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (\*).    | string |
+| Message               | Response.Operation.DigitalWatermark |  The string in the digital watermark successfully embedded in the video, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).    | string |
 | Type               | Response.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only.      | String |
 | Version            | Response.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only.      | String |
 | IgnoreError        | Response.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default value).  |string |
@@ -307,8 +290,7 @@ There are no special error messages for this request. For common error messages,
 
 ## Samples
 
-#### Request 1. Using the video enhancement template ID
-
+#### Request
 
 ```shell
 POST /jobs HTTP/1.1
@@ -318,15 +300,15 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>Transcode</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-        <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+        <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
         <DigitalWatermark>
             <Type>Text</Type>
             <Message>123456789ab</Message>
@@ -364,22 +346,23 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <Message/>
         <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
         <State>Submitted</State>
-        <CreationTime>2022-06-27T14:44:10+0800</CreationTime>
+        <Progress>0</Progress>
+        <CreationTime>2022-06-27T15:23:11+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
+        <Tag>Transcode</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t156c107210e7243c5817354565d81b578</TemplateId>
-            <TemplateName>videoprocess_demo</TemplateName>
-            <TranscodeTemplateId>t1460606b9752148c4ab182f55163ba7cd</TranscodeTemplateId>
+            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+            <TemplateName>high_993874</TemplateName>
             <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
             <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
+            <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
             <DigitalWatermark>
                 <Type>Text</Type>
                 <Message>123456789ab</Message>
@@ -398,198 +381,3 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     </JobsDetail>
 </Response>
 ```
-
-#### Request 2. Using the video enhancement processing parameter
-
-
-```shell
-POST /jobs HTTP/1.1
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
-Content-Length: 166
-Content-Type: application/xml
-
-<Request>
-    <Tag>VideoProcess</Tag>
-    <Input>
-        <Object>input/demo.mp4</Object>
-    </Input>
-    <Operation>
-        <VideoProcess>
-            <ColorEnhance>
-                <Contrast>50</Contrast>
-                <Correction>100</Correction>
-                <Enable>true</Enable>
-                <Saturation>100</Saturation>
-            </ColorEnhance>
-            <MsSharpen>
-                <Enable>true</Enable>
-                <SharpenLevel>5</SharpenLevel>
-            </MsSharpen>
-        </VideoProcess>
-        <Transcode>
-            <Container>
-                <Format>mp4</Format>
-            </Container>
-            <Video>
-                <Codec>H.264</Codec>
-                <Profile>high</Profile>
-                <Bitrate>1000</Bitrate>
-                <Width>1280</Width>
-                <Fps>30</Fps>
-                <Preset>medium</Preset>
-            </Video>
-            <Audio>
-                <Codec>aac</Codec>
-                <Samplerate>44100</Samplerate>
-                <Bitrate>128</Bitrate>
-                <Channels>4</Channels>
-            </Audio>
-            <TransConfig>
-                <AdjDarMethod>scale</AdjDarMethod>
-                <IsCheckReso>false</IsCheckReso>
-                <ResoAdjMethod>1</ResoAdjMethod>
-            </TransConfig>
-            <TimeInterval>
-                <Start>0</Start>
-                <Duration>60</Duration>
-            </TimeInterval>
-        </Transcode>
-        <Watermark>
-            <Type>Text</Type>
-            <LocMode>Absolute</LocMode>
-            <Dx>128</Dx>
-            <Dy>128</Dy>
-            <Pos>TopRight</Pos>
-            <StartTime>0</StartTime>
-            <EndTime>100.5</EndTime>
-            <Text>
-                <Text>Watermark content</Text>
-                <FontSize>30</FontSize>
-                <FontType>simfang.ttf</FontType>
-                <FontColor>0xRRGGBB</FontColor>
-                <Transparency>30</Transparency>
-            </Text>
-        </Watermark>
-        <DigitalWatermark>
-            <Type>Text</Type>
-            <Message>123456789ab</Message>
-            <Version>V1</Version>
-            <IgnoreError>false</IgnoreError>
-        </DigitalWatermark>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.mp4</Object>
-        </Output>
-        <UserData>This is my data.</UserData>
-        <JobLevel>0</JobLevel>
-    </Operation>
-    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-    <CallBack>http://callback.demo.com</CallBack>
-    <CallBackFormat>JSON<CallBackFormat>
-</Request>
-```
-
-#### Response
-
-```shell
-HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 230
-Connection: keep-alive
-Date: Mon, 28 Jun 2022 15:23:12 GMT
-Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
-
-<Response>
-    <JobsDetail>
-        <Code>Success</Code>
-        <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
-        <State>Submitted</State>
-        <CreationTime>2022-06-27T14:44:10+0800</CreationTime>
-        <StartTime>-</StartTime>
-        <EndTime>-</EndTime>
-        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>VideoProcess</Tag>
-        <Input>
-            <BucketId>test-123456789</BucketId>
-            <Object>input/demo.mp4</Object>
-            <Region>ap-chongqing</Region>
-        </Input>
-        <Operation>
-            <VideoProcess>
-                <ColorEnhance>
-                    <Contrast>50</Contrast>
-                    <Correction>100</Correction>
-                    <Enable>true</Enable>
-                    <Saturation>100</Saturation>
-                </ColorEnhance>
-                <MsSharpen>
-                    <Enable>true</Enable>
-                    <SharpenLevel>5</SharpenLevel>
-                </MsSharpen>
-            </VideoProcess>
-            <Transcode>
-                <Container>
-                    <Format>mp4</Format>
-                </Container>
-                <Video>
-                    <Codec>H.264</Codec>
-                    <Profile>high</Profile>
-                    <Bitrate>1000</Bitrate>
-                    <Width>1280</Width>
-                    <Fps>30</Fps>
-                    <Preset>medium</Preset>
-                </Video>
-                <Audio>
-                    <Codec>aac</Codec>
-                    <Samplerate>44100</Samplerate>
-                    <Bitrate>128</Bitrate>
-                    <Channels>4</Channels>
-                </Audio>
-                <TransConfig>
-                    <AdjDarMethod>scale</AdjDarMethod>
-                    <IsCheckReso>false</IsCheckReso>
-                    <ResoAdjMethod>1</ResoAdjMethod>
-                </TransConfig>
-                <TimeInterval>
-                    <Start>0</Start>
-                    <Duration>60</Duration>
-                </TimeInterval>
-            </Transcode>
-            <Watermark>
-                <Type>Text</Type>
-                <LocMode>Absolute</LocMode>
-                <Dx>128</Dx>
-                <Dy>128</Dy>
-                <Pos>TopRight</Pos>
-                <StartTime>0</StartTime>
-                <EndTime>100.5</EndTime>
-                <Text>
-                    <Text>Watermark content</Text>
-                    <FontSize>30</FontSize>
-                    <FontType>simfang.ttf</FontType>
-                    <FontColor>0xRRGGBB</FontColor>
-                    <Transparency>30</Transparency>
-                </Text>
-            </Watermark>
-            <DigitalWatermark>
-                <Type>Text</Type>
-                <Message>123456789ab</Message>
-                <Version>V1</Version>
-                <IgnoreError>false</IgnoreError>
-            </DigitalWatermark>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.mp4</Object>
-            </Output>
-            <UserData>This is my data.</UserData>
-            <JobLevel>0</JobLevel>
-        </Operation>
-    </JobsDetail>
-</Response>
-```
-

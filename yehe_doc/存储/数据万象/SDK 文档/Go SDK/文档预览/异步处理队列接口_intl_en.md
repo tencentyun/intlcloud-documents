@@ -6,7 +6,7 @@ This document provides an overview of APIs and SDK code samples for file preview
 | API | Operation | Description |
 | --------------- | ------------ | -------- |
 | DescribeDocProcessQueues  |   Querying file preview queues | Queries specified file preview queues. |
-|UpdateDocProcessQueue | Updating file preview queue | Updates specified file preview queue. |
+| UpdateDocProcessQueue | Updating file preview queue | Updates specified file preview queue. |
 
 
 ## Querying File Preview Queue
@@ -77,6 +77,7 @@ type DocProcessQueueNotifyConfig struct {
     Event string
 }
 ```
+
 | Parameter | Description | Type |
 | :----------- | :------------------------------ | :--------- |
 | RequestId    | Unique ID of the request                   | String     |
@@ -134,6 +135,7 @@ type UpdateDocProcessQueueOptions struct {
     NotifyConfig *DocProcessQueueNotifyConfig
 }
 ```
+
 | Parameter | Description | Type |
 | ----| ---- | ---- |
 | Name | Queue name | String             |

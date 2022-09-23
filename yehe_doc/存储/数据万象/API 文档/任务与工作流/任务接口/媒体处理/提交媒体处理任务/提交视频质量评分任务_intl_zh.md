@@ -1,6 +1,6 @@
 ## 功能描述
 
-提交一个音频降噪任务。
+提交一个视频质量分析任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -46,20 +46,15 @@ Content-Type: application/xml
 
 #### 请求体
 
-该请求操作的实现需要有如下请求体。
+该请求操作的实现需要有如下请求体：
 
 ```shell
 <Request>
-    <Tag>NoiseReduction</Tag>
+    <Tag>QualityEstimate</Tag>
     <Input>
-        <Object>input/demo.mp3</Object>
+        <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.wav</Object>
-        </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -79,40 +74,30 @@ Container 类型 Request 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点  | 描述                                                     | 类型      | 是否必选 |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | 创建任务的 Tag：NoiseReduction                                   | String    | 是   |
-| Input              | Request | 待操作的媒体信息                                         | Container | 是   |
-| Operation          | Request | 操作规则                                                 | Container | 是   |
-| QueueId            | Request | 任务所在的队列 ID                                             | String    | 是       |
+| Tag                | Request | 创建任务的 Tag：QualityEstimate                           | String    | 是   |
+| Input              | Request | 待操作的媒体信息                                          | Container | 是   |
+| Operation          | Request | 操作规则                  | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID         | String    | 是       |
 | CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
 | CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型                    | String | 否 |
 | CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
 | CallBackMqConfig   | Request | 任务回调 TDMQ 配置，当 CallBackType 为 TDMQ 时必填。详情见 [CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945)                | Container | 否 |
 
 
+<span id="operation"></span>
+Container 类型 Operation 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点            | 描述             | 类型      | 是否必选 |
+| ------------------ | ----------------- | ---------------- | --------- | -------- |
+| UserData           | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024 | String | 否 |
+| JobLevel           | Request.Operation | 任务优先级，级别限制：0 、1 、2 。级别越大任务优先级越高，默认为0 | String | 否   |
+
+
 Container 类型 Input 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点        | 描述            | 类型   | 是否必选 |
 | ------------------ | ------------- | --------------- | ------ | ---- |
-| Object             | Request.Input | 执行音频降噪任务的媒体文件名 </br>1.目前只支持文件大小在10M之内的音频 </br>2. 如果输入为视频文件或者多通道的音频，只会保留单通道的音频流 </br>3. 目前暂不支持m3u8格式输入 | String | 是   |
-
-<span id="operation"></span>
-Container 类型 Operation 的具体数据描述如下：
-
-| 节点名称（关键字） | 父节点            | 描述                                                         | 类型      | 是否必选 |
-| ------------------| ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| Output             | Request.Operation | 结果输出地址                                                            | Container | 是   |
-| JobLevel           | Request.Operation | 任务优先级，级别限制：0 、1 、2 。级别越大任务优先级越高，默认为0 | String | 否   |
-| UserData           | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024 | String | 否 |
-
-
-Container 类型 Output 的具体数据描述如下：
-
-| 节点名称（关键字） | 父节点                   | 描述                                                         | 类型   | 是否必选 |
-| ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| Region             | Request.Operation.Output | 存储桶的地域                                                | String | 是   |
-| Bucket             | Request.Operation.Output | 存储结果的存储桶                                              | String | 是   |
-| Object             | Request.Operation.Output | 输出结果的文件名                                             | String | 是   |
-
+| Object             | Request.Input | 媒体文件名 | String | 是   |
 
 ## 响应
 
@@ -129,24 +114,19 @@ Container 类型 Output 的具体数据描述如下：
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>NoiseReduction</Tag>
+        <Tag>QualityEstimate</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.wav</Object>
-            </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
         </Operation>
@@ -174,13 +154,14 @@ Container 节点 JobsDetail 的内容：
 | Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
 | JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
-| Tag                | Response.JobsDetail | 新创建任务的 Tag：NoiseReduction                           | String    |
-| State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String    |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：QualityEstimate                            | String    |
+| State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String |
 | CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
+| StartTime          | Response.JobsDetail | 任务的开始时间                                               | String    |
 | EndTime            | Response.JobsDetail | 任务的结束时间                                               | String    |
 | QueueId            | Response.JobsDetail | 任务所属的队列 ID                                            | String    |
 | Input              | Response.JobsDetail | 该任务的输入资源地址                                         | Container |
-| Operation          | Response.JobsDetail | 该任务的操作规则                                             | Container |
+| Operation          | Response.JobsDetail | 该任务的规则                                                 | Container |
 
 Container 节点 Input 的内容：
 
@@ -192,13 +173,17 @@ Container 节点 Input 的内容：
 
 Container 节点 Operation 的内容：
 
-| 节点名称（关键字） | 父节点                        | 描述                             | 类型      |
-| ------------------ | ----------------------------- | -------------------------------- | --------- |
-| Output             | Response.JobsDetail.Operation | 同请求中的 Request.Operation.Output  |Container |
+| 节点名称（关键字） | 父节点                        | 描述                               | 类型      |
+| :----------------- | :---------------------------- | :--------------------------------- | :-------- |
+| MediaInfo          | Response.JobsDetail.Operation | 输出视频的信息，任务未完成时不返回 | Container |
+| QualityEstimate    | Response.JobsDetail.Operation | 视频分析结果，任务未完成时不返回   | Container |
 | UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
-| JobLevel           | Response.JobsDetail.Operation | 任务优先级                                                   | String |
 
+Container 节点 QualityEstimate 的内容：
 
+| 节点名称（关键字） | 父节点                        | 描述                               | 类型      |
+| :----------------- | :---------------------------- | :--------------------------------- | :-------- |
+| Score           | Response.JobsDetail.Operation.QualityEstimate | 视频质量得分, 满分为10分, 达到6分就可以认为视频质量良好   | String |
 
 #### 错误码
 
@@ -216,16 +201,11 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>NoiseReduction</Tag>
+    <Tag>QualityEstimate</Tag>
     <Input>
-        <Object>input/demo.mp3</Object>
+        <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <Output>
-            <Region>ap-chongqing</Region>
-            <Bucket>test-123456789</Bucket>
-            <Object>output/out.wav</Object>
-        </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -244,30 +224,25 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhfMjc=
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 <Response>
     <JobsDetail>
         <Code>Success</Code>
         <Message/>
-        <JobId>j8d121820f5e411ec926ef19d53ba9c6f</JobId>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
         <State>Submitted</State>
         <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>NoiseReduction</Tag>
+        <Tag>QualityEstimate</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <Output>
-                <Region>ap-chongqing</Region>
-                <Bucket>test-123456789</Bucket>
-                <Object>output/out.wav</Object>
-            </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
         </Operation>

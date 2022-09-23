@@ -37,12 +37,12 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
 
 #### Request body
 
@@ -59,6 +59,7 @@ This request requires the following request body:
             <Scenario>Stream</Scenario>
         </VideoTag>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -76,12 +77,14 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ------------------------------------------------------- | --------- | -------- |
-| Tag                | Request | Job type: VideoTag                                   | String    | Yes   |
+| Tag                | Request | Job tag: VideoTag                                   | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
 | CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -95,6 +98,8 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | ------------------------ | --------- | -------- |
 | VideoTag            | Request.Operation | `VideoTag` job parameter                                             | Container | Yes  |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
+| UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String | No |
 
 `VideoTag` has the following sub-nodes:
 
@@ -107,7 +112,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
 
 #### Response body
 
@@ -135,6 +140,7 @@ The response body returns **application/xml** data. The following contains all t
                 <Scenario>Stream</Scenario>
             </VideoTag>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -160,7 +166,7 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag                | Response.JobsDetail | Job type: VideoTag                              | String    |
+| Tag                | Response.JobsDetail | Job tag: VideoTag                              | String    |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
 | StartTime | Response.JobsDetail | Job start time |  String |
@@ -184,6 +190,7 @@ The nodes are as described below:
 | VideoTag | Response.JobsDetail.Operation | Same as `Request.Operation.VideoTag` in the request. |  Container |
 | VideoTagResult     | Response.JobsDetail.Operation | Video tag analysis result, which will not be returned when the job is not completed. |  Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
+| JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
 
 `VideoTagResult` has the following sub-nodes:
 
@@ -196,7 +203,7 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------------------------------------------------------ | :------------------------------------------- | :-------- |
 | Data | Response.JobsDetail.Operation.VideoTagResult.StreamData | Result list of the video tagging job in the `Stream` scenario | Container |
-| SubErrCode | Response.JobsDetail.Operation.VideoTagResult.StreamData | Algorithm status code. 0: success; other values: exception. | Container |
+| SubErrCode | Response.JobsDetail.Operation.VideoTagResult.StreamData | Algorithm status code. `0`: Success. Other values: Exception. | Container |
 | SubErrMsg | Response.JobsDetail.Operation.VideoTagResult.StreamData | Algorithm error message. `ok` indicates a success. If the request fails, the corresponding error is returned. | Container |
 
 `Data` has the following sub-nodes:
@@ -287,7 +294,7 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 
@@ -310,6 +317,7 @@ Content-Type: application/xml
             <Scenario>Stream</Scenario>
         </VideoTag>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -349,6 +357,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Scenario>Stream</Scenario>
             </VideoTag>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>

@@ -37,13 +37,13 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
 
 #### Request body
 
@@ -70,6 +70,7 @@ This request requires the following request body:
             <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -87,11 +88,15 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ----------------------- | --------- | -------- |
-| Tag                | Request | Job type: Segment                                   | String    | Yes   |
+| Tag                | Request | Job tag: Segment                                   | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Callback address                                                | String    | No   |
+| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
+
 
 `Input` has the following sub-nodes:
 
@@ -106,6 +111,7 @@ The nodes are described as follows:
 | ------------------ | ----------------- | -------------- | --------- | -------- |
 | Segment            | Request.Operation | Remuxing parameter                                             | Container | Yes   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
 `Segment` has the following sub-nodes:
 
@@ -113,6 +119,7 @@ The nodes are described as follows:
 | ------------------ | :------------------------ | -------------------- | --------- | -------- | -------------------------------------------- |
 | Format             | Request.Operation.Segment | Container format             | String    | Yes       | aac, mp3, flac, mp4, ts, mkv, avi, hls, m3u8 |
 | Duration           | Request.Operation.Segment  | Remuxing duration in seconds                         | String | No   | The value must be an integer equal to or greater than 5. |
+| TranscodeIndex      | Request.Operation.Segment | The stream number to be processed, which corresponds to `Response.MediaInfo.Stream.Video.Index` and `Response.MediaInfo.Stream.Audio.Index` in the media information. For more information, see [Getting Media File Information](https://intl.cloud.tencent.com/document/product/1045/49541). | String | No | None |
 | HlsEncrypt         | Request.Operation.Segment        | HLS encryption configuration                            | Container | No       | None. This parameter takes effect only when the container format is `hls`.     |
 
 `HlsEncrypt` has the following sub-nodes:
@@ -135,7 +142,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
 
 #### Response body
 
@@ -173,6 +180,7 @@ The response body returns **application/xml** data. The following contains all t
                 <Object>output/out-${Number}</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
         <CallBack>http://callback.demo.com</CallBack>
@@ -201,7 +209,7 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag                | Response.JobsDetail | Job type: Segment                              | String    |
+| Tag                | Response.JobsDetail | Job tag: Segment                              | String    |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
 | StartTime | Response.JobsDetail | Job start time |  String |
@@ -227,6 +235,7 @@ The nodes are as described below:
 | MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
 | MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
+| JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
 
 `MediaInfo` has the following sub-nodes:
 Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
@@ -255,7 +264,7 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 
@@ -284,6 +293,7 @@ Content-Type: application/xml
             <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -329,6 +339,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/out-${Number}</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
         <CallBack>http://callback.demo.com</CallBack>
@@ -367,6 +378,7 @@ Content-Type: application/xml
             <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -416,6 +428,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/out</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
         <CallBack>http://callback.demo.com</CallBack>

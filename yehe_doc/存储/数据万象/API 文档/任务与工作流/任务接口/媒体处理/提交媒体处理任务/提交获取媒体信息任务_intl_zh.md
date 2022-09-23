@@ -1,6 +1,24 @@
 ## 功能描述
 
-CreateMediaJobs 用于提交一个任务。
+提交一个获取媒体信息任务。
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                推荐使用 API Explorer
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateAnimationTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## 请求
 
@@ -17,131 +35,158 @@ Content-Type: application/xml
 <body>
 ```
 
-
->? 
+>?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
 
 #### 请求体
+
 该请求操作的实现需要有如下请求体。
 
 ```shell
 <Request>
-  <Tag>MediaInfo</Tag>
-  <Input>
-    <Object></Object>
-  </Input>
-  <QueueId></QueueId>
-  <CallBack></CallBack>
+    <Tag>MediaInfo</Tag>
+    <Input>
+        <Object>input/demo.mp4</Object>
+    </Input>
+    <Operation>
+        <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
+    </Operation>
+    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+    <CallBack>http://callback.demo.com</CallBack>
+    <CallBackFormat>JSON<CallBackFormat>
 </Request>
 ```
 
 具体的数据描述如下：
 
 | 节点名称（关键字） | 父节点 | 描述           | 类型      | 是否必选 |
-| ------------------ | ------ | -------------- | --------- | ---- |
-| Request            | 无     | 保存请求的容器 | Container | 是   |
+| ------------------ | ------ | -------------- | --------- | -------- |
+| Request            | 无     | 保存请求的容器 | Container | 是       |
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                                                     | 类型      | 是否必选 |
-| ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | 创建任务的 Tag：MediaInfo                          | String    | 是   |
-| Input              | Request | 待操作的媒体信息                                         | Container | 是   |
-| QueueId            | Request | 任务所在的队列 ID                                         | String    | 是   |
-| CallBack           | Request | 回调地址                                                | String    | 否   |
+| 节点名称（关键字） | 父节点  | 描述                      | 类型      | 是否必选 |
+| ------------------ | ------- | ------------------------- | --------- | -------- |
+| Tag                | Request | 创建任务的 Tag：MediaInfo | String    | 是       |
+| Input              | Request | 待操作的媒体信息          | Container | 是       |
+| Operation          | Request | 操作规则                  | Container | 是       |
+| QueueId            | Request | 任务所在的队列 ID         | String    | 是       |
+| CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
+| CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型                    | String | 否 |
+| CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
+| CallBackMqConfig   | Request | 任务回调 TDMQ 配置，当 CallBackType 为 TDMQ 时必填。详情见 [CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945)                | Container | 否 |
+
+
+
+<span id="operation"></span>
+Container 类型 Operation 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点            | 描述             | 类型      | 是否必选 |
+| ------------------ | ----------------- | ---------------- | --------- | -------- |
+| UserData           | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024 | String | 否 |
+| JobLevel           | Request.Operation | 任务优先级，级别限制：0 、1 、2 。级别越大任务优先级越高，默认为0 | String | 否   |
+
 
 Container 类型 Input 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点        | 描述            | 类型   | 是否必选 |
-| ------------------ | ------------- | --------------- | ------ | ---- |
-| Object             | Request.Input | 媒体文件名 | String | 是   |
-
-
+| 节点名称（关键字） | 父节点        | 描述       | 类型   | 是否必选 |
+| ------------------ | ------------- | ---------- | ------ | -------- |
+| Object             | Request.Input | 媒体文件名 | String | 是       |
 
 ## 响应
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
 
 #### 响应体
+
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
 ```shell
 <Response>
-  <JobsDetail>
-    <Code></Code>
-    <Message></Message>
-    <JobId></JobId>
-    <State></State>
-    <CreationTime></CreationTime>
-    <StartTime></StartTime>
-    <EndTime></EndTime>
-    <QueueId></QueueId>
-    <Tag>MediaInfo</Tag>
-    <Input>
-      <Object></Object>
-    </Input>
-    <Operation>
-      <MediaInfo>
-      </MeidaInfo>
-    </Operation>
-  </JobsDetail>
+    <JobsDetail>
+        <Code>Success</Code>
+        <Message/>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
+        <State>Submitted</State>
+        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <StartTime>-</StartTime>
+        <EndTime>-</EndTime>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <Tag>MediaInfo</Tag>
+        <Input>
+            <BucketId>test-123456789</BucketId>
+            <Object>input/demo.mp4</Object>
+            <Region>ap-chongqing</Region>
+        </Input>
+        <Operation>
+            <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
+        </Operation>
+    </JobsDetail>
 </Response>
 ```
 
 具体的数据内容如下：
 
-|节点名称（关键字）|父节点|描述|类型|
-|:---|:-- |:--|:--|
-| Response |无| 保存结果的容器 | Container |
+| 节点名称（关键字） | 父节点 | 描述           | 类型      |
+| :----------------- | :----- | :------------- | :-------- |
+| Response           | 无     | 保存结果的容器 | Container |
 
 Container 节点 Response 的内容：
 
-|节点名称（关键字）|父节点|描述|类型|
-|:---|:-- |:--|:--|
-| JobsDetail | Response | 任务的详细信息 |  Container |
+| 节点名称（关键字） | 父节点   | 描述           | 类型      |
+| :----------------- | :------- | :------------- | :-------- |
+| JobsDetail         | Response | 任务的详细信息 | Container |
 
-
+<span id="jobsDetail"></span>
 Container 节点 JobsDetail 的内容：
 
-|节点名称（关键字）|父节点|描述|类型|
-|:---|:-- |:--|:--|
-| Code | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义 |  String |
-| Message | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义 |  String |
-| JobId | Response.JobsDetail | 新创建任务的 ID |  String |
-| Tag | Response.JobsDetail | 新创建任务的 Tag：MediaInfo | String |
-| State | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 |  String |
-| CreationTime | Response.JobsDetail | 任务的创建时间 |  String |
-| StartTime | Response.JobsDetail | 任务的开始时间 |  String |
-| EndTime | Response.JobsDetail | 任务的结束时间 |  String |
-| QueueId | Response.JobsDetail | 任务所属的队列 ID |  String |
-| Input | Response.JobsDetail | 该任务的输入资源地址 |  Container |
-| Operation | Response.JobsDetail | 该任务的规则，支持对单个文件执行多个不同任务，最多可填写6个 |  Container |
+| 节点名称（关键字） | 父节点              | 描述                                                         | 类型      |
+| :----------------- | :------------------ | :----------------------------------------------------------- | :-------- |
+| Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义                        | String    |
+| Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义                      | String    |
+| JobId              | Response.JobsDetail | 新创建任务的 ID                                              | String    |
+| Tag                | Response.JobsDetail | 新创建任务的 Tag：MediaInfo                                  | String    |
+| State              | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 | String |
+| CreationTime       | Response.JobsDetail | 任务的创建时间                                               | String    |
+| StartTime          | Response.JobsDetail | 任务的开始时间                                               | String    |
+| EndTime            | Response.JobsDetail | 任务的结束时间                                               | String    |
+| QueueId            | Response.JobsDetail | 任务所属的队列 ID                                            | String    |
+| Input              | Response.JobsDetail | 该任务的输入资源地址                                         | Container |
+| Operation          | Response.JobsDetail | 该任务的规则                                                 | Container |
 
 Container 节点 Input 的内容：
-同请求中的 Request.Input 节点。
+
+| 节点名称（关键字） | 父节点                   | 描述             | 类型   |
+| ------------------ | ------------------------ | ---------------- | ------ |
+| Region             | Response.JobsDetail.Input | 存储桶的地域     | String |
+| Bucket             | Response.JobsDetail.Input | 存储结果的存储桶 | String |
+| Object             | Response.JobsDetail.Input | 输出结果的文件名 | String |
 
 Container 节点 Operation 的内容：
 
-|节点名称（关键字）|父节点|描述|类型|
-|:---|:-- |:--|:--|
-| MediaInfo | Response.JobsDetail.Operation | 输出视频的信息，任务未完成时不输出 |  Container |
-
+| 节点名称（关键字） | 父节点                        | 描述                               | 类型      |
+| :----------------- | :---------------------------- | :--------------------------------- | :-------- |
+| MediaInfo          | Response.JobsDetail.Operation | 输出视频的信息，任务未完成时不返回 | Container |
+| UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
+| JobLevel            | Response.JobsDetail.Operation | 任务优先级                                                   | String |
 
 Container 节点 MediaInfo 的内容：
-同GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
+同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 ## 实际案例
 
@@ -156,11 +201,17 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-  <Tag>MediaInfo</Tag>
-  <Input>
-    <Object>test.mp4</Object>
-  </Input>
-  <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
+    <Tag>MediaInfo</Tag>
+    <Input>
+        <Object>input/demo.mp4</Object>
+    </Input>
+    <Operation>
+        <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
+    </Operation>
+    <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+    <CallBack>http://callback.demo.com</CallBack>
+    <CallBackFormat>JSON<CallBackFormat>
 </Request>
 ```
 
@@ -171,25 +222,31 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 230
 Connection: keep-alive
-Date: Thu, 15 Jun 2017 12:37:29 GMT
+Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 <Response>
-  <JobsDetail>
-    <Code>Success</Code>
-    <Message>Success</Message>
-    <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
-    <State>Submitted</State>
-    <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <StartTime></StartTime>
-    <EndTime></EndTime>
-    <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>MediaInfo</Tag>
-    <Input>
-      <Object>test.mp4</Object>
-    </Input>
-  </JobsDetail>
+    <JobsDetail>
+        <Code>Success</Code>
+        <Message/>
+        <JobId>j229ed9e2f60c11ec8525e36307395bf9</JobId>
+        <State>Submitted</State>
+        <CreationTime>2022-06-27T15:23:10+0800</CreationTime>
+        <StartTime>-</StartTime>
+        <EndTime>-</EndTime>
+        <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
+        <Tag>MediaInfo</Tag>
+        <Input>
+            <BucketId>test-123456789</BucketId>
+            <Object>input/demo.mp4</Object>
+            <Region>ap-chongqing</Region>
+        </Input>
+        <Operation>
+            <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
+        </Operation>
+    </JobsDetail>
 </Response>
 ```
 

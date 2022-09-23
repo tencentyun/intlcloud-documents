@@ -6,7 +6,7 @@
 | API            | 操作名       | 操作描述     |
 | --------------- | ------------ | -------- |
 | DescribeDocProcessQueues  |     查询文档预览队列     | 查询文档预览队列信息 |
-|UpdateDocProcessQueue   |   更新文档预览队列       | 更新文档预览队列信息 |
+| UpdateDocProcessQueue    |   更新文档预览队列       | 更新文档预览队列信息 |
 
 
 ## 查询文档预览队列
@@ -77,6 +77,7 @@ type DocProcessQueueNotifyConfig struct {
     Event string
 }
 ```
+
 | 参数名称     | 描述                            | 类型       |
 | :----------- | :------------------------------ | :--------- |
 | RequestId    | 请求的唯一 ID                   | String     |
@@ -134,6 +135,7 @@ type UpdateDocProcessQueueOptions struct {
     NotifyConfig *DocProcessQueueNotifyConfig
 }
 ```
+
 | 参数名称| 描述  | 类型  |
 | ----| ---- | ---- |
 | Name | 队列名称 | String             |

@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit an intelligent thumbnail job.
+This API is used to submit a screenshot job.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -51,17 +51,18 @@ This request requires the following request body:
 
 ```shell
 <Request>
-    <Tag>SmartCover</Tag>
+    <Tag>Snapshot</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t16567cd58ade9411d952283873123b9b1</TemplateId>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/smartcover-${Number}.jpg</Object>
-        </Output>   
+            <Object>output/snapshot-${Number}.jpg</Object>
+            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+        </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -81,7 +82,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ------------------------------------------------------------ | --------- | -------- |
-| Tag                | Request | Job tag: SmartCover                                    | String    | Yes       |
+| Tag                | Request | Job type: Snapshot                              | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
@@ -101,26 +102,14 @@ The nodes are described as follows:
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ----------------- | ------------ | --------- | -------- |
-| TemplateId         | Request.Operation | Intelligent thumbnail template ID | String | No       |
-| SmartCover                   | Request.Operation | Thumbnail configuration        | Container | No   |
+| ------------------ | ----------------- | ------------------------------------------------------------ | --------- | -------- |
+| Snapshot                     | Request.Operation | Job type parameter. Same as `Request.Snapshot` in the screenshot template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49909" target="_blank">CreateMediaTemplate</a>.    | Container | No   |
+| TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 | UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
 | JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
->? If both `TemplateId` and `SmartCover` are set, `TemplateId` will be used first.
->
-
-`SmartCover` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | ---------------------------- | ------------ | ------ | -------- | ------ | -------------------------------------------- |
-| Format             | Request.Operation.SmartCover | Thumbnail image type.    | String | Yes  | None | png, jpg, webp  |
-| Width              | Request.Operation.SmartCover | Thumbnail image width    | String | Yes  | None | 1. Value range: [128, 4096]<br/> 2. Unit: px<br/> |
-| Height             | Request.Operation.SmartCover | Thumbnail image height    | String | Yes  | None | 1. Value range: [128, 4096]<br/> 2. Unit: px<br/> |
-| Count              | Request.Operation.SmartCover | Number of thumbnails.        | String | No  | 3 | 1. Value range: [1, 10]<br/> |
-| DeleteDuplicates   | Request.Operation.SmartCover | Whether to deduplicate thumbnails.    | String | No  | false | true/false |
-
+>! `TemplateId` is used first. If `TemplateId` is unavailable, `Snapshot` is used.
 
 `Output` has the following sub-nodes:
 
@@ -128,7 +117,8 @@ The nodes are described as follows:
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
 | Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Result filename. <br/>**${Number} must be included in the filename.**<br/> For example, if `Object` is `my-new-cover-${Number}.jpg`, and there are three result files, the output result filenames are as follows: <br/>my-new-cover-0.jpg<br/>my-new-cover-1.jpg<br/>my-new-cover-2.jpg | String | Yes   |
+| Object             | Request.Operation.Output | Result filename. **${Number} must be included in the filename.** For example, you can set `Object` to `snapshot-${Number}.jpg`. | String | No   |
+| SpriteObject       | Request.Operation.Output | Image sprite name. **${Number} must be included in the filename.** **For example, you can set `sprite-${Number}.jpg`.\*\* Only the .jpg format is supported. | String | No   |
 
 
 ## Response
@@ -141,7 +131,7 @@ This API only returns common response headers. For more information, see [Common
 
 The response body returns **application/xml** data. The following contains all the nodes:
 
-``` shell
+```shell
 <Response>
     <JobsDetail>
         <Code>Success</Code>
@@ -152,19 +142,21 @@ The response body returns **application/xml** data. The following contains all t
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>SmartCover</Tag>
+        <Tag>Snapshot</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t16567cd58ade9411d952283873123b9b1</TemplateId>
+            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+            <TemplateName>snapshot_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/smartcover-${Number}.jpg</Object>
-            </Output>   
+                <Object>output/snapshot-${Number}.jpg</Object>
+                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
         </Operation>
@@ -192,9 +184,10 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag                | Response.JobsDetail | Job tag: SmartCover                                 | String    |
+| Tag | Response.JobsDetail | Job type: Snapshot | String |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
+| StartTime | Response.JobsDetail | Job start time |  String |
 | EndTime | Response.JobsDetail | Job end time |  String |
 | QueueId            | Response.JobsDetail | ID of the queue which the job is in                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the job                   | Container |
@@ -212,7 +205,9 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :---------------------------- | :------------------------------- | :-------- |
-| SmartCover         | Response.JobsDetail.Operation | Same as `Request.Operation.SmartCover` in the request.  | String    |
+| TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
+| TemplateName        | Response.JobsDetail.Operation | Job template name, which will be returned if `TemplateId` exists. | String    |
+| Snapshot             | Response.JobsDetail.Operation | Same as `Request.Operation.Snapshot` in the request.  | Container |
 | Output             | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request.  | Container |
 | MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
@@ -231,6 +226,14 @@ The nodes are as described below:
 | Bucket             | Response.Operation.MediaResult.OutputFile | Bucket of the output file.           | String |
 | Region             | Response.Operation.MediaResult.OutputFile | Bucket region of the output file.  | String |
 | ObjectName         | Response.Operation.MediaResult.OutputFile | Output filename. There may be multiple values.         | String array |
+| Md5Info            | Response.Operation.MediaResult.OutputFile | MD5 information of the output file. | Container array |
+
+`Md5Info` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+| ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
+| ObjectName         | Response.Operation.MediaResult.OutputFile.Md5Info | Output filename.         | String |
+| Md5                | Response.Operation.MediaResult.OutputFile.Md5Info | MD5 value of the output file.    | Container |
 
 #### Error codes
 
@@ -238,7 +241,7 @@ There are no special error messages for this request. For common error messages,
 
 ## Samples
 
-#### Request 1. Using the intelligent thumbnail template ID
+#### Request 1. Using the screenshot template ID
 
 ```shell
 POST /jobs HTTP/1.1
@@ -248,17 +251,18 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>SmartCover</Tag>
+    <Tag>Snapshot</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <TemplateId>t16567cd58ade9411d952283873123b9b1</TemplateId>
+        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/smartcover-${Number}.jpg</Object>
-        </Output>   
+            <Object>output/snapshot-${Number}.jpg</Object>
+            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+        </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -289,19 +293,21 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>SmartCover</Tag>
+        <Tag>Snapshot</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <TemplateId>t16567cd58ade9411d952283873123b9b1</TemplateId>
+            <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+            <TemplateName>snapshot_demo</TemplateName>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/smartcover-${Number}.jpg</Object>
-            </Output>   
+                <Object>output/snapshot-${Number}.jpg</Object>
+                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            </Output>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
         </Operation>
@@ -309,7 +315,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 </Response>
 ```
 
-#### Request 2. Using the intelligent thumbnail parameter
+#### Request 2. Using the screenshot processing parameter
 
 ```shell
 POST /jobs HTTP/1.1
@@ -319,23 +325,33 @@ Content-Length: 166
 Content-Type: application/xml
 
 <Request>
-    <Tag>SmartCover</Tag>
+    <Tag>Snapshot</Tag>
     <Input>
         <Object>input/demo.mp4</Object>
     </Input>
     <Operation>
-        <SmartCover>
-            <Format>jpg</Format>
-            <Width>1280</Width>
-            <Height>960</Height>
-            <Count>5</Count>
-            <DeleteDuplicates>true</DeleteDuplicates>
-        </SmartCover>
+        <Snapshot>
+            <BlackLevel>0</BlackLevel>
+            <Count>10</Count>
+            <IsCheckBlack>false</IsCheckBlack>
+            <IsCheckCount>false</IsCheckCount>
+            <Mode>Interval</Mode>
+            <PixelBlackThreshold>0</PixelBlackThreshold>
+            <SnapshotOutMode>SnapshotAndSprite</SnapshotOutMode>
+            <SpriteSnapshotConfig>
+                <Color>Azure</Color>
+                <Columns>3</Columns>
+                <Lines>2</Lines>
+            </SpriteSnapshotConfig>
+            <Start>1</Start>
+            <TimeInterval>2</TimeInterval>
+        </Snapshot>
         <Output>
             <Region>ap-chongqing</Region>
             <Bucket>test-123456789</Bucket>
-            <Object>output/smartcover-${Number}.jpg</Object>
-        </Output>   
+            <Object>output/snapshot-${Number}.jpg</Object>
+            <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+        </Output>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
     </Operation>
@@ -366,27 +382,37 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
         <StartTime>-</StartTime>
         <EndTime>-</EndTime>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
-        <Tag>SmartCover</Tag>
+        <Tag>Snapshot</Tag>
         <Input>
             <BucketId>test-123456789</BucketId>
             <Object>input/demo.mp4</Object>
             <Region>ap-chongqing</Region>
         </Input>
         <Operation>
-            <SmartCover>
-                <Format>jpg</Format>
-                <Width>1280</Width>
-                <Height>960</Height>
-                <Count>5</Count>
-                <DeleteDuplicates>true</DeleteDuplicates>
-            </SmartCover>
+            <Snapshot>
+                <BlackLevel>0</BlackLevel>
+                <Count>10</Count>
+                <IsCheckBlack>false</IsCheckBlack>
+                <IsCheckCount>false</IsCheckCount>
+                <Mode>Interval</Mode>
+                <PixelBlackThreshold>0</PixelBlackThreshold>
+                <SnapshotOutMode>SnapshotAndSprite</SnapshotOutMode>
+                <SpriteSnapshotConfig>
+                    <Color>Azure</Color>
+                    <Columns>3</Columns>
+                    <Lines>2</Lines>
+                </SpriteSnapshotConfig>
+                <Start>1</Start>
+                <TimeInterval>2</TimeInterval>
+            </Snapshot>
             <Output>
                 <Region>ap-chongqing</Region>
                 <Bucket>test-123456789</Bucket>
-                <Object>output/smartcover-${Number}.jpg</Object>
-            </Output>   
+                <Object>output/snapshot-${Number}.jpg</Object>
+                <SpriteObject>output/sprite-${Number}.jpg</SpriteObject>
+            </Output>
             <UserData>This is my data.</UserData>
-            <JobLevel>0</JobLevel> 
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
