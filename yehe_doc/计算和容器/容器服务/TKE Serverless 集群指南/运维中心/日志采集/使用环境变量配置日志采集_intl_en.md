@@ -18,7 +18,7 @@ After the log collection feature is enabled for the TKE Serverless cluster, the 
 
 - Confirm that the Kubernetes cluster can access the log consumer end.
 - The length of a log is limited to 2 M. The log is truncated if this limit is exceeded.
-  <dx-alert infotype="notice" title=" ">
+  <dx-alert infotype="notice" title="">
   If the log output rate is high, you need to adjust this parameter configuration to avoid OOM. For more information, see [How to adjust the log collection configuration to adapt to different log output rates](https://intl.cloud.tencent.com/document/product/457/40587).
   </dx-alert>
 
@@ -41,7 +41,7 @@ When the log collection is enabled for the TKE Serverless cluster, the log infor
 1. Select **CLS** as the **Consumer end**, and select the **Logset** and **Log topic**.
 ![](https://main.qcloudimg.com/raw/37623ea379501b3b431fac609b9681c0.png)
 If there is no suitable logset, you can [create a logset and a log topic](https://intl.cloud.tencent.com/document/product/614/31592).
-<dx-alert infotype="notice" title=" ">
+<dx-alert infotype="notice" title="">
 CLS currently only supports log collection and reporting for intra-region container clusters.
 </dx-alert>
 2. Enable the **log index** for the selected log topic. Index configuration is required for CLS log search and analysis. If it is not enabled, you cannot view the logs. For how to configure the index, see [Configuring Index](https://intl.cloud.tencent.com/document/product/614/39594).
@@ -53,7 +53,7 @@ You can go to the **[CLS console](https://console.cloud.tencent.com/cls/topic?re
 If you select Kafka as the consumer end, it is recommended that you use CKafka. The experience of its consumption and production modes are the same as the native version, and it supports alarm configurations.
 Specify the Broker address and Topic of Kafka in the container configuration, and ensure that all resources in the cluster can access the Kafka Topic specified by the user.
 ![](https://main.qcloudimg.com/raw/27e5173a642dfd0e2c84c93c0b319bcc.png)
-<dx-alert infotype="notice" title=" ">
+<dx-alert infotype="notice" title="">
 You need to select “delete” for `cleanup.policy` in Kafka Topic configuration. If you select “compact”, CLS will fail to report to Kafka, resulting in data loss.
 ![](https://main.qcloudimg.com/raw/01e49f01c82fd0cf13229fbade701641.png)
 </dx-alert>
@@ -61,17 +61,17 @@ You need to select “delete” for `cleanup.policy` in Kafka Topic configuratio
 </dx-tabs>
 
 6. Select **Role** or **Key** to authorize.
->! 
+<dx-alert infotype="notice" title="">
  - You can only select the same authorization method for the containers in the same Pod. The last modification shall prevail. For example, if you select key authorization for the first container and role authorization for the second container, finally both containers will adopt role authorization.
  - You can only select the same role to authorize for the containers in the same Pod.
->
+</dx-alert>
 <dx-tabs>
 ::: Role authorization
  - Select a role that can access CLS, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/890940885a3fd7502cf28aa62f970e2c.png)
  - If there is no suitable role, you can create one as follows:
-    **Creating a policy**[](id:policy)
-   You need to create a policy before creating a role. This policy determines the permissions your role can have.
+**Creating a policy**[](id:policy)
+  You need to create a policy before creating a role. This policy determines the permissions your role can have.
   1. Log in to the CAM console and select **[Policies](https://console.cloud.tencent.com/cam/policy)** in the left sidebar.
   2. On the “Polices” page, click **Create custom policy**.
   3. Select **Create by policy generator** in “Select policy creation method” pop-up window.
@@ -80,13 +80,13 @@ You need to select “delete” for `cleanup.policy` in Kafka Topic configuratio
   5. Click **Next** to go to the “Associate users/user groups” page.
   6. Confirm the policy name and click **Done**.
 
-  **Creating a role**
-	After creating a policy, you need to bind this policy to a role, so that the role has permissions corresponding to the policy.
+ **Creating a role**
+  After creating a policy, you need to bind this policy to a role, so that the role has permissions corresponding to the policy.
   1. Log in to the CAM console, and select **[Roles](https://console.cloud.tencent.com/cam/role)** in the left sidebar.
   2. On the “Roles” page, click **Create role**.
   3. In the “Select role entity” window that appears, select **Tencent Cloud Product Service** to go to the “Create custom role” page.
   4. In the “Enter role entity info” step, select **Cloud Virtual Machine (cvm)** and click **Next**.
-<dx-alert infotype="notice" title=" ">
+<dx-alert infotype="notice" title="">
     You must select **Cloud Virtual Machine (cvm)** as the role entity, otherwise, you cannot complete the authorization process.
 </dx-alert>
   5. In the “Configure role policy” step, select **[Created policy](#policy)**, and click **Next**.
@@ -96,7 +96,9 @@ You need to select “delete” for `cleanup.policy` in Kafka Topic configuratio
 - Select the “SecretId” and “SecretKey” of your account API key as the variable values to create the cluster Secret.
 ![](https://main.qcloudimg.com/raw/c03d348d34fc5c5d2666b1e883138bab.png)
 - If there is no suitable Secret, you need to create one. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676). You can view the SecretId and SecretKey in [API Keys](https://console.cloud.tencent.com/cam/capi).
->! The user corresponding to the API key must have the permission to access the CLS. If there is no API key, you need to create one. For more information, see [Access Key](https://www.tencentcloud.com/document/product/598/34227).
+<dx-alert infotype="notice" title="">
+ The user corresponding to the API key must have the permission to access the CLS. If there is no API key, you need to create one. For more information, see [Access Key](https://www.tencentcloud.com/document/product/598/34227).
+</dx-alert>
 :::
 </dx-tabs>
 7. Configure the collection path.
@@ -108,8 +110,9 @@ At this point, you have configured the log collection feature. You can set other
 [](id:yaml)
 ### Configuring log collection via yaml [](id:yaml)
 This document provides three collection methods for your choice: Collecting logs to Kafka, collecting logs to CLS via a secret and collecting logs to CLS via a role.
->! If both key and role authorization are configured in yaml, the Pod actually uses role authorization.
-
+<dx-alert infotype="notice" title="">
+ If both key and role authorization are configured in yaml, the Pod actually uses role authorization.
+</dx-alert>
 <dx-tabs>
 ::: Collecting logs to Kafka
 Enable log collection by adding environment variables.
@@ -202,8 +205,9 @@ Verify whether the delivery by key is enabled, as shown below:
 
 ::: Collecting logs to CLS via a secret
 #### Creating a secret[](id:z)
->! The following sample is to manually create a secret through yaml. If you create a secret through the console, you do not need to perform 64 encoding. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
->
+<dx-alert infotype="notice" title="">
+ The following sample is to manually create a secret through yaml. If you create a secret through the console, you do not need to perform 64 encoding. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
+</dx-alert>
 Run the following command via kubectl to obtain the secretid and secretkey for base64 encoding. Replace secretid and secretkey with the actual secretid and secretkey that you use. For more information, see [API Keys](https://console.cloud.tencent.com/cam/capi).
 ```shell
 $ echo -n 'secretid' | base64
@@ -355,7 +359,7 @@ After creating a policy, you need to bind this policy to a role, so that the rol
 2. On the “Roles” page, click **Create role**.
 3. In the “Select role entity” window that appears, select **Tencent Cloud Product Service** to go to the “Create custom role” page.
 4. In the “Enter role entity info” step, select **Cloud Virtual Machine (cvm)** and click **Next**.
-    <dx-alert infotype="notice" title=" ">
+    <dx-alert infotype="notice" title="">
     You must select **Cloud Virtual Machine (cvm)** as the role entity, otherwise, you cannot complete the authorization process.
     </dx-alert>
 5. In the “Configure role policy” step, select **[Created policy](#policy)**, and click **Next**.
