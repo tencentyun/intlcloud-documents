@@ -1,6 +1,6 @@
 ## 功能描述
 
-搜索媒体处理队列。
+搜索图片处理队列。
 
 
 <div class="rno-api-explorer">
@@ -19,14 +19,12 @@
     </div>
 </div>
 
-
-
 ## 请求
 
 #### 请求示例
 
 ```shell
-GET /queue HTTP/1.1
+GET /picqueue HTTP/1.1
 Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -52,11 +50,10 @@ Content-Type: application/xml
 
 | 参数名称（关键字） | 描述                         | 类型   | 是否必选 |
 | :----------------- | :------------------------- | :----- | :------- |
-| queueId            | 队列 ID，以“,”符号分割字符串。 | String | 否     |
-| state              | 1. Active 表示队列内的作业会被媒体处理服务调度执行。<br>2. Paused 表示队列暂停，作业不再会被媒体处理调度执行，队列内的所有作业状态维持在暂停状态，已经执行中的任务不受影响。 | String | 否     |
-| category           | 1. CateAll：所有类型。<br>2. Transcoding：媒体处理队列。<br>3. SpeedTranscoding：媒体处理倍速转码队列。<br>4. 默认为 Transcoding。 | String | 否     |
-| pageNumber         | 第几页，默认值1。    | String | 否     |
-| pageSize           | 每页个数，默认值10。 | String | 否     |
+| queueId            | 队列 ID，以“,”符号分割字符串 | String | 否     |
+| state              | 1. Active 表示队列内的作业会被媒体处理服务调度执行<br>2. Paused 表示队列暂停，作业不再会被媒体处理调度执行，队列内的所有作业状态维持在暂停状态，已经执行中的任务不受影响 | String | 否     |
+| pageNumber         | 第几页,默认值1    | String | 否     |
+| pageSize           | 每页个数,默认值10 | String | 否     |
 
 ## 响应
 
@@ -71,12 +68,12 @@ Content-Type: application/xml
 ```shell
 <Response>
     <RequestId>NjJmMzI5MmRfOTBmYTUwNjRfNjcwM18x</RequestId>
-    <TotalCount>2</TotalCount>
+    <TotalCount>1</TotalCount>
     <PageNumber>1</PageNumber>
     <PageSize>10</PageSize>
     <QueueList>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>queue-1</Name>
+        <QueueId>p8366c460c67b4c65a9bf81b41eaa3c4b</QueueId>
+        <Name>queue-pic-process-1</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>
@@ -89,24 +86,7 @@ Content-Type: application/xml
         <MaxConcurrent>10</MaxConcurrent>
         <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
         <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>Transcoding</Category>
-    </QueueList>
-    <QueueList>
-        <QueueId>pbf17a810dce74c18a641b663aede6803</QueueId>
-        <Name>queue-speed-transcoding-process-1</Name>
-        <State>Active</State>
-        <NotifyConfig>
-            <Url>http://callback.demo.com</Url>
-            <Event>TaskFinish,WorkflowFinish</Event>
-            <Type>Url</Type>
-            <State>On</State>
-            <ResultFormat>JSON</ResultFormat>
-        </NotifyConfig>
-        <MaxSize>10000</MaxSize>
-        <MaxConcurrent>10</MaxConcurrent>
-        <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
-        <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>SpeedTranscoding</Category>
+        <Category>PicProcessing</Category>
     </QueueList>
 </Response>
 ```
@@ -150,7 +130,7 @@ Container 节点 NotifyConfig 的内容：
 | State              | Response.QueueList.NotifyConfig | 开关状态，On 或者 Off             | String |
 | Type               | Response.QueueList.NotifyConfig | 回调类型，Url                     | String |
 | Event              | Response.QueueList.NotifyConfig | 任务完成：TaskFinish；工作流完成：WorkflowFinish | String |
-| ResultFormat       | Response.QueueList.NotifyConfig | 回调类型，XML 或者 JSON          | String |
+| ResultFormat       | Response.QueueList.NotifyConfig | 回调类型, XML 或者 JSON          | String |
 
 #### 错误码
 
@@ -161,7 +141,7 @@ Container 节点 NotifyConfig 的内容：
 #### 请求1：搜索指定队列
 
 ```shell
-GET /queue?queueIds=p4a17eeea29334bf499b7e20e2fbfd99d,A,B HTTP/1.1
+GET /picqueue?queueIds=pb926e1dce3ed4e47a4f08692164f4869,A,B HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
 Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 Content-Length: 0
@@ -182,8 +162,8 @@ x-ci-request-id: NjJmMzJjNDFfOTBmYTUwNjRfNjQ5NF8x
 <Response>
     <RequestId>NjJmMzJjNDFfOTBmYTUwNjRfNjQ5NF8x</RequestId>
     <QueueList>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>queue-1</Name>
+        <QueueId>p8366c460c67b4c65a9bf81b41eaa3c4b</QueueId>
+        <Name>queue-pic-process-1</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>
@@ -196,19 +176,17 @@ x-ci-request-id: NjJmMzJjNDFfOTBmYTUwNjRfNjQ5NF8x
         <MaxConcurrent>10</MaxConcurrent>
         <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
         <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>Transcoding</Category>
+        <Category>PicProcessing</Category>
     </QueueList>
     <NonExistPIDs>A</NonExistPIDs>
     <NonExistPIDs>B</NonExistPIDs>
 </Response>
 ```
 
-
-
 #### 请求2：查询队列列表
 
 ```shell
-GET /queue?pageSize=10&pageNumber=1&category=CateAll HTTP/1.1
+GET /picqueue?pageSize=10&pageNumber=1&category=CateAll HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
 Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 Content-Length: 0
@@ -229,12 +207,12 @@ x-ci-request-id: NjJmMzI5MmRfOTBmYTUwNjRfNjcwM18x
 
 <Response>
     <RequestId>NjJmMzI5MmRfOTBmYTUwNjRfNjcwM18x</RequestId>
-    <TotalCount>2</TotalCount>
+    <TotalCount>1</TotalCount>
     <PageNumber>1</PageNumber>
     <PageSize>10</PageSize>
     <QueueList>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>queue-1</Name>
+        <QueueId>p8366c460c67b4c65a9bf81b41eaa3c4b</QueueId>
+        <Name>queue-pic-process-1</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>
@@ -247,24 +225,7 @@ x-ci-request-id: NjJmMzI5MmRfOTBmYTUwNjRfNjcwM18x
         <MaxConcurrent>10</MaxConcurrent>
         <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
         <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>Transcoding</Category>
-    </QueueList>
-    <QueueList>
-        <QueueId>pbf17a810dce74c18a641b663aede6803</QueueId>
-        <Name>queue-speed-transcoding-process-1</Name>
-        <State>Active</State>
-        <NotifyConfig>
-            <Url>http://callback.demo.com</Url>
-            <Event>TaskFinish,WorkflowFinish</Event>
-            <Type>Url</Type>
-            <State>On</State>
-            <ResultFormat>JSON</ResultFormat>
-        </NotifyConfig>
-        <MaxSize>10000</MaxSize>
-        <MaxConcurrent>10</MaxConcurrent>
-        <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
-        <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>SpeedTranscoding</Category>
+        <Category>PicProcessing</Category>
     </QueueList>
 </Response>
 ```

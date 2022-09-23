@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to update a media processing queue.
+This API is used to update an image processing queue.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -18,14 +18,12 @@ This API is used to update a media processing queue.
     </div>
 </div>
 
-
-
 ## Request
 
 #### Sample request
 
 ```plaintext
-PUT /queue/<queueId> HTTP/1.1
+PUT /picqueue/<queueId> HTTP/1.1
 Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -50,7 +48,7 @@ This request requires the following request body:
 
 ```plaintext
 <Request>
-    <Name>My-Queue-Media</Name>
+    <Name>My-Queue-Pic</Name>
     <State>Active</State>
     <NotifyConfig>
         <State>On</State>
@@ -74,7 +72,7 @@ The nodes are as described below:
 | :--------------- | :------- | :------------------------------ | :-------- | -------- | ------ | ----- |
 | Name             | Request | Queue name, which can contain up to 128 bytes.             | String    | Yes       | None     |  None   |
 | State            | Request | 1. Active: Jobs in the queue will be scheduled and executed by the media processing service. <br>2. Paused: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will not be affected. | String      | Yes | None | None |
-| NotifyConfig     | Request | Callback configuration.                          | Container | Yes       | None     |  None   |
+| NotifyConfig     | Request | Callback configuration                          | Container | Yes       | None     |  None   |
 
 
 `NotifyConfig` has the following sub-nodes:
@@ -101,8 +99,8 @@ The response body returns **application/xml** data. The following contains all t
 <Response>
     <RequestId>NjJmNDczY2RfOTBmYTUwNjRfNTA4ZV85</RequestId>
     <Queue>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>My-Queue-Media</Name>
+        <QueueId>pb926e1dce3ed4e47a4f08692164f4869</QueueId>
+        <Name>My-Queue-Pic</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>
@@ -153,14 +151,14 @@ There are no special error messages for this request. For common error messages,
 #### Request
 
 ```plaintext
-PUT /queue/p4a17eeea29334bf499b7e20e2fbfd99d HTTP/1.1
+PUT /picqueue/pb926e1dce3ed4e47a4f08692164f4869 HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
 Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 Content-Length: 162
 Content-Type: application/xml
 
 <Request>
-    <Name>My-Queue-Media</Name>
+    <Name>My-Queue-Pic</Name>
     <State>Active</State>
     <NotifyConfig>
         <State>On</State>
@@ -186,8 +184,8 @@ x-ci-request-id: NjJmNDczY2RfOTBmYTUwNjRfNTA4ZV85
 <Response>
     <RequestId>NjJmNDczY2RfOTBmYTUwNjRfNTA4ZV85</RequestId>
     <Queue>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>My-Queue-Media</Name>
+        <QueueId>pb926e1dce3ed4e47a4f08692164f4869</QueueId>
+        <Name>My-Queue-Pic</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>

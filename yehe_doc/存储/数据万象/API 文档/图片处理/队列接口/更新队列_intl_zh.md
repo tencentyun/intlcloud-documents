@@ -1,6 +1,6 @@
 ## 功能描述
 
-更新媒体处理队列。
+更新图片处理队列。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -18,14 +18,12 @@
     </div>
 </div>
 
-
-
 ## 请求
 
 #### 请求示例
 
 ```plaintext
-PUT /queue/<queueId> HTTP/1.1
+PUT /picqueue/<queueId> HTTP/1.1
 Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -50,7 +48,7 @@ Content-Type: application/xml
 
 ```plaintext
 <Request>
-    <Name>My-Queue-Media</Name>
+    <Name>My-Queue-Pic</Name>
     <State>Active</State>
     <NotifyConfig>
         <State>On</State>
@@ -66,15 +64,15 @@ Content-Type: application/xml
 
 | 节点名称（关键字） | 父节点  | 描述              | 类型   | 是否必选 | 默认值 | 限制   |
 | ---------------- | ------- | ----------------- | ------ | -------- | ------ | ----- |
-| Request            | 无     | 保存结果的容器。 | Container | 是        | 无     |  无   |
+| Request            | 无     | 保存结果的容器 | Container | 是        | 无     |  无   |
 
 Container 节点 Request 的内容：
 
 | 节点名称（关键字） | 父节点   | 描述                            | 类型      | 是否必选 | 默认值 | 限制   |
 | :--------------- | :------- | :------------------------------ | :-------- | -------- | ------ | ----- |
-| Name             | Request | 队列名称，长度不超过128。             | String    | 是       | 无     |  无   |
-| State            | Request | 1. Active 表示队列内的作业会被媒体处理服务调度执行。<br>2. Paused 表示队列暂停，作业不再会被媒体处理调度执行，队列内的所有作业状态维持在暂停状态，已经执行中的任务不受影响。               | String    | 是       | 无     |  无   |
-| NotifyConfig     | Request | 回调配置。                          | Container | 是       | 无     |  无   |
+| Name             | Request | 队列名称，长度不超过128             | String    | 是       | 无     |  无   |
+| State            | Request | 1. Active 表示队列内的作业会被媒体处理服务调度执行 <br>2. Paused 表示队列暂停，作业不再会被媒体处理调度执行，队列内的所有作业状态维持在暂停状态，已经执行中的任务不受影响               | String    | 是       | 无     |  无   |
+| NotifyConfig     | Request | 回调配置                          | Container | 是       | 无     |  无   |
 
 
 Container 节点 NotifyConfig 的内容：
@@ -101,8 +99,8 @@ Container 节点 NotifyConfig 的内容：
 <Response>
     <RequestId>NjJmNDczY2RfOTBmYTUwNjRfNTA4ZV85</RequestId>
     <Queue>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>My-Queue-Media</Name>
+        <QueueId>pb926e1dce3ed4e47a4f08692164f4869</QueueId>
+        <Name>My-Queue-Pic</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>
@@ -153,14 +151,14 @@ Container 节点 Queue 的内容：
 #### 请求
 
 ```plaintext
-PUT /queue/p4a17eeea29334bf499b7e20e2fbfd99d HTTP/1.1
+PUT /picqueue/pb926e1dce3ed4e47a4f08692164f4869 HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
 Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 Content-Length: 162
 Content-Type: application/xml
 
 <Request>
-    <Name>My-Queue-Media</Name>
+    <Name>My-Queue-Pic</Name>
     <State>Active</State>
     <NotifyConfig>
         <State>On</State>
@@ -186,8 +184,8 @@ x-ci-request-id: NjJmNDczY2RfOTBmYTUwNjRfNTA4ZV85
 <Response>
     <RequestId>NjJmNDczY2RfOTBmYTUwNjRfNTA4ZV85</RequestId>
     <Queue>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>My-Queue-Media</Name>
+        <QueueId>pb926e1dce3ed4e47a4f08692164f4869</QueueId>
+        <Name>My-Queue-Pic</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>

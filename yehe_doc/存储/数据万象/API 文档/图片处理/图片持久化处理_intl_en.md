@@ -1,9 +1,9 @@
-## Processing upon Upload
-The feature of processing upon upload provided by CI helps you implement image processing when uploading an image. You only need to add Pic-Operations to the request header and set related parameters to implement image processing when uploading an image, and store the input image and processing result in COS. Currently, this feature supports the processing of a file up to 20 MB.
+## Processing During Upload
+CI allows you to process images during upload. To enable this, add `Pic-Operations` to the request header and set relevant parameters. You can also save the input images and processing results to COS. Currently, images within 32 MB can be processed.
 
-### Sample request
+### Request syntax
 
-The request for uploading an image is the same as that of the API for simply uploading a COS V5 file. The only difference is that image processing parameters are added to the request header.
+The request during image upload is the same as that used to simply upload a file to COS v5, except that you need to add the image processing parameter to the request header.
 
 ```shell
 PUT /<ObjectKey> HTTP/1.1
@@ -14,9 +14,10 @@ Pic-Operations: <PicOperations>
 ```
 
 >?
->- For more information about the simple upload API of COS, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
->- Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
->- The QPS for persistent processing is limited to 100. If you need a higher QPS, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder).
+> - For more information on COS' simple upload API, see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - The QPS for persistent processing can be up to 100. If you need a higher QPS, [contact us](https://intl.cloud.tencent.com/document/product/1045/42350).
 >
 
 ### Request content
@@ -25,19 +26,19 @@ Pic-Operations: <PicOperations>
 
 | Parameter | Type | Required | Description |
 | ----------- | ----- | ---- | -------------------------------------- |
-| is_pic_info | Int | No | Whether to return the input image information <br>`0` (default): no <br>`1`: yes |
-| rules | Array | No | Processing rules (up to 5 rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. |
+| is_pic_info | Int   | No    | Whether to return the input image information. Valid values: `0` (no); `1` (yes). Default value: `0`.         |
+| rules       | Array | No    | Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. |
 
  Parameters of `rules` (a JSON array) are as follows:
 
 | Parameter | Type | Required | Description |
 | ------ | ------ | ---- | ---------------------------------------- |
-| bucket | String | No | Name of the destination bucket to store the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. |
-| fileid   | String | Yes | The path and name of the output file <br>Example: `/p1/test1.jpg`<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` is created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash. Otherwise, an empty filename will be generated.    | 
-| rule | String | Yes | The processing parameter. For more information, please see the image processing API of CI. If the image needs to be stylized, prefix `style/` to the style name. For example, if the style name is `test`, you can set this parameter to `style/test`. |
+| bucket | String | No   | Name of the destination bucket to store the results in the format of `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket by default. |
+| fileid   | String | Yes       |    Storage path and name of the output file. <br>Naming rules are as follows (assume the input file is `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` will be created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash; otherwise, an empty filename will be generated.    |
+| rule   | String | Yes    | Processing parameters. For more information, see CI's image processing API. To process an image by using a specified style, the value must start with `style/`, with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. |
 
-### Response
-Parameters in the response body are as follows:
+### Response content
+The response body is as described below:
 
 | Parameter | Type | Description |
 | ---------------- | --------- | ---- |
@@ -47,49 +48,49 @@ Parameters in the response body are as follows:
 
 | Parameter | Type | Description |
 | -------------- | --------- | ------ |
-| OriginalInfo | Container | Input image information |
-| ProcessResults | Container | Image processing results |
+| OriginalInfo   | Container | Input image information   |
+| ProcessResults | Container | Image processing result |
 
  Content of `OriginalInfo`:
 
-| Parameter | Type | Description |
+| Node Name | Type | Description |
 | --------- | --------- | ------ |
-| Key | String | Name of the input image |
-| Location | String | Location of the image |
+| Key       | String    | Input image name  |
+| Location | String | Image path |
 | ImageInfo | Container | Input image information |
-|      ETag     | String    | ETag of the input image. If the output image overwrites the input image, the value of `ETag` will be that of the output image. |
+| ETag      | String    | `ETag` of the input image. If the output image overwrites the input image, the value of `ETag` will be that of the output image. |
 
  Content of `ImageInfo`:
 
-| Parameter | Type | Description |
+| Node Name | Type | Description |
 | ----------- | ------ | ------ |
-| Format | String | Format |
-| Width | Int | Image width |
-| Height | Int | Image height |
-| Quality | Int | Image quality |
-| Ave | String | Image average hue |
+| Format      | String | Format     |
+| Width       | Int    | Image width   |
+| Height      | Int    | Image height   |
+| Quality     | Int    | Image quality   |
+| Ave         | String | Image average hue  |
 | Orientation | Int | Image rotation angle |
 
  Content of `ProcessResults`:
 
-| Parameter | Type | Description |
+| Node Name | Type | Description |
 | ------ | --------- | --------- |
 | Object | Container | Processing result of each image |
 
  Content of `Object`:
 
-| Parameter | Type | Description |
+| Node Name | Type | Description |
 | -------- | ------ | ---- |
-| Key | String | Filename |
+| Key      | String | Filename |
 | Location | String | Image path |
-| Format | String | Image format |
-| Width    | Int    | Image width             |
-| Height | Int | Image height |
-| Size     | Int    | Image size             |
-| Quality | Int | Image quality |
-| ETag | String | ETag of the output image |
+| Format   | String | Image format |
+| Width    | Int    | Image width |
+| Height      | Int    | Image height   |
+| Size     | Int    | Image size |
+| Quality     | Int    | Image quality   |
+|  ETag      | String | `ETag` information of the output image |
 
-### Example
+### Sample
 #### Request
 
 ```shell
@@ -141,7 +142,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 </UploadResult>
 ```
 
->!Processing upon upload supports the multipart upload feature of COS V5. You can process images by adding the `Pic-Operations` request header when calling the [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) API.
+>!Processing during upload is supported for the multipart upload feature of COS v5. To implement image processing, you only need to add the `Pic-Operations` parameter in the request header when calling the [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) API.
 
 
 ```shell
@@ -153,14 +154,14 @@ Authorization: Auth String
 Pic-Operations: <PicOperations>
 ```
 
->?For more information, please see [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742).
+>?For more information, see [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742).
 
 
 ## Processing In-Cloud Data
 
-The image processing APIs of CI allow you to process images that are already stored in COS and save the results to COS.
+CI's image processing API can process an image stored in COS and save the processing result to COS.
 
-### Sample request
+### Request syntax
 ```shell
 POST /<ObjectKey>?image_process HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
@@ -175,71 +176,71 @@ Pic-Operations: <PicOperations>
 
 | Parameter | Type | Required | Description |
 | ----------- | ----- | ---- | -------------------------------------- |
-| is_pic_info | Int | No | Whether to return the input image information <br>`0` (default): no <br>`1`: yes |
-| rules | Array | No | Processing rules (up to 5 rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. |
+| is_pic_info | Int   | No    | Whether to return the input image information. Valid values: `0` (no); `1` (yes). Default value: `0`.         |
+| rules       | Array | No    | Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. |
 
  Parameters of `rules` (a JSON array) are as follows:
 
 | Parameter | Type | Required | Description |
 | ------ | ------ | ---- | ---------------------------------------- |
-| bucket | String | No | Name of the destination bucket to store the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. |
-| fileid   | String | Yes | The path and name of the output file <br>Example: `/p1/test1.jpg`<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` is created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash. Otherwise, an empty filename will be generated.    | 
-| rule | String | Yes | The processing parameter. For more information, please see the image processing API of CI. If the image needs to be stylized, prefix `style/` to the style name. For example, if the style name is `test`, you can set this parameter to `style/test`. |
+| bucket | String | No   | Name of the destination bucket to store the results in the format of `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket by default. |
+| fileid   | String | Yes       |    Storage path and name of the output file. <br>Naming rules are as follows (assume the input file is `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` will be created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash; otherwise, an empty filename will be generated.    |
+| rule   | String | Yes    | Processing parameters. For more information, see [Basic Image Processing](https://www.tencentcloud.com/document/product/1045/33694). To process an image by using a specified style, the value must start with `style/`, with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. |
 
-### Response
-Parameters in the response body are as follows:
+### Response content
+The response body is as described below:
 
 | Parameter | Type | Description |
 | ---------------- | --------- | ---- |
-| UploadResult | Container | Input image information |
+| UploadResult| Container | Input image information |
 
  Content of `UploadResult`:
 
 | Parameter | Type | Description |
 | -------------- | --------- | ------ |
-| OriginalInfo | Container | Input image information |
-| ProcessResults | Container | Image processing results |
+| OriginalInfo   | Container | Input image information   |
+| ProcessResults | Container | Image processing result |
 
  Content of `OriginalInfo`:
 
-| Parameter | Type | Description |
+| Node Name | Type | Description |
 | --------- | --------- | ------ |
-| Key | String | Name of the input image |
-| Location | String | Location of the image |
+| Key       | String    | Input image name  |
+| Location | String | Image path |
 | ImageInfo | Container | Input image information |
-| ETag | String | ETag of the input image. If the output image overwrites the input image, the value of `ETag` will be that of the output image. |
+| ETag      | String    | `ETag` of the input image. If the output image overwrites the input image, the value of `ETag` will be that of the output image. |
 
  Content of `ImageInfo`:
 
-| Parameter | Type | Description |
+| Node Name | Type | Description |
 | ----------- | ------ | ------ |
-| Format | String | Format |
-| Width | Int | Image width |
-| Height | Int | Image height |
-| Quality | Int | Image quality |
-| Ave | String | Image average hue |
+| Format      | String | Format     |
+| Width       | Int    | Image width   |
+| Height      | Int    | Image height   |
+| Quality     | Int    | Image quality   |
+| Ave         | String | Image average hue  |
 | Orientation | Int | Image rotation angle |
 
  Content of `ProcessResults`:
 
-| Parameter | Type | Description |
+| Node Name | Type | Description |
 | ------ | --------- | --------- |
 | Object | Container | Processing result of each image |
 
  Content of `Object`:
 
-| Parameter | Type | Description |
+| Node Name | Type | Description |
 | -------- | ------ | ---- |
-| Key | String | Filename |
+| Key      | String | Filename |
 | Location | String | Image path |
-| Format | String | Image format |
-| Width    | Int    | Image width             |
-| Height | Int | Image height |
-| Size     | Int    | Image size             |
-| Quality | Int | Image quality |
-| ETag | String | ETag of the output image |
+| Format   | String | Image format |
+| Width    | Int    | Image width |
+| Height      | Int    | Image height   |
+| Size     | Int    | Image size |
+| Quality     | Int    | Image quality   |
+| ETag | String | `ETag` of the output image |
 
-### Example
+### Sample
 
 #### Request
 

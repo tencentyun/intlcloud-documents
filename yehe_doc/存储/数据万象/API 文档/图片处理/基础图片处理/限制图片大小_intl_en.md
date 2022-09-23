@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 
 CI uses the **imageMogr2/size-limit** API to limit the size of an output image, such as a scaled or compressed image.
 
@@ -23,7 +23,7 @@ Operation name: size-limit.
 
 | Parameter | Description |
 | :-------------- | :----------------------------------------------------------- |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>; for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
 | size-limit | Limits the size of the output image. The unit can be `k` (KB) or `m` (MB). <br>1. Only JPG images are supported. <br>2. Appending an exclamation mark (!) means to compare the sizes of the input and output images. If the output image is smaller, the output image will be returned; otherwise, the input image will be returned; for example,  `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpg?imageMogr2/size-limit/15k!`. <br>3. We recommend you use this parameter together with `strip` to remove redundant image metadata, for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpg?imageMogr2/strip/format/png/size-limit/15k!`. |
 | /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 

@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to search for a media processing queue.
+This API is used to search for an image processing queue.
 
 
 <div class="rno-api-explorer">
@@ -19,14 +19,12 @@ This API is used to search for a media processing queue.
     </div>
 </div>
 
-
-
 ## Request
 
 #### Sample request
 
 ```shell
-GET /queue HTTP/1.1
+GET /picqueue HTTP/1.1
 Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -54,7 +52,6 @@ The request body of this request is empty.
 | :----------------- | :------------------------- | :----- | :------- |
 | queueId            | Queue ID. If you enter multiple IDs, separate them by comma. | String | No     |
 | state              | 1. Active: Jobs in the queue will be scheduled and executed by the media processing service. <br>2. Paused: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will not be affected. | String | No     |
-| category | 1. CateAll: All types. <br>2. Transcoding: Media processing queue. <br>3. SpeedTranscoding: Media processing and accelerated transcoding queue. <br>4. Default value: `Transcoding`. | String | No |
 | pageNumber         | Page number. Default value: `1`.   | String | No     |
 | pageSize           | Number of entries per page. Default value: `10`. | String | No     |
 
@@ -71,12 +68,12 @@ The response body returns **application/xml** data. The following contains all t
 ```shell
 <Response>
     <RequestId>NjJmMzI5MmRfOTBmYTUwNjRfNjcwM18x</RequestId>
-    <TotalCount>2</TotalCount>
+    <TotalCount>1</TotalCount>
     <PageNumber>1</PageNumber>
     <PageSize>10</PageSize>
     <QueueList>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>queue-1</Name>
+        <QueueId>p8366c460c67b4c65a9bf81b41eaa3c4b</QueueId>
+        <Name>queue-pic-process-1</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>
@@ -89,24 +86,7 @@ The response body returns **application/xml** data. The following contains all t
         <MaxConcurrent>10</MaxConcurrent>
         <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
         <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>Transcoding</Category>
-    </QueueList>
-    <QueueList>
-        <QueueId>pbf17a810dce74c18a641b663aede6803</QueueId>
-        <Name>queue-speed-transcoding-process-1</Name>
-        <State>Active</State>
-        <NotifyConfig>
-            <Url>http://callback.demo.com</Url>
-            <Event>TaskFinish,WorkflowFinish</Event>
-            <Type>Url</Type>
-            <State>On</State>
-            <ResultFormat>JSON</ResultFormat>
-        </NotifyConfig>
-        <MaxSize>10000</MaxSize>
-        <MaxConcurrent>10</MaxConcurrent>
-        <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
-        <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>SpeedTranscoding</Category>
+        <Category>PicProcessing</Category>
     </QueueList>
 </Response>
 ```
@@ -161,7 +141,7 @@ There are no special error messages for this request. For common error messages,
 #### Request 1: Searching for the specified queue
 
 ```shell
-GET /queue?queueIds=p4a17eeea29334bf499b7e20e2fbfd99d,A,B HTTP/1.1
+GET /picqueue?queueIds=pb926e1dce3ed4e47a4f08692164f4869,A,B HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
 Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 Content-Length: 0
@@ -182,8 +162,8 @@ x-ci-request-id: NjJmMzJjNDFfOTBmYTUwNjRfNjQ5NF8x
 <Response>
     <RequestId>NjJmMzJjNDFfOTBmYTUwNjRfNjQ5NF8x</RequestId>
     <QueueList>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>queue-1</Name>
+        <QueueId>p8366c460c67b4c65a9bf81b41eaa3c4b</QueueId>
+        <Name>queue-pic-process-1</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>
@@ -196,19 +176,17 @@ x-ci-request-id: NjJmMzJjNDFfOTBmYTUwNjRfNjQ5NF8x
         <MaxConcurrent>10</MaxConcurrent>
         <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
         <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>Transcoding</Category>
+        <Category>PicProcessing</Category>
     </QueueList>
     <NonExistPIDs>A</NonExistPIDs>
     <NonExistPIDs>B</NonExistPIDs>
 </Response>
 ```
 
-
-
 #### Request 2: Querying the list of queues
 
 ```shell
-GET /queue?pageSize=10&pageNumber=1&category=CateAll HTTP/1.1
+GET /picqueue?pageSize=10&pageNumber=1&category=CateAll HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
 Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 Content-Length: 0
@@ -229,12 +207,12 @@ x-ci-request-id: NjJmMzI5MmRfOTBmYTUwNjRfNjcwM18x
 
 <Response>
     <RequestId>NjJmMzI5MmRfOTBmYTUwNjRfNjcwM18x</RequestId>
-    <TotalCount>2</TotalCount>
+    <TotalCount>1</TotalCount>
     <PageNumber>1</PageNumber>
     <PageSize>10</PageSize>
     <QueueList>
-        <QueueId>p4a17eeea29334bf499b7e20e2fbfd99d</QueueId>
-        <Name>queue-1</Name>
+        <QueueId>p8366c460c67b4c65a9bf81b41eaa3c4b</QueueId>
+        <Name>queue-pic-process-1</Name>
         <State>Active</State>
         <NotifyConfig>
             <Url>http://callback.demo.com</Url>
@@ -247,24 +225,7 @@ x-ci-request-id: NjJmMzI5MmRfOTBmYTUwNjRfNjcwM18x
         <MaxConcurrent>10</MaxConcurrent>
         <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
         <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>Transcoding</Category>
-    </QueueList>
-    <QueueList>
-        <QueueId>pbf17a810dce74c18a641b663aede6803</QueueId>
-        <Name>queue-speed-transcoding-process-1</Name>
-        <State>Active</State>
-        <NotifyConfig>
-            <Url>http://callback.demo.com</Url>
-            <Event>TaskFinish,WorkflowFinish</Event>
-            <Type>Url</Type>
-            <State>On</State>
-            <ResultFormat>JSON</ResultFormat>
-        </NotifyConfig>
-        <MaxSize>10000</MaxSize>
-        <MaxConcurrent>10</MaxConcurrent>
-        <UpdateTime>2022-08-09T16:23:11+0800</UpdateTime>
-        <CreateTime>2022-08-09T16:23:11+0800</CreateTime>
-        <Category>SpeedTranscoding</Category>
+        <Category>PicProcessing</Category>
     </QueueList>
 </Response>
 ```
