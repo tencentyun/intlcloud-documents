@@ -18,9 +18,9 @@ TKE Serverless 集群日志采集功能开启后，日志采集 Agent 根据您�
 
 - 需确认 Kubernetes 集群能够访问日志消费端。
 - 日志长度限制为单条2M，如果超过则会截断。
-  <dx-alert infotype="notice" title=" ">
-  若日志输出速率过快，为避免 OOM，需要调整此参数配置，详情请参见 [如何调整日志采集配置](https://intl.cloud.tencent.com/document/product/457/40587)。
-  </dx-alert>
+<dx-alert infotype="notice" title="">
+若日志输出速率过快，为避免 OOM，需要调整此参数配置，详情请参见 [如何调整日志采集配置](https://intl.cloud.tencent.com/document/product/457/40587)。
+</dx-alert>
 
 
 
@@ -61,36 +61,36 @@ Kafka 的 Topic 配置中 `cleanup.policy` 参数需选择 delete，选择 compa
 </dx-tabs>
 
 6. 选择角色或者密钥进行授权。
->! 
+<dx-alert infotype="notice" title="">
  - 同一 pod 下的容器只能选择同一种授权方式，以您最后修改的授权方式为准。例如第一个容器选择了密钥授权，第二个选择了角色授权，最终两个容器都是角色授权。
  - 同一 pod 下的容器只能选择同一个角色授权。
->
+</dx-alert>
 <dx-tabs>
 ::: 角色授权
- - 选择具有访问日志服务 CLS 权限的角色名称，如下图所示：
+- 选择具有访问日志服务 CLS 权限的角色名称，如下图所示：
 ![](https://main.qcloudimg.com/raw/890940885a3fd7502cf28aa62f970e2c.png)
- - 若无合适的角色，创建过程参考以下步骤：
-    **新建策略 **[](id:policy)
+- 若无合适的角色，创建过程参考以下步骤：
+<b>新建策略</b>[](id:policy)
    在新建角色之前，您需要创建一个策略，该策略决定了您的角色具备的权限。
-  1. 登录访问管理控制台，在左侧导航栏选择 **[策略](https://console.cloud.tencent.com/cam/policy)**。
+  1. 登录访问管理控制台，在左侧导航栏选择 [**策略**](https://console.cloud.tencent.com/cam/policy)。
   2. 在“策略”页面，单击**新建自定义策略**。
-  3. 在“选择创建策略方式” 弹窗中，选择****按策略生成器创建****。
+  3. 在“选择创建策略方式” 弹窗中，选择**按策略生成器创建**。
   4. 在“可视化策略生成器”中，“服务”选择 “日志服务(cls)”，“操作”选择“写操作:pushLog”，如下图所示：
-
-    ![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
+![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
   5. 单击**下一步**，进入“关联用户/用户组”页面。
   6. 确认策略名称，单击**完成**即可创建策略。
-
-  **新建角色**
-	创建策略完成后，需要将该策略绑定至一个角色，使得该角色具备策略相应的权限。
-  1. 登录访问管理控制台，在左侧导航栏选择 **[角色](https://console.cloud.tencent.com/cam/role)**。
+ 
+ <b>新建角色</b>
+  创建策略完成后，需要将该策略绑定至一个角色，使得该角色具备策略相应的权限。
+  
+  1. 登录访问管理控制台，在左侧导航栏选择 [**角色**](https://console.cloud.tencent.com/cam/role)。
   2. 在“角色”页面，单击**新建角色**。
   3. 在“选择角色载体” 弹窗中，选择**腾讯云产品服务**，进入**新建自定义角色**页面。
   4. 在“输入角色载体信息”步骤中，选择**绑定**云服务器（cvm）**载体**，单击**下一步**。
-
-    <dx-alert infotype="notice" title=" ">
-  必须选择**云服务器（cvm）**作为角色载体，选择容器服务则无法完成授权。
-    </dx-alert>
+<dx-alert infotype="notice" title="">
+必须选择**云服务器（cvm）**作为角色载体，选择容器服务则无法完成授权。
+</dx-alert>
+  
   5. 在“配置角色策略”步骤中，选择 [已创建的策略](#policy)，单击**下一步**。
   6. 在“审阅”步骤中，输入您的角色名称，审阅您即将创建角色的相关信息，单击**完成**后即完成自定义角色创建。详情请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
 :::
@@ -98,7 +98,9 @@ Kafka 的 Topic 配置中 `cleanup.policy` 参数需选择 delete，选择 compa
 - 选择您利用账号 API 密钥的 SecretId 和 SecretKey 作为变量值进行创建的集群 Secret 配置名称。
 ![](https://main.qcloudimg.com/raw/c03d348d34fc5c5d2666b1e883138bab.png)
 - 若无合适的 Secret，需新建 Secret。详情请参见 [Secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。其中 SecretId 和 SecretKey 可在 [API 密钥](https://console.cloud.tencent.com/cam/capi) 中查看。
->! API 密钥对应的用户需具备访问日志服务 CLS 的权限。若无 API 密钥，需新建 API 密钥。详情请参见 [访问密钥](https://www.tencentcloud.com/document/product/598/34227)。
+<dx-alert infotype="notice" title="">
+ API 密钥对应的用户需具备访问日志服务 CLS 的权限。若无 API 密钥，需新建 API 密钥。详情请参见 [访问密钥](https://www.tencentcloud.com/document/product/598/34227)。
+</dx-alert>
 :::
 </dx-tabs>
 7. 配置采集路径。如下图所示：
@@ -204,8 +206,9 @@ labels:
 
 ::: 通过secret采集日志到CLS
 #### 创建 secret[](id:z)
->! 以下示例为通过 yaml 手动创建 secret。如通过控制台创建 secret，则不需要进行64编码，详情请参考 [secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。
->
+<dx-alert infotype="notice" title="">
+ 以下示例为通过 yaml 手动创建 secret。如通过控制台创建 secret，则不需要进行64编码，详情请参考 [secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。
+</dx-alert>
 通过 kubectl 执行以下命令，获取进行 base64编码的 secretid 和 secretkey。其中，secretid 及 secretkey 请替换为您账号的 secretid 和 secretkey，可在 [API 密钥](https://console.cloud.tencent.com/cam/capi) 中查看。
 ```shell
 $ echo -n 'secretid' | base64
@@ -337,15 +340,13 @@ spec:
 
 :::
 
-
-
 ::: 通过role采集日志到CLS
 #### 步骤1：创建角色  
-**新建策略 **[](id:policy)
+<b>新建策略</b>[](id:policy)
 在新建角色之前，您需要创建一个策略，该策略决定了您的角色具备的权限。
-1. 登录访问管理控制台，在左侧导航栏选择 **[策略](https://console.cloud.tencent.com/cam/policy)**。
+1. 登录访问管理控制台，在左侧导航栏选择 [**策略**](https://console.cloud.tencent.com/cam/policy)。
 2. 在“策略”页面，单击**新建自定义策略**。
-3. 在“选择创建策略方式” 弹窗中，选择****按策略生成器创建****。
+3. 在“选择创建策略方式” 弹窗中，选择**按策略生成器创建**。
 4. 在“可视化策略生成器”中，“服务”选择 “日志服务(cls)“，”操作“选择”写操作:pushLog“，如下图所示：
 ![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
 5. 单击**下一步**，进入”关联用户/用户组“页面。
@@ -353,13 +354,13 @@ spec:
 
 **新建角色**
 创建策略完成后，需要将该策略绑定至一个角色，使得该角色具备策略相应的权限。
-1. 登录访问管理控制台，在左侧导航栏选择 **[角色](https://console.cloud.tencent.com/cam/role)**。
+1. 登录访问管理控制台，在左侧导航栏选择 [**角色**](https://console.cloud.tencent.com/cam/role)。
 2. 在“角色”页面，单击**新建角色**。
 3. 在“选择角色载体” 弹窗中，选择**腾讯云产品服务**，进入**新建自定义角色**页面。
 4. 在“输入角色载体信息”步骤中，选择**绑定**云服务器（cvm）**载体**，单击**下一步**。
-    <dx-alert infotype="notice" title=" ">
-    必须选择**云服务器（cvm）**作为角色载体，选择容器服务则无法完成授权。
-    </dx-alert>
+<dx-alert infotype="notice" title="">
+必须选择**云服务器（cvm）**作为角色载体，选择容器服务则无法完成授权。
+</dx-alert>
 5. 在“配置角色策略”步骤中，选择 [已创建的策略](#policy)，单击**下一步**。
 6. 在“审阅”步骤中，输入您的角色名称，审阅您即将创建角色的相关信息，单击**完成**后即完成自定义角色创建。详情请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
 
