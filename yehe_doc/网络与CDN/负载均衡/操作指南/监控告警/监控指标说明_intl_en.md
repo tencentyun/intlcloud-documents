@@ -86,7 +86,7 @@ Layer-4 listeners allow you to view the monitoring metrics at three levels:
 
 
 ## Layer-7 Listener (HTTP/HTTPS) Level
-Layer-7 listeners allow you to view the monitoring metrics at five levels:
+Layer-7 listeners allow you to view the monitoring metrics at three levels:
 - Listener level
 - Real server level
 - Real server port level
