@@ -1,3 +1,88 @@
+## 2022年08月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 6.6.3002 增强版本发布</td>
+    <td><ul style="margin:0">
+    <li> 支持直播群标记群成员 </li>
+    <li> 支持直播群踢人 </li>
+    <li> 修复 Android 话题更新回调偶现的崩溃问题 </li>
+    <li> 修复加群选项变更的通知枚举值不正确的问题 </li> 
+    <li> 修复话题设置自定义字段之后没有收到 onTopicInfoChanged 监听回调的问题 </li>     
+    <li> 优化 Android 多次获取网络 IP 的问题 </li>
+    <li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>    
+        </ul></td>
+    <td> 2022-08-18 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr> 
+<tr>
+    <td> SDK 2.22.0 版本发布（小程序和 Web 端）</td>
+<td data-sheets-value="" ><li>支持 uni-app 打包到 native app 使用离线推送，请参见 <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#registerPlugin">registerPlugin</a>。<br>
+<li>支持获取直播群在线成员列表，请参见 <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberList">getGroupMemberList </a>（需开通旗舰版）。<br>
+<li>支持直播群封禁成员，请参见 <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteGroupMember">deleteGroupMember</a>（需开通旗舰版）。<br>
+<a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setConversationCustomData"><li>setConversationCustomData </a>设置会话自定义数据。<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a></td></td>
+    <td> 2022-08-18 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+<tr>
+    <td> SDK 2.21.1 版本发布（小程序和 Web 端）</td>
+    <td>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#resendMessage">resendMessage</a>， 可能导致的消息重复问题。</li>
+<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a></td>
+    <td> 2022-08-03 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+</table>
+
+## 2022年07月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 6.5.2816 增强版本发布</td>
+    <td><ul style="margin:0">
+    <li> 优化印度站选路策略 </li>
+    <li> 优化富媒体消息上传/下载进度回调 </li>
+    <li> 优化 Android 端获取设备进程信息的合规问题 </li>
+    <li> 修复连续创建话题 crash 的问题 </li> 
+    <li> 修复 Windows 发包偶现 crash 的问题 </li>     
+    <li> 修复 Android v7a 架构下拉黑好友，再次添加被拉黑好友 crash 的问题 </li>
+    <li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>    
+        </ul></td>
+    <td> 2022-07-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr> 
+<tr>
+    <td> SDK 2.21.0 版本发布（小程序和 Web 端）</td>
+    <td>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setSelfStatus">setSelfStatus</a>，设置自己的自定义状态</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getUserStatus">getUserStatus</a>，查询用户状态</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#subscribeUserStatus">subscribeUserStatus</a>，订阅用户状态</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#unsubscribeUserStatus">unsubscribeUserStatus</a>，取消订阅用户状态</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType">setMessageRemindType</a> 支持群消息和话题消息的免打扰设置多端、多实例同步</li>
+<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a></td>
+    <td> 2022-07-28 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+<tr>
+    <td> SDK 6.5.2803 增强版本发布</td>
+    <td><ul style="margin:0">
+	<li> 新增 <a href="https://intl.cloud.tencent.com/document/product/1047/48853">会话标记</a> 支持
+	<li> 新增 <a href="https://intl.cloud.tencent.com/document/product/1047/48854">会话分组</a> 支持
+	<li> 新增会话自定义字段支持 </li>
+	<li> 新增 <a href="https://cloud.tencent.com/document/product/269/75366#.E8.8E.B7.E5.8F.96.E4.BC.9A.E8.AF.9D.E5.88.97.E8.A1.A8.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3">拉取会话高级接口 </a>    
+	<li> 支持接收直播群广播消息 </li> 
+	<li> 支持加群选项变更的通知下发 </li>     
+	<li> 支持群消息接收选项变更的多端同步 </li>
+	<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>    
+    </ul></td>
+    <td> 2022-07-15 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+</table>
+
+
 ## 2022年06月
 <table>
 <tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
@@ -36,7 +121,7 @@
 <li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage">modifyMessage</a>，支持消息变更
 <li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping">getMessageListHopping</a>，支持根据指定的消息 sequence 或消息时间拉取会话的消息列表
 <li>支持针对单条或多条 C2C 消息发送已读回执（需开通旗舰版）
-<li>C2C 会话 lastMessage 新增字段 isPeerRead，用于标识对端是否已读<li>更多更新内容请参考 <a href="https://cloud.tencent.com/document/product/269/38492">更新日志</a></li>
+<li>C2C 会话 lastMessage 新增字段 isPeerRead，用于标识对端是否已读<li>更多更新内容请参考 <a href="https://www.tencentcloud.com/document/product/1047/34281">更新日志</a></li>
     </ul></td>
     <td> 2022-06-09 </td>
     <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
@@ -57,7 +142,7 @@
 <li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity">deleteTopicFromCommunity</a> 删除话题</li>
 <li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile">updateTopicProfile</a> 设置话题资料</li>
 <li><a href="https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList">getTopicList</a> 获取话题列表</li>
-<li><a href="https://web.sdk.qcloud.com/im/doc/en/Topic.html">Topic</a> 社群话题对象，用于描述话题具有的属性，如名称、公告、简介、未读数等信息</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Topic.html">Topic</a> 社群话题对象，用于描述话题具有的属性，如名称、公告、简介、未读数等信息</li>
 <li>事件 <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED">TIM.EVENT.TOPIC_CREATED</a> 创建话题时触发</li>
 <li>事件 <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED">TIM.EVENT.TOPIC_DELETED</a> 删除话题时触发</li>
 <li>事件 <a href="https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED">TIM.EVENT.TOPIC_UPDATED</a> 话题资料更新时触发</li></li>
