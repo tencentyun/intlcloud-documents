@@ -1,4 +1,28 @@
 
+## July 2022
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.3.5.0 release</td>
+	<td>
+		<li>Adjusted the policy for choosing the vendor channel for HONOR phones.</li>
+		<li>Optimized the internal communication mechanism of the SDK to improve the communication efficiency.</li>
+		<li>Optimized the internal reporting mechanism of the SDK to reduce the traffic usage.</li>
+		</td>
+        <td>July 6, 2022</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+</td>
+    </tr>
+<tr>
+</table>
+
 ## June 2022
 
 <table>
@@ -59,7 +83,7 @@
 	<td>
 		<li>Supported the Huawei push channel for a device with an EMUI system.</li>
 		<li>Fixed the issue where the persistent connection retry interval was inaccurate.</li>
-		<li>Supported the HONOR push channel. See <a href="https://intl.cloud.tencent.com/document/product/1024/47652">HONOR Channel Integration</a> for details.</li>
+		<li>Supported for the HONOR channel. For more information, see <a href="https://cloud.tencent.com/document/product/548/74465">HONOR Channel Integration</a>.</li>
 		</td>
         <td>April 25, 2022</td><td>
 		<a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a>
@@ -150,7 +174,7 @@
 	<tr>
         <td>SDK v1.2.7.0 release</td><td>
 		<li> Supported in-app message display.
-		<li> Optimized the TPNS registration process.
+		<li> Optimized the Tencent Push Notification Service registration process.
 		<li> Fixed the issue where the device model cannot be obtained before a user agrees to the Privacy Policy.</td>
         <td>August 27, 2021</td><td><li>When using the new in-app messaging feature, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
@@ -169,7 +193,7 @@
 	</tr>
 	<tr>
         <td>SDK 1.2.6.0 release</td><td><li> Added the feature of limiting API call frequency.
-<li>  Supported configuring notification channels for FCM frontend notifications and TPNS local notifications.
+<li>  Supported configuring notification channels for FCM frontend notifications and Tencent Push Notification Service local notifications.
 <li>  Optimized persistent connection retry policies.
 <li>  Optimized the logic for reporting the number of daily active users and SDK startup events.
 <li>  Placed SDK logs in a hidden directory.
@@ -258,7 +282,7 @@
 </tr>
 <tr>
         <td>SDK v1.2.2.0 release</td>
-       <td><li> Unified the naming conventions for account and tag operation APIs.<li> Optimized SDK error code reporting.<li> Upgraded the FCM channel protocol to enable the FCM system to take over the display of notifications sent through the FCM channel.<li> Added the support for badge coloring for messages sent through the TPNS channel.<li> Supported Gzip compression during network communication.<li>Fixed the exception of service unbinding that might occur in multi-thread environments.</td>
+       <td><li> Unified the naming conventions for account and tag operation APIs.<li> Optimized SDK error code reporting.<li> Upgraded the FCM channel protocol to enable the FCM system to take over the display of notifications sent through the FCM channel.<li> Added the support for badge coloring for messages sent through the Tencent Push Notification Service channel.<li> Supported Gzip compression during network communication.<li>Fixed the exception of service unbinding that might occur in multi-thread environments.</td>
         <td>November 26, 2020</td>
         <td>-</td>
     </tr>
@@ -334,7 +358,7 @@
     <tr>
         <td>SDK v1.1.6.3 release</td>
         <td>Optimized third-party vendor channel integration.</td>
-        <td>June 4, 2020</td>
+        <td>2020-06-04</td>
         <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">-</a></td>
     </tr>
 </table>
