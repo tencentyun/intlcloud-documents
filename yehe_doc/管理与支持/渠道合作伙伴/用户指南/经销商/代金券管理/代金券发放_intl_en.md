@@ -4,7 +4,7 @@ Step 1. Log in to the console and click **[Voucher Management > Voucher Issuance
 ![](https://qcloudimg.tencent-cloud.cn/raw/493275322563912a5c91e1861ea932e9.png)
 
 >?
->+ The initial quota for voucher issuance is 0. Vouchers can be issued only if there is an available quota. You can contact your sales rep to apply for a voucher quota.
+>+ The quota for voucher issuance is initially set to 0 and can be requested through sales reps. (Note: The voucher quota here is different from the reseller’s self-use voucher quota. Please inform your sales rep that the quota is used to allocate vouchers to customers.)
 >+ Currently, only vouchers whose costs are borne by Tencent are supported. Issuance of such vouchers will be reviewed by Tencent, and vouchers can be issued to customers only after Tencent's approval.
 >+ The total amount of issued vouchers (excluding rejected ones) cannot exceed the total voucher quota. You should use vouchers reasonably and issue them only to customers who need them.
 
