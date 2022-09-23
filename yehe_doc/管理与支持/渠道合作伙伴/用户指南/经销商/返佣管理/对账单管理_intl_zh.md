@@ -13,9 +13,11 @@
 1、使用经销商账号登录腾讯云
 2、进入菜单：**Partner Center -> Rebate Management -> Statement**
 3、对账单相关操作:
+
+![](https://qcloudimg.tencent-cloud.cn/raw/72343800314e60432af3c37f7794f2a5.png)
    - 查看明细：点击后跳转到返佣明细进行查看。
    - 对账单下载：下载对应月份的对账单excel。
    - 对账单确认：对账单核对后完成对账确认，必须在对账单产生15天内完成对账确认或拒绝，如未按时完成会默认账单确认。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6aa27e7b307aecb4bd12c1a791a19182.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bf0702c81c23425565808ab37af90e6f.png)
 
