@@ -19,8 +19,7 @@ The IM console provides you with data statistics and analysis features. You can 
 
 ### Message activity
 
-1. On the **Daily Statistics
-** page, select the **Message Activity** tab.
+1. On the **Daily Statistics** page, select the **Message Activity** tab.
 2. In the overview area, you can view the following data:
  - Number of one-to-one messages yesterday: The total number of C2C chat upstream messages under the SDKAppID yesterday.
  - Number of group messages yesterday: The total number of upstream messages in private groups, public groups, and chat rooms under the SDKAppID yesterday.
@@ -33,8 +32,7 @@ The IM console provides you with data statistics and analysis features. You can 
 
 ### Group size
 
-1. On the **Daily Statistics
-** page, select the **Group Size** tab.
+1. On the **Daily Statistics** page, select the **Group Size** tab.
 2. In the overview area, you can view **Current Month's Peak Groups**, which is the peak group count in the current month as of yesterday under the SDKAppID. This is 0 on the first day of every month.
 3. Select 7 days, 14 days, or 30 days, or specify a period.
 4. In the data trend area, select data items to view the **New**, **Total**, or **Active** group count charts for the selected period.
@@ -45,8 +43,7 @@ The IM console provides you with data statistics and analysis features. You can 
 ## Real-Time Monitoring
 >? The real-time monitoring feature is currently in the beta test phase. We are iterating and updating the feature. If you have any comments or suggestions, contact us through our QQ group (468195767) or [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E5%8D%B3%E6%97%B6%E9%80%9A%E4%BF%A1%20IM&level3_id=237&radio_title=%E7%99%BB%E5%BD%95%E5%8F%8A%E5%A4%9A%E7%AB%AF%E5%9C%A8%E7%BA%BF%E9%97%AE%E9%A2%98&queue=3235&scene_code=27293&step=2).
 
-1. In the left sidebar, select **
-** > **Real-Time**.
+1. In the left sidebar, select **Statistics** > **Real-Time**.
 2. In the overview area, you can view **One-to-One Messages Today**, **Group Messages Today**, and **Web/Mini Program Messages**.
 3. In the monitoring data details area, the time axis displays 24-hour data by calendar day by default. When you hover the cursor over the data chart area, you can scroll the scroll bar to magnify the time axis to view details, drag the time axis leftwards or rightwards to view data at different time points, and click the legend below the time axis to hide or display values in the chart.
  - In the login monitoring area, you can view the number of logins and login success rate on different clients.
