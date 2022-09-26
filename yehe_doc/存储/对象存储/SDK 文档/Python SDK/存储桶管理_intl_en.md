@@ -1,11 +1,11 @@
 ## Overview
-This document provides an overview of APIs and SDK code samples related to cross-origin access, lifecycle, versioning, and cross-region replication.
+This document provides an overview of APIs and SDK code samples for CORS, lifecycle, versioning, and cross-region replication.
 
 **CORS**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
-| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting CORS | Sets CORS permissions for a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting CORS configuration | Sets the CORS configuration for a bucket |
 | [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying CORS configuration | Queries the CORS configuration of a bucket |
 | [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting CORS configuration | Deletes the CORS configuration of a bucket |
 
@@ -13,9 +13,9 @@ This document provides an overview of APIs and SDK code samples related to cross
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
-| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle configuration | Sets lifecycle management configuration for a bucket |
-| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying a lifecycle configuration | Queries the lifecycle configuration of a bucket |
-| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting lifecycle configuration | Deletes the lifecycle management configuration from a bucket |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle configuration | Sets the lifecycle configuration for a bucket |
+| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying lifecycle configuration | Queries the lifecycle configuration of a bucket |
+| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting lifecycle configuration | Deletes the lifecycle configuration of a bucket |
 
 **Versioning**
 
@@ -28,24 +28,24 @@ This document provides an overview of APIs and SDK code samples related to cross
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
-| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting a cross-region replication rule | Sets a cross-region replication rule for a bucket |
-| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying a cross-region replication rule | Queries the cross-region replication rule of a bucket |
-| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting a cross-region replication rule | Deletes the cross-region replication rule from a bucket |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting the cross-region replication rule | Sets the cross-region replication rule for a bucket |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying the cross-region replication rule | Queries the cross-region replication rules of a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting the cross-region replication rule | Deletes the cross-region replication rule of a bucket |
 
-**Access policy**
+**Permission policy**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
-| [PUT Bucket policy](https://intl.cloud.tencent.com/document/product/436/8282) | Setting a bucket policy | Sets an access policy for a bucket |
-| [GET Bucket policy](https://intl.cloud.tencent.com/document/product/436/8276) | Querying a bucket policy | Queries the access policy of a bucket |
-| [DELETE Bucket policy](https://intl.cloud.tencent.com/document/product/436/8285) | Deleting a bucket policy | Deletes the access policy from a bucket |
+| [PUT Bucket policy](https://intl.cloud.tencent.com/document/product/436/8282) | Setting the permission policy | Sets the permission policy for a bucket |
+| [GET Bucket policy](https://intl.cloud.tencent.com/document/product/436/8276) | Querying the permission policy | Queries the permission policy of a bucket |
+| [DELETE Bucket policy](https://intl.cloud.tencent.com/document/product/436/8285) | Deleting the permission policy | Deletes the permission policy of a bucket |
 
 ## CORS
-### Setting CORS
+### Setting CORS configuration
 
-#### Description
+#### Feature description
 
-This API (PUT Bucket cors) is used to set CORS for a bucket.
+This API (`PUT Bucket cors`) is used to set the CORS configuration for a bucket.
 
 #### Method prototype
 
@@ -64,13 +64,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -103,23 +103,23 @@ response = client.put_bucket_cors(
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
-| CORSRule | Specifies the cross-origin access rule, including ID, MaxAgeSeconds, AllowedOrigin, AllowedMethod, AllowedHeader, and ExposeHeader | List | Yes|
-| ID | Sets rule ID | String | No |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
+| CORSRule | Sets the CORS rule, including `ID`, `MaxAgeSeconds`, `AllowedOrigin`, `AllowedMethod`, `AllowedHeader`, and `ExposeHeader`. | List | Yes |
+| ID | Sets the rule ID | String | No |
 | MaxAgeSeconds | Sets the validity period of the OPTIONS request result | Int | No |
-| AllowedOrigin | Sets allowed access sources, e.g. `"http://cloud.tencent.com"`. The wildcard "*" is supported. | Dict | Yes |
-| AllowedMethod | Sets allowed methods, including GET, PUT, HEAD, POST, DELETE | Dict | Yes |
-| AllowedHeader | Sets custom HTTP request headers that can be included in a request. The wildcard "*" is supported. | Dict | No |
-| ExposeHeader | Configures custom headers that can be received by the browser from the server. | Dict | No |
+| AllowedOrigin | Sets allowed access sources, such as `"http://cloud.tencent.com"`. The wildcard `*` is supported. | Dict | Yes |
+| AllowedMethod | Sets allowed methods, such as `GET`, `PUT`, `HEAD`, `POST`, and `DELETE`. | Dict | Yes |
+| AllowedHeader | Sets custom HTTP request headers that can be included in a request. The wildcard `*` is supported. | Dict | No |
+| ExposeHeader | Sets custom headers that can be received by the browser from the server. | Dict | No |
 
 #### Response description
 This API returns `None`.
 
-### Querying a CORS configuration
+### Querying CORS configuration
 
-#### Description
+#### Feature description
 
-This API is used to query the cross-origin access configuration of a bucket.
+This API (`GET Bucket cors`) is used to query the CORS configuration of a bucket.
 
 #### Method prototype
 
@@ -138,13 +138,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -161,7 +161,7 @@ response = client.get_bucket_cors(
 
 #### Response description
 
-This API returns the cross-origin access configuration on a bucket in dict format.
+This API returns the CORS configuration of the bucket of `dict` type.
 ```python
 {
     'CORSRule': [
@@ -187,20 +187,20 @@ This API returns the cross-origin access configuration on a bucket in dict forma
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| CORSRule | Specifies the cross-origin access rule, including ID, MaxAgeSeconds, AllowedOrigin, AllowedMethod, AllowedHeader, and ExposeHeader | List |
+| CORSRule | CORS rule, including `ID`, `MaxAgeSeconds`, `AllowedOrigin`, `AllowedMethod`, `AllowedHeader`, and `ExposeHeader`. | List |
 | ID | Rule ID | String |
-| MaxAgeSeconds | Sets the validity period of the OPTIONS request result | String |
-| AllowedOrigin | Allowed access sources, e.g. `"http://cloud.tencent.com"`. The wildcard "*" is supported. | Dict |
-| AllowedMethod | Allowed methods, including GET, PUT, HEAD, POST, DELETE | Dict |
-| AllowedHeader | Sets custom HTTP request headers that can be included in a request. The wildcard "*" is supported. | Dict |
-| ExposeHeader | Configures custom headers that can be received by the browser from the server. | Dict |
+| MaxAgeSeconds  |  Validity period of the OPTIONS request result | String |
+| AllowedOrigin  | Allowed access sources, such as `"http://cloud.tencent.com"`. The wildcard `*` is supported.  | Dict |
+| AllowedMethod  |  Allowed methods, such as `GET`, `PUT`, `HEAD`, `POST`, and `DELETE`. | Dict |
+| AllowedHeader  | Custom HTTP request headers that can be included in a request. The wildcard `*` is supported. |  Dict |
+| ExposeHeader  | Custom headers that can be received by the browser from the server. | Dict |
 
 
 ### Deleting CORS configuration
 
-#### Description
+#### Feature description
 
-This API (DELETE Bucket cors) is used to delete the CORS configuration of a bucket.
+This API (`DELETE Bucket cors`) is used to delete the CORS configuration of a bucket.
 
 #### Method prototype
 
@@ -219,13 +219,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -238,7 +238,7 @@ response = client.delete_bucket_cors(
 
 | Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes
 
 #### Response description
 
@@ -248,9 +248,9 @@ This API returns `None`.
 ## Lifecycle
 ### Setting lifecycle configuration
 
-#### Description
+#### Feature description
 
-This API (PUT Bucket lifecycle) is used to set the lifecycle configuration for a bucket.
+This API (`PUT Bucket lifecycle`) is used to set the lifecycle configuration for a bucket.
 
 #### Method prototype
 
@@ -269,13 +269,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -285,22 +285,22 @@ response = client.put_bucket_lifecycle(
     LifecycleConfiguration={
         'Rule': [
             {
-                'ID': 'string', # Rule ID, such as `Rule-1`
+                'ID': 'string', # Set the rule ID, such as `Rule-1`.
                 'Filter': { 
                     'Prefix': '', # If this field is left empty, the rule applies to all objects in the bucket.
                 },
-                'Status': 'Enabled', # `Enabled` means to enable the rule.
+                'Status': 'Enabled', # `Enabled` indicates to enable the rule.
                 'Expiration': {
-                    'Days': 200 # Set the current version of the object to be expired and deleted 200 days later.
+                    'Days': 200 # Set the current version of the object to be expired and deleted in 200 days.
                 },
                 'Transition': [
                     {
-                        'Days': 100, # Set the current version of the object to be transitioned 100 days later.
+                        'Days': 100, # Set the current version of the object to be transitioned in 100 days.
                         'StorageClass': 'Standard_IA' # Transition the storage class to STANDARD_IA.
                     },
                 ],
                 'AbortIncompleteMultipartUpload': {
-                    'DaysAfterInitiation': 7 # Set parts that are not merged to be repossessed 7 days later.
+                    'DaysAfterInitiation': 7 # Set parts that are not merged to be repossessed in 7 days.
                 }
             }
         ]   
@@ -316,39 +316,39 @@ response = client.put_bucket_lifecycle(
     LifecycleConfiguration={
         'Rule': [
             {
-                'ID': 'string', # Rule ID, such as `Rule-1`
+                'ID': 'string', # Set the rule ID, such as `Rule-1`.
                 'Filter': {
-                    'Prefix': 'string', # If a prefix is specified, this rule applies only to the objects with the prefix.
-                    'Tag': [ # Set the tag filtering rule. The rule applies only to objects that match the tag. You need to specify either `Tag` or `Prefix`, not both.
+                    'Prefix': 'string', # If a prefix is specified, this rule applies only to objects with the prefix.
+                    'Tag': [ # Set the tag filtering rule. The rule applies only to objects with the specified tag. You need to specify either `Tag` or `Prefix`.
                         {
                             'Key': 'string', 
                             'Value': 'string'
                         }
                     ]
                 },
-                'Status': 'Enabled'|'Disabled', # `Enabled` means to enable the rule. `Disabled` means to disable the rule. Specify either `Enabled` or `Disabled`.
+                'Status': 'Enabled'|'Disabled', # `Enabled` and `Disabled` indicate to enable and disable the rule respectively. You need to specify either `Enabled` or `Disabled`.
                 'Expiration': { 
-                    'Days': 100 # Set the current version of the object to be expired and deleted 100 days later.
-                    'Date': get_date(2021, 4, 20) # Set the current version of the object to be expired and deleted after April 20, 2021. You need to specify either `Date` or `Days`, not both.
+                    'Days': 100, # Set the current version of the object to be expired and deleted in 100 days.
+                    'Date': get_date(2021, 4, 20) # Set the current version of the object to be expired and deleted after April 20, 2021. You need to specify either `Date` or `Days`.
                 },
                 'Transition': [
                     {
-                        'Days': 60, # Set the current version of the object to be transitioned 60 days later.
-                        'Date': get_date(2021, 4, 20), # Set the current version of the object to be transitioned after April 20, 2021. You need to specify either `Date` or `Days`, not both.
+                        'Days': 60, # Set the current version of the object to be transitioned in 60 days.
+                        'Date': get_date(2021, 4, 20), # Set the current version of the object to be transitioned after April 20, 2021. You need to specify either `Date` or `Days`.
                         'StorageClass': 'Archive' # Transition the storage class to ARCHIVE.
                     },
                 ],
                 'NoncurrentVersionExpiration': {
-                    'NoncurrentDays': 100 # Set the non-current versions of the object to be expired and deleted 100 days later.
+                    'NoncurrentDays': 100 # Set the non-current versions of the object to be expired and deleted in 100 days.
                 },
                 'NoncurrentVersionTransition': [
                     {
-                        'NoncurrentDays': 60, # Set the non-current versions of the object to be transitioned 60 days later.
+                        'NoncurrentDays': 60, # Set the non-current versions of the object to be transitioned in 60 days.
                         'StorageClass': 'Standard_IA' # Transition the storage class to STANDARD_IA.
                     },
                 ],
                 'AbortIncompleteMultipartUpload': {
-                    'DaysAfterInitiation': 100 # Set parts that are not merged to be repossessed 100 days later.
+                    'DaysAfterInitiation': 100 # Set parts that are not merged to be repossessed in 100 days.
                 }
             }
         ]   
@@ -360,15 +360,15 @@ response = client.put_bucket_lifecycle(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Rule | Sets the rule, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, AbortIncompleteMultipartUpload | List | Yes |
-| ID | Sets rule ID. | String | No |
-| Filter | Describes a set of objects that are subject to the rule. To set the rule for all objects in the bucket, leave `Prefix` empty. | Dict | Yes |
-| Status | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled` | Dict | Yes |
-|  Expiration  | Specifies when objects expire. It can be an expiry date or the number of days before objects expire. The date must be in GMT ISO 8601 format. You can specify the date using the `get_date` method. | Dict | No |
-| Transition | Sets one or more rules for when an object transitions to a specified storage class. You can specify the number of days before the transition occurs or a transition date. The date must be in GMT ISO 8601 format. You can specify the date using the `get_date` method. The valid values for StorageClass include Standard_IA, Archive, and Deep_Archive. | List | No |
-| NoncurrentVersionExpiration | Sets when noncurrent object versions expire. You can specify the number of days before objects expire (NoncurrentDays). | Dict | No |
-|  NoncurrentVersionTransition  | Sets one or more transition rules that describe when noncurrent objects transition to another storage class. You can specify the number of days (NoncurrentDays). The valid value for `StorageClass` is Standard_IA. | List | No |
-| AbortIncompleteMultipartUpload | Indicates the number of days within which the upload must be completed after the multipart upload starts. | Dict | No |
+| Rule | Sets the rule, including `ID`, `Filter`, `Status`, `Expiration`, `Transition`, `NoncurrentVersionExpiration`, `NoncurrentVersionTransition`, and `AbortIncompleteMultipartUpload`. | List | Yes |
+| ID | Sets the rule ID. | String | No |
+| Filter | Describes the set of objects that are subject to the rule. To set the rule for all objects in the bucket, leave `Prefix` empty. | Dict | Yes |
+| Status | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled`. | Dict | Yes |
+|  Expiration  | Sets the rule for when objects expire. You can specify the number of days (`Days`) or the date (`Date`) in GMT ISO 8601 format by using the `get_date` method. | Dict | No |
+| Transition | Sets one or more rules for when objects are transitioned to the specified storage class. You can specify the number of days (`Days`) or the date (`Date`) in GMT ISO 8601 format by using the `get_date` method. Valid values of `StorageClass` include `Standard_IA`, `Archive`, and `Deep_Archive`. | List | No |
+| NoncurrentVersionExpiration | Sets the rule for when non-current object versions expire. You can specify the number of days (`NoncurrentDays`). | Dict | No |
+|  NoncurrentVersionTransition  | Sets one or more rules for when non-current objects are transitioned to the specified storage class. You can specify the number of days (`NoncurrentDays`). The valid value for `StorageClass` is `Standard_IA`. | List | No |
+| AbortIncompleteMultipartUpload | Specifies the number of days within which a multipart upload must be completed after it starts. | Dict | No |
 
 
 #### Response description
@@ -376,11 +376,11 @@ response = client.put_bucket_lifecycle(
 This API returns `None`.
 
 
-### Querying a lifecycle configuration
+### Querying lifecycle configuration
 
-#### Description
+#### Feature description
 
-This API is used to query the lifecycle configuration of a bucket.
+This API (`GET Bucket lifecycle`) is used to query the lifecycle configuration of a bucket.
 
 #### Sample request
 
@@ -394,13 +394,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -413,11 +413,11 @@ response = client.get_bucket_lifecycle(
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 
 #### Response description
 
-This API returns the lifecycle configuration on a bucket in dict format.
+This API returns the lifecycle configuration of the bucket of `dict` type.
 ```python
 {
     'Rule': [
@@ -463,22 +463,22 @@ This API returns the lifecycle configuration on a bucket in dict format.
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| Rule | Sets the rule, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, AbortIncompleteMultipartUpload | List |
+| Rule | The rule, including `ID`, `Filter`, `Status`, `Expiration`, `Transition`, `NoncurrentVersionExpiration`, `NoncurrentVersionTransition`, and `AbortIncompleteMultipartUpload`. | List |
 | ID | Rule ID | String |
-| Filter | Describes a set of objects that are subject to the rule. | Dict |
-| Status | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled` | Dict |
-| Expiration | Specifies when objects expire. It can be an expiry date (`Date`) or the number of days before objects expire (`Days`) | Dict |
-| Transition | Specifies when objects transition to another storage class. It can be an expiry date (`Date`) or the number of days before objects transition (`Days`). Valid values for StorageClass: STANDARD_IA, Archive | List |
-| NoncurrentVersionExpiration | Sets the expiration rule for noncurrent object versions. You can specify the number of days before the object expires (NoncurrentDays). | Dict |
-|  NoncurrentVersionTransition  | Specifies the rule for transitioning noncurrent objects to another storage class. You can specify the number of days (NoncurrentDays). Valid value for StorageClass: STANDARD_IA. | List |
-| AbortIncompleteMultipartUpload | Specifies the number of days within which the upload must be completed after the multipart upload starts. | Dict |
+| Filter | The set of objects that are subject to the rule. | Dict |
+| Status | Whether the rule is enabled. Valid values: `Enabled`, `Disabled`. | Dict |
+| Expiration | The rule for when objects expire. You can specify the number of days (`Days`) or the date (`Date`). | Dict |
+| Transition | The rule for when objects are transitioned to the specified storage class. You can specify the number of days (`Days`) or the date (`Date`). Valid values of `StorageClass` include `STANDARD_IA` and `Archive`. | List |
+| NoncurrentVersionExpiration | The rule for when non-current object versions expire. You can specify the number of days (`NoncurrentDays`). | Dict |
+|  NoncurrentVersionTransition  | The rule for when non-current objects are transitioned to the specified storage class. You can specify the number of days (`NoncurrentDays`). The valid value for `StorageClass` is `Standard_IA`. | List |
+| AbortIncompleteMultipartUpload | The number of days within which a multipart upload must be completed after it starts. | Dict |
 
 
-### Deleting a lifecycle configuration
+### Deleting lifecycle configuration
 
-#### Description
+#### Feature description
 
-This API is used to delete the lifecycle configuration from a bucket.
+This API (`DELETE Bucket lifecycle`) is used to delete the lifecycle configuration of a bucket.
 
 #### Method prototype
 
@@ -497,13 +497,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -516,7 +516,7 @@ response = client.delete_bucket_lifecycle(
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 
 #### Response description
 
@@ -526,9 +526,9 @@ This API returns `None`.
 ## Versioning
 ### Setting versioning
 
-#### Description
+#### Feature description
 
-This API (PUT Bucket versioning) is used to set the versioning configuration for a bucket.
+This API (`PUT Bucket versioning`) is used to set the versioning configuration for a bucket.
 
 #### Method prototype
 ```
@@ -548,13 +548,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -576,13 +576,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -598,7 +598,7 @@ response = client.put_bucket_versioning(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Status | Sets the versioning status of a bucket. Valid values: `Suspended`, `Enabled` | String | Yes |
+| Status | Sets the versioning status of a bucket. Valid values: `Suspended`, `Enabled`. | String | Yes |
 
 
 #### Response description
@@ -607,9 +607,9 @@ This API returns `None`.
 
 ### Querying versioning
 
-#### Description
+#### Feature description
 
-This API (GET Bucket versioning) is used to query the versioning configuration of a bucket.
+This API (`GET Bucket versioning`) is used to query the versioning configuration of a bucket.
 
 #### Method prototype
 
@@ -628,13 +628,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -647,11 +647,11 @@ response = client.get_bucket_versioning(
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 
 #### Response description
 
-This API returns the versioning configuration on a bucket in dict format.
+This API returns the versioning configuration of the bucket of `dict` type.
 ```python
 {
     'Status': 'Enabled'|'Suspended'
@@ -660,15 +660,15 @@ This API returns the versioning configuration on a bucket in dict format.
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| Status | Sets the versioning status of a bucket. Valid values: `Suspended`, `Enabled` | String |
+| Status | The versioning status of a bucket. Valid values: `Suspended`, `Enabled`. | String |
 
 
 ## Cross-Region Replication
-### Setting a cross-region replication rule
+### Setting cross-region replication rule
 
-#### Description
+#### Feature description
 
-This API (PUT Bucket replication) is used to set the cross-bucket replication rule for a bucket.
+This API (`PUT Bucket replication`) is used to set the cross-bucket replication rule for a bucket.
 
 #### Method prototype
 
@@ -687,13 +687,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -749,25 +749,25 @@ response = client.put_bucket_replication(
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
-| Role | Replication initiator identifier: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String | No |
-| Rule | Sets the rule, including ID, Status, Prefix, and Destination | List | Yes |
-| ID | Sets rule ID. | String | No |
-| Status  | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled` | String | Yes |
-| Prefix | Specifies the prefix used to filter objects. If it is left empty, the rule applies to all objects in the bucket | String |  Yes |
-| Destination | Describes the destination resource, including `Bucket` and `StorageClass`  | Dict | Yes |
-| Bucket | Sets the destination bucket for cross-region replication. Format: `qcs::cos:[region]::[BucketName-APPID]`  | String  | Yes |
-| StorageClass | Sets the storage class of the object copies. Valid values: `STANDARD`, `STANDARD_IA` | String | No |
+| Bucket | Source Bucket name in the format of `BucketName-APPID`. | String | Yes |
+| Role | Initiator identifier in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`. | String | No |
+| Rule | Sets the rule, including `ID`, `Status`, `Prefix`, and `Destination`. | List | Yes |
+| ID | Sets the rule ID. | String | No |
+| Status | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled`. | String | Yes |
+| Prefix | Sets the prefix used to filter objects. If it is left empty, the rule applies to all objects in the bucket. | String |  Yes |
+| Destination | Describes the destination resource, including `Bucket` and `StorageClass`.  | Dict | Yes |
+| Bucket | Sets the destination bucket for cross-region replication in the format of `qcs::cos:[region]::[BucketName-APPID]`.  | String  | Yes |
+| StorageClass | Sets the storage class of object copies. Valid values: `STANDARD`, `STANDARD_IA`. | String | No |
 
 #### Response description
 
 This API returns `None`.
 
-### Querying a cross-region replication rule
+### Querying cross-region replication rule
 
-#### Description
+#### Feature description
 
-This API (GET Bucket replication) is used to query the cross-bucket replication rule of a bucket.
+This API (`GET Bucket replication`) is used to query the cross-bucket replication rule of a bucket.
 
 #### Method prototype
 
@@ -786,13 +786,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -809,7 +809,7 @@ response = client.get_bucket_replication(
 
 #### Response description
 
-This API returns the cross-region replication configuration on a bucket in dict format.
+This API returns the cross-region replication configuration of the bucket of `dict` type.
 ```python
 {
     'Role': 'qcs::cam::uin/100000000001:uin/100000000001',
@@ -838,21 +838,21 @@ This API returns the cross-region replication configuration on a bucket in dict 
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| Role | Replication initiator identifier: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String | No |
-| Rule | Sets the rule for cross-region replication, including ID, Status, Prefix, and Destination | List | Yes |
-|  ID  | Specifies the ID of the cross-region replication rule| String |  No |
-| Status  | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled` | String | Yes |
-| Prefix | Specifies the prefix used to filter objects that are subject to the rule. If it is left empty, the rule applies to all objects in the bucket | String |  Yes |
-| Destination |   Describes the destination resource, including `Bucket` and `StorageClass` | Dict | Yes |
-| Bucket | Sets the destination bucket for cross-region replication. Format: `qcs::cos:[region]::[BucketName-APPID]`  | String  | Yes |
-| StorageClass | Sets the storage class of the object copies. Valid values: `STANDARD`, `STANDARD_IA` | String | No |
+| Role | Initiator identifier in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`. | String | No |
+| Rule | The rule for cross-region replication, including `ID`, `Status`, `Prefix`, and `Destination`. | List | Yes |
+|  ID  | ID of the cross-region replication rule. | String |  No |
+| Status  | Whether the rule is enabled. Valid values: `Enabled`, `Disabled`. | String | Yes |
+| Prefix | The prefix used to filter objects. If it is left empty, the rule applies to all objects in the bucket. | String |  Yes |
+| Destination |   The destination resource, including `Bucket` and `StorageClass`. | Dict | Yes |
+| Bucket | The destination bucket for cross-region replication in the format of `qcs::cos:[region]::[BucketName-APPID]`.  | String  | Yes |
+| StorageClass | The storage class of object copies. Valid values: `STANDARD`, `STANDARD_IA`. | String | No |
 
 
-### Deleting a cross-region replication rule
+### Deleting cross-region replication rule
 
-#### Description
+#### Feature description
 
-This API (DELETE Bucket replication) is used to delete the cross-bucket replication rule from a bucket.
+This API (`DELETE Bucket replication`) is used to delete the cross-bucket replication rule of a bucket.
 
 #### Method prototype
 
@@ -871,13 +871,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -890,19 +890,19 @@ response = client.delete_bucket_replication(
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 
 #### Response description
 
 This API returns `None`.
 
 
-## Access Policy
-### Setting an access policy
+## Permission Policy
+### Setting permission policy
 
-#### Description
+#### Feature description
 
-This API is used to set an access policy on a bucket.
+This API (`PUT Bucket policy`) is used to set the permission policy for a bucket.
 
 #### Method prototype
 
@@ -921,13 +921,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -935,22 +935,22 @@ client = CosS3Client(config)
 response = client.put_bucket_policy(
     Bucket='examplebucket-1250000000',
     Policy={
-        "Statement":[
+        "Statement": [
             {
-                "Principal":{
-                    "qcs":[
+                "Principal": {
+                    "qcs": [
                     "qcs::cam::uin/100000000001:uin/100000000011"
                     ]
                 },
                 "Effect": "allow",
-                "Action":[
+                "Action": [
                     "name/cos:GetBucket"
                 ],
-                "Resource":[
+                "Resource": [
                     "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
-                ]
+                ],
                 "condition": {
-                    "ip_equal":{
+                    "ip_equal": {
                     "qcs:ip": "10.121.2.10/24"
                     }
                 }
@@ -964,14 +964,14 @@ response = client.put_bucket_policy(
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
-| Statement | Specifies one or more permissions |List| Yes |
-| Principal | Specifies the entity to which the permission is granted. For more information, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023)|Dict| Yes |
-| Version |Specifies the version of policy syntax. Default: 2.0|String|Yes |
-| Effect | Allow or deny |String| Yes |
-| Action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g. `name/cos:GetService`. **Note that this value is case-sensitive**.    |List | Yes |
-| Resource | Specifies the resource for which permission is granted. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination thereof. |List | Yes |
-| Condition | (Optional) Specifies the rule condition. For more information, see [condition](https://intl.cloud.tencent.com/document/product/598/10603) |List | No |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
+| Statement | Describes one or more permissions. | List | Yes |
+| Principal | Describes the entity to which the permission is granted. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/18023). | Dict | Yes |
+| Version | Policy syntax version. Default value: `2.0`. |String|Yes |
+| Effect | `allow` or `deny`. |String| Yes |
+| Action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, such as `name/cos:GetService`. **Note that this value is case-sensitive.**    |List | Yes |
+| Resource | The specific resource for which the permission is granted. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination of these. |List | Yes |
+| Condition | Rule condition, which is optional. For more information, see [Element Reference](https://intl.cloud.tencent.com/document/product/598/10603). |List | No |
 
 
 #### Response description
@@ -979,11 +979,11 @@ response = client.put_bucket_policy(
 This API returns `None`.
 
 
-### Querying an access policy
+### Querying permission policy
 
-#### Description
+#### Feature description
 
-This API is used to query the access policy on a bucket.
+This API (`GET Bucket policy`) is used to query the permission policy of a bucket.
 
 #### Method prototype
 
@@ -998,17 +998,18 @@ from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
 import logging
+import json
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -1016,35 +1017,36 @@ client = CosS3Client(config)
 response = client.get_bucket_policy(
     Bucket='examplebucket-1250000000',
 )
+policy = json.loads(response['Policy'])
 ```
 #### Parameter description
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 
 
 #### Response description
 
-This API returns the access policy on a bucket in dict format.
+This API returns the bucket permission policy of `dict` type, which contains a key-value pair, where `key` is the `'Policy'` string, and the value is a JSON string that represents the specific permission policy and can be converted to `dict` through `json.loads()`.
 ```python
 {
-    "Statement":[
+    "Statement": [
         {
-            "Principal":{
-                "qcs":[
+            "Principal": {
+                "qcs": [
                 "qcs::cam::uin/100000000001:uin/100000000011"
                 ]
             },
             "Effect": "allow",
-            "Action":[
+            "Action": [
                 "name/cos:GetBucket"
             ],
-            "Resource":[
+            "Resource": [
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
-            ]
+            ],
             "condition": {
-                "ip_equal":{
+                "ip_equal": {
                 "qcs:ip": "10.121.2.10/24"
                 }
             }
@@ -1056,20 +1058,20 @@ This API returns the access policy on a bucket in dict format.
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Statement | Specifies one or more permissions |List| Yes |
-| Principal | Specifies the entity to which the permission is granted. For more information, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023)|Dict| Yes |
-| Version |Specifies the version of policy syntax. Default: 2.0|String|Yes |
-| Effect | Allow or deny |String| Yes |
-| Action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g. `name/cos:GetService`. **Note that this value is case-sensitive**.    |List | Yes |
-| Resource | Specifies the resource for which permission is granted. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination thereof. |List | Yes |
-| Condition | (Optional) Specifies the rule condition. For more information, see [condition](https://intl.cloud.tencent.com/document/product/598/10603) |List | No |
+| Statement | Describes one or more permissions. | List | Yes |
+| Principal | Describes the entity to which the permission is granted. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/18023). | Dict | Yes |
+| Version | Policy syntax version. Default value: `2.0`. |String|Yes |
+| Effect | `allow` or `deny`. |String| Yes |
+| Action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, such as `name/cos:GetService`. **Note that this value is case-sensitive.**    |List | Yes |
+| Resource | The specific resource for which the permission is granted. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination of these. |List | Yes |
+| Condition | Rule condition, which is optional. For more information, see [Element Reference](https://intl.cloud.tencent.com/document/product/598/10603). |List | No |
 
 
-### Deleting an access policy
+### Deleting permission policy
 
-#### Description
+#### Feature description
 
-This API is used to delete the access policy from a specified bucket.
+This API (`DELETE Bucket policy`) is used to delete the permission policy of a bucket.
 
 #### Method prototype
 
@@ -1088,13 +1090,13 @@ import logging
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from CosConfig and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://intl.cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -1107,7 +1109,7 @@ response = client.delete_bucket_policy(
 
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format: BucketName-APPID | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 
 
 #### Response description
