@@ -4,9 +4,6 @@ The video/audio splicing feature adds the specified video/audio segment at the b
 >? Audio/Video splicing is billed by the output file size under the file transcoding billable item. For more information, see [Media Processing Fees](https://intl.cloud.tencent.com/document/product/1045/49489).
 >
 
-## Demo
-
-You can try out the audio/video splicing feature online in the [CI Demo Center](https://cloud.tencent.com/act/pro/ciExhibition).
 
 ## Use Cases
 
