@@ -23,7 +23,7 @@ The global replication feature can replicate data in the same AZ or across AZs b
 
 ## Limits on the specifications of global replication group instances
 
-- We recommend you set the number of shards for instances in the replication group to the nth power of 2, such as 2, 4, 8, 16, 32, 64, or 128.
+- We recommend you set the number of shards for instances in the replication group to the nth power of 2, such as 8, 16, 32, 64, or 128.
 - When creating a global replication group, you must specify a master instance with at least two replicas for the group.
 - Currently, you can add up to four instances in a global replication group in the following deployment schemes: one master and three read-only instances, four master instances, or two master and two read-only instances.
 - The specifications of instances to be added to a global replication group must be the same as those of existing instances in the group, and their memory capacity must be greater than or equal to the used capacity of the master instance specified during group creation.
