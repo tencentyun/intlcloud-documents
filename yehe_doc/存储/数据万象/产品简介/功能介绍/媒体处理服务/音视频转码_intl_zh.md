@@ -7,9 +7,7 @@
 > - 若文件类型为视频，则支持在转码过程中同时为视频添加水印，使用详情请查看 [视频水印](https://intl.cloud.tencent.com/document/product/1045/43606) 文档。
 > 
 
-## 功能体验
 
-您可在线体验音视频转码功能，单击前往 [数据万象体验馆](https://cloud.tencent.com/act/pro/ciExhibition)。
 
 
 ## 适用场景
