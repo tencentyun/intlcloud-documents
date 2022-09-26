@@ -4,9 +4,7 @@
 >? 音视频拼接为付费功能，隶属于文件转码计费项，按照输出文件大小进行计费。详情请参见 [媒体处理费用](https://intl.cloud.tencent.com/document/product/1045/49489)。
 >
 
-## 功能体验
 
-您可在线体验音视频拼接功能，单击前往 [数据万象体验馆](https://cloud.tencent.com/act/pro/ciExhibition)。
 
 ## 适用场景
 
