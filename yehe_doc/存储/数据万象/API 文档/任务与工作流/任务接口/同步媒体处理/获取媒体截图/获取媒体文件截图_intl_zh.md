@@ -19,13 +19,13 @@ GetSnapshot 接口用于获取媒体文件某个时间的截图。
 
 ## 使用说明
 
-此接口为同步模式，异步模式请参考任务接口-截图任务。
+此接口为同步模式，异步模式请参考 [任务接口-截图任务](https://intl.cloud.tencent.com/document/product/1045/48938)。
 
 ## 请求示例
 
 #### 1. 通过GET请求方式
 ```shell
-GET /for-test.mp4?ci-process=snapshot&time=1&format=jpg HTTP/1.1
+GET /<ObjectKey>?ci-process=snapshot&time=1&format=jpg HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -40,7 +40,7 @@ https://<BucketName-APPID>.cos.<Region>.myqcloud.com/for-test.mp4?ci-process=sna
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
@@ -76,7 +76,7 @@ https://<BucketName-APPID>.cos.<Region>.myqcloud.com/for-test.mp4?ci-process=sna
 该响应体为截图文件内容。
 
 #### 错误码
-该请求操作无特殊错误信息，常见的错误信息请参见错误码 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/46214) 文档。
 
 
 ## 实际案例

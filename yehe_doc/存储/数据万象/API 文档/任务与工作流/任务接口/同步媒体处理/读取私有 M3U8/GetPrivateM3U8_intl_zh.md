@@ -7,7 +7,7 @@ GetPrivateM3U8 接口用于获取私有 M3U8 ts 资源的下载授权。（此�
 #### 请求示例
 
 ```plaintext
-GET /for-test.m3u8?ci-process=pm3u8&expires= HTTP/1.1
+GET /<ObjectKey>?ci-process=pm3u8&expires= HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -17,7 +17,7 @@ Content-Length: <length>
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求参数
@@ -32,7 +32,7 @@ Content-Length: <length>
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
 
 
 #### 请求体
@@ -43,13 +43,13 @@ Content-Length: <length>
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
 
 #### 响应体
 该响应体为截图文件内容。
 
 #### 错误码
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 
 ## 实际案例

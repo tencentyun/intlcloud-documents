@@ -1,5 +1,5 @@
 ## Feature Description
-This API is used to get media file information.
+This API (`GetMediainfo`) is used to get the information of a media file.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -23,7 +23,7 @@ This API is used to get media file information.
 #### Sample request
 
 ```shell
-GET /for-test.mp4?ci-process=videoinfo HTTP/1.1
+GET /<ObjectKey>?ci-process=videoinfo HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -33,7 +33,7 @@ Content-Length: <length>
 
 >? 
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
@@ -42,7 +42,7 @@ This API only uses common request headers. For more information, see [Common Req
 
 #### Request parameters
 
-The parameters are as described below:
+The parameters are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :----------------------------- | :----- | :--- |
@@ -231,7 +231,7 @@ The nodes are as described below:
 | Language | Response.MediaInfo.<br>Stream.Subtitle | Language. `und` indicates no query result. |  String |
 
 #### Error codes
-There are no special error messages for this request operation. For common error messages, see Error Codes.
+There are no special error messages for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/46214).
 
 
 ## Samples
