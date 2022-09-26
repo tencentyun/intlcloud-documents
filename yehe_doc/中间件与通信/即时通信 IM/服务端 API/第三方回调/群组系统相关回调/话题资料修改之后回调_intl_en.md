@@ -1,4 +1,4 @@
-## Feature Overview
+## Feature Description
 This callback allows you to view the changes in the topic profile (topic name, topic introduction, topic notice, and topic profile photo) in real time on the application backend. Specifically, you can view the real-time log of the changed topic profile or sync the information to other systems.
 
 ## Notes
@@ -24,7 +24,7 @@ Currently, this callback may be triggered by a change in the topic name, topic i
 
 It will be triggered after the topic profile is changed.
 
-## API Call Description
+## API Calling Description
 
 ### Sample request URL
 
@@ -89,11 +89,11 @@ The application backend records the topic profile change information and sends t
 
 ### Response fields
 
-| Object | Type | Attribute | Description |
+| Object | Type | Required | Description |
 | --- | --- | --- | --- |
-| ActionStatus | String | Required | Request result. OK: succeeded; FAIL: failed. |
-| ErrorCode | Integer | Required | Error code. The value `0` indicates to allow ignoring the response result. |
-| ErrorInfo    | String  | Required | Error message |
+| ActionStatus | String | Yes | Request result. OK: succeeded; FAIL: failed. |
+| ErrorCode | Integer | Yes | Error code. The value `0` indicates to allow ignoring the response result. |
+| ErrorInfo    | String  | Yes | Error message                                       |
 
 ## References
 
