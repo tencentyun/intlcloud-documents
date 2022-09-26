@@ -8,7 +8,6 @@ A multi-AZ deployed instance uses the one-replica architecture by default. One m
 
 ## Notes
 
-- The number of replicas cannot be reduced for multi-AZ deployed instances.
 - If the number of replicas is increased, the instance will be charged at the price of the new specification.
 - Increasing the number of replicas will not cause momentary disconnections or command execution failures or affect existing connections.
 
