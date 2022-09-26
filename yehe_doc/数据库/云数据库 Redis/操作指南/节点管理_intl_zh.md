@@ -37,7 +37,7 @@
 <table>
 <thead><tr><th>参数名称</th><th>参数解释</th></tr></thead>
 <tbody><tr>
-<td>节点名称</td><td>数据库实例的节点名称。</td></tr>
+<td>节点名称</td><td>数据库实例的节点名称。节点名称由 `实例ID_分片ID_副本ID` 拼接而成。</td></tr>
 <tr>
 <td>节点ID</td><td>数据库实例的节点 ID 编号。</td></tr>
 <tr>
@@ -96,5 +96,5 @@
 | API 接口                                                      | API 解释               |
 | ------------------------------------------------------------ | --------------------- |
 | [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/document/product/239/38627) | 查询实例节点信息      |
-| [DescribeInstanceZoneInfo](https://cloud.tencent.com/document/product/239/50312) | 查询 Redis 节点详细信息 |
+
 
