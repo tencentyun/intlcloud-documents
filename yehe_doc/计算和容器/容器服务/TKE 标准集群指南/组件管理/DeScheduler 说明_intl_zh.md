@@ -109,7 +109,9 @@ groups:
 ```
 :::
 </dx-codeblock>
->!当您使用 TKE 提供的 DynamicScheduler 时，需在 Prometheus 配置获取 Node 监控数据的聚合规则。DynamicScheduler 聚合规则与 DeScheduler 聚合规则有部分重合，但并不完全一样，请您在配置规则时不要互相覆盖。同时使用 DynamicScheduler 和 DeScheduler 时应该配置如下规则：
+<dx-alert infotype="notice" title="">
+当您使用 TKE 提供的 DynamicScheduler 时，需在 Prometheus 配置获取 Node 监控数据的聚合规则。DynamicScheduler 聚合规则与 DeScheduler 聚合规则有部分重合，但并不完全一样，请您在配置规则时不要互相覆盖。同时使用 DynamicScheduler 和 DeScheduler 时应该配置如下规则：
+</dx-alert>
 <dx-codeblock>
 :::  yaml
 ```
@@ -158,7 +160,9 @@ rule_files:
 ```
 2. 将 rules 配置复制到一个文件（例如 de-scheduler.yaml），文件放到上述 Prometheus 容器的 `/etc/prometheus/rules/` 下。
 3. 重新加载 Prometheus server，即可从 Prometheus 中获取到动态调度器需要的指标。
->?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
+<dx-alert infotype="explain" title="">
+通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
+</dx-alert>
 :::
 ::: Prometheus 监控服务
 1. 登录容器服务控制台 ，在左侧菜单栏中选择 [**Prometheus 监控**](https://console.cloud.tencent.com/tke2/prometheus2)，进入“Prometheus 监控”页面。
