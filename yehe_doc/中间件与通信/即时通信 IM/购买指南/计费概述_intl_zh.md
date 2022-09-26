@@ -4,9 +4,18 @@
 
 
 ## 基础服务详情
-即时通信 IM 套餐包分为体验版、专业版和旗舰版，创建应用后默认为体验版（免费），您可以根据实际业务需求选择不同的套餐包。
->! 全员推送功能仅针对旗舰版客户开放（如您降级为专业版将无法使用），请参见[配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322)指引，提交全员推送开通申请。申请通过后，该功能将在**48小时**后开启。
+基础服务资费包括：**套餐包费用**和**套餐包外超量费用**。
+- 套餐包费用：IM 套餐包分为体验版、专业版和旗舰版，创建应用后默认为体验版（免费）。您可以根据实际业务需求选择不同的套餐包，套餐包功能对比可参见 [套餐包功能对比](#tc)。
+- 套餐外超量费用：超出专业版或旗舰版套餐包免费额度以外的 DAU 和峰值群组数所需支付的费用。
 
+
+<dx-alert infotype="explain" title="说明：">
+- 全员推送功能仅针对旗舰版客户开放（如您降级为专业版将无法使用），请参见 [配置变更需求工单](https://www.tencentcloud.com/document/product/1047/44322) 指引，提交全员推送开通申请。申请通过后，该功能将在**48小时**后开启。
+- 社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，且仅针对旗舰版客户开放（如您降级为专业版将无法使用），请参见 [配置变更需求工单](https://www.tencentcloud.com/document/product/1047/44322) 指引，提交创建社群开通申请。申请通过后，客户可创建10万个社群。
+- 群消息已读回执功能支持终端 SDK 6.1.2155及以上版本，且仅针对旗舰版客户开放，适用于群容量200以内的好友工作群（Work）、陌生人社交群（Public）、临时会议群（Meeting）。
+</dx-alert>
+
+[](id:tc)
 套餐包功能对比详情如下表所示：
 
 | 功能点       | 体验版      | 专业版    | 旗舰版           |
@@ -28,11 +37,22 @@
 | 直播群新成员查看入群前消息  | 不支持 | 不支持 |支持 |
 | [创建社群（Community）](https://intl.cloud.tencent.com/document/product/1047/33529)   | 不支持 | 不支持 | 10万个，需 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322)  |
 | 群消息已读回执  | 不支持 | 不支持 |支持 |
+|群定向消息|不支持|不支持|支持|
+| 直播群在线成员列表 | 不支持 | 不支持 | 支持 |
+| 直播群广播消息   | 不支持 | 不支持 | 支持 |
+| 用户状态      | 不支持 | 不支持 | 支持 |
+| 会话标记 | 不支持 | 不支持 | 支持 |
+| 会话分组 | 不支持 | 不支持 | 支持 |
+|直播群封禁成员|不支持|不支持|支持|
+
+
 
 - **可创建直播群个数**：指单个 SDKAppID 内所有用户可创建的总个数，直播群仅提供群内发送文字、图片、短语音及其他自定义消息的能力，如需使用 [云直播](https://intl.cloud.tencent.com/document/product/267)、[实时音视频](https://intl.cloud.tencent.com/document/product/647) 等服务，您需要开通对应服务。
 - **日净增群组数**：指每个自然日内，单个 SDKAppID 所有用户创建的所有类型的群组净增总和。日净增群组数最大支持10000个，其中最多可包含5个在线成员广播大群。若创建群组数已达日净增群组数阈值但仍需创建群组，您可以及时解散删除当天创建的无需再使用的群组后再创建新群组，更多详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 - **DAU**：单个用户当日登录即时通信 IM 计为1个 DAU，同一用户重复登录时，DAU 不累加。
 - **峰值群组数**：单个应用（SDKAppID）下所有用户创建和加入的群组数的总和，以自然月中最高峰值进行结算。
+- **社群（Community）**：创建后可以随意进出，适合用于知识分享和游戏交流等超大社区群聊场景。更多详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
+
 
 ## 增值服务详情
 每一项增值服务都有其独立的计费规则，使用下列增值服务产生的费用即为增值服务费用，仅专业版和旗舰版支持使用增值服务。
@@ -48,7 +68,7 @@
      </tr> 
 	 <tr>   
 	     <td>扩展单个非直播群群成员数上限</td>   
-	     <td>对单个 SDKAppID 内所有的群组生效，群成员数上限同时受不同群组类型的特性约束，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33515">群组功能说明</a>。</td>   
+	     <td>对单个 SDKAppID 内所有的群组生效，群成员数上限同时受不同群组类型的特性约束，详情请参见 <a href="https://www.tencentcloud.com/zh/document/product/1047/33515#.E7.BE.A4.E7.BB.84.E5.8A.9F.E8.83.BD">群组功能说明</a>。</td>   
      </tr> 
 	 <tr>   
 	     <td>扩展单个用户可加入群组数上限</td>   
@@ -58,12 +78,14 @@
 	     <td>延长历史消息存储时长</td>   
 	     <td>对单个 SDKAppID 生效。<br>支持文字、图片、短语音、短视频、文件以及自定义消息延长服务，但不同版本的 SDK 支持延长历史消息存储时长的消息类型不同，请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33524">消息存储</a>。您可以在 <a href="https://console.cloud.tencent.com/im">控制台</a> 自助延长历史消息存储时长，最大支持延长至360天。</td>   
      </tr> 
-	 <tr>   
-	     <td>直播群（AvChatRoom）弹幕带宽</td>   
-	     <td>对单个 SDKAppID 内所有的直播群（AvChatRoom）生效。</td>   
-     </tr> 
 </table>
-
+<dx-alert infotype="explain" title="说明：">
+- 每项增值服务仅对单个 SDKAppID 生效，如果您有多个 SDKAppID 需要升级，您需依次为其单独升级。
+- 扩展单个群成员数上限：
+   - 群成员数上限同时受不同群组类型的特性约束，详情请参见 [群组功能说明](https://www.tencentcloud.com/zh/document/product/1047/33515#.E7.BE.A4.E7.BB.84.E5.8A.9F.E8.83.BD)。
+   - 购买 [扩展单个群成员数上限](https://www.tencentcloud.com/document/product/1047/34577) 功能包或升级套餐包版本，已存在的普通群（即非直播群）需要调用 [REST API](https://intl.cloud.tencent.com/document/product/1047/34962) 更新最大群组成员数才可以调整人数。
+- 历史存储时长：支持文字、图片、短语音、短视频、文件以及自定义消息延长服务，但不同版本的 SDK 支持延长历史消息存储时长的消息类型不同，请参见 [消息存储](https://intl.cloud.tencent.com/document/product/1047/33524)，延长历史消息存储时长功能由于占用额外资源消耗，功能开通当月将收取整月费用，请您合理选择功能开通时间。
+</dx-alert>
 
 ## 相关文档
 - [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)
