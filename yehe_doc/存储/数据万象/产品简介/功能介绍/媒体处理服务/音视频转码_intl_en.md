@@ -7,9 +7,7 @@ The audio/video transcoding feature converts an audio/video file bitstream. It c
 > - Watermarks can be added to video files during transcoding. For detailed directions, see [Template](https://intl.cloud.tencent.com/document/product/1045/43606).
 > 
 
-## Demo
 
-You can try out the audio/video transcoding feature online in the [CI Demo Center](https://cloud.tencent.com/act/pro/ciExhibition).
 
 
 ## Use Cases
