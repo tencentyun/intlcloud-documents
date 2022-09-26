@@ -109,7 +109,9 @@ groups:
 ```
 :::
 </dx-codeblock>
->!When using TKE's Dynamic Scheduler, you need to configure the aggregation rules in Prometheus to get node monitoring data. As some of the Dynamic Scheduler's aggregation rules are identical to those of the DeScheduler, do not overlap rules during configuration. In addition, you should configure the following rules to use the Dynamic Scheduler together with the DeScheduler:
+<dx-alert infotype="notice" title="">
+When using TKE's Dynamic Scheduler, you need to configure the aggregation rules in Prometheus to get node monitoring data. As some of the Dynamic Scheduler's aggregation rules are identical to those of the DeScheduler, do not overlap rules during configuration. In addition, you should configure the following rules to use the Dynamic Scheduler together with the DeScheduler:
+</dx-alert>
 <dx-codeblock>
 :::  yaml
 ```
@@ -158,7 +160,9 @@ rule_files:
 ```
 2. Copy the `rules` configurations to a file (such as `de-scheduler.yaml`) and put the file under `/etc/prometheus/rules/` of the above Prometheus container.
 3. Reload the Prometheus server to get the metrics required by the Dynamic Scheduler from Prometheus.
->?In general, the above Prometheus configuration file and `rules` configuration file are stored via a ConfigMap before being mounted to a Prometheus server's container. Therefore, you only need to modify the ConfigMap.
+<dx-alert infotype="explain" title=""> 
+In general, the above Prometheus configuration file and `rules` configuration file are stored via a ConfigMap before being mounted to a Prometheus server's container. Therefore, you only need to modify the ConfigMap.
+</dx-alert>
 :::
 ::: Prometheus monitoring service
 1. Log in to the TKE console and select [**Prometheus Monitoring**](https://console.cloud.tencent.com/tke2/prometheus2) on the left sidebar.
