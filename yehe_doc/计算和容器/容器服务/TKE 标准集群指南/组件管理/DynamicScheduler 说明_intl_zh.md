@@ -201,8 +201,9 @@ rule_files:
 2. 将 rules 配置复制到一个文件（例如 dynamic-scheduler.yaml），文件放到上述 prometheus 容器的 `/etc/prometheus/rules/` 目录下。
 3. 加载 Prometheus server，即可从 Prometheus 获取到动态调度器需要的指标。
 
-
->?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
+<dx-alert infotype="explain" title=""> 	
+通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
+</dx-alert>
 
 :::
 ::: Prometheus 监控服务
