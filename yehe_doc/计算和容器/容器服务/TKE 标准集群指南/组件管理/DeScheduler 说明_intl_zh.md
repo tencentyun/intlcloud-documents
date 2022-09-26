@@ -1,14 +1,19 @@
-## 简介
+<dx-alert infotype="alarm" title="温馨提示">
+腾讯云原生监控 TPS 已于2022年5月16日下线，详情见 [公告](https://intl.cloud.tencent.com/document/product/457/46999)。新的 Prometheus 服务由[TMP](https://intl.cloud.tencent.com/document/product/457/46734) 提供。<br>
+   若您的 DeScheduler 之前使用 TPS 作为数据源并没有调整，调度器将失效。若您需要使用 TMP 作为数据源，由于 TMP 新增了对接口的鉴权能力，您需要[升级](https://intl.cloud.tencent.com/document/product/457/38705)调度器才能关联 TMP 实例。
+   若您的 DeScheduler 使用的是自建 Prometheus 服务，TPS 下线对您的组件没有影响，但需要自行保证自建 Prometheus 的稳定性和可靠性。
+
+</dx-alert>
+
+## 简介 
 ### 组件介绍
 
-DeScheduler 是容器服务 TKE 基于 Kubernetes 原生社区 [DeScheduler](https://github.com/kubernetes-sigs/descheduler)  实现的一个基于 Node 真实负载进行重调度的插件。在 TKE 集群中安装该插件后，该插件会和 Kube-scheduler 协同生效，实时监控集群中高负载节点并驱逐低优先级 Pod。建议您搭配 TKE [Dynamic Scheduler（动态调度器扩展组件）](https://intl.cloud.tencent.com/document/product/457/39119)一起使用，多维度保障集群负载均衡。 
-该插件依赖 Prometheus 监控组件以及相关规则配置，建议您安装插件之前仔细阅读 [依赖部署](#依赖部署)，以免插件无法正常工作。
-
+DeScheduler 是容器服务 TKE 基于 Kubernetes 原生社区 [DeScheduler](https://github.com/kubernetes-sigs/descheduler)  实现的一个基于 Node 真实负载进行重调度的插件。在 TKE 集群中安装该插件后，该插件会和 Kube-scheduler 协同生效，实时监控集群中高负载节点并驱逐低优先级 Pod。建议您搭配 TKE [Dynamic Scheduler（动态调度器扩展组件）](https://intl.cloud.tencent.com/document/product/457/39119)一起使用，多维度保障集群负载均衡。  
+该插件依赖 Prometheus 监控组件以及相关规则配置，建议您安装插件之前仔细阅读 [依赖部署](#DeScheduler)，以免插件无法正常工作。
 
 
 
 ### 部署在集群内的 Kubernetes 对象
-
 
 | Kubernetes 对象名称  | 类型               |                   请求资源                   | 所属 Namespace |
 | :----------------- | :----------------- | :------------------------------------------ | ------------- |
@@ -20,7 +25,7 @@ DeScheduler 是容器服务 TKE 基于 Kubernetes 原生社区 [DeScheduler](htt
 | probe-prometheus   | ConfigMap          |                      -                       | kube-system   |
 
 
-## 使用场景
+## 使用场景 
 
 DeScheduler 通过重调度来解决集群现有节点上不合理的运行方式。社区版本 DeScheduler 中提出的策略基于 APIServer 中的数据实现，并未基于节点真实负载。因此可以增加对于节点的监控，基于真实负载进行重调度调整。
 
@@ -31,7 +36,7 @@ DeScheduler 通过重调度来解决集群现有节点上不合理的运行方�
 ## 限制条件
 
 - Kubernetes 版本 ≥ v1.10.x
-- 在特定场景下，某些 Pod 会被重复调度到需要重调度的节点上，从而引发 Pod 被重复驱逐。此时可以根据实际场景改变 Pod 可调度的节点，或者将 Pod 标记为不可驱逐。 
+- 在特定场景下，某些 Pod 会被重复调度到需要重调度的节点上，从而引发 Pod 被重复驱逐。此时可以根据实际场景改变 Pod 可调度的节点，或者将 Pod 标记为不可驱逐。  
 - 该组件已对接容器服务 TKE 的监控告警体系。
 - 建议您为集群开启事件持久化，以便更好的监控组件异常以及故障定位。Descheduler 驱逐 Pod 时会产生对应事件，可根据 reason 为 “Descheduled” 类型的事件观察 Pod 是否被重复驱逐。
 - 为避免 DeScheduler 驱逐关键的 Pod，设计的算法默认不驱逐 Pod。对于可以驱逐的 Pod，用户需要显示给判断 Pod 所属 workload。例如，statefulset、deployment 等对象设置可驱逐 annotation。
@@ -50,12 +55,12 @@ DeScheduler  基于 [社区版本 Descheduler](https://github.com/kubernetes-sig
 ![](https://main.qcloudimg.com/raw/4f515486529dad48e8bbaa3a459e2fb8.png)
 
 
-## 组件参数说明
+## 组件参数说明[](id:parameter)
 
 ### Prometheus 数据查询地址
 
 
->!为确保组件可以拉取到所需的监控数据、调度策略生效，请按照【[依赖部署](#依赖部署)】>【Prometheus 文件配置】步骤配置监控数据采集规则。
+>!为确保组件可以拉取到所需的监控数据、调度策略生效，请按照 **[依赖部署](#DeScheduler)**>**Prometheus 文件配置**步骤配置监控数据采集规则。
 
 - 如果使用自建 Prometheus，直接填入数据查询 URL（HTTPS/HTTPS）即可。
 - 如果使用托管 Prometheus，选择托管实例 ID 即可，系统会自动解析实例对应的数据查询 URL。
@@ -69,20 +74,19 @@ DeScheduler  基于 [社区版本 Descheduler](https://github.com/kubernetes-sig
 
 
 ## 操作步骤
-### 依赖部署
+### 依赖部署[](id:DeScheduler)
 
 DeScheduler 组件依赖于 Node 当前和过去一段时间的真实负载情况来进行调度决策，需要通过 Prometheus 等监控组件获取系统 Node 真实负载信息。在使用 DeScheduler 组件之前，您可以采用自建 Prometheus 监控或采用 TKE 云原生监控。
-<span id ="rules"></span>
+[](id:rules)
 <dx-tabs>
 ::: 自建\sPrometheus\s监控服务
-#####  部署 node-exporter 和 Prometheus
+#### 部署 node-exporter 和 Prometheus
 
 通过 node-exporter 实现对于 Node 指标的监控，您可按需部署 node-exporter 和 Prometheus。
 
-#####  聚合规则配置
+#### 聚合规则配置[](id:rules)
 
 在 node-exporter 获取节点监控数据后，需要通过 Prometheus 对原始的 node-exporter 中采集数据进行聚合计算。为获取 DeScheduler 所需要的 `cpu_usage_avg_5m`、`mem_usage_avg_5m` 等指标，需要在 Prometheus 的 rules 规则中进行配置。示例如下：
-
 <dx-codeblock>
 :::  yaml
 ```
@@ -142,7 +146,6 @@ groups:
 ```
 :::
 </dx-codeblock>
-
 #### Prometheus 文件配置
 1. 上述定义了 DeScheduler 所需要的指标计算的 rules，需要将 rules 配置到 Prometheus 中，参考一般的 Prometheus 配置文件。示例如下：
 ```
@@ -151,33 +154,36 @@ global:
    scrape_interval: 30s
    external_labels:
 rule_files:
- - /etc/prometheus/rules/*.yml # /etc/prometheus/rules/*.yml 是定义的 rules 文件
+- /etc/prometheus/rules/*.yml # /etc/prometheus/rules/*.yml 是定义的 rules 文件
 ```
 2. 将 rules 配置复制到一个文件（例如 de-scheduler.yaml），文件放到上述 Prometheus 容器的 `/etc/prometheus/rules/` 下。
 3. 重新加载 Prometheus server，即可从 Prometheus 中获取到动态调度器需要的指标。
 >?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
 :::
-::: 云原生监控\sPrometheus
-1. 登录容器服务控制台，在左侧菜单栏中选择【[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)】，进入“云原生监控”页面。
-2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。如下图所示：
+::: Prometheus 监控服务
+1. 登录容器服务控制台 ，在左侧菜单栏中选择 [**Prometheus 监控**](https://console.cloud.tencent.com/tke2/prometheus2)，进入“Prometheus 监控”页面。
+2. 创建与 Cluster 处于同一 VPC 下的 [Prometheus 实例](https://intl.cloud.tencent.com/document/product/457/46739)，并 [关联集群](https://intl.cloud.tencent.com/document/product/457/46731)。如下图所示：
    ![](https://main.qcloudimg.com/raw/44979847793b5c363e440b9d8d7e29f3.png)
 3. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。如下图所示：
    ![](https://main.qcloudimg.com/raw/baef0cd5cd292e4496241a9c8a4463ec.png)
-4. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#自建Prometheus监控服务) 中的“聚合规则配置”相同。规则保存后立即生效，无需重新加载 server。
+4. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#rules) 中的“聚合规则配置”相同。规则保存后立即生效，无需重新加载 server。
 :::
 </dx-tabs>
 
 
 
+
+
 ### 安装组件
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster)，选择左侧导航栏中的**集群**。
+1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2/cluster)，选择左侧导航栏中的**集群**。
 2. 在“集群管理”页面单击目标集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的**组件管理**，进入 “组件列表” 页面。
 4. 在“组件列表”页面中选择**新建**，并在“新建组件”页面中勾选 Decheduler（重调度器）。
-5. 单击**参数配置**，按照 [参数说明](#组件参数说明) 填写组件所需参数。
+5. 单击**参数配置**，按照 [参数说明](#parameter) 填写组件所需参数。
 6. 单击**完成**即可创建组件。安装成功后，DeScheduler 即可正常运行，无需进行额外配置。
 7. 若您需要驱逐 workload（例如 statefulset、deployment 等对象），可以设置 Annotation 如下：
 ```plaintext
 descheduler.alpha.kubernetes.io/evictable: 'true'
 ```
+

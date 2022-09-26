@@ -1,19 +1,25 @@
+<dx-alert infotype="alarm" title="Note">
+TPS was deactivated on May 16, 2022. For more information, see [Notice on TPS Discontinuation on May 16, 2022 at 10:00 (UTC +8)](https://intl.cloud.tencent.com/document/product/457/46999). The new Prometheus service will be provided by [TMP](https://intl.cloud.tencent.com/document/product/457/46734).<br>
+   If your Dynamic Scheduler uses TPS as the data source and you don't change it, the Dynamic Scheduler will become invalid. To use TMP as the data source, you need to [upgrade](https://intl.cloud.tencent.com/document/product/457/38705) the Dynamic Scheduler before associating it with a TMP instance, as TMP adds API authentication capabilities.
+   If your Dynamic Scheduler uses the self-built Prometheus service, it will not be affected by the TPS deactivation, but you need to guarantee the stability and reliability of the self-built Prometheus service.
 
-## Overview
+</dx-alert>
+
+
+## Overview 
 ### Add-on description
 
-Dynamic Scheduler is an add-on provided by TKE for pre-selection and preferential selection based on actual node loads. It is implemented based on the native Kube-scheduler Extender mechanism of Kubernetes. After you install it in a TKE cluster, this add-on will work with Kube-scheduler to effectively prevent node load imbalances caused by the native scheduler through the request and limit scheduling mechanisms.
-This add-on relies on the Prometheus monitoring component and configuration of relevant rules. Before installing this add-on, we recommend you carefully read [Dependency Deployment](#Dynamic) to prevent problems with the add-on.
+The Dynamic Scheduler is a dynamic scheduler provided by TKE for pre-selection and preferential selection based on actual node loads. It is implemented based on the native kube-scheduler extender mechanism of Kubernetes. After being installed in a TKE cluster, this add-on will work with the kube-scheduler to effectively prevent node load imbalances caused by the native scheduler through the request and limit scheduling mechanisms.
+This add-on relies on the Prometheus add-on and rule configuration. We recommend you follow the instructions in [Deploying dependencies](#Dynamic); otherwise, the add-on may not work properly.
 
 
 
 ### Kubernetes objects deployed in a cluster
 
-
-| Kubernetes Object Name | Type | Requested Resources | Namespace |
+| Kubernetes Object Name  | Type               |                   Requested Resource                   | Namespace |
 | :----------------------- | :----------------- | :------------------------------------------| ------------- |
-| node-annotator | Deployment | Each instance: CPU: 100m,  Memory: 100Mi, a total of 1 instance | kube-system |
-| dynamic-scheduler | Deployment | Each instance: CPU: 400m, Memory: 200Mi, a total of 3 instances | kube-system |
+| node-annotator           | Deployment         | 100 MB CPU and 100 MiB MEM for each instance; one instance in total | kube-system   |
+| dynamic-scheduler        | Deployment         | 400 MB CPU and 200 MiB MEM for each instance; three instances in total  | kube-system   |
 | dynamic-scheduler        | Service            |                      -                       | kube-system   |
 | node-annotator           | ClusterRole        |                      -                       | kube-system   |
 | node-annotator           | ClusterRoleBinding |                      -                       | kube-system   |
@@ -26,100 +32,100 @@ This add-on relies on the Prometheus monitoring component and configuration of r
 
 ## Use Cases
 
-### Cluster load imbalance
+### Uneven cluster loads
 
-In most cases, the Kubernetes native scheduler performs scheduling based on the pod request resources, without considering the actual load of nodes at the current time and over a previous period. Consequently, the following problem may occur:
-In some nodes of the cluster, the amount of remaining schedulable resources (calculated based on the request and limit of the pods running on nodes) may be large but the actual load is high. In contrast, in other nodes, the amount of remaining schedulable resources may be low but the actual load is low. In some cases like this, Kube-scheduler preferentially schedules pods to nodes with more remaining resources (according to the LeastRequestedPriority policy).
+Most of Kubernetes' native schedulers rely on Pod request resources for scheduling, which means that they cannot make decisions based on the actual node loads in the current and past periods of time and may cause the following problems:
+A large number of remaining resources on some nodes of the cluster can be scheduled (value calculated based on the request and limit values of the running Pods on the nodes), but the actual loads are high; on other nodes, a small number of remaining resources can be scheduled, but the actual loads are low. In this case, the kube-scheduler will preferentially schedule Pods to nodes with more remaining resources (based on the `LeastRequestedPriority` policy).
 
-As shown in the figure below, Kube-Scheduler will schedule pods to Node2, when it is clear that scheduling pods to Node1 (with a lower load level) is a better choice.
+The kube-scheduler will schedule the Pod to node 2, despite the fact that node 1 with a lower actual load level is a better choice.
 <img src="https://main.qcloudimg.com/raw/518239f56c2f4c805dc5678e79443466.png" data-nonescope="true">
 
-### Scheduling hotspot-prevention policy
+### Avoiding scheduling hotspots
 
-To prevent large numbers of pods from being continuously scheduled to low-load nodes, Dynamic Scheduler sets the scheduling hotspot-prevention policy, which calculates the number of pods scheduled to each node within the past few minutes and deducts points from the preferential selection scores of nodes accordingly.
+To avoid continuing to schedule Pods from low-load nodes, the Dynamic Scheduler supports a policy to avoid scheduling hotspots, that is, to collect the number of Pods scheduled in the past few minutes and lower the node's score during preferential selection.
 The current policy is as follows:
-- If more than 2 pods have been scheduled to a node in the last minute, 1 point is deducted from the preferential selection score of the node.
-- If more than 5 pods have been scheduled to a node in the last 5 minutes, 1 point is deducted from the preferential selection score of the node.
+- If more than two Pods are scheduled to the node in the past minute, the node's score for preferential selection is decreased by 1.
+- If more than five Pods are scheduled to the node in the past five minutes, the node's score for preferential selection is decreased by 1.
 
 
 ## Risk Control
 
-- This add-on is interconnected with the TKE monitoring alarm system.
-- We recommend that you enable event persistence for your cluster to better monitor add-on exceptions and locate faults.
-- After the addon is uninstalled, only the scheduling logic of the dynamic scheduler will be deleted. The scheduling feature of the native Kube-Scheduler will not be impacted.
+- This add-on has been interconnected to TKE's monitoring and alarming system.
+- We recommend you enable event persistence for the cluster to better monitor the add-on for exceptions and locate the problems.
+- Uninstalling the add-on will only delete the scheduling logic of the Dynamic Scheduler and will not affect the scheduling feature of the native kube-scheduler.
 
 ## Limits
 
-- It is recommended to use a TKE version of v1.10.x or later.
+- The TKE is on v1.10.x or later.
 - If you need to upgrade the Kubernetes master version:
-	- For managed clusters, you do not need to set Dynamic Scheduler again.
-	- For self-deployed clusters, you need to remove Dynamic Scheduler and then reinstall it because the master version upgrade will reset all component configurations on the master, affecting the configuration of Dynamic Scheduler as Scheduler Extender.
+	- For a managed cluster, you don't need to set the add-on again.
+	- For a self-deployed cluster, master version upgrade will reset the configurations of all the add-ons in the master, which affects the configuration of the Dynamic Scheduler add-on as a scheduler extender. Therefore, you need to uninstall the Dynamic Scheduler and install it again.
 
 
 
 
 ## How It Works
 
-Based on the scheduler extender mechanism, Dynamic Scheduler obtains node load data from the Prometheus monitoring data, develops scheduling policies based on the actual load of nodes, and intervenes during pre-selection and preferential selection to preferentially schedule pods to low-load nodes. This add-on consists of node-annotator and dynamic-scheduler.
+The Dynamic Scheduler is based on the scheduler extender mechanism to get the node load from the Prometheus data. It adopts a scheduling policy based on the actual node load and performs intervention during pre-selection and preferential selection, so that Pods are preferentially scheduled to low-load nodes. This add-on consists of node-annotator and the dynamic scheduler.
 
 ### node-annotator
 
-node-annotator regularly pulls node load metrics from monitoring data and synchronizes them to the node annotation, as shown in the figure below:
->! After the addon is deleted, the annotation generated by the node-annotator will not be automatically deleted. You can manually delete it as needed.
-
+node-annotator is responsible for regularly pulling the metrics of the node load from the monitoring data and sync them to the annotation of the node.
+>! After the add-on is deleted, the annotation generated by node-annotator will not be cleared automatically and needs to be cleared manually.
+>
 ![](https://main.qcloudimg.com/raw/1a5ede9cc77fbb797e68f645e908bb33.png)
 
-### Dynamic-scheduler
+### Dynamic scheduler
 
-Dynamic-scheduler is a scheduler-extender that performs filtering and score calculation based on the load data in the node annotation during pre-selection and preferential selection of nodes.
+The dynamic scheduler is a scheduler extender that filters and scores the nodes during pre-selection and preferential selection based on the load data of the node annotation.
 
 #### Pre-selection policy
 
-To prevent pods from being scheduled to high-load nodes, you need to filter out some high-load nodes through pre-selection (the filtering policy and proportion can be dynamically configured; for more information, see [Add-on Parameter Description](#parameter)).
-As shown in the figure below, the load of Node2 in the past 5 minutes and the load of Node3 in the past hour both exceed the corresponding thresholds, so both nodes will be excluded from subsequent preferential selection.
+To avoid scheduling Pods to high-load nodes, you need to filter out some high-load nodes during pre-selection. You can dynamically configure the filter policy and ratio as instructed in [Add-On Parameter Description](#parameter).
+As both node 2's load in the past five minutes and node 3's load in the past hour exceed the threshold, they will not be included in preferential selection.
 ![](https://main.qcloudimg.com/raw/170eca75a5d9b241a8cb501fb3c23071.png)
 
 #### Preferential selection policy
 
-At the same time, to balance the loads among nodes, Dynamic-Scheduler scores each node based on its load data. The lower the load, the higher the score.
-As shown in the figure below, the score of Node1 is the highest, so pods will be preferentially scheduled to Node1 (the scoring policy and weights can be dynamically configured; for more information, see [Add-on Parameter Description](#parameter)).
+To balance the loads on each node in the cluster, the dynamic scheduler will score the nodes based on their load data. The lower the load, the higher the score.
+Node 1 with the highest score will be preferentially selected for scheduling. You can dynamically configure the scoring policy and weights as instructed in [Add-On Parameter Description](#parameter).
 ![](https://main.qcloudimg.com/raw/a080287111f91ff1cf18ce85bb08cd13.png)
 
-## Add-on Parameter Description
+## Add-On Parameter Description[](id:parameter)
 
 ### Prometheus data query address
 
 
 >!
->- To ensure that the add-on can pull the required monitoring data and the scheduling policy can take effect, please configure the rules for collecting monitoring data in accordance with **[Dependency Deployment](#Dynamic)** -> **[Prometheus rule configuration](#Prometheus1)**.
->- We have set the pre-selection parameters and preferential selection parameters to the default values. You do not have to modify them unless you have additional requirements.
+>- To ensure that the required monitoring data can be pulled by the add-on and the scheduling policy can take effect, follow the [Configuring the Prometheus rule](#Prometheus1) step in [Deploying dependencies](#Dynamic) to configure the monitoring data collection rules.
+>- Default values have been set for the pre-selection and preferential selection parameters. If you have no special requirements, you can directly use them.
 
 
-- If you use a self-built PROM instance, directly enter the data query URL (http/https).
-- If you use a managed PROM instance, select the managed instance ID, and we will automatically resolve it into the corresponding data query URL.
+- If you use the self-built Prometheus service, just enter the data query URL (HTTPS/HTTPS).
+- If you use the managed Prometheus service, just select the managed instance ID, and the system will automatically parse the data query URL of the instance.
 
 
 
 ### Pre-selection parameters
 
-| Default Value | Description |
+| Default Value of the Pre-selection Parameter                        | Description                                                         |
 | ----------------------------- | ------------------------------------------------------------ |
-| Threshold for average **CPU** utilization in the past 5 minutes | If the **average** CPU utilization of a node in the past 5 minutes exceeds the specified threshold, pods will not be scheduled to this node. |
-| Threshold for max **CPU** utilization in the past hour | If the **max** CPU utilization of a node in the past hour exceeds the specified threshold, pods will not be scheduled to this node. |
-| Threshold for average **memory** utilization in the past 5 minutes | If the **average** memory utilization of a node in the past 5 minutes exceeds the specified threshold, pods will not be scheduled to this node. |
-| Threshold for max **memory** utilization in the past hour | If the **max** memory utilization of a node for in past hour exceeds the specified threshold, pods will not be scheduled to this node. |
+| Average **CPU** utilization threshold in five minutes  | If the **average** CPU utilization of the node in the past five minutes exceeds the configured threshold, no Pods will be scheduled to the node.  |
+| Maximum **CPU** utilization threshold in an hour  | If the **maximum** CPU utilization of the node in the past hour exceeds the configured threshold, no Pods will be scheduled to the node.  |
+| Average **memory** utilization threshold in five minutes | If the **average** memory utilization of the node in the past five minutes exceeds the configured threshold, no Pods will be scheduled to the node.  |
+| Maximum **memory** utilization threshold in an hour  | If the **maximum** memory utilization of the node in the past hour exceeds the configured threshold, no Pods will be scheduled to the node.  |
 
 
 ### Preferential selection parameters
 
-| Default Value | Description |
+| Default Value of the Preferential Selection Parameter              | Description                                                         |
 | --------------------------- | ------------------------------------------------------------ |
-| Weight of average **CPU** utilization in the past 5 minutes | The greater the weight, the greater influence the **average** CPU utilization of the node in the past 5 minutes will have on the node score. |
-| Weight of max **CPU** utilization in the past hour | The greater the weight, the greater influence the **max** CPU utilization of the node in the past hour will have on the node score. |
-| Weight of max **CPU** utilization in the past day | The greater the weight, the greater influence the **max** CPU utilization of the node in the past day will have on the node score. |
-| Weight of average **memory** utilization in the past 5 minutes | The greater the weight, the greater influence the **average** memory utilization of the node in the past 5 minutes will have on the node score. |
-| Weight of max **memory** utilization in the past hour | The greater the weight, the greater influence the **max** memory utilization of the node in the past hour will have on the node score. |
-| Weight of max **memory** utilization in the past day | The greater the weight, the greater influence the **max** memory utilization of the node in the past day will have on the node score. |
+| Average **CPU** utilization weight in five minutes  | The greater the weight, the bigger impact the **average** CPU utilization in the past five minutes has on the node score.  |
+| Maximum **CPU** utilization weight in an hour  | The greater the weight, the bigger impact the **maximum** CPU utilization in the past hour has on the node score.  |
+| Maximum **CPU** utilization weight in a day  | The greater the weight, the bigger impact the **maximum** CPU utilization in the past day has on the node score.  |
+| Average **memory** utilization weight in five minutes  | The greater the weight, the bigger impact the **average** memory utilization in the past five minutes has on the node score.  |
+| Maximum **memory** utilization weight in an hour  | The greater the weight, the bigger impact the **maximum** memory utilization in the past hour has on the node score.  |
+| Maximum **memory** utilization weight in a day  | The greater the weight, the bigger impact the **maximum** memory utilization in the past day has on the node score.  |
 
 
 
@@ -127,86 +133,20 @@ As shown in the figure below, the score of Node1 is the highest, so pods will be
 
 
 ## Directions
-### Dependency Deployment
+### Deploying dependencies[](id:Dynamic)
 
-Dynamic Scheduler makes scheduling decisions based on the actual load of nodes at the current time and over a previous period. This requires monitoring components, such as Prometheus, to obtain the actual load information of nodes. Before using Dynamic Scheduler, you need to deploy monitoring components such as Prometheus. In TKE, users can use the self-built Prometheus monitoring service or use the cloud native monitoring provided by TKE.
-
+The Dynamic Scheduler relies on the actual node loads in the current and past periods of time to make scheduling decisions. It needs to get the information of the actual node loads of the system through the Prometheus add-on. Before using the Dynamic Scheduler, you need to deploy the Prometheus add-on. In the TKE, you can use the self-built Prometheus monitoring service or the cloud native monitoring service.
 [](id:rules)
 <dx-tabs>
-::: Self-built\sPrometheus\smonitoring\sservices
-#### Deploying node-exporter and prometheus
+::: Self-built Prometheus monitoring service
+#### Deploying the Node Exporter and Prometheus
 
-We use node-exporter to monitor node metrics. You can deploy node-exporter and prometheus based on your own requirements.
+You can deploy the Node Exporter and Prometheus as needed to monitor node metrics through the Node Exporter.
 
 
-#### Aggregation rule configuration
+#### Configuring aggregation rules[](id:Prometheus1)
 
-After node-exporter obtains node monitoring data, Prometheus must aggregate the data collected in the native node-exporter. To obtain metrics required by Dynamic Scheduler, such as `cpu_usage_avg_5m`, `cpu_usage_max_avg_1h`, `cpu_usage_max_avg_1d`, `mem_usage_avg_5m`, `mem_usage_max_avg_1h`, and `mem_usage_max_avg_1d`, you need to configure rules in Prometheus as follows:
-
-``` yaml
-apiVersion: monitoring.coreos.com/v1
-kind: PrometheusRule
-metadata:
-    name: example-record
-spec:
-    groups:
-      - name: cpu_mem_usage_active
-        interval: 30s
-        rules:
-        - record: cpu_usage_active
-         expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
-        - record: mem_usage_active
-          expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
-      - name: cpu-usage-5m
-        interval: 5m
-        rules:
-        - record: cpu_usage_max_avg_1h
-          expr: max_over_time(cpu_usage_avg_5m[1h])
-        - record: cpu_usage_max_avg_1d
-          expr: max_over_time(cpu_usage_avg_5m[1d])
-      - name: cpu-usage-1m
-        interval: 1m
-        rules:
-        - record: cpu_usage_avg_5m
-          expr: avg_over_time(cpu_usage_active[5m])
-      - name: mem-usage-5m
-        interval: 5m
-        rules:
-        - record: mem_usage_max_avg_1h
-          expr: max_over_time(mem_usage_avg_5m[1h])
-        - record: mem_usage_max_avg_1d
-          expr: max_over_time(mem_usage_avg_5m[1d])
-      - name: mem-usage-1m
-        interval: 1m
-        rules:
-        - record: mem_usage_avg_5m
-          expr: avg_over_time(mem_usage_active[5m])
-```
-
-#### Prometheus file configuration
-
-1. After defining the rules for the calculation of metrics needed by Dynamic Scheduler, you need to set the rules for Prometheus. You can refer to a common Prometheus configuration file, The example is shown as follows:
-
-```
-global:
-      evaluation_interval: 30s
-      scrape_interval: 30s
-      external_labels:
-rule_files:
-- /etc/prometheus/rules/*.yml # /etc/prometheus/rules/*.yml is the file that defines the rules.
-```
-2. Copy the configuration of rules to a file (such as dynamic-scheduler.yaml), place the file under `/etc/prometheus/rules/` of the above Prometheus container.
-3. Reload Prometheus server to obtain the metrics needed by Dynamic Scheduler from Prometheus.
-
-<blockquote class="doc-tip"><p class="doc-tip-tit"><i class ="doc-icon-tip"></i>Note</p><p>Normally, the above Prometheus configuration file and rules configuration file are stored via configmap and then mounted to the Prometheus server container. Therefore, you only need to modify the relevant configmap.</a></p></blockquote>
-
-:::
-::: Cloud\snative\smonitoring\svia\sPrometheus
-1. Log in to the TKE console and click **[Cloud Native Monitoring](https://console.cloud.tencent.com/tke2/prometheus)** in the left sidebar to go to the **Cloud Native Monitoring** page.
-2. Create a cloud native monitoring RPOM instance under the same VPC as the target cluster, and associate it with the user cluster.
-3. After associating the instance with a native managed cluster, go to the user cluster to check that node-exporter has been installed on each node.
-4. Set the Prometheus aggregation rules. The rule content is the same as the aggregation rules configured in [Self-built Prometheus monitoring services](#rules).
-
+After getting the node monitoring data from the Node Exporter, you need to aggregate and calculate the data collected in the native Node Exporter through Prometheus. To get metrics such as `cpu_usage_avg_5m`, `cpu_usage_max_avg_1h`, `cpu_usage_max_avg_1d`, `mem_usage_avg_5m`, `mem_usage_max _avg_1h`, and `mem_usage_max_avg_1d` required by the Dynamic Scheduler, you need to configure `rules` in Prometheus as follows:
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
@@ -218,7 +158,7 @@ spec:
         interval: 30s
         rules:
         - record: cpu_usage_active
-         expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
+          expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
         - record: mem_usage_active
           expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
       - name: cpu-usage-5m
@@ -246,6 +186,72 @@ spec:
         - record: mem_usage_avg_5m
           expr: avg_over_time(mem_usage_active[5m])
 ```
+
+#### Configuring the Prometheus file
+
+1. The above section defines the `rules` to calculate the metrics required by the Dynamic Scheduler. You need to configure the `rules` to Prometheus as a general Prometheus configuration file. Below is a sample:
+```
+global:
+      evaluation_interval: 30s
+      scrape_interval: 30s
+      external_labels:
+rule_files:
+- /etc/prometheus/rules/*.yml # `/etc/prometheus/rules/*.yml` is the defined `rules` file.
+```
+2. Copy the `rules` configurations to a file (such as `dynamic-scheduler.yaml`) and put the file under `/etc/prometheus/rules/` of the above Prometheus container.
+3. Load the Prometheus server to get the metrics required by the Dynamic Scheduler from Prometheus.
+
+
+>?In general, the above Prometheus configuration file and `rules` configuration file are stored via a ConfigMap before being mounted to a Prometheus server's container. Therefore, you only need to modify the ConfigMap.
+
+:::
+::: Prometheus monitoring service
+1. Log in to the TKE console and select [**Prometheus Monitoring**](https://console.cloud.tencent.com/tke2/prometheus2) on the left sidebar.
+2. Create a [Prometheus instance](https://intl.cloud.tencent.com/document/product/457/46739) in the same VPC of the cluster and [associate it with the cluster](https://intl.cloud.tencent.com/document/product/457/46731).
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/35bded08ab55e9dcc2192be19c51a41c.png)
+2. After associating with the native managed cluster, you can see that the Node Exporter has been installed on each node of the cluster.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/2bbbfee33fe7464e97ed3d7fd3b4aa7a.png)
+3. Set the Prometheus aggregation rules. The content is the same as that configured in [Self-built Prometheus monitoring service](#rules) as follows:
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+    name: example-record
+spec:
+    groups:
+      - name: cpu_mem_usage_active
+        interval: 30s
+        rules:
+        - record: cpu_usage_active
+          expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
+        - record: mem_usage_active
+          expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
+      - name: cpu-usage-5m
+        interval: 5m
+        rules:
+        - record: cpu_usage_max_avg_1h
+          expr: max_over_time(cpu_usage_avg_5m[1h])
+        - record: cpu_usage_max_avg_1d
+          expr: max_over_time(cpu_usage_avg_5m[1d])
+      - name: cpu-usage-1m
+        interval: 1m
+        rules:
+        - record: cpu_usage_avg_5m
+          expr: avg_over_time(cpu_usage_active[5m])
+      - name: mem-usage-5m
+        interval: 5m
+        rules:
+        - record: mem_usage_max_avg_1h
+          expr: max_over_time(mem_usage_avg_5m[1h])
+        - record: mem_usage_max_avg_1d
+          expr: max_over_time(mem_usage_avg_5m[1d])
+      - name: mem-usage-1m
+        interval: 1m
+        rules:
+        - record: mem_usage_avg_5m
+          expr: avg_over_time(mem_usage_active[5m])
+```
+
 :::
 </dx-tabs>
 
@@ -256,10 +262,10 @@ spec:
 
 
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster) and click **Cluster** in the left sidebar.
-2. On the “**Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
-3. In the left sidebar, click **Add-on Management** to go to the **Add-on List** page.
-4. Click **Create** above the **Add-on List** and select **DynamicScheduler** in the **Create Add-on** page.
-5. Click **Parameter Configurations** and set the parameters according to [Add-on Parameter Description](#parameter).
-6. Click **Done**. After the add-on is installed successfully, Dynamic Scheduler can run normally, without the need for extra configuration.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster) and select **Cluster** on the left sidebar.
+2. On the **Cluster management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the left sidebar, click **Add-On Management**.
+4. On the **Add-On List** page, select **Create**. On the **Create Add-on** page, select DynamicScheduler (dynamic scheduler).
+5. Click **Parameter Configurations** and enter the parameters required by the add-on as instructed in [Add-On Parameter Description](#parameter).
+6. Click **Done**. After the add-on is installed successfully, the Dynamic Scheduler can run normally without extra configurations.
 
