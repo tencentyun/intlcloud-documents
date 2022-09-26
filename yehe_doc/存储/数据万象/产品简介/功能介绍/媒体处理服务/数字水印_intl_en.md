@@ -6,9 +6,6 @@ CI can hide images and strings in a video or image in a way they can hardly be d
 >
 
 
-## Demo
-
-You can try out the digital watermark feature online in the [CI Demo Center](https://cloud.tencent.com/act/pro/ciExhibition?tab=copyrightProtect&sub=mediaDigitalWatermark).
 
 ## Use Cases
 
