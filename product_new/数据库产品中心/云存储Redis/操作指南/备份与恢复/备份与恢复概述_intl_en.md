@@ -1,7 +1,7 @@
 
 ## Overview
 
-TencentDB for Redis supports data backup and restoration. The backend service can automatically back up the instance data on a regular basis at a juncture configured in the console. Manual backup can also be pe rformed at any time. The backup data is saved in RDB format corresponding to the Redis Engine Edition and stored in COS for high data reliability. TencentDB for Redis supports instance data restoration through rollback and clone, which implements data restoration and clone in specific scenarios.
+TencentDB for Redis supports data backup and restoration. The backend service can automatically back up the instance data on a regular basis at a juncture configured in the console. Manual backup can also be pe rformed at any time. The backup data is saved in RDB format corresponding to the Redis Engine Edition and stored in COS for high data reliability. TencentDB for Redis supports instance data restoration through clone.
 
 ## Data Backup
 
@@ -19,11 +19,8 @@ In addition to automatic backup that is performed by the system backend regularl
 
 ## Data Restoration
 
-TencentDB for Redis supports restoration of data based on backup files. There are two ways to do so: restoring to the original instance or restoring to a new instance through cloning.
+TencentDB for Redis supports restoration of data based on backup files. There is one way to do so:  restoring to a new instance through cloning.
 
-### Restoring an Instance
-
-The TencentDB for Redis 2.8 Standard Edition (Community), Standard Edition (CKV), and Cluster Edition (CKV) supports instance restoration, which clears the existing data on an instance and restores the specified backup data to it. The instance is inaccessible during the restoration. You can select a desired backup file for restoration in the backup list on the **Backup and Restoration** tab in the TencentDB for Redis Console.
 
 ### Cloning an Instance
 
