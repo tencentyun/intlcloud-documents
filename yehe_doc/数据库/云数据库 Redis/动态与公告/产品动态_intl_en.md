@@ -1,3 +1,29 @@
+## August 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Supported slow query of read-only replica</td>
+<td>TencentDB for Redis supports slow query of read-only replica to help you troubleshoot performance problems of read-only operations.</td>
+<td>-</td></tr>
+<tr>
+td>Supported smooth reduction to 256 MB specification</td>
+TencentDB for Redis in standard architecture supports smooth reduction of memory capacity from 1 GB or higher to 256 MB.
+<td><a href="https://intl.cloud.tencent.com/document/product/239/31934" target="">Changing Instance Specification</a></td></tr>
+</table>
+
+## July 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Optimized statistical algorithm for traffic and throttling that triggers monitoring metrics</td>
+<td>TencentDB for Redis now provides optimized statistical algorithm for inbound/outbound traffic and throttling.</td>
+<td>-</td></tr>
+<tr>
+<td>Supported 256 MB memory specification for standard architecture</td>
+<td>The minimum memory specification (256 MB) is available for TencentDB for Redis 4.0 and 5.0 Memory Edition (Standard Architecture) instances in more AZs.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/17952" target="">Performance</a></td></tr>
+</table>
+
 
 ## June 2022
 <table>
