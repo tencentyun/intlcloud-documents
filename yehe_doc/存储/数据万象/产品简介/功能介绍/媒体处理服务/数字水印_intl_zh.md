@@ -1,0 +1,43 @@
+## 简介
+
+数据万象支持将图片、字符串隐藏在视频、图文中，不容易被探知和再次修改，并且具有不破坏视频与图文载体的完整性与可观赏性。通过隐藏在内容载体中的水印，可以达到确认内容创作者、版权所有者、传播者，判断视频内容是否被篡改的目的。
+
+>? 本功能目前开放公测。
+>
+
+
+## 功能体验
+
+您可在线体验数字水印功能，单击前往 [数据万象体验馆](https://cloud.tencent.com/act/pro/ciExhibition?tab=copyrightProtect&sub=mediaDigitalWatermark)。
+
+## 适用场景
+
+#### 版权保护
+
+数字水印集透明性、鲁棒性、安全性、标识性于一身，是创作者不容错过的宝藏功能。数据万象水印能够抵抗裁剪、转码、特效、旋转、滤镜等各种攻击，通过隐藏在内容载体中的水印，可以达到确认内容创作者、版权所有者、传播者，判断视频内容是否被篡改的目的。
+
+
+## 使用方法
+
+您可通过任务或工作流方式使用数字水印功能。
+
+### 通过任务方式
+
+对于存储在对象存储上的存量数据，您可通过创建音视频转码任务时开启视频水印开关或创建数字水印独立任务为视频添加数字水印。您可选择控制台或 API 方式创建数字水印任务。
+
+- 控制台方式：您可使用数据万象控制台，可视化创建任务，使用详情请见 [音视频转码任务文档](https://intl.cloud.tencent.com/document/product/1045/43605)、[数字水印提取任务文档](https://intl.cloud.tencent.com/document/product/1045/43605)。
+- API 方式：您可使用 API 接口创建数字水印任务，使用详情请见 [API 文档](https://intl.cloud.tencent.com/document/product/1045/48931)。
+
+
+### 通过工作流方式
+
+数据万象提供工作流服务，您可选择对某一存储桶或特定路径开启工作流，开启后上传至该存储桶或路径的文件将自动进行数字水印相关操作。
+
+#### 创建工作流
+
+您可使用数据万象控制台创建工作流，详情请见 [工作流文档](https://intl.cloud.tencent.com/document/product/1045/43604)。
+
+#### API 创建、删除、查询、更新工作流
+
+您可使用 API 接口进行 [创建工作流](https://intl.cloud.tencent.com/document/product/1045/43733)、[删除工作流](https://intl.cloud.tencent.com/document/product/1045/43734)、[查询工作流](https://intl.cloud.tencent.com/document/product/1045/50339)、[更新工作流](https://intl.cloud.tencent.com/document/product/1045/43738) 操作。
+
