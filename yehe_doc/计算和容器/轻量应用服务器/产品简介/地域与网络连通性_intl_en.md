@@ -1,16 +1,36 @@
-## Region
+## Regions
 - **Overview**
-Tencent Cloud data centers are distributed across different regions worldwide. To reduce access delay and improve download speed, it is recommended that you select the region closest to your end users.
+Tencent Cloud IDCs are distributed across different regions worldwide. To minimize access delay and improve download speed, we recommend you select the region closest to your end users.
 - **Considerations**
  - Each region includes multiple availability zones.
- - By default, Lighthouse instances in different regions can not communicate through the private network.
+ - By default, Lighthouse instances in different regions are not interconnected over the private network.
 
-## Availability Zones
+
+<dx-alert infotype="explain" title="<b>How to Select a Region</b>">
+When creating a Lighthouse instance, you can select a region based on the following considerations. **Note that the region cannot be changed after the instance is created successfully.**
+ - **Business requirements**: To guarantee the quality of public network access and reduce the packet loss and delay, we recommend you select the region closest to your end users.
+ - **Instance package**: Available instance packages vary by region. You can select one based on the CPU, memory, system disk, public network bandwidth, and monthly traffic usage of the instance as required by your application. For more information, see [Price Overview](https://intl.cloud.tencent.com/document/product/1103/47794).
+ - **Cost budget**:
+  - Instance packages in and outside the Chinese mainland differ in configuration and price.
+  - Instance packages for Linux and Windows outside the Chinese mainland differ in price.
+    You can select a package based on your budget and requirements. For billing details, see [Price Overview](https://intl.cloud.tencent.com/document/product/1103/47794).
+ - **Cross-border network quality**: For Lighthouse instances outside the Chinese mainland, as access from the Chinese mainland may experience a significant delay and packet loss due to the ISP network lines (non-cross-border access typically suffers no impact), Tencent Cloud only guarantees that the public network bandwidth provided in instance packages is the "peak bandwidth".
+</dx-alert>
+
+
+## AZs
 - **Overview**
-An Availability Zone (AZ) refers to a physical location with independent power supply and network resources within a region. 
+An Availability Zone (AZ) refers to a physical location with independent power supply and network resources within a region.
 AZs in the same region are interconnected through low-latency private network linkages, which allows Lighthouse instances in different AZs in the same region to communicate with each other through private networks. For applications with high disaster recovery requirements, deploy Lighthouse instances to different availability zones within the same region to ensure fault isolation. Note that it may cause a longer communication latency.
 - **Considerations**
- By default, Lighthouse instances in different availability zones within the same region can communicate through the private network.
+ Lighthouse instances in different AZs in the same region under the same account are interconnected over the private network by default.
+
+<dx-alert infotype="explain" title="<b>How to Select an AZ</b>">
+We recommend you select an AZ that is "randomly assigned". You can also specify an AZ as needed. **Note that the AZ cannot be changed after the instance is created successfully.**
+</dx-alert>
+
+
+
 
 
 ## Supported Regions and Availability Zones
@@ -18,15 +38,16 @@ AZs in the same region are interconnected through low-latency private network li
 Lighthouse instances are available in the following availability zones.
 </dx-alert>
 
-####  Hong Kong, Macao, and Taiwan of China
-Hong Kong, China: Hong Kong Zone 2, Hong Kong Zone 3.
+####  Hong Kong/Macao/Taiwan (China)
+Hong Kong (China): Hong Kong Zone 1, Hong Kong Zone 2, Hong Kong Zone 3.
 
 ####  Other countries and regions
-- Singapore: Singapore Zone 1, Singapore Zone 3.
+- Singapore: Singapore Zone 1, Singapore Zone 2, Singapore Zone 3.
 - Tokyo: Tokyo Zone 1, Tokyo Zone 2.
 - Silicon Valley: Silicon Valley Zone 1, Silicon Valley Zone 2.
-- Moscow：Moscow Zone 1。
+- Moscow: Moscow Zone 1.
 - Frankfurt: Frankfurt Zone 1, Frankfurt Zone 2.
+- Toronto: Toronto Zone 1.
 - Mumbai: Mumbai Zone 1, Mumbai Zone 2.
 
 
@@ -40,21 +61,34 @@ Both private and public IPs are assigned to Lighthouse instances for private and
 <table>
 <tbody>
 <tr>
-<th style="width: 37%;">Use cases</th>
+<th style="width: 37%;" colspan=2>Scenario</th>
 <th style=" width: 32%;">Supported by Default</th><th style=" width: 31%;">Supported over CCN</th>
 </tr>
 <tr>
-<td>Lighthouse instances under the same account in the same region </td>
-<td><b>Yes</b>. Note that you need to open the port for firewall management</a>.</td>
+<td rowspan=2>In the same region<br>Under the same account</td>
+<td>Access between Lighthouse instances    </td>
+<td><b>Yes</b></td>
 <td>-</td>
 </tr>
 <tr>
-<td>Lighthouse instances under the same account but in different regions</td>
+<td>Connection between Lighthouse instances and LighthouseDB instances</td>
+<td><b>Yes</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td rowspan=2>Across regions<br>Under the same account</td>
+<td>Access between Lighthouse instances </td>
 <td>No</td>
 <td>-</td>
 </tr>
 <tr>
-<td>Lighthouse instances under different accounts</td>
+<td>Connection between Lighthouse instances and LighthouseDB instances</td>
+<td>No</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Under different accounts</td>
+<td>Access between Lighthouse instances </td>
 <td>No</td>
 <td>-</td>
 </tr>
@@ -65,19 +99,19 @@ Both private and public IPs are assigned to Lighthouse instances for private and
 <table>
 <tbody>
 <tr>
-<th style="width: 37%;">Service</th>
+<th style="width: 37%;">Scenario</th>
 <th style=" width: 32%;">Supported by Default</th><th style=" width: 31%;">Supported over CCN</th>
 </tr>
 <tr>
 <td>CVM</td>
 <td>No</td>
-<td><b>Yes</a>.</td>
+<td><b>Yes</b>. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1103/41396">Private Network Interconnection</a>.</td>
 </tr>
 <tr>
 <td>COS (in the same region)</td>
 <td>
-<b>Yes</b>. For more information, see COS <a href="https://intl.cloud.tencent.com/document/product/436/6224#private-network-and-public-network-access" target="_blank">Regions and Access Endpoints</a>.
-<br>You can determine whether Lighthouse accesses COS over the private network by referring to <a href="https://intl.cloud.tencent.com/document/product/1103/41257#how-do-i-upload-local-files-to-a-lighthouse-instance.3F" target="_blank">FAQs</a>.
+<b>Yes</b>. For more information, see COS <a href="https://intl.cloud.tencent.com/document/product/436/6224" target="_blank">Regions and Access Endpoints</a>.
+<br>You can determine whether Lighthouse accesses COS over the private network by referring to <a href="https://intl.cloud.tencent.com/document/product/1103/41257" target="_blank">FAQs</a>.
 </td>
 <td>- </td>
 </tr>
@@ -89,12 +123,12 @@ Both private and public IPs are assigned to Lighthouse instances for private and
 <tr>
 <td>TencentDB</td>
 <td>No</td>
-<td><b>Yes</a>.</td>
+<td><b>Yes</b>. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1103/41396">Private Network Interconnection</a>.</td>
 </tr>
 <tr>
 <td>CFS</td>
 <td>No</td>
-<td><b>Yes</a>.</td>
+<td><b>Yes</b>. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1103/41396">Private Network Interconnection</a>.</td>
 </tr>
 <tr>
 <td>CLB</td>
@@ -111,3 +145,18 @@ For the above use cases where private network connectivity is not supported, you
 
 
 
+### Public network connectivity description
+* **Regions in the Chinese mainland**: Stable BGP network access is provided to ensure that access to Lighthouse within the Chinese mainland is over a stable low-latency network.
+* **Regions outside the Chinese mainland**: The public network bandwidth is mainly provided for users outside the Chinese mainland. Access from the Chinese mainland may experience a significant delay and packet loss due to the ISP network lines (non-cross-border access typically suffers no impact).
+
+
+<dx-alert infotype="explain" title="">
+We recommend you select the region closest to your end users to minimize the access delay and improve the network stability.
+</dx-alert>
+
+
+
+
+<style>
+.params{margin-bottom:0px !important}
+</style>

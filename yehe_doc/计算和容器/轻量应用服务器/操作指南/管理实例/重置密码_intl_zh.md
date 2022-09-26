@@ -14,32 +14,36 @@
 
 ## 操作步骤
 
-1. 登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index)。
-2. 在“服务器”页面中，单击待重置密码的实例的卡片。
-3. 进入实例详情页后，单击页面右上角的**重置密码**。
-4. 在弹出的窗口中，根据实例状态的不同，重置密码操作会有一定差别，具体如下：
+1. 登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index) 后，您可通过以下方式，打开实例重置密码操作窗口：
+ - 选择实例卡片右上角的**更多** > **重置密码**。如下图所示：
+ ![](https://qcloudimg.tencent-cloud.cn/raw/8d0219d3e7a2369848339cce1c265bab.png)
+ - 选择实例卡片进入实例详情页后，单击页面右上角的**重置密码**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/14aa88a4c25d71c0124d3bf578e0b39a.png)
+2. 在弹出的窗口中，根据实例状态的不同，重置密码操作会有一定差别，具体如下：
 <dx-tabs>
 ::: 实例为“运行中”
 如果需要重置密码的实例为 “运行中” 状态，执行以下操作：
  1. 确认需要重置密码的用户名，输入对应的 “新密码” 和 “确认密码”，单击**下一步**。如下图所示：
  <dx-alert infotype="notice" title="">
-    其中“用户名”类型默认为“系统默认”，并使用对应操作系统的默认用户名（Windows 系统默认用户名为 `Administrator`、Ubuntu 系统默认用户名为 `ubuntu`、其他版本 Linux 系统默认为 `root`）。如您需指定其他用户名，请选择“指定用户名”并输入对应用户名称。
-    </dx-alert>
-    ![](https://qcloudimg.tencent-cloud.cn/raw/d2e31e20f88cd7dc9167c2cdb77af60d.png)
- 2. 勾选 “同意强制关机”，单击**重置密码**，完成重置。如下图所示：
-     ![](https://qcloudimg.tencent-cloud.cn/raw/c7da2fb6683367bae3e1b8cf4aec38c8.png)
-     :::
-     ::: 实例为“已关机”
-     如果需要重置密码的实例为 “已关机” 状态，执行以下操作：
+ 其中“用户名”类型默认为“系统默认”，并使用对应操作系统的默认用户名（Windows 系统默认用户名为 `Administrator`、Ubuntu 系统默认用户名为 `ubuntu`、其他版本 Linux 系统默认为 `root`）。如您需指定其他用户名，请选择“指定用户名”并输入对应用户名称。
+ </dx-alert>
+ ![](https://qcloudimg.tencent-cloud.cn/raw/fa5f8a3bd19e1e27dd39bf7376a5cd37.png)
+ 2. 勾选 “同意强制关机”，单击**确定**，完成重置。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/08247201a8b6a9d5ef3352ab389c2fc5.png)
+
+:::
+::: 实例为“已关机”
+如果需要重置密码的实例为 “已关机” 状态，执行以下操作：
  1. 确认需要重置密码的用户名，输入对应的 “新密码” 和 “确认密码”，单击**下一步**。如下图所示：
-	<dx-alert infotype="notice" title="">
-	其中“用户名”类型默认为“系统默认”，并使用对应操作系统的默认用户名（Windows 系统默认用户名为 `Administrator`、Ubuntu 系统默认用户名为 `ubuntu`、其他版本 Linux 系统默认为 `root`）。如您需指定其他用户名，请选择“指定用户名”并输入对应用户名称。
-	</dx-alert>
-	  ![](https://qcloudimg.tencent-cloud.cn/raw/9604f84907bd4154d96e2eeb0c9fe1e8.png)
- 2. 单击**重置密码**，完成重置。如下图所示：
-	  ![](https://qcloudimg.tencent-cloud.cn/raw/fe680e817ae643c1ce3b12a6b454f09d.png)
-	  :::
-	  </dx-tabs>
+<dx-alert infotype="notice" title="">
+其中“用户名”类型默认为“系统默认”，并使用对应操作系统的默认用户名（Windows 系统默认用户名为 `Administrator`、Ubuntu 系统默认用户名为 `ubuntu`、其他版本 Linux 系统默认为 `root`）。如您需指定其他用户名，请选择“指定用户名”并输入对应用户名称。
+</dx-alert>
+![](https://qcloudimg.tencent-cloud.cn/raw/440daaa933e5af20301b5ccff99b41f5.png)
+ 2. 单击**确定**，完成重置。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/57f83817dfaa298c51d280c64ce04099.png)
+
+:::
+</dx-tabs>
 
 
 
