@@ -1,6 +1,6 @@
 
 
-This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE and EKS clusters.
+This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE general cluster and TKE serverless clusters.
 
 ## Annotation Usage
 ### Adding a Pod annotation to a workload
