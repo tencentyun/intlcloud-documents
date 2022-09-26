@@ -32,8 +32,8 @@ To use a private certificate, you must first apply for a CA certificate from a c
 	- Authentication Method: Select **Certificate**.
 	- CA Certificate: Select the name of the [certificate you created](#test2).
 	- **Data Format**:
-	 - JSON: You can match the rules and extract the content based on the data.
-	 - Custom: No data parsing is performed.
+	   - JSON: You can match the rules and extract the content based on the data.
+	   - Custom: No data parsing is performed.
 2. Click **Save**. The successfully created product will be displayed on the **Products** page.
 3. On the **Products** page, click the **Product Name** to enter the product details page.
 4. Click **Devices** > **Add Device** to upload the device certificate.
