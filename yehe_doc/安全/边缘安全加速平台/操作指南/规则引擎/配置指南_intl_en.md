@@ -13,10 +13,7 @@ Finer granularities are supported, so you can use conditional statements to flex
 | Execution sequence | <li>Multiple IF statements in a single rule will be executed from top to bottom in sequence.</li> <li>Multiple rules under a site will be executed starting from number one from top to bottom in sequence.</li>Note: If an IF statement contains multiple operations, and some of them are authentication operations, authentication operations will be always executed first (top priority) without being subject to the sequence. |
 
 ## Directions
-
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Rule engine** on the left sidebar.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
-
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Rule Engine** on the left sidebar.
 3. On the rule engine page, select the target site. The following content is supported:
 
 ### Supported actions
@@ -24,24 +21,26 @@ Finer granularities are supported, so you can use conditional statements to flex
 | Action       | Description                                                         |
 | ---------- | ------------------------------------------------------------ |
 | Create a rule   | Click ![](https://qcloudimg.tencent-cloud.cn/raw/9841d7c20f4a9cc1d61f9f7b1f481599.png) to create a rule.                                                 |
-| Save and publish | Save the currently edited rule and release it to the production network for it to take effect.                         |
+| Save and publish | Save the currently edited rule and publish it to the production network for it to take effect.                         |
 | Save only     | Save the currently edited rule without releasing it to the production network.                       |
 | Sort       | Multiple IF statements in a single rule can be sorted in a custom way.<br>Multiple rules under a single site can be sorted in a custom way. Click ![](https://qcloudimg.tencent-cloud.cn/raw/9137077558f0404693d07da409b6b831.png) and drag and drop items to adjust the order. |
-| Rule status   | Status icon ![](https://qcloudimg.tencent-cloud.cn/raw/ec67f18d322643c8c111c9658ec5ec77.png)  after each rule: <li>Enabled: It has been released to the production network and taken effect.</li><li>Disabled: It hasn't been released to the production network, and only the rule content is saved.</li> |
+| Enable/Disable rules   | Click the toggle ![](https://qcloudimg.tencent-cloud.cn/raw/ec67f18d322643c8c111c9658ec5ec77.png) to change the status. <li>On: The rule is published to the production network and takes effect.</li><li>Off: The rule is saved but not published to the production network, and does not take effect.</li> |
 | Search       | You can search for rules by keyword.                           |
 
 ### Supported match conditions
->?
->- Only the `=` operator is supported currently.
->- Different match conditions can be connected with only logical AND (`And`).
 
-| Match Condition         |                                                              |
-| ---------------- | ------------------------------------------------------------ |
-| All (any request) | All requests under the current site.<br>Note: We recommend you use this match condition to create a global rule as the baseline rule. |
-| Host             | Subdomain under the current site, such as `www.example.com`, `foo.example.com`, and `foo.bar.example.com`. |
-| URL Path         | Request URL path under the current site, such as `/example/foo.jpg` and `/example/foo/bar`. |
+| Condition             | Description                                                         |
+| -------------------- | ------------------------------------------------------------ |
+| HOST                 | Match requests by host, eg: `www.example.com`.          |
+| URL path             | Match requests by URL path, eg: `/example/foo/bar`.      |
+| Full URL             | Match requests by full URL, eg: `https://www.example.com/foo`. |
+| File extension             | Match requests by file extension, eg: jpg, png, or css. |
+| File name             | Match requests by file name, eg: "foo" is the file name of the file "foo.jpg".         |
+| All (any request) | Match all requests from the current site. We recommend you create a match-all rule that can apply to any request. |
 
-### Supported operations
+
+
+### Supported actions
 **Supported operations are subject to the match condition.** For example, if the match condition is URL path, some operations are unavailable (as they don't support the URL granularity).
 <table>
 <thead>
@@ -51,53 +50,90 @@ Finer granularities are supported, so you can use conditional statements to flex
 </tr>
 </thead>
 <tbody><tr>
-<td>Access authentication</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1145/46164">Token Authentication</a><br>Requests are authenticated according to the specified signing method.</td>
+<td  rowspan=2 >Access control</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46164">Token Authentication</a><br></td>
 </tr>
 <tr>
- <td  rowspan=2 >URL rewrite</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1145/46166">Access URL Rewrite</a><br>The access URL rewrite feature rewrites the access URL in the request actually initiated by the client to the target URL, i.e., URL of the cached resource on the node.</td>
-</tr>
-<tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1145/46167">Origin-pull URL Rewrite</a><br>The origin-pull URL rewrite feature rewrites the URL in the origin-pull request initiated by a node to an origin server to the target URL, which doesn't affect the node cache key.</td>
-</tr>
-<tr>
-<td>Network optimization</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1145/46170">QUIC</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46969">Video Dragging</a><br></td>
 </tr>
 <tr>
  <td  rowspan=6 >Cache configuration</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1145/46174">Query string</a></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46175">Node Cache TTL</a></td>
 </tr>
 <tr>
- <td><a href="https://intl.cloud.tencent.com/document/product/1145/46175">Edge node cache TTL</a></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46176">Browser Cache TTL</a></td>
 </tr>
 <tr>
- <td><a href="https://intl.cloud.tencent.com/document/product/1145/46176">Browser cache TTL</a></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46177">Offline Caching</a></td>
 </tr>
 <tr>
- <td><a href="https://intl.cloud.tencent.com/document/product/1145/46177">Offline caching</a></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46964">Status Code Cache TTL</a></td>
 </tr>
 <tr>
- <td><a href="https://intl.cloud.tencent.com/document/product/1145/46181">Case ignoring</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/47615">Custom Cache Key</a></td>
 </tr>
 <tr>
- <td><a href="https://intl.cloud.tencent.com/document/product/1145/46182">Smart acceleration</a></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/48548">Node Cache Prefresh</a></td>
 </tr>
 <tr>
-<td>Origin-pull configuration</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1145/46171">HTTP/2 origin-pull</a><br>Request origin-pull over the HTTP/2 protocol is supported.</td>
+ <td  rowspan=4 >Network optimization</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46170">HTTP/3 (QUIC)</a></td>
 </tr>
 <tr>
- <td  rowspan=2 >Header modification</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1145/46186">HTTP request header modification</a><br>You can customize, add, and delete headers in HTTP origin-pull requests from nodes to the origin server.</td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46971">WebSocket</a></td>
 </tr>
 <tr>
- <td><a href="https://intl.cloud.tencent.com/document/product/1145/46185">HTTP response header modification</a><br>You can customize, add, and delete headers in HTTP responses from nodes to clients, which will not affect the node cache.</td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46970">Real Client IP Header</a></td>
+</tr>
+<tr>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46172">Maximum Upload Size</a></td>
+</tr>
+<tr>
+ <td  rowspan=2 >URL rewrite</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46166">Access URL Rewrite</a><br></td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46167">Origin-pull URL Rewrite</a><br></td>
+</tr>
+<tr>
+ <td  rowspan=3>Origin-pull optimization</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46182">Smart Acceleration</a></td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46171">HTTP/2</a></td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46966">Range GETs</a></td>
+</tr>
+<tr>
+ <td  rowspan=5 >HTTPS configuration</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46356">Forced HTTPS</a></td>
+</tr>
+<tr>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46356">Origin-pull HTTPS</a></td>
+</tr>
+<tr>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46356">HSTS</a></td>
+</tr>
+<tr>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46356">TLS version</a></td>
+</tr>
+<tr>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46356">OCSP stapling</a></td>
+</tr>
+<tr>
+ <td  rowspan=3 >HTTP header modification</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46186">Modifying HTTP Request Header</a></td>
+</tr>
+<tr>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46185">Modifying HTTP Response Header</a></td>
+</tr>
+<tr>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1145/46965">Host Header Rewrite</a></td>
 </tr>
 <tr>
 <td>Advanced configuration</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1145/46188">Custom error page</a><br>If an error status code is specified for origin server response, status code 302 will be returned, and the custom page will be redirected to.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1145/46188">Custom Error Page</a></td>
 </tr>
 </tbody></table>
 
