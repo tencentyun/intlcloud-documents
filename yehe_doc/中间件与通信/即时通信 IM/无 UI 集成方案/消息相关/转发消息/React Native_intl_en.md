@@ -20,7 +20,7 @@ A merged message can be created by setting the message list along with the merge
 
 1. Call the `createMergerMessage` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#createMergerMessage)) to create a merged message. The list of original messages as well as the merged message title and digest also need to be set.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/27de8638efbd212c09452918db7f62ec.png" width = "450" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
 | Attribute |  Description | Remarks |
 | -------------- | ---------------- | -------------------------------------------------------------------------------------------------------------- |
