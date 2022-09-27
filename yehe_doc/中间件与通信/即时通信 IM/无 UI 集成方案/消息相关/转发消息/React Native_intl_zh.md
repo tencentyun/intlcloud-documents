@@ -10,7 +10,7 @@
 
 | 合并转发                                                                                        | 合并消息展示                                                                                    | 点击合并消息下载合并消息列表展示                                                               |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| <img src="https://main.qcloudimg.com/raw/8f9a338c4e05cf1477250a5fc1a468c6.jpg" width = "300" /> | <img src="https://main.qcloudimg.com/raw/ff2afe17010e1840eae78e56d3abcf2d.jpg" width = "300" /> | <img src="https://main.qcloudimg.com/raw/a05b309924e59382dc928694d6397d20.jpg" width = "300"/> |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/> |
 
 ## 合并转发消息
 
@@ -20,7 +20,7 @@
 
 1. 调用 `createMergerMessage` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#createMergerMessage)) 接口创建一条合并消息，创建合并消息的时候需要设置原始消息列表，合并消息标题、合并消息摘要等信息。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/27de8638efbd212c09452918db7f62ec.png" width = "450" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
 | 属性           | 含义             | 说明                                                                                                           |
 | -------------- | ---------------- | -------------------------------------------------------------------------------------------------------------- |

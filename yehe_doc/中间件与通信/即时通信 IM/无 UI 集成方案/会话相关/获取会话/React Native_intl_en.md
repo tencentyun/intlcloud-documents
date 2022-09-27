@@ -6,7 +6,7 @@ The IM SDK provides an API for getting conversations, which can be used to get t
 
 Call `getConversation` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#getConversation)) to get the information of a conversation, which is a `V2TimConversation` object.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 const conv = await conversationManager.getConversation("conversationID");
@@ -16,7 +16,7 @@ const conv = await conversationManager.getConversation("conversationID");
 
 Call `getConversationList` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#getConversationList)) to get the list of specified conversations that stores `V2TimConversation` objects.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 const count = 10;

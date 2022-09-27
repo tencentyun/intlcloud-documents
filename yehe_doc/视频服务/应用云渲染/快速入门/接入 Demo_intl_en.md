@@ -1,9 +1,9 @@
-CAR provides demos for JavaScript and Android, as well as a backend demo. This document describes how to quickly configure a demo to run a simple cloud application.
+CAR provides demos for Web and Android, as well as a backend demo. This document describes how to quickly configure a demo to run a simple cloud application.
 ## Backend demo
 The CAR [backend demo](https://github.com/tencentyun/car-server-demo) implements various features, including application startup and exit as well as user queue. For more specific integrated features, see [Basic Features](https://intl.cloud.tencent.com/document/product/1158/49614) and [Advanced Features](https://intl.cloud.tencent.com/document/product/1158/49615).
 
-## Demo for JavaScript
-The CAR SDK for JavaScript supports various implementation scenarios, including PC and mobile web pages. This document describes how to quickly set up, deploy, and run the demo for web.
+## JavaScript Demo for Web
+The CAR JavaScript SDK supports various implementation scenarios, including PC and mobile web pages. This document describes how to quickly set up, deploy, and run the demo for web.
 Download the demo project for a web program [here](https://github.com/tencentyun/cloudgame-js-sdk/tree/master/samples).
 
 ## Demo for Android

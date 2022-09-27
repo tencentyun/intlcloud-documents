@@ -1,9 +1,9 @@
 ## Low latency
-CAR adopts Tencent Cloud's proprietary Real-Time Cloud Rendering technology and is optimized specifically for real-time cloud application rendering scenarios.
+CAR adopts Tencent Cloud's proprietary Real-Time Cloud Rendering RTC technology and is optimized specifically for real-time cloud application rendering scenarios.
 
 ## High image quality
 
-Based on the smart dynamic encoding technology of Media Processing Service (MPS), CAR can achieve a higher image quality at the same bitrate, delivering an amazing visual experience with less traffic usage.
+Based on the smart dynamic encoding technology of Media Processing Service (MPS), CAR can achieve a higher image quality at the same bitrate, delivering an amazing visual experience with less bandwidth usage.
 
 ## Guaranteed experience under poor network conditions
 
@@ -11,7 +11,7 @@ Based on adaptive encoding and elastic frame rate as well as supporting technolo
 
 ## Quick integration for various devices
 
-CAR provides the lightweight SDK for JavaScript and other SDKs so you can implement your CAR service on PC, mobile phones, tablets, TV boxes, or other devices. You can quickly set up a CAR demo within only two to three days.
+CAR provides the lightweight JavaScript SDK and other SDKs so you can implement your CAR service on PC, mobile phones, tablets, TV boxes, or other devices. You can quickly set up a CAR demo within only two to three days.
 
 ## Self-service application deployment and update
 

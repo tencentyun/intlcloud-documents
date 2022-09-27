@@ -7,7 +7,7 @@ In the Tencent Cloud IM SDK, the conversation class is `TencentImSDKPlugin.v2TIM
 
 The conversation class is `V2TIMConversation` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimConversation-1.html)), which defines the following content:
 
-| Attribute | Definition | Description |
+| Attribute |  Description | Remarks |
 | --------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type            | Conversation type          | See the definition of `V2TIMConversationType`, which can be `C2C` or `Group`.                                                                                                                                       |
 | conversationID  | Unique conversation ID       | It is in the format of `c2c_userID` for a one-to-one chat or `group_groupID` for a group chat.                                                                                                                                   |
@@ -33,8 +33,6 @@ Up to 100 conversations can be stored in the cloud. To increase this limit, upgr
 Up to 100 conversations can be stored in the cloud. To increase this limit, upgrade to the Ultimate edition. Then you can set the limit to 500 in the console:
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/ba00871ad091df6fbe7cbf0ceb0e7607.png)
-
-
 
 If the information of a conversation has not been updated for a long time, the conversation can be stored in the cloud for up to seven days. To extend the conversation storage period, [contact us](https://console.cloud.tencent.com/workorder/category) for application.
 

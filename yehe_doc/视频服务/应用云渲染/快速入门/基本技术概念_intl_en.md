@@ -22,5 +22,5 @@ CAR is a frontend/backend integrated PaaS product. It provides backend APIs and 
 - **Backend APIs:**
 CAR provides backend [TencentCloud APIs](https://intl.cloud.tencent.com/document/product/1158/49958) that can be called to perform operations such as applying for a concurrency and creating a session.
 - **Client SDKs:**
-CAR provides the client SDKs to support integration on Android, iOS, and other platforms, and you need to integrate the SDK into your client. The SDK provides a rich variety of APIs to meet most integration needs. For more information, see [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/1158/49627), [SDK for Android](https://intl.cloud.tencent.com/document/product/1158/49628), and [SDK for iOS](https://intl.cloud.tencent.com/document/product/1158/49629).
+CAR provides the client SDKs to support integration on Android, iOS, and other platforms, and you need to integrate the SDK into your client. The SDK provides a rich variety of APIs to meet most integration needs. For more information, see [JavaScript SDK](https://intl.cloud.tencent.com/document/product/1158/49627), [SDK for Android](https://intl.cloud.tencent.com/document/product/1158/49628), and [SDK for iOS](https://intl.cloud.tencent.com/document/product/1158/49629).
 

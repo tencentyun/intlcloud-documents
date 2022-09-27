@@ -10,7 +10,7 @@ The title and digest are needed to display the merged message:
 
 | Merge and Forward | Display of Merged Message | Click Merged Message to Download Message List for Display |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| <img src="https://main.qcloudimg.com/raw/8f9a338c4e05cf1477250a5fc1a468c6.jpg" width = "300" /> | <img src="https://main.qcloudimg.com/raw/ff2afe17010e1840eae78e56d3abcf2d.jpg" width = "300" /> | <img src="https://main.qcloudimg.com/raw/a05b309924e59382dc928694d6397d20.jpg" width = "300"/> |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/> |
 
 ## Merging and Forwarding Messages
 
@@ -20,7 +20,7 @@ A merged message can be created by setting the message list along with the merge
 
 1. Call the `createMergerMessage` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#createMergerMessage)) to create a merged message. The list of original messages as well as the merged message title and digest also need to be set.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/27de8638efbd212c09452918db7f62ec.png" width = "450" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
 | Attribute |  Description | Remarks |
 | -------------- | ---------------- | -------------------------------------------------------------------------------------------------------------- |
