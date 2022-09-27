@@ -2,7 +2,7 @@
 
 Instans Cadangan (RI) adalah diskon penagihan yang diterapkan pada penggunaan instans CVM bayar sesuai pemakaian di akun Anda. Instans CVM ini harus sama persis dengan atribut RI yang Anda beli untuk mendapatkan keuntungan dari diskon penagihan selama jangka waktu RI. RI memberi Anda diskon yang signifikan dibandingkan dengan penagihan bayar sesuai pemakaian.
 >? 
->-Login ke Tencent Cloud Console dan buka [Kalkulator Harga](https://intl.cloud.tencent.com/pricing/cvm) untuk menanyakan harganya.
+>- Login ke Tencent Cloud Console dan buka [Kalkulator Harga](https://intl.cloud.tencent.com/pricing/cvm) untuk menanyakan harganya.
 
 >- Saat ini, pembayaran biaya RI tidak dapat dikembalikan.
 >
