@@ -354,8 +354,8 @@ Android&Mac&iOS：オーディオ再生の外部接続や制御をサポート�
 **機能追加**
 -  Mac：画面共有機能を最適化しました。共有ターゲットウィンドウ内で同時指定した他のウィンドウと共に共有することができます。詳細についてはAPI [addIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2e101f0ff00c8752eea1fa9a1a432233)をご参照ください。
 -  すべてのプラットフォーム：ビデオ放送機能を新規追加しました。[TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer)を使用してTRTCCloudとバインドし、オンデマンド再生中のコンテンツをTRTCのサブストリームプッシュで共有することができます。
--  すべてのプラットフォーム：サブストリームのユーザー定義キャプチャを追加しました。API[sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629)をご参照ください。
--  すべてのプラットフォーム：カスタムサウンドミキサー機能を追加しました。自分のオーディオトラックをSDKのオーディオ処理フロー中にミキシングすることができます。SDKはまず2つのオーディオトラックをミキシングしてから再び一緒に公開します。API[mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f)をご参照ください。
+-  すべてのプラットフォーム：サブストリームのユーザー定義キャプチャを追加しました。API sendCustomVideoDataをご参照ください。
+-  すべてのプラットフォーム：カスタムサウンドミキサー機能を追加しました。自分のオーディオトラックをSDKのオーディオ処理フロー中にミキシングすることができます。SDKはまず2つのオーディオトラックをミキシングしてから再び一緒に公開します。
 -  すべてのプラットフォーム：ビデオのみのミクスストリーミング指定をサポートし、ミクスストリーミングの制御がさらに柔軟になりました。
 
 **品質の最適化**
@@ -524,7 +524,7 @@ Android&Mac&iOS：オーディオ再生の外部接続や制御をサポート�
 **追加**
 - Mac：システム音量の変化コールバックを追加しました。詳細は[TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)をご参照ください。
 - Windows：スクリーン間で指定したエリアの画面共有を新たにサポートしました。
-- Windows：ウィンドウ共有で、指定したウィンドウをフィルターする遮蔽対策をサポートしました。詳細については[TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06)および[TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)をご参照ください。
+- Windows：ウィンドウ共有で、指定したウィンドウをフィルターする遮蔽対策をサポートしました。
 - Windows：システム音量変化コールバックを追加しました。
 
 **最適化**
@@ -579,18 +579,18 @@ Android&Mac&iOS：オーディオ再生の外部接続や制御をサポート�
 - iOS：iPad Proの画面共有の画面に変形、伸びが生じるという問題を修正しました。
 - iOS： ユーザーの権限拒否後にも、App内のスクリーンがスクリーンレコーディングの権限申請の表示を繰り返しポップアップし続けるという問題を修正しました。
 - Windows：ノートブックまたはデスクトップ式パソコンが長時間スリープすると、退室onExitRoomイベント通知がコールバックされない問題を解決しました。
-- Windows：Music音質モードで、システムミックス[stopSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23)を有効にすると、エコーが漏れる問題を修正しました。
+- Windows：Music音質モードで、システムミックスstopSystemAudioLoopbackを有効にすると、エコーが漏れる問題を修正しました。
 - Windows：enterRoomおよびexitRoomを呼び出してすばやく入退室するとき、再生側で音声が出ないというBUGを修正しました。
 - Windows：SDKでVisual Stuido 2010プロジェクトのコンパイルの互換性の問題を修正しました。
-- Windows：手動受信モード（すなわち [setDefaultStreamRecvMode(false，false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5)）のときにonUserVideoAvailableイベントコールバックを再受信する問題を修正しました。
+- Windows：手動受信モード（すなわち setDefaultStreamRecvMode(false，false)）のときにonUserVideoAvailableイベントコールバックを再受信する問題を修正しました。
 
 
 ### Version 7.6 @ 2020.08.21
 **追加**
 
-- Windows： [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299)および[updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e)インターフェースを追加して、HWNDタイプのレンダリングウィンドウをリアルタイム調整するときの体験を最適化することに使用します。
-- Windows： [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f)インターフェースを追加しました。現在のWindows PCがミュートに設定されているか確認するために使用します。
-- Windows： [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f)インターフェースを追加しました。これは現在のWindows PCをすべてミュートに設定するために使用します。
+- Windows： updateLocalViewおよびupdateRemoteViewインターフェースを追加して、HWNDタイプのレンダリングウィンドウをリアルタイム調整するときの体験を最適化することに使用します。
+- Windows： getCurrentMicDeviceMuteインターフェースを追加しました。現在のWindows PCがミュートに設定されているか確認するために使用します。
+- Windows： setCurrentMicDeviceMuteインターフェースを追加しました。これは現在のWindows PCをすべてミュートに設定するために使用します。
 - Mac： [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf20f249b4b43fff64f944b4aefe54cb)および[updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa27f954e6301fb57a143b27429b63d87)インターフェースを追加しました。Viewレンダリングエリアのリアルタイム調整時の体験を最適化するために使用します。
 - Mac： [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6ba78519e9c98c1eecd365154882d53f)インターフェースを追加しました。現在のMacパソコンがミュートに設定されているか確認するために使用します。
 - Mac： [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a88569e62fe75b7ea98cc012169f22bfe)インターフェースを追加しました。これは現在のMacパソコンをすべてミュートに設定するために使用します。
