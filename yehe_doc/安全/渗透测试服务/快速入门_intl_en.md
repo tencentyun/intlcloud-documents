@@ -2,7 +2,7 @@
 Sign up as instructed in [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/10496).
 
 ## Step 2. Purchase the service
-Go to the [PTS purchase page](https://buy.intl.cloud.tencent.com/pts), select and enter values based on the number of targets to be tested, and click **Submit**. For specific types, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1146/46024).
+Go to the [PTS purchase page](https://buy.tencentcloud.com/ipts), select and enter values based on the number of targets to be tested, and click **Submit**. For specific types, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1146/46024).
 
 
 ## Step 3. Deliver the service
