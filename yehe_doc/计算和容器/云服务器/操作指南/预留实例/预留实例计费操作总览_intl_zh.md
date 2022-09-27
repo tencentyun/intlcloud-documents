@@ -4,7 +4,7 @@
 
 ## 前提条件
 
- 已登陆云服务器控制台，进入[预留实例列表页面]((https://console.cloud.tencent.com/cvm/reservedinstances))。
+ 已登陆云服务器控制台，进入[预留实例列表页面](https://console.intl.cloud.tencent.com/cvm/reservedinstances/index?rid=1)。
 
 
 ## 操作步骤
