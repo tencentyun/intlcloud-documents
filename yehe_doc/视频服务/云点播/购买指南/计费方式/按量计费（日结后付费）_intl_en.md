@@ -14,7 +14,7 @@ Billable items:
 - **Video acceleration**: Using CDN for acceleration during video playback. This service is charged based on the downstream traffic consumed.
 - **Data retrieval:** Retrieving media from ARCHIVE or DEEP_ARCHIVE. This service is charged based on the retrieval mode and size of the file retrieved.
 - **Media AI:** Using AI capabilities (content analysis and recognition) on media files stored in VOD. This service is charged based on the duration of output files. Each task is billed only once. No fees will be charged if a task fails.
-- **Copyright protection:** Using VOD’s copyright protection capabilities (digital watermarking and DRM encryption) on media stored in VOD. For the billing details, see [Media Encryption and Protection](https://intl.cloud.tencent.com/document/product/266/33965). 
+- **Copyright protection:** Using VOD’s copyright protection capabilities (digital watermark extraction and DRM encryption) on media stored in VOD. For the billing details, see [Media Encryption and Protection](https://intl.cloud.tencent.com/document/product/266/33965). 
 
 ## Storage[](id:media_storage)
 ### Pricing
@@ -383,23 +383,23 @@ VOD offers watermark solutions with high protection and low costs to protect you
 
 | Billable Item       | Billed By                                   | Price          |
 | :----------- | :----------------------------------------- | :------------ |
-| Source tracking | The duration of the video tracked (only pay-as-you-go supported) | 0.22 USD/min |
+| Digital watermark extraction | The duration of the video tracked (only pay-as-you-go supported) | 0.22 USD/min |
 
 #### Billing details
 
-- Billable item: Source tracking based on digital watermarks
-- Rules: In case of unauthorized distribution of your video, you can [submit a ticket](https://intl.cloud.tencent.com/zh/account/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fworkorder) to extract the user ID of the distributor from the video’s digital watermark. This will incur source tracking fees.
+- Billable item: Digital watermark extraction
+- Rules: In case of unauthorized distribution of your video, you can [submit a ticket](https://intl.cloud.tencent.com/zh/account/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fworkorder) to extract the user ID of the user who distributed a video containing a digital watermark. This will incur digital watermark extraction fees.
 
 #### Example
 
-Assume that you found your video (length: 60 minutes; resolution: 2560 x 1440) distributed by someone without your authorization, and you submitted a ticket to VOD to extract the distributor’s user ID from the video’s digital watermark. The output video was 60 minutes long and had a resolution of 1280 x 720. The source tracking fee incurred would be as follows:
+Assume that you found your video (length: 60 minutes; resolution: 2560 x 1440) distributed by someone without your authorization, and you submitted a ticket to VOD to extract the distributor’s user ID from the video’s digital watermark. The output video was 60 minutes long and had a resolution of 1280 x 720. The digital watermark extraction fee incurred would be as follows:
 
-- The unit price of the source tracking service is 0.22 USD/min.
+- The unit price of the digital watermark extraction service is 0.22 USD/min.
 
-Source tracking fee = 0.22 x 60 (minutes) = 13.2 USD
+Digital watermark extraction fee = 0.22 x 60 (minutes) = 13.2 USD
 
 >?
->- No fees will be charged if source tracking fails.
+>- No fees will be charged if digital watermark extraction fails.
 >- When you add a digital watermark to a video, the video will be transcoded, which will incur transcoding fees. For details, see [Media Processing](#media-processing).
 >- Transcoded streams take up storage space, which incurs storage fees. For details, see [Storage](#storage).
 
