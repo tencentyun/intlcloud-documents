@@ -350,7 +350,7 @@
 <br>Windows：<ul style="margin:0">
 <li>优化部分场景下的直播音质，大幅减少了声音损伤问题。</li>
 <li>性能优化，在部分使用场景下的性能较旧版本有 20%-30% 的提升。</li>
-<li>新增进程音量调整能力，使用 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1">setApplicationPlayVolume</a> 可以设置系统的音量合成器的音量大小。</li>
+<li>新增进程音量调整能力setApplicationPlayVolume 可以设置系统的音量合成器的音量大小。</li>
 </ul>
 <br>Mac：<ul style="margin:0">
 <li>开始支持采集 Mac 操作系统的输出声音，也就是跟 Windows 端一样的 SystemLoopback 能力，该功能可以让 SDK 采集当前系统的声音，开启这个功能后，主播就可以很方便地向其他用户直播音乐或者电影文件。</li>
