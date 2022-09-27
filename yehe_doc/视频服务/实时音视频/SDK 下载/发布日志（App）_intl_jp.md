@@ -328,7 +328,7 @@ Android&Mac&iOS：オーディオ再生の外部接続や制御をサポート�
 
 ### Version 8.7 @ 2021.5.25
 **機能追加**
-- すべてのプラットフォーム：外部オーディオデバイスの異常検出を追加します。onStatisticsコールバックを登録した後、 [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics)のaudioCaptureStateを使用して、長期間のミュート、音割れ、異常な中断といった問題をリアルタイムに検出できます。
+- すべてのプラットフォーム：外部オーディオデバイスの異常検出を追加します。onStatisticsコールバックを登録した後、 TRTCLocalStatisticsのaudioCaptureStateを使用して、長期間のミュート、音割れ、異常な中断といった問題をリアルタイムに検出できます。
 - Windows：ユーザー定義キャプチャのRGBA形式でのビデオデータの入力をサポートしました。
 
 **品質の最適化**
