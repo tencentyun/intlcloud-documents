@@ -1,6 +1,6 @@
 ## 功能描述
 
-用户在登录 App 后，可以展示最近会话列表，方便找到目标会话。
+用户在登录 App 后，可以像微信或 QQ 那样展示最近会话列表，方便找到目标会话。
 会话列表如下图所示：
 <img src="https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/res/RPReplay_Final0511.gif" alt="" style="zoom:40%;" />
 

@@ -1,6 +1,6 @@
 ## Feature Description
 
-After a user logs in to the application, the list of recent conversations can be displayed to make it easy to locate the target conversation.
+After a user logs in to the application, the list of recent conversations can be displayed as in WeChat or QQ to make it easy to locate the target conversation.
 The conversation list is as follows:
 <img src="https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/res/RPReplay_Final0511.gif" alt="" style="zoom:40%;" />
 
@@ -21,7 +21,7 @@ You can use `getConversationList` to implement one-time or paged pull as detaile
 
 One-time pull is suitable for scenarios with a small number of conversations (up to 100). You can set the `count` of the pull to `INT_MAX` (which is generally greater than the number of conversations).
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 const nextSeq = "0";
@@ -31,11 +31,11 @@ const convList = await TencentImSDKPlugin.v2TIMManager
   .getConversationList(count, nextSeq);
 ```
 
-### Pulling by page
+### Paged pull
 
-If the number of conversations is great, pulling by page is recommended to enhance the loading efficiency and save network traffic. The recommended number of conversations pulled per page is up to 100.
+If the number of conversations is great, paged pull is recommended to enhance the loading efficiency and save network traffic. The recommended number of conversations pulled per page is up to 100.
 
-Directions:
+Directions for paged pull:
 
 1. When you call `getConversationList` for the first time, set `nextSeq` to `0` (indicating to pull the conversation list from the beginning) and `count` to `50` (indicating to pull 50 conversation objects at a time).
 2. After the conversation list is pulled successfully for the first time, the `V2TIMConversationResult` callback of `getConversationList` will contain `nextSeq` (field for the next pull) and `isFinish` (indicating whether the conversation pull is completed).
@@ -47,7 +47,7 @@ Directions:
 
 4. Repeat step 3 until `isFinished` is `true`.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 const nextSeq = "0";
@@ -78,7 +78,7 @@ You can get the updated conversation list in the following steps:
 
 Call `addConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#addConversationListener)) to add a conversation listener to receive conversation change events.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 TencentImSDKPlugin.v2TIMManager
@@ -104,7 +104,7 @@ Currently, the IM SDK supports the following conversation change events:
 | onConversationChanged            | There is a conversation update           | When the unread count changes or the last message is updated, you can re-sort the conversations.                                                   |
 | onTotalUnreadMessageCountChanged | Notification of a change in the total unread count of the conversation  | For more information, see [unreadCount](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimConversation-1.html#unreadCount). |
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 // Listen for the conversation
@@ -125,7 +125,7 @@ TencentImSDKPlugin.v2TIMManager
 Call `removeConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#removeConversationListener)) to remove a conversation listener to stop receiving conversation change events.
 This step is optional and can be performed as needed.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 conversationManager.removeConversationListener(conversationListener);
@@ -133,7 +133,7 @@ conversationManager.removeConversationListener(conversationListener);
 
 ### Sending a message without updating the lastMessage
 
-On the UI of conversation list, it is usually necessary to display the preview and send time of the latest message in each conversation. In this case, you can use `lastMessage` of `V2TIMConversation` as the data source for implementation. However, in some cases, if you don't want some messages (such as system tips) to be displayed as the latest message in a conversation, you can set `isExcludedFromLastMessage` to `false`/`no` when calling `sendMessage`.
+On the conversation list UI, it is usually necessary to display the preview and send time of the latest message in each conversation. In this case, you can use `lastMessage` of `V2TIMConversation` as the data source for implementation. However, in some cases, if you don't want some messages (such as system tips) to be displayed as the latest message in a conversation, you can set `isExcludedFromLastMessage` to `false`/`no` when calling `sendMessage`.
 
 For directions on how to send a message, see [sendMessage](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessage).
 

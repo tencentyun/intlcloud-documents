@@ -34,8 +34,6 @@
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/ba00871ad091df6fbe7cbf0ceb0e7607.png)
 
-
-
 如果一个会话长时间没有信息变更，该会话在云端最多保存 7 天。如需放宽限制，请 [联系我们](https://console.cloud.tencent.com/workorder/category)。
 
 本地存储的会话和云端存储的会话并不总是一致的，如果用户不主动调用 `deleteConversation` 接口删除本地的会话，该会话就会一直存在。而云端存储的会话最大只会保存 100 条，且对于长时间没有信息变更的会话，云端最多保存 7 天，所以不同的终端本地显示的会话可能会不一样。

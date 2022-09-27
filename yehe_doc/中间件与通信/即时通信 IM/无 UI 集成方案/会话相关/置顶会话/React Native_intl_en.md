@@ -12,7 +12,7 @@ Note that a conversation pinned to the top will always be displayed above others
 
 When `getConversationList` is called to get the conversation list, it will first return the conversation that is pinned to the top and then other conversations. You can check whether a conversation is pinned to the top through the `isPinned` field of the `V2TIMConversation` object.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 // If `isPinned` is `true`, the conversation is pinned to the top; otherwise, it is not.
@@ -23,7 +23,7 @@ conversationManager.pinConversation("conversationID", isPinned);
 ## Notification of the Pinned Status Change
 
 If you have called `addConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#addConversationListener)) in advance to add a conversation listener, you can get the `isPinned` value of the `V2TimConversation` object in `onConversationChanged` and determine whether the pinned status of a conversation has changed.
-Sample code:
+Below is the sample code:
 
 ```javascript
 conversationManager.addConversationListener({

@@ -1,4 +1,4 @@
-## Feature Description
+# Feature Description
 
 A user's conversation list usually contains multiple conversations. If there is a new message in one of the conversations, a badge needs to be displayed in the list cell to indicate the unread count.
 After the user clicks to enter the conversation and goes back to the conversation list, the unread count is cleared, and the badge disappears.
@@ -18,7 +18,7 @@ Below are detailed steps.
 
 Call `getTotalUnreadMessageCount` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#getTotalUnreadMessageCount)) to get the total unread count of all the conversations and update it on the UI.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 // Get the total unread count
@@ -31,7 +31,7 @@ Call `addConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/cla
 
 You can get the changed total unread count in `onTotalUnreadMessageCountChanged` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimConversationListener-1.html#onTotalUnreadMessageCountChanged)) of `V2TIMConversationListener`.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 conversationManager.addConversationListener({
@@ -58,7 +58,7 @@ Below are detailed steps.
 
 Call `markC2CMessageAsRead` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#markC2CMessageAsRead)) to clear the unread count of a specified one-to-one conversation.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 TencentImSDKPlugin.v2TIMManager
@@ -71,7 +71,7 @@ After `markC2CMessageAsRead` is called successfully:
 1. If the caller has called `addConversationListener` to add a conversation listener, it will receive the `onConversationChanged` callback and update the UI.
 2. The sender will receive the `onRecvC2CReadReceipt` callback that contains the timestamp when the conversation unread count is cleared.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 // Receiver
@@ -93,7 +93,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().addAdvancedMsgListener({
 
 Call `markGroupMessageAsRead` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#markGroupMessageAsRead)) to clear the unread count of a specified group conversation.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 TencentImSDKPlugin.v2TIMManager
@@ -103,7 +103,7 @@ TencentImSDKPlugin.v2TIMManager
 
 After `markGroupMessageAsRead` is called successfully, if the caller has called `addConversationListener` to add a conversation listener, it will receive the `onConversationChanged` callback and update the UI.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 conversationManager.addConversationListener({
@@ -117,15 +117,15 @@ conversationManager.addConversationListener({
 
 Call `markAllMessageAsRead` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#markAllMessageAsRead)) to clear the unread count of all the conversations.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 TencentImSDKPlugin.v2TIMManager.getMessageManager().markAllMessageAsRead();
 ```
 
-After `markAllMessageAsRead` is called successfully, if the caller has called `addConversationListener` in advance to add a conversation listener, it will receive the `onConversationChanged` callback and update the UI.
+After `markAllMessageAsRead` is called successfully, if the caller has called `addConversationListener` in advanced to add a conversation listener, it will receive the `onConversationChanged` callback and update the UI.
 
-Sample code:
+Below is the sample code:
 
 ```javascript
 conversationManager.addConversationListener({
