@@ -4,7 +4,7 @@ TencentDB for TcaplusDB supports the following two billing modes:
 | Instance Type | Billing Mode | Use Case |
 |----|----|----|
 |Standard Cluster Edition|Pay-as-You-Go|This billing mode is suitable for testing, auditing, and development environment. You will be charged according to the daily peak traffic. If no request is made to access the database, you only pay the fees of the minimum reserved resources.|
-|Self-deployed Cluster Edition|Pay-as-You-Go|This billing mode is suitable for the production environment. You will be daily charged according to the quantity of access layers and storage layers. You can reduce costs by auto scaling. For example, you can expand cluster capacity before campaigns based on the estimated business peaks, and reduce cluster capacity after campaigns.|
+|Dedicated Cluster Edition|Pay-as-You-Go|This billing mode is suitable for the production environment. You will be daily charged according to the quantity of access layers and storage layers. You can reduce costs by auto scaling. For example, you can expand cluster capacity before campaigns based on the estimated business peaks, and reduce cluster capacity after campaigns.|
 
 ## Settlement Cycle
 Fees incurred on the current day are billed the next day.
@@ -40,7 +40,7 @@ The Standard Cluster Edition adopts the pay-as-you-go billing mode. Daily fees a
 >  - At least 1 GB of disk capacity is reserved for a standard cluster.
 >  -  At least 80 RCUs are reserved for a standard cluster.
 >  -  At least 26 WCUs are reserved for a standard cluster.
->-  The Standard Cluster Edition supports up to 100,000 QPS. Requests beyond this range will be limited. If your business needs more than 100,000 QPS, we recommend that you use the Self-deployed Cluster Edition which provides higher and more stable performance.
+>-  The Standard Cluster Edition supports up to 100,000 QPS. Requests beyond this range will be limited. If your business needs more than 100,000 QPS, we recommend that you use the Dedicated Cluster Edition which provides higher and more stable performance.
 ### Billing sample
 Assume that you create a cluster in the Shanghai region. On a day, the peak read requests are 80 per second, the peak write requests are 26 per second, and the peak of used disk capacity is 0.5 GB.
 The daily fees are calculated as follows:
@@ -56,8 +56,8 @@ Assume that with the business promotion, applications interact more with the clu
 | 1.5 | 1,000 |  300 | 1.5 GB × 0.0052 USD/GB/day + 1,000 RCUs × 0.0019 USD/RCU/day + 300 WCUs × 0.0048 USD/WCU/day = 3.3478 USD |
 
 
-## Billing Rules for Self-deployed Cluster Edition
-The Self-deployed Cluster Edition adopts the pay-as-you-go billing mode. Daily fees are calculated based on the actually used resources at the storage layers and access layers on a day.
+## Billing Rules for Dedicated Cluster Edition
+The Dedicated Cluster Edition adopts the pay-as-you-go billing mode. Daily fees are calculated based on the actually used resources at the storage layers and access layers on a day.
 
 **Daily fees = Daily unit price of access layer × Access layer quantity + Daily unit price of storage layer (which varies with instance type) × Storage layer quantity**
 
