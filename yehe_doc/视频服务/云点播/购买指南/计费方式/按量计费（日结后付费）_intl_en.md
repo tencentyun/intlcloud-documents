@@ -14,7 +14,7 @@ Billable items:
 - **Video acceleration**: Using CDN for acceleration during video playback. This service is charged based on the downstream traffic consumed.
 - **Data retrieval:** Retrieving media from ARCHIVE or DEEP_ARCHIVE. This service is charged based on the retrieval mode and size of the file retrieved.
 - **Media AI:** Using AI capabilities (content analysis and recognition) on media files stored in VOD. This service is charged based on the duration of output files. Each task is billed only once. No fees will be charged if a task fails.
-- **Copyright protection:** Using VOD’s copyright protection capabilities (source tracking based on digital watermarks and DRM encryption) on media stored in VOD. For the billing details, see [Media Encryption and Protection](https://intl.cloud.tencent.com/document/product/266/33965). 
+- **Copyright protection:** Using VOD’s copyright protection capabilities (digital watermarking and DRM encryption) on media stored in VOD. For the billing details, see [Media Encryption and Protection](https://intl.cloud.tencent.com/document/product/266/33965). 
 
 ## Storage[](id:media_storage)
 ### Pricing
