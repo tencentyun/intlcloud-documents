@@ -1,5 +1,12 @@
+<dx-alert infotype="alarm" title="温馨提示">
+腾讯云原生监控 TPS 已于2022年5月16日下线，详情见 [公告](https://intl.cloud.tencent.com/document/product/457/46999)。新的 Prometheus 服务由[TMP](https://intl.cloud.tencent.com/document/product/457/46734) 提供。<br>
+   若您的 Dynamic Scheduler 之前使用 TPS 作为数据源并没有调整，调度器将失效。若您需要使用 TMP 作为数据源，由于 TMP 新增了对接口的鉴权能力，您需要[升级](https://intl.cloud.tencent.com/document/product/457/38705)调度器才能关联 TMP 实例。
+   若您的 Dynamic Scheduler 使用的是自建 Prometheus 服务，TPS 下线对您的组件没有影响，但需要自行保证自建 Prometheus 的稳定性和可靠性。
 
-## 简介
+</dx-alert>
+
+
+## 简介 
 ### 组件介绍
 
 Dynamic Scheduler 是容器服务 TKE 基于 Kubernetes 原生 Kube-scheduler Extender 机制实现的动态调度器插件，可基于 Node 真实负载进行预选和优选。在 TKE 集群中安装该插件后，该插件将与 Kube-scheduler 协同生效，有效避免原生调度器基于 request 和 limit 调度机制带来的节点负载不均问题。
@@ -8,7 +15,6 @@ Dynamic Scheduler 是容器服务 TKE 基于 Kubernetes 原生 Kube-scheduler Ex
 
 
 ### 部署在集群内的 Kubernetes 对象
-
 
 | Kubernetes 对象名称        | 类型               |                   请求资源                   | 所属 Namespace |
 | :----------------------- | :----------------- | :------------------------------------------| ------------- |
@@ -66,7 +72,7 @@ Kubernetes 原生调度器大部分基于 Pod Request 资源进行调度，并�
 
 node-annotator 组件负责定期从监控中拉取节点负载 metric，同步到节点的 annotation。如下图所示：
 >! 组件删除后，node-annotator 生成的 annotation 并不会被自动清除。您可根据需要手动清除。
-
+>
 ![](https://main.qcloudimg.com/raw/1a5ede9cc77fbb797e68f645e908bb33.png)
 
 ### Dynamic-scheduler
@@ -85,13 +91,13 @@ Dynamic-scheduler 是一个 scheduler-extender，根据 node annotation 负载�
 如下图所示，Node1 的打分最高将会被优先调度（其中打分策略和权重可以动态配置，具体请参见本文 [组件参数说明](#parameter)）。
 ![](https://main.qcloudimg.com/raw/a080287111f91ff1cf18ce85bb08cd13.png)
 
-## 组件参数说明
+## 组件参数说明[](id:parameter)
 
 ### Prometheus 数据查询地址
 
 
 >!
->- 为确保组件可以拉取到所需的监控数据、调度策略生效，请按照【[依赖部署](#Dynamic)】>【[Prometheus 规则配置](#Prometheus1)】步骤配置监控数据采集规则。
+>- 为确保组件可以拉取到所需的监控数据、调度策略生效，请按照 **[依赖部署](#Dynamic)**> **[Prometheus 规则配置](#Prometheus1)**步骤配置监控数据采集规则。
 >- 预选和优选参数已设置默认值，如您无额外需求，可直接采用。
 
 
@@ -104,22 +110,22 @@ Dynamic-scheduler 是一个 scheduler-extender，根据 node annotation 负载�
 
 | 预选参数默认值                        | 说明                                                         |
 | ----------------------------- | ------------------------------------------------------------ |
-| 5分钟平均 **CPU** 利用率阈值  | 节点过去5分钟**平均** CPU 利用率超过设定阈值，不会调度 Pod 到该节点上。 |
-| 1小时最大 **CPU** 利用率阈值  | 节点过去1小时**最大** CPU 利用率超过设定阈值，不会调度 Pod 到该节点上。 |
-| 5分钟平均**内存**利用率阈值   | 节点过去5分钟**平均**内存利用率超过设定阈值，不会调度 Pod 到该节点上。 |
-| 1小时最大**内存**利用率阈值 | 节点过去1小时**最大**内存利用率超过设定阈值，不会调度 Pod 到该节点上。 |
+| 5分钟平均 **CPU** 利用率阈值  | 节点过去5分钟**平均** CPU 利用率超过设定阈值，不会调度 Pod 到该节点上。  |
+| 1小时最大 **CPU** 利用率阈值  | 节点过去1小时**最大** CPU 利用率超过设定阈值，不会调度 Pod 到该节点上。  |
+| 5分钟平均**内存**利用率阈值   | 节点过去5分钟**平均**内存利用率超过设定阈值，不会调度 Pod 到该节点上。  |
+| 1小时最大**内存**利用率阈值 | 节点过去1小时**最大**内存利用率超过设定阈值，不会调度 Pod 到该节点上。  |
 
 
 ### 优选参数
 
 | 优选参数默认值              | 说明                                                         |
 | --------------------------- | ------------------------------------------------------------ |
-| 5分钟平均 **CPU** 利用率权重  | 该权重越大，过去5分钟节点**平均** CPU 利用率对节点的评分影响越大。 |
-| 1小时最大 **CPU** 利用率权重  | 该权重越大，过去1小时节点**最大** CPU 利用率对节点的评分影响越大。 |
-| 1天最大 **CPU** 利用率权重    | 该权重越大，过去1天内节点**最大** CPU 利用率对节点的评分影响越大。 |
-| 5分钟平均**内存**利用率权重 | 该权重越大，过去5分钟节点**平均**内存利用率对节点的评分影响越大。 |
-| 1小时最大**内存**利用率权重 | 该权重越大，过去1小时节点**最大**内存利用率对节点的评分影响越大。 |
-| 1天最大**内存**利用率权重   | 该权重越大，过去1天内节点**最大**内存利用率对节点的评分影响越大。 |
+| 5分钟平均 **CPU** 利用率权重  | 该权重越大，过去5分钟节点**平均** CPU 利用率对节点的评分影响越大。  |
+| 1小时最大 **CPU** 利用率权重  | 该权重越大，过去1小时节点**最大** CPU 利用率对节点的评分影响越大。  |
+| 1天最大 **CPU** 利用率权重    | 该权重越大，过去1天内节点**最大** CPU 利用率对节点的评分影响越大。  |
+| 5分钟平均**内存**利用率权重 | 该权重越大，过去5分钟节点**平均**内存利用率对节点的评分影响越大。  |
+| 1小时最大**内存**利用率权重 | 该权重越大，过去1小时节点**最大**内存利用率对节点的评分影响越大。  |
+| 1天最大**内存**利用率权重   | 该权重越大，过去1天内节点**最大**内存利用率对节点的评分影响越大。  |
 
 
 
@@ -127,13 +133,12 @@ Dynamic-scheduler 是一个 scheduler-extender，根据 node annotation 负载�
 
 
 ## 操作步骤
-### 依赖部署
+### 依赖部署[](id:Dynamic)
 
 Dynamic Scheduler 动态调度器依赖于 Node 当前和过去一段时间的真实负载情况来进行调度决策，需通过 Prometheus 等监控组件获取系统 Node 真实负载信息。在使用动态调度器之前，需要部署 Prometheus 等监控组件。在容器服务 TKE 中，您可按需选择采用自建的 Prometheus 监控服务或采用 TKE 推出的云原生监控。
-
 [](id:rules)
 <dx-tabs>
-:::  自建Prometheus监控服务
+::: 自建Prometheus监控服务
 #### 部署 node-exporter 和 prometheus
 
 通过 node-exporter 实现对 Node 指标的监控，用户可以根据业务需求部署 node-exporter 和 prometheus。
@@ -142,7 +147,6 @@ Dynamic Scheduler 动态调度器依赖于 Node 当前和过去一段时间的�
 #### 聚合规则配置[](id:Prometheus1)
 
 在 node-exporter 获取节点监控数据后，需要通过 Prometheus 对原始的 node-exporter 采集数据进行聚合计算。为了获取动态调度器中需要的 `cpu_usage_avg_5m`、`cpu_usage_max_avg_1h`、`cpu_usage_max_avg_1d`、`mem_usage_avg_5m`、`mem_usage_max _avg_1h`、`mem_usage_max_avg_1d` 等指标，需要在 Prometheus 的 rules 规则进行如下配置：
-
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
@@ -154,7 +158,7 @@ spec:
         interval: 30s
         rules:
         - record: cpu_usage_active
-          expr: 100 - (avg by (instance)(irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
+          expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
         - record: mem_usage_active
           expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
       - name: cpu-usage-5m
@@ -186,7 +190,6 @@ spec:
 #### Prometheus 文件配置
 
 1. 上述定义了动态调度器所需要的指标计算的 rules，需要将 rules 配置到 Prometheus 中，参考一般的 Prometheus 配置文件。示例如下：
-
 ```
 global:
       evaluation_interval: 30s
@@ -198,16 +201,18 @@ rule_files:
 2. 将 rules 配置复制到一个文件（例如 dynamic-scheduler.yaml），文件放到上述 prometheus 容器的 `/etc/prometheus/rules/` 目录下。
 3. 加载 Prometheus server，即可从 Prometheus 获取到动态调度器需要的指标。
 
-
->?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
+<dx-alert infotype="explain" title=""> 	
+通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
+</dx-alert>
 
 :::
-::: 云原生监控 Prometheus
-1. 登录容器服务控制台，在左侧菜单栏中选择【[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)】，进入“云原生监控”页面。
-2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。
-3. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。
-4. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#rules) 中的“聚合规则配置”相同。
-
+::: Prometheus 监控服务
+1. 登录容器服务控制台 ，在左侧菜单栏中选择 [**Prometheus 监控**](https://console.cloud.tencent.com/tke2/prometheus2)，进入“Prometheus 监控”页面。
+2. 创建与 Cluster 处于同一 VPC 下的 [Prometheus 实例](https://intl.cloud.tencent.com/document/product/457/46739)，并 [关联集群](https://intl.cloud.tencent.com/document/product/457/46731)。如下图所示：
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/35bded08ab55e9dcc2192be19c51a41c.png)
+2. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。如下图所示：
+   ![](https://qcloudimg.tencent-cloud.cn/raw/2bbbfee33fe7464e97ed3d7fd3b4aa7a.png)
+3. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#rules) 中的“聚合规则配置”相同。如下所示：
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
@@ -254,11 +259,11 @@ spec:
 
 
 
-
 ### 安装组件
 
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster)，选择左侧导航栏中的**集群**。
+
+1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2/cluster)，选择左侧导航栏中的**集群**。
 2. 在“集群管理”页面单击目标集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的**组件管理**，进入 “组件列表” 页面。
 4. 在“组件列表”页面中选择**新建**，并在“新建组件”页面中勾选 DynamicScheduler（动态调度器插件）。

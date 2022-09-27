@@ -1,45 +1,49 @@
 ## Overview
 
-Lighthouse allows you to reset the instance login password for the following scenarios:
-- You log in to an instance remotely on a local computer for the first time.
- - You use remote login software (or SSH) to log in to a Linux instance for the first time and need to perform this operation to reset the user (root) password.
- - Before logging in to a Windows instance for the first time, if you select **Random Password** for **Login Methods** during instance creation, we recommend you perform this operation to customize the admin account (e.g., `Administrator`) password.
-- If you forgot your instance login password, you can reset it in the console.
+You can reset the passwords Lighthouse instances in the following scenarios:
+- Log in to an instance remotely on a local computer for the first time.
+ - Reset the user (root) password before the first remote login or SSH key login of a Linux instance.
+ - Reset the password of admin account (e.g., `Administrator`) with a custom password. It's recommended if you password.
+- Reset the password if you have forgotten your instance login password.
 
 ## Notes
-- You can only reset the login passwords of shutdown instances.
+- You can only reset the login passwords when the instance is shut down.
 - Running instances will be shut down when you reset their login passwords. To avoid service interruptions and data losses, plan ahead and reset passwords during off-peak hours.
-- Instances created with Ubuntu images under the `root` username disable to log in to the instance via password by default. To enable it, please refer to [How to log in to an instance with the root user on Ubuntu systems?](https://intl.cloud.tencent.com/document/product/1103/41257).
-- To improve the instance security, we recommend you use an SSH key pair to log in to Linux instances. For more information, see [Managing Keys](https://intl.cloud.tencent.com/document/product/1103/41392).
+- For instances created with Ubuntu images, password login is disabled for the `root` account by default. To enable it, see [How do I log in to an instance as the root user on Ubuntu?](https://intl.cloud.tencent.com/document/product/1103/41257).
+- To improve the instance security, we recommend you use an SSH key pair to log in to Linux instances. For more information, see [Managing SSH Keys](https://intl.cloud.tencent.com/document/product/1103/41392).
 
 ## Directions
 
-1. Log in to the [Lighthouse console](https://console.cloud.tencent.com/lighthouse/instance/index).
-2. On the **Instances** page, click the card of the target instance.
-3. Enter the instance details page and click **Reset password** in the top-right corner.
-4. In the pop-up window, the password resetting steps vary by instance status as follows:
+1. Log in to the [Lighthouse console](https://console.cloud.tencent.com/lighthouse/instance/index) and open the window to reset the instance password in the following way:
+ - In the instance card, select **More** > **Reset password** in the top-right corner.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/8d0219d3e7a2369848339cce1c265bab.png)
+ - Select the instance card to enter the instance details page, and click **Reset password** in the top-right corner.
+![](https://qcloudimg.tencent-cloud.cn/raw/14aa88a4c25d71c0124d3bf578e0b39a.png)
+2. Reset the password according to the instance status.
 <dx-tabs>
 ::: Running instance
-If the instance whose password needs to be reset is Running, perform the following operations:
- 1. Confirm the username for which to reset the password, enter the **New password**, re-enter the new password in the **Confirm password** field, and click **Next**.
+For instances in Running status, do the following:
+ 1. Confirm the username, enter the **New password**, re-enter the new password in the **Confirm password** field, and click **Next**.
  <dx-alert infotype="notice" title="">
-    The **Username** defaults to **System default**, and the default system username is used, such as `Administrator` for Windows, `ubuntu` for Ubuntu, and `root` for other Linux distributions. You can select **Specified user name** and enter the username.
-    </dx-alert>
-    ![](https://qcloudimg.tencent-cloud.cn/raw/d2e31e20f88cd7dc9167c2cdb77af60d.png)
- 2. Select **Agree to a forced shutdown** and click **Reset password** as shown below:
-     ![](https://qcloudimg.tencent-cloud.cn/raw/c7da2fb6683367bae3e1b8cf4aec38c8.png)
-     :::
-     ::: Shutdown instance
-     If you need to reset the password of an instance in Shutdown status, perform the following operations:
- 1. Confirm the username for which to reset the password, enter the **New password**, re-enter the new password in the **Confirm password** field, and click **Next**.
-	<dx-alert infotype="notice" title="">
-	The **Username** defaults to **System default**, and the default system username is used, such as `Administrator` for Windows, `ubuntu` for Ubuntu, and `root` for other Linux distributions. You can select **Specified user name** and enter the username.
-	</dx-alert>
-	  ![](https://qcloudimg.tencent-cloud.cn/raw/9604f84907bd4154d96e2eeb0c9fe1e8.png)
- 2. Click **Reset password** as shown below:
-	  ![](https://qcloudimg.tencent-cloud.cn/raw/fe680e817ae643c1ce3b12a6b454f09d.png)
-	  :::
-	  </dx-tabs>
+ The **Username** defaults to **System default**, and the default system username is used, such as `Administrator` for Windows, `ubuntu` for Ubuntu, and `root` for other Linux distributions. You can also select **Specified user name** and enter the username.
+ </dx-alert>
+ ![](https://qcloudimg.tencent-cloud.cn/raw/fa5f8a3bd19e1e27dd39bf7376a5cd37.png)
+ 2. Select **Agree to a forced shutdown** and click **OK**.
+![](https://qcloudimg.tencent-cloud.cn/raw/08247201a8b6a9d5ef3352ab389c2fc5.png)
+
+:::
+::: Shutdown instance
+For instances in Shutdown status, do the following:
+ 1. Confirm the username, enter the **New password**, re-enter the new password in the **Confirm password** field, and click **Next**.
+<dx-alert infotype="notice" title="">
+The **Username** defaults to **System default**, and the default system username is used, such as `Administrator` for Windows, `ubuntu` for Ubuntu, and `root` for other Linux distributions. You can also select **Specified user name** and enter the username.
+</dx-alert>
+![](https://qcloudimg.tencent-cloud.cn/raw/440daaa933e5af20301b5ccff99b41f5.png)
+ 2. Click **OK**.
+![](https://qcloudimg.tencent-cloud.cn/raw/57f83817dfaa298c51d280c64ce04099.png)
+
+:::
+</dx-tabs>
 
 
 

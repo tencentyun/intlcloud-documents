@@ -2,11 +2,10 @@
 A targeted group message is a message sent to specified members in a group, which cannot be received by other group members.
 
 > ?
-> 1. This feature is supported only by the SDK for Unity on v1.7.7 or later.
-> 2. To use this feature, you need to purchase the Ultimate edition.
-> 3. The original message object used to create a targeted group message cannot be a group @ message.
-> 4. The targeted group message feature is unavailable for communities (Community) and audio-video groups (AVChatRoom).
-> 5. By default, targeted group messages are excluded from the unread count of a group conversation.
+> 1. To use this feature, you need to purchase the Ultimate edition.
+> 2. The original message object used to create a targeted group message cannot be a group @ message.
+> 3. The targeted group message feature is unavailable for communities (Community) and audio-video groups (AVChatRoom).
+> 4. By default, targeted group messages are excluded from the unread count of a group conversation.
 
 ## Sending a Targeted Group Message
 A targeted group message is a message sent to specified members in a group, which cannot be received by unspecified group members. It can be implemented in the following steps:
@@ -36,7 +35,7 @@ TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_Group,
 
 ## Receiving a Targeted Group Message
 By default, targeted group messages are excluded from the unread count of a group conversation.
-A targeted group message can be received in the same way as an ordinary message. For detailed directions, see Receiving Message.
+A targeted group message can be received in the same way as an ordinary message. For detailed directions, see [Receiving Message](https://www.tencentcloud.com/document/product/1047/48573).
 
 
 

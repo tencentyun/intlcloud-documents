@@ -4,23 +4,23 @@ This document provides an overview of APIs and SDK code samples for template sea
 
 | API | Description |
 | ------------- |  ---------------------- |
-| [Searching for animated image templates](https://cloud.tencent.com/document/product/436/54027) | Searches for animated image templates. |
-| [Searching for screenshot templates](https://cloud.tencent.com/document/product/436/54031) | Searches for screenshot templates. |
-| [Searching for watermark templates](https://cloud.tencent.com/document/product/436/54035) | Searches for watermark templates. |
-| [Searching for transcoding templates](https://cloud.tencent.com/document/product/436/54039) | Searches for transcoding templates. |
-| [Searching for splicing templates](https://cloud.tencent.com/document/product/436/54043) | Searches for splicing templates. |
-| [Searching for top speed codec transcoding templates](https://cloud.tencent.com/document/product/436/58309) | Searches for top speed codec transcoding templates. |
-| [Searching for video montage templates](https://cloud.tencent.com/document/product/436/58312) | Searches for video montage templates. |
-| [Searching for voice/sound separation templates](https://cloud.tencent.com/document/product/436/58317) | Searches for voice/sound separation templates. |
-| [Searching for video enhancement templates](https://cloud.tencent.com/document/product/436/60747) | Searches for video enhancement templates. |
-| [Searching for image processing templates](https://cloud.tencent.com/document/product/436/67227) | Searches for image processing templates. |
-| [Searching for super resolution templates](https://cloud.tencent.com/document/product/436/67168) | Searches for super resolution templates. |
+| [Searching for animated image templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for animated image templates. |
+| [Searching for screenshot templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for screenshot templates. |
+| [Searching for watermark templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for watermark templates. |
+| [Searching for transcoding templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for transcoding templates. |
+| [Searching for splicing templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for splicing templates. |
+| [Searching for top speed codec transcoding templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for top speed codec transcoding templates. |
+| [Searching for video montage templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for video montage templates. |
+| [Searching for voice/sound separation templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for voice/sound separation templates. |
+| [Searching for video enhancement templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for video enhancement templates. |
+| Searching for image processing templates | Searches for image processing templates. |
+| [Searching for super resolution templates](https://intl.cloud.tencent.com/document/product/436/49199) | Searches for super resolution templates. |
 
 ## Searching for Template
 
 #### Feature description
 
-This API is used to search for templates of diverse types, such as [Animation](https://cloud.tencent.com/document/product/436/54027), [Snapshot](https://cloud.tencent.com/document/product/436/54031), [Watermark](https://cloud.tencent.com/document/product/436/54035), [Transcode](https://cloud.tencent.com/document/product/436/54039), [Concat](https://cloud.tencent.com/document/product/436/54043), [HighSpeedHd](https://cloud.tencent.com/document/product/436/58309), [VideoMontage](https://cloud.tencent.com/document/product/436/58312), [VoiceSeparate](https://cloud.tencent.com/document/product/436/58317), [VideoProcess](https://cloud.tencent.com/document/product/436/60747), [PicProcess](https://cloud.tencent.com/document/product/436/67227), and [SuperResolution](https://cloud.tencent.com/document/product/436/67168).
+This API is used to search for templates of diverse types, such as [Animation](https://intl.cloud.tencent.com/document/product/436/49199), [Snapshot](https://intl.cloud.tencent.com/document/product/436/49199), [Watermark](https://intl.cloud.tencent.com/document/product/436/49199), [Transcode](https://intl.cloud.tencent.com/document/product/436/49199), [Concat](https://intl.cloud.tencent.com/document/product/436/49199), [HighSpeedHd](https://intl.cloud.tencent.com/document/product/436/49199), [VideoMontage](https://intl.cloud.tencent.com/document/product/436/49199), [VoiceSeparate](https://intl.cloud.tencent.com/document/product/436/49199), [VideoProcess](https://intl.cloud.tencent.com/document/product/436/49199), PicProcess, and [SuperResolution](https://intl.cloud.tencent.com/document/product/436/49199).
 
 #### Method prototype
 

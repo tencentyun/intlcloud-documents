@@ -5,11 +5,7 @@ Conditions are part of the access policy language. A complete condition includes
 - Condition operator: Specifies the condition determination method.
 - Condition value: Specifies the value of the condition key.
 
-For more information, see [Conditions](https://intl.cloud.tencent.com/document/product/598/10608).
-
->? 
->- When using condition keys to write a bucket policy, follow the principle of least privilege, add the corresponding condition keys only to applicable requests (actions), and avoid using the \* wildcard when specifying the actions. Using the wildcard will cause the requests to fail.
->- When you create a policy in the CAM console, pay attention to the syntax format. The syntax elements of `version`, `principal`, `statement`, `effect`, `action`, `resource`, and `condition` must all begin with a letter in the same letter case.
+For more information, see [Conditions](https://intl.cloud.tencent.com/document/product/598/10608) of Access Management.
 
 
 ## Sample Condition
@@ -24,19 +20,19 @@ In the following sample bucket policy, the condition specifies that the `cos:Put
     "version":"2.0",
     "statement":[
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"allow",
-            "action":[
+            "Effect":"allow",
+            "Action":[
                 "name/cos:PutObject"
             ],
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "condition":{
+            "Condition":{
                 "ip_equal":{
                     "qcs:ip":[
                         "10.217.182.3/24",
@@ -52,7 +48,7 @@ In the following sample bucket policy, the condition specifies that the `cos:Put
 ## Condition Keys Supported by COS
 
 
->? The condition keys `qcs:ip`, `vpc:requester_vpc`, and `cos:content-type` can be used in all regions. The rest condition keys currently can be used in only the Chengdu, Guangzhou, Shanghai, Jakarta, São Paulo, Virginia, Tokyo, and Seoul regions, and will be supported in other regions in the future.
+>? The condition keys `qcs:ip`, `vpc:requester_vpc`, and `cos:content-type` can be used in all regions. The rest condition keys currently can be used in only the Chengdu, Guangzhou, Shanghai, Jakarta, Sao Paulo, Virginia, Tokyo, and Seoul regions, and will be supported in other regions in the future.
 >
 
 
@@ -77,7 +73,7 @@ Condition keys applicable to all requests are `qcs:ip`, `qcs:vpc`, and `cos:secu
 
 Because different requests have different request headers (`Header`) and request parameters (`Param`), condition keys from request headers and request parameters are applicable only to requests that contain such request headers or request parameters.
 
-For example, the `cos:content-type` condition key is applicable to upload requests (such as `PutObject`) that need to use the `Content-Type` request header, while the `cos:response-content-type` condition key is applicable only to `GetObject` requests because only `GetObject` requests support the `response-content-type` request parameter.
+For example, the condition key `cos:content-type` is applicable to upload requests (such as `PutObject`) that need to use the request header `Content-Type`, while the condition key `cos:response-content-type` is applicable only to `GetObject` requests because only `GetObject` requests support the request parameter `response-content-type`.
 
 The table below lists the condition keys from request headers and request parameters and the applicable requests.
 
@@ -85,13 +81,12 @@ The table below lists the condition keys from request headers and request parame
 | Condition Key   | Applicable Request | Check Request Header or Request Parameter | Type |
 |:----------|:----------|:----------|:----------|
 |[cos:x-cos-storage-class](https://intl.cloud.tencent.com/document/product/436/46206#x-cos-storage-class) |PutObject<br>PostObject<br>InitiateMultipartUpload<br>AppendObject | Request header: `x-cos-storage-class` |String|
-|[cos:versionid](https://intl.cloud.tencent.com/document/product/436/46206#versionid) |GetObject<br>DeleteObject<br>PostObjectRestore<br>PutObjectTagging<br>GetObjectTagging<br>DeleteObjectTagging<br>HeadObject | Request parameter: versionid |String|
+|[cos:versionid](https://intl.cloud.tencent.com/document/product/436/46206#versionid) |GetObject<br>DeleteObject<br>PostObjectRestore<br>PutObjectTagging<br>GetObjectTagging<br>DeleteObjectTagging<br>HeadObject | Request parameter: `versionId` |String|
 |[cos:prefix](https://intl.cloud.tencent.com/document/product/436/46206#prefix) |GetBucket (List Objects)<br>GET Bucket Object versions<br>List Multipart Uploads<br>ListLiveChannels | Request parameter: `prefix` |String|
 |[cos:x-cos-acl](https://intl.cloud.tencent.com/document/product/436/46206#x-cos-acl) |PutObject<br>PostObject<br>PutObjectACL<br>PutBucket<br>PutBucketACL<br>AppendObject<br>Initiate Multipart Upload | Request header: `x-cos-acl` |String|
 |[cos:content-length](https://intl.cloud.tencent.com/document/product/436/46206#content-length) | This request header has wide application, typically requests with request bodies. | Request header: `Content-Length` |Numeric|
 |[cos:content-type](https://intl.cloud.tencent.com/document/product/436/46206#content-type) | This request header has wide application, typically requests with request bodies. | Request header: `Content-Type` |String|
 |[cos:response-content-type](https://intl.cloud.tencent.com/document/product/436/46206#response-content-type) |GetObject | Request parameter: `response-content-type` |String|
-|[cos:x-cos-forbid-overwrite](https://intl.cloud.tencent.com/document/product/436/46206#x-cos-forbid-overwrite) |PutObject<br>PostObject<br>InitMultipartUpload<br>CompleteMultipartUpload | Request header: `x-cos-forbid-overwrite` |String|
 
 
 
@@ -124,28 +119,28 @@ You can add `_if_exist` to the end of all the preceding condition operators to f
 
 ### Sample 1: Allowing downloading objects of a specified version
 
-In the bucket policy in this example, `Effect` is `allow`, allowing `GetObject` requests where the `versionid` request parameter is `MTg0NDUxNTc1NjIzMTQ1MDAwODg`. According to the `allow` authorization policy, if the condition is met (`True`), the request will be allowed; if the condition is not met (`False`), the request will not be allowed and will fail.
+In the bucket policy in this example, `Effect` is `allow`, allowing `GetObject` requests where the request parameter `versionid` is `MTg0NDUxNTc1NjIzMTQ1MDAwODg`. According to the `allow` authorization policy, if the condition is met (`True`), the request will be allowed; if the condition is not met (`False`), the request will not be allowed and will fail.
 
 ```
 {
     "version":"2.0",
-    "statement":[
+    "Statement":[
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"allow",
-            "action":[
+            "Effect":"allow",
+            "Action":[
                 "name/cos:GetObject"
             ],
-            "condition":{
+            "Condition":{
                 "string_equal":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -159,35 +154,35 @@ The table below lists the condition meeting and request allowing details of the 
 |:----------|:----------|:----------|:----------|
 |string_equal | Without `versionid`. |FALSE | No |
 |string_equal_if_exist | Without `versionid`. |TRUE | Yes |
-|string_equal | With `versionid`, where the value is specified. |TRUE | Yes |
-|string_equal_if_exist | With `versionid`, where the value is specified. |TRUE | Yes |
-|string_equal | With `versionid`, where the value is not specified. |FALSE | No |
-|string_equal_if_exist | With `versionid`, where the value is not specified. |FALSE | No |
+|string_equal | With `versionid`, whose value is specified. |TRUE | Yes |
+|string_equal_if_exist | With `versionid`, whose value is specified. |TRUE | Yes |
+|string_equal | With `versionid`, whose value is not specified. |FALSE | No |
+|string_equal_if_exist | With `versionid`, whose value is not specified. |FALSE | No |
 
 ### Sample 2: Denying downloading objects of a specified version
 
-In the bucket policy in this example, `Effect` is `deny`, disallowing `GetObject` requests where the `versionid` request parameter is `MTg0NDUxNTc1NjIzMTQ1MDAwODg`. According to the `deny` authorization policy, if the condition is met (`True`), the request will fail; if the condition is not met (`False`), the request will not be denied.
+In the bucket policy in this example, `Effect` is `deny`, disallowing `GetObject` requests where the request parameter `versionid` is `MTg0NDUxNTc1NjIzMTQ1MDAwODg`. According to the `deny` authorization policy, if the condition is met (`True`), the request will fail; if the condition is not met (`False`), the request will not be denied.
 
 ```
 {
     "version":"2.0",
-    "statement":[
+    "Statement":[
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"deny",
-            "action":[
+            "Effect":"deny",
+            "Action":[
                 "name/cos:GetObject"
             ],
-            "condition":{
+            "Condition":{
                 "string_equal":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -201,10 +196,10 @@ The table below lists the condition meeting and request denial details of the co
 |:----------|:----------|:----------|:----------|
 |string_equal | Without `versionid`. |FALSE | No |
 |string_equal_if_exist | Without `versionid` |TRUE | Yes |
-|string_equal | With `versionid`, where the value is specified. |TRUE | Yes |
-|string_equal_if_exist | With `versionid`, where the value is specified. |TRUE | Yes |
-|string_equal | With `versionid`, where the value is not specified. |FALSE | No |
-|string_equal_if_exist | With `versionid`, where the value is not specified. |FALSE | No |
+|string_equal | With `versionid`, whose value is specified. |TRUE | Yes |
+|string_equal_if_exist | With `versionid`, whose value is specified. |TRUE | Yes |
+|string_equal | With `versionid`, whose value is not specified. |FALSE | No |
+|string_equal_if_exist | With `versionid`, whose value is not specified. |FALSE | No |
 
 
 ## Notes
@@ -215,7 +210,7 @@ Special characters in request parameters all require URL encoding, and therefore
 
 ### Principle of least privilege and no \* wildcard
 
-When using condition keys, comply with the principle of least privilege, add only actions for which you want to set permissions, and avoid using the \* wildcard. Misuse of the \* wildcard may cause some requests to fail. In the sample below, requests other than `GetObject` do not support using the `response-content-type` request parameter.
+When using condition keys, comply with the principle of least privilege, add only actions for which you want to set permissions, and avoid using the \* wildcard. Misuse of the \* wildcard may cause some requests to fail. In the sample below, requests other than `GetObject` do not support using the request parameter `response-content-type`.
 
 For "deny + string_equal_if_exist", if the operator does not exist in the request, it is considered `true` by default. Therefore, when you initiate requests such as `PutObject` and `PutBucket`, the `deny` statement will be met and the requests will be denied.
 
@@ -224,40 +219,40 @@ For "allow + string_equal", if the condition key does not exist in the request, 
 ```
 {
     "version":"2.0",
-    "statement":[
+    "Statement":[
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"allow",
-            "action":[
+            "Effect":"allow",
+            "Action":[
                 "*"
             ],
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "condition":{
+            "Condition":{
                 "string_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"deny",
-            "action":[
+            "Effect":"deny",
+            "Action":[
                 "*"
             ],
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "condition":{
+            "Condition":{
                 "string_not_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
@@ -278,40 +273,40 @@ However, if you use condition operators in this way, you will not be able to res
 ```
 {
     "version":"2.0",
-    "statement":[
+    "Statement":[
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"allow",
-            "action":[
+            "Effect":"allow",
+            "Action":[
                 "*"
             ],
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "condition":{
+            "Condition":{
                 "string_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"deny",
-            "action":[
+            "Effect":"deny",
+            "Action":[
                 "*"
             ],
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "condition":{
+            "Condition":{
                 "string_not_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
@@ -333,38 +328,38 @@ Other requests are not affected by the policy in this example, and can be author
     "version":"2.0",
     "statement":[
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"allow",
-            "action":[
+            "Effect":"allow",
+            "Action":[
                 "name/cos:GetObject"
             ],
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "condition":{
+            "Condition":{
                 "string_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "principal":{
+            "Principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "effect":"deny",
-            "action":[
+            "Effect":"deny",
+            "Action":[
                 "name/cos:GetObject"
             ],
-            "resource":[
+            "Resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "condition":{
+            "Condition":{
                 "string_not_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }

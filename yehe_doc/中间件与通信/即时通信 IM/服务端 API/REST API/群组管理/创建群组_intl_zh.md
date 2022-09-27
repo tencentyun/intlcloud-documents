@@ -1,6 +1,7 @@
 ## 功能说明
 App 管理员可以通过该接口创建群组。
 
+
 ## 接口调用说明
 ### 适用的群组类型
 
@@ -27,7 +28,7 @@ App 管理员可以通过该接口创建群组。
 ### 请求 URL 示例
 
 ```https
-https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 ### 请求参数说明
@@ -36,7 +37,7 @@ https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` <li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`|
 | v4/group_open_http_svc/create_group  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -162,6 +163,16 @@ https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=
 }
 ```
 
+- **仅包含支持话题参数形式**
+创建群组，并指定其类型为社群且支持话题。
+```json
+{
+    "Type": "Community", 	//群组类型 (必填)
+    "Name": "TestCommunityGroup", //群组名称 (必填)
+    "SupportTopic": 1			//是否支持话题选项, 1代表支持,0代表不支持
+}
+```
+
 - **ALL IN ONE**
 ```json
 {
@@ -229,11 +240,12 @@ https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=
 | Introduction | String | 选填 |群简介，最长240字节，使用 UTF-8 编码，1个汉字占3个字节 |
 | Notification | String | 选填 |群公告，最长300字节，使用 UTF-8 编码，1个汉字占3个字节 |
 | FaceUrl | String | 选填 |群头像 URL，最长100字节 |
-| MaxMemberCount | Integer | 选填 |最大群成员数量，缺省时的默认值：付费套餐包上限，例如体验版是20，如果升级套餐包，需按照修改群基础资料修改这个字段 |
+| MaxMemberCount | Integer | 选填 |最大群成员数量，缺省时的默认值：付费套餐上限，例如体验版是20，如果升级套餐，需按照修改群基础资料修改这个字段 |
 | ApplyJoinOption | String | 选填 |申请加群处理方式。包含 FreeAccess（自由加入），NeedPermission（需要验证），DisableApply（禁止加群），不填默认为 NeedPermission（需要验证）<br>仅当创建支持申请加群的 [群组](https://intl.cloud.tencent.com/document/product/1047/33529#.E5.8A.A0.E7.BE.A4.E6.96.B9.E5.BC.8F.E5.B7.AE.E5.BC.82) 时，该字段有效 |
 | AppDefinedData | Array | 选填 |群组维度的自定义字段，默认情况是没有的，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
 | MemberList | Array | 选填 |初始群成员列表，最多100个；成员信息字段详情请参阅 [群成员资料](https://intl.cloud.tencent.com/document/product/1047/33529#SelfInfoFilter) |
 | AppMemberDefinedData | Array | 选填 |群成员维度的自定义字段，默认情况是没有的，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
+| SupportTopic | Integer | 选填 |是否支持话题选项，此字段只针对社群有效|
 
 ### 应答包体示例
 - **基础形式、仅包含群基础信息、仅包含群成员信息和仅包含自定义信息**
@@ -243,6 +255,18 @@ https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=
     "ErrorInfo": "",
     "ErrorCode": 0,
     "GroupId": "@TGS#2J4SZEAEL"
+}
+```
+
+- **仅包含支持话题参数形式**
+```json
+{
+    "ActionStatus": "OK",
+    "ErrorInfo": "",
+    "ErrorCode": 0,
+    "GroupId": "@TGS#_@TGS#cRDH3HIM62CP",
+    "HugeGroupFlag": 0,
+    "Type": "Community"
 }
 ```
 - **自定义群组 ID 和 ALL IN ONE**
@@ -286,7 +310,7 @@ https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=
 | 10036 | 创建的音视频聊天室数量超过限制，请先解散部分音视频聊天室或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
 | 10037 |请求中指定了群主（Owner_Account），但该群主创建和加入的群组数量超过了限制。请该群主退出部分群组或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
 | 10038 | 请求包中导入的成员数量超过了限制，请减少`MemberList`参数中导入的成员数量或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
-|10058|表示体验版超过100个群的限制，需要购买套餐包提升建群数量限制。|
+|10058|表示体验版超过100个群的限制，需要购买套餐提升建群数量限制。|
 
 ## 接口调试工具
 

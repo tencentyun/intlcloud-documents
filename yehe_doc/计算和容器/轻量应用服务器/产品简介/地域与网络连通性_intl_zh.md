@@ -5,12 +5,32 @@
  - 每个地域可包含多个可用区。
  - 不同地域的轻量应用服务器间默认内网不互通。
 
+
+<dx-alert infotype="explain" title="<b>如何选择地域？</b>">
+在新建轻量应用服务器实例时，您可结合以下因素选择所处的地域，**注意实例创建成功后不支持更换地域**。
+ - **业务诉求**：为了保障公网访问质量，减小公网丢包和延迟，建议选择最靠近您客户所在的地域。
+ - **实例套餐**：不同地域下可选择的实例套餐配置不同，您可基于需要部署运行的应用对服务器 CPU、内存、系统盘、公网带宽和月流量消耗的需求，选择适当的实例套餐。具体实例套餐配置请参见 [基础套餐定价](https://intl.cloud.tencent.com/document/product/1103/47794)。
+ - **成本预算**：
+  - 中国内地地域和非中国内地地域的实例套餐配置和价格不同。
+  - 中国港澳台地区和其他国家地域下 Linux 与 Windows 实例套餐价格不同。
+    您可结合预算及需求进行选择，具体费用信息请参见 [基础套餐定价](https://intl.cloud.tencent.com/document/product/1103/47794)。
+ - **跨境网络质量**：对于中国港澳台地区和其他国家地域的轻量应用服务器，由于从中国内地跨境访问时受运营商网络线路影响可能出现较大延迟和丢包（非跨境访问时通常无影响）。
+</dx-alert>
+
+
 ## 可用区
 - **简介**
 可用区（Zone）指每个地域内电力和网络相互独立的物理区域。
 同一地域下的可用区通过低时延的内网链路相连，不同可用区间的实例可通过内网互访。同地域下不同可用区间可实现故障隔离，若您的应用对于容灾能力有极高的要求，则可将不同实例部署在同一地域下的不同可用区内。但需注意不同实例跨可用区通信的时延较同一可用区会有一定增加。
 - **相关特性**
- 同一地域不同可用区的轻量应用服务器间默认内网互通。
+ 同账号下同一地域不同可用区的轻量应用服务器间默认内网互通。
+
+<dx-alert infotype="explain" title="<b>如何选择可用区？</b>">
+推荐您选择“随机分配”可用区，您也可按照实际需求指定可用区。**注意实例创建成功后不支持更换可用区**。
+</dx-alert>
+
+
+
 
 
 ## 支持地域及可用区
@@ -19,14 +39,15 @@
 </dx-alert>
 
 ####  中国港澳台地区
-香港：香港二区、香港三区。
+香港：香港一区、香港二区、香港三区。
 
 ####  其他国家和地区
-- 新加坡：新加坡一区、新加坡三区。
+- 新加坡：新加坡一区、新加坡二区、新加坡三区。
 - 东京：东京一区、东京二区。
 - 硅谷：硅谷一区、硅谷二区。
 - 莫斯科：莫斯科一区。
 - 法兰克福：法兰克福一区、法兰克福二区。
+- 多伦多：多伦多一区。
 - 孟买：孟买一区、孟买二区。
 
 
@@ -40,21 +61,34 @@
 <table>
 <tbody>
 <tr>
-<th style="width: 37%;">场景</th>
+<th style="width: 37%;" colspan=2>场景</th>
 <th style=" width: 32%;">是否默认支持内网连通</th><th style=" width: 31%;">通过云联网实现内网连通</th>
 </tr>
 <tr>
-<td>同账号下同一地域内的不同轻量应用服务器互访    </td>
-<td><b>是</b>，请注意放通实例防火墙的对应端口，管理防火墙</a>。</td>
+<td rowspan=2>同账号<br>同地域</td>
+<td>不同轻量应用服务器互访    </td>
+<td><b>是</b></td>
 <td>-</td>
 </tr>
 <tr>
-<td>同账号下不同地域内的不同轻量应用服务器互访 </td>
+<td>轻量应用服务器连接轻量数据库服务</td>
+<td><b>是</b></td>
+<td>-</td>
+</tr>
+<tr>
+<td rowspan=2>同账号<br>跨地域</td>
+<td>不同轻量应用服务器互访 </td>
 <td>否</td>
 <td>-</td>
 </tr>
 <tr>
-<td>不同账号下的两个轻量应用服务器互访 </td>
+<td>轻量应用服务器连接轻量数据库服务</td>
+<td>否</td>
+<td>-</td>
+</tr>
+<tr>
+<td>不同账号</td>
+<td>轻量应用服务器互访 </td>
 <td>否</td>
 <td>-</td>
 </tr>
@@ -71,13 +105,13 @@
 <tr>
 <td>轻量应用服务器访问云服务器 CVM</td>
 <td>否</td>
-<td><b>支持</a>。</td>
+<td><b>支持</b>，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/1103/41396">内网互联</a>。</td>
 </tr>
 <tr>
 <td>轻量应用服务器访问对象存储 COS（同地域）</td>
 <td>
-<b>是</b>，详情请参见对象存储 COS 的 <a href="https://intl.cloud.tencent.com/document/product/436/6224#private-network-and-public-network-access" target="_blank">内网和外网访问</a>。
-<br>您可参考 <a href="https://intl.cloud.tencent.com/document/product/1103/41257#how-do-i-upload-local-files-to-a-lighthouse-instance.3F" target="_blank">常见问题</a>，判断轻量应用服务器是否使用内网访问对象存储 COS。
+<b>是</b>，详情请参见对象存储 COS 的 <a href="https://intl.cloud.tencent.com/document/product/436/6224" target="_blank">内网和外网访问</a>。
+<br>您可参考 <a href="https://intl.cloud.tencent.com/document/product/1103/41257" target="_blank">常见问题</a>，判断轻量应用服务器是否使用内网访问对象存储 COS。
 </td>
 <td>- </td>
 </tr>
@@ -89,12 +123,12 @@
 <tr>
 <td>轻量应用服务器访问云数据库</td>
 <td>否</td>
-<td><b>支持</a>。</td>
+<td><b>支持</b>，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/1103/41396">内网互联</a>。</td>
 </tr>
 <tr>
 <td>轻量应用服务器挂载文件存储 CFS</td>
 <td>否</td>
-<td><b>支持</a>。</td>
+<td><b>支持</b>，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/1103/41396">内网互联</a>。</td>
 </tr>
 <tr>
 <td>轻量应用服务器连接负载均衡 CLB</td>
@@ -111,3 +145,18 @@
 
 
 
+### 公网连通性说明
+* **中国内地地域**：提供稳定的 BGP 网络访问能力，可保障中国内地各个区域访问轻量应用服务器时拥有稳定、低延迟的网络质量。
+* **中国港澳台地区和其他国家地域**：提供的公网带宽主要面向非中国内地的用户，从中国内地跨境访问轻量应用服务器时受运营商网络线路影响可能出现较大延迟和丢包（非跨境访问时通常无影响）。
+
+
+<dx-alert infotype="explain" title="">
+建议您选择最靠近您的目标客户的地域，以降低访问延迟，获取更稳定的网络质量保障。
+</dx-alert>
+
+
+
+
+<style>
+.params{margin-bottom:0px !important}
+</style>

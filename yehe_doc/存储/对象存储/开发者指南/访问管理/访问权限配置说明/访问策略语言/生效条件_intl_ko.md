@@ -91,7 +91,7 @@ COS는 IP, VPC 및 HTTPS를 포함한 모든 요청에 적용 가능한 조건 �
 |[cos:content-length](https://intl.cloud.tencent.com/document/product/436/46206#content-length) |이 요청 헤더는 적용 가능한 범위가 넓으며 일반적으로 요청 본문이 있는 요청 |요청 헤더: Content-Length |Numeric|
 |[cos:content-type](https://intl.cloud.tencent.com/document/product/436/46206#content-type) |이 요청 헤더는 적용 가능한 범위가 넓으며 일반적으로 요청 본문이 있는 요청 |요청 헤더: Content-Type |String|
 |[cos:response-content-type](https://intl.cloud.tencent.com/document/product/436/46206#response-content-type) |GetObject |요청 매개변수: response-content-type |String|
-|[cos:x-cos-forbid-overwrite](https://intl.cloud.tencent.com/document/product/436/46206#x-cos-forbid-overwrite) |PutObject<br>PostObject<br>InitMultipartUpload<br>CompleteMultipartUpload |요청 헤더: x-cos-forbid-overwrite |String|
+
 
 
 

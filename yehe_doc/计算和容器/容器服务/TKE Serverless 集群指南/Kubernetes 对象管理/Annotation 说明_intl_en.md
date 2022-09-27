@@ -1,6 +1,6 @@
 
 
-This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE and EKS clusters.
+This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE general cluster and TKE serverless clusters.
 
 ## Annotation Usage
 ### Adding a Pod annotation to a workload
@@ -61,7 +61,7 @@ eks.tke.cloud.tencent.com/mem: '16Gi' # The memory needs to be measured in Gi. I
 
 ### Specifying system disk size
 
-A Pod running on a super node provides 20 Gi of free system disk size by default. The lifecycle of the system disk is the same as that of the Pod. If you need more system disk size, please specify the size via the annotation. Note that the part of the size exceeding 20 Gi is billed according to the list price of a pay-as-you-go CBS Premium Cloud Storage cloud disk. For billing details, see [Cloud Block Storage Pricing](https://intl.cloud.tencent.com/pricing/cbs). See below for the annotation example:
+A Pod running on a super node provides 20 GB of free system disk size by default. The lifecycle of the system disk is the same as that of the Pod. If you need more system disk size, specify the size via the annotation. Note that the part of the size exceeding 20 GB is billed according to the list price of a pay-as-you-go CBS Premium Cloud Storage cloud disk. For billing details, see [Cloud Block Storage Pricing](https://intl.cloud.tencent.com/pricing/cbs). See below for the annotation example:
 ```yaml
 eks.tke.cloud.tencent.com/root-cbs-size: '50'  # Specify the system disk size. Additional charges are applied for the part of the size exceeding 20 Gi
 ```
@@ -119,6 +119,10 @@ To bind an EIP, add the following annotation to the Pod:
 eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # The value can be an empty string, indicating that the EIP is enabled and the default configuration is used. You can also use the JSON parameter used to create the EIP API. For more information on the parameter list, visit https://cloud.tencent.com/document/api/215/16699#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0. In this example, the parameter indicates that the EIP is pay-as-you-go and the bandwidth cap is 50 Mbps.
 ```
 
+>! An EIP cannot be bound for non-bill-by-IP accounts (traditional accounts). If you are using a non-bill-by-IP account, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for account upgrade.
+
+
+
 ### Fixing an EIP in StatefulSet
 To fix an EIP in StatefulSet, add the following annotation to the Pod:
 
@@ -160,7 +164,7 @@ eks.tke.cloud.tencent.com/registry-http-endpoint: 'harbor.example.com' # You can
 
 ### Reusing an image
 
-By default, the system disk is reused on super nodes to speed up the startup, specifically, the system disk of the Pod within the caching period (six hours after termination) in the same AZ of the same workload. To reuse Pod images in different workloads, add the same `cbs-reuse-key` annotation to all of them:
+By default, the system disk is reused on super nodes to speed up the startup, specifically, the system disk of the Pod within the caching period (two hours after termination) in the same AZ of the same workload. To reuse Pod images in different workloads, add the same `cbs-reuse-key` annotation to all of them:
 
 ```yaml
 eks.tke.cloud.tencent.com/cbs-reuse-key: 'image-name'
@@ -425,4 +429,19 @@ eks.tke.cloud.tencent.com/ipvs-scheduler: 'sh' # Scheduling algorithm. `sh` refe
 eks.tke.cloud.tencent.com/ipvs-sh-port: "true" # Source hash is performed by port, which is valid only when `ipvs-scheduler` is `sh`.
 eks.tke.cloud.tencent.com/ipvs-sync-period: '30s' # The maximum interval for refreshing rules, which defaults to 30s.
 eks.tke.cloud.tencent.com/ipvs-min-sync-period: '2s' # The minimum interval for refreshing rules. By default, rules are refreshed upon service changes. You can modify this parameter to avoid frequent refreshes.
+```
+
+
+- Set not to guide the traffic through IPVS when the VIP of a CLB instance is accessed within the cluster.
+It applies to guiding traffic through CLB but not IPVS for access within the cluster. When the annotation is configured for the service, no corresponding IPVS rules will be generated:
+```yaml
+service.cloud.tencent.com/discard-loadbalancer-ip: 'true' # The annotation is configured for the service and takes effect immediately without Pod rebuild required.
+```
+
+
+## Customizing the Pod Time Zone
+
+By default, UTC time is used for Pods on super nodes. To adjust the time zone to UTC +8, add the following annotation:
+```yaml
+eks.tke.cloud.tencent.com/host-timezone: 'Asia/Shanghai' # This annotation is used to set the Pod time zone to UTC +8.
 ```

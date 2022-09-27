@@ -4,23 +4,23 @@
 
 | API           | 操作描述                 |
 | ------------- |  ---------------------- |
-| [搜索动图模板](https://cloud.tencent.com/document/product/436/54027) | 用于搜索动图模板。 |
-| [搜索截图模板](https://cloud.tencent.com/document/product/436/54031) | 用于搜索截图模板。 |
-| [搜索水印模板](https://cloud.tencent.com/document/product/436/54035) | 用于搜索水印模板。 |
-| [搜索转码模板](https://cloud.tencent.com/document/product/436/54039) | 用于搜索转码模板。 |
-| [搜索拼接模板](https://cloud.tencent.com/document/product/436/54043) | 用于搜索拼接模板。 |
-| [搜索极速高清转码模板](https://cloud.tencent.com/document/product/436/58309) | 用于搜索极速高清转码模板。 |
-| [搜索精彩集锦模板](https://cloud.tencent.com/document/product/436/58312) | 用于搜索精彩集锦模板。 |
-| [搜索人声分离模板](https://cloud.tencent.com/document/product/436/58317) | 用于搜索人声分离转码模板。 |
-| [搜索视频增强模板](https://cloud.tencent.com/document/product/436/60747) | 用于搜索视频增强模板。 |
-| [搜索图片处理模板](https://cloud.tencent.com/document/product/436/67227) | 用于搜索图片处理模板。 |
-| [搜索超分辨率模板](https://cloud.tencent.com/document/product/436/67168) | 用于搜索超分辨率模板。 |
+| [搜索动图模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索动图模板。 |
+| [搜索截图模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索截图模板。 |
+| [搜索水印模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索水印模板。 |
+| [搜索转码模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索转码模板。 |
+| [搜索拼接模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索拼接模板。 |
+| [搜索极速高清转码模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索极速高清转码模板。 |
+| [搜索精彩集锦模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索精彩集锦模板。 |
+| [搜索人声分离模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索人声分离转码模板。 |
+| [搜索视频增强模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索视频增强模板。 |
+| 搜索图片处理模板 | 用于搜索图片处理模板。 |
+| [搜索超分辨率模板](https://intl.cloud.tencent.com/document/product/436/49199) | 用于搜索超分辨率模板。 |
 
 ## 搜索模板
 
 #### 功能说明
 
-用于搜索模板，支持 [Animation](https://cloud.tencent.com/document/product/436/54027)、[Snapshot](https://cloud.tencent.com/document/product/436/54031)、[Watermark](https://cloud.tencent.com/document/product/436/54035)、[Transcode](https://cloud.tencent.com/document/product/436/54039)、[Concat](https://cloud.tencent.com/document/product/436/54043)、[HighSpeedHd](https://cloud.tencent.com/document/product/436/58309)、[VideoMontage](https://cloud.tencent.com/document/product/436/58312)、[VoiceSeparate](https://cloud.tencent.com/document/product/436/58317)、[VideoProcess](https://cloud.tencent.com/document/product/436/60747)、[PicProcess](https://cloud.tencent.com/document/product/436/67227)、[SuperResolution](https://cloud.tencent.com/document/product/436/67168) 多种模板类型。
+用于搜索模板，支持 [Animation](https://intl.cloud.tencent.com/document/product/436/49199)、[Snapshot](https://intl.cloud.tencent.com/document/product/436/49199)、[Watermark](https://intl.cloud.tencent.com/document/product/436/49199)、[Transcode](https://intl.cloud.tencent.com/document/product/436/49199)、[Concat](https://intl.cloud.tencent.com/document/product/436/49199)、[HighSpeedHd](https://intl.cloud.tencent.com/document/product/436/49199)、[VideoMontage](https://intl.cloud.tencent.com/document/product/436/49199)、[VoiceSeparate](https://intl.cloud.tencent.com/document/product/436/49199)、[VideoProcess](https://intl.cloud.tencent.com/document/product/436/49199)、PicProcess、[SuperResolution](https://intl.cloud.tencent.com/document/product/436/49199) 多种模板类型。
 
 #### 方法原型
 

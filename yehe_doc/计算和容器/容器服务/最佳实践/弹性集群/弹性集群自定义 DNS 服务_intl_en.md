@@ -7,13 +7,13 @@
 This document describes how to modify the DNS service of a cluster through modifying the CoreDNS configuration file.
 
 ## Prerequisites
-You have [created an elastic cluster](https://intl.cloud.tencent.com/document/product/457/34048). You need to select **Deploy CoreDNS to allow the service discovery in the cluster** in the advanced configuration at the time of creation.
+You have [created an serverless cluster](https://intl.cloud.tencent.com/document/product/457/34048). You need to select **Deploy CoreDNS to allow the service discovery in the cluster** in the advanced configuration at the time of creation.
 
 ## Directions
 
 ### Default Corefile configuration
 
-When a CoreDNS is deployed in an elastic cluster, a Configmap is mounted by default to act as the CoreDNS configuration file (i.e. Corefile).
+When a CoreDNS is deployed in an serverless cluster, a Configmap is mounted by default to act as the CoreDNS configuration file (i.e. Corefile).
 The default configuration of Corefile is as follows:
 
 ```

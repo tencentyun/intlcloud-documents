@@ -4,6 +4,7 @@ WebShell 为腾讯云推荐的登录方式，您可以直接使用腾讯云 WebS
 - 支持鼠标滚屏。
 
 
+
 <dx-alert infotype="explain" title="">
 - 创建 Linux 操作系统的轻量应用服务器时，该服务器默认绑定1个密钥。此密钥对应的用户名为 `lighthouse`，具备 root 权限。
 - 当您使用 WebShell 工具登录 Linux 实例时，系统默认使用此密钥（对应的用户名为 `lighthouse`）进行登录。
@@ -12,7 +13,7 @@ WebShell 为腾讯云推荐的登录方式，您可以直接使用腾讯云 WebS
 
 
 ## 适用本地操作系统
-Window，Linux 或者 Mac OS
+Windows，Linux 或者 Mac OS
 
 ## 前提条件
 
@@ -25,10 +26,13 @@ Window，Linux 或者 Mac OS
  - 在服务器列表中的实例卡片上，单击**登录**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/11148d430192dcc14bb2f55d039d32d5.png)
  - 单击实例卡片进入服务器详情页，单击“远程登录”中的**登录**，或页面右上角的**登录**。
-![](https://qcloudimg.tencent-cloud.cn/raw/492865c871113a6fdc0cc23766c67eae.png)
- - 使用 [应用镜像](https://intl.cloud.tencent.com/document/product/1103/41261) 创建的实例，可在实例详情页选择**应用管理**，单击“应用内软件信息”中的**登录**，或页面右上角的**登录**。
-![](https://qcloudimg.tencent-cloud.cn/raw/e57fd4363e3fbad62f902def7a2e8a21.png)
-成功登录后，进行搭建中小型网站、Web 应用、博客、论坛、小程序/小游戏、电商、云盘/图床、云端开发测试和学习环境等轻量级、低负载且访问量适中的应用。
+![](https://qcloudimg.tencent-cloud.cn/raw/0b01ce7d78e8660187e59c04267d7594.png)
+ - 使用 [应用镜像](https://intl.cloud.tencent.com/document/product/1103/41261) 创建的实例，可在实例详情页选择**应用管理**，单击页面右上角的**登录**。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/455852974d4bcfff9140c23ff54f493d.png)
+   登录成功界面如下图所示：
+   ![](https://qcloudimg.tencent-cloud.cn/raw/5b277158fec90436320b61bbc393233a.png)
+    - 成功登录后，您可参考 [最佳实践](https://www.tencentcloud.com/document/product/1103/41255)，进行搭建中小型网站、Web 应用、博客、论坛、小游戏、电商、云盘/图床、云端开发测试和学习环境等轻量级、低负载且访问量适中的应用。
+    - WebSehll 界面功能丰富，您可参考 [更多 WebShell 功能](#wedShellWork) 使用移动端的虚拟键盘，在控制台上更改 WebShell 外观、上传/下载文件、发起实例自助检测、开启多会话、分屏、获取提示，开启轻量应用服务器的便捷使用。
 
 ## 相关操作
 ### 关闭或开启 WebShell 一键登录
@@ -51,6 +55,173 @@ Window，Linux 或者 Mac OS
 <dx-alert infotype="notice" title="">
 请确认系统默认私钥的公钥（默认保存在操作系统的 lighthouse 用户下）未被删除，否则开启后仍无法正常一键登录。
 </dx-alert>
+
+
+
+### 更多 WebShell 功能[](id:wedShellWork)
+
+WebShell 目前具备丰富的功能，希望您在使用过程中拥有满意的体验。
+
+WebShell 功能介绍如下：
+<dx-accordion>
+::: 支持多种快捷键[](id:hotKey)
+
+WebShell 已支持多种快捷键，您可在 WebShell 界面中查看已支持的快捷键。步骤如下：
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 在 WebShell 界面中，打开“键盘快捷方式”窗口查看已支持的快捷键。
+  - 本地操作系统为 Mac OS：按 `⌘ + /`。
+  - 本地操作系统为 Windows：按 `Ctrl + /`。
+    
+
+
+:::
+::: 查看实例监控数据[](id:monitoringData)
+
+您可在 WebShell 界面中查看实例实时监控数据，目前监控数据的刷新粒度为10s。查看步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 在 WebShell 界面下方，即可查看实例监控数据。
+
+
+
+:::
+::: 修改用户名[](id:modifyUsername)
+
+您可在使用 WebShell 登录时，指定需登录的用户。具体步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 在弹出的“登录”窗口中，用户名默认为 `lighthouse`，您可按需修改。
+3. 修改完成后，单击**登录**即可。
+
+
+
+:::
+::: 一键安装自动化助手[](id:installTAT)
+
+
+使用 WebShell 一键免密登录方式需自动化助手支持。若您的实例未安装自动化助手，可在登录时选择安装。具体步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 在弹出的“登录”窗口中，若提示您的实例未安装自动化助手，您可按需选择安装方式。
+   - 选择**一键安装(需要重启)**：请阅读注意事项，勾选“安装过程需要您同意强制关机”后，单击**一键安装自动化助手**即可。
+   - 选择**手动安装(不需要重启)**：请参考 [安装自动化助手客户端](https://intl.cloud.tencent.com/document/product/1147/46042) 完成安装。
+3. 安装完成后，即可使用 WebShell 方式一键登录实例。
+
+:::
+::: 使用命令块模式[](id:block)
+
+您可通过该步骤，在 WebShell 界面中使用命令块模式。开启后，执行的每条命令会以模块进行展示，帮助您便捷使用 WebShell。您也可按需关闭命令块模式。具体操作步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 在 WebShell 界面中，您可开启或关闭命令行模式。
+  - **开启命令行模式**：选择 WebShell 界面工具栏中的 <img src="https://qcloudimg.tencent-cloud.cn/raw/2a7a6b5795be349496600bda16a038c6.png" style="margin:-3px 0px"> 即可开启命令块模式。开启后执行命令效果如下图：
+![](https://qcloudimg.tencent-cloud.cn/raw/2b3752cb5644e4e06af15d037a7992cb.png)
+  - **关闭命令行模式**：选择 WebShell 界面工具栏中的 <img src="https://qcloudimg.tencent-cloud.cn/raw/bb5426e4e2012fc77ff78561de913e15.png" style="margin:-3px 0px"> 即可关闭命令块模式。关闭后执行命令效果如下图：
+![](https://qcloudimg.tencent-cloud.cn/raw/5862c7588022194f1a855f26e87b6f86.png)
+<dx-alert infotype="explain" title="">
+若关闭后重新开启命令块模式，需重新连接 WebShell。
+</dx-alert>
+
+
+
+:::
+::: 查看发布说明[](id:changelogs)
+您可通过该步骤，查看 WebShell 最近一次的发布说明，包含新特性、Bug 修复、即将上线的功能。具体步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 选择 WebShell 界面右下角的 <img src="https://qcloudimg.tencent-cloud.cn/raw/4796538ba87024b0a264e8d512c4544b.png" style="margin:-3px 0px">。
+3. 您即可在弹出窗口中查看最近一次的发布说明。
+
+:::
+::: 选择实例登录[](id:choose)
+您可通过该步骤，在一个 WebShell 窗口中选择任意一台实例登录。具体步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 选择 WebShell 界面工具栏中的 <img src="https://qcloudimg.tencent-cloud.cn/raw/5bb1db36d10fd49f34ecc27eda0e306a.png" style="margin:-3px 0px">。
+3. 首次选择会弹出的“选择要展示的实例”窗口，请选择您期望登录的实例，并单击**确定**。
+4. 选择 <img src="https://qcloudimg.tencent-cloud.cn/raw/5bb1db36d10fd49f34ecc27eda0e306a.png" style="margin:-3px 0px"> > **添加实例**，并按需添加多个实例。
+<dx-alert infotype="explain" title="">
+目前最多支持添加10个实例。
+</dx-alert>
+5. 添加成功后，您选择任意实例即可登录。
+
+
+
+:::
+::: 上传/下载文件[](id:updownload)
+
+
+
+您可通过该步骤，向实例上传本地文件，或将实例文件下载至本地。具体步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 选择 WebShell 界面工具栏中的 <img src="https://qcloudimg.tencent-cloud.cn/raw/81fbdd2c2b7cb70f17c508073496f58e.png" style="margin:-3px 0px">。
+3. 在弹出的菜单中，选择**上传**或**下载**。
+   具体操作步骤如下：
+    - **上传文件**：
+       1. 在弹出窗口的“选择上传文件和位置”窗口中，您可按需选择“本地上传”或 “URL上传”。
+       2. 选择“本地上传”，则请单击**点击上传**后选择本地文件。选择 “URL上传”，则请在 “URL地址”中输入需上传文件的 URL。
+       4. 选择需上传位置后，单击**确定**即可。
+       <dx-alert infotype="explain" title="">
+       目前仅支持上传文件至  `home > lighthouse` 目录。
+        </dx-alert>
+       您可单击页面右下角的 <img src="https://qcloudimg.tencent-cloud.cn/raw/a78e204de7cde3473482732c8b9fef98.png" style="margin:-3px 0px">，在弹出窗口中查看操作结果。
+    - **下载文件**：
+       1. 在弹出窗口的“下载文件”窗口中，依次再开目录，选择需下载的文件。
+       2. 单击**确定**，并在弹出窗口中，选择需存储的本地位置。
+       3. 您可单击页面右下角的 <img src="https://qcloudimg.tencent-cloud.cn/raw/a78e204de7cde3473482732c8b9fef98.png" style="margin:-3px 0px">，在弹出窗口中查看操作结果。
+
+:::
+::: 使用实例自助检测[](id:selfCheck)
+
+若您在登录或使用实例过程中遇到问题，可随时使用实例自助检测。步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 选择 WebShell 界面工具栏中的 <img src="https://qcloudimg.tencent-cloud.cn/raw/2d3d7e693d09bb8a58d58557e4f25ff4.png" style="margin:-3px 0px">。
+3. 在弹出的“实例自助检测”窗口中，单击**确定**即可使用实例自助检测。
+
+
+:::
+::: 开启多标签窗口会话[](id:multilabel)
+
+您可通过该步骤，在 WebShell 界面以标签的形式打开多个实例连接界面，以便捷使用实例。具体步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 选择 WebShell 界面上方的 <img src="https://qcloudimg.tencent-cloud.cn/raw/fc93655617db690aecdc7b1cea0baf39.png" style="margin:-3px 0px">。
+3. 您即可看到已新建了标签 `(1)实例 ID`，如下图所示：
+<dx-alert infotype="explain" title="">
+- 最多支持同时打开5个标签。
+- 标签将以 `（递增数字）实例 ID` 命名，帮助您区分标签。
+</dx-alert> <img src="https://qcloudimg.tencent-cloud.cn/raw/b978c74d0b6c127e0948de0a39716dc4.png"/>
+
+
+:::
+::: 开启分屏[](id:splitScreen)
+
+您可通过该步骤，在 WebShell 界面开启分屏，开启后您可同屏查看并执行多个操作任务，以便捷使用实例。具体步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 选择 WebShell 界面上方的 <img src="https://qcloudimg.tencent-cloud.cn/raw/bf17a1103ce6fa76150df87768987f79.png" style="margin:-3px 0px">。
+3. 您即可看到已执行分屏，命名为 `(1)实例 ID`。如下图所示为3个分屏效果：
+<dx-alert infotype="explain" title="">
+- 最多支持同时4个分屏。
+- 分屏将以 `（递增数字）实例 ID` 命名，帮助您进行区分。
+</dx-alert> <img src="https://qcloudimg.tencent-cloud.cn/raw/4d4b2c02d5173c92fe189c358c71a29f.png"/>
+
+
+:::
+::: 更改皮肤[](id:changeAppearance)
+
+您可通过该步骤，修改 WedShell 界面的文字大小、字体及配色。具体步骤如下：
+
+1. 参考 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41523)，登录实例。
+2. 选择 WebShell 界面工具栏中的 <img src="https://qcloudimg.tencent-cloud.cn/raw/183be38a53180ccd705dddbb859820e3.png" style="margin:-3px 0px">。
+3. 在弹出的菜单中修改字体大小、字体或配色，按照喜好更改 WebShell 外观。
+
+:::
+</dx-accordion>
+
+
 
 
 

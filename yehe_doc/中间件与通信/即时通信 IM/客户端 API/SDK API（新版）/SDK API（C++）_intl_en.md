@@ -1,6 +1,6 @@
 ## Initialization and Login APIs
 
-To use Tencent Cloud IM services, you need to initialize the SDK and log in.
+To use the Tencent Cloud IM service, you need to initialize the SDK and log in.
 
 | API                                                          | Description                     |
 | ------------------------------------------------------------ | ------------------------- |
@@ -42,7 +42,7 @@ Use the following APIs for the sending and receiving of text and signaling (cust
 
 ## Advanced Message APIs
 
-If you need to send/receive rich media messages (images, videos, files, etc.) and use advanced features such as recalling messages, marking messages as read, and querying message history, use the following advanced message APIs. Do not use simple messages APIs and advanced message APIs at the same time.
+If you need to send/receive rich media messages (such as image, video, and file messages) and use advanced features such as recalling messages, marking messages as read, and querying message history, use the following set of advanced message APIs. Do not use simple message APIs and advanced message APIs at the same time.
 
 | API                                                                                                              | Description                                                                                                                                                          |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -52,7 +52,7 @@ If you need to send/receive rich media messages (images, videos, files, etc.) an
 | [CreateTextAtMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#afa39182f419c621fc929eb3929206107) | Creates an @ text message.                                              |
 | [CreateCustomMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a3af1cc2c76c41f3e48080134502ac8d5) | Creates a custom message.                                               |
 | [CreateImageMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a1f066186491a282c98f9cf7296720775) | Creates an image message.                                                 |
-| [CreateSoundMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a017a0c2902d045a70a9d5b686154984e) | Creates a voice message.                                                 |
+| [CreateSoundMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a017a0c2902d045a70a9d5b686154984e) | Creates an audio message.                                                 |
 | [CreateVideoMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#acdaefbfd8bd4826caa86c94a42d701a4) | Creates a video message.                                                 |
 | [CreateFileMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a57e965e5e82477446b25253a1ae07110) | Creates a file message.                                                 |
 | [CreateLocationMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a9bffc91ae3fa7ba6e330a2ffd325665a) | Creates a location message.                                             |
@@ -77,12 +77,12 @@ If you need to send/receive rich media messages (images, videos, files, etc.) an
 
 ## Group APIs
 
-Tencent Cloud IM SDK supports four preset group types, each of which pertains to different scenarios.
+Tencent Cloud IM SDK supports the following predefined group types, each of which pertains to different application scenarios:
 
-- Work group (Work): users can join the group only after being invited by existing members.
-- Public group (Public): users can join the group through requests, which need to be approved by the group owner or group admin.
-- Meeting group (Meeting): used together with [TRTC](https://intl.cloud.tencent.com/product/trtc) to enable scenarios such as video conferencing and online education. Users can join and leave the group freely and view the message history before they join.
-- Audio-video group (AVChatRoom): suitable for scenarios such as live streaming and chat rooms with on-screen comments. Users can join and leave the group freely. There is no limit on the number of group members.
+- Work group (Work): Users can join the group only after being invited by existing members.
+- Public group (Public): Users can join the group through requests, which need to be approved by the group owner or group admin.
+- Meeting group (Meeting): Used together with [TRTC](https://intl.cloud.tencent.com/product/trtc) to enable scenarios such as video conferencing and online education. Users can join and leave the group freely and view the message history before they join.
+- Audio-video group (AVChatRoom): An audio-video group allows users to join and leave freely and is suitable for scenarios such as live streaming and chat rooms with on-screen comments. There is no limit on the number of group members.
 
 | API                                                                                                              | Description                                                                                                                                                          |
 | ------------------------------------------------------------ | ---------------------------------------------------------- |
@@ -91,7 +91,7 @@ Tencent Cloud IM SDK supports four preset group types, each of which pertains to
 | [CreateGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a0325514b94a734186be684eb9bb5cc80) | Creates a simple group.                                       |
 | [CreateGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ac28eb2db747a62a12fedc604a2abfbbd) | Creates an advanced group. The group information and the initial group members can be set during group creation. |
 | [JoinGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#adf3dc4604f30fde1d34dceb1990b38fe) | Joins a group.                                                   |
-| [QuitGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a43ef277f0eb49d6087d140a09152eced) | Quits a group.                                                   |
+| [QuitGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a43ef277f0eb49d6087d140a09152eced) | Leaves a group.                                                   |
 | [DismissGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#abfa30c09968c3b6d07c31d8d5a741502) | Deletes a group. Only the group owner and group admin can delete a group.                         |
 | [GetJoinedGroupList](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a3b740704edfeab9602867e284c2c7ba8) | Gets the list of groups the current user has joined, excluding audio-video groups.               |
 | [GetGroupsInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a8c98b92b45c3a2c4e57901e6c4cd3435) | Pulls the profiles of groups.                                                 |
@@ -108,8 +108,8 @@ Tencent Cloud IM SDK supports four preset group types, each of which pertains to
 | [SetGroupMemberInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#acd0e222e4c3d5997666aaf4126bd974e) | Modifies the profile of a specified group member.                                       |
 | [MuteGroupMember](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ab19d433e5552205fcba61627e54f7569) | Mutes a group member.                                                       |
 | [KickGroupMember](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ad2e4f74f4e26fb0db455d8e92f774032) | Removes a member from a group.                                                       |
-| [SetGroupMemberRole](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ab429c1ded6aa3ae27bb0917be6f71dd3) | Sets the role for a group member.                                           |
-| [TransferGroupOwner](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a2fedff98e2e41e9d30f7a49f5c7adc8f) | Changes the group owner.                                                   |
+| [SetGroupMemberRole](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ab429c1ded6aa3ae27bb0917be6f71dd3) | Sets a role for a group member.                                           |
+| [TransferGroupOwner](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a2fedff98e2e41e9d30f7a49f5c7adc8f) | Transfers the group ownership.                                                   |
 | [InviteUserToGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a46fecb95bf66ccc3023201fb3737c423) | Invites users to a group.                                               |
 | [GetGroupApplicationList](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a4609879f4c67fde60a6fa4f707987143) | Gets the list of requests to join a group.                                         |
 | [AcceptGroupApplication](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ae829188e149f59bb5b086825f6c94ab5) | Approves a request to join a group.                                         |
@@ -118,7 +118,7 @@ Tencent Cloud IM SDK supports four preset group types, each of which pertains to
 
 ## Conversation List APIs
 
-The conversation list is the list a user sees on the first screen after logging in to WeChat or QQ. It includes elements such as conversation node, conversation name, group name, last message, and unread count.
+The conversation list is the list a user sees on the first screen after logging in to WeChat or QQ. It includes elements such as conversation node, conversation name, group name, last message, and unread message count.
 
 | API                                                                                                       | Description                                                                                                                                                                            |
 | ------------------------------------------------------------ | ---------------- |
@@ -127,32 +127,46 @@ The conversation list is the list a user sees on the first screen after logging 
 | [GetConversationList](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#adf840d9f4eb800ff74a2a6852d56fc35) | Gets the conversation list.     |
 | [GetConversation](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a9891f4b029e7a1fd3d17398cbe1b367c) | Gets a conversation. |
 | [GetConversationList](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a05675f2f0c00aedc2af7a2cd6cf2eb6b) | Gets multiple conversations. |
+| [ getConversationListByFilter](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ace956492c5ee80187ebd1795e52b0de8) | Gets the advanced conversation API to specify the conversation type, mark type, and group name. |
 | [DeleteConversation](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a1ada2a3c1c0ae08920bdf16ab994a1ed) | Deletes a conversation.         |
-| [SetConversationDraft](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a190fb079bf34077f71c340ec23e69ebf) | Sets a draft for a conversation.     |
+| [SetConversationDraft](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a0b84fd526690e21149b9d205512d1b49) | Sets a draft for a conversation.     |
+| [SetConversationCustomData](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a0b84fd526690e21149b9d205512d1b49) | Sets the custom conversation data. |
 | [PinConversation](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ab5afaa92ec352f112125f5dcef288f8d) | Pins a conversation to the top.         |
+| [MarkConversation](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ab8d1930cd9956457cd465bd23aa3bd63) | Marks a conversation. |
 | [GetTotalUnreadMessageCount](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a50e0d25b7f47c12c815e610bf5b9a048) | Gets the total unread message count. |
+| [CreateConversationGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ab2d52eebca186348cdc6d655e39303b2) | Creates a conversation group. |
+| [GetConversationGroupList](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#afd90c81411d1ab6eeaea2eb7bb888954) | Gets the conversation group list. |
+| [DeleteConversationGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a896e015bc43c459cf8b6d34665f201c6) | Deletes a conversation group. |
+| [RenameConversationGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#aec1cf0ea82fc1a3e210d89f83bd06af8) | Renames a conversation group. |
+| [AddConversationsToGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#a31e93ef7ee2bbe8d665eb3b1f6520ed3) | Adds a conversation to a conversation group. |
+| [DeleteConversationsFromGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ad9b378df06d6b46031262e9712d82d6b) | Deletes a conversation from a conversation group. |
+
 
 ## User Profile APIs
 
-You can use the following APIs to query user profiles, modify your profile, and block messages from a specified user (i.e., adding a specified user to the blocklist).
+You can use the following APIs to query user profiles, modify your profile, and block messages from a specified user (that is, adding a specified user to the blocklist).
 
 | API                                                          | Description                                                         |
 | ------------------------------------------------------------ | -------------------------------------------- |
 | [GetUsersInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#ac7aa404aec07fc0d9823d9da5fd4e443) | Gets user profiles.                                 |
 | [SetSelfInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#acb89663576c7f68cc4b9983733835e29) | Modifies one's own user profile.                                 |
+| [GetUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a56a7968dcb6f676c8aebd52d0fffbb30) | Queries a user's status. |
+| [SetSelfStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#aa93c93f1a3ce5d7802febc0e550cf743) | Sets one's own status. |
+| [SubscribeUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a6485ab30f0025998ffeecb78490332f5) | Subscribes to a user's status. |
+| [UnsubscribeUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a7e62b89e6ad2d164458afa24f379530c) | Unsubscribes from a user's status. |
 | [AddToBlackList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a2f49378d21cb0d48b9e1e1814dc2460e) | Blocks messages from a user, which means adding the user to the blocklist.       |
 | [DeleteFromBlackList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a8bacf997892119e021a8f4aa4db48de3) | Unblocks messages from a user, which means removing the user from the blocklist. |
 | [GetBlackList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a8d402bd222d8dcb98516185bd75fc5b2) | Gets the blocklist.                               |
 
 ## Friend Management APIs
 
-By default, Tencent Cloud IM does not check your relationship with a user when receiving and sending messages. You can enable **Check Relationship for One-to-One Messages** on **Feature Configuration** > **Login and Message** > **Relationship Check** in the [IM console](https://console.cloud.tencent.com/im) and use the following APIs to delete/add friends and manage your friend lists.
+By default, Tencent Cloud IM does not check your relationship with a user when receiving and sending messages. You can enable **Check Relationship for One-to-One Messages** on **Feature Configuration** > **Login and Message** > **Relationship Check** in the [IM console](https://console.cloud.tencent.com/im) and use the following APIs to delete/add friends and manage your friends.
 
 | API                                                          | Description                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------ |
 | [AddFriendListener](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#ac4c542617008471fa1fe7a64ba963fbb) | Adds a relationship chain listener. 
 | [RemoveFriendListener](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#ae21ca2737c35305ecc1f25e054265ed8) | Removes a relationship chain listener.
-| [GetFriendList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a11bcb462e073ebec63a2586bad9757cf) | Gets the friend list.                                           |
+| [GetFriendList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a11bcb462e073ebec63a2586bad9757cf) | Gets the contacts.                                           |
 | [GetFriendsInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a9b263f612a1e7e35ee2c745b5f36a1e3) | Gets the profiles of specified friends.                                       |
 | [SetFriendInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#abe9169909b008fd0a43044356e3206a0) | Sets the profile of a specified friend.                                       |
 | [SearchFriends](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#aea84cd163665db3b0f2338d787446f53) | Searches for friends.                                           |

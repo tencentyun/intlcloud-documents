@@ -4,8 +4,9 @@ CI's intelligent thumbnail feature intelligently analyzes the quality, brillianc
 
 >?
 >
-> - The intelligent thumbnail feature is a paid service and billed by the video duration. For billing details, see "Media Processing Fees".
+>- The intelligent thumbnail feature is a paid service and billed by the video duration. For billing details, see [Media Processing Fees](https://intl.cloud.tencent.com/document/product/1045/49489).
 >- Three optimal keyframes will be output through smart analysis of each video file.
+
 
 
 ## Use Cases
@@ -18,21 +19,19 @@ For traditional video platforms, reviewers need to watch videos and then manuall
 
 At present, most family album services can display only images in loop. For video files in smart albums, the intelligent thumbnail feature can be used to automatically generate album thumbnails for loop display, thereby increasing the richness and utilization of family albums.
 
-## How to Use
+## Directions
 
 ### Workflow
 
 CI provides the workflow service, which can automatically process videos when they are uploaded and save the processing results in a specified location.
 
-
-
 #### Creating workflow
 
-You can create a workflow in the CI console as instructed in Creating Workflow.
+You can create a workflow in the CI console as instructed in [Workflow](https://intl.cloud.tencent.com/document/product/1045/43604).
 
-#### Deleting, querying, and searching for workflow
+#### Creating, deleting, querying, and updating workflow through API
 
-You can [delete workflows](https://intl.cloud.tencent.com/document/product//1045/43734), [search for specified workflows](https://intl.cloud.tencent.com/document/product//1045/43735), [get workflow details](https://intl.cloud.tencent.com/document/product//1045/43736), and [get the list of workflow instances](https://intl.cloud.tencent.com/document/product//1045/43737) through APIs.
+You can create, delete, query, and update a workflow through API as instructed in [Creating Workflow](https://intl.cloud.tencent.com/document/product/1045/43733), [Deleting Workflow](https://intl.cloud.tencent.com/document/product/1045/43734), [Querying Workflow](https://intl.cloud.tencent.com/document/product/1045/50339), and [Updating Workflow](https://intl.cloud.tencent.com/document/product/1045/43738) respectively.
 
 
 
@@ -42,10 +41,10 @@ You can create an intelligent thumbnail job for existing data stored in COS.
 
 #### Creating job
 
-- Console: You can create a job visually in the [CI console](https://console.cloud.tencent.com/ci) as instructed in the intelligent thumbnail job documentation.
-- API: You can use APIs to create an intelligent thumbnail job as instructed in [Submitting Intelligent Thumbnail Job](https://intl.cloud.tencent.com/document/product//1045/43699).
+- Console: You can create an intelligent thumbnail job visually in the [CI console](https://console.cloud.tencent.com/ci) as instructed in [Job](https://intl.cloud.tencent.com/document/product/1045/43605).
+- API: You can create an intelligent thumbnail job through API as instructed in [Submitting Intelligent Thumbnail Job](https://intl.cloud.tencent.com/document/product/1045/48937).
 
 #### Deleting, querying, and searching for job
 
-You can [delete](https://intl.cloud.tencent.com/document/product//1045/43694), [query](https://intl.cloud.tencent.com/document/product//1045/43696), and [search for](https://intl.cloud.tencent.com/document/product//1045/43697) jobs by filters through APIs.
+You can delete, query, and search for a job by filters through API as instructed in [CancelMediaJob](https://intl.cloud.tencent.com/document/product/1045/49512), [DescribeMediaJob](https://intl.cloud.tencent.com/document/product/1045/50355), and [DescribeMediaJobs](https://intl.cloud.tencent.com/document/product/1045/50356) respectively.
 

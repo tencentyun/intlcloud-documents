@@ -1,10 +1,10 @@
 ## Overview
 
-The file transcoding feature converts an audio/video file bitstream. It changes parameters of the source bitstream, such as codec, resolution, and bitrate, to adapt to different devices and network conditions.
+The audio/video transcoding feature converts an audio/video file bitstream. It changes parameters of the source bitstream, such as codec, resolution, and bitrate, to adapt to different devices and network conditions.
 
 >?
-> - File transcoding is a paid feature. For billing details, see Media Processing Fees.
-> - Watermarks can be added to video files during transcoding. For detailed directions, see Video Watermark.
+> - Audio/Video transcoding is a paid feature. For billing details, see [Media Processing Fees](https://intl.cloud.tencent.com/document/product/1045/49489).
+> - Watermarks can be added to video files during transcoding. For detailed directions, see [Template](https://intl.cloud.tencent.com/document/product/1045/43606).
 > 
 
 
@@ -28,15 +28,15 @@ CI can add multiple watermarks to media resources synchronously. This feature en
 
 You can use the file transcoding feature through jobs or workflows. In order to improve the operational efficiency and reduce repetitive operations, CI offers the template feature, which is a configuration item in jobs and workflows. You can save common parameter combinations as templates and reuse them directly in subsequent operations, with no need to set the parameters every time you start a job. You can use preset or custom templates as follows:
 - Preset templates: Currently, CI provides a variety of preset templates for most file transcoding use cases. You can view all such templates in the [CI console](https://console.cloud.tencent.com/ci).
-- Custom templates: You can create templates in the console. You can also create, modify, find, or delete templates through APIs as instructed in [Creating Transcoding Template](https://intl.cloud.tencent.com/document/product/1045/43643), [Updating Transcoding Template](https://intl.cloud.tencent.com/document/product/1045/43646), [Searching for Transcoding Template](https://intl.cloud.tencent.com/document/product/1045/43645), and [Deleting Transcoding Template](https://intl.cloud.tencent.com/document/product/1045/43644) respectively.
+- Custom templates: You can create a template in the console as instructed in [Template](https://intl.cloud.tencent.com/document/product/1045/43606). You can also create, modify, find, and delete a template through API as instructed in [Creating Audio/Video Transcoding Template](https://intl.cloud.tencent.com/document/product/1045/49911), [Updating Audio/Video Transcoding Template](https://intl.cloud.tencent.com/document/product/1045/49925), [DescribeMediaTemplates](https://intl.cloud.tencent.com/document/product/1045/49919), and [DeleteMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49918) respectively.
 
 
 ### Through job
 
-You can create file transcoding jobs through the console or APIs to transcode existing files in COS.
+You can create a file transcoding job through the console or API for existing data stored in COS.
 
-- Console: You can create a job visually in the CI console as instructed in the file transcoding job documentation.
-- API: You can use APIs to create file transcoding jobs as instructed in [Transcoding Job APIs](https://www.tencentcloud.com/document/product/1045/43676).
+- Console: You can create a file transcoding job visually in the CI console as instructed in [Job](https://intl.cloud.tencent.com/document/product/1045/43605).
+- API: You can create a transcoding job through API as instructed in [Submitting Audio/Video Transcoding Job](https://intl.cloud.tencent.com/document/product/1045/48941).
 
 
 
@@ -46,8 +46,8 @@ CI provides the workflow service. You can enable a workflow for a bucket or a sp
 
 #### Creating workflow
 
-You can create a workflow in the CI console as instructed in Creating Workflow.
+You can create a workflow in the CI console as instructed in [Workflow](https://intl.cloud.tencent.com/document/product/1045/43604).
 
-#### Deleting, querying, and searching for workflow
+#### Deleting, querying, and searching for workflow through API
 
-You can delete, search for, get details of, and get the list of instances of workflows through APIs as instructed in [Deleting Workflow](https://intl.cloud.tencent.com/document/product/1045/43734), [Searching for Workflow](https://intl.cloud.tencent.com/document/product/1045/43735), [Getting Workflow Instance Details](https://intl.cloud.tencent.com/document/product/1045/43736), and [Getting Workflow Instance List](https://intl.cloud.tencent.com/document/product/1045/43737) respectively.
+You can create, delete, query, and update a workflow through API as instructed in [Creating Workflow](https://intl.cloud.tencent.com/document/product/1045/43733), [Deleting Workflow](https://intl.cloud.tencent.com/document/product/1045/43734), [Querying Workflow](https://intl.cloud.tencent.com/document/product/1045/50339), and [Updating Workflow](https://intl.cloud.tencent.com/document/product/1045/43738) respectively.

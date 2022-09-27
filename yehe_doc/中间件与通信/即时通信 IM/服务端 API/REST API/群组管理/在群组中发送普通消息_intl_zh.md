@@ -19,8 +19,6 @@
 ```
 https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
@@ -34,7 +32,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -204,7 +202,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 ```
 - **发送群@消息**
   GroupAtInfo字段里面设置@的用户，跟消息体里面@的用户按顺序逐一对应。
->!社群（Community）、直播群（AVChatroom）不支持@all。
+>!直播群（AVChatroom）不支持@all。
 
   ```
       {
@@ -276,7 +274,8 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 |OnlineOnlyFlag|Integer|选填|1表示消息仅发送在线成员，默认0表示发送所有成员，AVChatRoom(直播群)不支持该参数|
 |SendMsgControl |Array |选填|消息发送权限，NoLastMsg 只对单条消息有效，表示不更新最近联系人会话；NoUnread 不计未读，只对单条消息有效。（如果该消息 OnlineOnlyFlag 设置为1，则不允许使用该字段。）|
 |CloudCustomData|String|选填|消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
-|To_Account|Array|选填|指定消息接收者(接收者成员上限50个)，如果此字段被使用，消息则不计未读，仅旗舰版支持此功能，支持群类型 Private、Public、ChatRoom|
+|To_Account|Array|选填|指定消息接收者(接收者成员上限50个)，如果此字段被使用，消息则不计未读，仅旗舰版支持此功能，支持好友工作群（Work）、陌生人社交群（Public）、临时会议群（Meeting）|
+|TopicId|String|选填|话题的 ID, 仅支持话题的社群适用此选项|
 
 ### 应答包体示例
 ```
@@ -299,6 +298,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 | ErrorInfo | String | 错误信息  |
 | MsgTime | Integer | 消息发送的时间戳，对应后台 server 时间 |
 | MsgSeq | Integer | 消息序列号，唯一标示一条消息 |
+|MsgDropReason|String|消息丢弃原因；默认为空，否则表明消息被丢弃原因，当前只支持消息频控丢弃|
 
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
@@ -318,7 +318,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 | 80002 | 消息内容过长，目前最大支持8000字节的消息，请调整消息长度 |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/send_group_msg) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
 
 ## 参考
 

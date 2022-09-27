@@ -29,7 +29,7 @@ TencentDB for Redis allows you to view the instance node information, including 
 <tr>
 <td>AZ</td><td>AZ of the current node.</td></tr>
 <tr>
-<td>Role</td><td>Role of the current node, which is **Master Node** or **Replica Node**.</td></tr>
+<td>Role</td><td>Role of the current node, which is <b>Master Node</b> or <b>Replica Node</b>.</td></tr>
 <tr>
 <td>Used Memory</td><td>Node memory usage.</td></tr>
 </tbody></table>
@@ -37,11 +37,11 @@ TencentDB for Redis allows you to view the instance node information, including 
 <table>
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>
-<td>Node Name</td><td>Node name of the database instance.</td></tr>
+<td>Node Name</td><td>Node name of the database instance.The node name is concatenated by Instance ID_Shard ID_Replica ID</td></tr>
 <tr>
 <td>Node ID</td><td>Node ID of the database instance.</td></tr>
 <tr>
-<td>Role</td><td>Node role, which is **Master Node** or **Replica Node**.</td></tr>
+<td>Role</td><td>Node role, which is <b>Master Node</b> or <b>Replica Node</b>.</td></tr>
 <tr>
 <td>Key Quantity</td><td>Number of keys stored on the node.</td></tr>
 <tr>
@@ -55,7 +55,7 @@ TencentDB for Redis allows you to view the instance node information, including 
 <tbody><tr>
 <td>Node ID</td><td>Node ID of the database instance.</td></tr>
 <tr>
-<td>Role</td><td>Node role, which is **Master Node** or **Replica Node**.</td></tr>
+<td>Role</td><td>Node role, which is <b>Master Node</b> or <b>Replica Node</b>.</td></tr>
 <tr>
 <td>Monitoring</td>
 <td>Click <img src="https://qcloudimg.tencent-cloud.cn/raw/dc4a0ccd630c929fcb9095841df8fb0d.png" style="zoom:50%;">, and you can view the monitoring views of various metrics of the node on the monitoring panel on the right. For more information, see <a href="https://intl.cloud.tencent.com/document/product/239/38743">Monitoring at Five-Second Granularity</a>.</td></tr>
@@ -96,5 +96,5 @@ On the **Node Management** page, if the instance has at least one replica, you c
 | API | Description |
 | ------------------------------------------------------------ | --------------------- |
 | [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/document/product/239/38627) | Queries instance node information      |
-| [DescribeInstanceZoneInfo](https://cloud.tencent.com/document/product/239/50312) | Queries Redis node details |
+
 

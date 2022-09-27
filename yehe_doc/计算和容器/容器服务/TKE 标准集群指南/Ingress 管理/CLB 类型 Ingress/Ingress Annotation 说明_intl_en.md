@@ -52,7 +52,7 @@ This is a read-only annotation that provides IPv6 address when the user configur
    
 **Note:**
 The billing type of CLB can only be configured at the time of creation, and cannot be modified after the creation.
-This annotation is used to specify the CLB payment mode when a CLB is created. Please use it with `kubernetes.io/ingress.internetMaxBandwidthOut` annotation.     
+This annotation is used to specify the CLB payment mode when a CLB instance is created. You need to use it with `kubernetes.io/ingress.internetMaxBandwidthOut` annotation.     
 
 **Valid values:**
 - TRAFFIC_POSTPAID_BY_HOUR: Postpaid by traffic on an hourly basis.  
@@ -67,7 +67,7 @@ This annotation is used to specify the CLB payment mode when a CLB is created. P
    
 **Note:**
 CLB bandwidth can only be configured at the time of creation, and cannot be modified after the creation.
-This annotation is used to specify the maximum outbound bandwidth of the CLB when a CLB is created, which applies only to public network CLB instances. Please use it with `kubernetes.io/ingress.internetChargeType` annotation.
+This annotation is used to specify the maximum outbound bandwidth of the CLB instance when a CLB instance is created, which applies only to public network CLB instances. You need to use it with `kubernetes.io/ingress.internetChargeType` annotation.
 
 **Valid values:**
 Value range: 1-2,048 Mbps
@@ -205,10 +205,18 @@ Creating CLB for remote access:
 ### ingress.cloud.tencent.com/enable-grace-shutdown
    
 **Note:**
-This annotation is used to shut down CLB gracefully in direct access mode.  		 
+This annotation is used to shut down CLB instances gracefully in direct access mode. If a deleted Pod contains `DeletionTimestamp` and is in **Terminating** status, the weight of the Pod on the CLB backend is adjusted to `0`. 
 
 **Use case:**
-It is only supported in direct access mode and needs to be used together with `ingress.cloud.tencent.com/direct-access`. For more information on how to use it, please see [Graceful Ingress Shutdown](https://intl.cloud.tencent.com/document/product/457/42069).
+It is only supported in direct access mode and needs to be used together with `ingress.cloud.tencent.com/direct-access`. For more information on how to use it, see [Graceful Ingress Shutdown](https://intl.cloud.tencent.com/document/product/457/42069).
+
+---
+### ingress.cloud.tencent.com/enable-grace-shutdown-tkex
+**Note:**
+This annotation is used to shut down CLB instances gracefully in direct access mode. If the endpoints in the Endpoint object are `not-ready`, the weights on the CLB backend are adjusted to `0`.
+
+**Use case:**
+It is only supported in direct access mode and needs to be used together with `ingress.cloud.tencent.com/direct-access`. For detailed directions, see [Graceful Ingress Shutdown](https://intl.cloud.tencent.com/document/product/457/42069).
 
 ---
 ### ingress.cloud.tencent.com/security-groups

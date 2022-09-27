@@ -1,17 +1,17 @@
 ## 概述
-规则引擎支持用户配置转发规则，将符合条件的设备上报数据转发到云开发组件 ，您可以在 [云开发 CloudBase 控制台](https://console.cloud.tencent.com/tcb/env/index) 完成云开发环境的开通，具体操作请参见开通环境。
+规则引擎支持用户配置转发规则，将符合条件的设备上报数据转发到云开发组件 ，您可以在 [云开发 CloudBase 控制台](https://console.cloud.tencent.com/tcb/env/index) 完成云开发环境的开通。
 
 下图展示了规则引擎将数据转发给云开发的整个过程：
-![](https://main.qcloudimg.com/raw/9d5dbcde287f620b1e3121dc0bdc26a7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2ddc40cfa1cb52084547d270ee53cad3.jpg)
 
 ## 配置
-1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，单击左侧菜单【规则引擎】。
+1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，单击左侧菜单**规则引擎**。
 2. 进入规则引擎页面，单击需要配置的规则。
-3. 在规则详情页面，单击【添加行为操作】。
->?第一次使用时会提示用户授权访问云开发，您需单击【立即授权】才能继续创建。
-![](https://main.qcloudimg.com/raw/f5c5f9efe32682543843e1242eb42b7e.png)
-4. 在弹出的“添加规则”窗口，选择“数据转发到云开发（CloudBase）选项”，选择建立好的环境与函数后，单击【保存】即可。
-
+3. 在规则详情页面，单击**添加行为操作**。
+>?第一次使用时会提示用户授权访问云开发，您需单击**立即授权**才能继续创建。
+![]()
+4. 在弹出的“添加规则”窗口，选择“数据转发到云开发（CloudBase）选项”，选择建立好的环境与函数后，单击**保存**即可。
+![]()
 
 >!目前仅支持数据往云开发中云函数的转发，需先在云开发中建立好开发的环境与云函数，才可对环境与云函数进行选择。
 

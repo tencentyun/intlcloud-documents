@@ -1,10 +1,10 @@
 ## 简介
 
-文件转码提供音频、视频等媒体类文件的转码能力，是文件码流转换成另一个码流的过程。通过转码，可以改变原始码流的编码格式、分辨率和码率等参数，从而适应不同终端和网络环境的播放。
+音视频转码提供音频、视频等媒体类文件的转码能力，是文件码流转换成另一个码流的过程。通过转码，可以改变原始码流的编码格式、分辨率和码率等参数，从而适应不同终端和网络环境的播放。
 
 >?
-> - 文件转码为付费功能，详情请查看媒体处理费用 文档。
-> - 若文件类型为视频，则支持在转码过程中同时为视频添加水印，使用详情请查看视频水印文档。
+> - 音视频转码为付费功能，详情请查看 [媒体处理费用](https://intl.cloud.tencent.com/document/product/1045/49489) 文档。
+> - 若文件类型为视频，则支持在转码过程中同时为视频添加水印，使用详情请查看 [视频水印](https://intl.cloud.tencent.com/document/product/1045/43606) 文档。
 > 
 
 
@@ -28,15 +28,15 @@
 
 您可通过任务或工作流方式使用文件转码功能。为了提高效率，减少用户的重复操作，数据万象推出了模板功能，模板是任务及工作流中的一个配置项。您可将常用参数组合保存为模板，在后续操作中直接复用模板，无需在每次开启任务时重新设定参数，从而提高操作效率。您可使用系统预设模板或自定义模板：
 - 系统预设模板：目前数据万象提供了多种文件转码的预设模板，覆盖了大部分的转码需求，您可在 [数据万象控制台](https://console.cloud.tencent.com/ci) 查看所有系统预设模板。
-- 自定义模板：您可通过控制台方式创建模板，或通过 API 方式 [创建](https://intl.cloud.tencent.com/document/product/1045/43643) 、[修改](https://intl.cloud.tencent.com/document/product/1045/43646) 、[查找](https://intl.cloud.tencent.com/document/product/1045/43645) 、[删除](https://intl.cloud.tencent.com/document/product/1045/43644) 模板。
+- 自定义模板：您可通过 [控制台方式](https://intl.cloud.tencent.com/document/product/1045/43606) 创建模板，或通过 API 方式[创建](https://intl.cloud.tencent.com/document/product/1045/49911)、[修改](https://intl.cloud.tencent.com/document/product/1045/49925)、[查找](https://intl.cloud.tencent.com/document/product/1045/49919)、[删除](https://intl.cloud.tencent.com/document/product/1045/49918) 模板。
 
 
 ### 通过任务方式
 
 对于存储在对象存储（Cloud Object Storage，COS）上的存量数据，您可通过创建任务来实现文件转码。文件转码任务您可选择控制台或 API 进行创建。
 
-- 控制台方式：您可使用数据万象控制台，可视化创建任务，使用详情请见文件转码任务文档。
-- API 方式：您可使用 API 接口创建转码任务，使用详情请见 [API 文档](https://www.tencentcloud.com/document/product/1045/43676)。
+- 控制台方式：您可使用数据万象控制台，可视化创建任务，使用详情请见 [文件转码任务文档](https://intl.cloud.tencent.com/document/product/1045/43605)。
+- API 方式：您可使用 API 接口创建转码任务，使用详情请见 [API 文档](https://intl.cloud.tencent.com/document/product/1045/48941)。
 
 
 
@@ -46,8 +46,8 @@
 
 #### 创建工作流
 
-您可使用数据万象控制台创建工作流，详情请见工作流文档。
+您可使用数据万象控制台创建工作流，详情请见 [工作流文档](https://intl.cloud.tencent.com/document/product/1045/43604)。
 
-#### 删除、查询、搜索工作流
+#### API 创建、删除、查询、搜索工作流
 
-您可使用 API 接口进行 [删除工作流](https://intl.cloud.tencent.com/document/product/1045/43734)、[搜索指定工作流](https://intl.cloud.tencent.com/document/product/1045/43735)、[获取工作流详情](https://intl.cloud.tencent.com/document/product/1045/43736)、[获取工作流实例列表](https://intl.cloud.tencent.com/document/product/1045/43737) 操作。
+您可使用 API 接口进行 [创建工作流](https://intl.cloud.tencent.com/document/product/1045/43733)、[删除工作流](https://intl.cloud.tencent.com/document/product/1045/43734)、[搜索指定工作流](https://intl.cloud.tencent.com/document/product/1045/50339)、[更新工作流](https://intl.cloud.tencent.com/document/product/1045/43738) 操作。
