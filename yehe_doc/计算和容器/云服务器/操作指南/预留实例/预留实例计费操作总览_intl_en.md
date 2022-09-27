@@ -4,8 +4,7 @@ This document describes how to use RIs.
 
 ## Prerequisites
 
-1. Currently, RIs are only offered to beta users. To use it, go to the RI beta application page and [submit an application](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) to be a beta user.
-2. You have already logged in to CVM console and are in the [Reserved Instance page](https://console.cloud.tencent.com/cvm/reservedinstances).
+ You have already logged in to CVM console and are in the [Reserved Instance page](https://console.intl.cloud.tencent.com/cvm/reservedinstances/index?rid=1).
 
 
 ## Directions
