@@ -4,8 +4,7 @@
 
 ## 前提条件
 
-1. 当前预留实例计费只对国际站白名单用户开放，请前往预留实例计费[内测申请](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns)使用资格。
-2. 已登陆云服务器控制台，进入[预留实例列表页面]((https://console.cloud.tencent.com/cvm/reservedinstances))。
+ 已登陆云服务器控制台，进入[预留实例列表页面]((https://console.cloud.tencent.com/cvm/reservedinstances))。
 
 
 ## 操作步骤
