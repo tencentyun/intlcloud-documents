@@ -4,8 +4,7 @@ Dokumen ini menjelaskan cara menggunakan RI.
 
 ## Prasyarat
 
-1. Saat ini, RI hanya ditawarkan kepada pengguna beta. Untuk menggunakannya, buka halaman aplikasi beta RI dan [kirim aplikasi](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) untuk menjadi pengguna beta.
-2. Anda telah masuk ke konsol CVM dan berada di [halaman Instans Cadangan](https://console.cloud.tencent.com/cvm/reservedinstances).
+ Anda telah masuk ke konsol CVM dan berada di [halaman Instans Cadangan](https://console.intl.cloud.tencent.com/cvm/reservedinstances/index?rid=1).
 
 
 ## Petunjuk
