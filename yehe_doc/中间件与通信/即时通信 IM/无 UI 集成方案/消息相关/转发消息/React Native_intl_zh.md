@@ -20,7 +20,7 @@
 
 1. 调用 `createMergerMessage` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#createMergerMessage)) 接口创建一条合并消息，创建合并消息的时候需要设置原始消息列表，合并消息标题、合并消息摘要等信息。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/27de8638efbd212c09452918db7f62ec.png" width = "450" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
 | 属性           | 含义             | 说明                                                                                                           |
 | -------------- | ---------------- | -------------------------------------------------------------------------------------------------------------- |
