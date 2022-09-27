@@ -20,7 +20,7 @@ In the console, we recommend you first [upload an application](https://intl.clou
 
 [](id:step4)
 ### Step 4. Integrate CAR PaaS
-CAR PaaS provides [TencentCloud APIs](https://intl.cloud.tencent.com/document/product/1158/49958) and SDKs for various client types, including the [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/1158/49627), [SDK for Android](https://intl.cloud.tencent.com/document/product/1158/49628), and [SDK for iOS](https://intl.cloud.tencent.com/document/product/1158/49629). You need to develop both the backend and the frontend.
+CAR PaaS provides [TencentCloud APIs](https://intl.cloud.tencent.com/document/product/1158/49958) and SDKs for various client types, including the [JavaScript SDK](https://intl.cloud.tencent.com/document/product/1158/49627), [SDK for Android](https://intl.cloud.tencent.com/document/product/1158/49628), and [SDK for iOS](https://intl.cloud.tencent.com/document/product/1158/49629). You need to develop both the backend and the frontend.
 
 [](id:step5)
 
@@ -28,7 +28,7 @@ CAR PaaS provides [TencentCloud APIs](https://intl.cloud.tencent.com/document/pr
 
 1. **The client initializes the CAR SDK**:
 No matter which type of client you use, you can get `ClientSession` after the SDK is initialized successfully. `ClientSession` will be used by the business server to get `ServerSession` subsequently. The specific initialization and acquisition methods for each client type are as detailed below:
-   - **SDK for JavaScript**: The business client calls the [TCGSDK.init(params)](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.init(params)) API to perform initialization. After initialization, the client calls the [TCGSDK.getClientSession()](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.getclientsession()) function to get its `ClientSession`.
+   - **JavaScript SDK**: The business client calls the [TCGSDK.init(params)](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.init(params)) API to perform initialization. After initialization, the client calls the [TCGSDK.getClientSession()](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.getclientsession()) function to get its `ClientSession`.
    - **SDK for Android**: The business client calls the `TcrSdk.getInstance().init(context, null, new AsyncCallback<Void>())` API to perform initialization. The client gets its `ClientSession` in the [TcrSession.init(AsyncCallback)](https://tencentyun.github.io/cloudgame-android-sdk/tcrsdk/com/tencent/tcr/sdk/api/TcrSession.html#init(com.tencent.tcr.sdk.api.AsyncCallback)) callback API.
 2. **The backend service reserves a concurrency**:
 Your backend service calls the CAR API [ApplyConcurrent()](https://intl.cloud.tencent.com/document/product/1158/49969) to reserve a concurrency and proceeds to the next step after receiving the success callback.
@@ -36,6 +36,6 @@ Your backend service calls the CAR API [ApplyConcurrent()](https://intl.cloud.te
 Your backend service calls the CAR API [CreateSession(ClientSession)](https://intl.cloud.tencent.com/document/product/1158/49968) to get `ServerSession` in the success callback and return it to the client.
 4. **Start CAR**:
 The call method to start CAR after `ServerSession` is received varies slightly for SDKs for different client types. Read the following guides as needed:
-   - **SDK for JavaScript**: The client calls the [TCGSDK.start(ServerSession)](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.start(serversession)) function to start CAR.
+   - **JavaScript SDK**: The client calls the [TCGSDK.start(ServerSession)](https://intl.cloud.tencent.com/document/product/1158/49627#tcgsdk.start(serversession)) function to start CAR.
    - **SDK for Android**: The client calls the [TcrSession.start(ServerSession, AsyncCallback)](https://tencentyun.github.io/cloudgame-android-sdk/tcrsdk/com/tencent/tcr/sdk/api/TcrSession.html#start(java.lang.String,com.tencent.tcr.sdk.api.AsyncCallback)) function to start CAR.
 
