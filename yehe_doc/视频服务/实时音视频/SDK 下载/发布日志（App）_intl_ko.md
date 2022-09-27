@@ -328,7 +328,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 
 ### Version 8.7 @ 2021.5.25
 **새로운 기능**
-- 전체 플랫폼: 외부 연결 오디오 기기에 대한 이상 검증이 추가되었습니다. onStatistics 콜백 등록 후, [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics)의 audioCaptureState로 장시간 음소거, 파음, 이상 끊김 문제를 실시간으로 검증할 수 있습니다.
+- 전체 플랫폼: 외부 연결 오디오 기기에 대한 이상 검증이 추가되었습니다. onStatistics 콜백 등록 후, TRTCLocalStatistics 의 audioCaptureState로 장시간 음소거, 파음, 이상 끊김 문제를 실시간으로 검증할 수 있습니다.
 - Windows: 사용자 정의 수집은 RGBA 포맷의 비디오 데이터 입력을 지원합니다.
 
 **품질 최적화**
