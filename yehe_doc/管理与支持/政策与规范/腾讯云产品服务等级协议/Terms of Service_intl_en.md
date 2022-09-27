@@ -244,3 +244,185 @@ Capitalized terms used but not defined herein shall have the respective meanings
 (c)  you are solely responsible for compliance with Telemarketing Laws such as the TCPA including, but not limited to, responsibility for obtaining and maintaining such prior consent(s) as may be necessary for the sending of SMS messages in the United States or elsewhere as applicable. Without regard to any caps on liability in the Tencent Cloud Terms of Service, you agree to indemnify and hold harmless Tencent for any claimed or actual violations of Telemarketing Laws such as the TCPA. 
 
 (d) Notwithstanding the foregoing, Tencent may, in its discretion, audit any SMS messages transmitted through the Short Message Service by you or your End Users and Tencent may edit, remove or refuse any SMS message or content that, in its discretion, violates these Short Message Service Terms of Service, the Tencent Cloud Terms of Service or applicable laws, regulations, industry codes and practices.
+
+## TENCENT CLOUD PRC SERVICE REGION TERMS
+
+To the extent you wish to receive Services under the Tencent Cloud Terms of Service (" **Terms**") for which the PRC is the Service Region, such Services shall be provided by Tencent Cloud Computing (Beijing) Co., Ltd. ("**Tencent Cloud Beijing**") and subject to the terms of these PRC Service Region Terms as well as any applicable PRC laws and regulations. Any terms used but not defined in these PRC Service Region Terms have the meaning given to them in the Terms. 
+
+1.You hereby acknowledge and agree that (a) whilst Tencent Cloud Beijing shall provide the Services hereunder in accordance with these Terms and PRC Service Region Terms, it will not otherwise be responsible for your product, service, content and data used in connection with the Services; and (b) you have obtained, and shall maintain for the term of the Terms all applicable and valid regulatory, legal, and/or governmental licenses, filings, recordings, approvals, permits, etc. as may be required by any applicable PRC laws and regulations for the use of the Services and for your business operations using the Services in the PRC Region.
+
+**2. Prohibited Conduct.** When using Services in the PRC, you must comply with all applicable PRC laws, regulations, rules and policies, and safeguard cybersecurity. You must not engage in, or facilitate, any activities that constitute a violation of such applicable laws, regulations, rules and policies, including but not limited to:
+
+(a) activities that contravene the Basic Principles of the Constitution of the PRC; jeopardize national security, reputation or interests; incite subversion of state power; overthrow the socialist system; incite division of state and sabotage national unity; advocate terrorism or extremism; incite ethnic hatred or discrimination; undermine the national religion policy; and/or promote cults or feudal superstition; 
+
+(b) deceptive, false or misleading practices, or practices that infringe the intellectual property rights or legitimate rights and interests of others, such as using "private servers" or "plug-ins";
+
+(c) posting, publishing or dissemination of spam or unlawful content that disrupt national order, jeopardize national security, or advocate for feudal superstitions, obscenity, pornography or vulgarity;
+
+(d) violation of operating rules relating to networks, devices or services linked to the Tencent Cloud network; unlawful or unauthorized access, misappropriation, interference or surveillance;
+
+(e) any actual or attempted sabotage of network security, including but not limited to performing malicious scanning of websites and servers, hacking into a system, or unlawfully accessing data by using viruses, Trojans or malicious codes, phishing and so forth;
+
+(f) any actual or attempted modification of system configuration set by Tencent or any actual or attempted sabotage of system security; using technological means to undermine or disrupt the operation or others’ use of the Services; any actual or attempted disruption of the normal operation of any products of Tencent or any part or functions thereof in any way, or the production, posting or dissemination of such tools or methods;
+
+(g) you being frequently attacked (including but not limited to DDoS attacks) as a result of the provision of the Services, including but not limited to "DNS resolution", "security services", "domain name proxy" and "reverse proxy", and failing to correct your practices in a timely manner, or failing to eliminate the effects as requested by Tencent, thereby causing an impact on the Services platform or on others;
+
+(h) activities violating the “Seven Bottom Lines”, where the “Seven Bottom Lines” refers to the baseline standards in the following seven areas: laws and regulations, socialist system, national interests, citizens’ legitimate rights and interests, national order, moral risks, and information veracity, as promulgated by the competent authorities, and which may be updated or amended from time to time; and
+
+(i) any other illegal or non-compliant practices, including but not limited to illegal activities such as gambling, violence, murder, terrorism, instigating crime, defamation, abuse, disruption of internet security and order, etc. 
+
+ **3. Your Information.**  
+
+(a) You shall provide truthful, legitimate and valid information (the "Information") in accordance with the registration procedures for the Services, including but not limited to your name, contact, email, telephone number, mailing address, industrial and commercial registration documents and so forth. If any change occurs to the Information, you shall promptly notify Tencent of such change.
+
+(b) To ensure account and transaction security, Tencent shall be entitled to require you to carry out real-name authentication at any time, and you shall cooperate accordingly. You agree that Tencent Cloud may authenticate your Information with third parties, and you authorize Tencent to obtain all necessary information relating to your use of the Services.
+
+(c)  In order to reasonably protect your interests and those of your users and other right holders, Tencent shall be entitled to put in place processes and systems specifically devoted to dealing with infringement and complaints, and you shall comply with such processes and systems. If Tencent receives a complaint or report from a third party against you, Tencent shall be entitled to disclose your information (including but not limited to your registered name, identification, contacts, telephone number and so forth) to the complainant as necessary and may urge you to consult with the complainant, with a view to promptly resolving such complaint or dispute and protecting the legitimate rights and interests of all parties concerned. You shall extend your cooperation; failure to do so may affect your use of the Services.
+
+ **4.  Security.** You will not install or use any pirated software on the Services and must take security measures to protect your computer information systems as required under applicable PRC laws, regulations or rules, including but not limited to installing any required State-approved security products specifically designed for computer information systems.
+
+ **5. Remedies**. If Tencent discovers, on its own or based on information provided by competent authorities or complaints filed by rights holders, that you have violated applicable PRC laws, regulations or rules, or breached the Terms, including these PRC Service Region Terms, Tencent will be entitled to take any one or more of the following actions at its own discretion:
+
+(a) demand that you immediately remove or modify the content in question;
+
+(b) immediately remove or block the content in question or disable the links in question;
+
+(c) restrict or suspend the provision of the Services to you (including but not limited to directly taking your services offline and withdrawing the relevant resources or setting restrictions on your operations under your Account(s));
+
+(d) in case of serious violations or breaches, Tencent will have the right to terminate the provision of Services to you and terminate the Terms (including but not limited to directly taking all of your services offline and withdrawing the relevant resources). The Fees already paid by you for any unused service period will be credited to Tencent as liquidated damages; and
+
+(e) pursuing other liabilities against you in accordance with any applicable PRC laws and regulations.
+
+Tencent shall not be responsible or held liable for any damages or losses, including but without limitation to the suspension of your business operations, deletion of data, etc., arising from the actions taken by Tencent hereunder due to your breach of these Terms and PRC Service Region Terms. You shall indemnify and hold harmless Tencent, its Affiliates, and each of their respective licensors, employees, officers and directors in respect of any damages or losses arising as a result of your breach of these Terms and PRC Service Region Terms. 
+
+ **6. Cooperation with Authorities**. In accordance with any applicable PRC laws or regulations, or otherwise in compliance with the inquiry, request, order, or direction of any PRC governmental authorities, regulators, judicial, administrative or other competent authorities, and notwithstanding any confidentiality obligations or non-disclosure obligations whether set forth in these Terms or otherwise, Tencent will be entitled to render cooperation to the aforementioned authorities and regulators in respect of any inquiries, investigations, proceedings or otherwise, including providing the relevant information to such regulators and authorities, to facilitate the resolution of complaints and disputes in a timely manner and protect the legitimate rights and interests of all parties concerned.
+
+ **7. Governing Law**. The provisions of Section 13(e) and the provisions of Section 3 concerning governing law of the Terms are hereby deleted and restated as follows:
+
+The formation, validity, performance and interpretation of, and dispute resolution in relation to, these Terms will be governed by the laws of the PRC (excluding the conflicts of law provisions). In the event of any dispute arising out of these Terms, the parties will first attempt to resolve the dispute through mutual consultation in good faith; if the parties fail to resolve the dispute through such consultation, either party may refer the dispute or conflict to the People's Court in Nanshan District, Shenzhen.
+
+## TENCENT CLOUD NORTH AMERICA TERMS 
+
+To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is in North America, you shall be subject to the terms of these North America Terms. Any terms used but not defined in these North America Terms have the meaning given to them in the Terms.
+
+ **1.Dispute Resolution and Arbitration** 
+
+(a) Except for the right of either party to apply to any court of competent jurisdiction for a temporary restraining order, a preliminary injunction, or other equitable relief to preserve the status quo or prevent irreparable harm, any dispute, controversy or claim arising in any way out of or in connection with the Terms, including the existence, validity, interpretation, performance, breach or termination of the Terms, or any dispute regarding pre-contractual or non-contractual rights or obligations arising out of or relating to it (“**Dispute**”) will be referred to and finally resolved by binding arbitration. Arbitration is less formal than a lawsuit in court. Arbitration uses a neutral arbitrator instead of a judge or jury, may allow for more limited discovery than in court, and can be subject to very limited review by courts. Arbitrators can award the same damages and relief that a court can award. This agreement to arbitrate disputes includes all claims arising out of or relating to any aspect of these Terms, whether based in contract, tort, statute, fraud, misrepresentation, or any other legal theory, and regardless of whether a claim arises during or after the termination of these Terms. YOU UNDERSTAND AND AGREE THAT, BY ENTERING INTO THESE TERMS, YOU AND TENCENT ARE EACH WAIVING THE RIGHT TO A TRIAL BY JURY OR TO PARTICIPATE IN A CLASS ACTION.
+
+(b) Any arbitration between you and Tencent will be administered by the American Arbitration Association (“**AAA**”) under its rules in force when the Notice of Arbitration is submitted in accordance with those Rules (“**Rules**”), which Rules are deemed to be incorporated by reference into this clause and as may be amended by the rest of this clause. The Rules and filing forms are available online at [www.adr.org](http://www.adr.org/) or by calling the AAA at 1-800-778-7879. The Federal Arbitration Act and federal arbitration law apply to the Terms. All arbitration proceedings between the parties will be confidential unless otherwise agreed by the parties in writing.
+
+(c) Tencent will reimburse you for your payment of the filing fee, unless your claim is for more than $10,000, in which case the payment of any fees will be decided by the Rules. Any arbitration hearing will take place at a location to be agreed upon in Santa Clara County, California, but if the claim is for $10,000 or less, you may choose whether the arbitration will be conducted: (a) solely on the basis of documents submitted to the arbitrator; (b) through a non-appearance based telephone hearing; or (c) by an in-person hearing as established by the Rules in the county (or parish) of your billing address. The arbitration tribunal will consist of three arbitrators to be appointed in accordance with the Rules. Arbitration will be conducted in English. Judgment upon the award rendered by the arbitrators may be entered in any court of competent jurisdiction.
+
+(d) YOU AND TENCENT AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. Further, unless both you and Tencent agree otherwise, the arbitrator may not consolidate more than one person’s claims, and may not otherwise preside over any form of a representative or class proceeding.
+
+**2. Third Party Connectivity Services** 
+
+The Services provided to you may include broadband data connectivity services that connect your location(s) to Tencent Cloud (the “Third Party Connectivity Services”). Tencent acts as a network manager and obtains the Third Party Connectivity Services on your behalf as an element of the Services you receive. The Third Party Connectivity Services are provided by one or more broadband service provider(s) subject to the terms and conditions of such provider(s). The Third Party Connectivity Services are subject to certain performance limitations that impact your use of the same. You may contact Tencent at cloudlegalnotices@tencent.com to obtain additional information about the Third Party Connectivity Services that are being used as an element of your Services, including the provider(s)’ network practices, performance characteristics, and applicable commercial terms. Tencent passes through any costs for the Third Party Connectivity Services from the provider(s) to you and may charge a network manager fee as part of the Services offered.
+
+## TENCENT CLOUD EUROPEAN ECONOMIC AREA AND SWITZERLAND (“EEA”)  CONSUMER TERMS
+
+If you are not a business user and you are purchasing the Services for personal use, to the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is in the EEA, such Services shall be subject to the terms of these EEA Consumer Terms. Any terms used but not defined in these EEA Consumer Terms have the meaning given to them in the Terms.
+
+ **1.Governing Law**
+
+These terms shall be governed by English law, except that (if you are a consumer and not a business user) and if you live in a country (which, for these purposes, includes Scotland or Northern Ireland) of the European Union other than England, there may be certain mandatory applicable laws of your country which apply for your benefit and protection in addition to or instead of certain provisions of English law and those mandatory laws will apply.
+
+You agree that any dispute between you and us regarding these terms or the Services will only be dealt with by the English courts, except that if you are a consumer and not a business user) and if you live in a country (which, for these purposes, includes Scotland or Northern Ireland of the European Union other than England, you can choose to bring legal proceedings either in your country or in England, but if we bring legal proceedings, we may only do so in your country. If you are a consumer within the EEA, to the extent there is any conflict, this provision shall take precedence over any term in the front-end of these Terms.
+
+If you reside in EEA you may also have recourse to a mediation procedure body designated by us or an alternative dispute resolution process. The European Commission provides consumers with an online dispute settlement platform accessible at the following address: http://ec.europa.eu/consumers/odr/.
+
+ **2.Cancellation Right**
+
+You normally have the right to cancel the Services within 14 days after the date the Services start being provided. However, you acknowledge that we start provision of the Services immediately following acceptance of your selection of the Services (which, by selecting the Service, you request us to do) and that you will have no right to change your mind and cancel under the Consumer Contracts Regulations once the Services have been fully carried out. If you cancel before the Services have been fully carried out (and within the 14-day period) then the charge you pay us (and which we will deduct from any refund otherwise due to you) will be proportionate to the Services that have been used by the time you cancel, and will not exceed our reasonable costs of providing the Services up until that point.
+
+To cancel the Services, you must clearly inform us, preferably:
+
+- by contacting customer service by submitting a work order through the console at     https://console.tencentcloud.com/workorder/category, giving us your name,     address, and account information; or
+
+Nothing in this section affects your legal rights.
+
+ **3.Our refunds policy**
+
+If you cancel the Services within the 14-day cooling-off period (see above), we will process any refund due to you as soon as possible and, in any case, within 14 days after you notify us of cancellation.
+
+If you received any promotional or other discount when you paid, any refund will only reflect the amount you actually paid.
+
+Refunds are made using the same method originally used by you to pay for your purchase, unless agreed otherwise.
+
+ **4.Defective Services**
+
+If any Services you order are defective (in other words, they do not comply with the requirements of these Terms), you may have one or more legal remedies available to you, depending on when you make us aware of the problem, in accordance with your legal rights. If you believe the Services are defective, you should inform us as soon as possible by contacting customer service by submitting a work order through the console at https://console.tencentcloud.com/workorder/category, giving your name, address and account information. Nothing in this section affects your legal rights.
+
+ **5.France Specific Terms**
+
+If you are a consumer residing in France, please note that the exclusion and limitation of liability provisions included in Sections 11(a) and 11(b) of the Terms above, will not apply to you.
+
+
+## TENCENT CLOUD GERMANY TERMS
+
+To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is in Germany, you shall be subject to the terms of these Germany Terms, which prevail over the general Tencent Cloud Terms of Service in case of any contradictions. Any Terms used but not defined in these Germany Terms have the meaning given to them in the Terms.
+
+ **1. Privacy Policy.** Our Privacy Policy does not form part of the Terms. It only serves for informational purposes and provides information on how we process personal data within the scope of the Services.
+
+ **2. Changes to the Service and/or the Terms.** We reserve the right to change the Service and/or the Terms. We will notify you of the changed conditions by email at least six (6) weeks before their effective date and will indicate the intended application of these new Terms. If you do not object to the application of the new Terms within this period of time or if you continue to use the Services after the changed Terms have entered into force, the new Terms will be considered to have been accepted. We will notify you of the importance of the six (6) week period, the right to object, and the legal consequences of silence. If you do not accept the new Service and/or Terms, which are essential for the continued provision of our Services, we may terminate out contractual relationship with you.
+
+ **3. Third Party Software.** No terms and conditions applicable to Third Party Software form part of the Terms. You are not bound by any terms and conditions applicable to Third Party Software by these Terms.
+
+ **4. Limitation of Liability, Indemnification.** Notwithstanding Section 11 of the Tencent Cloud Terms of Service, the following applies to you:
+
+(a) For damages with respect to injury to health, body or life caused by Tencent, Tencent’s representatives or Tencent’s agents in the performance of the contractual obligations, we are fully liable.
+
+(b) Tencent is fully liable for damages caused wilfully or by gross negligence by Tencent, Tencent’s representatives or Tencent’s agents in the performance of the contractual obligations. The same applies to damages which result from the absence of a quality which was guaranteed by Tencent or to damages which result from malicious action.
+
+(c) If damages, except for such cases covered by Sections 4(a), 4(b) or 4(d), with respect to a breach of a contractual core duty are caused by slight negligence, Tencent is liable only for the amount of the total fees that you have paid to Tencent under these terms in the twelve (12) months immediately preceding the date that event giving rise to the liability first occurred. Contractual core duties, generally, are such duties whose accomplishment enables proper performance of an agreement in the first place and whose performance a contractual party regularly may rely on.
+
+(d) Tencent’s liability based on the German Product Liability Act remains unaffected.
+
+(e) Any further liability of Tencent is excluded.
+
+(f) The limitation period for claims for damages against Tencent expires after one (1) year, except for such cases covered by sections 4(a), 4(b), or 4(d).
+
+ **5. Inapplicable Clauses.** The following Section of the Tencent Cloud Terms of Service do not apply to you: Section 9(b)(iv), Section 9(d), Section 10, and Section 12(g).  
+
+ **6. Consentto Electronic Communications.**  Notwithstanding Section 12(c) of the Tencent Cloud Terms of Service, we will ask you for a separate consent to receiving certain electronic communications from us.
+
+ **7. Termand Termination.** Irrespective of Section 9 of the Tencent Cloud Terms of Service, Tencent may terminate the Terms at any time and for any and no reason upon providing to you 30 days’ written notice.
+
+ **8. Governing Law.** Notwithstanding Section 3(a) of the Tencent Cloud Terms of Service, if you use our Services as a consumer, the governing law that applies to the Terms is German law.
+
+## TENCENT CLOUD SOUTH KOREA TERMS
+
+To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“Terms”) and the country specified in your registered billing information is South Korea, you shall be subject to the terms of these South Korea Terms, which prevail over the general Tencent Cloud Terms of Service in case of any conflict or inconsistency. Any terms used but not defined in these South Korea Terms have the meaning given to them in the Terms.
+
+**1. Eligibility**
+Section 2 concerning eligibility of Terms is hereby restated as follows:
+You must be at least 19 years old to use the Services. By agreeing to these Terms (including South Korea Terms, hereinafter the same), you represent and warrant to us that: (a) you are at least 19 years old; (b) you have not previously been suspended or removed from the Services; and (c) your registration and your use of the Services is in compliance with any and all applicable laws and regulations. If you are an entity, organization or company, the individual accepting these Terms on your behalf represents and warrants that they have authority to bind you to these Terms and you agree to be bound by these Terms.
+
+**2. Changes on Services or Fees**
+If Tencent changes the Services or Fees, Tencent will specify the reason for the change, the content of the Services or Fees to be changed, and the date of provision, etc., and post such information on the initial screen of the Service at least 7 days prior to the date of implementation of such change. However, if the change in Service or Fees is unfavorable or material to you, we will notify you at least 30 days in advance and obtain consent from you with respect to the change.
+
+**3. Cancellation**
+
+(a) If you are an end-user of the Services and a consumer under Act on the Consumer Protection in Electronic Commerce, etc., you may cancel the Services within 7 days after the date of commencement of the Services. However, notwithstanding the above, if the contents of the Services are different from the contents displayed or advertised by Tencent, or if the contents are performed differently from contents specified in the Terms and other agreements related to the Services, you may cancel the Services within three months after the date of commencement of the Services, or within 30 days after the date you knew or could have known such fact. 
+
+(b) You may not cancel the Services against Tencent’s intention if the Services that Tencent has provided are temporary or with only partial functions.
+
+(c) in order to cancel the Services, you must clearly inform us, preferably by contacting customer service by submitting a work order through the console at https://console.tencentcloud.com/workorder/category, giving us your name, address, and account information.
+
+(d) Cancellation will take effect from the date of sending your intention to cancel. 
+
+(e) If you cancel, Tencent will delete and terminate your Service without delay and refund Fees within 3 days after the date of deletion/termination. 
+
+(f) In the event that Tencent delays the refund in paragraph (e), Tencent will pay you the delayed interest calculated by multiplying the delayed period by the interest rate prescribed by the Act on the Consumer Protection in Electronic Commerce, Etc. and the Enforcement Decree.
+
+(g) Tencent will request the business operator who provided the Payment Method used to pay the Fees to suspend or cancel the charge for the Fees without delay. However, if Tencent has already received Fees from the payment company, it will be refunded to the payment company and notify to you.
+
+(h) If you have used some of the Services, Tencent is entitled to make a claim against you for an amount equivalent to the benefits you have obtained by using the Services or the cost of supplying the Services for you.
+
+(i) Tencent may not claim a penalty or compensation for damages on the grounds of cancellation.
+
+**4. Modification of the Terms**
+If Tencent intends to amend the Terms, Tencent will post the updated version on the Tencent Cloud website. Updated versions will be effective no earlier than 7 days after the date of posting. Your continued use of the Services after the effective date of the updated Terms constitutes your acceptance of any amended Terms. However, if the modification in the Terms is unfavorable or material to you, we will notify you at least 30 days in advance and obtain consent from you with respect to the modification.
+
+**5. Governing Law**
+Notwithstanding Section 3(a) of the Terms, if you use our Services as an end-user or consumer, the governing law that applies to the Terms will be Korean Law.
