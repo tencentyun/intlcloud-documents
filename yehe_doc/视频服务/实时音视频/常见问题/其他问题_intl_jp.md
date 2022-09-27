@@ -153,7 +153,7 @@ TRTCコンソールの**[使用量の統計](https://console.cloud.tencent.com/t
 
 [](id:que40)
 ###  視聴者がルーム内で接続された画面を確認するにはどうすればいいですか？
-視聴者がライブストリーミングモードを使用する場合、視聴者は入室してTRTCCloudDelegateの [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a)コールバックを通じてキャスターのユーザーID（マイク接続されている人も [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)で入室すると、視聴者にとってはキャスターになります）を取得します。次に視聴者は[startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5c5ea936418b106c2e801db57938dde9)メソッドを呼び出すと、キャスターのビデオ画面を表示することができます。
+視聴者がライブストリーミングモードを使用する場合、視聴者は入室してTRTCCloudDelegateの onUserVideoAvailableコールバックを通じてキャスターのユーザーID（マイク接続されている人も [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)で入室すると、視聴者にとってはキャスターになります）を取得します。次に視聴者は[startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5c5ea936418b106c2e801db57938dde9)メソッドを呼び出すと、キャスターのビデオ画面を表示することができます。
 より詳しい操作については、[ライブストリーミングクイックスタート(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)をご参照ください。
 
 [](id:que41)
