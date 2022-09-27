@@ -1,13 +1,14 @@
 ### Visão geral
 
 A instância reservada (Reserved Instance, RI) é um desconto no faturamento aplicado ao uso de instâncias do CVM com pagamento conforme o uso em sua conta. Essas instâncias do CVM devem corresponder exatamente aos atributos da RI que você adquiriu para se beneficiar do desconto no faturamento durante o período de vigência da RI. A RI oferece um desconto significativo em comparação ao faturamento com pagamento conforme o uso.
->? Faça login no console do Tencent Cloud e acesse a [Calculadora de preços](https://intl.cloud.tencent.com/pricing/cvm) para consultar o preço.
+>? 
+>- Faça login no console do Tencent Cloud e acesse a [Calculadora de preços](https://intl.cloud.tencent.com/pricing/cvm) para consultar o preço.
 
-> Atualmente, as RIs não são reembolsáveis.
+>- Atualmente, as RIs não são reembolsáveis.
 >
-> As configurações de uma RI não podem ser alteradas após a aquisição. O desconto no faturamento da RI não se aplicará mais à instância correspondente se você alterar as configurações dela.
+>- As configurações de uma RI não podem ser alteradas após a aquisição. O desconto no faturamento da RI não se aplicará mais à instância correspondente se você alterar as configurações dela.
 >
-> O desconto no faturamento da RI ainda se aplicará às instâncias do CVM correspondentes, mesmo depois de serem desligadas de forma proativa ou forçada.
+>- O desconto no faturamento da RI ainda se aplicará às instâncias do CVM correspondentes, mesmo depois de serem desligadas de forma proativa ou forçada.
 
 #### Atributos
 
