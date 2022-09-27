@@ -2,7 +2,7 @@
 注册腾讯云账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/10496)，详情请参见 [账号注册教程](https://intl.cloud.tencent.com/document/product/378/17985)。
 
 ## 步骤2：服务购买
-进入 [渗透测试服务购买页面](https://buy.intl.cloud.tencent.com/pts)，根据所需测试的目标数量进行选择并填写，具体类型可参见 [计费概述](https://intl.cloud.tencent.com/document/product/1146/46024)。填写完成后单击**提交**，完成线上购买。
+进入 [渗透测试服务购买页面](https://buy.tencentcloud.com/ipts)，根据所需测试的目标数量进行选择并填写，具体类型可参见 [计费概述](https://intl.cloud.tencent.com/document/product/1146/46024)。填写完成后单击**提交**，完成线上购买。
 
 
 ## 步骤3：服务下发
