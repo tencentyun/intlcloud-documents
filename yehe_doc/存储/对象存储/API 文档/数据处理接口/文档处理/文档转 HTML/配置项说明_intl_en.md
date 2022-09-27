@@ -10,11 +10,11 @@ var demo = COSDocPreviewSDK.config({
 
 The configuration options are as described below:
 
-| `mode` Value        | Description                  | Default Option                                                         | 
+| `mode` Value        | Description                  | Default Option            | 
 | ----------- | ------------------------------------------------------------ | -------------- | 
 | normal | Normal mode, with all functional UIs shown | Yes | 
 | simple | Simple mode, with no header and toolbar shown | No | 
- 
+
 ## Custom Configuration Options
 
 When initializing the JS-SDK, by configuring different options for different types of files, you can enable or disable specific configurations in a file and control its status when it is opened.
