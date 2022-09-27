@@ -6,8 +6,7 @@ After this feature is enabled, the sender can set whether a message requires a r
 Read receipts are supported for both one-to-one and group messages in the same way.
 
 > ?
-
-- To use this feature, you need to purchase the [Ultimate edition plan](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8).
+> - To use this feature, you need to purchase the [Ultimate edition plan](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8).
 
 ## Message Read Receipt
 
