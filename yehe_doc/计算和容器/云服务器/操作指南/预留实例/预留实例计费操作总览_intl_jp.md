@@ -4,8 +4,7 @@
 
 ## 前提条件
 
-1. 現在、リザーブドインスタンスはベータ版ユーザーにのみ提供されています。リザーブドインスタンスページにアクセスし、[利用資格](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns)を申請してください。
-2. すでにCVMコンソールにログインし、[リザーブドインスタンスページ](https://console.cloud.tencent.com/cvm/reservedinstances)に進みます。
+すでにCVMコンソールにログインし、[リザーブドインスタンスページ](https://console.intl.cloud.tencent.com/cvm/reservedinstances/index?rid=1)に進みます。
 
 
 ## 操作手順
