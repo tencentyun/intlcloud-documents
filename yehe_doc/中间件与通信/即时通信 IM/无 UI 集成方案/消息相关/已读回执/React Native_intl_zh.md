@@ -6,8 +6,7 @@
 单聊和群聊均支持消息已读回执功能，操作步骤一致。
 
 > ?
-
-- 该功能需要购买旗舰版套餐包，购买 [旗舰版套餐包](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) 后可使用。
+>- 该功能需要购买旗舰版套餐包，购买 [旗舰版套餐包](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) 后可使用。
 
 ## 消息已读回执
 
