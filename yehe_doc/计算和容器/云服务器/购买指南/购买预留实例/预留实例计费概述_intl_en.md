@@ -1,7 +1,7 @@
 ### Overview
 
 Reserved instance (RI) is a billing discount applied to the use of pay-as-you-go CVM instances under your account. These CVM instances must exactly match attributes of the RI you purchased to benefit from the billing discount during the RI term. RI provide you with a significant discount compared to pay-as-you-go billing.
->? RI is currently in beta. To use it, [click here](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) to submit an application. After your application is approved, log in to the Tencent Cloud Console and go to [Price Calculator](https://intl.cloud.tencent.com/pricing/cvm) to query the price.
+>? Please refer to the prices on the [Price Calculator](https://intl.cloud.tencent.com/pricing/cvm).
 
 > Currently, RIs are non-refundable.
 >
