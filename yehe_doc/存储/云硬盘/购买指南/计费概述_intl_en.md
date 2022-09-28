@@ -38,7 +38,7 @@ Pricing for snapshots varies by region. For more information, see [Price Overvie
 
 ### Free Tier
 
-After the commercialization of snapshots, Tencent Cloud still provides users with a free tier of 80 GB in regions in China. The part beyond the free tier is postpaid on an hourly basis. For billing standards, see [Price Overview] (https://intl.cloud.tencent.com/document/product/362/2413#Snapshot). Note the following:
+After the commercialization of snapshots, Tencent Cloud still provides users with a free tier of 80 GB in regions in China. The part beyond the free tier is postpaid on an hourly basis. For billing standards, see [Price Overview](https://intl.cloud.tencent.com/document/product/362/2413#Snapshot). Note the following:
 - The free tier is available to users in regions as listed in the [Snapshot console](https://console.cloud.tencent.com/cvm/snapshot/overview).
 - The free snapshot tier will be canceled in the future. For more information, check the [CBS](https://www.tencentcloud.com/document/product/362) product page regularly.
 
