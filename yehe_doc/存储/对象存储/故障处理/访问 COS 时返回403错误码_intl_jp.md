@@ -157,7 +157,7 @@ COSへのアクセスの際に次のメッセージが表示された場合、
 次の操作を実行する必要があります。
 
 1. OSのタイプに基づいて、クライアントの現在時刻を確認します。
- - Windowsシステム（Windwos Server 2012の場合）：**![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png) > コントロールパネル>時計、言語および地域>日付と時刻の設定**。
+ - Windowsシステム（Windwos Server 2012の場合）：![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png) **> コントロールパネル>時計、言語および地域>日付と時刻の設定**。
 
  - Linuxシステム：`date -R`コマンドを実行します。
 ![](https://main.qcloudimg.com/raw/88288162bd1de8c2ec0b640f0df6799e.png)
