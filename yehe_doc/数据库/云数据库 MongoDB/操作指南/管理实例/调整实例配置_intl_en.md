@@ -7,7 +7,7 @@ If the configuration of your purchased TencentDB for MongoDB instance isn't suit
 - The memory and CPU cores of mongod and mongos nodes are in fixed combinations, and the disk capacity has a corresponding value range. For example, if the specification of a mongod node is 2-core 4 GB MEM, then the disk capacity can range from 100 to 500 GB.
 
 - Mongod replica nodes: You can select three (one-primary-two-replica), five (one-primary-four-replica), or seven (one-primary-six-replica) nodes in total. Currently, you cannot customize the number of replicas.
-- The numbers of mongos nodes supported by single-AZ deployed and multi-AZ deployed instances are different. A single-AZ deployed instance can contain 3–48 nodes, while a multi-AZ deployed instance can contain 6–48 nodes.
+- The numbers of mongos nodes supported by single-AZ deployed and multi-AZ deployed instances are different. A single-AZ deployed instance can contain 3–32 nodes, while a multi-AZ deployed instance can contain 6–32 nodes.
 
 You can select a specification based on your business conditions as described in [Product Specifications](https://intl.cloud.tencent.com/document/product/240/31183) first. Then, select an adjustment type and make adjustments based on the following table.
 
