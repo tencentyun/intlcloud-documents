@@ -610,6 +610,6 @@ The following Modules shall apply and form part of this privacy policy if you us
 48.[Penetration Test Service](https://intl.cloud.tencent.com/document/product/1146/49937).
 49.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50007).
 50.[Captcha](https://www.tencentcloud.com/document/product/1159/50401).
-50.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
+51.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
