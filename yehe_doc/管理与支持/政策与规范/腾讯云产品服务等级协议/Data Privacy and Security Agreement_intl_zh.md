@@ -149,7 +149,7 @@
 46.[前端性能监控](https://intl.cloud.tencent.com/document/product/1131/49155)。
 47.[账号风控平台](https://intl.cloud.tencent.com/document/product/1148/49480)。
 48.[应用云渲染](https://intl.cloud.tencent.com/document/product/1158/50008)。
-
+49.[文字识别](https://www.tencentcloud.com/document/product/1005/50445)。
 ## 特定司法管辖区要求
 
 **欧洲**
