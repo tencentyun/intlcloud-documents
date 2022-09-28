@@ -57,6 +57,15 @@ To avoid data loss caused by system crashes or other problems, TencentDB for Mon
 <td>Sharded cluster</td>
 <td><ul><li>Default backup mode: Logical backup</li><li>Supported backup modes: Logical backup and physical backup</li></ul></td>
 <td><ul><li>Default backup mode: Logical backup</li><li>Supported backup modes: Logical backup and physical backup</li></ul></td></tr>
+<tr>
+<td rowspan="2">v4.4</td>
+<td>Replica set</td>
+<td><ul><li>Default backup mode: Logical backup</li><li>Supported backup modes: Logical backup and physical backup</li></ul></td>
+<td><ul><li>Default backup mode: Logical backup</li><li>Supported backup modes: Logical backup and physical backup</li></ul></td></tr>
+<tr>
+<td>Sharded cluster</td>
+<td><ul><li>Default backup mode: Logical backup</li><li>Supported backup modes: Logical backup and physical backup</li></ul></td>
+<td><ul><li>Default backup mode: Logical backup</li><li>Supported backup modes: Logical backup and physical backup</li></ul></td></tr>
 </tbody></table>
 
 ## Billing
@@ -87,9 +96,6 @@ Currently, backup is free of charge. We will notify you when billing for the bac
 <tr>
 <td>Backup Start Time</td>
 <td><ul><li>The default start time is 01:00–02:00; that is, the system starts the backup task between 01:00 and 02:00 every day.</li><li>You can select a different time period to start data backup as needed by your business.</li><li>The specific start time varies by the specific scheduling of the backup task.</li></ul></td></tr>
-<tr>
-<td>Backup Exception Alert</td>
-<td>It specifies whether to notify users if an exception occurs while executing a backup task. For TencentDB for MongoDB events that can be monitored by CM, see <a href="https://cloud.tencent.com/document/product/248/14363">Cloud Monitor</a>.</ul></td></tr>
 </tbody></table>      
 
 ## Manual backup
