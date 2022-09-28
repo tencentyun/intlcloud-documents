@@ -4,7 +4,7 @@ Terminated instances will be put into the recycle bin and can be restored.
 Tencent Cloud recycle bin offers a mechanism for repossessing cloud services. If your account balance is sufficient, you can restore terminated instances that are still in the recycle bin.
 
 ## Version Requirement
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support instance repossession.
+Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support instance repossession.
 
 ## Notes
 For pay-as-you-go instances in the recycle bin:
@@ -23,7 +23,7 @@ For pay-as-you-go instances in the recycle bin:
 - Your Tencent Cloud account balance is sufficient.
 
 ## Directions
-You can [**renew**](https://cloud.tencent.com/document/product/240/3552), **restore**, or **eliminate** instances in the recycle bin.
+You can **renew**, **restore**, or **eliminate** instances in the recycle bin.
 
 ### Viewing instance in recycle bin
 1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb).
