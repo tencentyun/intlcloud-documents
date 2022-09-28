@@ -4,7 +4,7 @@ TencentDB for MongoDB allows you to intuitively and quickly track the task execu
 Daily OPS involves massive and diverse tasks. Task management can help you quickly and efficiently find tasks and stay up to date with their execution status.
 
 ## Version Description
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support viewing task execution records.
+Currently, TencentDB for MongoDB  4.4, 4.2, 4.0, 3.6, and 3.2 support viewing task execution records.
 
 ## Prerequisites
 - You have [applied for a TencentDB for MongoDB instance](https://intl.cloud.tencent.com/document/product/240/3551).
