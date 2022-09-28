@@ -219,7 +219,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 49.[Penetration Test Service](https://intl.cloud.tencent.com/document/product/1146/49938).
 50.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50008).
 51.[Captcha](https://www.tencentcloud.com/document/product/1159/50402).
-
+52.[OCR](https://www.tencentcloud.com/document/product/1005/50445).
 ## 10.Jurisdiction-specific Requirements
 
 ### EEA and UK
