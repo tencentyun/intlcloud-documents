@@ -603,3 +603,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 45.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49154).
 46.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49479).
 47.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50007).
+48.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
