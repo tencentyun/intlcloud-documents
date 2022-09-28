@@ -12,7 +12,7 @@
 3. 왼쪽에서 **도메인 및 전송 관리 > 사용자 정의 CDN 가속 도메인**을 클릭하고 **도메인 추가**를 클릭하여 다음 옵션을 구성합니다.
 >? 레거시 COS 콘솔에서 ‘사용자 정의 도메인’을 활성화한 경우 ‘사용자 정의 CDN 가속 도메인’ 대신 ‘사용자 정의 도메인’이 새 콘솔에 표시됩니다.
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/6d05c90f04b276e21df88135af93f917.png)
+![](https://main.qcloudimg.com/raw/1278367aed8eada850c00fa4d5e18a4b.png)
   - **도메인 이름**: 타깃 사용자 정의 도메인 이름(예시: `www.example.com`)을 입력합니다. ICP 비안이 완료되고 CNAME 레코드가 입력한 도메인에 대한 DNS 서비스 제공 업체에서 구성되었는지 확인하십시오. 자세한 내용은 [CNAME 설정](https://intl.cloud.tencent.com/document/product/228/3121)을 참고하십시오. 연결하려는 사용자 정의 CDN 가속 도메인이 다음과 같은 상황에 있는 경우 [도메인 소유권 인증](https://intl.cloud.tencent.com/document/product/228/42693)의 지침에 따라 도메인 소유권을 확인해야 합니다.
      - 처음으로 연결하는 도메인
      - 다른 사용자에 의해 연결된 도메인
