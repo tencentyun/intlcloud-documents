@@ -13,7 +13,7 @@ Cloud Object Storage（COS)コンソールは、バケットタグに基づい�
 
 ## 操作手順
 
-1. 企業アカウントCompanyExampleを使用して、[CAM] (https://console.cloud.tencent.com/cam/policy) コンソールにログインし、ポリシー設定ページに移動します。
+1. 企業アカウントCompanyExampleを使用して、[CAM](https://console.cloud.tencent.com/cam/policy) コンソールにログインし、ポリシー設定ページに移動します。
 2. サブアカウントDeveloperが、タグリストをプルする権限を承認します。**ポリシージェネレーター**または**ポリシー構文**で実装できます。
 <dx-tabs>
 ::: ポリシージェネレーターの承認
