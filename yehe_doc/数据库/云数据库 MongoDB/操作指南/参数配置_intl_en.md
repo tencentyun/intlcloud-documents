@@ -4,7 +4,7 @@ TencentDB for MongoDB allows you to adjust certain database parameters, so that 
 In the daily OPS process, quickly adjusting database parameters can optimize the query and management performance of the database in a targeted manner for ever-changing business scenarios. In addition, the parameter modification records can be viewed at any time for evidence-based problem locating.
 
 ## Version Description
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database parameter modification. However, there are differences in the modifiable parameters on each version as displayed in the console.
+Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support database parameter modification. However, there are differences in the modifiable parameters on each version as displayed in the console.
 
 ## Notes
 - Currently, the parameter modification feature only supports parameters that can take effect without restart required after modification. It will support other parameters in future iterations. You can also restart the instance on the MongoDB terminal. The restart will cause a disconnection. Therefore, make business arrangements in advance and proceed with caution.
@@ -40,7 +40,7 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database paramet
 <td>No</td>
 <td>100</td>
 <td>[0-65536]</td>
-<td>4.0, 4.2</td>
+<td>4.0, 4.2, 4.4</td>
 <td>Replica set instance, sharded instance</td>
 <td>mongod, mongos</td>
 <td>Sets the slow query judgment time in ms.</td></tr>
@@ -49,7 +49,7 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database paramet
 <td>No</td>
 <td>off</td>
 <td>off, slowOp, all</td>
-<td>3.2, 3.6, 4.0, 4.2</td>
+<td>3.2, 3.6, 4.0, 4.2, 4.4</td>
 <td>Replica set instance, sharded instance</td>
 <td>mongod</td>
 <td>Sets the enabled Profile level.</td></tr>
@@ -58,16 +58,16 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database paramet
 <td>No</td>
 <td>600000</td>
 <td>[1,2147483647]</td>
-<td>3.2, 3.6, 4.0, 4.2</td>
+<td>3.2, 3.6, 4.0, 4.2, 4.4</td>
 <td>Replica set instance, sharded instance</td>
-<td>3.2 and 3.6: mongod<br>4.0 and 4.2: mongod, mongos</br></td>
+<td>3.2 and 3.6: mongod<br>4.0, 4.2 and 4.4: mongod, mongos</br></td>
 <td>Sets the cursor timeout period in ms.</td></tr>
 <tr>
 <td>setParameter.<br>intenalQueryExecMaxBlockingSortBytes</br></td>
 <td>No</td>
 <td>33554432</td>
 <td>[33554432,268435456]</td>
-<td>4.0, 4.2</td>
+<td>4.0, 4.2, 4.4</td>
 <td>Replica set instance, sharded instance</td>
 <td>mongod, mongos</td>
 <td>Sets the maximum memory that `Sort` can support in bytes.</td></tr>
@@ -76,7 +76,7 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database paramet
 <td>No</td>
 <td>5</td>
 <td>[0,60]</td>
-<td>4.0, 4.2</td>
+<td>4.0, 4.2, 4.4</td>
 <td>Replica set instance, sharded instance</td>
 <td>mongod</td>
 <td>Sets the waiting time for a single transaction lock in ms.</td></tr>
@@ -85,7 +85,7 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database paramet
 <td>No</td>
 <td>60</td>
 <td>[5,300]</td>
-<td>4.0, 4.2</td>
+<td>4.0, 4.2, 4.4</td>
 <td>Replica set instance, sharded instance</td>
 <td>mongod</td>
 <td>Sets the maximum lifetime of a single transaction in s.</td></tr>
@@ -103,7 +103,7 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database paramet
 <td>No</td>
 <td>NULL</td>
 <td>true, false</td>
-<td>4.0, 4.2</td>
+<td>4.0, 4.2, 4.4</td>
 <td>Sharded instance</td>
 <td>mongos</td>
 <td>Sets the time period to open the balance window.</td></tr>
@@ -112,7 +112,7 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database paramet
 <td>No</td>
 <td>false</td>
 <td>true, false</td>
-<td>4.0, 4.2</td>
+<td>4.0, 4.2, 4.4</td>
 <td>Sharded instance</td>
 <td>mongos</td>
 <td>Enables or disables the balance window.</td></tr>
