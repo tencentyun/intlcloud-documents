@@ -23,7 +23,7 @@
 
 | 템플릿 ID                            | 템플릿 이름 | 컨테이너 형식 | 비디오 인코딩 형식 | 해상도             | 비디오 비트 레이트  | 오디오 인코딩 형식 | 오디오 비트 레이트 |
 | ---------------------------------- | -------- | -------- | ------------ | ------------------ | --------- | ------------ | -------- |
-| t0e2b9f4cd25184c6ab73d0c85a6ee9cb5 | H264-MP4- LD-360P | MP4      | H\.264       | 640 \* 자동 크기 조정  | 512 Kbps  | AAC          | 128 Kbps |
+| t0e2b9f4cd25184c6ab73d0c85a6ee9cb5 | H264-MP4-LD-360P | MP4      | H\.264       | 640 \* 자동 크기 조정  | 512 Kbps  | AAC          | 128 Kbps |
 | t0876739cd865042d1957d73c78f0484fb | H264-MP4-SD-480P  | MP4      | H\.264       | 720 \* 자동 크기 조정  | 1024 Kbps | AAC          | 128 Kbps |
 | t0852e7ff4acd4484e99ba104f3840d3cb | H264-MP4-HD-720P  | MP4      | H\.264       | 1280 \* 자동 크기 조정 | 2000 Kbps | AAC          | 128 Kbps |
 | t04df9eb0c373c4a8780ec894ce05469a7 | H264-MP4-FHD-1080P | MP4      | H\.264       | 1920 \* 자동 크기 조정 | 3500 Kbps | AAC          | 128 Kbps |
@@ -98,7 +98,7 @@
  - 오디오/비디오 매개변수: 필요에 따라 오디오/비디오 매개변수를 사용자 정의할 수 있습니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
->? [오디오/비디오 트랜스 코딩 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [오디오/비디오 트랜스 코딩 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 ### 초고속 고화질 트랜스 코딩
@@ -114,7 +114,7 @@
 4. 왼쪽 사이드바에서 **데이터 처리 워크플로 > 공통 구성 > 템플릿** 탭을 선택하여 템플릿 구성 페이지로 이동합니다.
 5. **초고속 고화질 트랜스 코딩**을 선택하고 **초고속 고화질 트랜스 코딩 템플릿 생성**을 클릭합니다.
 
-6. 초고속 고화질 트랜스 코딩 템플릿 생성 창에서 다음 항목을 구성합니다.
+6. 브로드캐스트 미디어 형식 초고속 고화질 트랜스 코딩 템플릿 생성 창에서 다음 항목을 구성합니다.
  - 템플릿 이름: 최대 64자, 중국어, 영어, 숫자, 밑줄`_`, 하이픈`-`, 별표`*`를 포함할 수 있습니다.
  - 트랜스 코딩 유형: 기본적으로 비디오 트랜스 코딩입니다.
  - 컨테이너 형식: 지원되는 형식에는 MP4 및 HLS가 포함됩니다.
@@ -122,7 +122,7 @@
  - 오디오/비디오 매개변수: 필요에 따라 오디오/비디오 매개변수를 사용자 정의할 수 있습니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
->? [초고속 고화질 트랜스 코딩 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [초고속 고화질 트랜스 코딩 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 ### 브로드캐스트 미디어 형식 트랜스 코딩
@@ -146,7 +146,7 @@
  - 오디오/비디오 매개변수: 필요에 따라 오디오/비디오 매개변수를 사용자 정의할 수 있습니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
->? [초고속 고화질 트랜스 코딩 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [초고속 고화질 트랜스 코딩 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 
 
 ### 하이라이트 생성
@@ -161,7 +161,7 @@
 4. 왼쪽 사이드바에서 **데이터 처리 워크플로 > 공통 구성 > 템플릿** 탭을 선택하여 템플릿 구성 페이지로 이동합니다.
 5. **하이라이트 생성**을 선택하고 **하이라이트 생성 템플릿 생성**을 클릭합니다.
 
-6. 하이라이트 생성 템플릿 생성 창에서 다음 항목을 구성합니다.
+6. 음성 분리 템플릿 생성 창에서 다음 항목을 구성합니다.
 >? 현재 하이라이트 생성은 풍경, 음식, 거리 및 Vlog 시나리오에만 사용할 수 있으며 앞으로 더 많은 시나리오를 지원할 예정입니다. 이 기능을 사용자 정의하려면 [고객센터](https://intl.cloud.tencent.com/contact-sales)의 도움을 받으십시오.
 >
  - 템플릿 이름: 최대 64자, 중국어, 영어, 숫자, 밑줄`_`, 하이픈`-`, 별표`*`를 포함할 수 있습니다.
@@ -170,7 +170,7 @@
  - 오디오/비디오 매개변수: 필요에 따라 오디오/비디오 매개변수를 사용자 정의할 수 있습니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
->? [하이라이트 생성 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [하이라이트 생성 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 
@@ -201,7 +201,7 @@
  - 비디오 프레임 압축: 활성화된 경우 캡처된 이미지를 압축할 수 있습니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
->? [비디오 프레임 캡처 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [비디오 프레임 캡처 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 ### 비디오를 애니메이션 이미지로 변환
@@ -230,7 +230,7 @@
  - 출력 애니메이션 이미지 크기: 기본 출력 애니메이션 이미지 크기는 원본 비디오의 크기와 동일합니다. 사용자 정의 너비와 높이를 선택하는 경우 너비와 높이에 각각 128 - 4096 사이의 정수를 입력해야 합니다. 
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
->? [비디오를 애니메이션 이미지로 변환 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [비디오를 애니메이션 이미지로 변환 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 ### 비디오 워터마크
@@ -263,6 +263,7 @@
      ![img](https://qcloudimg.tencent-cloud.cn/raw/73b44ed792c118f58605209fbccd0fa5.png)
        - 이미지가 비디오 하단에 배치되면(배경으로) 효과는 다음과 같습니다.
      ![img](https://qcloudimg.tencent-cloud.cn/raw/0da61e3ac31297550a7a05544af7f6f2.png)
+
     - 워터마크 크기:
       - 입력 이미지 크기: 원본 워터마크 이미지 크기는 처리 없이 유지됩니다. 워터마크 이미지가 동영상 이미지보다 클 경우 워터마크가 완전히 표시되지 않을 수 있습니다.
       - 비율: 너비 또는 높이만 또는 둘 다의 백분율[1, 100]을 설정할 수 있습니다. 너비 또는 높이가 설정되지 않은 경우 크기가 비례 조정됩니다. 너비 비율이 a이고 높이 비율이 b라고 가정하면 워터마크 너비는 w = W * a가 되고 워터마크 높이는 h = H * b가 됩니다(여기서 W와 H는 각각 비디오 너비와 높이입니다).
@@ -286,7 +287,7 @@
  - 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
  - **미리보기**를 클릭하여 세 가지 일반적인 해상도의 비디오에서 워터마크의 위치와 크기를 보고 템플릿을 빠르게 조정할 수 있습니다.
 
->? [오디오/비디오 트랜스 코딩, SDRtoHDR, 비디오 향상 또는 초해상도 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [오디오/비디오 트랜스 코딩, SDRtoHDR, 비디오 향상 또는 초해상도 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 ### 오디오/비디오 스플라이싱
@@ -308,7 +309,7 @@
  - 기타 매개변수: 필요에 따라 오디오/비디오 매개변수를 사용자 정의할 수 있습니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집** 또는 **삭제**할 수 있습니다.
->? [오디오/비디오 접합 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [오디오/비디오 접합 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 
@@ -324,7 +325,7 @@
 4. 왼쪽 사이드바에서 **데이터 처리 워크플로 > 공통 구성 > 템플릿** 탭을 선택하여 템플릿 구성 페이지로 이동합니다.
 5. **음성 분리**를 선택하고 **음성 분리 템플릿 생성**을 클릭합니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/e3a8297817e96904cd35db90628b284f.png" style="zoom:67%;" />
-6. 음성 분리 템플릿 생성 창에서 다음 항목을 구성합니다.
+6. 동영상 음성 분리 템플릿 생성 창에서 다음 항목을 구성합니다.
  - 템플릿 이름: 최대 64자, 중국어, 영어, 숫자, 밑줄`_`, 하이픈`-`, 별표`*`를 포함할 수 있습니다.
  - 출력 오디오 형식: 지원되는 형식은 MP3, AAC, AMR 및 FLAC입니다.
  - 오디오 출력: 음성 또는 배경음을 출력하도록 지정합니다.
@@ -333,7 +334,7 @@
  - 사운드 채널: 필요에 따라 옵션을 선택합니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
->? [음성 분리 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는[Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [음성 분리 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는[Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 
 
 ### 텍스트 음성 변환(TTS)
@@ -357,7 +358,7 @@
  - 말하는 속도: 출력 음색을 조정할 수 있습니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집**, **삭제**할 수 있습니다.
->? [TTS 작업](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [TTS 작업](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 
 
 
@@ -383,7 +384,7 @@
  - 디테일 향상: 디테일 향상을 위한 자동 시스템 분석을 선택하거나 디테일 향상 매개변수를 사용자 정의합니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집** 또는 **삭제**할 수 있습니다.
->? [비디오 향상 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [비디오 향상 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 ### 초해상도
@@ -405,7 +406,7 @@
  - 타깃 줌: 활성화된 후 출력 비디오는 선택한 타깃 해상도 또는 입력 비디오 해상도의 3배로 확대됩니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집** 또는 **삭제**할 수 있습니다.
->? [초해상도 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [초해상도 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
 
 
@@ -430,5 +431,5 @@
  - 미리보기: 처리 효과를 미리 볼 수 있습니다.
 7. **확인**을 클릭합니다.
 템플릿 생성 성공 후 사용자 정의 템플릿 목록에서 **보기**, **편집** 또는 **삭제**할 수 있습니다.
->? [이미지 처리 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
+>? [이미지 처리 작업 생성](https://intl.cloud.tencent.com/document/product/436/46409) 또는 [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408) 시 템플릿을 사용할 수 있습니다.
 >
