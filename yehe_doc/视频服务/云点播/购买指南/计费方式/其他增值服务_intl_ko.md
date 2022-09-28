@@ -1,3 +1,25 @@
+## 클라이언트 업로드 가속
+
+클라이언트 업로드 가속 기능(글로벌 네트워크 가속 또는 QUIC 전송) 사용에 대해 발생하는 요금은 가속된 트래픽량을 기준으로 합니다.
+가격
+
+| 유형     | 가격   |
+| :----------- | :----------- |
+| 글로벌 네트워크 전송 | 0.072 USD/GB |
+| QUIC 전송    | 0.086 USD/GB |
+
+#### 과금 설명
+
+- **과금 항목**: 글로벌 네트워크 가속 트래픽 및 QUIC 전송 트래픽
+- **과금 규칙**: 클라이언트 업로드 가속 요금은 클라이언트에서 파일을 업로드할 때 소비되는 트래픽량에 따라 부과됩니다.
+- **공식**: 클라이언트 업로드 가속 요금 = 글로벌 네트워크 가속 트래픽(GB) x 단가(USD/GB) + QUIC 전송 트래픽(GB) x 단가(USD/GB).
+
+#### 과금 예시
+
+글로벌 네트워크 가속 기능을 사용하여 550 GB의 데이터를 업로드하고 QUIC 전송 기능을 사용하여 100 GB의 데이터를 업로드했다고 가정합니다. 업로드 가속 요금은= 550(GB) x 0.072(USD/GB) + 100(GB) x 0.086(USD/GB) = 48.2(USD)입니다.
+
+클라이언트 업로드 가속에 대한 자세한 내용은 [클라이언트 업로드 가속](https://www.tencentcloud.com/document/product/266/49083)을 참고하십시오.
+
 ## UGSV(User Generated Short Video) SDK License
 
 UGSV SDK License 개요:
@@ -18,4 +40,4 @@ UGSV SDK License 개요:
 | 엔터프라이즈 버전 License     | 1년    | 25999        |
 | 엔터프라이즈 버전 Pro License | 1년    | 71999        |
 
-자세한 내용은 [SDK Download](https://intl.cloud.tencent.com/document/product/1069/37914)를 참고하십시오.
+버전 기능에 대한 자세한 내용은 [SDK 다운로드](https://intl.cloud.tencent.com/document/product/1069/37914)를 참고하십시오.
