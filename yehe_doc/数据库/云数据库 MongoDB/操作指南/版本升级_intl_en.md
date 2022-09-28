@@ -2,6 +2,8 @@
 
 TencentDB for MongoDB allows you to upgrade both the major and minor database versions. The major version can be upgraded from 3.6 to 4.0 or from 4.0 to 4.2. This helps you upgrade your instance to a newer version for more features. 
 
+>?You can implement the upgrade of major version from 4.2 to 4.4 through [submit a ticket](https://console.cloud.tencent.com/workorder/category). 
+
 ## Version requirements
 
 - You can upgrade the MongoDB major version from 3.6 to 4.0 or from 4.0 to 4.2.
@@ -9,7 +11,7 @@ TencentDB for MongoDB allows you to upgrade both the major and minor database ve
 - During minor version upgrade, the system will automatically detect the minor version and upgrade to the latest version, and you cannot select a target version.
 - Cross-major version upgrade isn't supported. For example, you cannot upgrade the major version from 3.2 to 4.0. For version differences, see [Storage Engine and Version](https://intl.cloud.tencent.com/document/product/240/31706).
 
->?You can implement the upgrade of major version from 3.2 to 4.0 through data migration. For more information, see [Migration from MongoDB to TencentDB for MongoDB](https://cloud.tencent.com/document/product/571/13724).
+>?You can implement the upgrade of major version from 3.2 to 4.0 through data migration. 
 
 ## Notes
 
