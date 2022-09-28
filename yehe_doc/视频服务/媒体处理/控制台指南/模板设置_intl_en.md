@@ -1,4 +1,4 @@
-Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Template Settings** on the left sidebar. Preset templates in the console include video transcoding, audio transcoding, TESHD, watermark, screenshot, animated image, moderation, content analysis, and content recognition. They can be added to a workflow for on-cloud transcoding and audio/video processing.
+Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Template Settings** on the left sidebar. Preset templates in the console include video transcoding, audio transcoding, Top Speed Codec, watermark, screenshot, animated image, moderation, content analysis, and content recognition. They can be added to a workflow for on-cloud transcoding and audio/video processing.
 ![](https://main.qcloudimg.com/raw/a6e034f67575726dbdbcfdb462f7de1d.png)
 >?
 >- If a template added to a workflow is edited after the workflow is enabled, the template parameters after editing will be used.
@@ -42,8 +42,8 @@ Templates created are displayed in the template list. You can view, edit, or del
 <tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled × 2160</td><td colspan="1" rowspan="2">6000</td></tr>
 <tr><td colspan="1">100280</td><td colspan="1">HLS</td></tr></tbody></table>
 
-## TESHD Template
-MPS provides preset Tencent Extreme Speed High Definition (TESHD) templates, which can be used in workflows. You can also click **Create Template** to customize your own TESHD templates.
+## Top Speed Codec Template
+MPS provides preset Tencent Extreme Speed High Definition (Top Speed Codec) templates, which can be used in workflows. You can also click **Create Template** to customize your own Top Speed Codec templates.
 
 | Item | Description |
 | --- | ----|
@@ -62,7 +62,7 @@ MPS provides preset Tencent Extreme Speed High Definition (TESHD) templates, whi
 
 
 >?
-> - You can view **preset** TESHD templates in [MPS console > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=tehd).
+> - You can view **preset** Top Speed Codec templates in [MPS console > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=tehd).
 > - If the container format is set to MP4, FLV, or HLS, video parameters are required.
 
 Templates created are displayed in the template list. You can filter, view, edit, or delete custom templates, but preset templates can be viewed only, not edited or deleted.
