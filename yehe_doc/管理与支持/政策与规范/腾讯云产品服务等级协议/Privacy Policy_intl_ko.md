@@ -610,6 +610,6 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 47.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49479).
 48.[Penetration Test Service](https://intl.cloud.tencent.com/document/product/1146/49937).
 49.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50007).
-
+50.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
 ### 개정 기록
 [개인정보 처리방침](https://intl.cloud.tencent.com/document/product/301/43505)(버전1.0)
