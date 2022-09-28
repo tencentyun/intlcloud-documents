@@ -54,7 +54,7 @@ MessageId msgId = producer.newMessage()
 ```
 
 >!
->- The time range for delayed messages is 0–864,000 seconds (0 seconds–10 days); for example, starting from 12:00 on October 1, it can be set to 864,000 seconds at the most.
+>- The time range for delayed messages is 0–864,000 seconds (10 days); for example, starting from 12:00 PM on October 1, it can be set to 12:00 PM on October 11 at most.
 >- Delayed messages cannot be sent in batch mode, so you need to set the `enableBatch` parameter to `false` when creating the producer.
 >- Delayed messages can be consumed only in the shared mode; otherwise, delaying will not work (even in the key-shared mode).
 
@@ -72,7 +72,7 @@ MessageId msgId = producer.newMessage()
 
 - When using scheduled messages, you need to set a time point after the current time; otherwise, the message will be sent to the consumer immediately.
 
-- After the scheduled time point is set, the maximum message retention period (i.e., TTL) will still be calculated starting from the message sending time point; for example, if the message is scheduled to be sent in two days, but the TTL of the message is set to one day, then the message will be deleted in one day. In this case, you should make sure that the TTL is greater than the scheduled time, i.e., two days; otherwise, the message will be deleted after the TTL elapses. This is also the case for delayed messages.
+- After the scheduled time point is set, the maximum message retention period (i.e., TTL) will still be calculated starting from the message sending time point; for example, if the message is scheduled to be sent in two days, but the TTL of the message is set to one day, then the message will be deleted after one day. In this case, you should make sure that the TTL is longer than the scheduled time (i.e., two days); otherwise, the message will be deleted after the TTL elapses. This is also the case for delayed messages.
 
 - In general topics, you can send scheduled and delayed messages through API as instructed in [Directions](#usage) and receive them.
 
