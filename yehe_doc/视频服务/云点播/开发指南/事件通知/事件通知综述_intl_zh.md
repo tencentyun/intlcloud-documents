@@ -29,7 +29,7 @@
         </td>
     </tr>
     <tr>
-        <td rowspan=3>
+        <td rowspan=4>
             视频处理类
         </td>
         <td>
@@ -43,6 +43,11 @@
 		<tr>
         <td>
             <a href="https://intl.cloud.tencent.com/document/product/266/35571">视频合成完成</a>
+        </td>
+    </tr>
+    		<tr>
+        <td>
+            <a href="https://www.tencentcloud.com/document/product/266/50447">智能降码完成</a>
         </td>
     </tr>
 </table>
