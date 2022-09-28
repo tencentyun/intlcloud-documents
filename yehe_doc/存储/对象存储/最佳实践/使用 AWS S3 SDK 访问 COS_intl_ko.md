@@ -1,10 +1,10 @@
 ## 소개
 
-COS는 AWS S3 호환 API를 제공합니다. 데이터를 S3에서 COS로 마이그레이션한 후에 간단한 설정 수정만으로 클라이언트 애플리케이션을 손쉽게 COS 서비스와 호환 사용할 수 있습니다. 본 문서는 다양한 개발 플랫폼의 S3 SDK 적용 절차를 소개합니다. 이 추가 적용 절차가 끝나면 S3 SDK 인터페이스를 사용해 COS 파일에 액세스할 수 있습니다.
+Cloud Object Storage(COS)는 AWS S3 호환 API를 제공합니다. 데이터를 S3에서 COS로 마이그레이션한 후에 간단한 설정 수정만으로 클라이언트 애플리케이션을 손쉽게 COS 서비스와 호환 사용할 수 있습니다. 본 문서는 다양한 개발 플랫폼의 S3 SDK 적용 절차를 소개합니다. 이 추가 적용 절차가 끝나면 S3 SDK 인터페이스를 사용해 COS 파일에 액세스할 수 있습니다.
 
 #### 준비 작업
 
-1. [Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)을 한 후 [CAM 콘솔](https://console.cloud.tencent.com/cam/capi)에서 Tencent Cloud 키 SecretID와 SecretKey를 얻습니다.
+1. [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985)하고 [CAM 콘솔](https://console.cloud.tencent.com/cam/capi)에서 Tencent Cloud 키 SecretID와 SecretKey를 얻습니다.
 2. 이제 S3 SDK를 통합해 정상 실행할 수 있는 클라이언트 애플리케이션이 준비되었습니다.
 
 ## Android
@@ -81,8 +81,8 @@ AWS JS SDK 2.509.0 버전을 예시로 COS 서비스에 액세스하기 위한 �
 var AWS = require('aws-sdk');
 
 AWS.config.update({
-    accessKeyId: "<Tencent Cloud의 SecretID>",
-    secretAccessKey: "<Tencent Cloud의 SecretKey>",
+    accessKeyId: "COS_SECRETID",
+    secretAccessKey: "COS_SECRETKEY",
     region: "ap-guangzhou",
     endpoint: 'https://cos.ap-guangzhou.myqcloud.com',
 });
@@ -94,11 +94,11 @@ s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
 다음은 AWS Java SDK 1.11.609 버전을 예시로 COS 서비스에 액세스하기 위한 방법을 소개합니다.
 
-#### 1. AWS 설정과 인증서 파일 수정하기
+#### 1. AWS 구성 및 인증서 파일 수정하기
 
->다음은 Linux를 예시로 AWS 설정과 인증서 파일을 수정합니다.
+> ?다음은 Linux를 예시로 AWS 구성 및 인증서 파일을 수정합니다.
 
-AWS SDK 기본 구성 파일은 사용자 디렉터리에서 [설정과 인증서 파일](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)을 참조하십시오.
+AWS SDK 기본 구성 파일은 사용자 디렉터리에서 [구성 및 인증서 파일](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)을 참고하십시오.
 
 - 설정파일(파일 위치는 `~/.aws/config`)에서 다음 설정을 추가합니다.- 구성 파일(파일 위치는 `~/.aws/config`)에서 다음 설정 정보를 추가합니다.
 ```
@@ -109,8 +109,8 @@ addressing_style = virtual
 - 인증서 파일(파일 위치는 `~/.aws/credentials`)에서 Tencent Cloud 키를 설정합니다.  
 ```
 [default]  
-aws_access_key_id = [Tencent Cloud의 SecretID]  
-aws_secret_access_key = [Tencent Cloud의 SecretKey] 
+aws_access_key_id = [COS_SECRETID]  
+aws_secret_access_key = [COS_SECRETKEY] 
 ```
 
 #### 2. 코드에서 Endpoint 설정하기
@@ -128,24 +128,24 @@ AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
 
 다음은 AWS Python SDK 1.9.205 버전을 예시로 COS 서비스에 액세스하기 위한 방법을 소개합니다.
 
-#### 1. AWS 설정과 인증서 파일 수정하기
+#### 1. AWS 구성 및 인증서 파일 수정하기
 
->다음은 Linux를 예시로 AWS 설정과 인증서 파일을 수정합니다.
+> ?다음은 Linux를 예시로 AWS 구성 및 인증서 파일을 수정합니다.
 
-AWS SDK 기본 구성 파일은 사용자 디렉터리에서 [설정과 인증서 파일](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)을 참조하십시오.
+AWS SDK 기본 구성 파일은 사용자 디렉터리에서 [구성 및 인증서 파일](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)을 참고하십시오.
 
 - 구성 파일(파일 위치는 `~/.aws/config`)에서 다음 설정을 추가합니다.
 ```
 [default]  
 s3 =   
 	signature_version = s3
-	addressing_style = virtuall
+	addressing_style = virtual
 ```
 - 인증서 파일(파일 위치는 `~/.aws/credentials`)에서 Tencent Cloud 키를 설정합니다.  
 ```
 [default]  
-aws_access_key_id = [Tencent Cloud의 SecretID]  
-aws_secret_access_key = [Tencent Cloud의 SecretKey] 
+aws_access_key_id = [COS_SECRETID]  
+aws_secret_access_key = [COS_SECRETKEY] 
 ```
 
 #### 2. 코드에서 Endpoint 설정하기
@@ -153,18 +153,18 @@ aws_secret_access_key = [Tencent Cloud의 SecretKey]
 버킷이 위치한 리전이 `ap-guangzhou`인 경우
 
 ```
-client = boto3.client('s3', endpoint_url='"https://cos.ap-guangzhou.myqcloud.com"')
+client = boto3.client('s3', endpoint_url='https://cos.ap-guangzhou.myqcloud.com')
 ```
 
 ## PHP
 
 다음은 AWS PHP SDK 3.109.3 버전을 예시로 COS 서비스에 액세스하기 위한 방법을 소개합니다.
 
-#### 1. AWS 설정과 인증서 파일 수정하기
+#### 1. AWS 구성 및 인증서 파일 수정하기
 
->다음은 Linux를 예시로 AWS 설정과 인증서 파일을 수정합니다.
+> ?다음은 Linux를 예시로 AWS 구성 및 인증서 파일을 수정합니다.
 
-AWS SDK 기본 구성 파일은 사용자 디렉터리에서 [설정과 인증서 파일](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)을 참조하십시오.
+AWS SDK 기본 구성 파일은 사용자 디렉터리에서 [구성 및 인증서 파일](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)을 참고하십시오.
 
 - 구성 파일(파일 위치는 `~/.aws/config`)에서 다음 설정을 추가합니다.
 ```
@@ -175,8 +175,8 @@ addressing_style = virtual
 - 인증서 파일(파일 위치는 `~/.aws/credentials`)에서 Tencent Cloud 키를 설정합니다.  
 ```
 [default]  
-aws_access_key_id = [Tencent Cloud의 SecretID]  
-aws_secret_access_key = [Tencent Cloud의 SecretKey] 
+aws_access_key_id = [COS_SECRETID]  
+aws_secret_access_key = [COS_SECRETKEY] 
 ```
 
 #### 2. 코드에서 Endpoint 설정하기
@@ -199,8 +199,8 @@ $S3Client = new S3Client([
 인스턴스를 초기화할 때 Tencent Cloud 키와 Endpoint를 설정합니다. 버킷이 속한 리전이 `ap-guangzhou`라고 가정했을 경우
 
 ```
-string sAccessKeyId = "<Tencent Cloud의 SecretID>";
-string sAccessKeySecret = "<Tencent Cloud의 SecretKey>";
+string sAccessKeyId = "COS_SECRETID";
+string sAccessKeySecret = "COS_SECRETKEY";
 string region = "ap-guangzhou";
   
 var config = new AmazonS3Config() { ServiceURL = "https://cos." + region + ".myqcloud.com" };
@@ -217,7 +217,7 @@ var client = new AmazonS3Client(sAccessKeyId, sAccessKeySecret, config);
 버킷이 위치한 리전이 `ap-guangzhou`인 경우
 ```golang
 func newSession() (*session.Session, error) {
-	creds := credentials.NewStaticCredentials("<Tencent Cloud의 SecretID>", "<Tencent Cloud의 SecretKey>", "")
+	creds := credentials.NewStaticCredentials("COS_SECRETID", "COS_SECRETKEY", "")
 	"Region": "ap-guangzhou",
 	endpoint := "http://cos.ap-guangzhou.myqcloud.com"
 	config := &aws.Config{
@@ -237,15 +237,15 @@ sess, _ := newSession()
 service := s3.New(sess)
 
 // 파일 업로드의 경우
-fp, _ := os.Open("s3_test.go")
+fp, _ := os.Open("yourLocalFilePath")
 defer fp.Close()
 
 ctx, cancel := context.WithTimeout(context.Background(), time.Duration(30)*time.Second)
 defer cancel()
 
 service.PutObjectWithContext(ctx, &s3.PutObjectInput{
-	Bucket: aws.String("alangz-1250000000"),
-	Key:    aws.String("test/s3_test.go"),
+	Bucket: aws.String("examplebucket-1250000000"),
+	Key:    aws.String("exampleobject"),
 	Body:   fp,
 })
 ```
@@ -254,11 +254,11 @@ service.PutObjectWithContext(ctx, &s3.PutObjectInput{
 
 다음은 AWS C++ SDK 1.7.68 버전을 예시로 COS 서비스에 액세스하기 쉽게 적용하는 방법을 소개합니다.
 
-#### 1. AWS 설정과 인증서 파일 수정하기
+#### 1. AWS 구성 및 인증서 파일 수정하기
 
->다음은 Linux를 예시로 AWS 설정과 인증서 파일을 수정합니다.
+> ?다음은 Linux를 예시로 AWS 구성 및 인증서 파일을 수정합니다.
 
-AWS SDK 기본 구성 파일은 사용자 디렉터리에서 [설정과 인증서 파일](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)을 참조하십시오.
+AWS SDK 기본 구성 파일은 사용자 디렉터리에서 [구성 및 인증서 파일](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-configure-files.html)을 참고하십시오.
 
 - 구성 파일(파일 위치는 `~/.aws/config`)에서 다음 설정을 추가합니다.
 ```
@@ -269,8 +269,8 @@ addressing_style = virtual
 - 인증서 파일(파일 위치는 `~/.aws/credentials`)에서 Tencent Cloud 키를 설정합니다.  
 ```
 [default]  
-aws_access_key_id = [Tencent Cloud의 SecretID]  
-aws_secret_access_key = [Tencent Cloud의 SecretKey] 
+aws_access_key_id = [COS_SECRETID]  
+aws_secret_access_key = [COS_SECRETKEY] 
 ```
 
 #### 2. 코드에서 Endpoint 설정하기

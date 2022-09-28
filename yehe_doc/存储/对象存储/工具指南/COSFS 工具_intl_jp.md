@@ -31,19 +31,26 @@ COSFSは、インストールパッケージによるインストールと、コ
 #### Ubuntuシステム
 
 1. システムのバージョンに応じて、対応するインストールパッケージを選択します。現在サポートしているUbuntuディストリビューションには、Ubuntu14.04、Ubuntu16.04、Ubuntu18.04、Ubuntu20.04があります。
+Githubダウンロードアドレス：
 ```plaintext
 #Ubuntu14.04
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb
 #Ubuntu16.04
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb
 #Ubuntu18.04
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb
 #Ubuntu20.04
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb
 ```
+CDNダウンロードアドレス：
+[cosfs_1.0.20-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb)
+[cosfs_1.0.20-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb)
+[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb)
+[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb)
+
 2. インストール。Ubuntu16.04を例とします。
 ```shell
-sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
+sudo dpkg -i cosfs_1.0.20-ubuntu16.04_amd64.deb
 ```
 
 #### CentOSシステム
@@ -53,15 +60,19 @@ sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 sudo yum install libxml2-devel libcurl-devel -y
 ```
 2. システムのバージョンに応じて、対応するインストールパッケージを選択します。現在サポートしているCentOSディストリビューションには、CentOS6.5、CentOS7.0があります。
+Githubダウンロードアドレス：
 ```plaintext
 #CentOS6.5
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm
 #CentOS7.0
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm
 ```
+CDNダウンロードアドレス：
+[cosfs-1.0.20-centos6.5.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm)
+[cosfs-1.0.20-centos7.0.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm)
 3. インストールします。CentOS7.0を例とします。
 ```shell
-sudo rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo rpm -ivh cosfs-1.0.20-centos7.0.x86_64.rpm
 ```
 >? インストール中にエラーが報告された場合は、`conflicts with file from package fuse-libs-*`というプロンプトが表示されますので、`--force`パラメータを追加して再インストールします。
 >
@@ -90,14 +101,14 @@ sudo zypper install gcc-c++ automake make libcurl-devel libxml2-devel openssl-de
 - macOSシステムに依存ソフトウェアをインストールします。
 ```shell
 brew install automake git curl libxml2 make pkg-config openssl 
-brew cask install osxfuse
+brew install cask osxfuse
 ```
 
 #### 2. ソースコードの取得 
 
 [COSFSソースコード](https://github.com/tencentyun/cosfs)をGitHubから指定されたディレクトリにダウンロードする必要があります。以下では、ディレクトリ`/usr/cosfs`を例として取り上げます（実際の操作では、具体的な操作環境に応じてディレクトリを使用することをお勧めします）。
 ```shell
-git clone https://github.com/tencentyun/cosfs /usr/cosfs
+sudo git clone https://github.com/tencentyun/cosfs /usr/cosfs
 ```
 
 
@@ -105,9 +116,9 @@ git clone https://github.com/tencentyun/cosfs /usr/cosfs
 インストール先のディレクトリに移動し、以下のコマンドを実行して、コンパイルとインストールを行います。
 ```shell
 cd /usr/cosfs
-./autogen.sh
-./configure
-make
+sudo ./autogen.sh
+sudo ./configure
+sudo make
 sudo make install
 cosfs --version  #cosfsバージョン番号の確認
 ```
@@ -121,13 +132,13 @@ checking for common_lib_checking... configure: error: Package requirements (fuse
 ```
 この場合、fuse 2.8.4以降のバージョンを手動でインストールする必要があります。インストールコマンドの例は次のとおりです。
 ```shell
-yum -y remove fuse-devel
-wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
+sudo yum -y remove fuse-devel
+sudo wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
 tar -zxvf fuse-2.9.4.tar.gz
 cd fuse-2.9.4
-./configure
-make
-make install
+sudo ./configure
+sudo make
+sudo make install
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/pkgconfig
 modprobe fuse   #fuseカーネルモジュールをマウントします
 echo "/usr/local/lib" >> /etc/ld.so.conf
@@ -139,12 +150,12 @@ SUSEシステムの場合、fuse 2.8.4以降のバージョンを手動でイン
 >
 ```shell
 zypper remove fuse libfuse2
-wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
+sudo wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
 tar -zxvf fuse-2.9.4.tar.gz
 cd fuse-2.9.4
-./configure
-make 
-make install
+sudo ./configure
+sudo make 
+sudo make install
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/pkgconfig
 modprobe fuse   #fuseカーネルモジュールをマウントします
 echo "/usr/local/lib" >> /etc/ld.so.conf
@@ -163,7 +174,7 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig #前のコマンド�
 ```
 
 
-## 利用方法
+## 使用方法
 
 ### 1. キーファイルの設定
 ファイル`/etc/passwd-cosfs`に、バケット名（形式はBucketName-APPID）と、そのバケットに対応する&lt;SecretId&gtと&lt;SecretKey&gtをセミコロンで区切って記述してください。キーの漏洩を防ぐため、COSFSではキーファイルの権限値を640に設定する必要があります。`/ etc / passwd-cosfs`キーファイルを設定するためのコマンド形式は次のとおりです。
@@ -252,7 +263,7 @@ COSFSのログレベルをinfo、dbg、warn、errおよびcritに設定します
 
 #### -ouid=[uid]
 このオプションは、ユーザーIDが[uid]のユーザーが、マウントされたディレクトリのファイルパーミッションビットに制限されることなく、マウントされたディレクトリのすべてのファイルにアクセスできるようにします。
-ユーザーIDを取得する場合、` id -u username`の形式でidコマンドを使用することができます。例えば、`id -u user_00`を実行すると、ユーザーuser_00 のユーザーIDが取得できます。
+ユーザーIDを取得する場合、` id -u username`の形式でIDコマンドを使用することができます。例えば、`id -u user_00`を実行すると、ユーザーuser_00のユーザーIDが取得できます。
 
 #### -oensure_diskfree=[size]
 

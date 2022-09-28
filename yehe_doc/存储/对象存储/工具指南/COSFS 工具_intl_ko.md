@@ -41,7 +41,6 @@ sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.
 sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb
 #Ubuntu20.04
 sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb
-
 ```
 CDN 다운로드 링크:
 [cosfs_1.0.20-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb)
@@ -58,7 +57,7 @@ sudo dpkg -i cosfs_1.0.20-ubuntu16.04_amd64.deb
 
 1. 종속 설치
 ```plaintext
-sudo yum install libxml2-devel libcurl-devel -y
+sudo yum install  libxml2-devel libcurl-devel -y
 ```
 2. 시스템 버전에 따라 해당하는 설치 패키지를 선택합니다. 현재 지원하는 CentOS 릴리스 버전은 CentOS6.5, CentOS7.0을 포함합니다.
 Github 다운로드 링크:
@@ -67,12 +66,10 @@ Github 다운로드 링크:
 sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm
 #CentOS7.0
 sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm
-
 ```
 CDN 다운로드 링크:
 [cosfs-1.0.20-centos6.5.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos6.5.x86_64.rpm)
 [cosfs-1.0.20-centos7.0.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs-1.0.20-centos7.0.x86_64.rpm)
-
 3. 설치. (예시: CentOS7.0)
 ```shell
 sudo rpm -ivh cosfs-1.0.20-centos7.0.x86_64.rpm
@@ -212,7 +209,7 @@ cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -od
 ```
 이 중,
 - &lt;MountPoint&gt;:는 로컬 마운트 디렉터리(예: `/mnt`)입니다.
-- &lt;Region&gt;는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
+- &lt;Region&gt;는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
 - -odbglevel은 로그 레벨을 지정합니다. 기본 값은 crit이며, 옵션값은 crit, error, warn, info, debug입니다.
 - -oallow_other: 마운트되지 않은 사용자의 마운트 폴더 액세스를 허용합니다.
 
