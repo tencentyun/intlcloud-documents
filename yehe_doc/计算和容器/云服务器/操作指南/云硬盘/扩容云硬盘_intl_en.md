@@ -21,7 +21,7 @@ If multiple cloud disks of the same capacity and type are attached to the CVM, y
 <dx-tabs>
 ::: CVM console (recommended)[](id:useCVMConsole)
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
-2. Select **More** > **Resource Adjustment** > **Expand System Disk** in the **Operation** column.
+2. Select **More** > **Resource Adjustment** > **Expand Cloud Disks** in the **Operation** column.
 3. Select the data disk to be expanded in the pop-up window, and click **Next**.
 4. Select a new capacity (it must be greater than or equal to the current capacity) and click **Next**.
 5. Read the notes and click **Adjust Now**, as shown below:
@@ -43,7 +43,7 @@ You can use the `ResizeDisk` API to expand the specified cloud disks. For more i
 
 
 ## Expanding System Disks[](id:useCVMconsole)
-1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index). Locate the target CVM, and select **More** > **Resource Adjustment** > **Expand System Disk** in the **Operation** column.
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index). Locate the target CVM, and select **More** > **Resource Adjustment** > **Expand Cloud Disks** in the **Operation** column.
 2. Select the system disk to be expanded in the pop-up window, and click **Next**.
 3. Select a new capacity (it must be greater than or equal to the current capacity) and click **Next**.
 4. Complete the capacity expansion operation in the following methods:

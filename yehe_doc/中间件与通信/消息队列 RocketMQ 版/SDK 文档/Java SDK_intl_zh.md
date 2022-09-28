@@ -187,7 +187,7 @@
 </tr>
 </tbody></table>
 
->?批量发送及其他情况可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/) 。
+>?批量发送及其他情况可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1) 。
 
 ### 步骤3：消费消息
 
@@ -275,7 +275,7 @@
 </tr>
 </tbody></table>
 
->? 更多消费类型可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/) 。
+>? 更多消费类型可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1) 。
 
 2. 订阅消息。根据消费模式不同，订阅方式也有所区别。
    - push 订阅
@@ -353,4 +353,4 @@
 
 
 
->?上述是对消息的发布和订阅方式的简单介绍。更多操作可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/) 。
+>?上述是对消息的发布和订阅方式的简单介绍。更多操作可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1) 。

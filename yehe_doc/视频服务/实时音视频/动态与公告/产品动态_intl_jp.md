@@ -350,7 +350,7 @@ Apple M1アーキテクチャのネイティブサポートを追加しました
 <br>Windows: <ul style="margin:0">
 <li>一部のシーンでのライブストリーミングの音質を最適化し、音声障害の問題を大幅に減少させました。</li>
 <li>パフォーマンスを最適化しました。一部のユースケースでパフォーマンスが旧バージョンより20%～30%向上しました。</li>
-<li>プロセスの音量調節機能を追加しました。<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1">setApplicationPlayVolume</a>を使用すると、システムの音量ミキサーの音量を設定することができます。</li>
+<li>プロセスの音量調節機能を追加しました。setApplicationPlayVolumeを使用すると、システムの音量ミキサーの音量を設定することができます。</li>
 </ul>
 <br>Mac: <ul style="margin:0">
 <li>Macのオペレーティングシステムの出力音声のキャプチャのサポートが開始されました。これはWindows端末と同一のSystemLoopback機能で、この機能を使用するとSDKは現在のシステムの音声をキャプチャすることができます。この機能を有効化すると、キャスターは他のユーザーに対して音楽または映画ファイルのライブストリーミングを実行することが容易になります。</li>

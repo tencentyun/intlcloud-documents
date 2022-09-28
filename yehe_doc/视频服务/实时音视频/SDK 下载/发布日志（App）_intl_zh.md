@@ -328,7 +328,7 @@ Android&Mac&iOS：支持外部接管音频播放，请参见 API [enableCustomAu
 
 ### Version 8.7 @ 2021.5.25
 **功能新增**
-- 全平台：增加外接音频设备的异常检测。注册 onStatistics 回调后， 您可以用 [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics) 中的 audioCaptureState 来实时检测长时间静音、破音、异常间断问题。
+- 全平台：增加外接音频设备的异常检测。注册 onStatistics 回调后， 您可以用 TRTCLocalStatistics 中的 audioCaptureState 来实时检测长时间静音、破音、异常间断问题。
 - Windows：自定义采集支持输入 RGBA 格式的视频数据。
 
 **质量优化**
@@ -354,8 +354,8 @@ Android&Mac&iOS：支持外部接管音频播放，请参见 API [enableCustomAu
 **功能新增**
 -  Mac：优化屏幕分享功能，您可以在分享目标窗口的同时指定其他窗口一起分享出去，请参见 API [addIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2e101f0ff00c8752eea1fa9a1a432233)。
 -  全平台：新增播片功能，您可以使用 [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer) 与 TRTCCloud 绑定，把点播正在播放的内容通过 TRTC 的辅路推流分享出去。
--  全平台：新增辅路自定义采集，请参见 API [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629)。
--  全平台：新增自定义混音功能，您可以将自己的一路音轨混入 SDK 的音频处理流程中，SDK 会先将两路音轨混合后再一起发布出去，请参见 API [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f)。
+-  全平台：新增辅路自定义采集。
+-  全平台：新增自定义混音功能，您可以将自己的一路音轨混入 SDK 的音频处理流程中，SDK 会先将两路音轨混合后再一起发布出去。
 -  全平台：支持指定纯视频混流，混流控制更灵活。
 
 **质量优化**
@@ -524,7 +524,7 @@ Android&Mac&iOS：支持外部接管音频播放，请参见 API [enableCustomAu
 **新增**
 - Mac：新增系统音量变化回调，详见 [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)。
 - Windows：新增支持跨屏指定区域进行屏幕分享。
-- Windows：新增窗口分享支持过滤指定窗口进行抗遮挡，详见 [TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) 和 [TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)。
+- Windows：新增窗口分享支持过滤指定窗口进行抗遮挡。
 - Windows：新增系统音量变化回调。
 
 **优化**
@@ -588,9 +588,9 @@ Android&Mac&iOS：支持外部接管音频播放，请参见 API [enableCustomAu
 ### Version 7.6 @ 2020.08.21
 **新增**
 
-- Windows：新增 [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299) 和 [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e) 接口，用于优化实时调整 HWND 类型的渲染窗口时的体验。
-- Windows：新增 [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) 接口用于获取当前 Windows PC 是否被设置为静音。
-- Windows：新增 [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) 接口用于将当前 Windows PC 设置为全局静音。
+- Windows：新增 updateLocalView 和 updateRemoteView接口，用于优化实时调整 HWND 类型的渲染窗口时的体验。
+- Windows：新增 getCurrentMicDeviceMute 接口用于获取当前 Windows PC 是否被设置为静音。
+- Windows：新增 setCurrentMicDeviceMute 接口用于将当前 Windows PC 设置为全局静音。
 - Mac：新增 [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf20f249b4b43fff64f944b4aefe54cb) 和 [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa27f954e6301fb57a143b27429b63d87) 接口，用于优化实时调整 View 渲染区域时的体验。
 - Mac：新增 [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6ba78519e9c98c1eecd365154882d53f) 接口用于获取当前 Mac 电脑是否被设置为静音。
 - Mac：新增 [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a88569e62fe75b7ea98cc012169f22bfe) 接口用于将当前 Mac 电脑设置为全局静音。

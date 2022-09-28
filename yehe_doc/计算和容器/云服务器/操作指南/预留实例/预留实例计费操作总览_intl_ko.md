@@ -4,8 +4,7 @@
 
 ## 전제 조건
 
-1. 현재 과금형 예약 인스턴스는 글로벌 포털 화이트리스트 사용자에게만 제공되고 있습니다. 과금형 예약 인스턴스 [베타](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns)에서 사용 자격을 신청하시기 바랍니다.
-2. CVM 콘솔에 로그인한 다음 [예약 인스턴스 리스트 페이지]((https://console.cloud.tencent.com/cvm/reservedinstances))로 이동합니다.
+ CVM 콘솔에 로그인한 다음 [예약 인스턴스 리스트 페이지](https://console.intl.cloud.tencent.com/cvm/reservedinstances/index?rid=1)로 이동합니다.
 
 
 ## 작업 순서

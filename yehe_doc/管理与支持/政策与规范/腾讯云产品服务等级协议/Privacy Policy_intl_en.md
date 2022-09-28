@@ -497,13 +497,13 @@ You consent to the disclosure, transfer and export of your personal information 
 
 ### SINGAPORE 
 
-We may store your personal information in and outside your country, including in Singapore.  To the extent data is transferred outside of the EEA for processing (for example, to Mainland China and Singapore), we rely on the European Commission's model contracts for the transfer of personal data to third countries (i.e., the standard contractual clauses), pursuant to Decision 2001/497/EC (in the case of transfers to a controller) and Decision 2004/915/EC (in the case of transfers to a processor).
+We may store your personal information within and outside Singapore.
 
-The paragraph entitled ‘Access, Correction and Deletion’ in the Privacy Policy is deleted and replaced with the following paragraph:
+Please refer to the following paragraph regarding “Access, Correction and Deletion” of your personal information, instead of the general “Access, Correction and Deletion” paragraph in the “Your Rights” section of the main privacy policy:
 
-You can access and correct some of your data in the account portal at any time. If you believe there is any other personal information we process about you, or you are unable to correct inaccurate information, you can make a request by contacting us at **cloudlegalnotices@tencent.com**. You may also have the right to receive a copy of certain personal information (see Portability below). In accordance with the laws in Singapore you do not have the legal right to delete your data, however we may delete your data on request to us. 
+You can access and correct some of your data in the account portal at any time. If you believe there is any other personal information we process about you, or you are unable to correct inaccurate information, you can make a request by contacting us at cloudlegalnotices@tencent.com. You may also have the right to receive a copy of certain personal information (see Portability below). In accordance with the laws in Singapore you do not have the legal right to delete your data, however we may delete your data on request to us.
 
-Please note, however, that we may retain personal information if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or freedom of expression) but we will let you know if that is the case. 
+Please note, however, that we may retain personal information if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or freedom of expression) but we will let you know if that is the case.
 
 ### Thailand
 

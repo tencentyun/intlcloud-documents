@@ -328,7 +328,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 
 ### Version 8.7 @ 2021.5.25
 **새로운 기능**
-- 전체 플랫폼: 외부 연결 오디오 기기에 대한 이상 검증이 추가되었습니다. onStatistics 콜백 등록 후, [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics)의 audioCaptureState로 장시간 음소거, 파음, 이상 끊김 문제를 실시간으로 검증할 수 있습니다.
+- 전체 플랫폼: 외부 연결 오디오 기기에 대한 이상 검증이 추가되었습니다. onStatistics 콜백 등록 후, TRTCLocalStatistics 의 audioCaptureState로 장시간 음소거, 파음, 이상 끊김 문제를 실시간으로 검증할 수 있습니다.
 - Windows: 사용자 정의 수집은 RGBA 포맷의 비디오 데이터 입력을 지원합니다.
 
 **품질 최적화**
@@ -354,8 +354,8 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 **새로운 기능**
 -  Mac: 스크린 공유 기능을 최적화하여 타깃 창을 공유하면서 다른 창을 지정하여 함께 공유할 수 있습니다. 이와 관련한 내용은 API [addIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2e101f0ff00c8752eea1fa9a1a432233)를 참고하십시오.
 -  전체 플랫폼: 재생 기능을 추가하여 [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer)를 사용해 TRTCCloud와 바인딩하고, VOD가 현재 재생중인 콘텐츠를 TRTC의 우회 푸시 스트림을 통해 공유합니다.
--  전체 플랫폼: 우회 사용자 정의 수집 기능을 추가하였습니다. 이와 관련한 내용은 [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629) API를 참고하십시오.
--  전체 플랫폼: 사용자 정의 오디오 믹싱 기능을 추가하여 사용자의 사운드 트랙을 SDK의 오디오 처리 프로세스에 혼입할 수 있으며, SDK는 먼저 두 개 사운드 트랙을 믹싱한 뒤 배포합니다. 이와 관련한 내용은 API [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f)을 참고하십시오.
+-  전체 플랫폼: 우회 사용자 정의 수집 기능을 추가하였습니다. 
+-  전체 플랫폼: 사용자 정의 오디오 믹싱 기능을 추가하여 사용자의 사운드 트랙을 SDK의 오디오 처리 프로세스에 혼입할 수 있으며, SDK는 먼저 두 개 사운드 트랙을 믹싱한 뒤 배포합니다. 
 -  전체 플랫폼: 지정된 퓨어 비디오의 혼합 스트림을 지원하며, 더욱 유연한 혼합 스트림 제어가 가능합니다.
 
 **품질 최적화**
@@ -524,7 +524,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 **새로운 기능**
 - Mac: 시스템 음량 변화 콜백이 추가되었습니다. 세부 사항은 [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)를 참고하십시오.
 - Windows: 크로스 스크린을 지원하여 지정된 영역에 화면을 공유하는 기능이 추가되었습니다.
-- Windows: 창 공유가 필터 기능을 지원하여 지정된 창에 대한 차폐 방지 기능이 추가되었습니다. 세부 사항은 [TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) 및 [TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)를 참고하십시오.
+- Windows: 창 공유가 필터 기능을 지원하여 지정된 창에 대한 차폐 방지 기능이 추가되었습니다.
 - Windows: 시스템 음량 변화 콜백이 추가되었습니다. 
 
 **최적화**
@@ -579,18 +579,18 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - iOS: iPad Pro에서 화면 공유 기능으로 인해 공유된 화면이 늘어나는 문제가 수정되었습니다.
 - iOS: 사용자가 권한을 거절했음에도 App 내부 화면 기여가 계속해서 화면 녹화 권한을 요청하는 문제가 수정되었습니다.
 - Windows: 노트북 또는 데스크톱이 장기간 휴면 상태일 때, 나가기 onExitRoom 이벤트 알림이 콜백되지 않는 문제가 수정되었습니다.
-- Windows: Music 음질 모듈에서 시스템 오디오 루프백 [stopSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23)을 활성화하면 에코가 누출되는 문제가 수정되었습니다.
+- Windows: Music 음질 모듈에서 시스템 오디오 루프백 stopSystemAudioLoopback 을 활성화하면 에코가 누출되는 문제가 수정되었습니다.
 - Windows: enterRoom과 exitRoom을 빠르게 호출하여 방 입장/퇴장을 할 경우 간혹 소리가 들리지 않는 버그가 수정되었습니다.
 - Windows: Visual Stuido 2010 프로젝트에서 SDK의 편집 호환성 문제가 수정되었습니다.
-- Windows: 수동 수신 모드(즉, [setDefaultStreamRecvMode(false, false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5))에서 onUserVideoAvailable 이벤트 콜백이 중복 수신되는 문제가 수정되었습니다.
+- Windows: 수동 수신 모드(즉, setDefaultStreamRecvMode(false, false))에서 onUserVideoAvailable 이벤트 콜백이 중복 수신되는 문제가 수정되었습니다.
 
 
 ### Version 7.6 @ 2020.08.21
 **새로운 기능**
 
-- Windows: HWND 유형의 렌더링 창의 실시간 조정을 보다 쉽게 최적화할 수 있는 [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299)와 [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e) 인터페이스를 추가하였습니다.
-- Windows: 현재 Windows PC가 음소거로 설정되어 있는지를 확인하는 데 사용할 수 있는 [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) 인터페이스를 추가하였습니다.
-- Windows: 현재 Windows PC를 음소거로 설정할 수 있는 [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) 인터페이스를 추가하였습니다.
+- Windows: HWND 유형의 렌더링 창의 실시간 조정을 보다 쉽게 최적화할 수 있는 updateLocalView와 updateRemoteView 인터페이스를 추가하였습니다.
+- Windows: 현재 Windows PC가 음소거로 설정되어 있는지를 확인하는 데 사용할 수 있는 getCurrentMicDeviceMute 인터페이스를 추가하였습니다.
+- Windows: 현재 Windows PC를 음소거로 설정할 수 있는 setCurrentMicDeviceMute 인터페이스를 추가하였습니다.
 - Mac: View 렌더링 영역의 실시간 조정을 더 쉽게 최적화할 수 있는 [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf20f249b4b43fff64f944b4aefe54cb) 및 [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa27f954e6301fb57a143b27429b63d87) 인터페이스를 추가하였습니다.
 - Mac: 현재 Mac이 음소거로 설정되어 있는지 확인하는 데 사용할 수 있는 [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6ba78519e9c98c1eecd365154882d53f) 인터페이스를 추가하였습니다.
 - Mac: 현재 Mac을 음소거로 설정할 수 있는 [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a88569e62fe75b7ea98cc012169f22bfe) 인터페이스를 추가하였습니다.

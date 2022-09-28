@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to ship logs in CLS to Hive for OLAP computing. You can use the data analysis and computing services provided by Tencent Cloud Data Lake Compute (DLC) to complete offline log computing and analysis as shown below:
+This document describes how to ship logs in CLS to Hive for OLAP computing. You can use the data analysis and computing services provided by Tencent Cloud Data Lake Compute to complete offline log computing and analysis as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/49cfebe438708b45edd6001625b55ab0.png)
 
 ## Directions
@@ -45,12 +45,12 @@ Generally, you can view the log data in the COS console 15 minutes after the shi
 
 
 
-### DLC (Hive) analysis
+### Data Lake Compute (Hive) analysis
 
-#### Using DLC to create a foreign table and map it to a COS log directory
-After log data is shipped to COS, you can use the data exploration feature in the DLC console to create a foreign table. For the table creation statement, refer to the following example. **Note that the partitioning field and the `location` field must match the directory structure.**
+#### Using Data Lake Compute to create a foreign table and map it to a COS log directory
+After log data is shipped to COS, you can use the data exploration feature in the Data Lake Compute console to create a foreign table. For the table creation statement, refer to the following example. **Note that the partitioning field and the `location` field must match the directory structure.**
 
-The DLC foreign table creation wizard provides advanced options to infer the data file table structure and quickly and automatically generate SQL statements. As sampled inference is used, you need to further determine whether table fields are appropriate based on the SQL statements. For example, in the sample code below, it is inferred that the `__TIMESTAMP__` field is of `int` type, but maybe the `bigint` type should be used to meet the business requirements.
+The Data Lake Compute foreign table creation wizard provides advanced options to infer the data file table structure and quickly and automatically generate SQL statements. As sampled inference is used, you need to further determine whether table fields are appropriate based on the SQL statements. For example, in the sample code below, it is inferred that the `__TIMESTAMP__` field is of `int` type, but maybe the `bigint` type should be used to meet the business requirements.
 
 ```sql
 CREATE EXTERNAL TABLE IF NOT EXISTS `DataLakeCatalog`.`test`.`log_data` (
@@ -112,7 +112,7 @@ alter table DataLakeCatalog.test.log_data add partition(dt='20220424')
 
 
 #### Analyzing data
-After adding partitions, you can use DLC for data development and analysis.
+After adding partitions, you can use Data Lake Compute for data development and analysis.
 ```sql
 select dt,count(1) from `DataLakeCatalog`.`test`.`log_data` group by dt;
 ```

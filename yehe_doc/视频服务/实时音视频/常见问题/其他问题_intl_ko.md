@@ -153,7 +153,7 @@ TRTC 콘솔의 **[사용량 통계](https://console.cloud.tencent.com/trtc/stati
 
 [](id:que40)
 ###  시청자가 어떻게 방 안에 있는 연결 화면을 볼 수 있습니까?
-시청자가 라이브 방송 모드를 사용하는 경우, 방 안으로 들어가 TRTCCloudDelegate의 [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a) 콜백을 통해 호스트의 userid(마이크 연결한 사람도 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)으로 방에 들어갈 수 있으며, 시청자에게는 해당 사용자가 호스트가 됨)를 알 수 있습니다. 그리고 시청자는 [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5c5ea936418b106c2e801db57938dde9)를 호출해 호스트의 비디오 화면을 볼 수 있습니다.
+시청자가 라이브 방송 모드를 사용하는 경우, 방 안으로 들어가 TRTCCloudDelegate의 onUserVideoAvailable 콜백을 통해 호스트의 userid(마이크 연결한 사람도 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)으로 방에 들어갈 수 있으며, 시청자에게는 해당 사용자가 호스트가 됨)를 알 수 있습니다. 그리고 시청자는 [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5c5ea936418b106c2e801db57938dde9)를 호출해 호스트의 비디오 화면을 볼 수 있습니다.
 자세한 작업 방법은 [라이브 방송 모드 실행(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)을 참고하십시오.
 
 [](id:que41)

@@ -187,7 +187,7 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </tr>
 </tbody></table>
 
->?For more information on batch sending or other scenarios, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
+>?For more information on batch sending or other scenarios, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1).
 
 ### Step 3. Consume messages
 
@@ -275,7 +275,7 @@ Introduce dependencies in a Java project and add the following dependencies to t
 </tr>
 </tbody></table>
 
->? For more consumption mode information, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
+>? For more consumption mode information, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1).
 
 2. Subscribed to messages. The subscription modes vary by consumption mode.
    - Subscription in push mode
@@ -353,4 +353,4 @@ Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the 
 
 
 
->?Above is a brief introduction to message publishing and subscription. For more information, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/)
+>?Above is a brief introduction to message publishing and subscription. For more information, see the [demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%E7%94%9F%E4%BA%A7%E8%80%85/05message1)

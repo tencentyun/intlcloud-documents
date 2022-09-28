@@ -1,13 +1,14 @@
 ### Ikthisar
 
 Instans Cadangan (RI) adalah diskon penagihan yang diterapkan pada penggunaan instans CVM bayar sesuai pemakaian di akun Anda. Instans CVM ini harus sama persis dengan atribut RI yang Anda beli untuk mendapatkan keuntungan dari diskon penagihan selama jangka waktu RI. RI memberi Anda diskon yang signifikan dibandingkan dengan penagihan bayar sesuai pemakaian.
->? RI saat ini dalam versi beta. Untuk menggunakannya, [klik di sini](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) untuk mengajukan permohonan. Setelah permohonan disetujui, login ke Tencent Cloud Console dan buka [Kalkulator Harga](https://intl.cloud.tencent.com/pricing/cvm) untuk menanyakan harganya.
+>? 
+>- Login ke Tencent Cloud Console dan buka [Kalkulator Harga](https://intl.cloud.tencent.com/pricing/cvm) untuk menanyakan harganya.
 
-> Saat ini, pembayaran biaya RI tidak dapat dikembalikan.
+>- Saat ini, pembayaran biaya RI tidak dapat dikembalikan.
 >
-> Konfigurasi RI tidak dapat diubah setelah pembelian. Diskon penagihan RI tidak lagi berlaku untuk instans yang cocok jika Anda mengubah konfigurasinya.
+>- Konfigurasi RI tidak dapat diubah setelah pembelian. Diskon penagihan RI tidak lagi berlaku untuk instans yang cocok jika Anda mengubah konfigurasinya.
 >
-> Diskon penagihan RI akan tetap berlaku untuk instans CVM yang cocok bahkan setelah instans tersebut menjalankan pematian secara proaktif atau paksa.
+>- Diskon penagihan RI akan tetap berlaku untuk instans CVM yang cocok bahkan setelah instans tersebut menjalankan pematian secara proaktif atau paksa.
 
 #### Atribut
 

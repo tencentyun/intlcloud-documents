@@ -350,7 +350,7 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 <br>Windows: <ul style="margin:0">
 <li>일부 시나리오의 라이브 방송 음질을 최적화하여 오디오 품질 저하 문제가 대폭 감소하였습니다.</li>
 <li>성능 최적화를 통해 일부 사용 시나리오에서 구버전 대비 성능이 20%- 30% 향상되었습니다.</li>
-<li>프로세스 볼륨 조절 기능이 추가되었습니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1">setApplicationPlayVolume</a>을 사용해 시스템 볼륨 믹서의 볼륨 크기를 설정할 수 있습니다.</li>
+<li>프로세스 볼륨 조절 기능이 추가되었습니다. setApplicationPlayVolume을 사용해 시스템 볼륨 믹서의 볼륨 크기를 설정할 수 있습니다.</li>
 </ul>
 <br>Mac: <ul style="margin:0">
 <li>Mac 운영 체제의 출력 음성 수집을 지원합니다. Windows와 동일한 SystemLoopback 기능이며, 이 기능을 통해 SDK에서 현재 시스템의 음성을 수집할 수 있습니다. 해당 기능을 활성화하면 호스트가 편리하게 다른 사용자에게 음악 또는 영화 파일을 라이브 방송할 수 있습니다.</li>
