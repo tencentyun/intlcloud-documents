@@ -1,6 +1,6 @@
 ## Overview
 
-The COS console provides the feature of filtering buckets by tag, which relies on the Tencent Cloud Tag service.
+COS allows you to filter buckets by tag in the console, which is powered by the Tencent Cloud Tag service.
 
 Suppose the enterprise account `CompanyExample` (OwnerUin: 100000000001, Owner_appid: 1250000000) has a sub-account `Developer`, and `CompanyExample` needs to grant the sub-account permissions to get the list of tagged objects. The following describes how to grant the permissions.
 

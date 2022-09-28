@@ -1,6 +1,6 @@
 ## Feature Description
 
-The cloud virus detection feature adopts the async request method. You can use this API to detect viruses such as trojans and worms in COS files, and then query the result through the API for querying virus detection results.
+The cloud virus detection feature adopts the async request method. You can use this API to detect viruses such as trojans and worms in COS files, and query the result through the appropriate API.
 
 ## Billing
 

@@ -1,8 +1,8 @@
 ## Overview
 
-The content moderation feature can automatically block violating files. However, this capability is applicable to data stored on COS origins only but cannot immediately process data cached on CDN nodes.
+The content moderation feature can automatically block non-compliant files. It only applies to data stored on COS origins rather than data cached on CDN nodes.
 
-This document describes how to promptly block violating data cached in CDN through SCF and API Gateway.
+This document describes how to promptly block non-compliant data cached in CDN through SCF and API Gateway.
 
 ## Directions
 
