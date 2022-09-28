@@ -157,7 +157,7 @@ COS 액세스 시 아래 정보가 출력되는 경우,
 다음 작업을 진행해야 합니다.
 
 1. 운영 체제 유형에 따라 클라이언트의 현재 시간을 확인합니다.
- - Windows 시스템(Windwos Server 2012 기준): **![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png)> > 제어판 > 시간, 언어 및 지역 > 날짜 및 시간**.
+ - Windows 시스템(Windwos Server 2012 기준): ![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png)**> 제어판 > 시간, 언어 및 지역 > 날짜 및 시간**.
 
  - Linux 시스템: `date -R` 명령어 실행
 ![](https://main.qcloudimg.com/raw/88288162bd1de8c2ec0b640f0df6799e.png)
