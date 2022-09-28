@@ -2,13 +2,13 @@
 You can create an account, set account permissions, and change the account password in the TencentDB for MongoDB console to manage database access permissions more easily. 
 
 ## Background
-- TencentDB for MongoDB has two default users: `rwuser` and `mongouser`. TencentDB for MongoDB 3.2 supports both of them by default, while 3.6, 4.0, and 4.2 only support the `mongouser` user by default.
+- TencentDB for MongoDB has two default users: `rwuser` and `mongouser`. TencentDB for MongoDB 3.2 supports both of them by default, while 3.6, 4.0, 4.2 and 4.4 only support the `mongouser` user by default.
   - Only **rwuser** is authenticated with MONGODB-CR.
   - Both **mongouser** and users created in the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb) are authenticated with SCRAM-SHA-1.
 - You can set multiple accounts and grant each of them different database read/write permissions for database access at a finer granularity and higher data security.
 
 ## Version Description
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support database account management.
+Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support database account management.
 
 ## Notes
 - After you create an account and grant it the access permission, it will take effect in 2 minutes after the system performs the backend configuration.
