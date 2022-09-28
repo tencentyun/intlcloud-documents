@@ -2,7 +2,7 @@
 
 COSコンソールからバケットのサーバー側の暗号化を設定すると、そのバケットにアップロードされた新しいオブジェクトがデフォルトで暗号化されるようになります。バケット暗号化の詳細情報については、[バケット暗号化の概要](https://intl.cloud.tencent.com/document/product/436/33457)をご参照ください。
 
->現在、バケット暗号化方法として、SSE-COS暗号化（すなわち、Cloud Object Storage(COS)ホストキーを使用したサーバー側の暗号化）をサポートしています。サーバー側の暗号化については、[サーバー側の暗号化の概要](https://intl.cloud.tencent.com/document/product/436/18145)をご参照ください。
+>?現在、バケット暗号化方法として、SSE-COS暗号化（すなわち、Cloud Object Storage(COS)ホストキーを使用したサーバー側の暗号化）をサポートしています。サーバー側の暗号化については、[サーバー側の暗号化の概要](https://intl.cloud.tencent.com/document/product/436/18145)をご参照ください。
 >
 
 
