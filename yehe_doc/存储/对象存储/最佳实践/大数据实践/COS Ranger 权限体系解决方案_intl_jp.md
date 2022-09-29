@@ -65,7 +65,7 @@ curl -v -u${adminUser}:${adminPasswd} -X DELETE -H "Accept:application/json" -H 
 </dx-codeblock>
 5. 次に示すように、サービスの作成に成功すると、RangerコンソールにCOSサービスが表示されます。
 ![](https://main.qcloudimg.com/raw/d1a6e2722d11f7177636a5e2c54226e3.png)
-6. COSサービス側の**+**をクリックして、新しいサービスインスタンスを定義します。サービスインスタンス名は、`cos`や`cos_test`などにカスタマイズできます。サービスの設定は次のとおりです。
+6. COSサービス側の<b>+</b>をクリックして、新しいサービスインスタンスを定義します。サービスインスタンス名は、`cos`や`cos_test`などにカスタマイズできます。サービスの設定は次のとおりです。
 ![](https://main.qcloudimg.com/raw/2be86fb2b8232b16679b29e908f82d3a.png)
 そのなかでpolicy.grantrevoke.auth.usersは、COS Ranger Serviceを後で起動するためのユーザー名（つまり権限ポリシーの取得を許可するユーザー）を設定する必要があります。通常はhadoopに設定することをお勧めします。その後のCOS Ranger Serviceは、このユーザー名で起動できます。
 7. 新しく生成されたCOSサービスインスタンスをクリックします。
