@@ -2,7 +2,7 @@ Tencent Cloud EdgeOne provides pay-as-you-go subscriptions. **The service is act
 
 
 ## Billable Items
-The bill of EdgeOne includes costs of the subscription plan, out-of-plan usage and value-added services. 
+The bill of EdgeOne includes costs of the subscription plan, out-of-plan usage and value-added services.
 - Subscription plan (required): Specify a plan for each site. The subscription plan includes the basic features, with the configured quota.
 - Out-of-plan usage: When the quota of the subscription plan is used up, you need to pay for the exceeding parts additionally based on the corresponding prices.
 - Value-added services (optional): EdgeOne provides many VASs, such as HTTP/3 (QUIC). These services are billed separately. You can activate them as needed.
@@ -13,46 +13,46 @@ EdgeOne is billed on a calendar month basis. The bill of the current month is ge
 ## EdgeOne Plans
 EdgeOne provides the Standard and Enterprise plans. You can only specify one plan for one site. The details of the two plans are listed as below:
 
-| Item                                            |                           Standard                           |                          Enterprise                          |
-| :---------------------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| Price                                           | The price of Standard plans differs depending on the acceleration region.<br/>Chinese mainland: 590 USD/month<br/>Globe (Chinese mainland not included): 699 USD/month |   [Contact us](https://intl.cloud.tencent.com/contact-us)    |
-| Traffic                                         |                             3 TB                             |                          Customizable                        |
-| HTTP/HTTPS requests                             |                           50,000K                            |                         Customizable                       |
-| Content delivery network                        |                              ✓                               |                              ✓                               |
-| Smart acceleration                              |                              ✓                               |                              ✓                               |
-| L4 proxy via CNAME                              |                              ✕                               |                              ✓                               |
-| L4 proxy via static IP                          |                              ✕                               |                              ✓                               |
-| DDoS mitigation                                 |                              ✓                               |                              ✓                               |
-| Enterprise DDoS mitigation (customizable)       |                              ✕                               |                              ✓                               |
+|    Item                                  |                            Standard                            |                            Enterprise                            |
+| :----------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| Price                                 |                         Chinese mainland: 590 USD/month<br/>Global (outside the Chinese mainland): 699 USD/month                         | [Contact us](https://intl.cloud.tencent.com/contact-us) |
+| Traffic                                 |                             3 TB                             |                          	Customizable                          |
+| Number of HTTP/HTTPS requests                    |                           50 million                           |                         	Customizable                          |
+| CDN |                              ✓                               |                              ✓                               |
+| Smart acceleration                             |                              ✓                               |                              ✓                               |
+| L4 proxy via CNAME                 |                              ✕                               |                              ✓                               |
+| L4 proxy via static IP                |                              ✕                               |                              ✓                               |
+| DDoS mitigation                            |                              ✓                               |                              ✓                               |
+| Enterprise DDoS mitigation (customizable)    |                              ✕                               |                              ✓                               |
 | Web protection - Managed rules                  |                              ✓                               |                              ✓                               |
-| Web protection - Rate limiting rules            |                              5                               |                         Customizable                         |
-| Web protection - Custom rules                   |                              20                              |                         Customizable                         |
-| Bot management                                  |                           Optional                           |                           Optional                           |
-| Bot intelligence                                |                   Free for a limited time                    |                   Free for a limited time                    |
+| Web protection - Rate limiting rules              |                             5                              |                          Customizable                          |
+| Web protection - Custom rules                |                             20                             |                          Customizable                          |
+| Bot management                         |                             Optional                             |                             Optional                             |
+| Bot intelligence           |                Free for a limited time                  |                 Free for a limited time                  |
 | Verification (JavaScript challenge and CAPTCHA) |                              ✓                               |                              ✓                               |
-| Upload size limit                               |                 500 MB (cannot be disabled)                  |                          Unlimited                           |
-| External certificate on edge node               |                              ✓                               |                              ✓                               |
-| Load balancing tasks                            |                              5                               |                              10                              |
-| Node cache TTL                                  |                Down to the millisecond level                 |                Down to the millisecond level                 |
-| Browser cache TTL                               |                Down to the millisecond level                 |                Down to the millisecond level                 |
-| Purge cache (free for a limited time)           | Matching type: Host and Prefix<br>Quota per request: 1,000<br>Daily quota: 10,000 | Matching type: Host and Prefix<br>Quota per request: 1,000<br>Daily quota: 20,000 |
-| Prefetch URL (free for a limited time)          |       Quota per request: 1,000<br>Daily quota: 50,000        |       Quota per request: 5,000<br>Daily quota: 100,000       |
-| WebSockets                                      |                   Default timeout: 1-120s                    |                   Default timeout: 1-300s                    |
-| Max data query period                           |                           90 days                            |                           180 days                           |
-| Real-time logging                               |                           2 tasks                            |                           5 tasks                            |
-| Rule engine rules                               |                             100                              |                             200                              |
-| DNS records                                     |                             500                              |                            1,000                             |
+| Upload size limit                         |               500 MB (cannot be disabled)               |                           Unlimited                           |
+| External certificate on edge node             |                              ✓                               |                              ✓                               |
+| Load balancing tasks                       |                             5                              |                             10                             |
+| Node cache TTL                         |                      Down to the millisecond level                      |                      Down to the millisecond level                      |
+| Browser cache TTL                       |                      Down to the millisecond level                      |                      Down to the millisecond level                      |
+| Purge cache (free for a limited time)                 | Matching type: Host and Prefix<br>Quota per request: 1,000<br>Daily quota: 10,000 | Matching type: Host and Prefix<br>Quota per request: 1,000<br>Daily quota: 20,000 |
+| Prefetch URL (free for a limited time)                 |             Quota per request: 1,000<br>Daily quota: 50,000              |      Quota per request: 5,000<br>Daily quota: 100,000      |
+| WebSockets                           |                     Default timeout: 1-120s                     |                     Default timeout: 1-300s                     |
+| Max data query period                 |                            90 days                             |                            180 days                             |
+| Real-time logging                             |                           2 tasks                            |                           5 tasks                            |
+| Rule engine rules                       |                            100                             |                            200                             |
+| DNS records                           |                             500                              |                             1,000                             |
 
 >!
 >- All features offered in Standard plan are included in the Enterprise plan.
->- If the capability of the Enterprise plan still cannot meet your needs, please [contact us](https://intl.cloud.tencent.com/contact-us).
+>- If the capability of the Enterprise plan still cannot meet your needs, [contact us](https://intl.cloud.tencent.com/contact-us).
 
 ## Notes
 If the usage %your plan serves for less than one month, you are billed based on **the actual plan duration and usage**. Providing you subscribed to a Standard plan on the 15th of this month, which has 30 days, then your subscription fee is $349.5 (699 x 15/30), and your monthly traffic usage is 1.5 TB (3 TB x 15/30) and on the number of requests is 25,000K (50,000K x 15/30).
 
 ## Out-of-plan Usage
 ### Standard plan - Security acceleration traffic
-If the security acceleration traffic usage exceeds your Standard plan’s limit, you are billed at the following tiered prices.
+If the security acceleration requests exceed your Standard plan's limit, you are billed at the following tiered prices.
 
 <table>
 <thead>
@@ -97,7 +97,7 @@ If the security acceleration traffic usage exceeds your Standard plan’s limit,
 
 
 ### Standard plan- Security acceleration requests
-If the security acceleration requests exceed your Standard plan’s limit, you are billed at the following tiered prices.
+If the security acceleration requests exceed your Standard plan's limit, you are billed at the following tiered prices.
 
 <table>
 <thead>
@@ -122,7 +122,7 @@ If the security acceleration requests exceed your Standard plan’s limit, you a
 
 
 ### Enterprise plan - Unit pricing
-For the out-of-plan fee of Enterprise plans, please [contact us](https://intl.cloud.tencent .com/contact-us). 
+For the out-of-plan fee of Enterprise plans, [contact us](https://intl.cloud.tencent.com/contact-us). 
 
 ## Value-added Services
 EdgeOne provides additional value-added services for enhanced capabilities.
@@ -149,12 +149,12 @@ QUIC requests adopt monthly linear pricing model. The details are as below:
 
 ### Real-time logging
 
-Real-time logging is in free beta, which is plan to end on September 2022. We will notify user about the pricing in when the free beta ends. 
+Real-time logging is in free beta, which is plan to end on September 2022. We will notify user about the pricing in when the free beta ends.
 
 ### Bot management
-Bot management involves the monthly plan fee and the out-of-plan usage fee.
+Fees are charged for the selected value-added features and excessive requests.
 
-The service quota varies by the subscription plan type. The details are as below: 
+The value-added feature quota varies by the subscription plan type. The details are as below:
 
 <table>
 <thead>
@@ -177,7 +177,7 @@ The service quota varies by the subscription plan type. The details are as below
 </tbody></table>
 
 
-The out-of-plan usage is charged on a tiered basis. View the table below:
+Requests in excess of the value-added feature quota are charged on a tiered basis. View the table below:
 
 <table>
 <thead>
@@ -218,7 +218,7 @@ The out-of-plan usage is charged on a tiered basis. View the table below:
 
 
 ### Web protection rule pack
-Web protection rule packs adopt fixed monthly pricing. View the table below:
+L4 proxy is also billed using fixed monthly pricing.
 
 <table>
 <thead>
@@ -260,3 +260,5 @@ L4 proxy is also billed using fixed monthly pricing.
 </tr>
 </tbody></table>
 
+### Smart acceleration
+All SCDN subdomain names use smart acceleration to optimize the access experience of your users. After smart acceleration is enabled, the client traffic and upstream and downstream traffic of EdgeOne nodes (client Tencent Cloud ⇋ EdgeOne node server) will be billed.

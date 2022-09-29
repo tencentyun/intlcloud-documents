@@ -1,37 +1,22 @@
-Smart Acceleration is a route optimization service, which always selects the best route for your business according to the network condition in real time, so as to lower the network latency, reduce connection and request failures. Smart Acceleration is a value-added feature of EdgeOne.
->?The EdgeOne console is now only available to beta users. [Contact us](https://intl.cloud.tencent.com/contact-us) to join the beta.
+## Overview
+Smart acceleration refers to smart dynamic routing acceleration. After this feature is enabled, it will detect the node network latency in real time and use the smart algorithm to select the optimal transfer path, so as to handle both static and dynamic client requests more quickly, stably, and securely.
 
-## Use Cases
-#### Dynamic resources
-Smart Acceleration can be used in scenarios where dynamic content needs to be requested frequently, including online game, ecommerce, finance, payment, and online education.
+Smart dynamic routing minimizes problems such as high network latency, connection errors, and request failures.
 
-#### Dynamic and static resources
-For dynamic content use cases, you can refer to the above scenarios. Your static content still provides service through data cached on edge servers. In addition, when any cached content expires, it will be quickly updated through smart acceleration.
+#### What are dynamic and static resources?
+- Static resource: It refers to the content that stays the **same** in the responses to multiple requests for the same resource, such as HTML, CSS and JS files, images, videos, software installation packages, APK files, and compressed files.
+- Dynamic resource: It refers to the content that **varies** in the responses to multiple requests for the same resource, such as APIs and JSP, ASP, PHP, PERL, and CGI files.
+
+## Overview
+#### Dynamic resource acceleration
+Smart acceleration can be used for businesses with frequent requests to dynamic resources and a high sensitivity to latency, including online game, ecommerce, finance, payment, and online education.
+
+#### Dynamic/Static hybrid resource acceleration
+Dynamic resources are as detailed above. Static resources are cached on edge nodes close to clients for fast response. If a cached static resource expires, it can be updated quickly through smart acceleration.
 
 ## Directions
-### Enabling Smart Acceleration for a Site 
-
->? **Smart Acceleration** is a paid service.
-
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Site acceleration** > **Network optimization** on the left sidebar.
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Site Acceleration** > **Smart Acceleration** on the left sidebar.
 2. On the **Smart acceleration** page, select the target site, and enable/disable the feature.
 
-
-### Enabling Smart Acceleration for a Subdomain
-You can also enable Smart Acceleration for a specific subdomain.
-
-1. Go to the [Rule engine](https://console.cloud.tencent.com/edgeone/rules) page, select the site and click ![](https://qcloudimg.tencent-cloud.cn/raw/0f0a8aa7913c1c31284b692eadbccd85.png)
-2. Complete the parameters as instructed below, and click **Save and publish**. For more information, see [Configuring Rule Engine](intl.cloud.tencent.com/document/product/1145/46151).
-
-Parameters:
- - Match type: Host
- - Operator: Equals to 
- - Value: Subdomain
- - Operation: Smart Acceleration 
- - On/Off: Toggle on or off the feature as necessary
- 
-## Must-knows
-- If your site supports **Content Acceleration**, **Smart Acceleration** only works on subdomains in Sec-MCA mode but not Content Acceleration mode.
-- Make sure you have added a record at your domain name provider. See [Domain Name Service](intl.cloud.tencent.com/document/product/1145/46353).
-- Smart Acceleration is a value-added service. 
->? For more billing details, please submit a ticket or contact your sales rep.
+## Billing Details
+As smart acceleration is a value-added service, it incurs additional usage fees. Before enabling the service, read the billing description in [Billing Overview](https://www.tencentcloud.com/document/product/1145/48705).
