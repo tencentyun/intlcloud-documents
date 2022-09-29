@@ -1,35 +1,87 @@
-## アルゴリズムの説明
-**アクセスURL形式**
-`http://DomainName/md5hash/timestamp/FileName`
+サイトのリソースが違法なサイトによってダウンロードされ、盗用されないよう保護するために、必要に応じてType ABCDの4つの認証方式の1つを選択できます。ここでは、Type Cの各パラメータフィールドと原理について詳しくご説明します。
 
 **アルゴリズムの説明**
-- timestamp：UNIX形式の16進数のタイムスタンプです。
-- md5hash：MD5（カスタマイズキー+ファイルパス+タイムスタンプ）。
 
-**リクエスト例**
-`http://cloud.tencent.com/8fe9b5597c809d7ace147468c7c7eadb/5e577978/test/test.jpg`
+-  **アクセスURLの形式**
+`http://DomainName/md5hash/timestamp/FileName` 
+  >!アクセスURLに中国語を含むことはできません。
 
->!MD5を計算する際に、リクエストパスが`http://cloud.tencent.com/test.jpg`の場合、MD5を計算する際のパスは`/test.jpg`となります。
+-  **認証フィールドの説明**
+  <table>
+  <thead>
+  <tr>
+  <th>フィールド</th>
+  <th>説明</th>
+  </tr>
+  </thead>
+  <tbody><tr>
+  <td>DomainName</td>
+  <td>CDNドメイン名。</td>
+  </tr>
+  <tr>
+  <td>Filename</td>
+  <td>リソースのアクセスパスは、認証時に Filenameがスラッシュ（ <code>/</code> ）で始まる必要があります。</td>
+  </tr>
+  <tr>
+  <td>timestamp</td>
+  <td>サーバーが認証URLを発行する時間は、16進数の整数型の正数のUnixタイムスタンプを使用し、UTC時間1970年01月01日00時00分00秒から現在の総秒数までで、その定義と所在するタイムゾーンは関係ありません。</td>
+  </tr>
+  <tr>
+  <td>md5hash</td>
+  <td>MD5アルゴリズムによって計算した固定長は32桁の文字列です。具体的な計算公式は次のとおりです： <br>•  md5hash = md5sum(pkeytimestampuri) パラメータの間にはいかなる符号もありません  <br>•  pkey： カスタムキー：6 ～40桁のアルファベットの大文字、小文字と数字で構成されています。キーを大切に保管してください。クライアントとサーバーのみ知っている必要があります。 <br>•   uri リソースのアクセスパスはスラッシュ（/）で始まる必要があります。 <br>•  timestamp: 値は上記のtimestampです。</td>
+  </tr>
+  </tbody></table>
+-  **認証ロジックの説明**
+	CDNサーバーはクライアントからのリクエストを受けると、url内のtimestampパラメータ+認証URLの有効期限を解析して現在の時間と比較します。
+	1. timestamp + 認証URLの有効期限が現在の時間より小さい場合、サーバーは期限切れによる失効と判定し、HTTP 403エラーが返されます。
+	2. timestamp+認証URLの有効期限が現在の時間より大きい場合、MD5アルゴリズムを使用してmd5hashの値を計算し、さらに計算したmd5hash値とurlで渡したmd5hash値を比較し、一致する場合はそのままにし、一致しない場合はHTTP 403エラーを返します。
 
-## 設定ガイド
-### パラメータの説明
-TypeCに必要な設定は以下のとおりです。
-![](https://main.qcloudimg.com/raw/d7b8d589f8690f1e4c33985d6bcd3f09.png)
-**認証キーのカスタマイズ：**キーは6～32文字の大文字と小文字および数字で構成されています。キーを大切に保管してください。ユーザー側とサーバー側のみ知っている必要があります。
-**有効時間のカスタマイズ：**リクエストのタイムスタンプ値と設定された有効時間を介して、現在の時刻と比較し、リクエストの有効期限が切れているかどうかを判断します。有効期限切れの場合、直接に403エラーを返します。
+## 設定ガイド 
 
-### オブジェクト
-キー、パラメータ名、および有効期間を設定した後、必要に応じて認証オブジェクトを指定でき、以下の3つのモードがサポートされています。
-![](https://main.qcloudimg.com/raw/34d27c8908808cacddfde94c8a3f1d81.png)
-+ 指定されたドメイン名配下のすべてのファイルは認証される必要があります。
-+ 指定されたタイプのファイルを認証不要に、他のすべてのファイルは認証される必要があります。
-+ 指定されたタイプのファイルは認証される必要があります。
+**Type-Cで認証する設定を例として、パラメータおよびコンソールを以下のように設定します。**
 
-## 注意事項
-**キャッシュヒット率**
-ドメイン名のTypeC認証モードを有効にしている場合、アクセスURLには認証パスが含まれます。CDNノードでリソースをキャッシュする時、認証パスは自動的に無視されるため、キャッシュヒット率には影響しません。
-**back to originポリシー**
-TypeC認証モードが有効になっているドメイン名のアクセス形式は次のとおりです。
-`http://DomainName/md5hash/timestamp/FileName`
+- **フィールド設定**
+  - 認証キー：dimtm5evg50ijsx2hvuwyfoiu65
+  - 認証URLの有効期間：1s   
+  - 署名アルゴリズムがサーバー認証URLを発行した時間：2020年02月27日16:10:32（UTC+8）は、10進数の整数値1582791032(timestamp)に変換されます
+  - オリジンサーバーアドレスのリクエスト：`http://cloud.tencent.com/test.jpg`
+	
+- 発行プロセス
+  - 認証パラメータの取得
+    <table>
+    <thead>
+    <tr>
+    <th>パラメータ</th>
+    <th>値</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+    <td>uri</td>
+    <td>リソースのアクセスパスは /test.jpgです</td>
+    </tr>
+    <tr>
+    <td>timestamp</td>
+    <td>1582791032</td>
+    </tr>
+    <tr>
+    <td>pkey</td>
+    <td>dimtm5evg50ijsx2hvuwyfoiu65</td>
+    </tr>
+    </tbody></table>
+  - 署名文字列の結合：dimtm5evg50ijsx2hvuwyfoiu651582791032/test.jpg
+  - 署名文字列のmd5値の計算：md5hash = md5sum(pkeytimestampuri) =md5sum(dimtm5evg50ijsx2hvuwyfoiu651582791032/test.jpg) = ea68b93ac23ebbc6eebf7f163c6e9c4c
 
-認証が成功した後、CDNノードがヒットしない場合は、ノードはback to originリクエストを送信します。**back to originリクエストは、パス中のmd5hashとtimestampパスを削除します**。オリジンサーバーは特別な処理を行う必要はありません。
+-   **認証URLの発行：**
+`http://cloud.tencent.com/ea68b93ac23ebbc6eebf7f163c6e9c4c/1582791032/test.jpg` 
+クライアントがURLの暗号化によってアクセスする場合、CDNサーバーが計算したmd5hash値とアクセスリクエスト内にあるmd5hash値が同じであれば、いずれもea68b93ac23ebbc6eebf7f163c6e9c4cとなり、認証に合格し、そうでなければ認証に失敗します。
+
+## 注意事項 
+
+**キャッシュのヒット率** 
+TypeC認証方式が有効になっているドメイン名は、URLへのアクセスパスに署名とタイムスタンプが保持されます。CDNノードでリソースをキャッシュする時、認証パスが自動的に無視され、ドメイン名キャッシュのヒット率には影響しません。
+
+**back-to-originのポリシー**
+TypeC認証方式が有効になっているドメイン名について、アクセスする際の形式は次のとおりです。
+ `http://DomainName/md5hash/timestamp/FileName` 
+
+認証にパスした後、ヒットしたCDNノードがない場合、ノードはback-to-originリクエストを送信します。**back-to-originリクエストは、パス中のmd5hashとtimestampパス**を削除します。オリジンサーバーは特別な処理を行う必要はありません。
