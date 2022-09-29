@@ -4,7 +4,7 @@ You can add more mongos nodes to increase the maximum number of connections to t
 
 ## Version requirements
 
-Currently, only sharded cluster instances on v4.0 and v4.2 support adding mongos nodes.
+Currently, sharded cluster instances on v4.0, v4.2 and v4.4 support adding mongos nodes.
 
 ## Notes
 
