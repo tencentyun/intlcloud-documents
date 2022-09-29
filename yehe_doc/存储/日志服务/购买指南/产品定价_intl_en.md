@@ -1,4 +1,8 @@
-CLS is a pay-as-you-go service which bills you according to actual resource usage and deducts fees on a daily basis. Pay-as-you-go billing applies to all available regions. For more information on billable items, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
+## Pay-As-You-Go Pricing
+
+- CLS is pay-as-you-go by default upon activation. For more information, see [Pay-As-You-Go](https://www.tencentcloud.com/document/product/614/49672).
+After you know [CLS billable items](https://intl.cloud.tencent.com/document/product/614/37509), you can evaluate required resource amount (such as monthly traffic, storage usage, and number of requests) based on your own business needs. You can also use the [CLS price calculator](https://buy.intl.cloud.tencent.com/price/cls/calculator) to estimate the cost based on your daily log volume or the number of cloud product requests, obtain pay-as-you-go purchase suggestions, and export the cost estimate list.
+- For more information about CLS billing modes and billing cycles, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509). For details about pay-as-you-go billing examples, see the billing examples in Billing Overview.
 
 <table>
    <tr>
@@ -6,10 +10,10 @@ CLS is a pay-as-you-go service which bills you according to actual resource usag
 			<th colspan="12"><center>Billable Item</center></th>
    </tr>
    <tr>
-      <th colspan="5"><center>Traffic</center></th>
-      <th colspan="4"><center>Storage</center></th>
-      <th colspan="1"><center>Computing</center></th>
-      <th colspan="2"><center>Others</center></th>
+      <th colspan="5"><center>Traffic Fee</center></th>
+      <th colspan="4"><center>Storage Fee</center></th>
+      <th colspan="1"><center>Calculation Fee</center></th>
+      <th colspan="2"><center>Other Fee</center></th>
    </tr>
    <tr>
       <td>Write traffic (USD/GB/day)</td>
@@ -22,8 +26,8 @@ CLS is a pay-as-you-go service which bills you according to actual resource usag
 			<td>IA index storage (USD/GB/day)</td>
 			<td>IA log storage (USD/GB/day)</td>
       <td>Data processing (USD/GB/day)</td>
-      <td>Partitions (USD/partition/day)</td>
-      <td>Service request (USD/million requests/day)</td>
+      <td>Number of partitions (USD/partition/day)</td>
+      <td>Service request (USD/1 million requests/day)</td>
    </tr>
    <tr>
       <td>Chinese mainland</td>
@@ -42,8 +46,8 @@ CLS is a pay-as-you-go service which bills you according to actual resource usag
     <td>0.026</td>
    </tr>
    <tr>
-      <td>Hong Kong/Macao/Taiwan (China)</td>
-      <td  nowrap="nowrap">Hong Kong (China)<br>Taipei (China)</td>
+      <td>Hong Kong (China)</td>
+      <td  nowrap="nowrap">Hong Kong</td>
       <td>0.032</td>
       <td>0.141</td>
       <td>0.032</td>
@@ -119,6 +123,22 @@ CLS is a pay-as-you-go service which bills you according to actual resource usag
       <td>0.007</td>
      <td>0.026</td>
    </tr>
+<tr>
+      <td>South America</td>
+      <td nowrap="nowrap">Sao Paulo</td>
+      <td>0.041</td>
+      <td>0.141</td>
+      <td>0.041</td>
+      <td>0.092</td>
+			<td>0.027</td>
+      <td>0.0034</td>
+      <td>0.0034</td>
+			<td>0.00073</td>
+			<td>0.00073</td>
+      <td>0.026</td>
+      <td>0.007</td>
+     <td>0.034</td>
+   </tr>
     <tr>
       <td>Europe</td>
       <td nowrap="nowrap">Frankfurt<br>Russia</td>
@@ -137,6 +157,3 @@ CLS is a pay-as-you-go service which bills you according to actual resource usag
    </tr>
 </table>
 
-
-
->! Currently, the IA storage class is in beta test, during which write traffic, index traffic, index storage, and log storage for IA log topics are free of charge. Billing will officially start at 00:00:00 on May 11, 2022.
