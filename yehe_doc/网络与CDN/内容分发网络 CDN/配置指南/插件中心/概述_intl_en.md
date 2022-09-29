@@ -1,0 +1,1 @@
+The Plugin Center is a repository of value-added CDN plugins. It provides extended features for content processing and security protection and works together with other Tencent Cloud services to jointly offer value-added services. Some plugins are paid features. Before activating a plugin, carefully read the billing description in its help documentation.
