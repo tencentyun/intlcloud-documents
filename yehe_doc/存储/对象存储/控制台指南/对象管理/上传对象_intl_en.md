@@ -3,13 +3,13 @@
 You can upload objects to a bucket on the **File List** page in the COS console. For more information on objects, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 
 >?
-> - Currently, the INTELLIGENT TIERING storage class is only available in the Beijing, Shanghai, Guangzhou, Chongqing, Tokyo, and Singapore regions. To upload objects to this storage class, enable [INTELLIGENT TIERING](https://intl.cloud.tencent.com/document/product/436/38306) for the bucket in the region first.
-> - Currently, the DEEP ARCHIVE storage class is only available in the Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, and Tokyo regions. To upload objects to this storage class, select a bucket in the region first.
+> - Currently, the INTELLIGENT TIERING storage class is only available in Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo, and Singapore regions. To upload objects to this storage class, enable [INTELLIGENT TIERING](https://intl.cloud.tencent.com/document/product/436/38306) for the bucket in the region first.
+> - Currently, the DEEP ARCHIVE storage class is only available in Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo, and Singapore regions. To upload objects to this storage class, select a bucket in the region first.
 > 
 
 ## Prerequisites
 
-Before uploading an object, make sure that you have already created a bucket. If no bucket has been created, create one as instructed in [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309) first.
+Before uploading an object, make sure that you have already created a bucket. If no bucket has been created, create one as instructed in [Creating Bucket](https://intl.cloud.tencent.com/document/product/436/13309) first.
 
 ## Directions
 
@@ -27,11 +27,11 @@ Before uploading an object, make sure that you have already created a bucket. If
 The configuration is as described below:
  - **Storage Class**: Select the storage class for your object as needed. This field is set to `STANDARD` by default. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/6222).
  - **Access Permission**: Specify the access permission for your object as needed. This field is set to `Inherit` by default (inheriting permissions of the bucket). For more information, see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581).
- - **Server-Side Encryption**: Configure server-side encryption for the object you want to upload. COS will automatically encrypt your data as it is written and decrypt it when you access it. Currently, COS offers two encryption types: SSE-KMS (only available in the Beijing, Shanghai, and Guangzhou regions) and SSE-COS. For more information, see [Server-Side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
+ - **Server-Side Encryption**: Configure server-side encryption for the object you want to upload. COS will automatically encrypt your data as it is written and decrypt it when you access it. Currently, COS offers two encryption types: SSE-KMS (only available in Beijing, Shanghai, and Guangzhou regions) and SSE-COS. For more information, see [Server-Side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
  - **Object Tag**: An object tag is composed of a tag key, an equal sign, and a tag value, for example, `group = IT`. You can set, query, and delete tags of a specified object.
  - **Metadata**: Object metadata, or HTTP header, is a string sent by the server over HTTP before it sends HTML data to the browser. By modifying HTTP headers, you can change how the webpage responds as well as certain configuration items, such as caching time. Modifying an object's HTTP headers does not modify the object itself. For more information, see [Custom Headers](https://intl.cloud.tencent.com/document/product/436/13361).
 7. Click **Upload**.
-You can check the upload progress in **Task Completed** in the top-right corner of the page. Once the upload is complete, the uploaded object(s) will appear in **File List**.
+You can check the upload progress in **Task Completed** in the top-right corner of the page. Once the upload is complete, the uploaded object will appear in **File List**.
 ![](https://main.qcloudimg.com/raw/eab5784b108fc096dbe317fed25f7925.png)
 >? The task progress in the figure indicates the number of tasks created by the current upload operation. For example, if all ten files are uploaded successfully, the task progress will be displayed as "succeeded: 10, failed: 0, paused: 0".
 >

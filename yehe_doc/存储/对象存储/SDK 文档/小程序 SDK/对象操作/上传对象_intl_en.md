@@ -2,7 +2,7 @@
 
 This document provides an overview of APIs and SDK code samples for simple operations and other object operations.
 
->? For more information on how to troubleshoot common upload errors, see [Mini Program SDK](https://intl.cloud.tencent.com/document/product/436/38958).
+>? For more information on how to troubleshoot common upload errors, see [FAQs](https://intl.cloud.tencent.com/document/product/436/38958).
 > 
 
 **Simple operations**
@@ -40,9 +40,67 @@ This API (`PUT Object`) is used to upload an object to a bucket. To call this AP
 
 #### Sample code
 
+Select a file and upload it (by using the `Body` parameter):
+
+[//]: # (.cssg-snippet-put-object-body)
+```js
+// The image selecting API (wx.chooseImage) is used as an example here. For other APIs, see the official documentation of WeChat Mini Program.
+wx.chooseImage({
+    count: 1,
+    success: function(res) {
+        var file = res.tempFiles[0];
+        // Get the file manager in the WeChat mini program
+        var wxfs = wx.getFileSystemManager();
+        wxfs.readFile({
+            filePath: file.path,
+            success: function (res) {
+                cos.putObject({
+                    Bucket: config.Bucket,
+                    Region: config.Region,
+                    Key: file.name,
+                    Body: res.data, // Pass in the content of the file to `Body`
+                }, function(err, data) {
+                    console.log(err || data);
+                });
+            },
+            fail: function(err) {
+              console.error(err)
+            },
+        });
+    },
+    fail: function(err) {
+      console.error(err)
+    },
+});
+```
+
+Select a file and upload it (by using the `FilePath` parameter, for SDK 1.3.0 or later only):
+
+[//]: # (.cssg-snippet-put-object-filepath)
+```js
+// The image selecting API (wx.chooseImage) is used as an example here. For other APIs, see the official documentation of WeChat Mini Program.
+wx.chooseImage({
+    count: 1,
+    success: function(res) {
+        var file = res.tempFiles[0];
+        cos.putObject({
+            Bucket: config.Bucket,
+            Region: config.Region,
+            Key: file.name,
+            FilePath: file.path,  // Pass in the file path to `FilePath`
+        }, function(err, data) {
+            console.log(err || data);
+        });
+    },
+    fail: function(err) {
+      console.error(err)
+    },
+});
+```
+
 Upload a string as the file content:
 
-[//]: # ".cssg-snippet-put-object-string"
+[//]: # (.cssg-snippet-put-object-string)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -56,7 +114,7 @@ cos.putObject({
 
 Create a directory:
 
-[//]: # ".cssg-snippet-put-object-folder"
+[//]: # (.cssg-snippet-put-object-folder)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -72,14 +130,14 @@ Upload an object (limit the single-URL speed):
 
 >?For more information on the speed limits on object uploads, see [Single-Connection Bandwidth Limit](https://intl.cloud.tencent.com/document/product/436/34072).
 
-[//]: # ".cssg-snippet-put-object-traffic-limit"
+[//]: # (.cssg-snippet-put-object-traffic-limit)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region (required) */
     Key: 'exampleobject',              /* Required */
     StorageClass: 'STANDARD',
-    Body: fileObject, // Upload the file object
+    Body: 'hello!', // Upload the file object (string or selected file)
     Headers: {
       'x-cos-traffic-limit': 819200, // The speed range is 819200–838860800, i.e., 100 KB/s to 100 MB/s. If a value is not within this range, 400 will be returned.
     },
@@ -111,7 +169,7 @@ cos.putObject({
 | GrantReadAcp       | Grants a user read access to an object ACL in the format of `id="[OwnerUin]"`. You can separate multiple users by comma.<ul  style="margin: 0;"><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.</li><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.<br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'`</li></ul> | String               | No   |
 | GrantWriteAcp       | Grants a user write access to an object ACL in the format of `id="[OwnerUin]"`. You can separate multiple users by comma.<ul  style="margin: 0;"><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.</li><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.</br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'`</li></ul> | String               | No   |
 | GrantFullControl       | Grants a user full access to an object in the format of `id="[OwnerUin]"`. You can separate multiple users by comma.<ul  style="margin: 0;"><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.</li><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.</br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` </li></ul> | String               | No   |
-| StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
+| StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
 | x-cos-meta-* | User-defined header of up to 2 KB in size, which is saved as part of the object metadata. | String | No |
 | onTaskReady | Callback for upload task creation. A `taskId` is returned, which uniquely identifies the task and can be used to cancel (cancelTask), pause (pauseTask), or restart (restartTask) the task. | Function | No |
 | - taskId | ID of the upload task | String | No |
@@ -156,7 +214,7 @@ This API (`APPEND Object`) is used to upload an object to a bucket by appending 
 
 Append parts for the first time:
 
-[//]: # ".cssg-snippet-append-object"
+[//]: # (.cssg-snippet-append-object)
 ```js
 cos.appendObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -171,7 +229,7 @@ cos.appendObject({
 
 Check whether parts can be appended to an object in a bucket:
 
-[//]: # ".cssg-snippet-append-object"
+[//]: # (.cssg-snippet-append-object)
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -179,7 +237,7 @@ cos.headObject({
     Key: 'test.txt',              /* Required */
 }, function(err, data) {
     if (err) return console.log(err);
-    // If `data.headers` does not contain the `x-cos-object-type` field, you need to configure `expose-headers`. For more information, visit https://intl.cloud.tencent.com/document/product/436/13318.
+    // If `data.headers` does not contain the `x-cos-object-type` field, you need to configure `expose-headers`. For more information, visit https://cloud.tencent.com/document/product/436/13318.
     var objectType = data.headers['x-cos-object-type'];
     console.log(objectType === 'appendable');
 });
@@ -187,7 +245,7 @@ cos.headObject({
 
 Query the position of the object for parts appending and start upload:
 
-[//]: # ".cssg-snippet-append-object"
+[//]: # (.cssg-snippet-append-object)
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -207,7 +265,7 @@ cos.headObject({
     function(err, data) {
         if (err) return console.log(err);
         // Get the position for the next upload and continue appending parts
-        // If `data.headers` does not contain the `x-cos-next-append-position` field, you need to configure `expose-headers`. For more information, visit https://intl.cloud.tencent.com/document/product/436/13318.
+        // If `data.headers` does not contain the `x-cos-next-append-position` field, you need to configure `expose-headers`. For more information, visit https://cloud.tencent.com/document/product/436/13318.
         var nextPosition = data.headers['x-cos-next-append-position'];
         console.log(nextPosition);
     })
@@ -235,7 +293,7 @@ cos.headObject({
 | GrantReadAcp       | Grants a user read access to an object ACL in the format of `id="[OwnerUin]"`. You can separate multiple users by comma.<ul  style="margin: 0;"><li>To authorize a sub-account, use <code>id="qcs::cam::uin/&lt;OwnerUin&gt;:uin/&lt;SubUin&gt;"</code>.</li><li>To authorize a root account, use <code>id="qcs::cam::uin/&lt;OwnerUin&gt;:uin/&lt;OwnerUin&gt;"</code>.<br/>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'`</li></ul> | String               | No   |
 | GrantWriteAcp       | Grants a user write access to an object ACL in the format of `id="[OwnerUin]"`. You can separate multiple users by comma.<ul  style="margin: 0;"><li>To authorize a sub-account, use <code>id="qcs::cam::uin/&lt;OwnerUin&gt;:uin/&lt;SubUin&gt;"</code>.</li><li>To authorize a root account, use <code>id="qcs::cam::uin/&lt;OwnerUin&gt;:uin/&lt;OwnerUin&gt;"</code>.<br/>Example: <code>'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'</code></li></ul> | String               | No   |
 | GrantFullControl       | Grants a user full access to an object in the format of `id="[OwnerUin]"`. You can separate multiple users by comma.<ul  style="margin: 0;"><li>To authorize a sub-account, use <code>id="qcs::cam::uin/<OwnerUin>:uin/&lt;SubUin&gt;"</code>.</li><li>To authorize a root account, use <code>id="qcs::cam::uin/&lt;OwnerUin&gt;:uin/&lt;OwnerUin&gt;"</code>.<br/>Example: <code>'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'</code></li></ul> | String               | No   |
-| StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`. Default value: `STANDARD`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
+| StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`. Default value: `STANDARD`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
 | x-cos-meta-\* | User-defined header of up to 2 KB in size, which is saved as part of the object metadata. | String | No |
 
 #### Callback function description
@@ -266,7 +324,7 @@ This API (`POST Object`) is used to upload an object selected through `wx.choose
 
 Upload a file by using simple upload:
 
-[//]: # ".cssg-snippet-post-object"
+[//]: # (.cssg-snippet-post-object)
 ```js
 cos.postObject({
     Bucket: 'examplebucket-1250000000',
@@ -313,7 +371,7 @@ cos.postObject({
 | Expires                | The expiration time as defined in RFC 2616, which is saved as part of the object metadata.             | String           | No   |
 | Expect | If `Expect: 100-continue` is used, the request content will be sent only after the confirmation from the server is received. | String | No |
 | ACL | ACL attribute of the object. For enumerated values, such as `default`, `private`, and `public-read`, see the **Preset ACL** section in [ACL](https://intl.cloud.tencent.com/document/product/436/30583). <br>**Note: If you don't need access control for the object, set this parameter to `default` or leave it empty, in which case the object will inherit the permissions of its bucket.** | String | No |
-| StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
+| StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
 | x-cos-meta-* | User-defined header of up to 2 KB in size, which is saved as part of the object metadata. | String | No |
 | FilePath | Temporary file path of the file to be uploaded, which can be obtained by selecting the file through `wx.chooseImage`. | String | Yes |
 | onProgress | Callback for the progress. The first parameter in a callback is the `progressData` object. | Function | No |
@@ -353,7 +411,7 @@ This API (`List Multiparts Uploads`) is used to query ongoing multipart uploads.
 
 Get the list of incomplete multipart uploads with `UploadId` prefixed with `exampleobject`:
 
-[//]: # ".cssg-snippet-list-multi-upload"
+[//]: # (.cssg-snippet-list-multi-upload)
 ```js
 cos.multipartList({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -406,7 +464,7 @@ function(err, data) { ... }
 | - Upload | Information of the multipart upload | ObjectArray |
 | - - Key | Object key, i.e., object name | String |
 | - - UploadId | ID of the multipart upload | String |
-| - - StorageClass | Storage class of the parts, such as `STANDARD`, `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
+| - - StorageClass | Storage class of the parts, such as `STANDARD`, `STANDARD_IA`, and `ARCHIVE`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
 | - - Initiator | Initiator of the multipart upload | Object |
 | - - - DisplayName | Name of the upload initiator | String |
 | - - - ID | ID of the upload initiator in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`. <br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String |
@@ -423,7 +481,7 @@ This API (`Initiate Multipart Uploads`) is used to initialize a multipart upload
 
 #### Sample code
 
-[//]: # ".cssg-snippet-init-multi-upload"
+[//]: # (.cssg-snippet-init-multi-upload)
 ```js
 cos.multipartInit({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -452,7 +510,7 @@ cos.multipartInit({
 | ACL | ACL attribute of the object. For enumerated values, such as `default`, `private`, and `public-read`, see the **Preset ACL** section in [ACL](https://intl.cloud.tencent.com/document/product/436/30583). <br>**Note: If you don't need access control for the object, set this parameter to `default` or leave it empty, in which case the object will inherit the permissions of its bucket.** | String | No |
 | GrantRead       | Grants a user read access to an object in the format of `id="[OwnerUin]"`. You can separate multiple users by comma.<ul  style="margin: 0;"><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.</li><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.<br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` </li></ul> | String               | No   |
 | GrantFullControl       | Grants a user full access to an object in the format of `id="[OwnerUin]"`. You can separate multiple users by comma.<ul  style="margin: 0;"><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.</li><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.<br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` </li></ul> | String               | No   |
-| StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
+| StorageClass | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
 | x-cos-meta-* | User-defined header of up to 2 KB in size, which is returned as part of the object metadata. | String | No |
 
 #### Callback function description
@@ -480,7 +538,7 @@ This API (`Upload Part`) is used to upload parts after a multipart upload is ini
 
 #### Sample code
 
-[//]: # ".cssg-snippet-upload-part"
+[//]: # (.cssg-snippet-upload-part)
 ```js
 cos.multipartUpload({
    Bucket: 'examplebucket-1250000000', /* Required */
@@ -534,7 +592,7 @@ This API (`List Parts`) is used to query the uploaded parts in a specified multi
 
 #### Sample code
 
-[//]: # ".cssg-snippet-list-parts"
+[//]: # (.cssg-snippet-list-parts)
 ```js
 cos.multipartListPart({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -582,7 +640,7 @@ function(err, data) { ... }
 | - Owner | Information of the part owner | Object  |
 | - - DisplayName | Name of the bucket owner | String |
 | - - ID | ID of the bucket owner., which is usually the UIN. | String |
-| - StorageClass | Storage class of the parts, such as `STANDARD`, `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Classes Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
+| - StorageClass | Storage class of the parts, such as `STANDARD`, `STANDARD_IA`, and `ARCHIVE`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
 | - PartNumberMarker | The marker after which the returned list begins. By default, entries are listed in UTF-8 binary order. | String |
 | - NextPartNumberMarker | The `NextMarker` after which the next returned list begins if the list is truncated. | String |
 | - MaxParts             | Maximum number of entries to be returned at a time                                       | String      |
@@ -609,7 +667,7 @@ The parts need to be reassembled after they are uploaded, which takes several mi
 
 #### Sample code
 
-[//]: # ".cssg-snippet-complete-multi-upload"
+[//]: # (.cssg-snippet-complete-multi-upload)
 ```js
 cos.multipartComplete({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -665,7 +723,7 @@ This API (`Abort Multipart Upload`) is used to abort a multipart upload and dele
 
 #### Sample code
 
-[//]: # ".cssg-snippet-abort-multi-upload"
+[//]: # (.cssg-snippet-abort-multi-upload)
 ```js
 cos.multipartAbort({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -708,12 +766,12 @@ The following methods encapsulate the native methods mentioned above. They can i
 ### Advanced upload
 
 #### Description
-
+    
 This API (`Upload File`) is used to implement an advanced upload. You can use the `SliceSize` parameter to specify a file size threshold (1 MB by default). If a file is larger than this threshold, it will be uploaded in parts; otherwise, it will be uploaded in whole.
     
 #### Sample code
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```js
 var uploadFile = function(file) {
     cos.uploadFile({
@@ -757,7 +815,7 @@ wx.chooseMessageFile({
 | FileSize                                                         | Size of the object to be uploaded	           | Number | Yes   |
 | SliceSize                                                    | File size threshold in bytes, which is `1048576` (1 MB) by default. If the file size is equal to or smaller than this value, the file will be uploaded through `putObject`; otherwise, it will be uploaded through `sliceUploadFile`.                                                     | Number    | No   |
 | AsyncLimit                                                   | Maximum number of concurrently uploaded parts allowed. This parameter is valid only when a multipart upload is triggered.                                           | Number    | No   |
-| StorageClass | Storage class of the object, such as `STANDARD`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
+| StorageClass | Storage class of the object, such as `STANDARD`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
 | UploadAddMetaMd5 | Sets `x-cos-meta-md5` as the object's MD5 checksum in the object's metadata during upload in the format of a 32-bit lowercase string, such as `4d00d79b6733c9cc066584a02ed03410`. | String | No |
 | onTaskReady | Callback for upload task creation. A `taskId` is returned, which uniquely identifies the task and can be used to cancel (cancelTask), pause (pauseTask), or restart (restartTask) the task. | Function | No |
 | - taskId | ID of the upload task | String | No |
@@ -795,7 +853,7 @@ function(err, data) { ... }
 #### Description
 This API (`Slice Upload File`) is used to upload a large file in parts.
 #### Sample code
-[//]: # ".cssg-snippet-transfer-copy-object"
+[//]: # (.cssg-snippet-transfer-copy-object)
 ```js
 var sliceUploadFile = function (file) {
     var key = file.name;
@@ -841,7 +899,7 @@ wx.chooseMessageFile({
 | FilePath | Path of the file to be uploaded | String | Yes |
 | SliceSize              | Part size                                                     | Number   | No   |
 | AsyncLimit                                                   | Maximum number of concurrently uploaded parts allowed. This parameter is valid only when a multipart upload is triggered.                                           | Number    | No   |
-|  StorageClass | Storage class of the object, such as `STANDARD`, `STANDARD_IA` and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
+|  StorageClass | Storage class of the object, such as `STANDARD`, `STANDARD_IA` and `ARCHIVE`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
 | onTaskReady | Callback for upload task creation. A `taskId` is returned, which uniquely identifies the task and can be used to cancel (cancelTask), pause (pauseTask), or restart (restartTask) the task. | Function | No |
 | - taskId | ID of the upload task | String | No |
 | onHashProgress | Callback for the progress of MD5 checksum calculation. The callback parameter is `progressData`. | Function | No |
@@ -889,7 +947,7 @@ You can call `cos.uploadFiles` to implement batch uploads. The `SliceSize` param
 
 Call `uploadFiles`:
 
-[//]: # ".cssg-snippet-transfer-batch-upload-objects"
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
 ```js
 var uploadFiles = function(files) {
     var fileList = files.map(function(file) {
@@ -985,7 +1043,7 @@ This API is used to cancel an upload task by `taskId`.
 
 **Sample**
 
-[//]: # ".cssg-snippet-transfer-upload-cancel"
+[//]: # (.cssg-snippet-transfer-upload-cancel)
 ```js
 var taskId = 'xxxxx';                   /* Required */
 cos.cancelTask(taskId);
@@ -1003,7 +1061,7 @@ This API is used to pause an upload task by `taskId`.
 
 **Sample**
 
-[//]: # ".cssg-snippet-transfer-upload-pause"
+[//]: # (.cssg-snippet-transfer-upload-pause)
 ```js
 var taskId = 'xxxxx';                   /* Required */
 cos.pauseTask(taskId);
@@ -1021,7 +1079,7 @@ This API is used to resume an upload task by `taskId`. You can resume tasks that
 
 **Sample**
 
-[//]: # ".cssg-snippet-transfer-upload-resume"
+[//]: # (.cssg-snippet-transfer-upload-resume)
 ```js
 var taskId = 'xxxxx';                   /* Required */
 cos.restartTask(taskId);
