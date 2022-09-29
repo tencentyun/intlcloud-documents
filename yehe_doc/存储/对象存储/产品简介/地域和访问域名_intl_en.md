@@ -105,7 +105,7 @@ For example, if your business is distributed in South China, creating buckets in
    </tr>
    <tr>
       <td rowspan=3>North America</td>
-      <td nowrap="nowrap">Silicon Valley (US Wes)</td>
+      <td nowrap="nowrap">Silicon Valley (US West)</td>
       <td>na-siliconvalley</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-siliconvalley.myqcloud.com</td>
    </tr>
