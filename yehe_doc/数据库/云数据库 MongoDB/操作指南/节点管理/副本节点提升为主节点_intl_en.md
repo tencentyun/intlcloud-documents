@@ -4,7 +4,7 @@ A TencentDB for MongoDB replica set instance can have one primary node and multi
 
 ## Version requirements
 
-TencentDB for MongoDB 4.2, 4.0, and 3.6 support promoting replica node to primary node.
+TencentDB for MongoDB 4.4, 4.2, 4.0, and 3.6 support promoting replica node to primary node.
 
 ## Notes
 
