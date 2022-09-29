@@ -18,7 +18,7 @@ Cloud Log Service (CLS) supports pay-as-you-go (postpaid), and you can choose CL
 | Category     | Description                                                         |
 | -------- | ------------------------------------------------------------ |
 | Billing cycle | Daily. The fees generated for the current day will be settled at 00:00 on the next day.</br> |
-| Price | [See CLS [Product Pricing](https://intl.cloud.tencent.com/document/product/614/37510). |
+| Price | See CLS [Product Pricing](https://intl.cloud.tencent.com/document/product/614/37510). |
 
 
 ## Billable Items
