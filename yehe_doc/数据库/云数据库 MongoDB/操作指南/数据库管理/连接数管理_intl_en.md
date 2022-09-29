@@ -4,8 +4,8 @@ You can view the client connection information of the current database in the Te
 TencentDB for MongoDB records the IPs of clients connected to the current instance and the number of connections. When there is a large number of concurrent application requests, if the configured upper limit of connections is insufficient, the current database specification cannot sustain such requests. In this case, you can directly increase the upper limit in the console.
 
 ## Version Requirement
-- Replica set: Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support connection management.
-- Sharded cluster: Currently, TencentDB for MongoDB 4.0, 3.6, and 3.2 support connection management, while v4.2 doesn't.
+- Replica set: Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support connection management.
+- Sharded cluster: Currently, TencentDB for MongoDB 4.4, 4.0, 3.6, and 3.2 support connection management, while v4.2 doesn't.
 
 ## Notes
 - The system records the IPs of clients connected to the current instance and the number of connections. You can choose to manually release connection requests.

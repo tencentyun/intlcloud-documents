@@ -7,7 +7,7 @@ You can view and analyze the slow logs generated during database operations in t
   - Query details: a specific operation command is specified to query slow logs, and the query results are displayed in a list displaying the execution durations and log details.
 
 ## Version Description
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support slow log management.
+Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support slow log management.
 
 ## Notes
 - The system logs operations with an execution time of more than 100 ms.
@@ -44,7 +44,7 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support slow log managem
     - **Log Details**: details of the business command.
 ![](https://main.qcloudimg.com/raw/e063ea622dbd6bb8b73d4b488a33d2ae.png)
 
-### Managing slow log
+### Slow log management
 #### Viewing slow log request statement
 1. On the **Slow Query Management** page, you can view the slow log request statements.
 2. In the search box in the top-right corner, enter the information to be queried for search.
