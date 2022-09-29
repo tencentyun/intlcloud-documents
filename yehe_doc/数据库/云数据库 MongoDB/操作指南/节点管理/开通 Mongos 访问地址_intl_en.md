@@ -7,7 +7,7 @@ After enabling the mongos access address of a sharded cluster instance, you can 
 - Enabling mongos access address won't affect the original CLB access address.
 
 ## Version requirements
-TencentDB for MongoDB 4.0 and 4.2 support enabling the mongos access address.
+TencentDB for MongoDB 4.0, 4.2 and 4.4 support enabling the mongos access address.
 
 ## Prerequisites
 - Instance type: Sharded cluster instance.
