@@ -7,10 +7,10 @@ This document introduces basic performance and extra performance.
 ## Overall Performance
 
 For a single Enhanced SSD disk, its performance consists of two parts: **basic performance** and **extra performance**. The following table specifies the maximum performance, regardless of the performance proportion.
-Premium Cloud Disk
+
 | Performance Metric | Maximum Value |
 | --------------------- | ------ |
-| Random IOPS             | 100000 |
+| Random IOPS             | 100,000 |
 | Max throughput (MB/s)    | 1000   |
 
 
@@ -21,8 +21,8 @@ For Enhanced SSD, its basic performance varies linearly with the disk capacity. 
 
 | Basic Performance Metric    | Calculation Formula         | Maximum Value |
 | ---------------------------- | --------------------------- | -------------- |
-| Random IOPS         | min {1800 + capacity (GB) × 50, 50000} | 50000          |
-| Max throughput (MB/s) | min {120 + capacity (GB) × 0.5, 350}   | 350            |
+| Random IOPS         | min {1800 + capacity (GB) x 50, 50000} | 50000          |
+| Max throughput (MB/s) | min {120 + capacity (GB) x 0.5, 350}   | 350            |
 
 According to the formula,
 
@@ -48,17 +48,18 @@ Refer to the following formula to configure the extra performance.
 
 | Extra Performance Metric  | Calculation Formula      | Maximum Value |
 | ---------------------------- | --------------------- | -------------- |
-| Random IOPS         | min {configured value × 128, 50000} | 50000          |
-| Max throughput (MB/s) | min {configured value × 1, 650}     | 650            |
+| Random IOPS         | min {configured value x 128, 50,000} | 50,000          |
+| Max throughput (MB/s) | min {configured value x 1, 650}     | 650            |
 
 ### Extra performance price
 For more information on extra performance prices, see [Price Overview](https://intl.cloud.tencent.com/document/product/362/2413).
 
 ## Examples
 
-**Sample 1: an Enhanced SDD disk requires a capacity of 2,000 GB and throughput of 500 MB/s**
+**Sample 1: An Enhanced SSD disk requires a capacity of 2,000 GB and throughput of 500 MB/s**
 
 This capacity configuration reaches the throughput limit of basic performance and needs to configure extra throughput performance: (500-350)/1 = 150. Therefore, you need to purchase an Enhanced SSD disk with a capacity of 2,000 GB and extra throughput performance of 150 MB/s.
 
-**Sample 2: an Enhanced SDD disk requires a capacity of 1,000 GB and IOPS of 50,000**
+**Sample 2: An Enhanced SSD disk requires a capacity of 1,000 GB and IOPS of 50,000**
 This capacity configuration reaches the random IOPS limit of basic performance, and the required IOPS is met. Therefore, you only need to purchase an Enhanced SSD disk with a capacity of 1,000 GB.
+

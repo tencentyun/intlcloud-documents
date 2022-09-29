@@ -16,7 +16,7 @@ If no data disk is attached to an instance and all data are written on the syste
 		<tr>
 		<th width="10%">Name</th>
 		<td width="45%">Snapshots</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/213/4940">Images</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/213/4940">Image</a></td>
 		</tr>
 		<tr>
 		<th>Characteristics</th>
@@ -24,7 +24,7 @@ If no data disk is attached to an instance and all data are written on the syste
 	   	<td>CVM software configuration template, which contains information about the operating system and pre-installed programs</td>
 		</tr>
 		<tr>
-		<th>Use Cases</th>
+		<th>Application Scenarios</th>
 		<td>
 			<ul>
 				<li>Regularly back up important business data</li>
@@ -43,14 +43,14 @@ If no data disk is attached to an instance and all data are written on the syste
 </table>
 
 
-### Why can’t some of the snapshot be used to create images?
+### Why can't some of the snapshot be used to create images?
 You can create snapshots for both system disks and data disks. However, only the snapshot of a system disk can be used to create a custom image.
 
-### Why can’t I delete the snapshot?
-To delete a snapshot, please make sure that the snapshot you want to delete is not associated with any image. To query associated snapshots of an image, go to the [image](https://console.cloud.tencent.com/cvm/image) page and click the ID/Name of the image.
+### Why can't I delete the snapshot?
+To delete a snapshot, make sure that the snapshot you want to delete is not associated with any image. To query associated snapshots of an image, go to the [image](https://console.cloud.tencent.com/cvm/image) page and click the ID/Name of the image.
 
 ### How are snapshots created from an image billed?
-Images use the CBS snapshot service for data storage. The associated snapshots of a custom image will be billed by the storage size. To view the size of your snapshots, please go to [Snapshot Overview](https://console.cloud.tencent.com/cvm/snapshot/overview).
+Images use the CBS snapshot service for data storage. The associated snapshots of a custom image will be billed by the storage size. To view the size of your snapshots, go to [Snapshot Overview](https://console.cloud.tencent.com/cvm/snapshot/overview).
 
 ### How are shared images billed?
 The owner of shared images is charged the snapshot fee, while the recipient account will not be charged. For more information about the snapshot billing, see [Billing Overview](https://intl.cloud.tencent.com/document/product/362/32415).
@@ -66,8 +66,8 @@ A maximum of 30 scheduled snapshot policies can be created in one region. Each s
 
 ### How are snapshots created?
 You can create a snapshot using the following methods:
-- Custom snapshot: you can manually create a snapshot to quickly save data of the cloud disk at a specified point in time. For more information, see [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755).
-- Scheduled snapshot: you can associate a scheduled snapshot policy with the cloud disk to periodically create and delete snapshots. For more information, see [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/35238).
+- Custom snapshot: You can manually create a snapshot to quickly save data of the cloud disk at a specified point in time. For more information, see [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755).
+- Scheduled snapshot: You can associate a scheduled snapshot policy with the cloud disk to periodically create and delete snapshots. For more information, see [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/35238).
 
 ### Is snapshot available in all availability zones?
 Yes.
@@ -95,12 +95,12 @@ For more information, see [Rolling Back Snapshots](https://intl.cloud.tencent.co
 - For a cloud disk that has not been attached to a CVM, you can directly roll it back to a snapshot.
 
 ### Can I read a previous snapshot to restore a cloud disk?
-Yes. You can use an existing snapshot created at any point in time to restore data, regardless of the snapshot’s point in time.
+Yes. You can use an existing snapshot created at any point in time to restore data, regardless of the snapshot's point in time.
 
 ### Can I delete the source snapshot when it is being replicated?
 No. It can only be deleted after the replication is complete.
 
-### Is the new snapshot created by replication still associated with the source snapshot’s source disk?
+### Is the new snapshot created by replication still associated with the source snapshot's source disk?
 The snapshot created via cross-region replication is no longer associated with the source disk of the source snapshot. The rollback feature is unavailable for replicated snapshot.
 
 ### Will associated snapshots be deleted when the CVM is terminated?
@@ -115,4 +115,5 @@ No. You can only use the snapshot of the system disk to create a custom image.
 
 ### Does the snapshot support the cross-region replication feature?
 Yes. You can use this feature to easily migrate data and services to other regions, or construct your cross-region disaster recovery system. For more information, see [Cross-region Snapshot Replicating](https://intl.cloud.tencent.com/document/product/362/31623).
+
 

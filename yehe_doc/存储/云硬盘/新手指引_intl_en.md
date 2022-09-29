@@ -14,7 +14,7 @@ Snapshots are convenient and efficient data protection methods. We recommend tha
 
 ## 4. Getting Started
 #### 4.1 Registration and authentication
-Before using Tencent Cloud CBS, sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+Before using Tencent Cloud CBS, sign up for a [Tencent Cloud account](https://www.tencentcloud.com/en/account/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 #### 4.2 Creating cloud disks
 After registration and identity verification, you can select a cloud disk type, capacity, billing mode, retention period, automatic renewal, and expiration or in arrears protection based on the requirements of the availability zone where your CVM is located to create cloud disks. For more information, see [Creating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31647).
@@ -25,26 +25,30 @@ After you create cloud disks, you need to mount separately purchased cloud disks
 - [Initializing Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645)
 
 #### 4.4 Creating snapshots (optional)
-After you create cloud disks, you can use snapshots to manually or periodically back up important business data to prevent data loss or damage caused by misoperations, attacks, viruses, or others. For more information, see [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) and [Scheduled Snapshot](https://intl.cloud.tencent.com/document/product/362/35238).
+After you create cloud disks, you can use snapshots to manually or periodically back up important business data to prevent data loss or damage caused by maloperations, attacks, viruses, or others. For more information, see [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) and [Scheduled Snapshot](https://intl.cloud.tencent.com/document/product/362/35238).
 
 
 
-## 5. Overview of Console Features
+
+## 5. Console
+![](https://qcloudimg.tencent-cloud.cn/raw/0911469301e8401592905c3955e067c4.png)
+
+## 6. Overview of Console Features
 
 | Features | Reference |
 |---------|---------|
-| Create cloud disks using different methods. | [Creating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5744) |
-| Mount a cloud disk to a CVM in the same availability zone and set automatic cloud disk mounting. | [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401) |
-| Initialize cloud disks based on actual requirements. | [Initialization Scenarios](https://intl.cloud.tencent.com/document/product/362/31596) |
-| Expand cloud disks to add storage space. | [Cloud Disk Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600) |
-| Unmount cloud disks and mount them to other CVMs. | [Unmounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32400) |
-| Terminate or return a cloud disk. | [Terminating cloud disks](https://intl.cloud.tencent.com/document/product/362/32399) |
-| Create the snapshot of a cloud disk at a specific time point to save the cloud disk data at that time. | [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) |
-| Use a scheduled snapshot policy to flexibly back up data. | [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/35238) |
-| Delete unnecessary snapshots. | [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758) |
-| Rollback a cloud disk by using a snapshot, so as to restore the data at the snapshot creation time. | [Rolling Back by Using Snapshots](https://intl.cloud.tencent.com/document/product/362/5756) |
+| Create cloud disks using different methods | [Creating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5744) |
+| Mount a cloud disk to a CVM in the same availability zone and set automatic cloud disk mounting | [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401) |
+| Initialize cloud disks based on actual requirements | [Initialization Scenarios](https://intl.cloud.tencent.com/document/product/362/31596) |
+| Expand cloud disks to add storage space | [Cloud Disk Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600) |
+| Unmount cloud disks and mount them to other CVMs | [Unmounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32400) |
+| Terminate or return a cloud disk | [Terminating cloud disks](https://intl.cloud.tencent.com/document/product/362/32399) |
+| Create the snapshot of a cloud disk at a specific time point to save the cloud disk data at that time | [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) |
+| Use a scheduled snapshot policy to flexibly back up data | [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/35238) |
+| Delete unnecessary snapshots | [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758) |
+| Rollback a cloud disk by using a snapshot, so as to restore the data at the snapshot creation time | [Rolling Back by Using Snapshots](https://intl.cloud.tencent.com/document/product/362/5756) |
 
-## 6. FAQs
+## 7. FAQs
 #### Usage of CBS
 - [What are the applicable scenarios for different types of cloud disks?](https://intl.cloud.tencent.com/document/product/362/32409)
 - [How can I view cloud disk details?](https://intl.cloud.tencent.com/document/product/362/32409#.E5.A6.82.E4.BD.95.E6.9F.A5.E7.9C.8B.E4.BA.91.E7.A1.AC.E7.9B.98.E8.AF.A6.E7.BB.86.E4.BF.A1.E6.81.AF.EF.BC.9F)
@@ -56,13 +60,16 @@ After you create cloud disks, you can use snapshots to manually or periodically 
 
 #### Snapshot FAQs
 - [What are the differences between snapshots and images?](https://intl.cloud.tencent.com/document/product/362/17820)
-- [Why can’t I delete a snapshot?](https://intl.cloud.tencent.com/document/product/362/17820)
+- [Why can't I delete a snapshot?](https://intl.cloud.tencent.com/document/product/362/17820)
 - [Do I need to shut down the CVM to roll back using a snapshot?](https://intl.cloud.tencent.com/document/product/362/17820)
 - [When I terminate a cloud disk, will the associated snapshots be deleted as well?](https://intl.cloud.tencent.com/document/product/362/17820)
 
 
-## 7. Feedback and Suggestion
+## 8. Feedback and Suggestion
 If you have any doubts or suggestions when using Tencent Cloud CBS products and services, you can submit your feedback through the following channels. Dedicated personnel will contact you to solve your problems.
 
-- If you find product documentation problems, such as links, content, or API errors, you can click **Send Feedback** at the bottom of the document to select the content that has problems.
-- If you encounter product-related problems, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to seek for help.
+- If you have any questions regarding the product documentation, such as links, content, or APIs, click **Send Feedback** on the right of the document page.
+- If you encounter any problems when using the product, contact [online support](https://intl.cloud.tencent.com/contact-sales) for assistance.
+
+
+

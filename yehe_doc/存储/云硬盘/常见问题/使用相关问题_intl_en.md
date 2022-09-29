@@ -9,14 +9,14 @@ For more information, see [Use Cases](https://intl.cloud.tencent.com/document/pr
 
 ### How do I select a cloud disk?
 Determine your use cases before selecting a disk type.
-- For general use cases including Web/APP applications, logical processing, and small and medium-sized sites, we recommend that you select Premium Cloud Storage as a more cost-efficient solution.
+- For general use cases including Web/APP applications, logical processing, and small and medium sites, we recommend that you select Premium Cloud Disk for a higher cost efficiency.
 - For medium-sized databases and image processing users, we recommend SSD for a better performance.
 - For use cases with high requirements for workloads and performance, including large databases, video business, NoSQL, and Elasticsearch, we recommend that you select Enhanced SSD for optimal performance and minimum storage latency.
 
 
 ### What are items I should look out for when using a cloud disk?
 - For an independently purchased cloud disk, use the file system's UUID or label as the file system ID when configuring the `fstab` static file system information. This will ensure kernel name consistency of the disk on CVM when any cloud disk is detached and re-attached. 
-- If the cloud disk expires before CVM, the cloud disk will be restricted, detached, or even repossessed within a certain period. To prevent business interruption, please note the cloud disk's expiration date and renew it promptly.
+- If the cloud disk expires before CVM, the cloud disk will be restricted, detached, or even repossessed within a certain period. To prevent business interruption, note the cloud disk's expiration date and renew it promptly.
 - Consider using the `nofail` option when configuring `fstab` if detaching a cloud disk from your CVM does not severely impact your core business. This prevents the CVM from reporting an error when it restarts after the cloud disk is detached.
 - We recommend that you run `san policy=OnlineAll` in `diskpart` before using the cloud disk in Windows.
 - When detaching a cloud disk from Windows, we recommend that you first interrupt all read/write operations on the disk, and perform the `offline` operation.
@@ -30,7 +30,7 @@ You can purchase a cloud disk by creating one via the console or an API. For mor
 ### How do I view cloud disk details?
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs/index).
 2. At the top of the **Cloud Block Storage** page, select the region where the disk you want to view resides.
-3. Locate the disk in the list, and view disk information:
+3. Locate the disk in the list, and view disk information.
 To view more information, click the ID/Name of the disk to enter the details page.
 
 
@@ -40,6 +40,7 @@ Cloud Monitor will automatically be enabled once a CVM instance is created. You 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/instance/index) and access the **Instances** page.
 2. Select the ID/Name of the target instance to access the details page.
 3. Click on the **Monitoring** tab to view the instance disk usage.
+
 
 ### What are the most common cloud disk operations?
 For more information, see [Operation Overview](https://intl.cloud.tencent.com/document/product/362/33140).
@@ -56,7 +57,7 @@ After manually attaching a cloud disk, you must perform subsequent operations sh
  <tr>
  <th>Creation mode</th>
  <th>Cloud disk capacity</th>
- <th>Subsequent Operations</th>
+ <th>Subsequent operations</th>
  </tr>
  <tr>
  <td  rowspan="2">Create directly</td>
@@ -78,11 +79,11 @@ After manually attaching a cloud disk, you must perform subsequent operations sh
  </tr>
  <tr>
  <td nowrap="nowrap">Snapshot capacity < cloud disk capacity ≤ 2 TB <br/>or<br/>2 TB < snapshot capacity < cloud disk capacity</td>
-<td><ul class="params"><li>Attach to a Windows CVM: <a href="https://intl.cloud.tencent.com/document/product/362/31601">Extending Partitions and File Systems (Windows)</a></li><li>Attach to a Linux CVM: <a href="https://intl.cloud.tencent.com/document/product/362/31602">Extending Partitions and File Systems (Linux)</a></li></ul></td>
+<td><ul class="params"><li>Mounting to a Windows CVM:<a href="https://intl.cloud.tencent.com/document/product/362/31601">Expanding partitions and file systems (Windows)</a></li><li>Mounting to a Linux CVM:<a href="https://intl.cloud.tencent.com/document/product/362/39995">Expanding partitions and file systems (Linux)</a></li></ul></td>
  </tr> 
  <tr>
  <td>Snapshot capacity ≤ 2 TB < cloud disk capacity</td>
-<td nowrap="nowrap"><ul class="params"><li>MBR partition format:</li>Partition again as instructed in <a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing Cloud Disks (≥2 TB)</a>.<b>This operation will delete the original data.</b><li>GPT partition format:<ul><li>Attach to a Windows CVM: <a href="https://intl.cloud.tencent.com/document/product/362/31601">Extending Partitions and File Systems (Windows)</a></li><li>Attach to a Linux CVM: <a href="https://intl.cloud.tencent.com/document/product/362/31602">Extending Partitions and File Systems (Linux)</a></li></ul></td>
+<td nowrap="nowrap"><ul class="params"><li>If MBR partition format is used in the snapshot:</li>Refer to <a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (larger than or equal to 2TB)</a>Using GPT to re-partition:<b>This operation will delete the original data</b><li>If GPT partition format is used in the snapshot:<ul><li>Mounting to a Windows CVM:<a href="https://intl.cloud.tencent.com/document/product/362/31601">Expanding partitions and file systems (Windows)</a></li><li>Mounting to a Linux CVM:<a href="https://intl.cloud.tencent.com/document/product/362/39995">Expanding partitions and file systems (Linux)</a></li></ul></td>
  </tr> 
  </table>
 
@@ -114,7 +115,7 @@ After the cloud disk is formatted and before the instance is written with data, 
 No. To increase the storage capacity, you need to [expand data disk or system disk](https://intl.cloud.tencent.com/document/product/362/5747).
 
 ### After expanding my cloud disk, do I need to unmount existing partitions when creating a new independent partition on Linux? 
-Yes. To do this, please follow the steps below:
+Yes. To do this, follow the steps below:
 1. Run the following command to detach the data disk.
 ```
 umount <Mount point>
@@ -148,7 +149,7 @@ Check the relationship between the elastic cloud disks and the device name by ru
 ```
 wmic diskdrive get caption,deviceid,serialnumber
 ```
-or
+Or
 ```
 wmic path win32_physicalmedia get SerialNumber,Tag
 ```
@@ -167,13 +168,14 @@ Refer to [Creating Custom Images](https://intl.cloud.tencent.com/document/produc
 </dx-alert>
 
 
-1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/instance/index) and access the **Instances** page.
+1. Log in to the [CVM console](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) and access the **Instances** page.
 2. Select **More** > **Instance Status** > **Shutdown** on the right side of the line where the target instance is located to shut down the instance.
 3. Select **More** > **Resource Adjustment** > **Change Disk Media Type** after shutting down the instance.
 4. In the pop-up window, select a target cloud disk type, check **I have read and agree to Rules for Changing Disk Media Type**, and click **Change Now**.
 5. Double-check the information, make a payment if applicable, and wait for the process to complete.
 <dx-alert infotype="explain" title="">
 - For more information, see the documentation [Changing Disk Media Type](https://intl.cloud.tencent.com/document/product/213/32365).
+- For more information on payment adjustment, see [Paying the Difference for Disk Media Type Changes](https://intl.cloud.tencent.com/document/product/213/45462).
 </dx-alert>
 
 
@@ -202,8 +204,16 @@ Data in cloud disks will not be modified during mounting or unmounting. To ensur
 For more information, see [Detaching Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32400).
 
 ### What happens to the system after my cloud disk expires?
-The following instructions are only applicable to elastic cloud disks. The lifecyle of non-elastic cloud disks is the same as the associated CVMs. For more information, see [Payment Overdue](https://intl.cloud.tencent.com/document/product/213/2181).
+The following instructions are only applicable to elastic cloud disks. The lifecycle of non-elastic cloud disks is the same as the associated CVMs. For more information, see [Payment Overdue](https://intl.cloud.tencent.com/document/product/213/2181).
 <dx-tabs>
+::: Monthly subscribed cloud disks
+ - 7 days before the resources expiration date, you will receive an expiration alert and a renewal reminder.
+ - If your account balance is sufficient and auto-renewal is enabled, cloud disk will be auto-renewed on the expiry date.
+ - If your cloud disk is not renewed before it expires (including on the expiration date), the system will begin to limit its performance at the point in time of its expiration. When using the cloud disk, you will notice a significant decrease in performance.
+ - If your cloud disk is not renewed within 24 * 7 hours after it expires, the system will suspend its service processing (the cloud disk is unavailable, and can only store data), **force release** its relationship with the CVM (if any), and the cloud disk will be sent to the recycle bin. You can still retrieve the cloud disk from the recycle bin and renew it, but **the start time of the cloud disk that has been renewed and retrieved will be the previous period's expiration date**.
+ - If your cloud disk is not renewed within 24 * 7 hours after it's moved to the recycle bin, resources will be released and data in the expired cloud disk will be erased and **cannot be recovered**.
+
+:::
 ::: Pay-as-you-go cloud disks
  - You can continue to use the pay-as-you-go cloud disk for 2 hours from the moment your account balance becomes negative. You will be billed for this period. After 2 hours, the services will be suspended and cloud disk will only store data. Until data is completely deleted, you will still be billed according to the billing standard even if the account balance is negative.
  - If your Tencent Cloud account is topped up to a positive balance within 15 days after the cloud disk has its services suspended, the disk can be restored.
@@ -212,7 +222,7 @@ The following instructions are only applicable to elastic cloud disks. The lifec
 :::
 </dx-tabs>
 
-Please call 4009100100 if you need further information.
+Call 4009100100 if you need further information.
 
 
 ### Can I change the cloud disk type after a successful purchase?
@@ -222,7 +232,7 @@ No. However, you can create a snapshot for data backup and then use the snapshot
 Yes. Cloud disks support capacity adjustment. Cloud disk capacity can be [expanded](https://intl.cloud.tencent.com/document/product/362/31600), but not reduced.
 
 ### Do I have to shut down the CVM instance before a cloud disk expansion?
-No. Please note that you need to assign the expanded capacity to an existing partition, or format it into an independent new partition. Directions on the operating system of the CVM: [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Extending Partitions and File Systems (Linux)](https://cloud.tencent.com/document/product/362/6738).
+No. Note that you need to assign the expanded capacity to an existing partition, or format it into an independent new partition. Directions on the operating system of the CVM: [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Extending Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/document/product/362/39995).
 
 ### What are the requirements for extending the file system?
 Only cloud disks support expansion. Local disks cannot be expanded. For more information, see [Cloud Disk Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600).
@@ -230,7 +240,7 @@ Only cloud disks support expansion. Local disks cannot be expanded. For more inf
 
 <dx-alert infotype="notice" title="">
 - We strongly recommend that you create a snapshot before expansion to ensure data security.
-- If the maximum capacity of the cloud disk cannot meet your business needs, please try [building up RAID groups](https://intl.cloud.tencent.com/document/product/362/2932) or [building LVM logical volumes with multiple elastic cloud disks](https://intl.cloud.tencent.com/document/product/362/2933).
+- If the maximum capacity of the cloud disk cannot meet your business needs, try [building up RAID groups](https://intl.cloud.tencent.com/document/product/362/2932) or [building LVM logical volumes with multiple elastic cloud disks](https://intl.cloud.tencent.com/document/product/362/2933).
 - MBR partition supports disk with a maximum capacity of 2 TB. When you partition disk with a capacity greater than 2 TB, we recommend that you create and mount a new data disk and use the GPT partition format to copy data.
 </dx-alert>
 
@@ -249,7 +259,7 @@ The expansion on the console only increases the storage capacity of the data dis
 If the system disk of the CVM is a cloud disk, you can adjust its CPU and memory.
 
 ### What should I do if the cloud disk is partitioned in MBR format and cannot be expanded?
-MBR partition supports disk with a maximum capacity of 2 TB. When you partition disk with a capacity greater than 2 TB, we recommend that you create and mount a new data disk and use the GPT partition format to copy data.
+MBR partition supports a disk with a maximum capacity of 2 TB. If you need to extend for over 2 TB, we recommend you create and attach a new data disk and use the GPT partition format.
 
 ### What should I do if a cloud disk cannot meet my business requirements even at its maximum capacity?
 We recommend you [build up RAID groups](https://intl.cloud.tencent.com/document/product/362/2932) or [build LVM logical volumes with multiple elastic cloud disks](https://intl.cloud.tencent.com/document/product/362/2933).
@@ -276,12 +286,13 @@ Cloud disks cannot be recovered after being formatted. We recommend that you [cr
 - The lifecycle of a data disk (that is, an elastic cloud disk) is independent from that of the CVM. It can be deleted separately. For more information, see [Terminating cloud disks](https://intl.cloud.tencent.com/document/product/362/32399).
 
 ### Can my system disk be partitioned?
-No.
+Yes, but we recommend you not partition a system disk.
+If you partition the system disk with a third-party tool, system crash or data loss may occur. You can perform partitioning after expanding the system disk capacity. For detailed directions, see [Extending System Disk Partitions and File Systems Online](https://intl.cloud.tencent.com/document/product/362/50063).
 
 
 ### How do I update the mounting information at the mount point?
-LinuxOS supports the `systemd mount` command which will generate a mounting configuration file on top of the existing `.mount` file. Mounting to the same directory `/run/systemd/generator/` will be affected by this command.
-#### Cause
+Linux supports the `systemd mount` command which will generate a mounting configuration file on top of the existing `.mount` file. Mounting to the same directory `/run/systemd/generator/` will be affected by this command.
+#### Problem
 Assume you have mounted the data disk vdb to the directory `/opt/apps` (run the `mount -a` command on the fstab file based on disk uuid). Now, you want to mount a new data disk vdc to the same directory and replace the old one. If you directly mount vdc to the directory, you will not be able to read the data.
 #### Solution
 1. Delete the configuration of the corresponding mount point (for example, run the `rm /run/systemd/generator/opt-apps.mount` command).

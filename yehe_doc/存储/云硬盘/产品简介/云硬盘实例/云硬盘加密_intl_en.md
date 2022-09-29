@@ -1,6 +1,11 @@
-To encrypt the data stored in a cloud disk, you can enable the cloud disk encryption feature, provided by Tencent Cloud [Key Management Service (KMS)](https://intl.cloud.tencent.com/document/product/1030/31961).
->!This feature is in beta test. To use it, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category).
->
+To encrypt the data stored in a cloud disk, you can enable the cloud disk encryption feature, provided by Tencent Cloud Key Management Service (KMS) instructed in [Product Overview](https://intl.cloud.tencent.com/document/product/1030/31961).
+
+
+<dx-alert infotype="notice" title="">
+This feature is currently in beta test. To use it, [contact us](https://intl.cloud.tencent.com/contact-sales).
+</dx-alert>
+
+
 
 ## Key Management
 Tencent Cloud encrypts data in your cloud disks using a data encryption key based on the standard AES-256 algorithm. When you use cloud disk encryption for the first time, the system automatically creates a customer master key (CMK) that allows you to use the cloud disk encryption feature in the corresponding region in the KMS. Only one CMK is automatically created and stored in the KMS, which is protected by strict physical and logical security controls.
@@ -67,30 +72,40 @@ Management operations on an encrypted cloud disk include:
 - Attach a cloud disk
 - Detach a cloud disk
 - Create a snapshot
-- Rolling back a snapshot
->?Make sure you have sufficient account balance, otherwise the operation will fail.
->
+- Roll back a snapshot
+<dx-alert infotype="explain" title="">
+Make sure you have sufficient account balance, otherwise the operation will fail.
+</dx-alert>
+
+
 
 
 ## Creating an encrypted cloud disk
 You can create an encrypted cloud disk through the following three methods:
 
-### Creating in the console
-1. Log in to the [CBS Console](https://console.cloud.tencent.com/cvm/cbs), select a region, and click **Create**.
-2. In the **Purchase Data Disk** dialog box, select **Enable disk encryption**.
->?If you are using cloud disk encryption in this region for the first time, you need to get the authorization for KMS first.
->
-3. Select the cloud disk configuration based on your actual needs and click **Submit**.
-4. Once you have purchased the cloud disk, you can view encrypted cloud disks that have already been created on the [Cloud Disk List](https://console.cloud.tencent.com/cvm/cbs) page.
-The new encrypted cloud disk is in **to be attached** status, you can refer to [Attaching cloud disks](https://intl.cloud.tencent.com/document/product/362/32401) to attach the cloud disk to a CVM instance in the same availability zone.
+<dx-tabs>
+::: Creating in the console
+1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs), select a region, and click **Create**.
+2. In the **Purchase data disk** dialog box, select **Enable disk encryption**.
+<dx-alert infotype="explain" title="">
+If you are using cloud disk encryption in this region for the first time, you need to get the authorization for KMS first.
+</dx-alert>
+3. Select the cloud disk configuration based on your actual needs and click **Ok**.
+4. Once you have purchased the cloud disk, you can view encrypted cloud disks that have already been created on the [Cloud disk list](https://console.cloud.tencent.com/cvm/cbs) page.
+The new encrypted cloud disk is in **to be attached** status, you can refer to [Attaching Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401) to attach the cloud disk to a CVM instance in the same availability zone.
 
-### Creating from a snapshot
-You can select an encrypted snapshot to create a cloud disk. The cloud disk created in this way is encrypted automatically. For more information, see [Creating Cloud Disks Using Snapshots](https://intl.cloud.tencent.com/document/product/362/5757). 
-
-### Creating Using an API
+:::
+::: Creating from a snapshot
+You can select an encrypted snapshot to create a cloud disk. The cloud disk created in this way is encrypted automatically. For more information, see [Creating Cloud Disks Using Snapshots](https://intl.cloud.tencent.com/document/product/362/5757).
+:::
+::: Creating Using an API
 You can create an encrypted cloud disk by using the [CreateDisks API](https://intl.cloud.tencent.com/document/product/362/16312). The following two methods are supported.
 - Configure `Encrypt` as `true`.
 - Specify a `SnapshotId` for the encrypted snapshot.
+
+:::
+</dx-tabs>
+
 
 ## Changing Data Encryption Status
 To change the status of existing data in the cloud disk from non-encrypted to encrypted, we recommend you run the `rsync` command in Linux system or the `robocopy` command in Windows system to copy the data from the non-encrypted disk to the new encrypted disk.
