@@ -119,6 +119,7 @@ Based on business needs, you can use an elastic cloud disk's soft link, file sys
 		 <td nowrap="nowrap">Run the following command to obtain the device name.</br><pre style="color:white;">fdisk -l</pre></td>
  </tr>
 </table>
+
 8. Run the following command to back up the `/etc/fstab` file to the `/home` directory, for example:
 ```
 cp -r /etc/fstab /home
@@ -250,28 +251,30 @@ If you don't need to configure disk automount at startup, skip the following ste
 </dx-alert>
 16. Confirm the mount method and obtain the corresponding information.
  Based on business needs, you can use an elastic cloud disk's soft link, file system's UUID (universally unique identifier), or device name to automatically mount a disk. The descriptions and information acquisition methods are as follows:
+
  <table>
      <tr>
          <th>Mounting method</th>  
          <th>Pros and cons</th>  
          <th>Information acquisition method</th>  
      </tr>
-	   <tr>      
+	 <tr>      
          <td nowrap="nowrap">Use the soft link of the elastic cloud disk <b>(recommended)</b></td>   
 	       <td><b>Pros</b>: The soft link of an elastic cloud disk is fixed and unique. It does not change with operations such as mounting, unmounting, and formatting partitions.<br><b>Cons</b>: Only an elastic cloud disk can use the soft link, which operates imperceptibly for the partition formatting operation.</td>
 	       <td nowrap="nowrap">Run the following command to obtain the soft link of the elastic cloud disk.</br><pre style="color:white;">ls -l /dev/disk/by-id</pre></td>
      </tr> 
-	   <tr>      
+	 <tr>      
          <td nowrap="nowrap">Use the UUID of the file system</td>   
 	       <td>Auto-mounting configuration may fail due to changes in a file system's UUID.<br>For example, reformatting a file system will change its UUID.</td>
 	       <td nowrap="nowrap">Run the following command to obtain the UUID of the file system.</br><pre style="color:white;">blkid /dev/vdb1</pre></td>
      </tr> 
-	   <tr>      
+	 <tr>      
          <td nowrap="nowrap">Use device name</td>   
 	       <td>Automatic mounting configuration may fail due to changes in device name.<br>For example, if an elastic cloud disk on the CVM is unmounted and then remounted, the device name may change when the operating system recognizes the file system again.</td>
 	       <td>Run the following command to obtain the device name.</br><pre style="color:white;">fdisk -l</pre></td>
      </tr> 
 </table>
+
 17. Run the following command to back up the `/etc/fstab` file to the `/home` directory:
 ```
 cp -r /etc/fstab /home
@@ -316,4 +319,3 @@ UUID=d489ca1c-5057-4536-81cb-ceb2847f9954 /data/newpart   ext4 defaults     0   
 
 
 
-```
