@@ -44,9 +44,9 @@ The basic protection service is billed based on your monthly plan. See the follo
 | Base Protection Capacity | Non-BGP        | BGP                      |
 | ------------- | ----------- | ------------------------ |
 | 30 Gbps        | -           | 3,300 USD/month              |
-| 60 Gbps        | 7,200 USD/month | 7,200 USD/month          |
-| 100 Gbps       | 7,800 USD/month | 7,800 USD/month          |
-| 300 Gbps       | 8,470 USD/month | 8,470 USD/month          |
+| 60 Gbps        | 7,200 USD/month | 7,200 USD/month              |
+| 100 Gbps       | 7,800 USD/month | 7,800 USD/month              |
+| 300 Gbps       | 8,470 USD/month | 8,470 USD/month              |
 | 500 Gbps       | -           | 614,000 USD/year            |
 | 800 Gbps       | -           | 831,000 USD/year            |
 | 1,000 Gbps      | -           | 997,000 USD/year            |
@@ -104,7 +104,7 @@ The detailed pricing of elastic protection is as follows:
 
 #### Outside the Chinese mainland
 
-- If elastic protection is not enabled for an instance, its maximum protection will be the base protection bandwidth, and no extra fees will incur.
+- If elastic protection is not enabled for an instance, its maximum protection will be the base protection bandwidth, and no extra fees will be incurred.
 
 - If elastic protection is enabled for an instance, its maximum protection will be the selected elastic protection bandwidth.
 
@@ -214,6 +214,11 @@ See the following table for descriptions of other metrics:
 For Anti-DDoS Advanced instances:
 - If the account balance is sufficient, the system will automatically settle the fees for the previous month and deduct them on the 1st of the following month.
 - If the account balance is insufficient, the system will remind you to top up the account via the channel you configured (email, SMS, and Message Center).
+
+>!
+>- Anti-DDoS Advanced is a pay-as-you-go service that is billed monthly. The minimum subscription term is 1 month. Upon expiry, your subscription will be auto-renewed unless canceled by [contacting us](https://intl.cloud.tencent.com/contact-us). Your instances cannot be terminated during a subscription term.
+>- Make sure that you have one-month credit to be frozen when activating this service.
+>- Payments for this service are not refundable.
 
 ## Service Termination
 Anti-DDoS Advanced adopts a pay-as-you-go model. If you want to end the service, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to terminate your instances. Otherwise, charges are still be incurred.

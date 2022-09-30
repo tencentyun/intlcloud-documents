@@ -1,3 +1,9 @@
+
+>!
+>- 该产品为月度后付费模式，该规格最少购买时长为12个月，期间不支持实例销毁。超过该期限后，将自动续约。若想暂停服务，销毁资源请 [联系我们](https://intl.cloud.tencent.com/contact-us)。
+>- 开通该产品需要冻结3个月授信额度，请保证您有足够的授信额度。
+>- 本产品不支持退款。
+
 1. 登录 [DDoS 高防 IP (境外企业版)](https://buy.cloud.tencent.com/antiddos#/advanced-intl)  购买页面。
 2. 单击“DDoS高防IP(境外)”，进入 DDoS 高防 IP(境外)页面。
 ![](https://main.qcloudimg.com/raw/bc6b269a2863629c91e9aa60167bec8d.png)

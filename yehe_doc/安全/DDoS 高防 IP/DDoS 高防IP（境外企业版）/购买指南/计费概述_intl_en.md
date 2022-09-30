@@ -1,8 +1,12 @@
-### Context
+### Background
 Anti-DDoS Advanced (Global Enterprise Edition) is committed to helping your business outside the Chinese mainland with DDoS attacks by providing unlimited all-out protection.
 
 Usually malicious attacks will not end before causing losses to the target business, which is also a cost to attackers. Leveraging Tencent Cloud’s Anti-DDoS cleansing capability outside the Chinese mainland, Anti-DDoS Advanced (Global Enterprise Edition) safeguards your business with unlimited all-out protection.
->! Tencent Cloud reserves the right to restrict the traffic if the DDoS attacks on your business affect the infrastructure in the Tencent Cloud Anti-DDoS cleansing center outside the Chinese mainland. If the traffic of your Anti-DDoS Advanced (Global Enterprise Edition) instance is restricted, your business may suffer the problems such as limited or blocked business access traffic.
+>! 
+>- Tencent Cloud reserves the right to restrict the traffic if the DDoS attacks on your business affect the infrastructure in the Tencent Cloud Anti-DDoS cleansing center outside the Chinese mainland. If the traffic of your Anti-DDoS Advanced (Global Enterprise Edition) instance is restricted, your business may suffer the problems such as limited or blocked business access traffic.
+>- Anti-DDoS Advanced (Global Enterprise Edition) is a pay-as-you-go service that is billed monthly. The minimum subscription term is 12 months. Upon expiry, your subscription will be auto-renewed unless canceled by [contacting us](https://intl.cloud.tencent.com/contact-us). Your instances cannot be terminated during a subscription term.
+>- Make sure that you have three-month credit to be frozen when activating this service.
+>- Payments for this service are not refundable.
 
 ### Anti-DDoS Advanced (Global Enterprise Edition) billing
 

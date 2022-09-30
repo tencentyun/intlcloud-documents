@@ -1,10 +1,15 @@
 ## 前提条件
 在购买 DDoS 高防 IP  实例前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 
+>! 
+>- 该产品为月度后付费模式，该规格最少购买时长为1个月，期间不支持实例销毁。超过该期限后，将自动续约。若想暂停服务，销毁资源请 [联系我们](https://intl.cloud.tencent.com/contact-us)。
+>- 开通该产品需要冻结1个月授信额度，请保证您有足够的授信额度。
+>- 本产品不支持退款。
+
 ## 操作步骤
 ### 购买中国大陆区域 DDoS 高防 IP
 1. 打开 [DDoS 高防产品购买页](https://buy.cloud.tencent.com/antiddos#/advanced) ，单击**DDoS 高防 IP（中国大陆）**进行购买。
-![](https://main.qcloudimg.com/raw/089ed04e4850dea1d320261f702efc3a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/478f73e3a802b32572145bc9c3529600.png)
 2. 根据实际需求选择参数。
   - 线路选择：提供 BGP 线路，三网（电信联通移动）线路，请按需要购买高防防护线路。
    - 规格描述：
@@ -22,7 +27,7 @@
 
 ### 购买非中国大陆区域 DDoS 高防 IP
 1. 打开 [DDoS 高防产品购买页](https://buy.cloud.tencent.com/antiddos#/advanced-intl) ，单击**DDoS 高防 IP（境外）**进行购买。
-![](https://main.qcloudimg.com/raw/56d59436eed833b37b06e23298f2bd68.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6a947508d368898ecf42b564f3d2fc0e.png)
 2. 根据实际需求配置如下参数。
  - 规格描述：
     - 接入模式：代理模式
