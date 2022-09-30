@@ -84,7 +84,7 @@ If the result similar to the following figure is returned, the mounting is succe
 ll /data
 ```
 :::
-::: Manual Expansion [](id:ManualExpansion)
+::: Manual Expansion[](id:ManualExpansion)
 1. Run the following command as the root user to unmount the partition.
 ```shellsession
 umount <Mount point>
@@ -111,7 +111,7 @@ mount /dev/vdb2 /data
 5. Run the following command to view the partition capacity after expansion.
 ```shellsession
 df -h
-If the result similar to the following figure is returned, the mounting is successful, and you can see the data disk.
+```If the result similar to the following figure is returned, the mounting is successful, and you can see the data disk.
 ![](https://main.qcloudimg.com/raw/92cd4cc0e9b1c08975603f73e922266f.png)
 6. Run the following command to view the data information of the original partition after expansion and check whether the new storage space has been added to the file system.
 ```shellsession
@@ -146,6 +146,7 @@ umount /data
 <dx-alert infotype="explain" title="">
 After all the partitions of the cloud disk are unmounted, perform [step 4](#Step4MBR) again.
 </dx-alert>
+
 4. [](id:Step4MBR)Run the following command to create a partition.
 ```shellsession
 fdisk <Disk path>
@@ -166,12 +167,16 @@ Perform the following steps in sequence when prompted.
 <dx-alert infotype="explain" title="">
 This document takes creating one partition as an example. You can also create multiple partitions as needed.
 </dx-alert>
+
+
+
 5. Run the following command to view the new partition.
 ```shellsession
 fdisk -l
 ```
 The following figure shows that the new partition `vdb2` has been created.
 ![](https://main.qcloudimg.com/raw/d604d00955d0db5f052e964ecd409cc3.png)
+
 6. Run the following command to format the new partition and create a file system in a desired format, such as EXT2 or EXT3.
 ```shellsession
 mkfs.<fstype> <Partition path> 
@@ -182,6 +187,7 @@ mkfs.ext4 /dev/vdb2
 ```
 The following figure shows the successful creation of the EXT4 file system.
 ![](https://main.qcloudimg.com/raw/db15ed11252e6db8adb706f61ed14225.png)
+
 7. Run the following command to create a mount point.
 ```shellsession
 mkdir <New mount point>
@@ -207,10 +213,12 @@ If the result as shown in the following figure is returned, the mounting is succ
 <dx-alert infotype="explain" title="">
 To allow the CVM instance to automatically mount a data disk upon restart or startup, perform [step 10](#AddNewPartINFOstep10) and [step 11](#AddNewPartINFOstep11) to add the new partition information to `/etc/fstab`.
 </dx-alert>
+
 10. [](id:AddNewPartINFOstep10)Run the following command to add the partition.
 ```shellsession
 echo '/dev/vdb2 /data1 ext4 defaults 0 0' >> /etc/fstab
 ```
+
 11. [](id:AddNewPartINFOstep11)Run the following command to view the partition.
 ```shellsession
 cat /etc/fstab
