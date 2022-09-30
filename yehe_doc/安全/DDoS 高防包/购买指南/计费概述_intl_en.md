@@ -71,6 +71,10 @@ For Anti-DDoS Pro instances:
 - If the account balance is sufficient, the system will automatically settle the fees for the previous month and deduct them on the 1st of the following month.
 - If the account balance is insufficient, the system will remind you to top up the account via the channel you configured (email, SMS, and Message Center).
 
+>! 
+>- Anti-DDoS Advanced (Global Enterprise Edition) is a pay-as-you-go service that is billed monthly. The minimum subscription term is 12 months. Upon expiry, your subscription will be auto-renewed unless canceled by [contacting us](https://intl.cloud.tencent.com/contact-us). Your instances cannot be terminated during a subscription term.
+>- Make sure that you have three-month credit to be frozen when activating this service.
+>- Payments for this service are not refundable.
 
 ## Service Termination
 Anti-DDoS Pro adopts a pay-as-you-go model. If you want to end the service, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to terminate your instances. Otherwise, charges are still be incurred.
