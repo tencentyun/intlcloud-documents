@@ -1,9 +1,10 @@
 
+
 ## Overview
 You can create snapshots for a cloud disk to save its data at a specific point of time. The incremental snapshot only records the data change compared to the last snapshot. This process is quick if the data changes a little. Moreover, deleting a snapshot will not affect your use of snapshot data. You can also restore your cloud disks by using any remaining snapshots.
 You can create a snapshot for a cloud disk in any state, but the snapshot can only capture the written data rather than data being written by an app or process. Before creating a snapshot, you can choose to suspend all disk I/O operations, or [detach](https://intl.cloud.tencent.com/document/product/362/32400) the cloud disk and [attach](https://intl.cloud.tencent.com/document/product/362/32401) it later to create a complete snapshot.
 
-## Prerequisites
+## Prerequisite
 - You have [created a cloud disk](https://intl.cloud.tencent.com/document/product/362/5744).
 - You've not reached the upper limits for the number and total size of snapshots in the current region. See [Snapshot Use Limits](https://intl.cloud.tencent.com/document/product/362/32406).
 
@@ -27,9 +28,9 @@ To resolve this issue, run the `sync` command to forcibly write the data in the 
 ## Directions[](id:CreateSnapshot)
 ### Creating a snapshot via the console
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
-2. Select the target cloud disk, and click **Create a snapshot** under the **Operation** column, as shown below:
+2. Click **Create a snapshot** on the right of the target cloud disk.
 
-3. In the pop-up window, enter a snapshot name and click **OK**.
+3. In the **Create a snapshot** pop-up window, enter the snapshot name and click **OK**.
 
 ### Creating a snapshot via an API
 You can use the `CreateSnapshot` API to create a snapshot. For more information, see [CreateSnapshot](https://intl.cloud.tencent.com/document/product/362/15648).

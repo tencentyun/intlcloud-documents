@@ -1,18 +1,19 @@
-Rolling back snapshot data to a cloud disk can recover the disk data to the state when the snapshot is created. This method is very useful in case of data errors or data losses caused by certain changes.
+## Overview
+When a data error occurs or data is lost due to a change, you can roll back the snapshot data to the corresponding cloud disk, so that data in the cloud disk can be restored to the status when the snapshot is created.
+- The snapshot data can be rolled back only to the source cloud disk but not other cloud disks.
+- You can roll back the data in the following scenarios:
+  - If the source cloud disk is in **To be attached** status (that is, it has not been attached to a CVM instance), you can directly perform the rollback.
+  - If the source cloud disk has been attached to a CVM instance, you can perform the rollback when the CVM instance is shut down.
 
-Snapshots can only be rolled back to the cloud disk in which they are created. If you need to get snapshot data from other cloud disks, please use the service of [Creating a Cloud Disk from a Snapshot](/doc/product/362/5757).
+## Directions
+### Rolling back the data in the console
+1. Log in to the [Snapshot List](https://console.cloud.tencent.com/cvm/snapshot) page.
+2. Click **Rollback** in the row of the target snapshot.
+<dx-alert infotype="notice" title="">
+The data of the source cloud disk will be rolled back to the status when the snapshot is created, and all the data after this time will be cleared.
+</dx-alert>
+3. On the **Roll-back Data** page, confirm the rollback information and click **OK**.
 
-Note:
+### Rolling back the data via an API
+You can use the `ApplySnapshot` API to roll back the data. For detailed directions, see [ApplySnapshot](https://intl.cloud.tencent.com/document/product/362/15643).
 
-- When you roll back a snapshot to an elastic cloud disk, the disk must be unmounted.
-- When you roll back a snapshot to a non-elastic cloud disk purchased with a CVM, the CVM instance must be shut down.
-
-## Rolling Back a Snapshot in Console
-1) Open [CVM Console](https://console.cloud.tencent.com/cvm/).
-
-2) Click "Snapshot" in the navigation pane.
-
-3) Select the snapshot that needs to be rolled back to the disk in the snapshot list, and click "Rollback".
-
-## Rolling Back a Snapshot via an API
-You can use the [`ApplySnapshot`](https://intl.cloud.tencent.com/zh/document/product/362/15643) API to roll back a snapshot.
