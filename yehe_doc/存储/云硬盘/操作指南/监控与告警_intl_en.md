@@ -1,6 +1,6 @@
 
 A good monitoring environment is the key to ensuring high availability of cloud disks. You can use [Cloud Monitor](https://www.tencentcloud.com/document/product/248) (CM) to monitor cloud disks **[attached](https://intl.cloud.tencent.com/document/product/362/32401) to CVM instances**, view cloud disk metrics, and analyze and configure cloud disk alarms. CM collects raw data of the cloud disk from running CVM instances and displays data through easy-to-read charts. By default, the data is retained for one month, during which you can view the disk conditions in different time periods to better know its usage and read/write operations.
-You can get data in the [CM console](https://console.cloud.tencent.com/monitor/cvm) or via [API](https://www.tencentcloud.com/document/product/248/7239). For more information, see [Getting the Monitoring Data of Specified Metrics](https://intl.cloud.tencent.com/document/product/248/6141) and [Getting Monitoring View and Chart](https://cloud.tencent.com/document/product/248/6142).
+You can get data in the [CM console](https://console.cloud.tencent.com/monitor/cvm) or via [API](https://www.tencentcloud.com/document/product/248/7239). For more information, see [Getting the Monitoring Data of Specified Metrics](https://intl.cloud.tencent.com/document/product/248/6141) and Getting Monitoring View and Chart.
 Currently, CM provides the following metrics to monitor cloud disks:
 
 <table>
