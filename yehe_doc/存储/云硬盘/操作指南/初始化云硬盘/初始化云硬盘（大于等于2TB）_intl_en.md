@@ -287,12 +287,12 @@ cp -r /etc/fstab /home
  ```
 vi /etc/fstab
  ```
-19. Press **i** to enter edit mode. 
-20. Move the cursor to the end of the file, press **Enter**, and add the following content.
+19. Press <b>i</b> to enter edit mode. 
+20. Move the cursor to the end of the file, press <b>Enter</b>, and add the following content.
 ```plaintext
 <Device information> <Mount point> <File system format> <File system installation option> <File system dump frequency> <File system check sequence at launch>
 ```
-  - **(Recommended)** Take automatic mounting using the soft link of an elastic cloud disk as an example. Add the following content:
+  - <b>(Recommended)</b> Take automatic mounting using the soft link of an elastic cloud disk as an example. Add the following content:
  ```
 /dev/disk/by-id/virtio-disk-bm42ztpm-part1 /data/newpart2   ext4 defaults     0   2
  ```
@@ -304,7 +304,8 @@ UUID=fc3f42cc-2093-49c7-b4fd-c616ba6165f4 /data/newpart2   ext4 defaults     0  
 ```
 /dev/vdc1 /data/newpart2   ext4 defaults     0   2
 ```
-20. Press **Esc**, enter **:wq**, and press **Enter**.
+
+20. Press <b>Esc</b>, enter <b>:wq</b>, and press <b>Enter</b>.
 Save the configuration and exit the editor.
 21. Run the following command to check whether the `/etc/fstab` file has been written successfully.
 ```
