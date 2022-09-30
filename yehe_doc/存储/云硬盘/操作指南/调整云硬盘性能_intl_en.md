@@ -3,7 +3,7 @@ The performance of a cloud disk depends on its capacity. You can improve the per
 
 
 <dx-alert infotype="notice" title="">
--.Currently, only **Enhanced SSD** supports independent performance adjustment.
+- Currently, only **Enhanced SSD** supports independent performance adjustment.
 - The [extra performance](https://intl.cloud.tencent.com/document/product/362/39611#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD) can be independently adjusted only after the [basic performance](https://intl.cloud.tencent.com/document/product/362/39611#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E5.9F.BA.E5.87.86.E6.80.A7.E8.83.BD) reaches the ceiling.
 - The performance adjustment will not affect your cloud disks or businesses.
 </dx-alert>
