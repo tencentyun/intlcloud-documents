@@ -78,7 +78,6 @@ If the status of the cloud disk changes to **Attached**, the attachment is succe
 		<li>If the snapshot uses a MBR partition,</li>
 		<li style="list-style: none">see 
 		<a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (≥2 TB)</a> to repartition the disk with GPT.
-		重新分区，
 		<b>Note that this operation will delete the existing data</b></li>
 		<li>If the snapshot uses a GPT partition,
 		<ul>
