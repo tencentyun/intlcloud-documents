@@ -38,7 +38,7 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
@@ -112,7 +112,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | --------------------------------------- | --------- | ---- |
-| Tag                | Request | Template type: Concat                                   | String    | Yes   |
+| Tag                | Request | Template tag: Concat                                   | String    | Yes   |
 | Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (*).                    | String    | Yes   |
 | ConcatTemplate     | Request | Splicing template                                                | Container | Yes   |
 
@@ -125,7 +125,7 @@ The nodes are described as follows:
 | Audio               | Request.ConcatTemplate | Audio parameter    | Container    | No   | Original media value  | If the target file does not require audio information, set `Audio.Remove` to `true`. |
 | Video               | Request.ConcatTemplate | Video parameter    | Container    | No   | Original media value  | If the target file does not require video information, set `Video.Remove` to `true`. |
 | Container           | Request.ConcatTemplate | Container format     | Container    | Yes   | None  | None |
-| AudioMix           | Request.ConcatTemplate | Audio mix parameter    | Container | No   | This parameter takes effect only if `Audio.Remove` is `false`. | None |
+| AudioMix           | Request.ConcatTemplate | Audio mix parameter as described in <a href="https://intl.cloud.tencent.com/document/product/1045/49945" target="_blank">Structure</a>.                                    | Container array | No   | None | Valid only if `Audio.Remove` is `false` |
 | DirectConcat       | Request.ConcatTemplate | Whether to splice without transcoding | String    | No   | false         | true/ false |
 
 
@@ -171,28 +171,7 @@ Y indicates supported, and N indicates unsupported.
 | Bitrate            | Request.ConcatTemplate.<br/>Video | Bitrate of the video output file      | String | No   |  Original video bitrate           | <ul  style="margin: 0;"><li>Value range: [10, 50000]</li><li>Unit: Kbps    </li></ul>          |
 | Crf                | Request.ConcatTemplate.<br/>Video | Bitrate, which is a quality control factor  | String | No       | Original video bitrate           | <ul  style="margin: 0;"><li>Value range: (0, 51]</li><li> If `Crf` is set, the setting of `Bitrate` becomes invalid. </li><li> If `Bitrate` is empty, `25` is used for this parameter by default.</li></ul> |
 | Remove             | Request.ConcatTemplate.<br/>Video | Whether to delete the video stream     | String | No       | false        |  Valid values: `true`, `false`.                                               |
-| Rotate              | Request.Video | Rotation angle           | String | No   | None        | 1. Value range: [0, 360)<br/>2. Unit: degree |
-
-<span id="AudioMix"></span>
-`AudioMix` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | ------------------------------- | ------------------------------------------- | --------- | ---- | ------ | ------------------------------------------------- |
-| AudioSource       | Request.ConcatTemplate.AudioMix | Address of the audio track file to be mixed | String | Yes | None | It must be stored in the same bucket as the input media file. |
-| MixMode           | Request.ConcatTemplate.AudioMix | Audio mix mode  | String | No   | Repeat | <li>Repeat: Repeats the background sound <br/><li>Once: Plays back the background sound once |
-| Replace           | Request.ConcatTemplate.AudioMix | Whether to replace the original audio of the input media file with the mixed audio track | String | No | false  | true/false                                        |
-| EffectConfig      | Request.ConcatTemplate.AudioMix | Audio mix transition configuration  | Container | No   | false  | None |
-
-`EffectConfig ` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | -------------------------------------------- | --------------- | ------ | ---- | ------ | ----------------- |
-| EnableStartFadein | Request.ConcatTemplate.AudioMix.EffectConfig | Enables fade-in  | String | No   | false       | true/false |
-| StartFadeinTime   | Request.ConcatTemplate.AudioMix.EffectConfig | Fade-in duration  | String | No   | None    | A floating point number above 0 |
-| EnableEndFadeout  | Request.ConcatTemplate.AudioMix.EffectConfig | Enables fade-out  | String | No   | false       | true/false |
-| EndFadeoutTime    | Request.ConcatTemplate.AudioMix.EffectConfig | Fade-out duration  | String | No   | None    | A floating point number above 0 |
-| EnableBgmFade     | Request.ConcatTemplate.AudioMix.EffectConfig | Enables fade-in for background music transition  | String | No   | false       | true/false |
-| BgmFadeTime       | Request.ConcatTemplate.AudioMix.EffectConfig | Fade-in duration for background music transition  | String | No   | None    | A floating point number above 0 |
+| Rotate              | Request.Video | Rotation angle           | String | No   | None        | 1. Value range: [0, 360)<br/>2. Unit: Degree |
 
 ## Response
 
@@ -278,7 +257,7 @@ The nodes are as described below:
 | Name               | Response.Template | Template name                       | String    |
 | BucketId           | Response.Template | Template bucket                 | String    |
 | Category           | Response.Template | Template category: Custom or Official | String    |
-| Tag                | Response.Template | Template type: Concat                                             | String    |
+| Tag                | Response.Template | Template tag: Concat                                             | String    |
 | UpdateTime         | Response.Template | Update time                       | String    |
 | CreateTime         | Response.Template | Creation time                       | String    |
 | ConcatTemplate     | Response.Template | Same as the `Request.ConcatTemplate` in the request body.                           | Container |
@@ -287,7 +266,7 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 

@@ -4,4 +4,4 @@
 
 ### Go SDK 支持上传文件流吗？
 
- 支持上传文件流或字节流，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31526) 文档。
+ 支持上传文件流或字节流，详情请参见 [上传对象](https://www.tencentcloud.com/document/product/436/44063) 文档。

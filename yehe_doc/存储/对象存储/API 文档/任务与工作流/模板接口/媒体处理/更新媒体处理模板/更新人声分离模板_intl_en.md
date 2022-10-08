@@ -37,7 +37,7 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
@@ -66,7 +66,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :------------- | :-------- | -------- |
-| Request            | None     | Same as the `Request` in the voice/sound separation template creation API. | Container | Yes   |
+| Request            | None     | <a href="https://www.tencentcloud.com/document/product/1045/49916#Request" target="_blank">Same as `Request` in the voice/sound separation template creation API.</a> | Container | Yes   |
 
 
 ## Response
@@ -75,7 +75,7 @@ The nodes are described as follows:
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Response body
@@ -107,12 +107,12 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :-------------------------------------------------- | :-------- |
-| Response           | None     | Same as the `Response` in the voice/sound separation template creation API. | Container |
+| Response           | None     | <a href="https://www.tencentcloud.com/document/product/1045/49916#Response" target="_blank">Same as `Response` in the voice/sound separation template creation API.</a> | Container |
 
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 

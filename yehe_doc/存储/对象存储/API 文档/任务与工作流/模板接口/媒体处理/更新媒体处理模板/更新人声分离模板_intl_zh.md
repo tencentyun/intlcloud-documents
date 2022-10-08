@@ -37,7 +37,7 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 >
 
 #### 请求头
@@ -66,7 +66,7 @@ Content-Type: application/xml
 
 | 节点名称（关键字） | 父节点 | 描述           | 类型      | 是否必选 |
 | :----------------- | :----- | :------------- | :-------- | -------- |
-| Request            | 无     | 同创建人声分离模板接口的 Request | Container | 是   |
+| Request            | 无     | <a href="https://www.tencentcloud.com/document/product/1045/49916#Request" target="_blank">同创建人声分离模板接口的 Request</a> | Container | 是   |
 
 
 ## 响应
@@ -75,7 +75,7 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 >
 
 #### 响应体
@@ -107,12 +107,12 @@ Content-Type: application/xml
 
 | 节点名称（关键字） | 父节点 | 描述                                                | 类型      |
 | :----------------- | :----- | :-------------------------------------------------- | :-------- |
-| Response           | 无     | 同创建人声分离模板接口的 Response | Container |
+| Response           | 无     | <a href="https://www.tencentcloud.com/document/product/1045/49916#Response" target="_blank">同创建人声分离模板接口的 Response</a> | Container |
 
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 ## 实际案例
 

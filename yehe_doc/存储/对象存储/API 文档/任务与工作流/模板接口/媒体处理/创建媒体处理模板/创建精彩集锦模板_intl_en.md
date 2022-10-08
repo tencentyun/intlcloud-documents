@@ -37,7 +37,7 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
@@ -89,13 +89,13 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------- | ------------------------------------------- | --------- | -------- | ------------------------------------------------------------ |
-| Tag                | Request | Template type: VideoMontage                                | String    | Yes   | None |
+| Tag                | Request | Template tag: VideoMontage                                | String    | Yes   | None |
 | Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       | None                             |
-| Duration           | Request | Video montage duration                                                 | String    | No   | 1. The default value is the automatically analyzed duration.</br>2. Unit: second</br>3. Supports the float format, accurate to the millisecond. |
+| Duration           | Request | Video montage duration                                                 | String    | No   | 1. The default value is the automatically analyzed duration.</br>2. Unit: Second</br>3. Supports the float format, accurate to the millisecond. |
 | Container          | Request | Container format                                    | Container | Yes       | None                             |
 | Video              | Request | Video information                                                 | Container | Yes   | None   |
 | Audio              | Request | Audio information                                                 | Container | No   | None   |
-| AudioMix           | Request | Audio mixing parameter    | Container | No   | This parameter takes effect only if `Audio.Remove` is `false`. |
+| AudioMix           | Request | Audio mix parameter as described in <a href="https://intl.cloud.tencent.com/document/product/1045/49945" target="_blank">Structure</a>.                                    | Container array | No   | Valid only if `Audio.Remove` is `false` |
 
 <span id="Container"></span>
 `Container` has the following sub-nodes:
@@ -122,7 +122,7 @@ Audio/Video formats supported by different container formats are as follows:
 | Fps                        | Request.Video | Frame rate                  | String | No   | None           | 1. Value range: (0, 60]<br>2. Unit: fps |
 | Bitrate            | Request.Video | Bitrate of the video output file | String | No       | None           | 1. Value range: [10, 50000]<br/>2. Unit: Kbps                  |
 | Crf                | Request.Video | Bitrate, which is a quality control factor  | String | No       | None           | 1. Value range: (0, 51]<br/>2. If `Crf` is set, the setting of `Bitrate` becomes invalid.<br/>3. If `Bitrate` is empty, `25` is used for this parameter by default. |
-| Rotate              | Request.Video | Rotation angle           | String | No   | None        | 1. Value range: [0, 360)<br/>2. Unit: degree |
+| Rotate              | Request.Video | Rotation angle           | String | No   | None        | 1. Value range: [0, 360)<br/>2. Unit: Degree |
 
 <span id="Audio"></span>
 `Audio` has the following sub-nodes:
@@ -142,16 +142,6 @@ Audio/Video formats supported by different container formats are as follows:
 | flv                 | N     | Y     | N     | Y     | N     | N     |
 | mp4                 | N     | Y     | Y     | Y     | Y     | N     |
 | hls/ts/mkv          | Y     | Y     | Y     | Y     | Y     | N     |
-
-<span id="AudioMix"></span>
-`AudioMix` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | ---------------- | --------------------------------------------- | ------ | ---- | ------ | ------------------------------------------------- |
-| AudioSource       | Request.AudioMix | Audio mix file address  | String | Yes   | None  | It must be stored in the same bucket as the input media file. |
-| MixMode           | Request.AudioMix | Audio mix mode  | String | No   | Repeat | 1. Repeat: Repeats the background sound <br/>2. Once: Plays back the background sound once |
-| Replace           | Request.AudioMix | Whether to replace the original audio of the input media file with the mixed audio track | String | No | false  | true/false                                        |
-
 
 
 ## Response
@@ -217,7 +207,7 @@ The nodes are as described below:
 | Name               | Response.Template | Template name                       | String    |
 | BucketId           | Response.Template | Template bucket                 | String    |
 | Category           | Response.Template | Template category: Custom or Official | String    |
-| Tag                | Response.Template | Template type: VideoMontage                                       | String    |
+| Tag                | Response.Template | Template tag: VideoMontage                                       | String    |
 | UpdateTime         | Response.Template | Update time                       | String    |
 | CreateTime         | Response.Template | Creation time                       | String    |
 | VideoMontage      | Response.Template | Template parameters                                                | Container |
@@ -238,7 +228,7 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 
 ## Samples

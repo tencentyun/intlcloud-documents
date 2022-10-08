@@ -2,9 +2,9 @@
 
 You can modify the storage class in either of the following ways:
 1. Use the console to modify the storage class of one or more objects. For detailed directions, please see [Modifying Storage Class](https://intl.cloud.tencent.com/document/product/436/30930).
-![](https://main.qcloudimg.com/raw/da4233ef18fa8d9820c97450341092d3.png)
+
 2. [Set a lifecycle rule](https://intl.cloud.tencent.com/document/product/436/14605) to transition objects in a specified bucket or prefixed with a specified value to another storage class.
-![](https://main.qcloudimg.com/raw/a636db96e7283da43244efd302c30fd6.png)
+
 
 ### What should I do if an object I deleted still exists?
 
@@ -21,7 +21,7 @@ You can [set a lifecycle rule](https://intl.cloud.tencent.com/document/product/4
 ### After enabling versioning, how can I manage historical versions?
 
 You can [set a lifecycle rule](https://intl.cloud.tencent.com/document/product/436/14605) and enable **Managing historical versions** to transition objects or delete historical object versions.
-![](https://main.qcloudimg.com/raw/a636db96e7283da43244efd302c30fd6.png)
+
 
 ### How many lifecycle rules can I configure?
 

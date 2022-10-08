@@ -37,7 +37,7 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
@@ -80,7 +80,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | --------------------------------------- | --------- | -------- |
-| Tag                | Request | Template type: Snapshot                                    | String    | Yes   |
+| Tag                | Request | Template tag: Snapshot                                    | String    | Yes   |
 | Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (*).                    | String    | Yes   |
 | Snapshot           | Request | Screenshot                                                  | Container | Yes   |
 
@@ -90,8 +90,8 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | -------------------- | ---------------- | -------------------- | --------- | -------- | ----------------- | ------------------------------------------------------------ |
 | Mode                | Request.Snapshot | Screenshot mode | String    | No   | Interval | <ul  style="margin: 0;"><li>Valid values: `Interval`, `Average`, `KeyFrame`.</li><li>`Interval`: Interval mode; `Average`: Average mode; </li><li>`KeyFrame`: Keyframe mode.</li><li> Interval mode: The `Start`, `TimeInterval`, and `Count` parameters are valid. If `Count` is set and `TimeInterval` is not set, all frames will be captured, and the total number of images captured is specified by `Count`.</li><li>Average mode: The `Start` and `Count` parameters are valid, indicating to capture a total of `Count` images at an average interval from `Start` to the end of the video.</li></ul> |
-| Start                | Request.Snapshot | Start time | String    | No   | 0 | <ul  style="margin: 0;"><li>[0, video duration] </li><li>Unit: second </li><li>Supports the float format, accurate to the millisecond.</li></ul> |
-| TimeInterval         | Request.Snapshot | Screenshot time interval | String    | No   | None  | <ul  style="margin: 0;"><li>(0, 3600] </li><li>Unit: second </li><li>Supports the float format, accurate to the millisecond.</li></ul> |
+| Start                | Request.Snapshot | Start time | String    | No   | 0 | <ul  style="margin: 0;"><li>[0, video duration] </li><li>Unit: Second </li><li>Supports the float format, accurate to the millisecond.</li></ul> |
+| TimeInterval         | Request.Snapshot | Screenshot time interval | String    | No   | None  | <ul  style="margin: 0;"><li>(0, 3600] </li><li>Unit: Second </li><li>Supports the float format, accurate to the millisecond.</li></ul> |
 | Count                | Request.Snapshot | Number of screenshots | String    | Yes   | None  | (0, 10000] |
 | Width                | Request.Snapshot | Width | String    | No   |  Original video width | <ul  style="margin: 0;"><li>Value range: [128, 4096]</li><li>Unit: px</li><li>If only `Width` is set, `Height` is calculated based on the original video aspect ratio. </li></ul> |
 | Height                | Request.Snapshot | Height | String    | No  | Original video height  | <ul  style="margin: 0;"><li>Value range: [128, 4096]</li><li>Unit: px</li><li>If only `Height` is set, `Width` is calculated based on the original video aspect ratio.</li></ul> |
@@ -166,17 +166,17 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :----------------------------------------------- | :-------- |
-| Tag                | Response | Template type: Snapshot                                           | String    |
+| Tag                | Response | Template tag: Snapshot                                           | String    |
 | Name               | Response | Template name                                                     | String    |
 | TemplateId         | Response | Template ID                                                      | String    |
 | UpdateTime         | Response | Update time                                                     | String    |
 | CreateTime         | Response | Creation time                                                     | String    |
-| Snapshot           | Response | Template parameters. Same as the `Snapshot` in the request body.  | Container |
+| Snapshot           | Response | Template parameter, which is the same as the `Snapshot` in the request body.  | Container |
 
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 

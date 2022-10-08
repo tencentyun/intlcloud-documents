@@ -287,12 +287,12 @@ cp -r /etc/fstab /home
  ```
 vi /etc/fstab
  ```
-19. 按 **i** 进入编辑模式。 
-20. 将光标移至文件末尾，按 **Enter**，添加如下内容。
+19. 按 <b>i</b> 进入编辑模式。 
+20. 将光标移至文件末尾，按 <b>Enter</b>，添加如下内容。
 ```plaintext
 <设备信息> <挂载点> <文件系统格式> <文件系统安装选项> <文件系统转储频率> <启动时的文件系统检查顺序>
 ```
-  - **（推荐）**以使用弹性云硬盘的软链接自动挂载为例，结合前文示例则添加：
+  - <b>（推荐）</b>以使用弹性云硬盘的软链接自动挂载为例，结合前文示例则添加：
  ```
 /dev/disk/by-id/virtio-disk-bm42ztpm-part1 /data/newpart2   ext4 defaults     0   2
  ```
@@ -304,7 +304,7 @@ UUID=fc3f42cc-2093-49c7-b4fd-c616ba6165f4 /data/newpart2   ext4 defaults     0  
 ```
 /dev/vdc1 /data/newpart2   ext4 defaults     0   2
 ```
-20. 按 **Esc**，输入 **:wq**，按 **Enter**。
+20. 按 <b>Esc</b>，输入 <b>:wq</b>，按 <b>Enter</b>。
 保存设置并退出编辑器。
 21. 执行以下命令，检查 `/etc/fstab` 文件是否写入成功。
 ```

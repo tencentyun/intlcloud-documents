@@ -1,27 +1,28 @@
 This document describes common cloud disk operations, including monitoring, alarms, managing cloud disks and snapshots.
+
 ## Cloud Disk
 - [Creating cloud disks](https://intl.cloud.tencent.com/document/product/362/5744)
-- [Mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/5745)
+- [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401)
 - Initializing cloud disks
  - [Initialization Scenarios](https://intl.cloud.tencent.com/document/product/362/31596)
- - [Initializing cloud disks (less than 2 TB)](https://intl.cloud.tencent.com/document/product/362/6734)
- - [Initializing cloud disks (greater than or equal to 2 TB)](https://intl.cloud.tencent.com/document/product/362/6735)
+ - [Initializing Cloud Disks (<2 TB)](https://intl.cloud.tencent.com/document/product/362/31597)
+ - [Initializing Cloud Disks (≥2 TB)](https://intl.cloud.tencent.com/document/product/362/31598)
 - Expanding cloud disks
- - [Cloud disk expansion scenarios](https://cloud.tencent.com/document/product/362/32539)
- - [Expanding cloud disks](https://intl.cloud.tencent.com/document/product/362/5747)
- - [Expanding partitions and file systems (Windows)](https://cloud.tencent.com/document/product/362/6737)
- - [Expanding partitions and file systems (Linux)](https://intl.cloud.tencent.com/document/product/362/6738)
+ - [Cloud Disk Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600)
+ - [Expanding Cloud Disk Capacity](https://intl.cloud.tencent.com/document/product/362/5747)
+ - [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601)
+ - [Extending Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/document/product/362/39995)
 - [Unmounting cloud disks](https://intl.cloud.tencent.com/document/product/362/32400)
-- [Terminating cloud disks](https://intl.cloud.tencent.com/document/product/362/5752)
+- [Terminating cloud disks](https://intl.cloud.tencent.com/document/product/362/32399)
 
 ## Snapshots
 - [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755)
-- [Rolling back data from snapshots](https://cloud.tencent.com/document/product/362/5756)
-- [Creating cloud disks from snapshots](https://cloud.tencent.com/document/product/362/5757)
-- [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/31622)
-- [Cross-region snapshot replication](https://cloud.tencent.com/document/product/362/18152)
+- [Rolling Back Snapshots](https://intl.cloud.tencent.com/document/product/362/5756)
+- [Creating cloud disks from snapshots](https://intl.cloud.tencent.com/document/product/362/5757)
+- [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/35238)
+- [Cross-region snapshot replication](https://intl.cloud.tencent.com/document/product/362/31623)
 - [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758)
 
-## Monitoring and alarms
-[Monitoring and alarms](https://cloud.tencent.com/document/product/362/6742)
+## Monitoring and Alarms
+[Monitoring and alarms](https://intl.cloud.tencent.com/document/product/362/6742)
 

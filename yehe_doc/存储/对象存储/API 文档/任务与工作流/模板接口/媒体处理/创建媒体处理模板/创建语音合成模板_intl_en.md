@@ -42,7 +42,7 @@ This request requires the following request body:
 
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | ---- |

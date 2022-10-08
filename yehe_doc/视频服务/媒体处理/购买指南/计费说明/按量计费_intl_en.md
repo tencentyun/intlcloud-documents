@@ -83,7 +83,7 @@ The unit prices for different regions are as follows:
 |Intelligent content recognition|0.0511|0.0562|0.0572|0.0572|0.0562|
 
 
-__Billing formula__: Intelligent content recognition fees = Source video duration (minute) x Unit price (USD/minute)
+Billing formula: Intelligent content recognition fees = Source video duration (minute) x Unit price (USD/minute)
 
 
 #### Intelligent content analysis
@@ -95,10 +95,10 @@ The unit price is as follows:
 
 |Billable Item|Chinese Mainland|Mumbai, Seoul, Bangkok, Moscow|Hong Kong (China), Tokyo, Toronto, Frankfurt|Silicon Valley, Virginia|Singapore|
 |-|-|-|-|-|-|
-|Intelligent content recognition|0.0511|0.0562|0.0572|0.0572|0.0562|
+|Intelligent content analysis|0.0511|0.0562|0.0572|0.0572|0.0562|
 
 
-__Billing formula__: Intelligent content recognition fees = Source video duration (minute) x Unit price (USD/minute)
+Billing formula: Intelligent content recognition fees = Source video duration (minute) x Unit price (USD/minute)
 
 
 
@@ -116,7 +116,7 @@ The unit price is as follows:
 |Video moderation|Source video duration|0.016|
 
 
- __Billing formula__: Video moderation fees = Source video duration (minute) x Unit price (USD/minute)
+Billing formula: Video moderation fees = Source video duration (minute) x Unit price (USD/minute)
 
 
 ## Monthly Billing

@@ -146,6 +146,7 @@ umount /data
 <dx-alert infotype="explain" title="">
 请将云硬盘上所有分区都解挂后，再执行 [步骤4](#Step4MBR)。
 </dx-alert>
+
 4. [](id:Step4MBR)执行以下命令，新建一个新分区。
 ```shellsession
 fdisk <硬盘路径>
@@ -166,6 +167,8 @@ fdisk /dev/vdb
 <dx-alert infotype="explain" title="">
 本文以创建一个分区为例，您可以根据实际需求创建多个分区。
 </dx-alert>
+
+
 5. 执行以下命令，查看新分区。
 ```shellsession
 fdisk -l
@@ -207,10 +210,12 @@ df -h
 <dx-alert infotype="explain" title="">
 若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](#AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
 </dx-alert>
+
 10. [](id:AddNewPartINFOstep10)执行以下命令，添加信息。
 ```shellsession
 echo '/dev/vdb2 /data1 ext4 defaults 0 0' >> /etc/fstab
 ```
+
 11. [](id:AddNewPartINFOstep11)执行以下命令，查看信息。
 ```shellsession
 cat /etc/fstab

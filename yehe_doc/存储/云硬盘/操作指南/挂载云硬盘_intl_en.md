@@ -13,16 +13,16 @@ Some Linux CVMs may not recognize an elastic cloud disk. You must first enable t
 ### Attaching cloud disks in the CBS console
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
 2. On the cloud disk list page, select and attach the cloud disks. Note that you can only attach cloud disks in **To be attached** status.
- - **Attach a single cloud disk**: Find the target cloud disk, and click **More** > **Attach** under the **Operation** column. 
+ - **Attach a single cloud disk**: Find the target cloud disk, and click **More** > **Attach** under the **Operation** column.
  - **Attach multiple cloud disks**: Select the cloud disks, and click **Attach** above the cloud disk list to attach them in a batch.
 3. In the **Attach to instance** pop-up window, attach the disks to the instance.
 
-Select the target instance, and complete the parameters **Billing options**.
- - Unified expiry time with the instance (XXX) 
+Select the target instance, and complete the parameters **Attaching options**.
+ - Unified expiry time with the instance (XXX)
  - Enable monthly auto-renewal of the cloud disks **(recommended)**
  - Attach directly
-4. Click **Next**, and note the following in **Subsequent operations**:
-The cloud disk is offline after being manually attached. To use it, you need to log in to the instance to initialize it first.
+4. Click **Next**.
+After attaching the cloud disk, you need to log in to the instance and initialize the disk.
 5. Click **Attach now**.
 If the status of the cloud disk changes to **Attached**, the attachment is successful.
 6. Perform the subsequent operations corresponding to different cloud disk capacities.
@@ -36,13 +36,13 @@ If the status of the cloud disk changes to **Attached**, the attachment is succe
 	<td rowspan="2">Manually created</td>
 	<td>Cloud disk capacity < 2 TB</td>
 	<td>
-	  <a href="https://intl.cloud.tencent.com/document/product/362/31597">Initializing cloud disks (< 2 TB)</a>
+	  <a href="https://intl.cloud.tencent.com/document/product/362/31597">Initializing cloud disks (<2 TB)</a>
 	</td>
   </tr>
   <tr>
 	<td>Cloud disk capacity ≥ 2 TB</td>
 	<td>
-	  <a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (≥ 2 TB)</a>
+	  <a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (≥2 TB)</a>
 	</td>
   </tr>
   <tr>
@@ -52,7 +52,7 @@ If the status of the cloud disk changes to **Attached**, the attachment is succe
 	  <ul>
 		<li>Attach to Windows CVMs
 		Log in to the instance, and go to <b>Server Manager</b> <b>Storage</b> <b>Disk Management</b> to make the disk online.</li>
-		<li>Attach to Linux CVMs: Log in to the instance, and run  
+		<li>Attach to Linux CVMs: Log in to the instance, and run 
 		the command <code>mount <disk partition> <mount point></code>, such as 
 		<code>mount /dev/vdb /mnt</code>, to make the disk usable.</li>
 	  </ul>
@@ -77,7 +77,7 @@ If the status of the cloud disk changes to **Attached**, the attachment is succe
 	  <ul>
 		<li>If the snapshot uses a MBR partition,</li>
 		<li style="list-style: none">see 
-		<a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (≥ 2 TB)</a> to repartition the disk with GPT.
+		<a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (≥2 TB)</a> to repartition the disk with GPT.
 		<b>Note that this operation will delete the existing data</b></li>
 		<li>If the snapshot uses a GPT partition,
 		<ul>
@@ -105,7 +105,7 @@ All existing images already support attaching and detaching elastic cloud disks.
 
 
 <dx-alert infotype="explain" title="">
-Hot swapping is only recommended for CVMs with the following operating systems. 
+Hot swapping is only recommended for CVMs with the following operating systems.
 </dx-alert>
 
 <table>
@@ -128,7 +128,9 @@ Hot swapping is only recommended for CVMs with the following operating systems.
 ```
 modprobe acpiphp
 ```
-
+<dx-alert infotype="explain" title="">
+If you still need to load the `acpiphp` module after shutting down or re-starting the CVM, we recommend you run [Step 3](#step3) to set the `acpiphp` module to autoload.
+</dx-alert>
 3. [](id:step3)(Optional) If you need to load the `acpiphp` module automatically after shutting down or re-starting the CVM, run the following command according to the operating system.
 <dx-tabs>
 ::: CentOS 5 Series
@@ -182,14 +184,14 @@ If you use a custom image to create a Windows CVM instance, the cloud disk creat
 - The SAN policy in the custom image is `onlineAll`.
 
 #### Checking configurations
-Tencent Cloud provides pre-configured public images for Windows by default, but we still recommend that you perform the following steps to check configurations before creating a custom image. Please run the following commands in order and check the returned results.
+Tencent Cloud provides pre-configured public images for Windows by default, but we still recommend that you perform the following steps to check configurations before creating a custom image. Run the following commands in order and check the returned results.
 ```
 diskpart
 ```
 ```
 san
 ```
-As shown below:
+See below:
 <img src="https://main.qcloudimg.com/raw/edac7337395de380c0ec801646e0a627.png" width="60%">
 
 :::

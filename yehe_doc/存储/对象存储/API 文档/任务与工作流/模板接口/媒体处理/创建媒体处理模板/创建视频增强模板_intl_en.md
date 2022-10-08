@@ -38,7 +38,7 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
@@ -78,7 +78,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------- | ---------------------------------------- | --------- | ------------------------------------------ | ---- |
-| Tag                | Request | Template type: VideoProcess                                | String    | Yes   | No |
+| Tag                | Request | Template tag: VideoProcess                                | String    | Yes   | No |
 | Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (*).                    | String    | Yes   | None |
 | ColorEnhance       | Request | Color enhancement                                          | Container | No. `ColorEnhance` and `MsSharpen` cannot be empty at the same time.  | None |
 | MsSharpen       | Request | Detail enhancement                                          | Container | No. `ColorEnhance` and `MsSharpen` cannot be empty at the same time.  | None |
@@ -152,7 +152,7 @@ The nodes are as described below:
 | Name               | Response.Template | Template name                       | String    |
 | BucketId           | Response.Template | Template bucket                 | String    |
 | Category           | Response.Template | Template category: Custom or Official | String    |
-| Tag                | Response.Template | Template type: VideoProcess                                       | String    |
+| Tag                | Response.Template | Template tag: VideoProcess                                       | String    |
 | UpdateTime         | Response.Template | Update time                       | String    |
 | CreateTime         | Response.Template | Creation time                       | String    |
 | VideoProcess       | Response.Template     | Template parameters                                                | Container |
@@ -168,7 +168,7 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 
 ## Samples

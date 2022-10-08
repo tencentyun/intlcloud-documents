@@ -24,7 +24,7 @@ COS에서 글로벌 가속 도메인을 사용하는 경우 다음을 주의해�
 | 3    | GetObject               | 9    | AbortMultipartUpload    |
 | 4    | HeadObject              | 10   | CompleteMultipartUpload |
 | 5    | OptionsObject           | 11   | ListMultipartUploads    |
-| 6    | InitiateMultipartUpload |      |                         |
+| 6    | InitiateMultipartUpload | -     | -                        |
 
 
 ### 글로벌 가속 기능을 사용할 경우, 어떤 상황에서 가속 요금이 발생하나요?
