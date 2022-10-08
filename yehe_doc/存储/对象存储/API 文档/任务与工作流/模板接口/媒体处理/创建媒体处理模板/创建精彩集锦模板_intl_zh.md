@@ -37,7 +37,7 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 >
 
 #### 请求头
@@ -95,7 +95,7 @@ Container 类型 Request 的具体数据描述如下：
 | Container          | Request | 容器格式                                    | Container | 是       | 无                                                           |
 | Video              | Request | 视频信息                                    | Container | 是       | 无                                                           |
 | Audio              | Request | 音频信息                                    | Container | 否       | 无                                                           |
-| AudioMix           | Request | 混音参数                                    | Container | 否       | 仅在 Audio.Remove 为 false 时生效                            |
+| AudioMix           | Request | 混音参数, 详情见 <a href="https://intl.cloud.tencent.com/document/product/1045/49945" target="_blank">AudioMix</a>                                    | Container 数组 | 否   | 仅在 Audio.Remove 为 false 时生效 |
 
 <span id="Container"></span>
 Container 类型 Container 的具体数据描述如下：
@@ -142,16 +142,6 @@ Container 类型 Audio 的具体数据描述如下：
 | flv                 | N     | Y     | N     | Y     | N     | N     |
 | mp4                 | N     | Y     | Y     | Y     | Y     | N     |
 | hls/ts/mkv          | Y     | Y     | Y     | Y     | Y     | N     |
-
-<span id="AudioMix"></span>
-Container 类型 AudioMix 的具体数据描述如下：
-
-| 节点名称（关键字） | 父节点           | 描述                                          | 类型   | 必选 | 默认值 | 限制                                              |
-| ------------------ | ---------------- | --------------------------------------------- | ------ | ---- | ------ | ------------------------------------------------- |
-| AudioSource        | Request.AudioMix | 混音文件地址                                  | String | 是   | 无     | 需与 Input 媒体文件存储于同一 bucket              |
-| MixMode            | Request.AudioMix | 混音模式                                      | String | 否   | Repeat | 1. Repeat：背景音循环<br/>2. Once：背景音一次播放 |
-| Replace            | Request.AudioMix | 是否用混音音轨媒体替换 Input 媒体文件的原音频 | String | 否   | false  | true/false                                        |
-
 
 
 ## 响应
@@ -238,7 +228,7 @@ Container节点VideoMontage的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 
 ## 实际案例

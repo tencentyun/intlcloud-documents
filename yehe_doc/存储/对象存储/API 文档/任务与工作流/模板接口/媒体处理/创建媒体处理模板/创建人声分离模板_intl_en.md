@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to create a video enhancement template.
+This API is used to create a voice/sound separation template.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -20,7 +20,6 @@ This API is used to create a video enhancement template.
 
 
 
-
 ## Request
 
 #### Sample request
@@ -36,10 +35,12 @@ Content-Type: application/xml
 <body>
 ```
 
+
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 > - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
+
 
 #### Request headers
 
@@ -51,18 +52,15 @@ This request requires the following request body:
 
 ```shell
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>VoiceSeparate</Tag>
     <Name>TemplateName</Name>
-    <ColorEnhance>
-        <Enable>true</Enable>
-        <Contrast></Contrast>
-        <Correction></Correction>
-        <Saturation></Saturation>
-    </ColorEnhance>
-    <MsSharpen>
-        <Enable>true</Enable>
-        <SharpenLevel></SharpenLevel>
-    </MsSharpen>
+    <AudioMode>IsAudio</AudioMode>
+    <AudioConfig>
+        <Codec>aac</Codec>
+        <Samplerate>44100</Samplerate>
+        <Bitrate>128</Bitrate>
+        <Channels>4</Channels>
+    </AudioConfig>
 </Request>
 
 ```
@@ -77,29 +75,22 @@ The nodes are described as follows:
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
-| ------------------ | ------- | ---------------------------------------- | --------- | ------------------------------------------ | ---- |
-| Tag                | Request | Template tag: VideoProcess                                | String    | Yes   | No |
-| Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (*).                    | String    | Yes   | None |
-| ColorEnhance       | Request | Color enhancement                                          | Container | No. `ColorEnhance` and `MsSharpen` cannot be empty at the same time.  | None |
-| MsSharpen       | Request | Detail enhancement                                          | Container | No. `ColorEnhance` and `MsSharpen` cannot be empty at the same time.  | None |
+| ------------------ | ------- | ------------------------------------------- | --------- | -------- | ------------------------------------------------------------ |
+| Tag                | Request | Template tag: VoiceSeparate                                | String    | Yes   | None |
+| Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       | None                             |
+| AudioMode          | Request | Audio output mode                                               | String    | Yes   | IsAudio: Outputs voice<br/>IsBackground: Outputs background sound<br/>AudioAndBackground: Outputs voice and background sound |
+| AudioConfig        | Request | Audio configuration                                         | Container | Yes   |  None |
 
-<span id="ColorEnhance"></span>
-`ColorEnhance` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | -------------------- | ---------------- | ------ | -------- | ------ | ------------------------------------------- |
-| Enable                    | Request.ColorEnhance | Whether to enable color enhancement       | String | None   | false     | true, false  |
-| Contrast                  | Request.ColorEnhance | Contrast            | String | No   | None     | Value range: [0, 100] or a null string indicating automatic analysis  |
-| Correction                | Request.ColorEnhance | Color correction           | String | No   | None     | Value range: [0, 1000] or a null string indicating automatic analysis  |
-| Saturation                  | Request.ColorEnhance | Saturation            | String | No   | None     | Value range: [0, 300] or a null string indicating automatic analysis  |
-
-<span id="MsSharpen"></span>
-`MsSharpen` has the following sub-nodes:
+<span id="AudioConfig"></span>
+`AudioConfig` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | ----------------- | ---------------- | ------ | -------- | ------ | ----------------------------------------- |
-| Enable                    | Request.MsSharpen | Whether to enable detail enhancement       | String | None   | false     | true, false  |
-| SharpenLevel      | Request.MsSharpen | Enhancement level    | String | No   | None    | Value range: [0, 10] or a null string indicating automatic analysis             |
+| ------------------ | ------------- | ------------ | ------ | -------- | ------ | ------------------------------------------------------------ |
+| Codec              | Request.Audio | Codec format     | String | No   | aac    | Valid values: `aac`, `mp3`, `flac`, `amr`.                                                |
+| Samplerate         | Request.Audio | Sample rate         | String | No   | 44100  | 1. Unit: Hz<br/>2. Valid values: `8000`, `11025`, `22050`, `32000`, `44100`, `48000`, `96000`.<br/>3. If `Codec` is `aac` or `flac`, the value cannot be `8000`.<br/>4. If `Codec` is `mp3`, the value cannot be `8000` or `96000`.<br/>5. If `Codec` is `amr`, the value can only be `8000`. |
+| Bitrate            | Request.Audio | Original audio bitrate   | String | No   | None     | 1. Unit: Kbps<br/>2. Value range: [8, 1000]|
+| Channels           | Request.Audio | Number of sound channels         | String | No   | None     | 1. If `Codec` is `aac` or `flac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`. <br/>2. If `Codec` is `mp3`, the value can only be `1` or `2`. <br/>3. If `Codec` is `amr`, the value can only be `1`. |
+
 
 ## Response
 
@@ -114,23 +105,20 @@ The response body returns **application/xml** data. The following contains all t
 ```shell
 <Response>
     <Template>
-        <Tag>VideoProcess</Tag>
+        <Tag>VoiceSeparate</Tag>
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Name>TemplateName</Name>
         <BucketId>test-1234567890</BucketId>
         <Category>Custom</Category>
-        <VideoProcess>
-            <ColorEnhance>
-                <Enable>true</Enable>
-                <Contrast></Contrast>
-                <Correction></Correction>
-                <Saturation></Saturation>
-            </ColorEnhance>
-            <MsSharpen>
-                <Enable>true</Enable>
-                <SharpenLevel></SharpenLevel>
-            </MsSharpen>
-        <VideoProcess>
+        <VoiceSeparate>
+            <AudioMode>IsAudio</AudioMode>
+            <AudioConfig>
+                <Codec>mp3</Codec>
+                <Samplerate>44100</Samplerate>
+                <Bitrate>12</Bitrate>
+                <Channels>2</Channels>
+            </AudioConfig>
+        </VoiceSeparate>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
     </Template>
@@ -152,18 +140,18 @@ The nodes are as described below:
 | Name               | Response.Template | Template name                       | String    |
 | BucketId           | Response.Template | Template bucket                 | String    |
 | Category           | Response.Template | Template category: Custom or Official | String    |
-| Tag                | Response.Template | Template tag: VideoProcess                                       | String    |
+| Tag                | Response.Template | Template tag: VoiceSeparate                                       | String    |
 | UpdateTime         | Response.Template | Update time                       | String    |
 | CreateTime         | Response.Template | Creation time                       | String    |
-| VideoProcess       | Response.Template     | Template parameters                                                | Container |
+| VoiceSeparate      | Response.Template | Template parameters                                                | Container |
 
-<span id="VideoProcess"></span>
-`VideoProcess` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description |
-| :----------------- | :----------------------------- | :-------------------------------- |
-| ColorEnhance       | Response.Template.VideoProcess | Same as the `Request.ColorEnhance` in the request body.  |
-| MsSharpen          | Response.Template.VideoProcess | Same as the `Request.MsSharpen` in the request body.     |
+`VoiceSeparate` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+| :----------------- | :------------------------------ | :------------------------------- | :-------- |
+| AudioMode          | Response.Template.VoiceSeparate | Same as `Request.AudioMode` in the request body.          | String |
+| AudioConfig        | Response.Template.VoiceSeparate | Same as `Request.AudioConfig` in the request body.        | Container |
 
 
 #### Error codes
@@ -183,18 +171,15 @@ Content-Length: 1666
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>VoiceSeparate</Tag>
     <Name>TemplateName</Name>
-    <ColorEnhance>
-        <Enable>true</Enable>
-        <Contrast></Contrast>
-        <Correction></Correction>
-        <Saturation></Saturation>
-    </ColorEnhance>
-    <MsSharpen>
-        <Enable>true</Enable>
-        <SharpenLevel></SharpenLevel>
-    </MsSharpen>
+    <AudioMode>IsAudio</AudioMode>
+    <AudioConfig>
+        <Codec>aac</Codec>
+        <Samplerate>44100</Samplerate>
+        <Bitrate>128</Bitrate>
+        <Channels>4</Channels>
+    </AudioConfig>
 </Request>
 ```
 
@@ -211,21 +196,20 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 <Response>
     <Template>
-        <Tag>VideoProcess</Tag>
+        <Tag>VoiceSeparate</Tag>
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Name>TemplateName</Name>
         <BucketId>test-1234567890</BucketId>
         <Category>Custom</Category>
-        <ColorEnhance>
-            <Enable>true</Enable>
-            <Contrast></Contrast>
-            <Correction></Correction>
-            <Saturation></Saturation>
-        </ColorEnhance>
-        <MsSharpen>
-            <Enable>true</Enable>
-            <SharpenLevel></SharpenLevel>
-        </MsSharpen>
+        <VoiceSeparate>
+            <AudioMode>IsAudio</AudioMode>
+            <AudioConfig>
+                <Codec>mp3</Codec>
+                <Samplerate>44100</Samplerate>
+                <Bitrate>12</Bitrate>
+                <Channels>2</Channels>
+            </AudioConfig>
+        </VoiceSeparate>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
     </Template>

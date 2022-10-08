@@ -1,6 +1,6 @@
 ## 功能描述
 
-更新超分辨率模板。
+创建超分辨率模板。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -20,13 +20,12 @@
 
 
 
-
 ## 请求
 
 #### 请求示例
 
 ```shell
-PUT /template/<TemplateId> HTTP/1.1
+POST /template HTTP/1.1
 Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -57,13 +56,25 @@ Content-Type: application/xml
     <EnableScaleUp>true</EnableScaleUp>
     <Version>Enhance</Version>
 </Request>
+
 ```
 
 具体数据描述如下：
 
-| 节点名称（关键字） | 父节点 | 描述                                                | 类型      | 是否必选 |
-| :----------------- | :----- | :-------------------------------------------------- | :-------- | -------- |
-| Request            | 无     | <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">同创建超分辨率模板接口的 Request</a> | Container | 是       |
+| 节点名称（关键字） | 父节点 | 描述           | 类型      | 是否必选 |
+| ------------------ | ------ | -------------- | --------- | -------- |
+| Request            | 无     | 保存请求的容器 | Container | 是       |
+
+<span id="Request"></span>
+Container 类型 Request 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点  | 描述                                        | 类型   | 是否必选 | 限制                                         |
+| ------------------ | ------- | ------------------------------------------- | ------ | -------- | -------------------------------------------- |
+| Tag                | Request | 模板类型：SuperResolution                   | String | 是       | 无                                           |
+| Name               | Request | 模板名称：仅支持中文、英文、数字、\_、-和\* | String | 是       | 无                                           |
+| Resolution         | Request | 分辨率选项                                  | String | 是       | 1. sdtohd：标清到超清<br>2. hdto4k：高清到4K |
+| EnableScaleUp      | Request | 自动缩放开关，默认关闭                      | String | 否       | true、false                                  |
+| Version            | Request | 版本，默认值 Base                           | String | 否       | 1. Base：基础版<br>2. Enhance：增强版        |
 
 ## 响应
 
@@ -73,7 +84,7 @@ Content-Type: application/xml
 
 #### 响应体
 
-该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
+该响应体返回为 **application/xml** 数据, 包含完整节点数据的内容展示如下：
 
 ```shell
 <Response>
@@ -81,6 +92,8 @@ Content-Type: application/xml
         <Tag>SuperResolution</Tag>
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Name>TemplateName</Name>
+        <BucketId>test-1234567890</BucketId>
+        <Category>Custom</Category>
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
@@ -94,9 +107,31 @@ Content-Type: application/xml
 
 具体的数据内容如下：
 
-| 节点名称（关键字） | 父节点 | 描述                                                         | 类型      |
-| :----------------- | :----- | :----------------------------------------------------------- | :-------- |
-| Response           | 无     | <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">同创建超分辨率模板接口的 Response</a> | Container |
+| 节点名称（关键字） | 父节点 | 描述           | 类型      |
+| :----------------- | :----- | :------------- | :-------- |
+| Response           | 无     | 保存结果的容器 | Container |
+
+<span id="Response"></span>
+Container 节点 Response 的内容：
+
+| 节点名称（关键字） | 父节点            | 描述                           | 类型      |
+| :----------------- | :---------------- | :----------------------------- | :-------- |
+| TemplateId         | Response.Template | 模板 ID                        | String    |
+| Name               | Response.Template | 模板名称                       | String    |
+| BucketId           | Response.Template | 模板所属存储桶                 | String    |
+| Category           | Response.Template | 模板属性，Custom 或者 Official | String    |
+| Tag                | Response.Template | 模板类型，SuperResolution      | String    |
+| UpdateTime         | Response.Template | 更新时间                       | String    |
+| CreateTime         | Response.Template | 创建时间                       | String    |
+| SuperResolution    | Response.Template | 详细的模板参数                 | Container |
+
+
+Container 节点 SuperResolution 的内容：
+
+| 节点名称（关键字） | 父节点                            | 描述                               | 类型   |
+| :----------------- | :-------------------------------- | :--------------------------------- | :----- |
+| Resolution         | Response.Template.SuperResolution | 同请求体中的 Request.Resolution    | String |
+| EnableScaleUp      | Response.Template.SuperResolution | 同请求体中的 Request.EnableScaleUp | String |
 
 
 #### 错误码
@@ -108,7 +143,7 @@ Content-Type: application/xml
 #### 请求
 
 ```shell
-PUT /template/t1460606b9752148c4ab182f55163ba7cd HTTP/1.1
+POST /template HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
 Host: test-1234567890.ci.ap-beijing.myqcloud.com
 Content-Length: 1666
@@ -139,6 +174,8 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <Tag>SuperResolution</Tag>
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Name>TemplateName</Name>
+        <BucketId>test-1234567890</BucketId>
+        <Category>Custom</Category>
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>

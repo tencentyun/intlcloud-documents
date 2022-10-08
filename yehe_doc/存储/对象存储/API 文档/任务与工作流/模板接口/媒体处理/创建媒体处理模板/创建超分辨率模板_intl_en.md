@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to create a video enhancement template.
+This API is used to create a super resolution template.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -8,7 +8,7 @@ This API is used to create a video enhancement template.
             <div class="rno-api-explorer-title">
                 API Explorer is recommended.
             </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateConcatTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateAnimationTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
@@ -17,7 +17,6 @@ This API is used to create a video enhancement template.
         </div>
     </div>
 </div>
-
 
 
 
@@ -51,18 +50,11 @@ This request requires the following request body:
 
 ```shell
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>SuperResolution</Tag>
     <Name>TemplateName</Name>
-    <ColorEnhance>
-        <Enable>true</Enable>
-        <Contrast></Contrast>
-        <Correction></Correction>
-        <Saturation></Saturation>
-    </ColorEnhance>
-    <MsSharpen>
-        <Enable>true</Enable>
-        <SharpenLevel></SharpenLevel>
-    </MsSharpen>
+    <Resolution>sdtohd</Resolution>
+    <EnableScaleUp>true</EnableScaleUp>
+    <Version>Enhance</Version>
 </Request>
 
 ```
@@ -77,29 +69,12 @@ The nodes are described as follows:
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
-| ------------------ | ------- | ---------------------------------------- | --------- | ------------------------------------------ | ---- |
-| Tag                | Request | Template tag: VideoProcess                                | String    | Yes   | No |
-| Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (*).                    | String    | Yes   | None |
-| ColorEnhance       | Request | Color enhancement                                          | Container | No. `ColorEnhance` and `MsSharpen` cannot be empty at the same time.  | None |
-| MsSharpen       | Request | Detail enhancement                                          | Container | No. `ColorEnhance` and `MsSharpen` cannot be empty at the same time.  | None |
-
-<span id="ColorEnhance"></span>
-`ColorEnhance` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | -------------------- | ---------------- | ------ | -------- | ------ | ------------------------------------------- |
-| Enable                    | Request.ColorEnhance | Whether to enable color enhancement       | String | None   | false     | true, false  |
-| Contrast                  | Request.ColorEnhance | Contrast            | String | No   | None     | Value range: [0, 100] or a null string indicating automatic analysis  |
-| Correction                | Request.ColorEnhance | Color correction           | String | No   | None     | Value range: [0, 1000] or a null string indicating automatic analysis  |
-| Saturation                  | Request.ColorEnhance | Saturation            | String | No   | None     | Value range: [0, 300] or a null string indicating automatic analysis  |
-
-<span id="MsSharpen"></span>
-`MsSharpen` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
-| ------------------ | ----------------- | ---------------- | ------ | -------- | ------ | ----------------------------------------- |
-| Enable                    | Request.MsSharpen | Whether to enable detail enhancement       | String | None   | false     | true, false  |
-| SharpenLevel      | Request.MsSharpen | Enhancement level    | String | No   | None    | Value range: [0, 10] or a null string indicating automatic analysis             |
+| ------------------ | ------- | ------------------------------------------- | ------ | -------- | -------------------------------------------- |
+| Tag                | Request | Template tag: SuperResolution                                | String    | Yes   | None |
+| Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       | None |
+| Resolution         | Request | Resolution option                                             | String    | Yes   | 1. sdtohd: SD to HD<br>2. hdto4k: HD to 4K |
+| EnableScaleUp      | Request |   Whether to enable automatic scaling, which is disabled by default.                                    | String    | No   | true/false |
+| Version            | Request | Version. Default value: Base. | String | No | 1. Base: Basic version<br>2. Enhance: Enhanced version |
 
 ## Response
 
@@ -114,23 +89,16 @@ The response body returns **application/xml** data. The following contains all t
 ```shell
 <Response>
     <Template>
-        <Tag>VideoProcess</Tag>
+        <Tag>SuperResolution</Tag>
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Name>TemplateName</Name>
         <BucketId>test-1234567890</BucketId>
         <Category>Custom</Category>
-        <VideoProcess>
-            <ColorEnhance>
-                <Enable>true</Enable>
-                <Contrast></Contrast>
-                <Correction></Correction>
-                <Saturation></Saturation>
-            </ColorEnhance>
-            <MsSharpen>
-                <Enable>true</Enable>
-                <SharpenLevel></SharpenLevel>
-            </MsSharpen>
-        <VideoProcess>
+        <SuperResolution>
+            <Resolution>sdtohd</Resolution>
+            <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
+        </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
     </Template>
@@ -152,24 +120,23 @@ The nodes are as described below:
 | Name               | Response.Template | Template name                       | String    |
 | BucketId           | Response.Template | Template bucket                 | String    |
 | Category           | Response.Template | Template category: Custom or Official | String    |
-| Tag                | Response.Template | Template tag: VideoProcess                                       | String    |
+| Tag                | Response.Template | Template tag: SuperResolution                                       | String    |
 | UpdateTime         | Response.Template | Update time                       | String    |
 | CreateTime         | Response.Template | Creation time                       | String    |
-| VideoProcess       | Response.Template     | Template parameters                                                | Container |
+| SuperResolution    | Response.Template     | Template parameters                                                | Container |
 
-<span id="VideoProcess"></span>
-`VideoProcess` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description |
-| :----------------- | :----------------------------- | :-------------------------------- |
-| ColorEnhance       | Response.Template.VideoProcess | Same as the `Request.ColorEnhance` in the request body.  |
-| MsSharpen          | Response.Template.VideoProcess | Same as the `Request.MsSharpen` in the request body.     |
+`SuperResolution` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+| :----------------- | :-------------------------------- | :--------------------------------- | :----- |
+| Resolution         | Response.Template.SuperResolution | Same as `Request.Resolution` in the request body.       | String |
+| EnableScaleUp      | Response.Template.SuperResolution | Same as `Request.EnableScaleUp` in the request body.    | String |
 
 
 #### Error codes
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
-
 
 ## Samples
 
@@ -183,18 +150,11 @@ Content-Length: 1666
 Content-Type: application/xml
 
 <Request>
-    <Tag>VideoProcess</Tag>
+    <Tag>SuperResolution</Tag>
     <Name>TemplateName</Name>
-    <ColorEnhance>
-        <Enable>true</Enable>
-        <Contrast></Contrast>
-        <Correction></Correction>
-        <Saturation></Saturation>
-    </ColorEnhance>
-    <MsSharpen>
-        <Enable>true</Enable>
-        <SharpenLevel></SharpenLevel>
-    </MsSharpen>
+    <Resolution>sdtohd</Resolution>
+    <EnableScaleUp>true</EnableScaleUp>
+    <Version>Enhance</Version>
 </Request>
 ```
 
@@ -211,21 +171,16 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 <Response>
     <Template>
-        <Tag>VideoProcess</Tag>
+        <Tag>SuperResolution</Tag>
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Name>TemplateName</Name>
         <BucketId>test-1234567890</BucketId>
         <Category>Custom</Category>
-        <ColorEnhance>
-            <Enable>true</Enable>
-            <Contrast></Contrast>
-            <Correction></Correction>
-            <Saturation></Saturation>
-        </ColorEnhance>
-        <MsSharpen>
-            <Enable>true</Enable>
-            <SharpenLevel></SharpenLevel>
-        </MsSharpen>
+        <SuperResolution>
+            <Resolution>sdtohd</Resolution>
+            <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
+        </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
     </Template>
