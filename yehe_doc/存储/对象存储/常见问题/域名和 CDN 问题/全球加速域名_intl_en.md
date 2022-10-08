@@ -24,7 +24,7 @@ Currently, global acceleration domain names support file upload and download. Re
 | 3    | GetObject               | 9    | AbortMultipartUpload    |
 | 4    | HeadObject              | 10   | CompleteMultipartUpload |
 | 5    | OptionsObject           | 11   | ListMultipartUploads    |
-| 6    | InitiateMultipartUpload |      |                         |
+| 6    | InitiateMultipartUpload | -     | -                        |
 
 
 ### Under what circumstances will global acceleration be charged?
