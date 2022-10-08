@@ -24,7 +24,7 @@ COSでグローバルアクセラレーションドメイン名を使用する�
 | 3    | GetObject               | 9    | AbortMultipartUpload    |
 | 4    | HeadObject              | 10   | CompleteMultipartUpload |
 | 5    | OptionsObject           | 11   | ListMultipartUploads    |
-| 6    | InitiateMultipartUpload |      |                         |
+| 6    | InitiateMultipartUpload | -     | -                        |
 
 
 ### グローバルアクセラレーション機能を使用すると、どのような場合にアクセラレーション料金が発生しますか。
