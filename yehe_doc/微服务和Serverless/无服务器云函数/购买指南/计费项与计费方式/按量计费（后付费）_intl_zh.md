@@ -28,6 +28,7 @@
 <li>Web 函数响应流量费用（Web 函数不同类型触发器计费方式不同，详情见 <a href="https://intl.cloud.tencent.com/document/product/583/45902">Web 函数计费说明</a>）</li>
 </td>
 </table>
+
 资源使用、调用次数、外网出流量、预置并发闲置量以及基础套餐单价请参见 [产品定价](https://intl.cloud.tencent.com/document/product/583/12281)。
 
 ## 计量原则
