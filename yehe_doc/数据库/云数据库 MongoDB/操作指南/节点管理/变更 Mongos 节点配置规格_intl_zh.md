@@ -8,7 +8,7 @@
 
 ## 版本说明
 
-MongoDB 4.0、4.2版本支持调整 Mongos 的规格。
+MongoDB 4.4、4.2、4.0版本支持调整 Mongos 的规格。
 
 ## 前提条件
 
@@ -25,7 +25,7 @@ MongoDB 4.0、4.2版本支持调整 Mongos 的规格。
 5. 单击其实例 ID，进入**实例详情**页面，单击**节点管理**页签。
 6. 在**节点管理**页面，单击 **Mongos 节点**页签。
 7. 在 Mongos 节点页面，单击 **Mongos 配置变更**，在弹出的对话框，配置新的 Mongos 规格。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/cca2cb793fa943f486fb7832abfc98db.png"  style="zoom:60%;">
+
 <table>
 <thead><tr><th>参数名称</th><th>参数解释</th></tr></thead>
 <tbody><tr>
