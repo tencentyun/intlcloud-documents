@@ -6,7 +6,7 @@ A project is a set of applications or services that share resources. Application
 You can specify an appropriate project for your database instances to facilitate collaboration. In this way, you can easily manage your instances globally and stay on top of the operational conditions of the entire project.
 
 ## Version Description
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support instance project adjustment.
+Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support instance project adjustment.
 
 ## Billing Description
 Changing the instance project doesn't incur additional fees.
