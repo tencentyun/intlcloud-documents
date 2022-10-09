@@ -1,195 +1,263 @@
-A version number is in the format of `major.minor.patch`.
-  - `major`: Major version number. If there is major version refactoring, this field will be incremented. Generally, the APIs of different major versions are not compatible with each other.
-  - `minor`: Minor version number. The APIs of different minor versions are compatible with each other. If there is a new or optimized API, this field will be incremented.
-  - `patch`: Patch number. If there is a feature improvement or bug fix, this field will be incremented.
+A version number is in the format of `major.minor.patch`, where:
 
->!
-> - Please update to the latest version in a timely manner for service stability and better online support.
-> - For notes on version updates, see [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
+- `major`: major version number. If there is major version refactoring, this field will be incremented. Generally, the APIs of different major versions are not compatible with each other.
+- `minor`: minor version number. The APIs of different minor versions are compatible with each other. If there is a new or optimized API, this field will be incremented.
+- `patch`: patch number. If there is a feature improvement or bug fix, this field will be incremented.
 
-## Version 4.13.0 Released on July 8, 2022
+> !
+> - You are advised to update to the latest version in a timely manner for service stability and better online support.
+> - For notes on version updates, please see [Update Guidelines](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
 
-**New features**
- Added the [Client.destroy](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#destroy) API, complementing the lifecycle of [Client](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html).
+## Version 4.14.4 @2022.09.30
 
-**Improvements**
+**Improvement**
 
-- Improved the encoding of the low-quality stream, delivering smoother playback.
-- Added an event for successful auto capturing resumption: [DEVICE_AUTO_RECOVERED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-StreamEvent.html#.DEVICE_AUTO_RECOVERED).
+- Avoid the issue that Mac Firefox reports an error when camera captures below 352 * 288 resolution.[Firefox issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1529907).
+- Optimize task scheduling and reduce resource consumption.
 
-**Bug fixing**
-- Fixed the issue where, after [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode) is called and the SDK is disconnected for longer than 30 seconds, stream mixing does not continue upon reconnection.
-- Fixed the issue where, after [Client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startPublishCDNStream) is called and the SDK is disconnected for longer than 30 seconds, publishing to CDN is discontinued even after reconnection.
+**Bug Fixed**
 
-## Version 4.12.7 Released on June 17, 2022
+- Fix the issue that the videoTrack occasionally fails when unplug and plug in camera after replacing videoTrack with localStream.replaceTrack.
 
-**Improvements**
-- Added the `mixUser.renderMode` parameter to [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode). You can use it to set the rendering mode of the videos of users whose streams are mixed.
-- Changed the default value of `video profile` to `480p_2`, which uses less upstream bandwidth while delivering the same video quality. For details, see [LocalStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoProfile).
-- Improved the success rate of automatic playback resumption.
-- Improved the accuracy of the muting status after a disconnection and reconnection.
-- Fixed the issue where, on Safari 15.1, the page crashes when `muteVideo` is called. For details, see [webkit bug](https://bugs.webkit.org/show_bug.cgi?id=232006).
+## Version 4.14.3 @2022.09.09
 
-**Bug fixing**
-Fixed the issue where the `stream-added` event is sometimes not thrown in the dual-stream mode (manual subscription).
+**Bug Fixed**
 
-## Version 4.12.6 Released on June 10, 2022
+- Fixed the issue that occasionally fails to TRTC.getCameras() in 'use strict' mode when using Chrome Privacy Mode.
+- Fixed the problem of abnormal volume acquisition when entering a room without interaction on the page.
 
-**Improvements**
-Added logic to prevent repeated room entry for `client.join`. For details, see [SDK Upgrade Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
+## Version 4.14.2 @2022.08.26
 
-## Version 4.12.5 Released on May 20, 2022
+**Feature**
 
-**Bug fixing**
+- Support calling the native interface [getCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceInfo/getCapabilities) on the device item obtained from [TRTC.getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#getCameras) and [TRTC.getMicrophone](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#getMicrophones).
 
-- Fixed the issue where an error occurs when the npm package `trtc.umd.js` is loaded in Internet Explorer.
-- Fixed the occasional failure to play the low-quality stream after a subscription change.
-- Fixed the issue where, on Chrome 70 and earlier versions, moving the div container causes playback to pause.
+**Improvement**
 
-## Version 4.12.4 Released on May 7, 2022
+- Optimize the recovery logic of device capture abnormality in the scenarios of iOS (receiving phone call, alarm, waking up Siri).
+- Optimize the H264 support detection logic to avoid the issue that Android Chrome 88 or below does not support H264 when the browser is first opened.
 
-**Improvements**
+## Version 4.14.1 @2022.08.11
 
-- Sped up room entry.
-- Optimized the logic for switching to the low-quality stream.
+**Feature**
 
-**Bug fixing**
+- Support for sending SEI messages, [Client.sendSEIMessage](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#sendSEIMessage).
 
-- Fixed the occasional failure to invoke the `stream-added` event.
-- Fixed the failure to use Logitech cameras to capture 480p videos on Firefox.
-- Fixed the issue where, when the SDK is imported into WKWebview for iPad, an error occurs.
+**Improvement**
 
-## Version 4.12.3 Released on April 19, 2022
+- Improve [Client.switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#switchRole) interface robustness.
 
-**Improvements**
+## Version 4.14.0 @2022.08.05
 
-- Optimized the logic of high-resolution capturing on iOS 13 and 14.
-- Optimized the event listening logic to avoid cases where the SDK captures errors on the project side.
-- Added support for volume detection on Safari to help with dashboard troubleshooting.
+**Breaking Change**
 
-**Bug fixing**
+- Modify the callback parameters of the [Client.on('client-banned')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#CLIENT_BANNED) event, to be noted when upgrading.
 
-- Fixed occasional failure to reconnect after a disconnection in the live streaming mode.
-- Fixed error getting the audio volume on iOS 11.
+**Feature**
 
-## Version 4.12.2 Released on April 2, 2022
+- Support for setting capture volume, [LocalStream.setAudioCaptureVolume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioCaptureVolume).
 
-**Improvements**
+**Improvement**
 
-Optimized the volume detecting logic, lowering memory usage and overhead.
+- Modify the [Client.on('client-banned')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#CLIENT_BANNED) event callback parameter to add a passive kickout reason.
+- Avoid the issue that Firefox screen sharing capture resolution is not as expected.
+- Avoid the issue of occasional black screen of local stream playback in iOS Safari.
+- Optimize small stream encoding performance for low-end PC devices.
 
-**Bug fixing**
+**Bug Fixed**
 
-- Fixed the issue where users are occasionally removed from the room (receive the `client-banned` callback) if they keep the SDK in the background for a long time.
-- Fixed the issue where, on iOS 15.2-15.4, echo is heard after camera switch. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 11](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
+- Fix the issue that the screen sharing bitrate is not as expected in certain scenarios.
 
-## Version 4.12.1 Released on March 18, 2022
+## Version 4.13.0 @2022.07.08
 
-**Notes**
+**Feature**
 
-- See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
+- Add an new API [Client.destroy](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#destroy). [Client life cycle](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html)
 
-**Improvements**
+**Improvement**
 
-- You can now call the [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play) API multiple times and use it to turn on/off the mirror mode and set playback parameters in real time.
-- Optimized the auto capturing resumption logic to fix occasional failure to watermark published streams.
+- Improve the encoding performance of small stream.
+- Add an new stream event: [DEVICE_AUTO_RECOVERED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-StreamEvent.html#.DEVICE_AUTO_RECOVERED).
 
-**Bug fixing**
+**Bug Fixed**
 
-- Fixed the issue where, after the local user calls `muteVideo` or `unmuteVideo`, remote users see a black screen when trying to play the local user’s small stream.
-- Fixed the issue where the `stream-subscribed` callback is received after users switch to the small stream.
+- Fix the issue that when [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode) interface initiates cloud mixing, the mixing does not continue after the network is disconnected for more than 30s and the network is restored.
 
-**Breaking change**
+- Fix the problem that when [Client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startPublishCDNStream) interface pushes the stream to CDN, the network is disconnected for more than 30s and the CDN stream is disconnected after the network is restored.
 
-- Deprecated the `mirror` property of the [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createStream) API. Please use [stream.play(elementId, { mirror: true })](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#play) instead.
+## Version 4.12.7 @2022.06.17
 
-## Version 4.12.0 Released on March 4, 2022
+- Change default video profile to `480p_2`, refer to [LocalStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoProfile).
+- Improve auto-resume playback success rate.
+- Improve mute state accuracy after disconnection and reconnection.
+- Circumvent the Mac Safari 15.1 muteVideo page crash issue。[webkit bug](https://bugs.webkit.org/show_bug.cgi?id=232006).
 
-**Notes**
-See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
+**Bug Fixed**
 
-**New features**
-Made [client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType) an async API, which returns a promise that indicates whether the switch is successful.
+- Fix the problem that `stream-added` event is not thrown occasionally in Dual-Stream Mode (non-autoSubscribe)。
 
-**Improvements**
-Improved scheduling accuracy for services outside the Chinese mainland.
+## Version 4.12.6 @2022.06.10
 
-**Bug fixing**
-Fixed the occasional issue where a user is removed from the room due to `user_time_out`.
+**Improvement**
 
-## Version 4.11.13 Released on February 17, 2022
+- Add avoid-repeated join room logic for client.join api. refer to: [Update Guidelines](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)
 
-**Improvements**
-- Updated the TypeScript declaration file in the npm package.
-- Optimized the parameter authentication logic of [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play).
+## Version 4.12.5 @2022.05.20
 
-**Bug fixing**
+**Bug Fixed**
 
-- Fixed the occasional issue where, on iOS 13, before access is granted, an error occurs when [LocalStream.initialize](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#initialize) is called.
-- Fixed the occasional issue where [AUDIO_VOLUME](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.AUDIO_VOLUME) returns 0.
+- Fix the issue that loading trtc.umd.js cause error in IE browser.
+- Fix the issue that small stream plays abnormally when the subscription status changes.
+- Add workaround for Chrome 70 and below, where moving the div container causes playback to pause.
 
-## Version 4.11.12 Released on January 11, 2022
+## Version 4.12.4 @2022.05.07
 
-**Improvements**
+**Improvement**
 
-- Published a TypeScript declaration file to the npm package.
-- Optimized the implementation logic of `stream.close()`.
-- Optimized the signaling logic for when `publish`/`unpublish` is called frequently.
+- Optimize the process of joining room and reduce the time taken to join room.
+- Optimize the logic of switching small stream.
 
-**Bug fixing**
+**Bug Fixed**
 
-- Fixed the issue where, on iOS 15.1, desktop webpages crash when streams are published. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
-- Fixed the issue where [LocalStream.setAudioProfile('high')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setAudioProfile) sets the bitrate to 192 Kbps.
+- Fix the issue that stream-added event is not fired occasionally.
+- Fix the issue that Firefox can't capture 480p with Logitech camera.
+- Fix the issue that iPad WKWebview reports an error when loading sdk
 
+## Version 4.12.3 @2022.04.19
 
-## Version 4.11.11 Released on December 17, 2021
+**Improvement**
 
-**Improvements**
+- Optimize iOS 13 and 14 high-resolution capture logic.
+- Optimize event listening logic to avoid SDK catching business-side errors.
+- Added Safari volume reporting for easy dashboard troubleshooting.
 
-- Optimized the auto capturing resumption logic, circumventing the issue of failure to resume capturing on some low-end Android devices.
-- Optimized the autoplay pop-up style.
+**Bug Fixed**
 
-## Version 4.11.10 Released on December 03, 2021
+- Fix the issue that the SDK failed to reconnect after the network disconnection was restored in live mode.
+- Fix the issue of iOS 11 getting volume abnormality.
 
-**Bug fixing**
+## Version 4.12.2 @2022.04.02
 
-- Fixed failure to disable the autoplay pop-up via `enableAutoPlayDialog: false`.
-- Fixed failure of the SDK to intercept repeated `stream.play` calls.
+**Improvement**
+
+- Optimize volume calculation logic to reduce memory usage and performance overhead.
+
+**Bug Fixed**
+
+- Fix the issue that user was kicked occasionally when page is invisible for long time.
+- Fix the echo issue after switching camera in iOS 15.2 ~ 15.4. Reference: [iOS Safari known issue case 11](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
+
+## Version 4.12.1 @2022.03.18
+
+**Note**
+
+- Before upgrading, please read the [Update Guidelines](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
+
+**Improvement**
+
+- [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#play) supports repeat calls, mirroring, and dynamic modification of playback parameters.
+- Improve the automatic recovery logic.
+
+**Bug Fixed**
+
+- Fix the issue of black screen of small streams at the remote end after muteVideo/unmuteVideo.
+- Fix the issue that `stream-subscribed` event is thrown after client.setRemoteVideoStreamType.
+
+**Breaking Change**
+
+- The `mirror` parameter of [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createStream) is deprecated, use [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#play) instead.
+
+## Version 4.12.0 @2022.03.04
+
+**Note**
+
+- Before upgrading, please read the [Update Guidelines](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
+
+**Feature**
+
+- [client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setRemoteVideoStreamType) return a Promise object.
+
+**Improvement**
+
+- Improve the accuracy of overseas server scheduling.
+
+**Bug Fixed**
+
+- Fix the issue of receiving unexpected [CLIENT_BANNED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.CLIENT_BANNED) event occasionally.
+
+## Version 4.11.13 @2022.02.17
+
+**Improvement**
+
+- Update Typescript decalration file on npm package.
+- Improve the param validation logic of [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#play).
+
+**Bug Fixed**
+
+- [LocalStream.initialize](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize) failed before user grant permission on iOS 13.
+- The event [AUDIO_VOLUME](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.AUDIO_VOLUME) may received value of 0.
+
+## Version 4.11.12 @2022.01.11
+
+**Improvement**
+
+- Add `index.d.ts` file to npm package.
+- Optimize the logic of [stream.close()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#close).
+- Optimize the signaling interaction logic of frequent publish/unpublish on the push side.
+
+**Bug Fixed**
+
+- Page crash when useing "Request Desktop Website" to make a call on iOS 15.1. Reference: [Safari issues case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
+- The bitrate of [LocalStream.setAudioProfile('high')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioProfile) is set to 192kbps(128kbps expected).
+
+## Version 4.11.11 @2021.12.17
+
+**Improvement**
+
+- Optimize the logic of capture recovery when device capturing error.
+- Optimize the style of AutoplayDialog.
+
+## Version 4.11.10 @2021.12.03
+
+**Bug Fixed**
+
+- AutoPlayDialog cannot be disabled by setting `enableAutoPlayDialog` to false.
+- repeated calls to `stream.play` are not blocked by SDK.
 
 ## Version 4.11.9 Released on November 26, 2021
 
-**Notes**
-See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
+**Note**
 
-**Improvements**
+- Before upgrading, please read the [Update Guidelines](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
 
-- Supported displaying a pop-up window when autoplay fails. For details, see [Use the autoplay dialog provided by SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-21-advanced-auto-play-policy.html#h2-3).
-- Fixed the issue where **the SDK crashes whenever streams are published on iOS 15.1**. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
-- To avoid the potential no audio issue, [TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#getMicrophones) no longer returns mics whose `deviceId` is `communications`. For details, see [WebRTC Known Issues and Solutions > Chrome > Case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-2).
-- Optimized the `switchDevice` policy.
-- Improved the accuracy of the encoding/decoding support test in the context of WebView.
-- Improved parameter verification for [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream), [client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream), [client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode), and [client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopMixTranscode).
+**Improvement**
 
-**Bug fixing**
+- To solve the autoplay failure issue, SDK will show an UI dialog to guide users to click the page when autoplay failure occurs. Reference: [Suggested Solutions for Autoplay Restrictions](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-21-advanced-auto-play-policy.html).
+- Optimize the workaround logic of page crash issue in iOS 15.1. Reference: [Safari issues case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
+- To avoid possible audio playback silent issue, [TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getMicrophones) no longer returns microphones with deviceId 'default' & 'communications'. Reference: [Chrome issues case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-2).
+- Optimize logic of [LocalStream.switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice).
+- Improve the accuracy of codec support detection in webview environments.
 
-- Fixed the occasional “TRTC not supported” error when `client.publish` is called.
+**Bug Fixed**
+
+- client.publish occasionally throws an error that TRTC is not supported.
 
 ## Version 4.11.8 Released on November 5, 2021
 
-**Improvements**
+**Improvement**
 
-- Circumvented the black screen issue during video playback on iOS 15.0. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
-- Circumvented the issue where the SDK crashes whenever streams are published on iOS 15.1. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4).
+- Add workaround for the occasional video playback black screen issue in iOS 15.0. Reference: [Safari issues case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
+- Add workaround for the page crash issue in iOS 15.1. Reference: [Safari issues case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
 
 ## Version 4.11.7 Released on September 30, 2021
 
-**Improvements**
+**Improvement**
 
-- Required parameter verification for key APIs.
-- Supported error messages in Chinese in the development mode (`LogLevel` set to [Debug](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.LogLevel)).
-- Improved the recovery success rate in cases of device capturing error.
-- Optimized the logic of call resumption after the system wakes up from hibernation.
-- Added `trtc.esm.js` and `trtc.umd.js` to meet the needs in different scenarios. For details, please see [TRTC Web SDK](https://www.npmjs.com/package/trtc-js-sdk).
+- Add strong verification of API params.
+- Add Chinese error message for development mode(Loglevel is set to [Debug](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.LogLevel)).
+- Improve the success rate of automatic recapture in case of media device capture exceptions.
+- Optimize the call recovery logic after system sleep and reopen.
+- Add trtc.esm.js and trtc.umd.js to npm package.
 
 ## Version 4.11.6 Released on September 10, 2021
 
@@ -202,13 +270,11 @@ See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-inf
 **Improvements**
 
 - Supported dynamic signaling channel scheduling, improving connection success rate under poor network conditions.
-- Supported cross-room stream mixing. For details, see [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode).
 
 **Bug fixing**
 
 - Fixed occasional failure to receive the `stream-added` event callback after reconnection.
 - Fixed the occasional issue where the frame rate drops to 0 after screen sharing continues for a long time.
-
 
 ## Version 4.11.4 Released on August 20, 2021
 
@@ -241,26 +307,25 @@ See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-inf
 **Improvements**
 
 - Supported TURN server scheduling, improving connection success rate.
-- Added the `hasSmall` property, which indicates whether a remote user has substream video, to [Client.getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteMutedState).
+- Added the `hasSmall` property, which indicates whether a remote user has substream video, to [Client.getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteMutedState).
 
 **Bug fixing**
 
 - Fixed the issue where the SDK is unavailable when LocalStorage is disabled.
 - Fixed the occasional issue where API requests are not rejected when publishing exceptions occur.
 
-
 ## Version 4.11.1 Released on June 25, 2021
 
 **Improvements**
 
-- Supported the beauty filter plugin. For details, see [Enabling Beauty Filters](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html).
+- Supported the beauty filter plugin. For details, please see [Enabling Beauty Filters](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html).
 - Improved statistical accuracy.
 
 ## Version 4.11.0 Released on June 18, 2021
 
 **New features**
 
-Supported the dual-stream mode. For detailed directions, see [Enabling Dual-Stream Mode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html).
+Supported dual streams (primary and substream). For detailed directions, please see [Enabling Dual Streams](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html).
 
 **Improvements**
 
@@ -271,7 +336,7 @@ Optimized the event notification order.
 **Improvements**
 
 - Optimized the quality measuring logic and allowed getting call quality statistics via a server-side API.
-- Added statistics on RTT and packet loss to [ClientEvent.NETWORK_QUALITY](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.NETWORK_QUALITY).
+- Added statistics on RTT and packet loss to [ClientEvent.NETWORK_QUALITY](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.NETWORK_QUALITY).
 - Optimized the API verification logic to prevent exceptions caused by repeated calls.
 - Optimized the playback logic, reducing audio loading time.
 
@@ -280,7 +345,7 @@ Optimized the event notification order.
 **Improvements**
 
 - Optimized the implementation logic of the `switchDevice` API, fixing occasional failure to switch to the front camera in Huawei Browser.
-- Increased the accuracy of the [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED) event notification.
+- Increased the accuracy of the [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-StreamEvent.html#.CONNECTION_STATE_CHANGED) event notification.
 
 **Bug fixing**
 
@@ -291,13 +356,13 @@ Optimized the event notification order.
 
 **New features**
 
-- Added the [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED) event for the change of stream connection status.
-- Added the [Client.getTransportStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getTransportStats) API, which can be used to obtain downstream RTT.
-- Supported using the [Client.getRemoteVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteVideoStats) API to obtain statistics of the substream (screen sharing).
+- Added the [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-StreamEvent.html#.CONNECTION_STATE_CHANGED) event for the change of stream connection status.
+- Added the [Client.getTransportStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getTransportStats) API, which can be used to obtain downstream RTT.
+- Supported using the [Client.getRemoteVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteVideoStats) API to obtain statistics of the substream (screen sharing).
 
 **Improvements**
 
-Optimized the implementation logic of the [Client.switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#switchRole) API.
+Optimized the implementation logic of the [Client.switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#switchRole) API.
 
 **Bug fixing**
 
@@ -306,21 +371,15 @@ Optimized the implementation logic of the [Client.switchRole](https://web.sdk.qc
 
 ## Version 4.10.0 Released on April 16, 2021
 
-**New features**
-
-- Added the [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream) API for publishing streams to the CDN of Tencent Cloud or a third-party vendor.
-- Added the [client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream) API for stopping publishing streams to the CDN of Tencent Cloud or a third-party vendor.
-
 **Improvements**
 
-Optimized the parameter verification logic of the [localStream.switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#switchDevice), [localStream.addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#addTrack), and [localStream.removeTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#removeTrack) APIs.
+Optimized the parameter verification logic of the [localStream.switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice), [localStream.addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#addTrack), and [localStream.removeTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#removeTrack) APIs.
 
 ## Version 4.9.0 Released on March 19, 2021
 
 **New features**
 
-- Supported the preset layout mode for On-Cloud MixTranscoding. For details, see the [client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode) API.
-- Supported the callback of volume. For details, see the [client.enableAudioVolumeEvaluation](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#enableAudioVolumeEvaluation) API.
+- Supported the callback of volume. For details, see the [client.enableAudioVolumeEvaluation](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#enableAudioVolumeEvaluation) API.
 
 **Improvements**
 
@@ -333,14 +392,14 @@ Changed the default port number of the WebSocket protocol to 443.
 
 **Breaking change**
 
-Supported returning detailed results of browser compatibility check via [TRTC.checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#checkSystemRequirements). For details, please see the [API document](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) and [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
+Supported returning detailed results of browser compatibility check via [TRTC.checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements). For details, please see the [API document](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) and [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
 
 ## Version 4.8.6 Released on March 1, 2021
 
 **Improvements**
 
 Supported stereo audio playback.
->! Not supported on iOS yet.
+> ! Not supported on iOS yet.
 
 **Bug fixing**
 
@@ -350,7 +409,7 @@ Fixed the issue where the `stream-removed` event is received when audio and vide
 
 **Improvements**
 
-- Supported configuring multiple TURN servers via [client.setTurnServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setTurnServer).
+- Supported configuring multiple TURN servers via [client.setTurnServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setTurnServer).
 - Optimized the `userId` verification logic.
 
 **Bug fixing**
@@ -361,10 +420,10 @@ Fixed the issue where the mute status is occasionally inaccurate after stream pu
 
 **Improvements**
 
-- Supported dynamically calling the [localStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setVideoProfile) API.
+- Supported dynamically calling the [localStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoProfile) API.
 - Optimized the data reporting logic of the dashboard.
-- Optimized the logic of dealing with autoplay restrictions. For details, please see [Suggested Solutions for Autoplay Restrictions](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html).
-- Optimized the logic of dealing with failure to recover audio/video capturing after device connection/disconnection. For more information, please see [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED).
+- Optimized the logic of dealing with autoplay restrictions. For details, please see [Suggested Solutions for Autoplay Restrictions](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-21-advanced-auto-play-policy.html).
+- Optimized the logic of dealing with failure to recover audio/video capturing after device connection/disconnection. For more information, please see [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED).
 
 **Bug fixing**
 
@@ -395,7 +454,7 @@ Fixed the occasional `Cannot read property 'isConnected' of null` error during r
 
 **Breaking change**
 
-Deleted the disused API `setDefaultMuteRemoteStreams`. Please use the `autoSubscribe` parameter of [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient) instead.
+Deleted the disused API `setDefaultMuteRemoteStreams`. Please use the `autoSubscribe` parameter of [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient) instead.
 
 ## Version 4.8.1 Released on December 25, 2020
 
@@ -409,8 +468,8 @@ Deleted the disused API `setDefaultMuteRemoteStreams`. Please use the `autoSubsc
 **New features**
 
 - Supported On-Cloud MixTranscoding.
-- Supported string-type room IDs on all platforms. For details, please see the `useStringRoomId` parameter of [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient).
-- Allowed users to disable auto subscription. For details, please see the `autoSubscribe` parameter of [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient).
+- Supported string-type room IDs on all platforms. For details, please see the `useStringRoomId` parameter of [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient).
+- Allowed users to disable auto subscription. For details, please see the `autoSubscribe` parameter of [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient).
 
 **Improvements**
 
@@ -428,7 +487,7 @@ Deleted the disused API `setDefaultMuteRemoteStreams`. Please use the `autoSubsc
 **Improvements**
 
 - Optimized the auto capturing resumption logic upon switch of media devices (which may be caused by a loose port or device plugging/unplugging).
-- Added the error code [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED), which indicates failure to restart a device.
+- Added the error code [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED), which indicates failure to restart a device.
 
 **Bug fixing**
 
@@ -450,13 +509,13 @@ Supported desktop Firefox M56+ and Edge M80+.
 
 **Breaking change**
 
-Supported returning detailed results of browser compatibility check via [TRTC.checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#checkSystemRequirements). For more information, please see the [API document](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) and [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
+Supported returning detailed results of browser compatibility check via [TRTC.checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements). For more information, please see the [API document](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) and [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
 
 ## Version 4.6.7 Released on November 5, 2020
 
 **Bug fixing**
 
-- Fixed the occasional issue of blurry screen during playback when hardware acceleration is enabled on Chrome.
+- Fixed occasional screen corruption during playback when hardware acceleration is enabled on Chrome.
 - Fixed failure to enter rooms and pull streams on WeChat’s built-in browser for iOS.
 
 ## Version 4.6.6 Released on October 23, 2020
@@ -466,7 +525,7 @@ Supported returning detailed results of browser compatibility check via [TRTC.ch
 - Optimized the retry logic for upstream peer connection.
 - Optimized the retry logic for downstream peer connection.
 - Optimized the logic of `TRTC.checkSystemRequirements`.
-- Supported screen sharing on Safari. For details, please see [Screen Sharing Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-16-basic-screencast.html).
+- Supported screen sharing on Safari. For details, please see [Screen Sharing Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html).
 
 **Bug fixing**
 
@@ -517,7 +576,7 @@ Allowed stopping the collection of network quality statistics after room exit.
 - Optimized error messages.
 - Supported automatically resuming push when change of the stream capturing device is detected.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed failure to publish again immediately after `unpublish` succeeds.
 
@@ -525,11 +584,11 @@ Fixed failure to publish again immediately after `unpublish` succeeds.
 
 **Improvements**
 
-- Supported checking via [TRTC.isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.isScreenShareSupported) whether screen sharing is supported. Safari does not support screen sharing.
+- Supported checking via [TRTC.isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported) whether screen sharing is supported. Safari does not support screen sharing.
 - Optimized the parameter verification logic for the `subscribe` and `unsubscribe` APIs.
 - Added network quality logs.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the “OverconstrainedError” error when access to media devices is not granted and an empty device ID is passed in the `TRTC.createStream` API.
 - Fixed the issue where no log is printed when upstream peer connection is lost.
@@ -546,7 +605,7 @@ Added the `NETWORK_QUALITY` event.
 
 Added the `screenAudio` parameter to the `createStream` API.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the issue where echo cancellation does not work in browsers for Android.
 - Fixed the issue where the RTT value returned by the `getTransportStats` API is `NAN`.
@@ -559,7 +618,7 @@ Supported capturing system audio (on Windows) or audio of the current tab (on ma
 
 ## Version 4.3.14 Released on April 29, 2020
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed the `muted` and `unmute` events for Mini Program.
 
@@ -571,7 +630,7 @@ Optimized the availability check logic.
 
 ## Version 4.3.12 Released on April 13, 2020
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed a potential `RTCPeerConnection` status change exception.
 
@@ -581,7 +640,7 @@ Fixed a potential `RTCPeerConnection` status change exception.
 
 Supported detection of mobile QQ Browser, which does not support TRTC SDK for desktop browsers at the moment.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed Boolean return types.
 
@@ -599,26 +658,20 @@ Fixed Boolean return types.
 - Supported automatic detection of the deployment environment.
 - Optimized logging.
 
-## Version 4.3.8 Released on February 24, 2020
-
-**Improvements**
-
-Added the `streamId` and `userdefinerecordid` parameters to `createClient`.
-
 ## Version 4.3.7 Released on February 21, 2020
 
 **Improvements**
 
 Fixed the issue where an exception is throw upon device switch during screen sharing.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the device occupation issue by releasing MediaStream after device switch.
 - Fixed the potential error of the subscription API.
 
 ## Version 4.3.6 Released on February 25, 2020
 
-**Bugs fixed**
+**Bug fixing**
 
 Adjusted the audio/video playback sequence of `Stream.resume()`, and fixed autoplay exceptions in WeChat’s built-in browser on iOS.
 
@@ -634,7 +687,7 @@ Added timeout check for the `publish` API, improving the success rate of signali
 
 Updated `core-js` to version 3.6.1.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the issue where an exception is thrown after `unpublish` times out.
 - Fixed the issue where third-party libraries cause decline in the performance of V8.
@@ -647,7 +700,7 @@ Updated `core-js` to version 3.6.1.
 - Optimized the SDP response mechanism.
 - Optimized the reporting logic.
 
-**Bugs fixed**
+**Bug fixing**
 
 Optimized the TURN URL protocol format.
 
@@ -661,7 +714,7 @@ Optimized the TURN URL protocol format.
 - Optimized ICE error reporting.
 - Added more key events to `avmonitor`.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the 1005 reconnection error of WebSocket signaling channels.
 - Fixed the issue with the reporting of downstream packet loss rate.
@@ -672,7 +725,7 @@ Optimized the TURN URL protocol format.
 
 Supported automatic reconnection when upstream ICE disconnects during calls.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed the issue where the host ICE candidate of public IP type does not take effect after STUN hole punching fails.
 
@@ -689,7 +742,7 @@ Added the `client.getTransportStats()` API.
 - Extended the connection timeout threshold to 5 seconds.
 - Extended the publishing timeout threshold to 5 seconds.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed the issue of abnormal SDK judgment due to modification of the prototype chain of `zone.js`.
 
@@ -705,13 +758,13 @@ Added the `client.off()` API, which can be used to unbind client events.
 - Added permission check for `client.publish()`.
 - Added an auto playback error prompt for `stream.play()` and `stream.resume()`.
 
-**Bugs fixed**
+**Bug fixing**
 
 Fixed black screen when the camera is switched via `localStream.switchDevice()`.
 
 ## Version 4.1.1 Released on October 24, 2019
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed log loss.
 - Fixed the loss of remote users who reconnect after disconnection.
@@ -723,7 +776,7 @@ Fixed black screen when the camera is switched via `localStream.switchDevice()`.
 - Supported passing object `HTMLDivElement` in the `stream.play()` API.
 - Supported setting audio attributes via `localStream.setAudioProfile()`. Currently, two profiles are supported: standard and high.
 
-**Bugs fixed**
+**Bug fixing**
 
 - Fixed the restriction on the number of WebAudio Context on Chrome.
 - Fixed the issue where the local audio/video player is not restarted after `replaceTrack()`.
