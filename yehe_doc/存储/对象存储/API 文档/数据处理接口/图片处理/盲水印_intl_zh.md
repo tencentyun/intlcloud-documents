@@ -210,8 +210,11 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 
 #### 请求示例
 
-```shell
-download_url?watermark/3/type/<type>/image/<imageUrl>/text/<text>
+```plaintext
+GET /<ObjectKey>?watermark/3/type/<type>/image/<imageUrl>/text/<text> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 请求参数

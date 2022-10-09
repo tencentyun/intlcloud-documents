@@ -5,9 +5,9 @@ This document provides an overview of APIs and SDK code samples for Guetzli comp
 
 | API | Description |
 | :--------------- | :------------------ |
-| [Enabling Guetzli compression](https://intl.cloud.tencent.com/document/product/1045/45583) | Enables the Guetzli compression feature for a bucket   |
-| [Querying Guetzli status](https://intl.cloud.tencent.com/document/product/1045/46329) | Queries whether the Guetzli compression feature is enabled |
-|[Disabling Guetzli compression](https://intl.cloud.tencent.com/document/product/1045/45584)  |   Disables the Guetzli compression feature  |
+| [Enabling Guetzli compression](https://intl.cloud.tencent.com/document/product/1045/45583) | Enables the Guetzli compression feature for a bucket.   |
+| [Querying Guetzli status](https://intl.cloud.tencent.com/document/product/1045/46329) | Queries whether the Guetzli compression feature is enabled. |
+|[Disabling Guetzli compression](https://intl.cloud.tencent.com/document/product/1045/45584)  |   Disables the Guetzli compression feature.  |
 
 
 ## Enabling Guetzli Compression
@@ -25,7 +25,7 @@ func (s *CIService) PutGuetzli(ctx context.Context) (*Response, error)
 #### Sample request
 
 ```go
-// `CIURL` is required.
+// `CIURL` is required
 u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
 cu, _ := url.Parse("http://examplebucket-1250000000.pic.ap-guangzhou.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u, CIURL: cu}
@@ -40,7 +40,7 @@ _, err := c.CI.PutGuetzli(context.Background())
 log_status(err)
 ```
 
-## Querying the Guetzli Status
+## Querying Guetzli Status
 
 #### Feature description
 
@@ -55,7 +55,7 @@ func (s *CIService) GetGuetzli(ctx context.Context) (*GetGuetzliResult, *Respons
 #### Sample request
 
 ```go
-// `CIURL` is required.
+// `CIURL` is required
 u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
 cu, _ := url.Parse("http://examplebucket-1250000000.pic.ap-guangzhou.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u, CIURL: cu}
@@ -97,7 +97,7 @@ func (s *CIService) DeleteGuetzli(ctx context.Context) (*Response, error)
 #### Sample request
 
 ```go
-// `CIURL` is required.
+// `CIURL` is required
 u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
 cu, _ := url.Parse("http://examplebucket-1250000000.pic.ap-guangzhou.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u, CIURL: cu}

@@ -7,7 +7,7 @@ When the system becomes completely unavailable due to a high load, you can resta
 - **mongod** is the primary daemon process for the MongoDB system. It handles data requests, manages data access, and performs background management operations.
 
 ## Version Description
-- Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support instance restart.
+- Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support instance restart.
 - The architecture of MongoDB **4.0** replica set instance is simplified, where the mongos component is removed; therefore, instance restart doesn't involve mongos restart.
 
 ## Notes

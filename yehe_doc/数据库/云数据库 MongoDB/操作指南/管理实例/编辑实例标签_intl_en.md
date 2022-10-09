@@ -4,7 +4,7 @@ TencentDB for MongoDB allows you to edit instance tags in the console for easier
 A tag consists of a tag key and value. It can be used to tag TencentDB for MongoDB instances. If you have multiple types of resources under your Tencent Cloud account which are correlated in many ways, and your resources are growing and becoming increasingly difficult to manage, you can use tags to group and categorize resources that serve the same purpose or are associated with each other. In this way, when performing daily Ops or troubleshooting, you can quickly search for resources and perform batch operations for more efficient Ops.
 
 ## Version requirements
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support tag management.
+Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support tag management.
 
 ## Billing
 Tag management is a free service provided by Tencent Cloud for your Tencent Cloud account. You can simply go to the [console](https://console.cloud.tencent.com/tag/resources) to use this service.

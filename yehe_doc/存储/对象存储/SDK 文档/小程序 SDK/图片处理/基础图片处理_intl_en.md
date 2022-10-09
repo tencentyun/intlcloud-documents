@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to basic image processing.
+This document provides an overview of APIs and SDK code samples for basic image processing.
 
 <table>
    <tr>
@@ -9,65 +9,65 @@ This document provides an overview of APIs and SDK code samples related to basic
       <th>Description</td>
    </tr>
    <tr>
-      <td rowspan=11>Basic image processing service</td>
+      <td rowspan=11>Basic image processing</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36366">Scaling</a></td>
-      <td>Proportional scaling, scaling image to target width and height, and more</td>
+      <td>Proportional scaling, scaling image to target width and height</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36367">Cropping</a></td>
-      <td>Cut (regular cropping), crop (scaling and cropping), iradius (inscribed circle cropping), and scrop (smart cropping)</td>
+      <td>Regular cropping, cropping and scaling, cropping to circle, smart face cropping</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36368">Rotation</a></td>
-      <td>Adaptive rotation and common rotation</td>
+      <td>Adaptive rotation, regular rotation</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36369">Format conversion</a></td>
-      <td>Format conversion, GIF optimization, and progressive display</td>
+      <td>Format conversion, GIF format optimization, progressive display</td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/36370">Quality conversion</a></td>
-      <td>Changes the quality of images in JPG and WEBP formats</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36370">Quality change</a></td>
+      <td>Quality change for JPG and WebP images</td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/36371">Gaussian blur</a></td>
-      <td>Blurs images</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36371">Gaussian blurring</a></td>
+      <td>Image blurring</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36372">Sharpening</a></td>
-      <td>Sharpens images</td>
+      <td>Image sharpening</td>
    </tr>
    <tr>
       <td>Watermarking</td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/36373">Image watermarks</a>, <a href="https://intl.cloud.tencent.com/document/product/436/36374">text watermarks</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36373">Image watermark</a>, <a href="https://intl.cloud.tencent.com/document/product/436/36374">text watermark</a></td>
    </tr>
    <tr>
-      <td>Obtaining image information</td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/36375">Basic information</a>, <a href="https://intl.cloud.tencent.com/document/product/436/36376">EXIF data</a>, <a href="https://intl.cloud.tencent.com/document/product/436/36377">average hue</a></td>
+      <td>Image information acquisition</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36375">Basic information</a>, <a href="https://intl.cloud.tencent.com/document/product/436/36376">EXIF information</a>, <a href="https://intl.cloud.tencent.com/document/product/436/36377">average hue</a></td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/36378">Removing metadata</a></td>
-      <td>Includes EXIF data</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36378">Metadata removal</a></td>
+      <td>Including EXIF information</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36379">Quick thumbnail template</a></td>
-      <td>Performs quick format conversion, scaling, and cropping to generate thumbnails</td>
+      <td>Quick image format conversion, scaling, and cropping for thumbnail generation</td>
    </tr>
 </table>
 
 
 
-## Processing an Image upon the Upload
+## Processing Image During Upload
 
 The following example shows how to automatically process an image when you upload it to COS.
 
-Upon successful upload, COS will save both the original and processed images. You can obtain the processing result using a common download request.
+When the image is uploaded successfully, COS will save both the original and the processed images. You can later obtain the processing results by using a general download request.
 
 ### Sample code
 
 ```html
 <view>
-  <button type="primary" bindtap="button">Process Image Upon Upload</button>
+  <button type="primary" bindtap="button">Process an image during upload</button>
 </view>
 ```
 
@@ -89,7 +89,7 @@ Page({
                 Key: file.name,
                 Body: res.data,
                 Headers: {
-                  // Use the imageMogr2 API to scale the image (specifying the width of the output image to 200, with the height scaled automatically).
+                  // Use the `imageMogr2` API to scale the image (by specifying the width of the output image to 200, with the height scaled proportionally).
                   'Pic-Operations':
                     '{"is_pic_info": 1, "rules": [{"fileid": "desample_photo.jpg", "rule": "imageMogr2/thumbnail/200x/"}]}',
                 },
@@ -108,15 +108,15 @@ Page({
 });
 ```
 
-## Processing an In-Cloud Image
+## Processing In-Cloud Image
 
-The following example shows how to process an in-cloud image and store the processing result in COS.
+The following example shows how to process an image stored in COS and save the processing result to COS.
 
 ### Sample code
 
 ```html
 <view>
-  <button type="primary" bindtap="button">Process In-Cloud Image</button>
+  <button type="primary" bindtap="button">Process an in-cloud image</button>
 </view>
 ```
 
@@ -131,7 +131,7 @@ Page({
         Method: 'POST',
         Action: 'image_process',
         Headers: {
-          // Use the imageMogr2 API to scale the image (specifying the width of the output image to 200, with the height scaled automatically).
+          // Use the `imageMogr2` API to scale the image (by specifying the width of the output image to 200, with the height scaled proportionally).
           'Pic-Operations':
             '{"is_pic_info": 1, "rules": [{"fileid": "desample_photo.jpg", "rule": "imageMogr2/thumbnail/200x/"}]}',
         },
@@ -144,15 +144,15 @@ Page({
 });
 ```
 
-## Processing an Image upon the Download
+## Processing Image During Download
 
-The following sample shows how to process an image upon the download:
+The following example shows how to process an image during download.
 
 ### Sample code
 
 ```html
 <view>
-  <button type="primary" bindtap="button">Process Image Upon Download</button>
+  <button type="primary" bindtap="button">Process an image during download</button>
 </view>
 ```
 
@@ -174,21 +174,21 @@ Page({
 });
 ```
 
-## Generating a Signed URL with Image Processing Parameters
+## Generating Signed URL with Image Processing Parameters
 
 ### Sample code
 
 ```html
 <view>
-  <button type="primary" bindtap="sign">Generate Signed URL with Image Processing Parameters</button>
-  <button type="primary" bindtap="unsign">Generate Unsigned URL with Image Processing Parameters</button>
+  <button type="primary" bindtap="sign">Generate a signed URL with image processing parameters</button>
+  <button type="primary" bindtap="unsign">Generate an unsigned URL with image processing parameters</button>
 </view>
 ```
 
 ```javascript
 Page({
   sign: function () {
-    // Generate a signed URL (effective for 30 minutes) with image processing parameters.
+    // Generate a signed URL (valid for 30 minutes) with image processing parameters.
     cos.getObjectUrl(
       {
         Bucket: 'examplebucket-1250000000',

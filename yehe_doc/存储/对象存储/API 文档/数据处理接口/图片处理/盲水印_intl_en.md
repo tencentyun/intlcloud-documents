@@ -210,9 +210,13 @@ You can add a blind watermark during download in the same way as adding a regula
 
 #### Sample request
 
-```shell
-download_url?watermark/3/type/<type>/image/<imageUrl>/text/<text>
+```plaintext
+GET /<ObjectKey>?watermark/3/type/<type>/image/<imageUrl>/text/<text> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
+
 
 #### Request parameters
 

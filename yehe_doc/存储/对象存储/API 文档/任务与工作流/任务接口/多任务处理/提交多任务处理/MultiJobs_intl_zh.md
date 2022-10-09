@@ -37,12 +37,12 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
 
 #### 请求体
 
@@ -127,12 +127,12 @@ Container 类型 Input 的具体数据描述如下：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">视频增强</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">超分辨率</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">音视频转封装</a>
-- 数字水印
-- 提取数字水印
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48930" target="_blank">数字水印</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48931" target="_blank">提取数字水印</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">视频标签</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">获取媒体信息</a>
-- 音视频流分离
-- 视频质量分析
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48939" target="_blank">音视频流分离</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48934" target="_blank">视频质量分析</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">语音合成</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">音频降噪</a>
 
@@ -141,7 +141,7 @@ Container 类型 Input 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
 
 #### 响应体
 
@@ -250,7 +250,7 @@ Container 节点 Response 的内容：
 对于不同的任务类型，JobsDetail 的内容不同，请参照以下链接：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48941" target="_blank">音视频转码</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49569" target="_blank">视频转动图</a>
-- <a href="https://intl.cloud.tencent.com/document/product/1045/48938#jobsDetail" target="_blank">视频截帧</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48938" target="_blank">视频截帧</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48937" target="_blank">智能封面</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48929" target="_blank">音视频拼接</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48946" target="_blank">人声分离</a>
@@ -259,19 +259,19 @@ Container 节点 Response 的内容：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">视频增强</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">超分辨率</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">音视频转封装</a>
-- 数字水印
-- 提取数字水印
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48930" target="_blank">数字水印</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48931" target="_blank">提取数字水印</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">视频标签</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">获取媒体信息</a>
-- 音视频流分离
-- 视频质量分析
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48939" target="_blank">音视频流分离</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48934" target="_blank">视频质量分析</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">语音合成</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">音频降噪</a>
 
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 ## 实际案例
 

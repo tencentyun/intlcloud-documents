@@ -8,7 +8,7 @@ Upgrading the CPU performance and memory capacity of mongos nodes may involve cr
 
 ## Version requirements
 
-TencentDB for MongoDB 4.0 and 4.2 support adjusting the mongos node specification.
+TencentDB for MongoDB 4.0, 4.2 and 4.4 support adjusting the mongos node specification.
 
 ## Prerequisites
 
@@ -25,7 +25,6 @@ TencentDB for MongoDB 4.0 and 4.2 support adjusting the mongos node specificatio
 5. Click the **Instance ID** to enter the **Instance Details** page and click the **Node Management** tab.
 6. On the **Node Management** tab, click the **Mongos Node** tab.
 7. On the **Mongos Node** tab, click **Modify Mongos Configuration**. In the pop-up window, configure the new specification.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/cca2cb793fa943f486fb7832abfc98db.png"  style="zoom:60%;">
 <table>
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>

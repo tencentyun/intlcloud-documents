@@ -16,12 +16,12 @@ Authorization: <Auth String>
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
 
 #### Request body
 This request does not have a request body.
@@ -33,10 +33,10 @@ The nodes are as described below:
 |:---|:--- |:---|:---|:---|
 | queueId | None | ID of the queue from which jobs are pulled | String | Yes |
 | tag | None | Job type: Translation | String | Yes |
-| orderByTime | None | `Desc` (default) or `Asc` | String | No |
+| orderByTime | None | Valid values: `Desc`, `Asc`. Default value: `Desc`. | String | No |
 | nextToken | None | Context token for pagination | String | No |
 | size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
-| states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default value), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | String | No |
+| states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All`, `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. Default value: `All`. | String | No |
 | startCreationTime | None | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T00:00:00+0800` | String | No |
 | endCreationTime | None | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T23:59:59+0800`  | String | No |
 
@@ -44,7 +44,7 @@ The nodes are as described below:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
 
 #### Response body
 
@@ -74,7 +74,7 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 
