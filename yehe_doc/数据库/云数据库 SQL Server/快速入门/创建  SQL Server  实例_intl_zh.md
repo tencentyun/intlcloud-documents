@@ -43,10 +43,12 @@
  - 项目列表：云数据库 SQL Server 支持将实例分配至不同的项目进行管理，支持模糊搜索项目名称更快选取项目。
  - 安全组：一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。
  - 标签：便于分类管理实例资源。
+ - 系统时区：默认仅支持 China Standard Time，如需调整，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 获取解决方案。
+ - 字符集排序规则：实例字符集为系统数据提供排序规则，即区分大小写属性和重音属性。默认仅支持 Chinese_PRC_CI_AS，如需调整，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 获取解决方案。
  - 选择购买数量和购买时长。
  - 服务条款：详细可参见 [服务条款](https://intl.cloud.tencent.com/document/product/238/35546)。
 2. 购买后返回 [实例列表](https://console.cloud.tencent.com/sqlserver#/)，查看创建的实例，待运行状态显示为**运行中**，表示实例创建成功。
-![](https://main.qcloudimg.com/raw/7abd65a18810994b0c34c75450a41868.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/57e84438c682ceb67cc51296968bf3fb.png)
 
 ### [创建帐号](id:cjzh)
 1. 在 [实例列表](https://console.cloud.tencent.com/sqlserver)，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
@@ -62,4 +64,3 @@
  - 授权帐号：可以针对已有帐号对该库进行授权，如未创建帐号，可参见 [创建帐号](#cjzh)。
  - 备注说明：输入备注说明，最多256个字符。
 ![](https://main.qcloudimg.com/raw/6bb212145f1cf97837ed7aa6be0bf05c.png)
-

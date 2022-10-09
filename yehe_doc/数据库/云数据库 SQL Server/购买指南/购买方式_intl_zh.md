@@ -3,8 +3,8 @@
 购买前需要实名认证，请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 ## 官网购买
-1. 登录 [SQL Server 购买页](https://buy.intl.cloud.tencent.com/sqlserver)，选择数据库相关配置，阅读并同意服务条款，确认无误后，单击**立即购买**。
- - 计费模式：支按量计费。
+1. 登录 [SQL Server 购买页](https://buy.Intl.cloud.tencent.com/sqlserver)，选择数据库相关配置，阅读并同意服务条款，确认无误后，单击**立即购买**。
+ - 计费模式：支持按量计费。
  - 地域和可用区：地域说明请参见 [地域和可用区](https://intl.cloud.tencent.com/document/product/238/7520)。
  - 网络类型：支持私有网络（推荐）和基础网络，区别和连通性检测请参见 [网络环境](https://intl.cloud.tencent.com/document/product/238/32562)，VPC 网络和子网均支持模糊搜索。
 >?
@@ -39,6 +39,8 @@
  - 项目列表：云数据库 SQL Server 支持将实例分配至不同的项目进行管理，支持模糊搜索项目名称更快选取项目。
  - 安全组：一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。
  - 标签：便于分类管理实例资源。
+ - 系统时区：默认仅支持 China Standard Time，如需调整，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 获取解决方案。
+ - 字符集排序规则：实例字符集为系统数据提供排序规则，即区分大小写属性和重音属性。默认仅支持 Chinese_PRC_CI_AS，如需调整，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 获取解决方案。
  - 选择购买数量和购买时长。
  - 服务条款：详细可参见 [服务条款](https://intl.cloud.tencent.com/document/product/238/35546)。
 2. 购买后返回 [实例列表](https://console.cloud.tencent.com/sqlserver#/)，查看创建的实例，待运行状态显示为**运行中**，表示实例创建成功。

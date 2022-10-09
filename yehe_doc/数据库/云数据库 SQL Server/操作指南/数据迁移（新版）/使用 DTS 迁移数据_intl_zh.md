@@ -12,9 +12,10 @@
 - 源数据库必须得设置为“完全恢复模式”，且在迁移前建议用户自己做下全量备份。
 - 源数据库所在本地磁盘空间需要足够大，剩余空闲空间能放下要迁移库的大小。 
 - 当源实例非腾讯云 SQL Server 实例（公网/CVM 自建实例、其他云厂商实例）或腾讯云基础版 SQL Server 实例时，目标端需使用具有 sysadmin 权限的帐号进行迁移，且需要能够运行 xp_cmdshell 存储过程，当源实例为腾讯云高可用版和集群版 SQL Server 时，目标端帐号无权限限制。
-- 迁移源端的 SQL 服务启动需要改为 local，源端迁移的数据库账号无限制，但是需要有 sysadmin 权限。
+- 迁移源端的 SQL 服务启动账号需要改为内置账户 Local System 启动，源端迁移的数据库账号无限制，但是需要有 sysadmin 权限。
 ![](https://qcloudimg.tencent-cloud.cn/raw/8867fbfd1341a9b6e3fa92a4b1bfe3cc.png)
-如图所示，迁移源端的 SQL 服务启动，启动配置中的登录身份内置账户需要修改为 Local System。
+如图所示，迁移源端的 SQL 服务启动，启动配置中的**登录身份**，选择**内置账户**，并修改为 Local System 启动。
+>!修改账号后需要重启 SQL server 服务。
 
 ## 应用限制
 - 同一源实例同一时间只能发起一个迁移任务。
@@ -86,10 +87,11 @@
 <td>所属地域</td><td>购买时选择的源库地域，不可修改。</td></tr>
 <td>接入类型</td><td>请根据您的场景选择，本场景以“云数据库”为例，不同接入类型的准备工作请参考 <a href="https://intl.cloud.tencent.com/document/product/571/42652">准备工作概述</a>。
 <ul><li>公网：源数据库可以通过公网 IP 访问。</li>
-<li>云主机自建：源数据库部署在 <a href="https://cloud.tencent.com/document/product/213">腾讯云服务器 CVM</a> 上。</li>
-<li>专线接入：源数据库可以通过 <a href="https://cloud.tencent.com/document/product/216">专线接入</a> 方式与腾讯云私有网络打通。</li>
-<li>VPN接入：源数据库可以通过 <a href="https://cloud.tencent.com/document/product/554">VPN 连接</a> 方式与腾讯云私有网络打通。</li>
+<li>云主机自建：源数据库部署在 <a href="https://intl.cloud.tencent.com/document/product//213">腾讯云服务器 CVM</a> 上。</li>
+<li>专线接入：源数据库可以通过 <a href="https://intl.cloud.tencent.com/document/product/216">专线接入</a> 方式与腾讯云私有网络打通。</li>
+<li>VPN 接入：源数据库可以通过 <a href="https://intl.cloud.tencent.com/document/product/1037">VPN 连接</a> 方式与腾讯云私有网络打通。</li>
 <li>云数据库：源数据库属于腾讯云数据库实例。</li>
+<li>云联网：源数据库可以通过 <a href="https://intl.cloud.tencent.com/document/product/1003">云联网</a> 与腾讯云私有网络打通。</li>
 </ul>对于第三方云厂商数据库，一般可以选择公网方式，也可以选择 VPN 接入，专线或者云联网的方式，需要根据实际的网络情况选择。</td></tr>
 <tr>
 <td>数据库实例</td><td>选择源库的实例 ID。</td></tr>
@@ -131,7 +133,6 @@
    - 选择**全量迁移**：任务完成后会自动结束，不需要手动结束。
    - 选择**全量 + 增量迁移**：全量迁移完成后会自动进入增量数据同步阶段，增量数据同步不会自动结束，需要您手动单击**完成**结束增量数据同步。
       - 请选择合适时间手动完成增量数据同步，并完成业务切换。
-      - 观察迁移阶段为增量同步，并显示无延迟状态，将源库停写几分钟。
-      - 目标与源库数据差距为0MB及目标与源库时间延迟为0秒时，手动完成增量同步。
+      - 观察迁移阶段的状态为**准备完成**，将源库停写几分钟，之后再手动完成增量同步。
 7. （可选）如果您需要进行查看任务、删除任务等操作，请单击对应的任务，在**操作**列进行操作，详情可参考 [任务管理](https://intl.cloud.tencent.com/document/product/571/42637)。
 8. 当迁移任务状态变为**任务成功**时，即可对业务进行正式割接，更多详情可参考 [割接说明](https://intl.cloud.tencent.com/document/product/571/42612)。
