@@ -29,11 +29,12 @@
 </tr><tr><td>过期时间</td>
 <td><li>播放地址过期时间为设置时间戳加播放鉴权设置的有效时间。<li>推流地址过期时间即设置时间。</td>
 </tr><tr><td>转码模板</td>
-<td><li>仅在选择生成类型为<strong>播放域名</strong>时使用。<li>若选择 <a href="https://intl.cloud.tencent.com/document/product/267/31071">转码模板</a>，生成的播放地址为转码后的直播播放地址。若需播放原始直播流，则无需选择转码模板生成地址。</td>
+<td><li>仅在选择生成类型为<strong>播放域名</strong>时使用。<li>若选择 <a href="https://intl.cloud.tencent.com/document/product/267/31071">转码模板</a>生成的播放地址为转码后的直播播放地址。<li>若选择 <a href="https://www.tencentcloud.com/document/product/267/50271">自适应码率模板</a>生成的播放地址为自适应码率直播播放地址。若需播放原始直播流，则无需选择转码模板生成地址。</td>
 </tr>
 </tbody></table>
 
 [](id:push)
+
 ## 生成推流地址
 ### 操作步骤
 1. 登录云直播控制台，选择 [**地址生成器**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)，进入地址生成器。
@@ -47,14 +48,14 @@
 
 [](id:pushurl)
 ### 推流地址说明
-推流支持 RTMP 、WebRTC和SRT协议，可通过地址生成器功能生成前缀为 `rtmp://` 、webrtc://和`srt://` 的推流地址。
+推流支持 RTMP 、WebRTC、SRT协议，可通过地址生成器功能生成前缀为 `rtmp://`、`webrtc://` 和 `srt://` 的推流地址。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d866991901d2c780112da709d4e0ba3c.png)
 
 
 [](id:play)
 ## 生成播放地址
 ### 操作步骤
-1. 登录云直播控制台，选择[**地址生成器**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)，进入地址生成器。
+1. 登录云直播控制台，选择 [**地址生成器**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)，进入地址生成器。
 2. 选择生成类型为**播放域名**，并选择您已添加到域名管理的播放域名。
 3. 填写 AppName，默认值为：live。
 4. 填写流名称 StreamName，例如：`liveteststream`。
@@ -66,7 +67,11 @@
 
 [](id:playurl)
 ### 播放地址说明
-若使用转码模板，生成的播放地址为转码后的直播播放地址。其中播放支持 RTMP、FLV、HLS协议和Webrtc协议。可通过地址生成器生成前缀为 `rtmp://`、`http://` 和webrtc://的播放地址。
+若使用转码模板，生成的播放地址为转码后的直播播放地址。其中播放支持 RTMP、FLV、HLS 和 WebRTC 协议。可通过地址生成器生成前缀为 `rtmp://`、`http://` 和 `webrtc://` 的播放地址。
 >! UDP 协议的播放地址为快直播地址，可通过 [快直播快速入门](https://intl.cloud.tencent.com/document/product/267/41030) 了解使用，快直播费用详细参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/345cc01a3d77d6816d1789fe60b7184e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/daaef95da077e0182db6e07943f4f360.png)
+
+### 自适应码率地址说明
+若使用自适应码率模板，生成的播放地址为自适应码率播放地址。其中播放支持HLS和WebRTC协议。可通过地址生成器生成前缀为`http://` 和 `webrtc://` 的播放地址。
+![](https://qcloudimg.tencent-cloud.cn/raw/f6e00cf295690bf6ce4fbdd0e4ce9778.png)
