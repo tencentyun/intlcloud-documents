@@ -1,16 +1,16 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to persistent image processing.
+This document provides an overview of APIs and SDK code samples for persistent image processing.
 
-| API | Operation    |
+| API | Description    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) | COS（Cloud Object Storage） supports processing images upon upload. You can also process images that are already stored in COS and save the processed images to COS. |
+| [Persistent image processing](https://intl.cloud.tencent.com/document/product/436/40592) | Processes an image during upload, or processes an image stored in COS and saves the processing result to COS. |
 
-## Processing upon Upload
+## Processing During Upload
 
 #### Feature description
 
-The feature of processing upon upload provided by CI helps you implement image processing when uploading an image. You only need to add Pic-Operations to the request header and set related parameters to implement image processing when uploading an image, and store the input image and processing result in COS. Currently, this feature supports the processing of a file up to 20 MB.
+CI allows you to process images during upload. To enable this, add `Pic-Operations` to the request header and set relevant parameters. You can also save the input images and processing results to COS. Currently, images within 20 MB can be processed.
 
 #### Method prototype
 
@@ -38,7 +38,7 @@ response = client.ci_put_object(
     Body=b'bytes'|file,
     Key='exampleobject',
     EnableMD5=False|True,
-    ACL='private'|'public-read', # Please be aware that by using this parameter, the maximum of 1000 ACLs may be reached
+    ACL='private'|'public-read',  # Note that the maximum number of allowed ACLs (1,000) may be reached if you use this parameter.
     GrantFullControl='string',
     GrantRead='string',
     StorageClass='STANDARD'|'STANDARD_IA'|'ARCHIVE',
@@ -63,44 +63,44 @@ response = client.ci_put_object(
 
 | Parameter | Description | Type | Required |
 | ------------------ | ------------------------------------------------------------ | ---------- | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes  |
-| Body  | Content of the uploaded object, which can be file stream or byte stream     | file/bytes | Yes |
-| Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| PicOperations      | CI image processing parameter. For more information, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) | String     | Yes       |
-| EnableMD5 | Specifies whether the SDK needs to calculate the Content-MD5 value. This feature is disabled by default. The upload will take longer if it is enabled | Bool | No |
-| ACL | Sets the object ACL, such as 'private' or 'public-read'                | String     | No |
+| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| Body               | Content of the uploaded object, which can be a file stream or a byte stream.                         | file/bytes | Yes       |
+| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |   Yes |
+| PicOperations      | CI image processing parameters. For more information, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592). | String     | Yes       |
+| EnableMD5 | Specifies whether the SDK needs to calculate the `Content-MD5` checksum. It is disabled by default. The upload will take longer if it is enabled. | Bool | No |
+| ACL | Sets the object ACL, such as `private` or `public-read`.                | String     | No |
 | GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"` | String | No |
 | GrantRead  | Grants the grantee read permission in the format of `id="OwnerUin"`                 | String     | No |
-| StorageClass | Storage class of the object. For storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
-| Expires            | Sets Expires                                                 | String     | No  |
-| CacheControl | Cache policy. Sets Cache-Control. | String | No |
-| ContentType | Content Type. Sets Content-Type. | String | No |
-| ContentDisposition | Filename. Sets Content-Disposition | String | No |
-| ContentEncoding | Encoding format. Sets Content-Encoding. | String | No |
-| ContentLanguage | Language type. Sets Content-Language | String | No |
+| StorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
+| Expires            | Sets `Expires`.                                                 | String     | No  |
+| CacheControl | Cache policy. Sets `Cache-Control`. | String | No |
+| ContentType | Content type. `Sets Content-Type`. | String | No |
+| ContentDisposition | Object name. Sets `Content-Disposition`. | String | No |
+| ContentEncoding | Encoding format. Sets `Content-Encoding`. | String | No |
+| ContentLanguage  | Language type. Sets `Content-Language`. |  String |  No |
 | ContentLength | Sets the length of the request content. | String | No |
-| ContentMD5 | Sets the MD5 checksum of the uploaded object | String | No |
-| Metadata | User-defined object metadata. This parameter must start with `x-cos-meta`; otherwise, it will be ignored | Dict | No |
-|  TrafficLimit | Specifies the bandwidth limit for a single request in bit/s. Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
+| ContentMD5 | Sets the MD5 checksum of the uploaded object for verification. | String | No |
+| Metadata           | User-defined object metadata. It must start with `x-cos-meta`; otherwise, it will be ignored. | Dict       | No       |
+|  TrafficLimit | Bandwidth limit for a single request in bit/s. Value range: 819200-838860800, i.e., 100 KB/s–100 MB/s. | String |  No |
 
 `PicOperations` is a JSON string. Its parameters are as follows:
 
 | Parameter | Description | Type | Required |
 | ----------- | ------------------------------------------------------------ | ----- | -------- |
-| is_pic_info | Whether to return the input image information <br>`0` (default): no <br>`1`: yes    | Int   | No       |
-| rules       | Processing rules (up to 5 rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No       |
+| is_pic_info | Whether to return the input image information <br>0 (default): no <br>1: yes    | Int   | No       |
+| rules       |  Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No   |
 
  Parameters of `rules` (a JSON array) are as follows:
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| bucket   | Name of the destination bucket that stores the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. | String | No       |
-| fileid   | Path of the processing results. If the value of this parameter starts with a slash (/), the results will be stored in a specified folder. Otherwise, the results will be stored in the directory of the input image. | String | Yes       |
-| rule     | The processing parameter. For more information, please see the image processing API of CI. If the image needs to be stylized, prefix `style/` to the style name. For example, if the style name is `test`, you can set this parameter to `style/test`. | String | Yes       |
+| bucket   | Name of the destination bucket to store the results in the format of `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket by default. | String | No       |
+| fileid    | Path of the processing result file. If the path starts with `/`, the result file will be stored in the specified folder; otherwise, it will be stored in the same directory as the input image file. | String | Yes |
+| rule | Processing parameters. For more information, see CI's image processing API. To process an image by using a specified style, the value must start with `style/`, with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. | String | Yes |
 
 #### Response description
 
-The response contains the original image and processing information in dict format:
+The response contains the input image and processing information in `dict` type:
 
 ```python
 {
@@ -132,29 +132,29 @@ The response contains the original image and processing information in dict form
 }
 ```
 
-Parameters in the response body are as follows:
+The response body is as described below:
 
 | Parameter | Type | Description |
 | ------------ | --------- | -------- |
-| UploadResult | Container | Original image information |
+| UploadResult | Container | Input image information |
 
- Content of the `UploadResult` node:
+ Content of `UploadResult`:
 
 | Parameter | Type | Description |
 | -------------- | --------- | ------------ |
-| OriginalInfo | Container | Original image information |
-| ProcessResults | Container | Image processing results |
+| OriginalInfo | Container | Input image information |
+| ProcessResults | Container | Image processing result |
 
- Content of the `OriginalInfo` node:
+ Content of `OriginalInfo`:
 
 | Parameter | Type | Description |
 | --------- | --------- | ---------------------------------------------------------- |
-| Key       | String    | Filename of the original image                                                 |
+| Key       | String    | Input image filename                                                |
 | Location  | String    | Image path                                                   |
-| ImageInfo | Container | Information of the original image                                           |
-| ETag | String | ETag of the original image. If the output image overwrites the original image, the value of `etag` will be that of the output image |
+| ImageInfo | Container | Input image information |
+| ETag      | String    | `ETag` of the input image. If the output image overwrites the input image, the value of `ETag` will be that of the output image. |
 
- Content of the `ImageInfo` node:
+ Content of `ImageInfo`:
 
 | Parameter | Type | Description |
 | ----------- | ------ | ------------ |
@@ -165,13 +165,13 @@ Parameters in the response body are as follows:
 | Ave | String | Image average hue |
 | Orientation | Int | Image rotation angle |
 
- Content of the `ProcessResults` node:
+ Content of `ProcessResults`:
 
 | Parameter | Type | Description |
 | -------- | --------- | ------------------ |
 | Object | Container | Processing result of each image |
 
- Content of the `Object` node:
+ Content of `Object`:
 
 | Parameter | Type | Description |
 | -------- | ------ | -------------------- |
@@ -182,13 +182,13 @@ Parameters in the response body are as follows:
 | Height | Int | Image height |
 | Size     | Int    | Image size             |
 | Quality | Int | Image quality |
-| ETag | String | ETag of the output image |
+| ETag | String | `ETag` of the output image |
 
 ## Processing In-Cloud Data
 
 #### Feature description
 
-The persistent image processing API can process an in-cloud image and save the processing result to COS.
+The persistent image processing API can process an image stored in COS and save the processing result to COS.
 
 #### Method prototype
 
@@ -220,28 +220,28 @@ response, data = client.ci_image_process(
 
 | Parameter | Description | Type | Required |
 | ------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes  |
-| Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| PicOperations      | CI image processing parameter. For more information, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) | String     | Yes       |
+| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |   Yes |
+| PicOperations      | CI image processing parameters. For more information, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592). | String     | Yes       |
 
 `PicOperations` is a JSON string. Its parameters are as follows:
 
 | Parameter | Description | Type | Required |
 | ----------- | ------------------------------------------------------------ | ----- | -------- |
-| is_pic_info | Whether to return the input image information <br>`0` (default): no <br>`1`: yes    | Int   | No       |
-| rules       | Processing rules (up to 5 rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No       |
+| is_pic_info | Whether to return the input image information <br>0 (default): no <br>1: yes    | Int   | No       |
+| rules       |  Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No   |
 
  Parameters of `rules` (a JSON array) are as follows:
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| bucket   | Name of the destination bucket that stores the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. | String | No       |
-| fileid   | Path of the processing results. If the value of this parameter starts with a slash (/), the results will be stored in a specified folder. Otherwise, the results will be stored in the directory of the input image. | String | Yes       |
-| rule | Processing parameters. For more information, please see the image processing API. To process an image using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. |String | Yes | 
+| bucket   | Name of the destination bucket to store the results in the format of `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket by default. | String | No       |
+| fileid    | Path of the processing result file. If the path starts with `/`, the result file will be stored in the specified folder; otherwise, it will be stored in the same directory as the input image file. | String | Yes |
+| rule | Processing parameters. For more information, see the image processing API. To process an image by using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. | String | Yes | 
 
 #### Response description
 
-The response contains object metadata in dict format:
+The response contains object metadata in `dict` type:
 
 ```python
 {
@@ -273,29 +273,29 @@ The response contains object metadata in dict format:
 }
 ```
 
-Parameters in the response body are as follows:
+The response body is as described below:
 
 | Parameter | Type | Description |
 | ------------ | --------- | -------- |
-| UploadResult | Container | Original image information |
+| UploadResult | Container | Input image information |
 
- Content of the `UploadResult` node:
+ Content of `UploadResult`:
 
 | Parameter | Type | Description |
 | -------------- | --------- | ------------ |
-| OriginalInfo | Container | Original image information |
-| ProcessResults | Container | Image processing results |
+| OriginalInfo | Container | Input image information |
+| ProcessResults | Container | Image processing result |
 
- Content of the `OriginalInfo` node:
+ Content of `OriginalInfo`:
 
 | Parameter | Type | Description |
 | --------- | --------- | ---------------------------------------------------------- |
-| Key       | String    | Filename of the original image                                                 |
+| Key       | String    | Input image filename                                                |
 | Location  | String    | Image path                                                   |
-| ImageInfo | Container | Information of the original image                                           |
-| ETag | String | ETag of the original image. If the output image overwrites the original image, the value of `etag` will be that of the output image |
+| ImageInfo | Container | Input image information |
+| ETag      | String    | `ETag` of the input image. If the output image overwrites the input image, the value of `ETag` will be that of the output image. |
 
- Content of the `ImageInfo` node:
+ Content of `ImageInfo`:
 
 | Parameter | Type | Description |
 | ----------- | ------ | ------------ |
@@ -306,13 +306,13 @@ Parameters in the response body are as follows:
 | Ave | String | Image average hue |
 | Orientation | Int | Image rotation angle |
 
- Content of the `ProcessResults` node:
+ Content of `ProcessResults`:
 
 | Parameter | Type | Description |
 | -------- | --------- | ------------------ |
 | Object | Container | Processing result of each image |
 
- Content of the `Object` node:
+ Content of `Object`:
 
 | Parameter | Type | Description |
 | -------- | ------ | -------------------- |
@@ -323,5 +323,5 @@ Parameters in the response body are as follows:
 | Height | Int | Image height |
 | Size     | Int    | Image size             |
 | Quality | Int | Image quality |
-| ETag | String | ETag of the output image |
+| ETag | String | `ETag` of the output image |
 
