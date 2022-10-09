@@ -604,3 +604,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 46.[账号风控平台](https://intl.cloud.tencent.com/document/product/1148/49479)。
 47.[应用云渲染](https://intl.cloud.tencent.com/document/product/1158/50007)。
 48.[文字识别](https://www.tencentcloud.com/document/product/1005/50444)。
+49.[验证码](https://www.tencentcloud.com/document/product/1159/50401)。
