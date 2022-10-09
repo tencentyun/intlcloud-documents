@@ -2,7 +2,7 @@
 Auth-free access allows you to access your TencentDB instance quickly and efficiently. However, it also involves security risks. We recommend you enable this feature in test or maintenance scenarios and disable it during business operations.
 
 ## Version requirements
-Instances on v3.6, v4.0, and v4.2 support auth-free access.
+Instances on v3.6, v4.0, v4.2 and v4.4 support auth-free access.
 
 ## Notes
 - Upgrade to support auth-free access involves kernel upgrade and momentary disconnections.
