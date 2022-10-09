@@ -2,9 +2,6 @@
 
 Yes. COS allows SSL transport for all access nodes in the [available regions](https://intl.cloud.tencent.com/document/product/436/6224), and HTTPS is enabled by default in the SDK and console. **COS strongly recommends you use HTTPS to protect the data linkage for transport. If you use unencrypted HTTP, the linkage may be monitored or the data may be stolen.**
 
-### Does COS support wildcard domains?
-
-Yes.
 
 ### When I manage domain names on the console, I am always prompted to "Enable at least one available key". What should I do?
 
