@@ -7,7 +7,7 @@ This document describes how to realize the automatic certificate issuance and re
 >
 ## Directions
 ### Step 1. Purchase a multi-year certificate
-1. Log in to the [SSL Certificate Service buy page](https://buy.cloud.tencent.com/ssl?fromSource=ssl).
+1. Log in to the SSL Certificate Service buy page.
 2. Select and purchase a multi-year SSL certificate based on your needs.
 
 3. Complete the SSL certificate application process.
