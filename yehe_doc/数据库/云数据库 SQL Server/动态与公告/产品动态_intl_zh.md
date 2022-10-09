@@ -1,12 +1,33 @@
+## 2022年08月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody><tr>
+<td>支持修改实例字符集规则和时区</td>
+<td>云数据库 SQL Server 支持在购买实例时设置实例系统字符集排序规则和系统时区。</td>
+<td>2022-08-25</td>
+<td><ul><li><a href="https://www.tencentcloud.com/document/product/238/50258" target="_blank">修改实例级字符集规则</a></li><li><a href="https://www.tencentcloud.com/document/product/238/50257" target="_blank">修改系统时区</a></li></ul></td></tr>
+<tr>
+<td>香港三区开服</td>
+<td>云数据库 SQL Server 新增开放香港三区，支持双机高可用版和集群版。</td>
+<td>2022-08-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">地域和可用区</a></td></tr>
+</tbody></table>
+
 ## 2022年07月
 <table>
 <thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
 <tbody><tr>
+<td>支持开启外网</td>
+<td>云数据库 SQL Server 支持开启外网，开启后可通过外网地址访问云数据库 SQL Server 实例。</td>
+<td>2022-07-25</td>
+<td><a href="https://www.tencentcloud.com/document/product/238/50230" target="_blank">开启或关闭外网地址</a></td></tr>
+<tbody><tr>
 <td>支持跨地域备份</td>
 <td>云数据库 SQL Server 支持跨地域备份，实现数据库恢复的高可用性，满足数据可用性及安全性、异地备份恢复、异地容灾、长期归档数据、监管等功能。</td>
 <td>2022-07-20</td>
-<td>-</td></tr>
+<td><a href="https://www.tencentcloud.com/document/product/238/49138" target="_blank">跨地域备份</a></td></tr>
 </tbody></table>
+
 
 ## 2022年06月
 <table>
