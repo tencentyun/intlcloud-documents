@@ -18,7 +18,7 @@
 5. Install the SDK based on the connection type.
    - Install the SDK by importing the `<script>` tag
       1. On the connection guide page, copy the provided `<script>` tag code.
-      2. Import the code below **<script> tag import** into the `<head></head>` tags of the site to be monitored.
+      2. Import the code below `<script> tag import` into the `<head></head>` tags of the site to be monitored.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3830d6da941897d5c6af7a358bb5e832.png)
 >? This connection method uses the “h3-Q050” protocol, where `cache-control` is `max-age=666` by default. To modify `cache-control`, you can add the `max_age` parameter, such as `<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js?max_age=3600"></script>`.
 
