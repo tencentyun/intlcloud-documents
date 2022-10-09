@@ -5,11 +5,10 @@ During daily maintenance, you can place your TencentDB for MongoDB and [CVM](htt
 AZ modification doesn't affect instance billing.
 
 ## Notes
-- AZ modification may lead to primary-replica switch and a momentary disconnection of about 10 seconds; therefore, proceed during the off-peak hours of your business.
-- After AZ modification, you must change the network to the IP address of the new AZ as instructed in [Switching Instance Network](https://intl.cloud.tencent.com/document/product/240/44180); otherwise, the request latency will increase.
+AZ modification may lead to primary-replica switch and a momentary disconnection of about 10 seconds; therefore, proceed during the off-peak hours of your business.
 
 ## Instructions
-- All attributes, configurations, and connection addresses of the instance will stay unchanged after AZ modification. However, you need to change the VPC subnet to the new AZ; otherwise, the request latency will increase. The private IP of the database will change after network switch, so you need to reconnect to the instance.
+- All attributes, configurations, and connection addresses of the instance will stay unchanged after AZ modification. The private IP of the database will change after network switch, so you need to reconnect to the instance.
 
 ## Prerequisites
 - You have [created a TencentDB for MongoDB instance](https://intl.cloud.tencent.com/document/product/240/3551).
