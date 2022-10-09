@@ -15,7 +15,7 @@ You can generate an inventory file for the objects on which to perform a batch o
 
 The configuration items are described as follows:
  - **Job Region**: Select a region for the job. It must be the same as the bucket region where the objects in your inventory file reside; otherwise, the job will fail.
->? Currently, the COS batch operation feature is only available in public cloud regions in Chinese mainland.
+>? Currently, the COS batch operation feature is only available in public cloud regions in Chinese mainland and the Silicon Valley region.
 >
  - **Inventory Format**: Select a format for the objects to be inventoried from the following two options:
 <table>
