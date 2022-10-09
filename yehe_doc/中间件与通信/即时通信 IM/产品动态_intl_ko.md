@@ -1,3 +1,89 @@
+## 2022년 08월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="44%">업데이트 설명</th><th width="15%">배포일</th><th width="21%">관련 문서</th>
+</tr> 
+<tr>
+    <td> SDK 6.6.3002 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+    <li> 오디오/비디오 그룹의 구성원 표시 지원 </li>
+    <li> 오디오/비디오 그룹에서 강제 퇴장 지원 </li>
+    <li> Android에 대한 주제 업데이트 콜백의 간헐적인 크래쉬 수정 </li>
+    <li> 그룹 가입 옵션 변경 알림의 잘못된 열거 값 수정 </li> 
+    <li> 사용자 지정 주제 필드가 설정된 후 onTopicInfoChanged에 대한 콜백이 수신되지 않는 문제 수정 </li>     
+    <li> Android에서 네트워크 IP가 반복적으로 요청되는 문제 최적화 </li>
+    <li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">업데이트 로그</a>를 참고하십시오.</li>    
+        </ul></td>
+    <td> 2022-08-18 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr> 
+<tr>
+    <td>SDK 2.22.0 버전 배포(미니프로그램 및 Web)</td>
+<td data-sheets-value="" ><li>오프라인 푸시를 위해 uni-app을 native app으로 패키징하는 것을 지원합니다. 자세한 내용은 <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#registerPlugin">registerPlugin</a>을 참고하십시오.<br>
+<li>오디오/비디오 그룹의 온라인 참석자 목록 가져오기를 지원합니다. 자세한 내용은 <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberList">getGroupMemberList </a>를 참고하십시오(플래그십 에디션 필요).<br>
+<li>오디오/비디오 그룹의 구성원 차단을 지원합니다. 자세한 내용은 <a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteGroupMember">deleteGroupMember</a>를 참고하십시오(플래그십 에디션 필요).<br>
+<a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setConversationCustomData"><li>setConversationCustomData </a>를 추가하여 사용자 지정 대화 필드를 설정합니다.<li> 업데이트에 대한 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">업데이트 로그</a>를 참고하십시오.</td></td>
+    <td> 2022-08-18 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK 다운로드</a></td>
+</tr>
+<tr>
+    <td> SDK 2.21.1 버전 배포(미니프로그램 및 Web)</td>
+    <td>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#resendMessage">resendMessage</a>로 인해 발생할 수 있는 메시지 중복 문제 수정.</li>
+<li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">업데이트 로그</a>를 참고하십시오.</td>
+    <td> 2022-08-03 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK 다운로드</a></td>
+</tr>
+</table>
+
+## 2022년 07월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="44%">업데이트 설명</th><th width="15%">배포일</th><th width="21%">관련 문서</th>
+</tr> 
+<tr>
+    <td> SDK 6.5.2816 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+    <li> 인도의 분할 영역 선택 정책 최적화 </li>
+    <li> 리치 미디어 메시지의 업로드/다운로드 진행 콜백 최적화</li>
+    <li> Android 클라이언트에서 기기 프로세스 정보를 얻는 데 필요한 규정 준수 최적화 </li>
+    <li> 여러 주제가 차례로 생성될 때 발생하는 crash 수정 </li> 
+    <li> Windows 기반 패킷 전송에서 가끔 발생하는 crash 수정 </li>     
+    <li> 차단 목록에 있는 친구가 다시 추가될 때 Android v7a 아키텍처에서 발생하는 crash 수정 </li>
+    <li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">업데이트 로그</a>를 참고하십시오.</li>    
+        </ul></td>
+    <td> 2022-07-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr> 
+<tr>
+    <td>SDK 2.21.0 버전 배포(미니프로그램 및 Web)</td>
+    <td>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setSelfStatus">setSelfStatus</a>추가하여, 사용자 지정 자체 상태 설정</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getUserStatus">getUserStatus</a>추가하여, 사용자 상태 쿼리</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#subscribeUserStatus">subscribeUserStatus</a>추가하여, 사용자 상태 구독</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#unsubscribeUserStatus">unsubscribeUserStatus</a>추가하여, 사용자 상태 구독 취소</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType">setMessageRemindType</a> 클라이언트 및 인스턴스 간에 그룹 및 주제 메시지 음소거 설정 동기화</li>
+<li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">업데이트 로그</a>를 참고하십시오.</td>
+    <td> 2022-07-28 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK 다운로드</a></td>
+</tr>
+<tr>
+    <td> SDK 6.5.2803 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+	<li><a href="https://intl.cloud.tencent.com/document/product/1047/48853">대화 태그</a>에 대한 지원 추가
+	<li><a href="https://intl.cloud.tencent.com/document/product/1047/48854">대화 그룹화</a>에 대한 지원 추가
+	<li> 맞춤 대화 필드에 대한 지원 추가 </li>
+	<li><a href="https://cloud.tencent.com/document/product/269/75366#.E8.8E.B7.E5.8F.96.E4.BC.9A.E8.AF.9D.E5.88.97.E8.A1.A8.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3">대화 목록 가져오기 고급 API </a>추가    
+	<li> 오디오/비디오 그룹의 방송 메시지 수신 지원 </li> 
+	<li> 그룹 가입 옵션 변경에 대한 알림 전달 지원 </li>     
+	<li> 클라이언트 간에 그룹 메시지 수신 옵션의 변경 사항 동기화 지원 </li>
+	<li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">업데이트 로그</a>를 참고하십시오.</li>    
+    </ul></td>
+    <td> 2022-07-15 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr>
+</table>
+
+
+
 ## 2022년 06월
 <table>
 <tr><th width="20%">업데이트 명칭</th>  <th width="44%">업데이트 설명</th><th width="15%">배포일</th><th width="21%">관련 문서</th>
