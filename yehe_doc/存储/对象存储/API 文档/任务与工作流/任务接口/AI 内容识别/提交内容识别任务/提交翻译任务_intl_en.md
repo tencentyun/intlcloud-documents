@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`CreateAIRecognitionJobs`) is used to submit an AI-based processing job.
+This API (`CreateAIRecognitionJobs`) is used to submit an AI processing job.
 
 ## Request
 
@@ -19,13 +19,13 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
 
 #### Request body
 This request requires the following request body:
@@ -76,7 +76,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------- | --------------- | ------ | ---- | --- |
 | Object             | Request.Input | Source filename | String | Yes | Single file (docx/xlsx/html/markdown/txt): 8 million characters <br/>Number of pages (pdf/pptx): 300 pages <br/>Text file (txt): 10 MB <br/>Binary file (pdf/docx/pptx/xlsx): 60 MB<br/>|
-| Lang               | Request.Input | File language | String | Yes | `zh`: Simplified Chinese <br/>`zh-hk`: Traditional Chinese <br/>`zh-tw`: Traditional Chinese <br/>`zh-tr`: Traditional Chinese <br/>`en`: English <br/>`ar`: Arabic <br/>`de`: German <br/>`es`: Spanish <br/>`fr`: French <br/>`id`: Indonesian <br/>`it`: Italian <br/>`ja`: Japanese <br/>`pt`: Portuguese <br/>`ru`: Russian <br/>`ko`: Korean <br/>`km`: Khmer <br/>`lo`: Lao |
+| Lang               | Request.Input | File language | String | Yes | zh: Simplified Chinese <br/>zh-hk: Traditional Chinese <br/>zh-tw: Traditional Chinese <br/>zh-tr: Traditional Chinese <br/>en: English <br/>ar: Arabic <br/>de: German <br/>es: Spanish <br/>fr: French <br/>id: Indonesian <br/>it: Italian <br/>ja: Japanese <br/>pt: Portuguese <br/>ru: Russian <br/>ko: Korean <br/>km: Khmer <br/>lo: Lao |
 | Type               | Request.Input | File type | String | Yes | pdf<br/>docx<br/>pptx<br/>xlsx<br/>txt<br/>xml<br/>html: Only text nodes in HTML files can be translated, while nodes that need to be dynamically loaded through JS cannot.<br/>markdown |
 | BasicType         | Request.Input | Original file type | String | No   | This parameter can be used only if `Type` is `pdf`. Valid values: `docx`, `pptx`. |
 
@@ -91,7 +91,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | :------------------------ | -------------------------------------- | --------- | ---- |---- |
-| Lang               | Request.Operation | Target language | String | Yes   | If the source language is `zh`, `zh-hk`, `zh-tw`, or `zh-tr`, this parameter can be `en`, `ar`, `de`, `es`, `fr`, `id`, `it`, `ja`, `ru`, `ko`, `km`, `lo`, or `pt`. <br/>If the source language is `en`, this parameter can be `zh`, `zh-hk`, `zh-tw`, `zh-tr`, `ar`, `de`, `es`, `fr`, `id`, `it`, `ja`, `ru`, `ko`, `km`, `lo`, or `pt`.<br/>If the source language is other types, this parameter can be `zh`, `zh-hk`, `zh-tw`, `zh-tr`, or `en`.  |
+| Lang               | Request.Operation | Target language | String | Yes   | If the source language is `zh`, `zh-hk`, `zh-tw`, or `zh-tr`, this parameter can be `en`, `ar`, `de`, `es`, `fr`, `id`, `it`, `ja`, `ru`, `ko`, `km`, `lo`, or `pt`. If the source language is `en`, this parameter can be `zh`, `zh-hk`, `zh-tw`, `zh-tr`, `ar`, `de`, `es`, `fr`, `id`, `it`, `ja`, `ru`, `ko`, `km`, `lo`, or `pt`.<br/>If the source language is other types, this parameter can be `zh`, `zh-hk`, `zh-tw`, `zh-tr`, or `en`.  |
 | Type               | Request.Operation | File type    | String | Yes   | The mappings between source file types and target file types are as follows: <br/>docx: docx<br/> pptx: pptx<br/>xlsx: xlsx<br/>txt: txt<br/>xml: xml<br/>html: html<br/>markdown: markdown<br/>pdf: pdf, docx |
 
 `Output` has the following sub-nodes:
@@ -108,7 +108,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -190,7 +190,7 @@ Same as the `Request.Operation.Output` node in the request.
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
 
 ## Samples
 
