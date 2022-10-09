@@ -8,7 +8,7 @@ In addition, we also recommend you perform operations involving data migration, 
 >?Before maintenance is carried out for TencentDB for MongoDB during the maintenance time, notifications will be sent to the contacts configured in your Tencent Cloud account through SMS and email.
 
 ## Version requirements
-- Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support maintenance time configuration.
+- Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support maintenance time configuration.
 
 ## Prerequisites
 - You have [created a TencentDB for MongoDB instance](https://intl.cloud.tencent.com/document/product/240/3551).
