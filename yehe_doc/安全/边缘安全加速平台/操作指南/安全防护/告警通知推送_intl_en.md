@@ -1,26 +1,28 @@
-## Security Notification
-### Overview
-You can configure to receive alerts in the Message Center when security events are detected.
->?The EdgeOne console is now only available to beta users. [Contact us](https://intl.cloud.tencent.com/contact-us) to join the beta.
-
-### DDoS Attack Alerts
-
-When DDoS attacks on security acceleration and L4 proxy services are detected, and the attack data rate exceeds the configured threshold, you will receive an alert.
+## Overview
+To be notified of DDoS attacks against the DDoS mitigation Enterprise plan (site access and layer-4 proxy services), you can set an alarm threshold based on the minimum DDoS attack rate in the EdgeOne console and configure the corresponding subscription in the Message Center.
 >?
->-  EdgeOne monitors the downstream traffic, and automatically cleanses attack traffic once it’s detected.
->-  **DDoS alarms** is only available for security acceleration and L4-proxied resources. Content acceleration resources are not supported.
+>- EdgeOne identifies DDoS attacks by monitoring external access traffic in real time, and automatically cleanses traffic as soon as malicious attack traffic is detected.
+>- Alarm notifications are pushed only for DDoS attacks against the DDoS mitigation Enterprise plan (site access and layer-4 proxy services). Currently, other businesses don't support the DDoS attack traffic alarming feature.
 
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Select **Security** > **Alarm Notification** on the left sidebar.
-2. On the page that appears, select a site, and click **Set** in the **DDoS alarms** card.
-![](https://qcloudimg.tencent-cloud.cn/raw/788fa13249fa12a1ad26809fdb00107a.png)
-3. On the pop-up setting page, Click **Edit** next to **Default alarm threshold** You will receive alerts in the Message Center when the DDoS attack traffic data rate exceeds the threshold.
-![](https://qcloudimg.tencent-cloud.cn/raw/c1f7e543bb17f585f433144e2580e75f.png)
->?This page displays all eligable resources. For those not configured with custom thresholds, you can modify the **Default alarm threshold**.
 
-4. On the DDoS alarms setting page, toggle on the ![](https://qcloudimg.tencent-cloud.cn/raw/7d363152eb0ea6c823ae278c4d118dc6.png) custom alarm threshold switch for a target resource.
-![](https://qcloudimg.tencent-cloud.cn/raw/b22492187707b700f09608aad4fd65df.png)
-5. Click **Edit** under the **Custom threshold** column.
-![](https://qcloudimg.tencent-cloud.cn/raw/414118509c8e9c6af9691c31348a8e92.png)
-6. Enter the alarm threshold (at least 10 Mbps). Click **Save** to make the configuration take effect. 
-![](https://qcloudimg.tencent-cloud.cn/raw/66137d737767d969aa15c938377c1451.png)
->? The default alarm threshold is 100 Mbps. You can modify it based on the attack frequency and attack history of your resource.
+## Directions
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone), select **Security** > **Alarm Notification** on the left sidebar, and select the target site.
+2. In the **DDoS attack traffic alarm** section, click **Set**.
+![](https://qcloudimg.tencent-cloud.cn/raw/3d9ae03f915503fa3bfa95a9cbfb725b.png)
+3. On the **DDoS attack traffic alarm** page, you can adjust the default global DDoS attack alarm threshold for the current site, and the Message Center will push attack event notifications only when the attack rate exceeds the configured threshold. Click **Edit** of the default alarm threshold, modify the threshold, and click **Save**.
+>? The **DDoS attack traffic alarm** page displays all objects that can be configured and their custom DDoS alarm thresholds if you have set. For those not configured with custom thresholds, you can modify the **Default alarm threshold**.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/e0214d3aa609ca11fcb7e3d14e9a4d41.png)
+4. On the **DDoS attack traffic alarm** page, you can configure the alarm threshold for a security acceleration or layer-4 proxy business project.
+>?We recommend you adjust the threshold based on the attack frequency and history. It is 100 Mbps by default and can be adjusted to 10 Mbps at the minimum.
+
+ - Set a single alarm threshold
+    1. Select the target business and click **Edit** in the alarm threshold column to adjust the minimum attack rate above which the business will push DDoS attack notifications.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/99b838db25a710141db2fd3b70131209.png)
+	2. Modify the alarm threshold, click **Save**, and the custom threshold will be enabled automatically.
+ - Batch set alarm thresholds
+    1. Select one or more businesses and click **Batch set**.
+     ![](https://qcloudimg.tencent-cloud.cn/raw/77e611f172babf0659807d334cd4e664.png)
+    2. Toggle on the custom threshold switch ![](https://qcloudimg.tencent-cloud.cn/raw/027bed3bee658b505f0531e838eb1d80.png), set the alarm threshold, and click **OK**.
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/74e96c6cbe56c8da343ef312f7a43444.png)
+
