@@ -56,7 +56,7 @@ _, err = c.CI.GetToFile(context.Background(), name, filepath, "imageMogr2/thumbn
 | :--------------- | :----------------------------------------------------------- | :----- | :------- |
 | key              | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg | string | 是       |
 | operation        | 基础图片处理，可以通过该参数实现缩放、裁剪、旋转、格式转换、质量变换等基础图片处理功能。 | string | 是       |
-| ObjectGetOptions | 对象下载参数，详见 [下载对象](https://intl.cloud.tencent.com/document/product/436/31526) | string | 否       |
+| ObjectGetOptions | 对象下载参数，详见 [下载对象](https://intl.cloud.tencent.com/document/product/436/43549) | string | 否       |
 | id               | 对象 VersionId                                                | string | 否       |
 
 ## 裁剪
