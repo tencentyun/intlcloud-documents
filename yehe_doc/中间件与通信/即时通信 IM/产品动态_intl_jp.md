@@ -1,3 +1,89 @@
+## 2022年08月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時期</th><th width="21%">関連ドキュメント</th>
+</tr> 
+<tr>
+    <td> SDK 6.6.3002拡張版をリリース</td>
+    <td><ul style="margin:0">
+    <li> ライブストリーミンググループのメンバーをタグ付けすることをサポートします </li>
+    <li> ライブストリーミンググループからメンバーを追放することをサポートします </li>
+    <li> Androidトピック更新のコールバックでたまに発生するクラッシュの問題を修正しました </li>
+    <li> グループ参加オプション変更の通知列挙値が正しくない問題を修正しました </li> 
+    <li> トピックにカスタムフィールドが設定された後、onTopicInfoChangedのリッスンコールバックが受信されない問題を修正しました </li>     
+    <li> AndroidでネットワークIPを何度も取得する問題を最適化しました </li>
+    <li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新ログ</a>をご参照ください</li>    
+        </ul></td>
+    <td> 2022-08-18 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr> 
+<tr>
+    <td> SDK 2.22.0をリリースしました（ミニプログラムとWeb端末）</td>
+<td data-sheets-value="" ><li>uni-appでnative appへのパッケージ化時にオフライン配信を使用することをサポートします。<a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#registerPlugin">registerPlugin</a>をご参照ください。<br>
+<li>ライブストリーミンググループのオンラインメンバーリストを取得することをサポートします。<a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberList">getGroupMemberList </a>（Ultimate Editionが必要）をご参照ください。<br>
+<li>ライブストリーミンググループのメンバーブロックをサポートします。<a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteGroupMember">deleteGroupMember</a>（Ultimate Editionが必要）をご参照ください。<br>
+<a  target="_blank" href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setConversationCustomData"><li>setConversationCustomData</a>でセッションカスタムデータを設定します。<li>他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新ログ</a>をご参照ください</td></td>
+    <td> 2022-08-18 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 2.21.1をリリースしました（ミニプログラムとWeb端末）</td>
+    <td>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#resendMessage">resendMessage</a>、発生する可能性があるメッセージ重複問題。</li>
+<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新ログ</a>をご参照ください</td>
+    <td> 2022-08-03 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+</table>
+
+## 2022年07月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
+</tr> 
+<tr>
+    <td> SDK 6.5.2816拡張版をリリース</td>
+    <td><ul style="margin:0">
+    <li> インドサイトのルート選択ポリシーを最適化しました </li>
+    <li> リッチ・メディア・メッセージのアップロード/ダウンロード進行状態のコールバックを最適化しました </li>
+    <li> Android端末でデバイスのプロセス情報を取得するときのコンプライアンス問題を最適化します </li>
+    <li> トピックを連続して作成するときのcrashの問題を修正しました </li> 
+    <li> Windowsでパケットを送信するときのcrash問題を修正しました </li>     
+    <li> Android v7aアーキテクチャーで友達をブラックリストに追加して、もう一度ブラックリストに載っている友達を登録するときのcrash問題を修正しました </li>
+    <li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新ログ</a>をご参照ください</li>    
+        </ul></td>
+    <td> 2022-07-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr> 
+<tr>
+    <td> SDK 2.21.0をリリースしました（ミニプログラムとWeb端末）</td>
+    <td>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setSelfStatus">setSelfStatus</a>で、自分のカスタマイズ状態を設定します</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getUserStatus">getUserStatus</a>でユーザー状態を問い合わせます</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#subscribeUserStatus">subscribeUserStatus</a>、サブスクリプションユーザー状態</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#unsubscribeUserStatus">unsubscribeUserStatus</a>でサブスクリプションユーザー状態を取り消します</li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType">setMessageRemindType</a>がグループメッセージやトピックメッセージの着信通知なし設定の多端末、多インスタンス同期をサポートします</li>
+<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新ログ</a>をご参照ください</td>
+    <td>	2022/07/28	</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 6.5.2803拡張版をリリース</td>
+    <td><ul style="margin:0">
+	<li><a href="https://intl.cloud.tencent.com/document/product/1047/48853">セッションタグ</a>へのサポートを追加しました
+	<li><a href="https://intl.cloud.tencent.com/document/product/1047/48854">セッショングループ化</a>へのサポートを追加しました
+	<li> セッションのカスタムフィールドへのサポートを追加しました </li>
+	<li><a href="https://cloud.tencent.com/document/product/269/75366#.E8.8E.B7.E5.8F.96.E4.BC.9A.E8.AF.9D.E5.88.97.E8.A1.A8.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3">セッションプル用ハイレベルインターフェースを追加しました</a>    
+	<li> ライブストリーミンググループメッセージ受信をサポートします </li> 
+	<li> グループ参加オプション変更の通知送信をサポートします </li>     
+	<li> グループメッセージ受信オプション変更の多端末同期をサポートします </li>
+	<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新ログ</a>をご参照ください</li>    
+    </ul></td>
+    <td> 2022-07-15 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+</table>
+
+
+
 ## 2022年06月
 <table>
 <tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
