@@ -6,7 +6,7 @@ Two or more nodes can implement load balancing for read requests and guarantee a
 If a read-only node isn't in the candidate list of the primary node, it won't be elected as the primary node or participate in the election.
 
 ## Version requirements
-TencentDB for MongoDB 4.0 and 4.2 support adding read-only nodes, while 3.6 doesn't.
+TencentDB for MongoDB 4.0, 4.2 and 4.4 support adding read-only nodes, while 3.6 doesn't.
 
 ## Directions
 1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb).
