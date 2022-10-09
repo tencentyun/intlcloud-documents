@@ -159,6 +159,8 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 47.[Customer Identity and Access Management](https://intl.cloud.tencent.com/document/product/1148/49480).
 48.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50008).
 49.[OCR](https://www.tencentcloud.com/document/product/1005/50445).
+50.[Captcha](https://www.tencentcloud.com/document/product/1159/50402).
+
 ## 관할권별 요구 사항
 
 **유럽**
