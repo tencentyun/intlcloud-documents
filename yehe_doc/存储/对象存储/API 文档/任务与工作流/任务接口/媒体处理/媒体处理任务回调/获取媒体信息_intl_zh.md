@@ -104,7 +104,7 @@ Container 节点 Response 的内容：
 | JobsDetail         | Response | 任务的详细信息           | Container |
 
 Container 节点 JobsDetail 的内容：
-同提交获取媒体信息任务接口中的 Response.JobsDetail
+<a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">同提交获取媒体信息任务接口中的 Response.JobsDetail</a>
 
 **如果任务是通过工作流触发的，Response.JobsDetail.Input 还会包含 CosHeaders 节点，类型为 Container 数组。**
 

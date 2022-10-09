@@ -34,7 +34,7 @@ Authorization: <Auth String>
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求参数
@@ -45,6 +45,9 @@ Authorization: <Auth String>
 | :----------------- | :----- | :----------------------------------------------------------- | :------ | :------- |
 | queueId            | 无     | 拉取该队列 ID 下的任务                                       | String  | 是       |
 | tag                | 无     | 任务的 Tag                                                  | String  | 是       |
+| workflowId         | 无     | 触发该任务的工作流 ID                                          | String  | 否       |
+| inventoryTriggerJobId | 无     | 触发该任务的存量触发任务 ID                                                  | String  | 否       |
+| inputObject | 无     | 该任务的输入文件名，暂仅支持精确匹配                                                  | String  | 否       |
 | orderByTime        | 无     | Desc 或者 Asc。默认为 Desc                                   | String  | 否       |
 | nextToken          | 无     | 请求的上下文，用于翻页。上次返回的值                         | String  | 否       |
 | size               | 无     | 拉取的最大任务数。默认为10。最大为100                        | Integer | 否       |
@@ -78,7 +81,7 @@ tag 支持以下几种类型:
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
 
 #### 请求体
 
@@ -89,7 +92,7 @@ tag 支持以下几种类型:
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
 
 #### 响应体
 
@@ -118,7 +121,7 @@ Container 节点 Response 的内容：
 | NextToken          | Response | 翻页的上下文 Token                                            | String    |
 
 对于不同的任务类型，JobsDetail 的内容不同，请参照以下链接：
-- 音视频转码
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48941" target="_blank">音视频转码</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49569" target="_blank">视频转动图</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48938" target="_blank">视频截帧</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48937" target="_blank">智能封面</a>
@@ -129,12 +132,12 @@ Container 节点 Response 的内容：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48944" target="_blank">视频增强</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48940" target="_blank">超分辨率</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48936" target="_blank">音视频转封装</a>
-- 数字水印
-- 提取数字水印
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48930" target="_blank">数字水印</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48931" target="_blank">提取数字水印</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">视频标签</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48932" target="_blank">获取媒体信息</a>
-- 音视频流分离
-- 视频质量分析
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48939" target="_blank">音视频流分离</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48934" target="_blank">视频质量分析</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">语音合成</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">音频降噪</a>
 
@@ -142,7 +145,7 @@ Container 节点 Response 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 
 ## 实际案例
@@ -208,6 +211,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
                 <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
     <JobsDetail>
@@ -250,6 +254,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
                 <Object>output/out.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
             <MediaInfo>
                 <Format>
                     <Bitrate>834.736000</Bitrate>

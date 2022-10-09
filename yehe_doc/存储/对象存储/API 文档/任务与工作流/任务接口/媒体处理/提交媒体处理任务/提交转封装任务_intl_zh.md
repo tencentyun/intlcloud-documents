@@ -37,13 +37,13 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
 
 #### 请求体
 
@@ -70,6 +70,7 @@ Content-Type: application/xml
             <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -91,7 +92,11 @@ Container 类型 Request 的具体数据描述如下：
 | Input              | Request | 待操作的媒体信息        | Container | 是       |
 | Operation          | Request | 操作规则                | Container | 是       |
 | QueueId            | Request | 任务所在的队列 ID       | String    | 是       |
-| CallBack           | Request | 回调地址                | String    | 否       |
+| CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
+| CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型                    | String | 否 |
+| CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
+| CallBackMqConfig   | Request | 任务回调 TDMQ 配置，当 CallBackType 为 TDMQ 时必填。详情见 [CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945)                | Container | 否 |
+
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -106,6 +111,7 @@ Container 类型 Operation 的具体数据描述如下：
 | ------------------ | ----------------- | -------------- | --------- | -------- |
 | Segment            | Request.Operation | 指定转封装参数 | Container | 是       |
 | Output             | Request.Operation | 结果输出地址   | Container | 是       |
+| JobLevel           | Request.Operation | 任务优先级，级别限制：0 、1 、2。级别越大任务优先级越高，默认为0 | String | 否   |
 
 Container 类型 Segment 的具体数据描述如下：
 
@@ -113,6 +119,7 @@ Container 类型 Segment 的具体数据描述如下：
 | ------------------ | :------------------------ | -------------------- | --------- | -------- | -------------------------------------------- |
 | Format             | Request.Operation.Segment | 封装格式             | String    | 是       | aac、mp3、flac、mp4、ts、mkv、avi、hls、m3u8 |
 | Duration           | Request.Operation.Segment | 转封装时长，单位：秒 | String    | 否       | 不小于5的整数                                |
+| TranscodeIndex      | Request.Operation.Segment | 指定处理的流编号，对应媒体信息中的 Response.MediaInfo.Stream.Video.Index </br>和 Response.MediaInfo.Stream.Audio.Index，详见 [获取媒体信息接口](https://intl.cloud.tencent.com/document/product/1045/49541)  | String    | 否       | 无                                |
 | HlsEncrypt         | Request.Operation.Segment | hls 加密配置         | Container | 否       | 无, 只有当封装格式为 hls 时生效  |
 
 Container 类型 HlsEncrypt 的具体数据描述如下：
@@ -135,7 +142,7 @@ Container 类型 Output 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
 
 #### 响应体
 
@@ -173,6 +180,7 @@ Container 类型 Output 的具体数据描述如下：
                 <Object>output/out-${Number}</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
         <CallBack>http://callback.demo.com</CallBack>
@@ -227,6 +235,7 @@ Container 节点 Operation 的内容：
 | MediaInfo          | Response.JobsDetail.Operation | 转码输出视频的信息，没有时不返回     | Container |
 | MediaResult        | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回 | Container |
 | UserData           | Response.JobsDetail.Operation | 透传用户信息                      | String |
+| JobLevel           | Response.JobsDetail.Operation | 任务优先级                                                   | String |
 
 Container 节点 MediaInfo 的内容：
 同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
@@ -255,7 +264,7 @@ Container 节点 Md5Info 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 ## 实际案例
 
@@ -284,6 +293,7 @@ Content-Type: application/xml
             <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -329,6 +339,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/out-${Number}</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
         <CallBack>http://callback.demo.com</CallBack>
@@ -367,6 +378,7 @@ Content-Type: application/xml
             <Object>output/out-${Number}</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -416,6 +428,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/out</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
         <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
         <CallBack>http://callback.demo.com</CallBack>

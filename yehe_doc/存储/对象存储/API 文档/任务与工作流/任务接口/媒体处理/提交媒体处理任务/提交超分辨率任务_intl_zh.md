@@ -37,13 +37,13 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
 
 #### 请求体
 
@@ -72,6 +72,7 @@ Content-Type: application/xml
             <Object>output/out.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -93,8 +94,11 @@ Container 类型 Request 的具体数据描述如下：
 | Input              | Request | 待操作的媒体信息                | Container | 是       |
 | Operation          | Request | 操作规则                        | Container | 是       |
 | QueueId            | Request | 任务所在的队列 ID               | String    | 是       |
+| CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
+| CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型                    | String | 否 |
 | CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
-| CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                   | String | 否 |
+| CallBackMqConfig   | Request | 任务回调 TDMQ 配置，当 CallBackType 为 TDMQ 时必填。详情见 [CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945)                | Container | 否 |
+
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -111,11 +115,13 @@ Container 类型 Operation 的具体数据描述如下：
 | TemplateId          | Request.Operation | 指定的超分辨率模 ID，优先使用模板 ID，不能与 SuperResolution 同时为空                    | String | 否 |
 | Transcode           | Request.Operation | 指定转码模板参数，不能与 TranscodeTemplateId 同时为空                                   | Container | 否 |
 | TranscodeTemplateId | Request.Operation | 指定的转码模板 ID，优先使用模板 ID，不能与 Transcode 同时为空                            | String    | 否 |
-| Watermark           | Request.Operation | 指定水印模板参数，同创建水印模板 CreateMediaTemplate 接口中的 Request.Watermark，最多传3个 | Container 数组 | 否 |
+| Watermark           | Request.Operation | 指定水印模板参数，同创建水印模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49917" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Watermark，最多传3个 | Container 数组 | 否 |
 | WatermarkTemplateId | Request.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 ID                      | String 数组 | 否 |
 | DigitalWatermark    | Request.Operation | 指定数字水印参数                                                                      | Container | 否 |
 | Output              | Request.Operation | 结果输出地址                                                                          | Container | 是 |
 | UserData            | Request.Operation | 透传用户信息, 可打印的 ASCII 码, 长度不超过1024                                           | String | 否 |
+| JobLevel            | Request.Operation | 任务优先级，级别限制：0 、1 、2。级别越大任务优先级越高，默认为0 | String | 否   |
+
 
 >? 提交超分辨率任务必须传入转码参数。对于超分辨率参数，优先使用 TemplateId，无 TemplateId 时使用 SuperResolution；对于转码参数，优先使用 TranscodeTemplateId，无 TranscodeTemplateId 时使用 Transcode；对于水印参数，可以使用 WatermarkTemplateId 或 Watermark 设置，WatermarkTemplateId 优先级更高。
 >
@@ -124,25 +130,26 @@ Container 类型 SuperResolution 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                            | 描述                                                         | 类型   | 必选 |
 | ------------------ | :-------------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Resolution         | Request.Operation.SuperResolution | 同创建超分辨率模板 CreateMediaTemplate 接口中的 Request.Resolution    | String | 是 |
-| EnableScaleUp      | Request.Operation.SuperResolution | 同创建超分辨率模板 CreateMediaTemplate 接口中的 Request.EnableScaleUp | String | 否 |
-| Version            | Request.Operation.SuperResolution | 同创建超分辨率模板 CreateMediaTemplate 接口中的 Request.Version       | String | 否 |
+| Resolution         | Request.Operation.SuperResolution | 同创建超分辨率模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Resolution    | String | 是 |
+| EnableScaleUp      | Request.Operation.SuperResolution | 同创建超分辨率模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a> 接口中的 Request.EnableScaleUp | String | 否 |
+| Version            | Request.Operation.SuperResolution | 同创建超分辨率模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49910" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Version       | String | 否 |
 
 Container 类型 Transcode 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                            | 描述                                                         | 类型   | 必选 |
 | ------------------ | :------------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| TimeInterval       | Request.Operation.Transcode     | 同创建转码模板 CreateMediaTemplate 接口中的 Request.TimeInterval | Container | 是 |
-| Container          | Request.Operation.Transcode     | 同创建转码模板 CreateMediaTemplate 接口中的 Request.Container    | Container | 否 |
-| Video              | Request.Operation.Transcode     | 同创建转码模板 CreateMediaTemplate 接口中的 Request.Video        | Container | 否 |
-| Audio              | Request.Operation.Transcode     | 同创建转码模板 CreateMediaTemplate 接口中的 Request.Audio        | Container | 否 |
-| TransConfig        | Request.Operation.Transcode     | 同创建转码模板 CreateMediaTemplate 接口中的 Request.TransConfig  | Container | 否 |
+| TimeInterval       | Request.Operation.Transcode     | 同创建转码模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a> 接口中的 Request.TimeInterval | Container | 否 |
+| Container          | Request.Operation.Transcode     | 同创建转码模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Container    | Container | 否 |
+| Video              | Request.Operation.Transcode     | 同创建转码模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Video        | Container | 否 |
+| Audio              | Request.Operation.Transcode     | 同创建转码模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a> 接口中的 Request.Audio        | Container | 否 |
+| TransConfig        | Request.Operation.Transcode     | 同创建转码模板 <a href="https://intl.cloud.tencent.com/document/product/1045/49911" target="_blank">CreateMediaTemplate</a> 接口中的 Request.TransConfig  | Container | 否 |
+| AudioMix           | Request.Operation.Transcode     | 混音参数，详情见 <a href="https://intl.cloud.tencent.com/document/product/1045/49945" target="_blank">AudioMix</a>  | Container 数组 | 否 |
 
 Container 类型 DigitalWatermark 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                             | 描述                                                         | 类型   | 必选 |
 | ------------------ | :--------------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Message            | Request.Operation.DigitalWatermark | 数字水印嵌入的字符串信息，长度不超过64个字符，仅支持中文、英文、数字、\_、-和\* | string | 是   |
+| Message            | Request.Operation.DigitalWatermark | 数字水印嵌入的字符串信息，长度不超过64个字符，仅支持中文、英文、数字、\_、-和\* | String | 是   |
 | Type               | Request.Operation.DigitalWatermark | 水印类型，当前仅可设置为 Text                                | String | 是   |
 | Version            | Request.Operation.DigitalWatermark | 水印版本，当前仅可设置为 V1                                  | String | 是   |
 | IgnoreError        | Request.Operation.DigitalWatermark | 当添加水印失败是否忽略错误继续执行任务，限制为 true/false，默认 false | string | 否   |
@@ -161,7 +168,7 @@ Container 类型 Output 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
 
 #### 响应体
 
@@ -203,6 +210,7 @@ Container 类型 Output 的具体数据描述如下：
                   <Object>output/out.mp4</Object>
               </Output>
               <UserData>This is my data.</UserData>
+              <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -261,6 +269,8 @@ Container 节点 Operation 的内容：
 | MediaResult         | Response.JobsDetail.Operation | 输出文件的基本信息，任务未完成时不返回                             | Container |
 | DigitalWatermark    | Response.JobsDetail.Operation | 指定数字水印参数                                               | Container |
 | UserData            | Response.JobsDetail.Operation | 透传用户信息                                                   | String |
+| JobLevel            | Response.JobsDetail.Operation | 任务优先级                                                   | String |
+
 
 Container 节点 MediaInfo 的内容：
 同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
@@ -300,7 +310,7 @@ Container 类型 DigitalWatermark 的具体数据描述如下：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
 
 ## 实际案例
 
@@ -336,6 +346,7 @@ Content-Type: application/xml
             <Object>output/sr.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -389,6 +400,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/sr.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -471,6 +483,7 @@ Content-Type: application/xml
             <Object>output/sr.mp4</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2242ab62c7c94486915508540933a2c6</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -568,6 +581,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>output/sr.mp4</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>

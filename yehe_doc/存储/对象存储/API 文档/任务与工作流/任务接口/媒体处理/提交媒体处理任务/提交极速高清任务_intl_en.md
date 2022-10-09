@@ -37,13 +37,13 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
 
 #### Request body
 
@@ -94,8 +94,11 @@ The nodes are described as follows:
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
 | CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
+
 
 `Input` has the following sub-nodes:
 
@@ -110,7 +113,7 @@ The nodes are described as follows:
 | ------------------- | ----------------- | ------------------------------------------------------------ | --------- | -------- |
 | TemplateId                   | Request.Operation | ID of the top speed codec transcoding template.                                        | String    | No  |
 | WatermarkTemplateId| Request.Operation | Watermark template ID. Multiple watermark template IDs can be passed in.           | String    | No |
-| Watermark          | Request.Operation | Watermark template parameter, which is the same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`.  | Container | No |
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API <a href="https://intl.cloud.tencent.com/document/product/1045/49917" target="_blank">CreateMediaTemplate</a>.  | Container | No |
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 | UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
@@ -127,7 +130,7 @@ The nodes are described as follows:
 | Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).    | string | Yes   |
 | Type               | Request.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only.      | String | Yes |
 | Version            | Request.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only.       | String | Yes |
-| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default).  | string | Yes   |
+| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default value).  | string | Yes   |
 
 
 `Output` has the following sub-nodes:
@@ -144,7 +147,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
 
 #### Response body
 
@@ -240,8 +243,8 @@ The nodes are as described below:
 | Watermark             | Response.JobsDetail.Operation | Same as `Request.Operation.Watermark` in the request.  | Container array |
 | WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID.          | String array   |
 | Output             | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request.  | Container |
-| MediaInfo           | Response.JobsDetail.Operation | Media information of the output file. Not returned when the job is not completed. | Container |
-| MediaResult        | Response.JobsDetail.Operation | Basic information of the output file. Not returned when the job is not completed. | Container |
+| MediaInfo           | Response.JobsDetail.Operation | Media information of the output file, which will not be returned when the job is not completed. | Container |
+| MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed. | Container |
 | DigitalWatermark   | Response.JobsDetail.Operation | Digital watermark parameter.                 | Container |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
 | JobLevel            | Response.JobsDetail.Operation | Job priority.                            | String |
@@ -275,10 +278,10 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | :---------------------------------- | ------------------------------------------------------------ | ------ |
-| Message               | Response.Operation.DigitalWatermark |  The string in the digital watermark successfully embedded in the video, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*)    | string |
+| Message               | Response.Operation.DigitalWatermark |  The string in the digital watermark successfully embedded in the video, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).    | string |
 | Type               | Response.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only.      | String |
 | Version            | Response.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only.      | String |
-| IgnoreError        | Response.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default).  |string |
+| IgnoreError        | Response.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default value).  |string |
 | State        | Response.Operation.DigitalWatermark | Whether the watermark is added successfully. Valid values: `Running`, `Success`, `Failed`.  | string |
 
 #### Error codes
