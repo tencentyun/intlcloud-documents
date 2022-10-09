@@ -7,7 +7,7 @@
 >
 ## 操作步骤
 ### 步骤1：购买多年期证书
-1. 登录 [SSL 证书购买页](https://buy.cloud.tencent.com/ssl?fromSource=ssl)。
+1. 登录 SSL 证书购买页。
 2. 根据您的需求选择并购买支持多年期的 SSL 证书。
 
 3. 完成购买后，您可按照SSL 证书申请流程 完成 SSL 证书的申请。
