@@ -4,7 +4,7 @@ If you no longer need a TencentDB for MongoDB instance, you can directly termina
 You can terminate an instance if you no longer need it. The terminated instance will be put into the recycle bin. For instances in the recycle bin, you can restore or release them as needed based on different scenarios. 
 
 ## Version Requirement
-- Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support instance termination.
+- Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support instance termination.
 
 ## Billing
 - After a pay-as-you-go instance is returned, it will be moved to the recycle bin and retained there for three days. During the retention period, the instance cannot be accessed, but it can be restored after [top-up](https://intl.cloud.tencent.com/zh/document/product/555/7425).
