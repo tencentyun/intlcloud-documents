@@ -8,7 +8,7 @@ You can manage databases in the TencentDB for SQL Server console. For detailed d
  - The CVM and TencentDB for SQL Server instances are in the same VPC or classic network.
 For more information, see [Connecting to TencentDB for SQL Server Instance from Windows CVM Instance](https://intl.cloud.tencent.com/document/product/238/11626).
 If the CVM and TencentDB for SQL Server instances are under different Tencent Cloud root accounts, in different regions under the same root account, or in different VPCs in the same region under the same root account, we recommend you use [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) for interconnection.
-2. To connect to TencentDB for SQL Server from a local computer, we recommend you use VPN, Direct Connect, or CCN, which are more secure and guarantee a low network latency. To reduce costs, you can also use the public network for interconnection. For data security considerations, TencentDB for SQL Server doesn't support public IP. If you need to use a public IP, you can use the port mapping feature of SSH2 to connect to, configure, and manage an instance from the internet. For more information, see [Connecting to TencentDB for SQL Server Instance from Local Computer](https://intl.cloud.tencent.com/document/product/238/11627).
+2. To connect to a TencentDB for SQL Server instance from a local system, we recommend you use VPN Connections, Direct Connect, or CCN as described in [Overview](https://intl.cloud.tencent.com/document/product/1037/32679), [Getting Started](https://intl.cloud.tencent.com/document/product/216/7557), or [Getting Started with the CCN](https://intl.cloud.tencent.com/document/product/1003/31985) respectively for interconnection, which are secure and guarantee a low network latency. To reduce costs, you can also use the public network for interconnection by [directly enabling the public network address](https://www.tencentcloud.com/document/product/238/50230) in the console or by [enabling public network access through CLB](https://www.tencentcloud.com/document/product/238/48066). For more information, see [Connecting to TencentDB for SQL Server Instance from Local System](https://intl.cloud.tencent.com/document/product/238/11627).
 
 If your TencentDB for SQL Server instance is on the Dual-Server High Availability/Cluster Edition, you can use CLB to enable public network access.
 
@@ -32,16 +32,16 @@ Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.c
 
 ### How do I access a TencentDB for SQL Server instance from a CVM instance under another Tencent Cloud root account?
 CVM and TencentDB for SQL Server instances under different Tencent Cloud accounts cannot interconnect over the private network. We recommend you migrate the TencentDB for SQL Server instance to the account of the CVM instance.
-If you need to keep the instances under different Tencent Cloud accounts, make sure that their are both in VPCs and create a [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) instance between the two VPCs for interconnection.
+If you need to keep the instances under different Tencent Cloud accounts, make sure that their are both in VPCs and create a CCN instance as described in [Getting Started with the CCN](https://intl.cloud.tencent.com/document/product/1003/31985) between the two VPCs for interconnection.
 
 [](id:BTDYNWHT)
 ### How do I interconnect a CVM instance and a TencentDB for SQL Server instance in different regions under the same Tencent Cloud root account over the private network?
 CVM and TencentDB for SQL Server instances in the same AZ or different AZs in the same region can interconnect over the private network, while instances in different regions cannot.
-If you need to keep the instances in different regions, make sure that their are both in VPCs and create a [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) instance between the two VPCs for interconnection.
+If you need to keep the instances in different regions, make sure that their are both in VPCs and create a CCN instance as described in [Getting Started with the CCN](https://intl.cloud.tencent.com/document/product/1003/31985) between the two VPCs for interconnection.
 
 ### How do I interconnect a CVM instance and a TencentDB for SQL Server instance in different VPCs in the same region under the same Tencent Cloud root account over the private network?
 CVM and TencentDB for SQL Server instances in different VPCs cannot interconnect over the private network. We recommend you migrate the TencentDB for SQL Server instance to the VPC of the CVM instance.
-If you need to keep the instances in different VPCs, create a [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) instance between the two VPCs for interconnection.
+If you need to keep the instances in different VPCs, create a CCN instance as described in [Getting Started with the CCN](https://intl.cloud.tencent.com/document/product/1003/31985) between the two VPCs for interconnection.
 
 ### How do I interconnect a CVM instance and a TencentDB for SQL Server instance in different types of networks in the same region under the same Tencent Cloud root account over the private network?
 CVM and TencentDB for SQL Server instances in different types of networks cannot interconnect over the private network. We recommend you change the classic network of the CVM or TencentDB for SQL Server instance to VPC and ensure that the instances are in the same VPC for interconnection over the private network.
@@ -56,13 +56,13 @@ Yes. Instances in different AZs but in the same VPC interconnect over private ne
 
 [](id:BDFWQFWSJK)
 ### How do I access a TencentDB for SQL Server instance from a local server?
-To connect to a TencentDB for SQL Server instance from a local server, we recommend you use [VPN](https://intl.cloud.tencent.com/document/product/1037), [Direct Connect](https://intl.cloud.tencent.com/document/product/216), or [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) for interconnection, which are more secure and guarantee a low network latency.
-To reduce costs, you can also use the public network for interconnection. For data security considerations, TencentDB for SQL Server doesn't support public IP. If you need to use a public IP, you can use the port mapping feature of SSH2 to connect to, configure, and manage an instance from the internet. For more information, see [Connecting to TencentDB for SQL Server Instance from Local Computer](https://intl.cloud.tencent.com/document/product/238/11627).
+To connect to a TencentDB for SQL Server instance from a local server, we recommend you use [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Direct Connect](https://intl.cloud.tencent.com/document/product/216), or [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) for interconnection, which are more secure and guarantee a low network latency.
+To reduce costs, you can use the public network for interconnection by [directly enabling the public network address](https://www.tencentcloud.com/document/product/238/50230) in the console or by [enabling public network access through CLB](https://www.tencentcloud.com/document/product/238/48066). For more information, see [Connecting to TencentDB for SQL Server Instance from Local System](https://intl.cloud.tencent.com/document/product/238/11627).
 
 If your TencentDB for SQL Server instance is on the Dual-Server High Availability/Cluster Edition, you can use CLB to enable public network access.
 
 ### How do I connect to a TencentDB for SQL Server instance without a CVM instance?
-If you don't have a CVM instance, we recommend you use [VPN](https://intl.cloud.tencent.com/document/product/1037), [Direct Connect](https://intl.cloud.tencent.com/document/product/216), or [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) to interconnect the networks and then connect to the TencentDB for SQL Server instance. For more information, see [Connecting to TencentDB for SQL Server Instance from Local Computer](https://intl.cloud.tencent.com/document/product/238/11627).
+If you don't have a CVM instance, we recommend you use [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Direct Connect](https://intl.cloud.tencent.com/document/product/216), or [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) to interconnect the networks and then connect to the TencentDB for SQL Server instance. For more information, see [Connecting to TencentDB for SQL Server Instance from Local System](https://intl.cloud.tencent.com/document/product/238/11627).
 
 ### How do I switch a TencentDB for SQL Server instance from VPC A to VPC B?
 You can change the VPC of a TencentDB for SQL Server instance as instructed in [Changing Network (from VPC to VPC)](https://intl.cloud.tencent.com/document/product/238/46497).
@@ -73,8 +73,11 @@ You can only switch from classic network to VPC for a TencentDB for SQL Server i
 ### How do I migrate a TencentDB for SQL Server instance from classic network to VPC?
 You can switch from classic network to VPC for a TencentDB for SQL Server instance. For more information, see [Switching from Classic Network to VPC](https://intl.cloud.tencent.com/document/product/238/46498).
 
+### How do I enable public network access for a TencentDB for SQL Server instance?
+If your TencentDB for SQL Server instance is on the High Availability Edition or Cluster Edition, you can directly enable the public network address in the console or enable public network access through CLB. For more information, see [Enabling/Disabling Public Network Address](https://www.tencentcloud.com/document/product/238/50230) or [Enabling Public Network Access Through CLB](https://www.tencentcloud.com/document/product/238/48066).
+
 ### How do I use the port mapping feature of SSH2 to connect to and manage a TencentDB for SQL Server instance from the internet?
-For data security considerations, TencentDB for SQL Server doesn't support public IP. If you need to use a public IP, you can use the port mapping feature of SSH2 to connect to, configure, and manage an instance from the internet. For more information, see [Connecting to TencentDB for SQL Server Instance from Local Computer](https://intl.cloud.tencent.com/document/product/238/11627).
+For security considerations, if your business doesn't allow enabling the public network address, you can use the port mapping feature of SSH2 to connect to, configure, and manage an instance from the internet. For detailed directions, see [Connecting to TencentDB for SQL Server Instance from Local System](https://intl.cloud.tencent.com/document/product/238/11627).
 
 [](id:ZDCLSJK)
 ### Does my application need to support automatic reconnection to TencentDB for SQL Server?
@@ -106,7 +109,7 @@ If data migration needs to be performed during the maintenance of TencentDB for 
 ### Why can't I connect to TencentDB for SQL Server?
 Troubleshoot as follows if you can't connect to TencentDB for SQL Server:
 - Check whether the CVM instance can properly connect to the port of the address of the TencentDB for SQL Server instance by running `telnet <connection address> <port number>`. If the port can be accessed, the network is normal; otherwise, check whether the CVM and TencentDB for SQL Server instances are in the same VPC and same security group. If you use the private network for connection, the instances must be in the same VPC, and the connection can be initiated from CVM only.
-- Check whether the connection IP and port are correct and separated by a comma.
+- Check whether the connection IP and port are correct and separated by comma.
 - Check whether the status of the TencentDB for SQL Server instance is abnormal.
 - Check whether the database username and password are correct and try resetting the password.
 - Try restarting the TencentDB for SQL Server instance and check whether the problem is resolved.
@@ -115,14 +118,14 @@ Troubleshoot as follows if you can't connect to TencentDB for SQL Server:
 1. If the connection to a TencentDB for SQL Server instance from a Windows CVM instance failed:
  - Troubleshoot network problems.
     - Check whether the CVM and TencentDB for SQL Server instances are in the same VPC in the same region.
-    - Check security group rules. When a database in the security group is accessed from an address not in the security group, you need to [add a corresponding inbound rule](https://intl.cloud.tencent.com/document/product/238/35789) to the security group. Check CVM security groups, internal firewalls, and internal/custom security policies, and open port 1433 for the specified TencentDB instance IP.
+    - Check security group rules. When a database in the security group is accessed from an address not in the security group, you need to add a corresponding inbound rule to the security group as instructed in [Configuring Security Group](https://intl.cloud.tencent.com/document/product/238/35789). Check CVM security groups, internal firewalls, and internal/custom security policies, and open port 1433 for the specified TencentDB instance IP.
     - Check whether the CVM instance can properly connect to the port of the address of the TencentDB for SQL Server instance by running `telnet <connection address> <port number>`. If the port can be accessed, the network is normal.
  - Troubleshoot instance problems.
     - If the network is normal, check the instance monitoring information in the console. If the instance load is too high or there is no or intermittent monitoring data, the instance is abnormal.
 
 2. If the connection to a TencentDB for SQL Server instance from a local IDC fails:
  - Troubleshoot network problems.
-    - To connect to a TencentDB instance from a local server, you first need to interconnect the local and cloud networks. We recommend you use [VPN](https://intl.cloud.tencent.com/document/product/1037), [Direct Connect](https://intl.cloud.tencent.com/document/product/216), or [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) for interconnection, which are more secure and guarantee a low network latency.
+    - To connect to a TencentDB instance from a local server, you first need to interconnect the local and cloud networks. We recommend you use [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Direct Connect](https://intl.cloud.tencent.com/document/product/216), or [CCN](https://intl.cloud.tencent.com/document/product/1003/31985) for interconnection, which are more secure and guarantee a low network latency.
     - Check whether the server can properly connect to the port of the address of the TencentDB for SQL Server instance by running `telnet <connection address> <port number>`. If the port can be accessed, the network is normal.
     - If telnet fails, the network is disconnected, and you need to check local security group policies and VPC routing configurations, open port 1433 for the specified database IP, and perform online and offline CVM instance connectivity tests.
   - Troubleshoot instance problems.

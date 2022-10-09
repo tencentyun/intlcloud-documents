@@ -24,10 +24,11 @@ CVM 和 SQL Server 属于腾讯云不同主账号。
 ## 从 Windows 本地连接云数据库 SQL Server
 ### 高可用/集群版实例连接方式
 - 方案1：通过 [VPN](https://intl.cloud.tencent.com/document/product/1037/32679) 或 [专线](https://intl.cloud.tencent.com/document/product/216/7557) 或 [云联网](https://intl.cloud.tencent.com/document/product/1003/31985) 连接，更安全更稳定。
-- 方案2：通过外网连接，可 [绑定 CLB 开启外网服务](https://intl.cloud.tencent.com/document/product/238/11627#CLBKQWW)。
+- 方案2：通过外网连接，可在控制台 [开启外网地址](https://intl.cloud.tencent.com/document/product/238/11627#kqwwdz) 或 [绑定 CLB 开启外网服务](https://intl.cloud.tencent.com/document/product/238/11627#CLBKQWW)。
 - 方案3：借助 [具有外网 IP 的 Linux 云服务器进行端口映射](https://intl.cloud.tencent.com/document/product/238/11627#WWIPLJSL)。
 
 ### 基础版实例连接方式
 - 方案1：通过 [VPN](https://intl.cloud.tencent.com/document/product/1037/32679) 或 [专线](https://intl.cloud.tencent.com/document/product/216/7557) 或 [云联网](https://intl.cloud.tencent.com/document/product/1003/31985) 连接，更安全更稳定。
-- 方案2：借助 [具有外网 IP 的 Linux 云服务器进行端口映射](https://intl.cloud.tencent.com/document/product/238/11627#WWIPLJSL)。
+- 方案2：通过外网连接，可在控制台 [开启外网地址](https://intl.cloud.tencent.com/document/product/238/11627#kqwwdz)。
+- 方案3：借助 [具有外网 IP 的 Linux 云服务器进行端口映射](https://intl.cloud.tencent.com/document/product/238/11627#WWIPLJSL)。
 
