@@ -956,7 +956,7 @@
        <td class="tg-cly1">双人通话</td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓　</td>
+       <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">✓</td>
      </tr>
@@ -964,7 +964,7 @@
        <td class="tg-cly1">房间管理</td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓　</td>
+       <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">✓</td>
      </tr>
@@ -972,7 +972,7 @@
        <td class="tg-cly1">屏幕分享</td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓　</td>
+       <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">✓</td>
      </tr>
@@ -980,7 +980,7 @@
        <td class="tg-cly1">多人会议</td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓　</td>
+       <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">✓</td>
      </tr>
@@ -988,7 +988,7 @@
        <td class="tg-cly1">跨房/同房连麦</td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓　</td>
+       <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">✓</td>
      </tr>
@@ -1214,7 +1214,7 @@
      <tr>
        <td class="tg-nrix" rowspan="4">直播播放</td>
        <td class="tg-cly1">支持RTMP、FLV、HLS、DASH等协议</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1"> </td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">　</td>
@@ -1625,4 +1625,5 @@
      </tr>
    </tbody>
    </table>
+
 
