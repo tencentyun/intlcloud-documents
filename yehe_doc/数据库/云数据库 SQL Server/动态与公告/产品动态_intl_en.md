@@ -1,11 +1,31 @@
+## August 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody><tr>
+<td>Supported modifying the system character set collation and time zone of instances</td>
+<td>TencentDB for SQL Server allows you to set the system character set collation and time zone when purchasing an instance.</td>
+<td>2022-08-25</td>
+<td><ul><li><a href="https://www.tencentcloud.com/document/product/238/50258" target="_blank">Modifying Instance-Level Character Set Collation</a></li><li><a href="https://www.tencentcloud.com/document/product/238/50257" target="_blank">Modifying System Time Zone</a></li></ul></td></tr>
+<tr>
+<td>Launched the service in Hong Kong Zone 3</td>
+<td>TencentDB for SQL Server is now available in Hong Kong Zone 3 in Dual-Server High Availability Edition and Cluster Edition.</td>
+<td>2022-08-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/7520" target="_blank">Regions and AZs</a></td></tr>
+</tbody></table>
+
 ## July 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
 <tbody><tr>
+<td>Supported public network access</td>
+<td>TencentDB for SQL Server supports public network access. After this feature is enabled, an instance can be accessed at its public network address.</td>
+<td>2022-07-25</td>
+<td><a href="https://www.tencentcloud.com/document/product/238/50230" target="_blank">Enabling/Disabling Public Network Address</a></td></tr>
+<tbody><tr>
 <td>Supported cross-region backup</td>
 <td>TencentDB for SQL Server supports cross-region backup to ensure the high availability, security, and recoverability of data and implement various features, such as remote backup and restoration, remote disaster recovery, long-term data archive, and regulatory compliance. </td>
 <td>2022-07-20</td>
-<td>-</td></tr>
+<td><a href="https://www.tencentcloud.com/document/product/238/49138" target="_blank">Cross-Region Backup</a></td></tr>
 </tbody></table>
 
 ## June 2022
