@@ -6,7 +6,7 @@ Tencent Cloud supports classic network and VPC as described in [Overview](https:
 - Switch from VPC A to VPC B: A single TencentDB primary instance can be switched from VPC A to VPC B.
 
 ## Version requirements
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support instance network switch.
+Currently, TencentDB for MongoDB 4.4, 4.2, 4.0, 3.6, and 3.2 support instance network switch.
 
 ## Billing
 Switching the instance network doesn't incur additional fees.
