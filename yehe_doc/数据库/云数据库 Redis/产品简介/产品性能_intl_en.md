@@ -40,6 +40,12 @@
 </tbody></table>
 
 
+### Description of CPU core number
+
+To ensure the stable operations of the system, each node is assigned with 2-core CPU, one of which is used to process the backend tasks.
+
+
+
 ### CKV edition
 <table>
 <thead>
