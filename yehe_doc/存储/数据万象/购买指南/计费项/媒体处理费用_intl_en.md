@@ -4,7 +4,7 @@ CI provides a rich set of basic video processing services, such as video frame c
 
 ## Media Processing Fees
 
-Media processing fees refer to fees incurred by using video frame capturing, video metadata acquisition, video-to-animated image conversion, audio/video transcoding, and other media processing features as detailed below. For more information, see [Media Processing Service](https://www.tencentcloud.com/zh/document/product/1045/46980).
+Media processing fees refer to fees incurred by using video frame capturing, video metadata acquisition, video-to-animated image conversion, audio/video transcoding, and other media processing features as detailed below. For more information, see [Media Processing Service](https://www.tencentcloud.com/document/product/1045/46980).
 
 | Billable Item               | Description                                                   | Billing Cycle | Applicable Billing Mode                                         |
 | :----------------- | :----------------------------------------------------------- | :------- | :------------- |
@@ -13,15 +13,16 @@ Media processing fees refer to fees incurred by using video frame capturing, vid
 | Video montage fees       | Fees incurred by using the video montage service. Such fees are charged by the **input video duration** at different prices for different resolutions. |          |                |
 | Video enhancement fees       | Fees incurred by using the video enhancement service. Such fees are charged by the **input video duration** at different prices for different resolutions. |          |                |
 | Super resolution fees       | Fees incurred by using the super resolution service, including basic edition and enhanced edition. Such fees are charged by the **output video duration** at different prices for different resolutions. |          |                |
-| SDR to HDR fees     | Fees incurred by using the SDR to HDR service. Such fees are charged by the **output video duration** based on dynamic range conversion. |          |                |
+| SDR-to-HDR fees     | Fees incurred by using the SDR-to-HDR service. Such fees are charged by the **output video duration** based on dynamic range conversion. |          |                |
 | Voice/Sound separation fees       | Fees incurred by using the voice/sound separation service. Such fees are charged by the **output file duration**.     |          |                |
 | Video tagging fees       | Fees incurred by using the video tagging service. Such fees are charged by the **input video duration**. Failed recognitions will not be billed. |          |                |
 | Video metadata acquisition fees | Fees incurred by using the video metadata acquisition service. Such fees are charged by the **number of uses**.   |          |                |
 | Video frame capturing fees       | Fees incurred by using the video frame capturing service. Such fees are charged by the **number of uses**.         |          |                |
 | Intelligent thumbnail fees       | Fees incurred by using the intelligent thumbnail service. Such fees are charged by the **input video duration**.     |          |                |
 | Digital watermark fees       | Fees incurred by using the digital watermark service. Such fees are charged by the **output video duration**.     |          |                |
-| Text to speech fees       | Fees incurred by using the text to speech service. Such fees are charged by the **number of input characters**.       |          |                |
+| Text-to-speech fees       | Fees incurred by using the text-to-speech service. Such fees are charged by the **number of input characters**.       |          |                |
 | Audio noise cancellation fees       | Fees incurred by using the audio noise cancellation service. Such fees are charged by the **audio processing duration**.     |          |                |
+| Video quality scoring fees   | Fees incurred by using the video quality scoring service. Such fees are charged by the **input video duration**. |          |                |
 
 
 
@@ -121,7 +122,7 @@ Prices vary by region, codec, and audio/video transcoding type (standard transco
 | 4K (short side ≤ 2160 px)         | 0.5               |
 | Watermark extracting                    | 0.85              |
 
-### Text to speech pricing
+### Text-to-speech pricing
 
 | Number of Input Characters | Price (USD/10,000 Characters) |
 | :---------------------- | :------------------ |
@@ -131,22 +132,23 @@ Prices vary by region, codec, and audio/video transcoding type (standard transco
 | 9,990,000 < input characters ≤ 39,990,000 | 0.3538              |
 | Input characters > 39,990,000         | 0.3243              |
 
->?
+> Note:
 >
-> The text to speech service is billed in a cumulative manner at tiered prices.
-> For example, if you use the text to speech service for 890,000 characters this month, you need to pay 19 * 0.4422 + (89 - 19) * 0.4127 = 37.2908 USD.
+> The text-to-speech service is billed in a cumulative manner at tiered prices.
+> For example, if you use the text-to-speech service for 890,000 characters this month, you need to pay 19 * 0.4422 + (89 - 19) * 0.4127 = 37.2908 USD.
 
 ### Pricing of other features
 
 | Features | Price |
 | :------------- | :--------------- |
-| SDR to HDR     | 0.06 USD/min |
+| SDR-to-HDR     | 0.06 USD/min |
 | Voice/Sound separation       | 0.012 USD/min |
 | Video tagging       | 0.00784 USD/min |
 | Video metadata acquisition | 0.015 USD/1,000 times   |
 | Video frame capturing       | 0.015 USD/1,000 times   |
 | Intelligent thumbnail       | 0.026 USD/min |
 | Audio noise cancellation        | 0.01194 USD/min |
+| Video quality scoring   | 0.01463 USD/min |
 
 ## Billing Example
 
