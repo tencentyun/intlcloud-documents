@@ -9,7 +9,8 @@
 - **공중망 주소 연결**: 사설망을 통해 액세스할 수 없는 경우 공중망 주소에서 TDSQL for MySQL 인스턴스에 연결할 수 있습니다. 공중망 주소는 [수동으로 활성화](#waiwang)해야 합니다. [TDSQL for MySQL 콘솔](https://console.cloud.tencent.com/tdsqld/instance-tdmysql)의 인스턴스 세부 정보 페이지에서 볼 수 있으며 더 이상 필요하지 않은 경우 비활성화할 수 있습니다.
  - 공중망 주소를 활성화하면 데이터베이스 서비스가 공중망에 노출되어 데이터베이스 침입이나 공격이 발생할 수 있습니다. 사설망을 사용하여 데이터베이스에 연결하는 것이 좋습니다.
  - TencentDB에 대한 공중망 연결은 데이터베이스의 개발 또는 보조 관리에 적합하지만, 잠재적으로 제어할 수 없는 요인으로 인해 DDOS 공격 및 대량의 버스트 트래픽 등 공중망 연결을 사용할 수 없게 될 수 있으므로 프로덕션 환경에서의 비즈니스 액세스에는 적합하지 않습니다.
- - 현재 공중망 액세스는 광저우, 상하이, 중국홍콩, 상하이 금융, 베이징, 선전 금융 및 청두 리전에서 활성화할 수 있습니다.
+ - 현재 공중망 액세스를 지원하는 리전은 광저우, 상하이, 베이징, 청두, 난징입니다.
+ - 공중망 액세스 활성화를 위해서는 보안 그룹을 바인딩해야 하며, 자세한 내용은 [보안 그룹 설정](https://intl.cloud.tencent.com/document/product/1042/33348)을 참고하십시오.
 
 ## 준비 작업
 ### 계정 생성
@@ -26,7 +27,7 @@
 
 ### [(선택 사항)공중망 주소 활성화](id:waiwang)
 1. [TDSQL for MySQL 콘솔](https://console.cloud.tencent.com/tdsqld/instance-tdmysql)에 로그인하고 인스턴스 리스트에서 인스턴스 ID를 클릭하여 인스턴스 세부 정보 페이지로 들어간 다음 기본 정보 섹션의 **공중망 주소** 옆에 있는 **활성화**를 클릭합니다.
-![](https://main.qcloudimg.com/raw/71a29582f85cbda585ed586341f9b351.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16d255372b034ccf1525b21978c28d4d.png)
 2. 성공적으로 활성화하면 **공중망 주소** 옆에 있는 공중망 주소와 포트 번호를 볼 수 있습니다. TDSQL for MySQL은 각 인스턴스에 고유한 공용 IP 및 포트 쌍을 할당합니다.
 
 
@@ -53,8 +54,7 @@ Welcome to the MySQL monitor.  Commands end with ; or \g.
  - 사용자 이름: 이전에 생성한 계정 이름을 입력합니다.
  - 비밀번호: 계정의 비밀번호를 입력합니다. 암호를 잊어버린 경우 [콘솔](https://console.cloud.tencent.com/tdsqld/instance-tdmysql)에서 재설정하십시오.
  - 포트: 이전에 얻은 인스턴스의 포트 번호를 입력합니다.
-3. 연결에 성공하면 데이터베이스에서 다른 작업을 수행할 수 있습니다.
-
+3. 접속 성공 후의 인터페이스는 아래와 같습니다. 이 인터페이스에서 데이터베이스를 조작할 수 있습니다.
 
 ### Windows JDBC 드라이버 연결
 TDSQL for MySQL은 프로그램 드라이버와의 연결을 지원합니다. 이 문서에서는 Java JDBC Driver for MySQL(Connector/J)을 예로 사용합니다.
