@@ -9,7 +9,7 @@
 <li><a href="https://intl.cloud.tencent.com/document/product/457/43136">如何挂载 CFS/NFS？</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/457/43136">如何通过镜像复用加快容器启动速度？</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/457/43136">复用镜像异常问题说明</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/457/431360">挂载自建的 nfs 时，事件报 Operation not permitted</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/457/43136">挂载自建的 nfs 时，事件报 Operation not permitted</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/457/43136">Pod 磁盘满了（ImageGCFailed）如何处理？</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/457/43136">9100 端口问题</a></li>
 

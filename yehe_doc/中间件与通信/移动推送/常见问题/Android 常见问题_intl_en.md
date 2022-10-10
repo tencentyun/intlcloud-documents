@@ -194,7 +194,7 @@ Below is an example of push API fields, where `icon_color: 123456` indicates the
 }
 ```
 
-The display effect after adaption is as shown below. [We recommend you draw an icon based on the demo logo](https://git.code.tencent.com/tpns/TPNS-Demo-Android/blob/master/app/src/main/res/drawable/notification_icon.png).
+The display effect after adaption is as shown below. We recommend you draw an icon based on the demo logo.
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f3df2a69acc72d182fd74a6799734dd9.jpg" width="60%"></img>
 
