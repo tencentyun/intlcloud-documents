@@ -865,7 +865,7 @@
                      <a href="https://www.tencentcloud.com/document/product/1071/38156">直播SDK集成指引</a>
                   </div>
                   <div class="doc-icon">
-0-                                                                                           <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
                   </div>
                </div>
                <div class="doc-link">

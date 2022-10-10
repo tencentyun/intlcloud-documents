@@ -853,7 +853,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/1071/38156">Live SDK Integration</a>
+                     <a href="https://www.tencentcloud.com/document/product/1071/38156">MLVB SDK Integration</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
