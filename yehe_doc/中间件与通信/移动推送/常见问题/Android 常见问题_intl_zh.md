@@ -194,7 +194,7 @@ android:value="true" />
 }
 ```
 
-适配后的具体效果如下，[建议参考 Demo logo 图标进行作图](https://git.code.tencent.com/tpns/移动推送-Demo-Android/blob/master/app/src/main/res/drawable/notification_icon.png)。
+适配后的具体效果如下，建议参考 Demo logo 图标进行作图。
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f3df2a69acc72d182fd74a6799734dd9.jpg" width="60%"></img>
 
