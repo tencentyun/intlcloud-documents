@@ -225,7 +225,7 @@
             <div class="section-content">
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/36066">音视频通话</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/36066">音视频通话</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -233,7 +233,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/47636">多人视频会议</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/47636">多人视频会议</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -241,7 +241,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/37286">语音互动直播</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/37286">语音互动直播</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -249,7 +249,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/36061">视频互动直播</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/36061">视频互动直播</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -257,7 +257,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/41940">在线Karaoke</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/41940">在线Karaoke</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -466,7 +466,7 @@
             <div class="section-content">
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/267/42140">集成指引</a>
+                     <a href="https://www.tencentcloud.com/document/product/267/42140">集成指引</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -490,9 +490,9 @@
                   href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Live_Android_latest.zip">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Android">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/56589">集成指引</a>
+                  href="https://www.tencentcloud.com/document/product/1071/38156">集成指引</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/60984">运行
+                  href="https://www.tencentcloud.com/document/product/1071/38147">运行
                   Demo</a>
             </div>
          </div>
@@ -509,9 +509,9 @@
                   href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Live_iOS_latest.zip">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_iOS">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/56588">集成指引</a>
+                  href="https://www.tencentcloud.com/document/product/1071/38155">集成指引</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/60985">运行
+                  href="https://www.tencentcloud.com/document/product/1071/38147">运行
                   Demo</a>
             </div>
          </div>
@@ -564,7 +564,7 @@
             <div class="section-content">
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/266/33975">播放器组件</a>
+                     <a href="https://www.tencentcloud.com/document/product/266/33975">播放器组件</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -572,7 +572,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/266/38294">加密视频播放</a>
+                     <a href="https://www.tencentcloud.com/document/product/266/38294">加密视频播放</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -596,9 +596,9 @@
                   href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_Android_latest.zip">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Player_Android">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/47849">集成指引</a>
+                  href="https://www.tencentcloud.com/document/product/266/47849">集成指引</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/42091">运行
+                  href="https://www.tencentcloud.com/document/product/266/42091">运行
                   Demo</a>
             </div>
          </div>
@@ -615,9 +615,9 @@
                   href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_iOS_latest.zip">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Player_iOS">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/47840">集成指引</a>
+                  href="https://www.tencentcloud.com/document/product/266/47840">集成指引</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/42091">运行
+                  href="https://www.tencentcloud.com/document/product/266/42091">运行
                   Demo</a>
             </div>
          </div>
@@ -633,9 +633,9 @@
                <a class="with-box" href="https://github.com/LiteAVSDK/Player_Flutter">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Player_Flutter">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/42099">集成指引</a>
+                  href="https://www.tencentcloud.com/document/product/266/42099">集成指引</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/42091">运行
+                  href="https://www.tencentcloud.com/document/product/266/42091">运行
                   Demo</a>
             </div>
          </div>
@@ -822,7 +822,7 @@
             <div class="section-content">
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/36066">音视频通话</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/36066">音视频通话</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -830,7 +830,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/47636">多人视频会议</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/47636">多人视频会议</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -838,7 +838,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/37286">语音互动直播</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/37286">语音互动直播</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -846,7 +846,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/36061">视频互动直播</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/36061">视频互动直播</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -854,7 +854,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/41940">在线Karaoke</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/41940">在线Karaoke</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -862,7 +862,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/267/42140">直播SDK集成指引</a>
+                     <a href="https://www.tencentcloud.com/document/product/267/42140">直播SDK集成指引</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -870,7 +870,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/266/33975">播放器组件</a>
+                     <a href="https://www.tencentcloud.com/document/product/266/33975">播放器组件</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -891,8 +891,8 @@
           <div class="card-content">
             <a class="with-box" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">ZIP 下载</a>
             <a target="_blank" style="margin-left:10px" href="https://github.com/tencentyun/LiteAVProfessional_Android">GitHub</a>
-            <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/647/32175">集成指引</a>
-            <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/647/32166">运行
+            <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/647/35093">集成指引</a>
+            <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/647/35084">运行
               Demo</a>
           </div>
         </div>
@@ -906,8 +906,8 @@
           <div class="card-content">
             <a class="with-box" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">ZIP 下载</a>
             <a target="_blank" style="margin-left:10px" href="https://github.com/tencentyun/LiteAVProfessional_iOS">GitHub</a>
-            <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/647/32173">集成指引</a>
-            <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/647/32396">运行
+            <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/647/35092">集成指引</a>
+            <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/647/35086">运行
               Demo</a>
           </div>
         </div>
