@@ -1,6 +1,10 @@
-CI is pay-as-you-go (postpaid) by default in all regions as described in [Regions and Domain Names](https://www.tencentcloud.com/document/product/1045/33423). Fees are charged monthly by the actual usage of traffic and basic image processing.
+CI is pay-as-you-go (postpaid) by default in all regions as described in [Regions and Domain Names](https://www.tencentcloud.com/zh/document/product/1045/33423). Fees are charged monthly by the actual usage of traffic and basic image processing.
 
 
+
+## Pricing
+
+For detailed **CI** pricing, see [Pricing | Cloud Infinite](https://buy.cloud.tencent.com/price/ci).
 
 
 
@@ -19,15 +23,16 @@ CI billable items are as described below:
 |              | Video montage fees         | Fees incurred by using the video montage service. Such fees are charged by the input video duration at different prices for different resolutions. |
 |              | Video enhancement fees     | Fees incurred by using the video enhancement service. Such fees are charged by the input video duration at different prices for different resolutions. |
 |              | Super resolution fees     | Fees incurred by using the super resolution service, including basic edition and enhanced edition. Such fees are charged by the output video duration at different prices for different resolutions. |
-|              | SDR to HDR fees     | Fees incurred by using the SDR to HDR service. Such fees are charged by the output video duration based on dynamic range conversion. |
+|              | SDR-to-HDR fees     | Fees incurred by using the SDR-to-HDR service. Such fees are charged by the output video duration based on dynamic range conversion. |
 |              | Voice/Sound separation fees         | Fees incurred by using the voice/sound separation service. Such fees are charged by the output file duration. |
 |              | Video tagging fees     | Fees incurred by using the video tagging service. Such fees are charged by the input video duration. Failed recognitions will not be billed. |
 |              | Video metadata acquisition fees     | Fees incurred by using the video metadata acquisition service. Such fees are charged by the number of uses. |
 |              | Video frame capturing fees     | Fees incurred by using the video frame capturing service. Such fees are charged by the number of uses. |
 |              | Intelligent thumbnail fees         |  Fees incurred by using the intelligent thumbnail service. Such fees are charged by the input video duration. |
 |              | Digital watermark fees     | Fees incurred by using the digital watermark service. Such fees are charged by the output video duration. |
-|              | Text to speech fees         | Fees incurred by using the text to speech service. Such fees are charged by the number of input characters. |
+|              | Text-to-speech fees         | Fees incurred by using the text-to-speech service. Such fees are charged by the number of input characters. |
 |              | Audio noise cancellation fees         | Fees incurred by using the audio noise cancellation service. Such fees are charged by the audio processing duration. |
+|              | Video quality scoring fees     | Fees incurred by using the video quality scoring service. Such fees are charged by the input video duration. |
 | File processing fees | File-to-image conversion fees       | Fees incurred by file-to-image conversion in the file preview service. Such fees are charged by the number of successfully converted file pages.  |
 |              | File-to-HTML conversion fees     | Fees incurred by file-to-HTML conversion in the file preview service. Such fees are charged by the number of successful conversions. |
 |              | Privacy protection fees     | Fees incurred by detection of privacy data contained in files, such as identity card numbers, license plate numbers, and mobile numbers. Such fees are charged by the size of successfully detected files. |
