@@ -19,21 +19,21 @@
       font-family: 'pingfang SC', 'helvetica neue', arial, 'hiragino sans gb', 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
    }
 
-   .markdown-text-box {
+   .card-box {
       background: #F2F6F9;
       border-radius: 10px;
       padding: 20px 30px;
-      height: 358px;
+      height: 326px;
       box-sizing: border-box;
       white-space: nowrap;
    }
 
-   .markdown-text-box .left-section {
+   .card-box .left-section {
       display: inline-block;
       height: 193px;
    }
 
-   .markdown-text-box .left-section img {
+   .card-box .left-section img {
       background-color: #F2F6F9;
       box-shadow: none;
       max-width: 100%;
@@ -42,52 +42,52 @@
       margin: auto;
    }
 
-   .markdown-text-box .right-content {
+   .card-box .right-content {
       display: inline-block;
       vertical-align: top;
       margin-left: 25px;
    }
 
-   .markdown-text-box .section-content {
+   .card-box .section-content {
       display: block;
    }
 
-   .markdown-text-box .doc-section .section-content {
+   .card-box .doc-section .section-content {
       width: 470px;
       overflow: hidden;
    }
 
-   .markdown-text-box .right-content img {
+   .card-box .right-content img {
       background-color: #F2F6F9;
       box-shadow: none;
    }
 
-   .markdown-text-box .section-header {
+   .card-box .section-header {
       font-weight: 500;
       font-size: 14px;
       line-height: 26px;
    }
 
-   .markdown-text-box .section-header img {
+   .card-box .section-header img {
       display: inline-block;
       vertical-align: middle;
    }
 
-   .markdown-text-box .header-text {
+   .card-box .header-text {
       display: inline-block;
       vertical-align: middle;
       margin-left: 9px;
    }
 
-   .markdown-text-box .doc-section {
+   .card-box .doc-section {
       margin-top: 18px;
    }
 
-   .markdown-text-box .doc-section .doc-link:nth-child(2n+1) {
+   .card-box .doc-section .doc-link:nth-child(2n+1) {
       margin-left: 0;
    }
 
-   .markdown-text-box .doc-section .doc-link {
+   .card-box .doc-section .doc-link {
       float: left;
       background: #FFFFFF;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
@@ -98,17 +98,17 @@
       margin-top: 10px;
    }
 
-   .markdown-text-box .doc-section .doc-title {
+   .card-box .doc-section .doc-title {
       margin-bottom: 0px;
       margin-right: 7px;
       display: inline-block;
    }
 
-   .markdown-text-box .doc-section .doc-icon {
+   .card-box .doc-section .doc-icon {
       display: inline-block;
    }
 
-   .markdown-text-box .doc-section .doc-icon img {
+   .card-box .doc-section .doc-icon img {
       width: 5px;
    }
 
@@ -173,7 +173,7 @@
       padding: 2px 15px;
    }
 
-   .markdown-text-box img {
+   .card-box img {
       box-shadow: none;
    }
 
@@ -198,7 +198,7 @@
 
 <dx-tabs>
    ::: TRTC SDK
-   <div class="markdown-text-box">
+   <div class="card-box">
       <div class="left-section">
          <img src="https://qcloudimg.tencent-cloud.cn/raw/2dab7b72bfab9b3d38f471b89294e7c6.svg" />
       </div>
@@ -211,7 +211,7 @@
                </div>
             </div>
             <div class="section-content">
-               Metaverse audio/video calls, online classes, remote work, group audio/video calls, group conference, audio chat,<br />online healthcare
+               Audio/video calls, interactive classes, co-anchoring, remote work,group audio/video calls, group conference, audio chat,<br />online healthcare
             </div>
          </div>
          <div class="doc-section">
@@ -266,223 +266,6 @@
          </div>
       </div>
    </div>
-   :::
-   ::: MLVB SDK
-   <div class="markdown-text-box">
-      <div class="left-section">
-         <img src="https://qcloudimg.tencent-cloud.cn/raw/84d2e781bab936bf2ba076ab353df34c.svg" />
-      </div>
-      <div class="right-content">
-         <div class="sence-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
-               <div class="header-text">
-                  Use Cases
-               </div>
-            </div>
-            <div class="section-content">
-               Live streaming for entertainment, e-commerce, corporate events, and games
-            </div>
-         </div>
-         <div class="doc-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
-               <div class="header-text">
-                  Learn more
-               </div>
-            </div>
-            <div class="section-content">
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/267/42140">SDK Integration</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   :::
-   ::: Player SDK
-   <div class="markdown-text-box">
-      <div class="left-section">
-         <img src="https://qcloudimg.tencent-cloud.cn/raw/3d25e8feea02c32299d8616ce3056941.png" />
-      </div>
-      <div class="right-content">
-         <div class="sence-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
-               <div class="header-text">
-                  Use Cases
-               </div>
-            </div>
-            <div class="section-content">
-               Playing videos live or on demand
-            </div>
-         </div>
-         <div class="doc-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
-               <div class="header-text">
-                  Learn more
-               </div>
-            </div>
-            <div class="section-content">
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/266/33975">Player SDK Integration</a>
-
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/266/38294">Playing Encrypted Videos</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   :::
-   ::: IM SDK
-   <div class="markdown-text-box">
-      <div class="left-section">
-         <img src="https://qcloudimg.tencent-cloud.cn/raw/01db05070c5acefd30585e88a3479585.svg" />
-      </div>
-      <div class="right-content">
-         <div class="sence-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
-               <div class="header-text">
-                  Use Cases
-               </div>
-            </div>
-            <div class="section-content">
-               In-app messaging, on-screen commenting, user profiles, relationship chains
-            </div>
-         </div>
-         <div class="doc-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
-               <div class="header-text">
-                  Learn more
-               </div>
-            </div>
-            <div class="section-content">
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/products/im?lang=en&amp;pg=">Tencent Cloud Instant Messaging</a>
-
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   :::
-   ::: All-in-One SDK
-   <div class="markdown-text-box">
-      <div class="left-section">
-         <img src="https://qcloudimg.tencent-cloud.cn/raw/b35558b665ede349ded27711bb993237.jpeg" />
-      </div>
-      <div class="right-content">
-         <div class="sence-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
-               <div class="header-text">
-                  Use Cases
-               </div>
-            </div>
-            <div class="section-content">
-               Includes the use cases of the TRTC SDK, MLVB SDK, and Player SDK
-            </div>
-         </div>
-         <div class="doc-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
-               <div class="header-text">
-                  Learn more
-               </div>
-            </div>
-            <div class="section-content">
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/647/36066">Audio/Video Call</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/647/47636">Group Conference</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/647/37286">Interactive Audio Streaming</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/647/36061">Interactive Video Streaming</a>
-
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/647/41940">Online Karaoke</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/267/42140">Live SDK Integration</a>
-    
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/266/33975">Player SDK Integration</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   :::
-</dx-tabs>
-
-#### TRTC SDK download
-
 <div>
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden">
       <div class="card-container">
@@ -654,8 +437,44 @@
       </div>
    </div>
 </div>
-
-#### Live SDK download
+   :::
+   ::: MLVB SDK
+   <div class="card-box">
+      <div class="left-section">
+         <img src="https://qcloudimg.tencent-cloud.cn/raw/84d2e781bab936bf2ba076ab353df34c.svg" />
+      </div>
+      <div class="right-content">
+         <div class="sence-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
+               <div class="header-text">
+                  Use Cases
+               </div>
+            </div>
+            <div class="section-content">
+               Live streaming for entertainment, e-commerce, events, and games
+            </div>
+         </div>
+         <div class="doc-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
+               <div class="header-text">
+                  Learn more
+               </div>
+            </div>
+            <div class="section-content">
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/267/42140">SDK Integration</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 <div>
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden">
       <div class="card-container">
@@ -667,8 +486,8 @@
             <div class="card-content">
                <a class="with-box" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Live_Android_latest.zip">ZIP file</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Android">GitHub</a>
-               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/38156">Integration guide</a>
-               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/38147">
+               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/56589">Integration guide</a>
+               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/60984">
                   Demo run</a>
             </div>
          </div>
@@ -682,8 +501,8 @@
             <div class="card-content">
                <a class="with-box" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Live_iOS_latest.zip">ZIP file</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_iOS">GitHub</a>
-               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/38155">Integration guide</a>
-               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/38147">
+               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/56588">Integration guide</a>
+               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/60985">
                   Demo run</a>
             </div>
          </div>
@@ -705,9 +524,52 @@
       </div>
    </div>
 </div>
-
-#### Player SDK download
-
+   :::
+   ::: Player SDK
+   <div class="card-box">
+      <div class="left-section">
+         <img src="https://qcloudimg.tencent-cloud.cn/raw/3d25e8feea02c32299d8616ce3056941.png" />
+      </div>
+      <div class="right-content">
+         <div class="sence-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
+               <div class="header-text">
+                  Use Cases
+               </div>
+            </div>
+            <div class="section-content">
+               Playing live streams and short/long videos on demand
+            </div>
+         </div>
+         <div class="doc-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
+               <div class="header-text">
+                  Learn more
+               </div>
+            </div>
+            <div class="section-content">
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/266/33975">Player SDK Integration</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/266/38294">Playing Encrypted Videos</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 <div>
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden">
       <div class="card-container">
@@ -768,9 +630,44 @@
       </div>
    </div>
 </div>
-
-#### IM SDK download
-
+   :::
+   ::: IM SDK
+   <div class="card-box">
+      <div class="left-section">
+         <img src="https://qcloudimg.tencent-cloud.cn/raw/01db05070c5acefd30585e88a3479585.svg" />
+      </div>
+      <div class="right-content">
+         <div class="sence-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
+               <div class="header-text">
+                  Use Cases
+               </div>
+            </div>
+            <div class="section-content">
+               In-app messaging, on-screen commenting, user profiles, relationship chains
+            </div>
+         </div>
+         <div class="doc-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
+               <div class="header-text">
+                  Learn more
+               </div>
+            </div>
+            <div class="section-content">
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/products/im?lang=en&amp;pg=">Tencent Cloud Instant Messaging</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 <div> 
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden"> 
        <div class="card-container">
@@ -885,9 +782,92 @@
       </div>
    </div>
 </div>
-
-#### All-in-One SDK download
-
+   :::
+   ::: All-in-One SDK
+   <div class="card-box">
+      <div class="left-section">
+         <img src="https://qcloudimg.tencent-cloud.cn/raw/b35558b665ede349ded27711bb993237.jpeg" />
+      </div>
+      <div class="right-content">
+         <div class="sence-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
+               <div class="header-text">
+                  Use Cases
+               </div>
+            </div>
+            <div class="section-content">
+               Includes the use cases of the TRTC SDK, MLVB SDK, and Player SDK
+            </div>
+         </div>
+         <div class="doc-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
+               <div class="header-text">
+                  Learn more
+               </div>
+            </div>
+            <div class="section-content">
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/36066">Audio/Video Call</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/47636">Group Conference</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/37286">Interactive Audio Streaming</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/36061">Interactive Video Streaming</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/41940">Online Karaoke</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/267/42140">Live SDK Integration</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/266/33975">Player SDK Integration</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 <div> 
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden"> 
        <div class="card-container">
@@ -922,6 +902,8 @@
       </div>
    </div>
 </div>
+   :::
+</dx-tabs>
 
 #### Features
 
@@ -1631,3 +1613,4 @@
      </tr>
    </tbody>
    </table>
+
