@@ -486,8 +486,8 @@
             <div class="card-content">
                <a class="with-box" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Live_Android_latest.zip">ZIP file</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Android">GitHub</a>
-               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/56589">Integration guide</a>
-               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/60984">
+               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/38156">Integration guide</a>
+               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/38147">
                   Demo run</a>
             </div>
          </div>
@@ -501,8 +501,8 @@
             <div class="card-content">
                <a class="with-box" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Live_iOS_latest.zip">ZIP file</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_iOS">GitHub</a>
-               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/56588">Integration guide</a>
-               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/60985">
+               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/38155">Integration guide</a>
+               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/38147">
                   Demo run</a>
             </div>
          </div>
