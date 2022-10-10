@@ -39,6 +39,8 @@
 <td>副本数</td><td>1</td><td>1 - 5</td><td>1 - 5</td></tr>
 </tbody></table>
 
+### CPU 核数说明
+为保证系统稳定运行，每个节点分配2核 CPU，其中1个 CPU 用于处理后台任务。
 
 ### CKV 版
 <table>
