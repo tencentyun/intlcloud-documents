@@ -10,6 +10,7 @@
  - 开启外网地址，会使您的数据库服务暴露在公网上，可能导致数据库被入侵或攻击。建议您使用内网连接数据库。
  - 云数据库外网连接适用于开发或辅助管理数据库，不建议正式业务连接使用，因为可能存在不可控因素会导致外网连接不可用（例如 DDOS 攻击、突发大流量访问等）。
  - 目前支持开启外网访问的地域为：广州、上海、北京、成都、南京。
+ - 开启外网访问必须绑定安全组，请参见 [配置云数据库安全组](https://intl.cloud.tencent.com/document/product/1042/33348)。
 
 ## 准备工作
 ### 创建帐号
@@ -26,7 +27,7 @@
 
 ### [（可选）开启外网地址](id:waiwang)
 1. 登录 [TDSQL MySQL版 控制台](https://console.cloud.tencent.com/tdsqld/instance-tdmysql)，在实例列表，单击实例 ID，进入实例详情页，在基本信息的**外网地址**处，单击**开启**。
-![](https://main.qcloudimg.com/raw/71a29582f85cbda585ed586341f9b351.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16d255372b034ccf1525b21978c28d4d.png)
 2. 开启后，在**外网地址**处获取外网地址和端口号。TDSQL MySQL版 提供了唯一的 IP、端口供用户访问和使用。
 
 
@@ -53,8 +54,7 @@ Welcome to the MySQL monitor.  Commands end with ; or \g.
  - 用户名：输入创建的帐号名。
  - 密码：输入帐号对应的密码，如忘记密码，可至 [控制台](https://console.cloud.tencent.com/tdsqld/instance-tdmysql) 进行修改。
  - 端口：输入地址对应的端口。
-3. 连接成功即可进行数据库内相关操作。
-
+3. 连接成功页面如下图所示，在此页面即可进行数据库内相关操作。
 
 ### Windows JDBC 驱动连接
 TDSQL MySQL版 支持程序驱动连接，本文以 Java 使用 JDBC Driver for MySQL (Connector/J) 连接 TDSQL MySQL版 为例。
