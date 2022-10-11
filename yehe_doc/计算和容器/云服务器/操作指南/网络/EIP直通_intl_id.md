@@ -30,7 +30,7 @@ Koneksi langsung EIP dapat menyebabkan gangguan jaringan. Dengan demikian, Anda 
 - **Method 2: directly use a command** (Metode 2: langsung gunakan perintah)
 Login ke CVM, dan jalankan perintah berikut pada CVM untuk mengunduh skrip:
 ```
-wget https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### Langkah 2: jalankan skrip untuk koneksi langsung EIP
