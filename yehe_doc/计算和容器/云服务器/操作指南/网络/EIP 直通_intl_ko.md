@@ -30,7 +30,7 @@ EIP 다이렉트 커넥트 과정에서 네트워크 연결이 끊길 수 있으
 - **방법2: 직접적으로 명령어 사용**
 CVM에 로그인한 뒤 CVM에서 아래의 명령어를 직접 실행해 다운로드합니다.
 ```
-wget https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### 2단계: EIP 다이렉트 커넥트 스크립트 실행
@@ -64,7 +64,7 @@ Windows 스크립트는 주 ENI는 외부 네트워크 트래픽으로, 보조 E
 EIP 다이렉트 커넥트 과정에서 네트워크 연결이 끊길 수 있으니 먼저 EIP 다이렉트 커넥트 스크립트를 CVM에 다운로드하시기 바랍니다.
 CVM의 브라우저에서 아래의 링크를 열고 EIP 다이렉트 커넥트 스크립트를 다운로드하시기 바랍니다.
 ```
-https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+https://windows-1254277469.cos.ap-guangzhou.myqcloud.com/eip_windows_direct.bat
 ```
 
 #### 2단계: 보조 ENI 설정
