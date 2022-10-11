@@ -8,7 +8,7 @@ To ensure that you obtain accurate prices, please log in first.
 
 ## Billing Mode
 
-CVM supports pay-as-you-go and spot billing. For more information, see [Billing Plans](https://intl.cloud.tencent.com/document/product/213/2180).
+CVM supports pay-as-you-go, spot billing and reserved instance. For more information, see [Billing Plans](https://intl.cloud.tencent.com/document/product/213/2180).
 
 ## Instances
 
