@@ -8,22 +8,22 @@ Namespace=QCE/LB_PRIVATE
 
 | Parameter | Metric Name | Description | Unit | Statistical Period |
 | ------------------- | -------------------------- | ------------------------------------------------------------ | ------- | ----------- |
-| ClientConnum        | Client-CLB active connections   | Number of active connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
-| ClientInactiveConn  | Client-CLB inactive connections | Number of inactive connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
-| ClientConcurConn    | Client-CLB concurrent connections   | Number of concurrent connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
-| ClientNewConn       | Client-CLB new connections   | Number of new connections initiated from the client to the CLB instance in the statistical period     | -   | 10s, 60s, 300s       |
-| ClientInpkg         | Client-CLB inbound packets       | Number of data packets sent from the client to the CLB instance per second in the statistical period         | Count/sec   | 10s, 60s, 300s       |
-| ClientOutpkg        | Client-CLB outbound packets       | Number of data packets sent from the CLB instance to the client per second in the statistical period         | Count/sec   | 10s, 60s, 300s       |
-| ClientAccIntraffic  | Client-CLB inbound traffic       | Volume of inbound traffic from the client to the CLB instance in the statistical period                   | MB      | 10s, 60s, 300s       |
-| ClientAccOuttraffic | Client-CLB outbound traffic       | Volume of outbound traffic from the CLB instance to the client in the statistical period                  | MB      | 10s, 60s, 300s       |
-| ClientOuttraffic    | Client-CLB outbound bandwidth       | Outbound bandwidth used by the traffic from the CLB instance to the client in the statistical period               | Mbps    | 10s, 60s, 300s       |
-| ClientIntraffic | Client-CLB inbound bandwidth | Inbound bandwidth used by the traffic from the client to the CLB instance in the statistical period               | Mbps | 10s, 60s, 300s |
-| OutTraffic | CLB-RS outbound bandwidth | Outbound bandwidth used by the traffic from the RS to the CLB instance in the statistical period | Mbps | 60s, 300s |
-| InTraffic | CLB-RS inbound bandwidth | Inbound bandwidth used by the traffic from the CLB instance to the RS in the statistical period | Mbps | 60s, 300s |
-| OutPkg | CLB-RS outbound packets | Number of data packets sent from the RS to the CLB instance per second in the statistical period | Count/sec | 60s, 300s |
-| InPkg | CLB-RS inbound packets | Number of data packets sent from the CLB instance to the RS per second in the statistical period | Count/sec | 60s, 300s |
-| ConNum | CLB-RS connections | Number of connections initiated from the CLB instance to the RS in the statistical period | - | 60s, 300s |
-| NewConn | CLB-RS new connections | Number of new connections initiated from the CLB instance to the RS in the statistical period | Count/min | 60s, 300s |
+| ClientConnum        | Client-to-CLB active connections   | Number of active connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
+| ClientInactiveConn  | Client-to-CLB inactive connections | Number of inactive connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
+| ClientConcurConn    | Client-to-CLB concurrent connections   | Number of concurrent connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
+| ClientNewConn       | Client-to-CLB new connections   | Number of new connections initiated from the client to the CLB instance in the statistical period     | -   | 10s, 60s, 300s       |
+| ClientInpkg         | Client-to-CLB inbound packets       | Number of data packets sent from the client to the CLB instance per second in the statistical period         | Count/sec   | 10s, 60s, 300s       |
+| ClientOutpkg        | Client-to-CLB outbound packets       | Number of data packets sent from the CLB instance to the client per second in the statistical period         | Count/sec   | 10s, 60s, 300s       |
+| ClientAccIntraffic  | Client-to-CLB inbound traffic       | Volume of inbound traffic from the client to the CLB instance in the statistical period                   | MB      | 10s, 60s, 300s       |
+| ClientAccOuttraffic | Client-to-CLB outbound traffic       | Volume of outbound traffic from the CLB instance to the client in the statistical period                  | MB      | 10s, 60s, 300s       |
+| ClientOuttraffic    | Client-to-CLB outbound bandwidth       | Outbound bandwidth used by the traffic from the CLB instance to the client in the statistical period               | Mbps    | 10s, 60s, 300s       |
+| ClientIntraffic | Client-to-CLB inbound bandwidth | Inbound bandwidth used by the traffic from the client to the CLB instance in the statistical period               | Mbps | 10s, 60s, 300s |
+| OutTraffic | CLB-to-RS outbound bandwidth | Outbound bandwidth used by the traffic from the RS to the CLB instance in the statistical period | Mbps | 60s, 300s |
+| InTraffic | CLB-to-RS inbound bandwidth | Inbound bandwidth used by the traffic from the CLB instance to the RS in the statistical period | Mbps | 60s, 300s |
+| OutPkg | CLB-to-RS outbound packets | Number of data packets sent from the RS to the CLB instance per second in the statistical period | Count/sec | 60s, 300s |
+| InPkg | CLB-to-RS inbound packets | Number of data packets sent from the CLB instance to the RS per second in the statistical period | Count/sec | 60s, 300s |
+| ConNum | CLB-to-RS connections | Number of connections initiated from the CLB instance to the RS in the statistical period | - | 60s, 300s |
+| NewConn | CLB-to-RS new connections | Number of new connections initiated from the CLB instance to the RS in the statistical period | Count/min | 60s, 300s |
 | DropTotalConns      | Dropped connections                 | Number of connections dropped by the CLB instance or listener in the statistical period. <br/>This metric is only supported for bill-by-IP accounts. | -      | 10s, 60s, 300s     |
 | InDropBits          | Dropped inbound bandwidth                 | Bandwidth dropped when the client accesses the CLB instance over the public network in the statistical period. <br/>This metric is only supported for bill-by-IP accounts. | Byte    | 10s, 60s, 300s     |
 | OutDropBits         | Dropped outbound bandwidth                 | Bandwidth dropped when the CLB instance accesses the public network in the statistical period.<br/>This metric is only supported for bill-by-IP accounts. | Byte    | 10s, 60s, 300s     |

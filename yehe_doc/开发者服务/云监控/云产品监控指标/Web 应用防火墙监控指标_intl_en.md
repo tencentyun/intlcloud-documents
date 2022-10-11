@@ -3,31 +3,31 @@
 Namespace=QCE/WAF
 
 
->?Please always select "Guangzhou" as `Region` when pulling WAF monitoring metric data.
+>?Always select "Guangzhou" as `Region` when pulling WAF monitoring metric data.
 
 ## Monitoring Metrics
 
 | Parameter | Metric Name | Unit | Dimension |
 | ----------- | --------------- | ---- | --------------- |
-| Access | Total access attempts | Count | domain and edition |
-| Attack | Web attacks | Count | domain and edition |
-| Cc | CC attacks | Count | domain and edition |
-| Down | Downstream bandwidth | Byte/sec | domain and edition |
-| Qps | Requests per second | Count | domain and edition |
-| Up | Upstream bandwidth | Byte/sec | domain and edition |
-| 4xx | 4xx status code | Count | domain and edition |
-| 5xx | 5xx status code | Count | domain and edition |
-| U4xx | Origin server 4xx status code | Count | domain and edition |
-| U5xx | Origin server 5xx status code | Count | domain and edition |
-| Bot | Bot attacks | Count | domain and edition |
-| Ratio5xx | 5XX percentage | % | domain and edition |
-| Ratio4xx | 4XX percentage | % | domain and edition |
-| RatioAttack | Web attack percentage | % | domain and edition |
-| RatioBot | Bot attack percentage | % | domain and edition |
-| RatioCc | CC attack percentage | % | domain and edition |
-| InBandwidth   | Inbound bandwidth    |  MB   | domain and edition |
-| OutBandwidth     | Outbound bandwidth    |  MB | domain and edition |
-|MetricnameCustomSecurity|Number of custom policy attacks|Count|domain and edition |
+| Access | Total access attempts | Count | domain, edition |
+| Attack | Web attacks | Count | domain, edition |
+| Cc | CC attacks | Count | domain, edition |
+| Down | Downstream bandwidth | Byte/sec | domain, edition |
+| Qps | Requests per second | Count | domain, edition |
+| Up | Upstream bandwidth | Byte/sec | domain, edition |
+| 4xx | 4xx status code | Count | domain, edition |
+| 5xx | 5xx status code | Count | domain, edition |
+| U4xx | Origin server 4xx status code | Count | domain, edition |
+| U5xx | Origin server 5xx status code | Count | domain, edition |
+| Bot | Bot attacks | Count | domain, edition |
+| Ratio5xx | 5XX percentage | % | domain, edition |
+| Ratio4xx | 4XX percentage | % | domain, edition |
+| RatioAttack | Web attack percentage | % | domain, edition |
+| RatioBot | Bot attack percentage | % | domain, edition |
+| RatioCc | CC attack percentage | % | domain, edition |
+| InBandwidth   | Inbound bandwidth    |  MB   | domain, edition |
+| OutBandwidth     | Outbound bandwidth    |  MB | domain, edition |
+|MetricnameCustomSecurity|Number of custom policy attacks| Count | domain, edition |
 
 ## Dimensions and Parameters
 
