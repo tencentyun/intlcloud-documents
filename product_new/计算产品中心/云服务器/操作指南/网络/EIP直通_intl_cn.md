@@ -30,7 +30,7 @@ Linux 脚本针对的场景为：内网 IP 和公网 IP 均在主网卡（eth0�
 - **方法二：直接使用命令**
 登录云服务器，在云服务器中直接执行如下命令下载：
 ```
-https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+wget https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### 步骤2：运行 EIP 直通脚本
