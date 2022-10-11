@@ -30,7 +30,7 @@ EIP直通は、ネットワークの中断を引き起こす可能性があり�
 - **方法2：コマンドを直接使用する**
 CVMにログインし、CVMで次のコマンドを実行してスクリプトをダウンロードします。
 ```
-https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+wget https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### 手順2：EIP直通スクリプトを実行する
