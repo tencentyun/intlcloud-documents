@@ -123,7 +123,7 @@ If you fail to start the database, you need to check and fix the error, and then
 After starting the database, you may need to connect to the database with the original account and password to view data.
 
 ## Restoring Databases from Backup Files (Encrypted)
-TDE is only supported for Percona 5.7 in Hong Kong region, but it will be available to more kernel versions in the future. You can access **Data Security** > **Data Encryption** on the instance management page in the [TencentDB for MariaDB console] (https://console.cloud.tencent.com/mariadb)
+TDE is only supported for Percona 5.7 in Hong Kong region and MySQL 8.0.24 , but it will be available to more kernel versions in the future. You can access **Data Security** > **Data Encryption** on the instance management page in the [TencentDB for MariaDB console] (https://console.cloud.tencent.com/mariadb)
 
 After data encryption is enabled, the database instances can’t be restored from a backup file. It is recommended to restore them as instructed in [Rolling back Databases] (https://intl.cloud.tencent.com/document/product/237/8719). 
 >?To use the data encryption feature, [submit a ticket] (https://console.cloud.tencent.com/workorder/category) to apply for it.
