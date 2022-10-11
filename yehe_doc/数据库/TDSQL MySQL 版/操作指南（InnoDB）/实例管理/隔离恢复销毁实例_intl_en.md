@@ -1,7 +1,7 @@
 ## Isolating Instances
 An instance can be isolated when you no longer use it. Once isolated, the instance can neither be used nor accessed (but is not eliminated yet), and will be moved to the recycle bin, where you can restore or eliminate it or it will be automatically eliminated when it expires. Even though the instance is isolated, the space occupied by its resources is not freed, and it still has the most basic data replicas.
 
-- You can log in to the [console](https://console.cloud.tencent.com/mariadb/instance/index), select the pay-as-you-go instance in the instance list, click **Terminate/Return** to return it manually. After the instance is returned, it is in the **Isolated* status and will be retained for 24 hours, during which it cannot be accessed. To restore it, you can do so in the recycle bin list.
+- You can log in to the [console](https://console.cloud.tencent.com/mariadb/instance/index), select the pay-as-you-go instance in the instance list, click **Terminate/Return** to return it manually. After the instance is returned, it is in the **Isolated** status and will be retained for 3 days, during which it cannot be accessed. To restore it, you can do so in the recycle bin list.
 
 After an instance is returned, once its status changes to "isolated", no fees related to it will be incurred.
 
