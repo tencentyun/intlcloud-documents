@@ -8,7 +8,7 @@
 
 ## 과금 방식
 
-Tencent Cloud는 다양한 시나리오의 사용자 요구에 적합한 종량제 및 스팟 인스턴스의 두 가지 유형의 CVM 구매 방법을 제공합니다. 자세한 내용은 [과금 방식](https://intl.cloud.tencent.com/document/product/213/2180)을 참고하십시오.
+Tencent Cloud는 다양한 시나리오의 사용자 요구 사항을 충족하기 위해 종량제, 스팟 인스턴스 및 예약 인스턴스의 세 가지 유형의 CVM 구매 방법을 제공합니다. 자세한 내용은 [과금 방식](https://intl.cloud.tencent.com/document/product/213/2180)을 참고하십시오.
 
 ## 인스턴스
 
