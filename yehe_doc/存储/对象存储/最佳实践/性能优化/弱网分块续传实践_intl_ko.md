@@ -143,9 +143,9 @@ public class ResumeHelper {
                         (exception.errorCode + "," + exception.getMessage())));
                 if(exception != null){
                     /** 네트워크 원인으로 실패한 경우, 멀티파트 크기를 100KB로 설정해 재업로드 실행*/
-                    if(exception.errorCode == ClientErrorCode.INTERNAL_ERROR.getCode()
-                            || exception.errorCode == ClientErrorCode.IO_ERROR.getCode()
-                            || exception.errorCode != ClientErrorCode.POOR_NETWORK.getCode()){
+                    if(exception.errorCode == ClientErrorCode.IO_ERROR.getCode()
+                            || exception.errorCode == ClientErrorCode.POOR_NETWORK.getCode()){
+
                         Log.d(TAG, "upload task try again");
                         Message msg = mainHandler.obtainMessage();
                         msg.what = MESSAGE_RETRY;
