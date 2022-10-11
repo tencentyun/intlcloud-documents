@@ -1,23 +1,23 @@
-Tencent Cloudはネットワークとセキュリティ機能を提供し、お客様のインスタンスが安全、自由、かつ高効率で外部と内部にサービスを提供するように保障します。
+Tencent Cloudはネットワークインフラストラクチャとセキュリティ サービスを提供し、お客様のインスタンスが安全、自由、かつ高効率で外部と内部にサービスを提供するように保障します。
 
 ## 暗号化ログイン方法
-Tencent Cloudでは、[パスワードログイン](https://intl.cloud.tencent.com/document/product/213/6093)と[SSHキーログイン](https://intl.cloud.tencent.com/document/product/213/6092)という2種類の暗号化ログイン方法をご提供しています。この2種類の方法を自由に選択し、安全にCVMに接続することができます。WindowsシステムのインスタンスはSSHキーログインをサポートしていません。
+Tencent Cloudでは、[パスワードによるログイン](https://intl.cloud.tencent.com/document/product/213/6093)と[SSHキーによるログイン](https://intl.cloud.tencent.com/document/product/213/6092)という2種類の暗号化ログイン方法を提供します。これらいずれかの方法を使用してCVM インスタンスに接続することができます。SSHキーを使用したWindows CVMのログインはサポートされていません 。
 
 ## ネットワークアクセス
-同じTencent Cloud上にあるクラウド製品は、[Internetアクセス](https://intl.cloud.tencent.com/document/product/213/5224)経由、または[プライベートネットワークアクセス](https://intl.cloud.tencent.com/document/product/213/5225)経由のどちらでもアクセスできます。
+同じTencent Cloud上にあるクラウド製品は、[Internetアクセス](https://intl.cloud.tencent.com/document/product/213/5224)または[プライベートネットワークアクセス](https://intl.cloud.tencent.com/document/product/213/5225)経由で互いに安全に通信することができます。
  - Internetアクセス：Internetアクセスは、Tencent Cloudがインスタンスの公開データ伝送用サービスとして提供するものです。インスタンスにはパブリックIPアドレスが割り当てられ、ネットワーク上の他のコンピュータと通信を行うことができます。
- - プライベートネットワークアクセス：プライベートネットワークアクセスとは、すなわちローカルエリアネットワーク（LAN）サービスであり、Tencent Cloudがインスタンスに提供したプライベートネットワークIPアドレスを通じて、同一リージョン内での完全無料のプライベートネットワーク通信サービスを実現するものです。
+ - プライベートネットワークアクセス：ローカルエリアネットワーク（LAN）サービスであり、 Tencent Cloud は、インスタンスにプライベート IP アドレスを割り当て、同じ LAN 上で相互に無料で通信できるようにします。
 
 ## ネットワーク環境
 Tencent Cloudの[ネットワーク環境](https://intl.cloud.tencent.com/document/product/213/5227)は、基本ネットワークとVirtual Private Cloud（VPC）に分けられます。
  - 基本ネットワーク：基本ネットワークはTencent Cloud上のすべてのユーザーのための公共のネットワークリソースプールです。Tencent Cloudを知り、使用し始めたばかりのユーザーに適しています。
- - Virtual Private Cloud：VPCは、ユーザーがTencent Cloudにおいてカスタマイズしたロジック的に隔離されているネットワークスペースです。VPCにおけるインスタンスはプリセットされたカスタマイズのIPレンジで起動され、ほかのユーザーと互いに隔離することができます。VPCは、ネットワーク管理に慣れているユーザーに向いています。
+ - Virtual Private Cloud：Tencent Cloud内の、論理的に分離したカスタム仮想ネットワークです。VPCの IPアドレス空間を選択した範囲で定義できます。ユーザーが定義する IPアドレス範囲でCVM インスタンスを起動して、自分のリソースを他のユーザーのリソースから分離できます。VPCは、ネットワーク管理に慣れているユーザーに向いています。
 
 ## セキュリティグループ
-[セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452) は、フィルタリング機能を備えた仮想ファイアウォールであり、単一または複数のCVMのネットワークアクセス制御を設定するために使用されます。これはTencent Cloudが提供する重要なネットワークセキュリティ隔離手段です。
+[セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452) は、パケットフィルタリング機能を備えた仮想ファイアウォールであり、単一または複数のCVMインスタンスのネットワークアクセス制御を設定するために使用されます。これはTencent Cloudが提供するネットワークセキュリティ分離の重要な手段です。
 以下の方法を使用して、インスタンスのアクセス権限を制御することができます。
  - 複数のセキュリティグループを作成し、セキュリティグループごとに異なるルールを指定します。
- - インスタンスごとに一つまたは複数のセキュリティグループをアサインします。これらのルールに基づいて、Tencent Cloudはインスタンスにアクセスできるトラフィックと、インスタンスがアクセスできるリソースを確定します。
+ - 各CVMインスタンスに1 つ以上のセキュリティ グループを関連付けます。これらのルールに基づいて、Tencent Cloudはインスタンスにアクセスできるトラフィックと、インスタンスがアクセスできるリソースを確定します。
  - 特定のIPアドレスまたは特定のセキュリティグループのみがインスタンスにアクセスできるように、セキュリティグループを構成します。
 
 ## Elastic IP(EIP)
@@ -27,7 +27,7 @@ Tencent Cloudの[ネットワーク環境](https://intl.cloud.tencent.com/docume
  - インスタンスはパブリックIPアドレスがないため、静的IPアドレスが必要です。
 
 ## Elastic Network Interface
-[Elastic Network Interface](https://intl.cloud.tencent.com/document/product/213/6514)（ENI）は、VPC内のCVMをバインドする、一種のフレキシブルなネットワークインターフェースであり、複数のCVMの間で自由にマイグレーションすることができます。ENIはネットワーク管理の設定、信頼性の高いネットワークソリューションの構築の際に役立ちます。
+[Elastic Network Interface](https://intl.cloud.tencent.com/document/product/213/6514)（ENI）は、VPC上のCVMインスタンスに接続可能な仮想ネットワークインタフェースであり、インスタンス間で自由に移行できます。ENIはネットワーク管理の設定、信頼性の高いネットワークソリューションの構築の際に役立ちます。
 
 ## Cloud Workload Protection
 Cloud Workload Protectionは、Tencent Securityに蓄積された膨大な脅威データに基づき、機械学習を利用して、ハッカー侵入検知および脆弱性リスクの事前警告などのセキュリティ保護サービスをユーザーに提供します。これには主に、パスワード解除ブロック、リモートログイン通知、トロイの木馬ファイル検出、ハイリスク脆弱性検出などのセキュリティ機能が含まれ、サーバーが直面する主要なネットワークセキュリティリスクを解決し、企業によるサーバーセキュリティ保護システムの構築とデータ漏洩防止に役立ちます。
