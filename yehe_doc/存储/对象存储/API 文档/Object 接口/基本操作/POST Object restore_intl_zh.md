@@ -45,7 +45,7 @@ Authorization: Auth String
 ```
 
 >? 
-> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://www.tencentcloud.com/document/product/436/6224) 文档。
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > 
 
@@ -89,7 +89,7 @@ Authorization: Auth String
 
 | 节点名称（关键字） | 父节点 | 描述 | 类型 | 是否必选 |
 | --- | --- | --- | --- | --- |
-| Tier | RestoreRequest.CASJobParameters | 恢复时，Tier 可以指定为支持的恢复模式。<br>对于恢复归档存储类型数据，有三种恢复模式，分别为：<br><li>Expedited：极速模式，恢复任务在1 - 5分钟内可完成。<br> <li>Standard：标准模式，恢复任务在3 - 5小时内完成 <br><li>Bulk：批量模式，恢复任务在5 - 12小时内完成。<br>对于恢复深度归档存储类型数据，有两种恢复模式，分别为：<br><li>Standard：标准模式，恢复时间为12 - 24小时。<br><li>Bulk：批量模式，恢复时间为24 - 48小时。 | Enum | 是 |
+| Tier | RestoreRequest.CASJobParameters | 恢复时，Tier 可以指定为支持的恢复模式。<br>对于恢复归档存储类型数据，有三种恢复模式，分别为：<br><li>Expedited：快速取回模式，恢复任务在1 - 5分钟内可完成。<br> <li>Standard：标准取回模式，恢复任务在3 - 5小时内完成 <br><li>Bulk：批量取回模式，恢复任务在5 - 12小时内完成。<br>对于恢复深度归档存储类型数据，有两种恢复模式，分别为：<br><li>Standard：标准取回模式，恢复时间为12 - 24小时。<br><li>Bulk：批量取回模式，恢复时间为24 - 48小时。 | Enum | 是 |
 
 
 ## 响应
