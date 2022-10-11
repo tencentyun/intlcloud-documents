@@ -164,7 +164,7 @@
 <th width=15%>视频播放 License 类型</th>
 <th>有效期</th>
 <th>解锁的功能模块</th>
-<th width=10%>价格<br>（美元/年）</th>
+<th width=10%>价格<br>（美元）</th>
 <th>获取方式</th>
 </tr>
 </thead>
