@@ -30,7 +30,7 @@ EIP 다이렉트 커넥트 과정에서 네트워크 연결이 끊길 수 있으
 - **방법2: 직접적으로 명령어 사용**
 CVM에 로그인한 뒤 CVM에서 아래의 명령어를 직접 실행해 다운로드합니다.
 ```
-https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+wget https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### 2단계: EIP 다이렉트 커넥트 스크립트 실행
