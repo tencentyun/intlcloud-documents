@@ -125,7 +125,7 @@ CVM 服务发现配置说明：
 
 <dx-codeblock>
 :::  yaml
-# 腾讯云的地域，地域列表见文档 https://cloud.tencent.com/document/api/213/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8。
+# 腾讯云的地域，地域列表见文档 https://www.tencentcloud.com/document/product/213/31574。
 region: <string> 
 
 # 自定义 endpoint。
