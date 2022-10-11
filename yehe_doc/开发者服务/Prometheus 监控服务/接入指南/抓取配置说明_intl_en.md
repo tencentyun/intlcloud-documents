@@ -149,10 +149,8 @@ filters:
       values: <string>, [...] ]
 :::
 </dx-codeblock>
-
-<dx-alert infotype="explain" title="">		
-If a CVM scrape task in **Integration Center** is used to configure `cvm_sd_configs`, the integration automatically uses the preset role authorization of the service for security considerations. You don't need to manually enter the `secret_id`, `secret_key`, and `endpoint` parameters.
-</dx-alert>
+	
+>?If a CVM scrape task in **Integration Center** is used to configure `cvm_sd_configs`, the integration automatically uses the preset role authorization of the service for security considerations. You don't need to manually enter the `secret_id`, `secret_key`, and `endpoint` parameters.
 
 #### Sample
 
@@ -230,7 +228,7 @@ spec:
     [ any: bool ]
     # List of namespace to be selected
     [ matchNames: []string ]
-  # Enter the label of the Pod to be monitored to locate the target Pod. For more information, see [LabelSelector v1 meta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#labelselector-v1-meta)
+  # Enter the label of the Pod to be monitored to locate the target Pod. For more information, see [LabelSelector v1 meta](https://v1-17.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#labelselector-v1-meta)
   selector:  
     [ matchExpressions: array ]
       [ example: - {key: tier, operator: In, values: [cache]} ]

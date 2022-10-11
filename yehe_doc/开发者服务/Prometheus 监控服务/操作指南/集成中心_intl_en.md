@@ -145,7 +145,7 @@ TMP integrates commonly used programming languages, middleware, big data, and in
 
 ## Directions
 ### Quick installation
-Some services support quick agent installation. For more information, see [Integration Center](https://intl.cloud.tencent.com/document/product/1116/43163).
+Some services support quick agent installation. For more information, see [Integration Center > List of Supported Services](https://intl.cloud.tencent.com/document/product/1116/43163).
 1. Log in to the [TMP console](https://console.cloud.tencent.com/monitor/prometheus).
 2. In the instance list, select the corresponding TMP instance.
 3. Enter the instance details page and click **Integration Center**.

@@ -6,7 +6,7 @@ Each instance can have up to 4.5 million series. If you need to adjust it, [subm
 If you use TMP's [custom monitoring](https://intl.cloud.tencent.com/document/product/1116/43215) feature to monitor data, there will be the following limits on metrics (series with a unique `__name__`).
 - Data reporting must carry a metric name, i.e., the ` __name__` label, which can contain only ASCII letter, characters, digits, underscores, and colons and must start with a letter and match the regex `[a-zA-Z_:][a-zA-Z0-9_:]*`. For more information, see [Metric names and labels](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
 - Each metric can have up to 32 labels.
-- The label name can contain only ASCII letter, characters, digits, underscores, and colons and must match the regex `[a-Za-Z_][a-Za-Z0-9_]*`. Labels starting with `__` are for internal use only.
+- The label name can contain only ASCII letters, digits, and underscores. It must match the regex `[a-Za-Z_][a-Za-Z0-9_]*`. Labels beginning with `__` are reserved for internal use.
 - The label name and label value can contain up to 1,024 and 2,048 characters respectively.
 - Under the same metric, the dimension combinations of labels cannot exceed 100,000. When the histogram has many buckets, the histogram-type metrics cannot be adjusted.
 

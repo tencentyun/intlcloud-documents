@@ -9,5 +9,5 @@ TMP allows you to modify the data storage period after creating an instance. The
     <img src="https://qcloudimg.tencent-cloud.cn/raw/1a2f2354be794dd165256dba0676e223.png" width="80%">
 >? 
 >- After the modification, newly collected data will be billed based on the new storage period and unit price from 0:00 AM the next day.
->- Historical data is still stored based on the storage period before the modification.
+>- Historical data is still stored based on the storage period configured before the modification.
 
