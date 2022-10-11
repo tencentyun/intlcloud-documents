@@ -15,7 +15,7 @@
 
 You can generate a hotlink protection URL for a video by adding the hotlink protection parameters at the end of the original URL in the form of `QueryString`, such as:
 ```
-http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4?t=[t]&exper=[exper]&rlimit=[rlimit]&us=[us]&uid=[uid]&sign=[sign]
+http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4?t=[t]&exper=[exper]&rlimit=[rlimit]&us=[us]&uv=[uv]&sign=[sign]
 ```
 Below are descriptions and values of the parameters in a hotlink protection URL.
 
@@ -28,13 +28,13 @@ Below are descriptions and values of the parameters in a hotlink protection URL.
 | `exper` | No | <li>The preview duration in decimal seconds. If this parameter is left empty or 0, preview mode is disabled (i.e., the complete video will be returned). <br><li>The preview duration must be shorter than the original video duration; otherwise, playback may fail. |
 | `rlimit` | No | <li>The maximum decimal number of device IPs allowed for playback. The maximum value is 9. If this parameter is left empty, there is no restriction. <br><li>When you restrict a video URL to be played back by only one user, we recommend you do not set `rlimit` to 1 (instead, set it to 3, for example), as a mobile device's IP may change if a reconnection occurs. |
 | `us` | No | <li>The link ID. It is used to randomize a hotlink protection URL in order to improve the uniqueness of the link. <br><li>We recommend you specify a random `us` value when generating a hotlink protection URL each time. |
-| `uid` | No   | The ID of the user playing back the video, which must contain eight hexadecimal digits. This parameter is used for the [digital watermark](https://intl.cloud.tencent.com/document/product/266/47920) feature. |
+| `uv` | No   | The ID of the user playing back the video, which must contain six hexadecimal digits. This parameter is used for the [digital watermark](https://intl.cloud.tencent.com/document/product/266/47920) feature. |
 | `sign` | Yes | <li>The hotlink protection signature. It is a hexadecimal number with a length of 32 characters and used to check the validity of a hotlink protection URL. <br><li>A 403 error will be returned if a URL fails to pass the signature check. Below is the [signature calculation formula](#formula). |
 
 
 #### [](id:formula)Signature calculation formula
 ```
-sign = md5(KEY + Dir + t + exper + rlimit + us + uid)
+sign = md5(KEY + Dir + t + exper + rlimit + us + uv)
 ```
 
 `+` in the formula is used to concatenate two strings. Optional parameters can be empty strings.
