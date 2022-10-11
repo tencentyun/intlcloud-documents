@@ -64,7 +64,7 @@ The script for Windows is applicable to the following scenario: Public network t
 During configuration of EIP direct connection, the internet connection will be interrupted. Therefore, you need to download the script for EIP direct connection and upload it to CVM in advance.
 Open the following link in the browser of the CVM to download the script for EIP direct connection:
 ```
-https://windows-1254277469.cos.ap-guangzhou.myqcloud.com/eip_windows_direct.bat
+https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### Step 2: configure the secondary ENI
