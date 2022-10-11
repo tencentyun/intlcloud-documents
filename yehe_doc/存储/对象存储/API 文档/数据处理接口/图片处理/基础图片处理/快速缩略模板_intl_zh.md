@@ -7,7 +7,7 @@
 - 上传时处理
 - 云上数据处理
 
->! 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象图片处理费用。
+>! 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/45582)。
 >
 
 
@@ -16,12 +16,15 @@
 #### 1. 下载时处理
 
 ```plaintext
-download_url?imageView2/<mode>/w/<Width>
+GET /<ObjectKey>?imageView2/<mode>/w/<Width>
                  /h/<Height>
                  /format/<Format>
                  /q/<Quality>
                  /rq/<Quality>
-                 /lq/<Quality>
+                 /lq/<Quality> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >! 质量变换参数仅针对 **jpg** 和 **webp** 格式图片。
@@ -48,6 +51,9 @@ Pic-Operations:
 }
 ```
 
+>? Pic-Operations 为 json 格式的字符串，具体参数信息可参考 [图片持久化处理](https://intl.cloud.tencent.com/document/product/1045/33695)。
+>
+
 #### 3. 云上数据处理
 
 ```plaintext
@@ -71,14 +77,16 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+> 
 
 ## 处理参数说明
 
 | 参数                          | 含义                                                         |
 | ----------------------------- | ------------------------------------------------------------ |
-| download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           | 
 | /1/w/&lt;Width>/h/&lt;Height>       | 限定缩略图的宽高最小值。该操作会将图像等比缩放直至某一边达到设定最小值，之后将另一边居中裁剪至设定值。若只指定一边，则表示宽高相等的正方形<br>例如，原图大小为1000x500，将参数设定为?imageView2/1/w/500/h/400 后，图像会先等比缩放至800x400，之后左右各裁剪150，得到500x400大小的图像 |
 | /2/w/&lt;Width>/h/&lt;Height>       | 限定缩略图的宽高最大值。该操作会将图像等比缩放至宽高都小于设定最大值<br>例如，原图大小为 1000x500，将参数设定为?imageView2/2/w/500/h/400后，图像会等比缩放至500x250。如果只指定一边，则另一边自适应 |
 | /3/w/&lt;Width>/h/&lt;Height>       | 限定缩略图的宽高最小值。该操作会将图像等比缩放至宽高都大于设定最小值<br>例如，原图大小为 1000x500，将参数设定为?imageView2/3/w/500/h/400后，图像会等比缩放至800x400。如果只指定一边，则另一边设为相同值 |

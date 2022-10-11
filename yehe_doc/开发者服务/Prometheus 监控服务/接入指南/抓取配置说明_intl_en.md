@@ -143,7 +143,7 @@ region: <string>
 ports: 
   - [ <int> | default = 80 ]
 
-# CVM list filtering rule. For more information on the supported filtering rules, visit https://cloud.tencent.com/document/api/213/15728#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.
+# CVM list filtering rule. For more information on the supported filtering rules, visit https://www.tencentcloud.com/document/product/213/33258.
 filters:
   [ - name: <string>
       values: <string>, [...] ]

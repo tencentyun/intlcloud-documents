@@ -91,7 +91,7 @@ For example, if an object in STANDARD_IA is transitioned before 30 days, it will
 
 #### Size limits
 
-There is a minimum size limit for objects in the STANDARD_IA, INTELLIGENT TIERING, ARCHIVE, and DEEP ARCHIVE storage classes. For example, if an object smaller than 64 KB is uploaded to the STANDARD_IA storage class, it will be calculated as 64 KB. To reduce user costs, lifecycle execution does not transition the storage classes of objects that are smaller than 64 KB. 
+There is a minimum size limit for objects in the STANDARD_IA,  ARCHIVE, and DEEP ARCHIVE storage classes. For example, if an object smaller than 64 KB is uploaded to the STANDARD_IA storage class, it will be calculated as 64 KB. To reduce user costs, lifecycle execution does not transition the storage classes of objects that are smaller than 64 KB. 
 
 >? Lifecycle execution does not transition the storage classes of objects that are smaller than 64 KB.
 >

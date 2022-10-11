@@ -59,7 +59,7 @@ TencentDB for MongoDB currently doesn't allow you to customize the monitoring da
 <tr>
 <td>Inbound traffic</td><td>cluster_view</td><td>Bytes</td><td>Number of bytes in the traffic inbound to the cluster.</td></tr>     
 <tr>
-<td>Outbound traffic</td><td>cluster_netout/td><td>Bytes</td><td>Number of bytes in the traffic outbound from the cluster.</td></tr>
+<td>Outbound traffic</td><td>cluster_netout<//td><td>Bytes</td><td>Number of bytes in the traffic outbound from the cluster.</td></tr>
 <tr>
 <td rowspan="12">Latency</td>
 <td>Average request latency<td>avg_all_request_delay</br></td><td>ms</td><td>Average execution latency of all requests in the cluster.</td></tr>

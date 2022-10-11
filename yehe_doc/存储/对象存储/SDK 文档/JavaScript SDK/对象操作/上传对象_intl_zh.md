@@ -45,14 +45,13 @@ PUT Object 接口可以上传一个对象至指定存储桶中。该操作需要
 
 简单上传文件，适用于小文件上传：
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-    StorageClass: 'STANDARD',
-    Body: fileObject, // 上传文件对象
+    Body: fileObject, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
     onProgress: function(progressData) {
         console.log(JSON.stringify(progressData));
     }
@@ -63,7 +62,7 @@ cos.putObject({
 
 上传字符串作为文件内容：
 
-[//]: # ".cssg-snippet-put-object-string"
+[//]: # (.cssg-snippet-put-object-string)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -77,7 +76,7 @@ cos.putObject({
 
 上传base64作为文件内容：
 
-[//]: # ".cssg-snippet-put-object-string"
+[//]: # (.cssg-snippet-put-object-string)
 ```js
 var base64Url = 'data:image/png;base64,iVBORw0KGgo.....';
 var dataURLtoBlob = function (dataurl) {
@@ -105,7 +104,7 @@ cos.putObject({
 
 创建目录a：
 
-[//]: # ".cssg-snippet-put-object-folder"
+[//]: # (.cssg-snippet-put-object-folder)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -124,7 +123,7 @@ cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: 'a/b/1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-    Body: fileObject, // 上传文件对象
+    Body: fileObject, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
     onProgress: function(progressData) {
         console.log(JSON.stringify(progressData));
     }
@@ -137,14 +136,13 @@ cos.putObject({
 
 >?关于上传对象的限速说明，请参见 [单链接限速](https://intl.cloud.tencent.com/document/product/436/34072)。
 
-[//]: # ".cssg-snippet-put-object-traffic-limit"
+[//]: # (.cssg-snippet-put-object-traffic-limit)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-    StorageClass: 'STANDARD',
-    Body: fileObject, // 上传文件对象
+    Body: fileObject, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
     Headers: {
       'x-cos-traffic-limit': 819200, // 限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，如果超出该范围将返回400错误。
     },
@@ -204,7 +202,7 @@ function(err, data) { ... }
 | - headers    | 请求返回的头部信息                                           | Object |
 | - ETag       | 返回文件的 MD5 算法校验值。ETag 的值可以用于检查对象在上传过程中是否有损坏<br>例如`"09cba091df696af91549de27b8e7d0f6"`，**注意：这里的 ETag 值字符串前后带有双引号** | String |
 | - Location   | 上传完的文件访问地址                                       | String |
-| - VersionId  | 在开启过版本控制的存储桶中上传对象返回对象的版本 ID，存储桶从未开启则不返回该参数 | String |
+| - VersionId  | 在开启过版本控制的存储桶中上传对象返回对象的版本 ID，存储桶从未开启则不返回该参数。需要Expose-Headers里设置VersionId字段，[参考文档](https://intl.cloud.tencent.com/document/product/436/13318) | String |
 
 ### 追加上传对象
 
@@ -223,13 +221,13 @@ function(err, data) { ... }
 
 初次追加上传对象:
 
-[//]: # ".cssg-snippet-append-object"
+[//]: # (.cssg-snippet-append-object)
 ```js
 cos.appendObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: 'test.txt',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-    Body: fileObject, // 上传文件对象
+    Body: fileObject, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
     Position: 0, // 初次上传为0
 }, function(err, data) {
     console.log(err || data);
@@ -238,7 +236,7 @@ cos.appendObject({
 
 判断存储桶内的对象是否可追加对象:
 
-[//]: # ".cssg-snippet-append-object"
+[//]: # (.cssg-snippet-append-object)
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -254,7 +252,7 @@ cos.headObject({
 
 查询可追加对象的Position并追加上传:
 
-[//]: # ".cssg-snippet-append-object"
+[//]: # (.cssg-snippet-append-object)
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -321,13 +319,15 @@ function(err, data) { ... }
 | - headers    | 请求返回的头部信息                                           | Object |
 | - RequestId  | 请求的唯一 ID                   | String    |
 
-
+  
 ### 表单上传对象
 
 JS SDK 未提供 POST Object 接口对应的方法，如果需要使用该接口，请参见 [Web 端直传实践](https://intl.cloud.tencent.com/document/product/436/9067) 里的“方案 B：使用 Form 表单上传”。
 
 
 ## 分块操作
+
+>?一般不需要关注这些方法，sliceUploadFile 已经封装了以下分块操作，直接调用即可。更推荐使用高级上传 uploadFile 方法。
 
 ### 查询分块上传
 
@@ -339,7 +339,7 @@ List Multipart Uploads 用来查询正在进行中的分块上传信息。单次
 
 获取前缀为 a 的未完成的 UploadId 列表，示例如下：
 
-[//]: # ".cssg-snippet-list-multi-upload"
+[//]: # (.cssg-snippet-list-multi-upload)
 ```js
 cos.multipartList({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -409,13 +409,13 @@ Initiate Multipart Upload 请求实现初始化分块上传，成功执行此请
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-init-multi-upload"
+[//]: # (.cssg-snippet-init-multi-upload)
 ```js
 cos.multipartInit({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-    Body: fileObject
+    Body: fileObject, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
 }, function(err, data) {
     console.log(err || data);
     if (data) {
@@ -468,7 +468,7 @@ Upload Part 接口请求实现在初始化以后的分块上传，支持的块�
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-upload-part"
+[//]: # (.cssg-snippet-upload-part)
 ```js
 cos.multipartUpload({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -476,7 +476,7 @@ cos.multipartUpload({
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
     UploadId: 'exampleUploadId',
     PartNumber: 1,
-    Body: fileObject
+    Body: fileObject, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
 }, function(err, data) {
     console.log(err || data);
     if (data) {
@@ -522,7 +522,7 @@ List Parts 用来查询特定分块上传中的已上传的块，即列出指定
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-list-parts"
+[//]: # (.cssg-snippet-list-parts)
 ```js
 cos.multipartListPart({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -597,7 +597,7 @@ Complete Multipart Upload 接口请求用来实现完成整个分块上传。当
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-complete-multi-upload"
+[//]: # (.cssg-snippet-complete-multi-upload)
 ```js
 cos.multipartComplete({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -653,7 +653,7 @@ Abort Multipart Upload 用来实现终止一个分块上传操作并删除已上
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-abort-multi-upload"
+[//]: # (.cssg-snippet-abort-multi-upload)
 ```js
 cos.multipartAbort({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -698,16 +698,16 @@ function(err, data) { ... }
 ### 高级上传
 
 #### 功能说明
-Upload File实现高级上传，传入参数 SliceSize 可以控制文件大小超出一个数值（默认1MB）时自动使用分块上传，否则使用简单上传。
+Upload File实现高级上传，传入参数 SliceSize 可以控制文件大小超出一个数值（默认1MB）时自动使用分块上传（sliceUploadFile），否则使用简单上传(putObject)。
 #### 使用示例
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```js
 cos.uploadFile({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-    Body: fileObject,                /* 必须 */
+    Body: fileObject, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
     SliceSize: 1024 * 1024 * 5,     /* 触发分块上传的阈值，超过5MB使用分块上传，非必须 */
     onTaskReady: function(taskId) {                   /* 非必须 */
         console.log(taskId);
@@ -735,6 +735,13 @@ cos.uploadFile({
 | AsyncLimit                                                   | 分块的并发量，仅在触发分块上传时有效                                           | Number    | 否   |
 | StorageClass                                                 | 对象的存储类型，枚举值：STANDARD、STANDARD_IA、ARCHIVE、DEEP_ARCHIVE 等，更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)       | String    | 否   |
 | UploadAddMetaMd5                                             | 当上传时，给对象的元数据信息增加 x-cos-meta-md5 赋值为对象内容的 MD5 值，格式为 32 位小写字符串。例如：4d00d79b6733c9cc066584a02ed03410 | String    | 否   |
+| CacheControl           | RFC 2616中定义的缓存策略，将作为对象的元数据保存             | String           | 否   |
+| ContentDisposition     | RFC 2616中定义的文件名称，将作为对象的元数据保存             | String           | 否   |
+| ContentEncoding        | RFC 2616中定义的编码格式，将作为对象的元数据保存             | String           | 否   |
+| ContentLength          | RFC 2616中定义的 HTTP 请求内容长度（字节）                   | String           | 否   |
+| ContentType            | RFC 2616中定义的内容类型（MIME），将作为对象的元数据保存     | String           | 否   |
+| Expires                | RFC 2616中定义的过期时间，将作为对象的元数据保存             | String           | 否   |
+| Expect                 | 当使用 Expect: 100-continue 时，在收到服务端确认后，才会发送请求内容 | String           | 否   |
 | onTaskReady                                                  | 上传任务创建时的回调函数，返回一个 taskId，唯一标识上传任务，可用于上传任务的取消（cancelTask），停止（pauseTask）和重新开始（restartTask） | Function  | 否   |
 | - taskId                                                     | 上传任务的编号                                               | String    | 否   |
 | onProgress                                                   | 上传文件的进度回调函数，回调参数为进度对象 progressData      | Function  | 否   |
@@ -765,7 +772,7 @@ function(err, data) { ... }
 | - Bucket     | 分块上传的目标存储桶,仅在触发分块上传时返回                                        | String |
 | - Key        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324)，仅在触发分块上传时返回 | String |
 | - ETag       | 合并后文件的唯一 ID，格式："uuid-<分块数>"<br>例如`"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`，**注意前后携带双引号** | String |
-| - VersionId  | 在开启过版本控制的存储桶中上传对象返回对象的版本 ID，存储桶从未开启则不返回该参数 | String |
+| - VersionId  | 在开启过版本控制的存储桶中上传对象返回对象的版本 ID，存储桶从未开启则不返回该参数。需要Expose-Headers里设置VersionId字段，[参考文档](https://intl.cloud.tencent.com/document/product/436/13318) | String |
 
 ### 分块上传对象（断点续传）
 
@@ -779,13 +786,13 @@ Slice Upload File 可用于实现文件的分块上传，适用于大文件上�
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```js
 cos.sliceUploadFile({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-    Body: fileObject,                /* 必须 */
+    Body: fileObject, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
     onTaskReady: function(taskId) {                   /* 非必须 */
         console.log(taskId);
     },
@@ -812,6 +819,13 @@ cos.sliceUploadFile({
 | AsyncLimit                                                   | 分块的并发量                                                 | Number    | 否   |
 | StorageClass                                                 | 对象的存储类型，枚举值：STANDARD、STANDARD_IA、ARCHIVE、DEEP_ARCHIVE 等，更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)       | String    | 否   |
 | UploadAddMetaMd5                                             | 当上传时，给对象的元数据信息增加 x-cos-meta-md5 赋值为对象内容的 MD5 值，格式为 32 位小写字符串。例如：4d00d79b6733c9cc066584a02ed03410 | String    | 否   |
+| CacheControl           | RFC 2616中定义的缓存策略，将作为对象的元数据保存             | String           | 否   |
+| ContentDisposition     | RFC 2616中定义的文件名称，将作为对象的元数据保存             | String           | 否   |
+| ContentEncoding        | RFC 2616中定义的编码格式，将作为对象的元数据保存             | String           | 否   |
+| ContentLength          | RFC 2616中定义的 HTTP 请求内容长度（字节）                   | String           | 否   |
+| ContentType            | RFC 2616中定义的内容类型（MIME），将作为对象的元数据保存     | String           | 否   |
+| Expires                | RFC 2616中定义的过期时间，将作为对象的元数据保存             | String           | 否   |
+| Expect                 | 当使用 Expect: 100-continue 时，在收到服务端确认后，才会发送请求内容 | String           | 否   |
 | onTaskReady                                                  | 上传任务创建时的回调函数，返回一个 taskId，唯一标识上传任务，可用于上传任务的取消（cancelTask），停止（pauseTask）和重新开始（restartTask） | Function  | 否   |
 | - taskId                                                     | 上传任务的编号                                               | String    | 否   |
 | onHashProgress                                               | 计算文件 MD5 值的进度回调函数，回调参数为进度对象 progressData | Function  | 否   |
@@ -843,7 +857,7 @@ function(err, data) { ... }
 | - Bucket     | 分块上传的目标存储桶                                         | String |
 | - Key        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - ETag       | 合并后文件的唯一 ID，格式："uuid-<分块数>"<br>例如`"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`，**注意前后携带双引号** | String |
-| - VersionId  | 在开启过版本控制的存储桶中上传对象返回对象的版本 ID，存储桶从未开启则不返回该参数 | String |
+| - VersionId  | 在开启过版本控制的存储桶中上传对象返回对象的版本 ID，存储桶从未开启则不返回该参数。需要Expose-Headers里设置VersionId字段，[参考文档](https://intl.cloud.tencent.com/document/product/436/13318) | String |
 
 
 ### 批量上传
@@ -860,14 +874,14 @@ function(err, data) { ... }
 
 调用 uploadFiles 操作：
 
-[//]: # ".cssg-snippet-transfer-batch-upload-objects"
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
 ```js
 cos.uploadFiles({
     files: [{
         Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
         Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
         Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-        Body: fileObject1,
+        Body: fileObject1, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
         onTaskReady: function(taskId) {
           /* taskId可通过队列操作来取消上传cos.cancelTask(taskId)、停止上传cos.pauseTask(taskId)、重新开始上传cos.restartTask(taskId) */
           console.log(taskId);
@@ -876,7 +890,7 @@ cos.uploadFiles({
         Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
         Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
         Key: '2.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-        Body: fileObject2,
+        Body: fileObject2, /* 必须，上传文件对象，可以是input[type="file"]标签选择本地文件后得到的file对象 */
         onTaskReady: function(taskId) {
         /* taskId可通过队列操作来取消上传cos.cancelTask(taskId)、停止上传cos.pauseTask(taskId)、重新开始上传cos.restartTask(taskId) */
         console.log(taskId);
@@ -905,6 +919,13 @@ cos.uploadFiles({
 | - Region               | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String    | 是   |
 | - Key                  | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String    | 是   |
 | - Body                 | 上传文件的内容，可以为  File 对象  或者  Blob 对象           | File\Blob | 是   |
+| - CacheControl           | RFC 2616中定义的缓存策略，将作为对象的元数据保存             | String           | 否   |
+| - ContentDisposition     | RFC 2616中定义的文件名称，将作为对象的元数据保存             | String           | 否   |
+| - ContentEncoding        | RFC 2616中定义的编码格式，将作为对象的元数据保存             | String           | 否   |
+| - ContentLength          | RFC 2616中定义的 HTTP 请求内容长度（字节）                   | String           | 否   |
+| - ContentType            | RFC 2616中定义的内容类型（MIME），将作为对象的元数据保存     | String           | 否   |
+| - Expires                | RFC 2616中定义的过期时间，将作为对象的元数据保存             | String           | 否   |
+| - Expect                 | 当使用 Expect: 100-continue 时，在收到服务端确认后，才会发送请求内容 | String           | 否   |
 | - onTaskReady                                                  | 上传任务创建时的回调函数，返回一个 taskId，唯一标识上传任务，可用于上传任务的取消（cancelTask），停止（pauseTask）和重新开始（restartTask） | Function  | 否   |
 | -- taskId                                                     | 上传任务的编号                                               | String    | 否   |
 | SliceSize              | 表示文件大小多大以上使用分块上传，单位 Byte，默认值1048576（1MB），小于等于该数值会使用 putObject 上传，大于该数值会使用 sliceUploadFile 上传 | Number    | 是   |
@@ -952,7 +973,7 @@ JavaScript SDK 针对 putObject 和 sliceUploadFile 发起的上传任务都有�
 
 **使用示例**
 
-[//]: # ".cssg-snippet-transfer-upload-cancel"
+[//]: # (.cssg-snippet-transfer-upload-cancel)
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.cancelTask(taskId);
@@ -970,7 +991,7 @@ cos.cancelTask(taskId);
 
 **使用示例**
 
-[//]: # ".cssg-snippet-transfer-upload-pause"
+[//]: # (.cssg-snippet-transfer-upload-pause)
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.pauseTask(taskId);
@@ -988,7 +1009,7 @@ cos.pauseTask(taskId);
 
 **使用示例**
 
-[//]: # ".cssg-snippet-transfer-upload-resume"
+[//]: # (.cssg-snippet-transfer-upload-resume)
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.restartTask(taskId);

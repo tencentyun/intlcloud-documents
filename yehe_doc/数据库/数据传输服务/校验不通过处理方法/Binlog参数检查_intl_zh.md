@@ -111,7 +111,7 @@ mysql> show variables like '%binlog_row_image%';
 4. 重新执行校验任务。
 
 ### 修改 gtid_mode 参数
-GTID（Global Transaction Identifier， 全局事物标识），用于在 binlog 中唯一标识一个事务，使用 GTID 可以避免事务重复执行导致数据混乱或者主从不一致。
+GTID（Global Transaction Identifier， 全局事务标识），用于在 binlog 中唯一标识一个事务，使用 GTID 可以避免事务重复执行导致数据混乱或者主从不一致。
 GTID 是 MySQL 5.6 的新特性，所以 MySQL 5.6 及之后版本存在此问题。DTS 只支持 `gtid_mode` 设置为 `ON` 和 `OFF`，建议将 `gtid_mode` 设置为 `ON`，否则校验时会报警告。
 
 警告不影响迁移或同步任务进行，但是会对业务造成一定的影响：设置 GTID后，在增量数据同步阶段，如果源实例发生 HA 切换，DTS 服务切换重连，任务几乎无感知；反之，任务会中断后失败，且不可恢复。

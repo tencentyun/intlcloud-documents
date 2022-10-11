@@ -55,7 +55,7 @@ http://www.examplebucket.com/
 http://www.examplebucket.com
 ```
 
-> If folders are created in the bucket, the index document needs to be added at each folder level.
+> !If folders are created in the bucket, the index document needs to be added at each folder level.
 
 ### Error document
 
@@ -73,7 +73,7 @@ https://examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com/webpage.h
 
 ### Redirection rules
 
->To configure redirection rules for a hosted static website, the path of the replacement file must be an object path in your bucket.
+>?To configure redirection rules for a hosted static website, the path of the replacement file must be an object path in your bucket.
 
 #### Configure error code redirection
 

@@ -25,12 +25,12 @@ Linux 脚本针对的场景为：内网 IP 和公网 IP 均在主网卡（eth0�
 #### 步骤1：下载 EIP 直通脚本
 由于 EIP 直通过程会导致网络中断，需先获取 EIP 直通脚本到云服务器中。您选择如下任意一种方式获取：
 - **方式一： 上传 EIP 直通脚本**
- 1. 下载 EIP 直通配置脚本。下载路径：[Linux 脚本下载](https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh)。
+ 1. 下载 EIP 直通配置脚本。
  2. Linux 脚本下载到本地后，上传至需要进行 EIP 直通的云服务器中。
 - **方法二：直接使用命令**
 登录云服务器，在云服务器中直接执行如下命令下载：
 ```
-wget https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+wget https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### 步骤2：运行 EIP 直通脚本

@@ -466,7 +466,7 @@
             <div class="section-content">
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/267/42140">集成指引</a>
+                     <a href="https://www.tencentcloud.com/document/product/1071/38156">集成指引</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -862,7 +862,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/document/product/267/42140">直播SDK集成指引</a>
+                     <a href="https://www.tencentcloud.com/document/product/1071/38156">直播SDK集成指引</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />

@@ -11,7 +11,7 @@ It depends:
 
 ### Do custom domain names in COS support HTTPS?
 
-The feature of configuring HTTPS for custom domain names of COS is being upgraded. Currently, certificate hosting is supported in public cloud regions in the Chinese mainland and in Singapore, and will be supported in other regions in the future. For regions that do not support certificate hosting yet, you can configure a reverse proxy for the domain name by referring to [Supporting HTTPS for Custom Endpoints](https://intl.cloud.tencent.com/document/product/436/11142).
+The feature of configuring HTTPS for custom domain names of COS is being upgraded. Currently, certificate hosting is supported in public cloud regions in the Chinese mainland,in Singapore,and in Silicon Valley,and will be supported in other regions in the future. For regions that do not support certificate hosting yet, you can configure a reverse proxy for the domain name by referring to [Supporting HTTPS for Custom Endpoints](https://intl.cloud.tencent.com/document/product/436/11142).
 
 ### How does COS return the access links of custom domain names after files are uploaded?
 

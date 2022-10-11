@@ -7,11 +7,11 @@
 
 Billable items:
 - **Storage**: Saving the files you upload to Tencent Cloud VOD as well as the files generated after transcoding. Storage fees are charged based on the storage space used and storage period.
-- **Video transcoding**: General transcoding of video files stored in Tencent Cloud VOD. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged if transcoding fails.
-- **Top Speed Codec (TSC)**: Transcoding video files stored in VOD according to TSC standards. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for if transcoding fails.  
-- **Video editing**: Using the [ComposeMedia](https://intl.cloud.tencent.com/document/product/266/34127) and [EditMedia](https://intl.cloud.tencent.com/document/product/266/34126) APIs to process video files stored in VOD. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is charged only once according to the specification. No fees will be charged if transcoding fails.  
-- **Watermark removal**: Removing watermarks from videos stored in VOD. This service is charged according to the specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each watermark removal task is billed only once according to the specification. No fees will be charged if a task fails.  
-- **Video acceleration**: Using CDN for acceleration during video playback. This service is charged based on the downstream traffic consumed.
+- **Video transcoding**: General transcoding of video files stored in Tencent Cloud VOD. This service is charged according to the specification and duration (rounded up to the nearest minute) of output files. Each transcoding task is billed only once according to the specification. No fees will be charged if transcoding fails.
+- **Top Speed Codec (TSC)**: Transcoding video files stored in VOD according to TSC standards. This service is charged according to the specification and duration (rounded up to the nearest minute) of output files. Each transcoding task is billed only once according to the specification. No fees will be charged for if transcoding fails.  
+- **Video editing**: Using the [ComposeMedia](https://intl.cloud.tencent.com/document/product/266/34127) and [EditMedia](https://intl.cloud.tencent.com/document/product/266/34126) APIs to process video files stored in VOD. This service is charged according to the specification and duration (rounded up to the nearest minute) of output files. Each transcoding task is charged only once according to the specification. No fees will be charged if transcoding fails.  
+- **Watermark removal**: Removing watermarks from videos stored in VOD. This service is charged according to the specification and duration (rounded up to the nearest minute) of output files. Each watermark removal task is billed only once according to the specification. No fees will be charged if a task fails.  
+- **Video acceleration**: Using CDNs to accelerate video playback. This service is charged based on the downstream traffic consumed.
 - **Data retrieval:** Retrieving media from ARCHIVE or DEEP_ARCHIVE. This service is charged based on the retrieval mode and size of the file retrieved.
 - **Media AI:** Using AI capabilities (content analysis and recognition) on media files stored in VOD. This service is charged based on the duration of output files. Each task is billed only once. No fees will be charged if a task fails.
 - **Copyright protection:** Using VOD’s copyright protection capabilities (digital watermark extraction and DRM encryption) on media stored in VOD. For the billing details, see [Media Encryption and Protection](https://intl.cloud.tencent.com/document/product/266/33965). 
@@ -68,7 +68,7 @@ Billable items:
 - Rules: Storage fees are charged based on the storage class and peak storage space used per day. **Storage fees for regions inside and outside the Chinese mainland are charged separately**.
 - Billing formula: Daily storage fee = Peak storage space used in the Chinese mainland (GB) x Unit price (USD/GB/day) + Peak storage space used outside the Chinese mainland (GB) x Unit price (USD/GB/day).
 
-### Examples
+### Billing example
 
 Assume that on January 1, you stored media files in STANDARD in the Chinese mainland and the peak storage usage was 100 GB. You also stored media files in STANDARD_IA in Mumbai and the peak storage usage was 50 GB. On January 2, the storage fee billed for January 1 would be as follows:
 100 (GB) x 0.0006 (USD/GB) + 50 (GB) x 0.0006 (USD/GB) = 0.06 (USD) + 0.03 (USD) = 0.09 (USD)
@@ -109,7 +109,7 @@ General transcoding is charged based on the duration and short side (px) of the 
 - Rules: General transcoding fees are charged based on the duration and specification of the video file generated. Video specification is determined by the codec used and short side (px) of the video generated. Remuxing and audio transcoding are charged based on the output video duration.
 - Billing formula: Video transcoding fee = Output video duration (min) x Unit price as per codec and resolution (USD/min)
 
-#### Example
+#### Billing example
 Assume that you transcoded a video file of 100 minutes into 2560 x 1440 and 1280 x 640 respectively using the H.264 codec on January 1, as well as an audio file of 100 minutes. On January 2, the transcoding fee billed for January 1 would be as follows:
 0.0242 (USD/min) x 100 (min) + 0.0061 (USD/min) x 100 (min) + 0.002 (USD/min) x 100 (min) = 3.23 (USD)
 
@@ -153,7 +153,7 @@ Adaptive bitrate streaming is charged based on the duration and specification of
 #### Billing details
 
 **The billing rules are the same as those for general transcoding**. Output videos of different resolutions are charged separately.
-#### Example
+#### Billing example
 
 Assume that on January 1, you used VOD’s adaptive bitrate streaming service to transcode a video of 100 minutes into three resolutions: FHD (1920 x 1080), HD (1280 x 720), and SD (640 x 480). On January 2, the fee billed for January 1 would be as follows:
 0.0121 (USD/min) x 100 (min) + 0.0061 (USD/min) x 100 (min) + 0.003 (USD/min) x 100 (min) = 2.21 (USD)
@@ -172,7 +172,7 @@ Assume that on January 1, you used VOD’s adaptive bitrate streaming service to
 - Rules: Charges are based on the resolution and duration of the output file. **Each video editing task is billed once according to the specification**.
 - Billing formula: Video editing fee = Output file duration (min) x Unit price (USD/min) as per resolution and codec
 
-#### Example
+#### Billing example
 Assume that on January 1, you used the VOD editing feature to splice video A (10 min, 640 x 480) and video B (15 min, 1280 x 720) into video C (25 min, 1280 x 720). On January 2, the fee billed for January 1 would be as follows:
 0.0061 (USD/min) x 25 (min) = 0.1525 (USD)
 >? The codec used in the above examples is H.264. For more information about video editing, see [ComposeMedia](https://intl.cloud.tencent.com/document/product/266/34127) and [EditMedia](https://intl.cloud.tencent.com/document/product/266/34126).
@@ -195,7 +195,7 @@ Assume that on January 1, you used the VOD editing feature to splice video A (10
 - Watermark removal is billed based on the resolution and duration of the output video.
 - Rules: Watermark removal fees are based on the duration and resolution of the video file generated. Video specification is determined by the short side (px) of the video generated.
 
-#### Example
+#### Billing example
 
 Assume that you used the watermark removal service of VOD on January 1. Two videos were generated, each 100 minutes long, and their resolutions were 2560 x 1440 and 1280 x 640 respectively. On January 2, the fee billed for January 1 would be as follows:
 
@@ -317,14 +317,14 @@ To access media assets stored in ARCHIVE or DEEP_ARCHIVE, you must retrieve them
 - Rules: Data retrieval fees are charged daily based on the retrieval mode and the size of the files retrieved from DEEP_ARCHIVE or ARCHIVE to STANDARD.
 - Billing formula: Daily retrieval fee = File size (GB) x Retrieval unit price (USD/GB).
 
-### Examples
+### Billing example
 
 Assume that on January 1, you retrieved 100 GB of data from **DEEP_ARCHIVE storage** in the **bulk retrieval mode** in the Chinese mainland. On January 2, the retrieval fee billed for January 1 would be as follows:
 100 (GB) x 0.0026 (USD/GB) = 0.26 USD
 
 ## Media AI
 
-Media AI services include content moderation, content analysis, and content recognition.
+VOD offers media AI capabilities including content analysis and content recognition.
 
 ### Content analysis
 
@@ -342,13 +342,13 @@ The unit price is as follows:
 
 | Item       | Billed By                 | Price (USD/Min) |
 | :----------- | :----------------------- | :---------------- |
-| Highlights generation | The duration of the source video for which highlights are generated | 0.0572            |
-| Video segmentation | The duration of the source video segmented | 0.0572            |
-| Video labeling | The duration of the source video labeled | 0.0572            |
-| Video classification | The duration of the source video classified | 0.0572            |
-| Thumbnail generation | The duration of the source video for which thumbnails are generated | 0.0572            |
+| Highlights generation | The duration of the source video. | 0.0572            |
+| Video segmentation | The duration of the source video. | 0.0572            |
+| Video labeling | The duration of the source video. | 0.0572            |
+| Video classification | The duration of the source video. | 0.0572            |
+| Thumbnail generation | The duration of the source video. | 0.0572            |
 
-#### Example
+#### Billing example
 
 **User A called the video labeling and classification APIs to analyze video B, whose length is 100 minutes.
 The fee incurred = 100 x 0.0572 + 100 x 0.0572 = 11.4 USD**
@@ -367,7 +367,7 @@ The video content recognition feature of VOD leverages AI technologies to recogn
 | :----------- | :------------------------- | :-------------- |
 | Content recognition | The duration of the video recognized | 0.0572 USD/min |
 
-#### Example
+#### Billing example
 
 User A used VOD’s content recognition feature on video B, whose length was 60 minutes. The fee incurred would be 60 (minutes) x 0.0572 (USD/min) = 3.432 (USD).
 
@@ -381,27 +381,58 @@ VOD offers watermark solutions with high protection and low costs to protect you
 
 #### Pricing
 
-| Billable Item       | Billed By                                   | Price          |
-| :----------- | :----------------------------------------- | :------------ |
-| Digital watermark extraction | The duration of the video tracked (only pay-as-you-go supported) | 0.22 USD/min |
+Fees are based on the duration of the video to which a digital watermarks is added and from which the digital watermark is extracted. Only pay-as-you-go is supported.
+
+<melo-data data-src="{}" data-version="2.1.0"></melo-data><table ><colgroup><col  width="205px"><col  width="198px"><col  width="295px"></colgroup>
+<tbody>
+<tr>
+<th   colspan="1" rowspan="1" align="" valign="middle"><p>Item</p></td>
+ <th   colspan="1" rowspan="1" align="" valign="middle"><p>Resolution</p></td>
+ <th   colspan="1" rowspan="1" align="" valign="middle"><p>Price (USD/min)</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="5" align="" valign="middle"><p>Digital watermarking</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>SD (short side ≤ 480 px)</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.055</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>HD (short side ≤ 720 px)</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.058</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>FHD (short side ≤ 1080 px)</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.062</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>2K (short side ≤ 1440 px)</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.067</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>4K (short side ≤ 2160 px)</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.072</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>Digital watermark extraction</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>-</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.12</p></td>
+</tr>
+</tbody>
+</table>
 
 #### Billing details
 
-- Billable item: Digital watermark extraction
-- Rules: In case of unauthorized distribution of your video, you can [submit a ticket](https://intl.cloud.tencent.com/zh/account/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fworkorder) to extract the user ID of the user who distributed a video containing a digital watermark. This will incur digital watermark extraction fees.
+- Billable item: Digital watermarking and digital watermark extraction
+- Rules: If you enable digital watermarking for a video, a digital watermark will be added to the video during transcoding, which will incur digital watermarking fees, transcoding fees, and storage fees. In case of unauthorized distribution, you can extract the user ID of the distributor from the video, which will incur digital watermark extraction fees.
 
-#### Example
+#### Billing example
 
-Assume that you found your video (length: 60 minutes; resolution: 2560 x 1440) distributed by someone without your authorization, and you submitted a ticket to VOD to extract the distributor’s user ID from the video’s digital watermark. The output video was 60 minutes long and had a resolution of 1280 x 720. The digital watermark extraction fee incurred would be as follows:
-
-- The unit price of the digital watermark extraction service is 0.22 USD/min.
-
-Digital watermark extraction fee = 0.22 x 60 (minutes) = 13.2 USD
+Assume that you enabled digital watermarking for a 60-minute 1080p video and transcoded the video using the H.264 codec to HLS. The digital watermarking fee incurred would be 0.062 x (60 x 2) =7.44 USD. The transcoding fee would be 0.0121 x (60 x 2)= 1.452 USD. The storage fee would be the size of the output file multiplied by the storage unit price.
+If you extract the distributor’s user ID from the video in case of unauthorized distribution, the digital watermark extraction fee incurred would be 0.12 x 60 = 7.2 USD.
 
 >?
 >- No fees will be charged if digital watermark extraction fails.
 >- When you add a digital watermark to a video, the video will be transcoded, which will incur transcoding fees. For details, see [Media Processing](#media-processing).
->- Transcoded streams take up storage space, which incurs storage fees. For details, see [Storage](#storage).
+>- Saving transcoded files incurs storage fees. For details, see [Storage](#storage).
 
 ### DRM encryption
 
@@ -419,7 +450,7 @@ VOD uses established DRM solutions to encrypt videos during transcoding. If you 
 - Rules: Transcoding fees are incurred for encrypting videos with DRM solutions, and DRM playback fees are charged based on the number of license requests.
 - DRM fees = DRM encryption (transcoding) fees + DRM playback fees (based on the number of license requests)
 
-#### Example
+#### Billing example
 
 Assume that on January 1, you transcoded a video (length: 10 minutes; resolution: 2560 x 1440) using the H.264 codec and used VOD’s DRM encryption feature to encrypt it. The video generated was 10 minutes long and had a resolution of 1280 x 720, and there were 50 license requests to play it. On January 2, the DRM playback fee billed for January 1 would be as follows:
 

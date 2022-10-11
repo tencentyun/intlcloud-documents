@@ -1,6 +1,4 @@
-以下文档用于介绍自定义手动审核的集成方式，需要您来控制审核任务的发起与结束。如果您希望使用的是全局自动审核功能，则无需参考此篇文档，只需在控制台完成配置即可。
-
-
+以下文档用于介绍自定义手动审核的集成方式，需要您来控制审核任务的发起与结束。
 
 ## 审核接入流程
 ### 接入流程图
@@ -94,7 +92,7 @@ trtc://trtc.tencentcloudapi.com/moderation?sdk_app_id=xxxx&room_id=xxxx&user_id=
 
    - **BizType**
       用户的审核策略，可以通过控制台上的 [策略管理](https://console.intl.cloud.tencent.com/cms/video/strategy) 根据不同的需求创建不同的审核策略，在开通服务时，会自动创建一个 BizType 为“default”的审核策略，测试时，可使用该 BizType 传入。
-      ![](https://qcloudimg.tencent-cloud.cn/raw/a51558764405f17280c46fa8ca90cf97.png)
+      ![](https://qcloudimg.tencent-cloud.cn/raw/46e0ce41f8f49998e93b2ff0d5f79849.png)
    - **Type**
       根据实际的应用类型进行传入，TRTC实时音视频根据应用类型调用不同的产品的接口。（例如：实时语音房场景调用 ams 产品的接口，Type 输入 LIVE_AUDIO；视频聊天调用 vm 产品的接口，Type 填写 LIVE_VIDEO）。
    - **CallbackUrl**

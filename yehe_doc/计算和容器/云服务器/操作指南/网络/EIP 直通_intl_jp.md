@@ -25,12 +25,12 @@ Linuxスクリプトは、次のシナリオに適用できます。プライベ
 #### 手順1： EIP直通スクリプトをダウンロードする
 EIP直通は、ネットワークの中断を引き起こす可能性があります。したがって、事前にEIP直通用のスクリプトをダウンロードしてCVMにアップロードする必要があります。次のいずれかの方法を使用して、スクリプトを取得できます。
 - **方式1：EIP直通スクリプトをアップロードする**
- 1.EIP直通の構成スクリプトをダウンロードします。ダウンロードパス：[Linuxスクリプトのダウンロード](https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh)。
+ 1.EIP直通の構成スクリプトをダウンロードします。
  2. Linux スクリプトをローカルにダウンロードした後、EIP直通が必要なCVMにアップロードします。
 - **方法2：コマンドを直接使用する**
 CVMにログインし、CVMで次のコマンドを実行してスクリプトをダウンロードします。
 ```
-wget https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+wget https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### 手順2：EIP直通スクリプトを実行する

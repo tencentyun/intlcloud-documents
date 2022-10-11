@@ -62,7 +62,7 @@ You can implement smart subtitling through the **full speech-to-text recognition
 {
 	"AsrFullTextConfigure": {
 		"Switch": "ON",
-		"SubtitleFormat": "vtt"
+                "SubtitleFormats": ["vtt", "srt"]
 	}
 }
 ```

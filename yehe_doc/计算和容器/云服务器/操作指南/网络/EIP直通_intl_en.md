@@ -30,7 +30,7 @@ EIP direct connection may cause network interruption. Therefore, you need to dow
 - **Method 2: directly use a command**
 Log in to the CVM, and run the following command on the CVM to download the script:
 ```
-wget https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+wget https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### Step 2: run the script for EIP direct connection

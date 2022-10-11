@@ -324,7 +324,7 @@
 
 ## 媒体 AI 服务
 
-媒体 AI 服务包括内容审核、内容分析、内容识别。
+媒体 AI 服务包括内容分析、内容识别。
 
 ### 内容分析
 
@@ -377,35 +377,66 @@
 
 ### 溯源水印
 
-高安全、低成本的防盗录水印方案，可以有效追踪盗录者ID，震慑盗录行为，帮助追讨利益损失。
+安全、低成本的防盗录水印方案，可以有效追踪盗录者ID，震慑盗录行为，帮助追讨利益损失。
 
 #### 计费价格
 
-| 计费项       | 计费方式                                   | 单价          |
-| :----------- | :----------------------------------------- | :------------ |
-| 溯源水印提取 | 按需要提取溯源水印的视频时长，仅支持后付费 | 0.22美元/分钟 |
+按需要添加/提取溯源水印的视频时长收费，仅支持后付费。
+
+<melo-data data-src="{}" data-version="2.1.0"></melo-data><table ><colgroup><col  width="205px"><col  width="198px"><col  width="295px"></colgroup>
+<tbody>
+<tr>
+<th   colspan="1" rowspan="1" align="" valign="middle"><p>计费项</p></td>
+ <th   colspan="1" rowspan="1" align="" valign="middle"><p>分辨率</p></td>
+ <th   colspan="1" rowspan="1" align="" valign="middle"><p>单价（美元/分钟）</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="5" align="" valign="middle"><p>数字溯源水印添加</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>标清 SD（短边 ≤ 480px）</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.055</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>高清 HD（短边 ≤ 720px）</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.058</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>全高清 FHD（短边 ≤ 1080px）</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.062</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>2K（短边 ≤ 1440px）</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.067</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>4K（短边 ≤ 2160px）</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.072</p></td>
+ </tr>
+<tr>
+<td   colspan="1" rowspan="1" align="" valign="middle"><p>溯源水印提取</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>-</p></td>
+ <td   colspan="1" rowspan="1" align="" valign="middle"><p>0.12</p></td>
+</tr>
+</tbody>
+</table>
 
 #### 计费说明
 
-- 计费项：溯源水印提取
-- 计费规则：发生盗录后，您需要 [提交工单](https://intl.cloud.tencent.com/zh/account/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fworkorder)，由云点播帮您对盗录的视频提取盗录者 ID，因此会产生提取费用。
+- 计费项：数字溯源水印添加、溯源水印提取
+- 计费规则：对需要开启防盗录溯源功能的视频，通过转码进行添加数字溯源水印，因此会产生数字溯源水印添加 、转码及转码后文件的存储费用。当视频发生盗录后，通过云点播对盗录视频提取盗录者 ID，因此会产生提取费用。
 
 #### 计费示例
 
-当您发现您的视频被盗录时，可在获取该盗录视频 A（时长60分钟，分辨率2560 × 1440）后，通过工单的形式将该视频提交给云点播，由云点播进行提取操作，输出视频 B（时长60分钟，分辨率1280 x 720）。您需要支付的溯源水印提取费用如下：
-
-- 溯源水印提取单价为0.22（美元/分钟）
-
-则溯源水印提取费用 =0.22（美元/分钟）× 60（分钟）= 13.2美元
+您有一段分辨率为1080P、时长为60分钟的视频需要开启防盗录溯源功能，您通过编码方式为H.264、封装格式为 HLS 的普通转码模版进行转码并开启防盗录溯源功能，您需要支付的数字溯源水印添加费用=0.062 × (60× 2) =7.44美元，转码费用=0.0121 × (60 × 2)=1.452美元，存储费用=转码后文件大小 × 存储单价。
+当您的视频被盗录，且您已获取该盗录视频后，通过云点播进行数字水印提取操作，您需要支付的溯源水印提取费用=0.12 × 60 = 7.2美元
 
 >?
 >- 提取不成功将不收取费用。
->- 对视频打溯源水印时，需要转码或转自适应码流，因此会产生转码费用，详情请参见 [媒资处理](#media-processing)。
->- 转码或转自适应码流的输出，会占用存储空间，具体存储计费价格，请参见 [媒资存储](#storage)。
+>- 对视频添加数字溯源水印时，需要使用到的转码或转自适应码流功能，因此会产生转码费用，详情请参见 [媒体处理](#media-processing)。
+>- 转码或转自适应码流的输出，会占用存储空间，具体存储计费价格，请参见 [媒体存储](#storage)。
 
 ### DRM 加密
 
-点播 DRM 加密服务，使用商业级 DRM 加密方案为视频进行加密。DRM 加密服务基于点播转码实现，开启DRM 加密后，DRM 加密转码费用将统计在转码费用中，不再额外计费。云点播 DRM 加密服务根据终端 DRM 加密视频 License 的请求次数，按次计算费用。
+点播 DRM 加密服务，使用商业级 DRM 加密方案为视频进行加密。DRM 加密服务基于点播转码实现，开启 DRM 加密后，DRM 加密转码费用将统计在转码费用中，不再额外计费。云点播 DRM 加密服务根据终端 DRM 加密视频 License 的请求次数，按次计算费用。
 
 #### 计费价格
 

@@ -25,12 +25,12 @@ Linux 스크립트는 개인 IP와 공인 IP 모두가 주 ENI(eth0)에 있고, 
 #### 1단계: EIP 다이렉트 커넥트 스크립트 다운로드
 EIP 다이렉트 커넥트 과정에서 네트워크 연결이 끊길 수 있으므로, 먼저 EIP 다이렉트 커넥트 스크립트를 CVM으로 가져오시기 바랍니다. 아래의 방법 중 하나를 택해 진행할 수 있습니다.
 - **방법1: EIP 다이렉트 커넥트 스크립트 업로드**
- 1. EIP 다이렉트 커넥트 설정 스크립트를 다운로드합니다. 다운로드 경로: [Linux 스크립트 다운로드](https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh)
+ 1. EIP 다이렉트 커넥트 설정 스크립트를 다운로드합니다. 
  2. Linux 스크립트를 로컬에 다운로드한 후에 EIP 다이렉트 커넥트를 진행할 CVM에 업로드합니다.
 - **방법2: 직접적으로 명령어 사용**
 CVM에 로그인한 뒤 CVM에서 아래의 명령어를 직접 실행해 다운로드합니다.
 ```
-wget https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+wget https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### 2단계: EIP 다이렉트 커넥트 스크립트 실행

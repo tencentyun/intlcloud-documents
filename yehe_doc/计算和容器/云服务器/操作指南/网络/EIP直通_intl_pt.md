@@ -30,7 +30,7 @@ A conexão direta com o EIP pode causar a interrupção da rede. Portanto, é ne
 - **Método 2: use um comando diretamente**
 Faça login no CVM e execute o seguinte comando no CVM para baixar o script:
 ```
-wget https://eip-direct-1254277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
+wget https://network-data-1255486055.cos.ap-guangzhou.myqcloud.com/eip_direct.sh
 ```
 
 #### Etapa 2: execute o script para a conexão direta com o EIP

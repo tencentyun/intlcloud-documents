@@ -25,18 +25,18 @@ Based on the above, it is estimated that you may have the following business req
 ## TDSQL Shard Performance Test
 The database benchmark performance test is to modify the descriptions of sysbench 0.5: the OTLP script that comes with sysbench was modified. Specifically, the read/write ratio was changed to 1:1 and controlled by the testing command parameters `oltp_point_selects` and `oltp_index_updates`. In this document, all test cases involve four SELECT operations and one UPDATE operation with the read/write ratio at 4:1.
 
-|vCPU (Core)|Memory (GB)|Storage Capacity (GB)|Dataset (GB)|Number of Clients|Single-Client Concurrence|QPS|TPS|
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|1|2 GB|100 GB|46 GB|1|128|1880|351|
-|2|4 GB|200 GB|76 GB|1|128|3983|797|
-|2|8 GB|200 GB|142 GB|1|128|6151|1210|
-|4|16 GB|400 GB|238 GB|1|128|10098|2119|
-|4|32 GB|700 GB|238 GB|2|128|20125|3549|
-|8|64 GB|1 TB|378 GB|2|128|37956|7002|
-|12|96 GB|1.5 TB|378 GB|3|128|51026|10591|
-|16|120 GB|2 TB|378 GB|3|128|81050|15013|
-|24|240 GB|3 TB|567 GB|4|128|96891|17698|
-|48|480 GB|6 TB|567 GB|6|128|140256|26599|
+|Memory (GB)|Storage Capacity (GB)|Dataset (GB)|Number of Clients|Single-Client Concurrence|QPS|TPS|
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|2 GB|100 GB|46 GB|1|128|1880|351|
+|4 GB|200 GB|76 GB|1|128|3983|797|
+|8 GB|200 GB|142 GB|1|128|6151|1210|
+|16 GB|400 GB|238 GB|1|128|10098|2119|
+|32 GB|700 GB|238 GB|2|128|20125|3549|
+|64 GB|1 TB|378 GB|2|128|37956|7002|
+|96 GB|1.5 TB|378 GB|3|128|51026|10591|
+|120 GB|2 TB|378 GB|3|128|81050|15013|
+|240 GB|3 TB|567 GB|4|128|96891|17698|
+|480 GB|6 TB|567 GB|6|128|140256|26599|
 
 
 TPS here is for single transaction other than distributed transaction.

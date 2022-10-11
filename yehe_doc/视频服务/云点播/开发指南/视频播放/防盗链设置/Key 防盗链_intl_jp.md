@@ -15,7 +15,7 @@
 
 リンク不正アクセス防止URLの生成ルールは、オリジナルURLの末尾に、QueryStringの形式でリンク不正アクセス防止パラメータを追加することです。形式は次のとおりです。
 ```
-http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4?t=[t]&exper=[exper]&rlimit=[rlimit]&us=[us]&uid=[uid]&sign=[sign]
+http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4?t=[t]&exper=[exper]&rlimit=[rlimit]&us=[us]&uv=[uv]&sign=[sign]
 ```
 リンク不正アクセス防止URLの各パラメータの定義と値の取得方法について、以下で詳細に説明します。
 
@@ -28,13 +28,13 @@ http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4?t=[t]&exper=[exper]&rlimi
 | `exper`  | 必須ではない   | <li>プレビュー時間。単位は秒。10進法で表示されます。空のまま、または0を入力するとプレビューは無効になります（つまり、完全なビデオが返されます）<br><li>プレビュー時間はビデオのオリジナルの時間を超えないようにしてください。超えてしまうと、再生に失敗する可能性があります |
 | `rlimit` | 必須ではない   | <li>再生可能な最大端末IP数。10進法で表示され、最大値は9です。空のままにした場合、制限はありません<br><li>URLを1人しか再生できないように制限する場合は、モバイル端末のIPがネットワークから切断して再度アクセス時に変更される可能性があるため、rlimitを厳密に1に制限しないことを推奨します（3に設定するなど）|
 | `us`     | 必須ではない   | <li>リンクID。リンクの一意性を高めるため、リンク不正アクセス防止URLのランダム化に使用されます<br><li>リンク不正アクセス防止URLを生成するときは毎回 、ランダムなus値を指定することを推奨します|
-| `uid` | 必須ではない   | 再生者のID。16進数の全8桁で表します。このパラメータは[トレーサビリティウォーターマーク](https://intl.cloud.tencent.com/document/product/266/47920)のユースケースで使用します|
+| `uv` | 必須ではない   | 再生者のID。16進数の全6桁で表します。このパラメータは[トレーサビリティウォーターマーク](https://intl.cloud.tencent.com/document/product/266/47920)のユースケースで使用します|
 | `sign`   | 必須   | <li>リンク不正アクセス防止の署名。32文字の長さの16進数で表示され、リンク不正アクセス防止URLの有効性の検証に使用されます<br><li>署名検証に失敗すると、403レスポンスコードが返されます。 [署名の計算式](#formula)については、以下で説明します |
 
 
 #### [](id:formula)署名の計算式
 ```
-sign = md5(KEY + Dir + t + exper + rlimit + us + uid)
+sign = md5(KEY + Dir + t + exper + rlimit + us + uv)
 ```
 
 式の`+`は文字列のスプライスを意味し、オプションのパラメータを空白の文字列にすることができます。

@@ -2,7 +2,7 @@
 
 This document describes how to dynamically adjust the part size during a multipart upload to COS to improve the upload success rate on poor network connections on mobile devices.
 
-> This feature is currently during beta test. To enable it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+> ! This feature is currently during beta test. To enable it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
 ## Notes
 
@@ -143,9 +143,9 @@ public class ResumeHelper {
                         (exception.errorCode + "," + exception.getMessage())));
                 if(exception != null){
                     /** If the failure is caused by a network reason, try setting the part size to 100 KB and re-run the task */
-                    if(exception.errorCode == ClientErrorCode.INTERNAL_ERROR.getCode()
-                            || exception.errorCode == ClientErrorCode.IO_ERROR.getCode()
-                            || exception.errorCode != ClientErrorCode.POOR_NETWORK.getCode()){
+                    if(exception.errorCode == ClientErrorCode.IO_ERROR.getCode()
+                            || exception.errorCode == ClientErrorCode.POOR_NETWORK.getCode()){
+
                         Log.d(TAG, "upload task try again");
                         Message msg = mainHandler.obtainMessage();
                         msg.what = MESSAGE_RETRY;
