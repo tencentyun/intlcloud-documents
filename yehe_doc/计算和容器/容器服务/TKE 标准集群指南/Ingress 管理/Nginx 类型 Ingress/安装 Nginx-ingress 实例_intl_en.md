@@ -1,15 +1,12 @@
+## Installing NginxIngress Add-On[](id:Nginx-ingress)
 
 
 
-
-
-
-## Installing NginxIngress Component[](id:Nginx-ingress)
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
-2. On the **Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
-3. In the left sidebar, click **Add-on Management** to go to the **Add-on List** page.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and click **Cluster** on the left sidebar.
+2. On the **Cluster management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the left sidebar, click **Add-On Management**.
 4. On the **Add-On List** page, select **Create**. On the **Create Add-on** page, select NginxIngress.
-5. Click **Done** to complete the process.
+5. Click **Done**. You can view the **Addon Details** in **Services and Routes** > **NginxIngress**.
 
 
 ## Installation
@@ -32,10 +29,11 @@ Install Nginx-ingress in the following steps:
 1. Prepare a node pool for Nginx-ingress deployment and set a taint to prevent other Pods from being scheduled to the node pool. For more information on the deployment node pool, see [Node Pool Overview](https://intl.cloud.tencent.com/document/product/457/35900).
 2. [Install the Nginx-ingress component](#Nginx-ingress) in the cluster.
 3. On the details page of the newly created Nginx-ingress component, click **Add Nginx Ingress Instance** (a cluster can have multiple Nginx instances).
+![](https://qcloudimg.tencent-cloud.cn/raw/315acb32b566355751c3797e698fd081.png)
 4. In the pop-up window, select **Specify DaemonSet node pool for deployment** from the deployment options and set other parameters as needed as shown below:
 ![](https://main.qcloudimg.com/raw/fa11343e51e9643bc1fe90d4e2fbb100.png)
- - Node Pool: configure a node pool.
- - Nginx Configuration: you need to set **Request** to a value lower than the model configuration of the node pool (as the nodes have reserved resources). **Limit** is optional.
+ - Node Pool: Configure a node pool.
+ - Nginx Configuration: You need to set **Request** to a value lower than the model configuration of the node pool (as the nodes have reserved resources). **Limit** is optional.
 4. Click **OK**.
 
 
@@ -49,9 +47,10 @@ If you use the Deployment + HPA mode to deploy Nginx-ingress, you can configure 
 1. Set labels for the nodes where Nginx is to be deployed in the cluster. For detailed directions, see [Setting a Node Label](https://intl.cloud.tencent.com/document/product/457/30657).
 2. [Install the Nginx-ingress component](#Nginx-ingress) in the cluster.
 3. On the details page of the newly created Nginx-ingress component, click **Add Nginx Ingress Instance** (a cluster can have multiple Nginx instances).
-4. In the pop-up window, select **Custom Deployment + HPA** from the deployment options and set other parameters as needed.
- - Node Scheduling Policy: specify a policy as needed.
- - Nginx Configuration: you need to set **Request** to a value lower than the model configuration of the node pool (as the nodes have reserved resources). **Limit** is optional.
+4. In the pop-up window, select **Custom Deployment + HPA** for **Deploy Modes** and set other parameters as needed.
+![](https://main.qcloudimg.com/raw/fa11343e51e9643bc1fe90d4e2fbb100.png)
+ - Node Scheduling Policy: Specify a policy as needed.
+ - Nginx Configuration: You need to set **Request** to a value lower than the model configuration of the node pool (as the nodes have reserved resources). **Limit** is optional.
 5. Click **OK**.
 
 
@@ -69,9 +68,9 @@ The current scheme is most ideal as it has a high performance and does not requi
 
 #### Using common Service in LoadBalancer mode in cluster in Global Router mode
 
-If your cluster does not support the VPC-CNI mode network, you can also use a common Service in LoadBalancer mode for traffic access. 
+If your cluster does not support the VPC-CNI mode network, you can also use a common Service in LoadBalancer mode for traffic access.  
 Currently, Services in LoadBalancer mode in TKE are implemented based on NodePort by default. CLB is bound to the NodePort of each node to use it as a real server and forwards the traffic to the NodePort, and then the request is routed to the backend Pod of the Service through iptables or IPVS on the node. This scheme is simplest, but the traffic passes through NodePort, which means that there is one more layer for forwarding, and the following problems may exist:
-- The forwarding path is relatively long: after reaching NodePort, traffic goes through the load balancer within Kubernetes and is then forwarded through iptables or IPVS to Nginx. This increases the network time.
+- The forwarding path is relatively long: After reaching NodePort, traffic goes through the load balancer within Kubernetes and is then forwarded through iptables or IPVS to Nginx. This increases the network time.
 - Passing through NodePort will necessarily cause SNAT. If traffic is too concentrated, port exhaustion or conntrack insertion conflicts can easily occur, leading to packet loss and causing some traffic exceptions.
 - The NodePort of each node also serves as a load balancer. If CLB is bound to the NodePorts of a large number of nodes, the load balancing status will be distributed among each node, which can easily cause a global load imbalance.
 - CLB carries out health check on NodePort, and health check packets are ultimately forwarded to the Pods of Nginx-ingress. If the CLB is bound to too many nodes, and the Nginx-ingress instance has a small number of Pods, the health check packets will put immense pressure on Nginx-ingress.
@@ -91,12 +90,12 @@ Note that when you use HostNetwork, to avoid port listening conflicts, Nginx-ing
 
 ### Nginx-ingress parameter setting method
 
-On the Nginx parameter tab on the Nginx Ingress component page, select an Nginx-ingress instance to edit its YAML file.
+In the details page of Nginx-ingress add-on, you can select an Nginx-ingress instance to edit YAML in **Nginx Configuration** tab.
 >! By default, Nginx won't restart after parameter configuration, and it will take a short while for the parameters to take effect.
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
-2. On the **Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
-3. In the left sidebar, click **Add-on Management** to go to the **Add-on List** page.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and click **Cluster** on the left sidebar.
+2. On the **Cluster management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the left sidebar, click **Add-On Management**.
 4. Click **Update Nginx Configuration** on the right of the target component to enter the **Nginx Configuration** page.
 5. Select the target Nginx-ingress instance and click **Edit YAML**.
 6. On the **Update ConfigMap** page, edit the YAML file and click **Done**.

@@ -1,7 +1,7 @@
 
 
 
-本文主要介绍 TKE 集群中调度至虚拟节点的 Pod 如何采集日志，包括：
+本文主要介绍 TKE 集群中调度至超级节点的 Pod 如何采集日志，包括：
 - [采集日志至 CLS](#toCLS)
 - [采集日志至 Kafka](#toKafka)
 
@@ -10,7 +10,7 @@
 ## 采集日志至 CLS[](id:toCLS)
 
 #### 服务角色授权
-在采集虚拟节点上的 Pod 日志至 CLS 之前，需要进行服务角色授权，以保证将日志正常上传到 CLS。
+在采集超级节点上的 Pod 日志至 CLS 之前，需要进行服务角色授权，以保证将日志正常上传到 CLS。
 
 操作步骤如下：
 1. 登录**访问管理控制台** > **[角色](https://console.cloud.tencent.com/cam/role)**。
@@ -31,7 +31,7 @@
 
 ## 采集日志至 Kafka[](id:toKafka)
 
-若需要采集虚拟节点上的 Pod 的日志至自建 Kafka 或者 CKafka，需要您自行配置 CRD，定义采集源及消费端，CRD 配置完成后，Pod 自带的采集器会依照规则进行日志采集。
+若需要采集超级节点上的 Pod 的日志至自建 Kafka 或者 CKafka，您可以在控制台配置相应的日志采集规则，或者自行配置 CRD，定义采集源及消费端，CRD 配置完成后，Pod 自带的采集器会依照规则进行日志采集。
 CRD 具体配置如下所示：
 <dx-codeblock>
 ::: yaml
@@ -79,4 +79,3 @@ spec:
 
 
 
->! 目前使用 Kafka 能力需要进行集群升级，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) 联系我们。
