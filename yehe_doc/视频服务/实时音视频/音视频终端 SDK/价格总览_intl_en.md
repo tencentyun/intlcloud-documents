@@ -101,7 +101,7 @@ You can **purchase licenses** to activate the corresponding capabilities. A purc
 <td>28 days</td>
 <td rowspan=2>Live stream publishing + Video playback</td>
 <td>0</td>
-<td><a href="https://">Apply for free</a></td>
+<td><a href="https://console.tencentcloud.com/vod/license">Apply for free</a></td>
 </tr>
 <tr>
 <td>Live stream publishing</td>
@@ -129,7 +129,7 @@ You can **purchase licenses** to activate the corresponding capabilities. A purc
 <td>28 days</td>
 <td>UGSV (Standard) + Video playback</td>
 <td>0</td>
-<td><a href="https://console">Apply for free</a></td>
+<td><a href="https://console.tencentcloud.com/vod/license">Apply for free</a></td>
 </tr>
 <tr>
 <td>UGSV Lite</td>
@@ -173,7 +173,7 @@ The **video playback** license was introduced in the 10.1 version (launched at t
 <td>28 days</td>
 <td rowspan=2>Video playback</td>
 <td rowspan=2>0</td>
-<td rowspan=2><a href="">Apply for free</a></td>
+<td rowspan=2><a href="https://console.tencentcloud.com/vod/license">Apply for free</a></td>
 </tr>
 <tr>
 <td>Video playback</td>
