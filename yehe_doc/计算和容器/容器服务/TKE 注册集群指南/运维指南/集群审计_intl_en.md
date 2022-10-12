@@ -117,6 +117,7 @@ rules:
 ### Configuring API server parameters on master nodes
 Log in to all master nodes in the cluster one by one and modify the `/etc/kubernetes/manifests/kube-apiserver.yaml` file.
 1. Add the following command parameters:
+
 ```
 spec:
   containers:
@@ -129,6 +130,7 @@ spec:
     - --audit-policy-file=/etc/kubernetes/audit-policy.yaml
 ```
 2. Add volume parameters to mount `/etc/kubernetes/audit-policy.yaml` to the API server Pod.
+
 ```
 spec:
   containers:
