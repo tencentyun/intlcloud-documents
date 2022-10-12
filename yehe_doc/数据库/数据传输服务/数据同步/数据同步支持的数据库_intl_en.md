@@ -1,30 +1,62 @@
-DTS supports sync of self-built, TencentDB, and third-party cloud databases. Below are the specific network connection methods:
+Data sync refers to the real-time sync of data between two data sources in the form of a continuous task. After a task is created, the data will be continuously synced (almost in real time) to keep consistency between the source and target databases.
 
-- Public Network: the source database can be accessed through a public IP.
-- Self-Built on CVM: the source database is deployed in a [CVM](https://intl.cloud.tencent.com/document/product/213) instance.
-- Direct Connect: the source database can be interconnected with VPCs through [Direct Connect](https://intl.cloud.tencent.com/document/product/216). 
-- VPN Access: the source database can be interconnected with VPCs through [VPN Connection](https://intl.cloud.tencent.com/document/product/1037). 
-- VPC: the source and target databases are both deployed in Tencent Cloud [VPCs](https://intl.cloud.tencent.com/document/product/215). The data sync feature supports the VPC access type. To use it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
-- Database: the source database is a TencentDB database.
-- CCN: the source database can be interconnected with VPCs through [CCN](https://intl.cloud.tencent.com/document/product/1003).
+DTS supports the sync of self-built, TencentDB, and third-party cloud databases to TencentDB.
 
-For a third-party cloud database, you can select **Public Network** generally or select **VPC Access**, **Direct Connect**, or **CCN** based on your actual network conditions.
+- Cloud-local sync: DTS can sync an IDC-based self-built database to a TencentDB instance and vice versa.
+- Cross-cloud sync: DTS can sync a third-party cloud database to TencentDB instance.
+- Cross-TencentDB instance sync: DTS can sync TencentDB instances in various scenarios, such as multi-site active-active, cross-border, and cross-Tencent Cloud account sync.
 
-Databases that support sync are as detailed below:
+You can select different access types for different deployment modes of the source database. DTS supports the following access types: **Public Network**, **Self-Build on CVM**, **Direct Connect**, **VPN Access**, **Database**, and **CNN**. Each access type has different requirements for network conditions. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/571/42652).
+
+Data sync supports various complex topology structures, such as one-to-many, many-to-one, two-way, and ring sync. To create a complex topology, see [Creating Two-Way Sync Data Structure](https://intl.cloud.tencent.com/document/product/571/42605), [Creating Many-to-One Sync Data Structure](https://intl.cloud.tencent.com/document/product/571/42604), or [Creating Multi-Site Active-Active IDC Architecture](https://intl.cloud.tencent.com/document/product/571/42603).
+
+## Database types and versions supported by sync
 
 
-| **Data Flow Direction**            | **Sync Direction** | **Source Database**                       | **Target Database**                   | **Data Initialization Type**           |
-| --------------------- | ------------ | ------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| MySQL > TencentDB for MySQL        | To Tencent Cloud         | <li>Self-Built MySQL 5.5, 5.6, 5.7, and 8.0<li>TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0<li>Third-Party (AWS and Alibaba Cloud) MySQL 5.5, 5.6, and 5.7 | TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0 | <li>Structure initialization<li>Full data initialization |
-| TencentDB for MySQL > PostgreSQL | To Tencent Cloud         | TencentDB for MySQL 5.6 and 5.7 | Cloud Data Warehouse PostgreSQL (CDWPG) 1.0.0              | <li>Structure initialization<li>Full data initialization |
-| TencentDB for MySQL > TDSQL-A for PostgreSQL | To Tencent Cloud | TencentDB for MySQL 5.6 and 5.7 | TDSQL-A for PostgreSQL | <li>Structure initialization<li>Full data initialization |
-| MySQL > TDSQL-C | To Tencent Cloud         | <li>Local self-built MySQL 5.5, 5.6, and 5.7<li>TencentDB for MySQL 5.5, 5.6, and 5.7<li>Third-Party (Alibaba Cloud and AWS) MySQL 5.5, 5.6, and 5.7 | TDSQL-C 5.7 | <li>Structure initialization<li>Full data initialization |
-| TDSQL-C > TencentDB for MySQL | To Tencent Cloud | TDSQL-C 5.7 | TencentDB for MySQL 5.7 and 8.0 | <li>Structure initialization<li>Full data initialization |
-| TDSQL-C > TDSQL-C | To Tencent Cloud | TDSQL-C 5.7 | TDSQL-C 5.7 | <li>Structure initialization<li>Full data initialization |
-| TencentDB for MySQL > local MySQL | From Tencent Cloud | TencentDB for MySQL 5.5, 5.6, 5.7, 8.0 | MySQL 5.5, 5.6, 5.7, and 8.0 | - |
+| **Data Flow Direction**            | **Sync Direction** | **Source Database**                       | **Target Database**                   |
+| --------------------- | ------------ | ------------------------------------- | ---------------------------------------- |
+| [MySQL > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47344) | To Tencent Cloud         | <ul><li>Self-built MySQL 5.5, 5.6, 5.7, and 8.0<li>TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0<li>Third-party cloud databases<ul><li>Alibaba Cloud RDS 5.6, 5.7, and 8.0<li>Alibaba Cloud PolarDB 5.6, 5.7, and 8.0<li>Amazon RDS for MySQL 5.6, 5.7, and 8.0<li>Amazon Aurora MySQL 5.6 and 5.7 | TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0 |
+| [MariaDB > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47344) | To Tencent Cloud | <li>Self-built MariaDB 5.7, 8.0, 10.0, and 10.1<li>TencentDB for MariaDB 5.7, 8.0, 10.0, and 10.1 | TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0 |
+| [Percona > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47344) | To Tencent Cloud | Self-built Percona 5.5, 5.6, 5.7, and 8.0 | TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0 |
+| [TDSQL-C for MySQL > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47348) | To Tencent Cloud | TDSQL-C for MySQL 5.7 and 8.0 | TencentDB for MySQL 5.7 and 8.0 |
+| [TDSQL for MySQL > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud | TDSQL for MySQL 5.7 and 8.0 | TencentDB for MySQL 5.7 and 8.0 |
+| [MySQL > TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/571/47346) | To Tencent Cloud | <li>Self-built MySQL 5.5, 5.6, 5.7, and 8.0<li>TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0 | TencentDB for MariaDB 5.7, 8.0, 10.0, and 10.1 |
+| [MariaDB > TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/571/47346) | To Tencent Cloud | <li>Self-built MariaDB 5.7, 8.0, 10.0, and 10.1<li>TencentDB for MariaDB 5.7, 8.0, 10.0, and 10.1 | TencentDB for MariaDB 5.7, 8.0, 10.0, and 10.1 |
+| [Percona > TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/571/47346) | To Tencent Cloud | Self-built Percona 5.5, 5.6, 5.7, and 8.0 | TencentDB for MariaDB 5.7, 8.0, 10.0, and 10.1 |
+| [TDSQL for MySQL > TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud | TDSQL for MySQL 5.7, 8.0, 10.0, and 10.1 | TencentDB for MariaDB 5.7, 8.0, 10.0, and 10.1 |
+| [MySQL > TDSQL-C for MySQL](https://intl.cloud.tencent.com/document/product/571/47348) | To Tencent Cloud         | <ul><li>Self-built MySQL 5.5, 5.6, 5.7, and 8.0<li>TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0<li>Third-party cloud databases<ul><li>Alibaba Cloud RDS 5.6, 5.7, and 8.0<li>Alibaba Cloud PolarDB 5.6, 5.7, and 8.0<li>Amazon RDS for MySQL 5.6, 5.7, for 8.0<li>Amazon Aurora MySQL 5.6 and 5.7 | TDSQL-C for MySQL 5.7 and 8.0 |
+| [TDSQL-C for MySQL > TDSQL-C for MySQL](https://intl.cloud.tencent.com/document/product/571/47348) | To Tencent Cloud | TDSQL-C for MySQL 5.7 and 8.0 | TDSQL-C for MySQL 5.7 and 8.0 |
+| [MySQL > TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud         | <li>Self-built MySQL 5.6, 5.7, and 8.0<li>TencentDB for MySQL 5.6, 5.7, and 8.0 | TDSQL for MySQL 5.7 and 8.0 |
+| [MariaDB > TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud         | <li>Self-built MariaDB 5.7, 8.0, 10.0, and 10.1<li>TencentDB for MariaDB 5.7, 8.0, 10.0, and 10.1 | TDSQL for MySQL 5.7, 8.0, 10.0, and 10.1 |
+| [Percona > TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud         | Self-built Percona 5.5, 5.6, 5.7, and 8.0 | TDSQL for MySQL 5.7 and 8.0 |
+| [TDSQL for MySQL > TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud | TDSQL for MySQL 5.7, 8.0, 10.0, and 10.1 | TDSQL for MySQL 5.7, 8.0, 10.0, and 10.1 |
+| [TencentDB for MySQL > local/third-party MySQL](https://intl.cloud.tencent.com/document/product/571/49880) | From Tencent Cloud | TencentDB for MySQL 5.5, 5.6, 5.7, and 8.0 | <li>Self-built MySQL 5.5, 5.6, 5.7, and 8.0<li>Alibaba Cloud MySQL 5.6, 5.7, and 8.0 |
 
 >?
->- "To Tencent Cloud" refers to scenarios where the target database is a Tencent Cloud database product. "From Tencent Cloud" refers to scenarios where the target database isn't a Tencent Cloud database product.
->- Sync requirement: at least one of the source and target databases must be a Tencent Cloud database instance.
->- The target database version must be above or equal to the source database version.
+>- "To Tencent Cloud" refers to scenarios where the target database is a TencentDB instance. "From Tencent Cloud" refers to scenarios where the target database isn't a TencentDB instance.
+>- Sync requirement: At least one of the source and target databases must be a Tencent Cloud database instance.
+>- The target database version must be later than or equal to the source database version.
+>- To use the sync feature of TDSQL for MySQL (as the source or target database), [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+>- To sync data from MySQL/MariaDB/Percona to TencentDB for MariaDB or from MariaDB/Percona to TencentDB for MySQL, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+>- Cross-account sync refers to the sync of data between the source and target TencentDB instances under different root accounts. For detailed directions, see [Cross-Account TencentDB Instance Sync](https://intl.cloud.tencent.com/document/product/571/47336).
+>
 
+## Key features supported by sync
+
+| **Data Flow Direction**                                                 | **Sync Direction** | **Two-Way Sync**                       | **Data Initialization Type**               | **Cross-Account Sync** | **Source Database Access Type**                              | **Target Database Access Type**                       |
+| ------------------------------------------------------------ | ------------ | ---------------------------------- | -------------------------------- | -------------- | ------------------------------------------------- | ---------------------------------------- |
+| [MySQL > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47344) | To Tencent Cloud         | Supported                               | <li>Structure initialization<li>Full data initialization | Supported           | Public network/Self-build on CVM/Direct Connect/VPN access/Database/CCN | Database                                 |
+| [MariaDB > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47344) | To Tencent Cloud         | Supported (two-way sync is supported only between TencentDB instances) | <li>Structure initialization<li>Full data initialization | Supported           | Public network/Self-build on CVM/Direct Connect/VPN access/Database/CCN | Database                                 |
+| [Percona > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47344) | To Tencent Cloud         | Not supported                             | <li>Structure initialization<li>Full data initialization | -              | Public network/Self-build on CVM/Direct Connect/VPN access/CCN          | Database                                 |
+| [TDSQL-C for MySQL > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47348) | To Tencent Cloud         | Supported                               | <li>Structure initialization<li>Full data initialization | Supported           | Database                                          | Database                                 |
+| [TDSQL for MySQL > TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud         | Supported                               | <li>Structure initialization<li>Full data initialization | Supported           | Database                                          | Database                                 |
+| [MySQL > TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/571/47346) | To Tencent Cloud         | Supported (two-way sync is supported only between TencentDB instances) | <li>Structure initialization<li>Full data initialization | Supported           | Public network/Self-build on CVM/Direct Connect/VPN access/Database/CCN | Database                                 |
+| [MariaDB > TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/571/47346) | To Tencent Cloud         | Supported (two-way sync is supported only between TencentDB instances) | <li>Structure initialization<li>Full data initialization | Supported           | Public network/Self-build on CVM/Direct Connect/VPN access/Database/CCN | Database                                 |
+| [Percona > TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/571/47346) | To Tencent Cloud         | Not supported                             | <li>Structure initialization<li>Full data initialization | -              | Public network/Self-build on CVM/Direct Connect/VPN access/CCN          | Database                                 |
+| [TDSQL for MySQL > TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud         | Supported                               | <li>Structure initialization<li>Full data initialization | Supported           | Database                                          | Database                                 |
+| [MySQL > TDSQL-C for MySQL](https://intl.cloud.tencent.com/document/product/571/47348) | To Tencent Cloud         | Supported                               | <li>Structure initialization<li>Full data initialization | Supported           | Public network/Self-build on CVM/Direct Connect/VPN access/Database/CCN | Database                                 |
+| [TDSQL-C for MySQL > TDSQL-C for MySQL](https://intl.cloud.tencent.com/document/product/571/47348) | To Tencent Cloud         | Supported                               | <li>Structure initialization<li>Full data initialization | Supported           | Database                                          | Database                                 |
+| [MySQL > TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud         | Supported (two-way sync is supported only between TencentDB instances) | <li>Structure initialization<li>Full data initialization | Supported           | Public network/Self-build on CVM/Direct Connect/VPN access/Database/CCN | Database                                 |
+| [MariaDB > TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud         | Supported (two-way sync is supported only between TencentDB instances) | <li>Structure initialization<li>Full data initialization | Supported           | Public network/Self-build on CVM/Direct Connect/VPN access/Database/CCN | Database                                 |
+| [Percona > TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/571/47350) | To Tencent Cloud         | Not supported                             | <li>Structure initialization<li>Full data initialization | -              | Public network/self-build on CVM/Direct Connect/VPN access/CCN          | Database                                 |
+| [TencentDB for MySQL > local/third-party MySQL](https://intl.cloud.tencent.com/document/product/571/49880) | From Tencent Cloud         | Supported                               | <li>Structure initialization<li>Full data initialization | -              | Database                                          | Public network/Self-build on CVM/Direct Connect/VPN access/CCN |
