@@ -121,7 +121,7 @@ data:
 >!
 - Do not modify `access-log-path `, `error-log-path`, and `log-format-upstream`; otherwise, CLS log collection will be affected.
 - You can configure different parameters based on your business needs as instructed in [ConfigMaps](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/).
-
+>
 
 
 
