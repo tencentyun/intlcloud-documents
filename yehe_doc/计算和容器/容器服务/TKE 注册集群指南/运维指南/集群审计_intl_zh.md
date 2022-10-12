@@ -117,6 +117,7 @@ rules:
 ### 在 Master 节点上配置 API Server 参数
 依次登录集群所有的 Master 节点，修改`/etc/kubernetes/manifests/kube-apiserver.yaml`文件
 1. 添加相关 command 参数，内容如下：
+
 ```
 spec:
   containers:
@@ -129,6 +130,7 @@ spec:
     - --audit-policy-file=/etc/kubernetes/audit-policy.yaml
 ```
 2. 添加相关的 Volume 参数，将 /etc/kubernetes/audit-policy.yaml 挂载到 API Server Pod，内容如下：
+
 ```
 spec:
   containers:
