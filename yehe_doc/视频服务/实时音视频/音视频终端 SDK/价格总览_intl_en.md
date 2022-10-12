@@ -16,9 +16,9 @@ In order to use a capability of Tencent Cloud’s media SDKs (RT-Cube), you need
 <tr>
 <td rowspan="4">SDK Licenses</td>
 <td>Live stream publishing</td>
-<td>This license can activate the <b>live stream publishing and video playback</b> capabilities</td>.
+<td>This license can activate the <b>live stream publishing and video playback</b> capabilities.</td>
 <td><ul style="margin:0">
-<li><a href="#live_license"Live stream publishing license fee</a><br></li></td>
+<li><a href="#live_license">Live stream publishing license fee</a><br></li></td>
 </tr>
 <tr>
 <td>UGSV</td>
@@ -164,7 +164,7 @@ The **video playback** license was introduced in the 10.1 version (launched at t
 <th width=15%>License Type</th>
 <th>Validity Period</th>
 <th>Capability</th>
-<th width=10%>Price<br>(USD/Year)</th>
+<th width=10%>Price<br>(USD)</th>
 <th>How to Get</th>
 </tr>
 </thead>
@@ -235,10 +235,7 @@ In v10.1 and later versions, you can activate the **video playback** capability 
   - After you purchase a license, the license will be inactive until you bind it to an application. A purchased license is valid for one year **after you bind it to an application** (expires at 00:00:00 the next day).
 - **Each license can be bound to one iOS bundle ID and one Android package name, regardless of whether you use it in the development or production environment.** If you want to use the media SDKs with more than one application, you need to purchase multiple licenses.
 
-- **After purchasing a package, you cannot return only the license that comes with the package. A license will be considered used once it’s bound to an application, and the five-day unconditional refund policy is no longer applicable for the package.**
 - **A purchased license is not refundable after it’s bound to an application.**
-
->! A package is not refundable once it’s used (exhausted or not) or if it’s beyond five days of purchase.
 
 
 ### Service fees
