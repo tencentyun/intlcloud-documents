@@ -1,8 +1,8 @@
-﻿Game Multimedia Engine (GME) provides Voice Chat, Voice Messaging and Speech-to-Text services at the following prices.
+﻿Game Multimedia Engine (GME) provides Voice Chat, Voice Messaging and Voice-to-Text services at the following prices.
 
 
-## Voice Chat Service
-Real-time Voice Service is billed by voice minutes on a monthly basis.
+## Voice Chat
+Voice Chat is a pay-as-you-go service billed by voice duration on a monthly basis.
 
 #### Price list
 
@@ -25,31 +25,31 @@ Real-time Voice Service is billed by voice minutes on a monthly basis.
       <td>0.00094 </td>
    </tr>
 </table>
+ 
 
 >!
 >
 >- Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
 
 
-
-## Voice Messaging and Speech-to-Text Services
-Voice messaging and speech-to-text services are billed by voice message DAU.
+## Voice Messaging
+Voice Messaging is billed by the number of daily active users.
 
 ### Pricing
 
 <table>
    <tr>
       <td>Billing Mode</td>
-      <td>Supported Languages</td>
-      <td>Unit Price (USD/DAU/day)</td>
+      <td>Service Mode</td>
+      <td>Unit Price (USD/user/day)</td>
    </tr>
    <tr>
-      <td  rowspan="2">Billed by voice message DAU</td>
+      <td  rowspan="2">Billed by number of users</td>
       <td >Standard</td>
       <td>0.0019 </td>
    </tr>
    <tr>
-      <td >Enhanced</td>
+      <td >Enhanced (Note that this mode was discontinued from September 5, 2022.)</td>
       <td>0.078 </td>
    </tr>
    </tr>
@@ -57,12 +57,35 @@ Voice messaging and speech-to-text services are billed by voice message DAU.
 
 
 >?
->- A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the duplicated `openID`. `openID` is a unique identifier of a user in an application. One user corresponds to one `openID`.
->- The standard mode only supports Chinese Mandarin, Korean and English. For more languages, please use the enhanced mode. For details, see [Supported Languages](https://intl.cloud.tencent.com/document/product/607/30260).
+>- A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the deduplicated `openID`. `openID` is a unique identifier of a user in an application. One user corresponds to one `openID`.
+
 
 
 <dx-alert infotype="notice" title="Changes on Billing Mode">
-Starting from July 1, 2022 (UTC +8), the Voice Messaging and Speech-to-Text services are billed separately. The Voice Messaging service is billed by DAU. The Speech-to-Text service is billed by voice durations, and the cost is USD 0.006/15 seconds (each voice duration is rounded up to the nearest number in increment of 15 seconds).
+Starting from September 5, 2022, Voice Messaging and Voice-to-Text are billed separately.
+</dx-alert>
+
+
+
+## Voice-to-Text
+
+Voice-to-Text supports daily or monthly payment. Daily payment is set by default. If you want to switch to monthly payment, please submit a ticket.
+
+### Pricing
+<table>
+   <tr>
+      <td>Billing Mode</td>
+      <td>USD/15 seconds</td>
+   </tr>
+   <tr>
+      <td  rowspan="1">Billed by the duration of the audio or audio stream</td>
+      <td> 0.006 (Billed per 15 seconds. Requests shorten than 15 seconds are rounded up to 15 seconds.) </td>
+   </tr>
+   </tr>
+</table>
+
+<dx-alert infotype="notice" title="Changes on Billing Mode">
+The above billing plan takes effect from September 5, 2022.
 </dx-alert>
 
 
@@ -81,13 +104,14 @@ The Text Translation service is billed by the number of characters that need to 
    </tr>
 </table>
 
+
 >?
 >
->- This feature has not been launched. You can submit a ticket to apply for using it.
+>- This feature is now only available to beta users. To join the beta, please submit a ticket.
 
 
-## Service Suspension/Release Policy
-Your GME service will be suspended 24 hours after your account falls into arrears. Your GME resources will be terminated and repossessed 168 hours (7 days) after the service is suspended. For service continuity, please make sure that your account balance is always sufficient.
+## Overdue Policy
+When your account becomes overdue, the GME service will be suspended 24 hours later. If the payment is not made within 168 hours (7 days), all GEM resources will be released permanently. 
 
-## Alert for Overdue Payment
-Alert notifications for arrears will be sent through email, SMS, and Message Center to the Tencent Cloud account creator and all collaborators on the day of and after expiration of the daily pay-as-you-go GME resources.
+## Overdue Payment Alert
+Alert notifications for overdue payment will be sent through email, SMS, and Message Center to the Tencent Cloud account creator and all collaborators on the day of and after expiration.
