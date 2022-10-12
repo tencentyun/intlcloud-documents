@@ -1,100 +1,117 @@
-Game Multimedia Engine (GME) provides services such as voice chat, voice message, speech-to-text conversion and text translation. The services are billed by usage. The billing details are as follows.
+﻿Game Multimedia Engine (GME) provides Voice Chat, Voice Messaging and Voice-to-Text services at the following prices.
 
->! If another billing method is agreed with your sales rep, please refer to the contract.
 
 ## Voice Chat
+Voice Chat is a pay-as-you-go service billed by voice duration on a monthly basis.
 
-Voice chat is a pay-as-you-go service billed by voice duration on a monthly basis.
-
-### Pricing
+#### Price list
 
 <table>
    <tr>
       <th>Billing Mode</th>
+      <th>Sound Quality</th>
       <th>Monthly Voice Duration</th>
-      <th>Unit Price (USD/min)</th>
+      <th>Unit Price (USD/Minute)</th>
    </tr>
    <tr>
       <td  rowspan="2">Billed by voice duration</td>
+      <td>HD sound quality</td>
       <td> < 10,000 minutes</td>
       <td>Free of charge</td>
    </tr>
    <tr>
-      <td> ≥ 10,000 minutes</td>
+      <td>HD sound quality</td>
+      <td>≥ 10,000 minutes</td>
       <td>0.00094 </td>
    </tr>
-</table>   
+</table>
+ 
 
-#### Billing details
-
-- Voice duration is calculated based on the time a user enters and exits the room. For example, if user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
-- 10,000-minute free package per month is available for voice chat. For example, if the voice duration for the current month is 50,000 minutes, the monthly fees should be `(50,000-10,000) × 0.00094 = 37.6 USD`.
-
+>!
+>
+>- Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
 
 
-## Voice Message Service
-
-Voice Message Service is a pay-as-you-go service billed by voice message DAUs on a daily basis.
+## Voice Messaging
+Voice Messaging is billed by the number of daily active users.
 
 ### Pricing
 
 <table>
    <tr>
-      <th>Billing Mode</th>
-      <th>Service Mode</th>
-      <th>Unit Price (USD/person/day)</th>
+      <td>Billing Mode</td>
+      <td>Service Mode</td>
+      <td>Unit Price (USD/user/day)</td>
    </tr>
    <tr>
-      <td  rowspan="8">Billed by voice message DAUs</td>
-      <td  >Standard</td>
+      <td  rowspan="2">Billed by number of users</td>
+      <td >Standard</td>
       <td>0.0019 </td>
    </tr>
    <tr>
-      <td >Enhanced</td>
+      <td >Enhanced (Note that this mode was discontinued from September 5, 2022.)</td>
       <td>0.078 </td>
+   </tr>
    </tr>
 </table>
 
-### Billing details
 
-- A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the deduplicated `openID`. `openID` is a unique identifier of a user in an application. One user corresponds to one `openID`.
-- Only Chinese, Korean and English are available for the standard mode, and all languages are available for the enhanced mode. For details, see [Language Parameter Reference List](https://www.tencentcloud.com/zh/document/product/607/30260).
-- You can select standard mode or enhanced mode for an application when activating the service, and change the mode later in the console.
-- After the voice message DAUs reach a certain range, all usage of the application is billed by the unit price for that range. For example, in standard mode, the voice message DAUs of that day is 48,000, the unit price per person is 0.0019 USD/person/day, so the fees for that day is `48,000 × 0.0019 = 91.2 USD`.
-
->! Starting from September 5, 2022 (UTC +8), the voice message and speech-to-text conversion services are billed separately. The voice message service is billed by DAUs. The speech-to-text conversion service is billed by voice duration and supports all languages, and the cost is USD 0.006/15 seconds (each voice duration is rounded up to the nearest number in increment of 15 seconds).
+>?
+>- A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the deduplicated `openID`. `openID` is a unique identifier of a user in an application. One user corresponds to one `openID`.
 
 
-## Text Translation Service
-The text translation service is billed by the number of characters that are detected and translated.
+
+<dx-alert infotype="notice" title="Changes on Billing Mode">
+Starting from September 5, 2022, Voice Messaging and Voice-to-Text are billed separately.
+</dx-alert>
+
+
+
+## Voice-to-Text
+
+Voice-to-Text supports daily or monthly payment. Daily payment is set by default. If you want to switch to monthly payment, please submit a ticket.
 
 ### Pricing
 <table>
    <tr>
-      <th>Billing Mode</th>
-      <th>Unit Price (USD/1 million characters)</th>
+      <td>Billing Mode</td>
+      <td>USD/15 seconds</td>
    </tr>
    <tr>
-      <td>Billed by the number of characters detected and translated</td>
-      <td>20</td>
+      <td  rowspan="1">Billed by the duration of the audio or audio stream</td>
+      <td> 0.006 (Billed per 15 seconds. Requests shorten than 15 seconds are rounded up to 15 seconds.) </td>
    </tr>
-</table>   
+   </tr>
+</table>
 
-### Billing details
-- All characters you passed in, including the whitespace characters, are billed.
-- If language detection is needed, the number of characters detected is the number of characters you passed in.
-- The number of characters translated is the number of characters you passed in multiplied by the number of target languages. For example, the number of characters you passed in is 100, and they are translated into English, German and Spanish. So the number of target languages is three, and the number of characters translated is `100 × 3=300`.
-- The billing unit of text translation is one million characters. The number of characters less than one million is counted upwards to one million.
-
-
->? This feature has not been launched. You can submit a ticket to apply for using it.
+<dx-alert infotype="notice" title="Changes on Billing Mode">
+The above billing plan takes effect from September 5, 2022.
+</dx-alert>
 
 
+## Text Translation Service
+The Text Translation service is billed by the number of characters that need to be translated.
 
-## Service Suspension/Release Policy
+<table>
+   <tr>
+      <td>Billing Mode</td>
+      <td>USD/1 million characters</td>
+   </tr>
+   <tr>
+      <td  rowspan="1">Billed by number of characters</td>
+      <td> 20 </td>
+   </tr>
+   </tr>
+</table>
 
-Your GME service will be suspended 24 hours after your account falls into arrears. Your GME resources will be terminated and repossessed 168 hours (7 days) after the service is suspended. For service continuity, please make sure that your account balance is always sufficient. 
 
-## Alert for Overdue Payment
+>?
+>
+>- This feature is now only available to beta users. To join the beta, please submit a ticket.
 
-Alert notifications for arrears will be sent through email, SMS, and Message Center to the Tencent Cloud account creator and all collaborators on the day of and after expiration of the daily pay-as-you-go GME resources.
+
+## Overdue Policy
+When your account becomes overdue, the GME service will be suspended 24 hours later. If the payment is not made within 168 hours (7 days), all GEM resources will be released permanently. 
+
+## Overdue Payment Alert
+Alert notifications for overdue payment will be sent through email, SMS, and Message Center to the Tencent Cloud account creator and all collaborators on the day of and after expiration.
