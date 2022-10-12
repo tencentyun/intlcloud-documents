@@ -34,6 +34,8 @@ Key configuration items are as described below:
 	<tr><td>Protocol version</td><td>Unless in scenarios involving concurrent modifications, we recommend you use the NFS v3 protocol for a higher performance.</td></tr>
 	<tr><td>Reclaim policy</td><td>Select <b>Delete</b>. or <b>Retain</b>. as needed. To avoid mistaken data deletion, we recommend you select <b>Retain</b>..</td></tr>
 </table>
+
+
 2. Create a PVC as instructed in [Managing CFS by Using PVs and PVCs](https://intl.cloud.tencent.com/document/product/457/36155).
 
 Key configuration items are as described below:
@@ -43,6 +45,7 @@ Key configuration items are as described below:
 	<tr><td>StorageClass</td><td>Select the just created StorgeClass.</td></tr>
 	<tr><td>PersistentVolume</td><td>You don't need to specify a PV for dynamic creation.</br><b>Note</b>: For a StorageClass based on a shared CFS instance, if you don't specify a PV when creating a PVC, the CSI plugin will automatically create a pay-as-you-go CFS instance when creating a PVC. This instance will be deleted when the PVC is deleted. Therefore, process PVCs created in this way with caution.</td></tr>
 </table>
+
 3. Create a Deployment as instructed in [Deployment Management](https://intl.cloud.tencent.com/document/product/457/30662).
 
 Key configuration items are as described below:
@@ -70,6 +73,7 @@ Key configuration items are as described below:
 	<tr><td>Protocol version</td><td>Unless in scenarios involving concurrent modifications, we recommend you use the NFS v3 protocol for a higher performance.</td></tr>
 	<tr><td>Reclaim policy</td><td>Select <b>.Delete</b>. or <b>.Retain</b>. as needed. To avoid mistaken data deletion, we recommend you select <b>.Retain</b>..</td></tr>
 </table>
+
 2. Create a PV as instructed in [Managing CFS by Using PVs and PVCs](https://intl.cloud.tencent.com/document/product/457/36155).
 
 Key configuration items are as described below:
@@ -80,6 +84,7 @@ Key configuration items are as described below:
 	<tr><td>Select CFS</td><td>Select a specified CFS instance.</br><b>Note</b>: During dynamic creation, make sure that you already have a CFS instance in the same VPC as the container.</td></tr>
 	<tr><td>CFS sub-directory</td><td>CFS allows you to mount sub-directories. You can select different subdirectories and bind them to one or multiple PVs as needed to implement different degrees of data sharing.</td></tr>
 </table>
+
 3. Create a PVC as instructed in [Managing CFS by Using PVs and PVCs](https://intl.cloud.tencent.com/document/product/457/36155).
 
 Key configuration items are as described below:
@@ -89,6 +94,7 @@ Key configuration items are as described below:
 	<tr><td>StorageClass</td><td>Select the just created StorgeClass.</td></tr>
 	<tr><td>PersistentVolume</td><td>Select <b>.Specify</b>. and select the just created PV.</td></tr>
 </table>
+
 4. Create a Deployment as instructed in [Deployment Management](https://intl.cloud.tencent.com/document/product/457/30662).
 
 Key configuration items are as described below:
