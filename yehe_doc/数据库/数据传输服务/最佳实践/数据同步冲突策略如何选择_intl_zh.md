@@ -15,7 +15,7 @@ DTS 支持多对一、一对多、联级单向、双向同步、联级双向同�
 
 构建 A > B 的单向同步，ID 为主键数据。INSERT 主键后，数据同步到 B 上引起冲突，DTS 按照设置的冲突策略进行干预处理。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/4442109fe39774e4c567a4653130f668.png" style="zoom:45%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ad3c26330751e80c14d2b97e9b42d614.jpg" style="zoom:100%;" />
 
 设置不同的冲突策略，最终同步后 B 上的结果如下。
 - 冲突报错：任务报错，B 上的数据保持不变 （ID=1, Price=10）。
@@ -26,7 +26,7 @@ DTS 支持多对一、一对多、联级单向、双向同步、联级双向同�
 
 在某些场景下，用户可能会修改主键数据引起主键冲突，如下在 A 上 UPDATE 主键后（ID=1 -> ID=2），与 B 上本身的 ID 为2的主键数据冲突。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ab72bbd65c897e915a04837bc6052576.png" style="zoom:33%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1b9f3b06cadc856b7cf237dbfaf9a703.jpg" style="zoom:100%;" />
 
 设置不同的冲突策略，最终同步后 B 上的结果如下。
 
@@ -39,6 +39,7 @@ DTS 支持多对一、一对多、联级单向、双向同步、联级双向同�
 在两地三中心，异地多活等复杂数据架构中，会有三个或三个以上节点需要同时进行数据写入，保证多个节点的一致性至关重要。许多用户误以为可以通过主键冲突策略来保证数据以某一个节点为准进行更新，这是不合理。
 
 例如在下图的双向同步场景中，A > B，B > A 都设置为冲突覆盖，在 A，B 节点上同时 INSERT 主键为1的数据，最终的结果是 A、B 上主键1的数据发生交换。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/83aa82449a752e49824793cb713cb2f1.png" style="zoom:45%;" />
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1b9f3b06cadc856b7cf237dbfaf9a703.jpg" style="zoom:100%;" />
 
 实际场景中要实现多节点数据一致性，一般通过划分主键分区，引入额外的协调机制（例如给数据增加版本号，实现按版本号覆盖的机制）等方法，单独靠冲突策略无法达到这一诉求。 
