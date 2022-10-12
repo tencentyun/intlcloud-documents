@@ -101,7 +101,7 @@
 <td>28天</td>
 <td rowspan=2>直播推流 + 视频播放</td>
 <td>0</td>
-<td><a href="https://">免费申请</a></td>
+<td><a href="https://console.tencentcloud.com/vod/license">免费申请</a></td>
 </tr>
 <tr>
 <td >直播推流 License</td>
@@ -129,7 +129,7 @@
 <td>28天</td>
 <td>短视频制作（标准版） + 视频播放</td>
 <td>0</td>
-<td><a href="https://console">免费申请</a></td>
+<td><a href="https://console.tencentcloud.com/vod/license">免费申请</a></td>
 </tr>
 <tr>
 <td>短视频轻量版 License</td>
@@ -173,7 +173,7 @@
 <td>28天</td>
 <td rowspan=2>视频播放</td>
 <td rowspan=2>0</td>
-<td rowspan=2><a href="">免费申请</a></td>
+<td rowspan=2><a href="https://console.tencentcloud.com/vod/license">免费申请</a></td>
 </tr>
 <tr>
 <td>正式版</td>
