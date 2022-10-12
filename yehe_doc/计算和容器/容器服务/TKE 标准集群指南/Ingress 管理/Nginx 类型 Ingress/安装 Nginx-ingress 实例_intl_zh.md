@@ -119,9 +119,9 @@ data:
 ```
 
 >!
-- 请勿修改 `access-log-path ` 、`error-log-path`、`log-format-upstream`。若修改则会对 CLS 日志采集造成影响。
-- 若您需要根据业务配置不同的参数，可参见 [官方文档](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/)。
-
+>- 请勿修改 `access-log-path ` 、`error-log-path`、`log-format-upstream`。若修改则会对 CLS 日志采集造成影响。
+>- 若您需要根据业务配置不同的参数，可参见 [官方文档](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/)。
+>
 
 
 
