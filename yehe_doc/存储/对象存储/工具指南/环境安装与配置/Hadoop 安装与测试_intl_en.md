@@ -6,11 +6,11 @@ Hadoop (2.7.2 or above) tool provides the capability to run computing tasks usin
 3. Install the Java environment. For more information, see [Installing and Configuring Java](https://intl.cloud.tencent.com/document/product/436/10865).
 4. Install the available Hadoop package: [Apache Hadoop Releases Download](http://hadoop.apache.org/releases.html#16+April%2C+2018%3A+Release+2.7.6+available)。 .
 
-### Network Configuration
+#### Network Configuration
 Use `ifconfig -a` to check the IP of each server, then use the ping command to check if they can ping each other, and record the IP of each server.
 
 ## Configuring CentOS
-### Configure hosts
+#### Configure hosts
 ```
 vi /etc/hosts
 ```
@@ -22,32 +22,32 @@ Edit the content:
 202.xxx.xxx.xxx slave3
 //Replace IPs with the real ones
 ```
-### Turn off firewall
+#### Turn off firewall
 ```
 systemctl status firewalld.service  //Check firewall status
 systemctl stop firewalld.service  //Turn off firewall
 systemctl disable firewalld.service  //Disable firewall to start on boot
 ```
-### Time synchronization
+#### Time synchronization
 ```
 yum install -y ntp  //Install ntp service
 ntpdate cn.pool.ntp.org  //Sync network time
 ```
-### Install and configure JDK
+#### Install and configure JDK
 Upload JDK installer package (such as jdk-8u144-linux-x64.tar.gz) to the `root` directory.
 ```
 mkdir /usr/java
 tar -zxvf jdk-8u144-linux-x64.tar.gz -C /usr/java/
 rm -rf jdk-8u144-linux-x64.tar.gz
 ```
-### Copy JDKs among hosts
+#### Copy JDKs among hosts
 ```
 scp -r /usr/java slave1:/usr
 scp -r /usr/java slave2:/usr
 scp -r /usr/java slave3:/usr
 .......
 ```
-### Configure environment variables for JDK of each host
+#### Configure environment variables for JDK of each host
 ```
 vi /etc/profile
 ```
@@ -59,7 +59,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 source/etc/profile    //Make the configuration file take effect
 java -version       //View Java version
 ```
-### Configuring Keyless Access via SSH
+#### Configuring Keyless Access via SSH
 Check the SSH service status on each host:
 ```
 systemctl status sshd.service  //Check the SSH service status.
@@ -72,12 +72,12 @@ ssh-keygen -t rsa  //Generate Keys
 ```
 On slave1:
 ```
-cp ~/.ssh/id_rsa.pub~/.ssh/slave1.id_rsa.pub
+cp ~/.ssh/id_rsa.pub ~/.ssh/slave1.id_rsa.pub
 scp ~/.ssh/slave1.id_rsa.pub master:~/.ssh
 ```
 On slave2:
 ```
-cp ~/.ssh/id_rsa.pub~/.ssh/slave2.id_rsa.pub
+cp ~/.ssh/id_rsa.pub ~/.ssh/slave2.id_rsa.pub
 scp ~/.ssh/slave2.id_rsa.pub master:~/.ssh
 ```
 And so on...
@@ -263,17 +263,17 @@ hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.4.jar wordcount 
 ![](//mc.qcloudimg.com/static/img/50a03d9e0504301d54d12631cc8da075/image.jpg)
 The above result shows that Hadoop is installed successfully.
 
-### View output directory
+#### View output directory
 ```
 hadoop fs -ls /output
 ```
 
-### View output result
+#### View output result
 ```
 hadoop fs -cat /output/part-r-00000
 ```
 ![](//mc.qcloudimg.com/static/img/6d777bc87c16b0fb10713bbecda1636d/image.jpg)
 
-> <font color="#0000cc">**Note:**</font>
-> For more information on how to run Hadoop in stand-alone and pseudo-distributed modes, see [Get Started with Hadoop](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html) on the official website.
+
+>?For more information on how to run Hadoop in stand-alone and pseudo-distributed modes, see [Get Started with Hadoop](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html) on the official website.
 

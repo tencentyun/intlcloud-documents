@@ -10,7 +10,7 @@ Hadoopツールは、Hadoop-2.7.2以降のバージョンに依存して、基�
 `ifconfig -a`を使用して各マシンのIPを確認し、pingコマンドを使用して相互にpingを送信できるかどうかを確認し、各マシンのIPを記録します。
 
 ## CentOSの設定
-### hostsの設定
+#### hostsの設定
 ```
 vi /etc/hosts
 ```
@@ -22,32 +22,32 @@ vi /etc/hosts
 202.xxx.xxx.xxx slave3
 //IPアドレスを実際のIPに置き換えます
 ```
-### ファイアウォールの無効化
+#### ファイアウォールの無効化
 ```
 systemctl status firewalld.service  //ファイアウォールのステータスをチェックします
 systemctl stop firewalld.service  //ファイアウォールを無効にします
 systemctl disable firewalld.service  //ファイアウォールの起動を無効にします
 ```
-### 時刻同期
+#### 時刻同期
 ```
 yum install -y ntp  //ntpサービスをインストールします
 ntpdate cn.pool.ntp.org  //ネットワークの時刻を同期させます
 ```
-### JDKのインストールと設定
+#### JDKのインストールと設定
 JDKインストールパッケージ（jdk-8u144-linux-x64.tar.gzなど）を`root`ルートディレクトリにアップロードします。
 ```
 mkdir /usr/java
 tar -zxvf jdk-8u144-linux-x64.tar.gz -C /usr/java/
 rm -rf jdk-8u144-linux-x64.tar.gz
 ```
-### 各ホスト間でのJDKのコピー
+#### 各ホスト間でのJDKのコピー
 ```
 scp -r /usr/java slave1:/usr
 scp -r /usr/java slave2:/usr
 scp -r /usr/java slave3:/usr
 .......
 ```
-### 各ホストのJDK環境変数の設定
+#### 各ホストのJDK環境変数の設定
 ```
 vi /etc/profile
 ```
@@ -59,7 +59,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 source/etc/profile    //設定ファイルを有効にします
 java -version       //Javaのバージョンを確認します
 ```
-### SSHキーレスアクセスの設定
+#### SSHキーレスアクセスの設定
 各ホストのSSHサービスステータスを個別にチェックします。
 ```
 systemctl status sshd.service  //SSHサービスのステータスをチェックします
@@ -72,13 +72,13 @@ ssh-keygen -t rsa  //キーの発行
 ```
 slave1の場合：
 ```
-cp ~/.ssh/id_rsa.pub~/.ssh/slave1.id_rsa.pub
-scp~/.ssh/slave1.id_rsa.pub master:~/.ssh
+cp ~/.ssh/id_rsa.pub ~/.ssh/slave1.id_rsa.pub
+scp ~/.ssh/slave1.id_rsa.pub master:~/.ssh
 ```
 slave2の場合：
 ```
-cp ~/.ssh/id_rsa.pub~/.ssh/slave2.id_rsa.pub
-scp ~/.ssh/slave2.id_rsa.pubmaster:~/.ssh
+cp ~/.ssh/id_rsa.pub ~/.ssh/slave2.id_rsa.pub
+scp ~/.ssh/slave2.id_rsa.pub master:~/.ssh
 ```
 という感じで..
 masterの場合：

@@ -10,7 +10,7 @@ Hadoop 툴은 Hadoop-2.7.2 이상의 버전에 종속되어 있으며, Tencent C
 `ifconfig -a`를 사용해 각 기기의 IP를 확인하고, 상호간에 ping 명령어를 사용하여 ping 연결 가능 여부를 확인합니다. 각 기기의 IP는 모두 기록해 놓습니다.
 
 ## CentOS 설정
-### hosts 설정
+#### hosts 설정
 ```
 vi /etc/hosts
 ```
@@ -22,32 +22,32 @@ vi /etc/hosts
 202.xxx.xxx.xxx slave3
 //IP 주소는 리얼 IP 주소로 대체
 ```
-### 방화벽 해제
+#### 방화벽 해제
 ```
 systemctl status firewalld.service  //방화벽 상태 확인
 systemctl stop firewalld.service  //방화벽 해제
 systemctl disable firewalld.service  //시작 시 방화벽 실행 금지
 ```
-### 시간 동기화
+#### 시간 동기화
 ```
 yum install -y ntp  //ntp 서비스 설치
 ntpdate cn.pool.ntp.org  //네트워크 시간 동기화
 ```
-### JDK 설치 및 설정
+#### JDK 설치 및 설정
 JDK 설치 패키지(예: jdk-8u144-linux-x64.tar.gz)를 루트(`root`) 디렉터리에 업로드합니다.
 ```
 mkdir /usr/java
 tar -zxvf jdk-8u144-linux-x64.tar.gz -C /usr/java/
 rm -rf jdk-8u144-linux-x64.tar.gz
 ```
-### 각 호스트 간에 JDK 복사
+#### 각 호스트 간에 JDK 복사
 ```
 scp -r /usr/java slave1:/usr
 scp -r /usr/java slave2:/usr
 scp -r /usr/java slave3:/usr
 .......
 ```
-### 각 호스트의 JDK 환경변수 설정
+#### 각 호스트의 JDK 환경변수 설정
 ```
 vi /etc/profile
 ```
@@ -59,7 +59,7 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 source/etc/profile    //구성 파일 적용
 java -version       //java 버전 확인
 ```
-### SSH 키 없는 액세스 설정
+#### SSH 키 없는 액세스 설정
 각 호스트에서 SSH 서비스 상태를 확인합니다.
 ```
 systemctl status sshd.service  //SSH 서비스 상태 확인
@@ -72,13 +72,13 @@ ssh-keygen -t rsa  //키 생성
 ```
 slave1:
 ```
-cp ~/.ssh/id_rsa.pub~/.ssh/slave1.id_rsa.pub
-scp~/.ssh/slave1.id_rsa.pub master:~/.ssh
+cp ~/.ssh/id_rsa.pub ~/.ssh/slave1.id_rsa.pub
+scp ~/.ssh/slave1.id_rsa.pub master:~/.ssh
 ```
 slave2:
 ```
-cp ~/.ssh/id_rsa.pub~/.ssh/slave2.id_rsa.pub
-scp ~/.ssh/slave2.id_rsa.pubmaster:~/.ssh
+cp ~/.ssh/id_rsa.pub ~/.ssh/slave2.id_rsa.pub
+scp ~/.ssh/slave2.id_rsa.pub master:~/.ssh
 ```
 이상과 같이 모두 실행...
 master:
@@ -267,7 +267,7 @@ hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.4.jar wordcount 
 hadoop fs -ls /output
 ```
 
-### 출력 결과 조회
+#### 출력 결과 조회
 ```
 hadoop fs -cat /output/part-r-00000
 ```
