@@ -1,16 +1,16 @@
 
 
 
-This document describes how a Pod scheduled to a virtual node in a TKE cluster collect logs, including:
+This document describes how to collect logs from a Pod scheduled to a super node in a TKE cluster.
 - [Collect logs to CLS](#toCLS)
 - [Collect logs to Kafka](#toKafka)
 
 
 
-## Collecting logs to CLS[](id:toCLS)
+## Collecting Logs to CLS[](id:toCLS)
 
 #### Authorizing a role to the service
-To ensure that the logs are loaded onto CLS normally, you need to authorize a role to the service before collecting logs of the Pod on the virtual node to CLS.
+Before collecting logs of a Pod on a super node to CLS, you need to authorize a role to the service to ensure that logs can be uploaded to CLS normally:
 
 Follow the steps below:
 1. Log in to **CAM console** > **[Role](https://console.cloud.tencent.com/cam/role)**.
@@ -29,12 +29,12 @@ You need to enable TKE log collection feature and configure corresponding log co
 
 
 
-## Collecting logs to Kafka[](id:toKafka)
+## Collecting Logs to Kafka[](id:toKafka)
 
-If you want to collect logs of the Pod on the virtual node to Kafka or CKafka, you need to configure CRD and define the collection source and consumer end. When the CRD is configured, the collector of the Pod will collect logs according to the rule.
+To collect logs of a Pod on a super node to a self-built Kafka or CKafka cluster, you can configure the log collection rules in the console or CRD to define the collection source and consumer. After CRD configuration, the Pod collector will collect logs according to the configured rules.
 The specific configuration of CRD is as follows:
 <dx-codeblock>
-:::  yaml
+::: yaml
 apiVersion: cls.cloud.tencent.com/v1
 kind: LogConfig                          ## Default value
 metadata:
@@ -79,4 +79,3 @@ spec:
 
 
 
->! You need to upgrade the cluster before using the Kafka feature. Please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) to contact us.

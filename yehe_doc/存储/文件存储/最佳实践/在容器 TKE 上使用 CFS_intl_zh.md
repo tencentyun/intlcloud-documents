@@ -34,6 +34,8 @@ CFS 通过 NFS/私有协议提供了一个共享访问的目录空间给多个 P
 	<tr><td>协议版本</td><td>在非多个同时修改/编辑的场景下，建议使用 NFS V3协议，以便得到更好的性能。</td></tr>
 	<tr><td>回收策略</td><td>可根据实际需要，选择删除和保留，为避免数据误删优先建议选择保留。</td></tr>
 </table>
+
+
 2. 创建 PVC，具体操作请参见 [创建 PVC](https://intl.cloud.tencent.com/document/product/457/36155) 文档。
 
 相关的关键配置项如下：
@@ -43,7 +45,9 @@ CFS 通过 NFS/私有协议提供了一个共享访问的目录空间给多个 P
 	<tr><td>Storageclass</td><td>选择刚才创建的 StorgeClass。</td></tr>
 	<tr><td>是否指定PersistentVolume</td><td>动态创建可不指定 PV。</br><b>说明</b>：基于 CFS 共享型实例的 StorgeClass，在创建 PVC 时，若不指定 PV，CSI 插件会在创建 PVC 的同时，自动创建一个按量付费的 CFS 实例，此实例会随着 PVC 的删除而删除，故需谨慎处理基于此方式创建的 PVC。</td></tr>
 </table>
+
 3. 创建 Deployment，具体操作请参见 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662) 文档。
+
 
 相关的关键配置项如下：
 <table>
@@ -70,6 +74,8 @@ CFS 通过 NFS/私有协议提供了一个共享访问的目录空间给多个 P
 	<tr><td>协议版本</td><td>在非多个同时修改/编辑的场景下，建议使用 NFS V3协议，以便得到更好的性能。</td></tr>
 	<tr><td>回收策略</td><td>可根据实际需要，选择删除和保留，为避免数据误删优先建议选择保留。</td></tr>
 </table>
+
+
 2. 创建 PV，具体操作请参见 [静态创建 PV](https://intl.cloud.tencent.com/document/product/457/36155) 文档。
 
 相关的关键配置项如下：
@@ -80,6 +86,8 @@ CFS 通过 NFS/私有协议提供了一个共享访问的目录空间给多个 P
 	<tr><td>选择CFS</td><td>选择一个指定的 CFS。</br><b>说明</b>：静态创建时需要保证已经有一个 CFS 实例，同时该 CFS 实例需与容器在同一个 VPC 网络环境。</td></tr>
 	<tr><td>CFS子目录</td><td>CFS 可以允许挂载子目录，用户可根据实际需要选择不同的子目录绑定至一个或多个 PV 上，实现不同程度的数据共享。</td></tr>
 </table>
+
+
 3. 创建 PVC，具体操作请参见 [创建 PVC](https://intl.cloud.tencent.com/document/product/457/36155) 文档。
 
 相关的关键配置项如下：
@@ -89,7 +97,9 @@ CFS 通过 NFS/私有协议提供了一个共享访问的目录空间给多个 P
 	<tr><td>Storageclass</td><td>选择刚才创建的 StorgeClass。</td></tr>
 	<tr><td>是否指定PersistentVolume</td><td>选择指定，并选择刚才创建的 PV。</td></tr>
 </table>
+
 4. 创建 Deployment，具体操作请参见 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662) 文档。
+
 
 相关的关键配置项如下：
 <table>

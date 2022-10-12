@@ -7,7 +7,7 @@
 可以将主账号的资源授权给其他人员，包括子账号或者是其它主账号，而不需要分享主账号相关的身份凭证。
 
 #### 精细化的权限管理
-可以针对不同的资源为不同的人员授予不同的访问权限。例如，可以允许某些子账号拥有某个 COS 存储桶的读权限，而另外一些子账号或者主账号可以拥有某个 COS 存储对象的写权限等。上述资源、访问权限和用户都可以批量打包。
+可以针对不同的资源为不同的人员授予不同的访问权限。例如，可以允许某些子账号拥有某个对象存储（Cloud Object Storage，COS）存储桶的读权限，而另外一些子账号或者主账号可以拥有某个 COS 存储对象的写权限等。上述资源、访问权限和用户都可以批量打包。
 
 #### 最终一致性
 CAM 目前支持腾讯云的多个地域，通过复制策略数据，实现在跨地域的数据同步，虽然 CAM 策略的修改会及时提交，不过跨地域的策略同步会导致策略生效的延迟，同时 CAM 使用缓存来提高性能（目前是一分钟缓存），更新需要在缓存过期后生效。
@@ -45,7 +45,7 @@ CAM 目前支持腾讯云的多个地域，通过复制策略数据，实现在�
 
 #### 策略限制
 
-| 限制项                             | 限制值 |
+| 限制项 | 限制值 |
 |---------|---------|
 | 一个主账号中的用户组数 | 300| 
 | 一个主账号中的子账号数 | 1000 | 
@@ -62,25 +62,22 @@ CAM 目前支持腾讯云的多个地域，通过复制策略数据，实现在�
 
 ```json
 {
-	"version": "2.0",
-	"principal": {
-		"qcs": ["qcs::cam::uin/100000000001:uin/100000000011"]
-			
-		
-	},
-	"statement": [{
-			"effect": "allow",
-			"action": ["name/cos:PutObject", "name/cos:GetObject"],
-			"resource": ["qcs::cos:ap-beijing:uid/1250000000:examplebucket-bj-1250000000/*",
-				"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
-			
-			"condition": {
-				"ip_equal": {
-					"qcs:ip": "10.*.*.10/24"
+			"version": "2.0",
+			"principal": {
+				"qcs": ["qcs::cam::uin/100000000001:uin/100000000011"]
+			},
+			"statement": [{
+				"effect": "allow",
+				"action": ["name/cos:PutObject", "name/cos:GetObject"],
+				"resource": ["qcs::cos:ap-beijing:uid/1250000000:examplebucket-bj-1250000000/*",
+					"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
+				],
+				"condition": {
+					"ip_equal": {
+						"qcs:ip": "10.*.*.10/24"
+					}
 				}
-			}
-		
-	}]
+			}]
 }
 ```
 

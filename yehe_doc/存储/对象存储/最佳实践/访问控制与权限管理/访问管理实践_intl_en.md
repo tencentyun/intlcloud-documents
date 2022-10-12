@@ -62,25 +62,22 @@ The policy in this example allows the sub-account with ID 100000000011 under the
 
 ```json
 {
-	"version": "2.0",
-	"principal": {
-		"qcs": ["qcs::cam::uin/100000000001:uin/100000000011"]
-
-		
-	},
-	"statement": [{
-			"effect": "allow",
-			"action": ["name/cos:PutObject", "name/cos:GetObject"],
-			"resource": ["qcs::cos:ap-beijing:uid/1250000000:examplebucket-bj-1250000000/*",
-				"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
-			],
-			"condition": {
-				"ip_equal": {
-					"qcs:ip": "10.*.*.10/24"
+			"version": "2.0",
+			"principal": {
+				"qcs": ["qcs::cam::uin/100000000001:uin/100000000011"]
+			},
+			"statement": [{
+				"effect": "allow",
+				"action": ["name/cos:PutObject", "name/cos:GetObject"],
+				"resource": ["qcs::cos:ap-beijing:uid/1250000000:examplebucket-bj-1250000000/*",
+					"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
+				],
+				"condition": {
+					"ip_equal": {
+						"qcs:ip": "10.*.*.10/24"
+					}
 				}
-			}
-		
-	}]
+			}]
 }
 ```
 
