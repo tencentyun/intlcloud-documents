@@ -1,17 +1,17 @@
-The following table describes regions where CFS is recommended:
+The following table describes regions where CFS is available:
 
->! If you need to use CFS in a region where resources are sold out for your CVM instances or services, you can choose a VPC in that region, create a subnet in a purchasable availability zone (AZ), and then create a CFS file system in that subnet. For more information, please see [FAQs](https://intl.cloud.tencent.com/document/product/582/9551).
+>! If you need to use CFS in a region where resources are sold out for your CVM instances or services, you can choose a VPC in that region, create a subnet in a purchasable availability zone (AZ), and then create a CFS file system in that subnet. For more information, see [FAQs](https://intl.cloud.tencent.com/document/product/582/9551).
 >
 
 
-This table recommends AZs for resource deployment based on the resource-adding capacity and resource adequacy of CFS, which doesn’t mean CFS resources are always available for purchase in these AZs. If you purchase resources in recommended AZs, subsequent addition of resources can be guaranteed.
+This table recommends AZs for resource deployment based on the resource-adding capacity and resource adequacy of CFS, which doesn't mean CFS resources are always available for purchase in these AZs. If you purchase resources in recommended AZs, subsequent addition of resources can be guaranteed.
 >? Whether you can purchase resources in an AZ is subject to the console. Although there are still resources in some legacy AZs, you are advised to deploy businesses in recommended AZs first.
 >
 
 <table>
 <tr>
     <th>Region</th>
-    <th>Recommended AZ</th>
+    <th>AZ</th>
 </tr>
   <tr>
     <td rowspan="3">Beijing</td>
@@ -54,7 +54,7 @@ This table recommends AZs for resource deployment based on the resource-adding c
 	<tr>
     <td>Chengdu Zone 2</td>
   </tr>
-		<tr>
+  <tr>
     <td>Chongqing</td>
     <td>Chongqing Zone 1</td>
   </tr>
@@ -91,7 +91,7 @@ This table recommends AZs for resource deployment based on the resource-adding c
     <td>Mumbai</td>
     <td>Mumbai Zone 1</td>
   </tr>
-    <td rowspan=2 >Thailand</td>
+    <td rowspan="2">Thailand</td>
     <td>Bangkok Zone 1</td>
   </tr>
   <tr>

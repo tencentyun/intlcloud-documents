@@ -31,13 +31,28 @@ Filetruck is a one-time migration tool. If a source file is modified during the 
 
 The following describes how to use Filetruck to migrate/back up data.
 
-## Preparations
+## Prerequisites
 
-Before you start, find the image of CFS Filetruck in the Tencent Cloud Market.
+Before the migration, you need to download and install Filetruck.
+1. Run the following command to download the `cfs-filetruck` tool:
+```
+wget https://cfsturbo-client-1251013638.cos.ap-guangzhou.myqcloud.com/tools/cfs-filetruck.tar.gz
+```
+2. Run the following command to decompress the tool:
+```
+tar -xzvf cfs-filetruck.tar.gz
+```
+3. Run the following command to check the MD5 value:
+```
+cd ./cfs-filetruck/ && md5sum *
+cat ./md5sum.txt
+```
+4. Run the following command to install `cfs-filetruck`.
+```
+sudo mv ./filetruck_client /usr/local/bin
+sudo mv ./server_filetruck /usr/local/bin
+```
 
-1. Use CFS Filetruck to create a CVM (recommended minimum configuration: 2-core, 4 GB, 1.5 Gbps). After the CVM is created, the Filetruck and relevant environments are ready.
-2. Mount the source and destination directories of the data to migrate/back up to the CVM. For more information, please see [Using CFS File Systems on Linux Clients](https://intl.cloud.tencent.com/document/product/582/11523).
-3. Create a migration task and execute it.
 
 ## Directions
 ### Creating a data migration task
@@ -103,7 +118,7 @@ ExcludeRule=*.png
   - By default, all files (including hard links) in the source directory will be migrated.
   - `IncludeRule` takes effect only when `ExcludeRule` is specified.
   - If both `IncludeRule` and `ExcludeRule` are specified, files in the source directory would be considered as a whole. Files to migrate would be those excluded by `ExcludeRule` as well as those included by both `IncludeRule` and `ExcludeRule`.
-  - The common sync wildcards are `*` and `？`. `*` matches all multi-characters except `/`, and `?` matches single-characters except `/`.
+  - The common sync wildcards are `*` and `?`. `*` matches all multi-characters except `/`, and `?` matches single-characters except `/`.
   - The common matching rules are `*.jpg`, `abc*`, and `abc*def`.
   - The common matching modes are as follows:
     - Migrating all files, that is, setting `IncludeRule=` and `ExcludeRule=`
@@ -114,7 +129,7 @@ ExcludeRule=*.png
 
 ###  Querying task execution status
 
-####  Querying all task execution status
+#### Querying all task execution status
 
 You can run the `filetruck_client -l` command to query all historical tasks (including ongoing and completed tasks) of Filetruck as follows:
 
@@ -136,11 +151,11 @@ TaskId  State           FileCount       SentBytes       Speed           Progress
 
 #### Parameter description
 - A migration task can be in the following status:
-  - `Waiting`: waiting
-  - `Running`: running
-  - `All Done`: all completed
-  - `Partial Done`: completed partially (stopped due to timeout or user cancellation)
-  - `Failed`: failed
+  - `Waiting`: Waiting
+  - `Running`: Running
+  - `All Done`: All completed
+  - `Partial Done`: Completed partially (stopped due to timeout or user cancellation)
+  - `Failed`: Failed
   If the value of `FileCount`, `SentBytes`, `Speed`, or `Progress` is not calculated yet, `-` will be displayed.
 - When the migration task is completed, the `inode` value of the file will be changed.
 - By default, hard links in the source directory will be migrated.
@@ -195,7 +210,7 @@ You can run the `filetruck_client -h` command to obtain the help information of 
 ```
 CFS-Filetruck version: 0.1.3b
 Copyright (C) 2020 Tencent Inc. All rights reserved.
-Link: https://intl.cloud.tencent.com/products/cfs
+Link: https://cloud.tencent.com/product/cfs
  
 CFS-Filetruck makes file migration easier.
  

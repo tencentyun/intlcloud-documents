@@ -1,4 +1,4 @@
-The free beta of the Tencent Cloud Snapshot product is scheduled to end on May 1, 2022. During beta, all snapshots are stored for free. After beta, snapshot data will be stored normally, but billing will start. You can adjust your snapshot scale based on your business requirements before the end of beta.
+The free beta of the Tencent Cloud Snapshot product is scheduled to end on August 15, 2022. During beta, all snapshots are stored for free. After beta, snapshot data will be stored, but billing will start. You can adjust your snapshot scale based on your business requirements before the end of beta.
 
 - During beta, feature limitations are as follows:
 <table>
@@ -12,4 +12,5 @@ The free beta of the Tencent Cloud Snapshot product is scheduled to end on May 1
 - If the snapshot status of a file system is **Migrating**, the snapshot of the file system has been taken (metadata captured and original file system data marked), and the migration is taking place.
 - During snapshot migration, the file system can be used properly. You can overwrite, modify, and delete files in the file system without affecting snapshot data migration nor causing snapshot file loss.
 - Creating the first snapshot for a file system may take a while as all data in the file system needs to be migrated, and follow-up snapshots are faster to create, because they are incremental or differential backups.
+- Currently, only the Standard type supports snapshot, while the High-Performance and Turbo series don't. This support will be added for the High-Performance type on August 15, 2022.
 - During snapshot migration, the I/O performance of the file system may decrease by about 15%. You are advised to configure scheduled snapshot policies and take snapshots during off-peak hours of businesses.
