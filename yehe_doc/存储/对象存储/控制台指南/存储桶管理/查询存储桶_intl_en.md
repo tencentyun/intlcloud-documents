@@ -1,7 +1,7 @@
 ## Overview
 You can query created buckets quickly using the Cloud Object Storage (COS) Console.
 
->
+>!
 >- Before you can access a bucket list with a sub-account, the sub-account must be authorized by the root account. For more information, see [Accessing Bucket List Using a Sub-Account](https://intl.cloud.tencent.com/document/product/436/17061).
 >- List Bucket is independent of bucket permission restrictions. Restricting a sub-account's query to some specific buckets is not supported.
 
