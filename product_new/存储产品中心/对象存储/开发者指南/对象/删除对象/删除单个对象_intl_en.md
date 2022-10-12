@@ -1,6 +1,6 @@
 ## Overview
 
-COS supports deleting one or multiple objects directly. To delete one object, you only need to provide its object key and call an API request to delete it.
+Cloud Object Storage（COS）supports deleting one or multiple objects directly. To delete one object, you only need to provide its object key and call an API request to delete it.
 
 ## Directions
 
