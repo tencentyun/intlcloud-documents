@@ -15,7 +15,7 @@ Primary key conflict resolution policies take effect only for INSERT and UPDATE 
 
 An A > B one-way sync with `ID` as the primary key is created. When an INSERT statement in A has a primary key conflict with the data in B during data sync, DTS will handle the conflict according to the configured conflict resolution policy.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/4442109fe39774e4c567a4653130f668.png" style="zoom:45%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ad3c26330751e80c14d2b97e9b42d614.jpg" style="zoom:100%;" />
 
 The respective sync results in B under different policies are as detailed below:
 - Report: The task reports an error, and the data in B remains unchanged (ID=1, Price=10).
@@ -26,7 +26,7 @@ The respective sync results in B under different policies are as detailed below:
 
 In some scenarios, you may modify the primary key, leading to a primary key conflict. For example, the primary key in A is updated (ID=1 > ID=2), which will conflict with the data with primary key `ID` being `2` in B.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ab72bbd65c897e915a04837bc6052576.png" style="zoom:33%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/10118f0f8351c575ee258eeb0a5e7ba8.jpg" style="zoom:100%;" />
 
 The respective sync results in B under different policies are as detailed below:
 
@@ -39,6 +39,7 @@ The respective sync results in B under different policies are as detailed below:
 In complex data architectures such as 2-region-3-DC and multi-site active-active architectures, data may need to be written to three or more nodes at the same time, and it is crucial to guarantee the data consistency across multiple nodes. Many users believe that they can use a primary key conflict resolution policy to sync the data on the specified node to other nodes, but this actually doesn't work.
 
 In the following two-way sync scenario, the **Overwrite** policy is set for both A > B and B > A sync. If different data records with the primary key `1` are inserted into nodes A and B at the same time, they will be swapped with each other between A and B eventually.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/83aa82449a752e49824793cb713cb2f1.png" style="zoom:45%;" />
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1b9f3b06cadc856b7cf237dbfaf9a703.jpg" style="zoom:100%;" />
 
 In real-world scenarios, to implement data consistency across nodes, you generally need to partition the database by primary key, introduce additional coordination mechanisms such as data overwriting by version number, and use other methods in addition to a conflict resolution policy. 
