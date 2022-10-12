@@ -1,24 +1,24 @@
-## Use Cases
+## Overview
 
-COS supports batch deletion of multiple objects. You can delete objects in batches via the console, APIs, and SDKs.
+Cloud Object Storage（COS）supports batch deletion of multiple objects. You can delete objects in batches using the console, API, or SDKs.
 
-By default, when the deletion task is completed, a null will be returned. If an error occurs, an error message will be returned.
+By default, when the deletion task is completed, an empty response is returned. If an error occurs, an error message is returned.
 
-> A maximum of 1,000 objects can be deleted in a single request. To delete more objects, split the list and send the request separately.
+>! A maximum of 1,000 objects can be deleted in a single request. To delete more objects, split the list and send the request separately.
 
 ## Directions
 
-### Via the COS Console
+### Using COS console
 
-You can delete multiple objects in batches in the COS Console. For more information, see [Deleting an Object](https://intl.cloud.tencent.com/document/product/436/13323) in Console Guide.
+Delete multiple objects in batches in the COS console. For more information, see [Deleting Objects](https://intl.cloud.tencent.com/document/product/436/13323) in Console Guide.
 
-### Via REST API
+### Using REST API
 
-You can use the REST API directly to initiate a multiple objects deleting request. For more information, see [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289).
+Use the REST API to initiate a multiple objects deleting request. For more information, see [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289).
 
-### Via the SDK
+### Using SDKs
 
-You can directly call the multiple objects deleting method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
+Directly call the multiple objects deleting method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E5.88.A0.E9.99.A4.E5.A4.9A.E4.B8.AA.E5.AF.B9.E8.B1.A1)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/31464#.E5.88.A0.E9.99.A4.E5.A4.9A.E4.B8.AA.E5.AF.B9.E8.B1.A1)
