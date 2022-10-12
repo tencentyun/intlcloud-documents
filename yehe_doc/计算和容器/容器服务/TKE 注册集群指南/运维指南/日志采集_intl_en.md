@@ -62,9 +62,10 @@ If the collection type is selected as "Container File Path", the corresponding p
 :::
 ::: Collecting file logs on nodes
 Select **Node File Path** as the collection type. You can add custom `metadata` as needed. Attach `metadata` with a specified key-value pair to the collected log information to add the attached metadata to log records.
-
->! Each node log file can be collected to only one log topic.
->You can specify a file path or use wildcards. For example, when the container file paths for collection are `/opt/logs/service1/*.log` and `/opt/logs/service2/*.log`, you can specify the folder of the collection path as `/opt/logs/service*` and the file name as `*.log`.
+<dx-alert infotype="notice" title=" ">
+Each node log file can be collected to only one log topic.
+You can specify a file path or use wildcards. For example, when the container file paths for collection are `/opt/logs/service1/*.log` and `/opt/logs/service2/*.log`, you can specify the folder of the collection path as `/opt/logs/service*` and the file name as `*.log`.
+</dx-alert>
 :::
 </dx-tabs>
 <dx-alert infotype="explain" title=" ">
