@@ -114,7 +114,7 @@ COSの課金項目については、[製品価格](https://buy.intl.cloud.tencen
 ## 関連リンク
 
 
-1. COSの料金の詳細な計算およびケースごとの課金の詳細については、[課金の例]https://intl.cloud.tencent.com/document/product/436/6241)をご参照ください。
+1. COSの料金の詳細な計算およびケースごとの課金の詳細については、[課金の例](https://intl.cloud.tencent.com/document/product/436/6241)をご参照ください。
 2. COSの支払延滞によるサービス停止ポリシー（データの保存および破棄までの期間、ならびに関連の課金説明）については、COSの[支払い延滞の説明](https://intl.cloud.tencent.com/document/product/436/10044)をご参照ください。
 3. 課金周期について：[課金モデルと請求書統計周期](https://www.tencentcloud.com/document/product/555/7430?lang=en&pg=)をご参照ください。
 4. COSの課金に関するご質問について：[よくあるご質問](https://intl.cloud.tencent.com/document/product/436/32532)をご参照いただくか、テクニカルサポートまで[お問い合わせ](https://www.tencentcloud.com/contact-us)ください。
