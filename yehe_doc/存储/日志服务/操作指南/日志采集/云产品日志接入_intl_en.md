@@ -14,6 +14,6 @@ Currently, CLS can collect logs of the following Tencent Cloud services:
 | COS | Configure log collection in the COS console. For more information, see [Enabling Real-Time Log Feature on COS](https://intl.cloud.tencent.com/document/product/614/42885). |
 | Flow Logs | Configure log collection in the Flow Logs console. For more information, see [Create flow logs](https://intl.cloud.tencent.com/document/product/682/18966). |
 | TI-ONE | Configure log collection in the TI-ONE console. For more information, see [here](link). |
-| WAF | Configure log collection in the WAF console. For more information, see [Log Shipping](https://cloud.tencent.com/document/product/627/70276). |
-| CKafka | Configure log collection in the CKafka console. For more information, see [CLS](https://cloud.tencent.com/document/product/597/70078). |
+| WAF | Configure log collection in the WAF console. For more information, see Log Shipping. |
+| CKafka | Configure log collection in the CKafka console. For more information, see CLS. |
 | IoT Hub | Configure log collection in the IoT Hub console. For more information, see [Cloud Log](https://intl.cloud.tencent.com/document/product/1105/41482). |
