@@ -6,7 +6,7 @@ Elastic cloud disks can be terminated with the following methods:
 <dx-tabs>
 ::: Manual termination
   - Monthly subscription cloud disks can be manually terminated before expiry. After being terminated, the cloud disks will be kept in the recycle bin for 7 days, and they can be permanently terminated in the recycle bin.
-    Each entity can return one monthly subscribed cloud disk within five days unconditionally. Each account can return 199 monthly subscribed cloud disks every year. For more information, see [Refund](https://intl.cloud.tencent.com/document/product/362/36875). When you hit the return limit, you will not be able to manually terminate monthly subscribed cloud disks.
+    Each entity can return one monthly subscribed cloud disk within five days unconditionally. Each account can return 199 monthly subscribed cloud disks every year. For more information, see Refund. When you hit the return limit, you will not be able to manually terminate monthly subscribed cloud disks.
   - Manual termination is supported for pay-as-you-go cloud disks, and takes effect immediately. 
 :::
 ::: Automatic termination
