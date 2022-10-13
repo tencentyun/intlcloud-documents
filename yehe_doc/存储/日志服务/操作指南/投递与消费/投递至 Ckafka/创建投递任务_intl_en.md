@@ -1,8 +1,8 @@
 ## Overview
 
-You can ship log topic data to CKafka for real-time stream computing and storage. If you haven't purchased a CKafka instance, you can consider using the [consumption over Kafka feature](https://intl.cloud.tencent.com/document/product/614/42752) that comes with CLS. These two options have the same price.
+You can ship log topic data to CKafka for real-time stream computing and storage. If you haven't purchased a CKafka instance, you can consider using the [consumption over Kafka](https://intl.cloud.tencent.com/document/product/614/42752) feature that comes with CLS.
 
-## Prerequisites
+## Prerequisite
 
 - You have activated CKafka.
 - Make sure that the current account has the permission to enable shipping to CKafka. If your account is a sub-account, it needs to be authorized by the root account first. For more information, see [Examples of Custom Access Policies](https://intl.cloud.tencent.com/document/product/614/45004).
@@ -11,7 +11,7 @@ You can ship log topic data to CKafka for real-time stream computing and storage
 ## Directions
 
 1. Create a CKafka instance in the same region as the log topic. For more information, see [Creating Instance](https://intl.cloud.tencent.com/document/product/597/39718).
-2. In the same region, configure the following parameters to create a topic. For more information, see Creating Topic.
+2. In the same region, configure the following parameters to create a topic. For more information, see [Creating Topic](https://intl.cloud.tencent.com/document/product/597/47584).
 
  - **Preset ACL Policy**: Disable the preset ACL policy.
  - **Show advanced configuration**:
@@ -37,5 +37,5 @@ If ACL authentication is enabled in CKafka, the log data cannot be shipped. In t
 
 #### What should I do if the system prompts that I have no permissions to read/write the CKafka topic?
 
-If you directly use an API to ship data to CKafka, you may not have the read/write permissions of the CKafka topic. If you ship data in the console, the system will guide you through the authorization process, but if you directly call an API for shipping, you need to authorize manually. For more information, see [Viewing and Configuring Shipping Permissions](https://intl.cloud.tencent.com/document/product/614/46142).
+If you directly use an API to ship data to CKafka, you may not have the read/write permissions of the CKafka topic. If you ship data in the console, the system will guide you through the authorization process, but if you directly call an API for shipping, you need to authorize manually. For more information, see [Viewing and Configuring Shipping Permissions](https://www.tencentcloud.com/document/product/614/46142).
 

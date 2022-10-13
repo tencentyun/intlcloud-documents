@@ -4,7 +4,7 @@ CLS provides log collection clients that allow you to collect your application l
 
 ## Log Structuring
 
-The structuring of logs is to store your log data on the CLS platform in key-value format. Structured logs can be searched for, analyzed, and shipped based on specified keys. CLS allows you to report structured data directly. For more information, please see the following:
+The structuring of logs is to store your log data on the CLS platform in key-value format. Structured logs can be searched for, analyzed, and shipped based on specified keys. CLS allows you to report structured data directly. For more information, see the following:
 
 For example, a local raw log is as follows:
 
@@ -41,8 +41,8 @@ CLS provides multiple methods for data collection:
 
 | Collection Method               | Description                                                         |
 | :--------------------- | ------------------------------------------------------------ |
-| API           | You can upload structured logs to CLS by calling [CLS APIs](https://intl.cloud.tencent.com/document/product/614/12445). For more information, see [Uploading Structured Logs](https://intl.cloud.tencent.com/document/product/614/16873). |
-| SDK           | You can use SDKs to upload structured logs to CLS. For more information, see [here](https://intl.cloud.tencent.com/document/product/614/45006).                                              |
+| API           | You can call CLS APIs to upload structured logs to CLS. For more information, see [Uploading Log via API](https://www.tencentcloud.com/document/product/614/50267).                                              |
+| SDK           | You can use SDKs to upload structured logs to CLS. For more information, see [Collection via SDK](https://www.tencentcloud.com/document/product/614/45006).                                              |
 | LogListener client | LogListener is a log collection client provided by CLS. You can quickly access CLS by simply configuring LogListener in the console. For more information, see [LogListener Use Process](https://intl.cloud.tencent.com/document/product/614/31578). |
 
 A comparison of the collection methods is as follows:
@@ -59,33 +59,15 @@ A comparison of the collection methods is as follows:
 
 You can access different log sources in different ways. For more information, see the following tables:
 
-**Log source category**
-
-| Log Source Category   | Recommended Access Method |
-| ------------ | ------------ |
-| Direct program output | API          |
-| Local log file | LogListener  |
-
 **Log source environment**
 
 | System Environment    | Recommended Access Method                      |
 | ----------- | ----------------------------------- |
-| Linux/Unix  | LogListener                       |
-| Windows     | API (Currently, LogListener does not support Windows.) |
-| iOS/Android | [SDK](https://intl.cloud.tencent.com/document/product/614/45006)         |
+| Linux/Unix  | [LogListener collection](https://www.tencentcloud.com/document/product/614/17415) / [Upload over Kafka](https://intl.cloud.tencent.com/document/product/614/43574) / [Log upload via API](https://www.tencentcloud.com/document/product/614/50267)                         |
+| Windows     | [Beats collection](https://www.tencentcloud.com/document/product/614/50268) / [Upload over Kafka](https://intl.cloud.tencent.com/document/product/614/43574) / [Log upload via API](https://www.tencentcloud.com/document/product/614/50267)  |
+| iOS/Android/Web | [Log upload via SDK](https://www.tencentcloud.com/document/product/614/45006)         |
 
 **Tencent Cloud service logs**
 
-| Tencent Cloud Service               | Recommended Access Method                                                 |
-| ------------------------ | ------------------------------------------------------------ |
-| CVM | Install and configure LogListener. For more information, see [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/17414). |
-| TKE | Configure log collection in the TKE console. For more information, see [here](https://intl.cloud.tencent.com/document/product/457/32419). |
-| CDN | Configure log collection in the CDN console. For more information, see [here](https://intl.cloud.tencent.com/document/product/228/35380). |
-| CLB | Configure log collection in the CLB console. For more information, see [here](https://intl.cloud.tencent.com/document/product/214/35063). |
-| SCF | Configure log collection in the SCF console For more information, see [here](https://intl.cloud.tencent.com/document/product/583/34876). |
-| LVB | Configure log collection in the LVB console. For more information, see [here](). |
-| Flow Logs | Configure log collection in the Flow Logs console. For more information, see [here](https://intl.cloud.tencent.com/document/product/682/18966). |
-| TI-ONE | Configure log collection in the TI-ONE console. For more information, see [here](). |
-| MGOBE    | Configure log collection in the MGOBE console. For more information, see [here](). |
-
+For more information, see [Tencent Cloud Service Log Access](https://intl.cloud.tencent.com/document/product/614/38200).
 

@@ -1,6 +1,9 @@
 ## Overview
 
-You can log in to the [CLS console](https://console.cloud.tencent.com/cls) and ship data in JSON format to COS. This document describes how to create a JSON shipping task.
+You can log in to the [CLS console](https://console.cloud.tencent.com/cls) and ship data in Parquet format to COS. Parquet files can be loaded in Hive mainly for big data computing and analysis. This document describes how to create a Parquet shipping task.
+
+>! Parquet files are mainly used for big data platforms. As Parquet comes with compression and Snappy/lzop/GZIP can be used for further compression, the file to be shipped needs to be large in size. We recommend you configure a value of greater than 200 MB (which becomes around 50 MB when shipped to COS).
+>
 
 ## Prerequisite
 
@@ -14,7 +17,7 @@ You can log in to the [CLS console](https://console.cloud.tencent.com/cls) and s
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. Click **Log Topic** on the left sidebar.
 3. Click the desired log topic ID/name to go to the log topic management page.
-4. Select the **Ship to COS** tab, click **Add Shipping Configuration**, and finish the configuration as detailed below.  
+4. Select the **Ship to COS** tab, click **Add Shipping Configuration**, and finish the configuration.
 
 **The parameters are described as follows:**
 <table>
@@ -67,7 +70,34 @@ You can log in to the [CLS console](https://console.cloud.tencent.com/cls) and s
       <td>Yes</td>
    </tr>
 </table>
-5. Click**Next** to enter the **Advanced Configuration** page. Set **Shipping Format** to **JSON** and select the field to be shipped. Here, `_CONTENT_` is the user log data, and `_SOURCE_`, `_FILENAME_`, `_HOSTNAME_`, `_TIMESTAMP_`, and `_TAG_` are CLS metadata fields that can be selected as needed.
+5. Click **Next** to enter the **Advanced Configuration** page. Set **Shipping Format** to **Parquet**. `__SOURCE__`, `__FILENAME__`, and `__HOSTNAME__` are CLS metadata fields and can be deleted if you don't need them. The configuration items are as described below.
 
+**The parameters are described as follows:**
+<table>
+   <tr>
+      <th>Configuration Item</th>
+      <th>Description</th>
+      <th>Limit</th>
+      <th>Required</th>
+   </tr>
+   <tr>
+      <td nowrap="nowrap">Key</td>
+      <td>The key field to write into the Parquet file. The system will automatically pull keys from the log for your choice. To add other fields to the log, click **Add**. Note that new keys cannot have the same name as existing keys. The field name can contain letters, digits, underscores, and hyphens.</td>
+      <td nowrap="nowrap">A value selected from the drop-down list</td>
+      <td>Yes</td>
+   </tr>
+   <tr>
+      <td>Data Type</td>
+      <td>This field indicates the data type in the Parquet file, such as string, boolean, int32, int64, float, and double.</td>
+      <td>A value selected from the drop-down list</td>
+      <td>Yes</td>
+   </tr>
+   <tr>
+      <td>Assigned Value for Parsing Failure</td>
+      <td>You can assign a custom value when the data type parsing (conversion) fails. For the string type, an empty string indicates "", and `NULL` indicates unknown. You can also assign a custom value for the boolean, integer, or float type.</td>
+      <td>A value selected from the drop-down list</td>
+      <td>Yes</td>
+   </tr>
+   </table>
 
 

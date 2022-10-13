@@ -42,8 +42,8 @@ histogram(time_column, interval)
 
 | Parameter | Description |
 | ----------- | ------------------------------------------------------------ |
-| time_column | Time column (KEY), such as \_\_TIMESTAMP\_\_. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
-| interval    | Time interval. The following time units are supported: SECOND, MINUTE, HOUR, DAY, MONTH, and YEAR. For example, `INTERVAL 5 MINUTE` indicates an interval of 5 minutes. |
+| time_column | Time column (KEY), such as `\_\_TIMESTAMP\_\_`. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
+| interval    | Time interval. The following time units are supported: SECOND, MINUTE, HOUR, and DAY. For example, `INTERVAL 5 MINUTE` indicates an interval of 5 minutes. |
 
 **Sample**
 
@@ -52,7 +52,6 @@ Count the PV value every 5 minutes:
 ```
 * | select histogram(__TIMESTAMP__, INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
 ```
-
 
 
 
@@ -74,10 +73,10 @@ time_series(time_column, interval, format, padding)
 
 | Parameter | Description |
 | ----------- | ------------------------------------------------------------ |
-| time_column | Time column (KEY), such as \_\_TIMESTAMP\_\_. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
+| time_column | Time column (KEY), such as `\_\_TIMESTAMP\_\_`. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
 | interval    | Time interval. Valid values are `s` (second), `m` (minute), `h` (hour), and `d` (day). For example, `5m` indicates 5 minutes. |
 | format      | Time format of the return result.                                   |
-| padding     | Value used to complete missing data. Valid values include:<ul  style="margin: 0;"><li>0: complete a missing value with `0`</li><li>null: complete a missing value with `null`</li><li>last: complete a missing value with the value of the previous point in time</li><li>next: complete a missing value with the value of the next point in time</li><li>avg: complete a missing value with the average value of the previous and next points in time</li></ul> |
+| padding     | Value used to complete missing data. Valid values include:<ul  style="margin: 0;"><li>0: Complete a missing value with `0`</li><li>null: Complete a missing value with `null`</li><li>last: Complete a missing value with the value of the previous point in time</li><li>next: Complete a missing value with the value of the next point in time</li><li>avg: Complete a missing value with the average value of the previous and next points in time</li></ul> |
 
 **Sample**
 
@@ -147,8 +146,8 @@ Time interval functions perform time period-related operations, such as adding o
 
 | Function                                  | Description                                                         | Example                                                         |
 | --------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| date_add(unit,value,timestamp)          | Adds N time units (`unit`) to timestamp. If `value` is a negative value, subtraction is performed.  | `* | SELECT date_add('day', -1, TIMESTAMP '2020-03-03 03:01:00')`<br/>The return value is the date and time one day earlier than `2020-03-03 03:01:00`, that is, `2020-03-02 03:01:00`. |
-| date_diff(unit, timestamp1, timestamp2) | Returns the time difference between two time expressions, for example, calculates the number of time units (`unit`) between `timestamp1` and `timestamp2`. | `* |SELECT date_diff('hour', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')`<br>The return value is the time difference between 2020-03-01 and 2020-03-02, that is, one day. |
+| date_add(unit,value,timestamp)          | Adds N time units (`unit`) to timestamp. If `value` is a negative value, subtraction is performed.  | `* | SELECT date_add('day', -1, TIMESTAMP '2020-03-03 03:01:00')`<br/>The return value is the date and time one day earlier than `2020-03-03 03:01:00`, i.e., `2020-03-02 03:01:00`. |
+| date_diff(unit, timestamp1, timestamp2) | Returns the time difference between two time expressions, for example, calculates the number of time units (`unit`) between `timestamp1` and `timestamp2`. | `* |SELECT date_diff('hour', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')`<br>The return value is the time difference between 2020-03-01 and 2020-03-02, i.e., one day. |
 
 The following units (`unit`) are supported:
 
@@ -218,7 +217,6 @@ The following formats (`format`) are supported:
 | %a     | Abbreviated names of the days of the week, such as Sun and Sat                            |
 | %b     | Abbreviated month name, such as Jan and Dec                            |
 | %c     | Month, numeric. Value range: 1-12                      |
-| %D     | Day of the month with English suffix, such as 0th, 1st, 2nd, and 3rd    |
 | %d     | Day of the month, decimal. Value range: 01-31           |
 | %e     | Day of the month, decimal. Value range: 1-31           |
 | %f     | Millisecond. Value range: 0-000000                             |
@@ -230,24 +228,21 @@ The following formats (`format`) are supported:
 | %k     | Hour. Value range: 0-23                                |
 | %l     | Hour. Value range: 1-12                                |
 | %M     | Month name in English, such as January and December               |
-| %m     | Month name in English, such as January and December               |
+| %m     | Month name in digits, such as 01 and 02                |
 | %p     | AM or PM                                              |
 | %r     | Time, in the 12-hour time system. Format: `hh:mm:ss AM/PM`              |
 | %S     | Second. Value range: 00-59                                 |
 | %s     | Second. Value range: 00-59                                 |
 | %T     | Time, in the 24-hour time system. Format: `hh:mm:ss`                    |
-| %V     | Week of the year, where Sunday is the first day of the week. Value range: 01-53 |
 | %v     | Week of the year, where Monday is the first day of the week. Value range: 01-53 |
 | %W     | Names of the days of the week, such as Sunday and Saturday                  |
-| %w     | Day of the week, where Sunday is day 0                         |
 | %Y     | Year (4-digit), such as 2020                               |
 | %y     | Year (2-digit), such as 20                               |
 | %%     | Escape character of %                                         |
-| %x     | Arbitrary value                                                |
 
 **Sample**
 
-Parse the time string '2017-05-17 09:45:00' in `format` into a date and time expression of the TIMESTAMP type, that is, '2017-05-17 09:45:00.0':
+Parse the time string '2017-05-17 09:45:00' in `format` into a date and time expression of the TIMESTAMP type, i.e., '2017-05-17 09:45:00.0':
 ```
 * | SELECT date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')
 ```

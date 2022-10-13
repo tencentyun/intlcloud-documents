@@ -3,8 +3,8 @@ This document introduces the basic syntax and examples of mathematical calculati
 CLS's log analysis feature allows you to analyze logs by analyzing fields of int, long, and double types via mathematical calculation functions and mathematical statistical functions.
 
 >?
-> - Mathematical calculation functions support operators +—\*/%.
-> - `x` and `y` in the following functions can be numbers, log fields, or expressions whose calculation results are numbers.
+> - Mathematical calculation functions support operators +-\*/%.
+> - `x` and `y` in the following functions can be numbers, log fields, or expressions with numerical calculation results.
 > 
 
 ## Basic Syntax
@@ -14,7 +14,7 @@ CLS's log analysis feature allows you to analyze logs by analyzing fields of int
 | abs(x)                     | Returns the absolute value of `x`.               |
 | cbrt(x)                    | Returns the cube root of `x`.               |
 | sqrt(x)                    | Returns the square root of `x`.               |
-| cosine_similarity(x,y)     | Returns the cosine similarity between the sparse vectors `x` and `y`.       |
+| cosine_similarity(x,y)     | Returns the cosine similarity between the vectors `x` and `y`.</br>For example, `* | SELECT cosine_similarity(MAP(ARRAY['x','y'], ARRAY[1.0,0.0]), MAP(ARRAY['x','y'], ARRAY[0.0,1.0]))` returns 0.       |
 | degrees(x)                 | Converts angle `x` in radians to degrees.                 |
 | radians(x)                 | Converts angle `x` in degrees to radians.                 |
 | e()                        | Returns the natural logarithm of the number.             |
@@ -44,7 +44,7 @@ CLS's log analysis feature allows you to analyze logs by analyzing fields of int
 | tan(x)                     | Returns the tangent of `x`.                 |
 | tanh(x)                    | Returns the hyperbolic tangent of `x`.             |
 | infinity()                 | Returns the constant representing positive infinity.               |
-| is_nan(x)                  | Determines if `x` is not-a-number.         |
+| is_nan(x)                  | Determines if the target value is Not a Number (NaN).         |
 | nan()                |  Returns a "Not a Number" (NaN) value.        |
 | mod(x, y)                | Returns the remainder when `x` is divided by `y`.         |
 | sign(x)                | Returns the sign of `x` represented by 1, 0, or -1.         |

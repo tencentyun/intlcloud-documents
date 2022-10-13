@@ -1,8 +1,8 @@
 CLS allows you to upload logs to CLS by using Kafka Producer SDKs or other Kafka related agents.
 
-## Use Cases
+## Overview
 
-Using Kafka as a message pipeline is common in log applications. First, the open source collection client or the producer on the machine directly writes logs to be collected, and then provides them to the downstream, such as Spark and Flink, for consumption through the Kafka message pipeline. CLS has complete upstream and downstream capabilities of the Kafka message pipeline. The following describes the scenarios suitable for you to upload logs using the Kafka protocol. For more Kafka protocol consumption scenarios, see [Kafka Real-Time Consumption](https://intl.cloud.tencent.com/document/product/614/47570).
+Using Kafka as a message pipeline is common in log applications. First, the open source collection client or the producer on the machine directly writes logs to be collected, and then provides them to the downstream, such as Spark and Flink, for consumption through the Kafka message pipeline. CLS has complete upstream and downstream capabilities of the Kafka message pipeline. The following describes the scenarios suitable for you to upload logs using the Kafka protocol. For more Kafka protocol consumption scenarios, see [Kafka Real-time Consumption](https://intl.cloud.tencent.com/document/product/614/47570).
 
 - **Scenario 1**: You already have a self-built system based on open source collection and you do not want complex secondary modifications. Then you can upload logs to CLS by modifying configuration files.
 For example, if you have set up a log system using ELK, now you only need to modify the Filebeat or Logstash configuration file to configure the output destination (see [Filebeat configuration](#filebeat)) to CLS to implement convenient and simple log upload to CLS.
@@ -15,6 +15,7 @@ CLS allows you to use various Kafka producer SDKs to collect logs and upload the
 - Supported Kafka protocol versions: 0.11.0.X, 1.0.X, 1.1.X, 2.0.X, 2.1.X, 2.2.X, 2.3.X, 2.4.X, 2.5.X, 2.6.X, 2.7.X, 2.8.X
 - Supported compression modes: Gzip, Snappy, LZ4
 - Current authentication mode: SASL_PLAINTEXT
+- Upload over Kafka requires the `RealtimeProducer` permission. For more information, see [Examples of Custom Access Policies](https://intl.cloud.tencent.com/document/product/614/45004).
 
 
 ## Configuration Methods
@@ -52,10 +53,10 @@ To upload logs via Kafka, you need to set the following parameters:
 ```filebeat
 output.kafka:
   enabled: true
-  hosts: ["${region}-producer.cls.tencentyun.com:9096"] # TODO: service address. The public network port is 9096, and the private network port is 9095.
-  topic: "${topicID}" #  TODO: topic ID
+  hosts: ["${region}-producer.cls.tencentyun.com:9095"] # TODO: Service address. The public network port is 9096, and the private network port is 9095.
+  topic: "${topicID}" #  TODO: Topic ID
   version: "0.11.0.2"
-  compression: "${compress}"   # TODO: configuration compression mode
+  compression: "${compress}"   # Configure the compression method. Valid values: `gzip`, `snappy`, `lz4`.
   username: "${logsetID}"
   password: "${SecurityId}#${SecurityKey}"
 ```
@@ -71,7 +72,7 @@ output {
     sasl_mechanism => "PLAIN"
     security_protocol => "SASL_PLAINTEXT"
     compression_type => "${compress}"
-    sasl_jaas_config => "org.apache.kafka.common.security.plain.PlainLoginModule required username='${logsetID}' password='${securityID}#${securityKEY};"
+    sasl_jaas_config => "org.apache.kafka.common.security.plain.PlainLoginModule required username='${logsetID}' password='${securityID}#${securityKEY}';"
   }
 }
 ```
@@ -87,33 +88,33 @@ import (
     "github.com/Shopify/sarama"
 )
 
-func main() {
+func main(){
     config := sarama.NewConfig()
 
     config.Net.SASL.Mechanism = "PLAIN"
     config.Net.SASL.Version = int16(1)
     config.Net.SASL.Enable = true
-    config.Net.SASL.User = "${logsetID}"                        // TODO: logset ID
-    config.Net.SASL.Password = "${SecurityId}#${SecurityKey}"   // TODO: format ${SecurityId}#${SecurityKey}
+    config.Net.SASL.User = "${logsetID}"                        // TODO: Logset ID
+    config.Net.SASL.Password = "${SecurityId}#${SecurityKey}"   // TODO: Format: ${SecurityId}#${SecurityKey}
     config.Producer.Return.Successes = true
-    config.Producer.RequiredAcks = ${acks}                      // TODO: select the acks value according to the use case
-    config.Version = sarama.V0_11_0_0
-    config.Producer.Compression = ${compress}                   // TODO: configuration compression mode
+    config.Producer.RequiredAcks = ${acks}                      // TODO: Select the acks value according to the use case
+    config.Version = sarama.V1_1_0_0
+    config.Producer.Compression = ${compress}                   // TODO: Configuration compression mode
 
     // TODO: Service address. The public network port is 9096, and the private network port is 9095.
-    producer, err := sarama.NewSyncProducer([]string{"${region}-producer.cls.tencentyun.com:9096"}, config)
-    if err != nil {
+    producer, err := sarama.NewSyncProducer([]string{"${region}-producer.cls.tencentyun.com:9095"}, config)
+    if err != nil{
         panic(err)
     }
 
     msg := &sarama.ProducerMessage{
-        Topic: "${topicID}", // TODO: topic ID
+        Topic: "${topicID}", // TODO: Topic ID
         Value: sarama.StringEncoder("goland sdk sender demo"),
     }
-    // Send the message
+    // Send the messages
     for i := 0; i <= 5; i++ {
         partition, offset, err := producer.SendMessage(msg)
-        if err != nil {
+        if err != nil{
             panic(err)
         }
         fmt.Printf("send response; partition:%d, offset:%d\n", partition, offset)
@@ -132,12 +133,12 @@ from kafka import KafkaProducer
 if __name__ == '__main__':
     produce = KafkaProducer(
         # TODO: Service address. The public network port is 9096, and the private network port is 9095.
-        bootstrap_servers=["${region}-producer.cls.tencentyun.com:9096"],
+        bootstrap_servers=["${region}-producer.cls.tencentyun.com:9095"],
         security_protocol='SASL_PLAINTEXT',
         sasl_mechanism='PLAIN',
         # TODO: Logset ID
         sasl_plain_username='${logsetID}',
-        # TODO: The format is ${SecurityId}#${SecurityKey}
+        # TODO: Format: ${SecurityId}#${SecurityKey}
         sasl_plain_password='${SecurityId}#${SecurityKey}',
         api_version=(0, 11, 0),
         # TODO: Configuration compression mode
@@ -180,7 +181,7 @@ public class ProducerDemo {
         // 0. Set parameters
         Properties props = new Properties();
         // TODO: In use
-        props.put("bootstrap.servers", "${region}-producer.cls.tencentyun.com:9096");
+        props.put("bootstrap.servers", "${region}-producer.cls.tencentyun.com:9095");
         // TODO: Set the following according to the actual business scenario 
         props.put("acks", ${acks});
         props.put("retries", ${retries});
@@ -193,7 +194,7 @@ public class ProducerDemo {
 
         props.put("security.protocol", "SASL_PLAINTEXT");
         props.put("sasl.mechanism", "PLAIN");
-        // TODO: The username is logsetID, and the password is the combination of securityID and securityKEY: securityID#securityKEY.
+        // TODO: The user name is logsetID, and the password is the combination of securityID and securityKEY: securityID#securityKEY.
         props.put("sasl.jaas.config",
                 "org.apache.kafka.common.security.plain.PlainLoginModule required username='${logsetID}' password='${SecurityId}#${SecurityKey}';");
 
@@ -328,3 +329,68 @@ int main(int argc, char **argv) {
 
 ```
 
+#### SDK for C# call example
+
+```
+/*
+ * This demo only provides the easiest way of using the feature. The specific production needs to be implemented in combination with the call method.
+ * During use, the TODO items in the demo need to be replaced with actual values.
+ *
+ * Notes:
+ *  1. This demo is verified based on Confluent.Kafka 1.8.2.
+ *  2. The maximum value of `MessageMaxBytes` cannot exceed 5 MB.
+ *  3. This demo adopts the sync mode for production. You can change to the async mode during use based on your business scenario.
+ *  4. You can adjust other parameters during use as instructed at https://docs.confluent.io/platform/current/clients/confluent-kafka-dotnet/_site/api/Confluent.Kafka.ProducerConfig.html.
+ *
+ * Confluent.Kafka reference: https://docs.confluent.io/platform/current/clients/confluent-kafka-dotnet/_site/api/Confluent.Kafka.html
+ */
+
+
+using Confluent.Kafka;
+
+namespace Producer
+{
+    class Producer
+    {
+        private static void Main(string[] args)
+        {
+            var config = new ProducerConfig
+            {
+                // TODO: Domain name. For more information, visit https://intl.cloud.tencent.com/document/product/614/18940. The private network port is 9095, and the public network port is 9096.
+                BootstrapServers = "${domain}:${port}", 
+                SaslMechanism = SaslMechanism.Plain,
+                SaslUsername = "${logsetID}", // TODO: Logset ID of the topic
+                SaslPassword = "${SecurityId}#${SecurityKey}", // TODO: UIN key of the topic
+                SecurityProtocol = SecurityProtocol.SaslPlaintext,
+                Acks         = Acks.None, // TODO: Assign a value based on the actual use case. Valid values: `Acks.None`, `Acks.Leader`, `Acks.All`.
+                MessageMaxBytes = 5242880 // TODO: The maximum size of the request message, which cannot exceed 5 MB.
+            };
+
+            // deliveryHandler
+            Action<DeliveryReport<Null, string>> handler =
+                r => Console.WriteLine(!r.Error.IsError ? $"Delivered message to {r.TopicPartitionOffset}" : $"Delivery Error: {r.Error.Reason}");
+
+
+            using (var produce = new ProducerBuilder<Null, string>(config).Build())
+            {
+                try
+                {
+                    // TODO: Test verification code
+                    for (var i = 0; i < 100; i++)
+                    {
+                        // TODO: Replace the log topic ID
+                        produce.Produce("${topicID}", new Message<Null, string> { Value = "C# demo value" }, handler);
+                    }
+                    produce.Flush(TimeSpan.FromSeconds(10));
+
+                }
+                catch (ProduceException<Null, string> pe)
+                {
+                    Console.WriteLine($"send message receiver error : {pe.Error.Reason}");
+                }
+            }
+        }
+    }
+}
+
+```

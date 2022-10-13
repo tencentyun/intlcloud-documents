@@ -8,7 +8,7 @@ The `SELECT` statement is used to select data from a table. It selects eligible 
 
 ## Syntax Example
 
-Select values whose columns (KEY) are `remote_addr` and `method` from the log data:
+Select values with columns (KEY) being `remote_addr` and `method` from the log data:
 
 ```plaintext
 * | SELECT remote_addr, method 
@@ -26,5 +26,27 @@ Download speed (`speed`) = total number of bytes sent (`body_bytes_sent`) / requ
 
 ```plaintext
 * | SELECT body_bytes_sent / request_time AS speed
+```
+
+## Column Naming Conventions
+
+In SQL specifications, a column name consists of letters, digits, and underscores and starts with a letter, such as `remote_addr`. If a field in a log has a non-compliant name, you need to surround the name by `""`. You can also specify an alias for the field with [AS syntax](https://intl.cloud.tencent.com/document/product/614/38731) in SQL.
+
+If a log field is named `remote_addr`, which conforms to SQL's column naming conventions, it can be queried by SELECT:
+
+```
+* | SELECT remote_addr
+```
+
+If a log field is named `__TAG__.pod_label_qcloud-app`, which does not conform to SQL's column naming conventions, it needs to be surrounded by `""`:
+
+```
+* | SELECT "__TAG__.pod_label_qcloud-app"
+```
+
+If a log field is named `__TIMESTAMP__`, which does not conform to SQL's column naming conventions, it needs to be surrounded by `""` and specified with an alias through the AS syntax:
+
+```
+* | SELECT "__TIMESTAMP__" AS log_time
 ```
 

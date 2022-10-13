@@ -243,7 +243,7 @@ status: DEAD
 
 ## Directions
 
-### Logging In to Console
+### Logging in to the console
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. On the left sidebar, click **Log Topic** to go to the log topic management page.
@@ -251,22 +251,21 @@ status: DEAD
 ### Creating a log topic
 
 1. Click **Create Log Topic**.
-2. In the pop-up dialog box, enter `define-log` as **Log Topic Name** and click **Confirm**. See the figure below.
-
+2. In the pop-up dialog box, enter `define-log` as **Log Topic Name** and click **Confirm**.
 
 ### Managing the machine group
 
 1. After the log topic is created successfully, click its name to go to the log topic management page.
 2. Click the **Collection Configuration** tab, click **Add** in the **LogListener Collection Configuration** area, and select the format in which you need to collect logs.
-3. On the **Machine Group Management** page, select the machine group to which to bind the current log topic and click **Next** to proceed to collection configuration. See the figure below.
-For more information, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
+3. On the **Machine Group Management** page, select the machine group to which to bind the current log topic and click **Next** to proceed to collection configuration.
+For more information, see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 
 ### Configuring collection
 
 #### Configuring the log file collection path
 
-On the **Collection Configuration** page, set **Collection Path** according to the log collection path format as shown below:
+On the **Collection Configuration** page, set **Collection Path** according to the log collection path format.
 Log collection path format: `[directory prefix expression]/**/[filename expression]`.
 
 After the log collection path is entered, LogListener will match all common prefix paths that meet the **[directory prefix expression]** rule and listen for all log files in the directories (including subdirectories) that meet the **[filename expression]** rule. The parameters are as detailed below:
@@ -292,25 +291,24 @@ Below are examples:
 | 3.   | /var/log/nginx | error\*      | In this example, the log path is configured as `/var/log/nginx/**/error*`. LogListener will listen for log files prefixed with `error` in all subdirectories in the `/var/log/nginx` prefix path. |
 
 >!
-> - Only LogListener 2.3.9 and above support adding multiple collection paths.
+> - Only LogListener 2.3.9 and later support adding multiple collection paths.
 > - The system does not support uploading logs with contents in multiple text formats, which may cause write failures, such as `key:"{"substream":XXX}"`.
-> - You are advised to configure the collection path as `log/*.log` and rename the old file after log rotation as `log/*.log.xxxx`.
-> - By default, a log file can only be collected by one log topic. If you want to have multiple collection configurations for the same file, please add a soft link to the source file and add it to another collection configuration.
+> - We recommend you configure the collection path as `log/*.log` and rename the old file after log rotation as `log/*.log.xxxx`.
+> - By default, a log file can only be collected by one log topic. If you want to have multiple collection configurations for the same file, add a soft link to the source file and add it to another collection configuration.
 > 
 
 #### Configuring the combined parsing mode
 
 On the **Collection Configuration** page, select **Combined Parsing** as the **Extraction Mode**.
 
-
 #### Configuring the collection policy
 
-- Full collection: when LogListener collects a file, it starts reading data from the beginning of the file.
-- Incremental collection: when LogListener collects a file, it starts reading data 1 MB ahead of the end of the file (for a file less than 1 MB, incremental collection is equivalent to full collection).
+- Full collection: When LogListener collects a file, it starts reading data from the beginning of the file.
+- Incremental collection: When LogListener collects a file, it collects only the newly added content in the file.
 
 
-## Usage Limits
-- If the combined parsing mode is used for data parsing, LogListener will consume more resources. It is not recommended to use overly complex plug-in combinations to process data.
+## Use Limits
+- If the combined parsing mode is used for data parsing, LogListener will consume more resources. We recommend you not use overly complex plug-in combinations to process data.
 - If the combined parsing mode is used, the collection and filter features of the text mode will become invalid, but some of these features can be implemented through relevant user-defined plug-ins.
 - If the combined parsing mode is used, the feature of uploading logs that fail to be parsed is enabled by default. For logs that fail to be parsed, the input name is the `Key` and the original log content is the `Value` for log uploading.
 

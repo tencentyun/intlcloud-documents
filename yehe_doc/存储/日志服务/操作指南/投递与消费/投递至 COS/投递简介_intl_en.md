@@ -1,21 +1,46 @@
-
-
-The shipping feature of CLS helps connect the downstream segments of your product ecosystem. It allows you to ship log data to Cloud Object Storage (COS) or other Tencent Cloud products to make better use of your logs. Shipping is an asynchronous process. With simple configuration in the CLS console, you can ship any log data collected by CLS to other Tencent Cloud products for storage or analysis.
-
 ## Shipping to COS
 
-CLS allows you to ship data in a log topic to COS for purposes including:
+CLS can ship data in a log topic to COS to meet the needs in the following scenarios:
+- Logs are shipped to and stored in COS in STANDARD storage class. If you need other storage classes, perform relevant operations in COS. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+- Log data is processed through offline computing or other computing programs. Such data is shipped to COS first and then loaded by Data Lake Compute (data lake) or EMR (big data platform) for further analysis. For more information, see [Using Data Lake Compute (Hive) to Analyze CLS Log](https://intl.cloud.tencent.com/document/product/614/48461). We recommend you choose CSV or Parquet as the shipping format.
 
-- Archiving log data for the long term by managing the lifecycles of COS buckets
-- Processing logs in COS through offline computing or using other computing programs
+## Billing Description
 
-| Shipping Method                                                 | Description                                |
-| ------------------------------------------------------------ | --------------------------------------- |
-| [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582) | Log data is shipped to COS in the CSV format.  |
-| [JSON Shipping](https://intl.cloud.tencent.com/document/product/614/31583) | Log data is shipped to COS in the JSON format. |
-| [Source Format Shipping](https://intl.cloud.tencent.com/document/product/614/31584) | Log data is shipped to COS in the source format.   |
+Log shipping generates private network read traffic fees (cross-region shipping is not supported for now), and CLS will charge fees based on the compression format (Snappy/GZIP/lzop). If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable. As the read traffic price is 0.18 CNY/GB, the fees will be 50 GB * 0.18 CNY/GB = 9 CNY.
+
+
+## Feature Limits
+
+- Historical data cannot be shipped.
+- Cross-region shipping is not supported. The log topic and COS bucket must be in the same region.
+- Cross-account shipping is not supported.
+
+
+## Shipping Format
+
+<table>
+<thead>
+<tr><th style="width: 18%">Data Shipping Format</th><th>Description</th><th>Recommended Scenario</th></tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/31582">CSV shipping</a></td>
+<td>Log data is shipped to COS based on the specified separator, such as space, tab, comma, semicolon, and vertical bar.</td>
+<td><ul style="margin: 0;"><li>It can be used for computing in Data Lake Compute.</li><li>It can be used to <a href="https://cloud.tencent.com/document/product/614/33816">ship raw logs</a> (logs collected in a single line, in multiple lines, and with separators).</li></ul></td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/31583">JSON shipping</a></td>
+<td>Log data is shipped to COS in JSON format.</td>
+<td>It is a common data format and can be selected as needed.</td>
+</tr>
+<tr>
+<td><a href="https://cloud.tencent.com/document/product/614/33816">Parquet shipping</a></td>
+<td>Log data is shipped to COS in Parquet format.</td>
+<td>Log data needs to be structured data. The data type can be converted (data not collected in a single line or multiple lines). This format is mainly used for Hive batch processing.</td>
+</tr>
+</tbody></table>
+
 
 >!
->- After logs are shipped to COS, you will be charged for storing data with COS. For more information about the billing of COS, see [Billing Overview](https://cloud.tencent.com/document/product/436/16871).
->- To cleanse log data before shipping to COS, please see [CLS Dump to COS](https://intl.cloud.tencent.com/document/product/614/38886).
-
+> - After log data is shipped to COS, COS storage fees will be incurred. For billing details, see [Billing Overview](https://intl.cloud.tencent.com/document/product/436/16871).
+> - To cleanse the log data before shipping to COS, see [Log Filtering and Distribution](https://intl.cloud.tencent.com/document/product/614/46135).
+> 
