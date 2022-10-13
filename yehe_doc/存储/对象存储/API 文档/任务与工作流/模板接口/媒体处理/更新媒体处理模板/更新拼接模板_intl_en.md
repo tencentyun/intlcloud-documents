@@ -104,7 +104,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Request            | None     | <a href="https://intl.cloud.tencent.com/document/product/1045/49907" target="_blank">Same as `Request` in the splicing template creation API.</a> | Container | Yes   |
+| Request            | None     | <a href="https://intl.cloud.tencent.com/document/product/1045/49907" target="_blank">Same as `Request` in the splicing template creation API.</a> | Container | 
 
 ## Response
 
