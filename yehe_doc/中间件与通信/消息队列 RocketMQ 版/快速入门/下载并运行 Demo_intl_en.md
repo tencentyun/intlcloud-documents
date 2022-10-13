@@ -197,7 +197,7 @@ for (int i = 0; i < 10; i++) {
 </tr>
 </tbody></table>
 
->?For more information on batch sending or other scenarios, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%e7%94%9f%e4%ba%a7%e8%80%85/05message1/).
+>?For more information on batch sending or other scenarios, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) .
 
 
 ### Step 3. Consume messages
@@ -287,7 +287,7 @@ pullConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
 </tr>
 </tbody></table>
 
->?For more consumption mode information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%e7%94%9f%e4%ba%a7%e8%80%85/05message1/).
+>?For more consumption mode information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip).
 
 #### 2. Subscribe to messages
 The subscription modes vary by consumption mode.
@@ -367,4 +367,4 @@ try {
 Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0edaf07ec7dba3e634fba03f188d308e.png)
 
->?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/%e7%94%9f%e4%ba%a7%e8%80%85/05message1/)
+>?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip). 
