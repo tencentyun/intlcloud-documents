@@ -225,7 +225,7 @@ See the subscript for the part of speech:
 |N| Noun |
 |NR| Person name |
 |NRF| Surname |
-|NRG| First name ||
+|NRG| First name |
 |NS| Place name |
 |NT| Organization |
 |NZ| Other proper names |
