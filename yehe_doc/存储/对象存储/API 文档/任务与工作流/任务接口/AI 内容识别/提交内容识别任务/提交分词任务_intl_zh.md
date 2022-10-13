@@ -225,7 +225,7 @@ Container 节点 WordsGeneralizeToken 的内容：
 |N|名词|
 |NR|人名|
 |NRF|姓|
-|NRG|名||
+|NRG|名|
 |NS|地名|
 |NT|机构团体|
 |NZ|其他专名|
