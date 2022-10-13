@@ -23,7 +23,7 @@ You can ship log topic data to CKafka for real-time stream computing and storage
  - On the left sidebar, click **Log Topic** and select a log topic to be shipped to CKafka to enter the log topic management page.
 
 4. Click the **Ship to Ckafka** tab.
-5. Click **Edit* on the right to enable shipping to CKafka. Then, select the target CKafka instance and topic as well as the log field to be shipped.
+5. Click **Edit** on the right to enable shipping to CKafka. Then, select the target CKafka instance and topic as well as the log field to be shipped.
 
 6. Click **OK** to start shipping to CKafka. If the task status is **Enabled**, the feature is enabled successfully.
 >! To cleanse the log data before shipping to CKafka, see [Log Filtering and Distribution](https://intl.cloud.tencent.com/document/product/614/46135).
