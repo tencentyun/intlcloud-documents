@@ -80,7 +80,7 @@ We use licenses to manage access to different functional modules of the media SD
 - A UGSV license can activate the **UGSV and video playback** capabilities.
 - A video playback license can activate the **video playback** capability.
 
-You can **purchase licenses** to activate the corresponding capabilities. A purchased license is **valid for one year after you bind it to an application and expires at 00:00:00 the next day**. Alternatively, **if you buy packages, you will get a live stream publishing license or UGSV license for free**. Such licenses are **valid for one year after you purchase the packages (expire at 00:00:00 the next day)**.
+**if you buy packages, you will get a live stream publishing license or UGSV license for free**. Such licenses are **valid for one year after you purchase the packages (expire at 00:00:00 the next day)**.
 
 >! The video playback license was introduced in the 10.1 version of the media SDKs (launched at the end of May 2022).
 
@@ -231,8 +231,7 @@ In v10.1 and later versions, you can activate the **video playback** capability 
 - Each Tencent Cloud account can **apply for one live stream publishing license, one UGSV license, and one video playback license for free** to try out the corresponding capabilities. A trial license is valid for 14 days. You can extend the validity by another 14 days in the console (28 days in total).
 - A license can be bound to a new application or replace an existing license. After replacement, the expiration time of the new license will apply. The original license will be automatically unbound from the application. Its validity period will not change.
 - About validity:
-  - If you purchase a package, the license you get will be valid for one year **from the time of purchase** (expire on 00:00:00 the next day), regardless of whether you have used up the package. For renewal, bind a new package to your application.
-  - After you purchase a license, the license will be inactive until you bind it to an application. A purchased license is valid for one year **after you bind it to an application** (expires at 00:00:00 the next day).
+   - After you purchase a license, the license will be inactive until you bind it to an application. A purchased license is valid for one year **after you bind it to an application** (expires at 00:00:00 the next day).
 - **Each license can be bound to one iOS bundle ID and one Android package name, regardless of whether you use it in the development or production environment.** If you want to use the media SDKs with more than one application, you need to purchase multiple licenses.
 
 - **A purchased license is not refundable after it’s bound to an application.**
