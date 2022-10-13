@@ -228,7 +228,7 @@ In v10.1 and later versions, you can activate the **video playback** capability 
 
 #### Billing details
 
-- Each Tencent Cloud account can **apply for one live stream publishing license, one UGSV license, and one video playback license for free** to try out the corresponding capabilities. A trial license is valid for 14 days. You can extend the validity by another 14 days in the console (28 days in total).
+- Each Tencent Cloud account can **apply for one live stream publishing license, one UGSV license, and one video playback license for free** to try out the corresponding capabilities. You can use a trial license for at most 28 days.
 - A license can be bound to a new application or replace an existing license. After replacement, the expiration time of the new license will apply. The original license will be automatically unbound from the application. Its validity period will not change.
 - About validity:
    - After you purchase a license, the license will be inactive until you bind it to an application. A purchased license is valid for one year **after you bind it to an application** (expires at 00:00:00 the next day).
