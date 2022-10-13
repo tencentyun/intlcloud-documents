@@ -4,7 +4,7 @@
 
 ## 架构图
 
-![](https://main.qcloudimg.com/raw/d7381cb5aba6a79fcb7084fef24b4dd4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b124df606471ac7dfda84058f1cb832f.jpg)
 
 ## 使用环境
 
@@ -156,7 +156,7 @@ JS-SDK 初始化完成后会自动在挂载节点下面插入一个 iframe。
 不使用 Token 时，默认使用文档的签名有效期鉴权，过期则无法预览文件。
 使用 Token 鉴权可以在预览期间持续进行 Token 鉴权和 Token 续期，由业务侧自主控制预览授权。
 
-![](https://main.qcloudimg.com/raw/bb97fce11cdf2991683ab5fbc5d46ec7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9a038f23c4c06016313f10450663c88c.jpg)
 
 Token 鉴权分为三个步骤：
 
