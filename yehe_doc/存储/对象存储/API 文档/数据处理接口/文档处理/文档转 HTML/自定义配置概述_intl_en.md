@@ -2,9 +2,9 @@
 
 By using the JS-SDK, you can customize capabilities such as UI, page status, and event listener to deliver a better webpage experience.
 
-## 架构图
+## Architecture diagram
 
-![](https://main.qcloudimg.com/raw/d7381cb5aba6a79fcb7084fef24b4dd4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b124df606471ac7dfda84058f1cb832f.jpg)
 
 ## Operating Environment
 
@@ -156,7 +156,7 @@ After initialization is completed, the JS-SDK will automatically insert an ifram
 If no token is used, the signature validity period will be used for authentication by default. Once the signature expires, the file cannot be previewed.
 If a token is used for authentication, token authentication and refresh can be performed continuously during preview, and you can control the preview authorization on your own.
 
-![](https://main.qcloudimg.com/raw/bb97fce11cdf2991683ab5fbc5d46ec7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9a038f23c4c06016313f10450663c88c.jpg)
 
 Token authentication consists of the following three steps:
 
