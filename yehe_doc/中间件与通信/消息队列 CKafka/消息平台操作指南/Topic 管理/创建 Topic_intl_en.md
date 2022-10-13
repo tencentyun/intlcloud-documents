@@ -67,7 +67,7 @@ The parameters are as detailed below:
     <tr>
         <td style='text-align:left;'>segment.ms</td>
         <td style='text-align:left;'>-</td>
-        <td style='text-align:left;'>5mins–90 days</td>
+        <td style='text-align:left;'>5 mins–90 days</td>
         <td style='text-align:left;'>The segment shard rolling duration in ms. Minimum value: 86,400,000 ms.</td>
     </tr>
     <tr>
