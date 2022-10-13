@@ -1,10 +1,10 @@
 
 ## Overview
-EKS supports global configuration through ConfigMaps. In scenarios of automatic TKE super node scaling and a pure EKS cluster, if you need to batch set annotations for each super node or Pod, configuration at the super node or Pod level will be complicated and is highly intrusive to the business YAML file. Therefore, EKS offers global configuration capabilities to allow you to perform global configuration through ConfigMaps, so as to add annotations to each Pod in the cluster.
+TKE Serverless cluster supports global configuration through ConfigMaps. In scenarios of automatic TKE super node scaling and a pure TKE Serverless cluster, if you need to batch set annotations for each super node or Pod, configuration at the super node or Pod level will be complicated and is highly intrusive to the business YAML file. Therefore, TKE Serverless cluster offers global configuration capabilities to allow you to perform global configuration through ConfigMaps, so as to add Annotations to each Pod in the cluster.
 
 ## Directions
 1. Create the `eks-config` ConfigMap under `kube-system`.
-2. Set the parameters to make it take effect for all EKS Pods.
+2. Set the parameters to make it take effect for all TKE Serverless cluster Pods.
 Below is the global configuration:
 ```yaml
 apiVersion: v1
