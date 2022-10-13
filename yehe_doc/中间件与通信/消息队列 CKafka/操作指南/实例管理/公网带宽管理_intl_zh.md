@@ -29,7 +29,7 @@ CKafka 专业版实例支持升配公网带宽，若您有更高的带宽需求�
 ### 升配公网带宽
 
 <dx-alert infotype="explain" title="">
-当前公网带宽不支持在控制台降配，请您谨慎购买。如确有降配诉求，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
+当前公网带宽不支持在控制台降配，请您谨慎购买。如确有降配诉求，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询。
 </dx-alert> 
 
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
