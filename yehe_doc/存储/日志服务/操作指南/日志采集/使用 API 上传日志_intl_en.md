@@ -174,7 +174,7 @@ This sample describes how to use the protoc compiler to compile the PB descripti
 
 > ?Currently, protoc supports compilation in multiple programming languages such as Java, C++, and Python. For more information, see [protoc](https://github.com/protocolbuffers/protobuf).
 
-####. 1. Install Protocol Buffer
+#### 1. Install Protocol Buffer
 
 Download [Protocol Buffer](https://main.qcloudimg.com/raw/d7810aaf8b3073fbbc9d4049c21532aa/protobuf-2.6.1.tar.gz), then decompress and install it. This document uses protobuf 2.6.1 running on CentOS 7.3 as an example.
 Run the following command to decompress the `protobuf-2.6.1.tar.gz` package to `/usr/local` and access this directory:
