@@ -35,7 +35,7 @@ The data deleted during the termination of the cloud disk is inaccessible to any
 
 ### Manually terminating unexpired cloud disks in the console
 If you no longer need a monthly subscribed cloud disk, you can terminate it manually. Once the status of the cloud disk becomes **To be repossessed**, no fees will be incurred. **The cloud disk is disabled (the cloud disk becomes unavailable, but data is retained) and kept in the recycle bin for seven days. You can recover the cloud disk and continue to use it after you [renew](https://intl.cloud.tencent.com/document/product/362/36874) it. The cloud disk will be automatically terminated if you don't renew it within seven days. You can also permanently terminate the cloud disk in the recycle bin.**
-Each entity can return one monthly subscribed cloud disk within five days unconditionally. Each account can return 199 monthly subscribed cloud disks every year. For more information, see [Refund](https://intl.cloud.tencent.com/document/product/362/36875). When you hit the return limit, you will not be able to manually terminate monthly subscribed cloud disks.
+Each entity can return one monthly subscribed cloud disk within five days unconditionally. Each account can return 199 monthly subscribed cloud disks every year. For more information, see Refund. When you hit the return limit, you will not be able to manually terminate monthly subscribed cloud disks.
 
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
 2. Terminate cloud disks as instructed below:
@@ -44,7 +44,7 @@ Each entity can return one monthly subscribed cloud disk within five days uncond
 <dx-alert infotype="notice" title="">
 When the cloud disk is terminated, all its data will be deleted and cannot be restored. Terminated cloud disks cannot be recovered. Proceed with caution.
 </dx-alert>
-3. In the **Terminate Cloud Disk** pop-up window, select **I have read and agree to [Refund Policy](https://intl.cloud.tencent.com/document/product/362/36875)** and click **OK**.
+3. In the **Terminate Cloud Disk** pop-up window, select **I have read and agree to Refund Policy** and click **OK**.
  The system will stop billing, disable the target cloud disk (the cloud disk will be unavailable, but data is retained), and move it to the recycle bin.
 
 
