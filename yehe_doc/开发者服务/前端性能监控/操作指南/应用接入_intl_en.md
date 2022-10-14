@@ -1,4 +1,4 @@
-RUM can be connected to web, mini program (WeChat and QQ), Hippy, Weex, React Native, and Flutter applications. This document describes how to connect an application.
+RUM can be connected to web, mini program (WeChat and QQ), Hippy, Weex, React Native, Flutter and Cocos applications. This document describes how to connect an application.
 
 ## Directions
 1. Log in to the [RUM console](https://console.cloud.tencent.com/rum).
@@ -32,7 +32,7 @@ RUM can be connected to web, mini program (WeChat and QQ), Hippy, Weex, React Na
  Application Type
 </td>
 <td>
- RUM can be connected to web, mini program (WeChat and QQ), Hippy, Weex, React Native, and Flutter applications.
+ RUM can be connected to web, mini program (WeChat and QQ), Hippy, Weex, React Native, Flutter and Cocos applications.
 </td>
 </tr>
 <tr>
@@ -48,7 +48,7 @@ RUM can be connected to web, mini program (WeChat and QQ), Hippy, Weex, React Na
  Business System
 </td>
 <td>
- This feature is used to manage your connected applications by category. For example, you can categorize your applications by conditions such as development team, business logic, and application type. If you have no available teams, click <b>Create</b> on the right, enter the relevant information, and click <b>OK</b> to create one.
+ This feature is used to manage your connected applications by category. For example, you can categorize your applications by conditions such as development team, business logic, and application type. If you have no available teams, click Create on the right, enter the relevant information, and click <b>OK</b> to create one.
 </td>
 </tr>
 </table>
