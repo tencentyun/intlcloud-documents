@@ -8,7 +8,7 @@ This document describes how to use the business system feature. You can use busi
 2. On the left sidebar, click **Application Management** > **Business System**.
 3. On the business system page, click **Create Business System**.
 4. In the pop-up window, enter the business name and indicate your consent to the agreement.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/813590426aa7ba6ea37c3f31f88f6c23.png" style="width: 80%"> 
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/f0329279c57e28b919bfe4f323068d2e.png" style="width: 80%"> 
 
 
 ### Editing business system
