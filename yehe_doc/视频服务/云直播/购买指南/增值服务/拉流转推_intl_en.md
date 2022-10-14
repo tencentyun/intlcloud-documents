@@ -1,7 +1,7 @@
 The relaying service allows you to quickly pull content from existing videos or live streams and push it to the destination address. The two billable items for the relaying service are [relay task duration](#time) and [third-party relaying bandwidth](#third_part).
 
-## Notes
-- The relaying service **has become a paid service since 00:00 (UTC+8) on July 1, 2021**. Relaying tasks executed after July 1, 2021 will incur relaying fees, regardless of when the tasks are created.
+## Supports and Limits
+- The relaying service **has become a paid service since 00:00 (UTC+8) on July 1, 2021**. Relaying tasks executed after July 1, 2021 will incur relaying fees, regardless of when the tasks were created.
 - Pulling data from an existing source will incur playback/download fees. If you pull from Tencent Cloud CSS, VOD, or COS, the billing rules of the corresponding product will apply.
 
 [](id:time)
@@ -26,7 +26,7 @@ A relay task is billed by duration.
 ## Third-Party Relaying Bandwidth
 >! 
 >- Relaying to a CSS URL of the current account (the account that created the relay task) will not incur relaying bandwidth fees.
->- Relaying to an address that is not a CSS URL of the current account will incur third-party relay fees.
+>- Relaying to a non-CSS address will incur third-party relay fees.
 
 ### Pricing
 Third-party relaying fees are based on the highest bandwidth (Mbps) used for relaying in each billing period. The price varies depending on the region to which your streams are relayed. If you relay to multiple regions in a billing period, fees will be charged separately based on the peak bandwidth usage in each region.
