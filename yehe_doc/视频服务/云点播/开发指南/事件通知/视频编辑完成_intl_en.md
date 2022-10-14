@@ -48,7 +48,7 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
 
 
 ### Reliable callback
-If you choose the reliable callback mode, after the [PullEvents](/document/product/266/33433) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
+If you choose the reliable callback mode, after the [PullEvents](https://www.tencentcloud.com/document/product/266/34183) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
 
 ```json
 {
