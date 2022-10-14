@@ -1,7 +1,7 @@
 This document describes how to use DTS or PostgreSQL logical backups to restore data backup files to a TencentDB for PostgreSQL instance.
 
 ## DTS
-For detailed data migration solutions, see [Migration from PostgreSQL to TencentDB for PostgreSQL](https://intl.cloud.tencent.com/document/product/571/42640). Currently, you can migrate many types of PostgreSQL databases to TencentDB for PostgreSQL.
+For detailed data migration solutions, see [Migrating Data with DTS](https://www.tencentcloud.com/document/product/409/49792). Currently, you can migrate many types of PostgreSQL databases to TencentDB for PostgreSQL.
 
 ## Data Import/Export
 ### Step 1. Prepare a TencentDB for PostgreSQL instance
