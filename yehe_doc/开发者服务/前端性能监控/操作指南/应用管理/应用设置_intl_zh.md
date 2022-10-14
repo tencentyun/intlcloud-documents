@@ -16,5 +16,5 @@
 ### 上报数据量统计
 
 在应用设置列表中，您可以单击操作列中的**上报统计**，查看各应用上报量变化趋势和上报请求总量。当数据量过大时可做相应的处理，避免上报量过高产生不必要的上报流量费用。
-![](https://qcloudimg.tencent-cloud.cn/raw/02751be95ee8d0ddbea38787c77ae2ef.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0524cba6f20f5837362cdcb02c306da8.png)
 
