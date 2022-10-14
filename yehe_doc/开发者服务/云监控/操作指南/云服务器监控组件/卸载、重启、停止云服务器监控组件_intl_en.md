@@ -83,7 +83,7 @@ cd /usr/local/qcloud/monitor/barad/admin
 ```plaintext
 ./stop.sh
 ```
-<dx-alert infotype="notice" title="">
+<dx-alert infotype="explain" title=""> 
 After the command is successfully executed, the service will not be started automatically, and the monitoring data will be lost. To restart the service, both these two Agent services need to be restarted.
 </dx-alert>
 :::
