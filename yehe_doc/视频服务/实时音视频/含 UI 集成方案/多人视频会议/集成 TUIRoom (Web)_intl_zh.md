@@ -337,6 +337,22 @@ npm run serve
 
 3. 体验 TUIRoom 组件功能
 
+### 步骤六：生产环境部署
+
+1. 打包 dist 文件
+
+```bash
+npm run build
+```
+
+>? 实际打包命令请查看 package.json 文件。
+
+2. 部署 dist 文件到服务器上
+
+>! 生产环境要求使用 HTTPS 域名：
+[img](https://qcloudimg.tencent-cloud.cn/raw/53efdc1d1692a21946cb6c94ddea40e5.png)
+
+
 ## 附录：TUIRoom API
 ### TUIRoom 接口
 #### init
