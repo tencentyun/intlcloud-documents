@@ -4,6 +4,7 @@
 >!
 >- 如需通过子账号访问存储桶，您需要先通过主账号对子账号进行授权，以便子账号能够访问存储桶列表，操作步骤请参见 [子账号访问存储桶列表](https://intl.cloud.tencent.com/document/product/436/17061)。
 >- List Bucket 不受存储桶权限分配限制，子账号无法被限定只查询某些特定存储桶。
+>
 
 ## 通过存储桶名称或标签查询
 
@@ -13,4 +14,5 @@
 ![](https://main.qcloudimg.com/raw/996e6b4bc238147c2b25ecdb93fe5fe4.png)
  - 按照**标签**查询：若您已为存储桶设置了标签（详见 [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)），您也可以在**存储桶列表**页面右上角的搜索区，选择按**标签**查询，可输入**标签键**进行查询。如下图所示：
 ![](https://main.qcloudimg.com/raw/3b76e01ba61a1d1904d92b459967a50a.png)
+
 
