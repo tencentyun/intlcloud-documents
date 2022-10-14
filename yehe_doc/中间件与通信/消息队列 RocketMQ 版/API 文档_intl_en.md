@@ -41,17 +41,17 @@ width: 300px;
 | [DeleteRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44105) | Deletes RocketMQ consumer group |
 | [DescribeRocketMQGroups](https://intl.cloud.tencent.com/document/api/1110/44101) | Gets the list of RocketMQ consumer groups |
 | [CreateRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44109) | Creates RocketMQ consumer group |
-| [ResetRocketMQConsumerOffSet](https://intl.cloud.tencent.com/document/product/1110/46786) | Resets RocketMQ consumption offset
+| [ResetRocketMQConsumerOffSet](https://intl.cloud.tencent.com/document/api/1110/46786) | Resets RocketMQ consumption offset
 
 ## Role APIs
 
 | API | Description |
 | :----------------------------------------------------------- | :--------------- |
-| [CreateRole](https://intl.cloud.tencent.com/document/product/1110/44139) | Creates role |
-| [ModifyRole](https://intl.cloud.tencent.com/document/product/1110/44134) | Modifies role |
-| [DescribeRoles](https://intl.cloud.tencent.com/document/product/1110/44136) | Modifies environment role |
-| [CreateRocketMQGroup](https://intl.cloud.tencent.com/document/product/1110/44109) | Gets the list of roles |
-| [DeleteEnvironmentRoles](https://intl.cloud.tencent.com/document/product/1110/44138) | Deletes environment role |
-| [CreateEnvironmentRole](https://intl.cloud.tencent.com/document/product/1110/44140) | Creates environment role |
-| [DeleteRoles](https://intl.cloud.tencent.com/document/product/1110/44137) | Deletes role |
+| [CreateRole](https://intl.cloud.tencent.com/document/api/1110/44139) | Creates role |
+| [ModifyRole](https://intl.cloud.tencent.com/document/api/1110/44134) | Modifies role |
+| [DescribeRoles](https://intl.cloud.tencent.com/document/api/1110/44136) | Modifies environment role |
+| [CreateRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44109) | Gets the list of roles |
+| [DeleteEnvironmentRoles](https://intl.cloud.tencent.com/document/api/1110/44138) | Deletes environment role |
+| [CreateEnvironmentRole](https://intl.cloud.tencent.com/document/api/1110/44140) | Creates environment role |
+| [DeleteRoles](https://intl.cloud.tencent.com/document/api/1110/44137) | Deletes role |
 
