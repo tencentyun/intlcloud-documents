@@ -1,11 +1,11 @@
 ### 如何设置访问对象时直接显示，而不需要下载?
 
-绑定用户自有域名（如需购买域名，可通过腾讯云注册域名并开启静态网站功能即可。详情参考 [设置静态网站](https://intl.cloud.tencent.com/document/product/436/14984)。
+绑定用户自有域名（如需购买域名，可通过腾讯云 [注册域名](https://dnspod.cloud.tencent.com/?from=qcloudHpHeaderDnspod&fromSource=qcloudHpHeaderDnspod)）并开启静态网站功能即可。详情参考 [设置静态网站](https://intl.cloud.tencent.com/document/product/436/14984)。
 
 ### 在 COS 控制台设置自定义域名失败，如何处理？
 
 1. 确认域名已备案。
-2. 确认域名的 DNS 解析正确（在关闭 CDN 加速情况下，需要预先在 DNS 解析控制台将域名 CNAME 到存储桶的 [默认域名](https://intl.cloud.tencent.com/document/product/436/18424)。
+2. 确认域名的 DNS 解析正确（在关闭 CDN 加速情况下，需要预先在 DNS 解析控制台将域名 CNAME 到存储桶的 [默认域名](https://intl.cloud.tencent.com/document/product/436/18424)）。
 
 ### 开启了静态网站功能，但是仍无法显示图片？
 
@@ -14,8 +14,8 @@
 
 ### 用户绑定自有域名时，开启 CDN 加速和关闭 CDN 加速的区别？
 
-- **开启 CDN 加速：**域名由 CDN 管理，在 COS 控制台开启 CDN 加速与在 [CDN 控制台](https://console.cloud.tencent.com/cdn) 添加域名（源站选择 COS），是一样的效果。用户在解析域名时，需要使用 CDN 分配的 CNAME 记录。配置时，先添加域名，再解析域名即可。
-- **关闭 CDN 加速：**域名由 COS 管理，域名配置会下发到对应存储桶所属地域的所有下载接入机器上。用户在解析域名时，需要使用存储桶的默认域名作为 CNAME 记录。
+- **开启 CDN 加速：**域名由 CDN 管理，在 COS 控制台开启 CDN 加速与在 [CDN 控制台](https://console.cloud.tencent.com/cdn) 添加域名（源站选择 COS），是一样的效果。用户在解析域名时，需要使用 CDN 分配的 CNAME 记录。配置时，先添加域名，再解析域名即可，解析域名可参见快速添加域名解析。
+- **关闭 CDN 加速：**域名由 COS 管理，域名配置会下发到对应存储桶所属地域的所有下载接入机器上。用户在解析域名时，需要使用存储桶的默认域名作为 CNAME 记录。配置时，需要先解析域名，再添加自定义域名。
 
 ### 为什么设置了对象的自定义头部 Content-Disposition 后仍然不生效？
 
@@ -49,7 +49,7 @@
 </table>
 4. 确认以上配置无误后，请确认您访问 CDN 加速域名使用的协议和静态网站的 **强制 HTTPS** 配置：
  - 当您访问 CDN 加速域名使用的是 HTTP 协议，**请勿开启强制 HTTPS** 选项。
- - 当您访问 CDN 加速域名使用的是 HTTPS 协议，建议对 CDN 加速域名配置 **开启回源跟随301/302**。参考文档：[回源跟随301/302配置](https://intl.cloud.tencent.com/zh/document/product/228/7183)。
+ - 当您访问 CDN 加速域名使用的是 HTTPS 协议，建议对 CDN 加速域名配置 **开启回源跟随301/302**。详情请参见 [回源跟随301/302配置](https://intl.cloud.tencent.com/document/product/228/7183)。
 5. 如果按照以上步骤排查后，仍无法解决问题，您可以 [联系我们](https://intl.cloud.tencent.com/contact-sales)，进行进一步的问题排查。
 
 ### 静态网站功能配合前端 Vue 框架一起使用，当路由设置为 History 模式，刷新页面遇到404问题怎么办？

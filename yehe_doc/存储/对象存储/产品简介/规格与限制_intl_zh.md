@@ -8,8 +8,10 @@
         <td>QPS</td>
     			<td>限制</td>
     			<td><ul  style="margin: 0;"><li>读写类请求：中国大陆公有云地域默认每个存储桶独享30000QPS，其他地域默认每个存储桶独享3000QPS。</li>
-					<li> List 类请求：所有地域默认1200QPS。</li>
-					<li>数据取回请求：所有地域默认100QPS。
+					<li> List 类请求：所有地域默认1000QPS。</li>
+					<li>数据取回请求：所有地域默认100QPS。</li>
+					<li>单文件上传/删除/List 热点频控：50QPS。</li>
+					<li>单文件下载热点频控：1000QPS。
 <br>如需更高 QPS，请参见 <a href="https://intl.cloud.tencent.com/document/product/436/13653">请求速率与性能优化</a>。</li></ul></td>
     </tr>
 		    <tr>
@@ -20,27 +22,26 @@
     	 <tr>
         <td rowspan="5">存储类型</td>
     			<td>标准存储限制</td>
-    			<td>计费限制：<br>存储时间、存储单元无限制。<br>标准存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
+    			<td>计费限制：<br>存储时间、存储单元无限制。<br>标准存储具体定价，请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">产品定价</a>。</td>
     </tr>
     	 <tr>
         <td>低频存储限制</td>
     			<td>计费限制：<ul  style="margin: 0;"><li>存储时间不足30天，按30天计算。</li>
-					<li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>低频存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</li></ul></td>
+					<li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>低频存储具体定价，请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">产品定价</a>。</li></ul></td>
     </tr>
     	 <tr>
         <td>智能分层存储限制</td>
-    			<td>计费限制：<ul  style="margin: 0;"><li>存储时间不足30天，按30天计算。</li>
-					<li>小于64KB的对象会持续存储在高频访问层。单个存储文件不论大小，均按实际数据大小计算。<br>智能分层存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
+    			<td>计费限制：<br>小于64KB的对象会持续存储在高频访问层。单个存储文件不论大小，均按实际数据大小计算。<br>智能分层存储具体定价，请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">产品定价</a>。</td>
     </tr>
     	 <tr>
         <td>归档存储限制</td>
     			<td>计费限制：<ul  style="margin: 0;"><li>存储时间不足90天，按90天计算。</li>
-					<li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>归档存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</li></ul></td>
+					<li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>归档存储具体定价，请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">产品定价</a>。</li></ul></td>
     </tr>
     	 <tr>
         <td>深度归档存储限制</td>
     			<td>计费限制：<ul  style="margin: 0;"><li>存储时间不足180天，按180天计算。</li>
-					<li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>深度归档存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</li></ul></td>
+					<li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>深度归档存储具体定价，请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">产品定价</a>。</li></ul></td>
     </tr>
      <tr>
         <td rowspan="4">存储桶</td>
@@ -79,7 +80,7 @@
     		<tr>
     			<td >复制</td>
     			<td ><ul  style="margin: 0;"><li>支持单个账号在相同地域或跨地域进行对象复制。</li>
-					<li> 同地域进行对象复制免费，跨地域进行对象复制会产生流量费用，详情请参见 <a href="https://buy.cloud.tencent.com/price/cos">费用说明</a> 中流量费用信息。 </li>
+					<li> 同地域进行对象复制免费，跨地域进行对象复制会产生流量费用，详情请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">费用说明</a> 中流量费用信息。 </li>
 					<li>复制接口规格：
 						<ul  style="margin: 0;"><li>简单复制：复制单个对象最大5GB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14117">简单复制</a>。</li>
 						<li>大于5GB 必须用分块复制，复制单个对象最大48.82TB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14118">分块复制</a>。</li></ul>
@@ -106,7 +107,7 @@
     		</tr>
     		<tr>
     			<td >存储类型转化</td>
-    			<td >标准转低频：最小1天。<br>标准/低频转归档或深度归档：最小1天。</td>
+    			<td >标准转低频：最小1天。<br>标准/低频转归档或深度归档：最小1天。<br>注意：<br>1. 生命周期不会对小于64KB的对象执行转换操作。</td>
     		</tr>
     		 <tr>
     			<td >过期删除</td>
@@ -115,5 +116,11 @@
     		<tr>
     			<td colspan="2">SDK 种类</td>
     			<td >12种：Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK。</td>
-    </tr>
+    		</tr>        
+    		<tr>
+    			<td colspan="2">API 保留字段</td>
+    			<td >API 文档中涉及的接口参数均为 COS 保留字段，包括以下参数：<br>acl、uploads、policy、cors、delete、versions、location、referer、lifecycle、versioning、notification、replication、website、logging、tagging、accelerate、domain、inventory、origin、object-lock、live、encryption、intelligenttiering、symlink 等。</br></td>
+    		</tr>
 </table>
+
+

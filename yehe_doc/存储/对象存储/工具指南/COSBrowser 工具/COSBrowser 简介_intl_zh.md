@@ -1,7 +1,7 @@
-COSBrowser 是腾讯云对象存储 COS 推出的可视化界面工具，让您可以使用更简单的交互轻松实现对 COS 资源的查看、传输和管理。目前 COSBrowser 有桌面端和移动端两种，详情可参见：
+COSBrowser 是腾讯云对象存储 COS 推出的可视化界面工具，让您可以使用更简单的交互轻松实现对 COS 资源的查看、传输和管理。若迁移数据，或批量上传数据，请使用 [迁移服务平台（Migration Service Platform，MSP）](https://www.tencentcloud.com/products/msp)。目前 COSBrowser 有桌面端和移动端两种，详情可参见：
 
 - [桌面端使用说明](https://intl.cloud.tencent.com/document/product/436/32565)
-- [移动端使用说明](https://intl.cloud.tencent.com/document/product/436/32566)
+- [移动端使用说明](https://intl.cloud.tencent.com/document/product/436/41616)
 
 ## 下载地址
 
@@ -69,8 +69,8 @@ COSBrowser 桌面端支持以下功能：
 | [权限管理](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 支持修改存储桶、对象的相关权限                               |
 | [设置版本控制](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 支持开启、暂停存储桶版本控制                                 |
 | [添加访问路径](https://intl.cloud.tencent.com/document/product/436/32565#addaccess) | 支持添加访问路径                                             |
-| [上传文件/文件夹](https://intl.cloud.tencent.com/document/product/436/32565#upload) | 支持单个上传、批量上传、增量上传文件或文件夹至存储桶         |
-| [下载文件/文件夹 ](https://intl.cloud.tencent.com/document/product/436/32565#download) | 支持单个下载、批量下载、增量下载文件或文件夹至本地           |
+| [上传文件/文件夹](https://intl.cloud.tencent.com/document/product/436/32565#upload) | 支持单个上传、批量上传、增量上传文件或文件夹至存储桶<br><br>注意：<br>1. 批量上传文件不要超过10万个<br>2. 不支持断点续传<br>3. 若迁移数据，或批量上传数据，请使用 [迁移服务平台 MSP](https://www.tencentcloud.com/products/msp)     |
+| [下载文件/文件夹 ](https://intl.cloud.tencent.com/document/product/436/32565#download) | 支持单个下载、批量下载、增量下载文件或文件夹至本地 <br><br>注意：<br>1. 批量下载文件不要超过10万个<br>2. 不支持断点续传          |
 | [删除文件/文件夹](https://intl.cloud.tencent.com/document/product/436/32565#delete) | 支持单个删除、批量删除存储桶中的文件或文件夹                 |
 | [文件同步](https://intl.cloud.tencent.com/document/product/436/32565#synchronization) | 支持将本地文件实时同步至存储桶中                             |
 | [复制粘贴文件](https://intl.cloud.tencent.com/document/product/436/32565#copy) | 支持单个复制、批量复制一个目录下的文件或文件夹至另一个目录   |
@@ -98,7 +98,7 @@ COSBrowser 桌面端支持以下功能：
 
 ## 移动端功能列表
 
-COSBrowser 移动端注重对资源的查看及监控，用户可以随时随地监控 COS 的存储量、流量等数据。关于 COSBrowser 移动端所支持的功能，请参见 [移动端功能列表](https://intl.cloud.tencent.com/document/product/436/32566)。
+COSBrowser 移动端注重对资源的查看及监控，用户可以随时随地监控 COS 的存储量、流量等数据。关于 COSBrowser 移动端所支持的功能，请参见 [移动端功能列表](https://intl.cloud.tencent.com/document/product/436/41616)。
 
 ## 更新日志
 
