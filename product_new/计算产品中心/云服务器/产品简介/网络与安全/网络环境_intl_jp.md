@@ -1,47 +1,44 @@
-Tencent Cloudのネット環境は、[Virtual Private Cloud](https://intl.cloud.tencent.com/product/vpc?idx=2)（VPC）と基幹ネットワークの二種類に分けられます。
+Tencent Cloudでは、「[Virtual Private Cloud](https://intl.cloud.tencent.com/product/vpc?idx=2)（VPC）」と「Classic Network」の2つのネットワーク環境をご提供します。
 
 
 
-## VPCと基幹ネットワーク
+## Virtual Private CloudとClassic Network
 
 ### VPC
 
-Tencent Cloud[VPC](https://intl.cloud.tencent.com/document/product/215) は、ユーザーがTencent Cloudにおいてカスタマイズしたロジック的に隔離されているネットワークスペースです。同じ地域にあっても、異なるVPCの間はデフォルトで相互通信できません。ユーザーがデータセンターにおいて使用している従来のネットワークに類似し、Tencent Cloud VPCにホスティングされるのは、 [Cloud Virtual Machine](https://intl.cloud.tencent.com/document/product/213/495)、[Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214/524)、[クラウドデータベース](https://intl.cloud.tencent.com/document/product/236) などのクラウドサービスを含む、ユーザーが保有しているTencent Cloudのサービスリソースです。ユーザーは、VPCの環境を完全に把握できます、構成とユースケースの詳細については、[VPC製品の概要](https://intl.cloud.tencent.com/document/product/215/535)をご参照ください。VPCは複雑なネットワークアーキテクチャを構築できるため、ネットワーク管理に慣れているユーザーに適しています。
+Tencent Cloud[VPC](https://intl.cloud.tencent.com/document/product/215) は、Tencent Cloud上に定義した論理的に分離されたプライベート仮想ネットワーク空間です。同じリージョン内であっても異なるVPCはデフォルトでは相互に通信できません。データセンターで実行するレガシーネットワークと同様に、 [Cloud Virtual Machine](https://intl.cloud.tencent.com/document/product/213/495)、[Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214/524)、[TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236)  などのTencent Cloudリソースは、Tencent Cloud の VPC でホストされ、仮想ネットワーキング環境を完全に制御できます。構成とユースケースの詳細については、[VPC製品の概要](https://intl.cloud.tencent.com/document/product/215/535)をご参照ください。VPC は、より複雑なネットワーク アーキテクチャを構築するのに役立ち、ネットワーク管理に精通しているユーザーに適しています。
 ![](https://mc.qcloudimg.com/static/img/33f800da64d2b7c0e6c2f23f102e059a/image.png)
 
-### 基幹ネットワーク
+### Classic Network
 
-基幹ネットワークは、Tencent Cloudにおけるすべてのユーザーのパブリックネットワークリソースプールです。クラウドにおけるユーザーリソースはすべてTencent Cloudによって統一的に管理されるため、その管理は手軽かつ迅速です。
+Classic Networkは、すべてのTencent Cloudユーザー向けのパブリックネットワークリソースプールです。すべての Tencent Cloud リソースは、Tencent Cloud によって集中管理されます。
 
-### 機能の区別
+### Virtual Private CloudとClassic Networkの機能比較
 
-| **機能**| **基幹ネットワーク**| **VPC** |
+| **機能**| **Classic Network**| **VPC** |
 |---------|---------|---------|
-| テナント関連付け | テナント関連付け| GREに基づいてカプセル化したロジック的に隔離されたネットワークです |
+| テナントに関連付ける | テナントに関連付ける| GRE カプセル化に基づく論理的に分離されたネットワーク |
 | ネットワークのカスタマイズ | 未対応| 対応|
 | ルーティングのカスタマイズ | 未対応| 対応|
-| IPのカスタマイズ | 未対応| 対応|
-| 相互接続ルール |同一テナント、同一地域で相互接続します| クロスリージョン、クロスアカウントの相互接続に対応しています |
+| カスタム IP | 未対応| 対応|
+| 相互接続ルール |同じリージョン内の同じテナントは、相互接続されています| クロスリージョン、クロスアカウントでの相互接続がサポートされています|
 | セキュリティ制御　| [セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452)| [セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452) と [ネットワークACL](https://intl.cloud.tencent.com/document/product/215/5132) |
 
-## VPCと基幹ネットワーク間のリソース共有及びアクセス
+## Virtual Private CloudとClassic Network間のリソースの共有とアクセス
 
-Tencent Cloudにおける一部のクラウドソースと機能は両方のネット環境に対応し、異なるネットワークの間で共有、アクセスできます。
+一部のTencent Cloud リソースと機能は、Virtual Private CloudとClassic Networkの両方をサポートし、2 つの異なるネットワーク経由で共有またはアクセスできます。
 
 |**リソース**|**説明**|
 |--|--|
-|[イメージ](https://intl.cloud.tencent.com/document/product/213/4940)|イメージを使って、任意のネット環境においてCVMインスタンスを起動できます|
-|[Elastic IP](https://intl.cloud.tencent.com/document/product/213/5733)|Elastic IPは、任意のネット環境におけるCVMインスタンスをバインドできます|
-|インスタンス|基幹ネットワークのインスタンスとVPCのインスタンスは、 [パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224) または 基幹ネットワークの相互接続 で相互通信できます|
-|[SSHキー](https://intl.cloud.tencent.com/document/product/213/6092)|SSHキーは、任意のネット環境におけるCVMインスタンスにロードできます|
-|[セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452)|セキュリティグループは、任意のネット環境におけるCVMインスタンスにバインドできます|
+|[イメージ](https://intl.cloud.tencent.com/document/product/213/4940)|イメージを使用してあらゆるネットワーク環境で CVM インスタンスを起動できます|
+|[Elastic IP](https://intl.cloud.tencent.com/document/product/213/5733)|EIPは、あらゆるネットワーク環境でCVMインスタンスに関連付けることができます|
+|インスタンス|Virtual Private CloudとClassic Network内のインスタンスは、 [パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224) または[ClassicLink](https://intl.cloud.tencent.com/document/product/215/31807) を介して相互に通信できます|
+|[SSHキー](https://intl.cloud.tencent.com/document/product/213/6092)|SSH キーは、あらゆるネットワーク環境での CVM インスタンスの読み込みをサポートします|
+|[セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452)|セキュリティ グループは、あらゆるネットワーク環境下でCVMインスタンスに関連付けることができます|
 
-> [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) は基幹ネットワークとVPCの間で共有できません。ネットワークの相互接続が構築されていても、Cloud Load BalancerをVPCのインスタンスと基幹ネットワークのインスタンスに同時にバインドすることはできません。
+> [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) はClassic NetworkとVPCの間で共有できません。
+ネットワーク間の相互接続が構築されていても、Cloud Load BalancerをVirtual Private CloudとClassic Network内のインスタンスに同時に関連付けることはできません。
 
-## 基幹ネットワークからVPCへのインスタンスのマイグレーション
- 1. 基幹ネットワークのCVMインスタンスでは、[カスタムイメージを作成します](/doc/product/213/4942) 。
- 2. （オプション）基幹ネットワークのCVMインスタンスのデータディスクで、[スナップショットを作成します](/doc/product/362/5755) 。
- 3. [VPCとサブネットを作成します](/doc/product/215/4927#.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.BD.91.E7.BB.9C.E3.80.81.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AD.90.E7.BD.91.E5.92.8C.E8.B7.AF.E7.94.B1.E8.A1.A8) 。
- 4. VPC内で、[CVMインスタンスを購入して起動します](/doc/product/213/4855) 。
-
+## Classic Network内のインスタンスを VPCに移行する
+ [VPC への切り替え](https://intl.cloud.tencent.com/document/product/213/20278)を参照して、Classic Network内のインスタンスを VPC に移行してください。
 

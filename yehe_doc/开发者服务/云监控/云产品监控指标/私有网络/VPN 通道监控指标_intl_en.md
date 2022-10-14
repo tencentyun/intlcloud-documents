@@ -1,31 +1,33 @@
+
 ## Namespace
 
-Namespace=QCE/VPNX
+Namespace = QCE/VPNX
 
 ## Monitoring Metrics
 
-| Metric Name | Description | Unit | Dimension |
-| ------------ | ---------- | ------ | --------- |
-| Outbandwidth | Public network outbound bandwidth | Mbps | vpnConnId |
-| Inbandwidth | Public network inbound bandwidth | Mbps | vpnConnId |
-| Outpkg | Outbound packets | Packets/sec | vpnConnId |
-| Inpkg | Inbound packets | Packets/sec | vpnConnId |
-| Pkgdrop | Packet loss rate | % | vpnConnId |
-| Delay | Latency | Seconds | vpnConnId |
+| Parameter | Metric Name | Description | Unit | Dimension |
+| ------------ | ------------- | ----------------------- | ----- | --------- |
+| OutBandwidth | VPN tunnel outbound bandwidth | The average outbound traffic of the VPN tunnel per second   | Mbps  | vpnConnId |
+| InBandwidth  | VPN tunnel inbound bandwidth | The average inbound traffic of the VPN tunnel per second   | Mbps  | vpnConnId |
+| InPkg        | VPN tunnel inbound packets | The average number of inbound packets of the VPN tunnel per second   | Count/sec | vpnConnId |
+| OutPkg       | VPN tunnel outbound packets | The average number of outbound packets of the VPN tunnel per second   | Count/sec | vpnConnId |
+| PkgDrop      | VPN tunnel packet loss | The percentage of lost VPN detection packets per minute | %     | vpnConnId |
+| Delay        | VPN tunnel delay   | The average VPN detection delay per minute | ms    | vpnConnId |
 
-> The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the period supported by each metric.
+> ?Statistical periods (`period`) may vary by metric. You can get the statistical periods for different metrics by calling the [`DescribeBaseMetrics`](https://intl.cloud.tencent.com/document/product/248/33882) API.
 
 
-## Overview of the Parameters in Each Dimension
+## Dimensions and Parameters
 
-| Parameter Name | Dimension Name | Dimension Description | Format |
+| Parameter | Dimension | Description | Format |
 | ------------------------------ | --------- | -------------------- | ---------------------------------------- |
-| Instances.N.Dimensions.0.Name | vpnConnId | Dimension name of the VPN tunnel ID | Enter a string-type vpnConnId dimension name |
-| Instances.N.Dimensions.0.Value | vpnConnId | A specific VPN tunnel ID | Enter a specific VPN connection ID, such as vpnx-12345678 |
+| Instances.N.Dimensions.0.Name  | vpnConnId | Dimension name of the VPN tunnel ID | Enter a string-type dimension name: vpnConnId       |
+| Instances.N.Dimensions.0.Value | vpnConnId | Specific VPN tunnel ID       | Enter a specific VPN tunnel ID, such as `vpnx-12345678` |
 
 ## Input Parameters
 
-To query the monitoring data of a VPN tunnel in a VPC instance, use the following input parameters:
+**To query the monitoring data of a VPN tunnel in a VPC, use the following input parameters:**
 &Namespace=QCE/VPNX
 &Instances.N.Dimensions.0.Name=vpnConnId
-&Instances.N.Dimensions.0.Value=<VPN tunnel ID>
+&Instances.N.Dimensions.0.Value=VPN tunnel ID
+

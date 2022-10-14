@@ -4,7 +4,8 @@
 
 ## 操作步骤
 Linux 和 Windows 系统卸载、重启、停止云服务器监控组件步骤不一致，详情请参考下文。
-## Linux
+<dx-tabs>
+::: Linux
 ### 卸载监控组件
 #### 步骤一：卸载 BaradAgent
 1. 登录云服务器后，执行以下命令，进入 BaradAgent 安装目录。
@@ -81,22 +82,26 @@ cd /usr/local/qcloud/monitor/barad/admin
 ./stop.sh
 ```
 >?执行成功后不会自动拉起服务，监控监控数据会丢失，请谨慎操作，如需重新开启服务需开启两个组件服务。
-
-## Windows
-### 启动、重启、停止 BaradAgent 和 Sgagent
+:::
+::: Windows
+#### 启动、重启、停止 BaradAgent 和 Sgagent
 
 运行 services.msc , 进入服务管理，找到 BaradAgent 和 Sgagent。如下图，单击鼠标右键，在弹框中可以进行 BaradAgentSvc 和 StargateSvc 服务启动、重启和停止。
 
 ![](https://main.qcloudimg.com/raw/e2ce2a0574793e6273c26697725878d8.png)
 
-### 卸载 BaradAgent 和 Sgagent
-
-运行 cmd，执行如下命令，提示 “[SC] DeleteService 成功” 后，重启云服务器即可。
-
+#### 卸载 BaradAgent 和 Sgagent
+使用如下批处理来卸载：
+```plaintext
+cd "C:\Program Files\QCloud\Stargate\admin"
+uninstall.bat  
 ```
-sc.exe delete "BaradAgentSvc" 
-sc.exe delete "StargateSvc"
+```plaintext
+cd "C:\Program Files\QCloud\Monitor\Barad\admin"
+uninstall.bat
 ```
+:::
+</dx-tabs>
 
 
 
