@@ -32,7 +32,7 @@ Classic Networkは、すべてのTencent Cloudユーザー向けのパブリッ�
 |--|--|
 |[イメージ](https://intl.cloud.tencent.com/document/product/213/4940)|イメージを使用してあらゆるネットワーク環境で CVM インスタンスを起動できます|
 |[Elastic IP](https://intl.cloud.tencent.com/document/product/213/5733)|EIPは、あらゆるネットワーク環境でCVMインスタンスに関連付けることができます|
-|インスタンス|Virtual Private CloudとClassic Network内のインスタンスは、 [パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224) またはClassicLinkを介して相互に通信できます|
+|インスタンス|Virtual Private CloudとClassic Network内のインスタンスは、 [パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224) または[ClassicLink](https://intl.cloud.tencent.com/document/product/215/31807) を介して相互に通信できます|
 |[SSHキー](https://intl.cloud.tencent.com/document/product/213/6092)|SSH キーは、あらゆるネットワーク環境での CVM インスタンスの読み込みをサポートします|
 |[セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452)|セキュリティ グループは、あらゆるネットワーク環境下でCVMインスタンスに関連付けることができます|
 
