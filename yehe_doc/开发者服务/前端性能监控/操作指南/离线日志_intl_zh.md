@@ -18,14 +18,14 @@ new Aegis({
 2. 登录 [前端性能监控控制台](https://console.cloud.tencent.com/rum)。
 3. 在菜单栏左侧单击**离线日志**，进入离线日志页面。
 4. 开发者需要对用户进行监听，当用户下次进入页面的时候，就会将存储在本地的离线日志批量上报到服务端。
-![](https://main.qcloudimg.com/raw/0d773e49207787745012bba1239204c6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a518f485ae5b8ecb113df7ee90844f8f.png)
 5. 获取用户的上报信息后，开发者就可以搜索相关的日志了。
-![](https://main.qcloudimg.com/raw/c4b86e82c2d2c15daa00c494209b8a9e.png)
+
 
 
 ### 字段
 勾选离线日志列表需要展示的字段。
-![](https://main.qcloudimg.com/raw/e62d2d41bfe72a289e8c2c5b20df340a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ee973bf0d913847bb183771f11d4db60.png)
 
 ### 高级搜索
 - 支持筛选项目、日志类型、时间等筛选。
