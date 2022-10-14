@@ -34,7 +34,7 @@ dependencies {
 :::  jar
 defaultConfig {
 	ndk {
-		abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+		abiFilters "armeabi-v7a", "arm64-v8a"
 	}
 }
 ::: 
@@ -52,7 +52,7 @@ If you have problem accessing Maven Central, you can manually download the SDK a
 4. Add the LiteAVSDK dependency and, in `app/build.gradle`, add code that references the AAR file.
     ![](https://qcloudimg.tencent-cloud.cn/raw/42925cca8ba7a670b1274a89abfdfb21.png)
 ```
-implementation(name:'LiteAVSDK_Professional_8.7.10102', ext:'aar')
+implementation(name:'LiteAVSDK_Professional_10.7.0.13038', ext:'aar')
 ```
 5. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application. Currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a.
 ```
