@@ -6,7 +6,7 @@ CLS can ship data in a log topic to COS to meet the needs in the following scena
 
 ## Billing Description
 
-Log shipping generates private network read traffic fees (cross-region shipping is not supported for now), and CLS will charge fees based on the compression format (Snappy/GZIP/lzop). If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable. As the read traffic price is 0.18 CNY/GB, the fees will be 50 GB * 0.18 CNY/GB = 9 CNY.
+Log shipping generates private network read traffic fees (cross-region shipping is not supported for now), and CLS will charge fees based on the compression format (Snappy/GZIP/lzop). If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable. As the read traffic price is 0.032 USD/GB, the fees will be 50 GB * 0.032 USD/GB =  1.6 USD.
 
 
 ## Feature Limits
