@@ -16,8 +16,9 @@ cd /usr/local/qcloud/monitor/barad/admin
 ```plaintext
 ./uninstall.sh
 ```
->?  BaradAgent reports some of the CVM metric data. Once uninstalled, BaradAgent stops reporting data. Sgagent consumes just a little memory. If you need to uninstall Sgagent, refer to the following directions.
-
+<dx-alert infotype="explain" title=""> 
+BaradAgent reports some of the CVM metric data. Once uninstalled, BaradAgent stops reporting data. Sgagent consumes just a little memory. If you need to uninstall Sgagent, refer to the following directions.
+</dx-alert>
 #### Step 2. Uninstall Sgagent
 1. Run the following command to go to the installation directory of Sgagent:
 ```plaintext
@@ -51,8 +52,9 @@ cd /usr/local/qcloud/stargate/admin
 ```
 
 ### Stopping Agents
->?The report of CVM metric data will only be stopped unless both Sgagent and BaradAgent are stopped. You can [Stop BaradAgent](#step1) to suspend data report for a while. However, BaradAgent will resume data report in one minute as it will be triggered by Sgagent. Therefore, to stop data report, stop both Sgagent and BaradAgent in sequence by referring to the following directions:
-
+<dx-alert infotype="explain" title=""> 
+The report of CVM metric data will only be stopped unless both Sgagent and BaradAgent are stopped. You can [Stop BaradAgent](#step1) to suspend data report for a while. However, BaradAgent will resume data report in one minute as it will be triggered by Sgagent. Therefore, to stop data report, stop both Sgagent and BaradAgent in sequence by referring to the following directions:
+</dx-alert>
 1. Run the following command to delete the scheduling Sgagent files:
 ```
 rm -f /etc/cron.d/sgagenttask
@@ -81,7 +83,9 @@ cd /usr/local/qcloud/monitor/barad/admin
 ```plaintext
 ./stop.sh
 ```
->?After the command is successfully executed, the service will not be started automatically, and the monitoring data will be lost. To restart the service, both these two Agent services need to be restarted.
+<dx-alert infotype="notice" title="">
+After the command is successfully executed, the service will not be started automatically, and the monitoring data will be lost. To restart the service, both these two Agent services need to be restarted.
+</dx-alert>
 :::
 ::: Windows
 #### Starting, restarting, and stopping BaradAgent and Sgagent
