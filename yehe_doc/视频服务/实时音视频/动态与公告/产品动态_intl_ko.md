@@ -517,12 +517,12 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 조정 화면 푸시 스트림을 지원합니다. 사용 방법은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>를 참고하십시오.
 </ul>
 <br>Mac: <ul style="margin:0">
-<li>Mac: 시스템 볼륨 변화 콜백이 추가되었습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338">TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged</a>를 참고하십시오.
+<li>Mac: 시스템 볼륨 변화 콜백이 추가되었습니다. </a>
 </ul>
 <br>Windows: <ul style="margin:0">
 <li>스크린 간 영역을 지정하여 화면을 공유하는 기능이 추가되었습니다.
 <li>창 공유에 지정 창 필터링 차단 기능을 추가하였습니다. 
-<li>시스템 볼륨 변화 콜백이 추가되었습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>를 참고하십시오.
+<li>시스템 볼륨 변화 콜백이 추가되었습니다.
 <li>가상 카메라 e2eSoft Vacm과 호환됩니다.
 <li>startLocalPreview와 startCameraDeviceTest 동시 호출을 지원합니다.
 <li>화면을 메인 채널로 공유하고, startLocalPreview 호출 시 로컬 미리보기를 활성화합니다.
