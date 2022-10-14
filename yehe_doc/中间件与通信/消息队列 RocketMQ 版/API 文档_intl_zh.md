@@ -41,17 +41,17 @@ width: 300px;
 | [DeleteRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44105) | 删除 RocketMQ 消费组     |
 | [DescribeRocketMQGroups](https://intl.cloud.tencent.com/document/api/1110/44101) | 获取 RocketMQ 消费组列表 |
 | [CreateRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44109) | 创建 RocketMQ 消费组     |
-| [ResetRocketMQConsumerOffSet](https://intl.cloud.tencent.com/document/product/1110/46786) | 重置 RocketMQ 消费位点     |
+| [ResetRocketMQConsumerOffSet](https://intl.cloud.tencent.com/document/api/1110/46786) | 重置 RocketMQ 消费位点     |
 
 ## 角色相关接口
 
 | 接口名称                                                     | 接口功能         |
 | :----------------------------------------------------------- | :--------------- |
-| [CreateRole](https://intl.cloud.tencent.com/document/product/1110/44139) | 创建角色         |
-| [ModifyRole](https://intl.cloud.tencent.com/document/product/1110/44134) | 角色修改         |
-| [DescribeRoles](https://intl.cloud.tencent.com/document/product/1110/44136) | 修改环境角色授权 |
-| [CreateRocketMQGroup](https://intl.cloud.tencent.com/document/product/1110/44109) | 获取角色列表     |
-| [DeleteEnvironmentRoles](https://intl.cloud.tencent.com/document/product/1110/44138) | 删除环境角色授权 |
-| [CreateEnvironmentRole](https://intl.cloud.tencent.com/document/product/1110/44140) | 创建环境角色授权 |
-| [DeleteRoles](https://intl.cloud.tencent.com/document/product/1110/44137) | 删除角色         |
+| [CreateRole](https://intl.cloud.tencent.com/document/api/1110/44139) | 创建角色         |
+| [ModifyRole](https://intl.cloud.tencent.com/document/api/1110/44134) | 角色修改         |
+| [DescribeRoles](https://intl.cloud.tencent.com/document/api/1110/44136) | 修改环境角色授权 |
+| [CreateRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44109) | 获取角色列表     |
+| [DeleteEnvironmentRoles](https://intl.cloud.tencent.com/document/api/1110/44138) | 删除环境角色授权 |
+| [CreateEnvironmentRole](https://intl.cloud.tencent.com/document/api/1110/44140) | 创建环境角色授权 |
+| [DeleteRoles](https://intl.cloud.tencent.com/document/api/1110/44137) | 删除角色         |
 
