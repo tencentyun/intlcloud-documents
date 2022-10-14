@@ -350,7 +350,7 @@ npm run build
 2. 部署 dist 文件到服务器上
 
 >! 生产环境要求使用 HTTPS 域名：
-[img](https://qcloudimg.tencent-cloud.cn/raw/53efdc1d1692a21946cb6c94ddea40e5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/53efdc1d1692a21946cb6c94ddea40e5.png)
 
 
 ## 附录：TUIRoom API
