@@ -32,7 +32,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/92ddb083a6331b6565bcafd04efaf2e2.png)
 
 如上图所示，cls-provisioner 启动异常。通过查看日志发现，cls.internal.tencentcloudapi.com 域名不通。
-在腾讯云上的机器，默认腾讯云的内外网域名都是联通的。通常导致此类问题的原因是 TKE 节点的 DNS 配置被修改过，您可桶如下两种方法进行修复：
+在腾讯云上的机器，默认腾讯云的内外网域名都是联通的。通常导致此类问题的原因是 TKE 节点的 DNS 配置被修改过，您可通过如下两种方法进行修复：
 - TKE 节点机器的 DNS 配置添加腾讯云默认 DNS。
 - 如果宿主机上的 DNS 是服务器是 core-dns，在 coredns 上添加腾讯云 DNS 解析即可。
 
@@ -41,7 +41,7 @@
 
 ### CLS 日志上传域名不通，怎么办？
 
-日志上传的域名和云 API 域名不同，日志上传的域名为`<region>.cls.tencentyun.com`（外网）和`<region>.cls.tencentyun.com`（内网），更多详情请参考 [域名](https://intl.cloud.tencent.com/document/product/614/18940) 文档。
+日志上传的域名和云 API 域名不同，日志上传的域名为`<region>.cls.tencentcs.com`（外网）和`<region>.cls.tencentyun.com`（内网），更多详情请参考 [域名](https://intl.cloud.tencent.com/document/product/614/18940) 文档。
 
 **修复方案**：
 在集群节点机器打通域名的访问。
