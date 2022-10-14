@@ -1,30 +1,31 @@
 ## Namespace
 
-Namespace=QCE/VPNGW
+Namespace = QCE/VPNGW
 
 
 ## Monitoring Metrics
 
-| Parameter | Metric | Description | Unit | Dimension |
+| Parameter | Metric Name | Description | Unit | Dimension |
 | ---------- | ---------- | --------------------- | ----- | ------- |
-| Intraffic  | Public network inbound bandwidth | Inbound bandwidth of VPN gateway per second | Mbps  | vpnGwId |
-| Outtraffic | Public network outbound bandwidth | Outbound bandwidth of VPN gateway per second | Mbps  | vpnGwId |
-| Inpkg      | Inbound packets     | Inbound packets of VPN gateway per second | Packets/sec | vpnGwId |
-| Outpkg     | Outbound packets     | Outbound packets of VPN gateway per second | Packets/sec | vpnGwId |
+| InBandwidth  | Public network inbound bandwidth | The average inbound traffic of the VPN gateway per second   | Mbps  | vpnGwId |
+| OutBandwidth  | Public network outbound bandwidth | The average outbound traffic of the VPN gateway per second   | Mbps  | vpnGwId |
+| Inpkg      | Inbound packets     | The average number of inbound packets of the VPN gateway per second | Count/sec | vpnGwId |
+| Outpkg      | Outbound packets     | The average number of outbound packets of the VPN gateway per second | Count/sec | vpnGwId |
+| VpnBandwidthUsageRate    | VPN bandwidth utilization     |  The VPN bandwidth utilization  | %| vpnGwId |
 
 
-> ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
+> ?Statistical periods (`period`) may vary by metric. You can get the statistical periods for different metrics by calling the [`DescribeBaseMetrics`](https://intl.cloud.tencent.com/document/product/248/33882) API.
 
-## Overview of Parameters in Each Dimension
+## Dimensions and Parameters
 
-| Parameter | Dimension | Dimension Description | Format |
+| Parameter | Dimension | Description | Format |
 | ------------------------------ | -------- | --------------------- | ---------------------------------------- |
-| Instances.N.Dimensions.0.Name  | vpnGwId  | VPN gateway ID dimension name | Enter a String-type dimension name: vpnGwId         |
+| Instances.N.Dimensions.0.Name  | vpnGwId  | Dimension name of the VPN gateway ID | enter a string-type dimension name: vpnGwId         |
 | Instances.N.Dimensions.0.Value | vpnGwId  | Specific VPN gateway ID       | Enter a specific VPN gateway ID, such as `vpngw-q7v069tf` |
 
-## Input Parameter Description
+## Input Parameters
 
-To query the monitoring data of a VPN gateway in a VPC, set the following input parameters:
+To query the monitoring data of a VPN gateway in VPC, use the following input parameters:
 &Namespace=QCE/VPNGW
 &Instances.N.Dimensions.0.Name=vpnGwId
 &Instances.N.Dimensions.0.Value=VPN gateway ID

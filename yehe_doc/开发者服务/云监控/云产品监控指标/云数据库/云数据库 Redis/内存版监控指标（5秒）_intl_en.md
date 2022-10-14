@@ -1,122 +1,145 @@
 ## Namespace
 
-Namespace=QCE/REDIS_MEM
+Namespace = QCE/REDIS_MEM
 
 ## Monitoring Metrics
 
-### Instance summary 
 
-| Metric | Description | Unit | Dimension |
-| ---------------- | ------------------------------------------------------------ | ----- | ---------- |
-| MemUsed          | Memory capacity actually used, including data and cache                         | MB    | instanceid |
-| CpuUtil          | Average CPU utilization                                              | %     | instanceid |
-| MemUtil          | Ratio of the memory actually used to the total memory requested                                 | %     | instanceid |
-| Keys             | Total number of keys stored in the instance (first-level keys)                            | -    | instanceid |
-| Expired          | Number of keys that expired in the time window, which corresponds to the `expired_keys` output by the `info` command | -    | instanceid |
-| Evicted          | Number of keys evicted in the time window, which corresponds to the `evicted_keys` output by the `info` command | -    | instanceid |
-| Connections      | Number of TCP connections to the instance                                    | -    | instanceid |
-| ConnectionsUtil  | Ratio of the number of actual TCP connections to the maximum number of connections                             | %     | instanceid |
-| InFlow           | Private network inbound traffic                                                   | MB/s  | instanceid |
-| InBandwidthUtil  | Ratio of the actually used private network inbound traffic to the maximum traffic                               | %     | instanceid |
-| InFlowLimit      | Number of times that throttling is triggered by the inbound traffic                                         | -    | instanceid |
-| OutFlow          | Private network outbound traffic                                                   | MB/s  | instanceid |
-| OutBandwidthUtil | Ratio of the actually used private network outbound traffic to the maximum traffic                               | %     | instanceid |
-| OutFlowLimit     | Number of times that throttling is triggered by the outbound traffic                                         | -    | instanceid |
-| LatencyMax       | Maximum execution latency from proxy to Redis server                      | ms    | instanceid |
-| LatencyAvg       | Average execution latency from proxy to Redis server                      | ms    | instanceid |
-| LatencyRead      | Average execution latency of read commands from proxy to Redis server | ms    | instanceid |
-| LatencyWrite     | Average execution latency of write commands from proxy to Redis server | ms    | instanceid |
-| LatencyOther     | Average execution latency of commands other than read and write commands from proxy to Redis server | ms    | instanceid |
-| Commands         | QPS (command executions)                                            | Executions/sec | instanceid |
-| CmdRead          | Number of read command executions | Executions/sec | instanceid |
-| CmdWrite         | Number of write command executions | Executions/sec | instanceid |
-| CmdOther         | Number of executions of commands other than read and write commands | Executions/sec | instanceid |
-| CmdBigValue      | Number of executions for which the request size exceeds 32 KB                               | Executions/sec | instanceid |
-| CmdKeyCount      | Number of keys accessed by commands                                          | Keys/sec | instanceid |
-| CmdMget          | Number of Mget command executions                                            | Executions/sec | instanceid |
-| CmdSlow | Number of commands whose execution latency is greater than the configured `slowlog-log-slower-than` value | - | instanceid |
-| CmdHits          | Number of existent read request keys, which corresponds to the `keyspace_hits` metric output by the `info` command | -    | instanceid |
-| CmdMiss          | Number of non-existent read request keys, which corresponds to the `keyspace_misses` metric output by the `info` command | -    | instanceid |
-| CmdErr           | Number of command execution errors, such as when a command does not exist or a parameter is incorrect           | -    | instanceid |
-| CmdHitsRatio     | Key hits/(key hits + key misses). This metric can reflect the situation of cache miss | %     | instanceid |
-| CpuMaxUtil       | Maximum CPU utilization of nodes (shards or replicas) in the instance                    | %     | instanceid |
-| MemMaxUtil       | Maximum memory utilization of nodes (shards or replicas) in the instance                     | %     | instanceid |
+### Instance monitoring
 
-### Redis node 
+| Parameter | Metric Name | Description | Unit | Dimension | Statistical Period |
+| ---------------- | ------------------- | ------------------------------------------------------------ | ----- | ---------- | -------------------------------- |
+| CpuUtil          | CPU utilization          | The average CPU utilization                                              | %     | instanceid | 5s, 60s, 300s, 3600s, 86400s |
+| CpuMaxUtil       | Max CPU utilization of node | The maximum among all node (shard or replica) CPU utilizations in an instance                    | %     | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| MemUsed          | Used memory          | The actually used memory capacity, including the capacity for data and cache                         | MB    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| MemUtil          | Memory utilization          | The ratio of the actually used memory to the requested total memory                                 | %     | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| MemMaxUtil       | Max memory utilization of node  | The maximum among all node (shard or replica) memory utilizations in an instance                     | %     | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| Keys             | Total keys          | The total number of keys (level-1 keys) stored in the instance                            | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| Expired          | Expired keys          | The number of keys expired in a time window, which is equal to the value of `expired_keys` output by the `info` command | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| Evicted          | Evicted keys          | The number of keys evicted in a time window, which is equal to the value of `evicted_keys` output by the `info` command | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| Connections      | Connections            | The number of TCP connections to the instance                                    | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| ConnectionsUtil  | Connection utilization          | The ratio of the number of TCP connections to the maximum number of connections                              | %     | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| InFlow           | Inbound traffic              | The private network inbound traffic                                                   | Mb/s  | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| InBandwidthUtil  | Inbound traffic utilization        | The ratio of the actually used private inbound traffic to the maximum traffic                               | %     | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| InFlowLimit      | Inbound traffic limit count      | The number of times inbound traffic triggers a traffic limit                                         | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| OutFlow          | Outbound traffic              | The private network outbound traffic                                                  | Mb/s  | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| OutBandwidthUtil | Outbound traffic utilization        | The ratio of the actually used private outbound traffic to the maximum traffic                               | %     | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| OutFlowLimit     | Outbound traffic limit count      | The number of times outbound traffic triggers a traffic limit                                         | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyAvg       | Average execution latency        | The average execution latency between the proxy and the Redis server                       | ms    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyMax       | Max execution latency        | The maximum execution latency between the proxy and the Redis server                       | ms    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyRead      | Average read latency          | The average execution latency of read commands between the proxy and the Redis server                   | ms    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyWrite     | Average write latency          | The average execution latency of write commands between the proxy and the Redis server                   | ms    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyOther     | Average latency of other commands    | The average execution latency of commands (excluding write and read commands) between the proxy and the Redis server       | ms    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| Commands         | Total requests              | The QPS, that is, the number of command executions per second                                            | Count/sec | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdRead          | Read requests              | The number of read command executions per second                                           | Count/sec | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdWrite         | Write requests              | The number of write command executions per second                                           | Count/sec | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdOther         | Other requests            | The number of command (excluding write and read commands) executions per second                               | Count/sec | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdBigValue      | Big value requests       | The number of executions of requests larger than 32 KB per second                           | Count/sec | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdKeyCount      | Key requests          | The number of keys accessed by a command per second                                          | Count/sec | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdMget          | MGET requests         | The number of MGET commands executed per second                                           | Count/sec | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdSlow          | Slow queries              | The number of command executions with a latency greater than the configured `slowlog-log-slower-than` value    | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdHits          | Read request hits          | The number of keys successfully requested by read commands, which is equal to the value of the `keyspace_hits` metric output by the `info` command | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdMiss          | Read request misses          | The number of keys unsuccessfully requested by read commands, which is equal to the value of the `keyspace_misses` metric output by the `info` command | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdErr           | Execution errors            | The number of command execution errors. For example, the command does not exist, or parameters are incorrect.         | -    | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdHitsRatio     | Read request hit rate        | Key hits/(key hits + key misses). This metric reflects cache misses. | %     | instanceid | 5s, 60s, 300s, 3600s, 86400s     |
 
-| Metric | Description | Unit | Dimension |
-| ------------------- | ------------------------------------------------------------ | ----- | ------------------- |
-| MemUsedNode         | Memory capacity actually used, including data and cache                         | MB    | instanceid, rnodeid |
-| ConnectionsNode     | Number of connections from proxy to node                                     | -    | instanceid, rnodeid |
-| ConnectionsUtilNode | Node connection utilization                                             | %     | instanceid, rnodeid |
-| CpuUtilNode         | Average CPU utilization                                              | %     | instanceid, rnodeid |
-| MemUtilNode         | Ratio of the memory actually used to the total memory requested                                 | %     | instanceid, rnodeid |
-| KeysNode            | Total number of keys stored in the instance (first-level keys)                            | -    | instanceid, rnodeid |
-| ExpiredNode         | Number of keys that expired in the time window, which corresponds to the `expired_keys` output by the `info` command | -    | instanceid, rnodeid |
-| EvictedNode         | Number of keys evicted in the time window, which corresponds to the `evicted_keys` output by the `info` command | -    | instanceid, rnodeid |
-| ReplDelayNode       | Command lag from replica node to primary node                             | B     | instanceid, rnodeid |
-| CommandsNode        | QPS (command executions)                                            | Executions/sec | instanceid, rnodeid |
-| CmdReadNode         | Number of read command executions | Executions/sec | instanceid, rnodeid |
-| CmdWriteNode         | Number of write command executions | Executions/sec | instanceid, rnodeid |
-| CmdOtherNode        | Number of executions of commands other than read and write commands | Executions/sec | instanceid, rnodeid |
-| CmdSlowNode         | Number of commands whose execution latency is greater than the configured `slowlog-log-slower-than` value          | -    | instanceid, rnodeid |
-| CmdHitsNode         | Number of existent read request keys, which corresponds to the `keyspace_hits` metric output by the `info` command | -    | instanceid, rnodeid |
-| CmdMissNode         | Number of non-existent read request keys, which corresponds to the `keyspace_misses` metric output by the `info` command | -    | instanceid, rnodeid |
-| CmdHitsRatioNode    | Key hits/(key hits + key misses). This metric can reflect the situation of cache miss | %     | instanceid, rnodeid |
 
-### Proxy node 
+#### Latency metrics (command dimension)
+| Parameter | Metric Name | Description | Unit | Dimension | Statistical Period |
+| ---------------- | ------------------- | ------------------------------------------------------------ | ----- | ---------- | -------------------------------- |
+| QpsCommand     | Command executions per second  | The number of commands executed per second                                             | %     | instanceid, command | 5s, 60s, 300s, 3600s, 86400s |
+| LatencyAvgCommand   | Average execution latency	  | The average execution latency between the proxy and the Redis server	                                  | %     | instanceid, command | 5s, 60s, 300s, 3600s, 86400s |
+| LatencyMaxCommand | Max execution delay    | The maximum execution latency between the proxy and the Redis server                                       | %     | instanceid, command| 5s, 60s, 300s, 3600s, 86400s |
+|LatencyP99Command | P99 latency       | The P99 execution latency between the proxy and the Redis server                                    | %     | instanceid, command| 5s, 60s, 300s, 3600s, 86400s |
 
-| Metric | Description | Unit | Dimension |
-| --------------------- | ------------------------------------------------------------ | ----- | ------------------- |
-| CpuUtilProxy          | Proxy CPU utilization                                             | %     | instanceid, pnodeid |
-| CommandsProxy         | Number of commands executed by proxy                                           | Commands/sec | instanceid, pnodeid |
-| CmdKeyCountProxy      | Number of keys accessed by commands                                          | Keys/sec | instanceid, pnodeid |
-| CmdMgetProxy          | Number of Mget command executions                                            | Executions/sec | instanceid, pnodeid |
-| CmdErrProxy           | Number of proxy command execution errors, such as when a command does not exist or a parameter is incorrect     | Errors/sec | instanceid, pnodeid |
-| CmdBigValueProxy      | Number of executions for which the request size exceeds 32 KB                               | Executions/sec | instanceid, pnodeid |
-| ConnectionsProxy      | Number of TCP connections to the instance                                    | -    | instanceid, pnodeid |
-| InFlowProxy           | Private network inbound traffic                                                   | MB/s  | instanceid, pnodeid |
-| OutFlowProxy          | Private network outbound traffic                                                   | MB/s  | instanceid, pnodeid |
-| ConnectionsUtilProxy  | Connection utilization                                                 | %     | instanceid, pnodeid |
-| InBandwidthUtilProxy  | Ratio of the actually used private network inbound traffic to the maximum traffic                               | %     | instanceid, pnodeid |
-| OutBandwidthUtilProxy | Ratio of the actually used private network outbound traffic to the maximum traffic                               | %     | instanceid, pnodeid |
-| InFlowLimitProxy      | Number of times that throttling is triggered by the inbound traffic                                         | -    | instanceid, pnodeid |
-| OutFlowLimitProxy     | Number of times that throttling is triggered by the outbound traffic                                         | -    | instanceid, pnodeid |
-| LatencyAvgProxy       | Average execution latency from proxy to Redis server                      | ms    | instanceid, pnodeid |
-| LatencyMaxProxy       | Maximum execution latency from proxy to Redis server                      | ms    | instanceid, pnodeid |
-| LatencyReadProxy      | Average execution latency of read commands from proxy to Redis server | ms    | instanceid, pnodeid |
-| LatencyWriteProxy     | Average execution latency of write commands from proxy to Redis server | ms    | instanceid, pnodeid |
-| LatencyOtherProxy     | Average execution latency of commands other than read and write commands from proxy to Redis server | ms    | instanceid, pnodeid |
 
-## Overview of Parameters in Each Dimension
+### Proxy node monitoring
 
-| Parameter | Dimension | Dimension Description | Format |
+| Parameter | Metric Name | Description | Unit | Dimension | Statistical Period |
+| --------------------- | ---------------- | ---------------------------------------------------------- | ----- | ------------------- | ---------------------------- |
+| CpuUtilProxy          | CPU utilization       | The CPU utilization of the proxy                                           | %     | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s |
+| CommandsProxy         | Total requests           | The number of proxy commands executed per second                                         | Count/sec | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s |
+| CmdKeyCountProxy      | Key requests          | The number of keys accessed by a command per second                                          | Count/sec | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdMgetProxy          | MGET requests         | The number of MGET commands executed per second                                           | Count/sec | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdErrProxy           | Execution errors            | The number of proxy command execution errors. For example, the command does not exist, or parameters are incorrect.         | -    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdBigValueProxy      | Big value requests       | The number of executions of requests larger than 32 KB per second                           | Count/sec | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| ConnectionsProxy      | Connections            | The number of TCP connections to the instance                                    | -    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| ConnectionsUtilProxy  | Connection utilization          | The ratio of the number of TCP connections to the maximum number of connections                              | %     | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| InFlowProxy           | Inbound traffic              | The private network inbound traffic                                                   | Mb/s  | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| InBandwidthUtilProxy  | Inbound traffic utilization        | The ratio of the actually used private inbound traffic to the maximum traffic                               | %     | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| InFlowLimitProxy      | Inbound traffic limit count      | The number of times inbound traffic triggers a traffic limit                                         | -    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| OutFlowProxy          | Outbound traffic              | The private network outbound traffic                                                  | Mb/s  | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| OutBandwidthUtilProxy | Outbound traffic utilization        | The ratio of the actually used private outbound traffic to the maximum traffic                               | %     | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| OutFlowLimitProxy     | Outbound traffic limit count      | The number of times outbound traffic triggers a traffic limit                                         | -    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyAvgProxy       | Average execution latency        | The average execution latency between the proxy and the Redis server                       | ms    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyMaxProxy       | Max execution latency        | The maximum execution latency between the proxy and the Redis server                       | ms    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyReadProxy      | Average read latency          | The average execution latency of read commands between the proxy and the Redis server                   | ms    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyWriteProxy     | Average write latency          | The average execution latency of write commands between the proxy and the Redis server                   | ms    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| LatencyOtherProxy     | Average latency of other commands    | The average execution latency of commands (excluding write and read commands) between the proxy and the Redis server       | ms    | instanceid, pnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+
+
+### Redis node monitoring
+
+| Parameter | Metric Name | Description | Unit | Dimension | Statistical Period |
+| ------------------- | ------------ | ------------------------------------------------------------ | ----- | ------------------- | ---------------------------- |
+| CpuUtilNode          | CPU utilization          | The average CPU utilization                                              | %     | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s |
+| ConnectionsNode      | Connections            | The number of connections from the proxy to the node                                    | -    | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| ConnectionsUtilNode | Connection utilization   | The utilization of node connections                                             | %     | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s |
+| MemUsedNode          | Used memory          | The actually used memory capacity, including the capacity for data and cache                         | MB    | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| MemUtilNode          | Memory utilization          | The ratio of the actually used memory to the requested total memory                                 | %     | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| KeysNode             | Total keys          | The total number of keys (level-1 keys) stored in the instance                            | -    | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| ExpiredNode          | Expired keys          | The number of keys expired in a time window, which is equal to the value of `expired_keys` output by the `info` command | -    | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| EvictedNode          | Evicted keys          | The number of keys evicted in a time window, which is equal to the value of `evicted_keys` output by the `info` command | -    | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| ReplDelayNode       | Replication delay     | The command delay between the replica node and the master node                             | Byte  | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s |
+| CommandsNode         | Total requests              | The QPS, that is, the number of command executions per second                                            | Count/sec | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdReadNode          | Read requests              | The number of read command executions per second                                           | Count/sec | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdWriteNode         | Write requests              | The number of write command executions per second                                           | Count/sec | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdOtherNode         | Other requests            | The number of command (excluding write and read commands) executions per second                               | Count/sec | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdSlowNode          | Slow queries              | The number of command executions with a latency greater than the configured `slowlog-log-slower-than` value    | -    | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdHitsNode          | Read request hits          | The number of keys successfully requested by read commands, which is equal to the value of the `keyspace_hits` metric output by the `info` command | -    | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdMissNode          | Read request misses          | The number of keys unsuccessfully requested by read commands, which is equal to the value of the `keyspace_misses` metric output by the `info` command | -    | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+| CmdHitsRatioNode     | Read request hit rate        | Key hits/(key hits + key misses). This metric reflects cache misses. | %     | instanceid, rnodeid | 5s, 60s, 300s, 3600s, 86400s     |
+
+
+
+
+## Dimensions and Parameters
+
+| Parameter | Dimension | Description | Format |
 | ------------------------------ | ---------- | ------------------- | ------------------------------------------------------------ |
-| Instances.N.Dimensions.0.Name  | instanceid | Instance ID dimension name    | Enter a String-type dimension name: instanceid                         |
-| Instances.N.Dimensions.0.Value | instanceid | Specific instance ID         | Enter a specific Redis instance ID such as `tdsql-123456` or instance SN such as `crs-ifmymj41`, which can be queried by calling the [DescribeInstances](https://intl.cloud.tencent.com/zh/document/product/239/32065) API |
-| Instances.N.Dimensions.1.Name  | rnodeid    | Redis node ID dimension name | Enter a String-type dimension name: rnodeid        |
-| Instances.N.Dimensions.1.Value | rnodeid    | Specific Redis node ID     | Enter a specific Redis node ID, which can be obtained by calling the [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/zh/document/product/239/38627) API |
-| Instances.N.Dimensions.1.Name  | pnodeid    | Proxy node ID dimension name | Enter a String-type dimension name: pnodeid   |
-| Instances.N.Dimensions.1.Value | pnodeid    | Specific proxy node ID     | Enter a specific proxy node ID, which can be obtained by calling the [DescribeInstanceNodeInfo](https://intl.cloud.tencent.com/zh/document/product/239/38627) API |
+| Instances.N.Dimensions.0.Name  | instanceid | Dimension name of the instance ID    | Enter a string-type dimension name: instanceid                         |
+| Instances.N.Dimensions.0.Value | instanceid | Specific instance ID         | Enter a specific Redis instance ID, such as `tdsql-123456`, which can be queried through the [DescribeInstances](https://www.tencentcloud.com/document/product/239/32065) API and can also be an instance string such as `crs-ifmymj41`.  |
+| Instances.N.Dimensions.1.Name  | rnodeid    | Dimension name of the Redis node ID | Enter a string-type dimension name: rnodeid        |
+| Instances.N.Dimensions.1.Value | rnodeid    | Specific Redis node ID     | Enter a specific Redis node ID, which can be queried through the [DescribeInstanceNodeInfo](https://www.tencentcloud.com/document/product/239/38627) API. |
+| Instances.N.Dimensions.1.Name  | pnodeid    | Dimension name of the proxy node ID | Enter a string-type dimension name: pnodeid   |
+| Instances.N.Dimensions.1.Value | pnodeid    | Specific proxy node ID     | Enter a specific proxy node ID, which can be queried through the [DescribeInstanceNodeInfo](https://www.tencentcloud.com/document/product/239/38627) API. |
+| Instances.N.Dimensions.1.Name  |command   | Dimension name of the command word | Enter a string-type dimension name: command  |
+| Instances.N.Dimensions.1.Value | command   |   Specific command word | Enter a specific command word, such as `ping` and `get` |
 
-## Input Parameter Description
+## Input Parameters
 
-**To query the monitoring data of a TencentDB for Redis Memory Edition instance, use the following input parameters:**
-&Namespace=QCE/REDIS_MEM
-&Instances.N.Dimensions.0.Name=instanceid
-&Instances.N.Dimensions.0.Value=instance ID
-
-**To query the monitoring data of a Redis node of a TencentDB for Redis Memory Edition instance, use the following input parameters:**
+**To query the monitoring data of a TencentDB for Redis instance, use the following input parameters:**
 &Namespace=QCE/REDIS_MEM
 &Instances.N.Dimensions.0.Name=instanceid
 &Instances.N.Dimensions.0.Value=Instance ID
-&Instances.N.Dimensions.1.Name=rnodeid 
-&Instances.N.Dimensions.1.Value=Redis node ID
 
-**To query the monitoring data of a proxy node of a TencentDB for Redis Memory Edition instance, use the following input parameters:**
+**To query the monitoring data of a TencentDB proxy node, use the following input parameters:**
 &Namespace=QCE/REDIS_MEM
 &Instances.N.Dimensions.0.Name=instanceid
 &Instances.N.Dimensions.0.Value=Instance ID
 &Instances.N.Dimensions.1.Name=pnodeid
 &Instances.N.Dimensions.1.Value=Proxy node ID
 
+**To query the monitoring data of a TencentDB for Redis node, use the following input parameters:**
+&Namespace=QCE/REDIS_MEM
+&Instances.N.Dimensions.0.Name=instanceid
+&Instances.N.Dimensions.0.Value=Instance ID
+&Instances.N.Dimensions.1.Name=rnodeid 
+&Instances.N.Dimensions.1.Value=Redis node ID
+
+**To query the monitoring data of TencentDB for Redis latency metrics (command dimension), use the following input parameters:**
+&Namespace=QCE/REDIS_MEM
+&Instances.N.Dimensions.0.Name=instanceid
+&Instances.N.Dimensions.0.Value=Instance ID
+&Instances.N.Dimensions.1.Name=command
+&Instances.N.Dimensions.1.Value=Specific command word
