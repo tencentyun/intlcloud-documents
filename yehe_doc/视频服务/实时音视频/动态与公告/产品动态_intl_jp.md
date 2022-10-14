@@ -517,12 +517,12 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 代替画像のプッシュをサポートしています。使用方法は <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>をご参照ください。
 </ul>
 <br>Mac: <ul style="margin:0">
-<li>Mac：システム音量変化コールバックを追加しました。詳細については <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338">TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged</a>をご参照ください。
+<li>Mac：システム音量変化コールバックを追加しました。
 </ul>
 <br>Windows: <ul style="margin:0">
 <li>スクリーン間で指定したエリアの画面共有をサポートします。
 <li>ウィンドウ共有を追加し、指定したウィンドウをフィルターする遮蔽対策をサポートしています。
-<li>システム音量変化コールバックを追加しました。詳細については<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>をご参照ください。
+<li>システム音量変化コールバックを追加しました。
 <li>バーチャルカメラe2eSoft Vacmと互換性を持たせました。
 <li>startLocalPreviewとstartCameraDeviceTestを同時に呼び出せるようにしました。
 <li>画面共有が主経路を経由するのをサポートすると同時に、startLocalPrevieを呼び出してローカルプレビューを開始します。
