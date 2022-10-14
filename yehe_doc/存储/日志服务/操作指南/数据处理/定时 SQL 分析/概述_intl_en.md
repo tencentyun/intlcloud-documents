@@ -6,7 +6,7 @@
 
 Scheduled SQL analysis can be simply understood as crontab SQL. You can configure a scheduling policy, and the system will execute SQL queries on the source log topic regularly based on the policy and save query results to the specified target log topic. 
 
-
+![](https://qcloudimg.tencent-cloud.cn/raw/742252b4378a0ba18267ada7c251af51.jpg)
 
 ## Prerequisites
 
