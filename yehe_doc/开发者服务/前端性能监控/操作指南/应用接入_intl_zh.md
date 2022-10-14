@@ -48,7 +48,7 @@
  所属业务系统
 </td>
 <td>
- 该功能用于分类管理您接入的应用，您可以根据研发团队、业务逻辑、应用类别等进行应用分类管理。若您没有可用团队，您可以单击右侧的**点我创建**链接，填写完信息后，单击**确认**即创建成功。
+ 该功能用于分类管理您接入的应用，您可以根据研发团队、业务逻辑、应用类别等进行应用分类管理。若您没有可用团队，您可以单击右侧的<b>点我创建</b>链接，填写完信息后，单击<b>确认</b>即创建成功。
 </td>
 </tr>
 </table>
@@ -56,13 +56,13 @@
 4.配置完后单击**下一步**，参考下列说明选择一种方式安装 SDK 。
 - **npm**方式安装 SDK（所有应用类型均可使用该方式接入）。下列 Web 应用为例说明如何通过 npm 方式接入 SDK。
  i. 在接入指引页面中复制提供的首行命令，引入 npm 包。
-![](https://qcloudimg.tencent-cloud.cn/raw/daf5b47188e69bcf3a6d77f0231b9848.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d0ac7f69cac4d5d4c1606e5f9c00a0e1.png)
  ii. 在接入指引页面中复制提供的代码初始化 SDK。
-![](https://qcloudimg.tencent-cloud.cn/raw/5359b9c4063336e6ac9f477ceb0a27c0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0a2cb98c7362d8bb37b32d5ff7f13d86.png)
 - **&lt;script&gt; 标签引入**方式接入 SDK（仅支持 Web 接入类型）。
  i. 在接入指引页面复制提供的 `<script>` 标签 代码。
 ii. 把**&lt;script&gt; 标签引入**类型下的代码引入到 `<head></head>` 标签中即可。
-![](https://qcloudimg.tencent-cloud.cn/raw/038a1cdd1462a9b7fc6581a5da264891.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2fe67f1a420ba5d8f3c0a5a904022555.png)
 <dx-alert infotype="explain" title="">
 按照上述步骤接入后即可使用数据总览、页面性能、异常分析、页面访问（PV、UV）、API 监控和静态资源功能。如需使用日志查询、离线日志、自定义测速和自定义事件，需参考接入指引上报数据。
 </dx-alert>
