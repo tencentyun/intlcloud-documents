@@ -10,6 +10,7 @@ To migrate an application, the root account owner should apply for account migra
 - Subject: Migration of Tencent Push Notification Service Applications under Tencent Cloud Account
 - To: tpns_team@tencent.com
 - Email content:
+
 ```
 1. Source Tencent Cloud account ID:
 2. AccessID and name of the application to be migrated:
