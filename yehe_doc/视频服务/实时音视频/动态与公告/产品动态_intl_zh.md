@@ -517,12 +517,12 @@ Android：<ul style="margin:0">
 支持垫片推流，使用方法见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>。
 </ul>
 <br>Mac：<ul style="margin:0">
-<li>Mac：新增系统音量变化回调，详见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338">TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged</a>。
+<li>Mac：新增系统音量变化回调。</a>
 </ul>
 <br>Windows：<ul style="margin:0">
 <li>新增支持跨屏指定区域进行屏幕分享。
 <li>新增窗口分享支持过滤指定窗口进行抗遮挡。
-<li>新增系统音量变化回调，详见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12">ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged</a>。
+<li>新增系统音量变化回调。</a>
 <li>兼容虚拟摄像头 e2eSoft Vacm。
 <li>支持同时调用 startLocalPreview 和 startCameraDeviceTest。
 <li>支持屏幕分享走主路的同时，调用 startLocalPreview 开启本地预览。
