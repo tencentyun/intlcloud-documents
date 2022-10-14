@@ -16,5 +16,5 @@ This document describes how to use the application management feature. The appli
 ### Report statistics
 
 In the application list, you can click **Report Statistics** in the **Operation** column to view the report change trend and total number of reporting requests of each application. If a value is high, you can take appropriate measures to avoid unnecessary fees incurred by excessive reporting traffic.
-![](https://qcloudimg.tencent-cloud.cn/raw/02751be95ee8d0ddbea38787c77ae2ef.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0524cba6f20f5837362cdcb02c306da8.png)
 
