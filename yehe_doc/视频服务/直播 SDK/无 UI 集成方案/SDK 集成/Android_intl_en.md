@@ -10,7 +10,7 @@ You can use Gradle to automatically load the AAR file or manually download the A
 ### Method 1: automatic loading (AAR)
 Since JCenter has been deprecated, you can configure a Maven Central repository in Gradle to automatically download and update LiteAVSDK.
 Open your project with Android Studio and modify the `build.gradle` file as described below to complete the integration.
-![](https://main.qcloudimg.com/raw/2ca6cc6e3f00dc9fdb2d89982861f3ea.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1d62bdb59f01d556751a7d17b5aff1ee.png)
 
 1. Open `build.gradle` under your application.
 2. Add the LiteAVSDK dependency to `dependencies`.
@@ -68,13 +68,13 @@ defaultConfig {
 If you do not want to import the AAR library, you can also integrate LiteAVSDK by importing JAR and SO libraries.
 
 1. Download [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) and decompress the file. In the SDK directory, find `LiteAVSDK_Professional_xxx.zip` (`xxx` indicates the version number of LiteAVSDK).
-    ![](https://main.qcloudimg.com/raw/aae5879bccd31e8c082eebc24aa4ff7c.png)
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/9c54f2d165d200e6e39f739ec28c42e8.png" width=800px>
     Decompress the file, and you will find a `libs` directory that contains a JAR file and several SO folders, as shown below:
-    ![](https://main.qcloudimg.com/raw/e916aaddf844785991dc25f78776d773.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/a44e07e7baa99a07ea8363384fa66b45.png)
 2. Copy the JAR file and `armeabi`, `armeabi-v7a`, and `arm64-v8a` folders to the `app/libs` directory.
-    ![](https://main.qcloudimg.com/raw/d9b6339cb52fb85afda42de6001be337.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/6a0eaf4a8462756e61858eeb725897a4.png)
 3. Add code that references the JAR library in `app/build.gradle`.
-![](https://main.qcloudimg.com/raw/695520309d9a01b19ce2f50439a42890.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/8c5ddab650c4d6ae11150c22aa6d3172.png)      
 <dx-codeblock>
 :::  jar
 dependencies {
@@ -83,9 +83,9 @@ dependencies {
 :::
 </dx-codeblock>
 4. Add **flatDir** to `build.gradle` under the project’s root directory to specify the local path for the repository.
-    ![](https://main.qcloudimg.com/raw/6c68b846f6f7258ae4d96bc1d95d7816.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/aedb5cab93570e1044dbed68a5f4892c.png)
 5. In `app/build.gradle`, add code that references the SO libraries.
-    ![](https://main.qcloudimg.com/raw/e0f2f39c5f53a9fd5ca084febdd4e637.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/d9b226cba3c3a0c2cf6a0cd83ce1047f.png)
 6. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application. Currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a.
 <dx-codeblock>
 :::  jar
@@ -99,7 +99,7 @@ defaultConfig {
 7. Click **Sync Now** to complete the integration.
 
 ## Setting Packaging Parameters
-![](https://main.qcloudimg.com/raw/dabfd69ee06e4d38bb3b51fc436c0ad1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/185098ba6757bd0edb07cbccc1bfc40a.png)
 
 <dx-codeblock>
 ::: Packaging parameters

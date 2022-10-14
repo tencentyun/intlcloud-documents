@@ -11,7 +11,7 @@
 ### 方法一：自动加载（aar）
 因为 jcenter 已经下线，您可以通过在 gradle 配置 mavenCentral 库，自动下载更新 LiteAVSDK。
 只需要用 Android Studio 打开需要集成 SDK 的工程，然后通过简单的四个步骤修改 `build.gradle` 文件，就可以完成 SDK 集成：
-![](https://main.qcloudimg.com/raw/2ca6cc6e3f00dc9fdb2d89982861f3ea.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1d62bdb59f01d556751a7d17b5aff1ee.png)
 
 1. 打开 app 下的 build.gradle。
 2. 在 dependencies 中添加 LiteAVSDK 的依赖。
