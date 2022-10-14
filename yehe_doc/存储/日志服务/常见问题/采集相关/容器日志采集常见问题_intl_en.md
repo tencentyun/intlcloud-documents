@@ -41,7 +41,7 @@ The private and public domain names are accessible by default from servers in Te
 
 ### What should I do if the CLS log upload domain name is inaccessible?
 
-Log upload domain names are different from TencentCloud API domain names and are in the format of `<region>.cls.tencentcs.com` (public network domain) or `<region>.cls.tencentyun.com` (private network domain). For more information, see [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940).
+Log upload domain names are different from TencentCloud API domain names and are in the format of `<region>.cls.tencentcs.com` (public network domain) or `<region>.cls.tencentcs.com` (private network domain). For more information, see [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940).
 
 **Solution**:
 Make the domain name accessible on the corresponding cluster node server.
