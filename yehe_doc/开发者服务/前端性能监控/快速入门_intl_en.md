@@ -78,14 +78,14 @@ This document describes how to quickly get started with RUM.
 4. After completing the configuration, click **Next** and select a method to install the SDK as detailed below:
 - Install the SDK through **npm** (supported for all application types). The followings steps use a web application as an example to describe how to connect to the SDK through npm.
  i. On the connection guide page, copy the first command line to import the npm package.
-![](https://qcloudimg.tencent-cloud.cn/raw/daf5b47188e69bcf3a6d77f0231b9848.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/61e983c14b69cb353688a068a8e7b523.png)
  ii. On the connection guide page, copy the provided code to initialize the SDK.
-![](https://qcloudimg.tencent-cloud.cn/raw/db365dbaa753145e917e7bc1cc955266.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a3719aff36aa62d6e54619d0756590b6.png)
 
 - Connect to the SDK by **importing the &lt;script&gt; tag** (supported only for web applications).
  i. On the connection guide page, copy the provided `<script>` tag code.
 ii. Import the code below **&lt;script&gt; tag import** into the `<head></head>` tags.
-![](https://qcloudimg.tencent-cloud.cn/raw/2a0b0ab2df53d6a3650724e299907913.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f29488227fe97bb75676a502bd01e30f.png)
 <dx-alert infotype="explain" title="">
 After completing the above steps for connection, you can use the data overview, page performance, exception analysis, page view (PV and UV), API monitoring, and static resource features. If you want to use the log query, offline log, custom speed test, and custom event features, you need to report the data as instructed in the connection guide.
 </dx-alert>
