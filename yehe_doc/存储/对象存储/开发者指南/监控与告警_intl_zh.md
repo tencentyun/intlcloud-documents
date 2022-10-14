@@ -1,8 +1,10 @@
 ## 概述
 
-对象存储 COS 的读写请求量、流量等数据是基于 [云监控](https://intl.cloud.tencent.com/document/product/248) 来进行统计和展示的。您可在对象存储控制台或云监控的 [控制台](https://console.cloud.tencent.com/monitor) 查看 COS 的读写请求量、流量等详细的监控数据。
+对象存储 COS 的读写请求量、流量等数据是基于 [云监控](https://www.tencentcloud.com/document/product/248) 来进行统计和展示的。您可在对象存储控制台或云监控的 [控制台](https://console.cloud.tencent.com/monitor) 查看 COS 的读写请求量、流量等详细的监控数据。
 
->?本文主要讲述 COS 控制台获取统计数据的场景，如需了解如何使用数据接口获取更为详细的信息，请使用云监控的接口，详情请参见 [云监控](https://intl.cloud.tencent.com/document/product/248) 产品文档。
+>?
+>- 本文主要讲述 COS 控制台获取统计数据的场景，如需了解如何使用数据接口获取更为详细的信息，请使用云监控的接口，详情请参见 [云监控](https://www.tencentcloud.com/document/product/248) 产品文档。
+>- 目前上报到云监控的指标都支持所有 COS 地域，详情请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
 
 ## 基本功能
 
@@ -154,7 +156,7 @@
 - **监控间隔**：云监控提供实时、近24小时、近7天、自定义日期等多种统计区间来监控数据，时间粒度支持1分钟、5分钟、1小时、1天。
 - **数据存储**：1分钟粒度监控数据，存储15天；5分钟粒度监控数据，存储31天。1小时粒度监控数据，存储93天。1天粒度监控数据，存储186天。
 - **告警展示**：云监控集成了对象存储的监控数据，数据展示为易读的图表形式，可根据产品预先定义好的告警指标发出告警，有利于用户掌握整体的运行情况。
-- **告警设置**：设置监控指标界限值。当监控数据触发告警条件时，云监控能及时发送告警信息至关心的群体中，详情请参见 [告警概述](https://intl.cloud.tencent.com/document/product/248/6126) 和 [设置监控告警](https://intl.cloud.tencent.com/document/product/436/39104)。
+- **告警设置**：设置监控指标界限值。当监控数据触发告警条件时，云监控能及时发送告警信息至关心的群体中，详情请参见 [告警概述](https://www.tencentcloud.com/document/product/248/6126) 和 [设置监控告警](https://intl.cloud.tencent.com/document/product/436/39104)。
 
 
 

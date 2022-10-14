@@ -12,15 +12,16 @@
 ### 性能视图
 展示页面性能关键指标变化趋势图。
 - 单击上方的图例可取消或展示对应的数据。
+![](https://qcloudimg.tencent-cloud.cn/raw/777c49ca905a01d5a5a451a5b79de832.png) 
 - 支持按时间段或近14天粒度展示变化趋势图。
 - 在曲线中拖动鼠标可展示某一时刻首屏渲染时间。
 - 鼠标移动到圆形位置并左右拖动圆形，可调整图表时间跨度。
-![](https://main.qcloudimg.com/raw/dd843080e9f599f95009c79143fb78d9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2bb98048724cbe53cfc2a4e13e51df19.png)
 
 ### 页面加载瀑布图
 通过页面加载瀑布图可查看各阶段的耗时情况，您可以根据各阶段耗时情况优化页面性能。
 页面完全加载时间为 TCP、DNS、SSL、TTFB、DOM 解析和资源加载的时间之和。
-![](https://main.qcloudimg.com/raw/69d9f6487b02de60a8c0fabb5d7b0953.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7e471271ec53732b6f882606493d105e.png)
 
 ### Core Web Vitals
 Core Web Vitals  通过不同的角度加载速度，交互性和视觉稳定性反应了用户的体验，并根据良好，需要优化，较差三个等级的进行评分，协助您进行用户体验优化。
@@ -41,7 +42,7 @@ Core Web Vitals  包含三个核心基础指标 LCP、FID 和 CLS，含义如下
 | POOR| 较差 |
 
 如下图，表示您的 LCP 性能处于建议优化等级，可从渲染最大可见内容元素（图片、视频）方向进行优化。
-![](https://main.qcloudimg.com/raw/3044b249edec0a5920311e5600471e08.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/de95eacff8e9758a1966bdb59852e5a3.png)
 
 
 ### 其它视图

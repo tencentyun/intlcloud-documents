@@ -51,10 +51,10 @@ To consume logs via Kafka, you need to configure the following parameters:
 
 ### Consumption over private or public network
 
-- **Consumption over the private network**: A private network domain name is used to consume logs, and the traffic price is 0.18 CNY/GB. If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable, and the private network read traffic fees will be 50 GB * 0.18 CNY/GB = 9 CNY. In general, you can consume logs over the private network if your consumer and log topic are in the same VPC or region.
-- **Consumption over the public network**: A public network domain name is used to consume logs, and the traffic price is 0.8 CNY/GB. If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable, and the public network read traffic fees will be 50 GB * 0.8 CNY/GB = 40 CNY. In general, you need to consume logs over the public network if your consumer and log topic are in different VPCs or regions.
+- **Consumption over the private network**: A private network domain name is used to consume logs, and the traffic price is 0.032 USD/GB. If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable, and the private network read traffic fees will be 50 GB * 0.032 USD/GB = 1.6 USD. In general, you can consume logs over the private network if your consumer and log topic are in the same VPC or region.
+- **Consumption over the public network**: A public network domain name is used to consume logs, and the traffic price is  0.141 USD/GB. If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable, and the public network read traffic fees will be 50 GB *  0.141 USD/GB = 7.05 USD. In general, you need to consume logs over the public network if your consumer and log topic are in different VPCs or regions.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/25badd05f8c18e2dd0fadaba81bec3dc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc288586793b2229ac2402488213e986.jpg)
 
 [](id:steps)
 ## Directions

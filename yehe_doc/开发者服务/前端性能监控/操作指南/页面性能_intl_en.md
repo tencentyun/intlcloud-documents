@@ -12,15 +12,16 @@ You have [connected your application](https://intl.cloud.tencent.com/document/pr
 ### Performance view
 It displays the change trends of key page performance metrics.
 - You can click a legend above the chart to hide or show the corresponding data.
+![](https://qcloudimg.tencent-cloud.cn/raw/777c49ca905a01d5a5a451a5b79de832.png)
 - You can display the trend for the specified time period or the past 14 days.
 - You can drag the curve to display the FMP at a specific time point.
 - You can drag the round buttons left and right to adjust the time span of the chart.
-![](https://main.qcloudimg.com/raw/dd843080e9f599f95009c79143fb78d9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2bb98048724cbe53cfc2a4e13e51df19.png)
 
 ### Page loading waterfall plot
 You can use the page loading waterfall plot to view the duration of each phase and optimize the page performance accordingly.
 The complete page loading duration is the sum of the TCP connection, DNS query, SSL connection, TTFB, DOM parsing, and resource loading durations.
-![](https://main.qcloudimg.com/raw/69d9f6487b02de60a8c0fabb5d7b0953.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7e471271ec53732b6f882606493d105e.png)
 
 ### Core Web Vitals
 Core Web Vitals reflect user experience from perspectives of loading speed, interactivity, and visual stability, and grade pages into three levels of "Good", "Needs Improvement", and "Poor", helping you comprehensively optimize the user experience.
@@ -41,7 +42,7 @@ Core Web Vitals include three core basic metrics: LCP, FID, and CLS.
 | Poor | The performance is poor. |
 
 The following figure shows that your LCP is at the "Needs Improvement" level, and you can optimize the performance by improving the rendering of the largest visible content element such as image or video.
-![](https://main.qcloudimg.com/raw/3044b249edec0a5920311e5600471e08.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/de95eacff8e9758a1966bdb59852e5a3.png)
 
 
 ### Other views

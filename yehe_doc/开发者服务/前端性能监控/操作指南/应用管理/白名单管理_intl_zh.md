@@ -6,7 +6,7 @@
 1.登录 [前端性能监控控制台](https://console.cloud.tencent.com/rum)。
 2.单击左侧菜单栏的**应用管理** > **白名单管理**，进入白名单管理页面。
 3.单击左上方的**添加白名单**，在弹框中填写用户 UIN 和备注。
-![](https://main.qcloudimg.com/raw/3faddf9fe1c8cfbe14c587680271582a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eaa96cf9c3a261154f97fad30435f657.png)
 
 
 

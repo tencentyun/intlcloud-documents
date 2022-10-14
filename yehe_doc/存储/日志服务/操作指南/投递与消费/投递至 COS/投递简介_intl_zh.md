@@ -1,12 +1,12 @@
 ## 投递 COS 概述
 
 日志服务（Cloud Log Service，CLS）可以将日志主题中的数据投递到腾讯云对象存储（Cloud Object Storage，COS），以满足以下应用场景需求，例如：
-- 日志投递到 COS 是标准存储，如需其它存储类型，请在 COS 侧操作。参考 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) 文档。
+- 日志存储，默认是 COS 标准存储，如需其它存储类型，请在 COS 侧操作，详情请参考 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) 。
 - 通过离线计算或其他计算程序处理 COS 上的日志数据。首先，将日志数据投递到，然后腾讯云 DLC（数据湖）、EMR（大数据平台）可以从 COS 加载数据，用户在 DLC/EMR 中进一步分析日志数据。可以参考 [使用 DLC（Hive）分析 CLS 日志](https://intl.cloud.tencent.com/document/product/614/48461)，投递格式建议 CSV/Parquet。
 
 ## 费用说明
 
-投递会产生内网读流量费用（暂不支持跨地域投递），CLS 将按照您选择的压缩格式（snappy/gzip/lzop）大小来计量。例如您的原始日志大小100GB，选择 Snappy 压缩格式投递，计量约为50GB，读流量费用是0.18元/GB，那么计费约为50GB * 0.18元/GB = 9元。
+投递会产生内网读流量费用（暂不支持跨地域投递），CLS 将按照您选择的压缩格式（snappy/gzip/lzop）大小来计量。例如您的原始日志大小100GB，选择 Snappy 压缩格式投递，计量约为50GB，读流量费用是0.032 美元/GB，那么计费约为50GB * 0.032 美元/GB =  1.6美元。
 
 
 ## 功能限制

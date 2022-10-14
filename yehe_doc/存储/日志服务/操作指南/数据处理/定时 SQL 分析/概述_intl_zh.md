@@ -5,7 +5,7 @@
 ## 简介
 
 定时 SQL 分析，可以简单理解为 crontab sql，用户配置调度策略、系统按照既定调度策略，定时去源日志主题执行 SQL 查询，并将查询结果保存到用户指定的目标日志主题。 
-
+![](https://qcloudimg.tencent-cloud.cn/raw/742252b4378a0ba18267ada7c251af51.jpg)
 
 
 ## 使用前提

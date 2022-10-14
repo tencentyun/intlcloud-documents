@@ -14,9 +14,10 @@
 
 #### 腾讯云的身份（Principal）
 
-用户申请腾讯云账号时，系统会创建一个用于登录腾讯云服务的主账号身份。腾讯云主账号可通过用户管理功能对具有不同职责的分类用户进行管理。用户类型包括 **协作者、消息接收人、子用户和角色** 等，具体定义请参见访问管理的 [用户类型](https://intl.cloud.tencent.com/document/product/598/32633) 和 [词汇表](https://intl.cloud.tencent.com/document/product/598/18564) 文档。
+用户申请腾讯云账号时，系统会创建一个用于登录腾讯云服务的主账号身份。腾讯云主账号可通过用户管理功能对具有不同职责的分类用户进行管理。用户类型包括 **协作者、消息接收人、子用户和角色** 等，具体定义请参见访问管理的 [用户类型](https://www.tencentcloud.com/document/product/598/32633) 和 [词汇表](https://intl.cloud.tencent.com/document/product/598/18564) 文档。
 
->?假设您希望为企业的某位同事进行授权，首先需要在 [访问管理控制台](https://console.cloud.tencent.com/cam) 创建一个子用户，选择 [存储桶策略](https://intl.cloud.tencent.com/document/product/436/45235)、[ACL](https://intl.cloud.tencent.com/document/product/436/30583) 或 [用户策略](https://intl.cloud.tencent.com/document/product/436/45236) 中的一个或多个途径为子用户设置具体的权限。
+>? 假设您希望为企业的某位同事进行授权，首先需要在 [访问管理控制台](https://console.cloud.tencent.com/cam) 创建一个子用户，选择 [存储桶策略](https://intl.cloud.tencent.com/document/product/436/45235)、[ACL](https://intl.cloud.tencent.com/document/product/436/30583) 或 [用户策略](https://intl.cloud.tencent.com/document/product/436/45236) 中的一个或多个途径为子用户设置具体的权限。
+>
 
 #### 对象存储的资源（Resource）
 
@@ -43,11 +44,12 @@
 
 #### 对象存储的条件（Condition，可选）
 
-可选项，权限生效的条件，例如 vpc、vip 等，详情请参见访问管理的 [生效条件](https://intl.cloud.tencent.com/document/product/598/10608)。
+可选项，权限生效的条件，例如 vpc、vip 等，详情请参见访问管理的 [生效条件](https://www.tencentcloud.com/document/product/598/10608)。
 
 ## 私有原则
 
->?在默认情况下，腾讯云对象存储 COS 中的资源都是私有的。
+>? 在默认情况下，腾讯云对象存储 COS 中的资源都是私有的。
+>
 
 - 资源拥有者（创建存储桶资源的腾讯云主账号）具备对该资源的最高权限，资源拥有者可以编辑和修改访问策略，为其他人或匿名用户授予访问权限。
 - 使用腾讯云 [访问管理（Cloud Access Management，CAM）](https://intl.cloud.tencent.com/document/product/598/10583) 账号创建存储桶或上传对象时，其父级主账号就是资源拥有者。
@@ -79,8 +81,8 @@ COS 提供多种设置权限的方式实现访问控制，包括存储桶策略�
 | 维度   | 类型                   | 描述方式 | 支持的身份                                       | 支持的资源粒度       | 支持的操作         | 支持的效力    |
 | ------ | ---------------------- | -------- | ------------------------------------------------ | -------------------- | ------------------ | ------------- |
 | Bucket | 访问策略语言（Policy） | JSON     | 子账号、角色、腾讯云服务、其他主账号、匿名用户等 | 存储桶、对象、前缀等 | 每一个具体的操作   | 允许/显式拒绝 |
-| Bucket | 访问控制列表（ACL）    | XML      | 其他主账号、匿名用户                             | 存储桶               | 经过整理的读写权限 | 仅允许        |
-| Object | 访问控制列表（ACL）    | XML      | 其他主账号、匿名用户                             | 对象                 | 经过整理的读写权限 | 仅允许        |
+| Bucket | 访问控制列表（ACL）    | XML      | 其他主账号、子账号、匿名用户                             | 存储桶               | 经过整理的读写权限 | 仅允许        |
+| Object | 访问控制列表（ACL）    | XML      | 其他主账号、子账号、匿名用户                             | 对象                 | 经过整理的读写权限 | 仅允许        |
 
 <span id="BucketPolicy"></span>
 #### 存储桶策略（Bucket Policy）

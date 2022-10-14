@@ -18,14 +18,14 @@ The offline log feature stores the user data in `localstorage` and therefore may
 2. Log in to the [RUM console](https://console.cloud.tencent.com/rum).
 3. On the left sidebar, click **Offline Log** to enter the offline log page.
 4. You need to listen on the user, so that when the user enters the page next time, the locally stored offline logs will be reported to the server in batches.
-![](https://main.qcloudimg.com/raw/0d773e49207787745012bba1239204c6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a518f485ae5b8ecb113df7ee90844f8f.png)
 5. After getting the user's reported data, you can search for relevant logs.
-![](https://main.qcloudimg.com/raw/c4b86e82c2d2c15daa00c494209b8a9e.png)
+
 
 
 ### Field
 You can select the fields to be displayed in the offline log list.
-![](https://main.qcloudimg.com/raw/e62d2d41bfe72a289e8c2c5b20df340a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ee973bf0d913847bb183771f11d4db60.png)
 
 ### Advanced search
 - You can filter logs by project, log type, and time.

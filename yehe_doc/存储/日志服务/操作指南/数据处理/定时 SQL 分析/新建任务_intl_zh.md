@@ -49,4 +49,4 @@
 ## 配置案例
 
 下面举例说明调度范围、调度周期、SQL 时间窗口的配置：
-![](https://qcloudimg.tencent-cloud.cn/raw/7071fcee005086e7f3e901606b454fc8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0fb1e0363e137829a2ee5b020110194b.jpg)

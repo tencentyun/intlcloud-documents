@@ -8,11 +8,11 @@
 2. 单击左侧菜单栏的**数据总览**，进入数据总览页面。
 3. 在数据总览页面，即可查看所有应用的关键指标信息（包括 PV 、首屏耗时、JS 错误数/率、API 和静态资源的成功率、失败率、请求耗时）和应用总体评分。
 您可以单击评分左侧的收藏按钮收藏该应用面板，一键查看所有收藏面板。面板将会按照收藏顺序排序。
-![](https://main.qcloudimg.com/raw/22774ad1f80ff6d5bf122a86d498127a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1654fb300fa52e395fc4bd78dc5e5dbf.png)
 
 ## 数据分析大屏
 您可以在数据总览页面，单击各项目模块中的折线图按钮 ![](https://qcloudimg.tencent-cloud.cn/raw/7fe9ead8206ca53064ba67ff7005b506.png)，即可查看数据分析大屏。
-![](https://qcloudimg.tencent-cloud.cn/raw/12eda72f4e1e788ab6d1b9e4d925eb40.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/113f53cc5761d560db947d2ec6bcd75c.png)
 
 
 ### 计分规则

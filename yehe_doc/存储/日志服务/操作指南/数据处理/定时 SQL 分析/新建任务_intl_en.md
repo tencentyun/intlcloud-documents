@@ -49,4 +49,4 @@ This document describes how to create a scheduled SQL analysis task.
 ## Example
 
 The following example illustrates the configurations of the scheduling range, scheduling cycle, and SQL time window:
-![](https://qcloudimg.tencent-cloud.cn/raw/7071fcee005086e7f3e901606b454fc8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0fb1e0363e137829a2ee5b020110194b.jpg)

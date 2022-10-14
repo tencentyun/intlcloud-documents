@@ -22,7 +22,7 @@ Create tags A and B respectively in the following steps:
 
 1. Go to the [Tag List](https://console.cloud.tencent.com/tag/taglist) page.
 2. Click **Create** to enter the tag creation page and enter the tag key and the corresponding tag value.  
-	 ![](https://main.qcloudimg.com/raw/f90447eadac69660ceb355dd57b5fd32.jpg)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/ebca23b3f4ffaa431471a935eea01cbe.png)
 3. Click **OK**.
 
 
@@ -30,20 +30,20 @@ Create tags A and B respectively in the following steps:
 Bind tag A to all business systems in department A and tag B to all business systems in department B in the following steps:
 1. Log in to the RUM console and go to the [Business System](https://console.cloud.tencent.com/rum/web/group-manage) page.
 2. Click **Create Business System**. In the pop-up window, enter the information and bind a tag. You can also find an existing business system in the list, click **Edit** in the **Operation** column, and select a tag.
- ![](https://main.qcloudimg.com/raw/52b8702879cd0189a010c694a6127e1a.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/7f8b0bd2555fad8ab636a5be477356a8.png)
 
 ## Authorization by Tag
 Grant user A the permission of tag A and user B the permission of tags A and B according to the tag authorization policy in the following steps:
 
 1. Go to the [Policies](https://console.cloud.tencent.com/cam/policy) page and click **Create Custom Policy** in the top-left corner.
 2. In the creation method selection window that pops up, click **Authorize by Tag** to enter the **Authorize by Tag** page.
-   ![](https://main.qcloudimg.com/raw/94c8d429b7cdb878f46f3d6ab3f6d429.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/086eaf37cb6ac749fa82d18bba2c23f9.png)
 3. On the **Authorize by Tag** page, select the following information and click **Next** to enter the check page.
 	- **Authorized Users/User Groups**: select the user to be authorized (user A or B).
 	- **Bound Tag Key**: select the tag key to be authorized (tag key of tag A or B).
 	- **Bound Tag Value**: select the tag value to be authorized (tag value of tag A or B).
 	- **Service Resource**: select `rum` and select all or part of operations as needed.
-![](https://main.qcloudimg.com/raw/fc8578ddb62287cb1c4a84951247eb65.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0139be7772fd9cc3b7ec851378931bee.png)
 4. Click **Next**, check the policy (which can be renamed), and click **Complete**.
 
 ## Cost Allocation by Tag
@@ -51,11 +51,11 @@ Grant user A the permission of tag A and user B the permission of tags A and B a
 Set tags A and B as cost allocation tags in the following steps:
 1. To use the tag feature for bills, you need to go to the [Billing Center](https://console.cloud.tencent.com/expense) and select **Bills** > ** Cost Allocation Tags** on the left sidebar. The tag key set as a cost allocation tag will be displayed as a separate column of the bill. You can filter and categorize bills based on this tag key.
 2. On this page, you can view the list of created tag keys. Select the tag key to be displayed and click **Set as Cost Allocation Tag** to set the tag key as a cost allocation tag in the bill.
-    ![](https://main.qcloudimg.com/raw/6aeee9e6c7f3a0d7db5ecd7164af2def.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/40ce2cd6248b472350b40f20303774fd.png)
 
 > ?You can set 5 cost allocation tags at most. A small number of such tags makes it easier for you to manage your costs.
 
 ### Step 2. Display bills by tag
 
 You can view and click the new option **By Tag** on the **[Bill Overview](https://console.cloud.tencent.com/expense/bill/overview)** page. Then, you can select a specific **tag key** to view the column chart and list of relevant resources aggregated by the tag key.
-![](https://main.qcloudimg.com/raw/9bdf7f698272ee9edb261f0a61952702.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7b44b49d2354f5e27eb90d1a9d98581a.png)
