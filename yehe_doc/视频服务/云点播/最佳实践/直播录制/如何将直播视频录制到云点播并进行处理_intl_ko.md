@@ -1,4 +1,4 @@
-라이브 레코딩은 원본 스트림(오디오/비디오 데이터, 타임스탬프 및 기타 정보 수정 없이)에서 리먹싱된 파일을 VOD로 저장한 후, 녹화된 파일을 처리, 배포, 재생하는 솔루션입니다. 자세한 내용은 [라이브 방송 녹화 솔루션](https://intl.cloud.tencent.com/document/product/1082)을 참고하십시오.
+라이브 레코딩은 원본 스트림(오디오/비디오 데이터, 타임스탬프 및 기타 정보 수정 없이)에서 리먹싱된 파일을 VOD로 저장한 후, 녹화된 파일을 처리, 배포, 재생하는 솔루션입니다. 자세한 내용은 [LVB Recording](https://intl.cloud.tencent.com/document/product/1082)을 참고하십시오.
 
 ## 제품 특징
 - CSS의 기능을 기반으로 라이브 스트리밍 콘텐츠를 VOD 플랫폼에 빠르게 녹화 및 저장하여 2차 제작 및 배포를 진행합니다.
@@ -7,20 +7,18 @@
 - 기업 라이브 스트리밍, 라이브 커머스 및 교육용 라이브 스트리밍과 같은 다양한 산업별 시나리오에 적합합니다. Tencent Video와 같은 많은 채널을 통해 동영상 콘텐츠를 배포할 수 있습니다.
 
 ## 전제 조건
-- Tencent Cloud 계정에 [가입](https://intl.cloud.tencent.com/register) 및 [로그인](https://intl.cloud.tencent.com/login)하고, 실명 인증을 완료해야 합니다. 실명 인증되지 않은 사용자는 중국 본토의 라이브 레코딩 VOD 전환 인스턴스를 구매할 수 없습니다.
-- Tencent Cloud CSS 및 VOD 서비스가 활성화되어 있어야 합니다. 서비스가 활성화되어 있지 않은 경우 [CSS 서비스](https://console.cloud.tencent.com/live/livestat)와 [VOD 서비스](https://console.cloud.tencent.com/vod/overview)를 통해 서비스를 활성화하십시오.
+- Tencent Cloud 계정에 [Sign up](https://intl.cloud.tencent.com/register) 및 [Sign in](https://intl.cloud.tencent.com/login)되어있어야 합니다.
+- Tencent Cloud CSS 및 VOD 서비스가 활성화되어 있어야 합니다. 서비스가 활성화되어 있지 않은 경우 [CSS 서비스](https://console.cloud.tencent.com/live/livestat)와 [VOD 서비스](https://console.cloud.tencent.com/vod/overview)를 활성화하십시오.
 
 ## 실행 순서
 ### 1단계: 녹화 템플릿 생성
 라이브 레코딩 기능을 사용하려면 먼저 녹화 템플릿을 만들어야 합니다. 라이브 레코딩 설정은 녹화 템플릿에 저장됩니다. 다양한 구성으로 녹화 템플릿을 생성하여 다양한 녹화 파일 형식 및 길이 등의 효과를 얻을 수 있습니다.
 - **콘솔에서 생성**:
-   1. [CSS 콘솔](https://console.cloud.tencent.com/live/config/record)에 로그인하고 **기능 설정**> [**라이브 레코딩**](https://console.cloud.tencent.com/live/config/record)을 선택합니다.
+	1. [CSS 콘솔](https://console.cloud.tencent.com/live/config/record)에 로그인하고 **기능 설정**> [**라이브 레코딩**](https://console.cloud.tencent.com/live/config/record)을 선택합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2c70d96915ff91297434a1415aea49d0.png)
-
-   2. **녹화 템플릿 생성**을 클릭하고 원하는 녹화 파일 형식을 선택합니다(하나 이상 선택). 구성 항목에 대한 자세한 내용은 [녹화 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/34223)을 참고하십시오.
+	2. **녹화 템플릿 생성**을 클릭하고 원하는 녹화 파일 형식을 선택합니다(하나 이상 선택). 구성 항목에 대한 자세한 내용은 [녹화 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/34223)을 참고하십시오.
 	![](https://qcloudimg.tencent-cloud.cn/raw/af659794c5324cec4ed060377d74f04b.png)
-		
-   3. **저장**을 클릭하여 템플릿 생성을 완료합니다.
+	3. **저장**을 클릭하여 템플릿 생성을 완료합니다.
 - **API를 통해 생성**:
 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845)을 호출하여 녹화 템플릿을 생성할 수 있습니다. 템플릿이 성공적으로 생성되면 해당 템플릿 ID가 반환됩니다.
 
@@ -34,11 +32,9 @@ CSS는 다양한 시나리오에서 라이브 레코딩 기능을 호출하기 �
 - **작업 단계**:
 	1. 녹화 템플릿 생성 후 [도메인 바인딩](https://console.cloud.tencent.com/live/config/record) 팝업창이 나타납니다. **도메인 바인딩**을 클릭하고 푸시 도메인을 선택합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5286148ae522898575744fe54b16938a.png)
-
-   2. [**도메인 관리**](https://console.cloud.tencent.com/live/domainmanage에서 [라이브 푸시 도메인](https://console.cloud.tencent.com/live/domainmanage)을 클릭하여 푸시 세부 정보 페이지로 들어갑니다. **템플릿 구성**>**녹화 구성**을 선택하고 **편집**을 클릭하여 푸시 도메인 이름을 바인딩합니다. 자세한 내용은 [녹화 템플릿 바인딩](https://intl.cloud.tencent.com/document/product/267/34224)을 참고하십시오.
+	2. [**도메인 관리**](https://console.cloud.tencent.com/live/domainmanage에서 [라이브 푸시 도메인](https://console.cloud.tencent.com/live/domainmanage)을 클릭하여 푸시 세부 정보 페이지로 들어갑니다. **템플릿 구성**>**녹화 구성**을 선택하고 **편집**을 클릭하여 푸시 도메인 이름을 바인딩합니다. 자세한 내용은 [녹화 템플릿 연결](https://intl.cloud.tencent.com/document/product/267/34224)을 참고하십시오.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c74c5d420b6ed296859532e887541e7c.png)
-
-   3. [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846) API를 통해 녹화 템플릿의 템플릿 ID와 푸시 도메인을 전달합니다.
+	3. [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846) API를 통해 녹화 템플릿의 템플릿 ID와 푸시 도메인을 전달합니다.
 
 #### 방안2: 지정된 스트림 녹화
 녹화용 API를 통해 라이브 녹화 템플릿을 지정된 라이브 스트림에 바인딩할 수 있습니다.
@@ -83,8 +79,8 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 - **녹화 예시**:
  ```
  https://live.tencentcloudapi.com/?Action=CreateRecordTask&StreamName=test&AppName=live&DomainName=mytest.live.push.com&EndTime=1597024800&<공통 요청 매개변수>
- ```
-
+  ```
+	
 #### 방안5: 퓨어 오디오 녹화
 푸시 스트리밍이 퓨어 오디오일 경우, AAC를 퓨어 오디오 레코딩으로 설정할 수 있습니다.
 
@@ -93,7 +89,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 >!바인딩 규칙은 생성 후 약 5 - 10분 후에 적용됩니다. 바인딩 규칙의 변경 사항은 푸시 중인 라이브 스트림에 영향을 미치지 않으며 새 라이브 스트림에만 적용됩니다.
 
 ### 3단계: 실시간 스트림 푸시
-[2단계](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E9.80.89.E6.8B.A9.E5.BD.95.E5.88.B6.E6.96.B9.E6.A1.88)에서 설명한 대로 푸시 도메인으로 녹화 템플릿을 바인딩한 후 푸시 주소에서 해당 푸시 도메인을 생성하고 [라이브 푸시](https://intl.cloud.tencent.com/document/product/267/31558)를 시작합니다.
+[2단계](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E9.80.89.E6.8B.A9.E5.BD.95.E5.88.B6.E6.96.B9.E6.A1.88)에서 설명한 대로 푸시 도메인으로 녹화 템플릿을 바인딩한 후 푸시 주소에서 해당 푸시 도메인을 생성하고 [라이브 방송 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31558)을 시작합니다.
 
 라이브 스트리밍 종료 후 녹화 파일은 [VOD](https://console.cloud.tencent.com/vod/overview) 플랫폼에 저장됩니다.
 
@@ -105,7 +101,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 다음을 통해 녹화 파일을 조회하고 가져올 수 있습니다.
 - **녹화 콜백을 통해 가져오기**: 라이브 스트림을 푸시하기 전에 콜백 템플릿을 구성해야 합니다(템플릿에는 [녹화 콜백 주소 설정](https://console.cloud.tencent.com/live/config/callback)필요). 파일은 녹화 파일이 생성되면 콜백을 통해 콜백 서버로 전송됩니다. 자세한 내용은 [녹화 이벤트 알림](https://intl.cloud.tencent.com/document/product/267/38082)을 참고하십시오.
 ![](https://qcloudimg.tencent-cloud.cn/raw/137836f99132f0619ca4ccb6ca128fed.png)
-- **VOD 콘솔**: VOD 콘솔에서 녹화 파일을 조회할 수 있습니다. 자세한 내용은 [비디오 보기](https://intl.cloud.tencent.com/document/product/266/33895)를 참고하십시오.
+- **VOD 콘솔**: VOD 콘솔에서 녹화 파일을 조회할 수 있습니다. 자세한 내용은 [오디오/비디오 보기](https://intl.cloud.tencent.com/document/product/266/33895)를 참고하십시오.
 - **VOD API를 통해 가져오기**: [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179) API를 호출하여 파일을 조회할 수 있습니다.
 
 ### 5단계: 녹화 파일 처리
@@ -133,9 +129,9 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 	5. 2차 동영상 편집을 선택할 수 있습니다.
 	6. 트랜스코딩 및 처리가 완료된 후 후속 재생을 위한 동영상 주소를 가져옵니다.
 
-#### 방안3: 라이브 레코딩 + 어댑티브 비트레이트 스트리밍 + 동영상 전송 가속 + Superplayer
+#### 방안3: 라이브 레코딩 + 어댑티브 비트레이트 스트리밍 + 동영상 전송 가속 + Player
 
-- **적용 시나리오**: HLS 암호화를 통해 충족할 수 없는 높은 보안 요구 사항이 있는 경우, 어댑티브 및 Superplayer를 함께 사용하여 비디오 보안을 더욱 강화할 수 있습니다. 온라인 교육 및 기업 교육에 매우 적합합니다.
+- **적용 시나리오**: HLS 암호화를 통해 충족할 수 없는 높은 보안 요구 사항이 있는 경우, 어댑티브 및 Player SDK를 함께 사용하여 비디오 보안을 더욱 강화할 수 있습니다. 온라인 교육 및 기업 교육에 매우 적합합니다.
 
 - **작업 단계**:
 	1. 고객이 라이브 스트리밍을 진행하는 경우, 자세한 내용은 [라이브 방송 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31558)을 참고하십시오.
@@ -143,7 +139,6 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 	3. VOD FileId를 가져옵니다.
 	4. 어댑티브 비트 레이트 스트리밍을 수행하도록 트랜스코딩 템플릿 또는 태스크 플로우를 구성합니다. 자세한 내용은 [태스크 플로우 설정](https://intl.cloud.tencent.com/document/product/266/14058)을 참고하십시오.
 	![](https://qcloudimg.tencent-cloud.cn/raw/461b55df5d688b52d94210f173368ddc.png)
-	5. Superplayer 구성을 설정하고 재생을 위해 생성된 어댑티브 비트 스트림을 선택합니다.
+	5. Player 구성을 설정하고 재생을 위해 생성된 어댑티브 비트 스트림을 선택합니다.
 		![](https://qcloudimg.tencent-cloud.cn/raw/4fe2cb6836caad6861798bc38cde60cd.png)
 	6. FileId를 통해 동영상을 재생합니다.
-

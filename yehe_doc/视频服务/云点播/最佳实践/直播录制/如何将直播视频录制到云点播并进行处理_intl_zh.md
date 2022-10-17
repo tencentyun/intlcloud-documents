@@ -7,20 +7,18 @@
 - 适用于多种行业场景，如企业直播、电商直播、教育直播等。适用于多种分发方案，如腾讯视频等。
 
 ## 前提条件
-- [注册](https://intl.cloud.tencent.com/register) 并 [登录](https://intl.cloud.tencent.com/login) 腾讯云账号，并且完成账号实名认证，未进行实名认证的用户无法购买中国大陆的直播录制转点播实例。
+- [注册](https://intl.cloud.tencent.com/register) 并 [登录](https://intl.cloud.tencent.com/login) 腾讯云账号。
 - 已开通腾讯云直播和云点播服务。若未开通，请前往开通 [云直播服务](https://console.cloud.tencent.com/live/livestat) 和 [云点播服务](https://console.cloud.tencent.com/vod/overview)。
 
 ## 实践步骤
 ### 步骤1：创建录制模板
 使用录制功能需要先创建录制模板，直播录制功能的配置均保存在录制模板中。通过创建不同配置的录制模板，可以实现不同格式、不同录制文件时长等效果。
 - **通过控制台创建**：
-   1. 进入 [云直播控制台](https://console.cloud.tencent.com/live/config/record) ，选择**功能配置**> [**直播录制**](https://console.cloud.tencent.com/live/config/record)。
+	1. 进入 [云直播控制台](https://console.cloud.tencent.com/live/config/record) ，选择**功能配置**> [**直播录制**](https://console.cloud.tencent.com/live/config/record)。
 ![](https://qcloudimg.tencent-cloud.cn/raw/2c70d96915ff91297434a1415aea49d0.png)
-
-   2. 单击**创建录制模板**，选择需要的录制文件类型（至少选择一种格式）。更多配置项描述请参见 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223)。
+	2. 单击**创建录制模板**，选择需要的录制文件类型（至少选择一种格式）。更多配置项描述请参见 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223)。
 	![](https://qcloudimg.tencent-cloud.cn/raw/af659794c5324cec4ed060377d74f04b.png)
-		
-   3. 单击**保存**即可成功创建模板。
+	3. 单击**保存**即可成功创建模板。
 - **通过 API 创建**：
 调用 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) 接口创建录制模板，模板创建成功后会返回对应的模板 ID。
 
@@ -34,11 +32,9 @@
 - **操作流程**：
 	1. 在创建录制模板成功后，将有弹框提醒您 [绑定域名](https://console.cloud.tencent.com/live/config/record)，单击**去绑定域名**并选择推流域名即可。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5286148ae522898575744fe54b16938a.png)
-
-   2. 在 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)中，单击您的 [直播推流域名](https://console.cloud.tencent.com/live/domainmanage) 将会跳转到推流详情页，选择**模板配置**>**录制配置**，单击**编辑**即可绑定您的推流域名。详情请参见 [关联录制模板](https://intl.cloud.tencent.com/document/product/267/34224)。
+	2. 在 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)中，单击您的 [直播推流域名](https://console.cloud.tencent.com/live/domainmanage) 将会跳转到推流详情页，选择**模板配置**>**录制配置**，单击**编辑**即可绑定您的推流域名。详情请参见 [关联录制模板](https://intl.cloud.tencent.com/document/product/267/34224)。
 ![](https://qcloudimg.tencent-cloud.cn/raw/c74c5d420b6ed296859532e887541e7c.png)
-
-   3. 通过 [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846) 接口传入录制模板的模板 ID 和推流域名，即可完成录制模板绑定推流域名。
+	3. 通过 [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846) 接口传入录制模板的模板 ID 和推流域名，即可完成录制模板绑定推流域名。
 
 #### 方案二：指定单个流录制
 通过 API 将直播录制模板绑定到某个指定的直播流，从而实现录制某个直播流。
@@ -83,8 +79,8 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 - **录制示例**：
  ```
  https://live.tencentcloudapi.com/?Action=CreateRecordTask&StreamName=test&AppName=live&DomainName=mytest.live.push.com&EndTime=1597024800&<公共请求参数>
- ```
-
+  ```
+	
 #### 方案五：录制纯音频
 若推流为纯音频，您可以配置 AAC 纯音频录制。
 
@@ -133,9 +129,9 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 	5. 客户可择需进行视频二次剪辑。
 	6. 转码和处理完成后获取视频地址进行后续播放。
 
-#### 方案三：直播录制 + 自适应码流 + 视频加速 + 超级播放器
+#### 方案三：直播录制 + 自适应码流 + 视频加速 + 播放器
 
-- **适用场景**：部分用户对视频安全有极高的诉求，普调的 HLS 加密无法满足加密诉求，通过自适应和超级播放器的组合使用，可以有效完成视频安全升级，对在线教育、企业培训类客户场景适配度很高。
+- **适用场景**：部分用户对视频安全有极高的诉求，普调的 HLS 加密无法满足加密诉求，通过自适应和播放器 SDK 的组合使用，可以有效完成视频安全升级，对在线教育、企业培训类客户场景适配度很高。
 
 - **操作流程**：
 	1. 客户进行直播推流，具体可参见 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558)。
@@ -143,7 +139,6 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask&AppName=live&DomainNam
 	3. 获取点播 FileId。
 	4. 配置任务流转出自适应码流，具体可参见 [任务流设置](https://intl.cloud.tencent.com/document/product/266/14058)。
 	![](https://qcloudimg.tencent-cloud.cn/raw/461b55df5d688b52d94210f173368ddc.png)
-	5. 设置超级播放配置，选择所创建的用于播放的自适应码流。
+	5. 设置播放器配置，选择所创建的用于播放的自适应码流。
 		![](https://qcloudimg.tencent-cloud.cn/raw/4fe2cb6836caad6861798bc38cde60cd.png)
 	6. 通过 FileId 进行视频的播放。
-

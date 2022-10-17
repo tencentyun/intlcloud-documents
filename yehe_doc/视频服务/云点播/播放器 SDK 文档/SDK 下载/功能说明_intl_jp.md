@@ -1,295 +1,398 @@
-[](id:functionList)
-## Super Player
-Super Playerは各端末向けの充実した機能を提供しています。各プラットフォームがサポートする機能リストは次のとおりです：
-<table>
-<tr>
-   <th>機能ポイント</th>
-   <th>機能説明</th>
-   <th width=10% style="text-align:center">iOS & Android</th>
-   <th width=10% style="text-align:center">Web</th>
-   <th width=10% style="text-align:center">Flutter</th>
-</tr><tr>
-   <td>複数の形式</td>   
-   <td>RTMP、FLV、HLS、MP4、WebRTCなど、多種類のオーディオビデオ形式をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>URL再生</td>
-   <td>URLによるオンラインビデオの再生をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>DASHプロトコル</td>
-   <td>標準プロトコルのDASH形式のビデオをサポートします</td>
-   <td style="text-align:center">×</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>FileID再生</td>
-   <td>VODのFileIDによる再生をサポート</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>数秒で最初の画面にプリロード</td>
-   <td>ビデオコンテンツのプリロードをサポートし、ビデオの最初の画面を数秒で表示できます</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>クイックseek</td>
-   <td>指定するところを正確で迅速にseekして再生することをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>H.265ハードウェアデコード</td>
-   <td>H.265のハードウェアデコード再生をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>ソフトウェアデコードとハードウェアデコードの自動切り替え</td>
-   <td>端末がハードウェアデコードをサポートしていない場合、ソフトデコードに自動的に切り替えます</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>アダプティブビットレートストリーミング</td>
-   <td>HLSアダプティブビットレートストリーミングを再生する場合、手動による指定またはネットワーク帯域幅に応じた解像度ストリームの自動選択をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>解像度の切り替え</td>
-   <td>ユーザーによる複数の解像度ストリームのスムーズかつラグのない切り替えをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>解像度の命名</td>
-   <td>さまざまな解像度ストリームのカスタム命名をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>再生の制御</td>
-   <td>開始、終了、一時停止、自動再生、ループ再生、ブレークポイントからの再生、再度再生などの再生制御機能をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>倍速再生</td>
-   <td>0.5倍速～2倍速のビデオ変速再生をサポートし、オーディオの音調を変更せずにその速度を切り替えられます</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>再生開始時間のカスタマイズ</td>
-   <td>ビデオの再生開始時間のカスタマイズをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>トライアル視聴機能</td>
-   <td>トライアル視聴機能がオンになっているビデオの再生をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>プログレスバーの操作</td>
-   <td>プログレスバーをドラッグして進捗を切り替えます</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>プログレスバーのマーク付けとサムネイルプレビュー</td>
-   <td>プログレスバーにマークを付けて情報を追加することをサポートし、サムネイル（スプライト画像）プレビューが可能です</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>プレーヤーのサイズ</td>
-   <td>プレーヤーサイズのカスタマイズ設定をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>画面の塗りつぶしの調整</td>
-   <td>さまざまなビデオ画面の塗りつぶしモードの選択をサポートし、画面サイズに合わせて調整することができます</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>ピクチャーインピクチャー</td>
-   <td>ピクチャーインピクチャーへの切り替えをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>ビデオのイメージ</td>
-   <td>水平、垂直などの方向のイメージをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>ビデオの回転</td>
-   <td>角度に応じたビデオ画面の回転をサポートするとともに、ビデオファイルの内部rotateパラメータに基づいたビデオの自動回転をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>明るさの調整</td>
-   <td>ビデオ再生時にシステムの明るさを調整することをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>音量の調整</td>
-   <td>ビデオ再生時にシステム音量を調整し、ミュート操作を行うことをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>2チャンネルオーディオ</td>
-   <td>2つのサウンドチャンネルを備えるオーディオの再生をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>音声のみの再生</td>
-   <td>MP3などのファイルの音声のみの再生をサポートします	</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>画面ロック</td>
-   <td>回転のロックとインターフェース要素の非表示を含む画面ロック機能をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>弾幕</td>
-   <td>ビデオの上部に弾幕を表示することをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>インストリーム広告の画像設定</td>
-   <td>一時停止時に広告表示用の画像を追加することをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>ビデオのスクリーンショット</td>
-   <td>再生画面の任意のフレームをキャプチャすることをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>字幕のインポート</td>
-   <td>カスタム字幕ファイルのインポートをサポートします</td>
-   <td style="text-align:center">×</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>カバーの設定</td>
-   <td>再生するビデオのカバーを設定することをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>複数のインスタンス</td>
-   <td>1つのインターフェースで複数のプレーヤーを追加して同時に再生することをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>ダウンロードしながら再生</td>
-   <td>ビデオを再生しながら後の内容をキャッシュ、ダウンロードすることをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>Refererホットリンク防止</td>
-   <td>再生リクエストに含まれるRefererフィールドを介してリクエストのソースを識別し、ブラックリストまたはホワイトリストによるソースリクエストの制御をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>Keyホットリンク防止</td>
-   <td>再生リンクへの制御パラメータの追加、リンクの有効時間、トライアル視聴時間、再生が許可されるIP数などの制御をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>HLS暗号化</td>
-   <td>HLSに基づいて提供されるAES encryptionスキームをサポートし、キーペアを使用してビデオデータを暗号化します</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>プライベートプロトコルの暗号化</td>
-   <td>クラウドのプライベートプロトコルを介したビデオの暗号化をサポートし、暗号化されたビデオは、プレーヤーSDKを介してのみ復号と再生ができます</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>オフラインダウンロード</td>
-   <td>暗号化されたビデオをオフラインでダウンロードすることをサポートし、ダウンロード後にプレーヤーSDKを介してのみビデオの復号と再生ができます</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>再生のコールバック</td>
-   <td>再生ステータスのコールバック、最初のフレームへのコールバック、再生完了または失敗へのコールバックをサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>HTTPSに対応</td>
-   <td>HTTPSのビデオリソースの再生をサポートします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>HTTPヘッダーのカスタマイズ</td>
-   <td>ビデオリソースをリクエストするときに、HTTP Headersの内容をカスタマイズします</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">×</td>
-</tr></table>
+Player+はライブストリーミング、VODシナリオのビデオ再生機能を提供し、Web/H5、iOS、Android、Flutterなどのプラットフォームをサポートしています。サポートする機能の詳細は次のとおりです。
+<table selecttype="cells" ><colgroup><col  ><col width="155.63" ><col  ><col  ><col  ><col  ></colgroup>
+<tbody>
+<tr  ><th style="width:5%">機能モジュール</td>
+<th style="width:20%">機能項目</td>
+<th style="width:70%">機能概要</td>
+<th style="width:1%">Web</td>
+<th style="width:1%">iOS & Android</td>
+<th style="width:1%">Flutter</td>
+</tr>
+<tr  ><td colspan="1" rowspan="14" >再生プロトコル/形式</td>
+<td>オンデマンドまたはライブストリーミングのサポート</td>
+<td>オンデマンド再生とライブストリーミング再生機能を同時にサポート</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>サポートされているライブストリーミング再生形式</td>
+<td>RTMP、FLV、HLS、DASH、WebRTCなどのライブストリーミングビデオ形式をサポートしています</td>
+<td>WebRTC,FLV,HLS,DASH</td>
+<td>RTMP,FLV,HLS</td>
+<td>RTMP,FLV,HLS</td>
+</tr>
+<tr  ><td>サポートされているオンデマンド再生形式</td>
+<td>HLS、DASH、MP4およびMP3などのオンデマンドオーディオビデオ形式をサポートしています</td>
+<td>HLS,MP4,MP3,FLV,DASH</td>
+<td>MP4,MP3,HLS,DASH</td>
+<td>MP4,MP3,HLS,DASH</td>
+</tr>
+<tr  >ライブイベントストリーミング</td>
+<td>Tencent Cloudのミリ秒レベルの超低遅延ライブイベントストリーミング再生をサポートしています</td>
+<td>&#10003;</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr  ><td>DASHプロトコルのサポート</td>
+<td>標準プロトコルのDASHビデオ再生をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Quicアクセラレーション</td>
+<td>Quic通信プロトコルをサポートし、ビデオ伝送効率をアップします</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>SDR/HDRビデオ</td>
+<td>SDRビデオおよびHDR 10/HLG規格のHDRビデオの再生をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>H.264再生およびソフト/ハードウェアデコード</td>
+<td>H.264ビデオソースの再生とともに、ソフト/ハードウェアデコードをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>H.265ハードウェアデコード</td>
+<td>H.265ビデオソースのハードウェアデコード再生をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ピュアオーディオの再生</td>
+<td>MP3などのピュアオーディオ再生をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ダブルサウンドチャンネルオーディオ</td>
+<td>ダブルサウンドチャンネルオーディオ再生をサポートしています</td>
+<td>×</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Http Headerの設定</td>
+<td>ビデオリソースをリクエストする際、HTTP Headersコンテンツをカスタマイズします</td>
+<td>×</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HTTPSをサポートしています</td>
+<td>HTTPSビデオリソースの再生をサポートしています</td>|
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HTTP 2.0</td>
+<td>HTTP 2.0プロトコルをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="6" >再生性能</td>
+<td>プリダウンロード</td>
+<td>指定したビデオファイルのコンテンツの事前ダウンロードをサポートするとともに、プリダウンロードしたビデオファイルのサイズと解像度の設定をサポートしています。最初のフレームの所要時間を大幅に短縮でき、さらに低消費電力に向けた最適化により、パフォーマンス向上につながります</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>再生とキャッシュの同時実行</td>
+<td>再生中での後続コンテンツの同時キャッシュとダウンロードをサポートしています。ネットワーク使用量を減らし、キャッシュポリシーを設定することができます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>正確なseek</td>
+<td>プログレスバー上の指定位置にジャンプして再生する機能をサポートしています。モバイル端末ではフレームレベル、Web端末ではミリ秒レベルの正確さを保証します</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>リアルタイムダウンロード速度</td>
+<td>ダウンロード速度のリアルタイム取得をサポートしています。これにより、消費者市場ユーザーが業務上の必要性に応じてラグが発生している場合に、ダウンロード速度を表示することができます。また、アダプティブビットレート帯域幅予測モジュールを使用するための前提条件でもあります</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>マルチインスタンス</td>
+<td>1つのインターフェースに複数のプレーヤーを追加した同時再生をサポートします</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ダイナミックフレームトラッキング</td>
+<td>ラグが発生した場合、「早送り」のような方法で現在のライブストリーミングの進捗に追いつくことができ、ライブストリーミング画面のリアルタイム性を確保します</td>
+<td>&#10003;</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr  ><td colspan="1" rowspan="25" >再生制御</td>
+<td>URL再生</td>
+<td>オンラインビデオのURL方式による再生をサポートしています。URLは、オンデマンド再生アドレスまたはライブストリーミングのプルストリーミングアドレスにすることができます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>FileID再生</td>
+<td>Video on DemandのFileIDによるビデオ再生をサポートしています。これには、複数の解像度のビデオ、サムネイル、キーモーメントなどの情報が含まれます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ローカルビデオの再生</td>
+<td>ローカルにストレージされたビデオファイルの再生をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr><td>基本制御</td>
+<td>開始、終了、一時停止、再開といった再生制御機能をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ピクチャーインピクチャー（ミニウィンドウ）再生</td>
+<td>ピクチャーインピクチャーへの切り替えは、ミニウィンドウ形式による再生をサポートしています。モバイル端末は、統合App内外でのピクチャーインピクチャーの再生を同時にサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>cache内seek</td>
+<td>キャッシュされたビデオコンテンツをseek時にクリアせず、高速seekする機能をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>CSSタイムシフト</td>
+<td>CSSタイムシフトのビデオストリーム再生をサポートしており、開始、終了、および現在のサポート時間を設定でき、ドラッグに対応しています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>×</td>
+</tr>
+<tr  ><td>プログレスバーマーカーとサムネイルプレビュー</td>
+<td>プログレスバーへのマーク情報の追加とサムネイル（スプライトイメージ）のプレビューをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>カバーの設定</td>
+<td>再生ビデオのタイトル画像設定をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>リプレイ</td>
+<td>ビデオ再生終了時の手動トリガーによるリプレイをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ループ再生</td>
+<td>ビデオ再生終了時の自動リプレイをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>リストの再生</td>
+<td>ビデオリスト内のビデオの連続再生や繰り返し再生をサポートしています。これはすなわち、ビデオリストの最後のビデオの再生が終了した後、リストの最初のビデオが再生されるということです</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ブレークポイント再開</td>
+<td>前回再生を終了した位置からの再生再開をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>再生開始時間のカスタマイズ</td>
+<td>ビデオ再生開始時間のカスタマイズをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>倍速再生</td>
+<td>0.5倍速から3倍速までの可変速再生をサポートし、オーディオはピッチを変えることなく可変速を実現します</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>バックエンド再生</td>
+<td>インターフェースがバックエンドに切り替わった後のオーディオビデオ再生をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>再生コールバック</td>
+<td>再生ステータスコールバック、最初のフレームコールバック、再生完了または失敗コールバックをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>再生のリトライに失敗しました</td>
+<td>再生失敗時の自動リトライ、ライブストリーミングの自動リトライ機能をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ボリューム設定</td>
+<td>システムボリュームのリアルタイム調整とミュート操作をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>解像度の切り替え</td>
+<td>ユーザーによるHLSビデオの複数の解像度ストリームのスムーズかつラグのない切り替えをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>解像度の命名</td>
+<td>さまざまな解像度ストリームのカスタム命名をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr><td>スクリーンキャプチャ機能</td>
+<td>再生画面の任意のフレームのキャプチャをサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>プレビュー機能</td>
+<td>プレビュー機能を有効にしたビデオ再生をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>弾幕</td>
+<td>ビデオ上方での弾幕表示をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>字幕インポート</td>
+<td>カスタム字幕ファイルのインポートをサポートしています</td>
+<td>&#10003;</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr  ><td colspan="1" rowspan="8" ><a href="https://intl.cloud.tencent.com/document/product/266/38131">ビデオセキュリティ</a></td>
+<td>refererブラックリスト/ホワイトリスト</td>
+<td>再生リクエストに含まれるRefererフィールドを介してリクエストの送信元を識別し、ブラックリストまたはホワイトリストで送信元リクエストを制御する機能をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Keyリンク不正アクセス防止</td>
+<td>再生リンクへの制御パラメータの追加、リンクの有効時間、プレビュー時間、再生が許可されるIP数などの制御をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HLS暗号化</td>
+<td>HLSに基づいて提供されるAES encryptionスキームをサポートし、キーペアを使用してビデオデータを暗号化します</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HLSプライベート暗号化</td>
+<td>VODのプライベートプロトコルによるビデオの暗号化をサポートし、復号されたビデオのみPlayer+での再生を可能にします。さまざまなブラウザのプラグインやグレーツールによるクラッキングを効果的に防止できます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>商用DRM</td>
+<td>Apple Fairplay、Google Widevineのネイティブ暗号化方式を提供しています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>セキュアなダウンロード</td>
+<td>暗号化されたビデオのオフラインダウンロードをサポートした後は、ビデオはPlayer+を介してのみ復号と再生ができます</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>ダイナミックウォーターマーク</td>
+<td>再生インターフェースに不規則に動くテキストウォーターマークを追加し、効果的な不正録画防止をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>トレーサビリティウォーターマーク</td>
+<td>不正録画者の追跡をわずかなコストでサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="8" >表示結果</td>
+<td>カスタマイズUI</td>
+<td>SDKはUIを含む統合方式とUIインターフェースを含む共通の再生コンポーネントを提供していますので、ご自身のニーズに応じて選択することができます</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>画面の塗りつぶし</td>
+<td>スクリーンサイズに合わせてビデオ画像の各種塗りつぶしモードの選択をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>プレーヤーサイズの設定</td>
+<td>プレーヤーの幅と高さのカスタマイズをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr><td>ロール画像</td>
+<td>一時停止した際の広告表示用のピクチャロール画像の追加をサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>ビデオイメージ</td>
+<td>水平、垂直方向などのイメージをサポートしています</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>ビデオ回転</td>
+<td>角度に応じたビデオ画面の回転をサポートするとともに、ビデオファイルの内部rotateパラメータに基づいたビデオの自動回転をサポートしています</td>
+<td>x</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>画面のロック</td>
+<td>ロックの回転やインターフェース要素の非表示など、画面のロック機能をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>明るさ調整</td>
+<td>ビデオ再生時のシステムの明るさ調節をサポートしています</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="2" >付加価値機能</td>
+<td>端末超高速HD（TESHD）</td>
+<td>超解像度技術をベースとした端末の超高速HD（TESHD）ソリューションを提供しています。オンラインビデオの再生側でポストプロセッシングをリアルタイムに行い、画質を確保した上で帯域幅を節約したり、同じ帯域幅条件でビデオ再生の解像度や主観品質を向上させたりします。</td>
+<td>x</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>再生品質モニタリング</td>
+<td>再生データのレポートをベースに、VODとCSSサービスと組み合わせることによって、再生フルリンクのデータ統計、品質モニタリング、ビジュアル化分析サービスを提供します。</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+</tbody>
+</table>
 
-> ? 
-> - 表の「-」は、端末が対応する機能を備える必要がないか、関連する概念がないことを意味します。
-> - [](id:h265)WebプレーヤーはH.265ハードウェアバージョンデコードをサポートしますが、実際の再生シナリオでは、最終的な効果は、ブラウザーがH.265ハードウェアバージョンデコードをサポートしているかによって異なります。ブラウザーもH.265ハードウェアバージョンデコードをサポートしている場合にのみ、再生中のH.265ハードウェアバージョンデコードがサポートされます。
-
-
-[](id:Adapter)
-## Super Player Adapter
-Super Player Adapterは各端末向けの充実した機能を提供しています。各プラットフォームがサポートする機能リストは次のとおりです：
-
-
-| 機能ポイント                 | 機能説明                                                     | iOS/Android | Web  |
-| -------- | -------------------------------------------- | ----------- | --- |
-| QUICプロトコール   | QUICプロトコールをサポート                                     | ×           | &#10003   |
-| FileID再生            | VODのFileID方式による再生をサポート                             | &#10003           | &#10003   |
-| 解像度の切り替え             | ユーザーによる複数の解像度ストリームのスムーズかつラグのない切り替えをサポート                         | &#10003             | &#10003   |
-| 解像度の命名             | さまざまな解像度ストリームのカスタム命名をサポート                             | &#10003             | &#10003   |
-| プログレスバーマーク    | プログレスバーへのマーク情報の追加をサポート                                | &#10003           | &#10003   |
-| サムネイルプレビュー    | プログレスバーでのサムネイル（スプライトイメージ）プレビューをサポート                         | &#10003           | &#10003   |
-| タイトル画像の設定        | ビデオ再生のためのタイトル画像の設定をサポート                                        | &#10003             | &#10003   |
-| HLS暗号化               | HLSが提供するAES encryptionスキームに基づいて、キーペアを使用してビデオデータを暗号化することをサポート| &#10003             | &#10003   |
-| プライベートプロトコルの暗号化           | クラウドでプライベートプロトコルを介してビデオを暗号化し、暗号化されたビデオは、プレーヤーSDKを介してのみ復号と再生ができることをサポート | &#10003             | &#10003   |
-
-
-## インターフェースの説明
-その他の操作については、各端末のインターフェース説明ドキュメントをご参照ください：
-
-| 端末      | Web端末                                         | iOS端末|Android端末 |
-| ----------- | -------------------------------------------------- | ------------- | --- |
-|Super Player|[Web Super Player - インターフェース説明](https://intl.cloud.tencent.com/document/product/266/39105#initialization-parameters)| -|-|
-|Super Player Adapter|[Web Super Player Adapter - インターフェース説明](https://intl.cloud.tencent.com/document/product/266/42095#using-sdk)|[iOS Super Player Adapter- インターフェース説明](https://intl.cloud.tencent.com/document/product/266/42096#sdk-api-description)|[Android Super Player - インターフェース説明](https://intl.cloud.tencent.com/document/product/266/42097#sdk-api-list.3Ca-id.3D.22sdklist.22.3E.3C.2Fa.3E)|
-
+>! 表の「-」は、端末が対応する機能を備える必要がないか、関連する概念がないことを意味します。

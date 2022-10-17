@@ -1,294 +1,398 @@
-[](id:functionList)
-## Superplayer
-Superplayer는 아래와 같이 다양한 플랫폼에 연결할 수 있는 풍부한 기능을 제공합니다.
-<table>
-<tr>
-   <th>특징</th>
-   <th>기능 설명</th>
-   <th width=10% style="text-align:center">iOS & Android</th>
-   <th width=10% style="text-align:center">Web</th>
-   <th width=10% style="text-align:center">Flutter</th>
-</tr><tr>
-   <td>여러 형식</td>   
-   <td>RTMP, FLV, HLS, MP4, WebRTC 등 다양한 오디오/비디오 형식</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>URL을 통한 재생</td>
-   <td>URL 비디오 재생</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>DASH 프로토콜</td>
-   <td>표준 DASH 형식으로 동영상 재생</td>
-   <td style="text-align:center">×</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>FileID 재생</td>
-   <td>VOD 파일 ID로 동영상 재생</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>즉시 스트리밍</td>
-   <td>즉시 스트리밍을 위한 동영상 사전 로딩</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>빠른 seek</td>
-   <td>재생할 지점을 빠르고 정확하게 seek</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>H.265 하드웨어 디코딩</td>
-   <td>하드웨어 기반 H.265 동영상 디코딩</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>소프트웨어와 하드웨어 디코딩 간의 자동 전환</td>
-   <td>장치가 하드웨어 디코딩을 지원하지 않는 경우 소프트웨어 디코딩으로 자동 전환</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>어댑티브 비트레이트 스트리밍</td>
-   <td>HLS 스트림을 재생하기 위해 대역폭에 따라 수동 또는 자동으로 비디오 해상도 선택</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>해상도 변경</td>
-   <td>재생 중 서로 다른 해상도 간의 원활한 전환</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>사용자 정의 해상도 이름</td>
-   <td>다양한 재생 해상도에 사용자 정의 이름 지정</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>재생 제어</td>
-   <td>시작/중지/일시 중지/재생 재개, 자동 재생, 재생 루프, 리플레이 및 기타 재생 제어</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>배속 재생 변경</td>
-   <td>음높이를 변경하지 않고 0.5배 - 2배 속도로 동영상 재생</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>사용자 정의 재생 시작 시간</td>
-   <td>비디오 재생 시작 시간 지정</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>미리보기</td>
-   <td>동영상 미리보기</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>재생 진행 제어</td>
-   <td>재생 막대를 드래그하여 진행률 조정</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>진행률 표시줄 표시 및 축소판 미리보기</td>
-   <td>진행률 표시줄 표시 및 썸네일 스프라이트 표시</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>플레이어 크기</td>
-   <td>플레이어 크기 지정</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>다중 렌더링 모드</td>
-   <td>동영상을 화면에 맞추는 방법 지정</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>작은 창 재생</td>
-   <td>작은 창에서 동영상 재생</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>비디오 뒤집기</td>
-   <td>비디오를 수평 또는 수직으로 뒤집기</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>비디오 회전</td>
-   <td>특정 각도로 동영상 회전(동영상 파일의 rotate 매개변수를 지정하여 자동 회전 가능)</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>밝기 조정</td>
-   <td>비디오 밝기 조정</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>볼륨 조정</td>
-   <td>동영상 볼륨 조정 또는 동영상 음소거</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>듀얼 사운드 채널</td>
-   <td>듀얼 사운드 채널 재생</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>오디오 재생</td>
-   <td>MP3 및 기타 오디오 파일 재생</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>몰입 모드</td>
-   <td>몰입 모드에서 동영상 재생(방향 잠금 및 시스템 표시줄 숨기기)</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>화면 댓글</td>
-   <td>재생 중 화면에 댓글 표시</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>이미지 일시중지</td>
-   <td>재생이 일시 중지되면 광고에 사용할 수 있는 이미지 표시</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>동영상 스크린샷</td>
-   <td>동영상에서 프레임 추출</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>자막</td>
-   <td>자막 파일 가져오기</td>
-   <td style="text-align:center">×</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>동영상 썸네일</td>
-   <td>동영상에 맞춤 썸네일 추가</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>다중 인스턴스</td>
-   <td>동시 재생을 위해 동일한 페이지에 여러 플레이어 추가</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>다운로드 중 재생</td>
-   <td>재생 중 비디오 데이터 캐싱</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>Referer 링크 도용 방지</td>
-   <td>얼로우리스트/블록리스트 구성 및 재생 요청의 Referer 필드를 사용하여 요청 허용 또는 차단 여부 결정</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>Key 링크 도용 방지</td>
-   <td>재생 요청 URL에 유효 기간, 미리보기 시간 및 최대 IP 수에 대한 매개변수 추가</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>HLS 암호화</td>
-   <td>동영상 데이터는 키 및 HLS 기반 AES encryption 방식으로 암호화 가능</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>사유 프로토콜 암호화</td>
-   <td>사유 프로토콜을 사용하여 클라우드에서 동영상을 암호화할 수 있으며 암호화된 동영상은 플레이어 SDK를 통해서만 복호화 및 재생 가능</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>오프라인 다운로드 후 재생</td>
-   <td>오프라인으로 암호화된 동영상 다운로드 및 Player SDK를 사용하여 동영상 복호화 및 재생</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">×</td>
-</tr><tr>
-   <td>재생 콜백</td>
-   <td>재생 상태, 첫 번째 프레임 렌더링, 재생 종료 및 재생 실패에 대한 콜백</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>HTTPS</td>
-   <td>HTTPS 비디오 재생</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">&#10003;</td>
-</tr><tr>
-   <td>사용자 정의 HTTP 헤더</td>
-   <td>동영상 데이터를 요청할 때 사용자 정의 HTTP 헤더 사용</td>
-   <td style="text-align:center">&#10003;</td>
-   <td style="text-align:center">-</td>
-   <td style="text-align:center">×</td>
-</tr></table>
+Player SDK는 라이브 및 VOD 시나리오에 대한 비디오 재생 기능을 제공하며 Web/H5, iOS, Android, Flutter와 같은 플랫폼을 지원합니다. 지원되는 기능의 세부 사항은 다음과 같습니다.
+<table selecttype="cells" ><colgroup><col  ><col width="155.63" ><col  ><col  ><col  ><col  ></colgroup>
+<tbody>
+<tr  ><th style="width:5%">기능 모듈</td>
+<th style="width:20%">기능 항목</td>
+<th style="width:70%">기능 소개</td>
+<th style="width:1%">Web</td>
+<th style="width:1%">iOS & Android</td>
+<th style="width:1%">Flutter</td>
+</tr>
+<tr  ><td colspan="1" rowspan="14" >재생 프로토콜/형식</td>
+<td>VOD 및 CSS 지원</td>
+<td>VOD 및 라이브 재생 기능 동시 지원</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>지원되는 라이브 재생 형식</td>
+<td>RTMP, FLV, HLS, DASH 및 WebRTC 등 라이브 비디오 스트리밍 형식 지원</td>
+<td>WebRTC, FLV, HLS, DASH</td>
+<td>RTMP, FLV, HLS</td>
+<td>RTMP, FLV, HLS</td>
+</tr>
+<tr  ><td>지원되는 VOD 재생 형식</td>
+<td>HLS, DASH, MP4 및 MP3 등 VOD 오디오/비디오 형식 지원</td>
+<td>HLS, MP4, MP3, FLV, DASH</td>
+<td>MP4, MP3, HLS, DASH</td>
+<td>MP4, MP3, HLS, DASH</td>
+</tr>
+<tr  >LEB</td>
+<td>Tencent Cloud 밀리초급 초저지연 LEB 비디오 재생 지원</td>
+<td>&#10003;</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr  ><td>DASH 프로토콜 지원</td>
+<td>표준 DASH 프로토콜을 통해 비디오 재생</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Quic 가속</td>
+<td>Quic 전송 프로토콜 지원, 비디오 전송 효율성 향상</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>SDR/HDR 비디오 재생</td>
+<td>HDR 10/HLG 표준에서 SDR 비디오 및 HDR 비디오 재생</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>H.264 비디오 재생 및 소프트웨어 및 하드웨어 디코딩</td>
+<td>H.264 비디오 소스 재생 및 소프트웨어/하드웨어 디코딩 지원</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>H.265 비디오 하드웨어 디코딩</td>
+<td>하드웨어를 기반으로 H.265 비디오 소스 디코딩</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>오디오 재생</td>
+<td>MP3 및 기타 오디오 파일 재생</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>듀얼 사운드 채널</td>
+<td>듀얼 사운드 채널 재생</td>
+<td>×</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Http Header 설정</td>
+<td>동영상 데이터를 요청할 때 사용자 정의 HTTP Headers 사용</td>
+<td>×</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HTTPS 지원</td>
+<td>HTTPS 비디오 재생</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HTTP 2.0</td>
+<td>HTTP 2.0 프로토콜 지원</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="6" >재생 성능</td>
+<td>사전 다운로드</td>
+<td>동영상 파일의 콘텐츠를 미리 다운로드하고 미리 다운로드할 파일의 크기와 해상도를 구성하면 첫 번째 프레임까지의 소요 시간(TTFF)을 크게 줄일 수 있음. 재생 장치의 에너지 소비 절감에 최적화되었고, 더 높은 성능을 제공함</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>재생 중 버퍼링</td>
+<td>동영상을 재생할 때 콘텐츠를 동시에 다운로드하고 버퍼링하여 네트워크 사용량을 줄이고, 캐시 정책을 구성할 수 있음</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>정확한 seek</td>
+<td>진행 표시줄의 지정된 시점에서 미디어 파일을 재생하고, 탐색은 모바일 애플리케이션에서는 프레임 레벨까지 정확하고 Web에서는 밀리초 단위로 정확함</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>실시간 네트워크 다운로드 속도</td>
+<td>랙 발생 시 C 엔드 사용자에게 실시간 다운로드 속도를 표시함. 어댑티브 비트레이트 스트리밍의 대역폭 예측 모듈을 구현하기 위한 전제 조건임.</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>멀티 인스턴스</td>
+<td>동시 재생을 위해 동일한 페이지에 여러 플레이어 추가</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>동적 프레임 동기화</td>
+<td>랙 발생 시 ‘빨리 감기’와 유사한 방식으로 현재 라이브 스트리밍 진행 상황을 따라잡아 라이브 스트리밍 이미지의 실시간성 보장</td>
+<td>&#10003;</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr  ><td colspan="1" rowspan="25" >재생 제어</td>
+<td>URL을 통한 재생</td>
+<td>URL에서 온라인 비디오를 재생, URL은 VOD 재생 주소 또는 라이브 스트림의 풀(pull) 주소일 수 있음</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>FileID를 통한 재생</td>
+<td>FileID(VOD 파일 ID)로 동영상 재생. FileID 스트림에는 여러 해상도, 썸네일, 타임스탬프 등의 정보가 포함된 동영상이 포함됨</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>로컬 비디오 재생</td>
+<td>로컬 비디오 파일 재생</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>기본 제어</td>
+<td>시작, 중지, 일시 중지 및 재개와 같은 재생 제어 기능 지원</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Picture-in-picture(PiP) 재생</td>
+<td>PiP 모드의 작은 창에서 미디어 재생, SDK를 통합하는 모바일 애플리케이션의 경우 PiP는 애플리케이션 내/외부에서 모두 지원</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>cache 내에서 seek</td>
+<td>seek하는 동안 캐시된 콘텐츠를 지우지 않고 빠른 seek을 지원함</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>라이브 스트림 타임 시프트</td>
+<td>사용자가 진행률 표시줄을 드래그하고 이전 지점에서 라이브 스트림을 재생할 수 있는 라이브 스트리밍을 위한 타임 시프트 지원</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>×</td>
+</tr>
+<tr  ><td>진행률 표시줄 표시 및 썸네일 미리보기</td>
+<td>진행률 표시줄 표시 및 썸네일 스프라이트 표시</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>썸네일 설정</td>
+<td>동영상에 맞춤 썸네일 추가</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>다시보기</td>
+<td>동영상 재생이 끝난 후 수동으로 재생 트리거</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>재생 루프</td>
+<td>동영상 재생이 끝난 후 자동으로 동영상 재생</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>목록 재생</td>
+<td>재생 목록의 동영상을 순서대로 재생하고 재생 목록 반복(마지막 동영상이 끝난 후 재생 목록의 첫 번째 동영상 재생)</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>체크포인트 재시작</td>
+<td>마지막 재생 종료 위치부터 재생 시작</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>사용자 지정 재생 시작 시간</td>
+<td>비디오 재생 시작 시간 지정</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>배속 재생</td>
+<td>오디오 톤에 영향을 주지 않고 0.5~3배 속도로 미디어 재생</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>백그라운드 재생</td>
+<td>애플리케이션이 백그라운드로 전환되어도 오디오/비디오 계속 재생</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>재생 콜백</td>
+<td>재생 상태, 첫 번째 프레임 렌더링, 재생 종료 및 재생 실패에 대한 콜백</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>재생 실패 시 재시도</td>
+<td>재생 실패 시 자동으로 재시도하고 라이브 스트림 연결 실패 시 자동 재접속</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>볼륨 레벨 설정</td>
+<td>실시간으로 볼륨 레벨 조정 또는 미디어 파일 음소거</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>해상도 전환</td>
+<td>랙 없이 HLS 동영상의 여러 해상도 간에 원활하게 전환</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>해상도 이름 지정</td>
+<td>다양한 재생 해상도에 사용자 정의 이름 지정</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>화면 캡처</td>
+<td>동영상에서 프레임 추출</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>미리보기</td>
+<td>동영상 미리보기</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>화면 댓글</td>
+<td>재생 중 화면에 댓글 표시</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>자막 가져오기</td>
+<td>자막 파일 가져오기</td>
+<td>&#10003;</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr  ><td colspan="1" rowspan="8" ><a href="https://intl.cloud.tencent.com/document/product/266/38131">비디오 암호화 개요</a></td>
+<td>블록리스트/얼로우리스트 referer</td>
+<td>얼로우리스트/블록리스트 구성 및 재생 요청의 Referer 필드를 사용하여 요청 허용 또는 차단 여부 결정</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>Key 링크 도용 방지</td>
+<td>재생 요청 URL에 유효 기간, 미리보기 시간 및 최대 IP 수에 대한 매개변수 추가</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>HLS 암호화</td>
+<td>동영상 데이터는 키 및 HLS 기반 AES encryption 방식으로 암호화 가능</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>프라이빗 HLS 암호화</td>
+<td>클라우드에서 프라이빗 VOD 프로토콜을 통해 동영상 암호화, 암호화된 동영상은 재생용 Player SDK를 통해서만 복호화할 수 있으므로 다양한 브라우저 확장 프로그램 및 해커 툴에 의해 동영상이 복호화되는 것을 효과적으로 방지</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>상업용 DRM</td>
+<td>Apple FairPlay 및 Google Widevine과 같은 네이티브 암호화 솔루션 제공</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>보안 다운로드</td>
+<td>오프라인으로 암호화된 동영상 다운로드 및 Player SDK를 사용하여 동영상 복호화 및 재생</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>동적 워터마크</td>
+<td>불규칙하게 움직이는 텍스트 워터마크를 플레이어에 추가하여 불법 복제 방지</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>디지털 워터마크</td>
+<td>동영상에 디지털 워터마크를 적용하여 저렴한 비용으로 해적 식별 및 추적 가능</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="8" >디스플레이 효과</td>
+<td>사용자 지정 UI</td>
+<td>필요에 따라 선택할 수 있도록 UI가 있는 통합 솔루션 및 UI가 있는 공통 재생 컴포넌트 제공</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>화면 채우기</td>
+<td>동영상을 화면에 맞추는 방법 지정</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>플레이어 크기 설정</td>
+<td>플레이어 너비 및 높이 사용자 지정</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>롤 이미지</td>
+<td>재생이 일시 중지되면 광고에 사용할 수 있는 이미지 표시</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>비디오 미러링</td>
+<td>비디오를 수평 또는 수직으로 뒤집기</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>동영상 회전</td>
+<td>특정 각도로 동영상 회전(동영상 파일의 rotate 매개변수를 지정하여 자동 회전 가능)</td>
+<td>x</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>화면 잠금</td>
+<td>몰입 모드에서 동영상 재생(방향 잠금 및 시스템 표시줄 숨기기)</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>밝기 조정</td>
+<td>비디오 밝기 조정</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td colspan="1" rowspan="2" >부가 기능</td>
+<td>TSC(Top Speed Codec) 트랜스코딩</td>
+<td>Top Speed Codec(TSC) 트랜스코딩을 통해 플레이어는 후처리 과정에서 실시간으로 온라인 동영상에 대한 초고해상도 기술을 구현할 수 있습니다. 높은 이미지 품질을 유지하면서 대역폭 사용량을 줄이는 데 사용하거나 동영상 재생 정의 및 주관적인 동영상 품질을 향상시키는 데 사용할 수 있습니다.</td>
+<td>x</td>
+<td>&#10003;</td>
+<td>x</td>
+</tr>
+<tr  ><td>재생 품질 모니터링</td>
+<td>리포트된 재생 데이터를 기반으로 VOD 및 CSS 서비스를 통합하여 전체 연결 재생 데이터 통계 수집, 품질 모니터링 및 시각적 분석 서비스를 제공합니다.</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+</tbody>
+</table>
 
-> ? 
-> - 상기 표에서 ‘-’는 해당 기능이 지원되지 않거나 플랫폼에 적용되지 않음을 나타냅니다.
-> - [](id:h265)Web 플레이어 SDK는 H.265 하드웨어 디코딩을 지원하지만 H.265 비디오를 디코딩하려면 브라우저도 H.265 하드웨어 디코딩을 지원해야 합니다.
-
-
-[](id:Adapter)
-## Superplayer Adapter
-Superplayer Adapter는 아래와 같이 다양한 플랫폼에 연결할 수 있는 풍부한 기능을 제공합니다.
-
-| 특징      | 설명                                         | iOS/Android | Web |
-| -------- | -------------------------------------------- | ----------- | --- |
-| QUIC 프로토콜   | QUIC 프로토콜 지원                                     | ×           | &#10003   |
-| FileID 재생 | VOD FileId로 비디오 재생 지원                         | &#10003           | &#10003   |
-| 해상도 전환    | 사용자가 여러 해상도 스트림을 지연 없이 원활하게 전환할 수 있도록 지원                         | &#10003           | &#10003   |
-| 해상도 이름 생성    | 다양한 해상도 스트림 이름 사용자 정의 지원                             | &#10003           | &#10003   |
-| 진행 표시줄 표시    | 진행률 표시줄에 마커 추가 지원                                | &#10003           | &#10003   |
-| 썸네일 미리보기    | 미리보기를 위해 진행률 표시줄에 축소판(스프라이트) 표시 지원                         | &#10003           | &#10003   |
-| 썸네일 구성     | 재생할 비디오의 썸네일 설정 지원                                  | &#10003           | &#10003   |
-| HLS 암호화    | 동영상 데이터는 키 및 HLS 기반 AES encryption 방식으로 암호화 가능  | &#10003           | &#10003   |
-| 사유 프로토콜 암호화   | 동영상은 클라우드의 사유 프로토콜을 통해 암호화할 수 있으며 암호화된 동영상은 재생용 플레이어 SDK를 통해서만 복호화 가능 | &#10003           | &#10003   |
-
-
-## API 설명
-다른 기능은 API 문서를 참고하십시오.
-
-| SDK      | Web                                         | iOS |Android  |
-| ----------- | -------------------------------------------------- | ------------- | --- |
-|Superplayer|[Web Superplayer - API 설명](https://intl.cloud.tencent.com/document/product/266/39105#initialization-parameters)| -|-|
-|Superplayer Adapter|[Web Superplayer Adapter - API 설명](https://intl.cloud.tencent.com/document/product/266/42095#using-sdk)|[iOS Superplayer Adapter - API 설명](https://intl.cloud.tencent.com/document/product/266/42096#sdk-api-description)|[Android Superplayer - API 설명](https://intl.cloud.tencent.com/document/product/266/42097#sdk-api-list.3Ca-id.3D.22sdklist.22.3E.3C.2Fa.3E)|
-
+>! 표에서 ‘-’는 단말기에 해당 기능이 필요하지 않거나 관련 개념이 없음을 나타냅니다.
