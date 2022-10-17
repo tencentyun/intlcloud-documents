@@ -4,7 +4,7 @@ Upgrading the computing specification of mongos nodes can increase the maximum n
 
 ## Notes
 
-Upgrading the CPU performance and memory capacity of mongos nodes may involve cross-node data migration and cause a momentary disconnection. Therefore, before performing this operation, make sure that your business has an automatic reconnection mechanism. We recommend you complete this operation within the maintenance time during off-peak hours.
+Upgrading the CPU performance and memory capacity of mongos nodes may involve cross-node data migration and cause a momentary disconnection. Therefore, before performing this operation, make sure that your business has an automatic reconnection mechanism. We recommend that you complete this operation within the maintenance time during off-peak hours.
 
 ## Version requirements
 
