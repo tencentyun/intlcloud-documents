@@ -25,7 +25,7 @@ cd .\winlogbeat-7.6.2-windows-x86_64
 .\install-service-winlogbeat.ps1
 ```
 During execution, if an error is reported, enter the `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned` command and select `y`. Then, enter the above command again.
-执行命令后，如果返回下图结果则表示成功。
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/68fa77d15c4198ce73f3b68bc543f041.png)
 4. Run the following command to test whether the environment is normal.
 ```
