@@ -1,6 +1,6 @@
 ## Authorization Policy Statements for Data Collection
 
-### Collecting data using LogListener
+### Collecting data by using LogListener
 
 Users can collect data and upload logs using the LogListener agent. The example below grants users the minimum access to uploading logs via LogListener.
 
@@ -22,7 +22,54 @@ Users can collect data and upload logs using the LogListener agent. The example 
 >? If your LogListener version is earlier than v2.6.5, you need to add "cls:listLogset" to the above content.
 >
 
-### Uploading data using an API
+### Uploading data with a self-built Kubernetes cluster
+
+Users can collect and upload log data in self-built Kubernetes clusters with Logagent. The example below grants users the minimum permission to do so.
+
+```
+{
+  "version": "2.0",
+  "statement": [
+    {
+      "action": [
+        "cls:pushLog",
+		"cls:agentHeartBeat",
+        "cls:getConfig",
+        "cls:CreateConfig",
+        "cls:DeleteConfig",
+        "cls:ModifyConfig",
+        "cls:DescribeConfigs",
+        "cls:DescribeMachineGroupConfigs",
+        "cls:DeleteConfigFromMachineGroup",
+        "cls:ApplyConfigToMachineGroup",
+        "cls:DescribeConfigMachineGroups",
+        "cls:ModifyTopic",
+        "cls:DeleteTopic",
+        "cls:CreateTopic",
+        "cls:DescribeTopics",
+        "cls:CreateLogset",
+        "cls:DeleteLogset",
+        "cls:DescribeLogsets",
+        "cls:CreateIndex",
+        "cls:ModifyIndex",
+        "cls:CreateMachineGroup",
+        "cls:DeleteMachineGroup",
+        "cls:DescribeMachineGroups",
+        "cls:ModifyMachineGroup",
+        "cls:CreateConfigExtra",
+        "cls:DeleteConfigExtra",
+        "cls:DescribeConfigExtras",       
+        "cls:ModifyConfigExtra"
+      ],
+      "resource": "*",
+      "effect": "allow"
+    }
+  ]
+}
+```
+
+
+### Uploading data by using an API
 
 Users can upload logs to CLS using an API. The example below grants users the minimum access to uploading logs using an API.
 
@@ -39,7 +86,7 @@ Users can upload logs to CLS using an API. The example below grants users the mi
 }
 ```
 
-### Uploading data using Kafka
+### Uploading data by using Kafka
 
 Users can upload logs to CLS using the Kafka protocol. The example below grants users the minimum access to upload logs using the Kafka protocol.
 
@@ -59,9 +106,9 @@ Users can upload logs to CLS using the Kafka protocol. The example below grants 
 ### Managing collection configurations and machine groups
 
 Users can create, modify, and delete collection configurations and machine groups.
-- APIs whose names contain **Config** are used to manage collection configuration related resources.
-- APIs whose names contain **MachineGroup** are used to manage machine group related resources.
-- The three APIs whose names contain **ConfigExtra** are used to manage log upload related configuration of self-built Kubernetes clusters. If you do not use self-built Kubernetes clusters to upload logs, you can ignore these APIs.
+- APIs with names containing **Config** are used to manage collection configuration related resources.
+- APIs with names containing **MachineGroup** are used to manage machine group related resources.
+- The three APIs with names containing **ConfigExtra** are used to manage log upload related configuration of self-built Kubernetes clusters. If you do not use self-built Kubernetes clusters to upload logs, you can ignore these APIs.
 
 ```
 {
@@ -94,7 +141,7 @@ Users can create, modify, and delete collection configurations and machine group
 
 ## Authorization Policy Statements for Search and Analysis
 
-### Log search via console
+### Log search in the console
 
 #### Managing all log topics
 
@@ -136,7 +183,7 @@ Users can search for and manage all log topics, including creating/deleting log 
 				"cls:EstimateRebuildIndexTask",
 				"cls:CancelRebuildIndexTask"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         }
@@ -184,7 +231,7 @@ Users can search for and manage specific log topics, including creating/deleting
 				"cls:EstimateRebuildIndexTask",
 				"cls:CancelRebuildIndexTask"
             ],
-            "resource":[
+            "resource": [
                 "qcs::cls:ap-guangzhou:100007***827:logset/1c012db7-2cfd-4418-****-7342c7a42516",
                 "qcs::cls:ap-guangzhou:100007***827:topic/380fe1f1-0c7b-4b0d-****-d514959db1bb"
             ]
@@ -233,7 +280,7 @@ Users can search for and manage log topics with specific tags, including creatin
 				"cls:EstimateRebuildIndexTask",
 				"cls:CancelRebuildIndexTask"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ],
             "condition": {
@@ -272,7 +319,7 @@ Users can search for logs in all log topics.
                 "cls:DescribeLatestJsonLog",
 				"cls:DescribeRebuildIndexTasks"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         }
@@ -304,7 +351,7 @@ Users can search for logs in specific log topics.
                 "cls:DescribeLatestJsonLog",
 				"cls:DescribeRebuildIndexTasks"
             ],
-            "resource":[
+            "resource": [
                 "qcs::cls:ap-guangzhou:100007***827:logset/1c012db7-2cfd-4418-****-7342c7a42516",
                 "qcs::cls:ap-guangzhou:100007***827:topic/380fe1f1-0c7b-4b0d-****-d514959db1bb"
             ]
@@ -337,7 +384,7 @@ Users can search for logs in log topics with specific tags.
                 "cls:DescribeLatestJsonLog",
 				"cls:DescribeRebuildIndexTasks"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ],
             "condition": {
@@ -367,7 +414,7 @@ Users can search for and analyze all log topics via APIs.
             "action": [
                 "cls:SearchLog"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         }
@@ -388,7 +435,7 @@ Users can search for and analyze specific log topics via APIs.
             "action": [
                 "cls:SearchLog"
             ],
-            "resource":[
+            "resource": [
                 "qcs::cls:ap-guangzhou:100007***827:logset/1c012db7-2cfd-4418-****-7342c7a42516",
                 "qcs::cls:ap-guangzhou:100007***827:topic/380fe1f1-0c7b-4b0d-****-d514959db1bb"
             ]
@@ -410,7 +457,7 @@ Users can search for and analyze log topics with specific tags via APIs.
             "action": [
                 "cls:SearchLog"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ],
             "condition": {
@@ -427,7 +474,7 @@ Users can search for and analyze log topics with specific tags via APIs.
 
 
 
-### Analyzing logs using dashboards
+### Analyzing logs by using dashboards
 
 #### Managing all dashboards
 
@@ -472,6 +519,7 @@ Users can manage (including create, edit, and delete) all dashboards and view th
 
 Users can manage (including create, edit, and delete) dashboards with specific tags and view the data of log topics with specific tags via dashboards.
 
+```
 	{
 	    "version": "2.0",
 	    "statement": [
@@ -518,6 +566,7 @@ Users can manage (including create, edit, and delete) dashboards with specific t
 	        }
 	    ]
 	}
+	```
 
 #### Managing the log topics and dashboards of specific resources
 
@@ -541,7 +590,7 @@ Users can manage (including create, edit, and delete) specific dashboards and vi
                 "cls:ModifyDashboard",
                 "cls:DescribeDashboards"
             ],
-            "resource":[
+            "resource": [
                 "qcs::cls::uin/100000***001:dashboard/dashboard-0769a3ba-2514-409d-****-f65b20b23736"
             ]
         },
@@ -554,7 +603,7 @@ Users can manage (including create, edit, and delete) specific dashboards and vi
                 "cls:DescribeIndex",
                 "cls:DescribeLogsets"
             ],
-            "resource":[
+            "resource": [
                 "qcs::cls::uin/100000***001:topic/174ca473-50d0-4fdf-****-2ef681a1e02a"
             ]
         }
@@ -655,7 +704,7 @@ Users can view specific dashboards and the data of specific log topics via dashb
 	                "cls:ListChart",
 	                "cls:DescribeDashboards"
 	            ],
-	            "resource":[
+	            "resource": [
 	                "qcs::cls::uin/100000***001:dashboard/dashboard-0769a3ba-2514-409d-****-f65b20b23736"
 	            ]
 	        },
@@ -668,7 +717,7 @@ Users can view specific dashboards and the data of specific log topics via dashb
 	                "cls:DescribeIndex",
 	                "cls:DescribeLogsets"
 	            ],
-	            "resource":[
+	            "resource": [
 	                "qcs::cls::uin/100000***001:topic/174ca473-50d0-4fdf-****-2ef681a1e02a"
 	            ]
 	        }
@@ -691,7 +740,7 @@ Users can manage all alarm policies, including create and view alarm policies an
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         },
@@ -733,7 +782,7 @@ Users can view all alarm policies.
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         },
@@ -753,9 +802,9 @@ Users can view all alarm policies.
 }
 ```
 
+## Data Processing
 
-
-## Access Policies for Data Processing
+### Data processing
 
 #### Managing all data processing tasks
 
@@ -774,7 +823,7 @@ Users can manage the data processing tasks of all log topics.
                 "cls:DescribeIndex",
                 "cls:CreateDataTransform"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         },
@@ -790,7 +839,7 @@ Users can manage the data processing tasks of all log topics.
                 "cls:DeleteDataTransform",
                 "cls:ModifyDataTransform"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         }
@@ -812,7 +861,7 @@ Users can view the data processing tasks of all log topics, which does not requi
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         },
@@ -825,13 +874,102 @@ Users can view the data processing tasks of all log topics, which does not requi
                 "cls:DescribeDataTransformPreviewInfo",
                 "cls:DescribeDataTransformProcessInfo"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         }
     ]
 }
 ```
+
+### Scheduled SQL analysis
+
+
+#### Performing scheduled SQL analysis on all log topics
+
+```
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "effect": "allow",
+            "action": [
+                "cls:DescribeLogsets",
+                "cls:DescribeTopics"
+            ],
+            "resource": [
+                "*"
+            ]
+        },
+        {
+            "effect": "allow",
+            "action": [
+                "tag:DescribeResourceTagsByResourceIds",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues",
+                "cls:SearchLog",
+                "cls:DescribeScheduledSqlInfo",
+                "cls:DescribeScheduledSqlProcessInfo",
+                "cls:CreateScheduledSql",
+                "cls:DeleteScheduledSql",
+                "cls:ModifyScheduledSql",
+                "cls:RetryScheduledSqlTask",
+                "cam:ListAttachedRolePolicies"
+            ],
+            "resource": [
+                "*"
+            ]
+        }
+    ]
+}
+```
+
+#### Consuming log topics with specific tags over Kafka
+
+```
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "effect": "allow",
+            "action": [
+                "cls:DescribeLogsets",
+                "cls:DescribeTopics"
+            ],
+            "resource": [
+                "*"
+            ],
+            "condition": {
+                "for_any_value:string_equal": {
+                    "qcs:resource_tag": [
+                        "key&value"
+                    ]
+                }
+            }
+        },
+        {
+            "effect": "allow",
+            "action": [
+                "tag:DescribeResourceTagsByResourceIds",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues",
+                "cls:SearchLog",
+                "cls:DescribeScheduledSqlInfo",
+                "cls:DescribeScheduledSqlProcessInfo",
+                "cls:CreateScheduledSql",
+                "cls:DeleteScheduledSql",
+                "cls:ModifyScheduledSql",
+                "cls:RetryScheduledSqlTask",
+                "cam:ListAttachedRolePolicies"
+            ],
+            "resource": [
+                "*"
+            ]
+        }
+    ]
+}
+```
+
 
 ## Access Policies for Data Shipping/Consumption
 
@@ -858,6 +996,9 @@ Users can view the data processing tasks of all log topics, which does not requi
                 "tag:DescribeTagKeys",
                 "tag:DescribeTagValues",
                 "cam:ListAttachedRolePolicies",
+                "cam:AttachRolePolicy",
+                "cam:CreateRole",
+                "cam:DescribeRoleList",
                 "ckafka:DescribeInstances",
                 "ckafka:DescribeTopic",
                 "ckafka:DescribeInstanceAttributes",
@@ -899,6 +1040,9 @@ Users can view the data processing tasks of all log topics, which does not requi
                 "tag:DescribeTagKeys",
                 "tag:DescribeTagValues",
                 "cam:ListAttachedRolePolicies",
+                "cam:AttachRolePolicy",
+                "cam:CreateRole",
+                "cam:DescribeRoleList",
                 "ckafka:DescribeInstances",
                 "ckafka:DescribeTopic",
                 "ckafka:DescribeInstanceAttributes",
@@ -1015,8 +1159,11 @@ Authorization for all log topics
                 "cls:DeleteShipper",
                 "cls:DescribeShipperTasks",
                 "cls:RetryShipperTask",
+                "cos:GetService",
                 "cam:ListAttachedRolePolicies",
-                "cos:GetService"
+                "cam:AttachRolePolicy",
+                "cam:CreateRole",
+                "cam:DescribeRoleList"
             ],
             "resource": "*"
         }
@@ -1058,8 +1205,11 @@ Authorization for all log topics
                 "cls:DeleteShipper",
                 "cls:DescribeShipperTasks",
                 "cls:RetryShipperTask",
+                "cos:GetService",
                 "cam:ListAttachedRolePolicies",
-                "cos:GetService"
+                "cam:AttachRolePolicy",
+                "cam:CreateRole",
+                "cam:DescribeRoleList"
             ],
             "resource": "*"
         }
@@ -1304,19 +1454,22 @@ Authorization for all log topics
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource":[
+            "resource": [
                 "*"]
      },
         {
             "effect": "allow",
             "action": [
+                "tag:DescribeResourceTagsByResourceIds",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues",
                 "cls:DescribeKafkaConsumer",
                 "cls:CloseKafkaConsumer",
                 "cls:ModifyKafkaConsumer",
                 "cls:OpenKafkaConsumer",
                 "cam:ListAttachedRolePolicies"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         }
@@ -1338,7 +1491,7 @@ Authorization for log topics with a specified tag
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ],
             "condition": {
@@ -1352,13 +1505,16 @@ Authorization for log topics with a specified tag
         {
             "effect": "allow",
             "action": [
+                "tag:DescribeResourceTagsByResourceIds",
+                "tag:DescribeTagKeys",
+                "tag:DescribeTagValues",
                 "cls:DescribeKafkaConsumer",
                 "cls:CloseKafkaConsumer",
                 "cls:ModifyKafkaConsumer",
                 "cls:OpenKafkaConsumer",
                 "cam:ListAttachedRolePolicies"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         }
@@ -1381,7 +1537,7 @@ Authorization for log topics with a specified tag
             "action": [
                 "cls:SearchLog"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ]
         }
@@ -1400,7 +1556,7 @@ Authorization for log topics with a specified tag
             "action": [
                 "cls:SearchLog"
             ],
-            "resource":[
+            "resource": [
                 "*"
             ],
             "condition": {

@@ -1,6 +1,6 @@
 
 ## 现象描述
-在创建 CLB 类型的 Ingress 报错，错误码：E6009。如下图所示：
+创建 CLB 类型的 Ingress 报错，错误码`E6009`。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/0106a5ab44ffb045216c6f634168d938.png)
 
 ## 可能原因
@@ -18,7 +18,7 @@ Nginx Ingress 社区 1.0.0 之前的版本，不支持 networking.k8s.io/v1 类�
 将 validatingwebhookconfigurations 类型资源的 webhooks.rules 的 apiVersions 字段调整为 v1beta1。
 
 
-1. 登录容器服务控制台，选择集群所在地域。
+1. 登录[容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择集群所在地域。
 2. 在“集群管理”列表中，单击集群名称，进入集群详情页。
 3. 选择左侧导航中的“资源对象浏览器”，并在资源类型页中搜索：`validatingwebhookconfigurations`。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/24521c5ecc86b6971531dc23e0f79590.png)
@@ -29,7 +29,7 @@ Nginx Ingress 社区 1.0.0 之前的版本，不支持 networking.k8s.io/v1 类�
    2. 单击 Nginx Ingress 右侧的**升级**，将 Nginx Ingress 升级到 1.1.0 版本。
 
 ### 方法2：取消资源的验证
-1. 登录容器服务控制台，选择集群所在地域。
+1. 登录[容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=4)，选择集群所在地域。
 2. 在“集群管理”列表中，单击集群名称，进入集群详情页。
 3. 选择左侧导航中的“资源对象浏览器”，并在资源类型页中搜索：`validatingwebhookconfigurations`。
 4. 在搜索结果中选择 `validatingwebhookconfigurations`，单击资源对象列表右侧的**删除**，

@@ -155,7 +155,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 ## 4. 控制台界面
 
 以下为日志服务控制台总览页面：
-![](https://main.qcloudimg.com/raw/2ee8eb6bd9ca1c18f133356e6bb099bb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3588065a576694f6f2c7fcda5165059.png)
 
 
 -----

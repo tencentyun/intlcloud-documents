@@ -1,6 +1,6 @@
 
 ## Issue
-Error E6009 was reported when I created a CLB Ingress.
+Error `E6009` was reported when I created a CLB Ingress.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0106a5ab44ffb045216c6f634168d938.png)
 
 ## Possible Causes
@@ -18,7 +18,7 @@ You can solve this problem in the following ways:
 Change the `apiVersions` field in `webhooks.rules` of resources of the `validatingwebhookconfigurations` type to `v1beta1`.
 
 
-1. Log in to the TKE console and select the region of your cluster.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4) and select the region of your cluster.
 2. On the **Cluster Management** page, click the name of the target cluster to enter its details page.
 3. Select **Kubernetes resource manager** on the left sidebar and search for `validatingwebhookconfigurations` on the **Resource Type** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/24521c5ecc86b6971531dc23e0f79590.png)
@@ -29,7 +29,7 @@ Change the `apiVersions` field in `webhooks.rules` of resources of the `validati
    2. Click **Upgrade** on the right of Nginx Ingress to upgrade it to v1.1.0.
 
 ### Option 2. Cancel resource validation
-1. Log in to the TKE console and select the region of your cluster.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4) and select the region of your cluster.
 2. On the **Cluster Management** page, click the name of the target cluster to enter its details page.
 3. Select **Kubernetes resource manager** on the left sidebar and search for `validatingwebhookconfigurations` on the **Resource Type** page.
 4. Select `validatingwebhookconfigurations` from the search results and click **Delete** on the right of the resource object list.
