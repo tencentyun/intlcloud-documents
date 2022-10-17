@@ -1,6 +1,55 @@
 본 문서에서는 MySQL 커널 버전 업데이트 동향에 대해 소개합니다. 업그레이드 하려면 [커널 마이너 버전 업그레이드](https://intl.cloud.tencent.com/document/product/236/36816)를 참고하십시오.
 
 ## MySQL 8.0
+### 20220331
+
+#### bug 수정:
+
+- 스레드 풀(Thread Pool)에서 와일드 포인터의 역참조로 인한 crash 문제 수정.
+
+### 20220330
+
+#### 새로운 기능:
+
+- 기본적으로 writeset 병렬 복사가 열려 있습니다.
+- IO, 메모리 사용 비율 및 SQL 시간 초과 정책을 사용자 단위로 제어할 수 있는 확장된 리소스 그룹을 지원합니다.
+- UNDO 시간 범위 내에서 언제든지 데이터를 쿼리할 수 있는 플래시백 쿼리 기능을 지원합니다.
+- 이 statment에 의해 작동되는 데이터 행을 반환할 수 있는 delete/insert/replace/update의 returning 구문을 지원합니다.
+- row 모드 gtid 복제 기능 확장을 지원합니다.
+- 트랜잭션 잠금 최적화 기능을 지원합니다.
+- 휴지통 향상, 휴지통에서 truncate table과 테이블 자동 정리를 지원합니다.
+- parallel ddl 기능을 지원하여 3단계 병렬 처리를 통해 인덱스를 생성해야 하는 DDL 작업의 속도를 높였습니다.
+- 인덱스 컬럼을 빠르게 수정하는 기능을 지원합니다.
+- 자동 통계 수집 및 교차 시스템 통계 수집을 지원합니다.
+
+#### 성능 최적화:
+
+- binlog_order_commits 비활성화 시 트랜잭션이 제출될 때 gtid에 대한 잠금 충돌이 최적화되었습니다.
+- InnoDB 실행 단계를 rseg의 단일 스레드 생성에서 멀티 스레드 생성으로 변경하여 MySQL 실행 시간을 최적화했습니다.
+
+#### bug 수정:
+
+- 교착 상태 또는 잠금 대기 후 연결이 끊어지면 트랜잭션이 종료되지 않는 문제 수정.
+- innodb_row_lock_current_waits 등의 비정상적인 통계 수정.
+- 감사 플러그 인 use database에 sql type이 없는 오류 수정.
+- 큰 테이블의 비동기 삭제 기능에서 innodb_async_table_size보다 작은 테이블이 rename되는 문제 수정.
+- 감사 플러그 인에서 잘못된 이스케이프 문자가 있는 오류 수정.
+- 열을 빠르게 수정한 후 롤백되는 문제 수정.
+- trx_sys close 시 xa가 있는 시나리오가 crash할 수 있는 문제 수정.
+- merge derived table 시 발생하는 crash 수정.
+- writeset이 활성화된 후 binlog_format을 수정하는 문제 수정.
+- hash scan이 동일한 행에서 A->B->A->C를 업데이트할 때 발생하는 1032 문제 수정.
+- Prepared Statement 모드에서 정렬 인덱스가 유효하지 않을 수 있는 문제 수정.
+- 구체화된 결과를 소비하는 연산자는 구체화된 연산자의 반환 값 경로에 병합되어 실행 계획 이해 및 표시에 오류가 발생할 수 있는 문제 수정.
+- 큰 테이블의 비동기식 삭제로 극단적인 상황의 비정상 동작 수정.
+- sql filter 설정 시 비정상적인 오류 메시지가 발생하는 문제 수정.
+- 저장 프로시저 구문 분석 오류의 문제 수정.
+- 히스토그램 적용 불가 문제 수정.
+- SHOW SLAVE HOSTS(show replicas)의 Role 열 표시로 인한 호환성 문제 수정.
+- Item_in_subselect::single_value_transformer가 열 수에 오류가 있는 경우 crash 문제 수정.
+- 서브 테이블의 virtual column과 외래 키 열, 캐스케이드 업데이트 과정에서 메모리 유출로 인한 인스턴스 crash 문제 수정.
+
+
 ### 20211202
 #### 새로운 기능:
 - 빠른 열 수정 기능을 지원합니다.
@@ -80,7 +129,7 @@
 
 ### 20201230
 #### 새로운 기능:
-- 공식 [8.0.19](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html), [8.0.20](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-20.html), [8.0.21](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html), [8.0.22](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-22.html) 변경을 병합하였습니다.
+- 공식 [8.0.19](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html), [8.0.20](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-20.html), [8.0.21](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html), [8.0.22](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-22.html) 변경 사항을 병합하였습니다.
 - thread_handling 스레드 모드 또는 연결 풀 모드 동적 설정을 지원합니다.
 
 #### 성능 최적화:
@@ -110,6 +159,23 @@
 - 전체 텍스트 인덱스에서 구문 검색(phrase search) 시 다중 바이트 문자 세트에 있었던 crash 문제 수정.
 
 ## MySQL 5.7
+### 20211230
+
+#### 새로운 기능:
+
+- 공식 [5.7.19](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-19.html)에서 [5.7.36](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-36.html)의 변경 사항을 병합하였습니다.
+- 프라이머리/세컨더리 buffer pool이 동기화되어 HA 이후 성능 회복 속도가 빨라지고, 성능 회복 속도는 네이티브 모드에 비해 약 90초 정도 감소하였습니다.
+- 백업 중 서비스 가용성을 향상시키기 위해 경량화된 메타데이터 잠금을 제공하는 backup lock 기능을 추가했습니다.
+
+#### 성능 최적화:
+
+- 인라인 utf8/utf8mb4 my_charpos 관련 함수는 read_write 시나리오에서 UTF_8 관련 함수의 성능을 최적화하였습니다.
+- jemalloc 버전을 5.2.1로 업그레이드하였습니다.
+- binlog rotate 시 파일 번호 가져오기를 최적화하였습니다.
+- 반동기식 slave io를 최적화하였습니다.
+- hash scan 집계를 최적화하였습니다.
+- 대규모 트랜잭션 crash recover 실행 시간을 최적화하였습니다.
+
 ### 20211102
 #### 새로운 기능:
 - 타사 데이터 구독 툴 사용 시 내부 데이터 일관성 비교 SQL 구독으로 인해 데이터 구독 툴이 비정상적이었던 문제를 해결했습니다.
@@ -254,8 +320,8 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 ### 20200331
 #### 새로운 기능:
 - 공식 MySQL 5.7.22 버전의 JSON 시리즈 함수를 신규 추가하였습니다.
-- 이커머스 타임 세일 시나리오에 대한 핫스팟 업데이트 기능을 지원합니다.
-- SQL 스로틀링을 지원합니다.
+- 전자상거래의 타임세일 시나리오를 기반으로 한 [Real-Time Session](https://intl.cloud.tencent.com/document/product/1035/48638) 기능 지원.
+- [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/48638) 지원.
 - 데이터 암호화 기능으로 KMS 사용자 지정 키 암호화를 지원합니다.
 
 #### bug 수정:
@@ -398,7 +464,7 @@ innodb_print_dead_lock_loop_info 매개변수를 통해 활성화하고 활성�
 
 ### 20200915
 #### 새로운 기능:
-- SQL 스로틀링을 지원합니다.
+- [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/48638) 기능 지원
 
 #### 성능 최적화:   
 - buffer pool 초기화 가속을 최적화하였습니다.
