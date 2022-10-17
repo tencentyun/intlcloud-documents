@@ -13,7 +13,7 @@ CVM별 청구서 계정의 경우 CLB 비용에는 인스턴스 요금, 공중�
 </tr>
 <tr>
 <td rowspan="4" width="15%">CVM별 청구서</td>
-<td rowspan="4">공중망 </td>
+<td rowspan="2">공중망 </td>
 <td >공유</td>
 <td rowspan="2">&#10003; </td>
 <td rowspan="2">× </td>
@@ -27,7 +27,7 @@ CVM별 청구서 계정의 경우 CLB 비용에는 인스턴스 요금, 공중�
 <td rowspan="2">사설망 </td>
 <td >공유</td>
 <td rowspan="2">&#10003; </td>
-<td rowspan="2">- </td>
+<td rowspan="2">-</td>
 <td >-</td>
 </tr>
 <tr>
@@ -42,7 +42,7 @@ CVM별 청구서 계정의 경우 CLB 비용에는 인스턴스 요금, 공중�
 >+ 공중망 CLB에는 인스턴스 요금만 발생합니다. CVM에서 공중망을 구입할 수 있습니다. 자세한 내용은 [공용 네트워크 요금](https://intl.cloud.tencent.com/zh/document/product/213/39743)을 참고하십시오.
 
 ### 인스턴스 요금
->! Tencent Cloud는 **2021년 11월 2일 00:00:00(UTC +8)**에 모든 CLB 인스턴스의 아키텍처를 업그레이드했습니다. 업그레이드 후 각 개별 CLB(Cloud Load Balancer) 인스턴스의 보장된 성능은 동시 연결 5만개, 초당 새 연결 5000개 및 QPS 5000개로 증가합니다. CLB 인스턴스(사설망 및 공중망 모두)의 새 단가는 대부분의 리전은 0.686 USD/일, 나머지 리전은 1.029 USD/일입니다. 자세한 내용은 [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/zh/document/product/214/41565)를 참고하십시오.
+>! Tencent Cloud는 <b>2021년 11월 2일 00:00:00(UTC +8)</b>에 모든 CLB 인스턴스의 아키텍처를 업그레이드했습니다. 업그레이드 후 각 개별 CLB(Cloud Load Balancer) 인스턴스의 보장된 성능은 동시 연결 5만개, 초당 새 연결 5000개 및 QPS 5000개로 증가합니다. CLB 인스턴스(사설망 및 공중망 모두)의 새 단가는 대부분의 리전은 0.686 USD/일, 나머지 리전은 1.029 USD/일입니다. 자세한 내용은 [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/zh/document/product/214/41565)를 참고하십시오.
 >
 - 사설망 CLB는 공중망 요금은 무료지만, 인스턴스 요금이 발생합니다. 자세한 내용은 [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/zh/document/product/214/41565)를 참고하십시오.
 - **공중망 CLB 인스턴스는 종량제 모델을 채택합니다.**
