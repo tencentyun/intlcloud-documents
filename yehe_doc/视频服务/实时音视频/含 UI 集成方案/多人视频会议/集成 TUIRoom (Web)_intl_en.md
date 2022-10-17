@@ -336,7 +336,29 @@ npm run serve
 2. Open `http://localhost:8080/` in a browser.
 >! If an ESLint error occurs in the `src/TUIRoom` directory, you can disable ESLint by adding `/src/TUIRoom` to the `.eslintignore` file.
 
-3. Try out the features of the `TUIRoom` component.
+3. Try out the features of the `TUIRoom` componen
+
+
+[](id:step6)
+### Step 6. Commercial Scenario Deployment
+
+1.Package dist file
+
+```bash
+npm run build
+```
+
+>? Note: Please check the package.json file for the actual packaging command
+
+2.Deploy the dist file to the server
+
+>?Note：Commercial Scenario requires the use of https domain name
+![](https://qcloudimg.tencent-cloud.cn/raw/53efdc1d1692a21946cb6c94ddea40e5.png)
+
+
+
+
+
 
 ## Appendix: TUIRoom APIs
 ### TUIRoom APIs
