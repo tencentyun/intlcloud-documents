@@ -46,7 +46,7 @@ IP별 청구 계정의 경우 CLB 요금에는 인스턴스 요금, 공중망 �
 + 공중망 CLB는 인스턴스 요금과 공중망 요금을 생성합니다.
 + <a href="https://intl.cloud.tencent.com/document/product/214/38441"> 리전 간 바인딩 2.0</a>이 공중망 CLB 인스턴스에 대해 구성되고 활성화된 경우 리전 간 바인딩 요금이 CNN 청구서에 포함됩니다.
 
->! Tencent Cloud는 **2021년 11월 2일 00:00:00(UTC +8)**부터 모든 CLB(Cloud Load Balancer) 인스턴스의 아키텍처를 업그레이드할 계획입니다. 업그레이드 후 각 개별 CLB 인스턴스의 보장된 성능은 동시 접속 5만개, 초당 새 접속 5000개 및 QPS 5000개로 증가합니다. CLB 인스턴스(사설망 및 공중망 모두)의 새 단가는 대부분의 지역에서 0.686 USD/일, 나머지 지역에서 1.029 USD/일입니다. 자세한 내용은 [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/document/product/214/41565)를 참고하십시오.
+>! Tencent Cloud는 <b>2021년 11월 2일 00:00:00(UTC +8)</b>부터 모든 CLB(Cloud Load Balancer) 인스턴스의 아키텍처를 업그레이드할 계획입니다. 업그레이드 후 각 개별 CLB 인스턴스의 보장된 성능은 동시 접속 5만개, 초당 새 접속 5000개 및 QPS 5000개로 증가합니다. CLB 인스턴스(사설망 및 공중망 모두)의 새 단가는 대부분의 지역에서 0.686 USD/일, 나머지 지역에서 1.029 USD/일입니다. 자세한 내용은 [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/document/product/214/41565)를 참고하십시오.
 
 
 ## 종량제 과금[](id:pay-as-you-go)
