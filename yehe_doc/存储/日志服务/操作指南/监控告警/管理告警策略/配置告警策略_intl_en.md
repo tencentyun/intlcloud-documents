@@ -43,6 +43,7 @@ If the trigger condition is `$2.Latency > 5`, then it is met by four results.
 <li>If triggering by group is not enabled, only one alarm will be triggered when the trigger condition is met by one of the above execution results.</li>
 <li>If it is enabled and the results are grouped by the `domain` field, four alarms will be triggered separately for the above execution results.</li>
 </ul>
+
 >!  
 > - When triggering by group is enabled, the trigger condition may be met by multiple results, and a large number of alarms will be triggered, leading to an alarm storm. Therefore, configure the group field and trigger condition appropriately.
 > - When specifying the group field, you can divide execution results into up to 1,000 groups. No alarms will be triggered for excessive groups.
