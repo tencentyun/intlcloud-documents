@@ -155,7 +155,7 @@ Currently, CLS supports shipping in [CSV format](https://intl.cloud.tencent.com/
 ## 4. Console Interface
 
 The following is the overview page of the CLS console:
-![](https://main.qcloudimg.com/raw/2ee8eb6bd9ca1c18f133356e6bb099bb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3588065a576694f6f2c7fcda5165059.png)
 
 
 -----
