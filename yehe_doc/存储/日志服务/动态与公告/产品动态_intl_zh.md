@@ -253,7 +253,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>支持增量/全量采集策略</td><td>提供 LogListener 全量/增量可选采集配置，满足用户只投递新增日志数据的需求，大大减少了用户写流量的成本。</td><td>2021-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/32287">增量/全量采集策略</a></td></tr>
+		<tr><td>支持增量/全量采集策略</td><td>提供 LogListener 全量/增量可选采集配置，满足用户只投递新增日志数据的需求，极大减少了用户写流量的成本。</td><td>2021-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/32287">增量/全量采集策略</a></td></tr>
 		<tr><td>优化检索报错提示</td><td>报错提示整体规范化，友好化，人性化，大幅提高了检索错误信息的可读性。</td><td>2021-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/44224">	错误码报错提示</a></td></tr>
 		<tr><td>支持中文分词</td><td>针对包含中文的日志，满足用户按照中文语法拆分成中文内容进行检索。</td><td>2021-07-08</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">中文分词</a></td></tr>
 	</tbody>
