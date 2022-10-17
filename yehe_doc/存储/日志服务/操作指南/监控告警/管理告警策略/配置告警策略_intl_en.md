@@ -1,109 +1,97 @@
 ## Overview
 
-Log-based monitoring alarm use cases can be implemented by configuring alarm policies. This document describes how to configure an alarm policy in the CLS console.
+This document describes how to configure an alarm policy based on logs so that alarms can be sent when certain conditions are met, such as when there are too many error logs or the API response time is too long.
 
+## Prerequisites
 
-## Prerequisite
-
-- You have uploaded logs to a log topic.
-- The log topic has [configured an index](https://intl.cloud.tencent.com/document/product/614/16981).
+- You have uploaded the log to a log topic and [configured the index](https://intl.cloud.tencent.com/document/product/614/39594).
+- The log topic is not in [STANDARD_IA](https://intl.cloud.tencent.com/document/product/614/42004) storage, which doesn't support alarm policy configuration.
+- You have logged in to the CLS console and entered the [Alarm Policy](https://console.cloud.tencent.com/cls/alarm/list) page.
 
 ## Directions
 
-### Step 1. Create an alarm policy
+On the **Alarm Policy** page, click **Create** and configure the following items.
 
-1. Log in to the [CLS console](https://console.cloud.tencent.com/cls/monitor).
-2. On the left sidebar, choose **Monitoring Alarm*** > **Alarm Policy** to go to the alarm policy management page.
-3. Click **Create** to create an alarm policy.
 
-### Step 2. Configure a monitoring object and task
+### Configuring the monitoring object and monitoring task
 
- - Monitoring object
-Select the log topic to be monitored and configure the corresponding analysis statement and query time range as detailed below:
- <table>
-	<tr><th>Name</th><th>Description</th><th>Example</th></tr>
-	<tr>
-		<td>Log topic</td>
-		<td>Target log topic for which monitoring alarms are to be configured</td>
-		<td>Log topic `nginx`</td>
-	</tr>
-	<tr>
-		<td>Analysis statement</td>
-		<td>Analysis statement that acts on the log topic</td>
-		<td>Example 1. Get the number of logs in the `error` state<br>status:error ｜ select count(*) as ErrCount<br>Example 2. Get the average request latency of the domain name (url:aaa.com)<br>url:"aaa.com" | select avg(request_time) as Latency</td>
-	</tr>
-	<tr>
-		<td>Query time range</td>
-		<td>Data time range where the analysis statement is to be run each time</td>
-		<td>Example 1. Get the number of logs in the error status in the last 5 minutes<br>Example 2. Get the average latency of the requests made in the last 1 minute</td>
-	</tr>
-	</table>
- - Monitoring period
-The monitoring period indicates the frequency at which monitoring tasks are performed. CLS offers two ways to configure a period:
+ - **Monitoring Object**: Select the target log topic.
+ - **Monitoring Task**
+  - **Query Statement**: It is used for log topics and needs to contain the analysis statement (i.e., SQL statement as described in [Overview and Syntax Rules](https://intl.cloud.tencent.com/document/product/614/37803)).
+    - Example 1: To count logs with errors, use `status:error | select count(*) as ErrCount`.
+    - Example 2: To calculate the average response time of the domain name "domain:aaa.com", enter `domain:"aaa.com" | select avg(request_time) as Latency`.
+  - **Query Time Range**: It indicates the time range of data for query by the query statement, which can be up to the last 24 hours.
+  - **Trigger Condition**: An alarm is triggered when the trigger condition is met. In the condition expression, `$N.keyname ` is used to reference the query statement result. Here, `$N` indicates the Nth query statement in the current alarm policy, and `keyname` indicates the corresponding field name. For more information on the expression syntax, see [Trigger Condition Expression](https://intl.cloud.tencent.com/document/product/614/39576).
+    - Example 1: To trigger an alarm when the number of logs with errors exceeds 10, enter `$1.ErrCount > 10`. Here, `$1` indicates the first query statement, and `ErrCount` indicates the `ErrCount` field in the result.
+    - Example 2: To trigger an alarm when the domain name "domain:aaa.com" takes more than 5 seconds on average to respond, enter `$2.Latency > 5`. Here, `$2` indicates the first query statement, and `Latency` indicates the `Latency` field in the result.
+  - **Trigger by Group**: It specifies whether the trigger condition expression should trigger alarms by group. When it is enabled, if multiple results of the query statement meet the trigger condition, the results will be grouped based on the group field, and an alarm will be triggered for each group.
+    For example, if the query statement 2 is `* | select avg(request_time) as Latency,domain group by domain order by Latency desc limit 5`, and multiple results are returned:
+<table>
+<thead>
+<tr><th>Latency</th><th>Domain</th></tr>
+</thead>
+<tbody>
+<tr><td>12.56</td><td>aaa.com</td></tr>
+<tr><td>9.45</td><td>bbb.com</td></tr>
+<tr><td>7.23</td><td>ccc.com</td></tr>
+<tr><td>5.21</td><td>ddd.com</td></tr>
+<tr><td>4.78</td><td>eee.com</td></tr>
+</tbody>
+</table>
+If the trigger condition is `$2.Latency > 5`, then it is met by four results.
+<ul>
+<li>If triggering by group is not enabled, only one alarm will be triggered when the trigger condition is met by one of the above execution results.</li>
+<li>If it is enabled and the results are grouped by the `domain` field, four alarms will be triggered separately for the above execution results.</li>
+</ul>
+>!  
+> - When triggering by group is enabled, the trigger condition may be met by multiple results, and a large number of alarms will be triggered, leading to an alarm storm. Therefore, configure the group field and trigger condition appropriately.
+> - When specifying the group field, you can divide execution results into up to 1,000 groups. No alarms will be triggered for excessive groups.
+>
+  - **Execution Cycle**: It indicates the execution frequency of the monitoring task, which can be configured in the following two ways:
  <table>
 		<tr>
-		<th>Period Configuration Method</th>
+		<th>Cycle Configuration Method</th>
 		<th>Description</th>
 		<th>Example</th>
 	</tr>
 	<tr>
 		<td>Fixed frequency</td>
-		<td>Monitoring tasks are performed at fixed intervals<br>Interval: 1-1440 minutes; granularity: minute</td>
+		<td>Monitoring tasks are performed at fixed intervals<br>Interval: 1–1,440 minutes. Granularity: Minute</td>
 		<td>Monitoring tasks are performed once every 5 minutes</td>
 	</tr>
 	<tr>
 		<td>Fixed time</td>
-		<td>Monitoring tasks are performed once at fixed points in time<br>Time point range: 00:00-23:59; granularity: minute</td>
+		<td>Monitoring tasks are performed once at fixed points in time<br>Time point range: 00:00–23:59. Granularity: Minute</td>
 		<td>Monitoring tasks are performed once at 02:00 every day</td>
 	</tr>
  </table>
 
-### Step 3. Configure the alarm policy
+### Configuring multi-dimensional analysis
 
- - Trigger condition: a trigger condition expression is used to determine whether to trigger an alarm, and an alarm will be triggered when it is met.
- CLS allows you to import analysis results by using `$N.keyname`. `$N` indicates the Nth monitoring object in the current alarm policy (for more information, please see [How do I view the number of a monitoring object?](#number)). `keyname` indicates the name of the corresponding field. For example, `$1.status>500` indicates triggering the alarm for the 1st monitoring object if the `status` field carries a value greater than 500. For more expression syntax, please see Trigger Condition Expression Syntax.
- - Alarm frequency: after the trigger condition is continuously met for a certain number of times (default value: 1; value range: 1–10), CLS will trigger a notification according to the alarm frequency. Unimportant occurrences can be avoided by configuring a threshold for the number of consecutive periods. For example, configuring meeting the trigger condition for 5 consecutive periods indicates that a notification will be triggered after the trigger condition is met 5 consecutive times. If the trigger condition expression is modified, or if the expression condition is not met during computation, the number of triggered times will be zeroed.
- - Notification convergence: you can set the interval between two notifications to avoid frequently sending alarm notifications. When the execution result of a certain monitoring task meets the trigger condition, the cumulative number of triggered periods reaches the threshold, and the requirement for the notification interval is met, a notification will be sent. For example, sending an alarm notification once every 15 minutes indicates that only one alarm notification will be received within 15 minutes.
+When an alarm is triggered, raw logs can be further analyzed through multi-dimensional analysis, and the analysis result can be added to the alarm notification to facilitate root cause discovery. The multi-dimensional analysis doesn't affect the alarm trigger condition.
 
-### Step 4. Test the monitoring task
+| Multi-dimensional Analysis Type       | Description                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| Related raw logs       | Get the raw logs that meet the search condition of the query statement. The log field, quantity, and display form can be configured.<br />For example, when an alarm is triggered by too many error logs, you can view the detailed logs in the alarm. |
+| Top 5 field values by occurrence and their percentages | For all the logs within the time range when the alarm is triggered, group them based on the specified field and get the top 5 field values and their percentages.<br />For example, when an alarm is triggered by too many error logs, you can get the top 5 URLs and top 5 response status codes. |
+| Custom search and analysis     | Execute the custom search and analysis statement for all the logs within the time range when the alarm is triggered.<br />Example 1: `* | select avg(timeCost) as time,URL group by URL` gets the request duration of each API.<br />Example 2: `status:>499` gets error logs. |
 
-After the alarm policy is configured, click **Test Monitoring Task** to verify the analysis statement and trigger condition syntax.
+>? The "related raw logs" and "top 5 field values by occurrence and their percentages" options support the automatic association with the search condition of the specified query statement (excluding the analysis statement, i.e., SQL filter condition), so as to indicate to perform multi-dimensional analysis on raw logs that meet what conditions.
+>
 
+### Configuring an alarm notification
 
-If the syntax is correct, results similar to the following are displayed:
-
-
-
-### Step 5. Configure alarm notifications
-
-- Notification channel group
-The notification channels and objects can be set by associating a notification channel group. Notifications can be sent by SMS, email, phone call, WeChat, WeCom, and custom callback API (webhook). For more information, please see [Managing Notification Groups](https://intl.cloud.tencent.com/document/product/614/41987).
-- Notification content
-By adding preset variables to notification content, you can easily understand alarm content. For the variable list and descriptions, see [Notification Content Variables](https://intl.cloud.tencent.com/document/product/614/41984).
-
-- Custom API callback configuration
-If the selected notification channel group contains a custom callback API, an input box for the custom API callback configuration is displayed. For the variable list and descriptions, see [Custom API Callback Variables](https://intl.cloud.tencent.com/document/product/614/41985). There are some duplicate parts between these custom API callback variables and notification content variables, but they are not exactly the same. The variables listed in the document shall prevail when used.
-
-- Multi-dimensional analysis
-You can click **Add Item** to add the multi-dimensional analysis content of `Top 5 field values by occurrence and their percentages` or `Custom search and analysis statement` to alarm notifications. Currently, a single alarm supports up to 3 multi-dimensional analysis configurations.
-
-Multi-dimensional analysis applies only to the logs within the query time range specified in the alarm query statement. If an alarm policy contains multiple query statements, the largest query time range prevails. For example, if the alarm policy in the following figure is triggered, multi-dimensional analysis applies only to the query time range **Last 15 Minutes** specified in the second query statement.
-
-If you select `Top 5 field values by occurrence and their percentages`, you need to select an analysis field (only a field with indexing enabled under the current log topic can be selected).
-
-Multi-dimensional analysis displays the top 5 content occurrences under the target field in all logs within the query time range.
-
-If you need more flexible content configuration, select `Custom search and analysis statement`, and enter an analysis statement in the same format as that of an alarm analysis statement.
-
-The following figure shows the final display effect of the notification on a web page.
-
-After the configuration is completed, click **Preview** to preview the display effect of all channels.
+- **Alarm Frequency**:
+ - Duration: A notification will be sent only after the trigger condition is met constantly a certain number of times (which can be 1–10 and is 1 by default).
+ - Interval: No notifications will be sent within the specified interval after the last notification. For example, the **an alarm will be triggered every 15 minutes** option indicates that only one alarm will be sent within 15 minutes.
+- **Notification Group**:
+The notification channels and objects can be set by associating a notification channel group. Notifications can be sent by SMS, email, phone call, WeChat, WeCom, and custom callback API (webhook). For more information, see [Managing Notification Group](https://intl.cloud.tencent.com/document/product/614/41987).
+- **Notification Content**:
+By adding preset variables to the notification content, you can add specified information to the alarm notification. For more information on variables, see [Notification Content Variable](https://intl.cloud.tencent.com/document/product/614/41984).
+- **Custom Webhook Configuration**:
+If the selected notification group contains a custom webhook, the custom webhook input box will be displayed. You can customize the request header and request body there, which will be used by CLS to call the specified API when an alarm is triggered. In the request header and body, you can use [notification content variables](https://intl.cloud.tencent.com/document/product/614/41984) to send relevant data to the specified API.
 
 
-## FAQs
+## Best Practices
 
-<span id="number"></span>
-### How do I view the number of a monitoring object?
-
-The number of a monitoring object is displayed on its left. The query number for the 1st object is 1, the query number for the 2nd object is 2, and so on.
-
+[Counting Logs by Time Range](https://www.tencentcloud.com/document/product/614/50272)

@@ -2,7 +2,7 @@
 
 You can create logsets and log topics in different regions when using CLS. Regions are independent geographical areas where IDCs are located. Tencent Cloud regions are completely isolated. You can select the nearest region based on different business scenarios and the location of your targeted users to reduce log access latency and improve user experience.
 
-## Available Regions
+## Available regions
 
 | Region     | Code             |
 | :------- | :--------------- |
@@ -31,7 +31,7 @@ You can create logsets and log topics in different regions when using CLS. Regio
 > - If CLS is integrated into other cloud products, you need to select a logset in the same region as the other cloud products. Cloud products in the same region access each other over a private network, which effectively reduces latency and improves access speed.
 > 
 
-## Domain Name
+## Domain name
 
 CLS has different domain names for each of its modules, as described below:
 
@@ -172,7 +172,7 @@ If you access CLS over the public network, you can also use the unified domain n
 
 
 | Region     | Code             | Private Network Domain Name                            | Public Network Domain Name                           |
-| ------- | --------------- | -------------------------------- | ---------------------------------------- |
+| :------- | :--------------- | -------------------------------- | ---------------------------------------- |
 | Beijing     | ap-beijing       | cls.internal.tencentcloudapi.com | cls.ap-beijing.tencentcloudapi.com       |
 | Guangzhou     | ap-guangzhou     | cls.internal.tencentcloudapi.com | cls.ap-guangzhou.tencentcloudapi.com     |
 | Shanghai     | ap-shanghai      | cls.internal.tencentcloudapi.com | cls.ap-shanghai.tencentcloudapi.com      |
@@ -194,9 +194,10 @@ If you access CLS over the public network, you can also use the unified domain n
 | São Paulo     | sa-saopaulo      | cls.internal.tencentcloudapi.com | cls.sa-saopaulo.tencentcloudapi.com       |
 
 :::
-::: CLS API 2017 [](id:API2017)
+::: API for log upload [](id:API2017)
 
-[CLS API 2017](https://intl.cloud.tencent.com/document/product/614/16907) is an old version of CLS APIs that should not be used alone. The APIs use the following domain names:
+The following domain names apply to APIs for log upload. Update all other APIs to API 3.0.
+
 
 <table>
 <thead>
@@ -450,7 +451,7 @@ As described in [Uploading Logs via Kafka](https://intl.cloud.tencent.com/docume
 :::
 ::: Kafka Consumption Logs [](id:Kafka_Consume)
 
-As described in [Consumption over Kafka](https://cloud.tencent.com/document/product/614/72651), you can use Kafka Consumer SDKs or other big data components to consume the data to data warehouses. This feature uses the following domain names:
+As described in [Consumption over Kafka](https://intl.cloud.tencent.com/document/product/614/42752), you can use Kafka Consumer SDKs or other big data components to consume the data to data warehouses. This feature uses the following domain names:
 
 <table>
 <thead>

@@ -6,20 +6,20 @@ This document describes how to get started with Cloud Log Service (CLS).
 - [Features](https://intl.cloud.tencent.com/document/product/614/11254)
 - [Advantages](https://intl.cloud.tencent.com/document/product/614/11265)
 - [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940)
-
+- [CLS Specifications](https://intl.cloud.tencent.com/document/product/614/37887)
 
 -----
 
 ## 2. CLS Billing Modes
 
-CLS provides a daily pay-as-you-go billing option in all the supported regions. You pay for what you use and no upfront payment is required. For more information, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/614/37510).
+CLS provides a daily pay-as-you-go billing option in all the supported regions. You pay for what you use and no upfront payment is required. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/614/37510).
 
 -----
 
 ## 3. Getting Started
 
 ### Step 1. Activate CLS
-First, you need to request to activate [CLS](https://intl.cloud.tencent.com/product/cls) on Tencent Cloud.
+First, you need to activate [CLS](https://www.tencentcloud.com/products/cls) at the Tencent Cloud official website.
 
 
 ### Step 2. Download and install LogListener  
@@ -29,9 +29,9 @@ First, you need to request to activate [CLS](https://intl.cloud.tencent.com/prod
 #### Check the network connection
 
 To install LogListener, the source server and the CLS region must be able to connect to each other. Tencent's Cloud Virtual Machine (CVM) accesses CLS via a private network by default.
-You can run the following command to check the network connectivity, where `<region>` is the abbreviation for the CLS region. For more information about regions, please see [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940).
+You can run the following command to check the network connectivity, where `<region>` is the abbreviation for the CLS region. For more information about regions, see [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940).
 ```shell
-telnet <region abbreviation>.cls.tencentyun.com
+ping <region abbreviation>.cls.tencentyun.com
 ```
 
 #### View/Create a key pair
@@ -53,29 +53,33 @@ CLS service is differentiated by region. To lower network latency, try to create
 
 4. Configure as needed on the page that is displayed.</br>
 
- - Log topic name: name of the log topic, such as topic_test.
- - Logset: **Select an existing logset** is selected by default. Alternatively, you can select **Create Logset** and set the logset’s name (e.g., cls_test) as needed.
+ - Log topic name: Name of the log topic, such as topic_test.
+ - Logset Operation: **Select an existing logset** is selected by default. Alternatively, you can select **Create Logset** and set the logset's name (e.g., cls_test) as needed.
 5. Click **OK**.
  - A created log topic will be displayed in the log topic list.
 
- - You can click **Manage Logset** to view the created logset.
+ - You can click **Manage Logset** to view the created logset on the logset list page.
 
 
 ### Step 4. Create a machine group 
 
 CLS uses a [machine group](https://intl.cloud.tencent.com/document/product/614/30449) to manage a list of log source machines.
-Log in to the CLS console(https://console.cloud.tencent.com/cls), and click **Machine Group** on the left sidebar to open the machine group management page. Select the appropriate region at the top of the page, and click **Create Machine Group**. A machine group can contain multiple machine IP addresses (one IP address per line). For CVM, enter the private IP address directly. For more information, see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
+Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Machine Group Management** on the left sidebar. Select the appropriate region at the top of the page and click **Create Machine Group**. A machine group can contain multiple machine IP addresses (one IP address per line). For CVM, enter the private IP address directly. For more information, see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
-After a machine group is created, click **View** in the machine group list to check the connection between the LogListener client and servers. If the status is normal, the LogListener client is successfully connected to CLS. Otherwise, please see [Machine Group Exception](https://intl.cloud.tencent.com/document/product/614/17424) for troubleshooting.
+After a machine group is created, click **View** in the machine group list to check the connection between the LogListener client and servers. If the status is normal, the LogListener client is successfully connected to CLS; otherwise, see [Machine Group Exception](https://intl.cloud.tencent.com/document/product/614/17424) for troubleshooting.
 
 
 ### Step 5. Configure LogListener 
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. On the left sidebar, click **Log Topic** to go to the log topic management page.
+2. On the left sidebar, click **Log Topic** to enter the log topic management page.
 3. On the log topic management page, click **Collection Configuration**, specify a collection path and parsing mode for the log topic, and bind the log topic to a machine group.
->? This step takes the LogListener-based log collection method as an example. For more information, please see [Collection Methods](https://intl.cloud.tencent.com/document/product/614/12502).
+>? This step takes the LogListener-based log collection method as an example. For more information, see [Collection Overview](https://intl.cloud.tencent.com/document/product/614/31652).
 >
+
+#### Bind a machine group
+
+Select an existing machine group, and associate it with the current log topic. Then, LogListener will monitor the log files in this machine group according to the rules you set. You may bind a log topic to multiple machine groups, but a log file will only be collected into one log topic.
 
 #### Configure a collection path
 
@@ -87,15 +91,12 @@ The collection path needs to match the absolute path of the log file on the serv
 | /\*\*/     | Current directory and all its subdirectories.   |
 | File Name   | Log file name, which supports only the wildcard characters `\*` and `?`. `\*` indicates to match any multiple characters. `?` indicates to match any single character. |
 
-For example, if the absolute path of the file to be collected is `/cls/logs/access.log`, then the directory prefix entered for the collection path should be `/cls/logs`, and the file name `access.log`.
-
-#### Bind a machine group
-
-Select an existing machine group, and associate it with the current log topic. Then, LogListener will monitor the log files in this machine group according to the rules you set. You may bind a log topic to multiple machine groups, but a log file will only be collected into one log topic.
+For example, if the absolute path of the file to be collected is `/cls/logs/access.log`, then the directory prefix entered for the collection path should be `/cls/logs`, and the file name `access.log`:
+![image](https://qcloudimg.tencent-cloud.cn/raw/7b0ccd0c571910bc4c777dcd4a83d3da.jpg)
 
 #### Configure a parsing mode
 
-CLS supports various log parsing modes such as full text in a single line, separator, JSON, and full regex. The following log sample uses the separator mode (for more information, please see [Separator Format](https://intl.cloud.tencent.com/document/product/614/32285)).
+CLS supports various log parsing modes such as full text in a single line, separator, JSON, and full regex. The following log sample uses the separator mode (for more information, see [Separator Format](https://intl.cloud.tencent.com/document/product/614/32285)).
 ```sh
 Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 ```
@@ -110,24 +111,24 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 
 #### Configure indexes
 
-CLS offers a log search and analysis feature based on segment indexing. We currently offer two index types: full-text index and key-value index. They can be managed on the index configuration tab on the log topic management page. Both index types can be enabled at the same time. 
+CLS offers a log search and analysis feature based on segment indexing. We currently offer two index types: full-text index and key-value index. They can be managed on the index configuration tab on the log topic management page. Both index types can be enabled at the same time.
 
 | Index Type | Description                                                         |
 | -------- | ------------------------------------------------------------ |
-| Full-Text | Breaks a full log into segments by delimiter, and executes keyword query based on the segments |
-| Key-Value | Breaks a full log into key-value pairs according to the specifications, and executes field query based on the key-value pairs |
+| Full-Text | Breaks a full log into segments by delimiter, and executes keyword query based on the segments. |
+| Key-Value | Breaks a full log into key-value pairs according to the specifications, and executes field query based on the key-value pairs. |
 
-Here we use key-value index as an example to describe how to configure indexes. On the log topic management page, go to the **Index Configuration** tab, click **Edit**, and toggle the key to enable index status. Toggle on **Key-Value Index**. Click **Add** to add keys. Select a field type for each key. Currently, `long`, `double`, and `text` are supported. `text` type allows you to specify delimiters, which separate a character string into segments. Continuing the above example, enter `time`, `action`, `status`, `size`, and `hashcode` as key-value indexes, and set the field type of `size` to `long`.
+This section uses the key-value index as an example to describe how to configure indexes. On the log topic management page, click **Index Configuration** to enter the index management page. Click **Edit** and toggle the key to enable index status. Toggle on **Key-Value Index**. Click **Add** to add keys. Select a field type for each key. Currently, `long`, `double`, and `text` are supported. `text` allows you to specify delimiters, which divide a character string into segments. In the above example, enter `time`, `action`, `status`, `size`, and `hashcode` as key-value indexes, and set the field type of `size` to `long`.
 
 
 
 Once the index rule is enabled, indexes will be created for new input data accordingly, and stored over a specified period of time depending on your configured storage cycle. Only logs for which indexes have been created can be queried for analysis. **Therefore, modifying an index rule or disabling an index only affects new input data. Unexpired legacy data will still be searchable.**
 
-#### Search for logs
+#### Log search
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. On the left sidebar, click **Search and Analysis** to go to the search and analysis page.
-3. Select the target region, log topic, and time range, and enter the search syntax (the syntax supports searching by keyword, fuzzy match, and scope. For more information, please see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439)). Click **Search Analysis** to begin searching for logs.
+2. On the left sidebar, click **Search and Analysis** to enter the search and analysis page.
+3. Select the target region, log topic, and time range, and enter the search statement (the syntax can be search by keyword, fuzzy match, and range scope). For more information, see [Configuring Index](https://intl.cloud.tencent.com/document/product/614/39594). Click **Search and Analysis** to begin log search.
 
 
 - Sample 1: Querying failure logs
@@ -144,7 +145,7 @@ CLS can ship logs to Cloud Object Storage (COS) for long-term storage at a low c
 To ship logs to COS, perform the following steps:
 1. Create a [COS bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 2. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-3. On the log topic management page, click **Shipping Configuration** to go to the shipping configuration page.
+3. On the log topic management page, click **Shipping Configuration** to enter the shipping configuration page.
 4. Click **Add Shipping Configuration** to create a shipping task.
 Currently, CLS supports shipping in [CSV format](https://intl.cloud.tencent.com/document/product/614/31582) and [JSON format](https://intl.cloud.tencent.com/document/product/614/31583). Once you create a shipping task, CLS asynchronously ships data to the destination bucket. You can view the shipping status by clicking **Shipping Task** on the left sidebar of the console.
 
@@ -154,12 +155,12 @@ Currently, CLS supports shipping in [CSV format](https://intl.cloud.tencent.com/
 ## 4. Console Interface
 
 The following is the overview page of the CLS console:
-
+![](https://main.qcloudimg.com/raw/2ee8eb6bd9ca1c18f133356e6bb099bb.png)
 
 
 -----
 
-## 5. Overview of Console Features
+## 5. Console Features
 
 <table>
 <thead>
@@ -194,7 +195,7 @@ The following is the overview page of the CLS console:
 </tr>
 <tr>
 <td>Understand authorization configuration in different operation scenarios</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/614/37888" target="_blank">Shipping Authorization</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/614/46143" target="_blank">Shipping Authorization</a></td>
 </tr>
 </tbody></table>
 
@@ -205,7 +206,7 @@ The following is the overview page of the CLS console:
 - [Machine Group Exception](https://intl.cloud.tencent.com/document/product/614/17424)
 - [LogListener FAQs](https://intl.cloud.tencent.com/document/product/614/38444)
 - [LogListener Installation Exception](https://intl.cloud.tencent.com/document/product/614/30445)
-
+- Collecting Logs with Missing Fields
 
 #### Log Search
 
@@ -215,6 +216,6 @@ The following is the overview page of the CLS console:
 
 ## 7. Feedback and Suggestions
 If you have any doubts or suggestions when using CLS products and services, you can submit your feedback through the following channels. Dedicated personnel will contact you to solve your problems.
-- If you have any questions regarding CLS documentation, such as links, content, or APIs, please click **Send Feedback** on the right of the documentation page.
+- If you have any questions regarding CLS documentation, such as links, content, or APIs, click **Send Feedback** on the right of the documentation page.
 - If you have any questions regarding the CLS service, contact [smart customer service](https://intl.cloud.tencent.com/contact-sales) or [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
