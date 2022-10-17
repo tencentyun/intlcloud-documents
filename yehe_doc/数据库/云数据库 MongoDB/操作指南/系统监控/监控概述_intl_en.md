@@ -103,7 +103,7 @@ TencentDB for MongoDB currently doesn't allow you to customize the monitoring da
 <td>Aggregate requests</td><td>aggregate_per_second</td><td>Count/sec</td><td>Number of aggregate requests in the cluster per second.</td></tr>
 <tr>
 <td>Command requests</td><td>command_per_second</td>
-<td>Count/sec</td><td>Number of command requests received by the cluster per second other than `insert`, `update`, `delete`, and `query` requests.</td></tr>
+<td>Count/sec</td><td>Number of command requests received by the cluster per second other than INSERT, UPDATE, DELETE, and QUERY requests</td></tr>
 <tr>
 <td rowspan="9">Requests</td>
 <td>Total requests</td><td>node_success</td><td>-</td><td>Total number of requests in the cluster.</td></tr>
@@ -122,7 +122,7 @@ TencentDB for MongoDB currently doesn't allow you to customize the monitoring da
 <tr>
 <td>Aggregate requests</td><td>node_aggregates</td><td>-</td><td>Number of aggregate requests in the cluster.</td></tr>
 <tr>
-<td>Command requests</td><td>node_commands</td><td>-</td><td>Number of command requests received by the cluster other than `insert`, `update`, `delete`, and `query` requests.</td></tr>
+<td>Command requests</td><td>node_commands</td><td>-</td><td>Number of command requests received by the cluster other than INSERT, UPDATE, DELETE, and QUERY requests.</td></tr>
 </tbody></table>
 
 ### Mongod node
@@ -193,7 +193,7 @@ TencentDB for MongoDB currently doesn't allow you to customize the monitoring da
 <tr>
 <td>Aggregate requests</td><td>node_aggregate_per_second</td><td>Count/sec</td><td>Number of aggregate requests in the mongod node per second.</td></tr>
 <tr>
-<td>Command requests</td><td>node_command_per_second</td><td>Count/sec</td><td>Number of command requests received by the mongod node per second other than `insert`, `update`, `delete`, and `query` requests.</td></tr>
+<td>Command requests</td><td>node_command_per_second</td><td>Count/sec</td><td>Number of command requests received by the mongod node per second other than INSERT, UPDATE, DELETE, and QUERY requests.</td></tr>
 <tr>
 <td rowspan="12">Kernel</td>
 <td>Active write requests</td><td>ar</td><td>-</td><td>Number of active write requests on the mongod node.</td></tr>
@@ -234,7 +234,7 @@ TencentDB for MongoDB currently doesn't allow you to customize the monitoring da
 <tr>
 <td>Aggregate requests</td><td>node_aggregates</td><td>-</td><td>Number of aggregate requests in the cluster.</td></tr>
 <tr>
-<td>Command requests</td><td>node_commands</td><td>-</td><td>Number of command requests received by the cluster other than `insert`, `update`, `delete`, and `query` requests.</td></tr>
+<td>Command requests</td><td>node_commands</td><td>-</td><td>Number of command requests received by the cluster other than INSERT, UPDATE, DELETE, and QUERY requests.</td></tr>
 </tbody></table>
 
 ### Mongos node (sharded cluster)
@@ -297,7 +297,7 @@ TencentDB for MongoDB currently doesn't allow you to customize the monitoring da
 <tr>
 <td>Aggregate requests</td><td>aggregates</td><td>Count/sec</td><td>Number of aggregate requests in the mongos node per second.</td></tr>
 <tr>
-<td>Command requests</td><td>commands</td><td>Count/sec</td><td>Number of command requests received by the mongos node per second other than `insert`, `update`, `delete`, and `query` requests.</td></tr>
+<td>Command requests</td><td>commands</td><td>Count/sec</td><td>Number of command requests received by the mongos node per second other than INSERT, UPDATE, DELETE, and QUERY requests.</td></tr>
 <tr><td rowspan="9">Requests</td>
 <td>Total requests</br></td><td>node_success</td><td>-</td><td>Total number of requests received by the mongos node.</td></tr>
 <tr>
@@ -314,6 +314,6 @@ TencentDB for MongoDB currently doesn't allow you to customize the monitoring da
 <tr>
 <td>Aggregate requests</td><td>node_aggregates</td><td>-</td><td>Number of aggregate requests received by the mongos node.</td></tr>
 <tr>
-<td>Command requests</td><td>node_commands</td><td>-</td><td>Number of command requests received by the mongos node other than `insert`, `update`, `delete`, and `query` requests.</td></tr>
+<td>Command requests</td><td>node_commands</td><td>-</td><td>Number of command requests received by the mongos node other than INSERT, UPDATE, DELETE, and QUERY requests.</td></tr>
 </tbody></table>
 
