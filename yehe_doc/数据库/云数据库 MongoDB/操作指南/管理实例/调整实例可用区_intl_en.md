@@ -5,7 +5,7 @@ During daily maintenance, you can place your TencentDB for MongoDB and [CVM](htt
 AZ modification doesn't affect instance billing.
 
 ## Notes
-AZ modification may lead to primary-replica switch and a momentary disconnection of about 10 seconds; therefore, proceed during the off-peak hours of your business.
+AZ modification may lead to primary-replica switch and a momentary disconnection for about 10 seconds; therefore, proceed during the off-peak hours of your business.
 
 ## Instructions
 - All attributes, configurations, and connection addresses of the instance will stay unchanged after AZ modification. The private IP of the database will change after network switch, so you need to reconnect to the instance.
