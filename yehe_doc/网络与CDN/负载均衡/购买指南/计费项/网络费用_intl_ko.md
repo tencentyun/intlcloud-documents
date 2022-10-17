@@ -17,7 +17,7 @@ IP별 청구 계정의 경우 CLB 요금에는 인스턴스 요금, 공중망 �
 </tr>
 <tr>
 <td rowspan="4" width="15%">IP별 청구</td>
-<td rowspan="4">공중망</td>
+<td rowspan="2">공중망</td>
 <td >공유</td>
 <td rowspan="2">&#10003; </td>
 <td rowspan="2">&#10003; </td>
@@ -33,7 +33,7 @@ IP별 청구 계정의 경우 CLB 요금에는 인스턴스 요금, 공중망 �
 <td >공유</td>
 <td rowspan="2">&#10003; </td>
 <td rowspan="2">- </td>
-<td rowspan="2">-</td>
+<td rowspan="2">- </td>
 <td >-</td>
 </tr>
 <tr>
