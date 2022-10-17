@@ -37,7 +37,7 @@ You can configure alarm rules for monitoring metrics to prevent your system oper
 <tr>
 <td>Requests per second</td><td>-</td><td>Number of requests received by the instance per second.</td></tr>
 <tr>
-<td>Command requests</td><td>-</td><td>Number of command requests received by the cluster other than `insert`, `update`, `delete`, and `query` requests.</td></tr>
+<td>Command requests</td><td>-</td><td>Number of command requests received by the cluster other than INSERT, UPDATE, DELETE, and QUERY requests.</td></tr>
 <tr>
 <td>Connections</td><td>-</td><td>Number of TCP connections from cluster clients.</td></tr>     
 </tbody></table>
@@ -121,7 +121,7 @@ You can configure alarm rules for monitoring metrics to prevent your system oper
 <td><ul><li>Select <strong>Instance ID</strong> to bind the alarm policy to the specified database instance.</li><li>Select <strong>Instance Group</strong> to bind the alarm policy to the specified database instance group. For more information on how to create an instance group, see <a href="https://intl.cloud.tencent.com/document/product/248/35268">Instance Group</a>.</li><li>Select <strong>All Objects</strong> to bind the alarm policy to all instances on which the current account has permissions.</li><li>Select <strong>Tag</strong> to bind the alarm policy to all instances associated with the current tag key and value.</li></ul></td></tr>
 <tr>
 <td>Trigger Condition</td>
-<td><ul><li>If you select <strong>Select template</strong>, you can select a template file in the drop-down list, and alarms will be reported based on the trigger conditions preset in the template. For specific configurations, see <a href="https://intl.cloud.tencent.com/document/product/248/38911">Configuring Trigger Condition Template</a>. If you select <strong>Configure manually</strong>, you need to configure the threshold for triggering an alarm for each metric in the <strong>Metric Alarm</strong> section below.</li>
+<td><ul><li>If you select <strong>Select template</strong>, you can select a template file from the drop-down list, and alarms will be reported based on the trigger conditions preset in the template. For specific configurations, see <a href="https://intl.cloud.tencent.com/document/product/248/38911">Configuring Trigger Condition Template</a>. If you select <strong>Configure manually</strong>, you need to configure the threshold for triggering an alarm for each metric in the <strong>Metric Alarm</strong> section below.</li>
 <li><strong>Threshold Type</strong> in the <strong>Metric Alarm</strong> section: If you select **Static**, you can manually set a fixed threshold, and alarms will be triggered when the threshold is reached. If you select <strong>Dynamic</strong>, exceptions will be determined based on the dynamic threshold boundaries calculated by machine learning algorithms. </li>For more information, see <a href="https://intl.cloud.tencent.com/document/product/248/38916">Creating Alarm Policy</a>.</ul></td>
 </tr>
 <tr>
