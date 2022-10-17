@@ -2,11 +2,11 @@
 
 All replica nodes of an instance contribute to the system's high availability. When the primary node fails, each replica node may be elected as the new primary node to execute data write requests. Therefore, the more the replicas, the higher the availability. In scenarios with a high number of concurrent requests with more reads and less writes, if read/write separation is enabled, you can add replica nodes to improve the read performance and greatly relieve the read pressure on the primary node. 
 
-A TencentDB for MongoDB cluster can have three (one-primary-two-replica), five (one-primary-four-replica), or seven (one-primary-six-replica) nodes in total. You can add replica nodes appropriately based on the surge in the concurrent requests to your business and remove replica nodes when the business load drops. This helps better utilize resources and reduce the costs in real time.
+A TencentDB for MongoDB cluster can have three (one-primary-two-replica), five (one-primary-four-replica), or seven (one-primary-six-replica) nodes in total. You can add replica nodes appropriately based on the surge in the concurrent requests to your business and remove replica nodes when the business load drops. This helps you better utilize resources and reduce unnecessary costs in real time.
 
 ## Billing
 
-After the instance configuration is adjusted, the instance will be billed by the new configuration. Make sure that your Tencent Cloud account balance is sufficient. For more information, see [Configuration Adjustment Billing](https://intl.cloud.tencent.com/document/product/240/44174).
+The instance will be billed by the new configurations after its configurations are changed. Make sure that your Tencent Cloud account balance is sufficient. For more information, see [Configuration Adjustment Billing](https://intl.cloud.tencent.com/document/product/240/44174).
 
 ## Notes
 - After new nodes are added to the cluster, data sync will start without affecting the business.
@@ -43,13 +43,13 @@ After the instance configuration is adjusted, the instance will be billed by the
 <td>Check the current specification of the instance, including the CPU core quantity, memory, disk capacity, and node quantity. The node quantity includes all primary and replica nodes. You should determine the number of nodes to be added based on the current specification.</td>    </tr>	
 <tr>
 <td>Nodes to Add</td>
-<td>Select the number of replica nodes to be added in the drop-down list.</td>   </tr>
+<td>Select the number of replica nodes to be added from the drop-down list.</td>   </tr>
 <tr>
 <td>Deployment AZ</td>
 <td>This parameter will be displayed if the instance nodes are in the same AZ. It indicates the AZ where all instance nodes are deployed.</td>    </tr>
 <tr>
 <td>Replica Node-n</td>
-<td>This parameter will be displayed if the instance nodes are in different AZs. It indicates the AZs of different nodes and ranges from 0 to 6. Select the AZs for the new replica nodes in the drop-down list.</td>    </tr>
+<td>This parameter will be displayed if the instance nodes are in different AZs. It indicates the AZs of different nodes and ranges from 0 to 6. Select the AZs for the new replica nodes from the drop-down list.</td>    </tr>
 <tr>
 <td>Fees</td>
 <td><ul><li><b>Pay-as-you-go</b>: Hourly unit price after instance configuration adjustment. You can click <b>Billing Details</b> to view the billable items and billing formula and confirm the fees. </li></ul>For more information, see <a href="https://intl.cloud.tencent.com/document/product/240/44174">Configuration Adjustment Billing</a>.</td></tr>
@@ -80,14 +80,14 @@ After the instance configuration is adjusted, the instance will be billed by the
 <td>Check the current specification of the instance, including the CPU core quantity, memory, disk capacity, and node quantity. The node quantity includes all primary and replica nodes. The nodes are evenly distributed to shards; for example, if there are two shards and eight nodes, each shard will have four nodes. You should determine the number of nodes to be added based on the current specification.</td></tr>
 <tr>
 <td>Nodes to Add</td>
-<td>Select the number of replica nodes to be added per shard in the drop-down list.</td></tr>
+<td>Select the number of replica nodes to be added per shard from the drop-down list.</td></tr>
 <tr>
 <td>Deployment AZ</td>
 <td>This parameter will be displayed if the instance nodes are in the same AZ. It indicates the AZ where all instance nodes are deployed.</td>
 </tr>
 <tr>
 <td>Replica Node-n</td>
-<td>This parameter will be displayed if the instance shard nodes are in different AZs. It indicates the AZs of different nodes and ranges from 0 to 6. Select the AZs for the new replica nodes in the drop-down list.</td></tr>
+<td>This parameter will be displayed if the instance shard nodes are in different AZs. It indicates the AZs of different nodes and ranges from 0 to 6. Select the AZs for the new replica nodes from the drop-down list.</td></tr>
 <tr>
 <td>Fees</td>
 <td><ul><li>Pay-as-you-go: Hourly unit price after instance configuration adjustment. You can click **Billing Details** to view the billable items and billing formula and confirm the fees.</li></ul></td></tr>
