@@ -75,7 +75,7 @@ For example, if the absolute path of the target file is `/root/test.log`, then t
 1. On the [Search and Analysis](https://console.cloud.tencent.com/cls/search) page, select the log topic created in step 3 at the top to view the collected log data.
 
 2. In the input box at the top, enter the target text as the search condition and click **Search and Analysis** to search for logs matching the condition.
-例如，下图中为检索包含"/online/sample"的日志。
+
 
 3. Use the pipe symbol and SQL for statistical analysis of the found raw data.
 For example, calculate the distribution of log sources.
