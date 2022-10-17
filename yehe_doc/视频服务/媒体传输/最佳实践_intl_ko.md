@@ -95,9 +95,9 @@ Output 목록에서 재생 URL을 볼 수 있습니다.
 
 ### 5. Flow 설정을 동적으로 변경
 라이브 스트리밍 중에 Flow를 중지하지 않고 Flow의 설정을 변경할 수 있습니다.
-Input CIDR Allowiplist 수정:
+Input CIDR Allowlist 수정:
 ![](https://qcloudimg.tencent-cloud.cn/raw/c4c642e542beed25a7cd134600a3ba62.png)
-Output CIDR Allowiplist 수정:
+Output CIDR Allowlist 수정:
 ![](https://qcloudimg.tencent-cloud.cn/raw/de4ce1df26d2bff4b0ca9ca7312a70ba.png)
 Output 삭제:
 ![](https://qcloudimg.tencent-cloud.cn/raw/13b2a0fe21b9d528bdee155135da9b5d.png)

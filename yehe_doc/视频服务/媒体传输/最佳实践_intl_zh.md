@@ -95,9 +95,9 @@
 
 ### 5. 动态修改Flow配置
 若直播过程中遇到突发情况，需要临时调整Flow配置，您可以在不用停止Flow的情况下直接操作。
-修改Input CIDR Allowiplist：
+修改Input CIDR Allowlist：
 ![](https://qcloudimg.tencent-cloud.cn/raw/c4c642e542beed25a7cd134600a3ba62.png)
-修改Output CIDR Allowiplist：
+修改Output CIDR Allowlist：
 ![](https://qcloudimg.tencent-cloud.cn/raw/de4ce1df26d2bff4b0ca9ca7312a70ba.png)
 停止某个Output：
 ![](https://qcloudimg.tencent-cloud.cn/raw/13b2a0fe21b9d528bdee155135da9b5d.png)

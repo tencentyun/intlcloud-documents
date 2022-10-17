@@ -95,9 +95,9 @@ Input Source Informationからプッシュアドレスを取得します。
 
 ### 5. Flow設定の動的な変更
 ライブストリーミング中に予期せぬ事態が発生し、Flowの設定を一時的に調整する必要がある場合、Flowを停止せずに直接操作することができます。
-Input CIDR Allowiplistを変更します。
+Input CIDR Allowlistを変更します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/c4c642e542beed25a7cd134600a3ba62.png)
-Output CIDR Allowiplistを変更します。
+Output CIDR Allowlistを変更します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/de4ce1df26d2bff4b0ca9ca7312a70ba.png)
 いずれかのOutputを停止します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/13b2a0fe21b9d528bdee155135da9b5d.png)
