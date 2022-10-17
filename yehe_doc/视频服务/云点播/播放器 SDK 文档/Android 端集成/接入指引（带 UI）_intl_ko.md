@@ -6,7 +6,7 @@ Player 컴포넌트가 커스텀 니즈를 충족할 수 없고 개발 경험이
 
 
 ## 준비 작업
-1. 완전한 Player 기능을 사용하려면 [VOD](https://cloud.tencent.com/product/vod)를 활성화하는 것이 좋습니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://cloud.tencent.com/login)하십시오. VOD 서비스를 사용하지 않는 경우 이 단계를 건너뛰십시오. 그러나 통합 후에는 기본 Player 기능만 사용할 수 있습니다.
+1. 완전한 Player 기능을 사용하려면 [VOD](https://intl.cloud.tencent.com/product/vod)를 활성화하는 것이 좋습니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login)하십시오. VOD 서비스를 사용하지 않는 경우 이 단계를 건너뛰십시오. 그러나 통합 후에는 기본 Player 기능만 사용할 수 있습니다.
 2. [Android Studio 공식 웹 사이트](https://developer.android.com/studio)에서 Android Studio를 다운로드하고 설치합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 
 ## 내용 요약
@@ -51,9 +51,8 @@ delta 처리 중: 100% (1019/1019), 완료.
 | common                      | 툴 모듈                                                   |
 | SDK                         | LiteAVSDK_Player_x.x.x.aar(aar 형식으로 제공되는 SDK) 및 LiteAVSDK_Player_x.x.x.zip(lib 및 jar 형식으로 제공되는 SDK)을 포함한 RT-Cube Player SDK |
 | Player 문서(Android).pdf | Player 컴포넌트 사용자 가이드                                           |
-|:::||
-|</dx-tabs>||
-
+:::
+</dx-tabs>
 ### 2단계: 프로젝트 통합
 이 단계에서는 Player를 통합하는 방법을 설명합니다. 자동 로딩을 위해 Gradle을 사용하거나 aar을 수동으로 다운로드하여 현재 프로젝트로 가져오거나 jar 및 so 라이브러리를 가져와 프로젝트를 통합할 수 있습니다.
 <dx-tabs>
@@ -83,6 +82,7 @@ delta 처리 중: 100% (1019/1019), 완료.
    위에서 설명한 대로 `common` 모듈을 프로젝트로 가져오고 구성합니다.
 3. gradle에서 mavenCentral 라이브러리를 구성하면 LiteAVSDK를 자동으로 다운로드되고 업데이트됩니다. `app/build.gradle`을 열고 다음과 같이 구성합니다.
    ![](https://main.qcloudimg.com/raw/65439d399ec584871a7a9bc88ccaef46.png)
+   
    1. dependencies에 LiteAVSDK_Player 종속성을 추가하십시오.
 ```xml
 dependencies{
@@ -319,7 +319,7 @@ mSuperPlayerView.resetPlayer();
 
 ## 기능 사용[](id:moreFeature)
 
-이 장에서는 Player 기능을 사용하는 몇 가지 일반적인 방법을 소개합니다. 더 완전한 기능은 [Demo 경험](#demo)을 참고하십시오. Player 컴포넌트에서 지원하는 기능은 [기능 리스트](https://cloud.tencent.com/document/product/881/61375)를 참고하십시오.
+이 장에서는 Player 기능을 사용하는 몇 가지 일반적인 방법을 소개합니다. 더 완전한 기능은 [Demo 경험](#demo)을 참고하십시오. Player 컴포넌트에서 지원하는 기능은 [기능 리스트](https://www.tencentcloud.com/document/product/266/42965)를 참고하십시오.
 
 ### 1. 전체 화면 재생
 

@@ -6,7 +6,7 @@ Tencent Cloud View Cube Androidプレーヤーコンポーネントは、Tencent
 
 
 ## 準備作業
-1. より完全で全面的なプレーヤー機能を体験していただくために、[VOD](https://cloud.tencent.com/product/vod) 関連サービスをアクティブ化することをお勧めします。アカウント登録がないユーザーは、アカウントを登録して[トライアル](https://cloud.tencent.com/login)を行うことができます。VODサービスをご利用にならない場合はこの手順を省略できますが、統合後に使用できるのはプレーヤーの基本機能のみとなります。
+1. より完全で全面的なプレーヤー機能を体験していただくために、[VOD](https://intl.cloud.tencent.com/product/vod) 関連サービスをアクティブ化することをお勧めします。アカウント登録がないユーザーは、アカウントを登録して[トライアル](https://intl.cloud.tencent.com/login)を行うことができます。VODサービスをご利用にならない場合はこの手順を省略できますが、統合後に使用できるのはプレーヤーの基本機能のみとなります。
 2. Android Studioをダウンロードします。[Android Studio公式サイト](https://developer.android.com/studio)でダウンロードとインストールを行うことができます。ダウンロード済みの場合はこの手順を省略できます。
 
 ## ここでは次の内容について知ることができます
@@ -51,8 +51,8 @@ delta処理中: 100% (1019/1019), が完了しました
 | common                      | ツールクラスモジュール                                                   |
 | SDK                         | View Cube Player+。LiteAVSDK_Player_x.x.x.aar、aar形式のSDK、LiteAVSDK_Player_x.x.x.zip、lib、jar形式のSDKが含まれます |
 | Playerr説明ドキュメント(Android).pdf | プレーヤーコンポーネント使用ドキュメント                                           |
-|:::||
-|</dx-tabs>||
+:::
+</dx-tabs>
 
 ### ステップ2：ガイドの統合
 この手順ではプレーヤーの統合方法についてご説明します。Gradleによる自動でのロード方法、aarを手動でダウンロードしてから現在のプロジェクトにインポートする方法、またはjarおよびsoライブラリをインポートする方法を選択してプロジェクトの統合を行うことができます。
@@ -83,6 +83,7 @@ delta処理中: 100% (1019/1019), が完了しました
    上記の手順を参照し、`common`モジュールをプロジェクトにインポートし、設定してください。
 3. gradleにmavenCentralライブラリを設定することで、LiteAVSDKの更新を自動的にダウンロードし、`app/build.gradle`を開き、以下の設定を行います。
    ![](https://main.qcloudimg.com/raw/65439d399ec584871a7a9bc88ccaef46.png)
+   
    1. dependenciesにLiteAVSDK_Playerの依存を追加します。
 ```xml
 dependencies {
@@ -319,7 +320,7 @@ mSuperPlayerView.resetPlayer();
 
 ## 機能の使用[](id:moreFeature)
 
-この章では、いくつかの一般的なプレーヤー機能の使用方式をご紹介します。より完全な機能の使用方式は[Demo体験](#demo)を、プレーヤーコンポーネントがサポートする機能は[機能リスト](https://cloud.tencent.com/document/product/881/61375)をそれぞれご参照ください。
+この章では、いくつかの一般的なプレーヤー機能の使用方式をご紹介します。より完全な機能の使用方式は[Demo体験](#demo)を、プレーヤーコンポーネントがサポートする機能は[機能リスト](https://www.tencentcloud.com/document/product/266/42965)をそれぞれご参照ください。
 
 ### 1、全画面再生
 

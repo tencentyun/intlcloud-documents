@@ -2,10 +2,10 @@
 
 iOS용 Tencent Cloud RT-Cube Player 컴포넌트는 오픈 소스 Tencent Cloud 플레이어 컴포넌트입니다. 몇 줄의 코드로 Tencent Video와 유사한 강력한 재생 기능을 제공할 수 있습니다. 가로/세로 모드 전환, 해상도 선택, 제스처 및 작은 창 재생과 같은 기본 기능과 비디오 버퍼링, 소프트웨어/하드웨어 디코딩 전환 및 조정 가능한 속도 재생과 같은 특수 기능이 있습니다. 시스템 기본 플레이어보다 더 많은 형식을 지원하고 더 나은 호환성과 기능을 제공합니다. 또한 첫 번째 프레임 바로 재생과 저지연성의 장점을 보유하고 있으며 비디오 썸네일과 같은 고급 기능을 제공합니다.
 
-플레이어 컴포넌트가 비즈니스의 개별 요구를 충족할 수 없고 특정 개발 경험이 있는 경우 [RT-Cube Player SDK](https://cloud.tencent.com/document/product/881/20216)를 통합하여 플레이어 인터페이스 및 재생 기능의 개발을 사용자 지정할 수 있습니다.
+플레이어 컴포넌트가 비즈니스의 개별 요구를 충족할 수 없고 특정 개발 경험이 있는 경우  Player SDK 를 통합하여 플레이어 인터페이스 및 재생 기능의 개발을 사용자 지정할 수 있습니다.
 
 ## 준비 작업
-1. [VOD](https://cloud.tencent.com/product/vod)를 활성화합니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://cloud.tencent.com/login) 하십시오.
+1. [VOD](https://intl.cloud.tencent.com/product/vod)를 활성화합니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login) 하십시오.
 2. App Store에서 Xcode를 다운로드합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 3. [Cocoapods 웹 사이트](https://cocoapods.org/)의 가이드에 따라 Cocoapods를 다운로드하여 설치합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 
@@ -87,7 +87,7 @@ pod 'SuperPlayer/Professional'
  1. TXLiteAVSDK_Player를 수동으로 통합하는 경우 필요한 시스템 라이브러리 및 library를 추가해야 합니다.
 <b>시스템 Framework 라이브러리</b>: MetalKit, ReplayKit, SystemConfiguration, CoreTelephony, VideoToolbox, CoreGraphics, AVFoundation, Accelerate, MobileCoreServices, VideoToolbox
 <b>시스템 Library:</b> libz, libresolv,  libiconv, libc++, libsqlite3
-구체적인 작업 단계 [참고](https://cloud.tencent.com/document/product/266/73872): 사용자 정의 개발 - VOD 시나리오 - 문서 액세스 - SDK 통합 1단계 - 수동 SDK 통합
+구체적인 작업 단계 참고: 사용자 정의 개발 - VOD 시나리오 - 문서 액세스 - SDK 통합 1단계 - 수동 SDK 통합
 또한 다음 이미지와 같이 TXLiteAVSDK_Player 파일 아래에 TXFFmpeg.xcframework 및 TXSoundTouch.scframework를 동적 라이브러리로 추가해야 합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5834caae21d3413522c7d51d4b3b57b0.png)
  2. TXLiteAVSDK_Player를 Pod로 통합하면 라이브러리를 추가할 필요가 없습니다.
@@ -122,7 +122,7 @@ _playerView.fatherView = self.holderView;
 비디오 FileId는 일반적으로 비디오 업로딩 후 서버에서 반환됩니다.
 
 1. 클라이언트에서 비디오 배포 후 서버가 FileId를 클라이언트로 반환합니다.
-2. 서버에서 비디오 업로드 시, 해당 FileId가 [업로드 확인](https://cloud.tencent.com/document/product/266/9757) 공지에 포함됩니다.
+2. 서버에서 비디오 업로드 시, 해당 FileId가 업로드 확인 공지에 포함됩니다.
 Tencent Cloud에 이미 파일이 존재하는 경우에는 [미디어 자산 관리](https://console.cloud.tencent.com/vod/media)에서 해당 파일을 찾아 FileId를 조회할 수 있습니다. 아래 이미지와 같이 ID는 FileId를 나타냅니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
 <dx-alert infotype="notice">

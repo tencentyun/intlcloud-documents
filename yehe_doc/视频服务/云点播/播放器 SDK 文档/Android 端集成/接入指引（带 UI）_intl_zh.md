@@ -6,7 +6,7 @@
 
 
 ## 准备工作
-1. 为了您体验到更完整全面的播放器功能，建议您开通 [云点播](https://cloud.tencent.com/product/vod) 相关服务，未注册用户可注册账号 [试用](https://cloud.tencent.com/login)。若您不使用云点播服务，可略过此步骤，但集成后仅可使用播放器基础能力。
+1. 为了您体验到更完整全面的播放器功能，建议您开通 [云点播](https://intl.cloud.tencent.com/product/vod) 相关服务，未注册用户可注册账号 [试用](https://intl.cloud.tencent.com/login)。若您不使用云点播服务，可略过此步骤，但集成后仅可使用播放器基础能力。
 2. 下载 Android Studio，您可以进入 [Android Studio 官网](https://developer.android.com/studio) 下载安装，如已下载可略过该步骤。
 
 ## 通过本文您可以学会
@@ -51,8 +51,8 @@ remote: Total 2637 (delta 227), reused 524 (delta 170), pack-reused 1993
 | common                      | 工具类模块                                                   |
 | SDK                         | 视立方播放器 SDK，包括：LiteAVSDK_Player_x.x.x.aar，aar 格式提供的 SDK；LiteAVSDK_Player_x.x.x.zip，lib 和 jar 格式提供的 SDK |
 | Player说明文档(Android).pdf | 播放器组件使用文档                                           |
-|:::||
-|</dx-tabs>||
+:::
+</dx-tabs>
 
 ### 步骤2：集成指引
 本步骤可指导您如何集成播放器，您可选择使用 Gradle 自动加载的方式，手动下载 aar 再将其导入到您当前的工程或导入 jar 和 so 库的方式集成项目。
@@ -83,6 +83,7 @@ remote: Total 2637 (delta 227), reused 524 (delta 170), pack-reused 1993
    请参见上面的步骤，把`common`模块导入到项目，并进行配置。
 3. 通过在 gradle 配置 mavenCentral 库，自动下载更新 LiteAVSDK，打开`app/build.gradle`，进行下面的配置：
    ![](https://main.qcloudimg.com/raw/65439d399ec584871a7a9bc88ccaef46.png)
+   
    1. 在 dependencies 中添加 LiteAVSDK_Player 的依赖。
 ```xml
 dependencies {
@@ -319,7 +320,7 @@ mSuperPlayerView.resetPlayer();
 
 ## 功能使用[](id:moreFeature)
 
-本章将为您介绍几种常见的播放器功能使用方式，更为完整的功能使用方式可参见 [Demo 体验](#demo)，播放器组件支持的功能可参见 [能力清单](https://cloud.tencent.com/document/product/881/61375)。
+本章将为您介绍几种常见的播放器功能使用方式，更为完整的功能使用方式可参见 [Demo 体验](#demo)，播放器组件支持的功能可参见 [能力清单](https://www.tencentcloud.com/document/product/266/42965)。
 
 ### 1、全屏播放
 

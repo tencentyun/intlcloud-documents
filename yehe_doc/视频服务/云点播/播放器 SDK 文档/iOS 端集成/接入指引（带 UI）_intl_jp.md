@@ -2,10 +2,10 @@
 
 Tencent Cloud View Cube iOSプレーヤーコンポーネントは、Tencent Cloudによるオープンソースのプレーヤーコンポーネントです。簡単な数行のコードで、Tencent Videoのような強力な再生機能を備えることができます。画面の縦横切り替え、解像度の選択、ジェスチャー、ミニウィンドウなどの基本機能を備えるほか、ビデオキャッシュ、ソフトウェア/ハードウェアデコードの切り替え、倍速再生などの特殊機能もサポートしています。システムのプレーヤーよりも、サポートする形式が多く、互換性に優れ、機能もより強力です。同時に、トップ画面の秒速起動、低遅延などの優位性、ならびにビデオサムネイルなどの高度な機能も備えています。
 
-プレーヤーコンポーネントでは業務上の個別のニーズを満たせない場合、お客様にある程度の開発経験がおありの場合は[View Cube Player+](https://cloud.tencent.com/document/product/881/20216)を統合し、プレーヤーインターフェースおよび再生機能のカスタム開発を行うことも可能です。
+プレーヤーコンポーネントでは業務上の個別のニーズを満たせない場合、お客様にある程度の開発経験がおありの場合は Player+を統合し、プレーヤーインターフェースおよび再生機能のカスタム開発を行うことも可能です。
 
 ## 準備作業
-1. [VOD](https://cloud.tencent.com/product/vod)関連サービスのアクティブ化を行います。アカウント登録がないユーザーは、アカウントを登録して[トライアル](https://cloud.tencent.com/login)を行うことができます。
+1. [VOD](https://intl.cloud.tencent.com/product/vod)関連サービスのアクティブ化を行います。アカウント登録がないユーザーは、アカウントを登録して[トライアル](https://intl.cloud.tencent.com/login)を行うことができます。
 2. Xcodeをダウンロードします。ダウンロード済みの場合はこのステップを省略できます。ダウンロードとインストールはApp Storeで行えます。
 3. Cocoapodsをダウンロードします。ダウンロード済みの場合はこのステップを省略できます。[Cocoapods公式サイト](https://cocoapods.org/)に進み、ガイドに従ってインストールすることができます。
 
@@ -87,7 +87,7 @@ pod 'SuperPlayer/Professional'
  1. 手動でTXLiteAVSDK_Playerを統合する場合は、必要なシステムライブラリとlibraryを追加する必要があります。
 <b>システムFrameworkライブラリ</b>：MetalKit, ReplayKit, SystemConfiguration, CoreTelephony, VideoToolbox, CoreGraphics, AVFoundation, Accelerate, MobileCoreServices, ,VideoToolbox
 <b>システムLibraryライブラリ:</b> libz, libresolv,  libiconv, libc++, libsqlite3
-具体的な手順は以下を[ご参照](https://cloud.tencent.com/document/product/266/73872)ください。カスタム開発 - VODシナリオ - アクセスドキュメント - SDK統合 ステップ1 - 手動でSDKを統合する
+具体的な手順は以下をご参照ください。カスタム開発 - VODシナリオ - アクセスドキュメント - SDK統合 ステップ1 - 手動でSDKを統合する
 さらにTXLiteAVSDK_Playerファイル下のTXFFmpeg.xcframeworkと TXSoundTouch.scframeworkを動的ライブラリの方式で次の図に示すように追加してください。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5834caae21d3413522c7d51d4b3b57b0.png)
  2. Podを使用した方式でTXLiteAVSDK_Playerを統合する場合は、ライブラリを追加する必要はありません。
@@ -122,7 +122,7 @@ _playerView.fatherView = self.holderView;
 ビデオFileIdは、通常、ビデオのアップロード後にサーバーから返されます。
 
 1. クライアントからビデオが公開されると、サーバーがFileIdをクライアントに返します。
-2. サーバーからのビデオアップロード時、[アップロードの確認](https://cloud.tencent.com/document/product/266/9757の通知の中に対応するFileIdが含まれています。
+2. サーバーからのビデオアップロード時、アップロードの確認の通知の中に対応するFileIdが含まれています。
 ファイルがすでにTencent Cloudに存在する場合は、[メディア資産管理](https://console.cloud.tencent.com/vod/media)にアクセスし、該当するファイルをさがして、FileIdを確認できます。下図のように、IDのところにFileIdが表示されます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
 <dx-alert infotype="notice">

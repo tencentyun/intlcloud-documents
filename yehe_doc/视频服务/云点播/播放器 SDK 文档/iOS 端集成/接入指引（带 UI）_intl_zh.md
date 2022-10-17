@@ -2,10 +2,10 @@
 
 腾讯云视立方 iOS 播放器组件是腾讯云开源的一款播放器组件，简单几行代码即可拥有类似腾讯视频强大的播放功能，包括横竖屏切换、清晰度选择、手势和小窗等基础功能，还支持视频缓存，软硬解切换和倍速播放等特殊功能，相比系统播放器，支持格式更多，兼容性更好，功能更强大，同时还具备首屏秒开、低延迟的优点，以及视频缩略图等高级能力。
 
-若播放器组件满足不了您的业务的个性化需求，且您具有一定的开发经验，可以集成 [视立方播放器 SDK](https://cloud.tencent.com/document/product/881/20216)，自定义开发播放器界面和播放功能。
+若播放器组件满足不了您的业务的个性化需求，且您具有一定的开发经验，可以集成 播放器 SDK，自定义开发播放器界面和播放功能。
 
 ## 准备工作
-1. 开通 [云点播](https://cloud.tencent.com/product/vod) 相关服务，未注册用户可注册账号 [试用](https://cloud.tencent.com/login)。
+1. 开通 [云点播](https://intl.cloud.tencent.com/product/vod) 相关服务，未注册用户可注册账号 [试用](https://intl.cloud.tencent.com/login)。
 2. 下载 Xcode，如您已下载可略过该步骤，您可以进入 App Store 下载安装。
 3. 下载 Cocoapods，如您已下载可略过该步骤，您可以进入 [Cocoapods官网](https://cocoapods.org/) 按照指引进行安装。
 
@@ -87,7 +87,7 @@ pod 'SuperPlayer/Professional'
  1. 如果是手动集成 TXLiteAVSDK_Player，需要添加所需要的系统库和 library：
 <b>系统 Framework 库</b>：MetalKit, ReplayKit, SystemConfiguration, CoreTelephony, VideoToolbox, CoreGraphics, AVFoundation, Accelerate, MobileCoreServices, ,VideoToolbox
 <b>系统 Library 库:</b> libz, libresolv,  libiconv, libc++, libsqlite3
-具体操作步骤可以 [参考](https://cloud.tencent.com/document/product/266/73872)：定制开发 - 点播场景 - 接入文档 - SDK集成 步骤1 - 手动集成 SDK
+具体操作步骤可以 参考：定制开发 - 点播场景 - 接入文档 - SDK集成 步骤1 - 手动集成 SDK
 此外还需要把 TXLiteAVSDK_Player 文件下的 TXFFmpeg.xcframework 和 TXSoundTouch.scframework 以动态库的方式加进来如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/5834caae21d3413522c7d51d4b3b57b0.png)
  2. 如果是用 Pod 的方式集成 TXLiteAVSDK_Player，不需要添加任何库。
@@ -122,7 +122,7 @@ _playerView.fatherView = self.holderView;
 视频 FileId 在一般是在视频上传后，由服务器返回：
 
 1. 客户端视频发布后，服务器会返回 FileId 到客户端。
-2. 服务端视频上传时，在 [确认上传](https://cloud.tencent.com/document/product/266/9757) 的通知中包含对应的 FileId。
+2. 服务端视频上传时，在 确认上传 的通知中包含对应的 FileId。
 如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。如下图所示，ID 即表示 FileId：
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
 <dx-alert infotype="notice">

@@ -6,7 +6,7 @@ If the Player component cannot meet your custom requirements and you have develo
 
 
 ## Prerequisites
-1. To try out all features of the player, we recommend you activate [VOD](https://cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://cloud.tencent.com/login) first. If you don't use the VOD service, skip this step; however, you can use only basic player features after integration.
+1. To try out all features of the player, we recommend you activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://intl.cloud.tencent.com/login) first. If you don't use the VOD service, skip this step; however, you can use only basic player features after integration.
 2. Download and install [Android Studio](https://developer.android.com/studio). If you have already done so, skip this step.
 
 ## Content Summary
@@ -51,8 +51,8 @@ After the project is downloaded, the directory generated after decompression of 
 | common                      | Tool module                                                   |
 | SDK                         | Player SDK, including `LiteAVSDK_Player_x.x.x.aar` (SDK provided in AAR format) and `LiteAVSDK_Player_x.x.x.zip` (SDKs provided in lib and JAR formats) |
 | Player Documentation (Android).pdf | The Player component user guide                                           |
-|:::||
-|</dx-tabs>||
+:::
+</dx-tabs>
 
 ### Step 2. Integrate the component
 This step describes how to integrate the player. You can integrate the project by using Gradle for automatic loading, manually downloading the AAR and importing it into your current project, or importing the JAR and SO libraries.
@@ -83,6 +83,7 @@ This step describes how to integrate the player. You can integrate the project b
    Import the `common` module into your project as instructed above and configure it.
 3. Configure the `mavenCentral` library in Gradle, and LiteAVSDK will be automatically downloaded and updated. Open `app/build.gradle` and configure as follows:
    ![](https://main.qcloudimg.com/raw/65439d399ec584871a7a9bc88ccaef46.png)
+   
    1. Add the `LiteAVSDK_Player` dependencies to `dependencies`.
 ```xml
 dependencies {
@@ -319,7 +320,7 @@ At this point, you have integrated the player creation, video playback, and play
 
 ## More Features[](id:moreFeature)
 
-This section describes several common player features. For more features, see [Demo](#demo). For features supported by the Player component, see [Features](https://cloud.tencent.com/document/product/881/61375).
+This section describes several common player features. For more features, see [Demo](#demo). For features supported by the Player component, see [Features](https://www.tencentcloud.com/document/product/266/42965).
 
 ### 1. Full screen playback
 

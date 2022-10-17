@@ -2,10 +2,10 @@
 
 Tencent Cloud RT-Cube Player for iOS is an open-source Tencent Cloud player component. It can provide powerful playback functionality similar to Tencent Video with just a few lines of code. It has basic features such as landscape/portrait mode switching, definition selection, gestures, and small window playback, as well as special features such as video buffering, software/hardware decoding switching, and adjustable-speed playback. It supports more formats and has better compatibility and functionality than system-default players. In addition, it features instant broadcasting of the first frame and low latency and offers advanced capabilities like video thumbnail.
 
-If the Player component cannot meet your custom requirements and you have development experience, you can integrate the RT-Cube Player as instructed in [VOD Scenario](https://cloud.tencent.com/document/product/881/20216) to customize the player UI and playback features.
+If the Player component cannot meet your custom requirements and you have development experience, you can integrate the RT-Cube Player as instructed in VOD Scenario to customize the player UI and playback features.
 
 ## Prerequisites
-1. Activate [VOD](https://cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://cloud.tencent.com/login) first.
+1. Activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://intl.cloud.tencent.com/login) first.
 2. Download and install Xcode from App Store.
 3. Download and install CocoaPods as instructed at the [CocoaPods website](https://cocoapods.org/).
 
@@ -87,7 +87,7 @@ pod 'SuperPlayer/Professional'
  1. To integrate `TXLiteAVSDK_Player` manually, you need to add the required system frameworks and libraries:
 <b>System frameworks</b>: MetalKit, ReplayKit, SystemConfiguration, CoreTelephony, VideoToolbox, CoreGraphics, AVFoundation, Accelerate, MobileCoreServices, and VideoToolbox
 <b>System libraries:</b> libz, libresolv, libiconv, libc++, and libsqlite3
-For detailed directions, see [Integration Guide (Without UI)](https://cloud.tencent.com/document/product/266/73872).
+For detailed directions, see Integration Guide (Without UI).
 In addition, you need to add `TXFFmpeg.xcframework` and `TXSoundTouch.scframework` under the `TXLiteAVSDK_Player` file as dynamic libraries.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5834caae21d3413522c7d51d4b3b57b0.png)
  2. If you integrate `TXLiteAVSDK_Player` as a Pod, no libraries need to be added.
@@ -122,7 +122,7 @@ This step describes how to play back a video. The Tencent Cloud RT-Cube Player f
 A video file ID is returned by the server after the video is uploaded.
 
 1. After a video is published from a client, the server will return a file ID to the client.
-2. When the video is uploaded to the server, its `FileId` will be included in the notification of the [upload confirmation](https://cloud.tencent.com/document/product/266/9757).
+2. When the video is uploaded to the server, its `FileId` will be included in the notification of the upload confirmation.
 If the video you want to play is already saved with VOD, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media) to view its file ID.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
 <dx-alert infotype="notice">
