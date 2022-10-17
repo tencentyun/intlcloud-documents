@@ -1,12 +1,12 @@
 ## Overview
 
-If the configuration of your purchased TencentDB for MongoDB instance isn't suitable for (either below or above) your current business requirements, you can quickly adjust its specifications based on your actual business conditions (at the initial stage, at the rapid development stage, during peak hours, or during off-peak hours), so as to better meet your needs such as full utilization of resources and real-time cost optimization.
+If your purchased TencentDB for MongoDB instance is overprovisioned or underprovisioned, your business needs cannot be best met, and you can quickly adjust its specifications as needed (at the start, during rapid development, or during peak/off-peak hours), so you can fully utilize resources and reduce unnecessary costs in real time.
 
-The configuration modification of mongod nodes includes adjusting the mongod computing specification and disk capacity. Before adjusting the configuration, understand the [product specifications](https://intl.cloud.tencent.com/document/product/240/31183) supported by TencentDB first, so you can choose the most appropriate specifications for your business. 
+You can change the mongod computing specification and disk capacity for mongod nodes. In order to choose the specifications that best suit your needs, we recommend that you first check TencentDB [Product Specifications](https://intl.cloud.tencent.com/document/product/240/31183) before making a choice.
 
 ## Billing
 
-After the instance configuration is adjusted, the instance will be billed by the new configuration. Make sure that your Tencent Cloud account balance is sufficient. For more information, see [Configuration Adjustment Billing](https://intl.cloud.tencent.com/document/product/240/44174).
+The instance will be billed by the new configurations after its configurations are changed. Make sure that your Tencent Cloud account balance is sufficient. For more information, see [Configuration Adjustment Billing](https://intl.cloud.tencent.com/document/product/240/44174).
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ After the instance configuration is adjusted, the instance will be billed by the
 
 ## Notes
 - Instance memory and capacity adjustment involves adding the nodes with selected configurations to the cluster for data sync, during which the service is not affected. After data sync is completed, the old nodes will be removed, and a new primary node will be elected. A momentary disconnection for around 10s will occur with the instance service during election. We recommend you include disaster recovery in your business code and perform the adjustment during off-peak hours.
-- During adjustment, there may be one or two momentary disconnections for around 10s each. We recommend you configure an automatic reconnection feature for your application.
+- During adjustment, there may be one or two momentary disconnections for about 10s each. We recommend you configure an automatic reconnection feature for your application.
 - During adjustment, if you set the write concern level to `write majority`, there may be a short request delay; therefore, set an appropriate business timeout period.
 - The name, private network address, and port of the instance remain unchanged after configuration adjustment.
 - A started configuration adjustment task cannot be canceled.
