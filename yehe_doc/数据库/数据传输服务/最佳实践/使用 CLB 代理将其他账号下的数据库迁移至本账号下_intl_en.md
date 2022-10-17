@@ -39,7 +39,7 @@ For this scenario, you can associate the source database with a CLB instance. Be
 11. Return to the **Real Servers Bound** section to view the bound source database IP.
 
 ### Configuring a DTS task
-The configuration steps for a DTS task with CLB as an proxy are basically the same as those for [migration from MySQL to TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/42645) or [sync from MySQL/MariaDB/Percona to MySQL](https://intl.cloud.tencent.com/document/product/571/47344), with only the following difference:
+The configuration steps for a DTS task with CLB as an proxy are basically the same as those described in [Migration from MySQL to TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/571/42645) or sync from MySQL/MariaDB/Percona to MySQL, with only the following difference:
 
 After purchasing a data migration/sync task with account C, in the **Set source and target databases** step, select **VPC** as the access method (you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable this option), select the VPC and subnet of account C, and enter the VIP address of the CLB instance as the host address.
 
