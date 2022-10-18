@@ -1,5 +1,5 @@
 
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Certificate management** > **HTTPS configuration** on the left sidebar.
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site Acceleration** > **HTTPS configuration** on the left sidebar.
 
 2. On the HTTPS configuration page, select the target site and configure the following HTTPS items for site acceleration:
 
