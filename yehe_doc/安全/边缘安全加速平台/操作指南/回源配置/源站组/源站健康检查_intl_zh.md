@@ -4,7 +4,7 @@
 
 
 ## 操作步骤
-1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**回源配置** > **源站组**，切换顶部 Tab 到**健康检查**。
+1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**源站配置** > **源站组**，切换顶部 Tab 到**健康检查**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/edc351ebd6dd28f8301952959cbf1652.png)
 2. 在健康检查页面，选择所需站点，创建或编辑源站健康检查任务。
  - 创建源站健康检查任务：单击**新建健康检查任务**，填写相关参数，单击**确认创建**即可。
