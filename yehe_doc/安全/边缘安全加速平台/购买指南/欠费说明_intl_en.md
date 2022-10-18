@@ -1,4 +1,4 @@
-﻿## Account Overdue Alerts
+## Account Overdue Alerts
 When your Tencent Cloud account becomes overdue, you will be notified through the Message Center, emails and SMS. A grace period is given, during which you can still use the service. If you fail to make the payment within the grace period, the EdgeOne service will be suspended. Once the payment is made, the domain name will be automatically restored to the status before service suspension. It may take some time for the restoring.
 >!
 >- The grace period is 24 hours. 
