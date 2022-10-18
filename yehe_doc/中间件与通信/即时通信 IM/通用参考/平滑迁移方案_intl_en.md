@@ -67,7 +67,7 @@ Call the [RESTful API for setting profiles](https://intl.cloud.tencent.com/docum
 
 ### Importing user relationship chains
 
-Call the [RESTful API for adding friends](https://intl.cloud.tencent.com/document/product/1047/34902) to import existing relationship chains into IM.
+Call the [RESTful API for importing  friends](https://www.tencentcloud.com/document/product/1047/34903) to import existing relationship chains into IM.
 
 ### Importing message history of one-to-one chats
 
