@@ -19,6 +19,8 @@
 **Voucher Type**：目前仅支持余额扣减代金券。
 **Amount**：请输入单张代金券发放金额，金额为整数。
 **Validity Period**：请选择代金券有效时间。
+**From the validity date**：从代金券（审批通过后）生效日期起。
+**From the issuance date**：从代金券发放日期起。
 **Description**：可选择输入代金券模板描述备注。
 
 第三步：确认填写内容后点击 **Confirm** 确认保存代金券模板。
