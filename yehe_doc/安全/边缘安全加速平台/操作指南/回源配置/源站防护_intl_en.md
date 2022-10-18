@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 When Origin Protection is enabled, EdgeOne notifies you of the latest update of intermediate IPs of L4 proxy and site acceleration. You can sync them to the firewall rules of your origin, allowing only traffic from these IPs to your origin. 
 
 ## Directions
