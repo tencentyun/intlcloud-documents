@@ -28,14 +28,13 @@
 컴파일 환경: Maven 또는 Gradle 및 JDK 8. 원하는 패키지 관리 툴을 선택할 수 있습니다. 다음은 Maven을 예로 들어 설명합니다.
 실행 환경: Tencent CVM(구독 인스턴스와 같은 리전이어야만 Kafka 서버의 내부 네트워크 주소에 액세스 가능), JRE8 설치.
 작업 순서:
-1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독 Kafka 버전](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
-2. 하나 이상의 소비자 그룹을 생성합니다. 자세한 내용은 [소비자 그룹 추가](https://intl.cloud.tencent.com/document/product/571/39534)를 참조하십시오.
+1. 데이터 구독 작업을 생성합니다(새 버전).
+2. 하나 이상의 소비자 그룹을 생성합니다. 자세한 내용은 [소비자 그룹 추가](https://intl.cloud.tencent.com/document/product/571/39534)를 참고하십시오.
 3. Java Demo를 다운로드하고 파일의 압축을 해제합니다.
 4. 압축을 푼 디렉터리에 액세스합니다. Maven 모델 및 pom.xml 파일은 필요에 따라 사용할 수 있도록 디렉터리에 배치됩니다.
-    Maven을 사용한 패키징: mvn clean package.
+Maven을 사용한 패키징: mvn clean package.
 5. Demo 실행.
-    Maven을 사용하여 패키징 후 대상 폴더 target으로 이동하여 다음 코드를 실행합니다.
-    `java -jar consumerDemo-avro-1.0-SNAPSHOT.jar --brokers xxx --topic xxx --group xxx --user xxx --password xxx --trans2sql`.
+Maven으로 프로젝트 패키징 후 대상 폴더 target으로 이동하여 `java -jar consumerDemo-avro-1.0-SNAPSHOT.jar --brokers xxx --topic xxx --group xxx --user xxx --password xxx --trans2sql=true`를 실행합니다.
  - 'broker'는 Kafka 데이터 구독을 위한 사설망 액세스 주소이고, 'topic'은 구독 topic이며, [구독 상세 조회](https://intl.cloud.tencent.com/document/product/571/42660)의 안내에 따라 구독 상세페이지에서 확인할 수 있습니다.
  - `group`, `user`, `password`는 소비자 그룹의 이름, 계정, 비밀번호로, [소비자 그룹 관리](https://intl.cloud.tencent.com/document/product/571/39535)의 안내에 따라 소비 관리 페이지에서 확인할 수 있습니다.
  - `trans2sql`은 SQL 문으로의 변환 여부를 나타냅니다. java 코드에서 이 매개변수가 전달되면 변환이 활성화됩니다.
@@ -47,7 +46,7 @@
 컴파일 환경: Golang 1.12 버전 이상, Go Module 환경 설정.
 실행 환경: Tencent CVM(구독 인스턴스와 같은 리전이어야만 Kafka 서버의 내부 네트워크 주소에 액세스 가능).
 작업 순서:
-1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독 Kafka 버전](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
+1. 데이터 구독 작업을 생성합니다(새 버전).
 2. 하나 이상의 소비자 그룹을 생성합니다. 자세한 내용은 [소비자 그룹 추가](https://intl.cloud.tencent.com/document/product/571/39534)를 참조하십시오.
 3. Golang Demo를 다운로드하고 파일의 압축을 해제합니다.
 4. 압축을 해제한 디렉터리로 들어가 `go build -o subscribe ./main/main.go`을 실행하여 subscribe 실행 파일을 생성합니다.
@@ -67,8 +66,8 @@ pip install kafka-python
 pip install avro
 ```
 작업 순서:
-1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독 Kafka 버전](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
-2. 하나 이상의 소비자 그룹을 생성합니다. 자세한 내용은 [소비자 그룹 추가](https://intl.cloud.tencent.com/document/product/571/39534)를 참조하십시오.
+1. 데이터 구독 작업을 생성합니다(새 버전).
+2. 하나 이상의 소비자 그룹을 생성합니다. 자세한 내용은 [소비자 그룹 추가](https://intl.cloud.tencent.com/document/product/571/39534)를 참고하십시오.
 3. Python3 Demo를 다운로드하고 파일의 압축을 해제합니다.
 4. `python main.py --brokers=xxx --topic=xxx --group=xxx --user=xxx --password=xxx --trans2sql=1`을 실행합니다.
  - 'broker'는 Kafka 데이터 구독을 위한 사설망 액세스 주소이고, 'topic'은 구독 topic이며, [구독 상세 조회](https://intl.cloud.tencent.com/document/product/571/42660)의 안내에 따라 구독 상세페이지에서 확인할 수 있습니다.
