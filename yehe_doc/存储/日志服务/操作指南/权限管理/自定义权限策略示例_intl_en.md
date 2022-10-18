@@ -496,7 +496,13 @@ Users can manage (including create, edit, and delete) all dashboards and view th
                 "cls:DeleteDashboard",
                 "cls:ModifyChart",
                 "cls:ModifyDashboard",
-                "cls:DescribeDashboards"
+                "cls:DescribeDashboards",
+                "cls:SearchDashboardSubscribe",
+                "cls:CreateDashboardSubscribe",
+                "cls:ModifyDashboardSubscribe",
+                "cls:DescribeDashboardSubscribes",
+                "cls:DeleteDashboardSubscribe",
+                "cls:ModifyDashboardSubscribeAck"
             ],
             "resource": "*"
         },
@@ -515,58 +521,66 @@ Users can manage (including create, edit, and delete) all dashboards and view th
 }
 ```
 
+
 #### Managing log topics and dashboards with specific tags
 
 Users can manage (including create, edit, and delete) dashboards with specific tags and view the data of log topics with specific tags via dashboards.
 
 ```
-	{
-	    "version": "2.0",
-	    "statement": [
-	         {
-	            "effect": "allow",
-	            "action": [
-	                "cls:GetChart",
-	                "cls:GetDashboard",
-	                "cls:ListChart",
-	                "cls:CreateChart",
-	                "cls:CreateDashboard",
-	                "cls:DeleteChart",
-	                "cls:DeleteDashboard",
-	                "cls:ModifyChart",
-	                "cls:ModifyDashboard",
-	                "cls:DescribeDashboards"
-	            ],
-	            "resource": "*",
-	            "condition": {
-	                "for_any_value:string_equal": {
-	                    "qcs:resource_tag": [
-	                        "key&value"
-	                    ]
-	                }
-	            }
-	        },
-	        {
-	            "effect": "allow",
-	            "action": [
-	                "cls:SearchLog",
-	                "cls:DescribeTopics",
-	                "cls:DescribeLogFastAnalysis",
-	                "cls:DescribeIndex",
-	                "cls:DescribeLogsets"
-	            ],
-	            "resource": "*",
-	            "condition": {
-	                "for_any_value:string_equal": {
-	                    "qcs:resource_tag": [
-	                        "key&value"
-	                    ]
-	                }
-	            }
-	        }
-	    ]
-	}
-	```
+    {
+        "version": "2.0",
+        "statement": [
+             {
+                "effect": "allow",
+                "action": [
+                    "cls:GetChart",
+                    "cls:GetDashboard",
+                    "cls:ListChart",
+                    "cls:CreateChart",
+                    "cls:CreateDashboard",
+                    "cls:DeleteChart",
+                    "cls:DeleteDashboard",
+                    "cls:ModifyChart",
+                    "cls:ModifyDashboard",
+                    "cls:DescribeDashboards",
+                    "cls:SearchDashboardSubscribe",
+                    "cls:CreateDashboardSubscribe",
+                    "cls:ModifyDashboardSubscribe",
+                    "cls:DescribeDashboardSubscribes",
+                    "cls:DeleteDashboardSubscribe",
+                    "cls:ModifyDashboardSubscribeAck"
+                ],
+                "resource": "*",
+                "condition": {
+                    "for_any_value:string_equal": {
+                        "qcs:resource_tag": [
+                            "key&value"
+                        ]
+                    }
+                }
+            },
+            {
+                "effect": "allow",
+                "action": [
+                    "cls:SearchLog",
+                    "cls:DescribeTopics",
+                    "cls:DescribeLogFastAnalysis",
+                    "cls:DescribeIndex",
+                    "cls:DescribeLogsets"
+                ],
+                "resource": "*",
+                "condition": {
+                    "for_any_value:string_equal": {
+                        "qcs:resource_tag": [
+                            "key&value"
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+```
+
 
 #### Managing the log topics and dashboards of specific resources
 
@@ -588,7 +602,13 @@ Users can manage (including create, edit, and delete) specific dashboards and vi
                 "cls:DeleteDashboard",
                 "cls:ModifyChart",
                 "cls:ModifyDashboard",
-                "cls:DescribeDashboards"
+                "cls:DescribeDashboards",
+                "cls:SearchDashboardSubscribe",
+                "cls:CreateDashboardSubscribe",
+                "cls:ModifyDashboardSubscribe",
+                "cls:DescribeDashboardSubscribes",
+                "cls:DeleteDashboardSubscribe",
+                "cls:ModifyDashboardSubscribeAck"
             ],
             "resource": [
                 "qcs::cls::uin/100000***001:dashboard/dashboard-0769a3ba-2514-409d-****-f65b20b23736"
@@ -611,36 +631,42 @@ Users can manage (including create, edit, and delete) specific dashboards and vi
 }
 ```
 
+
 #### Viewing all dashboards
 
 Users can view all dashboards and the data of all log topics via dashboards.
 
-	{
-	    "version": "2.0",
-	    "statement": [
-	         {
-	            "effect": "allow",
-	            "action": [
-	                "cls:GetChart",
-	                "cls:GetDashboard",
-	                "cls:ListChart",
-	                "cls:DescribeDashboards"
-	            ],
-	            "resource": "*"
-	        },
-	        {
-	            "effect": "allow",
-	            "action": [
-	                "cls:SearchLog",
-	                "cls:DescribeTopics",
-	                "cls:DescribeLogFastAnalysis",
-	                "cls:DescribeIndex",
-	                "cls:DescribeLogsets"
-	            ],
-	            "resource": "*"
-	        }
-	    ]
-	}
+```
+{
+    "version": "2.0",
+    "statement": [
+         {
+            "effect": "allow",
+            "action": [
+                "cls:GetChart",
+                "cls:GetDashboard",
+                "cls:ListChart",
+                "cls:DescribeDashboards",
+                "cls:SearchDashboardSubscribe",
+                "cls:DescribeDashboardSubscribes"
+            ],
+            "resource": "*"
+        },
+        {
+            "effect": "allow",
+            "action": [
+                "cls:SearchLog",
+                "cls:DescribeTopics",
+                "cls:DescribeLogFastAnalysis",
+                "cls:DescribeIndex",
+                "cls:DescribeLogsets"
+            ],
+            "resource": "*"
+        }
+    ]
+}
+```
+
 
 #### Viewing log topics and dashboards with specific tags
 
@@ -656,7 +682,9 @@ Users can view dashboards with specific tags and view the data of log topics wit
                 "cls:GetChart",
                 "cls:GetDashboard",
                 "cls:ListChart",
-                "cls:DescribeDashboards"
+                "cls:DescribeDashboards",
+                "cls:SearchDashboardSubscribe",
+                "cls:DescribeDashboardSubscribes"
             ],
             "resource": "*",
             "condition": {
@@ -689,40 +717,46 @@ Users can view dashboards with specific tags and view the data of log topics wit
 }
 ```
 
+
 #### Viewing the log topics and dashboards of specific resources
 
 Users can view specific dashboards and the data of specific log topics via dashboards.
 
-	{
-	    "version": "2.0",
-	    "statement": [
-	         {
-	            "effect": "allow",
-	            "action": [
-	                "cls:GetChart",
-	                "cls:GetDashboard",
-	                "cls:ListChart",
-	                "cls:DescribeDashboards"
-	            ],
-	            "resource": [
-	                "qcs::cls::uin/100000***001:dashboard/dashboard-0769a3ba-2514-409d-****-f65b20b23736"
-	            ]
-	        },
-	        {
-	            "effect": "allow",
-	            "action": [
-	                "cls:SearchLog",
-	                "cls:DescribeTopics",
-	                "cls:DescribeLogFastAnalysis",
-	                "cls:DescribeIndex",
-	                "cls:DescribeLogsets"
-	            ],
-	            "resource": [
-	                "qcs::cls::uin/100000***001:topic/174ca473-50d0-4fdf-****-2ef681a1e02a"
-	            ]
-	        }
-	    ]
-	}
+```
+{
+    "version": "2.0",
+    "statement": [
+         {
+            "effect": "allow",
+            "action": [
+                "cls:GetChart",
+                "cls:GetDashboard",
+                "cls:ListChart",
+                "cls:DescribeDashboards",
+                "cls:SearchDashboardSubscribe",
+                "cls:DescribeDashboardSubscribes"
+            ],
+            "resource": [
+                "qcs::cls::uin/100000***001:dashboard/dashboard-0769a3ba-2514-409d-****-f65b20b23736"
+            ]
+        },
+        {
+            "effect": "allow",
+            "action": [
+                "cls:SearchLog",
+                "cls:DescribeTopics",
+                "cls:DescribeLogFastAnalysis",
+                "cls:DescribeIndex",
+                "cls:DescribeLogsets"
+            ],
+            "resource": [
+                "qcs::cls::uin/100000***001:topic/174ca473-50d0-4fdf-****-2ef681a1e02a"
+            ]
+        }
+    ]
+}
+```
+
 
 ## Authorization Policy Statements for Monitoring Alarms
 
