@@ -4,7 +4,7 @@ A health check task can be created to monitor the availability and health of an 
 
 
 ## Directions
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Select **Origin-pull Configuration** > **Origin Group** on the left sidebar. Switch the tab to **Health check**.
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Select **Origin Configuration** > **Origin Group** on the left sidebar. Switch the tab to **Health check**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/edc351ebd6dd28f8301952959cbf1652.png)
 2. On the page displayed, select a target site to create or edit a health check task.
  - Create a health check task: Click **Create health check task**, enter the required parameters, and click **Create**.
