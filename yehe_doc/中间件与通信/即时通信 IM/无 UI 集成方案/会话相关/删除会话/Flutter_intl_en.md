@@ -6,7 +6,7 @@ Multi-client sync is disabled for conversation deletion by default and can be en
 
 
 ## Deleting a Conversation
-Call the `deleteConversation` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/deleteConversation.html)) to delete a specified conversation.
+Call the `deleteConversation` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/deleteConversation.html)) to delete a specified conversation.
 
 Sample code:
 
