@@ -68,7 +68,7 @@ The group owner or admin can also call the `setGroupInfo` API ([dart](https://co
 > Directions: Go to the [**Group configuration**](https://console.cloud.tencent.com/im/qun-setting) module in the IM console, select **Group system notification configuration**, click **Edit** in the **Operation** column, and modify **Notification of muting all change**.
 > ![](https://qcloudimg.tencent-cloud.cn/raw/20551501844d85d1d375c5d1b63a9282.png)
 
->? Only the group owner can mute the admin.
+
 
 Sample code:
 
