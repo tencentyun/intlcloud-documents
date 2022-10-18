@@ -7,7 +7,7 @@ Hypertext Transfer Protocol Version 2 (HTTP/2 or HTTP 2.0) is the second major v
 
 ## Directions
 
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Rule engine** on the left sidebar.
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and Select **Origin Configuration** > **Rule engine** on the left sidebar.
 2. On the rule engine page, select the target site and click ![](https://qcloudimg.tencent-cloud.cn/raw/fe4d4900f8ad69d506adc49bdb70fa32.png) to configure HTTP/2 origin-pull rules as needed.
 >!Currently, you can configure HTTP/2 origin-pull rules only if the match condition is **Host**.
 
