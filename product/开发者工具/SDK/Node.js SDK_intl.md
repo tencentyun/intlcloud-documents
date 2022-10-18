@@ -18,14 +18,14 @@ Obtain the security credentials before installing the SDK for NODEJS. Before usi
 Installing via npm, a NODEJS package management tool, is the recommended way to use the SDK for NODEJS. For more information on npm, see [npm's official website](https://www.npmjs.com/).
 1. Execute the following installation command:
 ```
-npm install tencentcloud-sdk-nodejs-intl --save
+npm install tencentcloud-sdk-nodejs-intl-en --save
 ```
 
 2. Refer to the corresponding module code in your code. For details, see the example.
 
 ## Example
 ```js
-const tencentcloud = require("../../../../tencentcloud-sdk-nodejs-intl");
+const tencentcloud = require("../../../../tencentcloud-sdk-nodejs-intl-en");
 
 // Import the client models of the corresponding product module.
 const CvmClient = tencentcloud.cvm.v20170312.Client;
