@@ -2,7 +2,7 @@
 When Origin Protection is enabled, EdgeOne notifies you of the latest update of intermediate IPs of L4 proxy and site acceleration. You can sync them to the firewall rules of your origin, allowing only traffic from these IPs to your origin. 
 
 ## Directions
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Select **Origin-pull Configuration** > **Origin Protection** on the left sidebar.
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Select **Security Protection** > **Origin Protection** on the left sidebar.
 2. On the page that appears, enable **Origin protection**. Select the resources to bind with the intermediate IPs. Click **OK**.
 >? **Select resource**: Select target resources to enable Origin Protection. 
 
