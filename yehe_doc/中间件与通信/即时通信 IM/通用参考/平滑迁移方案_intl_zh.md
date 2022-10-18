@@ -67,7 +67,7 @@ App 后台需要调用 [批量帐号导入 REST 接口](https://intl.cloud.tence
 
 ### 导入用户关系链
 
-调用 [添加好友 REST 接口](https://intl.cloud.tencent.com/document/product/1047/34902) 将存量的关系链导入即时通信 IM。
+调用 [导入好友 REST 接口](https://intl.cloud.tencent.com/document/product/1047/34903) 将存量的关系链导入即时通信 IM。
 
 ### 导入单聊历史消息
 
