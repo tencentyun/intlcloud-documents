@@ -23,8 +23,8 @@ This document describes how to set notification rules for metric alarms, includi
 <ul>
 <li>Data migration: Metrics in data migration scenarios are monitored.</li>
 <li>Data sync: Metrics in data sync scenarios are monitored.</li>
-<li>Data subscription (Kafka Edition): Metrics in data subscription (Kafka Edition) in new DTS are monitored.</li>
-<li>Data subscription: Metrics in data subscription in old DTS are monitored.</li></ul></td></tr>
+<li>Data subscription (Kafka Edition): Metrics in data subscription (Kafka Edition) in New DTS are monitored.</li>
+<li>Data subscription: Metrics in data subscription in Old DTS are monitored.</li></ul></td></tr>
 <tr>
 <td rowspan="3">Alarm Policy</td>
 <td>Alarm Object</td>
