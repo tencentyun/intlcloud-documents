@@ -1,6 +1,6 @@
 ## Overview
 
-After you create migration, sync, or subscription tasks, if you want to receive only the event alarm notifications of tasks with specified IDs but not other tasks, you can refer to this document for configuration. 
+This document describe how to receive only the event alarm notifications of tasks with specified IDs after you create migration, sync, or subscription tasks.
 
 ## Directions
 
