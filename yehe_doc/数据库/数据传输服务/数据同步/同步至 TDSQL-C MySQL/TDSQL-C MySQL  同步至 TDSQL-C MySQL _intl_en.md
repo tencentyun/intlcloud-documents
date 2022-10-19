@@ -82,7 +82,7 @@ During the sync, do not perform the following operations; otherwise, the sync ta
 <td>Requirements for the target database</td>
 <td>
 <li>The target database version must be later than or equal to the source database version.</li>
-<li>The target database must have sufficient storage space. If you select **Full data initialization** as the initialization type, the target database space must be at least 1.2 times the space of databases/tables to be synced in the source database.</li>
+<li>The target database must have sufficient storage space. If you select <b>Full data initialization</b> as the initialization type, the target database space must be at least 1.2 times the space of databases/tables to be synced in the source database.</li>
 <li>The target database cannot have sync objects such as tables and views with the same name as those in the source database.</li>
 <li>The `max_allowed_packet` parameter of the target database must be set to 4 MB or above.</li></td></tr>
 <tr> 
@@ -91,7 +91,7 @@ During the sync, do not perform the following operations; otherwise, the sync ta
 </table>
 
 ## Directions
-1. Log in to the [data sync purchase page](https://buy.intl.cloud.tencent.com/replication), select appropriate configuration items, and click **Buy Now**.
+1. Log in to the [data sync purchase page](https://buy.intl.cloud.tencent.com/replication), select appropriate configuration items, and click <b>Buy Now</b>.
 <table>
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>
@@ -128,14 +128,14 @@ During the sync, do not perform the following operations; otherwise, the sync ta
 <td>Select the TencentDB instance region selected during purchase, which cannot be changed once configured.</td></tr>
 <tr>
 <td>Access Type</td>
-<td>Select a type based on your actual conditions. In this scenario, select **Database**.
+<td>Select a type based on your actual conditions. In this scenario, select <b>Database</b>.
 <ul>
 <li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
 <li>VPN Access: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1037">VPN Connections</a>.</li>
 <li>Database: The source database is a TencentDB instance.</li>
-<li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li><li>VPC: The source and target databases are both deployed in Tencent Cloud <a href="https://intl.cloud.tencent.com/document/product/215">VPCs.</a>.</li></ul>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.</td></tr>
+<li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li><li>VPC: The source and target databases are both deployed in Tencent Cloud <a href="https://intl.cloud.tencent.com/document/product/215">VPCs.</a>.</li></ul>For a third-party cloud database, you can select <b>Public Network</b> generally or select <b>VPN Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.</td></tr>
 <tr>
 <td>Instance ID</td><td>Instance ID of the source database.</td></tr>
 <tr>
@@ -177,12 +177,12 @@ During the sync, do not perform the following operations; otherwise, the sync ta
 <td>Conflict Resolution Method</td>
 <td><ul><li>Report: If a primary key conflict is found during data sync, an error will be reported, and the data sync task will be paused.<li>Ignore: If a primary key conflict is found during data sync, the primary key record in the target database will be retained.<li>Overwrite: If a primary key conflict is found during data sync, the primary key record in the source database will overwrite that in the target database.</td></tr>
 <tr>
-<td>SQL Type</td><td>Supported operations include INSERT, UPDATE, DELETE, and DDL. If you select **Custom DDL**, you can select different DDL statement sync policies as needed. For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/47342">Setting SQL Filter Policy</a>.</td></tr>
+<td>SQL Type</td><td>Supported operations include INSERT, UPDATE, DELETE, and DDL. If you select <b>Custom DDL</b>, you can select different DDL statement sync policies as needed. For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/47342">Setting SQL Filter Policy</a>.</td></tr>
 <tr>
 <td rowspan=2>Sync Object Option</td>
 <td>Database and Table Objects of Source Instance</td><td>Select the objects to be synced. You can select databases, tables, and views.</td></tr>
 <tr>
-<td>Selected Object</td><td><ul><li>Database/Table mapping (renaming) is supported. Hover over a database or table name, click the displayed **Edit** icon, and enter a new name in the pop-up window.</li><li>When advanced objects are selected for sync, we recommend you not rename databases/tables; otherwise, sync of the advanced objects may fail.</li><li>Online DDL temp tables can be synced (through tools such as gh-ost or pt-online-schema-change). Click **Edit** of a table and select a temp table name in the pop-up window. For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/48486">Syncing Online DDL Temp Table</a>.</li></ul></td></tr>
+<td>Selected Object</td><td><ul><li>Database/Table mapping (renaming) is supported. Hover over a database or table name, click the displayed <b>Edit</b> icon, and enter a new name in the pop-up window.</li><li>When advanced objects are selected for sync, we recommend you not rename databases/tables; otherwise, sync of the advanced objects may fail.</li><li>Online DDL temp tables can be synced (through tools such as gh-ost or pt-online-schema-change). Click <b>Edit</b> of a table and select a temp table name in the pop-up window. For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/48486">Syncing Online DDL Temp Table</a>.</li></ul></td></tr>
 </tbody></table>
 6. On the **Verify task** page, complete the verification. After all check items are passed, click **Start Task**.
 If the verification fails, fix the problem as instructed in [Check Item Overview](https://intl.cloud.tencent.com/document/product/571/42551) and initiate the verification again.
