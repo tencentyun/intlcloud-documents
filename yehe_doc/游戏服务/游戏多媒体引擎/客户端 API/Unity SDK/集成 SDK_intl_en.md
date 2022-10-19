@@ -38,7 +38,7 @@ SDK for Unity has integrated Windows, Mac, Android, and iOS platform architectur
 ### Step 1: import Plugins files
 
 Copy the files from the `Plugins` folder in the SDK to the folder under **Unity project** > **Assets** > **Plugins** as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5ab4509590a5effa9e8aadeee2456492.png"  width="100%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ce8ba3561d43148971f1cbe9076be3a3.png"  width="100%" /></img>
 
 
 
@@ -52,7 +52,7 @@ If you don't need to export executables in the Win32 architecture, delete the `x
 ### Step 2: import code files
 
 Copy the files in the `Scripts` folder in the SDK to the folder used to store code in your Unity project as shown below:  
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ce8ba3561d43148971f1cbe9076be3a3.png"  width="100%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/5ab4509590a5effa9e8aadeee2456492.png"  width="100%" /></img>
 
 
 
