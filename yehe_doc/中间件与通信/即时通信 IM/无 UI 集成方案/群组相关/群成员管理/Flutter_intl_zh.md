@@ -68,7 +68,7 @@ groupManager.getGroupMemberList(count: 10,filter: GroupMemberFilterTypeEnum.V2TI
 >  方式: [进入即时通信IM控制台群组配置模块](https://console.cloud.tencent.com/im/qun-setting)，选择群系统通知配置，为各种类型群，单击操作中**编辑**，修改“群禁言变更通知”，即可。
 > ![](https://qcloudimg.tencent-cloud.cn/raw/20551501844d85d1d375c5d1b63a9282.png)
 
->? 只有群主能将管理员禁言。
+
 
 示例代码如下：
 

@@ -19,6 +19,8 @@ Step 2. Click **Create Template** to create a voucher template and enter the vou
 **Voucher Type**: Currently, only balance deduction vouchers are supported.
 **Amount**: Enter an integer as the amount of the voucher to be issued.
 **Validity Period**: Select the validity period of the voucher.
+**From the validity date**: From the day when the voucher is approved for issuance and becomes valid.
+**From the issuance date**: From the day when the voucher is issued.
 **Description**: Enter an optional description of the voucher template.
 
 Step 3. After confirming that everything is correct, click **Confirm** to save the voucher template.

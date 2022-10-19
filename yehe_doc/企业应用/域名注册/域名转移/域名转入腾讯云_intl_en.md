@@ -13,7 +13,6 @@ Domain transfer in is between registrars. The requirements for transfer in are a
 - If an expired domain was renewed or redeemed at the original registrar less than 45 days ago, transferring it in is not recommended, as doing so may invalidate the renewal with the original registrar or shorten the renewal period.  
 - The domain is in normal status and not involved in any disputes or overdue payments.  
 - The domain is not being processed by judiciaries, arbitration institutions, or domain dispute resolution agencies. 
-- During domain transfer in, the registry needs to verify again whether the naming of its prefix is valid. If the verification fails, the domain cannot be transferred in.
 - Currently, different domain suffixes have different prices. For domain suffixes that can be transferred in, see [Domain Pricing](https://buy.intl.cloud.tencent.com/domain/price?type=tran). 
 
 >!Domain management right and resolution right are independent of each other. If domain transfer in does not involve DNS server changes, the existing DNS will not be affected. If you want to use the DNSPod service, proceed as instructed in [Modifying DNS Server](https://docs.dnspod.com/dns/601105aaf5ab591fcad80d2d/).
@@ -32,10 +31,9 @@ Domain transfer in is free of charge. As stipulated by the domain registry, a do
 Submit a domain transfer out application to the original registrar to get the domain auth-code.
 >!
 >- To transfer a domain, you must get an **auth-code** from the original registrar.
->- If you need to enter the name of the transfer target service provider when transferring out the domain from the original registrar, enter **DNSPod**.
+>- If you need to enter the name of the transfer target service provider when transferring out the domain from the original registrar, enter **Aceville Pte. Ltd.**.
 >
 - At registrars outside the Chinese mainland such as GoDaddy, generally you can directly click a button in the console to email an auth-code to the domain owner.
-- Registrars in the Chinese mainland generally don't provide this feature. You need to contact the original registrar or its agent to manually request an auth-code or domain transfer out. Then, the registrar will generally provide processing directions.
 - If you purchased the domain from an agent of a registrar such as www.net.cn and www.west.cn, and the agent refuses to provide an auth-code, you can directly make a complaint to the registrar. If the registrar also refuses to cooperate, you can make a complaint to registries such as ICANN or CNNIC.
 - According to the regulations of applicable domain administrations (ICANN Domain Transfer Policy), the original registrar shall not reject, restrict, or charge for domain transfers for any reason. If the original registrar hinders your domain transfer or charges fees, you can make a complaint to [ICANN](http://www.icann.org/en/resources/compliance/complaints/transfer/form).
 

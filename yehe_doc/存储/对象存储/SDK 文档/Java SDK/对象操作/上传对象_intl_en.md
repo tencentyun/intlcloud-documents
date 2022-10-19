@@ -14,7 +14,7 @@ This document provides an overview of APIs and SDK code samples for object uploa
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries ongoing multipart uploads. |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing multipart upload operation | Initializes multipart upload operation. |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads object in parts. |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying part | Copies object as part. |
@@ -125,6 +125,10 @@ File localFile = new File(localFilePath);
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 
+// Set the storage class, which can be STANDARD (default value) or STANDARD_IA. You can also ignore this line as appropriate.
+// For more information on storage classes, visit https://cloud.tencent.com/document/product/436/33417.
+putObjectRequest.setStorageClass(StorageClass.Standard_IA);
+
 // If you need to set the custom headers of the object, refer to the following code; otherwise, omit the following lines. For more information on custom headers, visit https://cloud.tencent.com/document/product/436/13361.
 ObjectMetadata objectMetadata = new ObjectMetadata();
 
@@ -170,7 +174,8 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int |
+|storageClass | Set method | Storage class | String |
 
 #### Returned values
 
@@ -226,6 +231,10 @@ objectMetadata.setContentLength(inputStreamLength);
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, inputStream, objectMetadata);
 
+// Set the storage class, which can be STANDARD (default value) or STANDARD_IA. You can also ignore this line as appropriate.
+// For more information on storage classes, visit https://cloud.tencent.com/document/product/436/33417.
+putObjectRequest.setStorageClass(StorageClass.Standard_IA);
+
 try {
     // The advanced API will return an async result `Upload`.
     // You can synchronously call the `waitForUploadResult` method to wait for the upload to complete. If the upload is successful, `UploadResult` will be returned; otherwise, an exception will be reported.
@@ -259,7 +268,8 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int |
+|storageClass | Set method | Storage class | String |
 
 #### Returned values
 
@@ -385,7 +395,7 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
 
 #### Returned values
 
@@ -484,7 +494,7 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
 
 #### Returned values
 
@@ -697,6 +707,10 @@ File localFile = new File(localFilePath);
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 
+// Set the storage class, which can be STANDARD (default value) or STANDARD_IA. You can also ignore this line as appropriate.
+// For more information on storage classes, visit https://cloud.tencent.com/document/product/436/33417.
+putObjectRequest.setStorageClass(StorageClass.Standard_IA);
+
 try {
     PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);
     System.out.println(putObjectResult.getRequestId());
@@ -728,6 +742,7 @@ The request members are as described below:
 | input | Constructor or set method | Input stream | InputStream | No |
 | metadata | Constructor or set method | Object metadata | ObjectMetadata | No |
 | trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
+|storageClass | Set method | Storage class | String | No |
 
 The `ObjectMetadata` class is used to record the metadata of an object. Its main members are as described below:
 
@@ -798,6 +813,10 @@ objectMetadata.setContentLength(inputStreamLength);
 
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, inputStream, objectMetadata);
 
+// Set the storage class, which can be STANDARD (default value) or STANDARD_IA. You can also ignore this line as appropriate.
+// For more information on storage classes, visit https://cloud.tencent.com/document/product/436/33417.
+putObjectRequest.setStorageClass(StorageClass.Standard_IA);
+
 try {
     PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);
     System.out.println(putObjectResult.getRequestId());
@@ -829,6 +848,7 @@ The request members are as described below:
 | input | Constructor or set method | Input stream | InputStream | No |
 | metadata | Constructor or set method | Object metadata | ObjectMetadata | No |
 | trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
+|storageClass | Set method | Storage class | String | No |
 
 The `ObjectMetadata` class is used to record the metadata of an object. Its main members are as described below:
 
@@ -1430,7 +1450,7 @@ do {
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 | key | Constructor or set method | Object name | String |
 | uploadId | Constructor or set method | `uploadId` of the multipart upload to be queried | String |
-| maxParts | Set method | Maximum number of entries that can be returned at a time. Default value: 1000. | String |
+| maxParts | Set method | Maximum number of entries that can be returned at a time. Default value: `1000`. | String |
 | partNumberMarker | Set method | By default, entries are listed in UTF-8 binary order, starting from the part number after the marker. | String |
 | encodingType | Set method | Encoding type of the returned value | String |
 

@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to restoring an archived object.
+This document provides an overview of APIs and SDK code samples for restoring an archived object.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
@@ -8,18 +8,18 @@ This document provides an overview of APIs and SDK code samples related to resto
 
 ## Restoring an Archived Object 
 
-#### Description
+#### Feature description
 
-This API (`POST Object restore`) is used to restore an archived COS object. The restored readable object is temporary. You can set the time during which the temporary object remains readable and the time to delete it. You can use the `Days` parameter to specify the expiration time of the temporary object. If you have not performed any operation on the object, such as copying it or extending its validity period, when it expires, the temporary object will be automatically deleted. A temporary object is only a copy of the archived object. The source object continues to exist throughout this period.
+The `POST Object restore` API is used to restore an archived COS object. The restored readable object is a temporary copy, for which you can set the readable status and the time to delete it through the `Days` parameter. If the time has elapsed and you haven't initiated a copy or extension operation, the temporary object will be automatically deleted. Temporary objects are only copies of the archived objects which always exist.
 
-#### Sample request
+#### Sample code
 
 [//]: # (.cssg-snippet-restore-object)
 ```js
 cos.restoreObject({
-    Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
-    Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
+    Bucket: 'examplebucket-1250000000', /* Your bucket (required) */
+    Region: 'COS_REGION',  /* Bucket region (required), such as ap-beijing */
+    Key: '1.jpg',  /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
     RestoreRequest: {
         Days: 1,
         CASJobParameters: {
@@ -35,13 +35,13 @@ cos.restoreObject({
 
 | Parameter | Description | Type | Required |
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
-| RestoreRequest | A container for data restoration | Object | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String  | Yes   |
+| Region  | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
+| Key     | Object key (object name), which is the unique identifier of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
+| RestoreRequest | Container for data restoration | Object | Yes |
 | - Days | Expiration time of the temporary copy | Number | Yes |
-| - CASJobParameters | A container for the archive job parameters | Object | Yes |
-| - - Tier | Restoration mode. Valid values: `Standard`, which completes a restoration task in 3-5 hours; `Expedited`, which completes a restoration job in 15 minutes; `Bulk`, which completes multiple restoration tasks in 5-12 hours | String | Yes |
+| - CASJobParameters | Container for archive job parameters | Object | Yes |
+| - - Tier | Restoration mode. Valid values: `Standard` (which restores an object within 3–5 hours), `Expedited` (which restores an object within 15 minutes), `Bulk` (which restores an object within 5–12 hours). | String | Yes |
 
 #### Callback function description
 
@@ -49,11 +49,11 @@ cos.restoreObject({
 function(err, data) { ... }
 ```
 
-| Parameter | Description | Type |
+| Parameter  | Description                                               | Type             |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
-| - headers | Headers | Object |
-| data | Content returned when the request is successful. If the request fails, this parameter is empty. | Object |
-| - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
-| - headers | Headers | Object |
+| err    | The object returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | Returned HTTP status code, such as `200`, `403`, and `404`. | Number |
+| - headers | Returned headers | Object |
+| data         | The object returned when the request is successful. If an error occurs with the request, this parameter is empty.               | Object |
+| - statusCode | Returned HTTP status code, such as `200`, `403`, and `404`. | Number |
+| - headers | Returned headers | Object |

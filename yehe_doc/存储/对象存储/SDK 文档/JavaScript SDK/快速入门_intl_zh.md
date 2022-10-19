@@ -451,7 +451,7 @@ document.getElementById('submitBtn').onclick = function (e) {
 
 ### 下载对象
 
-> 浏览器里通过生成预签名url并触发浏览器下载的方式实现
+ 浏览器里通过生成预签名url并触发浏览器下载的方式实现
 
 [//]: # ".cssg-snippet-get-object"
 ```js

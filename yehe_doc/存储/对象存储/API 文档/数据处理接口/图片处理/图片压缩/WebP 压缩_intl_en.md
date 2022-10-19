@@ -21,7 +21,7 @@ This feature supports processing:
 - In the cloud
 
 >?
->- WebP compression is a paid service charged by CI at the basic image processing prices. For detailed pricing, see Image Processing Fees.
+>- WebP compression is a paid service charged by CI at the basic image processing prices. For detailed pricing, see [Image Processing Fees](https://intl.cloud.tencent.com/document/product/1045/45582).
 >- If an image is converted to WebP format, some browsers may not be able to read its EXIF data. As a result, the image cannot be rotated. You can add the `auto-orient` parameter to rotate the input image first before compressing it (see [Rotation](https://intl.cloud.tencent.com/document/product/436/36368)) .
 >- WebP compression inherits the quality parameters of the input image by default. You can adjust the compression ratio by modifying the image quality as instructed in [Quality Change](https://intl.cloud.tencent.com/document/product/436/36370).
 >
@@ -33,7 +33,10 @@ This feature supports processing:
 #### 1. Processing during download
 
 ```plaintext
-download_url?imageMogr2/format/webp
+GET /<ObjectKey>?imageMogr2/format/webp HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 2. Processing during upload
@@ -53,6 +56,9 @@ Pic-Operations:
 }
 ```
 
+>? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695).
+>
+
 #### 3. Processing in-cloud data
 
 ```http
@@ -71,19 +77,25 @@ Pic-Operations:
 }
 ```
 
->? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **processing during upload** or **processing in-cloud data** instead.
->
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+
+
 
 ## Parameters
 
 | Parameter | Description |
 | :--------------- | :----------------------------------------------------------- |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>; for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           |
 | /format/&lt;Format> | Compression format, which is `webp` here.                             |
 
 ## Samples
 
-Assume the input image is a 1,335.2 KB image in PNG format as shown below:
+>? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **processing during upload** or **processing in-cloud data** instead.
+>
+
+Assume the input image is a 1,335.2 KB image in PNG format.
 ![img](https://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png)
 
 You can convert the image to WebP format by using the following request URL:

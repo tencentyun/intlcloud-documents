@@ -7,7 +7,7 @@
 - Download the XML JavaScript SDK demo from [GitHub](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo).
 - For all the code samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript).
 - For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, see [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/40775).
+- For SDK FAQs, see [FAQs](https://intl.cloud.tencent.com/document/product/436/40775).
 
 
 >? If you encounter errors such as non-existent functions or methods when using the XML SDK, update the SDK to the latest version and try again.
@@ -351,80 +351,122 @@ new COS({
 In most cases, you only need to create a COS SDK instance and use it directly where SDK methods need to be called.
 
 ```js
-var cos = new COS({
+/* Sample Vue project */
+
+/* Create `cos.js` and export the COS instance */
+import COS from 'cos-js-sdk-v5'; // Install the SDK vis npm
+const cos = new COS({
   ....
 });
+export default cos;
 
-/* Self-encapsulated upload method */
-function myUpload() {
-  // COS SDK instances don't need to be created in each method
-  // var cos = new COS({
-  //   ...
-  // });
-  cos.putObject({
-    ....
-  });
-}
-
-/* Self-encapsulated deletion method */
-function myDelete() {
-  // COS SDK instances don't need to be created in each method
-  // var cos = new COS({
-  //   ...
-  // });
-  cos.deleteObject({
-    ....
-  });
-}
+/* `page.vue` in a single page */
+<template>
+  <input id="fileSelector" type="file" @change="upload" />
+</template>
+<script>
+  /* Import the path of the `cos.js` newly created above */
+  import cos from 'cos';
+  export default {
+    data() {},
+    methods: {
+      upload(e) {
+        const file = e.target.files && e.target.files[0];
+        /* Call the method of COS SDK directly */
+        cos.uploadFile({
+          Bucket: 'examplebucket-1250000000', /* Your bucket (required) */
+          Region: 'COS_REGION',     /* Bucket region (required) */
+          Key: '1.jpg',              /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+          Body: file, // Upload the file object
+          SliceSize: 1024 * 1024 * 5,     /* The customizable threshold (5 MB in this example) to trigger multipart upload (optional). */
+        });
+      }
+    },
+  }
+</script>
 ```
 
 Below are some common API samples. For more detailed initialization methods, see the demo at [GitHub](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/demo/demo.js).
-
-### Uploading object
-
-The simple upload API is suitable for uploading small files. For large files, use the multipart upload API. For more information, see [JavaScript SDK](https://www.tencentcloud.com/document/product/436/12259).
-
-[//]: # ".cssg-snippet-put-object"
-```js
-cos.putObject({
-    Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'COS_REGION',     /* Bucket region (required) */
-    Key: 'exampleobject',              /* Required */
-    StorageClass: 'STANDARD',
-    Body: fileObject, // Upload the file object
-    onProgress: function(progressData) {
-        console.log(JSON.stringify(progressData));
-    }
-}, function(err, data) {
-    console.log(err || data);
-});
-```
 
 ### Querying object list
 
 [//]: # ".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
-    Bucket: 'examplebucket-1250000000', /* Required */
+    Bucket: 'examplebucket-1250000000', /* Your bucket (required) */
     Region: 'COS_REGION',     /* Bucket region (required) */
-    Prefix: 'a/',           /* Optional */
+    Prefix: 'a/',           /* All files in directory `a` (optional) */
 }, function(err, data) {
     console.log(err || data.Contents);
 });
 ```
 
+### Uploading object
+
+We strongly recommend you use the advanced upload API `uploadFile`, which automatically uses simple upload for small files and multipart upload for large files for a better performance. For more information, see [Uploading Object](https://intl.cloud.tencent.com/document/product/436/43861).
+If you use the temporary key method, you need to grant the permissions of both simple upload and multipart upload as instructed in [Working with COS API Authorization Policies](https://intl.cloud.tencent.com/document/product/436/30580).
+For more information on how to troubleshoot common upload errors, see [FAQs](https://intl.cloud.tencent.com/document/product/436/40775).
+
+[//]: # ".cssg-snippet-upload-file"
+```html
+<!-- DOM element on the HTML page -->
+
+<!-- Choose a file to upload -->
+<input id="fileSelector" type="file" />
+<!-- Click the button for upload-->
+<input id="submitBtn" type="submit" />
+```
+
+```js
+function handleFileInUploading(file) {
+  cos.uploadFile({
+      Bucket: 'examplebucket-1250000000', /* Your bucket (required) */
+      Region: 'COS_REGION',     /* Bucket region (required) */
+      Key: '1.jpg',              /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+      Body: file, // Upload the file object
+      SliceSize: 1024 * 1024 * 5,     /* The customizable threshold (5 MB in this example) to trigger multipart upload (optional). */
+      onProgress: function(progressData) {
+          console.log(JSON.stringify(progressData));
+      }
+  }, function(err, data) {
+      if (err) {
+        console.log('Upload failed', err);
+      } else {
+        console.log('Uploaded successfully');
+      }
+  });
+}
+
+/* Select a file */
+document.getElementById('submitBtn').onclick = function (e) {
+  var file = document.getElementById('fileSelector').files[0];
+  if (!file) {
+    document.getElementById('msg').innerText = 'No file selected for upload';
+    return;
+  }
+  handleFileInUploading(file);
+};
+
+```
+
 ### Downloading object
 
-> !This API is used to read object content. To download a file through a browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, see [Generating Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31540).
+ Object download is implemented by generating a pre-signed URL and triggering download in the browser.
 
 [//]: # ".cssg-snippet-get-object"
 ```js
-cos.getObject({
-    Bucket: 'examplebucket-1250000000', /* Required */
+cos.getObjectUrl({
+    Bucket: 'examplebucket-1250000000', /* Your bucket (required) */
     Region: 'COS_REGION',     /* Bucket region (required) */
-    Key: 'exampleobject',              /* Required */
+    Key: '1.jpg',              /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
 }, function(err, data) {
-    console.log(err || data.Body);
+    if (err) return console.log(err);
+     /* Implement forced download by specifying `response-content-disposition=attachment` */
+    var downloadUrl = data.Url + (data.Url.indexOf('?') > -1 ? '&' : '?') + 'response-content-disposition=attachment';
+    /* The filename can be concatenated to rename the object during download */
+    /* downloadUrl += ';filename=myname'; */
+    // (The `window.open()` method is recommended) This opens the URL in a new window. If you need to open the URL in the current window, you can use the hidden iframe for download, or use the <a> tag download attribute.
+    window.open(downloadUrl);
 });
 ```
 
@@ -433,9 +475,9 @@ cos.getObject({
 [//]: # ".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
-    Bucket: 'examplebucket-1250000000', /* Required */
+    Bucket: 'examplebucket-1250000000', /* Your bucket (required) */
     Region: 'COS_REGION',     /* Bucket region (required) */
-    Key: 'exampleobject'        /* Required */
+    Key: '1.jpg',              /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
 }, function(err, data) {
     console.log(err || data);
 });

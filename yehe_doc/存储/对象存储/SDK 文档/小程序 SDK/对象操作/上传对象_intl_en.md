@@ -29,7 +29,7 @@ This document provides an overview of APIs and SDK code samples for simple opera
 
 ### Uploading object by using simple upload
 
-#### Description
+#### Feature description
 
 This API (`PUT Object`) is used to upload an object to a bucket. To call this API, you must have write access to the bucket.
 
@@ -199,7 +199,7 @@ function(err, data) { ... }
 
 ### Appending parts
 
-#### Description
+#### Feature description
 
 This API (`APPEND Object`) is used to upload an object to a bucket by appending parts.
 
@@ -403,7 +403,7 @@ function(err, data) { ... }
 
 ### Querying multipart uploads
 
-#### Description
+#### Feature description
 
 This API (`List Multiparts Uploads`) is used to query ongoing multipart uploads. Up to 1,000 multipart uploads can be listed at a time.
 
@@ -475,7 +475,7 @@ function(err, data) { ... }
 
 ### Initializing multipart upload
 
-#### Description
+#### Feature description
 
 This API (`Initiate Multipart Uploads`) is used to initialize a multipart upload. After successful initialization, an upload ID will be returned, which can be used in subsequent `Upload Part` requests.
 
@@ -529,7 +529,7 @@ function(err, data) { ... }
 
 ### Uploading parts
 
-#### Description
+#### Feature description
 
 This API (`Upload Part`) is used to upload parts after a multipart upload is initialized. It can upload 1–10,000 parts of 1 MB–5 GB at a time.
 <li>After calling the `Initiate Multipart Upload` API to initialize a multipart upload, you will get an `uploadId`. This ID uniquely identifies the part and marks its position in the object.</li>
@@ -586,7 +586,7 @@ function(err, data) { ... }
 
 ### Querying uploaded parts
 
-#### Description
+#### Feature description
 
 This API (`List Parts`) is used to query the uploaded parts in a specified multipart upload, i.e., listing all successfully uploaded parts in a multipart upload with the specified `uploadId`.
 
@@ -653,7 +653,7 @@ function(err, data) { ... }
 
 ### Completing multipart upload
 
-#### Description
+#### Feature description
 
 This API (`Complete Multipart Upload`) is used to complete a multipart upload. After all parts are uploaded via the `Upload Parts` API, you need to call this API to complete the multipart upload. When using this API, you need to specify the `PartNumber` and `ETag` of each part in the request body for the part information to be verified.
 The parts need to be reassembled after they are uploaded, which takes several minutes. When the assembly starts, COS will immediately return the status code `200` and will periodically return spaces during the process to keep the connection active until the assembly is completed. After that, COS will return the assembled result in the body.
@@ -715,7 +715,7 @@ function(err, data) { ... }
 
 ### Aborting multipart upload
 
-#### Description
+#### Feature description
 
 This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts. If you call this API and there is an ongoing upload request with the specified `UploadId`, the upload request will fail. If the `uploadId` does not exist, `404` (NoSuchUpload) will be returned.
 
@@ -765,7 +765,7 @@ The following methods encapsulate the native methods mentioned above. They can i
 
 ### Advanced upload
 
-#### Description
+#### Feature description
     
 This API (`Upload File`) is used to implement an advanced upload. You can use the `SliceSize` parameter to specify a file size threshold (1 MB by default). If a file is larger than this threshold, it will be uploaded in parts; otherwise, it will be uploaded in whole.
     
@@ -779,7 +779,7 @@ var uploadFile = function(file) {
         Region: 'COS_REGION',     /* Bucket region (required) */
         Key: file.name,              /* Required */
         FilePath: file.path,                /* Required */
-        FileSize: file.size,                /* Required */
+        FileSize: file.size,                 /* Required for versions earlier than v1.4.3 and optional for v1.4.3 and later */
         SliceSize: 1024 * 1024 * 5,     /* The threshold (5 MB in this example) to trigger multipart upload (optional and customizable). Minimum value: 1 MB. */
         onTaskReady: function(taskId) {                   /* Optional */
             console.log(taskId);
@@ -812,11 +812,18 @@ wx.chooseMessageFile({
 | Region  | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key     | Object key (object name), which is the unique identifier of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | FilePath                                                         | Path of the file to be uploaded	           | String | Yes   |
-| FileSize                                                         | Size of the object to be uploaded	           | Number | Yes   |
+| FileSize                                                         | Size of the file to be uploaded (required for versions earlier than v1.4.3 and optional for v1.4.3 and later)	           | Number | Yes   |
 | SliceSize                                                    | File size threshold in bytes, which is `1048576` (1 MB) by default. If the file size is equal to or smaller than this value, the file will be uploaded through `putObject`; otherwise, it will be uploaded through `sliceUploadFile`.                                                     | Number    | No   |
 | AsyncLimit                                                   | Maximum number of concurrently uploaded parts allowed. This parameter is valid only when a multipart upload is triggered.                                           | Number    | No   |
 | StorageClass | Storage class of the object, such as `STANDARD`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
 | UploadAddMetaMd5 | Sets `x-cos-meta-md5` as the object's MD5 checksum in the object's metadata during upload in the format of a 32-bit lowercase string, such as `4d00d79b6733c9cc066584a02ed03410`. | String | No |
+| CacheControl           | The cache policy as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
+| ContentDisposition     | The filename as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
+| ContentEncoding        | The encoding format as defined in RFC 2616, which is saved as part of the object metadata.              | String   | No   |
+| ContentLength          | The length of the content of an HTTP request in bytes as defined in RFC 2616                   | String           | No   |
+| ContentType | The content type (MIME) as defined in RFC 2616, which is saved as part of the object metadata. | String | No |
+| Expires                | The expiration time as defined in RFC 2616, which is saved as part of the object metadata.             | String           | No   |
+| Expect | If `Expect: 100-continue` is used, the request content will be sent only after the confirmation from the server is received. | String | No |
 | onTaskReady | Callback for upload task creation. A `taskId` is returned, which uniquely identifies the task and can be used to cancel (cancelTask), pause (pauseTask), or restart (restartTask) the task. | Function | No |
 | - taskId | ID of the upload task | String | No |
 | onProgress | Callback for the upload progress. The callback parameter is `progressData`. | Function | No |
@@ -850,7 +857,7 @@ function(err, data) { ... }
 | - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter will not be returned. | String  |
 
 ### Uploading object by using multipart upload (checkpoint restart)
-#### Description
+#### Feature description
 This API (`Slice Upload File`) is used to upload a large file in parts.
 #### Sample code
 [//]: # (.cssg-snippet-transfer-copy-object)
@@ -900,6 +907,13 @@ wx.chooseMessageFile({
 | SliceSize              | Part size                                                     | Number   | No   |
 | AsyncLimit                                                   | Maximum number of concurrently uploaded parts allowed. This parameter is valid only when a multipart upload is triggered.                                           | Number    | No   |
 |  StorageClass | Storage class of the object, such as `STANDARD`, `STANDARD_IA` and `ARCHIVE`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
+| CacheControl           | The cache policy as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
+| ContentDisposition     | The filename as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
+| ContentEncoding        | The encoding format as defined in RFC 2616, which is saved as part of the object metadata.              | String   | No   |
+| ContentLength          | The length of the content of an HTTP request in bytes as defined in RFC 2616                   | String           | No   |
+| ContentType | The content type (MIME) as defined in RFC 2616, which is saved as part of the object metadata. | String | No |
+| Expires                | The expiration time as defined in RFC 2616, which is saved as part of the object metadata.             | String           | No   |
+| Expect | If `Expect: 100-continue` is used, the request content will be sent only after the confirmation from the server is received. | String | No |
 | onTaskReady | Callback for upload task creation. A `taskId` is returned, which uniquely identifies the task and can be used to cancel (cancelTask), pause (pauseTask), or restart (restartTask) the task. | Function | No |
 | - taskId | ID of the upload task | String | No |
 | onHashProgress | Callback for the progress of MD5 checksum calculation. The callback parameter is `progressData`. | Function | No |
@@ -935,7 +949,7 @@ function(err, data) { ... }
 
 ### Batch upload
 
-#### Description
+#### Feature description
 
 Option 1:
 You can call `putObject` or `sliceUploadFile` multiple times to implement batch uploads. Instantiate the `FileParallelLimit` parameter to limit the maximum number of concurrently uploaded files allowed, which is 3 by default.
@@ -953,7 +967,7 @@ var uploadFiles = function(files) {
     var fileList = files.map(function(file) {
         return Object.assign(file, {  
             FilePath: file.path, /* Required */
-            FileSize: file.size, /* Required */
+            FileSize: file.size, /* Required for versions earlier than v1.4.3 and optional for v1.4.3 and later */
             Bucket: 'examplebucket-1250000000', /* Required */
             Region: 'COS_REGION',/* Bucket region (required) */
             Key: file.name, /* Required */
@@ -996,7 +1010,14 @@ wx.chooseMessageFile({
 | - Region  | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | - Key     | Object key (object name), which is the unique identifier of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | - FilePath | Path of the file to be uploaded           | String | Yes   |
-| - FileSize             | Size of the object to be uploaded                                 | Number | Yes |
+| - FileSize                                                         | Size of the file to be uploaded (required for versions earlier than v1.4.3 and optional for v1.4.3 and later)           | Number | Yes   |
+| - CacheControl           | The cache policy as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
+| - ContentDisposition     | The filename as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
+| - ContentEncoding        | The encoding format as defined in RFC 2616, which is saved as part of the object metadata.              | String   | No   |
+| - ContentLength          | The length of the content of an HTTP request in bytes as defined in RFC 2616                   | String           | No   |
+| - ContentType | The content type (MIME) as defined in RFC 2616, which is saved as part of the object metadata. | String | No |
+| - Expires                | The expiration time as defined in RFC 2616, which is saved as part of the object metadata.             | String           | No   |
+| - Expect | If `Expect: 100-continue` is used, the request content will be sent only after the confirmation from the server is received. | String | No |
 | - onTaskReady | The callback for upload task creation. A `taskId` is returned, which uniquely identifies the task and can be used to cancel (cancelTask), pause (pauseTask), or restart (restartTask) the task. | Function | No |
 | taskId                                                     | ID of the upload task                                              | String    | No  |
 | SliceSize                                                    | File size threshold in bytes, which is `1048576` (1 MB) by default. If the file size is equal to or smaller than this value, the file will be uploaded through `putObject`; otherwise, it will be uploaded through `sliceUploadFile`.                                                     | Number    | Yes   |

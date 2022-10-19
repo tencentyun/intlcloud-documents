@@ -63,6 +63,7 @@
 <td>根据业务情况选择迁移链路的规格。</td></tr>
 </tbody></table>
 3. 在设置源和目标数据库页面，完成任务设置、源库设置和目标库设置，测试源库和目标库连通性通过后，单击**新建**。
+![](https://qcloudimg.tencent-cloud.cn/raw/76f4170f98e9145bd4db7aa67fe40a8c.png)
 >?如果连通性测试失败，请根据提示和 [修复指导](https://intl.cloud.tencent.com/document/product/571/42552) 进行排查和解决，然后再次重试。
 >
 <table>
@@ -112,7 +113,7 @@
 <td>密码</td><td>目标库的数据库帐号的密码。</td></tr>
 </tbody></table>
 4. 在设置迁移选项及选择迁移对象页面，设置迁移类型、对象，单击**保存**。
-![](https://qcloudimg.tencent-cloud.cn/raw/76f4170f98e9145bd4db7aa67fe40a8c.png)
+
 <table>
 <thead><tr><th>配置项</th><th>说明</th></tr></thead>
 <tbody><tr>

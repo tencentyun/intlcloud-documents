@@ -104,7 +104,7 @@ Content-Type: application/xml
 
 | 节点名称（关键字） | 父节点 | 描述           | 类型      |
 | :----------------- | :----- | :------------- | :-------- |
-| Request            | 无     | <a href="https://intl.cloud.tencent.com/document/product/1045/49907" target="_blank">同创建拼接模板接口的 Request</a> | Container | 是   |
+| Request            | 无     | <a href="https://intl.cloud.tencent.com/document/product/1045/49907" target="_blank">同创建拼接模板接口的 Request</a> | Container | 
 
 ## 响应
 

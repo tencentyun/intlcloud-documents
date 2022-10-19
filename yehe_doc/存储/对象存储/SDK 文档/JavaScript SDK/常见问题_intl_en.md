@@ -1,3 +1,8 @@
+### What should I do if an CORS error is reported?
+The error is as follows:
+![](https://qcloudimg.tencent-cloud.cn/raw/47bdd8a90f724d577a60f7b8dcb894e4.png)
+The reason is that CORS is not correctly set for the bucket. For more information, see [Setting CORS](https://intl.cloud.tencent.com/document/product/436/11488).
+
 ### What should I do if error 403 is reported when I perform operations with a temporary key?
 
 Check whether the `action` and `allowPrefix` you entered when applying for the temporary key are correct.
