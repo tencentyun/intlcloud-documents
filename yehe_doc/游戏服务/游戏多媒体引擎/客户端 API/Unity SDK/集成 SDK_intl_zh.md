@@ -38,7 +38,7 @@ Unity SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。
 ### 步骤1：导入 Plugins 文件
 
 将开发工具包中 Plugins 文件夹中的文件复制在 **Unity 工程**>**Assets**>**Plugins** 文件夹中，如图所示。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5ab4509590a5effa9e8aadeee2456492.png"  width="100%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ce8ba3561d43148971f1cbe9076be3a3.png"  width="100%" /></img>
 
 
 
@@ -52,7 +52,7 @@ Unity SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。
 ### 步骤2：导入代码文件
 
 将开发工具包中 Scripts 文件夹中的文件复制在 Unity 工程中存放代码的文件夹中，如图所示：  
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ce8ba3561d43148971f1cbe9076be3a3.png"  width="100%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/5ab4509590a5effa9e8aadeee2456492.png"  width="100%" /></img>
 
 
 
