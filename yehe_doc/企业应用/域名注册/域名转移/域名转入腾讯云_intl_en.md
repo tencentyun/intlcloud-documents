@@ -13,7 +13,6 @@ Domain transfer in is between registrars. The requirements for transfer in are a
 - If an expired domain was renewed or redeemed at the original registrar less than 45 days ago, transferring it in is not recommended, as doing so may invalidate the renewal with the original registrar or shorten the renewal period.  
 - The domain is in normal status and not involved in any disputes or overdue payments.  
 - The domain is not being processed by judiciaries, arbitration institutions, or domain dispute resolution agencies. 
-- During domain transfer in, the registry needs to verify again whether the naming of its prefix is valid. If the verification fails, the domain cannot be transferred in.
 - Currently, different domain suffixes have different prices. For domain suffixes that can be transferred in, see [Domain Pricing](https://buy.intl.cloud.tencent.com/domain/price?type=tran). 
 
 >!Domain management right and resolution right are independent of each other. If domain transfer in does not involve DNS server changes, the existing DNS will not be affected. If you want to use the DNSPod service, proceed as instructed in [Modifying DNS Server](https://docs.dnspod.com/dns/601105aaf5ab591fcad80d2d/).
