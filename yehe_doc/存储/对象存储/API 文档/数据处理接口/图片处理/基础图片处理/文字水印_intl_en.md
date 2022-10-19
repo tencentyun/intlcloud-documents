@@ -1,21 +1,21 @@
-## Overview
-COS uses the **watermark** API provided by CI to add text watermarks in real time. An input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, its total number of pixels (Width x Height x Number of frames) cannot exceed 250 million.
+## Feature Overview
+COS's real-time text watermarking feature is implemented through the **watermark** API provided by CI. An input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, its total number of pixels (width x height x number of frames) cannot exceed 250 million.
 
->! Image Processing is charged by CI. For detailed pricing, see **Basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/45582).
+>! Image processing is charged by CI. For detailed pricing, see [Image Processing Fees](https://intl.cloud.tencent.com/document/product/1045/45582).
 >
 
-An image can be processed:
+This feature supports processing:
 
-- Upon download
-- Upon upload
-- In cloud
+- During download
+- During upload
+- In the cloud
 
-## API Format
+## API Sample
 
-#### 1. Processing upon download
+#### 1. Processing during download
 
 ```plaintext
-download_url?watermark/2/text/<encodedText>
+GET /<ObjectKey>?watermark/2/text/<encodedText>
                         /font/<encodedFont>
                         /fontsize/<fontSize>
                         /fill/<encodedColor>
@@ -25,12 +25,15 @@ download_url?watermark/2/text/<encodedText>
                         /dy/<dy>
                         /batch/<type>
                         /degree/<degree>
-                        /shadow/<shadow>
+                        /shadow/<shadow> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 > ? Spaces and line breaks above are for readability only and can be ignored.
 
-#### 2. Processing upon upload
+#### 2. Processing during upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -56,6 +59,9 @@ Pic-Operations:
   }]
 }
 ```
+
+>? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695).
+>
 
 #### 3. Processing in-cloud data
 
@@ -85,28 +91,30 @@ Pic-Operations:
 }
 ```
 
->?Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
->
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> 
 
 
 ## Parameters
 
-In the code above, `watermark` is the operation name and the number `2` indicates that the watermark is a text.
+In the code above, `watermark` is the operation name and the number `2` indicates that the watermark is text.
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /text/  | Watermark text, which must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430) |
-| /font/ | Font of the text, which must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default font: Tahoma.ttf (see [Supported Fonts](https://intl.cloud.tencent.com/document/product/1045/40681).) |
- /fontsize/   | Font size, in pt. Default value: 13. To scale the text watermark proportionally based on the original image, convert the text watermark to a PNG image. For more configuration information, see [Image Watermarking](https://intl.cloud.tencent.com/document/product/436/36373)                     |
-| /fill/ | Font color. The value must be in hexadecimal format, for example, `#FF0000`. For format conversion, see [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default value: `#3D3D3D` (gray) |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           |
+| /text/  | Watermark text, which must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). |
+| /font/ | Font of the text, which must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default font: Tahoma.ttf (see [Supported Fonts](https://intl.cloud.tencent.com/document/product/1045/40681)). |
+| /fontsize/   | Font size in pt. Default value: `13`. To scale the text watermark proportionally based on the original image, convert the text watermark to a PNG image. For more configuration information, see [Image Watermarking](https://intl.cloud.tencent.com/document/product/436/36373).                     |
+| /fill/ | Font color. The value must be in hexadecimal format, for example, `#FF0000`. For format conversion, see [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default value: `#3D3D3D` (gray). |
 | /dissolve/ | Text opacity. Value range: 1−100. Default value: `90` (meaning 90% opacity) |
-| /gravity/    | Position of the text watermark, which is a square in a [3x3 grid](#1). Default value: `southeast` |
-| /dx/ | Horizontal offset in pixels. Default value: `0` |
-| /dy/ | Vertical offset in pixels. Default value: `0` |
+| /gravity/    | Position of the text watermark, which is a square in a [3x3 grid](#1). Default value: `SouthEast`. |
+| /dx/         | Horizontal offset in px. Default value: `0`.                      |
+| /dy/         | Vertical offset in px. Default value: `0`.                      |
 | /batch/ | Whether to tile the text watermark. If this parameter is set to `1`, the text watermark will be tiled across the input image. |
-| /degree/ | Angle to rotate text watermarks. This parameter is valid only when `/batch/` is set to `1`. Value range: 0−360. Default value: `0`  |
-| /shadow/| Text shadow effect. Value range: 0−100. Default value: `0`, indicating no shadow.   |
+| /degree/ | Angle to rotate the text watermark. This parameter will take effect only when `/batch/` is set to `1`. Value range: 0−360. Default value: `0`. |
+| /shadow/	|  Text shadow effect. Value range: 0−100. Default value: `0` (no shadow).   |   
 
 
 <span id="1"></span>
@@ -120,34 +128,34 @@ The 3x3 grid position diagram is as follows. Once you specify the `gravity` para
 > - If `gravity` is set to `north` or `south`, `dx` is invalid.
 > - If `gravity` is set to `west` or `east`, `dy` is invalid.
 
-## Examples
+## Samples
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) and use the **processing during upload** or **processing in-cloud data** feature.
 
 
-#### Example 1: adding a text watermark
+#### Sample 1: Adding a text watermark
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/2/text/6IW-6K6v5LqRwrfkuIfosaHkvJjlm74/fill/IzNEM0QzRA/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/45
 ```
 
-After text watermarks are added:
+Output:
 ![](https://main.qcloudimg.com/raw/e2ea173afafb7b50a2a7824b9173edf2.jpeg)
 
-#### Example 2: adding a text watermark with a signature carried
+#### Sample 2: Adding a text watermark with a signature carried
 
-This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
+This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&watermark/2/text/6IW-6K6v5LqRwrfkuIfosaHkvJjlm74/fill/IzNEM0QzRA/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/45
 ```
 
->? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext

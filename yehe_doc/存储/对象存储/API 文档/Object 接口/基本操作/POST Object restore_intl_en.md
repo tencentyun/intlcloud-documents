@@ -1,8 +1,8 @@
-## Overview
+## Feature Description
 
-This API allows you to send a request to restore an ARCHIVED/DEEP ARCHIVED object so that you can read it. The restored readable object is a temporary copy, for which you can set `Keep Readable` and the time at which to delete it at a later point. You can use the `Days` parameter to specify the expiration time of the temporary object. If the time is exceeded and you haven’t initiated a copy, extension, or any other operation, the temporary object will be automatically deleted. Temporary objects are only copies of the archived objects which always exist. For more information about ARCHIVE, please see [Storage Class Overview - ARCHIVE](https://intl.cloud.tencent.com/document/product/436/30925).
+The `POST Object restore` API allows you to send a request to restore an ARCHIVE/DEEP ARCHIVE object so that you can read it. The restored readable object is a temporary copy, for which you can set the readable status and the time to delete it through the `Days` parameter. If the time has elapsed and you haven't initiated a copy or extension operation, the temporary object will be automatically deleted. Temporary objects are only copies of the archived objects which always exist. For more information on the ARCHIVE storage class, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
->? The QPS of the POST Object restore API is limited to 100.
+>? The QPS of the `POST Object restore` API is limited to 100.
 >
 
 <div class="rno-api-explorer">
@@ -11,11 +11,11 @@ This API allows you to send a request to restore an ARCHIVED/DEEP ARCHIVED objec
             <div class="rno-api-explorer-title">
                 API Explorer is recommended.
             </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PostObjectRestore&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PostObjectRestore&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@ This API allows you to send a request to restore an ARCHIVED/DEEP ARCHIVED objec
 
 #### Versioning
 
-If versioning is enabled, you can use the `versionId` parameter in your request to specify the ID of the version to restore. If this parameter is not specified, the latest version will be restored.
+If versioning is enabled, you can use the `versionId` parameter in your request to specify the ID of the version to be restored. If this parameter is not specified, the latest version will be restored.
 
 ## Request
 
@@ -45,23 +45,23 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 > 
 
 #### Request parameters
 
-| Parameter | Description | Type | Required |
+| Field |  Description | Type | Required |
 | ---------------------------- | ------------------------------------------------------------ | ------ | -------- |
 | versionId | Specifies the version ID of the versioning-enabled object to restore. If this parameter is not specified, the latest version will be restored. | string | No |
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-Contains the **application/xml** request data, including specific parameters of the restore operation.
+Submit **application/xml** request data, including specific parameters of the restoration operation.
 
 ```plaintext
 <RestoreRequest>
@@ -72,31 +72,31 @@ Contains the **application/xml** request data, including specific parameters of 
 </RestoreRequest>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| RestoreRequest | None | Contains all request information of `POST Object restore`. | Container | Yes |
+| RestoreRequest | None | Contains all the request information of `POST Object restore`. | Container | Yes |
 
-**Content of `RestoreRequest`**:
+**`RestoreRequest` has the following sub-nodes:**
 
-| Node Name (Keyword)          | Parent Node | Description                                    | Type        | Required |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Days | RestoreRequest | Specifies the valid duration (in days) for the temporary copy restored. | number | Yes |
-| CASJobParameters | RestoreRequest | Restores job parameters. | Container | Yes |
+| Days | RestoreRequest | Specifies the validity period (in days) of the restored temporary copy. | number | Yes |
+| CASJobParameters | RestoreRequest | Restoration job parameter. | Container | Yes |
 
-**Content of `CASJobParameters`**:
+**`CASJobParameters` has the following sub-nodes:**
 
-| Node Name (Keyword)          | Parent Node | Description                                    | Type        | Required |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Tier | RestoreRequest.CASJobParameters | Specifies the restoration mode.<br>The following three restoration modes are available for archived objects:<br><li>Expedited: restores an object within 1-5 minutes. <br> <li>Standard: restores an object within 3-5 hours. <br><li>Bulk: restores an object within 5-12 hours.<br>The following two modes are available for deep archived objects:<br><li>Standard: restores an object within 12-24 hours.<br><li>Bulk: restores an object within 24-48 hours. | Enum | Yes |
+| Tier | RestoreRequest.CASJobParameters | Specifies the restoration mode.<br>The following three restoration modes are available for ARCHIVE objects:<br><li>Expedited: Restores an object within 1–5 minutes. <br> <li>Standard: Restores an object within 3–5 hours. <br><li>Bulk: Restores an object within 5–12 hours.<br>The following two restoration modes are available for DEEP ARCHIVE objects:<br><li>Standard: Restores an object within 12–24 hours.<br><li>Bulk: Restores an object within 24–48 hours. | Enum | Yes |
 
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -104,11 +104,11 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Samples
 
-#### Example 1: simple use case (with versioning disabled)
+#### Sample 1: Simple use case (with versioning disabled)
 
 #### Request
 
@@ -143,7 +143,7 @@ Server: tencent-cos
 x-cos-request-id: NWUwNWJlOTFfMjljOTBiMDlfMTQ2MmNfNzAw****
 ```
 
-#### Example 2: restoring an object of a specific version (with versioning enabled)
+#### Sample 2: Restoring an object on a specific version (with versioning enabled)
 
 #### Request
 

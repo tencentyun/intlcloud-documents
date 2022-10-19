@@ -7,7 +7,7 @@
 - Download the XML Mini Program SDK demo from [GitHub](https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo).
 - For all the code samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/MiniProgram).
 - For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, see [Mini Program SDK](https://intl.cloud.tencent.com/document/product/436/38958).
+- For SDK FAQs, see [FAQs](https://intl.cloud.tencent.com/document/product/436/38958).
 
 >? If you encounter errors such as non-existent functions or methods when using the SDK, update the SDK to the latest version and try again.
 >
@@ -71,6 +71,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 ```js
 var cos = new COS({
     // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of allowed domain names to be configured. The region domain name will be used for requests.
+    SimpleUploadMethod: 'putObject', // We strongly recommend you use `putObject` when simply uploading small files during advanced upload and batch upload. The SDK version must be v1.3.0 or later.
     getAuthorization: function (options, callback) {
         // It will not be called during initialization and will be entered only when a COS method such as `cos.putObject` is called.
         // Get a temporary key asynchronously.
@@ -113,6 +114,7 @@ Create a COS SDK instance in the following ways:
 
 ```js
 var cos = new COS({
+    SimpleUploadMethod: 'putObject', // We strongly recommend you use `putObject` when simply uploading small files during advanced upload and batch upload. The SDK version must be v1.3.0 or later.
     // Required parameter
     getAuthorization: function (options, callback) {
         // For server-side samples for JS and PHP, visit https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/.
@@ -148,6 +150,7 @@ var cos = new COS({
 
 ```js
 var cos = new COS({
+    SimpleUploadMethod: 'putObject', // We strongly recommend you use `putObject` when simply uploading small files during advanced upload and batch upload. The SDK version must be v1.3.0 or later.
     // Required parameter
     getAuthorization: function (options, callback) {
         // Server-side sample: https://github.com/tencentyun/qcloud-cos-sts-sdk/edit/master/scope.md
@@ -181,9 +184,10 @@ var cos = new COS({
 
 ```js
 var cos = new COS({
+    SimpleUploadMethod: 'putObject', // We strongly recommend you use `putObject` when simply uploading small files during advanced upload and batch upload. The SDK version must be v1.3.0 or later.
     // Required parameter
     getAuthorization: function (options, callback) {
-        // The server obtains a signature. For more information, see the COS SDK for the corresponding programming language at https://intl.cloud.tencent.com/document/product/436/6474.
+        // The server obtains a signature. For more information, see the COS SDK for the corresponding programming language at https://cloud.tencent.com/document/product/436/6474.
         // Note: There may be a security risk associated with this option. The backend needs to strictly control permissions through `method` and `pathname`, such as prohibiting `put /`.
         wx.request({
             url: 'https://example.com/server/auth.php',
@@ -209,6 +213,7 @@ var cos = new COS({
 var cos = new COS({
     SecretId: 'SECRETID',
     SecretKey: 'SECRETKEY',
+    SimpleUploadMethod: 'putObject', // We strongly recommend you use `putObject` when simply uploading small files during advanced upload and batch upload. The SDK version must be v1.3.0 or later.
 });
 ```
 
@@ -370,28 +375,45 @@ cos.getService(function (err, data) {
 
 ### Uploading object
 
-The mini program upload API `wx.uploadFile` only supports POST requests. To upload files with the SDK, you need to use the `postObject` API. If only the file upload API is needed in your mini program, we recommend you not reference the SDK. For more information, see the demo at [GitHub](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js).
+We strongly recommend you use the advanced upload API `uploadFile`, which automatically uses simple upload for small files and multipart upload for large files for a better performance. For more information, see [Uploading Object](https://intl.cloud.tencent.com/document/product/436/43881).
+If you use the temporary key method, you need to grant the permissions of both simple upload and multipart upload as instructed in [Working with COS API Authorization Policies](https://intl.cloud.tencent.com/document/product/436/30580).
+For more information on how to troubleshoot common upload errors, see [FAQs](https://intl.cloud.tencent.com/document/product/436/40775).
 
 ```js
-// First, select the file to get the temporary path.
+/* Initialize COS */
+var cos = new COS({
+  // getAuthorization: funciton() {}, // See above for initialization.
+  SimpleUploadMethod: 'putObject', // We strongly recommend you use `putObject` when simply uploading small files during advanced upload and batch upload.
+});
+
+function handleFileInUploading(fileName, filePath) {
+  cos.uploadFile({
+      Bucket: 'examplebucket-1250000000', /* Your bucket (required) */
+      Region: 'COS_REGION',     /* Bucket region (required) */
+      Key: fileName,              /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+      FilePath: filePath, /* Path of the file to be uploaded (required) */
+      SliceSize: 1024 * 1024 * 5,     /* The customizable threshold (5 MB in this example) to trigger multipart upload (optional). */
+      onProgress: function(progressData) {
+          console.log(JSON.stringify(progressData));
+      }
+  }, function(err, data) {
+      if (err) {
+        console.log('Upload failed', err);
+      } else {
+        console.log('Uploaded successfully');
+      }
+  });
+}
+
+/* Select a file to get the temporary path (with an image as an example here). For other types of files, see the official APIs of WeChat Mini Program. */
 wx.chooseImage({
     count: 1, // Default value: `9`
     sizeType: ['original'], // You can specify whether to use the original or compressed image. The original is used by default.
     sourceType: ['album', 'camera'], // You can specify whether the source is an album or camera. Both are included by default.
     success: function (res) {
         var filePath = res.tempFiles[0].path;
-        var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
-        cos.postObject({
-            Bucket: 'examplebucket-1250000000',
-            Region: 'ap-beijing',
-            Key: 'destination path/' + filename,
-            FilePath: filePath,
-            onProgress: function (info) {
-                console.log(JSON.stringify(info));
-            }
-        }, function (err, data) {
-            console.log(err || data);
-        });
+        var fileName = filePath.substr(filePath.lastIndexOf('/') + 1);
+        handleFileInUploading(fileName, filePath);
     }
 });
 ```
