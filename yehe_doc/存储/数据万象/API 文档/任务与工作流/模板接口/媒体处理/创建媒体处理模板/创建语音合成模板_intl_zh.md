@@ -1,6 +1,24 @@
 ## 功能描述
 
-CreateMediaTemplate 用于新增语音合成模板。
+创建语音合成模板。
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                推荐使用 API Explorer
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateTranscodeTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## 请求
 
@@ -17,16 +35,17 @@ Content-Type: application/xml
 <body>
 ```
 
->? 
+>?
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
-> 
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+>
 
 #### 请求头
 
 此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
+
 该请求操作的实现需要有如下请求体。
 
 ```shell
@@ -45,21 +64,35 @@ Content-Type: application/xml
 具体数据描述如下：
 
 | 节点名称（关键字） | 父节点 | 描述           | 类型      | 是否必选 |
-| ------------------ | ------ | -------------- | --------- | ---- |
-| Request            | 无     | 保存请求的容器 | Container | 是   |
+| ------------------ | ------ | -------------- | --------- | -------- |
+| Request            | 无     | 保存请求的容器 | Container | 是       |
 
-
+<span id="Request"></span>
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                                                     | 类型      | 是否必选 | 限制 |
-| ------------------ | ------- | ----------------------------------------------------- | --------- | ---- | ---- |
-| Tag                | Request | 模板类型：Tts                                          | String    | 是   | Tts |
-| Name               | Request | 模板名称，仅支持中文、英文、数字、\_、\-和\*             | String    | 是   | 无 |
-| Mode               | Request | 处理模式，默认值Asyc                                    | String   | 否    | Asyc（异步合成）、Sync（同步合成）</br>当选择 Asyc 时，codec 只支持 pcm |
-| Codec              | Request | 音频格式，默认值 wav（同步）/pcm（异步）                   | String   | 否    | wav、mp3、pcm |
-| VoiceType          | Request | 音色，默认值 ruxue                                       | String   | 否    | ruxue、aixiaonan |
-| Volume             | Request | 音量，默认值0                                           | String   | 否    | [-10,10] |
-| Speed              | Request | 语速，默认值100                                         | String   | 否    | [50,200] |
+| 节点名称（关键字） | 父节点  | 描述                                         | 类型   | 是否必选 | 限制                                                         |
+| ------------------ | ------- | -------------------------------------------- | ------ | -------- | ------------------------------------------------------------ |
+| Tag                | Request | 模板类型：Tts                                | String | 是       | Tts                                                          |
+| Name               | Request | 模板名称，仅支持中文、英文、数字、\_、\-和\* | String | 是       | 无                                                           |
+| Mode               | Request | 处理模式，默认值 Asyc                         | String | 否       | Asyc（异步合成）、Sync（同步合成）</br>当选择 Asyc 时，codec 只支持 pcm |
+| Codec              | Request | 音频格式，默认值 wav（同步）/pcm（异步）     | String | 否       | wav、mp3、pcm                                                |
+| VoiceType          | Request | 音色，默认值 ruxue                           | String | 否       | ruxue、aixiaonan、aixiaoxing                                   |
+| Volume             | Request | 音量，默认值0                                | String | 否       | [-10,10]                                                     |
+| Speed              | Request | 语速，默认值100                              | String | 否       | [50,200]                                                     |
+
+音色说明
+
+| 名称 | Voice 参数值 | 类型 | 适用场景 | 支持语言 |  声音品质 |
+|---------|---------|---------|---------|---------|---------|
+| 茹雪 | ruxue | 标准女声 |  通用场景 | 中文及中英文混合 | 标准版|
+| 爱小楠 | aixiaonan | 甜美女声 | 通用/社交场景 | 中文及中英文混合 | 精品版 |
+| 爱小星 | aixiaoxing | 解说男声 | 通用/解说场景 | 中文及中英文混合 | 精品版 |
+
+多情感音色说明
+
+| 名称 | Voice 参数值 | 情绪分类 |
+|---------|---------|---------|
+| 爱小星 | aixiaoxing | 中性、广播、平静、兴奋 |
 
 ## 响应
 
@@ -77,6 +110,8 @@ Container 类型 Request 的具体数据描述如下：
         <Tag>Tts</Tag>
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Name>TemplateName</Name>
+        <BucketId>test-1234567890</BucketId>
+        <Category>Custom</Category>
         <TtsTpl>
             <Mode>Sync</Mode>
             <Codec>pcm</Codec>
@@ -96,7 +131,7 @@ Container 类型 Request 的具体数据描述如下：
 | :----------------- | :----- | :----------------------------------------------------- | :-------- |
 | Response           | 无     | 保存结果的容器 | Container |
 
-
+<span id="Response"></span>
 Container 节点 Response 的内容：
 
 | 节点名称（关键字） | 父节点                | 描述                                                         | 类型      |
@@ -108,11 +143,21 @@ Container 节点 Response 的内容：
 | Tag                | Response.Template | 模板类型，Tts                                                | String    |
 | UpdateTime         | Response.Template | 更新时间                                                     | String    |
 | CreateTime         | Response.Template | 创建时间                                                     | String    |
-| Tts                | Response.Template | 详细的模板参数                                                | Container |
+| TtsTpl             | Response.Template | 详细的模板参数                                                | Container |
+
+Container节点 TtsTpl 的内容：
+
+| 节点名称（关键字） | 父节点                         | 描述                               | 
+| :----------------- | :----------------------------- | :------------------------------- |
+| Mode               | Response.Template.TtsTpl | 同请求体中的 Request.Mode  |
+| Codec              | Response.Template.TtsTpl | 同请求体中的 Request.Codec |
+| VoiceType          | Response.Template.TtsTpl | 同请求体中的 Request.VoiceType |
+| Volume             | Response.Template.TtsTpl | 同请求体中的 Request.Volume |
+| Speed              | Response.Template.TtsTpl | 同请求体中的 Request.Speed |
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 
 ## 实际案例
@@ -122,7 +167,7 @@ Container 节点 Response 的内容：
 ```shell
 POST /template HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+Host: test-1234567890.ci.ap-beijing.myqcloud.com
 Content-Length: 1666
 Content-Type: application/xml
 
@@ -144,7 +189,7 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 100
 Connection: keep-alive
-Date: Thu, 15 Jun 2017 12:37:29 GMT
+Date: Thu, 14 Jul 2022 12:37:29 GMT
 Server: tencent-ci
 x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
@@ -153,6 +198,8 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <Tag>Tts</Tag>
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <Name>TemplateName</Name>
+        <BucketId>test-1234567890</BucketId>
+        <Category>Custom</Category>
         <TtsTpl>
             <Mode>Sync</Mode>
             <Codec>pcm</Codec>
