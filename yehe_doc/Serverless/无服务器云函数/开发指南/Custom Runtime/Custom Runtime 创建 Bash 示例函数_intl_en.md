@@ -104,7 +104,7 @@ function main_handler () {
 ```
 $ chmod 755 index.sh bootstrap
 ```
-3. To create and release a function, you can use [Serverless Framework](#Serverless). Alternatively, you can run the following commands to generate a zip package, and use [SDK](#SDK) or [SCF Console](#KZT) to create and release the function.
+3. To create and release a function, you can use [Serverless Cloud Framework](#Serverless). Alternatively, you can run the following commands to generate a zip package, and use [SDK](#SDK) or [Serverless Console](#KZT) to create and release the function.
 ```
 $ zip demo.zip index.sh bootstrap
    adding: index.sh (deflated 23%)
@@ -113,11 +113,11 @@ $ zip demo.zip index.sh bootstrap
 
    
 <span id="Serverless"></span>
-### Using Serverless Framework to create and release a function
+### Using Serverless Cloud Framework to create and release a function
 
 ### Creating a function
 
-1. Install [Serverless Framework](https://intl.cloud.tencent.com/document/product/1040/37034).
+1. Install [Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/1040/37034).
 2. Configure the `Serverless.yml` file in the [bootstrap](#bootstrap) directory to create the dotnet function.
 ```
    #Component information
@@ -143,7 +143,7 @@ $ zip demo.zip index.sh bootstrap
 ```
 >? For more information about the configurations of SCF components, please see [Configuration Documentation](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md)。 
 >
-3. Run the `sls deploy` command to create a cloud function. A successful creation returns the following message:
+3. Run the `scf deploy` command to create a cloud function. A successful creation returns the following message:
 ```
    serverless ⚡framework
    Action: "deploy" - Stage: "dev" - App: "ap-guangzhou_default_helloworld" - Instance: "ap-guangzhou_default_helloworld"   
@@ -293,7 +293,7 @@ If a message similar to the following is returned, the invocation is successful.
 
 ### Using Console to create and release a function
 #### Creating a function
-1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf) and click **Function Service** in the left sidebar.
+1. Log in to the [Serverless Console](https://console.cloud.tencent.com/scf) and click **Function Service** in the left sidebar.
 2. Choose a region at the top of the **Function Service** page and click **Create** to start creating a function.
 3. Set basic information of the function on the **Create Function** page and click **Next**.
     - **Function name**: Enter “CustomRuntime-Bash”.
@@ -306,7 +306,7 @@ If a message similar to the following is returned, the invocation is successful.
 5. Click **Complete**.
 
 #### Invoking a function
-1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf) and click **Function Service** in the left sidebar.
+1. Log in to the [Serverless Console](https://console.cloud.tencent.com/scf) and click **Function Service** in the left sidebar.
 2. Choose a region at the top of the **Function Service** page, and click the function to be invoked to go to the function detail page.
 3. Navigate to **Function Management** from the left sidebar and then choose the **Function code** tab.
 4. Choose **Hello World event template** in **Test Event** and click **Test**.
