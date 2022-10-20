@@ -1,13 +1,13 @@
 ## Development Mode
-Serverless Framework CLI supports the development mode (`dev` mode). For projects in development mode, you can write their code and develop and debug them more easily, as you can continuously focus on the process from development to debugging while minimizing the interruptions caused by other tasks such as packaging and update.
+Serverless Cloud Framework supports the development mode (`dev` mode). For projects in development mode, you can write their code and develop and debug them more easily, as you can continuously focus on the process from development to debugging while minimizing the interruptions caused by other tasks such as packaging and update.
 
 ### Entering development mode<span id="joinDev"></span>
-Under a project, you can run `serverless dev` to enter the development mode as shown below:
->Currently, `serverless dev` is supported by only the Node.js 10 & 12.16 runtime environment.
+Under a project, you can run `scf dev` to enter the development mode as shown below:
+>Currently, `scf dev` is supported by only the Node.js 10 & 12.16 runtime environment.
 >
 ```
-$ serverless dev
-serverless ⚡ framework
+$ scf dev
+serverless-cloud-framework
 Dev Mode - Watching your Component for changes and enabling streaming logs, if supported...
 Debugging listening on ws://127.0.0.1:9222.
 For help see https://nodejs.org/en/docs/inspector.
