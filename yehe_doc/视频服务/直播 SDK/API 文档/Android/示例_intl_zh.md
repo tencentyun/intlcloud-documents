@@ -23,4 +23,10 @@
 
 
 >?目前的工程结构跟标准的 Android Studio 工程在名称大小写上可能有略微的差异，主要目的是方便大家在网页上看到此工程时，名称意义更加清晰。
+ 
+## 应用图示
+
+| 示例主页 | 推流示例 | 拉流示例 |
+| :---: | :---: | :---: |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/66ec3761559bb83b49340fb036fd10ff.png" alt="#400px" style="zoom: 200%;" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/b0884f9bd807ba0435cd1b85a32ea8c2.png" alt="#400px" style="zoom:200%;" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/29032f7fdaf287f5679e237df1f13e06.png" alt="#400px" style="zoom:200%;" /> |
 

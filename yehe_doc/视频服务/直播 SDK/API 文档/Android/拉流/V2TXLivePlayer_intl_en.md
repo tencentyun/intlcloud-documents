@@ -1,10 +1,10 @@
 
-### Overview
+__Overview__
 
 Tencent Cloud’s live stream player
 The player pulls audio/video data from the specified live streaming URL and plays the data after decoding and local rendering.
 
-### Features
+__Features__
 
 The player has the following capabilities:
 
@@ -17,7 +17,7 @@ The player has the following capabilities:
 ## Basic SDK APIs
 ### setObserver
 
-This API is used to set the callbacks of the player. After setting, you can listen for callback events of `V2TXLivePlayer`, including player status, playback volume, first audio/video frame, statistics, warning and error messages, etc.
+This API is used to set the callbacks of the player. After setting, you can listen for callback events of `V2TXLivePlayer`, including player status, playback volume, first audio/video frame, statistics, and warning and error messages.
 
 ```
 public abstract void setObserver(V2TXLivePlayerObserver observer);
@@ -25,11 +25,10 @@ public abstract void setObserver(V2TXLivePlayerObserver observer);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| observer | V2TXLivePlayerObserver | Target object for the player’s callbacks. For details, please see [V2TXLivePlayerObserver](https://www.tencentcloud.com/document/product/1071/41277). |
+| observer | V2TXLivePlayerObserver | Target object for the player’s callbacks. For details, see [V2TXLivePlayerObserver](https://www.tencentcloud.com/document/product/1071/41277). |
 
-***
 
 ## Basic Playback APIs
 ### setRenderView
@@ -41,7 +40,7 @@ public abstract int setRenderView(TXCloudVideoView view);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | view | TXCloudVideoView | The player’s rendering view |
 
@@ -50,7 +49,6 @@ public abstract int setRenderView(TXCloudVideoView view);
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
-***
 
 ### setRenderView
 
@@ -61,7 +59,7 @@ public abstract int setRenderView(SurfaceView view);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | view | SurfaceView | The player’s rendering view |
 
@@ -69,8 +67,6 @@ public abstract int setRenderView(SurfaceView view);
 
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
-
-***
 
 ### setRenderView
 
@@ -81,7 +77,7 @@ public abstract int setRenderView(TextureView view);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | view | TextureView | The player’s rendering view |
 
@@ -90,18 +86,19 @@ public abstract int setRenderView(TextureView view);
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
-***
 
-### startPlay
+### startLivePlay
 
 This API is used to start playing audio/video streams.
 ```
-public abstract int startPlay(String url);
+public abstract int startLivePlay(String url);
 ```
+
+>? Since v10.7, `startPlay` has been replaced by `startLivePlay`, and you need to call `V2TXLivePremier#setLicence` or `TXLiveBase#setLicence` to set the license to use the live playback feature (you only need to set the license once). Otherwise, playback will fail (black screen). You can use a live stream publishing license, UGSV license, or video playback license to activate the live playback feature. If you don’t have any of the licenses, you can [buy one](https://www.tencentcloud.com/document/product/1071/38546) or [apply for a trial license for free](https://console.tencentcloud.com/live/license).
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | url |  String | Playback URL of audio/video streams, which supports RTMP, HTTP-FLV, TRTC, and WebRTC |
 
@@ -112,7 +109,6 @@ V2TXLiveCode:
 - `V2TXLIVE_ERROR_INVALID_PARAMETER`: operation failed because the URL is invalid.
 - `V2TXLIVE_ERROR_REFUSED`: RTC does not support using the same stream ID for publishing and playback on the same device.
 
-***
 
 ### stopPlay
 
@@ -126,7 +122,6 @@ public abstract int stopPlay();
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
-***
 
 ### isPlaying
 
@@ -141,7 +136,6 @@ Whether streams are being played
 - `1`: yes
 - `0`: no
 
-***
 
 ## Video APIs
 ### setRenderRotation
@@ -153,9 +147,9 @@ public abstract int setRenderRotation(V2TXLiveRotation rotation);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| rotation | [V2TXLiveRotation](#V2TXLiveRotation) | Degrees by which the image is rotated. Default value: `V2TXLiveRotation0` |
+| rotation | [V2TXLiveRotation](#V2TXLiveRotation) | The degrees by which the image is rotated. Default value: `V2TXLiveRotation0`. |
 
 #### Response
 V2TXLiveCode:
@@ -171,7 +165,6 @@ V2TXLiveCode:
 | V2TXLiveRotation180 | Rotate 180 degrees clockwise |
 | V2TXLiveRotation270 | Rotate 270 degrees clockwise |
 
-***
 
 ### setRenderFillMode
 
@@ -182,9 +175,9 @@ public abstract int setRenderFillMode(V2TXLiveFillMode mode);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| mode | [V2TXLiveFillMode](#V2TXLiveFillMode) | Image fill mode. Default value: `V2TXLiveFillModeFit` |
+| mode | [V2TXLiveFillMode](#V2TXLiveFillMode) | The image fill mode. Default value: `V2TXLiveFillModeFit`. |
 
 #### Response
 
@@ -199,7 +192,6 @@ V2TXLiveCode:
 | V2TXLiveFillModeFit | The image fits the screen without cropping. If the aspect ratio of the image and the screen do not match, there will be black bars. |
 | V2TXLiveFillModeFill | The image fills the entire screen, without black bars. If the aspect ratio of the image and screen do not match, the parts of the image that don’t fit will be cropped. |
 
-***
 
 ### pauseVideo
 
@@ -213,8 +205,6 @@ public abstract int pauseVideo();
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
-***
-
 
 ### resumeVideo
 
@@ -227,8 +217,6 @@ public abstract int resumeVideo();
 
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
-
-***
 
 ### snapshot
 
@@ -246,8 +234,6 @@ V2TXLiveCode:
 - `V2TXLIVE_OK`: successful
 - `V2TXLIVE_ERROR_REFUSED`: failed to take a screenshot because playback has stopped.
 
-***
-
 ### enableObserveVideoFrame
 
 This API is used to set custom video rendering. You can use this API to obtain each frame of decoded video for custom rendering.
@@ -261,9 +247,9 @@ public abstract int enableObserveVideoFrame(
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| enable | Boolean | Whether to enable custom rendering. Default value: `false` |
+| enable | Boolean | Whether to enable custom rendering. Default value: `false`. |
 | pixelFormat | [V2TXLivePixelFormat](#V2TXLivePixelFormat) | Pixel format of the video called back for custom rendering |
 | bufferType | [V2TXLiveBufferType](#V2TXLiveBufferType) | Buffer type of the video called back for custom rendering |
 
@@ -285,14 +271,10 @@ V2TXLiveCode:
 | Value | Description |
 |---------|---------|
 | V2TXLiveBufferTypeUnknown | Unknown |
-| V2TXLiveBufferTypeByteBuffer| `DirectBuffer`, which carries buffers in the format of I420 and others and is used at the native layer. |
-|  V2TXLiveBufferTypeByteArray| `byte[]`, which carries buffers in the format of I420 and others and is used at the Java layer. |
+| V2TXLiveBufferTypeByteBuffer| Direct buffers. This type is for I420 and other buffers and is used at the native layer. |
+|  V2TXLiveBufferTypeByteArray| Byte arrays. This type is for I420 and other buffers and is used at the Java layer. |
 |  V2TXLiveBufferTypeTexture| Texture ID, which allows direct operation. It delivers the best performance and has the smallest impact on video quality. |
 
-
-
-
-***
 
 ## Audio APIs
 ### pauseAudio
@@ -306,7 +288,7 @@ public abstract int pauseAudio();
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
-***
+
 ### resumeAudio
 
  This API is used to resume playing audio streams.
@@ -318,7 +300,6 @@ public abstract int resumeAudio();
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
-***
 
 ### setPlayoutVolume
 
@@ -329,16 +310,15 @@ public abstract int setPlayoutVolume(int volume);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| volume | int | Volume. Value range: 0-100. Default value: `100` |
+| volume | int | Volume. Value range: 0-100. Default value: `100`. |
 
 #### Response
 
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
-***
 
 ### enableVolumeEvaluation
 
@@ -350,7 +330,7 @@ public abstract int enableVolumeEvaluation(int intervalMs);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | intervalMs | int | Interval (ms) for triggering the `onPlayoutVolumeUpdate` callback. The minimum interval allowed is 100 ms. If the value is `0` (default) or smaller, the callback is disabled. `300` is recommended.|
 
@@ -359,20 +339,18 @@ public abstract int enableVolumeEvaluation(int intervalMs);
 V2TXLiveCode:
 `V2TXLIVE_OK`: successful
 
-***
-
 
 ## Other APIs
 ### setCacheParams
 
-This API is used to set the minimum and maximum cache time (s) for auto adjustment by the player.
+This API is used to set the minimum and maximum cache time (seconds) for auto adjustment by the player.
 ```
 public abstract int setCacheParams(float minTime, float maxTime);
 ```
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | minTime | float | The minimum cache time for auto adjustment by the player. The value must be greater than `0`. Default value: `1` |
 | maxTime | float | The maximum cache time for auto adjustment by the player. The value must be greater than `0`. Default value: `5` |
@@ -384,8 +362,6 @@ V2TXLiveCode:
 - `V2TXLIVE_ERROR_INVALID_PARAMETER`: operation failed. `minTime` and `maxTime` must be greater than `0`.
 - `V2TXLIVE_ERROR_REFUSED`: you cannot change the cache policy while streams are being played.
 
-***
-
 ### showDebugView
 
 This API is used to set whether to show the debug view for the player status information.
@@ -395,8 +371,6 @@ public abstract void showDebugView(boolean isShow);
 
 #### Parameters
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| isShow | boolean | Whether to show the debug view. Default value: false |
-
-
+| isShow | boolean | Whether to show the debug view. Default value: `NO`. |

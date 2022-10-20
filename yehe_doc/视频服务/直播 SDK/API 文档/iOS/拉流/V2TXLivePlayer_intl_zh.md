@@ -29,7 +29,6 @@ __介绍__
 |-----|-----|-----|
 | observer | V2TXLivePlayerObserver | 播放器的回调目标对象，详情请参见 [V2TXLivePlayerObserver](https://www.tencentcloud.com/document/product/1071/41272)。 |
 
-***
 
 ## 播放基础接口
 ### setRenderView
@@ -50,14 +49,14 @@ __介绍__
 返回值 V2TXLiveCode：
 - V2TXLIVE_OK：成功。
 
-***
-
-### startPlay
+### startLivePlay
 
 开始播放音视频流。
 ```
-- (V2TXLiveCode)startPlay:(NSString *)url
+- (V2TXLiveCode)startLivePlay:(NSString *)url
 ```
+
+>? 10.7 版本开始，`startPlay` 变更为 `startLivePlay`，需要通过 `V2TXLivePremier#setLicence` 或者 `TXLiveBase#setLicence` 设置 Licence 后方可成功播放，否则将播放失败（黑屏），全局仅设置一次即可。直播 License、短视频 License 和视频播放 License 均可使用，若您暂未获取上述 License ，可 [快速免费申请测试版 License](https://console.tencentcloud.com/live/license)以正常播放，正式版 License 需 [购买](https://www.tencentcloud.com/document/product/1071/38546)。
 
 #### 参数
 
@@ -72,7 +71,6 @@ __介绍__
 - V2TXLIVE_ERROR_INVALID_PARAMETER：操作失败，URL不合法。
 - V2TXLIVE_ERROR_REFUSED：RTC 不支持同一设备上同时推拉同一个 StreamId。
 
-***
 
 ### stopPlay
 
@@ -86,7 +84,6 @@ __介绍__
 返回值 V2TXLiveCode：
 - V2TXLIVE_OK：成功。
 
-***
 
 ### isPlaying
 
@@ -101,7 +98,6 @@ __介绍__
 - 1：正在播放中。
 - 0：已经停止播放。
 
-***
 
 ## 视频相关接口
 ### setRenderRotation
@@ -133,7 +129,6 @@ __介绍__
 | V2TXLiveRotation180 | 顺时针旋转180度。 |
 | V2TXLiveRotation270 | 顺时针旋转270度。 |
 
-***
 
 ### setRenderFillMode
 
@@ -162,7 +157,6 @@ __介绍__
 | V2TXLiveFillModeFit  | 图像适应屏幕，保持画面完整，但如果图像宽高比不同于屏幕宽高比，会有黑边的存在。 |
 | V2TXLiveFillModeFill | 图像铺满屏幕，不留黑边，如果图像宽高比不同于屏幕宽高比，部分画面内容会被裁剪掉。 |
 
-***
 
 ### pauseVideo
 
@@ -176,7 +170,6 @@ __介绍__
 返回值 V2TXLiveCode：
 - V2TXLIVE_OK：成功。
 
-***
 
 
 ### resumeVideo
@@ -191,7 +184,6 @@ __介绍__
 返回值 V2TXLiveCode：
 - V2TXLIVE_OK：成功。
 
-***
 
 ### snapshot
 
@@ -209,14 +201,13 @@ __介绍__
 - V2TXLIVE_OK：成功。
 - V2TXLIVE_ERROR_REFUSED：播放器处于停止状态，不允许调用截图操作。
 
-***
 
 ### enableCustomRendering
 
 设置视频自定义渲染回调。
 通过该方法，可以获取解码后的每一帧视频画面，进行自定义渲染处理，添加自定义显示效果。
 
-> ? 开启成功后可在 `[V2TXLivePlayerObserver onRenderVideoFrame:frame:]` 回调中获取视频帧数据。
+>? 开启成功后可在 `[V2TXLivePlayerObserver onRenderVideoFrame:frame:]` 回调中获取视频帧数据。
 ```
 - (V2TXLiveCode)enableCustomRendering:(BOOL)enable
                            pixelFormat:(V2TXLivePixelFormat)pixelFormat
@@ -261,8 +252,6 @@ __介绍__
 | V2TXLiveBufferTypeTexture     | 直接操作纹理 ID，性能最好。                                  |
 
 
-***
-
 ## 音频相关接口
 ### pauseAudio
 
@@ -275,7 +264,6 @@ __介绍__
 返回值 V2TXLiveCode：
 - V2TXLIVE_OK：成功。
 
-***
 ### resumeAudio
 
  恢复播放器的音频流。
@@ -287,7 +275,6 @@ __介绍__
 返回值 V2TXLiveCode：
 - V2TXLIVE_OK：成功。
 
-***
 
 ### setPlayoutVolume
 
@@ -307,8 +294,6 @@ __介绍__
 返回值 V2TXLiveCode：
 - V2TXLIVE_OK：成功。
 
-***
-
 ### enableVolumeEvaluation
 
 启用播放音量大小提示。
@@ -327,9 +312,6 @@ __介绍__
 
 返回值 V2TXLiveCode：
 - V2TXLIVE_OK：成功。
-
-***
-
 
 ## 更多实用接口
 ### setCacheParams
@@ -352,8 +334,6 @@ __介绍__
 - V2TXLIVE_OK：成功。
 - V2TXLIVE_ERROR_INVALID_PARAMETER：操作失败，minTime 和 maxTime 需要大于0。
 - V2TXLIVE_ERROR_REFUSED：播放器处于播放状态，不支持修改缓存策略。
-
-***
 
 ### showDebugView
 
