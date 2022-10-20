@@ -61,7 +61,7 @@ cd /data/my-first-scf && zip my_first_scf.zip * -r
 
 
 
-## 通过 Serverless Framework CLI 命令行部署
->?在使用 Serverless Framework CLI 工具之前，请通过 [安装 Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36263) 完成安装。
+## 通过 Serverless Cloud Framework 命令行部署
+>?在使用 Serverless Cloud Framework 工具之前，请通过 [安装 Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/583/36263) 完成安装。
 >
-您可通过 Serverless Framework CLI，执行 `sls deploy` 命令部署函数。
+您可通过 Serverless Cloud Framework，执行 `scf deploy` 命令部署函数。
