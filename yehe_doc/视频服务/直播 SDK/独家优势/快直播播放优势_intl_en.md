@@ -98,9 +98,3 @@ The host uses RTMP for stream push over a lossless network, viewers play back FL
 | Video lag rate | If video rendering lags for over 500 milliseconds, it will be considered a lag. The lag rate is the total lag divided by the total playback duration. |
 | Audio lag rate | If audio playback lags for over 200 milliseconds, it will be considered a lag. The lag rate is the total lag divided by the total playback duration. |
 | Video frame rate   | The number of video frames played back per second.                                           |
-
-## Video of Adaptive Bitrate Streaming Effect Comparison
-<video width="600" controls>
-<source src="https://liteav.sdk.qcloud.com/doc/res/mlvb/picture//zh-cn/video.mp4" type="video/mp4">
-Sorry, your browser does not support preview.
-</video>
