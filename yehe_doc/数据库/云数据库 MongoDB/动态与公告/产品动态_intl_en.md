@@ -1,4 +1,14 @@
 
+## September 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Added v4.4.</td>
+<td>TencentDB for MongoDB supports the WiredTiger v4.4 storage engine.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/31706">Storage Engine and Version</a></td></tr>
+</tbody></table>
+
 ## July 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
