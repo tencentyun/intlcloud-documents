@@ -1,20 +1,20 @@
 
 ## Overview
->?In order to save the storage capacity, physical and logical backups in TencentDB for MySQL are to be compressed with qpress and then packed with xbstream offered by Percona.
+>?To save the storage space, physical and logical backups in TencentDB for MySQL will be compressed with qpress and then packed with xbstream offered by Percona.
 >
-The open-source Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a physical backup file of TencentDB for MySQL instance to a self-built database on CVM.
-- XtraBackup only supports the Linux operating system.
-- For more information about how to restore data in Windows, see [Offline Migration of Data > Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464).
+The open-source Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a physical backup file of TencentDB for MySQL instance to a CVM-based self-built database.
+- XtraBackup only supports Linux but not Windows.
+- For more information about how to restore data in Windows, see [Offline Data Migration > Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464).
 
 ## Prerequisites
 - Download and install XtraBackup.
- - For MySQL 5.6 and 5.7, download Percona XtraBackup 2.4.6 or above at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). For more information on installation, see [Percona XtraBackup 2.4 documentation](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
- - For MySQL 8.0, download Percona XtraBackup 8.0.22-15 or above at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). For more information on installation, see [Percona XtraBackup 8.0 documentation](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html).
+ - For MySQL 5.6 and 5.7, download Percona XtraBackup 2.4.6 or later at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). For more information on installation, see [Installing Percona XtraBackup on Red Hat Enterprise Linux and CentOS](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
+ - For MySQL 8.0, download Percona XtraBackup 8.0.22-15 or later at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). For more information on installation, see [Installing Percona XtraBackup on Red Hat Enterprise Linux and CentOS](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html).
 - Supported instance architectures: two-node or three-node MySQL
 - Instances with data encryption enabled cannot be restored from a physical backup.
 
 ## Directions
->?This document takes a CVM instance running CentOS and a MySQL v5.7 instance as an example.
+>?This document takes a CVM instance on CentOS and a MySQL 5.7 instance as an example.
 >
 ### Step 1. Download the backup file
 You can download data backups and log backups of TencentDB for MySQL instances in the console.
@@ -22,12 +22,12 @@ You can download data backups and log backups of TencentDB for MySQL instances i
 >
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the **Backup and Restoration** > **Data Backup List** tab, locate the backup file to be downloaded and click **Download** in the **Operation** column.
-3. Copy the download address in the pop-up dialog box, [log in to the Linux CVM in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/document/product/213/10517), and run `wget` to download the file over the high-speed private network.
+3. Copy the download address in the pop-up dialog box, log in to the Linux CVM in the same VPC as the TencentDB instance as instructed in [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517), and run `wget` to download the file over the high-speed private network.
 >?
 >- You can also click **Download** to download it directly. However, this may take longer.
 >- `wget` command format: wget -c 'backup file download address' -O custom filename.xb 
 >
-The example is as follows:
+Below is a sample:
 ```
 wget -c 'https://mysql-database-backup-sh-1218.cos.ap-nanjing.myqcloud.com/12427%2Fmysql%2F0674-ffba-11e9-b592-70bd%2Fdata%2Fautomatic-delete%2F2019-12-03%2Fautomatic%2Fxtrabackup%2Fbk_61_156758150%2Fcdb-293fl9ya_backup_20191203000202.xb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKzxfbLJ1%26q-sign-time%3D1575374119%3B1575417319%26q-key-time%3D1575374119%3B1575417319%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Dba959757&response-content-disposition=attachment%3Bfilename%3D%22yuan177685_backup_20191203000202.xb%22&response-content-type=application%2Foctet-stream' -O /data/test.xb
 ```
@@ -43,20 +43,21 @@ xbstream -x --parallel=2  -C /data/mysql < /data/test.xb
 >- Replace `/data/test.xb` with your backup file.
 >
 The unpacking result is as shown below:
-![extract.png](https://main.qcloudimg.com/raw/ed2ffc8b81df11040559ceda59427a3e.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
 
 #### 2.2 Decompress the backup file
-1. Download qpress by running the following command:
+1. Download qpress by running the following command.
 ```
-wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0 http://www.quicklz.com/qpress-11-linux-x64.tar
+wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar
 ```
-
+>?If an error is displayed during the `wget` download, you can click [here](https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar) to download qpress locally and upload it to the Linux CVM instance. For more information, see [Uploading Files from Linux or MacOS to Linux CVM via SCP](https://intl.cloud.tencent.com/document/product/213/2133).
+>
 2. Extract the qpress binary files by running the following command.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
 source /etc/profile
 ```
-3. Decompress all `.qp` files in the destination directory by running the following qpress command:
+3. Then, decompress all `.qp` files in the target directory by running the following command:
 ```
 xtrabackup --decompress --target-dir=/data/mysql
 ```
@@ -68,7 +69,7 @@ xtrabackup --decompress --target-dir=/data/mysql
 ![decompress.png](https://main.qcloudimg.com/raw/886e5463ffff0656ffe06d73ffbeb211.png)
 
 #### 2.3 Prepare the backup file
-After a backup file is decompressed, you need to execute the "apply log" operation by running the following command.
+After a backup file is decompressed, perform the "apply log" operation by running the following command.
 ```
 xtrabackup --prepare  --target-dir=/data/mysql
 ```
@@ -82,7 +83,7 @@ vi /data/mysql/backup-my.cnf
 ```
 >?The target directory `/data/mysql` is used as an example in this document. You can replace it with the directory you actually use.
 >
-2. Given the existing version issues, the following parameters need to be commented out from the extracted file `backup-my.cnf`.
+2. Given the existing version issues, the following parameters need to be commented out from the extracted `backup-my.cnf` file.
  - innodb_checksum_algorithm
  - innodb_log_checksum_algorithm
  - innodb_fast_checksum
@@ -90,25 +91,25 @@ vi /data/mysql/backup-my.cnf
  - innodb_log_block_size
  - redo_log_version 
 
- ![](https://qcloudimg.tencent-cloud.cn/raw/6d56154cb19d16b56520199290a0c574.png)
+ ![](https://mc.qcloudimg.com/static/img/10113311b33e398ce0df96ca419f7f45/3.png)
 
 #### 2.5 Modify file attributes
 Modify file attributes and check whether files are owned by the `mysql` user.
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://qcloudimg.tencent-cloud.cn/raw/12fbe7f70fefa19fd7af5ac2f95bfdb8.png)
+![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
 
 ### Step 3. Start the mysqld process and log in for verification
 1. Start the mysqld process.
 ```
 mysqld_safe --defaults-file=/data/mysql/backup-my.cnf --user=mysql --datadir=/data/mysql &
 ```
-2. Log in to the client for verification.
+2. Log in to the MySQL client for verification.
 ```
 mysql  -uroot
 ```
 ![](https://main.qcloudimg.com/raw/c95419569318a928c0f71978fbb8c6ad.png)
 
-## Backup FAQs
-See [Common Issues](https://intl.cloud.tencent.com/document/product/236/9036) and [Failure Reasons](https://intl.cloud.tencent.com/document/product/236/34394).
+## FAQs
+See [General](https://intl.cloud.tencent.com/document/product/236/9036) and [Troubleshooting](https://intl.cloud.tencent.com/document/product/236/34394).

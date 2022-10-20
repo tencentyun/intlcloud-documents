@@ -1,9 +1,12 @@
-ユーザーは、TencentDB for MySQLにより、クラウドで簡単にMySQLデータベースをデプロイし、使用することができます。MySQLは世界で最も人気があるオープンソースのリレーショナルデータベースであり、ユーザーはTencentDB for MySQLを使用して拡張可能なMySQLデータベースインスタンスを数分でデプロイできます。経済性に加えて、ダウンタイムなしでハードウェアの容量を柔軟に調整することもできます。TencentDB for MySQLはバックアップ、ロールバック、モニタリング、迅速な拡張、データ伝送などのデータベースメンテナンスに関する完全なソリューションを提供し、ITのメンテナンス作業を簡素化することで、ユーザーがビジネス発展に集中できるようにサポートします。
+TencentDB for MySQLにより、ユーザはクラウドで簡単にMySQLデータベースをデプロイし使用することができます。TencentDB for MySQLを使用することで、拡張可能なMySQLデータベースインスタンスを数分でデプロイできます。経済性に加え、ダウンタイムなしでハードウェアの容量を柔軟に調整することもできます。バックアップ、ロールバック、監視、クイック拡張、データ転送などを含め、TencentDB for MySQLはデータベースメンテナンスに関する包括的なソリューションを提供し、ITのメンテナンス作業を簡素化することで、業務の発展に専念することができます。
 
-TencentDB for MySQLは多様化されたSecurity Reinforce機能を提供し、ユーザーデータの信頼性と安全性を保証します。MySQLデータベースのセキュリティ能力をさらに高めるため、業務のニーズに応じて、以下のセキュリティ機能を使用することをお勧めします。
-- ネットワーク：[セキュリティグループ](https://intl.cloud.tencent.com/document/product/236/14470)、[プライベートネットワーク](https://intl.cloud.tencent.com/document/product/215/535)。
-- 保存：[データ暗号化](https://intl.cloud.tencent.com/document/product/236/38491)、[自動バックアップ](https://intl.cloud.tencent.com/document/product/236/37796)。
-- 災害復旧：[ローカル災害復旧](https://intl.cloud.tencent.com/document/product/236/8459)、[リモート災害復旧](https://intl.cloud.tencent.com/document/product/236/7272)。
-- 権限：[アクセス制御](https://intl.cloud.tencent.com/document/product/236/35296)。
-- セキュリティ：[データベースチェック](https://intl.cloud.tencent.com/document/product/236/39882)。
+TencentDB for MySQLは充実したセキュリティ強化機能を提供し、データの信頼性と安全性を保証します。MySQLデータベースのセキュリティをさらに強化するために、業務ニーズに応じて、以下のセキュリティ機能の利用をお勧めします：
+
+| セキュリティ機能名 | 機能詳細 | 
+|---------|---------|
+| データストレージセキュリティ | <li><a href="https://intl.cloud.tencent.com/document/product/236/35295" target="_blank">自動バックアップ</a></li><li><a href="https://intl.cloud.tencent.com/document/product/236/35295" target="_blank">バックアップ保持期間</a></li><li><a href="https://intl.cloud.tencent.com/document/product/236/35295" target="_blank">透過的データ暗号化</a></li><li><a href="https://intl.cloud.tencent.com/document/product/236/35295" target="_blank">データセキュリティ</a></li> | 
+| セキュリティ監査 | <li><a href="https://intl.cloud.tencent.com/document/product/236/35296" target="_blank">コンプライアンス監査</a></li><li><a href="https://intl.cloud.tencent.com/document/product/236/35296" target="_blank">セキュリティ管理</a></li> | 
+| アクセス制御 | <li><a href="https://intl.cloud.tencent.com/document/product/236/35297" target="_blank">データベースアカウント管理</a></li><li><a href="https://intl.cloud.tencent.com/document/product/236/35297" target="_blank">アクセス管理</a></li><li><a href="https://intl.cloud.tencent.com/document/product/236/35297" target="_blank">パスワードの複雑性</a></li> | 
+| データ通信セキュリティ | <li><a href="https://intl.cloud.tencent.com/document/product/236/35298" target="_blank">プライベートネットワーク</a></li><li><a href="https://intl.cloud.tencent.com/document/product/236/35298" target="_blank">セキュリティグループ</a></li><li><a href="" target="_blank">SSL暗号化</a></li> | 
+| データ災害復旧 | <li><a href="https://intl.cloud.tencent.com/document/product/236/35299" target="_blank">ローカル災害復旧</a></li><li><a href="https://intl.cloud.tencent.com/document/product/236/35299" target="_blank">遠隔災害復旧</a></li> | 
 

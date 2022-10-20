@@ -1,14 +1,22 @@
-TencentDB for MySQL implements access control through database account management, access management, security group, and other means to ensure MySQL data security.
+TencentDB for MySQL provides access control capabilities. By defining and verifying user permissions, regulating user access to database resources, and managing database resource permissions, you can ensure that only authorized users can access database objects within the scope of their permissions or at their security levels.
 
-### Database Account Management
-You can [create database accounts](https://intl.cloud.tencent.com/document/product/236/31900) in the TencentDB for MySQL Console or through APIs. You can also grant management permissions at different levels to such accounts. You are recommended to authorize accounts based on the principle of least privilege so as to ensure the data security.
+## [Database account management](id:SJKZHGL)
+You can create database accounts through the TencentDB for MySQL console or API. You can also grant management permissions at different levels to such accounts. We recommend you authorize accounts based on the principle of least privilege to ensure the data security.
 
-### Cloud Access Management
-[Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/10583) helps you securely manage and control access permissions to your Tencent Cloud resources. With CAM, you can create, manage, and terminate users (groups), and control the Tencent Cloud resources that can be used by the specified user through identity and policy management, which implements permission separation.
+For more information, see [Creating Account](https://intl.cloud.tencent.com/document/product/236/31900).
 
-### Security Group
-[Security group](https://intl.cloud.tencent.com/document/product/236/14470) mainly helps you implement network access control for your TencentDB for MySQL instances. A security group is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances.
+## [Access management](id:FWGL)
+Cloud Access Management (CAM) helps you securely manage and control access permissions to your Tencent Cloud resources. With CAM, you can create, manage, and terminate users (groups), and control the Tencent Cloud resources that can be used by the specified user through identity and policy management, which implements permission separation.
 
-Instances with the same network security isolation requirements in the same region can be put into the same logical security group. Instances in a security group are matched based on rules. Modifying security group rules does not require restarting the TencentDB for MySQL instances, and the changes will take effect immediately.
+For more information, see [CAM Overview](https://intl.cloud.tencent.com/document/product/598/10583).
 
+## [Password complexity](id:MMFZD)
+Passwords are the most important means for protecting database security. As more data security regulations are introduced, there are higher requirements for the database password strength. TencentDB for MySQL supports the custom password complexity feature to protect your database security and meet your needs for compliance with applicable regulations.
 
+You can configure the custom password complexity feature in the console to set the password strength for all console and database operations involving a password. This helps protect your passwords and prevent security risks such as password leakage. The feature offers the following configuration items:
+- Min Number of Uppercase or Lowercase Letters
+- Min Number of Digitals
+- Min Number of Symbols
+- Min Number of Password Characters
+
+For more information, see [Setting Password Complexity](https://intl.cloud.tencent.com/document/product/236/49197).

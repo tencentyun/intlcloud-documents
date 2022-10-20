@@ -43,19 +43,21 @@ xbstream -x --parallel=2  -C /data/mysql < /data/test.xb
 >- `/data/test.xb` 替换为您的备份文件。
 >
 解包结果如下图所示：
-![extract.png](https://main.qcloudimg.com/raw/ed2ffc8b81df11040559ceda59427a3e.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
 
 #### 2.2 解压备份文件
 1. 通过如下命令下载 qpress 工具。
 ```
-wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0 http://www.quicklz.com/qpress-11-linux-x64.tar
+wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar
 ```
+>?若 wget 下载提示错误，您可单击 [下载 qpress 工具](https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar) 下载到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133)。
+>
 2. 通过如下命令解压出 qpress 二进制文件。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
 source /etc/profile
 ```
-3. 使用如下命令将目标目录下所有以 `.qp` 结尾的文件都解压出来。
+3. 使用如下命令将目标目录下所有以`.qp`结尾的文件都解压出来。
 ```
 xtrabackup --decompress --target-dir=/data/mysql
 ```
@@ -89,14 +91,14 @@ vi /data/mysql/backup-my.cnf
  - innodb_log_block_size
  - redo_log_version 
 
- ![](https://qcloudimg.tencent-cloud.cn/raw/6d56154cb19d16b56520199290a0c574.png)
+ ![](https://mc.qcloudimg.com/static/img/10113311b33e398ce0df96ca419f7f45/3.png)
 
 #### 2.5 修改文件属性
 修改文件属性，并检查文件所属为 mysql 用户。
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://qcloudimg.tencent-cloud.cn/raw/12fbe7f70fefa19fd7af5ac2f95bfdb8.png)
+![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
 
 ### 步骤3：启动 mysqld 进程并登录验证
 1. 启动 mysqld 进程。

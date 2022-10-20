@@ -10,8 +10,8 @@
 ## 操作步骤
 ### 步骤1：下载备份文件
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
-2. 在实例管理页面，选择**备份恢复**>**数据备份列表**页， 选择需要下载的备份，在**操作**列单击**下载**。
-3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网高速下载，更高效。
+2. 在实例管理页面，选择**备份恢复** > **数据备份列表**页， 选择需要下载的备份，在**操作**列单击**下载**。
+3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/document/product/213/10517)中，运用 wget 命令进行内网高速下载，更高效。
 >?
 >- 您也可以选择**本地下载**直接下载，但耗时较多。
 >- wget 命令格式：wget -c '备份文件下载地址' -O 自定义文件名.xb
@@ -24,6 +24,7 @@ wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%
 ### 步骤2：解包备份文件
 使用 xbstream 解包备份文件。
 >? xbstream 工具下载地址请参见 [Percona XtraBackup 官网](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)，请选择 Percona XtraBackup 2.4.6 及以上的版本，安装介绍请参见 [Percona XtraBackup 2.4](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html)。
+>
 ```
 xbstream -x < test0.xb
 ```
@@ -35,10 +36,10 @@ xbstream -x < test0.xb
 ### 步骤3：解压备份文件
 1. 通过如下命令下载 qpress 工具。
 ```
-wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" 
-http://www.quicklz.com/qpress-11-linux-x64.tar
+wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar
 ```
-
+>?若 wget 下载提示错误，您可单击 [下载 qpress 工具](https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar) 下载到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133)。
+>
 2. 通过如下命令解出 qpress 二进制文件。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
@@ -61,3 +62,4 @@ mysql -uroot -P3306 -h127.0.0.1 -p < cdb-jp0zua5k_backup_20191202182218.sql
 >?
 >- 本文以导入本地3306端口的 MySQL 为例，您可根据实际情况替换。
 >- `cdb-jp0zua5k_backup_20191202182218.sql`替换为通过 qpress 实际解压出的 sql 文件。
+
