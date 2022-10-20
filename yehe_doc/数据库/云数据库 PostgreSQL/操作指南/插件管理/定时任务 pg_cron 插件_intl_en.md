@@ -224,8 +224,8 @@ Parameter used to control the behaviors of the pg_cron extension are as listed b
 |---------|---------|
 | cron.database_name | pg_cron metadatabase. | 
 | cron.host | Name of the host to connect to PostgreSQL, which cannot be modified. | 
-| cron.log_run | Specifies whether to record all executed jobs into the `job_run_details` table. Valid values: on, off. | 
-| cron.log_statement | Specifies whether to record all cron statements into logs before running them. Valid values: on, off. | 
+| cron.log_run | Specifies whether to record all executed jobs into the `job_run_details` table. Valid values: `on`, `of`. | 
+| cron.log_statement | Specifies whether to record all cron statements into logs before running them. Valid values: `on`, `off`. | 
 | cron.max_running_jobs | Maximum number of concurrent jobs. To run more jobs, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 
 | cron.use_background_workers	| Specifies to use backend workers instead of client sessions. You cannot modify the value. | 
 
