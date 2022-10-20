@@ -2,7 +2,7 @@ Tencent Cloud SCF allows you to create and update a function as needed in multip
 
 ## Creating a Function
 ### Creating function in the console
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
+1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
 2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
 3. Select **Custom** or **Template** to create a function.
  - If you select **Custom**, you need to enter the required function name and runtime environment to create the function.
@@ -11,14 +11,14 @@ Tencent Cloud SCF allows you to create and update a function as needed in multip
 
 ### Creating function in other ways
 You can create a function as needed in more ways as detailed below:
-- Use Serverless Framework CLI to create a function. For more information, see [Creating Function on CLI](https://intl.cloud.tencent.com/document/product/583/32743) and relevant function invocation and deployment documents.
+- Use Serverless Cloud Framework to create a function. For more information, see [Creating Function on CLI](https://intl.cloud.tencent.com/document/product/583/32743) and relevant function invocation and deployment documents.
 
 
 
 ## Function Configuration Update
 
 ### Updating function configuration in the console
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
+1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
 2. Select the region of the function to be updated at the top of the page and click the target function in the list to enter the function details page.
 3. Switch to the function configuration page and click **Edit** in the top-right corner to enter the editing mode.
 4. Modify the description, memory, timeout, environment variable, and network configuration of the function as needed.
@@ -26,7 +26,7 @@ You can create a function as needed in more ways as detailed below:
 To cancel the modification, click **Cancel**.
 
 
-### Updating function configuration on Serverless Framework CLI
+### Updating function configuration on Serverless Cloud Framework
 1. To modify the function configuration, directly modify the `serverless.yml` configuration file under the function root directory as shown below:
 
 ```yml
@@ -49,20 +49,20 @@ inputs:
             - http
             - https
           serviceName:
-          description: The service of Serverless Framework
+          description: The service of Serverless Cloud Framework
           environment: release
           endpoints:
             - path: /index
               method: GET
 ```
-2. After completing the modification, run `sls deploy` on Serverless Framework CLI to deploy the function.
+2. After completing the modification, run `scf deploy` on Serverless Cloud Framework to deploy the function.
 
 
 ## Function Code Update
 
 ### Updating function code in the console
 
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
+1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
 2. Select the region of the function to be updated at the top of the page and click the target function in the list to enter the function details page.
 3. Switch to the function code page and edit the function code in the following way:
  - For scripting languages: You can directly use the function code editor.
@@ -70,9 +70,9 @@ inputs:
 4. After completing the modification, click **Save**.
 To cancel the modification, click **Cancel**.
 
-### Updating function code on Serverless Framework CLI
-After the function code is modified locally, run `sls deploy` on Serverless Framework CLI to deploy the function and update the code.
->?The development mode of Serverless Framework supports updating functions synchronously. For more information, see [Development Debugging](https://intl.cloud.tencent.com/document/product/583/36268).
+### Updating function code on Serverless Cloud Framework
+After the function code is modified locally, run `scf deploy` on Serverless Cloud Framework to deploy the function and update the code.
+>?The development mode of Serverless Cloud Framework supports updating functions synchronously. For more information, see [Development Debugging](https://intl.cloud.tencent.com/document/product/583/36268).
 
 
 
