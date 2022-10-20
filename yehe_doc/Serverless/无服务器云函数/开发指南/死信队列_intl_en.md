@@ -65,7 +65,7 @@ When the DLQ delivers a message to CMQ, it encapsulates the attribute informatio
 >
 1. Log in to the [CMQ console](https://console.cloud.tencent.com/cmq/index?rid=1) and create a DLQ.
 CMQ topics support filtering by tag or route match. To ensure that your subscribers can receive all error messages, when adding a subscriber, please leave the tag filter **empty** and enter **"#"** for the `BindingKey` filter.
-2. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) and create a function.
+2. Log in to the [Serverless console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) and create a function.
 3. Configure the DLQ.
  You can configure the DLQ on the **Create Function** or **Configure Function** page.
 
@@ -73,7 +73,7 @@ CMQ topics support filtering by tag or route match. To ensure that your subscrib
 ### Monitoring DLQ
 
 When using a DLQ, permission errors, incorrect resource configurations, or message sizes exceeding the size limit of the target queue or topic will cause DLQ delivery failures. You can query the "number of failed deliveries to DLQ" in the function monitoring information.
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
+1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
 2. Select the region of the function for which to monitor the DLQ at the top of the page and click the target function in the list to enter the function details page.
 3. On the function details page, click **Monitoring information** to view the number of failed deliveries to the DLQ.
 
