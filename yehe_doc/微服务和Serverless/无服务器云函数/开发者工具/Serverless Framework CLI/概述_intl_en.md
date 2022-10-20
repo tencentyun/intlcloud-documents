@@ -1,15 +1,15 @@
 ## Overview
-Well-received in the industry, Serverless Framework allows you to deploy a complete and available serverless application framework without having to care about underlying resources. It features resource orchestrating, auto scaling, and event driving and covers the full development lifecycle from coding and debugging to testing and deploying, helping you quickly build serverless applications with the aid of Tencent Cloud resources.
+Well-received in the industry, Serverless Cloud Framework allows you to deploy a complete and available serverless application framework without having to care about underlying resources. It features resource orchestrating, auto scaling, and event driving and covers the full development lifecycle from coding and debugging to testing and deploying, helping you quickly build serverless applications with the aid of Tencent Cloud resources.
 
 ## SCF Component
-Serverless Framework provides an SCF component, which can be used to quickly package and deploy SCF projects. You can familiarize yourself with and use the component by following the steps below:
-1. Get started with Serverless Framework CLI as instructed in [Creating and Deploying Functions](https://intl.cloud.tencent.com/document/product/583/36707).
-2. Learn how to use Serverless Framework to develop and debug SCF functions as instructed in [Development Mode and In-cloud Debugging](https://intl.cloud.tencent.com/document/product/583/36268).
+Serverless Cloud Framework provides an SCF component, which can be used to quickly package and deploy SCF projects. You can familiarize yourself with and use the component by following the steps below:
+1. Get started with Serverless Cloud Framework as instructed in [Creating and Deploying Functions](https://intl.cloud.tencent.com/document/product/583/36707).
+2. Learn how to use Serverless Cloud Framework to develop and debug SCF functions as instructed in [Development Mode and In-cloud Debugging](https://intl.cloud.tencent.com/document/product/583/36268).
 3. Learn how to perform project management and resource orchestration for multiple SCF functions as instructed in [Project Application](https://intl.cloud.tencent.com/document/product/583/38850).
 
 
 ## Best Practices
-Serverless Framework provides the SCF component to implement resource creation and orchestration for SCF. In addition, it provides more encapsulated components and best practices for some typical use cases, such as Express framework support and website deployment. For more information, please see the [Serverless Components project](https://github.com/serverless/components/blob/master/README.cn.md) on GitHub.
+Serverless Cloud Framework provides the SCF component to implement resource creation and orchestration for SCF. In addition, it provides more encapsulated components and best practices for some typical use cases, such as Express framework support and website deployment. For more information, please see the [Serverless Components project](https://github.com/serverless/components/blob/master/README.cn.md) on GitHub.
 <table>
 <tr>
 <th>Item</th><th>Description</th>
