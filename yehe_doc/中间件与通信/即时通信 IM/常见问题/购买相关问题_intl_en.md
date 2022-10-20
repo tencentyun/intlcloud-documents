@@ -30,3 +30,8 @@ The fees are as follows: 149.99 USD/month per 100,000 groups (counts less than 1
 
 The audio/video call feature **is currently in beta, with a 60-day free edition provided**. The official paid edition is expected to be released in December 2022. Please stay tuned.
 The free edition of the audio/video call feature **only grants you the right to use the free edition free of charge. For specific feature details, see [Audio/video call feature details](). Your calls launched via this feature will be charged as stated in [Billing of TRTC Basic Services](https://www.tencentcloud.com/zh/document/product/647/42734), and relevant IM services will be charged as stated in [Billing Overview](https://www.tencentcloud.com/zh/document/product/1047/34349) of IM**.
+
+### Is the audio/video call feature free? Is there any other charge in the course of use?
+
+The audio/video call feature **is currently in beta, with a 60-day free edition provided**. The official paid edition is expected to be released in December 2022. Please stay tuned.
+The free edition of the audio/video call feature **only grants you the right to use the free edition free of charge. For specific feature details, see [Audio/video call feature details](). Your calls launched via this feature will be charged as stated in [Billing of TRTC Basic Services](https://www.tencentcloud.com/zh/document/product/647/42734), and relevant IM services will be charged as stated in [Billing Overview](https://www.tencentcloud.com/zh/document/product/1047/34349) of IM**.
