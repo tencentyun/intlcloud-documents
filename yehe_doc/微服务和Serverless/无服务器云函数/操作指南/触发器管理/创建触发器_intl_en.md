@@ -1,6 +1,6 @@
 After creating a function, you can create a trigger to associate the function with an event source. The associated event source will trigger the function synchronously or asynchronously as specified when an event is generated, and the event will be passed to the entry function as an input parameter upon triggering.
 
-A function trigger can be created in the console or through Serverless Framework CLI.
+A function trigger can be created in the console or through Serverless Cloud Framework.
 
 >! Only API Gateway triggers can be created for HTTP-triggered functions. For more information, please see [Creating HTTP-Triggered Function](https://intl.cloud.tencent.com/zh/document/product/583/40689).
 
@@ -25,10 +25,10 @@ For example, for a timer trigger, you need to enter the trigger name, cycle, and
 
 
 
-## Creating Trigger Through Serverless Framework CLI
->?Before starting, please install the Serverless Framework CLI tool first as instructed in [Installing Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36263).
+## Creating Trigger Through Serverless Cloud Framework
+>?Before starting, please install the Serverless Cloud Framework tool first as instructed in [Installing Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/583/36263).
 >
-For local functions, please add the trigger description in the `serverless.yml` file. Then, run the `sls deploy` command on Serverless Framework CLI to add a trigger to the function.
+For local functions, please add the trigger description in the `serverless.yml` file. Then, run the `scf deploy` command on Serverless Cloud Framework to add a trigger to the function.
 
 
 ## Version and Trigger
