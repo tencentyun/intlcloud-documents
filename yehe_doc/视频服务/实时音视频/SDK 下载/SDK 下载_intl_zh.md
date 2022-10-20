@@ -26,6 +26,7 @@
       height: 264px;
       box-sizing: border-box;
       white-space: nowrap;
+      border: 0;
    }
 
    .card-box .left-section {
@@ -77,6 +78,7 @@
       display: inline-block;
       vertical-align: middle;
       margin-left: 9px;
+      color: #3D3D3D;
    }
 
    .card-box .doc-section {
@@ -88,7 +90,7 @@
    }
 
    .card-box .doc-section .doc-link {
-      width: 120px;
+      width: 150px;
       float: left;
       background: #FFFFFF;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
@@ -114,22 +116,22 @@
    }
 
    .card-container {
-      width: 380px;
+      width: 50%;
       display: block;
       float: left;
-      padding-left: 15px;
+      /* padding-left: 15px; */
       padding-right: 15px;
       box-sizing: border-box;
    }
 
    .card {
-      border-radius: 10px;
+      border-radius: 4px;
       padding: 17px 16px;
       margin-top: 30px;
       border: 1px solid #ebeef5;
       background-color: #fff;
       overflow: hidden;
-      box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+      box-shadow: 0px 1px 8px rgb(156 175 204 / 25%);
       text-align: center;
       height: 93px;
    }
@@ -176,6 +178,18 @@
 
    .card-box img {
       box-shadow: none;
+   }
+
+   .rno-tabs-operation-wrap {
+      border: none;
+   }
+
+   .rno-tabs-operation-item {
+      padding-bottom: 20px;
+   }
+
+   .markdown-text-box h4 {
+      margin: 0 0 20px 20px
    }
 
    @media (max-width: 768px){
@@ -228,7 +242,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/36066">音视频通话</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -236,7 +250,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/47636">多人视频会议</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -244,7 +258,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/37286">语音互动直播</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -252,7 +266,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/36061">视频互动直播</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -260,7 +274,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/41940">在线Karaoke</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -469,7 +483,7 @@
                      <a href="https://www.tencentcloud.com/document/product/1071/38156">集成指引</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -527,7 +541,7 @@
                <a class="with-box" href="https://pub.dev/packages/live_flutter_plugin/versions&quot;">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Flutter">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/document/product/1071/38152">集成指引</a>
+                  href="https://cloud.tencent.com/document/product/454/71666">集成指引</a>
                <a target="_blank" style="margin-left:10px"
                   href="https://github.com/LiteAVSDK/Live_Flutter/tree/main/Live-API-Example">运行
                   Demo</a>
@@ -567,7 +581,7 @@
                      <a href="https://www.tencentcloud.com/document/product/266/33975">播放器组件</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -575,7 +589,7 @@
                      <a href="https://www.tencentcloud.com/document/product/266/38294">加密视频播放</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -673,7 +687,7 @@
                      <a href="https://www.tencentcloud.com/products/im?lang=en&amp;pg=">即时通讯IM</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -825,7 +839,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/36066">音视频通话</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -833,7 +847,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/47636">多人视频会议</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -841,7 +855,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/37286">语音互动直播</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -849,7 +863,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/36061">视频互动直播</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -857,7 +871,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/41940">在线Karaoke</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -865,7 +879,7 @@
                      <a href="https://www.tencentcloud.com/document/product/1071/38156">直播SDK集成指引</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -873,7 +887,7 @@
                      <a href="https://www.tencentcloud.com/document/product/266/33975">播放器组件</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -925,9 +939,17 @@
      overflow:hidden;padding:10px 5px;word-break:normal;}
    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-   .tg .tg-cly1{text-align:left;vertical-align:middle}
-   .tg .tg-ncfo{color:#272727;text-align:left;vertical-align:middle}
-   .tg .tg-nrix{text-align:center;vertical-align:middle}
+   .tg .tg-cly1{text-align:left;vertical-align:middle;}
+   .tg .tg-ncfo{color:#272727;text-align:left;vertical-align:middle;}
+   .tg .tg-nrix{text-align:center;vertical-align:middle;}
+   .tg .select{color:#00a4ff;}
+   .markdown-text-box table {
+      width: 98%;
+      border: 1px solid #d9d9d9;
+      border-bottom: none;
+      line-height: 1.5;
+      margin: 0 auto 24px;
+   }
    </style>
    <table class="tg">
    <thead>
@@ -945,634 +967,634 @@
      <tr>
        <td class="tg-cly1">界面</td>
        <td class="tg-cly1">自定义UI</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="5">音视频通话</td>
        <td class="tg-cly1">双人通话</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">房间管理</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">屏幕分享</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">多人会议</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">跨房/同房连麦</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="19">采集拍摄</td>
        <td class="tg-cly1">屏比（高宽比）</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">横竖屏切换</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">清晰度（分辨率）</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">拍摄控制</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">水印</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">焦距</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">视频截图</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">背景音乐</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">变声/混响</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">音量调整</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">静音采集</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">录制</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">滤镜</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">美颜</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">高音质采集</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">3A处理</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">自定义音视频采集</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">自定义音视频渲染</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">SEI信息</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="2">编码传输</td>
        <td class="tg-cly1">H.264</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Qos流控策略</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="6">直播推流</td>
        <td class="tg-cly1">摄像头推流</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">录屏推流</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">纯音频推流</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">RTMP OVER QUIC</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">WebRTC</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">TRTC</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="4">直播播放</td>
        <td class="tg-cly1">支持RTMP、FLV、HLS、DASH等协议</td>
        <td class="tg-cly1"> </td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">WebRTC</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">直播时移</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">消息接收</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="11">公共播放</td>
        <td class="tg-cly1">音量调节</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">清晰度切换</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">横竖/全屏切换</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">视频截图</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">小窗播放</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">弹幕</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">亮度调节</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">锁定屏幕</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">播放器尺寸设置</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">镜像播放</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">视频自动旋转</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="30">播放器_点播播放</td>
        <td class="tg-cly1">支持HLS、DASH、MP4、MP3 等协议</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">支持HTTPS</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">多手势操作</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">进度条操作</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">进度条打点</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">进度条缩略图</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">屏幕填充适应</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">自定义启播时间</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">设置封面</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">互动浮窗</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">首屏秒开+预加载</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">快速seek</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">无缝循环播放</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">自适应码率</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">倍速/变速播放</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">边播边下</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">字幕配置</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">UI切换</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">视频缓存/本地缓存</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">播放列表</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">离线下载</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">视频试看</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">防盗链</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">播放加密视频</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">续播功能</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">暂停贴片+跳转链接</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">连续/自动播放</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">FileID播放</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Loading动画</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">数据上报</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="6">社交聊天</td>
@@ -1580,7 +1602,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1588,7 +1610,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1596,7 +1618,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1604,7 +1626,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1612,7 +1634,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1620,7 +1642,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
    </tbody>
