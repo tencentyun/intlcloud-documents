@@ -4,7 +4,7 @@ This document helps you quickly get start with Serverless Cloud Function (SCF).
 
 Tencent Cloud Serverless Cloud Function (SCF) is a serverless execution environment that enables you to build and run applications without having to purchase and manage servers. Simply code in a supported language and set the execution conditions, and your code can be run on the Tencent Cloud infrastructure elastically and securely.
 
-SCF allows you to develop, deploy, and test functions through the [SCF console](https://console.cloud.tencent.com/scf), [Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36267), or [TencentCloud API](https://intl.cloud.tencent.com/document/product/583/17234).
+SCF allows you to develop, deploy, and test functions through the [SCF console](https://console.cloud.tencent.com/scf), [Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/583/36267), or [TencentCloud API](https://intl.cloud.tencent.com/document/product/583/17234).
 
 
 ## 2. SCF Billing
@@ -26,7 +26,7 @@ Log in to the Tencent Cloud console, select **Products** > **Serverless Cloud Fu
 #### 3.3 Creating function
 
 - SCF provides two function types: event-triggered function and HTTP-triggered function. For more information, see [Creating and Updating Function](https://intl.cloud.tencent.com/document/product/583/19806) and [Creating and Testing Function](https://intl.cloud.tencent.com/document/product/583/40689).
-- SCF provides two function creation methods. You can quickly create a function in the console as instructed in [Creating Event-Triggered Function in Console](https://intl.cloud.tencent.com/document/product/583/32742). You can also create a function through Serverless Framework as instructed in [Creating Function on CLI](https://intl.cloud.tencent.com/document/product/583/32743).
+- SCF provides two function creation methods. You can quickly create a function in the console as instructed in [Creating Event-Triggered Function in Console](https://intl.cloud.tencent.com/document/product/583/32742). You can also create a function through Serverless Cloud Framework as instructed in [Creating Function on CLI](https://intl.cloud.tencent.com/document/product/583/32743).
 
 #### 3.4 Deploying function
 
