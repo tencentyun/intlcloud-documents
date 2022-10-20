@@ -15,7 +15,7 @@
    href="//cloudcache.tencentcs.com/qcloud/main/components/document-feedback/document-feedback.944df9c907.css" />
 
 <style>
-   * {
+    * {
       font-family: 'pingfang SC', 'helvetica neue', arial, 'hiragino sans gb', 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
    }
 
@@ -23,9 +23,10 @@
       background: #F2F6F9;
       border-radius: 10px;
       padding: 20px 30px;
-      height: 326px;
+      height: 264px;
       box-sizing: border-box;
       white-space: nowrap;
+      border: 0;
    }
 
    .card-box .left-section {
@@ -53,7 +54,7 @@
    }
 
    .card-box .doc-section .section-content {
-      width: 470px;
+      width: 800px;
       overflow: hidden;
    }
 
@@ -77,22 +78,24 @@
       display: inline-block;
       vertical-align: middle;
       margin-left: 9px;
+      color: #3D3D3D;
    }
 
    .card-box .doc-section {
       margin-top: 18px;
    }
 
-   .card-box .doc-section .doc-link:nth-child(2n+1) {
+   .card-box .doc-section .doc-link:nth-child(3n+1) {
       margin-left: 0;
    }
 
    .card-box .doc-section .doc-link {
+      width: 250px;
       float: left;
       background: #FFFFFF;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
       border-radius: 24px;
-      padding: 5px 15px;
+      padding: 5px 10px;
       text-align: center;
       margin-left: 10px;
       margin-top: 10px;
@@ -113,22 +116,22 @@
    }
 
    .card-container {
-      width: 380px;
+      width: 50%;
       display: block;
       float: left;
-      padding-left: 15px;
+      /* padding-left: 15px; */
       padding-right: 15px;
       box-sizing: border-box;
    }
 
    .card {
-      border-radius: 10px;
+      border-radius: 4px;
       padding: 17px 16px;
       margin-top: 30px;
       border: 1px solid #ebeef5;
       background-color: #fff;
       overflow: hidden;
-      box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+      box-shadow: 0px 1px 8px rgb(156 175 204 / 25%);
       text-align: center;
       height: 93px;
    }
@@ -175,6 +178,18 @@
 
    .card-box img {
       box-shadow: none;
+   }
+
+   .rno-tabs-operation-wrap {
+      border: none;
+   }
+
+   .rno-tabs-operation-item {
+      padding-bottom: 20px;
+   }
+
+   .markdown-text-box h4 {
+      margin: 0 0 20px 20px
    }
 
    @media (max-width: 768px){
@@ -227,7 +242,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/36066">Audio/Video Call</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -235,7 +250,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/47636">Group Conference</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -243,7 +258,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/37286">Interactive Audio Streaming</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -251,7 +266,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/36061">Interactive Video Streaming</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -259,7 +274,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/41940">Online Karaoke</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -470,7 +485,7 @@
                      <a href="https://www.tencentcloud.com/document/product/1071/38156">SDK Integration</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -558,7 +573,7 @@
                      <a href="https://www.tencentcloud.com/document/product/266/33975">Player SDK Integration</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -566,7 +581,7 @@
                      <a href="https://www.tencentcloud.com/document/product/266/38294">Playing Encrypted Videos</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -664,7 +679,7 @@
                      <a href="https://www.tencentcloud.com/products/im?lang=en&amp;pg=">Tencent Cloud Instant Messaging</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -816,7 +831,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/36066">Audio/Video Call</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -824,7 +839,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/47636">Group Conference</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -832,7 +847,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/37286">Interactive Audio Streaming</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -840,7 +855,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/36061">Interactive Video Streaming</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -848,7 +863,7 @@
                      <a href="https://www.tencentcloud.com/document/product/647/41940">Online Karaoke</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -856,7 +871,7 @@
                      <a href="https://www.tencentcloud.com/document/product/1071/38156">MLVB SDK Integration</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
                <div class="doc-link">
@@ -864,7 +879,7 @@
                      <a href="https://www.tencentcloud.com/document/product/266/33975">Player SDK Integration</a>
                   </div>
                   <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/b6904dc080d04538982887209022333b.svg" />
                   </div>
                </div>
             </div>
@@ -916,9 +931,17 @@
      overflow:hidden;padding:10px 5px;word-break:normal;}
    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-   .tg .tg-cly1{text-align:left;vertical-align:middle}
-   .tg .tg-ncfo{color:#272727;text-align:left;vertical-align:middle}
-   .tg .tg-nrix{text-align:center;vertical-align:middle}
+   .tg .tg-cly1{text-align:left;vertical-align:middle;}
+   .tg .tg-ncfo{color:#272727;text-align:left;vertical-align:middle;}
+   .tg .tg-nrix{text-align:center;vertical-align:middle;}
+   .tg .select{color:#00a4ff;}
+   .markdown-text-box table {
+      width: 98%;
+      border: 1px solid #d9d9d9;
+      border-bottom: none;
+      line-height: 1.5;
+      margin: 0 auto 24px;
+   }
    </style>
    <table class="tg">
    <thead>
@@ -936,634 +959,634 @@
      <tr>
        <td class="tg-cly1">UI</td>
        <td class="tg-cly1">Custom UI</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="5">Audio/Video call</td>
        <td class="tg-cly1">One-to-one call</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Room management</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Screen sharing</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Group conference</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Cross/Same-room communication</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="19">Capturing</td>
        <td class="tg-cly1">Aspect ratio change</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Orientation change</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Video quality (resolution)</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Capturing control</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Watermarking</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Focal length change</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Screenshot</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Background music</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Voice change/Reverb</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Volume change</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Muting</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Recording</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Filters</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Beautification</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">High audio quality</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">3A processing</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Custom capturing</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Custom rendering</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">SEI messages</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="2">Encoding</td>
        <td class="tg-cly1">H.264</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">QoS control</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="6">Live push</td>
        <td class="tg-cly1">Push from camera</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Push from screen</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Audio-only push</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">RTMP over QUIC</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">WebRTC</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">TRTC</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="4">Live playback</td>
        <td class="tg-cly1">RTMP,FLV,HLS,and DASH playback</td>
        <td class="tg-cly1"> </td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">WebRTC</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Time shifting</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Message receiving</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="11">Live/On-demand playback</td>
        <td class="tg-cly1">Volume change</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Video quality change</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Orientation change</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Screenshot</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Floating window</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">On-screen comments</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Brightness adjustment</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Screen locking</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Custom player size</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Mirroring</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Auto rotation</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="30">Player - On-demand playback</td>
        <td class="tg-cly1">HLS,DASH,MP4,and MP3 playback</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">HTTPS</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Gesture control</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Progress bar</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Progress markers</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Thumbnail previews</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Fill mode</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Custom playback start time</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Video thumbnail</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Floating window</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Instant streaming + Preloading</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Quick seeking</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Playback looping</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Adaptive bitrate</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Playback speed change</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Play while downloading</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Subtitles</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">UI switch</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Video caching</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Playlist</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Video download</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Video preview</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Hotlink protection</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Play encrypted videos</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Resume playback</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Show linked images when playback is paused</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Autoplay</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Play by file ID</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Loading animation</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-cly1">Data reporting</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="6">Instant messaging</td>
@@ -1571,7 +1594,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1579,7 +1602,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1587,7 +1610,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1595,7 +1618,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1603,7 +1626,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
      <tr>
@@ -1611,7 +1634,7 @@
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
        <td class="tg-cly1">　</td>
-       <td class="tg-cly1">✓</td>
+        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1">　</td>
      </tr>
    </tbody>
