@@ -61,7 +61,7 @@ In Windows, you can use the `pip install <module-name> -t <code-store-path>` com
 
 
 
-## Deployment Through Serverless Framework CLI
->?Before starting, please install the Serverless Framework CLI tool first as instructed in [Installing Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36263).
+## Deployment Through Serverless Cloud Framework
+>?Before starting, please install the Serverless Cloud Framework tool first as instructed in [Installing Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/583/36263).
 >
-You can run `sls deploy` on Serverless Framework CLI to deploy the function.
+You can run `scf deploy` on Serverless Cloud Framework to deploy the function.
