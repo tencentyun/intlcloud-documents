@@ -1,112 +1,265 @@
+<style>
 
-## 快速了解直播 SDK
+.tp-grid__row.tp-grid--gutter-5n {
+    margin-right: -10px;
+    margin-bottom: -20px;
+    margin-left: -10px;
+}
 
-- [产品方案及架构说明](https://intl.cloud.tencent.com/document/product/1071/38146)
-- [互动直播解决方案支持](https://intl.cloud.tencent.com/document/product/1071/41884)
-- [常用基本概念](https://intl.cloud.tencent.com/document/product/1071/41882)
-- [功能适用场景](https://intl.cloud.tencent.com/document/product/1071/41883)
+.tp-grid__row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+
+.tp-grid__row.tp-grid--gutter-5n .tp-grid__col {
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.tp-grid__col--6 {
+    display: block;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 25%;
+    -webkit-box-flex: 0;
+}
+
+.tp-grid__col {
+    display: block;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 14px;
+    -webkit-box-flex: 1;
+}
+
+    .tpm-experience__item {
+    display: flex;
+    height: 100%;
+    background-image: linear-gradient(0deg,#fff,#f3f5f8);
+    border: 2px solid #fff;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%), -8px -8px 20px 0 #fff;
+    border-radius: 4px;
+    padding: 20px 28px;
+    justify-content: space-between;
+        }
+        
+    .tpm-experience__item-cnt {
+    flex: 1;
+    max-width: 192px;
+   }
+
+ .tpm-experience__item-hd {
+    padding-top: 8px; 
+  }
+    
+    .tpm-experience__item-title {
+    font-size: 18px;
+    color: #000;
+    line-height: 26px;
+    font-weight: 500;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+    
+    .tpm-experience__item-qr {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 4px;
+    margin-left: 12px;
+    }
 
 
+element.style {
+}
+.tpm-experience__item-btns {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-## 计费模式
+ .tpm-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 104px;
+    height: 36px;
+    padding: 0 24px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 34px;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: #0052d9;
+    border: 1px solid transparent;
+    outline: 0 none;
+    cursor: pointer;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+}
 
-直播 SDK 的费用主要由以下部分组成： 
+.tpm-experience__item .tpm-btn {
+    min-width: 120px;
+    margin-bottom: 12px;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+    -webkit-font-smoothing: auto;
+}
 
-<table>
-<tr><th>费用说明</th><th>相关文档</th></tr>
-<tr>
-<td>直播 SDK 的使用授权费用</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1071/38114">直播 License</a></td>
-</tr><tr>
-<td rowspan=3>对接使用其他腾讯云服务时产生的费用</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/2819">云直播服务</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/34349">即时通信服务</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/266/2838">云点播服务</a></td>
-</tr>
-<tr>
-</tbody></table>
+.tpm-btn.size-s {
+    min-width: 104px;
+    height: 32px;
+    padding: 0 24px;
+    line-height: 30px;
+}
 
-> ?  使用直播 SDK 之前，您需要开通 [云直播服务]( https://intl.cloud.tencent.com/document/product/267 )。
+    .card-container {
+        width: 293px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        text-align: center;
+    }
+    
+    .scene-card-container {
+        width: 450px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .scene-card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    }
+    
+    .image_card {
+        margin-top: 10px;
+        border: 1px solid #ebeef5;
+        box-shadow: 0 2px 1px 0 rgb(0 0 0 / 10%);
+    }
+    .markdown-text-box img {
+        box-shadow: none;
+    }
 
 
+    h3 {
+        position: relative;
+        top: -2px;
+    }
+        
+        @media (max-width: 768px){
+                .card-container,
+                .scene-card-container{
+                        width: 100%;
+                }
+                .scene-card > div{
+                        width: 100%!important;
+                        margin-left: 0!important;
+                }
+                img {
+        box-shadow: none;
+    }
+        }
+</style>
 
 
-## 开发支持
+## 步骤一：了解产品 
+直播 SDK 是提供终端推流播放能力的快速集成工具。常用于秀场直播、电商直播、赛事直播、新品发布会、路演、在线拍卖等各类高并发大规模直播场景。直播 SDK 提供 RTMP 推流方式。直播 SDK 提供 Demo 体验，支持多终端接入，无 UI 集成方案，方便开发者更快速、高效的接入直播 SDK。
 
+
+## 步骤二：体验产品
 ### 体验 Demo
-直播 SDK 提供了[腾讯云工具包 App ](https://intl.cloud.tencent.com/document/product/1071/38147)进行体验。
+为了帮助开发者可以更好的理解直播 SDK 的 API，从而快速实现一些直播场景的基本功能，我们提供了 MLVB API-Example Demo，您可以参考下面的链接快速跑通此 Demo。
+
+|平台 |源码地址 |跑通 Demo |
+|:--|--|--|
+|Android |[Github](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example) |[跑通 Demo](https://www.tencentcloud.com/document/product/1071/50600)|
+|iOS |[Github](https://github.com/LiteAVSDK/Live_iOS/tree/main/MLVB-API-Example-OC) |[跑通 Demo](https://www.tencentcloud.com/document/product/1071/50601)|
+
+![](https://qcloudimg.tencent-cloud.cn/raw/9e2a0d37adc782d7c36db1d05cfdbfea.png) 
 
 
+## 步骤三：功能集成
+为了能让您更快速地将直播SDK功能集成到您的应用中，直播SDK提供了无 UI 组件集成方案：
 
-### 获取 License
-直播 SDK License 主要用于解锁对应的直播 SDK 包在 iOS 和 Android 上的使用权限，具体获取方式请参见：
--  [获取测试版 License](https://intl.cloud.tencent.com/document/product/1071/38546#applying-for-a-trial-license) 
--  [获取正式版 License](https://intl.cloud.tencent.com/document/product/1071/38546#purchasing-an-official-license) 
+您可以在项目中直接导入 直播 SDK，并通过 SDK API 以构建自己期望的业务形态。该集成方案的自由度很高，不过需要您自行构建 UI 界面和交互逻辑。
 
-
-> ? 若您需了解各版本 SDK 及对应的授权 License 关系说明，具体请参见 [SDK 与授权 License 对应关系](https://intl.cloud.tencent.com/document/product/1071/38149)。
+为了让您快速了解 SDK API 的使用方案，我们为您提供了各个平台 SDK 的 API 示例源码，源码文件夹中的 Basic 目录包含了基础功能的示例代码，Advanced 目录则包含了高级功能（比如设置分辨率、背景音效、网络测速等）的示例代码。
 
 
-
-### 下载 SDK
-
-直播提供3个 SDK 版本，分别是**基础版 SDK**、**专业版 SDK** 和**企业版 SDK**，可通过直播 SDK License 使用相应的直播功能。 
-
-| 版本类型                                                     | 说明                                                         |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
-| [直播基础版（Smart）](https://intl.cloud.tencent.com/document/product/1071/38150#Smart) | 通过直播的基础版 License ，可使用直播推流、直播播放和基础美颜（美白、磨皮等）功能。 |
-| [专业版（Professional）](https://intl.cloud.tencent.com/document/product/1071/38150) | 多个音视频产品的合集，除了增加了对快直播的支持，其他功能上和直播基础版的没有区别，主要是为了解决同时集成多个音视频产品时的符号冲突问题，通过直播的基础版 License 可使用直播推流相关功能，其他产品功能需要开通对应服务。 |
-
->? 若您需了解各版本 SDK 支持功能说明，具体请参见 [SDK 功能列表](https://intl.cloud.tencent.com/document/product/1071/38149)。
-
-
-## 功能实践
-
-| 若您需要                                                     | 请您阅读                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 将直播 SDK 集成到您的项目中                              | [SDK 集成](https://intl.cloud.tencent.com/document/product/1071/38155) |
-| 将采集到的摄像头画面及麦克风声音，进行编码后推送到云直播平台中 | [摄像头推流](https://intl.cloud.tencent.com/document/product/1071/38157) |
-| 将主播的手机画面作为直播源，并叠加摄像头预览进行直播         | [录屏推流](https://intl.cloud.tencent.com/document/product/1071/41878) |
-| 将实时推送的直播画面通过播放端进行播放                       | [直播拉流](https://intl.cloud.tencent.com/document/product/1071/38159) |
-| 通过使用 Web 超级播放器 TCPlayerLite 解决手机浏览器和 PC 浏览器上音视频流播放问题 | Web（H5）播放器 |
-| 创建直播间并实现连麦互动功能                                 | [连麦互动](https://intl.cloud.tencent.com/document/product/1071/42210) |
-| 设定推流画面质量                                             | [设定画面质量](https://intl.cloud.tencent.com/document/product/1071/41861) |
-| 监控直播推流和播放的状态数据变化                             | SDK 指标监控 |
-| 将整个直播过程录制并存储                                 | [录制和回看](https://intl.cloud.tencent.com/document/product/1071/41868) |
-|使用更低延迟的播放 |  [快直播拉流](https://intl.cloud.tencent.com/document/product/1071/41875)|
-
-> ?
->- 若您需了解各功能接口具体说明，请参见 [iOS API 概览]( https://intl.cloud.tencent.com/document/product/1071/41666 )，[Android API 概览](https://intl.cloud.tencent.com/document/product/1071/41679) 。
->- 若您使用过程中发现报错信息，可根据 [错误码](https://intl.cloud.tencent.com/document/product/1071/41678) 进行问题排查。
-
-
-
-## 新手常见问题
-
--   [支持哪些推流协议？](https://intl.cloud.tencent.com/document/product/1071/39477) 
--   [直播的在线人数是否有上限？](https://intl.cloud.tencent.com/document/product/1071/39695) 
--   [直播录制后，如何获取录制文件？](https://intl.cloud.tencent.com/document/product/1071/39695) 
--   [直播 License 是必须购买的吗？](https://intl.cloud.tencent.com/document/product/1071/39476) 
--   [购买直播 License 可以用于小程序直播吗？](https://intl.cloud.tencent.com/document/product/1071/39476) 
--   [如何降低直播延迟？](https://intl.cloud.tencent.com/document/product/1071/41886) 
--   [推流失败怎么办？](https://intl.cloud.tencent.com/document/product/1071/39360) 
--   [播放失败怎么办？](https://intl.cloud.tencent.com/document/product/1071/39361) 
--   [如何优化视频卡顿？](https://intl.cloud.tencent.com/document/product/1071/39362) 
--   [如何生成 UserSig 签名？](https://intl.cloud.tencent.com/document/product/1071/39471) 
-
-> ? 更多问题，请您前往 [常见问题](https://intl.cloud.tencent.com/document/product/1071/39477) 文档查看。
-
-
-## 反馈与建议
-
-使用腾讯直播 SDK 产品和服务中有任何问题或建议，您可以通过以下渠道反馈：
-
-- 如果发现产品文档的问题，如链接、内容等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
-
-
-
-
-
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+    <a href="https://www.tencentcloud.com/document/product/1071/38155" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                <h3>iOS 集成指引</h3>
+                <p>教您如何将直播 SDK 集成到您的 iOS 应用中</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://www.tencentcloud.com/document/product/1071/38156" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                <h3>Android 集成指引</h3>
+                <p>教您如何将直播 SDK 集成到您的 Android 应用中</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/3b6929f89ce1113bc2005873f2338de9.png" data-nonescope="true">
+                <h3>Flutter SDK 集成指引</h3>
+                <p>教您如何将直播 SDK 集成到您的 Flutter 应用中</p>
+            </div>
+        </div>
+    </a>
+</div>

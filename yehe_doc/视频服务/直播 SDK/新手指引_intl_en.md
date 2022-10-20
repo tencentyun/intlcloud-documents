@@ -1,107 +1,265 @@
+<style>
 
-## Quick Look
+.tp-grid__row.tp-grid--gutter-5n {
+    margin-right: -10px;
+    margin-bottom: -20px;
+    margin-left: -10px;
+}
 
-- [Architecture and Solutions](https://intl.cloud.tencent.com/document/product/1071/38146)
-- [Interactive Live Streaming](https://intl.cloud.tencent.com/document/product/1071/41884)
-- [Concepts](https://intl.cloud.tencent.com/document/product/1071/41882)
-- [Use Cases](https://intl.cloud.tencent.com/document/product/1071/41883)
+.tp-grid__row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+
+.tp-grid__row.tp-grid--gutter-5n .tp-grid__col {
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.tp-grid__col--6 {
+    display: block;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 25%;
+    -webkit-box-flex: 0;
+}
+
+.tp-grid__col {
+    display: block;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 14px;
+    -webkit-box-flex: 1;
+}
+
+    .tpm-experience__item {
+    display: flex;
+    height: 100%;
+    background-image: linear-gradient(0deg,#fff,#f3f5f8);
+    border: 2px solid #fff;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%), -8px -8px 20px 0 #fff;
+    border-radius: 4px;
+    padding: 20px 28px;
+    justify-content: space-between;
+        }
+        
+    .tpm-experience__item-cnt {
+    flex: 1;
+    max-width: 192px;
+   }
+
+ .tpm-experience__item-hd {
+    padding-top: 8px; 
+  }
+    
+    .tpm-experience__item-title {
+    font-size: 18px;
+    color: #000;
+    line-height: 26px;
+    font-weight: 500;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+    
+    .tpm-experience__item-qr {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 4px;
+    margin-left: 12px;
+    }
 
 
+element.style {
+}
+.tpm-experience__item-btns {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-## Billing
+ .tpm-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 104px;
+    height: 36px;
+    padding: 0 24px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 34px;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: #0052d9;
+    border: 1px solid transparent;
+    outline: 0 none;
+    cursor: pointer;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+}
 
-You may be charged the following costs for using the MLVB SDK. 
+.tpm-experience__item .tpm-btn {
+    min-width: 120px;
+    margin-bottom: 12px;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+    -webkit-font-smoothing: auto;
+}
 
-<table>
-<tr><th>Cost Item</th><th>Documentation</th></tr>
-<tr>
-<td>License to use the MLVB SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1071/38114">MLVB License Fee</a></td>
-</tr><tr>
-<td rowspan=3>Costs of other Tencent Cloud services used</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/2819">Cloud Streaming Services</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/34349">Instant Streaming</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/266/2838">Video on Demand</a></td>
-</tr>
-<tr>
-</tbody></table>
+.tpm-btn.size-s {
+    min-width: 104px;
+    height: 32px;
+    padding: 0 24px;
+    line-height: 30px;
+}
 
->?  To use the MLVB SDK, you must activate [CSS](https://intl.cloud.tencent.com/document/product/267).
+    .card-container {
+        width: 293px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        text-align: center;
+    }
+    
+    .scene-card-container {
+        width: 450px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .scene-card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    }
+    
+    .image_card {
+        margin-top: 10px;
+        border: 1px solid #ebeef5;
+        box-shadow: 0 2px 1px 0 rgb(0 0 0 / 10%);
+    }
+    .markdown-text-box img {
+        box-shadow: none;
+    }
 
 
+    h3 {
+        position: relative;
+        top: -2px;
+    }
+        
+        @media (max-width: 768px){
+                .card-container,
+                .scene-card-container{
+                        width: 100%;
+                }
+                .scene-card > div{
+                        width: 100%!important;
+                        margin-left: 0!important;
+                }
+                img {
+        box-shadow: none;
+    }
+        }
+</style>
 
 
-## Development Support
+## Getting to know MLVB SDK 
+The MLVB SDK is a quick integration tool that provides devices with stream push and playback capabilities and is often used in large-scale high-concurrency live streaming scenarios, including live shows, ecommerce live streaming, sports events, new product launches, roadshows, and online auctions. It offers the RTMP-based stream push method, a demo for you to try out features, and a non-UI integration solution and supports multi-terminal access, so you can integrate it more quickly and efficiently.
 
+
+## Tryout
 ### Trying the demo
-You can use the [Cloud Video Toolkit](https://intl.cloud.tencent.com/document/product/1071/38147) app provided by Tencent Cloud to try out the MLVB SDK.
+`MLVB API-Example Demo` is provided to help you better understand MLVB SDK APIs to quickly implement the basic features of some live streaming scenarios. You can quickly run this demo as instructed in the following documents:
+
+| Platform | Source Code Address | How to Run the Demo |
+|:--|--|--|
+| Android | [MLVB API-Example](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example) | [Android](https://www.tencentcloud.com/document/product/1071/50600) |
+| iOS | [MLVB-API-Example-OC](https://github.com/LiteAVSDK/Live_iOS/tree/main/MLVB-API-Example-OC) | [iOS](https://www.tencentcloud.com/document/product/1071/50601) |
+
+![](https://qcloudimg.tencent-cloud.cn/raw/9e2a0d37adc782d7c36db1d05cfdbfea.png) 
 
 
+## Integration
+The MLVB SDK provides a non-UI component integration solution for you to integrate the SDK features into your application more quickly:
 
-### Obtaining a license
-A license allows you to unlock features of the MLVB SDK on iOS and Android. For instructions on how to obtain one, please see:
--  [Applying for a Trial License](https://intl.cloud.tencent.com/document/product/1071/38546#applying-for-a-trial-license) 
--  [Purchasing an Official License](https://intl.cloud.tencent.com/document/product/1071/38546#purchasing-an-official-license) 
+You can also integrate the MLVB SDK directly into your project and use the SDK APIs to implement the features you need. This solution offers greater flexibility, but you have to design the UI and interactions by yourself.
 
-
->? To learn about the licenses required to use different editions of the SDK, please see [SDK and license](https://intl.cloud.tencent.com/document/product/1071/38149).
+We offer API examples for different platforms to help you quickly learn how to use the APIs of the SDK. You can find the API examples for basic TRTC features in the `Basic` folder of the SDK source code package and advanced features (such as resolution setting, background music, and network speed testing) in the `Advanced` folder.
 
 
-
-### Downloading the SDK
-
-We provide three editions of the MLVB SDK currently: **LiteAV_Smart**, **Professional**, and **Enterprise**. You can unlock their live streaming features with MLVB SDK licenses. 
-
-| Edition                                                     | Description                                                         |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
-| [LiteAV_Smart](https://intl.cloud.tencent.com/document/product/1071/38150#Smart) | With a LiteAV_Smart license, you can use features including publishing, playback, and basic beauty filters (skin brightening and smoothing). |
-| [Professional](https://intl.cloud.tencent.com/document/product/1071/38150) | The Professional edition integrates multiple audio/video services of Tencent Cloud. Other than the support for LEB, it offers the same MLVB features as LiteAV_Smart, but it is free of the duplicate symbol issue that may arise if you integrate multiple audio/video SDKs. You can use the MLVB features of the Professional edition with a LiteAV_Smart license, but to use the features of other Tencent Cloud services, you need to activate the services first. |
-
->? For details on the features supported by different SDK editions, please see [Features](https://intl.cloud.tencent.com/document/product/1071/38149).
-
-
-## Best Practice
-
-| Practice                                                     | Documentation                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Integrating the MLVB SDK into your project                              | [SDK Integration](https://intl.cloud.tencent.com/document/product/1071/38155) |
-| Encoding and publishing the video and audio captured by the camera and mic | [Publishing from Camera](https://intl.cloud.tencent.com/document/product/1071/38157) |
-| Streaming the host’s screen plus the camera preview         | [Publishing from Screen](https://intl.cloud.tencent.com/document/product/1071/41878) |
-| Playing published video in real time                       | Playback](https://intl.cloud.tencent.com/document/product/1071/38159) |
-| Using the web superplayer TCPlayerLite for playback on mobile and desktop browsers | Web (H5) player |
-| Creating a room and connecting mic with others                                 | [Mic Connect](https://intl.cloud.tencent.com/document/product/1071/42210) |
-| Setting video quality                                             | [Setting Video Quality](https://intl.cloud.tencent.com/document/product/1071/41861) |
-| Viewing statistics on publishing and playback status                             | Viewing SDK Performance Statistics |
-| Recording and archiving live streaming sessions                                     | [Recording and Replay](https://intl.cloud.tencent.com/document/product/1071/41868) |
-| Playing at lower latency                                           | [LEB Playback](https://intl.cloud.tencent.com/document/product/1071/41875) |
-
-> ?
->- For details about the APIs for different features, please see [API Documentation > iOS](https://intl.cloud.tencent.com/document/product/1071/41666) and [API Documentation > Android](https://intl.cloud.tencent.com/document/product/1071/41679).
->- If an error occurs during your use of the SDK, you can refer to [Error Codes](https://intl.cloud.tencent.com/document/product/1071/41678) to troubleshoot the problem.
-
-
-
-## FAQs
-
--   [What publishing protocols does MLVB support?](https://intl.cloud.tencent.com/document/product/1071/39477) 
--  [Is there an upper limit on the number of concurrent viewers?](https://intl.cloud.tencent.com/document/product/1071/39695) 
--   [I recorded live streams. How can I get the recording files?](https://intl.cloud.tencent.com/document/product/1071/39695) 
--   [Do I have to purchase an MLVB license?](https://intl.cloud.tencent.com/document/product/1071/39476) 
--   [Can I use a LiteAV_Smart license to stream on Mini Program?](https://intl.cloud.tencent.com/document/product/1071/39476) 
--   [How do I reduce latency?](https://intl.cloud.tencent.com/document/product/1071/41886) 
--   [What do I do if publishing fails?](https://intl.cloud.tencent.com/document/product/1071/39360) 
--   [What do I do if playback fails?](https://intl.cloud.tencent.com/document/product/1071/39361) 
--   [How do I fix video stutter?](https://intl.cloud.tencent.com/document/product/1071/39362) 
--   [How do I generate UserSig?](https://intl.cloud.tencent.com/document/product/1071/39471) 
-
->? For more Q&As, please see [FAQs](https://intl.cloud.tencent.com/document/product/1071/39477).
-
-
-## Feedback and Suggestion
-
-You can ask us questions about MLVB via the following channels.
-
-- If your question is about documents, for example, the content or a link in the documents, click **Send Feedback** in the bottom right of a document to provide your feedback.
-- If you have questions about the product, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+    <a href="https://www.tencentcloud.com/document/product/1071/38155" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                <h3>Integration Guide for iOS</h3>
+                <p>Describes how to integrate the MLVB SDK into your iOS application.</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://www.tencentcloud.com/document/product/1071/38156" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                <h3>Integration Guide for Android</h3>
+                <p>Describes how to integrate the MLVB SDK to your Android application.</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/3b6929f89ce1113bc2005873f2338de9.png" data-nonescope="true">
+                <h3>SDK Integration Guide for Flutter</h3>
+                <p>Describes how to integrate the MLVB SDK into your Flutter application.</p>
+            </div>
+        </div>
+    </a>
+</div>
