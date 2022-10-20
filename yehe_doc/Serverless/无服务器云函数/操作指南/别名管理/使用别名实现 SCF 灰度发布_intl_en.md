@@ -102,11 +102,11 @@ View the grayscale release process through monitoring information and logs and c
 Suppose a failure occurs when version 2 is launched. In this case, you need to roll back to the previous version by modifying the `release` alias of function B to point all of its traffic to version 1.
 
 
-### Serverless Framework use case
-When using Serverless Framework, you can use stages to distinguish between the test, pre-release, and release environments. When implementing grayscale release in the release environment, you can use the following commands for gradual switch. For detailed directions, please see [Using tencent-express Component to Deploy Express Website](https://github.com/June1991/serverless-express/blob/master/README.md).
+### Serverless Cloud Framework use case
+When using Serverless Cloud Framework, you can use stages to distinguish between the test, pre-release, and release environments. When implementing grayscale release in the release environment, you can use the following commands for gradual switch. For detailed directions, please see [Using tencent-express Component to Deploy Express Website](https://github.com/June1991/serverless-express/blob/master/README.md).
 ```console
-sls deploy --inputs.traffic=0.1 # Deploy and switch 10% traffic to the `$latest` version
-sls deploy --inputs.traffic=1.0 # Deploy and switch 100% traffic to the `$latest` version
-sls deploy --inputs.traffic=1.0 # Deploy and switch 100% traffic to the `$latest` version
+scf deploy --inputs.traffic=0.1 # Deploy and switch 10% traffic to the `$latest` version
+scf deploy --inputs.traffic=1.0 # Deploy and switch 100% traffic to the `$latest` version
+scf deploy --inputs.traffic=1.0 # Deploy and switch 100% traffic to the `$latest` version
 ```
 
