@@ -1,3 +1,13 @@
+## July 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Supported DMC</td>
+<td>TencentDB for PostgreSQL supports Database Management Center (DMC) which provides features such as database/table-level operations, real-time monitoring, and instance session management. </td>
+<td>2022-07-25</td><td><a>-</a></td></tr>
+</tbody></table>
+
 ## April 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
