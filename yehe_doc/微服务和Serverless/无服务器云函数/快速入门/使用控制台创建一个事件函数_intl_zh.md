@@ -6,7 +6,7 @@
 
 如果您已在腾讯云注册，可忽略此步骤。
 
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
 
 ## 步骤2：在线充值
 
@@ -35,8 +35,8 @@
 ![](https://main.qcloudimg.com/raw/718294ab42e0352407f5675ed50ade95.png)
 3. 在“新建函数”页面填写函数基础信息，单击**下一步**。如下图所示： 
 ![](https://main.qcloudimg.com/raw/16bb5ab1368b418d67a07db7b5d142d0.png)
- - **创建方式**：选择 “模版函数”。
- - **模板搜索**：输入 helloworld 后按 “Enter” 进行搜索，选择 “helloworld” 模版。云函数支持多重运行环境，此函数以使用 Python2.7 为例。
+ - **创建方式**：选择 “模板函数”。
+ - **模板搜索**：输入 helloworld 后按 “Enter” 进行搜索，选择 “helloworld” 模板。云函数支持多重运行环境，此函数以使用 Python2.7 为例。
 4. 函数名称默认填充，可根据需要自行修改。函数配置保持默认，并单击**完成**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/1f97c60e8cffc2b089d41c187d7b4609.png)
 函数创建完成后，自动进入创建成功函数的“函数配置”页面，可查看该云函数的函数配置信息。
@@ -59,14 +59,14 @@
 在“函数管理”页中，选择**函数代码**，单击**测试**，运行代码并返回测试结果。如下图所示：
 
 <dx-alert infotype="explain" title="">
-- 如果您需要更换测试模版或模版中的内容。可直接编辑函数内容，或者选择**当前测试模版**，更换后单击**保存**即可生效。
+- 如果您需要更换测试模板或模板中的内容。可直接编辑函数内容，或者选择**当前测试模板**，更换后单击**保存**即可生效。
 - 不同的测试模板分别模拟不同的触发器消息源，且不同的触发器和云函数之间传递的消息均为约定好的数据结构。具体详情可参考 [触发器介绍](https://intl.cloud.tencent.com/document/product/583/9705)。
 </dx-alert>
 
 ![](https://main.qcloudimg.com/raw/3758f32893e46b38d94d25cb71666542.png)
 返回结果如下所示：
 ![](https://main.qcloudimg.com/raw/7d5c5d7fc1b7b79f37861df7b3b8d1eb.png)
-在本次测试过程中，云函数会在 `main_handler` 的 `event` 参数中，获取 “Hello World事件模版” 的数据结构。
+在本次测试过程中，云函数会在 `main_handler` 的 `event` 参数中，获取 “Hello World事件模板” 的数据结构。
 
 ```
 {
@@ -123,5 +123,5 @@
 
 
 
-## 遇到问题？
-非常抱歉您在使用时出现问题，您可以通过 [提交工单](https://console.intl.cloud.tencent.com/workorder) 来寻求帮助。
+## 遇到问题
+您在使用中出现问题时，您可以通过 [提交工单](https://console.intl.cloud.tencent.com/workorder) 来寻求帮助。
