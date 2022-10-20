@@ -169,7 +169,7 @@ Added support for modifying the configurations of retry and maximum retention fo
 <td><li>Simplified the function creation process for quicker creation.</li>
 <li>Added support for configurations for template-based function creation.</li>
 <li>Added support for trigger configurations for function creation.</li>
-<li>Interconnected with Serverless Framework for creating applications in the SCF console.</li>
+<li>Interconnected with Serverless Cloud Framewor for creating applications in the SCF console.</li>
 <li>Interconnected with CODING for deploying functions and applications through CI.</li></td>
 <td>2020-12-30</td>
 <td>-</td>
@@ -338,8 +338,8 @@ Added support for modifying the configurations of retry and maximum retention fo
 <tr>
 <td>Released the SCF VS Code plugin</td>
 <td>The SCF VS Code plugin was upgraded to v2.0:
-The specification used by the plugin was adjusted to the Tencent-SCF Component specification in Serverless Framework.
-The original TCSAM-compatible specification can be converted to the Serverless Framework Tencent-SCF Component specification.
+The specification used by the plugin was adjusted to the Tencent-SCF Component specification in Serverless Cloud Framewor.
+The original TCSAM-compatible specification can be converted to the Serverless Cloud Framewor Tencent-SCF Component specification.
 Node.js 10.15 and Node.js 12.16 runtime environments were added.
 Node.js 10 and later runtime environments were added for cloud debugging.</td>
 <td>2020-06-12</td>
