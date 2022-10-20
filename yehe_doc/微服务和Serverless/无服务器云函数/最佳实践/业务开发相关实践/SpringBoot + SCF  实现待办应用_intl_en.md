@@ -22,7 +22,7 @@ SCF provides template functions. You can use an HTTP-triggered function as follo
 
 #### Creating function[](id:createwebfunc)
 
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf).
+1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf).
 2. Click **Create** on the **Function Service** page.
 3. On the **Create** page, select **Template** and search for `springboot` and `webfunc`. In the search results, select **SpringBootToDoApplication** and click **Next** as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/8bc02a327bd4831a11689be32164543e.png)
@@ -75,7 +75,7 @@ You can migrate a native Spring Boot project to an HTTP-triggered function as fo
 >! Run `chmod 755 scf_bootstrap` in the directory of the `scf_bootstrap` file to ensure that the file has the execution permission.
 
 - Package the `scf_bootstrap` file and the generated JAR package into a ZIP package and deploy it to SCF as follows:
-    1. Log in to the [SCF console](https://console.cloud.tencent.com/scf).
+    1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf).
     2. Click **Create** on the **Function Service** page.
     3. On the **Create** page, select **Create from scratch** and configure the following items:
           **Function Type**: HTTP-triggered function.
@@ -96,7 +96,7 @@ SCF provides template functions. You can use an event-triggered function as foll
 >! This template is for demonstration only. Todo data is actually stored in the instance cache instead of being persistently stored.
 
 #### Creating function[](id:createnew)
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf).
+1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf).
 2. Click **Create** on the **Function Service** page.
 3. On the **Create** page, select **Template** and search for `springboot`. In the search results, select **SpringBoot** and click **Next**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9987e93125cac78d6d528b44155215ec.png)
@@ -168,7 +168,7 @@ You can configure as follows:
   After the compilation, you can get the JAR package in the `build/libs` directory. Select the JAR package whose suffix is `-all`.
 
 - Deploy the generated JAR package to SCF as follows:
-   1. Log in to the [SCF console](https://console.cloud.tencent.com/scf).
+   1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf).
    2. Click **Create** on the **Function Service** page.
    3. On the **Create** page, select **Create from scratch** and configure the following items:
        **Function Type**: Event-triggered function.
