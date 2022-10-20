@@ -1,4 +1,3 @@
-
 ## TIM
 
 TIM 是 IM Web SDK 的命名空间，提供了创建 SDK 实例的静态方法 [create()](https://web.sdk.qcloud.com/im/doc/en/TIM.html#.create) ，以及事件常量 [EVENT](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html)，类型常量 [TYPES](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html)。
@@ -74,7 +73,13 @@ TIM 是 IM Web SDK 的命名空间，提供了创建 SDK 实例的静态方法 [
 ### 会话
 | API | 描述 |
 | --- | --- |
+| [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) | 变更消息。
 | [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList) | 获取消息列表。  |
+| [getMessageListHopping](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping) | 根据指定的消息 sequence 或 消息时间拉取会话的消息列表。|
+| [sendMessageReadReceipt](https://web.sdk.qcloud.com/im/doc/en/SDK.html#sendMessageReadReceipt) | 发送消息已读回执。|
+| [getMessageReadReceiptList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageReadReceiptList) | 拉取已读回执列表。|
+| [getGroupMessageReadMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList) | 获取群消息已读（或未读）群成员列表。|
+| [findMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#findMessage) | 根据 messageID 查询会话的本地消息。|
 | [setMessageRead](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRead) | 设置消息已读。  |
 | [getConversationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationList) | 获取会话列表。 |
 | [getConversationProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationProfile) | 获取会话资料。 |
@@ -82,6 +87,18 @@ TIM 是 IM Web SDK 的命名空间，提供了创建 SDK 实例的静态方法 [
 | [pinConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#pinConversation) | 置顶或取消置顶会话。 |
 | [setAllMessageRead](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setAllMessageRead) | 将所有会话的未读消息设置为已读。 |
 | [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType) | 设置会话消息提醒类型，您可以使用此接口实现“消息免打扰”，“拒收消息”的功能。 |
+
+### 会话分组
+| API | 描述 |
+| --- | --- |
+| [setConversationCustomData](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setConversationCustomData) | 设置会话自定义数据。|
+| [markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation) | 标记会话。 |
+| [getConversationGroupList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationGroupList) | 获取会话分组列表。|
+| [createConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createConversationGroup) | 创建会话分组。|
+| [deleteConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversationGroup) | 删除会话分组。|
+| [renameConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#renameConversationGroup) | 重命名会话分组。|
+| [addConversationsToGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#addConversationsToGroup) | 添加会话到一个会话分组。|
+| [deleteConversationsFromGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversationsFromGroup) | 从一个会话分组中删除会话。|
 
 ### 资料
 | API | 描述 |

@@ -87,10 +87,10 @@
 
 ## 群组相关接口
 腾讯云 IM SDK 支持五种预设的群组类型，每种类型都有其适用场景：
-- 工作群（Work） ：类似普通微信群，创建后不能自由加入，必须由已经在群的用户邀请入群，同旧版本中的 Private。
-- 公开群（Public）   ：类似 QQ 群，用户申请加入，但需要群主或管理员审批。
-- 会议群（Meeting）：适合跟 [TRTC](https://intl.cloud.tencent.com/product/trtc，同旧版本中的 ChatRoom。
-- 社群（Community）：创建后可以随意进出，适合用于知识分享和游戏交流等超大社区群聊场景。该功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需 [购买旗舰版](https://intl.cloud.tencent.com/document/product/1047/34577) 并在 **[控制台](https://console.cloud.tencent.com/im)** >**功能配置**>**群组配置**>**群功能配置**>**社群**中开通。
+- 工作群（Work） ：创建后不能自由加入，必须由已经在群的用户邀请入群，同旧版本中的 Private。
+- 公开群（Public）   ：用户申请加入，但需要群主或管理员审批。
+- 会议群（Meeting）：适合跟 [TRTC](https://intl.cloud.tencent.com/product/trtc) 结合实现视频会议和在线教育等场景，支持随意进出，支持查看进群前的历史消息，同旧版本中的 ChatRoom。
+- 社群（Community）：创建后可以随意进出，适合用于知识分享和游戏交流等超大社区群聊场景。该功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并在 **[控制台](https://console.cloud.tencent.com/im)** >**功能配置**>**群组配置**>**群功能配置**>**社群**中开通。
 - 直播群（AVChatRoom）：适合直播弹幕聊天室等场景，支持随意进出，人数无上限。
 
 | API | 描述 |
@@ -120,6 +120,7 @@
 | [inviteUserToGroup](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a942d75fdea66e22cdbd8c131cf18e1ea) | 邀请他人入群 |
 | [kickGroupMember](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a0581f28fddf2ade890aa62e4318d7a97) | 踢人 |
 | [setGroupMemberRole](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a0f1c341a3dc53d6a6557a438b0c64b65) | 切换群成员的角色 |
+| [markGroupMemberList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a21238536e7cb2c3fd086797e7dc1b970) | 标记群成员 |
 | [transferGroupOwner](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a58a2ffae60505a43984fe21bf0bc1101) | 转让群主 |
 | [getGroupApplicationList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a29c36ad685159850a30d61a6b9c637e8) | 获取加群的申请列表 |
 | [acceptGroupApplication](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a51bb9b4f965cb3d01546fef348ac75e4) | 同意某一条加群申请 |
