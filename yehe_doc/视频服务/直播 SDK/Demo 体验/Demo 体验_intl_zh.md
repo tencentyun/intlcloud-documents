@@ -8,7 +8,7 @@
 
 |平台 |源码地址 |跑通 Demo |
 |:--|--|--|
-|Android |[Github](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example) |[跑通 Demo](https://cloud.tencent.com/document/product/454/60984)|
+|Android |[Github](https://github.com/LiteAVSDK/Live_Android/tree/main/MLVB-API-Example) |[跑通 Demo](https://www.tencentcloud.com/document/product/1071/50600)|
 |iOS |[Github](https://github.com/LiteAVSDK/Live_iOS/tree/main/MLVB-API-Example-OC) |[跑通 Demo](https://www.tencentcloud.com/document/product/1071/50601)|
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/9e2a0d37adc782d7c36db1d05cfdbfea.png) 
