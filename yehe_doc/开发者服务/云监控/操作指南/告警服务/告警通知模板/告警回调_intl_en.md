@@ -1,67 +1,76 @@
-Your WeCom group or self-built system can directly receive Cloud Monitor alarm notifications through API callback. API callback can push alarm notifications to URLs that are accessible over the public network through HTTP POST requests. You can take further actions based on the alarm notifications you receive from API callback. If you need to receive alarm notifications through a WeCom group, please see [Receiving Alarm Notifications Through a WeCom Group](https://intl.cloud.tencent.com/document/product/248/38208).
+By using API callbacks, you can directly receive alarm notifications from Cloud Monitor (CM) on your WeCom group or self-built system. API callbacks can push alarm information to URLs that are accessible over the public network through HTTP POST requests. You can take further actions based on the alarm information pushed by API callbacks. If you need to receive alarm notifications through a WeCom group, see [Receiving Alarm Notifications through a WeCom Group](https://intl.cloud.tencent.com/document/product/248/38208).
 
 > ? 
 > - Currently, alarm callback does not have an authentication mechanism and does not support HTTP authentication.
 > - A failed alarm push can be retried up to three times, and each push request has a 5-second timeout period.
 > - When an alarm policy created by the user is triggered or the alarm is resolved, the alarm messages will be pushed through the API callbacks. API callbacks also support repeated alarms.
-> - The outbound IP of the Cloud Monitor callback API is dynamically and randomly allocated, so no specific IP information can be provided to you, but the IP port is fixed at 80. We recommend you configure a weighted opening policy in the security group based on port 80.
+> - The outbound IP of the CM callback API is dynamically and randomly allocated, so no specific IP information can be provided to you, but the IP port is fixed at 80. We recommend you configure a weighted opening policy in the security group based on port 80.
 > - Alarm callback currently doesn't support pushing notifications by notification period. This will be supported in the future. Please stay tuned.
+
 ## Directions
 
-1. Enter the [Notification Template](https://console.cloud.tencent.com/monitor/alarm2/notice) page in the Cloud Monitor console.
+1. Enter the [CM Console — Notification Template](https://console.cloud.tencent.com/monitor/alarm2/notice) page.
 2. Click **Create** to create a notification template.
-3. After configuring the basic information on the **Create Notification Template** page, enter a URL accessible over the public network as the callback API address (such as `domain name or IP[:port][/path]`) in the API callback module, and Cloud Monitor will push alarm messages to this address promptly.
-4. Enter the [Alarm Policy List](https://console.cloud.tencent.com/monitor/alarm2/policy), click the name of the policy that needs to bind alarm callbacks to enter the alarm policy management page, and click the notification template.
-5. Cloud Monitor will push the alarm messages through the HTTP POST requests to the URL of your system. You can further process the pushed alarm information by referring to [Alarm Callback Parameters](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E).
+3. After configuring the basic information on the **Create Notification Template** page, enter a URL accessible over the public network as the callback API address (such as `domain name or IP[:port][/path]`) in the API callback module, and CM will push alarm messages to this address promptly.
+4. In the [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) list, click the name of an alarm policy to be associated with an alarm callback to enter the alarm policy management page. Select a notification template on the page that appears.
+5. CM will push the alarm messages through the HTTP POST requests to the URL of your system. You can further process the pushed alarm information by referring to [Alarm Callback Parameters](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E).
  ![](https://main.qcloudimg.com/raw/88ae443dd1118dd2939dda42928a8fcf.png)
+
+### Alarm callback authentication
+API callback supports the BasicAuth-based user security verification. If you want to send the alarm information callback to a service that requires the user’s verification, you can implement HTTP authentication in the API callback URL. For example, you can change `http://my.service.example.com` to `http://<USERNAME>:<PASSWORD>@my.service.example.com`.
+![](https://qcloudimg.tencent-cloud.cn/raw/d35cb7693189e581fe9897656c46b31a.png)
 
 ## Alarm Callback Parameters
 
-When an alarm rule is triggered, Cloud Monitor will send alarm messages to the URL of your system. The API callback sends data in the JSON format through the HTTP POST requests. You can further process the alarm information by referring to the following parameter descriptions.
+When an alarm rule is triggered, CM will send alarm messages to the URL of your system. The API callback sends JSON-formatted data through the HTTP POST requests. You can further process the alarm information by referring to the following parameter descriptions.
 
 ### Metric alarm
 
 #### Sample metric alarm parameters
->? The `durationTime` and `alarmStatus` values of most metrics are in the `string` data type.
+>?The data type of the `durationTime` and `alarmStatus` of most metrics is `string`, and the `namespace` of CVM’s network-related alarm metrics is `qce/lb`.
 
 ```
 {
        "sessionId": "xxxxxxxx",
-       "alarmStatus": "1",    // 1: alarmed, 0: resolved
-       "alarmType":"metric",    // Alarm type ("metric": metric alarm, "event": event alarm)
+       "alarmStatus":"1",    // 1: Alerted, 0: Resolved
+       "alarmType":"metric",    // Alarm type (`metric`: Metric alarm, `event`: Event alarm)
        "alarmObjInfo": {
-            "region": "gz",  // This field will not be returned for services without the region attribute
-            "namespace": "qce/cvm",      // Service namespace
-            "dimensions": {               // Content in the `dimensions` field varies by service. For more information, please see the sample metric alarm dimensions below
+            "region": "gz",  // This field will not be returned for products that are not region-specific
+            "namespace": "qce/cvm",      // Product namespace
+	        "appId": "xxxxxxxxxxxx",
+            "uin": "xxxxxxxxxxxx",
+            "dimensions": {               // Content in the `dimensions` field varies by service. For more information, see the sample metric alarm dimensions below
                 "unInstanceId": "ins-o9p3rg3m",  
                 "objId":"xxxxxxxxxxxx"
             }
        },
        "alarmPolicyInfo": {
-                "policyId": "policy-n4exeh88",   // Alarm policy group ID
-                "policyType": "cvm_device",     // Alarm policy group name
-                "policyName": "test",      // Alarm policy group name
-                "policyTypeCName": "CVM - basic monitoring",      // Displayed name of alarm policy type
+                "policyId": "policy-n4exeh88",   // ID of the alarm policy group
+                "policyType": "cvm_device",     // Alarm policy type name
+                "policyName": "test",      // Name of the alarm policy group
+                "policyTypeCName": "CVM - basic monitoring",      // Displayed name of the alarm policy type
                 "conditions": {
                     "metricName": "cpu_usage",         // Metric name
                     "metricShowName": "CPU utilization",       // Displayed metric name
                     "calcType": ">",              // Comparison method (this field will not be returned for metrics without a threshold)
                     "calcValue": "90",            // Alarm threshold (this field will not be returned for metrics without a threshold)
+					"calcUnit": "%",            // Unit of the alarm threshold (this field will not be returned for metrics without a threshold)
                     "currentValue": "100",       // Current alarm value (this field will not be returned for metrics without a threshold)
+					"historyValue": "5",         //Historical alarm value (this field will not be returned for metrics without a threshold)
                     "unit": "%",                 // Unit (this field will not be returned for metrics without a threshold)
                     "period": "60",              // Statistical period in seconds (this field will not be returned for metrics without a threshold)
                     "periodNum": "1",            // Duration (this field will not be returned for metrics without a threshold)
-                    "alarmNotifyType": "continuousAlarm",    // Whether repeated alarms are supported ("singleAlarm": non-repeated alarm; "exponentialAlarm": exponential alarm; "continuousAlarm": persistent alarm. This field will not be returned for metrics without a threshold)
+                    "alarmNotifyType": "continuousAlarm",    // Whether repeated alarms are supported ("singleAlarm": Non-repeated alarm; "exponentialAlarm": Alarm repeated at exponential intervals; "continuousAlarm": Persistent alarm. This field will not be returned for metrics without a threshold)
                     "alarmNotifyPeriod": 300                 // Frequency of the repeated alarms in seconds (this field will not be returned for metrics without a threshold)
                 }
         },
         "firstOccurTime": "2017-03-09 07:00:00",     // Time when the alarm is triggered for the first time
         "durationTime": 500,       // Alarm duration in seconds (if the alarm is unresolved, this value will be the duration from the time when the alarm is triggered for the first time to the time when the current alarm is sent)
-        "recoverTime": "0"     // The time it takes to resolve the alarm in seconds (if the alarm is unresolved, the value of this parameter will be 0)
+        "recoverTime": "2017-03-09 07:50:00"     // Time when the alarm is resolved in seconds. If it is not resolved, the value is 0; if it is resolved, the specific time will be displayed, such as 2017-03-09 07:50:00.
 }
 ```
 
-> ? To get the policy type names and namespaces of a specific service, please see [Product Policy Type and Dimension Information](https://intl.cloud.tencent.com/document/product/248/39565).
+> ? For product policy types and namespaces, see [Product Policy Type and Dimension Information](https://intl.cloud.tencent.com/document/product/248/39565) and [Tencent Cloud Service Metrics](https://www.tencentcloud.com/document/product/248/6140).
 
 #### Sample metric alarm dimensions
 
@@ -91,7 +100,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 #### TencentDB for MySQL
 ```
 "dimensions": {
-		 "uInstanceId": "cdb-emzu6ysk",// TencentDB instance ID
+		 "uInstanceId": "cdb-emzu6ysk",// TencentDB for MySQL instance ID
 		 "objId": "d6bc4b82-3acc-11eb-b11e-4cf95dd88ae6",       // Instance dimension bound to the backend
 		 "objName": "cdb-emzu6ysk(instance name: platform development_xxljob,IP:10.66.234.242:3306)"       // Instance information returned in the alarm SMS message
 }
@@ -110,7 +119,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 ```
 
 
-#### TencentDB for Redis (5-second - Redis node)
+#### TencentDB for Redis (5-second — Redis node)
 ```
 "dimensions": {
 		 "appid": "1252068000",    // Account `APPID`
@@ -124,20 +133,20 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 
 
 
-#### TencentDB for Redis (5-second - instance summary)
+#### TencentDB for Redis (5-second — instance summary)
 ```
 "dimensions": {
 		"AppId": "1252068000",    // Account `APPID`
 		"InstanceId":"crs-1amp2588",  // TencentDB for Redis instance ID
 		"objId": "crs-1amp288#[instancename]",       // Instance dimension bound to the backend
-		"objName": "ID:crs-1amp288|Instance Name:price|Ip Port:10.99.182.52:9979"       //
+		"objName": "ID:crs-1amp288|Instance Name:price|Ip Port:10.99.182.52:9979"       // Alarm SMS message
 		Instance information returned in the alarm SMS message
 }
 ```
 
 
 
-#### TencentDB for Redis (5-second - proxy node)
+#### TencentDB for Redis (5-second — proxy node)
 ```
 "dimensions": {
 	   "appid": "1252068037",    // Account `APPID`
@@ -150,53 +159,52 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 
 
 
-#### CLB - layer-7 protocol
+#### CLB — layer-7 protocol
 ```
 "dimensions": {
-		 "protocol": "https",    // Listener protocol
-		 "vip": "14.22.4.26",  // CLB VIP
-		 "port": "443",  // Real server port
-		 "objId": "14.22.4.26#443#https",       // Instance dimension bound to the backend
-		 "objName": "14.22.4.26#443#https"       // Instance information returned in the alarm SMS message
+         "protocol": "https",    // Listener protocol
+         "vip": "14.22.4.26",  // CLB VIP
+         "port": "443",  //Real server port
+         "objId": "14.22.4.26#443#https",       // Instance dimension bound to the backend
+         "objName": "clbtestname | Default-VPC | 18.25.31.161(htps:443) | service:clb, product:monitor"       // Alarm object information (namely `clbname`) returned in the alarm record | networkname | vip(protocol:vport) | tags
+}
+```
+
+
+#### CLB — public network listener
+```
+"dimensions": {
+         "protocol": "https",   // Listener protocol
+         "vip": "118.25.31.161",   // CLB VIP
+         "vport": 443,  // Real server port
+         "objId": "118.25.31.161#443#https",       // Instance dimension bound to the backend (vip#vport#protocol)
+         "objName": "clbtestname | Default-VPC | 18.25.31.161(htps:443) | service:clb, product:monitor"       // Alarm object information (namely `clbname`) returned in the alarm record | networkname | vip(protocol:vport) | tags
 }
 ```
 
 
 
-#### CLB - public network listener
+
+#### CLB — private network listener
 ```
 "dimensions": {
-		 "protocol": "https",   // Listener protocol
-		 "vip": "118.25.31.161",   // CLB VIP
-		 "vport": 443,  // Real server port
-		 "objId": "118.25.31.161#443#https",       // Instance dimension bound to the backend (vip#vport#protocol)
-		 "objName": "118.25.31.161#443#https"       // Instance information returned in the alarm SMS message (vip#vport#protocol)
+         "protocol": "https",      // Listener protocol
+         "vip": "14.22.4.26",    // CLB VIP
+         "vpcId": vpc-1ywqac83,    // VPC ID
+         "vport": "443",          // Real server port
+         "objId": "14.22.4.26#443#https",       //   Instance dimension bound to the backend (vip#vport#protocol)
+         "objName": "clbtestname | Default-VPC | 18.25.31.161(htps:443) | service:clb, product:monitor"       // Alarm object information (namely `clbname`) returned in the alarm record | networkname | vip(protocol:vport) | tags
 }
 ```
 
 
 
-
-#### CLB - private network listener
-```
-"dimensions": {
-		 "protocol": "https",      // Listener protocol
-		 "vip": "14.22.4.26",    // CLB VIP
-		 "vpcId": vpc-1ywqac83,    // VPC ID
-		 "vport": "443",          // Real server port
-		 "objId": "14.22.4.26#443#https",       // Instance dimension bound to the backend (vip#vport#protocol)
-		 "objName": "14.22.4.26#443#https"       // Instance information returned in the alarm SMS message (vip#vport#protocol)
-}
-```
-
-
-
-#### CLB - server port (classic private network)
+#### CLB — server port (private network for Classic CLB)
 ```
 "dimensions": {
 	   "protocol": "https",  // Listener protocol
 		 "lanIp": "111.222.111.22",
-		 "port": "440"  // Real server port
+		 "port": "440"  //Real server port
 		 "vip": "14.12.13.25",  // CLB VIP
 		 "vpcId": vpc-1ywqac83,   // VPC ID of CLB instance
 		 "loadBalancerPort": "443",   // CLB listener port number
@@ -239,7 +247,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 ```
 
 
-#### TDSQL-C
+#### TDSQL-C for MySQL
 ```
 "dimensions":{
      "appid":"1256754779",
@@ -286,9 +294,9 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 ```
 "dimensions": {
 	   "appid": "1251316163",
-     "function_name": "insert-tapd-task-result",  // Function name
+     "function_name": "insert-tapd-task-result",  // SCF function name
      "namespace": "qmap-insight-core",  // SCF namespace
-     "version": "$latest" ,    // Function version
+     "version": "$latest" ,    // SCF version
 		"objId": "1251316163#insert-tapd-task-result#qmap-insight-core#$latest",       // Instance dimension bound to the backend
 		"objName": "1251316163#insert-tapd-task-result#qmap-insight-core#$latest"       // Instance information returned in the alarm SMS message
 }
@@ -307,7 +315,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 
 
 
-#### VPC - NAT gateway
+##### VPC — NAT gateway
 ```
 "dimensions": {
 		 "uniq_nat_id": "nat-4d545d",  // NAT gateway ID
@@ -317,7 +325,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 ```
 
 
-#### VPC - VPN gateway
+##### VPC — VPN gateway
 ```
 "dimensions": {
      "appid": "12345",
@@ -329,7 +337,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 
 
 
-#### VPC - VPN tunnel
+#### VPC — VPN tunnel
 ```
 "dimensions": {
      "vpnconnid": "vpnx-lr6cpqp6",
@@ -340,7 +348,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 
 
 
-#### VPC - Direct Connect gateway
+#### VPC — direct connect gateway
 ```
 "dimensions": {
      "directconnectgatewayid": "dcg-8wo1p2ve",
@@ -350,7 +358,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 ```
 
 
-#### VPC - peering connection
+#### VPC — peering connection
 ```
 "dimensions": {
      "peeringconnectionid": "pcx-6gw5wy11",
@@ -360,7 +368,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 ```
 
 
-#### VPC - network detection
+#### VPC — network detection
 ```
 "dimensions":{
      "appid":"1258859999",
@@ -373,7 +381,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 
 
 
-#### VPC - BWP
+#### VPC — bandwidth package
 ```
 "dimensions": {
      "__region__": "xxx",
@@ -397,7 +405,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 ```
 
 
-#### CKafka - topic
+#### CKafka — topic
 ```
 "dimensions":{
      "appid":"1258399706",
@@ -421,7 +429,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 ```
 
 
-#### CKafka - consumer group - topic
+#### CKafka — ConsumerGroup - topic
 ```
 "dimensions":{
      "appid":"1258344866",
@@ -436,7 +444,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 
 
 
-#### CKafka - consumer group - partition
+#### CKafka — ConsumerGroup - partition
 ```
 "dimensions":{
      "appid":"1258344866",
@@ -484,7 +492,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 }
 ```
 
-#### TKE (new) - container
+#### TKE (metric v2.0) - container
 ```
 "dimensions": {
      "objId": "xxx",       // Instance dimension bound to the backend
@@ -503,7 +511,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 	}
 ```
 
-#### TKE (new) - pod
+#### TKE (metric v2.0) - pod
 ```
 "dimensions": {
      "objId": "xxx",       // Instance dimension bound to the backend
@@ -520,7 +528,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 	 }
 ```
 
-#### TKE (new) - workload
+#### TKE (metric v2.0) - workload
 ```
 "dimensions": {
      "objId": "xxx",       // Instance dimension bound to the backend
@@ -533,7 +541,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 	}
 ```
 
-#### TKE (new) - workload
+#### TKE (metric v2.0) - workload
 ```
 "dimensions": {
      "objId": "xxx",       // Instance dimension bound to the backend
@@ -546,7 +554,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 	}
 ```
 
-#### TKE (new) - workload
+#### TKE (metric v2.0) - workload
 ```
 "dimensions": {
      "objId": "xxx",       // Instance dimension bound to the backend
@@ -560,7 +568,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 	}
 ```
 
-#### TKE (new) - cluster component
+#### TKE (metric v2.0) - cluster component
 
 ```
 "dimensions": {
@@ -571,7 +579,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 	}
 ```
 
-#### TKE (new) - cluster
+#### TKE (metric v2.0) - cluster
 ```
 "dimensions": {
      "objId": "xxx",       // Instance dimension bound to the backend
@@ -580,166 +588,3 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
      "tke_cluster_instance_id":"xxx"
 	}
 ```
-
-
-
-
-
-
-
-
-
-
-
-### Event alarm
-
-
-#### Sample event alarm parameters
-
-
-```
-{
-    "sessionId":"vuRH4ZlxBJSMNJHvNZhls9HY",
-    "alarmStatus":"1",    // 1: alarmed, 0: resolved
-    "alarmType":"event",    // Alarm type ("metric": metric alarm, "event": event alarm)
-    "alarmObjInfo":{
-        "region":"gz",      // This field will not be returned for services that are not region-specific
-        "dimensions":{               // The value of the `dimensions` field varies by service
-            "unInstanceId":"ins-pftdvqa2",
-            "objDetail":{         // Event alarm object details
-                "deviceLanIp":"172.21.0.17",
-                "deviceWanIp":"118.89.233.99",
-                "uniqVpcId":"vpc-ilrwkcbw"
-            }
-        }
-    },
-    "alarmPolicyInfo":{
-        "policyType":"cvm_device",     // Alarm policy group name
-        "policyName":"teset",      // Alarm policy group name
-        "conditions":{
-            "productName":"cvm",      // Service name
-            "productShowName":"CVM",      // Displayed service name
-            "eventName":"ping_unreachable",      // Event name
-            "eventShowName":"ping unreachable",      // Event name
-            "alarmNotifyType":"singleAlarm",    // Whether repeated alarms are supported ("singleAlarm": non-repeated alarm; "exponentialAlarm": exponential alarm; "continuousAlarm": persistent alarm. This field will not be returned for metrics without a threshold)
-            "alarmNotifyPeriod":"0"                 // Frequency of the repeated alarms in seconds (this field will not be returned for metrics without a threshold)
-        },
-        "policyTypeCName":"CVM - basic monitoring"      // Displayed name of alarm policy type
-    },
-    "firstOccurTime":"2018-06-15 16:32:06",     // Time when the alarm is triggered for the first time
-    "recoverTime":"0"      // The time it takes to resolve the alarm in seconds (if the alarm is unresolved or does not have a resolved status, the value of this parameter will be 0)
-}
-```
-
-#### Sample event alarm dimensions
-
-
-
-#### CVM
-```
-"dimensions":{
-     "unInstanceId":"ins-pftdvqa2",
-		 "deviceName":"kube123",
-     "objDetail":{         // Event alarm object details
-         "deviceLanIp":"172.21.0.17",
-         "deviceWanIp":"118.89.233.99",
-         "uniqVpcId":"vpc-ilrwkcbw"
-            }
-        }
-```
-
-
-
-
-
-#### TencentDB for MySQL
-```
-"dimensions": {
-      "deviceName": "production-xd_item_center-0-offline-6035",
-      "objDetail": {
-          "IP": "10.80.17.217"
-      },
-      "unInstanceId": "cdb-bwieva60"
-    }  
-```
-
-
-
-
-#### VPC - peering connection
-
-```
-"dimensions":{
-    "unInstanceId":"pcx-142mpvfc",
-    "objDetail":{         // Event alarm object details
-        "PeeringConnectionName":"test-VPC1 <--> test-VPC3",
-        "QosBandwidth":"100Mps",
-        "VpcName":"test-VPC1",
-        "VpcId":"vpc-5x1u9jq8"
-            }
-        }
-```
-
-
-
-
-#### VPC - VPN gateway
-
-```
-"dimensions":{
-    "unInstanceId":"vpngw-i0s10nr1",
-    "objDetail":{         // Event alarm object details
-        "VpnGatewayName":"vpn---fran",
-        "InternetMaxBandwidthOut":"5Mps",
-        "VpcName":"vy-vpn2",
-        "VpcId":"vpc-709l0i0x"
-            }
-        }
-```
-
-
-
-
-
-#### CLB - VIP blocking
-```
-"dimensions":{
-    "unInstanceId":"clb-test",
-    "objDetail":{         // Event alarm object details
-        "vip":"127.0.0.1"
-            }
-        }
-```
-
-
-
-
-#### Direct Connect - connection
-```
-"dimensions":{
-            "objDetail":{
-                "ar":"Guangzhou Science City",
-                "bandwidth":"10000",
-                "circuitNumber":"Huaxinyuan 0601-H0x-PL0x-x",
-                "dcType":"Bare fiber"
-            },
-            "unInstanceId":"dc-j0cp3tgr"
-        }
-```
-
-
-
-
-#### Direct Connect - dedicated tunnel
-```
-"dimensions":{
-            "objDetail":{
-                "connLocalIp":"169.254.65.133",
-                "connPeerIp":"169.254.65.134"
-            },
-            "unInstanceId":"dcx-881ekns2"
-        }
-```
-
-
-
