@@ -3,7 +3,7 @@ Serverless Cloud Framework supports the development mode (`dev` mode). For proje
 
 ### Entering development mode<span id="joinDev"></span>
 Under a project, you can run `scf dev` to enter the development mode as shown below:
->Currently, `scf dev` is supported by only the Node.js 10 & 12.16 runtime environment.
+>!Currently, `scf dev` is supported by only the Node.js 10.15 & 12.16 runtime environment.
 >
 ```
 $ scf dev
