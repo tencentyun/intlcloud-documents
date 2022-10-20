@@ -18,7 +18,7 @@ Serverless Web IDE supports:
 ## Use Directions
 
 
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
+1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
 2. In the function list, click a function name to enter the function details page.
 3. On the **Function Management** page, select **Function Code** > **Online editing** to view and edit the function.
 
