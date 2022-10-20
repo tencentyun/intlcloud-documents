@@ -104,7 +104,7 @@ function main_handler () {
 ```
 $ chmod 755 index.sh bootstrap
 ```
-3. 使用 [Serverless Framework](#Serverless) 创建和发布函数。或执行以下命令，打包生成 zip 包，通过 [SDK](#SDK) 或 [云函数控制台](#KZT) 来创建和发布函数。
+3. 使用 [Serverless Cloud Framework](#Serverless) 创建和发布函数。或执行以下命令，打包生成 zip 包，通过 [SDK](#SDK) 或 [Serverless 控制台](#KZT) 来创建和发布函数。
 ```
 $ zip demo.zip index.sh bootstrap
    adding: index.sh (deflated 23%)
@@ -113,11 +113,11 @@ $ zip demo.zip index.sh bootstrap
 
    
 <span id="Serverless"></span>
-### 使用 Serverless Framework 创建及发布函数
+### 使用 Serverless Cloud Framework 创建及发布函数
 
 #### 创建函数
 
-1. 安装 [Serverless Framework](https://intl.cloud.tencent.com/document/product/1040/37034)。
+1. 安装 [Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/1040/37034)。
 2. 在 [bootstrap](#bootstrap) 目录下配置 Serverless.yml 文件，创建 dotnet 函数：
 ```
    #组件信息
@@ -143,7 +143,7 @@ $ zip demo.zip index.sh bootstrap
 ```
 >? SCF 组件的详细配置，请参见 [全量配置文档](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md)。 
 >
-3. 执行 `sls deploy` 命令创建云函数，创建成功则返回结果如下：
+3. 执行 `scf deploy` 命令创建云函数，创建成功则返回结果如下：
 ```
    serverless ⚡framework
    Action: "deploy" - Stage: "dev" - App: "ap-guangzhou_default_helloworld" - Instance: "ap-guangzhou_default_helloworld"   
@@ -290,9 +290,9 @@ except TencentCloudSDKException as err:
 ```
 ### 使用控制台创建及发布函数<span id="KZT"></span>
 #### 创建函数
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
-2. 在“函数服务”页面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-3. 在“新建函数”页面填写函数基础信息，单击【下一步】。
+1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+2. 在“函数服务”页面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
+3. 在“新建函数”页面填写函数基础信息，单击**下一步**。
     - **函数名称**：命名为 “CustomRuntime-Bash”。
     - **运行环境**：选择 “CustomRuntime”。
     - **创建方式**：选择 “空白函数”。
@@ -300,12 +300,12 @@ except TencentCloudSDKException as err:
     - **提交方法**：选择“本地上传zip包”。
     - **函数代码**：选择打包好的 demo.zip。
     - 高级设置：展开配置项，配置“初始化超时时间”及其他相关参数。
-5. 单击【完成】即可完成函数创建。
+5. 单击**完成**即可完成函数创建。
 
 #### 调用函数
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
+1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
 2. 在“函数服务”页面上方选择期望调用函数的地域，并单击列表页中期望调用的函数，进入函数详情页面。
-3. 选择左侧【函数管理】，并在“函数管理”页面选择【函数代码】页签。
-4. 在“测试事件”的测试模板中选择“Hello World 事件模板”，并单击【测试】。
+3. 选择左侧**函数管理**，并在“函数管理”页面选择**函数代码**页签。
+4. 在“测试事件”的测试模板中选择“Hello World 事件模板”，并单击**测试**。
     控制台右侧将展示出调用的执行结果及日志。
 
