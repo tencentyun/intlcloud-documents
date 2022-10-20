@@ -20,7 +20,7 @@ Tencentcloud-Serverless-Nodejs SDK has the following features:
 Node.js 8.9 and higher.
 - Running environment
 Windows, Linux, or macOS with Tencentcloud-Serverless-Nodejs SDK installed.
-- We recommend you use [Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/32743) to quickly deploy local functions.
+- We recommend you use [Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/583/32743) to quickly deploy local functions.
 
 ### Tencentcloud-Serverless-Nodejs SDK installation
 #### Installation through npm (recommended)
@@ -101,7 +101,7 @@ exports.main_handler = async (event, context) => {
  - Code submission: Select **Local ZIP file**.
     Compress all files in the `testNodejsSDK` directory in ZIP format and upload it to the cloud.
 4. 
-On the function details page in the [SCF console](https://console.cloud.tencent.com/scf/list), you can test run a function by going to the function code tab and clicking **Execute**. Below is the output result:
+On the function details page in the [Serverless console](https://console.cloud.tencent.com/scf/list), you can test run a function by going to the function code tab and clicking **Execute**. Below is the output result:
 ```shell
 "Already invoked a function!"
 ```
