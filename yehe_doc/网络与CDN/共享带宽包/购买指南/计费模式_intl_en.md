@@ -25,8 +25,8 @@ This document describes the two pay-as-you-go billing modes of bandwidth package
 - **Billable days in the month**: the actual number of days during the month in which BWP is used.
 
 ### Pricing examples
-Assume you use a BGP bandwidth package in June at a unit price of 16.97 USD/Mbps/month, where there are 30 billable days. Of those days, there are 20 days with active usage, and the top 5 peak bandwidths are 100 MB, 95 MB, 90 MB, 85 MB and 80 MB.
-- Monthly peak = (100 + 95 + 90 + 85 + 80) / 5 = 90 MB
+Assume you use a BGP bandwidth package in June at a unit price of 16.97 USD/Mbps/month, where there are 30 billable days. Of those days, there are 20 days with active usage, and the top 5 peak bandwidths are 100 Mbps, 95 Mbps, 90 Mbps, 85 Mbps and 80 Mbps.
+- Monthly peak = (100 + 95 + 90 + 85 + 80) / 5 = 90 Mbps
 - BWP fee = 90 × 16.97 × 20 / 30 = 1,018.2 USD
 
 ## Monthly 95th Percentile[](id:m95)
@@ -40,7 +40,7 @@ Suppose you use BWP for 14 valid days in June. As one sample point is generated 
 - **Billable days in the month**: the actual number of days during the month in which BWP is used.
 
 ### Pricing examples
-Assume you use a BGP bandwidth package in June at a unit price of 16.97 USD/Mbps/month, where there are 30 billable days. Of those days, there are 20 days with bandwidth usage. The 95th percentile of monthly peak is 120 MB.
+Assume you use a BGP bandwidth package in June at a unit price of 16.97 USD/Mbps/month, where there are 30 billable days. Of those days, there are 20 days with bandwidth usage. The 95th percentile of monthly peak is 120 Mbps.
 BWP fee = 120 × 16.97 × 20 / 30 = 1,357.6 USD
 
 ## References
