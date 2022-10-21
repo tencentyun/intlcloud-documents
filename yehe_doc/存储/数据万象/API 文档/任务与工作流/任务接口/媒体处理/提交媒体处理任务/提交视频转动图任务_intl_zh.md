@@ -222,7 +222,7 @@ Container 节点 Operation 的内容：
 | JobLevel           | Response.JobsDetail.Operation | 任务优先级                                                   | String |
 
 Container 节点 MediaInfo 的内容：
-同 [GenerateMediaInfo](https://cloud.tencent.com/document/product/460/38935) 接口中的 Response.MediaInfo 节点。
+同 [GenerateMediaInfo](https://www.tencentcloud.com/document/product/1045/48569) 接口中的 Response.MediaInfo 节点。
 
 Container 节点 MediaResult 的内容：
 

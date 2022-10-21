@@ -222,7 +222,7 @@ The nodes are as described below:
 | JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
 
 `MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the [GenerateMediaInfo](https://cloud.tencent.com/document/product/460/38935) API.
+Same as the `Response.MediaInfo` node in the [GenerateMediaInfo](https://www.tencentcloud.com/document/product/1045/48569) API.
 
 `MediaResult` has the following sub-nodes:
 
