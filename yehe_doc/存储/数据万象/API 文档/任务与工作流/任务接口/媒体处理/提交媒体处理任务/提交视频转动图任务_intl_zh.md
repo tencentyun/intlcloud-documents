@@ -43,7 +43,7 @@ Content-Type: application/xml
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 
@@ -133,7 +133,7 @@ Container 类型 Output 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
 
@@ -222,7 +222,7 @@ Container 节点 Operation 的内容：
 | JobLevel           | Response.JobsDetail.Operation | 任务优先级                                                   | String |
 
 Container 节点 MediaInfo 的内容：
-同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
+同 [GenerateMediaInfo](https://cloud.tencent.com/document/product/460/38935) 接口中的 Response.MediaInfo 节点。
 
 Container 节点 MediaResult 的内容：
 
@@ -248,7 +248,7 @@ Container 节点 Md5Info 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 ## 实际案例
 

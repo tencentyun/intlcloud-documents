@@ -42,7 +42,7 @@ Content-Type: application/xml
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -146,7 +146,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -235,7 +235,7 @@ The nodes are as described below:
 | JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
 
 `MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
+Same as the `Response.MediaInfo` node in the [GenerateMediaInfo](https://www.tencentcloud.com/document/product/1045/48569) API.
 
 `MediaResult` has the following sub-nodes:
 
@@ -263,7 +263,7 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 #### Error codes
 
-For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
+For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
 ## Samples
 
