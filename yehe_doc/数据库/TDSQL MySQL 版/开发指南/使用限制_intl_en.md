@@ -14,7 +14,7 @@
 - CREATE TEMPORARY TABLE is not supported 
 - CREATE/DROP/ALTER SERVER/LOGFILE GROUP are not supported
 - ALTER is not supported for renaming shardkey, but it can be used to change the type
-- RENAME is not supported
+
 
 ### DML
 - SELECT INTO OUTFILE/INTO DUMPFILE/INTO var_name are not supported
