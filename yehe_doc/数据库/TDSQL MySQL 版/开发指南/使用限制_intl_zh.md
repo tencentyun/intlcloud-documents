@@ -12,7 +12,7 @@
 - 不支持 CREATE TEMPORARY TABLE 
 - 不支持 CREATE/DROP/ALTER SERVER/LOGFILE GROUP
 - 不支持 ALTER 对分表键（shardkey）进行改名，但可以修改类型
-- 不支持 RENAME
+
 
 ### DML
 - 不支持 SELECT INTO OUTFILE/INTO DUMPFILE/INTO var_name
