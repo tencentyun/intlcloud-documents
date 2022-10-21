@@ -1,7 +1,7 @@
 This document answers frequently asked questions about promo vouchers. To learn more about promo vouchers, see [Promo vouchers](https://intl.cloud.tencent.com/document/product/555/7428).
 
 ### How do I view my promo vouchers?
-Log in to the Tencent Cloud console and go to **Billing Center** > [Vouchers](https://console.cloud.tencent.com/account/voucher) to view your promo vouchers.
+To view your promo vouchers, log in to the Tencent Cloud console and go to **Billing Center** > [Vouchers](https://console.cloud.tencent.com/account/voucher).
 
 ### What can I do if a promo voucher is claimed by the wrong account?
 A promo voucher can only be used by the account that claimed it and cannot be transferred between accounts.
@@ -9,53 +9,52 @@ A promo voucher can only be used by the account that claimed it and cannot be tr
 ### In what cases are promo vouchers not applicable?
 - Promo vouchers have use limits. Payments that do not meet the requirements (applicable products, billing modes, scenarios, etc.) cannot use promo vouchers.
 - Only the account creator and collaborators/sub-users with finance management permissions can use and manage vouchers.
-- Promo vouchers whose status is "used" or "expired" cannot be used.
-- Promo vouchers cannot be used to offset overdue payments.
-- You cannot use promo vouchers as frozen funds when enabling the pay-as-you-go billing mode.
-- Some promotional campaigns may not support promo vouchers.
+- Vouchers whose status is "used" or "expired" cannot be used.
+- Vouchers cannot be used to offset overdue payments.
+- You cannot use vouchers to take the place of frozen funds when enabling the pay-as-you-go billing mode.
+- You may not be able to use vouchers for orders that were purchased through a promotional campaign. Please check the rules of the specific promotion for details.
 - Resellers’ vouchers cannot be used on orders paid on behalf of customers.
 
 ### What are the use limits of a promo voucher?
-Promo vouchers have use limits. If a promo voucher is not applicable, check if your payment meets all the requirements of the voucher.
+Promo vouchers have use limits. If you find that you can’t use a promo voucher when making a certain payment, check to make sure the payment meets all the requirements of the voucher.
 
 1. **Applicable products**
 	Depending on their applicable products, promo vouchers are classified into product vouchers and general vouchers.
-	1. Product voucher: Applicable to specific products
-	   - A product voucher can be applied to payments for multiple specific products. For example, if a voucher has a face value of 100 USD and is applicable to CVM and TencentDB for MySQL, then it can deduct at most 100 USD from a payment that contains orders for CVM and/or TencentDB for MySQL.
-	   - Minimum-spend vouchers can be used only if the amount of a payment exceeds a certain threshold. For example, suppose you have a 50-USD promo voucher whose minimum spending requirement is 100 USD and applicable products are CVM and TencentDB for MySQL. You can use the voucher only if your order is for CVM or/and TencentDB and the amount exceeds 100 USD.
-	2. General vouchers
-		There are three types of general promo vouchers:
-		- Prepaid general vouchers (applicable to all prepaid payments)
-		- Pay-as-you-go general vouchers (applicable to all pay-as-you-go payments)
-		- All-product general vouchers (applicable to all Tencent Cloud payments)
-
->! We have adjusted our policy for general promo vouchers. Starting from December 10, 2020, we will specify the applicable or non-applicable products for pay-as-you go general vouchers, prepaid general vouchers, and all-product general vouchers.
+	1. Product vouchers can only be used to pay for specific products.
+	   - A product voucher may be applicable to payments for multiple specific products. For example, if a voucher has a face value of 100 USD and is applicable to CVM and TencentDB for MySQL, then it can deduct at most 100 USD from payments that contains orders for CVM and/or TencentDB for MySQL.
+	   - Minimum-spend vouchers can be used only if the amount of a payment exceeds a certain threshold. For example, suppose you have a 50-USD voucher whose minimum spending requirement is 100 USD and the applicable products are CVM and TencentDB for MySQL. You can use the voucher only if your order is for CVM or/and TencentDB and the total payment amount exceeds 100 USD.
+	2. General vouchers can be used to pay for any product (excluding some products which cannot be paid for with general vouchers).
 
 2. **Payment scenarios**
 	1. Billing mode
-            Prepaid vouchers are only applicable to monthly subscriptions.
-            Pay-as-you-go vouchers are only applicable to pay-as-you-go payments.
+            Prepaid: The voucher is only applicable to monthly subscriptions. 
+            Pay-as-you-go: The voucher is only applicable to pay-as-you-go payments.
 	2. Application scenario
             Prepaid: Purchase, renewal, or upgrade
             Pay-as-you-go: Pay-as-you-go payments
 
 3. **Voucher status**
 A promo voucher may be in one of three statuses: "Unused", "Used", or "Expired".
- - Unused: Promo vouchers that are valid and not (fully) used. Unused vouchers can be applied to your payments, but they cannot be used as frozen funds when you enable the pay-as-you-go billing mode.
- - Used: Promo vouchers that are (fully) used. Used vouchers cannot be used to deduct any amount from your payments.
- - Expired: Promo vouchers that have expired. Expired vouchers cannot be used to deduct any amount from your payments.
+ - Unused: The voucher is valid and has not been fully exhausted. Unused vouchers can be applied to your payments, but they cannot be used as frozen funds when you enable the pay-as-you-go billing mode.
+ - Used: The voucher has already been fully exhausted. Used vouchers cannot be used to deduct any amount from your payments.
+ - Expired: The voucher has expired. Expired vouchers cannot be used to deduct any amount from your payments.
 
 4. **Time limits**
-For a promo voucher to be applied to a monthly subscription order, the duration purchased cannot be longer than the time limit of the voucher. For example, suppose the time limit of a promo voucher is 0-3 months. If you want to use the voucher with a monthly subscription order, the duration purchased must be 0-3 months.
+For a voucher to be applied to a monthly subscription order, the duration purchased cannot be longer than the time limit of the voucher. For example, suppose the time limit of a promo voucher is 0-3 months. If you want to use the voucher with a monthly subscription order, the duration purchased must be 0-3 months.
 
 5. **Minimum spend**
 To use a minimum-spend voucher, your payment amount must exceed a certain threshold.
+Based on their minimum spend requirements, vouchers are classified into the following types:
+	1. No minimum spend: The voucher can be used for orders that contain the applicable products regardless of the payment amount.
+    For example, if a voucher has a face value of 100 USD and is applicable to CVM and TencentDB for MySQL, then it can deduct at most 100 USD from a payment that contains orders for CVM and/or TencentDB for MySQL.
+	2. Minimum spend voucher: The voucher can only be used if the total amount for the payment exceeds a certain threshold.
+    For example, suppose you have a 50-USD voucher whose minimum spending requirement is 100 USD and the applicable products are CVM and TencentDB for MySQL. You can use the voucher only if your order is for CVM or/and TencentDB and the total payment amount exceeds 100 USD.
 
 6. **Validity period**
 A promo voucher can be used only within its validity period, which cannot be extended.
 
 7. **Number of uses**
-   1. One-time: A one-time voucher can be used only once (after which its status will become **Used**), regardless of whether its balance has been used up.
+   1. One-time: A one-time voucher can be used only once (after which its status will become **Used**), regardless of whether its balance has been fully exhausted.
    2. Reusable: A reusable voucher can be used multiple times until it expires or its balance becomes zero.
 
 ### What is the time limit of a promo voucher?
