@@ -108,6 +108,7 @@
       text-align: center;
       margin-left: 8px;
       margin-top: 10px;
+      width: 148px;
    }
 
    .card-box .doc-section .doc-title {
