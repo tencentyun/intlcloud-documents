@@ -4,7 +4,7 @@
 
 ### 1. Inviting reseller's customer
 
-You can invite a potential customer to become your customer, no matter whether it has registered for a Tencent Cloud account or not.
+You can invite a potential customer to become your customer, no matter whether it has registered for a Tencent Cloud account or not.(Note: Registered Tencent Cloud users can only settle overdue payments in the same way as other regular Tencent Cloud users do if their overdue payments are generated before they are bound to you as your customers.)
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/077bbcbeab290ae5ee0517a65bb5386d.png)
 
