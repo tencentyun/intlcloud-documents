@@ -1,15 +1,12 @@
 ## Overview
-Serverless Framework provides multiple basic resource components, which you can mix and use to quickly create and deploy resources in the cloud. This document describes how to use existing components to build your own multi-component serverless application template.
+Serverless Cloud Framework provides multiple basic resource components, which you can mix and use to quickly create and deploy resources in the cloud. This document describes how to use existing components to build your own multi-component serverless application template.
 
 ## Prerequisites
-You have [installed Serverless Framework](https://intl.cloud.tencent.com/document/product/1040/37034) on at least the following versions:
+You have [installed Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/1040/37034) on at least the 1.0.2 versions:
 
 ```shell
-$ serverless –v
-Framework Core: 2.16.1
-Plugin: 4.3.0
-SDK: 2.3.2
-Components: 3.4.3
+$ scf –v
+
 ```
 
 <span id ="doc"></span>
@@ -149,16 +146,16 @@ At this point, the serverless application has been built, and the project direct
 ```
 
 ### Step 5. Deploy the application
-In the project root directory, run `sls deploy` to complete layer creation and use the output of the Layer component as the input of the Egg.js component to cloudify the Egg.js framework.
+In the project root directory, run `scf deploy` to complete layer creation and use the output of the Layer component as the input of the Egg.js component to cloudify the Egg.js framework.
 ```  bash
- $ sls deploy
+ $ scf deploy
 
-serverless ⚡framework
+serverless-cloud-framework
 
 app-demo-layer: 
   region:        ap-guangzhou
   name:          layer_component_xxx
-  bucket:        sls-layer-ap-guangzhou-code
+  bucket:        scf-layer-ap-guangzhou-code
   object:        layer_component_xxx.zip
   description:   Layer created by serverless component
   runtimes: 
@@ -185,10 +182,10 @@ app-demo-egg:
 ```
 
 
-You can click the URL output by `apigw` to access the created application, run `sls info` to view the status of the deployed instance, or run `sls remove` to quickly remove the application.
+You can click the URL output by `apigw` to access the created application, run `scf info` to view the status of the deployed instance, or run `scf remove` to quickly remove the application.
 
 ### Step 6. Publish the application template
-After the serverless project template is built, Serverless Framework allows you to publish it in the Serverless Registry for use by your team and others.
+After the serverless project template is built, Serverless Cloud Framework allows you to publish it in the Serverless Registry for use by your team and others.
 
 #### 1. Create a configuration file
 In the root directory, create a `serverless.template.yml` file, and the project directory structure is as follows:
@@ -233,9 +230,9 @@ src: # Describe the files in the project to be published as a template
     - '**/package-lock.json'
 ```
 
-After the `serverless.template.yml` file is configured, you can use the `sls publish` command to publish the project to the Registry as a template.
+After the `serverless.template.yml` file is configured, you can use the `scf publish` command to publish the project to the Registry as a template.
    ```
-$ sls publish
+$ scf publish
 
 serverless ⚡registry
 Publishing "app-demo@0.0.0"...
@@ -245,9 +242,9 @@ Serverless › Successfully published app-demo
 
 #### 3. Reuse the template
 
-After your template is published, others can quickly download it and reuse the project by running the `sls init` command.
+After your template is published, others can quickly download it and reuse the project by running the `scf init` command.
 ```
-$ sls init app-demo --name example
+$ scf init app-demo --name example
 $ cd example
 $ npm install
 ```

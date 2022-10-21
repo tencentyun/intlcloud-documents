@@ -6,12 +6,12 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/10c090874aecd9a31b99cb07637d2356.png)
 3. 输入主账号登录信息后，单击**登录**。
 4. 登录后找到控制台，点击**访问管理**菜单入口。
-![](https://qcloudimg.tencent-cloud.cn/raw/846fbf9308416745f51ac9a4f2a4d02e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/74b4a3f495300e35d3591f48262695a4.png)
 5. 在访问管理下，设置子账号用户权限。
 创建子账号用户
-![](https://qcloudimg.tencent-cloud.cn/raw/2a6b72624d02a3bed42e1a55668ae5bf.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/23f427991f34da7bcf066c54a9affcd2.jpg)
 默认预设策略：全部权限和全部只读权限，可授权给子账号用户直接使用
-![](https://qcloudimg.tencent-cloud.cn/raw/9fb6dc1cfb097ab054b9ddc1bea0312c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/367e211a9cf6456560e3623fc7a2383c.jpg)
 ![](https://qcloudimg.tencent-cloud.cn/raw/e5c05ba9e6c1be3798ebd339ceb6d0c3.png)
 6. (可选)在访问管理下，如有需要更细化管理权限，可通过创建自定义策略权限实现。
 创建自定义策略权限

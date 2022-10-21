@@ -1,22 +1,22 @@
 
-本文为您介绍 Serverless Framework 的几种授权方式以及通过配置子账号权限进行实际操作演示。
+本文为您介绍 Serverless Cloud Framework 的几种授权方式以及通过配置子账号权限进行实际操作演示。
 
 
 ## 前提条件
-Serverless Framework 帮助您将项目快速部署到**腾讯云 Serverless 应用中心**，因此在部署前，请确认您已经 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/10495)。
+Serverless Cloud Framework 帮助您将项目快速部署到**腾讯云 Serverless 应用中心**，因此在部署前，请确认您已经 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/10495)。
 
 ## 授权方式
 
 ### 扫码一键授权
 
-通过 `sls deploy` 进行部署时，您可以通过扫描二维码，一键授权并快速部署，扫码授权后，会生成临时密钥信息（过期时间为60分钟）写入当前目录下的 .`env` 文件中：
+通过 `scf deploy` 进行部署时，您可以通过扫描二维码，一键授权并快速部署，扫码授权后，会生成临时密钥信息（过期时间为60分钟）写入当前目录下的 .`env` 文件中：
 ```
 TENCENT_APP_ID=xxxxxx     #授权账号的 AppId
 TENCENT_SECRET_ID=xxxxxx  #授权账号的 SecretId
 TENCENT_SECRET_KEY=xxxxxx #授权账号的 SecretKey
 TENCENT_TOKEN=xxxxx       #临时 token
 ```
-一键授权时获取的权限详情请参见 [SLS_QcsRole 角色权限列表](#list)。
+一键授权时获取的权限详情请参见 [scf_QcsRole 角色权限列表](#list)。
 
 >?如果您的账号为**腾讯云子账号**，扫码部署前需要主账号先进行策略授权配置。配置详情请参见 [子账号权限配置](#rightsprofile)。
 
@@ -40,11 +40,11 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
 
 ### 永久密钥配置
 
-通过 `sls credentials` 指令，可以快速设置全局密钥信息永久保存。该指令必须在已经创建好的 sls 项目下进行配置，请确保您已经通过 `sls init` 或已经手动创建好您的带有 serverless.yml 的项目。
+通过 `scf credentials` 指令，可以快速设置全局密钥信息永久保存。该指令必须在已经创建好的 scf 项目下进行配置，请确保您已经通过 `scf init` 或已经手动创建好您的带有 serverless.yml 的项目。
 
 - **全部指令参考如下：**
 ```plaintext
-serverless credentials   管理全局用户授权信息
+scf credentials   管理全局用户授权信息
     set                     存储用户授权信息
         --secretId / -i          (必填)腾讯云 CAM 账号 secretId
         --secretKey / -k         (必填)腾讯云 CAM 账号 secretKey
@@ -58,33 +58,33 @@ serverless credentials   管理全局用户授权信息
 - **配置全局授权信息：**
 ```sh
 # 通过默认 profile 名称配置授权信息
-$ serverless credentials set --secretId xxx --secretKey xxx
+$ scf credentials set --secretId xxx --secretKey xxx
 
 # 通过指定 profile 名称配置授权信息
-$ serverless credentials set --secretId xxx --secretKey xxx --profile profileName1
+$ scf credentials set --secretId xxx --secretKey xxx --profile profileName1
 
 # 更新指定 profile 名称里的授权信息
-$ serverless credentials set --secretId xxx --secretKey xxx --profile profileName1 --overwrite
+$ scf credentials set --secretId xxx --secretKey xxx --profile profileName1 --overwrite
 ```
 
 - **删除全局授权信息：**
 ```plaintext
-$ serverless credentials remove --profile profileName1
+$ scf credentials remove --profile profileName1
 ```
 
 - **查看当前所有授权信息：**
 ```plaintext
-$ serverless credentials list
+$ scf credentials list
 ```
 
 - **通过全局授权信息部署：**
 ```sh
 # 通过默认 profile 部署
-$ sls deploy
+$ scf deploy
 # 通过指定 profile 部署
-$ sls deploy --profile newP
+$ scf deploy --profile newP
 # 忽略全局变量，扫码部署
-$ sls deploy --login
+$ scf deploy --login
 ```
 
 
@@ -103,18 +103,18 @@ $ sls deploy --login
 
 如果您的操作账号为腾讯云子账号，没有默认操作权限，则需要**主账号（或拥有授权操作的子账号）**进行如下授权操作：
 
-1. 在 [CAM 用户列表](https://console.cloud.tencent.com/cam/user) 页，选取对应子账号，单击【授权】。
+1. 在 [CAM 用户列表](https://console.cloud.tencent.com/cam/user) 页，选取对应子账号，单击**授权**。
     ![](https://main.qcloudimg.com/raw/3d6e465aa4d6d50233e125e599475585.png)
-2. 在弹出的窗口内，搜索并选中 `QcloudSLSFullAccess`，单击【确定】，完成授予子账号 Serverless Framework 所有资源的操作权限。
+2. 在弹出的窗口内，搜索并选中 `QcloudscfFullAccess`，单击**确定**，完成授予子账号 Serverless Cloud Framework 所有资源的操作权限。
     ![](https://main.qcloudimg.com/raw/80c98249cbdb327a80d8941ce54c962f.png)
 3. 在 [CAM 用户列表](https://console.cloud.tencent.com/cam/user) 页，选取对应子账号，单击用户名称，进入用户详情页。
     ![](https://main.qcloudimg.com/raw/00be606ee5a4f48dd956a8488f9f0d06.png)
-4. 单击【关联策略】，在添加策略页面单击【从策略列表中选取策略关联】>【新建自定义策略】。
+4. 单击**关联策略**，在添加策略页面单击**从策略列表中选取策略关联**>**新建自定义策略**。
 关联策略页面：
 ![](https://main.qcloudimg.com/raw/f08bcaaf91105a8fdb86a0487e6a734d.png)
 新建策略页面：
 ![](https://main.qcloudimg.com/raw/47ac3d10b3dcae6d828ccc056393cee3.png)
-5. 选择【按策略语法创建】>【空白模版】，填入如下内容，注意角色参数替换为您的主账号 UIN：
+5. 选择**按策略语法创建**>**空白模板**，填入如下内容，注意角色参数替换为您的主账号 UIN：
 ```
    {
     "version": "2.0",
@@ -124,7 +124,7 @@ $ sls deploy --login
                 "cam:PassRole"
             ],
             "resource": [
-                "qcs::cam::uin/${填入账号的uin}:roleName/SLS_QcsRole"
+                "qcs::cam::uin/${填入账号的uin}:roleName/scf_QcsRole"
             ],
             "effect": "allow"
         },
@@ -141,14 +141,14 @@ $ sls deploy --login
    }
 ```
 
-6. 完成自定义策略配置后，回到第4步的授权页面，搜索刚刚创建的自定义策略，单击【下一步】> 【确定】，即可授予子账号 SLS_QcsRole 的操作权限，此时，您的子账号应该拥有一个自定义策略和一个 **QcloudSLSFullAccess** 的预设策略，可以完成 Serverless Framework 的正常使用。
+6. 完成自定义策略配置后，回到第4步的授权页面，搜索刚刚创建的自定义策略，单击**下一步**> **确定**，即可授予子账号 scf_QcsRole 的操作权限，此时，您的子账号应该拥有一个自定义策略和一个 **QcloudscfFullAccess** 的预设策略，可以完成 Serverless Framework 的正常使用。
 ![](https://main.qcloudimg.com/raw/b062490a1703b7fac049c43c8e598c96.png)
- >?除了授权调用默认角色 SLS_QcsRole 外，也可给子账号授权调用自定义角色。通过自定义角色中的细粒度权限策略，达到权限收缩的目的。详情请参见 [指定操作角色配置](https://intl.cloud.tencent.com/document/product/1040/36819)。
+ >?除了授权调用默认角色 scf_QcsRole 外，也可给子账号授权调用自定义角色。通过自定义角色中的细粒度权限策略，达到权限收缩的目的。详情请参见 [指定操作角色配置](https://intl.cloud.tencent.com/document/product/1040/36819)。
 
 
 
 
-### SLS_QcsRole 角色权限列表 [](id:list)
+### scf_QcsRole 角色权限列表 [](id:list)
 
 | 策略                    | 描述                                  |
 | ----------------------- | ------------------------------------- |
@@ -159,12 +159,12 @@ $ sls deploy --login
 | QcloudAPIGWFullAccess   | APIGW（API 网关）全读写权限            |
 | QcloudVPCFullAccess     | VPC（私有网络）全读写权限             |
 | QcloudMonitorFullAccess | Monitor（云监控）全读写权限           |
-| QcloudSLSFullAccess     | SLS（Serverless Framework）全读写权限 |
+| QcloudslsFullAccess     | sls（Serverless Framework）全读写权限 |
 | QcloudCDNFullAccess     | CDN（内容分发网络）全读写权限         |
 | QcloudCKafkaFullAccess  | CKafka（消息队列 CKafka）全读写权限   |
 | QcloudCodingFullAccess  | CODING DevOps 全读写访问权限    |
 | QcloudPostgreSQLFullAccess | 云数据库 PostgreSQL 全读写访问权限 |
 | QcloudCynosDBFullAccess | 云数据库 CynosDB 全读写访问权限 |
 | QcloudCLSFullAccess    | 日志服务（CLS）全读写访问权限 |
-| QcloudAccessForSLSRole | 该策略供 Serverless Framework（SLS）服务角色（SLS_QCSRole）进行关联，用于 SLS 一键体验功能访问其他云服务资源。包含访问管理（CAM）相关操作权限|
+| QcloudAccessForscfRole | 该策略供 Serverless Framework（sls）服务角色（scf_QCSRole）进行关联，用于 scf 一键体验功能访问其他云服务资源。包含访问管理（CAM）相关操作权限|
 

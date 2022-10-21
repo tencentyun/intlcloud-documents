@@ -12,7 +12,7 @@
 - CREATE TEMPORARY TABLE은 지원되지 않습니다. 
 - CREATE/DROP/ALTER SERVER/LOGFILE GROUP은 지원되지 않습니다.
 - ALTER는 shardkey의 이름을 바꾸는 데 지원되지 않지만 유형을 변경하는 데 사용할 수 있습니다.
-- RENAME은 지원되지 않습니다.
+
 
 ### DML
 - SELECT INTO OUTFILE/INTO DUMPFILE/INTO var_name은 지원되지 않습니다.
