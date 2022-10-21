@@ -33,7 +33,7 @@ You can customize the timing of running a function, such as when a file is uploa
   The Tencent Cloud Serverless team works in many ways to provide convenient tools or capabilities that can meet the needs in a wide variety of development scenarios; for example:
 
 
-  - You can use [Serverless Framework](https://intl.cloud.tencent.com/product/sac) to create, debug, and package projects in your local development environment and then quickly deploy them online.
+  - You can use [Serverless Cloud Framework](https://intl.cloud.tencent.com/product/sac) to create, debug, and package projects in your local development environment and then quickly deploy them online.
   - With the aid of visual operations based on the VS Code plugin and IDE, online/offline management of functions and code writing and debugging can be performed at one single place. The VS Code IDE and plugin also enables local management, development, and debugging as well as online release of functions.
   - [Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) is supported; therefore, you can develop and debug projects in real time in the console, which delivers the same experience as local development and debugging and makes it easier for you to view and adjust code.
   - SCF supports Python, Node.js, Go, PHP, Java, and [Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129), so you can select a custom runtime environment as needed.
