@@ -33,7 +33,7 @@
   腾讯云 Serverless 团队从多方面着手，提供可以满足多种开发场景的相关工具或能力。例如：
 
 
-  - 使用 [Serverless Framework](https://intl.cloud.tencent.com/product/sac)，在本地开发环境中进行项目创建、本地调试打包、一键部署上线。
+  - 使用 [Serverless Cloud Framework](https://intl.cloud.tencent.com/product/sac)，在本地开发环境中进行项目创建、本地调试打包、一键部署上线。
   - 通过 VS Code 插件，及 IDE 可视化操作，将函数的线上线下管理及代码编写调试，整合在一个界面中完成。VS Code IDE 及插件还提供了函数的本地管理、开发调试、上线发布功能。
   - 支持 [Web IDE](https://intl.cloud.tencent.com/document/product/583/39962)，在控制台上实时的开发调试，与本地开发调试的体验相同，方便代码的调整或查看。
   - 支持 Python、Node.js、Golang、PHP、Java 等语言，同时支持 [Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129)，您可以根据您的需要自定义运行环境。
@@ -45,7 +45,7 @@
 
 #### 多样化触发，支持更多业务场景
 
-  触发方式包括API,SDK，以及其他多种云服务产品的事件例如COS, AP网关等。多种触发选择支持更多使用场景。
+  触发方式包括API,SDK，以及其他多种云服务产品的事件例如COS, API网关等。多种触发选择支持更多使用场景。
 
 #### 自动化弹性执行，贴合调用曲线
 
