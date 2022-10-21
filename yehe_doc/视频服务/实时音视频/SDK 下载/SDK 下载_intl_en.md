@@ -15,7 +15,7 @@
    href="//cloudcache.tencentcs.com/qcloud/main/components/document-feedback/document-feedback.944df9c907.css" />
 
 <style>
-    * {
+  * {
       font-family: 'pingfang SC', 'helvetica neue', arial, 'hiragino sans gb', 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
    }
 
@@ -27,6 +27,7 @@
       box-sizing: border-box;
       white-space: nowrap;
       border: 0;
+      height: 100%;
    }
 
    .card-box .left-section {
@@ -47,6 +48,14 @@
       display: inline-block;
       vertical-align: top;
       margin-left: 25px;
+      width: 63%;
+   }
+
+   .rno-markdown ul>li {
+      position: relative;
+      margin-bottom: 0px;
+      padding-left: 18px;
+      list-style: none;
    }
 
    .card-box .section-content {
@@ -54,7 +63,7 @@
    }
 
    .card-box .doc-section .section-content {
-      width: 800px;
+      width: 100%;
       overflow: hidden;
    }
 
@@ -83,6 +92,7 @@
 
    .card-box .doc-section {
       margin-top: 18px;
+      width: 100%;
    }
 
    .card-box .doc-section .doc-link:nth-child(3n+1) {
@@ -90,14 +100,13 @@
    }
 
    .card-box .doc-section .doc-link {
-      width: 250px;
       float: left;
       background: #FFFFFF;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
       border-radius: 24px;
       padding: 5px 10px;
       text-align: center;
-      margin-left: 10px;
+      margin-left: 8px;
       margin-top: 10px;
    }
 
@@ -185,6 +194,10 @@
    }
 
    .rno-tabs-operation-item {
+      padding-bottom: 20px;
+   }
+
+   .rno-tabs-operation-item>a {
       padding-bottom: 20px;
    }
 
