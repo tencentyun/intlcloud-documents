@@ -21,4 +21,4 @@
    |CAM用户密码|	输入管理员提供的初始密码。</br>新创建的子账号首次登录时，需要根据页面提示修改密码。|
 
 5. 登录后找到控制台，点击**渠道管理**菜单入口访问经销商平台。
- ![](https://qcloudimg.tencent-cloud.cn/raw/3ecf8efc00097bce35f5242ba4fc6b2b.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/5bc5b4a31b9f920d260033267341294c.png)
