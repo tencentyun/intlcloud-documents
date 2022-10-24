@@ -29,7 +29,7 @@ Before mounting, you need to check the network connectivity between the client a
 
 File System Protocol | Port  | Check Network Connectivity
 ------- | ------- | ---------
-NFS 3.0 | 111, 892, 2049 | telnet 111 or 892 or 2049
+NFS 3.0 | 111, 892,and 2049 | telnet 111,892,and 2049
 NFS 4.0 | 2049 |  telnet 2049
 CIFS/SMB | 445 |  telnet 445 
 

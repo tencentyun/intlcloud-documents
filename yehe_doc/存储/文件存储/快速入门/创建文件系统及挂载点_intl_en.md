@@ -7,7 +7,7 @@ This document describes how to create a file system and mount point on the file 
 ### 1. Sign up for a Tencent Cloud account
 
 If you already have a Tencent Cloud account, ignore this step.
-<div style="background-color:#00A4FF; width: 320px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 320px; height: 35px; line-height:35px; text-align:center;"><a href="https://www.tencentcloud.com/en/account/register"_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
 
 ### 2. Enter the file system page
 
@@ -57,7 +57,7 @@ For more information on CFS storage types, see [Storage Types and Performance](h
   </tr>
 	 <tr>
     <td>CCN</td>
-    <td>Required only for the Turbo series. Select an existing CCN or create a new one. For more information, see <a href="https://cloud.tencent.com/product/ccn">Cloud Connect Network</a>. 
+    <td>Required only for the Turbo series. Select an existing CCN or create a new one. For more information, see <a href="https://www.tencentcloud.com/products/ccn">Cloud Connect Network</a>. 
   </tr>
 	<tr>
     <td>IP Range</td>

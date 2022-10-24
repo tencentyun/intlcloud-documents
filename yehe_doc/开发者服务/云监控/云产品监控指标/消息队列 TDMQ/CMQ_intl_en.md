@@ -22,7 +22,7 @@ Namespace = QCE/TDMQ
 | StorageSize | The message heap size | B | environmentId, tenantId, topicName | 60s, 300s, 3600s |
 | MsgAverageSize | The average produced message size | B | environmentId, tenantId, topicName | 60s, 300s, 3600s |
 | StorageBacklogPercentage | The percentage of the used message heap quota | % | environmentId, tenantId, topicName | 60s, 300s, 3600s |
-| CmqRequestCount | This metric is used to calculate the number of API calls but is not the actual number of calls. | - | appId, resourceId, resourceName | 60s, 300s, 3600s |
+| CmqRequestCount | This metric is used to calculate the fees of API calls rather than the actual number of calls. | - | appId, resourceId, resourceName | 60s, 300s, 3600s |
 
 ## Dimensions and Parameters
 

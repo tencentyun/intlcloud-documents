@@ -8,12 +8,12 @@ With rich data provided by this module, bot traffic analysis can quickly analyze
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Bot Traffic Analysis** on the left sidebar.
 2. On the page that appears, click **All domain names** in the upper-left corner.
 3. If you select a specific domain name, then click **View configuration**. You will be redirected to the bot and application security page.
-![](https://qcloudimg.tencent-cloud.cn/raw/c408ef612fc3ff0be613c067ad18ddc6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4d30708ce91fb5be36346543dda18d29.png)
 4. Specify a date or use the filter to search data of a specific domain name.
     - By specifying a date, you can search data of a specific domain name within the specified period.
-        ![](https://qcloudimg.tencent-cloud.cn/raw/adbe8d2f6643d3cf631329fd808d07fe.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/5dda8e94571305f5f92fb9a3f247d07c.png)
     - By setting the filter, you can add conditions to filter out data you need.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/9187c911de28baefa8f6a49902d2c722.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/238cecfe5b5b8c9c051ec3bfa08868b6.png)
 5. In the Requests section, you can view requests that are identified as different types of bots and the bot session scores.
    - According to the action and score you configure, requests sent to a website are scored and categorized.
     ![](https://qcloudimg.tencent-cloud.cn/raw/2af9fc64262416e63eb99c7943d6a05f.png)

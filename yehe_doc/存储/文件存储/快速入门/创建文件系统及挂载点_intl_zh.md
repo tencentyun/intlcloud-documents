@@ -7,7 +7,7 @@
 ### 1. 注册腾讯云账号
 
 如果您已在腾讯云注册，可忽略此步骤。
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://www.tencentcloud.com/en/account/register" target="_blank"  style="color: white; font-size:16px;">点此注册腾讯云账号</a></div>
 
 ### 2. 进入文件系统界面
 
@@ -57,7 +57,7 @@
   </tr>
 	 <tr>
     <td>云联网</td>
-    <td>仅 Turbo 系列需填写云联网，需选择一个现有云联网或新创建一个。详细用途可参考 <a href="https://cloud.tencent.com/product/ccn">云联网介绍</a>。 
+    <td>仅 Turbo 系列需填写云联网，需选择一个现有云联网或新创建一个。详细用途可参考 <a href="https://www.tencentcloud.com/products/ccn">云联网介绍</a>。 
   </tr>
 	<tr>
     <td>网段</td>
