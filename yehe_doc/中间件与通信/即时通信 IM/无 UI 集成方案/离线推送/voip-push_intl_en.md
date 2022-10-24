@@ -86,8 +86,8 @@ After the Push Notifications capability is enabled for your app (AppID), generat
 
     > ? Set the password when saving the `.p12` file.
 
-  []()
-		<img src="https://im.sdk.cloud.tencent.cn/tools/resource/voip/9.png" style="zoom:70%;" />
+  ![](https://im.sdk.cloud.tencent.cn/tools/resource/voip/9.png)
+
 
 
 

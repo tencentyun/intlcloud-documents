@@ -99,13 +99,13 @@ VoIP（Voice over IP）Push 是 Apple 提供的用于响应 VoIP calls 的通知
 
 1. 选择您的 IM 应用，在 **离线推送证书配置** 选项卡中，点击 **添加证书**；
 
-   <img src="https://im.sdk.cloud.tencent.cn/tools/resource/voip/8.png" style="zoom:35%;" />
+   <img src="https://qcloudimg.tencent-cloud.cn/raw/bf16c9502fb348eef784c781038bcd02.png" style="zoom:35%;" />
 
-2. 在弹出的 **添加 iOS 证书** 选项卡中，分别上传生产环境和开发环境的 VoIP 证书；
+2. 在弹出的 **添加 iOS 证书** 选项卡中，上传生产环境和开发环境的 VoIP 证书；
 
    > ? 
    >
-   > - VoIP Push 证书本身不区分生产环境和测试环境，生产环境和开发环境使用的是同一份 VoIP Push 证书，请分别上传。
+   > - VoIP Push证书不区分生产环境和测试环境，只需要上传同一份证书就会自动生成生产环境和测试环境所需要的证书ID。
    > - 上传证书名最好使用全英文（尤其不能使用括号等特殊字符）。
    > - 上传证书需要设置密码，无密码收不到推送。
    > - 发布 App Store 的证书需要设置为生产环境，否则无法收到推送。
