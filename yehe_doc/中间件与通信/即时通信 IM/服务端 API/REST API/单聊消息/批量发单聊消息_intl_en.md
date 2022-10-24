@@ -121,7 +121,7 @@ Here, we use sending a text message as an example. To send messages of other typ
 | CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
 | SendMsgControl | Array | No | Message sending control option. It is a string array and is valid only for the current request. `NoUnread` means not to include this message in the unread count, and `NoLastMsg` means not to refresh the conversation list. `WithMuteNotifications` means to enable the Mute Notifications option for the message recipient (the option is disabled by default). Example: "SendMsgControl": ["NoUnread","NoLastMsg","WithMuteNotifications"] |
 | OfflinePushInfo | Object | No | The information to be pushed offline. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-
+| IsNeedReadReceipt | Integer | Optional | Whether the message requires a read receipt. Valid values: `0` (default) for no; `1` for yes. |
 
 
 ### Sample response
@@ -200,7 +200,7 @@ The following table describes the error codes specific to this API:
 
 
 ## API Debugging Tool
-Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/batchsendmsg) to debug this API.
+Use the [RESTful API online debugging tool](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to debug this API.
 
 ## References
 - Sending One-to-One Messages to One User ([v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919))
