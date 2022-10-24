@@ -5,24 +5,25 @@
 调用 SDK 的相关接口前，您需要调用如下方法配置 License：
 - **iOS**
  建议在 `[AppDelegate application:didFinishLaunchingWithOptions:]` 中添加： 
+
 ```
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString * const licenceURL = @"<获取到的licenseUrl>";
     NSString * const licenceKey = @"<获取到的key>";
-
     // V2TXLivePremier 位于 "V2TXLivePremier.h" 头文件中
     [V2TXLivePremier setLicence:licenceURL key:licenceKey];
     [V2TXLivePremier setObserver:self];
     NSLog(@"SDK Version = %@", [V2TXLivePremier getSDKVersionStr]);
     return YES;
 }
-
 #pragma mark - V2TXLivePremierObserver
 - (void)onLicenceLoaded:(int)result Reason:(NSString *)reason {
     NSLog(@"onLicenceLoaded: result:%d reason:%@", result, reason);
 }
 @end
 ```
+
 -  **Android**
  建议在 application 中添加：
 ```
@@ -64,17 +65,16 @@ TXLiveBase.getInstance().getLicenceInfo();
 在调用 SDK 的相关接口前调用如下所示方法进行 License 的设置。
 - **iOS**
  建议在 `[AppDelegate application:didFinishLaunchingWithOptions:]` 中添加： 
+
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString * const licenceURL = @"<获取到的licenseUrl>";
     NSString * const licenceKey = @"<获取到的key>";
-
     //TXUGCBase 位于 "TXUGCBase.h" 头文件中
     [TXUGCBase setLicenceURL:licenceURL key:licenceKey]; 
     NSLog(@"SDK Version = %@", [TXUGCBase getSDKVersionStr]);
     return YES;
 }
-
 - (void)onLicenceLoaded:(int)result Reason:(NSString *)reason {
     NSLog(@"onLicenceLoaded: result:%d reason:%@", result, reason);
 }
