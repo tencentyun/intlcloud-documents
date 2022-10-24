@@ -163,7 +163,7 @@ The private error codes for this API are as follows:
 | 91000 | An internal service error occurred. Please try again. |
 
 ## API Debugging Tool
-To debug this API, you can use the [Online RESTful API Debugging Tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/querystate).
+To debug this API, you can use the [Online RESTful API Debugging Tool](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US).
 
 ## References
 
