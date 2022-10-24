@@ -16,7 +16,9 @@ cd /usr/local/qcloud/monitor/barad/admin
 ```plaintext
 ./uninstall.sh
 ```
->?  BaradAgent 上报云服务器部分指标数据，卸载 BaradAgent 后会停止数据上报。Sgagent 基本占用极少的内存，您也可以参考下列步骤卸载 Sgagent 。
+<dx-alert infotype="explain" title="">
+BaradAgent 上报云服务器部分指标数据，卸载 BaradAgent 后会停止数据上报。Sgagent 基本占用极少的内存，您也可以参考下列步骤卸载 Sgagent 。
+</dx-alert>
 
 #### 步骤二：卸载 Sgagent
 1. 执行以下命令，进入 Sgagent 安装目录。
@@ -51,7 +53,9 @@ cd /usr/local/qcloud/stargate/admin
 ```
 
 ### 停止监控组件
->?需要同时停止 Sgagent 和 BaradAgent，云服务器部分指标的监控数据才会停止上报。如需暂时停止上报数据的 BaradAgent，参考 [停止 BaradAgent 步骤](#step1) 停止 BaradAgent，但一分钟后 Sgagent 会触发 BaradAgent 服务，继续上报监控数据。如需要一直停止上报数据请参考下列步骤，先停止 Sgagent 服务再停止BaradAgent。
+<dx-alert infotype="explain" title="">
+需要同时停止 Sgagent 和 BaradAgent，云服务器部分指标的监控数据才会停止上报。如需暂时停止上报数据的 BaradAgent，参考 [停止 BaradAgent 步骤](#step1) 停止 BaradAgent，但一分钟后 Sgagent 会触发 BaradAgent 服务，继续上报监控数据。如需要一直停止上报数据请参考下列步骤，先停止 Sgagent 服务再停止BaradAgent。
+</dx-alert>
 
 1. 执行下列删除定时 Sgagent 文件。
 ```
@@ -81,7 +85,10 @@ cd /usr/local/qcloud/monitor/barad/admin
 ```plaintext
 ./stop.sh
 ```
->?执行成功后不会自动拉起服务，监控监控数据会丢失，请谨慎操作，如需重新开启服务需开启两个组件服务。
+<dx-alert infotype="explain" title="">
+执行成功后不会自动拉起服务，监控监控数据会丢失，请谨慎操作，如需重新开启服务需开启两个组件服务。
+</dx-alert>
+
 :::
 ::: Windows
 #### 启动、重启、停止 BaradAgent 和 Sgagent
@@ -102,12 +109,3 @@ uninstall.bat
 ```
 :::
 </dx-tabs>
-
-
-
-
-
-
-
-
-
