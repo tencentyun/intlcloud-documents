@@ -6,9 +6,10 @@ Linux 用户在部分场景下需要进入到单用户模执行特殊或维护�
 2. 在 VNC 登录界面，选择左上角的**发送远程命令**>**Ctrl-Alt-Delete**，并在弹出窗口中单击**确定**。
 3. 在出现连接失败提示信息时，快速刷新页面并按上下键（↑↓），使系统停留在 grub 菜单。如下图所示：
 ![](https://main.qcloudimg.com/raw/350187ce0a771d00e6d54e929291ebae.png)
-4. 按 **c** 进入 grub 模式。
+4. 按 **e** 进入 grub 模式。
 5. 进入 grub 模式后，您需根据实际使用的操作系统类型，选择不同的操作步骤：
-#### CentOS 6.x
+<dx-tabs>
+::: CentOS\s6.x
 1. 在 grub 模式界面，选择内核。如下图所示：
 ![](https://main.qcloudimg.com/raw/5abc9f57184cc74bba927513fb1c4a88.png)
 2. 按 **e** 进入内核编辑界面，使用 ↑↓ 键选择 **kernel** 所在行，再次按 **e**。如下图所示：
@@ -19,10 +20,12 @@ Linux 用户在部分场景下需要进入到单用户模执行特殊或维护�
 ![](https://main.qcloudimg.com/raw/b379937bfc15e93f0823ec50095d1dc6.png)
 如下图所示，则已成功进入单用户模式。
 ![](https://main.qcloudimg.com/raw/517c4d2c24864f3fc8f5002bd1e2c2a1.png)
->?您可执行 `exec /sbin/init` 命令，退出单用户模式。
->
+<dx-alert infotype="explain" title="">
+您可执行 `exec /sbin/init` 命令，退出单用户模式。
+</dx-alert>
 
-#### CentOS 7.x
+:::
+::: CentOS\s7.x
 1. 在 grub 模式界面，选择内核。如下图所示：
 ![](https://main.qcloudimg.com/raw/2ddc7d1e4416d9fa763922e23b59d580.png)
 2. 按 **e** 进入内核编辑界面，使用 ↑↓ 键定位至 linux16 开头行，将 `ro` 替换为 `rw init=/bin/bash` 或 `/usr/bin/bash`。如下图所示：
@@ -30,10 +33,12 @@ Linux 用户在部分场景下需要进入到单用户模执行特殊或维护�
 3. 按 **Ctrl+X**，启动并进入单用户模式。
 如下图所示，则已成功进入单用户模式。
 ![](https://main.qcloudimg.com/raw/fbe8cfcf43aa4c914882edc4c3ee5faf.png)
->?您可执行 `exec /sbin/init` 命令，退出单用户模式。
->
+<dx-alert infotype="explain" title="">
+您可执行 `exec /sbin/init` 命令，退出单用户模式。
+</dx-alert>
 
-#### CentOS 8.0
+:::
+::: CentOS\s8.0
 1. 在 grub 模式界面，选择内核。如下图所示：
 ![](https://main.qcloudimg.com/raw/a6ce701e5845141929d822635bd42b9a.png)
 2. 按 **e** 进入内核编辑界面，使用 ↑↓ 键定位至 linux 开头行，将 `ro` 替换为 `rw init=/sysroot/bin/bash` 。如下图所示：
@@ -41,8 +46,8 @@ Linux 用户在部分场景下需要进入到单用户模执行特殊或维护�
 3. 按 **Ctrl+X**，启动并进入单用户模式。
 如下图所示，则已成功进入单用户模式。
 ![](https://main.qcloudimg.com/raw/126dcdb5916e57815c3632e9e4b24412.png)
-
-#### Ubuntu 或 Debian
+:::
+::: Ubuntu\s或\sDebian
 1. 在 grub 模式界面，选择内核。如下图所示：
 ![](https://main.qcloudimg.com/raw/c3c0be766481edf3f6521f7764f8d4cb.png)
 2. 按 **e** 进入内核编辑界面，使用 ↑↓ 键定位至 linux 开头行，在行末添加 `quiet splash rw init=/bin/bash `。如下图所示：
@@ -50,15 +55,15 @@ Linux 用户在部分场景下需要进入到单用户模执行特殊或维护�
 3. 按 **Ctrl+X**，启动并进入单用户模式。
 如下图所示，则已成功进入单用户模式。
 ![](https://main.qcloudimg.com/raw/df55d20b7eb087744fb6283c5124e7fc.png)
-
-#### SUSE
+:::
+::: SUSE
 1. 在 grub 模式界面，选择内核。如下图所示：
 ![](https://main.qcloudimg.com/raw/4da4d0c5c98e4f0dbe4990e920a11daf.png)
 2. 按 **e** 进入内核编辑界面，使用 ↑↓ 键定位至 linux 开头行，在 `splash` 参数前添加 `rw`，在后面添加`1`。如下图所示：
 ![](https://main.qcloudimg.com/raw/013a0099ccb5c19d04441dd60ea7558b.png)
 3. 按 **Ctrl+X**，启动并进入单用户模式。
-
-#### tlinux
+:::
+::: tlinux
 1. 在 grub 模式界面，选择内核。如下图所示：
 ![](https://main.qcloudimg.com/raw/c497e63321b76e5cd1f0eea06f53cdb2.png)
 2. 按 **e** 进入内核编辑界面，使用 ↑↓ 键选择 **kernel** 所在行，再次按 **e**。如下图所示：
@@ -66,4 +71,5 @@ Linux 用户在部分场景下需要进入到单用户模执行特殊或维护�
 3. 在行末，即在 256M 空格后添加`1`。如下图所示：
 ![](https://main.qcloudimg.com/raw/06efb32e3a2edb39f32e13be1ab8527f.png)
 4. 按 **Enter** 即可进入单用户模式。
-
+:::
+</dx-tabs>
