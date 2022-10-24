@@ -86,8 +86,8 @@ VoIP（Voice over IP）Push 是 Apple 提供的用于响应 VoIP calls 的通知
 
     > ? 保存`P12`文件时，请务必要为其设置密码。
 
-  []()
-		<img src="https://im.sdk.cloud.tencent.cn/tools/resource/voip/9.png" style="zoom:70%;" />
+  ![](https://im.sdk.cloud.tencent.cn/tools/resource/voip/9.png)
+		
 
 
 
@@ -115,13 +115,12 @@ VoIP（Voice over IP）Push 是 Apple 提供的用于响应 VoIP calls 的通知
 
 3. 上传完成后，记录不同环境下的证书 ID。
 
-   > ? 开发环境和生产环境下的证书 ID 要严格区分，并在 [步骤四：上报 token](#upload_token) 时根据实际环境填写。
+ > ? 开发环境和生产环境下的证书 ID 要严格区分，并在 [步骤四：上报 token](#upload_token) 时根据实际环境填写。
 
    [](todo: 此处待控制台截图)
 
-   
 
-[](id: apply_token)
+[](id:apply_token)
 
 ### 步骤3：App 向苹果获取 token
 
