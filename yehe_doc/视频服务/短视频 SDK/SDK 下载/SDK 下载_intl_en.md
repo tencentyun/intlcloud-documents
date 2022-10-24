@@ -71,7 +71,7 @@
    </tr>
    <tr>
       <td>Fast/slow motion shooting.</td>
-      <td>Shooting slow- or fast-motion videos </td>
+      <td>Shoot slow- or fast-motion videos. </td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
