@@ -72,7 +72,7 @@ https://xxxxxx/v4/im_open_login_svc/kick?sdkappid=88888888&identifier=admin&user
 | 70500 | 服务器内部错误，请稍后重试 |
 
 ## 接口调试工具
-通过 [REST API 在线调试](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/kick) 工具调试本接口。
+通过 [REST API 在线调试](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 工具调试本接口。
 
 ## 参考
 
