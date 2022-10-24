@@ -119,7 +119,7 @@ https://xxxxxx/v4/sns/black_list_check?sdkappid=88888888&identifier=admin&usersi
 | 30007  | 网络超时，请稍后重试                                         |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/black_list_check) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
 
 ## 参考
 - 删除黑名单（<a href="https://intl.cloud.tencent.com/document/product/1047/34912">v4/sns/black_list_delete</a>）
