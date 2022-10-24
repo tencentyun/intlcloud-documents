@@ -72,7 +72,7 @@ The following table describes the error codes specific to this API.
 | 70500 | An internal server error has occurred. Please try again later. |
 
 ## Debugging Tool
-Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/kick) to debug this API.
+Use the [RESTful API online debugging tool](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to debug this API.
 
 ## References
 
