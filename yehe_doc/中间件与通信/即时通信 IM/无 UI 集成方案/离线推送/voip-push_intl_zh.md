@@ -231,9 +231,3 @@ pushInfo.iOSPushType = V2TIM_IOS_OFFLINE_PUSH_TYPE_VOIP;	// 标记为 VoIP Push
 
 
 
-[](id:feedback)
-
-## 交流与反馈
-
-欢迎加入 QQ 群进行技术交流和反馈问题。
-<img src="https://sdk-im-1252463788.cos.ap-hongkong.myqcloud.com/tools/resource/officialwebsite/pictures/doc_sdk_qq_group.jpg" style="zoom:20%;"/>
