@@ -104,7 +104,7 @@ The following table describes the error codes specific to this API.
 
 ## API Commissioning Tool
 
-Use the [RESTful online commissioning tool for APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/black_list_get) to commission this API.
+Use the [RESTful online commissioning tool for APIs](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to commission this API.
 
 ## References
 
