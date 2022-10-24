@@ -15,7 +15,7 @@
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td rowspan='18'>Capturing and shooting.</td>
+      <td rowspan='18'>Capturing and shooting</td>
       <td>Aspect ratio</td>
       <td>Shoot videos in the aspect ratio of 16:9, 4:3, or 1:1</td>
       <td style="text-align:center">&#10003;</td>
