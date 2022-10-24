@@ -1,10 +1,11 @@
 ## Notes
 - You can only use npm to install the SDK for mini program.
 - The SDK supports WeChat Mini Program and QQ Mini Program.
+- To connect to a mini program in the production environment, you need to add the reporting domain as a secure domain.
 
-> ?`aegis-sdk` uses `aegis.qq.com` as the reporting domain by default. You can also use `tamaegis.com` as the reporting domain.
-
->! To connect to a mini program in the production environment, you need to add the reporting domain as a secure domain.
+> ?`aegis-sdk` uses `https://aegis.qq.com` as the domain name to be reported by default. You can use the `hostUrl` parameter to configure the domain name to be reported.
+For regions in the Chinese mainland, you can choose `https://tamaegis.com` as the domain name to be reported.
+For Singapore region, you can choose `https://rumt-sg.com` as the domain name to be reported.
 
 ## Installing SDK
 

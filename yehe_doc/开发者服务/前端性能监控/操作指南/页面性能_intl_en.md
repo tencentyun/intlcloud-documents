@@ -1,7 +1,7 @@
 This document describes how to use the page performance feature. It allows you to use performance change trend chart, page loading waterfall plot, region view, and other dimensions to analyze key page performance metrics, such as `firstScreenTime` and request response.
 
 ## Prerequisites
-You have [connected your application](https://intl.cloud.tencent.com/document/product/1131/44496).
+You have connected an application. For detailed directions, see [Application Connection](https://intl.cloud.tencent.com/document/product/1131/44496).
 
 ## Directions
 1. Log in to the [RUM console](https://console.cloud.tencent.com/rum).
@@ -11,12 +11,12 @@ You have [connected your application](https://intl.cloud.tencent.com/document/pr
 
 ### Performance view
 It displays the change trends of key page performance metrics.
-- You can click a legend above the chart to hide or show the corresponding data.
-![](https://qcloudimg.tencent-cloud.cn/raw/777c49ca905a01d5a5a451a5b79de832.png)
+- You can click a legend above the chart to hide or show the corresponding data. ![](https://qcloudimg.tencent-cloud.cn/raw/777c49ca905a01d5a5a451a5b79de832.png)
 - You can display the trend for the specified time period or the past 14 days.
 - You can drag the curve to display the FMP at a specific time point.
-- You can drag the round buttons left and right to adjust the time span of the chart.
+- You can mouse over the chart and scroll up and down to adjust its time span.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2bb98048724cbe53cfc2a4e13e51df19.png)
+
 
 ### Page loading waterfall plot
 You can use the page loading waterfall plot to view the duration of each phase and optimize the page performance accordingly.
@@ -57,12 +57,12 @@ The following figure shows that your LCP is at the "Needs Improvement" level, an
 | Brand/Model view | It uses a pie chart to display the number of exceptions, percentage, and firstScreenTime of pages from each mobile phone brand/model. |
 | Browser view | It uses a pie chart to display the number of exceptions, percentage, and firstScreenTime of pages from each browser. |
 | Version view | It uses a pie chart to display the number of exceptions, percentage, and firstScreenTime of pages from each application version. You can use `new Aegis` to pass in `version` during application connection to customize the version information related to development. The SDK version is used by default. |
-| ext1/ext2/ext3 views | They are custom views. You can customize their parameters passed in during reporting. |
+|ext1/ext2/ext3 views| They are custom views. You can customize their parameters passed in during reporting. For details, see [Connection Guide](https://www.tencentcloud.com/document/product/1131/44517).|
 
 
 ### Metric description
 
-| Metric Name | Unit | Description |
+| Metric Name |Unit | Description |
 |---------|---------|---------|
 | First Meaningful Paint (FMP) | ms | It is the duration between when the user requests to open a new page and when the browser renders the first meaningful paint. |
 | Complete page loading duration | ms | It is the duration between when the user requests to open a new page and when the browser completely renders the corresponding page.<br>Complete page loading duration = TCP connection + DNS query + SSL connection + TTFB + DOM parsing + resource loading durations |
