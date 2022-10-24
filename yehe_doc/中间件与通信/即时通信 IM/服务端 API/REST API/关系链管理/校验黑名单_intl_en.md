@@ -119,7 +119,7 @@ The following table describes the error codes specific to this API.
 | 30007 | The network connection timed out. In this case, try again later. |
 
 ## API Commissioning Tool
-Use the [RESTful online commissioning tool for APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/black_list_check) to commission this API.
+Use the [RESTful online commissioning tool for APIs](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to commission this API.
 
 ## References
 - Removing users from blocklist <a href="https://intl.cloud.tencent.com/document/product/1047/34912">v4/sns/black_list_delete</a>）
