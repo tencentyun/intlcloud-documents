@@ -18,7 +18,6 @@ This document describes how to create, terminate and delete a job in the BatchCo
 7. Click **Done** to complete the process.   
 	
 ### Terminating a Job
-
 You can terminate a job under certain conditions. For more information, see [TerminateTaskInstance](https://intl.cloud.tencent.com/document/product/599/30489). See directions below:
 1. Log in to the BatchCompute console, and select **[Job](https://console.cloud.tencent.com/batch/job)** in the left sidebar.
 2. Click **Terminate** on the right of the target job.
