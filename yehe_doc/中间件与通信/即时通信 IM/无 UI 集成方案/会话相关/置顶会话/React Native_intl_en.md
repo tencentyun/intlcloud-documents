@@ -4,7 +4,7 @@ Pinning a conversation to the top is to fix a one-to-one or group conversation a
 
 ## Pinning a Conversation to the Top
 
-Call the `pinConversation` API ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#pinConversation)) to set whether to pin a conversation to the top.
+Call the `pinConversation` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/pinConversation.html)) to set whether to pin a conversation to the top.
 
 The conversations are sorted based on the `orderKey` field of the `V2TimConversation` object. This field is an integer that increases as the conversation is activated when a message is sent/received, a draft is set, or the conversation is pinned to the top.
 
@@ -22,7 +22,7 @@ conversationManager.pinConversation("conversationID", isPinned);
 
 ## Notification of the Pinned Status Change
 
-If you have called `addConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#addConversationListener)) in advance to add a conversation listener, you can get the `isPinned` value of the `V2TimConversation` object in `onConversationChanged` and determine whether the pinned status of a conversation has changed.
+If you have called `addConversationListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/addConversationListener.html)) in advance to add a conversation listener, you can get the `isPinned` value of the `V2TimConversation` object in `onConversationChanged` and determine whether the pinned status of a conversation has changed.
 Below is the sample code:
 
 ```javascript

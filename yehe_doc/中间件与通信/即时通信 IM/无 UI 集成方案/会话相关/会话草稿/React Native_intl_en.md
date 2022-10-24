@@ -9,7 +9,7 @@ When sending a message, the user may want to switch to another chat window befor
 
 ## Setting a Conversation Draft
 
-Call the `setConversationDraft` API ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#setConversationDraft)) to set a conversation draft.
+Call the `setConversationDraft` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/setConversationDraft.html)) to set a conversation draft.
 If the `draftText` parameter of this API is empty, the draft is canceled.
 
 Below is the sample code:

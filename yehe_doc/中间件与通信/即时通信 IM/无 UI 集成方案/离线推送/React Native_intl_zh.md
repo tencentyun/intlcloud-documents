@@ -147,7 +147,7 @@ const initPushPlugin = () => {
 
 ### 步骤 3: 发消息时设置离线推送参数
 
-发送消息时，请您设置离线推送参数，具体请参见 [发消息时设置离线推送参数](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessage)
+发送消息时，请您设置离线推送参数，具体请参见 [发消息时设置离线推送参数](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)
 
 ```javascript
 import { TencentImSDKPlugin } from 'react-native-tim-js';
@@ -184,7 +184,7 @@ OPPO 手机收不到推送一般有以下几种情况：
 
 #### 2、发送消息为自定义消息
 
-自定义消息的离线推送和普通消息不太一样，自定义消息的内容我们无法解析，不能确定推送的内容，所以默认不推送，如果您有推送需求，需要您在 [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) 的时候设置 [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) 的 [desc](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) 字段，推送的时候会默认展示 desc 信息。
+自定义消息的离线推送和普通消息不太一样，自定义消息的内容我们无法解析，不能确定推送的内容，所以默认不推送，如果您有推送需求，需要您在 [sendMessage](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html) 的时候设置 [offlinePushInfo](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimOfflinePushInfo.html) 的 [desc](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimOfflinePushInfo.html#desc) 字段，推送的时候会默认展示 desc 信息。
 
 #### 3、设备通知栏设置影响
 

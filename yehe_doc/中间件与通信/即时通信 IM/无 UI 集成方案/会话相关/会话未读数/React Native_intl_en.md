@@ -16,7 +16,7 @@ Below are detailed steps.
 
 ### Getting the total unread count
 
-Call `getTotalUnreadMessageCount` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#getTotalUnreadMessageCount)) to get the total unread count of all the conversations and update it on the UI.
+Call `getTotalUnreadMessageCount` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/getTotalUnreadMessageCount.html)) to get the total unread count of all the conversations and update it on the UI.
 
 Below is the sample code:
 
@@ -27,9 +27,9 @@ const unread = await conversationManager.getTotalUnreadMessageCount();
 
 ### Notification of a change in the total unread count
 
-Call `addConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#addConversationListener)) to add a conversation listener to receive notifications of a change in the total unread count.
+Call `addConversationListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/addConversationListener.html)) to add a conversation listener to receive notifications of a change in the total unread count.
 
-You can get the changed total unread count in `onTotalUnreadMessageCountChanged` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimConversationListener-1.html#onTotalUnreadMessageCountChanged)) of `V2TIMConversationListener`.
+You can get the changed total unread count in `onTotalUnreadMessageCountChanged` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnTotalUnreadMessageCountChanged.html)) of `V2TIMConversationListener`.
 
 Below is the sample code:
 
@@ -56,7 +56,7 @@ Below are detailed steps.
 
 ### One-to-one chat
 
-Call `markC2CMessageAsRead` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#markC2CMessageAsRead)) to clear the unread count of a specified one-to-one conversation.
+Call `markC2CMessageAsRead` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/markC2CMessageAsRead.html)) to clear the unread count of a specified one-to-one conversation.
 
 Below is the sample code:
 
@@ -91,7 +91,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().addAdvancedMsgListener({
 
 ### Group chat
 
-Call `markGroupMessageAsRead` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#markGroupMessageAsRead)) to clear the unread count of a specified group conversation.
+Call `markGroupMessageAsRead` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/markGroupMessageAsRead.html)) to clear the unread count of a specified group conversation.
 
 Below is the sample code:
 
@@ -115,7 +115,7 @@ conversationManager.addConversationListener({
 
 ### All conversations
 
-Call `markAllMessageAsRead` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#markAllMessageAsRead)) to clear the unread count of all the conversations.
+Call `markAllMessageAsRead` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/markAllMessageAsRead.html)) to clear the unread count of all the conversations.
 
 Below is the sample code:
 

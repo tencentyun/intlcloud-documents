@@ -4,9 +4,9 @@ Users can set and get their nicknames, profile photos, and statuses as well as t
 
 ## Relationship Chain Event Listener
 
-Call `addFriendListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#addFriendListener)) to add a relationship chain event listener.
+Call `addFriendListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/addFriendListener.html)) to add a relationship chain event listener.
 
-To stop receiving relationship chain events, call `removeFriendListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#removeFriendListener)) to remove the relationship chain event listener.
+To stop receiving relationship chain events, call `removeFriendListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/removeFriendListener.html)) to remove the relationship chain event listener.
 
 > ! You need to set the relationship chain event listener in advance to receive event notifications.
 
@@ -33,10 +33,10 @@ friendshipManager.removeFriendListener(frindshipListener);
 
 ### Querying and modifying your own profile
 
-Call the `getUsersInfo` API ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#getUsersInfo)) and enter a user's `UserID` for the `userIDList` parameter to query the user's profile.
+Call the `getUsersInfo` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/getUsersInfo.html)) and enter a user's `UserID` for the `userIDList` parameter to query the user's profile.
 
-Call the `setSelfInfo` API ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#setSelfInfo)) to modify a user's profile.
-After the profile is modified successfully, you will receive the `onSelfInfoUpdated` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimSDKListener-1.html#onSelfInfoUpdated)).
+Call the `setSelfInfo` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/setSelfInfo.html)) to modify a user's profile.
+After the profile is modified successfully, you will receive the `onSelfInfoUpdated` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/V2TimUserFullInfo.html)).
 
 Sample code:
 
@@ -55,19 +55,19 @@ TencentImSDKPlugin.v2TIMManager.setSelfInfo({
 
 ### Querying the user profile of a non-friend
 
-Call the `getUsersInfo` API ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#getUsersInfo)) and enter the `UserID` of a non-friend user for the `userIDList` parameter to query the profile of the non-friend user.
+Call the `getUsersInfo` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/getUsersInfo.html)) and enter the `UserID` of a non-friend user for the `userIDList` parameter to query the profile of the non-friend user.
 
 > ? The profile of a non-friend user cannot be modified.
 
 ### Querying and modifying a friend's profile
 
-Call the `getFriendsInfo` API ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#getFriendsInfo)) to query the profile of the specified friend. The relationship between the user and the friend can be obtained through the `relation` field of the `V2TIMFriendInfoResult` in the callback:
+Call the `getFriendsInfo` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/getFriendsInfo.html)) to query the profile of the specified friend. The relationship between the user and the friend can be obtained through the `relation` field of the `V2TIMFriendInfoResult` in the callback:
 
-| relation                                          | Relationship               |
-| ------------------------------------------------- | -------------------------- |
-| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | Not a friend             |
-| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | Two-way friend             |
-| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | The user is in your contacts. |
+| relation                                          | Relationship                    |
+| ------------------------------------------------- | ------------------------------- |
+| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | Not a friend                    |
+| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | Two-way friend                  |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | The user is in your contacts.   |
 | `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | You are in the user's contacts. |
 
 ```javascript
@@ -75,7 +75,7 @@ Call the `getFriendsInfo` API ([TS](https://comm.qq.com/im-react-native-doc/clas
 const friendsInfo = await friendshipManager.getFriendsInfo(["userID"]);
 ```
 
-Call the `setFriendInfo` API ([TS](https://comm.qq.com/im-react-native-doc/classes/FriendshipManager__________.V2TIMFriendshipManager.html#setFriendInfo)) to modify the information of a friend such as remarks.
+Call the `setFriendInfo` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/setFriendInfo.html)) to modify the information of a friend such as remarks.
 
 ```javascript
 // Set the friend's information

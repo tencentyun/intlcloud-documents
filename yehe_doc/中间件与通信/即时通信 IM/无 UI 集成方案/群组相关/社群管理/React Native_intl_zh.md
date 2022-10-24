@@ -14,8 +14,8 @@
 
 创建支持话题的社群分两步：
 
-1. 创建 `V2TIMGroupInfo` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupInfo-1.html)) 对象，其中 `groupType` 设置为 `Community`，`isSupportTopic` 设置为 `true`/`YES`。
-2. 调用 `createGroup` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#createGroup)) 接口创建群组。
+1. 创建 `V2TIMGroupInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupInfo.html)) 对象，其中 `groupType` 设置为 `Community`，`isSupportTopic` 设置为 `true`/`YES`。
+2. 调用 `createGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createGroup.html)) 接口创建群组。
 
 示例代码如下：
 
@@ -26,7 +26,7 @@ groupManager.createGroup(groupType: "Community", groupName: "社群",isSupportTo
 
 ### 获取加入的社群列表
 
-调用 `getJoinedCommunityList`([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getJoinedCommunityList)) 获取已经加入的支持话题的社群列表。
+调用 `getJoinedCommunityList`([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getJoinedCommunityList.html)) 获取已经加入的支持话题的社群列表。
 
 示例代码如下：
 
@@ -48,40 +48,40 @@ const groupList = await groupManager.getJoinedCommunityList();
 <tr>
 <td rowspan="5">社群管理</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#joinGroup">加入社群</a></td>
-<td>joinGroup (<a href="https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#joinGroup">TS</a>）</td>
+<td>joinGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/joinGroup.html">TS</a>）</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#quitGroup">退出社群</a></td>
-<td>quitGroup (<a href="https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#quitGroup">TS</a>）</td>
+<td>quitGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/quitGroup.html">TS</a>）</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#dismissGroup">解散社群</a></td>
-<td>dismissGroup (<a href="https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#dismissGroup">TS</a>）</td>
+<td>dismissGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/dismissGroup.html">TS</a>）</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#getGroupsInfo">获取社群资料</a></td>
-<td>getGroupsInfo (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getGroupsInfo">TS</a>）</td>
+<td>getGroupsInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupsInfo.html">TS</a>）</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#setGroupInfo">修改社群资料</a></td>
-<td>setGroupInfo (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#setGroupInfo">TS</a>）</td>
+<td>setGroupInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupInfo.html">TS</a>）</td>
 </tr>
 <tr>
 <td rowspan="4">社群成员管理</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#getGroupMemberList">获取社群成员列表</a></td>
-<td>getGroupMemberList (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getGroupMemberList">TS</a>）</td>
+<td>getGroupMemberList (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMemberList.html">TS</a>）</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#getGroupMembersInfo">获取社群成员资料</a></td>
-<td>getGroupMembersInfo (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getGroupMembersInfo">TS</a>）</td>
+<td>getGroupMembersInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMembersInfo.html">TS</a>）</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#setGroupMemberInfo">修改社群成员资料</a></td>
-<td>setGroupMemberInfo (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#setGroupMemberInfo">TS</a>）</td>
+<td>setGroupMemberInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupMemberInfo.html">TS</a>）</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#kickGroupMember">踢出社群成员</a></td>
-<td>kickGroupMember (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#kickGroupMember">TS</a>）</td>
+<td>kickGroupMember (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/kickGroupMember.html">TS</a>）</td>
 </tr>
 </table>
 
@@ -91,8 +91,8 @@ const groupList = await groupManager.getJoinedCommunityList();
 
 创建话题分两步：
 
-1. 创建 `V2TIMTopicInfo` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimTopicInfo-1.html)) 对象。
-2. 调用 `createTopicInCommunity` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#createTopicInCommunity)) 接口创建话题。
+1. 创建 `V2TIMTopicInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html)) 对象。
+2. 调用 `createTopicInCommunity` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createTopicInCommunity.html)) 接口创建话题。
 
 示例代码如下：
 
@@ -105,7 +105,7 @@ groupManager.createTopicInCommunity("groupID", {
 
 ### 删除话题
 
-调用 `deleteTopicFromCommunity`([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#deleteTopicFromCommunity)) 接口删除话题。
+调用 `deleteTopicFromCommunity`([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/deleteTopicFromCommunity.html)) 接口删除话题。
 
 示例代码如下：
 
@@ -118,8 +118,8 @@ groupManager.deleteTopicFromCommunity("groupID", ["topicID"]);
 
 修改话题信息分两步：
 
-1. 创建 `V2TIMTopicInfo` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimTopicInfo-1.html)) 对象，并设置需要修改的字段
-2. 调用 `setTopicInfo` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#setTopicInfo)) 接口修改话题信息
+1. 创建 `V2TIMTopicInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html)) 对象，并设置需要修改的字段
+2. 调用 `setTopicInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setTopicInfo.html)) 接口修改话题信息
 
 示例代码如下：
 
@@ -132,7 +132,7 @@ groupManager.setTopicInfo({
 
 ### 获取话题列表
 
-调用 `getTopicInfoList` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getTopicInfoList)) 接口获取话题列表。
+调用 `getTopicInfoList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getTopicInfoList.html)) 接口获取话题列表。
 
 - 当 topicIDList 列表为空时，为获取该社群下的所有话题列表
 - 当 topicIDList 填入指定的话题 ID 时，为获取填入的话题列表
@@ -146,7 +146,7 @@ groupManager.getTopicInfoList("groupID", ["topicID"]);
 
 ### 监听话题回调
 
-在 `V2TIMGroupListener` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html)) 中增加了话题相关的回调方法，`onTopicCreated`，`onTopicDeleted`，`onTopicInfoChanged`，用来监听话题事件。
+在 `V2TIMGroupListener` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimGroupListener.html)) 中增加了话题相关的回调方法，`onTopicCreated`，`onTopicDeleted`，`onTopicInfoChanged`，用来监听话题事件。
 
 示例代码如下：
 
@@ -177,27 +177,27 @@ V2TIMManager.getInstance().addGroupListener(v2TIMGroupListener);
 </tr>
 <tr>
 <td>发送消息</td>
-<td>sendMessage (<a href="https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessage">TS</a>)</td>
+<td>sendMessage (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html">TS</a>)</td>
 <td>参数 groupID 填为话题 topicID</td>
 </tr>
 <tr>
 <td>接收消息</td>
-<td>V2TIMAdvancedMsgListener (<a href="https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimAdvancedMsgListener-1.html">TS</a>) 中的 onRecvNewMessage 方法 </td>
+<td>V2TIMAdvancedMsgListener (<a href="https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimAdvancedMsgListener.html">TS</a>) 中的 onRecvNewMessage 方法 </td>
 <td>消息中的 groupID 即为话题 topicID</td>
 </tr>
 <tr>
 <td>标记消息已读</td>
-<td>markGroupMessageAsRead (<a href="https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#markGroupMessageAsRead">TS</a></td>
+<td>markGroupMessageAsRead (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/markGroupMessageAsRead.html">TS</a></td>
 <td>参数 groupID 填为话题 topicID</td>
 </tr>
 <tr>
 <td>获取历史消息</td>
-<td>getGroupHistoryMessageList (<a href="https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#getGroupHistoryMessageList">TS</a></td>
+<td>getGroupHistoryMessageList (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getGroupHistoryMessageList.html">TS</a></td>
 <td>参数 groupID 填为话题 topicID</td>
 </tr>
 <tr>
 <td>撤回消息</td>
-<td>revokeMessage (<a href="https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#revokeMessage">TS</a>）</td>
+<td>revokeMessage (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/revokeMessage.html">TS</a>）</td>
 <td>参数 groupID 填为话题 topicID</td>
 </tr>
 </table>

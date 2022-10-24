@@ -21,7 +21,7 @@ Locally stored historical messages are not subject to time limits, but those sto
 
 ## Pulling Historical One-to-One Messages
 
-Call the `getC2CHistoryMessageList` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#getC2CHistoryMessageList)) to get historical one-to-one messages.
+Call the `getC2CHistoryMessageList` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getC2CHistoryMessageList.html)) to get historical one-to-one messages.
 When the network is normal, the latest cloud data will be pulled; when it is abnormal, the SDK will return the locally stored historical messages.
 If you want to pull only local historical messages, see [Advanced API](#advance).
 
@@ -45,7 +45,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ## Pulling Historical Group Messages
 
-Call the `getGroupHistoryMessageList` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#getGroupHistoryMessageList)) to get historical group messages.
+Call the `getGroupHistoryMessageList` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getGroupHistoryMessageList.html)) to get historical group messages.
 When the network is normal, the latest cloud data will be pulled; when it is abnormal, the SDK will return the locally stored historical messages.
 If you want to pull only local historical messages, see [Advanced API](#advance).
 
@@ -76,7 +76,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ### Advanced API
 
-If the ordinary API mentioned above cannot meet your needs to pull historical messages, you can use the advanced API `getHistoryMessageList` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#getHistoryMessageList)).
+If the ordinary API mentioned above cannot meet your needs to pull historical messages, you can use the advanced API `getHistoryMessageList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getHistoryMessageList.html)).
 
 In addition to pulling historical one-to-one and group messages, this API supports the following advanced features:
 
@@ -100,14 +100,14 @@ public getHistoryMessageList(
 
 Parameter description:
 
-| Parameter | Description | Valid for One-to-One Chat | Valid for Group Chat | Required | Remarks |
-| ---------- | ------------------------------------------------------------------------ | ------------ | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| getType | Source and sequence of the message pull, which can be set to **local/cloud** and **reverse chronological order/chronological order** respectively. | YES | YES | YES  | When the pull source is set to the cloud, the local message list and cloud message list will be merged and returned. If there is no network connection, the local message list will be returned. |
-| userID | The specified user ID with which to pull historical one-to-one messages | YES | <b>NO</font> | NO | To pull one-to-one messages, you need to specify only the `userID`. |
-| groupID | The specified group ID with which to pull historical group messages | <b>NO</font> | YES | NO | To pull group messages, you need to specify only the `groupID`. |
-| count | Number of messages per pull | YES | YES | YES | We recommend you set it to `20`; otherwise, the pull speed may be affected. |
-| lastMsgID | ID of the last message, indicating the message starting from which to pull historical messages | YES | YES | NO | 1. It can be used for both one-to-one and group chats.<br/>2. If it is set as the start point for the message pull, the message will **not be included** in the returned message list.<br/>3. If it is left empty, the latest message in the conversation will be used as the start point for pull. |
-| lastMsgSeq | `seq` of the last message, indicating the message starting from which to pull historical messages | <b>NO</font> | YES | NO | 1. It can be used only for group chats.<br/>2. If it is set as the start point for the message pull, the message will be **included** in the returned message list.<br/>3. If both `lastMsg` and `lastMsgSeq` are specified, the SDK will use `lastMsg`.<br/>4. If neither `lastMsg` nor `lastMsgSeq` is specified, the start point for pull will be determined based on whether the `getTimeBegin` is set. If yes, the set range will be used as the start point; if no, the latest message will be used as the start point. |
+| Parameter  | Description                                                                                                                                        | Valid for One-to-One Chat | Valid for Group Chat | Required | Remarks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | -------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| getType    | Source and sequence of the message pull, which can be set to **local/cloud** and **reverse chronological order/chronological order** respectively. | YES                       | YES                  | YES      | When the pull source is set to the cloud, the local message list and cloud message list will be merged and returned. If there is no network connection, the local message list will be returned.                                                                                                                                                                                                                                                                                                                              |
+| userID     | The specified user ID with which to pull historical one-to-one messages                                                                            | YES                       | <b>NO</font>         | NO       | To pull one-to-one messages, you need to specify only the `userID`.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| groupID    | The specified group ID with which to pull historical group messages                                                                                | <b>NO</font>              | YES                  | NO       | To pull group messages, you need to specify only the `groupID`.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| count      | Number of messages per pull                                                                                                                        | YES                       | YES                  | YES      | We recommend you set it to `20`; otherwise, the pull speed may be affected.                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| lastMsgID  | ID of the last message, indicating the message starting from which to pull historical messages                                                     | YES                       | YES                  | NO       | 1. It can be used for both one-to-one and group chats.<br/>2. If it is set as the start point for the message pull, the message will **not be included** in the returned message list.<br/>3. If it is left empty, the latest message in the conversation will be used as the start point for pull.                                                                                                                                                                                                                           |
+| lastMsgSeq | `seq` of the last message, indicating the message starting from which to pull historical messages                                                  | <b>NO</font>              | YES                  | NO       | 1. It can be used only for group chats.<br/>2. If it is set as the start point for the message pull, the message will be **included** in the returned message list.<br/>3. If both `lastMsg` and `lastMsgSeq` are specified, the SDK will use `lastMsg`.<br/>4. If neither `lastMsg` nor `lastMsgSeq` is specified, the start point for pull will be determined based on whether the `getTimeBegin` is set. If yes, the set range will be used as the start point; if no, the latest message will be used as the start point. |
 
 [](id:advance_page)
 
@@ -224,7 +224,7 @@ We recommend you fix this issue as instructed in [question 1](#qa1). If the issu
 - When messages are generated, the SDK will update the current group member information such as the group name card and role and store it in the local database.
 - When historical group messages are pulled, the SDK will directly return the group member information when the messages were generated and will not update it in real time.
 
-If you want to get the latest group member information, you can use `getGroupMembersInfo` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getGroupMembersInfo)).
+If you want to get the latest group member information, you can use `getGroupMembersInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMembersInfo.html)).
 
 [](id:qa4)
 
