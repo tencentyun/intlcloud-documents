@@ -6,9 +6,10 @@ Para operações como gerenciamento de senha, correção de SSHD e manutenção 
 2. Na janela de login do VNC, selecione **Send CtrlAltDel (Enviar CtrlAltDel)** no canto superior esquerdo, pressione **Ctrl-Alt-Delete** e clique em **OK** na caixa de prompt.
 3. Quando uma mensagem de falha de conexão for exibida, pressione a seta para cima ou para baixo para atualizar a página e passe o cursor sobre o menu `grub`, conforme a seguir.
 ![](https://main.qcloudimg.com/raw/350187ce0a771d00e6d54e929291ebae.png)
-4. Pressione **c** para entrar no modo de resgate do grub.
+4. Pressione **e** para entrar no modo de resgate do grub.
 5. Execute as etapas adequadas à versão do seu sistema operacional.
-#### CentOS 6.x
+<dx-tabs>
+::: CentOS\s6.x
 1. Selecione um kernel no modo grub, conforme mostrado abaixo.
 ![](https://main.qcloudimg.com/raw/5abc9f57184cc74bba927513fb1c4a88.png)
 2. Pressione **e** para acessar a página de edição do kernel, escolha a linha do **kernel** usando a seta para cima ou para baixo e pressione **e** novamente, conforme mostrado abaixo.
@@ -19,10 +20,11 @@ Para operações como gerenciamento de senha, correção de SSHD e manutenção 
 ![](https://main.qcloudimg.com/raw/b379937bfc15e93f0823ec50095d1dc6.png)
 A figura a seguir indica que o sistema inicializa no modo de usuário único.
 ![](https://main.qcloudimg.com/raw/517c4d2c24864f3fc8f5002bd1e2c2a1.png)
->?Você pode executar o comando `exec /sbin/init` para sair do modo de usuário único.
->
-
-#### CentOS 7.x
+<dx-alert infotype="explain" title="">
+Você pode executar o comando `exec /sbin/init` para sair do modo de usuário único.
+</dx-alert>
+:::
+::: CentOS\s7.x
 1. Selecione um kernel no modo grub, conforme mostrado abaixo.
 ![](https://main.qcloudimg.com/raw/2ddc7d1e4416d9fa763922e23b59d580.png)
 2. Pressione **e** para acessar a página de edição do kernel. Localize a linha iniciada com "linux16" usando a seta para cima ou para baixo e substitua `ro` por `rw init=/bin/bash` ou `/usr/bin/bash`, como mostrado abaixo.
@@ -30,10 +32,11 @@ A figura a seguir indica que o sistema inicializa no modo de usuário único.
 3. Pressione **Ctrl+X** para inicializar no modo de usuário único, conforme mostrado abaixo:
 A figura a seguir indica que o sistema inicializa no modo de usuário único.
 ![](https://main.qcloudimg.com/raw/fbe8cfcf43aa4c914882edc4c3ee5faf.png)
->? Você pode executar o comando `exec /sbin/init` para sair do modo de usuário único.
->
-
-#### CentOS 8.0
+<dx-alert infotype="explain" title="">
+ Você pode executar o comando `exec /sbin/init` para sair do modo de usuário único.
+</dx-alert>
+:::
+::: CentOS\s8.0
 1. Selecione um kernel no modo grub, conforme mostrado abaixo.
 ![](https://main.qcloudimg.com/raw/a6ce701e5845141929d822635bd42b9a.png)
 2. Pressione **e** para acessar a página de edição do kernel. Localize a linha iniciada com "linux" usando a seta para cima ou para baixo e substitua `ro` por `rw init=/sysroot/bin/bash`, como mostrado abaixo.
@@ -41,8 +44,8 @@ A figura a seguir indica que o sistema inicializa no modo de usuário único.
 3. Pressione **Ctrl+X** para inicializar no modo de usuário único, conforme mostrado abaixo:
 A figura a seguir indica que o sistema inicializa no modo de usuário único.
 ![](https://main.qcloudimg.com/raw/126dcdb5916e57815c3632e9e4b24412.png)
-
-#### Ubuntu ou Debian
+:::
+::: Ubuntu\sou\sDebian
 1. Selecione um kernel no modo grub, conforme mostrado abaixo.
 ![](https://main.qcloudimg.com/raw/c3c0be766481edf3f6521f7764f8d4cb.png)
 2. Pressione **e** para acessar a página de edição do kernel. Localize a linha iniciada com "linux" usando a seta para cima ou para baixo e adicione `quiet splash rw init=/bin/bash` ao final da linha, como mostrado abaixo.
@@ -50,15 +53,15 @@ A figura a seguir indica que o sistema inicializa no modo de usuário único.
 3. Pressione **Ctrl+X** para inicializar no modo de usuário único, conforme mostrado abaixo:
 A figura a seguir indica que o sistema inicializa no modo de usuário único.
 ![](https://main.qcloudimg.com/raw/df55d20b7eb087744fb6283c5124e7fc.png)
-
-#### SUSE
+:::
+::: SUSE
 1. Selecione um kernel no modo grub, conforme mostrado abaixo.
 ![](https://main.qcloudimg.com/raw/4da4d0c5c98e4f0dbe4990e920a11daf.png)
 2. Pressione **e** para acessar a página de edição do kernel. Localize a linha iniciada com "linux" usando a seta para cima ou para baixo, adicione `rw` no início e `1` no final do parâmetro `splash`, como mostrado abaixo.
 ![](https://main.qcloudimg.com/raw/013a0099ccb5c19d04441dd60ea7558b.png)
 3. Pressione **Ctrl+X** para inicializar no modo de usuário único, conforme mostrado abaixo:
-
-#### Tlinux
+:::
+::: tlinux
 1. Selecione um kernel no modo grub, conforme mostrado abaixo.
 ![](https://main.qcloudimg.com/raw/c497e63321b76e5cd1f0eea06f53cdb2.png)
 2. Pressione **e** para acessar a página de edição do kernel, escolha a linha do **kernel** usando a seta para cima ou para baixo e pressione **e** novamente, conforme mostrado abaixo.
@@ -66,4 +69,5 @@ A figura a seguir indica que o sistema inicializa no modo de usuário único.
 3. Adicione um espaço e **1** ao final da linha (ou seja, após **256M**), conforme mostrado abaixo.
 ![](https://main.qcloudimg.com/raw/06efb32e3a2edb39f32e13be1ab8527f.png)
 4. Pressione **Enter** para entrar no modo de usuário único.
-
+:::
+</dx-tabs>
