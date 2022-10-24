@@ -47,7 +47,7 @@ https://xxxxxx/v4/sns/black_list_get?sdkappid=88888888&identifier=admin&usersig=
 | From_Account | String  | 必填 | 需要拉取该 UserID 的黑名单                         |
 | StartIndex   | Integer | 必填 | 拉取的起始位置                                         |
 | MaxLimited   | Integer | 必填 | 每页最多拉取的黑名单数                                 |
-| LastSequence | Integer | 必填 | 上一次拉黑名单时后台返回给客户端的 Seq，初次拉取时为0；（RestAPI 接口拉取填 0 即可） |
+| LastSequence | Integer | 必填 | 上一次拉黑名单时后台返回给客户端的 Seq，初次拉取时为0；（Rest API 接口拉取填 0 即可） |
 
 ### 应答包体示例
 
@@ -103,7 +103,7 @@ https://xxxxxx/v4/sns/black_list_get?sdkappid=88888888&identifier=admin&usersig=
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/black_list_get) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
 
 ## 参考
 
