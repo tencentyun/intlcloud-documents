@@ -113,7 +113,7 @@ The list below contains only error codes specific to this API:
 
 
 ## API Debugging Tool
-Use the [online RESTful API debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/black_list_add) to commission this API.
+Use the [online RESTful API debugging tool](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to commission this API.
 
 ## See Also
 
