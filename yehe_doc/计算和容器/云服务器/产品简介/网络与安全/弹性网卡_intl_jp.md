@@ -1,4 +1,4 @@
-[Elastic Network Interface](https://intl.cloud.tencent.com/products/eni)(ENI)は、VPC上のCVMインスタンスにアタッチできる仮想ネットワークインタフェースであり、CVM間で自由に移行できます。ENI は、ネットワークの設定と管理、および信頼性の高いネットワークソリューションの構築に非常に役立ちます。
+[Elastic Network Interface](https://intl.cloud.tencent.com/products/eni)(ENI)は、VPC上のCVMインスタンスにアタッチできる仮想ネットワークインタフェースであり、インスタンス間で自由に移行できます。ENI は、ネットワークの設定と管理、および信頼性の高いネットワークソリューションの構築の際に非常に役立ちます。
 
 ENI には、VPC、アベイラビリティーゾーン、およびサブネットの属性があり、同じアベイラビリティーゾーン内のCVMインスタンスにのみアタッチすることができます。CVMインスタンスに複数のENIをアタッチでき、アタッチできるENIの最大数はCVMの仕様によって異なります。
 
