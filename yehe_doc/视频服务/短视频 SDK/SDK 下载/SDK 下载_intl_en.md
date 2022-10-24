@@ -5,7 +5,7 @@
       <th width="85px" style="text-align:center">Feature</td>
       <th width="0px"  style="text-align:center">Description</td>
       <th width="92px" style="text-align:center">Lite Edition License</td>
-      <th width="92px" style="text-align:center">Basic Edition License</td>
+      <th width="92px" style="text-align:center">Standard Edition License</td>
    </tr>
    <tr>
       <td>UI</td>
