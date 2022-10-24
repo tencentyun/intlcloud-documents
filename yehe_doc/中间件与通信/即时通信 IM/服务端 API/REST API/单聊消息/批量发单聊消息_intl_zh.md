@@ -121,7 +121,7 @@ From_Accout 为管理员指定的发送方，接收方看到发送者不是管�
 | CloudCustomData | String |选填| 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
 | SendMsgControl | Array |选填| 消息发送控制选项，是一个 String 数组，只对本次请求有效。"NoUnread"表示该条消息不计入未读数。"NoLastMsg"表示该条消息不更新会话列表。"WithMuteNotifications"表示该条消息的接收方对发送方设置的免打扰选项生效（默认不生效）。示例："SendMsgControl": ["NoUnread","NoLastMsg","WithMuteNotifications"]  |
 | OfflinePushInfo | Object | 选填| 离线推送信息配置，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
-
+| IsNeedReadReceipt | Integer |选填| 该条消息是否需要已读回执，0为不需要，1为需要，默认为0 |
 
 
 ### 应答包体示例
@@ -200,7 +200,7 @@ From_Accout 为管理员指定的发送方，接收方看到发送者不是管�
 
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/batchsendmsg) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
 
 ## 参考
 - 单发单聊消息（[v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919)）
