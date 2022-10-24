@@ -96,7 +96,7 @@ https://xxxxxx/v4/group_open_http_svc/set_unread_msg_num?sdkappid=88888888&ident
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/set_unread_msg_num) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
 
 ## 参考
 在群组中发送系统通知（[v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958)）。
