@@ -104,7 +104,7 @@ https://xxxxxx/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&users
 
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/black_list_delete) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
 
 ## 参考
 
