@@ -11,9 +11,9 @@ You have subscribed to the [bot traffic management](https://intl.cloud.tencent.c
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-flowanalysis) and select **Bot Traffic Analysis** on the left sidebar. Open the **Bot traffic details** tab.
 2. On the page displayed, click the drop-down list in the upper-left corner and select a domain name.
 3. Specify a date or use the filter to search top 10 access sources of all domain names or a specific domain name. Then click **View logs** of the access source you want to view.
-![](https://qcloudimg.tencent-cloud.cn/raw/a1daa51d16c11b69a86df1a2f2f149b9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3f896e01aded3c007eaf8b7bd1cb0df4.png)
 4. To view traffic details of an access source, click **View details** on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/85c3657b10a44d8c612903697013ef16.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/78ca3e3eb76d21e0d3e273a69cb6bfdc.png)
 
 ### Viewing access overview
 The bot traffic details page shows you the estimated risk value of the access source and the information of the hit policy, and allows you to take measures such as adding the access source to the allowlist/blocklist and creating custom rules targeting the access source.
