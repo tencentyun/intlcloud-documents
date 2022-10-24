@@ -1,6 +1,6 @@
 ## 功能说明
 
-- 仅支持删除套餐包类型为 IM 体验版的帐号，其他体验版类型的账号（如：TRTC、白板、专业版、旗舰版）无法删除。
+- 仅支持删除套餐包类型为 IM 体验版的帐号，其他类型的帐号（如：TRTC、白板、专业版、旗舰版）无法删除。
   
   >?具体套餐包类型，可以在 [控制台](https://console.cloud.tencent.com/im) 进入应用，单击【基础配置】>【应用套餐包】>【套餐包】进行查看。
 - 帐号删除时，该用户的关系链、资料等数据也会被删除。
@@ -113,7 +113,7 @@ https://xxxxxx/v4/im_open_login_svc/account_delete?sdkappid=88888888&identifier=
 
 ## 接口调试工具
 
-通过 [REST API 在线调试](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/account_delete) 工具调试本接口。
+通过 [REST API 在线调试](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 工具调试本接口。
 
 ## 参考
 
