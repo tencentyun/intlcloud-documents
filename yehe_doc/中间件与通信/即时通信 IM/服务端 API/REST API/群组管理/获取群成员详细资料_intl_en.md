@@ -400,7 +400,7 @@ The following table describes the error codes specific to this API:
 
 
 ## API Debugging Tool
-Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/get_group_member_info) to debug this API.
+Use the [RESTful API online debugging tool](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to debug this API.
 
 ## References
 Modifying the Profile of a Group Member ([v4/group_open_http_svc/modify_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34900))
