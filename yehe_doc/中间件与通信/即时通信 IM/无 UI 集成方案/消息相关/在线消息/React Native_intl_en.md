@@ -10,7 +10,7 @@ In certain cases, you may want a message to be received by the receiver only whe
 
 ### Implementing the feature of "The other party is typing..."
 
-In one-to-one chats, you can call the `sendMessage` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessage)) to send the prompt "I am typing...". After receiving the message, the receiver can display "The other party is typing..." on the UI.
+In one-to-one chats, you can call the `sendMessage` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the prompt "I am typing...". After receiving the message, the receiver can display "The other party is typing..." on the UI.
 
 Below is the sample code:
 

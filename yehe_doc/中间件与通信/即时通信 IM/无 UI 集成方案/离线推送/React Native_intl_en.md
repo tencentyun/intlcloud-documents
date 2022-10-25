@@ -147,7 +147,7 @@ After the above steps are performed, offline push notifications can be received.
 
 ### Step 3. Set offline push parameters when sending a message
 
-When sending a message, set offline push parameters as instructed in [sendMessage](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessage).
+When sending a message, set offline push parameters as instructed in [sendMessage](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html).
 
 ```javascript
 import { TencentImSDKPlugin } from 'react-native-tim-js';
@@ -184,7 +184,7 @@ This generally occurs for the following reasons:
 
 #### 2. Sending custom messages
 
-The offline push for custom messages is different from that for ordinary messages. As we cannot parse the content of custom messages and determine the push content, custom messages are not pushed offline by default. If you need offline push for custom messages, set the [desc](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) field in [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) when you call [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe), and the `desc` information will be displayed by default in the push message.
+The offline push for custom messages is different from that for ordinary messages. As we cannot parse the content of custom messages and determine the push content, custom messages are not pushed offline by default. If you need offline push for custom messages, set the [desc](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimOfflinePushInfo.html#desc) field in [offlinePushInfo](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimOfflinePushInfo.html) when you call [sendMessage](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html), and the `desc` information will be displayed by default in the push message.
 
 #### 3. Notification bar settings of the device
 

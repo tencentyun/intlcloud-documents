@@ -8,8 +8,8 @@
 
 合并消息的展示还需要标题和摘要信息，如下图所示：
 
-| 合并转发                                                                                        | 合并消息展示                                                                                    | 点击合并消息下载合并消息列表展示                                                               |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| 合并转发                                                                                                | 合并消息展示                                                                                            | 点击合并消息下载合并消息列表展示                                                                       |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/> |
 
 ## 合并转发消息
@@ -18,7 +18,7 @@
 
 我们在创建一条合并消息的时候不仅要设置合并消息列表，还要设置标题和摘要信息，实现流程如下：
 
-1. 调用 `createMergerMessage` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#createMergerMessage)) 接口创建一条合并消息，创建合并消息的时候需要设置原始消息列表，合并消息标题、合并消息摘要等信息。
+1. 调用 `createMergerMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createMergerMessage.html)) 接口创建一条合并消息，创建合并消息的时候需要设置原始消息列表，合并消息标题、合并消息摘要等信息。
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
@@ -59,7 +59,7 @@ const createMergerMessageResult =
 
 #### 添加监听器
 
-接收方调用 `addAdvancedMsgListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#addAdvancedMsgListener)) 添加高级消息监听器。
+接收方调用 `addAdvancedMsgListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) 添加高级消息监听器。
 一般建议在比较靠前的时间点调用，例如例如聊天消息界面初始化后，确保 App 能及时收到消息。
 
 示例代码如下：
@@ -73,8 +73,8 @@ TencentImSDKPlugin.v2TIMManager
 #### 解析消息
 
 添加监听器后，接收方会在 `onRecvNewMessage` 中收到合并消息 `V2TimMessage`。
-可以先通过合并消息元素 `V2TimMergerElem` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimMergerElem.html)) 获取 `title` 和 `abstractList` UI 展示。
-当用户点击合并消息的时候再调用 `downloadMergerMessage`([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#downloadMergerMessage)) 接口下载合并消息列表 UI 展示。
+可以先通过合并消息元素 `V2TimMergerElem` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimMergerElem.html)) 获取 `title` 和 `abstractList` UI 展示。
+当用户点击合并消息的时候再调用 `downloadMergerMessage`([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/downloadMergerMessage.html)) 接口下载合并消息列表 UI 展示。
 
 示例代码如下：
 
@@ -92,7 +92,7 @@ if(message.elemType == MessageElemType.V2TIM_ELEM_TYPE_MERGER){
 
 ## 逐条转发消息
 
-如果您需要转发单条消息，可以先通过 `createForwardMessage` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#createForwardMessage)) 接口创建一条和原消息内容完全一样的转发消息，再调用 `sendMessage` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessage)) 接口把转发消息发送出去。
+如果您需要转发单条消息，可以先通过 `createForwardMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createForwardMessage.html)) 接口创建一条和原消息内容完全一样的转发消息，再调用 `sendMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) 接口把转发消息发送出去。
 
 示例代码如下：
 

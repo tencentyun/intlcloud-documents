@@ -7,7 +7,7 @@ If the last message is deleted, the `lastMessage` in the conversation will becom
 
 ### Deleting a local message
 
-Call `deleteMessageFromLocalStorage` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#deleteMessageFromLocalStorage)) to delete a local message.
+Call `deleteMessageFromLocalStorage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/deleteMessageFromLocalStorage.html)) to delete a local message.
 
 > ?
 >
@@ -24,7 +24,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ### Deleting a message from the cloud
 
-Call `deleteMessages` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#deleteMessages)) to delete messages from the cloud.
+Call `deleteMessages` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/deleteMessages.html)) to delete messages from the cloud.
 
 This API deletes messages both locally and from the cloud, which cannot be recovered.
 

@@ -14,8 +14,8 @@ A community is used to manage members. All its topics are shared among members, 
 
 You need to perform two steps to create a topic-enabled community:
 
-1. Create the `V2TIMGroupInfo` object ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupInfo-1.html)) and set `groupType` to `Community` and `isSupportTopic` to `true`/`YES`.
-2. Call the `createGroup` API ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#createGroup)) to create a community.
+1. Create the `V2TIMGroupInfo` object ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupInfo.html)) and set `groupType` to `Community` and `isSupportTopic` to `true`/`YES`.
+2. Call the `createGroup` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createGroup.html)) to create a community.
 
 Below is the sample code:
 
@@ -26,7 +26,7 @@ groupManager.createGroup(groupType: "Community", groupName: "Community",isSuppor
 
 ### Getting the list of joined communities
 
-Call `getJoinedCommunityList` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getJoinedCommunityList)) to get the list of joined topic-enabled communities.
+Call `getJoinedCommunityList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getJoinedCommunityList.html)) to get the list of joined topic-enabled communities.
 
 Below is the sample code:
 
@@ -48,40 +48,40 @@ Other features can be used in the same way as an ordinary group feature and invo
 <tr>
 <td rowspan="5">Community management</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#joinGroup">Joins a community</a></td>
-<td>joinGroup (<a href="https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#joinGroup">TS</a>)</td>
+<td>joinGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/joinGroup.html">TS</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#quitGroup">Leaves a community</a></td>
-<td>quitGroup (<a href="https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#quitGroup">TS</a>)</td>
+<td>quitGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/quitGroup.html">TS</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#dismissGroup">Disbands a community</a></td>
-<td>dismissGroup (<a href="https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#dismissGroup">TS</a>)</td>
+<td>dismissGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/dismissGroup.html">TS</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#getGroupsInfo">Gets the community profile</a></td>
-<td>getGroupsInfo (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getGroupsInfo">TS</a>)</td>
+<td>getGroupsInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupsInfo.html">TS</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#setGroupInfo">Modifies the community profile</a></td>
-<td>setGroupInfo (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#setGroupInfo">TS</a>)</td>
+<td>setGroupInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupInfo.html">TS</a>)</td>
 </tr>
 <tr>
 <td rowspan="4">Community member management</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#getGroupMemberList">Gets the list of community members</a></td>
-<td>getGroupMemberList (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getGroupMemberList">TS</a>)</td>
+<td>getGroupMemberList (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMemberList.html">TS</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#getGroupMembersInfo">Gets the profiles of the community members</a></td>
-<td>getGroupMembersInfo (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getGroupMembersInfo">TS</a>)</td>
+<td>getGroupMembersInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMembersInfo.html">TS</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#setGroupMemberInfo">Modifies the profile of a community member</a></td>
-<td>setGroupMemberInfo (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#setGroupMemberInfo">TS</a>)</td>
+<td>setGroupMemberInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupMemberInfo.html">TS</a>)</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#kickGroupMember">Removes a member from the community</a></td>
-<td>kickGroupMember (<a href="https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#kickGroupMember">TS</a>)</td>
+<td>kickGroupMember (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/kickGroupMember.html">TS</a>)</td>
 </tr>
 </table>
 
@@ -91,8 +91,8 @@ Other features can be used in the same way as an ordinary group feature and invo
 
 You need to perform two steps to create a topic:
 
-1. Create the `V2TIMTopicInfo` object ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimTopicInfo-1.html)).
-2. Call the `createTopicInCommunity` API ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#createTopicInCommunity)) to create a topic.
+1. Create the `V2TIMTopicInfo` object ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html)).
+2. Call the `createTopicInCommunity` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createTopicInCommunity.html)) to create a topic.
 
 Below is the sample code:
 
@@ -105,7 +105,7 @@ groupManager.createTopicInCommunity("groupID", {
 
 ### Deleting a topic
 
-Call the `deleteTopicFromCommunity` API ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#deleteTopicFromCommunity)) to delete a topic.
+Call the `deleteTopicFromCommunity` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/deleteTopicFromCommunity.html)) to delete a topic.
 
 Below is the sample code:
 
@@ -118,8 +118,8 @@ groupManager.deleteTopicFromCommunity("groupID", ["topicID"]);
 
 You need to perform two steps to modify the information of a topic:
 
-1. Create the `V2TIMTopicInfo` object ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimTopicInfo-1.html)) and set the fields to be modified.
-2. Call the `setTopicInfo` API ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#setTopicInfo)) to modify the information of a topic.
+1. Create the `V2TIMTopicInfo` object ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html)) and set the fields to be modified.
+2. Call the `setTopicInfo` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setTopicInfo.html)) to modify the information of a topic.
 
 Below is the sample code:
 
@@ -132,7 +132,7 @@ groupManager.setTopicInfo({
 
 ### Getting the topic list
 
-Call the `getTopicInfoList` API ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getTopicInfoList)) to get the topic list.
+Call the `getTopicInfoList` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getTopicInfoList.html)) to get the topic list.
 
 - If `topicIDList` is empty, the list of all topics of the community will be obtained.
 - If `topicIDList` is the ID of specified topics, the list of the specified topics will be got.
@@ -146,7 +146,7 @@ groupManager.getTopicInfoList("groupID", ["topicID"]);
 
 ### Listening for a topic callback
 
-In `V2TIMGroupListener` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html)), topic callback methods such as `onTopicCreated`, `onTopicDeleted`, and `onTopicInfoChanged` are added to listen for topic events.
+In `V2TIMGroupListener` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimGroupListener.html)), topic callback methods such as `onTopicCreated`, `onTopicDeleted`, and `onTopicInfoChanged` are added to listen for topic events.
 
 Below is the sample code:
 
@@ -177,27 +177,27 @@ Topic messages can be used in the same way as ordinary messages and involve the 
 </tr>
 <tr>
 <td>Sends a message</td>
-<td>sendMessage (<a href="https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessage">TS</a>)</td>
+<td>sendMessage (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html">TS</a>)</td>
 <td>Set `groupID` to the topic ID.</td>
 </tr>
 <tr>
 <td>Receives a message</td>
-<td>The `onRecvNewMessage` method in `V2TIMAdvancedMsgListener` (<a href="https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimAdvancedMsgListener-1.html">TS</a>)</td>
+<td>The `onRecvNewMessage` method in `V2TIMAdvancedMsgListener` (<a href="https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimAdvancedMsgListener.html">TS</a>)</td>
 <td>Set `groupID` in the message to the topic ID.</td>
 </tr>
 <tr>
 <td>Marks a message as read</td>
-<td>markGroupMessageAsRead (<a href="https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#markGroupMessageAsRead">TS</a></td>
+<td>markGroupMessageAsRead (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/markGroupMessageAsRead.html">TS</a></td>
 <td>Set `groupID` to the topic ID.</td>
 </tr>
 <tr>
 <td>Gets historical messages</td>
-<td>getGroupHistoryMessageList (<a href="https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#getGroupHistoryMessageList">TS</a></td>
+<td>getGroupHistoryMessageList (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getGroupHistoryMessageList.html">TS</a></td>
 <td>Set `groupID` to the topic ID.</td>
 </tr>
 <tr>
 <td>Recalls a message</td>
-<td>revokeMessage (<a href="https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#revokeMessage">TS</a>)</td>
+<td>revokeMessage (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/revokeMessage.html">TS</a>)</td>
 <td>Set `groupID` to the topic ID.</td>
 </tr>
 </table>

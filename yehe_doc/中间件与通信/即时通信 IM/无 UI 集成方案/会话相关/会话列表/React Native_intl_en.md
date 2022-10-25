@@ -9,7 +9,7 @@ This document describes how to implement such features.
 
 ## Getting the Conversation List
 
-You can call `getConversationList` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#getConversationList)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `V2TIMConversationListener` callback.
+You can call `getConversationList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/getConversationList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `V2TIMConversationListener` callback.
 
 User conversations are returned in a list that stores `V2TIMConversation` objects. Currently, the IM SDK sorts conversations according to the following rules:
 
@@ -76,7 +76,7 @@ You can get the updated conversation list in the following steps:
 
 ### Adding a conversation listener
 
-Call `addConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#addConversationListener)) to add a conversation listener to receive conversation change events.
+Call `addConversationListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/addConversationListener.html)) to add a conversation listener to receive conversation change events.
 
 Below is the sample code:
 
@@ -91,18 +91,18 @@ TencentImSDKPlugin.v2TIMManager
 
 ### Getting the notification of a conversation change
 
-You can listen for the event in `V2TIMConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimConversationListener-1.html)) to get the notification of a conversation list change.
+You can listen for the event in `V2TIMConversationListener` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimConversationListener.html)) to get the notification of a conversation list change.
 
 Currently, the IM SDK supports the following conversation change events:
 
-| Event                             | Description                 | Suggestion                                                                                                                         |
-| -------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| onSyncServerStart                | Server conversation sync started.   | The SDK will automatically sync server conversations after a successful login or network reconnection. You can listen for such an event and display the event progress on the UI.                                 |
-| onSyncServerFinish               | Server conversation sync was completed.   | If there is a conversation change, the change will be notified through the `onNewConversation`/`onConversationChanged` callback.                                                |
-| onSyncServerFailed               | Server conversation sync failed.   | You can listen for such an event and display the event exception on the UI.                                                                                   |
-| onNewConversation                | A new conversation was added.           | When the user receives a one-to-one message from a new colleague or is invited to a new group, you can re-sort the conversations.                                     |
-| onConversationChanged            | There is a conversation update           | When the unread count changes or the last message is updated, you can re-sort the conversations.                                                   |
-| onTotalUnreadMessageCountChanged | Notification of a change in the total unread count of the conversation  | For more information, see [unreadCount](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimConversation-1.html#unreadCount). |
+| Event                            | Description                                                            | Suggestion                                                                                                                                                                        |
+| -------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onSyncServerStart                | Server conversation sync started.                                      | The SDK will automatically sync server conversations after a successful login or network reconnection. You can listen for such an event and display the event progress on the UI. |
+| onSyncServerFinish               | Server conversation sync was completed.                                | If there is a conversation change, the change will be notified through the `onNewConversation`/`onConversationChanged` callback.                                                  |
+| onSyncServerFailed               | Server conversation sync failed.                                       | You can listen for such an event and display the event exception on the UI.                                                                                                       |
+| onNewConversation                | A new conversation was added.                                          | When the user receives a one-to-one message from a new colleague or is invited to a new group, you can re-sort the conversations.                                                 |
+| onConversationChanged            | There is a conversation update                                         | When the unread count changes or the last message is updated, you can re-sort the conversations.                                                                                  |
+| onTotalUnreadMessageCountChanged | Notification of a change in the total unread count of the conversation | For more information, see [unreadCount](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#unreadcount).                                                   |
 
 Below is the sample code:
 
@@ -122,7 +122,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ### Removing a conversation listener
 
-Call `removeConversationListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/ConversationManager________.V2TIMConversationManager.html#removeConversationListener)) to remove a conversation listener to stop receiving conversation change events.
+Call `removeConversationListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/removeConversationListener.html)) to remove a conversation listener to stop receiving conversation change events.
 This step is optional and can be performed as needed.
 
 Below is the sample code:
@@ -135,6 +135,6 @@ conversationManager.removeConversationListener(conversationListener);
 
 On the conversation list UI, it is usually necessary to display the preview and send time of the latest message in each conversation. In this case, you can use `lastMessage` of `V2TIMConversation` as the data source for implementation. However, in some cases, if you don't want some messages (such as system tips) to be displayed as the latest message in a conversation, you can set `isExcludedFromLastMessage` to `false`/`no` when calling `sendMessage`.
 
-For directions on how to send a message, see [sendMessage](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessage).
+For directions on how to send a message, see [sendMessage](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html).
 
 

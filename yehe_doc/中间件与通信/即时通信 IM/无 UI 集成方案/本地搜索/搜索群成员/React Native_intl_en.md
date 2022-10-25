@@ -4,10 +4,10 @@ Only locally stored group members can be searched for, such as the list of group
 > ?This feature cannot be used for audio-video groups (AVChatRoom) as the group members are not stored locally.
 ## Searching a Local Group
 
-Call the `searchGroupMembers` API ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#searchGroupMembers)) to search for a local group member.
+Call the `searchGroupMembers` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/searchGroupMembers.html)) to search for a local group member.
 You can set the search keyword `keywordList` and specify the search scope to set whether to search by the `memberUserID`, `memberNickName`, `memberRemark`, and `memberNameCard` fields of a group member.
 
-Depending on whether `groupIDList` of the `V2TIMGroupMemberSearchParam` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#searchGroupMembers)) in `searchGroupMembers` is empty (`null`/`nil`), there are two cases:
+Depending on whether `groupIDList` of the `V2TIMGroupMemberSearchParam` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/searchGroupMembers.html)) in `searchGroupMembers` is empty (`null`/`nil`), there are two cases:
 
 - If `groupIDList` is left empty, members in all the groups will be searched for and returned by `groupID`.
 - If `groupIDList` is not left empty, members in the specified group will be searched for.

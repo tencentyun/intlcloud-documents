@@ -16,7 +16,7 @@ Log in to the [IM console](https://console.cloud.tencent.com/im), select **Featu
 
 ### Specifying that a message requires a read receipt (by the sender)
 
-After creating a message, the sender specifies that the message requires a read receipt through the `needReadReceipt` field in `V2TimMessage` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimMessage.html#needReadReceipt)) and then sends the message to the conversation.
+After creating a message, the sender specifies that the message requires a read receipt through the `needReadReceipt` field in `V2TimMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimMessage.html#needreadreceipt)) and then sends the message to the conversation.
 
 Below is the sample code:
 
@@ -32,7 +32,7 @@ const createCustomMessageRes =
 
 ### Sending a message read receipt (by the receiver)
 
-After receiving the message, the receiver determines whether the message requires a read receipt based on the `needReadReceipt` field in `V2TIMMessage` ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimMessage.html#needReadReceipt)). If yes, after the user reads the message, the receiver calls the `sendMessageReadReceipts` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#sendMessageReadReceipts)) to send a read receipt.
+After receiving the message, the receiver determines whether the message requires a read receipt based on the `needReadReceipt` field in `V2TIMMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimMessage.html#needreadreceipt)). If yes, after the user reads the message, the receiver calls the `sendMessageReadReceipts` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessageReadReceipts.html)) to send a read receipt.
 
 Below is the sample code:
 
@@ -49,7 +49,7 @@ if (sendMessageReadReceipts.code == 0) {
 
 ### Listening for a message read receipt notification (by the sender)
 
-After the receiver sends a message read receipt, the sender can listen for a receipt notification through the `onRecvMessageReadReceipts` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimAdvancedMsgListener.html#onRecvMessageReadReceipts)) of `V2TimAdvancedMsgListener` and update the UI based on the notification to display the message as, for example, "Read by two members".
+After the receiver sends a message read receipt, the sender can listen for a receipt notification through the `onRecvMessageReadReceipts` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvMessageReadReceipts.html)) of `V2TimAdvancedMsgListener` and update the UI based on the notification to display the message as, for example, "Read by two members".
 
 Below is the sample code:
 
@@ -67,18 +67,18 @@ onRecvMessageReadReceipts: (receiptList) {
 
 ### Pulling message read receipt information (by the sender)
 
-After entering the message list, the sender pulls historical messages first, and then calls the `getMessageReadReceipts` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#getMessageReadReceipts)) to pull the message read receipt information.
+After entering the message list, the sender pulls historical messages first, and then calls the `getMessageReadReceipts` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getMessageReadReceipts.html)) to pull the message read receipt information.
 
 The `V2TimessageReceipt` field of the message read receipt is as described below:
 
-| Attribute |  Description | Remarks |
-| ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgID | Message ID | Unique message ID |
-| userID | ID of the receiver | If the message is a one-to-one message, this field indicates the ID of the receiver. |
-| timestamp | Time when the receiver marks the message as read | This field is invalid when a message is read. If the message is a one-to-one message, when the receiver calls the `markC2CMessageAsRead` API to mark the message as read, the sender will receive the `onRecvC2CReadReceipt` callback which contains the `timestamp` information. |
-| groupID | Group ID | If the message is a group message, this field indicates the group ID. |
-| readCount | Number of members who have read the group message | If the message is a group message, this field indicates the number of members who have read the message. |
-| unreadCount | Number of members who have not read the group message | If the message is a group message, this field indicates the number of members who have not read the message. |
+| Attribute   | Description                                           | Remarks                                                                                                                                                                                                                                                                           |
+| ----------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgID       | Message ID                                            | Unique message ID                                                                                                                                                                                                                                                                 |
+| userID      | ID of the receiver                                    | If the message is a one-to-one message, this field indicates the ID of the receiver.                                                                                                                                                                                              |
+| timestamp   | Time when the receiver marks the message as read      | This field is invalid when a message is read. If the message is a one-to-one message, when the receiver calls the `markC2CMessageAsRead` API to mark the message as read, the sender will receive the `onRecvC2CReadReceipt` callback which contains the `timestamp` information. |
+| groupID     | Group ID                                              | If the message is a group message, this field indicates the group ID.                                                                                                                                                                                                             |
+| readCount   | Number of members who have read the group message     | If the message is a group message, this field indicates the number of members who have read the message.                                                                                                                                                                          |
+| unreadCount | Number of members who have not read the group message | If the message is a group message, this field indicates the number of members who have not read the message.                                                                                                                                                                      |
 
 Below is the sample code:
 
@@ -99,7 +99,7 @@ const getMessageReadReceipts = await  TencentImSDKPlugin.v2TIMManager.getMessage
 
 ### Pulling the list of members who have or have not read a group message (by the sender)
 
-To view the list of members who have or have not read a group message, the sender can call the `getGroupMessageReadMemberList` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#getGroupMessageReadMemberList)) to pull the member list by page.
+To view the list of members who have or have not read a group message, the sender can call the `getGroupMessageReadMemberList` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getGroupMessageReadMemberList.html)) to pull the member list by page.
 
 ```javascript
 const messageID = "";

@@ -8,9 +8,9 @@ The group management feature allows creating a group, joining a group, getting t
 
 In the group management feature as described below, the IM SDK will automatically trigger the group event notification callback, for example, when someone joins or leaves a group.
 
-Call `addGroupListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#addGroupListener)) to add a group event listener.
+Call `addGroupListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/addGroupListener.html)) to add a group event listener.
 
-To stop receiving group events, call `removeGroupListener` ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#removeGroupListener)) to remove the group event listener.
+To stop receiving group events, call `removeGroupListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/removeGroupListener.html)) to remove the group event listener.
 
 > ! You need to set the group event listener in advance to receive group event notifications.
 
@@ -22,7 +22,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener();
 
 ## Creating a Group
 
-To initialize the group information such as group introduction, group profile photo, and existing group members when creating a group, call the `createGroup` advanced API ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#createGroup)), and the `groupID` will be returned in the callback for successful creation.
+To initialize the group information such as group introduction, group profile photo, and existing group members when creating a group, call the `createGroup` advanced API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createGroup.html)), and the `groupID` will be returned in the callback for successful creation.
 
 Below is the sample code:
 
@@ -47,13 +47,13 @@ groupManager.createGroup(
 
 The method for joining a group may vary by group type as follows:
 
-| Type                   | Method for Joining a Group                   |
-| ---------------------- | -------------------------- |
-| Work group (Work)     | By invitation       |
-| Public group (Public) | On request from the user and on approval from the group owner or admin |
-| Meeting group (Meeting)  | Free to join             |
-| Community (Community)      | Free to join             |
-| Audio-video group (AVChatRoom)   | Free to join             |
+| Type                           | Method for Joining a Group                                             |
+| ------------------------------ | ---------------------------------------------------------------------- |
+| Work group (Work)              | By invitation                                                          |
+| Public group (Public)          | On request from the user and on approval from the group owner or admin |
+| Meeting group (Meeting)        | Free to join                                                           |
+| Community (Community)          | Free to join                                                           |
+| Audio-video group (AVChatRoom) | Free to join                                                           |
 
 The following describes how to join the groups in an easy-to-hard sequence.
 
@@ -63,8 +63,8 @@ The following describes how to join the groups in an easy-to-hard sequence.
 
 Meeting groups (Meeting), audio-video groups (AVChatRoom), and communities are mainly used for free interaction scenarios, such as online meeting and live show. The process of joining such groups is the simplest:
 
-1. The user calls `joinGroup` ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#joinGroup)) to join the group.
-2. After the user has successfully joined the group, all the group members (including the user) will receive the `onMemberEnter` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onMemberEnter)).
+1. The user calls `joinGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/joinGroup.html)) to join the group.
+2. After the user has successfully joined the group, all the group members (including the user) will receive the `onMemberEnter` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnMemberEnter.html)).
 
 Below is the sample code:
 
@@ -85,8 +85,8 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
 Work groups (Work) are suitable for communication in work environments. The interaction pattern is designed to disable proactive group joining and only allow users to be invited to join the group by group members.
 The steps to join a group are as follows:
 
-1. A group member calls `inviteUserToGroup` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#inviteUserToGroup)) to invite a user to the group.
-2. All the group members (including the inviter) receive the `onMemberInvited` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onMemberInvited)), which can contain some UI tips.
+1. A group member calls `inviteUserToGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/inviteUserToGroup.html)) to invite a user to the group.
+2. All the group members (including the inviter) receive the `onMemberInvited` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnMemberInvited.html)), which can contain some UI tips.
 
 Below is the sample code:
 
@@ -111,14 +111,14 @@ The steps to join a group on request and on approval are as follows:
 
 Description of process:
 
-1. The user calls `joinGroup` ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#joinGroup)) to request to join the group.
+1. The user calls `joinGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/joinGroup.html)) to request to join the group.
 
-2. The group owner or admin receives the `onReceiveJoinApplication` group join request notification ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onReceiveJoinApplication)) and calls `getGroupApplicationList` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getGroupApplicationList)) to get the group join request list.
+2. The group owner or admin receives the `onReceiveJoinApplication` group join request notification ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveJoinApplication.html)) and calls `getGroupApplicationList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupApplicationList.html)) to get the group join request list.
 
-3. The group owner or admin traverses the group join request list and calls `acceptGroupApplication` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#acceptGroupApplication)) to approve a request or `refuseGroupApplication` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#refuseGroupApplication)) to reject it.
+3. The group owner or admin traverses the group join request list and calls `acceptGroupApplication` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/acceptGroupApplication.html)) to approve a request or `refuseGroupApplication` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/refuseGroupApplication.html)) to reject it.
 
-4. After the request to join the group is approved or rejected, the user will receive the `onApplicationProcessed` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onApplicationProcessed)). Here, if `isAgreeJoin` is `true`, the request is approved; otherwise, it is rejected.
-5. On approval, all the group members (including the user) will receive the `onMemberEnter` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onMemberEnter)), notifying the group members that someone joined the group.
+4. After the request to join the group is approved or rejected, the user will receive the `onApplicationProcessed` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnApplicationProcessed.html)). Here, if `isAgreeJoin` is `true`, the request is approved; otherwise, it is rejected.
+5. On approval, all the group members (including the user) will receive the `onMemberEnter` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnMemberEnter.html)), notifying the group members that someone joined the group.
 
 Below is the sample code:
 
@@ -168,19 +168,19 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
 });
 ```
 
-The group owner or admin can also call the `setGroupInfo` API ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#setGroupInfo)) to change the group join option (`V2TIMGroupAddOpt`) to "no group join" or "no approval required".
+The group owner or admin can also call the `setGroupInfo` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupInfo.html)) to change the group join option (`V2TIMGroupAddOpt`) to "no group join" or "no approval required".
 
 `V2TIMGroupAddOpt` has the following options:
 
-| Group Join Option                                   | Description                                   |
-| ------------------------------------------ | -------------------------------------- |
-| GroupAddOptTypeEnum.V2TIM_GROUP_ADD_FORBID | No users can join the group.                         |
+| Group Join Option                          | Description                                                                           |
+| ------------------------------------------ | ------------------------------------------------------------------------------------- |
+| GroupAddOptTypeEnum.V2TIM_GROUP_ADD_FORBID | No users can join the group.                                                          |
 | GroupAddOptTypeEnum.V2TIM_GROUP_ADD_AUTH   | Approval from the group owner or admin is required to join the group (default value). |
-| GroupAddOptTypeEnum.V2TIM_GROUP_ADD_ANY    | Any user can join the group without approval.       |
+| GroupAddOptTypeEnum.V2TIM_GROUP_ADD_ANY    | Any user can join the group without approval.                                         |
 
 ## Getting the Joined Groups
 
-You can call `getJoinedGroupList` ([TS](https://comm.qq.com/im-react-native-doc/classes/GroupManager________.V2TimGroupManager.html#getJoinedGroupList)) to get the list of joined work groups (Work), public groups (Public), meeting groups (Meeting), and communities (Community, which **don't support** the topic feature). Audio-video groups (AVChatRoom) and communities (Community, which **support** the topic feature) are not included in this list.
+You can call `getJoinedGroupList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getJoinedGroupList.html)) to get the list of joined work groups (Work), public groups (Public), meeting groups (Meeting), and communities (Community, which **don't support** the topic feature). Audio-video groups (AVChatRoom) and communities (Community, which **support** the topic feature) are not included in this list.
 
 Below is the sample code:
 
@@ -193,9 +193,9 @@ const groupRes = await groupManager.getJoinedGroupList();
 
 ## Leaving a Group
 
-Call `quitGroup` ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#quitGroup)) to leave a group.
-The member who left the group will receive the `onQuitFromGroup` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onQuitFromGroup)).
-Other group members will receive the `onMemberLeave` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onMemberLeave)).
+Call `quitGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/quitGroup.html)) to leave a group.
+The member who left the group will receive the `onQuitFromGroup` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnQuitFromGroup.html)).
+Other group members will receive the `onMemberLeave` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnMemberLeave.html)).
 
 > ! The group owner **cannot** leave a public group (Public), meeting group (Meeting), community, or audio-video group (AVChatRoom) and can only [disband it](#dismiss).
 
@@ -216,9 +216,9 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
 
 ## Disbanding a Group
 
-You can call `dismissGroup` ([TS](https://comm.qq.com/im-react-native-doc/classes/BaseManager______.V2TIMManager.html#dismissGroup)) to disband a group, and all the group members will receive the `onGroupDismissed` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onGroupDismissed)).
+You can call `dismissGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/dismissGroup.html)) to disband a group, and all the group members will receive the `onGroupDismissed` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnGroupDismissed.html)).
 
-If you have allowed automatically disbanding an inactive group on the server, when the group is automatically disbanded by the server, the SDK will receive the `onGroupRecycled` callback ([TS](https://comm.qq.com/im-react-native-doc/interfaces/interface.V2TimGroupListener-1.html#onGroupRecycled)).
+If you have allowed automatically disbanding an inactive group on the server, when the group is automatically disbanded by the server, the SDK will receive the `onGroupRecycled` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnGroupRecycled.html)).
 
 Below is the sample code:
 
