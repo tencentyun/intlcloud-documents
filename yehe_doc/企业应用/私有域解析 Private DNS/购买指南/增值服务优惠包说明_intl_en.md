@@ -33,7 +33,7 @@ Log in to the Private DNS console and purchase the value-added service packages 
     <td>Private domain names out of the quota in the month of validity period of the package will be charged on a <a href="https://intl.cloud.tencent.com/document/product/1097/40555">pay-as-you-go</a> basis.</td>
   </tr>
   <tr>
-    <td rowspan="2">Round-robin DNS</td>
+    <td rowspan="3">Round-robin DNS</td>
     <td>This value-added service allows you to add more round-robin DNS records of the respective record type under an account. Specifically, you can add round-robin DNS records of the same host record and the same record type at the max number specified for the service.</td>
   </tr>
   <tr>
