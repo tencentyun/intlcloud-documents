@@ -40,10 +40,6 @@ CosResult encapsulates the error code and corresponding error message returned w
       <td>When an error occurs in a request, the server will automatically generate a unique ID (`trace-id`) for the error which corresponds to `request-id` and can help locate problems faster.</td>
    </tr>
    <tr>
-      <td>string GetErrorInfo()</td>
-      <td>Gets the SDK internal error message.</td>
-   </tr>
-   <tr>
       <td>int GetHttpStatus()</td>
       <td>Gets the HTTP status code.</td>
    </tr>
