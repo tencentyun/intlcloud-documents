@@ -64,7 +64,7 @@ COS can implement access over the HDFS protocol by enabling metadata acceleratio
 
 ## Configuration Item Description
 
->? You can access metadata acceleration buckets through POSIX semantics or S3 protocol. We recommend you use POSIX to achieve a better performance.
+>? You can access metadata acceleration buckets through POSIX semantics or S3 protocol. We recommend you use POSIX for better performance.
 >
 
 ### 1. Required common configuration items
@@ -106,7 +106,7 @@ The following configuration items are required for the S3 access mode. For other
 | fs.cosn.posix_bucket.fs.impl         | org.apache.hadoop.fs.CosNFileSystem |      This parameter is fixed at `com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter` for the POSIX access mode (default mode) or `org.apache.hadoop.fs.CosNFileSystem` for the S3 access mode, respectively. |
 
 
-### 4. Notes
+### 5. Notes
 1. You cannot use a legacy Hadoop-COS JAR package to access metadata acceleration buckets.
 2. To access metadata acceleration buckets in POSIX mode of Hadoop-COS 8.1.5 or earlier, you need to disable ranger verification in the console.
 

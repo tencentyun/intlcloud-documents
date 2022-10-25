@@ -5,7 +5,7 @@ Object is the basic unit of storage in COS, which can be understood as data in a
 Each object consists of an object key (ObjectKey), an object value (Value), and object metadata (Metadata).
 
 - ObjectKey: The unique identifier of an object in a bucket, which can be regarded as the file path. In the API and SDK samples, objects are named in the format of `<ObjectKey>`.
-- Value: The uploaded object itself, which can be regarded as the file content informally.
+- Value: The uploaded object itself, which can be commonly understood as the object content.
 - Metadata: A set of key-value pairs, which can be regarded as file attributes, such as file modification time and storage class. You can query them after uploading the object.
 
 
@@ -16,14 +16,14 @@ For example, in an object's access address `examplebucket-1250000000.cos.ap-guan
 
 ### Naming conventions
 
-- You can use any UTF-8 characters in an object key name. However, for the maximum compatibility with other applications, we recommend you use letters and digits.
+- You can use any UTF-8 characters in an object key name. However, we recommend you use letters and digits to ensure optimal compatibility with other applications..
 - The encoded length can be up to 850 bytes.
 - The name cannot start with a forward slash `/` or backslash <code>\\</code>.
 - An object key cannot contain certain ASCII control characters, including upward arrow (↑), downward arrow (↓), rightward arrow (→), and leftward arrow (←), corresponding to CAN (24), EM (25), SUB (26), and ESC (27) respectively.
 - Refrain from using special symbols such as `*` and `%` in the filename.
 
 >? If the name of the uploaded file or folder contains Chinese characters, when you access or request the file or folder, the Chinese characters will be converted into a percent-encoded string based on URL-encoding rules.
-> For example, when you access `TestSample.doc`, the object key is `TestSample.doc`, but the percent-encoded string actually read is `%e6%96%87%e6%a1%a3.doc`.
+> For example, when you access `XXX.doc`, the object key is `XXX.doc`, but the percent-encoded string actually read is `%e6%96%87%e6%a1%a3.doc`.
 > 
 
 

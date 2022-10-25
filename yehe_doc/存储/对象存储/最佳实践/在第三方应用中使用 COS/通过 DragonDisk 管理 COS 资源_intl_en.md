@@ -8,7 +8,7 @@ Windows, macOS, and various Linux distributions.
 
 ## Download Address
 
-Get DragonDisk on the [Download](http://download.dragondisk.com/download-s3-compatible-cloud-client.html) page.
+Go to the [DragonDisk Download](http://download.dragondisk.com/download-s3-compatible-cloud-client.html) page and download it.
 
 
 ## Installation and Configuration
@@ -27,7 +27,7 @@ The configuration items are as described below:
  - Access key: Enter the `SecretId`, which can be created and obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
  - Secret key: Enter the `Secretkey`, which can be created and obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
 4. After adding the account information, select the configured username in **Root** to view the list of buckets under the username. At this point, the configuration is completed.
-![](https://qcloudimg.tencent-cloud.cn/raw/aa2cf3f681233d692d58ddcc7f16a833.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/95aa5d0160953181856e1531b8e4039b.png)
 
 ## Managing COS File
 
@@ -40,53 +40,53 @@ Select the configured username in **Root** to view the list of buckets under the
 
 
 
-### Creating bucket
+### Creating a bucket
 
 1. Right-click the username and enter the full bucket name in the pop-up window such as `examplebucket-1250000000`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/46fd8b1296908a39b2949b7895dd1a60.png)
 2. After confirming that everything is correct, click **OK**.
 For bucket naming conventions, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
-### Deleting bucket
+### Deleting a bucket
 
 Right-click the target bucket in the bucket list and select **Delete** in the context menu.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c1e62d846d76f7fd5062d10ab243f085.png)
 
 
 
-### Uploading object
+### Uploading an object
 
 In the bucket list, select the destination bucket or path, select the object to be uploaded on the local computer, and drag and drop it to the bucket or path.
 
 
-### Downloading object
+### Downloading an object
 
 Find the target bucket in the bucket list and drag and drop the object to a folder on the local computer on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/45fcab5119da7ab87d958853e8b6100a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/abfa0db54ecfef0e6dd658a964bed0a9.png)
 
 
-### Copying object
+### Copying an object
 
 Right-click the target object in the left window, select **Copy**, right-click under the destination path, and select **Paste**.
 
 
-### Renaming object
+### Renaming an object
 
 Right-click the target object in the bucket, select **Rename**, and enter a new name.
 
 
-### Deleting object
+### Deleting an object
 
 Right-click the target object in the bucket and select **Delete**.
 
-### Moving object
+### Moving an object
 
 Right-click the target object in the left window, select **Cut**, right-click under the destination path, and select **Paste**.
 
 
 ### Other features
 
-In addition to the above features, DragonDisk also supports setting object ACLs, viewing object metadata, customizing headers, and getting object URLs.
+In addition to the above features, DragonDisk also allows you to set object ACLs, view object metadata, customize headers, and get object URLs.
 
 
 

@@ -1,6 +1,6 @@
 ## Feature Overview
 
-The COS request tool is a web debugging tool provided by COS, which is integrated on the TencentCloud API 3.0 Explorer platform for API debugging.
+The COS request tool is a web-based debugging tool provided by COS. It is integrated on the TencentCloud API 3.0 Explorer platform for API debugging.
 
 >! Requests sent by the COS request tool will be sent to the real COS server. **As all operations are real, be careful when performing operations such as `DELETE`.**
 
@@ -16,10 +16,10 @@ Click [here](https://console.cloud.tencent.com/api/explorer?Product=cos) to ente
 
 Select the **Cloud Object Storage** product, select the required API, enter parameters for the API, and click **Send Request** to get the corresponding response.
 
-The COS request tool page shows the sections of product, API, parameter, and result from left to right. You can perform operations in different sections and send the request in the result section to get the response and process parameters as shown below:
+The COS request tool page shows the sections of product, API, parameter, and result from left to right. You can perform operations in different sections and send the request in the result section to get the response and process parameters.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2304f363c6f61cef274e47804f34e3a4.png)
 
-The detailed steps to use the COS request tool is as shown below:
+The detailed steps to use the COS request tool are as shown below:
 
 **1. Select the COS product.**
 
@@ -86,4 +86,4 @@ The `200 OK` in the first line is the status code returned for the request. If t
 
 
 ## Notes
-After you click **Send Request** to send the request with its required parameters entered to the COS server, COS will perform the corresponding operation on your buckets or objects. The operation cannot be undone or rolled back; therefore, proceed with caution.
+After you click **Send Request** to send the request with its required parameters entered to the COS server, COS will perform the corresponding operation on your buckets or objects. The operation cannot be undone or reverted; therefore, proceed with caution.

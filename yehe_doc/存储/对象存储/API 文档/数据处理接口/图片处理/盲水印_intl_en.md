@@ -1,6 +1,6 @@
 ## Feature Description
 
-Blind watermarking is a brand-new watermarking feature based on Tencent Cloud CI. It allows you to add a watermark to the input image information without displaying the watermark or significantly affecting the image quality. If you think your image might have been stolen, you can extract the blind watermark from the suspected image to check whether the image belongs to you.
+Blind watermarking is a brand-new watermarking feature based on Tencent Cloud CI. It allows you to add a watermark to the input image information without displaying the watermark or significantly affecting the image quality. If you suspect that your image has been stolen, you can extract the blind watermark from the suspected image to check whether the image belongs to you.
 
 You can call this API to:
 <ul  style="margin: 0;">
@@ -37,14 +37,14 @@ This API only uses common request headers. For more information, see [Common Req
 
 Add the image processing parameter `Pic-Operations` (a JSON string) to the request header. Its parameters are as follows:
 
-| Parameter Name | Description | Type | Required | 
+| Parameter Name | Description | Type | Required |
 | ----------- | ----- | ---- | ------------------------------------------------------------ |
 | is_pic_info | Whether to return the input image information. Valid values: `0` (no), `1` (yes). Default value: `0`. | Int   | No   |
 | rules       |  Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. |Array | No   |
 
 Parameters of `rules` (a JSON array) are as follows:
 
-| Parameter | Description | Type | Required | 
+| Parameter | Description | Type | Required |
 | -------- | ------ | ----- | ------------------------------------------------------------ |
 | bucket   | Name of the destination bucket to store the results in the format of `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket by default. | String | No       |
 | fileid   | Storage path and name of the output file. <br>Naming rules are as follows (assume the input file is `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` will be created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash; otherwise, an empty filename will be generated.    | String | Yes |
@@ -209,7 +209,6 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 You can add a blind watermark during download in the same way as adding a regular watermark, except that you need to add the `watermark` parameter after the image URL.
 
 #### Sample request
-
 ```plaintext
 GET /<ObjectKey>?watermark/3/type/<type>/image/<imageUrl>/text/<text> HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
@@ -567,4 +566,4 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 
 The request for extracting a blind watermark from an image stored in COS is the same as that used to process in-cloud data as instructed in [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592), except that you need to add the image processing parameter `Pic-Operations` to the request header and use the blind watermark extraction parameter `watermark/4`.
 
-	
+​	
