@@ -80,7 +80,7 @@ We use licenses to manage access to different functional modules of the media SD
 - A UGSV license can activate the **UGSV and video playback** capabilities.
 - A video playback license can activate the **video playback** capability.
 
-**If you buy packages, you will get a live stream publishing license or UGSV license for free**. Such licenses are **valid for one year after you purchase the packages (expire at 00:00:00 the next day)**.
+A live stream publishing, UGSV, or video playback license is valid for one year after you bind it to an application (**expire at 00:00:00 the next day**).
 
 >! The video playback license was introduced in the 10.1 version of the media SDKs (launched at the end of May 2022).
 
