@@ -28,7 +28,7 @@
 <td align="left">直播</td>
 <td>-</td>
 <td align="left">试用期为28天</td>
-<td rowspan=3><a href="https://www.tencentcloud.com/document/product/647/50784">申请测试版 License</a></td>
+<td rowspan=3><a href="https://www.tencentcloud.com/document/product/647/51047">申请测试版 License</a></td>
 </tr>
 <tr>
 <td align="left">短视频</td>
@@ -65,7 +65,7 @@
 <td>直播</td>
 <td>
 	<li>购买独立直播 License 一年使用授权</li></td>
-<td rowspan=3><a href="https://www.tencentcloud.com/document/product/647/50784">新增与续期正式版 License</a></td>
+<td rowspan=3><a href="https://www.tencentcloud.com/document/product/647/51047">新增与续期正式版 License</a></td>
 </tr>
 <tr>
 <td>短视频</td>
