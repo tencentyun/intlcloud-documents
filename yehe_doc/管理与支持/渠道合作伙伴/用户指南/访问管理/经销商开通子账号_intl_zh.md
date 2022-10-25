@@ -1,5 +1,5 @@
-经销商主账号管理员需要从**访问管理**界面管理子账号用户。
 
+经销商主账号管理员需要从**访问管理**界面管理子账号用户。
 ## 操作步骤
 1. 进入[腾讯云官网首页](https://www.tencentcloud.com/account/login)。
 2. 单击**登录**，进入登录页面。
@@ -23,7 +23,7 @@
 7. 将子账号的访问链接，账号名和初始密码给子账号用户后进行登入使用。
 ![](https://qcloudimg.tencent-cloud.cn/raw/bf019b1331f7612d176670c0ff35fcaa.png)
 
->？
+>?
 >- 访问管理产品完整的产品能力，可参考文档[访问管理](https://www.tencentcloud.com/document/product/598)进一步了解。
 >- 如对经销商平台权限管理或访问管理产品有疑问，请[提交工单](https://console.cloud.tencent.com/workorder/category)联系我们。
 
