@@ -44,7 +44,7 @@ DNS 查询存在 TTL 缓存机制，私有域解析 Private DNS 请求量统计�
 
 ## 抵扣顺序
 #### 使用量抵扣顺序
-![](https://qcloudimg.tencent-cloud.cn/raw/3e1d600a000c0396c266593f658bb0e1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2768dd6104b975f0e4bd97e8da9d96e0.png)
 
 #### 抵扣顺序示例
 某日私有域解析 Private DNS 企业用户购买了请求量为500万次的增值服务流量包，此时用户拥有500万次/月的免费额度和500万次流量包额度；使用该产品的情况下，则优先从免费额度中抵扣额度，当免费额度用尽后，再从流量包中抵扣，当免费额度和流量包额度耗尽时，将自动转入按量计费方式。
