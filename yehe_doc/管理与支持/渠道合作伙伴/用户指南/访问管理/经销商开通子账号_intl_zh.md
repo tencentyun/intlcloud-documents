@@ -19,12 +19,11 @@
 点击**按策略生成器创建**
 ![](https://qcloudimg.tencent-cloud.cn/raw/c4ec1fce786259b96813e7db4c0a27e5.png)
 选择**国际合作伙伴管理**服务，选择接口操作授权该策略可访问的服务接口，完成策略创建。
-经销商控制台服务接口管理清单可参考XXXX文档。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5badb5b441f47560d32b2bbd496f6675.png)
 7. 将子账号的访问链接，账号名和初始密码给子账号用户后进行登入使用。
 ![](https://qcloudimg.tencent-cloud.cn/raw/bf019b1331f7612d176670c0ff35fcaa.png)
 
->!
->- 访问管理产品完整的产品能力，可参考文档[访问管理](https://www.tencentcloud.com/zh/document/product/598)进一步了解。
->- 如对经销商平台权限管理或访问管理产品有疑问，请[提交工单](https://console.tencentcloud.com/workorder/category)联系我们。
+>？
+>- 访问管理产品完整的产品能力，可参考文档[访问管理](https://www.tencentcloud.com/document/product/598)进一步了解。
+>- 如对经销商平台权限管理或访问管理产品有疑问，请[提交工单](https://console.cloud.tencent.com/workorder/category)联系我们。
 
