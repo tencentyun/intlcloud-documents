@@ -20,8 +20,7 @@ The process of shooting videos is as follows:
 4. End shooting
 
 Example
-<dx-codeblock>
-::: ios objcect-c
+```objectivec
 @interface VideoRecordViewController <TXUGCRecordListener> {
    UIView *_videoRecordView;
 }
@@ -80,14 +79,12 @@ Example
     [alert show];
 }
 @end
-:::
-</dx-codeblock>
+```
 
 ## Preview
 `TXUGCRecord` in `TXUGCRecord.h` is used to implement video shooting. The first step of shooting videos is using `startCameraSimplePreview` to enable preview. Because mic and camera permissions are required for preview, you need to configure pop-up windows to request the permissions.
 ### 1. Enable preview
-<dx-codeblock>
-::: ios objcect-c
+```objectivec
 TXUGCRecord *record = [TXUGCRecord sharedInstance];
 record.recordDelegate = self; //Configure shooting callbacks. For details, see `TXUGCRecordListener`.
 
@@ -106,15 +103,13 @@ param.enableBFrame = YES; // Enable B frame encoding, which produces better vide
 
 // Disable preview
 [[TXUGCRecord shareInstance] stopCameraPreview];
-:::
-</dx-codeblock>
+```
 
 ### 2. Modify preview parameters
 
 To modify preview parameters after the camera is turned on, refer to the code below:
 
-<dx-codeblock>
-::: ios objcect-c
+```objectivec
 // Change the shooting resolution to 540p
 [recorder setVideoResolution: VIDEO_RESOLUTION_540_960];
 
@@ -132,13 +127,11 @@ To modify preview parameters after the camera is turned on, refer to the code be
 
 // Set the callback for custom processing
 recorder.videoProcessDelegate = delegate;
-:::
-</dx-codeblock>
+```
 
 ## Shooting control
 ### Start, pause, and resume shooting
-<dx-codeblock>
-::: ios objcect-c
+```objectivec
 // Start shooting a video
 [recorder startRecord];
 
@@ -156,12 +149,11 @@ recorder.videoProcessDelegate = delegate;
 
 // Ending shooting
 [recorder stopRecord];
-:::
-</dx-codeblock>
+```
 
 The shooting progress and result callbacks are implemented by `TXUGCRecordListener` (defined in `TXUGCRecordListener.h`).
 - `onRecordProgress` is the shooting progress callback. The `millisecond` parameter indicates the recorded duration in milliseconds.
-```
+```objectivec
   @optional
    (void)onRecordProgress:(NSInteger)milliSecond;
 ```
@@ -178,7 +170,7 @@ The shooting progress and result callbacks are implemented by `TXUGCRecordListen
 
 ## Shooting settings
 ### 1. Video
-```objc
+```objectivec
 // Shoot in landscape mode
 [recorder setHomeOrientation:VIDOE_HOME_ORIENTATION_RIGHT];
 
@@ -195,7 +187,7 @@ The shooting progress and result callbacks are implemented by `TXUGCRecordListen
 [recorder setAspectRatio:VIDEO_ASPECT_RATIO_9_16];
 ```
 ### 2. Speed
-```
+```objectivec
 // Set the shooting speed
 //    VIDEO_RECORD_SPEED_SLOWEST: Very slow
 //   VIDEO_RECORD_SPEED_SLOW: Slow
@@ -206,20 +198,18 @@ The shooting progress and result callbacks are implemented by `TXUGCRecordListen
 ```
 
 ### 3. Audio
-<dx-codeblock>
-::: ios objcect-c
+```objectivec
 // Set the mic volume. This is used to control the volume of the mic when background music is mixed.
 // Volume. The normal volume is 1. We recommend 0-2, but you can set it to a larger value if you want louder music.
 [recorder setMicVolume:volume];
 
 // Mute/Unmute. The `isMute` parameter specifies whether to mute audio. Audio is unmuted by default.
 [recorder setMute:isMute];
-:::
-</dx-codeblock>
+```
 
 ## Picture taking
 
-```objc
+```objectivec
 // Take a photo/Capture a frame from a video. This API works only if it is called after `startCameraSimplePreview` or `startCameraCustomPreview`.
 [recorder snapshot:^(UIImage *image) {
     // `image` is the capturing result.
@@ -230,7 +220,7 @@ The shooting progress and result callbacks are implemented by `TXUGCRecordListen
 
 You can add various effects to your video during shooting.
 ### 1. Watermarks
-```objc
+```objectivec
 // Add a global watermark
 // normalizationFrame: The normalized position of the watermark in relation to the video. The SDK calculates the watermark height based on the aspect ratio.
 // Suppose the video dimensions are 540 x 960, and `frame` is set to `(0.1，0.1，0.1, 0)`.
@@ -241,8 +231,7 @@ You can add various effects to your video during shooting.
 
 ### 2. Filters
 
-<dx-codeblock>
-::: ios objcect-c
+```objectivec
 // Set the filter style
 // Set the color filter: Romantic, refreshing, elegant, pink, retro, and more
 // filterImage: The color lookup table, which must be in PNG format.
@@ -260,11 +249,10 @@ You can add various effects to your video during shooting.
 // leftRatio: The ratio of the width of the left picture to the video width
 // You can use this API to implement "swipe to change filter".
 [recorder setFilter:leftFilterImgage leftIntensity:leftIntensity rightFilter:rightFilterImgage rightIntensity:rightIntensity leftRatio:leftRatio];
-:::
-</dx-codeblock>
+```
 
 ### 3. Beauty filters
-```
+```objectivec
 // Set the beauty filter style and strength and the strength of the skin brightening and blush effects
 // beautyStyle:
 // typedef NS_ENUM(NSInteger, TXVideoBeautyStyle) {
