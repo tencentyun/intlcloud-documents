@@ -28,7 +28,7 @@ You can apply for one trial license for each functional module of the SDK in the
 <td align="left">Live streaming</td>
 <td>-</td>
 <td align="left">28 days</td>
-<td rowspan=3><a href="https://www.tencentcloud.com/document/product/647/50784">Applying for a trial license</a></td>
+<td rowspan=3><a href="https://www.tencentcloud.com/document/product/647/51047">Applying for a trial license</a></td>
 </tr>
 <tr>
 <td align="left">UGSV</td>
@@ -65,7 +65,7 @@ For information about the billing of official licenses and packages, see [Billin
 <td>Live streaming</td>
 <td>
 	<li>Purchase a live stream publishing license (valid for one year)</li></td>
-<td rowspan=3><a href="https://www.tencentcloud.com/document/product/647/50784">Adding and Renewing a License</a></td>
+<td rowspan=3><a href="https://www.tencentcloud.com/document/product/647/51047">Adding and Renewing a License</a></td>
 </tr>
 <tr>
 <td>UGSV</td>
