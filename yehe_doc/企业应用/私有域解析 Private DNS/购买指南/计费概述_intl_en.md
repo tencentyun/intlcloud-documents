@@ -44,7 +44,7 @@ For use details, see [Value-Added Service Packages](https://www.tencentcloud.com
 
 ## Deduction Order
 #### Usage deduction order
-![](https://qcloudimg.tencent-cloud.cn/raw/3e1d600a000c0396c266593f658bb0e1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2768dd6104b975f0e4bd97e8da9d96e0.png)
 
 #### Deduction order example
 An enterprise user of Private DNS purchases a value-added traffic package of 5 million DNS queries one day, and at this moment the user has a free tier of 5 million queries/month and 5 million queries in the traffic package. If the user uses the DNS service, the free tier will be deducted first; after the free tier is used up, the traffic package will be deducted; after the traffic package is used up, the service will be automatically charged on a pay-as-you-go basis.
