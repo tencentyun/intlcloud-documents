@@ -283,6 +283,7 @@ VIDEO_COMPRESSED_360P – Compress to 360p (360 × 640)
 VIDEO_COMPRESSED_480P – Compress to 480p (640 × 480)
 VIDEO_COMPRESSED_540P – Compress to 540p (960 × 540)
 VIDEO_COMPRESSED_720P – Compress to 720p (1280 × 720)
+VIDEO_COMPRESSED_1080P – Compress to 1080p (1920 × 1080)
 ```
 If the resolution of the original video is lower than the configured constant, the original resolution will be used.
 If the resolution of the original video is higher than the configured constant, the video will be compressed to the configured resolution.
