@@ -62,7 +62,6 @@ if (result.IsSucc()) {
      // do something
    }
 } else {
-    std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
     std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
     std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
     std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -202,7 +201,6 @@ if (result.IsSucc()) {
     // The call is successful. You can call the resp member functions to get the return content.
 } else {
     // The call failed. You can call the result member functions to get the error information.
-    std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
     std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
     std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
     std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -232,7 +230,6 @@ if (result.IsSucc()) {
     // The call is successful. You can call the resp member functions to get the return content.
 } else {
     // The call failed. You can call the result member functions to get the error information.
-    std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
     std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
     std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
     std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -744,7 +741,7 @@ void AddObject(const std::string& object)
 std::vector<DeletedInfo> GetDeletedInfos() const
 
 // Get the information of objects that failed to be deleted.
-std::vector<ErrorInfo> GetErrorinfos() const
+std::vector<ErrorInfo> GetErrorMsgs() const
 ```
 
 The structures of `DeletedInfo` and `ErrorInfo` are as follows:
@@ -752,13 +749,18 @@ The structures of `DeletedInfo` and `ErrorInfo` are as follows:
 ```
 struct DeletedInfo{
     std::string m_key; // object key
+    std::string m_version_id; //version_id
+    bool m_delete_marker; // is delete marker
+    std::string m_delete_marker_version_id; // if delete marker, so version id
 }
 struct ErrorInfo{
     std::string m_key; // object key
     std::string m_code; // error code
     std::string m_message; // error message
+    std::string m_version_id; // version id
 }
 ```
+
 
 ### Restoring an archived object 
 
