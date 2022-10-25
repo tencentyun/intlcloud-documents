@@ -23,7 +23,7 @@ For resellers, their root account admins need to go to the **Cloud Access Manage
 7. Provide the sub-user login URL, account ID, and initial password for the sub-user for login.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bf019b1331f7612d176670c0ff35fcaa.png)
 
->？
+>?
 >- For more CAM capabilities, see [CAM Documentation](https://www.tencentcloud.com/document/product/598).
 >- If you have any questions, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
