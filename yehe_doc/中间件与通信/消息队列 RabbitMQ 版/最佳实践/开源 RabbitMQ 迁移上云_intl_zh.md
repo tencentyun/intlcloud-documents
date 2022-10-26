@@ -74,7 +74,6 @@ TDMQ RabbitMQ 暂不支持 “/” 字符，但您无需自行修改元数据，
 1. 进入 [迁移上云](https://console.cloud.tencent.com/tdmq/rabbit-migrate) 界面，选择目标地域后，即可查看该地域下所有迁移上云的任务列表。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d904ce359b3efd2d784a2dea0ef716a0.png)
 2. 状态列展示了某一迁移上云任务的执行结果。各状态说明如下：
-
 | 状态     | 说明                                                         |
 | :------- | :----------------------------------------------------------- |
 | 迁移中   | 元数据文件正在迁移。                                         |
@@ -93,7 +92,7 @@ TDMQ RabbitMQ 暂不支持 “/” 字符，但您无需自行修改元数据，
 | 任务类型                         | 集群迁移                                                     | 导入 Vhost                                                   |
 | :------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 文件格式                         | json                                                         | json                                                         |
-| 字段要求                         | 数据中必须包含 "vhosts" 列表，且 exchanges、queues、bindings 列表中需包含"vhost"字段 |                                                              |
+| 字段要求                         | 数据中必须包含 "vhosts" 列表，且 exchanges、queues、bindings 列表中需包含"vhost"字段 |            -                                                  |
 | 命名规范                         | Vhosts、exchanges、queues、bindings 命名规则需符合 TDMQ RabbitMQ 命名规则限制，详情见[使用限制](https://intl.cloud.tencent.com/document/product/1112/43063) | exchanges、queues、bindings 命名规则需符合 TDMQ RabbitMQ 命名规则限制，详情见[使用限制](https://intl.cloud.tencent.com/document/product/1112/43063) |
 | 开源 RabbitMQ 元数据文件导出方式 | 在开源 RabbitMQ 控制台的 Overview 界面，使用 Export definitions 功能，将 Virtual host 选为 All，导出 All Vhost 的元数据。若您想删除某些 Vhost 不予导入，请您在"vhosts"列表中删除某些 Vhost 名称后再进行集群迁移 | 在开源 RabbitMQ 控制台的 Overview 界面，使用 Export definitions 功能，Virtual host 处选择导出某一 Vhost 的元数据 |
 
