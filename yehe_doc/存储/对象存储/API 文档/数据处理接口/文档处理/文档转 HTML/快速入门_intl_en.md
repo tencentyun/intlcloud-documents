@@ -1,10 +1,10 @@
 ## Feature Description
 
-The file-to-HTML conversion feature allows generating HTML pages from multiple types of files for preview. It enables easy online file preview on PC, app, and other terminals. It is widely suitable for diverse business scenarios, such as online education, enterprise OA, online knowledge base, and online file preview.
+The file-to-HTML conversion feature allows you to generate HTML pages for preview from multiple types of files. It enables easy online file preview on PC, app, and other terminals. It is widely suitable for diverse business scenarios, such as online education, enterprise OA, online knowledge base, and online file preview.
 
 >? 
 > - COS encapsulates the preview JS-SDK, so you can connect to the HTML preview service with only one URL.
-> - If you want to use it in WeChat mini programs, see Data Processing.
+> - If you want to use it in WeChat mini programs, see [Data Processing](https://www.tencentcloud.com/document/product/436/40695).
 >- To connect to a CDN domain name, you need to enable **Advanced Cache Expiration Settings** in CDN as instructed in [Node Caching Rule Configuration (Legacy)](https://intl.cloud.tencent.com/document/product/228/35317).
 >
 

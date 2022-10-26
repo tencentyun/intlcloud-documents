@@ -33,9 +33,9 @@ The request body of this request is empty.
 
 | Name | Description | Type | Required |
 | ----------- | ------------------------------------------------------------ | ------ | -------- |
-| regions     | Region. To specify multiple regions, separate them by comma. Valid values: `All`, `ap-shanghai`, `ap-beijing`. | string | No       |
-| bucketNames | Bucket name. To specify multiple bucket names, separate them by comma. Exact search is supported. | string | No |
-| bucketName  | Bucket name prefix for prefix search        | string |  No       |
+| regions     | Region. Separate multiple regions by comma. Valid values: `All`, `ap-shanghai`, `ap-beijing`. | string | No       |
+| bucketNames | Bucket name. Separate multiple bucket names by comma. Exact search is supported. | string | No |
+| bucketName  | Bucket name prefix. Prefix search is supported.        | string |  No       |
 | pageNumber  | Page number                  |  string | No       |
 | pageSize    | Number of entries per page                | string | No       |
 
@@ -69,7 +69,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
