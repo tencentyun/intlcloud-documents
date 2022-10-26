@@ -74,7 +74,6 @@ After that, the metadata file format will be automatically verified. Once the ve
 1. Select a region on the [Migration to Cloud]https://console.cloud.tencent.com/tdmq/rabbit-migrate page, and you can view the list of all migration tasks in this region.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d904ce359b3efd2d784a2dea0ef716a0.png)
 2. The **Status** column displays the execution status of each migration task. Below are the status descriptions:
-
 | Status     | Description                                                         |
 | :------- | :----------------------------------------------------------- |
 | Migrating   | The metadata file is being migrated.                                         |
@@ -93,7 +92,7 @@ After that, the metadata file format will be automatically verified. Once the ve
 | Task type                         | Cluster migration                                                     | Vhost  import                                                  |
 | :------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | File format                         | json                                                         | json                                                         |
-| Field requirement                         | The metadata file must contain the vhost list. Besides, the exchange, queue, and binding lists must contain the "vhost" field. |                                                              |
+| Field requirement                         | The metadata file must contain the vhost list. Besides, the exchange, queue, and binding lists must contain the "vhost" field. |                             -                                 |
 | Naming convention                         | The vhosts, exchanges, queues, and bindings must be named in compliance with the naming conventions in TDMQ for RabbitMQ. For details, see [Use Limits](https://intl.cloud.tencent.com/document/product/1112/43063) | The exchanges, queues, and bindings must be named in compliance with the naming conventions in TDMQ for RabbitMQ. For details, see [Use Limits](https://intl.cloud.tencent.com/document/product/1112/43063) |
 | Export method of open-source RabbitMQ metadata file | On the **Overview** tab page in the RabbitMQ console, click **Export definitions** and select **All** for the **Virtual host** field to export the metadata of all vhosts. If you want to exclude some vhosts from the migration task, delete them in the vhost list before the cluster migration. | On the **Overview** tab page in the RabbitMQ console, click **Export definitions** and select a specific vhost for the **Virtual host** field to export its metadata. |
 
