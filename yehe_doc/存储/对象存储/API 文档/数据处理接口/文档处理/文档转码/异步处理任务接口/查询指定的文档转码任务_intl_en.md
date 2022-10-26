@@ -83,13 +83,13 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :----------------------------------------------------------- | :-------- |
-| JobsDetail | Response | Job details, which is same as `Response.JobsDetail` in [CreateDocProcessJobs](https://intl.cloud.tencent.com/document/product/1045/47932). |  Container |
+| JobsDetail | Response | Job details, which is the same as the `Response.JobsDetail` node in the [CreateDocProcessJobs](https://intl.cloud.tencent.com/document/product/1045/47932) API. |  Container |
 | NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node will not be returned. |  String |
 
 

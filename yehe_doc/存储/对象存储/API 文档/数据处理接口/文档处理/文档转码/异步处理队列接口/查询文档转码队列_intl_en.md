@@ -82,7 +82,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
@@ -141,14 +141,14 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------------------------- | :-------- |
 | RequestId          | Response | Unique ID of the request.                   | String    |
-| QueueList          | Response | Queue array, which is same as `QueueList` described above. | Container |
+| QueueList          | Response | Queue array, which is the same as `QueueList` described above. | Container |
 | NonExistPIDs       | Response | List of non-existing queue IDs             | Container |
 
 `NonExistPIDs` has the following sub-nodes:
