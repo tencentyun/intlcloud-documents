@@ -1,129 +1,209 @@
 ## Environment Requirements
--  Vue 3
--  TypeScript
--  Sass (sass-loader version 10.1.1 or earlier) 
+
+- Vue 3
+- TypeScript
+- Sass (sass-loader version 10.1.1 or earlier)
+- Node (12.13.0 ≤ node version ≤ 17.0.0. The official LTS version 16.17.0 of Node.js is recommended.)
+- npm (use a version that matches the Node version in use)
 
 ## TUIKit Source Code Integration
+
 ### Step 1. Create a project
-Use the Vue CLI to create a project and configure Vue 3, TypeScript, and Sass/SCSS.
-<img style="width:800px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/ac877020ff69dbb11ea9dd9e7ee865a7.jpg"/> 
 
-### Step 2. Download TUIKit
-Download the TUIKit source code from [GitHub](https://github.com/TencentCloud/TIMSDK/tree/master/Web), and copy and paste the `TUIKit` folder to the `src` folder of your project.
-<img style="width:300px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/1a4c4e68dc3b16a083b88196961db9fe.jpg"/> 
-
-### Step 3. Generate UserSig 
-1. Download the `GenerateTestUserSig` package from [GitHub](https://github.com/TencentCloud/TIMSDK/tree/master/Web/Demo), and copy and paste it to your project folder.
-<img style="width:300px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/5b08564572aa55901e7f07867fd8737a.png"/>
-
-2. Set required parameters in the `GenerateTestUserSig` file, where `SDKAppID` and `Key` can be obtained in the [IM console](https://console.cloud.tencent.com/im). Click the card of the target app to go to its basic configuration page. For example:
-<img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/480455e5b4a2a1d4d67ffb2e445452a6.png"/>
-
-3. In the **Basic Information** area, click **Display key**, and copy and save the key information to the `GenerateTestUserSig` file. 
-<img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/bbb093bfc7343a626dd8bc6f3d4cabf7.png"/> 
-
->!
-> 
-> In this document, the method to obtain `UserSig` is to configure a `SECRETKEY` in the client code. In this method, the `SECRETKEY` is vulnerable to decompilation and reverse engineering. Once your `SECRETKEY` is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**. The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
-
-### Step 4. Download the TUIKit component dependencies
+You are advised to use the Vue CLI to create a project and configure Vue 3, TypeScript, and Sass/SCSS.
+If the Vue CLI is not installed, you can install it as follows on your terminal or CMD:
 <dx-codeblock>
-:::  shell
-cd src/TUIKit
-npm i --legacy-peer-deps
+::: shell
+npm install -g @vue/cli@4.5.0 sass sass-loader@10.1.1
 :::
 </dx-codeblock>
 
-### Step 5. Import the TUIKit component
+Use the Vue CLI to create a project and set configuration items as the figure below shows.
+<dx-codeblock>
+::: shell
+vue create chat-example && cd chat-example
+:::
+</dx-codeblock>
+
+<img style="width:800px;" src="https://qcloudimg.tencent-cloud.cn/raw/f65d2a15cde0c0baba9a24a5ba845f26.jpg">
+
+### Step 2. Download the TUIKit component
+
+Use [npm](https://www.npmjs.com/package/@tencentcloud/chat-uikit-vue) to download the TUIKit component. To facilitate future expansion, it is recommended that you copy the TUIKit component to the `src` directory of your own project:
+<dx-tabs>
+::: macOS\s
+<dx-codeblock>
+::: shell
+npm i @tencentcloud/chat-uikit-vue
+mkdir -p ./src/TUIKit && cp -r ./node_modules/@tencentcloud/chat-uikit-vue/ ./src/TUIKit
+:::
+</dx-codeblock>
+:::
+::: Windows\s
+<dx-codeblock>
+::: shell
+npm i @tencentcloud/chat-uikit-vue && xcopy .\node_modules\@tencentcloud\chat-uikit-vue .\src\TUIKit /i /e
+:::
+</dx-codeblock>
+:::
+</dx-tabs>
+
+After successful download, the directory structure is as shown in the figure below:  
+<img style="width:300px;" src="https://qcloudimg.tencent-cloud.cn/raw/ced7ede80ab9d24b28787dd80182da7f.png">
+
+### Step 3. Import the TUIKit component
+
 Import TUIKit in `main.ts` and register it to the Vue project instance.
 <dx-codeblock>
 :::  js
-import { createApp } from 'vue'
-import App from './App.vue'
-import { TUICore, TUIComponents } from "./TUIKit";
-import { genTestUserSig } from "../debug";
-const config = {
-	SDKAppID: 0, // Replace 0 with the SDKAppID of your IM application when connecting. Value type: Number
-};
+import { createApp } from 'vue';
+import App from './App.vue';
+import { TUIComponents, TUICore, genTestUserSig } from './TUIKit';
+
+const SDKAppID = 0; // Your SDKAppID
+const secretKey = ''; //Your secretKey
+const userID = ''; // User ID
+
 // init TUIKit
-const TUIKit = TUICore.init(config);
+const TUIKit = TUICore.init({
+  SDKAppID,
+});
 // TUIKit add TUIComponents
 TUIKit.use(TUIComponents);
-const userID = 'xxxx'; // User ID
-const userInfo = {
-	userID: userID,
-	userSig: genTestUserSig(userID).userSig, // The password with which the user logs in to IM. It is the ciphertext generated by encrypting information such as userID. For the detailed generation method, see Generating UserSig.
-};
+
 // login TUIKit
-TUIKit.login(userInfo);
-// register
-createApp(App).use(TUIKit).mount('#app')
+TUIKit.login({
+  userID: userID,
+  userSig: genTestUserSig({
+    SDKAppID,
+    secretKey,
+    userID,
+  }).userSig, // The password with which the user logs in to IM. It is the ciphertext generated by encrypting information such as userID. For the detailed generation method, see Generating UserSig.
+});
+
+createApp(App).use(TUIKit).mount('#app');
 :::
 </dx-codeblock>
 
->!
-> 
-> Here the `SDKAppID` needs to be identical with the `SDKAppID` in the `GenerateTestUserSig` file.
 
-### Step 6. Call the TUIKit component
+[](id:step4)
+
+### Step 4. Obtain the SDKAppID, key, and userID
+
+Set related parameters `SDKAppID`, `secretKey`, and `userID` in the sample code in the `main.ts` file. The SDKAppID and key can be obtained in the [IM console](https://console.cloud.tencent.com/im) by clicking the card of the target app to go to its basic configuration page. For example:
+![](https://qcloudimg.tencent-cloud.cn/raw/3b585716a08e7ff3f0047bd7c904d048.png)
+The `userID` information can created and obtained in the [IM console](https://console.cloud.tencent.com/im) by clicking the card of the target app to go to its account management page to create an account and obtain the user ID. For example:
+![](https://qcloudimg.tencent-cloud.cn/raw/d6774e3ca2bbaf993b505d1596bdac1f.png)
+
+### Step 5. Call the TUIKit component
+
 Call the TUIKit component on the target page.
-For example, on the `App.vue` page, you can call TUIConversation and TUIChat to build a chat interface.
+For example, on the `App.vue` page, you can call TUIConversation, TUIChat, and TUISearch to build a chat interface.
 <dx-codeblock>
-:::  html
+:::  js
+
 <template>
-	<div class="home-TUIKit-main">
-		<div class="conversation">
-			<TUIConversation />
-		</div>
-		<div class="chat">
-			<TUIChat>
-				<h1>Welcome to Tencent Cloud Instant Messaging (IM)</h1>
-			</TUIChat>
-		</div>
-	</div>
+  <div class="home-TUIKit-main">
+    <div :class="env?.isH5 ? 'conversation-h5' : 'conversation'" v-show="!env?.isH5 || currentModel === 'conversation'">
+      <TUISearch class="search" />
+      <TUIConversation @current="handleCurrentConversation" />
+    </div>
+    <div class="chat" v-show="!env?.isH5 || currentModel === 'message'">
+      <TUIChat>
+        <h1>Welcome to Tencent Cloud Instant Messaging (IM)</h1>
+      </TUIChat>
+    </div>
+  </div>
 </template>
+
+<script lang="ts">
+import { defineComponent, reactive, toRefs } from 'vue';
+import { TUIEnv } from './TUIKit/TUIPlugin';
+
+export default defineComponent({
+  name: 'App',
+  setup() {
+    const data = reactive({
+      env: TUIEnv(),
+      currentModel: 'conversation',
+    });
+    const handleCurrentConversation = (value: string) => {
+      data.currentModel = value ? 'message' : 'conversation';
+    };
+    return {
+      ...toRefs(data),
+      handleCurrentConversation,
+    };
+  },
+});
+</script>
 
 <style scoped>
 .home-TUIKit-main {
-	display: flex;
-	height: 800px;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.search {
+  padding: 12px;
 }
 .conversation {
-	min-width: 285px;
-	flex: 0 0 24%;
-	border-right: 1px solid #f4f5f9;
+  min-width: 285px;
+  flex: 0 0 24%;
+  border-right: 1px solid #f4f5f9;
+}
+.conversation-h5 {
+  flex: 1;
+  border-right: 1px solid #f4f5f9;
 }
 .chat {
-	flex: 1;
-	height: 100%;
-	position: relative;
+  flex: 1;
+  height: 100%;
+  position: relative;
 }
 </style>
 :::
 </dx-codeblock>
 
-### Step 7. Launch the project
+### Step 6. Launch the project
+
+Run the following command to launch the project:
 <dx-codeblock>
-:::  shell
+::: shell
 npm run serve
 :::
 </dx-codeblock>
 
+### Step 7. Send your first message
+
+1. After the project is launched, click the one-to-one chat icon in the upper-left corner.
+2. The one-to-one chat window pops up. In the search box, type the userID created in [step 4](#step4) to search for the user, select the user found, and click **Done**.
+3. Type your message in the input box and click **Send**.
+
 ## FAQs
-### 1. How do I generate a UserSig?
+
+#### What is `UserSig`?
+
+A UserSig is a password with which the user logs in to IM. It is the ciphertext generated by encrypting information such as userID.
+
+#### How can I generate a UserSig?
 
 The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide a project-oriented API. When `UserSig` is needed, your project can send a request to your server for a dynamic `UserSig`. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
-### 2. Module not found: Error: Can't resolve 'sass-loader'
+>! In the sample code in this document, the method to obtain `UserSig` is to configure a `SECRETKEY` in the client code. In this method, the `SECRETKEY` is vulnerable to decompilation and reverse engineering. Once your `SECRETKEY` is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**. For the correct `UserSig` distribution method, see above.
 
-- The IM TUIKit web style depends on Sass, so you need to install Sass and sass-loader at the global level of the project.
-- The sass-loader version should be 10.1.1 or earlier.
+#### What should I do when I receive the error message "Component name 'XXXX' should always be multi-word"?
+
+- IM TUIKit web uses ESLint v6.7.2, which does not strictly verify the camelCase format of module names.
+- If you encounter the problem, you can configure as follows in the `.eslintrc.js` file:
 <dx-codeblock>
 :::  shell
-npm install sass sass-loader@10.1.1 --save-dev
+module.exports = {
+  ...
+  rules: {
+    ...
+    'vue/multi-word-component-names': 'warn',
+  },
+};
 :::
 </dx-codeblock>
-
-
-
-

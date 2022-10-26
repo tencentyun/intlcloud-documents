@@ -34,8 +34,8 @@ pod install
 ```bash
  pod repo update
 ```
-**Expected TUI component integration result**:<br>
- <img src="https://qcloudimg.tencent-cloud.cn/raw/6e34bd1058ab0f84109bed307a38e134.png" width = "300"/>
+**Expected TUI component integration result**:
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/6e34bd1058ab0f84109bed307a38e134.png" width = "300"/> 
 
 
 ## Quick Build
@@ -96,7 +96,7 @@ During chat UI initialization, the upper layer needs to pass in the conversation
 }
 @end
 ```
-`TUIC2CChatViewController` will automatically pull and display the historical messages of the user.
+>?`TUIC2CChatViewController` will automatically pull and display the historical messages of the user.
 
 ### Step 4. Build the contacts UI
 The contacts UI does not require other dependencies. You only need to create the object and display it.
@@ -121,23 +121,22 @@ TUI components allow users to start audio/video calls in chat UIs and can be qui
     <th style="text-align:center;"><b>Audio Call</b><br></th>
   </tr>
   <tr>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/b9f362503d25179db6f75fc91cfd000a.jpg"/></td>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2f037d7de8270c0edef68c0b829465ec.png"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/44d4c8a412752abda898341665a90016.png"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/5eb84936666da81b0331a28c3c779b77.png"/></td>
 	 </tr>
 </table>
+
 
 1. **Activate the TRTC service**
 	1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
 	2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 7-day free trial service of TUICallKit.
 	3. Click **Confirm** in the pop-up dialog box. A TRTC app with the same SDKAppID as the IM app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
-
 2. **Integrate the TUICallKit component**
 Add the following content to your Podfile:
 ```objectivec
-// Integrate the TRTCCalling component
+// Integrate theTUICallKit component
 pod 'TUICallKit'                  
 ```
-
 3. **Start and answer a video or audio call**
 <table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>
@@ -145,14 +144,15 @@ pod 'TUICallKit'
     <th style="text-align:center;" ><b>Starting a Call via a Contact Profile Page<br></b></th>
   </tr>
   <tr>
-    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/b7b6aca5e1f3f3e5d775cfa3316e30f4.png"/></td>
-    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/31fd1d8fb263e953825cf5531a24ffca.png"/></td>
+    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/b34f84493214ca44bef32d0257d66693.png"/></td>
+    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/65d76fa2bea287a22c11b1f972996397.png"/></td>
      </tr>
 </table>
-
-	- After integrating the TUICallKit component, the chat UI and contact profile UI display the **Video Call** and **Audio Call** buttons by default. When a user clicks either of the buttons, TUIKit automatically displays the call invitation UI and sends the call invitation request to the callee.
-	- When an **online** user receives a call invitation, TUIKit automatically displays the call receiving UI, where the user can answer or reject the call.
-	- When an **offline** user receives a call invitation, offline push is required to wake up the app call. For more information about offline push, see [Add the offline push feature](#Step5.4).
+<ul>
+<li>After integrating the TUICallKit component, the chat UI and contact profile UI display the **Video Call** and **Audio Call** buttons by default. When a user clicks either of the buttons, TUIKit automatically displays the call invitation UI and sends the call invitation request to the callee.</li>
+<li>When an <strong>online</strong> user receives a call invitation, TUIKit automatically displays the call receiving UI, where the user can answer or reject the call.</li>
+<li>When an <strong>offline</strong> user receives a call invitation and wants to start the app to accept the call, the offline push capability is required. For how to implement offline push, see <a href="#Step5.4">Add offline push</a>.</li>
+</ul>
 
 4. **Add offline push**
 Before using offline push, you need to activate the [IM offline push](https://intl.cloud.tencent.com/document/product/1047/39157) service.
@@ -162,7 +162,7 @@ For related app configuration, see [Integrating TUIOfflinePush and Running the O
 
 
 ## FAQs
-1. What should I do when I receive the message "target has transitive dependencies that include statically linked binaries"?
+#### What should I do when I receive the message "target has transitive dependencies that include statically linked binaries"?
 If this error occurs during the `pod` process, this is because TUIKit is using a third-party static library. You need to comment out `use_frameworks!` in your Podfile.
 If you need to use `use_frameworks!`, use CocoaPods 1.9.0 or a later version for `pod install` and modify it as follows:
 ```
@@ -170,14 +170,14 @@ use_frameworks! :linkage => :static
 ```
 If you use Swift, change the reference of the header file to the reference format of @import module name.
 
-2. What should I do if TUICallKit conflicts with the integrated audio and video library?
-Do not integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the TUICallKit Professional version via `pod`. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities. **The audio and video library of the [LiteAV_Enterprise](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise) version cannot coexist with TUICallKit.** For the detailed solution, see [here](https://intl.cloud.tencent.com/document/product/1047/50024#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98).
+#### What should I do if TUICallKit conflicts with an audio/video library that I have integrated?
+Do not integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the TUICallKit Professional version via `pod`. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities. **The audio and video library of the [LiteAV_Enterprise](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise) version cannot coexist with TUICallKit.** For the detailed solution, see [here](https://www.tencentcloud.com/document/product/1047/50024#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98).
 
-3. How long is the default call invitation timeout duration?
+#### How long is the default call invitation timeout duration?
 The default call invitation timeout duration is 30 seconds.
 
-4. Will an invitee receive a call invitation immediately if the invitee goes offline and then online within the call invitation timeout duration?
+#### Will an invitee receive a call invitation immediately if the invitee goes offline and then online within the call invitation timeout duration?
 
-   - If the call invitation is started in a one-to-one chat, the invitee can receive the call invitation, and the TUIKit will automatically open the call invitation UI internally.
-   - If the call invitation is started in a group chat, the TUIKit will automatically pull the call invitations of the last 30 seconds and open the group call UI.
+- If the call invitation is started in a one-to-one chat, the invitee can receive the call invitation, and the TUIKit will automatically open the call invitation UI internally.
+- If the call invitation is started in a group chat, the TUIKit will automatically pull the call invitations of the last 30 seconds and open the group call UI.
 
