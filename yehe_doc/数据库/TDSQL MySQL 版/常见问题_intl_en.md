@@ -32,3 +32,4 @@ If you want to modify the shardkey value in a row in a sharded table, you need t
 
 ### Are distributed joins and transactions supported?
 For now, TDSQL only supports joins and transactions under a single shardkey and cross-node transactions but not cross-node joins.
+  
