@@ -1,6 +1,6 @@
 ## 功能描述
 
-DescribeAIJob 接口用于查询指定的任务。
+查询指定的任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -39,7 +39,7 @@ Authorization: <Auth String>
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 
@@ -50,7 +50,7 @@ Authorization: <Auth String>
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
@@ -77,12 +77,13 @@ Container 节点 Response 的内容：
 | NonExistJobIds     | Response | 查询的 ID 中不存在任务，所有任务都存在时不返回               | String    |
 
 对于不同的任务类型，JobsDetail 的内容不同，请参照以下链接：
-- <a href="https://www.tencentcloud.com/document/product/1045/49788#jobsDetail" target="_blank">翻译</a>
-
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49788" target="_blank">翻译</a>
+- 语言识别
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49790" target="_blank">分词</a>
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 
 ## 实际案例
@@ -93,7 +94,7 @@ Container 节点 Response 的内容：
 GET /ai_jobs/a8d121820f5e411ec926ef19d53ba9c6f HTTP/1.1
 Accept: */*
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: test-123456789.ci.ap-beijing.myqcloud.com
+Host: test-1234567890.ci.ap-beijing.myqcloud.com
 ```
 
 #### 响应
@@ -105,7 +106,7 @@ Content-Length: 666
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NjMxMDJhYTRfMThhYTk0MGFfYmU1Nl8xNTk=
 
 <Response>
     <JobsDetail>
@@ -134,6 +135,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Object>test-result.txt</Object>
             </Output>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>

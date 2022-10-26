@@ -25,7 +25,7 @@
 - 上传时处理
 - 云上数据处理
 
->? TPG 压缩为付费服务，计费项为图片高级压缩费用，由数据万象收取，具体费用请参见数据万象图片处理费用。
+>? TPG 压缩为付费服务，计费项为图片高级压缩费用，由数据万象收取，具体费用请参见数据万象 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/45582)。
 >
 
 ## 接口示例
@@ -33,7 +33,10 @@
 #### 1. 下载时处理
 
 ```plaintext
-download_url?imageMogr2/format/tpg
+GET /<ObjectKey>?imageMogr2/format/tpg HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 2. 上传时处理
@@ -76,14 +79,14 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 ## 处理参数说明
 
 | 参数             | 含义                                                         |
 | :--------------- | :----------------------------------------------------------- |
-| download_url     | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>， 例如`examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           |
 | /format/&lt;Format> | 压缩格式，此处为 tpg。                                       |
 
 ## 实际案例

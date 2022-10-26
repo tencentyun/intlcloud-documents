@@ -7,6 +7,7 @@
 | QueueId           | 队列 ID                                    | String    | 是       | 无                       |
 | PicProcessQueueId | 图片处理队列 ID                             | String    | 当存在图片处理节点时必选        | 无 |
 | SpeechRecognitionQueueId | 语音识别队列 ID                      | String    | 当存在语音识别节点时必选        | 无 |
+| AIProcessQueueId | AI 处理队列 ID                      | String    | 当存在 AI 识别节点时必选        | 无 |
 | NotifyConfig      | 回调信息，如果不设置，则使用队列的回调信息     | Container | 否       | 无                       |
 | ExtFilter         | 文件后缀过滤器                              | Container | 否        | 无                       |
 
@@ -296,9 +297,9 @@ Container 类型 EffectConfig 的具体数据描述如下：
 
 | 节点名称（关键字） | 描述             | 类型   | 是否必选 |
 | ------------------ | ---------------- | ------ | -------- |
-| MqRegion           | 消息队列所属园区，目前支持园区 sh（上海）、bj（北京）、gz（广州）、cd（成都）、hk（香港）  | String | 是 |
+| MqRegion           | 消息队列所属园区，目前支持园区 sh（上海）、bj（北京）、gz（广州）、cd（成都）、hk（中国香港）  | String | 是 |
 | MqMode             | 消息队列使用模式，默认 Queue ：<br/>主题订阅：Topic <br/> 队列服务: Queue</td>          | String | 是 |
-| MqName             | TDMQ 主题名称                                                                        | String | 是 | 
+| MqName             | TDMQ 主题名称                                                                        | String | 是 |
 
 
 ## DigitalWatermark

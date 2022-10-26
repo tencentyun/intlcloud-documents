@@ -15,11 +15,11 @@
 
 1. 登录数据万象控制台 ，单击**存储桶管理**，进入存储桶管理页面。
 2. 选择需操作的存储桶，进入相应存储桶管理页面。
-3. 在左侧导航栏中，单击**数据工作流 > 公共配置**，选择**队列与回调**页签。
+3. 在左侧导航栏中，单击**任务与工作流**，选择**队列与回调**页签。
 4. 在**媒体处理队列**栏中，单击开启或暂停队列即可。
 
 >!
-> - 暂停队列后，您将无法在控制台使用任务和工作流 功能。
+> - 暂停队列后，您将无法在控制台使用 [任务](https://intl.cloud.tencent.com/document/product/1045/43605) 和 [工作流](https://intl.cloud.tencent.com/document/product/1045/43604) 功能。
 > - 暂停队列后，该队列中的任务将被停止。
 >
 
@@ -32,10 +32,10 @@
 
 1. 登录数据万象控制台 ，单击**存储桶管理**，进入存储桶管理页面。
 2. 选择需操作的存储桶，进入相应存储桶管理页面。
-3. 在左侧导航栏中，单击**数据工作流 > 公共配置**，选择**队列与回调**页签。
+3. 在左侧导航栏中，单击**任务与工作流**，选择**队列与回调**页签。
 4. 单击**回调规则**。
 5. 在弹出的窗口中，单击当前状态，即可开启或关闭回调。
-开启回调需设置指定 URL，用于系统发送 HTTP 请求。回调详情请查看回调内容。
+开启回调需设置指定 URL，用于系统发送 HTTP 请求，或选择 TMDQ-CMQ 消息队列。回调详情请查看回调内容。
 ![](https://qcloudimg.tencent-cloud.cn/raw/6777758b99d24403d85797fccaf69ab3.png)
 
 
@@ -54,5 +54,5 @@
 
 | 参数 |描述           | 类型      |
 | :----------------- | :------------- | :-------- |
-| JobsDetail         |任务的详细信息，同 CreateMediaJobs 接口的 [Response.JobsDetail](https://intl.cloud.tencent.com/document/product/1045/43695) 节点 | Container |
+| JobsDetail         |任务的详细信息，同 CreateMediaJobs 接口的 [Response.JobsDetail](https://intl.cloud.tencent.com/document/product/1045/48941) 节点 | Container |
 | NonExistJobIds     | 查询的 ID 中不存在的任务，所有任务都存在时不返回             | String  |

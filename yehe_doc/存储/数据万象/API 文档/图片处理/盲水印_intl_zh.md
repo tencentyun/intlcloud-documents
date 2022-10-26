@@ -19,7 +19,7 @@
 | 全盲水印（type2） | 提取方便，提取水印仅需水印图，无需对比原图 | 批量添加，批量校验      |
 | 文字盲水印（type3） | 可直接将文字信息添加至图片中              | 终端信息添加            |
 
-盲水印是付费服务，使用时需在相应存储桶配置页中通过开关开通服务。数据万象在每个账户在首次产生该服务用量后，将发放一个用量为6000次，有效期为2个月的免费额度资源包，超出用量或资源包到期后将正常计费。具体费用请参见图片处理费用。
+盲水印是付费服务，使用时需在相应存储桶配置页中通过开关开通服务。数据万象在每个账户在首次产生该服务用量后，将发放一个用量为6000次，有效期为2个月的免费额度资源包，超出用量或资源包到期后将正常计费。具体费用请参见 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/45582)。
 
 >?
 > - 暂不支持为动图（例如 GIF 图片）添加盲水印。
@@ -66,7 +66,7 @@ Pic-Operations: <PicOperations>
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
@@ -75,14 +75,14 @@ Pic-Operations: <PicOperations>
 
 请求包头部增加图片处理参数 Pic-Operations，Pic-Operations 为 json 格式的字符串，具体参数如下：
 
-| 参数名称    | 描述                                                         |类型  | 是否必选 |
+| 参数名称    | 描述                                                         |类型  | 是否必选 | 
 | ----------- | ----- | ---- | ------------------------------------------------------------ |
 | is_pic_info | 是否返回原图信息。0表示不返回原图信息，1表示返回原图信息，默认为0 | Int   | 否   |
 | rules       |  处理规则，一条规则对应一个处理结果（目前最多支持五条规则），不填则不进行图片处理 |Array | 否   |
 
 rules（json 数组）中每一项具体参数如下：
 
-| 参数名称 | 描述                                                         |类型   | 是否必选 |
+| 参数名称 | 描述                                                         |类型   | 是否必选 | 
 | -------- | ------ | ----- | ------------------------------------------------------------ |
 | bucket   | 存储结果的目标存储桶名称，格式为：BucketName-APPID，如果不指定的话默认保存到当前存储桶 | String | 否       |
 | fileid   |     处理后文件的保存路径及名称。名称规则说明：<br>例如源文件的路径及文件名为：/p1/test1.jpg<br>1. 以`/`开头为绝对路径，例如 fileid 值为 /p2/test2.jpg 时，表示在 p2 文件夹中存储了一个文件名为 test2.jpg 的文件。<br>2. 不以`/`开头为相对路径，例如 fileid 值为 p2/test2.jpg 时，表示在 p1 文件夹中新建了一个 p2 文件夹，然后在 p2 文件夹中存储了一个文件名为 test2.jpg 的文件。<br>3. 注意：请不要以`/`结尾，否则会产生空文件名。                                           | String | 是       |
@@ -131,7 +131,7 @@ watermark/3/type/<type>/image/<imageUrl>/text/<text>/level/<level>
 | UploadResult              | 原图信息           | Container |
 
 UploadResult 节点内容： 
-
+ 
 | 参数名称                  | 描述               | 类型      |
 | ------------------------- | ------------------ | --------- |
 | OriginalInfo              | 原图信息           | Container |
@@ -250,8 +250,11 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 
 #### 请求示例
 
-```shell
-download_url?watermark/3/type/<type>/image/<imageUrl>/text/<text>
+```plaintext
+GET /<ObjectKey>?watermark/3/type/<type>/image/<imageUrl>/text/<text> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 请求参数
@@ -260,10 +263,10 @@ download_url?watermark/3/type/<type>/image/<imageUrl>/text/<text>
 
 | 参数         | 描述                                                         | 类型   | 是否必选 |
 | ------------ | ------------------------------------------------------------ | ------ | -------- |
-| download_url | 文件的访问链接，具体构成为http(s)://`<BucketName-APPID>.cos.<Region>.myqcloud.com/<picture name>`， 例如`examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` | String       | 是         |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           | String       | 是         |
 | type         | 盲水印类型，有效值：1为半盲水印；2为全盲水印；3为文字盲水印  | Int    | 是       |
 | image        | 盲水印图片地址，需要经过 URL 安全的 Base64 编码。 当 type 为1或2时必填，type 为3时无效。 指定的水印图片必须同时满足如下条件：<br>1. 盲水印图片与原图片必须位于同一个存储桶下；<br>2. URL 必须以`http://`开始，不能省略 http 头，也不能填 https 头，例如以下地址为非法水印地址：<li> examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png </li><li>https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png</li> | String | 否       |
-| text  |盲水印文字，需要经过 URL 安全的 Base64 编码。 当 type 为3时必填，type 为1或2时无效。 | String | 否   |
+| text  |盲水印文字，需要经过 URL 安全的 Base64 编码。 当 type 为3时必填，type 为1或2时无效。 | String | 否   | 
 | level        | 只对全盲水印（type=2）有效。level 的取值范围为{1,2,3}，默认值为1，level 值越大则图片受影响程度越大、盲水印效果越好。 | Int    | 否       |
 
 ### 实际案例
@@ -288,7 +291,7 @@ Pic-Operations: <PicOperations>
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
@@ -477,7 +480,7 @@ Pic-Operations: <PicOperations>
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
@@ -609,4 +612,4 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 
 对 COS 上的图片提取盲水印的请求包与 [云上数据处理](https://intl.cloud.tencent.com/document/product/436/40592) 接口一致，只需在请求包头部增加图片处理参数 Pic-Operations 并使用提取盲水印参数（watermark/4）即可。
 
-​	
+	

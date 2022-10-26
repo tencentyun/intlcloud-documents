@@ -41,7 +41,7 @@ Content-Type: application/xml
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 
@@ -56,7 +56,7 @@ Content-Type: application/xml
     <Operation>
         <WordsGeneralize>
             <NerMethod>DL</NerMethod>
-            <SegMethod>Mix</SegMethod>
+            <SegMethod>MIX</SegMethod>
         </WordsGeneralize>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
@@ -81,8 +81,10 @@ Container 类型 Request 的具体数据描述如下：
 | Input              | Request | 待操作的对象信息                                         | Container | 是   |
 | Operation          | Request | 操作规则                                                 | Container | 是       |
 | QueueId            | Request | 任务所在的队列 ID                                         | String    | 是   |
+| CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                    | String | 否 |
+| CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型                    | String | 否 |
 | CallBack           | Request | 任务回调地址，优先级高于队列的回调地址。设置为 no 时，表示队列的回调地址不产生回调 | String | 否 |
-| CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式                   | String | 否 |
+| CallBackMqConfig   | Request | 任务回调 TDMQ 配置，当 CallBackType 为 TDMQ 时必填。详情见 [CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945)                | Container | 否 |
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -96,7 +98,7 @@ Container 类型 Operation 的具体数据描述如下：
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
 | WordsGeneralize     | Request.Operation | 指定分词参数                                             | Container | 是   |
 | UserData            | Request.Operation | 透传用户信息，可打印的 ASCII 码，长度不超过1024               | String | 否 |
-| JobLevel            | Request.Operation | 任务优先级，级别限制：0 、1 、2 。级别越大任务优先级越高，默认为0 | String | 否   |
+| JobLevel            | Request.Operation | 任务优先级，级别限制：0 、1 、2。级别越大任务优先级越高，默认为0 | String | 否   |
 
 Container 类型 WordsGeneralize 的具体数据描述如下：
 
@@ -109,7 +111,7 @@ Container 类型 WordsGeneralize 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
 
@@ -133,7 +135,7 @@ Container 类型 WordsGeneralize 的具体数据描述如下：
         <Operation>
             <WordsGeneralize>
                 <NerMethod>DL</NerMethod>
-                <SegMethod>Mix</SegMethod>
+                <SegMethod>MIX</SegMethod>
             </WordsGeneralize>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
@@ -259,7 +261,7 @@ Container 节点 WordsGeneralizeToken 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 ## 实际案例
 
@@ -268,7 +270,7 @@ Container 节点 WordsGeneralizeToken 的内容：
 ```shell
 POST /ai_jobs HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: test-123456789.ci.ap-beijing.myqcloud.com
+Host: test-1234567890.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
@@ -280,7 +282,7 @@ Content-Type: application/xml
     <Operation>
         <WordsGeneralize>
             <NerMethod>DL</NerMethod>
-            <SegMethod>Mix</SegMethod>
+            <SegMethod>MIX</SegMethod>
         </WordsGeneralize>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
@@ -319,7 +321,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <Operation>
             <WordsGeneralize>
                 <NerMethod>DL</NerMethod>
-                <SegMethod>Mix</SegMethod>
+                <SegMethod>MIX</SegMethod>
             </WordsGeneralize>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>

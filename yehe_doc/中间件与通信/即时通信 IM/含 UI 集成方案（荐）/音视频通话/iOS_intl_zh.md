@@ -12,22 +12,19 @@ TUIKit 组件从 4.8.50 版本开始支持音视频通话功能，并且实现�
     <th style="text-align:center;" width="500px">语音通话<br></th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/5ca955c288c0c45b74e4fcfcb0ec6ebb.png"  />    </td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/068a66d2a99a910d516e645ffb06a23a.png" />     </td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/83d6cd991cd0e9251caafebe75e46f12.png"  />    </td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/842c563a9dd99da4950402e7a61836dd.png" />     </td>
 	 </tr>
 </table>
+
 
 [](id:step1)
 ## 步骤1：开通音视频服务
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
-2. 在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击 **免费体验** 即可开通 TUICallKit 的 7 天免费试用服务，在体验完成后，确认功能满足您的业务需求，可以点击 **[前往加购](https://buy.cloud.tencent.com/avc)**  购买正式的音视频通话能力套餐包。
-
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/667633f7addfd0c589bb086b1fc17d30.png" style="zoom:75%;" />
-
+2. 在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击 **免费体验** 即可开通 TUICallKit 的 7 天免费试用服务。 
 >= **友情提示**：单击免费体验以后，部分之前使用过 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 服务的用户会提示`[-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears`，
 >
 >因为新的 IM 音视频通话能力是整合了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础的 PaaS 服务，所以当 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 的免费额度（10000分钟）已经过期或者耗尽，就会导致开通此项服务失败，这里您可以单击[ TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，找到对应 SDKAppID 的应用管理页，示例如图，开通后付费功能后，再次**启用应用**即可正常体验音视频通话能力。
-><img width=800px src="https://qcloudimg.tencent-cloud.cn/raw/a568f2790baf160f4aff4f42f60e8c1c.png" />
 
 [](id:step2)
 ## 步骤2：集成 TUICallKit 组件
@@ -37,14 +34,12 @@ TUIKit 组件从 4.8.50 版本开始支持音视频通话功能，并且实现�
 // 集成音视频通话组件
 pod 'TUICallKit'                  
 ```
-
 2. 执行以下命令，下载第三方库至当前工程。
-```
+```sh
 pod install
 ```
-
  如果无法安装 TUIKit 最新版本，执行以下命令更新本地的 CocoaPods 仓库列表。
-```
+```sh
  pod repo update
 ```
 
@@ -61,7 +56,7 @@ TUICallKit 组件和 TUIChat 组件可自由组合，当集成了 TUICallKit 组
 [TUIChatConfig defaultConfig].enableAudioCall = NO; // YES：开启，NO：关闭
 ```
 
-<img src="https://main.qcloudimg.com/raw/17698afaedf9ba86045c03ef85159bec.png" style="zoom:40%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e7c9702e70914acd930d91d1dfb4548b.png" style="zoom:40%;" />
 
 [](id:step4)
 
@@ -90,38 +85,42 @@ TUICallKit 组件和 TUIChat 组件可自由组合，当集成了 TUICallKit 组
 
 [](id:question1)
 
-1. 在邀请超时时间内，被邀请者如果离线再上线，能否立即收到邀请？
+#### 错误提示“The package you purchased does not support this ability”？
+如遇以上错误提示，是由于您当前应用的**音视频通话能力包过期**或**未开通**，请参见 [步骤一：开通服务](#step1)，领取或者开通音视频通话能力，进而继续使用 TUICallKit 组件.
 
-   如果是单聊通话邀请，被邀请者离线再上线可以收到通话邀请，TUIKit 内部会自动唤起通话邀请界面。
+#### 如何购买套餐？
+音视频通话 SDK **目前处于内测期，提供有效期为60天的免费体验版**，正式付费版预计2022年12月发布上线，敬请期待。
 
-   如果是群聊通话邀请，被邀请者离线再上线后会自动拉取最近 30 秒内的邀请，TUIKit 会自动唤起群通话界面。
+#### 在邀请超时时间内，被邀请者如果离线再上线，能否立即收到邀请？
 
-2. TUICallKit 和自己集成的音视频库冲突了？
+- 如果是单聊通话邀请，被邀请者离线再上线可以收到通话邀请，TUIKit 内部会自动唤起通话邀请界面。
+- 如果是群聊通话邀请，被邀请者离线再上线后会自动拉取最近 20 条邀请，TUICallKit 会自动唤起群通话界面。
 
-   腾讯云的 [音视频库](https://intl.cloud.tencent.com/document/product/647/34615) 不能同时集成，可能产生符号冲突，可以按照下面的场景处理。
+#### TUICallKit 和自己集成的音视频库冲突了？
 
-   如果您使用了 `TXLiteAVSDK_TRTC` 库，不会发生符号冲突。可直接在 Podfile 文件中添加依赖，
+腾讯云的 [音视频库](https://intl.cloud.tencent.com/document/product/647/34615) 不能同时集成，可能产生符号冲突，可以按照下面的场景处理。
 
-   ```
-   pod 'TUICallKit'
-   ```
+- 如果您使用了 `TXLiteAVSDK_TRTC` 库，不会发生符号冲突。可直接在 Podfile 文件中添加依赖，
+```sh
+pod 'TUICallKit'
+```
+- 如果您使用了 `TXLiteAVSDK_Professional` 库，会产生符号冲突。您可在 Podfile 文件中添加依赖，
+```sh
+pod 'TUICallKit/Professional'
+```
+- 如果您使用了 `TXLiteAVSDK_Enterprise` 库，会产生符号冲突。建议升级到 `TXLiteAVSDK_Professional`  后使用 `TUICallKit/Professional`。
 
-   如果您使用了 `TXLiteAVSDK_Professional` 库，会产生符号冲突。您可在 Podfile 文件中添加依赖，
+#### 集成 TUICallKit 后运行报错 “ld: framework not found BoringSSL clang: error: linker command failed with exit code 1  sdk”
 
-   ```
-   pod 'TUICallKit/Professional'
-   ```
+由于 TUICallKit 所依赖的音视频库暂不支持模拟器，请用真机运行或者调试。
 
-   如果您使用了 `TXLiteAVSDK_Enterprise` 库，会产生符号冲突。建议升级到 `TXLiteAVSDK_Professional`  后使用 `TUICallKit/Professional`。
+#### 如果您使用的是老版本 TUICalling，想单独升级 IM 相关组件（TUIChat/TUIConversation/TUIGroup/TUIContact/TUISearch/TUIOfflinePush），应该怎么处理？
 
-   
+TUICalling 最后的一个稳定的 cocoapods 版本号为：9.6.4，如果您使用的是 cocoapods 集成，直接升级 IM 相关组件版本号即可。如果您是手动集成，也只需要替换 IM 相关组件的源代码即可。
 
-3. 集成 TUICallKit 后运行报错 “ld: framework not found BoringSSL clang: error: linker command failed with exit code 1  sdk”
-
-   由于 TUICallKit 所依赖的音视频库暂不支持模拟器，请用真机运行或者调试。
+TUICalling 和 TUICallKit 可以自由互通，建议您升级到最新的 TUICallKit 组件。
 
 [](id:feedback)
-
 
 
 ## 开源建设

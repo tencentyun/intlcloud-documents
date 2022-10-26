@@ -21,7 +21,7 @@
 - 云上数据处理
 
 >? 
->- WebP 压缩为付费服务，费用同基础图片处理，具体费用请参见图片处理费用。
+>- WebP 压缩为付费服务，费用同基础图片处理，具体费用请参见 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/45582)。
 >- 图片转换为 WebP 格式后，部分浏览器无法读取 WebP 图片的 exif 信息，导致没有旋转。您可参见 [旋转](https://intl.cloud.tencent.com/document/product/1045/33715) 文档，增加 auto-orient 参数，对原图旋转后再进行压缩。
 >- WebP 压缩默认继承原始图片的质量参数。您可参见 [质量变换](https://intl.cloud.tencent.com/document/product/1045/33717) 文档，通过修改图片质量来调节压缩率。
 >
@@ -32,7 +32,10 @@
 #### 1. 下载时处理
 
 ```plaintext
-download_url?imageMogr2/format/webp
+GET /<ObjectKey>?imageMogr2/format/webp HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 2. 上传时处理
@@ -75,14 +78,14 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 ## 处理参数说明
 
 | 参数             | 含义                                                         |
 | :--------------- | :----------------------------------------------------------- |
-| download_url     | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>， 例如`examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           | 
 | /format/&lt;Format> | 压缩格式，此处为 webp。                                       |
 
 ## 实际案例

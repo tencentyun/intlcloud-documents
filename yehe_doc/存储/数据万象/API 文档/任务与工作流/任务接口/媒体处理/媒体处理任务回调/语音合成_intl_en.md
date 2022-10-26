@@ -70,7 +70,7 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------- | :-------- |
 | EventName          | Response | Fixed value: `TaskFinish`.    | String |
-| JobsDetail | Response | Job details |  Container |
+| JobsDetail | Response | Job details |  Container array |
 
 `JobsDetail` has the following sub-nodes:
 <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">Same as `Response.JobsDetail` in the text-to-speech job submitting API.</a>
@@ -236,7 +236,7 @@ The nodes are as described below:
 ```plaintext
 {
     "EventName": "TaskFinish",
-    "JobsDetail": {
+    "JobsDetail": [{
         "Code": "Success",
         "CreationTime": "2022-06-30T19:33:18+0800",
         "EndTime": "2022-06-30T19:33:24+0800",
@@ -302,6 +302,6 @@ The nodes are as described below:
             "WorkflowId": "web6ac56c1ef54dbfa44d7f4103203be9",
             "WorkflowName": "workflow-test"
         }
-    }
+    }]
 }
 ```
