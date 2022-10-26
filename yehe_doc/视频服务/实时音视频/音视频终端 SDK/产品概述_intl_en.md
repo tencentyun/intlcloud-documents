@@ -12,7 +12,7 @@ The media SDKs offered by Tencent Cloud are the **TRTC SDK, MLVB SDK, UGSV SDK, 
 | ------------------------- | ---------------------------------- | -------- | ---------- | -------------- | ---------- |
 | Publish live streams                  | &#10003;                           | &#10003; | -          | &#10003;             | -          |
 | Same/Cross-room communication  | &#10003;                           | &#10003; | -          | &#10003;              | -          |
-| Shoot, edit, upload, and publish videos | &#10003;                           | -        | &#10003;   | -              | -          ||
+| Shoot, edit, upload, and publish videos | &#10003;                           | -        | &#10003;   | -              | -        |
 | Audio/Video calls                | &#10003;                           | &#10003;         | -          | &#10003;       | -          |
 | Play videos live                  | &#10003;                           | &#10003; | -          | -              | &#10003;   |
 | Play on demand                  | &#10003;                           | -        | &#10003;   | -              | &#10003;   |
