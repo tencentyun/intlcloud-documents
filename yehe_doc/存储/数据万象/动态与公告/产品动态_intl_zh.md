@@ -1,3 +1,34 @@
+##  2022年08月
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%">动态名称</th>
+			<th width="50%">动态描述</th>
+			<th width="15%">发布时间</th>
+			<th width="15%">相关文档</th>
+		</tr>
+	</thead>
+<tbody><tr>
+<td>图像修复上线</td>
+<td>用户可指定图像中需要修复的区域，并对其中的主体进行识别修复，填充与周围区域相似的图片纹理，适用于商业摄影后期、社交娱乐内容生产等场景。</td>
+<td>2022-08-15</td>
+<td><a href="https://cloud.tencent.com/document/product/460/79042">图像修复</a></td>
+</tr>
+<tr>
+<td>商品抠图上线</td>
+<td>支持识别出图像中的商品主体，并对背景信息予以去除，获得透明底的商品素材，适用于电商海报智能生成、个性化商品推荐等功能。</td>
+<td>2022-08-15</td>
+<td><a href="https://cloud.tencent.com/document/product/460/79735">商品抠图</a></td>
+</tr>
+<tr>
+<td>Logo 识别上线</td>
+<td>支持对图片内的电商 Logo 进行识别，返回图片中 Logo 的名称、坐标、置信度分值。</td>
+<td>2022-08-15</td>
+<td><a href="https://cloud.tencent.com/document/product/460/79736">Logo 识别</a></td>
+</tr>
+</tbody></table>
+
 ##  2022年07月
 
 <table>
@@ -19,7 +50,7 @@
 <td>视频质量评分上线</td>
 <td>用户可对视频进行无参考质量评价。</td>
 <td>2022-07-01</td>
-<td><a href="https://cloud.tencent.com/document/product/460/76906">视频质量评分</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/48934">视频质量评分</a></td>
 </tr>
 </tbody></table>
 
@@ -137,7 +168,7 @@
 <td>视频数字水印（视频盲水印）公测上线</td>
 <td>数字水印技术可以将图片、文本隐藏在视频中，在不破坏视频的完整性和观赏性的情况下，为视频创建者提供水印能力。</td>
 <td>2022-03-09</td>
-<td><a href="https://cloud.tencent.com/document/product/460/66328">数字水印</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/47750">数字水印</a></td>
 </tr>
 </tbody></table>
 
@@ -157,7 +188,7 @@
 <td>媒体处理上线德国园区</td>
 <td>媒体处理功能功能新支持德国法兰克福地域，地域简写：eu-frankfurt。</td>
 <td>2022-02-17</td>
-<td><a href="https://cloud.tencent.com/document/product/460/46488">数据工作流</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/43604">数据工作流</a></td>
 </tr>
 <tr>
 <td>H.265视频转码上线</td>
@@ -169,7 +200,7 @@
 <td>极速高清视频转码上线</td>
 <td>极速高清转码可以让视频在较低码率情况下提升视频的主观画质，能让视频更小，更清晰。</td>
 <td>2022-02-17</td>
-<td><a href="https://cloud.tencent.com/document/product/460/58431">极速高清</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/47746">极速高清</a></td>
 </tr>
 </tbody></table>
 
@@ -194,13 +225,13 @@
 <td>媒体处理-音视频分段功能上线</td>
 <td>音视频分段功能可按指定时长将音视频切分为若干片段，分段时您还可以改变音视频片段的容器格式。</td>
 <td>2021-10-14</td>
-<td><a href="https://cloud.tencent.com/document/product/460/62692">音视频分段</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/47744">音视频分段</a></td>
 </tr>
 <tr>
 <td>媒体处理-超分辨率功能上线</td>
 <td>超分辨率识别视频的内容与轮廓高清重建视频的细节与局部特征，通过视频中一系列低分辨率的图像来得到一幅高分辨率的图像，可与视频增强搭配使用升级老旧片源。</td>
 <td>2021-10-14</td>
-<td><a href="https://cloud.tencent.com/document/product/460/62693">超分辨率</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/47749">超分辨率</a></td>
 </tr>
 </tbody></table>
 
@@ -218,7 +249,7 @@
 <td>媒体处理-视频增强系列功能上线</td>
 <td>媒体处理提供细节增强、色彩增强、SDR to HDR 上变换等一系列功能提升视频画质，带来更佳视觉感受。</td>
 <td>2021-08-03</td>
-<td><a href="https://cloud.tencent.com/document/product/460/46488">配置工作流 </a><br><a href="https://cloud.tencent.com/document/product/460/46489">配置任务 </a><br><a href="https://cloud.tencent.com/document/product/460/46490">模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/43604">配置工作流 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43605">配置任务 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43606">模板</a></td>
 </tr>
 <tr>
 <td>媒体处理-自定义函数处理上线</td>
@@ -249,31 +280,31 @@
 <td>媒体处理-极速高清转码功能上线</td>
 <td>极速高清转码是一种让视频更小更清晰的转码方式，能够保证网络资源低消耗，同时带给用户视觉上更佳体验。</td>
 <td>2021-06-26</td>
-<td><a href="https://cloud.tencent.com/document/product/460/46488">配置工作流 </a><br><a href="https://cloud.tencent.com/document/product/460/46489">配置任务 </a><br><a href="https://cloud.tencent.com/document/product/460/46490">模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/43604">配置工作流 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43605">配置任务 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43606">模板</a></td>
 </tr>
 <tr>
 <td>媒体处理-HDR to SDR 变换功能上线</td>
 <td>率先实现云上视频动态范围下变换能力，使变换后视频的画面细节最大程度贴近原视频。</td>
 <td>2021-06-26</td>
-<td><a href="https://cloud.tencent.com/document/product/460/46488">配置工作流 </a><br><a href="https://cloud.tencent.com/document/product/460/46489">配置任务 </a><br><a href="https://cloud.tencent.com/document/product/460/46490">模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/43604">配置工作流 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43605">配置任务 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43606">模板</a></td>
 </tr>
 <tr>
 <td>媒体处理-精彩集锦功能上线</td>
 <td>对视频的内容、动作姿态、场景进行多维度识别与聚合，以匹配专业编辑的水准迅速剪辑生成视频中的精彩片段。</td>
 <td>2021-06-26</td>
-<td><a href="https://cloud.tencent.com/document/product/460/46488">配置工作流 </a><br><a href="https://cloud.tencent.com/document/product/460/46489">配置任务 </a><br><a href="https://cloud.tencent.com/document/product/460/46490">模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/43604">配置工作流 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43605">配置任务 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43606">模板</a></td>
 </tr>
 <tr>
 <td>媒体处理-人声分离功能上线</td>
 <td>将同一素材中的人声与背景音分离开来生成新的独立音频文件，便于后续素材实现其他风格的艺术加工。</td>
 <td>2021-06-26</td>
-<td><a href="https://cloud.tencent.com/document/product/460/46488">配置工作流 </a><br><a href="https://cloud.tencent.com/document/product/460/46489">配置任务 </a><br><a href="https://cloud.tencent.com/document/product/460/46490">模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/43604">配置工作流 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43605">配置任务 </a><br><a href="https://intl.cloud.tencent.com/document/product/1045/43606">模板</a></td>
 </tr>
 <tr>
 <td>媒体处理-HLS 自适应打包功能上线</td>
 <td>一步生成多码率自适应的视频文件，适配不同视频播放器、浏览器、分发平台。</td>
 <td>2021-06-26</td>
-<td><a href="https://cloud.tencent.com/document/product/460/46488">配置工作流 </a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/43604">配置工作流 </a></td>
 </tr>
 </tbody></table>
 

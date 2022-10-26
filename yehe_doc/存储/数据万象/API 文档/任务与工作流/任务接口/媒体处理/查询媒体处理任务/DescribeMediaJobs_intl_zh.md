@@ -1,6 +1,6 @@
 ## 功能描述
 
-DescribeMediaJobs 用于拉取符合条件的任务。
+拉取符合条件的任务。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -45,7 +45,7 @@ Authorization: <Auth String>
 | :----------------- | :----- | :----------------------------------------------------------- | :------ | :------- |
 | queueId            | 无     | 拉取该队列 ID 下的任务                                       | String  | 是       |
 | tag                | 无     | 任务的 Tag                                                  | String  | 是       |
-| workflowId         | 无     | 触发该任务的工作流 ID                                          | String  | 否       |
+| workflowId         | 无     | 触发该任务的工作流ID                                          | String  | 否       |
 | inventoryTriggerJobId | 无     | 触发该任务的存量触发任务 ID                                                  | String  | 否       |
 | inputObject | 无     | 该任务的输入文件名，暂仅支持精确匹配                                                  | String  | 否       |
 | orderByTime        | 无     | Desc 或者 Asc。默认为 Desc                                   | String  | 否       |
@@ -81,7 +81,7 @@ tag 支持以下几种类型:
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 
@@ -92,7 +92,7 @@ tag 支持以下几种类型:
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
 
@@ -122,6 +122,7 @@ Container 节点 Response 的内容：
 
 对于不同的任务类型，JobsDetail 的内容不同，请参照以下链接：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48941" target="_blank">音视频转码</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49782" target="_blank">极速高清转码</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49569" target="_blank">视频转动图</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48938" target="_blank">视频截帧</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48937" target="_blank">智能封面</a>
@@ -141,11 +142,9 @@ Container 节点 Response 的内容：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">语音合成</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">音频降噪</a>
 
-
-
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 
 ## 实际案例
@@ -155,7 +154,7 @@ Container 节点 Response 的内容：
 ```shell
 GET /jobs?queueId=p2242ab62c7c94486915508540933a2c6&tag=Transcode HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 
 ```
 
@@ -168,7 +167,7 @@ Content-Length: 666
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+x-ci-request-id: NjMxMDJhYTNfMThhYTk0MGFfYmU1OV8zZjc=
 
 <Response>
     <JobsDetail>

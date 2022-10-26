@@ -19,7 +19,10 @@
 #### 1. 下载时处理
 
 ```plaintext
-download_url?imageMogr2/bright/<value>					
+GET /<ObjectKey>?imageMogr2/bright/<value> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 2. 上传时处理
@@ -63,7 +66,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 
@@ -73,7 +76,7 @@ Pic-Operations:
 
 | 参数             | 含义                                                         |
 | ---------------- | ------------------------------------------------------------ |
-| download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           | 
 | /bright/&lt;value> | 图片亮度调节功能，value 为亮度参数值，取值范围为[-100, 100]的整数。<br><li>取值＜0：降低图片亮度。</li><li>取值 = 0：不调整图片亮度。</li><li>取值＞0：提高图片亮度。</li> |
 | /ignore-error/1            | 当处理参数中携带此参数时，针对文件过大、参数超限等导致处理失败的场景，会直接返回原图而不报错。         |
 
@@ -94,7 +97,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/b
 最终效果如下：
 
 ![](https://main.qcloudimg.com/raw/f0fac36084c6d6709ad832c91752ee28.jpg)	
-
+  
 #### 案例二：亮度调节并携带私有文件签名
 
 处理方式同上，仅增加签名部分，并与图片处理参数以“&”连接，示例如下：

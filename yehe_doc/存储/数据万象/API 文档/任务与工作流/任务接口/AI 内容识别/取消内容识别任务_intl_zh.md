@@ -1,6 +1,6 @@
 ## 功能描述
 
-CancelAIJob 用于取消一个任务，只有未执行的任务才可以被取消。
+取消一个任务，只有未执行的任务才可以被取消。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -39,7 +39,7 @@ Authorization: <Auth String>
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 
@@ -50,7 +50,7 @@ Authorization: <Auth String>
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
 
@@ -58,7 +58,7 @@ Authorization: <Auth String>
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 
 ## 实际案例
@@ -66,9 +66,9 @@ Authorization: <Auth String>
 #### 请求
 
 ```shell
-PUT /ai_jobs/a-xxx-xxx-xxx-xxxx?cancel HTTP/1.1
+PUT /ai_jobs/a632d4d3429a811ed8a5fa3d8277c400f?cancel HTTP/1.1
 Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
+Host:test-1234567890.ci.ap-chongqing.myqcloud.com
 
 ```
 
@@ -80,7 +80,7 @@ Content-Length: 0
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+x-ci-request-id: NjMxMDJhYTNfMThhYTk0MGFfYmU1OV8zZjc=
 
 ```
 

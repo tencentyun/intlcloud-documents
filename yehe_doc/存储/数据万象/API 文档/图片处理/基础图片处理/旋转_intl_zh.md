@@ -19,8 +19,11 @@
 #### 1. 下载时处理
 
 ```plaintext
-download_url?imageMogr2/rotate/<rotateDegree>
-					   /auto-orient
+GET /<ObjectKey>?imageMogr2/rotate/<rotateDegree>
+			   /auto-orient HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >! 请忽略上面的空格与换行符。
@@ -66,15 +69,19 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+> 
+
 
 
 ## 处理参数说明
 
 | 参数                      | 含义                                                         |
 | ------------------------- | ------------------------------------------------------------ |
-| download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           | 
 | /rotate/&lt;rotateDegree> | 普通旋转：图片顺时针旋转角度，取值范围0 - 360，默认不旋转。  |
 | /auto-orient              | 自适应旋转：根据原图 EXIF 信息将图片自适应旋转回正。         |
 | /flip/&lt;flip&gt;            | 镜像翻转：flip 值为 vertical 表示垂直翻转，horizontal 表示水平翻转         |

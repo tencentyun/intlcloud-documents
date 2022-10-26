@@ -42,7 +42,7 @@ Content-Type: application/xml
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/49351) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 
@@ -52,7 +52,7 @@ Content-Type: application/xml
 
 | 参数名称（关键字） | 描述                         | 类型   | 是否必选 |
 | :----------------- | :------------------------- | :----- | :------- |
-| queueId            | 队列 ID，以“,”符号分割字符串。 | String | 否     |
+| queueIds            | 队列 ID，以“,”符号分割字符串。 | String | 否     |
 | state              | 1. Active 表示队列内的作业会被媒体处理服务调度执行。<br>2. Paused 表示队列暂停，作业不再会被媒体处理调度执行，队列内的所有作业状态维持在暂停状态，已经执行中的任务不受影响。 | String | 否     |
 | category           | 1. CateAll：所有类型。<br>2. Transcoding：媒体处理队列。<br>3. SpeedTranscoding：媒体处理倍速转码队列。<br>4. 默认为 Transcoding。 | String | 否     |
 | pageNumber         | 第几页，默认值1。    | String | 否     |
@@ -62,7 +62,7 @@ Content-Type: application/xml
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/49352) 文档。 
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。 
 
 #### 响应体
 
@@ -154,7 +154,7 @@ Container 节点 NotifyConfig 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/49353) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 ## 实际案例
 

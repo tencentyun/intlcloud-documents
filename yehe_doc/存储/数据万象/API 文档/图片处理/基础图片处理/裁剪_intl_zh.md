@@ -18,12 +18,16 @@
 
 #### 1. 下载时处理
 
+
 ```plaintext
-download_url?imageMogr2/cut/<width>x<height>x<dx>x<dy>
-                       /crop/<imageSizeAndOffsetGeometry>
-                       /iradius/<radius>
-                       /rradius/<radius>
-                       /scrop/<Width>x<Height>
+GET /<ObjectKey>?imageMogr2/cut/<width>x<height>x<dx>x<dy>
+                           /crop/<imageSizeAndOffsetGeometry>
+                           /iradius/<radius>
+                           /rradius/<radius>
+                           /scrop/<Width>x<Height> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >? 请忽略上面的空格与换行符。
@@ -76,15 +80,19 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+> 
+
 
 
 ## 处理参数说明
 
 | 参数         | 含义                                                         |
 | ------------ | ------------------------------------------------------------ |
-| download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           | 
 | /ignore-error/1            | 当处理参数中携带此参数时，针对文件过大、参数超限等导致处理失败的场景，会直接返回原图而不报错      |
 
 #### 普通裁剪参数说明
