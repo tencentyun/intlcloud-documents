@@ -72,7 +72,7 @@ App에 이벤트 알림이 설정된 경우 동영상 합성 후 App 백엔드�
 
 
 ### 신뢰할 수 있는 콜백
-신뢰할 수 있는 콜백 모드를 선택하면 [PullEvents](/document/product/266/33433) API가 호출된 후 다음 형식의 HTTP 응답이 수신됩니다(null 값이 있는 필드는 생략됨).
+신뢰할 수 있는 콜백 모드를 선택하면 [PullEvents](https://www.tencentcloud.com/document/product/266/34183) API가 호출된 후 다음 형식의 HTTP 응답이 수신됩니다(null 값이 있는 필드는 생략됨).
 
 ```json
 {
