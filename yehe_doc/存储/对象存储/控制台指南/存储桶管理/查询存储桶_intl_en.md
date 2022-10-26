@@ -3,7 +3,7 @@ You can quickly query the created buckets by bucket name and tag in the COS cons
 
 >!
 >- Before you can access the bucket list with a sub-account, the sub-account must be authorized by the root account. For more information, see [Accessing Bucket List Using Sub-Account](https://intl.cloud.tencent.com/document/product/436/17061).
->- The `List Bucket` operation is not subject to bucket permission restrictions. Restricting a sub-account's query of specific buckets is not supported.
+>- As the `List Bucket` operation is not restricted by bucket permission, a sub-account cannot be restricted to querying just specified buckets.
 >
 
 ## Querying by Bucket Name or Tag
