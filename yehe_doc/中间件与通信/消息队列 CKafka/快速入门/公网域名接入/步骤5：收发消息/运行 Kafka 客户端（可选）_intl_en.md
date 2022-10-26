@@ -98,10 +98,10 @@ Download and decompress the [Kafka installation file](https://archive.apache.org
 </dx-alert>
 
       Enter the content of the message and press Enter.
-      **Producing a message:**
+<ul><li><b>Producing a message:</b>
       <img src = "https://qcloudimg.tencent-cloud.cn/raw/34e000095c6bd53b191d644593c466a8.png"> 
 
-      **Consuming a message:**
+      <li><b>Consuming a message:</b>
       <img src = "https://qcloudimg.tencent-cloud.cn/raw/14ec265fe6ef5edd5f95c98891245637.png">  
 
 3. In the message querying page of the CKafka console, query the message sent.
