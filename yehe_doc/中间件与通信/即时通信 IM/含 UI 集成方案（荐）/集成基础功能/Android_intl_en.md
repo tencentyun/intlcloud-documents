@@ -114,8 +114,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
-
 import java.util.List;
 
 public class FragmentAdapter extends FragmentStateAdapter {
@@ -208,8 +206,9 @@ api project(':tuicallkit')
     <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/65d76fa2bea287a22c11b1f972996397.png"  />    </td>
      </tr>
 </table>
+
 <ul>
-<li>After integrating the TUICallKit component, the chat UI and contact profile UI display the **Video Call** and **Audio Call** buttons by default. When a user clicks either of the buttons, TUIKit automatically displays the call invitation UI and sends the call invitation request to the callee.</li>
+<li>After integrating the TUICallKit component, the chat UI and contact profile UI display the <b>Video Call</b> and <b>Audio Call</b> buttons by default. When a user clicks either of the buttons, TUIKit automatically displays the call invitation UI and sends the call invitation request to the callee.</li>
 <li>When an <strong>online</strong> user receives a call invitation with <strong>the app running in the foreground</strong>, TUIKit automatically displays the call receiving UI, where the user can answer or reject the call.</li>
 <li>When an <strong>offline</strong> user receives a call invitation and wants to start the app to accept the call, the offline push capability is required. For how to implement offline push, see the next step.</li>
 </ul>
