@@ -1,52 +1,74 @@
-A player signature is used by the application playback service to authorize a client for playback. If the playback service allows the client to play back, it will distribute a valid signature to the client as shown in step 5 below. The client can play back the video within the validity period of the signature.
+A player signature is used to authorize a playback device to play videos. If your application playback service issues a valid signature to a device (step 6 in the figure below), the device will be able to play the video within the signature’s validity period.
 <img src="https://main.qcloudimg.com/raw/e5ae52f1b5f15f289b6f54aa28917da4.png" width="700" />
 
->! The application client needs a player signature to play back a video in the following cases:
->- [Key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986) has been enabled for the domain name.
->- [Player configurations](https://intl.cloud.tencent.com/document/product/266/38296) other than the `default` one has been used.
->- An [encrypted](https://intl.cloud.tencent.com/document/product/266/38294) video needs to be played back.
-
-The player signature parameters and generation rule are as detailed below:
+This document describes the parameters of a player signature and how to generate a signature.
 
 ## Signature Parameters
 
 | Parameter | Required | Type | Description |
 | -- | -- | -- | -- |
 | appId | Yes | Integer | The account `appId`. |
-| fileId | Yes | String | The file ID. |
-| currentTimeStamp | Yes | Integer | Current Unix timestamp of the distributed signature. |
-| expireTimeStamp | No | Integer | Expiration Unix timestamp of the distributed signature. If this parameter is left empty, the signature will never expire. |
-| pcfg | No | String | The name of the player configuration to be used. If you use the `default` configuration, you can leave this parameter empty. |
-| urlAccessInfo | No | Object | Hotlink protection configuration parameter of playback URL, which is in [UrlAccessInfo type](#p1). |
-| drmLicenseInfo | No | Object | Key configuration parameter of encrypted content, which is in [DrmLicenseInfo type](#p2). |
+| fileId | Yes | String | The VOD file ID. |
+| contentInfo | Yes | Object | The content of the specified file ID, whose type is [ContentInfo](#p1). Three types of content are supported: <li> [Adaptive bitrate](https://intl.cloud.tencent.com/document/product/266/33942) audio/video, which may or may not be encrypted</li><li>[Transcoded](https://intl.cloud.tencent.com/document/product/266/33938) audio/video</li><li>[Uploaded](https://intl.cloud.tencent.com/document/product/266/9760) original audio/video </li>|
+| currentTimeStamp | Yes | Integer | The current Unix timestamp, which is the time when the signature is distributed. |
+| expireTimeStamp | No | Integer | The Unix timestamp when the distributed signature will expire. If this parameter is left empty, the signature will never expire. |
+| urlAccessInfo | No | Object | The playback URL access parameters, including [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986) parameters, the playback domain, and the protocol. The type is [UrlAccessInfo](#p4). |
+| drmLicenseInfo | No | Object | The key for encrypted content, which is in [DrmLicenseInfo type](#p5). |
 
-#### `UrlAccessInfo` type[](id:p1)
-
-| Parameter | Required | Type | Description |
-| -- | -- | -- | -- |
-| t | No | String | <ul style="margin:0;"><li>A hexadecimal string indicating the URL expiration time</li><li>For the specific description and valid values, see the `t` parameter in [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li><li>If this parameter is left empty, the URL will never expire.</li>|
-| exper | No | Integer | <ul style="margin:0;"> <li>The preview duration in decimal seconds</li><li>If you want to specify the preview duration, it should be no less than 30 seconds.</li><li>For the specific description and valid values, see the `exper` parameter in [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li> |
-| rlimit | No | Integer | <ul style="margin:0;"><li>The maximum decimal number of clients with different IPs allowed for playback</li><li>For the specific description and valid values, see the `rlimit` parameter in [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li> |
-| us | No | String | <ul style="margin:0;"><li>The URL ID, which can uniquely identify a link</li><li>For the specific description and valid values, see the `us` parameter in [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li> |
-| uid | No | String | <ul style="margin:0;"><li>The ID of the user playing back the video, which must contain eight hexadecimal digits. This parameter is used for the [digital watermark](https://intl.cloud.tencent.com/document/product/266/47920) feature.</li><li>For the specific description and value range, see the `uid` parameter in [Key Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li> |
-
-#### `DrmLicenseInfo` type[](id:p2)
+#### ContentInfo[](id:p1)
 
 | Parameter | Required | Type | Description |
 | -- | -- | -- | -- |
-| expireTimeStamp | No | Integer | Expiration Unix timestamp of the key. If this parameter is left empty, the key will never expire. |
+| audioVideoType | Yes | String | The type of audio/video played. Valid values: <li>RawAdaptive: Unencrypted [adaptive bitrate](https://intl.cloud.tencent.com/document/product/266/33942) output</li><li>ProtectedAdaptive: Private protocol- or DRM-encrypted [adaptive bitrate](https://intl.cloud.tencent.com/document/product/266/33942) output<li>Transcode: [Transcoding](https://intl.cloud.tencent.com/document/product/266/33938) output</li><li>Original: Original [uploaded](https://intl.cloud.tencent.com/document/product/266/9760) audio/video</li> |
+| rawAdaptiveDefinition | No | Integer | The ID of the unencrypted [adaptive bitrate](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) template allowed. This parameter is valid and required if `audioVideoType` is `RawAdaptive`. |
+| drmAdaptiveInfo | No | Object | The ID of the encrypted [adaptive bitrate](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) template allowed. This parameter is valid and required if `audioVideoType` is `ProtectedAdaptive`. Its type is [DRMAdaptiveInfo](#p2). |
+| transcodeDefinition | No | Integer | The ID of the [transcoding](https://intl.cloud.tencent.com/document/product/266/33938#.3Ca-id.3D.22zm.22.3E.3C.2Fa.3E.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF) template allowed. This parameter is valid and required if `audioVideoType` is `Transcode`. |
+| imageSpriteDefinition | No | Integer | The ID of the [image sprite](https://intl.cloud.tencent.com/document/product/266/33940) template, which is used to generate thumbnail previews. |
+| resolutionNames | No | Array of Object | The names of different streams (with different resolutions) displayed in the player, which is a [ResolutionNameInfo](#p3) array. Default:</br>MinEdgeLength: 240, Name: 240P</br>MinEdgeLength: 480, Name: 480P</br>MinEdgeLength: 720, Name: 720P</br>MinEdgeLength: 1080, Name: 1080P</br>MinEdgeLength: 1440, Name: 2K</br>MinEdgeLength: 2160, Name: 4K</br>MinEdgeLength: 4320, Name: 8K|
+
+
+#### DRMAdaptiveInfo[](id:p2)
+
+| Parameter | Required | Type | Description |
+| -- | -- | -- | -- |
+| privateEncryptionDefinition | No | Integer | The [adaptive bitrate template](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) ID when [DrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate) is `SimpleAES`. |
+| widevineDefinition | No | Integer | The [adaptive bitrate template](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) ID when [DrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate) is `Widevine`. |
+| fairPlayDefinition | No | Integer | The [adaptive bitrate template](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) ID when [DrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate) is `FairPlay`. |
+
+#### ResolutionNameInfo[](id:p3)
+
+| Parameter | Required | Type | Description |
+| -- | -- | -- | -- |
+| MinEdgeLength | Yes | Integer | The video short side (px).|
+| Name | Yes | String | The stream name. |
+
+#### UrlAccessInfo[](id:p4)
+
+| Parameter | Required | Type | Description |
+| -- | -- | -- | -- |
+| t | No | String | <ul style="margin:0;"><li>A hexadecimal string indicating the URL expiration time</li><li>For the valid values and other information, see the `t` parameter of [hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li><li>If this parameter is left empty, the URL will never expire.</li></ul>|
+| exper | No | Integer | <ul style="margin:0;"> <li>The preview duration in decimal seconds.</li><li>The preview duration cannot be shorter than 30 seconds.</li><li>For its valid values and other information, see the `exper` parameter of [hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li></ul> |
+| rlimit | No | Integer | <ul style="margin:0;"><li>The maximum number (decimal) of IP addresses allowed for playback.</li><li>For its valid values and other information, see the `rlimit` parameter of [hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li></ul> |
+| us | No | String | <ul style="margin:0;"><li>The URL ID, which can uniquely identify a link.</li><li>For its valid values and other information, see the `us` parameter of [hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).</li></ul> |
+| domain | No | String | The playback domain. If this is not specified or `Default` is passed in, the [default distribution domain](https://intl.cloud.tencent.com/document/product/266/35768) will be used. |
+| scheme | No | String | The playback scheme. If this is not specified or `Default` is passed in, the [default distribution configuration](https://intl.cloud.tencent.com/document/product/266/35768) will be used. Other valid values:<ul style="margin:0;"><li>HTTP</li><li>HTTPS</li></ul>|
+
+#### DrmLicenseInfo[](id:p5)
+
+| Parameter | Required | Type | Description |
+| -- | -- | -- | -- |
+| expireTimeStamp | No | Integer | The Unix timestamp when the key will expire. If this parameter is left empty, the key will never expire. |
 
 >?
->- If you use a subapplication as described in [Subapplication System](https://intl.cloud.tencent.com/document/product/266/33987), set the `AppId` of the subapplication as the value of the `appId` parameter.
->- The description and valid values of `t`, `exper`, `rlimit`, `us`, and `uid` in signature parameters are the same as those in hotlink protection parameters as described in [Key Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).
-
+>- If you use a [subapplication](https://intl.cloud.tencent.com/document/product/266/33987), set the `AppId` of the subapplication as the value of the `appId` parameter.
+>- The meanings and valid values of the signature parameters `t`, `exper`, `rlimit` , and `us` are the same as those of the [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).
 ## Signature Calculation
 
-The VOD Player uses [JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519), which is a digital token calculated and formed based on `Header`, `PayLoad`, and `Key`.
+The VOD player signature is a [JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519), which consists of a header, a payload, and a key.
 
 ### Header
 
-`Header` is in JSON format and indicates the information of the algorithm used by JWT. Its content is fixed as follows:
+The header is in JSON format and indicates the algorithm information used by JWT. Its content is fixed as follows:
 
 ```
 {
@@ -55,87 +77,92 @@ The VOD Player uses [JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519),
 }
 ```
 
-### PayLoad
+### Payload
 
-`PayLoad` is in JSON format and indicates the player signature parameters; for example:
+The payload is in JSON format and includes the player signature parameters. Below is an example:
 
 ```
 {
   "appId": 1255566655,
   "fileId": "4564972818519602447",
-  "currentTimeStamp": 1546300,
-  "expireTimeStamp": 1546344000,
+  "contentInfo": {
+    "audioVideoType": "RawAdaptive",
+    "rawAdaptiveDefinition": 10,
+    "imageSpriteDefinition": 10
+  },
+  "currentTimeStamp": 1663064276,
+  "expireTimeStamp": 1663294210,
   "urlAccessInfo": {
-    "t": "5c2b5640",
+    "t": "6323e6b0",
     "rlimit": 3,
-    "us": "72d4cd1101",
-    "uid": "1234abcd"
+    "us": "72d4cd1101"
   }
 }
 ```
 
 ### Key
 
-`Key` is the key used during signature calculation, which is the same as the `KEY` parameter in [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).
+The key is what’s used to calculate the signature. In the example below, the [default playback key](https://intl.cloud.tencent.com/document/product/266/35768) is used.
 
 ### Calculation formula
 
-1. Calculate the `Signature`:
-`Signature = HMACSHA256(base64UrlEncode(Header) + "." + base64UrlEncode(Payload), KEY)`
-2. Calculate the `Token`:
+1. Calculate the signature:
+`Signature = HMACSHA256(base64UrlEncode(Header) + "." + base64UrlEncode(Payload), Key)`
+2. Calculate the token:
 `Token = base64UrlEncode(Header) + '.' + base64UrlEncode(Payload) + '.' + base64UrlEncode(Signature)`
-The `Token` is the VOD Player signature.
+The token generated is the VOD player signature.
 
->?For more information on `HMACSHA256`, please see [RFC 4868 - Using HMAC-SHA-256, HMAC-SHA-384, and HMAC-SHA-512 with IPsec](https://tools.ietf.org/html/rfc4868#page-3). For more information on `base64UrlEncode`, please see [Base 64 Encoding with URL and Filename Safe Alphabet](https://tools.ietf.org/html/rfc4648#page-7).
+>?For more information about the HMACSHA256 algorithm, see [RFC 4868 - Using HMAC-SHA-256, HMAC-SHA-384, and HMAC-SHA-512 with IPsec](https://tools.ietf.org/html/rfc4868#page-3). For more information about `base64UrlEncode`, see [Base 64 Encoding with URL and Filename Safe Alphabet](https://tools.ietf.org/html/rfc4648#page-7).
+VOD offers a signature generation tool and a signature verification tool:
+* [Player signature tools](https://console.cloud.tencent.com/vod/distribute-play/signature)
 
-To help you calculate and verify the signature, VOD provides the following tools:
-* [Player SDK signature generation tool](https://vods.cloud.tencent.com/signature/super-player-sign.html): Allows you to quickly generate a signature.
-* [Player SDK signature verification tool](https://vods.cloud.tencent.com/signature/super-player-check-sign.html): Allows you to quickly verify a signature.
+### Calculation example
 
-### Billing examples
+Suppose your `appId` is `1255566655` and you want to generate a player signature for a video whose file ID is `4564972818519602447`. The other parameters are as follows:
 
-For example, a player signature is generated for a video whose `fileId` is `4564972818519602447`, which belongs to a user whose `appId` is `1255566655` and has the following attributes:
-
-* The enabled hotlink protection `KEY` is `24FEQmTzro4V5u3D5epW`.
-* A custom player configuration is used, and its name is `MyCfg`.
-* The distribution time of the player signature is 19:00:00 on January 1, 2019, corresponding to Unix time `1546300`.
-* The expiration time of the player signature is 20:00:00 on January 1, 2019, corresponding to Unix time `1546344000`.
-* The expiration time of hotlink protection is 20:00:00 on January 1, 2019, corresponding to Unix time `5c2b5640`.
-* Up to three different IPs are allowed to play back the video at the URL.
-* The generated random string is `72d4cd1101`.
+* The playback key is `TxtyhLlgo7J3iOADIron`.
+* The distribution time of the player signature is 18:17:56 on September 13, 2022, which converted to Unix timestamp is `1663064276`.
+* The expiration time of the player signature is 10:10:10 on September 16, 2022, which converted to Unix timestamp is `1663294210`.
+* The expiration time of hotlink protection is 11:00:00 on September 16, 2022, which converted to Unix timestamp is `6323e6b0`.
+* Up to three IP addresses are allowed to play the video using the playback URL.
+* The random string generated for the URL ID is `72d4cd1101`.
 
 Calculate the signature as follows:
-1. Determine the content of `Header`:
+1. Determine the content of the header:
 ```
 {
   "alg": "HS256",
   "typ": "JWT"
 }
 ```
-The result after processing through `base64UrlEncode` will be:
+The result generated after `base64UrlEncode` is:
 `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9`.
-2. Determine the content of `Payload`:
+2. Determine the content of the payload:
 ```
 {
   "appId": 1255566655,
   "fileId": "4564972818519602447",
-  "currentTimeStamp": 1546300,
-  "expireTimeStamp": 1546344000,
+  "contentInfo": {
+    "audioVideoType": "RawAdaptive",
+    "rawAdaptiveDefinition": 10,
+    "imageSpriteDefinition": 10
+  },
+  "currentTimeStamp": 1663064276,
+  "expireTimeStamp": 1663294210,
   "urlAccessInfo": {
-    "t": "5c2b5640",
+    "t": "6323e6b0",
     "rlimit": 3,
-    "us": "72d4cd1101",
-    "uid": "1234abcd"
+    "us": "72d4cd1101"
   }
 }
 ```
-The result after processing through `base64UrlEncode` will be:
-`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19`.
-3. Perform HMAC calculation by using `24FEQmTzro4V5u3D5epW` as `KEY`, and the `Signature` will be:
-`j3WJ9W3V4ve_N_Z157_B9AKkT0GhSmGAEdhv6YtoZSY`.
-4. The `Token` will be:
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19.j3WJ9W3V4ve_N_Z157_B9AKkT0GhSmGAEdhv6YtoZSY`.
+The result generated after `base64UrlEncode` is:
+`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ`。
+3. Use the playback key (`TxtyhLlgo7J3iOADIron`) to generate an HMAC signature:
+`QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`。
+4. The token generated is:
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`。
 
 ## Sample Code
 
-VOD provides sample code for calculating a player signature for Python, Java, Go, C#, PHP, and Node.js. For more information, see [Sample Player Signature](https://intl.cloud.tencent.com/document/product/266/38096).
+VOD provides Python, Java, Go, C#, PHP, and Node.js sample code for calculating player signatures. For details, see [Sample Player Signature](https://intl.cloud.tencent.com/document/product/266/38096).

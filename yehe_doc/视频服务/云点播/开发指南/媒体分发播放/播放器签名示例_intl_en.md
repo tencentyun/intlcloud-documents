@@ -1,4 +1,4 @@
-## Sample Code for Calculating Signature for Python
+## Python Sample Code for Signature Calculation
 Use the [pyjwt](https://github.com/jpadilla/pyjwt/) library to calculate the signature. You can install it by running the `pip install pyjwt` command.
 
 ```python
@@ -9,14 +9,22 @@ import jwt
 
 AppId = 1255566655
 FileId = "4564972818519602447"
+AudioVideoType = "RawAdaptive"
+RawAdaptiveDefinition = 10
+ImageSpriteDefinition = 10
 CurrentTime = 1546340400
 PsignExpire = 1546344000
 UrlTimeExpire = "5c2b5640"
-Key = "24FEQmTzro4V5u3D5epW"
+PlayKey = "TxtyhLlgo7J3iOADIron"
 
 Original = {
     "appId": AppId,
     "fileId": FileId,
+    "contentInfo": {
+        "audioVideoType": AudioVideoType,
+        "rawAdaptiveDefinition": RawAdaptiveDefinition,
+        "imageSpriteDefinition": ImageSpriteDefinition
+    },
     "currentTimeStamp": CurrentTime,
     "expireTimeStamp": PsignExpire,
     "urlAccessInfo": {
@@ -24,13 +32,13 @@ Original = {
     }
 }
 
-Signature = jwt.encode(Original, Key, algorithm='HS256')
+Signature = jwt.encode(Original, PlayKey, algorithm='HS256')
 
 print("Original: ", Original)
 print("Signature: ", Signature)
 ```
 
-## Sample Code for Calculating Signature for Java
+## Java Sample Code for Signature Calculation
 Use the [java-jwt](https://github.com/auth0/java-jwt) library to calculate the signature.
 
 ```java
@@ -43,16 +51,24 @@ class Main {
     public static void main(String[] args) {
         Integer AppId = 1255566655;
         String FileId = "4564972818519602447";
+        String AudioVideoType = "RawAdaptive";
+        Integer RawAdaptiveDefinition = 10;
+        Integer ImageSpriteDefinition = 10;
         Integer CurrentTime = 1589448067;
         Integer PsignExpire = 1589548067;
         String UrlTimeExpire = "5ebe9423‬";
-        String Key = "24FEQmTzro4V5u3D5epW";
-        HashMap<String, String> urlAccessInfo = new HashMap<String, String>();
+        String PlayKey = "TxtyhLlgo7J3iOADIron";
+        HashMap<String, Object> urlAccessInfo = new HashMap<String, Object>();
         urlAccessInfo.put("t", UrlTimeExpire);
+        HashMap<String, Object> contentInfo = new HashMap<String, Object>();
+        contentInfo.put("audioVideoType", AudioVideoType);
+        contentInfo.put("rawAdaptiveDefinition", RawAdaptiveDefinition);
+        contentInfo.put("imageSpriteDefinition", ImageSpriteDefinition);
 
         try {
-            Algorithm algorithm = Algorithm.HMAC256(Key);
+            Algorithm algorithm = Algorithm.HMAC256(PlayKey);
             String token = JWT.create().withClaim("appId", AppId).withClaim("fileId", FileId)
+                    .withClaim("contentInfo", contentInfo)
                     .withClaim("currentTimeStamp", CurrentTime).withClaim("expireTimeStamp", PsignExpire)
                     .withClaim("urlAccessInfo", urlAccessInfo).sign(algorithm);
             System.out.println("token:" + token);
@@ -63,7 +79,7 @@ class Main {
 }
 ```
 
-## Sample Code for Calculating Signature for Go
+## Go Sample Code for Signature Calculation
 
 Use the [jwt-go](https://github.com/dgrijalva/jwt-go) library to calculate the signature. You can install it by running the `go get github.com/dgrijalva/jwt-go` command.
 
@@ -79,18 +95,26 @@ import (
 )
 
 func main(){
-        appId := 1255566655 // User `appid`
-        fileId := "4564972818519602447" // Target `FileId`
+        appId := 1255566655 // Your `appid`
+        fileId := "4564972818519602447" // The target `FileId`
+        audioVideoType := "RawAdaptive" // The type of audio/video played
+        rawAdaptiveDefinition := 10 // The ID of the unencrypted adaptive bitrate template allowed
+        imageSpriteDefinition := 10 // The ID of the image sprite template, which is used to generate thumbnail previews
         currentTime := time.Now().Unix()
-        psignExpire := currentTime + 3600 // Set the expiration time as needed, such as in 1 hour
-        urlTimeExpire := strconv.FormatInt(psignExpire, 16) // Set the expiration time to a hexadecimal string as needed, such as in 1 hour
-        key := []byte("24FEQmTzro4V5u3D5epW")
+        psignExpire := currentTime + 3600 // The signature expiration time, which is set to one hour in the example
+        urlTimeExpire := strconv.FormatInt(psignExpire, 16) // The URL expiration time, which is a hexadecimal string and is set to one hour in the example
+        playKey := []byte("TxtyhLlgo7J3iOADIron")
 
         // Create a new token object, specifying signing method and the claims
         // you would like it to contain.
         token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
                 "appId":            appId,
                 "fileId":           fileId,
+                "contentInfo": {
+                        "audioVideoType": audioVideoType,
+                        "rawAdaptiveDefinition": rawAdaptiveDefinition,
+                        "imageSpriteDefinition": imageSpriteDefinition,
+                },
                 "currentTimeStamp": currentTime,
                 "expireTimeStamp":  psignExpire,
                 "urlAccessInfo": map[string]string{
@@ -99,13 +123,13 @@ func main(){
         })
 
         // Sign and get the complete encoded token as a string using the secret
-        tokenString, err := token.SignedString(key)
+        tokenString, err := token.SignedString(playKey)
 
         fmt.Println(tokenString, err)
 }
 ```
 
-## Sample Code for Calculating Signature for C#
+## C# Sample Code for Signature Calculation
 
 
 Use the [jose-jwt](https://github.com/dvsekhvalnov/jose-jwt) library to calculate the signature. You can install it by running the `Install-Package jose-jwt` command of NuGet.
@@ -120,33 +144,43 @@ public class Program
 {
         public static void Main()
         {
-                var appId = 1255566655; // User `appid`
-                var fileId = "4564972818519602447"; // Target `FileId`
+                var appId = 1255566655; // Your `appid`
+                var fileId = "4564972818519602447"; // The target `FileId`
+                var audioVideoType = "RawAdaptive"; // The type of audio/video played
+                var rawAdaptiveDefinition = 10; // The ID of the unencrypted adaptive bitrate template allowed
+                var imageSpriteDefinition = 10; // The ID of the image sprite template, which is used to generate thumbnail previews
                 var currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-                var psignExpire = currentTime + 3600; // Set the expiration time as needed, such as in 1 hour
-                var urlTimeExpire = psignExpire.ToString("X4"); // Set the expiration time to a hexadecimal value as needed, such as in 1 hour
-                var key = "24FEQmTzro4V5u3D5epW";
-                var keyBytes = Encoding.ASCII.GetBytes(key);
+                var psignExpire = currentTime + 3600; // The signature expiration time, which is set to one hour in the example
+                var urlTimeExpire = psignExpire.ToString("X4"); // The URL expiration time, which is a hexadecimal string and is set to one hour in the example
+                var playKey = "TxtyhLlgo7J3iOADIron";
+                var playKeyBytes = Encoding.ASCII.GetBytes(playKey);
                 var payload = new Dictionary<string, object>()
                 {
-                        {"appId", appId}, 
-                        {"fileId", fileId}, 
-                        {"currentTimeStamp", currentTime}, 
-                        {"expireTimeStamp", psignExpire}, 
+                        {"appId", appId},
+                        {"fileId", fileId},
+                        {"contentInfo": new Dictionary<string, object>()
+                                {
+                                        {"audioVideoType": audioVideoType},
+                                        {"rawAdaptiveDefinition": rawAdaptiveDefinition},
+                                        {"imageSpriteDefinition": imageSpriteDefinition}
+                                }
+                        },
+                        {"currentTimeStamp", currentTime},
+                        {"expireTimeStamp", psignExpire},
                         {"urlAccessInfo", new Dictionary<string, object>()
                                 {
                                         {"t", urlTimeExpire}
                                 }
                         }
                 };
-                string token = Jose.JWT.Encode(payload, keyBytes, JwsAlgorithm.HS256);
+                string token = Jose.JWT.Encode(payload, playKeyBytes, JwsAlgorithm.HS256);
                 Console.WriteLine(token);
         }
 }
 ```
 
 
-## Sample Code for Calculating Signature for PHP
+## PHP Sample Code for Signature Calculation
 
 Use the [php-jwt](https://github.com/firebase/php-jwt) library to calculate the signature. You can install it by running the `composer require firebase/php-jwt` command.
 
@@ -155,16 +189,24 @@ Use the [php-jwt](https://github.com/firebase/php-jwt) library to calculate the 
 require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
-$appId = 1255566655; // User `appid`
-$fileId = "4564972818519602447"; // Target `FileId`
+$appId = 1255566655; // Your `appid`
+$fileId = "4564972818519602447"; // The target `FileId`
+$audioVideoType = "RawAdaptive"; // The type of audio/video played
+$rawAdaptiveDefinition = 10; // The ID of the unencrypted adaptive bitrate template allowed
+$imageSpriteDefinition = 10; // The ID of the image sprite template, which is used to generate thumbnail previews
 $currentTime = time();
-$psignExpire = $currentTime + 3600; // Set the expiration time as needed, such as in 1 hour
-$urlTimeExpire = dechex($psignExpire); // Set the expiration time to a hexadecimal string as needed, such as in 1 hour
-$key = "24FEQmTzro4V5u3D5epW";
+$psignExpire = $currentTime + 3600; // The signature expiration time, which is set to one hour in the example
+$urlTimeExpire = dechex($psignExpire); // The URL expiration time, which is a hexadecimal string and is set to one hour in the example
+$playKey = "TxtyhLlgo7J3iOADIron";
 
 $payload = array(
     "appId" => $appId,
     "fileId" => $fileId,
+    "contentInfo" => array(
+        "audioVideoType": $audioVideoType,
+				"rawAdaptiveDefinition": $rawAdaptiveDefinition,
+				"imageSpriteDefinition": $imageSpriteDefinition
+    ),
     "currentTimeStamp" => $currentTime,
     "expireTimeStamp" => $psignExpire,
     "urlAccessInfo" => array(
@@ -172,37 +214,42 @@ $payload = array(
     )
 );
 
-$jwt = JWT::encode($payload, $key, 'HS256');
+$jwt = JWT::encode($payload, $playKey, 'HS256');
 print_r($jwt);
 ?>
 ```
 
-## Sample Code for Calculating Signature for Node.js
+## Node.js Sample Code for Signature Calculation
 
 
 Use the [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) library to calculate the signature. You can install it by running the `npm install jsonwebtoken` command.
-```node
+```javascript
 var jwt = require('jsonwebtoken');
 
-var appId = 1255566655 // User `appid`
-var fileId = "4564972818519602447" // Target `FileId`
+var appId = 1255566655 // Your `appid`
+var fileId = "4564972818519602447" // The target `FileId`
+var audioVideoType = "RawAdaptive" // The type of audio/video played
+var rawAdaptiveDefinition = 10 // The ID of the unencrypted adaptive bitrate template allowed
+var imageSpriteDefinition = 10 // The ID of the image sprite template, which is used to generate thumbnail previews
 var currentTime = Math.floor(Date.now()/1000)
-var psignExpire = currentTime + 3600 // Set the expiration time as needed, such as in 1 hour
-var urlTimeExpire = psignExpire.toString(16) // Set the expiration time to a hexadecimal string as needed, such as in 1 hour
-var key = '24FEQmTzro4V5u3D5epW'
+var psignExpire = currentTime + 3600 // The signature expiration time, which is set to one hour in the example
+var urlTimeExpire = psignExpire.toString(16) // The URL expiration time, which is a hexadecimal string and is set to one hour in the example
+var playKey = 'TxtyhLlgo7J3iOADIron'
 
 var payload = {
         appId: appId,
         fileId: fileId,
+        contentInfo: {
+                audioVideoType: audioVideoType,
+                rawAdaptiveDefinition: rawAdaptiveDefinition,
+                imageSpriteDefinition: imageSpriteDefinition
+        },
         currentTimeStamp: currentTime,
         expireTimeStamp: psignExpire,
         urlAccessInfo: {
                 t: urlTimeExpire
         }
 }
-var token = jwt.sign(payload, key);
+var token = jwt.sign(payload, playKey);
 console.log(token);
 ```
-
-
-
