@@ -151,7 +151,7 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------- | :-------- |
 | EventName          | Response | Fixed value: `TaskFinish`.    | String |
-| JobsDetail | Response | Job details |  Container |
+| JobsDetail | Response | Job details |  Container array |
 
 `JobsDetail` has the following sub-nodes:
 <a href="https://intl.cloud.tencent.com/document/product/1045/48945" target="_blank">Same as `Response.JobsDetail` in the video tagging job submitting API.</a>
@@ -319,7 +319,7 @@ The nodes are as described below:
 ```plaintext
 {
     "EventName": "TaskFinish",
-    "JobsDetail": {
+    "JobsDetail": [{
         "Code": "Success",
         "CreationTime": "2022-07-01T10:05:48+0800",
         "EndTime": "2022-07-01T10:06:02+0800",
@@ -452,6 +452,6 @@ The nodes are as described below:
         "StartTime": "2022-07-01T10:05:50+0800",
         "State": "Success",
         "Tag": "VideoTag"
-    }
+    }]
 }
 ```

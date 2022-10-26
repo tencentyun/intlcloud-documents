@@ -75,10 +75,10 @@ Container 节点 Response 的内容：
 | 节点名称（关键字） | 父节点   | 描述           | 类型      |
 | :----------------- | :------- | :------------- | :-------- |
 | EventName          | Response | 固定值，为 TaskFinish    | String |
-| JobsDetail         | Response | 任务的详细信息           | Container |
+| JobsDetail         | Response | 任务的详细信息           | Container 数组 |
 
 Container 节点 JobsDetail 的内容：
-<a href="https://intl.cloud.tencent.com/document/product/1045/48939#jobsDetail" target="_blank">同提交流分离任务接口中的 Response.JobsDetail</a>
+<a href="https://intl.cloud.tencent.com/document/product/1045/48939" target="_blank">同提交流分离任务接口中的 Response.JobsDetail</a>
 
 **如果任务是通过工作流触发的，Response.JobsDetail.Input 还会包含 CosHeaders 节点，类型为 Container 数组。**
 
@@ -167,7 +167,7 @@ Container 节点 Workflow 的内容：
 ```plaintext
 {
     "EventName": "TaskFinish",
-    "JobsDetail": {
+    "JobsDetail": [{
         "Code": "Success",
         "CreationTime": "2022-06-30T19:27:39+0800",
         "EndTime": "2022-06-30T19:27:42+0800",
@@ -220,6 +220,6 @@ Container 节点 Workflow 的内容：
         "StartTime": "2022-06-30T19:27:40+0800",
         "State": "Success",
         "Tag": "StreamExtract"
-    }
+    }]
 }
 ```
