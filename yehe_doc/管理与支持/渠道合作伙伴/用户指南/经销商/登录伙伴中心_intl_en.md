@@ -1,6 +1,6 @@
 ### Partner Center Login
 
-Step 1. Log in to your [reseller account](https://intl.cloud.tencent.com/login).(Note: You can only log in to the Partner Center console with a reseller root account.)
+Step 1. Log in to your [reseller account](https://intl.cloud.tencent.com/login).
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/8bf71e6530c1fcacdef9147748f69035.png)
 
