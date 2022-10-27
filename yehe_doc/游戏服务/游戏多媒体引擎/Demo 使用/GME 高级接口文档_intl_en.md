@@ -1,12 +1,12 @@
-This document describes details of advanced GME APIs.
+This document describes how to access and debug the advanced APIs of the GME SDK.
 
 <dx-alert infotype="alarm" title="Invoking notes">
-Consult the GME team before using these APIs.
+This document describes advanced APIs that don't need to be called unless necessary. Consult GME developers before calling.
 </dx-alert>
 
-## Audio APIs
+## Advanced Audio APIs
 
-### iOS Audio API
+### iOS audio APIs
 
 The `SetAdvanceParams` API is used to enable/disable the following audio options before a user enters a room. 
 
@@ -16,26 +16,26 @@ The `SetAdvanceParams` API is used to enable/disable the following audio options
 
 | Parameter      | Description                            |
 | --------- | ------------------------------- |
-| keyString | Different keys represent different options       |
-| value     |<li> 0: disable<li>1: enable |
+| keyString | Different keys represent different features. |
+| value     |<li> 0: Disable<li>1: Enable |
 
 #### Key 
 
 The key can be replaced by one of the following parameters to represent different audio options:
 
 - **OptionMixWithOthers**
-  Mix audio. Once enabled, the background music and voice chat are played together with the original volume.
+  To mix audio. Once it is enabled, GME can play back the background music and voice chat audio at the same time.
 - **OptionDuckOthers**
-  Duck background music. If both this option and `OptionMixWithOthers` are enabled, the background music is lowered down while the speaker is broadcasting audio.
+  To lower the volume level of the background music. If both this option and `OptionMixWithOthers` are enabled, the speaker will be enabled to play back audio while the volume level of the background music is lowered.
 - **ReleaseAudioFoucus**
-  Release audio focus.
-- If enabled, audio focus will be released when you exit a room so that other audio apps can continue running.
-- If disabled, other audio apps cannot continue running when you exit a room.
+  To release the audio focus.
+- If it is enabled, the audio focus will be released when you exit a room so that other audio applications such as QQ Music can continue running.
+- If it is disabled, other audio applications cannot continue running when you exit a room.
 
-### Checking whether the device is muted
+### Checking whether the Ring/Silent switch of iPhone is on
 
 <dx-alert infotype="explain" title="description">
-This API is available for GME SDK 2.8.4 or later versions.
+This API takes effect on GME SDK 2.8.4 or later.
 </dx-alert>
 
 #### Function prototype
@@ -44,44 +44,25 @@ This API is available for GME SDK 2.8.4 or later versions.
 CheckDeviceMuteState();
 ```
 
-The returned value of 0 means that the Ring/Silent switch is off, while 1 means on.
+The returned value `0` indicates that the Ring/Silent switch is off, while `1` indicates on.
 
-### Checking mic status
 
-<dx-alert infotype="explain" title="description">
-This API is available for GME SDK 2.8.4 or later versions.
-</dx-alert>
-
-#### Function prototype
-
-```
-TestMic();
-```
-
-#### Returned value handling
-
-| Returned Value | Description | Handling |
-| ------------------------------------ | ------------------- | ------------------------------------------------------------ |
-| ITMG_TEST_MIC_STATUS_AVAILABLE = 0   | Normally available | No handling required |
-| ITMG_TEST_MIC_STATUS_NO_GRANTED = 2 | Access not obtained/denied | The access permission needs to be obtained before the mic is enabled |
-| ITMG_TEST_MIC_STATUS_INVALID_MIC = 3 | No device available      | Generally, this error will be reported on PCs with no available mics. Please prompt the user to insert earphones or mic |
-| ITMG_TEST_MIC_STATUS_NOT_INIT = 5 | Not initialized | Call `EnableMic` after `Init` |
 
 ### Setting Android Bluetooth device adaptation
 
 <dx-alert infotype="explain" title="description">
-This API is available for GME SDK 2.8.4 or later versions.
+This API takes effect on GME SDK 2.8.4 or later.
 </dx-alert>
 
-Calling this API can solve the problem of sound leak when the mic on Bluetooth earphones is switched on/off, as well as the problem of playing back audio with the speaker after the connection status is changed after an Android device is connected to the Bluetooth earphones.
+Calling this API can solve the problem of sound leak when the mic on the Bluetooth headset is switched on/off, as well as the problem of playing back audio with the speaker after the connection status is changed after an Android device is connected to the Bluetooth headset.
 
 ```
 SetAdvanceParams("BluetoothUseMedia", "1");
 ```
 
-### Setting the Maximum Number of the Mixed Audio Channels
+### Setting the maximum number of the mix audio streams
 
-`SetRecvMixStreamCount` is used to set the maximum number of the mixed audio channels. It’s invoked before a user enters the room. Take the SetRecvMixStreamCount API on PCs as an example.
+The `SetRecvMixStreamCount` API is used to set the maximum number of the mix audio streams before a user enters a room. This API can be used on all platforms. Here, take the `SetRecvMixStreamCount` API for PC as an example.
 
 ```
 virtual int SetRecvMixStreamCount(int nCount) = 0;
@@ -91,15 +72,15 @@ virtual int SetRecvMixStreamCount(int nCount) = 0;
 
 | Parameter   | Description               |
 | ------ | ------------------ |
-| nCount | The number of mixed audio channels. Up to 20 channels allowed.|
+| nCount | The number of mix audio streams. Maximum value: 20. |
 
 
 
-## Room Management APIs
+## Advanced Room APIs
 
-### Setting the Audio Type of the Room
+### Setting the audio type of the room
 
-If SetForceUseMediaVol is used before a user enters the room, the room with smooth sound quality or standard sound quality can use the media volume.
+If `SetForceUseMediaVol` is used before a user enters the room, the room with the smooth sound quality or standard sound quality can use the media volume.
 
 ```
 [[ITMGContext GetInstance] SetAdvanceParams:SetForceUseMediaVol value:1]
@@ -107,16 +88,16 @@ If SetForceUseMediaVol is used before a user enters the room, the room with smoo
 
 #### value
 
-See below for details: 
-- `0`: For both the room type 1 and 2, the mic volume follows the call volume.
-- `1`: For rooms of type 1, the mic volume follows the media volume.
-- `2`: For rooms of type 2, the mic volume follows the media volume.
+Different values indicate different features:
+- 0: Both voice room types 1 and 2 still use the call volume after the mic is enabled.
+- 1: Voice room type 1 uses the media volume after the mic is enabled (the call volume is used before).
+- 2: Voice room type 2 uses the media volume after the mic is enabled (the call volume is used before).
 
-### Obtaining the Speaking Volume of a Member in the Room
+### Getting the speaking volume level of a member in the room
 
-After the TrackingVolume API is called, it will monitor the `TIMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_USER_VOLUMES` event where the key-value pair is uin-volume. Through this API, the corresponding energy histogram can be generated based on the volume of a uin speaking in the room.
+After the `TrackingVolume` API is called, it will listen on the `TIMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_USER_VOLUMES` event where the key-value pair is `uin-volume`. Through this API, the corresponding energy column chart can be generated based on the volume level of a `uin` speaking in the room.
 
-If you no longer need to obtain the speaking volume of the member in the room, please call the StopTrackingVolume API.
+If you no longer need to get the speaking volume level of the member in the room, call the `StopTrackingVolume` API.
 
 ```
 //TMGAudioCtrl
@@ -126,17 +107,24 @@ public int StopTrackingVolume();
 
 | Parameter           | Type  | Description                        |
 | -------------- | ----- | --------------------------- |
-| fTrackingTimeS | float | Monitoring duration in seconds. `0.5f` is recommended. |
+| fTrackingTimeS | float | The number of seconds of the listening. `0.5f` is recommended. |
 
-## General APIs
+## General Advanced APIs
+### Passing in `openid` as a string
+>! This API takes effect on GME SDK 2.9.3 or later.
 
-### Modifying print log size
+Currently, the GME SDK only supports passing in numbers to it as strings. To pass in `openid` as a string, you need to call the following API before calling the `Init` API:
+```
+SetAdvanceParams("StringOpenID", "1");
+```
+
+### Modifying the print log size
 
 <dx-alert infotype="explain" title="description">
-This API is available for GME SDK 2.8.4 or later versions.
+This API takes effect on GME SDK 2.8.4 or later.
 </dx-alert>
 
-Call this API before the GME `Init` API to modify the default log file size. A single log file can be up to 50 MB, and there can be up to 3 log files.
+Call this API before the GME `Init` API to modify the default log file size. Currently, a single log file is 50 MB, and there can be up to three log files.
 
 #### Function prototype
 
@@ -144,9 +132,9 @@ Call this API before the GME `Init` API to modify the default log file size. A s
 SetAdvanceParams(const char* key, const char* object)
 ```
 
-| Parameter   | Type         | Description                                                         |
+| Parameter   | Type        | Description                                                         |
 | ------ | ----------- | ------------------------------------------------------------ |
-| key    | const char* | `MAX_LOG_FILE_SIZE_MB`:  Max size of a single log file in MB. `MAX_LOG_FILE_COUNT`: Max number of log files. |
+| key    | const char* | `MAX_LOG_FILE_SIZE_MB` and `MAX_LOG_FILE_COUNT` indicate the size of a single log and the number of logs respectively. |
 | object | const char* | When `key` is `MAX_LOG_FILE_SIZE_MB`, `object` is the default log file size, which can be 5 to 50 MB. When `key` is `MAX_LOG_FILE_COUNT`, `object` is the default number of log files, which can be 1 to 3. |
 
 <dx-alert infotype="notice" title="parameter range">
@@ -162,11 +150,11 @@ SetAdvanceParams("MAX_LOG_FILE_COUNT", "1");
 
 ## Advanced Feature APIs
 
-### Text translation APIs
+### Text translation API
 
-This API is used to translate text. The result is returned through the callback. Take C++ API for example.
+This API is used to translate text. You can translate Chinese text into English. After this API is called, the result will be returned through the callback. Take the C++ API as an example.
 
->! This API is only available to beta users and for SDK 291. To use this API, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>!This API is only available to allowed users on SDK 291 or later. If you want to use it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
 #### Function prototype
 
@@ -174,29 +162,29 @@ This API is used to translate text. The result is returned through the callback.
 virtual int TranslateText(const char* text, const char* sourceLanguage, const char* translateLanguage) = 0;
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter              | Type        | Description                                                         |
 | ----------------- | ----------- | ------------------------------------------------------------ |
-| text              | const char* | (Required) The text to be translated. Up to 5,000 characters allowed.                    |
-| sourceLanguage    | const char* | (Optional) Language of the source text. If it’s not specified, GEM detects the language automatically.  |
-| translateLanguage | const char* | (Required) Target language. If you want to translate the text into multiple languages, separate each of them with a comma (,) such as "cmn-Hans-CN,en-GB", "cmn-Hans-CN" |
+| text              | const char* | Text to be translated, which cannot be empty and can contain up to 5,000 characters.                     |
+| sourceLanguage    | const char* | The language of the text to be translated, which can be empty and will be detected automatically by the backend.              |
+| translateLanguage | const char* | The language into which the text is to be translated, which cannot be empty. Multiple languages need to be separated by comma, such as `cmn-Hans-CN,en-GB` or `cmn-Hans-CN`. |
 
-For more information, see [Language parameter list](https://intl.cloud.tencent.com/document/product/607/30260).
+For language parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260).
 
-#### API Callback
+#### API callback
 
 | Parameter       | Type                            | Description  |
 | ---------- | ------------------------------- | ------------------------------------------------------------ |
-| code       | int                             | 0 indicates a success operation. For the meaning of other codes, see [error codes](https://intl.cloud.tencent.com/document/product/607/33223).
-| targetText | json (return string format in Unity) | translated target text, e.g. `{"target_text":[{"target_language_code": "cmn-Hans-CN", "target_text": "I am Chinese"},{" target_language_code": "de-DE", "target_text": "Ich bin Chinese"}]}` |
+| code       | int                             | Error code. `0` indicates success. For other returned codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/607/33223) for solutions. |
+| targetText | jason(return string format in Unity) | Translated target text, e.g., `{"target_text":[{"target_language_code": "cmn-Hans-CN", "target_text": "I am Chinese"},{" target_language_code": "de-DE", "target_text": "Ich bin Chinese"}]}` |
 
 #### Unity project sample code
 
-1. Add monitoring
+1. Add a listener
 ```
 ITMGContext.GetInstance().GetPttCtrl().OnTranslateTextComplete+= OnTranslateTextComplete;
 ```
 
-2. Invoke API
+2. Call the API
 ```
 private void OnTranslateTextBtn()
 {
@@ -209,7 +197,7 @@ private void OnTranslateTextBtn()
 }
 ```
 
-3. Process callback
+3. Process the callback
 ```
 void OnTranslateTextComplete(int code, string targetText)
 {
@@ -225,16 +213,16 @@ void OnTranslateTextComplete(int code, string targetText)
 }
 ```
 
-4. Cancel monitoring
+4. Remove the listener
 ```
 ITMGContext.GetInstance().GetPttCtrl().OnTranslateTextComplete-= OnTranslateTextComplete;
 ```
 
-### Text-to-speech APIs
+### Text-to-speech API
 
-This API can be used to convert a text into an audio. 
+This API is used to convert text into audio. After this API is called, the audio `fileid` will be returned through the callback. You can use the `DownloadRecordedFile` API to download the audio. Here, the C++ API is used as an example.
 
->! This API is only available to beta users and for SDK 291 and later versions. To use this API, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>!This API is only available to allowed users on SDK 291 or later. If you want to use it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
 #### Function prototype
 
@@ -244,29 +232,38 @@ virtual int TextToSpeech(const char* text, const char* voiceName,const char* lan
 
 | Parameter         | Type        | Description                                           |
 | ------------ | ----------- | ---------------------------------------------- |
-| text              | const char* | (Required) The text to be translated. Up to 5,000 characters allowed.                    |
-| voiceName    | const char* | (Optional) Language of the source text. If it’s not specified, GEM detects the language automatically.  |
-| languageCode | const char* | (Required) Target language. |
-| speakingRate | float       | Audio speed. Range: [0.6-1.5], `1` refers to the original speed.     |
+| text         | const char* | Source text, which cannot be empty and can contain up to 5,000 characters.           |
+| voiceName    | const char* | Voice type. Samples in English and Mandarin are provided. To get samples in other languages, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application. |
+| languageCode | const char* | Target language, which cannot be empty.                         |
+| speakingRate | float       | Speech speed. Value range: 0.6–1.5. `1` indicates the normal speed.     |
 
-For more information, see [Language parameter list](https://intl.cloud.tencent.com/document/product/607/30260).
+Valid values of `voiceName`:
 
-#### API Callback
+| Voice Type | Gender | Language |
+|---------|---------|---------|
+| cmn-CN-Standard-A | Female | Mandarin |
+| cmn-CN-Standard-B | Male | Mandarin |
+| en-US-Neural2-A | Female | American English |
+| en-US-Neural2-B | Male | American English |
 
-| Parameter    | Type   | Description                                                                                                                    |
+For language parameter, please see [Language parameter list](https://intl.cloud.tencent.com/document/product/607/30260).
+
+#### Callback API
+
+| Parameter | Type | Description |
 | ------ | ------ | ------------------------------------------------------------ |
-| code       | int                             | 0 indicates a success operation. For the meaning of other codes, see [error codes](https://intl.cloud.tencent.com/document/product/607/33223).
-| isCos  | bool   | Whether to upload this file to COS                                            |
-| fileID | string | File ID. You can use this ID to download the audio through DownloadRecordedFile API |
+| code   | int    | Error code. `0` indicates success. For other returned codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/607/33223) for solutions. |
+| isCos  | bool   | Whether the file is uploaded to COS                                            |
+| fileID | string | File ID, which is the input parameter for audio file download through the `DownloadRecordedFile` API. |
 
 #### Unity project sample code
 
-1. Add monitoring
+1. Add a listener
 ```
 ITMGContext.GetInstance().GetPttCtrl().OnTextToSpeechComplete += new QAVTextToSpeechCallback(TextToSpeechComplate);
 ```
 
-2. Invoke API
+2. Call the API
 ```
 void OnTextToSpeech()
 {
@@ -291,7 +288,7 @@ void OnTextToSpeech()
 }
 ```
 
-3. Process callback
+3. Process the callback
 ```
 void TextToSpeechComplate(int code, bool isCos, string fileID)
 {
@@ -308,7 +305,7 @@ void TextToSpeechComplate(int code, bool isCos, string fileID)
 }
 ```
 
-4. Cancel monitoring
+4. Remove the listener
 ```
 ITMGContext.GetInstance().GetPttCtrl().OnTextToSpeechComplete -= new QAVTextToSpeechCallback(TextToSpeechComplate);
 ```
