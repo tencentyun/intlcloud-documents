@@ -19,21 +19,21 @@
       font-family: 'pingfang SC', 'helvetica neue', arial, 'hiragino sans gb', 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
    }
 
-   .markdown-text-box {
+   .card-box {
       background: #F2F6F9;
       border-radius: 10px;
       padding: 20px 30px;
-      height: 238px;
+      height: 264px;
       box-sizing: border-box;
       white-space: nowrap;
    }
 
-   .markdown-text-box .left-section {
+   .card-box .left-section {
       display: inline-block;
       height: 193px;
    }
 
-   .markdown-text-box .left-section img {
+   .card-box .left-section img {
       background-color: #F2F6F9;
       box-shadow: none;
       max-width: 100%;
@@ -42,74 +42,74 @@
       margin: auto;
    }
 
-   .markdown-text-box .right-content {
+   .card-box .right-content {
       display: inline-block;
       vertical-align: top;
       margin-left: 25px;
    }
 
-   .markdown-text-box .section-content {
+   .card-box .section-content {
       display: block;
    }
 
-   .markdown-text-box .doc-section .section-content {
+   .card-box .doc-section .section-content {
       width: 470px;
       overflow: hidden;
    }
 
-   .markdown-text-box .right-content img {
+   .card-box .right-content img {
       background-color: #F2F6F9;
       box-shadow: none;
    }
 
-   .markdown-text-box .section-header {
+   .card-box .section-header {
       font-weight: 500;
       font-size: 14px;
       line-height: 26px;
    }
 
-   .markdown-text-box .section-header img {
+   .card-box .section-header img {
       display: inline-block;
       vertical-align: middle;
    }
 
-   .markdown-text-box .header-text {
+   .card-box .header-text {
       display: inline-block;
       vertical-align: middle;
       margin-left: 9px;
    }
 
-   .markdown-text-box .doc-section {
+   .card-box .doc-section {
       margin-top: 18px;
    }
 
-   .markdown-text-box .doc-section .doc-link:nth-child(3n+1) {
+   .card-box .doc-section .doc-link:nth-child(3n+1) {
       margin-left: 0;
    }
 
-   .markdown-text-box .doc-section .doc-link {
+   .card-box .doc-section .doc-link {
       width: 120px;
       float: left;
       background: #FFFFFF;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
       border-radius: 24px;
-      padding: 5px;
+      padding: 5px 15px;
       text-align: center;
       margin-left: 10px;
       margin-top: 10px;
    }
 
-   .markdown-text-box .doc-section .doc-title {
+   .card-box .doc-section .doc-title {
       margin-bottom: 0px;
       margin-right: 7px;
       display: inline-block;
    }
 
-   .markdown-text-box .doc-section .doc-icon {
+   .card-box .doc-section .doc-icon {
       display: inline-block;
    }
 
-   .markdown-text-box .doc-section .doc-icon img {
+   .card-box .doc-section .doc-icon img {
       width: 5px;
    }
 
@@ -174,7 +174,7 @@
       padding: 2px 15px;
    }
 
-   .markdown-text-box img {
+   .card-box img {
       box-shadow: none;
    }
 
@@ -184,12 +184,12 @@
       .scene-card-container {
          width: 100%;
       }
-
+    
       .scene-card>div {
          width: 100% !important;
          margin-left: 0 !important;
       }
-
+    
       img {
          box-shadow: none;
       }
@@ -199,7 +199,7 @@
 
 <dx-tabs>
    ::: TRTC SDK
-   <div class="markdown-text-box">
+   <div class="card-box">
       <div class="left-section">
          <img src="https://qcloudimg.tencent-cloud.cn/raw/2dab7b72bfab9b3d38f471b89294e7c6.svg" />
       </div>
@@ -212,7 +212,7 @@
                </div>
             </div>
             <div class="section-content">
-               メタバースオーディオビデオ通話、eラーニング、リモートコラボレーション、多人数のオーディオビデオ通話、多人数のリアルタイムミーティング、エンターテイメントボイスチャット、<br />リモート医療などのケースです。
+               音声通話、ビデオ通話、インタラクティブ授業、マイク接続ライブストリーミング、リモートコラボレーションオフィス、多人数のオーディオビデオ通話、<br/>オーディオビデオミーティング、エンターテイメントボイスチャット、リモート医療などのケースです。
             </div>
          </div>
          <div class="doc-section">
@@ -225,7 +225,7 @@
             <div class="section-content">
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/36066">オーディオビデオ通話</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/36066">オーディオビデオ通話</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -233,7 +233,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/47636">多人数ビデオミーティング</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/47636">多人数ビデオミーティング</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -241,7 +241,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/37286">ボイスインタラクティブストリーミング</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/37286">ボイスインタラクティブストリーミング</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -249,7 +249,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/36061">ビデオインタラクティブストリーミング</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/36061">ビデオインタラクティブストリーミング</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -257,7 +257,7 @@
                </div>
                <div class="doc-link">
                   <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/41940">オンラインKaraoke</a>
+                     <a href="https://www.tencentcloud.com/document/product/647/41940">オンラインKaraoke</a>
                   </div>
                   <div class="doc-icon">
                      <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
@@ -267,223 +267,6 @@
          </div>
       </div>
    </div>
-   :::
-   ::: MLVB SDK
-   <div class="markdown-text-box">
-      <div class="left-section">
-         <img src="https://qcloudimg.tencent-cloud.cn/raw/84d2e781bab936bf2ba076ab353df34c.svg" />
-      </div>
-      <div class="right-content">
-         <div class="sence-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
-               <div class="header-text">
-                  ユースケース
-               </div>
-            </div>
-            <div class="section-content">
-               エンターテイメントライブストリーミング、eコマースライブストリーミング、企業活動ライブストリーミング、ゲームライブストリーミングなどのケースです。
-            </div>
-         </div>
-         <div class="doc-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
-               <div class="header-text">
-                  その他のドキュメント
-               </div>
-            </div>
-            <div class="section-content">
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/267/42140">統合ガイド</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   :::
-   ::: Player SDK
-   <div class="markdown-text-box">
-      <div class="left-section">
-         <img src="https://qcloudimg.tencent-cloud.cn/raw/3d25e8feea02c32299d8616ce3056941.png" />
-      </div>
-      <div class="right-content">
-         <div class="sence-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
-               <div class="header-text">
-                  ユースケース
-               </div>
-            </div>
-            <div class="section-content">
-               ライブストリーミング、オンデマンドの視聴シーンです。
-            </div>
-         </div>
-         <div class="doc-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
-               <div class="header-text">
-                  その他のドキュメント
-               </div>
-            </div>
-            <div class="section-content">
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/266/33975">プレーヤーコンポーネント</a>
-
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/266/38294">暗号化したビデオの再生</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   :::
-   ::: IM SDK
-   <div class="markdown-text-box">
-      <div class="left-section">
-         <img src="https://qcloudimg.tencent-cloud.cn/raw/01db05070c5acefd30585e88a3479585.svg" />
-      </div>
-      <div class="right-content">
-         <div class="sence-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
-               <div class="header-text">
-                  ユースケース
-               </div>
-            </div>
-            <div class="section-content">
-               アプリ内チャット（In-App-Chat）、ライブストリーミング弾幕、ユーザープロファイルとフレンドリレーションシップチェーンなどのケースです。
-            </div>
-         </div>
-         <div class="doc-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
-               <div class="header-text">
-                  その他のドキュメント
-               </div>
-            </div>
-            <div class="section-content">
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/products/im?lang=en&amp;pg=">Instant Messaging</a>
-
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   :::
-   ::: 全機能SDK
-   <div class="markdown-text-box">
-      <div class="left-section">
-         <img src="https://qcloudimg.tencent-cloud.cn/raw/b35558b665ede349ded27711bb993237.jpeg" />
-      </div>
-      <div class="right-content">
-         <div class="sence-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
-               <div class="header-text">
-                  ユースケース
-               </div>
-            </div>
-            <div class="section-content">
-               TRTC SDK、MLVB SDK、Player SDKのすべての機能シナリオをカバーしています。
-            </div>
-         </div>
-         <div class="doc-section">
-            <div class="section-header">
-               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
-               <div class="header-text">
-                  その他のドキュメント
-               </div>
-            </div>
-            <div class="section-content">
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/36066">オーディオビデオ通話</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/47636">多人数ビデオミーティング</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/37286">ボイスインタラクティブストリーミング</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/36061">ビデオインタラクティブストリーミング</a>
-
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/647/41940">オンラインKaraoke</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/267/42140">MLVB SDK統合ガイド</a>
-
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-               <div class="doc-link">
-                  <div class="doc-title">
-                     <a href="https://www.tencentcloud.com/zh/document/product/266/33975">プレーヤーコンポーネント</a>
-                  </div>
-                  <div class="doc-icon">
-                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   :::
-</dx-tabs>
-
-#### TRTC SDKのダウンロード
-
 <div>
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden">
       <div class="card-container">
@@ -655,8 +438,44 @@
       </div>
    </div>
 </div>
-
-#### MLVB SDKのダウンロード
+   :::
+   ::: MLVB SDK
+   <div class="card-box">
+      <div class="left-section">
+         <img src="https://qcloudimg.tencent-cloud.cn/raw/84d2e781bab936bf2ba076ab353df34c.svg" />
+      </div>
+      <div class="right-content">
+         <div class="sence-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
+               <div class="header-text">
+                  ユースケース
+               </div>
+            </div>
+            <div class="section-content">
+               エンターテイメントライブストリーミング、eコマースライブストリーミング、イベントライブストリーミング、ゲームライブストリーミングなどのケースです。
+            </div>
+         </div>
+         <div class="doc-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
+               <div class="header-text">
+                  その他のドキュメント
+               </div>
+            </div>
+            <div class="section-content">
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/1071/38156">統合ガイド</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 <div>
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden">
       <div class="card-container">
@@ -671,9 +490,9 @@
                   href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Live_Android_latest.zip">ZIPのダウンロード</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Android">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/56589">統合ガイド</a>
+                  href="https://www.tencentcloud.com/document/product/1071/38156">統合ガイド</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/60984">実行
+                  href="https://www.tencentcloud.com/document/product/1071/38147">実行
                   Demo</a>
             </div>
          </div>
@@ -690,9 +509,9 @@
                   href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Live_iOS_latest.zip">ZIPのダウンロード</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_iOS">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/56588">統合ガイド</a>
+                  href="https://www.tencentcloud.com/document/product/1071/38155">統合ガイド</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/60985">実行
+                  href="https://www.tencentcloud.com/document/product/1071/38147">実行
                   Demo</a>
             </div>
          </div>
@@ -717,9 +536,52 @@
       </div>
    </div>
 </div>
-
-#### Player SDKのダウンロード
-
+   :::
+   ::: Player SDK
+   <div class="card-box">
+      <div class="left-section">
+         <img src="https://qcloudimg.tencent-cloud.cn/raw/3d25e8feea02c32299d8616ce3056941.png" />
+      </div>
+      <div class="right-content">
+         <div class="sence-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
+               <div class="header-text">
+                  ユースケース
+               </div>
+            </div>
+            <div class="section-content">
+               ライブストリーミング、長編ビデオおよび短編ビデオのオンラインビデオ視聴のケースです。
+            </div>
+         </div>
+         <div class="doc-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
+               <div class="header-text">
+                  その他のドキュメント
+               </div>
+            </div>
+            <div class="section-content">
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/266/33975">プレーヤーコンポーネント</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/266/38294">暗号化したビデオの再生</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 <div>
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden">
       <div class="card-container">
@@ -734,9 +596,9 @@
                   href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_Android_latest.zip">ZIPのダウンロード</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Player_Android">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/47849">統合ガイド</a>
+                  href="https://www.tencentcloud.com/document/product/266/47849">統合ガイド</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/42091">実行
+                  href="https://www.tencentcloud.com/document/product/266/42091">実行
                   Demo</a>
             </div>
          </div>
@@ -753,9 +615,9 @@
                   href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_iOS_latest.zip">ZIPのダウンロード</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Player_iOS">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/47840">統合ガイド</a>
+                  href="https://www.tencentcloud.com/document/product/266/47840">統合ガイド</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/42091">実行
+                  href="https://www.tencentcloud.com/document/product/266/42091">実行
                   Demo</a>
             </div>
          </div>
@@ -771,18 +633,53 @@
                <a class="with-box" href="https://github.com/LiteAVSDK/Player_Flutter">ZIPのダウンロード</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Player_Flutter">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/42099">統合ガイド</a>
+                  href="https://www.tencentcloud.com/document/product/266/42099">統合ガイド</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://www.tencentcloud.com/zh/document/product/266/42091">実行
+                  href="https://www.tencentcloud.com/document/product/266/42091">実行
                   Demo</a>
             </div>
          </div>
       </div>
    </div>
 </div>
-
-#### IM SDKのダウンロード
-
+   :::
+   ::: IM SDK
+   <div class="card-box">
+      <div class="left-section">
+         <img src="https://qcloudimg.tencent-cloud.cn/raw/01db05070c5acefd30585e88a3479585.svg" />
+      </div>
+      <div class="right-content">
+         <div class="sence-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
+               <div class="header-text">
+                  ユースケース
+               </div>
+            </div>
+            <div class="section-content">
+               アプリ内チャット（In-App-Chat）、ライブストリーミング弾幕、ユーザープロファイルとフレンドリレーションシップチェーンなどのケースです。
+            </div>
+         </div>
+         <div class="doc-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
+               <div class="header-text">
+                  その他のドキュメント
+               </div>
+            </div>
+            <div class="section-content">
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/products/im?lang=en&amp;pg=">Instant Messaging</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 <div> 
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden"> 
        <div class="card-container">
@@ -897,9 +794,92 @@
       </div>
    </div>
 </div>
-
-#### 全機能SDKのダウンロード
-
+   :::
+   ::: 全機能SDK
+   <div class="card-box">
+      <div class="left-section">
+         <img src="https://qcloudimg.tencent-cloud.cn/raw/8a5fff1a276f9716f4f786701d13051b.jpg" />
+      </div>
+      <div class="right-content">
+         <div class="sence-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/9f0fab1370820a47d95b0cbc8899de3b.png" />
+               <div class="header-text">
+                  ユースケース
+               </div>
+            </div>
+            <div class="section-content">
+               TRTC SDK、MLVB SDK、Player SDKのすべての機能シナリオをカバーしています。
+            </div>
+         </div>
+         <div class="doc-section">
+            <div class="section-header">
+               <img src="https://qcloudimg.tencent-cloud.cn/raw/64f48bd13505979bc8f77fae00990a6d.png" />
+               <div class="header-text">
+                  その他のドキュメント
+               </div>
+            </div>
+            <div class="section-content">
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/36066">オーディオビデオ通話</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/47636">多人数ビデオミーティング</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/37286">ボイスインタラクティブストリーミング</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/36061">ビデオインタラクティブストリーミング</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/647/41940">オンラインKaraoke</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/1071/38156">MLVB SDK統合ガイド</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+               <div class="doc-link">
+                  <div class="doc-title">
+                     <a href="https://www.tencentcloud.com/document/product/266/33975">プレーヤーコンポーネント</a>
+                  </div>
+                  <div class="doc-icon">
+                     <img src="https://qcloudimg.tencent-cloud.cn/raw/a35d6e1ca39d7abe7348c5fab8acabee.png" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 <div> 
    <div style="position:relative;box-sizing:border-box;padding-bottom:10px;margin-bottom:10px;overflow:hidden"> 
        <div class="card-container">
@@ -911,8 +891,8 @@
           <div class="card-content">
             <a class="with-box" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">ZIPのダウンロード</a>
             <a target="_blank" style="margin-left:10px" href="https://github.com/tencentyun/LiteAVProfessional_Android">GitHub</a>
-            <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/647/32175">統合ガイド</a>
-            <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/647/32166">実行
+            <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/647/35093">統合ガイド</a>
+            <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/647/35084">実行
               Demo</a>
           </div>
         </div>
@@ -926,14 +906,17 @@
           <div class="card-content">
             <a class="with-box" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">ZIPのダウンロード</a>
             <a target="_blank" style="margin-left:10px" href="https://github.com/tencentyun/LiteAVProfessional_iOS">GitHub</a>
-            <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/647/32173">統合ガイド</a>
-            <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/647/32396">実行
+            <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/647/35092">統合ガイド</a>
+            <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/647/35086">実行
               Demo</a>
           </div>
         </div>
       </div>
    </div>
 </div>
+
+   :::
+</dx-tabs>
 
 #### 機能リスト
 
@@ -966,14 +949,14 @@
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1"> </td>
+       <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="5">オーディオビデオ通話</td>
        <td class="tg-cly1">2人制通話</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1"> </td>
+       <td class="tg-cly1">✓</td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1">✓</td>
@@ -981,7 +964,7 @@
      <tr>
        <td class="tg-cly1">ルーム管理</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1"> </td>
+       <td class="tg-cly1">✓</td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1">✓</td>
@@ -989,7 +972,7 @@
      <tr>
        <td class="tg-cly1">画面共有</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1"> </td>
+       <td class="tg-cly1">✓</td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1">✓</td>
@@ -997,7 +980,7 @@
      <tr>
        <td class="tg-cly1">多人数ミーティング</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1"> </td>
+       <td class="tg-cly1">✓</td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1">✓</td>
@@ -1005,7 +988,7 @@
      <tr>
        <td class="tg-cly1">ルーム間/ルーム内マイク接続</td>
        <td class="tg-cly1">✓</td>
-       <td class="tg-cly1"> </td>
+       <td class="tg-cly1">✓</td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1">✓</td>
@@ -1231,8 +1214,8 @@
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="4">ライブストリーミング再生</td>
-       <td class="tg-cly1">RTMP/FLVマルチプロトコル</td>
-       <td class="tg-cly1">✓</td>
+       <td class="tg-cly1">RTMP、FLV、HLS、DASHなどのプロトコルをサポートしています</td>
+       <td class="tg-cly1"> </td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1">✓</td>
        <td class="tg-cly1"> </td>
@@ -1353,7 +1336,7 @@
      </tr>
      <tr>
        <td class="tg-nrix" rowspan="30">プレーヤー_オンデマンド再生</td>
-       <td class="tg-cly1">複数形式をサポート</td>
+       <td class="tg-cly1">HLS、DASH、MP4、MP3などのプロトコルをサポートしています</td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1"> </td>
        <td class="tg-cly1">✓</td>
@@ -1643,3 +1626,5 @@
      </tr>
    </tbody>
    </table>
+
+

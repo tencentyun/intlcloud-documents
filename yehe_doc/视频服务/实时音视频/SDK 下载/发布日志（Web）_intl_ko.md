@@ -1,16 +1,78 @@
 버전 넘버 `major.minor.patch`의 자세한 규칙은 다음과 같습니다.
-  - major: 메이저 버전 넘버로, 중요한 버전 재구성 시 해당 필드의 숫자가 증가하며 일반적으로 각 메이저 버전 간의 인터페이스는 호환되지 않습니다.
-  - minor: 마이너 버전 넘버로, 각 마이너 버전 넘버 간에는 인터페이스가 호환되며 인터페이스 추가 또는 최적화 시 해당 필드의 숫자가 증가합니다.
-  - patch: 패치 번호로, 기능 개선 또는 오류 복구 시 해당 필드의 숫자가 증가합니다.
 
->!
+- major: 메이저 버전 넘버로, 중요한 버전 재구성 시 해당 필드의 숫자가 증가하며 일반적으로 각 메이저 버전 간의 인터페이스는 호환되지 않습니다.
+- minor: 마이너 버전 넘버로, 각 마이너 버전 넘버 간에는 인터페이스가 호환되며 인터페이스 추가 또는 최적화 시 해당 필드의 숫자가 증가합니다.
+- patch: 패치 번호로, 기능 개선 또는 오류 복구 시 해당 필드의 숫자가 증가합니다.
+
+> !
 > - 제품의 안정성 및 온라인 지원을 위해 항상 최신 버전을 유지하시기 바랍니다.
 > - 버전 업데이트에 대한 주의 사항은 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
+
+## Version 4.14.4 @2022.09.30
+
+**Improvement**
+
+- 카메라가 352 * 288 해상도 미만으로 캡처할 때 Mac Firefox에서 오류를 보고하는 문제를 방지하였습니다. [Firefox issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1529907).
+- 작업 스케줄링을 최적화하여 리소스 소비를 줄였습니다.
+
+**Bug Fixed**
+
+- videoTrack을 localStream.replaceTrack으로 교체한 후 카메라를 분리했다가 연결할 때 videoTrack이 가끔 실패하는 문제를 수정했습니다.
+
+## Version 4.14.3 @2022.09.09
+
+**Bug Fixed**
+
+- Chrome 개인 정보 보호 모드를 사용할 때 엄격한 사용 모드에서 TRTC.getCameras()가 간헐적으로 실패하는 문제가 수정되었습니다.
+- 페이지에서 인터랙션 없이 방 입장 시 비정상적인 볼륨 획득 현상이 수정되었습니다.
+
+## Version 4.14.2 @2022.08.26
+
+**Feature**
+
+- [TRTC.getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getCameras) 및 [TRTC.getMicrophone](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones)에서 얻은 디바이스 항목에서 기본 인터페이스 [getCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceInfo/getCapabilities)호출을 지원합니다.
+
+**Improvement**
+
+- iOS 시나리오(전화 수신, 알람, Siri 깨우기)에서 디바이스 캡처 이상 복구 로직을 최적화했습니다.
+- H264 지원 감지 로직을 최적화하여 브라우저를 처음 열었을 때 Android Chrome 88 이하가 H264를 지원하지 않는 문제를 방지했습니다.
+
+## Version 4.14.1 @2022.08.11
+
+**Feature**
+
+- SEI 메시지 전송[Client.sendSEIMessage](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#sendSEIMessage)를 지원합니다.
+
+**Improvement**
+
+- [Client.switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#switchRole) 인터페이스의 견고성을 향상시켰습니다.
+
+## Version 4.14.0 @2022.08.05
+
+**Breaking Change**
+
+- [Client.on('client-banned')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#CLIENT_BANNED) 이벤트의 콜백 매개변수가 수정되었습니다. 업그레이드 시 주의하시기 바랍니다.
+
+**Feature**
+
+- 캡처 볼륨 [LocalStream.setAudioCaptureVolume](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setAudioCaptureVolume) 설정을 지원합니다.
+
+**Improvement**
+
+- [Client.on('client-banned')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#CLIENT_BANNED) 이벤트 콜백 매개변수를 수정하고 방 강제 퇴장 이유를 추가했습니다.
+- Firefox 화면 공유의 캡처 해상도가 기대에 미치지 못하는 문제를 방지합니다.
+- iOS Safari가 로컬 스트림이 간헐적으로 검은색 화면을 재생하는 문제를 방지합니다.
+- 저사양 PC 장치의 저화질 스트림 인코딩 성능을 최적화했습니다.
+
+**Bug Fixed**
+
+- 특정 시나리오에서 화면 공유 비트 레이트가 기대에 미치지 못하는 문제를 수정했습니다.
 
 ## Version 4.13.0 @2022.07.08
 
 **Feature**
- [Client.destroy](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#destroy) API를 추가해 [Client](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html) 라이프사이클을 개선했습니다.
+
+- [Client.destroy](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#destroy) API를 추가해 [Client](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html) 라이프사이클을 개선했습니다.
 
 **Improvement**
 
@@ -18,32 +80,37 @@
 - 자동 캡처 복구 성공 이벤트 [DEVICE_AUTO_RECOVERED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.DEVICE_AUTO_RECOVERED)가 추가되었습니다.
 
 **Bug Fixed**
+
 - [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode) API가 혼합 스트림을 시작하면 30s 이상 네트워크 연결이 끊기고, 네트워크 복구 후에도 혼합 스트림이 지속되지 않는 현상을 수정하였습니다.
+
 - [Client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream) API가 스트림을 CDN으로 푸시하면, 30s 이상 네트워크 연결이 끊기고, 네트워크 복구 후에도 CDN 스트림이 끊어지는 현상을 수정하였습니다.
 
 ## Version 4.12.7 @2022.06.17
 
 **Improvement**
+
 - [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)는 mixUser.renderMode 매개변수를 통한 혼합 스트림 렌더링 모드 설정을 지원합니다.
-- 기본 video profile은 '480p_2'로 변경되어 화질을 보장하면서 업스트림 대역폭 소비를 줄입니다. 자세한 내용은 [LocalStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setVideoProfile)을 참고하십시오.
+- 기본 video profile은 '480p_2'로 변경되어 화질을 보장하면서 업스트림 대역폭 소비를 줄입니다. [LocalStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setVideoProfile)을 참고하십시오.
 - 자동 재생 복구 성공률이 향상되었습니다.
 - 네트워크 재연결 후 mute 상태의 정확도가 향상되었습니다.
-- Mac Safari 15.1 muteVideo 페이지 크래쉬에 대한 해결 방법은 [webkit bug](https://bugs.webkit.org/show_bug.cgi?id=232006)를 참고하십시오.
+- Mac Safari 15.1 muteVideo 페이지 크래쉬에 대한 해결 방법입니다. [webkit bug](https://bugs.webkit.org/show_bug.cgi?id=232006).
 
 **Bug Fixed**
-대/소형 스트림(비자동 구독)의 경우 간헐적으로 'stream-added' 이벤트가 발생하지 않던 현상을 수정하였습니다.
+
+- 대/소형 스트림(비자동 구독)의 경우 간헐적으로 'stream-added' 이벤트가 발생하지 않던 현상을 수정하였습니다.
 
 ## Version 4.12.6 @2022.06.10
 
 **Improvement**
-client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내용은 [업그레이드 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
+
+- client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내용: [업그레이드 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)
 
 ## Version 4.12.5 @2022.05.20
 
 **Bug Fixed**
 
 - Internet Explorer(IE)에서 npm 패키지 trtc.umd.js 로딩 시 오류가 발생하는 현상이 수정되었습니다.
-- 구독 변경 후 간헐적으로 저화질 스트림을 재생하지 못하는 문제를 수정했습니다.
+- 구독 변경 후 간헐적으로 저화질 스트림을 재생하지 못하는 문제가 수정되었습니다.
 - Chrome 70 및 이전 버전에서 div 컨테이너를 이동하면 재생이 일시 중지되는 문제가 수정되었습니다.
 
 ## Version 4.12.4 @2022.05.07
@@ -57,19 +124,19 @@ client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내
 
 - 스트림 추가 이벤트 호출이 간헐적으로 실패하는 문제를 수정했습니다.
 - Firefox에서 Logitech 카메라를 사용하여 480p 비디오를 캡처하지 못하는 문제를 수정했습니다.
-- sdk를 iPad용 WKWebview로 가져올 때 오류가 발생하는 현상이 수정되었습니다.
+- sdk를 iPad용 WKWebview로 가져올 때 오류가 발생하는 현상을 수정했습니다.
 
 ## Version 4.12.3 @2022.04.19
 
 **Improvement**
 
 - iOS 13, 14 고해상도 캡처 로직이 최적화되었습니다.
-- SDK가 프로젝트 측에서 오류를 캡처하는 경우를 피하기 위해 이벤트 수신 로직을 최적화했습니다.
+- SDK가 프로젝트 측에서 오류를 캡처하는 경우를 피하기 위해 이벤트 수신 로직이 최적화되었습니다.
 - 대시보드 문제 해결에 도움이 되도록 Safari에서 볼륨 감지 지원을 추가했습니다.
 
 **Bug Fixed**
 
-- live 스트리밍 모드에서 연결이 끊긴 후 간헐적으로 다시 연결되지 않는 문제를 수정했습니다.
+- live 스트리밍 모드에서 연결이 끊긴 후 간헐적으로 다시 연결되지 않는 문제가 수정되었습니다.
 - iOS 11에서 오디오 볼륨을 가져오는 오류가 수정되었습니다.
 
 ## Version 4.12.2 @2022.04.02
@@ -106,20 +173,25 @@ client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내
 ## Version 4.12.0 @2022.03.04
 
 **Note**
-이 버전으로 업그레이드하기 위해 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
+
+- 이 버전으로 업그레이드하려면 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
 
 **Feature**
-[client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType)은 비동기식으로 변경되어 Promise를 반환하며, Promise 상태에 따라 크기 스트림이 성공적으로 전환되었는지 판단할 수 있습니다.
+
+- [client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType) 전환 성공 여부를 나타내는 Promise를 반환하는 비동기 API를 만들었습니다.
 
 **Improvement**
-해외 서비스 스케쥴링의 정확성을 최적화했습니다.
+
+- 중국 본토 이외의 서비스에 대한 스케쥴링의 정확도가 향상되었습니다.
 
 **Bug Fixed**
-간헐적으로 user_time_out이 강제 오프라인되는 문제를 수정했습니다.
+
+- user_time_out으로 인해 간헐적으로 사용자가 방에서 제거되는 문제가 수정되었습니다.
 
 ## Version 4.11.13 @2022.02.17
 
 **Improvement**
+
 - npm 패키지 Typescript 선언 파일을 업데이트했습니다.
 - [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play) 매개변수 인증 로직을 최적화했습니다.
 
@@ -141,7 +213,6 @@ client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내
 - iOS 15.1에서 데스크톱 버전의 웹 페이지 통화 활성화 시 페이지가 crash되던 문제가 수정되었습니다. 자세한 내용은 [iOS Safari 기존 문제 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
 - [LocalStream.setAudioProfile('high')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setAudioProfile) 비트 레이트가 192kbps로 설정되는 문제가 수정되었습니다.
 
-
 ## Version 4.11.11 @2021.12.17
 
 **Improvement**
@@ -159,12 +230,13 @@ client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내
 ## Version 4.11.9 @2021.11.26
 
 **Note**
-이 버전으로 업그레이드하기 위해 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
+
+- 이 버전으로 업그레이드하려면 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
 
 **Improvement**
 
 - 자동 재생 실패 문제 해결을 위해, SDK 자동 재생 실패 시 인터랙티브 팝업 창 표시를 지원합니다. 자세한 내용은 [자동 재생 제한 처리 권장 사항](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html#h2-3)을 참고하십시오.
-- **iOS 15.1 푸시 스트림 crash 문제** 회피 로직 최적화에 대한 자세한 내용은 [iOS Safari 기존 문제 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
+- [iOS 15.1 푸시 스트림 crash 문제] 회피 로직 최적화에 대한 자세한 내용은 [iOS Safari 기존 문제 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
 - 발생 가능한 소리 없음 문제를 방지하기 위해, [TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones)는 더 이상 deviceId가 ‘communications’인 마이크를 반환하지 않습니다. 자세한 내용은 [Chrome의 기존 문제 case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2)를 참고하십시오.
 - switchDevice 정책을 최적화했습니다.
 - webview 환경에서 지원하는 코덱의 감지 정확도를 개선했습니다.
@@ -179,7 +251,7 @@ client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내
 **Improvement**
 
 - iOS 15.0에서 동영상 재생 시 간헐적으로 검은 화면이 나오는 문제가 해결되었습니다. 자세한 내용은 [iOS Safari 기존 문제 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
-- iOS 15.1 푸시 스트리밍의 크래시 문제가 해결되었습니다. 자세한 내용은 [iOS Safari 기존 문제 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
+- iOS 15.1 푸시 스트리밍의 크래쉬 문제가 해결되었습니다. 자세한 내용은 [iOS Safari 기존 문제 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
 
 ## Version 4.11.7 @2021.09.30
 
@@ -208,7 +280,6 @@ client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내
 
 - 재연결 후 간혹 stream-added 이벤트 콜백을 수신하지 못하는 문제를 수정했습니다.
 - 화면 공유가 장시간 지속되면 간혹 프레임 속도가 0으로 떨어지는 현상이 수정되었습니다.
-
 
 ## Version 4.11.4 @2021.08.20
 
@@ -247,7 +318,6 @@ client.join 방 입장 중복 방지 로직을 추가했습니다. 자세한 내
 
 - LocalStorage가 비활성화된 경우 SDK를 사용할 수 없는 문제가 수정되었습니다.
 - 간혹 publish 예외가 발생할 때 API 요청이 rejected 되지 않는 문제가 수정되었습니다.
-
 
 ## Version 4.11.1 @2021.06.25
 
@@ -340,7 +410,7 @@ Websocket의 기본 포트를 443으로 변경했습니다.
 **Improvement**
 
 풀 스트림 스테레오 음향 재생을 지원합니다.
->! iOS 플랫폼은 현재 지원하지 않습니다.
+> ! iOS 플랫폼은 현재 지원하지 않습니다.
 
 **Bug Fixed**
 
@@ -428,7 +498,7 @@ Websocket의 기본 포트를 443으로 변경했습니다.
 **Improvement**
 
 - 미디어 디바이스 변경 시(예: 포트 헐거워짐, 디바이스 연결/해제 등)의 자동 복구 채택 로직을 최적화했습니다.
-- 디바이스 복구 실패 시 표시하는 오류 코드 추가: [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED)
+- 디바이스 복구 실패 시 표시되는 오류 코드 추가: [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED)
 
 **Bug Fixed**
 
