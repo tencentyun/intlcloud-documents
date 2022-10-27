@@ -1,4 +1,5 @@
-メールに配信、失敗、バウンス、開封、クリック、購読解除といったイベントが発生すると、Tencent Cloudはそれをメッセージ通知としてコールバックアドレスに配信します。以下にイベントプッシュのプロトコル形式を示します。
+コールバックアドレスを設定すると、Tencent Cloudは「配信成功、Tencent Cloudによる配信拒否、ESPバウンス、ユーザーのメール開封、リンクのクリック、購読解除」などのイベント発生後にコールバックアドレスに通知します。コールバックアドレス設定の操作はSESコンソールから行うことができます。[コールバックアドレス](https://intl.cloud.tencent.com/document/product/1084/40183)をご参照ください。
+
 ## リクエスト例
 ```json
 {
@@ -24,10 +25,10 @@
 | timestamp  | int    | イベント発生時のタイムスタンプ                                                                           |
 | reason     | string | メール配信が失敗した理由                                                                          |
 | bounceType | string | 受信者のメールサービスプロバイダがメールを受信拒否した場合、受信拒否のタイプと値は、soft\_bounce \| hard\_bounceで、`event="bounce"`のときのみ有効です           |
-| username   | string | Tencent Cloudアカウントに対応するappId                                                                      |
-| from       | string | 送信アドレス（送信者別名なし）                                                                      |
+| username   | string | Tencent Cloudアカウントに対応するappId                                                                     |
+| from       | string | 送信アドレス（送信者のエイリアスなし）                                                                      |
 | fromDomain | string | 送信ドメイン名                                                                               |
-| templateId | int    | テンプレートID                                                                               |
+| templateId | int    | テンプレートID                                                                              |
 
 ## イベントタイプ[](id:Event_Type)
 Value|Description

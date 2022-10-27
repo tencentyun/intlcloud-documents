@@ -12,17 +12,16 @@
 2. 填写域名后，单击**提交**即可。
 ![](https://qcloudimg.tencent-cloud.cn/raw/43d669f7d15b74bd3f1d11dd3c61d969.png)
 <dx-alert infotype="explain" title="">
-- sampledomain.com 为示例，此处应替换为您的发信地址。
+- sampledomain.com 为示例，此处应替换为您的发信域名。
 - 如果您填入的域名是 sampledomain.com 形式，这属于主域名；如果您填入的域名是 abc.sampledomail.com 形式，这属于非主域名，是否使用主域名发信，在下面的配置中有存在差异，详见对应的说明。
 </dx-alert>
 3. 返回至 [发信域名](https://console.cloud.tencent.com/ses/domain) 设置页面，单击**验证**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/305ea2b8c9b3c5f10e0dbbe6135b3666.png)
-
-4. 记录弹出界面中“记录值”的内容。[](id:step4)  
-<dx-alert infotype="explain" title="">下图为示例，请以您界面中看到的内容为准。
-</dx-alert>
+4. 记录弹出界面中“记录值”的内容。[](id:step4)
+>?下图为示例，请以您界面中看到的内容为准。
+>
 ![](https://qcloudimg.tencent-cloud.cn/raw/70bfe55a17122848c7f829c5b4b86653.png)
-5. 如果您的域名托管在腾讯云，请进入  [DNS 解析 DNSPod 控制台](https://console.cloud.tencent.com/cns) 配置验证信息，单击对应的发信域名地址，可进入配置详情页。
+5. 如果您的域名托管在腾讯云，请进入  [DNS 解析 DNSPod 控制台](https://console.cloud.tencent.com/cns) 配置验证信息，单击对应的发信域名，可进入配置详情页。
 <dx-alert infotype="explain" title="">
 如果您的域名托管在其它域名服务商，请自行按照清单详情来配置。
 </dx-alert>
@@ -30,7 +29,7 @@
   - MX 验证
     主机记录中填入：`@`
     记录类型选择：MX
-    记录值中填入：`mxbiz1.qq.com.`
+    记录值中填入：`mxbiz1.qq.com.`。如果您有邮件服务器，请在记录值中填入您的邮件服务器地址。
 <dx-alert infotype="explain" title="">
 - 如果发信域名非主域名，比如：abc.sampledomain.com，主机记录中填入：abc
 - 请确保该记录值末尾需包含“.”，部分域名服务商会在MX的记录值末尾自动添加。
@@ -44,14 +43,14 @@
 - 如果您同时使用多个邮件推送服务商，记录值中需要保留多个服务商的域名，例如： v=spf1 include:qcloudmail.com include:domain1.com ~all ，其中 domain1.com 是其他邮件推送服务商的域名。请确保您发信域名的 DNS 配置中只有1条 SPF 记录。
 </dx-alert>
   - DKIM 验证：
-   主机记录填入：`qcloud._domainkey`
-    记录类型选择：TXT
+    主机记录填入：`qcloud._domainkey`
+  记录类型选择：TXT
   记录值中填入您的“记录值”。
-  <dx-alert infotype="explain" title="">
+<dx-alert infotype="explain" title="">
 如果发信域名非主域名，例如：abc.sampledomain.com，主机记录中填入：qcloud._domainkey.abc。
 </dx-alert>
 - DMARC 验证：
-主机记录中填入：`_dmarc`
+  主机记录中填入：`_dmarc`
   记录类型选择：TXT
   记录值中填入：`v=DMARC1; p=none`
   <dx-alert infotype="explain" title="">
@@ -63,15 +62,33 @@
 
 :::
 ::: 步骤二：验证结果
-![](https://qcloudimg.tencent-cloud.cn/raw/275fb56fe9faa0a0ab3bd3735f3bd8c5.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/695ff02f3096d64481103a13e757362c.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/c9bc369664b4290a4048f94791f47209.png)
+<dx-alert infotype="explain" title="">
+如果您已完成“步骤一”的配置操作并且发信域名的状态为“验证通过”，则无需再进行该步骤的验证。
+</dx-alert>
+本文将介绍如何使用 dig 命令询问 DNS 域名服务器，并查看您的发信域名配置是否完成。
+在命令行中分别输入如下命令并按回车，分别查看返回值是否与发信域名配置界面中对应显示的记录值相同。
+- `dig mx +short sampledomain.com`
+![](https://qcloudimg.tencent-cloud.cn/raw/76cf66d8a42bee99a696b505eb8d8b2c.png)
+- `dig txt +short sampledomain.com`
+![](https://qcloudimg.tencent-cloud.cn/raw/f5fe74ee3c0c8312253359f8a3457db1.png)
+- `dig txt +short _dmarc.sampledomain.com`
+![](https://qcloudimg.tencent-cloud.cn/raw/2c53ae3c3789e220e7f939be536152bf.png)
+- `dig txt +short qcloud._domainkey.sampledomain.com`
+![](https://qcloudimg.tencent-cloud.cn/raw/5c773b8278d5d424a652b396f42fc591.png)
+
+
+<dx-alert infotype="explain" title="">
+上述命令中 sampledomain.com 为示例，此处应替换为您的发信域名。
+</dx-alert>
+
+
+
 
 :::
 </dx-tabs>
 
 <dx-alert infotype="explain" title="">
+
 - 上面设定并校验后，仍然建发信域名有问题，请联系 [腾讯云技术人员](https://console.cloud.tencent.com/workorder/category) 解决。
 - 若注册了 Dnspod 解析，但是 dig 不到：可能域名实名认证未通过（注册局设置停止解析）。
 </dx-alert>
-

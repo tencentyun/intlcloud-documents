@@ -2,7 +2,7 @@
 ### Can I send emails from any email address?
 **No**, you can use SES to send emails only from addresses or domains that you own.
 
-First, you must verify the domain to prove that you own it. Each Tencent Cloud account can have up to 10 domains. For more information on verifying email addresses and domains, see **Step 4. Configure a Sender Domain** in [Getting Started](https://intl.cloud.tencent.com/document/product/1084/39332).
+First, you must verify the domain to prove that you own it. Each Tencent Cloud account can have up to 10 domains. For more information on verifying email addresses and domains, see [Email Configuration](https://www.tencentcloud.com/document/product/1084/48862) of Getting Started.
 
 [](id:que2) 
 ### Is there a limit on the size of an email sent via SES?
@@ -12,22 +12,20 @@ Yes, an email (including images and attachments) cannot exceed 4 MB.
 ### Are there any limits on the number of emails that I can send?
 Each SES account has a set of sending limits, including:
 
-- Maximum daily sends: the maximum number of emails that you can send within 24 hours. By default, this limit is 300,000 emails per day per account. However, you can raise this limit.
-- Maximum sending rate: the maximum number of emails you can send per second. By default, this limit is 20 emails per second per account.
-- Maximum sends to the same email address per hour: 10 (default). If this limit is exceeded, extra emails to this address will be blocked. You can resend it after 1 hour. This mechanism is to avoid business and push exceptions.
+- Maximum number of emails per day: The maximum number of emails that you can send in 24 hours. The initial value for a new account is 500, which can be increased as needed. For the increasing rules, see [Reputation Level](https://www.tencentcloud.com/document/product/1084/48864).
+- Maximum sending rate: The maximum number of emails you can send per second. By default, this limit is 20 emails per second per account.
+- Maximum sends to the same email address per hour: 10 (default). Extra emails to this address beyond this limit will be blocked. You can resend them 1 hour later. This mechanism is set to avoid business and push exceptions.
 
->! 
->- All the above three limits can be adjusted. Please contact Tencent Cloud technical support and provide the sending scenario and reason if you need to apply for adjustment.
->- If we find a problem with the quality of your email, such as a high complaint rate or bounce rate, we have the right to stop you from sending emails via SES.
+>! If we find a quality problem of your emails, such as a high complaint rate or bounce rate, we have the right to suspend your email sending via SES.
 
 [](id:que4) 
 ### Are there any restrictions on the email subject format?
-The email subject should be in UTF-8 format and contain no more than 998 characters. Otherwise, the email won’t be sent. Tencent Cloud recommends you keep the subject within 78 characters.
+The email subject should be in UTF-8 format and contain no more than 998 characters. Otherwise, the email won’t be sent. We recommend you keep the subject within 78 characters.
 
 [](id:que5) 
-### Are there any restrictions on recipient email addresses when sending emails via API calls?
-No. However, the recipient email addresses must be valid (not obtained by crawling or purchased from a third party) and active triggers or subscriptions from the recipients are required.
+### Are there any restrictions on recipient addresses when sending emails via API calls?
+No. However, the recipient addresses must be valid (not obtained by crawling or purchased from a third party), and active triggers or subscriptions from the recipients are required.
 
 [](id:que6) 
-### What should I do to be able to send custom content?
-You can only send emails using a template.
+### How to send emails with custom content?
+You can only send such emails using a template.

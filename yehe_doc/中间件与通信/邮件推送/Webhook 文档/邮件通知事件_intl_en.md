@@ -1,4 +1,5 @@
-Tencent Cloud will notify the callback address of delivery success, delivery failure, email bounce, email open, click on link, unsubscription, and other events. The protocol format of event pushes is as below:
+If you set a callback address, Tencent Cloud will notify the callback address of successful delivery, email rejection, bounce, open, click, unsubscription, and other events. You can configure a callback address in the SES console. For more details, see [Callback Address](https://intl.cloud.tencent.com/document/product/1084/40183).
+
 ## Sample Request
 ```json
 {
@@ -23,9 +24,9 @@ Tencent Cloud will notify the callback address of delivery success, delivery fai
 | bulkId     | string | `MessageId` returned by `SendEmail`                                                          |
 | timestamp  | int    | Event occurrence timestamp                                                                           |
 | reason     | string | Cause of email delivery failure                                                                          |
-| bounceType | string | Rejection type when the email is rejected by the recipient's email service provider (ESP). Valid values: soft\_bounce \| hard\_bounce. This field takes effect only when the value of `event` is `bounce`.           |
+| bounceType | string | Rejection type when the email is rejected by the recipient’s email service provider (ESP). Valid values: soft\_bounce \| hard\_bounce. This field takes effect only when the value of `event` is `bounce`.          |
 | username   | string | Tencent Cloud account appId                                                                      |
-| from       | string | Sender address (without sender name)                                                |
+| from       | string | Sender address (excluding the sender name)                                                                     |
 | fromDomain | string | Sender domain                                                                               |
 | templateId | int    | Template ID                                                                               |
 
