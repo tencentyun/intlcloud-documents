@@ -6,7 +6,7 @@ Instance upgrade refers to the process of upgrading an existing TDSQL for MySQL 
 >?To ensure the optimal distributed performance, we recommend that you use a maximum of 8 shards. When upgrading the configuration, you must first expand the shards until their specifications cannot be increased any more, at which point you can consider adding more shards.
 
 ### Adding shard
-1. Log in to the [TDSQL for MySQL console] (https://console.cloud.tencent.com/tdsqld). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
+1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance management page, select the **Shard Management** tab and click **Add Shard**.
 >?You do not need to select any existing shards when adding new ones. All shards are automatically expanded by using a proprietary automatic rebalancing technology to ensure the expansion stability. For more information on the expansion process, see [Elastic Expansion](https://intl.cloud.tencent.com/document/product/1042/33317).
 >
