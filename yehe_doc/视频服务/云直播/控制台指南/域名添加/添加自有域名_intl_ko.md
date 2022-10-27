@@ -26,7 +26,7 @@ CSS를 사용하려면 푸시 도메인 1개와 재생 도메인 1개, 즉 **2 �
 [](id:DNS)
 ### DNS 레코드
 DNS 공급자에서 DNS 레코드를 추가하여 도메인 소유권을 확인할 수 있습니다. Tencent Cloud의 DNS 서비스를 사용하는 경우 아래 단계에 따라 DNS 레코드를 추가하십시오.
-1. 登录[DNSPOD控制台](https://www.dnspod.com/login?s_url=https%3A%2F%2Fwww.dnspod.com%2F%3Flang%3Den)。
+1. [DNSPOD 콘솔](https://www.dnspod.com/login?s_url=https%3A%2F%2Fwww.dnspod.com%2F%3Flang%3Den)에 로그인합니다.
 2. 추가하려는 도메인의 상위 도메인을 클릭합니다.
 3. 레코드 관리 페이지에서 **레코드 추가**를 클릭합니다.
 4. 신규 열에 도메인 레코드를 입력합니다. 구체적인 입력 내용은 다음과 같습니다. 
