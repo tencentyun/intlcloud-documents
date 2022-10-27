@@ -546,7 +546,7 @@
             <div class="card-content">
                <a class="with-box" href="https://pub.dev/packages/live_flutter_plugin/versions">ZIP file</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Flutter">GitHub</a>
-               <a target="_blank" style="margin-left:10px" href="https://cloud.tencent.com/document/product/454/71666">Integration guide</a>
+               <a target="_blank" style="margin-left:10px" href="https://www.tencentcloud.com/document/product/1071/50582">Integration guide</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Flutter/tree/main/Live-API-Example">
                   Demo run</a>
             </div>
