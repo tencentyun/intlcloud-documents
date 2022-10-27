@@ -22,12 +22,12 @@
 1. 登录 [**腾讯特效SDK控制台 > 移动端 License**](https://console.tencentcloud.com/xmagic)，单击**新建测试 License**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/54ac63cd985f1170b2d74eaac4d0cd1d.png)
 2. 根据实际需求填写 `App Name`、`Package Name` 和 `Bundle ID`，选择所需测试的能力 **高级套餐 S1 - 04**、**原子能力X1-01**、**原子能力X1-02**，勾选后准确填写 **公司名称、所属行业类型**，上传**公司营业执照**，单击**确定**提交审核申请，等待人工审核流程。
-![](https://qcloudimg.tencent-cloud.cn/raw/e3d3bb59025c79ac4d46f45c67d1cc27.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e3d3bb59025c79ac4d46f45c67d1cc27.png" style="zoom:50%;" />
 3. 测试版 License 成功创建后，页面会显示生成的 License 信息。此时 Key 和 LicenseURL 两个参数暂未生效，需提交的审核通过后方才生效使用。**在 SDK 初始化配置时需要传入 Key 和 License URL 两个参数，请妥善保存以下信息。**
 ![](https://qcloudimg.tencent-cloud.cn/raw/6b8d5e0cca6b37e136040a50a17d5099.png)
 > ?
 >- 测试版 License 有效期内可单击右侧的**编辑**，进入修改 Bundle ID 和 Package Name 信息，单击**确定**即可保存，但会导致此测试 License 下生效中的测试版腾讯特效功能模块**重新进入审核流程**，待审核通过后方可继续使用。
-> ![](https://qcloudimg.tencent-cloud.cn/raw/b2a4f9588cc7f0ba5131e631ace94d10.png)
+> <img src="https://qcloudimg.tencent-cloud.cn/raw/b2a4f9588cc7f0ba5131e631ace94d10.png" style="zoom: 67%;" />
 >- 若无 Package Name 或 Bundle Id，可填写“-”。
 
 :::
@@ -36,13 +36,13 @@
 1. 选择您想测试的应用，单击**测试新功能模块**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/31d21e8d61ed556276a44706a244d804.png)
 2. 勾选功能模块 **高级套餐 S1 - 04**/**原子能力X1-01**/**原子能力X1-02**，勾选后准确填写 **公司名称、所属行业类型**，上传**公司营业执照**，单击**确定**提交审核申请，等待人工审核流程。 
-![](https://qcloudimg.tencent-cloud.cn/raw/99f950a4bb1396e31d69f2c28cdab64f.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/99f950a4bb1396e31d69f2c28cdab64f.png" style="zoom:50%;" />
 :::
 </dx-tabs>
 
 3. 提交审核申请后模块进入**公司资质审核中**，审核时间通常 1-2 个工作日。可单击**查看审核信息**查看提交的审核信息。
-![](https://qcloudimg.tencent-cloud.cn/raw/a349ab1958dc407c362fad72485dab5d.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/34446b73133115d11e18b54393361b98.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/a349ab1958dc407c362fad72485dab5d.png" style="zoom:67%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/34446b73133115d11e18b54393361b98.png" style="zoom:67%;" />
 4. 审核通过后，腾讯特效功能模块状态为**正常**，腾讯特效测试版 License 申请成功，您可开始使用腾讯特效功能模块。
 ![](https://qcloudimg.tencent-cloud.cn/raw/516e3b714bd158a452022c4c563e0756.png)
 >? **若审核失败**未通过，单击**审核结果**查看审核结果和审核备注，您可根据审核备注知悉审核失败原因，单击**重新发起审核**。更改审核信息并提交，等待人工审核流程。
@@ -61,7 +61,7 @@
 1. 单击测试版 License 腾讯特效模块中的**升级**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d1915913278cbf6f3c188141cdcdea5f.png)
 2. 进入升级功能模块界面，单击**立即绑定**，选择未绑定的腾讯特效套餐包，单击**确定**即可升级创建同包名的正式应用，同时解锁腾讯特效模块的正式版 License，无需签发审核。若无可绑定的腾讯特效套餐包，可单击 [资源包购买页](https://buy.cloud.tencent.com/vcube?type=magic) 前往腾讯视立方资源包购买页购买。
-![](https://qcloudimg.tencent-cloud.cn/raw/9466fa0917c9220d849603ab6a29b190.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9466fa0917c9220d849603ab6a29b190.png" style="zoom:50%;" />
 
 [](id:formal)
 ## 正式版 License
@@ -76,9 +76,9 @@
 1. 进入 [**腾讯特效控制台 > 移动端 License**](https://console.cloud.tencent.com/vcube)，单击**新建正式 License**。  
 ![](https://qcloudimg.tencent-cloud.cn/raw/1840aafe0ac1fc54485f9d4a4b15b98a.png) 
 2. 填写正式应用的 `App Name`、`Package Name` 和 `Bundle ID` 信息，勾选功能模块**腾讯特效**，单击**下一步**。
-![](https://qcloudimg.tencent-cloud.cn/raw/f128fdb87a0cc07762bbb75e86b460e9.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f128fdb87a0cc07762bbb75e86b460e9.png" style="zoom:50%;" />
 3. 进入选择资源项并绑定 License 界面，单击**立即绑定** ，选择**未绑定**的腾讯特效套餐包（若没有可绑定的资源包，可前往 [资源包购买页](https://buy.cloud.tencent.com/vcube?type=magic) 购买），并单击**确定**即可创建应用并生成正式版 License。 
-![](https://qcloudimg.tencent-cloud.cn/raw/db5cf0bb61ea8063d25a11dfafb89e90.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/db5cf0bb61ea8063d25a11dfafb89e90.png" style="zoom:50%;" />
 >? 单击**确定**前需要再次确认 Bundle ID 和 Package Name 与业务使用包名信息一致，如与提交到商店的不一致，请在提交前进行修改，**正式版 License 一旦提交成功将无法再修改 License 信息**。 
 
 :::
@@ -86,9 +86,9 @@
 1. 选择您需要增加**腾讯特效**功能模块的正式应用，单击**解锁新功能模块**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7d00d56c1dd4c1658f4fde736276d322.png)
 2. 选择**腾讯特效**，单击**下一步**。  
-![](![](https://qcloudimg.tencent-cloud.cn/raw/d88b7f921e294eafec2bbdbaab65edec.png)
+![](<img src="https://qcloudimg.tencent-cloud.cn/raw/d88b7f921e294eafec2bbdbaab65edec.png" style="zoom:50%;" />
 3. 进入选择资源项并绑定 License 界面，单击**立即绑定** ，选择**未绑定**的腾讯特效套餐包（若没有可绑定的腾讯特效套餐包，可单击 [资源包购买页](https://buy.intl.cloud.tencent.com/vcube) 前往购买），并单击**确定**即可在应用下生成正式版腾讯特效功能模块。
-![](https://qcloudimg.tencent-cloud.cn/raw/0df1ab29aec13532934eed6457b8936d.png))
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0df1ab29aec13532934eed6457b8936d.png" style="zoom:50%;" />)
 :::
 </dx-tabs>
 2. 腾讯特效功能模块状态为**正常**，腾讯特效正式版 License 申请成功，您可开始使用腾讯特效功能模块。
@@ -101,7 +101,7 @@
 1. 选择您需要更新有效期的 License，单击腾讯特效模块内的**续期**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a4b37fc395ce6ea395541825167ad284.png)
 2. 选择与原 License **同类型的套餐包**资源进行绑定续期，选择后将实时显示续期的起始时间和结束时间，单击**确定**完成续期。若没有可绑定的腾讯特效套餐包，可单击 [资源包购买页](https://buy.intl.cloud.tencent.com/vcube) 前往购买。
-![](https://qcloudimg.tencent-cloud.cn/raw/decbe36048335926e3a964a6ae923fbe.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/decbe36048335926e3a964a6ae923fbe.png" style="zoom:50%;" />
 >!目前续期套餐包有效期仅支持同类型的套餐包续期，即若已绑定的 License 套餐包类型为 S1 - 04，则续期是只能选择 S1 - 04 的套餐包进行续期。若想更改绑定的套餐包类型，需 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 或联系商务进行处理。
 3. 查看更新后的有效期情况。
 >! **腾讯特效正式版 License 不支持信息修改**，若您需要修改 License 信息，购买资源包后请勿用于 License 有效期的更新，请单击**创建应用并绑定 License**重新创建应用新增 License 绑定新的包名信息。
