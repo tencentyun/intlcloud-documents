@@ -114,8 +114,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
-
 import java.util.List;
 
 public class FragmentAdapter extends FragmentStateAdapter {
@@ -183,8 +181,8 @@ TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单�
     <th style="text-align:center;"><b>语音通话</b><br></th>
   </tr>
   <tr>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/bc5cd3394458ffbc3bb4143789c19dbe.png"/></td>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/c739965c76e6ec1af505d82f3c85077a.png"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/b9f362503d25179db6f75fc91cfd000a.jpg"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2f037d7de8270c0edef68c0b829465ec.png"/></td>
 	 </tr>
 </table>
 
@@ -205,7 +203,7 @@ api project(':tuicallkit')
     <th style="text-align:center;" ><b>联系人页发起通话<br></b></th>
   </tr>
   <tr>
-        <td><img style="https://qcloudimg.tencent-cloud.cn/raw/b34f84493214ca44bef32d0257d66693.png"  />    </td>
+        <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/b34f84493214ca44bef32d0257d66693.png"  />    </td>
     <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/65d76fa2bea287a22c11b1f972996397.png"  />    </td>
      </tr>
 </table>

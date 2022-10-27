@@ -29,7 +29,7 @@ VOD supports the following types of event notifications:
         </td>
     </tr>
     <tr>
-        <td rowspan=4>
+        <td rowspan=3>
             Video processing
         </td>
         <td>
@@ -43,11 +43,6 @@ VOD supports the following types of event notifications:
 		<tr>
         <td>
             <a href="https://intl.cloud.tencent.com/document/product/266/35571">Video composing completion</a>
-        </td>
-    </tr>
-		<tr>
-        <td>
-            <a href="https://www.tencentcloud.com/document/product/266/50447">Bitrate Reduction Completion</a>
         </td>
     </tr>
 </table>

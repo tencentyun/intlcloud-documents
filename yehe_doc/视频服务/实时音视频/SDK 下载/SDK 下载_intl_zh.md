@@ -552,10 +552,10 @@
                <p class="titlename">Flutter SDK下载</p>
             </div>
             <div class="card-content">
-               <a class="with-box" href="https://pub.dev/packages/live_flutter_plugin/versions&quot;">ZIP 下载</a>
+               <a class="with-box" href="https://pub.dev/packages/live_flutter_plugin/versions">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Flutter">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/71666">集成指引</a>
+                  href="https://www.tencentcloud.com/document/product/1071/50582">集成指引</a>
                <a target="_blank" style="margin-left:10px"
                   href="https://github.com/LiteAVSDK/Live_Flutter/tree/main/Live-API-Example">运行
                   Demo</a>

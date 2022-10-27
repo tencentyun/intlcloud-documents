@@ -1,6 +1,8 @@
+[](id:que1) 
 ### 콜백 주소는 어떻게 입력해야 하나요?
-콜백 주소 형식 예시: `https://xxx.yyy.com/callback/exmpale`
-콜백 프로토콜에 대한 정보는 [Email Event Notification](https://intl.cloud.tencent.com/document/product/1084/39492)을 참고하십시오.
+- 콜백 주소 형식 예시: `https://xxx.yyy.com/callback/exmpale`.
+- 콜백 프로토콜에 대한 정보는 [이메일 이벤트 알림](https://intl.cloud.tencent.com/document/product/1084/39492)을 참고하십시오.
 
+[](id:que2) 
 ### 여러 콜백 주소를 구성할 수 있습니까?
-아니요. 하나의 계정은 하나의 콜백 주소만 구성할 수 있습니다.
+‘계정 레벨’ 및 ‘발신자 주소 레벨’ 콜백 주소가 지원됩니다. 1개의 ‘계정 레벨’ 콜백만 생성할 수 있으며, 1개의 발신자 주소당 ‘발신자 주소 레벨’ 콜백을 1개만 생성할 수 있습니다.

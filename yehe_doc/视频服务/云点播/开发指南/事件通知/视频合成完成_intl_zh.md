@@ -72,7 +72,7 @@ ComposeMediaComplete
 
 
 ### 可靠回调
-如果选择可靠回调模式，调用 [拉取事件通知](/document/product/266/33433) API 会接收到如下形式的 HTTP 应答（省略了值为 null 的字段）。
+如果选择可靠回调模式，调用 [拉取事件通知](https://www.tencentcloud.com/document/product/266/34183) API 会接收到如下形式的 HTTP 应答（省略了值为 null 的字段）。
 
 ```json
 {

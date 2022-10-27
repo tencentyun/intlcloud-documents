@@ -130,7 +130,7 @@ var player = TCPlayer('player-container-id', {
 
 ### iOS 端
 
-请参考 [接入指引](https://intl.cloud.tencent.com/document/product/266/49669#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE) （通过 FileId 方式）播放 DRM 加密视频。其中，这一过程中需要使用到步骤3中生成的播放器签名`psign`。
+请参考 接入指引 （通过 FileId 方式）播放 DRM 加密视频。其中，这一过程中需要使用到步骤3中生成的播放器签名`psign`。
 
 > ? 在接入前，请您提交工单 [联系我们](https://console.cloud.tencent.com/workorder/category)获取支持 DRM 功能的 SDK 。
 

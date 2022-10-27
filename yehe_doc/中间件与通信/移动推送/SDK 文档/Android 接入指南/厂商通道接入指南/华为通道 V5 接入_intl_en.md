@@ -67,7 +67,7 @@ android {
 dependencies {
 		// ...Other dependencies of the program
 		implementation 'com.tencent.tpns:huawei:[VERSION]-release'      //  For Huawei pushes, [VERSION] is the SDK's latest version number, which can be obtained from the release notes of SDK for Android.
-		implementation 'com.huawei.hms:push:6.3.0.302'       // HMS Core Push module dependency package
+		implementation 'com.huawei.hms:push:6.5.0.300'       // HMS Core Push module dependency package
 		}
 ```
 

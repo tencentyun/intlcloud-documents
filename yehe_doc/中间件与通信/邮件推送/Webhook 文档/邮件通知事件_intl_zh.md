@@ -1,8 +1,9 @@
-当邮件产生已递送、失败、退信、打开、点击、取消订阅等事件，腾讯云将以消息通知的方式，传递到回调地址。以下是事件推送的协议格式：
+设置回调地址后，腾讯云将在产生“递送成功、腾讯云拒信、ESP 退信、用户打开邮件、点击链接、退订”等事件后通知到回调地址。通过邮件推送控制台，您可以配置回调地址的操作，请参见 [回调地址](https://intl.cloud.tencent.com/document/product/1084/40183)。
+
 ## 请求示例
 ```json
 {
-   "event":"bounce",
+    "event":"bounce",
     "email":"example@example.com",
     "bulkId":"qcloudses-30-251200670-date-20220601142439-8jolHvR2XcXC1",
     "timestamp":1654064683,
@@ -24,10 +25,10 @@
 | timestamp  | int    | 事件产生的时间戳                                                                           |
 | reason     | string | 邮件递送失败的原因                                                                          |
 | bounceType | string | 如果收件人邮件服务商拒信，拒信类型，取值：soft\_bounce \| hard\_bounce，仅在`event="bounce"`的时候生效           |
-| username   | string | 腾讯云账号对应的 appId                                                                      |
-| from       | string | 发信地址（不带发件人别名）                                                     |
+| username   | string | 腾讯云账号对应的 appId                                                                     |
+| from       | string | 发信地址（不带发件人别名）                                                                      |
 | fromDomain | string | 发信域名                                                                               |
-| templateId | int    | 模板 Id                                                                               |
+| templateId | int    | 模板 Id                                                                              |
 
 ## 事件类型[](id:Event_Type)
 Value|Description
