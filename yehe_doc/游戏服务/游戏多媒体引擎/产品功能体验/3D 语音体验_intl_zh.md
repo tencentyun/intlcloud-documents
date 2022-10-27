@@ -21,7 +21,7 @@
 
 ### 3. 初始化程序
 
-<img src="https://main.qcloudimg.com/raw/33540519cd5c2bdde6139f8a4af537a6.png"  width="50%"><br>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e94ad80ce1466aff981b23abef5fe2c2.png"  width="50%"><br>
 初始化程序需要填入 [游戏多媒体引擎控制台](https://console.cloud.tencent.com/gamegme/detail/1400391524) 服务管理中的 AppID 以及权限密钥。
 
 - appId：填入控制台中获取到的 Appid。
@@ -35,7 +35,7 @@
 
 ### 4. 进入语音房间
 
-<img src="https://main.qcloudimg.com/raw/7393dbb31007299894586205cb8b6f9c.jpg"  width="50%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/85597502439e2434836bc827b121ceea.jpg"  width="50%">
 
 此时进入语音房间选择界面，可以填写进入的房间号。如果此时打开了另一个演示程序，也请填写相同的房间号。
 
@@ -44,7 +44,7 @@
 
 ### 5. 游戏界面介绍
 
-<img src="https://main.qcloudimg.com/raw/0e451b80402caeb31cf6bd932acee127.png"  width="50%"/></img>
+
 
 界面信息说明如下：
 
@@ -59,16 +59,16 @@
 
 ### 6. 配置本地连接
 
-<img src="https://main.qcloudimg.com/raw/670b24a1133dc07bdc9892ffa12b159f.png" width="50%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6f8f1ad63609850c9f169326c1ca69dc.png" width="50%" /></img>
 
 >!此演示程序需要本地局域网连接基础。
 
 - **第一个进房间的人**
   第一个进房间的人是需要作为网络连接的 Host，所以需要单击 **LAN Host(H)**。单击之后会将人物生成在金币旁边。
-  <img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/master.gif"  width="50%"/></img>
+
 - **非首位进房间的人**
   非首位进房间的人需要与 Host 连通，所以需要单击 **LAN Client(C)**。单击之后会将人物生成在金币旁边，此时可以见到第一个进入房间的人。
-  <img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/client.gif"  width="50%"/></img>
+
 - **判断连接成功的标志**
   1. 两个游戏界面可以互相看到对方游戏角色 
   2. 在界面右下角的日志中，可以看到对方游戏角色对应的 userID 进房记录
@@ -79,13 +79,13 @@
 
 ### 8. 操作方式
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/linaji.gif"  width="50%"/></img>
+
 
 键盘上的"W"、"S"、"A"、"D"分别对应“前进”、“后退”、“左转”、“右转”，鼠标转动可以调整视角。连接后的客户端上可以看到另一个客户端上所操作的角色。
 
 ### 9. 如何体验
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/yuan.gif"  width="50%"/></img>
+
 
 如果是本地双开演示程序，可以先把其中一个演示程序的视角移动到金币旁边，打开麦克风，另一个演示程序的游戏角色尽可能的跑远，期间不停说话，便可以体验3D的语音效果，跑到地图边界，此时的声音会衰减到几乎听不到。
 

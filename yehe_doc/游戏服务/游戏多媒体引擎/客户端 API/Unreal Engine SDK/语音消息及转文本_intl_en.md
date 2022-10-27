@@ -1,25 +1,26 @@
-This document provides a detailed description that makes it easy for Unreal Engine speech-to-text service developers to debug and integrate the APIs for Tencent Cloud’s Game Multimedia Engine (GME).
-
-
-
-<dx-alert infotype="explain" title="">
-This document applies to GME SDK version 2.8.
-</dx-alert>
-
-
+This document describes how to access and debug GME client APIs for the voice message and speech-to-text services for Unreal Engine.
 
 ## Key Considerations for Using GME
 
-GME provides two services: voice chat service and voice message and speech-to-text service, both of which rely on key APIs such as Init and Poll.
+GME provides the real-time voice, voice message, and speech-to-text services, which all depend on core APIs such as `Init` and `Poll`.
 
-<dx-alert infotype="notice" title="Note on Init API">
-If you need to use voice chat and voice message services at the same time, **you only need to call `Init` API once**.
-The billing will not start after initialization. Receiving or sending a voice message in speech-to-text service is counted as a voice message DAU.
-</dx-alert>
+#### Key notes
 
-![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+- You have created a GME application and obtained the `AppID` and `Key` of the SDK as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
+- You have **activated the real-time voice, voice message, and speech-to-text services of GME** as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
+- Configure your project before using GME; otherwise, the SDK will not take effect.
+- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
+- GME APIs should be called in the same thread.
+- The `Poll` API should be called periodically for GME to trigger event callbacks.
+- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
+
+## Connecting to the SDK
 
 ### Directions
+
+Key processes involved in SDK connection are as follows:
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/5e05e6ffe1749725a6ba077926286f16.png"  width="70%" /></img>
 
 <dx-steps>
 -<dx-tag-link link="#Init" tag="API: Init">Initializing GME</dx-tag-link>
@@ -30,28 +31,14 @@ The billing will not start after initialization. Receiving or sending a voice me
 -<dx-tag-link link="#UnInit" tag="API: UnInit">Uninitializing GME</dx-tag-link>
 </dx-steps>
 
-### Important notes
-
-- Configure your project before using GME; otherwise, the SDK will not take effect.
-- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
-- GME APIs should be called in the same thread.
-- The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error code, please see <dx-tag-link link="https://cloud.tencent.com/document/product/607/15173" tag="ErrorCode">Error Codes</dx-tag-link>.
-
 ### C++ classes
 
 | Class | Description |
-| ----------- | :------------------: |
+| ----------- | :----------------------: |
 | ITMGContext | Key APIs |
-| ITMGPTT | Speech-to-Text APIs |
+| ITMGPTT     | Voice message and speech-to-text conversion APIs |
 
 ## Key APIs
-
-Before the initialization, the SDK is in the uninitialized status, and **you need to initialize it through the `Init` API** before you can use the voice chat and speech-to-text services.
-
-**You need to call the `Init` API before calling any APIs of GME.**
-
-If you have any questions when using the service, please see [General](https://intl.cloud.tencent.com/zh/document/product/607/30254).
 
 | API | Description |
 | ------ | :----------: |
@@ -62,18 +49,11 @@ If you have any questions when using the service, please see [General](https://i
 | Uninit | Uninitializes GME |
 
 
-
-<dx-alert infotype="notice" title="">
-If you need to switch the account, please call `UnInit` to uninitialize the SDK. No fee is incurred for calling Init API.
-</dx-alert>
-
-
-
 ### Preparations
 
 You need to import the header file `tmg_sdk.h` first before you can access GME. The classes in the header file inherit `ITMGDelegate` for message delivery and callback.
 
-#### Sample code  
+#### Sample code
 
 ```
 #include "tmg_sdk.h"
@@ -87,9 +67,9 @@ private:
 ｝
 ```
 
-### Setting singleton
+### Setting a singleton
 
-You need to get `ITMGContext` first before you can call the `EnterRoom` function, because all calls begin with `ITMGContext` and callbacks are passed to the application through `ITMGDelegate`.
+You need to get `ITMGContext` first before you can call the `EnterRoom` function. All calls begin with `ITMGContext`, which is returned to the application through the `ITMGDelegate` callback and must be set first.
 
 #### Sample code 
 
@@ -119,21 +99,11 @@ void AUEDemoLevelScriptActor::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char
 }
 ```
 
-### [Initializing SDK](id:Init)
+### [Initializing the SDK](id:Init)
 
-- This API is used to initialize the GME service. It is recommended to call it when initializing the application. No fee is incurred for calling this API.
-- **The openID uniquely identifies a user with the rules stipulated by the application developer and unique in the application (currently, only INT64 is supported)**.
+**You need to initialize the SDK through the `Init` API** before you can use the real-time voice, voice message, and speech-to-text services. The `Init` API must be called in the same thread as other APIs. We recommend you call all APIs in the main thread.
 
-
-
-<dx-alert infotype="notice" title="">
-The Init API must be called in the same thread with other APIs. It is recommended to call all APIs in the main thread.
-</dx-alert>
-
-
-
-
-#### Function prototype
+#### API prototype
 
 ```
 ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
@@ -141,10 +111,8 @@ ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
 
 | Parameter | Type | Description |
 | -------- | :---------: | ------------------------------------------------------------ |
-| sdkAppId | const char* | `AppID` provided by the GME service from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme) |
-| openId | const char* | `openId` can only be in Int64 type, which is passed after being converted to a const char*. |
-
-
+| sdkAppId | const char* | `AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme), which can be obtained as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0). |
+| openID   | const char* | `openID` can only be in `Int64` type, which is passed in after being converted to a `const char*`. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application.         |
 
 #### Returned values
 
@@ -153,15 +121,12 @@ ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
 | AV_OK = 0                  | Initialized SDK successfully. |
 | AV_ERR_SDK_NOT_FULL_UPDATE=7015 | Checks whether the SDK file is complete. It is recommended to delete it and then import the SDK again. |
 
-The returned value `AV_ERR_SDK_NOT_FULL_UPDATE` is **only a reminder** but will not cause an initialization failure.
-
 <dx-alert infotype="notice" title="Notes on 7015 error code">
 
 - The 7015 error code is judged by md5. If this error is reported during integration, please check the integrity and version of the SDK file as prompted.
+- The returned value `AV_ERR_SDK_NOT_FULL_UPDATE` is **only a reminder** but will not cause an initialization failure.
 - Due to the third-party reinforcement, Unity packaging mechanism and other factors, the md5 of the library file will be affected, resulting in misjudgment. **Please ignore this error in the logic for official release**, and try to avoid displaying it in the UI.
   </dx-alert>
-
-
 
 #### Sample code 
 
@@ -171,18 +136,16 @@ std::string userId = TCHAR_TO_UTF8(CurrentWidget->editUserID->GetText().ToString
 ITMGContextGetInstance()->Init(appid.c_str(), userId.c_str());
 ```
 
-### [Triggering event callback](id:Poll)
+[](id:Poll)
+### Triggering an event callback
 
-Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
-Refer to the UEDemoLevelScriptActor.cpp file in [Demo](https://intl.cloud.tencent.com/zh/document/product/607/18521).
+Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run abnormally. For more information, see the `EnginePollHelper` file in [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
 <dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
 The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
 </dx-alert>
 
-
-
-#### Function prototype
+#### API prototype
 
 ```
 class ITMGContext {
@@ -210,7 +173,7 @@ void AUEDemoLevelScriptActor::Tick(float DeltaSeconds) {
 
 When a `Pause` event occurs in the system, the engine should also be notified for pause. If you do not need the background to play back the audio in the room, please call `Pause` API to pause the GME service.
 
-#### Function prototype
+#### API prototype
 
 ```
 ITMGContext int Pause()
@@ -220,177 +183,162 @@ ITMGContext int Pause()
 
 When a `Resume` event occurs in the system, the engine should also be notified for resumption. The `Resume` API only supports resuming voice chat.
 
-#### Function prototype
+#### API prototype
 
 ```
 ITMGContext int Resume()
-
 ```
 
+[](id:UnInit)
+### Uninitializing the SDK
 
+This API is used to uninitialize the SDK to make it uninitialized. **If the game business account is bound to `openid`, switching game account requires uninitializing GME and then using the new `openid` to initialize again.**
 
-### [Uninitializing SDK](id:UnInit)
-
-This API is used to uninitialize the SDK to make it uninitialized. **Switching accounts requires uninitialization**.
-
-#### Function prototype
+#### API prototype
 
 ```
 ITMGContext int Uninit()
-
 ```
 
-## Speech-to-Text
-
-Voice message refers to recording and sending a voice message. At the same time, the voice message can be converted to text and translated, as shown below:
-
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/IMB_DsvaLv.gif" width="50%">
-
-
+## Voice Message and Speech-to-Text Services
 
 <dx-alert infotype="explain" title="">
- - It is recommended to use the streaming speech-to-text service.
+
+- The speech-to-text service consists of fast recording-to-text conversion and streaming speech-to-text conversion.
 - You do not need to enter a voice chat room when using the voice message service.
-</dx-alert>
+- The maximum recording duration of a voice message is 58 seconds by default, and the minimum recording duration cannot be less than one second. If you want to customize the recording duration, for example, to change the maximum recording duration to ten seconds, call the `SetMaxMessageLength` API to set it after initialization.
+  </dx-alert>
 
+### Flowchart for using the voice message service
 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/481e7e65e5c35510b64176716b095ac8.jpg" width="80%">
 
+### Flowchart for using the speech-to-text service
 
-#### Voice message and speech-to-text conversion flowchart
-
-<img src="https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png" width="60%">
-
-
-
-## Accessing Voice Message and Speech-to-Text Service
-
-### Voice message and speech-to-text APIs
+<img src="https://qcloudimg.tencent-cloud.cn/raw/746ef979b0f606588c010a6d4c7453f0.jpg" width="80%">
 
 | API | Description |
-| -------------------------------------- | :------------------: |
-| ApplyPTTAuthbuffer | Initializes authentication |
+| ------------------- | :------------------: |
+|GenAuthBuffer| Generates the local authentication key |
+| ApplyPTTAuthbuffer  | Initializes authentication |
 | SetMaxMessageLength | Specifies the maximum length of voice message |
-| StartRecording | Starts recording |
-| StartRecordingWithStreamingRecognition | Starts streaming recording |
-| PauseRecording | Pauses recording |
-| ResumeRecording | Resumes recording |
-| StopRecording | Stops recording |
-| CancelRecording | Cancels recording |
-| GetMicLevel | Gets the real-time mic volume |
-| SetMicVolume | Sets the recording volume |
-| GetMicVolume | Gets the recording volume |
-| GetSpeakerLevel | Gets the real-time speaker volume |
-| SetSpeakerVolume | Sets the playback volume |
-| GetSpeakerVolume | Gets the playback volume |
-| UploadRecordedFile | Uploads the audio file |
-| DownloadRecordedFile | Downloads the audio file |
-| PlayRecordedFile | Plays back audio |
-| StopPlayFile | Stops playing back audio |
-| GetFileSize | Gets the audio file size |
-| GetVoiceFileDuration | Gets the audio file duration |
-| SpeechToText | Converts speech to text |
 
 
 
-<dx-alert infotype="alarm" title="Maximum recording duration">
-The maximum recording duration of a voice message is 58 seconds by default, and the minimum recording duration cannot be less than 1 second. If you want to customize the recording duration, for example, to modify the maximum recording duration to 10 seconds, please call the `SetMaxMessageLength` API to set it after initialization.
-</dx-alert>
 
+### Generating the local authentication key
 
+Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 
-### Initializing the SDK
-
-Before the initialization, the SDK is in the uninitialized status, and you need to initialize it through the `Init` API before you can use the voice chat and voice message services.
-
-If you have any questions when using the service, please see [Speech-to-text Conversion](https://intl.cloud.tencent.com/zh/document/product/607/39716).
-
-### Generating authentication information
-
-Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/zh/document/product/607/12218).    
-
-#### Function prototype
+#### API prototype
 
 ```
 int  QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int dwSdkAppID, const char* strRoomID, const char* strOpenID,
 	const char* strKey, unsigned char* strAuthBuffer, unsigned int bufferLength);
-
 ```
 
 | Parameter | Type | Description |
 | ------------- | :---: | ------------------------------------------------------------ |
-| dwSdkAppID | int | `AppId` from the Tencent Cloud console.|
-| strRoomID     | char* | Room ID, which can contain up to 127 characters (for voice messaging and speech-to-text service, enter `null`). |
-| strOpenID     | char* | User ID, which is the same as `openID` during initialization. |
-| strKey        | char* | Permission key from the Tencent Cloud [console](https://console.cloud.tencent.com/gamegme). |
-| strAuthBuffer | char* | Returned `authbuff`                                              |
-| bufferLength  |  int  | Length of the `authbuff` passed in. 500 is recommended.                             |
-
-
+| dwSdkAppID    |  int  | `AppId` from the Tencent Cloud console                              |
+| strRoomID     | const char* | Enter `null` or an empty string |
+| strOpenID     | const char* | User ID, which is the same as `openID` during initialization.                        |
+| strKey        | const char* | Permission key from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme) |
+| strAuthBuffer | const char* | Returned `authbuff`                                              |
+| bufferLength  |  int  | The length of the returned `authbuff`. `500` is recommended.                             |
 
 ### Application authentication
 
 After the authentication information is generated, the authentication is assigned to the SDK.  
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int ApplyPTTAuthbuffer(const char* authBuffer, int authBufferLen)
-
 ```
 
-| Parameter | Type | Description |
-| ------------- | :---: | -------- |
-| authBuffer    | char* | Authentication     |
-| authBufferLen |  int  | Authentication length |
+| Parameter       |  Type  | Description                    |
+| ---------- | :----: | ---- |
+| authBuffer    | const char* | Authentication key     |
+| authBufferLen |  int  | Authentication key length |
 
 #### Sample code
 
 ```
 ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen);
+```
+### Specifying the maximum duration of a voice message
 
+This API is used to specify the maximum duration of a voice message, which can be up to 58 seconds.
+
+#### API prototype
+
+```
+ITMGPTT virtual int SetMaxMessageLength(int msTime)
+```
+
+| Parameter | Type | Description |
+| ------ | :--: | ----------------------------------------------- |
+| msTime | int  | Audio duration in ms. Value range: 1000 < msTime <= 58000 |
+
+#### Sample code  
+
+```
+int msTime = 10000;
+ITMGContextGetInstance()->GetPTT()->SetMaxMessageLength(msTime);
 ```
 
 ## Streaming Speech Recognition
 
-### [Starting streaming speech recognition](id:StartRWSR)
+
+
+### Voice message and speech-to-text APIs
+
+| API | Description |
+| -------------------------------------- | :----------: |
+| StartRecordingWithStreamingRecognition | Starts streaming recording |
+| StopRecording                          |   Stops recording   |
+
+
+[](id:StartRWSR)
+### Starting streaming speech recognition
 
 This API is used to start streaming speech recognition. Text obtained from speech-to-text conversion will be returned in real time in its callback. It can specify a language for recognition or translate the information recognized in speech into a specified language and return the translation. **To stop recording, call <dx-tag-link link="#Stop" tag="API: StopRecording"> Stop recording</dx-tag-link>**.
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* speechLanguage,const char* translateLanguage) 
-
+ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage) 
 ```
 
 | Parameter | Type | Description |
 | ----------------- | :---: | ------------------------------------------------------------ |
-| filePath          | char* | Path of stored audio file                                               |
-| speechLanguage    | char* | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/zh/document/product/607/30260) |
-| translateLanguage | char* | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/zh/document/product/607/30260) (This parameter is currently unavailable. Enter the same value as that of `speechLanguage`) |
+| filePath          | const char* | The path of the stored audio file                                               |
+| speechLanguage    | const char* | The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
+| translateLanguage | const char* | The language into which the audio file is to be translated. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath,"cmn-Hans-CN","cmn-Hans-CN");
-
 ```
+
+> ! Translation incurs additional fees. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009).
 
 ### Callback for streaming speech recognition
 
-After streaming speech recognition is started, you need to listen for callback messages in the callback function `onEvent`. Event messages are divided into:
+After streaming speech recognition is started, you need to listen on callback messages in the `OnEvent` notification. There are two event messages:
 
 - `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE` returns text after the recording is stopped and the recognition is completed, which is equivalent to returning the recognized text after a paragraph of speech.
 - `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING` returns the recognized text in real-time during the recording, which is equivalent to returning the recognized text while speaking.
 
-The event message will be identified in the `OnEvent function` based on the actual needs. The passed parameters include the following four messages.
+The event message will be identified in the `OnEvent` notification as needed and contains the following four parameters:
 
 | Message Name | Description |
-| --------- | :-----------------------------------------: |
-| result | A return code for judging whether the streaming speech recognition is successful. |
-| text | Text converted from speech |
-| file_path | Local path of stored recording file |
+| --------- | :---------------------------------------------: |
+| result | Return code used to determine whether the streaming speech recognition is successful |
+| text      |            Text converted from speech             |
+| file_path |               The local path of the stored recording file                |
 | file_id | Backend URL address of recording file, which will be retained for 90 days |
 
 
@@ -408,6 +356,10 @@ The file_id is empty when the 'ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRecognition_IS_
 | 32775 | Streaming speech-to-text conversion failed, but recording succeeded.| Call the `UploadRecordedFile` API to upload the recording file and then call the `SpeechToText` API to perform speech-to-text conversion. |
 | 32777 | Streaming speech-to-text conversion failed, but recording and upload succeeded.| The message returned contains a backend URL after successful upload. Call the `SpeechToText` API to perform speech-to-text conversion. |
 | 32786 | Streaming speech-to-text conversion failed. | During streaming recording, wait for the execution result of the streaming recording API to return. |
+| 32787     | Speech-to-text conversion succeeded, but the text translation service was not activated.         | Activate the text translation service in the console.                                 |
+| 32788     | Speech-to-text conversion succeeded, but the language parameter of the text translation service was invalid.         | Check the parameter passed in.                                 |
+
+If the error code 4098 is reported, see [Speech-to-text Conversion](https://intl.cloud.tencent.com/document/product/607/39716) for solutions.
 
 #### Sample code  
 
@@ -450,65 +402,77 @@ void CTMGSDK_For_AudioDlg::HandleSTREAM2TEXTComplete(const char* data, bool isCo
 						}
 					}
 }
-
 ```
 
 
 
 ## Voice Message Recording
 
+**The recording process is as follows: start recording -> stop recording -> return recording callback -> start the next recording.**
+
+
+
+### Voice message and speech-to-text APIs
+
+| API | Description |
+| --------------- | :------: |
+| StartRecording  | Starts recording |
+| PauseRecording  | Pauses recording |
+| ResumeRecording | Resumes recording |
+| StopRecording   | Stops recording |
+| CancelRecording | Cancels recording |
+
+
+
 ### Starting recording
 
-This API is used to start recording. **To stop recording, call `StopRecording`**.
+This API is used to start recording.
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int StartRecording(const char* fileDir)
-
 ```
 
 | Parameter | Type | Description |
-| ------- | :---: | -------------- |
-| fileDir | char* | Path of stored audio file |
+| ------- | :----: | -------------- |
+| fileDir | const char* | The path of the stored audio file |
 
 #### Sample code  
 
 ```
-string recordPath = Application.persistentDataPath + string.Format ("/{0}.silk", sUid++);
-int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecording(recordPath);
-
-
+char buffer[256]={0};
+snprintf(buffer, sizeof(buffer), "%sunreal_ptt_local.file", getFilePath().c_str());
+ITMGContextGetInstance()->GetPTT()->StartRecording(buffer);
 ```
 
-### [Stopping recording](id:Stop)
+[](id:Stop)
+### Stopping recording
 
 This API is used to stop recording. It is async, and a callback for recording completion will be returned after recording stops. A recording file will be available only after recording succeeds.
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int StopRecording()
-
 ```
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->StopRecording();
-
 ```
 
 ### Callback for recording start
 
-A callback will be executed through a delegate function to pass a message when recording is completed.
+The recording start result will be returned through the callback.
 
 **To stop recording, call `StopRecording`**. The callback for recording start will be returned after the recording is stopped.
 
 | Parameter | Type | Description |
 | -------- | :-----: | ------------------------- |
 | result   |  int32  | 0: recording is completed |
-| filepath | FString | Path of stored recording file            |
+| filepath | FString | The path of the stored recording file, which must be accessible and cannot be the `fileid`. |
 
 #### Error codes
 
@@ -543,344 +507,106 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 		}
 	}
 }
-
-
 ```
 
 ### Pausing recording
 
 This API is used to pause recording. If you want to resume recording, please call the `ResumeRecording` API.
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int PauseRecording()
-
 ```
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->PauseRecording();
-
 ```
 
 ### Resuming recording
 
 This API is used to resume recording.
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int ResumeRecording()
-
 ```
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->ResumeRecording();
-
 ```
+
+
 
 ### Canceling recording
 
 This API is used to cancel recording. **There is no callback after cancellation**.
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int CancelRecording()
-
 ```
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->CancelRecording();
-
-```
-
-### Getting the real-time mic volume of voice message
-
-This API is used to get the real-time mic volume. An int-type value will be returned. Value range: 0-200.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int GetMicLevel()
-
-```
-
-#### Sample code  
-
-```
-ITMGContext.GetInstance(this).GetPTT().GetMicLevel();
-
-
-
-```
-
-### Setting the recording volume of voice message
-
-This API is used to set the recording volume of voice message. Value range: 0-200.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int SetMicVolume(int vol)
-
-```
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->SetMicVolume(100);
-
-```
-
-### Getting the recording volume of voice message
-
-This API is used to get the recording volume of voice message. An int-type value will be returned. Value range: 0-200.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int GetMicVolume()
-
-```
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->GetMicVolume();
-
-```
-
-### Getting the real-time speaker volume of voice message
-
-This API is used to get the real-time speaker volume. An int-type value will be returned. Value range: 0-200.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int GetSpeakerLevel()
-
-```
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->GetSpeakerLevel();
-
-```
-
-## Voice Message Playback
-
-### Playing back audio
-
-This API is used to play back audio.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int PlayRecordedFile(const char* filePath)
-
-```
-
-| Parameter | Type | Description |
-| -------- | :---: | ------------------ |
-| filePath | char* | Local audio file path |
-
-#### Error codes
-
-| Error Code Value | Cause | Suggested Solution |
-| -------- | ---------- | ------------------------------ |
-| 20485 | Playback is not started. | Ensure the existence of the file and the validity of the file path. |
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->PlayRecordedFile(filePath);
-
-```
-
-### Callback for audio playback
-
-After the audio is played back, the event message `ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE` will be returned, which will be identified in the `OnEvent` function.
-The passed parameter includes `result` and `file_path`.
-
-#### Error codes
-
-| Error Code Value | Cause | Suggested Solution |
-| -------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| 20481 | Initialization error. | Check whether the device is being used, whether the permissions are normal, and whether the initialization is normal. |
-| 20482 | During playback, the client tried to interrupt and play back the next one but failed (which should succeed normally). | Check whether the code logic is correct. |
-| 20483 | Parameter is empty. | Check whether the API parameters in the code are correct. |
-| 20484 | Internal error. | An error occurred while initializing the player. This error code is generally caused by failure in decoding, and the error should be located with the aid of logs. |
-
-#### Sample code
-
-```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-	...
-		else if (eventType == ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE) {
-			int32 result = JsonObject->GetIntegerField(TEXT("result"));
-			FString filepath = JsonObject->GetStringField(TEXT("file_path"));
-			onPttPlayFileCompleted(result, filepath);
-		}
-	}
-}
-
-
 ```
 
 
 
-### Stopping audio playback
-
-This API is used to stop audio playback. There will be a callback for playback completion when the playback stops.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int StopPlayFile()
-
-```
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->StopPlayFile();
-
-```
-
-### Setting the playback volume of voice message
-
-This API is used to set the playback volume of voice message. Value range: 0-200.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int SetSpeakerVolume(int vol)
-
-```
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->SetSpeakerVolume(100);
-
-```
-
-### Getting the playback volume of voice message
-
-This API is used to get the playback volume of voice message. An int-type value will be returned. Value range: 0-200.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int GetSpeakerVolume()
-
-```
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->GetSpeakerVolume();
-
-```
-
-### Getting audio file size
-
-This API is used to get the size of an audio file.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int GetFileSize(const char* filePath)
-
-```
-
-| Parameter | Type | Description |
-| -------- | :---: | -------------------------------- |
-| filePath | char* | Path of audio file, which is a local path |
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->GetFileSize(filePath);
 
 
-```
+## Voice Message Upload, Download, and Playback
 
-### Getting audio file duration
-
-This API is used to get the duration of an audio file in milliseconds.
-
-#### Function prototype  
-
-```
-ITMGPTT virtual int GetVoiceFileDuration(const char* filePath)
-
-```
-
-| Parameter | Type | Description |
-| -------- | :---: | -------------------------------- |
-| filePath | char* | Path of audio file, which is a local path |
-
-#### Sample code  
-
-```
-ITMGContextGetInstance()->GetPTT()->GetVoiceFileDuration(filePath);
-
-```
-
-## Voice Message Upload and Download
+| API | Description |
+| -------------------- | :------------: |
+| UploadRecordedFile   |  Uploads an audio file  |
+| DownloadRecordedFile |  Downloads an audio file  |
+| PlayRecordedFile     |    Plays back an audio file    |
+| StopPlayFile         |  Stops playing back an audio file  |
+| GetFileSize          | Gets the audio file size |
+| GetVoiceFileDuration | Gets the audio file duration |
 
 ### Uploading an audio file
 
 This API is used to upload an audio file.
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int UploadRecordedFile(const char* filePath)
-
 ```
 
 | Parameter | Type | Description |
-| -------- | :---: | -------------------------------- |
-| filePath | char* | Path of uploaded audio file, which is a local path |
+| -------- | :----: | -------------------------------- |
+| filePath | const char* | The path of the uploaded audio file, which is a local path. |
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->UploadRecordedFile(filePath);
-
 ```
 
 ### Callback for audio file upload completion
 
-A callback will be executed through a delegate function to pass a message when the upload of audio file is completed.
-
-#### Function prototype
-
-```
-// Delegate function
-public delegate void QAVUploadFileCompleteCallback(int code, string filepath, string fileid);
-// Event-triggered function
-public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete; 
+After the audio file is uploaded, the event message `ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE` will be returned, which will be identified in the `OnEvent` function.
+The passed parameters include `result`, `file_path`, and `file_id`.
 
 
-```
+
 
 | Parameter | Type | Description |
-| -------- | :-----: | ----------------------- |
-| code   |  int32  | 0: recording is completed |
-| filepath | FString | Path of stored recording file |
-| fileid   | FString | File URL path |
+| -------- | :----: | ----------------------- |
+| result   |  int32  | 0: recording is completed                 |
+| filepath | FString | The path of the stored recording file |
+| fileid   | FString | File URL         |
 
 #### Error codes
 
@@ -908,31 +634,27 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 		}
 	}
 }
-
-
 ```
 
 ### Downloading the audio file
 
 This API is used to download an audio file.
 
-#### Function prototype  
+#### API prototype  
 
 ```
 ITMGPTT virtual int DownloadRecordedFile(const char* fileId, const char* filePath) 
-
 ```
 
 | Parameter | Type | Description |
-| -------- | :---: | ------------------ |
-| fileId   | char* | URL path of file    |
-| filePath | char* | Local path of saved file |
+| ---------------- | :----: | ------------------------------------------------------------ |
+| fileId   | const char* | File URL    |
+| filePath | const char* | The local path of the saved file |
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->DownloadRecordedFile(fileID,filePath);
-
 ```
 
 ### Callback for audio file download completion
@@ -943,8 +665,8 @@ The passed parameters include `result`, `file_path`, and `file_id`.
 | Parameter | Type | Description |
 | -------- | :-----: | --------------------------------------- |
 | result   |  int32  | 0: recording is completed                 |
-| filepath | FString | Path of stored recording file |
-| fileid   | FString | URL path of file, which will be retained on the server for 90 days |
+| filepath | FString | The path of the stored recording file                          |
+| fileid   | FString | The URL of the recording file, which will be retained on the server for 90 days. |
 
 #### Error codes
 
@@ -952,7 +674,7 @@ The passed parameters include `result`, `file_path`, and `file_id`.
 | -------- | --------------------------------- | ------------------------------------------------------------ |
 | 12289 | An error occurred while accessing the file during download. | Check whether the file path is valid. |
 | 12290 | Signature verification failed. | Check whether the authentication key is correct and whether the voice message and speech-to-text feature is initialized. |
-| 12291 | Network storage system exception | The server failed to get the audio file. Check whether the API parameter `fileid` is correct, whether the network is normal, and whether the file exists in COS. |
+| 12291    | Network storage system exception. | The server failed to get the audio file. Check whether the API parameter `fileid` is correct, whether the network is normal, and whether the file exists in COS. |
 | 12292 | Server file system error. | Check whether the device can access the internet and whether the file exists on the server. |
 | 12293 | The HTTP network failed during the process of getting the download parameters. | Check whether the device can access the internet. |
 | 12294 | The packet returned during the process of getting the download parameters is empty. | Check whether the device can access the internet. |
@@ -973,58 +695,184 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 		}
 	}
 }
-
-
 ```
 
-## Speech-to-Text Service
+### Playing back audio
 
-### Converting audio file to text
+This API is used to play back audio.
 
-This API is used to convert a specified audio file to text.
-
-#### Function prototype  
+#### API prototype  
 
 ```
-ITMGPTT virtual void SpeechToText(const char* fileID)
-
+ITMGPTT virtual int PlayRecordedFile(const char* filePath)
+ITMGPTT virtual int PlayRecordedFile(const char* filePath, nt voiceType)
 ```
 
 | Parameter | Type | Description |
-| ------ | :---: | ------------ |
-| fileID | char* | Audio file URL |
+| --------- | :----: | ------------------------------------------------------------ |
+| filePath | const char* | Local audio file path |
+| voicetype |  int   | Voice changing type, please see [Voice Changing Effects](https://intl.cloud.tencent.com/document/product/607/44995) |
+
+#### Error codes
+
+| Error Code Value | Cause | Suggested Solution |
+| -------- | ---------- | ------------------------------ |
+| 20485 | Playback is not started. | Ensure the existence of the file and the validity of the file path. |
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->PlayRecordedFile(filePath);
+```
+
+### Callback for audio playback
+
+After the audio is played back, the event message `ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE` will be returned, which will be identified in the `OnEvent` function.
+The passed parameter includes `result` and `file_path`.
+
+| Parameter | Type | Description |
+| -------- | :----: | ----------------------- |
+| code | int | 0: playback is completed |
+| filepath | FString | The path of the stored recording file |
+
+#### Error codes
+
+| Error Code Value | Cause | Suggested Solution |
+| -------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| 20481 | Initialization error. | Check whether the device is being used, whether the permissions are normal, and whether the initialization is normal. |
+| 20482 | During playback, the client tried to interrupt and play back the next one but failed (which should succeed normally). | Check whether the code logic is correct. |
+| 20483 | Parameter is empty. | Check whether the API parameters in the code are correct. |
+| 20484 | Internal error. | An error occurred while initializing the player. This error code is generally caused by failure in decoding, and the error should be located with the aid of logs. |
+
+#### Sample code
+
+```
+void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
+	switch (eventType) {
+	...
+		else if (eventType == ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE) {
+			int32 result = JsonObject->GetIntegerField(TEXT("result"));
+			FString filepath = JsonObject->GetStringField(TEXT("file_path"));
+			onPttPlayFileCompleted(result, filepath);
+		}
+	}
+}
+```
+
+
+
+### Stopping audio playback
+
+This API is used to stop audio playback. There will be a callback for playback completion when the playback stops.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int StopPlayFile()
+```
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->StopPlayFile();
+```
+
+
+### Getting the audio file size
+
+This API is used to get the size of an audio file.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int GetFileSize(const char* filePath)
+```
+
+| Parameter | Type | Description |
+| -------- | :----: | -------------------------------- |
+| filePath | const char* | The path of the audio file, which is a local path. |
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->GetFileSize(filePath);
+```
+
+### Getting the audio file duration
+
+This API is used to get the duration of an audio file in milliseconds.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int GetVoiceFileDuration(const char* filePath)
+```
+
+| Parameter | Type | Description |
+| -------- | :----: | -------------------------------- |
+| filePath | const char* | The path of the audio file, which is a local path. |
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->GetVoiceFileDuration(filePath);
+```
+
+
+
+
+
+## Fast Recording-to-Text Conversion
+
+| API | Description |
+| ------------ | :------------: |
+| SpeechToText | Converts speech to text |
+
+### Converting an audio file to text
+
+This API is used to convert a specified audio file to text.
+
+#### API prototype  
+
+```
+ITMGPTT virtual void SpeechToText(const char* fileID)
+```
+
+| Parameter | Type | Description |
+| ------ | :----: | ------------ |
+| fileID | const char* | Audio file URL |
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->SpeechToText(fileID);
-
 ```
 
 
 
-### Translating audio file into text in specified language
+### Translating an audio file into text in a specified language
 
 This API can specify a language for recognition or translate the information recognized in speech into a specified language and return the translation.
 
-#### Function prototype  
+>!Translation incurs additional fees. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009).
+
+#### API prototype  
 
 ```
+ITMGPTT virtual int SpeechToText(const char* fileID,const char* speechLanguage)
 ITMGPTT virtual int SpeechToText(const char* fileID,const char* speechLanguage,const char* translateLanguage)
-
 ```
 
 | Parameter | Type | Description |
 | ----------------- | :---: | ------------------------------------------------------------ |
-| fileID | char* | URL of audio file, which will be retained on the server for 90 days |
-| speechLanguage | char* | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/zh/document/product/607/30260). |
-| translatelanguage | char* | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/zh/document/product/607/30260). This parameter is currently unavailable. Enter the same value as that of speechLanguage. |
+| fileID            | const char* | The URL of the audio file, which will be retained on the server for 90 days.                           |
+| speechLanguage    | const char* | The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
+| translatelanguage | const char* | The language into which the audio file is to be translated. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetPTT()->SpeechToText(filePath,"cmn-Hans-CN","cmn-Hans-CN");
-
 ```
 
 
@@ -1037,20 +885,22 @@ The passed parameters include `result`, `file_path` and `text` (recognized text)
 | Parameter | Type | Description |
 | ------ | :-----: | ------------------------------------ |
 | result |  int32  | 0: recording is completed              |
-| fileid | FString | URL of recording file, which will be retained on the server for 90 days |
+| fileid | FString | The URL of the audio file, which will be retained on the server for 90 days. |
 | text   | FString | Converted text                       |
 
 #### Error codes
 
-| Error Code Value | Cause | Suggested Solution |
-| -------- | ---------------------- | ------------------------------------------------------------ |
+| Error Code | Cause | Suggested Solution |
+| -------- | ---------------------------------- | ------------------------------------------------------------ |
 | 32769 | An internal error occurred. | Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
-| 32770 | Network failed. | Check whether the device can access the internet. |
+| 32770  | Network failed. | Check whether the device can access the internet. |
 | 32772 | Failed to decode the returned packet. | Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
-| 32774 | No `appinfo` is set. | Check whether the authentication key is correct and whether the voice message and speech-to-text feature is initialized. |
+| 32774 | No `appinfo` was set. | Check whether the authentication key is correct and whether the voice message and speech-to-text feature is initialized. |
 | 32776 | `authbuffer` check failed. | Check whether `authbuffer` is correct. |
-| 32784 | Incorrect speech-to-text conversion parameter. | Check whether the API parameter `fileid` in the code is empty. |
-| 32785 | Speech-to-text translation returned an error. | Error with the backend of voice message and speech-to-text feature. Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
+| 32784  | Incorrect speech-to-text conversion parameter. | Check whether the API parameter `fileid` in the code is empty. |
+| 32785 | Speech-to-text translation returned an error. | Error with the backend of the voice message and speech-to-text feature. Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
+| 32787     | Speech-to-text conversion succeeded, but the text translation service was not activated.         | Activate the text translation service in the console.                                 |
+| 32788     | Speech-to-text conversion succeeded, but the language parameter of the text translation service was invalid.         | Check the parameter passed in.                                 |
 
 #### Sample code
 
@@ -1066,64 +916,142 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 		}
 	}
 }
-
-
 ```
 
+## Voice Message Volume Level APIs
 
+| API | Description |
+| ---------------- | :----------------: |
+| GetMicLevel      | Gets the real-time mic volume level |
+| SetMicVolume     |    Sets the recording volume level    |
+| GetMicVolume     |    Gets the recording volume level    |
+| GetSpeakerLevel  | Gets the real-time speaker volume level |
+| SetSpeakerVolume | Sets playback volume level |
+| GetSpeakerVolume | Gets playback volume level |
+
+### Getting the real-time mic volume of a voice message
+
+This API is used to get the real-time mic volume. An int-type value will be returned. Value range: 0-200.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int GetMicLevel()
+```
+
+#### Sample code  
+
+```
+ITMGContext.GetInstance(this).GetPTT().GetMicLevel();
+```
+
+### Setting the recording volume of a voice message
+
+This API is used to set the recording volume of voice message. Value range: 0-200.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int SetMicVolume(int vol)
+```
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->SetMicVolume(100);
+```
+
+### Getting the recording volume of a voice message
+
+This API is used to get the recording volume of voice message. An int-type value will be returned. Value range: 0-200.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int GetMicVolume()
+```
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->GetMicVolume();
+```
+
+### Getting the real-time speaker volume of a voice message
+
+This API is used to get the real-time speaker volume. An int-type value will be returned. Value range: 0-200.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int GetSpeakerLevel()
+```
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->GetSpeakerLevel();
+```
+
+### Setting the playback volume of a voice message
+
+This API is used to set the playback volume of voice message. Value range: 0-200.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int SetSpeakerVolume(int vol)
+```
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->SetSpeakerVolume(100);
+```
+
+### Getting the playback volume of a voice message
+
+This API is used to get the playback volume of voice message. An int-type value will be returned. Value range: 0-200.
+
+#### API prototype  
+
+```
+ITMGPTT virtual int GetSpeakerVolume()
+```
+
+#### Sample code  
+
+```
+ITMGContextGetInstance()->GetPTT()->GetSpeakerVolume();
+```
 
 ## Advanced APIs
 
-### Getting version number
+### Getting the version number
 
-This API is used to get the SDK version number for analysis.
+This API is used to get the SDK version number for SDK usage analysis.
 
-#### Function prototype
+#### API prototype
 
 ```
 ITMGContext virtual const char* GetSDKVersion()
-
 ```
 
 #### Sample code  
 
 ```
 ITMGContextGetInstance()->GetSDKVersion();
-
 ```
 
-### Specifying the maximum duration of voice message
 
-This API is used to specify the maximum duration of a voice message, which can be up to 58 seconds.
-
-#### Function prototype
-
-```
-ITMGPTT virtual int SetMaxMessageLength(int msTime)
-
-```
-
-| Parameter | Type | Description |
-| ------ | :--: | ----------------------------------------------- |
-| msTime | int | Audio duration in ms. Value range: 1000 < msTime <= 58000 |
-
-#### Sample code  
-
-```
-int msTime = 10000;
-ITMGContextGetInstance()->GetPTT()->SetMaxMessageLength(msTime);
-
-```
-
-### Setting log printing level
+### Setting the log printing level
 
 This API is used to set the level of logs to be printed, and needs to be called before the initialization. It is recommended to keep the default level.
 
-#### Function prototype
+#### API prototype
 
 ```
 ITMGContext int SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
-
 ```
 
 #### Parameter description
@@ -1133,7 +1061,7 @@ ITMGContext int SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint
 | levelWrite | ITMG_LOG_LEVEL | Sets the level of logs to be written. `TMG_LOG_LEVEL_NONE` indicates not to write. Default value: TMG_LOG_LEVEL_INFO |
 | levelPrint | ITMG_LOG_LEVEL | Sets the level of logs to be printed. `TMG_LOG_LEVEL_NONE` indicates not to print. Default value: TMG_LOG_LEVEL_ERROR |
 
-#### ITMG_LOG_LEVEL
+`ITMG_LOG_LEVEL` is as detailed below:
 
 | ITMG_LOG_LEVEL | Description |
 | --------------------- | -------------------- |
@@ -1146,16 +1074,14 @@ ITMGContext int SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().SetLogLevel(TMG_LOG_LEVEL_INFO,TMG_LOG_LEVEL_INFO);
-
-
+ITMGContextGetInstance()->SetLogLevel(TMG_LOG_LEVEL_INFO,TMG_LOG_LEVEL_INFO);
 ```
 
 
 
 ### Setting the log printing path
 
-This API is used to set the log printing path. The default path is as follows:
+This API is used to set the log printing path. The default path is as follows. It needs to be called before Init.
 
 | OS | Path |
 | ------- | ------------------------------------------------------------ |
@@ -1164,72 +1090,53 @@ This API is used to set the log printing path. The default path is as follows:
 | Android | /sdcard/Android/data/xxx.xxx.xxx/files |
 | Mac | /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents |
 
-#### Function prototype
+#### API prototype
 
 ```
 ITMGContext virtual int SetLogPath(const char* logDir) 
-
 ```
 
 | Parameter | Type | Description |
-| ------ | :---: | ---- |
-| logDir | char* | Path |
+| ------ | :----: | ---- |
+| logDir | const char* | Path |
 
 #### Sample code  
 
 ```
 cosnt char* logDir = ""// Set a path by yourself
-
 ITMGContext* context = ITMGContextGetInstance();
 context->SetLogPath(logDir);
-
-
 ```
 
 ## Callback Messages
 
-### Message list
 
-| Message | Description |   
-| ------------- |:-------------:|
-| ITMG_MAIN_EVENT_TYPE_ENTER_ROOM | Indicates that a member enters an audio room. |
-| ITMG_MAIN_EVENT_TYPE_EXIT_ROOM | Indicates that a member exits an audio room. |
-| ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT | Indicates that a room is disconnected for network or other reasons. |
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | Indicates a room type change event. |
-| ITMG_MAIN_EVENT_TYPE_MIC_NEW_DEVICE | Indicates that a new mic is added |
-| ITMG_MAIN_EVENT_TYPE_MIC_LOST_DEVICE | Indicates that a mic is lost |
-| ITMG_MAIN_EVENT_TYPE_SPEAKER_NEW_DEVICE | Indicates that a new speaker is added |
-| ITMG_MAIN_EVENT_TYPE_SPEAKER_LOST_DEVICE | Indicates that a speaker is lost |
-| ITMG_MAIN_EVENT_TYPE_ACCOMPANY_FINISH | Indicates that the accompaniment is over. |
-| ITMG_MAIN_EVNET_TYPE_USER_UPDATE | Indicates that the room members are updated. |
-| ITMG_MAIN_EVENT_TYPE_NUMBER_OF_USERS_UPDATE | Indicates that the room member quantity is updated. |
-| ITMG_MAIN_EVENT_TYPE_NUMBER_OF_AUDIOSTREAMS_UPDATE | Indicates that the room audio stream quantity is updated. |
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY | Indicates the room quality information. |
-| ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE | Indicates that PTT recording is completed. |
-| ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE | Indicates that PTT upload is completed. |
-| ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE | Indicates that PTT download is completed. |
-| ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE | Indicates that PTT playback is completed. |
-| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE | Indicates that speech-to-text conversion is completed. |
+| Message										| Description | Parameter | Sample |
+| ----------------------------------------	|-----| :-----------------------------------------------: | ------------------------------------------------------------ |
+| ITMG_MAIN_EVENT_TYPE_ENTER_ROOM						| A member entered the audio room			|result; error_info	| {"error_info":"","result":0}                                 |
+| ITMG_MAIN_EVENT_TYPE_EXIT_ROOM						| A member exited the audio room			|result; error_info	| {"error_info":"","result":0}                                 |
+| ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT					| The room was disconnected for network or other reasons |result; error_info	| {"error_info":"waiting timeout, please check your network","result":0} |
+| ITMG_MAIN_EVNET_TYPE_USER_UPDATE						| The room members were updated |user_list; event_id| {"event_id":1,"user_list":["0"]}                             |
+| ITMG_MAIN_EVENT_TYPE_RECONNECT_START					| Room reconnection started |result; error_info	| {"error_info":"","result":0} |
+| ITMG_MAIN_EVENT_TYPE_RECONNECT_SUCCESS				| Room reconnection succeeded |result; error_info	| {"error_info":"","result":0} |
+| ITMG_MAIN_EVENT_TYPE_SWITCH_ROOM						| The room was quickly switched |result; error_info	| {"error_info":"","result":0} |
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE					| The room status changed |result; error_info; sub_event_type; new_room_type | {"error_info":"","new_room_type":0,"result":0}               |
+| ITMG_MAIN_EVENT_TYPE_ROOM_SHARING_START				| Cross-room mic connect started |result;			| {"result":0} |
+| ITMG_MAIN_EVENT_TYPE_ROOM_SHARING_STOP				| Cross-room mic connect stopped |result;			| {"result":0} |
+| ITMG_MAIN_EVENT_TYPE_SPEAKER_DEFAULT_DEVICE_CHANGED	| The default speaker was changed |result; error_info	| {"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"speaker (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":false,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_SPEAKER_NEW_DEVICE				| A speaker was added |                result; error_info                 | {"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"speaker (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":false,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_SPEAKER_LOST_DEVICE				| A speaker was lost | result; error_info                 | {"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"speaker (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":false,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_MIC_NEW_DEVICE			| A mic was added |result; error_info                 | {"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"mic (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":true,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_MIC_LOST_DEVICE			| A mic was lost |result; error_info                 | {"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"mic (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":true,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_MIC_DEFAULT_DEVICE_CHANGED	| The default mic was changed |result; error_info                 | {"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"mic (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":true,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY		| Room quality message |weight; loss; delay                | {"weight":5,"loss":0.1,"delay":1}                            |
+| ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE		| Recording of a voice message was completed |          result; file_path                 | {"file_path":"","result":0}                                  |
+| ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE		| Upload of a voice message was completed |result; file_path;file_id             | {"file_id":"","file_path":"","result":0}                     |
+| ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE		| Download of a voice message was completed |result; file_path;file_id             | {"file_id":"","file_path":"","result":0}                     |
+| ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE		| Playback of a voice message was completed |result; file_path                 | {"file_path":"","result":0}                                  |
+| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE		| Fast recording-to-text conversion was completed |result; text;file_id                | {"file_id":"","text":"","result":0}                          |
+| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE| Streaming speech-to-text conversion was completed |result; file_path; text;file_id          | {"file_id":"","file_path":","text":"","result":0}            |
+| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING | A voice message is being converted into text in a streaming manner |result; file_path; text;file_id          | {"file_id":"","file_path":","text":"","result":0}            |
+| ITMG_MAIN_EVNET_TYPE_PTT_TEXT2SPEECH_COMPLETE		| Text-to-speech conversion was completed |result; text;file_id                | {"file_id":"","text":"","result":0}                          |
+| ITMG_MAIN_EVNET_TYPE_PTT_TRANSLATE_TEXT_COMPLETE	| Text translation was completed |result; text;file_id                | {"file_id":"","text":"","result":0}                          |
 
-### Data list
-
-| Message | Data | Sample |
-| ------------------------------------------------------ | :-----------------------------------------------: | ------------------------------------------------------------ |
-| ITMG_MAIN_EVENT_TYPE_ENTER_ROOM | result; error_info | {"error_info":"","result":0} |
-| ITMG_MAIN_EVENT_TYPE_EXIT_ROOM | result; error_info | {"error_info":"","result":0} |
-| ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT | result; error_info | {"error_info":"waiting timeout, please check your network","result":0} |
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | result; error_info; sub_event_type; new_room_type | {"error_info":"","new_room_type":0,"result":0} |
-| ITMG_MAIN_EVENT_TYPE_SPEAKER_NEW_DEVICE | result; error_info | {"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"Speaker (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":false,"result":0} |
-| ITMG_MAIN_EVENT_TYPE_SPEAKER_LOST_DEVICE | result; error_info | {"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"Speaker (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":false,"result":0} |
-| ITMG_MAIN_EVENT_TYPE_MIC_NEW_DEVICE | result; error_info | {"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"Mic (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":true,"result":0} |
-| ITMG_MAIN_EVENT_TYPE_MIC_LOST_DEVICE | result; error_info | {"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"Mic (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":true,"result":0} |
-| ITMG_MAIN_EVNET_TYPE_USER_UPDATE | user_list;  event_id | {"event_id":1,"user_list":["0"]} |
-| ITMG_MAIN_EVENT_TYPE_NUMBER_OF_USERS_UPDATE | AllUser; AccUser; ProxyUser | {"AllUser":3,"AccUser":2,"ProxyUser":1} |
-| ITMG_MAIN_EVENT_TYPE_NUMBER_OF_AUDIOSTREAMS_UPDATE | AudioStreams | {"AudioStreams":3} |
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY | weight; loss; delay | {"weight":5,"loss":0.1,"delay":1} |
-| ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE | result; file_path | {"file_path":"","result":0} |
-| ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE | result; file_path;file_id | {"file_id":"","file_path":"","result":0} |
-| ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE | result; file_path;file_id | {"file_id":"","file_path":"","result":0} |
-| ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE | result; file_path | {"file_path":"","result":0} |
-| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE | result; text;file_id | {"file_id":"","text":"","result":0} |
-| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE | result; file_path; text;file_id | {"file_id":"","file_path":","text":"","result":0} |
