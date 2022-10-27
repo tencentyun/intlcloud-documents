@@ -2,7 +2,7 @@
 
 TUIRoom은 UI가 있는 오픈 소스 오디오/비디오 컴포넌트입니다. TUIRoom을 통합하면 오디오/비디오 룸, 화면 공유, 채팅 및 기타 비즈니스 기능을 빠르게 런칭할 수 있습니다. Web TUIRoom의 기본 기능은 다음과 같습니다.
 
->?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 규정은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/d3778fc1655141b5a53e65c5ba4cfa08.png)
 
@@ -16,11 +16,11 @@ TUIRoom 컴포넌트는 Vue3 + TS + Pinia + Element Plus + SCSS를 사용하여 
 
 [](id:step1)
 
-### 1단계: Tencent Cloud 실시간 오디오/비디오 및 인스턴트 메시징 서비스 활성화
-TUIRoom은 Tencent Cloud의 실시간 오디오/비디오 및 인스턴트 메시징 서비스를 기반으로 개발되었습니다.
+### 1단계: Tencent Cloud TRTC 및 IM 서비스 활성화
+TUIRoom은 Tencent Cloud의 TRTC 및 IM 서비스를 기반으로 개발되었습니다.
 
 1. **Tencent Real-Time Communication(TRTC) 애플리케이션 생성**
-	- Tencent Cloud 계정이 없으시다면 [Tencent Cloud 계정 생성](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327)하시기 바랍니다.
+	- Tencent Cloud 계정이 없으시다면 [Tencent Cloud 계정을 등록](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327)하시기 바랍니다.
 	- [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에서 **애플리케이션 관리 > 애플리케이션 생성**을 클릭하여 새로운 애플리케이션을 생성합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 2. **TRTC 키 정보 가져오기**
@@ -32,8 +32,8 @@ TUIRoom은 Tencent Cloud의 실시간 오디오/비디오 및 인스턴트 메�
 
 3. **UserSig 발급**
     UserSig란 Tencent Cloud가 설계한 일종의 보안 서명으로, 악성 해커가 귀하의 클라우드 서비스 사용권을 도용하는 것을 방지합니다. TUIRoom을 초기화하려면 UserSig 매개변수를 제공해야 합니다.
-	- 디버깅 및 실행 중에 UserSig 계산 방법 방법은 [디버깅 및 실행 단계에서 UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.
-	- 프로덕션 환경에서 userSig를 발급하는 방법은 [정식 실행 단계에서 UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.
+	- 디버깅 및 실행 중에 UserSig 계산 방법 방법은 [디버깅 및 실행 단계에서 UserSig를 계산하는 방법은 무엇입니까?](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오.
+	- 프로덕션 환경에서 userSig를 발급하는 방법은 [정식 실행 단계에서 UserSig는 어떻게 계산하나요?](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오.
 
 
 [](id:step2)
@@ -45,7 +45,7 @@ TUIRoom은 Tencent Cloud의 실시간 오디오/비디오 및 인스턴트 메�
 ```bash
 npm create vite@latest TUIRoom-demo -- --template vue
 ```
->! 스크립트를 실행하여 템플릿 프로젝트를 생성할 때 엔터 키를 누르고 Vue를 선택한 다음 vue-ts를 선택합니다.
+<dx-alert infotype="notice">생성 과정에서 먼저 엔터 키를 누르고 Vue를 선택한 다음 vue-ts를 선택합니다.</dx-alert>
 
 Vue3 + Vite + TS 템플릿 프로젝트 생성 완료 후 다음 스크립트를 실행합니다.
 ```
@@ -61,7 +61,8 @@ npm install -g @vue/cli
 // Vue3 + Webpack + TS 템플릿 프로젝트 생성
 vue create TUIRoom-demo
 ```
-<dx-alert infotype="notice">템플릿 프로젝트 스크립트를 생성하는 과정에서 템플릿 생성 방법으로 Manually select features를 선택하고, 기타 구성 옵션은 이미지를 참고하십시오.</dx-alert>
+<dx-alert infotype="notice">템플릿 생성 모드로 Manually select features를 선택합니다. 기타 설정은 아래 이미지를 참고하십시오.</dx-alert>
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/800412fb72b8e092f41fd06d5272601b.png)
 
 Vue3 + Webpack + TS 템플릿 프로젝트 생성 완료 후 다음 스크립트를 실행합니다.
@@ -156,7 +157,7 @@ html, body {
 </style>
 ```
 
-<dx-alert infotype="notice"> 페이지에 위의 코드를 복사하여 TUIRoom API의 매개변수를 실제 값으로 바꿉니다.</dx-alert>
+>! 페이지에 위의 코드를 복사하여 TUIRoom API의 매개변수를 실제 값으로 바꿉니다.
 
 [](id:step4)
 ### 4단계: 개발 환경 구성
@@ -165,8 +166,8 @@ TUIRoom 컴포넌트를 가져온 후 프로젝트가 정상적으로 실행되�
 <dx-tabs>
 ::: Vue3 + Vite + TS 프로젝트 개발 환경 구성
 
-1. **설치 종속성**
-	- 개발 환경 종속성을 설치합니다.
+1. **종속성 설치**
+  - 개발 환경 종속성을 설치합니다.
 ```bash
 npm install sass typescript unplugin-auto-import unplugin-vue-components -S -D
 ```
@@ -187,7 +188,9 @@ app.mount('#app');
 ```
 3. **element-plus 컴포넌트의 주문형 가져오기 구성**
   - TUIRoom은 element-plus UI 컴포넌트를 사용합니다. 모든 element-plus 컴포넌트를 가져오지 않으려면 요청 시 로딩하도록 `vite.config.ts`에서 구성해야 합니다.
-<dx-alert infotype="notice">다음 구성 항목이 새로 추가되었습니다. 기존 Vite 구성 항목을 삭제하지 마십시오.</dx-alert>
+	
+
+<dx-alert infotype="notice">파일에 코드를 추가합니다. 기존 Vite 구성을 삭제하지 마십시오.</dx-alert>
 
 ```javascript
 // vite.config.ts
@@ -227,7 +230,7 @@ import 'element-plus/theme-chalk/el-message-box.css';
 ```
 :::
 ::: Vue3 + Webpack + TS 프로젝트 개발 환경 구성
-1. **설치 종속성**
+1. **종속성 설치**
   - 개발 환경 종속성을 설치합니다.
 ```bash
 npm install sass sass-loader typescript unplugin-auto-import unplugin-vue-components unplugin-element-plus @types/events -S -D
@@ -249,7 +252,7 @@ app.mount('#app');
 ```
 3. **element-plus 컴포넌트의 주문형 가져오기 구성**
   - TUIRoom은 element-plus UI 컴포넌트를 사용합니다. 모든 element-plus 컴포넌트를 가져오지 않으려면 요청 시 로딩하도록 `vue.config.js`에서 구성해야 합니다.
->! 다음 설정 항목은 증분 설정이므로 기존 vue.config.js 설정 항목을 삭제하지 마십시오.
+<dx-alert infotype="notice">파일에 코드를 추가합니다. 기존 vue.config.js 구성을 삭제하지 마십시오.</dx-alert>
 
 ```javascript
 // vue.config.js
@@ -320,7 +323,7 @@ declare const Aegis: any;
 npm run dev
 ```
 2. 브라우저에서 `http://localhost:3000/`에 접속합니다.
->! TUIRoom은 element-plus 컴포넌트를 온디맨드로 불러오기 때문에 개발 환경 라우팅 페이지가 처음 로드될 때 반응이 느려지고 element-plus 컴포넌트가 온디맨드로 로드된 후 정상적으로 사용할 수 있습니다. 이 로딩은 패키징 후 페이지 로딩에 영향을 미치지 않습니다.
+>! TUIRoom은 element-plus 컴포넌트를 온디맨드로 불러오기 때문에 개발 환경 라우팅 페이지가 처음 로드될 때 반응이 느려지고 element-plus 컴포넌트가 온디맨드로 로딩된 후 정상적으로 사용할 수 있습니다. 이 로딩은 패키징 후 페이지 로딩에 영향을 미치지 않습니다.
 
 3. TUIRoom 컴포넌트의 기능을 사용해 보십시오.
 
@@ -334,6 +337,22 @@ npm run serve
 > ! 실행 중 src/TUIRoom 디렉터리에 eslint 오류가 있는 경우 .eslintignore 파일에 /src/TUIRoom 경로를 추가하여 eslint 검사를 차단할 수 있습니다.
 
 3. TUIRoom 컴포넌트의 기능을 사용해 보십시오.
+
+### 6단계: 프로덕션 환경 배포
+
+1. dist 파일을 패키징합니다.
+
+```bash
+npm run build
+```
+
+>? 실제 패키징 명령어는 package.json 파일을 확인하십시오.
+
+2. dist 파일을 서버에 배포합니다.
+
+>! 프로덕션 환경에서는 HTTPS 도메인 이름을 사용해야 합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/53efdc1d1692a21946cb6c94ddea40e5.png)
+
 
 ## 부록: TUIRoom API
 ### TUIRoom 인터페이스
