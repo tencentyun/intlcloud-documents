@@ -20,7 +20,7 @@ GME provides the real-time voice, voice message, and speech-to-text services, wh
 
 Key processes involved in SDK connection are as follows:
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5e05e6ffe1749725a6ba077926286f16.png"  width="70%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c8758a24fe68fc084b8d12b09de5e27a.jpg"  width="70%" /></img>
 
 <dx-steps>
 -<dx-tag-link link="#Init" tag="API: Init">Initializing GME</dx-tag-link>
@@ -167,11 +167,11 @@ ITMGContext public abstract int Uninit()
 
 ### Flowchart for using the voice message service
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/481e7e65e5c35510b64176716b095ac8.jpg" width="80%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/24c16c71cb2fcc6cf170a6b481067564.jpg" width="80%">
 
 ### Flowchart for using the speech-to-text service
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/746ef979b0f606588c010a6d4c7453f0.jpg" width="80%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/8269f413756379d574a2969ac8da0158.jpg" width="80%">
 
 | API | Description |
 | ------------------- | :------------------: |
