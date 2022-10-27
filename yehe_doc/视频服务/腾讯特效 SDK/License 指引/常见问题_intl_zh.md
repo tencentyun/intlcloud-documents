@@ -19,7 +19,7 @@ SDK 是为了更好的使用整个服务所特定的软件包、软件框架、�
 ### License 的有效期是多长？过期后如何更新 License？
 
 - **测试版 License**：的有效期是审批通过后，从签发 License 之日开始往后计算一个月（28天）的时长。比如您在2022年01月01日申请了测试版 License，2022年01月02日申请通过审批并自动签发了 License，测试版 License 将在2022年01月31日的00:00:00过期。
-- **正式版 License**的有效期是从绑定 License 之日开始往后计算一年（365天）的时长。比如您在2022年01月01日绑定了正式版 License，正式版 License 将在2023年01月02日的00:00:00过期。
+- **正式版 License**：的有效期是从绑定 License 之日开始往后计算一年（365天）的时长。比如您在2022年01月01日绑定了正式版 License，正式版 License 将在2023年01月02日的00:00:00过期。
 - 正式版 License 过期后需要重新购买新的 License 进行续期，正式版 License 续期指引，请参见 [续期正式 License](https://www.tencentcloud.com/document/product/1143/50266#.E6.9B.B4.E6.96.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license-.E6.9C.89.E6.95.88.E6.9C.9F)。
 
 [](id:q4)
