@@ -1,13 +1,13 @@
-<style> .markdown-text-box table td, .markdown-text-box table th { padding: 8px 8px; text-align:center}
+﻿<style> .markdown-text-box table td, .markdown-text-box table th { padding: 8px 8px; text-align:center}
 </style>
 
-The Tencent Effect SDK comes in 11 editions, which fall into two categories: **basic A editions** and **advanced S editions**. They differ in features, and you can choose the edition that best fits your needs. For edition details, see [Feature Description](https://cloud.tencent.com/document/product/616/67043).
+The Tencent Effect SDK comes in 14 editions, which fall into three categories: **basic editions (A series)**, **advanced editions (S series)**, and **avatar editions (V series)**. They differ in features. You can choose one that best fits your needs. For the features of different editions, see [Feature Description](https://intl.cloud.tencent.com/document/product/1143/45376).
 
-- [Basic A editions](#setA) offer common beautification features for customers with basic requirements for facial beautification.
-- [Advanced S editions](#setS) offer enhanced beautification features (including stickers and makeup styles) for customers with high requirements for facial beautification.
+- [Basic A series packages](#setA) offer basic beautification features and are suitable for customers that do not have high requirements for facial beautification.
+- [Advanced S series packages](#setS) offer advanced beautification features (including stickers and makeup effects) and are suitable for customers with high requirements for facial beautification.
+- [Avatar V series packages](#setV) offer virtual avatars, avatar customization, and facial expression mirroring. They are designed for applications such as avatar-based socializing and live streaming.
 
-You can purchase an edition license on the [Tencent Effect SDK purchase page](https://buy.cloud.tencent.com/vcube?type=magic).
-
+You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different licenses (packages) to use different editions of the Tencent Effect SDK.
 
 
 ## Pricing[](id:price)
@@ -30,7 +30,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 </thead>
 <tbody style="text-align:center;">
 <tr>
-<td rowspan=4 width=8%>Basic</td>
+<td rowspan=4 width=11%>Basic</td>
 <td><b>Basic beauty filters</b><br>Brighten, smooth skin, and rosy skin</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -58,7 +58,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Filters</b><br>(Ten general filters by default)</td>
+<td><b>Filters</b><br>10 general filters by default</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -68,7 +68,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 </tr>
 <tr>
 <td rowspan=5>Extended</td>
-<td><b>Stickers</b><br>(10 2D general stickers for free)</td>
+<td><b>Stickers</b><br>(10 free 2D general stickers of your choosing)</td>
 <td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -77,7 +77,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>General beautification</b><br>(Face width/Chin/Hairline/Slim nose)</td>
+<td><b>General beautification SDKs</b><br>(Face width/Chin/Hairline/Nose size)</td>
 <td>-</td>
 <td>-</td>
 <td>&#10003;</td>
@@ -130,7 +130,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <table>
 <thead>
 <tr>
-<th rowspan=2 colspan=2 width=50%>Package Feature</th>
+<th rowspan=2 colspan=2 width=50%>Feature</th>
 <th colspan=6>Edition</th>
 <tr>
 <th>S1 - 00</th>
@@ -160,7 +160,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Advanced shaping</b><br>Big eyes, face width, slim face (natural, woman, and man), V shape, chin, face length, face shape, hairline, bright eyes, eye distance, eye corners, slim nose, nose wings, cheekbones, nose position, white teeth, wrinkles, smile lines, eye bags, lip shape, lip height, lipstick, blush, and contour</td>
+<td><b>Advanced beautification</b><br>Big eyes, face width, slim face (natural, woman, and man), V shape, chin, face length, face shape, hairline, bright eyes, eye distance, eye corners, slim nose, nose wings, cheekbones, nose position, white teeth, wrinkles, smile lines, eye bags, lip shape, lip height, lipstick, blush, and contour</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -168,7 +168,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Filters</b><br>(Ten general filters by default)</td>
+<td><b>Filters</b><br>10 general filters by default</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -176,7 +176,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Stickers</b><br>(Ten specified 2D general stickers for free)</td>
+<td><b>Stickers</b><br>(10 2D general stickers for free)</td>
 <td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -184,7 +184,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Advanced stickers</b><br>(Three specified 3D general stickers for free)</td>
+<td><b>Advanced stickers</b><br>(three 3D general stickers for free)</td>
 <td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -218,7 +218,7 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 </tr>
 <tr>
 <td colspan=2>Price</td>
-<td>47,000USD/year</td>
+<td>47,000 USD/year</td>
 <td>78,000 USD/year</td>
 <td>87,000 USD/year</td>
 <td>110,000 USD/year</td>
@@ -226,37 +226,73 @@ You can purchase an edition license on the [Tencent Effect SDK purchase page](ht
 </tr>
 </tbody></table>
 
+### Avatar V series packages[](id:setV)
+<table>
+<thead>
+<tr>
+<th rowspan=2 colspan=2 width=53%>Feature</th>
+<th colspan=3>Edition</th>
+</tr>
+<tr>
+<th>V1 - 00</th>
+<th>V1 - 01</th>
+<th>V1 - 02</th>
+</tr>
+</thead>
+<tbody style="text-align:center;">
+<tr>
+<td rowspan=3 width=11%>Basic</td>
+<td><b>Virtual avatars</b><br>Proprietary lightweight 3D rendering engine</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr>
+<td><b>Avatar customization</b><br>More than 50 types of detail adjustment, including eyes, nose, lips, face shape, and hair</td>
+<td>&#10003;</td>
+<td>-</td>
+<td>&#10003;</td>
+</tr>
+<tr>
+<td><b>Facial keypoint recognition and expression mirroring</b><br>Recognizes 256 facial keypoints and mimics facial expressions from 52 dimensions</td>
+<td>-</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr>
+<td colspan=2>Price</td>
+<td>41,999 USD/year</td>
+<td>105,000 USD/year</td>
+<td>129,999 USD/year</td>
+</tr>
+</tbody></table>
 
-
-
-### Material
-| Material Type | Feature Description | Price (Valid for One Year) | Quantity |
+[](id:material)
+### Materials
+| Type | Description | Price (Valid for One Year) | Quantity|
 | -------- | ---------------------------------- | ------------------ | ---------------- |
-| Filters | High-quality high-performance filters with real-time image coloring | 16,000 USD | 10 (minimum order quantity) |
-| 2D stickers | 2D stickers, widgets, and other effects after facial features are positioned | 16,000 USD | 10 (minimum order quantity) |
-| 3D stickers | 3D stickers, music, and other animated effects after facial features are positioned | 32,000 USD | 10 (minimum order quantity) |
-| Makeup stickers | Trendy makeup effects that can be quickly added for natural beautification         | 16,000 USD  | 10 (minimum order quantity) |
-| Gesture stickers | Animated effects triggered by gesture recognition for interaction         | 32,000 USD  | 10             |
-| Keying stickers | Stickers for precise and real-time keying with background added | 32,000 USD  | 10             |
+| Filters | High-quality, high-performance filters with real-time image coloring | 16,000 USD | 10 (minimum order quantity) |
+| 2D stickers | 2D stickers, widgets, and other effects based on facial feature detection | 16,000 USD | 10 (minimum order quantity) |
+| 3D stickers | 3D stickers, music, and other animated effects based on facial feature detection | 32,000 USD | 10 (minimum order quantity) |
+| Makeup stickers | Trendy and natural makeup effects         | 16,000 USD  | 10 (minimum order quantity) |
+| Gesture stickers | Animated effects based on gesture recognition         | 32,000 USD  | 10             |
+| Keying stickers | Precise and real-time keying and virtual backgrounds | 32,000 USD  | 10             |
 
-
+[](id:illustrate)
 ## Billing Details
-
-- One license can be bound to one `Bundle ID` and one `Package Name`. The package name bound to a production license cannot be modified. If you need to connect multiple package names, you need to purchase and bind the corresponding number of licenses.
+- Each license can be bound to only one bundle ID and one package name. You cannot change the bundle ID or package name bound to an official license. If you want to use the SDK in more than one application, you need to purchase multiple Tencent Effect packages.
 - A license is valid for one year. After it expires, you need to purchase a new license; otherwise, the corresponding features will become unavailable.
-- **Shadow package description**: You can have two shadow packages if you purchase a package at the price of 65,000 USD or higher. To use a shadow package, contact sales to reach the product team for manual package issuance. During issuance and authorization, provide the names of both the shadow package and production package. If your business needs more shadow packages, one additional shadow package name will cost 5,000 USD.
-- **Materials are valid for one year**. After you renew a license, you can continue to use the complimentary materials.
-- **The purchased materials can only be used under the license used to purchase them.** Any form of material exchange is prohibited, including but not limited to gifting, resale, and renting. Tencent Cloud reserves the right to take legal action against violators.
+- **Shadow packages**: You can use two shadow packages for free if you purchase a Tencent Effect package that’s priced 65,000 USD or higher. Please contact sales for the shadow packages. You need to provide the bundle ID/package name for both your official application and shadow applications. If you want to have more than two shadow applications, please purchase additional shadow packages (5,000 USD each).
+- **Purchased materials are valid for one year**. To continue using the materials after they expire, you need to purchase them again.
+- **Materials can only be used with the license specified at the time of purchase.** We prohibit all forms of material exchange, including but not limited to gifting, resale, and renting. Tencent Cloud reserves the right to **take legal action against violators**.
 
 
-
+[](id:example)
 ## Billing Example
+Suppose you purchased the basic A series package A1 - 02 and, after passing the review, were issued a license (license A) on January 1, 2022  You later purchased the advanced S series package S1 - 01 and were issued a license (license B) on June 1, 2022 . On the same day, you unbound license A and bound license B to your application.
+- License A is valid until 00:00:00 on January 2, 2023. With it, you can use the features of package A1 - 02, including basic beauty filters, image settings, basic beautification, filters, and stickers.
+- License B is valid until 00:00:00 on June 2, 2023. With it, you can use features of package S1 - 01, including basic beauty filters, image settings, advanced beautification, filters, stickers, advanced stickers, and makeup effects.
 
-You purchased the basic A series package A1 - 02 and obtained the approved license A on January 1, 2022. You will purchase the advanced S series package S1 - 01 and obtain the approved license B on June 1, 2022. Your package name will be unbound from license A and bound to license B on June 1, 2022. Then:
+That means from January 1, 2022 to June 1, 2022, **before you unbound license A**, your application can use the features of package A1 - 02 (basic beauty filters, image settings, basic beautification, filters, and stickers). From June 1, 2022 to 00:00:00 on June 2, 2023, **after you bound license B**, your application can use the features of package S1 - 01 (basic beauty filters, image settings, advanced beautification, filters, stickers, advanced stickers, and makeup effects).
 
-- License A will be valid until 00:00:00 on January 2, 2023 and include basic beauty filters, image adjustment, basic shaping, filters, and stickers of the basic A series package.
-- License B will be valid until 00:00:00 on June 2, 2023 and include basic beauty filters, image adjustment, advanced shaping, filters, stickers, advanced stickers, and makeups of the advanced S series package.
-
-The app under your package name can use the features (basic beauty filters, image adjustment, basic shaping, filters, and stickers) in the basic A series package A1 - 02 from January 1, 2022 to June 1, 2022 **before it is unbound from the original license**. It will be able to use basic beauty filters, image adjustment, advanced shaping, filters, stickers, advanced stickers, and makeups in the advanced S series package S1 - 01 after **it is bound to the new license** on June 1, 2022 till 00:00:00 on June 2, 2023.
-
-The unbound license of the basic A series package A1 - 02 can be bound to another app that is not bound to any license and will be valid until 00:00:00 on January 2, 2023.
+After unbinding license A, you can bind it to another application, which can use the features of package A1 - 02 until 00:00:00 on January 2, 2023.
