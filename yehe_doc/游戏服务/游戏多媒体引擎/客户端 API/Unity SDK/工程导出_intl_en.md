@@ -20,7 +20,7 @@ Make sure that the Xcode version is 10.0 or later.
 
 #### 2. Disable Bitcode
 
-If the following error occurs during the compilation, please disable Bitcode. Search for Bitcode under **Targets** > **Build Settings** and set the corresponding option to `NO`.
+If the following error occurs during the compilation, disable Bitcode. Search for Bitcode in **Targets** > **Build Settings** and set the corresponding option to `NO`.
 <img src="https://main.qcloudimg.com/raw/bcc77d7574e2d1861ca408cdd77dff00.png"  width="60%" /></img>
 
 #### 3. Add access to iOS
@@ -51,11 +51,11 @@ OpenAL.framework
 
 If the following error occurs:
 <img src="https://main.qcloudimg.com/raw/b8e40f601d9e8c1a62cf88bd10bdd241.png"  width="60%" /></img>
-Please add `libresolv9.tbd` to the **UnityFramework**.
+Add `libresolv9.tbd` to **UnityFramework**.
 <img src="https://main.qcloudimg.com/raw/ee0a20a0b0ad99f30fa87855d1b17f0f.jpg"  width="60%" /></img>
 
 #### 6. FAQs about exporting
-If you have any questions during exporting, please see [Exporting for iOS](https://intl.cloud.tencent.com/zh/document/product/607/39522).
+If you have any questions during exporting, please see [Exporting for iOS](https://intl.cloud.tencent.com/document/product/607/39522).
 
 
 
@@ -70,29 +70,53 @@ A crash will occur if the exported Android executable file lacks the specified a
 After the executable `apk` file is exported, if a black screen or crash occurs when you open it, it is generally caused by the lack of corresponding architecture `lib` file. Please add or delete the corresponding architecture `lib` file according to the project.
 
 #### 2. Configure permissions
-To export an Android executable, you need to configure relevant permissions in `AndroidManifest.xml` to avoid audio or permission errors.
+**2.1 Required permissions**
+You must add the following permissions in the `AndroidManifest.xml` file of the project:
+
 ```
-  <uses-permission android:name="android.permission.RECORD_AUDIO" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-  <uses-permission android:name="android.permission.BLUETOOTH"/>
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 ```
-In the above permissions, read and write permissions are not mandatory.
-```
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-```
+
+**2.2 Adding permissions as needed**
+Add the following permissions in the `AndroidManifest.xml` file of the project as needed:
+<dx-tabs>
+::: Read/Write permission
+The read/write permission is not required. Determine whether to add it according to the following rules:
+
 - If you use the default log path (/SDCARD/Android/Data/files), it means that you do not call SetLogPath, and do not need Write_External_Storage permission.
 - If you call the setLogPath API to set the log path to an external storage device, and the storage path of the voice message recording is an external storage device, you need to apply for the Write_External_Storage permission to the user and get the user's approval.
 
+```
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
+:::
+::: Bluetooth permission
+Add the Bluetooth permission according to the following rules:
+
+- If `targetSDKVersion` in the project is v30 or earlier:
+```
+<uses-permission android:name="android.permission.BLUETOOTH"/>
+```
+
+- If `targetSDKVersion` in the project is v31 or later:
+```
+<uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+```
+:::
+</dx-tabs>
+
+
 #### 3. FAQs about exporting
-If you have any questions during exporting, please see [Exporting for Android](https://intl.cloud.tencent.com/zh/document/product/607/39522).
+If you have any questions during exporting, please see [Exporting for Android](https://intl.cloud.tencent.com/document/product/607/39522).
 
 
 ### Export for Windows
 
 
-If you have any questions during exporting, please see [Exporting for Windows](https://intl.cloud.tencent.com/zh/document/product/607/39522).
+If you have any questions during exporting, please see [Exporting for Windows](https://intl.cloud.tencent.com/document/product/607/39522).
 
