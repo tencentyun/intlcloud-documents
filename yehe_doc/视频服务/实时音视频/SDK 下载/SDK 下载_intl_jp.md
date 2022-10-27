@@ -524,10 +524,10 @@
                <p class="titlename">Flutter SDKのダウンロード</p>
             </div>
             <div class="card-content">
-               <a class="with-box" href="https://pub.dev/packages/live_flutter_plugin/versions&quot;">ZIPのダウンロード</a>
+               <a class="with-box" href="https://pub.dev/packages/live_flutter_plugin/versions">ZIPのダウンロード</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Flutter">GitHub</a>
                <a target="_blank" style="margin-left:10px"
-                  href="https://cloud.tencent.com/document/product/454/71666">統合ガイド</a>
+                  href="https://www.tencentcloud.com/document/product/1071/38156">統合ガイド</a>
                <a target="_blank" style="margin-left:10px"
                   href="https://github.com/LiteAVSDK/Live_Flutter/tree/main/Live-API-Example">実行
                   Demo</a>
