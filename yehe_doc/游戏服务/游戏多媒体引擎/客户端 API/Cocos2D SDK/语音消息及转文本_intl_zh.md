@@ -20,7 +20,7 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 
 接入 SDK 重要流程如下：
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5e05e6ffe1749725a6ba077926286f16.png"  width="70%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c8758a24fe68fc084b8d12b09de5e27a.jpg"  width="70%" /></img>
 
 <dx-steps>
 -<dx-tag-link link="#Init" tag="接口：Init">初始化 GME</dx-tag-link>
@@ -218,11 +218,11 @@ ITMGContext int Uninit()
 
 ### 语音消息服务使用流程
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/481e7e65e5c35510b64176716b095ac8.jpg" width="80%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/24c16c71cb2fcc6cf170a6b481067564.jpg" width="80%">
 
 ### 转文本服务使用流程
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/746ef979b0f606588c010a6d4c7453f0.jpg" width="80%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/8269f413756379d574a2969ac8da0158.jpg" width="80%">
 
 | 接口                |       接口含义       |
 | ------------------- | :------------------: |
