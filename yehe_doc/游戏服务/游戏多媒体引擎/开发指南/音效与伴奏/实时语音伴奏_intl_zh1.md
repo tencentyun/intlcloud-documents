@@ -20,7 +20,7 @@
 
 ### 流程图
 
-![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2c8dd90bea968d4394f1dbfc01d142ee.jpg)
 
 
 ### 如何配合 EnableAudioCaputreDevice 使用

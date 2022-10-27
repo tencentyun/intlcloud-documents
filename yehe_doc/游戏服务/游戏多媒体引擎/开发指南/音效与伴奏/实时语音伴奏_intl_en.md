@@ -20,7 +20,7 @@ This document describes the GME APIs for accompaniment in voice chat so that dev
 
 ### Flowchart
 
-![](https://main.qcloudimg.com/raw/53598680491501ab5a144e87ba932ccc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2c8dd90bea968d4394f1dbfc01d142ee.jpg)
 
 
 ### How to use with EnableAudioCaputreDevice
