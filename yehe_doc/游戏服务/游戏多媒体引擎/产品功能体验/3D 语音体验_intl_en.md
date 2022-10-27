@@ -21,7 +21,7 @@ Double-click to open the executable file **GMEDemo.exe**. Two demos can be opene
 
 ### 3. Initialize the demo
 
-<img src="https://main.qcloudimg.com/raw/33540519cd5c2bdde6139f8a4af537a6.png"  width="50%"><br>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e94ad80ce1466aff981b23abef5fe2c2.png"  width="50%"><br>
 To initialize the demo, your need to enter the `AppID` and the permission key, which can be found in **Service Management** in the [GME console](https://console.cloud.tencent.com/gamegme/detail/1400391524).
 
 - appId: Enter the `Appid` from the console.
@@ -35,7 +35,7 @@ To initialize the demo, your need to enter the `AppID` and the permission key, w
 
 ### 4. Enter a voice room
 
-<img src="https://main.qcloudimg.com/raw/7393dbb31007299894586205cb8b6f9c.jpg"  width="50%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/85597502439e2434836bc827b121ceea.jpg"  width="50%">
 
 On the voice room selection page, you can enter a room ID. If you open the other demo, enter the same room ID.
 
@@ -44,7 +44,6 @@ On the voice room selection page, you can enter a room ID. If you open the other
 
 ### 5. Game UI overview
 
-<img src="https://main.qcloudimg.com/raw/0e451b80402caeb31cf6bd932acee127.png"  width="50%"/></img>
 
 Instructions:
 
@@ -59,16 +58,16 @@ Instructions:
 
 ### 6. Configure local connection
 
-<img src="https://main.qcloudimg.com/raw/670b24a1133dc07bdc9892ffa12b159f.png" width="50%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6f8f1ad63609850c9f169326c1ca69dc.png" width="50%" /></img>
 
 >!This demo requires a local LAN.
 
 - **The first person entering the room**
   The first person entering the room is the network connection Host. After clicking **LAN Host(H)**, it will generate a character next to the coin.
-  <img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/master.gif"  width="50%"/></img>
+
 - **The following persons**
   The following persons need to be connected to the Host by clicking **LAN Client(C)** and the character will be next to the coin. They now can see the first people entering the room.
-  <img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/client.gif"  width="50%"/></img>
+
 - **Information for determining whether the connection succeeds**
   1. The game character of the other player can be seen on the game UI. 
   2. In logs in the bottom-right corner of the UI, the room entry records of the `userID` of the game character of the other player are displayed.
@@ -79,13 +78,13 @@ Click <img src="https://main.qcloudimg.com/raw/1fd9f4e3f35cfc166e04bd26fb520abf.
 
 ### 8. Instructions
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/linaji.gif"  width="50%"/></img>
+
 
 W", "S", "A" and "D" on the keyboard correspond to "forward", "backward", "left" and "right" respectively. The mouse can be used to adjust the perspective. The connected client can see the character operated by the other client.
 
 ### 9. How to experience
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/yuan.gif"  width="50%"/></img>
+
 
 If you open the demo in two instances locally, you can move the perspective of one demo to the coin and enable the mic, and make the character on the other demo to run away as far as possible and keep talking. In this way, you can try out the 3D sound effect. When the character is at the map border, the voice will be almost inaudible.
 
