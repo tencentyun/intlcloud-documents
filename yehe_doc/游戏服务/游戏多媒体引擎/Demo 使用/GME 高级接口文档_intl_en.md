@@ -48,13 +48,6 @@ The returned value `0` indicates that the Ring/Silent switch is off, while `1` i
 
 
 
-#### Function prototype
-
-```
-TestMic();
-```
-
-
 ### Setting Android Bluetooth device adaptation
 
 <dx-alert infotype="explain" title="description">
