@@ -30,7 +30,7 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 
 接入 SDK 重要流程如下：
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5e05e6ffe1749725a6ba077926286f16.png"  width="70%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/a69ce208fb05dd336ad6618264caf6c2.jpg"  width="70%" /></img>
 
 <dx-steps>
 -<dx-tag-link link="#Init" tag="接口：Init">初始化 GME</dx-tag-link>

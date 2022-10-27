@@ -30,7 +30,7 @@ GME provides the real-time voice, voice message, and speech-to-text services, wh
 
 Key processes involved in SDK connection are as follows:
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5e05e6ffe1749725a6ba077926286f16.png"  width="70%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/a69ce208fb05dd336ad6618264caf6c2.jpg"  width="70%" /></img>
 
 <dx-steps>
 -<dx-tag-link link="#Init" tag="API: Init">Initializing GME</dx-tag-link>
