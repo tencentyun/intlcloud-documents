@@ -46,11 +46,7 @@ CheckDeviceMuteState();
 
 The returned value `0` indicates that the Ring/Silent switch is off, while `1` indicates on.
 
-### Checking the mic status
 
-<dx-alert infotype="explain" title="description">
-This API takes effect on GME SDK 2.8.4 or later.
-</dx-alert>
 
 #### Function prototype
 
