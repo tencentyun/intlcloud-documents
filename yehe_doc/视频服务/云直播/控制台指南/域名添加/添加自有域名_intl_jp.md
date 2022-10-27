@@ -26,7 +26,7 @@ CSSサービスを使用するには、少なくとも**2つ**のドメイン名
 [](id:DNS)
 ### DNS名前解決
 DNS名前解決を検証するには、ドメイン名のプロバイダーに名前解析を設定してください。DNSプロバイダーがTencent Cloudである場合、次の手順に従って名前解析履歴を追加できます。
-1. 登录[DNSPOD控制台](https://www.dnspod.com/login?s_url=https%3A%2F%2Fwww.dnspod.com%2F%3Flang%3Den)。
+1. [DNSPODコンソール](https://www.dnspod.com/login?s_url=https%3A%2F%2Fwww.dnspod.com%2F%3Flang%3Den)にログインします。
 2. 追加するドメイン名のマスタードメイン名を選択します。
 3. 指定したドメイン名の「履歴管理」ページに移動し、**履歴追加**をクリックします。
 4. 新しい列にドメイン名レコードを入力します。具体的な入力内容は次のとおりです：
