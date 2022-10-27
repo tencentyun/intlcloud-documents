@@ -14,7 +14,7 @@ You can connect to a TDSQL for MySQL instance in the following ways:
 
 ## Prerequisites
 ### Creating an account
-1. Log in to the [TencentDB for MySQL console] (https://console.cloud.tencent.com/tdsqld/instance-tdmysql). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/tdsqld/instance-tdmysql). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance management page, select **Account Management** and click **Create Account**.
 ![](https://main.qcloudimg.com/raw/148943eb024c9d3871b3c5d509de2e20.png)
 3. In the pop-up dialog box, enter the account name, host, and password. After confirming that everything is correct, click **Next**.
