@@ -6,17 +6,16 @@ Below are the pricing details:
 | Billable Item       | Price (USD/Min) | Billed By                   |
 | :----------- | :---------------- | -------------------------- |
 | Real-time clipping | 0.0028            | The duration of the output file. |
-| General clipping | 0.00098           | The duration of the output file. |
 
 #### Billing details
 
-- **Billable items**: Real-time clipping/General clipping
+- **Billable items**: Real-time clipping.
 - **Billing rules**: Fees are incurred for creating a clip before a live stream ends.
-- **Formula**: Live clipping fees = The duration of the file generated (min) x The unit price (USD)
+- **Formula**: Live clipping fees = The duration of the file generated (min) x The unit price (USD).
 
 #### Billing example
 
-Suppose you used the **general clipping** feature on January 1 and generated a 100-min clip. On January 2, you would need to pay the following live clipping fee:
+Suppose you used the ** Real-time clipping** feature on January 1 and generated a 100-min clip. On January 2, you would need to pay the following live clipping fee:
 
 0.00098 (USD/min) x 100 (min) = 0.098 (USD)
 
