@@ -3,14 +3,13 @@
 
 您可以在控制台的操作日志页面查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。也可以在命令行界面（CLI）或者使用云数据库 API 查看、下载数据库日志，请参见 [查询慢查询日志](https://intl.cloud.tencent.com/document/product/236/15845) 与 [查询二进制日志](https://intl.cloud.tencent.com/document/product/236/15843)。
 
->?云数据库 MySQL（不含单节点 - 基础型）实例支持操作日志管理功能。
+>?云数据库 MySQL 单节点云盘版实例暂不支持下载慢日志和回档功能。
 >
 
 #### MySQL 慢查询相关说明
 - long_query_time：慢查询阈值参数，精度可达微秒级别，默认为10s，SQL 语句执行时间超过此数值时，会被记录到慢日志。 
 若调整 long_query_time 参数，不会影响原有的慢日志，例如慢日志阈值参数为10s，则上报超过10s的慢日志记录，后续调整为1s，原有上报的日志仍然会显示。
 - log_queries_not_using_indexes：是否记录未使用索引的查询，默认 OFF。
-
 
 ## 操作步骤
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
@@ -26,9 +25,10 @@
 <tr>
 <td>回档日志</td><td>记录回档任务的运行状态和进展</td></tr>
 </tbody></table>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/eb38248f51697df8b79798e02690f426.png"  style="margin:0;">
 
 3. 在慢日志下载页面，单击**操作**列的**下载**下载慢日志。
-4. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/document/product/213/10517)中，运用 wget 命令进行内网高速下载，更高效。
+4. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://www.tencentcloud.com/document/product/213/10517)中，运用 wget 命令进行内网高速下载，更高效。
 >?
 >- 若日志大小为0KB，则无法下载。
 >- 您也可以选择**本地下载**直接下载，但耗时较多。
@@ -38,3 +38,4 @@
 ```
 wget -c 'http://szx.dl.cdb.tencentyun.com:303/cfdee?appid=1210&time=1591&sign=aIGM%3D' -O test.log
 ```
+

@@ -1,45 +1,45 @@
-TencentDB for MySQL은 단일 노드(구 기본 버전), 이중 노드(구 고가용성 버전), 3중 노드(구 파이낸스 버전)의 세 가지 구성이 있습니다.기존 단일 노드 고속 IO 버전은 단일 노드 구성으로 통합되었으며, 격리 정책은 범용형입니다.
->!단일 노드(구 기본 버전)는 현재 재구성 업그레이드 중이며, 이 기간에 판매를 잠시 중지합니다.
+TencentDB for MySQL은 단일 노드(클라우드 디스크 버전), 2노드(이전 고가용성 버전), 3노드(이전 파이낸스 버전)의 세 가지 유형의 아키텍처를 지원합니다.
+>?클라우드 디스크 버전의 단일 노드 아키텍처는 현재 상하이 리전에서 지원되며 향후 더 많은 리전에서 사용할 수 있습니다.
+>
+## 인스턴스 아키텍처 보기
+- 인스턴스 구매 시 [TencentDB for MySQL 구매 페이지](https://buy.intl.cloud.tencent.com/cdb)로 이동하여 **아키텍처** 섹션에서 아키텍처를 선택합니다.
+- 인스턴스 구매 후 [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인하여 인스턴스 목록에서 대상 인스턴스를 찾은 다음 **구성** 열에서 아키텍처를 확인합니다.
 
-## 인스턴스 구성 조회
-- 구매 시 [MySQL 구매 페이지](https://buy.cloud.tencent.com/cdb)에 로그인한 후 **구성**에서 해당하는 구성을 선택할 수 있습니다.
-- 구매 후 [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 다음 인스턴스 리스트의 **설정**에서 인스턴스 구성을 조회할 수 있습니다.
-
-## 각 구성 비교
+## 각 아키텍처 비교
 <table>
 <thead>
-<tr><th>구성</th><th >이중 노드</th><th>3중 노드</th><th colspan=2>단일 노드</th>
+<tr><th>구성</th><th >2노드</th><th>3노드</th><th colspan=2>단일 노드</th>
 </thead>
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/39794">격리 정책</a></td>
-<td>범용형</td><td>범용형</td><td>범용형</td><td>기본형</td></tr>
+<td>일반</td><td>일반</td><td>일반</td><td>기본</td></tr>
 <tr>
 <td>지원 버전</td>
-<td>MySQL 5.5, 5.6, 5.7, 8.0</td><td>MySQL 5.6, 5.7, 8.0</td><td>MySQL 5.6, 5.7, 8.0</td><td>MySQL 5.7</td></tr>
+<td>MySQL 5.5, 5.6, 5.7, 8.0</td><td>MySQL 5.6, 5.7, 8.0</td><td>MySQL 5.6, 5.7, 8.0</td><td>MySQL 5.7, 8.0</td></tr>
 <tr>
 <td>노드</td>
-<td>1 마스터 1 슬레이브</td><td>1 마스터 2 슬레이브</td><td>단일 노드</td><td>단일 노드</td></tr>
+<td>1 원본, 1 복제본</td><td>1 원본, 2 복제본</td><td>단일 노드</td><td>단일 노드</td></tr>
 <tr>
-<td>마스터/슬레이브 복제 방식</td>
+<td>원본-복제본 복제 모드</td>
 <td>비동기화(기본값), 반동기화</td><td>비동기화(기본값), 강제 동기화, 반동기화</td><td>-</td><td>-</td></tr>
 <tr>
 <td>인스턴스 가용성</td>
 <td>99.95%</td><td>99.99%</td><td>-</td><td>-</td></tr>
 <tr>
 <td>기본 스토리지</td>
-<td>로컬 NVMe SSD 디스크</td><td>로컬 NVMe SSD 디스크</td><td>로컬 NVMe SSD 디스크</td><td>고성능 클라우드 디스크</td></tr>
+<td>로컬 NVMe SSD</td><td>로컬 NVMe SSD</td><td>로컬 NVMe SSD</td><td>SSD 클라우드 디스크<br>인핸스드 SSD</td></tr>
 <tr>
 <td>성능</td>
-<td>IOPS 최대 240000</td><td>IOPS 최대 240000</td><td>-</td><td>IOPS 범위 계산 공식:<br>{min 1500 + 8 * 디스크 용량, max 4500}</td></tr>
+<td>최대 240,000 IOPS</td><td>최대 240,000 IOPS</td><td>-</td><td><li>SSD 클라우드 디스크 랜덤 IOPS 계산: <br>min{1800 + 30 × 용량(GB), 26000}<li>SSD 클라우드 디스크 처리량 계산(MB/s): <br>min{120 + 0.2 × 용량(GB), 260}<li>인핸스드 SSD 랜덤 IOPS 계산: <br>min{1800 + 50 × 용량(GB), 50000}<li>인핸스드 SSD 처리량 계산(MB/s): <br>min{120 + 0.5 × 용량(GB), 350}</td></tr>
 <tr>
 <td>적용 시나리오</td>
-<td>게임, 인터넷, 사물인터넷, 전자상거래 판매, 물류, 보험, 증권 분야 등의 애플리케이션</td>
-<td>게임, 인터넷, 사물인터넷, 전자상거래 판매, 물류, 보험, 증권 분야 등의 애플리케이션</td>
-<td>읽기/쓰기 분리가 필요한 애플리케이션</td>
-<td>개별 학습, 미니 사이트, 기업의 소규모 부가 시스템, 중견/대형 기업의 개발 및 테스트 환경</td></tr>
+<td>게임, 인터넷, IoT, 소매, 전자 상거래, 물류, 보험, 증권 등</td>
+<td>게임, 인터넷, IoT, 소매, 전자 상거래, 물류, 보험, 증권 등</td>
+<td>읽기/쓰기 분리 요구 사항이 있는 애플리케이션</td>
+<td>개인 학습, 소규모 웹 사이트, 비핵심 소규모 기업 시스템 및 중대형 기업 개발 및 테스트 환경</td></tr>
 </tbody></table>
 
 ## 관련 문서
-- TencentDB for MySQL는 MySQL 8.0, MySQL 5.7, MySQL 5.6, MySQL 5.5 버전을 지원합니다. 자세한 내용은 [데이터베이스 버전](https://intl.cloud.tencent.com/document/product/236/31896)을 참조하십시오.
-- TencentDB for MySQL은 마스터 인스턴스, 읽기 전용 인스턴스를 지원합니다. 자세한 내용은 [데이터베이스 인스턴스 유형](https://intl.cloud.tencent.com/document/product/236/7268)을 참조하십시오.
-- TencentDB for MySQL은 각 구성별 지원 기능이 상이합니다. 자세한 내용은 [기능 비교표](https://intl.cloud.tencent.com/document/product/236/36007)를 참조하십시오.
+- TencentDB for MySQL는 MySQL 8.0, MySQL 5.7, MySQL 5.6, MySQL 5.5 버전을 지원합니다. 자세한 내용은 [데이터베이스 버전](https://intl.cloud.tencent.com/document/product/236/31896)을 참고하십시오.
+- TencentDB for MySQL은 원본 인스턴스, 읽기 전용 인스턴스 및 재해 복구 인스턴스와 같은 인스턴스 유형을 지원합니다. 자세한 내용은 [데이터베이스 인스턴스 유형](https://intl.cloud.tencent.com/document/product/236/7268)을 참고하십시오.
+- TencentDB for MySQL은 다양한 아키텍처별 기능을 지원합니다. 자세한 내용은 [기능 비교표](https://intl.cloud.tencent.com/document/product/236/36007)를 참고하십시오.

@@ -1,3 +1,4 @@
+
 ## 기능 소개
 빠른 칼럼 추가 기능은 이전 칼럼 추가 작업에서 수행해야 하는 데이터 복사를 피하고 데이터 사전을 수정하기만 하면 큰 테이블의 칼럼을 빠르게 추가할 수 있으므로 칼럼을 추가하는 데 필요한 시간을 크게 줄일 수 있습니다. 또한, 큰 테이블과 시스템에 대한 영향을 축소합니다.
 
@@ -24,3 +25,10 @@ ALTER TABLE t1 ADD COLUMN c INT, ADD COLUMN d INT DEFAULT 1000, ALGORITHM=INSTAN
 SET @@global.innodb_alter_table_default_algorithm=instant;
 ```
 이 매개변수로 기본 알고리즘을 지정하면 알고리즘 미지정 시 테이블 변경 작업에 기본 알고리즘이 사용됩니다.
+
+### Instant Add Column 제한
+- 문에는 열 추가 작업만 포함될 수 있습니다.
+- 마지막에 새로운 열이 추가되며, 열 순서는 변경할 수 없습니다.
+- INSTANT ADD COLUMN은 COMPRESSED 행 형식의 테이블에서 지원되지 않습니다.
+- INSTANT ADD COLUMN은 전체 텍스트 인덱스가 있는 테이블에서 지원되지 않습니다.
+- 임시 테이블에는 INSTANT ADD COLUMN이 지원되지 않습니다.

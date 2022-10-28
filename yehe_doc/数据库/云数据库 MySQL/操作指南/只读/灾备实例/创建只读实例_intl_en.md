@@ -14,18 +14,19 @@ Database proxy is supported. After creating a read-only instance, you can purcha
 
 #### Architecture
 The MySQL source-replica binlog sync feature is adopted for read-only instances, which can sync the changes in the source instance (source database) to all read-only instances. Given the single-node architecture (without a replica) of read-only instances, repeated attempts to restore a failing read-only instance will be made. Therefore, we recommend you choose a read-only group over a read-only instance for higher availability.
->!If there is only one read-only instance in the read-only group, there will be risks with single points of failure, and this group will not be included in the overall availability calculation of the TencentDB for MySQL service. A single read-only instance does not have an SLA. We recommend you purchase at least two read-only instances to ensure the availability of the read-only group.
+>!If there is only one read-only instance in the read-only group, there will be risks with single points of failure, and this group will not be included in the overall availability calculation of the TencentDB for MySQL service. A single read-only instance does not provide SLA guarantee. We recommend you purchase at least two read-only instances to ensure the availability of the read-only group.
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/e8000e0fae60f2f8ff884bf47d6babb0.png)
 
 ## Feature Limits
+- Read-only instances cannot be created for single-node instances of the cloud disk edition.
 - Read-only instances can be purchased only for **two-node or three-node source instances on MySQL 5.6 or later with the InnoDB engine at a specification of 1 GB memory and 50 GB disk capacity or above**. If your source instance is below this specification, upgrade it first.
-- The minimum specification of a read-only instance is 1 GB memory and 50 GB disk capacity and must be equal to or greater than the storage capacity purchased for the source instance.
+- The minimum specification of a read-only instance is 1 GB memory and 50 GB disk capacity, which must be equal to or greater than the storage capacity purchased for the source instance.
 - Up to five read-only instances can be created for a source instance.
 - Backup and rollback features are not supported.
 - Data cannot be migrated to read-only instances.
 - Database creation/drop are not supported and neither is phpMyAdmin (PMA).
-- Unsupported operations include account creation, deletion, authorization, and account name/password modification.
+- Operations including account creation/deletion/authorization and account name/password modification are not supported.
 
 ## Notes
 - There is no need to maintain accounts or databases for read-only instances, which are synced with those of the source instance.
@@ -47,7 +48,7 @@ The operation takes a long time, and the instance will be disconnected for sever
     - **Existing RO group**: Specify an existing read-only group. If multiple read-only instances are purchased at a time, all of them will be assigned to the read-only group.
     Their weights will be allocated as configured in the read-only group. If assignment by the system is set for the read-only group, the instances will be added to the group automatically according to the purchased specifications. If custom allocation is set, their weights will be zero by default.
 		As the same private IP is shared within a read-only group, if a VPC is used, the same security group settings will be shared. If a read-only group is specified, it is not possible to customize any security group when instances are purchased.
- >- Remove Delayed RO Instances: This option indicates whether to enable the removal policy. If a read-only instance is removed when its delay exceeds the threshold, it will become inactive, its weight will be set to 0 automatically, and warning notifications will be sent out (for more information on how to configure the read-only instance removal alarm and recipients, see [Alarm Policies (Cloud Monitor)](https://intl.cloud.tencent.com/document/product/236/8457)). The instance will be put back into the read-only group when its delay falls below the threshold. No matter whether this option is enabled, a read-only instance that is removed due to instance failure will rejoin the read-only group when it is repaired.
+ >- Remove Delayed RO Instances: This option indicates whether to enable the removal policy. If a read-only instance is removed when its delay exceeds the threshold, it will become inactive, its weight will be set to 0 automatically, and warning notifications will be sent out. The instance will be put back into the read-only group when its delay falls below the threshold. No matter whether this option is enabled, a read-only instance that is removed due to instance failure will rejoin the read-only group when it is repaired. For more information on how to configure the read-only instance removal alarm and recipients, see [Alarm Policies (Cloud Monitor)](https://intl.cloud.tencent.com/document/product/236/8457).
 ![](https://main.qcloudimg.com/raw/5c002d37fdeb72a5396a394133672338.png)
 4. After the purchase is completed, you will be redirected to the instance list. After the status of the instance is displayed as **Running**, it can be used normally.
 
@@ -59,3 +60,6 @@ After **Remove Delayed RO Instances** is enabled, the read-only group will deter
 
 #### If read-only instances are terminated or returned, how will the source instance be affected?
 The termination and return of read-only instances have no impact on the source instance.
+
+
+
