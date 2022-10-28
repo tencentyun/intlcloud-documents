@@ -395,7 +395,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
 
 #### 返回值
 
@@ -494,7 +494,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
 
 #### 返回值
 
