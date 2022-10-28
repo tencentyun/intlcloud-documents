@@ -5,7 +5,7 @@ TRTC 콘솔에서는 UserSig 서명 온라인 생성을 지원합니다. 그러�
 ## 서명(UserSig) 생성 툴
 개발자와 Tencent Cloud 서비스는 서명(UserSig) 인증을 통해 신뢰 관계를 구축합니다.
 
-1. TRTC 콘솔에서 왼쪽 [Development Assistance]>[UserSig Generation & Verification](https://console.cloud.tencent.com/trtc/usersigtool)을 선택하여 [Signature (UserSig) Generator] 모듈을 확인합니다.
+1. TRTC 콘솔에서 왼쪽 [Development Assistance]>[UserSig Generation & Verification](https://console.tencentcloud.com/trtc/app)을 선택하여 [Signature (UserSig) Generator] 모듈을 확인합니다.
 2. 드롭다운 목록을 클릭하여 생성한 애플리케이션(SDKAppID)을 선택하면 자동으로 해당 키(Key)가 생성됩니다.
 3. 사용자 이름(UserID)을 입력합니다.
 4. [Generate Signature(UserSig)]을 클릭하면 해당하는 UserSig 서명이 생성됩니다.
@@ -17,7 +17,7 @@ TRTC 콘솔에서는 UserSig 서명 온라인 생성을 지원합니다. 그러�
 
 >! 해당 툴을 사용하는 경우 인증 요청 시 입력하는 SDKAppID, UserID는 UserSig의 SDKAppID, UserID와 동일해야 합니다.
 
-1. TRTC 콘솔에서 왼쪽 [Development Assistance]>[UserSig Generation & Verification](https://console.cloud.tencent.com/trtc/usersigtool)을 선택하여 [Signature (UserSig) Generator] 모듈을 확인합니다.
+1. TRTC 콘솔에서 왼쪽 [Development Assistance]>[UserSig Generation & Verification](https://console.tencentcloud.com/trtc/app)을 선택하여 [Signature (UserSig) Generator] 모듈을 확인합니다.
 2. 인증할 어플리케이션(SDKAppID)을 선택하면 자동으로 해당하는 키(Key)가 생성됩니다.
 3. 사용자 이름(UserID)을 입력합니다.
 4. 인증할 서명(UserSig)을 복사해 [서명(UserSig)]에 붙여넣은 후, [Verify Now]를 클릭합니다.
