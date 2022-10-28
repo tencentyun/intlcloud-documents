@@ -4,7 +4,7 @@ Azure Active Directory (Azure AD) is a cloud-based identity and access managemen
 
 ## Directions
 ### Creating Azure AD Enterprise Applications
->This step creates an Azure AD enterprise application. If you’re already using one, you can skip this step and go straight to [configuring CAM](#stepCAM).
+>? This step creates an Azure AD enterprise application. If you’re already using one, you can skip this step and go straight to [configuring CAM](#stepCAM).
 
 
 1. Go to the [Azure AD Portal](https://portal.azure.com/#home) and click **Azure Active Directory** in the left sidebar. This is shown in the following figure:
@@ -17,7 +17,7 @@ Azure Active Directory (Azure AD) is a cloud-based identity and access managemen
 ![](https://main.qcloudimg.com/raw/c0cac58691701c27feefa7df9bb4fd81.png)
 
 ### <span id="stepCAM"></span>Configuring CAM
-> This step configures the trust relationship between Azure AD and Tencent Cloud to make them trust each other.
+>? This step configures the trust relationship between Azure AD and Tencent Cloud to make them trust each other.
 >
 1. In the left sidebar, go to **Azure Active Directory** > **Enterprise Applications**, and select the application you created to go to the application overview page.
 2. Click **Single Sign-On** to open the **Select a Single Sign-On Method** page.
@@ -28,24 +28,17 @@ Azure Active Directory (Azure AD) is a cloud-based identity and access managemen
 5. Create the SAML identity provider and roles in Tencent Cloud. For more information, see [Creating an IdP](https://intl.cloud.tencent.com/document/product/598/30391).
 
 ### Configuring the Azure AD Single Sign-On
-> This step maps Azure AD application attributes to Tencent Cloud attributes to create trust between the Azure AD application and Tencent Cloud.
+>? This step maps Azure AD application attributes to Tencent Cloud attributes to create trust between the Azure AD application and Tencent Cloud.
 >
 1. In the **SAML Single Sign-On** overview interface, click <image style="margin:0;" src="https://main.qcloudimg.com/raw/836588594e0a214b5951ee5207fc2353.png"> on the upper right of **Basic SAML Configuration**. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/87e30ebf37ae821062d9673100cae5ed.png)
 2. In the **Basic SAML Configuration** editing page, enter the following information and click **Save**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/81d55511379e86b7b8364f631988706f.png)
-
->>
-> - If your Tencent Cloud account is located on Tencent Cloud China website, perform configuration as follows:
-Identifier (entity ID): cloud.tencent.com
-Reply URL (Assertion Consumer Service (ACS) URL): https://cloud.tencent.com/login/saml
-> - If your Tencent Cloud account is located on Tencent Cloud International website, perform configuration as follows:
-Identifier (entity ID): intl.cloud.tencent.com
-Reply URL (Assertion Consumer Service (ACS) URL): https://intl.cloud.tencent.com/login/saml
+![](https://qcloudimg.tencent-cloud.cn/raw/6d6cf16bc140940eabf61e5951809ed5.png)
 You can configure it according to the site where your Tencent Cloud account is located
 |Site |Identifier (entity ID)| Reply URL (Assertion Consumer Service (ACS) URL) | 
 |---------|---------|---------|
-| International website |intl.cloud.tencent.com| https://intl.cloud.tencent.com/login/saml|
+| China website| cloud.tencent.com| https://cloud.tencent.com/login/saml|
+| International website |intl.cloud.tencent.com| https://www.tencentcloud.com/login/saml|
 
 3. In the **SAML Single Sign-On** overview interface, click <image style="margin:0;" src="https://main.qcloudimg.com/raw/836588594e0a214b5951ee5207fc2353.png"> in the upper right corner of **User Attributes and Claims** to open the **User Attributes and Claims editor. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/77dddf7d3248815f0483f33ef8bc6dea.png)
@@ -58,7 +51,7 @@ You can configure it according to the site where your Tencent Cloud account is l
 |Role | https://cloud.tencent.com/SAML/Attributes | Attribute| qcs::cam::uin/{AccountID}:roleName/{RoleName},qcs::cam::uin/{AccountID}:saml-provider/{ProviderName} |
 |RoleSessionName| https://cloud.tencent.com/SAML/Attributes | Attribute| Azure |
 
-> Replace {AccountID}, {RoleName}, and {ProviderName} of the **Role** source attribute with the following content:
+>? Replace {AccountID}, {RoleName}, and {ProviderName} of the **Role** source attribute with the following content:
 >- {AccountID}: Replace this with your Tencent Cloud account ID. You can view this at [Account Information - Console](https://console.cloud.tencent.com/developer).
 >- {RoleName}: Replace this with the role name you have created in Tencent Cloud for the identity provider. For more information, see [Creating a Role](https://intl.cloud.tencent.com/document/product/598/19381). Role names can be viewed in [Role - Console](https://console.cloud.tencent.com/cam/role). If you need to add more, you can add them in this format: qcs::cam::uin/{AccountID}:roleName/{RoleName}. Separate them using semicolons (;).
 >- {ProviderName}: Replace this with the SAML identity provider name that you created on Tencent Cloud. You can view this at [Identity Providers - Console](https://console.cloud.tencent.com/cam/idp).
@@ -67,14 +60,14 @@ You can configure it according to the site where your Tencent Cloud account is l
 
 
 ### Configuring Azure AD Users
-> This step assigns Tencent Cloud SSO access permissions to Azure AD users.
+>? This step assigns Tencent Cloud SSO access permissions to Azure AD users.
 >
 1.Click **Azure Active Directory** in the left sidebar. Click **User** to open **All Users**. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/1d5998772a8a2725454fb99edf9246da.png)
 2. <span id="step2"></span>Click **New user** in the upper left corner. In the **User** page, enter **Name**, **User name**, and select**Show Password** to verify the password. Once the information is correct, click **Create** on the lower center to complete creation. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/db91a5689b7b1c46166c7ded9394a2a8.png)
 
-> The username format is as follows: Username@domain name. Usernames can be customized. Click **Azure Active Directory** in the left sidebar to open the overview page. You can view previously configured **Initial Domain Name** here. You can copy and save the username and password for future use.
+>? The username format is as follows: Username@domain name. Usernames can be customized. Click **Azure Active Directory** in the left sidebar to open the overview page. You can view previously configured **Initial Domain Name** here. You can copy and save the username and password for future use.
 >
 3. In the left sidebar, go to **Azure Active Directory** > **Enterprise applications**, and select the application you created to go to the application overview page, and then click **Users and Groups**. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/109c2e855804eec9cc4ded7556d450e6.png)
