@@ -20,7 +20,7 @@
 您可以选择最近时间、相对时间，也可以自定义时间范围。
 5. 单击**检索分析**。
 6. 待检索到日志数据后，单击 <img src="https://main.qcloudimg.com/raw/53b7030f85123fe5658e7cce23b730c8.png"></img> > **下载日志**。
-![](https://qcloudimg.tencent-cloud.cn/raw/f5af6beb79610ca69c488f44f6f655db.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5c3f52cd94593cec759152d08a254592.png)
 >? 若未检索到日志数据，则无法下载日志。
 >
 7. 在弹出的窗口中，确认需下载日志的时间范围和检索语句，并根据如下信息设置下载日志数据。

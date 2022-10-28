@@ -1,4 +1,4 @@
-## August 2022
+## September 2022
 
 <table>
 	<thead>
@@ -10,10 +10,30 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Supported dashboard subscription via email</td><td>CLS allows users to subscribe to a dashboard and export it as an image. Daily, weekly, and monthly reports can be emailed to specified recipients regularly. This is suitable for scenarios where dashboards need to be published regularly and reduces costs.</td><td>2022-08-29</td><td><a href="https://www.tencentcloud.com/document/product/614/50277">Subscribing to Dashboard</a></td></tr>
+		<tr><td>Added log charts for dashboards</td><td>You can add and browse raw logs on the dashboard page. The analysis result and associated log content are displayed on the dashboard with no redirects needed, making operations easier.</td><td>2022-09-30</td><td><a href="https://www.tencentcloud.com/document/product/614/50844">Log</a></td></tr>
+		<tr><td>Supported LogListener for syslog collection</td><td>You can use LogListener to collect Linux syslog and quickly configure collection rules in the CLS console.</td><td>2022-09-15</td><td><a href="https://www.tencentcloud.com/document/product/614/17413">Collecting Syslog</a></td></tr>
+		<tr><td>Supported trigger by group in the alarm policy</td><td>If multiple results of the execution result meet the alarm trigger condition, the results will be grouped based on the group field, and an alarm will be triggered for each group.</td><td>2022-09-06</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39574">Configuring Alarm Policy</a></td></tr>
+	</tbody>
+</table>
+
+
+
+
+## August 2022
+<table>
+	<thead>
+		<tr>
+			<th width="20%">Update</th>
+			<th width="50%">Description</th>
+			<th width="15%">Release Date</th>
+			<th width="15%">Documentation</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>Supported dashboard subscription via email</td><td>CLS allows users to subscribe to a dashboard and export it as an image. Daily, weekly, and monthly reports can be emailed to specified recipients regularly. This is suitable for scenarios where dashboards need to be published regularly and reduces costs.</td><td>2022-08-29</td><td><a href="https://intl.cloud.tencent.com/document/product/614/50277">Subscribing to Dashboard</a></td></tr>
 		<tr><td>Supported data compression for consumption over Kafka</td><td>Consumption over Kafka supports data compression, which greatly reduces the read traffic volume and costs.</td><td>2022-08-25</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42752">Consumption over Kafka</a></td></tr>
 		<tr><td>Supported monitoring of shipping tasks to COS</td><td>The traffic, number of lines, status, and latency of shipping tasks to COS can be monitored, so that users can stay on top of task details and better manage shipping tasks.</td><td>2022-08-23</td><td><a href="https://intl.cloud.tencent.com/document/product/614/30440">Shipping Task Management</a></td></tr>
-		<tr><td>Added Parquet format for shipping to COS</td><td>CLS supports shipping log data in Parquet format to COS, which is suitable for big data computing and analysis scenarios where Hive is at downstream.</td><td>2022-08-23</td><td><a href="https://www.tencentcloud.com/document/product/614/50279">Parquet Shipping</a></td></tr>
+		<tr><td>Added Parquet format for shipping to COS</td><td>CLS supports shipping log data in Parquet format to COS, which is suitable for big data computing and analysis scenarios where Hive is at downstream.</td><td>2022-08-23</td><td><a href="https://intl.cloud.tencent.com/document/product/614/50279">Parquet Shipping</a></td></tr>
 		<tr><td>Added random sampling mode for statistical log analysis</td><td>CLS supports random sampling and analysis of massive amounts of data in raw logs. Compared with full analysis, it can achieve an accuracy of over 95% and solve the problems of slowness and timeout in full analysis, meeting the requirements for statistical analysis in various business scenarios.</td><td>2022-08-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/50243">Sampling Analysis</a></td></tr>
 	</tbody>
 </table>
@@ -32,7 +52,7 @@
 	<tbody>
 		<tr><td>Added funnel chart to dashboards</td><td>Users can collect the statistics of business processes with single flow and path and then intuitively compare conversion rates in different stages.</td><td>2022-07-20</td><td><a href="https://intl.cloud.tencent.com/document/product/614/50242">Funnel Chart</a></td></tr>
 		<tr><td>Released the scheduled SQL analysis feature</td><td>Search statements are executed based on custom cycles and times, and results are saved in new log topics. This greatly reduces the query failure rate and costs.</td><td>2022-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/50239">Overview</a></td></tr>
-		<tr><td>Supported reporting data from mobile devices through the SDK</td><td>Log information such as network detection can be reported from mobile devices through the SDK for Android/iOS.</td><td>2022-07-01</td><td><a href="https://www.tencentcloud.com/document/product/614/45006">Uploading Log via SDK</a></td></tr>
+		<tr><td>Supported reporting data from mobile devices through the SDK</td><td>Log information such as network detection can be reported from mobile devices through the SDK for Android/iOS.</td><td>2022-07-01</td><td><a href="https://intl.cloud.tencent.com/document/product/614/45006">Uploading Log via SDK</a></td></tr>
 	</tbody>
 </table>
 
@@ -48,11 +68,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Supported custom chart time in dashboards</td><td>The chart time can be independent and doesn't change as the global time changes. In the dashboard, different charts can use different times to support more diversified comparisons.</td><td>2022-06-30</td><td><a href="https://www.tencentcloud.com/document/product/614/50275">Custom Chart Time</a></td></tr>
+		<tr><td>Supported custom chart time in dashboards</td><td>The chart time can be independent and doesn't change as the global time changes. In the dashboard, different charts can use different times to support more diversified comparisons.</td><td>2022-06-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/50275">Custom Chart Time</a></td></tr>
 		<tr><td>Added DSL functions for data processing</td><td>DSL functions are added for data processing, covering IP parsing, codec, and more scenarios.</td><td>2022-06-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/45594">Function Overview</a></td></tr>
 		<tr><td>Released preset dashboards</td><td>CLS supports accessing the standard logs of multiple Tencent Cloud products and provides out-of-the-box log analysis dashboards for visual analysis.</td><td>2022-06-27</td><td><a href="https://www.tencentcloud.com/document/product/614/50276">Preset Dashboard</a></td></tr>
-		<tr><td>Upgraded notification content variables </td><td>More notification content variables are supported, which can be extracted, escaped, and formatted.</td><td>2022-06-16</td><td><a href="https://intl.cloud.tencent.com/document/product/614/41984">Notification Content Variable</a></td></tr>
-		<tr><td>Added the index recreation feature</td><td>After index configurations are modified, indexes can be recreated for historical log data, so that it can be searched for and analyzed based on new configurations.</td><td>2022-06-10</td><td><a href="https://www.tencentcloud.com/document/product/614/50278">Recreating Index</a></td></tr>
+		<tr><td>Upgraded notification content variables </td><td>More notification content variables are supported, which can be extracted, escaped, and formatted.</td><td>2022-06-16</td><td><a href="https://www.tencentcloud.com/document/product/614/41984">Alarm Notification Variable</a></td></tr>
+		<tr><td>Added the index recreation feature</td><td>After index configurations are modified, indexes can be recreated for historical log data, so that it can be searched for and analyzed based on new configurations.</td><td>2022-06-10</td><td><a href="https://intl.cloud.tencent.com/document/product/614/50278">Reindexing</a></td></tr>
 	</tbody>
 </table>
 
@@ -68,7 +88,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Added demos for four Tencent Cloud products</td><td>Demos are added for CDN, FlowLog, TKE, and COS, helping users try out CLS features.</td><td>2022-05-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43572">CLB Analysis Scenario Experience Demo</a></td></tr>
+		<tr><td>Added demos for four Tencent Cloud products</td><td>Demos are added for CDN, FlowLog, TKE, and COS, helping users try out CLS features.</td><td>2022-05-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43572">Quickly Trying out CLS with Demo</a></td></tr>
 		<tr><td>Supported log upload over Kafka</td><td>Kafka configurations are added in the console, where Kafka output configurations are automatically generated based on the uploaded Kafka producer and account information. Users can copy existing configurations for quick upload.</td><td>2022-05-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43574">Uploading Log over Kafka</a></td></tr>
 	</tbody>
 </table>
@@ -90,7 +110,7 @@
 		<tr><td>Consumption over Kafka in all regions</td><td>You can consume data to downstream big data components or data warehouses over the Kafka protocol, such as self-built Kafka clusters, ClickHouse, Hive, and Flink, as well as Tencent Cloud EMR and Oceanus.</td><td>2022-04-20</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42752">Consumption over Kafka</a></td></tr>
 		<tr><td>Use of SQL to collect and analyze historical data when the index configuration is modified</td><td>When the index configuration is modified, users can use SQL to collect and analyze historical data for existing fields in the original configuration (but not for new fields).</td><td>2022-04-18</td><td>-</td></tr>
 		<tr><td>Metadata collection range selection for container collection</td><td>You can select one or more container metadata fields collected by default and configure whether to enable index.</td><td>2022-04-13</td><td>-</td></tr>
-		<tr><td>Adding metadata/preset fields to full-text index</td><td>You can add metadata/preset fields to full-text index during index configuration for full-text search of such fields.</td><td>2022-04-12</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">Configuring Indexes</a></td></tr>
+		<tr><td>Adding metadata/preset fields to full-text index</td><td>You can add metadata/preset fields to full-text index during index configuration for full-text search of such fields.</td><td>2022-04-12</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">Configuring Index</a></td></tr>
 	</tbody>
 </table>
 
@@ -142,7 +162,7 @@
 	</thead>
 	<tbody>
 		<tr><td>Support for permanent retention of log topics</td><td>You can customize the log topic retention period to a value ranging from 1 to 3600 days or enable permanent retention.</td><td>2022-01-25</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37887">Specifications</a></td></tr>
-		<tr><td>Launch of the index configuration import feature</td><td>You can import the index configuration rules of existing log topics with a few clicks to improve efficiency.</td><td>2022-01-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">Configuring Indexes</a></td></tr>
+		<tr><td>Launch of the index configuration import feature</td><td>You can import the index configuration rules of existing log topics with a few clicks to improve efficiency.</td><td>2022-01-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">Configuring Index</a></td></tr>
 	</tbody>
 </table>
 
@@ -158,7 +178,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Support for log upload via Kafka</td><td><ul  style="margin: 0;"><li>Supported Kafka protocol versions: 0.11.X-2.8</li><li>Supported data compression modes: Gzip, Snappy, lz4, zstd</li></ul></td><td>2021-12-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43574">Uploading Logs via Kafka</a></td></tr>
+		<tr><td>Support for log upload via Kafka</td><td><ul  style="margin: 0;"><li>Supported Kafka protocol versions: 0.11.X-2.8</li><li>Supported data compression modes: Gzip, Snappy, lz4, zstd</li></ul></td><td>2021-12-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43574">Uploading Log over Kafka</a></td></tr>
 		<tr><td>Updated TKE log collection</td><td><ul  style="margin: 0;"><li>Log collection configuration supports `label !=` operations (exclude labels).</li><li>Log collection configuration supports selecting multiple namespaces or excluding namespaces.</li><li>Supports incremental log collection.</li><li>Supports manual upgrade of LogListener.</li></ul></td><td>2021-12-21</td><td><a href="https://intl.cloud.tencent.com/document/product/457/46845">CLS Add-on Version Description</a></td></tr>
 		<tr><td>Supported viewing log topic usage in the Cloud Monitor dashboard</td><td>Usage metrics such as the log storage size and write traffic and corresponding alarms are delivered to the Cloud Monitor dashboard so that users can view the usage of log topics in a centralized manner.</td><td>2021-12-17</td><td><a href="https://www.tencentcloud.com/document/product/248/38464">	Monitoring Charts</a></td></tr>
 		<tr><td>Optimized dashboard visual data configuration</td><td>Dashboard visual data configuration now supports the new features of displaying hidden fields and aggregating metrics by groups.</td><td>2021-12-15</td><td>-</td></tr>
@@ -179,11 +199,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>CLS feature experience demo available</td><td>For product trial and test scenarios, the free demo provides quick data access and feature templates to help users access content close to real-life scenarios easily and quickly.</td><td>2021-11-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43572">CLB Analysis Scenario Experience Demo</a></td></tr>
-		<tr><td>STANDARD_IA in beta testing in some regions</td><td>STANDARD_IA is a low-cost log storage solution to search and store massive infrequently accessed logs, meeting users' requirements for backtracking and archiving historical logs. The solution applies to scenarios where users do not have log statistical analysis requirements and logs need to be stored for a long time. (In the beta test period, the solution is available only in Beijing, Guangzhou, Shanghai, and Hong Kong, China.)</td><td>2021-11-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42004">Offline Storage</a></td></tr>
-		<tr><td>Connecting self-built Kubernetes cluster to CLS</td><td>You can use the console to configure log collection rules to quickly connect self-built Kubernetes clusters to CLS, reducing learning and use costs.</td><td>2021-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42745">Connecting Self-built Kubernetes Cluster to CLS</a></td></tr>
+		<tr><td>CLS feature experience demo available</td><td>For product trial and test scenarios, the free demo provides quick data access and feature templates to help you access content close to real-life scenarios easily and quickly.</td><td>2021-11-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43572">Quickly Trying out CLS with Demo</a></td></tr>
+		<tr><td>STANDARD_IA in beta testing in some regions</td><td>STANDARD_IA is a low-cost log storage solution to search and store massive infrequently accessed logs, meeting users' requirements for backtracking and archiving historical logs. The solution applies to scenarios where users do not have log statistical analysis requirements and logs need to be stored for a long time. (In the beta test period, the solution is available only in Beijing, Guangzhou, Shanghai, and Hong Kong, China.)</td><td>2021-11-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42004">STANDARD_IA</a></td></tr>
+		<tr><td>Connecting self-built Kubernetes cluster to CLS</td><td>You can use the console to configure log collection rules to quickly connect self-built Kubernetes clusters to CLS, reducing learning and use costs.</td><td>2021-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42745">Connecting Self-Built Kubernetes Cluster to CLS</a></td></tr>
 		<tr><td>Data processing feature released</td><td>Data processing provides the capability to structure, filter, mask, distribute, and enrich log data, which provides the basis for structured data search, analysis, and dashboard display of log data.</td><td>2021-11-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43568">Data Processing</a></td></tr>
-		<tr><td>Support for logs uploaded via Kafka</td><td>CLS is compatible with Kafka to be compatible with open-source ecosystems. Users only need to modify the write source of their existing system to achieve quick access and support various open-source collection components such as Logstash, Fluentd, and Filebeat.</td><td>2021-11-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43574">Uploading Log over Kafka</a></td></tr>
+		<tr><td>Support for logs uploaded via Kafka</td><td>CLS is compatible with Kafka to be compatible with open-source ecosystems. You only need to modify the write source of your existing system to achieve quick access and support various open-source collection components such as Logstash, Fluentd, and Filebeat.</td><td>2021-11-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43574">Uploading Log over Kafka</a></td></tr>
 		<tr><td>Support for downloading up to 50 million logs at a time</td><td>The number of raw logs that can be downloaded at a time is increased from 10 million to 50 million, and the limit on the number of download tasks is removed, significantly improving the log download speed.</td><td>2021-11-08</td><td><a href="https://intl.cloud.tencent.com/document/product/614/34234">Downloading Log</a></td></tr>
 	</tbody>
 </table>
@@ -200,7 +220,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Support for template variables in the dashboard</td><td>The data source variable and quick filter variable are added to the dashboard, allowing users to flexibly switch between log topics for multiple data sources in the same dashboard and quickly filter metric conditions.</td><td>2021-10-19</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43561">Template Variables</a></td></tr>
+		<tr><td>Support for template variables in the dashboard</td><td>The data source variable and quick filter variable are added to the dashboard, allowing you to flexibly switch between log topics for multiple data sources in the same dashboard and quickly filter metric conditions.</td><td>2021-10-19</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43561">Template Variables</a></td></tr>
 	</tbody>
 </table>
 
@@ -217,7 +237,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Kafka real-time consumption</td><td>The Kafka consumption capability is now available in CLS. Users can use the Kafka real-time consumption feature to export log data to specified applications efficiently and conveniently.</td><td>2021-09-17</td><td><a href="https://intl.cloud.tencent.com/document/product/614/47570">	Chart Overview</a></td></tr>
+		<tr><td>Kafka real-time consumption</td><td>The Kafka consumption capability is now available in CLS. You can use the Kafka real-time consumption feature to export log data to specified applications efficiently and conveniently.</td><td>2021-09-17</td><td><a href="https://intl.cloud.tencent.com/document/product/614/47570">	Chart Overview</a></td></tr>
 	</tbody>
 </table>
 
@@ -234,10 +254,10 @@
 	</thead>
 	<tbody>
 		<tr><td>Brand-new monitoring alarm features</td><td>	
-Updated features:<ul  style="margin: 0;"><li>Added custom alarm content templates</li><li>Added the custom multi-dimensional analysis feature</li><li>Added mobile alarm channels such as WeChat and WeCom</li><li>Added the feature of reporting alarms within 1 minute when exceptions occur</li></ul></td><td>2021-08-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39573">Monitoring Alarm Overview</a></td></tr>
-		<tr><td>Offline log solution in beta testing</td><td>Adopted the low-cost offline log storage solution to search and store massive infrequently accessed logs, requiring a total cost 80% lower than that of <B>real-time log storage</B>. The solution is now available in Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, and Hong Kong, China.</td><td>2021-08-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42004">Offline Storage Overview</a></td></tr>
+Updated features:<ul  style="margin: 0;"><li>Added custom alarm content templates</li><li>Added the custom multi-dimensional analysis feature</li><li>Added the feature of reporting alarms within 1 minute when exceptions occur</li></ul></td><td>2021-08-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39573">Monitoring Alarm Overview</a></td></tr>
+		<tr><td>Offline log solution in beta testing</td><td>Adopted the low-cost offline log storage solution to search and store massive infrequently accessed logs, requiring a total cost 80% lower than that of <B>real-time log storage</B>. The solution is now available in Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, and Hong Kong (China).</td><td>2021-08-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42004">STANDARD_IA</a></td></tr>
 		<tr><td>Released over 200 analytic functions</td><td>Released over 200 SQL analytic functions in all regions to meet log data aggregate analysis in various scenarios to enhance CLS's data visualization capability.</td><td>2021-08-12</td><td><a href="https://www.tencentcloud.com/document/product/614/36745">SQL Functions</a></td></tr>
-		<tr><td>Log parsing based on custom formats</td><td>Added the LogListener advanced data processing feature to allow users to parse log files based on custom formats to implement the collection of logs in complex formats.</td><td>2021-08-06</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42742">Custom Format</a></td></tr>
+		<tr><td>Log parsing based on custom formats</td><td>Added the LogListener advanced data processing feature to allow users to parse log files based on custom formats to implement the collection of logs in complex formats.</td><td>2021-08-06</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42742">Combined Parsing Format</a></td></tr>
 	</tbody>
 </table>
 
@@ -253,9 +273,9 @@ Updated features:<ul  style="margin: 0;"><li>Added custom alarm content template
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Full/Incremental collection policies</td><td>Added the feature to allow users to configure whether to use full or incremental log collection via LogListener, meeting users' requirement for shipping only new log data and significantly reducing users' write traffic costs.</td><td>2021-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/32287">Full/Incremental Collection Policy</a></td></tr>
-		<tr><td>Optimized search error messages</td><td>Standardized error messages for higher readability of the search error information.</td><td>2021-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/44224">Search Analysis Error</a></td></tr>
-		<tr><td>Chinese text segmentation</td><td>Added the Chinese text segmentation feature to segment logs containing Chinese characters based on the Chinese syntax to facilitate log search.</td><td>2021-07-08</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">Chinese Text Segmentation</a></td></tr>
+		<tr><td>Full/Incremental collection policies</td><td>Added the feature to allow users to configure whether to use full or incremental log collection via LogListener, meeting users' requirement for shipping only new log data and significantly reducing users' write traffic costs.</td><td>2021-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/32287">Full Text in a Single Line</a></td></tr>
+		<tr><td>Optimized search error messages</td><td>Standardized error messages for higher readability of the search error information.</td><td>2021-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/44224">	Search Analysis Error</a></td></tr>
+		<tr><td>Chinese text segmentation</td><td>Added the Chinese text segmentation feature to segment logs containing Chinese characters based on the Chinese syntax to facilitate log search.</td><td>2021-07-08</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">Configuring Index</a></td></tr>
 	</tbody>
 </table>
 
@@ -381,7 +401,7 @@ Updated features:<ul  style="margin: 0;"><li>Added custom alarm content template
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>SQL statistical analysis fully available</td><td>CLS provides the SQL statistical analysis feature to help users aggregate and analyze log data and display the analysis results in charts. </td><td>2020-11-24</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37803">Log Analysis Overview</a></td></tr>
+		<tr><td>SQL statistical analysis fully available</td><td>CLS provides the SQL statistical analysis feature to help users aggregate and analyze log data and display the analysis results in charts. </td><td>2020-11-24</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37803">Overview and Syntax Rules</a></td></tr>
 		<tr><td>Supported shipping to SCF</td><td>CLS supports shipping data of log topics to SCF via the CLS's log trigger to meet log data ETL requirements. </td><td>2020-11-20</td><td><a href="https://www.tencentcloud.com/document/product/614/38883">Overview</a></td></tr>
 		<tr><td>CLS working with TKE (event and audit center)</td><td>CLS and TKE jointly launched the cluster audit and event log center, which allows users to view audit logs and cluster events in real time through visual charts, improving the efficiency of container cluster Ops with ease. </td><td>2020-11-03</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38338">Cluster Audit</a></td></tr>
 	</tbody>
@@ -418,7 +438,7 @@ Updated features:<ul  style="margin: 0;"><li>Added custom alarm content template
 	<tbody>
 		<tr><td>CLS newly available in Taipei and Seoul</td><td>CLS is now available in Taipei and Seoul.</td><td>2020-09-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a></td></tr>
 		<tr><td>Search page supporting layout configuration</td><td>The search page provides access for LogListener collection configuration and index configuration. It allows users to quickly view server group status and index field information.</td><td>2020-09-24</td><td>-</td></tr>
-		<tr><td>Full support for Lucene syntax</td><td>CLS fully supports Lucene syntax search.</td><td>2020-09-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37803">Syntax and Rules</a></td></tr>
+		<tr><td>Full support for Lucene syntax</td><td>CLS fully supports Lucene syntax search.</td><td>2020-09-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37803">Overview and Syntax Rules</a></td></tr>
 		<tr><td>Release of free tiers</td><td>After the CLS service is commercialized, Tencent Cloud still provides a certain free tier for all users in each region.</td><td>2020-09-12</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37889">Free Tier</a></td></tr>
 	</tbody>
 </table>

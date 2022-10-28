@@ -1,17 +1,19 @@
 This document introduces the basic syntax and examples of string functions.
 
 >!
-> - In CLS analysis statements, strings must be included in single quotes (''), and field names and column names are unsigned or included in double quotes (""). For example, 'status' indicates the string `status`, and status or "status" indicates the log field `status`.
+> - Strings must be included in single quotation marks `''`, while characters that are unsigned or included in double quotation marks `""` indicate field or column names. For example, `'status'` indicates the string `status`, while `status` or `"status"` indicates the log field `status`.
+> - When a string contains a single quotation mark `'`, you need to use `''` (two single quotation marks) to represent the single quotation mark itself. For example `'{''version'': ''1.0''}'` indicates the raw string {'version': '1.0'}. No special processing is required if the string itself contains a double quotation mark `"`.
 > - In the following functions, all the `key` parameters indicate log field names.
 > 
+
 
 | Function                             | Description                                                         | Example                                                         |
 | ------------------------------------ | ------------------------------------------- | ------------------------------------------ |
 | chr(number)                          | Returns characters that match the ASCII code point (bit) specified by the input parameter. The return value is of the VARCHAR type. | Return characters that match ASCII code bit 77:</br> `* | SELECT chr(77)`   |
 | codepoint(string)                    | Converts ASCII field values to BIGINT values. The return value is of the integer type. | Convert character values in ASCII code to their corresponding positions:</br> `* | SELECT codepoint('M')` |
-| concat(key1, ..., keyN)              | Concatenates strings key1, key2, ...keyN. The concatenation effect is consistent with that of the \|\| connectors. The return value is of the VARCHAR type. | Concatenate multiple strings into one:</br> `* | SELECT concat(remote_addr, host, time_local)` |
+| concat(key1, ..., keyN)              | Concatenates strings key1, key2, ...keyN. The concatenation effect is consistent with that of the \|\| connectors. The return value is of the VARCHAR type. Note that when the random string is `null`, the return value is `null`. To skip `null`, use `concat_ws`. | Concatenate multiple strings into one:</br> `* | SELECT concat(remote_addr, host, time_local)` |
 | concat_ws(split_string,key0, ..., keyN)        | Concatenates strings key1, key2, ...keyN using `split_string` as the separator. `split_string` can be a string or variable. If `split_string` is null, null values in key1, key2, ...keyN are skipped. The return result is of the VARCHAR type. | Concatenate multiple strings using / as the separator:</br>`* | SELECT concat_ws('/', remote_addr,host,time_local)` |
-| concat_ws(split_string, array(varchar)) | Concatenates elements in an array into a string using `split_string` as the separator. If `split_string` is `null`, the result is null and null values in the array are skipped. The return result is of the VARCHAR type.</br> Note: in this function, the `array(varchar)` parameter is an array, not a string. | Concatenate elements in an array into a string using # as the separator: (in this example, the output of the `split` function is an array)</br>`* | select concat_ws('#',split('cloud.tencent.com/product/cls', '/'))` |
+| concat_ws(split_string, array(varchar)) | Concatenates elements in an array into a string using `split_string` as the separator. If `split_string` is `null`, the result is null and null values in the array are skipped. The return result is of the VARCHAR type.</br> Note: In this function, the `array(varchar)` parameter is an array, not a string. | Concatenate elements in an array into a string using # as the separator: (in this example, the output of the `split` function is an array)</br>`* | select concat_ws('#',split('cloud.tencent.com/product/cls', '/'))` |
 | format(format, args...)              | Formats the output of the `args` parameter using the `format` format. The return value is of the VARCHAR type. | Format the output of the `remote_addr` and `host` parameters using the format of `IP address: %s, Domain name: %s`:</br> `* | SELECT format('IP address: %s, Domain name: %s', remote_addr, host)  ` |
 | hamming_distance(key1, key2)         | Returns the Hamming distance between the `key1` and `key2` strings. Note that the two strings must have the same length. The return value is of the BIGINT type. | Return the Hamming distance between the `remote_addr` and `remote_addr` strings:</br> `* | SELECT hamming_distance(remote_addr, remote_addr)     ` |
 | length(key)                          | Returns the length of a string. The return value is of the BIGINT type. | Return the length of the `http_user_agent` string:</br> `* | SELECT length(http_user_agent)      ` |
@@ -49,7 +51,7 @@ This document introduces the basic syntax and examples of string functions.
 | from_utf8(binary, replace) | Converts a binary string to a UTF-8 string. Invalid UTF-8 characters will be replaced with `replace`. The return value is of the VARCHAR type. |
 
 
-#### Samples
+#### Examples
 
 This section provides samples of the query and analysis statements based on the following log example.
 Raw log data sample:

@@ -40,17 +40,17 @@ sudo service rsyslog restart
 - 如果您想选择新的日志主题，可执行如下操作：登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
 	1. 在左侧导航栏中，单击 **概览**，进入概览页面。
 	2. 在其他日志栏下，找到syslog 采集，单击 **立即接入** 。
-	![](https://qcloudimg.tencent-cloud.cn/raw/39076bfdb53332530e6dddf69e8ad44a.png)
+
 	3. 在创建日志主题页面，根据实际需求，输入日志主题名称，配置日志保存时间等信息，单击 **下一步** 。
 - 如果您想选择现有的日志主题，可执行如下操作：登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
   1. 在左侧导航栏中，单击 **日志主题**，选择需要投递的日志主题，进入日志主题管理页面。
   2. 选择 **采集配置** 页签，在 **Loglistener**采集配置栏下单击**新增**。
-![](https://qcloudimg.tencent-cloud.cn/raw/2c6b184594228a2bbe545149b9bdf9c0.png)
+
 
 #### **步骤** 2 **：机器组配置**
 
 在"机器组管理"页面，勾选需要与当前日志主题进行绑定的机器组，单击**下一步**，即可进入采集配置阶段，更多详情请参阅 [管理机器组](https://cloud.tencent.com/document/product/614/17412)。
-![](https://qcloudimg.tencent-cloud.cn/raw/f4d04ca9eaa15771befaf66764bacc61.png)
+
 
 #### **步骤** 3 **：** syslog **采集配置**
 
@@ -65,12 +65,12 @@ sudo service rsyslog restart
 | 解析失败上传 | 开关 | 指定解析失败后的操作，打开时表示如果解析失败，按照输入的key返回日志全文。配置为false ，表示解析失败时丢弃日志。 |
 | 解析失败日志的键名称(Key) | 输入框 | 指定解析失败的 key 名 |
 
-![](https://qcloudimg.tencent-cloud.cn/raw/4f3c692dc2803b5ae242f8d1b85c88af.png)
+
 
 #### **步骤** 4 **：索引配置**
 
 1. 在索引配置页面，配置如下信息：
-![](https://qcloudimg.tencent-cloud.cn/raw/e71f7b32e963da0f87de75093287e92f.png)
+
  - 索引状态：确认是否开启。
  - 全文索引：确认是否需要设置大小写敏感。全文分词符：默认为"@&()='",;:\<\>[]{}/ \n\t\r"，确认是否需要修改。
  - 是否包含中文：确认是否开启。
@@ -83,7 +83,6 @@ sudo service rsyslog restart
 
 ## 查看 syslog 日志
 当前日志主题下配置完成 syslog 采集后，单击**检索**，进入**检索分析**页面查看 syslog。
-![](https://qcloudimg.tencent-cloud.cn/raw/64a10cddd2abc70c44b1aa889eaf6d50.png)
 
 | **字段** | **说明** |
 | --- | --- |
