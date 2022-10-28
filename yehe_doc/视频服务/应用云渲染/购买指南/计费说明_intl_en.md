@@ -1,12 +1,12 @@
-CAR is billed by application rendering **concurrency**. A concurrency represents the collection of virtual computing resources, including CPU, bandwidth, disk, and GPU, required for one user to render your application content. Each concurrency supports access by only one user at a time; that is, if 100 concurrencies are purchased, 100 users can access the cloud rendering environment at the same time, and excessive users need to queue up to wait for a concurrency to become available.
+CAR is billed by application rendering **concurrency**. A concurrency represents the collection of virtual computing resources, including CPU, bandwidth, disk, and GPU, required for one user to render your application content. **Each concurrency supports access by only one user at a time**; that is, if 100 concurrencies are purchased, 100 users can access the cloud rendering environment at the same time, and excessive users need to queue up to wait for a concurrency to become available.
 
 ## CAR concurrency scales
 
-| Concurrency Scale | CPU        | Memory      | GPU         | Video Memory    | Bandwidth    |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| S - For rendering small applications    | 4-core vCPU or above  | 8 GB or above  | 2 TF SP/30T INT or above   | 4 GB or above  | Up to 8 Mbps |
-| M - For rendering medium-sized applications    | 4-core vCPU or above  | 16 GB or above | 4 TF SP/30T INT or above   | 6 GB or above  | Up to 8 Mbps |
-| L - For rendering large applications    | 10-core vCPU or above  | 32 GB or above | 8.1 TF SP/30T INT or above   | 12 GB or above  | Up to 8 Mbps |
+| Concurrency Scale | CPU        | Memory      | GPU         | Video Memory    | Bandwidth    | Minimum quantity for sale |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- |---------------------- |
+| S - For rendering small applications    | 4-core vCPU or above  | 8 GB or above  | 2 TF SP/30T INT or above   | 4 GB or above  | Up to 8 Mbps | 1 concurrency (1 concurrent user) |
+| M - For rendering medium-sized applications    | 4-core vCPU or above  | 16 GB or above | 4 TF SP/30T INT or above   | 6 GB or above  | Up to 8 Mbps |1 concurrency (1 concurrent user) |
+| L - For rendering large applications    | 10-core vCPU or above  | 32 GB or above | 8.1 TF SP/30T INT or above   | 12 GB or above  | Up to 8 Mbps |1 concurrency (1 concurrent user) |
 
 
 >? The main metrics for the GPU performance are floating-point operations capabilities.
@@ -22,9 +22,9 @@ CAR is billed by application rendering **concurrency**. A concurrency represents
 <th>Billing Mode</th>
 <th>Billable Item</th>
 <th>Billing Cycle</th>
-<th>Singapore (USD/Concurrency/Cycle)</th>
-<th>Tokyo (USD/Concurrency/Cycle)</th>
-<th>Seoul (USD/Concurrency/Cycle)</th>
+<th>Singapore (USD/Concurrent User/Cycle)</th>
+<th>Tokyo (USD/Concurrent User/Cycle)</th>
+<th>Seoul (USD/Concurrent User/Cycle)</th>
 </tr>
 </thead>
 <tbody><tr>
