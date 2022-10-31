@@ -98,15 +98,13 @@
 - 网络信息：集群加入的私有网络、公网接入地址、Web控制台的登录地址和用户名密码
 - 集群规格：当前集群的规格类型、最高 TPS、峰值带宽和存储空间。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/93b5464cd0747be1d11ab75fdd6bb3ad.png)
-
 
 
 ### 获取接入地址
 
 在**集群管理**列表页，单击操作列的**接入地址**，可获取集群的接入地址。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/28ce6bbf693e87b39320e8a027584b57.png)
+
 
 ### 编辑集群
 
