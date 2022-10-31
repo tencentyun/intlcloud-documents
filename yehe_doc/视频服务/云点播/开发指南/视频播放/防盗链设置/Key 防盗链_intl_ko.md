@@ -2,7 +2,6 @@
 - 비디오 URL에 만료 시간을 지정하여 악의적인 사용자가 URL을 장기 사용을 위해 다른 웹사이트로 전송하는 것을 방지할 수 있습니다.
 - 비디오 URL에 재생이 허용되는 최대 IP 수를 지정하여 악의적인 사용자가 동영상을 무제한으로 배포하는 것을 방지할 수 있습니다.
 - 비디오 URL에 미리보기 시간을 지정하여 미리보기를 구현할 수 있습니다.
-- 비디오 URL에 시청자 ID를 지정하고 [Digital Watermark](https://intl.cloud.tencent.com/document/product/266/47920) 기능과 함께 사용할 수 있습니다.
 - `KEY`를 사용하여 서명을 만들어 비디오 URL에 넣을 수 있습니다. 키가 공개되지 않는 한 비디오 URL은 위조될 수 없습니다.
 - CDN 노드는 비디오 URL의 매개변수와 서명을 확인하여 비디오 재생 요청을 제어합니다. 요청이 검사를 통과하지 못하면 403 오류가 반환됩니다.
 - 지원되는 파일 형식은 다음과 같습니다: MP4, TS, M3U8, FLV, AAC, MOV, WMV, AVI, MP3, RMVB, MKV, MPG, 3GP, WEBM, M4V, ASF, F4V, WAV, MPEG, VOB, RM, WMA, DAT, M4A, MPD, M4S.
@@ -15,7 +14,7 @@
 
 비디오의 링크 도용 방지 URL은 다음과 같은 QueryString 형식의 원본 URL 끝에 링크 도용 방지 매개변수를 추가하여 생성할 수 있습니다.
 ```
-http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4?t=[t]&exper=[exper]&rlimit=[rlimit]&us=[us]&uv=[uv]&sign=[sign]
+http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4?t=[t]&exper=[exper]&rlimit=[rlimit]&us=[us]&sign=[sign]
 ```
 다음은 링크 도용 방지 URL의 매개변수에 대한 설명과 값입니다.
 
@@ -28,13 +27,12 @@ http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4?t=[t]&exper=[exper]&rlimi
 | `exper`  | No   | <li>10진수 초 단위의 미리보기 시간입니다. 이 매개변수가 비어 있거나 0이면 미리보기 모드가 비활성화됩니다(즉, 전체 비디오가 반환됨).<br><li>미리보기 시간은 원본 비디오 시간보다 짧아야 합니다. 그렇지 않으면 재생에 실패할 수 있습니다. |
 | `rlimit` | No   | <li>재생에 허용된 장치 IP의 최대 십진수입니다. 이 매개변수를 비워두면 제한이 없습니다.<br><li>비디오 URL을 한 명의 사용자만 재생하도록 제한하는 경우 재연결 후 모바일 장치의 IP가 변경될 수 있으므로 rlimit를 1로 설정하지 않는 것이 좋습니다(예: 3으로 설정). |
 | `us`     | No   | <li>링크 아이디. 링크의 고유성을 향상시키기 위해 링크 도용 방지 URL을 랜덤화하는 데 사용됩니다.<br><li>매번 링크 도용 방지 URL을 생성할 때 임의의 us 값을 지정하는 것이 좋습니다.|
-| `uv` | No   | 6자리의 16진법을 포함해야 하는 비디오를 재생하는 사용자의 ID입니다. 이 매개변수는 [Digital Watermark](https://intl.cloud.tencent.com/document/product/266/47920) 기능에 사용됩니다.|
 | `sign`   | Yes   | <li>링크 도용 방지 서명. 32자 길이의 16진수로 링크 도용 방지 URL의 유효성을 확인하는 데 사용됩니다.<br><li>URL이 서명 검사를 통과하지 못하면 403 오류가 반환됩니다. 다음은 [서명 계산 공식](#formula)입니다. |
 
 
 #### [](id:formula)서명 계산 공식
 ```
-sign = md5(KEY + Dir + t + exper + rlimit + us + uv)
+sign = md5(KEY + Dir + t + exper + rlimit + us)
 ```
 
 수식에서 `+`는 문자열 스플라이싱을 나타냅니다. 옵션 매개변수는 빈 문자열일 수 있습니다.
