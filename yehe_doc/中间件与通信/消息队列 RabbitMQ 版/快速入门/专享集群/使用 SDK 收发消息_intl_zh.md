@@ -93,7 +93,7 @@ import com.tencent.tdmq.demo.cloud.Constant;
 </tr>
 <tr>
 <td align="left">factory.setUri</td>
-<td align="left">集群接入地址，在集群基本信息页面的<strong>私有网络</strong>模块获取。<img src="https://qcloudimg.tencent-cloud.cn/raw/04d5cad31290beb1445625c8bf373031.png" alt="img"></td>
+<td align="left">集群接入地址，在集群基本信息页面的<strong>私有网络</strong>模块获取。</td>
 </tr>
 <tr>
 <td align="left">factory.setVirtualHost</td>
@@ -201,7 +201,7 @@ import java.nio.charset.StandardCharsets;
 </tr>
 <tr>
 <td align="left">factory.setUri</td>
-<td align="left">集群接入地址，在集群基本信息页面的<strong>私有网络</strong>模块获取。<img src="https://qcloudimg.tencent-cloud.cn/raw/04d5cad31290beb1445625c8bf373031.png" alt="img"></td>
+<td align="left">集群接入地址，在集群基本信息页面的<strong>私有网络</strong>模块获取。</td>
 </tr>
 <tr>
 <td align="left">factory.setVirtualHost</td>
