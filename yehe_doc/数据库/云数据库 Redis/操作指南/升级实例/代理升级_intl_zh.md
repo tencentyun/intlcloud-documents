@@ -18,7 +18,7 @@
 <tr>
 <td>5.0.0</td><td>集群架构支持 unlink 和 exists 命令。</td></tr>
 <tr>
-<td rowspan=3>Proxy 4.0</td> 
+<td rowspan=4oxy 4.0</td> 
 <td>3.5.0</td><td>支持命令分析功能，可查看单个命令的 QPS、P99 执行时延、平均执行时延、最大执行时延等信息。</td></tr>
 <tr>
 <td>3.3.0</td><td>系统监控数据采集时间粒度支持5秒统计。</td></tr>
@@ -45,9 +45,9 @@
 3. 在实例列表中，找到需升级版本的实例。
 4. 单击其实例 ID，进入**实例详情**页面。
 5. 在**实例详情**页面的**规格信息**区域，单击**代理版本**后面的**代理升级**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/c9f1d31f6687c96115af9cbda957fc2c.png"  style="zoom:70%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c463c3ad28040dc3e5ec87999517d12e.png"  style="zoom:80%;">
 6. 在弹出的对话框，根据下表确认待升级实例的信息，配置升级的目标版本，单击**确定**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/9dce36bc5cc603e415e7211951920859.png"  style="zoom:50%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d2be86cb8b837762d6d4064eb1d564d6.png"  style="zoom:80%;">
 <table>
 <thead><tr><th>参数名称</th><th>参数说明</th></tr></thead>
 <tbody>
