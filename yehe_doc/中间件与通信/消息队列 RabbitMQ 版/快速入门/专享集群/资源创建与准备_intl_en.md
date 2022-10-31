@@ -10,7 +10,6 @@ This document describes how to create an exclusive cluster in the TDMQ console a
 2. Select **RabbitMQ** > **Cluster** on the left sidebar and click **Create Cluster** to enter the purchase page.
 3. On the purchase page, select the target instance specification and click **Buy Now**.
 4. Click the cluster ID to enter the **Basic Info** page and get the server connection information in the **Network Info** section.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/04d5cad31290beb1445625c8bf373031.png)
 
 
 
