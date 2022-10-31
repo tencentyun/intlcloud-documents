@@ -1,8 +1,9 @@
 
+弹性公网 IP 是在边缘实例中使用的公网 IP 地址。若资源闲置时，会收取 IP 资源费用。本文仅介绍弹性公网IP的IP资源费用，网络带宽费用请参见 [网络带宽](https://intl.cloud.tencent.com/document/product/1119/43404)。
 
-弹性公网 IP 是在边缘实例中使用的公网 IP 地址。若资源闲置时，会收取 IP 资源费用。
 <dx-alert infotype="explain" title="">
-EIP 未绑定边缘资源处于闲置状态时会收取 IP 资源费用。EIP 绑定边缘资源有效使用时，不再收取IP资源费用，仅收取公网网络费用，请参见 [计费概述（总）](https://intl.cloud.tencent.com/document/product/1119/43404)。
+- EIP 未绑定边缘资源处于闲置状态时会收取 IP 资源费用。EIP 绑定边缘资源有效使用时，不再收取 IP 资源费用，仅收取公网网络费用，请参见 [计费概述（总）](https://intl.cloud.tencent.com/document/product/1119/43404)。
+- 2022年06月01日00时00分起，边缘计算机器弹性公网 IP 的网络带宽将支持按天结算，详情请参见 [网络带宽按日结算](https://intl.cloud.tencent.com/document/product/1119/43404)。如有疑问请 [提交工单](https://console.intl.cloud.tencent.com/workorder/category)咨询，给您带来不便，敬请谅解。 
 </dx-alert>
 
 ## 计费模式
@@ -23,9 +24,9 @@ IP 资源费用 = 弹性公网 IP 小时单价 × 计费时长
 
 ## 计费价格
 
-| 地域         | 价格（元/小时） |
+| 地域         | 价格（美元/小时） |
 | ------------ | --------------- |
-| 中国大陆地区 | 0.20             |
+| 中国大陆地区 | 0.031             |
 
 <dx-alert infotype="notice" title="">
 为避免产生不必要的 IP 资源费用，请您申请 EIP 后及时绑定边缘资源，解绑边缘资源后及时释放不再使用的 EIP。
