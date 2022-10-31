@@ -5,10 +5,10 @@
 <thead><tr><th width=15%>Proxy 版本</th><th width=15%>Proxy 小版本</th><th width=70%>新增&优化&修复</th></tr></thead>
 <tbody><tr>
 <td rowspan=6>Proxy 5.0</td>
-<td>5.6.0</td><td>支持 SSL 加密，实现数据信息加密传输。</td></tr>
+<td>5.6.0</td><td><ul><li>集群架构支持 wait 命令。</li><li>支持 SSL 加密，实现数据信息加密传输。</li></ul></td></tr>
 <tr>
 <td>5.5.0</td>
-<td><ul><li>支持就近访问功能。</li><li>集群版支持 dbsize 命令，包括所有分片节点 Key 的数量。</li><li>慢日志支持查看客户端 port 信息。</li><li>支持 flushall/flushdb 命令，集群架构可分发到的所有分片主节点，同时保留指定的 nodeid 参数。</li><li>支持大 Value 请求次数的监控指标。</li><li>集群版支持 Scan 命令，包括遍历所有分片节点。</li><li>修复在事务之后执行 select 命令可能会导致返回 ERR unknown command 'select' command 的问题。</li><li>修复在 pipeline 场景下使用 watch+ 事务, 造成锁定的连接释放不及时，造成命令被发送到错误节点上而触发 Move 报错的问题。</li></ul></td></tr>    
+<td><ul><li>集群架构支持 wait 命令。</li><li>支持就近访问功能。</li><li>集群版支持 dbsize 命令，包括所有分片节点 Key 的数量。</li><li>慢日志支持查看客户端 port 信息。</li><li>支持 flushall/flushdb 命令，集群架构可分发到的所有分片主节点，同时保留指定的 nodeid 参数。</li><li>支持大 Value 请求次数的监控指标。</li><li>集群版支持 Scan 命令，包括遍历所有分片节点。</li><li>修复在事务之后执行 select 命令可能会导致返回 ERR unknown command 'select' command 的问题。</li><li>修复在 pipeline 场景下使用 watch+ 事务, 造成锁定的连接释放不及时，造成命令被发送到错误节点上而触发 Move 报错的问题。</li></ul></td></tr>    
 <tr>
 <td>5.4.0</td><td>优化 P99 监控指标的统计策略，包括所有 Redis 命令。</td></tr>
 <tr>
@@ -45,9 +45,9 @@
 3. 在实例列表中，找到需升级版本的实例。
 4. 单击其实例 ID，进入**实例详情**页面。
 5. 在**实例详情**页面的**规格信息**区域，单击**代理版本**后面的**代理升级**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/c463c3ad28040dc3e5ec87999517d12e.png"  style="zoom:70%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c9f1d31f6687c96115af9cbda957fc2c.png"  style="zoom:70%;">
 6. 在弹出的对话框，根据下表确认待升级实例的信息，配置升级的目标版本，单击**确定**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/d2be86cb8b837762d6d4064eb1d564d6.png"  style="zoom:50%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9dce36bc5cc603e415e7211951920859.png"  style="zoom:50%;">
 <table>
 <thead><tr><th>参数名称</th><th>参数说明</th></tr></thead>
 <tbody>
