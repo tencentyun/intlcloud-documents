@@ -93,7 +93,7 @@ import com.tencent.tdmq.demo.cloud.Constant;
 </tr>
 <tr>
 <td align="left">factory.setUri</td>
-<td align="left">Enter the cluster access address, which can be obtained from the <strong>VPC</strong> section on the **Basic Info** page of the cluster. <img src="https://qcloudimg.tencent-cloud.cn/raw/04d5cad31290beb1445625c8bf373031.png" alt="img"></td>
+<td align="left">Enter the cluster access address, which can be obtained from the <strong>VPC</strong> section on the <strong>Basic Info</strong> page of the cluster.</td>
 </tr>
 <tr>
 <td align="left">factory.setVirtualHost</td>
@@ -201,7 +201,7 @@ import java.nio.charset.StandardCharsets;
 </tr>
 <tr>
 <td align="left">factory.setUri</td>
-<td align="left">Enter the cluster access address, which can be obtained from the <strong>VPC</strong> section on the **Basic Info** page of the cluster. <img src="https://qcloudimg.tencent-cloud.cn/raw/04d5cad31290beb1445625c8bf373031.png" alt="img"></td>
+<td align="left">Enter the cluster access address, which can be obtained from the <strong>VPC</strong> section on the <strong>Basic Info</strong> page of the cluster.</td>
 </tr>
 <tr>
 <td align="left">factory.setVirtualHost</td>
