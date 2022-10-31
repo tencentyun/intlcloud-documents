@@ -2,7 +2,7 @@
 TencentDB for Redis supports public network access in Chengdu, Beijing, Shanghai, and Guangzhou regions. To use public network access in other regions, you can use a CVM instance with a public IP for port forwarding to access TencentDB for Redis over the public network.
 >?Because iptables-based forwarding may be unstable, we recommend that you do not access instances over the public network in the production environment.
 >
-![](https://main.qcloudimg.com/raw/7bad7f6f7ca82c8655f807d2036d983b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c01f21301fdb1a386ddc463e6ed26761.jpeg)
 
 ## Directions
 1. Log in to a CVM instance and enable the IP forwarding feature. For more information, see [Logging In to Linux Instance (Web Shell)](https://intl.cloud.tencent.com/document/product/213/5436).
