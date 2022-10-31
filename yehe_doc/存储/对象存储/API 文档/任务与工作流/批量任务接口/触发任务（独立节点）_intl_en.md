@@ -113,8 +113,8 @@ The nodes are described as follows:
 | QueueId                   | Request.Operation | Queue ID      | String | Yes   |
 | UserData                  | Request.Operation | User information      | String | No   |
 | JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
-| CallBackFormat     | Request.Operation | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
-| CallBackType       | Request.Operation | Job callback type, which can be `Url` (default value) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
+| CallBackFormat     | Request.Operation | Job callback format, which can be `JSON` or `XML` (default). It has a higher priority than that of the queue. | String | No |
+| CallBackType       | Request.Operation | Job callback type, which can be `Url` (default) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
 | CallBack           | Request.Operation | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
 | CallBackMqConfig   | Request.Operation | TDMQ configuration for job callback, which will be required if `CallBackType` is `TDMQ`.                | Container | No |
 
@@ -216,7 +216,7 @@ The nodes are described as follows:
 | Message               | Request.Operation.JobParam.DigitalWatermark | The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).    | String | Yes   |
 | Type               | Request.Operation.JobParam.DigitalWatermark | Watermark type, which currently can be set to `Text` only.      | String | Yes |
 | Version            | Request.Operation.JobParam.DigitalWatermark | Watermark version, which currently can be set to `V1` only.       | String | Yes |
-| IgnoreError        | Request.Operation.JobParam.DigitalWatermark | <ul style="margin: 0;"><li> Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default value). </li> <li>If `Request.Operation.Tag` is `DigitalWatermark`, this parameter will not take effect, and the job will fail if watermark adding fails. </li></ul>|String | No   |
+| IgnoreError        | Request.Operation.JobParam.DigitalWatermark | <ul style="margin: 0;"><li> Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default). </li> <li>If `Request.Operation.Tag` is `DigitalWatermark`, this parameter will not take effect, and the job will fail if watermark adding fails. </li></ul>|String | No   |
 
 `Animation` has the following sub-nodes:
 Same as `Request.Operation.Animation` as described in [Submitting Video-to-Animated Image Conversion Job](https://intl.cloud.tencent.com/document/product/1045/49569).
@@ -322,7 +322,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :--- | :-- | :-- | :-- |
-| Response | None | Response container | Container |
+| Response | None | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 

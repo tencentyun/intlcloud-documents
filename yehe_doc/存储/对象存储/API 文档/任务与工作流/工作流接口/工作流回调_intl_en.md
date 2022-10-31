@@ -53,7 +53,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 

@@ -52,8 +52,8 @@ The request body of this request is empty.
 | :----------------- | :----------------------------------------------------------- | :----- | :------- |
 | workflowId         | Workflow ID                                                    | String | Yes       |
 | name               | Filename                                                     | String | No       |
-| orderByTime        | `Desc` (default value) or `Asc`                                   | String | No       |
-| size               | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100.                      | String | No       |
+| orderByTime        | `Desc` (default) or `Asc`                                   | String | No       |
+| size               | Maximum number of jobs that can be pulled. Default value: `10`; maximum value: `100`.                      | String | No       |
 | states             | Workflow instance status. If you enter multiple statuses, separate them by comma.<br> Valid values: `All`, `Success`, `Failed`, `Running`, `Cancel`. Default value: `All`. | String | No       |
 | startCreationTime  | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`        | String | No       |
 | endCreationTime    | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`        | String | No       |
@@ -95,7 +95,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 

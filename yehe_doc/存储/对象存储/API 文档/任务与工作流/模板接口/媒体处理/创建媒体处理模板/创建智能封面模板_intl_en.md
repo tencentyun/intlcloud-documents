@@ -123,7 +123,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 <span id="Response"></span>
 `Response` has the following sub-nodes:
@@ -133,7 +133,7 @@ The nodes are as described below:
 | Tag                | Response.Template | Template tag: SmartCover                                       | String    |
 | Name               | Response.Template | Template name                                         | String    |
 | BucketId           | Response.Template | Template bucket                 | String    |
-| Category           | Response.Template | Template category: Custom or Official | String    |
+| Category           | Response.Template | Template category: `Custom` or `Official` | String    |
 | TemplateId         | Response.Template | Template ID                        | String    |
 | UpdateTime         | Response.Template | Update time                       | String    |
 | CreateTime         | Response.Template | Creation time                       | String    |

@@ -75,10 +75,10 @@ The nodes are described as follows:
 | Tag                | Request | Template tag: Tts                                          | String    | Yes   | Tts |
 | Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       | None                             |
 | Mode               | Request | Processing mode, which is `Asyc` by default. | String   | No    | Asyc (async synthesis); Sync (sync synthesis).</br>When `Asyc` is selected, the codec can only be `pcm`. |
-| Codec              | Request | Audio format, which is wav (sync)/pcm (async) by default. | String | No | wav, mp3, pcm |
-| VoiceType          | Request | Voice, which is `ruxue` by default. | String | No | ruxue, aixiaonan, aixiaoxing |
-| Volume             | Request | Volume, which is 0 by default. | String | No | [-10,10] |
-| Speed              | Request | Speech rate, which is 100 by default. | String | No | [50,200] |
+| Codec              | Request | Audio format, which is `wav` (sync)/`pcm` (async) by default. | String | No | `wav`, `mp3`, `pcm` |
+| VoiceType          | Request | Voice, which is `ruxue` by default. | String | No | `ruxue`, `aixiaonan`, `aixiaoxing` |
+| Volume             | Request | Volume, which is `0` by default. | String | No | [-10,10] |
+| Speed              | Request | Speech rate, which is `100` by default. | String | No | [50,200] |
 
 Voice description
 
@@ -129,7 +129,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :----------------------------------------------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 <span id="Response"></span>
 `Response` has the following sub-nodes:
