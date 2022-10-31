@@ -4,7 +4,7 @@ Minor versions of the TencentDB for Redis proxy are released from time to time t
 <table>
 <thead><tr><th width=15%>Proxy Version</th><th width=15%>Proxy Minor Version</th><th width=70%>New Feature, Optimization, or Fix</th></tr></thead>
 <tbody><tr>
-<tr><td rowspan=5>Proxy 5.0</td>
+<tr><td rowspan=6>Proxy 5.0</td>
 <td>5.6.0</td><td><ul><li>Supported `wait` commands in Cluster Architecture instances.</li><li>Supported SSL encryption to implement encrypted data transfer.</li></ul></td></tr>
 <tr>
 <td>5.5.0</td>
@@ -18,7 +18,7 @@ Minor versions of the TencentDB for Redis proxy are released from time to time t
 <tr>
 <td>5.0.0</td><td>Supported `unlink` and `exists` commands in Cluster Architecture instances.</td></tr>
 <tr>
-<td rowspan=3>Proxy 4.0</td> 
+<td rowspan=4>Proxy 4.0</td> 
 <td>3.5.0</td><td>Supported the command analysis feature. You can view information such as QPS, P99 execution latency, average execution latency, and max execution latency of individual commands.</td></tr>
 <tr>
 <td>3.3.0</td><td>Supported the five-second granularity for system monitoring data collection.</td></tr>
@@ -45,9 +45,9 @@ The version upgrade process mainly consists of data sync and instance switch:
 3. In the instance list, find the target instance.
 4. Click the target instance ID to enter the **Instance Details** page.
 5. In the **Specs Info** section on the **Instance Details** page, click **Upgrade Proxy** after **Proxy Version**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/c9f1d31f6687c96115af9cbda957fc2c.png"  style="zoom:70%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c463c3ad28040dc3e5ec87999517d12e.png"  style="zoom:80%;">
 6. In the pop-up window, confirm the information of the target instance based on the following table, configure the target version, and click **OK**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/9dce36bc5cc603e415e7211951920859.png"  style="zoom:50%;">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d2be86cb8b837762d6d4064eb1d564d6.png"  style="zoom:80%;">
 <table>
 <thead><tr><th >Parameter</th><th >Description</th></tr></thead>
 <tbody>
