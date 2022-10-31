@@ -4,7 +4,7 @@
 
 一時キー（STS）を使用してバケットをマウントするには、次の2つの手順を実行する必要があります。
 
-ステップ1：一時キー設定ファイル（例：/tmp/passwd-sts）を作成し、COSFSコマンドオプション -opasswd-file=\[path\]の指定キー設定ファイルとして使用します。一時キーに関する概念については、[一時キーの生成および使用ガイド](https://intl.cloud.tencent.com/document/product/436/14048)のドキュメントを参照できます。一時キー設定ファイルの例を次に示します。
+手順1：一時キー設定ファイル（例：/tmp/passwd-sts）を作成し、COSFSコマンドオプション -opasswd-file=\[path\]の指定キー設定ファイルとして使用します。一時キーに関する概念については、[一時キーの生成および使用ガイド](https://intl.cloud.tencent.com/document/product/436/14048)のドキュメントを参照できます。一時キー設定ファイルの例を次に示します。
 ```shell
 COSAccessKeyId=AKIDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  #以下は一時キーのId、KeyおよびTokenフィールドです
 COSSecretKey=GYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
@@ -16,7 +16,7 @@ COSAccessTokenExpire=2017-08-29T20:30:00  #一時tokenの有効期限はGMT時�
 >!キーの漏洩防止のため、COSFSはキーファイルの権限を600に設定し、次のコマンドを実行するよう要求します。
 ><pre><code class="language-shell">chmod 600 /tmp/passwd-sts</code></pre>
 >
-ステップ2：COSFSコマンドを実行し、コマンドオプション-ocam_role=[role]を使用して、ロールをsts、-opasswd_file=[path]に指定し、キーファイルパスを指定します。例を次に示します。
+手順2：COSFSコマンドを実行し、コマンドオプション-ocam_role=[role]を使用して、ロールをsts、-opasswd_file=[path]に指定し、キーファイルパスを指定します。例を次に示します。
 ```shell
 cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -oallow_other -ocam_role=sts -opasswd_file=/tmp/passwd-sts
 ```
@@ -111,6 +111,11 @@ COSFSの内部ロジックでは、Headリクエストによって親ディレ�
 ### COSFSで使用済みのストレージ容量を確認するにはどうすればよいですか。
 COSFSは使用済みのストレージ容量を直接確認することはサポートしていません。COSバケットのストレージ量を集計したい場合、データ量が比較的小さいケースではCOSコンソールにログインして確認し、データ量が大きいケースでは[リスト](https://intl.cloud.tencent.com/document/product/436/30622)機能を使用してください。
 
+### どのプロセスがマウントディレクトリにアクセスしているかを確認するにはどうすればよいですか。
+次のコマンドを実行すると、どのプロセスがマウントディレクトリ（/mnt/cosfsなど）にアクセスしているかを確認できます。
+```
+lsof /mnt/cosfs 
+```
 
 
 ## トラブルシューティング
@@ -212,9 +217,9 @@ ln -s /usr/local/util-linux-ng/bin/mount /bin
 
 ### マウントに失敗した場合はどうすればよいですか。
 
-ステップ1：ログファイルおよびプロンプトメッセージから、マウントコマンド、キー設定ファイルの内容が正しいかどうか、COSサービスへのアクセスが可能なネットワーク状態かどうかをチェックします。
+手順1：ログファイルおよびプロンプトメッセージから、マウントコマンド、キー設定ファイルの内容が正しいかどうか、COSサービスへのアクセスが可能なネットワーク状態かどうかをチェックします。
 
-ステップ2：dateコマンドを使用し、マシン時刻が正確かどうかチェックします。正確でない場合はdateコマンドで時刻を修正した後、再マウントを行います。例：`date -s '2014-12-25 12:34:56'`。
+手順2：dateコマンドを使用し、マシン時刻が正確かどうかチェックします。正確でない場合はdateコマンドで時刻を修正した後、再マウントを行います。例：`date -s '2014-12-25 12:34:56'`。
 
 ### `ls -l --time-style=long-iso`コマンドを使用すると、マウントディレクトリの時刻が1970-01-01 08:00に変わりましたが、これは正常ですか。
 
@@ -274,3 +279,5 @@ COSFSはハードディスクをベースとしたファイルシステムでは
 
 
 
+### COSFSが毎日ある時間帯でのCPU使用率が高く、なおかつCOSに対し大量のHead、Listリクエストを送信しています。どのように対処すればよいですか。
+これは通常、マシン上に定時スキャンディスクタスクが存在することが原因です。Linuxシステムの一般的なスキャンディスクプログラムはupdatedbです。COSFSのマウントポイントディレクトリをupdatedbの設定ファイル/etc/updatedb.confファイルのPRUNEPATHS設定項目に追加することで、このプログラムがスキャンディスク動作を行わないようにすることができます。

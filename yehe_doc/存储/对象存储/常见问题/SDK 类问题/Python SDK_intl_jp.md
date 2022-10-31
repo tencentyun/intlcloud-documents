@@ -1,10 +1,10 @@
 ### COS Python SDKのアップグレード後に、「ファイル移動」操作が実行できなくなりましたが、どのように対処すればよいですか。
 
-[PUT Object](https://intl.cloud.tencent.com/document/product/436/10881)および[DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743)インターフェースを使用して実現できます。削除操作を実行する前に、データの整合性を検証することをお勧めします。詳細な説明については、[MD5検証](https://intl.cloud.tencent.com/document/product/436/32467)のドキュメントをご参照ください。
+[PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881)および[DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743)インターフェースを使用して実現できます。削除操作を実行する前に、データの整合性を検証することをお勧めします。詳細な説明については、[MD5検証](https://intl.cloud.tencent.com/document/product/436/32467)のドキュメントをご参照ください。
 
 ### COS Python SDKによってダウンロードファイルの一時リンクを取得するにはどうすればよいですか。
 
-Python SDKは署名取得、リクエスト署名付きURL取得インターフェースならびにオブジェクトダウンロード用署名付きURL取得インターフェースを提供しています。パーマネントキーを使用する場合と一時キーを使用する場合では、署名付きURL取得のための呼び出し方法は同じですが、一時キーを使用する場合はheaderまたはquery_stringにx-cos-security-tokenを追加する必要があります。詳細については、[署名付きURL](https://intl.cloud.tencent.com/document/product/436/31548)のドキュメントをご参照ください。
+Python SDKは署名取得、リクエスト署名付きURL取得インターフェースおよびオブジェクトダウンロード用署名付きURL取得インターフェースを提供しています。パーマネントキーを使用する場合と一時キーを使用する場合では、署名付きURL取得のための呼び出し方法は同じですが、一時キーを使用する場合はheaderまたはquery_stringにx-cos-security-tokenを追加する必要があります。詳細については、[署名付きURLの生成](https://intl.cloud.tencent.com/document/product/436/31548)のドキュメントをご参照ください。
 
 ### COS Python SDKを使用した際にエラーが発生しましたが、どのように対処すればよいですか。
 

@@ -8,8 +8,10 @@
         <td>QPS</td>
     			<td>制限</td>
     			<td><ul  style="margin: 0;"><li>読み取り/書き込みタイプリクエスト：中国大陸パブリッククラウドリージョンではデフォルトで各バケットにつき30000QPSを専有し、その他のリージョンでは各バケットにつき3000QPSを専有します。</li>
-					<li> Listタイプリクエスト：全リージョンでデフォルトで1200QPSとなります。</li>
-					<li> データ取得リクエスト：全リージョンでデフォルトで100QPSとなります。
+					<li> Listタイプリクエスト：全リージョンでデフォルトで1000QPSとなります。</li>
+					<li> データ取得リクエスト：全リージョンでデフォルトで100QPSとなります。</li>
+					<li>単一ファイルアップロード/削除/Listホットスポット頻度制御：50QPS。</li>
+					<li>単一ファイルダウンロードホットスポット頻度制御：1000QPS。
 <br>これより高いQPSが必要な場合は、<a href="https://intl.cloud.tencent.com/document/product/436/13653">リクエスト速度およびパフォーマンスの最適化</a>をご参照ください。</li></ul></td>
     </tr>
 		    <tr>
@@ -20,34 +22,33 @@
     	 <tr>
         <td rowspan="5">ストレージタイプ</td>
     			<td>標準ストレージの制限</td>
-    			<td>課金制限：<br>保存期間、ストレージユニットに制限はありません。<br>標準ストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</td>
+    			<td>課金制限：<br>保存期間、ストレージユニットに制限はありません。<br>標準ストレージ料金の詳細については、<a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">製品価格</a>をご参照ください。</td>
     </tr>
     	 <tr>
         <td>低頻度ストレージの制限</td>
     			<td>課金制限：<ul  style="margin: 0;"><li>保存期間が30日未満の場合は、30日として計算します。</li>
-					<li>ストレージユニットが64KB未満の場合は64KBとして計算し、64KB以上の場合は実際のサイズに基づいて計算します。<br>低頻度ストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</li></ul></td>
+					<li>ストレージユニットが64KB未満の場合は64KBとして計算し、64KB以上の場合は実際のサイズに基づいて計算します。<br>低頻度ストレージ料金の詳細については、<a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">製品価格</a>をご参照ください。</li></ul></td>
     </tr>
     	 <tr>
         <td>INTELLIGENT_TIERINGストレージの制限</td>
-    			<td>課金制限：<ul  style="margin: 0;"><li>保存期間が30日未満の場合は、30日として計算します。</li>
-					<li>64KB未満のオブジェクトは引き続き高頻度アクセスレイヤーに保存されます。単一のストレージファイルのサイズにかかわらず、実際のデータサイズに基づいて計算します。<br>INTELLIGENT_TIERINGストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</td>
+    			<td>課金制限：<br>64KB未満のオブジェクトは引き続き高頻度アクセスレイヤーに保存されます。単一のストレージファイルのサイズにかかわらず、すべて実際のデータサイズに基づいて計算します。<br>INTELLIGENT_TIERINGストレージ料金の詳細については、<a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">製品価格</a>をご参照ください。</td>
     </tr>
     	 <tr>
         <td>アーカイブストレージの制限</td>
     			<td>課金制限：<ul  style="margin: 0;"><li>保存期間が90日未満の場合は、90日として計算します。</li>
-					<li>ストレージユニットが64KB未満の場合は64KBとして計算し、64KB以上の場合は実際のサイズに基づいて計算します。<br>アーカイブストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</li></ul></td>
+					<li>ストレージユニットが64KB未満の場合は64KBとして計算し、64KB以上の場合は実際のサイズに基づいて計算します。<br>アーカイブストレージ料金の詳細については、<a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">製品価格</a>をご参照ください。</li></ul></td>
     </tr>
     	 <tr>
         <td>ディープアーカイブストレージの制限</td>
     			<td>課金制限：<ul  style="margin: 0;"><li>保存期間が180日未満の場合は、180日として計算します。</li>
-					<li>ストレージユニットが64KB未満の場合は64KBとして計算し、64KB以上の場合は実際のサイズに基づいて計算します。<br>ディープアーカイブストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</li></ul></td>
+					<li>ストレージユニットが64KB未満の場合は64KBとして計算し、64KB以上の場合は実際のサイズに基づいて計算します。<br>ディープアーカイブストレージ料金の詳細については、<a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">製品価格</a>をご参照ください。</li></ul></td>
     </tr>
      <tr>
         <td rowspan="4">バケット</td>
     			<td>制限</td>
     			<td><ul  style="margin: 0;"><li>バケットはいったん作成すると、名前および所在リージョンの変更はできません。</li>
 					<li>同一のユーザーアカウントにおけるバケット名は固有であり、リネームもサポートしていません。</li>
-					<li>名前は始まりまたは終わりを「-」とすることはできず、小文字アルファベットおよび数字[a-z，0-9]、ダッシュ「-」およびそれらの組み合わせのみサポートしています。バケット名の最大文字数は<a href="https://buy.cloud.tencent.com/price/cos">リージョンの略称</a>およびAPPIDの文字数の影響により、組み合わせたリクエストドメイン名全体の文字数合計が最大60文字までとなります。</li></ul></td>
+					<li>名前は、始まりまたは終わりを「-」とすることはできず、小文字アルファベット、数字[a-z,0-9]、ハイフン「-」およびそれらの組み合わせのみサポートしています。バケット名の最大文字数は<a href="https://intl.cloud.tencent.com/document/product/436/6224">リージョンの略称</a>およびAPPIDの文字数の影響により、組み合わせたリクエストドメイン名全体の文字数合計が最大60文字までとなります。</li></ul></td>
      </tr>
     	 <tr>
     			<td>バケット数</td>
@@ -79,7 +80,7 @@
     		<tr>
     			<td >コピー</td>
     			<td ><ul  style="margin: 0;"><li>単一アカウントの同一リージョンまたはリージョン間でのオブジェクトのコピーをサポートしています。</li>
-					<li>同一リージョン内でのオブジェクトのコピーは無料です。リージョン間でオブジェクトのコピーを行う場合はトラフィック料金が発生します。詳細については、<a href="https://buy.cloud.tencent.com/price/cos">料金説明</a>のトラフィック料金に関する情報をご参照ください。 </li>
+					<li>同一リージョン内でのオブジェクトのコピーは無料です。リージョン間でオブジェクトのコピーを行う場合はトラフィック料金が発生します。詳細については、<a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">料金説明</a>のトラフィック料金に関する情報をご参照ください。 </li>
 					<li>コピーインターフェースの仕様：
 						<ul  style="margin: 0;"><li>シンプルコピー：コピーできる単一のオブジェクトは最大5GBまでです。詳細については、<a href="https://intl.cloud.tencent.com/document/product/436/14117">シンプルコピー</a>をご参照ください。</li>
 						<li>5GBを超える場合はマルチパートコピーを用いる必要があります。コピーできる単一のオブジェクトは最大48.82TBまでです。詳細については、<a href="https://intl.cloud.tencent.com/document/product/436/14118">マルチパートコピー</a>をご参照ください。</li></ul>
@@ -106,7 +107,7 @@
     		</tr>
     		<tr>
     			<td>ストレージタイプの切り替え</td>
-    			<td >標準ストレージから低頻度ストレージ：最短1日。<br>標準/低頻度ストレージからアーカイブストレージまたはディープアーカイブストレージ：最短1日。</td>
+    			<td >標準ストレージから低頻度ストレージ：最短1日。<br>標準/低頻度ストレージからアーカイブストレージまたはディープアーカイブストレージ：最短1日。<br>注意：<br>1. ライフサイクルの切り替え操作は64KB未満のオブジェクトに対しては実行できません。</td>
     		</tr>
     		 <tr>
     			<td>期限切れによる削除</td>
@@ -115,5 +116,11 @@
     		<tr>
     			<td colspan="2">SDKの種類</td>
     			<td >12種類：Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、ミニプログラムSDK。</td>
-    </tr>
+    		</tr>        
+    		<tr>
+    			<td colspan="2">API予約フィールド</td>
+    			<td >APIドキュメントにあるインターフェースパラメータはすべてCOSの予約フィールドであり、次のパラメータが含まれます。<br>acl、uploads、policy、cors、delete、versions、location、referer、lifecycle、versioning、notification、replication、website、logging、tagging、accelerate、domain、inventory、origin、object-lock、live、encryption、intelligenttiering、symlinkなどがあります。</br></td>
+    		</tr>
 </table>
+
+
