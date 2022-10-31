@@ -5,7 +5,7 @@ TencentDB for Redis has been connected to [Cloud Monitor (CM)](https://intl.clou
 Currently, the following **events** can be reported:
 
 | Event Name | Event Type | Dimension | Recoverable | Description | Troubleshooting and Suggestions |
-| --------------- | ------------------- | -------- | ---------------------- | ------------ | ------------------- | ------------------------------ |
+ | ------------------- | -------- | ---------------------- | ------------ | ------------------- | ------------------------------ |
 | Master/Replica switch | MasterSlaveSwitched | Status change | TencentDB for Redis instance | No | A failover occurs in TencentDB for Redis. | The failure will cause the TencentDB for Redis service to become inaccessible and momentarily unavailable. Make sure that your business has an automatic reconnection mechanism for quick business recovery. |
 | Unavailable service | ServiceNotAvailable | Abnormal event | TencentDB for Redis instance | Yes | The TencentDB for Redis service is unavailable due to a failure. | We will recover the service as soon as possible and send a service recovery notification. If you have a disaster recovery instance, try switching your business to it. |
 | Read-only replica failover | ReadonlyReplicaSwitched | Status change | TencentDB for Redis instance | Yes | A failover occurs in the TencentDB for Redis read-only replica. | We will recover the service as soon as possible and send a service recovery notification. If you have a disaster recovery instance, try switching your business to it or add more read-only replicas. |
@@ -28,7 +28,7 @@ EventBridge is **pay-as-you-go**. For more information, see [Product Pricing](ht
 | :----------- | :----------------------------------------------------- |
 | **Payment mode** | Fees are charged hourly by the number of events actually delivered to the event bus. |
 | **Billing unit** | USD/million events |
-|**Use cases*| Low or fluctuating message volumes |
+|**Use cases**| Low or fluctuating message volumes |
 
 ## Directions
 1. Log in to the [EventBridge console](https://console.cloud.tencent.com/eb), and select **Event Rule** (https://console.cloud.tencent.com/eb/rule) on the left sidebar.
@@ -73,7 +73,7 @@ EventBridge is **pay-as-you-go**. For more information, see [Product Pricing](ht
 <thead><tr><th >Parameter</th><th >Description</th></tr></thead>
 <tbody><tr>
 <td><strong>Rule pattern preview</strong></td>
-<td>If you select <strong>Sample event</strong>, you can use an event template. If you select **Manually input**, you can customize the event fields in the input box below.</td></tr>
+<td>If you select <strong>Sample event</strong>, you can use an event template. If you select <strong>Manually input</strong>, you can customize the event fields in the input box below.</td></tr>
 <tr>
 <td><strong>Event template</strong></td>
 <td>This parameter will be displayed if you select <strong>Sample event</strong> for <strong>Rule pattern preview</strong>. You can search for "Redis" in the drop-down list and select the TencentDB for Redis event template. Then, the specific field information of the event template will be displayed in the input box below.</td></tr>
@@ -85,7 +85,7 @@ EventBridge is **pay-as-you-go**. For more information, see [Product Pricing](ht
 <td>This parameter will be displayed if **Specified events** is selected for **Target**. Enter the event fields to be converted in the input box.</td></tr>
 <tr>
 <td><strong>Parsing mode</strong></td>
-<td>Select a parsing mode, which can be **JSON**, **Separator**, or **Extract with regex**.</td></tr>
+<td>Select a parsing mode, which can be <strong>JSON</strong>, <strong>Separator</strong>, or <strong>Extract with regex</strong>.</td></tr>
 </tbody></table>
 6. Click **Next** to select the delivery target bound to the rule. You can deliver collected events to the specified target to process and consume them. In the figure below, **Notification message** is selected for **Trigger method** as an example.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5208e601e90094504f68a96e7ac8ac52.png)
