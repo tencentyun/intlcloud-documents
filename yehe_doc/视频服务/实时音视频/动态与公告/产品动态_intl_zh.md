@@ -1,9 +1,101 @@
+## 2022年07月
+<table>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
+<td>Version 10.4 版本发布</td>
+<td> iOS&Android：<ul style="margin:0">
+自定义视频采集支持 RGBA32 格式，详见：sendCustomVideoData。
+</ul>
+<br>Windows&Mac：<ul style="margin:0">
+水印设置支持本地预览，详见：setWaterMark。
+</ul>
+<br>Android：<ul style="margin:0">
+<li>优化低延迟耳返及双声道采集的兼容性。</li>
+<li>优化硬解码切软解码的策略，提升解码性能。</li>
+</ul>
+<br>iOS：<ul style="margin:0">
+优化 iPad 采集音量小的问题。
+</ul>
+</td>
+<td>2022-07-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 下载</a></td>
+</tr>
+<tr>
+<td>Version 10.3 版本发布</td>
+<td> 全平台：<ul style="margin:0">
+优化 Music 音质下的声音效果。
+</ul>
+<br>Windows&Mac：<ul style="margin:0">
+新增参数支持在 startMicDeviceTest 接口中开启/关闭 播放麦克风检测时麦克风采集到的声音。详见 startMicDeviceTest。
+</ul>
+<br>Windows：<ul style="margin:0">
+新增录制本地录制功能，可用于在本地录制互动直播或音视频通话完整内容。详见 ITXLiteAVLocalRecord。
+</ul>
+</td>
+<td>2022-07-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 下载</a></td>
+</tr>
+</table>
+
+## 2022年06月
+<table>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
+<td>Version 10.2 版本发布</td>
+<td> 全平台：<ul style="margin:0">
+		<li>全新推出更加灵活，且功能强大的混流转推 API。详见 <code>startPublishMediaStream</code>。</li>
+		<li>新增 3D 音频特效功能，详见 <code>enable3DSpatialAudioEffect</code>。</li>
+		<li>新增人声检测功能，当 muteLoalAudio 和 setAudioCaptureVolume 为 0 时不会影响人声检测结果。详见 <code>enableAudioVolumeEvaluation</code>（方便提示用户开麦）。</li>
+		<li>切换角色时，增加支持权限校验的功能，详见 <code>switchRole(TRTCRoleType role, const char* privateMapKey)</code>。</li>
+	</ul>
+<br>iOS：<ul style="margin:0">优化上行视频处理链路，节省 CPU、GPU 占用。</ul>
+<br>iOS&Mac：<ul style="margin:0">自定义预处理的 C++ 接口，支持以纹理方式对接视频处理。</ul>
+<br>Android：<ul style="margin:0">
+		<li>优化耳返效果，降低延迟。</li>
+		<li>优化音频的采集链路，解决部分机型存在的杂音问题。</li>
+	</ul>
+<br>Windows：<ul style="margin:0">优化性能，减少内存碎片及其分配时造成性能开销。</ul>
+<br>Windows&Mac：<ul style="margin:0">优化窗口分享时的编码性能，编码宽高不再受采集窗口大小的影响。</ul>
+</td>
+<td>2022-06-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 下载</a></td>
+</tr>
+<tr>
+<td>Version 10.1 版本发布</td>
+<td> 全平台：<ul style="margin:0">
+	<li>支持平滑切换角色，音视频播放不会因为切角色短暂中断。</li>
+	<li>优化音乐场景下的回声消除能力，音质效果更自然。</li>
+	<li>优化切换角色 + muteLocalAudio 下的音质和启动效果。</li>
+	<li>优化带宽预测 onSpeedTest 回调。</li>
+</ul>
+<br>iOS：<ul style="margin:0">
+	<li>支持立体声音频采集。</li>
+	<li>优化内存管理，避免内存堆积的问题。</li>
+</ul>
+<br>Android：<ul style="margin:0">
+<li>在 Android 10 及以上系统支持采集系统播放音频（startSystemAudioLoopback）。</li>
+<li>优化部分机型手机上耳返的延迟。</li>
+</ul>
+<br>Windows：<ul style="margin:0">
+<li>优化视频下行时视频渲染链路的性能。</li>
+<li>优化立体声采集逻辑，有效避免漏回声问题。</li>
+</ul>
+</td>
+<td>2022-06-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 下载</a></td>
+</tr>
+</table>
+
+
 ## 2022年05月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 10.0 版本发布</td>
-<td> 全功能：<ul style="margin:0">
+<td> 全平台：<ul style="margin:0">
 优化主播进退房通知回调（<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58">onRemoteUserEnterRoom</a> / <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28">onRemoteUserLeaveRoom</a>）的速度。
 </ul>
 <br>Windows：<ul style="margin:0">
@@ -32,8 +124,9 @@
 
 ## 2022年04月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 9.8 版本发布</td>
 <td> 全功能：<ul style="margin:0">
 优化视频场景下的性能。
@@ -64,8 +157,9 @@
 
 ## 2022年03月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 9.6 版本发布</td>
 <td>全平台：<ul style="margin:0">
 <li>完成三方库合规整改，符合国内、海外的合规要求。
@@ -94,8 +188,9 @@
 
 ## 2022年01月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 9.5 版本发布</td>
 <td>全平台：<ul style="margin:0">
 优化通话场景在弱网时的流畅度。
@@ -118,8 +213,9 @@
 
 ## 2021年12月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 9.4 版本发布</td>
 <td>全平台：<ul style="margin:0">
 <li>提升进房速度，减少进房耗时的波动。</li>
@@ -152,8 +248,9 @@
 
 ## 2021年11月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 9.3 版本发布</td>
 <td>全平台：<ul style="margin:0">
 <li>优化弱网情况下视频秒开速度。</li>
@@ -168,8 +265,9 @@
 
 ## 2021年09月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 9.2 版本发布</td>
 <td>全平台：<ul style="margin:0">
 	<li>新增设置语音音调功能。</li>
@@ -211,8 +309,9 @@
 
 ## 2021年08月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 9.0  版本发布</td>
 <td>全平台：<ul style="margin:0">
 <li>支持设置自定义音轨的音量，详情请参见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418">setMixExternalAudioVolume</a>。</li>
@@ -229,8 +328,9 @@
 
 ## 2021年07月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 8.9 版本发布</td>
 <td>全平台：<ul style="margin:0">
 <li>优化某些场景下的声音播放出现颤抖的问题。</li>
@@ -254,8 +354,9 @@
 
 ## 2021年06月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 8.8 版本发布</td>
 <td>全平台：<ul style="margin:0">
 优化 mixExternalAudioFrame 易用性，不再需要您完美地控制调用时机。
@@ -274,11 +375,12 @@
 
 ## 2021年05月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 8.7 版本发布</td>
 <td>全平台：<ul style="margin:0">
-<li>增加外接音频设备的异常检测。注册 onStatistics 回调后， 您可以用 TRTCLocalStatistics 中的 audioCaptureState 来实时检测长时间静音、破音、异常间断问题。</li>
+<li>增加外接音频设备的异常检测。注册 onStatistics 回调后， 您可以用TRTCLocalStatistics中的 audioCaptureState 来实时检测长时间静音、破音、异常间断问题。</li>
 <li>优化 BGM 资源管理，及时释放内存占用。</li>
 <li>推流端退后台暂停视频上行时，播放端能及时收到 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> 的通知。</li>
 </ul><br>Mac：<ul style="margin:0">
@@ -312,13 +414,14 @@
 
 ## 2021年03月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 8.5 版本发布</td>
 <td>全平台：<ul style="margin:0">
 <li>新增播片功能，您可以使用 TXVODPlayer 与 TRTCCloud 绑定，把点播正在播放的内容通过 TRTC 的辅路推流分享出去。</li>
-<li>新增辅路自定义采集。</li>
-<li>新增自定义混音功能，您可以将自己的一路音轨混入 SDK 的音频处理流程中，SDK 会先将两路音轨混合后再一起发布出去。</li>
+<li>新增辅路自定义采集</li>
+<li>新增自定义混音功能，您可以将自己的一路音轨混入 SDK 的音频处理流程中，SDK 会先将两路音轨混合后再一起发布出去</li>
 <li>支持指定纯视频混流，混流控制更灵活。</li>
 <li>状态回调增加端到端延迟。</li>
 </ul>
@@ -339,8 +442,9 @@
 
 ## 2021年02月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 8.4 版本发布</td>
 <td>全平台：<ul style="margin:0">
 <li>新增本地音视频录制功能，主播可以在推流过程中把本地的音频和视频录制成一个 mp4 文件，请参见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b">startLocalRecording</a>。</li>
@@ -365,8 +469,9 @@
 
 ## 2021年01月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Version 8.3 版本发布</td>
 <td>全平台：<ul style="margin:0">若需自己采集视频数据，并同时使用 TRTC SDK 自带的音频模块，可能会遇到音画不对齐的问题。这是因为 SDK 内部的时间线有自己的控制逻辑，因此我们提供了 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ae5f2a974fa23954c5efd682dc464cdee">generateCustomPTS</a> 接口。您可以在采集到的一帧视频画面时，调用此接口并记录一下当前的 PTS（时间戳），随后调用 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a76e8101153afc009f374bc2b242c6831">sendCustomVideoData</a> 时带上这个时间戳，即可很好地保证音画同步。</ul>
 <br>iOS &amp; Android &amp; Mac：<ul style="margin:0">优化音频模块，以确保在您使用 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d">enableCustomAudioCapture</a> 采集音频数据送给 SDK 处理时 SDK 依然能够保持很好的回声抑制和降噪效果。</ul>
@@ -379,8 +484,9 @@
 
 ## 2020年12月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>
-</tr><tr>
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th></tr>
+</thead>
+<tr>
 <td>Flutter SDK 发布</td>
 <td>该 <a href="https://pub.dev/packages/tencent_trtc_cloud">Flutter SDK</a> 是基于腾讯云实时音视频 iOS、Android 平台的 SDK 进行封装。</td>
 <td>2020-12-30</td>
@@ -426,7 +532,7 @@ iOS&Android：<ul style="margin:0">新增回调混合本地采集与所有播放
 
 ## 2020年11月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th> </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th> </tr> 
 <tr>
 <td>Version 8.0 版本发布</td>
 <td>
@@ -467,7 +573,7 @@ iOS&Android：<ul style="margin:0">新增回调混合本地采集与所有播放
 
 ## 2020年10月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th> </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th> </tr> 
 <tr>
 <td>Version 7.9 版本发布</td>
 <td>
@@ -501,11 +607,11 @@ iOS&Android：<ul style="margin:0">新增回调混合本地采集与所有播放
 
 ## 2020年09月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th> </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th> </tr> 
 <td>Version 7.8 版本发布</td>
 <td>
 Android：<ul style="margin:0">
-<li>支持垫片推流，使用方法见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>。
+<li>支持垫片推流，使用方法见 <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>。
 <li>优化声音路由策略，支持戴耳机时，声音只从耳机播放。
 <li>支持部分系统下采用低延迟采集播放，降低 Android 系统通话延迟。
 <li>支持 VODPlayer 和 trtc 一起使用，并且支持回声消除。
@@ -514,15 +620,15 @@ Android：<ul style="margin:0">
 支持 VODPlayer 和 trtc 一起使用，并且支持回声消除。
 </ul>
 <br>iOS&Mac：<ul style="margin:0">
-支持垫片推流，使用方法见 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>。
+支持垫片推流，使用方法见 <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>。
 </ul>
 <br>Mac：<ul style="margin:0">
-<li>Mac：新增系统音量变化回调。</a>
+<li>Mac：新增系统音量变化回调。
 </ul>
 <br>Windows：<ul style="margin:0">
 <li>新增支持跨屏指定区域进行屏幕分享。
 <li>新增窗口分享支持过滤指定窗口进行抗遮挡。
-<li>新增系统音量变化回调。</a>
+<li>新增系统音量变化回调。
 <li>兼容虚拟摄像头 e2eSoft Vacm。
 <li>支持同时调用 startLocalPreview 和 startCameraDeviceTest。
 <li>支持屏幕分享走主路的同时，调用 startLocalPreview 开启本地预览。
@@ -532,7 +638,7 @@ Android：<ul style="margin:0">
 </td>
 <td>2020-09-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 下载</a></td>
-<tr></tr> 
+</tr> 
 <tr>
 <td>Version 7.7 版本发布</td>
 <td>
@@ -561,7 +667,7 @@ Android：<ul style="margin:0">
 
 ## 2020年08月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th> </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th> </tr> 
 <tr>
 <td>Version 7.6 版本发布</td>
 <td>
@@ -597,7 +703,8 @@ Android：<ul style="margin:0">
 ## 2020年07月
 
 <table>
-<tr><th width="20%">动态名称</th><th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th></tr>
+<thead><tr><th width="20%">动态名称</th><th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th></tr>
+</thead>
 <tr>
 <td>Version 7.5 版本发布</td>
 <td>全平台：<ul style="margin:0">
@@ -646,7 +753,8 @@ Android：<ul style="margin:0">
 ## 2020年06月
 
 <table>
-<tr><th width="20%">动态名称</th><th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th></tr>
+<thead><tr><th width="20%">动态名称</th><th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th></tr>
+</thead>
 <tr>
 <td>Version 7.4 版本发布</td>
 <td>
@@ -699,7 +807,7 @@ Android：<ul style="margin:0">
 ## 2020年05月
 
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
 <tr>      
          <td>计费变更</td>   
          <td>语音时长变更为所有用户在房间内的总停留时长，再减去所有用户订阅视频流时的停留时长。<br>补充说明：<ul style="margin:0;"><li>同时订阅了多路音频流的同一个用户的语音时长不会被叠加。</li>
@@ -714,7 +822,7 @@ Android：<ul style="margin:0">
 ## 2020年04月
 
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
 <tr><td>发布通话质量监控相关接口</td>   
     <td><ul style="margin:0;"><li>新增 SDKAppID 下的房间列表查询接口，一次最多返回100条房间信息，可查最近5天内数据。</li>
      <li>新增用户列表和通话指标查询接口，可查询指定时间内用户列表及通话质量数据。</li>
@@ -749,7 +857,7 @@ Android：<ul style="margin:0">
 ## 2020年03月
 
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
 <tr>      
          <td>SDK Version 7.1 版本发布</td>   
          <td>全平台：<ul style="margin:0;"><li>优化混流预设模版易用性。</li>
@@ -779,7 +887,7 @@ Android：<ul style="margin:0">
 ## 2020年02月
 
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
 <tr>      
          <td>云端自动录制优化</td>   
          <td>支持按应用单独设置开启/关闭云端自动录制，每个应用都可以配置单独的录制文件格式和回调地址。</td>   
@@ -791,7 +899,7 @@ Android：<ul style="margin:0">
 ## 2020年01月
 
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
+<thead><tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
 <tr>      
          <td>SDK Version 6.9 版本发布</td>   
          <td>全平台：<ul style="margin:0;"><li>enterRoom 参数 TRTCParams 中新增加 streamId 属性，用于设定当前用户在 CDN 上的直播流 ID，更方便您绑定直播 CDN。</li>

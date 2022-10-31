@@ -1,7 +1,99 @@
+## July 2022
+<table>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
+<td>SDK 10.4 release</td>
+<td> iOS & Android:<ul style="margin:0">
+Added support for the RGBA32 format for custom capturing. For details, see `sendCustomVideoData`.
+</ul>
+<br>Windows & macOS:<ul style="margin:0">
+You can now preview watermarks after watermark configuration. For details, see `setWaterMark`.
+</ul>
+<br>Android: <ul style="margin:0">
+<li>Improved the compatibility of low-latency in-ear monitoring and dual-channel capturing.</li>
+<li>Optimized the policy for switching from hardware to software decoding.</li>
+</ul>
+<br>iOS:<ul style="margin:0">
+Fixed the issue of low capturing volume on iPad.
+</ul>
+</td>
+<td>2022-07-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+<tr>
+<td>SDK 10.3 release</td>
+<td>All platforms:<ul style="margin:0">
+Improved audio quality in the `Music` mode.
+</ul>
+<br>Windows & macOS:<ul style="margin:0">
+Added a parameter to `startMicDeviceTest`, which allows you to specify whether to play the audio captured during mic testing. For details, see the description of `startMicDeviceTest`.
+</ul>
+<br>Windows:<ul style="margin:0">
+Added support for recording live streaming sessions and audio/video calls to local storage. For details, see the description of `ITXLiteAVLocalRecord`.
+</ul>
+</td>
+<td>2022-07-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+</table>
+
+## June 2022
+<table>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
+<td>SDK 10.2 release</td>
+<td>All platforms:<ul style="margin:0">
+		<li>Launched a new API for stream mixing and relaying, which offers more powerful features and greater flexibility. For details, see the description of <code>startPublishMediaStream</code>.</li>
+		<li>Added support for 3D spatial audio. For details, see the description of <code>enable3DSpatialAudioEffect</code>.</li>
+		<li>Added support for voice activity detection. This feature works even when local audio is muted (`muteLoalAudio`) or the capturing volume is set to zero (`setAudioCaptureVolume`). It allows you to remind users when they are talking but have not turned their mics on. For details, see the description of <code>enableAudioVolumeEvaluation</code>.</li>
+		<li>Added support for checking a user’s permission when they switch roles. For details, see the description of <code>switchRole(TRTCRoleType role, const char* privateMapKey)</code>.</li>
+	</ul>
+<br>iOS: <ul style="margin:0">Optimized the processing of upstream video data, reducing CPU and GPU usage.</ul>
+<br>iOS & macOS:<ul style="margin:0"> The C++ API for custom pre-processing added support for using textures for video processing.</ul>
+<br>Android: <ul style="margin:0">
+		<li>Optimized in-ear monitoring, reducing latency.</li>
+		<li>Optimized audio capturing, fixing the issue of noise on some devices.</li>
+	</ul>
+<br>Windows: <ul style="margin:0">Reduced memory fragmentation and performance overhead.</ul>
+<br>Windows & macOS: <ul style="margin:0">Improved encoding for screen sharing. The height and width of the output video are no longer limited by the window size.</ul>
+</td>
+<td>2022-06-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+<tr>
+<td>SDK 10.1 release</td>
+<td>All platforms:<ul style="margin:0">
+	<li>Allowed smooth role switch. Audio/Video playback is no longer interrupted by role switch.</li>
+	<li>Optimized echo cancellation for the music scenario, delivering a more natural audio experience.</li>
+	<li>Optimized the audio quality and startup effect after the role is switched and `muteLocalAudio` is called.</li>
+	<li>Optimized the `onSpeedTest` callback.</li>
+</ul>
+<br>iOS:<ul style="margin:0">
+	<li>Added support for stereo audio capturing.</li>
+	<li>Optimized memory management to avoid heap memory issues.</li>
+</ul>
+<br>Android: <ul style="margin:0">
+<li>Added support for capturing system audio (`startSystemAudioLoopback`) on Android 10 and later.</li>
+<li>Reduced the delay of in-ear monitoring on certain phones.</li>
+</ul>
+<br>Windows:<ul style="margin:0">
+<li>Optimized the rendering of downstream video data.</li>
+<li>Optimized the stereo capturing logic to effectively avoid the problem of echo.</li>
+</ul>
+</td>
+<td>2022-06-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+</table>
+
+
 ## May 2022
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 10.0 release</td>
 <td>All platforms:<ul style="margin:0">
 Sped up the callbacks for room entry and exit (<a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58">onRemoteUserEnterRoom</a> and <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28">onRemoteUserLeaveRoom</a>).
@@ -32,8 +124,9 @@ Reduced capturing latency, improving in-ear monitoring experience.
 
 ## April 2022
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 9.8 release</td>
 <td>All platforms:<ul style="margin:0">
 Improved the SDK performance in video scenarios.
@@ -64,8 +157,9 @@ Improved audio quality in the music mode.
 
 ## March 2022
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 9.6 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Enhanced third-party library compliance with regulations inside and outside the Chinese mainland.
@@ -94,8 +188,9 @@ Optimized texture uploading.
 
 ## January 2022
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 9.5 release</td>
 <td>All platforms:<ul style="margin:0">
 Improved the smoothness of calls under poor network conditions.
@@ -118,8 +213,9 @@ Fixed the issue where, after an anchor turns the camera off and on again, at the
 
 ## December 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 9.4 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Sped up room entry, reducing the fluctuation in room entry speed.</li>
@@ -152,8 +248,9 @@ This version complies with China’s privacy and security regulations and has be
 
 ## November 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 9.3 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Improved instant streaming performance under poor network conditions.</li>
@@ -168,8 +265,9 @@ This version complies with China’s privacy and security regulations and has be
 
 ## September 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 9.2 release</td>
 <td>All platforms:<ul style="margin:0">
 	<li>Allowed audio pitch setting.</li>
@@ -211,8 +309,9 @@ Supported recording local media.
 
 ## August 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 9.0 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Allowed setting the volume of custom audio tracks. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418">setMixExternalAudioVolume</a>.</li>
@@ -229,8 +328,9 @@ Allowed setting the capturing volume of system audio. For details, please see <a
 
 ## July 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 8.9 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Fixed shaky audio in some scenarios.</li>
@@ -252,10 +352,11 @@ Allowed setting the capturing volume of system audio. For details, please see <a
 </table>
 
 
-## June 2021
+## July 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 8.8 release</td>
 <td>All platforms:<ul style="margin:0">
 Made it easier to use `mixExternalAudioFrame`. You no longer need to call the API at a regular interval.
@@ -274,11 +375,12 @@ Reduced the CPU usage of screen sharing when mouse cursor capturing is enabled.
 
 ## May 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 8.7 release</td>
 <td>All platforms:<ul style="margin:0">
-<li>Supported anomaly detection for peripheral audio devices. After registering the `onStatistics` callback, you can detect in real time when there is no audio for a long time and when audio cracks or is interrupted via the `audioCaptureState` field of TRTCLocalStatistics.</li>
+<li>Supported anomaly detection for peripheral audio devices. After registering the `onStatistics` callback, you can detect in real time when there is no audio for a long time and when audio cracks or is interrupted via the `audioCaptureState` field of <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics">TRTCLocalStatistics</a>.</li>
 <li>Improved the management of background music resources, ensuring that memory is freed up in a timely manner.</li>
 <li>Ensured that audience receive the <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> callback in a timely manner after stream publishing is paused because the application is switched to the background.</li>
 </ul><br>macOS:<ul style="margin:0">
@@ -312,13 +414,14 @@ Added native support for Apple M1.
 
 ## March 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 8.5 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Supported publishing VOD content. You can now bind `TXVodPlayer` with `TRTCCloud` and publish the content played by VOD via TRTC’s substream.</li>
-<li>Supported custom capturing of substream data.</li>
-<li>Supported custom audio mixing. You can feed a custom audio track into the SDK’s audio processing. The SDK will mix the two tracks before publishing.</li>
+<li>Supported custom capturing of substream data. </li>
+<li>Supported custom audio mixing. You can feed a custom audio track into the SDK’s audio processing. The SDK will mix the two tracks before publishing. </li>
 <li>Supported mixing only video streams, allowing more flexible stream mixing control.</li>
 <li>Added end-to-end latency to status callback.</li>
 </ul>
@@ -339,8 +442,9 @@ Supported automatic switch to the slideshow window when a slideshow is selected 
 
 ## February 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 8.4 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Supported local recording. An anchor can now record local audio and video into an MP4 file during streaming. For details, see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b">startLocalRecording</a>.</li>
@@ -350,7 +454,7 @@ Supported automatic switch to the slideshow window when a slideshow is selected 
 <br>Windows:<ul style="margin:0">
 <li>Improved audio quality in some streaming scenarios by significantly reducing audio damage.</li>
 <li>Improved performance by 20%-30% in some scenarios.</li>
-<li>Supported setting the volume of the current process. You can now use <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1">setApplicationPlayVolume</a> to set the volume of the volume mixer.</li>
+<li>Supported setting the volume of the current process. You can now use setApplicationPlayVolume to set the volume of the volume mixer.</li>
 </ul>
 <br>macOS: <ul style="margin:0">
 <li>Supported capturing system audio via `startSystemAudioLoopback`, i.e., the system loopback feature that is enabled on Windows. The feature allows the SDK to capture system audio so that anchors can stream local audio or video files to other users.</li>
@@ -365,8 +469,9 @@ Supported automatic switch to the slideshow window when a slideshow is selected 
 
 ## January 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK 8.3 release</td>
 <td>All platforms:<ul style="margin:0"> If you collect video data by yourself and use the audio module of the TRTC SDK at the same time, lip-sync errors may occur. This is because the SDK has its own timeline control logic. To solve this problem, we have provided the [generateCustomPTS](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae5f2a974fa23954c5efd682dc464cdee) API. When a video image frame is captured, call this API and record the PTS (timestamp), and provide the timestamp when you call [sendCustomVideoData](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a76e8101153afc009f374bc2b242c6831).</ul>
 <br>iOS &amp; Android &amp; macOS:<ul style="margin:0">Optimized the audio module to ensure AEC and noise cancellation when you use <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d">enableCustomAudioCapture</a> to capture audio data and send it to the SDK for processing.</ul>
@@ -379,8 +484,9 @@ Supported automatic switch to the slideshow window when a slideshow is selected 
 
 ## December 2020
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
-</tr><tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
+<tr>
 <td>SDK for Flutter release</td>
 <td><a href="https://pub.dev/packages/tencent_trtc_cloud">TRTC SDK for Flutter</a> packages TRTC SDK for iOS and Android.</td>
 <td>2020-12-30</td>
@@ -426,12 +532,12 @@ All platforms: <ul style="margin:0">
 
 ## November 2020
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <tr>
 <td>SDK 8.0 release</td>
 <td>
 All platforms: <ul style="margin:0">
-	<li/>Added cross-platform C++ APIs.
+	<li/>Added cross-platform C++ APIs. 
 	<li/>Supported string-type room IDs. For more information, please see `TRTCParams.strRoomId`.
 	<li/>Added the device management class `TXDeviceManager`.
 	<li/>Added the `TRTCCloud.switchRoom` API, which allows room switching with capturing uninterrupted.
@@ -467,7 +573,7 @@ All platforms: <ul style="margin:0">
 
 ## October 2020
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <tr>
 <td>SDK 7.9 release</td>
 <td>
@@ -501,11 +607,11 @@ Supported filtering out selected windows from screen sharing. Users can exclude 
 
 ## September 2020
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <td>SDK 7.8 release</td>
 <td>
 Android:<ul style="margin:0">
-<li>Supported pushing a specified image when stream pushing pauses. For more information, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>.
+<li>Added support for displaying a specified image when stream pushing pauses. For more information, see <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>.
 <li>Optimized the audio routing policy to make sure that audio is always played back via earphones when earphones are connected.
 <li>Allowed low-delay capturing and playback in certain systems, reducing call delay.
 <li>Allowed using VODPlayer and TRTC at the same time with AEC enabled.
@@ -514,10 +620,10 @@ Android:<ul style="margin:0">
 Allowed using VODPlayer and TRTC at the same time with AEC enabled.
 </ul>
 <br>iOS & macOS:<ul style="margin:0">
-Supported pushing a specified image when stream pushing pauses. For more information, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>.
+Added support for displaying a specified image when stream pushing pauses. For more information, see <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>.
 </ul>
 <br>macOS: <ul style="margin:0">
-<li>Added the callback for system volume change. For details, please see <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338">TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged</a>.
+<li>Added a callback for system volume change. For details, see <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338">TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged</a>.
 </ul>
 <br>Windows:<ul style="margin:0">
 <li>Supported specifying content for screen sharing across screens.
@@ -532,7 +638,7 @@ Supported pushing a specified image when stream pushing pauses. For more informa
 </td>
 <td>2020-09-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
-<tr></tr> 
+</tr> 
 <tr>
 <td>SDK 7.7 release</td>
 <td>
@@ -561,7 +667,7 @@ Optimized the internal thread model to improve stability when 30 or more channel
 
 ## August 2020
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <tr>
 <td>SDK 7.6 release</td>
 <td>
@@ -597,7 +703,8 @@ All platforms: <ul style="margin:0">
 ## July 2020
 
 <table>
-<tr><th width="20%">Update</th><th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th></tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
 <tr>
 <td>SDK 7.5 release</td>
 <td>All platforms:<ul style="margin:0">
@@ -646,7 +753,8 @@ All platforms: <ul style="margin:0">
 ## June 2020
 
 <table>
-<tr><th width="20%">Update</th><th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th></tr>
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th>  <th width="15%">Document</th> </tr>
+</thead>
 <tr>
 <td>SDK 7.4 release</td>
 <td>
@@ -699,7 +807,7 @@ All platforms: <ul style="margin:0">
 ## May 2020
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>  </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <tr>      
          <td>Change of billing standards</td>   
          <td>Changed billable audio duration to the cumulative duration of users’ stay in a room minus the duration of video to which the users subscribe. <br>Note: <ul style="margin:0;"><li>If a user subscribes to multiple audio streams, the durations will not be added up for billing.</li>
@@ -714,7 +822,7 @@ All platforms: <ul style="margin:0">
 ## April 2020
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>  </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <tr><td>Call quality monitoring APIs</td>   
     <td><ul style="margin:0;"><li>Added an API for querying rooms by `SDKAppID`. Up to 100 records can be returned at a time, and data in the last 5 days can be queried.</li>
      <li>Added an API for querying users and call quality metrics in a specified time period.</li>
@@ -749,7 +857,7 @@ All platforms: <ul style="margin:0">
 ## March 2020
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>  </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <tr>      
          <td>SDK 7.1 release</td>   
          <td>All platforms: <ul style="margin:0;"><li>Improved the usability of the preset stream mixing template.</li>
@@ -779,7 +887,7 @@ All platforms: <ul style="margin:0">
 ## February 2020
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>  </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <tr>      
          <td>On-cloud recording optimization</td>   
          <td>Supported enabling/disabling on-cloud recording and configuring recording file formats and callback addresses for specific applications.</td>   
@@ -791,7 +899,7 @@ All platforms: <ul style="margin:0">
 ## January 2020
 
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>  </tr> 
+<thead><tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th> </tr> 
 <tr>      
          <td>SDK 6.9 release</td>   
          <td>All platforms: <ul style="margin:0;"><li>Added `streamId` to the `TRTCParams` parameter of `enterRoom`, which can be used to set the user’s CDN stream ID, making it easier to bind to live streaming CDNs.</li>

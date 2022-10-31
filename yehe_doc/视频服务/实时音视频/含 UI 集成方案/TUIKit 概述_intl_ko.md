@@ -1,6 +1,6 @@
 TUIKit은 주요 오디오/비디오 시나리오에서 5000+ 고객에게 서비스를 제공한 경험을 기반으로 Tencent Cloud 오디오/비디오 팀에서 개발한 오픈 소스 솔루션입니다. 여기에는 영상 통화, 라이브 스트리밍, 비디오 룸 등을 위한 여러 클라이언트 오디오/비디오 컴포넌트가 포함되어 있어 통화, 고객 서비스, 라이브 스트리밍, 오디오 채팅 및 교육 시나리오에 대한 솔루션을 빠르게 구축할 수 있습니다.
 
->?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 규정은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
 ## TUIKit 패밀리 버킷
 ![](https://qcloudimg.tencent-cloud.cn/raw/22b2ed779af3b76550ae5eefc8704e4c.png)
@@ -14,8 +14,7 @@ TUIKit은 주요 오디오/비디오 시나리오에서 5000+ 고객에게 서�
 │   ├── TUILiveVideo   // 공동 앵커, PK 및 음향 효과와 같은 기능이 있는 비디오 인터랙티브 라이브 스트리밍 컴포넌트;
 │   ├── TUIChatSolon   // 비즈니스 원탁 회의 및 포럼과 같은 오디오/비디오 시나리오에서 사용할 수 있는 음성 살롱 컴포넌트;
 │   ├── TUIPusher      // 다양한 프로토콜 푸시, PK 등 기능과 사운드 효과, 화면 주석 등 위젯을 지원하는 완전한 UI가 있는 푸시 컴포넌트;
-│   ├── TUIPusher      // 다양한 프로토콜 재생, 공동 앵커 등 기능과 선물, 화면 댓글 등 위젯을 지원하는 완전한 UI가 있는 재생 컴포넌트;
-│   ├── TUIPlayer      // Tencent Cloud의 저작권 보호 음원 라이브러리와 함께 사용 시 더 많은 기능을 지원하는 온라인 KTV 등 새로운 플레이를 위한 혁신적인 오디오/비디오 컴포넌트;
+│   ├── TUIPlayer      // 다양한 프로토콜 스트리밍, 공동 앵커 등 기능과 화면 댓글, 선물하기 등 위젯을 지원하는 완전한 UI가 있는 풀 스트림 컴포넌트;
 │   ├── TUIChorus       // Tencent Cloud의 저작권 보호 음원 라이브러리와 함께 사용 시 더 많은 기능을 지원하는 혁신적인 코러스용 오디오/비디오 컴포넌트;
 │   ├── TUIKaraoke      // Tencent Cloud의 저작권 보호 음원 라이브러리와 함께 사용 시 더 많은 기능을 지원하는 온라인 KTV 등 새로운 플레이를 위한 혁신적인 오디오/비디오 컴포넌트;
 ├── TUWidget

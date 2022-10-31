@@ -1,26 +1,24 @@
 ## Overview
 
-`TUIRoom` is an open-source audio/video component that comes with a UI kit. It allows you to quickly implement features including audio/video room, screen sharing, and chat into your project.
+TUIRoom is an open-source audio/video component that comes with a UI kit. It allows you to quickly implement features including audio/video room, screen sharing, and chat messages into your project.
 
 >? All components of TUIKit use two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, IM and the trial edition of the IM SDK (which supports up to 100 DAUs) will be activated automatically. For the billing details of IM, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
-<table><tr>
-<td><img width="900" src="https://qcloudimg.tencent-cloud.cn/raw/a98627586f82847a061a3695ad15ad26.png"></td>
-</tr>
-</table>
+![](https://qcloudimg.tencent-cloud.cn/raw/a98627586f82847a061a3695ad15ad26.png)
 
-You can click [here](https://github.com/tencentyun/TUIRoom) to download the `TUIRoom` code. You can also quickly run the TUIRoom Electron demo by referring to [this document](https://github.com/tencentyun/TUIRoom/tree/main/Electron).
+You can download the [macOS](https://web.sdk.qcloud.com/trtc/electron/download/solution/TUIRoom-Electron/TUIRoom-Electron-mac-latest.zip) or [Windows](https://web.sdk.qcloud.com/trtc/electron/download/solution/TUIRoom-Electron/TUIRoom-Electron-windows-latest.zip) edition of our TUIRoom Electron demo to try out more features.
+You can also [download](https://github.com/tencentyun/TUIRoom) the code for TUIRoom and refer to [this document](https://github.com/tencentyun/TUIRoom/tree/main/Electron) to quickly implement a TUIRoom demo project.
 This document shows you how to integrate the TUIRoom Electron component into your existing project.
 
 ## Integration
-The `TUIRoom` component is developed using Vue 3 + TypeScript + Pinia + Element Plus + SCSS, so your project must be based on Electron + Vue 3 + TypeScript.
+The TUIRoom component is developed using Vue 3 + TypeScript + Pinia + Element Plus + SCSS, so your project must be based on Electron + Vue 3 + TypeScript.
 
 [](id:step1)
 ### Step 1. Activate the TRTC service
-`TUIRoom` is developed based on TRTC and IM.
+TUIRoom is based on TRTC and IM.
 
 1. **Create a TRTC application**
-	- If you don’t have a Tencent Cloud account yet, [sign up](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) for one first.
+	- Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 	- In the [TRTC console](https://console.cloud.tencent.com/trtc), click **Application Management** on the left sidebar and then click **Create Application**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b0f61355af812d8ae822a5df2252d709.png)
 2. **Get the SDKAppID and key**
@@ -29,32 +27,31 @@ The `TUIRoom` component is developed using Vue 3 + TypeScript + Pinia + Element 
   2. Select the **Quick Start** tab to view the application's secret key. Each `SDKAppID` corresponds to a secret key. They are used to generate the signature (`UserSig`) required to legitimately use TRTC services.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2323fa87ff3308e2eaa95e66d9be6726.png)
 3. **Generate UserSig**
-    `UserSig` is a security signature designed by Tencent Cloud to prevent attackers from accessing your Tencent Cloud account. It is required when you initialize the `TUIRoom` component.
+    `UserSig` is a security signature designed by Tencent Cloud to prevent attackers from accessing your Tencent Cloud account. It is required when you initialize the TUIRoom component.
 	- [How do I calculate UserSig for debugging?](https://intl.cloud.tencent.com/document/product/647/35166#how-do-i-calculate-.3Ccode.3Eusersig.3C.2Fcode.3E-during-debugging-and-running.3F)
 	- [How do I calculate UserSig for production?](https://intl.cloud.tencent.com/document/product/647/35166#how-do-i-calculate-.3Ccode.3Eusersig.3C.2Fcode.3E-during-production.3F)
 [](id:step2)
 
-### Step 2. Download and copy the `TUIRoom` component
-1. Open an existing Electron + Vue3 + TypeScript project. If you don’t have one, use the following script to create an Electron + Vue3 + TS example.
-```bash
-npm create electron-vite
-```
->! Select "Vue".
->
-After the template project is successfully generated, run the following script:
+### Step 2. Download and copy the TUIRoom component
+1. Open an existing Electron + Vue3 + TypeScript project. If you don’t have one, you can use [this sample](https://github.com/electron-vite/electron-vite-vue/tree/v1.0.0) to create a project.
+>! 
+>- The steps in this document are based on electron-vite-vue 1.0.0.
+>- We have updated the directory structure of electron-vite-vue. If you use the latest version, some of the paths and configuration described in this document may not apply.
+
+2. After the template project is successfully generated, run the following script:
 ```bash
 cd electron-vite-vue
 npm install
 npm run dev
 ```
-2. Clone or download the [TUIRoom code](https://github.com/tencentyun/TUIRoom), and copy the `TUIRoom/Electron/packages/renderer/src/TUIRoom` folder to `packages/renderer/src/` of your project.
+3. Clone or download the [TUIRoom code](https://github.com/tencentyun/TUIRoom), and copy the `TUIRoom/Electron/packages/renderer/src/TUIRoom` folder to `packages/renderer/src/` of your project.
 
 [](id:step3)
-### Step 3. Import the `TUIRoom` component
+### Step 3. Import the TUIRoom component
 
-1. Import the `TUIRoom` component into a page, such as the `App.vue` component.
-	- The `TUIRoom` component classifies users as hosts and members and offers APIs including [init](#init), [createRoom](#createroom), and [enterRoom](#enterroom).
-	- Hosts and members can call [init](#init) to initialize application and user data. Hosts can call [createRoom](#createroom) to create and enter rooms. Members can call [enterRoom]( #enterroom) to join the rooms created by hosts.
+1. Import the TUIRoom component into your webpage, such as `App.vue`.
+	- The TUIRoom component classifies users as hosts and participants and offers APIs including [init](#init), [createRoom](#createroom), and [enterRoom](#enterroom).
+	- Hosts and participants can call [init](#init) to initialize application and user data. Hosts can call [createRoom](#createroom) to create and enter rooms. Participants can call [enterRoom]( #enterroom) to join the rooms created by hosts.
 ```javascript
 <template>
 	<room ref="TUIRoomRef"></room>
@@ -62,15 +59,15 @@ npm run dev
 
 <script setup lang="ts">
 	import { ref, onMounted } from 'vue';
-	// Import the `TUIRoom` component. Be sure to use the correct import path.
+	// Import the TUIRoom component. Be sure to use the correct import path.
 	import Room from './TUIRoom/index.vue';
-	// Get the `TUIRoom` component elements used to call the component’s APIs
+	// Get the TUIRoom component elements used to call the component’s APIs
 	const TUIRoomRef = ref();
 
 	 onMounted(async () => {
-		// Initialize the `TUIRoom` component
-		// The host needs to initialize the `TUIRoom` component before creating a room
-		// The member needs to initialize the `TUIRoom` component before entering a room
+		// Initialize the TUIRoom component
+		// A host needs to initialize the TUIRoom component before creating a room
+		// A participant needs to initialize the TUIRoom component before entering a room
 		await TUIRoomRef.value.init({
 			// Get the `SDKAppID` (see step 1) 
 			sdkAppId: 0,
@@ -93,7 +90,7 @@ npm run dev
 
 	// The host creates a room. Call this API only when you need to create a room.
 	async function handleCreateRoom() {
-		// `roomId` is the ID of the room entered by the user, which must be a number.
+		// `roomId` is the ID of the room to enter, which must be a number.
 		// The valid values of `roomMode` are `FreeSpeech` (free speech mode) and `ApplySpeech` (request-to-speak mode). The default value is `FreeSpeech`, which is the only supported mode currently.
 		// `roomParam` specifies whether to turn on the mic/camera upon room entry, as well as the default media device ID to use
 		const roomId = 123456;
@@ -105,9 +102,9 @@ npm run dev
 		await TUIRoomRef.value.createRoom(roomId, roomMode, roomParam);
 	}
 
-	// The member enters a room. This API is called by a member to join an existing room.
+	// The participant enters a room. This API is called by a participant to join an existing room.
 	async function handleEnterRoom() {
-		// `roomId` is the ID of the room entered by the user, which must be a number.
+		// `roomId` is the ID of the room to enter, which must be a number.
 		// `roomParam` specifies whether to turn on the mic/camera upon room entry, as well as the default media device ID to use
 		const roomId = 123456;
 		const roomParam = {
@@ -134,9 +131,10 @@ html, body {
 
 >! Copy the above code to your webpage and replace the parameter values for the APIs with the actual values.
 
+[](id:step4)
 ### Step 4. Set up the development environment
 
-After the `TUIRoom` component is imported, in order to ensure that the project can run normally, the following configurations are required:
+After the TUIRoom component is imported, to ensure that the project can run successfully, complete the following configuration:
 
 1. **Install dependencies**
  - Install development environment dependencies:
@@ -148,7 +146,7 @@ npm install sass typescript unplugin-auto-import unplugin-vue-components -S -D
 npm install element-plus events mitt pinia trtc-electron-sdk tim-js-sdk tsignaling -S
 ```
 2. **Register Pinia**
-`TUIRoom` uses Pinia for room data management. You need to register Pinia in the project entry file `packages/renderer/src/main.ts`.
+TUIRoom uses Pinia for room data management. You need to register Pinia in the project entry file `packages/renderer/src/main.ts`.
 ```javascript
 // `src/main.ts` file
 import { createPinia } from 'pinia';
@@ -161,14 +159,15 @@ createApp(App)
   .$nextTick(window.removeLoading)
 ```
 3. **Import Element Plus components**
-	- `TUIRoom` uses Element Plus UI components, which you need to import in `packages/renderer/vite.config.ts`. You can manually import only the components you need.
+	- TUIRoom uses Element Plus UI components, which you need to import in `packages/renderer/vite.config.ts`. You can manually import only the components you need.
 >! Add the code below in the file. Do not delete the existing configuration.
->
+
 ```javascript
 // vite.config.ts
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+const path = require('path');
 
 export default defineConfig({
 	// ...
@@ -265,9 +264,11 @@ export default defineConfig({
 });
 ```
 5. **Configure `env.d.ts`**
-Configure the `env.d.ts` file in `packages/renderer/src/env.d.ts` as follows:
+
+    - Configure the `env.d.ts` file in `packages/renderer/src/env.d.ts` as follows:
+
 >! Add the code below in `env.d.ts`. Do not delete the existing configuration in the file.
->
+
 ```javascript
 // env.d.ts
 
@@ -283,9 +284,9 @@ declare module 'tim-js-sdk' {
 
 ```
 6. **If there are dynamic imports in your project, you need to modify the build configuration to generate an ES module.**
-Modify the configuration in `packages/renderer/vite.config.ts` as follows.
->! Add the code below in the file. Do not delete the existing Vite configuration. **Skip this step** if your project does not have dynamic imports.
->
+    - Modify the configuration in `packages/renderer/vite.config.ts` as follows.
+>! Add the code below in the file. Do not delete the existing Vite configuration. Skip this step if your project does not have dynamic imports.
+
 ```javascript
 // vite.config.ts
 
@@ -302,22 +303,22 @@ export default defineConfig({
 ```
 
 [](id:step5)
-### Step 5. Run the development environment
-In the console, execute the development environment script. Then, open the page integrated with the `TUIRoom` component with a browser.
+### Step 5. Run your project in the development environment
+In the console, execute the development environment script. Then, open the page integrated with the TUIRoom component with a browser.
 If you used the script in [step 2](#step2) to generate an Electron + Vue3 + TypeScript project, follow the steps below:
 
 1. Run the development environment command.
 ```bash
 npm run dev
 ```
-
->!  Because Element Plus components are imported manually, it may take a relatively long time for the page to load in the development environment for the first time. This will not be an issue after building.
-
-2. Try out the features of the `TUIRoom` component.
+>! Because Element Plus components are imported manually, it may take a relatively long time for the page to load in the development environment for the first time. This will not be an issue after building.
+2. Try out the features of the TUIRoom component.
 
 [](id:step6)
 ### Step 6. Create an installer and run it
+
 Run the following command in a terminal window to generate an installer in the `release` directory.
+
 ```
 npm run build
 ```
@@ -329,7 +330,7 @@ npm run build
 
 #### init
 
-This API is used to initialize `TUIRoom` data. Anyone using `TUIRoom` needs to call this API.
+This API is used to initialize TUIRoom data. Anyone using TUIRoom needs to call this API.
 ```javascript
 TUIRoomRef.value.init(roomData);
 ```
@@ -369,7 +370,7 @@ The parameters are described below:
 | roomParam.defaultSpeakerId    | String | The ID of the default speaker, which is optional.                                    |
 
 #### enterRoom
-This API is used by a member to enter a room.
+This API is used by a participant to enter a room.
 ```javascript
 TUIRoomRef.value.enterRoom(roomId, roomParam);
 ```
@@ -397,7 +398,7 @@ A room was created.
 </template>
 
 <script setup lang="ts">
-  // Import the `TUIRoom` component. Be sure to use the correct import path.
+  // Import the TUIRoom component. Be sure to use the correct import path.
   import Room from './TUIRoom/index.vue';
   
   function handleRoomCreate(info) {
@@ -410,14 +411,14 @@ A room was created.
 
 #### onRoomEnter
 
-A member entered the room.
+A user entered the room.
 ```javascript
 <template>
   <room ref="TUIRoomRef" @on-room-enter="handleRoomEnter"></room>
 </template>
 
 <script setup lang="ts">
-  // Import the `TUIRoom` component. Be sure to use the correct import path.
+  // Import the TUIRoom component. Be sure to use the correct import path.
   import Room from './TUIRoom/index.vue';
   
   function handleRoomEnter(info) {
@@ -437,7 +438,7 @@ The host closed the room.
 </template>
 
 <script setup lang="ts">
-  // Import the `TUIRoom` component. Be sure to use the correct import path.
+  // Import the TUIRoom component. Be sure to use the correct import path.
   import Room from './TUIRoom/index.vue';
   
   function handleRoomDestory(info) {
@@ -449,7 +450,7 @@ The host closed the room.
 ```
 
 #### onRoomExit
-The member exited the room.
+A participant left the room.
 
 ```javascript
 <template>
@@ -457,12 +458,12 @@ The member exited the room.
 </template>
 
 <script setup lang="ts">
-  // Import the `TUIRoom` component. Be sure to use the correct import path.
+  // Import the TUIRoom component. Be sure to use the correct import path.
   import Room from './TUIRoom/index.vue';
   
   function handleRoomExit(info) {
     if (info.code === 0) {
-      console.log('The member exited the room successfully')
+      console.log('The participant exited the room successfully')
     }
   }
 </script>

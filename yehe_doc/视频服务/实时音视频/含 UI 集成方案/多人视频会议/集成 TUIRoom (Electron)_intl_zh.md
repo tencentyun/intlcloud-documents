@@ -2,14 +2,12 @@
 
 TUIRoom 是一个包含 UI 的开源音视频组件，通过集成 TUIRoom，您可以在业务中快速上线音视频房间，屏幕分享，聊天等功能。Electron 端 TUIRoom 基础功能如下图所示：
 
->?TUIKit 系列组件同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 服务详细计费规则请参见 [即时通信 - 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)，TRTC 开通会默认关联开通 IM SDK 的体验版，仅支持100个 DAU。
+>? TUIKit 系列组件同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 服务详细计费规则请参见 [即时通信 - 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)，TRTC 开通会默认关联开通 IM SDK 的体验版，仅支持100个 DAU。
 
-<table><tr>
-<td><img width="900" src="https://qcloudimg.tencent-cloud.cn/raw/a98627586f82847a061a3695ad15ad26.png"></td>
-</tr>
-</table>
+![](https://qcloudimg.tencent-cloud.cn/raw/a98627586f82847a061a3695ad15ad26.png)
 
-您可以单击 [Github](https://github.com/tencentyun/TUIRoom) 下载 TUIRoom 代码，并参考 [TUIRoom Electron 示例工程快速跑通](https://github.com/tencentyun/TUIRoom/tree/main/Electron) 文档跑通 TUIRoom Electron 示例工程。
+您可以单击在线体验链接： [Mac OS版](https://web.sdk.qcloud.com/trtc/electron/download/solution/TUIRoom-Electron/TUIRoom-Electron-mac-latest.zip) 及 [Windows版](https://web.sdk.qcloud.com/trtc/electron/download/solution/TUIRoom-Electron/TUIRoom-Electron-windows-latest.zip) 下载体验 TUIRoom Electron 更多功能。
+您也可以单击 [Github](https://github.com/tencentyun/TUIRoom) 下载 TUIRoom 代码，并参考 [TUIRoom Electron 示例工程快速跑通](https://github.com/tencentyun/TUIRoom/tree/main/Electron) 文档跑通 TUIRoom Electron 示例工程。
 如需在现有业务中集成 Electron 端 TUIRoom 组件，请参考本文档。
 
 ## 组件集成
@@ -20,7 +18,7 @@ TUIRoom 组件使用 Vue3 + TS + Pinia + Element Plus + SCSS 开发，要求接�
 TUIRoom 基于腾讯云实时音视频和即时通信服务进行开发。
 
 1. **创建实时音视频 TRTC 应用**
-	- 如果您还没有腾讯云账号，请 [注册腾讯云账号](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 。
+	- 如果您还没有腾讯云账号，请 [注册腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) ，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 	- 在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 单击 **应用管理 > 创建应用** 创建新应用。
 ![](https://qcloudimg.tencent-cloud.cn/raw/b0f61355af812d8ae822a5df2252d709.png)
 2. **获取 TRTC 应用及密钥信息**
@@ -35,19 +33,18 @@ TUIRoom 基于腾讯云实时音视频和即时通信服务进行开发。
 [](id:step2)
 
 ### 步骤二：下载并拷贝 TUIRoom 组件
-1. 打开业务侧已有 Electron + Vue3 + TS 项目，如果无 Electron + Vue3 + TS 项目,可通过以下脚本生成 Electron + Vue3 + TS 的模板工程。
-```bash
-npm create electron-vite
-```
->! 执行生成模板工程脚本的过程中，选择 Vue。
->
-成功生成模板工程后，执行以下脚本：
+1. 打开业务侧已有 Electron + Vue3 + TS 项目，如果无 Electron + Vue3 + TS 项目,可通过此模版 [Github](https://github.com/electron-vite/electron-vite-vue/tree/v1.0.0) 生成Electron + Vue3 + TS 的模板工程。
+>! 
+>- 本文档介绍的集成步骤基于 electron-vite-vue 模版工程1.0.0版本。
+>- electron-vite-vue 模版工程最新版本目录结构有调整，如需使用最新版本，可参照本文档自行调整目录和配置。
+
+2. 成功生成模板工程后，执行以下脚本：
 ```bash
 cd electron-vite-vue
 npm install
 npm run dev
 ```
-2. 单击 [Github](https://github.com/tencentyun/TUIRoom) , 克隆或下载 TUIRoom 仓库代码，复制 `TUIRoom/Electron/packages/renderer/src/TUIRoom` 文件夹到已有项目 `packages/renderer/src/` 目录下。
+3. 单击 [Github](https://github.com/tencentyun/TUIRoom) , 克隆或下载 TUIRoom 仓库代码，复制 `TUIRoom/Electron/packages/renderer/src/TUIRoom` 文件夹到已有项目 `packages/renderer/src/` 目录下。
 
 [](id:step3)
 ### 步骤三：引用 TUIRoom 组件
@@ -134,6 +131,7 @@ html, body {
 
 >! 在页面中复制以上代码之后，需要修改 TUIRoom 接口的参数为实际数据。
 
+[](id:step4)
 ### 步骤四：配置开发环境
 
 TUIRoom 组件引入之后，为了确保项目可以正常运行，需要进行以下配置：
@@ -154,7 +152,7 @@ TUIRoom 使用 Pinia 进行房间数据管理，您需要在项目入口文件�
 import { createPinia } from 'pinia';
 
 const app = createApp(App);
-// 注册pina
+// 注册Pinia
 createApp(App)
   .use(createPinia())
   .mount('#app')
@@ -163,12 +161,13 @@ createApp(App)
 3. **配置 element-plus 按需引入**
 	- TUIRoom 使用 element-plus UI 组件，为避免引入所有 element-plus组件，需要您在 `packages/renderer/vite.config.ts` 中配置 element-plus 组件按需加载。
 >! 以下配置项为增量配置，不要删除已经存在的 Vite 配置项。
->
+
 ```javascript
 // vite.config.ts
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+const path = require('path');
 
 export default defineConfig({
 	// ...
@@ -193,8 +192,7 @@ export default defineConfig({
   },
 });
 ```
-
-  - 同时为了保证 element-plus 带 UI 组件能够正常显示样式，需要您在入口文件 `packages/renderer/src/main.ts` 中加载 element-plus 组件样式。
+	- 同时为了保证 element-plus 带 UI 组件能够正常显示样式，需要您在入口文件 `packages/renderer/src/main.ts` 中加载 element-plus 组件样式。
 ```
 // src/main.ts
 import 'element-plus/theme-chalk/el-message.css'
@@ -265,10 +263,11 @@ export default defineConfig({
 	// ...
 });
 ```
+5. **env.d.ts文件配置**
 
-5. **env.d.ts 文件配置**
-`env.d.ts` 文件配置需要您在 `packages/renderer/src/env.d.ts` 中配置。
->! 以下配置项为增量配置，不要删除已经存在的 `env.d.ts` 文件配置。
+    - env.d.ts 文件配置需要您在 `packages/renderer/src/env.d.ts` 中配置。
+
+>! 以下配置项为增量配置，不要删除已经存在的 env.d.ts文件配置。
 
 ```javascript
 // env.d.ts
@@ -285,9 +284,9 @@ declare module 'tim-js-sdk' {
 
 ```
 6. **如果项目中存在 import 动态加载，需要修改构建配置，打包生成 es 模块**
-打包生成 es 模块需要您在 `packages/renderer/vite.config.ts` 中配置。
->! 项目中若不存在 import 动态加载，**请不要进行此配置**。以下配置项为增量配置，不要删除已经存在的 Vite 配置项。
->
+    - 打包生成 es 模块需要您在 `packages/renderer/vite.config.ts` 中配置。
+>! 项目中若不存在 import 动态加载，请不要进行此配置！以下配置项为增量配置，不要删除已经存在的 Vite 配置项。
+
 ```javascript
 // vite.config.ts
 
@@ -312,14 +311,14 @@ export default defineConfig({
 ```bash
 npm run dev
 ```
-
->!  因 TUIRoom 按需引入 element-plus 组件，会导致开发环境路由页面第一次加载时反应较慢，等待 element-plus 按需加载完成即可正常使用。element-plus 按需加载不会影响打包之后的页面加载。
-
+>! 因 TUIRoom 按需引入 element-plus 组件，会导致开发环境路由页面第一次加载时反应较慢，等待 element-plus 按需加载完成即可正常使用。element-plus 按需加载不会影响打包之后的页面加载。
 2. 体验 TUIRoom 组件功能。
 
 [](id:step6)
 ### 步骤六：构建安装包、运行
+
 在命令行终端中，执行以下命令构建安装包，构建好的安装包位于 `release` 目录下，可以安装运行。
+
 ```
 npm run build
 ```

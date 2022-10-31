@@ -4,6 +4,7 @@ TRTC Web SDK 基于 WebRTC 实现，目前支持桌面端和移动端的主流�
 如果您的应用场景不在支持的表格里，可以打开 [TRTC Web SDK 能力检测页面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 检测当前环境是否支持 WebRTC 所有能力，例如 WebView 等环境。
 
 <table>
+<thead>
 <tr>
 <th>操作系统</th>
 <th>浏览器类型</th>
@@ -13,6 +14,7 @@ TRTC Web SDK 基于 WebRTC 实现，目前支持桌面端和移动端的主流�
 <th>发送（上麦）</th>
 <th width=19%>屏幕分享</th>
 </tr>
+</thead>
 <tr>
 <td rowspan="11">Windows</td>
 <td>桌面版 Chrome 浏览器</td>
@@ -357,6 +359,7 @@ TRTC 是 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html
 | [subscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#subscribe)   | 订阅远端流。         |
 | [unsubscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#unsubscribe)   | 取消订阅远端流。     |
 | [switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#switchRole)     | 切换用户角色，仅在 ‘live’ 互动直播模式下生效。     |
+| [sendSEIMessage](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#sendSEIMessage) |  发送 SEI 消息。 |
 | [on](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#on)   | 监听客户端对象事件。                |
 | [off](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#off)               | 取消监听客户端对象事件。            |
 | [getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteMutedState)   | 获取当前房间内远端用户音视频 mute 状态列表。      |
@@ -402,6 +405,7 @@ LocalStream 本地音视频流，通过 [createStream](https://web.sdk.qcloud.co
 | [getUserId](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getUserId)       | 获取该流所属的用户 ID。 |
 | [setAudioOutput](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioOutput)           | 设置声音输出设备。 |
 | [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioLevel)             | 获取当前音量大小。只有当本地流或远端流中有音频数据才有效。 |
+| [setAudioCaptureVolume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioCaptureVolume) | 设置麦克风采集音量。|
 | [hasAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#hasAudio)         | 是否包含音频轨道。 |
 | [hasVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#hasVideo)         | 是否包含视频轨道。 |
 | [getAudioTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioTrack)             | 获取音频轨道。 |
@@ -468,6 +472,7 @@ Client 会触发的事件列表，即 `client.on('eventName')` 事件监听中�
 | [client-banned](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.CLIENT_BANNED) | 用户被踢出房间事件，被踢原因有：<ul style="margin:0"><li/>同名用户进入同一房间，**注意**：禁止同名用户同时进入同一房间，会导致双方音视频通话异常，业务侧应避免出现这种情况。<li/>被账户管理员使用服务端 API 踢出房间。</ul> |
 | [network-quality](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.NETWORK_QUALITY) | 网络质量统计数据事件，进房后开始统计，每两秒触发一次，包括上、下行的网络质量数据。 |
 | [audio-volume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.AUDIO_VOLUME) | 音量大小事件。<br>调用 [enableAudioVolumeEvaluation](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#enableAudioVolumeEvaluation) 接口开启音量大小回调后，SDK 会定时抛出该事件，通知每个 userId 的音量大小。 |
+| [sei-message](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.SEI_MESSAGE) | 收到 sei 消息。 |
 | [error](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.ERROR) | 错误事件，当出现不可恢复错误后，会抛出此事件。参见 [错误码](https://intl.cloud.tencent.com/document/product/647/41665)。 |
 
 ### StreamEvent

@@ -2,13 +2,11 @@
 
 TUIRoom은 UI가 있는 오픈 소스 오디오/비디오 컴포넌트입니다. TUIRoom을 통합하면 오디오/비디오 룸, 화면 공유, 채팅 및 기타 비즈니스 기능을 빠르게 런칭할 수 있습니다. Electron TUIRoom의 기본 기능은 다음과 같습니다.
 
->?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+>? TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 규정은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
-<table><tr>
-<td><img width="900" src="https://qcloudimg.tencent-cloud.cn/raw/a98627586f82847a061a3695ad15ad26.png"></td>
-</tr>
-</table>
+![](https://qcloudimg.tencent-cloud.cn/raw/a98627586f82847a061a3695ad15ad26.png)
 
+온라인 체험 링크: [Mac OS](https://web.sdk.qcloud.com/trtc/electron/download/solution/TUIRoom-Electron/TUIRoom-Electron-mac-latest.zip) 및 [Windows](https://web.sdk.qcloud.com/trtc/electron/download/solution/TUIRoom-Electron/TUIRoom-Electron-windows-latest.zip)를 다운로드하여 TUIRoom Electron의 더 많은 기능을 체험할 수 있습니다.
 [Github](https://github.com/tencentyun/TUIRoom)을 클릭하여 TUIRoom 코드를 다운로드할 수 있으며, [TUIRoom Electron Demo 프로젝트 빠른 실행](https://github.com/tencentyun/TUIRoom/tree/main/Electron) 문서를 참고하여 TUIRoom Electron 데모 프로젝트를 빠르게 실행할 수도 있습니다.
 이 문서는 TUIRoom Electron 컴포넌트를 기존 프로젝트에 통합하는 방법을 보여줍니다.
 
@@ -20,7 +18,7 @@ TUIRoom 컴포넌트는 Vue3 + TS + Pinia + Element Plus + SCSS를 사용하여 
 TUIRoom은 Tencent Cloud의 TRTC 및 IM 서비스를 기반으로 개발되었습니다.
 
 1. **Tencent Real-Time Communication(TRTC) 애플리케이션 생성**
-	- Tencent Cloud 계정이 없으시다면 [Tencent Cloud 계정 생성](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 하시기 바랍니다.
+	- 아직 Tencent Cloud 계정이 없다면 먼저 [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327)를 생성하고 [Identity Verification](https://intl.cloud.tencent.com/document/product/378/3629)을 완료하십시오.
 	- [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에서 **애플리케이션 관리 > 애플리케이션 생성**을 클릭하여 새로운 애플리케이션을 생성합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b0f61355af812d8ae822a5df2252d709.png)
 2. **TRTC 키 정보 가져오기**
@@ -35,19 +33,18 @@ TUIRoom은 Tencent Cloud의 TRTC 및 IM 서비스를 기반으로 개발되었�
 [](id:step2)
 
 ### 2단계: TUIRoom 컴포넌트 다운로드 및 복사
-1. 기존 Electron + Vue3 + TS 프로젝트를 엽니다. 없는 경우 다음 스크립트를 사용하여 Electron + Vue3 + TS 예제를 만듭니다.
-```bash
-npm create electron-vite
-```
->! Vue를 선택합니다.
->
-템플릿 프로젝트가 성공적으로 생성되면 다음 스크립트를 실행합니다.
+1. 기존 Electron + Vue3 + TypeScript 프로젝트를 엽니다. 없는 경우 이 템플릿 [Github](https://github.com/electron-vite/electron-vite-vue/tree/v1.0.0)을 사용하여 Electron + Vue3 + TS 예시를 생성합니다.
+>! 
+>- 본문에서 설명하는 통합 단계는 electron-vite-vue 템플릿 프로젝트 버전 1.0.0을 기반으로 합니다.
+>- electron-vite-vue 템플릿 프로젝트의 최신 버전의 디렉터리 구조가 조정되었습니다. 최신 버전을 사용해야 하는 경우 본 문서를 참고하여 디렉터리 및 구성을 조정할 수 있습니다.
+
+2. 템플릿 프로젝트가 성공적으로 생성되면 다음 스크립트를 실행합니다.
 ```bash
 cd electron-vite-vue
 npm install
 npm run dev
 ```
-2. [TUIRoom 코드](https://github.com/tencentyun/TUIRoom)를 복제하거나 다운로드하고 `TUIRoom/Electron/packages/renderer/src/TUIRoom` 폴더를 프로젝트의 `packages/renderer/src/`에 복사합니다.
+3. [TUIRoom 코드](https://github.com/tencentyun/TUIRoom)를 복제하거나 다운로드하고 `TUIRoom/Electron/packages/renderer/src/TUIRoom` 폴더를 프로젝트의 `packages/renderer/src/`에 복사합니다.
 
 [](id:step3)
 ### 3단계: TUIRoom 컴포넌트 레퍼런스
@@ -134,11 +131,12 @@ html, body {
 
 >! 페이지에 위의 코드를 복사하여 TUIRoom API의 매개변수를 실제 값으로 바꿉니다.
 
+[](id:step4)
 ### 4단계: 개발 환경 구성
 
 TUIRoom 컴포넌트를 가져온 후 프로젝트가 정상적으로 실행되도록 하려면 다음 구성이 필요합니다.
 
-1. **설치 종속성**
+1. **종속성 설치**
  - 개발 환경 종속성을 설치합니다.
 ```bash
 npm install sass typescript unplugin-auto-import unplugin-vue-components -S -D
@@ -154,7 +152,7 @@ TUIRoom은 방 데이터 관리를 위해 Pinia를 사용합니다. 프로젝트
 import { createPinia } from 'pinia';
 
 const app = createApp(App);
-// pina 등록
+// Pinia 등록
 createApp(App)
   .use(createPinia())
   .mount('#app')
@@ -163,12 +161,13 @@ createApp(App)
 3. **element-plus 컴포넌트의 주문형 가져오기 구성**
 	- TUIRoom은 element-plus UI 컴포넌트를 사용합니다. 모든 element-plus 컴포넌트를 가져오지 않으려면 요청 시 로딩하도록 `packages/renderer/vite.config.ts`에서 구성해야 합니다.
 >! 다음 구성 항목이 새로 추가되었습니다. 기존 Vite 구성 항목을 삭제하지 마십시오.
->
+
 ```javascript
 // vite.config.ts
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+const path = require('path');
 
 export default defineConfig({
 	// ...
@@ -265,9 +264,11 @@ export default defineConfig({
 });
 ```
 5. **env.d.ts 구성**
-`packages/renderer/src/env.d.ts`에서 `env.d.ts` 파일을 다음과 같이 구성합니다.
->! 'env.d.ts'에 아래 코드를 추가하십시오. 파일에서 기존 구성을 삭제하지 마십시오.
->
+
+    - `packages/renderer/src/env.d.ts`에서 env.d.ts 파일을 다음과 같이 구성합니다.
+
+>! env.d.ts에 아래 코드를 추가하십시오. 파일에서 기존 구성을 삭제하지 마십시오.
+
 ```javascript
 // env.d.ts
 
@@ -283,9 +284,9 @@ declare module 'tim-js-sdk' {
 
 ```
 6. **프로젝트에 동적 import가 있는 경우 es 모듈을 생성하기 위해 빌드 구성을 수정해야 합니다.**
-`packages/renderer/vite.config.ts`의 구성을 다음과 같이 수정합니다.
->! 파일에 아래 코드를 추가합니다. 기존 Vite 구성을 삭제하지 마십시오. 프로젝트에 동적 impor가 없는 경우 **이 단계를 건너뛰십시오**.
->
+    - `packages/renderer/vite.config.ts`의 구성을 다음과 같이 수정합니다.
+>! 파일에 아래 코드를 추가합니다. 기존 Vite 구성을 삭제하지 마십시오. 프로젝트에 동적 impor가 없는 경우 이 단계를 건너뛰십시오!
+
 ```javascript
 // vite.config.ts
 
@@ -310,14 +311,14 @@ export default defineConfig({
 ```bash
 npm run dev
 ```
-
->!  TUIRoom은 element-plus 컴포넌트를 온디맨드로 불러오기 때문에 개발 환경 라우팅 페이지가 처음 로드될 때 반응이 느려지고 element-plus 컴포넌트가 온디맨드로 로드된 후 정상적으로 사용할 수 있습니다. 이 로딩은 패키징 후 페이지 로딩에 영향을 미치지 않습니다.
-
+>! TUIRoom은 element-plus 컴포넌트를 온디맨드로 불러오기 때문에 개발 환경 라우팅 페이지가 처음 로드될 때 반응이 느려지고 element-plus 컴포넌트가 온디맨드로 로딩된 후 정상적으로 사용할 수 있습니다. 이 로딩은 패키징 후 페이지 로딩에 영향을 미치지 않습니다.
 2. TUIRoom 컴포넌트의 기능을 사용해 보십시오.
 
 [](id:step6)
 ### 6단계: 설치 프로그램 생성 및 실행
+
 터미널 창에서 다음 명령을 실행하여 `release` 디렉터리에 설치 프로그램을 생성합니다.
+
 ```
 npm run build
 ```

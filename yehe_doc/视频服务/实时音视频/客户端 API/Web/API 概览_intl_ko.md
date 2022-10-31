@@ -4,6 +4,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 귀하의 시나리오가 지원되는 테이블에 없는 경우 [TRTC Web SDK 기능 테스트 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)에서 현재 환경이 WebView 환경 등 WebRTC의 모든 기능을 지원하는지 확인할 수 있습니다.
 
 <table>
+<thead>
 <tr>
 <th>운영 체제</th>
 <th>브라우저 유형</th>
@@ -13,6 +14,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 <th>발송(마이크)</th>
 <th width=19%>화면 공유</th>
 </tr>
+</thead>
 <tr>
 <td rowspan="11">Windows</td>
 <td>Chrome 브라우저(데스크톱)</td>
@@ -31,7 +33,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 <td>미지원</td>
 </tr>
 <tr>
-<td>데스크톱 Firefox 브라우저</td>
+<td>Firefox 브라우저(데스크톱)</td>
 <td>56+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -39,7 +41,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 <td>Firefox66+ 버전 지원</td>
 </tr>
 <tr>
-<td>데스크톱 Edge 브라우저</td>
+<td>Edge 브라우저(데스크톱)</td>
 <td>80+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -120,7 +122,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 <td>Chrome72+ 버전 지원</td>
 </tr>
 <tr>
-<td>데스크톱 Firefox 브라우저</td>
+<td>Firefox 브라우저(데스크톱)</td>
 <td>56+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -128,7 +130,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 <td>Firefox66+ 버전 지원<a href="#attention3">(주의[3])</a></td>
 </tr>
 <tr>
-<td>데스크톱 Edge 브라우저</td>
+<td>Edge 브라우저(데스크톱)</td>
 <td>80+</td>
 <td>v4.7.0+</td>
 <td>지원</td>
@@ -273,7 +275,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 ## URL 도메인 프로토콜 제한
 브라우저 보안 정책의 제한으로 인해 WebRTC 기능을 사용하려면 페이지의 액세스 프로토콜에 대한 엄격한 요구 사항이 있으므로 다음 테이블을 참고하여 애플리케이션을 개발하고 배포하십시오.
 
-| 응용 시나리오     | 프로토콜             | 수신(재생) | 발송(마이크 켜짐) | 화면 공유 | 비고 |
+| 응용 시나리오     | 프로토콜             | 수신(재생) | 발송(마이크 켜짐) | 화면 공유 | 비고     |
 |----------|:-----------------|:---------|----------|--------|----------|
 | 프로덕션 환경     | HTTPS 프로토콜         | 지원      | 지원      | 지원               | **권장** |
 | 프로덕션 환경     | HTTP 프로토콜         | 지원         | 미지원       | 미지원   |      |
@@ -308,7 +310,6 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 | 클라우드 혼합 스트림 구현     | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-31-advanced-mix-transcode.html)  |
 | 클라우드 녹화 구현     | [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-32-advanced-cloud-record.html)   |
 
-
 >? 
 >- [클릭](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-10-basic-get-started-with-demo.html)하여 더 많은 기능을 확인하십시오.
 >- FAQ는 [Web 관련](https://intl.cloud.tencent.com/document/product/647/37340)을 참고하십시오.
@@ -337,7 +338,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html)
 
 [로그 출력 레벨](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.LogLevel), 로그 업로드 활성화/비활성화 등 로그 설정 메소드를 제공합니다.
 
-| API           | 설명          |
+| API        | 설명       |
 | ---------------------------------- | ------------------ |
 | [setLogLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.setLogLevel)           | 로그 출력 레벨 설정. |
 | [enableUploadLog](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.enableUploadLog)   | 로그 업로드 활성화.     |
@@ -347,7 +348,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html)
 
 음성/영상 통화 클라이언트 객체 Client는 [createClient()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient)를 통해 생성되며, 음성/영상 통화를 나타냅니다.
 
-| API           | 설명          |
+| API        | 설명   |
 |----------------------------|---------------------|
 | [setProxyServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setProxyServer)           | 프록시 서버 설정. 이 메소드는 기업이 nginx+coturn 같은 프록시 서버를 직접 배포하는 경우에 적합합니다.       |
 | [setTurnServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setTurnServer)     | TURN 서버 설정. 이 메소드는 [setProxyServer()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setProxyServer)와 함께 사용되며, 기업이 프록시 및 TURN 서버를 직접 배포하는 경우에 적합합니다. |
@@ -358,6 +359,7 @@ TRTC는 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html)
 | [subscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#subscribe)          | 원격 스트림 구독.         |
 | [unsubscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#unsubscribe)         | 원격 스트림 구독 취소.     |
 | [switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#switchRole)           | 사용자 역할 전환. 이 메소드는 ‘live’ 인터랙티브 라이브 스트리밍 모드에서만 작동합니다.           |
+| [sendSEIMessage](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#sendSEIMessage) |  SEI 메세지 발송. |
 | [on](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#on)           | 클라이언트 객체 이벤트 수신.         |
 | [off](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#off)           | 클라이언트 객체 이벤트 수신 취소.         |
 | [getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteMutedState) | 방에 있는 원격 사용자의 오디오/비디오 mute 상태 목록 가져오기.             |
@@ -403,6 +405,7 @@ LocalStream 로컬 오디오/비디오 스트림은 [createStream](https://web.s
 | [getUserId](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getUserId)          | 스트림이 소속된 사용자 ID 가져오기. |
 | [setAudioOutput](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioOutput)           | 오디오 출력 장치 설정.            |
 | [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioLevel)     | 현재 볼륨 가져오기. 이 메소드는 로컬 스트림 또는 원격 스트림에 오디오 데이터가 있는 경우에만 작동합니다.        |
+| [setAudioCaptureVolume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioCaptureVolume) | 마이크 수집 볼륨 설정. |
 | [hasAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#hasAudio)           | 오디오 트랙 포함 여부. |
 | [hasVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#hasVideo)          | 비디오 트랙 포함 여부. |
 | [getAudioTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioTrack)            | 오디오 트랙 가져오기. |
@@ -469,6 +472,7 @@ Client에 의해 트리거될 이벤트 목록, 즉 'client.on('eventName')' 이
 | [client-banned](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.CLIENT_BANNED) | 사용자 강제 퇴장 이벤트. 강제 퇴장 이유: <ul style="margin:0"><li/>같은 이름의 사용자가 같은 방에 입장하는 경우. **참고**: 같은 이름의 사용자가 같은 방에 동시에 입장하는 것은 금지되며, 이는 두 사람 사이에 비정상적인 음성 및 영상 통화가 발생할 수 있으므로 서비스측에서 이러한 상황을 방지해야 합니다.<li/>서버 API를 사용하는 계정 관리자에 의해 퇴장 당하는 경우.</ul> |
 | [network-quality](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.NETWORK_QUALITY) | 네트워크 품질 통계 데이터 이벤트. 방에 입장한 후 시작되며 업스트림 및 다운스트림 네트워크 품질 데이터를 포함하여 2초마다 트리거됩니다. |
 | [audio-volume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.AUDIO_VOLUME) | 볼륨 크기 이벤트.<br>볼륨 크기 콜백을 ​​활성화하기 위해 [enableAudioVolumeEvaluation](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#enableAudioVolumeEvaluation) 인터페이스를 호출한 후 SDK는 주기적으로 이 이벤트를 발생시켜 각 userId의 볼륨 크기를 공지합니다. |
+| [sei-message](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.SEI_MESSAGE) | sei 메세지 수신. |
 | [error](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.ERROR) | 복구할 수 없는 오류가 발생할 때 발생되는 오류 이벤트. [오류 코드](https://intl.cloud.tencent.com/document/product/647/41665)를 참고하십시오. |
 
 ### StreamEvent

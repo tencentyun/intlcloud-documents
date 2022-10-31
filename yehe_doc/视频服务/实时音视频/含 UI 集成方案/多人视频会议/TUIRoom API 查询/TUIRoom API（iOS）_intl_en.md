@@ -1,19 +1,18 @@
-`TUIRoom` is based on Tencent Real-Time Communication (TRTC) and Instant Messaging (IM). Its features include:
-- The host can create a room, and users can enter the room ID to join the room.
+﻿TUIRoom is based on Tencent Real-Time Communication (TRTC) and Instant Messaging (IM). Its features include:
+- A host can create a room, and users can enter the room ID to join the room.
 - Room members can share their screens with each other.
-- All users can send various text and custom messages.
+- All members can send text chat messages and custom messages.
 
->?The TUIKit series of components are based on two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, the IM SDK Trial Edition will be activated by default, which will support up to 100 DAUs. For IM billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+>? All components of TUIKit use two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, IM and the trial edition of the IM SDK (which supports up to 100 DAUs) will be activated automatically. For the billing details of IM, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
-`TUIRoom` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, see [Group Audio/Video Room (iOS)](https://intl.cloud.tencent.com/document/product/647/37284).
-
+TUIRoom is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, see [Integrating TUIRoom (iOS)](https://intl.cloud.tencent.com/document/product/647/37284).
 - TRTC SDK: The [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency audio/video room component.
-- IM SDK: The [IM SDK](https://intl.cloud.tencent.com/document/product/1047) for **iOS** is used to implement the chat room feature.
+- IM SDK: The [IM SDK](https://intl.cloud.tencent.com/document/product/1047) (**iOS edition**) is used to implement chat messages.
 
 
-## `TUIRoom` API Overview
+## TUIRoom API Overview
 
-### Basic functions of `TUIRoomCore`
+### TUIRoomCore basic APIs
 
 | API | Description |
 | ----------------------------------- | -------------- |
@@ -23,12 +22,12 @@
 
 ### Room APIs
 
-| API                                             | Description                                                         |
+| API | Description |
 | ----------------------------------------- | ---------------------------------- |
 | [createRoom](#createroom)                 | Creates a room (called by host).           |
 | [destroyRoom](#destroyroom)               | Closes the room (called by host).           |
-| [enterRoom](#enterroom)                  | Enters a room (called by a member)|
-| [leaveRoom](#leaveroom)                   | Exits a room (called by other room members). |
+| [enterRoom](#enterroom)                   | Enters a room (called by participant)|
+| [leaveRoom](#leaveroom)             | Leaves a room (called by participant).           |
 | [getRoomInfo](#getroominfo)               | Gets the room information.                     |
 | [getRoomUsers](#getroomusers)             | Gets the information of all users in the room.           |
 | [getUserInfo](#getuserinfo)               | Gets the information of a user.               |
@@ -42,14 +41,14 @@
 | [stopCameraPreview](#stopcamerapreview)   | Stops local video capturing and preview.   |
 | [startLocalAudio](#startlocalaudio)       | Enables mic capturing.           |
 | [stopLocalAudio](#stoplocalaudio)         | Stops mic capturing.           |
-| [setVideoMirror](#setvideomirror)         | Sets the mirror mode for local preview. |
+| [setVideoMirror](#setvideomirror)                     | Sets the mirror mode for local video preview. |
 | [setSpeaker](#setspeaker)                 | Sets whether to play sound from the device’s speaker or receiver.     |
 
 ### Remote user APIs
 
-| API                                             | Description                                                         |
+| API | Description |
 | ----------------------------------- | ---------------------------------- |
-| [startRemoteView](#startremoteview) | Subscribes to and plays back the video of a specified remote member. |
+| [startRemoteView](#startremoteview) | Subscribes to and plays back the remote video image of a specified room member. |
 | [stopRemoteView](#stopremoteview)   | Unsubscribes from and stops the playback of a remote video image.   |
 
 ### Chat message sending APIs
@@ -61,58 +60,58 @@
 
 ### Room control APIs
 
-| API      | Description                         |
+| API | Description |
 | --------------------------------------------------- | ------------------------------------------------------- |
 | [muteUserMicrophone](#muteusermicrophone)           | Enables/Disables the mic of a specified user.                               |
-| [muteAllUsersMicrophone](#muteallusersmicrophone)   | Enables/Disables the mic of all users and syncs the status to room information. |
+| [muteAllUsersMicrophone](#muteallusersmicrophone)   | Enables/Disables the mics of all users and syncs the status to room information. |
 | [muteUserCamera](#muteusercamera)                   | Enables/Disables the camera of a specified user.                               |
-| [muteAllUsersCamera](#mutealluserscamera)           | Enables/Disables the camera of all users and syncs the status to room information. |
-| [muteChatRoom](#mutechatroom)                       | Turns on/off chat (called by host).                     |
+| [muteAllUsersCamera](#mutealluserscamera)           | Enables/Disables the cameras of all users and syncs the status to room information. |
+| [muteChatRoom](#mutechatroom)                       | Disables/Enables chat messages (called by host).                     |
 | [kickOffUser](#kickoffuser)                         | Removes a specified user from the room (called by host).                        |
 | [startCallingRoll](#startcallingroll)               | Starts a roll call (called by host).                                        |
 | [stopCallingRoll](#stopcallingroll)                 | Stops a roll call (called by host).                                        |
-| [replyCallingRoll](#replycallingroll)               | Replies to a roll call (called by a member).                                    |
-| [sendSpeechInvitation](#sendspeechinvitation)       | Sends a speech invitation to a member (called by host).                                    |
-| [cancelSpeechInvitation](#cancelspeechinvitation)   | Cancels a speech invitation sent to a member (called by host).                                 |
-| [replySpeechInvitation](#replyspeechinvitation)     | Accepts/Rejects the speech invitation of the host (called by a member).                         |
-| [sendSpeechApplication](#sendspeechapplication)     | Sends a speech request (called by a member).                                          |
-| [replySpeechApplication](#replyspeechapplication)   | Approves/Rejects the speech request of a member (called by host).                         |
+| [replyCallingRoll](#replycallingroll)               | Replies to a roll call (called by participant).                                    |
+| [sendSpeechInvitation](#sendspeechinvitation)       | Sends a speech invitation to a participant (called by host).                                    |
+| [cancelSpeechInvitation](#cancelspeechinvitation)   | Cancels a speech invitation sent to a participant (called by host).                                 |
+| [replySpeechInvitation](#replyspeechinvitation)     | Accepts/Rejects the speech invitation of the host (called by participant).                         |
+| [SendSpeechApplication](#sendspeechapplication)     | Sends a speech request (called by participant).                                         |
+| [replySpeechApplication](#replyspeechapplication)   | Approves/Rejects the speech request of a participant (called by host).                         |
 | [forbidSpeechApplication](#forbidspeechapplication) | Disables requests to speak (called by host).                                    |
-| [sendOffSpeaker](#sendoffspeaker)                   | Stops the speech of a member (called by host).                                  |
-| [sendOffAllSpeakers](#sendoffallspeakers)           | Stops the speech of all members in the room (called by host).                                  |
-| [exitSpeechState](#exitspeechstate)                 | Stops speaking and becomes an audience member.                               |
+| [sendOffSpeaker](#sendoffspeaker)                   | Stops the speech of a participant (called by host).                                |
+| [sendOffAllSpeakers](#sendoffallspeakers)           | Stops the speech of all room members (called by host).                                  |
+| [ExitSpeechState](#exitspeechstate)                 | Exits the speaker mode (called by participant).                               |
 
 ### Screen sharing APIs
 
-| API      | Description                         |
+| API | Description |
 |-----|-----|
 | [startScreenCapture](#startscreencapture)   | Starts screen sharing. |
 | [stopScreenCapture](#stopscreencapture)   | Stops screen sharing. |
 
 ### Beauty filter APIs
 
-| API      | Description                         |
+| API | Description |
 |-----|-----|
 | [getBeautyManager](#getbeautymanager) | Gets the beauty filter management object [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TXBeautyManager__ios.html). |
 
 
 ### Settings APIs
 
-| API                                             | Description                                                         |
+| API | Description |
 | ----------------------------------------------- | ---------------------- |
 | [setVideoQosPreference](#setvideoqospreference) | Sets network QoS control parameters. |
 
-### SDK version acquisition APIs
+### SDK version APIs
 
 | API | Description |
 | ------------------------------- | --------------- |
 | [getSDKVersion](#getsdkversion) | Gets the SDK version. |
 
-## `TUIRoomCoreDelegate` API Overview
+## TUIRoomCoreDelegate API Overview
 
 ### Callbacks for error events
 
-| API                          | Description           |
+| API | Description |
 | ------------------- | ---------- |
 | [onError](#onerror) | Callback for error.|
 
@@ -120,8 +119,8 @@
 
 | API | Description |
 | ------------------------------------------- | ------------------ |
-| [onDestroyRoom](#ondestroyroom)             | The room was closed.     |
-| [onUserVoiceVolume](#onuservoicevolume)     | Volume level. |
+| [OnDestroyRoom](#ondestroyroom)             | The room was closed.     |
+| [onUserVoiceVolume](#onuservoicevolume)     | The audio volume of a user. |
 | [onRoomMasterChanged](#onroommasterchanged) | The host changed.   |
 
 ### Remote user event callbacks
@@ -130,13 +129,13 @@
 | ------------------------------------------------------------ | -------------------------------- |
 | [onRemoteUserEnter](#onremoteuserenter)                      | A remote user entered the room.           |
 | [onRemoteUserLeave](#onremoteuserleave)                      | A remote user exited the room.            |
-| [onRemoteUserCameraAvailable](#onremoteusercameraavailable)  | Whether a remote user enabled the camera. |
-| [onRemoteUserScreenVideoAvailable](#onremoteuserscreenvideoavailable) | Whether a remote user enabled screen sharing.   |
-| [onRemoteUserAudioAvailable](#onremoteuseraudioavailable)    | Whether a remote user enabled sending audio.   |
+| [onRemoteUserCameraAvailable](#onremoteusercameraavailable)  | A remote user enabled/disabled their camera. |
+| [onRemoteUserScreenVideoAvailable](#onremoteuserscreenvideoavailable) | A remote user started/stopped screen sharing.   |
+| [onRemoteUserAudioAvailable](#onremoteuseraudioavailable)    |  A remote user turned on/off their mic.   |
 | [onRemoteUserEnterSpeechState](#onremoteuserenterspeechstate) | A remote user started speaking.           |
 | [onRemoteUserExitSpeechState](#onremoteuserexitspeechstate)  | A remote user stopped speaking.          |
 
-### Message event callback APIs
+### Message event callbacks
 
 | API | Description |
 | ------------------------------------------------- | ------------------ |
@@ -144,24 +143,24 @@
 
 ### Room control event callbacks
 
-| API      | Description                         |
+| API | Description |
 | ------------------------------------------------------------ | ---------------------------------- |
-| [onReceiveSpeechInvitation](#onreceivespeechinvitation)      | A member received a speech invitation from the host.       |
-| [onReceiveInvitationCancelled](#onreceiveinvitationcancelled) | The speech invitation sent to a member was canceled by the host.    |
-| [onReceiveSpeechApplication](#onreceivespeechapplication)    | The host received a speech request from a member.     |
-| [onSpeechApplicationCancelled](#onspeechapplicationcancelled) | A member canceled a speech request.             |
-| [onSpeechApplicationForbidden](#onspeechapplicationforbidden) | The host rejected a speech request sent by a member.           |
-| [onOrderedToExitSpeechState](#onorderedtoexitspeechstate)    | A member was asked to stop speaking.         |
-| [onCallingRollStarted](#oncallingrollstarted)                | The host started a roll call.   |
-| [onCallingRollStopped](#oncallingrollstopped)                | The host stopped a roll call.   |
-| [onMemberReplyCallingRoll](#onmemberreplycallingroll)        | A member replied to the roll call.   |
-| [onChatRoomMuted](#onchatroommuted)                          | The host turned on/off chat.     |
+| [onReceiveSpeechInvitation](#onreceivespeechinvitation)      | A participant received a speech invitation from the host.       |
+| [onReceiveInvitationCancelled](#onreceiveinvitationcancelled) | The speech invitation sent to a participant was canceled by the host.    |
+| [onReceiveSpeechApplication](#onreceivespeechapplication)    | The host received a speech request from a participant.     |
+| [onSpeechApplicationCancelled](#onspeechapplicationcancelled) | A participant canceled a speech request.             |
+| [onSpeechApplicationForbidden](#onspeechapplicationforbidden) | The host disabled requests to speak.           |
+| [onOrderedToExitSpeechState](#onorderedtoexitspeechstate)  | A participant was asked to stop speaking.         |
+| [onCallingRollStarted](#oncallingrollstarted)                | The host started a roll call (received by participants)   |
+| [onCallingRollStopped](#oncallingrollstopped)                | The host stopped a roll call (received by participants).   |
+| [onMemberReplyCallingRoll](#onmemberreplycallingroll)        | A participant replied to the roll call (received by the host).   |
+| [onChatRoomMuted](#onchatroommuted)                          | The host disabled/enabled chat messages.     |
 | [onMicrophoneMuted](#onmicrophonemuted)                      | The host disabled mic use.         |
 | [onCameraMuted](#oncameramuted)                              | The host disabled camera use.         |
-| [onReceiveKickedOff](#onreceivekickedoff)                    | The host removed a member from the room.         |
+| [onReceiveKickedOff](#onreceivekickedoff)                    | The host removed a participant from the room (received by the participant).         |
 
 
-### Callback APIs for statistics on network quality and technical metrics
+### Callback of statistics on network quality and technical metrics
 
 | API | Description |
 | ------------------------------------- | ------------------ |
@@ -175,11 +174,11 @@
 | [onScreenCaptureStarted](#onscreencapturestarted) | Screen sharing started. |
 | [onScreenCaptureStopped](#onscreencapturestopped) | Screen sharing stopped. |
 
-## Basic Functions of `TUIRoomCore`
+## TUIRoomCore Basic APIs
 
 ### getInstance
 
-This API is used to get the [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/37284) singleton object.
+This API is used to get a [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/37284) singleton object.
 ```objectivec
 + (instancetype)shareInstance;
 ```
@@ -191,7 +190,7 @@ This API is used to get the [TUIRoomCore](https://intl.cloud.tencent.com/documen
 
 ### setDelegate
 
-This API is used to get the event callback of [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/37284). You can use `TRTCVoiceRoomDelegate` to get various status notifications of [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/37284).
+This API is used to set the event callbacks of [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/37284). You can use `TUIRoomCoreDelegate` to get the callbacks.
 
 ```objectivec
 - (void)setDelegate:(id<TUIRoomCoreDelegate>)delegate;
@@ -199,9 +198,9 @@ This API is used to get the event callback of [TUIRoomCore](https://intl.cloud.t
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| delegate | TUIRoomCoreDelegate | Event callback class. |
+| delegate | TUIRoomCoreDelegate | The event callback class. |
 
 ### createRoom
 
@@ -218,9 +217,9 @@ The parameters are described below:
 |-----------| ------------- | -------------------------------------- |
 | roomId  | NSString  | The room ID. You need to assign and manage the IDs in a centralized manner. |
 | speechMode| TUIRoomSpeechMode | The speech mode. |
-| callback | TUIRoomActionCallback | Room creation result. |
+| callback | TUIRoomActionCallback | The room creation result. |
 
-Generally, the host calls the APIs in the following steps:
+Generally, a host may need to call the following APIs:
 1. The **host** calls `createRoom()` to create a room, the result of which is returned via `TUIRoomActionCallback`.
 2. The **host** calls `startCameraPreview()` to enable camera capturing and preview.
 3. The **host** calls `startLocalAudio()` to enable the local mic.
@@ -236,11 +235,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | ---------- |
-| callback | TUIRoomActionCallback | Room termination result. |
+| callback | TUIRoomActionCallback | The room closing result. |
 
 ### enterRoom
 
-This API is used to enter a room (called by a member).
+This API is used to enter a room (called by a participant).
 ```objectivec
 - (void)enterRoom:(NSString *)roomId
         callback:(TUIRoomActionCallback)callback;
@@ -251,17 +250,17 @@ The parameters are described below:
 | Parameter | Type | Description |
 | ------- | ------ | ---------- |
 | roomId | NSString | The room ID. |
-| callback | TUIRoomActionCallback| Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 
-Generally, a member enters a room in the following steps:
-1. The **member** calls `enterRoom` and passes in `roomId` to enter the room.
-2. The **member** calls `startCameraPreview()` to enable camera preview and calls startLocalAudio()` to enable mic capturing.
-3. The **member** receives the `onRemoteUserCameraAvailable` event and calls `startRemoteView()` to start playback.
+Generally, a participant joins a room in the following steps:
+1. The **participant** calls `enterRoom` (passing in `roomId`) to enter the room.
+2. The **participant** calls `startCameraPreview()` to enable camera preview and calls `startLocalAudio()` to enable mic capturing.
+3. The **participant** receives the `onRemoteUserCameraAvailable` callback and calls `startRemoteView()` to start playback.
 
 ### leaveRoom
 
-This API is used to exit a room (called by a member).
+This API is used to leave a room (called by a participant).
 ```objectivec
  - (void)leaveRoom:(TUIRoomActionCallback)callback;
 ```
@@ -270,7 +269,7 @@ This API is used to exit a room (called by a member).
 
 | Parameter | Type | Description |
 | ------- | ------ | ---------- |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### getRoomInfo
 
@@ -288,7 +287,7 @@ This API is used to get the information of all users in the room.
 
 ### getUserInfo
 
-This API is used to get the information of a user in the room.
+This API is used to get the information of a specified room member.
 ```objectivec
 - (void)getUserInfo:(NSString *)userId
            callback:(TUIRoomUserInfoCallback)callback;
@@ -304,7 +303,7 @@ The parameters are described below:
 
 ### setSelfProfile
 
-This API is used to set user profile.
+This API is used to set the user profile.
 ```objectivec
 - (void)setSelfProfile:(NSString *)userName
         avatarURL:(NSString *)avatarURL
@@ -322,7 +321,7 @@ The parameters are described below:
 
 ### transferRoomMaster
 
-This API is used to transfer a room to another user.
+This API is used to transfer host permissions to another user.
 ```objectivec
  - (void)transferRoomMaster:(NSString *)userId
                   callback:(TUIRoomActionCallback)callback;
@@ -333,7 +332,7 @@ The parameters are described below:
 | Parameter | Type | Description |
 | ------- | ------ | ---------- |
 | userId | NSString | The user ID. |
-| callback | TUIRoomActionCallback| Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 
 ## Local Push APIs
@@ -372,7 +371,7 @@ The parameters are described below:
 
 | Parameter   |  Type  | Description         |
 | ---- | -------------- | ---------- |
-| quality | TRTCAudioQuality | Captured sound quality. |
+| quality | TRTCAudioQuality | The sound quality. |
 
 ### stopLocalAudio
 
@@ -382,7 +381,7 @@ This API is used to stop mic capturing.
 ```
 ### setVideoMirror
 
-This API is used to set the mirror mode for local preview.
+This API is used to set the mirror mode for local video preview.
 ```objectivec
  - (void)setVideoMirror:(TRTCVideoMirrorType)type;
 ```
@@ -391,7 +390,7 @@ The parameters are described below:
 
 | Parameter   |  Type  | Description         |
 | ---- | -------------- | ---------- |
-| type | TRTCVideoMirrorType | Mirroring type. |
+| type | TRTCVideoMirrorType | The mirror mode. |
 
 ### setSpeaker
 
@@ -423,9 +422,9 @@ The parameters are described below:
 | Parameter | Type | Description |
 | -------------- | ------------- | -------------------------- |
 | userId  | NSString  | The ID of the user whose video image is to be played back. |
-| view     | UIView                                    | The control that loads video images |
+| view     | UIView                                    | The view that loads video images. |
 | streamType  | TUIRoomStreamType | The stream type. |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 
 ### stopRemoteView
@@ -441,9 +440,9 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------------- | ----------------------- |
-| userId   | NSString            | The ID of the user whose video image is to be stopped. |
+| userId | NSString | The ID of the user whose video image is to be stopped. |
 | streamType | TUIRoomStreamType  | The stream type. |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### switchCamera
 
@@ -463,7 +462,7 @@ The parameters are described below:
 
 ### sendChatMessage
 
-Broadcast a text chat message in the room. This API is generally used for text chat.
+This API is used to broadcast a text chat message in the room.
 ```objectivec
 - (void)sendChatMessage:(NSString *)message
                callback:(TUIRoomActionCallback)callback;
@@ -473,8 +472,8 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | ---------- |
-| message | NSString | Message content. |
-| callback  | TUIRoomActionCallback | Callback of the operation. |
+| message | NSString | The message content. |
+| callback | TUIRoomActionCallback| The result. |
 
 ## Room Control APIs
 
@@ -491,9 +490,9 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| userId  | NSString| User ID.  |
+| userId  | NSString| The user ID.  |
 | mute  | BOOL  | Whether to disable. |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### muteAllUsersMicrophone
 
@@ -505,10 +504,10 @@ This API is used to enable/disable the mics of all users.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 | ---- | ---- | ---------- |
 | mute  | BOOL  | Whether to disable. |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 
 ### muteUserCamera
@@ -524,9 +523,9 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| userId  | NSString| User ID.  |
+| userId  | NSString| The user ID.  |
 | mute  | BOOL  | Whether to disable. |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### muteAllUsersCamera
 
@@ -538,14 +537,14 @@ This API is used to enable/disable the cameras of all users.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 | ---- | ---- | ---------- |
 | mute  | BOOL  | Whether to disable. |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### muteChatRoom
 
-This API is used to forbid/allow text chat.
+This API is used to disable/enable chat messages.
 ```objectivec
 - (void)muteChatRoom:(BOOL)mute
             callback:(TUIRoomActionCallback)callback;
@@ -553,10 +552,10 @@ This API is used to forbid/allow text chat.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 | ---- | ---- | ---------- |
 | mute  | BOOL  | Whether to disable. |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 
 ### kickOffUser
@@ -571,8 +570,8 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| userId  | NSString| User ID.  |
-| callback | TUIRoomActionCallback | Result. |
+| userId  | NSString| The user ID.  |
+| callback | TUIRoomActionCallback| The result. |
 
 ### startCallingRoll
 
@@ -584,7 +583,7 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### stopCallingRoll
 
@@ -596,11 +595,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### replyCallingRoll
 
-This API is used by a member to reply to the roll call.
+This API is used by a participant to reply to a roll call.
 ```objectivec
 - (void)replyCallingRoll:(TUIRoomActionCallback)callback;
 ```
@@ -608,11 +607,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### sendSpeechInvitation
 
-This API is used by the host to invite a member to speak.
+This API is used by the host to invite a participant to speak.
 ```objectivec
 - (void)sendSpeechInvitation:(NSString *)userId
                     callback:(TUIRoomInviteeCallback)callback
@@ -622,12 +621,12 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| userId  | NSString| User ID.  |
-| callback | TUIRoomInviteeCallback | Result. |
+| userId  | NSString| The user ID.  |
+| callback | TUIRoomInviteeCallback | The result. |
 
 ### cancelSpeechInvitation
 
-This API is used by the host to cancel the speech invitation sent to a member.
+This API is used by the host to cancel a speech invitation.
 ```objectivec
 - (void)cancelSpeechInvitation:(NSString *)userId
                       callback:(TUIRoomActionCallback)callback;
@@ -637,12 +636,12 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| userId  | NSString| User ID.  |
-| callback | TUIRoomActionCallback | Result. |
+| userId  | NSString| The user ID.  |
+| callback | TUIRoomActionCallback| The result. |
 
 ### replySpeechInvitation
 
-This API is used by a member to accept/reject the invitation to speak sent by the host.
+This API is used by a participant to accept/reject the host’s invitation to speak.
 ```objectivec
 - (void)replySpeechInvitation:(BOOL)agree
                      callback:(TUIRoomActionCallback)callback;
@@ -652,12 +651,12 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| agree | BOOL  | Whether to approve. |
-| callback | TUIRoomActionCallback | Result. |
+| agree | bool | Whether to approve. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### sendSpeechApplication
 
-This API is used by a member to request to speak.
+This API is used by a participant to send a request to speak.
 ```objectivec
 - (void)sendSpeechApplication:(TUIRoomInviteeCallback)callback;
 ```
@@ -666,11 +665,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| callback | TUIRoomInviteeCallback | Result. |
+| callback | TUIRoomInviteeCallback | The result. |
 
 ### cancelSpeechApplication
 
-This API is used by a member to cancel their request to speak.
+This API is used by a participant to cancel the request to speak.
 ```objectivec
 - (void)cancelSpeechApplication:(TUIRoomActionCallback)callback;
 ```
@@ -679,11 +678,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| callback | TUIRoomActionCallback| Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 ### replySpeechApplication
 
-This API is used by the host to approve/reject a speech request sent by a member.
+This API is used by the host to approve/reject a participant’s speech request.
 ```objectivec
 - (void)replySpeechApplication:(BOOL)agree
                         userId:(NSString *)userId
@@ -694,9 +693,9 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| agree  | BOOL| Whether to approve. |
-| userId  | NSString| User ID.  |
-| callback | TUIRoomActionCallback | Result. |
+| agree | BOOL | Whether to approve. |
+| userId  | NSString| The user ID.  |
+| callback | TUIRoomActionCallback| The result. |
 
 ### forbidSpeechApplication
 
@@ -711,12 +710,12 @@ The parameters are described below:
 | Parameter | Type | Description |
 | ------ | ---- | ---------- |
 | forbid | BOOL | Whether to disable. |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 
 ### sendOffSpeaker
 
-This API is used by the host to stop the speech of the specified member.
+This API is used by the host to stop the speech of a participant.
 ```objectivec
 - (void)sendOffSpeaker:(NSString *)userId
               callback:(TUIRoomInviteeCallback)callback;
@@ -726,12 +725,12 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| userId  | NSString| User ID.  |
-| callback | TUIRoomInviteeCallback | Result. |
+| userId  | NSString| The user ID.  |
+| callback | TUIRoomInviteeCallback | The result. |
 
 ### sendOffAllSpeakers
 
-This API is used by the host to stop the speech of all members.
+This API is used by the host to stop the speech of all room members.
 ```objectivec
 - (void)sendOffAllSpeakers:(TUIRoomInviteeCallback)callback;
 ```
@@ -740,11 +739,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| callback | TUIRoomInviteeCallback | Result. |
+| callback | TUIRoomInviteeCallback | The result. |
 
 ### exitSpeechState
 
-This API is used to stop speaking and become an audience member.
+This API is used by a participant to exit the speaker mode.
 ```objectivec
 - (void)exitSpeechState:(TUIRoomActionCallback)callback;
 ```
@@ -752,7 +751,7 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | -------- | -------- | ---------- |
-| callback | TUIRoomActionCallback | Result. |
+| callback | TUIRoomActionCallback| The result. |
 
 
 ## Screen Sharing APIs
@@ -765,9 +764,9 @@ This API is used to start screen sharing.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| encParams | TRTCVideoEncParam | Encoding parameters for screen sharing. |
+| encParams | TRTCVideoEncParam | Sets encoding parameters for screen sharing. |
 
 >? For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff).
 
@@ -786,7 +785,7 @@ This API is used to get the beauty filter management object [TXBeautyManager](ht
 - (TXBeautyManager *)getBeautyManager;
 ```
 
-You can do the following using `TXBeautyManager`:
+You can do the following using the beauty filter manger:
 - Set the beauty filter style and apply effects including skin brightening, rosy skin, eye enlarging, face slimming, chin slimming, chin lengthening/shortening, face shortening, nose narrowing, eye brightening, teeth whitening, eye bag removal, wrinkle removal, and smile line removal.
 - Adjust the hairline, eye spacing, eye corners, lip shape, nose wings, nose position, lip thickness, and face shape.
 - Apply animated effects such as face widgets (materials).
@@ -797,7 +796,7 @@ You can do the following using `TXBeautyManager`:
 
 ### setVideoQosPreference
 
-This API is used to set QoS parameters
+This API is used to set network QoS control parameters.
 ```objectivec
 - (void)setVideoQosPreference:(TRTCNetworkQosParam *)preference;
 ```
@@ -806,7 +805,7 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ---------- | --------------------- | -------------- |
-| preference | TRTCNetworkQosParam | Network QoS control policy. |
+| preference | TRTCNetworkQosParam | The network QoS policy. |
 
 ### setAudioQuality
 
@@ -817,9 +816,9 @@ This API is used to set audio quality.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| quality | TRTCAudioQuality | Audio quality. For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53). |
+| quality | TRTCAudioQuality | The audio quality. For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53). |
 
 ### setVideoResolution
 
@@ -831,9 +830,9 @@ This API is used to set the resolution.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| resolution | TRTCVideoResolution | Video resolution. For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5). |
+| resolution | TRTCVideoResolution | The resolution. For details, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5). |
 
 
 ### setVideoFps
@@ -845,11 +844,11 @@ This API is used to set the frame rate.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| fps | int | Video capturing frame rate. |
+| fps | int | The video capturing frame rate. |
 
->?**Recommended value:** 15 or 20 fps. Video will stutter severely if the frame rate is lower than 5 fps and slightly if it is lower than 10 fps. Setting the frame rate to higher than 20 fps would be a waste of resources (the frame rate of films is 24 fps).
+>? **Recommended value:** 15 or 20 fps. Video will stutter severely if the frame rate is lower than 5 fps and slightly if it is lower than 10 fps. Setting the frame rate to higher than 20 fps would be a waste of resources (the frame rate of films is 24 fps).
 
 
 ### setVideoBitrate
@@ -861,11 +860,11 @@ This API is used to set the bitrate.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| bitrate | int  | Bitrate. The SDK encodes streams at the target video bitrate and will actively reduce the bitrate only if the network conditions are poor. For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454). |
+| bitrate | int  | The bitrate. The SDK encodes streams at the target video bitrate. However, it may reduce the bitrate if network conditions are poor. For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454). |
 
->? **Recommended value:** See the optimal bitrate for each tier in `TRTCVideoResolution`. You can also slightly increase the optimal bitrate. For example, `TRTC_VIDEO_RESOLUTION_1280_720` corresponds to the target bitrate of 1,200 Kbps, and you can also set the bitrate to 1,500 Kbps for higher definition.
+>? **Recommended value:** See the recommended bitrate for each `TRTCVideoResolution` value. For a better viewing experience, you can slightly increase the bitrate. For example, the recommended bitrate for `TRTC_VIDEO_RESOLUTION_1280_720` is 1,200 Kbps. You can set the bitrate to 1,500 Kbps.
 
 ### enableAudioEvaluation
 
@@ -876,11 +875,11 @@ This API is used to enable the volume reminder.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| enable | BOOL | YES: Enable. NO: Disable. |
+| bEnable | BOOL | YES: Enable. NO: Disable. |
 
->? After this feature is enabled, the result of volume evaluation by the SDK will be obtained in `onUserVolumeUpdate`.
+>? After the volume reminder is enabled, the volumes measured by the SDK will be returned via the `onUserVolumeUpdate` callback.
 
 ### setAudioPlayVolume
 
@@ -891,9 +890,9 @@ This API is used to set the playback volume.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| volume | int | Playback volume. Value range: 0–100. Default value: 100. |
+| volume | int | The playback volume. Value range: 0-100. Default value: 100. |
 
 ### setAudioCaptureVolume
 
@@ -904,9 +903,9 @@ This API is used to set the mic capturing volume.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| volume | int | Capture volume. Value range: 0–100. Default value: 100. |
+| volume | int | The capturing volume. Value range: 0-100. Default value: 100. |
 
 ### startFileDumping
 
@@ -917,9 +916,9 @@ This API is used to start audio recording.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| params | TRTCAudioRecordingParams | Audio recording parameters. For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams). |
+| params | TRTCAudioRecordingParams | The recording parameters. For details, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams). |
 
 >? After this API is called, the SDK will record all audios of a call, including the local audio, remote audios, and background music, into a single file. This API works regardless of whether you are in the room or not. When `leaveRoom` is called, audio recording will stop automatically.
 
@@ -930,11 +929,11 @@ This API is used to stop audio recording.
 - (void)stopFileDumping;
 ```
 
-## SDK Version Acquisition APIs
+## SDK Version APIs
 
 ### getSdkVersion
 
-This API is used to get SDK version information.
+This API is used to get the SDK version.
 ```objectivec
 - (NSInteger)getSdkVersion;
 ```
@@ -950,8 +949,8 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | ---------- |
-| code    | NSInteger | Error code.   |
-| message | NSString  | Error message. |
+| code    | NSInteger | The error code.   |
+| message | NSString  | The error message. |
 
 ## Basic Event Callbacks
 
@@ -964,7 +963,7 @@ The room was closed.
 
 ### onUserVoiceVolume
 
-User volume level.
+The audio volume of a user.
 ```objectivec
 - (void)onUserVoiceVolume:(NSString *)userId volume:(NSInteger)volume;
 ```
@@ -973,8 +972,8 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | ---------------------------------- |
-| userId | NSString  | User ID.            |
-| volume  | NSInteger | User volume level. Value range: 0–100. |
+| userId  | NSString| The user ID.  |
+| volume | NSInteger| The volume. Value range: 0-100. |
 
 ### onRoomMasterChanged
 
@@ -1005,7 +1004,7 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | --------- |
-| userId | NSString  | User ID            |
+| userId  | NSString| The user ID.  |
 
 ### onRemoteUserLeave
 
@@ -1018,11 +1017,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | --------- |
-| userId | NSString  | User ID            |
+| userId  | NSString| The user ID.  |
 
 ### onRemoteUserCameraAvailable
 
-Whether a remote user enabled the camera.
+A remote user enabled/disabled their camera.
 ```objectivec
 - (void)onRemoteUserCameraAvailable:(NSString *)userId
                           available:(BOOL)available;
@@ -1032,7 +1031,7 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | --------- | ------ | ----------------------------------------- |
-| userId| NSString | User ID. |
+| userId  | NSString| The user ID.  |
 | available | BOOL| YES: Enabled; NO: Disabled. |
 
 ### onRemoteUserScreenVideoAvailable
@@ -1047,12 +1046,12 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | --------- | ------ | ----------------------------------------- |
-| userId| NSString | User ID. |
-| available | BOOL| Whether screen sharing stream data is available. |
+| userId  | NSString| The user ID.  |
+| available | BOOL| Whether the user enabled/disabled screen sharing. |
 
 ### onRemoteUserAudioAvailable
 
-Whether a remote user is sending audio.
+A remote user enabled/disabled their mic.
 ```objectivec
 - (void)onRemoteUserAudioAvailable:(NSString *)userId
                          available:(BOOL)available;
@@ -1063,7 +1062,7 @@ The parameters are described below:
 | Parameter | Type | Description |
 | --------- | ------ | ----------------------------------------- |
 | userId| NSString | User ID. |
-| available | BOOL| Whether audio data is available. |
+| available | BOOL| Whether the user enabled/disabled their mic. |
 
 ### onRemoteUserEnterSpeechState
 
@@ -1076,7 +1075,7 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | --------- |
-| userId | NSString  | User ID            |
+| userId  | NSString| The user ID.  |
 
 ### onRemoteUserExitSpeechState
 
@@ -1089,10 +1088,10 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | --------- |
-| userId | NSString  | User ID            |
+| userId  | NSString| The user ID.  |
 
 
-## Chat Event Callbacks
+## Chat Message Event Callbacks
 
 ### onReceiveChatMessage
 
@@ -1105,15 +1104,15 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | ---------- |
-| userId | NSString  | User ID.            |
-| message  | NSString            | Text message     |
+| userId  | NSString| The user ID.  |
+| message | NSString | The message content. |
 
 
 ## Room Control Message Callbacks
 
 ### onReceiveSpeechInvitation
 
-A member received a speech invitation from the host.
+The host sent a speech invitation (received by a participant).
 ```objectivec
 - (void)onReceiveSpeechInvitation:(NSString *)userId;
 ```
@@ -1126,7 +1125,7 @@ The parameters are described below:
 
 ### onReceiveInvitationCancelled
 
-The speech invitation sent to a member was canceled by the host.
+The host canceled the speech invitation (received by a participant).
 ```objectivec
 - (void)onReceiveInvitationCancelled:(NSString *)userId;
 ```
@@ -1139,7 +1138,7 @@ The parameters are described below:
 
 ### OnReceiveSpeechApplication
 
-The host received a speech request from a member.
+A participant sent a request to speak (received by the host).
 ```objectivec
 void onReceiveSpeechApplication(String userId);
 ```
@@ -1148,11 +1147,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | --------- |
-| userId | NSString  | User ID            |
+| userId | NSString  | User ID.            |
 
 ### onSpeechApplicationCancelled
 
-A user canceled a speech request.
+A participant canceled a speech request.
 ```objectivec
 - (void)onSpeechApplicationCancelled:(NSString *)userId;
 ```
@@ -1161,7 +1160,7 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | --------- |
-| userId | NSString  | User ID            |
+| userId  | NSString| The user ID.  |
 
 ### onSpeechApplicationForbidden
 
@@ -1174,12 +1173,12 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | --------- | ---- | ---------- |
-| isForbidden | BOOL | Whether to disable. |
-| userId | NSString  | User ID            |
+| isForbidden | BOOL | Disabled or not. |
+| userId | NSString  | User ID.            |
 
 ### onOrderedToExitSpeechState
 
-A member was asked to stop speaking.
+A participant was asked to stop speaking.
 ```objectivec
 - (void)onOrderedToExitSpeechState:(NSString *)userId;
 ```
@@ -1193,7 +1192,7 @@ The parameters are described below:
 
 ### onCallingRollStarted
 
-The host started a roll call.
+The host started a roll call (received by participants).
 ```objectivec
 - (void)onCallingRollStarted:(NSString *)userId;
 ```
@@ -1206,7 +1205,7 @@ The parameters are described below:
 
 ### onCallingRollStopped
 
-The host stopped a roll call.
+The host stopped a roll call (received by participants).
 ```objectivec
 - (void)onCallingRollStopped:(NSString *)userId;
 ```
@@ -1219,7 +1218,7 @@ The parameters are described below:
 
 ### onMemberReplyCallingRoll
 
-A member replied to the roll call.
+A participant replied to the roll call (received by the host).
 ```objectivec
 - (void)onMemberReplyCallingRoll:(NSString *)userId;
 ```
@@ -1228,11 +1227,11 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------- | ------ | --------- |
-| userId | NSString  | User ID            |
+| userId  | NSString| The user ID.  |
 
 ### onChatRoomMuted
 
-The host turned on/off chat.
+The host disabled/enabled chat messages.
 ```objectivec
 - (void)onChatRoomMuted:(BOOL)muted userId:(NSString *)userId;
 ```
@@ -1241,7 +1240,7 @@ The parameters are described below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ----- | ---- | ---------- |
-| muted | BOOL | Whether to disable. |
+| muted | BOOL | Disabled or not. |
 | userId | NSString | The host's user ID. |
 
 ### onMicrophoneMuted
@@ -1255,7 +1254,7 @@ The parameters are described below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ----- | ---- | ---------- |
-| muted | BOOL | Whether to disable. |
+| muted | BOOL | Disabled or not. |
 | userId | NSString | The host's user ID. |
 
 ### onCameraMuted
@@ -1269,7 +1268,7 @@ The parameters are described below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ----- | ---- | ---------- |
-| muted | BOOL | Whether to disable. |
+| muted | BOOL | Disabled or not. |
 | userId | NSString | The host's user ID. |
 
 ### onReceiveKickedOff
@@ -1283,9 +1282,9 @@ The parameters are described below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ----- | ---- | ---------- |
-| userId | NSString | Host/Admin's user ID. |
+| userId | NSString | The user ID of the host/admin. |
 
-## Statistics Collection and Quality Callbacks
+### Callbacks of statistics on network quality and technical metrics
 
 ### onStatistics
 
@@ -1310,10 +1309,10 @@ Network quality.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| localQuality  | TRTCQualityInfo            | Upstream network quality. |
-| remoteQuality |NSArray&lt;TRTCQualityInfo *&gt; | Downstream network quality. |
+| localQuality  | TRTCQualityInfo            | The upstream network quality. |
+| remoteQuality |NSArray&lt;TRTCQualityInfo *&gt; | The downstream network quality. |
 
 >? For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28).
 
@@ -1340,4 +1339,4 @@ The parameters are described below:
 
 | Parameter | Type | Description |
 | ------ | ---- | ------------------------------------------------------ |
-| reason | NSInteger  | Reason for stop. 0: The user stopped screen sharing; 1: Interrupted by another application. |
+| reason | NSInteger  | The reason. 0: The user stopped screen sharing; 1: Screen sharing was interrupted by another application. |

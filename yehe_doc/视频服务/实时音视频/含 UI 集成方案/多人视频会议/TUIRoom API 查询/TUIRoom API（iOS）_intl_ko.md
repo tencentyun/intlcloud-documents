@@ -1,11 +1,11 @@
-TUIRoom은 Tencent Real-Time Communication(TRTC)과 Instant Messaging(IM)을 기반으로 하며, 다음 기능을 지원합니다.
+﻿TUIRoom은 Tencent Real-Time Communication(TRTC)과 Instant Messaging(IM)을 기반으로 하며, 다음 기능을 지원합니다.
 - 호스트가 방을 생성하고 방에 입장하는 사람이 방 번호를 입력한 후 참여.
 - 방에 입장하는 사람들 간의 화면 공유.
 - 다양한 텍스트 메시지 및 사용자 정의 메시지 발송 지원.
 
->?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 규정은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
-TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [그룹 멀티미디어 룸(iOS)](https://intl.cloud.tencent.com/document/product/647/37284)을 참고하십시오.
+TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [TUIRoom (iOS) 통합](https://intl.cloud.tencent.com/document/product/647/37284)을 참고하십시오.
 - TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 사용하는 저지연 멀티미디어 방 컴포넌트입니다.
 - IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)를 사용하여 채팅방 기능을 구현합니다(**IM SDK는 iOS 버전 사용**).
 
@@ -26,8 +26,8 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 | ----------------------------------------- | ---------------------------------- |
 | [createRoom](#createroom)                 | 방 생성(호스트 호출).           |
 | [destroyRoom](#destroyroom)               | 방 폐기(호스트 호출).           |
-| [enterRoom](#enterroom)                   | 방 입장(방 입장 참석자 호출).         |
-| [leaveRoom](#leaveroom)                   | 방 퇴장(다른 방 구성원 호출). |
+| [enterRoom](#enterroom)                   | 방 입장(참석자 호출).         |
+| [leaveRoom](#leaveroom)                   | 방 퇴장(참석자 호출). |
 | [getRoomInfo](#getroominfo)               | 방 정보 가져오기.                     |
 | [getRoomUsers](#getroomusers)             | 방에 있는 모든 참석자 정보 가져오기.           |
 | [getUserInfo](#getuserinfo)               | 특정 사용자 정보 가져오기.               |
@@ -60,9 +60,9 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### 필드 제어 관련 인터페이스
 
-| API     | 설명   |
+| API   | 설명  |
 | --------------------------------------------------- | ------------------------------------------------------- |
-| [muteUserMicrophone](#muteusermicrophone)           | 사용자의 마이크 비활성화/복구.                               |
+| [muteUserMicrophone](#muteusermicrophone)           | 사용자의 마이크 비활성화/복원.                               |
 | [muteAllUsersMicrophone](#muteallusersmicrophone)   | 모든 사용자의 마이크 비활성화/복원, 상태를 회의실 정보에 동기화. |
 | [muteUserCamera](#muteusercamera)                   | 사용자 카메라 비활성화/복원.                               |
 | [muteAllUsersCamera](#mutealluserscamera)           | 모든 사용자의 카메라 비활성화/복원, 상태를 방 정보에 동기화. |
@@ -71,11 +71,11 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 | [startCallingRoll](#startcallingroll)               | 호스트 통화 시작.                                        |
 | [stopCallingRoll](#stopcallingroll)                 | 호스트 지명 종료.                                        |
 | [replyCallingRoll](#replycallingroll)               | 참석자가 호스트의 지명에 응답.                                    |
-| [sendSpeechInvitation](#sendspeechinvitation)       | 호스트의 참석자 발언 초대.                                    |
-| [cancelSpeechInvitation](#cancelspeechinvitation)   | 호스트의 참석자 발언 초대 취소.                                |
-| [replySpeechInvitation](#replyspeechinvitation)     | 참석자가 호스트의 발언 요청 동의/거절.                         |
+| [sendSpeechInvitation](#sendspeechinvitation)       | 호스트의 참석자 발언 요청.                                    |
+| [cancelSpeechInvitation](#cancelspeechinvitation)   | 호스트의 참석자 발언 요청 취소.                                |
+| [replySpeechInvitation](#replyspeechinvitation)     | 참석자가 호스트의 발언 요청을 수락/거절.                         |
 | [sendSpeechApplication](#sendspeechapplication)     | 참석자 발언 신청.                                          |
-| [replySpeechApplication](#replyspeechapplication)   | 호스트의 참석자 발언 신청 동의/거부.                         |
+| [replySpeechApplication](#replyspeechapplication)   | 호스트가 참석자 발언 신청을 수락/거절.                         |
 | [forbidSpeechApplication](#forbidspeechapplication) | 호스트의 발언 신청 금지.                                    |
 | [sendOffSpeaker](#sendoffspeaker)                   | 호스트의 참석자 발언 금지.                                  |
 | [sendOffAllSpeakers](#sendoffallspeakers)           | 호스트의 전원 발언 금지.                                  |
@@ -83,14 +83,14 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### 화면 공유 인터페이스
 
-| API     | 설명   |
+| API   | 설명  |
 |-----|-----|
 | [startScreenCapture](#startscreencapture) | 화면 공유 시작. |
 | [stopScreenCapture](#stopscreencapture) | 화면 수집 중지. |
 
 ### 뷰티 필터 관련 API
 
-| API     | 설명   |
+| API   | 설명  |
 |-----|-----|
 | [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TXBeautyManager__ios.html) 가져오기. |
 
@@ -125,7 +125,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### 원격 사용자 이벤트 콜백
 
-| API | 설명  |
+| API   | 설명  |
 | ------------------------------------------------------------ | -------------------------------- |
 | [onRemoteUserEnter](#onremoteuserenter)                      | 원격 사용자 방 입장 콜백.           |
 | [onRemoteUserLeave](#onremoteuserleave)                      | 원격 사용자 방 퇴장 콜백.           |
@@ -143,14 +143,14 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### 필드 제어 이벤트 콜백
 
-| API     | 설명   |
+| API   | 설명  |
 | ------------------------------------------------------------ | ---------------------------------- |
-| [onReceiveSpeechInvitation](#onreceivespeechinvitation)      | 사용자가 호스트의 발언 초대 수신 콜백.       |
-| [onReceiveInvitationCancelled](#onreceiveinvitationcancelled) | 사용자가 호스트의 발언 초대 취소 수신 콜백.   |
+| [onReceiveSpeechInvitation](#onreceivespeechinvitation)      | 사용자가 호스트의 발언 요청 수신 콜백.       |
+| [onReceiveInvitationCancelled](#onreceiveinvitationcancelled) | 사용자가 호스트의 발언 요청 취소 수신 콜백.   |
 | [onReceiveSpeechApplication](#onreceivespeechapplication)    | 호스트가 사용자의 발언 요청 수신 콜백.     |
 | [onSpeechApplicationCancelled](#onspeechapplicationcancelled) | 사용자의 발언 신청 취소 콜백.             |
 | [onSpeechApplicationForbidden](#onspeechapplicationforbidden) | 사회자 발언 신청 금지 콜백.           |
-| [onOrderedToExitSpeechState](#onorderedtoexitspeechstate)  | 참석자가 발언 중단 요청 수신 콜백.         |
+| [onOrderedToExitSpeechState](#onorderedtoexitspeechstate)  | 참석자의 발언 중단 요청 수신 콜백.         |
 | [onCallingRollStarted](#oncallingrollstarted)                | 호스트 지명 시작 시 참석자가 수신하는 콜백.   |
 | [onCallingRollStopped](#oncallingrollstopped)                | 호스트 지명 종료 시 참석자가 수신하는 콜백.   |
 | [onMemberReplyCallingRoll](#onmemberreplycallingroll)        | 참석자의 지명 응답 시 호스트가 수신하는 콜백.   |
@@ -198,7 +198,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | delegate | TUIRoomCoreDelegate | 이벤트 콜백 클래스 수신. |
 
@@ -239,7 +239,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### enterRoom
 
-방에 입장합니다(방 가입 참석자 호출).
+방에 입장합니다(참석자 호출).
 ```objectivec
 - (void)enterRoom:(NSString *)roomId
         callback:(TUIRoomActionCallback)callback;
@@ -253,14 +253,14 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 | callback | TUIRoomActionCallback | 결과 콜백. |
 
 
-방 가입 참석자의 방 입장 정상 호출 프로세스는 다음과 같습니다.
-1. **방 가입 참석자**는 'enterRoom'을 호출하고 roomId를 입력하여 방에 입장합니다.
-2. **방 입장 참석자**는 `startCameraPreview()`를 호출하여 카메라 미리보기를 열고 `startLocalAudio()`를 호출하여 마이크 수집을 시작합니다.
-3. **방 입장 참석자**는 `onRemoteUserCameraAvailable` 이벤트를 수신하고 `startRemoteView()`를 호출하여 비디오 재생을 시작합니다.
+참석자의 방 입장 정상 호출 프로세스는 다음과 같습니다.
+1. **참석자**는 'enterRoom'을 호출하고 roomId를 입력하여 방에 입장합니다.
+2. **참석자**는 `startCameraPreview()`를 호출하여 카메라 미리보기를 열고 `startLocalAudio()`를 호출하여 마이크 수집을 시작합니다.
+3. **참석자**는 `onRemoteUserCameraAvailable` 이벤트를 수신하고 `startRemoteView()`를 호출하여 비디오 재생을 시작합니다.
 
 ### leaveRoom
 
-방에서 퇴장합니다(방 입장 참석자 호출).
+방에서 퇴장합니다(참석자 호출).
 ```objectivec
  - (void)leaveRoom:(TUIRoomActionCallback)callback;
 ```
@@ -287,7 +287,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### getUserInfo
 
-방 참석자 정보를 가져옵니다.
+참석자 정보를 가져옵니다.
 ```objectivec
 - (void)getUserInfo:(NSString *)userId
            callback:(TUIRoomUserInfoCallback)callback;
@@ -312,7 +312,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미  |
+| 매개변수 | 유형 | 의미 |
 | ---------- | ------ | -------------- |
 | userName  | NSString | 사용자 이름.  |
 | avatarURL | NSString | 사용자 프로필 URL. |
@@ -479,7 +479,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### muteUserMicrophone
 
-사용자의 마이크를 비활성화/복구합니다.
+사용자의 마이크를 비활성화/복원합니다.
 ```objectivec
 - (void)muteUserMicrophone:(NSString *)userId
                       mute:(BOOL)mute
@@ -496,7 +496,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### muteAllUsersMicrophone
 
-모든 사용자의 마이크를 비활성화/복구합니다.
+모든 사용자의 마이크를 비활성화/복원합니다.
 ```objectivec
 - (void)muteAllUsersMicrophone:(BOOL)mute
                       callback:(TUIRoomActionCallback)callback;
@@ -504,7 +504,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 | ---- | ---- | ---------- |
 | mute | BOOL  | 비활성화 여부. |
 | callback | TUIRoomActionCallback | 결과 콜백. |
@@ -512,7 +512,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### muteUserCamera
 
-사용자의 카메라를 비활성화/복구합니다.
+사용자의 카메라를 비활성화/복원합니다.
 ```objectivec
 - (void)muteUserCamera:(NSString *)userId
                   mute:(BOOL)mute
@@ -529,7 +529,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### muteAllUsersCamera
 
-모든 사용자의 카메라를 비활성화/복구합니다.
+모든 사용자의 카메라를 비활성화/복원합니다.
 ```objectivec
 - (void)muteAllUsersCamera:(BOOL)mute
                   callback:(TUIRoomActionCallback)callback;
@@ -537,14 +537,14 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 | ---- | ---- | ---------- |
 | mute | BOOL  | 비활성화 여부. |
 | callback | TUIRoomActionCallback | 결과 콜백. |
 
 ### muteChatRoom
 
-텍스트 채팅을 비활성화/복구합니다.
+텍스트 채팅을 비활성화/복원합니다.
 ```objectivec
 - (void)muteChatRoom:(BOOL)mute
             callback:(TUIRoomActionCallback)callback;
@@ -552,7 +552,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 | ---- | ---- | ---------- |
 | mute | BOOL  | 비활성화 여부. |
 | callback | TUIRoomActionCallback | 결과 콜백. |
@@ -611,7 +611,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### sendSpeechInvitation
 
-호스트가 참석자에게 발언 초대합니다.
+호스트가 참석자에게 발언을 요청합니다.
 ```objectivec
 - (void)sendSpeechInvitation:(NSString *)userId
                     callback:(TUIRoomInviteeCallback)callback
@@ -626,7 +626,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### cancelSpeechInvitation
 
-호스트가 참석자의 발언 초대를 취소합니다.
+호스트가 참석자의 발언 요청을 취소합니다.
 ```objectivec
 - (void)cancelSpeechInvitation:(NSString *)userId
                       callback:(TUIRoomActionCallback)callback;
@@ -641,7 +641,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### replySpeechInvitation
 
-참석자는 호스트의 발언 초대에 동의/거절합니다.
+참석자는 호스트의 발언 요청을 수락/거절합니다.
 ```objectivec
 - (void)replySpeechInvitation:(BOOL)agree
                      callback:(TUIRoomActionCallback)callback;
@@ -651,7 +651,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 | 매개변수  | 유형  | 의미 |
 | -------- | -------- | ---------- |
-| agree | BOOL | 동의 여부. |
+| agree | BOOL | 수락 여부. |
 | callback | TUIRoomActionCallback | 결과 콜백. |
 
 ### sendSpeechApplication
@@ -682,7 +682,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### replySpeechApplication
 
-호스트가 참석자의 발언 신청에 동의/거부합니다.
+호스트가 참석자의 발언 신청을 수락/거절합니다.
 ```objectivec
 - (void)replySpeechApplication:(BOOL)agree
                         userId:(NSString *)userId
@@ -693,7 +693,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 | 매개변수  | 유형  | 의미 |
 | -------- | -------- | ---------- |
-| agree | BOOL | 동의 여부 |
+| agree | BOOL | 수락 여부 |
 | userId  | NSString| 사용자 ID.  |
 | callback | TUIRoomActionCallback | 결과 콜백. |
 
@@ -715,7 +715,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### sendOffSpeaker
 
-호스트가 참석자 발언을 금지합니다.
+호스트가 참석자의 발언을 금지합니다.
 ```objectivec
 - (void)sendOffSpeaker:(NSString *)userId
               callback:(TUIRoomInviteeCallback)callback;
@@ -743,7 +743,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### exitSpeechState
 
-참석자는 발언을 중지하고 시청자로 전환합니다.
+참석자가 발언을 중지하고 시청자로 전환합니다.
 ```objectivec
 - (void)exitSpeechState:(TUIRoomActionCallback)callback;
 ```
@@ -764,7 +764,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | encParams | TRTCVideoEncParam | 화면 공유를 위한 인코딩 매개변수 설정. |
 
@@ -816,7 +816,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | quality | TRTCAudioQuality | 오디오 음질. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)를 참고하십시오. |
 
@@ -830,7 +830,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | resolution | TRTCVideoResolution | 비디오 해상도. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)를 참고하십시오. |
 
@@ -844,7 +844,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | fps | int | 비디오에서 수집하는 프레임 레이트. |
 
@@ -860,7 +860,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | bitrate | int  | 비트 레이트, SDK는 타깃 비트 레이트에 따라 인코딩하며, 네트워크가 불안정한 상태에서만 자체적으로 비디오 비트 레이트를 줄입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참고하십시오. |
 
@@ -875,7 +875,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | enable | BOOL | YES: 활성화, NO: 비활성화. |
 
@@ -890,9 +890,9 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
-| volume | int | 재생 음량으로, 0-100으로 설정할 수 있으며 기본 값은 100입니다. |
+| volume | int | 재생 볼륨으로, 0-100으로 설정할 수 있으며 기본 값은 100입니다. |
 
 ### setAudioCaptureVolume
 
@@ -903,9 +903,9 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
-| volume | int | 수집 음량으로, 0-100으로 설정할 수 있으며 기본 값은 100입니다. |
+| volume | int | 수집 볼륨으로, 0-100으로 설정할 수 있으며 기본 값은 100입니다. |
 
 ### startFileDumping
 
@@ -916,7 +916,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 |  params | TRTCAudioRecordingParams | 녹음 매개변수, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams)를 참고하십시오. |
 
@@ -1044,7 +1044,7 @@ SDK 버전 정보를 가져옵니다.
 
 매개변수는 다음과 같습니다.
 
-| 매개변수 | 유형 | 의미  |
+| 매개변수 | 유형 | 의미 |
 | --------- | ------ | ----------------------------------------- |
 | userId| NSString | 사용자 ID.|
 | available | BOOL| 화면 공유 스트림 데이터가 있는지 여부. |
@@ -1062,7 +1062,7 @@ SDK 버전 정보를 가져옵니다.
 | 매개변수 | 유형 | 의미 |
 | --------- | ------ | ----------------------------------------- |
 | userId| NSString | 사용자 ID.|
-| available | BOOL| 오디오 데이터가 있는지 여부. |
+| available | BOOL| 오디오 데이터 유무. |
 
 ### onRemoteUserEnterSpeechState
 
@@ -1105,14 +1105,14 @@ SDK 버전 정보를 가져옵니다.
 | 매개변수 | 유형 | 의미 |
 | ------- | ------ | ---------- |
 | userId | NSString | 사용자 ID.  |
-| message  | NSString    | 텍스트 메시지.       |
+| message  | NSString       | 텍스트 메시지.     |
 
 
 ## 필드 제어 메시지 콜백
 
 ### onReceiveSpeechInvitation
 
-사용자가 호스트로부터 발언 초대를 받았을 때의 콜백입니다.
+사용자가 호스트의 발언 요청 수신 콜백입니다.
 ```objectivec
 - (void)onReceiveSpeechInvitation:(NSString *)userId;
 ```
@@ -1125,7 +1125,7 @@ SDK 버전 정보를 가져옵니다.
 
 ### onReceiveInvitationCancelled
 
-사용자가 호스트로부터 발언 초대 취소를 받았을 때의 콜백입니다.
+사용자가 호스트의 발언 초대 취소 수신 콜백입니다.
 ```objectivec
 - (void)onReceiveInvitationCancelled:(NSString *)userId;
 ```
@@ -1138,7 +1138,7 @@ SDK 버전 정보를 가져옵니다.
 
 ### OnReceiveSpeechApplication
 
-호스트가 사용자의 발언 요청를 받았을 때의 콜백입니다.
+호스트의 사용자 발언 요청 수신 콜백입니다.
 ```objectivec
 void onReceiveSpeechApplication(String userId);
 ```
@@ -1178,7 +1178,7 @@ void onReceiveSpeechApplication(String userId);
 
 ### onOrderedToExitSpeechState
 
-참석자가 발언 중지를 요청받은 콜백입니다.
+참석자의 발언 중지 요청 수신 콜백입니다.
 ```objectivec
 - (void)onOrderedToExitSpeechState:(NSString *)userId;
 ```
@@ -1309,7 +1309,7 @@ void onReceiveSpeechApplication(String userId);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | localQuality  | TRTCQualityInfo            | 업스트림 네트워크 품질. |
 | remoteQuality | NSArray&lt;TRTCQualityInfo *&gt; | 다운스트림 네트워크 품질. |

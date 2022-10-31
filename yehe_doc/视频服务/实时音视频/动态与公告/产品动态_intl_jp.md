@@ -1,9 +1,101 @@
+## 2022年7月
+<table>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
+<td>Version 10.4リリース</td>
+<td> iOS&Android: <ul style="margin:0">
+カスタムビデオキャプチャでRGBA32形式をサポートしました。詳細についてはsendCustomVideoDataをご参照ください。
+</ul>
+<br>Windows&Mac: <ul style="margin:0">
+ウォーターマーク設定でローカルプレビューをサポートしました。詳細についてはsetWaterMarkをご参照ください。
+</ul>
+<br>Android: <ul style="margin:0">
+<li>低遅延インイヤーモニタリングおよびダブルサウンドチャンネルキャプチャの互換性を最適化しました。</li>
+<li>ハードウェアデコードとソフトウェアデコードの切り替えポリシーを最適化し、デコードのパフォーマンスを向上させました。</li>
+</ul>
+<br>iOS: <ul style="margin:0">
+iPadでのキャプチャ音量が小さい問題を改善しました。
+</ul>
+</td>
+<td>2022-07-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
+</tr>
+<tr>
+<td>Version 10.3リリース</td>
+<td> すべてのプラットフォーム：<ul style="margin:0">
+Music音質下の音声効果を最適化しました。
+</ul>
+<br>Windows&Mac: <ul style="margin:0">
+startMicDeviceTestインターフェース内でマイクチェック時にマイクがキャプチャした音声の再生オン/オフをサポートするパラメータを追加しました。詳細についてはstartMicDeviceTestをご参照ください。
+</ul>
+<br>Windows: <ul style="margin:0">
+レコーディングにローカルレコーディング機能を追加し、インタラクティブライブストリーミングやオーディオビデオ通話の完全な内容をローカルでレコーディングできるようになりました。詳細についてはITXLiteAVLocalRecordをご参照ください。
+</ul>
+</td>
+<td>2022-07-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
+</tr>
+</table>
+
+## 2022年6月
+<table>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
+<td>Version 10.2リリース</td>
+<td> すべてのプラットフォーム：<ul style="margin:0">
+		<li>よりフレキシブルで強力な機能のミクスストリーミングリレーAPIを新たにリリースしました。詳細については<code>startPublishMediaStream</code>をご参照ください。</li>
+		<li>3Dオーディオエフェクト機能を追加しました。詳細については<code>enable3DSpatialAudioEffect</code>をご参照ください。</li>
+		<li>人の声の検出機能を追加しました。muteLoalAudioとsetAudioCaptureVolume が0の場合は人の声の検出結果に影響を与えません。詳細については<code>enableAudioVolumeEvaluation</code>をご参照ください（ユーザーのマイクオンの表示に便利です）。</li>
+		<li>ロールの切り替え時の権限チェックサポート機能を追加しました。詳細については<code>switchRole(TRTCRoleType role, const char* privateMapKey)</code>をご参照ください。</li>
+	</ul>
+<br>iOS：<ul style="margin:0">アップストリームのVCリンクを最適化し、CPU、GPUの占有率を低減しました。</ul>
+<br>iOS&Mac：<ul style="margin:0">前処理をカスタマイズしたC++インターフェースで、テクスチャ方式によるビデオのドッキング処理をサポートしました。</ul>
+<br>Android: <ul style="margin:0">
+		<li>インイヤーモニタリング効果を最適化し、遅延を低減しました。</li>
+		<li>オーディオのキャプチャリンクを最適化し、一部モデルに存在するノイズの問題を解決しました。</li>
+	</ul>
+<br>Windows：<ul style="margin:0">パフォーマンスを最適化し、メモリフラグメントおよびその割り当ての際に発生するパフォーマンスオーバーヘッドを減少させました。</ul>
+<br>Windows&Mac：<ul style="margin:0">ウィンドウ共有時のエンコード性能を最適化し、エンコードの幅と高さがキャプチャウィンドウのサイズの影響を受けないようにしました。</ul>
+</td>
+<td>2022-06-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
+</tr>
+<tr>
+<td>Version 10.1リリース</td>
+<td> すべてのプラットフォーム：<ul style="margin:0">
+	<li>ロールのスムーズな切り替えをサポートし、ロールの切り替えによってオーディオビデオの再生が一時的に中断されることがなくなりました。</li>
+	<li>音楽シーンのエコーキャンセル能力を最適化し、音質効果がより自然になりました。</li>
+	<li>ロールの切り替え+muteLocalAudioの音質と起動効果を最適化しました。</li>
+	<li>帯域幅予測のonSpeedTestのコールバックを最適化しました。</li>
+</ul>
+<br>iOS: <ul style="margin:0">
+	<li>ステレオオーディオのキャプチャをサポートしました。</li>
+	<li>メモリヒープの問題を回避するために、メモリ管理を最適化しました。</li>
+</ul>
+<br>Android: <ul style="margin:0">
+<li>Android 10以降のシステムで、システム再生オーディオのキャプチャをサポートしました（startSystemAudioLoopback）。</li>
+<li>一部のモデルのスマートフォンでのインイヤーモニタリングの遅延を改善しました。</li>
+</ul>
+<br>Windows: <ul style="margin:0">
+<li>ビデオダウンストリーム時のビデオレンダリングリンクのパフォーマンスを最適化しました。</li>
+<li>エコーリークの問題を効果的に回避するため、ステレオキャプチャのロジックを最適化しました。</li>
+</ul>
+</td>
+<td>2022-06-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
+</tr>
+</table>
+
+
 ## 2022年5月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 10.0リリース</td>
-<td>すべての機能：<ul style="margin:0;">
+<td> すべてのプラットフォーム：<ul style="margin:0">
 キャスターの入退室通知のコールバック（<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58">onRemoteUserEnterRoom</a> / <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28">onRemoteUserLeaveRoom</a>）の速度を最適化しました。
 </ul>
 <br>Windows: <ul style="margin:0">
@@ -32,8 +124,9 @@
 
 ## 2022年4月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 9.8リリース</td>
 <td>すべての機能：<ul style="margin:0;">
 ビデオシーンでのパフォーマンスを最適化しました。
@@ -64,8 +157,9 @@ Music音質の効果を最適化しました。
 
 ## 2022年3月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 9.6リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>サードパーティ製リポジトリのコンプライアンス改善が完了し、国内外のコンプライアンス要件に適合しました。
@@ -94,8 +188,9 @@ Music音質の効果を最適化しました。
 
 ## 2022年1月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 9.5リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 通話シーンでの脆弱なネットワークにおけるスムーズさを最適化しました。
@@ -118,8 +213,9 @@ Music音質の効果を最適化しました。
 
 ## 2021年12月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 9.4リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>入室速度を向上させ、入室にかかる時間の変動を少なくしました。</li>
@@ -152,8 +248,9 @@ Music音質の効果を最適化しました。
 
 ## 2021年11月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 9.3リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>脆弱なネットワーク状況におけるビデオの秒速開始スピードを最適化しました。</li>
@@ -168,8 +265,9 @@ Music音質の効果を最適化しました。
 
 ## 2021年9月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 9.2リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 	<li>声のトーンを設定する機能を追加しました。</li>
@@ -211,12 +309,13 @@ Music音質の効果を最適化しました。
 
 ## 2021年8月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 9.0リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>カスタムオーディオトラックの音量設定をサポートしています。詳細については、 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418">setMixExternalAudioVolume</a>をご参照ください。</li>
-<li>ステータスコールバックは、オーディオとビデオのパケット損失率を区別できます。詳細については、 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics" >TRTCRemoteStatistics</a>をご参照ください。</li>
+<li>ステータスコールバックは、オーディオとビデオのパケットロス率を区別できます。詳細については、 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics" >TRTCRemoteStatistics</a>をご参照ください。</li>
 <li>サブスクリプションプロセスを最適化し、手動サブスクリプションの秒速開始速度をアップしました。</li>
 <li>特定シナリオでのonExitRoomコールバック重複の問題を修復しました。</li>
 </ul><br>iOS: <ul style="margin:0">
@@ -227,10 +326,11 @@ Music音質の効果を最適化しました。
 </tr>
 </table>
 
-## 2021年07月
+## 2021年7月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 8.9リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>特定シナリオでの音声再生時に出現するガタツキの問題を最適化しました。</li>
@@ -252,10 +352,11 @@ Music音質の効果を最適化しました。
 </table>
 
 
-## 2021年06月
+## 2021年6月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 8.8リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 mixExternalAudioFrameの使いやすさを最適化したため、呼び出しのタイミングを完全に制御する必要がなくなりました。
@@ -272,10 +373,11 @@ mixExternalAudioFrameの使いやすさを最適化したため、呼び出し�
 </tr>
 </table>
 
-## 2021年05月
+## 2021年5月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 8.7リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>外部接続オーディオデバイスの異常検出を追加しました。onStatisticsコールバックを登録した後、TRTCLocalStatisticsのaudioCaptureStateを使用して、長時間のミュート、音割れ、異常な中断といった問題をリアルタイムで検出できます。</li>
@@ -284,7 +386,7 @@ mixExternalAudioFrameの使いやすさを最適化したため、呼び出し�
 </ul><br>Mac: <ul style="margin:0">
 画面共有時のマウスキャプチャのCPUとメモリの使用量を最適化しました。
 </ul><br>Windows: <ul style="margin:0">
-ユーザー定義キャプチャはRGBA形式でのビデオデータの入力をサポートしています。
+ユーザー定義キャプチャのRGBA形式でのビデオデータの入力をサポートしました。
 </ul></td>
 <td>2021-05-25</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
@@ -310,10 +412,11 @@ Apple M1アーキテクチャのネイティブサポートを追加しました
 
 
 
-## 2021年03月
+## 2021年3月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 8.5リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>ビデオ放送機能を追加しました。TXVODPlayerを使用してTRTCCloudとバインドし、オンデマンド再生中のコンテンツをTRTCのサブストリームプッシュで共有することができます。</li>
@@ -337,10 +440,11 @@ Apple M1アーキテクチャのネイティブサポートを追加しました
 
 
 
-## 2021年02月
+## 2021年2月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 8.4リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
 <li>ローカルのオーディオビデオ録画機能を新規追加しました。キャスターはプッシュ中にローカルのオーディオおよびビデオからmp4ファイルを作成することができます。<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b">startLocalRecording</a>をご参照ください。</li>
@@ -350,7 +454,7 @@ Apple M1アーキテクチャのネイティブサポートを追加しました
 <br>Windows: <ul style="margin:0">
 <li>一部のシーンでのライブストリーミングの音質を最適化し、音声障害の問題を大幅に減少させました。</li>
 <li>パフォーマンスを最適化しました。一部のユースケースでパフォーマンスが旧バージョンより20%～30%向上しました。</li>
-<li>プロセスの音量調節機能を追加しました。setApplicationPlayVolumeを使用すると、システムの音量ミキサーの音量を設定することができます。</li>
+<li>プロセスの音量調節機能を追加しました。setApplicationPlayVolume を使用すると、システムの音量ミキサーの音量を設定することができます。</li>
 </ul>
 <br>Mac: <ul style="margin:0">
 <li>Macのオペレーティングシステムの出力音声のキャプチャのサポートが開始されました。これはWindows端末と同一のSystemLoopback機能で、この機能を使用するとSDKは現在のシステムの音声をキャプチャすることができます。この機能を有効化すると、キャスターは他のユーザーに対して音楽または映画ファイルのライブストリーミングを実行することが容易になります。</li>
@@ -363,10 +467,11 @@ Apple M1アーキテクチャのネイティブサポートを追加しました
 
 
 
-## 2021年01月
+## 2021年1月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Version 8.3リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">自身でビデオデータを収集し、同時にTRTC SDK標準搭載のオーディオモジュールを使用する必要がある場合は、音声と画像が同期しないという問題が生じる可能性があります。これはSDK内部のタイムラインに固有の制御ロジックがあるためで、このために<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ae5f2a974fa23954c5efd682dc464cdee">generateCustomPTS</a>インターフェースを提供しています。収集した1フレームのビデオ画面でこのインターフェースを呼び出して現在のPTS（タイムスタンプ）を記録し、その後<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a76e8101153afc009f374bc2b242c6831">sendCustomVideoData</a>を呼び出して、このタイムスタンプが得られれば、音声と画像の同期を良好に保証することができます。</ul>
 <br>iOS &amp; Android &amp; Mac：<ul style="margin:0">オーディオモジュールの最適化によって、<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d">enableCustomAudioCapture</a>を使用してオーディオデータを収集しSDKに送信し処理するときにも、SDKが良好なエコー抑制効果およびノイズ低減効果を維持できるようになります。</ul>
@@ -379,8 +484,9 @@ Apple M1アーキテクチャのネイティブサポートを追加しました
 
 ## 2020年12月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th>
-</tr><tr>
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th></tr>
+</thead>
+<tr>
 <td>Flutter SDKのリリース</td>
 <td>この <a href="https://pub.dev/packages/tencent_trtc_cloud">Flutter SDK</a> はTencent Real-Time CommunicationのiOS、AndroidプラットフォームのSDKをベースにパッケージ化したものです。</td>
 <td>2020-12-30</td>
@@ -408,7 +514,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 <td>
 すべてのプラットフォーム：<ul style="margin:0">
 	<li/>統計情報（onStatistics）でリモートビデオラグ関連の統計指標を追加しました。
-	<li/>音量調節インターフェースsetAudioPlayoutVolume（100-150）によって音声のゲイン効果をサポートしています。
+	<li/>音量調節インターフェースsetAudioPlayoutVolume（100-150）によ音声のゲイン効果をサポートしました。
 	<li/>イヤホン装着時の音声処理アルゴリズムを最適化して音声の音質を向上させます。
 </ul>
 <br>iOS&Android：<ul style="margin:0"> setLocalVideoProcessListenerインターフェースを追加し、サードパーティの美顔SDKの統合をより良好にサポートできるようになりました。
@@ -426,13 +532,13 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 
 ## 2020年11月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th></tr> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th> </tr> 
 <tr>
 <td>Version 8.0リリース</td>
 <td>
 すべてのプラットフォーム：<ul style="margin:0">
 	<li/>C++の統一APIを追加しました。
-	- 文字列によるルーム番号をサポートしています。TRTCParams.strRoomIdをご参照ください。
+	- 文字列によるルームナンバーをサポートしました。TRTCParams.strRoomIdをご参照ください。
 	<li/>TXDeviceManagerデバイス管理タイプを追加しました。
 	<li/>API TRTCCloud.switchRoomを追加しました。収集を止めずに、直接ルームを切り替えできるようになりました。
 	<li/>リモートビデオ画面のレンダリングを開始する、API TRTCCloud.startRemoteViewを追加しました。
@@ -467,7 +573,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 
 ## 2020年10月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th></tr> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th> </tr> 
 <tr>
 <td>Version 7.9リリース</td>
 <td>
@@ -488,7 +594,7 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 画面共有はフィルター選定したウィンドウをサポートし、ユーザーは自身で共有したくないウィンドウを排除できることから、ユーザーのプライバシーをより良好に保護することができます。
 </ul>
 <br>Windows: <ul style="margin:0">
-	<li/>画面共有は、「共有中」の表示枠を示す色および枠線の幅の設定をサポートしています。
+	<li/>画面共有で、「共有中」表示の枠の色および枠線の幅の設定をサポートしました。
 	<li/>画面共有はすべてのデスクトップ画面を共有するとき、高性能モードを有効にすることをサポートしています。
 	<li/>システムループバックのエコー除去アルゴリズムを最適化して、システムループバック（SystemLoopback）を起動したとき、より良好なエコー除去機能を持たせました。
 	<li/>画面共有機能のウィンドウキャプチャの遮蔽対策機能を最適化し、フィルターウィンドウの設定をサポートしています。
@@ -499,29 +605,29 @@ iOS&Android：<ul style="margin:0">ローカルで収集したものと再生し
 </tr>
 </table> 
 
-## 2020年09月
+## 2020年9月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th></tr> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th> </tr> 
 <td>Version 7.8リリース</td>
 <td>
 Android: <ul style="margin:0">
-<li>代替画像のプッシュをサポートしています。使用方法は <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>をご参照ください。
+<li>代替画像のプッシュをサポートしました。使用方法は <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>をご参照ください。
 <li>音声のルーティングポリシーを最適化しました。イヤホン装着時に音声がイヤホンからのみ再生されるようサポートしています。
 <li>一部システムで低レイテンシーでのキャプチャ再生をサポートして、Androidシステムの通話遅延を低減させました。
-<li>VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除去をサポートしています。
+<li>VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除去をサポートしました。
 </ul>
 <br>iOS: <ul style="margin:0">
-VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除去をサポートしています。
+VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除去をサポートしました。
 </ul>
 <br>iOS&Mac: <ul style="margin:0">
-代替画像のプッシュをサポートしています。使用方法は <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>をご参照ください。
+代替画像のプッシュをサポートしました。使用方法は <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>をご参照ください。
 </ul>
 <br>Mac: <ul style="margin:0">
-<li>Mac：システム音量変化コールバックを追加しました。
+<li>Mac：システム音量変化コールバックを追加しました。詳細については <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338">TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged</a>をご参照ください。
 </ul>
 <br>Windows: <ul style="margin:0">
 <li>スクリーン間で指定したエリアの画面共有をサポートします。
-<li>ウィンドウ共有を追加し、指定したウィンドウをフィルターする遮蔽対策をサポートしています。
+<li>ウィンドウ共有で、指定したウィンドウをフィルターする遮蔽対策をサポートしました。
 <li>システム音量変化コールバックを追加しました。
 <li>バーチャルカメラe2eSoft Vacmと互換性を持たせました。
 <li>startLocalPreviewとstartCameraDeviceTestを同時に呼び出せるようにしました。
@@ -532,7 +638,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 </td>
 <td>2020-09-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDKダウンロード</a></td>
-<tr></tr> 
+</tr> 
 <tr>
 <td>Version 7.7リリース</td>
 <td>
@@ -561,7 +667,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 
 ## 2020年8月
 <table>
-<tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th> <th width="15%">発表時間</th> <th width="15%">関連ドキュメント</th></tr> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th> </tr> 
 <tr>
 <td>Version 7.6リリース</td>
 <td>
@@ -597,7 +703,8 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 ## 2020年7月
 
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th><th width="15%">関連ドキュメント</th>
+<thead><tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">リリース時間</th><th width="15%">関連ドキュメント</th></tr>
+</thead>
 <tr>
 <td>Version 7.5リリース</td>
 <td>すべてのプラットフォーム：<ul style="margin:0">
@@ -607,7 +714,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 <li>クラウドMCUミクスストリーミングでA+B=>CおよびA+B=>Aの2種類のモードのサポートを追加しました。</li>
 <li>リアルタイムなステータスコールバックのonStatisticsで、再生バッファ時間フィールドのjitterBufferDelayを追加しました。</li>
 <li>エンドツーエンドのマイク接続遅延を低減し、7.5バージョンのエンドツーエンド通話およびマイク接続遅延は、7.4バージョンから40%短縮しました。</li>
-<li>モバイル端末のインイヤーモニタリング遅延を低減し、インイヤーモニタリングへのボイスチェンジおよびリバーブなどの音響効果の設定をサポートしています。</li>
+<li>モバイル端末のインイヤーモニタリング遅延を低減し、インイヤーモニタリングへのボイスチェンジおよびリバーブなどのオーディオエフェクトの設定をサポートしました。</li>
 <li>再生側ネットワークジッター評価アルゴリズムを最適化して再生ディレイを低減させました。</li>
 </ul>
 <br>Android: <ul style="margin:0">
@@ -646,7 +753,8 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 ## 2020年6月
 
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th><th width="15%">関連ドキュメント</th>
+<thead><tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">リリース時間</th><th width="15%">関連ドキュメント</th></tr>
+</thead>
 <tr>
 <td>Version 7.4リリース</td>
 <td>
@@ -672,10 +780,10 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 すべてのプラットフォーム：<ul style="margin:0">
   <li>全リンク128kbps高音質ステレオサウンドをサポートしています。setAudioQuality(TRTCAudioQualityMusic)インターフェースを介して設定できます。</li>
   <li>SPEECH音声モードをサポートしています。ミーティングシナリオでの音声通話に適しており、より強力なアクティブノイズキャンセリング（ANS）機能を有しています。setAudioQuality(TRTCAudioQualitySpeech) を介して設定できます。 </li>
-  <li>原音と伴唱を分離したカラオケシナリオのサポートに使用する、複数チャンネルでのBGM並行再生をサポートしています。またBGMのリピート再生もサポートしています。 </li>
+  <li>複数チャンネルでのBGM並行再生をサポートしました。原音とコーラスを分離したカラオケシナリオのサポートに使用します。また、BGMのリピート再生もサポートしました。 </li>
   <li>古いインターフェースと互換性のある状況で、全く新しい音響効果管理インターフェースTXAudioEffectManagerを追加しました。よりフレキシブルで多様性がある音響効果機能のサポートに使用します。 </li>
   <li>ビデオコーデックパラメータsetVideoEncoderParamにminVideoBitrateオプションを追加しました。画質への要求が高いライブストリーミングのお客様に設定することを推奨します。</li>
-  <li>まずmuteLocalVideoを呼び出してから、startLocalPreviewを呼び出すことで、「プレビューのみでプッシュなし」効果の実装をサポートしています。また、enterRoomの前にstartLocalPreviewを呼び出しても、該当の機能を実装できます。</li>
+  <li>まずmuteLocalVideoを呼び出してから、startLocalPreviewを呼び出すことで、「プレビューのみでプッシュなし」効果を実装できるようになりました。また、enterRoomの前にstartLocalPreviewを呼び出しても、該当の機能を実装できます。</li>
    </ul>
 <br>iOS: <ul style="margin:0"> 
      <li> iOSシステムレベルのスクリーンキャプチャソリューションを追加し、TencentMeetingと同様のシステム全体の画面共有効果を実現しました。またアクセスのしやすさを最適化し、この機能への半日以内でのアクセスの完了を実現しました。 </li>
@@ -685,7 +793,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
   オーディオでは過渡的なノイズ低減サポートを追加しました。setAudioQuality(TRTCAudioQualitySpeech)によってアクティブにすることができます。 
 </ul>
 <br>Android: <ul style="margin:0">      
-  音響効果ファイルはassetパッケージの音響効果ファイルをサポートしています。
+  オーディオエフェクトファイルで、assetパッケージのオーディオエフェクトファイルをサポートしました。
 </ul>
 <br>Windows: <ul style="margin:0">  
    ボイスチェンジャーなどの音響効果機能のサポートを追加しました。
@@ -696,10 +804,10 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 </tr></table>
 
 
-## 2020年05月
+## 2020年5月
 
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th>  </tr> 
 <tr>      
          <td>課金の変更</td>   
          <td>音声時間はルーム内のすべてのユーザーの合計滞在時間から、ビデオストリームをサブスクライブするときのすべてのユーザーの滞在時間を差し引いたものに変更されます。<br>補足説明：<ul style="margin:0;"><li>複数のオーディオストリームを同時にサブスクライブした同じユーザーの音声時間は重複されません。</li>
@@ -711,17 +819,17 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
      </tr> 
 </table>
 
-## 2020年04月
+## 2020年4月
 
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th>  </tr> 
 <tr><td>通話品質監視関連インターフェースのリリース</td>   
     <td><ul style="margin:0;"><li>一度に最大100のルーム情報を返し、直近5日以内のデータを確認できる、SDKAppID のルームリスト照会インターフェースを追加しました。</li>
      <li>指定時間内のユーザーリストおよび通話品質データを照会できる、ユーザーリストと通話指標照会インターフェースを追加しました。</li>
      <li>指定時間内の過去のルームとユーザー数を照会できる、過去のルームおよびユーザー数照会インターフェースを追加しました。</li>
      <li>24時間以内のルーム数と通話人数を照会できる、リアルタイム通話スケール照会インターフェースを追加しました。</li>
      <li>24時間以内の入室成功率、最初のフレームの秒速開始率、オーディオビデオラグ率データを照会できる、リアルタイム品質照会インターフェースを追加しました。</li>
-     <li>アップおよびダウンストリームのパケット損失データを含む、24時間以内のプライベートネットワークステータスを照会できる、リアルタイムネットワークステータス照会インターフェースを追加しました。</li>
+     <li>アップおよびダウンストリームのパケットロスデータを含む、24時間以内のプライベートネットワークステータスを照会できる、リアルタイムネットワークステータス照会インターフェースを追加しました。</li>
 </ul></td>   
     <td>2020-04-29</td>   
 		<td><a href="https://intl.cloud.tencent.com/document/product/647/34260">API 概要</a></td> 
@@ -749,7 +857,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 ## 2020年3月
 
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th>  </tr> 
 <tr>      
          <td>SDK Version 7.1リリース</td>   
          <td>すべてのプラットフォーム：<ul style="margin:0;"><li>ミクスストリーミングプリセットテンプレートの使いやすさを最適化しました。</li>
@@ -779,7 +887,7 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 ## 2020年2月
 
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th>  </tr> 
 <tr>      
          <td>クラウド自動レコーディングの最適化</td>   
          <td>アプリケーションに応じて自動クラウドレコーディングのオン/オフを個別に切り替える設定をサポートしています。各アプリケーションで個別のレコーディングファイルの形式とコールバックアドレスを設定できます。</td>   
@@ -791,17 +899,17 @@ VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除�
 ## 2020年1月
 
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="15%">発表時間</th>  <th width="15%">関連ドキュメント</th> 
+<thead><tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th>  <th width="15%">リリース時間</th>  <th width="15%">関連ドキュメント</th>  </tr> 
 <tr>      
          <td>SDK Version 6.9リリース</td>   
          <td>すべてのプラットフォーム：<ul style="margin:0;"><li>enterRoom パラメータTRTCParamsにstreamId属性を追加しました。現在のユーザーがCDNでライブストリームIDを設定するために使用し、ライブCDNがさらにバインドしやすくなります。</li>
      <li>enterRoomパラメータTRTCParamsにcloudRecordFileName属性を追加しました。今回のライブストリーミングのクラウドレコーディングでのファイル名を設定するために使用し、ビデオストリームの中断に対する記録サービスの耐性を最適化し、リモートでレコーディングされたファイルをより完全なものにします。</li>
      <li>シナリオTRTCAppSceneAudioCallを追加しました。これはenterRoomで設定できます。このシナリオでは、TRTC SDKは音声通話に全面的な最適化を行っています。</li>
      <li>シナリオTRTCAppSceneVoiceChatRoomを追加しました。これはenterRoomで設定できます。TRTC SDKを有効にすると、特に音声インタラクティブチャットルームでのシナリオ向けに最適化されます。</li>
-     <li>ビデオ画面では1080P高解像度キャプチャをサポートしています。携帯電話でライブストリーミングしてPCで視聴するケースで、さらに優れた画面解像度を得ることができます。</li>
-     <li>API追加：pauseAudioEffect、resumeAudioEffectの音響効果は、一時停止/回復の制御をサポートしています。</li>
-     <li>API追加：setBGMPlayoutVolume、setBGMPublishVolumeによって、BGMは、ローカル再生およびプッシュMix音量の個別の設定をサポートしています。</li>
-     <li>API追加：setRemoteSubStreamViewRotationのサブストリームビデオ再生は、レンダリング回転角度の調整をサポートしています。</li>
+     <li>ビデオ画面では1080P高解像度キャプチャをサポートしました。携帯電話でライブストリーミングしてPCで視聴するケースで、さらに優れた画面解像度を得ることができます。</li>
+     <li>API追加：pauseAudioEffect、resumeAudioEffectによって、オーディオエフェクトの一時停止/再開の制御をサポートしました。</li>
+     <li>API追加：setBGMPlayoutVolume、setBGMPublishVolumeによって、BGMの、ローカル再生およびプッシュMix音量の個別の設定をサポートしました。</li>
+     <li>API追加：setRemoteSubStreamViewRotationにより、サブストリームビデオ再生のレンダリング回転角度の調整をサポートしました。</li>
 </ul><br>iOS&Android：<ul style="margin:0;"> API追加：snapshotVideo() はローカルおよびリモートビデオ画面のスクリーンキャプチャをサポートしています。
 </ul><br>Android：<ul style="margin:0;"><li>グローバル音量タイプモードを追加：setSystemVolumeType(TRTCSystemVolumeTypeVOIP)、即ち、通話音量の一貫提供は、主にBluetoothイヤホンが標準装備マイクの集音切り替え問題を解決するために使用されます。</li>
      <li>Android 10.0システムへのサポートを追加しました。</li>

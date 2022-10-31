@@ -4,8 +4,9 @@ The TRTC web SDK is based on WebRTC and can be used on mainstream desktop and mo
 If your browser (for example, WebView) is not in the list, you can run a [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in the browser to test whether it fully supports WebRTC.
 
 <table>
+<thead>
 <tr>
-<th>Operating System</th>
+<th>OS</th>
 <th>Browser</th>
 <th>Minimum Browser<br>Version Requirements</th>
 <th>SDK Version Requirements</th>
@@ -13,6 +14,7 @@ If your browser (for example, WebView) is not in the list, you can run a [TRTC W
 <th>Send (Publish)</th>
 <th width=19%>Share Screen</th>
 </tr>
+</thead>
 <tr>
 <td rowspan="11">Windows</td>
 <td>Chrome (desktop)</td>
@@ -308,7 +310,6 @@ For details about the initialization process and the use of APIs, see the tutori
 | Implementing On-Cloud MixTranscoding               | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-31-advanced-mix-transcode.html)  |
 | Implementing on-cloud recording               | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-32-advanced-cloud-record.html)   |
 
-
 >? 
 >- Learn more about the features of the TRTC web SDK [here](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-10-basic-get-started-with-demo.html).
 >- For FAQs, see [Web](https://intl.cloud.tencent.com/document/product/647/37340).
@@ -316,7 +317,7 @@ For details about the initialization process and the use of APIs, see the tutori
 ## API Details
 ### TRTC
 
->!This document applies to 4.x.x versions of the TRTC web SKD.
+>! This document applies to 4.x.x versions of the TRTC web SDK.
 
 `TRTC` is the main entry to the [TRTC web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html). You can use `TRTC` APIs to create a client object (`Client`) and local audio/video stream object (`Stream`) for real-time communication, check a browser's compatibility and whether it supports screen sharing, as well as set the log output level and enable/disable log upload.
 
@@ -358,6 +359,7 @@ A client object (`Client`) is created through [createClient()](https://web.sdk.q
 | [subscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#subscribe)                     | Subscribes to a remote stream.        |
 | [unsubscribe](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#unsubscribe)                 | Unsubscribes from a remote stream.     |
 | [switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#switchRole)               | Switches user roles. This API works only in interactive live streaming scenarios (`live`).          |
+| [sendSEIMessage](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#sendSEIMessage) |  Sends an SEI message. |
 | [on](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#on)           | Listens for client object events.         |
 | [off](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#off)               | Stops listening for client object events.            |
 | [getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteMutedState) | Gets the audio/video status of remote users in a room.           |
@@ -403,6 +405,7 @@ A local audio/video stream is created through [createStream](https://web.sdk.qcl
 | [getUserId](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getUserId)                     | Gets the ID of the user to whom the stream belongs.                                                                                                                                                                  |
 | [setAudioOutput](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioOutput)           | Sets the audio output device.                                                                                                                                                                       |
 | [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioLevel)             | Gets the current volume. This API works only if there is audio data in the local stream or a remote stream.                                                                                                                               |
+| [setAudioCaptureVolume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioCaptureVolume) | Sets the mic capturing volume.|
 | [hasAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#hasAudio)                       | Queries whether there is an audio track.                                                                                                                                                                       |
 | [hasVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#hasVideo)                       | Queries whether there is a video track.                                                                                                                                                                       |
 | [getAudioTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioTrack)             | Gets the audio track of the local stream.                                                                                                                                                                           |
@@ -451,7 +454,7 @@ A remote audio/video stream is obtained via the [Client.on('stream-added')](http
 | [getCode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/RtcError.html#getCode) | Gets the error code. |
 
 ### ClientEvent
-A list of client events, which are also the values of `eventName` in the `client.on('eventName')` callback.
+Client events, which are also the values of `eventName` in the `client.on('eventName')` callback.
 
 | API                          | Description           |
 | ---------- | ---------- |
@@ -469,10 +472,11 @@ A list of client events, which are also the values of `eventName` in the `client
 | [client-banned](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.CLIENT_BANNED) | A user was removed from the room for one of the following reasons:<ul style="margin:0"><li/>A user with the same username entered the room. **Note**: Avoid repeated room entry with the same username because it will cause an error. <li/>The account admin called a server-side API to remove the user from the room.</ul> |
 | [network-quality](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.NETWORK_QUALITY) | Callback of statistics on the quality of upstream and downstream data transfer. This callback is triggered every two seconds after room entry. |
 | [audio-volume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.AUDIO_VOLUME) | Callback of user volumes.<br>After you call the [enableAudioVolumeEvaluation](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#enableAudioVolumeEvaluation) API to enable this callback, the SDK will return the volume of each user in the room at a regular interval. |
+| [sei-message](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.SEI_MESSAGE) | An SEI message was received. |
 | [error](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.ERROR) | Error event. This callback is triggered if an unrecoverable error occurs. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/647/41665). |
 
 ### StreamEvent
-A list of stream events.
+Stream events.
 
 | API      | Description                         |
 | ------------- | ------------- |

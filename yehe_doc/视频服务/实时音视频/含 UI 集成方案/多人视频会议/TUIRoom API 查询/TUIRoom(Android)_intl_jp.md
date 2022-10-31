@@ -1,9 +1,9 @@
-1. TUIRoomは、Tencent CloudのTencent Real-Time Communication (TRTC)およびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています：
+﻿1. TUIRoomは、Tencent CloudのTencent Real-Time Communication（TRTC）およびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
 - キャスターがルームを作成し、入室者はルームナンバーを入力した後に入室できます。
 - 入室者の間で画面共有を行います。
 - 各種のテキストメッセージとカスタムメッセージの送信をサポートします。
 
->?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブにすると、デフォルトでは、100DAUまでサポートするIM SDK体験版もアクティブになります。
+>?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期してアクティブ化することができます。 IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブ化すると、関連するIM SDKの体験版がデフォルトでアクティブ化されます。これは100 DAUのみをサポートします。
 
 TUIRoomはオープンソースのClassであり、Tencent Cloudの2つのクローズドソースのSDKに依存しています。具体的な実装プロセスについては、 [多人数オーディオビデオルーム(Android)](https://intl.cloud.tencent.com/document/product/647/37283)をご参照ください。
 - TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のオーディオビデオルームコンポーネントとして使用します。
@@ -22,12 +22,12 @@ TUIRoomはオープンソースのClassであり、Tencent Cloudの2つのクロ
 
 ### ルーム関連インターフェース関数
 
-| API| 説明  |
+| API| 説明 |
 | ----------------------------------------- | ---------------------------------- |
 | [createRoom](#createroom)                 | ルームの作成（キャスターが呼び出し）。       |
 | [destroyRoom](#destroyroom)               | ルームの破棄（キャスターが呼び出し）。       |
-| [enterRoom](#enterroom)                   | 入室（入室メンバーが呼び出し）。 |
-| [leaveRoom](#leaveroom)                   | 退室（その他のルームメンバーが呼び出し）。 |
+| [enterRoom](#enterroom)                   | 入室（参加者が呼び出し）。 |
+| [leaveRoom](#leaveroom)                   | 退室（参加者が呼び出し）。 |
 | [getRoomInfo](#getroominfo)               | ルーム情報の取得。                 |
 | [getRoomUsers](#getroomusers)             | ルーム内全メンバー情報の取得。       |
 | [getUserInfo](#getuserinfo)               | 特定ユーザーの情報の取得。           |
@@ -41,12 +41,12 @@ TUIRoomはオープンソースのClassであり、Tencent Cloudの2つのクロ
 | [stopCameraPreview](#stopcamerapreview)   | ローカルのビデオキャプチャおよびプレビューを停止します。   |
 | [startLocalAudio](#startlocalaudio)       | マイクキャプチャを起動します。           |
 | [stopLocalAudio](#stoplocalaudio)         | マイクキャプチャを停止します。           |
-| [setVideoMirror](#setvideomirror)         | ローカル画面のミラーモードのプレビューを設定します。 |
+| [setVideoMirror](#setvideomirror)         |  ローカル画面のイメージプレビューモードを設定します。 |
 | [setSpeaker](#setspeaker)                 | スピーカーの起動を設定します。           |
 
 ### リモートユーザーに関するインターフェース
 
-| API| 説明  |
+| API| 説明 |
 | ----------------------------------- | ---------------------------------- |
 | [startRemoteView](#startremoteview) | 指定メンバーのリモートビデオ画面をサブスクリプションし再生します。 |
 | [stopRemoteView](#stopremoteview)   | リモートビデオ画面のサブスクリプションをキャンセルし再生を停止します。   |
@@ -60,7 +60,7 @@ TUIRoomはオープンソースのClassであり、Tencent Cloudの2つのクロ
 
 ### フィールドコントロール関連インターフェース
 
-| API               | 説明         |
+| API | 説明 |
 | --------------------------------------------------- | ------------------------------------------------------- |
 | [muteUserMicrophone](#muteusermicrophone)           | 特定ユーザーのマイクを無効化/再有効化します。                               |
 | [muteAllUsersMicrophone](#muteallusersmicrophone)   | 全ユーザーのマイクを無効化/再有効化し、ステータスをルーム情報に同期させます。 |
@@ -70,34 +70,34 @@ TUIRoomはオープンソースのClassであり、Tencent Cloudの2つのクロ
 | [kickOffUser](#kickoffuser)                         | ルーム内の特定ユーザーをリムーブします（キャスターが呼び出し）。                        |
 | [startCallingRoll](#startcallingroll)               | キャスターが点呼を開始します。                                        |
 | [stopCallingRoll](#stopcallingroll)                 | キャスターが点呼を終了します。                                        |
-| [replyCallingRoll](#replycallingroll)               | メンバーがキャスターの点呼に応答します。                                    |
+| [replyCallingRoll](#replycallingroll)               | 参加者がキャスターの点呼に応答します。                                    |
 | [sendSpeechInvitation](#sendspeechinvitation)       | キャスターがメンバーに発言するようインビテーションを送信します。                                    |
 | [cancelSpeechInvitation](#cancelspeechinvitation)   | キャスターがメンバーの発言のためのインビテーションをキャンセルします。                                |
-| [replySpeechInvitation](#replyspeechinvitation)     | メンバーがキャスターの発言申請に同意/拒否します。                         |
-| [sendSpeechApplication](#sendspeechapplication)     | メンバーが発言を要請します。                                          |
-| [replySpeechApplication](#replyspeechapplication)   | キャスターがメンバーの発言申請に同意/拒否します。                         |
+| [replySpeechInvitation](#replyspeechinvitation)     | 参加者がキャスターの発言申請に同意/拒否します。                         |
+| [sendSpeechApplication](#sendspeechapplication)     | 参加者が発言を申請します。                                          |
+| [replySpeechApplication](#replyspeechapplication)   | キャスターが参加者の発言申請に同意/拒否します。                         |
 | [forbidSpeechApplication](#forbidspeechapplication) | キャスターが発言申請を禁止します。                                    |
-| [sendOffSpeaker](#sendoffspeaker)                   | キャスターがメンバーに発言を停止するよう命令します。                                  |
+| [sendOffSpeaker](#sendoffspeaker)                   | キャスターが参加者に発言を停止するよう命令します。                                  |
 | [sendOffAllSpeakers](#sendoffallspeakers)           | キャスターが全員に発言を停止するよう命令します。                                  |
-| [exitSpeechState](#exitspeechstate)                 | メンバーは発言を停止し、視聴者になります。                              |
+| [exitSpeechState](#exitspeechstate)                 | 参加者は発言を停止し、視聴者になります。                              |
 
 ### 画面共有インターフェース
 
-| API               | 説明         |
+| API | 説明 |
 |-----|-----|
-| [startScreenCapture](#startscreencapture) | 画面共有を開始。|
+| [startScreenCapture](#startscreencapture) | 画面共有を開始。 |
 | [stopScreenCapture](#stopscreencapture)   | 画面キャプチャの停止。 |
 
-### 美顔フィルタに関するインターフェース関数
+### 美顔フィルターに関するインターフェース関数
 
-| API               | 説明         |
+| API | 説明 |
 |-----|-----|
 | [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト[TXBeautyManager。](https://liteav.sdk.qcloud.com/doc/api/en/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。 |
 
 
 ### 関連設定インターフェース
 
-| API| 説明  |
+| API| 説明 |
 | ----------------------------------------------- | ---------------------- |
 | [setVideoQosPreference](#setvideoqospreference) | ネットワークトラフィックコントロール関連パラメータを設定します。 |
 
@@ -111,9 +111,9 @@ TUIRoomはオープンソースのClassであり、Tencent Cloudの2つのクロ
 
 ### エラーイベントコールバック
 
-| API               | 説明               |
+| API  | 説明 |
 | ------------------- | ---------- |
-| [onError](#onerror)                 | エラーのコールバック。                         |
+| [onError](#onerror) | エラーのコールバック。 |
 
 ### 基本イベントコールバック
 
@@ -144,21 +144,21 @@ TUIRoomはオープンソースのClassであり、Tencent Cloudの2つのクロ
 
 ### フィールドコントロールイベントコールバック
 
-| API               | 説明         |
+| API | 説明 |
 | ------------------------------------------------------------ | ---------------------------------- |
 | [onReceiveSpeechInvitation](#onreceivespeechinvitation)      | ユーザーがキャスターの発言要請を受信した場合のコールバック。       |
 | [onReceiveInvitationCancelled](#onreceiveinvitationcancelled) | ユーザーがキャスターの発言要請キャンセルを受信する場合のコールバック。   |
-| [onReceiveSpeechApplication](#onreceivespeechapplication)    | キャスターがユーザーの発言要請を受信する場合のコールバック。     |
+| [onReceiveSpeechApplication](#onreceivespeechapplication)    | キャスターがユーザーの発言申請を受信する場合のコールバック。     |
 | [onSpeechApplicationCancelled](#onspeechapplicationcancelled) | ユーザーが発言申請をキャンセルする場合のコールバック。             |
 | [onSpeechApplicationForbidden](#onspeechapplicationforbidden) | キャスターが発言申請を禁止する場合のコールバック。           |
-| [onOrderedToExitSpeechState](#onorderedtoexitspeechstate)  | メンバーが発言の停止をリクエストされる場合のコールバック。         |
-| [onCallingRollStarted](#oncallingrollstarted)                | キャスターが点呼を開始し、メンバーが受信する場合のコールバック。   |
-| [onCallingRollStopped](#oncallingrollstopped)                | キャスターが点呼を終了し、メンバーが受信する場合のコールバック。   |
-| [onMemberReplyCallingRoll](#onmemberreplycallingroll)        | メンバーが点呼に応答し、キャスターが受信する場合のコールバック。   |
+| [onOrderedToExitSpeechState](#onorderedtoexitspeechstate)    | 参加者が発言の停止をリクエストされる場合のコールバック。         |
+| [onCallingRollStarted](#oncallingrollstarted)                | キャスターが点呼を開始し、参加者が受信する場合のコールバック。   |
+| [onCallingRollStopped](#oncallingrollstopped)                | キャスターが点呼を終了し、参加者が受信する場合のコールバック。   |
+| [onMemberReplyCallingRoll](#onmemberreplycallingroll)        | 参加者が点呼に応答し、キャスターが受信する場合のコールバック。   |
 | [onChatRoomMuted](#onchatroommuted)                          | キャスターがチャットルームのミュートを変更する場合のコールバック。     |
 | [onMicrophoneMuted](#onmicrophonemuted)                      | キャスターがマイクの無効化を設定する場合のコールバック。         |
 | [onCameraMuted](#oncameramuted)                              | キャスターがカメラの無効化を設定する場合のコールバック。         |
-| [onReceiveKickedOff](#onreceivekickedoff)                    | メンバーがキャスターからキックアウトされた場合のコールバック。         |
+| [onReceiveKickedOff](#onreceivekickedoff)                    | 参加者がキャスターからキックアウトされた場合のコールバック。         |
 
 
 ### 統計および品質コールバック
@@ -184,9 +184,9 @@ TUIRoomはオープンソースのClassであり、Tencent Cloudの2つのクロ
 public static TUIRoomCore getInstance(Context context);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | context | Context | Androidコンテキスト。内部ではApplicationContextに変換してシステムAPIの呼び出しに使用します。 |
 
@@ -205,9 +205,9 @@ void destroyInstance();
 void setListener(TUIRoomCoreListener listener);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | listener | TUIRoomCoreListener | イベントコールバッククラスを受信します。 |
 
@@ -218,15 +218,15 @@ void setListener(TUIRoomCoreListener listener);
 void createRoom(String roomId, TUIRoomCoreDef.SpeechMode speechMode, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ | 意味  |
 |-----------| ------------- | -------------------------------------- |
-| roomId  | String  | ルームID。ご自身でアサインし、一元管理してください。 |
+| roomId  | String  | ルームID。ご自身でアサインし、一元管理する必要があります。 |
 | speechMode| TUIRoomCoreDef.SpeechMode | 発言モード。|
 | callback | TUIRoomCoreCallback.ActionCallback | ルームの作成結果のコールバック。|
 
-キャスターの通常の呼び出しフローは以下のとおりです：
+キャスターの通常の呼び出しフローは以下のとおりです。
 1. **キャスター**が`createRoom()`を呼び出し、ルームを作成します。ルーム作成の成否は`TUIRoomCoreCallback.ActionCallback`でキャスターに通知されます。
 2. **キャスター**が`startCameraPreview()`を呼び出し 、カメラキャプチャとプレビューを起動します。
 3. **キャスター**が`startLocalAudio()`を呼び出し、ローカルマイクを起動します。
@@ -238,7 +238,7 @@ void createRoom(String roomId, TUIRoomCoreDef.SpeechMode speechMode, TUIRoomCore
 void destroyRoom(TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ | 意味  |
 | ------- | ------ | ---------- |
@@ -246,12 +246,12 @@ void destroyRoom(TUIRoomCoreCallback.ActionCallback callback);
 
 ### enterRoom
 
-入室（ルーム参加メンバーが呼び出し）。
+入室（参加者が呼び出し）。
 ```java
 void enterRoom(String roomId, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------- |
@@ -259,23 +259,23 @@ void enterRoom(String roomId, TUIRoomCoreCallback.ActionCallback callback);
 | callback | UIRoomCoreCallback.ActionCallback | 結果のコールバック。  |
 
 
-ルーム参加メンバーが入室する場合の通常の呼び出し手順は次のとおりです：
-1. **入室メンバー**が`enterRoom`を呼び出し、roomIdを渡せば入室できます。
-2. **入室メンバー**が`startCameraPreview()`を呼び出してカメラプレビューを起動し、`startLocalAudio()`を呼び出して、マイクキャプチャを起動します。
-3. **入室メンバー**が`onRemoteUserCameraAvailable`のイベントを受信し、`startRemoteView()`を呼び出して、ビデオ再生を開始します。
+参加者が入室する場合の通常の呼び出し手順は次のとおりです。
+1. **参加者**が`enterRoom`を呼び出し、roomIdを渡せば入室できます。
+2. **参加者**が`startCameraPreview()`を呼び出して、カメラプレビューを起動し、`startLocalAudio()`を呼び出して、マイクキャプチャを起動します。
+3. **参加者**が`onRemoteUserCameraAvailable`のイベントを受信し、`startRemoteView()`を呼び出して、ビデオ再生を開始します。
 
 ### leaveRoom
 
-退室（入室メンバーが呼び出し）。
+退室（参加者が呼び出し）。
 ```java
  void leaveRoom(TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-  パラメータは下表に示すとおりです：
+  パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------- |
-| callback | UIRoomCoreCallback.ActionCallback | 結果のコールバック。  |
+| callback | UIRoomCoreCallback.ActionCallback | 結果のコールバック。|
 
 ### getRoomInfo
 
@@ -293,16 +293,16 @@ TUIRoomCoreDef.RoomInfo getRoomInfo();
 
 ### getUserInfo
 
-ルームのメンバー情報を取得します。
+メンバー情報を取得します。
 ```java
 void getUserInfo(String userId, TUIRoomCoreCallback.UserInfoCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------- |
-| userId     | String | ユーザーID。      |
+| userId | String | ユーザーID。 |
 | callback | UIRoomCoreCallback.UserInfoCallback | ルームメンバーの詳細情報のコールバック。 |
 
 
@@ -313,7 +313,7 @@ void getUserInfo(String userId, TUIRoomCoreCallback.UserInfoCallback callback);
 void setSelfProfile(String userName, String avatarURL, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味  |
 | ---------- | ------ | -------------- |
@@ -329,11 +329,11 @@ void setSelfProfile(String userName, String avatarURL, TUIRoomCoreCallback.Actio
  void transferRoomMaster(String userId, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------- |
-| userId     | String | ユーザーID。      |
+| userId | String | ユーザーID。 |
 | callback | TUIRoomCoreCallback.ActionCallback | 結果のコールバック。 |
 
 
@@ -346,11 +346,11 @@ void setSelfProfile(String userName, String avatarURL, TUIRoomCoreCallback.Actio
 void startCameraPreview(boolean isFront, TXCloudVideoView view);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ  | 意味 |
 | ---- | -------------- | ---------- |
-| isFront | boolean  | true：フロントカメラ、false：リアカメラ。 |
+| isFront | boolean | true：フロントカメラ、false：リアカメラ。 |
 | view | TXCloudVideoView | ビデオ画像をロードするウィジェット。 |
 
 
@@ -368,7 +368,7 @@ void startCameraPreview(boolean isFront, TXCloudVideoView view);
  void startLocalAudio(int quality);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ  | 意味 |
 | ---- | -------------- | ---------- |
@@ -376,19 +376,19 @@ void startCameraPreview(boolean isFront, TXCloudVideoView view);
 
 ### stopLocalAudio
 
-マイクの集音停止。
+マイクの集音停止
 ```java
 void stopLocalAudio();
 ```
 
 ### setVideoMirror
 
-ローカル画面のミラーモードのプレビューを設定します。
+ローカル画面のイメージプレビューモードを設定します。
 ```java
  void setVideoMirror(int type);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ  | 意味 |
 | ---- | -------------- | ---------- |
@@ -401,7 +401,7 @@ void stopLocalAudio();
  void setSpeaker(boolean isUseSpeaker);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ  | 意味 |
 | ---- | -------------- | ---------- |
@@ -416,7 +416,7 @@ void stopLocalAudio();
 void startRemoteView(String userId, TXCloudVideoView view, TUIRoomCoreDef.SteamType streamType, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ | 意味  |
 | -------------- | ------------- | -------------------------- |
@@ -434,9 +434,9 @@ void stopRemoteView(String userId, TUIRoomCoreCallback.ActionCallback callback);
 
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ       | タイプ    | 意味  |
+| パラメータ | タイプ | 意味  |
 | ------- | ------------- | ----------------------- |
 | userId | String  | 再生停止が必要なユーザーのID。 |
 | callback  | TUIRoomCoreCallback.ActionCallback | 結果のコールバック。|
@@ -449,9 +449,9 @@ void switchCamera(boolean isFront);
 
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ       | タイプ    | 意味  |
+| パラメータ | タイプ | 意味  |
 | ------- | ------------- | ----------------------- |
 | isFront | boolean  | true：フロントカメラ、false：リアカメラ。 |
 
@@ -464,7 +464,7 @@ void switchCamera(boolean isFront);
 void sendChatMessage(String message, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------- |
@@ -479,7 +479,7 @@ void sendChatMessage(String message, TUIRoomCoreCallback.ActionCallback callback
 void sendCustomMessage(String data, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------- |
@@ -495,7 +495,7 @@ void sendCustomMessage(String data, TUIRoomCoreCallback.ActionCallback callback)
 void muteUserMicrophone(String userId, boolean mute, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -510,9 +510,9 @@ void muteUserMicrophone(String userId, boolean mute, TUIRoomCoreCallback.ActionC
 void muteAllUsersMicrophone(boolean mute, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 | ---- | ---- | ---------- |
 | mute | boolean | 無効にするかどうか。 |
 | callback | TUIRoomCoreCallback.ActionCallback | 結果のコールバック。 |
@@ -525,7 +525,7 @@ void muteAllUsersMicrophone(boolean mute, TUIRoomCoreCallback.ActionCallback cal
 void muteUserCamera(String userId, boolean mute, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -540,9 +540,9 @@ void muteUserCamera(String userId, boolean mute, TUIRoomCoreCallback.ActionCallb
 void muteAllUsersCamera(boolean mute, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 | ---- | ---- | ---------- |
 | mute  | boolean  | 無効にするかどうか。 |
 | callback | TUIRoomCoreCallback.ActionCallback | 結果のコールバック。 |
@@ -554,9 +554,9 @@ void muteAllUsersCamera(boolean mute, TUIRoomCoreCallback.ActionCallback callbac
 void muteChatRoom(boolean mute, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 | ---- | ---- | ---------- |
 | mute  | boolean  | 無効にするかどうか。 |
 | callback | TUIRoomCoreCallback.ActionCallback | 結果のコールバック。 |
@@ -569,7 +569,7 @@ void muteChatRoom(boolean mute, TUIRoomCoreCallback.ActionCallback callback);
 void kickOffUser(String userId, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -583,7 +583,7 @@ void kickOffUser(String userId, TUIRoomCoreCallback.ActionCallback callback);
  void startCallingRoll(TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -597,7 +597,7 @@ void kickOffUser(String userId, TUIRoomCoreCallback.ActionCallback callback);
  
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -605,12 +605,12 @@ void kickOffUser(String userId, TUIRoomCoreCallback.ActionCallback callback);
 
 ### replyCallingRoll
 
-メンバーがキャスターの点呼に応答します。
+参加者がキャスターの点呼に応答します。
 ```java
 void replyCallingRoll(TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -619,12 +619,12 @@ void replyCallingRoll(TUIRoomCoreCallback.ActionCallback callback);
 
 ### sendSpeechInvitation
 
-キャスターがメンバーの発言を要請します。
+キャスターが参加者の発言を要請します。
 ```java
 void sendSpeechInvitation(String userId, TUIRoomCoreCallback.InvitationCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -633,12 +633,12 @@ void sendSpeechInvitation(String userId, TUIRoomCoreCallback.InvitationCallback 
 
 ### cancelSpeechInvitation
 
-キャスターがメンバーへの発言要請をキャンセルします。
+キャスターが参加者の発言要請をキャンセルします。
 ```java
  void cancelSpeechInvitation(String userId, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -647,12 +647,12 @@ void sendSpeechInvitation(String userId, TUIRoomCoreCallback.InvitationCallback 
 
 ### replySpeechInvitation
 
-メンバーがキャスターの発言要請に同意/拒否します。
+参加者がキャスターの発言要請に同意/拒否します。
 ```java
 void replySpeechInvitation(boolean agree, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -661,12 +661,12 @@ void replySpeechInvitation(boolean agree, TUIRoomCoreCallback.ActionCallback cal
 
 ### sendSpeechApplication
 
-メンバーが発言を要請します。
+参加者が発言を申請します。
 ```java
 void sendSpeechApplication(TUIRoomCoreCallback.InvitationCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -674,12 +674,12 @@ void sendSpeechApplication(TUIRoomCoreCallback.InvitationCallback callback);
 
 ### cancelSpeechApplication
 
-メンバーが発言申請をキャンセルします。
+参加者が発言申請をキャンセルします。
 ```java
 void cancelSpeechApplication(TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -687,12 +687,12 @@ void cancelSpeechApplication(TUIRoomCoreCallback.ActionCallback callback);
 
 ### replySpeechApplication
 
-キャスターがメンバーの発言申請に同意/を拒否します。
+キャスターが参加者の発言申請に同意/拒否します。
 ```java
 void replySpeechApplication(boolean agree, String userId, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -707,7 +707,7 @@ void replySpeechApplication(boolean agree, String userId, TUIRoomCoreCallback.Ac
  void forbidSpeechApplication(boolean forbid, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ| タイプ | 意味 |
 | ------ | ---- | ---------- |
@@ -717,12 +717,12 @@ void replySpeechApplication(boolean agree, String userId, TUIRoomCoreCallback.Ac
 
 ### sendOffSpeaker
 
-キャスターがメンバーに発言の停止を命令します。
+キャスターが参加者に発言の停止を命令します。
 ```java
 void sendOffSpeaker(String userId, TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -736,7 +736,7 @@ void sendOffSpeaker(String userId, TUIRoomCoreCallback.ActionCallback callback);
 void sendOffAllSpeakers(TUIRoomCoreCallback.ActionCallback callback);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -744,11 +744,11 @@ void sendOffAllSpeakers(TUIRoomCoreCallback.ActionCallback callback);
 
 ### exitSpeechState
 
-メンバーが発言を停止し、視聴者になります。
+参加者が発言を停止し、視聴者になります。
 ```java
 void exitSpeechState(TUIRoomCoreCallback.ActionCallback callback);
 ```
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ  | タイプ  | 意味 |
 | -------- | -------- | ---------- |
@@ -763,9 +763,9 @@ void exitSpeechState(TUIRoomCoreCallback.ActionCallback callback);
 void startScreenCapture(TRTCCloudDef.TRTCVideoEncParam encParams, TRTCCloudDef.TRTCScreenShareParams screenShareParams);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | encParams | TRTCCloudDef.TRTCVideoEncParam | 画面共有時のエンコードパラメータを設定します。上記の推奨設定を採用することをお勧めします。encParamsにnullを指定した場合、startScreenCaptureを呼び出す前のエンコードパラメータ設定が使用されます。 |
 | screenShareParams | TRTCCloudDef.TRTCScreenShareParams | 画面共有の特殊なレイアウト設定については、その中のfloatingViewの設定を推奨します。一方で、Appがシステムから強制排除されるのを回避でき、もう一方で、ユーザーのプライバシー保護にも役立ちます。 |
@@ -779,17 +779,17 @@ void startScreenCapture(TRTCCloudDef.TRTCVideoEncParam encParams, TRTCCloudDef.T
 void stopScreenCapture();
 ```
 
-## 美顔フィルタに関するインターフェース関数
+## 美顔フィルターに関するインターフェース関数
 ### getBeautyManager
 
-美顔管理オブジェクト[TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。 |
+美顔管理オブジェクト [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)を取得します。
 ```java
 TXBeautyManager getBeautyManager();
 ```
 
 美顔管理では、次の機能を使用できます。
 - 「美顔のスタイル」、「美白」、「肌色補正（血色・つや感）」、「デカ眼」、「顔痩せ」、「V顔」、「下あご」、「面長補正」、「小鼻」、「キラキラ目」、「白い歯」、「目の弛み除去」、「シワ除去」、「ほうれい線除去」などの美容効果を設定します。
-- 「髪の生え際」、「眼と眼の距離」、「眼角度」、「唇の形」、「鼻翼」、「鼻の位置」、「唇の厚さ」、「顔の形」を調整します。
+- 「髪の生え際」、「眼と眼の距離」、「眼の角度」、「唇の形」、「鼻翼」、「鼻の位置」、「唇の厚さ」、「顔の形」を調整します。
 - 人の顔のスタンプ（素材）等のダイナミック効果を設定します。
 - メイクアップを追加します。
 - ジェスチャー認識を行います。
@@ -803,7 +803,7 @@ TXBeautyManager getBeautyManager();
  void setVideoQosPreference(TRTCCloudDef.TRTCNetworkQosParam preference);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味  |
 | ---------- | --------------------- | -------------- |
@@ -816,9 +816,9 @@ TXBeautyManager getBeautyManager();
 void setAudioQuality(int quality);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | quality | int | オーディオ品質。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
 
@@ -830,9 +830,9 @@ void setAudioQuality(int quality);
 void setVideoResolution(int resolution);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | resolution | int | ビデオの解像度。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#aa3b72c532f3ffdf64c6aacab26be5f87)をご参照ください。 |
 
@@ -844,11 +844,11 @@ void setVideoResolution(int resolution);
 void setVideoFps(int fps);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| fps  | int  | ビデオキャプチャのフレームレート。 |
+| fps | int | ビデオキャプチャのフレームレート。 |
 
 >? **推奨する値**：15fpsまたは20fps。5fps以下ではラグ感が目立ち、10fps以下では軽微なラグ感があります。20fps以上は高すぎて浪費になります（映画のフレームレートは24fps）。
 
@@ -860,9 +860,9 @@ void setVideoFps(int fps);
 void setVideoBitrate(int bitrate);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | bitrate | int | ビットレート。SDKは、目標ビットレートに応じてエンコードを行い、ネットワークの状態が良くない場合のみ、ビデオビットレートを動的に引き下げます。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html)をご参照ください。 |
 
@@ -875,9 +875,9 @@ void setVideoBitrate(int bitrate);
 void enableAudioEvaluation(boolean enable);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | enable | boolean | true：オン、false：オフ。 |
 
@@ -890,24 +890,24 @@ void enableAudioEvaluation(boolean enable);
 void setAudioPlayVolume(int volume);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| volume | int | 再生音量、0-100、 デフォルト100。 |
+| volume | int | 再生音量、0～100、 デフォルト100。 |
 
 ### setAudioCaptureVolume
 
-マイクの集音音量設定。
+マイクの集音音量設定
 ```java
 void setAudioCaptureVolume(int volume);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| volume | int | 集音音量、0-100、 デフォルト100。 |
+| volume | int | 集音音量、0～100、 デフォルト100。 |
 
 ### startFileDumping
 
@@ -916,9 +916,9 @@ void setAudioCaptureVolume(int volume);
 void startFileDumping(TRTCCloudDef.TRTCAudioRecordingParams trtcAudioRecordingParams);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
 | trtcAudioRecordingParams | TRTCCloudDef.TRTCAudioRecordingParams | 録音パラメータ。詳細については、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams)をご参照ください。 |
 
@@ -947,18 +947,18 @@ int getSdkVersion();
 void onError(int code, String message);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------- |
-| code    | int    | エラーコード。|
-| message | String | エラーメッセージ。 |
+| code | int | エラーコード。|
+| message | String | エラー情報。 |
 
 ## 基本イベントコールバック
 
 ### onDestroyRoom
 
-ルーム解散のコールバック。
+ルーム解散のコールバックです。
 ```java
 void onDestroyRoom();
 ```
@@ -970,11 +970,11 @@ void onDestroyRoom();
 void onUserVoiceVolume(String userId, int volume);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------------------------------- |
-| userId   | String         | ユーザーID。  |
+| userId | String | ユーザーID。  |
 | volume  | int | ユーザーの音量の大きさ、値の範囲0～100。 |
 
 ### onRoomMasterChanged
@@ -984,7 +984,7 @@ void onUserVoiceVolume(String userId, int volume);
 void onRoomMasterChanged(String previousUserId, String currentUserId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | --------- |
@@ -1001,11 +1001,11 @@ void onRoomMasterChanged(String previousUserId, String currentUserId);
 void onRemoteUserEnter(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | --------- |
-| userId    | String | ユーザーID。|
+| userId | String | ユーザーID。 |
 
 ### onRemoteUserLeave
 
@@ -1014,11 +1014,11 @@ void onRemoteUserEnter(String userId);
 void onRemoteUserLeave(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | --------- |
-| userId    | String | ユーザーID。|
+| userId | String | ユーザーID。 |
 
 ### onRemoteUserCameraAvailable
 
@@ -1027,7 +1027,7 @@ void onRemoteUserLeave(String userId);
 void onRemoteUserCameraAvailable(String userId, boolean available);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ| タイプ| 意味  |
 | --------- | ------ | ----------------------------------------- |
@@ -1041,7 +1041,7 @@ void onRemoteUserCameraAvailable(String userId, boolean available);
 void onRemoteUserScreenVideoAvailable(String userId, boolean available);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ| タイプ| 意味  |
 | --------- | ------ | ----------------------------------------- |
@@ -1055,7 +1055,7 @@ void onRemoteUserScreenVideoAvailable(String userId, boolean available);
 void onRemoteUserAudioAvailable(String userId, boolean available);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ| タイプ| 意味  |
 | --------- | ------ | ----------------------------------------- |
@@ -1069,11 +1069,11 @@ void onRemoteUserAudioAvailable(String userId, boolean available);
 void onRemoteUserEnterSpeechState(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | --------- |
-| userId    | String | ユーザーID。|
+| userId | String | ユーザーID。 |
 
 ### onRemoteUserExitSpeechState
 
@@ -1082,41 +1082,41 @@ void onRemoteUserEnterSpeechState(String userId);
 void onRemoteUserExitSpeechState(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | --------- |
-| userId    | String | ユーザーID。|
+| userId | String | ユーザーID。 |
 
 
 ## チャットルームメッセージイベントコールバック
 
 ### onReceiveChatMessage
 
-テキストメッセージを受信します。
+テキストメッセージの受信。
 ```java
 void onReceiveChatMessage(String userId, String message);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味 |
 | ------- | ------ | ---------- |
-| userId   | String         | ユーザーID。  |
-| message  | String   | テキストメッセージ。|
+| userId | String | ユーザーID。  |
+| message | String | テキストメッセージ。 |
 
 ### onReceiveRoomCustomMsg
 
-カスタムメッセージを受信します。
+カスタムメッセージの受信。
 ```java
 void onReceiveRoomCustomMsg(String userId, String data);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | ------------ |
-| userId    | String | ユーザーID。|
+| userId | String | ユーザーID。 |
 | message | String | カスタムメッセージ。 |
 
 ## フィールドコントロールメッセージコールバック
@@ -1128,7 +1128,7 @@ void onReceiveRoomCustomMsg(String userId, String data);
 void onReceiveSpeechInvitation(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | ------------ |
@@ -1141,7 +1141,7 @@ void onReceiveSpeechInvitation(String userId);
 void onReceiveInvitationCancelled(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | ------------ |
@@ -1150,16 +1150,16 @@ void onReceiveInvitationCancelled(String userId);
 
 ### onReceiveSpeechApplication
 
-キャスターがユーザーの発言要請を受信する場合のコールバック。
+キャスターがユーザーの発言申請を受信する場合のコールバック。
 ```java
 void onReceiveSpeechApplication(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | --------- |
-| userId    | String | ユーザーID。|
+| userId | String | ユーザーID。 |
 
 ### onSpeechApplicationCancelled
 
@@ -1168,11 +1168,11 @@ void onReceiveSpeechApplication(String userId);
 void onSpeechApplicationCancelled(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | --------- |
-| userId    | String | ユーザーID。|
+| userId | String | ユーザーID。 |
 
 ### onSpeechApplicationForbidden
 
@@ -1181,7 +1181,7 @@ void onSpeechApplicationCancelled(String userId);
 void onSpeechApplicationForbidden(boolean isForbidden);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ| タイプ | 意味 |
 | --------- | ---- | ---------- |
@@ -1189,12 +1189,12 @@ void onSpeechApplicationForbidden(boolean isForbidden);
 
 ### onOrderedToExitSpeechState
 
-メンバーが発言を停止するようリクエストされる場合のコールバック。
+参加者が発言を停止するようリクエストされる場合のコールバック。
 ```java
 void onOrderedToExitSpeechState(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | ------------ |
@@ -1203,30 +1203,30 @@ void onOrderedToExitSpeechState(String userId);
 
 ### onCallingRollStarted
 
-キャスターが点呼を開始し、メンバーが受信する場合のコールバック。
+キャスターが点呼を開始し、参加者が受信する場合のコールバック。
 ```java
 void onCallingRollStarted(String userId);
 ```
 
 ### onCallingRollStopped
 
-キャスターが点呼を終了し、メンバーが受信する場合のコールバック。
+キャスターが点呼を終了し、参加者が受信する場合のコールバック。
 ```java
 void onCallingRollStopped(String userId);
 ```
 
 ### onMemberReplyCallingRoll
 
-メンバーが点呼に応答し、キャスターが受信する場合のコールバック。
+参加者が点呼に応答し、キャスターが受信する場合のコールバック。
 ```java
 void onMemberReplyCallingRoll(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ | タイプ| 意味|
 | ------- | ------ | --------- |
-| userId    | String | ユーザーID。|
+| userId | String | ユーザーID。 |
 
 ### onChatRoomMuted
 
@@ -1235,9 +1235,9 @@ void onMemberReplyCallingRoll(String userId);
 void onChatRoomMuted(boolean muted);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ  | タイプ   | 意味          |
+| パラメータ  | タイプ | 意味 |
 | ----- | ---- | ---------- |
 | muted | boolean | 無効にするかどうか。 |
 
@@ -1248,9 +1248,9 @@ void onChatRoomMuted(boolean muted);
 void onMicrophoneMuted(boolean muted);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ  | タイプ   | 意味          |
+| パラメータ  | タイプ | 意味 |
 | ----- | ---- | ---------- |
 | muted | boolean | 無効にするかどうか。 |
 
@@ -1261,9 +1261,9 @@ void onMicrophoneMuted(boolean muted);
 void onCameraMuted(boolean muted);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ  | タイプ   | 意味          |
+| パラメータ  | タイプ | 意味 |
 | ----- | ---- | ---------- |
 | muted | boolean | 無効にするかどうか。 |
 
@@ -1274,9 +1274,9 @@ void onCameraMuted(boolean muted);
 void onReceiveKickedOff(String userId);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ  | タイプ   | 意味          |
+| パラメータ  | タイプ | 意味 |
 | ----- | ---- | ---------- |
 | userId | String | キャスター/管理者ユーザーID。 |
 
@@ -1289,7 +1289,7 @@ void onReceiveKickedOff(String userId);
 void onStatistics(TRTCStatistics statistics);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ| タイプ | 意味 |
 | ------ | ---------------------- | ---------- |
@@ -1303,11 +1303,11 @@ void onNetworkQuality(TRTCCloudDef.TRTCQuality localQuality, List<TRTCCloudDef.T
 
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
-| パラメータ   | タイプ    | 意味     |
+| パラメータ | タイプ | 意味 |
 |-----|-----|-----|
-| localQuality | TRTCCloudDef.TRTCQuality | アップストリームのネットワーク品質。|
+| localQuality | TRTCCloudDef.TRTCQuality | アップストリームネットワークの品質。 |
 | remoteQuality | List&amp;lt;TRTCCloudDef.TRTCQuality&amp;gt; | ダウンストリームのネットワーク品質。 |
 
 >? 詳細については、 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b)をご参照ください。
@@ -1331,7 +1331,7 @@ void onNetworkQuality(TRTCCloudDef.TRTCQuality localQuality, List<TRTCCloudDef.T
 void onScreenCaptureStopped(int reason);
 ```
 
-パラメータは下表に示すとおりです：
+パラメータは下表に示すとおりです。
 
 | パラメータ| タイプ | 意味|
 | ------ | ---- | ------------------------------------------------------ |

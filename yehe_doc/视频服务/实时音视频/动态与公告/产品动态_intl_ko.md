@@ -1,9 +1,101 @@
+## 2022년 07월
+<table>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
+<td>Version 10.4 버전 배포</td>
+<td> iOS&Android: <ul style="margin:0">
+사용자 지정 비디오 캡처는 RGBA32 형식을 지원합니다. 자세한 내용은 sendCustomVideoData를 참고하십시오.
+</ul>
+<br>Windows&Mac：<ul style="margin:0">
+워터마크 설정은 로컬 미리보기를 지원합니다. 자세한 내용은 setWaterMark를 참고하십시오.
+</ul>
+<br>Android: <ul style="margin:0">
+<li>저지연 인이어 모니터링과 듀얼 사운드 채널 캡처의 호환성을 최적화했습니다. </li>
+<li>하드웨어 디코딩에서 소프트웨어 디코딩으로 전환하는 정책을 최적화하여 디코딩 성능을 향상했습니다.</li>
+</ul>
+<br>iOS: <ul style="margin:0">
+iPad 캡처 볼륨이 낮은 문제를 최적화했습니다.
+</ul>
+</td>
+<td>2022-07-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr>
+<tr>
+<td>Version 10.3 버전 배포</td>
+<td> 전체 플랫폼: <ul style="margin:0">
+Music 모드의 음질이 향상되었습니다.
+</ul>
+<br>Windows&Mac：<ul style="margin:0">
+startMicDeviceTest에 매개변수를 추가하여 마이크 테스트 중 캡처된 오디오 재생 여부를 선택할 수 있습니다. 자세한 내용은 startMicDeviceTest를 참고하십시오.
+</ul>
+<br>Windows: <ul style="margin:0">
+라이브 스트리밍 세션 및 음성/영상 통화 로컬 녹화 기능이 추가되었습니다. 자세한 내용은 ITXLiteAVLocalRecord 설명을 참고하십시오.
+</ul>
+</td>
+<td>2022-07-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr>
+</table>
+
+## 2022년 06월
+<table>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
+<td>Version 10.2 버전 배포</td>
+<td> 전체 플랫폼: <ul style="margin:0">
+		<li>더 강력한 기능과 더 큰 유연성을 제공하는 스트림 믹싱 및 중계를 위한 새로운 API를 출시했습니다. 자세한 내용은<code>startPublishMediaStream</code>을 참고하십시오. </li>
+		<li>3D 공간 오디오에 대한 지원이 추가되었습니다. 자세한 내용은 <code>enable3DSpatialAudioEffect</code>를 참고하십시오.</li>
+		<li>음성 활동 감지에 대한 지원이 추가되었습니다. 이 기능은 muteLoalAudio 및 setAudioCaptureVolume이 0으로 설정된 경우에도 작동합니다. 사용자가 말하고 있지만 마이크를 켜지 않았음을 상기시켜줍니다. 자세한 내용은 <code>enableAudioVolumeEvaluation</code> (Tips): 설명을 참고하십시오.</li>
+		<li>사용자가 역할을 전환할 때 사용자의 권한을 확인하는 지원이 추가되었습니다. 자세한 내용은 <code>switchRole(TRTCRoleType role, const char* privateMapKey)</code> 설명을 참고하십시오.</li>
+	</ul>
+<br>iOS: <ul style="margin:0">업스트림 비디오 데이터 처리를 최적화하여 CPU 및 GPU 사용량을 줄였습니다.</ul>
+<br>iOS&Mac: <ul style="margin:0">비디오 사전 처리를 위한 C++ API를 통해 텍스처 방식의 맞춤형 비디오 처리를 지원합니다.</ul>
+<br>Android: <ul style="margin:0">
+		<li>인이어 효과를 최적화하여 대기 시간을 줄였습니다.</li>
+		<li>오디오 캡처를 최적화하여 일부 장치의 노이즈 문제를 수정했습니다.</li>
+	</ul>
+<br>Windows: <ul style="margin:0">성능을 최적화하여 메모리 조각 및 성능 오버헤드를 줄였습니다.</ul>
+<br>Windows&Mac: <ul style="margin:0">화면 공유 인코딩 성능을 최적화하여 출력 비디오의 높이와 너비는 더 이상 창 크기에 의해 제한되지 않습니다.</ul>
+</td>
+<td>2022-06-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr>
+<tr>
+<td>Version 10.1 버전 배포</td>
+<td> 전체 플랫폼: <ul style="margin:0">
+	<li>역할 전환 시 오디오 및 비디오 재생이 일시적으로 중단되지 않도록 원활한 역할 전환 지원이 추가되었습니다.</li>
+	<li>음악 시나리오에서 에코 제거 기능을 최적화하여 음질을 보다 자연스럽게 만들었습니다.</li>
+	<li>역할 전환 + muteLocalAudio 호출 시 음질 및 시작 효과를 최적화했습니다.</li>
+	<li>대역폭 예측 onSpeedTest에 대한 콜백을 최적화했습니다.</li>
+</ul>
+<br>iOS: <ul style="margin:0">
+	<li>스테레오 오디오 캡처 지원이 추가되었습니다.</li>
+	<li>힙 메모리 문제를 피하기 위해 메모리 관리를 최적화했습니다.</li>
+</ul>
+<br>Android: <ul style="margin:0">
+<li>Android 10 이상(startSystemAudioLoopback)에서 캡처 시스템에 의한 오디오 재생 지원이 추가되었습니다.</li>
+<li>일부 휴대폰에서 인이어 모니터링 지연을 최적화했습니다.</li>
+</ul>
+<br>Windows: <ul style="margin:0">
+<li>영상 수신 시 영상 렌더링 연동 성능을 최적화하였습니다.</li>
+<li>에코 문제를 효과적으로 방지하기 위해 스테레오 캡처 로직을 최적화했습니다.</li>
+</ul>
+</td>
+<td>2022-06-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr>
+</table>
+
+
 ## 2022년 05월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 10.0 버전 배포</td>
-<td> 모든 플랫폼: <ul style="margin:0">
+<td> 전체 플랫폼: <ul style="margin:0">
 호스트 방 입장 및 퇴장 콜백 (<a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58">onRemoteUserEnterRoom</a> / <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28">onRemoteUserLeaveRoom</a>) 속도가 향상되었습니다.
 </ul>
 <br>Windows: <ul style="margin:0">
@@ -32,8 +124,9 @@
 
 ## 2022년 04월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 9.8 버전 배포</td>
 <td> 모든 플랫폼: <ul style="margin:0">
 비디오 시나리오에서 SDK 성능이 향상되었습니다.
@@ -64,8 +157,9 @@ Music 모드의 오디오 품질이 향상되었습니다.
 
 ## 2022년 03월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 9.6 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>중국 내, 외의 규정을 준수하는 3rd party 라이브러리가 향상되었습니다.
@@ -94,8 +188,9 @@ Music 모드의 오디오 품질이 향상되었습니다.
 
 ## 2022년 01월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 9.5 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 약한 네트워크 조건에서 통화 원활성이 최적화되었습니다.
@@ -118,8 +213,9 @@ cocos2D와 같은 다른 렌더링 컴포넌트와의 호환성이 향상되었�
 
 ## 2021년 12월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 9.4 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>방 입장 속도를 높이고 방 입장 소요 시간의 변동폭을 줄였습니다.</li>
@@ -152,8 +248,9 @@ cocos2D와 같은 다른 렌더링 컴포넌트와의 호환성이 향상되었�
 
 ## 2021년 11월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 9.3 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>약한 네트워크 조건에서 즉각적인 스트리밍 성능이 향상되었습니다.</li>
@@ -168,8 +265,9 @@ cocos2D와 같은 다른 렌더링 컴포넌트와의 호환성이 향상되었�
 
 ## 2021년 09월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 9.2 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 	<li>오디오 피치 설정이 허용되었습니다.</li>
@@ -211,8 +309,9 @@ cocos2D와 같은 다른 렌더링 컴포넌트와의 호환성이 향상되었�
 
 ## 2021년 08월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 9.0 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>사용자 정의 오디오 트랙의 볼륨 설정을 지원합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418">setMixExternalAudioVolume</a>을 참고하십시오.</li>
@@ -229,8 +328,9 @@ cocos2D와 같은 다른 렌더링 컴포넌트와의 호환성이 향상되었�
 
 ## 2021년 07월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 8.9 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>특정 시나리오에서 소리가 떨리는 문제가 최적화되었습니다.</li>
@@ -254,8 +354,9 @@ cocos2D와 같은 다른 렌더링 컴포넌트와의 호환성이 향상되었�
 
 ## 2021년 06월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 8.8 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 mixExternalAudioFrame의 사용 편의성이 최적화되어 더 이상 호출 타이밍을 완벽하게 제어할 필요가 없습니다.
@@ -274,11 +375,12 @@ mixExternalAudioFrame의 사용 편의성이 최적화되어 더 이상 호출 �
 
 ## 2021년 05월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 8.7 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-<li>외부 연결 오디오 장치에 대한 예외 점검이 추가되었습니다. onStatistics 콜백 등록 후, TRTCLocalStatistics</a>의 audioCaptureState로 장시간 음소거, 파음, 끊김 문제를 실시간으로 점검할 수 있습니다.</li>
+<li>외부 연결 오디오 장치에 대한 예외 점검이 추가되었습니다. onStatistics 콜백 등록 후, TRTCLocalStatistics의 audioCaptureState로 장시간 음소거, 파음, 끊김 문제를 실시간으로 점검할 수 있습니다.</li>
 <li>BGM 리소스 관리가 최적화되어 메모리 점유율을 적시에 릴리스합니다.</li>
 <li>푸시 스트리밍측 백그라운드 전환 후 비디오 업스트림을 일시 중지하면 재생측에서 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a">onUserVideoAvailable(false)</a> 알림을 즉시 수신할 수 있습니다.</li>
 </ul><br>Mac: <ul style="margin:0">
@@ -312,8 +414,9 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 
 ## 2021년 03월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 8.5 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>VOD 파일 재생 기능이 추가되었습니다. TXVODPlayer와 TRTCCloud를 바인딩하여 현재 재생 중인 VOD 콘텐츠를 TRTC 서브 채널 푸시 스트림을 통해 공유할 수 있습니다.</li>
@@ -339,8 +442,9 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 
 ## 2021년 02월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 8.4 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>로컬 멀티미디어 녹화 기능이 추가되었습니다. 호스트가 푸시 스트림 중에 로컬 오디오와 비디오를 mp4 파일로 녹음 및 녹화할 수 있습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b">startLocalRecording</a>을 참고하십시오.</li>
@@ -350,7 +454,7 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 <br>Windows: <ul style="margin:0">
 <li>일부 시나리오의 라이브 방송 음질을 최적화하여 오디오 품질 저하 문제가 대폭 감소하였습니다.</li>
 <li>성능 최적화를 통해 일부 사용 시나리오에서 구버전 대비 성능이 20%- 30% 향상되었습니다.</li>
-<li>프로세스 볼륨 조절 기능이 추가되었습니다. setApplicationPlayVolume을 사용해 시스템 볼륨 믹서의 볼륨 크기를 설정할 수 있습니다.</li>
+<li>프로세스 볼륨 조절 기능이 추가되었습니다. setApplicationPlayVolume 을 사용해 시스템 볼륨 믹서의 볼륨 크기를 설정할 수 있습니다.</li>
 </ul>
 <br>Mac: <ul style="margin:0">
 <li>Mac 운영 체제의 출력 음성 수집을 지원합니다. Windows와 동일한 SystemLoopback 기능이며, 이 기능을 통해 SDK에서 현재 시스템의 음성을 수집할 수 있습니다. 해당 기능을 활성화하면 호스트가 편리하게 다른 사용자에게 음악 또는 영화 파일을 라이브 방송할 수 있습니다.</li>
@@ -365,8 +469,9 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 
 ## 2021년 01월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Version 8.3 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">비디오 데이터를 직접 수집하고 TRTC SDK 자체 오디오 모듈을 사용해야 할 경우, 오디오-비디오 동기화가 이루어지지 않는 문제가 발생할 수 있습니다. 이는 SDK 내부 타임라인의 자체 제어 로직으로 인해 발생하는 것으로, 이 문제에 대한 대응책으로 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ae5f2a974fa23954c5efd682dc464cdee">generateCustomPTS</a> 인터페이스가 제공됩니다. 비디오 화면을 수집할 때 이 인터페이스를 사용해서 현재 PTS(타임스탬프)를 기록한 다음 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a76e8101153afc009f374bc2b242c6831">sendCustomVideoData</a>를 호출할 때 이 타임스탬프를 적용하면 오디오-비디오 동기화를 유지할 수 있습니다.</ul>
 <br>iOS &amp; Android &amp; Mac: <ul style="margin:0">오디오 모듈이 최적화되었습니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d">enableCustomAudioCapture</a>를 사용해 수집한 오디오 데이터를 SDK에 전송하여 처리할 경우 SDK에서 에코 억제 및 노이즈 감소 효과가 유지됩니다.</ul>
@@ -379,8 +484,9 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 
 ## 2020년 12월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
-</tr><tr>
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th></tr>
+</thead>
+<tr>
 <td>Flutter SDK 배포</td>
 <td>이 <a href="https://pub.dev/packages/tencent_trtc_cloud">Flutter SDK</a>는 Tencent Cloud TRTC iOS, Android 플랫폼의 SDK를 기반으로 캡슐화합니다.</td>
 <td>2020-12-30</td>
@@ -396,7 +502,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 </ul>
 <br>Mac&iOS: <ul style="margin:0">사용자 정의 렌더링 모드에서도 TRTCCloud.snapshotVideo를 호출하여 비디오 스트림 이미지를 추출할 수 있습니다.</ul>
 <br>Windows: <ul style="margin:0">
-	<li/>로컬 카메라 수집과 원격 비디오 스트림 캡처 재생을 지원합니다. 
+	<li/>로컬 카메라 수집과 원격 비디오 스트림 캡처 재생을 지원합니다.
 	<li/>화면 공유에서 addExcludedShareWindow와 addIncludedShareWindow 인터페이스를 통해 지정된 창 제외 또는 강제 포함 기능을 지원하여 보다 유연한 화면 공유 기능을 제공합니다.
 	<li/>에코 제거 알고리즘 최적화로 에코 제거 효과가 향상되었습니다.
 </ul>
@@ -426,12 +532,12 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 11월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
 <tr>
 <td>Version 8.0 버전 배포</td>
 <td>
 전체 플랫폼: <ul style="margin:0">
-	<li/>C++ 통합 API가 추가되었습니다. 
+	<li/>C++ 통합 API가 추가되었습니다. 자세한 내용은 cpp_interface/ITRTCCloud.h를 참고하십시오.
 	<li/>문자열 방 번호를 지원합니다. TRTCParams.strRoomId를 참고하십시오.
 	<li/>TXDeviceManager 장치 관리 클래스가 추가되었습니다.
 	<li/>API TRTCCloud.switchRoom이 추가되어 수집을 중단하지 않고 직접 방을 전환할 수 있습니다.
@@ -467,7 +573,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 10월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
 <tr>
 <td>Version 7.9 버전 배포</td>
 <td>
@@ -501,11 +607,11 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 09월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
 <td>Version 7.8 버전 배포</td>
 <td>
 Android: <ul style="margin:0">
-<li>조정 화면 푸시 스트림을 지원합니다. 사용 방법은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>를 참고하십시오.
+<li>조정 화면 푸시 스트림을 지원합니다. 사용 방법은 <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d">TRTCCloud.setVideoMuteImage</a>를 참고하십시오.
 <li>오디오 라우팅 정책 최적화되어 이어폰 착용 시 오디오가 이어폰에서만 재생됩니다.
 <li>일부 시스템에서 저지연 수집 재생을 지원하여 Android 시스템의 통화 딜레이가 감소하였습니다.
 <li>VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
@@ -514,15 +620,14 @@ Android: <ul style="margin:0">
 VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 </ul>
 <br>iOS&Mac: <ul style="margin:0">
-조정 화면 푸시 스트림을 지원합니다. 사용 방법은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>를 참고하십시오.
+조정 화면 푸시 스트림을 지원합니다. 사용 방법은 <a href="https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2">TRTCCloud.setVideoMuteImage</a>를 참고하십시오.
 </ul>
 <br>Mac: <ul style="margin:0">
-<li>Mac: 시스템 볼륨 변화 콜백이 추가되었습니다. </a>
+<li>Mac: 시스템 볼륨 변화 콜백이 추가되었습니다. 
 </ul>
 <br>Windows: <ul style="margin:0">
 <li>스크린 간 영역을 지정하여 화면을 공유하는 기능이 추가되었습니다.
 <li>창 공유에 지정 창 필터링 차단 기능을 추가하였습니다. 
-<li>시스템 볼륨 변화 콜백이 추가되었습니다.
 <li>가상 카메라 e2eSoft Vacm과 호환됩니다.
 <li>startLocalPreview와 startCameraDeviceTest 동시 호출을 지원합니다.
 <li>화면을 메인 채널로 공유하고, startLocalPreview 호출 시 로컬 미리보기를 활성화합니다.
@@ -532,7 +637,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 </td>
 <td>2020-09-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
-<tr></tr> 
+</tr> 
 <tr>
 <td>Version 7.7 버전 배포</td>
 <td>
@@ -561,7 +666,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 
 ## 2020년 08월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
 <tr>
 <td>Version 7.6 버전 배포</td>
 <td>
@@ -597,7 +702,8 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 ## 2020년 07월
 
 <table>
-<tr><th width="20%">업데이트 명칭</th><th width="50%">업데이트 설명</th><th width="15%">배포일</th><th width="15%">관련 문서</th></tr>
+<thead><tr><th width="20%">업데이트 명칭</th><th width="50%">업데이트 설명</th><th width="15%">배포일</th><th width="15%">관련 문서</th></tr>
+</thead>
 <tr>
 <td>Version 7.5 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
@@ -646,7 +752,8 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 ## 2020년 06월
 
 <table>
-<tr><th width="20%">업데이트 명칭</th><th width="50%">업데이트 설명</th><th width="15%">배포일</th><th width="15%">관련 문서</th></tr>
+<thead><tr><th width="20%">업데이트 명칭</th><th width="50%">업데이트 설명</th><th width="15%">배포일</th><th width="15%">관련 문서</th></tr>
+</thead>
 <tr>
 <td>Version 7.4 버전 배포</td>
 <td>
@@ -699,7 +806,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 ## 2020년 05월
 
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>      
          <td>과금 변경</td>   
          <td>음성 시간이 모든 사용자가 방 안에 머무르는 총시간으로 변경되고, 여기서 모든 사용자가 비디오 스트림을 구독할 때 머무르는 시간을 제합니다.<br>보충 설명: <ul style="margin:0;"><li>여러 채널의 오디오 스트림을 동시에 구독하는 동일한 사용자의 음성 시간은 중복되지 않습니다.</li>
@@ -714,7 +821,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 ## 2020년 04월
 
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr><td>통화 품질 모니터링 관련 인터페이스 배포</td>   
     <td><ul style="margin:0;"><li>SDKAppID의 방 리스트 조회 인터페이스가 추가되었습니다. 한 번에 최대 100개의 방 정보가 반환되며, 최근 5일 이내의 데이터를 조회할 수 있습니다.</li>
      <li>사용자 리스트 및 통화 지표 조회 인터페이스가 추가되어 지정 시간 내의 사용자 리스트 및 통화 품질 데이터를 조회할 수 있습니다.</li>
@@ -749,7 +856,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 ## 2020년 03월
 
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>      
          <td>SDK Version 7.1 버전 배포</td>   
          <td>전체 플랫폼: <ul style="margin:0;"><li>혼합 스트림 사전 설정 템플릿 활용성이 최적화되었습니다.</li>
@@ -779,7 +886,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 ## 2020년 02월
 
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>      
          <td>클라우드 자동 녹화 최적화</td>   
          <td>애플리케이션 단독 설정에 따라 클라우드 자동 녹화 활성화/비활성화를 지원하며, 각 애플리케이션별로 단독 녹화 파일 포맷 및 콜백 주소를 설정할 수 있습니다.</td>   
@@ -791,7 +898,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 ## 2020년 01월
 
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<thead><tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
 <tr>      
          <td>SDK Version 6.9 버전 배포</td>   
          <td>전체 플랫폼: <ul style="margin:0;"><li>enterRoom 매개변수 TRTCParams에 streamId 속성이 추가되었습니다. 현재 사용자의 CDN 라이브 방송 스트림 ID 설정에 사용해 라이브 방송 CDN 바인딩이 더욱 편리해집니다.</li>

@@ -1,121 +1,121 @@
-`TUIRoom` is based on Tencent Real-Time Communication (TRTC) and Instant Messaging (IM). Its features include:
-- The host can create a room, and members can enter the room ID to join the room.
-- The members can share their screens with each other.
-- All users can send various text and custom messages.
+﻿TUIRoom is based on Tencent Real-Time Communication (TRTC) and Instant Messaging (IM). Its features include:
+- The host can create a room, and participants can enter the room ID to join the room.
+- The participants can share their screens with each other.
+- All members can send text chat messages and custom messages.
 
->?The TUIKit series of components are based on two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, the IM SDK Trial Edition will be activated by default, which will support up to 100 DAUs. For IM billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+>? All components of TUIKit use two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, IM and the trial edition of the IM SDK (which supports up to 100 DAUs) will be activated automatically. For the billing details of IM, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
-`TUIRoom` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, see [Group Audio/Video Room (for Windows and macOS)](https://intl.cloud.tencent.com/document/product/647/44071).
-- TRTC SDK: The [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as the low-latency video conferencing component.
-- IM SDK: The [IM SDK](https://intl.cloud.tencent.com/document/product/1047) for **C++** is used to implement the chat room feature.
+TUIRoom is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, see [Integrating TUIRoom (Windows and macOS)](https://intl.cloud.tencent.com/document/product/647/44071).
+- TRTC SDK: The [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency video conference component.
+- IM SDK: The [IM SDK](https://intl.cloud.tencent.com/document/product/1047) (**C++ edition**) is used to implement chat messages.
 
 
-## `TUIRoom` API Overview[](id:TUIRoom)
+## TUIRoom API Overview[](id:TUIRoom)
 
-### Basic functions of `TUIRoomCore`
+### TUIRoomCore basic APIs
 
-| API                                 | Description           |
+| API                                     | Description                                  |
 |-----|-----|
 | [GetInstance](#getinstance)         | Gets a singleton object. |
 | [DestroyInstance](#destroyinstance) | Terminates a singleton object. |
-| [SetCallback](#setcallback)         | Sets event callback. |
+| [SetCallback](#setcallback)         | Sets event callbacks. |
 
 ### Room APIs
 
-| API      | Description                         |
+| API | Description |
 |-----|-----|
-| [login](#login)                           | Logs in.                             |
-| [logout](#logout)                         | Logs out.                             |
+| [login](#login)                   | Logs in.                   |
+| [logout](#logout)                 | Logs out.                   |
 | [CreateRoom](#createroom)                 | Creates a room (called by host).           |
-| [DestroyRoom](#destroyroom)               | Terminates a room (called by host).           |
-| [EnterRoom](#enterroom)                   | Enters a room (called by member).         |
-| [LeaveRoom](#leaveroom)                   | Exits a room (called by member or host). |
+| [DestroyRoom](#destroyroom)               | Closes the room (called by host).           |
+| [EnterRoom](#enterroom) | Enters a room (called by participant). |
+| [LeaveRoom](#leaveroom)             | Leaves a room (called by participant).           |
 | [GetRoomInfo](#getroominfo)               | Gets the room information.                     |
-| [GetRoomUsers](#getroomusers)             | Gets the information of all users in the room.           |
+| [GetRoomUsers](#getroomusers)             | Gets the information of all members in the room.           |
 | [GetUserInfo](#getuserinfo)               | Gets the information of a user.               |
 | [TransferRoomMaster](#transferroommaster) | Transfers the host permissions (called by host).     |
 
 ### Local audio/video operation APIs
 
-| API                                                   | Description                       |
+| API | Description |
 |-----|-----|
-| [StartCameraPreview](#startcamerapreview)             | Enables the preview of the local video.   |
-| [StopCameraPreview](#stopcamerapreview)               | Stops local video capturing and preview.   |
+| [StartCameraPreview](#startcamerapreview) | Enables preview of the local video.   |
+| [StopCameraPreview](#stopcamerapreview) | Stops local video capturing and preview.|
 | [UpdateCameraPreview](#updatecamerapreview)           | Updates the local video rendering window.     |
 | [StartLocalAudio](#startlocalaudio)                   | Enables mic capturing.           |
 | [StopLocalAudio](#stoplocalaudio)                     | Stops mic capturing.           |
 | [StartSystemAudioLoopback](#startsystemaudioloopback) | Enables system audio capturing.  |
 | [StopSystemAudioLoopback](#stopsystemaudioloopback)   | Disables system audio capturing.  |
-| [SetVideoMirror](#setvideomirror)                     | Sets the mirror mode for local preview. |
+| [SetVideoMirror](#setvideomirror)                     | Sets the mirror mode for local video preview. |
 
 ### Remote user APIs
 
-| API                                   | Description                               |
+| API | Description |
 |-----|-----|
-| [StartRemoteView](#startremoteview)   | Subscribes to and plays back the video of a specified remote member. |
-| [StopRemoteView](#stopremoteview)     | Unsubscribes from and stops the playback of a remote video image.   |
+| [StartRemoteView](#startremoteview) | Subscribes to and plays back the remote video image of a specified member. |
+| [StopRemoteView](#stopremoteview)   | Unsubscribes from and stops the playback of a remote video image.   |
 | [UpdateRemoteView](#updateremoteview) | Updates the video rendering window of a remote user.      |
 
 ### Chat message sending APIs
 
-| API                                     | Description             |
+| API | Description |
 |-----|-----|
 | [SendChatMessage](#sendchatmessage)     | Sends a chat message.   |
 | [SendCustomMessage](#sendcustommessage) | Sends a custom message. |
 
 ### Room control APIs
 
-| API                                                 | Description                                                    |
+| API                                                                                                            | Description                                                                                                                                                                                     |
 |-----|-----|
 | [MuteUserMicrophone](#muteusermicrophone)           | Enables/Disables the mic of a specified user.                               |
-| [MuteAllUsersMicrophone](#muteallusersmicrophone)   | Enables/Disables the mic of all users and syncs the status to room information. |
+| [MuteAllUsersMicrophone](#muteallusersmicrophone)   | Enables/Disables the mics of all users and syncs the status to room information. |
 | [MuteUserCamera](#muteusercamera)                   | Enables/Disables the camera of a specified user.                               |
-| [MuteAllUsersCamera](#mutealluserscamera)           | Enables/Disables the camera of all users and syncs the status to room information. |
-| [MuteChatRoom](#mutechatroom)                       | Turns on/off chat (called by host).                     |
+| [MuteAllUsersCamera](#mutealluserscamera)           | Enables/Disables the cameras of all users and syncs the status to room information. |
+| [MuteChatRoom](#mutechatroom)                       | Enables/Disables chat messages (called by host).                     |
 | [KickOffUser](#kickoffuser)                         | Removes a specified user from the room (called by host).                        |
 | [StartCallingRoll](#startcallingroll)               | Starts a roll call (called by host).                                        |
 | [StopCallingRoll](#stopcallingroll)                 | Stops a roll call (called by host).                                        |
-| [ReplyCallingRoll](#replycallingroll)               | Replies to a roll call (called by a member).                                    |
-| [SendSpeechInvitation](#sendspeechinvitation)       | Sends a speech invitation to a member (called by host).                                    |
-| [CancelSpeechInvitation](#cancelspeechinvitation)   | Cancels a speech invitation sent to a member (called by host).                                 |
-| [ReplySpeechInvitation](#replyspeechinvitation)     | Accepts/Rejects the speech invitation of the host (called by a member).                         |
-| [SendSpeechApplication](#sendspeechapplication)     | Sends a speech request (called by a member).                                         |
-| [CancelSpeechApplication](#cancelspeechapplication) | Cancels a speech request (called by a member).                                      |
-| [ReplySpeechApplication](#replyspeechapplication)   | Approves/Rejects the speech request of a member (called by host).                         |
+| [ReplyCallingRoll](#replycallingroll)               | Replies to a roll call (called by participant).                                    |
+| [SendSpeechInvitation](#sendspeechinvitation)       | Sends a speech invitation to a participant (called by host).                                    |
+| [CancelSpeechInvitation](#cancelspeechinvitation)   | Cancels a speech invitation sent to a participant (called by host).                                 |
+| [ReplySpeechInvitation](#replyspeechinvitation)     | Accepts/Rejects the speech invitation of the host (called by participant).                         |
+| [SendSpeechApplication](#sendspeechapplication)     | Sends a speech request (called by participant).                                         |
+| [CancelSpeechApplication](#cancelspeechapplication) | Cancels a speech request (called by participant).                                      |
+| [ReplySpeechApplication](#replyspeechapplication)   | Approves/Rejects the speech request of a participant (called by host).                         |
 | [ForbidSpeechApplication](#forbidspeechapplication) | Disables requests to speak (called by host).                                    |
-| [SendOffSpeaker](#sendoffspeaker)                   | Stops the speech of a member (called by host).                                |
+| [SendOffSpeaker](#sendoffspeaker)                   | Stops the speech of a participant (called by host).                                |
 | [SendOffAllSpeakers](#sendoffallspeakers)           | Stops the speech of all members (called by host).                                  |
-| [ExitSpeechState](#exitspeechstate)                 | Stops speaking and becomes an audience member.                               |
+| [ExitSpeechState](#exitspeechstate)                 | Exits the speaker mode (called by participant).                               |
 
-### Basic component API functions
+### Basic component APIs
 
-| API                                             | Description                                       |
+| API                                                 | Description                                                                                                                   |
 |-----|-----|
-| [GetDeviceManager](#getdevicemanager)           | Gets the local settings management object `ITXDeviceManager`.    |
+| [GetDeviceManager](#getdevicemanager)           | Gets the local device management object `ITXDeviceManager`.    |
 | [GetScreenShareManager](#getscreensharemanager) | Gets the screen sharing management object `IScreenShareManager`. |
 
-### On-cloud recording API functions
+### On-cloud recording APIs
 
-| API                                   | Description          |
+| API                                     | Description                                  |
 |-----|-----|
 | [StartCloudRecord](#startcloudrecord) | Starts on-cloud recording. |
 | [StopCloudRecord](#stopcloudrecord)   | Stops on-cloud recording. |
 
 ### Beauty filter APIs
 
-| API      | Description                         |
+| API | Description |
 |-----|-----|
-| [SetBeautyStyle](#setbeautystyle) | Sets a beauty filter. |
+| [SetBeautyStyle](#setbeautystyle) | Sets beauty filters. |
 
 ### Settings APIs
 
-| API      | Description                         |
+| API | Description |
 |-----|-----|
 | [SetVideoQosPreference](#setvideoqospreference) | Sets network QoS control parameters. |
 
-### SDK version acquisition APIs
+### SDK version APIs
 
-| API      | Description                         |
+| API | Description |
 |-----|-----|
 | [GetSDKVersion](#getsdkversion) | Gets the SDK version. |
 
@@ -123,22 +123,22 @@
 
 ### Callbacks for error events
 
-| API      | Description                         |
+| API | Description |
 |-----|-----|
-| [OnError](#onerror) | Callback for error. |
+| [OnError](#onerror) | Callback for error.|
 
 ### Basic event callbacks
 
-| API                                         | Description               |
+| API | Description |
 |-----|-----|
-| [OnLogin](#onlogin)                         | Login.         |
-| [OnLogout](#onlogout)                       | Logout.         |
-| [OnCreateRoom](#oncreateroom)               | Room creation.     |
-| [OnDestroyRoom](#ondestroyroom)             | Room closing.     |
-| [OnEnterRoom](#onenterroom)                 | Room entry.     |
-| [OnExitRoom](#onexitroom)                   | Room exit.     |
-| [OnFirstVideoFrame](#onfirstvideoframe)     | The first video frame.     |
-| [OnUserVoiceVolume](#onuservoicevolume)     | Volume level. |
+| [OnLogin](#onlogin)                         | The local user logged in.         |
+| [OnLogout](#onlogout)                       | The local user logged out.         |
+| [OnCreateRoom](#oncreateroom)               | The room was created.     |
+| [OnDestroyRoom](#ondestroyroom)             | The room was closed.     |
+| [OnEnterRoom](#onenterroom)                   | The local user entered the room.   |
+| [OnExitRoom](#onexitroom)                   | The local user left the room.     |
+| [OnFirstVideoFrame](#onfirstvideoframe)     | Started rendering the first video frame.     |
+| [onUserVoiceVolume](#onuservoicevolume)     | The audio volume of a user. |
 | [OnRoomMasterChanged](#onroommasterchanged) | The host changed.   |
 
 ### Remote user event callbacks
@@ -147,15 +147,15 @@
 |-----|-----|
 | [OnRemoteUserEnter](#onremoteuserenter)                      | A remote user entered the room.           |
 | [OnRemoteUserLeave](#onremoteuserleave)                      | A remote user exited the room.            |
-| [OnRemoteUserCameraAvailable](#onremoteusercameraavailable)  | Whether a remote user enabled the camera. |
-| [OnRemoteUserScreenAvailable](#onremoteuserscreenavailable) | Whether a remote user enabled screen sharing.   |
-| [OnRemoteUserAudioAvailable](#onremoteuseraudioavailable)    |  Whether a remote user enabled sending audio.   |
+| [OnRemoteUserCameraAvailable](#onremoteusercameraavailable)  | A remote user enabled/disabled their camera. |
+| [OnRemoteUserScreenAvailable](#onremoteuserscreenavailable) | A remote user started/stopped screen sharing.   |
+| [OnRemoteUserAudioAvailable](#onremoteuseraudioavailable)    |  A remote user turned on/off their mic.   |
 | [OnRemoteUserEnterSpeechState](#onremoteuserenterspeechstate) | A remote user started speaking.           |
 | [OnRemoteUserExitSpeechState](#onremoteuserexitspeechstate)  | A remote user stopped speaking.          |
 
-### Message event callback APIs
+### Message event callbacks
 
-| API                                             | Description                                                         |
+| API | Description |
 |-----|-----|
 | [OnReceiveChatMessage](#onreceivechatmessage)     | A text chat message was received. |
 | [OnReceiveCustomMessage](#onreceivecustommessage) | A custom message was received. |
@@ -164,58 +164,58 @@
 
 | API                                                          | Description                               |
 |-----|-----|
-| [OnReceiveSpeechInvitation](#onreceivespeechinvitation)      | A member received a speech invitation from the host.       |
-| [OnReceiveInvitationCancelled](#onreceiveinvitationcancelled) | The speech invitation sent to a member was canceled by the host.    |
-| [OnReceiveReplyToSpeechInvitation](#onreceivereplytospeechinvitation) | A member accepted the speech invitation sent by the host. |
-| [OnReceiveSpeechApplication](#onreceivespeechapplication)    | The host received a speech request from a member.     |
-| [OnSpeechApplicationCancelled](#onspeechapplicationcancelled) | A member canceled a speech request.             |
+| [OnReceiveSpeechInvitation](#onreceivespeechinvitation)      | A participant received a speech invitation from the host.       |
+| [OnReceiveInvitationCancelled](#onreceiveinvitationcancelled) | The speech invitation sent to a participant was canceled by the host.    |
+| [OnReceiveReplyToSpeechInvitation](#onreceivereplytospeechinvitation) | A participant accepted the speech invitation sent by the host. |
+| [OnReceiveSpeechApplication](#onreceivespeechapplication)    | The host received a speech request from a participant.     |
+| [OnSpeechApplicationCancelled](#onspeechapplicationcancelled) | A participant canceled a speech request.             |
 | [OnReceiveReplyToSpeechApplication](#onreceivereplytospeechapplication) | The host approved a request to speak.           |
 | [OnSpeechApplicationForbidden](#onspeechapplicationforbidden) | The host disabled requests to speak.           |
-| [OnOrderedToExitSpeechState](#onorderedtoexitspeechstate)  | A member was asked to stop speaking.         |
-| [OnCallingRollStarted](#oncallingrollstarted)                | The host started a roll call.   |
-| [OnCallingRollStopped](#oncallingrollstopped)                | The host stopped a roll call.   |
-| [OnMemberReplyCallingRoll](#onmemberreplycallingroll)        | A member replied to the roll call.   |
-| [OnChatRoomMuted](#onchatroommuted)                          | The host turned on/off chat.     |
+| [OnOrderedToExitSpeechState](#onorderedtoexitspeechstate)  | A participant was asked to stop speaking.         |
+| [OnCallingRollStarted](#oncallingrollstarted)                | The host started a roll call (received by participants)   |
+| [OnCallingRollStopped](#oncallingrollstopped)                | The host stopped a roll call (received by participants).   |
+| [OnMemberReplyCallingRoll](#onmemberreplycallingroll)        | A participant replied to the roll call (received by the host).   |
+| [OnChatRoomMuted](#onchatroommuted)                          | The host disabled/enabled chat messages.     |
 | [OnMicrophoneMuted](#onmicrophonemuted)                      | The host disabled mic use.         |
 | [OnCameraMuted](#oncameramuted)                              | The host disabled camera use.         |
 
-### Callback APIs for statistics on network quality and technical metrics
+### Callbacks for statistics on network quality and technical metrics
 
-| API      | Description                         |
+| API | Description |
 |-----|-----|
 | [OnStatistics](#onstatistics)         | Statistics on technical metrics. |
 | [OnNetworkQuality](#onnetworkquality) | Network quality.     |
 
 ### Screen sharing event callbacks
 
-| API                                             | Description                                                         |
+| API | Description |
 |-----|-----|
 | [OnScreenCaptureStarted](#onscreencapturestarted) | Screen sharing started. |
 | [OnScreenCaptureStopped](#onscreencapturestopped) | Screen sharing stopped. |
 
 ### Video recording callbacks
 
-| API                                               | Description               |
+| API                                     | Description                                  |
 |-----|-----|
 | [OnRecordError](#onrecorderror)       | Recording error. |
-| [OnRecordComplete](#onrecordcomplete) | Recording completion. |
-| [OnRecordProgress](#onrecordprogress) | Recording progress. |
+| [OnRecordComplete](#onrecordcomplete) | Recording completed. |
+| [OnRecordProgress](#onrecordprogress) | The recording progress. |
 
 
 ### Local device test callbacks
 
 | API                                                          | Description                  |
 |-----|-----|
-| [OnTestSpeakerVolume](#ontestspeakervolume)                  | Speaker volume level.       |
-| [OnTestMicrophoneVolume](#ontestmicrophonevolume)            | Mic volume level.       |
-| [OnAudioDeviceCaptureVolumeChanged](#onaudiodevicecapturevolumechanged) | System capturing volume level adjustment. |
-| [OnAudioDevicePlayoutVolumeChanged](#onaudiodeviceplayoutvolumechanged) | System playback volume level adjustment. |
+| [OnTestSpeakerVolume](#ontestspeakervolume)                  | The speaker volume.       |
+| [OnTestMicrophoneVolume](#ontestmicrophonevolume)            | The mic volume.       |
+| [OnAudioDeviceCaptureVolumeChanged](#onaudiodevicecapturevolumechanged) | The system capturing volume changed. |
+| [OnAudioDevicePlayoutVolumeChanged](#onaudiodeviceplayoutvolumechanged) | The system audio playback volume changed. |
 
-## Basic Functions of `TUIRoomCore`
+## TUIRoomCore Basic APIs
 
 ### GetInstance
 
-This API is used to get the [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/44071) singleton object.
+This API is used to get a [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/44071) singleton object.
 ```C++
  static TUIRoomCore* GetInstance();
 ```
@@ -228,7 +228,7 @@ static void DestroyInstance();
 
 ### SetCallback
 
-This API is used to set the event callback of [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/44071). You can use `TUIRoomCoreCallback` to get different status notifications of [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/44071).
+This API is used to set the event callbacks of [TUIRoomCore](https://intl.cloud.tencent.com/document/product/647/44071). You can use `TRTCChorusRoomDelegate` to get the callbacks.
 
 ```C++
 virtual void SetCallback(const TUIRoomCoreCallback* callback) = 0;
@@ -236,18 +236,18 @@ virtual void SetCallback(const TUIRoomCoreCallback* callback) = 0;
 
 ### Login
 
-This API is used to log in.
+Login
 ```C++
 virtual int Login(int sdk_appid, const std::string& user_id, const std::string& user_sig) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| sdk_appid | int |  You can view `SDKAppID` in **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** of the TRTC console. |
-| user_id | string | The ID of the current user, which is a string that can contain letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_). We recommend you set it based on your business account system. |
-| user_sig | string | Tencent Cloud's proprietary security signature. For more information on how to get it, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
+| sdk_appid | int | You can view `SDKAppID` in **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** of the TRTC console. |
+| user_id | string | The ID of the current user, which is a string that can contain letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_). We recommend you set it based on your own account system. |
+| user_sig | string | Tencent Cloud's proprietary security signature. For how to calculate and use it, see [FAQs > UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 
 ### Logout
 
@@ -265,12 +265,12 @@ virtual int CreateRoom(const std::string& room_id, TUISpeechMode speech_mode) = 
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | room_id | string | The room ID. You need to assign and manage the IDs in a centralized manner. |
 | speech_mode | TUISpeechMode | The speech mode. |
 
-Generally, the host calls the APIs in the following steps:
+Generally, a host may need to call the following APIs:
 1. The **host** calls `CreateRoom()` to create a room, the result of which is returned via `OnCreateRoom`.
 2. The **host** calls `EnterRoom()` to enter the room.
 3. The **host** calls `StartCameraPreview()` to enable camera capturing and preview.
@@ -285,25 +285,25 @@ virtual int DestroyRoom() = 0;
 
 ### EnterRoom
 
-This API is used to enter a room (called by a member).
+This API is used to enter a room (called by a participant).
 ```C++
 virtual int EnterRoom(const std::string& room_id) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | room_id | string | The room ID. |
 
-Generally, a member enters a room in the following steps:
-1. The **member** calls `EnterRoom` and passes in `room_id` to enter the room.
-2. The **member** calls `startCameraPreview()` to enable camera preview and calls `StartLocalAudio()` to enable mic capturing.
-3. The **member** receives the `OnRemoteUserCameraAvailable` event and calls `StartRemoteView()` to start playback.
+Generally, a participant joins a meeting in the following steps:
+1. The **participant** calls `EnterRoom` (passing in `room_id`) to enter the room.
+2. The **participant** calls `startCameraPreview()` to enable camera preview and calls `StartLocalAudio()` to enable mic capturing.
+3. The **participant** receives the `OnRemoteUserCameraAvailable` callback and calls `StartRemoteView()` to start playback.
 
 ### LeaveRoom
 
-This API is used to exit a room (called by a member).
+This API is used to leave a room (called by a participant).
 ```C++
 virtual int LeaveRoom() = 0;
 ```
@@ -317,48 +317,48 @@ virtual TUIRoomInfo GetRoomInfo() = 0;
 
 ### GetRoomUsers
 
-This API is used to get the information of all users in the room.
+This API is used to get the information of all members in the room.
 ```C++
 virtual std::vector<TUIUserInfo> GetRoomUsers() = 0;
 ```
 
 ### GetUserInfo
 
-This API is used to get the information of a user in the room.
+This API is used to get the information of a specified member.
 ```C++
 virtual const TUIUserInfo* GetUserInfo(const std::string& user_id) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | user_id | string | The user ID. |
 
 ### SetSelfProfile
 
-This API is used to set the user attributes.
+This API is used to set the user profile.
 ```C++
 virtual int SetSelfProfile(const std::string& user_name, const std::string& avatar_url) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | user_name | string | The username. |
 | avatar_url | string | The URL of the user profile photo. |
 
 ### TransferRoomMaster
 
-This API is used to transfer a room to another user.
+This API is used to transfer host permissions to another user.
 ```C++
 virtual int TransferRoomMaster(const std::string& user_id) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | user_id | string | The user ID. |
 
@@ -373,9 +373,9 @@ virtual int StartCameraPreview(const liteav::TXView& view) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| view | liteav::TXView | Window handle. |
+| view | liteav::TXView | The window handle. |
 
 ### StopCameraPreview
 
@@ -386,16 +386,16 @@ virtual int StopCameraPreview() = 0;
 
 ### UpdateCameraPreview
 
-This API is used to update the preview image of the local video.
+This API is used to update the local preview window.
 ```C++
 virtual int UpdateCameraPreview(const liteav::TXView& view) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| view | liteav::TXView | Window handle. |
+| view | liteav::TXView | The window handle. |
 
 ### StartLocalAudio
 
@@ -406,9 +406,9 @@ virtual int StartLocalAudio(const liteav::TRTCAudioQuality& quality) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| view | liteav::TXView | Window handle. |
+| view | liteav::TXView | The window handle. |
 
 ### StopLocalAudio
 
@@ -433,16 +433,16 @@ virtual int StopSystemAudioLoopback() = 0;
 
 ### SetVideoMirror
 
-This API is used to set mirroring mode.
+This API is used to set the mirror mode.
 ```C++
 virtual int SetVideoMirror(bool mirror) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| mirror | bool | Whether to enable the mirroring mode. |
+| mirror | bool | Whether to mirror the video. |
 
 ## Remote User APIs
 
@@ -456,10 +456,10 @@ virtual int StartRemoteView(const std::string& user_id, const liteav::TXView& vi
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | user_id | string | The ID of the user whose video image is to be played back. |
-| liteav::TXView | TXView | `view` control that carries the video image. |
+| liteav::TXView | TXView | The view that loads the video. |
 | type | TUIStreamType | The stream type. |
 
 ### StopRemoteView
@@ -472,40 +472,40 @@ virtual int StopRemoteView(const std::string& user_id,
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | ID of the user whose video image is to be stopped. |
+| user_id | string | The ID of the user whose video image is to be stopped. |
 | type | TUIStreamType | The stream type. |
 
 ### UpdateRemoteView
 
-This API is used to updates the rendering window of a remote video.
+This API is used to update the rendering window of a remote video.
 ```C++
 virtual int UpdateRemoteView(const std::string& user_id, TUIStreamType type, liteav::TXView& view) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | type | TUIStreamType | The stream type. |
-| view | liteav::TXView | Rendering window handle. |
+| view | liteav::TXView | The rendering window handle. |
 
 ## Message Sending APIs
 
 ### SendChatMessage
 
-This API is used to send text messages.
+This API is used to send a text message.
 ```C++
 virtual int SendChatMessage(const std::string& message) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| message | string | Message content. |
+| message | string | The message content. |
 
 ### SendCustomMessage
 
@@ -516,9 +516,9 @@ virtual int SendCustomMessage(const std::string& message) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| message | string | Message content. |
+| message | string | The message content. |
 
 ## Room Control APIs
 
@@ -531,22 +531,22 @@ virtual int MuteUserMicrophone(const std::string& user_id, bool mute, Callback c
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | mute | bool | Whether to disable. |
 | callback | Callback | API callback. |
 
 ### MuteAllUsersMicrophone
 
-This API is used to enable/disable the mic of all users.
+This API is used to enable/disable the mics of all users.
 ```C++
 virtual int MuteAllUsersMicrophone(bool mute) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | mute | bool | Whether to disable. |
 
@@ -559,9 +559,9 @@ virtual int MuteUserCamera(const std::string& user_id, bool mute, Callback callb
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | mute | bool | Whether to disable. |
 | callback | Callback | API callback. |
 
@@ -574,20 +574,20 @@ virtual int MuteAllUsersCamera(bool mute) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | mute | bool | Whether to disable. |
 
 ### MuteChatRoom
 
-This API is used to turn on/off chat.
+This API is used to disable/enable chat messages.
 ```C++
 virtual int MuteChatRoom(bool mute) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | mute | bool | Whether to disable. |
 
@@ -600,9 +600,9 @@ virtual int KickOffUser(const std::string& user_id, Callback callback) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | callback | Callback | API callback. |
 
 ### StartCallingRoll
@@ -621,97 +621,97 @@ virtual int StopCallingRoll() = 0;
 
 ### ReplyCallingRoll
 
-This API is used by a member to reply to the roll call.
+This API is used by a participant to reply to a roll call.
 ```C++
 virtual int ReplyCallingRoll(Callback callback) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | callback | Callback | API callback. |
 
 ### SendSpeechInvitation
 
-This API is used by the host to invite a member to speak.
+This API is used by the host to invite a participant to speak.
 ```C++
 virtual int SendSpeechInvitation(const std::string& user_id, Callback callback) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | callback | Callback | API callback. |
 
 ### CancelSpeechInvitation
 
-This API is used by the host to cancel the speech invitation sent to a member.
+This API is used by the host to cancel a speech invitation.
 ```C++
 virtual int CancelSpeechInvitation(const std::string& user_id, Callback callback) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | callback | Callback | API callback. |
 
 ### ReplySpeechInvitation
 
-This API is used by a member to accept/reject the invitation to speak sent by the host.
+This API is used by a participant to accept/reject the host’s invitation to speak.
 ```C++
 virtual int ReplySpeechInvitation(bool agree, Callback callback) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | agree | bool | Whether to approve. |
 | callback | Callback | API callback. |
 
 ### SendSpeechApplication
 
-This API is used by a member to request to speak.
+This API is used by a participant to send a request to speak.
 ```C++
 virtual int SendSpeechApplication(Callback callback) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | callback | Callback | API callback. |
 
 ### CancelSpeechApplication
 
-This API is used by a member to cancel their request to speak.
+This API is used by a participant to cancel the request to speak.
 ```C++
 virtual int CancelSpeechApplication(Callback callback) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | callback | Callback | API callback. |
 
 ### ReplySpeechApplication
 
-This API is used by the host to approve/reject a speech request sent by a member.
+This API is used by the host to approve/reject a participant’s speech request.
 ```C++
 virtual int ReplySpeechApplication(const std::string& user_id, bool agree, Callback callback) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | callback | Callback | API callback. |
 
 ### ForbidSpeechApplication
@@ -723,22 +723,22 @@ virtual int ForbidSpeechApplication(bool forbid) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| forbid | bool | Whether to forbid. |
+| forbid | bool | Whether to disable. |
 
 ### SendOffSpeaker
 
-This API is used by the host to stop the speech of the specified member.
+This API is used by the host to stop the speech of a participant.
 ```C++
 virtual int SendOffSpeaker(const std::string& user_id, Callback callback) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | callback | Callback | API callback. |
 
 ### SendOffAllSpeakers
@@ -750,13 +750,13 @@ virtual int SendOffAllSpeakers(Callback callback) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | callback | Callback | API callback. |
 
 ### ExitSpeechState
 
-This API is used stop speaking and become an audience member.
+This API is used by a participant to exit the speaker mode.
 ```C++
 virtual int ExitSpeechState() = 0;
 ```
@@ -797,46 +797,46 @@ virtual int StopCloudRecord() = 0;
 
 ### SetBeautyStyle
 
-This API is used to set the strength of beauty, brightening, and rosy skin filters.
+This API is used to set the strength of the beauty, skin brightening, and rosy skin effects
 ```C++
 virtual int SetBeautyStyle(liteav::TRTCBeautyStyle style, uint32_t beauty_level,
         uint32_t whiteness_level, uint32_t ruddiness_level) = 0;
 ```
 
-You can do the following using `TXBeautyManager`:
-- Set the beauty filter style to smooth or natural. The smooth style features more obvious skin smoothing effect.
-- Set the strength of the beauty filter. Value range: 0-9. `0` indicates that the filter is disabled. The larger the value, the more obvious the effect.
-- Set the strength of the skin brightening filter. Value range: 0-9. `0` indicates that the filter is disabled. The larger the value, the more obvious the effect.
+You can do the following using the beauty filter manger:
+- Set the beauty style to smooth or natural. The smooth style features more obvious skin smoothing effect.
+- Set the strength of the beauty effect. Value range: 0-9. 0 indicates to disable the effect. The larger the value, the more obvious the effect.
+- Set the skin brightening strength. Value range: 0-9. 0 indicates to disable the effect. The larger the value, the more obvious the effect.
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| style | liteav::TRTCBeautyStyle | Beauty filter style. |
-| beauty_level | uint32_t | Strength of the beauty filter. |
-| whiteness_level | uint32_t | Strength of the skin brightening filter. |
-| ruddiness_level | uint32_t | Strength of the rosy skin filter. |
+| style | liteav::TRTCBeautyStyle | The beauty style. |
+| beauty_level | uint32_t | The strength of the beauty effect. |
+| whiteness_level | uint32_t | The strength of the skin brightening effect. |
+| ruddiness_level | uint32_t | The strength of the rosy skin effect. |
 
 ## Settings APIs
 
 ### SetVideoQosPreference
 
-This API is used to set QoS parameters.
+This API is used to set network QoS control parameters.
 ```C++
 virtual int SetVideoQosPreference(TUIVideoQosPreference preference) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| preference | TUIVideoQosPreference | Network QoS control policy. |
+| preference | TUIVideoQosPreference | The network QoS policy. |
 
-## SDK Version Acquisition APIs
+## SDK Version APIs
 
 ### GetSDKVersion
 
-This API is used to get SDK version information.
+This API is used to get the SDK version.
 ```C++
 virtual const char* GetSDKVersion() = 0;
 ```
@@ -850,10 +850,10 @@ void OnError(int code, const std::string& message);
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| code    | int    | Error code   |
-| message | string | Error message. |
+| code    | int    | The error code.   |
+| message | string | The error message. |
 
 ## Basic Event Callbacks
 ### OnLogin
@@ -864,10 +864,10 @@ virtual void OnLogin(int code, const std::string& message) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| code    | int    | Error code   |
-| message | string | Login message or error message of login failure. |
+| code    | int    | The error code.   |
+| message | string | The login information or error message for login failure. |
 
 ### OnLogout
 
@@ -877,24 +877,24 @@ virtual void OnLogout(int code, const std::string& message) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| code    | int    | Error code   |
-| message | string | Error message. |
+| code    | int    | The error code.   |
+| message | string | The error message. |
 
 ### OnCreateRoom
 
-Room creation.
+A room was created.
 ```C++
 virtual void OnCreateRoom(int code, const std::string& message) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| code    | int    | Error code   |
-| message | string | Error message. |
+| code    | int    | The error code.   |
+| message | string | The error message. |
 
 ### OnDestroyRoom
 
@@ -905,66 +905,66 @@ virtual void OnDestroyRoom(int code, const std::string& message) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| code    | int    | Error code   |
-| message | string | Error message. |
+| code    | int    | The error code.   |
+| message | string | The error message. |
 
 ### OnEnterRoom
 
-Room entry.
+The local user entered the room.
 ```C++
 virtual void OnEnterRoom(int code, const std::string& message) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| code    | int    | Error code   |
-| message | string | Error message. |
+| code    | int    | The error code.   |
+| message | string | The error message. |
 
 ### OnExitRoom
 
-Room exit.
+The local user left the room.
 ```C++
 virtual void OnExitRoom(TUIExitRoomType type, const std::string& message) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| type | TUIExitRoomType | Room exit type. |
-| message | string | Error message. |
+| type | TUIExitRoomType | The room exit type. |
+| message | string | The error message. |
 
 ### OnFirstVideoFrame
 
-The first frame of the local video or a remote video was rendered.
+The first video frame of the local user or a remote user was rendered.
 ```C++
 virtual void OnFirstVideoFrame(const std::string& user_id, const TUIStreamType stream_type) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | stream_type | TUIStreamType | The stream type. |
 
 ### OnUserVoiceVolume
 
-User volume level.
+The audio volume of a user.
 ```C++
 virtual void OnUserVoiceVolume(const std::string& user_id, int volume)
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
-| volume | int | User volume level. Value range: 0–100. |
+| user_id | string | The user ID. |
+| volume | int | The volume level. Value range: 0-100. |
 
 ### OnRoomMasterChanged
 
@@ -975,9 +975,9 @@ virtual void OnRoomMasterChanged(const std::string& user_id) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 
 ## Remote User Callbacks
 
@@ -990,9 +990,9 @@ virtual void OnRemoteUserEnter(const std::string& user_id) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 
 ### OnRemoteUserLeave
 
@@ -1003,50 +1003,50 @@ virtual void OnRemoteUserLeave(const std::string& user_id) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 
 ### OnRemoteUserCameraAvailable
 
-Whether a remote user enabled the camera.
+A remote user enabled/disabled their camera.
 ```C++
 virtual void OnRemoteUserCameraAvailable(const std::string& user_id, bool available) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | available | bool | true: Enabled; false: Disabled. |
 
 ### OnRemoteUserScreenAvailable
 
-Whether a remote user enabled screen sharing.
+A remote user started/stopped screen sharing.
 ```C++
 virtual void OnRemoteUserScreenAvailable(const std::string& user_id, bool available) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | available | bool | true: Enabled; false: Disabled. |
 
 ### OnRemoteUserAudioAvailable
 
- Whether a remote user enabled the mic.
+ A remote user enabled/disabled their mic.
 ```C++
 virtual void OnRemoteUserAudioAvailable(const std::string& user_id, bool available) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | available | bool | true: Enabled; false: Disabled. |
 
 ### OnRemoteUserEnterSpeechState
@@ -1058,9 +1058,9 @@ virtual void OnRemoteUserEnterSpeechState(const std::string& user_id) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 
 ### OnRemoteUserExitSpeechState
 
@@ -1071,12 +1071,12 @@ virtual void OnRemoteUserExitSpeechState(const std::string& user_id) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 
 
-## Chat Event Callbacks
+## Chat Message Event Callbacks
 
 ### OnReceiveChatMessage
 
@@ -1087,10 +1087,10 @@ virtual void OnReceiveChatMessage(const std::string& user_id, const std::string&
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
-| message | string | Text message. |
+| user_id | string | The user ID. |
+| message | string | The message content. |
 
 ### OnReceiveCustomMessage
 
@@ -1101,139 +1101,139 @@ virtual void OnReceiveCustomMessage(const std::string& user_id, const std::strin
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
-| message | string | Custom message. |
+| user_id | string | The user ID. |
+| message    | string | The custom message content. |
 
 ## Room Control Message Callbacks
 
 ### OnReceiveSpeechInvitation
 
-A member received a speech invitation from the host.
+The host sent a speech invitation (received by a participant).
 ```C++
 virtual void OnReceiveSpeechInvitation() = 0;
 ```
 
 ### OnReceiveInvitationCancelled
 
-The speech invitation sent to a member was canceled by the host.
+The host canceled the speech invitation (received by a participant).
 ```C++
 virtual void OnReceiveInvitationCancelled() = 0;
 ```
 
 ### OnReceiveReplyToSpeechInvitation
 
-A member accepted the speech invitation sent by the host.
+A participant accepted/rejected a speech invitation (received by the host).
 ```C++
 virtual void OnReceiveReplyToSpeechInvitation(const std::string& user_id, bool agree) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 | agree | bool | Whether the invitation was accepted. |
 
 ### OnReceiveSpeechApplication
 
-The host received a speech request from a member.
+A participant sent a request to speak (received by the host).
 ```C++
 virtual void OnReceiveSpeechApplication(const std::string& user_id) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 
 ### OnSpeechApplicationCancelled
 
-A user canceled a speech request.
+A participant canceled a speech request.
 ```C++
 virtual void OnSpeechApplicationCancelled(const std::string& user_id) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 
 ### OnReceiveReplyToSpeechApplication
 
-The host approved a request to speak.
+The host approved/rejected a request to speak.
 ```C++
 virtual void OnReceiveReplyToSpeechApplication(bool agree) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| agree | bool | Whether to approve. |
+| agree | bool | Whether the request was approved. |
 
 ### OnSpeechApplicationForbidden
 
-The host disabled requests to speak.
+The host disabled/enabled requests to speak.
 ```C++
 virtual void OnSpeechApplicationForbidden(bool forbidden) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| forbidden | bool | Whether to disable. |
+| forbidden | bool | Whether requests to speak were disabled. |
 
 ### OnOrderedToExitSpeechState
 
-A member was asked to stop speaking.
+A participant was asked to stop speaking.
 ```C++
 virtual void OnOrderedToExitSpeechState() = 0;
 ```
 
 ### OnCallingRollStarted
 
-The host started a roll call.
+The host started a roll call (received by participants).
 ```C++
 virtual void OnCallingRollStarted() = 0;
 ```
 
 ### OnCallingRollStopped
 
-The host stopped a roll call.
+The host stopped a roll call (received by participants).
 ```C++
 virtual void OnCallingRollStopped() = 0;
 ```
 
 ### OnMemberReplyCallingRoll
 
-A member replied to the roll call.
+A participant replied to the roll call (received by the host).
 ```C++
 virtual void OnMemberReplyCallingRoll(const std::string& user_id) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| user_id | string | User ID. |
+| user_id | string | The user ID. |
 
 ### OnChatRoomMuted
 
-The host turned on/off chat.
+The host disabled/enabled chat messages.
 ```C++
 virtual void OnChatRoomMuted(bool muted) = 0;
 ```
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| muted | bool | Whether to disable. |
+| muted | bool | Disabled or not. |
 
 ### OnMicrophoneMuted
 
@@ -1244,9 +1244,9 @@ virtual void OnMicrophoneMuted(bool muted) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| muted | bool | Whether to disable. |
+| muted | bool | Disabled or not. |
 
 ### OnCameraMuted
 
@@ -1257,9 +1257,9 @@ virtual void OnCameraMuted(bool muted) = 0;
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| muted | bool | Whether to disable. |
+| muted | bool | Disabled or not. |
 
 ## Statistics Collection and Quality Callbacks
 
@@ -1272,7 +1272,7 @@ virtual void OnStatistics(const liteav::TRTCStatistics& statis) {}
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
 | statis | liteav::TRTCStatistics | Statistics. |
 
@@ -1286,11 +1286,11 @@ virtual void OnNetworkQuality(const liteav::TRTCQualityInfo& local_quality, lite
 
 The parameters are described below:
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 |-----|-----|-----|
-| local_quality | liteav::TRTCQualityInfo | Local user quality information. |
-| remote_quality | liteav::TRTCQualityInfo* | Pointer to the remote user quality information. |
-| remote_quality_count | uint32_t | Number of remote users. |
+| local_quality | liteav::TRTCQualityInfo | The network quality of the local user. |
+| remote_quality | liteav::TRTCQualityInfo* | The network quality of remote users. |
+| remote_quality_count | uint32_t | The number of remote users. |
 
 ## Screen Sharing Event Callbacks
 
@@ -1312,9 +1312,9 @@ void OnScreenCaptureStopped(int reason) {}
 
 The parameters are described below:
 
-| Parameter | Type | Description |
+| Parameter       | Type                            | Description  |
 | ------ | ---- | -------------------------------------------------- |
-| reason | int  | Reason for stop. 0: The user stopped screen sharing; 1: Interrupted by another application. |
+| reason | int  | The reason screen sharing stopped. 0: The user stopped screen sharing; 1: Screen sharing was interrupted by another application. |
 
 ## Video Recording Callbacks
 
@@ -1328,14 +1328,14 @@ virtual void OnRecordError(TXLiteAVLocalRecordError error, const std::string& me
 
 The parameters are described below:
 
-| Parameter | Type | Description |
+| Parameter       | Type                            | Description  |
 | ------ | ---- | -------------------------------------------------- |
-| error | TXLiteAVLocalRecordError  | Error message. |
-| messgae | string  | Error description. |
+| error | TXLiteAVLocalRecordError  | The error. |
+| messgae | string  | The error message. |
 
 ### OnRecordComplete
 
-Recording completion.
+Recording completed.
 
 ```C++
 virtual void OnRecordComplete(const std::string& path) {}
@@ -1343,13 +1343,13 @@ virtual void OnRecordComplete(const std::string& path) {}
 
 The parameters are described below:
 
-| Parameter | Type | Description |
+| Parameter       | Type                            | Description  |
 | ------ | ---- | -------------------------------------------------- |
-| path | string  | Error description. |
+| path | string  | The error description. |
 
 ### OnRecordProgress
 
-Recording progress.
+The recording progress.
 
 ```C++
 virtual void OnRecordProgress(int duration, int file_size) {}
@@ -1357,16 +1357,16 @@ virtual void OnRecordProgress(int duration, int file_size) {}
 
 The parameters are described below:
 
-| Parameter | Type | Description |
+| Parameter       | Type                            | Description  |
 | ------ | ---- | -------------------------------------------------- |
-| duration | int  | File duration. |
-| file_size | int  | File size. |
+| duration | int  | The file duration. |
+| file_size | int  | The file size. |
 
 ## Local Device Test Callbacks
 
 ### OnTestSpeakerVolume
 
-Speaker volume level.
+The speaker volume.
 
 ```C++
 virtual void OnTestSpeakerVolume(uint32_t volume) {}
@@ -1374,13 +1374,13 @@ virtual void OnTestSpeakerVolume(uint32_t volume) {}
 
 The parameters are described below:
 
-| Parameter | Type | Description |
+| Parameter       | Type                            | Description  |
 | ------ | ---- | -------------------------------------------------- |
-| volume | uint32_t  | Volume level. |
+| volume | uint32_t  | The volume level. |
 
 ### OnTestMicrophoneVolume
 
-Mic volume level.
+The mic volume.
 
 ```C++
 virtual void OnTestMicrophoneVolume(uint32_t volume) {}
@@ -1388,13 +1388,13 @@ virtual void OnTestMicrophoneVolume(uint32_t volume) {}
 
 The parameters are described below:
 
-| Parameter | Type | Description |
+| Parameter       | Type                            | Description  |
 | ------ | ---- | -------------------------------------------------- |
-| volume | uint32_t  | Volume level. |
+| volume | uint32_t  | The volume level. |
 
 ### OnAudioDeviceCaptureVolumeChanged
 
-The system audio capturing volume changed.
+The system capturing volume changed.
 
 ```C++
 virtual void OnAudioDeviceCaptureVolumeChanged(uint32_t volume, bool muted) {}
@@ -1402,14 +1402,14 @@ virtual void OnAudioDeviceCaptureVolumeChanged(uint32_t volume, bool muted) {}
 
 The parameters are described below:
 
-| Parameter | Type | Description |
+| Parameter       | Type                            | Description  |
 | ------ | ---- | -------------------------------------------------- |
-| volume | uint32_t  | Volume level. |
-| muted | bool  | Disabled or not. |
+| volume | uint32_t  | The volume level. |
+| muted | bool  | Whether capturing was disabled. |
 
 ### OnAudioDevicePlayoutVolumeChanged
 
-The system audio playback volume changed.
+The system playback volume level changed.
 
 ```C++
 virtual void OnAudioDevicePlayoutVolumeChanged(uint32_t volume, bool muted) {}
@@ -1417,7 +1417,7 @@ virtual void OnAudioDevicePlayoutVolumeChanged(uint32_t volume, bool muted) {}
 
 The parameters are described below:
 
-| Parameter | Type | Description |
+| Parameter       | Type                            | Description  |
 | ------ | ---- | -------------------------------------------------- |
-| volume | uint32_t  | Volume level. |
-| muted | bool  | Disabled or not. |
+| volume | uint32_t  | The volume level. |
+| muted | bool  | Whether playback was disabled. |

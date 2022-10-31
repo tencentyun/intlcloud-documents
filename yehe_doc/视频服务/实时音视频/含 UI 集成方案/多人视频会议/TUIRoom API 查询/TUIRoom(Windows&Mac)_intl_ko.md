@@ -1,11 +1,11 @@
-TUIRoom은 Tencent Real-Time Communication(TRTC)과 Instant Messaging(IM)을 기반으로 하며, 다음 기능을 지원합니다.
+﻿TUIRoom은 Tencent Real-Time Communication(TRTC)과 Instant Messaging(IM)을 기반으로 하며, 다음 기능을 지원합니다.
 - 호스트가 방을 생성하고 참석자가 방 번호를 입력한 후 참여.
 - 참석자 간 화면 공유.
 - 다양한 텍스트 메시지 및 사용자 정의 메시지 발송 지원.
 
->?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 규정은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
-TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [그룹 멀티미디어 방(Windows&Mac)](https://intl.cloud.tencent.com/document/product/647/44071)을 참고하십시오.
+TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [TUIRoom (Windows&Mac) 통합](https://intl.cloud.tencent.com/document/product/647/44071)을 참고하십시오.
 - TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 사용하는 저지연 화상 회의 컴포넌트입니다.
 - IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)를 사용하여 채팅방 기능을 구현합니다(**IM SDK는 C++ 버전 사용**).
 
@@ -22,14 +22,14 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### 방 관련 API
 
-| API     | 설명   |
+| API   | 설명  |
 |-----|-----|
 | [login](#login)                           | 로그인.                             |
 | [logout](#logout)                         | 로그아웃.                             |
 | [CreateRoom](#createroom)                 | 방 생성(호스트 호출).           |
 | [DestroyRoom](#destroyroom)               | 방 폐기(호스트 호출).           |
 | [EnterRoom](#enterroom)                   | 방 입장(참석자 호출).         |
-| [LeaveRoom](#leaveroom)                   | 방 퇴장(참석자 또는 호스트 호출). |
+| [LeaveRoom](#leaveroom)                   | 방 퇴장(참석자 호출). |
 | [GetRoomInfo](#getroominfo)               | 방 정보 가져오기.                     |
 | [GetRoomUsers](#getroomusers)             | 방에 있는 모든 참석자 정보 가져오기.           |
 | [GetUserInfo](#getuserinfo)               | 특정 사용자 정보 가져오기.               |
@@ -67,7 +67,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 | API                                                 | 설명                                                    |
 |-----|-----|
-| [MuteUserMicrophone](#muteusermicrophone)           | 사용자의 마이크 비활성화/복구.                               |
+| [MuteUserMicrophone](#muteusermicrophone)           | 사용자의 마이크 비활성화/복원.                               |
 | [MuteAllUsersMicrophone](#muteallusersmicrophone)   | 모든 사용자의 마이크 비활성화/복원, 상태를 회의실 정보에 동기화. |
 | [MuteUserCamera](#muteusercamera)                   | 사용자 카메라 비활성화/복원.                               |
 | [MuteAllUsersCamera](#mutealluserscamera)           | 모든 사용자의 카메라 비활성화/복원, 상태를 방 정보에 동기화. |
@@ -76,14 +76,14 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 | [StartCallingRoll](#startcallingroll)               | 호스트 통화 시작.                                        |
 | [StopCallingRoll](#stopcallingroll)                 | 호스트 지명 종료.                                        |
 | [ReplyCallingRoll](#replycallingroll)               | 참석자가 호스트의 지명에 응답.                                    |
-| [SendSpeechInvitation](#sendspeechinvitation)       | 호스트의 참석자 발언 초대.                                    |
-| [CancelSpeechInvitation](#cancelspeechinvitation)   | 호스트의 참석자 발언 초대 취소.                                |
-| [ReplySpeechInvitation](#replyspeechinvitation)     | 참석자가 호스트의 발언 요청 동의/거절.                         |
+| [SendSpeechInvitation](#sendspeechinvitation)       | 호스트의 참석자 발언 요청.                                    |
+| [CancelSpeechInvitation](#cancelspeechinvitation)   | 호스트의 참석자 발언 요청 취소.                                |
+| [ReplySpeechInvitation](#replyspeechinvitation)     | 참석자가 호스트의 발언 요청 수락/거절.                         |
 | [SendSpeechApplication](#sendspeechapplication)     | 참석자 발언 신청.                                          |
 | [CancelSpeechApplication](#cancelspeechapplication) | 참석자 발언 신청 취소.                                      |
-| [ReplySpeechApplication](#replyspeechapplication)   | 호스트의 참석자 발언 신청 동의/거부.                         |
+| [ReplySpeechApplication](#replyspeechapplication)   | 호스트의 참석자 발언 신청 수락/거절.                         |
 | [ForbidSpeechApplication](#forbidspeechapplication) | 호스트의 발언 신청 금지.                                    |
-| [SendOffSpeaker](#sendoffspeaker)                   | 호스트의 참석자 발언 금지.                                  |
+| [SendOffSpeaker](#sendoffspeaker)                   | 호스트가 참석자 발언을 금지함.                                  |
 | [SendOffAllSpeakers](#sendoffallspeakers)           | 호스트의 전원 발언 금지.                                  |
 | [ExitSpeechState](#exitspeechstate)                 | 참석자 발언 중지, 시청자로 전환.                               |
 
@@ -96,26 +96,26 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### 클라우드 녹화 인터페이스 함수
 
-| API                                   | 설명          |
+| AP                                   | 설명          |
 |-----|-----|
 | [StartCloudRecord](#startcloudrecord) | 클라우드 녹화 시작. |
 | [StopCloudRecord](#stopcloudrecord)   | 클라우드 녹화 중지. |
 
 ### 뷰티 필터 관련 인터페이스 함수
 
-| API     | 설명   |
+| API   | 설명  |
 |-----|-----|
-| [SetBeautyStyle](#setbeautystyle) | 뷰티필터 설정.|
+| [SetBeautyStyle](#setbeautystyle) | 뷰티 필터 설정.|
 
 ### 관련 설정 인터페이스
 
-| API     | 설명   |
+| API   | 설명  |
 |-----|-----|
 | [SetVideoQosPreference](#setvideoqospreference) | 네트워크 트래픽 제어 관련 매개변수 설정.|
 
 ### SDK 버전 인터페이스 함수 가져오기
 
-| API     | 설명   |
+| API   | 설명  |
 |-----|-----|
 | [GetSDKVersion](#getsdkversion) | SDK 버전 가져오기.|
 
@@ -123,13 +123,13 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### 오류 이벤트 콜백
 
-| API     | 설명   |
+| API   | 설명  |
 |-----|-----|
 | [OnError](#onerror) | 오류 콜백.|
 
 ### 기본 이벤트 콜백
 
-| API                                         | 설명               |
+| AP                                         | 설명               |
 |-----|-----|
 | [OnLogin](#onlogin)                         | 로그인 콜백.         |
 | [OnLogout](#onlogout)                       | 로그아웃 콜백.         |
@@ -164,12 +164,12 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 | API                                             | 설명                                                         |
 |-----|-----|
-| [OnReceiveSpeechInvitation](#onreceivespeechinvitation)      | 사용자가 호스트의 발언 초대 수신 콜백.       |
-| [OnReceiveInvitationCancelled](#onreceiveinvitationcancelled) | 사용자가 호스트의 발언 초대 취소 수신 콜백.   |
-| [OnReceiveReplyToSpeechInvitation](#onreceivereplytospeechinvitation) | 호스트가 사용자의 발언 초대 동의 수신 콜백. |
+| [OnReceiveSpeechInvitation](#onreceivespeechinvitation)      | 사용자가 호스트의 발언 요청 수신 콜백.       |
+| [OnReceiveInvitationCancelled](#onreceiveinvitationcancelled) | 사용자가 호스트의 발언 요청 취소 수신 콜백.   |
+| [OnReceiveReplyToSpeechInvitation](#onreceivereplytospeechinvitation) | 호스트가 사용자의 발언 요청 수락 수신 콜백. |
 | [OnReceiveSpeechApplication](#onreceivespeechapplication)    | 호스트가 사용자의 발언 요청 수신 콜백.     |
 | [OnSpeechApplicationCancelled](#onspeechapplicationcancelled) | 사용자의 발언 신청 취소 콜백.             |
-| [OnReceiveReplyToSpeechApplication](#onreceivereplytospeechapplication) | 호스트는 발언 신청 동의 콜백.           |
+| [OnReceiveReplyToSpeechApplication](#onreceivereplytospeechapplication) | 호스트는 발언 신청 수락 콜백.           |
 | [OnSpeechApplicationForbidden](#onspeechapplicationforbidden) | 사회자 발언 신청 금지 콜백.           |
 | [OnOrderedToExitSpeechState](#onorderedtoexitspeechstate)  | 참석자가 발언 중단 요청 수신 콜백.         |
 | [OnCallingRollStarted](#oncallingrollstarted)                | 호스트 지명 시작 시 참석자가 수신하는 콜백.   |
@@ -181,7 +181,7 @@ TUIRoom은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소�
 
 ### 네트워크 품질 및 기술 메트릭에 대한 통계를 위한 콜백 API
 
-| API     | 설명   |
+| API   | 설명  |
 |-----|-----|
 | [OnStatistics](#onstatistics)         | 기술 지표 통계 콜백. |
 | [OnNetworkQuality](#onnetworkquality) | 네트워크 품질 콜백.     |
@@ -243,11 +243,11 @@ virtual int Login(int sdk_appid, const std::string& user_id, const std::string& 
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | sdk_appid | int |  TRTC 콘솔 > **[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)**> 애플리케이션 정보에서 SDKAppID를 확인할 수 있습니다. |
 | user_id | string | 현재 사용자 ID. 문자열 유형은 영어 알파벳(a-z, A-Z), 숫자(0-9), 대시부호(-), 언더바(_)만 허용됩니다. 실제 계정 시스템에 맞게 설정하는 것을 권장합니다. |
-| usersig  | string         | Tencent Cloud가 설계한 일종의 보안 서명입니다. 획득 방식은 [UserSig 계산 및 사용 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
+| usersig  | string         | Tencent Cloud가 설계한 일종의 보안 서명입니다. 획득 방식은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
 
 ### Logout
 
@@ -265,7 +265,7 @@ virtual int CreateRoom(const std::string& room_id, TUISpeechMode speech_mode) = 
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | room_id | string | 방 식별 번호이며, 귀하가 직접 할당하고 통합 관리합니다. |
 | speech_mode | TUISpeechMode | 발언 모드. |
@@ -292,7 +292,7 @@ virtual int EnterRoom(const std::string& room_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | room_id | string | 방 식별 번호. |
 
@@ -324,14 +324,14 @@ virtual std::vector<TUIUserInfo> GetRoomUsers() = 0;
 
 ### GetUserInfo
 
-방 참석자 정보를 가져옵니다.
+참석자 정보를 가져옵니다.
 ```C++
 virtual const TUIUserInfo* GetUserInfo(const std::string& user_id) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 표식. |
 
@@ -344,7 +344,7 @@ virtual int SetSelfProfile(const std::string& user_name, const std::string& avat
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_name | string | 사용자 이름. |
 | avatar_url | string | 사용자 프로필 URL. |
@@ -358,7 +358,7 @@ virtual int TransferRoomMaster(const std::string& user_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 표식. |
 
@@ -373,7 +373,7 @@ virtual int StartCameraPreview(const liteav::TXView& view) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | view | liteav::TXView | 창 핸들. |
 
@@ -393,7 +393,7 @@ virtual int UpdateCameraPreview(const liteav::TXView& view) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | view | liteav::TXView | 창 핸들. |
 
@@ -406,7 +406,7 @@ virtual int StartLocalAudio(const liteav::TRTCAudioQuality& quality) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | view | liteav::TXView | 창 핸들. |
 
@@ -440,7 +440,7 @@ virtual int SetVideoMirror(bool mirror) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | mirror | bool | 이미지 여부. |
 
@@ -456,7 +456,7 @@ virtual int StartRemoteView(const std::string& user_id, const liteav::TXView& vi
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 재생할 사용자 ID. |
 | liteav::TXView | TXView | 영상 화면을 탑재한 view 컨트롤러.|
@@ -472,7 +472,7 @@ virtual int StopRemoteView(const std::string& user_id,
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 재생을 중지할 사용자 ID. |
 | type | TUIStreamType | 스트림 유형.|
@@ -486,7 +486,7 @@ virtual int UpdateRemoteView(const std::string& user_id, TUIStreamType type, lit
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | type | TUIStreamType | 스트림 유형.|
@@ -503,7 +503,7 @@ virtual int SendChatMessage(const std::string& message) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | message | string | 메시지 내용. |
 
@@ -516,7 +516,7 @@ virtual int SendCustomMessage(const std::string& message) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | message | string | 메시지 내용. |
 
@@ -524,14 +524,14 @@ virtual int SendCustomMessage(const std::string& message) = 0;
 
 ### MuteUserMicrophone
 
-사용자의 마이크를 비활성화/복구합니다.
+사용자의 마이크를 비활성화/복원합니다.
 ```C++
 virtual int MuteUserMicrophone(const std::string& user_id, bool mute, Callback callback) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | mute | bool | 비활성화 여부. |
@@ -539,27 +539,27 @@ virtual int MuteUserMicrophone(const std::string& user_id, bool mute, Callback c
 
 ### MuteAllUsersMicrophone
 
-모든 사용자의 마이크를 비활성화/복구합니다.
+모든 사용자의 마이크를 비활성화/복원합니다.
 ```C++
 virtual int MuteAllUsersMicrophone(bool mute) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | mute | bool | 비활성화 여부. |
 
 ### MuteUserCamera
 
-사용자의 카메라를 비활성화/복구합니다.
+사용자의 카메라를 비활성화/복원합니다.
 ```C++
 virtual int MuteUserCamera(const std::string& user_id, bool mute, Callback callback) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | mute | bool | 비활성화 여부. |
@@ -567,14 +567,14 @@ virtual int MuteUserCamera(const std::string& user_id, bool mute, Callback callb
 
 ### MuteAllUsersCamera
 
-모든 사용자의 카메라를 비활성화/복구합니다.
+모든 사용자의 카메라를 비활성화/복원합니다.
 ```C++
 virtual int MuteAllUsersCamera(bool mute) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | mute | bool | 비활성화 여부. |
 
@@ -587,7 +587,7 @@ virtual int MuteChatRoom(bool mute) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | mute | bool | 비활성화 여부. |
 
@@ -600,7 +600,7 @@ virtual int KickOffUser(const std::string& user_id, Callback callback) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | callback | Callback | 인터페이스 콜백. |
@@ -628,50 +628,50 @@ virtual int ReplyCallingRoll(Callback callback) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | callback | Callback | 인터페이스 콜백. |
 
 ### SendSpeechInvitation
 
-호스트가 참석자에게 발언 초대합니다.
+호스트가 참석자에게 발언을 요청합니다.
 ```C++
 virtual int SendSpeechInvitation(const std::string& user_id, Callback callback) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | callback | Callback | 인터페이스 콜백. |
 
 ### CancelSpeechInvitation
 
-호스트가 참석자의 발언 초대를 취소합니다.
+호스트가 참석자의 발언 요청을 취소합니다.
 ```C++
 virtual int CancelSpeechInvitation(const std::string& user_id, Callback callback) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | callback | Callback | 인터페이스 콜백. |
 
 ### ReplySpeechInvitation
 
-참석자는 호스트의 발언 초대에 동의/거절합니다.
+참석자가 호스트의 발언 요청을 수락/거절합니다.
 ```C++
 virtual int ReplySpeechInvitation(bool agree, Callback callback) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
-| agree | bool | 동의 여부. |
+| agree | bool | 수락 여부. |
 | callback | Callback | 인터페이스 콜백. |
 
 ### SendSpeechApplication
@@ -683,7 +683,7 @@ virtual int SendSpeechApplication(Callback callback) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | callback | Callback | 인터페이스 콜백. |
 
@@ -696,20 +696,20 @@ virtual int CancelSpeechApplication(Callback callback) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | callback | Callback | 인터페이스 콜백. |
 
 ### ReplySpeechApplication
 
-호스트가 참석자의 발언 신청에 동의/거부합니다.
+호스트가 참석자의 발언 신청을 수락/거절합니다.
 ```C++
 virtual int ReplySpeechApplication(const std::string& user_id, bool agree, Callback callback) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | callback | Callback | 인터페이스 콜백. |
@@ -723,20 +723,20 @@ virtual int ForbidSpeechApplication(bool forbid) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | forbid | bool | 금지 여부. |
 
 ### SendOffSpeaker
 
-호스트가 참석자 발언을 금지합니다.
+호스트가 참석자의 발언을 금지합니다.
 ```C++
 virtual int SendOffSpeaker(const std::string& user_id, Callback callback) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | callback | Callback | 인터페이스 콜백. |
@@ -750,13 +750,13 @@ virtual int SendOffAllSpeakers(Callback callback) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | callback | Callback | 인터페이스 콜백. |
 
 ### ExitSpeechState
 
-참석자는 발언을 중지하고 시청자로 전환합니다.
+참석자가 발언을 중지하고 시청자로 전환합니다.
 ```C++
 virtual int ExitSpeechState() = 0;
 ```
@@ -810,7 +810,7 @@ virtual int SetBeautyStyle(liteav::TRTCBeautyStyle style, uint32_t beauty_level,
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | style | liteav::TRTCBeautyStyle | 뷰티필터 스타일. |
 | beauty_level | uint32_t | 뷰티필터 레벨. |
@@ -828,7 +828,7 @@ virtual int SetVideoQosPreference(TUIVideoQosPreference preference) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | preference | TUIVideoQosPreference | 네트워크 트래픽 제어 정책. |
 
@@ -850,7 +850,7 @@ void OnError(int code, const std::string& message);
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | code    | int    | 오류 코드.   |
 | message | string | 오류 정보. |
@@ -864,7 +864,7 @@ virtual void OnLogin(int code, const std::string& message) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | code    | int    | 오류 코드.   |
 | message | string | 로그인 정보 또는 로그인 실패 오류 정보. |
@@ -877,7 +877,7 @@ virtual void OnLogout(int code, const std::string& message) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | code    | int    | 오류 코드.   |
 | message | string | 오류 정보. |
@@ -891,7 +891,7 @@ virtual void OnCreateRoom(int code, const std::string& message) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | code    | int    | 오류 코드.   |
 | message | string | 오류 정보. |
@@ -905,7 +905,7 @@ virtual void OnDestroyRoom(int code, const std::string& message) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | code    | int    | 오류 코드.   |
 | message | string | 오류 정보. |
@@ -919,7 +919,7 @@ virtual void OnEnterRoom(int code, const std::string& message) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | code    | int    | 오류 코드.   |
 | message | string | 오류 정보. |
@@ -933,7 +933,7 @@ virtual void OnExitRoom(TUIExitRoomType type, const std::string& message) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | type | TUIExitRoomType | 방 퇴장 유형. |
 | message | string | 오류 정보. |
@@ -947,7 +947,7 @@ virtual void OnFirstVideoFrame(const std::string& user_id, const TUIStreamType s
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | stream_type | TUIStreamType | 스트림 유형. |
@@ -961,7 +961,7 @@ virtual void OnUserVoiceVolume(const std::string& user_id, int volume)
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | volume | int | 사용자의 볼륨 크기, 범위: 0 - 100. |
@@ -975,7 +975,7 @@ virtual void OnRoomMasterChanged(const std::string& user_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 
@@ -990,7 +990,7 @@ virtual void OnRemoteUserEnter(const std::string& user_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 
@@ -1003,7 +1003,7 @@ virtual void OnRemoteUserLeave(const std::string& user_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 
@@ -1016,7 +1016,7 @@ virtual void OnRemoteUserCameraAvailable(const std::string& user_id, bool availa
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | available | bool | true: 동영상 스트리밍 데이터 있음, false: 동영상 스트리밍 데이터 없음. |
@@ -1030,7 +1030,7 @@ virtual void OnRemoteUserScreenAvailable(const std::string& user_id, bool availa
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | available | bool | true: 동영상 스트리밍 데이터 있음, false: 동영상 스트리밍 데이터 없음. |
@@ -1044,7 +1044,7 @@ virtual void OnRemoteUserAudioAvailable(const std::string& user_id, bool availab
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | available | bool | true: 오디오 스트리밍 데이터 있음, false: 오디오 스트리밍 데이터 없음. |
@@ -1058,7 +1058,7 @@ virtual void OnRemoteUserEnterSpeechState(const std::string& user_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 
@@ -1071,7 +1071,7 @@ virtual void OnRemoteUserExitSpeechState(const std::string& user_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 
@@ -1087,7 +1087,7 @@ virtual void OnReceiveChatMessage(const std::string& user_id, const std::string&
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | message | string | 텍스트 메시지.|
@@ -1101,7 +1101,7 @@ virtual void OnReceiveCustomMessage(const std::string& user_id, const std::strin
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 | message | string | 사용자 정의 메시지.|
@@ -1110,42 +1110,42 @@ virtual void OnReceiveCustomMessage(const std::string& user_id, const std::strin
 
 ### OnReceiveSpeechInvitation
 
-사용자가 호스트로부터 발언 초대를 받았을 때의 콜백입니다.
+사용자가 호스트로부터 발언 요청를 받았을 때의 콜백입니다.
 ```C++
 virtual void OnReceiveSpeechInvitation() = 0;
 ```
 
 ### OnReceiveInvitationCancelled
 
-사용자가 호스트로부터 발언 초대 취소를 받았을 때의 콜백입니다.
+사용자가 호스트로부터 발언 요청 취소를 받았을 때의 콜백입니다.
 ```C++
 virtual void OnReceiveInvitationCancelled() = 0;
 ```
 
 ### OnReceiveReplyToSpeechInvitation
 
-호스트가 사용자로부터 발언 초대 동의를 받았을 때의 콜백입니다.
+호스트가 사용자로부터 발언 요청 수락을 받았을 때의 콜백입니다.
 ```C++
 virtual void OnReceiveReplyToSpeechInvitation(const std::string& user_id, bool agree) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
-| agree | bool | 동의 여부.|
+| agree | bool | 수락 여부.|
 
 ### OnReceiveSpeechApplication
 
-호스트가 사용자의 발언 요청를 받았을 때의 콜백입니다.
+호스트의 사용자 발언 요청 수신 콜백입니다.
 ```C++
 virtual void OnReceiveSpeechApplication(const std::string& user_id) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 
@@ -1158,22 +1158,22 @@ virtual void OnSpeechApplicationCancelled(const std::string& user_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 
 ### OnReceiveReplyToSpeechApplication
 
-사회자가 발언 신청에 동의하는 콜백입니다.
+사회자가 발언 신청을 수락하는 콜백입니다.
 ```C++
 virtual void OnReceiveReplyToSpeechApplication(bool agree) = 0;
 ```
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
-| agree | bool | 동의 여부. |
+| agree | bool | 수락 여부. |
 
 ### OnSpeechApplicationForbidden
 
@@ -1184,13 +1184,13 @@ virtual void OnSpeechApplicationForbidden(bool forbidden) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | forbidden | bool | 금지 여부. |
 
 ### OnOrderedToExitSpeechState
 
-참석자가 발언 중지를 요청받은 콜백입니다.
+참석자의 발언 중지 요청 수신 콜백입니다.
 ```C++
 virtual void OnOrderedToExitSpeechState() = 0;
 ```
@@ -1218,7 +1218,7 @@ virtual void OnMemberReplyCallingRoll(const std::string& user_id) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | user_id | string | 사용자 ID. |
 
@@ -1231,7 +1231,7 @@ virtual void OnChatRoomMuted(bool muted) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | muted | bool | 음소거 여부. |
 
@@ -1244,7 +1244,7 @@ virtual void OnMicrophoneMuted(bool muted) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | muted | bool | 음소거 여부. |
 
@@ -1257,7 +1257,7 @@ virtual void OnCameraMuted(bool muted) = 0;
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | muted | bool | 음소거 여부. |
 
@@ -1272,7 +1272,7 @@ virtual void OnStatistics(const liteav::TRTCStatistics& statis) {}
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | statis | liteav::TRTCStatistics | 통계 데이터. |
 
@@ -1286,7 +1286,7 @@ virtual void OnNetworkQuality(const liteav::TRTCQualityInfo& local_quality, lite
 
 매개변수는 다음과 같습니다.
 
-| 매개변수   | 유형    | 의미     |
+| 매개변수    | 유형   | 의미       |
 |-----|-----|-----|
 | local_quality | liteav::TRTCQualityInfo | 로컬 사용자 품질 정보. |
 | remote_quality | liteav::TRTCQualityInfo* | 원격 사용자 품질 정보 포인터. |
