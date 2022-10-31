@@ -12,7 +12,7 @@ Cloud Object Storage（COS）は、ストレージデータのモニタリング
 3. データ統計を行いたいバケットを見つけ、右側の**モニタリング**をクリックします。
 もしくはデータ統計を行いたいバケットをクリックし、このバケットの詳細ページの左側ナビゲーションバーで**データ監視**をクリックすることもできます。
 4. モニタリングデータページで、下図のような情報を確認します。
-![](https://main.qcloudimg.com/raw/2af3c5e7b113003ca1379547903751ed.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/87aaf4548bd730e774c7c784acca064a.png)
 具体的なモニタリング項目の説明は次のとおりです。
  - Storage：さまざまなストレージタイプのストレージ使用量を照会できます。
  - オブジェクト数：バケット内に存在するオブジェクトの数です。オブジェクト数には、ファイルフラグメントの数も含まれます。
@@ -43,9 +43,9 @@ Cloud Object Storage（COS）は、ストレージデータのモニタリング
 
 1. ルートアカウントで[CAMコンソール](https://console.cloud.tencent.com/cam)にログインし、**ユーザー>ユーザーリスト**を選択して、ユーザーリストページに進みます。
 2. 権限承認を行いたいサブアカウントを見つけ、右側操作バーの下にある**承認**をクリックします。
-![](https://main.qcloudimg.com/raw/03804c04df5e91fc0472e8d0297f694d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7089e69bdc2c4d8ff28b846a5f53f6a1.png)
 3. ポップアップしたウィンドウでQcloudMonitorFullAccessポリシーを検索してチェックを入れ、**OK**をクリックしてポリシーをサブアカウントに追加すると、そのサブアカウントを使用してモニタリングレポートを確認できるようになります。
-![](https://main.qcloudimg.com/raw/c2e07335d2e68e2f077138ff9d73837f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7261c13b1539340a9f7169eae49e25bd.png)
 >! ポリシーテンプレートは、CMにアクセスするための**すべての権限**を付与します。アカウントのセキュリティを確保する必要がある場合は、サブアカウントの読み取り権限のアクセスポリシーをカスタマイズ設定することができます。
 >
 
@@ -54,7 +54,7 @@ Cloud Object Storage（COS）は、ストレージデータのモニタリング
 1. ルートアカウントを使用して[CAMコンソール](https://console.cloud.tencent.com/cam)にログインします。
 2. 左側ナビゲーションバーで、**ポリシー > カスタムポリシーの新規作成 > ポリシー構文で作成**をクリックします。
 3. 空白テンプレートを選択し、**次のステップ**をクリックします。
-![](https://main.qcloudimg.com/raw/4a61be28b1ab0146eca948215aad0f2e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/35d01a9fcd69b241fead95ea115cc86e.png)
 4. 下図のように、以下のポリシー構文を**ポリシー内容の編集**入力ボックスに入力します。
 業務上の必要性に応じて、ポリシー名を見つけやすい名前に変更することができます。
 ポリシー構文：
@@ -72,6 +72,6 @@ Cloud Object Storage（COS）は、ストレージデータのモニタリング
     ]
 }
 ```
-![](https://main.qcloudimg.com/raw/f6a4b0d8573745139beb03cdb3a1b3ec.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/36aeff8aa2093ebb7d267639a65c485b.png)
 4. **ポリシーの作成**をクリックします。
 ポリシーの作成に成功したら、サブアカウントに対してポリシーの権限を付与することができます。操作手順については、[ポリシーテンプレートから設定](#celie)をご参照ください。

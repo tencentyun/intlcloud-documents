@@ -20,7 +20,7 @@
 ![](https://main.qcloudimg.com/raw/460f2cdd71d3a21a74911a52218e7670.png)
 5. 在左侧导航栏中，选择**基础配置 > 静态网站**，在静态网站栏中，单击**编辑**，将**当前状态**的开启按钮打开。
 6. 依次填写静态网站的配置项。
-![](https://main.qcloudimg.com/raw/e7365ffd7beca545f275ec36cdaa8cce.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1e31d15d556aad9f7bb402e392cb3531.png)
 配置说明如下：
  - **强制 HTTPS（可选）**：当您开启强制 HTTPS 后，在用户访问您的静态网站时，静态网站的访问节点会强制使用 HTTPS 协议方式打开。
 >! 如果您通过自定义域名访问静态网站，同时静态网站开启了强制 HTTPS，请确认您已给该自定义域名正确配置相关证书，如果证书异常，则会跳转至默认域名进行访问。
