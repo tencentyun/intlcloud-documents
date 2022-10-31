@@ -98,15 +98,13 @@ On the details page, you can query:
 - Network information: The cluster's VPC, public network access address, web console login address, username, and password.
 - Cluster specification: The cluster's specification type, maximum TPS, peak bandwidth, and storage space.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/93b5464cd0747be1d11ab75fdd6bb3ad.png)
-
 
 
 ### Getting the access address
 
 On the **Cluster Management** list page, click **Access Address** in the **Operation** column to get the access address of the cluster.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/28ce6bbf693e87b39320e8a027584b57.png)
+
 
 ### Editing a cluster
 
