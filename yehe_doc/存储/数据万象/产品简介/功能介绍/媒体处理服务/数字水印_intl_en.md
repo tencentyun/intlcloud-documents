@@ -2,9 +2,6 @@
 
 CI can hide images and strings in a video or image in a way they can hardly be detected or modified, without compromising the integrity and layout of the video or image. By identifying the watermark hidden in the content, you can confirm the content creator, copyright owner, and spreaders and check whether the video content is tampered with.
 
->? This feature is currently in beta test.
->
-
 
 
 ## Use Cases
