@@ -31,14 +31,6 @@ TDMQ for RabbitMQ exclusive cluster supports the following monitoring metrics at
 3. At the top of the cluster details page, select the **Monitoring** tab to enter the monitoring page.
 4. Select the target resource and set the time range to view the corresponding monitoring data.
 
-| Icon | Description |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
-| ![img](https://main.qcloudimg.com/raw/9ba57bbd3b8ef3efc4f687d63d27a46d.png) | Click it to view the comparison of monitoring metric values at different granularities or on specified dates. |
-| ![img](https://main.qcloudimg.com/raw/34bdbdbdabb7b5720bf17d78c636a4ad.png) | Click it to refresh and get the latest monitoring data. You can set to automatically refresh once every 30 seconds, 5 minutes, 30 minutes, or hour. |
-| ![img](https://main.qcloudimg.com/raw/8f2bf7f4df9ddd959f0ecb69fdda8e4c.png) | Click it to copy the chart to a dashboard. For more information on dashboard, see [Dashboard Overview](https://intl.cloud.tencent.com/document/product/248/38461). |
-| ![img](https://main.qcloudimg.com/raw/af20129df7be46f33ab7d3598f6e9213.png) | Select it to display the legend information on the chart. |
-
-![](https://qcloudimg.tencent-cloud.cn/raw/a44a98d3a9597093569aef198ad106b9.png)
 
 ## Configuring an Alarm Rule
 
@@ -47,7 +39,6 @@ TDMQ for RabbitMQ exclusive cluster supports the following monitoring metrics at
 You can configure alarm rules for monitoring metrics. When a monitoring metric reaches the set alarm threshold, Cloud Monitor will notify you of exceptions in time via the configured notification channel.
 
 1. On the [Monitoring](https://console.cloud.tencent.com/tdmq/rabbit-cluster-detail) page of the cluster, click the alarm icon below to enter the [CM console](https://console.cloud.tencent.com/monitor/policylist) and configure an alarm policy.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/4db136f8dc334d12aeacd62de71bd06d.png)
 
 2. On the alarm configuration page, select a policy type and instance, and set the alarm rule and notification template.
    - **Policy Type**: Select **TDMQ/RabbitMQ**.
@@ -77,6 +68,4 @@ You can configure alarm rules for monitoring metrics. When a monitoring metric r
    - **Policy Type**: Select **TDMQ/RabbitMQ**.
    - **Use preset trigger condition**: Select this option and the system recommended alarm policy will be displayed.
 5. After confirming that everything is correct, click **Save**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/07dcc7044fde9e78d9dd035f93d8304f.png)
 6. Return to alarm policy creation page and click **Refresh**. The alarm policy template just configured will be displayed.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/a095c0b7ed7fbd9f89e048fc8517e329.png)
