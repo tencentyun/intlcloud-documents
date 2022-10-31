@@ -1,3 +1,24 @@
+## 2022年10月
+
+<table><tr>
+<th width="20%">动态名称</th>
+<th width="45%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr><tr>
+<td>专享集群商业化对外</td>
+<td>用户可以购买物理资源相互隔离的独占集群。</td>
+<td>2022-10-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1112/43067">计费概述</a></td>
+</tr></table>
+
+
+
+
+
+
+
+
 ## 2022年04月
 
 <table><tr>
@@ -11,6 +32,7 @@
 <td>2022-04-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1112/47691">监控告警</a></td>
 </tr></table>
+
 
 
 
@@ -30,6 +52,7 @@
 <td>2022-01-14</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1112/45977">开源 RabbitMQ 迁移上云</a></td>
 </tr></table>
+
 
 
 ## 2021年12月
@@ -57,6 +80,7 @@
 
 
 
+
 ## 2021年10月
 
 <table><tr>
@@ -71,7 +95,7 @@
 <td>-</td>
 </tr><tr>
 <td>支持 Client declare 功能</td>
-<td>支持客户端通过代码声明 Exchange、Queue 以及 Binding 关系，极大减轻客户迁移的手动工作。</td>
+<td>支持客户端通过代码声明 Exchange、Queue 以及 Binding 关系，大大减轻客户迁移的手动工作。</td>
 <td>2021-10-27</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1112/43083">RabbitMQ 客户端接口说明</a></td>
 </tr><tr>
@@ -85,6 +109,7 @@
 <td>2021-10-27</td>
 <td>-</td>
 </tr></table>
+
 
 
 
@@ -103,3 +128,4 @@
 <td>2021-09-25</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1112/43060">产品概述</a></td>
 </tr></table>
+

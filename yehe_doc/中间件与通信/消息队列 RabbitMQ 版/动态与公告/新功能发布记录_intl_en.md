@@ -1,3 +1,24 @@
+## October 2022
+
+<table><tr>
+<th width="20%">Update</th>
+<th width="45%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr><tr>
+<td>Launched the exclusive cluster feature commercially</td>
+<td>You can purchase exclusive clusters with physical resources isolated between them.</td>
+<td>2022-10-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1112/43067">Purchase Guide</a></td>
+</tr></table>
+
+
+
+
+
+
+
+
 ## April 2022
 
 <table><tr>
@@ -7,10 +28,11 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Upgraded the monitoring feature</td>
-<td>TDMQ for RabbitMQ's monitoring panel has been fully upgraded. The new panel supports monitoring metrics of clusters, vhosts, exchanges, and queues, with dozens of new monitoring metrics added for status diagnosis and problem locating, such as P95/P99/P999 production durations.</td>
+<td>TDMQ for RabbitMQ has upgraded its monitoring panel. The new panel supports monitoring metrics of clusters, vhosts, exchanges, and queues, with dozens of new monitoring metrics added for status diagnosis and problem locating, such as P95/P99/P999 production durations.</td>
 <td>2022-04-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1112/47691">Monitoring and Alarms</a></td>
 </tr></table>
+
 
 
 
@@ -32,6 +54,7 @@
 </tr></table>
 
 
+
 ## December 2021
 
 <table><tr>
@@ -51,6 +74,7 @@
 <td>2021-12-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1112/46552">SDK for Java</a></td>
 </tr></table>
+
 
 
 
@@ -89,6 +113,7 @@
 
 
 
+
 ## September 2021
 
 <table><tr>
@@ -98,8 +123,9 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Launched TDMQ for RabbitMQ</td>
-<td>TDMQ for RabbitMQ is Tencent's proprietary message queue service. It supports the AMQP 0-9-1 protocol and is fully compatible with all components and principles of Apache RabbitMQ. It also has the underlying benefits of computing-storage separation and flexible scaling.
+<td>TDMQ for RabbitMQ is a proprietary message queue service developed by Tencent. It supports the AMQP 0-9-1 protocol and is fully compatible with all components and principles of Apache RabbitMQ. It also has the underlying benefits of computing-storage separation and flexible scaling.
 </td>
 <td>2021-09-25</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1112/43060">Overview</a></td>
 </tr></table>
+
