@@ -6,6 +6,8 @@ This document describes several authorization methods of Serverless Cloud Framew
 Serverless Cloud Framework helps you quickly deploy your project to **SAC**. Before deploying, please make sure that you have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/10495).
 
 ## Authorization Method
+
+>! Due to the domain name's ICP filing update, you currently cannot log in by scanning the QR code during CLI deployment. You can log in by configuring a permanent key locally or visiting the URL as prompted on the command line. Stay tuned for the recovery time of the QR code method.
 ### Authorizing by scanning code
 
 When deploying by running `scf deploy`, you can scan the QR code for quick authorization and deployment. After you authorize by scanning the code, temporary key information will be generated (which will expire in 60 minutes) and written into the .env file in the current directory.
