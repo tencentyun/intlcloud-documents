@@ -286,6 +286,6 @@ COS offers the following features:
    </tr>
    <tr>
       <td>Various protocols</td>
-      <td>COS supports HTTP 1.0, HTTP 1.1, HTTP 2.0, and QUIC transfer protocols. It also supports TLS 1.0, TLS 1.1, and TLS 1.2 encryption protocols. The support for HTTP 2.0 and QUIC protocols is in beta test. To try them out, <a href="https://intl.cloud.tencent.com/contact-sales">contact us</a> to add your account to the allowlist.</td>
+      <td>COS supports HTTP 1.0, HTTP 1.1 transfer protocols. It also supports TLS 1.0, TLS 1.1, and TLS 1.2 encryption protocols.  </td>
    </tr>
 </table>
