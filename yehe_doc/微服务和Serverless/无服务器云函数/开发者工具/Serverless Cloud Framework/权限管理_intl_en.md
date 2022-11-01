@@ -127,8 +127,9 @@ Policy creation page:
     ]
    }
  ```
+
 6. After completing the custom policy configuration, go back to the authorization page in step 4, search for the custom policy just created, and click **Next** > **OK** to grant the sub-account the operation permissions of `scf_QcsRole`. At this point, your sub-account should have a custom policy and a preset policy **QcloudscfFullAccess** and can use Serverless Framework normally.
-![](https://main.qcloudimg.com/raw/595df2c83bda0ce5ed93321325da2f48.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b01956457dd5c0feacca5487bd216d20.png)
  >?In addition to the permission to call the default `scf_QcsRole` role, you can also grant the sub-account the permission to call a custom role and control the sub-account permissions with refined permission policies in the custom role. For more information, see [Configuring Role for Specified Operation](https://intl.cloud.tencent.com/document/product/1040/36819).
 
 ### scf_QcsRole permission list[](id:list)
