@@ -605,3 +605,4 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 47.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50007).
 48.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
 49.[Captcha](https://www.tencentcloud.com/document/product/1159/50401).
+50.[Tencent Machine Translation](https://www.tencentcloud.com/document/product/1161/51200).
