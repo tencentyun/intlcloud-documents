@@ -611,5 +611,6 @@ The following Modules shall apply and form part of this privacy policy if you us
 49.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50007).
 50.[Captcha](https://www.tencentcloud.com/document/product/1159/50401).
 51.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
+52.[Tencent Machine Translation](https://www.tencentcloud.com/document/product/1161/51200).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
