@@ -1,4 +1,4 @@
-
+>! Due to the domain name's ICP filing update, you currently cannot log in by scanning the QR code during CLI deployment. You can log in by configuring a permanent key locally or visiting the URL as prompted on the command line. For more information, see [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
 ## Overview
 This document describes how to quickly create, configure, and deploy an SCF application in Tencent Cloud through Serverless Cloud Framework.
 
