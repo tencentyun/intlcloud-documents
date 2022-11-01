@@ -19,13 +19,8 @@ The script first scans the list of all consumer groups in the source cluster to 
 #### 1. Create a topic in the target cluster
 
 In the following example, the source cluster is `ckafka-47bd7goz` and the target cluster is `ckafka-kzamzogr`. We have created four topics with the same partition count as the source cluster: `test1`, `test2`, `test3`, and `test4` in the target cluster.
-![](https://qcloudimg.tencent-cloud.cn/raw/445cfffd2eac70de446772991b507baf.png)![](https://qcloudimg.tencent-cloud.cn/raw/f292cb1f4fd486a4e815a7a3d3b8d9dd.png)
-
-
 
 In the source cluster `ckafka-47bd7goz`, there are two consumer groups named `test123-group` and `test34-group`. The former subscribes to topics `test1`, `test2`, and `test3`, and the latter, `test3` and `test4`.
-
-![](https://qcloudimg.tencent-cloud.cn/raw/2aaf56e2c0f0244730bfc3da9b32c78f.png)![](https://qcloudimg.tencent-cloud.cn/raw/7848c46de10d89da4faa9df50f08c111.png)
 
 #### 2. Download the migration toolkit
 
@@ -40,16 +35,11 @@ Check the **Prepare to migrate** information, which is the offset information of
 ![](https://qcloudimg.tencent-cloud.cn/raw/7273a1a29eff4f5f7220c95867664408.png)
 For example, you can check the subscription information of the topic `test3` in the source cluster. It is subscribed to by the consumer groups `test123-group` and `test34-group` at the same time.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/72cec46de106e5d92e3ed68588670995.png)
-
-![](https://qcloudimg.tencent-cloud.cn/raw/e4a5a0356d78f5c997b7e6d55ea3b96a.png)
-
 Theoretically, if a topic is subscribed to by multiple consumer groups, it will be synced from the smallest submitted offset, which is 187800 in this example as expected.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c3b7d835b40329d44160a640aba07980.png)
 
 If any messages in topic `test1` of the source cluster have expired and the consumer group has a submitted offset falling between expired messages, the topic `test1` will be synced from the smallest offset of non-expired messages.
-![](https://qcloudimg.tencent-cloud.cn/raw/a5c42710e07d8c46ac47c3507ee98eee.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/70fd3a38a9dad69d079d7168d6861134.png)
+
 Let’s say you want to migrate the data from partition 0 of `test1`. The script will prompt you that messages have expired when the smallest offset (5226) of non-expired messages exceeds the offset (3713) submitted by the consumer group. Therefore, the offset 5226 becomes the start offset of the migration task and the largest offset of partition 0, making it impossible to migrate any messages from this partition. In this case, you will see a prompt saying `skip migrate...`, indicating that the migration of data in this partition will be skipped.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ccd2cc44af16ca56163ca19166e6fe95.png)
 
@@ -61,5 +51,3 @@ After checking that the output information is correct in the previous step, set 
 #### 5. Check whether the number of messages is the same before and after the migration
 
 Taking `test3` for example, if you want to migrate 76,522 unconsumed messages from `test123-group`, and all these messages have actually been written to the `test3` topic of the target instance, data migration is considered  successful.
-![](https://qcloudimg.tencent-cloud.cn/raw/26c3ae1c656c568878f1554b778ace67.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/b08f32e640599369b1f0d8957600f764.png)
