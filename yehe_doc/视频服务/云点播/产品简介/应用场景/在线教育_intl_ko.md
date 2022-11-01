@@ -31,7 +31,7 @@
            저작권 보호
         </td>
 				<td>
-교육 콘텐츠는 일반적으로 전용 장소, 전문 장비 및 전문 교사를 필요로 하므로 제작 비용이 많이 듭니다. 이처럼 교육용 영상은 플랫폼의 중요한 디지털 자산이 되며, 이에 대한 저작권을 효과적으로 보호하여 유출되지 않도록 해야 합니다. 플랫폼은 또한 불법 복제 및 불법 행위를 방지하기 위해 불법 복제 사용자를 추적할 수 있어야 합니다.
+교육 콘텐츠는 일반적으로 전용 장소, 전문 장비 및 전문 교사를 필요로 하므로 제작 비용이 많이 듭니다. 이처럼 교육용 영상은 플랫폼의 중요한 디지털 자산이 되며, 이에 대한 저작권을 효과적으로 보호하여 유출되지 않도록 해야 합니다. 
         </td>
 	</tr>
 	<tr>
@@ -110,9 +110,6 @@
 				<td>
 				<li>
 					<a href="https://intl.cloud.tencent.com/document/product/266/49274" target="_blank">Hotlink Protection</a></br>VOD의 링크 도용 방지 기능은 Referer 및 Key를 기반으로 핫링크를 방지할 수 있습니다.
-				</li>
-				<li>
-					<a href="https://intl.cloud.tencent.com/document/product/266/49276" title="Unauthorized Recording Tracking" target="_blank">Unauthorized Recording Tracking</a></br>VOD는 일반적인 이미지 및 텍스트 워터마크, 플레이어 플로팅 워터마크 및 해적을 추적하는 디지털 워터마크를 지원합니다.
 				</li>
 				<li>
 					<a href="https://intl.cloud.tencent.com/document/product/266/49275" title="Encryption and DRM" target="_blank">Encryption and DRM</a></br>VOD는 HLS 개인 암호화와 상용 DRM을 모두 지원하여 다양한 크랙 행위를 효과적으로 방지하고 저작권이 있는 미디어를 보호합니다.
