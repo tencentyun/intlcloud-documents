@@ -12,19 +12,15 @@
 
 1. 在日志主题同地域下，创建一个 Ckafka 实例。详情请参见 [创建实例](https://intl.cloud.tencent.com/document/product/597/39718)。
 2. 在日志主题同地域下，根据如下配置参数，创建一个 Topic。详情请参见 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/47584)。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/c24a1817ae66fa2c1ec6452e9974e4df.png" style="width: 70%"/></br>
  - **预设ACL策略**：关闭预设 ACL 策略。
  - **展示高级配置**：
     - **CleanUp.policy**：选择 **delete**。该参数需设置为 delete，否则会投递失败。
     - **max.message.bytes**：设置为 ≥ 8MB。该参数若小于8MB，会因 CLS 侧的单条 message 过大，无法写入 Ckafka Topic，导致投递失败。
 3. 前往  [日志服务控制台](https://console.cloud.tencent.com/cls)，并按需选择不同的操作，进入投递任务管理页面或者日志主题管理页面。
  - 在左侧导航栏中，单击**投递任务管理**，选择地域、日志集和日志主题。
-![](https://qcloudimg.tencent-cloud.cn/raw/af951b8be46b525535751f70833262cd.png)
  - 在左侧导航栏中，单击**日志主题**，选择需要配置投递到 Ckafka 任务的日志主题，进入日志主题管理页面。
-![](https://qcloudimg.tencent-cloud.cn/raw/08197c686ce947205ae4d6dffa627c3b.png)
 4. 单击**投递到Ckafka** 页签，进入投递到 Ckafka 配置页面。
 5. 单击右侧的**编辑**，开启投递到 Ckafka 开关，选择相应的 Ckafka 实例以及对应的 Topic，选择需要投递的日志字段。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/50a6b0f38b5d94e0470146fbf695b519.png" style="width: 80%"/>
 6. 单击**确定**，启动投递到 Ckafka，任务状态显示为“已开启”则表示开启成功。
 >! 如需在投递至 Ckafka 前对日志进行清洗加工过滤，可参考使用 [数据加工](https://intl.cloud.tencent.com/document/product/614/46135) 操作。
 >
