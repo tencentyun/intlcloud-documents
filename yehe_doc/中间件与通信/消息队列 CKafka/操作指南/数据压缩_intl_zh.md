@@ -2,7 +2,7 @@
 数据压缩可以减少网络 IO 传输量，减少磁盘存储空间。您可以通过本文档，了解数据压缩支持的消息格式，并根据需求配置数据压缩。
 
 ## 消息格式
-目前 Kafka 支持两类消息格式，分别为V1版本和V2版本（在0.11.0.0引入）。目前 CKafka 支持0.9、0.10.2开源版本，独占集群支持1.1.1版本。
+目前 Kafka 支持两类消息格式，分别为V1版本和V2版本（在0.11.0.0引入）。目前 CKafka 支持0.9、0.10、1.1、2.4和2.8版本。
 
 **不同版本对应不同的配置**，说明如下：
 - 消息格式转换主要是为了兼容老版本的消费者程序，在一个 Kafka 集群中通常同时保存多种版本的消息格式（V1/V2）。
@@ -47,8 +47,8 @@ Producer<String, String> producer = new KafkaProducer<>(props);
 ```
 
 ## 说明与注意
-- 发送数据到 Ckafka，不能设置压缩 compression.codec。
-- CKafka 不支持 Gzip 压缩格式。
+- 发送数据到 CKafka，不能设置压缩 compression.codec。
+- 默认不支持 Gzip 压缩格式，如果需要支持，请 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请。
 Gzip 压缩对于 CPU 的消耗较高，使用 Gzip 会导致所有的消息都是 InValid 消息。
 - 使用 LZ4 压缩方法时，程序不能正常运行，可能的原因如下：
 消息格式错误。CKafka 默认版本为0.10.2，您需要使用 V1 版本的消息格式。

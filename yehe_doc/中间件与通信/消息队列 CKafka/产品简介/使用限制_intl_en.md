@@ -23,7 +23,7 @@ This document lists the limits of certain metrics and performance in CKafka. Be 
     <tr>
         <td>Partition throughput</td>
         <td>
-            <li>In the case of `ack = 1`, the throughput of a single CKafka partition is between 30 and 60 MB/s due to factors such as CKafka's partition architecture, business data size, and request frequency.</li>
+            <li>In the case of `ack = 1`, the throughput of a single CKafka partition is between 30 and 60 MB/sec due to factors such as CKafka's partition architecture, business data size, and request frequency.</li>
             <li>In the case of `ack = -1` (for strong consistency), <b>we recommend that the throughput of a single CKafka partition be between 10 and 20 MB/sec</b>, so that the stability of the request duration is not affected by factors such as CKafka's partition architecture, business data size, and request frequency.
             </li>
         </td>
@@ -85,6 +85,10 @@ This document lists the limits of certain metrics and performance in CKafka. Be 
     <tr>
         <td>Tag</td>
         <td>Each Tencent Cloud resource can have up to 50 tags.</td>
+    </tr>
+    <tr>
+        <td>Concurrent operations in the console</td>
+        <td>Some management and control operations may cause the instance metadata to be modified, leading to data inconsistency when the concurrency is high, and underlying data distribution will be affected. Therefore, some API operations will be locked to limit the request concurrency. <br>To improve the stability and success rate of console operations, up to <b>20</b> concurrent console requests (including those directly initiated via SDK) can be initiated for <b>a single instance</b>.</td>
     </tr>
     </tbody>
 </table>
