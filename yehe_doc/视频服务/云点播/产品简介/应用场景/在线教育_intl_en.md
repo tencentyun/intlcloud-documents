@@ -31,8 +31,7 @@ Online education platforms allow students and teachers to attend classes and com
            Copyright protection
         </td>
 				<td>
-Educational content usually requires dedicated places, professional equipment, and expert teachers, all of which make production costly. As such, teaching videos become important digital assets of the platform, and their copyrights needs to be effectively protected to prevent them from being leaked. The platform also needs to be able to trace pirating users so as to deter piracy and illegal behaviors.
-        </td>
+Educational content usually requires dedicated places, professional equipment, and expert teachers, all of which make production costly. As such, teaching videos become important digital assets of the platform, and their copyrights needs to be effectively protected to prevent them from being leaked. 
 	</tr>
 	<tr>
         <td>
@@ -110,9 +109,6 @@ Educational content usually requires dedicated places, professional equipment, a
 				<td>
 				<li>
 					<a href="https://intl.cloud.tencent.com/document/product/266/49274" target="_blank">Hotlink protection</a></br>The hotlink protection feature of VOD can prevent hotlinking based on referer and key.
-				</li>
-				<li>
-					<a href="https://intl.cloud.tencent.com/document/product/266/49276" title="Piracy tracking" target="_blank">Piracy tracking</a></br>VOD supports common image and text watermarking, player floating watermarking, and digital watermarking to track down pirates.
 				</li>
 				<li>
 					<a href="https://intl.cloud.tencent.com/document/product/266/49275" title="Encryption and DRM" target="_blank">Encryption and DRM</a></br>VOD supports both HLS private encryption and commercial-grade DRM to effectively prevent various cracking behaviors and safeguard copyrighted media.
