@@ -1,5 +1,5 @@
 
->! This feature has been in beta test in Beijing, Shanghai, and Guangzhou regions free of charge since August 15, 2022.
+>! This feature has been in beta test in Beijing, Shanghai, and Guangzhou, Nanjing, and Chongqing regions free of charge since August 15, 2022.
 >
 
 ## Overview
