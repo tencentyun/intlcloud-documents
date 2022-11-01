@@ -12,19 +12,15 @@ You can ship log topic data to CKafka for real-time stream computing and storage
 
 1. Create a CKafka instance in the same region as the log topic. For more information, see [Creating Instance](https://intl.cloud.tencent.com/document/product/597/39718).
 2. Configure the following parameters to create a topic in the same region as the log topic. For more information, see [Creating Topic](https://intl.cloud.tencent.com/document/product/597/47584).
-<img src="https://qcloudimg.tencent-cloud.cn/raw/c24a1817ae66fa2c1ec6452e9974e4df.png" style="width: 70%"/></br>
  - **Preset ACL Policy**: Disable this option.
  - **Show advanced configuration**:
     - **CleanUp.policy**: Select **delete**; otherwise, shipping will fail.
     - **max.message.bytes**: Set this value to 8 MB or above. Otherwise, when the size of a single message in CLS exceeds the specified limit, the message cannot be written to the CKafka topic, and shipping will fail.
 3. Go to the [CLS console](https://console.cloud.tencent.com/cls) and enter the shipping task management page or log topic management page as needed.
  - On the left sidebar, click **Shipping Task Management** and select a region, logset, and log topic.
-![](https://qcloudimg.tencent-cloud.cn/raw/af951b8be46b525535751f70833262cd.png)
  - On the left sidebar, click **Log Topic** and select a log topic to be shipped to CKafka to enter the log topic management page.
-![](https://qcloudimg.tencent-cloud.cn/raw/08197c686ce947205ae4d6dffa627c3b.png)
 4. Click the **Ship to CKafka** tab to enter the configuration page.
-5. Click **Edit* on the right to enable shipping to CKafka. Then, select the target CKafka instance and topic as well as the log field to be shipped.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/50a6b0f38b5d94e0470146fbf695b519.png" style="width: 80%"/>
+5. Click **Edit** on the right to enable shipping to CKafka. Then, select the target CKafka instance and topic as well as the log field to be shipped.
 6. Click **OK** to start shipping to CKafka. If the task status is **Enabled**, the feature is enabled successfully.
 >! To cleanse the log data before shipping to CKafka, see [Log Filtering and Distribution](https://intl.cloud.tencent.com/document/product/614/46135).
 >
