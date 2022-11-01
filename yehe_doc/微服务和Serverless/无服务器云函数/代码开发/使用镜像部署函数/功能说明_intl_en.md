@@ -9,7 +9,7 @@ SCF is a FaaS service based on the cloud native architecture from the very begin
 ## How It Works
 Before developing specific function logic, you need to determine the function type. SCF provides event-triggered functions and HTTP-triggered functions.
 
-During the initialization of the function instance, SCF will obtain the temporary user name and password of the image repository as the access credential to pull the image. After the image is pulled successfully, start the HTTP Server you defined according to the specified start command `Command`, the parameter `Args` and the port (fixed to 9000). Finally, HTTP Server will receive all entry requests of SCF, including the event-triggered function invocations and HTTP-triggered function invocations.
+During the initialization of the function instance, SCF will obtain the temporary user name and password of the image repository as the access credential to pull the image. After the image is pulled successfully, start the HTTP Server you defined according to the specified startup command `Command`, the parameter `Args` and the port (fixed to 9000). Finally, HTTP Server will receive all entry requests of SCF, including the event-triggered function invocations and HTTP-triggered function invocations.
 
 How a function works is as shown below:
 ![](https://main.qcloudimg.com/raw/f884ec7454c39392e4b5b19752e8d732.png)
@@ -135,11 +135,31 @@ SCF collects standard output logs such as `stdout` and `stderr` generated in the
 ## Cold Start Optimization
 
 As file layers such as basic environment and system dependency are added to the image, compared with code package-based function deployment where files are completely built-in, image-based function deployment requires extra file download and image decompression time. To further reduce the cold start time, we recommend you use the following practices:
- - Create an image repository and a function in the same region, so that the image can be pulled over VPC when the function triggers image pull, which makes the pull faster and more stable.
- - The image should be as small as possible, that is, it should contain only the necessary basic environment and execution dependencies without any unnecessary files.
- - Use provisioned concurrency when deploying an image to start a function instance in advance and thus reduce the cold start time and optimize the user experience. For more information, see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
 
-## Billing Details
+### Downsizing image
+- Create an image repository and a function in the same region, so that the image can be pulled over VPC when the function triggers image pull, which makes the pull faster and more stable.
+- The image should be as small as possible, that is, it should contain only the necessary basic environment and execution dependencies without any unnecessary files.
+
+### Enabling image acceleration
+After image acceleration is enabled, the function platform will prefetch the image nearby through the internal acceleration mechanism. When calling a function instance, it will directly load and decompress the image from the cache, eliminating the time for downloading the image file. This expedites the launch by five times on average.
+
+#### Directions
+1. Log in to the SCF console and select **[Functions](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
+2. On the **Functions** list page, select the name of the target image function.
+3. Select **Function codes** on the **Function management** page.
+4. On the **Function codes** page, click **Edit**.
+5. Select ***Enable** in **Image acceleration**.
+6. Click **Save**.
+
+#### Notes
+This feature is currently in beta test free of charge. Acceleration can be enabled for up to five functions in one region under each account.
+
+### Using provisioned concurrency
+Use provisioned concurrency when deploying an image to start a function instance in advance and thus reduce the cold start time and optimize the user experience. For more information, see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
+
+
+
+## Billing
 
 The billable items of image-based functions are the same as those of code package-based functions. For more information on billing, see [Pay-As-You-Go (Postpaid)](https://intl.cloud.tencent.com/document/product/583/42969).
 
@@ -147,7 +167,7 @@ The billable items of image-based functions are the same as those of code packag
 ## Use Limits
 
 #### Image size
-Currently, only images below 1 GiB in size are supported. We recommend you select an appropriate function instance execution memory based on the image size. To increase the limit, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) for application.
+Currently, only images below 1 GiB in size are supported. We recommend you select an appropriate function instance execution memory based on the image size. To increase the limit, [submit a ticket](https://console.tencentcloud.com/workorder/category) for application.
 
 | Image Size (X) | Execution Memory (Y) |
 | -------------------------------- |---------------|
