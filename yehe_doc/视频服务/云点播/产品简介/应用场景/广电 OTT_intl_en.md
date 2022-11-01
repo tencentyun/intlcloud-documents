@@ -30,7 +30,7 @@ Radio, TV, and OTT media services are based on the streaming media services prov
             Copyright Protection
         </td>
 				<td>
-			 Radio, TV, and OTT platforms have diverse media resource content, including movies, sports events, animations, and variety shows. As large-screen consumption continues increasing, such content also becomes more prone to piracy. Therefore, effective copyright protection measures are needed to minimize piracy, trace pirating users, and protect the rights and interests of the platform.
+			 Radio, TV, and OTT platforms have diverse media resource content, including movies, sports events, animations, and variety shows. As large-screen consumption continues increasing, such content also becomes more prone to piracy. Therefore, effective copyright protection measures are needed to minimize piracy.
         </td>
 	</tr>
 	<tr>
@@ -103,9 +103,6 @@ Radio, TV, and OTT media services are based on the streaming media services prov
 				<td>
 				<li>
 					<a href="https://intl.cloud.tencent.com/document/product/266/49274" title="Hotlink protection" target="_blank">Hotlink protection</a></br>The hotlink protection feature of VOD can prevent hotlinking based on referer and key.
-				</li>
-				<li>
-					<a href="https://intl.cloud.tencent.com/document/product/266/49276" title="Piracy tracking" target="_blank">Piracy tracking</a></br>VOD supports common image and text watermarking, player floating watermarking, and digital watermarking to track down pirates.
 				</li>
 				<li>
 					<a href="https://intl.cloud.tencent.com/document/product/266/49275" title="Encryption and DRM" target="_blank">Encryption and DRM</a></br>VOD supports both HLS private encryption and commercial-grade DRM to effectively prevent various cracking behaviors and safeguard copyrighted media.
