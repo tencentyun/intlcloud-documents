@@ -32,7 +32,7 @@ The fields are defined as follows:
 
 #### 1. Create a log topic
 
-1. On the left sidebar, click **Log Topic** to go to the log topic management page.
+1. Log in to the [CLS console](https://console.cloud.tencent.com/cls), On the left sidebar, click **Log Topic** to go to the log topic management page.
 2. Select a region and click **Create Log Topic**.
 3. In the pop-up window, enter information and click **OK**.
 For example, create a log topic named **nginx_access**. The created log topic is displayed on the log topic list.
