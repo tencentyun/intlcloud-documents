@@ -286,6 +286,6 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    </tr>
    <tr>
       <td>다양한 프로토콜</td>
-      <td>COS는 HTTP1.0, HTTP1.1, HTTP2.0 및 QUIC를 포함한 다양한 전송 프로토콜을 지원합니다. 또한 TLS1.0, TLS1.1 및 TLS1.2 암호화 프로토콜이 지원됩니다. HTTP2.0 및 QUIC는 베타 테스트 중입니다. 필요 시 <a href="https://intl.cloud.tencent.com/contact-sales">고객센터</a>로 문의주시면 얼로우리스트에 추가해드립니다.</td>
+      <td>COS는 HTTP1.0, HTTP1.1를 포함한 다양한 전송 프로토콜을 지원합니다. 또한 TLS1.0, TLS1.1 및 TLS1.2 암호화 프로토콜이 지원됩니다. </td>
    </tr>
 </table>
