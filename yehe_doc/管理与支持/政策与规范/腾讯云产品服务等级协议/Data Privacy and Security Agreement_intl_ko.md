@@ -160,6 +160,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 48.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50008).
 49.[OCR](https://www.tencentcloud.com/document/product/1005/50445).
 50.[Captcha](https://www.tencentcloud.com/document/product/1159/50402).
+51.[Tencent Machine Translation](https://www.tencentcloud.com/document/product/1161/51201)
 
 ## 관할권별 요구 사항
 
