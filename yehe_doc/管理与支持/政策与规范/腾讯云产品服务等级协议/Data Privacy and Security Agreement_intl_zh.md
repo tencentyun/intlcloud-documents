@@ -151,6 +151,7 @@
 48.[应用云渲染](https://intl.cloud.tencent.com/document/product/1158/50008)。
 49.[文字识别](https://www.tencentcloud.com/document/product/1005/50445)。
 50.[验证码](https://www.tencentcloud.com/document/product/1159/50402)。
+51.[机器翻译](https://www.tencentcloud.com/document/product/1161/51201)。
 
 ## 特定司法管辖区要求
 
