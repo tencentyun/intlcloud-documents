@@ -147,6 +147,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 48.[Cloud Application Rendering](https://intl.cloud.tencent.com/document/product/1158/50008).
 49.[OCR](https://www.tencentcloud.com/document/product/1005/50445).
 50.[Captcha](https://www.tencentcloud.com/document/product/1159/50402).
+51.[Tencent Machine Translation](https://www.tencentcloud.com/document/product/1161/51201)
 
 ## 法域特定の要件
 
