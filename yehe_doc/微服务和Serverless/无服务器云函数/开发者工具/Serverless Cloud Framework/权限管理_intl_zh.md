@@ -128,7 +128,7 @@ $ scf deploy --login
    }
  ```
 6. 完成自定义策略配置后，回到第 4 步的授权页面，搜索刚刚创建的自定义策略，单击**下一步**> **确定**，即可授予子账号 scf_QcsRole 的操作权限，此时，您的子账号应该拥有一个自定义策略和一个 **QcloudscfFullAccess** 的预设策略，可以完成 Serverless Framework 的正常使用。
-![](https://main.qcloudimg.com/raw/595df2c83bda0ce5ed93321325da2f48.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b01956457dd5c0feacca5487bd216d20.png)
  >? 除了授权调用默认角色 scf_QcsRole 外，也可给子账号授权调用自定义角色。通过自定义角色中的细粒度权限策略，达到权限收缩的目的。详情请参见 [指定操作角色配置](https://intl.cloud.tencent.com/document/product/1040/36819)。
 
 ### scf_QcsRole 角色权限列表 [](id:list)
