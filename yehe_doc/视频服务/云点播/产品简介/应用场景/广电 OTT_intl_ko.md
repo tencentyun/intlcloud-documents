@@ -30,7 +30,7 @@
             저작권 보호
         </td>
 				<td>
-			 라디오, TV, OTT 플랫폼에는 영화, 스포츠 경기, 애니메이션, 예능 등 다양한 미디어 리소스 콘텐츠가 있습니다. 대화면 소비가 계속 증가함에 따라 이러한 콘텐츠도 불법 복제에 취약해지고 있습니다. 따라서 불법 복제를 최소화하고 불법 복제 사용자를 추적하며 플랫폼의 권익을 보호하기 위한 효과적인 저작권 보호 조치가 필요합니다.
+			 라디오, TV, OTT 플랫폼에는 영화, 스포츠 경기, 애니메이션, 예능 등 다양한 미디어 리소스 콘텐츠가 있습니다. 대화면 소비가 계속 증가함에 따라 이러한 콘텐츠도 불법 복제에 취약해지고 있습니다.
         </td>
 	</tr>
 	<tr>
@@ -103,9 +103,6 @@
 				<td>
 				<li>
 					<a href="https://intl.cloud.tencent.com/document/product/266/49274" title="Hotlink Protection" target="_blank">Hotlink Protection</a></br>VOD의 링크 도용 방지 기능은 Referer 및 Key를 기반으로 핫링크를 방지할 수 있습니다.
-				</li>
-				<li>
-					<a href="https://intl.cloud.tencent.com/document/product/266/49276" title="Unauthorized Recording Tracking" target="_blank">Unauthorized Recording Tracking</a></br>VOD는 일반적인 이미지 및 텍스트 워터마크, 플레이어 플로팅 워터마크 및 해적을 추적하는 디지털 워터마크를 지원합니다.
 				</li>
 				<li>
 					<a href="https://intl.cloud.tencent.com/document/product/266/49275" title="Encryption and DRM" target="_blank">Encryption and DRM</a></br>VOD는 HLS 개인 암호화와 상용 DRM을 모두 지원하여 다양한 크랙 행위를 효과적으로 방지하고 저작권이 있는 미디어를 보호합니다.
