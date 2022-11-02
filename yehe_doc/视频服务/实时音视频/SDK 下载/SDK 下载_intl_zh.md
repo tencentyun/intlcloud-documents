@@ -621,7 +621,7 @@
             </div>
             <div class="card-content">
                <a class="with-box"
-                  href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_Android_latest.zip">ZIP 下载</a>
+                  href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_Premium_Android_latest.zip">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Player_Android">GitHub</a>
                <a target="_blank" style="margin-left:10px"
                   href="https://www.tencentcloud.com/document/product/266/47849">集成指引</a>
@@ -640,7 +640,7 @@
             </div>
             <div class="card-content">
                <a class="with-box"
-                  href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_iOS_latest.zip">ZIP 下载</a>
+                  href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Player_Premium_iOS_latest.zip">ZIP 下载</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Player_iOS">GitHub</a>
                <a target="_blank" style="margin-left:10px"
                   href="https://www.tencentcloud.com/document/product/266/47840">集成指引</a>
