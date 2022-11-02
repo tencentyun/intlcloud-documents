@@ -287,8 +287,8 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | ThumbDownloadFlag | Number | 视频缩略图下载方式标记。目前 ThumbDownloadFlag 取值只能为2，表示可通过`ThumbUrl`字段值的 URL 地址直接下载视频缩略图。 |
 
 
->?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
->```
+?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
+```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
