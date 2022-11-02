@@ -1,23 +1,23 @@
 ## Inaccessibility of the Public Network or Private Network Service Provided by a Service
 For a Service that has enabled provides public network or private network access, if the access fails or the CLB port status is abnormal, please check the following:
 1. Check whether the security group of the node in the cluster correctly opens the port range of 30000–32768 as instructed in "Viewing node security group configurations".
-- For public network services, further check whether the node has public network bandwidth (only for bill-by-CVM accounts).
-- If the type of the Service is loadbalancer, you can ignore the CLB and directly check whether the NodeIP + NodePort are accessible.
-- Check whether Service can be accessed normally in the cluster.
+2. For public network services, further check whether the node has public network bandwidth (only for bill-by-CVM accounts).
+3. If the type of the Service is loadbalancer, you can ignore the CLB and directly check whether the NodeIP + NodePort are accessible.
+4. Check whether Service can be accessed normally in the cluster.
 
 ## Inaccessibility of the Public Network Service Provided by an Ingress
 If Ingress that provides public network services cannot be accessed, please check the following:
 1. If the request returns 504, check whether the security group of the node in the cluster opens the port range of 30000–32768 as instructed in "Viewing node security group configurations".
-- Check whether the CLB bound to the Ingress is configured with a security group that does not open port 443.
-- Check whether the Ingress backend Service can be accessed normally in the cluster.
-- If the request returns 404, check whether Ingress forwarding rules are correctly configured.
+2. Check whether the CLB bound to the Ingress is configured with a security group that does not open port 443.
+3. Check whether the Ingress backend Service can be accessed normally in the cluster.
+4. If the request returns 404, check whether Ingress forwarding rules are correctly configured.
 
 ## Inaccessibility of a Service in the Cluster
 In the TKE cluster, mutual access between Pods is usually implemented through the DNS name `my-svc.my-namespace.svc.cluster.local` of the Service. If the Service cannot be accessed in the Pod, check the following:
 1. Check whether the `spec.ports` field of the Service is correct.
-- Test whether the ClusterIP of the Service is accessible, and if so, the cluster DNS is abnormal. For detailed directions, see [Cluster DNS Troubleshooting](https://www.tencentcloud.com/document/product/457/50848).
-- Test whether the endpoint of the Service is accessible, and if not, further check as instructed in "Pods on different nodes in the same cluster cannot access each other".
-- Check whether iptables or ipvs forwarding rules of the node where the Pod is located are complete.
+2. Test whether the ClusterIP of the Service is accessible, and if so, the cluster DNS is abnormal. For detailed directions, see [Cluster DNS Troubleshooting](https://www.tencentcloud.com/document/product/457/50848).
+3. Test whether the endpoint of the Service is accessible, and if not, further check as instructed in "Pods on different nodes in the same cluster cannot access each other".
+4. Check whether iptables or ipvs forwarding rules of the node where the Pod is located are complete.
 
 ## Service Inaccessibility or Latency During Access to an Ingress Due to a CLB Loopback
 
@@ -34,16 +34,16 @@ CLB loopback may cause the following symptoms:
 ### Workaround
 <dx-tabs>
 ::: Avoiding a L4 loopback
->? CLB is required to support the [non-VIP health check source IP](https://intl.cloud.tencent.com/document/product/214/44863) to avoid a L4 loopback. This feature is currently in beta test. To try it out, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for application.
->
 
+<dx-alert infotype="explain" title="">
+CLB is required to support the [non-VIP health check source IP](https://intl.cloud.tencent.com/document/product/214/44863) to avoid a L4 loopback. This feature is currently in beta test. To try it out, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for application.
+</dx-alert>
 
 To solve the loopback problem that may be encountered when using the Service, follow the steps below:
-
 1. Check whether kube-proxy is on the latest version, and if not, upgrade it as follows:
-   1. To solve this problem, kube-proxy needs to support binding the LB address to the IPVS ENI. You can find version IDs that support this capability in [TKE Kubernetes Revision Version History](https://intl.cloud.tencent.com/document/product/457/9315), such as v1.20.6-tke.12, v1.18.4-tke.20, v1.16.3-tke.25, v1.14.3-tke.24, and v1.12.4-tke.30. Later versions also support this capability. ![](https://qcloudimg.tencent-cloud.cn/raw/8eb13bafe666356d22729ae35ae95d14.png)
-   2. Determine the cluster version: You can view the version ID of the current cluster on the **Basic information** page in the cluster. The following shows a cluster on v1.22.5: ![](https://qcloudimg.tencent-cloud.cn/raw/2efef7d7ee8490bae6d40be5ea33ff79.png)
-   3. Find the DaemonSet named kube-proxy under the kube-system namespace, update the version number of its image, and select a version that supports this capability or a later version. For example, for a cluster on v1.18, you need to select an image version later than v1.18.4-tke.20.
+    1. To solve this problem, kube-proxy needs to support binding the LB address to the IPVS ENI. You can find version IDs that support this capability in [TKE Kubernetes Revision Version History](https://intl.cloud.tencent.com/document/product/457/9315), such as v1.20.6-tke.12, v1.18.4-tke.20, v1.16.3-tke.25, v1.14.3-tke.24, and v1.12.4-tke.30. Later versions also support this capability. ![](https://qcloudimg.tencent-cloud.cn/raw/8eb13bafe666356d22729ae35ae95d14.png)
+    2. Determine the cluster version: You can view the version ID of the current cluster on the **Basic information** page in the cluster. The following shows a cluster on v1.22.5: ![](https://qcloudimg.tencent-cloud.cn/raw/2efef7d7ee8490bae6d40be5ea33ff79.png)
+    3. Find the DaemonSet named kube-proxy under the kube-system namespace, update the version number of its image, and select a version that supports this capability or a later version. For example, for a cluster on v1.18, you need to select an image version later than v1.18.4-tke.20.
 
 2. Annotate all Services:
    `service.cloud.tencent.com/prevent-loopback: "true"`
@@ -56,8 +56,9 @@ To solve the loopback problem that may be encountered when using the Service, fo
 To solve the loopback problem that may be encountered when using Ingress, follow the steps below:
 
 1. [Submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to apply for the CLB layer-7 SNAT and keepalive capabilities.
->! These capabilities will enable persistent connection. Then, persistent connections will be used between CLB and real server, and CLB will no longer pass through the source IP, which can be obtained from XFF. To ensure normal forwarding, enable the "Allow by default" feature in the CLB security group or allow `100.127.0.0/16` in the CVM security group. For more information, see [Configuring HTTP Listener](https://intl.cloud.tencent.com/document/product/214/32515).
-
+<dx-alert infotype="notice" title="">
+These capabilities will enable persistent connection. Then, persistent connections will be used between CLB and real server, and CLB will no longer pass through the source IP, which can be obtained from XFF. To ensure normal forwarding, enable the "Allow by default" feature in the CLB security group or allow `100.127.0.0/16` in the CVM security group. For more information, see [Configuring HTTP Listener](https://intl.cloud.tencent.com/document/product/214/32515).
+</dx-alert>
 2. Use the capabilities of TkeServiceConfig to enhance the configuration capabilities of the Ingress. For existing Ingresses, you need to add an annotation: `ingress.cloud.tencent.com/tke-service-config-auto: "true"`. For more information, see [Ingress Annotation](https://intl.cloud.tencent.com/document/product/457/40675).
    **Purpose**: this automatically generates the corresponding TkeServiceConfig for the Ingress and provides additional configuration for the Ingress.
    **Effect**: the Ingress will generate a resource named `<IngressName>-auto-ingress-config` of the TkeServiceConfig type.
@@ -107,7 +108,10 @@ To solve the aforementioned problems, the solution of TKE is not to bind `EXTERN
 
 Although this method fixes the problem of CLB health check failure, it also makes cluster Pods' access request packets to CLB actually arrive at CLB. As the service in the cluster is accessed, the packets will be forwarded back to a cluster node, which also may cause loopback.
 
->?The problem has been submitted to the [community](https://github.com/kubernetes/kubernetes/issues/79783), but there is still no solution.
+<dx-alert infotype="explain" title="">
+The problem has been submitted to the [community](https://github.com/kubernetes/kubernetes/issues/79783), but there is still no solution.
+</dx-alert>
+
 :::
 </dx-tabs>
 
