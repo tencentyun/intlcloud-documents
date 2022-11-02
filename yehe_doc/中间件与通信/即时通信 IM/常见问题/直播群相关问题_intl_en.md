@@ -1,6 +1,6 @@
 ### If I send a message in which `Message.nick` and `Message.avatar` are both empty, how can the message be processed to normally display the nickname and profile photo on the screen?
 
-You can call [getMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMyProfile) to obtain your nickname and profile photo.
+You can call [getMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMyProfile)) to obtain your nickname and profile photo.
 
 ### How can I mute a group member in a livestreaming group?
 
