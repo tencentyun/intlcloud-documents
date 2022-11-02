@@ -1,23 +1,23 @@
 ## Service 提供公网或内网服务无法访问
 提供公网服务或者内网服务的 Service，如果出现无法访问或者 CLB 端口状态异常的情况，建议您进行如下检查：
 1. 参考查看节点安全组配置检查集群中节点的安全组是否正确放通30000-32768端口区间。
-- 如果是公网服务，则进一步检查节点是否有公网带宽（仅针对传统账户类型）。
-- 如果 Service 的 type 为 loadbalancer 类型，可忽略 CLB，直接检查 NodeIP + NodePort 是否可以访问。
-- 检查 Service 是否可以在集群中正常访问。
+2. 如果是公网服务，则进一步检查节点是否有公网带宽（仅针对传统账户类型）。
+3. 如果 Service 的 type 为 loadbalancer 类型，可忽略 CLB，直接检查 NodeIP + NodePort 是否可以访问。
+4. 检查 Service 是否可以在集群中正常访问。
 
 ## Ingress 提供公网服务无法访问
 提供公网服务的 Ingress 如果出现无法访问的情况，建议您进行如下检查：
 1. 若请求返回504，请参考查看节点安全组配置检查集群中节点的安全组是否正确放通30000-32768端口区间。
-- 检查 Ingress 绑定的 CLB 是否设置了未放通443端口的安全组。
-- 检查 Ingress 后端服务 Service 是否可以在集群中正常访问。
-- 若请求返回404，请检查 Ingress 转发规则是否正确设置。
+2. 检查 Ingress 绑定的 CLB 是否设置了未放通443端口的安全组。
+3. 检查 Ingress 后端服务 Service 是否可以在集群中正常访问。
+4. 若请求返回404，请检查 Ingress 转发规则是否正确设置。
 
 ## 集群内 Service 无法访问
 在 TKE 集群内，Pod 之间一般是通过 Service 的 DNS 名称 `my-svc.my-namespace.svc.cluster.local` 来进行互访，如果在 Pod 内发生 Service 无法访问的情况，建议您进行如下检查：
 1. 检查 Service 的 `spec.ports` 字段是否正确。
-- 测试 Service 的 ClusterIP 是否可通。若可通，则说明集群内 DNS 解析存在问题，可参考 [集群 DNS 解析异常排障处理](https://www.tencentcloud.com/document/product/457/50848) 进一步检查。
-- 测试 Service 的 Endpoint 是否可通。若不通，可参考集群中不同节点上的容器（Pod）无法互访进一步检查。
-- 检查当前 Pod 所在节点上的 iptables 或者 ipvs 转发规则是否完整。
+2. 测试 Service 的 ClusterIP 是否可通。若可通，则说明集群内 DNS 解析存在问题，可参考 [集群 DNS 解析异常排障处理](https://www.tencentcloud.com/document/product/457/50848) 进一步检查。
+3. 测试 Service 的 Endpoint 是否可通。若不通，可参考集群中不同节点上的容器（Pod）无法互访进一步检查。
+4. 检查当前 Pod 所在节点上的 iptables 或者 ipvs 转发规则是否完整。
 
 ## 因 CLB 回环问题导致服务访问不通或访问 Ingress 存在延时
 
@@ -34,16 +34,16 @@ CLB 回环问题可能导致存在以下现象：
 ### 规避方法
 <dx-tabs>
 ::: 避免四层回环问题
->? 避免四层回环问题需要 CLB 支持 [健康检查源 IP 支持非 VIP](https://intl.cloud.tencent.com/document/product/214/44863)，该功能目前处于内测中，如需使用可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 来联系我们。
->
-
+<dx-alert infotype="explain" title="">
+避免四层回环问题需要 CLB 支持 [健康检查源 IP 支持非 VIP](https://intl.cloud.tencent.com/document/product/214/44863)，该功能目前处于内测中，如需使用可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 来联系我们。
+</dx-alert>
 
 解决使用 Service 时可能遇到的回环问题，步骤如下：
 
 1. 检查 kube-proxy 的版本是否是最新版本，如果不是请参照如下步骤升级：
-   1. 解决该问题需要 kube-proxy 支持把 LB 地址绑定到 IPVS 网卡，可以在 [TKE Kubernetes Revision 版本历史](https://intl.cloud.tencent.com/document/product/457/9315) 里找到支持该能力的版本号，例如：v1.20.6-tke.12、v1.18.4-tke.20、v1.16.3-tke.25、v1.14.3-tke.24、v1.12.4-tke.30。后续更大的版本号也支持该能力：![](https://qcloudimg.tencent-cloud.cn/raw/8eb13bafe666356d22729ae35ae95d14.png)
-   2. 确定集群的版本：您可以在集群里面的**基本信息**页查看到当前集群的版本号，如下图所示的集群是1.22.5的版本：![](https://qcloudimg.tencent-cloud.cn/raw/2efef7d7ee8490bae6d40be5ea33ff79.png)
-   3. 找到 kube-system 命名空间下面名为 kube-proxy 的 DaemonSet，更新其镜像的版本号，选择支持该能力的版本号，或者大于该版本号的版本。例如，1.18 版本的集群要选择的镜像版本号要大于 v1.18.4-tke.20。
+    1. 解决该问题需要 kube-proxy 支持把 LB 地址绑定到 IPVS 网卡，可以在 [TKE Kubernetes Revision 版本历史](https://intl.cloud.tencent.com/document/product/457/9315) 里找到支持该能力的版本号，例如：v1.20.6-tke.12、v1.18.4-tke.20、v1.16.3-tke.25、v1.14.3-tke.24、v1.12.4-tke.30。后续更大的版本号也支持该能力：![](https://qcloudimg.tencent-cloud.cn/raw/8eb13bafe666356d22729ae35ae95d14.png)
+    2. 确定集群的版本：您可以在集群里面的**基本信息**页查看到当前集群的版本号，如下图所示的集群是1.22.5的版本：![](https://qcloudimg.tencent-cloud.cn/raw/2efef7d7ee8490bae6d40be5ea33ff79.png)
+    3. 找到 kube-system 命名空间下面名为 kube-proxy 的 DaemonSet，更新其镜像的版本号，选择支持该能力的版本号，或者大于该版本号的版本。例如，1.18 版本的集群要选择的镜像版本号要大于 v1.18.4-tke.20。
 
 2. 为所有的 Service 添加注解：
    `service.cloud.tencent.com/prevent-loopback: "true"`
@@ -56,7 +56,9 @@ CLB 回环问题可能导致存在以下现象：
 解决使用 Ingress 时可能遇到的回环问题，步骤如下：
 
 1.  [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请开通 CLB 7层 SNAT 和 Keep Alive 能力的白名单。
->! 该能力将启用长连接，CLB 与后端服务之间使用长连接，CLB 不再透传源 IP，请从 XFF 中获取源 IP。为保证正常转发，请在 CLB 上打开安全组默认放通或者在 CVM 的安全组上放通 100.127.0.0/16。更多请参考 [配置监听器](https://intl.cloud.tencent.com/document/product/214/32515)。
+<dx-alert infotype="notice" title="">
+该能力将启用长连接，CLB 与后端服务之间使用长连接，CLB 不再透传源 IP，请从 XFF 中获取源 IP。为保证正常转发，请在 CLB 上打开安全组默认放通或者在 CVM 的安全组上放通 100.127.0.0/16。更多请参考 [配置监听器](https://intl.cloud.tencent.com/document/product/214/32515)。
+</dx-alert>
 
 2. 利用 TkeServiceConfig 的能力增强 Ingress 的配置能力,对于存量的 Ingress，需要添加一个 annotation：`ingress.cloud.tencent.com/tke-service-config-auto: "true"`，详情见 [Ingress Annotation 说明](https://intl.cloud.tencent.com/document/product/457/40675)。
    **目的**：为该 Ingress 自动生成对应的 TkeServiceConfig，提供 Ingress 额外的配置。
@@ -106,8 +108,9 @@ CLB 回环问题可能导致存在以下现象：
 为解决上述问题，TKE 的修复策略是：ipvs 模式不绑定 EXTERNAL-IP 到 `kube-ipvs0` 。也就是集群内 Pod 访问 CLB IP 的报文不会进入 INPUT 链，而是直接出节点网卡，真正到达 CLB，这样健康探测的报文进入节点时将不会被当成本机 IP 而丢弃，同时探测响应报文也不会进入 INPUT 链导致出不去。
 
 虽然这种方法修复了 CLB 健康探测失败的问题，但也导致集群内 Pod 访问 CLB 的包真正到了 CLB，由于访问集群内的服务，报文又会被转发回其中一台节点，也就存在了回环的可能性。
-
->?相关问题已提交至 [社区](https://github.com/kubernetes/kubernetes/issues/79783)，但目前还未有效解决。
+<dx-alert infotype="explain" title="">
+相关问题已提交至 [社区](https://github.com/kubernetes/kubernetes/issues/79783)，但目前还未有效解决。
+</dx-alert>
 :::
 </dx-tabs>
 
