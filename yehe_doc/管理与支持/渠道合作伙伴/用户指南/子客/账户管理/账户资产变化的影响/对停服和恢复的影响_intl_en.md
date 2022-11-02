@@ -12,7 +12,9 @@ When the customer's assets are insufficient, the customer's resources will be su
 
 (3) Solution: If the customer receives a service suspension notice, they can contact their reseller to adjust the credit and vouchers to resume the resource usage.
 
->?If the customer has enabled the non-stop feature, the service will not be suspended.
+>?
+>- If the customer has enabled the non-stop feature, the service will not be suspended.
+>- You can contact your channel manager to add you to the allowlist of the customer service suspension rule to shorten the service suspension period. For detailed rules, see [Customer Service Suspension Rules](https://www.tencentcloud.com/document/product/1085/50550).
 
 ### 2. Impact on service resumption
 
