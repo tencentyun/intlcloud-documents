@@ -75,7 +75,7 @@ This document lists the pricing details of Lighthouse instances, including basic
 | Region | Price (USD/GB) |
 |---------|---------|
 | Tokyo | 0.13 |
-| Hong Kong (China) | 	0.12 |
+| Hong Kong (China) , Seoul | 	0.12 |
 | Silicon Valley, Frankfurt	 | 	0.077 |
 | Mumbai	 | 	0.1 |
 | Singapore	 | 	0.081 |
@@ -89,18 +89,7 @@ A free tier of five custom images is provided for each region, and the unit pric
 ## [Cloud Disk Pricing](id:cbsDetail)
 
 ### Pricing information
+Hong Kong (China), Singapore, Silicon Valley, Japan, Frankfurt, and India: 0.17 USD/GB/month
 
-
-<table>
-  <tr><th style="width: 50%;">Region</th><th style="width: 25%;">Cloud disk type</th><th style="width: 25%;">Price (USD/GB/month)</th></tr>
-    <tr>
-      <td rowspan=2>Hong Kong (China), Singapore, Silicon Valley, Japan, Frankfurt, India and Toronto</td>
-    <td>Premium cloud disks</td>
-    <td>0.05</td>  
-   <tr>   
-  <td>SSD cloud disks</td> 
-   <td>0.17</td>  
-	</tr>
-</table>
 
 
