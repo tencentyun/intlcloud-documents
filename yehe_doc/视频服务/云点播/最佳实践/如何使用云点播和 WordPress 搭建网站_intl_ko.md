@@ -94,7 +94,7 @@ WordPress 왼쪽 사이드바에서 **Tencent Cloud 설정 > [VOD](https://intl.
 
 | **항목**           | **설명**                                                     |
 | -------------------- | ------------------------------------------------------------ |
-| 사용자 정의 키           이 기능을 끄면 **Tencent Cloud 설정**용으로 구성된 키가 사용되며, 이는 VOD 플러그인이 다른 Tencent Cloud 플러그인과 동일한 키를 사용한다는 것을 의미합니다. 이 기능을 켜면 아래에 구성된 키가 사용됩니다. |
+| 사용자 정의 키        |   이 기능을 끄면 **Tencent Cloud 설정**용으로 구성된 키가 사용되며, 이는 VOD 플러그인이 다른 Tencent Cloud 플러그인과 동일한 키를 사용한다는 것을 의미합니다. 이 기능을 켜면 아래에 구성된 키가 사용됩니다. |
 | SecretId、SecretKey | 액세스 키입니다. 콘솔의 [API Keys](https://console.cloud.tencent.com/cam/capi) 페이지로 이동하여 액세스 키를 생성하고 볼 수 있습니다. |
 | SubAppID             | 바인딩하려는 VOD 서브 애플리케이션의 ID입니다. [애플리케이션 관리](https://console.cloud.tencent.com/vod/app-manage)에서 VOD 애플리케이션을 볼 수 있습니다. |
 | 어댑티브 비트레이트 | 이 기능을 활성화하면 업로드된 비디오가 여러 비트레이트로 인코딩됩니다. 자세한 내용은 [Adaptive Bitrate Streaming](https://intl.cloud.tencent.com/document/product/266/49258)을 참고하십시오. |
