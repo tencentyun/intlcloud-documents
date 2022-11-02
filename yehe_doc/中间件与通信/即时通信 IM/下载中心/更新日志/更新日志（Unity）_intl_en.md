@@ -1,3 +1,18 @@
+## 1.8.0 @2022.10.11
+- Fixed the first serialization parameter conversion performance error.
+
+## 1.7.9 @2022.09.22
+- Fixed iOS build issues.
+
+## 1.7.7 @2022.09.02
+- Added English interface comments.
+- Added interfaces such as topic, community, user status, etc.
+- Upgraded native sdk version.
+- Fixed known issues.
+
+## 1.7.6 @2022.06.24
+- Supported string calllback data and object callback data.
+- 
 ## 1.7.5 @2022.05.23
 - Added APIs for group message read receipts.
 - Fixed the issue where the field with a value of `null` was ignored by Newtonsoft serialization.
