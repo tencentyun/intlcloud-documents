@@ -270,7 +270,7 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">Source code download</button></a></div>
-    <div style="text-align:center;">You can click<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">Get Started</a>to learn how to quickly run the demo. You can also click<a href="https://intl.cloud.tencent.com/document/product/1047/36359" style="color:#06A4FF;">Integration</a>to learn more about the features.</div>
+    <div style="text-align:center;">You can click<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">Get Started</a>to learn how to quickly run the demo. You can also click<a href="https://intl.cloud.tencent.com/document/product/1047/50055" style="color:#06A4FF;">Integration</a>to learn more about the features.</div>
     </div>
 </div>
 :::
