@@ -77,10 +77,8 @@ pullConsumer.setCustomizedTraceTopic(null);
     - **按消息 ID 查询：**该方式属于精确查询、速度快、精确匹配。
     - **按消息 Key 查询：**该方式属于模糊查询，适用于您没有记录消息 ID 但是设置了消息 Key 的场景。
 3. 单击**查询**，下方列表会展示所有查询到的结果并分页展示。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/e64e03f1f7aff564e6234e4100ed6660.png)
 4. 找到您希望查看内容或参数的消息，单击操作列的**查看详情**，即可查看消息的基本信息、内容（消息体）以及参数。
 5. 单击操作列的**查看消息轨迹**，或者在详情页单击 Tab 栏的**消息轨迹**，即可查看该消息的消息轨迹（详细说明请参见 [消息轨迹查询结果说明](#1)）。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/26e01a17a960deb774f23a832d22003c.png)
 
 <span id="1"></span>
 
