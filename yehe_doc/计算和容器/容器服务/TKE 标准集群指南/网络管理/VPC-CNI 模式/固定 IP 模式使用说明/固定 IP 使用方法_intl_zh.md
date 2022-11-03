@@ -30,8 +30,8 @@
 ### 为 GlobalRouter 模式附加固定 IP VPC-CNI 模式
 #### 为已有集群开启 VPC-CNI
 >?
-- 为 GlobalRouter 模式附加固定 IP VPC-CNI 模式即创建集群时选择 Global Router 网络插件，后续在集群基本信息页面开启 VPC-CNI 模式（两种模式默认混用）。
-- 使用此方式启用 VPC-CNI，Pod 默认不使用弹性网卡。
+>- 为 GlobalRouter 模式附加固定 IP VPC-CNI 模式即创建集群时选择 Global Router 网络插件，后续在集群基本信息页面开启 VPC-CNI 模式（两种模式默认混用）。
+>- 使用此方式启用 VPC-CNI，Pod 默认不使用弹性网卡。
 >
 1. 登录 [容器服务控制台 ](https://console.qcloud.com/tke2)，单击左侧导航栏中**集群**。
 2. 在“集群管理”页面，选择需开启 VPC-CNI 的集群 ID，进入集群详情页。
@@ -57,12 +57,12 @@
 >
 您可通过以下两种方法创建固定 IP：
 - 通过控制台创建固定 IP 类型 StatefulSet
- 1. 登录 [容器服务控制台 ](https://console.qcloud.com/tke2)，单击左侧导航栏中**集群**。
- 2. 选择需要使用固定 IP 模式的集群 ID 名称，进入该集群的管理页面。
- 3. 选择**工作负载** > **StatefulSet**，进入**StatefulSet**的集群管理页面。
- 4. 单击**新建**，查看**实例数量**。如下图所示：
+  1. 登录 [容器服务控制台 ](https://console.qcloud.com/tke2)，单击左侧导航栏中**集群**。
+  2. 选择需要使用固定 IP 模式的集群 ID 名称，进入该集群的管理页面。
+  3. 选择**工作负载** > **StatefulSet**，进入**StatefulSet**的集群管理页面。
+  4. 单击**新建**，查看**实例数量**。如下图所示：
       ![](https://main.qcloudimg.com/raw/0ce9969c685d732aed4103f91e8ffe41.png)
- 5. 单击**显示高级设置**，根据您实际需求，设置**StatefulSet**参数。关键参数信息如下：
+  5. 单击**显示高级设置**，根据您实际需求，设置**StatefulSet**参数。关键参数信息如下：
       ![](https://main.qcloudimg.com/raw/ce1bb9d7f0df7b07db6a7d66da115eb8.png)
    - 网络模式：勾选**使用 VPC-CNI 模式**。
       - IP 地址范围：目前仅支持随机。
@@ -108,6 +108,6 @@ spec:
           requests:
             tke.cloud.tencent.com/eni-ip: "1" 
 ```
- - spec.template.annotations：`tke.cloud.tencent.com/networks: "tke-route-eni"` 表明 Pod 使用共享网卡的 VPC-CNI 模式，如果使用的是独立网卡的 VPC-CNI 模式，请将值修改成 `"tke-direct-eni"`。
- - spec.template.annotations：创建 VPC-CNI 模式的 Pod，您需要设置 annotations，即 `tke.cloud.tencent.com/vpc-ip-claim-delete-policy`，默认是 “Immediate”，Pod 销毁后，关联的 IP 同时被销毁。如需固定 IP，则需设置成 “Never”，Pod 销毁后 IP 也将会保留，那么下一次同名的 Pod 拉起后，会使用之前的 IP。
- - spec.template.spec.containers.0.resources：创建共享网卡的 VPC-CNI 模式的 Pod，您需要添加 requests 和 limits 限制，即 `tke.cloud.tencent.com/eni-ip`。如果是独立网卡的 VPC-CNI 模式，则添加 `tke.cloud.tencent.com/direct-eni`。
+  - spec.template.annotations：`tke.cloud.tencent.com/networks: "tke-route-eni"` 表明 Pod 使用共享网卡的 VPC-CNI 模式，如果使用的是独立网卡的 VPC-CNI 模式，请将值修改成 `"tke-direct-eni"`。
+  - spec.template.annotations：创建 VPC-CNI 模式的 Pod，您需要设置 annotations，即 `tke.cloud.tencent.com/vpc-ip-claim-delete-policy`，默认是 “Immediate”，Pod 销毁后，关联的 IP 同时被销毁。如需固定 IP，则需设置成 “Never”，Pod 销毁后 IP 也将会保留，那么下一次同名的 Pod 拉起后，会使用之前的 IP。
+  - spec.template.spec.containers.0.resources：创建共享网卡的 VPC-CNI 模式的 Pod，您需要添加 requests 和 limits 限制，即 `tke.cloud.tencent.com/eni-ip`。如果是独立网卡的 VPC-CNI 模式，则添加 `tke.cloud.tencent.com/direct-eni`。
