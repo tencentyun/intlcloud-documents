@@ -62,7 +62,7 @@ WebプレーヤーはHTML5の`<video>`タグおよびFlashを介してビデオ�
 - WebRTCをサポートしていないブラウザ環境では、プレーヤーに渡されたWebRTCアドレスは、メディア再生をより適切にサポートするために自動的にプロトコル変換されます。
 </dx-alert>
 
-## 機能のサポート
+## 機能サポート
 
 <Table>
   <tr>
@@ -174,7 +174,7 @@ WebプレーヤーはHTML5の`<video>`タグおよびFlashを介してビデオ�
          <td style="text-align:center">&#10003;</td>
     </tr>
                <tr>
-         <td style="text-align:center">Refererリンク不正アクセス防止</td>
+         <td style="text-align:center">Refererホットリンク防止</td>
          <td style="text-align:center">&#10003;</td>
          <td style="text-align:center">&#10003;</td>
          <td style="text-align:center">&#10003;</td>
@@ -349,33 +349,35 @@ WebプレーヤーはHTML5の`<video>`タグおよびFlashを介してビデオ�
 
 次の手順でウェブページにビデオプレーヤーを追加することができます。
 
-### ステップ1：ホームにファイルを導入します
+### 手順1：ホームにファイルを導入します
 
 ローカルプロジェクトにindex.htmlファイルを新規作成し、htmlページ内にプレーヤースタイルファイルとスクリプトファイルをインポートします。
 ```html
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/tcplayer.min.css" rel="stylesheet"/>
+ <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
  <!--ChromeやFirefoxなどの最新ブラウザでH5を介してWebrtcのビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にTXLivePlayer-x.x.x.min.jsをインポートする必要があります。-->
  <!--中にはWebrtcに対応していないブラウザ環境もあり、プレーヤーはWebrtcのストリームアドレスをHLS形式のアドレスに自動変換するため、ライブイベントストリーミングのシナリオでは同様に、hls.min.x.xx.xm.jsをインポートする必要があります。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.1/libs/TXLivePlayer-1.2.0.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
  <!--ChromeやFirefoxなどの最新ブラウザでH5を介してChromeやFirefoxなどのモダンブラウザでHLSプロトコルのビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にhls.min.x.xx.xm.jsをインポートする必要があります。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/libs/hls.min.0.13.2m.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
  <!--ChromeやFirefoxなどの最新ブラウザでH5を介してChromeやFirefoxなどのモダンブラウザでFLV形式のビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にflv.min.x.jsをインポートする必要があります。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/libs/flv.min.1.6.2.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+  <!--ChromeやFirefoxなどの最新ブラウザでH5を介してDASHビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にdash.min.x.x.x.jsを導入する必要があります。-->
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
  <!--プレーヤースクリプトファイル-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/tcplayer.v4.5.2.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
 ```
-Player+を使用する場合は、ご自身でリソースをデプロイすることをお勧めします。[クリックしてプレーヤーリソースをダウンロード](https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/release.zip)します。
+プレーヤーSDKを使用する場合は、ご自身でリソースをデプロイすることをお勧めします。[クリックしてプレーヤーリソースをダウンロード](https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/release.zip)します。
 デプロイし解凍した後のフォルダについては、リソースの相互引用の異常を回避するため、フォルダ内のディレクトリを調整することができません。
 デプロイするアドレスが`aaa.xxx.ccc`である場合は、適切な場所にプレーヤースタイルファイルとスクリプトファイルを導入します。
 ```html
  <link href="aaa.xxx.ccc/tcplayer.min.css" rel="stylesheet"/>
  <!--ChromeやFirefoxなどの最新ブラウザでH5を介してChromeやFirefoxなどのモダンブラウザでHLS形式のビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にhls.min.x.xx.m.jsをインポートする必要があります。-->
- <script src="aaa.xxx.ccc/libs/hls.min.0.13.2m.js"></script>
+ <script src="aaa.xxx.ccc/libs/hls.min.x.xx.m.js"></script>
  <!--プレーヤースクリプトファイル-->
  <script src="aaa.xxx.ccc/tcplayer.vx.x.x.min.js"></script>
 ```
 
-### ステップ2：プレーヤーコンテナを配置します
+### 手順2：プレーヤーコンテナを配置します
 
 プレーヤーを表示したいページ位置にプレーヤーコンテナを追加します。例えば、index.htmlに次のコードを追加します（コンテナIDおよび幅と高さはいずれもカスタマイズできます）。
 ```html

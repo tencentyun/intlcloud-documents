@@ -32,154 +32,39 @@ CSSが提供するレコーディング機能を介して、CSSストリーム�
 
 VODでは世界中の複数のリージョンにストレージノードがあります。メディアをアップロードするプロセスではその内の1つのリージョンを選択してストレージします。現在、VODがサポートするストレージリージョンは次のとおりです。
 
-<table>
-    <tr>
-        <th>
-            ストレージリージョン                
-        </th>
-        <th>
-            リージョンの英語の略語                
-        </th>
-    </tr>
-    <tr>
-        <td>
-            北京             
-        </td>
-        <td>
-			ap-beijing
-        </td>
-    </tr>
-    <tr>
-        <td>
-            上海             
-        </td>
-        <td>
-			ap-shanghai
-        </td>
-    </tr>
-    <tr>
-        <td>
-            重慶             
-        </td>
-        <td>
-			ap-chongqing
-        </td>
-    </tr>
-    <tr>
-        <td>
-            天津             
-        </td>
-        <td>
-			ap-beijing-1
-        </td>
-    </tr>
-    <tr>
-        <td>
-            中国香港             
-        </td>
-        <td>
-			ap-hongkong
-        </td>
-    </tr>
-    <tr>
-        <td>
-            シンガポール             
-        </td>
-        <td>
-			ap-singapore
-        </td>
-    </tr>
-    <tr>
-        <td>
-            ムンバイ             
-        </td>
-        <td>
-			ap-mumbai
-        </td>
-    </tr>
-   <tr>
-        <td>
-            インドネシアジャカルタ            
-        </td>
-        <td>
-			ap-jakarta
-        </td>
-    </tr>	
-    <tr>
-        <td>
-            韓国ソウル             
-        </td>
-        <td>
-			ap-seoul
-        </td>
-    </tr>
-    <tr>
-        <td>
-            タイバンコク             
-        </td>
-        <td>
-			ap-bangkok
-        </td>
-    </tr>
-    <tr>
-        <td>
-            日本東京             
-        </td>
-        <td>
-			ap-tokyo
-        </td>
-    </tr>
-    <tr>
-        <td>
-            米国シリコンバレー（米国西部）            
-        </td>
-        <td>
-			na-siliconvalley
-        </td>
-    </tr>
-    <tr>
-        <td>
-            米国バージニア州（米国東部）             
-        </td>
-        <td>
-			na-ashburn
-        </td>
-    </tr>
-    <tr>
-        <td>
-            カナダ・トロント             
-        </td>
-        <td>
-			na-toronto
-        </td>
-    </tr>
-    <tr>
-        <td>
-            ドイツ・フランクフルト             
-        </td>
-        <td>
-			eu-frankfurt
-        </td>
-    </tr>
-    <tr>
-        <td>
-            ロシア・モスクワ             
-        </td>
-        <td>
-			eu-moscow
-        </td>
-    </tr>
-</table>
+| ストレージリージョン       | リージョンの英語の略称           |
+| ---------- | ---------------- |
+| 北京         | ap-beijing       |
+| 上海         | ap-shanghai      |
+| 広州         | ap-guangzhou     |
+| 重慶         | ap-chongqing     |
+| 天津         | ap-beijing-1     |
+| 南京         | ap-nanjing       |
+| 成都         | ap-chengdu       |
+| 中国香港       | ap-hongkong      |
+| 中国台北       | ap-taipei        |
+| シンガポール        | ap-singapore     |
+| インドムンバイ       | ap-mumbai        |
+| インドネシアジャカルタ   | ap-jakarta       |
+| 韓国ソウル       | ap-seoul         |
+| タイバンコク       | ap-bangkok       |
+| 日本東京       | ap-tokyo         |
+| アメリカシリコンバレー（アメリカ西部）   | na-siliconvalley |
+| アメリカバージニア（アメリカ東部） | na-ashburn       |
+| ブラジルサンパウロ      | sa-saopaulo      |
+| カナダトロント     | na-toronto       |
+| ドイツフランクフルト     | eu-frankfurt     |
+| ロシアモスクワ     | eu-moscow        |
 
 ### ストレージリージョンのアクティブ化
 
 複数のストレージリージョンを構成する重要な目的はメディアアップロードの品質（成功率と速度）を向上させることです。アップロードの実行者とストレージノードの距離はアップロード品質に影響を及ぼし、通常、遠距離よりも近距離の方が高いアップロード品質を得られます。
 
-VODサービスをアクティブにすると、VODは、**シンガポール**のストレージリージョンを自動的に割り当てます。業務上の必要性に応じて他のストレージリージョンをアクティブにすることもできます。具体的な操作については、[アップロードストレージ設定](https://intl.cloud.tencent.com/document/product/266/18874)をご参照ください。**アクティブにすると、ストレージリージョンを非アクティブにすることはできません**。
+開発者がVODサービスをアクティブ化すると、VODは**シンガポール**ストレージリージョンを自動的に割り当てます。開発者は業務のニーズに応じてその他のストレージリージョンをアクティブ化することが可能です。具体的な操作については、[アップロードストレージ設定](https://intl.cloud.tencent.com/document/product/266/18874)をご参照ください。**ストレージリージョンは一度アクティブ化すると無効にできなくなります**。
 
 ### デフォルトのストレージリージョン
 
-ストレージリージョンの内、デフォルトのストレージリージョンは1つのみです。ストレージリージョン（シンガポール）を1つしか持たない場合は、それがデフォルトのストレージリージョンとなります。複数のストレージリージョンをアクティブ化している場合は、コンソールでその他のリージョンをデフォルトのストレージリージョンとして選択できます。具体的な操作については、 [ストレージリージョン設定](https://intl.cloud.tencent.com/document/product/266/18874#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)をご参照ください。
+開発者の既存のストレージリージョンの中には、デフォルトのストレージリージョンがあり、かつそれは1つのみとなります。ストレージリージョンが1つのみ（シンガポール）のときは、これがデフォルトのストレージリージョンとなり、複数のストレージリージョンをアクティブ化している場合は、コンソールでその他リージョンをデフォルトのストレージリージョンに選択することができます。具体的な操作については、[ストレージリージョン設定](https://intl.cloud.tencent.com/document/product/266/18874#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)をご参照ください。
 
 デフォルトのストレージリージョンの目的：一部のケースでは、このリージョンがメディアアップロードの対象リージョンとして優先的に選択されます。具体的な説明については、次のテキストをお読みください。
 
@@ -188,9 +73,9 @@ VODサービスをアクティブにすると、VODは、**シンガポール**�
 メディアのアップロードにはストレージリージョンを選択する必要があります。デフォルトでVODバックエンドによって自動的に選択されることも、またアップロードリクエストで指定することもできます。
 
 - VODバックグラウンドがストレージリージョンを自動的に選択する場合：
-  - 開発者が1つのストレージリージョン（シンガポール）しか持たない場合は、アップロードするすべてのメディアはそのリージョンにストレージされます。
+  - 開発者のストレージリージョンが1つのみ（シンガポール）の場合は、アップロードしたすべてのメディアはこのリージョンに保存されます。
   - 開発者が複数のストレージリージョンをアクティブ化している場合、各種アップロード方法の選択ポリシーは次のとおりです。
- <table border=0 cellpadding="0" cellspacing="0">
+<table border=0 cellpadding="0" cellspacing="0">
 <thead>
 <tr>
 <th>アップロード方法</th>
@@ -290,25 +175,25 @@ VODのメディアアップロードは、メディア資産管理関連、ビ�
 
 各種アップロード方法のサポート状況と使用法は下表のとおりです。
 
-| 機能         | コンソールからのローカルアップロード                                               | コンソールからのプルアップロード | サーバーからのアップロード                                                   | クライアントからのアップロード                                                     | APIからのプルアップロード                                               | CSSレコーディング                                                 |
-| ------------ | ------------------------------------------------------------ | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| カバーの追加     | サポートしていません                                                       | サポートしていません         | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2) | <ul style="margin:0;"><li> [Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | [プルアップロードインタフェースCoverUrlパラメータ](https://intl.cloud.tencent.com/document/product/266/34118) |サポートしていません                                                       |
-| 有効期限の指定             | サポートしていません                                                       | サポートしていません| <ul style="margin:0;"><li>[Java SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) |サポートしていません                                                    | [プルアップロードインタフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/34118) | [CSSレコーディング](https://intl.cloud.tencent.com/document/product/267/34223) |
-| カテゴリー指定             | [カテゴリー指定](https://intl.cloud.tencent.com/document/product/266/33890) | サポートしていません         | <ul style="margin:0;"><li> [Java SDKインターフェースClassId パラメータ](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDKインターフェース ClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDKインターフェースClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDKインターフェースClassId パラメータ](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDKインターフェース ClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDKインターフェース ClassId パラメータ](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [クライアントからのアップロード署名procedureパラメータ](https://intl.cloud.tencent.com/document/product/266/33922) | [プルアップロードインタフェースClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/34118) | サポートしていません                                                       |
+| 機能         | コンソールからのローカルアップロード                                                                                | コンソールからのプルアップロード | サーバーからのアップロード                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | クライアントからのアップロード                                                                                                                                                                                                                                                                                                                                                                                | APIからのプルアップロード                                                                      | CSSレコーディング                                |
+| ------------ | --------------------------------------------------------------------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------- |
+| カバーの追加     | サポートしていません                                                                                        | サポートしていません         | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)                                                                                                                                                                                         | <ul style="margin:0;"><li> [Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | [プルアップロードインターフェースCoverUrlパラメータ](https://intl.cloud.tencent.com/document/product/266/34118)                         | サポートしていません                                  |
+| 期限の指定 | サポートしていません                                                                                        | サポートしていません         | <ul style="margin:0;"><li>[Java SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDKインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)         | サポートしていません                                                                                                                                                                                                                                                                                                                                                                                    | [プルアップロードインターフェースExpireTimeパラメータ](https://intl.cloud.tencent.com/document/product/266/34118)                       | [レコーディング設定](https://intl.cloud.tencent.com/document/product/267/34223) |
+| 分類の指定     | [分類の指定](https://intl.cloud.tencent.com/document/product/266/33890) | サポートしていません         | <ul style="margin:0;"><li> [Java SDKインターフェースClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDKインターフェースClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDKインターフェースClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDKインターフェース ClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDKインターフェースClassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDKインターフェースclassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [クライアントからのアップロード署名classIdパラメータ](https://intl.cloud.tencent.com/document/product/266/33922)                                                                                                                                                                                                                  | [プルアップロードインターフェースclassIdパラメータ](https://intl.cloud.tencent.com/document/product/266/34118) | サポートしていません                                  |
 
 #### ビデオ処理およびイベント通知関連
 
-- 自動ビデオ処理：メディアのアップロードと同時に[タスクフロー](https://intl.cloud.tencent.com/document/product/266/33931) を指定すると、アップロードの完了後にVODはこのタスクフローを自動的に実行します。よくあるケース：ビデオのスタートフレームの画像をキャプチャしてカバーにする、トランスコード、インテリジェントコンテンツ認識など。
+- 自動ビデオ処理：メディアのアップロードと同時に[タスクフロー](https://intl.cloud.tencent.com/document/product/266/33931) を指定すると、アップロードの完了後にVODはこのタスクフローを自動的に実行します。よくあるケース：ビデオのスタートフレームの画像をキャプチャしてカバーにする、トランスコード、コンテンツ審査など。
 - ビデオ処理イベント通知のパススルーフィールド：自動ビデオ処理が有効になっている場合は、処理が完了した後、VODバックエンドはイベント通知を開始して、このフィールドをパススルーします。
 - アップロードイベント通知のパススルーフィールド：アップロードが完了後、VODバックエンドはイベント通知を開始してこのフィールドをパススルーします。
 
 各種アップロード方法のサポート状況と使用法は下表のとおりです。
 
-| 機能         | コンソールからのローカルアップロード                                               | コンソールからのプルアップロード | サーバーからのアップロード                                                   | クライアントからのアップロード                                                     | APIからのプルアップロード                                               | CSSレコーディング                                                 |
+| 機能         | コンソールからのローカルアップロード                                               | コンソールからのプルアップロード | サーバーからのアップロード                                                   | クライアントからのアップロード                                                     | APIからのプルアップロード                                               | CSSレコーディング                                                 |　　　　
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- | -------- |
 | 自動ビデオ処理             | [アップロード後に自動的にビデオ処理を実行](https://intl.cloud.tencent.com/document/product/266/33890) | サポートしていません                  | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)                                                                                                                                             | [クライアントからのアップロード署名procedureパラメータ](https://intl.cloud.tencent.com/document/product/266/33922)     | [プルアップロードインタフェースProcedureパラメータ](https://intl.cloud.tencent.com/document/product/266/34118)      | サポートしていません   |
-| ビデオ処理イベント通知のパススルーフィールド | サポートしていません                                                                                                         | サポートしていません            | サポートしていません     | クライアントからのアップロード署名sessionContextパラメータ                                                                                                                           | [プルアップロードインタフェースSessionContextパラメータ](https://intl.cloud.tencent.com/document/product/266/34118) | サポートしていません   |
-| アップロードイベント通知のパススルーフィールド     | サポートしていません                                                       | サポートしていません        | <ul style="margin:0;"><li>[Java SDKインタフェース SourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDKインタフェースSourceContextパラメータ](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [クライアントからのアップロード署名sourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33922) | サポートしていません                                                          | サポートしていません   |
+| ビデオ処理イベント通知のパススルーフィールド | サポートしていません                                                                                                         | サポートしていません            | サポートしていません     | クライアントからのアップロード署名sessionContextパラメータ                                                                                                                           | [プルアップロードインタフェースSessionContextパラメータ](https://intl.cloud.tencent.com/document/product/266/34118) | サポートしていません   |                                                               
+| アップロードイベント通知のパススルーフィールド     | サポートしていません                                                       | サポートしていません        | <ul style="margin:0;"><li>[Java SDKインタフェース SourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDKインタフェースSourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [クライアントからのアップロード署名sourceContextパラメータ](https://intl.cloud.tencent.com/document/product/266/33922) | サポートしていません                                                          | サポートしていません   |
 
 #### アップロード制御関連
 
@@ -322,11 +207,11 @@ VODのメディアアップロードは、メディア資産管理関連、ビ�
 
 | 機能         | コンソールからのローカルアップロード                                               | コンソールからのプルアップロード | サーバーからのアップロード                                                   | クライアントからのアップロード                                                   | APIからのプルアップロード                                                 | CSSレコーディング                                |
 | -------------- | -------------------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
-| 中断からの再開       | サポートしていません               | 関連しません         | サポートしていません| <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | 関連しません        | 関連しません        |
-| アップロードの一時停止と再開 | サポートしていません               | 関連しません         | サポートしていません                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | 関連しません       | 関連しません                                      |
-| アップロードのキャンセル       | ブラウザページを更新または終了します | 関連しません         | サポートしていません                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | 関連しません       | [レコーディングタスクの終了](https://intl.cloud.tencent.com/document/product/267/30837) |
-| 中断からの再開       | サポートしていません               | 関連しません         | サポートしていません                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | 関連しません       | 関連しません                                      |
-| マルチパートアップロード       | 有効化済み               | 関連しません         | <ul style="margin:0;"><li> [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0) | <ul style="margin:0;"><li>Web SDK はデフォルトで有効になっています</li><li>Android SDKはデフォルトで有効になっています</li><li>iOS SDKはデフォルトで有効になっています</li> | 関連しません       | 関連しません                                                      |
+| 中断からの再開       | サポートしていません               | 関連しません         | サポートしていません| <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | 関連しません        | 関連しません            |
+| アップロードの一時停止と再開 | サポートしていません               | 関連しません         | サポートしていません                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | 関連しません       | 関連しません                                                       |
+| アップロードのキャンセル       | ブラウザページの更新または終了 | 関連しません         | サポートしていません                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | 関連しません       | [レコーディングタスクの終了](https://intl.cloud.tencent.com/document/product/267/30837) |
+| アップロード進行状況の取得   | デフォルトで進行状況をページに表示     | サポートしていません         | サポートしていません                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | サポートしていません       | 関連しません                                                       |
+| マルチパートアップロード       | 有効化済み               | 関連しません         | <ul style="margin:0;"><li> [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0) | <ul style="margin:0;"><li>Web SDK はデフォルトで有効になっています</li><li>Android SDKはデフォルトで有効になっています</li><li>iOS SDKはデフォルトで有効になっています</li> | 関連しません       | 関連しません                                                      |
 
 ### 制限
 
@@ -356,5 +241,6 @@ VODのメディアアップロードは、メディア資産管理関連、ビ�
 <td><ul style="margin:0;"><li>MP4/FLV 形式は48.82TB（50,000GB）です</li><li>HLS形式はサイズに制限はありません</li><li> その他制限は <a href="https://intl.cloud.tencent.com/document/product/267/31563">CSSレコーディングに依存します</a></td>
 </tr>
 </tbody></table>
+
 - ファイル数量：制限がありません。
 

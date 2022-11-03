@@ -10,7 +10,7 @@
 - スクリーンキャプチャにより、現在の再生ストリームのビデオ画面を切り取ることができます。
 - ジェスチャー操作により、明るさ、音量、進行状況などを調節できます。
 - 解像度は手動で切り替えることも、ネットワーク帯域幅に応じてアダプティブに選択することもできます。
-- さまざまな倍速再生を指定でき、イメージおよびハードウェアアクセラレーションを有効にすることもできます。
+- 様々な倍速再生を指定でき、イメージおよびハードウェアアクセラレーションを有効にすることもできます。
 - 完全な機能については、[VOD Super Player - 機能リスト](https://intl.cloud.tencent.com/document/product/266/38295)をご参照ください。
 
 ### プレーヤー設定インターフェース
@@ -18,17 +18,17 @@
 | API                                                          | 説明                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [config](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a3ad68ed80140f20cf3229bf344886a04) | VOD設定です。設定情報については[TXVodPlayConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html)ご参照ください。 |
-| [isAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | startPlay後にすぐに再生するかどうかです。デフォルトではYESです。                         |
+| [isAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | startVodPlay後にすぐに再生するかどうかです。デフォルトではYESです。                         |
 | [token](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | HLSのtokenを暗号化します。この値を設定すると、プレーヤーはURL内のファイル名の前に`voddrm.token.TOKEN TextureView`を自動的に追加します。 |
 | [loop](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a1cdc15a39387295573f41caee9a05932) | SurfaceViewを繰り返し再生するかどうかです。                                   |
 | [enableHWAcceleration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#aa3ea979a6be5feba0da24f2b18555395) | ビデオレンダリングのコールバックです。（ハードウェアデコードのみサポート）                                 |
-| setExtentOptionInfo                                          | プレーヤーサービスパラメータを設定します。パラメータ形式は<NSString *, id>です               |
+| [setExtentOptionInfo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a842c8863f91f274031be0109a5cb28f5)                                          | プレーヤーの業務パラメータを設定します。パラメータの形式は<NSString *, id>です               |
 
 ### 再生基本インターフェース  
-| API                                                          | 説明                        |
+| API                                                          | 説明                       |
 | ------------------------------------------------------------ | --------------------------- |
-| [startPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#ac1af59fe9e4bc2b390661787097d2c8b) | HTTP URL形式の再生アドレスです。 |
-| [startPlayWithParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a0b4db90eafbc8c4d9be498e5ffefe961) | fileId形式で再生します。 |
+| [startVodPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a89ac47a6b808c8ca424a65adb8870bc6) | HTTP URL形式のアドレスを再生します。バージョン10.7からは、`startPlay`が`startVodPlay`に変更になり、正常に再生を行うには、`V2TXLivePremier#setLicence`または`TXLiveBase#setLicence`でのLicenseの設定が必要になりました。これを行わなければ再生が失敗します（ブラックスクリーン）。設定はグローバルで1回行うだけです。ライブストリーミングLicense、UGSV Licenseおよびビデオ再生Licenseがすべて使用できます。 |
+| [startVodPlayWithParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#acfae73abaadc60e2e1091ffae0c5c700) | fileId形式で再生します。HTTP URL形式のアドレスを再生します。バージョン10.7からは、`startPlayWithParams`が`startVodPlayWithParams`に変更になり、正常に再生を行うには、`V2TXLivePremier#setLicence`または`TXLiveBase#setLicence`でのLicenseの設定が必要になりました。これを行わなければ再生が失敗します（ブラックスクリーン）。設定はグローバルで1回行うだけです。ライブストリーミングLicense、UGSV Licenseおよびビデオ再生Licenseがすべて使用できます。 |
 | [stopPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a7d59ca6180c4af0eb7bd63c08161f84d) | 再生を停止します。 |
 | [isPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a8438e3403946accc1986a05b89ee7b03) | 再生中かどうかです。      |
 | [pause](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a7167f5c196fc5e167bfabde1a730e81d) | 再生を一時停止し、ストリーミングデータの取得を停止し、最後の1フレームの画面を保持します。 |
@@ -55,7 +55,7 @@
 
 ### オーディオ関連インターフェース
 
-| API                                                          | 説明                          |
+| API                                                          | 説明                       |
 | ------------------------------------------------------------ | ----------------------------- |
 | [setMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a861e656ed3fbdd5522fdf8801c07ab83) | ミュート再生にするかどうかを設定します。            |
 | [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#ac92633d1cdfff1f93f48b7aec1d35b98) | 音量を設定します。範囲は0～100です。 |
@@ -111,47 +111,47 @@ VODプレーヤー設定クラスです。
 | [smoothSwitchBitrate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#aa1caeddde1f950ec7965dcc721109928) | マルチビットレートHLSへのスムーズな切り替えを行います。デフォルトではfalseです。                             |
 | [progressInterval](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#a943e212cbd5e3d89de0529ab7c6042fb) | 進行状況コールバックの間隔を設定します。単位はミリ秒です。                                 |
 | [maxBufferSize](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#aa4934cef81784d3a195a5d95a43953f5) | 最大プリロードサイズです。単位はMBです。                                    |
-| maxPreloadSize                                               | プリロードの最大バッファサイズを設定します。単位はMBです。                           |
-| firstStartPlayBufferTime                                     | 最初のキャッシュにロードする必要があるデータ時間を設定します。単位はmsで、デフォルト値は100msです。          |
-| nextStartPlayBufferTime                                      | バッファ時（バッファデータが不十分であることによる二次バッファ、またはseekによるドラッグバッファ）に少なくともどのくらいのデータをキャッシュするとバッファを終了できるかです。単位はmsで、デフォルト値では250msです。 |
-| overlayKey                                                   |  HLSセキュリティ強化暗号化/復号keyを設定します。                                   |
-| overlayIv                                                    | HLSセキュリティ強化暗号化/復号Ivを設定します。                                    |
+| maxPreloadSize                                               | プリロードされた最大バッファサイズをMB単位で設定します。                           |
+| firstStartPlayBufferTime                                     | 初回キャッシュとしてロードするために必要な時間をで設定します。単位はmsで、デフォルト値は100です。          |
+| nextStartPlayBufferTime                                      | バッファリング時（バッファリングデータ不足による二次バッファリング、またはseekによるドラッグバッファリング）に、最低どの程度のデータをバッファリングすればバッファリングが終了するか。単位はmsで、デフォルト値は250msです。|
+| overlayKey                                                   | HLSのSecurity Reinforceの暗号復号keyを設定します。                                   |
+| overlayIv                                                    | HLSのSecurity Reinforceの暗号復号Ivを設定します。                                    |
 | extInfoMap                                                   | 拡張情報を設定します。                                               |
-| preferredResolution                                          | 再生HLSに複数のコードストリームがある場合、設定したpreferredResolutionに応じて最適なコードストリームを選択して再生を開始します *。preferredResolutionは幅と高さを乗算（width * height）します。再生開始前に設定された場合のみ有効です。 |
-| enableRenderProcess                                          | ロード後にレンダリングの後処理サービス(例えば解像度プラグインサービス）を許可するかどうかです。デフォルトでは有効です。     |
+| preferredResolution                                          | 複数のビットストリームのHLSを再生する場合、設定されたpreferredResolutionに基づいて最適なビットストリームを選択して再生を開始する*が、preferredResolutionは幅と高さの積（width*height）であり、再生開始前に設定します。|
+| enableRenderProcess                                          | 後レンダリング後処理サービス（超解像プラグインサービスなど）のロードが許可されているかどうか。デフォルトではオンです。     |
 
 ## TXPlayerGlobalSetting
 
-VODプレーヤーのグローバル設定クラス
+VODプレーヤーグロバール設定クラス
 
-| API                | 説明                                                         |
+| API                                                          | 説明                   |
 | ------------------ | ------------------------------------------------------------ |
-| setCacheFolderPath | 再生エンジンのcacheディレクトリを設定します。設定後、プリダウンロード、プレーヤーなどは優先的にこのディレクトリから読み取りおよび保存します |
-| setMaxCacheSize    | 再生エンジンの最大キャッシュのサイズを設定します。設定後は設定値に応じて自動的にCacheディレクトリのファイルをクリーンアップします。単位はMBです。 |
+| setCacheFolderPath | 再生エンジンのcacheディレクトリを設定します。設定後、プレダウンロード、プレーヤーなどが優先的にこのディレクトリから読み込まれ、保存されます |
+| setMaxCacheSize    | 再生エンジンの最大キャッシュサイズを設定します。設定すると、設定値に基づいてCacheディレクトリのファイルが自動的にクリーンアップされます。単位MB。|
 
 ## TXVodPreloadManager
 
-VODプレーヤーのプリダウンロードのインターフェースクラス
+オンデマンドプレーヤーのプリダウンロードインターフェースクラス
 
-| API           | 説明                                                         |
+| API                                                          | 説明                   |
 | ------------- | ------------------------------------------------------------ |
 | sharedManager | TXVodPreloadManagerインスタンスオブジェクトを取得します。シングルトンモードです。                    |
-| startPreload  | プリダウンロードを有効化する前に、まず再生エンジンのキャッシュディレクトリTXPlayerGlobalSetting#setCacheFolderPathとキャッシュサイズTXPlayerGlobalSetting#setMaxCacheSizeを設定してください。 |
-| stopPreload   | プリダウンロードの停止                                                 |
+| startPreload  | プリダウンロードを開始する前に、再生エンジンのキャッシュディレクトリTXPlayerGlobalSetting#setCacheFolderPathとキャッシュサイズTXPlayerGlobalSetting#setMaxCacheSizeをあらかじめ設定してください。|
+| stopPreload   | プリダウンロードを停止します                                                   |
 
 ## TXVodDownloadManager
 
-VODプレーヤーのビデオダウンロードインターフェースクラス
+オンデマンドプレーヤーのビデオダウンロードインターフェースクラス
 
-| API                      | 説明                                                         |
+| API                                                          | 説明                   |
 | ------------------------ | ------------------------------------------------------------ |
-| shareInstance            |  TXVodDownloadManagerインスタンスオブジェクトを取得します。シングルトンモードです。                   |
-| setDownloadPath          | ダウンロードのルートディレクトリを設定します。                                               |
-| setHeaders               | ダウンロード HTTPヘッダーを設定します。                                               |
-| setListener              | ダウンロードのコールバック方法を設定します。ダウンロード前に設定する必要があります。                             |
+| shareInstance            | TXVodDownloadManagerインスタンスオブジェクトを取得します。シングルトンモードです。                   |
+| setDownloadPath          | ダウンロードルートを設定します。                                               |
+| setHeaders               | ダウンロードHTTPヘッダーを設定します。                                               |
+| setListener              | ダウンロードのコールバックメソッドを設定します。ダウンロード前に設定しておく必要があります。                             |
 | startDownloadUrl         | URL方式でダウンロードを開始します。                                            |
 | startDownload            | FileID方式でダウンロードを開始します。                                         |
-| stopDownload             | ダウンロードを停止し、ITXVodDownloadListener.onDownloadStopがコールバックされると正常に停止します。 |
+| stopDownload             | ダウンロードを停止し、ITXVodDownloadListener.onDownloadStopがコールバックに成功しました。|
 | deleteDownloadFile       | ダウンロードファイルを削除します。                                                 |
 | deleteDownloadMediaInfo  | ダウンロード情報を削除します。                                                 |
 | getDownloadMediaInfoList | すべてのユーザーのダウンロードリスト情報を取得します。                                   |
@@ -160,16 +160,16 @@ VODプレーヤーのビデオダウンロードインターフェースクラ�
 
 ## ITXVodDownloadListener
 
-Tencent Cloudビデオダウンロードのコールバック通知です。
+Tencent Cloudビデオダウンロードコールバック通知。
 
 | API                | 説明                                         |
 | ------------------ | -------------------------------------------- |
-| onDownloadStart    | ダウンロードを開始します。                                     |
-| onDownloadProgress | ダウンロード進捗を更新します。                                 |
-| onDownloadStop     | ダウンロードを停止します。                                    |
-| onDownloadFinish   | ダウンロードを終了します。                                     |
-| onDownloadError    | ダウンロードプロセスでエラーが発生しました。                           |
-| hlsKeyVerify       | HLSをダウンロードし、暗号化されたファイルに遭遇すると、復号Keyを外部チェッカーに渡します。 |
+| onDownloadStart    | ダウンロード開始。                                     |
+| onDownloadProgress | ダウンロードの進行状況の更新。                                 |
+| onDownloadStop     | ダウンロード停止。                                    |
+| onDownloadFinish   | ダウンロードの終了。                                     |
+| onDownloadError    | ダウンロード中にエラーが発生しました。                           |
+| hlsKeyVerify       | HLSをダウンロードし、暗号化されたファイルに遭遇すると、復号化されたKeyを外部検証に渡します。|
 
 
 
@@ -179,7 +179,7 @@ Tencent Cloudビデオダウンロードのコールバック通知です。
 
 | code | イベントの定義                   | 意味の説明                                                    |
 | ---- | -------------------------- | ----------------------------------------------------------- |
-| 2004 | PLAY_EVT_PLAY_BEGIN        | ビデオ再生を開始します（進捗インジケータが表示されている場合は、この時点で停止します）。                |
+| 2004 | PLAY_EVT_PLAY_BEGIN        | ビデオの再生が開始されます（もしくるくると回る表示が出たら停止します）。                |
 | 2005 | PLAY_EVT_PLAY_PROGRESS     | ビデオ再生の進行状況です。現在の再生の進行状況、ロードの進行状況および全体の長さを通知します。      |
 | 2007 | PLAY_EVT_PLAY_LOADING      | ビデオ再生をloading中です。再開できれば、その後にLOADING_ENDイベントが発生します。 |
 | 2014 | PLAY_EVT_VOD_LOADING_END   | ビデオ再生ロードを終了します。ビデオは引き続き再生されます。                       |
@@ -195,7 +195,7 @@ Tencent Cloudビデオダウンロードのコールバック通知です。
 
 | code  | イベントの定義                          | 意味の説明                                                     |
 | ----- | --------------------------------- | ------------------------------------------------------------ |
-| -2301 | PLAY_ERR_NET_DISCONNECT           | ネットワーク接続が切断され、かつ複数回再接続しても再開できません。これ以上のリトライを行うには、ご自身で再生を再起動してください。    |
+| -2301 | PLAY_ERR_NET_DISCONNECT           | ネットワーク接続が切断され、かつ複数回再接続しても再開できません。それ以上のリトライを行うには、ご自身で再生を再起動してください。    |
 | -2305 | PLAY_ERR_HLS_KEY                  | HLS復号keyの取得に失敗しました。                                      |
 | 2101  | PLAY_WARNING_VIDEO_DECODE_FAIL    | 現在のビデオフレームのデコードに失敗しました。                                         |
 | 2102  | PLAY_WARNING_AUDIO_DECODE_FAIL    | 現在のオーディオフレームのデコードに失敗しました。                                         |

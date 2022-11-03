@@ -1,4 +1,5 @@
 ## Overview
+Based on Tencent Cloud's globally deployed acceleration network, client upload acceleration intelligently selects the optimal access point and route for data transfer, increasing upload speed and success rate. In addition, using the QUIC protocol for transmission makes for more reliable data transfers under poor network conditions.
 VOD uses the following methods to accelerate video upload from clients.
 <table ><thead ><tr>
 <th style="width:200px">Method</th><th >Description</th></tr>
@@ -8,7 +9,7 @@ VOD uses the following methods to accelerate video upload from clients.
 </tr>
 <tr>
 <td>Smart acceleration network</td>
-<td>Tencent Cloud's acceleration network is used to intelligently select the optimal linkage to transfer the data to the storage center.</td>
+<td>Leveraging Tencent Cloud's acceleration network, VOD can intelligently select the optimal route to transfer data to the storage center.</td>
 </tr>
 <tr>
 <td>Support for transfer over the QUIC protocol</td>
@@ -17,14 +18,14 @@ VOD uses the following methods to accelerate video upload from clients.
 </tbody>
 </table>
 
-
+ 
 
 ## Use Cases
 <table ><thead ><tr>
 <th style="width:200px">Scenario</th><th >Description</th></tr>
 </thead><tbody ><tr>
 <td>Long-distance data upload</td>
-<td>Upload performance tends to be poor if an end user is far away from a VOD storage center (for example, if they are located in a different region or continent). When you enable client upload acceleration, Tencent Cloud will route an upload request to its nearest edge node and use its acceleration network for data transfer, greatly improving the upload performance.</td>
+<td>Upload performance tends to be poor if an end user is far away from a VOD storage center (for example, if they are located in a different region or continent). If you enable client upload acceleration, Tencent Cloud will route an upload request to its nearest edge node and use its acceleration network for data transfer, greatly improving the upload performance.</td>
 </tr>
 <tr>
 <td>Data upload under poor network conditions</td>

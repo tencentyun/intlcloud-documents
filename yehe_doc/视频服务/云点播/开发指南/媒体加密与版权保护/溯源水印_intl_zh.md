@@ -47,7 +47,7 @@
 
 ### 打溯源水印
 
-调用 [ProcessMeida 接口](https://www.tencentcloud.com/document/product/266/34125) ，对视频发起打溯源水印的任务，可以选择转码或者转自适应码流：
+调用 [ProcessMeida 接口](https://intl.cloud.tencent.com/document/product/266/34125) ，对视频发起打溯源水印的任务，可以选择转码或者转自适应码流：
 
 #### 转码：
 * 选择封装格式为 HLS 的转码模版，如预制模版 100230 ，填写 MediaProcessTask.TranscodeTaskSet.Definition=100230。
@@ -62,7 +62,7 @@
 需要为所有的付费客户，唯一关联一个6位16进制的整数，表示观看者 ID ，名为 uv。后续将以 uv 作为溯源到观看者的依据。
 
 * 如果您使用云点播的 [播放器 SDK ](https://intl.cloud.tencent.com/document/product/266/33977) 或 [第三方播放器插件](https://intl.cloud.tencent.com/document/product/266/42095)，业务服务器需要为每一次播放请求派发 [播放器签名](https://intl.cloud.tencent.com/document/product/266/38099)，[签名参数](https://intl.cloud.tencent.com/document/product/266/38099#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) 中的 uv 填写观看者的 uv。
-* 如果您不使用云点播的播放器 SDK，则需要按照 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) 的使用规则，在 URL 中的 QueryString 中拼上 uv 参数，参数填写观看者的 uv。
+* 如果您不使用云点播的播放器 SDK，则需要按照 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986) 的使用规则，在 URL 中的 QueryString 中拼上 uv 参数，参数填写观看者的 uv。
 
 ### 提取水印
 
