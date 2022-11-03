@@ -7,4 +7,4 @@
 
 ## Overdue Payment and Service Suspension
 
-[How do I disable and/or stop being billed for CLS services?](https://www.tencentcloud.com/document/product/614/50244#.E5.A6.82.E4.BD.95.E5.81.9C.E7.94.A8-cls-.E6.9C.8D.E5.8A.A1.E6.88.96.E5.81.9C.E6.AD.A2.E8.AE.A1.E8.B4.B9.EF.BC.9F)
+[How can I disable the CLS service and stop being charged?](https://www.tencentcloud.com/document/product/614/50244#.E5.A6.82.E4.BD.95.E5.81.9C.E7.94.A8-cls-.E6.9C.8D.E5.8A.A1.E6.88.96.E5.81.9C.E6.AD.A2.E8.AE.A1.E8.B4.B9.EF.BC.9F)

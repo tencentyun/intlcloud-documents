@@ -2,7 +2,7 @@ CLS supports self-service bill and usage query in the following steps:
 
 ## Viewing Bills
 
-### Viewing Log Topic Costs
+### Viewing log topic costs
 
 1. Log in to the **Billing Center** and enter the [Bill Details](https://console.cloud.tencent.com/expense/bill/summary?type=resource) page.
 2. In the **All Products** drop-down list, select **CLS** to view CLS bills.
@@ -17,7 +17,7 @@ You can view the following information on the page:
  - Cost and proportion of each billable item in the bill of the log topic: When doing cost optimization, you can choose different policies based on the proportions of the traffic cost and storage cost. If the traffic cost occupies a large proportion, you can reduce the amount of logs printed on the log collection client or filter out useless logs through data processing. If the storage cost occupies a large proportion, in addition to the above two methods, you can shorten the log storage duration.
  - Monthly cost trend in the bill of the log topic: The information can be used for year-on-year analysis to determine whether there is an abnormal sudden increase in the cost.
 
-### Classifying Services by Cost Allocation Tags
+### Classifying services by cost allocation tags
 
 When CLS is shared by different business departments, the CLS costs need to be allocated among the business departments. In this case, you can use the [cost allocation tag](https://intl.cloud.tencent.com/document/product/555/32276) feature to associate the log topic fees with the business departments.
 
@@ -59,14 +59,14 @@ When CLS is shared by different business departments, the CLS costs need to be a
 </dx-tabs>
 
 
-### Setting an Alert for CLS Costs
+### Setting an alert for CLS costs
 
 >!
-> - Spend data has a delay of 2 days. It can be used for cost analysis and budget planning, but not for settlement or reconciliation.
-> - The spend analysis feature is currently in beta test.
+> - Cost data has a delay of 2 days. It can be used for cost analysis and budget planning, but not for settlement or reconciliation.
+> - The cost analysis feature is currently in beta test.
 >
 
-1. Log in to the Billing Center, and enter the [Spend Analysis](https://console.cloud.tencent.com/expense/cost/analysis) page.
+1. Log in to the Billing Center, and enter the [Cost Analysis](https://console.cloud.tencent.com/expense/cost/analysis) page.
 2. Click **Set Alert**.
 
 3. Click **New**.
@@ -74,16 +74,16 @@ When CLS is shared by different business departments, the CLS costs need to be a
 4. In the pop-up window, select **Cloud Log Service** for **Product** in the **Scope** area, and configure other parameters as needed.
 
 Two alert types are supported: daily data alert and monthly data alert.
- - Daily data alert has three modes: day-over-day, month-over-month, and fixed value (compare your daily spend against a fixed value).
+ - Daily data alert has three modes: day-over-day, month-over-month, and fixed value (compare your daily cost against a fixed value).
     Daily data alert formulas:
-    - MoM = ABS ((Daily spend this month − Spend on the same day last month) / Spend on the same day last month × 100%)
-    - DoD = ABS ((Daily spend on a day − Spend on the previous day) / Spend on the previous day × 100%)
-    - Fixed value = Compare spend in the current month against a fixed value
- - Monthly data alert has two modes: month-over-month and fixed value (compare your monthly spend against a fixed value).
+    - MoM = ABS ((Daily cost this month − Cost on the same day last month) / Cost on the same day last month × 100%)
+    - DoD = ABS ((Daily cost on a day − Cost on the previous day) / Cost on the previous day × 100%)
+    - Fixed value = Compare cost in the current month against a fixed value
+ - Monthly data alert has two modes: month-over-month and fixed value (compare your monthly cost against a fixed value).
     Monthly data alert formulas:
-    - MoM = ABS ((Spend this month - Spend last month) / Spend last month × 100%)
-    For example, on August 18, spend in the current month is your total spend between August 1 and August 16, which is compared against your spend between July 1 and July 16.
-    - Fixed value = Compare spend in the current month against a fixed value
+    - MoM = ABS ((Cost this month - Cost last month) / Cost last month × 100%)
+    For example, on August 18, cost in the current month is your total cost between August 1 and August 16, which is compared against your cost between July 1 and July 16.
+    - Fixed value = Compare cost in the current month against a fixed value
  - You can configure alert notifications by product and billing mode.
     Product: All purchased products of the current user are displayed. The logic of the billing mode is similar.
 5. Click **Save**.

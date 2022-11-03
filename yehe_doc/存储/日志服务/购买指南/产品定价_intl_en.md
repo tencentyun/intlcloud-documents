@@ -1,8 +1,8 @@
-## Pay-As-You-Go Pricing
+## Pay-as-You-Go Pricing
 
-- CLS is pay-as-you-go by default upon activation. For more information, see [Pay-As-You-Go](https://www.tencentcloud.com/document/product/614/49672).
-After you know [CLS billable items](https://intl.cloud.tencent.com/document/product/614/37509), you can evaluate required resource amount (such as monthly traffic, storage usage, and number of requests) based on your own business needs. You can also use the [CLS price calculator](https://buy.intl.cloud.tencent.com/price/cls/calculator) to estimate the cost based on your daily log volume or the number of cloud product requests, obtain pay-as-you-go purchase suggestions, and export the cost estimate list.
-- For more information about CLS billing modes and billing cycles, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509). For details about pay-as-you-go billing examples, see the billing examples in Billing Overview.
+- CLS is pay-as-you-go by default upon activation. For more information, see [Pay-as-You-Go](https://www.tencentcloud.com/document/product/614/49672).
+After you learn about [CLS billable items](https://intl.cloud.tencent.com/document/product/614/37509), you can evaluate required resource usage (such as monthly traffic, storage usage, and number of requests) based on your business needs. You can also use the [price calculator](https://buy.intl.cloud.tencent.com/price/cls/calculator) to estimate the cost based on your daily log volume or request count, obtain pay-as-you-go purchase suggestions, and export the estimation list.
+- For more information about billing modes and cycles as well as billing examples, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
 
 <table>
    <tr>
@@ -125,7 +125,7 @@ After you know [CLS billable items](https://intl.cloud.tencent.com/document/prod
    </tr>
 <tr>
       <td>South America</td>
-      <td nowrap="nowrap">Sao Paulo</td>
+      <td nowrap="nowrap">São Paulo</td>
       <td>0.041</td>
       <td>0.141</td>
       <td>0.041</td>

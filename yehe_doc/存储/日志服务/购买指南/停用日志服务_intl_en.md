@@ -1,11 +1,11 @@
-## How Do I Disable and/or Stop Being Billed for CLS Services?
+## How can I disable the CLS service and stop being charged?
 
 There is no one-click option for disabling CLS. If you decide to stop using CLS, you can avoid any further billing by permanently deleting all of your CLS resources such as log topics. There is no need to de-register your account, and if you use other Tencent Cloud products, avoid doing so as it will affect your other services.
 
-CLS is billed on a postpaid basis. You can query the billing information about related resources the day after you delete the resources. As shown below, you can view the bill generated on September 15 on September 16:
+CLS is pay-as-you-go. You can query the billing information about related resources the day after you delete them. As shown below, you can view the bill generated on September 15 on September 16:
 ![](https://qcloudimg.tencent-cloud.cn/raw/5467f1c6122851224c6d45b09ffd74c0.png)
 
-## Deleting All Log Topics
+## Deleting all log topics
 
 >! Demo log topics will not incur fees, so you can experience them at ease.
 >
@@ -18,7 +18,7 @@ You can select a region in the upper left corner to switch to another region whe
 3. Return to the [Overview](https://console.cloud.tencent.com/cls/overview) page, and view the number of log topics. If the number of log topics is 0, it indicates that log topic resources have been cleared and no related fees will be incurred.
 
 
-## Related Topics
+## Related documentation
 
-- For more information on the CLS overdue policy (data retention and destruction and billing description), see CLS [Payment Overdue](https://intl.cloud.tencent.com/document/product/614/50246).
-- If you still have any questions about CLS billing, see [FAQs](https://www.tencentcloud.com/document/product/614/50265) about billing for answers.
+- For more information on policies about data retention/termination and billing, see [Payment Overdue](https://intl.cloud.tencent.com/document/product/614/50246).
+- If you still have any questions about CLS billing, see [FAQs](https://www.tencentcloud.com/document/product/614/50265).
