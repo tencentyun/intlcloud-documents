@@ -37,7 +37,7 @@ You have created a namespace.
 </tr>
 <tr>
 <td>Topic Name</td>
-<td>The topic name in the format of `pulsar-****/namespace/topicName`.</td>
+<td>The topic name in the format of <code>pulsar-****/namespace/topicName</code>.</td>
 </tr>
 <tr>
 <td>Monitoring</td>
@@ -49,7 +49,7 @@ You have created a namespace.
 </tr>
 <tr>
 <td>Creator</td>
-<td>**User** or **System**.</td>
+<td><b>User</b> or <b>System</b>.</td>
 </tr>
 <tr>
 <td>Partition Count</td>
