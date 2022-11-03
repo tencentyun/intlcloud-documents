@@ -124,6 +124,7 @@ A video file ID is returned by the server after the video is uploaded.
    2. For server-side upload, you can get the file ID in the response of the CommitUpload API.
 If the video you want to play is already saved with VOD, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media) to view its file ID.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
+
 <dx-alert infotype="notice">
 <li>To play by VOD file ID, you need to use the Adaptive-HLS template (ID: 10) to transcode the video or use the player signature `psign` to specify the video to play; otherwise, the playback may fail. For more information on how to transcode a video and generate `psign`, see [Play back a video with the Player component](https://intl.cloud.tencent.com/document/product/266/38098) and [Player Signature](https://intl.cloud.tencent.com/document/product/266/38099).</li>
 <li>If a "no v4 play info" error occurs, it indicates that you haven’t transcoded the video or used the player signature correctly. Troubleshoot the issue according to the above documents or get the playback URL of the video and play it by [URL](#url).</li>
