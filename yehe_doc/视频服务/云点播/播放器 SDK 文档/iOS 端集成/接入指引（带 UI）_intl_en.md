@@ -121,7 +121,7 @@ This step describes how to play a video. You can play a video by [VOD file ID](#
 A video file ID is returned by the server after the video is uploaded.
 
    1. After a video is published from a client, the server will return a file ID to the client.
-   2. For server-side upload, you can get the file ID in the response of the [CommitUpload](https://cloud.tencent.com/document/product/266/9757) API.
+   2. For server-side upload, you can get the file ID in the response of the CommitUpload API.
 If the video you want to play is already saved with VOD, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media) to view its file ID.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
 >!
