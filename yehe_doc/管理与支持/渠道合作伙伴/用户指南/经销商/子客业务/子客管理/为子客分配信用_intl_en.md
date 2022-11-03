@@ -41,8 +41,7 @@ You can enter a negative value to withdraw the available credit of a customer. T
 
 >?
 >1. When the available credit of a customer is 0, the customer's service will not be suspended, and the customer can still purchase new services. For the impact of account assets (credit + voucher) on service purchase and suspension, see [here](https://intl.cloud.tencent.com/document/product/1085/48346).
->2. You currently can't manually restrict new purchases or suspend services for customers.
->3. You can contact your channel manager to add you to the allowlist of the customer service suspension rule to shorten the service suspension period. For detailed rules, see [Customer Service Suspension Rules](https://www.tencentcloud.com/document/product/1085/50550).
+>2. You can contact your channel manager to add you to the allowlist of the customer service suspension rule to shorten the service suspension period. For detailed rules, see [Customer Service Suspension Rules](https://www.tencentcloud.com/document/product/1085/50550).
 >
 
 
