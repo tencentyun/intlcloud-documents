@@ -77,10 +77,8 @@ pullConsumer.setCustomizedTraceTopic(null);
     - **By message ID:** A fast exact query method.
     - **By message key:** A fuzzy query method that is used when you have only set the message key.
 3. Click **Query**, and the paginated results will be displayed in the list.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/e64e03f1f7aff564e6234e4100ed6660.png)
 4. Click **View Details** in the **Operation** column of the target message to view its basic information, content (message body), and parameters.
 5. Click **View Message Trace** in the **Operation** column or select the **Message Trace** tab on the details page to view the trace of the message. For more information, see [Message Trace Query Result Description](#1).
-    ![](https://qcloudimg.tencent-cloud.cn/raw/26e01a17a960deb774f23a832d22003c.png)
 
 <span id="1"></span>
 
