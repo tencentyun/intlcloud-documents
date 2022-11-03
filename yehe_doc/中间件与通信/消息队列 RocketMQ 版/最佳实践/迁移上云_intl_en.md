@@ -64,24 +64,18 @@ Set the values of `CONF_ACCESSKEY_ID` and `CONF_ACCESSKEY_SECRET` to the `Access
 ### Step 2. Create a migration task
 
 1. Log in to the [TDMQ for RocketMQ console](https://console.cloud.tencent.com/tdmq/rocket-cluster) and enter the **Cluster** page.
-2. Switch to the **Exclusive cluster** tab and click **Migration to Cloud** to enter the migration task list page. Click **Create Task** to create a migration task.
-![](https://qcloudimg.tencent-cloud.cn/raw/378cf771ace5643c67fb5f27cff14911.png)          
+2. Switch to the **Exclusive cluster** tab and click **Migration to Cloud** to enter the migration task list page. Click **Create Task** to create a migration task.       
 3. Select a migration task type:
   - **Cluster migration**: This type of task migrates metadata from the self-built RocketMQ cluster to the TDMQ for RocketMQ cluster. The migration tool will parse the part before “%” of each topic name in the open-source dashboard as the namespace name by default, so that you can create multiple logically isolated namespaces. If no topic name can be parsed in the self-built cluster, a namespace named `default` will be generated automatically.
-  - **Specified namespace import**: This type of task migrates metadata from the self-built RocketMQ cluster to a specified TDMQ for RocketMQ namespace. If there are no namespaces in topics in the self-built cluster, you can select specific topics and groups you want to import, and specify the TDMQ for RocketMQ namespaces to which they are imported to distinguish between businesses or environments.
-![](https://qcloudimg.tencent-cloud.cn/raw/865200e3dff2958fc6817aa65de63651.png)        
+  - **Specified namespace import**: This type of task migrates metadata from the self-built RocketMQ cluster to a specified TDMQ for RocketMQ namespace. If there are no namespaces in topics in the self-built cluster, you can select specific topics and groups you want to import, and specify the TDMQ for RocketMQ namespaces to which they are imported to distinguish between businesses or environments.  
 4. Upload the metadata file obtained in step 1 and select the topics and groups you want to import.
 > !Up to 1,000 topics and 1,000 groups can be imported in a single task. Excess data will fail to be imported.
-> 
-![](https://qcloudimg.tencent-cloud.cn/raw/5d8dbb349fb067adb66179d82c5b1b67.png)              
+>             
 
 
 
 ### Step 3. Check the task status
 
-After the task is successfully created, you can go to the task list to check its status. If there is too much data, it may take a period of time to load the task. Click **View Details**, and you can check the task status.
-
-![](https://qcloudimg.tencent-cloud.cn/raw/983619844f8e1446eadeeb9f0e2c9a70.png)                     
+After the task is successfully created, you can go to the task list to check its status. If there is too much data, it may take a period of time to load the task. Click **View Details**, and you can check the task status.                    
 
 If the task status is “Some failed” or “All failed”, you can filter causes of the failures in the **Task Status** column.
-![](https://qcloudimg.tencent-cloud.cn/raw/f8a2b3ee4f6aed959a7868665942aac0.png)
