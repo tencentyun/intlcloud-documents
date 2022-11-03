@@ -1,3 +1,115 @@
+## IM Flutter TUIKit 0.1.8 @2022.10.21
+- Optimized file batch download queue,allowing to select multiple file messages in one click.
+- Optimized group list widget which can be updated automatically.
+- Optimized camara shooting to support low-performance devices and automatically adjust the resolution.
+- Optimized support for customizing the color and text style of the app bar, especially on the TIMUIKitChat component.
+- Fixed that friend notes or nicknames could not be displayed in group tips.
+- Fixed video play error.
+- Fixed several issues.
+
+## IM Flutter SDK 4.1.8 @2022.10.18
+- Added support for PC platforms, including macOS and Windows.
+- Added message extension.
+- Added signaling editor.
+- Optimized and upgraded the underlying SDK.
+- Fixed the problem of converting high version JDK.
+- Fixed several issues.
+
+## IM Flutter TUIKit 0.1.7 @2022.10.18
+- Added support for large and RAW images, especially those captured from the latest versions of iOS and the iPhone 14 Pro series, compressed and formatted before automatic sending.
+- Optimized performance and stability, especially history message list and initiation.
+- Optimized initializing ' TIMUIKitChat ' as an idempotent operation.
+- Optimized loading the latest news when scrolling back to the bottom.
+- Optimized support for Flutter 2.x and 3.x series.
+- Fixed permission support for iOS photo album, only allow some pictures, .
+- Fixed several issues.
+
+## IM Flutter TUIKit 0.1.5 @2022.09.22
+- Added web support. Now you can implement TUIKit on iOS/Android/Web platforms.
+- Added check disk storage after login, controlled in `config` of `init`
+- Added `timeDividerConfig`, `notificationAndroidSound` Huawei Google push sound configuration, `isSupportMarkdown` whether the text message supports Markdown parsing, `onTapLink` in`TIMUIKitChatConfig`.
+- Removed default Emoji list due to copyright issues. You can provide TUIKit with your own list of emoticons via [tim_ui_kit_sticker_plugin](https://pub.dev/packages/tim_ui_kit_sticker_plugin).
+- Optimized disabling the display of @messages in the conversation list
+- Optimized the return value of `notificationExt/notificationBody` as `null` in `TIMUIKitChatConfig` and `MessageItemBuilder`, and in specific cases can use default values ​​as needed, which means you can control whether to use automatic Define settings without redefining the same logic in code as TUIKit.
+- Optimized to support multi-line text messages.
+- Optimized the experience of `TIMUIKitChat`. Also, to use `TIMUIKitChatController`, you need to pass in `controler`, as showed in [tutorial](https://www.tencentcloud.com/en/document/product/1047/50054).
+
+## IM Flutter SDK 4.1.3 @2022.09.21
+- Solved some web issues.
+
+## IM Flutter SDK 4.1.1+2 @2022.08.25
+- Upgraded the underlying library version to 6.6.x.
+- Full support for Flutter Web.
+
+## IM Flutter SDK 4.1.0 @2022.08.09
+- Upgraded the underlying library version.
+
+## IM Flutter TUIKit 0.1.3 @2022.08.03
+- Added user input status.
+- Added the ability to respond to message emojis.
+- Added user online status display.
+
+## IM Flutter SDK 4.0.8 @2022.07.25
+- Added an advanced interface for obtaining conversation list, which supports grouping and pulling session list by conversation type/tag.
+- Added custom tag conversation interface.
+- Added conversation grouping capability.
+- Reduced Dart version dependency to 2.0.0.
+- Supported Flutter multi-engine.
+- Supported offline push sound effect configuration on Android.
+- Supported custom user online status.
+- Upgraded the underlying library version to 6.5.x.
+
+## IM Flutter TUIKit 0.1.2 @2022.07.08
+- Fixed the issue that the original referenced third-party underlying recording library `flutter_record_plugin_plus` could not be used.
+
+## IM Flutter TUIKit 0.1.1 @2022.07.07
+- Optimized image preview.
+- Added LifeCycle hooks for each component.
+- Added mute status in group chat page.
+- Added ability to clicked and jump to the URL in the text message and the website information preview card.
+- Added TUIKit layer global event callbacks, including message language that needs to be prompted / Flutter layer error report / IM API layer error report return, TUIKit no longer pops up information, you can customize the pop-up window according to the callback and prompt language.
+- Refactored `TUIKitGroupProfile` group profile component and `TUIKitProfile` user profile component to simplify usage and super fast access.
+
+## IM Flutter SDK 4.0.7 @2022.07.07
+- Supported custom corner numbers in iOS.
+- Optimized the group application logic.
+
+## IM Flutter SDK 4.0.6 @2022.07.04
+- Upgraded the underlying library version to 6.2.x.
+- Fixed offline push info field.
+
+## IM Flutter SDK 4.0.5 @2022.07.01
+- Added user online status query
+- Supported requesting a list of historical messages by message type.
+- Supported rich text messages.
+
+## IM Flutter TUIKit 0.1.0 @2022.06.10
+- Added the atomic development capability of the `TIMUIKitChat` component, and you can assemble the chat page by yourself through various sub-components.
+- Supported ability for message modifying and updating UI.
+- Added group application approval page component.
+- Added Traditional Chinese characters to international languages.
+- Opened more custom component parameters.
+
+## IM Flutter TUIKit 0.0.9 @2022.05.30
+- Supported offline push, with the newly released [tim_ui_kit_push_plugin](https://pub.dev/packages/tim_ui_kit_push_plugin) push plugin
+- Supported Flutter 3.0
+- Optimized local preview of media messages.
+
+## IM Flutter SDK 4.0.2 @2022.05.27
+- Fixed local video path.
+
+## IM Flutter SDK 4.0.1 @2022.05.23
+- Added topic ability.
+- Added message modifying.
+
+## IM Flutter SDK 4.0.0 @2022.04.26
+- Upgraded the underlying library version to 6.2.x.
+- Fixed offline push info field.
+
+## IM Flutter TUIKit 0.0.8 @2022.04.24
+- Added group message read receipt.
+- Added a small toolbar in the lower right corner of the chat area to support returning to the bottom/displaying the number of new messages/@message reminder.
+
 ## IM Flutter SDK 3.9.3 @2022.4.20
 - Fixed the issue where the `boolValue` of a group muting tip was lost.
  - Added the `key(string)-boolValue(bool)` format in addition to the existing `key(string)-value(string)` in the callback for group information modification.
