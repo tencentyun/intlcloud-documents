@@ -19,8 +19,11 @@ Topic 是 TDMQ Pulsar 版中的核心概念。Topic 通常用来对系统生产�
    ![](https://qcloudimg.tencent-cloud.cn/raw/d0d5b0e74d259fe81a2ea1f588318394.png)
     - Topic 名称：不能为空，支持数字字母以及符号 “-\_=:.”，长度不超过128个字符。
     - Topic 类型：支持**持久化**和**非持久化**两种类型。
-      - 持久化：持久化的消息会以多副本形式落盘，保证消息不丢失，多适用于金融、交易等高可靠场景
-      - 非持久化：非持久化的消息不会落盘，会存储在 broker 的内存中，多适用于数据可靠性要求不高、流处理等场景（非持久化消息不支持消息查询和轨迹）
+      - 持久化：持久化的消息会以多副本形式落盘，保证消息不丢失，多适用于金融、交易等高可靠场景。
+      - 非持久化：非持久化主题的消息不会落盘，直接投递给当前在线的订阅，投递完成既删除。如果当前没有在线订阅，会直接删除，消息在服务端不保留。多适用于数据可靠性要求不高、流处理等场景（非持久化消息仅支持普通消息的即时收发，不支持消息查询、消息轨迹、延迟消息、消息过滤、消息回溯等功能）。
+      <dx-alert infotype="notice" title="使用注意事项：">
+      非持久化类型主题，在收发消息的时候，要填写完整的前缀为 `non-persistent://` 主题名。
+      </dx-alert>
     - 是否分区：
       - Pulsar 内部可以保证单个分区内的消息有序，即如果创建1分区的 Topic 则可以保证全局有序。
       - 单分区的 Topic 会在性能上弱于多分区 Topic，如果希望兼顾性能与有序性， 可以参见 [订阅模式](https://intl.cloud.tencent.com/document/product/1110/42923) 使用 Key-shared 模式进行消费，实现局部有序，标记同一个 key 让需要有序的消息落在同一分区即可。
@@ -38,11 +41,11 @@ Topic 是 TDMQ Pulsar 版中的核心概念。Topic 通常用来对系统生产�
 </tr>
 <tr>
 <td>监控</td>
-<td>单击 <img src = "https://qcloudimg.tencent-cloud.cn/raw/ac572a960433508f64f226e6ea218c10.png"> 查看 Topic 监控详情，关于监控指标说明请参见 <a href = "https://cloud.tencent.com/document/product/1179/66709">查看监控</a>。 </td>
+<td>单击 <img src = "https://qcloudimg.tencent-cloud.cn/raw/ac572a960433508f64f226e6ea218c10.png"> 查看 Topic 监控详情，关于监控指标说明请参见 <a href = "https://www.tencentcloud.com/document/product/1110/46519">查看监控</a>。 </td>
 </tr>
 <tr>
 <td>类型</td>
-<td>消息类型，包括：普通、全局顺序、局部顺序（关于消息类型的说明，请参见 <a href = "https://cloud.tencent.com/document/product/1179/44833"><b>消息类型</b></a>）。</td>
+<td>消息类型，包括：普通、全局顺序、局部顺序（关于消息类型的说明，请参见 <a href = "https://www.tencentcloud.com/document/product/1110/42957"><b>消息类型</b></a>）。</td>
 </tr>
 <tr>
 <td>创建来源</td>
@@ -54,7 +57,7 @@ Topic 是 TDMQ Pulsar 版中的核心概念。Topic 通常用来对系统生产�
 </tr>
 <tr>
 <td>客户端</td>
-<td><ul><li>生产者：生产者数量/生产者数量上限，点击可跳转至生产详情页，详情参见 <a href = "https://cloud.tencent.com/document/product/1179/66708"><b>查看生产者详情</b></a>。</li>
+<td><ul><li>生产者：生产者数量/生产者数量上限，点击可跳转至生产详情页，详情参见 <a href = "https://www.tencentcloud.com/document/product/1110/46520"><b>查看生产者详情</b></a>。</li>
 <li>消费者：展示消费者数量/消费者数量上限，点击可跳转至消费详情页，详情参见 <a href = "https://cloud.tencent.com/document/product/1179/44821#.E6.9F.A5.E7.9C.8B.E8.AE.A2.E9.98.85.E8.AF.A6.E6.83.85"><b>查看订阅详情</b></a>。</li></ul>
 <b>说明：</b>当展示为 warning 的橙色， 代表分数数值达到80%，当展示为 Error 红色，则代表分数数值达到90%，请及时断开不需要使用的客户端链接。
 </td>

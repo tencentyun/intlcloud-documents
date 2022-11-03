@@ -1,4 +1,4 @@
-This document describes the feature, use cases, and usage of message tag filtering in TDMQ for Pulsar.
+This document describes how to use message tag filtering in TDMQ for Pulsar.
 
 ## Overview
 
@@ -6,16 +6,19 @@ A message tag is used to categorize messages under a topic. When a producer in T
 
 If a consumer configures no tags when subscribing to a topic, all messages in the topic will be delivered to the consumer for consumption.
 
+> !Message tag is a subscription dimension. The same subscription cannot subscribe to messages with different tags; that is, messages with different tags need to be placed in different subscriptions.
+
 ## Use Cases
 
-Generally, messages with the same business attributes are stored in the same topic; for example, when an order transaction topic contains messages of order placement transactions, payment transactions, and delivery transactions, and if you want to consume only one type of transaction messages in your business, you can filter them on the client, but this will waste bandwidth resources.
+Generally, messages with the same business attributes are stored in the same topic. For example, when an order transaction topic contains messages of order placements, payments, and deliveries, and if you want to consume only one type of transaction messages in your business, you can filter them on the client, but this will waste bandwidth resources.
 
 To solve this problem, TDMQ for Pulsar supports filtering on the broker. You can set one or more tags during message production and subscribe to specified tags during consumption.
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/b8f99a8fe44f31f67367d5b64bde8b88.png)
 
 
-## Limits
+
+## Notes
 
 
 
@@ -52,7 +55,7 @@ go get -u github.com/apache/pulsar-client-go@master
 </dx-tabs>
 
 
-### Use limits of tagged message
+### Use limits of tagged messages
 
 - Tagged messages don't support batch operations. The batch operation feature is enabled by default. To use tagged messages, you need to disable it in the producer as follows:
 <dx-codeblock>
@@ -70,8 +73,8 @@ go get -u github.com/apache/pulsar-client-go@master
   })
 :::
 </dx-codeblock>
-- Tagged message filtering takes effect for only messages with tags. Messages without tags won't be filtered; that is, they will be pushed to all subscribers.
-- To enable tagged message, when sending messages, set the `Properties` field in `ProducerMessage` and set the `SubscriptionProperties` field in `ConsumerOptions` when creating consumers.
+- Tagged message filtering only takes effect for messages with tags; that is, messages without tags won't be filtered and will be pushed to all subscribers instead.
+- To enable tagged message, set the `Properties` field in `ProducerMessage` when sending messages and set the `SubscriptionProperties` field in `ConsumerOptions` when creating consumers.
 - When you set the `Properties` field in `ProducerMessage`, the `key` is the tag name, and the `value` is fixed to `TAGS`.
 - When you set the `SubscriptionProperties` field in `ConsumerOptions`, the `key` is the tag name to be subscribed to, and the `value` is the tag version (which is reserved for feature extension in the future and has no meaning currently). You can configure as follows:
 
@@ -80,7 +83,7 @@ go get -u github.com/apache/pulsar-client-go@master
 
 <dx-codeblock>
 :::  Java
-     // Send the message
+     // Send the messages
      MessageId msgId = producer.newMessage()
          .property("tag1", "TAGS")
          .value(value.getBytes(StandardCharsets.UTF_8))
@@ -88,11 +91,10 @@ go get -u github.com/apache/pulsar-client-go@master
 	  
      // Subscription parameters, which can be used to set subscription tags
      HashMap<String, String> subProperties = new HashMap<>();
-	  subProperties.put("tag1","1");
-	  subProperties.put("tag2","1");
-	  // Construct a consumer
-	  Consumer<byte[]> consumer = pulsarClient.newConsumer()
-	      // Complete path of the topic in the format of `persistent://cluster (tenant) ID/namespace/topic name`, which can be copied from **Topic Management**
+      subProperties.put("tag1","1");
+      // Construct a consumer
+      Consumer<byte[]> consumer = pulsarClient.newConsumer()
+          // Complete path of the topic in the format of `persistent://cluster (tenant) ID/namespace/topic name`, which can be copied from the **Topic** page.
          .topic("persistent://pulsar-xxxx/sdk_java/topic2")
          // You need to create a subscription on the topic details page in the console and enter the subscription name here
          .subscriptionName("topic_sub1")
@@ -100,11 +102,11 @@ go get -u github.com/apache/pulsar-client-go@master
          .subscriptionType(SubscriptionType.Shared)
          // Subscription parameters for tag subscription
          .subscriptionProperties(subProperties)
-	      // Configure consumption starting at the earliest offset; otherwise, historical messages may not be consumed
-	      .subscriptionInitialPosition(SubscriptionInitialPosition.Earliest).subscribe();
+          // Configure consumption starting at the earliest offset; otherwise, historical messages may not be consumed
+          .subscriptionInitialPosition(SubscriptionInitialPosition.Earliest).subscribe();
 :::
 :::  Go
-	   // Send the message
+	   // Send the messages
 	   if msgId, err := producer.Send(ctx, &pulsar.ProducerMessage{
 	              Payload: []byte(fmt.Sprintf("hello-%d", i)),
 	     Properties: map[string]string{
@@ -116,10 +118,10 @@ go get -u github.com/apache/pulsar-client-go@master
 
     // Create a consumer
          consumer, err := client.Subscribe(pulsar.ConsumerOptions{
-   	            Topic:            "topic-1",
-   	            SubscriptionName: "my-sub",
+                Topic:            "topic-1",
+                SubscriptionName: "my-sub",
                	SubscriptionProperties: map[string]string{"tag1": "1"},
-	      })
+          })
 :::
 </dx-codeblock>
 
@@ -128,7 +130,7 @@ go get -u github.com/apache/pulsar-client-go@master
 ::: Specify multiple tags
 <dx-codeblock>
 :::  Java
-	  // Send the message
+	  // Send the messages
 		MessageId msgId = producer.newMessage()
 		    .property("tag1", "TAGS")
 		    .property("tag2", "TAGS")
@@ -141,7 +143,7 @@ go get -u github.com/apache/pulsar-client-go@master
      subProperties.put("tag2","1");
      // Construct a consumer
      Consumer<byte[]> consumer = pulsarClient.newConsumer()
-         // Complete path of the topic in the format of `persistent://cluster (tenant) ID/namespace/topic name`, which can be copied from **Topic Management**
+         // Complete path of the topic in the format of `persistent://cluster (tenant) ID/namespace/topic name`, which can be copied from the **Topic** page.
          .topic("persistent://pulsar-xxxx/sdk_java/topic2")
          // You need to create a subscription on the topic details page in the console and enter the subscription name here
          .subscriptionName("topic_sub1")
@@ -163,15 +165,15 @@ go get -u github.com/apache/pulsar-client-go@master
          }); err != nil {
                  log.Fatal(err)
          }
-   
+
     // Create a consumer
          consumer, err := client.Subscribe(pulsar.ConsumerOptions{
-   	            Topic:            "topic-1",
-   	            SubscriptionName: "my-sub",
-   	            SubscriptionProperties: map[string]string{
-   		                  "tag1": "1",
-   		                  "tag2": "1",
-   	            },
+                Topic:            "topic-1",
+                SubscriptionName: "my-sub",
+                SubscriptionProperties: map[string]string{
+    	                  "tag1": "1",
+    	                  "tag2": "1",
+                },
          })
 
 :::
@@ -181,7 +183,7 @@ go get -u github.com/apache/pulsar-client-go@master
 ::: Mix tags and properties
 <dx-codeblock>
 :::  Java
-   	// Send the message
+   	// Send the messages
    	MessageId msgId = producer.newMessage()
    	    .property("tag1", "TAGS")
    	    .property("tag2", "TAGS")
@@ -195,7 +197,7 @@ go get -u github.com/apache/pulsar-client-go@master
      subProperties.put("tag2","1");
      // Construct a consumer
      Consumer<byte[]> consumer = pulsarClient.newConsumer()
-         // Complete path of the topic in the format of `persistent://cluster (tenant) ID/namespace/topic name`, which can be copied from **Topic Management**
+         // Complete path of the topic in the format of `persistent://cluster (tenant) ID/namespace/topic name`, which can be copied from the **Topic** page.
          .topic("persistent://pulsar-xxxx/sdk_java/topic2")
          // You need to create a subscription on the topic details page in the console and enter the subscription name here
          .subscriptionName("topic_sub1")
@@ -218,15 +220,15 @@ go get -u github.com/apache/pulsar-client-go@master
          }); err != nil {
                  log.Fatal(err)
          }
-   
+
     // Create a consumer
          consumer, err := client.Subscribe(pulsar.ConsumerOptions{
-   	            Topic:            "topic-1",
-   	            SubscriptionName: "my-sub",
-   	            SubscriptionProperties: map[string]string{
-   		                  "tag1": "1",
-   		                  "tag2": "1",
-   	            },
+                Topic:            "topic-1",
+                SubscriptionName: "my-sub",
+                SubscriptionProperties: map[string]string{
+    	                  "tag1": "1",
+    	                  "tag2": "1",
+                },
          })
 :::
 </dx-codeblock>
