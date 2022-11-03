@@ -106,7 +106,9 @@ TUILogin.login(context, sdkAppID, userID, userSig, new TUICallback() {
     android:layout_weight = "1"/>
 </LinearLayout>
 ```
+
 2. Create `FragmentAdapter.java` to work with ViewPager2 to display the conversation and contacts UIs.
+
 ```java
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
