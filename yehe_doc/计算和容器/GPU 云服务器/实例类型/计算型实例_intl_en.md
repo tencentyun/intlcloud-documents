@@ -1,8 +1,8 @@
-**GPU Computing instances** provide powerful computing capabilities to help you process a large number of concurrent computing tasks in real time. They are suitable for general computing scenarios such as deep learning and scientific computing. They provide a fast, stable, and elastic computing service and can be **managed just like [CVM](https://intl.cloud.tencent.com/products/cvm) instances**.
+**GPU Computing instances** provide powerful computing capabilities to help you process a large number of concurrent computing tasks in real time. They are suitable for general computing scenarios such as deep learning and scientific computing. They provide a fast, stable, and elastic computing service and can be **managed just like [CVM](https://www.tencentcloud.com/products/cvm) instances**.
 
 
 ## Use Cases
-High-performance graphics processing and 3D rendering, such as:
+They are suitable for AI computing and HPC scenarios, for example:
 - AI computing
  - Deep learning inference
  - Deep learning training
@@ -13,6 +13,12 @@ High-performance graphics processing and 3D rendering, such as:
  - Seismic analysis
  - Genomics
 
+<dx-alert infotype="explain" title="">
+If your GPU instance is to be used for 3D rendering tasks, we recommend you use a [rendering instance](https://intl.cloud.tencent.com/document/product/560/19700) configured with a vDWs/vWs license and installed with a GRID driver. It eliminates the need to manually configure the basic environment for GPU-based graphics and image processing.
+</dx-alert>
+
+
+
 
 ## Overview
 
@@ -22,7 +28,7 @@ High-performance graphics processing and 3D rendering, such as:
   <thead>
 	<tr>
 	  <th width="8%">Availability</th>
-	  <th width="3%">Instance</th>
+	  <th width="3%">Resource Type</th>
 	  <th width="20%">GPU Type</th>
 	  <th width="34%">Available Image</th>
 	  <th width="35%">AZ</th>
@@ -30,7 +36,7 @@ High-performance graphics processing and 3D rendering, such as:
   </thead>
   <tbody>
 	<tr>
-	  <td rowspan="5">Featured</td>
+	  <td rowspan="6">Featured</td>
 	  <td>
 		<a href="#PNV4">PNV4</a>
 	  </td>
@@ -42,13 +48,14 @@ High-performance graphics processing and 3D rendering, such as:
 		  <li>Windows Server 2016 or later</li>
 		</ul>
 	  </td>
-	  <td rowspan="2">Guangzhou, Shanghai, and Beijing</td>
+	  <td>Guangzhou, Shanghai, and Beijing</td>
 	</tr>
 	<tr>
 	  <td>
 		<a href="#GT4">GT4</a>
 	  </td>
 	  <td>NVIDIA A100 NVLink 40 GB</td>
+		<td>	Guangzhou, Shanghai, Beijing, and Nanjing</td>
 	</tr>
 	<tr>
 	  <td>
@@ -62,15 +69,14 @@ High-performance graphics processing and 3D rendering, such as:
 		  <li>Windows Server 2012 or later</li>
 		</ul>
 	  </td>
-	  <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), and Frankfurt</td>
+	  <td>Guangzhou, Shanghai, Beijing, Nanjing, Chengdu, Chongqing, Singapore, Mumbai, Silicon Valley, and Frankfurt</td>
 	</tr>
 	<tr>
 	  <td rowspan="2">
 		<a href="#GN7">GN7</a>
 	  </td>
 	  <td>NVIDIA Tesla T4</td>
-	  <td>
-	  Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Silicon Valley, Mumbai, Virginia, and Frankfurt</td>
+	  <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Bangkok, Jakarta, Mumbai, Seoul, Tokyo, Silicon Valley, Virginia, Frankfurt, Moscow, and São Paulo</td>
 	</tr>
 	<tr>
 	  <td>vGPU - NVIDIA Tesla T4</td>
@@ -80,7 +86,20 @@ High-performance graphics processing and 3D rendering, such as:
 		  <li>Ubuntu 20.04 LTS 64-bit GRID 11.1</li>
 		</ul>
 	  </td>
-	  <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), and Silicon Valley</td>
+		 <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong, Silicon Valley, and São Paulo</td>
+	</tr>
+	<tr>
+	  <td>
+		<a href="#GN7vi">GN7vi</a>
+		</td>
+		<td>NVIDIA Tesla T4</td>
+		<td>
+		<ul class="params">
+		  <li>CentOS 7.2–7.9</li>
+		  <li>Ubuntu 14.04 or later</li>
+		</ul>
+	  </td>
+		<td>Shanghai and Nanjing</td>
 	</tr>
 	<tr>
 	  <td rowspan="5">Available</td>
@@ -95,21 +114,21 @@ High-performance graphics processing and 3D rendering, such as:
 		  <li>Windows Server 2012 or later</li>
 		</ul>
 	  </td>
-	  <td>Guangzhou, Shanghai, Beijing, and Nanjing</td>
+	  <td>Guangzhou, Shanghai, Beijing, Nanjing, Chengdu, and Chongqing</td>
 	</tr>
 	<tr>
 	  <td>
 		<a href="#GN10X">GN10X</a>
 	  </td>
 	  <td>NVIDIA Tesla V100 NVLink 32 GB</td>
-	  <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Singapore, Silicon Valley, Frankfurt, and Mumbai</td>
+	  <td>Guangzhou, Shanghai, Beijing, Nanjing, Chengdu, Chongqing, Singapore, Silicon Valley, Frankfurt, and Mumbai</td>
 	</tr>
 	<tr>
 	  <td>
 		<a href="#GN8">GN8</a>
 	  </td>
 	  <td>NVIDIA Tesla P40</td>
-	  <td>Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong (China), and Silicon Valley</td>
+	  <td>Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong, and Silicon Valley</td>
 	</tr>
 	<tr>
 	  <td>
@@ -137,7 +156,7 @@ High-performance graphics processing and 3D rendering, such as:
 
 ## Suggestions on Computing Instance Model Selection
 
-Tencent Cloud provides diverse GPU Computing instances to meet business needs in different scenarios. Refer to the following tables to select a Computing instance as needed.
+Tencent Cloud provides NVIDIA GPU instances to meet business needs in different scenarios. Refer to the following tables to select an NVIDIA GPU instance as needed.
 
 The table below lists **recommended GPU Computing instance models**. A tick (**✓**) indicates that the model supports the corresponding feature. A pentagram (**★**) indicates that the model is recommended.
 
@@ -145,14 +164,15 @@ The table below lists **recommended GPU Computing instance models**. A tick (**�
         <thead>
         <tr>
             <th width="20%">Feature/Instance</th>
-            <th width="11.5%">PNV4</th>
-            <th width="11.5%">GT4</th>
-            <th width="11.5%">GN10Xp</th>
-            <th width="11.5%">GN7</th>
-            <th width="11.5%">GI3X</th>
-            <th width="11.5%">GN10X</th>
-            <th width="11.5%">GN8</th>
-            <th width="11.5%">GN6<br>GN6S</th>    
+            <th width="8.9%">PNV4</th>
+            <th width="8.9%">GT4</th>
+            <th width="8.9%">GN10Xp</th>
+            <th width="8.9%">GN7</th>
+						<th width="8.9%">GN7vi</th>
+            <th width="8.9%">GI3X</th>
+            <th width="8.9%">GN10X</th>
+            <th width="8.9%">GN8</th>
+            <th width="8.9%">GN6<br>GN6S</th>    
         </tr>
         </thead>
         <tbody>
@@ -162,6 +182,7 @@ The table below lists **recommended GPU Computing instance models**. A tick (**�
                 <td>-</td>
                 <td>✓</td>
                 <td>✓</td>
+								<td>✓</td>
                 <td>✓</td>
                 <td>✓</td>
                 <td>✓</td>
@@ -173,6 +194,7 @@ The table below lists **recommended GPU Computing instance models**. A tick (**�
                 <td>-</td>
                 <td>✓</td>
                 <td>★</td>
+								<td>★</td>
                 <td>★</td>
                 <td>✓</td>
                 <td>✓</td>
@@ -184,6 +206,7 @@ The table below lists **recommended GPU Computing instance models**. A tick (**�
                 <td>★</td>
                 <td>★</td>
                 <td>✓</td>
+								<td>✓</td>
                 <td>✓</td>
                 <td>★</td>
                 <td>★</td>
@@ -195,6 +218,7 @@ The table below lists **recommended GPU Computing instance models**. A tick (**�
                 <td>✓</td>
                 <td>★</td>
                 <td>★</td>
+								<td>★</td>
                 <td>★</td>
                 <td>★</td>
                 <td>✓</td>
@@ -206,6 +230,7 @@ The table below lists **recommended GPU Computing instance models**. A tick (**�
                 <td>★</td>
                 <td>★</td>
                 <td>-</td>
+								<td>-</td>
                 <td>-</td>
                 <td>★</td>
                 <td>-</td>
@@ -215,18 +240,18 @@ The table below lists **recommended GPU Computing instance models**. A tick (**�
 </table>
 
 <dx-alert infotype="notice" title="">
->- These recommendations are for reference only. Select an appropriate instance model based on your needs.
-- To use NVIDIA GPU instances for general computing tasks, you need to install the Tesla driver and CUDA toolkit. For more information, see [Installing NVIDIA Driver](https://intl.cloud.tencent.com/document/product/560/8048) and [Installing CUDA Toolkit](https://intl.cloud.tencent.com/document/product/560/8064).
-- To use NVIDIA GPU instances for 3D rendering tasks such as high-performance graphics processing and video encoding and decoding, you must install a GRID driver and configure a license server.
+- These recommendations are for reference only. Select an appropriate instance model based on your needs.
+- To use NVIDIA GPU instances for general computing tasks, you need to install the Tesla driver and CUDA toolkit. For more information, see [Installing NVIDIA Driver](https://intl.cloud.tencent.com/document/product/560/8048) and [Installing CUDA Driver](https://intl.cloud.tencent.com/document/product/560/8064).
+- To use NVIDIA GPU instances for 3D rendering tasks such as high-performance graphics processing and video encoding and decoding, you need to install a GRID driver and configure a license server.
 </dx-alert>
 
 
 
 ## Service Options
 
-- [Spot instances](https://intl.cloud.tencent.com/zh/document/product/213/2180#.E7.AB.9E.E4.BB.B7.E5.AE.9E.E4.BE.8B) and [pay-as-you-go instances](https://intl.cloud.tencent.com/document/product/213/2180) are supported.
-- Instances can be launched in [VPC](https://intl.cloud.tencent.com/document/product/213/5227).
-- Instances can be connected to other services such as [CLB](https://intl.cloud.tencent.com/document/product/214/524), without additional management and Ops costs. Private network traffic is free of charge.
+- [Pay-as-you-go billing](https://www.tencentcloud.com/document/product/213/2180) is supported.
+- Instances can be launched in a [VPC](https://www.tencentcloud.com/document/product/213/5227).
+- Instances can be connected to other services such as [CLB](https://www.tencentcloud.com/document/product/214/524), without additional management and Ops costs. Private network traffic is free of charge.
 
 
 ## Instance Specification
@@ -237,24 +262,20 @@ The table below lists **recommended GPU Computing instance models**. A tick (**�
 
 
 
-<dx-alert infotype="notice" title="">
-This instance model is currently made available through an allowlist. To purchase it, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for application.
-</dx-alert>
-
 #### Use cases
 
-PNV4 is cost-effective and suitable for the following scenarios:
+GN6 and GN6S are cost-effective and applicable to the following scenarios:
 
 - Deep learning inference and small-scale training scenarios, such as:
   - AI inference for mass deployment
   - Small-scale deep learning training
-- Graphics and image processing scenarios, such as:
-  - Graphics and image processing
+- Graphic and image processing scenarios, such as:
+  - Graphic and image processing
   - Video encoding and decoding
   - Graph database
 
 #### AZs
-PNV4 instances are available in Guangzhou Zone 7, Shanghai Zone 5, and Beijing Zone 6.
+PNV4 instances are available in Guangzhou Zone 7, Shanghai Zones 4 and 5, and Beijing Zone 6.
 
 #### Hardware specification
 
@@ -272,7 +293,7 @@ PNV4 instances are available in Guangzhou Zone 7, Shanghai Zone 5, and Beijing Z
       <th width="25%">GPU
       <br>(NVIDIA A10)</th>
       <th width="20%">GPU Video Memory
-      <br>(HBM2)</th>
+      <br>(GDDR6)</th>
       <th width="12%">vCPU</th>
       <th>Memory
       <br>(DDR4)</th>
@@ -345,7 +366,7 @@ GT4 features powerful double-precision floating point computing capabilities. It
 
 
 #### AZs
-GT4 instances are available in Guangzhou Zone 4, Shanghai Zone 4, and Beijing Zone 5.
+GT4 instances are available in Guangzhou Zones 3, 4, and 6, Shanghai Zones 4 and 5, Beijing Zones 5 and 6, and Nanjing Zone 1.
 
 #### Hardware specification
 
@@ -388,7 +409,7 @@ GT4 instances are available in Guangzhou Zone 4, Shanghai Zone 4, and Beijing Zo
 	<tr>
 	  <td>GT4.8XLARGE192</td>
 	  <td>2</td>
-	  <td>40 GB x2</td>
+	  <td>2 * 40 GB</td>
 	  <td>32 cores</td>
 	  <td>192 GB</td>
 	  <td>10 Gbps</td>
@@ -442,21 +463,21 @@ GN10Xp features powerful double-precision floating point computing capabilities.
   - Seismic analysis
   - Molecular modeling
   - Genomics and others
-- Graphics and image processing scenarios, such as:
-  - Graphics and image processing
+- Graphic and image processing scenarios, such as:
+  - Graphic and image processing
   - Video encoding and decoding
   - Graph database
 
 
 #### AZs
-GN10Xp instances are available in Guangzhou Zones 3 and 4, Shanghai Zone 2, Nanjing Zone 1, Beijing Zone 5, Chengdu Zone 1, Chongqing Zone 1, Hong Kong Zone 2, and Frankfurt Zone 1.
+GN10Xp instances are available in Guangzhou Zones 3 and 4, Shanghai Zones 2 and 3, Nanjing Zone 1, Beijing Zones 4, 5, and 7, Chengdu Zone 1, Chongqing Zone 1, Singapore Zone 1, Mumbai Zone 2, Silicon Valley Zone 2, and Frankfurt Zone 1.
 
 
 #### Hardware specification
 
 - **CPU:** Intel<sup>®</sup> Xeon<sup>®</sup> Platinum 8255C CPU, with a clock rate of 2.5 GHz.
 - **GPU: **NVIDIA<sup>®</sup> Tesla<sup>®</sup> V100 NVLink 32GB, providing 15.7 TFLOPS of single-precision floating point performance, 7.8 TFLOPS of double-precision floating point performance, 125 TFLOPS of deep learning accelerator performance with Tensor cores, and 300 GB/s NVLink.
-- **Memory:** DDR4, providing memory bandwidth up to 2,666 MT/s.
+- **Memory:** DDR4, providing memory bandwidth of up to 2,666 MT/s.
 - **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.	 
 - **Network:** Network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
 
@@ -524,31 +545,31 @@ GN10Xp instances are available in Guangzhou Zones 3 and 4, Shanghai Zone 2, Nanj
 
 ### Computing GN7[](id:GN7) 
 
-**NVIDIA GN7** supports not only general GPU computing tasks such as deep learning, but also graphics and image processing tasks such as 3D rendering and video encoding and decoding.
+**NVIDIA GPU instance GN7** supports not only general GPU computing tasks such as deep learning, but also graphic and image processing tasks such as 3D rendering and video encoding and decoding.
 
 #### Use cases
 
-GN7 is cost-effective and suitable for the following scenarios:
+GN6 and GN6S are cost-effective and applicable to the following scenarios:
 
 - Deep learning inference and small-scale training scenarios, such as:
   - AI inference for mass deployment
   - Small-scale deep learning training
-- Graphics and image processing scenarios, such as:
-  - Graphics and image processing
+- Graphic and image processing scenarios, such as:
+  - Graphic and image processing
   - Video encoding and decoding
   - Graph database
 
 #### AZs
 GN7 instances are available in the following AZs:
-- **GN7.LARGE20 and GN7.2XLARGE40**: Guangzhou Zones 3 and 4, Shanghai Zones 2 and 4, Nanjing Zone 1 and 2, Beijing Zones 3 and 5, Chengdu Zone 1, Chongqing Zone 1, and Silicon Valley Zone 2.
-- **Other GN7 instances**: Guangzhou Zones 3 and 4, Shanghai Zones 2 and 4, Nanjing Zones 1 and 2, Beijing Zones 3 and 5, Chengdu Zone 1, Chongqing Zone 1, Singapore Zone 1, Silicon Valley Zone 2, Hong Kong Zone 2, Mumbai Zone 2, Virginia Zone 2, and Frankfurt Zone 1.
+- **GN7.LARGE20 and GN7.2XLARGE40** instances are available in Guangzhou Zones 3, 4, 6, and 7, Shanghai Zones 2, 3, 4, and 5, Nanjing Zones 1, 2, and 3, Beijing Zones 3, 5, 6, and 7, Chengdu Zone 1, Chongqing Zone 1, Hong Kong Zone 2, Silicon Valley Zone 2, and São Paulo Zone 1.
+- **Other GN7** instances are available in Guangzhou Zones 3, 4, 6, and 7, Shanghai Zones 2, 3, 4, and 5, Nanjing Zones 1, 2, and 3, Beijing Zones 3, 5, 6, and 7, Chengdu Zone 1, Chongqing Zone 1, Hong Kong Zone 2, Singapore Zones 1, 2, and 3, Bangkok Zone 2, Jakarta Zone 2, Mumbai Zone 2, Seoul Zones 1 and 2, Tokyo Zone 2, Silicon Valley Zone 2, Frankfurt Zone 1, Moscow Zone 1, Virginia Zone 2, and São Paulo Zone 1.
 
 
 #### Hardware specification
 
 - **CPU:** Intel<sup>®</sup> Xeon<sup>®</sup> Platinum 8255C CPU, with a clock rate of 2.5 GHz.
 - **GPU:** NVIDIA<sup>®</sup> Tesla<sup>®</sup> T4, providing 8.1 TFLOPS of single-precision floating point performance, 130 TOPS for INT8, and 260 TOPS for INT4.
-- **Memory:** DDR4, providing memory bandwidth up to 2,666 MT/s.
+- **Memory:** DDR4, providing memory bandwidth of up to 2,666 MT/s.
 - **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.	 
 - **Network:** Network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
 
@@ -648,10 +669,77 @@ GN7 instances are available in the following AZs:
 
 <dx-alert infotype="explain" title="">
 **vGPU**:
-- GN7 instance cluster provides vGPU-based instances. The vGPU type is vComputeServer, which only supports CUDA APIs.
+- GN7 instance cluster provides vGPU-based instances. The vGPU type is vComputeServer, which only supports CUDA APIs but not DirectX or OpenGL APIs. In graphics and image processing scenarios such as 3D rendering and video encoding and decoding, we recommend you use [rendering GN7vw instances](https://intl.cloud.tencent.com/document/product/560/19700#GN7vw) configured with a vDWS license server and installed with a GRID driver.
 - vCS instances require a GRID driver and don't support Windows.
 </dx-alert>
 
+
+### Video enhancement GN7vi[](id:GN7vi)
+
+**NVIDIA GN7vi instances** are GN7 instances configured with Tencent's proprietary MPS technology and integrated with AI. They include the TSC encoding and decoding engine and image quality enhancement toolkit and are suitable for VOD and live streaming scenarios. This type of instance allows you to leverage Tencent Cloud's proprietary TSC encoding and decoding as well as AI image quality enhancement features.
+
+
+#### AZs
+
+GN7vi instances are available in Shanghai Zones 2, 3, 4, and 5 and Nanjing Zones 1 and 2.
+
+#### Hardware specification
+
+- **CPU:** Intel<sup>®</sup> Xeon<sup>®</sup> Platinum 8255C CPU, with a clock rate of 2.5 GHz.
+- **GPU:** NVIDIA<sup>®</sup> Tesla<sup>®</sup> T4, providing 8.1 TFLOPS of single-precision floating point performance, 130 TOPS for INT8, and 260 TOPS for INT4.
+- **Memory:** DDR4, providing memory bandwidth of up to 2,666 MT/s.
+- **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.
+- **Network:** network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
+
+**GN7vi instances are available in the following configurations:**
+
+<table>
+<thead>
+<tr>
+		<th width="10%">Model</th>
+	  <th width="15%">GPU
+	  <br />(NVIDIA Tesla T4)</th>
+	  <th width="15%">GPU Video Memory
+	  <br />(HBM2)</th>
+	  <th width="8%">vCPU</th>
+	  <th width="8%">Memory
+	  <br />(DDR4)</th>
+	  <th width="10%">Private Network Bandwidth</th>
+	  <th width="10%">Packets In/Out<br />(PPS)</th>
+	  <th width="7%">Number of Queues</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GN7vi.5XLARGE80</td>
+<td align="left">1</td>
+<td align="left">1 * 16 GB</td>
+<td align="left">20 cores</td>
+<td align="left">80 GB</td>
+<td align="left">6 Gbps</td>
+<td align="left">1.4 million</td>
+<td align="left">20</td>
+</tr>
+<tr>
+<td align="left">GN7vi.10XLARGE160</td>
+<td align="left">2</td>
+<td align="left">2 * 16 GB</td>
+<td align="left">40 cores</td>
+<td align="left">160 GB</td>
+<td align="left">13 Gbps</td>
+<td align="left">2.8 million</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">GN7vi.20XLARGE320</td>
+<td align="left">4</td>
+<td align="left">4 * 16 GB</td>
+<td align="left">80 cores</td>
+<td align="left">320 GB</td>
+<td align="left">25 Gbps</td>
+<td align="left">5.6 million</td>
+<td align="left">32</td>
+</tr>
+</tbody></table>
 
 ### Interference GI3X[](id:GI3X) 
 
@@ -659,18 +747,18 @@ GN7 instances are available in the following AZs:
 
 #### Use cases
 
-GI3X is cost-effective and suitable for the following scenarios:
+GN6 and GN6S are cost-effective and applicable to the following scenarios:
 
 - Deep learning inference and small-scale training scenarios, such as:
   - AI inference for mass deployment
   - Small-scale deep learning training
-- Graphics and image processing scenarios, such as:
-  - Graphics and image processing
+- Graphic and image processing scenarios, such as:
+  - Graphic and image processing
   - Video encoding and decoding
   - Graph database
 
 #### AZs
-GI3X instances are available in Guangzhou Zone 3, Shanghai Zone 4, Nanjing Zones 1 and 2, and Beijing Zone 5.
+GI3X instances are available in Guangzhou Zone 3, Shanghai Zones 4 and 5, Nanjing Zones 1 and 2, Beijing Zones 5 and 6, Chengdu Zone 1, and Chongqing Zone 1.
 
 #### Hardware specification
 - **CPU:** AMD EPYC™ ROME CPU 2.6 GHz, with a Max Boost frequency of 3.3 GHz.
@@ -733,12 +821,6 @@ GI3X instances are available in Guangzhou Zone 3, Shanghai Zone 4, Nanjing Zones
 </table>
 
 
-
-
-
-
-
-
 ### Computing GN10X[](id:GN10X) 
 
 **Computing GN10X** supports not only general GPU computing tasks such as deep learning and scientific computing, but also graphics and image processing tasks such as 3D rendering and video encoding and decoding.
@@ -755,14 +837,14 @@ GN10X features powerful double-precision floating point computing capabilities. 
   - Seismic analysis
   - Molecular modeling
   - Genomics and others
-- Graphics and image processing scenarios, such as:
-  - Graphics and image processing
+- Graphic and image processing scenarios, such as:
+  - Graphic and image processing
   - Video encoding and decoding
   - Graph database
 
 
 #### AZs
-GN10X instances are available in Guangzhou Zones 3 and 4, Shanghai Zones 2 and 3, Nanjing Zone 1, Beijing Zones 4 and 5, Chengdu Zone 1, Chongqing Zone 1, Singapore Zone 1, Silicon Valley Zone 2, Frankfurt Zone 1, and Mumbai Zone 2.
+GN10X instances are available in Guangzhou Zones 3 and 4, Shanghai Zones 2 and 3, Nanjing Zone 1, Beijing Zones 4, 5, and 7, Chengdu Zone 1, Chongqing Zone 1, Singapore Zone 1, Silicon Valley Zone 2, Frankfurt Zone 1, and Mumbai Zone 2.
 
 
 
@@ -770,7 +852,7 @@ GN10X instances are available in Guangzhou Zones 3 and 4, Shanghai Zones 2 and 3
 
 - **CPU:** GN10X is configured with an Intel<sup>®</sup> Xeon<sup>®</sup> Gold 6133 CPU, with a clock rate of 2.5 GHz.
 - **GPU: **NVIDIA<sup>®</sup> Tesla<sup>®</sup> V100 NVLink 32GB, providing 15.7 TFLOPS of single-precision floating point performance, 7.8 TFLOPS of double-precision floating point performance, 125 TFLOPS of deep learning accelerator performance with Tensor cores, and 300 GB/s NVLink.
-- **Memory:** DDR4, providing memory bandwidth up to 2,666 MT/s.
+- **Memory:** DDR4, providing memory bandwidth of up to 2,666 MT/s.
 - **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.	 
 - **Network:** Network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
 
@@ -831,30 +913,30 @@ GN10X instances are available in Guangzhou Zones 3 and 4, Shanghai Zones 2 and 3
 
 ### Computing GN8[](id:GN8) 
 
-**NVIDIA GN8** supports not only general GPU computing tasks such as deep learning, but also graphics and image processing tasks such as 3D rendering and video encoding and decoding.
+**NVIDIA GPU instance GN8** supports not only general GPU computing tasks such as deep learning, but also graphic and image processing tasks such as 3D rendering and video encoding and decoding.
 
 #### Use cases
 
-GN8 is suitable for the following scenarios:
+GN8 is applicable to the following scenarios:
 
 - Deep learning training and inference scenarios, such as:
   - AI inference with high throughput
   - Deep learning
-- Graphics and image processing scenarios, such as:
-  - Graphics and image processing
+- Graphic and image processing scenarios, such as:
+  - Graphic and image processing
   - Video encoding and decoding
   - Graph database
 
 
 #### AZs
-GN8 instances are available in Hong Kong Zone 2, Guangzhou Zone 3, Shanghai Zone 3, Beijing Zones 2 and 4, Chengdu Zone 1, Chongqing Zone 1, and Silicon Valley Zone 1.
+GN8 instances are available in Guangzhou Zone 3, Beijing Zones 2 and 4, Chengdu Zone 1, Hong Kong Zone 2, Shanghai Zone 3, Chongqing Zone 1, and Silicon Valley Zone 1.
 
 
 #### Hardware specification
 
 - **CPU:** Intel<sup>®</sup> Xeon<sup>®</sup> E5-2680 v4 CPU, with a clock rate of 2.4 GHz.
 - **GPU:** NVIDIA<sup>®</sup> Tesla<sup>®</sup> P40, providing 12 TFLOPS of single-precision floating point performance and 47 TOPS for INT8.
-- **Memory:** DDR4, providing memory bandwidth up to 2,666 MT/s.
+- **Memory:** DDR4, providing memory bandwidth of up to 2,666 MT/s.
 - **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.	 
 - **Network:** Network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
 
@@ -922,17 +1004,17 @@ GN8 instances are available in Hong Kong Zone 2, Guangzhou Zone 3, Shanghai Zone
 
 ### Computing GN6 and GN6S[](id:GN6GN6S) 
 
-**NVIDIA GN6 and GN6S** support not only general GPU computing tasks such as deep learning, but also graphics and image processing tasks such as 3D rendering and video encoding and decoding.
+**NVIDIA GPU instances GN6 and GN6S** support not only general GPU computing tasks such as deep learning, but also graphic and image processing tasks such as 3D rendering and video encoding and decoding.
 
 #### Use cases
 
-GN6 and GN6S are cost-effective and suitable for the following scenarios:
+GN6 and GN6S are cost-effective and applicable to the following scenarios:
 
 - Deep learning inference and small-scale training scenarios, such as:
   - AI inference for mass deployment
   - Small-scale deep learning training
-- Graphics and image processing scenarios, such as:
-  - Graphics and image processing
+- Graphic and image processing scenarios, such as:
+  - Graphic and image processing
   - Video encoding and decoding
   - Graph database
 
@@ -947,7 +1029,7 @@ GN6 and GN6S instances are available in the following AZs:
 
 - **CPU:** GN6 is configured with an Intel<sup>®</sup> Xeon<sup>®</sup> E5-2680 v4 CPU, with a clock rate of 2.4 GHz. GN6S is configured with an Intel<sup>®</sup> Xeon<sup>®</sup> Silver 4110 CPU, with a clock rate of 2.1 GHz.
 - **GPU:** NVIDIA<sup>®</sup> Tesla<sup>®</sup> P4, providing 5.5 TFLOPS of single-precision floating point performance and 22 TOPS for INT8.
-- **Memory:** DDR4, providing memory bandwidth up to 2,666 MT/s.
+- **Memory:** DDR4, providing memory bandwidth of up to 2,666 MT/s.
 - **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.	 
 - **Network:** Network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
 
