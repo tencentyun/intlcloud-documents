@@ -25,7 +25,7 @@ In the source cluster `ckafka-47bd7goz`, there are two consumer groups named `te
 #### 2. Download the migration toolkit
 
 After downloading the migration tool, open the script and enter the address configurations of the source and target clusters. Set the value of `checkFlag` to `0` and run the script to check the topics to be migrated and their offsets.
-![](https://qcloudimg.tencent-cloud.cn/raw/c9da1c8f0587b691475390e51699db6a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d27691597ddc3a60de63cae9731f8cf1.png)
 After the script is run, some information will be output, and a text log will be written to the current directory.
 ![](https://qcloudimg.tencent-cloud.cn/raw/dae1bd45024dcd9e89cc7cf68ac37e3f.png)
 

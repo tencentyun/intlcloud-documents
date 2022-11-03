@@ -3,7 +3,6 @@ You can directly bind an EIP to a Pod that adopts the VPC-CNI mode as instructed
 ## Prerequisites and Limitations
 
 - The role policy that is used by IPAMD has been granted with EIP API permission.
-- Currently, it only supports auto-creating an EIP and does not support using an existing EIP.
 - The EIP feature is not available in exclusive ENI with non-static IP address of VPC-CNI mode (it is available in v3.3.9 and later versions).
 - The EIPs auto-created in the cluster cannot be reclaimed when the cluster is deleted.
 
@@ -65,12 +64,83 @@ spec:
 - **spec.template.annotations: tke.cloud.tencent.com/eip-claim-delete-policy: "Never"** indicates that the EIP of the Pod for the workload is a static IP address, and it cannot be changed after the Pod is terminated. If it is not a static IP address, do not add the annotation.
 -**spec.template.spec.containers.0.resources**: to associate a Pod with an EIP, you need to add “requests” and “limits”, that is, `tke.cloud.tencent.com/eip`, so that the scheduler can ensure that the node to which the Pod scheduled still have EIPs available.
 
-
 #### Key configurations
 - The EIPs that each node can bind to are subject to the relevant quota restrictions and the bound number of CVMs.
 The maximum number of EIPs that each node can bind to is **the bound number of CVMs - 1**.
 - **tke.cloud.tencent.com/eip-attributes: '{"Bandwidth":"100","ISP":"BGP"}'**: only "bandwidth" and "ISP" can be configured for now. "ISP" can be set to `BGP`, `CMCC`, `CTCC` or `CUCC`, which corresponds to ordinary BGP IP and static single-line IP (China Mobile, China Telecom and China Unicom) respectively. If the two parameters are left empty, the default values of 100 Mbps and BGP will be used.
 - Fees will not be charged on IPs after an auto-created EIP is bound. The default billing method for public network access is `postpaid by traffic on an hourly basis`.
+
+## Specifying an EIP
+To associate with a specified EIP automatically, see the following YAML sample:
+```
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    k8s-app: busybox
+  name: busybox
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: busybox
+      qcloud-app: busybox
+  serviceName: ""
+  template:
+    metadata:
+      annotations:
+        tke.cloud.tencent.com/networks: "tke-route-eni"
+        tke.cloud.tencent.com/vpc-ip-claim-delete-policy: Never
+        tke.cloud.tencent.com/eip-id-list: "eip-xxx1,eip-xxx2"
+      creationTimestamp: null
+      labels:
+        k8s-app: busybox
+        qcloud-app: busybox
+    spec:
+      containers:
+      - args:
+        - "10000000000"
+        command:
+        - sleep
+        image: busybox
+        imagePullPolicy: Always
+        name: busybox
+        resources:
+          limits:
+            tke.cloud.tencent.com/eni-ip: "1"
+            tke.cloud.tencent.com/eip: "1"
+          requests:
+            tke.cloud.tencent.com/eni-ip: "1"
+            tke.cloud.tencent.com/eip: "1"
+```
+- **tke.cloud.tencent.com/eip-id-list: "eip-xxx1,eip-xxx2"** indicates that the Pod of the workload needs to be automatically associated with a specified EIP and that the first replica uses the EIP whose `eipID` is `eip-xxx1` and the second uses the EIP whose `eipID` is `eip-xxx2`. According to the current policy, Pods are associated with EIPs in the annotation based on the numbers at the end of their names. If there are no numbers (Deployment type, for example), EIPs are randomly associated with. When conflicts occur, only one Pod can be associated successfully. For Pods without numbers, we recommend you specify only one EIP.
+-**spec.template.spec.containers.0.resources**: to associate a Pod with an EIP, you need to add “requests” and “limits”, that is, `tke.cloud.tencent.com/eip`, so that the scheduler can ensure that the node to which the Pod scheduled still have EIPs available.
+
+## Making Sure That Active Outbound Traffic Passes EIPs
+By default, the current cluster is deployed with the `ip-masq-agent` component, which performs SNAT for node addresses of the active outbound traffic of the Pods in the cluster. In addition, if the VPC is configured with the NAT gateway, the configuration will affect the active outbound traffic of the Pods. Therefore, to let the active outbound traffic of a Pod pass its associated EIP, you need to modify the relevant configuration and routing policy.
+
+### Removing SNAT from a cluster
+To prevent SNAT from being performed for the active outbound traffic of the Pod associated with the EIP, you need to modify the SNAT rules in the cluster:
+```
+kubectl -n kube-system edit cm ip-masq-agent-config
+```
+In the `data.config` field, add a new field whose key is `NonMasqueradeSrcCIDRs` and whose value is the **private IP** range list of the Pod associated with the EIP. For example, if the IP address is `172.16.0.2`, you need to enter `172.16.0.2/32`. Below is a sample:
+```
+apiVersion: v1
+data:
+  config: '{"NonMasqueradeCIDRs":["172.16.0.0/16","10.67.0.0/16"],"NonMasqueradeSrcCIDRs":["172.16.0.2/32"],"MasqLinkLocal":true,"ResyncInterval":"1m0s","MasqLinkLocalIPv6":false}'
+kind: ConfigMap
+metadata:
+  name: ip-masq-agent-config
+  namespace: kube-system
+```
+The saved configuration takes effect immediately after exit and will be hot updated within one minute.
+
+This field prevents the active outbound traffic of Pods within the IP range from SNAT. If a larger IP range is entered, no SNAT will be performed for Pods within the range. Proceed with caution.
+
+### Adjusting the priorities of NAT gateways and EIPs
+If the NAT gateway is configured for the VPC of the cluster, make sure that the configurations are correct as instructed in [Adjusting the Priorities of NAT Gateways and EIPs](https://intl.cloud.tencent.com/document/product/1015/32734); otherwise, the active outbound traffic of the Pod may prefer NAT gateways over EIPs.
 
 ## Retaining and Reclaiming of an EIP
 
