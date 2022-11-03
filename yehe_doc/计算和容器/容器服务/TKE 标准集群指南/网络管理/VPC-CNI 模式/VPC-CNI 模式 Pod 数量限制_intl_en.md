@@ -1,5 +1,5 @@
 
-The following displays the default limits on the number of Pods in each network mode of VPC-CNI.
+This document describes the default limits on the number of Pods in different VPC-CNI network modes.
 
 ## Limits on the Number of Pods with Shared ENI
 
@@ -15,12 +15,14 @@ The number of Pods with shared ENI is limited by the number of ENIs that can be 
 	<td>The number of secondary IPs that can be bound on a single ENI</td><td>5</td><td>9</td><td>19</td><td>29</td>
 </tr>
 <tr>
-	<td>The maximum number of Pod IPs on a single node (with multiple ENIs) in non-static IP address mode</td><td>5</td><td>27</td><td>95</td><td>203</td>
+	<td>The maximum number of Pod IP addresses on a single node (with multiple ENIs)</td><td>5</td><td>27</td><td>95</td><td>203</td>
 </tr>
 <tr>
-	<td>The maximum number of Pod IPs on a single node (with a single ENI) in static IP address mode</td><td>5</td><td>9</td><td>19</td><td>29</td>
+	<td>The maximum number of Pod IP addresses on a single node (with a single ENI)</td><td>5</td><td>9</td><td>19</td><td>29</td>
 </tr>
 </table>
+
+>! Multi-ENI component versions are supported (v3.3 or later in non-static IP address mode, and v3.4 or later in static IP address mode).
 
 The number of ENIs that can be bound to each model and the number of IPs that can be bound on a single ENI is slightly different. For details, see [Use Limits](https://intl.cloud.tencent.com/document/product/576/18527).
 
@@ -44,3 +46,5 @@ The number of Pods with exclusive ENIs is only limited by the number of ENIs tha
 	<td>SA3</td><td>4</td><td>9</td><td>15</td><td>15</td><td>15</td>
 </tr>
 </table>
+
+
