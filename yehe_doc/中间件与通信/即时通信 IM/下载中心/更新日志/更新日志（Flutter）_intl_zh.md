@@ -1,3 +1,115 @@
+## IM Flutter TUIKit 0.1.8 @2022.10.21
+- 优化：文件批量下载队列，允许一次点击多个文件消息。
+- 优化：群组列表小部件可以自动更新。
+- 优化：相机拍摄支持性能相对较低的设备，自动调整分辨率。
+- 优化：支持自定义应用栏的颜色和文字样式，特别是在 TIMUIKitChat 组件上。
+- 修复：好友备注或昵称无法在群提示中显示。
+- 修正：视频播放错误。
+- 修正：几个错误
+
+## IM Flutter SDK 4.1.8 @2022.10.18
+- 新增：支持 PC 平台，包含 macOS 与 Windows
+- 新增：消息扩展
+- 新增：信令编辑
+- 优化：升级底层 SDK
+- 修复：高版本 JDK 转换问题
+- 修复：若干问题
+
+## IM Flutter TUIKit 0.1.7 @2022.10.18
+- 新增：支持大图片和 RAW 图片，特别是那些从最新版本的 iOS 和 iPhone 14 Pro 系列捕获的图片，在自动发送前压缩和格式化
+- 优化：性能和稳定性，特别是历史消息列表和启动
+- 优化：使初始化' TIMUIKitChat '为幂等操作
+- 优化：当滚动回底部时加载最新的消息
+- 优化：优化支持 Flutter 2.x和 3.x 系列
+- 修复：iOS 相册，仅允许部分图片，权限支持
+- 修复：几个 bug
+
+## IM Flutter TUIKit 0.1.5 @2022.09.22
+- 新增：Web支持。现在，您可以在 iOS/Android/Web 平台上实现 TUIKit
+- 新增：登录后检查磁盘存储，控制在`init`的`config`中
+- 新增：在`TIMUIKitChatConfig`中添加：`timeDividerConfig`、`notificationAndroidSound` 华为Google推送声音配置、`isSupportMarkdown` 文本消息是否支持Markdown解析 、`onTapLink`
+- 移除：默认Emoji列表，由于版权问题。您可以通过[tim_ui_kit_sticker_plugin](https://pub.dev/packages/tim_ui_kit_sticker_plugin)向TUIKit提供您自己的表情列表
+- 优化：您现在可以选择禁用对话列表中 @消息 的显示
+- 优化：您现在可以在`TIMUIKitChatConfig`和`MessageItemBuilder`中返回`notificationExt/notificationBody`为`null`，在特定的情况下可以根据需要使用默认值，这意味着您可以根据提供的情况控制是否使用自定义设置，而不需要重新定义代码中与TUIKit相同的逻辑
+- 优化：支持文本消息多行
+- 优化：对`TIMUIKitChat`的体验进行改造和提升。另外，如需使用`TIMUIKitChatController`，需要传入`controler`，就像我们在[教程](https://www.tencentcloud.com/zh/document/product/1047/50054)中显示的那样
+
+## IM Flutter SDK 4.1.3 @2022.09.21
+- 解决一些 Web 端的问题
+
+## IM Flutter SDK 4.1.1+2 @2022.08.25
+- 升级底层库版本到6.6.x
+- 全面支持 Flutter Web
+
+## IM Flutter SDK 4.1.0 @2022.08.09
+- 升级底层库版本
+
+## IM Flutter TUIKit 0.1.3 @2022.08.03
+- 新增用户输入中状态
+- 新增消息表情回应能力
+- 新增用户在线状态展示
+
+## IM Flutter SDK 4.0.8 @2022.07.25
+- 新增获取会话列表高级接口，支持按照会话 类型/标签 分组拉取会话列表
+- 新增自定义标记会话接口
+- 新增会话分组能力
+- Dart 版本依赖降低至2.0.0
+- 支持 Flutter 多引擎
+- 支持 Android 端离线推送音效配置
+- 支持自定义用户在线状态
+- 升级底层库版本至6.5.x
+
+## IM Flutter TUIKit 0.1.2 @2022.07.08
+- 修复原引用的第三方底层录音库 `flutter_record_plugin_plus` 无法使用问题
+
+## IM Flutter TUIKit 0.1.1 @2022.07.07
+- 优化图片预览逻辑
+- 为各个组件新增生命周期钩子函数 LifeCycle hooks
+- 新增群聊天页新增禁言状态
+- 文本消息中的 URL 可点击跳转及新增网站信息预览卡片
+- 新增 TUIKit 层全局事件回调，包括需要提示的信息语/ Flutter 层报错/ IM API层报错返回，TUIKit 不再进行信息弹窗，可根据回调及提示语自定弹窗
+- 重构 `TUIKitGroupProfile`群资料 组件及 `TUIKitProfile`用户资料 组件，简化用法，超快速接入
+
+## IM Flutter SDK 4.0.7 @2022.07.07
+- iOS 支持自定义角标数字
+- 优化入群申请逻辑
+
+## IM Flutter SDK 4.0.6 @2022.07.04
+- 升级底层库版本到6.2.x
+- 修复离线推送信息字段
+
+## IM Flutter SDK 4.0.5 @2022.07.01
+- 新增用户在线状态查询
+- 支持通过消息类型请求历史消息列表
+- 支持富文本消息发送
+
+## IM Flutter TUIKit 0.1.0 @2022.06.10
+- 新增 `TIMUIKitChat` 组件原子化开发能力，通过各种子组件可自行拼装聊天页面。
+- 支持消息编辑更新UI能力
+- 新增入群申请审批页面组件
+- 国际化语言新增繁体中文
+- 开放更多自定义组件参数
+
+## IM Flutter TUIKit 0.0.9 @2022.05.30
+- 支持离线推送，配合新发布的 [tim_ui_kit_push_plugin](https://pub.dev/packages/tim_ui_kit_push_plugin) 推送插件
+- 支持 Flutter 3.0
+- 优化媒体消息本地预览
+
+## IM Flutter SDK 4.0.2 @2022.05.27
+- 修复本地视频路径
+
+## IM Flutter SDK 4.0.1 @2022.05.23
+- 新增话题能力
+- 新增消息编辑能力
+
+## IM Flutter SDK 4.0.0 @2022.04.26
+- 升级底层库版本到6.2.x
+- 修复离线推送信息字段
+
+## IM Flutter TUIKit 0.0.8 @2022.04.24
+- 新增群消息已读回执能力
+- 新增聊天区域右下角小舌头，支持返回底部/展示新消息数量/@消息提醒
+
 ## IM Flutter SDK 3.9.3 @2022.4.20
 - 修复群禁言群 tips boolValue 丢失问题
  - 目前群信息变更回调返回的数据为 key(string)-value(string) 形式，新增 key(string)-boolValue(bool) 形式
