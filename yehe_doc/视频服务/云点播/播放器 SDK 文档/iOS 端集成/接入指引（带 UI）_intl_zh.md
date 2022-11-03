@@ -121,7 +121,7 @@ _playerView.fatherView = self.holderView;
 视频 FileId 在一般是在视频上传后，由服务器返回：
 
    1. 客户端视频发布后，服务器会返回 FileId 到客户端。
-   2. 服务端视频上传时，在 [确认上传](https://cloud.tencent.com/document/product/266/9757) 的通知中包含对应的 FileId。
+   2. 服务端视频上传时，在 确认上传 的通知中包含对应的 FileId。
 如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。如下图所示，ID 即表示 FileId：
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
 >!
