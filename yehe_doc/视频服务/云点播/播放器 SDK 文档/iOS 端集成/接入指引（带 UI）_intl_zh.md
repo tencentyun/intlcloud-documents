@@ -129,6 +129,7 @@ _playerView.fatherView = self.holderView;
 1. 通过 FileId 播放时，需要首先使用 Adaptive-HLS(10) 转码模板对视频进行转码，或者使用播放器组件签名 psign 指定播放的视频，否则可能导致视频播放失败。转码教程和说明可参见 [用播放器组件播放视频](https://intl.cloud.tencent.com/document/product/266/38098)，psign 生成教程可参见 [psign 教程](https://intl.cloud.tencent.com/document/product/266/38099)。
 2. 若您在通过 FileId 播放时出现“no v4 play info”异常，则说明您可能存在上述问题，建议您根据上述教程调整。同时您也可以直接获取源视频播放链接，[通过 URL 播放](#url) 的方式实现播放。
 3. **未经转码的源视频在播放时有可能出现不兼容的情况，建议您使用转码后的视频进行播放。**
+</dx-alert>
 
 <dx-codeblock>
 :::  java
