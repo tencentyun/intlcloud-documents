@@ -121,7 +121,7 @@ _playerView.fatherView = self.holderView;
 ビデオFileIdは、通常、ビデオのアップロード後にサーバーから返されます。
 
    1. クライアントからビデオが公開されると、サーバーがFileIdをクライアントに返します。
-   2. サーバーからのビデオアップロード時、[アップロードの確認](https://cloud.tencent.com/document/product/266/9757の通知の中に対応するFileIdが含まれています。
+   2. サーバーからのビデオアップロード時、アップロードの確認の通知の中に対応するFileIdが含まれています。
 ファイルがすでにTencent Cloudに存在する場合は、[メディア資産管理](https://console.cloud.tencent.com/vod/media)にアクセスし、該当するファイルをさがして、FileIdを確認できます。下図のように、IDのところにFileIdが表示されます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
 >!
