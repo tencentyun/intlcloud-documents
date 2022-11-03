@@ -12,7 +12,7 @@ Audio/Video call UIs are shown as follows:
     <th style="text-align:center;" width="500px">Audio Call<br></th>
   </tr>
   <tr>
-    <td><img style="https://qcloudimg.tencent-cloud.cn/raw/83d6cd991cd0e9251caafebe75e46f12.png"  />    </td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/83d6cd991cd0e9251caafebe75e46f12.png"  />    </td>
     <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/842c563a9dd99da4950402e7a61836dd.png" />     </td>
 	 </tr>
 </table>
