@@ -9,7 +9,7 @@
     <th width=20%>Documentation</th>
 	</tr>
 	<tr>
-        <td>SDK v1.3.6.1 release</td><td>
+        <td>SDK v1.3.6.1 release</td>
 	<td>
 		<li>Upgraded the OPPO PUSH SDK to v3.1.0.</li>
 		<li>Upgraded the Mi Push SDK to v5.0.8.</li>
@@ -18,12 +18,11 @@
 		<li>Optimized the compatibility with Android 13.</li>
 		<li>Fixed the issue where an additional notification channel was created when a custom notification ringtone was used.</li>
 		</td>
-        <td>September 1, 2022</td><td>
-		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+        <td>September 1, 2022</td>
+	<td><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
-<tr>
 </table>
 
 
@@ -37,14 +36,14 @@
     <th width=20%>Documentation</th>
 	</tr>
 	<tr>
-        <td>SDK v1.3.5.0 release</td><td>
+        <td>SDK v1.3.5.0 release</td>
 	<td>
 		<li>Adjusted the policy for choosing the vendor channel for HONOR phones.</li>
 		<li>Optimized the internal communication mechanism of the SDK to improve the communication efficiency.</li>
 		<li>Optimized the internal reporting mechanism of the SDK to reduce the traffic usage.</li>
 		</td>
-        <td>July 6, 2022</td><td>
-		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+        <td>July 6, 2022</td>
+	<td><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
 </tr>
