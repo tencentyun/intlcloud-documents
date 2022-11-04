@@ -14,7 +14,7 @@
 // 错误处理函数作用：在JS加载或初始化错误时，保障事件流程正常
 // 函数定义需在script加载前
 function loadErrorCallback() {
-	var appid = 'CaptchaAppId'
+	var appid = 'CaptchaAppId';
 	// 生成容灾票据或自行做其它处理
 	var ticket = 'terror_1001_' + appid + '_' + Math.floor(new Date().getTime() / 1000);
 	callback({
