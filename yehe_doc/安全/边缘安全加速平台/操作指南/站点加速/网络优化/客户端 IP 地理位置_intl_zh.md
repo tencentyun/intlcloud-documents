@@ -7,6 +7,7 @@
 ## 操作步骤
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**站点加速** > **网络优化**。
 2. 在网络优化页面，选择所需站点，单击![img](https://qcloudimg.tencent-cloud.cn/raw/8d3e9bac718473e40a340843b4cc7fb8.png)，开启“客户端 IP 地理位置”功能。
+![](https://qcloudimg.tencent-cloud.cn/raw/44538f562bf2ba9c0efb4b5e39296473.png)
 3. 在弹窗中，可自定义设置该头部的名称，或直接使用默认名称 EO-Client-IPCountry，单击**保存**。
 >?此页面配置均对当前所选站点的全部请求生效，为全局配置。如果子域名或请求路径需自定义配置，请在左侧菜单栏中前往 [规则引擎](https://intl.cloud.tencent.com/document/product/1145/46151) 创建更细粒度的自定义配置。
 
