@@ -106,7 +106,9 @@ TUILogin.login(context, sdkAppID, userID, userSig, new TUICallback() {
     android:layout_weight = "1"/>
 </LinearLayout>
 ```
+
 2. 创建 FragmentAdapter.java 用来配合 ViewPager2 展示会话和联系人界面。
+
 ```java
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -189,7 +191,7 @@ TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单�
 
 1. **开通音视频服务**
 	1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
-	2. 在开通腾讯实时音视频服务功能区，单击**免费体验**即可开通 TUICallKit 的 7 天免费试用服务。
+	2. 在开通腾讯实时音视频服务功能区，单击**免费体验**即可开通 TUICallKit 的 60 天免费试用服务。
 	3. 在弹出的开通实时音视频 TRTC 服务对话框中，单击确认，系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
 2. **集成 TUICallKit 组件**
 在 APP 的 build.gradle 文件中添加对 `tuicallkit` 的依赖：

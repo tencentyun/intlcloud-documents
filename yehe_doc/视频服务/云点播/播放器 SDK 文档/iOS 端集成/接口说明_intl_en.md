@@ -2,38 +2,38 @@
 
 ### VOD player
 
-For more information, see [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html).
+See [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html).
 The player pulls audio/video data from the specified VOD stream URL and plays the data after decoding and local rendering.
 The player has the following capabilities:
 
-- FLV, MP4, and HLS files can be played back in two playback methods: basic playback (by URL) and VOD playback (by `Fileid `).
-- Screenshots of the video stream can be taken.
-- The brightness, volume level, and playback progress can be adjusted through gestures.
-- Resolution can be switched manually or resolution can be automatically switched to adapt to the current network bandwidth.
-- Different playback speeds can be specified, videos can be flipped horizontally, and hardware acceleration can be enabled.
-- For more information about all capabilities of the player, see [Overview](https://intl.cloud.tencent.com/document/product/266/38295).
+- Play FLV, MP4, and HLS files by URL (general playback) or by file ID (VOD playback).
+- Take screenshots of the video stream.
+- Adjust the brightness, volume level, and playback progress using gestures.
+- Change the resolution manually or select a resolution automatically according to current network bandwidth.
+- Change the playback speed, flip the video, and use hardware decoding for acceleration.
+- For more information on the capabilities of the player, see [Video Playback Overview](https://intl.cloud.tencent.com/document/product/266/38295).
 
 ### Player configuration APIs
 
 | API                                                                                                              | Description                                                                                                                                                          |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [config](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a3ad68ed80140f20cf3229bf344886a04) | Configures VOD. For more information on the configuration, see [TXVodPlayConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html). |
-| [isAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | Sets whether to start playback immediately after call of `startPlay`. Default value: YES.                         |
+| [isAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | Sets whether to start playback automatically after `startVodPlay` is called. Auto-play is on by default.                         |
 | [token](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | Sets the token for HLS encryption. After the token is set, the player will automatically add `voddrm.token.TOKEN TextureView` before the filename in the URL.  |
 | [loop](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a1cdc15a39387295573f41caee9a05932) | Sets whether to loop `SurfaceView`.                                   |
 | [enableHWAcceleration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#aa3ea979a6be5feba0da24f2b18555395) | Sets whether to enable hardware acceleration.                                 |
-| setExtentOptionInfo                                          | Sets the player business parameters in the format of `<NSString *, id>`.               |
+| [setExtentOptionInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__ios.html#a842c8863f91f274031be0109a5cb28f5) | Sets the player business parameters in the format of `<NSString *, id>`.             |
 
 ### Basic playback APIs  
 | API                                                          | Description                        |
 | ------------------------------------------------------------ | --------------------------- |
-| [startPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#ac1af59fe9e4bc2b390661787097d2c8b) | Starts playing back the video at the specified HTTP URL. |
-| [startPlayWithParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a0b4db90eafbc8c4d9be498e5ffefe961) | Starts playing back the video of the specified `fileId`.    |
-| [stopPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a7d59ca6180c4af0eb7bd63c08161f84d) | Stops playback.    |
-| [isPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a8438e3403946accc1986a05b89ee7b03) | Gets whether playback is ongoing.      |
-| [pause](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a7167f5c196fc5e167bfabde1a730e81d) | Pauses playback by stopping the retrieval of stream data and retaining the last-frame image. |
-| [resume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a41de8150eff044a237990c271d57ea27) | Resumes playback by resuming the retrieval of stream data. |
-| [seek](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a914c54a0122cba5ad78d84f893df8578) | Seeks to a specified time point of the video stream (in seconds). |
+| [startVodPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a89ac47a6b808c8ca424a65adb8870bc6) | Plays a video from an HTTP URL. Since v10.7, `startPlay` has been replaced by `startVodPlay`, and you need to call `V2TXLivePremier#setLicence` or `TXLiveBase#setLicence` to set the license in order to use the playback feature (you only need to set the license once). Otherwise, playback will fail (black screen). You can use a live stream publishing license, UGSV license, or video playback license to activate the playback feature. |
+| [startVodPlayWithParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#acfae73abaadc60e2e1091ffae0c5c700) | Plays a video by VOD file ID. Since v10.7, `startPlayWithParams` has been replaced by `startVodPlayWithParams`, and you need to call `V2TXLivePremier#setLicence` or `TXLiveBase#setLicence` to set the license in order to use the playback feature (you only need to set the license once). Otherwise, playback will fail (black screen). You can use a live stream publishing license, UGSV license, or video playback license to activate the playback feature. |
+| [stopPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a7d59ca6180c4af0eb7bd63c08161f84d) | Stops the audio/video stream.                                 |
+| [isPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a8438e3403946accc1986a05b89ee7b03) | Gets whether playback is ongoing.              |
+| [pause](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a7167f5c196fc5e167bfabde1a730e81d) | Pauses playback. The player will stop pulling data and freeze on the last frame. |
+| [resume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a41de8150eff044a237990c271d57ea27) | Resumes playback. The player will resume pulling data. |
+| [seek](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#adb8448443e6f0551eaad429d70b9f01c) | Seeks to a specified time point of the video stream (in seconds). |
 | [currentPlaybackTime](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a8b0ca7fda398996b355179bd9a479785) | Gets the current playback time point in seconds. |
 | [duration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a7fd4f66e650bd1656a97d1db7fabaeda) | Gets the total video duration in seconds. |
 | [playableDuration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a4acb1f7a723d342f7bfb9c5e540e5e77) | Gets the playable video duration in seconds. |
@@ -51,7 +51,7 @@ The player has the following capabilities:
 | [bitrateIndex](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a9a325ed94acf6b545c88755855449a12) | Returns the current playback bitrate index.                                     |
 | [setBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a1aa8e1f3a63b46c8a1166447e2457abc) | Sets the current playback bitrate index for seamless definition switch. <br>You may need to wait momentarily to switch the definition. |
 | [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a3819261f776bfda7e95e3b0bf30445a4) | Sets the [image fill mode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae). |
-| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#ade93023de1bcd8374b62f5a2bf4beeee) | Sets the [image rendering angle](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f). |
+| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#ade93023de1bcd8374b62f5a2bf4beeee) | Sets the [rotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f). |
 
 ### Audio APIs
 
@@ -62,11 +62,11 @@ The player has the following capabilities:
 
 ### Event notification APIs
 
-| API | Description |
+| API                                                 | Description                                                                                                                   |
 | ---------------------- | ---------------------- |
-| [delegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a6c78c9dda50ec1aa28a71d5548c45d71) | Event callback. We recommend you use [vodDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a609f883ff450c123d75b04a902aabe79). |
-| [vodDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a609f883ff450c123d75b04a902aabe79) | Sets the player callback.                                 |
-| [videoProcessDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a9eab6c2e67b2eae1bddf6fbf6978ba03) | Sets the video rendering callback (supported by hardware encoding only).                  |
+| [delegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a6c78c9dda50ec1aa28a71d5548c45d71) | Sets player callbacks. We recommend you use [vodDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a609f883ff450c123d75b04a902aabe79) instead. |
+| [vodDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a609f883ff450c123d75b04a902aabe79) | Sets player callbacks.                                 |
+| [videoProcessDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a9eab6c2e67b2eae1bddf6fbf6978ba03) | Sets the video rendering callback (supported only if hardware encoding is used).                  |
 
 ### TRTC APIs
 
@@ -107,36 +107,36 @@ VOD player configuration class.
 | [playerType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#a4595fb5853016c5e5919324e71ad6f4c) | Sets the player type.                                             |
 | [headers](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#ad69aaf8885027863ea19657425ef1974) | Sets custom HTTP headers.                                    |
 | [enableAccurateSeek](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#ada91e71bad4df942e6190650915a7728) | Sets whether to enable accurate seek. Default value: true.                               |
-| [autoRotate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#aa1a372684aaaf95b9b17abf0c7a4e6c6) | If it is set to `YES`, the MP4 file will be automatically rotated according to the rotation angle set in the file, which can be obtained from the `PLAY_EVT_CHANGE_ROTATION` event. Default value: YES |
+| [autoRotate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#aa1a372684aaaf95b9b17abf0c7a4e6c6) | Sets whether to enable auto rotation. If the parameter is set to `YES` (default), MP4 files will be automatically rotated. <br>You can get the rotation angle from the `PLAY_EVT_CHANGE_ROTATION` callback. |
 | [smoothSwitchBitrate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#aa1caeddde1f950ec7965dcc721109928) | Sets whether to enable smooth switch for multi-bitrate HLS streams. Default value: false.                             |
 | [progressInterval](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#a943e212cbd5e3d89de0529ab7c6042fb) | Sets the progress callback interval in ms.                                 |
-| [maxBufferSize](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#aa4934cef81784d3a195a5d95a43953f5) | Sets the maximum preloading buffer size in MB.                                    |
-| maxPreloadSize                                               | Sets the maximum preloading buffer size in MB.                                    |
-| firstStartPlayBufferTime                                     | Sets the duration of the video data that needs to be loaded during the first buffering in ms. Default value: 100 ms. |
-| nextStartPlayBufferTime                                      | Sets the minimum buffered data size to stop buffering (secondary buffering for insufficient buffered data or progress bar drag buffering caused by `seek`) in ms. Default value: 250 ms. |
+| [maxBufferSize](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html#aa4934cef81784d3a195a5d95a43953f5) | Sets the maximum buffer size in MB.                                    |
+| maxPreloadSize                                               | Sets the maximum preloading size in MB.                                    |
+| firstStartPlayBufferTime                                     | Sets the duration (ms) of video that needs to be loaded before playback starts. Default value: 100 ms. |
+| nextStartPlayBufferTime                                      | Sets the minimum data to buffer when there is insufficient buffer data or after seeking is performed. Default value: 250 ms.  |
 | overlayKey                                                   | Sets the HLS security hardening encryption and decryption key.                                   |
 | overlayIv                                                    | Sets the HLS security hardening encryption and decryption IV.                                    |
 | extInfoMap                                                   | Sets the extended information.                                               |
-| preferredResolution                                          | Starts playing back the most preferred bitstream according to the configured `preferredResolution` if there are multiple HLS bitstreams. Here, `preferredResolution` is the product of the video width and height and can only take effect if it is set before playback starts. |
-| enableRenderProcess                                          | Sets whether to allow postrendering and postproduction features such as super-resolution plugin, which is enabled by default.     |
+| preferredResolution                                          | Sets the preferred resolution. In case of multi-bitrate HLS streams, the resolution specified by `preferredResolution` (width x height) will be played. This API works only if it is called before playback. |
+| enableRenderProcess                                          | Sets whether to enable post-rendering and post-processing (such as that used by the super-resolution plugin). They are enabled by default.    |
 
 ## TXPlayerGlobalSetting
 
 Global configuration of the VOD player.
 
-| API | Description |
+| API                                                                                                            | Description                                                                                                                                                                                     |
 | ------------------ | ------------------------------------------------------------ |
 | setCacheFolderPath | Sets the cache directory of the playback engine. After setting, this directory will be first read and written during predownloading and player use. |
-| setMaxCacheSize    | Sets the maximum cache size in MB of the playback engine. After setting, the backend will clear files in the cache directory automatically according to the set value. |
+| setMaxCacheSize    | Sets the playback engine’s maximum cache size in MB. The cache directory will be cleared automatically if its size exceeds the specified value. |
 
 ## TXVodPreloadManager
 
 Predownloading API class of the VOD player.
 
-| API | Description |
+| API                                                                                                            | Description                                                                                                                                                                                     |
 | ------------- | ------------------------------------------------------------ |
-| sharedManager | Gets the `TXVodPreloadManager` instance object in singleton mode.                    |
-| startPreload  | Sets the playback engine cache directory (`TXPlayerGlobalSetting#setCacheFolderPath`) and cache size (`TXPlayerGlobalSetting#setMaxCacheSize`) before starting predownloading. |
+| sharedManager | Gets a singleton object of `TXVodPreloadManager`.                    |
+| startPreload | Starts predownloading. Before you call this API, make sure you have called `TXPlayerGlobalSetting#setCacheFolderPath` and `TXPlayerGlobalSetting#setMaxCacheSize` to set the cache directory and maximum cache size. |
 | stopPreload   | Stops predownloading.                                                   |
 
 ## TXVodDownloadManager
@@ -145,10 +145,10 @@ Video download API class of the VOD player.
 
 | API | Description |
 | ------------------------ | ------------------------------------------------------------ |
-| shareInstance            | Gets the `TXVodDownloadManager` instance object in singleton mode.                   |
-| setDownloadPath          | Sets the download root directory.                                               |
+| shareInstance            | Gets a singleton object of `TXVodDownloadManager`.                   |
+| setDownloadPath          | Sets the root directory to save downloaded files.                                               |
 | setHeaders               | Sets download HTTP headers.                                               |
-| setListener              | Sets the download callback method, which must be set before download.                             |
+| setListener              | Sets the download callback. This API must be called before the download.                             |
 | startDownloadUrl         | Starts downloading the video at the specified URL.                                          |
 | startDownload            | Starts downloading the video of the specified `FileID`.                                        |
 | stopDownload             | Stops the download. If `ITXVodDownloadListener.onDownloadStop` is called back, the download stops successfully. |
@@ -162,14 +162,14 @@ Video download API class of the VOD player.
 
 VOD download notifications.
 
-| API | Description |
+| API                                                                                                            | Description                                                                                                                                                                                     |
 | ------------------ | -------------------------------------------- |
 | onDownloadStart    | Download started.                                     |
 | onDownloadProgress | The download progress was updated.                                 |
 | onDownloadStop     | Download stopped.                                     |
 | onDownloadFinish   | Download ended.                                     |
 | onDownloadError    | An error occurred during download.                           |
-| hlsKeyVerify       | Verifies the decryption key by the player if an encrypted file is found during HLS stream download. |
+| hlsKeyVerify       | The decryption key for downloading encrypted HLS files. |
 
 
 
@@ -180,11 +180,11 @@ VOD download notifications.
 | Code | Event Definition | Description |
 | ---- | -------------------------- | ----------------------------------------------------------- |
 | 2004 | PLAY_EVT_PLAY_BEGIN        | Video playback started, and the loading icon animation (if any) ended.                |
-| 2005 | PLAY_EVT_PLAY_PROGRESS     | Video playback progress (including the current playback progress, loading progress, and total video duration).      |
+| 2005 | PLAY_EVT_PLAY_PROGRESS     | The video playback progress (including the current playback progress, the loaded duration, and the total video duration).      |
 | 2007 | PLAY_EVT_PLAY_LOADING      | The video is being loaded. The `LOADING_END` event will be reported if video playback resumes. |
 | 2014 | PLAY_EVT_VOD_LOADING_END   | Video loading ended, and video playback resumed.                        |
 | 2006 | PLAY_EVT_PLAY_END          | Video playback ended.                                           |
-| 2013 | PLAY_EVT_VOD_PLAY_PREPARED | The player has been prepared and can start playback.                                |
+| 2013 | PLAY_EVT_VOD_PLAY_PREPARED | The player is ready.                                |
 | 2003 | PLAY_EVT_RCV_FIRST_I_FRAME | The network received the first renderable video data packet (IDR).  |
 | 2009 | PLAY_EVT_CHANGE_RESOLUTION | The video resolution changed.                                            |
 | 2011 | PLAY_EVT_CHANGE_ROTATION   | The MP4 video was rotated.                                          |
@@ -199,7 +199,7 @@ VOD download notifications.
 | -2305 | PLAY_ERR_HLS_KEY                  | Failed to get the HLS decryption key.                                      |
 | 2101  | PLAY_WARNING_VIDEO_DECODE_FAIL    | Failed to decode the current video frame.                                          |
 | 2102  | PLAY_WARNING_AUDIO_DECODE_FAIL    | Failed to decode the current audio frame.                                         |
-| 2103  | PLAY_WARNING_RECONNECT            | The network was disconnected, and automatic reconnection was performed (the `PLAY_ERR_NET_DISCONNECT` event will be thrown after three failed attempts). |
+| 2103  | PLAY_WARNING_RECONNECT            | The player was disconnected and is trying to reconnect. The `PLAY_ERR_NET_DISCONNECT` event will be thrown after three failed attempts. |
 | 2106  | PLAY_WARNING_HW_ACCELERATION_FAIL | Failed to start the hardware decoder, and the software decoder was used instead.   |
-| -2304 | PLAY_ERR_HEVC_DECODE_FAIL         | Failed to decode with H.265. |
+| -2304 | PLAY_ERR_HEVC_DECODE_FAIL         | H.265 decoding failed. |
 | -2303 | PLAY_ERR_FILE_NOT_FOUND           | The file to be played back does not exist.                                           |

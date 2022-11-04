@@ -87,7 +87,7 @@ pod 'SuperPlayer/Professional'
  1. 如果是手动集成 TXLiteAVSDK_Player，需要添加所需要的系统库和 library：
 <b>系统 Framework 库</b>：MetalKit, ReplayKit, SystemConfiguration, CoreTelephony, VideoToolbox, CoreGraphics, AVFoundation, Accelerate, MobileCoreServices, ,VideoToolbox
 <b>系统 Library 库:</b> libz, libresolv,  libiconv, libc++, libsqlite3
-具体操作步骤可以 参考：定制开发 - 点播场景 - 接入文档 - SDK集成 步骤1 - 手动集成 SDK
+具体操作步骤可以 [参考](https://www.tencentcloud.com/document/product/266/49669)：定制开发 - 点播场景 - 接入文档 - SDK集成 步骤1 - 手动集成 SDK
 此外还需要把 TXLiteAVSDK_Player 文件下的 TXFFmpeg.xcframework 和 TXSoundTouch.scframework 以动态库的方式加进来如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/5834caae21d3413522c7d51d4b3b57b0.png)
  2. 如果是用 Pod 的方式集成 TXLiteAVSDK_Player，不需要添加任何库。
@@ -114,21 +114,22 @@ _playerView.delegate = self;
 _playerView.fatherView = self.holderView;
 ```
 
-
 2.  **播放视频：**
 本步骤，用于指导用户播放视频，腾讯云视立方 iOS 播放器组件支持 [云点播 FileId](#fileid) 或者 [使用 URL](#url) 进行播放，推荐您选择**集成 FileId** 使用更完善的能力。
 <dx-tabs>
 ::: 云点播 FileId 播放[](id:fileid)
 视频 FileId 在一般是在视频上传后，由服务器返回：
 
-1. 客户端视频发布后，服务器会返回 FileId 到客户端。
-2. 服务端视频上传时，在 确认上传 的通知中包含对应的 FileId。
+   1. 客户端视频发布后，服务器会返回 FileId 到客户端。
+   2. 服务端视频上传时，在 确认上传 的通知中包含对应的 FileId。
 如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。如下图所示，ID 即表示 FileId：
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
+
 <dx-alert infotype="notice">
-<li>通过 FileId 播放时，需要首先使用 Adaptive-HLS(10) 转码模板对视频进行转码，或者使用播放器组件签名 psign 指定播放的视频，否则可能导致视频播放失败。转码教程和说明可参见 [用播放器组件播放视频](https://intl.cloud.tencent.com/document/product/266/38098)，psign 生成教程可参见 [psign 教程](https://intl.cloud.tencent.com/document/product/266/38099)。</li>
-<li>若您在通过 FileId 播放时出现“no v4 play info”异常，则说明您可能存在上述问题，建议您根据上述教程调整。同时您也可以直接获取源视频播放链接，[通过 URL 播放](#url) 的方式实现播放。</li>
-<li>**未经转码的源视频在播放时有可能出现不兼容的情况，建议您使用转码后的视频进行播放。**</li></dx-alert>
+1. 通过 FileId 播放时，需要首先使用 Adaptive-HLS(10) 转码模板对视频进行转码，或者使用播放器组件签名 psign 指定播放的视频，否则可能导致视频播放失败。转码教程和说明可参见 [用播放器组件播放视频](https://intl.cloud.tencent.com/document/product/266/38098)，psign 生成教程可参见 [psign 教程](https://intl.cloud.tencent.com/document/product/266/38099)。
+2. 若您在通过 FileId 播放时出现“no v4 play info”异常，则说明您可能存在上述问题，建议您根据上述教程调整。同时您也可以直接获取源视频播放链接，[通过 URL 播放](#url) 的方式实现播放。
+3. **未经转码的源视频在播放时有可能出现不兼容的情况，建议您使用转码后的视频进行播放。**
+</dx-alert>
 
 <dx-codeblock>
 :::  java
@@ -140,7 +141,7 @@ model.videoId = [[SuperPlayerVideoId alloc] init];
 model.videoId.fileId = @"5285890799710173650"; // 配置 FileId
 //私有加密播放需填写 psign， psign 即播放器组件签名，签名介绍和生成方式参见链接：https://intl.cloud.tencent.com/document/product/266/38099
 //model.videoId.pSign = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU"; 
-[_playerView playWithModel:model];
+[_playerView playWithModelNeedLicence:model];
 :::
 </dx-codeblock>
 :::
@@ -148,12 +149,13 @@ model.videoId.fileId = @"5285890799710173650"; // 配置 FileId
 ```java
 SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
 model.videoURL = @"http://your_video_url.mp4";   // 配置您的播放视频url
-[_playerView playWithModel:model];
+[_playerView playWithModelNeedLicence:model];
 ```
 :::
 </dx-tabs>
-- **退出播放：**[](id:exitPlayer)
-当不需要播放器时，调用 `resetPlayer` 清理播放器内部状态，释放内存。
+3. **退出播放：**[](id:exitPlayer)
+   当不需要播放器时，调用 `resetPlayer` 清理播放器内部状态，释放内存。
+
 ```java
 [_playerView resetPlayer];
 ```
@@ -167,8 +169,6 @@ model.videoURL = @"http://your_video_url.mp4";   // 配置您的播放视频url
 
 播放器组件支持全屏播放，在全屏播放场景内，同时支持锁屏、手势控制音量和亮度、弹幕、截屏、清晰度切换等功能设置。功能效果可在 [**腾讯云视立方 App**](#qrcode) > **播放器** > **播放器组件** 中体验，单击界面右下角**全屏**即可进入全屏播放界面。
 
-
-
 在窗口播放模式下，可通过调用下述接口进入全屏播放模式：
 
 ```objective-c
@@ -177,7 +177,7 @@ model.videoURL = @"http://your_video_url.mp4";   // 配置您的播放视频url
 }
 ```
 
-#### 
+#### 全屏播放界面功能介绍
 
 
 <dx-tabs>
@@ -243,6 +243,8 @@ CFDanmakuView：弹幕的属性在初始化时配置。
 
 播放器组件支持悬浮窗小窗口播放，可以在切换到应用内其它页面时，不打断视频播放功能。功能效果可在 [**腾讯云视立方 App**](#qrcode) > **播放器** > **播放器组件** 中体验，单击界面左上角**返回**，即可体验悬浮窗播放功能。
 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
+
 
 
 ```objective-c
@@ -272,7 +274,7 @@ model.videoId = videoId;
 model.action  = PLAY_ACTION_MANUAL_PLAY; 
 //设定封面的地址为网络url地址，如果coverPictureUrl不设定，那么就会自动使用云点播控制台设置的封面
 model.customCoverImageUrl = @"http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/cc1e28208602268011087336518/MXUW1a5I9TsA.png"; 
-[self.playerView playWithModel:model] 
+[self.playerView playWithModelNeedLicence:model];
 ```
 
 ### 4、视频列表轮播
@@ -304,11 +306,11 @@ model.videoId = videoId;
 [modelArray addObject:model];
 
 //步骤2：调用 SuperPlayerView 的轮播接口
-[self.playerView playWithModelList:modelArray isLoopPlayList:YES startIndex:0];
+[self.playerView playWithModelListNeedLicence:modelArray isLoopPlayList:YES startIndex:0];
 ```
 
 ```objective-c
-(void)playWithModelList:(NSArray *)playModelList isLoopPlayList:(BOOL)isLoop startIndex:(NSInteger)index;
+(void)playWithModelListNeedLicence:(NSArray *)playModelList isLoopPlayList:(BOOL)isLoop startIndex:(NSInteger)index;
 ```
 
 接口参数说明
@@ -383,7 +385,7 @@ model.textFont = 30;
 model.textColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.8];
 playermodel.dynamicWaterModel = model;
 //步骤4：调用方法展示动态水印
-[self.playerView playWithModel:playermodel];
+[self.playerView playWithModelNeedLicence:playermodel];
 ```
 
 DynamicWaterModel 类参数说明：

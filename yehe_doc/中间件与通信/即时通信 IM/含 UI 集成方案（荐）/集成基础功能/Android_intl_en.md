@@ -106,7 +106,9 @@ TUILogin.login(context, sdkAppID, userID, userSig, new TUICallback() {
     android:layout_weight = "1"/>
 </LinearLayout>
 ```
+
 2. Create `FragmentAdapter.java` to work with ViewPager2 to display the conversation and contacts UIs.
+
 ```java
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -188,7 +190,7 @@ TUI components allow users to start audio/video calls in chat UIs and can be qui
 
 1. **Activate the TRTC service**
 	1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
-	2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 7-day free trial service of TUICallKit.
+	2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 60 day free trial service of TUICallKit.
 	3. Click **Confirm** in the pop-up dialog box. A TRTC app with the same SDKAppID as the IM app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
 2. **Integrate the TUICallKit component**
 Add the `tuicallkit` dependency to the `build.gradle` file in App:
