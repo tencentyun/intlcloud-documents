@@ -90,7 +90,7 @@ try {
 
 | Parameter | Type | Description | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- |
-| Object               | File URL in COS. `Bucket` is specified by `Host`.	          | Yes       |
+| Object               |String|  File URL in COS. `Bucket` is specified by `Host`.	          | Yes       |
 
 `Operation` has the following sub-nodes:
 
