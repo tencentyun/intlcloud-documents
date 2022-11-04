@@ -40,7 +40,7 @@ VoIP（Voice over IP）Push 是 Apple 提供的用于响应 VoIP calls 的通知
 
 ### 步骤1：申请 VoIP Push 证书
 
-在申请 VoIP Push 证书之前，请先登录 [苹果开发者中心](https://developer.apple.com/account/) 网站，[开启 App 的远程推送功能](https://cloud.tencent.com/document/product/269/75429#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.B3.E8.AF.B7-apns-.E8.AF.81.E4.B9.A6)。
+在申请 VoIP Push 证书之前，请先登录 [苹果开发者中心](https://developer.apple.com/account/) 网站，开启 App 的远程推送功能。
 
 当您的 AppID 具备了 Push Notification 能力后，按照如下步骤申请并配置 VoIP Push 证书：
 
@@ -111,13 +111,13 @@ VoIP（Voice over IP）Push 是 Apple 提供的用于响应 VoIP calls 的通知
    > - 发布 App Store 的证书需要设置为生产环境，否则无法收到推送。
    > - 上传的 p12 证书必须是自己申请的真实有效的证书。
 
-   [](todo: 此处待控制台截图)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/c2586fb817abf5aa7edddfe2c1f45b91.png)
 
 3. 上传完成后，记录不同环境下的证书 ID。
 
  > ? 开发环境和生产环境下的证书 ID 要严格区分，并在 [步骤四：上报 token](#upload_token) 时根据实际环境填写。
 
-   [](todo: 此处待控制台截图)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/975eb45a0fe6fcee783a2bde693b5d2b.png)
 
 
 [](id:apply_token)
