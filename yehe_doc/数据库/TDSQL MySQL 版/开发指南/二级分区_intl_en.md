@@ -1,9 +1,9 @@
 
 
-TDSQL for MySQL currently supports two-level sharding in range and list formats, where the specific table creation syntax is similar to the sharding syntax in MySQL.
+TDSQL for MySQL allows you to subpartition tables by RANGE or LIST, with subpartitioning syntax similar to that in MySQL.
 
-## Two-Level Sharding Syntax
-The syntax for creating a sharded table with a hash at level 1 and a list at level 2 is as follows:
+## Subpartitioning Syntax
+Subpartitioning by HASH at level 1 and by LIST at level 2 is as follows:
 ```
 MySQL [test]> CREATE TABLE customers_1 (
   first_name VARCHAR(25) key,
@@ -22,7 +22,7 @@ PARTITION BY LIST (city) (
 );
 ```
    
-The syntax for creating a sharded table with a range at level 1 and a list at level 2 is as follows:
+Subpartitioning by RANGE at level 1 and by LIST at level 2 is as follows:
 ```
 MySQL [test]> CREATE TABLE tb_sub_r_l (
    id int(11) NOT NULL,
@@ -35,26 +35,26 @@ MySQL [test]> CREATE TABLE tb_sub_r_l (
 Query OK, 0 rows affected, 1 warning (0.35 sec)
 ```
 
-#### Supported range types
+#### Supported RANGE types
 - DATE, DATETIME, and TIMESTAMP.
 - `year`, `month`, and `day` functions are supported. If the function is empty, it will be defaulted to the `day` function.
 - TINYINT, SMALLINT, MEDIUMINT, INT, and BIGINT.
 - `year`, `month`, and `day` functions are supported. The value entered is converted to year, month, and day and then compared against the sharded table information.
 
-#### Supported list types
+#### Supported LIST types
 - DATE, DATETIME, and TIMESTAMP.
 - `year`, `month`, and `day` functions are supported.
 - TINYINT, SMALLINT, MEDIUMINT, INT, and BIGINT.
 
 <dx-alert infotype="alarm" title="Alarm">
-<li>Refrain from using the TIMESTAMP type as the shardkey, because it is subject to the time zone and can only specify a time value before the year of 2038.</li>
-<li>If the shardkey is `char` or `varchar` type, its length is better to be below 255.</li>
+<li>Do not use the TIMESTAMP type as the subpartitioning key, because it is subject to the time zone and can only specify a time value before the year of 2038.</li>
+<li>If the subpartitioning key is `char` or `varchar` type, its length is better to be below 255.</li>
 </dx-alert>
 
 ## Use Cases and Suggestions
-Use one-level sharded tables for businesses as much as possible.
-- Before use, design the table structure reasonably according to the business scenario in the long run. Two-Level sharding is suitable for scenarios where DDL changes are not required for a long time after the table structure is created, while the sharded data needs to be cleaned and trimmed regularly, such as log transaction tables.
-- Design the granularity of two-level sharding reasonably. We recommend you refrain from using too fine-grained two-level sharding; otherwise, too many subtables will be created. For example, you should shard transaction tables by month instead of by day or by hour, so that there will not be too many data files in the file system.
-- When performing an SQL query on a level-2 sharded table, include the key values of level-1 and level-2 sharding in the query conditions as much as possible, so as to eliminate the need to open many data files for search during query execution.
-- When performing a JOIN query on a level-2 sharded table, if the query conditions don't include the key values of level-1 and level-2 sharding, the operation performance will be low, which is not recommended.
-- The primary key or unique index of the table should include the shardkey; otherwise, the data uniqueness cannot be guaranteed.
+Use level-1 subpartitioned tables for your business.
+- Before use, design your table structure reasonably according to the business scenario in the long run. Subpartitioning is suitable for scenarios where DDL changes are not required for a long time after the table structure is created, while the subpartitioned data needs to be cleared and trimmed regularly, such as log transaction tables.
+- Design the granularity of subpartitioning reasonably. We recommend that you do not design it in a finer-grained manne to avoid creating too many subtables. For example, you should subpartition transaction tables by month instead of by day or by hour, so that there will not be too many data files in the file system.
+- When performing a SQL query on a level-2 subpartitioned table, you need to include the key values of level-1 and level-2 subpartitioning in the query conditions as much as possible, so you can eliminate the need to open many data files for search during query execution.
+- When performing a JOIN query on a level-2 subpartitioned table, if you don't include the key values of level-1 and level-2 subpartitioning in the query conditions, the operation performance will be lowered, which is not recommended.
+- The primary key or unique index of the table should include the subpartitioning key; otherwise, the data uniqueness cannot be guaranteed.
