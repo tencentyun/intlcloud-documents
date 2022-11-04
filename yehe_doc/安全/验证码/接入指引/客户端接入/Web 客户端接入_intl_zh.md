@@ -60,7 +60,7 @@
 
     // 定义验证码js加载错误处理函数
     function loadErrorCallback() {
-      var appid = 'CaptchaAppId'
+      var appid = 'CaptchaAppId';
        // 生成容灾票据或自行做其它处理
       var ticket = 'terror_1001_' + appid + '_' + Math.floor(new Date().getTime() / 1000);
       callback({
