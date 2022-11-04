@@ -57,10 +57,10 @@
 
 ## 6.5.2803 @2022.07.15 - 增强版
 ### SDK
-- 新增 会话标记 支持
-- 新增 会话分组 支持
+- 新增 [会话标记](https://www.tencentcloud.com/zh/document/product/1047/48853) 支持
+- 新增 [会话分组](https://www.tencentcloud.com/zh/document/product/1047/48854) 支持
 - 新增会话自定义字段支持
-- 新增 拉取会话高级接口
+- 新增 [拉取会话高级接口](https://www.tencentcloud.com/zh/document/product/1047/48326)
 - 支持接收直播群广播消息
 - 支持加群选项变更的通知下发
 - 支持群消息接收选项变更的多端同步
