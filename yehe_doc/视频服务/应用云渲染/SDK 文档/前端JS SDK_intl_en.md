@@ -4,7 +4,7 @@ CAR provides the JavaScript SDK for integration on web. The SDK provides a rich 
 
 | SDK    | GitHub Project                           |
 | ------ | ------------------------------------------------------------ |
-| JavaScript SDK | [GitHub project](https://github.com/tencentyun/cloudgame-js-sdk) |
+| JavaScript SDK | [GitHub project](https://github.com/tencentyun/cloudgame-js-sdk/blob/master/README_EN-US.md) |
 
 ## Notes
 
