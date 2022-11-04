@@ -61,7 +61,7 @@ The following sample code demonstrates a page where **Verify** is clicked to act
   
     // Define the function that handles TCaptcha-global.js loading errors
     function loadErrorCallback() {
-      var appid = 'CaptchaAppId'
+      var appid = 'CaptchaAppId';
       // Generate a disaster recovery ticket or execute other operations
       var ticket = 'terror_1001_' + appid + '_' + Math.floor(new Date().getTime() / 1000);
       callback({
