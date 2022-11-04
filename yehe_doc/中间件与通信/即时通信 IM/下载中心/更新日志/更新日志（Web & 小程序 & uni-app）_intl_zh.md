@@ -1,3 +1,97 @@
+### 2.24.0 @2022.11.3
+**新增**
+
+- 支持微信小游戏环境集成。
+- 本地审核插件 [tim-profanity-filter-plugin](https://www.npmjs.com/package/tim-profanity-filter-plugin) ，支持本地审核功能。
+- [getFriendProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getFriendProfile) 默认支持拉取好友自定义字段和资料自定义字段，提升产品体验。
+- [getGroupApplicationList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupApplicationList) 支持拉取全量的加群申请列表。
+- RESTAPI 修改好友自定义字段支持推送给 SDK。
+- 支持发送话题消息不计入未读。
+- 支持发送普通社群消息不计入未读。
+- 发送消息支持 voip push。
+
+**修复**
+好友资料相关的问题。
+
+### 2.23.1 @2022.9.29
+**新增**
+- [createTextMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createTextMessage) 等接口支持创建群定向消息（即在群组内发送消息给部分群成员，其他群成员不会收到这些消息）。
+- 支持发送 mov 格式的视频。
+- REST API [更新好友](https://www.tencentcloud.com/zh/document/product/1047/34904) 支持推送给 SDK。
+- [getFriendProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getFriendProfile) 支持拉取自定义好友字段和自定义资料字段。
+- [getConversationList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getConversationList) 接口的返回数据新增字段 isSyncCompleted，用于标识从云端同步会话列表是否完成。
+- 话题所属的社群消息，支持通过 [MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.MESSAGE_RECEIVED) 事件通知给接入侧。
+- 完善对 uni-app 离线推送 的支持。
+
+**修复**
+
+- 群列表超过上限5000后，部分群会话拉不到漫游消息的问题。
+- 调用 setConversationCustomData 设置会话自定义字段后重新登录，对应会话的 customData 为 '' 的问题。
+
+### 2.23.0 @2022.9.16
+**新增**
+- SDK 支持海外环境。
+- [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getTotalUnreadMessageCount),支持获取会话未读总数。
+- [TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED),接入侧监听此事件，可获取会话未读总数变更的通知。
+- [markGroupMemberList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#markGroupMemberList)，支持标记直播群群成员（需开通旗舰版）。
+- 群成员被踢出群，或者群被解散，SDK 同步更新此群会话所在的会话分组。
+- 支持小程序独立分包。
+- Web 多实例登录场景下，断网重连后 SDK 主动恢复最近联系人的消息记录，保障消息可靠性。
+
+**修复**
+- Web 多实例登录场景下可能出现的会话 lastMessage 撤回状态不同步问题。
+- 同步最近联系人时会话置顶问题。
+
+### 2.22.0 @2022.8.18
+**新增**
+- 支持 uni-app 打包到 native app 使用离线推送，请参见 [registerPlugin](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#registerPlugin)。
+- 支持获取直播群在线成员列表，请参见 [getGroupMemberList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberList) （需开通旗舰版）。
+- 支持直播群封禁成员，请参见 [deleteGroupMember](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteGroupMember)（需开通旗舰版）。
+- [setConversationCustomData](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setConversationCustomData) 设置会话自定义数据。
+- [markConversation](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#markConversation) 标记会话（需开通旗舰版）。
+- [getConversationGroupList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getConversationGroupList) 获取会话分组列表（需开通旗舰版）。
+- [createConversationGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createConversationGroup) 创建会话分组（需开通旗舰版）。
+- [deleteConversationGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteConversationGroup) 删除会话分组（需开通旗舰版）。
+- [renameConversationGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#renameConversationGroup) 重命名会话分组（需开通旗舰版）。
+- [addConversationsToGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#addConversationsToGroup) 添加会话到一个会话分组（需开通旗舰版）。
+- [deleteConversationsFromGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteConversationsFromGroup) 从一个会话分组中删除会话（需开通旗舰版）。
+
+**修复**
+- 收到话题消息被撤回的通知后，话题未读数未更新的问题。
+
+### 2.21.2 @2022.8.8
+**新增**
+- 支持 Web 端创建和发送语音消息。
+- [createMergerMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createMergerMessage) 创建合并消息，被合并的消息新增 ID 字段。
+
+### 2.21.1 @2022.8.3
+**修复**
+- resendMessage 可能导致的消息重复问题。
+
+### 2.21.0 @2022.7.28
+**新增**
+- [setSelfStatus](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setSelfStatus)，设置自己的自定义状态。
+- [getUserStatus](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getUserStatus)，查询用户状态。
+- [subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#subscribeUserStatus)，订阅用户状态。
+- [unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#unsubscribeUserStatus)，取消订阅用户状态。
+- [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType) 支持群消息和话题消息的免打扰设置多端、多实例同步。
+- [createFileMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createFileMessage) 支持手机端微信小程序 和 QQ 小程序发文件消息。
+- [modifyMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#modifyMessage) 支持变更所有类型消息的 cloudCustomData。
+- [Message](https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html) 新增字段 isBroadcastMessage，支持直播群广播消息。
+- 支持加群选项多终端、多实例同步。
+- 支持普通社群和话题@全员以及话题 lastMessage。
+
+**变更**
+- 浏览器支持 webworker 时国际站和私有化环境默认开启 webworker。
+
+**修复**
+- 收到不更新会话 lastMessage 的消息后，lastMessage.payload 被置为 undefined 的问题。
+- 在线消息引起的群组消息补偿未启动问题。
+- 频繁退群、加群后拉群漫游消息异常。
+- 分页拉取群组列表滞后导致拉取群会话漫游消息为空数组的问题。
+- 话题已知问题。
+
+
 ### 2.20.1 @2022.6.27
 
 **变更**
