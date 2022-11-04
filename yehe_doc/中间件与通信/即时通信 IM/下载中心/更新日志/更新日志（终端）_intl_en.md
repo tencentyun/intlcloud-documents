@@ -1,3 +1,96 @@
+## 6.7.3184 @2022.09.29 - Enhanced Edition
+
+### SDK
+- Supported message extension.
+- Supported signal modification.
+- Supported VoIP for iOS offline push.
+- Supported Honor phones for Android offline push.
+- Added backup domain name at the access layer.
+- Fixed the problem that the login and logout callbacks could not be executed under special network environment.
+- Fixed the problem that setting the group profile to be empty did not trigger the notification callback.
+- Fixed the issue that the Do Not Disturb status of group conversations was not updated after leaving the group and rejoining the group.
+- Fixed a crash when sending a single chat message with a read receipt.
+- Fixed the issue that the read receipt of the single chat message sent by the C interface SDK was invalid.
+- Fixed the problem that TIMGroupModifyGroupInfo could not modify group properties on PC.
+
+### TUIKit & Demo
+- Added group chat process optimization.
+- Supported setting background image in chat.
+- Optimized skinning logic
+- Supported invite group members to join during group call
+- Supported dynamic emoji in Android.
+- Fixed the problem of missing occasional messages in Android.
+- Fixed the problem of the occasional message sending status error in the message list in Android.
+- Fixed the problem that the offline push component gets the phone model multiple times in Android.
+- Canceled global style modification for UIAlertController in iOS.
+- Added the function of jumping to the gallery during shooting.
+- Fixed the crash of clicking the little menu after clearing all messages in iOS.
+  
+## 6.6.3002 @2022.08.18 - Enhanced Edition
+
+### SDK
+- Supported live group tagging group members.
+- Supported live group kicking group members.
+- Fixed occasional crash in Android topic update callback.
+- Fixed the problem that the notification enumeration value of the change of the add group option was incorrect.
+- Fixed the issue that the onTopicInfoChanged listener callback was not received after the topic was set to a custom field.
+- Optimized the problem of Android getting network ip multiple times.
+
+### TUIKit & Demo
+- Supported marking conversations as unread/read, hiding conversations, and collapsing DND group conversations.
+- Replaced old TUICalling with TUICallKit.
+- Supported floating window in TUICallKit audio and video calls.
+- Supported dynamic switch for group 3x3 avatar
+- Supported custom background images in TUIChat.
+- Optimized Android TUIOfflinePush component to support notification bar click event callback application, supported uniapp native plug-in packaging.
+- Supported the community mode of "community-group-topic" three-level structure in TUIKit on the Android side.
+- Supported display emoji in iOS input box.
+- Supported different group types corresponding to different default avatars支持不同群类型对应不同默认头像.
+- Added resident security tips in Demo.
+- Fixed compatibility and compliance issues caused by using WebView in TUICore skinnable components.
+- Fixed the problem that duplicate messages may appear in the chat interface by clicking offline push.
+
+## 6.5.2816 @2022.07.29 - Enhanced Edition
+
+### SDK
+- Optimizing the route selection strategy for the Indian station.
+- Optimize rich media message upload/download progress callback.
+- Optimized the compliance problem of obtaining device process information on the Android side.
+- Fixed the issue of continuous creation of topics crash.
+- Fixed the issue of occasional crash in Windows package.
+- Fixed Android v7a architecture to pull down a black friend, add a black friend again crash issue.
+
+## 6.5.2803 @2022.07.15 - Enhanced Edition
+
+### SDK
+- Added [Conversation Mark](https://www.tencentcloud.com/zh/document/product/1047/48853).
+- Added [Conversation Group](https://www.tencentcloud.com/zh/document/product/1047/48854).
+- Added support for conversation custom fields.
+- Added [Load Conversation Advanced Interface](https://www.tencentcloud.com/zh/document/product/1047/48326).
+- Supported for receiving live group broadcast messages.
+- Support the notification of changes to add group options.
+- Supported multi-terminal synchronization of group message receiving options changes.
+- Optimized routing logic for long connections and supports strategy rotation.
+- Pre-embedded Japanese station support.
+- Upgraded the authorization ID for HttpDNS routing requests
+- Supported HttpDNS routing method for International station.
+- Optimized the start sequence of the live broadcast group leader polling request.
+- Optimized the missing problem of lastMessage in topic data under certain conditions.
+- Optimized the logic of conversation top order.
+- Optimized the statistical logic of message end-to-end time.
+- Fixed the issue that the message that failed to resend caused occasional duplicate messages in historical messages.
+- Fixed the issue that garbled characters were displayed when sending emoji on low-version mobile phones.
+- Fix the issue that faceURL is empty in the message returned by onRecvMessageModified.
+- Fixed the issue that the group invitation signaling during the offline period could not be received occasionally after logging in.
+
+### TUIKit & Demo
+- Supported "Typing..." in C2C one-on-one chat.
+- Added get friend online status to conversation and address book.
+- The "Recall" option is no longer displayed after sending a message more than 2 minutes.
+- Added Multi-terminal custom message interoperability compatibility.
+- Fixed the issue that the session is not rearranged in certain scenarios in Android.
+- Removed the TPNS channel for offline push components.
+
 ## 6.3.2619 @2022.06.29 - Enhanced Edition
 
 ### SDK
