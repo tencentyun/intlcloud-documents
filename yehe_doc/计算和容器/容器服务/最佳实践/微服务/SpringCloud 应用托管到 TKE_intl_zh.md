@@ -217,15 +217,10 @@ EXPOSE 6000
 >! Dockerfile 中每多一个 RUN 命令，生成的镜像就多一层，推荐将这些 RUN 命令合成一条。  
 
 
-
-
-
-
-
 #### 镜像构建
 
 
-容器镜像服务 TCR 提供自动和手工两种构建镜像方式，详情可参见 [镜像构建](https://intl.cloud.tencent.com/document/product/1051/39846) 文档。为展示具体的构建过程，本文采用手工构建方式。  
+容器镜像服务 TCR 提供自动和手工两种构建镜像方式。为展示具体的构建过程，本文采用手工构建方式。  
 
 镜像名称需要符合规范 `ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]`：
 
