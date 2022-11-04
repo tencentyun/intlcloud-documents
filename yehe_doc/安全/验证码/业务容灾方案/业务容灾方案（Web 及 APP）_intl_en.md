@@ -14,7 +14,7 @@ To ensure that customers' business processes run normally in case of an exceptio
 // The error handling function ensures that event processes run normally in case of JS load or initialization errors.
 // Define the function before the script loads
 function loadErrorCallback() {
-	var appid = 'CaptchaAppId'
+	var appid = 'CaptchaAppId';
 	// Generate a disaster recovery ticket or use another handling technique
 	var ticket = 'terror_1001_' + appid + '_' + Math.floor(new Date().getTime() / 1000);
 	callback({
