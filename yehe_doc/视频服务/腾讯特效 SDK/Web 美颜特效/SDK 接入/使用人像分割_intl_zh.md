@@ -1,5 +1,5 @@
 使用人像分割需要先在初始化时启用人像分割模块，详情请参见 [自定义流](https://intl.cloud.tencent.com/document/product/1143/50102)、[内置相机](https://intl.cloud.tencent.com/document/product/1143/50101)。
-**本功能仅支持 Web 端**。
+**本功能目前仅支持 Web 端**。
 
 [](id:set)
 ## 设置背景
