@@ -1,4 +1,4 @@
-The TencentDB for SQL Server console provides the list of backup files that can be downloaded over the private or public network. They may then be used to restore data from one database to another (such as a self-built one).
+The TencentDB for SQL Server console provides the list of backup files that can be downloaded over the private or public network. You can use the downloaded backups to restore data from one database to another (such as a self-built one).
 This document describes how to download a local or cross-region backup in the console.
 
 ## Directions
