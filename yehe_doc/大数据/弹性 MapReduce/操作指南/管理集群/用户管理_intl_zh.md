@@ -3,7 +3,7 @@
 
 >!
 >- 目前 EMR-V2.6.0 和 EMR-V3.2.1 版本以及之后新版本支持用户管理功能。
->- 需要手动触发 ranger-ugsync-site.xml 的配置下发，并重启 RangerUsersync 服务，用户同步才能生效。
+>- 需要手动触发 ranger-ugsync-site.xml 的配置下发，并重启 EnableUnixAuth 服务，用户同步才能生效。
 >- 删除用户、重置密码可能导致正在运行的任务失败，需谨慎操作。
 
 ## 操作步骤
@@ -16,7 +16,7 @@
  - 登录 [弹性 MapReduce 控制台](https://console.cloud.tencent.com/emr)，在集群列表中选择对应的集群单击集群服务进入集群服务列表。
  - 在集群服务列表中，选择 Ranger 服务面板右上角**操作 > 配置管理**。
  - 进入配置管理页后，选择 ranger-ugsync-site.xml 配置文件，单击**修改配置**后，无需修改配置；单击下方**保存配置**，然后在弹窗中选择**保存并下发**。
- - 返回**角色管理**页面，选择 RangerUsersync 服务并单击**重启服务**。
+ - 返回**角色管理**页面，选择 EnableUnixAuth 服务并单击**重启服务**。
 5. 重置密码
 在用户管理列表页面点击需要修改密码的用户的右侧操作中的**重置密码**，输入和确认新密码后单击**确定**即可完成重置。
  ![](https://qcloudimg.tencent-cloud.cn/raw/2e23f5a5a637bf25073b0fc414c2319c.png)
