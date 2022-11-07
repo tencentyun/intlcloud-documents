@@ -12,7 +12,7 @@ Billable items with price changes: LVB playback traffic/bandwidth, LEB playback 
   - Asia Pacific 3: Philippines, India, Australia
   - North America: United States, Canada
   - Europe: Netherlands, Germany, Russia, United Kingdom, Ireland, Italy, Spain, France
-  - Middle East: United Arab Emirates, Turkey, Qatar, Saudi Arabia, Bahrain
+  - Middle East: United Arab Emirates, Türkiye, Qatar, Saudi Arabia, Bahrain
   - Africa: South Africa
   - South America: Brazil, Colombia
 - For **details about the pricing of LVB and LEB**, please see [LVB Billing Overview](https://intl.cloud.tencent.com/zh/document/product/267/2818) and [LEB Billing Overview](https://intl.cloud.tencent.com/zh/document/product/267/39969).
