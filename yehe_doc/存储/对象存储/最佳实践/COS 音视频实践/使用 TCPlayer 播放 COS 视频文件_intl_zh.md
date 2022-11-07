@@ -158,7 +158,7 @@ var player = TCPlayer("player-container-id", {
 ```
 var PosterImage = TCPlayer.getComponent('PosterImage');
 PosterImage.prototype.handleClick = function () {
-	window.open('https://cloud.tencent.com/product/ci'); // 设置广告链接
+	window.open('https://www.tencentcloud.com/products/ci'); // 设置广告链接
 };
 
 var player = TCPlayer('player-container-id', {
