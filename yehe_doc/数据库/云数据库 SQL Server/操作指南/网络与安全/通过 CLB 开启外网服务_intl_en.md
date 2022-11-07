@@ -1,4 +1,4 @@
-TencentDB for SQL Server supports private and public network addresses. By default, a private network address is provided for you to access your instance over the private network. To access your database instance from a Linux or Windows CVM instance over the public network, you can enable the public network address. You can also enable public network access through CLB, but you must configure security group rules in this case.
+TencentDB for SQL Server supports both private and public network addresses, with the former enabled by default for you to access your instance over the private network and the latter enabled or disabled as needed. To access your database instance from a Linux or Windows CVM instance over the public network, you can enable the public network address. You can also enable public network access through CLB, but you must configure security group rules in this case.
 
 This document describes how to enable public network access through CLB, connect to the instance through SQL Server Management Studio (SSMS), and run a simple query.
 
