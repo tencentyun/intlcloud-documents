@@ -134,7 +134,7 @@ Get code samples:
 
 [](id:6)
 ### Setting dynamic watermark
-The player supports adding a dynamic watermark that changes its position and speed to a video. When using the dynamic watermark feature, the reference of the player object should not be exposed to the global environment; otherwise, the dynamic watermark can be easily removed. CI also allows you to add a dynamic watermark to a video in the cloud. For more information, see [Watermark Template APIs](https://cloud.tencent.com/document/product/460/77715).
+The player supports adding a dynamic watermark that changes its position and speed to a video. When using the dynamic watermark feature, the reference of the player object should not be exposed to the global environment; otherwise, the dynamic watermark can be easily removed. CI also allows you to add a dynamic watermark to a video in the cloud. For more information, see Watermark Template APIs.
 ```
 var player = TCPlayer("player-container-id", {
     plugins:{
@@ -158,7 +158,7 @@ The steps are as follows:
 ```
 var PosterImage = TCPlayer.getComponent('PosterImage');
 PosterImage.prototype.handleClick = function () {
-	window.open('https://cloud.tencent.com/product/ci'); // Set the ad link
+	window.open('https://www.tencentcloud.com/products/ci'); // Set the ad link
 };
 
 var player = TCPlayer('player-container-id', {
