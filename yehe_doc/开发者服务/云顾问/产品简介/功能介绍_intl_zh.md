@@ -704,7 +704,7 @@
    </tr>
    <tr>
       <td> 云数据库（Redis）Redis 节点请求数超限</td>
-      <td> 检查 Redis 节点请求数是否靠近瓶颈。</td>
+      <td> 检查 Redis 节点请求数是否接近上限。</td>
    </tr>
    <tr>
       <td rowspan="2"> 云数据库（MariaDB）</td>
