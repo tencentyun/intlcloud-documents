@@ -215,7 +215,7 @@ Charges of video acceleration differ in and outside the Chinese mainland.
 | Asia Pacific Region 1   | Hong Kong (China), Macao (China), Vietnam, Singapore, Thailand           |
 | Asia Pacific Region 2   | Taiwan (China), Japan, South Korea, Malaysia, Indonesia           |
 | Asia Pacific Region 3   | Philippines, India, Australia, other Asia-Pacific countries and regions             |
-| Middle East     | Saudi Arabia, United Arab Emirates, Turkey        |
+| Middle East     | Saudi Arabia, United Arab Emirates, Türkiye        |
 | Europe     |United Kingdom, Russia, Germany, Italy, Ireland, France, Netherlands, Spain  |
 | North America| United States, Canada        |
 | South America | Brazil|
