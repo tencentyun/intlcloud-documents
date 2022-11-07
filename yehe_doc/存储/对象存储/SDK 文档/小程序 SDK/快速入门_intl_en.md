@@ -305,7 +305,7 @@ There are three ways to get the authentication credentials for your instance by 
 ### Enabling DataInsight
 
 We have introduced [DataInsight](https://beacon.tencent.com/) into the SDK to track and optimize the SDK quality for a better user experience.
->? DataInsight only monitors the COS request performance but doesn't report the business data.
+>? DataInsight only monitors the COS request performance and doesn't report any business data.
 >
 
 To enable this feature, make sure that the SDK version is 1.4.0 or later and specify `EnableTracker` as `true` during initialization.

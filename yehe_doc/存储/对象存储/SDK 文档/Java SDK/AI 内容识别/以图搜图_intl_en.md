@@ -174,7 +174,7 @@ boolean response = client.deleteGalleryImages(request);
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
 | bucketName | Request | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
-| objectKey | Request | Location of the image in the bucket	 | String    | Yes   |
+| objectKey | Request | Location of the image in the bucket | String    | Yes   |
 | entityId | Request | Entity ID | String    | Yes   |
 
 #### Response description

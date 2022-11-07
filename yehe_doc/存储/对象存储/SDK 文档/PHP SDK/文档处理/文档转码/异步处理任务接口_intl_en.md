@@ -215,7 +215,7 @@ try {
 //      'NextToken' => '143486', // Context token for pagination
 //      'OrderByTime' => 'Desc', // `Desc` (default) or `Asc`
 //      'Size' => 2, // Maximum number of jobs that can be pulled. Default value: `10`. Maximum value: `100`.
-//      'States' => 'All', // Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default value), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`.
+//      'States' => 'All', // Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`.
 //      'StartCreationTime' => '2021-10-10T16:20:07+0800', // Start time of the time range for job pulling
 //      'EndCreationTime' => '2021-10-10T16:20:07+0800', // End time of the time range for job pulling
     ));
@@ -237,7 +237,7 @@ try {
 | OrderByTime       | String  | `Desc` (default) or `Asc`                                   | No |
 | NextToken         | String  | Context token for pagination                   | No |
 | Size              | Integer | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100.                        | No |
-| States            | String  | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default value), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | No |
+| States            | String  | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | No |
 | StartCreationTime | String  | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`.  | No |
 | EndCreationTime   | String  | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`.  | No |
 

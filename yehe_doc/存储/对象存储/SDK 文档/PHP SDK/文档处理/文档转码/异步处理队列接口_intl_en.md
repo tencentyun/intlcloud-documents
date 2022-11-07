@@ -11,7 +11,7 @@ This document provides an overview of APIs and SDK code samples for async proces
 
 #### Feature description
 
-This API (`DescribeDocProcessQueues`) is used to query the file transcoding queue to get the ID of the queue which the specified bucket is in.
+This API (`DescribeDocProcessQueues`) is used to query the file transcoding queue. It can also be used to get the ID of the queue where the specified bucket is in.
 
 #### Sample code
 ```php
