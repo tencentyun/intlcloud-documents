@@ -3,7 +3,7 @@ This feature allows you to manage (e.g., add, edit, or delete) users in an EMR c
 
 >!
 >- User management is available only for EMR-v2.6.0 and EMR-v3.2.1 and above.
->- You need to manually trigger the delivery of configuration for ranger-ugsync-site.xml and restart the RangerUsersync service for user configurations to take effect.
+>- You need to manually trigger the delivery of configuration for ranger-ugsync-site.xml and restart the EnableUnixAuth service for user configurations to take effect.
 >- Deleting users and resetting passwords may cause a running task to fail.
 
 ## Directions
@@ -16,7 +16,7 @@ This feature allows you to manage (e.g., add, edit, or delete) users in an EMR c
  - Log in to the [EMR console](https://console.cloud.tencent.com/emr), select the target cluster in the cluster list, and click **Cluster Service** to enter the cluster service list.
  - Select **Operation > Configuration Management** in the upper-right corner of the Ranger service panel.
  - On the **Configuration Management** page, select the ranger-ugsync-site.xml configuration file, click **Modify Configuration** and make no modification. Then, click **Save Configuration** below, and select **Save and Deliver** in the pop-up window.
- - Return to the **Role Management** page, select the RangerUsersync service and click **Restart Service**.
+ - Return to the **Role Management** page, select the EnableUnixAuth service and click **Restart Service**.
 5. Reset a password.
 On the user management page, find the user whose password needs to be changed and click **Reset Password** on the right. Enter the new password and confirm, and click **Confirm**.
  ![](https://qcloudimg.tencent-cloud.cn/raw/2e23f5a5a637bf25073b0fc414c2319c.png)
