@@ -58,7 +58,7 @@ The performance of the following specification is a reference value. The actual 
 
 Computing configuration fees = node price * number of nodes
 
-Cluster performance description: The **cluster performance is equal to node performance * number of nodes** and changes linearly within the node range.
+Cluster performance description: The <b>cluster performance is equal to node performance * number of nodes</b> and changes linearly within the node range.
 
 | **Specification Type** | **Minimum Nodes** | **Maximum Nodes** | **Single-Node Starting QPS (4 KB Message Size)** |
 | ------------ | -------------------- | -------------------- | -------------------------------- |
