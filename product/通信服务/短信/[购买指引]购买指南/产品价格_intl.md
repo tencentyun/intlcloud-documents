@@ -209,7 +209,7 @@ Global SMS is daily [pay-as-you-go](https://intl.cloud.tencent.com/document/prod
 | Turkmenistan                     | TM   | 993    | 0.0850 |
 | Tunisia                          | TN   | 216    | 0.1406 |
 | Tonga                            | TO   | 676    | 0.0371 |
-| Turkey                           | TR   | 90     | 0.0130 |
+| Türkiye                          | TR   | 90     | 0.0130 |
 | Trinidadand Tobago               | TT   | 1868   | 0.0659 |
 | Taiwan, China                    | TW   | 886    | 0.054  |
 | Tanzania                         | TZ   | 255    | 0.0911 |
