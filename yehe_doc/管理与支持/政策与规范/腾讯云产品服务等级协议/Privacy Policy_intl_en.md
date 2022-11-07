@@ -513,17 +513,17 @@ You may request us to discontinue, to restrict the use or provision of, and/or t
 
 We will give you notice by email of any changes to this Privacy Policy, and give you an opportunity to reject such changes, failing which the changes will become effective as stated in the notice
 
-### TURKEY
+### Türkiye
 
-Our Data Controller Representative in Turkey is Özdağıstanli Ekici Avukatlık Ortaklığı for the purpose of compliance with Turkish Law on Personal Data Protection Law (“**DPL**”) and its secondary regulations can be contacted at tencent@iptech-legal.com. Please include the word “Turkey” in the subject line of your email
+Our Data Controller Representative in Türkiye is Özdağıstanli Ekici Avukatlık Ortaklığı for the purpose of compliance with Turkish Law on Personal Data Protection Law (“**DPL**”) and its secondary regulations can be contacted at tencent@iptech-legal.com. Please include the word “Türkiye” in the subject line of your email
 
 Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 18 to register for our Services and/or provide any personal identification information. We will ask for parental consent for children under age 18 for any processing of their personal data.
 
-With respect to the section “How We Use Your Personal Information”, for the purposes of Turkey the column “Legal Basis for Processing” shall be deemed to be amended such that the purposes for processing personal information for Turkey shall be Art. 5/2 c and Art 5/2 f of the Law on Protection of Personal Data w. no 6698.
+With respect to the section “How We Use Your Personal Information”, for the purposes of Türkiye the column “Legal Basis for Processing” shall be deemed to be amended such that the purposes for processing personal information for Türkiye shall be Art. 5/2 c and Art 5/2 f of the Law on Protection of Personal Data w. no 6698.
 
-Your personal data can be transferred and stored into servers located in Turkey or abroad with your consent.
+Your personal data can be transferred and stored into servers located in Türkiye or abroad with your consent.
 
-The paragraph headed “*The Security of Your Personal Information*” in the Tencent Cloud Privacy Policy is inapplicable with respect to personal data collected in Turkey.
+The paragraph headed “*The Security of Your Personal Information*” in the Tencent Cloud Privacy Policy is inapplicable with respect to personal data collected in Türkiye.
 
 You have legal rights, which are set forth in Article 11 of the DPL, in relation to the personal information data we hold about you. As a Turkish data subject, you may have right to apply to the data controller and (and to the extent permitted under applicable laws and regulations):
 - learn whether or not your personal data has been processed;
@@ -531,8 +531,8 @@ You have legal rights, which are set forth in Article 11 of the DPL, in relation
 - learn the purpose of processing of your personal data and whether your data is being processed in line with that purpose
 - know the third parties in the country or abroad to whom personal data has been transferred;
 - request rectification in the event personal data is incomplete or inaccurate;
-- request deletion or destruction of personal data within the framework of the conditions set forth under Article 7 of the Law on Protection of Personal Data Protection (Turkey);
-- object to automatic processing of data and seek certain remedies in accordance with the Personal Data Protection Law (Turkey).
+- request deletion or destruction of personal data within the framework of the conditions set forth under Article 7 of the Law on Protection of Personal Data Protection (Türkiye);
+- object to automatic processing of data and seek certain remedies in accordance with the Personal Data Protection Law (Türkiye).
 
 These rights are not absolute.
 
