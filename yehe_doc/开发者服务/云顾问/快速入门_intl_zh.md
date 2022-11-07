@@ -6,7 +6,7 @@
 
 
 <dx-alert infotype="explain" title="">
-如果没有账号，请参考账号 [注册教程](https://www.qcloud.com/document/product/378/8415)。
+如果没有账号，请参考账号 [注册教程](https://www.tencentcloud.com/document/product/378/17985)。
 </dx-alert>
 
 
