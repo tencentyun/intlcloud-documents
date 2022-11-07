@@ -209,7 +209,7 @@
 | Turkmenistan                      | 土库曼斯坦           | TM   | 993    | 0.0850 |
 | Tunisia                           | 突尼斯               | TN   | 216    | 0.1406 |
 | Tonga                             | 汤加                 | TO   | 676    | 0.0371 |
-| Turkey                            | 土耳其               | TR   | 90     | 0.0130 |
+| Türkiye                            | 土耳其               | TR   | 90     | 0.0130 |
 | Trinidadand Tobago                | 特立尼达和多巴哥     | TT   | 1868   | 0.0659 |
 | Taiwan, China                     | 中国台湾             | TW   | 886    | 0.054  |
 | Tanzania                          | 坦桑尼亚             | TZ   | 255    | 0.0911 |
