@@ -235,7 +235,7 @@ Due to different territory sizes of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Turkey</td>
+      <td>Türkiye</td>
       <td></td>
    </tr>
    <tr>
