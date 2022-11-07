@@ -6,7 +6,7 @@ Log in to the [Tencent Smart Advisor console](https://console.qcloud.com/advisor
 
 
 <dx-alert infotype="explain" title="">
-If you don't have an account yet, sign up as instructed in [Signing up for a Tencent Cloud Account](https://www.tencentcloud.com/zh/document/product/378/17985).
+If you don't have an account yet, sign up as instructed in [Signing up for a Tencent Cloud Account](https://www.tencentcloud.com/document/product/378/17985).
 </dx-alert>
 
 
