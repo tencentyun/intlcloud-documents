@@ -59,19 +59,19 @@ The following sample code demonstrates a page where **Verify** is clicked to act
           }
       }
   
-      // Define the function that handles TCaptcha-global.js loading errors
-      function loadErrorCallback() {
-        var appid = ''
-        // Generate a disaster recovery ticket or execute other operations
-        var ticket = 'terror_1001_' + appid + Math.floor(new Date().getTime() / 1000);
-        callback({
-          ret: 0,
-          randstr: '@'+ Math.random().toString(36).substr(2),
-          ticket: ticket,
-          errorCode: 1001,
-          errorMessage: 'jsload_error',
-        });
-      }
+    // Define the function that handles TCaptcha-global.js loading errors
+    function loadErrorCallback() {
+      var appid = 'CaptchaAppId';
+      // Generate a disaster recovery ticket or execute other operations
+      var ticket = 'terror_1001_' + appid + '_' + Math.floor(new Date().getTime() / 1000);
+      callback({
+        ret: 0,
+        randstr: '@'+ Math.random().toString(36).substr(2),
+        ticket: ticket,
+        errorCode: 1001,
+        errorMessage: 'jsload_error',
+      });
+    }
   
       // Define the event that triggers CAPTCHA
       window.onload = function(){

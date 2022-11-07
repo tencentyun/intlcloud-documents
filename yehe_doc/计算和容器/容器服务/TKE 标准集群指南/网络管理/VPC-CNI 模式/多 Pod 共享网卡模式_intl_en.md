@@ -32,16 +32,15 @@ The following diagram illustrates how the multiple Pods with a shared ENI in VPC
 
 #### Static IP address mode
 - TKE network component maintains an IP pool available at the cluster level.
-- TKE will apply for an ENI for each new node in the cluster. No secondary IP will be bound in advance, but the number of IPs that meets the IP quota requirements of the ENI is reserved for this node in the network component.
-- When a new Pod with VPC-CNI mode is created, the IPAMD component will allocate an IP based on the subnet where the ENI bound to the node is located, and then apply for binding the secondary IP to the ENI of the corresponding node immediately.
-- When the Pod is terminated, the IP address will be returned to the available IP pool of the cluster, the unbinding of IP address from the ENI is triggered, and the IP address will be released and returned to the VPC subnet.
-- The static IP address of the terminated Pod will be retained in the TKE cluster, and this IP address will be used again when a Pod with the same name as the terminated Pod is created.
+- Each newly added node in the cluster will not be bound to any secondary IP address or ENI in advance, and IP addresses are totally **allocated on demand**.
+- When a Pod in VPC-CNI mode is created, the IPAMD component will find an available ENI for IP address allocation on the corresponding node. The allocation follows the principle of **least ENIs**, that is, the ENI bound to the most number of IP addresses is allocated first.
+- If the existing ENI is bound to a maximum number of IP addresses, create an ENI for IP address allocation. The subnet that has the largest number of available IP addresses is preferred for the ENI.
+- If the Pod without a static IP address annotation is terminated, the IP address will be returned to the available IP pool of the cluster, the unbinding of the IP address from the ENI will be triggered, and the IP address will be released and returned to the VPC subnet.
+- The static IP address of the terminated Pod will be retained in the VPC, and this IP address will be used again when a Pod with the same name as the terminated Pod is created.
 - When the node is deleted, the IP addresses occupied by the ENI will be released.
-- When there are multiple container subnets, the ENI is preferentially allocated to the subnet that has the largest number of available IP addresses and meets the quota requirement of the ENI's IP addresses. If there is no subnet that fully meets the quota requirement, the node will fail to bind the ENI.
+- When there are multiple container subnets, the ENI is preferentially allocated to the subnet that has the largest number of available IP addresses. If there is no such subnet, the ENI binding will fail.
 
 ### Data Plane Principle for Multiple ENIs
-
->! Currently, multiple ENIs are only supported in non-static IP address mode.
 
 When a node has bound multiple ENIs, the network packets sent from the Pod will be forwarded to the corresponding ENI according to the policy-based routing.
 - You can execute `ip link` on the node to view the information of all network devices on the node, and you can learn about the network devices corresponding to the ENI of the node through comparison of the mac address of the ENI. Generally, `eth0` represents primary ENI, `eth1` and `eth2` represent secondary ENIs:
@@ -56,7 +55,7 @@ When a node has bound multiple ENIs, the network packets sent from the Pod will 
 When the network packets that are sent to the Pod reach the node, they will be sent to the Veth ENI of the Pod via the primary route table by following the policy-based routing.
 
 
-## Directions
+## How to Use
 
 
 To use VPC-CNI, ensure that `rp_filter` is disabled. You can refer to the following code sample:
@@ -72,8 +71,8 @@ sysctl -w net.ipv4.conf.eth0.rp_filter=0
 
 #### Enabling VPC-CNI when creating the cluster
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
-2. On the "Cluster Management" page, click **Create** above the cluster list.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and select **Cluster** on the left sidebar.
+2. On the "Cluster management" page, click **Create** above the cluster list.
 3. On "Create Cluster" page, select **VPC-CNI** for **Container Network Add-on**, as shown below:
 ![](https://main.qcloudimg.com/raw/26af6272145e26b2b3f8c92d79318635.png)
 
@@ -84,19 +83,19 @@ sysctl -w net.ipv4.conf.eth0.rp_filter=0
 
 #### Enabling VPC-CNI for the existing clusters
 When creating a cluster, select the Global Router network add-on. Then, enable the VPC-CNI mode on the basic information page of the cluster (by default, both modes are enabled).
-1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and select **Cluster** on the left sidebar.
 2. On "Cluster Management" page, select the ID of the cluster for which VPC-CNI needs to be enabled and go to its details page.
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the **Node and Network Information** section, enable **VPC-CNI mode**.
-5. Select the subnet and set the **IP Reclaiming Policy** in the pop-up window, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/3246c6d4a6217f176e7da51d986bc628.png)
+5. In the pop-up window, specify whether to support static IP addresses and select the subnet as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/22d8257099799f8a527d07eeefcb5602.png)
 >! 
 >- For scenarios that use static IP addresses, when enabling VPC-CNI, you need to set the IP reclaiming policy to specify when to reclaim the IP addresses after Pods are terminated.
 >- Pods with non-static IP addresses are not affected by these settings because their IP addresses are immediately released upon Pod termination. These IP addresses are not returned to the VPC, but returned to the IP address pool managed by the container.
 6. Click **Submit** to enable VPC-CNI mode for the cluster.
 
 ### Disabling VPC-CNI
-1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and select **Cluster** on the left sidebar.
 2. On "Cluster Management" page, select the ID of the cluster for which VPC-CNI needs to be enabled and go to its details page.
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the **Node and Network Information** section, disable the **VPC-CNI mode**.

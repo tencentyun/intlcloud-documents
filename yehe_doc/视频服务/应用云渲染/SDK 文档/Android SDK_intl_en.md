@@ -2,5 +2,5 @@ CAR provides the SDK for Android for integration on Android devices. The SDK pro
 
 | SDK     | GitHub Project |
 | ----------- |----------- |
-| SDK for Android | [GitHub project](https://github.com/tencentyun/cloudgame-android-sdk/tree/master/TcrSdk) |
+| SDK for Android | [GitHub project](https://github.com/tencentyun/cloudgame-android-sdk/blob/master/TcrSdk/README_EN-US.md) |
 

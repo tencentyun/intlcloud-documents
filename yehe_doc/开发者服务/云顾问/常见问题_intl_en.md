@@ -1,22 +1,22 @@
-### Will the authorization get customer managed CMKs?
+### Will authorization obtain the customer managed CMKs?
 
-No. Based on the authorization mechanism of CAM [service role](https://intl.cloud.tencent.com/document/product/598/19421), Advisor gets only temporary keys to read cloud resource configurations. Information about your keys will not be obtained.
+No. Based on the authorization mechanism of CAM [Service Role](https://intl.cloud.tencent.com/document/product/598/19421), Tencent Smart Advisor obtains only temporary keys to read cloud resource configurations. Information about your keys will not be obtained.
 
 ### Will assessments affect service performance?
 
-No. Advisor uses TencentCloud APIs to get resource configurations for resource assessments, and business data stream is not involved. Therefore, service performance will not be affected.
+No. Tencent Smart Advisor uses cloud APIs to obtain resource configurations for resource assessments, and business data stream is not involved. Therefore, service performance will not be affected.
 
-### Will Advisor modify resource configurations?
+### Will Tencent Smart Advisor modify the resource configurations?
 
-No. Advisor only reads the resource configurations for risk assessment under the principle of least privilege. It does not modify your resource configurations.
+No. Tencent Smart Advisor only reads the resource configurations for risk assessment using the minimum permissions. It does not modify your resource configurations.
 
-### How do I ignore an assessment item?
+### How can I ignore an assessment item?
 
-Go to **Settings** > **Assessment Item Configurations** and click the switch button to disable the item you want to ignore.
+Go to **Assessment Settings** > **Assessment Items** and click the switch button to disable the item you want to ignore.
 
-### How do I ignore a cloud resource?
+### How can I ignore a cloud resource?
 
-On the assessment detail page, click **Ignore** for the cloud resource you want to ignore. Then, this resource will be ignored in the next assessment.
+In the **Assessment Items** page, click **Ignore** for the cloud resource you want to ignore. In this way, this resource will be ignored in the next assessment.
 
-### How often does Advisor conduct inspections?
-After Advisor is activated, it will conduct an automatic inspection once a day. You can download yesterday's inspection report or click **Start Assessment** to manually initiate an inspection in the console.
+### How often does Tencent Smart Advisor conduct inspections?
+After Tencent Smart Advisor is activated, it will conduct an automatic inspection once a day. You can download yesterday's inspection report or click **Start Assessment** to manually initiate an inspection in the [Tencent Smart Advisor console](https://console.cloud.tencent.com/advisor).

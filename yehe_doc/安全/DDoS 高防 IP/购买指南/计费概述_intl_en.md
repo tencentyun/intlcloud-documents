@@ -53,11 +53,43 @@ The basic protection service is billed based on your monthly plan. See the follo
 
 #### Regions outside the Chinese mainland
 
-| Base Protection Capacity | Anti-CC Protection Cap | Price           |
-| ------------- | ----------- | -------------- |
-| 20 Gbps        | 40,000 QPS   | 4,800 USD/month    |
-| 50 Gbps        | 150,000 QPS  | 10,500 USD/month  |
-| 100 Gbps       | 300,000 QPS  | 198,000 USD/year |
+<table>
+<tr>
+<th width="0px">Base Protection Capacity</th>
+<th width="0px" >Anti-CC Protection Cap</th>
+<th width="0px" >Price</th>
+<th width="0px" >Region</th>
+</tr>
+<tr>
+<td rowspan="2">20Gbps</td>
+<td rowspan='2' >40,000QPS</td>
+<td >4800 USD/month</td>
+<td >Seoul</td>
+</tr>
+<tr>
+<td >4161 USD/month</td>
+<td >Hong Kong (China), Taiwan (China), Singapore, Tokyo, Silicon Valley, Frankfurt</td>
+</tr>
+<tr>
+<td rowspan="2">50Gbps</td>
+<td rowspan='2' > 150,000QPS</td>
+<td >10,500 USD/month</td>
+<td >Hong Kong (China), Seoul, Singapore, Tokyo, Silicon Valley, Frankfurt</td>
+</tr>
+<tr>
+<td >8631 USD/month</td>
+<td >Taiwan (China)</td>
+<tr>
+<td rowspan="2">100Gbps</td>
+<td rowspan='2' > 300,000QPS</td>
+<td >16,500 USD/month</td>
+<td >Hong Kong (China), Seoul, Singapore, Tokyo, Silicon Valley, Frankfurt</td>
+</tr>
+<tr>
+<td >14,660 USD/month</td>
+<td >Taiwan (China)</td>
+</tr>
+</table>
 
 >?
 >- "Non-BGP" refers to China Mobile/China Union/China Telecom network services. A non-BGP plan includes three Anti-DDoS Advanced instances, one for each of the network services.

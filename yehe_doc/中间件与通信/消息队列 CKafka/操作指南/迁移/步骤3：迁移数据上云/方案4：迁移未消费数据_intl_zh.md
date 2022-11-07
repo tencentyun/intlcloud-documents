@@ -25,7 +25,7 @@
 #### 2. 下载工具包
 
 下载迁移工具后，打开脚本填入原集群和新集群地址配置后，checkFlag 设置为0，运行脚本先预检查一下将要迁移的 topic 和位置。
-![](https://qcloudimg.tencent-cloud.cn/raw/c9da1c8f0587b691475390e51699db6a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d27691597ddc3a60de63cae9731f8cf1.png)
 运行脚本后，将输出一些信息，同时当前目录会同时写入一份文本日志。
 ![](https://qcloudimg.tencent-cloud.cn/raw/dae1bd45024dcd9e89cc7cf68ac37e3f.png)
 

@@ -1,47 +1,78 @@
 ## General Upgrade Steps
 
 ### Automated integration via Android Studio
-If your project is integrated by pulling dependencies remotely and doesn't involve the specific versions as described below, you can directly replace the TPNS SDK dependencies added to the project with those on the latest version, which can be viewed and obtained in [SDK for Android](https://intl.cloud.tencent.com/document/product/1024/36191).
+If your project is integrated by pulling dependencies remotely and doesn't involve the specific versions as described below, you can directly replace the Tencent Push Notification Service SDK dependencies added to the project with those on the latest version, which can be viewed and obtained in [SDK for Android](https://intl.cloud.tencent.com/document/product/1024/36191).
 
 >! 
 > - If your currently used version is largely different from the latest version, be sure to modify the configurations by referring to the version changes below.
-> - Generally, we recommend you also upgrade and modify the vendor push dependencies from the TPNS SDK.
+> - Generally, we recommend you also upgrade and modify the vendor push dependencies from the Tencent Push Notification Service SDK.
 
-Modification example:
-```groovy
+For example, if the current version is 1.3.3.3 and the latest version is 1.3.6.1, you need to change your SDK dependency version from 1.3.3.3 to 1.3.6.1:
+```
 dependencies {
-    // TPNS push dependency, where [VERSION] should be replaced with the latest version number        
-    implementation 'com.tencent.tpns:tpns:[VERSION]-release' 
+    // Tencent Push Notification Service main package
+    implementation "com.tencent.tpns:tpns:1.3.6.1-release"
+
+    // Mi push dependency package
+    implementation "com.tencent.tpns:xiaomi:1.3.6.1-release"
+
+    // Meizu push dependency package
+    implementation "com.tencent.tpns:meizu:1.3.6.1-release"
+    
+    // Huawei push dependency package
+    implementation "com.tencent.tpns:huawei:1.3.6.1-release"
+    // Dependency package for the HMS Core Push module of Huawei push
+    implementation 'com.huawei.hms:push:6.5.0.300'       
+
+    // OPPO push dependency package
+    implementation "com.tencent.tpns:oppo:1.3.5.0-release"
+    // For SDK v1.3.2.0 or later, you need to add the following dependency statements. Otherwise, the registration of OPPO PUSH will fail.
+    implementation 'com.google.code.gson:gson:2.6.2'
+    implementation 'commons-codec:commons-codec:1.15'
+
+    // vivo push dependency package
+    implementation "com.tencent.tpns:vivo:1.3.6.1-release"
+
+    // Honor push dependency package
+    implementation "com.tencent.tpns:honor:1.3.6.1-release"
 }
 ```
 
 
 ### Integration via Eclipse
 If your project is integrated by importing JAR files manually and doesn't involve the specific versions as described below, refer to the following steps to make changes:
-1. Get the latest SDK package [here](https://console.cloud.tencent.com/tpns/sdkdownload).
+1. Obtain the latest SDK package from [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload).
 2. Replace the original `tpns-*.jar` files in the project with the `tpns-*.jar` files in the `libs` directory of the SDK package.
 
 >! 
 > - If your currently used version is largely different from the latest version, be sure to modify the configurations by referring to the version changes below.
-> - Generally, we recommend you also upgrade and replace the vendor push dependencies from the TPNS SDK.
+> - Generally, we recommend you also upgrade and replace the vendor push dependencies from the Tencent Push Notification Service SDK.
 
 
 ### Integration via other toolkits
 If your project is integrated via other third-party toolkits such as MSDK and GCloud, refer to their respective upgrade guides first.
 
-## TPNS Android SDK v1.3.2.0
-TPNS SDK v1.3.2.0 has upgraded the versions of vendor push dependencies as detailed below:
+## Android SDK 1.3.6.1
+SDK v1.3.6.1 has upgraded the versions of Mi and OPPO push dependencies. The original versions of vendor push SDKs currently in use are as follows:
+- Huawei: 6.5.0.300
+- Mi: 5.0.8
+- Meizu: 4.1.0
+- OPPO: 3.1.0
+- vivo: 3.0.0.4
+
+## Android SDK 1.3.2.0
+SDK v1.3.2.0 has upgraded the versions of vendor push dependencies as detailed below:
 - Huawei: 6.3.0.302
 - Mi: 4.9.1
 - Meizu: 4.1.0
 - OPPO: 3.0.0
 - vivo: 3.0.0.4
 
-Upgraded vendor push dependencies involve changed configurations. 
+Upgraded vendor push dependencies involve changed configurations. See below to make changes.
 
 ### Automated integration via Android Studio
 If your project is integrated by pulling dependencies remotely, note the following changes.
-#### OPPO Push
+#### OPPO push
 Add the following dependency statements; otherwise, OPPO Push registration may fail:
 ```groovy
 implementation 'com.google.code.gson:gson:2.6.2'
@@ -50,7 +81,7 @@ implementation 'commons-codec:commons-codec:1.15'
 
 ### Integration via Eclipse
 If your project is integrated by importing JAR files manually, note the following changes.
-#### Mi Push
+#### Mi push
 Add the following nodes under the `application` tag in the `AndroidManifest` file; otherwise, notification clicks may not work on Mi devices on Android 12 or later.
 ```xml
 <activity
@@ -62,13 +93,13 @@ Add the following nodes under the `application` tag in the `AndroidManifest` fil
 </activity>
 ```
 
-#### Meizu Push
+#### Meizu push
 1. Add the following class resource files to the main project; otherwise, notification receipt may fail on Meizu devices on Android 6.0 or earlier. The code is as follows:
 ```java
 package com.meizu.cloud.pushinternal;
 public class R {
     public static final class drawable {
-		    // Copy the resource file `stat_sys_third_app_notify.png` from the `flyme-notification-res` folder of the Meizu dependency directory in the TPNS SDK package and paste it in your application's resource directory
+		    // Copy the resource file `stat_sys_third_app_notify.png` from the `flyme-notification-res` folder of the Meizu dependency directory in the Tencent Push Notification Service SDK package and paste it in your application's resource directory
         public static final int stat_sys_third_app_notify = com.tencent.android.tpns.demo.R.drawable.stat_sys_third_app_notify;
     }
 }
@@ -90,8 +121,8 @@ Remove the receiver node `com.meizu.cloud.pushsdk.SystemReceiver` and add the fo
 </receiver>
 ```
 
-#### OPPO Push
-1. Change the name of the class resource file `com.heytap.mcssdk.R` added for OPPO Push to `com.pushsdk.R` in your project (if it has never been added, add it directly); otherwise, OPPO Push registration may fail.
+#### OPPO push
+1. Change the name of the class resource file `com.heytap.mcssdk.R` added for OPPO Push to `com.pushsdk.R` in your project (if it has never been added, add it directly); otherwise, OPPO Push registration may fail. Below is an example:
 ```java
 package com.pushsdk;
 class R {
@@ -101,13 +132,13 @@ class R {
 }
 ```
 
-2. Copy the `commons-codec-1.15.jar` and `gson-2.6.2-sources.jar` files from the OPPO dependency directory in the TPNS SDK package to the `libs` directory of your project's `app` module and import the project; otherwise, OPPO Push registration may fail:
+2. Copy the `commons-codec-1.15.jar` and `gson-2.6.2-sources.jar` files from the OPPO dependency directory in the Tencent Notification Push Service SDK package to the `libs` directory of your project's `app` module and import the project. Otherwise, OPPO Push registration may fail.
 ```groovy
 implementation files('libs/gson-2.6.2-sources.jar')
 implementation files('libs/commons-codec-1.15.jar')
 ```
 
-#### vivo Push
+#### vivo push
 1. Modify the service node `com.vivo.push.sdk.service.CommandClientService` under the `application` tag in the `AndroidManifest` file as follows:
 ```xml
 <service
@@ -128,7 +159,7 @@ implementation files('libs/commons-codec-1.15.jar')
 
 
 
-## TPNS Android SDK v1.3.1.1
+## Android SDK 1.3.1.1
 ### Integration via Eclipse
 If your project is integrated by importing JAR files manually, note the following changes.
 
@@ -166,9 +197,9 @@ If your project is integrated by importing JAR files manually, note the followin
     <receiver
          android:name="com.tencent.android.tpush.XGPushReceiver"
          android:exported="false"
-         android:process=":xg_vip_service" >
+         android:process=":xg_vip_service">
          <intent-filter android:priority="0x7fffffff" tools:node="replace" >
-            <!-- **Required** TPNS SDK's internal broadcast -->
+            <!-- **(Required)** The internal broadcast of the SDK -->
             <action android:name="com.tencent.android.xg.vip.action.SDK" />
             <action android:name="com.tencent.android.xg.vip.action.INTERNAL_PUSH_MESSAGE" />
             <action android:name="com.tencent.android.xg.vip.action.ACTION_SDK_KEEPALIVE" />
@@ -186,17 +217,16 @@ If your project is integrated by importing JAR files manually, note the followin
     </receiver>
 ```
 
-
-## TPNS Android SDK v1.2.7.0
+## Android SDK 1.2.7.0
 
 ### Adding support for supplementary push via in-app messages
-The API for setting whether to allow in-app message display is added. Pay attention to the compatibility between WebView and higher Android version. For more information, see [API Documentation](https://intl.cloud.tencent.com/document/product/1024/30715).
+The API for setting whether to allow in-app message display is added. Please pay attention to the compatibility between WebView and higher Android version. For more information, see [API Documentation](https://intl.cloud.tencent.com/document/product/1024/30715).
 
-## TPNS  Android SDK v1.2.5.0
+## Android SDK 1.2.5.0
 
 ### 1. Configuring the dependent environment for your project (optional)
 
-If you cannot pull the dependencies when using SDK dependencies, you can add the Google-recommended image source `MavenCentral` and Tencent Cloud image source in the `allprojects.repositories` file of your project's root directory `build.gradle`. 
+If you cannot pull the dependencies when using SDK dependencies, you can add the Google-recommended image source `MavenCentral` and Tencent Cloud image source in the `allprojects.repositories` file of your project's root directory `build.gradle`. Below is a code sample:
 ```
 allprojects {
     repositories {
@@ -211,7 +241,7 @@ allprojects {
 ```
 
 ### 2. Adding configuration (required)
-When using the newly added tag query API, you need to add the implementation method `onQueryTagsResult` in the implementation class that inherits `XGPushBaseReceiver`. 
+When using the newly added tag query API, you need to add the implementation method `onQueryTagsResult` in the implementation class that inherits `XGPushBaseReceiver`. Below is a code sample:
 ``` 
 public class MessageReceiver extends XGPushBaseReceiver {
 
@@ -225,17 +255,17 @@ public class MessageReceiver extends XGPushBaseReceiver {
 ```
 
 
-## TPNS Android SDK v1.2.1.3
+## Android SDK 1.2.1.3
 ### Changes to Huawei Push SDK connection
-Huawei Push SDK v5 is officially supported staring this version. Update the Huawei Push integration configuration as instructed in [Huawei Channel v5 Integration](https://intl.cloud.tencent.com/document/product/1024/37176).
+Starting from this version, Huawei push SDK v5 is officially supported. Please update the Huawei push integration configuration by referring to [Huawei Channel v5 Integration](https://intl.cloud.tencent.com/document/product/1024/37176).
 
-## TPNS Android SDK v1.2.0.2
+## Android SDK 1.2.0.2
 ### Integration via Eclipse
 If your project is integrated by importing JAR files manually, note the following changes.
-#### TPNS main package
-1. Replace `tpns-.jar` files in the `libs` directory of the SDK package.
+#### Tencent Push Notification Service main package
+1. Replace the `tpns-.jar` files in the `libs` directory of the SDK package.
 2. Replace the `so` files for each platform in the `Other-Platform-SO` directory of the SDK package.
-3. Remove the following nodes under the `application` tag in the `AndroidManifest` file:
+3. Remove the following data from the `application` tag in the `AndroidManifest` file:
 ```xml
     <activity
         android:name="com.tencent.android.tpush.XGPushActivity">
@@ -253,7 +283,7 @@ If your project is integrated by importing JAR files manually, note the followin
             android:name="com.tencent.bigdata.baseapi.base.SettingsContentProvider"
             android:authorities="application package name.XG_SETTINGS_PROVIDER" />
 ```
-Add the following nodes:
+Add the following data:
 ```xml
     <activity android:name="com.tencent.android.tpush.TpnsActivity"
         android:theme="@android:style/Theme.Translucent.NoTitleBar">
@@ -280,10 +310,8 @@ Add the following nodes:
             android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
             android:authorities="application package name.XG_SETTINGS_PROVIDER" />
 ```
-
 4. Add the following to the ProGuard obfuscation configuration:
-
-```xml
+```
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep class com.tencent.android.tpush.** {*;}
@@ -292,19 +320,18 @@ Add the following nodes:
 -keep class com.tencent.tpns.dataacquisition.** {*;}
 ```
 
-
-#### OPPO Push
+#### OPPO push
 1. Add the class resource file `com.heytap.mcssdk.R` to the project with the following code:
 ```java
 package com.heytap.mcssdk;
 class R {
     public static final class string {
         public static final int system_default_channel = 
-    com.tencent.android.tpns.demo.R.string.oppo_system_default_channel;// This can be changed to a custom string resource ID
+    com.tencent.android.tpns.demo.R.string.oppo_system_default_channel; //This can be changed to a custom string resource ID
     }
 }
 ```
-2. Remove the following nodes under the `application` tag in the `AndroidManifest` file:
+2. Remove the following data from the `application` tag in the `AndroidManifest` file:
 ```xml
 <service
    android:name="com.heytap.mcssdk.PushService"
@@ -321,7 +348,7 @@ class R {
    </intent-filter>
 </service>
 ```
-Add the following nodes:
+Add the following data:
 ```xml
 <service
    android:name="com.heytap.msp.push.service.CompatibleDataMessageCallbackService"
@@ -339,12 +366,9 @@ Add the following nodes:
    </intent-filter>
 </service>
 ```
-
 4. Add the following to the ProGuard obfuscation configuration:
-
-```xml
+```
 -keep public class * extends android.app.Service
 -keep class com.heytap.mcssdk.** {*;}
 -keep class com.heytap.msp.push.** { *;}
 ```
-

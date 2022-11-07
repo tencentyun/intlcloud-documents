@@ -1,4 +1,31 @@
 
+## September 2022
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.3.6.1 release</td>
+	<td>
+		<li>Upgraded the OPPO PUSH SDK to v3.1.0.</li>
+		<li>Upgraded the Mi Push SDK to v5.0.8.</li>
+		<li>Optimized the image loading policy of notifications delivered with the Tencent Push Notification Service channel.</li>
+		<li>Supported the Meizu Push channel on Meizu Meilan devices.</li>
+		<li>Optimized the compatibility with Android 13.</li>
+		<li>Fixed the issue where an additional notification channel was created when a custom notification ringtone was used.</li>
+		</td>
+        <td>September 1, 2022</td>
+	<td><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+</td>
+    </tr>
+</table>
+
+
 ## July 2022
 
 <table>
@@ -15,12 +42,11 @@
 		<li>Optimized the internal communication mechanism of the SDK to improve the communication efficiency.</li>
 		<li>Optimized the internal reporting mechanism of the SDK to reduce the traffic usage.</li>
 		</td>
-        <td>July 6, 2022</td><td>
-		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+        <td>July 6, 2022</td>
+	<td><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
-    </tr>
-<tr>
+</tr>
 </table>
 
 ## June 2022
@@ -42,7 +68,6 @@
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
-<tr>
 </table>
 
 ## May 2022
@@ -57,7 +82,7 @@
 	<tr>
         <td>SDK v1.3.4.1 release</td>
 	<td>
-		<li>Supported configuring default notification icon in the metadata.</li>
+		<li>Supported configuring small icon for default notification in the metadata.</li>
 		<li>Optimized the use and display of `PendingIntent`.</li>
 		li>Fixed the issue where the device was detected to check the existence of a light sensor.</li>
 		<li>Fixed other known issues.</li>
@@ -66,7 +91,6 @@
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
-<tr>
 </table>
 
 ## April 2022
@@ -83,13 +107,12 @@
 	<td>
 		<li>Supported the Huawei push channel for a device with an EMUI system.</li>
 		<li>Fixed the issue where the persistent connection retry interval was inaccurate.</li>
-		<li>Supported for the HONOR channel. For more information, see <a href="https://cloud.tencent.com/document/product/548/74465">HONOR Channel Integration</a>.</li>
+		<li>Supported the HONOR push channel. See <a href="https://intl.cloud.tencent.com/document/product/1024/47652">HONOR Channel Integration</a> for details.</li>
 		</td>
         <td>April 25, 2022</td><td>
 		<a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a>
 </td>
     </tr>
-<tr>
 </table>
 
 ## February 2022
@@ -114,7 +137,6 @@
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
-<tr>
 </table>
 
 ## January 2022
@@ -140,7 +162,6 @@
 <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a>
 </td>
     </tr>
-<tr>
 </table>
 
 ## September 2021
@@ -159,7 +180,6 @@
 <li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
     </tr>
-<tr>
 </table>
 
 ## August 2021
@@ -179,7 +199,6 @@
         <td>August 27, 2021</td><td><li>When using the new in-app messaging feature, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
     </tr>
-<tr>
 </table>
 
 ## July 2021
@@ -193,7 +212,7 @@
 	</tr>
 	<tr>
         <td>SDK 1.2.6.0 release</td><td><li> Added the feature of limiting API call frequency.
-<li>  Supported configuring notification channels for FCM frontend notifications and Tencent Push Notification Service local notifications.
+<li>  Supported configuring notification channels for FCM frontend notifications and local Tencent Push Notification Service notifications.
 <li>  Optimized persistent connection retry policies.
 <li>  Optimized the logic for reporting the number of daily active users and SDK startup events.
 <li>  Placed SDK logs in a hidden directory.
@@ -203,7 +222,6 @@
 <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/32624">Android FAQs</a></li></td>
     </tr>
-<tr>
 </table>
 
 ## May 2021
@@ -225,7 +243,6 @@
         <td>May 26, 2021</td><td><li>Because JCenter has been deprecated, you may encounter issues when pulling SDK dependencies. See <a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a> to configure the dependency repository mirror source.</li>
 <li> When using the new API for tag query, you need to add the implementation method <code>onQueryTagsResult</code> in the implementation class that inherits <code>XGPushBaseReceiver</code>. </li></td>
     </tr>
-<tr>
 </table>
 
 ## February 2021
@@ -241,7 +258,6 @@
         <td>SDK v1.2.3.1 release</td><td>Fixed a logic error of the Huawei disable component.</td>
         <td>February 4, 2021</td><td>-</td>
     </tr>
-<tr>
 </table>
 
 ## January 2021
@@ -282,7 +298,7 @@
 </tr>
 <tr>
         <td>SDK v1.2.2.0 release</td>
-       <td><li> Unified the naming conventions for account and tag operation APIs.<li> Optimized SDK error code reporting.<li> Upgraded the FCM channel protocol to enable the FCM system to take over the display of notifications sent through the FCM channel.<li> Added the support for badge coloring for messages sent through the Tencent Push Notification Service channel.<li> Supported Gzip compression during network communication.<li>Fixed the exception of service unbinding that might occur in multi-thread environments.</td>
+       <td><li> Unified the naming conventions for account and tag operation APIs.<li> Optimized SDK error code reporting.<li> Upgraded the FCM channel protocol to enable the FCM system to take over the display of notifications sent through the FCM channel.<li> Added the support for badge coloring for messages sent through the Tencent Push Notification Service channel.<li> Supported Gzip compression during network communication.<li>Fixed the service unbinding exception that might occur in multi-thread environments.</td>
         <td>November 26, 2020</td>
         <td>-</td>
     </tr>

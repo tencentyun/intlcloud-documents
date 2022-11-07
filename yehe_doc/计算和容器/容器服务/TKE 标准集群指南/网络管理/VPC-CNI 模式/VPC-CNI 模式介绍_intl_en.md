@@ -1,26 +1,33 @@
 
 ## How It Works
-VPC-CNI is a container network capability provided by TKE based on CNIs and VPC ENIs. It is suitable for scenarios with high latency requirements. In this network mode, containers and nodes are located on the same network plane, and container IP addresses are ENI IP addresses assigned by the IPAMD component.
+VPC-CNI is a container network capability provided by TKE based on CNIs and VPC ENIs. It is suitable for scenarios with high latency requirements. In this network mode, containers and nodes are located on the same network plane, and container IP addresses are ENI IP addresses allocated by the IPAMD component.
 
 
-VPC-CNI has a shared ENI mode and an exclusive ENI mode. The two network modes are suitable for different scenarios. You can select a network mode based on your business needs.
-- [Shared ENI Mode](https://intl.cloud.tencent.com/document/product/457/38971): Pods share an ENI, and the IPAMD component applies multiple IPs for the ENI to different Pods. It supports static pod IP addresses. For details, see [Static IP Address Usage](https://intl.cloud.tencent.com/document/product/457/38975).
-- [Exclusive ENI Mode](https://intl.cloud.tencent.com/document/product/457/38972): each Pod has an independent ENI, which can provides a higher performance. Due to the limitation of model, the number of ENIs that available for different nodes is limited and the Pod density of a single node is lower.
+The VPC-CNI mode includes the shared and exclusive ENI modes for different scenarios, which can be selected as needed.
+- [Shared ENI mode](https://intl.cloud.tencent.com/document/product/457/38971): Pods share an ENI, and the IPAMD component applies for multiple ENI IP addresses for different Pods. Pod IP addresses can be fixed. For more information, see [Static IP Address Features](https://intl.cloud.tencent.com/document/product/457/38975).
+- [Exclusive ENI mode](https://intl.cloud.tencent.com/document/product/457/38972): Each Pod has an exclusive ENI for higher performance. The number of ENIs that can be used by nodes differs by model. The number is smaller for Pods on a single node.
 
 
-## Use limits
 
-- Subnets in VPC-CNI mode cannot be used by other cloud resources, such as CVMs and CLBs.
+
+
+## Use Limits
+
+- We don't recommend subnets in VPC-CNI mode be used by other Tencent Cloud resources such as CVM and CLB instances.
 - The nodes in the cluster need to be in the same AZ as the subnet, otherwise, the Pod cannot be scheduled.
-- The number of pods that can be scheduled in VPC-CNI mode on a node is limited by the maximum number of IP addresses that can be bound with the inserted ENIs. Devices with higher configurations allow the insertion of more ENIs. You can check the Allocatable attribute of the node to confirm the number of ENIs that can be inserted.
+- In VPC-CNI mode, the number of Pods that can be scheduled on a node is subject to the maximum number of IP addresses that can be bound to the node ENI and the number of ENIs. The higher the specifications of the node, the more ENIs can be inserted, which can be checked by viewing the **Allocatable** of the node.
 
 
-## Use Cases
+## Applications
 
-Compared with Global Router, the advantages and applicable scenarios of VPC-CNI are as follows:
+Compared with Global Router, VPC-CNI has the following strengths and use cases:
 
-- Without the need for a network bridge, the network forwarding performance is enhanced by about 10%. This mode is suitable for scenarios with high network latency requirements.
-- It supports static pod IP addresses. This mode is suitable for scenarios that rely on static container IP addresses. For example, migration from a traditional architecture to a container platform and security policy restrictions on IP addresses.
-- It supports LB-to-Pod direct connection.
+- It has one layer fewer bridge and 10% higher network forwarding performance and is suitable for latency-sensitive scenarios.
+- It supports static Pod IP addresses and is suitable for scenarios that rely on static container IP addresses, for example, migrating a traditional architecture to a container platform and performing security policy restrictions on IP addresses.
+- It supports CLB-to-Pod direct connect.
+
+
+
+
 
 

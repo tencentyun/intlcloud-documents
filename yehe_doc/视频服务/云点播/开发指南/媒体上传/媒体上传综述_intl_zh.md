@@ -32,144 +32,29 @@
 
 云点播在全球多个地域有存储节点，媒体上传过程中会选择其中一个地域进行存储。云点播目前支持的存储地域如下：
 
-<table>
-    <tr>
-        <th>
-            存储地域                
-        </th>
-        <th>
-            地域英文简称                
-        </th>
-    </tr>
-    <tr>
-        <td>
-            北京             
-        </td>
-        <td>
-			ap-beijing
-        </td>
-    </tr>
-    <tr>
-        <td>
-            上海             
-        </td>
-        <td>
-			ap-shanghai
-        </td>
-    </tr>
-    <tr>
-        <td>
-            重庆             
-        </td>
-        <td>
-			ap-chongqing
-        </td>
-    </tr>
-    <tr>
-        <td>
-            天津             
-        </td>
-        <td>
-			ap-beijing-1
-        </td>
-    </tr>
-    <tr>
-        <td>
-            中国香港             
-        </td>
-        <td>
-			ap-hongkong
-        </td>
-    </tr>
-    <tr>
-        <td>
-            新加坡             
-        </td>
-        <td>
-			ap-singapore
-        </td>
-    </tr>
-    <tr>
-        <td>
-            印度孟买             
-        </td>
-        <td>
-			ap-mumbai
-        </td>
-    </tr>
-   <tr>
-        <td>
-            印度尼西亚雅加达             
-        </td>
-        <td>
-			ap-jakarta
-        </td>
-    </tr>
-    <tr>
-        <td>
-            韩国首尔             
-        </td>
-        <td>
-			ap-seoul
-        </td>
-    </tr>
-    <tr>
-        <td>
-            泰国曼谷             
-        </td>
-        <td>
-			ap-bangkok
-        </td>
-    </tr>
-    <tr>
-        <td>
-            日本东京             
-        </td>
-        <td>
-			ap-tokyo
-        </td>
-    </tr>
-    <tr>
-        <td>
-            美国硅谷（美西）            
-        </td>
-        <td>
-			na-siliconvalley
-        </td>
-    </tr>
-    <tr>
-        <td>
-            美国弗吉尼亚（美东）             
-        </td>
-        <td>
-			na-ashburn
-        </td>
-    </tr>
-    <tr>
-        <td>
-            加拿大多伦多             
-        </td>
-        <td>
-			na-toronto
-        </td>
-    </tr>
-    <tr>
-        <td>
-            德国法兰克福             
-        </td>
-        <td>
-			eu-frankfurt
-        </td>
-    </tr>
-    <tr>
-        <td>
-            俄罗斯莫斯科             
-        </td>
-        <td>
-			eu-moscow
-        </td>
-    </tr>
-</table>
+| 存储地域       | 地域英文简称           |
+| ---------- | ---------------- |
+| 北京         | ap-beijing       |
+| 上海         | ap-shanghai      |
+| 广州         | ap-guangzhou     |
+| 重庆         | ap-chongqing     |
+| 天津         | ap-beijing-1     |
+| 南京         | ap-nanjing       |
+| 成都         | ap-chengdu       |
+| 中国香港       | ap-hongkong      |
+| 中国台北       | ap-taipei        |
+| 新加坡        | ap-singapore     |
+| 印度孟买       | ap-mumbai        |
+| 印度尼西亚雅加达   | ap-jakarta       |
+| 韩国首尔       | ap-seoul         |
+| 泰国曼谷       | ap-bangkok       |
+| 日本东京       | ap-tokyo         |
+| 美国硅谷（美西）   | na-siliconvalley |
+| 美国弗吉尼亚（美东） | na-ashburn       |
+| 巴西圣保罗      | sa-saopaulo      |
+| 加拿大多伦多     | na-toronto       |
+| 德国法兰克福     | eu-frankfurt     |
+| 俄罗斯莫斯科     | eu-moscow        |
 
 ### 开通存储地域
 
@@ -190,7 +75,7 @@
 - 当云点播后台自动选择存储地域时：
   - 如果开发者仅有1个存储地域（即新加坡），那么所有上传的媒体都会存储在该地域。
   - 如果开发者开通了多个存储地域，那么各种上传方式的选择策略如下：
- <table border=0 cellpadding="0" cellspacing="0">
+<table border=0 cellpadding="0" cellspacing="0">
 <thead>
 <tr>
 <th>上传方式</th>
@@ -290,15 +175,15 @@
 
 各种上传方式的支持情况和用法如下表：
 
-| 功能         | 控制台本地上传                                               | 控制台拉取上传 | 服务端上传                                                   | 客户端上传                                                   | API 拉取上传                                                 | 直播录制                                                     |
-| ------------ | ------------------------------------------------------------ | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 附带封面     | 不支持                                                       | 不支持         | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2) | <ul style="margin:0;"><li> [Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | [拉取上传接口 CoverUrl 参数](https://intl.cloud.tencent.com/document/product/266/34118) | 不支持                                                       |
-| 指定过期时间 | 不支持                                                       | 不支持         | <ul style="margin:0;"><li>[Java SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | 不支持                                                       | [拉取上传接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/34118) | [录制配置](https://intl.cloud.tencent.com/document/product/267/34223) |
-| 指定分类     | [指定分类](https://intl.cloud.tencent.com/document/product/266/33890) | 不支持         | <ul style="margin:0;"><li> [Java SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [客户端上传签名 classId 参数](https://intl.cloud.tencent.com/document/product/266/33922) | [拉取上传接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/34118) | 不支持                                                       |
+| 功能         | 控制台本地上传                                                                                | 控制台拉取上传 | 服务端上传                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | 客户端上传                                                                                                                                                                                                                                                                                                                                                                                | API 拉取上传                                                                      | 直播录制                                |
+| ------------ | --------------------------------------------------------------------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------- |
+| 附带封面     | 不支持                                                                                        | 不支持         | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)                                                                                                                                                                                         | <ul style="margin:0;"><li> [Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | [拉取上传接口 CoverUrl 参数](https://intl.cloud.tencent.com/document/product/266/34118)                         | 不支持                                  |
+| 指定过期时间 | 不支持                                                                                        | 不支持         | <ul style="margin:0;"><li>[Java SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)         | 不支持                                                                                                                                                                                                                                                                                                                                                                                    | [拉取上传接口 ExpireTime 参数](https://intl.cloud.tencent.com/document/product/266/34118)                       | [录制配置](https://intl.cloud.tencent.com/document/product/267/34223) |
+| 指定分类     | [指定分类](https://intl.cloud.tencent.com/document/product/266/33890) | 不支持         | <ul style="margin:0;"><li> [Java SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [客户端上传签名 classId 参数](https://intl.cloud.tencent.com/document/product/266/33922)                                                                                                                                                                                                                  | [拉取上传接口 ClassId 参数](https://intl.cloud.tencent.com/document/product/266/34118) | 不支持                                  |
 
 #### 视频处理和事件通知相关
 
-- 自动视频处理：在上传媒体的同时指定一个 [任务流](https://intl.cloud.tencent.com/document/product/266/33931)，上传完成后，云点播自动执行该任务流。常见的场景有：截取视频首帧图像作为封面、转码和内容智能识别等。
+- 自动视频处理：在上传媒体的同时指定一个 [任务流](https://intl.cloud.tencent.com/document/product/266/33931)，上传完成后，云点播自动执行该任务流。常见的场景有：截取视频首帧图像作为封面、转码和内容审核等。
 - 视频处理事件通知透传字段：如果启用了自动视频处理，在处理完成后，云点播后台发起事件通知时透传该字段给开发者。
 - 上传事件通知透传字段：在上传完成后，云点播后台发起事件通知时透传该字段给开发者。
 
@@ -308,7 +193,7 @@
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- | -------- |
 | 自动视频处理             | [上传后自动进行视频处理](https://intl.cloud.tencent.com/document/product/266/33890) | 不支持         | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)                                                                                                                                             | [客户端上传签名 procedure 参数](https://intl.cloud.tencent.com/document/product/266/33922)     | [拉取上传接口 Procedure 参数](https://intl.cloud.tencent.com/document/product/266/34118)      | 不支持   |
 | 视频处理事件通知透传字段 | 不支持                                                                                                      | 不支持         | 不支持                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | 客户端上传签名 sessionContext 参数                                                                                                                           | [拉取上传接口 SessionContext 参数](https://intl.cloud.tencent.com/document/product/266/34118) | 不支持   |
-| 上传事件通知透传字段     | 不支持                                                                                                      | 不支持         | <ul style="margin:0;"><li>[Java SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 接口 SourceContext 参数](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [客户端上传签名 sourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33922) | 不支持                                                          | 不支持   |
+| 上传事件通知透传字段     | 不支持                                                                                                      | 不支持         | <ul style="margin:0;"><li>[Java SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 接口 SourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [客户端上传签名 sourceContext 参数](https://intl.cloud.tencent.com/document/product/266/33922) | 不支持                                                          | 不支持   |
 
 #### 上传控制相关
 
@@ -326,7 +211,7 @@
 | 暂停和恢复上传 | 不支持               | 不涉及         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | 不涉及       | 不涉及                                                       |
 | 取消上传       | 刷新或关闭浏览器页面 | 不涉及         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | 不涉及       | [终止录制任务](https://intl.cloud.tencent.com/document/product/267/30837) |
 | 获取上传进度   | 页面默认显示进度     | 不支持         | 不支持                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | 不支持       | 不涉及                                                       |
-| 分片上传       | 已启用               | 不涉及         | <ul style="margin:0;"><li> [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0) | <ul style="margin:0;"><li> Web SDK 默认启用</li><li>Android SDK 默认启用</li><li>iOS SDK 默认启用</li> | 不涉及       | 不涉及                                                       |
+| 分片上传       | 已启用               | 不涉及         | <ul style="margin:0;"><li> [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0) | <ul style="margin:0;"><li> Web SDK 默认启用</li><li>Android SDK 默认启用</li><li>iOS SDK 默认启用</li> | 不涉及       | 不涉及                                                       |
 
 ### 限制
 
@@ -356,5 +241,6 @@
 <td><ul style="margin:0;"><li>MP4/FLV 格式为48.82TB（50,000GB）</li><li>HLS 格式总大小无限制</li><li> 其它限制取决于 <a href="https://intl.cloud.tencent.com/document/product/267/31563">直播录制</a></td>
 </tr>
 </tbody></table>
+
 - 文件数量：无限制。
 

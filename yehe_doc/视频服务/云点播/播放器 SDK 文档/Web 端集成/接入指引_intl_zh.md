@@ -353,24 +353,26 @@ Web 播放器是通过 HTML5 的 `<video>` 标签以及 Flash 实现视频播放
 
 在本地的项目工程内新建 index.html 文件，html 页面内引入播放器样式文件与脚本文件：
 ```html
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/tcplayer.min.css" rel="stylesheet"/>
+ <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
  <!--如果需要在 Chrome 和 Firefox 等现代浏览器中通过 H5 播放 Webrtc 视频，需要在 tcplayer.vx.x.x.min.js 之前引入 TXLivePlayer-x.x.x.min.js。-->
  <!--有些浏览器环境不支持 Webrtc，播放器会将 Webrtc 流地址自动转换为 HLS 格式地址，因此快直播场景同样需要引入hls.min.x.xx.xm.js。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.1/libs/TXLivePlayer-1.2.0.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
  <!--如果需要在 Chrome 和 Firefox 等现代浏览器中通过 H5 播放 HLS 协议的视频，需要在 tcplayer.vx.x.x.min.js 之前引入 hls.min.x.xx.xm.js。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/libs/hls.min.0.13.2m.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
  <!--如果需要在 Chrome 和 Firefox 等现代浏览器中通过 H5 播放 FLV 格式的视频，需要在 tcplayer.vx.x.x.min.js 之前引入 flv.min.x.x.x.js。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/libs/flv.min.1.6.2.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+  <!--如果需要在 Chrome 和 Firefox 等现代浏览器中通过 H5 播放 DASH 视频，需要在 tcplayer.vx.x.x.min.js 之前引入 dash.min.x.x.x.js。-->
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
  <!--播放器脚本文件-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/tcplayer.v4.5.2.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
 ```
-建议在使用播放器 SDK 的时候自行部署资源，[单击下载播放器资源](https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/release.zip)。
+建议在使用播放器 SDK 的时候自行部署资源，[单击下载播放器资源](https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/release.zip)。
 部署解压后的文件夹，不能调整文件夹里面的目录，避免资源互相引用异常。
 如果您部署的地址为 `aaa.xxx.ccc`，在合适的地方引入播放器样式文件与脚本文件：
 ```html
  <link href="aaa.xxx.ccc/tcplayer.min.css" rel="stylesheet"/>
  <!--如果需要在 Chrome 和 Firefox 等现代浏览器中通过 H5 播放 HLS 格式的视频，需要在 tcplayer.vx.x.x.min.js 之前引入 hls.min.x.xx.m.js。-->
- <script src="aaa.xxx.ccc/libs/hls.min.0.13.2m.js"></script>
+ <script src="aaa.xxx.ccc/libs/hls.min.x.xx.m.js"></script>
  <!--播放器脚本文件-->
  <script src="aaa.xxx.ccc/tcplayer.vx.x.x.min.js"></script>
 ```
@@ -416,7 +418,7 @@ player.src(url); // url 播放地址
 var player = TCPlayer('player-container-id', { // player-container-id 为播放器容器 ID，必须与 html 中一致
     fileID: '3701925921299637010', // 请传入需要播放的视频 fileID（必须）
     appID: '1500005696' // 请传入点播账号的 appID（必须）
-  //私有加密播放需填写 psign， psign 即播放器签名，签名介绍和生成方式参见链接：https://cloud.tencent.com/document/product/266/42436
+  //私有加密播放需填写 psign， psign 即播放器签名，签名介绍和生成方式参见链接：https://www.tencentcloud.com/document/product/266/38099
   //psign:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTUwMDAwNTY5NiwiZmlsZUlkIjoiMzcwMTkyNTkyMTI5OTYzNzAxMCIsImN1cnJlbnRUaW1lU3RhbXAiOjE2MjY4NjAxNzYsImV4cGlyZVRpbWVTdGFtcCI6MjYyNjg1OTE3OSwicGNmZyI6InByaXZhdGUiLCJ1cmxBY2Nlc3NJbmZvIjp7InQiOiI5YzkyYjBhYiJ9LCJkcm1MaWNlbnNlSW5mbyI6eyJleHBpcmVUaW1lU3RhbXAiOjI2MjY4NTkxNzksInN0cmljdE1vZGUiOjJ9fQ.Bo5K5ThInc4n8AlzIZQ-CP9a49M2mEr9-zQLH9ocQgI',
 });
 :::

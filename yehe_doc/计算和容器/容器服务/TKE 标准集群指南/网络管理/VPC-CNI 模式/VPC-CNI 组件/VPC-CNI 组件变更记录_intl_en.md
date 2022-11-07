@@ -1,5 +1,5 @@
 
-VPC-CNI component contains three kubernetes cluster components: `tke-eni-agent`, `tke-eni-ipamd` and `tke-eni-ip-scheduler`. Generally, the versions of these components are the same. However, `tke-eni-ip-scheduler` is less modified, so its version may be a little earlier.
+The VPC-CNI component contains three Kubernetes cluster components: `tke-eni-agent`, `tke-eni-ipamd`, and `tke-eni-ip-scheduler`. Generally, their versions are the same. However, `tke-eni-ip-scheduler` is less modified, so its version may be a little earlier.
 
 ## Checking the Component Version
 
@@ -22,6 +22,54 @@ kubectl -nkube-system get deploy tke-eni-ip-scheduler -o jsonpath={.spec.templat
 	<th style="width:13%">Version Number</th><th>Release Date</th><th>Updates</th><th>Impacts</th>
 </tr>
 <tr>
+	<td>v3.4.7</td><td>2022-09-07 </td>
+    <td>
+<li>Supports the preferential scheduling policy of ip-scheduler, where Pods with static IP addresses are preferentially scheduled to the ENIs matching the subnet.</li><li> eni-ipamd supports the dry run to sync existing custom resources (CRs) and promptly discover change exceptions.</li><li>Optimizes the polling logic for ENI-IP address binding to reduce the errors caused by ENIs/IP addresses that are being bound.</li><li>Fixed the occasional issue where internally allocated IP addresses are leaked when shared ENIs are released in non-static IP address mode.</li>
+    </td><td>No impact on services</td>
+</tr>
+<tr>
+	<td>v3.4.6</td><td>2022-07-26 </td>
+    <td>
+<li>Supports the native node pool.</li>
+    </td><td>No impact on services</td>
+</tr>
+<tr>
+	<td>v3.4.5</td><td>2022-06-28 </td>
+    <td>
+<li>The non-static IP address mode of shared ENIs supports IPv4/IPv6 dual-stack. In dual-stack mode, each Pod will be allocated an IPv6 IP address and an IPv4 IP address.</li><li>Fixed the issue where the EIP becomes invalid due to `nodeLost` on super nodes. After the fix, the EIP will be bound again.</li>
+    </td><td>No impact on services</td>
+</tr>
+<tr>
+	<td>v3.4.4</td><td>2022-06-06 </td>
+    <td>
+<li>By default, the EIP is tagged with `tke-clusterId` and `tke-created-eip` and inherits the TKE cluster's tag.</li><li>Supports unbinding ENIs in instances that have been shut down.</li><li>Optimizes ip-scheduler and fixed the issue of slow start due to too many subnets.</li>
+    </td><td>No impact on services</td>
+</tr>
+<tr>
+	<td>v3.4.3</td><td>2022-04-13 </td>
+    <td>
+<li>eni-ipamd and ip-scheduler support disabling subnets. Disabled subnets can be allocated only to specified objects by setting the `--only-nominated-eni-subnets` startup parameter.</li><li> The static IP address mode supports specifying subnets for Pods through the `tke.cloud.tencent.com/nominated-eni-subnets` annotation. Multiple subnets need to be separated by comma.</li><li> eni-agent supports protecting key kernel parameters of the system and adopting new TLinux features to prevent kernel parameters (`rp_filter`and `ip_forward`) from being modified.</li><li> Fixed the occasional issue where the eni-ip resource of the node fails to be registered due to kubelet restart during node initialization in shared ENI mode.</li><li>Fixed the issue where the IP garbage collection mechanism fails due to dockershim or containerd restart during container running.</li>
+    </td><td>No impact on services</td>
+</tr>
+<tr>
+	<td>v3.4.2</td><td>2022-03-04 </td>
+    <td>
+<li>The non-static IP address mode supports specifying the ENI and subnet of the node.</li><li>eni-agent supports automatically setting `ip_forward` and `rp_filter` kernel parameters on schedule to avoid network failures due to their changes.</li><li> Optimizes the scheduling performance. In shared ENI mode, if an ENI is being bound, the polling wait occurs to reduce scheduling failures.</li><li> Fixed the occasional issue where eni-ip extension resources are lost due to high node loads.</li><li>Attempts to delete and recreate the ENI and IP address that are pending for a long time; fixed the issue where the ENI and IP address become unavailable for a long time due to underlying failures.</li>
+    </td><td>No impact on services</td>
+</tr>
+<tr>
+	<td>v3.4.1</td><td>2022-01-21 </td>
+    <td>
+<li>Supports scheduling Pods to EKS nodes and maintaining the IP address in static IP address mode.</li><li> Supports specifying the EIP through the `tke.cloud.tencent.com/eip-id-list` annotation.</li><li> Supports binding dedicated ENIs to security groups in non-static IP address mode.</li><li> Upgrades the CRD API to v1 and supports Kubernetes 1.22.</li><li>Fixed the occasional issue where the IP status is not synced in static IP address mode.</li>
+    </td><td>No impact on services</td>
+</tr>
+<tr>
+	<td>v3.4.0</td><td>2021-12-08 </td>
+    <td>
+<li> Supports static IP addresses with multiple ENIs.</li><li> Supports underlay connection in and off the hybrid cloud and elastic Pod deployment.</li><li> Fixed the issue of incorrect CNI data plane settings due to occasional CNI concurrency in the same Pod.</li>
+</td><td>No impact on services</td>
+</tr>
+<tr>
 	<td>v3.3.9</td><td>2021-11-09 </td>
     <td>
 <li> Fixed repeat creation of an EIP caused by the network.</li><li> Pods with independent ENIs in non-static IP address mode can be bound to an EIP.</li><li> Optimizes the mechanism of expansion resources for eni-agent to make the management of expansion resources more stable and robust.</li><li> Fixed the issues caused by inconsistency between quota set for the node and the actual quota.</li><li> Optimizes IP garbage collection mechanism for eni-agent. If there is a dirty container in the Pod that is being created, the reclaimed IPs will be allocated to a new container in the Pod.</li><li> Optimizes the calculating method for resources of the used IPs and ENIs in non-static IP address mode. Fixed the issue of inaccurate calculation of resources caused by the Pod status of `Error`, `Evicted` and `Completed` etc.</li>
@@ -35,7 +83,6 @@ kubectl -nkube-system get deploy tke-eni-ip-scheduler -o jsonpath={.spec.templat
 <tr>
 	<td>v3.3.7</td><td>2021-08-13 </td>
     <td>
-
 <li> eni-ipamd supports `--enable-node-condition` and `--enable-node-taint`. If `eni-ip` or `direct-eni` is missed on the node after enabling, the condition or taints of the node will be set.</li><li> EIP supports parsing new API parameters in json format.</li><li> Fixed the issue where the allocated IPs may be reclaimed improperly by garbage collection of eni-agent in containerd runtime.</li><li> Fixed ipamd panic that may be caused by the EIP API.</li><li> Fixed the issue where an ENI is unbound because `disable-node-eni` annotation is set improperly when the non-static IP mode is upgrading.</li>
 </td><td>No impact on services</td>
 </tr>

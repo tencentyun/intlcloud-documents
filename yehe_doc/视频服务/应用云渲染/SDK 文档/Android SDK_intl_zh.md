@@ -2,5 +2,5 @@
 
 | SDK     | GitHub |
 | ----------- |  ----------- |
-| Android SDK | [GitHub 下载](https://github.com/tencentyun/cloudgame-android-sdk/tree/master/TcrSdk) |
+| Android SDK | [GitHub 下载](https://github.com/tencentyun/cloudgame-android-sdk/blob/master/TcrSdk/README_EN-US.md) |
 

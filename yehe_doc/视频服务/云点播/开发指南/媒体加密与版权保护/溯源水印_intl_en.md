@@ -1,122 +1,115 @@
-The greatest challenge faced by paid video platforms is that some users may download videos in various ways and share or sell them to other platforms without authorization. This severely damages the interests of copyright holders. Unauthorized video recording is the main form of video piracy. Pirates often use screen recording software to record the video, and may even use a camera to directly record their screen, which is hard to prevent.
-
-One of the most effective ways to suppress unauthorized video recording is to track down pirates and combine other means to protect copyrighted content, deter piracy, and demand compensation. VOD's digital watermark feature guarantees a high security level at low costs and helps you easily trace unauthorized video recording.
+One of the main pain points of subscription-based video streaming platforms is that people may download their videos and share or sell them elsewhere without authorization. This can result in great losses for the copyright holders. To deter piracy, an effective way is to track down the sources and hold them liable or demand compensation. VOD’s digital watermarks, which feature high security, low costs, and high robustness, help you achieve this without compromising viewing experience.
 
 ## Shortcomings of Traditional Watermarks
 
-Traditional countermeasures against unauthorized video recording are to add the viewer's user ID to the video image. There are mainly two methods: adding a **common image and text watermark** or adding a **player floating watermark**.
+Traditional measures against unauthorized video recording work by adding viewers’ user IDs to videos. A user ID is **either encoded into the video as a common text/image watermark or placed as an image layer over the source video by the player**.
 
 <table>
    <tr>
-      <th width="0px" style="text-align:center">Common Image and Text Watermark</td>
-      <th width="0px" style="text-align:center">Player Floating Watermark</td>
+      <th width="0px" style="text-align:center">Common text/image watermark</td>
+      <th width="0px" style="text-align:center">Player-based floating watermark</td>
    </tr>
    <tr>
-      <td><img src="https://qcloudimg.tencent-cloud.cn/raw/82766338aee9f4f9715427e337babd25.png" width=500><br>
-         The image or text watermark is encoded into the video, and the content is the viewer's user ID.      
+      <td><img src="https://qcloudimg.tencent-cloud.cn/raw/82766338aee9f4f9715427e337babd25.png" width=500>The image or text watermark showing the viewer’s user ID is encoded into the video.
+
 </td>
-      <td><img src="https://qcloudimg.tencent-cloud.cn/raw/69dbaf292d144094854efca31e51d922.png" width=500><br>
-			A watermark covering the video layer during playback in the player. It usually moves like a news ticker on the video image.</td>
+      <td><img src="https://qcloudimg.tencent-cloud.cn/raw/69dbaf292d144094854efca31e51d922.png" width=500>
+			The player places a watermark image layer over the source video during playback. The watermark usually moves randomly across the screen.</td>
    </tr>
 </table>
-These two types of watermarks have the following characteristics:
+The table below compares the two types of watermarks:
 
-| Watermarking Method | Common Image and Text Watermark | Player Floating Watermark |
+|  | Common Text/Image Watermark | Player-Based Floating Watermark |
 | -- | -- | -- |
-| Security | High: The watermark is encoded to the video and cannot be removed. | Low: The watermark appears in the video player but is not encoded to the video. |
-| Costs | High: Each unique user ID watermark needs to be transcoded and stored once. | Low: It is embedded in the player. |
-| Robustness | Low: The watermark is in a fixed position and is easily clipped or obscured. | Low: The watermark is visible and can be obscured. |
-| Visibility | Watermark is visible and can be a distration. | Watermark is visible and can be a distration. |
+| Security | High: The watermark is encoded into the video and is difficult to remove. | Relatively low: The watermark is added as an image layer and is not encoded into the video. |
+| Costs | High: Watermarking is required for each viewer, which means transcoding and storage fees are incurred each time a video is played. | Low: The watermark is a built-in feature of the VOD player. |
+| Robustness | Low: The watermark appears at a fixed position, which makes it easy to crop it out or cover it. | Relatively low: The watermark is visible and may be easily covered. |
+| Viewing experience | Affected: The watermark is visible and affects viewing experience. | Affected: The watermark is visible and affects viewing experience. |
 
 
-As shown above, these two types of traditional watermarks have several disadvantages.
+As you can see, traditional watermarking solutions have their limits.
 
-## VOD Digital Watermark
+## VOD Digital Watermarks
 
-VOD digital watermark can deliver a high security at low costs.
+VOD’s digital watermarking solution features low costs, high security, and high robustness, and does not compromise viewing experience.
 
-* Low costs: Only streams A and B need to be transcoded for a video. This means that it takes only the costs of transcoding and storing two streams to mark and track billions of viewers.
-* High security: The watermark is encoded to the video image, so it cannot be removed even if the video data is obtained.
-* High robustness: Resistant to various attacks, such as resampling, compression, dithering, cropping, scaling, rotation, filtering, etc.
-* Invisibility: The watermark is invisible to human eyes, having no affect on video quality.
+* Low costs: Each watermarked video is charged only once for transcoding and storage, regardless of the number of viewers.
+* High security: The watermark is encoded into the video and cannot be removed from recorded or downloaded copies.
+* High robustness: The watermark works under different conditions (resampling, compression, dithering, cropping, scaling, rotation, wave filtering, and so on.)
+* Viewing experience: The watermark does not affect the video quality and is invisible to the human eye.
 
->!
->VOD digital watermark is currently in the public beta stage, and there are following suggestions for use:
->- Add a digital watermark to a video **longer than 30 minutes**.
->- The extraction of watermark in **movies, TV shows and variety shows** has a relatively better performance.
->- The extraction of watermark in **online education** videos is being optimized. It is recommended to test and integrate this feature after offical release.
+>! VOD’s digital watermarking feature is currently in beta testing and has certain limits:
+>1. It only works for videos **longer than 30 minutes**.
+>2. Currently, it delivers better tracking results for **movies, TV dramas, and variety shows**.
+>3. We are still working on digital watermarks for **online course videos**. If you are from the education sector, please check back soon for the official launch of the digital watermarking feature.
 
 ## Directions
 
 ### Adding a digital watermark
 
-Call the [ProcessMeida](https://intl.cloud.tencent.com/document/product/266/34125) API to initiate a task to add a digital watermark to a video. Select Transcoding or Adaptive Bitrate Streaming as the processing type:
-
+Call the [ProcessMeida](https://intl.cloud.tencent.com/document/product/266/34125) API to start a transcoding or adaptive bitrate task to add a watermark.
 
 #### Transcoding
-* Select a transcoding template with the container format as HLS, such as `STD-H264-HLS-720P` (template ID 100230). Pass in the template ID to `MediaProcessTask.TranscodeTaskSet.TraceWatermark.Definition`.
-* Pass in `ON` for `MediaProcessTask.TranscodeTaskSet.TraceWatermark.Switch` to enable digital watermark.
+* Select an HLS transcoding template such as the preset template 100230 (MediaProcessTask.TranscodeTaskSet.Definition=100230)
+* Enable digital watermarks (MediaProcessTask.TranscodeTaskSet.TraceWatermark.Switch=ON)
 
-#### Adaptive Bitrate Streaming
-* Select an adaptive bitrate streaming template with the container format as HLS, such as `Adaptive-HLS` (template ID 10). Pass in the template ID to `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.TraceWatermark.Definition`.
-* Pass in `ON` for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.TraceWatermark.Switch` to enable digital watermark.
+#### Adaptive bitrate
+* Select an HLS adaptive bitrate template, such as the preset template 10 (MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition=10).
+* Enable digital watermarks (MediaProcessTask.AdaptiveDynamicStreamingTaskSet.TraceWatermark.Switch=ON).
 
+### Playing back the video
 
-#### Playing back the video
+You need to assign each paid user a six-digit hexadecimal integer as the viewer ID (`uv`), which will be used for ID extraction.
 
-You need to associate a `uv`, which is a 6-digit hexadecimal integer, with all your paid users. The `uv` will be used as the proof for viewer traceability.
-
-* If you use the [Player SDK](https://intl.cloud.tencent.com/document/product/266/33977) or [Player Adapter](https://intl.cloud.tencent.com/document/product/266/42095) of VOD, your business server needs to distribute a [player signature](https://intl.cloud.tencent.com/document/product/266/38099) for each playback request. You need to enter the viewer `uv` as the `uv` in [signature parameters](https://intl.cloud.tencent.com/document/product/266/38099#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).
-* If you don't use the VOD Player SDK, you need to add the viewer `uv` to `QueryString` in the URL according to the rules of [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986).
+* If you use VOD’s [Player SDK](https://intl.cloud.tencent.com/document/product/266/33977) or [player adapter](https://intl.cloud.tencent.com/document/product/266/42095), you need to assign a [player signature](https://intl.cloud.tencent.com/document/product/266/38099) for each playback request (set the [signature parameter](https://intl.cloud.tencent.com/document/product/266/38099#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) `uv` to the viewer’s viewer ID).
+* If you don't use VOD’s Player SDK, you need to add the `uv` parameter (the value of which is the viewer’s viewer ID) to the query string of the request URL according to the splicing rules of [hotlink protection URLs](https://intl.cloud.tencent.com/document/product/266/33986).
 
 ### Extracting the watermark
 
-If you find out that your video has been pirated, you can call the [ExtractTraceWatermark](https://intl.cloud.tencent.com/document/product/266/50423) API to extract the `uv` of the viewer who pirated the video.
+In case of unauthorized video distribution, call [ExtractTraceWatermark](https://www.tencentcloud.com/document/product/266/50423) to extract the distributor’s viewer ID (`uv`).
 
 ## Directions
-Use the following steps to add a digital watermark and extract the viewer's ID:
+Follow the steps below to add a digital watermark and extract the viewer's ID.
 
 [](id:step1)
 ### Step 1. Upload a video
 
-1. In the VOD console, select **Video Management** > **Audio/Video Management** on the left sidebar, click **Upload Audio/Video**, and upload a video.
-2. After uploading the video, note down the video ID.
-
+1. In the VOD console, select **Media Assets > Video/Audio Management** on the left sidebar, and click **Upload** to upload a video.
+2. Note the file ID.
 
 [](id:step2)
 ### Step 2. Add a digital watermark
 
-1. Refer to [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) and use [API Explorer](https://console.cloud.tencent.com/api/explorer) to initiate an adaptive bitrate streaming task:
- * Enter the ID of the video uploaded in **[step 1](#step1)** for `FileId`.
- * Enter `10` for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition`, which indicates to transcode with adaptive bitrate streaming template 10.
- * Enter `ON` for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.TraceWatermark.Switch`, which enables digital watermark.
-2. After the task is completed, select **Video Management** > **Audio/Video Management** on the left sidebar in the console, find the target video, and click **Manage**. Find the adaptive bitstream of template 10 in the **Adaptive Bitrate Streaming Template** list, click **Copy URL**, and note down the playback URL.
+1. Refer to the [document](https://intl.cloud.tencent.com/document/product/266/34125) about the `ProcessMedia` API and use [API Explorer](https://console.cloud.tencent.com/api/explorer) to initiate an adaptive bitrate streaming task.
+ * For **FileId**, enter the file ID noted in [step 1](#step1).
+ * Set `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.0.Definition` to `10`, which indicates to use the adaptive bitrate template 10.
+ * Set `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.0.TraceWatermark.Switch` to `ON`.
+2. After the task is completed, in the VOD console, select **Media Assets** > **Video/Audio Management** on the left sidebar, find the watermarked video, and click **Manage**. In **Adaptive Bitrate Streaming Template List**, find template 10, and click **Copy URL**.
 
-### Step 3. Play the video
+[](id:step3)
+### Step 3. Play the watermarked video
 
-1. Add the `uv` (an 6-digit hexadecimal integer, such as `12abcd`) as `QueryString` to the playback URL obtained in **[step 2](#step2)** to get a new URL similar to `http://xxx.vod2.myqcloud.com/xxx/xxx/xxx.m3u8?uv=12abcd`. Copy the URL and paste it in a browser to play the video.
+1. In the playback URL obtained in [step 2](#step2), add a query string parameter `uv` and pass in a six-digit hexadecimal integer. For example, if you pass in `12abcd`, the URL of the watermarked video would be `http://xxx.vod2.myqcloud.com/xxx/xxx/xxx.m3u8?uv=12abcd`. Open this URL with a browser to play the watermarked video.
 
+[](id:step4)
+### Step 4. Get the watermarked video
 
-### Step 4. Mock video piracy
+1. In the VOD console, select **Media Assets > Video/Audio Management** on the left sidebar. Click **Upload**, select **Pull**, enter the URL spliced in step 3, and click **Pull**.
+2. Return to the **Video/Audio Management** page, find the video pulled and click **Manage**. In the **Basic Info** area, find **Operation**, and click **Copy address**.
 
-1. In the VOD console, select **Video Management** > **Audio/Video Management** on the left sidebar, click **Upload Audio/Video**, select **Pull** as the upload method, click **Add a Row**, and  enter the URL of the video obtained in **[step 3](#step3)**.
-2. After the task is completed,  select **Video Management** > **Audio/Video Management** in the VOD console, find the uploaded video, and click **Manage**. Find the playback URL , click **Copy URL**, and note down the playback URL.
+[](id:step5)
+### Step 5. Extract the viewer ID
 
-### Step 5. Extract the watermark
-
-1. Refer to [ExtractTraceWatermark](https://intl.cloud.tencent.com/document/product/266/50423) and use [API Explorer](https://console.cloud.tencent.com/api/explorer) to initiate a watermark extraction task:
- * Enter the playback URL of the video uploaded in **[step 4](#step4)** for `URL`.
-2.  After the task is completed,  refer to [DescribeTaskDetail](https://www.tencentcloud.com/document/product/266/34129) and use [API Explorer](https://console.cloud.tencent.com/api/explorer) to view the task details. The `uv` obtained in **[step 3](#step3)** will be found in the task output.
-
-
+1. Refer to the [document](https://www.tencentcloud.com/document/product/266/50423) about the `ExtractTraceWatermark` API and use [API Explorer](https://console.cloud.tencent.com/api/explorer) to start a digital watermark extraction task. Set the request parameter `Url` to the URL you copied in [step 4](#step4).
+2. After the extraction task is completed, refer to the [document](https://cloud.tencent.com/document/api/266/33431) about the `DescribeTaskDetail` API and use [API Explorer](https://console.cloud.tencent.com/api/explorer) to query the extraction task. In the response, you will find the viewer ID assigned in [step 3](#step3). This concludes the ID extraction process.
 
 ## Billing
 
 Using the digital watermark feature involves the following fees:
 
 * Transcoding fees: Because transcoding or adaptive bitrate streaming needs to be performed when you add a digital watermark to a video, transcoding fees will be incurred.
-* Watermarking fees: When you add a digital watermark to a video, watermarking fees will be incurred.
+* Watermarking fees: Watermarking fees will be incurred for adding digital watermarks.
 * Storage fees: Because the output video of transcoding or adaptive bitrate streaming will use storage space, storage fees will be incurred.
-* Extraction fees: When you extract the pirate's user ID after piracy is found, extraction fees will be incurred.
+* Extraction fees: Extracting the ID of the viewer responsible for unauthorized distribution will incur extraction fees.
 
-For the specific unit prices of the above billable items, see [Daily Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/266/14666).
+For the pricing details, see [Daily Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/266/14666).

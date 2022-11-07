@@ -2,5 +2,5 @@
 
 | SDK     | GitHub |
 | ----------- |  ----------- |
-| iOS SDK |  [GitHub 下载](https://github.com/tencentyun/cloudgame-ios-sdk) |
+| iOS SDK |  [GitHub 下载](https://github.com/tencentyun/cloudgame-ios-sdk/blob/master/README_EN-US.md) |
 

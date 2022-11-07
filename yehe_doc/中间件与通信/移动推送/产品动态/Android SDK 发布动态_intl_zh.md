@@ -1,4 +1,32 @@
 
+## 2022年09月
+
+<table>
+	<tr>
+		<th width=20%>动态名称</th>
+    <th width=44%>动态描述</th>
+    <th width=16%>发布时间</th>
+    <th width=20%>相关文档</th>
+	</tr>
+	<tr>
+        <td>SDK 1.3.6.1 版本发布</td>
+	<td>
+		<li>升级：OPPO 推送 SDK 3.1.0</li>
+		<li>升级：小米推送 SDK 5.0.8</li>
+		<li>优化：在线通道下发通知的图片加载策略</li>
+		<li>优化：支持魅蓝手机使用魅族推送通道</li>
+		<li>优化：兼容 Android 13</li>
+		<li>修复：使用通知自定义铃声时可能出现的重复通知渠道问题</li>
+		</td>
+        <td>2022-09-01</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK 下载</a></li>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li>
+</td>
+    </tr>
+<tr>
+</table>
+
+
 ## 2022年07月
 
 <table>
@@ -19,8 +47,7 @@
 		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK 下载</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li>
 </td>
-    </tr>
-<tr>
+</tr>
 </table>
 
 ## 2022年06月
@@ -42,7 +69,6 @@
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li>
 </td>
     </tr>
-<tr>
 </table>
 
 ## 2022年05月
@@ -66,7 +92,6 @@
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li>
 </td>
     </tr>
-<tr>
 </table>
 
 ## 2022年04月
@@ -83,13 +108,12 @@
 	<td>
 		<li>优化：支持搭载 EMUI 系统的设备使用华为推送通道</li>
 		<li>修复：偶现长连接重试时间间隔不准确的问题</li>
-		<li>新增：支持荣耀厂商推送通道，请参考文档<a href="https://cloud.tencent.com/document/product/548/74465">荣耀通道接入 SDK</a></li>
+		<li>新增：支持荣耀厂商推送通道，请参考文档<a href="https://intl.cloud.tencent.com/document/product/1024/47652">荣耀通道接入 SDK</a></li>
 		</td>
         <td>2022-04-25</td><td>
 		<a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK 下载</a>
 </td>
     </tr>
-<tr>
 </table>
 
 ## 2022年02月
@@ -114,7 +138,6 @@
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li>
 </td>
     </tr>
-<tr>
 </table>
 
 ## 2022年01月
@@ -140,7 +163,6 @@
 <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK 下载</a>
 </td>
     </tr>
-<tr>
 </table>
 
 ## 2021年09月
@@ -159,7 +181,6 @@
 <li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK 下载</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li></td>
     </tr>
-<tr>
 </table>
 
 ## 2021年08月
@@ -179,7 +200,6 @@
         <td>2021-08-27</td><td><li>使用新增的应用内消息能力时，请注意高版本 Android 使用 WebView 的兼容性，参考 <a href="https://intl.cloud.tencent.com/document/product/1024/30715">Android 接口文档</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li></td>
     </tr>
-<tr>
 </table>
 
 ## 2021年07月
@@ -203,7 +223,6 @@
 <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK 下载</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/32624">Android 常见问题</a></li></td>
     </tr>
-<tr>
 </table>
 
 ## 2021年05月
@@ -225,7 +244,6 @@
         <td>2021-05-26</td><td><li> 由于 Jcenter 下线，您可能遇到 SDK 依赖拉取问题，请参考 <a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a> 配置依赖仓库镜像源</li>
 <li> 新增的标签查询接口，需要注意在继承 <code>XGPushBaseReceiver</code> 的实现类中增加实现方法 <code>onQueryTagsResult</code></li></td>
     </tr>
-<tr>
 </table>
 
 ## 2021年02月
@@ -241,7 +259,6 @@
         <td>SDK 1.2.3.1 版本发布</td><td>修复：修复华为禁用组件逻辑错误</td>
         <td>2021-02-04</td><td>-</td>
     </tr>
-<tr>
 </table>
 
 ## 2021年01月
@@ -516,3 +533,4 @@
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/30713#.E9.9B.86.E6.88.90.E6.96.B9.E6.B3.95">音视频富媒体配置方法</a></td>
     </tr>
 </table>
+

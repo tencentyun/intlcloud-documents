@@ -1,8 +1,8 @@
-**GPU 计算型实例**能够提供强大的计算能力，从容应对高实时、高并发的海量计算场景，广泛适用于深度学习、科学计算等 GPU 通用计算场景场景。腾讯云 GPU 云服务器以和 **[云服务器 CVM](https://intl.cloud.tencent.com/products/cvm) 一致的管理方式**，提供快速、稳定、弹性的计算服务。
+**GPU 计算型实例**能够提供强大的计算能力，从容应对高实时、高并发的海量计算场景，广泛适用于深度学习、科学计算等 GPU 通用计算场景场景。腾讯云 GPU 云服务器以和 **[云服务器 CVM](https://www.tencentcloud.com/products/cvm) 一致的管理方式**，提供快速、稳定、弹性的计算服务。
 
 
 ## 适用场景
-适用于高性能图形处理，3D 渲染。例如：
+适用于 AI 计算、高性能计算场景，例如：
 - AI 计算
  - 深度学习推理
  - 深度学习训练
@@ -12,6 +12,12 @@
  - 气象工程
  - 地震分析
  - 基因组学等
+
+<dx-alert infotype="explain" title="">
+若您的 GPU 实例用于 3D 图形渲染任务，则建议您使用已配置 vDWs/vWs License 并安装 GRID driver 的 [渲染型实例](https://intl.cloud.tencent.com/document/product/560/19700)，以此免除手动配置 GPU 图形图像处理基础环境步骤。
+</dx-alert>
+
+
 
 
 ## 计算型实例总览
@@ -30,7 +36,7 @@
   </thead>
   <tbody>
 	<tr>
-	  <td rowspan="5">主售</td>
+	  <td rowspan="6">主售</td>
 	  <td>
 		<a href="#PNV4">PNV4</a>
 	  </td>
@@ -42,13 +48,14 @@
 		  <li>Windows Server 2016 及以上</li>
 		</ul>
 	  </td>
-	  <td rowspan="2">广州、上海、北京</td>
+	  <td>广州、上海、北京</td>
 	</tr>
 	<tr>
 	  <td>
 		<a href="#GT4">GT4</a>
 	  </td>
 	  <td>NVIDIA A100 NVLink 40G</td>
+		<td>	广州、上海、北京、南京</td>
 	</tr>
 	<tr>
 	  <td>
@@ -62,15 +69,14 @@
 		  <li>Windows Server 2012 及以上</li>
 		</ul>
 	  </td>
-	  <td>广州、上海、南京、北京、成都、重庆、香港、法兰克福</td>
+	  <td>广州、上海、北京、南京、成都、重庆、新加坡、孟买、硅谷、法兰克福</td>
 	</tr>
 	<tr>
 	  <td rowspan="2">
 		<a href="#GN7">GN7</a>
 	  </td>
 	  <td>NVIDIA Tesla T4</td>
-	  <td>
-	  广州、上海、南京、北京、成都、重庆、香港、新加坡、硅谷、孟买、弗吉尼亚、法兰克福</td>
+	  <td>广州、上海、南京、北京、成都、重庆、香港、新加坡、曼谷、雅加达、孟买、首尔、东京、硅谷、弗吉尼亚、法兰克福、莫斯科、圣保罗</td>
 	</tr>
 	<tr>
 	  <td>vGPU - NVIDIA Tesla T4</td>
@@ -80,7 +86,20 @@
 		  <li>Ubuntu 20.04 LTS 64位 GRID 11.1</li>
 		</ul>
 	  </td>
-	  <td>广州、上海、南京、北京、成都、重庆、香港、硅谷</td>
+		 <td>广州、上海、南京、北京、成都、重庆、香港、硅谷、圣保罗</td>
+	</tr>
+	<tr>
+	  <td>
+		<a href="#GN7vi">GN7vi</a>
+		</td>
+		<td>NVIDIA Tesla T4</td>
+		<td>
+		<ul class="params">
+		  <li>CentOS 7.2 - 7.9</li>
+		  <li>Ubuntu 14.04 及以上</li>
+		</ul>
+	  </td>
+		<td>上海、南京</td>
 	</tr>
 	<tr>
 	  <td rowspan="5">在售</td>
@@ -95,14 +114,14 @@
 		  <li>Windows Server 2012 及以上</li>
 		</ul>
 	  </td>
-	  <td>广州、上海、北京、南京</td>
+	  <td>广州、上海、北京、南京、成都、重庆</td>
 	</tr>
 	<tr>
 	  <td>
 		<a href="#GN10X">GN10X</a>
 	  </td>
 	  <td>NVIDIA Tesla V100 NVLink 32G</td>
-	  <td>广州、上海、南京、北京、成都、重庆、新加坡、硅谷、法兰克福、孟买</td>
+	  <td>广州、上海、北京、南京、成都、重庆、新加坡、硅谷、法兰克福、孟买</td>
 	</tr>
 	<tr>
 	  <td>
@@ -145,14 +164,15 @@
         <thead>
         <tr>
             <th width="20%">功能\实例</th>
-            <th width="11.5%">PNV4</th>
-            <th width="11.5%">GT4</th>
-            <th width="11.5%">GN10Xp</th>
-            <th width="11.5%">GN7</th>
-            <th width="11.5%">GI3X</th>
-            <th width="11.5%">GN10X</th>
-            <th width="11.5%">GN8</th>
-            <th width="11.5%">GN6<br>GN6S</th>    
+            <th width="8.9%">PNV4</th>
+            <th width="8.9%">GT4</th>
+            <th width="8.9%">GN10Xp</th>
+            <th width="8.9%">GN7</th>
+						<th width="8.9%">GN7vi</th>
+            <th width="8.9%">GI3X</th>
+            <th width="8.9%">GN10X</th>
+            <th width="8.9%">GN8</th>
+            <th width="8.9%">GN6<br>GN6S</th>    
         </tr>
         </thead>
         <tbody>
@@ -162,6 +182,7 @@
                 <td>-</td>
                 <td>✓</td>
                 <td>✓</td>
+								<td>✓</td>
                 <td>✓</td>
                 <td>✓</td>
                 <td>✓</td>
@@ -173,6 +194,7 @@
                 <td>-</td>
                 <td>✓</td>
                 <td>★</td>
+								<td>★</td>
                 <td>★</td>
                 <td>✓</td>
                 <td>✓</td>
@@ -184,6 +206,7 @@
                 <td>★</td>
                 <td>★</td>
                 <td>✓</td>
+								<td>✓</td>
                 <td>✓</td>
                 <td>★</td>
                 <td>★</td>
@@ -195,6 +218,7 @@
                 <td>✓</td>
                 <td>★</td>
                 <td>★</td>
+								<td>★</td>
                 <td>★</td>
                 <td>★</td>
                 <td>✓</td>
@@ -206,6 +230,7 @@
                 <td>★</td>
                 <td>★</td>
                 <td>-</td>
+								<td>-</td>
                 <td>-</td>
                 <td>★</td>
                 <td>-</td>
@@ -224,9 +249,9 @@
 
 ##  支持范围
 
-- 支持 [竞价实例](https://intl.cloud.tencent.com/zh/document/product/213/2180#.E7.AB.9E.E4.BB.B7.E5.AE.9E.E4.BE.8B) 和 [按量计费](https://intl.cloud.tencent.com/document/product/213/2180)。
-- 支持在 [私有网络](https://intl.cloud.tencent.com/document/product/213/5227) 中启动。
-- 支持与 [负载均衡](https://intl.cloud.tencent.com/document/product/214/524) 等产品的业务对接，不增加额外的管理和运维成本，内网流量免费。
+- 支持 [按量计费]( https://www.tencentcloud.com/document/product/213/2180)。
+- 支持在 [私有网络](https://www.tencentcloud.com/document/product/213/5227) 中启动。
+- 支持与 [负载均衡](https://www.tencentcloud.com/document/product/214/524) 等产品的业务对接，不增加额外的管理和运维成本，内网流量免费。
 
 
 ## 实例规格
@@ -236,10 +261,6 @@
 **计算型 PNV4** 不仅适用于深度学习等 GPU 通用计算场景，也适用于图形图像处理（3D 渲染，视频编解码）场景。
 
 
-
-<dx-alert infotype="notice" title="">
-该实例暂时处于白名单开放，请您通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进行实例购买权限开通。
-</dx-alert>
 
 #### 适用场景
 
@@ -254,7 +275,7 @@
   - 图形数据库
 
 #### 可用区
-PNV4 实例支持可用区为：广州七区、上海五区、北京六区。
+PNV4 实例支持可用区为：广州七区、上海四/五区、北京六区。
 
 #### 硬件规格
 
@@ -272,7 +293,7 @@ PNV4 实例支持可用区为：广州七区、上海五区、北京六区。
       <th width="25%">GPU
       <br>(NVIDIA A10)</th>
       <th width="20%">GPU 显存
-      <br>(HBM2)</th>
+      <br>(GDDR6)</th>
       <th width="12%">vCPU</th>
       <th>内存
       <br>(DDR4)</th>
@@ -345,7 +366,7 @@ GT4 具有强大的双精度浮点运算能力，适用于大规模深度学习�
 
 
 #### 可用区
-GT4 实例支持可用区为：广州四区、上海四区、北京五区。
+GT4 实例支持可用区为：广州三/四/六区、上海四/五区、北京五/六区、南京一区。
 
 #### 硬件规格
 
@@ -449,7 +470,7 @@ GN10Xp 具有强大的双精度浮点运算能力 ，适用于如下场景：
 
 
 #### 可用区
-GN10Xp 实例支持可用区为：广州三，四区、上海二区、南京一区、北京五区、成都一区、重庆一区、香港二区、法兰克福一区。
+GN10Xp 实例支持可用区为：广州三/四区、上海二/三区、南京一区、北京四/五/七区、成都一区、重庆一区、新加坡一区、孟买二区、硅谷二区、法兰克福一区。
 
 
 #### 硬件规格
@@ -540,8 +561,8 @@ GN10Xp 实例支持可用区为：广州三，四区、上海二区、南京一�
 
 #### 可用区
 GN7 实例支持可用区为：
-- **GN7.LARGE20 及 GN7.2XLARGE40**：广州三，四区、上海二，四区、南京一，二区、北京三，五区、成都一区、重庆一区、硅谷二区。
-- **GN7 其他实例**：广州三，四区、上海二，四区、南京一，二区、北京三，五区、成都一区、重庆一区、新加坡一区、硅谷二区、香港二区、孟买二区、弗吉尼亚二区、法兰克福一区。
+- **GN7.LARGE20 及 GN7.2XLARGE40**：广州三/四/六/七区、上海二/三/四/五区、南京一/二/三区、北京三/五/六/七区、成都一区、重庆一区、香港二区、硅谷二区、圣保罗一区。
+- **GN7 其他实例**：广州三/四/六/七区、上海二/三/四/五区、南京一/二/三区、北京三/五/六/七区、成都一区、重庆一区、香港二区、新加坡一/二/三区、曼谷二区、雅加达二区、孟买二区、首尔一/二区、东京二区、硅谷二区、法兰克福一区、莫斯科一区、弗吉尼亚二区、圣保罗一区。
 
 
 #### 硬件规格
@@ -648,10 +669,77 @@ GN7 实例支持可用区为：
 
 <dx-alert infotype="explain" title="">
 **vGPU**：
-- GN7 实例簇支持 vGPU 的实例类型。vGPU 的类型为 vComputeServer，只支持 CUDA 计算 API。
+- GN7 实例簇支持 vGPU 的实例类型。vGPU 的类型为 vComputeServer，只支持 CUDA 计算 API，不支持 DirectX 和 OpenGL 等图形 API。图形图像处理（3D 渲染，视频编解码）场景，推荐使用配置 vDWS License 服务器并安装 GRID driver 的 [渲染型 GN7vw](https://intl.cloud.tencent.com/document/product/560/19700#GN7vw)。
 - vCS 实例需安装 GRID 驱动，且 vCS 的实例不支持 Windows 操作系统。
 </dx-alert>
 
+
+### 视频增强型 GN7vi[](id:GN7vi)
+
+**NVIDIA 实例 GN7vi** 是在 GN7 基础上配置腾讯自研的明眸视频融合 AI 技术，包括极速高清编解码引擎和画质增强工具包，适用于点播、直播场景。使用该实例，您可在实例内部使用腾讯云自研的极速高清编解码和 AI画质增强功能。
+
+
+#### 可用区
+
+GN7vi 实例支持可用区为：上海二/三/四/五区、南京一/二区。
+
+#### 硬件规格
+
+- **CPU：**Intel<sup>®</sup> Xeon<sup>®</sup> Platinum 8255C CPU，主频2.5GHz。
+- **GPU：**NVIDIA<sup>®</sup> Tesla<sup>®</sup> T4（8.1TFLOPS 单精度浮点计算，130 INT8 TOPS，260 INT4 TOPS）。
+- **内存：**DDR4 ，内存带宽达2666MT/s。
+- **存储：** 可选择 [云硬盘类型](https://intl.cloud.tencent.com/document/product/362/31636)，如需 [扩容](https://intl.cloud.tencent.com/document/product/362/31600) 可新建弹性云盘进行挂载。
+- **网络：** 默认网络优化，实例网络性能与规格对应。[公网网络](https://intl.cloud.tencent.com/document/product/213/10578) 可按需配置。
+
+**GN7vi 实例提供以下配置：**
+
+<table>
+<thead>
+<tr>
+		<th width="10%">型号</th>
+	  <th width="15%">GPU
+	  <br />(NVIDIA Tesla T4)</th>
+	  <th width="15%">GPU 显存
+	  <br />(HBM2)</th>
+	  <th width="8%">vCPU</th>
+	  <th width="8%">内存
+	  <br />(DDR4)</th>
+	  <th width="10%">内网带宽</th>
+	  <th width="10%">网络收发包<br />(PPS)</th>
+	  <th width="7%">队列数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GN7vi.5XLARGE80</td>
+<td align="left">1颗</td>
+<td align="left">1 * 16GB</td>
+<td align="left">20核</td>
+<td align="left">80GB</td>
+<td align="left">6Gbps</td>
+<td align="left">140万</td>
+<td align="left">20</td>
+</tr>
+<tr>
+<td align="left">GN7vi.10XLARGE160</td>
+<td align="left">2颗</td>
+<td align="left">2 * 16GB</td>
+<td align="left">40核</td>
+<td align="left">160GB</td>
+<td align="left">13Gbps</td>
+<td align="left">280万</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">GN7vi.20XLARGE320</td>
+<td align="left">4颗</td>
+<td align="left">4 * 16GB</td>
+<td align="left">80核</td>
+<td align="left">320GB</td>
+<td align="left">25Gbps</td>
+<td align="left">560万</td>
+<td align="left">32</td>
+</tr>
+</tbody></table>
 
 ### 推理型 GI3X[](id:GI3X) 
 
@@ -670,7 +758,7 @@ GN7 实例支持可用区为：
   - 图形数据库
 
 #### 可用区
-GI3X 实例支持可用区为：广州三区、上海四区、南京一，二区、北京五区
+GI3X 实例支持可用区为：广州三区、上海四/五区、南京一/二区、北京五/六区、成都一区、重庆一区。
 
 #### 硬件规格
 - **CPU：**2.6GHz AMD EPYC™ ROME 处理器，睿频3.3GHz。
@@ -733,12 +821,6 @@ GI3X 实例支持可用区为：广州三区、上海四区、南京一，二区
 </table>
 
 
-
-
-
-
-
-
 ### 计算型 GN10X[](id:GN10X) 
 
 **计算型 GN10X** 不仅适用于深度学习、科学计算等 GPU 通用计算场景，也适用于图形图像处理（3D 渲染，视频编解码）场景。
@@ -762,7 +844,7 @@ GN10X具有强大的双精度浮点运算能力 ，适用于如下场景：
 
 
 #### 可用区
-GN10X 实例支持可用区为：广州三，四区、上海二，三区、南京一区、北京四，五区、成都一区、重庆一区、新加坡一区、硅谷二区、法兰克福一区、孟买二区。
+GN10X 实例支持可用区为：广州三/四区、上海二/三区、南京一区、北京四/五/七区、成都一区、重庆一区、新加坡一区、硅谷二区、法兰克福一区、孟买二区。
 
 
 
@@ -847,7 +929,7 @@ GN10X 实例支持可用区为：广州三，四区、上海二，三区、南�
 
 
 #### 可用区
-GN8 实例支持可用区为：香港二区、广州三区、上海三区、北京二，四区、成都一区、重庆一区、硅谷一区。
+GN8 实例支持可用区为：广州三区、北京二/四区、成都一区、香港二区、上海三区、重庆一区、硅谷一区。
 
 
 #### 硬件规格

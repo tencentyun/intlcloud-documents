@@ -6,6 +6,8 @@ Tag，即消息标签，用于对某个Topic下的消息进行分类。TDMQ Puls
 
 消费者订阅 Topic 时若未设置 Tag，Topic 中的所有消息都将被投递到消费端进行消费。
 
+> !消息标签是订阅维度，同一个订阅不能发送不同 Tag 的消息，即不同的 Tag 需要使用不同的订阅。
+
 ## 应用场景
 
 通常，一个 Topic 中存放的是相同业务属性的消息，例如交易流水 Topic 包含了下单流水、支付流水、发货流水等，业务若只想消费者其中一种类别的流水，可在客户端进行过滤，但这种过滤方式会带来带宽的资源浪费。
@@ -13,6 +15,7 @@ Tag，即消息标签，用于对某个Topic下的消息进行分类。TDMQ Puls
 针对上述场景，TDMQ Pulsar 提供 Broker 端过滤的方式，用户可在生产消息时设置一个或者多个 Tag 标签，消费时指定 Tag 订阅。
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/b8f99a8fe44f31f67367d5b64bde8b88.png)
+
 
 
 ## 使用说明
@@ -88,11 +91,10 @@ go get -u github.com/apache/pulsar-client-go@master
 	  
      // 订阅相关参数，可用来设置订阅标签(TAG)
      HashMap<String, String> subProperties = new HashMap<>();
-	  subProperties.put("tag1","1");
-	  subProperties.put("tag2","1");
-	  // 构建消费者
-	  Consumer<byte[]> consumer = pulsarClient.newConsumer()
-	      // topic完整路径，格式为persistent://集群（租户）ID/命名空间/Topic名称，从【Topic管理】处复制
+      subProperties.put("tag1","1");
+      // 构建消费者
+      Consumer<byte[]> consumer = pulsarClient.newConsumer()
+          // topic完整路径，格式为persistent://集群（租户）ID/命名空间/Topic名称，从【Topic管理】处复制
          .topic("persistent://pulsar-xxxx/sdk_java/topic2")
          // 需要在控制台Topic详情页创建好一个订阅，此处填写订阅名
          .subscriptionName("topic_sub1")
@@ -100,8 +102,8 @@ go get -u github.com/apache/pulsar-client-go@master
          .subscriptionType(SubscriptionType.Shared)
          // 订阅相关参数，tag订阅等。。
          .subscriptionProperties(subProperties)
-	      // 配置从最早开始消费，否则可能会消费不到历史消息
-	      .subscriptionInitialPosition(SubscriptionInitialPosition.Earliest).subscribe();
+          // 配置从最早开始消费，否则可能会消费不到历史消息
+          .subscriptionInitialPosition(SubscriptionInitialPosition.Earliest).subscribe();
 :::
 :::  Go
 	   // 发送消息
@@ -116,10 +118,10 @@ go get -u github.com/apache/pulsar-client-go@master
 
     // 创建 consumer
          consumer, err := client.Subscribe(pulsar.ConsumerOptions{
-   	            Topic:            "topic-1",
-   	            SubscriptionName: "my-sub",
+                Topic:            "topic-1",
+                SubscriptionName: "my-sub",
                	SubscriptionProperties: map[string]string{"tag1": "1"},
-	      })
+          })
 :::
 </dx-codeblock>
 
@@ -163,15 +165,15 @@ go get -u github.com/apache/pulsar-client-go@master
          }); err != nil {
                  log.Fatal(err)
          }
-   
+
     // 创建 consumer
          consumer, err := client.Subscribe(pulsar.ConsumerOptions{
-   	            Topic:            "topic-1",
-   	            SubscriptionName: "my-sub",
-   	            SubscriptionProperties: map[string]string{
-   		                  "tag1": "1",
-   		                  "tag2": "1",
-   	            },
+                Topic:            "topic-1",
+                SubscriptionName: "my-sub",
+                SubscriptionProperties: map[string]string{
+    	                  "tag1": "1",
+    	                  "tag2": "1",
+                },
          })
 
 :::
@@ -218,15 +220,15 @@ go get -u github.com/apache/pulsar-client-go@master
          }); err != nil {
                  log.Fatal(err)
          }
-   
+
     // 创建 consumer
          consumer, err := client.Subscribe(pulsar.ConsumerOptions{
-   	            Topic:            "topic-1",
-   	            SubscriptionName: "my-sub",
-   	            SubscriptionProperties: map[string]string{
-   		                  "tag1": "1",
-   		                  "tag2": "1",
-   	            },
+                Topic:            "topic-1",
+                SubscriptionName: "my-sub",
+                SubscriptionProperties: map[string]string{
+    	                  "tag1": "1",
+    	                  "tag2": "1",
+                },
          })
 :::
 </dx-codeblock>

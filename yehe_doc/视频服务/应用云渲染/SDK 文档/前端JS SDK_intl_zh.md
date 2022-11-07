@@ -4,7 +4,7 @@
 
 | SDK    | GitHub                           |
 | ------ | ------------------------------------------------------------ |
-| JS SDK | [GitHub下载](https://github.com/tencentyun/cloudgame-js-sdk) |
+| JS SDK | [GitHub下载](https://github.com/tencentyun/cloudgame-js-sdk/blob/master/README_EN-US.md) |
 
 ## 安装说明
 

@@ -2,5 +2,5 @@ CAR provides the SDK for iOS for integration on iOS devices. The SDK provides a 
 
 | SDK     | GitHub Project |
 | ----------- |----------- |
-| SDK for iOS | [GitHub project](https://github.com/tencentyun/cloudgame-ios-sdk) |
+| SDK for iOS | [GitHub project](https://github.com/tencentyun/cloudgame-ios-sdk/blob/master/README_EN-US.md) |
 

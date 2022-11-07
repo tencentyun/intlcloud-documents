@@ -1,10 +1,28 @@
-## 2022年7月
+## 2022年08月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>クライアントアップロードアクセラレーション機能をリリース</td>
+<td>クライアントのアップロードアクセラレーションにより、より高品質なアップロードサービスをお客様に提供することができます。この機能は、Tencent Cloudがグローバルにデプロイするアクセラレーションネットワークをベースとして、ユーザーのリクエストに応じて最適なアクセスポイントと最適なリンクをインテリジェントに選択し、アップロードの速度と成功率を引き上げます。また、QUICプロトコルによるデータ伝送もサポートし、データ伝送の効率化と脆弱なネットワーク環境下での安定性を向上させます。</td>
+<td>2022-08</td>
+<td><a href="https://www.tencentcloud.com/document/product/266/49149">クライアントアップロードアクセラレーション</a></td>
+</tr>
+</tbody></table>
+
+## 2022年07月
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -23,13 +41,13 @@
 </tr>
 </tbody></table>
 
-## 2022年5月
+## 2022年05月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -47,9 +65,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -68,9 +86,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -82,15 +100,15 @@
 </tr>
 <tr>
 <td>V3.6バージョンをリリース</td>
-<td>Tencent CloudプレーヤーDemoをリリース、完全な製品レベルのインタラクティブインターフェイスとビジネスソースコードを提供します。</td>
+<td>Tencent Cloudプレーヤー Demoをリリース、完全な製品レベルのインタラクティブインターフェイスとビジネスソースコードを提供します。</td>
  <td>	2021-08</td> 
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/266/42091">プレーヤーDemoの展示</a>
+<a href="https://intl.cloud.tencent.com/document/product/266/42091">プレーヤー Demoの展示</a>
 </td>
 </tr>
 <tr>
 <td>V3.7バージョンをリリース</td>
-<td>新バージョンの価格計算ツール。</td>
+<td>新バージョンの価格計算機。</td>
  <td>	2021-08</td> 
 <td>
 <a href="https://buy.intl.cloud.tencent.com/pricing/vod">VOD料金</a>
@@ -115,9 +133,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -149,9 +167,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -176,16 +194,16 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>V2.6バージョンをリリース</td>
-<td>VODコンソールの中国本土以外のエリアでの課金およびデータ統計を正式にリリースしました。</td>
+<td>VODコンソールの中国国外エリアでの課金およびデータ統計を正式にリリースしました。</td>
  <td>2020-11</td> 
 <td>
 <a href="https://intl.cloud.tencent.com/document/product/266/30421">使用量の統計</a>
@@ -198,9 +216,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -228,15 +246,15 @@
 </tr>
 </tbody></table>
 
-## 2020年8月
+## 2020年08月
 
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -248,15 +266,15 @@
 </tr>
 </tbody></table>
 
-## 2020年6月
+## 2020年06月
 
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -268,7 +286,7 @@
 </tr>
 <tr>
 <td>V1.9バージョンをリリース</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
 <li >コンソールでプレーヤー設定機能が開始されました。
 <li >コンソールでプレーヤーのプレビュー機能が開始されました。</td>
  <td>2020-06</td> 
@@ -280,14 +298,16 @@
 </tr>
 </tbody></table>
 
+
 ## 2019年10月
+
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -296,16 +316,16 @@
 <td><ul style="margin:0;"><li >ビデオトリミング統計機能が開始されました。
 <li > TESHDテンプレート機能が開始されました。
 <li >エラーコードのマッピングが修正されました。
-<li >ICP登録されていないドメイン名を削除できないエラーが修正されました。
+<li >登録されていないドメイン名を削除できないエラーが修正されました。 
 <li >ストレージリージョン名のエラーが修正されました。
  <td>2019-10-23</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/14059">テンプレート設定</a></td>
 </tr>
 <tr>
 <td>V1.6バージョンをリリース</td>
-<td><ul style="margin:0;">
-<li >サブアプリケーション機能をコンソールで有効にできます。
-<li >デフォルト配信ドメイン名の無効化に関するリマインダーが更新されました。
+<td><ul style="margin:0;">
+<li >サブアプリケーション機能をコンソールで有効にできます。 
+<li >デフォルトの配布ドメイン名の無効化に関するリマインダーが更新されました。
 <li >アップロード中にコンソールでファイルを分類できないエラーが修正されました。
 <li >VODコンソールがCAMに接続されました。
 <li >VODがインテリジェントカスタマーサービスに接続されました。</td>
@@ -316,14 +336,14 @@
 </tbody></table>
 
 
-## 2019年9月
+## 2019年09月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -337,14 +357,14 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/266/33897">インテリジェントビデオ認識</a></td>
 </tbody></table>
 
-## 2019年8月
+## 2019年08月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -358,14 +378,14 @@
 </tbody></table>
 
 
-## 2019年6月
+## 2019年06月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -379,13 +399,13 @@
 </tbody></table>
 
 
-## 2019年5月
+## 2019年05月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -400,14 +420,14 @@
 
 
 
-## 2019年3月
+## 2019年03月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -420,13 +440,13 @@
 </tbody></table>
 
 
-## 2019年2月
+## 2019年02月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -446,9 +466,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -460,13 +480,13 @@
 </tr>
 </tbody></table>
 
-## 2017年8月
+## 2017年08月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -487,31 +507,31 @@
 </tbody></table>
 
 
-## 2017年4月
+## 2017年04月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>UGCビデオアップロード機能をリリース</td>
-<td>UGCビデオアップロード機能を使用することで、エンドユーザーはショート動画をクラウドにすばやくアップロードできます。iOS、Android、Webという3種類のアップロード方式をサポートしています。
+<td>UGCビデオアップロード機能を使用することで、エンドユーザーはショート動画をクラウドにすばやくアップロードできます。iOS、Android、Webという3種類のアップロード方法をサポートしています。
  <td>2017-04</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/9760">メディアアップロードの概要</a></td>
 </tbody></table>
 
 
-## 2017年3月
+## 2017年03月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
- <th width="15%">リリース時間</th> 
+ <th width="15%">発表時間</th> 
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
