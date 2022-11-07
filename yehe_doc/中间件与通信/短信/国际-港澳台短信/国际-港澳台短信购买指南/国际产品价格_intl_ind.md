@@ -209,7 +209,7 @@ SMS Global bersifat harian [bayar sesuai pemakaian](https://intl.cloud.tencent.c
 | Turkmenistan                     | TM   | 993    | 0,0850 |
 | Tunisia                          | TN   | 216    | 0,1406 |
 | Tonga                            | TO   | 676    | 0,0371 |
-| Turki                           | TR   | 90     | 0,0130 |
+| Türkiye                           | TR   | 90     | 0,0130 |
 | Trinidad dan Tobago               | TT   | 1868   | 0,0659 |
 | Taiwan, Tiongkok                    | TW   | 886    | 0,054  |
 | Tanzania                         | TZ   | 255    | 0,0911 |
