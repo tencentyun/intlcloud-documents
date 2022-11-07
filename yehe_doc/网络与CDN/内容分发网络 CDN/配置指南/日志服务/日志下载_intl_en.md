@@ -690,7 +690,7 @@ The fields (from left to right) in the logs are listed as below:
 </tr>
 <tr>
 <td>737</td>
-<td>Turkey</td>
+<td>Türkiye</td>
 <td>1592</td>
 <td>Nigeria</td>
 <td>-11</td>
