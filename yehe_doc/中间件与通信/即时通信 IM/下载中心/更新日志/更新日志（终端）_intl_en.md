@@ -63,10 +63,10 @@
 ## 6.5.2803 @2022.07.15 - Enhanced Edition
 
 ### SDK
-- Added [Conversation Mark](https://www.tencentcloud.com/zh/document/product/1047/48853).
-- Added [Conversation Group](https://www.tencentcloud.com/zh/document/product/1047/48854).
+- Added [Conversation Mark](https://www.tencentcloud.com/en/document/product/1047/48853).
+- Added [Conversation Group](https://www.tencentcloud.com/en/document/product/1047/48854).
 - Added support for conversation custom fields.
-- Added [Load Conversation Advanced Interface](https://www.tencentcloud.com/zh/document/product/1047/48326).
+- Added [Load Conversation Advanced Interface](https://www.tencentcloud.com/en/document/product/1047/48326).
 - Supported for receiving live group broadcast messages.
 - Support the notification of changes to add group options.
 - Supported multi-terminal synchronization of group message receiving options changes.
