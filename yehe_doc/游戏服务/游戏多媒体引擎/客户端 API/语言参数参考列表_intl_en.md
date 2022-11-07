@@ -502,7 +502,7 @@ This document describes the language parameters of GME's speech-to-text service.
    <tr>
       <td>	Türkçe (Türkiye)	</td>
       <td>	tr-TR	</td>
-      <td>	Turkish (Turkey)	</td>
+      <td>	Turkish (Türkiye)	</td>
    </tr>
    <tr>
       <td>	اردو)پاکستان)	</td>
