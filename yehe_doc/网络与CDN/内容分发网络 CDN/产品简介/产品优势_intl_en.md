@@ -26,7 +26,7 @@ CDN has been working industriously on global acceleration since 2017. As of May 
 | :----- | :----------------------------------------------------------- |
 | North America | United States, Mexico, Canada                                         |
 | South America | Brazil, Colombia, Peru, Ecuador, Chile, Argentina                 |
-| Asia   | Hong Kong (China), Macau (China), Taiwan (China), Japan, South Korea, Mongolia, Vietnam, Laos, Singapore, Thailand, Philippines, Myanmar, Cambodia, Malaysia, Indonesia, India, Bangladesh, Nepal, Pakistan, Kuwait, Kyrgyzstan, Qatar, Israel, Turkey, Iraq, Saudi Arabia, Oman, United Arab Emirates, Bahrain, Lebanon |
+| Asia   | Hong Kong (China), Macau (China), Taiwan (China), Japan, South Korea, Mongolia, Vietnam, Laos, Singapore, Thailand, Philippines, Myanmar, Cambodia, Malaysia, Indonesia, India, Bangladesh, Nepal, Pakistan, Kuwait, Kyrgyzstan, Qatar, Israel, Türkiye, Iraq, Saudi Arabia, Oman, United Arab Emirates, Bahrain, Lebanon |
 | Africa | Djibouti, Kenya, Madagascar, Mauritius, Egypt, South Africa             |
 | Oceania | Australia, New Zealand                                             |
 | Europe   | Russia, Belarus, Italy, Austria, Poland, Finland, Denmark, Belgium, Sweden, Spain, France, Netherlands, Germany, United Kingdom |
