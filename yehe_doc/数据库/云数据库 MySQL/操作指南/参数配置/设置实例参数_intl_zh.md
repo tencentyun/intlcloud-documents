@@ -1,5 +1,6 @@
 
 您可以通过 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 查看和修改部分参数，并可以在控制台查询参数修改记录。
+>?主实例和只读实例均支持通过控制台修改参数，操作方法一致，可参见下文进行操作。
 
 ## 注意事项
 - 为保证实例的稳定，控制台仅开放部分参数的修改，控制台的参数配置页面展示的参数即为用户可以修改的参数。
@@ -11,6 +12,7 @@
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 选择**数据库管理** > **参数设置**页，单击**批量修改参数**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/0236dc88558f16937f71daca3e2d8d0f.png)
+
 3. 在**参数运行值**列，选择需要修改的参数进行修改，确认无误后，单击**确认修改**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/1f904a228aa0ee6bb28f870f3238396c.png)
 4. 在弹出的对话框，选择参数任务的**执行方式**，单击**确定**。
@@ -133,4 +135,3 @@
 ## 后续操作
 - 您可以使用数据库参数模板来批量管理数据库的参数配置，请参见 [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906)。
 - 相关重要参数的配置建议，请参见 [参数配置建议](https://intl.cloud.tencent.com/document/product/236/38056)。
-

@@ -1,22 +1,23 @@
 
 You can view and modify certain parameters and query the parameter modification logs in [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
+>?You can modify the parameters of both source and read-only instances in the console in the same way as detailed below.
 
 ## Notes
 - To ensure instance stability, only some parameters can be modified in the console. These parameters are displayed on the **Parameter Settings** page.
 - If the modified parameter requires instance restart to take effect, the system will ask you if you wish to restart. We recommend you do so during off-peak hours and ensure that your application has a reconnection mechanism.
 - If you want to return to the default formula, clear the entered parameters and apply.
 
-## Modifying Parameters in Parameter List
+## Modifying Parameters in the Parameter List
 ### [Modifying parameters in batches](id:plxgcs)
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Batch Modify Parameters**.
-![](https://qcloudimg.tencent-cloud.cn/raw/0236dc88558f16937f71daca3e2d8d0f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d6bce1222a71d69a26bfc85a52feedea.png)
 3. Locate the target parameters, and modify their values in the **Current Value** column. After confirming that everything is correct, click **Confirm Modification**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/1f904a228aa0ee6bb28f870f3238396c.png)
 4. In the pop-up window, select the **execution mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
->- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
+>- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the instance maintenance time as described in [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 >
 
 ### [Modifying one parameter](id:xgdgcs)
@@ -28,10 +29,10 @@ You can view and modify certain parameters and query the parameter modification 
 4. In the pop-up window, select the **execution mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
->- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
+>- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the instance maintenance time as described in [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 >
 
-## Modifying Parameters by Importing Parameter Template
+## Modifying Parameters by Importing a Parameter Template
 ### Option 1. Importing a parameter template on the "Parameter Settings" page
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Custom Template**. (If you haven't configured a commonly used custom template yet, you can select **Custom Template** on the left sidebar in the TencentDB for MySQL console, click **Create Template** to configure a parameter template, and then import it from the custom template as described in step 2.)
@@ -43,7 +44,7 @@ You can view and modify certain parameters and query the parameter modification 
 5. In the pop-up window, select the **execution mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
->- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
+>- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the instance maintenance time as described in [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 >
 
 ### Option 2. Modifying parameters by importing a parameter configuration file
@@ -56,13 +57,13 @@ You can view and modify certain parameters and query the parameter modification 
 5. In the pop-up window, select the **execution mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
->- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
+>- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the instance maintenance time as described in [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 
 
 ### Option 3. Importing a parameter template on the "Parameter Template" page
-For more information, see [Managing Parameter Template > Applying Parameter Template to Instance](https://intl.cloud.tencent.com/document/product/236/31906).
+For more information, see [Managing Parameter Template > Applying a Parameter Template to Instances](https://intl.cloud.tencent.com/document/product/236/31906).
 
-## Restoring to Default Template
+## Restoring to the Default Template
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Database Management** > **Parameter Settings**, click **Default Template**, select **High-Stability Template** or **High-Performance Template**, and click **Import and Overwrite Original Parameters**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/030f986ea488796d5c084cb97aec5d6b.png)
@@ -71,7 +72,7 @@ For more information, see [Managing Parameter Template > Applying Parameter Temp
 4. In the pop-up window, select the **execution mode**, read and indicate your consent to the **restart rules**, and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
->- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
+>- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the instance maintenance time as described in [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 >
 
 ## Parameter Formula[](id:CSGSMYSQL)
@@ -104,24 +105,24 @@ Expression syntax is supported as follows:
 | innodb_buffer_pool_size      | The size of the buffer pool in bytes, i.e., the memory zone where InnoDB caches tables and index data. | {DBInitMemory\*786432}             |
 
 
-## Exporting Parameter Configuration as File
+## Exporting Parameter Configuration as a File
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Export Parameters** to export the parameter configuration file.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5a8357f189cc68ff63ccfe08efecaec4.png)
 
-## Exporting Parameter Configuration as Template
+## Exporting Parameter Configuration as a Template
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Save as Template** to save the existing parameter configuration as a parameter template.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5e93d4f27f975b7d7adac82ff42d7fae.png)
 
-## Customizing Time Window to Apply Parameter Modifications
+## Customizing the Time Window to Apply Parameter Modifications
 Before you confirm the parameter modification, the "Modify Parameters" dialog box will pop up for you to select a custom time window for the modification to take effect.
->?If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
+>?If you select **During maintenance time**, the parameter modification task will be executed and take effect during the instance maintenance time as described in [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/33fb2f56d3fb40db0a6771fa8fb43825.png)
 
-## Canceling Parameter Modification Task
-If a parameter modification or batch modification task has been submitted but you want to cancel it, you can select **[Task List](https://console.cloud.tencent.com/mysql/task)** on the left sidebar in the console, locate the task, and click **Cancel** in the **Operation** column. You can cancel a task only before it is executed. The task state should be **Waiting for execution**.
+## Canceling a Parameter Modification Task
+If a parameter modification or batch modification task has been submitted but you want to cancel it, you can select **[Task List](https://console.cloud.tencent.com/mysql/task)** on the left sidebar in the console, locate the task, and click **Cancel** in the **Operation** column. You can cancel a task only before it is executed. The task status should be **Waiting for execution**.
 ![](https://main.qcloudimg.com/raw/566fd9374d0d59b38ceb99d310b782a9.png)
 
 ## Viewing Parameter Modification Logs
@@ -133,4 +134,3 @@ If a parameter modification or batch modification task has been submitted but yo
 ## Subsequent Operations
 - You can use templates to manage database parameters in batches. For more information, see [Managing Parameter Template](https://intl.cloud.tencent.com/document/product/236/31906).
 - For suggestions on configuring key parameters, see [Suggestions on Parameter Settings](https://intl.cloud.tencent.com/document/product/236/38056).
-

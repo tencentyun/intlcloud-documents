@@ -1,15 +1,14 @@
 ## Overview
 TencentDB for MySQL comes with the transparent data encryption (TDE) feature. Transparent encryption means that the data encryption and decryption are transparent to users. TDE supports real-time I/O encryption and decryption of data files. It encrypts data before it is written to disk, and decrypts data when it is read into memory from disk, which meets the compliance requirements of static data encryption.
 
-## Prerequisites
-- The instance architecture must be two-node/three-node.
+## Limits
 - The database version must be MySQL 5.7 or 8.0.
 - Key Management Service (KMS) must be activated. To do so, you can follow the instructions provided during the TDE activation process.
 - KMS key permissions must be granted. To do so, you can follow the instructions provided during the TDE activation process.
 - Your account needs the `QcloudAccessForMySQLRole` permission. To do so, you can follow the instructions provided during the TDE activation process.
 >?
->- The keys used for encryption are generated and managed by [KMS](https://intl.cloud.tencent.com/document/product/1030/32774). TencentDB for MySQL does not provide keys or certificates required for encryption.
->- TDE does not incur fees, but KMS may. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1030/31966).
+>-The keys used for encryption are generated and managed by [KMS](https://intl.cloud.tencent.com/document/product/1030/32774). TencentDB for MySQL does not provide keys or certificates required for encryption.
+>- TDE does not incur fees, but KMS may. For more information, see [KMS Billing Overview](https://intl.cloud.tencent.com/document/product/1030/31966).
 - If your account has overdue payment, you cannot get keys from KMS, which may cause instance migration and upgrade tasks to fail. For more information, see [Notes on Arrears](https://intl.cloud.tencent.com/document/product/1030/31968).
 
 ## Notes
@@ -17,7 +16,7 @@ TencentDB for MySQL comes with the transparent data encryption (TDE) feature. Tr
 - TDE can't be disabled once enabled.
 - Once TDE is enabled, you need to decrypt data before you can restore it to a local database.
 - TDE enhances the security of static data while compromising the read-write performance of encrypted databases. Therefore, use it based on your actual needs.
-- If the source instance is associated with a read-only or disaster recovery instance, you only need to enable TDE for the former, which will be automatically enabled for the latter.
+- If the source instance is associated with a read-only or disaster recovery instance, you only need to enable TDE for the source instance, which will then be automatically enabled for its associated instances.
 - After TDE is enabled, if your account has overdue payment, you cannot get keys from KMS, which may cause migration, upgrade, and other tasks to fail.
 - After TDE is enabled, more CPU resources will be consumed, and about 5% of the performance will be compromised.
 
@@ -57,3 +56,4 @@ To decrypt an encrypted table, run the following statement:
 ```
 ALTER TABLE t1 ENCRYPTION='N';
 ```
+
