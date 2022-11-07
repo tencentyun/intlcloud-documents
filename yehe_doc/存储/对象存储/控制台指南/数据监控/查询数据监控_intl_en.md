@@ -1,60 +1,63 @@
 ## Overview
 
-COS can monitor your stored data. The COS data monitoring window displays data regarding request quantity, traffic, return code, data retrieval, etc. You can also query the details and trends of data in different storage classes according to different periods. The following describes how to view the monitoring data of a single bucket using a root account or sub-account.
+COS allows you to monitor your stored data. The COS data monitoring window displays information regarding request quantity, traffic, return code, data retrieval, etc. You can also query the details and trends of data in different storage classes for different time periods. The following describes how to view the monitoring data of a single bucket with a root account or sub-account.
 
->?To view the summary of all data stored under your account, please go to [Data Overview](https://console.cloud.tencent.com/cos5/monitor/overview) in the COS console.
+>?To view the summary of all data stored under your account, go to [Data Monitoring](https://console.cloud.tencent.com/cos5/monitor/overview) in the COS console.
 
 
-## Querying with a Root Account
+## Querying with Root Account
 
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
-2. Locate the desired bucket and click **Monitor** on its right. Alternatively, you can click the desired bucket and then choose the **Data Monitoring** tab on the page that is displayed. The monitoring items are described as follows:
-3. Go to the data monitoring page as shown below. The different monitoring items are as follows:
- - Storage Usage: storage usage of each storage class
- - Number of Objects: number of objects (including incomplete multipart uploads) stored in the bucket
- - Number of incomplete multipart uploads: number of incomplete multipart uploads stored in the bucket. If an ongoing upload is suspended or canceled, the corresponding files will be stored in the bucket as incomplete multipart uploads.
- >?
- >
- >- To query the number of objects in a folder, please see [Viewing Folder Details](https://intl.cloud.tencent.com/document/product/436/31633).
- >- If versioning is enabled, multiple versions of an object are counted as separate objects.
- - Request Count: number of all requests (including all GET requests and PUT requests), as well as the read/write requests of STANDARD and STANDARD_IA
- - Traffic: public/private network traffic, CDN origin-pull/cross-region replication traffic, and total upload traffic of public and private network
- - Return Code: number of 2xx, 3xx, 4xx, and 5xx status code as well as their proportion
- - Data Retrieval: statistics of data retrievals for STANDARD_IA
-   ![](https://main.qcloudimg.com/raw/2af3c5e7b113003ca1379547903751ed.png)
-
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. Click **Bucket List** on the left sidebar.
+3. Find the target bucket and click **Monitor** on the right.
+You can also select the target bucket and click **Data Monitoring** on the left sidebar on the bucket details page.
+4. On the monitoring data page, view the information.
+![](https://main.qcloudimg.com/raw/2af3c5e7b113003ca1379547903751ed.png)
+Monitoring items are as described below:
+ - Storage: Storage usage of each storage class.
+ - Number of Objects: Number of objects (including incomplete multipart uploads) stored in the bucket.
+ - Number of Incomplete Multipart Uploads: Number of incomplete multipart uploads stored in the bucket. If an ongoing upload is suspended or canceled, the corresponding files will be stored in the bucket as incomplete multipart uploads.
 >?
+>- To query the number of objects in a folder, see [Viewing Folder Details](https://intl.cloud.tencent.com/document/product/436/31633).
+>- If versioning is enabled, multiple versions of an object are counted as separate objects.
 >
->- Under **Details** in the **Current** section, you can query monitoring data (including storage usage, number of objects, requests, traffic, return code, and data retrieval) of different periods, such as today, yesterday, last 7 days, last 30 days, or a custom period.
->- In the **This month** section, you can view data for the month, including the daily average storage usage of each storage class and total traffic (accumulated public network traffic, accumulated CDN origin-pull traffic, and accumulated cross-region replication traffic).
->- **Storage** and **Number of Objects** show only data after March 01, 2020. For more detailed data, please go to [Billing Center](https://console.cloud.tencent.com/expense/bill/dosageDownload), select a period, and export the data.
+ - Requests: Number of all requests (including GET and PUT requests), as well as read/write requests of STANDARD and STANDARD_IA.
+ - Traffic: Public/Private network traffic, CDN origin-pull/cross-region replication traffic, and total upload traffic over public and private networks.
+ - Return Code: Number of 2xx, 3xx, 4xx, and 5xx status codes as well as their proportion.
+ - Data Retrieval: Statistics of data retrievals from STANDARD_IA.
+>?
+>- Under **Details** in the **Current** section, you can query monitoring data (including storage usage, number of objects, requests, traffic, return code, and data retrieval) of different time periods, such as today, yesterday, last 7 days, last 30 days, or a custom time period.
+>- In the **This month** section, you can view data for the month, including the daily average storage usage of each storage class as well as total traffic (total public network traffic, total CDN origin-pull traffic, and total cross-region replication traffic).
+>- **Storage** and **Number of Objects** show only data after March 1, 2020. For more detailed data, go to [Billing Center](https://console.cloud.tencent.com/expense/bill/dosageDownload), select a time period, and export the data.
+>
 
-## Querying with a Sub-account
+## Querying with Sub-account
 
-To query monitoring data with a sub-account via the console, you need to first grant the sub-account permission to query the monitoring data.
+To query monitoring data with a sub-account in the console, you need to first grant the sub-account relevant permissions.
 
-You can grant such permission by using a **Policy Template** or **Custom Access Policy**.
+You can grant such permissions by using a **policy template** or **custom access policy**.
 
 
 <a id="celie"></a>
+### Authorizing by policy template
 
-### Using a policy template
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) as the root account and select **Users** > **User List** to enter the user list page.
+2. Find the target sub-account and click **Authorize** in the **Operation** column on the right.
+![](https://main.qcloudimg.com/raw/03804c04df5e91fc0472e8d0297f694d.png)
+3. Search for and select the `QcloudMonitorFullAccess` policy in the pop-up window and click **OK** to associate it with the sub-account. Then, the sub-account can access monitoring reports.
+![](https://main.qcloudimg.com/raw/c2e07335d2e68e2f077138ff9d73837f.png)
+>! This policy template grants the sub-account the **full access** to CM. To protect the security of your account, you can customize an access policy to grant only read permissions to the sub-account.
+>
 
-1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) using the root account, and select **Users** > **User List** to enter the user list page.
-2. Locate the sub-account, and click **Authorize** in the **Operation** column on the right.
-   ![](https://main.qcloudimg.com/raw/03804c04df5e91fc0472e8d0297f694d.png)
-3. Search and select the `QcloudMonitorFullAccess` policy in the policy list and click **OK** to attach it to the sub-account. Then the sub-account should be able to access monitoring reports.
-   ![](https://main.qcloudimg.com/raw/c2e07335d2e68e2f077138ff9d73837f.png)
->!This policy template grants **full permission** for cloud monitoring to a sub-account. To better ensure the security of your account, you can customize an access policy to grant only read permission to your sub-accounts.
+### Authorizing by custom access policy
 
-### Using a custom access policy
-
-1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) using the root account, and select **Policies** > **Create Custom Policy** > **Create by Policy Syntax**.
-2. Use the blank template to create a new policy.
-   ![](https://main.qcloudimg.com/raw/4a61be28b1ab0146eca948215aad0f2e.png)
-3. Enter the following policy syntax into the **Edit Policy Content** input box in the blank template. You can rename the policy, making it easy to find as needed.
-   Policy syntax:
-
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) as the root account.
+2. On the left sidebar, click **Policies** > **Create Custom Policy** > **Create by Policy Syntax**.
+3. Select **Blank Template** and click **Next**.
+![](https://main.qcloudimg.com/raw/4a61be28b1ab0146eca948215aad0f2e.png)
+4. Copy and paste the following policy syntax into the **Edit Policy Content** input box.
+You can rename the policy as needed.
+Policy syntax:
 ```shell
 {
     "version": "2.0",
@@ -69,8 +72,6 @@ You can grant such permission by using a **Policy Template** or **Custom Access 
     ]
 }
 ```
-
-Edit the policy content in the input box:
 ![](https://main.qcloudimg.com/raw/f6a4b0d8573745139beb03cdb3a1b3ec.png)
-
-4. Click **Done**. After the policy is created successfully, you can attach it to a sub-account. For directions, please see [Configuring by Policy Template](#celie).
+4. Click **Create Policy**.
+After the policy is created successfully, you can associate it with the sub-account as instructed in [Authorizing by policy template](#celie).
