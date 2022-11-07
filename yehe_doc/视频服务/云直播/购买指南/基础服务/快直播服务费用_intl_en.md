@@ -7,7 +7,7 @@
   - Asia Pacific 3: Philippines, India, Australia
   - North America: United States, Canada, Mexico
   - Europe: Netherlands, Germany, Russia, United Kingdom, Ireland, Italy, Spain, France
-  - Middle East: United Arab Emirates, Turkey, Qatar, Saudi Arabia, Bahrain, Iraq
+  - Middle East: United Arab Emirates, Türkiye, Qatar, Saudi Arabia, Bahrain, Iraq
   - Africa: South Africa
   - South America: Brazil, Colombia, Argentina
 - The conversion factor for units of traffic/bandwidth is 1,000. For example, 1 TB = 1,000 GB.
