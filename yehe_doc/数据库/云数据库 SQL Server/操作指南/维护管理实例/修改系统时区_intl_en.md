@@ -1,7 +1,7 @@
 This document describes how to modify the system time zone when creating a TencentDB for SQL Server instance.
 >!
 >- **As modifying the system time zone requires separately configuring physical machine resources**, [submit a ticket](https://console.cloud.tencent.com/workorder/category) and specify the desired system time zone before purchase.
->- For instances with the modified system time zone, **data is stored on the backend in the modified UTC time**, while **backups, rollbacks, and slow logs are displayed in the console in Beijing time, and the monitoring time is Beijing time**.
+>- For instances with the modified system time zone, **data is stored on the backend in the modified UTC time**, while **backups, rollbacks, and slow logs are displayed in the console in Beijing time(UTC +8), and the monitoring time is Beijing time**.
 >- If you have modified the system time zone for your instance, and a subsequent **scale-out involves data migration**, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 >- The system time zone for instances is China Standard Time (Beijing time) by default.
 
