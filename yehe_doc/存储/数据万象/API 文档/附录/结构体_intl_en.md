@@ -7,6 +7,7 @@
 | QueueId           | Queue ID                                    | String    | Yes       | None                       |
 | PicProcessQueueId | Image processing queue ID                             | String    | Yes if there is an image processing node        | None |
 | SpeechRecognitionQueueId | Speech recognition queue ID                      | String    | Yes if there is a speech recognition node        | None |
+| AIProcessQueueId | AI processing queue ID                      | String    | Yes if there is an AI-based recognition node        | None |
 | NotifyConfig      | Callback information. If none is specified, the queue callback information is used. | Container | No       | None   |
 | ExtFilter         | Filename extension filter.                           | Container | No       | None   |
 
@@ -34,7 +35,7 @@
 | Image              | Require an image extension.    | String | No   | false  | false/true                                                   |
 | ContentType        | Require a content type. | String | No   | false  | false/true                                                   |
 | Custom             | Require a custom extension.  | String | No   | false  | false/true                                                   |
-| CustomExts         | Custom extension.          | String | No   | None     | <ul  style="margin: 0;"><li>Separate filename extensions with slashes (/). Up to ten extensions are supported.</li><li>If `Custom` is `true`, this parameter is required. </li></ul> |
+| CustomExts         | Custom extension.          | String | No   | None     | <ul  style="margin: 0;"><li>Separate filename extensions by slash (/). Up to ten extensions are supported.</li><li>If `Custom` is `true`, this parameter is required. </li></ul> |
 | AllFile    | All files          |  String  |  No   | false    |  false/true  |
 
 ## MediaWorkflow_Topology_Nodes_\*\*\*_Operation_Output
@@ -88,7 +89,7 @@
 | Output             | Output address     | Container. For more information, see [Output](#Operation_Output). | Yes       | None   |
 | Input               | Input configuration     | Container | No       | None   |
 
-`MediaWorkflow_Topology_Nodes_Transcode\_\*\*\*_Operation.Input` has the following sub-nodes:
+`MediaWorkflow_Topology_Nodes_Transcode_\*\*\*_Operation.Input` has the following sub-nodes:
 
 | Node Name (Keyword) | Description | Type | Required | Constraints |
 | ------------------ | --------------- | ------ | ---- | ----------------- |
@@ -298,7 +299,7 @@
 | ------------------ | ---------------- | ------ | -------- |
 | MqRegion           | Message queue region. Valid values: `sh` (Shanghai), `bj` (Beijing), `gz` (Guangzhou), `cd` (Chengdu), `hk` (Hong Kong, China). | String | Yes |
 | MqMode             | Message queue mode. Default value: `Queue`. <br/>Topic: Topic subscription <br/>Queue: Queue service </td> | String | Yes |
-| MqName             | TDMQ topic name                                                                        | String | Yes | 
+| MqName             | TDMQ topic name                                                                        | String | Yes |
 
 
 ## DigitalWatermark
@@ -306,7 +307,7 @@
 
 | Node Name (Keyword) | Description | Type | Required | Constraints |
 | ------------------ | -------------------------------------- | ------ | -------- | ------------------------------------------------------- |
-| Message            | The watermark information embedded by the digital watermark | String | Yes       | It can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).   |
+| Message            | The watermark information embedded by the digital watermark | String | Yes       | It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).   |
 | Type               | Digital watermark type | String | Yes       | It currently can be set to `Text` only.   |
 | Version            | Digital watermark version | String | Yes       | It currently can be set to `V1` only.   |
 | IgnoreError        | Whether to ignore the watermarking failure and continue the job. | String | Yes       | Valid values: `true`, `false`.   |

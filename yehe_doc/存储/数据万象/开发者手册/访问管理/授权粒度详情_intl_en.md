@@ -1,15 +1,15 @@
 You can grant a specified sub-account the API permission of a specified resource in CI. The authorization granularity of CI is divided into resource level and API level:
 
 - Resource-level API: It supports the authorization of a specific resource.
-- API-level API: It doesn't support the authorization of a specific resource.
+- API-level API: It does not support the authorization of a specific resource.
 
 For authentication through a resource-level API, CI will pass the specific 6-segment resource description to CAM for authentication, thereby supporting authorization and authentication of the specific resource.
 
-For authentication through an API-level API, CI will not pass the specific 6-segment resource description to CAM for authentication. Instead, it will pass `*` as any resource. To be more specific, if a resource is specified in the policy syntax during authorization but not passed through the API for authentication, CAM will identify the API as out of the authorization scope, i.e., having no permission.
+For authentication through an API-level API, CI will not deliver the six-segment format of the specific resource to CAM for authentication. Instead, it will deliver the `*` of any resource. To be more specific, if a resource is specified in the policy syntax during authorization but not delivered through the API for authentication, CAM will identify the API as out of the authorization scope, that is, having no permission.
 
 The following lists all API permissions of CI:
 
-## List Operations
+## List Operation
 
 | API | Description | Authorization Granularity | 6-Segment Resource Description |
 | :------------------- | ---------------------------------------- | :------- | :--------- |
@@ -17,7 +17,7 @@ The following lists all API permissions of CI:
 | DescribeRiskLibImage | Queries the list of images in the risky image library preset for content moderation     | API level   | *          |
 | DescribeRiskLibText | Queries the list of keywords in the risky text library preset for content moderation     | API level   | *          |
 
-## Write Operations
+## Write Operation
 
 ### Basic features
 
@@ -128,7 +128,7 @@ The following lists all API permissions of CI:
 | DeletePicProcessBucket       | Disables image processing for a bucket      | Resource level   | qcs::ci::uid/${appid}:bucket/examplebucket-1250000000/*        |
 | CreatePicProcessBucket       | Enables image processing for a bucket      | Resource level   | qcs::ci::uid/${appid}:bucket/examplebucket-1250000000/*        |
 
-## Read Operations
+## Read Operation
 
 ### Basic features
 
@@ -176,12 +176,36 @@ The following lists all API permissions of CI:
 | DescribeMediaWorkflowExecutions | Queries workflow execution instances   | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
 | DescribeMediaWorkflows          | Queries the status of workflows       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
 | GetPrivateM3U8                  | Generates a private M3U8 video     | API level   | *                                                            |
+| GenerateMediaInfo   | Gets the media information           | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| GenerateSnapshot    | Calls a frame capturing job           | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| ModifyM3U8Token                 | Refreshes HLS encrypted token    | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| CreateMediaTemplate | Creates a media processing template       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| UpdateMediaTemplate | Updates a media processing template       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| DeleteMediaTemplate | Deletes a media processing template       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| CreateMediaWorkflow | Creates a media processing workflow             | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| UpdateMediaWorkflow | Updates a media processing workflow             | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| DeleteMediaWorkflow | Deletes a media processing workflow             | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| TriggerMediaWorkflow         | Triggers a media processing workflow                      | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| UpdateMediaQueue    | Updates a media processing queue       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| AddMediaQueue    | Adds a media processing queue       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| CreateMediaBucket   | Binding the media processing service | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| DescribeMediaBuckets             | Queries the status of the media processing service     | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| DeleteMediaBucket   | Unbinding the media processing service | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| CreateMediaJobs     | Submits a media processing job       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| CancelMediaJob      | Cancels a media processing job       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| CreateInventoryTriggerJob     | Initiates a batch media processing job       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| DescribeInventoryTriggerJob                | Queries a batch media processing job     | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| DescribeInventoryTriggerJobs          | Queries the status batch operation jobs in batches              | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| CancelInventoryTriggerJob      | Cancels a batch operation job       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+|  UpdateSpeedTranscodingProcessQueue  | Updates an accelerated transcoding queue       | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| DescribeSpeedTranscodingProcessQueues | Queries accelerated transcoding queues           | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| CreateSpeedTranscodingProcessQueues   | Creates an accelerated transcoding queue    | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
 
 ### Image processing
 
 | API | Description | Authorization Granularity | 6-Segment Resource Description |
 | :------------------------------- | --------------------------------- | :------- | :----------------------------------------------------------- |
-| DescribeImageGuetzli             | Queries the enablement status of image Gurtzli compression for a bucket | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
+| DescribeImageGuetzli             | Queries the enablement status of image Guetzli compression for a bucket | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
 | DescribeImageAdvancedCompression | Queries the enablement status of image advanced compression for a bucket    | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
 | DescribeImageBlindWatermark      | Queries the enablement status of blind watermarking for a bucket          | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
 | DescribeImageStyleSeparator      | Queries the image style separator                | Resource level   | qcs::ci:ap-shanghai:uid/1250000000:bucket/examplebucket-1250000000/* |
