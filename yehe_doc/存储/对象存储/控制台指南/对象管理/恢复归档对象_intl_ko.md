@@ -14,7 +14,7 @@ CAS 혹은 DEEP ARCHIVE 유형의 객체를 COS 콘솔을 통해 복구(동결 �
 5. 복구할 객체를 찾아 오른쪽 작업 열에 있는 [복구]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/2d34eaee99c4bcb469025f857ed983f1.png)
 여러 보관 유형의 객체에 대해 일괄 복구를 진행하는 경우, 여러 객체를 선택한 후 상단에 있는 [더 많은 작업]>[복구]를 클릭하십시오.
-![](https://main.qcloudimg.com/raw/eaa698982cd42fe1918aace11854b693.png)
+
 4. 팝업 창에서 복구 모드와 복제본 유효 일수를 설정합니다.
 ![](https://main.qcloudimg.com/raw/3d3163c09213423aa959b179237ab137.png)
 설정 관련 정보는 다음과 같습니다.
