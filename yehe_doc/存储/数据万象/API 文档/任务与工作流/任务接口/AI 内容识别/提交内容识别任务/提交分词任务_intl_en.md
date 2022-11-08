@@ -6,13 +6,13 @@ This API is used to submit a word segmentation job.
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateAnimationTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -34,14 +34,14 @@ Content-Type: application/xml
 ```
 
 >?
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -56,7 +56,7 @@ This request requires the following request body:
     <Operation>
         <WordsGeneralize>
             <NerMethod>DL</NerMethod>
-            <SegMethod>Mix</SegMethod>
+            <SegMethod>MIX</SegMethod>
         </WordsGeneralize>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
@@ -78,11 +78,13 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
 | Tag                | Request | Job tag: WordsGeneralize                                   | String    | Yes   |
-| Input              | Request | Information of the object to be processed                                         | Container | Yes   |
+| Input              | Request | Information about the object to be operated                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
-| QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| QueueId            | Request | ID of the queue where the job is in                                         | String    | Yes   |
 | CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -109,7 +111,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -133,7 +135,7 @@ The response body returns **application/xml** data. The following contains all t
         <Operation>
             <WordsGeneralize>
                 <NerMethod>DL</NerMethod>
-                <SegMethod>Mix</SegMethod>
+                <SegMethod>MIX</SegMethod>
             </WordsGeneralize>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>
@@ -142,7 +144,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
@@ -152,7 +154,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------- | :-------- |
-| JobsDetail         | Response | Job details | Container |
+| JobsDetail | Response | Job details |  Container |
 
 <span id="jobsDetail"></span>
 `JobsDetail` has the following sub-nodes:
@@ -162,21 +164,21 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag | Response.JobsDetail | Job tag: WordsGeneralize | String |
+| Tag                | Response.JobsDetail | Job type: `WordsGeneralize`                               | String    |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
-| StartTime | Response.JobsDetail | Job start time |  String |
-| EndTime | Response.JobsDetail | Job end time |  String |
-| QueueId            | Response.JobsDetail | ID of the queue which the job is in                       | String    |
+| StartTime          | Response.JobsDetail | Job start time                                               | String    |
+| EndTime          | Response.JobsDetail | Job end time                                               | String    |
+| QueueId            | Response.JobsDetail | ID of the queue where the job is in                                             | String    |
 | Input              | Response.JobsDetail | Same as the `Request.Input` node in the request                              | Container |
-| Operation          | Response.JobsDetail | Operation rule                           | Container |
+| Operation          | Response.JobsDetail | Operation rule. Up to 6 operation rules are supported.                           | Container |
 
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :------------------ | :---------------------------- | :----------------------------------------------------------- | :-------- |
-| WordsGeneralize | Response.JobsDetail.Operation | Same as `Request.Operation.WordsGeneralize` in the request                   | Container |
-| UserData           | Response.JobsDetail.Operation | The user information passed through                      | String |
+| WordsGeneralize | Response.JobsDetail.Operation | Same as `Request.Operation.WordsGeneralize` in the request. |  Container |
+| UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String |
 | JobLevel    | Response.JobsDetail.Operation | Job priority                                                         | String |
 | WordsGeneralizeResult  | Response.JobsDetail.Operation | Word segmentation result, which will be returned if the job is executed successfully.                              | Container |
 
@@ -259,16 +261,16 @@ See the subscript for the part of speech:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
+No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Samples
+## Examples
 
 #### Request
 
 ```shell
 POST /ai_jobs HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: test-123456789.ci.ap-beijing.myqcloud.com
+Host: test-1234567890.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
@@ -280,7 +282,7 @@ Content-Type: application/xml
     <Operation>
         <WordsGeneralize>
             <NerMethod>DL</NerMethod>
-            <SegMethod>Mix</SegMethod>
+            <SegMethod>MIX</SegMethod>
         </WordsGeneralize>
         <UserData>This is my data.</UserData>
         <JobLevel>0</JobLevel>
@@ -319,7 +321,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <Operation>
             <WordsGeneralize>
                 <NerMethod>DL</NerMethod>
-                <SegMethod>Mix</SegMethod>
+                <SegMethod>MIX</SegMethod>
             </WordsGeneralize>
             <UserData>This is my data.</UserData>
             <JobLevel>0</JobLevel>

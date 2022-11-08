@@ -1,15 +1,16 @@
-## Feature Description
+## Feature Overview
 
-CI supports user-defined callback URLs. After a job is completed, the system sends an HTTP POST request with the body containing notification content to a user-defined callback URL. You can use the configured callback URL to learn about the processing progress and status of the job so that you can perform other operations as needed.
+CI supports user-defined callback URLs. After a job is completed, the system sends an HTTP POST request whose body contains notification content to a user-defined callback URL. You can use the configured callback URL to learn about the processing progress and status of the job so that you can perform other operations as needed.
 
 ## Callback Content
 
-After the job is completed, the system sends the callback content to the configured callback URL. The response body is returned as **application/xml** data. The following contains all the nodes:
+After the job is completed, the system sends the callback content to the callback URL that you configure. The response body is returned as **application/xml** data. The following contains all the nodes:
 
 ```plaintext
 <Response>
     <EventName>TaskFinish</EventName>
     <JobsDetail>
+        <Tag>WordsGeneralize</Tag>
         <Code>Success</Code>
         <CreationTime>2022-07-25T16:35:39+0800</CreationTime>
         <EndTime>2022-07-25T16:35:43+0800</EndTime>
@@ -21,6 +22,7 @@ After the job is completed, the system sends the callback content to the configu
         <JobId>ac34be3aa0bf411ed9ce39d7cc972e427</JobId>
         <Message>Success</Message>
         <Operation>
+            <UserData>This is my WordsGeneralize job.</UserData>
             <JobLevel>0</JobLevel>
             <WordsGeneralize>
                 <NerMethod>DL</NerMethod>
@@ -28,7 +30,7 @@ After the job is completed, the system sends the callback content to the configu
             </WordsGeneralize>
             <WordsGeneralizeResult>
                 <WordsGeneralizeLable>
-                    <Category>Mobility</Category>
+                    <Category>Transportation</Category>
                     <Word>Taxi</Word>
                 </WordsGeneralizeLable>
                 <WordsGeneralizeToken>
@@ -67,7 +69,7 @@ After the job is completed, the system sends the callback content to the configu
 </Response>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
@@ -81,7 +83,7 @@ The nodes are as described below:
 | JobsDetail | Response | Job details |  Container |
 
 `JobsDetail` has the following sub-nodes:
-<a href="https://intl.cloud.tencent.com/document/product/1045/49790#jobsDetail" target="_blank">Same as `Response.JobsDetail` in the word segmentation job submitting API.</a>
+Same as the `Response.JobsDetail` in the <a href="https://intl.cloud.tencent.com/document/product/1045/49790" target="_blank">word segmentation job submitting API</a>.
 
 **If the job is triggered by a workflow, `Response.JobsDetail.Input` will also contain a `CosHeaders` node of the container array type.**
 
@@ -103,7 +105,7 @@ The nodes are as described below:
 | WorkflowName       | Response.Workflow | Workflow name                      | String |
 | Name               | Response.Workflow | Workflow node name                   | String |
 
-## Samples
+## Examples
 
 ### Sample 1: Job callback triggered by a job API
 
@@ -111,6 +113,7 @@ The nodes are as described below:
 <Response>
     <EventName>TaskFinish</EventName>
     <JobsDetail>
+        <Tag>WordsGeneralize</Tag>
         <Code>Success</Code>
         <CreationTime>2022-07-25T16:35:39+0800</CreationTime>
         <EndTime>2022-07-25T16:35:43+0800</EndTime>
@@ -122,6 +125,7 @@ The nodes are as described below:
         <JobId>ac34be3aa0bf411ed9ce39d7cc972e427</JobId>
         <Message>Success</Message>
         <Operation>
+            <UserData>This is my WordsGeneralize job.</UserData>
             <JobLevel>0</JobLevel>
             <WordsGeneralize>
                 <NerMethod>DL</NerMethod>
@@ -129,7 +133,7 @@ The nodes are as described below:
             </WordsGeneralize>
             <WordsGeneralizeResult>
                 <WordsGeneralizeLable>
-                    <Category>Mobility</Category>
+                    <Category>Transportation</Category>
                     <Word>Taxi</Word>
                 </WordsGeneralizeLable>
                 <WordsGeneralizeToken>
@@ -168,68 +172,68 @@ The nodes are as described below:
 </Response>
 ```
 
-### Sample 2: Job callback in JSON format triggered by a job API
+### Sample 2: Job callback in JSON format triggered by a job
 
 ```plaintext
 {
-	"Response": {
-		"EventName": "TaskFinish",
-		"JobsDetail": {
-			"Code": "Success",
-			"CreationTime": "2022-07-25T16:35:39+0800",
-			"EndTime": "2022-07-25T16:35:43+0800",
-			"Input": {
-				"Object": "text.txt",
-				"BucketId": "test-123456789",
-				"Region": "ap-chongqing"
-			},
-			"JobId": "ac34be3aa0bf411ed9ce39d7cc972e427",
-			"Message": "Success",
-			"Operation": {
-				"JobLevel": "0",
-				"WordsGeneralize": {
-					"NerMethod": "DL",
-					"SegMethod": "MIX"
-				},
-				"WordsGeneralizeResult": {
-					"WordsGeneralizeLable": {
-						"Category": "Mobility",
-						"Word": "Taxi"
-					},
-					"WordsGeneralizeToken": [{
-							"Length": "2",
-							"Offset": "0",
-							"Pos": "t",
-							"Word": "Today"
-						},
-						{
-							"Length": "2",
-							"Offset": "2",
-							"Pos": "v",
-							"Word": "Taxi"
-						},
-						{
-							"Length": "1",
-							"Offset": "4",
-							"Pos": "v",
-							"Word": "Cost"
-						},
-						{
-							"Length": "2",
-							"Offset": "5",
-							"Pos": "nx",
-							"Word": "60"
-						},
-						{
-							"Length": "1",
-							"Offset": "7",
-							"Pos": "q",
-							"Word": "CNY"
-						}
-					]
-				}
-			}
-		}
-	}
+    "Response": {
+        "EventName": "TaskFinish",
+        "JobsDetail": {
+            "Code": "Success",
+            "CreationTime": "2022-07-25T16:35:39+0800",
+            "EndTime": "2022-07-25T16:35:43+0800",
+            "Input":{
+                "Object": "text.txt",
+                "BucketId": "test-123456789",
+                "Region": "ap-chongqing"
+            },
+            "JobId": "ac34be3aa0bf411ed9ce39d7cc972e427",
+            "Message": "Success",
+            "Operation": {
+                "JobLevel": "0",
+                "WordsGeneralize": {
+                    "NerMethod": "DL",
+                    "SegMethod": "MIX"
+                },
+                "WordsGeneralizeResult": {
+                    "WordsGeneralizeLable": {
+                        "Category": "Mobility",
+                        "Word": "Taxi"
+                    },
+                    "WordsGeneralizeToken": [{
+                            "Length": "2",
+                            "Offset": "0",
+                            "Pos": "t",
+                            "Word": "Today"
+                        },
+                        {
+                            "Length": "2",
+                            "Offset": "2",
+                            "Pos": "v",
+                            "Word": "Taxi"
+                        },
+                        {
+                            "Length": "1",
+                            "Offset": "4",
+                            "Pos": "v",
+                            "Word": "Cost"
+                        },
+                        {
+                            "Length": "2",
+                            "Offset": "5",
+                            "Pos": "nx",
+                            "Word": "60"
+                        },
+                        {
+                            "Length": "1",
+                            "Offset": "7",
+                            "Pos": "q",
+                            "Word": "CNY"
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 ```

@@ -1,158 +1,157 @@
-## Feature Description
+## Feature Overview
 
-The API (`DescribeMediaJobs`) is used to pull jobs that meet specified conditions.
+CI supports user-defined callback URLs. After a job is completed, the system sends an HTTP POST request whose body contains notification content to a user-defined callback URL. You can use the configured callback URL to learn about the processing progress and status of the job so that you can perform other operations as needed.
 
-## Request
+## Callback Content
 
-#### Sample request
+After the job is completed, the system sends the callback content to the callback URL that you configure. The response body is returned as **application/xml** data. The following contains all the nodes:
 
-```shell
-GET /ai_jobs?size=&states=&queueId=&startCreationTime=&endCreationTime= HTTP/1.1
-Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
-Date: <GMT Date>
-Authorization: <Auth String>
-
-```
-
->?
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
->
-
-#### Request headers
-
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
-
-#### Request body
-This request does not have a request body.
-
-#### Request parameters
-The nodes are as described below:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-|:---|:--- |:---|:---|:---|
-| queueId | None | ID of the queue from which jobs are pulled | String | Yes |
-| tag | None | Job type: Translation | String | Yes |
-| orderByTime | None | Valid values: `Desc`, `Asc`. Default value: `Desc`. | String | No |
-| nextToken | None | Context token for pagination | String | No |
-| size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
-| states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All`, `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. Default value: `All`. | String | No |
-| startCreationTime | None | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T00:00:00+0800` | String | No |
-| endCreationTime | None | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T23:59:59+0800`  | String | No |
-
-## Response
-
-#### Response headers
-
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
-
-#### Response body
-
-The response body returns **application/xml** data. The following contains all the nodes:
-
-``` shell
+```plaintext
 <Response>
-  <JobsDetail>
-  </JobsDetail>
-  <NextToken></NextToken>
+    <EventName>TaskFinish</EventName>
+    <JobsDetail>
+        <Code>Success</Code>
+        <CreationTime>2022-07-25T16:35:39+0800</CreationTime>
+        <EndTime>2022-07-25T16:35:43+0800</EndTime>
+        <Input>
+            <Object>input/en.pdf</Object>
+            <Lang>en</Lang>
+            <Type>pdf</Type>
+            <BasicType>pptx</BasicType>
+        </Input>
+        <JobId>ac34be3aa0bf411ed9ce39d7cc972e427</JobId>
+        <Message>Success</Message>
+        <Operation>
+            <Output>
+                <Region>ap-chongqing</Region>
+                <Bucket>test-123456789</Bucket>
+                <Object>output/zh.pdf</Object>
+            </Output>
+            <Translation>
+                <Lang>en</Lang>
+                <Type>txt</Type>
+            </Translation>
+            <UserData>This is my Translation job.</UserData>
+            <JobLevel>0</JobLevel>
+        </Operation>
+        <QueueId>pbde29b842b1b4e2ea4f0b20d264fcec2</QueueId>
+        <StartTime>2022-07-25T16:35:39+0800</StartTime>
+        <State>Success</State>
+        <Tag>Translation</Tag>
+    </JobsDetail>
 </Response>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-|:---|:-- |:--|:--|
-| Response | None | Response container | Container |
+| :----------------- | :----- | :------------- | :-------- |
+| Response           | None     | Response container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
-|:---|:-- |:--|:--|
-| JobsDetail | Response | Job details. Same as `Response.JobsDetail` in `CreateMediaJobs`. |  Container |
-| NextToken             | Response | Context token for pagination | String    |
+| :----------------- | :------- | :------------- | :-------- |
+| EventName          | Response | Fixed value: `TaskFinish`.    | String |
+| JobsDetail | Response | Job details |  Container |
 
+`JobsDetail` has the following sub-nodes:
+Same as the `Response.JobsDetail` in the <a href="https://intl.cloud.tencent.com/document/product/1045/49788" target="_blank">translation job submitting API</a>.
 
-#### Error codes
+**If the job is triggered by a workflow, `Response.JobsDetail.Input` will also contain a `CosHeaders` node of the container array type.**
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
+`CosHeaders` has the following sub-nodes:
 
-## Samples
+| Node Name (Keyword) | Parent Node | Description | Type |
+| :----------------- | :----------------------------------- | :------------------ | :----- |
+| Key                | Response.JobsDetail.Input.CosHeaders | Name of the custom header  | String |
+| Value              | Response.JobsDetail.Input.CosHeaders | Value of the custom header | String |
 
-#### Request
+**If the job is triggered by a workflow, `Response.JobsDetail` will also contain a `Workflow` node of the container type.**
 
-```shell
-GET /ai_jobs?queueId=aaaaaaaaaaa&tag=SDRtoHDR HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+`Workflow` has the following sub-nodes:
 
-```
+| Node Name (Keyword) | Parent Node | Description | Type |
+| ------------------ | ----------------------------------------- | -------------------------------------- | ------ |
+| RunId              | Response.Workflow | Workflow instance ID                    | String |
+| WorkflowId         | Response.Workflow | Workflow ID                       | String |
+| WorkflowName       | Response.Workflow | Workflow name                      | String |
+| Name               | Response.Workflow | Workflow node name                   | String |
 
-#### Response
+## Examples
 
-```shell
-HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 666
-Connection: keep-alive
-Date: Thu, 15 Jun 2017 12:37:29 GMT
-Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+### Sample 1: Job callback triggered by a job API
 
+```plaintext
 <Response>
-  <JobsDetail>
-    <Code>Success</Code>
-    <Message>Success</Message>
-    <JobId>aabcxxxxfeipplsdfwe</JobId>
-    <State>Submitted</State>
-    <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <StartTime></StartTime>
-    <EndTime></EndTime>
-    <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>Translation<Tag>
-    <Input>
-      <Object>test.txt</Object>
-      <Lang>zh</Lang>
-      <Type>txt</Type>
-    </Input>
-    <Operation>
-      <Translation>
-        <Lang>en</Lang>
-        <Type>txt</Type>
-      </Translation>
-      <Output>
-        <Region>ap-beijing</Region>
-        <Bucket>examplebucket-1250000000</Bucket>
-        <Object>test-result.txt</Object>
-      </Output>
-    </Operation>
-  </JobsDetail>
-  <JobsDetail>
-    <Code>Success</Code>
-    <Message>Success</Message>
-    <JobId>aabcxxxxfeipplsdfwe</JobId>
-    <State>Submitted</State>
-    <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <StartTime></StartTime>
-    <EndTime></EndTime>
-    <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>Translation<Tag>
-    <Input>
-      <Object>test1.txt</Object>
-      <Lang>en</Lang>
-      <Type>txt</Type>
-    </Input>
-    <Operation>
-      <Translation>
-        <Lang>zh</Lang>
-        <Type>txt</Type>
-      </Translation>
-      <Output>
-        <Region>ap-beijing</Region>
-        <Bucket>examplebucket-1250000000</Bucket>
-        <Object>test-result1.txt</Object>
-      </Output>
-    </Operation>
-  </JobsDetail>
+    <EventName>TaskFinish</EventName>
+    <JobsDetail>
+        <Code>Success</Code>
+        <CreationTime>2022-07-25T16:35:39+0800</CreationTime>
+        <EndTime>2022-07-25T16:35:43+0800</EndTime>
+        <Input>
+            <Object>input/en.pdf</Object>
+            <Lang>en</Lang>
+            <Type>pdf</Type>
+            <BasicType>pptx</BasicType>
+        </Input>
+        <JobId>ac34be3aa0bf411ed9ce39d7cc972e427</JobId>
+        <Message>Success</Message>
+        <Operation>
+            <Output>
+                <Region>ap-chongqing</Region>
+                <Bucket>test-123456789</Bucket>
+                <Object>output/zh.pdf</Object>
+            </Output>
+            <Translation>
+                <Lang>en</Lang>
+                <Type>txt</Type>
+            </Translation>
+            <UserData>This is my Translation job.</UserData>
+            <JobLevel>0</JobLevel>
+        </Operation>
+        <QueueId>pbde29b842b1b4e2ea4f0b20d264fcec2</QueueId>
+        <StartTime>2022-07-25T16:35:39+0800</StartTime>
+        <State>Success</State>
+        <Tag>Translation</Tag>
+    </JobsDetail>
 </Response>
 ```
 
+### Sample 2: Job callback in JSON format triggered by a job
+
+```plaintext
+{
+    "EventName": "TaskFinish",
+    "JobsDetail": {
+        "Code": "Success",
+        "CreationTime": "2022-07-25T16:35:39+0800",
+        "EndTime": "2022-07-25T16:35:43+0800",
+        "Input":{
+            "Object": "input/en.pdf",
+            "Lang": "en",
+            "Type": "pdf",
+            "BasicType": "pptx"
+        },
+        "JobId": "ac34be3aa0bf411ed9ce39d7cc972e427",
+        "Message": "Success",
+        "Operation": {
+            "Output": {
+                "Region": "ap-chongqing",
+                "Bucket": "test-123456789",
+                "Object": "output/zh.pdf"
+            },
+            "Translation": {
+                "Lang": "en",
+                "Type": "txt"
+            },
+            "UserData": "This is my Translation job.",
+            "JobLevel": 0,
+        },
+        "QueueId": "pbde29b842b1b4e2ea4f0b20d264fcec2",
+        "StartTime": "2022-07-25T16:35:39+0800",
+        "State": "Success",
+        "Tag": "Translation"
+    }
+}
+```
