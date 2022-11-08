@@ -43,6 +43,6 @@ When creating a migration, sync, or subscription task, you need to select differ
 </table>
 
 > ? 
-> - Manually or automatically adding the SNAT IP address of the DTS server to the security group or allowlist of the source database may cause certain security risks to the source database. Therefore, you should enhance security protection measures when performing such operations; for example, you can standardize account password management, require authentication for API communication, and restrict unnecessary IP ranges. By using DTS, you acknowledge the existence of risks. If you have high security requirements, we recommend you use Direct Connect, VPN, or VPC for access.
+> - The source database may be exposed to certain security threats if the SNAT IP address of the DTS server is manually or automatically added to its security group or allowlist. Therefore, when performing such operations, you should take security protection measures like standardizing account password management, requiring authentication for API communication, and restricting unnecessary IP ranges. By using DTS, you acknowledge that you bear all risks associated with the use of the service. If you have a very low tolerance for risks when you use DTS, we recommend you choose Direct Connect, VPN, or VPC for access.
 > - After using DTS, we recommend you delete the DTS IP address from the security group or firewall promptly.
 
