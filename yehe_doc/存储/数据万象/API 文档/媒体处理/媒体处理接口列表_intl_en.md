@@ -16,7 +16,7 @@ A job can be either sync or async:
 <tbody><tr>
 <td rowspan=7>Basic processing</td>
 <td>Audio/Video transcoding</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1045/48941">Submitting Video Transcoding Job</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/48941">Submitting Audio/Video Transcoding Job</a></td>
 </tr>
 <tr>
 <td>Top speed codec transcoding</td>
@@ -94,7 +94,24 @@ A job can be either sync or async:
 <td>Speech recognition</td>
 <td><a href="https://www.tencentcloud.com/document/product/1045/49789">Submitting Speech Recognition Job</a></td>
 </tr>
+<tr>
+<td rowspan=3>Sync jobs</td>
+<td>Video frame capturing</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/49539">Getting Media File Screenshot</a></td>
+</tr>
+<tr>
+<td>Media information query</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/49541">Getting Media File Information</a></td>
+</tr>
+<tr>
+<td>Private M3U8</td>
+<td><a href="https://www.tencentcloud.com/document/product/1045/49542">GetPrivateM3U8</a></td>
+</tr>
 </tbody></table>
+
+
+## Template APIs
+For media processing features such as audio/video transcoding, audio/video splicing, video frame capturing, and video-to-animated image conversion, you need to specify a template when creating a **job** or **workflow** in CI. The template page provides preset templates, and you can also customize templates based on your business needs. For more information on media processing templates, see [Media Processing](https://www.tencentcloud.com/document/product/1045/49899).
 
 ## Workflow APIs
 
