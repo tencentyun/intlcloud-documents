@@ -1,6 +1,6 @@
 ## Overview
 
-The file decompression feature is a data processing solution provided by COS based on [SCF](https://intl.cloud.tencent.com/document/product/583). When you upload a compressed file to a bucket with a ZIP decompression rule configured, the SCF function preset by COS will be triggered automatically to decompress the file into the specified bucket and directory.
+The file decompression feature is a data processing solution provided by COS based on [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583). When you upload a compressed file to a bucket with a ZIP decompression rule configured, the SCF function preset by COS will be triggered automatically to decompress the file into the specified bucket and directory.
 
 ![Decompression Flow](https://main.qcloudimg.com/raw/4899b5c92bb085a0f18a522dfae344ae.jpg)
 
@@ -10,7 +10,7 @@ The file decompression feature is a data processing solution provided by COS bas
 
 - File decompression supports decompressing ZIP files only.
 - If you have added a file decompression rule to your bucket in the COS console, you can view the created decompression function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **Do not** delete the function; otherwise, your rule may not take effect.
-- Regions where SCF is available support file decompression, including Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Toronto, and Silicon Valley. For more supported regions, see [Serverless Cloud Function](https://intl.cloud.tencent.com/document/product/583).
+- File decompression is supported in SCF-enabled regions, including Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Toronto, and Silicon Valley. For more supported regions, see [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583).
 - The directory or file name in your package must be UTF-8 or GB 2312 encoded; otherwise, the directory or file name might be garbled after decompression, or the decompression may be interrupted. If an error is reported, you can click **View Log** on the right of the function to redirect to the SCF console to view log details.
 - The decompression service is not supported for files stored in the ARCHIVE storage class. To decompress a package stored in the ARCHIVE storage class, restore it first. For detailed directions, see [Restoring Archived Objects](https://intl.cloud.tencent.com/document/product/436/30961).
 - The maximum processing time for decompressing a compressed file is 900 seconds, beyond which the decompression task will fail. Limits of the COS file decompression feature are subject to SCF. For more limits, see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637).

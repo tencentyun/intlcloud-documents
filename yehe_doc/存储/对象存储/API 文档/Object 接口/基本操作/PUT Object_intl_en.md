@@ -6,7 +6,7 @@ This API (`PUT Object`) is used to upload a local object to the specified bucket
 >- The `PUT Object` API supports uploading a file of up to 5 GB in size. If you need to upload a larger file, use the [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) API.
 > - If the `Content-Length` value in the request header is smaller than the length of the data in the actual request body, COS will still successfully create a file, but the object size will be equal to the size defined in `Content-Length`, and the excessive data will be discarded.
 > - If you upload an object with the same name as an object that already exists in the bucket and versioning is not enabled, the old object will be overwritten by the new one, and `200 OK` will be returned upon successful upload.
-> - COS comes with no folders or directories. If you need to upload objects to the specified folder or path, you can use `/` to implement this; for example, to upload `picture.png` to the `doc` folder, set the object key to `doc/picture.png`; to create the `doc` folder, set the object key to `doc/`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
+> - COS comes with no folders or directories. If you need to upload objects to the specified folder or path, you can use `/` to implement this; for example, to upload `picture.png` to the `doc` folder, set the object key to `doc/picture.png`; to create the `doc` folder, set the object key to `doc/`. For more information, see [Object Overview > Folder and directory](https://intl.cloud.tencent.com/document/product/436/13324).
 > 
 
 <div class="rno-api-explorer">
@@ -71,7 +71,7 @@ In addition to [common request headers](https://intl.cloud.tencent.com/document/
 | Expires             | The cache expiration time as defined in RFC 2616, which is saved as part of the object metadata.              | string  | No       |
 | Transfer-Encoding   | If you want to upload the object in parts, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format defined in RFC 2616, and you cannot specify the `Content-Length` request header. | string | No       |
 | x-cos-meta-\*       | User-defined metadata and header suffixes, which are saved as part of the object metadata. Maximum size: 2 KB. <br>**Note**: User-defined metadata can contain underscores (_), but header suffixes can contain only minus signs (-) but not underscores (_). | string | No      |
-| x-cos-storage-class | Storage class of the object. Enumerated values: `INTELLIGENT_TIERING`, `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`. Default value: `STANDARD`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | enum | No |
+| x-cos-storage-class | Storage class of the object. Enumerated values: `INTELLIGENT_TIERING`, `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`. Default value: `STANDARD`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | enum | No |
 | x-cos-traffic-limit | Limits the speed (in bit/s) for the current upload for traffic control. Value range: 819200−838860800 (i.e., 100 KB/s−100 MB/s). If the speed exceeds the limit, a 400 error will be returned. | integer | No      |
 | x-cos-tagging | A set of up to ten object tags (for example, `Key1=Value1&Key2=Value2`). Tag keys and values in the set must be URL-encoded. | string  | No |
 
