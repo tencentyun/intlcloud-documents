@@ -1,4 +1,4 @@
-﻿## Consumption Overview
+## Consumption Overview
 The consumption overview page displays various consumption-related information, such as monthly total resource consumption, consumption by product, top 10 projects, consumption by region, and top 5 tags.
 
 ### Consumption statistics
