@@ -26,13 +26,12 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 [](id:client)
 ### 客户端示例代码计算 UserSig
 1. **获取 SDKAPPID 和密钥**：
-    1. 登录**实时音视频控制台** > **[应用管理](https://console.cloud.tencent.com/trtc/app)**。
-    2. 单击您需查看的 SDKAppID 对应的**应用信息**，单击进入**快速上手**页签。
-    3. 查看 **第二步 获取签发UserSig的密钥** 标签，即可获取用于计算 UserSig 的加密密钥。
-    4. 单击**复制密钥**，可将密钥拷贝到剪贴板中。
- ![](https://main.qcloudimg.com/raw/b8575d1c97952ad8b1b28df16d69a8cb.png)
+    1. 登录**实时音视频控制台** > [应用管理](https://console.cloud.tencent.com/trtc/app)。
+    2. 单击应用配置查看 SDKAppID 对应的应用信息。
+    3. 查看 基本信息 中的SDKSecretKey 即可获取用于计算 UserSig 的加密密钥。
+    4. 单击复制密钥，可将密钥拷贝到剪贴板中。
+ ![](https://qcloudimg.tencent-cloud.cn/raw/29502e1be216eb514d706cc701c17df3.png)
 
->? 若查看密钥时只能获取公钥和私钥信息，请参见 [如何获取密钥](#getusersig)。
 2. **计算 UserSig：**
 为了方便客户端使用，我们提供各平台计算 UserSig 的源码文件，您可直接下载计算：
 <table>
@@ -71,26 +70,13 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 我们在 TRTC SDK 的示例代码中提供了一个叫做 `GenerateTestUserSig` 的开源模块，您只需要将其中的 SDKAPPID、EXPIRETIME 和 SECRETKEY 三个成员变量修改成您自己的配置，就可以调用 `genTestUserSig()` 函数获取计算好的 UserSig，从而快速跑通 SDK 的相关功能：
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
 
-[](id:getusersig)
-#### 查看密钥时只能获取公钥和私钥信息，要如何获取密钥？
-TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。如不升级，您也可以继续使用 [老版本算法 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)，如已升级，您按需切换为新老版本算法。
-
-**升级/切换操作：**
-1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
-2. 在左侧导航栏选择**应用管理**，单击目标应用所在行的**应用信息**。
-3. 选择**快速上手**页签，单击**第二步 获取签发UserSig的密钥**区域的**点此升级**、**非对称式加密**或**HMAC-SHA256**。
-  - 升级
-  - 切换回老版本算法 ECDSA-SHA256：
-      ![](https://qcloudimg.tencent-cloud.cn/raw/4fc4e0e0b9480b74cd7a9206f235b550.png)
-  - 切换为新版本算法 HMAC-SHA256：
-      ![](https://qcloudimg.tencent-cloud.cn/raw/5b7950d798d2662df37ebb191bd68987.png)
-
 
 [](id:console)
 ### 控制台获取 UserSig
-1. 登录**实时音视频控制台**，进入**开发辅助** > **[UserSig生成&校验](https://console.cloud.tencent.com/trtc/usersigtool)**。
-2. 在签名（UserSig）生成工具下，选择对应的 SDKAppID 和 UserID。
-3. 单击**生成签名(UserSig)**，即可计算得到对应的 UserSig。
+1. 进入实时音视频控制台，选择左侧栏的**应用管理**>**UserSig生成**，查看签名(UserSig)生成工具模块。
+2. 单击下拉框选择您已创建的应用（SDKAppID），完成后会自动生成对应的密钥（Key）。
+3. 填写用户名（UserID）。
+4. 单击**生成签名UserSig**，即可立即生成对应的签名 UserSig。
 
 
 [](id:formal)
