@@ -21,7 +21,7 @@ It simply takes a few steps in DTS to set up data migration to Tencent Cloud wit
 
 ## Restrictions  
 - Only basic tables and views can be migrated, and objects such as functions, triggers, and stored procedures are not supported currently (such unsupported migration objects will be gradually supported in the future).
-- Correlated data objects must be migrated together; otherwise, migration will fail. Common correlations include table reference by views, view reference by views, view/table reference by stored procedures/functions/triggers, and tables correlated through primary/foreign keys.
+- Correlated data objects must be migrated together; otherwise, migration will fail. Common correlations include table referenced by views, view referenced by views, view/table referenced by stored procedures/functions/triggers, and tables correlated through primary/foreign keys.
 
 ## Supported Migration Types
 DTS supports the following three migration types:
@@ -38,14 +38,14 @@ For more information on the source and target database types, versions, and migr
 | **Feature**          | **Description**                        | **Documentation**                           |
 | ------------------------- | ----------------------------------- | -------------------------------------- |
 | Heterogeneous migration and migration from third-party cloud databases | Data migration between databases in different types is supported, such as migration from MySQL to TDSQL-C. Currently supported third-party cloud databases include Alibaba Cloud and AWS databases. | [Databases Supported by Data Migration](https://intl.cloud.tencent.com/document/product/571/42647)                                     |
-| Cross-account migration                           | Data migration between different Tencent Cloud accounts is supported.                              | [Cross-Account TencentDB Instance Migration](https://intl.cloud.tencent.com/document/product/571/42646) |
+| Cross-account migration                           | Data migration between different Tencent Cloud accounts is supported.                              | -|
 | Cross-version migration of most databases              | The target database version should be equal to or later than the source database version; for example, data on v5.5.x can be migrated to v5.5.x, v5.6.x, or later. The last digit in the version number is the minor version number, which is not restricted. | [Databases Supported by Data Migration](https://intl.cloud.tencent.com/document/product/571/42647)                                     |
 | Migration of user information, views, and advanced objects | User information, views, stored procedures, functions, triggers, and events can be migrated. | - |
 | Data consistency check | The data in the source and target databases can be checked for consistency. | [Creating Data Consistency Check Task](https://intl.cloud.tencent.com/document/product/571/42724) |
 | Task progress visualization                    | Information such as migration steps and progress can be displayed.                         | [Viewing Task](https://intl.cloud.tencent.com/document/product/571/42637) |
 | Metric monitoring and default alarm policy          | <li>Data migration metrics can be monitored. <li>Default configuration is supported for data migration event monitoring to automatically notify you of abnormal events. | [Supported Events and Metrics](https://intl.cloud.tencent.com/document/product/571/42611)                   |
 | Migration without locks                             | Migration is implemented without locks, during which no global lock (the FTWRL lock) is added, and only tables without a primary key are locked. | -    |
-| Database/Table mapping                       | Databases/Tables migrated from the source database to the target database can be renamed.                      | [Renaming Database/Table](https://intl.cloud.tencent.com/document/product/571/48482)                                                |
+| Database/Table mapping                       | Databases/Tables migrated from the source database to the target database can be renamed.                      | -                                        |
 | Instance restart or upgrade                | During incremental migration, the instances can be restarted or upgraded.                 | -                   |
 | HA switch                           | HA switch from the source instance (with GTID enabled) to the target instance is supported.     | -             |
 | No requirements for the super privileges                   | The operator does not need to have the super privileges of the source instance account (only for certain databases currently). | -         |
