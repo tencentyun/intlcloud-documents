@@ -41,7 +41,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 - When views, stored procedures, and functions are migrated, DTS will check whether `user1` corresponding to `DEFINER` (`[DEFINER = user1]`) in the source database is the same as the migration account `user2`, and if not, DTS will change the `SQL SECURITY` attribute of `user1` in the target database from `DEFINER` to `INVOKER` (`[INVOKER = user1]`) after the migration, and set the `DEFINER` in the target database to the migration account `user2` (`[DEFINER = migration account user2]`). If the view definition in the source database is too complex, the task may fail.
 - If the source MySQL database is a non-GTID instance, DTS doesn't support HA switch for it. If it is switched, DTS incremental migration may be interrupted.
 - Only data with the following three database engines can be migrated: InnoDB, MyISAM, and TokuDB. Tables with other engines will be skipped during migration by default.
-- Correlated data objects must be migrated together; otherwise, migration will fail. Common correlations include table reference by views, view reference by views, and associative tables based on primary/foreign keys.
+- Correlated data objects must be migrated together; otherwise, migration will fail. Common correlations include table referenced by views, view referenced by views, and tables correlated through primary/foreign keys.
 - During incremental migration, if the source database has distributed transactions or generates binlog statements in the `STATEMENT` format, the migration will fail.
 - In migration scenarios without locks, after the migration task enters the "source database export" step, DDL operations are not supported.
 - If the binlog of the source database has a GTID hole, it may compromise the performance of the migration task and cause the task to fail.
@@ -124,13 +124,13 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. Here, select **MySQL**.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. Here, select <b>MySQL</b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. Here, select **MySQL**.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. Here, select <b>MySQL</b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -138,6 +138,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <td>Specification</td>
 <td>Select the specification of the migration link based on your business conditions.</td></tr>
 </tbody></table>
+
 3. On the **Set source and target databases** page, configure the task, source database, and target database settings. After the source and target databases pass the connectivity test, click **Create**.
 >?If the connectivity test fails, troubleshoot as prompted or as instructed in [Database Connection Check](https://intl.cloud.tencent.com/document/product/571/42552) and try again.
 >
@@ -161,11 +162,11 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <td rowspan=10>Source Database Settings</td>
 <td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select **Others**. For a third-party cloud database, select the corresponding service provider.<br>In this scenario, select **Others**.</td></tr>
+<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select <b>Others</b>. For a third-party cloud database, select the corresponding service provider.<br>In this scenario, select <b>Others</b>.</td></tr>
 <tr>
 <td>Region</td><td>The region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Direct Connect** or **VPN Access**, and you need to configure VPN-IDC interconnection as instructed in <a href="https://intl.cloud.tencent.com/document/product/571/42651">Direct Connect or VPN Access: Configuring VPN-IDC Interconnection</a>. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Direct Connect</b> or <b>VPN Access</b>, and you need to configure VPN-IDC interconnection as instructed in <a href="https://intl.cloud.tencent.com/document/product/571/42651">Direct Connect or VPN Access: Configuring VPN-IDC Interconnection</a>. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
@@ -190,7 +191,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Database**.</td></tr>
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 <tr>
@@ -198,6 +199,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <tr>
 <td>Password</td><td>Password of the target database.</td></tr>
 </tbody></table>
+
 <b>Example 2</b>: Migrate between two TencentDB instances
 <table>
 <thead><tr><th width="10%">Setting Type</th><th width="20%">Configuration Item</th><th width="70%">Description</th></tr></thead>
@@ -216,11 +218,11 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <td rowspan=8>Source Database Settings</td>
 <td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select **Others**. For a third-party cloud database, select the corresponding service provider.<br>In this scenario, select **Others**.</td></tr>
+<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select <b>Others</b>. For a third-party cloud database, select the corresponding service provider.<br>In this scenario, select <b>Others</b>.</td></tr>
 <tr>
 <td>Region</td><td>The source database region selected during data migration task purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Database**. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Database</b>. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
@@ -228,7 +230,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <li>Database: The source database is a TencentDB instance.</li>
 <li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li>
 <tr>
-<td>Cross-/Intra-Account</td><td><ul><li>Intra-account: The source and target database instances belong to the same Tencent Cloud root account. </li><li>Cross-account: The source and target database instances belong to different Tencent Cloud root accounts.<br>The following uses migration under the same account as an example. For detailed directions on cross-account migration, see <a href="https://intl.cloud.tencent.com/document/product/571/42646">Cross-Account TencentDB Instance Migration</a>.</li></ul></td></tr>
+<td>Cross-/Intra-Account</td><td><ul><li>Intra-account: The source and target database instances belong to the same Tencent Cloud root account. </li><li>Cross-account: The source and target database instances belong to different Tencent Cloud root accounts.</li></ul></td></tr>
 <tr>
 <td>Database Instance</td><td>Instance ID of the source MySQL database.</td></tr>
 <tr>
@@ -241,7 +243,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Database**.</td></tr>
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 <tr>
@@ -249,6 +251,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <tr>
 <td>Password</td><td>Password of the target database.</td></tr>
 </tbody></table>
+
 <b>Example 3</b>: Migrating an Alibaba Cloud ApsaraDB for RDS instance to a TencentDB instance over the public network
 <table>
 <thead><tr><th width="10%">Setting Type</th><th width="20%">Configuration Item</th><th width="70%">Description</th></tr></thead>
@@ -267,11 +270,11 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <td rowspan=8>Source Database Settings</td>
 <td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select **Others**. For a third-party cloud database, select the corresponding service provider.<br>In this scenario, select **Alibaba Cloud**.</td></tr>
+<td>Service Provider</td><td>For a self-built database (such as a CVM-based one) or TencentDB database, select <b>Others</b>. For a third-party cloud database, select the corresponding service provider.<br>In this scenario, select <b>Alibaba Cloud</b>.</td></tr>
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
  <tr>
-<td>Access Type</td><td>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions. <br>In this scenario, select **Public Network**. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>For a third-party cloud database, you can select <b>Public Network</b> generally or select <b>VPN Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions. <br>In this scenario, select <b>Public Network</b>. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
@@ -292,7 +295,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Database**.</td></tr>
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 <tr>
@@ -300,6 +303,7 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <tr>
 <td>Password</td><td>Password of the target database.</td></tr>
 </tbody></table>
+
 4. On the **Set migration options and select migration objects** page, configure the migration type and objects and click **Save**.
 >?
 >If you want to rename a table (for example, rename table A table B) during migration, you must select the entire database (or entire instance) where table A resides rather than only table A as the **migration object**; otherwise, the system will report an error. 
@@ -312,23 +316,24 @@ GRANT SELECT ON database to be migrated.* TO 'migration account';
 <td>Select a type based on your scenario. <ul><li> Structural migration: Structured data such as databases and tables in the database will be migrated. </li><li>Full migration: The database/table structure and data of the entire database will be migrated. The migrated content will include only the existing data from the source database when the task is started, not incremental data written to the source database after the task is started. </li><li>Full + Incremental migration: The database/table structure and data of the entire database will be migrated. The migrated content will include the existing data from the source database when the task is started as well as the incremental data written to the source database after the task is started. If there are data writes to the source database during migration, and you want to smoothly migrate the data in a non-stop manner, select this type.</li></ul></td></tr>
 <tr>
 <td>Data Consistency Check</td>
-<td>If **Full + Incremental migration** is selected, you can perform data consistency check to carefully compare the data in the source and target databases after migration.
-<ul><li>If **Full check** is selected, when the migration task enters the "incremental sync" step, the time lag between them is 0 seconds, and the data gap between the target and the source databases is 0 MB, DTS will automatically trigger a data consistency check task.</li><li>If **Full check** is not selected, you can manually trigger a check task when the task enters the "incremental sync" step. For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/42724">Creating Data Consistency Check Task</a>.</li></ul></td></tr>
+<td>If <b>Full + Incremental migration</b> is selected, you can perform data consistency check to carefully compare the data in the source and target databases after migration.
+<ul><li>If <b>Full check</b> is selected, when the migration task enters the "incremental sync" step, the time lag between them is 0 seconds, and the data gap between the target and the source databases is 0 MB, DTS will automatically trigger a data consistency check task.</li><li>If <b>Full check</b> is not selected, you can manually trigger a check task when the task enters the "incremental sync" step. For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/42724">Creating Data Consistency Check Task</a>.</li></ul></td></tr>
 <tr>
 <td>Migration Object</td>
 <td><ul><li>Entire instance: Migrate the entire database instance excluding the system databases such as `information_schema`, `mysql`, `performance_schema`, and `sys`.</li>
 <li>Specified objects: Migrate specified objects.</li></ul> </td></tr>
 <tr>
 <td>Advanced Migration Object</td>
-<td>Stored procedures, functions, triggers, and events can be migrated.
-<ul><li>The migration of advanced objects is a one-time operation: only advanced objects already in the source database before the task start can be migrated, while those added to the source database after the task start will not be synced to the target database.</li><li>Stored procedures and functions will be migrated during **source database export**. If there are no incremental migration tasks, triggers and events will be migrated when the task stops; otherwise, they will be migrated after you click <b>Done</b>, in which case the transition will take a longer time.
+<td>Procedures, functions, triggers, and events can be migrated.
+<ul><li>The migration of advanced objects is a one-time operation: only advanced objects already in the source database before the task start can be migrated, while those added to the source database after the task start will not be synced to the target database.</li><li>Procedures and functions will be migrated during <b>source database export</b>. If there are no incremental migration tasks, triggers and events will be migrated when the task stops; otherwise, they will be migrated after you click <b>Done</b>, in which case the transition will take a longer time.
 </li>For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/48484">Migrating Advanced Object</a>.</ul></td></tr>
 <tr>
 <td>Migrate Account</td>
 <td>Select this feature if you want to migrate the account information of the source database.</td></tr><tr>
 <td>Selected Object</td>
-<td><ul><li>Database/Table mapping (renaming) is supported. Hover over a database or table name, click the displayed **Edit** icon, and enter a new name in the pop-up window.</li><li>When advanced objects are selected for migration, we recommend you not rename databases/tables; otherwise, migration of the advanced objects may fail.</li><li>Online DDL temp tables can be migrated (through tools such as gh-ost or pt-online-schema-change). Click **Edit** of a table and select a temp table name in the pop-up window. For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/48481">Migrating Online DDL Temp Table</a>.</li><ul></td></tr>
+<td><ul><li>Database/Table mapping (renaming) is supported. Hover over a database or table name, click the displayed <b>Edit</b> icon, and enter a new name in the pop-up window.</li><li>When advanced objects are selected for migration, we recommend you not rename databases/tables; otherwise, migration of the advanced objects may fail.</li><li>Online DDL temp tables can be migrated (through tools such as gh-ost or pt-online-schema-change). Click <b>Edit</b> of a table and select a temp table name in the pop-up window. For more information, see <a href="https://intl.cloud.tencent.com/document/product/571/48481">Migrating Online DDL Temp Table</a>.</li><ul></td></tr>
 </tbody></table>
+
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
  - If the verification fails, fix the problem as instructed in [Check Item Overview](https://intl.cloud.tencent.com/document/product/571/42551) and initiate the verification again. You can skip certain check items by blocking them after the verification fails. Then, you need to initiate the verification again to continue the task.
     - Failed: It indicates that a check item fails and the task is blocked. You need to fix the problem and run the verification task again.  
