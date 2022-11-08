@@ -1,6 +1,6 @@
 ## Overview
 
-Data Subscription Kafka Edition supports consumer group management, including password change, consumer group deletion, and consumption offset modification.
+Data Subscription Kafka Edition allows you to manage a consumer group by deleting it and modifying its password or consumption offset.
 
 In addition, you can view information such as client ID (the ID of the client consuming the data), partition ID, consumption offset, and consumption delay in **Consumption Management**.
 
@@ -35,6 +35,6 @@ If other Kafka clients are consuming the data in the same consumer group, the co
  - From latest offset: Reset the consumption offset to the latest offset of Kafka messages.
  - From start offset: Reset the consumption offset to the earliest offset from where Kafka messages start to be stored.
  - From specified time point: You can enter a time, and DTS will find the consumption offset corresponding to the entered time to start consumption.
-   If the configured time point is after the Kafka message time, the consumption offset will be the maximum offset of Kafka messages; otherwise, the consumption offset will be the minimum offset of Kafka messages.	
+   If you configure a time out of the offset range, the messages will be consumed from the start or latest offset, whichever is closest to the time you entered.	
    
 
