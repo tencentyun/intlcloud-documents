@@ -353,24 +353,26 @@ Web용 Player는 HTML5 `<video>` 태그와 Flash를 통해 비디오 재생을 �
 
 로컬 프로젝트에서 index.html 파일을 생성하고 플레이어 양식 파일과 스크립트 파일을 html 페이지로 가져옵니다.
 ```html
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/tcplayer.min.css" rel="stylesheet"/>
+ <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
  <!--Chrome 및 Firefox와 같은 최신 브라우저에서 H5를 통해 Webrtc 비디오를 재생하려면 tcplayer.vx.x.x.min.js를 가져오기 전에 TXLivePlayer-x.x.x.min.js를 가져와야 합니다.-->
  <!--일부 브라우저 환경은 Webrtc를 지원하지 않으며 플레이어는 Webrtc 스트림 주소를 HLS 형식 주소로 자동 변환하므로 빠른 라이브 장면에서도 hls.min.x.xx.xm.js를 가져와야 합니다.-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.1/libs/TXLivePlayer-1.2.0.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
  <!--Chrome 및 Firefox와 같은 최신 브라우저에서 H5를 통해 HLS 프로토콜의 비디오를 재생하려면 tcplayer.vx.x.x.min.js를 가져오기 전에 hls.min.x.xx.xm.js를 가져와야 합니다.-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/libs/hls.min.0.13.2m.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
  <!--Chrome 및 Firefox와 같은 최신 브라우저에서 H5를 통해 FLV 비디오를 재생하려면 tcplayer.vx.x.x.min.js를 가져오기 전에 flv.min.x.x.x.js를 가져와야 합니다.-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/libs/flv.min.1.6.2.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+  <!--Chrome 및 Firefox와 같은 최신 브라우저에서 H5를 통해 DASH 비디오를 재생하려면 tcplayer.vx.x.x.min.js를 가져오기 전에 dash.min.x.x.x.js를 가져와야 합니다.-->
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
  <!--플레이어 스크립트 파일-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/tcplayer.v4.5.2.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
 ```
-플레이어 SDK를 사용할 때 리소스를 직접 배포하는 것이 좋습니다. [플레이어 리소스를 다운로드하려면 클릭](https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/release.zip)하십시오.
+플레이어 SDK를 사용할 때 리소스를 직접 배포하는 것이 좋습니다. [플레이어 리소스를 다운로드하려면 클릭](https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/release.zip)하십시오.
 압축 해제 후 생성된 폴더를 배포합니다. 폴더의 디렉터리를 조정하지 마십시오. 그렇지 않으면 리소스 가져오기 예외가 발생할 수 있습니다.
 배포 주소가 `aaa.xxx.ccc`인 경우 플레이어 스타일 및 스크립트 파일을 올바른 위치로 가져옵니다.
 ```html
  <link href="aaa.xxx.ccc/tcplayer.min.css" rel="stylesheet"/>
  <!--Chrome 및 Firefox와 같은 최신 브라우저에서 H5를 통해 HLS 비디오를 재생하려면 tcplayer.vx.x.x.min.js를 가져오기 전에 hls.min.x.xx.m.js를 가져와야 합니다.-->
- <script src="aaa.xxx.ccc/libs/hls.min.0.13.2m.js"></script>
+ <script src="aaa.xxx.ccc/libs/hls.min.x.xx.m.js"></script>
  <!--플레이어 스크립트 파일-->
  <script src="aaa.xxx.ccc/tcplayer.vx.x.x.min.js"></script>
 ```

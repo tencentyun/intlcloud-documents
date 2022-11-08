@@ -18,17 +18,17 @@
 | API                                                          | 설명                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [config](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a3ad68ed80140f20cf3229bf344886a04) | VOD를 구성합니다. 구성에 대한 자세한 내용은 [TXVodPlayConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__ios.html)를 참고하십시오. |
-| [isAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | startPlay 호출 직후 재생 시작 여부를 설정합니다. 기본값: YES.                         |
+| [isAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | startVodPlay 호출 직후 재생 시작 여부를 설정합니다. 기본값: YES.                         |
 | [token](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a946828345d302a28708d78fa1a931763) | HLS 암호화를 위한 token을 설정합니다. 토큰이 설정되면 플레이어는 URL의 파일 이름 앞에 `voddrm.token.TOKEN TextureView`를 자동으로 추가합니다. |
 | [loop](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a1cdc15a39387295573f41caee9a05932) | SurfaceView 반복 여부를 설정합니다.                                   |
 | [enableHWAcceleration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#aa3ea979a6be5feba0da24f2b18555395) | 비디오 렌더링 콜백을 설정합니다.(하드웨어 인코딩에서만 지원)                                 |
-| setExtentOptionInfo                                          | 플레이어 비즈니스 매개변수를 <NSString *, id> 형식으로 설정               |
+| [setExtentOptionInfo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a842c8863f91f274031be0109a5cb28f5) | <NSString *, id> 형식으로 플레이어 비즈니스 매개변수를 설정합니다.             |
 
 ### 기본 재생 API  
 | API                                                          | 설명                       |
 | ------------------------------------------------------------ | --------------------------- |
-| [startPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#ac1af59fe9e4bc2b390661787097d2c8b) | 지정된 HTTP URL에서 비디오 재생을 시작합니다. |
-| [startPlayWithParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a0b4db90eafbc8c4d9be498e5ffefe961) | 지정된 fileId의 비디오 재생을 시작합니다. |
+| [startVodPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a89ac47a6b808c8ca424a65adb8870bc6) | HTTP URL에서 비디오를 재생합니다. v10.7부터는 `startPlay`가 `startVodPlay`로 대체되었으며, 재생 기능을 사용하기 위해서는 `V2TXLivePremier#setLicence` 또는 `TXLiveBase#setLicence`를 호출하여 License를 설정해야 합니다(License는 한 번만 설정하면 됩니다). 그렇지 않으면 재생이 실패합니다(검은 화면). 라이브 스트림 퍼블리싱 License, UGSV License 또는 비디오 재생 License를 사용하여 재생 기능을 활성화할 수 있습니다. |
+| [startVodPlayWithParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#acfae73abaadc60e2e1091ffae0c5c700) | VOD fileId로 비디오를 재생합니다. v10.7부터 `startPlayWithParams`가 `startVodPlayWithParams`로 대체되었으며, 재생 기능을 사용하기 위해서는 `V2TXLivePremier#setLicence` 또는 `TXLiveBase#setLicence`를 호출하여 License를 설정해야 합니다(License는 한 번만 설정하면 됩니다). 그렇지 않으면 재생이 실패합니다(검은 화면). 라이브 스트림 퍼블리싱 License, UGSV License 또는 비디오 재생 License를 사용하여 재생 기능을 활성화할 수 있습니다. |
 | [stopPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a7d59ca6180c4af0eb7bd63c08161f84d) | 재생을 중지합니다. |
 | [isPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a8438e3403946accc1986a05b89ee7b03) | 재생 진행 중 여부를 가져옵니다.      |
 | [pause](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html#a7167f5c196fc5e167bfabde1a730e81d) | 스트림 데이터 가져오기를 중지하고 마지막 프레임 이미지를 유지하여 재생을 일시 중지합니다. |
@@ -141,7 +141,7 @@ VOD 플레이어의 API 클래스 사전 다운로드
 
 ## TXVodDownloadManager
 
-VOD 플레이어의 동영상 다운로드 API 클래스
+VOD 플레이어의 비디오 다운로드 API 클래스
 
 | API                      | 설명                                                         |
 | ------------------------ | ------------------------------------------------------------ |
@@ -187,7 +187,7 @@ VOD 다운로드 공지입니다.
 | 2013 | PLAY_EVT_VOD_PLAY_PREPARED | 플레이어가 준비되었으며 재생을 시작할 수 있습니다.                                |
 | 2003 | PLAY_EVT_RCV_FIRST_I_FRAME | 네트워크는 첫 번째 렌더링 가능한 비디오 데이터 패킷(IDR)을 수신했습니다.                   |
 | 2009 | PLAY_EVT_CHANGE_RESOLUTION | 비디오 해상도가 변경되었습니다.                                            |
-| 2011 | PLAY_EVT_CHANGE_ROTATION   | MP4 동영상이 회전되었습니다.                                          |
+| 2011 | PLAY_EVT_CHANGE_ROTATION   | MP4 비디오가 회전되었습니다.                                          |
 
 
 

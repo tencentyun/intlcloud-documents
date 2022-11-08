@@ -26,8 +26,8 @@
 ### 기본 재생 API  
 | API                                                          | 설명                       |
 | ------------------------------------------------------------ | --------------------------- |
-| [startPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a32fe5a77dedc7fc903345f00e6c47c3a) | 지정된 HTTP URL에서 비디오 재생을 시작합니다. |
-| startPlay | TXPlayInfoParams 매개변수를 전달하여 지정된 fileId의 비디오 재생을 시작합니다. |
+| [startVodPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a32fe5a77dedc7fc903345f00e6c47c3a) | HTTP URL에서 비디오를 재생합니다. v10.7부터는 `startPlay`가 `startVodPlay`로 대체되었으며, 재생 기능을 사용하기 위해서는 `V2TXLivePremier#setLicence` 또는 `TXLiveBase#setLicence`를 호출하여 License를 설정해야 합니다(License는 한 번만 설정하면 됩니다). 그렇지 않으면 재생이 실패합니다(검은 화면). 라이브 스트림 퍼블리싱 License, UGSV License 또는 비디오 재생 License를 사용하여 재생 기능을 활성화할 수 있습니다. |
+| [startVodPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a32fe5a77dedc7fc903345f00e6c47c3a) | VOD fileId로 비디오를 재생합니다. v10.7부터 `startPlay`가 `startVodPlay`로 대체되었으며, 재생 기능을 사용하기 위해서는 `V2TXLivePremier#setLicence` 또는 `TXLiveBase#setLicence`를 호출하여 License를 설정해야 합니다(License는 한 번만 설정하면 됩니다). 그렇지 않으면 재생이 실패합니다(검은 화면). 라이브 스트림 퍼블리싱 License, UGSV License 또는 비디오 재생 License를 사용하여 재생 기능을 활성화할 수 있습니다. |
 | [ stopPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a6abf34bf566c275476b1706593cb0fe1) | 재생을 중지합니다. |
 | [isPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#ac651fc45a9f04e4db6f258f8cdd7bbcf) | 재생 진행 중 여부를 가져옵니다.      |
 | [pause](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a7167f5c196fc5e167bfabde1a730e81d) | 스트림 데이터 가져오기를 중지하고 마지막 프레임 이미지를 유지하여 재생을 일시 중지합니다. |
@@ -40,7 +40,7 @@
 | [getPlayableDuration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a37cb584556d48d043b93dfec33c40a97) | 재생 가능한 비디오 재생 시간(초)을 가져옵니다. |
 | [getWidth](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a67a0997183f24da19b776d96c1052998) | 비디오 너비를 가져옵니다. |
 | [getHeight](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a07efb2a4e9a982688c8bb3c3f21d1092) | 비디오 높이를 가져옵니다. |
-| [setAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a5e0e3d950eb3f525634adc7a9f60eab7) | startPlay 호출 후 VOD 자동 시작 여부를 설정합니다. VOD는 기본적으로 자동 시작됩니다. |
+| [setAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a5e0e3d950eb3f525634adc7a9f60eab7) | startVodPlay 호출 후 VOD 자동 시작 여부를 설정합니다. VOD는 기본적으로 자동 시작됩니다. |
 | [setStartTime](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a8f767f79fb69496cdbc532fced5dff33) | 재생 시작 시간을 설정합니다. |
 | [setToken](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a5f9eadc88ca97238f84226462f095536) | HLS 암호화를 위한 token을 설정합니다. |
 | [setLoop](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a3f5ae863c82509d1ed266503e8138781) | 비디오 반복 여부를 설정합니다. |
@@ -226,11 +226,11 @@ VOD 다운로드 공지입니다.
 
 | code   | 이벤트 정의                                  | 설명                                                    |
 | ------ | ------------------------------------- | ------------------------------------------------------- |
-| \-2301 | PLAY\_ERR\_NET\_DISCONNECT            | 네트워크 연결이 끊겼고 여러 번 재시도한 후에도 다시 연결할 수 없습니다. 플레이어를 다시 시작하여 더 많은 연결 재시도를 수행할 수 있습니다.                           |
-| \-2305 | PLAY\_ERR\_HLS\_KEY                   | HLS 암호 해독 key를 가져오는 데 실패했습니다.                                        |
-| 2101   | PLAY\_WARNING\_VIDEO\_DECODE\_FAIL    | 현재 비디오 프레임을 디코딩하는 데 실패했습니다.                                              |
-| 2102   | PLAY\_WARNING\_AUDIO\_DECODE\_FAIL    | 현재 오디오 프레임 디코딩 실패입니다.                                               |
-| 2103   | PLAY\_WARNING\_RECONNECT              | 네트워크 연결이 끊어지고 자동 재연결이 수행되었습니다(세 번 실패하면 PLAY_ERR_NET_DISCONNECT 이벤트가 발생합니다). |
-| 2106   | PLAY\_WARNING\_HW\_ACCELERATION\_FAIL | 하드웨어 디코더를 시작하는 데 실패했으며 소프트웨어 디코더가 대신 사용되었습니다.                                            |
-| \-2304 | PLAY\_ERR\_HEVC\_DECODE\_FAIL         | H265로 디코딩하는 데 실패했습니다.                                              |
-| \-2303 | PLAY\_ERR\_FILE\_NOT\_FOUND           | 재생할 파일이 존재하지 않습니다.                                               |
+| \-2301 | PLAY\_ERR\_NET\_DISCONNECT            | 네트워크 연결이 끊겼고 여러 번 재시도한 후에도 다시 연결할 수 없음. 플레이어를 다시 시작하여 연결 재시도 가능.                           |
+| \-2305 | PLAY\_ERR\_HLS\_KEY                   | HLS 암호 해독 key 가져오기 실패.                                        |
+| 2101   | PLAY\_WARNING\_VIDEO\_DECODE\_FAIL    | 현재 비디오 프레임을 디코딩 실패.                                              |
+| 2102   | PLAY\_WARNING\_AUDIO\_DECODE\_FAIL    | 현재 오디오 프레임 디코딩 실패.                                               |
+| 2103   | PLAY\_WARNING\_RECONNECT              | 네트워크 연결이 끊어지고 자동 재연결 수행됨(세 번 실패하면 PLAY_ERR_NET_DISCONNECT 이벤트가 발생합니다). |
+| 2106   | PLAY\_WARNING\_HW\_ACCELERATION\_FAIL | 하드웨어 디코더 시작 실패. 소프트웨어 디코더가 대신 사용됨.                                            |
+| \-2304 | PLAY\_ERR\_HEVC\_DECODE\_FAIL         | H265로 디코딩 실패.                                              |
+| \-2303 | PLAY\_ERR\_FILE\_NOT\_FOUND           | 재생할 파일이 존재하지 않음.                                               |

@@ -32,144 +32,29 @@ CSS 녹화 기능을 통해 라이브 방송 스트림의 비디오 콘텐츠를
 
 VOD는 전세계 여러 리전에 스토리지 노드가 있으며, 미디어 업로드 과정에서 그 중 한 리전을 선택해 저장합니다. VOD는 현재 다음의 스토리지 리전을 지원합니다.
 
-<table>
-    <tr>
-        <th>
-            스토리지 리전                
-        </th>
-        <th>
-            리전 영문 약칭                
-        </th>
-    </tr>
-    <tr>
-        <td>
-            베이징             
-        </td>
-        <td>
-			ap-beijing
-        </td>
-    </tr>
-    <tr>
-        <td>
-            상하이             
-        </td>
-        <td>
-			ap-shanghai
-        </td>
-    </tr>
-    <tr>
-        <td>
-            충칭             
-        </td>
-        <td>
-			ap-chongqing
-        </td>
-    </tr>
-    <tr>
-        <td>
-            톈진             
-        </td>
-        <td>
-			ap-beijing-1
-        </td>
-    </tr>
-    <tr>
-        <td>
-            중국홍콩             
-        </td>
-        <td>
-			ap-hongkong
-        </td>
-    </tr>
-    <tr>
-        <td>
-            싱가포르             
-        </td>
-        <td>
-			ap-singapore
-        </td>
-    </tr>
-    <tr>
-        <td>
-            인도 뭄바이             
-        </td>
-        <td>
-			ap-mumbai
-        </td>
-    </tr>
-   <tr>
-        <td>
-            인도네시아 자카르타           
-        </td>
-        <td>
-			ap-jakarta
-        </td>
-    </tr>	
-    <tr>
-        <td>
-            한국 서울             
-        </td>
-        <td>
-			ap-seoul
-        </td>
-    </tr>
-    <tr>
-        <td>
-            태국 방콕             
-        </td>
-        <td>
-			ap-bangkok
-        </td>
-    </tr>
-    <tr>
-        <td>
-            일본 도쿄             
-        </td>
-        <td>
-			ap-tokyo
-        </td>
-    </tr>
-    <tr>
-        <td>
-            미국 실리콘밸리(미국 서부)            
-        </td>
-        <td>
-			na-siliconvalley
-        </td>
-    </tr>
-    <tr>
-        <td>
-            미국 버지니아 (미국 동부)             
-        </td>
-        <td>
-			na-ashburn
-        </td>
-    </tr>
-    <tr>
-        <td>
-            캐나다 토론토             
-        </td>
-        <td>
-			na-toronto
-        </td>
-    </tr>
-    <tr>
-        <td>
-            독일 프랑크푸르트             
-        </td>
-        <td>
-			eu-frankfurt
-        </td>
-    </tr>
-    <tr>
-        <td>
-            러시아 모스크바             
-        </td>
-        <td>
-			eu-moscow
-        </td>
-    </tr>
-</table>
+| 스토리지 리전       | 리전 영어 약칭           |
+| ---------- | ---------------- |
+| 베이징         | ap-beijing       |
+| 상하이         | ap-shanghai      |
+| 광저우         | ap-guangzhou     |
+| 충칭         | ap-chongqing     |
+| 톈진         | ap-beijing-1     |
+| 난징         | ap-nanjing       |
+| 청두         | ap-chengdu       |
+| 중국홍콩       | ap-hongkong      |
+| 타이베이       | ap-taipei        |
+| 싱가포르        | ap-singapore     |
+| 인도 뭄바이       | ap-mumbai        |
+| 인도네시아 자카르타   | ap-jakarta       |
+| 한국 서울       | ap-seoul         |
+| 태국 방콕       | ap-bangkok       |
+| 일본 도쿄       | ap-tokyo         |
+| 미국 실리콘밸리(미국 서부)   | na-siliconvalley |
+| 미국 버지니아(미국 동부) | na-ashburn       |
+| 브라질 상파울루      | sa-saopaulo      |
+| 캐나다 토론토     | na-toronto       |
+| 독일 프랑크푸르트     | eu-frankfurt     |
+| 러시아 모스크바     | eu-moscow        |
 
 ### 스토리지 리전 활성화
 
@@ -190,7 +75,7 @@ VOD는 전세계 여러 리전에 스토리지 노드가 있으며, 미디어 �
 - VOD 백그라운드에서 자동으로 스토리지 리전을 선택하는 경우.
   - 개발자가 1개의 스토리지 리전(싱가포르)만 보유한 경우, 모든 업로드 미디어가 해당 리전에 저장됩니다.
   - 개발자가 여러 스토리지 리전을 활성화한 경우, 각 업로드 방식에 대한 선택 정책은 다음과 같습니다.
- <table border=0 cellpadding="0" cellspacing="0">
+<table border=0 cellpadding="0" cellspacing="0">
 <thead>
 <tr>
 <th> 업로드 방식</th>
@@ -268,7 +153,7 @@ VOD는 다음 유형의 미디어 파일 업로드를 지원합니다.
 - 오디오: MP3, M4A, FLAC, OGG, WAV, RA, AAC, AMR.
 - 커버 이미지: JPG, JPEG, PNG, GIF, BMP, TIFF, AI, CDR, EPS, TIF.
 
-### 이벤트 공지
+### 이벤트 알림
 
 미디어 업로드가 완료되면 VOD 백그라운드가 해당 이벤트를 개발자에게 공지합니다. 이벤트 알림 원리는 [이벤트 알림](https://intl.cloud.tencent.com/document/product/266/33948)를, 설정 방법은 [이벤트 알림 설정](https://intl.cloud.tencent.com/document/product/266/14055)을 참고하십시오.
 각 업로드 방식별 이벤트 공지 유형은 다음과 같습니다.
@@ -290,15 +175,15 @@ VOD 미디어 업로드는 미디어 자원 관리, 비디오 처리 및 이벤�
 
 각 업로드 방식의 지원 상황 및 사용 방법은 다음 표와 같습니다.
 
-| 기능         | 콘솔 로컬 업로드                                               | 콘솔 풀링 업로드 | 서버로 업로드                                                   | 클라이언트 업로드                                                   | API 풀링 업로드                                                 | 라이브 방송 녹화                                                     |
-| ------------ | ------------------------------------------------------------ | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 커버 첨부     | 미지원                                                                                        | 미지원         | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2) | <ul style="margin:0;"><li> [Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | [업로드 인터페이스 CoverUrl 매개변수 풀링](https://intl.cloud.tencent.com/document/product/266/34118) | 미지원                                                       |
-| 만료 시간 지정 | 미지원                                                    | 미지원         | <ul style="margin:0;"><li>[Java SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | 미지원 | [업로드 인터페이스 ExpireTime 매개변수 풀링](https://intl.cloud.tencent.com/document/product/266/34118) | [녹화 설정](https://intl.cloud.tencent.com/document/product/267/34223) |
-| 카테고리 지정     | [카테고리 지정](https://intl.cloud.tencent.com/document/product/266/33890) | 미지원         | <ul style="margin:0;"><li> [Java SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [클라이언트 업로드 서명 classId 매개변수](https://intl.cloud.tencent.com/document/product/266/33922) | [업로드 인터페이스 ClassId 매개변수 풀링](https://intl.cloud.tencent.com/document/product/266/34118) | 미지원                                  |
+| 기능         | 콘솔 로컬 업로드                                                                                | 콘솔 풀링 업로드 | 서버 업로드                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | 클라이언트 업로드                                                                                                                                                                                                                                                                                                                                                                                | API 풀링 업로드                                                                      | 라이브 방송 녹화                                |
+| ------------ | --------------------------------------------------------------------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------- |
+| 커버 첨부     | 미지원                                                                                        | 미지원         | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.90.BA.E5.B8.A6.E5.B0.81.E9.9D.A2) | <ul style="margin:0;"><li> [Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | [PullUpload CoverUrl Parameters](https://intl.cloud.tencent.com/document/product/266/34118)                         | 미지원                                  |
+| 만료 시간 지정 | 미지원                                                                                        | 미지원         | <ul style="margin:0;"><li>[Java SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 인터페이스 ExpireTime 매개변수](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)         | 미지원                                                                                                                                                                                                                                                                                                                                                                                    | [인터페이스 ExpireTime 매개변수 풀링 업로드](https://intl.cloud.tencent.com/document/product/266/34118)                       | [녹화 설정](https://intl.cloud.tencent.com/document/product/267/34223) |
+| 카테고리 지정     | [카테고리 지정](https://intl.cloud.tencent.com/document/product/266/33890) | 미지원         | <ul style="margin:0;"><li> [Java SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 인터페이스 ClassId 매개변수](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [클라이언트 업로드 서명 classId 매개변수](https://intl.cloud.tencent.com/document/product/266/33922)                                                                                                                                                                                                                  | [인터페이스 ClassId 매개변수 풀링 업로드](https://intl.cloud.tencent.com/document/product/266/34118) | 미지원                                  |
 
 #### 비디오 처리 및 이벤트 공지 관련
 
-- 자동 비디오 처리: 미디어를 업로드하는 동시에 [태스크 플로우](https://intl.cloud.tencent.com/document/product/266/33931)를 지정하면 업로드가 완료된 후 VOD가 자동으로 해당 태스크 플로우를 실행합니다. 일반적인 시나리오에서는 비디오 첫 프레임 이미지를 절취하여 커버, 트랜스 코딩 및 콘텐츠 스마트 인식 등에 사용합니다.
+- 자동 비디오 처리: 미디어를 업로드하는 동시에 [태스크 플로우](https://intl.cloud.tencent.com/document/product/266/33931)를 지정하면 업로드가 완료된 후 VOD가 자동으로 해당 태스크 플로우를 실행합니다. 일반적인 시나리오에서는 비디오 첫 프레임 이미지를 절취하여 커버, 트랜스 코딩 및 콘텐츠 조정 등에 사용합니다.
 - 비디오 처리 이벤트 공지 통과 필드: 자동 비디오 처리를 활성화하면 처리 완료 후 VOD 백그라운드에서 이벤트 공지 전송 시 해당 필드를 개발자에게 전송합니다.
 - 업로드 이벤트 공지 통과 필드: 업로드가 완료되면 VOD 백그라운드가 이벤트 공지 전송 시 해당 필드를 개발자에게 전송합니다.
 
@@ -308,7 +193,7 @@ VOD 미디어 업로드는 미디어 자원 관리, 비디오 처리 및 이벤�
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- | -------- |
 | 자동 비디오 처리             | [업로드 후 자동 비디오 처리](https://intl.cloud.tencent.com/document/product/266/33890) | 미지원         | <ul style="margin:0;"><li>[Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)                                                                                                                                             | [클라이언트 업로드 서명 procedure 매개변수](https://intl.cloud.tencent.com/document/product/266/33922)     | [인터페이스 Procedure 매개변수 풀링 업로드](https://intl.cloud.tencent.com/document/product/266/34118)      | 미지원   |
 | 비디오 처리 이벤트 알림 통과 필드 | 미지원                                                                                                      | 미지원         | 미지원                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | 클라이언트 업로드 서명 sessionContext 매개변수                                                                                                                           | [인터페이스 SessionContext 매개변수 풀링 업로드](https://intl.cloud.tencent.com/document/product/266/34118) | 미지원   |
-| 업로드 이벤트 알림 통과 필드     | 미지원                                                                                                      | 미지원         | <ul style="margin:0;"><li>[Java SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 인터페이스 SourceContext 매개변수](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [클라이언트 업로드 서명 sourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33922) | 미지원                                                          | 미지원   |
+| 업로드 이벤트 알림 통과 필드     | 미지원                                                                                                      | 미지원         | <ul style="margin:0;"><li>[Java SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[PHP SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Python SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Node.js SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)</li><li>[Go SDK 인터페이스 SourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) | [클라이언트 업로드 서명 sourceContext 매개변수](https://intl.cloud.tencent.com/document/product/266/33922) | 미지원                                                          | 미지원   |
 
 #### 업로드 제어 관련
 
@@ -326,7 +211,7 @@ VOD 미디어 업로드는 미디어 자원 관리, 비디오 처리 및 이벤�
 | 업로드 일시 정지 및 재개 | 미지원               | N/A         | 미지원                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | N/A       | N/A                                                       |
 | 업로드 취소       | 브라우저 페이지 새로고침 또는 종료 | N/A         | 미지원                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926#.E9.AB.98.E7.BA.A7.E5.8A.9F.E8.83.BD)</li> | N/A       | [녹화 작업 중단](https://intl.cloud.tencent.com/document/product/267/30837) |
 | 업로드 진행률 가져오기   | 페이지 기본 진행률 표시     | 미지원         | 미지원                                                       | <ul style="margin:0;"><li>[Web SDK](https://intl.cloud.tencent.com/document/product/266/33924)</li><li>[Android SDK](https://intl.cloud.tencent.com/document/product/266/33925)</li><li>[iOS SDK](https://intl.cloud.tencent.com/document/product/266/33926)</li> | 미지원       | N/A                                                        |
-| 멀티파트 업로드       | 활성화               | N/A          | <ul style="margin:0;"><li> [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0) | <ul style="margin:0;"><li> Web SDK 기본 활성화</li><li>Android SDK 기본 활성화</li><li>iOS SDK 기본 활성화</li> | N/A       | N/A                                                       |
+| 멀티파트 업로드       | 활성화               | N/A          | <ul style="margin:0;"><li> [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)</li><li>[C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)</li><li>[Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E8.B0.83.E7.94.A8.E4.B8.8A.E4.BC.A0)</li><li>[Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0) | <ul style="margin:0;"><li> Web SDK 기본 활성화</li><li>Android SDK 기본 활성화</li><li>iOS SDK 기본 활성화</li> | N/A       | N/A                                                       |
 
 ### 제한
 
@@ -356,5 +241,6 @@ VOD 미디어 업로드는 미디어 자원 관리, 비디오 처리 및 이벤�
 <td><ul style="margin:0;"><li>MP4/FLV 포맷은 48.82TB(50,000GB)</li><li>HLS 포맷 전체 크기 제한 없음</li><li> 기타 제한 사항은<a href="https://intl.cloud.tencent.com/document/product/267/31563">라이브 방송 녹화</a>를 따름</td>
 </tr>
 </tbody></table>
+
 - 파일 수량: 제한 없음.
 

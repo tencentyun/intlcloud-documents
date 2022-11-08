@@ -2,10 +2,10 @@
 
 iOS용 Tencent Cloud RT-Cube Player 컴포넌트는 오픈 소스 Tencent Cloud 플레이어 컴포넌트입니다. 몇 줄의 코드로 Tencent Video와 유사한 강력한 재생 기능을 제공할 수 있습니다. 가로/세로 모드 전환, 해상도 선택, 제스처 및 작은 창 재생과 같은 기본 기능과 비디오 버퍼링, 소프트웨어/하드웨어 디코딩 전환 및 조정 가능한 속도 재생과 같은 특수 기능이 있습니다. 시스템 기본 플레이어보다 더 많은 형식을 지원하고 더 나은 호환성과 기능을 제공합니다. 또한 첫 번째 프레임 바로 재생과 저지연성의 장점을 보유하고 있으며 비디오 썸네일과 같은 고급 기능을 제공합니다.
 
-플레이어 컴포넌트가 비즈니스의 개별 요구를 충족할 수 없고 특정 개발 경험이 있는 경우  Player SDK 를 통합하여 플레이어 인터페이스 및 재생 기능의 개발을 사용자 지정할 수 있습니다.
+Player 컴포넌트가 커스텀 니즈를 충족할 수 없고 개발 경험이 있는 경우 Player SDK를 통합하여 Player UI 및 재생 기능을 사용자 정의할 수 있습니다.
 
 ## 준비 작업
-1. [VOD](https://intl.cloud.tencent.com/product/vod)를 활성화합니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login) 하십시오.
+1. [VOD](https://intl.cloud.tencent.com/)를 활성화합니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login)을 하십시오.
 2. App Store에서 Xcode를 다운로드합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 3. [Cocoapods 웹 사이트](https://cocoapods.org/)의 가이드에 따라 Cocoapods를 다운로드하여 설치합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 
@@ -20,7 +20,7 @@ iOS용 Tencent Cloud RT-Cube Player는 [LiteAVSDK/Player_iOS](https://github.com
 
 iOS용 Tencent Cloud RT-Cube Player 컴포넌트는 **[플레이어 컴포넌트 ZIP 패키지 다운로드](#zip)** 또는 **[Git 명령 실행](#git)**을 통해 다운로드할 수 있습니다.
 <dx-tabs>
-::: 플레이어 구성 요소 ZIP 패키지 다운로드[](id:zip)
+::: Player 컴포넌트 ZIP 패키지 다운로드[](id:zip)
 **Code** > **Download ZIP**을 클릭하여 플레이어 컴포넌트 ZIP 패키지를 직접 다운로드할 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a38a9995bfe13d645bcd1d2e5242a297.png)
 :::
@@ -87,7 +87,7 @@ pod 'SuperPlayer/Professional'
  1. TXLiteAVSDK_Player를 수동으로 통합하는 경우 필요한 시스템 라이브러리 및 library를 추가해야 합니다.
 <b>시스템 Framework 라이브러리</b>: MetalKit, ReplayKit, SystemConfiguration, CoreTelephony, VideoToolbox, CoreGraphics, AVFoundation, Accelerate, MobileCoreServices, VideoToolbox
 <b>시스템 Library:</b> libz, libresolv,  libiconv, libc++, libsqlite3
-구체적인 작업 단계 참고: 사용자 정의 개발 - VOD 시나리오 - 문서 액세스 - SDK 통합 1단계 - 수동 SDK 통합
+구체적인 작업 단계 [참고](https://www.tencentcloud.com/document/product/266/49669): 사용자 정의 개발 - VOD 시나리오 - 문서 액세스 - SDK 통합 1단계 - 수동 SDK 통합
 또한 다음 이미지와 같이 TXLiteAVSDK_Player 파일 아래에 TXFFmpeg.xcframework 및 TXSoundTouch.scframework를 동적 라이브러리로 추가해야 합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5834caae21d3413522c7d51d4b3b57b0.png)
  2. TXLiteAVSDK_Player를 Pod로 통합하면 라이브러리를 추가할 필요가 없습니다.
@@ -98,7 +98,7 @@ pod 'SuperPlayer/Professional'
 
 [](id:step3)
 ### 3단계: 플레이어 기능 사용
-이 단계에서는 플레이어를 만들고 비디오 재생에 사용하는 방법을 설명합니다.
+이 단계에서는 Player를 만들고 비디오 재생에 사용하는 방법을 설명합니다.
 
 1. **플레이어 생성:**[](id:usePlayer)
 플레이어의 메인 클래스는 `SuperPlayerView`이며, 비디오를 생성한 후 재생할 수 있습니다.
@@ -114,21 +114,20 @@ _playerView.delegate = self;
 _playerView.fatherView = self.holderView;
 ```
 
-
 2.  **비디오 재생:**
 이 단계에서는 비디오를 재생하는 방법을 설명합니다. iOS용 Tencent Cloud RT-Cube Player 컴포넌트는 [VOD FileId](#fileid) 또는 [URL](#url)의 FileId를 통한 재생을 지원합니다. 완전한 기능을 사용하려면 **FileId를 통합**하는 것이 좋습니다.
 <dx-tabs>
 ::: VOD에서 FileId를 통한 재생[](id:fileid)
 비디오 FileId는 일반적으로 비디오 업로딩 후 서버에서 반환됩니다.
 
-1. 클라이언트에서 비디오 배포 후 서버가 FileId를 클라이언트로 반환합니다.
-2. 서버에서 비디오 업로드 시, 해당 FileId가 업로드 확인 공지에 포함됩니다.
+   1. 클라이언트에서 비디오 배포 후 서버가 FileId를 클라이언트로 반환합니다.
+   2. 서버에서 비디오 업로드 시, 해당 FileId가 [업로드 확인](https://cloud.tencent.com/document/product/266/9757) 공지에 포함됩니다.
 Tencent Cloud에 이미 파일이 존재하는 경우에는 [미디어 자산 관리](https://console.cloud.tencent.com/vod/media)에서 해당 파일을 찾아 FileId를 조회할 수 있습니다. 아래 이미지와 같이 ID는 FileId를 나타냅니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
-<dx-alert infotype="notice">
-<li>FileId를 통해 재생하려면 먼저 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 Player 컴포넌트 서명 psign을 사용하여 재생할 비디오를 지정해야 합니다. 그렇지 않으면 비디오가 재생되지 않을 수 있습니다. 비디오를 트랜스 코딩하는 방법에 대한 자세한 내용은 [Player로 비디오 재생](https://intl.cloud.tencent.com/document/product/266/38098)을 참고하십시오. psign을 생성하는 방법에 대한 자세한 내용은 [Player 서명](https://intl.cloud.tencent.com/document/product/266/38099)을 참고하십시오.</li>
-<li>FileId를 통한 재생 중 ‘no v4 play info’ 예외가 발생하면 위와 같은 문제가 있을 수 있습니다. 이 경우 상기 지침에 따라 조정하는 것이 좋습니다. [URL](#url)을 통해 재생할 원본 비디오의 재생 링크를 직접 얻을 수도 있습니다.</li>
-<li>**트랜스 코딩되지 않은 원본 비디오는 재생 중에 호환성 문제가 발생할 수 있으므로 재생을 위해 비디오를 트랜스 코딩하는 것이 좋습니다.**</li></dx-alert>
+>!
+>- FileId를 통해 재생하려면 먼저 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 Player 컴포넌트 서명 psign을 사용하여 재생할 비디오를 지정해야 합니다. 그렇지 않으면 비디오가 재생되지 않을 수 있습니다. 비디오를 트랜스 코딩하는 방법에 대한 자세한 내용은 [Player로 비디오 재생](https://intl.cloud.tencent.com/document/product/266/38098)을 참고하십시오. psign을 생성하는 방법에 대한 자세한 내용은 [Player 서명](https://intl.cloud.tencent.com/document/product/266/38099)을 참고하십시오.
+>- FileId를 통한 재생 중 ‘no v4 play info’ 예외가 발생하면 위와 같은 문제가 있을 수 있습니다. 이 경우 상기 지침에 따라 조정하는 것이 좋습니다. [URL](#url)을 통해 재생할 원본 비디오의 재생 링크를 직접 얻을 수도 있습니다.
+>- **트랜스 코딩되지 않은 원본 비디오는 재생 중에 호환성 문제가 발생할 수 있으므로 재생을 위해 비디오를 트랜스 코딩하는 것이 좋습니다.**
 
 <dx-codeblock>
 :::  java
@@ -140,7 +139,7 @@ model.videoId = [[SuperPlayerVideoId alloc] init];
 model.videoId.fileId = @"5285890799710173650"; // FileId 설정
 //비공개 암호화 재생을 위해서는 Player 컴포넌트의 서명인 psign을 입력해야 합니다. 서명 및 생성 방법에 관한 내용은 다음 링크를 참고하십시오. https://intl.cloud.tencent.com/document/product/266/38099
 //model.videoId.pSign = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU"; 
-[_playerView playWithModel:model];
+[_playerView playWithModelNeedLicence:model];
 :::
 </dx-codeblock>
 :::
@@ -148,12 +147,13 @@ model.videoId.fileId = @"5285890799710173650"; // FileId 설정
 ```java
 SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
 model.videoURL = @"http://your_video_url.mp4";   // 재생할 동영상의 url 구성
-[_playerView playWithModel:model];
+[_playerView playWithModelNeedLicence:model];
 ```
 :::
 </dx-tabs>
-- **재생 종료:**[](id:exitPlayer)
-플레이어가 더 이상 필요하지 않으면 `resetPlayer`를 호출하여 플레이어의 내부 상태를 지우고 메모리를 확보하십시오.
+3. **재생 종료:**[](id:exitPlayer)
+   플레이어가 더 이상 필요하지 않으면 `resetPlayer`를 호출하여 플레이어의 내부 상태를 지우고 메모리를 확보하십시오.
+
 ```java
 [_playerView resetPlayer];
 ```
@@ -167,8 +167,6 @@ model.videoURL = @"http://your_video_url.mp4";   // 재생할 동영상의 url �
 
 Player 컴포넌트는 제스처, 화면 댓글, 화면 캡처 및 해상도 전환을 통해 화면 잠금, 볼륨 및 밝기 제어를 설정할 수 있는 전체 화면 재생을 지원합니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Player 컴포넌트**에서 체험해볼 수 있으며, 전체 화면 아이콘을 탭하면 **전체 화면** 재생 모드로 이동할 수 있습니다.
 
-
-
 창 재생 모드에서 다음 API를 호출하여 전체 화면 재생 모드로 들어갈 수 있습니다.
 
 ```objective-c
@@ -177,7 +175,7 @@ Player 컴포넌트는 제스처, 화면 댓글, 화면 캡처 및 해상도 전
 }
 ```
 
-#### 
+#### 전체 화면 재생 인터페이스 기능 소개
 
 
 <dx-tabs>
@@ -243,6 +241,8 @@ HD, SD 및 FHD와 같은 다양한 비디오 재생 해상도를 필요에 따�
 
 Player 컴포넌트는 작은 플로팅 창 재생을 지원하므로 사용자가 비디오 재생을 중단하지 않고 다른 앱으로 전환할 수 있습니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Player 컴포넌트**에서 왼쪽 상단의 **Back**을 눌러 사용해 볼 수 있습니다.
 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
+
 
 
 ```objective-c
@@ -272,7 +272,7 @@ model.videoId = videoId;
 model.action  = PLAY_ACTION_MANUAL_PLAY; 
 //썸네일 url을 설정합니다. coverPictureUrl이 설정되지 않은 경우 VOD 콘솔에서 구성한 썸네일이 자동으로 사용됩니다.
 model.customCoverImageUrl = @"http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/cc1e28208602268011087336518/MXUW1a5I9TsA.png"; 
-[self.playerView playWithModel:model] 
+[self.playerView playWithModelNeedLicence:model];
 ```
 
 ### 4. 비디오 목록 루프
@@ -304,11 +304,11 @@ model.videoId = videoId;
 [modelArray addObject:model];
 
 //2단계: SuperPlayerView의 루프 API 호출
-[self.playerView playWithModelList:modelArray isLoopPlayList:YES startIndex:0];
+[self.playerView playWithModelListNeedLicence:modelArray isLoopPlayList:YES startIndex:0];
 ```
 
 ```objective-c
-(void)playWithModelList:(NSArray *)playModelList isLoopPlayList:(BOOL)isLoop startIndex:(NSInteger)index;
+(void)playWithModelListNeedLicence:(NSArray *)playModelList isLoopPlayList:(BOOL)isLoop startIndex:(NSInteger)index;
 ```
 
 API 매개변수 설명
@@ -383,7 +383,7 @@ model.textFont = 30;
 model.textColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.8];
 playermodel.dynamicWaterModel = model;
 //4단계: 동적 워터마크를 표시하는 메소드 호출
-[self.playerView playWithModel:playermodel];
+[self.playerView playWithModelNeedLicence:playermodel];
 ```
 
 DynamicWaterModel 클래스 매개변수 설명:
