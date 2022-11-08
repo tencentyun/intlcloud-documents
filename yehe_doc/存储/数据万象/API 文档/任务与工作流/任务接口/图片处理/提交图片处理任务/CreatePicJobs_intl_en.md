@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`CreatePicJobs`) is used to submit an image processing job.
+This API is used to submit an image processing job.
 
 ## Request
 
@@ -19,12 +19,12 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -42,6 +42,7 @@ This request requires the following request body:
             <Object>output/out.jpg</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2911917386e148639319e13c285cc774</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -60,12 +61,14 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | Job type: PicProcess                                   | String    | Yes   |
+| Tag                | Request | Job tag: PicProcess                                   | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
 | CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -80,6 +83,8 @@ The nodes are described as follows:
 | PicProcess         | Request.Operation | Job type parameter. Same as `Request.PicProcess` in the image processing template creation API `CreateMediaTemplate`.    | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
 >!`TemplateId` is used first. If `TemplateId` is unavailable, the corresponding job type parameter is used.
 
@@ -96,7 +101,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -127,6 +132,7 @@ The response body returns **application/xml** data. The following contains all t
             <TemplateId>t10461fe2bd5a649db9022452ec71e0381</TemplateId>
             <TemplateName>test</TemplateName>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -136,7 +142,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
@@ -152,7 +158,7 @@ The nodes are as described below:
 | Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag | Response.JobsDetail | Job type: PicProcess | String |
+| Tag | Response.JobsDetail | Job tag: PicProcess | String |
 | State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
 | StartTime | Response.JobsDetail | Job start time |  String |
@@ -185,7 +191,7 @@ Same as the `UploadResult` node in the [persistent image processing](https://int
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
 ## Samples
 
@@ -210,6 +216,7 @@ Content-Type: application/xml
             <Object>output/out.jpg</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2911917386e148639319e13c285cc774</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -226,7 +233,7 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 18 Jul 2022 19:37:29 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+x-ci-request-id: NjMxMDJhYTNfMThhYTk0MGFfYmU1OV8zZjc=
 
 <Response>
     <JobsDetail>
@@ -253,6 +260,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
             <TemplateId>t10461fe2bd5a649db9022452ec71e0381</TemplateId>
             <TemplateName>test</TemplateName>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>
@@ -282,6 +290,7 @@ Content-Type: application/xml
             <Object>output/out.jpg</Object>
         </Output>
         <UserData>This is my data.</UserData>
+        <JobLevel>0</JobLevel>
     </Operation>
     <QueueId>p2911917386e148639319e13c285cc774</QueueId>
     <CallBack>http://callback.demo.com</CallBack>
@@ -298,7 +307,7 @@ Content-Length: 230
 Connection: keep-alive
 Date: Mon, 18 Jul 2022 19:37:29 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+x-ci-request-id: NjMxMDJhYTNfMThhYTk0MGFfYmU1OV8zZjc=
 
 <Response>
     <JobsDetail>
@@ -327,6 +336,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
                 <ProcessRule>imageMogr2/rotate/90</ProcessRule>
             </PicProcess>
             <UserData>This is my data.</UserData>
+            <JobLevel>0</JobLevel>
         </Operation>
     </JobsDetail>
 </Response>

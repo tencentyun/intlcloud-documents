@@ -37,12 +37,12 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -112,7 +112,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -150,7 +150,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
@@ -203,18 +203,18 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------------------------------------------------------ | :------------------------------------------- | :-------- |
 | Data | Response.JobsDetail.Operation.VideoTagResult.StreamData | Result list of the video tagging job in the `Stream` scenario | Container |
-| SubErrCode | Response.JobsDetail.Operation.VideoTagResult.StreamData | Algorithm status code. `0`: Success. Other values: Exception. | Container |
-| SubErrMsg | Response.JobsDetail.Operation.VideoTagResult.StreamData | Algorithm error message. `ok` indicates a success. If the request fails, the corresponding error is returned. | Container |
+| SubErrCode | Response.JobsDetail.Operation.VideoTagResult.StreamData | Algorithm status code. `0`: Success. Other values: Exception. | String |
+| SubErrMsg | Response.JobsDetail.Operation.VideoTagResult.StreamData | Algorithm error message. `ok` indicates a success. If the request fails, the corresponding error is returned. | String |
 
 `Data` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :--------------------- | :-------- |
 | Tags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Video tag and video category information |  Container |
-| PersonTags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Person tag information |  Container |
-| PlaceTags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Scene tag information |  Container |
-| ActionTags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Action tag information |  Container |
-| ObjectTags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Object tag information |  Container |
+| PersonTags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Person tag information |  Container array |
+| PlaceTags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Scene tag information |  Container array |
+| ActionTags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Action tag information |  Container array |
+| ObjectTags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data | Object tag information |  Container array |
 
 `Tags` (video tag) has the following sub-nodes:
 
@@ -238,7 +238,7 @@ The nodes are as described below:
 | Name | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags | Person name |  String |
 | Confidence | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags | Tag model prediction score |  Float |
 | Count | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags | Number of person appearances | String |
-| DetailPerSecond | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags | Location and time of person appearance | Container |
+| DetailPerSecond | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags | Location and time of person appearance | Container array |
 
 `DetailPerSecond` has the following sub-nodes:
 
@@ -246,7 +246,7 @@ The nodes are as described below:
 | :----------------- | :----------------------------------------------------------- | :--------------------------- | :-------- |
 | TimeStamp | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags.DetailPerSecond | Appearance time in seconds |  String |
 | Confidence | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags.DetailPerSecond | Tag model prediction score |  Float |
-| BBox | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags.DetailPerSecond | Relative coordinates of the object with top-left corner as the origin | Container |
+| BBox | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags.DetailPerSecond | Relative coordinates of the object with top-left corner as the origin | Container array |
 
 `BBox` has the following sub-nodes:
 
@@ -261,7 +261,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :-------- |
-| Tags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PlaceTags | Video scene tag information, which may not be returned and is the same as `Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.Tags`. |  Container |
+| Tags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PlaceTags | Video scene tag information, which may not be returned and is the same as `Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.Tags`. |  Container array |
 | StartTime | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PlaceTags | Segment start time in seconds |  String |
 | EndTime | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PlaceTags | Segment end time in seconds |  String |
 | StartIndex | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PlaceTags | Segment start frame number |  String |
@@ -272,7 +272,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :-------- |
-| Tags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ActionTags | Video action tag information, which may not be returned and is the same as `Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.Tags`. |  Container |
+| Tags | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ActionTags | Video action tag information, which may not be returned and is the same as `Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.Tags`. |  Container array |
 | StartTime | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ActionTags | Segment start time in seconds |  String |
 | EndTime | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ActionTags | Segment end time in seconds |  String |
 
@@ -280,7 +280,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :-------- |
-| Objects | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ObjectTags | Video object tag information, which may not be returned and is the same as `Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.Tags`. |  Container |
+| Objects | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ObjectTags | Video object tag information, which may not be returned and is the same as `Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.Tags`. |  Container array |
 | TimeStamp | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ObjectTags | Timestamp of the identified object in seconds |  String |
 
 
@@ -288,13 +288,13 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :-------- |
-| Name | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ObjectTags.Objects | Object name |  Container |
+| Name | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ObjectTags.Objects | Object name |  string |
 | Confidence | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ObjectTags.Objects | Tag model prediction score. Value range: [0, 1]. |  Float |
-| BBox | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ObjectTags.Objects | Relative coordinates of the object with top-left corner as the origin, which is the same as `Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags.DetailPerSecond.BBox`. |  Container |
+| BBox | Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.ObjectTags.Objects | Relative coordinates of the object with top-left corner as the origin, which is the same as `Response.JobsDetail.Operation.VideoTagResult.StreamData.Data.PersonTags.DetailPerSecond.BBox`. |  Container array |
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
 ## Samples
 

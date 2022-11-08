@@ -1,6 +1,6 @@
 ## Feature Description
 
-The API (`DescribeMediaJobs`) is used to pull jobs that meet specified conditions.
+The API is used to pull jobs that meet specified conditions.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -34,12 +34,12 @@ Authorization: <Auth String>
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request parameters
 
-The parameters are as described below:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :----------------------------------------------------------- | :------ | :------- |
@@ -81,7 +81,7 @@ Supported `tag` types are as follows:
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -92,7 +92,7 @@ This request does not have a request body.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -111,7 +111,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
@@ -122,6 +122,7 @@ The nodes are as described below:
 
 The content of `JobsDetail` varies by job type. For more information, see the following documents:
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48941" target="_blank">Submitting Video Transcoding Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49782" target="_blank">Submitting Top Speed Codec Transcoding Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49569" target="_blank">Submitting Video-to-Animated Image Conversion Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48938" target="_blank">Submitting Video Frame Capturing Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48937" target="_blank">Submitting Intelligent Thumbnail Job</a>
@@ -141,11 +142,9 @@ The content of `JobsDetail` varies by job type. For more information, see the fo
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48942" target="_blank">Submitting Text-to-Speech Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">Submitting Audio Noise Cancellation Job</a>
 
-
-
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
 
 ## Samples
@@ -155,7 +154,7 @@ There are no special error messages for this request. For common error messages,
 ```shell
 GET /jobs?queueId=p2242ab62c7c94486915508540933a2c6&tag=Transcode HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+Host: test-1234567890.ci.ap-chongqing.myqcloud.com
 
 ```
 
@@ -168,7 +167,7 @@ Content-Length: 666
 Connection: keep-alive
 Date: Mon, 28 Jun 2022 15:23:12 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+x-ci-request-id: NjMxMDJhYTNfMThhYTk0MGFfYmU1OV8zZjc=
 
 <Response>
     <JobsDetail>
