@@ -1,6 +1,6 @@
 ## Background
 
-If you use a third-party cloud storage service, COS can help you quickly migrate the data stored on the third-party cloud platform to COS.
+If you use a third-party cloud storage platform, COS can help you quickly migrate your data from that platform to COS.
 
 
 | Migration Method | Interactivity | Threshold for Large/Small Files | Concurrence | HTTPS Secure Transfer |

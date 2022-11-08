@@ -50,11 +50,11 @@ b. For a self-built Hadoop environment, you can find the components connected to
 <dx-codeblock>
 ::: plaintext
 ## Create the service. The Ranger admin account and password as well as the Ranger service address should be specified.
-## For an EMR cluster, the admin user is `root`, and the password is the root password set when the EMR cluster is created. Replace the IP of the Ranger service with the master node IP of EMR.
+## For an EMR cluster, the admin user is `root`, and the password is the root password set when the EMR cluster is created. Replace the IP of the Ranger service with the primary node IP of EMR.
 adminUser=root
 ## The password set during EMR cluster creation, which is also the login password of the Ranger web service.
 adminPasswd=xxxxxx
-## If the Ranger service has multiple master nodes, select any of them.
+## If the Ranger service has multiple primary nodes, select any of them.
 rangerServerAddr=10.0.0.1:6080
 ## Specify the .json file in step 2 as `-d` in the command.
 curl -v -u${adminUser}:${adminPasswd} -X POST -H "Accept:application/json" -H "Content-Type:application/json" -d @./cos-ranger.json http://${rangerServerAddr}/service/plugins/definitions
@@ -88,7 +88,7 @@ Add a policy.
 ::: Deploying COS Ranger Service
 COS Ranger Service is the core of the entire permission system. It is responsible for integrating the Ranger client and receiving its authentication requests, token generation and renewal requests, and temporary key generation requests. It is also where sensitive information (Tencent Cloud key information) resides. Generally, it is deployed on a bastion host, and only the cluster admin is allowed to manipulate it and view its configuration.
 
-COS Ranger Service supports the one-master-multiple-slave HA deployment. `DelegationToken` can be persisted to HDFS, and the master and slave nodes can be determined by ZooKeeper lock obtaining. Then, the master node (leader) will write the address to ZooKeeper so that COS Ranger Client can perform address routing.
+COS Ranger Service supports the one-primary-multiple-secondary HA deployment. `DelegationToken` can be persisted to HDFS, and the primary and secondary nodes can be determined by ZooKeeper lock obtaining. Then, the primary node (leader) will write the address to ZooKeeper so that COS Ranger Client can perform address routing.
 
 #### Code address
 You can get the code from the `cos-ranger-server` directory at [GitHub](https://github.com/tencentyun/cos-ranger-service).
@@ -165,7 +165,7 @@ v1.0.4 or later for COSN Ranger Interface.
 					<name>qcloud.object.storage.zk.leader.ip.path</name> 
 					<value>/ranger_qcloud_object_storage_leader_ip</value>
           </property>
-         <!-- IP address path of the COS Ranger Service follower recorded in ZooKeeper. The default value is used here. The value must the same as that configured in COS Ranger Service. Both the master and slave nodes provide services at the same time. -->
+         <!-- IP address path of the COS Ranger Service follower recorded in ZooKeeper. The default value is used here. The value must the same as that configured in COS Ranger Service. Both the primary and secondary nodes provide services at the same time. -->
           <property>
                     <name>qcloud.object.storage.zk.follower.ip.path</name>
                     <value>/ranger_qcloud_object_storage_follower_ip</value>

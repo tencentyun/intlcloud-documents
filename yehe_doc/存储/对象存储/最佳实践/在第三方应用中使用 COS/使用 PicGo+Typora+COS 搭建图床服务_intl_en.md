@@ -1,6 +1,6 @@
 ## Overview
 
-The image hosting service provides various features such as image storage, processing, and distribution to sustain countless blog sites and community forums around the world as the backend image service. COS is a distributed storage service launched by Tencent Cloud to store massive numbers of files, with higher performance and reliability guaranteed. You can use **COS** to set up an image hosting service.
+The image hosting service provides various features such as image storage, processing, and distribution to sustain countless blog sites and community forums worldwide on the backend. COS is a distributed storage service launched by Tencent Cloud to store massive numbers of files, with higher performance and reliability guaranteed. You can use **COS** to set up an image hosting service.
 
 The strengths of COS in the image hosting scenarios include:
 

@@ -59,7 +59,7 @@
 | 版本               | 有效期 | 单价（美元） |
 | ------------------ | ------ | ------------ |
 | 体验版 License     | 28天   | 0            |
-| 精简版 License     | 1年    | 269          |
-| 基础版 License     | 1年    | 1499         |
+| 轻量版 License     | 1年    | 1899         |
+| 标准版 License     | 1年    | 9999         |
 
 详细功能请参考[短视频SDK文档](https://intl.cloud.tencent.com/document/product/1069/37914)

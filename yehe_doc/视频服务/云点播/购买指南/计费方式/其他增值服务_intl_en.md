@@ -59,7 +59,7 @@ About UGSV licenses:
 | Edition               | Validity Period | Price (USD) |
 | ------------------ | ------ | ------------ |
 | Trial     | 28 days   | 0            |
-| Lite     | 1 year    | 269          |
-| Standard     | 1 year    | 1,499         |
+| Lite     | 1 year    | 1,899          |
+| Standard     | 1 year    | 9,999         |
 
 To learn about the features of different editions, see [SDK Download](https://intl.cloud.tencent.com/document/product/1069/37914).
