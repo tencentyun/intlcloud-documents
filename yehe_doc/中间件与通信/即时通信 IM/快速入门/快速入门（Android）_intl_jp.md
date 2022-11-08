@@ -42,7 +42,7 @@ Android Studioを用いてプロジェクトをインポートし、直接コン
 詳細については、[ステップ3](#step3) でクローンしたDemoプロジェクトの対応ディレクトリにある`README.md`ファイルをご参照ください。
 >!Demoデフォルトでオーディオビデオ通話機能が統合されています。この機能が依存するAVのSDKは現在、シミュレーターをサポートしていないため、実際のマシンを使用してデバッグするかまたはDemoを実行してください。。
 ## 高度な機能
-- [UIライブラリ](https://intl.cloud.tencent.com/document/product/1047/34547)
+- [UIライブラリ](https://intl.cloud.tencent.com/document/product/1047/50062)
 - [ビデオ通話の起動](https://intl.cloud.tencent.com/document/product/1047/34287)
 
 ## 関連ドキュメント

@@ -243,7 +243,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 >}
 >}
 >```
-```
+
 
 ### Video message element
 
@@ -288,8 +288,8 @@ When the receiver is an iOS or Android device and the app is working in the back
 | ThumbDownloadFlag | Number | Flag of the video thumbnail download method. Currently, the value of `ThumbDownloadFlag` must be 2, which means that the video thumbnail can be downloaded from the URL specified by the `ThumbUrl` field. |
 
 
->?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
->```
+?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
+```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
@@ -387,7 +387,7 @@ For an account with a nickname, APNs displays **nickname: push text** for one-to
 
 - **Display format of combined messages**
 For combined messages, the text displayed shows the push text of each message element in sequence. The following example shows a one-to-one chat message with an account nickname set, and the push text is **helloworld**. Note that the text contains no spaces. The backend connects message elements in sequence without adding any extra characters. If spaces or other characters need to be added between different message elements, the caller should take control.
-<pre>
+```
 {
     "MsgBody": [
         {
@@ -407,7 +407,7 @@ For combined messages, the text displayed shows the push text of each message el
         }
     ] 
 }
-</pre>
+```
 ![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.png)
 
 The following table summarizes the push text of different message elements.
@@ -526,4 +526,4 @@ The preceding fields are described as follows:
 ## References
 
 APNs development: [Local and Remote Notifications Overview](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)
-[Offline Push (iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347).
+[Offline Push (iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347)

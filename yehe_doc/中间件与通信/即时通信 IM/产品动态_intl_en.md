@@ -1,3 +1,22 @@
+## September 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td>SDK 6.7.3184 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+    <li> Supported messages extension. </li>
+    <li> Supported signaling messages modification.</li>
+    <li> Supported VoIP for iOS offline push.</li>
+    <li> Supported Honor phones for Android offline push.</li> 
+    <li> Added backup domain name to the access layer. </li>     
+    <li> Fixed the problem that the login and logout callbacks could not be executed under special network environment.</li>
+    <li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Native</a></li>    
+        </ul></td>
+    <td> September 29, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr> 
+</table>
 
 ## August 2022
 <table>

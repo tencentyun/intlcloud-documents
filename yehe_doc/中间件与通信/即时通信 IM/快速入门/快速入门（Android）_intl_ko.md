@@ -42,7 +42,7 @@ Android Studio를 사용하여 프로젝트를 가져오고 바로 컴파일 및
 자세한 내용은 [3단계](#step3)에서 복제된 Demo 프로젝트의 해당 디렉터리에 있는 `README.md` 파일을 참고하십시오.
 >!Demo는 기본적으로 음성/영상 통화 기능과 통합되어 있습니다. 그러나 음성/영상 통화 기능이 의존하는 TRTC SDK는 현재 시뮬레이터를 지원하지 않습니다. Demo 실행 또는 디버깅을 위해 실제 장치를 사용하십시오.
 ## 고급 기능
-- [UI 인터페이스 라이브러리](https://intl.cloud.tencent.com/document/product/1047/34547)
+- [UI 인터페이스 라이브러리](https://intl.cloud.tencent.com/document/product/1047/50062)
 - [영상 통화 활성화](https://intl.cloud.tencent.com/document/product/1047/34287)
 
 ## 관련 문서
