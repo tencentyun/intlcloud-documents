@@ -1,4 +1,4 @@
-﻿## Enabling Consumption Bill
+## Enabling Consumption Bill
 If you have never used the consumption bill feature, enable it as follows:
 1. Log in to the [Billing Center](https://console.cloud.tencent.com/expense/overview).
 2. On the left sidebar, click **Cost Management** > **Consumption Bill** to enter the consumption bill page.
