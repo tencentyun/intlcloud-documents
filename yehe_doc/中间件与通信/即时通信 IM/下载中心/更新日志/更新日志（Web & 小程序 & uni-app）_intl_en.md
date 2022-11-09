@@ -1,3 +1,93 @@
+### 2.24.0 @2022.11.3
+**New features**
+
+- Supported local profanity by local profanity plugin [tim-profanity-filter-plugin](https://www.npmjs.com/package/tim-profanity-filter-plugin).
+- Supported to pull friend custom field and data custom fields to improve product experience,[getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile) .
+- Supported pulling the full list of applications for adding groups,[getGroupApplicationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupApplicationList).
+- Supported for sending topic messages is not counted as unread.
+- Supported for sending ordinary community messages is not counted as unread.
+- Supported voip push when sending messages.
+
+**Bug fixing**
+- Fixed friends profile related issues.
+
+### 2.23.1 @2022.9.29
+**New features**
+- Added the other interfaces support the creation of group-directed messages (that is, sending messages to some group members in the group, other group members will not receive these messages), [createTextMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTextMessage) .
+- Supported sending videos in mov format.
+- Supported push to SDK in REST API,[Updating Friends](https://www.tencentcloud.com/zh/document/product/1047/34904)
+- Supported pulling custom friend fields and custom data fields,[getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile) .
+- Added the returned data new features field of the interface isSyncCompleted, which is used to identify whether the synchronization of the conversation list from the cloud is completed,[getConversationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationList) .
+- Supported notification to the access side through [MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED) in the community message to which the topic belongs.
+- Improve support for uni-app offline push.
+
+**Bug fixing**
+
+- Fixed some group conversations cannot pull roaming messages after the group list exceeds the upper limit of 5000.
+- Fixed the customData of the corresponding conversation is '' After calling setConversationCustomData to set the session custom field, log in again.
+
+### 2.23.0 @2022.9.16
+**New features**
+- Supported to obtain the total number of unread sessions,[getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount).
+- Added the access side listens for the event to get the notification of the change of the total number of unread sessions in the session,[TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED).
+- Supported tagging of live group members(supported only by the Ultimate edition),[markGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markGroupMemberList).
+- Added the SDK synchronously updates the conversation group where the group conversation is located when a group member is kicked out of the group, or the group is deleted.
+- Supported independent subcontracting of uni-apps.
+- Supported the SDK automatically restores the message records of the most recent contacts after a network disconnection and reconnection in the web multi-instance login scenario to ensure message reliability.
+
+**Bug fixing**
+- Fixed the withdrawal status of the session lastMessage may be out of sync issue in the scenario of web multi-instance login.
+- Fixed conversation pinning issue when syncing recent contacts.
+
+### 2.22.0 @2022.8.18
+**New features**
+- Supported uni-app package to native app for offline push, see [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)。
+- Supported to obtain the list of online members of the live stream room, see[getGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberList) (supported only by the Ultimate edition).
+- Supported live stream room ban members,see [deleteGroupMember](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteGroupMember)(supported only by the Ultimate edition).
+- Added set conversation custom data, [setConversationCustomData](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setConversationCustomData).
+- Added mark conversation, [markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation)(supported only by the Ultimate edition).
+- Added get list of conversation group, [getConversationGroupList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationGroupList) (supported only by the Ultimate edition).
+- Added create conversation group, [createConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createConversationGroup) (supported only by the Ultimate edition).
+- Added delete conversation group, [deleteConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversationGroup) (supported only by the Ultimate edition).
+- Added rename conversation group, [renameConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#renameConversationGroup)(supported only by the Ultimate edition).
+- Added add conversations to conversation group, [addConversationsToGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#addConversationsToGroup)(supported only by the Ultimate edition).
+- Added delete conversation from conversation group[deleteConversationsFromGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversationsFromGroup) (supported only by the Ultimate edition).
+
+**Bug fixing**
+- Fixed the conversation unread count not updated after being notified that the conversation message has been withdrawn.
+
+### 2.21.2 @2022.8.8
+**New features**
+- Supported create and send voice messages on the web.
+- Added create a merged message and new features ID field of the merged message, [createMergerMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createMergerMessage).
+
+### 2.21.1 @2022.8.3
+**Bug fixing**
+- Fixed the message duplication problem that resendMessage can cause.
+
+### 2.21.0 @2022.7.28
+**New features**
+- Added set your own custom status, [setSelfStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setSelfStatus).
+- Added get user stauts, [getUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getUserStatus).
+- Added subscribe user status, [subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#subscribeUserStatus).
+- Added unsubscribe user status, [unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#unsubscribeUserStatus).
+- Supported multi-terminal and multi-instance synchronization of DND settings for group messages and topic messages, [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType).
+- Supported mobile WeChat applet and QQ applet to send file messages, [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage).
+- Supported modifying cloudCustomData for all types of messages, [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage).
+- Supported live room broadcast messages with the new feature field isBroadcastMessage, [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html).
+- Supported multi-terminal and multi-instance synchronization with the option of adding a group.
+- Supported general community and topic @all members and topic lastMessage.
+
+**Changes**
+- Webworker is enabled by default in the international website and private environment when the browser supports webworker.
+
+**Bug fixing**
+- Fixed the issue that lastMessage.payload is set to undefined after receiving a message that does not update the conversation lastMessage.
+- Fixed the compensation for group messages caused by online messages did not start.
+- Fixed pull roaming messages issue after frequent group withdrawals and additions.
+- Fixed The pagination pull group list lag causes the pull group conversation roaming message to be an empty array issue.
+- Fixed known issues.
+
 ### 2.20.1 @2022.6.27
 
 **Changes**

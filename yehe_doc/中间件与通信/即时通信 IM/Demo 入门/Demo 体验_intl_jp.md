@@ -289,7 +289,7 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">ソースコードのダウンロード<class="try-icon"></button></a></div>
-    <div style="text-align:center;"><a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">クイックスタート</a>をクリックすると、Demoクイックスタートの使用方法にジャンプし、さらに<a href="https://intl.cloud.tencent.com/document/product/1047/34320" style="color:#06A4FF;">インテグレーション</a>をクリックすると、詳細な機能を確認できます</div>
+    <div style="text-align:center;"><a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">クイックスタート</a>をクリックすると、Demoクイックスタートの使用方法にジャンプし、さらに<a href="https://intl.cloud.tencent.com/document/product/1047/50055" style="color:#06A4FF;">インテグレーション</a>をクリックすると、詳細な機能を確認できます</div>
     </div>
 </div>
 :::

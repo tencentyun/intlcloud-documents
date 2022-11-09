@@ -80,7 +80,7 @@ pod install
 >!The demo is integrated with the audio/video call feature by default. However, the TRTC SDK on which the audio/video call feature relies currently does not support simulators. Please use real devices for demo running or debugging.
 
 ## Advanced Features
-- [TUIKit](https://intl.cloud.tencent.com/document/product/1047/34547)
+- [TUIKit](https://intl.cloud.tencent.com/document/product/1047/50062)
 - [Enabling Video Calls](https://intl.cloud.tencent.com/document/product/1047/34287)
 
 ## References

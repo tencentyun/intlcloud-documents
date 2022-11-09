@@ -160,6 +160,6 @@ tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 
 ### Relevant resources
 - [SDK Update Log](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [SDK API Documentation](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html)
+- [SDK API Documentation](https://web.sdk.qcloud.com/im/doc/en/SDK.html)
 - [IM Web Demo](https://github.com/TencentCloud/TIMSDK/tree/master/Web)
 - [Download URL of Tencent Cloud IM Upload Plugin](https://www.npmjs.com/package/tim-upload-plugin)

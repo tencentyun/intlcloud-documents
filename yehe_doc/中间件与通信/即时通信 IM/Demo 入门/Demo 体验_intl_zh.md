@@ -270,7 +270,7 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">源码下载</button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">快速入门</a>了解如何快速跑通 DEMO，还可以点击<a href="https://intl.cloud.tencent.com/document/product/1047/36359" style="color:#06A4FF;">集成方案</a>了解详细功能</div>
+    <div style="text-align:center;">您可以点击<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">快速入门</a>了解如何快速跑通 DEMO，还可以点击<a href="https://intl.cloud.tencent.com/document/product/1047/50055" style="color:#06A4FF;">集成方案</a>了解详细功能</div>
     </div>
 </div>
 :::

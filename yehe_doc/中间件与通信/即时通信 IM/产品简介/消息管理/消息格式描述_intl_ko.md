@@ -243,7 +243,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 >}
 >}
 >```
-```
+
 
 ### 영상 메시지 요소
 
@@ -290,21 +290,21 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 >?2.X 및 3.X 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 영상 메시지 요소를 발송합니다.
 >```
-{
-    "MsgType": "TIMVideoFileElem",
-    "MsgContent": {
-        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",// 영상의 유일한 식별자로 유형은 String입니다. 클라이언트에서 영상 인덱스에 사용하는 키 값으로 이 필드를 통해 영상을 다운로드할 수 없습니다. 영상을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
-        "VideoSize": 1194603, //영상 데이터 크기. 유형: Number. 단위: 바이트.
-        "VideoSecond": 5,     //영상 길이. 유형: Number. 단위: 초.
-		"VideoFormat": "mp4", //비디오 형식. 유형: String. 예: mp4.
-		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",// 비디오 썸네일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 비디오 썸네일 인덱스에 사용하는 키 값으로 이 필드를 통해 비디오 썸네일을 다운로드할 수 없습니다. 비디오 썸네일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
-		"ThumbSize": 13907,   //썸네일 크기. 유형: Number. 단위: 바이트.
-		"ThumbWidth": 720,    //썸네일 폭. 유형: Number.
-		"ThumbHeight": 1280,  //썸네일 높이. 유형: Number.
-		"ThumbFormat": "JPG"  //썸네일 형식. 유형: String. 예: JPG, BMP 등.
-    }
-}
-```
+>{
+>    "MsgType": "TIMVideoFileElem",
+>    "MsgContent": {
+>        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",// 영상의 유일한 식별자로 유형은 String입니다. 클라이언트에서 영상 인덱스에 사용하는 키 값으로 이 필드를 통해 영상을 다운로드할 수 없습니다. 영상을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
+>        "VideoSize": 1194603, //영상 데이터 크기. 유형: Number. 단위: 바이트.
+>        "VideoSecond": 5,     //영상 길이. 유형: Number. 단위: 초.
+>		"VideoFormat": "mp4", //비디오 형식. 유형: String. 예: mp4.
+>		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",// 비디오 썸네일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 비디오 썸네일 인덱스에 사용하는 키 값으로 이 필드를 통해 비디오 썸네일을 다운로드할 수 없습니다. 비디오 썸네일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
+>		"ThumbSize": 13907,   //썸네일 크기. 유형: Number. 단위: 바이트.
+>		"ThumbWidth": 720,    //썸네일 폭. 유형: Number.
+>		"ThumbHeight": 1280,  //썸네일 높이. 유형: Number.
+>		"ThumbFormat": "JPG"  //썸네일 형식. 유형: String. 예: JPG, BMP 등.
+>   }
+>}
+>```
 
 ## MsgBody 메시지 콘텐츠 예시
 
@@ -387,7 +387,7 @@ CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다.
 
 - **결합된 메시지가 표시되는 형식**
 결합된 메시지의 경우, 순서에 따라 각 메시지 요소의 푸시 텍스트가 순서대로 표시됩니다. 계정에 닉네임을 설정한 1:1 채팅 메시지의 경우 푸시 텍스트는 ‘helloworld’가 됩니다. 텍스트(예:helloworld)에는 공백이 포함되어 있지 않습니다. 백엔드에서 순서대로 각 메시지 요소를 순서대로 연결하며 텍스트 사이에 어떤 것도 추가하지 않습니다. 메시지 요소 사이에 빈 칸이나 다른 문자를 추가하려면 호출측에서 자체적으로 제어해야 합니다. 
-<pre>
+```
 {
     "MsgBody": [
         {
@@ -407,7 +407,7 @@ CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다.
         }
     ] 
 }
-</pre>
+```
 ![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.png)
 
 다음 표에는 다양한 메시지 요소의 푸시 텍스트 필드가 요약되어 있습니다.
