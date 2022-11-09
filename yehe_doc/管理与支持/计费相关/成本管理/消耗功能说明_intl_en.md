@@ -2,9 +2,9 @@
 The consumption overview page displays various consumption-related information, such as monthly total resource consumption, consumption by product, top 10 projects, consumption by region, and top 5 tags.
 
 ### Consumption statistics
-The consumption statistics graph displays a consumption trend for the last 6 months or the last year as well as the total consumption settled in real time in the current month (unposted).
+The consumption statistics graph displays a consumption trend for the last 6 months or the last year as well as the total real time consumption in the current month (not yet billed).
 
-The total consumption is the total monthly resource consumption. The calculation formula is **Total consumption = Cash payment + Free credit payment + Voucher payment + Commission payment**. The order in which those are deducted from your account to make a payment is voucher > free credit > commission > cash.
+The total consumption is the total monthly resource consumption. The calculation formula is **total consumption = cash payment + free credit payment + voucher payment + commission payment**. The order in which those are deducted from your account to make a payment is voucher > free credit > commission > cash.
 >?The total consumption in the current month contains real-time consumption data that may not have been billed yet. Therefore, the total consumption is not the final consumption and is for reference only. The final amount of total consumption is officially billed on the third day of the next month.
 >
 
