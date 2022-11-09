@@ -179,7 +179,7 @@ def ci_put_asr_queue():
 | Parameter | Description | Type |
 | --------- | ------------------------------------------------------------ | ------ |
 | RequestId | Unique ID of the request                                                | dict |
-| Queue     | Queue information. For more information, see `QueueList` in [Querying Speech Recognition Queue](https://cloud.tencent.com/document/product/460/46234). | dict |
+| Queue     | Queue information. For more information, see `QueueList` in Querying Speech Recognition Queue. | dict |
 
 
 

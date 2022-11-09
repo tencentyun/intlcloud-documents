@@ -5,9 +5,9 @@ This document provides an overview of APIs and SDK code samples for file preview
 
 | API | Operation |  Description |
 | :--------------- | :------------------ | :--------------------- |
-| [CreateDocProcessJobs](https://cloud.tencent.com/document/product/436/54056)|   Submitting file preview job | Submits file preview job. |
-| [DescribeDocProcessJob](https://cloud.tencent.com/document/product/436/54095) |   Querying file preview job | Queries specified file preview job. |
-| [DescribeDocProcessJobs](https://cloud.tencent.com/document/product/436/54096)  |  Pulling file preview jobs | Pulls eligible file preview jobs. |
+| [CreateDocProcessJobs](https://intl.cloud.tencent.com/document/product/436/49407)|   Submitting file preview job | Submits file preview job. |
+| [DescribeDocProcessJob](https://intl.cloud.tencent.com/document/product/436/49408) |   Querying file preview job | Queries specified file preview job. |
+| [DescribeDocProcessJobs](https://intl.cloud.tencent.com/document/product/436/49409)  |  Pulling file preview jobs | Pulls eligible file preview jobs. |
 
 
 
@@ -62,7 +62,7 @@ To call the `ci_create_doc_job` function, the specific request parameters are as
 
 #### Response parameter description
 
-Calling the `ci_create_doc_jobs` function will convert the XML returned in the API into a `dict` value. For specific response parameters, see [Submitting File Preview Job](https://cloud.tencent.com/document/product/436/54056).
+Calling the `ci_create_doc_jobs` function will convert the XML returned in the API into a `dict` value. For specific response parameters, see [Submitting File Preview Job](https://intl.cloud.tencent.com/document/product/436/49407).
 
 ## Querying Specified File Preview Job
 
@@ -93,7 +93,7 @@ To call the `ci_get_doc_job` function, the specific request parameters are as fo
 
 #### Response parameter description
 
-Calling the `ci_get_doc_job` function will convert the XML returned in the API into a `dict` value. For specific response parameters, see [Querying File Preview Job](https://cloud.tencent.com/document/product/436/54095).
+Calling the `ci_get_doc_job` function will convert the XML returned in the API into a `dict` value. For specific response parameters, see [Querying File Preview Job](https://intl.cloud.tencent.com/document/product/436/49408).
 
 
 
@@ -131,4 +131,4 @@ To call the `ci_list_doc_jobs` function, the specific request parameters are as 
 
 #### Response parameter description
 
-Calling the `ci_list_doc_jobs` function will convert the XML returned in the API into a `dict` value. For specific response parameters, see [Pulling File Preview Job](https://cloud.tencent.com/document/product/436/54096).
+Calling the `ci_list_doc_jobs` function will convert the XML returned in the API into a `dict` value. For specific response parameters, see [Pulling File Preview Job](https://intl.cloud.tencent.com/document/product/436/49409).

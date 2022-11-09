@@ -13,19 +13,19 @@
 <td>图像修复上线</td>
 <td>用户可指定图像中需要修复的区域，并对其中的主体进行识别修复，填充与周围区域相似的图片纹理，适用于商业摄影后期、社交娱乐内容生产等场景。</td>
 <td>2022-08-15</td>
-<td><a href="https://cloud.tencent.com/document/product/460/79042">图像修复</a></td>
+<td>图像修复</td>
 </tr>
 <tr>
 <td>商品抠图上线</td>
 <td>支持识别出图像中的商品主体，并对背景信息予以去除，获得透明底的商品素材，适用于电商海报智能生成、个性化商品推荐等功能。</td>
 <td>2022-08-15</td>
-<td><a href="https://cloud.tencent.com/document/product/460/79735">商品抠图</a></td>
+<td>商品抠图</td>
 </tr>
 <tr>
 <td>Logo 识别上线</td>
 <td>支持对图片内的电商 Logo 进行识别，返回图片中 Logo 的名称、坐标、置信度分值。</td>
 <td>2022-08-15</td>
-<td><a href="https://cloud.tencent.com/document/product/460/79736">Logo 识别</a></td>
+<td>Logo 识别</td>
 </tr>
 </tbody></table>
 
@@ -75,7 +75,7 @@
 <td>直播审核上线</td>
 <td>可对直播流内容进行色情、广告、违法等内容进行审核。</td>
 <td>2022-06-30</td>
-<td><a href="https://cloud.tencent.com/document/product/460/76258">直播审核</a></td>
+<td>直播审核</td>
 </tr>
 <tr>
 <td>音频降噪上线</td>
@@ -118,7 +118,7 @@
 <td>文档预览优化</td>
 <td>文档转html支持在下载链接中通过JSON传参直接调整页面高级配置，增加支持防打印功能。</td>
 <td>2022-05-15</td>
-<td><a href="https://cloud.tencent.com/document/product/460/52518">文档转HTML-快速入门</a></td>
+<td>文档转HTML-快速入门</td>
 </tr>
 </tbody></table>
 
@@ -137,7 +137,7 @@
 <td>内容审核支持策略级数据</td>
 <td>支持将不同的审核策略数据独立展示，如审核详情、审核统计数据等。</td>
 <td>2022-04-21</td>
-<td><a href="https://cloud.tencent.com/document/product/460/56345">设置审核策略</a></td>
+<td>设置审核策略</td>
 </tr>
 </tbody></table>
 
@@ -219,7 +219,7 @@
 <td>盲水印支持所有地域</td>
 <td>盲水印新增支持海外所有地域，目前盲水印功能已支持全部公有云地域。</td>
 <td>2021-10-21</td>
-<td><a href="https://cloud.tencent.com/document/product/460/47502">盲水印</a></td>
+<td>盲水印</td>
 </tr>
 <tr>
 <td>媒体处理-音视频分段功能上线</td>
@@ -261,7 +261,7 @@
 <td>媒体处理-视频加密功能上线</td>
 <td>新增 HLS 标准加密能力，为客户视频数据安全保驾护航。</td>
 <td>2021-08-03</td>
-<td><a href="https://cloud.tencent.com/document/product/460/59291">通过 HLS 加密防止视频泄露</a></td>
+<td>通过 HLS 加密防止视频泄露</td>
 </tr>
 </tbody></table>
 
@@ -323,12 +323,12 @@
 <td>文本审核上线</td>
 <td>文本审核功能可对文本内容进行安全审核，检测场景包括鉴黄、违法违规、广告检测、违法检测、谩骂检测。</td>
 <td>2021-04-06</td>
-<td><a href="https://cloud.tencent.com/document/product/460/52712">设置文本审核</a></td>
+<td>设置文本审核</td>
 </tr>
 <tr>
 <td>内容审核支持存量数据审核</td>
 <td>用户通过创建存量审核任务，对存储桶中已有的图片、视频、音频和文本文件进行一次性的批量审核。</td>
 <td>2021-04-06</td>
-<td><a href="https://cloud.tencent.com/document/product/460/59083">设置存量审核任务</a></td>
+<td>设置存量审核任务</td>
 </tr>
 </tbody></table>

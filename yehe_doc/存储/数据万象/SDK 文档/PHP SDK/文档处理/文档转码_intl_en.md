@@ -7,10 +7,10 @@ This document provides an overview of APIs and SDK code samples for file preview
 
 | API | Operation |  Description |
 | :--------------- | :------------------ | :--------------------- |
-| [CreateDocProcessJobs](https://cloud.tencent.com/document/product/436/54056)|   Submitting file preview job | Submits file preview job. |
-| [DescribeDocProcessJob](https://cloud.tencent.com/document/product/436/54095) |   Querying file preview job | Queries specified file preview job. |
-| [DescribeDocProcessJobs](https://cloud.tencent.com/document/product/436/54096)  |  Pulling file preview jobs | Pulls eligible file preview jobs. |
-| [DescribeDocProcessQueues](https://cloud.tencent.com/document/product/436/54055)  |  Querying file transcoding queues     |  Queries file transcoding queues.   |
+| [CreateDocProcessJobs](https://intl.cloud.tencent.com/document/product/436/49407)|   Submitting file preview job | Submits file preview job. |
+| [DescribeDocProcessJob](https://intl.cloud.tencent.com/document/product/436/49408) |   Querying file preview job | Queries specified file preview job. |
+| [DescribeDocProcessJobs](https://intl.cloud.tencent.com/document/product/436/49409)  |  Pulling file preview jobs | Pulls eligible file preview jobs. |
+| [DescribeDocProcessQueues](https://intl.cloud.tencent.com/document/product/436/49411)  |  Querying file transcoding queues     |  Queries file transcoding queues.   |
 
 
 ## Submitting File Preview Job
@@ -109,7 +109,7 @@ try {
 | sheetId        | Integer | Sheet parameter, indicating to convert the xth sheet. Default value: 1. If it is set to 0, all sheets will be converted. | No |
 | startPage      | Integer | Starts conversion from page X. A spreadsheet file may be split into multiple pages, with multiple images generated, and `StartPage` indicates to start the conversion from page X of the specified `SheetId`. Default value: 1. | No |
 | endPage        | Integer | Ends conversion on page X. A spreadsheet file may be split into multiple pages, with multiple images generated, and `EndPage` indicates to end the conversion on page X of the specified `SheetId`. Default value: -1 (converting all pages).  | No |
-| imageParams    | String | Processing parameters for the output image. All parameters of [basic image processing](https://cloud.tencent.com/document/product/436/44879) are supported. To specify multiple parameters, separate them by [pipeline operator](https://cloud.tencent.com/document/product/436/44894). In this way, the image can be processed by multiple parameters in sequence in the same request. | No |
+| imageParams    | String | Processing parameters for the output image. All parameters of [basic image processing](https://cloud.tencent.com/document/product/436/44879) are supported. To specify multiple parameters, separate them by [pipeline operator](https://intl.cloud.tencent.com/document/product/436/36380). In this way, the image can be processed by multiple parameters in sequence in the same request. | No |
 | docPassword    | String | Password to open the Office file. If you need to convert a password-protected file, set this field. | No |
 | comments       | Integer | Whether to hide comments and apply track changes. 0: hide comments and apply track changes; 1: show comments and track changes. Default value: 0. | No |
 | paperDirection | Integer | Paper orientation of the spreadsheet. 0: vertical; other values: horizontal. Default value: 0. | No |

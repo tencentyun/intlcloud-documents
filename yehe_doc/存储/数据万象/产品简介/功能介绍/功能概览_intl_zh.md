@@ -64,19 +64,19 @@
    </tr>
    <tr>
       <td rowspan="4">图片增值服务</td>
-      <td><a href="https://cloud.tencent.com/document/product/460/47500">Guetzli 图片压缩</a></td>
+      <td>Guetzli 图片压缩</td>
       <td>Guetzli 图片压缩是数据万象推出的视觉无损压缩服务，能够对 JPG、JPEG 图像进行高比例压缩，为使用者节省下载流量，加快下载速度，提升体验。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47501">图片高级压缩</a></td>
+      <td>图片高级压缩</td>
       <td>数据万象提供图片高级压缩功能，可以更加高效地将图片转换为 TPG 或 HEIF 等高压缩比格式，有效降低图片传输链路及加载耗时，降低带宽及流量成本。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/75997">异常图片检测</a></td>
+      <td>异常图片检测</td>
       <td>数据万象提供异常图片检测功能，能够检测出图片中是否隐含视频流等其他类型的可疑文件。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47502">盲水印</a></td>
+      <td>盲水印</td>
       <td>盲水印功能是腾讯云数据万象提供的全新水印模式。通过该功能，您可将水印图以不可见的形式添加到原图信息中，且不会对原图质量产生太大影响。同时，在图片被盗取后，您可对疑似被盗取的资源进行盲水印提取，验证图片归属。</td>
    </tr>
    <tr>
@@ -133,7 +133,7 @@
       <td>视频标签通过对视频中视觉、场景、行为、物体等信息进行分析，结合多模态信息融合及对齐技术，实现高准确率内容识别，自动输出视频的多维度内容标签。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/80055">视频质量评分</a></td>
+      <td><a href="https://www.tencentcloud.com/document/product/1045/51257">视频质量评分</a></td>
       <td>采用无参考评价方式对视频清晰度、信噪比、色彩、亮度等进行综合分析输出视频质量分值。</td>
    </tr>
    <tr>
@@ -151,7 +151,7 @@
       <td>语音合成通过先进的深度学习技术，将文本转换成自然流畅的语音。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47492">语音识别</a></td>
+      <td>语音识别</td>
       <td>语音识别是针对已经录制完成的录音文件，进行识别的服务，异步返回识别文本，可应用于呼叫中心语音质检、视频字幕生成，会议语音资料转写等场景。</td>
    </tr>
     <tr>
@@ -159,45 +159,45 @@
       <td>人声分离能够将同一素材中的人声与背景音分离开来生成新的独立音频文件。</td>
    </tr>
     <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/80056">音频降噪</a></td>
+      <td><a href="https://www.tencentcloud.com/document/product/1045/51254">音频降噪</a></td>
       <td>音频降噪适用于录制课程、户外拍摄后期等情况为音频去除设备底噪、环境噪声等。</td>
    </tr>
    <tr>
       <td rowspan="4">内容审核服务</td>
-      <td><a href="https://cloud.tencent.com/document/product/460/47487">图片审核</a></td>
+      <td>图片审核</td>
       <td>图片审核功能可帮助用户有效识别图片中的违禁内容，检测场景包括鉴黄、违法违规检测、广告检测。目前支持机器自动审核和专业团队人工复审，全方位保障平台的图片安全。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47488">视频审核</a></td>
+      <td>视频审核</td>
       <td>视频审核功能可帮助用户有效识别视频画面中的违禁内容，检测场景包括鉴黄、违法违规检测、广告检测。目前支持机器自动审核和专业团队人工复审，全方位保障平台的安全。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47489">音频审核</a></td>
+      <td>音频审核</td>
       <td>音频审核功能可帮助用户有效识别音频中的违禁内容，检测场景包括鉴黄、违法违规检测、广告检测。目前支持机器自动审核和专业团队人工复审，全方位保障平台的安全。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/53149">文本审核</a></td>
+      <td>文本审核</td>
       <td>文本审核功能可帮助用户有效检测文本文件中的违禁内容，可以检测涉黄、违法违规、广告、违法、谩骂等可能令人不适的内容。目前支持机器自动审核和专业团队人工复审，全方位保障平台的安全。</td>
    </tr>
    <tr>
       <td rowspan="10">内容识别服务</td>
       <td>图片识别</td>
-      <td>提供 <a href="https://cloud.tencent.com/document/product/460/47490">二维码识别</a>、<a href="https://cloud.tencent.com/document/product/460/47491">图片标签识别</a> 功能。</td>
+      <td>提供二维码识别、图片标签识别功能。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/79735">商品抠图</a></td>
+      <td>商品抠图</td>
       <td>支持识别出图像中的商品主体，并对背景信息予以去除，获得透明底的商品素材，适用于电商海报智能生成、个性化商品推荐等功能。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/79042">图像修复</a></td>
+      <td>图像修复</td>
       <td>支持指定图像中需要修复的区域，并对其中的主体进行识别，通过 AI 算法智能填充与周围区域相似的图片纹理，适用于商业摄影后期、社交娱乐内容生产等场景。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47492">LOGO 识别</a></td>
+      <td>LOGO 识别</td>
       <td>支持对图片内的电商 Logo 进行识别，返回图片中 Logo 的名称、坐标、置信度分值。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/63225">车辆车牌检测</a></td>
+      <td>车辆车牌检测</td>
       <td>支持检测图片中的车辆，并识别出车辆的品牌、颜色、位置、车牌位置等信息。</td>
    </tr>
    <tr>
@@ -209,7 +209,7 @@
       <td>可对图片库内的图片进行特征提取、对比和搜索，适用于电商产品搜索、版权保护等场景。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47493">人脸特效</a></td>
+      <td>人脸特效</td>
       <td>人脸特效支持人脸美颜、人脸性别变换、人脸年龄变化、人像分割的特效功能，适用于社交娱乐、广告营销、互动传播等场景。</td>
    </tr>
    <tr>

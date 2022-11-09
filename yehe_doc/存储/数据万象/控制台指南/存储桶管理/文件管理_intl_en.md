@@ -14,7 +14,7 @@ On the file management page, you can view the list of files in the bucket and [u
 ## Uploading File
 
 1. On the file management page, click **Upload Files**. In the pop-up dialog box, click **Select Files** and select a local file for upload.
-   If workflow is enabled, the uploaded video file will automatically trigger the workflow, and applicable feature fees will be incurred. You can click the drop-down list to view all the workflows enabled under this path. For more information on workflow, please see [Setting Workflow](https://cloud.tencent.com/document/product/460/43472).
+   If workflow is enabled, the uploaded video file will automatically trigger the workflow, and applicable feature fees will be incurred. You can click the drop-down list to view all the workflows enabled under this path. For more information on workflow, please see [Setting Workflow](https://intl.cloud.tencent.com/document/product/1045/43604).
 2. Click **OK**. If the information of the uploaded video is displayed in the resource list, the upload is successful.
 >!
 >

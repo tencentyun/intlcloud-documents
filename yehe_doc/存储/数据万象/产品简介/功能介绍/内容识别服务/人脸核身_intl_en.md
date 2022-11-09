@@ -46,4 +46,4 @@ Passengers may forget to carry their ID cards, so they cannot check in at airpor
 
 ## Directions
 
-Currently, you can call APIs to use the FaceID service. For more information, see [FaceID](https://cloud.tencent.com/document/product/460/48641).
+Currently, you can call APIs to use the FaceID service. For more information, see FaceID).

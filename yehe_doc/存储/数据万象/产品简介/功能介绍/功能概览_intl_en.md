@@ -64,19 +64,19 @@ Cloud Infinite (CI) provides the following features:
    </tr>
    <tr>
       <td rowspan="4">Advanced features</td>
-      <td><a href="https://cloud.tencent.com/document/product/460/47500">Guetzli image compression</a></td>
+      <td>Guetzli image compression</td>
       <td>A visually lossless compression service, which can compress JPG and JPEG images at a high ratio to reduce the downstream traffic usage and accelerate downloads</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47501">Image advanced compression</a></td>
+      <td>Image advanced compression</td>
       <td>Allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/75997">Abnormal image detection</a></td>
+      <td>Abnormal image detection</td>
       <td>Detects whether other types of suspicious files such as video streams are hidden in images</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47502">Blind watermarking</a></td>
+      <td>Blind watermarking</td>
       <td>A brand-new watermarking feature, which allows you to add a watermark to the input image information without displaying the watermark or significantly affecting the image quality. If an image is stolen, you can extract the blind watermark from the suspected image to check whether the image belongs to you.</td>
    </tr>
    <tr>
@@ -151,7 +151,7 @@ Cloud Infinite (CI) provides the following features:
       <td>Converts text to natural-sounding and smooth speeches through advanced deep learning technology</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47492">Speech recognition</a></td>
+      <td>Speech recognition</td>
       <td>Recognizes a recording file and asynchronously returns the recognized text. It can be used for call center speech quality inspection, video subtitles generation, and meeting recording transcription.</td>
    </tr>
     <tr>
@@ -159,45 +159,45 @@ Cloud Infinite (CI) provides the following features:
       <td>Separates the voice from the background sound in a video material to generate a new independent audio file</td>
    </tr>
     <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47489">Audio noise cancellation</a></td>
+      <td>Audio noise cancellation</td>
       <td>Removes device noise, ambient noise, and other noises for an audio in course recording, outdoor shooting post-production, or other scenarios</td>
    </tr>
    <tr>
       <td rowspan="4">Content moderation</td>
-      <td><a href="https://cloud.tencent.com/document/product/460/47487">Image moderation</a></td>
+      <td>Image moderation</td>
       <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in images. At present, CI supports automatic moderation and manual review by professional teams to secure images in the platform in an all-round way.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47488">Video moderation</a></td>
+      <td>Video moderation</td>
       <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in videos. At present, CI supports automatic moderation and manual review by professional teams to secure images in the platform in an all-round way.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47489">Audio moderation</a></td>
+      <td>Audio moderation</td>
       <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in audios. At present, CI supports automatic moderation and manual review by professional teams to secure images in the platform in an all-round way.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/53149">Text moderation</a></td>
+      <td>Text moderation</td>
       <td>Helps you effectively identify restricted content (that is, content that may be uncomfortable, such as pornography, violation, ad, and abuse) in text files. At present, CI supports automatic moderation and manual review by professional teams to secure images in the platform in an all-round way.</td>
    </tr>
    <tr>
       <td rowspan="10">Content recognition</td>
       <td>Image recognition</td>
-      <td><a href="https://cloud.tencent.com/document/product/460/47490">QR code recognition</a> and <a href="https://cloud.tencent.com/document/product/460/47491">image tag recognition</a></td>
+      <td>QR code recognition and image tag recognition</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/79735">Image matting</a></td>
+      <td>Image matting</td>
       <td>Recognizes the product entity in an image and removes background information to obtain a product material with a transparent background. It is suitable for intelligent generation of e-commerce posters, personalized product recommendation, and other features.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/79042">Image repair</a></td>
+      <td>Image repair</td>
       <td>Recognizes the entity in a specified area in the image to be repaired, and intelligently fills in the image texture similar to the surrounding area through the AI ​​​​algorithm. It is suitable for commercial photography post-production, social entertainment content production, and other scenarios.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47492">Logo recognition</a></td>
+      <td>Logo recognition</td>
       <td>Recognizes the e-commerce logo in an image, and returns the name, coordinates, and confidence score of the logo in the image</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/63225">Vehicle and license plate detection</a></td>
+      <td>Vehicle and license plate detection</td>
       <td>Detects the vehicle in an image, and recognizes information such as vehicle brand, color, location, and license plate location</td>
    </tr>
    <tr>
@@ -209,7 +209,7 @@ Cloud Infinite (CI) provides the following features:
       <td>Performs feature extraction, comparison, and search on the images in an image library. It is suitable for e-commerce product search, copyright protection, and other scenarios.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47493">Face filter</a></td>
+      <td>Face filter</td>
       <td>Supports beauty filter, gender swap, age change, and face cut-out. It is suitable for many use cases, such as social entertainment, marketing, and interactive communication.</td>
    </tr>
    <tr>

@@ -5,9 +5,9 @@
 
 | API           |    操作名  |   操作描述               |
 | :--------------- | :------------------ | :--------------------- |
-| [CreateDocProcessJobs](https://cloud.tencent.com/document/product/436/54056)|   提交文档预览任务        |   用于提交一个文档预览任务   |
-| [DescribeDocProcessJob](https://cloud.tencent.com/document/product/436/54095) |   查询文档预览任务    |查询指定的文档预览任务 |
-| [DescribeDocProcessJobs](https://cloud.tencent.com/document/product/436/54096)  |  拉取文档预览任务     |  拉取符合条件的文档预览任务   |
+| [CreateDocProcessJobs](https://intl.cloud.tencent.com/document/product/436/49407)|   提交文档预览任务        |   用于提交一个文档预览任务   |
+| [DescribeDocProcessJob](https://intl.cloud.tencent.com/document/product/436/49408) |   查询文档预览任务    |查询指定的文档预览任务 |
+| [DescribeDocProcessJobs](https://intl.cloud.tencent.com/document/product/436/49409)  |  拉取文档预览任务     |  拉取符合条件的文档预览任务   |
 
 
 
@@ -62,7 +62,7 @@ ci_create_doc_job 接口用于提交一个文档预览任务。
 
 #### 返回参数说明
 
-调用 ci_create_doc_jobs 函数，会把 api 里面的 xml 返回转换成 dict，具体返回参数可查看 [提交文档预览任务](https://cloud.tencent.com/document/product/436/54056) 文档。
+调用 ci_create_doc_jobs 函数，会把 api 里面的 xml 返回转换成 dict，具体返回参数可查看 [提交文档预览任务](https://intl.cloud.tencent.com/document/product/436/49407) 文档。
 
 ## 查询文档预览任务
 
@@ -93,7 +93,7 @@ ci_get_doc_job 用于查询指定的文档预览任务。
 
 #### 返回参数说明
 
-调用 ci_get_doc_job 函数，会把 api 里面的 xml 返回转换成 dict，具体返回参数可查看 [查询文档预览任务](https://cloud.tencent.com/document/product/436/54095) 文档。
+调用 ci_get_doc_job 函数，会把 api 里面的 xml 返回转换成 dict，具体返回参数可查看 [查询文档预览任务](https://intl.cloud.tencent.com/document/product/436/49408) 文档。
 
 
 
@@ -131,4 +131,4 @@ ci_list_doc_jobs 用于查询指定的文档预览任务。
 
 #### 返回参数说明
 
-调用 ci_list_doc_jobs 函数，会把 api 里面的 xml 返回转换成 dict，具体返回参数可查看 [拉取文档预览任务](https://cloud.tencent.com/document/product/436/54096) 文档。
+调用 ci_list_doc_jobs 函数，会把 api 里面的 xml 返回转换成 dict，具体返回参数可查看 [拉取文档预览任务](https://intl.cloud.tencent.com/document/product/436/49409) 文档。

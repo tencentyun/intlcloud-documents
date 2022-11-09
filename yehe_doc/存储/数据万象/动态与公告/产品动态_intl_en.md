@@ -13,19 +13,19 @@
 <td>Launched the image repair feature</td>
 <td>Recognizes the entity in a specified area in the image to be repaired, and fills in the image texture similar to the surrounding area. It is suitable for commercial photography post-production, social entertainment content production, and other scenarios.</td>
 <td>August 15, 2022</td>
-<td><a href="https://cloud.tencent.com/document/product/460/79042">Image Repair</a></td>
+<td>Image Repair</td>
 </tr>
 <tr>
 <td>Launched the image matting feature</td>
 <td>Recognizes the product entity in an image and removes background information to obtain a product material with a transparent background. It is suitable for intelligent generation of e-commerce posters, personalized product recommendation, and other features.</td>
 <td>August 15, 2022</td>
-<td><a href="https://cloud.tencent.com/document/product/460/79735">Image Matting</a></td>
+<td>Image Matting</td>
 </tr>
 <tr>
 <td>Launched the logo recognition feature</td>
 <td>Recognizes the e-commerce logo in an image, and returns the name, coordinates, and confidence score of the logo in the image</td>
 <td>August 15, 2022</td>
-<td><a href="https://cloud.tencent.com/document/product/460/79736">Logo Recognition</a></td>
+<td>Logo Recognition</td>
 </tr>
 </tbody></table>
 
@@ -75,7 +75,7 @@
 <td>Launched the live stream moderation feature</td>
 <td>You can moderate live streams to detect non-compliant content, including pornographic, advertising, and illegal content.</td>
 <td>June 30, 2022</td>
-<td><a href="https://cloud.tencent.com/document/product/460/47487">Live Stream Moderation</a></td>
+<td>Live Stream Moderation</td>
 </tr>
 <tr>
 <td>Launched the audio noise cancellation feature</td>
@@ -118,7 +118,7 @@
 <td>Optimized the file preview feature</td>
 <td>The file-to-HTML conversion feature allows you to pass in parameters through JSON to the download link to directly adjust the advanced page settings. The printing prevention feature is added.</td>
 <td>May 15, 2022</td>
-<td><a href="https://cloud.tencent.com/document/product/460/52518">File-to-HTML Conversion – Getting Started</a></td>
+<td>File-to-HTML Conversion – Getting Started</td>
 </tr>
 </tbody></table>
 
@@ -219,7 +219,7 @@
 <td>Supported the blind watermarking feature in all regions</td>
 <td>The blind watermarking feature is available in all public cloud regions.</td>
 <td>October 21, 2021</td>
-<td><a href="https://cloud.tencent.com/document/product/460/47502">Blind watermarking</a></td>
+<td>Blind watermarking</td>
 </tr>
 <tr>
 <td>Launched the media processing - audio/video segmentation feature</td>
@@ -261,7 +261,7 @@
 <td>Launched the media processing - video encryption feature</td>
 <td>The HLS standard encryption capability is added to ensure the security of your video data.</td>
 <td>August 3, 2021</td>
-<td><a href="https://cloud.tencent.com/document/product/460/59291">Preventing Video Leakage with HLS Encryption</a></td>
+<td>Preventing Video Leakage with HLS Encryption</td>
 </tr>
 </tbody></table>
 
@@ -323,12 +323,12 @@
 <td>Launched the text moderation feature</td>
 <td>The text moderation feature can check text content for pornographic, non-compliant, illegal, advertising, and abusive information.</td>
 <td>April 6, 2021</td>
-<td><a href="https://cloud.tencent.com/document/product/460/52712">Setting Text Moderation</a></td>
+<td>Setting Text Moderation</td>
 </tr>
 <tr>
 <td>Supported full moderation for existing data</td>
 <td>You can create a full moderation job to batch moderate existing image, video, audio, and text files in a bucket at a time.</td>
 <td>April 6, 2021</td>
-<td><a href="https://cloud.tencent.com/document/product/460/59083">Setting a Moderation Job for Existing Data</a></td>v
+<td>Setting a Moderation Job for Existing Data</td>v
 </tr>
 </tbody></table>

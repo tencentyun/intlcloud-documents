@@ -48,7 +48,7 @@ Description of container node AddStyle:
 ## Response
 
 #### Response header
-This response uses common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 The response body is null.

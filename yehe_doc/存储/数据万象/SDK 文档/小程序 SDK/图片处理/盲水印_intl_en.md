@@ -2,7 +2,7 @@
 
 This document provides an overview of APIs and SDK code samples for blind watermarking.
 
-For blind watermark APIs, see [Blind Watermark](https://cloud.tencent.com/document/product/436/46782).
+For blind watermark APIs, see [Blind Watermark](https://intl.cloud.tencent.com/document/product/436/49729).
 
 ## Adding Blind Watermark
 
