@@ -186,14 +186,11 @@ ul.rno-tabs-operation {
             <div class="demo-item-platform">Web</div>
         </div>
         <div class="demo-item-desc">
-           单击即可体验
+           音视频通话·多人会议<br/>
+           互动直播等
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">音视频通话</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">互动直播推流</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'player'});">互动直播拉流</div>
-                        <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en');reportEvent({name: 'demo-click-web', ext1: 'player'});">多人音视频会议</div>
-        </div>
+        <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/experience-center/homepage/index.html#/home?lang=en&s_url=https%3A%2F%2Ftrtc.tencentcloud.com%2F');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">单击体验</div>
     </div>
     <div class="preview-demo-item style-qrcode">
         <div class="demo-item-header">
