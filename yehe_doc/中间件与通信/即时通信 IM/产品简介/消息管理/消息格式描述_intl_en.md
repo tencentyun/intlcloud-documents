@@ -146,7 +146,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Download_Flag | Number | Flag of the audio download method. Currently, the value of `Download_Flag` must be `2`, which means that the audio content can be downloaded from the URL specified by the `Url` field. |
 
 >?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
-```
+>```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
@@ -155,7 +155,7 @@ When the receiver is an iOS or Android device and the app is working in the back
         "Second": 1         //Audio duration in seconds, in Number type.
     }
 }
-```
+>```
 
 
 ### Image message element
@@ -234,14 +234,14 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 >?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
 >```
->{
->"MsgType": "TIMFileElem",
->"MsgContent": {
->  "UUID": "305c02010", //Unique identifier of the file in String type. This is the key value the client uses to index the file. The file cannot be downloaded through this field. To obtain the file, upgrade the IM SDK to version 4.X.
->  "FileSize": 1773552, //Size of file data in bytes, in Number type.
->  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //File name in String type.
->}
->}
+{
+"MsgType": "TIMFileElem",
+"MsgContent": {
+  "UUID": "305c02010", //Unique identifier of the file in String type. This is the key value the client uses to index the file. The file cannot be downloaded through this field. To obtain the file, upgrade the IM SDK to version 4.X.
+  "FileSize": 1773552, //Size of file data in bytes, in Number type.
+  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //File name in String type.
+}
+}
 >```
 
 
@@ -288,8 +288,8 @@ When the receiver is an iOS or Android device and the app is working in the back
 | ThumbDownloadFlag | Number | Flag of the video thumbnail download method. Currently, the value of `ThumbDownloadFlag` must be 2, which means that the video thumbnail can be downloaded from the URL specified by the `ThumbUrl` field. |
 
 
-?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
-```
+>?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
+>```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
@@ -304,7 +304,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 		"ThumbFormat": "JPG"  //Video thumbnail format in String type, such as JPG or BMP.
     }
 }
-```
+>```
 
 ## MsgBody Examples
 
