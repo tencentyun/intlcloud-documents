@@ -145,8 +145,8 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | Second | Number | 语音时长，单位：秒。 |
 | Download_Flag | Number | 语音下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载语音。 |
 
-?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
-```
+>?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
+>```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
@@ -155,7 +155,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
         "Second": 1         //语音时长，类型为 Number，单位：秒。
    }
 }
-```   
+>```   
 
 
 ### 图像消息元素
@@ -232,7 +232,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | Download_Flag | Number | 文件下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载文件。 |
 
 >?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素如下：
-```
+>```
 {
 "MsgType": "TIMFileElem",
 "MsgContent": {
@@ -241,7 +241,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
   "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //文件名称，类型为 String。
 }
 }
-```
+>```
 
 
 ### 视频消息元素
@@ -287,8 +287,8 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | ThumbDownloadFlag | Number | 视频缩略图下载方式标记。目前 ThumbDownloadFlag 取值只能为2，表示可通过`ThumbUrl`字段值的 URL 地址直接下载视频缩略图。 |
 
 
-?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
-```
+>?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
+>```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
@@ -303,7 +303,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 		"ThumbFormat": "JPG"  //缩略图格式，类型为 String，例如 JPG、BMP 等。
     }
 }
-```
+>```
 
 ## MsgBody 消息内容实例
 
