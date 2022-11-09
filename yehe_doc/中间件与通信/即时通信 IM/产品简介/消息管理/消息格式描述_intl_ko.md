@@ -146,7 +146,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 | Download_Flag | Number | 음성 다운로드 메소드 플래그. 현재 Download_Flag 값은 2만 가능하며 `Url` 필드에 지정된 URL을 통해 바로 음성을 다운로드할 수 있음을 의미합니다. |
 
 >?2.X 및 3.X 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 음성 메시지 요소를 발송합니다.
-```
+>```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
@@ -155,7 +155,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
         "Second": 1         //Number 유형 음성 길이. 단위: 초.
     }
 }
-```
+>```
 
 
 ### 이미지 메시지 요소
@@ -234,14 +234,14 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 >?2.X 및 3.X 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 파일 메시지 요소를 발송합니다.
 >```
->{
->"MsgType": "TIMFileElem",
->"MsgContent": {
->  "UUID": "305c02010", //파일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 파일 인덱스에 사용하는 키 값이며 이 필드를 통해 파일을 다운로드할 수 없습니다. 파일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
->  "FileSize": 1773552, //Number 유형 파일 데이터 크기. 단위: 바이트.
->  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //파일 이름. 유형: String.
->}
->}
+{
+"MsgType": "TIMFileElem",
+"MsgContent": {
+  "UUID": "305c02010", //파일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 파일 인덱스에 사용하는 키 값이며 이 필드를 통해 파일을 다운로드할 수 없습니다. 파일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
+  "FileSize": 1773552, //Number 유형 파일 데이터 크기. 단위: 바이트.
+  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //파일 이름. 유형: String.
+}
+}
 >```
 
 
@@ -290,20 +290,20 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 >?2.X 및 3.X 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 영상 메시지 요소를 발송합니다.
 >```
->{
->    "MsgType": "TIMVideoFileElem",
->    "MsgContent": {
->        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",// 영상의 유일한 식별자로 유형은 String입니다. 클라이언트에서 영상 인덱스에 사용하는 키 값으로 이 필드를 통해 영상을 다운로드할 수 없습니다. 영상을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
->        "VideoSize": 1194603, //영상 데이터 크기. 유형: Number. 단위: 바이트.
->        "VideoSecond": 5,     //영상 길이. 유형: Number. 단위: 초.
->		"VideoFormat": "mp4", //비디오 형식. 유형: String. 예: mp4.
->		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",// 비디오 썸네일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 비디오 썸네일 인덱스에 사용하는 키 값으로 이 필드를 통해 비디오 썸네일을 다운로드할 수 없습니다. 비디오 썸네일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
->		"ThumbSize": 13907,   //썸네일 크기. 유형: Number. 단위: 바이트.
->		"ThumbWidth": 720,    //썸네일 폭. 유형: Number.
->		"ThumbHeight": 1280,  //썸네일 높이. 유형: Number.
->		"ThumbFormat": "JPG"  //썸네일 형식. 유형: String. 예: JPG, BMP 등.
->   }
->}
+{
+    "MsgType": "TIMVideoFileElem",
+    "MsgContent": {
+        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",// 영상의 유일한 식별자로 유형은 String입니다. 클라이언트에서 영상 인덱스에 사용하는 키 값으로 이 필드를 통해 영상을 다운로드할 수 없습니다. 영상을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
+        "VideoSize": 1194603, //영상 데이터 크기. 유형: Number. 단위: 바이트.
+        "VideoSecond": 5,     //영상 길이. 유형: Number. 단위: 초.
+		"VideoFormat": "mp4", //비디오 형식. 유형: String. 예: mp4.
+		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",// 비디오 썸네일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 비디오 썸네일 인덱스에 사용하는 키 값으로 이 필드를 통해 비디오 썸네일을 다운로드할 수 없습니다. 비디오 썸네일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
+		"ThumbSize": 13907,   //썸네일 크기. 유형: Number. 단위: 바이트.
+		"ThumbWidth": 720,    //썸네일 폭. 유형: Number.
+		"ThumbHeight": 1280,  //썸네일 높이. 유형: Number.
+		"ThumbFormat": "JPG"  //썸네일 형식. 유형: String. 예: JPG, BMP 등.
+   }
+}
 >```
 
 ## MsgBody 메시지 콘텐츠 예시
