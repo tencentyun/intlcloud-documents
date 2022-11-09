@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 CI uses the **imageMogr2** API to crop images, including regular cropping, scaling and cropping, cropping to circle, rounded corner cropping, and smart face cropping.
 
 An image can be processed:
@@ -18,12 +18,16 @@ An image can be processed:
 
 #### 1. Processing during download
 
+
 ```plaintext
-download_url?imageMogr2/cut/<width>x<height>x<dx>x<dy>
-                       /crop/<imageSizeAndOffsetGeometry>
-                       /iradius/<radius>
-                       /rradius/<radius>
-                       /scrop/<Width>x<Height>
+GET /<ObjectKey>?imageMogr2/cut/<width>x<height>x<dx>x<dy>
+                           /crop/<imageSizeAndOffsetGeometry>
+                           /iradius/<radius>
+                           /rradius/<radius>
+                           /scrop/<Width>x<Height> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >? Spaces and line breaks above are for readability only and can be ignored.
@@ -76,15 +80,19 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> 
+
 
 
 ## Parameters
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
 | /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 #### Parameters for regular cropping
@@ -113,7 +121,7 @@ Operation name: crop.
 | /crop/x&lt;Height> | Height of the output image with the width unchanged. The value must be greater than 0 and smaller than the height of the input image. |
 | /crop/&lt;Width>x&lt;Height> | Width and height of the output image. The values of width and height should be greater than 0 and smaller than those of the input image, respectively. |
 
-When performing scaling and cropping, you can also use the `gravity` parameter to specify the start position of the operation. For more information, see [Sample 2: Scaling and cropping](#Scaling and cropping).
+When performing scaling and cropping, you can also use the `gravity` parameter to specify the start position of the operation. For more information, see [Scaling and cropping](#Scaling and cropping).
 
 <span id="1"></span>
 
@@ -171,7 +179,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/c
 Input image:
 ![](https://main.qcloudimg.com/raw/becc02d71fb703c2e87ad15e19808bb1.jpeg)
 
-Output:
+Output image:
 ![](https://main.qcloudimg.com/raw/e28696af6be355cc678284b621a7c97b.jpeg)
 
 
@@ -185,7 +193,7 @@ This example shows how to scale and crop an image to 300x400 px by using the cen
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/crop/300x400/gravity/center 
 ```
 
-Output:
+Output image:
 ![](https://main.qcloudimg.com/raw/b9adeff300df483c22765b7d746d6690.jpeg)
 
 #### Sample 3: Cropping to circle
@@ -196,7 +204,7 @@ This example shows how to crop the input image to a circle with the radius of 20
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/iradius/200
 ```
 
-Output:
+Output image:
 ![](https://main.qcloudimg.com/raw/1e449274ea00eebc87454168e7056abc.jpeg)
 
 #### Sample 4: Rounded corner cropping
@@ -205,7 +213,7 @@ This example shows how to crop the input image to rounded corners with the radiu
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rradius/100 
 ```
 
-Output:
+Output image:
 ![](https://main.qcloudimg.com/raw/795e0a3254137a5815b9f9f23cecbb91.jpeg)
 
 

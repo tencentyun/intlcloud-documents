@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 CI uses the **imageMogr2** API to rotate an image by a specified angle or automatically.
 
 An image can be processed:
@@ -19,8 +19,11 @@ An image can be processed:
 #### 1. Processing during download
 
 ```plaintext
-download_url?imageMogr2/rotate/<rotateDegree>
-					   /auto-orient
+GET /<ObjectKey>?imageMogr2/rotate/<rotateDegree>
+			   /auto-orient HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >! Spaces and line breaks above are for readability only and can be ignored.
@@ -66,18 +69,22 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> 
+
 
 
 ## Parameters
 
 | Parameter | Description |
 | ------------------------- | ------------------------------------------------------------ |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
 | /rotate/&lt;rotateDegree> | Rotates an image clockwise by a specified angle. The value can be 0−360. By default, the image is not rotated. |
 | /auto-orient              | Rotates an image automatically according to its EXIF data.         |
-| /flip/&lt;flip&gt;            | Flips an image. Valid values: vertical, horizontal. |
+| /flip/&lt;flip&gt;            | Flips an image. Valid values: `vertical`, `horizontal`. |
 | /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 ## Samples
@@ -93,7 +100,7 @@ This example rotates an image clockwise by 90 degrees:
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rotate/90
 ```
 
-Output:
+Output image:
 ![](https://main.qcloudimg.com/raw/2d47c4f47b8f9c8eca85a3590a106e14.jpeg)
 
 #### Sample 2: Rotating an image by a specified angle with a signature carried

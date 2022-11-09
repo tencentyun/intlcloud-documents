@@ -4,24 +4,27 @@ CI uses the **imageMogr2** API to adjust the quality of an image.
 
 An image can be processed:
 
-- Upon download
-- Upon upload
-- In cloud
+- During download
+- During upload
+- In the cloud
 
 >? This API supports images in JPG, WebP, TPG, HEIF, or AVIF format.
 >
 
-## API Format
+## API Sample
 
-#### 1. Processing upon download
+#### 1. Processing during download
 
 ```plaintext
-download_url?imageMogr2/quality/<Quality>
-                       /rquality/<quality>
-                       /lquality/<quality>
+GET /<ObjectKey>?imageMogr2/quality/<Quality>
+                           /rquality/<quality>
+                           /lquality/<quality> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
-#### 2. Processing upon upload
+#### 2. Processing during upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -65,41 +68,41 @@ Pic-Operations:
 
 
 >? 
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
 ## Parameters
 
-Operation: quality
+Operation name: quality.
 
 | Parameter | Description |
 | ------------------- | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /quality/&lt;Quality>  | Absolute quality of the image. Value range: 0−100. Default value: quality of the input image. The smaller value between the input image quality and the specified quality is used. If there is an exclamation mark (!) after `&lt;Quality&gt;` (for example, `90!`), the specified quality is used. |
-| /rquality/&lt;quality> | Relative quality of the image, relative to that of the input image. Value range: 0−100. For example, if the input image quality is 80 and `rquality` is set to `80`, the quality of the output image is 64 (that is, 80 x 80%). |
-| /lquality/&lt;quality> | The lowest quality of the output image. Value range: 0−100. <br><li>If the input image quality is 85 and `lquality` is set to `80`, the quality of the output image is 85.</li><li>If the input image quality is 60 and `lquality` is set to `80`, the quality of the output image will be improved to 80. </li> |
-| /ignore-error/1 | If this parameter is carried and the image failed to be processed because the image size or the parameter value is too large, the input image will be returned with no error reported. |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
+| /quality/&lt;Quality>  | Absolute quality of the image. The value can be 0–100. Use the value of the original image quality (default) or the specified quality, whichever is smaller. If there is an exclamation mark (!) after &lt;Quality&gt; (such as `90!`), the specified quality value is forcibly used. |
+| /rquality/&lt;quality> | Image quality relative to that of the input image. The value can be 0−100. For example, if the input image quality is 80 and `rquality` is set to `80`, the quality of the output image will be 64 (80 * 80%). |
+| /lquality/&lt;quality> | Minimum quality of the image. Value range: 0−100. <br><li>If the input image quality is 85 and `lquality` is set to 80, the quality of the output image will be 85.</li><li>If the input image quality is 60 and `lquality` is set to 80, the quality of the output image will be improved to 80.</li> |
+| /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 
-## Examples
+## Samples
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
 >
+  
 
-
-#### Example 1: Setting absolute quality
+#### Sample 1: Setting an absolute quality
 
 This example sets the **absolute quality** to 60:
 ```plaintext
 http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?imageMogr2/quality/60
 ```
 
-Output image:
+Output:
 ![](https://main.qcloudimg.com/raw/499501182b2989899116d958f94368a5.jpeg)
 
-#### Example 2: Setting relative quality
+#### Sample 2: Setting a relative quality
 
 This example sets the **relative quality** to 60:
 
@@ -107,24 +110,24 @@ This example sets the **relative quality** to 60:
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rquality/60
 ```
 
-Output image:
+Output:
 ![](https://main.qcloudimg.com/raw/7b111c90aca02d94d0f11991d92e64cb.jpeg)
 
-#### Example 3: Setting the relative quality to 60 with a signature carried
+#### Sample 3. Setting the relative quality to 60 with a signature carried
 
-This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
+This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/rquality/60
 ```
 
->? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
 
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext

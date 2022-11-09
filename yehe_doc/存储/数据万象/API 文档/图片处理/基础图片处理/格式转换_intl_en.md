@@ -3,9 +3,9 @@ CI uses the **imageMogr2** API to perform format conversion, GIF optimization, a
 
 An image can be processed:
 
-- Upon download
-- Upon upload
-- In cloud
+- During download
+- During upload
+- In the cloud
 
 ## Restrictions
 
@@ -15,15 +15,18 @@ An image can be processed:
 
 ## API Format
 
-#### 1. Processing upon download
+#### 1. Processing during download
 
 ```plaintext
-download_url?imageMogr2/format/<Format>
-					   /cgif/<FrameNumber>
-					   /interlace/<Mode>
+GET /<ObjectKey>?imageMogr2/format/<Format>
+			   /cgif/<FrameNumber>
+			   /interlace/<Mode> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
-#### 2. Processing upon upload
+#### 2. Processing during upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -66,8 +69,8 @@ Pic-Operations:
 
 
 >? 
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
@@ -75,39 +78,39 @@ Pic-Operations:
 
 | Parameter | Description |
 | -------------------- | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /format/<Format> | Converts the image format. The target format can be JPG, BMP, GIF, PNG, WebP, or YJPEG (a JPEG-based format optimized by CI). Default format: format of the input image |
-| /cgif/&lt;FrameNumber&gt; | Optimizes a GIF image by reducing the number of frames and colors. Valid values of `FrameNumber`: <li>`1`: cuts the input GIF to the default number of frames (30). If the original number of frames is greater than 30, the exceeded frames will be cut. </li><li>(1,100]: compresses the image to the specified number of frames. </li>|
-| /interlace/&lt;Mode> | Progressive mode of the output JPG image. Valid values: <br>`0` (default): disables the progressive mode. <br>`1`: enables the progressive mode. <br>This parameter takes effect only when the output image is in JPG format. Otherwise, this parameter will be ignored. |
-| /ignore-error/1 | If this parameter is carried and the image failed to be processed because the image size or the parameter value is too large, the input image will be returned with no error reported. |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
+| /format/&lt;Format>  | Converts the image format. The target format can be JPG, BMP, GIF, PNG, WebP, or YJPEG (which is optimized based on JPEG and is essentially JPG). The default format is the format of the input image. |
+| /cgif/&lt;FrameNumber&gt;  | Optimizes images in the GIF format by reducing frames and colors of images. There are two cases: <li>FrameNumber=1: Cut the input GIF to the default number of frames (30). If the original number of frames is greater than 30, excessive frames will be cut. </li><li>FrameNumber=(1,100]: Compress the image to the specified number of frames (`FrameNumber`).</li> |
+| /interlace/&lt;Mode> | Progressive mode of the output JPG image. Valid values: <br>`0` (default value): Disables the progressive mode. <br>`1`: Enables the progressive mode. <br>This parameter takes effect only when the output image is in JPG format. |
+| /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 
-## Examples
+## Samples
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
 >
 
 
-#### Example 1: Converting a JPEG image into PNG format
+#### Sample 1: Converting a JPEG image to PNG format
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/format/png
 ```
 
-#### Example 2: Converting a JPEG image into PNG format with a signature carried
+#### Sample 2: Converting a JPEG image to PNG format with a signature carried
 
-This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
+This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/format/png
 ```
 
->? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext
@@ -115,4 +118,4 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algor
 ```
 
 
-​	
+	

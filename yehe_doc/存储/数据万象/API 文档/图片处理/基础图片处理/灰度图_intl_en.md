@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 
 CI uses the **imageMogr2/grayscale** API to set an image to be a grayscale image.
 
@@ -7,7 +7,10 @@ CI uses the **imageMogr2/grayscale** API to set an image to be a grayscale image
 #### 1. Processing during download
 
 ```plaintext
-download_url?imageMogr2/grayscale/<value>
+GET /<ObjectKey>?imageMogr2/grayscale/<value> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 2. Processing during upload
@@ -54,7 +57,7 @@ Operation name: grayscale.
 
 | Parameter | Description |
 | --------------------- | ------------------------------------------------------------ |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
 | /grayscale/&lt;value> | Whether to set an image to be a grayscale image. <br>Valid values of the `value` field: 0 (no), 1 (yes). |
 | /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
@@ -71,7 +74,7 @@ This example sets an image to be a grayscale image:
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/grayscale/1
 ```
 
-Output:
+Output image:
 
 ![img](http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/grayscale/1)
 

@@ -137,7 +137,7 @@
 <td>Supported policy-level data for content moderation</td>
 <td>The system can display the data such as moderation details and statistics by moderation policy.</td>
 <td>April 21, 2022</td>
-<td><a href="https://cloud.tencent.com/document/product/236/53253">Setting a Moderation Policy</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/39794">Setting a Moderation Policy</a></td>
 </tr>
 </tbody></table>
 

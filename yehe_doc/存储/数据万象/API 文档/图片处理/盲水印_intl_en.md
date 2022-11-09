@@ -1,32 +1,32 @@
-## Feature Overview
+## Overview
 
-Blind watermarking is a brand-new watermarking feature launched by CI. It allows you to add a watermark to the input image information without displaying the watermark or significantly affecting the image quality. If you think your image might have been stolen, you can extract the blind watermark from the suspected image to check whether the image belongs to you.
+Blind watermarking is a brand-new watermarking feature based on Tencent Cloud CI. It allows you to add a watermark to the input image information without displaying the watermark or significantly affecting the image quality. If you think your image might have been stolen, you can extract the blind watermark from the suspected image to check whether the image belongs to you.
 
 You can call this API to:
 <ul  style="margin: 0;">
-	<li>Add a blind watermark to an image upon upload.</li>
-	<li>Add a blind watermark to an image upon download.</li>
+	<li>Add a blind watermark to an image during upload.</li>
+	<li>Add a blind watermark to an image during download.</li>
 	<li>Add a blind watermark to an image stored in COS.</li>
 </ul>
-You can also extract the blind watermark from a watermarked image.
+You can also extract a blind watermark (if any) from an image.
 
 
-CI introduces three blind watermarking types: semi-blind watermarking, perfectly blind watermarking, and text blind watermarking.
+CI's blind watermark comes in three types: semi-blind watermark, blind watermark, and text blind watermark:
 
-| Blind Watermarking Type | Feature | Applicable Scenario |
+| Type | Feature | Use Case |
 | ----------------- | ----------------------------------------- | ----------------------- |
-| Semi-blind watermarking (type 1) | Has strong anti-theft effects but requires the input image for watermark extraction | Images smaller than 640x640 |
-| Perfectly blind watermarking (type 2) | Is easy to extract and requires only the watermarked image for watermark extraction | Batch adding and verification  |
-| Text blind watermarking (type 3) | Adds text to the image | Adding terminal information  |
+| Semi-blind watermark (type 1) | Has strong anti-theft effects but requires the input image for watermark extraction | Images smaller than 640x640 px |
+| Blind watermark (type 2) | Is easy to extract and requires only the image watermark itself for watermark extraction | Batch adding and verification  |
+| Text blind watermark (type 3) | Adds text to the image | Adding terminal information  |
 
-Blind watermarking is a paid service, which need to be enabled on the bucket configuration page and then can be used properly. When you first use this feature, you will receive a free 6,000-time resource pack with a two-month validity period by CI. You are charged for the excess beyond the free tier or when the pack expires. For detailed pricing, see Image Processing Fees.
+Blind watermarking is a paid service, which needs to be activated on the bucket's configuration page. When this service is used for the first time under an account, CI will issue a free resource pack of 6,000 times valid for two months, and any excessive usage and usage after the resource pack expires will be billed. For detailed pricing, see [Image Processing Fees](https://intl.cloud.tencent.com/document/product/1045/45582).
 
 >?
 > - Currently, you cannot add a blind watermark to animated images such as GIF.
 > - Both the width and height of the image watermark must not be greater than 1/8 of the input image.
 > - You need to choose a white watermark with a black background for the effect of blind watermarking.
 > - Text watermarks can contain digits and letters.
-> - Blind watermarking protects your images against various theft attacks such as cropping, smudging, and color change. The anti-theft effect is affected by the size of the input image and the attack intensity. For details, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+> - Blind watermarking can protect against different kinds of image theft attacks such as clipping, smudging, and color change. The anti-theft effect is subject to the original image size and the attack intensity. For more information, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 > 
 
 ## Use Cases
@@ -35,21 +35,21 @@ Blind watermarking is a paid service, which need to be enabled on the bucket con
 
 By adding semi-blind watermarks to your images, you can claim your images when they are stolen and extract blind watermarks using the corresponding input images to prove that you own the images.
 
-### Checking duplicates upon upload
+### Duplicate check during upload
 
-Sometimes, other users might upload duplicate images (such as real estate images, car images, and product images). To solve this problem, you can perform perfectly blind watermark extraction before the upload, and if you can extract a blind watermark from an image, it has been uploaded before. In this case, you can perform corresponding operations, such as telling the user not to upload duplicate images. If an image does not contain a blind watermark, you can add one to it to prevent duplicate uploads.
+Sometimes, other users might upload duplicate images (such as real estate images, car images, and product images). To solve this problem, you can perform blind watermark extraction before the upload, and if you can extract a blind watermark from an image, it has been uploaded before. In this case, you can perform corresponding operations, such as telling the user not to upload duplicate images. If an image does not contain a blind watermark, you can add one to it to prevent duplicate uploads.
 
-### Avoiding image leakage
+### Image disclosure avoidance
 
-For internal images, you can add information about the requester to the images by using text blind watermarks. In this way, when an image is leaked, you can extract the blind watermark and get information about the leaker.
+For internal images, you can add information about the requester to the images by using text blind watermarks. In this way, when an image is disclosed, you can extract the blind watermark and get information about the disclosing party.
 
 
 
-## Adding Blind Watermarks
+## Adding Blind Watermark
 
-### Request 1: adding a blind watermark upon upload
+### Request 1: Adding a blind watermark during upload
 
-The request is the same as that in a [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) call, except that you need to add the image processing parameter `Pic-Operations` to the request header and use blind watermarking parameters.
+The request for adding a blind watermark to an image during upload is the same as that in a [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) call, except that you need to add the image processing parameter `Pic-Operations` to the request header and use the blind watermark parameter.
 
 #### Sample request
 
@@ -65,28 +65,28 @@ Pic-Operations: <PicOperations>
 
 
 >? 
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
 
-This API uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 Add the image processing parameter `Pic-Operations` (a JSON string) to the request header. Its parameters are as follows:
 
-| Parameter | Description | Type | Required |
+| Parameter Name | Description | Type | Required | 
 | ----------- | ----- | ---- | ------------------------------------------------------------ |
-| is_pic_info | Whether to return the input image information <br>`0` (default): no <br>`1`: yes | Int | No |
-| rules       | Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No       |
+| is_pic_info | Whether to return the input image information. Valid values: `0` (no), `1` (yes). Default value: `0`. | Int   | No   |
+| rules       |  Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. |Array | No   |
 
 Parameters of `rules` (a JSON array) are as follows:
 
-| Parameter | Description | Type | Required |
+| Parameter | Description | Type | Required | 
 | -------- | ------ | ----- | ------------------------------------------------------------ |
-| bucket | Name of the destination bucket to store the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. | String | No |
-| fileid   | The path and name of the output file <br>The rules for setting this parameter are as follows (assume that the input file is stored in `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` is created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash. Otherwise, an empty filename will be generated.    | String | Yes |
-| rule | Processing parameters. For more information, see the image processing API. To process an image using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. | String | Yes | 
+| bucket   | Name of the destination bucket to store the results in the format of `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket by default. | String | No       |
+| fileid   | Storage path and name of the output file. <br>Naming rules are as follows (assume the input file is `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` will be created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash; otherwise, an empty filename will be generated.    | String | Yes |
+| rule | Processing parameters. For more information, see the image processing API. To process an image by using a specified style, the value must start with `style/`, with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. | String | Yes |
 
 To use blind watermarking, add the watermarking parameter `watermark` to `rule` as follows:
 
@@ -98,15 +98,15 @@ The parameters are as follows:
 
 | Parameter | Description | Type | Required |
 | ----- | ------ | ---- | ------------------------------------------------------------ |
-| type         | Blind watermarking type. Valid values: `1` (semi-blind watermarking), `2` (perfectly blind watermarking), `3` (text blind watermarking) | Int    | Yes |
-| image | URL of the blind image watermark, which must be URL-safe Base64 encoded. This parameter is required if `type` is set to `1` or `2`, and does not take effect if `type` is set to `3`. The image watermark must:<br>1. Be stored in the same bucket as the input image. <br>2. Have a URL that starts with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, the following watermark URLs are invalid: <li> `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png` </li><li>`https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png`</li> | String | No  |
-| text  | Text watermark, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `3` and does not take effect if `type` is set to `1` or `2`. |String |  No  |
-| level    | Perfectly blind watermarking level, which only takes effect when `type` is set to `2`. Valid values: `1` (default), `2`, `3`. The larger the value, the better the watermarking effects. | Int  |  No |
+| type         | Blind watermark type. Valid values: `1` (semi-blind watermark), `2` (blind watermark), `3` (text blind watermark). | Int    | Yes |
+| image | URL of the blind watermark image, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `1` or `2` and does not take effect if `type` is set to `3`. The image watermark must: <br>1. Be stored in the same bucket as the input image. <br>2. Have a URL that starts with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, the following watermark URLs are invalid: <li> examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png </li><li>https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png</li> | String | No  |
+| text  | Blind watermark text, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `3` and does not take effect if `type` is set to `1` or `2`. | String |  No  |
+| level    | Blind watermark level, which only takes effect if `type` is set to `2`. Valid values: `1` (default value), `2`, `3`. The larger the value, the better the blind watermarking effect. | Int  |  No |
 
 
 #### Request parameters
 
-This API has no request parameter.
+This API has no request parameters.
 
 
 #### Request body
@@ -119,7 +119,7 @@ The request body of this API is the content of the input image.
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 
 #### Response body
@@ -128,28 +128,28 @@ Parameters in the response body are as follows:
 
 | Parameter | Description | Type |
 | ------------------------- | ------------------ | --------- |
-| UploadResult              | Upload results | Container |
+| UploadResult              | Input image information | Container |
 
 Content of `UploadResult`: 
-
+ 
 | Parameter | Description | Type |
 | ------------------------- | ------------------ | --------- |
-| OriginalInfo              | Information about the input image     | Container |
-| ProcessResults            | Processing results    | Container |
+| OriginalInfo              | Input image information     | Container |
+| ProcessResults            | Image processing result    | Container |
 
 Content of `OriginalInfo`:
 
-| Parameter | Description | Type |
+| Node Name | Description | Type |
 | ------------------------- | ------------------ | --------- |
-| Key     | Name of the input image      | String    |
-| Location | Image location  | String    |
-| ImageInfo                 | Information about the input image | Container |
+| Key     | Input image name     | String    |
+| Location | Image path | String    |
+| ImageInfo                 | Input image information       | Container |
 
 Content of `ImageInfo`:
 
-| Parameter | Description | Type |
+| Node Name | Description | Type |
 | ------------------------- | ------------------ | --------- |
-| Format                    | Image format  | String    |
+| Format                    | Format  | String    |
 | Width                     | Image width      | Int       |
 | Height                    | Image height       | Int       |
 | Quality                   | Image quality         | Int       |
@@ -158,16 +158,16 @@ Content of `ImageInfo`:
 
 Content of `ProcessResults`:
 
-| Parameter | Description | Type |
+| Node Name | Description | Type |
 | ------------------------- | ------------------ | --------- |
-| Object                    | Processing results of each image | Container |
+| Object                    | Processing result of each image | Container |
 
 Content of `Object`:
 
-| Parameter | Description | Type |
+| Node Name | Description | Type |
 | ------------------------- | ------------------ | --------- |
 | Key  | Filename | String  |
-| Location | Image location  | String    |
+| Location | Image path | String    |
 | Format  | Image format  | String  |
 | Width                     | Image width      | Int       |
 | Height                    | Image height       | Int       |
@@ -178,7 +178,7 @@ Content of `Object`:
 
 
 
-### Example
+### Samples
 
 #### Request
 
@@ -239,40 +239,43 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 ```
 
 >!
-> - [Object Content] in the request body is the binary string of the input image, and `imageUrl` in `rule` in the request header `Pic-Operations` is the URL of the image watermark.
-> - `Location` in `ProcessResults` in the response body is the URL of the image with a blind watermark.
+> - The [Object Content] field in the request body is the binary string of the input image, and `imageUrl` in `rule` in the request header `Pic-Operations` is the URL of the watermark image.
+> - The `Location` field in `ProcessResults` in the response body is the URL of the image with a blind watermark.
 >
 
 
-### Request 2: adding a blind watermark upon download
+### Request 2: Adding a blind watermark during download
 
-You can add a blind watermark upon download in the same way as adding a regular watermark, except that you need to use the `watermark` parameter after the image URL.
+You can add a blind watermark during download in the same way as adding a regular watermark, except that you need to add the `watermark` parameter after the image URL.
 
 #### Sample request
 
-```shell
-download_url?watermark/3/type/<type>/image/<imageUrl>/text/<text>
+```plaintext
+GET /<ObjectKey>?watermark/3/type/<type>/image/<imageUrl>/text/<text> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### Request parameters
 
 The request parameters are as follows:
 
-| Parameter | Description | Type |Required |
+| Parameter | Description | Type | Required |
 | ------------ | ------------------------------------------------------------ | ------ | -------- |
-| download_url | URL of the input image, formatted as http(s)://`<BucketName-APPID>.cos.<Region>.myqcloud.com/<picture name>`. Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |  String  | Yes  |
-| type         | Blind watermarking type. Valid values: `1` (semi-blind watermarking), `2` (perfectly blind watermarking), `3` (text blind watermarking) | Int    | Yes |
-| image | URL of the blind image watermark, which must be URL-safe Base64 encoded. This parameter is required if `type` is set to `1` or `2`, and does not take effect if `type` is set to `3`. The image watermark must:<br>1. Be stored in the same bucket as the input image. <br>2. Have a URL that starts with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, the following watermark URLs are invalid: <li> `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png` </li><li>`https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png`</li> | String | No  |
-| text  | Text watermark, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `3` and does not take effect if `type` is set to `1` or `2`. |String |  No  |
-| level    | Perfectly blind watermarking level, which only takes effect when `type` is set to `2`. Valid values: `1` (default), `2`, `3`. The larger the value, the better the watermarking effects. | Int  |  No |
+| ObjectKey | Object name, such as `folder/sample.jpg`. | String  | Yes |
+| type         | Blind watermark type. Valid values: `1` (semi-blind watermark), `2` (blind watermark), `3` (text blind watermark). | Int    | Yes |
+| image | URL of the blind watermark image, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `1` or `2` and does not take effect if `type` is set to `3`. The image watermark must: <br>1. Be stored in the same bucket as the input image. <br>2. Have a URL that starts with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, the following watermark URLs are invalid: <li> examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png </li><li>https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png</li> | String | No  |
+| text  | Blind watermark text, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `3` and does not take effect if `type` is set to `1` or `2`. | String |  No  | 
+| level    | Blind watermark level, which only takes effect if `type` is set to `2`. Valid values: `1` (default value), `2`, `3`. The larger the value, the better the blind watermarking effect. | Int  |  No |
 
-### Example
+### Samples
 
 ```shell
 https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/3/type/3/text/dGVuY2VudCBjbG91ZA==
 ```
 
-### Request 3: adding a blind watermark to an image stored in COS
+### Request 3: Adding a blind watermark to an image stored in COS
 
 You can call this API to add a blind watermark to an image stored in COS and save the result to COS.
 
@@ -287,28 +290,28 @@ Pic-Operations: <PicOperations>
 ```
 
 >? 
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
 
-This API uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 Add the image processing parameter `Pic-Operations` (a JSON string) to the request header. Its parameters are as follows:
 
 | Parameter | Description | Type | Required |
 | ----------- | ------------------------------------------------------------ | ----- | -------- |
-| is_pic_info | Whether to return the input image information <br>`0` (default): no <br>`1`: yes    | Int   | No       |
-| rules       | Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No       |
+| is_pic_info | Whether to return the input image information. Valid values: `0` (no), `1` (yes). Default value: `0`. | Int   | No   |
+| rules       |  Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No   |
 
 Parameters of `rules` (a JSON array) are as follows:
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| bucket | Name of the destination bucket to store the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. | String | No |
-| fileid   | The path and name of the output file <br>The rules for setting this parameter are as follows (assume that the input file is stored in `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` is created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash. Otherwise, an empty filename will be generated.    | String | Yes |
-| rule | Processing parameters. For more information, see the image processing API. To process an image using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. | String | Yes | 
+| bucket   | Name of the destination bucket to store the results in the format of `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket by default. | String | No       |
+| fileid   | Storage path and name of the output file. <br>Naming rules are as follows (assume the input file is `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` will be created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash; otherwise, an empty filename will be generated.    | String | Yes |
+| rule | Processing parameters. For more information, see the image processing API. To process an image by using a specified style, the value must start with `style/`, with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. | String | Yes |
 
 To use blind watermarking, add the watermarking parameter `watermark` to `rule` as follows:
 
@@ -318,17 +321,17 @@ watermark/3/type/<type>/image/<imageUrl>/text/<text>/level/<level>
 
 The parameters are as follows:
 
-| Parameter | Description | Type |Required |
+| Parameter | Description | Type | Required |
 | ----- | ------------------------------------------------------------ | ------ | -------- |
-| type         | Blind watermarking type. Valid values: `1` (semi-blind watermarking), `2` (perfectly blind watermarking), `3` (text blind watermarking) | Int    | Yes |
-| image | URL of the blind image watermark, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `1` or `2`, and does not take effect if `type` is set to `3`. The image watermark must:<br>1. Be stored in the same bucket as the input image. <br>2. Have a URL that starts with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, the following watermark URLs are invalid: <li> `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png` </li> <li>`https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png`</li> | String | No  |
-| text  | Text watermark, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `3` and does not take effect if `type` is set to `1` or `2`. |String |  No  |
-| level    | Perfectly blind watermarking level, which only takes effect when `type` is set to `2`. Valid values: `1` (default), `2`, `3`. The larger the value, the better the watermarking effects. | Int  |  No |
+| type         | Blind watermark type. Valid values: `1` (semi-blind watermark), `2` (blind watermark), `3` (text blind watermark). | Int    | Yes |
+| image | URL of the blind watermark image, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `1` or `2` and does not take effect if `type` is set to `3`. The image watermark must: <br>1. Be stored in the same bucket as the input image. <br>2. Have a URL that starts with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, the following watermark URLs are invalid: <li> examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png</li> <li>https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png</li> | String | No  |
+| text  | Blind watermark text, which must be URL-safe Base64-encoded. This parameter is required if `type` is set to `3` and does not take effect if `type` is set to `1` or `2`. | String |  No  |
+| level    | Blind watermark level, which only takes effect if `type` is set to `2`. Valid values: `1` (default value), `2`, `3`. The larger the value, the better the blind watermarking effect. | Int  |  No |
 
 
 #### Request parameters
 
-This API has no request parameter.
+This API has no request parameters.
 
 
 #### Request body
@@ -341,7 +344,7 @@ This API does not have a request body.
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 
 #### Response body
@@ -350,28 +353,28 @@ Parameters in the response body are as follows:
 
 | Parameter | Description | Type |
 | ------------ | -------- | --------- |
-| UploadResult              | Upload results | Container |
+| UploadResult              | Input image information | Container |
 
 Content of `UploadResult`: 
 
 | Parameter | Description | Type |
 | -------------- | ------------ | --------- |
-| OriginalInfo              | Information about the input image     | Container |
-| ProcessResults            | Processing results    | Container |
+| OriginalInfo              | Input image information     | Container |
+| ProcessResults            | Image processing result    | Container |
 
 Content of `OriginalInfo`: 
 
-| Parameter | Description | Type |
+| Node Name | Description | Type |
 | --------- | ------------ | --------- |
-| Key      | Name of the input image      | String    |
-| location       | Location of the input image | String  |
-| ImageInfo                 | Information about the input image | Container |
+| Key     | Input image name     | String    |
+| Location | Image path | String    |
+| ImageInfo                 | Input image information       | Container |
 
 Content of `ImageInfo`: 
 
-| Parameter | Description | Type |
+| Node Name | Description | Type |
 | ----------- | ------------ | ------ |
-| Format      | Image format | String |
+| Format  | Format  | String  |
 | Width                     | Image width      | Int       |
 | Height                    | Image height       | Int       |
 | Quality                   | Image quality         | Int       |
@@ -380,17 +383,17 @@ Content of `ImageInfo`:
 
 Content of `ProcessResults`:
 
-| Parameter | Description | Type |
+| Node Name | Description | Type |
 | -------- | ------------------ | --------- |
-| Object                    | Processing results of each image | Container |
+| Object                    | Processing result of each image | Container |
 
 Content of `Object`:
 
-| Parameter | Description | Type |
+| Node Name | Description | Type |
 | -------- | -------- | ------ |
 | Key  | Filename | String  |
-| location       | Location of the input image | String  |
-| Format      | Image format | String |
+| Location | Image path | String    |
+| Format  | Image format  | String  |
 | Width                     | Image width      | Int       |
 | Height                    | Image height       | Int       |
 | Size                      | Image size   | Int       |
@@ -399,7 +402,7 @@ Content of `Object`:
 
 
 
-### Example
+### Samples
 
 #### Request
 
@@ -457,13 +460,13 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 </UploadResult>
 ```
 
-## Extracting Blind Watermarks
+## Extracting Blind Watermark
 
-### Example 1: Extracting upon upload
+### Request 1: Extracting a blind watermark during upload
 
 #### Sample request
 
-The request for uploading an image with the blind watermark extracted is the same as that in a [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) call, except that you need to add the image processing parameter `Pic-Operations` to the request header and use the watermark extraction parameter `watermark/4`.
+The request for uploading an image with the blind watermark extracted is the same as that in a [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) call, except that you need to add the image processing parameter `Pic-Operations` to the request header and use the blind watermark extraction parameter `watermark/4`.
 
 ```shell
 PUT /<ObjectKey> HTTP/1.1
@@ -476,30 +479,30 @@ Pic-Operations: <PicOperations>
 ```
 
 >? 
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
 
-This API uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 Add the image processing parameter `Pic-Operations` (a JSON string) to the request header. Its parameters are as follows:
 
 | Parameter | Description | Type | Required |
 | :---------- | :----------------------------------------------------------- | :---- | :------- |
-| is_pic_info | Whether to return the input image information <br>`0` (default): no <br>`1`: yes    | Int   | No       |
-| rules       | Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No       |
+| is_pic_info | Whether to return the input image information. Valid values: `0` (no), `1` (yes). Default value: `0`. | Int   | No   |
+| rules       |  Processing rules (up to five rules are supported). Each rule corresponds to one processing result. If this parameter is not specified, images will not be processed. | Array | No   |
 
 Parameters of `rules` (a JSON array) are as follows:
 
 | Parameter | Description | Type | Required |
 | :------- | :----------------------------------------------------------- | :----- | :------- |
-| bucket | Name of the destination bucket to store the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. | String | No |
-| fileid   | The path and name of the output file <br>The rules for setting this parameter are as follows (assume that the input file is stored in `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` is created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash. Otherwise, an empty filename will be generated.    | String | Yes |
-| rule | Processing parameters. For more information, see the image processing API. To process an image using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. | String | Yes | 
+| bucket   | Name of the destination bucket to store the results in the format of `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket by default. | String | No       |
+| fileid   | Storage path and name of the output file. <br>Naming rules are as follows (assume the input file is `/p1/test1.jpg`):<br>1. A value starting with a slash (/) indicates an absolute path. For example, if `fileid` is set to `/p2/test2.jpg`, the `test2.jpg` file will be stored in the `p2` folder. <br>2. A value not starting with a slash indicates a relative path. For example, if `fileid` is set to `p2/test2.jpg`, a folder named `p2` will be created in the `p1` folder, and the `test2.jpg` file will be stored in the `p2` folder.<br>3. Note: Do not end the value with a slash; otherwise, an empty filename will be generated.    | String | Yes |
+| rule | Processing parameters. For more information, see the image processing API. To process an image by using a specified style, the value must start with `style/`, with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. | String | Yes |
 
-To extract a blind watermark, you need to add the `watermark` parameter to `rule` as follows:
+To extract a blind watermark, add the watermarking parameter `watermark` to `rule` as follows:
 
 ```shell
 watermark/4/type/<type>/image/<imageUrl>
@@ -507,18 +510,18 @@ watermark/4/type/<type>/image/<imageUrl>
 
 The parameters are as follows:
 
-| Parameter | Description | Type |Required |
+| Parameter | Description | Type | Required |
 | :---- | :----------------------------------------------------------- | :----- | :------- |
-| type         | Blind watermarking type. Valid values: `1` (semi-blind watermarking), `2` (perfectly blind watermarking), `3` (text blind watermarking). **The value must be the same as that used when the blind watermark was added**. | Int    | Yes |
-| image | Image URL, which should be specified according to the value of `type`. If the value of `type` is: <br><li>`1`, `image` is required and is the URL of the input image. <br><li>`2`, `image` is required and is the URL of the image watermark. <br><li>`3`, `image` does not need to be specified and will not take effect. <br>The value of `image` must be URL-safe Base64-encoded, and the image must: <br>1. Be stored in the same bucket as the image with the blind watermark. <br>2. Have a URL that starts with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, the following watermark URLs are invalid: <li> `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png`</li><li>`https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png`</li> | String | No  |
+| type         | Blind watermark type. Valid values: `1` (semi-blind watermark), `2` (blind watermark), `3` (text blind watermark). **The value must be the same as that used when the blind watermark was added**. | Int    | Yes |
+| image | Image URL, which should be specified according to the value of `type`. <br><li>If `type` is `1`, `image` is required and is the URL of the input image. <br><li>If `type` is `2`, `image` is required and is the URL of the watermark image. <br><li>If `type` is `3`, `image` is invalid and does not need to be entered. <br>The value of `image` must be URL-safe Base64-encoded, and the image must: <br>1. Be stored in the same bucket as the image with the blind watermark. <br>2. Have a URL that starts with `http://`. Note that "http://" cannot be omitted or changed to "https://". For example, the following watermark URLs are invalid: <li> examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png </li><li>https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png</li> | String | No  |
 
 #### Request parameters
 
-This API has no request parameter.
+This API has no request parameters.
 
 #### Request body
 
-The request body of the API is the binary string of the image.
+The request body of this API is the image content.
 
 
 
@@ -526,17 +529,17 @@ The request body of the API is the binary string of the image.
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-`WatermarkStatus` will be added to the `UploadResult.ProcessResults.Object` node only if `type` is set to `2` in the request body of the blind watermark extraction request.
+`WatermarkStatus` will be added to the `UploadResult.ProcessResults.Object` field in the response body only if `type` is set to `2` in the body of the blind watermark extraction request.
 
 | Parameter | Parent Node | Description | Type |
 | :-------------- | :----- | :----------------------------------------------------------- | :--- |
-| WatermarkStatus | Object | This parameter is returned if `type` is set to `2` to indicate the confidence of the watermark extracted. Value range: 0–100. <br>If the value is greater than 75, there is a blind watermark. <br>If the value falls in the range of 60−75, there is a suspected blind watermark. <br>If the value is smaller than 60, no blind watermark is extracted. | Int  |
+| WatermarkStatus | Object | This field will be returned if `type` is set to `2` to indicate the confidence of the extracted blind watermark. Value range: 0–100. If the value is above 75, there is a confirmed blind watermark. If the value is between 60 and 75, there is a suspected blind watermark. If the value is below 60, no blind watermark is extracted. | Int  |
 
-### Example
+### Samples
 
 #### Request
 
@@ -600,13 +603,13 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 ```
 
 >!
->- If `type` is set to `1` in the request, `imageUrl` in `rule` in `Pic-Operations` is the URL of the input image without a blind watermark added. If `type` is set to `2` in the request, `imageUrl` is the URL of the image watermark.
->- `url` in `ProcessResults` in the response body is the URL of the image watermark extracted.
+>- If `type` is set to `1` in the request, `imageUrl` in the `rule` field in the `Pic-Operations` request header will be the URL of the input image without a blind watermark added. If `type` is set to `2` in the request, `imageUrl` will be the URL of the watermark image.
+>- `url` in the `ProcessResults` field in the response body is the URL of the extracted watermark image.
 >
 
 
-### Example 2: Extracting from an image stored in COS
+### Request 2: Extracting a blind watermark from an image stored in COS
 
-The request for extracting a blind watermark from an image stored in COS is the same as that used to [Process In-Cloud Data](https://intl.cloud.tencent.com/document/product/436/40592), except that you need to add the image processing parameter `Pic-Operations` to the request header and use the watermark extraction parameter `watermark/4`.
+The request for extracting a blind watermark from an image stored in COS is the same as that used to process in-cloud data as instructed in [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592), except that you need to add the image processing parameter `Pic-Operations` to the request header and use the blind watermark extraction parameter `watermark/4`.
 
-​	
+	

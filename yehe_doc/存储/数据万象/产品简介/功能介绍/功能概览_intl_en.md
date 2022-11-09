@@ -133,7 +133,7 @@ Cloud Infinite (CI) provides the following features:
       <td>Accurately recognizes video content and automatically outputs multidimensional content tags by analyzing the visuals, scenes, behaviors, and objects in a video based on multimodal information fusion and alignment technologies.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/80055">Video quality scoring</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/51257">Video quality scoring</a></td>
       <td>Comprehensively analyzes the video clarity, signal-to-noise ratio, color, brightness, and other parameters and outputs a video quality score through no-reference image quality assessment</td>
    </tr>
    <tr>

@@ -198,7 +198,7 @@ def ci_get_asr_template():
     ]
 }
 ```
-For more information on response fields, see the response in [DescribeTemplates](https://cloud.tencent.com/document/product/460/78941).
+For more information on response fields, see the response in [DescribeTemplates](https://intl.cloud.tencent.com/document/product/1045/51271).
 
 ### Modifying template
 

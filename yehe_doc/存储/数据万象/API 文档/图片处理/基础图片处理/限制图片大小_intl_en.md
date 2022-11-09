@@ -5,17 +5,23 @@ CI uses the **imageMogr2/size-limit** API to limit the size of an output image, 
 
 ## Restrictions
 
-- Format: Currently, JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
-- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For an animated input image, the total number of pixels (width * height * number of frames) cannot exceed 250 million.
-- Frames (for animated images): For GIF images, the number of frames cannot exceed 300.
-
+- Format: The API for limiting the image size is supported only for JPG images.
+- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively.
 
 
 ## API Sample
 
 ```plaintext
-download_url?imageMogr2/size-limit
+GET /<ObjectKey>?imageMogr2/size-limit HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+
 
 ## Parameters
 
@@ -23,7 +29,7 @@ Operation name: size-limit.
 
 | Parameter | Description |
 | :-------------- | :----------------------------------------------------------- |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>; for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           |
 | size-limit | Limits the size of the output image. The unit can be `k` (KB) or `m` (MB). <br>1. Only JPG images are supported. <br>2. Appending an exclamation mark (!) means to compare the sizes of the input and output images. If the output image is smaller, the output image will be returned; otherwise, the input image will be returned; for example,  `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpg?imageMogr2/size-limit/15k!`. <br>3. We recommend you use this parameter together with `strip` to remove redundant image metadata, for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpg?imageMogr2/strip/format/png/size-limit/15k!`. |
 | /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 

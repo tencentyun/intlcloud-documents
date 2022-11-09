@@ -18,6 +18,8 @@ This API is used to update an image processing queue.
     </div>
 </div>
 
+
+
 ## Request
 
 #### Sample request
@@ -35,12 +37,12 @@ Content-Type: application/xml
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -79,17 +81,20 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | :--------------- | :------- | :------------------------------ | :-------- | -------- | ------ | ----- |
-| State        | Request.NotifyConfig | Callback status: `Off` or `On`. | String | No                 | Off  | None |
-| Type         | Request.NotifyConfig | Callback type         | String | Yes if `State` is `On` | None   | General callback: `Url` |
-| Url          | Request.NotifyConfig | Callback URL         | String | Yes if `State` is `On` | None   | None |
+| State        | Request.NotifyConfig | Callback status: `Off` or `On`. | String | No                 | Off  | On/Off |
 | Event        | Request.NotifyConfig | Callback event         | String | Yes if `State` is `On`  | None   | Job completion: `TaskFinish`; workflow completion: `WorkflowFinish`. |
 | ResultFormat | Request.NotifyConfig | Callback format         | String | No | XML   | JSON/XML |
+| Type         | Request.NotifyConfig | Callback type         | String | Yes if `State` is `On` | None   | `Url` or `TDMQ` |
+| Url          | Request.NotifyConfig | Callback address         | String | Yes if `State` is `On` and `Type` is `Url` | None   | The callback address cannot be a private network address. |
+| MqMode       | Request.NotifyConfig | TDMQ queue mode    | String | Yes if `State` is `On` and `Type` is `TDMQ` | Queue | Topic: Topic subscription <br/>Queue: Queue service </td> |
+| MqRegion     | Request.NotifyConfig | TDMQ region    | String | Yes if `State` is `On` and `Type` is `TDMQ` | None   | Valid values: `sh` (Shanghai), `bj` (Beijing), `gz` (Guangzhou), `cd` (Chengdu), `hk` (Hong Kong, China). |
+| MqName       | Request.NotifyConfig | TDMQ topic name    | String | Yes if `State` is `On` and `Type` is `TDMQ` | None   | None |
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352). 
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610). 
 
 #### Response body
 
@@ -119,7 +124,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
@@ -144,7 +149,7 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
 ## Samples
 

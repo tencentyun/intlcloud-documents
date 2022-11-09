@@ -3,27 +3,30 @@ CI uses the **imageMogr2** API to blur an image.
 
 An image can be processed:
 
-- Upon download
-- Upon upload
-- In cloud
+- During download
+- During upload
+- In the cloud
 
 ## Restrictions
 
-- Format: JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
-- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million pixels.
-- Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
+- Format: Currently, JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
+- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For an animated input image, the total number of pixels (width * height * number of frames) cannot exceed 250 million.
+- Frames (for animated images): For GIF images, the number of frames cannot exceed 300.
 
-## API Format
+## API Sample
 
-#### 1. Processing upon download
+#### 1. Processing during download
 
-```shell
-download_url?imageMogr2/blur/<radius>x<sigma>							
+```plaintext
+GET /<ObjectKey>?imageMogr2/blur/<radius>x<sigma>	 HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
-#### 2. Processing upon upload
+#### 2. Processing during upload
 
-```http
+```plaintext
 PUT /<ObjectKey> HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -43,7 +46,7 @@ Pic-Operations:
 
 #### 3. Processing in-cloud data
 
-```http
+```plaintext
 POST /<ObjectKey>?image_process HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -62,53 +65,53 @@ Pic-Operations:
 
 
 >? 
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
 
 ## Parameters
 
-Operation: blur
+Operation name: blur.
 
 | Parameter | Description |
 | -------------- | ----------------------------- |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| radius&lt;radius> | Blurring radius. Value range: 1–50 |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
+| radius&lt;radius> | Blurring radius. Value range: 1–50. |
 | sigma&lt;sigma> | Standard deviation of normal distribution. The value must be greater than 0. |
-| /ignore-error/1 | If this parameter is carried and the image failed to be processed because the image size or the parameter value is too large, the input image will be returned with no error reported. |
+| /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 
-## Examples
+## Samples
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
 >
 
 
-#### Example 1: Blurring an image with a radius of 8 and the sigma 5
+#### Sample 1: Blurring an image with a radius of 8 and a sigma of 5
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/blur/8x5
 ```
 
-Output image:
+Output after Gaussian blurring:
 ![](https://main.qcloudimg.com/raw/d635efeeca1d160e773737361e375801.jpeg)
 
-#### Example 2: Blurring an image with a radius of 8 and the sigma 5 with a signature carried
+#### Sample 2: Blurring an image with a radius of 8 and a sigma of 5 with a signature carried
 
-This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
+This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/blur/8x5
 ```
 
->? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext
