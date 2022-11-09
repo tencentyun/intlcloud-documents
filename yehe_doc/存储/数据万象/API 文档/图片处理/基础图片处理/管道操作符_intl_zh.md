@@ -36,7 +36,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/t
 ```
 
 图片最终处理效果如下： 
-![](https://main.qcloudimg.com/raw/61567af609b9f9dd93fe49b22825d3d0.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/ce36156b56c10d1438e755aadfc2744d.jpg)
 
 #### 案例二：使用管道操作符并携带私有文件签名
 
