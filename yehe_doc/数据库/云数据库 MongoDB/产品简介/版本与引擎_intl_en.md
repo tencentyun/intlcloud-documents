@@ -334,7 +334,7 @@ Rocks organizes data based on the log-structured merge-tree (LSM tree) structure
 <td>Supported</td>    
 </tr>
 <tr>
-<td>Database table rollback (replica set)</td>
+<td>Collection rollback (replica set)</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Supported</td>
@@ -342,7 +342,7 @@ Rocks organizes data based on the log-structured merge-tree (LSM tree) structure
 <td>Supported</td>    
 </tr>
 <tr>
-<td>Database table rollback (sharded cluster)</td>
+<td>Collection rollback (sharded cluster)</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
@@ -592,7 +592,7 @@ Rocks organizes data based on the log-structured merge-tree (LSM tree) structure
 | WT.42.11.12 | <li>Fixed the issue where an error was reported when creating and deleting a duplicate database repeatedly.</li><li>Fixed `changeStream` issues.</li> |
 | WT.42.11.11 | Fixed the kernel exception during `applyOps`.                               |
 | WT.42.11.10 | Optimized the database audit performance.                                           |
-| WT.42.11.9  | Supported database table rollback through physical backup to speed up backups.               |
+| WT.42.11.9  | Supported collection rollback through physical backup to speed up backups.               |
 | WT.42.11.8  | Optimized the routing information refresh policy.                                         |
 | WT.42.11.7  | Optimized the control logic for adding shards.                                       |
 | WT.42.11.6  | Supported DDL operations for `changeStream`.                                      |
@@ -609,12 +609,12 @@ Rocks organizes data based on the log-structured merge-tree (LSM tree) structure
 | ---------- | ------------------------------------------------------------ |
 | WT.40.3.34 | <li>Supported auditing database events with custom rules.</li><li>Supported accessing the database through SSL authentication.</li> |
 | WT.40.3.33 | <li>Supported speed limit for TTL indexing.</li><li>Supported setting the clearing window for expired TTL data.</li> |
-| WT.40.3.32 | <li>Improved the instance stability after database table rollback through physical backup.</li><li>Fixed memory leaks after connection failures.</li> |
+| WT.40.3.32 | <li>Improved the instance stability after collection rollback through physical backup.</li><li>Fixed memory leaks after connection failures.</li> |
 | WT.40.3.31 | Supported SQL throttling.                                                  |
 | WT.40.3.30 | Supported customizing the slow query threshold.                                     |
 | WT.40.3.29 | Optimized the database audit performance.                                           |
 | WT.40.3.28 | Optimized the routing information refresh policy for sharded clusters.                                     |
-| WT.40.3.27 | Supported database table rollback through physical backup.                             |
+| WT.40.3.27 | Supported collection rollback through physical backup.                             |
 | WT.40.3.26 | Optimized the retry lock logic during write conflicts to improve the performance.                             |
 | WT.40.3.25 | Optimized user permissions to avoid unauthorized operations.                                   |
 | WT.40.3.24 | Prohibited creating LSM engine tables and indexes.                                      |
@@ -626,7 +626,7 @@ Rocks organizes data based on the log-structured merge-tree (LSM tree) structure
 | WT.40.3.18 | Optimized the secondary database read performance.                                               |
 | WT.40.3.17 | Optimized the password-free access logic.                                           |
 | WT.40.3.16 | Optimized the monitoring data collection logic.                                             |
-| WT.40.3.15 | Supported database tables with millions of records.                                             |
+| WT.40.3.15 | Supported collections with millions of records.                                             |
 | WT.40.3.14 | Optimized the physical backup performance in case of many files.                         |
 | WT.40.3.13 | Optimized the mongos connection mechanism.                                           |
 | WT.40.3.12 | Optimized the routing information refresh logic and audit performance.                                  |
