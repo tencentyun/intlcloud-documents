@@ -2,7 +2,7 @@
 As a versatile database with great stability, performance, and scalability, TencentDB for MongoDB can satisfy the needs in most "No-Schema" scenarios. Its typical use cases include:
 
 ## Game Application
-TencentDB for MongoDB is especially suitable as game backend databases to meet the ever-changing requirements of game applications. Its No-Schema mode eliminates your pain of changing the table structures and stores players' information, gears, and points in the form of embedded documents, making query and update much easier.
+TencentDB for MongoDB is especially suitable as game backend databases to meet the ever-changing requirements of game applications. Its No-Schema mode eliminates your pain of changing the collection structures and stores players' information, gears, and points in the form of embedded documents, making query and update much easier.
 
 ## Mobile Application
 TencentDB for MongoDB supports two-dimensional spatial indexing, which makes it easy to query geolocation relationships, retrieve users' geographic data, and sustain LBS-enabled mobile applications. In addition, its dynamic storage mode is also very ideal for storing heterogeneous data of multiple systems to better meet the needs of mobile applications.
