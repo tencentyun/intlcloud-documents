@@ -5,7 +5,7 @@ Please see [Connection Instances](https://intl.cloud.tencent.com/document/produc
 ### What do I do if a message saying "Remote server has closed the connection" displays?
 First, please see [Connection Instances](https://intl.cloud.tencent.com/document/product/240/7092) to troubleshoot authentication issues. If you can connect to MongoDB but still encounter this problem, you may need a reconnection mechanism. For more information, please see [PHP Reconnection Sample](https://intl.cloud.tencent.com/document/product/240/4980).
 
-### WiredTiger 3.2 has the problem of table lock. Is TencentDB for MongoDB affected by the same issue?
+### WiredTiger 3.2 has the problem of collection lock. Is TencentDB for MongoDB affected by the same issue?
 It depends on the specific situation. For example, a global lock is required to create indexes by default, and a lock is also needed when you execute the `fsynclock` command.
 Lock is a feature of databases, and is used to deal with the problems of concurrent access. Generally, a lock is required, as long as it does not affect the operation of your business.
 
