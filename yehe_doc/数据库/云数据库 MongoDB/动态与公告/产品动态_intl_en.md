@@ -51,7 +51,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/48614">SQL Throttling</a></td></tr>
 <tr>
 <td>Enhanced MongoDB basic capabilities</td>
-<td><li>SQL template samples and detailed template records are added for slow SQL analysis feature.</li><li>Slow SQL details can be queried.</li><li>Top table trend and information are added; top database and table search is supported for space analysis.</li></td>
+<td><li>SQL template samples and detailed template records are added for slow SQL analysis feature.</li><li>Slow SQL details can be queried.</li><li>Top collection trend and information are added; top database and collection search is supported for space analysis.</li></td>
 <td><a href="">-</a></td></tr>
 </tbody></table>
 
@@ -101,7 +101,7 @@
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
 <tbody><tr>
 <td>Supported batch rollback</td>
-<td>You can batch roll back databases and tables in the console.</td>
+<td>You can batch roll back databases and collections in the console.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/240/7109" target="_blank">Rolling back Data</a></td></tr>
 </tbody></table>
 
