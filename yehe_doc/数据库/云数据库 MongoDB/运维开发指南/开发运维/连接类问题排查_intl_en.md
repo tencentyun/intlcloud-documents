@@ -18,7 +18,7 @@ Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/
 Pay attention to keywords such as `command`, `COLLSCAN`, `IXSCAN`, `keysExamined`, and `docsExamined`. For more log descriptions, see [Log Messages](https://docs.mongodb.com/manual/reference/log-messages/index.html). 
    The keywords that require attention include the following:
     - `command` indicates an operation recorded in a slow log.
-    - `COLLSCAN` indicates that a full-table scan is performed. `IXSCAN` indicates that an index scan is performed. For descriptions of other fields, see [Explain Results](https://docs.mongodb.com/manual/reference/explain-results/index.html).
+    - `COLLSCAN` indicates that a full-collection scan is performed. `IXSCAN` indicates that an index scan is performed. For descriptions of other fields, see [Explain Results](https://docs.mongodb.com/manual/reference/explain-results/index.html).
     - `keysExamined` refers to the number of index entries scanned. `docsExamined` refers to the number of documents scanned. Larger `keysExamined` and `docsExamined` values indicate that no index is created or the created index is less distinctive. Check the fields for which an index is created.
 
 4. Check whether the request is locked due to an index created in the foreground.
