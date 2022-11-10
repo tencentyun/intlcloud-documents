@@ -18,8 +18,8 @@ https://xxxxxx/v4/openim/importmsg?sdkappid=88888888&identifier=admin&usersig=xx
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` </li>|
+| https         | 请求协议为 HTTPS，请求方式为 POST       |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` <li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`|
 | v4/openim/importmsg | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -36,7 +36,7 @@ https://xxxxxx/v4/openim/importmsg?sdkappid=88888888&identifier=admin&usersig=xx
 - **平滑过渡期间，实时消息导入**
 ```
 {
-    "SyncFromOldSystem": 1, // 平滑过渡期间，实时消息导入，消息计入未读
+    "SyncFromOldSystem": 5, // 平滑过渡期间，实时消息导入，消息计入未读计数，且消息会推送到终端
     "From_Account": "lumotuwe1", // 消息发送方帐号
     "To_Account": "lumotuwe2", // 接收方帐号
     "MsgSeq": 827092, // 消息序列号
@@ -56,7 +56,7 @@ https://xxxxxx/v4/openim/importmsg?sdkappid=88888888&identifier=admin&usersig=xx
 - **历史消息导入**
 ```
  {
-    "SyncFromOldSystem": 2, // 历史消息导入，消息不计入未读
+    "SyncFromOldSystem": 2, // 历史消息导入，消息不计入未读计数，且消息不会推送到终端
     "From_Account": "lumotuwe1", // 消息发送方帐号
     "To_Account": "lumotuwe2", // 接收方帐号
     "MsgSeq": 827092, // 消息序列号
@@ -79,7 +79,7 @@ https://xxxxxx/v4/openim/importmsg?sdkappid=88888888&identifier=admin&usersig=xx
 
 | 字段 | 类型|属性| 说明 |
 |---------|---------|----|---------|
-| SyncFromOldSystem | Integer |必填|该字段只能填1或2，其他值是非法值<br/>1表示实时消息导入，消息计入未读计数<br/>2表示历史消息导入，消息不计入未读  |
+| SyncFromOldSystem | Integer |必填|该字段只能填2或5，其他值是非法值<br/>2表示历史消息导入，消息不计入未读计数，且消息不会推送到终端<br/>5表示实时消息导入，消息计入未读计数，且消息会推送到终端  |
 | From_Account | String |必填| 消息发送方 UserID，用于指定发送消息方  |
 | To_Account | String |必填| 消息接收方 UserID  |
 | MsgSeq | Integer |选填|消息序列号（32位无符号整数），后台会根据该字段去重及进行同秒内消息的排序，详细规则请看本接口的功能说明。若不填该字段，则由后台填入随机数  |
@@ -138,7 +138,7 @@ https://xxxxxx/v4/openim/importmsg?sdkappid=88888888&identifier=admin&usersig=xx
 | 93000         | JSON 数据包超长，消息包体请不要超过8k                       |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/importmsg) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
 
 ## 参考
 导入群消息（[v4/group_open_http_svc/import_group_msg](https://intl.cloud.tencent.com/document/product/1047/34968)）
