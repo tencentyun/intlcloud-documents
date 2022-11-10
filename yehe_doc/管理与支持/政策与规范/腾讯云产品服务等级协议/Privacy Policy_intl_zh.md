@@ -606,3 +606,8 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 48.[文字识别](https://www.tencentcloud.com/document/product/1005/50444)。
 49.[验证码](https://www.tencentcloud.com/document/product/1159/50401)。
 50.[机器翻译](https://www.tencentcloud.com/document/product/1161/51200)。
+51.[视频内容安全](https://www.tencentcloud.com/document/product/1140/51143)。
+52.[音频内容安全](https://www.tencentcloud.com/document/product/1139/51140)。
+53.[图片内容安全](https://www.tencentcloud.com/document/product/1122/51137)。
+54.[文本内容安全](https://www.tencentcloud.com/document/product/1121/51133)。
+
