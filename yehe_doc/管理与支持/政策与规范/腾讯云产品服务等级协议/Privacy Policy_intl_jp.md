@@ -606,3 +606,8 @@ Tencent Cloud プライバシーポリシーの「*お客様の個人データ�
 48.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
 49.[Captcha](https://www.tencentcloud.com/document/product/1159/50401).
 50.[Tencent Machine Translation](https://www.tencentcloud.com/document/product/1161/51200).
+51.[Video Moderation System](https://www.tencentcloud.com/document/product/1140/51143).
+52.[Audio Moderation System](https://www.tencentcloud.com/document/product/1139/51140).
+53.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51137).
+54.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51133).
+
