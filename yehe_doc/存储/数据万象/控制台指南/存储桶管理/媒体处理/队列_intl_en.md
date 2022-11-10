@@ -19,7 +19,7 @@ You can enable or pause a queue in its **Operation** column.
 4. In the **Media Processing Queue** column, enable or pause the queue.
 
 >!
-> - After a queue is paused, you cannot use the [job](https://intl.cloud.tencent.com/document/product/1045/43605) and [workflow](https://intl.cloud.tencent.com/document/product/1045/4360) features on the console.
+> - After a queue is paused, you cannot use the [job](https://intl.cloud.tencent.com/document/product/1045/43605) and [workflow](https://www.tencentcloud.com/document/product/1045/43604) features on the console.
 > - After the queue is paused, jobs in it will stop.
 >
 
