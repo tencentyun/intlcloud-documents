@@ -152,6 +152,10 @@
 49.[文字识别](https://www.tencentcloud.com/document/product/1005/50445)。
 50.[验证码](https://www.tencentcloud.com/document/product/1159/50402)。
 51.[机器翻译](https://www.tencentcloud.com/document/product/1161/51201)。
+52.[视频内容安全](https://www.tencentcloud.com/document/product/1140/51144)。
+53.[音频内容安全](https://www.tencentcloud.com/document/product/1139/51141)。
+54.[图片内容安全](https://www.tencentcloud.com/document/product/1122/51138)。
+55.[文本内容安全](https://www.tencentcloud.com/document/product/1121/51135)。
 
 ## 特定司法管辖区要求
 
