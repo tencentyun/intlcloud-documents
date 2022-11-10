@@ -6,7 +6,7 @@
 - 社群和话题的管理接口在核心类 ` TencentImSDKPlugin.v2TIMManager.getGroupManager()` 中。
 - 话题中的消息相关接口在核心类 ` TencentImSDKPlugin.v2TIMManager.getMessageManager()` 中。
 
-> ? 需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting)>**群功能配置**>**社群** 打开开关后方可使用。
+> ? 需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting ) > **功能配置** > **群组配置** > **群功能配置** > **社群** 打开开关后方可使用。
 
 ## 社群管理
 
@@ -47,45 +47,48 @@ const groupList = await groupManager.getJoinedCommunityList();
 </tr>
 <tr>
 <td rowspan="5">社群管理</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#joinGroup">加入社群</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464">加入社群</a></td>
 <td>joinGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/joinGroup.html">TS</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#quitGroup">退出社群</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464">退出社群</a></td>
 <td>quitGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/quitGroup.html">TS</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#dismissGroup">解散社群</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464">解散社群</a></td>
 <td>dismissGroup (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/dismissGroup.html">TS</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#getGroupsInfo">获取社群资料</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48183">获取社群资料</a></td>
 <td>getGroupsInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupsInfo.html">TS</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#setGroupInfo">修改社群资料</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48183">修改社群资料</a></td>
 <td>setGroupInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupInfo.html">TS</a>）</td>
 </tr>
 <tr>
 <td rowspan="4">社群成员管理</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#getGroupMemberList">获取社群成员列表</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48179">获取社群成员列表</a></td>
 <td>getGroupMemberList (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMemberList.html">TS</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#getGroupMembersInfo">获取社群成员资料</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48176">获取社群成员资料</a></td>
 <td>getGroupMembersInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMembersInfo.html">TS</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#setGroupMemberInfo">修改社群成员资料</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48176">修改社群成员资料</a></td>
 <td>setGroupMemberInfo (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupMemberInfo.html">TS</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#kickGroupMember">踢出社群成员</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48179">踢出社群成员</a></td>
 <td>kickGroupMember (<a href="https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/kickGroupMember.html">TS</a>）</td>
 </tr>
 </table>
 
 ## 话题管理
+同一社群下可创建多个话题，多个话题共享一套社群成员关系，但不同话题内独立收发消息、互不干扰。
+>?需在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting ) > **功能配置** > **群组配置** > **群功能配置** > **社群** 页面，完成开通社群后，再打开开通话题开关，方可使用。
+
 
 ### 创建话题
 
@@ -130,7 +133,7 @@ groupManager.setTopicInfo({
 });
 ```
 
-### 获取话题列表
+### [获取话题列表](id:getTopicList)
 
 调用 `getTopicInfoList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getTopicInfoList.html)) 接口获取话题列表。
 
@@ -143,6 +146,92 @@ groupManager.setTopicInfo({
 // 获取话题列表
 groupManager.getTopicInfoList("groupID", ["topicID"]);
 ```
+
+### 话题分组
+
+社群模式（娱乐协作新利器），支持社群-**分组**-话题三级结构，将消息相互区隔。
+
+<img style="width:50%;" src="https://qcloudimg.tencent-cloud.cn/raw/728b38c71f25a70bcb717c3fefe29aac.png" />
+
+实现原理为，社群的 [`customInfo`](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupInfo.html#custominfo) 中，保存该社群的话题分组列表；每个话题所属的分组，存储于其 [`customString`](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html#customstring) 字段中。
+
+- 加载社群时，根据社群（群组）的 [`customInfo`](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupInfo.html#custominfo) 的话题分组列表字段，展示分组。该字段建议用 `string[]` 形式存储。
+- 具体每个分组中有什么话题 Topic，则要遍历 Topic 列表，通过 [`V2TimTopicInfo`](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html) 的 [`customString`](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html#customstring) 获得每个话题所属分组。
+
+> ?
+>
+> 社群（群组）中 [`customInfo`](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupInfo.html#custominfo) 的话题分组列表字段名，key 值，可由您自行定义。
+> 以下示例代码中，将其命名为 `categoryList` 。
+
+#### 获取社群的分组列表
+
+调用 `getCommunityCategoryList(String groupID)` 方法，示例代码如下：
+
+```javascript
+const getCommunityCategoryList = async (groupID) => {
+  const customInfo = await getCommunityCustomInfo(groupID);
+  if (customInfo != null) {
+    const categoryListString = customInfo["categoryList"];
+    if (categoryListString != null && categoryListString !== "") {
+      return JSON.parse(categoryListString);
+    }
+  }
+};
+
+const getCommunityCustomInfo = async (groupID) => {
+  const groupIDList = [groupID];
+  const res = await TencentImSDKPlugin.v2TIMManager
+    .getGroupManager()
+    .getGroupsInfo(groupIDList);
+  if (res.code != 0) {
+    const groupInfo = res.data[0];
+    if (groupInfo != null) {
+      const customInfo = groupInfo.groupInfo?.customInfo;
+      return customInfo;
+    }
+  }
+  return null;
+};
+```
+
+#### 配置社群的分组列表
+
+此处直接修改群组 `groupInfo` 的 `customInfo` 即可。此处为一个 Map，key 值您定义的话题分组列表字段名。
+
+`getCommunityCustomInfo` 方法已在上一段实现，示例代码如下：
+
+```javascript
+const setCommunityCategoryList = async (
+  groupID,
+  groupType,
+  newCategoryList
+) => {
+  const customInfo = await getCommunityCustomInfo(groupID);
+  customInfo["categoryList"] = JSON.parse(newCategoryList);
+  TencentImSDKPlugin.v2TIMManager.getGroupManager().setGroupInfo({
+    customInfo: customInfo,
+    groupID: groupID,
+    groupType: groupType,
+    // ...其他资料
+  });
+};
+```
+
+#### 为话题添加分组
+
+示例代码如下：
+
+```javascript
+const addCategoryForTopic = (groupID, categoryName) => {
+  TencentImSDKPlugin.v2TIMManager.getGroupManager().setTopicInfo({
+    customString: categoryName,
+  });
+};
+```
+
+#### 获取话题所在分组
+
+直接从 [获取话题列表](#getTopicList) 中，取出 `customString` 即可。
 
 ### 监听话题回调
 
@@ -201,5 +290,3 @@ V2TIMManager.getInstance().addGroupListener(v2TIMGroupListener);
 <td>参数 groupID 填为话题 topicID</td>
 </tr>
 </table>
-
-
