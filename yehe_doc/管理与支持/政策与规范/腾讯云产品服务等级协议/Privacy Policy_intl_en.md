@@ -612,5 +612,10 @@ The following Modules shall apply and form part of this privacy policy if you us
 50.[Captcha](https://www.tencentcloud.com/document/product/1159/50401).
 51.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
 52.[Tencent Machine Translation](https://www.tencentcloud.com/document/product/1161/51200).
+53.[Video Moderation System](https://www.tencentcloud.com/document/product/1140/51143).
+54.[Audio Moderation System](https://www.tencentcloud.com/document/product/1139/51140).
+55.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51137).
+56.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51133).
+
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
