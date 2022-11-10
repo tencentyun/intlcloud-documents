@@ -613,6 +613,10 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 50.[OCR](https://www.tencentcloud.com/document/product/1005/50444).
 51.[Captcha](https://www.tencentcloud.com/document/product/1159/50401).
 52.[Tencent Machine Translation](https://www.tencentcloud.com/document/product/1161/51200).
+53.[Video Moderation System](https://www.tencentcloud.com/document/product/1140/51143).
+54.[Audio Moderation System](https://www.tencentcloud.com/document/product/1139/51140).
+55.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51137).
+56.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51133).
 
 ### 개정 기록
 [개인정보 처리방침](https://intl.cloud.tencent.com/document/product/301/43505)(버전1.0)
