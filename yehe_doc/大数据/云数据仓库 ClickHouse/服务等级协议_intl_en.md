@@ -14,7 +14,7 @@ Service Month(s) refers to the calendar month(s) within the term of the Service 
 
 ### 1.3 Service Unavailability
 
-In a certain minute, if all your continuous requests to establish a connection to a specified Cloud Data Warehouse Cluster (“***\*Cluster\****”) fail attributable to Tencent Cloud, the Service is deemed as unavailable (“***\*Service Unavailability\****”) in such minute, except under the circumstances as set forth in Article 4 of this Agreement.
+In a certain minute, if all your continuous requests to establish a connection to a specified Cloud Data Warehouse Cluster (“Cluster”) fail attributable to Tencent Cloud, the Service is deemed as unavailable (“Service Unavailability”) in such minute, except under the circumstances as set forth in Article 4 of this Agreement.
 
 ### 1.4 Service Downtime Calculated in Minutes within Service Month(s)
 
