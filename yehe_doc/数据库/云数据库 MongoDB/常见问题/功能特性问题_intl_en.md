@@ -36,4 +36,4 @@ WiredTiger engine and Rocks engine are supported currently.
  You can adjust the instance maintenance time in the TencentDB for MongoDB console as instructed in [Setting Instance Maintenance Time](https://intl.cloud.tencent.com/document/product/240/31190).
 
 ### Why is the space not reclaimed after data in MongoDB is deleted?
-Unless a database or table is dropped directly, the space freed by deleted data will not be reclaimed in MongoDB. To reclaim the space of the WiredTiger engine, see [FAQ: MongoDB Storage](https://docs.mongodb.com/manual/faq/storage/).
+Unless a database or collection is dropped directly, the space freed by deleted data will not be reclaimed in MongoDB. To reclaim the space of the WiredTiger engine, see [FAQ: MongoDB Storage](https://docs.mongodb.com/manual/faq/storage/).
