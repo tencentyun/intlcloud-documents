@@ -11,7 +11,7 @@ Rollback is based on the latest full backup image and oplog. The rollback time i
 If the rollback is performed a long time after the full backup is completed, it will take more time to replay oplogs.
 
 ### How do I back up and roll back a replica set instance in TencentDB for MongoDB?
-Replica set instances currently support instance-level and database/table-level backup and rollback.
+Replica set instances currently support instance-level and database/collection-level backup and rollback.
 - **Backup**
 In the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb), click an instance ID to enter the instance management page and click **Manual Backup** or set automatic backup on the **Backup and Rollback** tab.
 - **Rollback**
