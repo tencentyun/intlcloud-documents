@@ -16,7 +16,7 @@
 
 ### 群聊邀请
 
-首先需通过 [建群](https://intl.cloud.tencent.com/document/product/1047/34328#.E5.88.9B.E5.BB.BA.E7.BE.A4.E7.BB.84)、[加群](https://intl.cloud.tencent.com/document/product/1047/34328#.E5.8A.A0.E5.85.A5.E7.BE.A4.E7.BB.84)、[退群](https://intl.cloud.tencent.com/document/product/1047/34328#.E9.80.80.E5.87.BA.E7.BE.A4.E7.BB.84)、[解散群](https://intl.cloud.tencent.com/document/product/1047/34328#.E8.A7.A3.E6.95.A3.E7.BE.A4.E7.BB.84)以及[群资料](https://intl.cloud.tencent.com/document/product/1047/34328#.E7.BE.A4.E8.B5.84.E6.96.99.E5.92.8C.E7.BE.A4.E8.AE.BE.E7.BD.AE) 和 [群成员](https://intl.cloud.tencent.com/document/product/1047/34328#.E7.BE.A4.E6.88.90.E5.91.98.E7.AE.A1.E7.90.86) 相关接口完成对群组的管理，并监听群内的相关事件回调 [V2TimGroupListener](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimGroupListener.html)。然后群成员可以在群内发起群呼叫邀请 [inviteInGroup](https://comm.qq.com/im/doc/RN/en/Api/V2TIMSignalingManager/invite.htmlInGroup)，被邀请的群成员会收到邀请通知 [onReceiveNewInvitation](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveNewInvitation.html) 后可以选择接受、拒绝或等待超时。
+首先需通过 [建群](https://intl.cloud.tencent.com/document/product/1047/34328#.E5.88.9B.E5.BB.BA.E7.BE.A4.E7.BB.84)、[加群](https://intl.cloud.tencent.com/document/product/1047/34328#.E5.8A.A0.E5.85.A5.E7.BE.A4.E7.BB.84)、[退群](https://intl.cloud.tencent.com/document/product/1047/34328#.E9.80.80.E5.87.BA.E7.BE.A4.E7.BB.84)、[解散群](https://intl.cloud.tencent.com/document/product/1047/34328#.E8.A7.A3.E6.95.A3.E7.BE.A4.E7.BB.84)以及[群资料](https://intl.cloud.tencent.com/document/product/1047/34328#.E7.BE.A4.E8.B5.84.E6.96.99.E5.92.8C.E7.BE.A4.E8.AE.BE.E7.BD.AE) 和 [群成员](https://intl.cloud.tencent.com/document/product/1047/34328#.E7.BE.A4.E6.88.90.E5.91.98.E7.AE.A1.E7.90.86) 相关接口完成对群组的管理，并监听群内的相关事件回调 [V2TimGroupListener](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimGroupListener.html)。然后群成员可以在群内发起群呼叫邀请 [inviteInGroup](https://comm.qq.com/im/doc/RN/en/Api/V2TIMSignalingManager/inviteInGroup.html)，被邀请的群成员会收到邀请通知 [onReceiveNewInvitation](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveNewInvitation.html) 后可以选择接受、拒绝或等待超时。
 
 ### 取消邀请
 
@@ -66,9 +66,9 @@
 
 该场景为老师先让同学们举手，再从举手的同学中选一个同学进行发言。详细流程如下：
 
-1. 老师调用 [inviteInGroup](https://comm.qq.com/im/doc/RN/en/Api/V2TIMSignalingManager/invite.htmlInGroup) 接口邀请同学们举手，自定义 `data` 中填入“举手操作”，同学们收到 [onReceiveNewInvitation](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveNewInvitation.html) 回调。
+1. 老师调用 [inviteInGroup](https://comm.qq.com/im/doc/RN/en/Api/V2TIMSignalingManager/inviteInGroup.html) 接口邀请同学们举手，自定义 `data` 中填入“举手操作”，同学们收到 [onReceiveNewInvitation](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveNewInvitation.html) 回调。
 2. 同学们根据 [onReceiveNewInvitation](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveNewInvitation.html) 中的 `inviteeList` 和 `data` 字段判断被邀请者里有自己且是举手操作，那么调用 [accept](https://comm.qq.com/im/doc/RN/en/Api/V2TIMSignalingManager/accept.html) 接口举手。
 3. 如果有学生举手，所有人都可以收到 [onInviteeAccepted](https://comm.qq.com/im/doc/RN/en/Callback/OnInviteeAccepted.html) 回调，判断 `data` 中的字段为“举手操作”，展示举手学生列表。
-4. 老师从举手成员列表中邀请某个同学进行发言，调用 [inviteInGroup](https://comm.qq.com/im/doc/RN/en/Api/V2TIMSignalingManager/invite.htmlInGroup) 接口，此时自定义 `data` 中填入“发言操作”，学生们都收到 [onReceiveNewInvitation](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveNewInvitation.html) 回调。
+4. 老师从举手成员列表中邀请某个同学进行发言，调用 [inviteInGroup](hthttps://comm.qq.com/im/doc/RN/en/Api/V2TIMSignalingManager/inviteInGroup.html) 接口，此时自定义 `data` 中填入“发言操作”，学生们都收到 [onReceiveNewInvitation](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveNewInvitation.html) 回调。
 5. 学生根据 [onReceiveNewInvitation](https://comm.qq.com/im/doc/RN/en/Callback/OnReceiveNewInvitation.html) 回调中的 `inviteeList` 和 `data` 字段判断被邀请者里有自己且是发言操作，则调用 [accept](https://comm.qq.com/im/doc/RN/en/Api/V2TIMSignalingManager/accept.html) 接口发言。
 6. 如果有学生发言，所有人都可以收到 [onInviteeAccepted](https://comm.qq.com/im/doc/RN/en/Callback/OnInviteeAccepted.html) 回调，判断 `data` 中的字段为“发言操作”，展示发言成员列表。
