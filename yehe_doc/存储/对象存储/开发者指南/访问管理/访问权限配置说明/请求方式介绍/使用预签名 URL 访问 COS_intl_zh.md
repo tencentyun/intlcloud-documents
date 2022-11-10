@@ -1,8 +1,8 @@
 对象存储（Cloud Object Storage，COS）支持使用预签名 URL 进行对象的上传、下载，原理是将签名嵌入 URL 生成签名链接。您可以通过签名的有效期，控制预签名 URL 的生效时间。
 
-您可以使用预签名 URL 进行下载，获取临时 URL 用于临时分享文件、文件夹，也可以通过设置一个很长的签名有效期，获得长期有效的 URL 用于长期分享文件；详情可参考 [文件分享](https://intl.cloud.tencent.com/document/product/436/45243?!editLang=zh&!preview#sharing-a-folder)。
+您可以使用预签名 URL 进行下载，获取临时 URL 用于临时分享文件、文件夹，也可以通过设置一个很长的签名有效期，获得长期有效的 URL 用于长期分享文件；详情可参考 [文件分享](#文件分享)。
 
-您也可以使用预签名 URL 进行上传，详情可参考使用 [上传文件](https://intl.cloud.tencent.com/document/product/436/45243?!editLang=zh&!preview#uploading-files)。
+您也可以使用预签名 URL 进行上传，详情可参考使用 [上传文件](#上传文件)。
 
 <span id="文件分享"></span>
 ## 文件分享（下载文件）
@@ -10,6 +10,9 @@
 COS 支持对象的分享，您可以使用预签名 URL 将文件、文件夹限时分享给其他用户。预签名 URL 的原理是将签名嵌入拼接在对象 URL 之后，签名生成算法请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
 
 存储桶默认为私有读，直接通过对象 URL 下载会提示访问失败。在对象 url 后拼接了有效的签名后，得到**预签名 URL**；签名携带了身份信息，因此预签名 URL 可以用于下载对象。
+
+>?如果您一定要使用永久密钥来生成预签名，建议永久密钥的权限范围仅限于上传或下载操作，以规避风险。并且所生成的签名有效时长设置为完成本次上传或下载操作所需的最短期限，因为，当指定预签名 URL 的有效时间过期后，请求会中断；申请新的签名后，需要重新执行失败请求，不支持断点续传。
+
 ```
 // 对象 URL
 https://test-12345678.cos.ap-beijing.myqcloud.com/test.png
@@ -27,9 +30,9 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 #### 控制台（Web 页面）
 
 1. 登录 [COS 控制台](https://console.cloud.tencent.com/cos5)，单击存储桶名称，进入“文件列表”，单击对象**详情**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/aff68724b740f962e39cf1167ac2cb5b.png)
 2. 进入对象详情页面，复制临时链接，有效期为1小时。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6b6b17a56e82af5c5af9143338806fc3.png)
 
 #### COSBrowser（客户端）
 
@@ -65,8 +68,8 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
+<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
+<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
@@ -101,8 +104,8 @@ T=min(X,Y)；由于 X<=36，所以 T<=36。
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
+<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
+<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
@@ -125,6 +128,8 @@ T=min(X,Y)；由于 X<=36，所以 T<=36。
 
 ## 上传文件
 如果您希望第三方可以上传对象到存储桶，又不希望对方使用 CAM 账户或临时密钥等方式时，您可以使用预签名 URL 的方式将签名提交给第三方，以供完成临时的上传操作。收到有效预签名 URL 的任何人都可以上传对象。
+
+>?如果您一定要使用永久密钥来生成预签名，建议永久密钥的权限范围仅限于上传或下载操作，以规避风险。并且所生成的签名有效时长设置为完成本次上传或下载操作所需的最短期限，因为，当指定预签名 URL 的有效时间过期后，请求会中断；申请新的签名后，需要重新执行失败请求，不支持断点续传。
 
 - 途径一：使用 SDK 生成预签名 URL
 各语言 SDK 提供了生成上传预签名 URL 的方法，生成方法可参考 [预签名授权上传](https://intl.cloud.tencent.com/document/product/436/14114)，选择您熟悉的开发语言。

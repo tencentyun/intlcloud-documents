@@ -1,20 +1,20 @@
 ## 功能描述
 社群是一个由于共同主题而让大家聚集在一起的超大群组，可以在社群下根据不同兴趣创建多个话题。
 社群用来管理群成员。社群下的所有话题不仅可以共享社群成员，还可以独立收发消息而不相互干扰。
-[**社群模式详细介绍**](https://cloud.tencent.com/document/product/269/75979)
+[**社群模式详细介绍**](https://intl.cloud.tencent.com/document/product/1047/49713)
 
 - 社群和话题的管理接口在核心类 ` TencentImSDKPlugin.v2TIMManager.getGroupManager()` 中。
 - 话题中的消息相关接口在核心类 ` TencentImSDKPlugin.v2TIMManager.getMessageManager()`  中。
 
->? Flutter sdk 4.0.0以上版本支持，需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting)>**群功能配置**>**社群** 打开开关后方可使用。
+>? Flutter sdk 4.0.0以上版本支持，需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting ) > **功能配置** > **群组配置** > **群功能配置** > **社群** 打开开关后方可使用。
 
 ## 社群管理
 ### 创建社群
 
 创建支持话题的社群分两步：
 
-1. 创建 `V2TIMGroupInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html)) 对象，其中 `groupType` 设置为 `Community`，`isSupportTopic` 设置为 `true`/`YES`。
-2. 调用 `createGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createGroup.html))  接口创建群组。
+1. 创建 `V2TIMGroupInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html?h=V2TIMGroupInfo)) 对象，其中 `groupType` 设置为 `Community`，`isSupportTopic` 设置为 `true`/`YES`。
+2. 调用 `createGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createGroup.html?h=createGroup))  接口创建群组。
 
 示例代码如下：
 
@@ -25,7 +25,7 @@ groupManager.createGroup(groupType: "Community", groupName: "社群",isSupportTo
 
 
 ### 获取加入的社群列表
-调用 `getJoinedCommunityList`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedCommunityList.html)) 获取已经加入的支持话题的社群列表。
+调用 `getJoinedCommunityList`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedCommunityList.html?h=getJoinedCommunityList)) 获取已经加入的支持话题的社群列表。
 
 示例代码如下：
 
@@ -45,46 +45,49 @@ V2TimValueCallback<List<V2TimGroupInfo>> groupList = await groupManager.getJoine
 </tr>
 <tr>
 <td rowspan="5">社群管理</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#joinGroup">加入社群</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464">加入社群</a></td>
 <td>joinGroup (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/joinGroup.html">dart</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#quitGroup">退出社群</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464">退出社群</a></td>
 <td>quitGroup (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/quitGroup.html">dart</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464#dismissGroup">解散社群</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48464">解散社群</a></td>
 <td>dismissGroup (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/dismissGroup.html">dart</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#getGroupsInfo">获取社群资料</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48183">获取社群资料</a></td>
 <td>getGroupsInfo (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupsInfo.html">dart</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48183#setGroupInfo">修改社群资料</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48183">修改社群资料</a></td>
 <td>setGroupInfo (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html">dart</a>）</td>
 </tr>
 <tr>
 <td rowspan="4">社群成员管理</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#getGroupMemberList">获取社群成员列表</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48179">获取社群成员列表</a></td>
 <td>getGroupMemberList (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html">dart</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#getGroupMembersInfo">获取社群成员资料</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48176">获取社群成员资料</a></td>
 <td>getGroupMembersInfo (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMembersInfo.html">dart</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48176#setGroupMemberInfo">修改社群成员资料</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48176">修改社群成员资料</a></td>
 <td>setGroupMemberInfo (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberInfo.html">dart</a>）</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/48179#kickGroupMember">踢出社群成员</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/48179">踢出社群成员</a></td>
 <td>kickGroupMember (<a href="https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/kickGroupMember.html">dart</a>）</td>
 </tr>
 </table>
 
 
 ## 话题管理
+同一社群下可创建多个话题，多个话题共享一套社群成员关系，但不同话题内独立收发消息、互不干扰。
+>?需在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting ) > **功能配置** > **群组配置** > **群功能配置** > **社群** 页面，完成开通社群后，再打开开通话题开关，方可使用。
+
 
 ### 创建话题
 
@@ -149,17 +152,17 @@ groupManager.getTopicInfoList(groupID: "",topicIDList: ['topicID']);
 ### 话题分组
 社群模式（娱乐协作新利器），支持社群-**分组**-话题三级结构，将消息相互区隔。
 
-
+<img style="width:50%;" src="https://qcloudimg.tencent-cloud.cn/raw/728b38c71f25a70bcb717c3fefe29aac.png" />
 
 实现原理为，社群的 [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) 中，保存该社群的话题分组列表；每个话题所属的分组，存储于其 [`customString`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html#customstring) 字段中。
 
-- 加载社群时，根据社群（群组）的 [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) 的话题分组列表字段，展示分组。该字段建议用 `List<String>` 形式存储。
-- 具体每个分组中有什么话题Topic，则要遍历Topic列表，通过 [`V2TimTopicInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html#customstring) 的 [`customString`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html#customstring) 获得每个话题所属分组。
+- 加载社群时，根据社群（群组）的 [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html#customstring) 的话题分组列表字段，展示分组。该字段建议用 `List<String>` 形式存储。
+- 具体每个分组中有什么话题Topic，则要遍历Topic列表，通过 [`V2TimTopicInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html) 的 [`customString`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html#customstring) 获得每个话题所属分组。
 
 >? 
 >
 > 社群（群组）中 [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) 的话题分组列表字段名，key值，可由您自行定义。
-> 以下示例代码中，将其命名为 `categoryList` 。
+> 以下示例代码中，将其命名为 `topic_category` 。
 
 #### 获取社群的分组列表
 
@@ -169,7 +172,7 @@ groupManager.getTopicInfoList(groupID: "",topicIDList: ['topicID']);
 getCommunityCategoryList(String groupID) async {
     final Map<String, String>? customInfo = await getCommunityCustomInfo(groupID);
     if(customInfo != null){
-      final String? categoryListString = customInfo["categoryList"];
+      final String? categoryListString = customInfo["topic_category"];
       if(categoryListString != null && categoryListString.isNotEmpty){
         return jsonDecode(categoryListString);
       }
@@ -200,7 +203,7 @@ getCommunityCategoryList(String groupID) async {
 ```dart
 setCommunityCategoryList(String groupID, String groupType, List<String> newCategoryList) async {
     final Map<String, String>? customInfo = await getCommunityCustomInfo(groupID);
-    customInfo?["categoryList"] = jsonEncode(newCategoryList);
+    customInfo?["topic_category"] = jsonEncode(newCategoryList);
     TencentImSDKPlugin.v2TIMManager
         .getGroupManager()
         .setGroupInfo(info: V2TimGroupInfo(
@@ -213,6 +216,9 @@ setCommunityCategoryList(String groupID, String groupType, List<String> newCateg
 ```
 
 #### 为话题添加分组
+
+传入V2TimTopicInfo customString的字符串，建议使用JSON格式。
+即，下方代码内 `categoryName` 建议使用格式：`{"category":"分组1"}`。
 
 示例代码如下：
 
@@ -290,5 +296,3 @@ V2TIMManager.getInstance().addGroupListener(v2TIMGroupListener);
 <td>参数 groupID 填为话题 topicID</td>
 </tr>
 </table>
-
-

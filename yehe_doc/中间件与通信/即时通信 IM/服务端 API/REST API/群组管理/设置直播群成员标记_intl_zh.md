@@ -1,7 +1,8 @@
 ## 功能说明
-App 管理员可以根据群组 ID 获取直播群在线成员列表。该功能需旗舰版，并且在 IM 控制台“群功能配置”中开通“直播群在线成员列表”功能。其他套餐版本调用该 API 返回最近进群的成员列表（最多返回30人）。
+App 管理员和群主可以对直播群成员设置不同的标记以区分不同类型的群成员。该功能需旗舰版，并且在 IM 控制台“群功能配置”中开通“直播群在线成员列表”功能。其他套餐版本调用该API将返回失败。
 
 ## 接口调用说明
+
 ### 适用的群组类型
 |群组类型 ID | 是否支持此 REST API|
 |-----------|------------|
@@ -16,16 +17,16 @@ App 管理员可以根据群组 ID 获取直播群在线成员列表。该功能
 > !
 >
 > - 此功能需 [旗舰版套餐](https://www.tencentcloud.com/document/product/1047/34577)，并且已开通“直播群在线成员列表”功能(控制台“群功能配置”)。
-> - 其他套餐版本调用该 API 返回最近进群的成员列表（最多返回30人）。
-> - 在线成员列表总体更新粒度为10s。
-> - 当直播群中超过1000人时，接口仅返回最新进群并且在线的1000人。
-> - 当群人数大于等于300或群内有 Web 端用户的时候，出现群成员上下线或者进退群的时候，由于当前10s周期内已经统计了用户在线状态的原因，会在下一个10s周期才会统计到剔除状态用户变更的在线人数，所以会出现调用接口10s - 20s才会更新的现象。
-> - 当群人数小于300人且群内没有 Web 端用户的时候，用户进退群会触发即时更新在线人数。
+> - 其他套餐版本调用该API返回失败。
+> - 每个直播群可以设置最多不超过10个不同类型的标记。
+> - 每一个标记可以设置最多1000人，该限制和直播群在线成员列表的1000人互相独立。
+> - 被设置标记的群成员需要在线（设置标记为500的成员除外，参见“特殊标记”）。当成员退群、掉线时标记信息会被清除，可以在通过第三方回调在该成员进群、上线时重新设置标记。
 
 
 ### 请求 URL 示例
+
 ```
-https://xxxxxx/v4/group_open_avchatroom_http_svc/get_members?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/group_open_avchatroom_http_svc/modify_user_info?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 ### 请求参数说明
@@ -36,7 +37,7 @@ https://xxxxxx/v4/group_open_avchatroom_http_svc/get_members?sdkappid=88888888&i
 | ------------------ | ------------------------------------ |
 | https         | 请求协议为 HTTPS，请求方式为 POST       |
 | xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` <li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`|
-| v4/group_open_avchatroom_http_svc/get_members | 请求接口                             |
+| v4/group_open_avchatroom_http_svc/modify_user_info | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
@@ -44,26 +45,46 @@ https://xxxxxx/v4/group_open_avchatroom_http_svc/get_members?sdkappid=88888888&i
 |contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
+
 200次/秒。
 
 ### 请求包示例
 
-用来获取 AVChatRoom 群的在线人数接口，在线人数粒度为10s。
+为直播群中teacher10设置标记1000，为直播群中student9设置标记1001：
 
 ```
 {
-    "GroupId":"@TGS#a6I4ZUUGO",
-    "Timestamp": 0
+    "GroupId": "@TGS#a6I4ZUUGO",
+    "CommandType": 1,
+    "MemberList": [
+        {
+            "Member_Account": "teacher10",
+            "Marks": [1000]
+        },
+        {
+            "Member_Account": "student9",
+            "Marks": [1001]
+        },
+    ]
 }
 ```
 
-只获取标记为 1000 类型的群成员：
+为直播群中teacher10取消标记1000，为直播群中student9取消标记1001：
 
 ```
 {
-    "GroupId":"@TGS#a6I4ZUUGO",
-    "Mark": 1000,
-    "Timestamp": 0
+    "GroupId": "@TGS#a6I4ZUUGO",
+    "CommandType": 2,
+    "MemberList": [
+        {
+            "Member_Account": "teacher10",
+            "Marks": [1000]
+        },
+        {
+            "Member_Account": "student9",
+            "Marks": [1001]
+        },
+    ]
 }
 ```
 
@@ -72,25 +93,30 @@ https://xxxxxx/v4/group_open_avchatroom_http_svc/get_members?sdkappid=88888888&i
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |操作的群 ID  |
-| Timestamp | Integer | 必填 | 首次请求传0。当直播群中人数小于500人时，后台返回所有成员，并且返回 NextTimestamp 为0；当直播群中人数大于500人时，后台返回非0的 NextTimestamp，将该数字作为下一次请求的 Timestamp 拉取剩余人数。 |
+| CommandType | Integer | 必填 | 1 为设置标记，2 为删除标记  |
+| MemberList | Array | 必填 | 需要设置的账号列表，每次可以设置最多不超过500个账号，每个群最多只能设置10个不同的标记。标记为大于等于1000的数字 |
 
 ### 应答包体示例
+
 ```
 {
     "ActionStatus": "OK",
     "ErrorCode": 0,
     "ErrorInfo": "",
+    "CommandType": 1,
     "MemberList": [
         {
-            "JoinTime": 1657773110,
-            "Member_Account": "teacher2",
-            "NickName": "教师t02",
-            "Avatar": "http://www.example.com/teacher2.jpg"
+            "Member_Account": "teacher10",
+            "Marks": [1000]
+        },
+        {
+            "Member_Account": "student9",
+            "Marks": [1001]
         }
-    ],
-    "NextTimestamp": 0
+    ]
 }
 ```
+
 ### 应答包字段说明
 
 | 字段 | 类型 | 说明 |
@@ -98,8 +124,16 @@ https://xxxxxx/v4/group_open_avchatroom_http_svc/get_members?sdkappid=88888888&i
 | ActionStatus | String | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
 | ErrorCode|	Integer	|错误码，0表示成功，非0表示失败 |
 | ErrorInfo | String | 错误信息  |
-| MemberList | Object | 该群组的在线账号，Member_Account 为用户的 UserID，JoinTime 为该成员进群时间 |
-| NextTimestamp | Integer | 分页拉取标志，非0表示还有更多成员未返回，需要将该数字设置到请求参数 Timestamp 中拉取更多成员；0表示已经返回所有成员 |
+| MemberList | Object | 设置成功的成员列表。批量设置多个账号时，如果其中某个账号不在线则该账号不会返回。当所有被设置的账号不在线/不存在时，后台返回失败。 |
+
+### 特殊标记
+
+App管理员和群主可以为群成员设置范围为 [1000, +) 的标记，除此之外，App管理员可以设置IM预置的特殊标记，支持的特殊标记如下
+
+| 标记值 | 说明 |
+|-------|------|
+| 500 | 当某个成员被设置500标记时，该成员被认为一直在线（忽略断线事件），最长不超过3天。|
+| 600 | 当某个成员被设置600标记时，在拉取在线成员列表时该成员将被隐藏，除非显式指定按该成员的标志拉取。|
 
 ## 错误码说明
 
@@ -113,6 +147,6 @@ https://xxxxxx/v4/group_open_avchatroom_http_svc/get_members?sdkappid=88888888&i
 | 10002 | 系统错误，请再次尝试或联系技术客服  |
 | 10003 | 请求命令非法，请再次尝试或联系技术客服 |
 | 10004 | 参数非法。请根据应答包中的 ErrorInfo 字段，检查必填字段是否填充，或者字段的填充是否满足协议要求 |
-| 10007 | 权限不足，非 AVChatRoom 群类型不支持获取在线人数 |
+| 10007 | 权限不足，本API需App管理员或者群主调用 |
 | 10010 | 群组不存在，或者曾经存在过，但是目前已经被解散 |
 | 10015 | 群组 ID 非法，请检查群组 ID 是否填写正确  |

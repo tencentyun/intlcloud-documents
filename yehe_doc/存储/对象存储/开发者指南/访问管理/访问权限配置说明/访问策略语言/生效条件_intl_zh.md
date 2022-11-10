@@ -5,7 +5,7 @@
 - 条件操作符：表示生效条件的判断方法。
 - 条件值：指条件键的值。
 
-详情可参见 [访问管理 CAM 生效条件](https://intl.cloud.tencent.com/document/product/598/10608)。
+详情可参见 [访问管理 CAM 生效条件](https://www.tencentcloud.com/document/product/598/10608)。
 
 >? 
 >- 当您使用条件键编写策略时，请务必遵循最小权限原则，仅为适用请求（action）添加相应的条件键，避免在指定操作（action）时使用通配符“\*”，导致请求失败。
@@ -50,8 +50,6 @@
 ```
 
 ## COS 支持的条件键
-
-
 
 
 
