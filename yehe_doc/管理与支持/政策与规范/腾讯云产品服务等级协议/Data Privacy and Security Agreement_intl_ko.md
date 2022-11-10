@@ -161,6 +161,10 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 49.[OCR](https://www.tencentcloud.com/document/product/1005/50445).
 50.[Captcha](https://www.tencentcloud.com/document/product/1159/50402).
 51.[Tencent Machine Translation](https://www.tencentcloud.com/document/product/1161/51201)
+52.[Video Moderation System](https://www.tencentcloud.com/document/product/1140/51144).
+53.[Audio Moderation System](https://www.tencentcloud.com/document/product/1139/51141).
+54.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51138).
+55.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51135).
 
 ## 관할권별 요구 사항
 
