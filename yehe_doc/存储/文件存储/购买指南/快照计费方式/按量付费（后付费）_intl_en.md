@@ -24,7 +24,7 @@ CFS snapshots are pay-as-you-go (postpaid) as detailed in this document. This bi
 </tr>
 <tr>
 <td>Finance zones in the Chinese mainland</td>
-<td >0.0274 USD/GiB/month (0.00002381 USD/GiB/hour)</td>
+<td >0.0274 USD/GiB/month (0.0000381 USD/GiB/hour)</td>
 </tr>
 <tr>
 <td>United States</td>
