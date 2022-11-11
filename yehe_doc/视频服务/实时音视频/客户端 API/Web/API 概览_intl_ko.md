@@ -302,7 +302,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 | 통화 전 환경 및 디바이스 점검| [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-23-advanced-support-detection.html) |
 | 통화 전 네트워크 품질 점검| [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html) |
 | 장치 연결/해제 동작 감지| [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-25-advanced-device-change.html)|
-| CDN에 푸시 스트림 구현| [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html) |
+| CDN에 푸시 스트림 구현|- |
 | 듀얼 스트림 활성화| [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html) |
 | 뷰티 필터 활성화| [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html) |
 | 워터마크 활성화| [튜토리얼 링크](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-29-advance-water-mark.html) |
