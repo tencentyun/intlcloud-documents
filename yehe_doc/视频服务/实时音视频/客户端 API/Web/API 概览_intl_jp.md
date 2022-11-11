@@ -302,7 +302,7 @@ TRTC Web SDKはWebRTCをベースに実現しており、現在デスクトッ�
 | 通話前の環境およびデバイステスト| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-23-advanced-support-detection.html) |
 | 通話前のネットワーク品質テスト| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html) |
 | デバイス挿抜動作チェック| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-25-advanced-device-change.html)|
-| CDNへのプッシュの実現| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html) |
+| CDNへのプッシュの実現| - |
 | デュアルストリームの伝送を有効にする| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html) |
 | 美顔を有効にする| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html) |
 | ウォーターマークを有効にする| [ガイドリンク](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-29-advance-water-mark.html) |
