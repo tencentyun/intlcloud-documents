@@ -6,7 +6,7 @@ The StreamLink service is managed at the flow level in the StreamLink console, a
 | -----------------| ---| --------- |
 | Transfer |The transfer fee is charged based on the sum of the peak bandwidth used by each flow in a day. | Daily pay-as-you-go |
 | Device running |The device running fee is charged based on the number of inputs and outputs and their running hours in a day. | Daily pay-as-you-go |
-| Relaying traffic |If you relay video to third parties, you will be charged based on the amount of traffic relayed in a day. The pricing of relaying traffic varies with region and the highest bandwidth supported is 8 Mbps. | Daily pay-as-you-go |
+| Relaying traffic |If you relay video to third parties, you will be charged based on the amount of traffic relayed in a day. The pricing of relaying traffic varies with region. | Daily pay-as-you-go |
 
 ### Transfer
 
