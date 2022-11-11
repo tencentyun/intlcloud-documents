@@ -21,12 +21,12 @@
 
 | API | 描述 |
 |---------|---------|
-| [addSimpleMsgListener](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/addSimpleMsgListener.html) | 设置基本消息（文本消息和自定义消息）的事件监听器， 请不要同  [addAdvancedMsgListener](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)  混用 |
-| [removeSimpleMsgListener](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/removeSimpleMsgListener.html) | 移除基本消息（文本消息和自定义消息）的事件监听器 |
-| [sendC2CTextMessage](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/sendC2CTextMessage.html) | 发送单聊（C2C）普通文本消息 |
-| [sendC2CCustomMessage](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/sendC2CCustomMessage.html) | 发送单聊（C2C）自定义（信令）消息 |
-| [sendGroupTextMessage](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/sendGroupTextMessage.html) | 发送群聊普通文本消息 |
-| [sendGroupCustomMessage](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/sendGroupCustomMessage.html) | 发送群聊自定义（信令）消息 |
+| [addSimpleMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/addSimpleMsgListener.html) | 设置基本消息（文本消息和自定义消息）的事件监听器， 请不要同  [addAdvancedMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/addAdvancedMsgListener.html)  混用 |
+| [removeSimpleMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/removeSimpleMsgListener.html) | 移除基本消息（文本消息和自定义消息）的事件监听器 |
+| [sendC2CTextMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/sendC2CTextMessage.html) | 发送单聊（C2C）普通文本消息 |
+| [sendC2CCustomMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/sendC2CCustomMessage.html) | 发送单聊（C2C）自定义（信令）消息 |
+| [sendGroupTextMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/sendGroupTextMessage.html) | 发送群聊普通文本消息 |
+| [sendGroupCustomMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/sendGroupCustomMessage.html) | 发送群聊自定义（信令）消息 |
 
 
 ## 信令接口
@@ -63,11 +63,11 @@
 
 | API | 描述 |
 |---------|---------|
-| [addAdvancedMsgListener](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html) | 设置高级消息的事件监听器， 请不要同 [addSimpleMsgListener](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/addSimpleMsgListener.html) 混用 |
+| [addAdvancedMsgListener](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html) | 设置高级消息的事件监听器， 请不要同 [addSimpleMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/addSimpleMsgListener.html) 混用 |
 | [removeAdvancedMsgListener](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/removeAdvancedMsgListener.html) | 移除高级消息的事件监听器 |
 | [getC2CHistoryMessageList](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getC2CHistoryMessageList.html) | 获取单聊（C2C）历史消息 |
 | [getHistoryMessageList](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getHistoryMessageList.html) | 获取历史消息高级接口 |
-| [getHistoryMessageListWithoutFormat](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getHistoryMessageListWithoutFormat.html) | 获取历史消息高级接口(没有处理Native返回数据) |
+| [getHistoryMessageListWithoutFormat](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/getHistoryMessageListWithoutFormat.html) | 获取历史消息高级接口(没有处理Native返回数据) |
 | [getGroupHistoryMessageList](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getGroupHistoryMessageList.html) | 获取群组历史消息 |
 | [markC2CMessageAsRead](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/markC2CMessageAsRead.html) | 设置单聊（C2C）消息已读 |
 | [markGroupMessageAsRead](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/markGroupMessageAsRead.html) | 设置群组消息已读 |
@@ -89,16 +89,16 @@
 | [sendMessage](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendMessage.html) | 发送消息 |
 | [sendReplyMessage](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendReplyMessage.html) | 发送回复消息 |
 | [searchLocalMessages](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/searchLocalMessages.html) | 搜索本地消息 |
-| [findMessages](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/findMessages.html) | 根据 messageID 查询指定会话中的本地消息 |
+| [findMessages](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/findMessages.html) | 根据 messageID 查询指定会话中的本地消息 |
 |[sendMessageReadReceptes](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendMessageReadReceipts.html)|发送群消息已读回执|
 |[getMessageReadReceptes](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getMessageReadReceipts.html) |获取自己发送消息的已读回执|
 |[getgroupMessageReadMemeberList](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getGroupMessageReadMemberList.html)|获取自己发送的群消息已读（未读）群成员列表|
-| [~~sendCustomMessage~~](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendCustomMessage.html) | 发送自定义消息(已废弃) |
-| [~~sendImageMessage~~](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendImageMessage.html) | 发送图片消息(已废弃) |
-| [~~sendSoundMessage~~](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendSoundMessage.html) | 发送语音消息(已废弃) |
-| [~~sendVideoMessage~~](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendVideoMessage.html) | 发送视频消息(已废弃) |
-| [~~sendFileMessage~~](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendFileMessage.html) | 发送文件消息(已废弃) |
-| [~~sendLocationMessage~~](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/sendLocationMessage.html) | 发送地理位置消息(已废弃) |
+| [~~sendCustomMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendCustomMessage.html) | 发送自定义消息(已废弃) |
+| [~~sendImageMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendImageMessage.html) | 发送图片消息(已废弃) |
+| [~~sendSoundMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendSoundMessage.html) | 发送语音消息(已废弃) |
+| [~~sendVideoMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendVideoMessage.html) | 发送视频消息(已废弃) |
+| [~~sendFileMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendFileMessage.html) | 发送文件消息(已废弃) |
+| [~~sendLocationMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendLocationMessage.html) | 发送地理位置消息(已废弃) |
 
 
 ## 群组相关接口
@@ -125,7 +125,7 @@
 | [deleteGroupAttributes](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/deleteGroupAttributes.html) | 删除指定群属性，keys 传 null 则清空所有群属性。 |
 | [getGroupAttributes](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/getGroupAttributes.html) | 获取指定群属性，keys 传 null 则获取所有群属性。 |
 | [searchGroups](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/searchGroups.html) | 搜索群列表 |
-| [searchGroupByID](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/searchGroupByID.html) | 通过 groupID 搜索群组 |
+| [searchGroupByID](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/searchGroupByID.html) | 通过 groupID 搜索群组 |
 | [getGroupOnlineMemberCount](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/getGroupOnlineMemberCount.html) | 获取指定群在线人数(目前只支持直播群) |
 | [getGroupMemberList](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) | 获取群成员列表 |
 | [getGroupMembersInfo](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/getGroupMembersInfo.html) | 获取指定的群成员资料 |
@@ -148,8 +148,8 @@
 |---------|---------|
 | [setConversationListener](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/setConversationListener.html) | 设置会话监听器 |
 | [getConversationList](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/getConversationList.html) | 获取会话列表 |
-| [getConversationListWithoutFormat](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/getConversationListWithoutFormat.html) | 获取会话列表（无格式化） |
-| [getConversationListByConversaionIds](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/getConversationListByConversaionIds.html) | 通过会话ID获取指定会话列表 |
+| [getConversationListWithoutFormat](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_conversation_manager/V2TIMConversationManager/getConversationListWithoutFormat.html) | 获取会话列表（无格式化） |
+| [getConversationListByConversaionIds](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/getConversationListByFilter.html) | 通过会话ID获取指定会话列表 |
 | [pinConversation](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/pinConversation.html) | 会话置顶 |
 | [getTotalUnreadMessageCount](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/getTotalUnreadMessageCount.html) | 获取会话未读总数 |
 | [getConversation](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/getConversation.html) | 获取指定会话 |
