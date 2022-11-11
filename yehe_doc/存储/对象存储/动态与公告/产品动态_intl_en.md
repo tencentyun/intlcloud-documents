@@ -1,11 +1,72 @@
 
+## October 2022
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Launched billing by bucket and cost allocation by tag features</td>
+<td>COS supports billing by bucket and cost allocation by tag, which are currently made available through an allowlist and will be fully available starting from December 1, 2022. You can view the usage and costs of billable items for each bucket through bills by instance (L2) or bill details (L3). You can also view costs by bucket by setting cost allocation tags.</td>
+<td> 2022-10-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/10373">Billing</a></td>
+</tr>
+</tbody></table>
+
+
+
+## September 2022
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Changed from monthly settlement to daily settlement</td>
+<td>Starting from July 1, 2022, COS storage usage, request, and data retrieval fees were changed from monthly settlement to daily settlement for accounts in batches. The daily settlement mode was fully launched on September 1, 2022.</td>
+<td> 2022-09-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/47593">Daily Billing for COS Storage Usage, Request, and Data Retrieval</a></td>
+</tr>
+</tbody></table>
+
 
 ## July 2022
 
 | Update | Description | Release Date | Documentation |
 | :--------------- | :----------------------------------------------------------- | :--------- | :----------------------------------------------------------- |
-| Reduced the STANDARD_IA storage capacity unit price | COS' published prices of STANDARD_IA storage capacity are reduced from 0.018 USD/GB/month to 0.015 USD/GB/month in Mumbai, Seoul, Bangkok, Silicon Valley, Moscow, Jakarta, and São Paulo regions. | 2022-07-01 | [Pricing(Cloud Object Storage)](https://buy.intl.cloud.tencent.com/price/cos) |
+| Reduced the STANDARD_IA storage capacity unit price | COS' published prices of STANDARD_IA storage capacity are reduced from 0.018 USD/GB/month to 0.015 USD/GB/month in Mumbai, Seoul, Bangkok, Silicon Valley, Moscow, Jakarta, and São Paulo regions. | 2022-07-01 | [Pricing | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos) |
 
+## May 2022
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimized the file preview feature</td>
+<td>The file-to-HTML conversion feature allows you to pass in parameters through JSON to the download link to directly adjust the advanced page settings. The printing prevention feature is added.</td>
+<td> 2022-05-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/49414">Getting Started</a></td>
+</tr>
+</tbody></table>
 
 
 
@@ -25,7 +86,7 @@
 <td>Launched DEEP ARCHIVE in Singapore region</td>
 <td>Objects can be uploaded to DEEP ARCHIVE in Singapore region.</td>
 <td> 2022-04-25</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">Uploading Objects</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">Uploading Object</a></td>
 </tr>
 </tbody></table>
 
@@ -80,8 +141,8 @@
 <td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a></td>
 </tr>
 <tr>
-<td align="left">Launched the TESHD transcoding feature</td>
-<td align="left">The TESHD transcoding feature improves the subjective image quality of a video at a lower bitrate. It makes videos smaller and clearer.</td>
+<td align="left">Launched the top speed codec transcoding feature</td>
+<td align="left">The top speed codec transcoding feature improves the subjective image quality of a video at a lower bitrate. It makes videos smaller and clearer.</td>
 <td align="left">2022-02-17</td>
 <td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a></td>
 </tr>
@@ -152,19 +213,19 @@
 <td>Launched the file preview/edit features</td>
 <td>You can quickly preview files in buckets and edit text files in the console.</td>
 <td> 2021-08-05</td>
-<td>Previewing or Editing Object
+<td>Previewing or Editing Object 
 </tr>
 <tr>
 <td>Launched the folder sharing feature</td>
 <td>You can generate a folder's URL and password and set the URL validity period in the console. </td>
 <td> 2021-08-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/42387">Sharing a Folder</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/42387">Sharing Folder</a>
 </tr>
 <tr>
 <td>Launched the media processing - video enhancement feature</td>
 <td>Media processing provides a series of features, including details enhancement, color enhancement, and SDR to HDR conversion, to enhance the video image quality for better visual effect.</td>
 <td> 2021-08-03</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring a Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
 </tr>
 <tr>
 <td>Launched the media processing - custom function processing feature</td>
@@ -176,7 +237,7 @@
 <td>Launched the media processing - video encryption feature</td>
 <td>The HLS standard encryption capability is added to ensure the security of your video data.</td>
 <td> 2021-08-03</td>
-<td>Preventing Video Leakage with HLS Encryption
+<td>How to Prevent Video Disclosure via HLS Encryption 
 </tr>
 </tbody></table>
 
@@ -198,7 +259,7 @@
 <td>Launched DEEP ARCHIVE in Chongqing region</td>
 <td>Objects can be uploaded to DEEP ARCHIVE in Chongqing region.</td>
 <td> 2021-07-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">Uploading Objects</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">Uploading Object</a></td>
 </tr>
 </tbody></table>
 
@@ -217,28 +278,28 @@
 </thead>
 <tbody>
 <tr>
-<td>Launched the media processing - TESHD transcoding feature</td>
-<td>TESHD transcoding makes videos smaller and clearer. It delivers a better visual experience with guaranteed low network resource usage.</td>
+<td>Launched the media processing - top speed codec transcoding feature</td>
+<td>Top speed codec transcoding makes videos smaller and clearer. It delivers a better visual experience with guaranteed low network resource usage.</td>
 <td> 2021-06-26</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring a Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
 </tr>
 <tr>
 <td>Launched the media processing - HDR-to-SDR feature</td>
 <td>HDR-to-SDR converts the dynamic range of videos in the cloud. It makes the image details of the output video as close as possible to those of the original video.</td>
 <td> 2021-06-26</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring a Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
 </tr>
 <tr>
-<td>Launched the media processing - highlights generation feature</td>
+<td>Launched the media processing - video montage feature</td>
 <td>This feature recognizes and aggregates the video content, postures, and scenes to quickly clip them professionally.</td>
 <td> 2021-06-26</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring a Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
 </tr>
 <tr>
 <td>Launched the media processing - voice/sound separation feature</td>
 <td>This feature separates the voice from the background sound in a video material to generate a new independent audio file. Then, you can apply artistic processing of other styles to the material.</td>
 <td> 2021-06-26</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring a Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">Configuring Job</a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
 </tr>
 <tr>
 <td>Launched the media processing - HLS adaptive compression feature</td>
@@ -293,7 +354,7 @@
 <td>Launched DEEP ARCHIVE in Tokyo region</td>
 <td>Objects can be uploaded to DEEP ARCHIVE in Tokyo region.</td>
 <td> 2021-04-29</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">Uploading Objects</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">Uploading Object</a></td>
 </tr>
 <tr>
 <td>Launched the log cleansing feature</td>
@@ -456,7 +517,7 @@
 <tbody>
 <tr>
 <td>Launched the image advanced compression feature</td>
-<td>The image advanced compression feature allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.</td>
+<td>The image advanced compression feature allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transfer time, loading time, and the use of bandwidth and traffic.</td>
 <td> 2020-10-16</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/40117">Setting Image Advanced Compression</a></td>
 </tr>
@@ -533,7 +594,7 @@
 <td>Launched the CDN cache purge feature</td>
 <td>CDN cache purge is a data purge feature provided by COS based on the SCF service. It can automatically purge the data cached on CDN edge nodes.</td>
 <td> 2020-07-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/37273">CDN Cache Purging</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/37273">Setting CDN Cache Purge</a>
 </tr>
 </tbody></table>
 
@@ -557,7 +618,7 @@
 <br>4. The bucket list now supports sorting, filtering by region, and exporting.</td>
 <td >2020-03-30</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/35665">Object Tag Overview</a>
-<br><a href="https://intl.cloud.tencent.com/document/product/436/35663">File Decompression</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/436/35663">Setting File Decompression</a>
 <br><a href="https://intl.cloud.tencent.com/document/product/436/16871">Billing Overview</a>
 </td>
 </tr>
@@ -673,7 +734,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/436/19237">Overview</a></td>
 </tr>
 <tr>
-<td>Added support for custom origin domain names</td>
+<td>Added support for custom endpoints</td>
 <td>You can bind your own domain name as a custom endpoint to the bucket for access to the objects in it.</td>
 <td nowrap="nowrap">2019-06-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/18424">Overview</a></td>
