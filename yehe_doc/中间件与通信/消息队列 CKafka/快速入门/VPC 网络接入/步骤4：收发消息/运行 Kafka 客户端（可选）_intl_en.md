@@ -73,10 +73,10 @@ bash kafka-console-producer.sh --broker-list XXXX:port --topic XXXX --producer.c
 </dx-alert>
 
    Enter the content of the message and press Enter.
-   **Producing a message:**
+<ul><li><b>Producing a message:</b>
    <img src = "https://qcloudimg.tencent-cloud.cn/raw/30f5a8207a552023b2954b1e599c7f88.png"> 
 
-   **Consuming a message:**
+   <li><b>Consuming a message:</b>
    <img src = "https://qcloudimg.tencent-cloud.cn/raw/2a09bee955acd0cd238977ec5bc250e5.png"> 
  
 3. In the message querying page of the CKafka console, query the message sent.
