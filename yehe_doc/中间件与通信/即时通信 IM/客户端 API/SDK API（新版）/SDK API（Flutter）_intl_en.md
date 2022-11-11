@@ -21,12 +21,12 @@ Use the following APIs for the sending and receiving of text and signaling (cust
 
 | API      | Description                         |
 |---------|---------|
-| [addSimpleMsgListener](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/addSimpleMsgListener.html) | Sets an event listener for simple messages (text messages and custom messages). Do not confuse this API with the [addAdvancedMsgListener](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html) API. |
-| [removeSimpleMsgListener](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/removeSimpleMsgListener.html) | Removes the event listener for simple messages (text messages and custom messages). |
-| [sendC2CTextMessage](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/sendC2CTextMessage.html) | Sends a one-to-one (C2C) text message. |
-| [sendC2CCustomMessage](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/sendC2CCustomMessage.html) | Sends a one-to-one custom (signaling) message. |
-| [sendGroupTextMessage](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/sendGroupTextMessage.html) | Sends a group text message. |
-| [sendGroupCustomMessage](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/sendGroupCustomMessage.html) | Sends a group custom (signaling) message. |
+| [addSimpleMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/addSimpleMsgListener.html) | Sets an event listener for simple messages (text messages and custom messages). Do not confuse this API with the [addAdvancedMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/addAdvancedMsgListener.html) API. |
+| [removeSimpleMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/removeSimpleMsgListener.html) | Removes the event listener for simple messages (text messages and custom messages). |
+| [sendC2CTextMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/sendC2CTextMessage.html) | Sends a one-to-one (C2C) text message. |
+| [sendC2CCustomMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/sendC2CCustomMessage.html) | Sends a one-to-one custom (signaling) message. |
+| [sendGroupTextMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/sendGroupTextMessage.html) | Sends a group text message. |
+| [sendGroupCustomMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/sendGroupCustomMessage.html) | Sends a group custom (signaling) message. |
 
 
 ## Signaling APIs
@@ -67,7 +67,7 @@ If you need to send or receive rich media messages (such as image, video, and fi
 | [removeAdvancedMsgListener](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/removeAdvancedMsgListener.html) | Removes the event listener for advanced messages. |
 | [getC2CHistoryMessageList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getC2CHistoryMessageList.html) | Gets the one-to-one message history. |
 | [getHistoryMessageList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getHistoryMessageList.html) | Gets the message history (advanced API). |
-| [getHistoryMessageListWithoutFormat](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getHistoryMessageListWithoutFormat.html) | Gets the message history (advanced API) (without processing the data returned by native SDKs). |
+| [getHistoryMessageListWithoutFormat](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/getHistoryMessageListWithoutFormat.html) | Gets the message history (advanced API) (without processing the data returned by native SDKs). |
 | [getGroupHistoryMessageList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getGroupHistoryMessageList.html) | Gets the group message history. |
 | [markC2CMessageAsRead](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/markC2CMessageAsRead.html) | Marks a one-to-one message as read. |
 | [markGroupMessageAsRead](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/markGroupMessageAsRead.html) | Marks a group message as read. |
@@ -89,16 +89,16 @@ If you need to send or receive rich media messages (such as image, video, and fi
 | [sendMessage](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html) | Sends a message. |
 | [sendReplyMessage](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendReplyMessage.html) | Sends a reply message. |
 | [searchLocalMessages](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/searchLocalMessages.html) | Searches for local messages. |
-| [findMessages](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/findMessages.html) | Queries local messages in a conversation by `messageID`. |
+| [findMessages](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/findMessages.html) | Queries local messages in a conversation by `messageID`. |
 |[sendMessageReadReceptes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessageReadReceipts.html)| Sends group message read receipts. |
 |[getMessageReadReceptes](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getMessageReadReceipts.html) | Gets read receipts for messages sent by yourself. |
 |[getgroupMessageReadMemeberList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getGroupMessageReadMemberList.html)| Gets the list of members who have (or have not) read a message sent by yourself. |
-| [~~sendCustomMessage~~](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendCustomMessage.html) | Sends a custom message (disused). |
-| [~~sendImageMessage~~](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendImageMessage.html) | Sends an image message (disused). |
-| [~~sendSoundMessage~~](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendSoundMessage.html) | Sends a audio message (disused). |
-|  [~~sendVideoMessage~~](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendVideoMessage.html) | Sends a video message (disused). |
-| [~~sendFileMessage~~](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendFileMessage.html) | Sends a file message (disused). |
-| [~~sendLocationMessage~~](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendLocationMessage.html) | Sends a location message (disused). |
+| [~~sendCustomMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendCustomMessage.html) | Sends a custom message (disused). |
+| [~~sendImageMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendImageMessage.html) | Sends an image message (disused). |
+| [~~sendSoundMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendSoundMessage.html) | Sends a audio message (disused). |
+|  [~~sendVideoMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendVideoMessage.html) | Sends a video message (disused). |
+| [~~sendFileMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendFileMessage.html) | Sends a file message (disused). |
+| [~~sendLocationMessage~~](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendLocationMessage.html) | Sends a location message (disused). |
 
 
 ## Group APIs
@@ -148,7 +148,7 @@ The conversation list is the list a user sees on the first screen after logging 
 |---------|---------|
 | [setConversationListener](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/setConversationListener.html) | Sets a conversation listener. |
 | [getConversationList](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/getConversationList.html) | Gets the conversation list. |
-| [getConversationListWithoutFormat](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/getConversationListWithoutFormat.html) | Gets the conversation list (unformatted). |
+| [getConversationListWithoutFormat](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_conversation_manager/V2TIMConversationManager/getConversationListWithoutFormat.html) | Gets the conversation list (unformatted). |
 | [getConversationListByConversaionIds](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/getConversationListByConversaionIds.html) | Gets the list of specified conversations by conversation IDs. |
 | [pinConversation](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/pinConversation.html) | Pins a conversation to the top. |
 | [getTotalUnreadMessageCount](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/getTotalUnreadMessageCount.html) | Gets the total unread message count of a conversation. |
