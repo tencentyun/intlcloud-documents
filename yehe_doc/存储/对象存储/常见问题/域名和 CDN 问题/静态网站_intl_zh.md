@@ -1,6 +1,6 @@
 ### 如何设置访问对象时直接显示，而不需要下载?
 
-绑定用户自有域名（如需购买域名，可通过腾讯云 [注册域名](https://dnspod.cloud.tencent.com/?from=qcloudHpHeaderDnspod&fromSource=qcloudHpHeaderDnspod)）并开启静态网站功能即可。详情参考 [设置静态网站](https://intl.cloud.tencent.com/document/product/436/14984)。
+绑定用户自有域名（如需购买域名，可通过腾讯云 [注册域名](https://www.tencentcloud.com/document/product/242)）并开启静态网站功能即可。详情参考 [设置静态网站](https://intl.cloud.tencent.com/document/product/436/14984)。
 
 ### 在 COS 控制台设置自定义域名失败，如何处理？
 

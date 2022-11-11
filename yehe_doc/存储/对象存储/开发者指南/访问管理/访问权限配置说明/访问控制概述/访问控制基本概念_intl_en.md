@@ -1,41 +1,42 @@
-**COS resources (buckets and objects) are private by default.** Only Tencent Cloud root accounts (resource owners) can access and modify buckets and objects. Other users (such as sub-accounts and anonymous users) cannot access objects by using URLs without authorization.
+**COS resources (buckets and objects) are private by default.** Only Tencent Cloud root accounts (resource owners) can access and modify them. Other unauthorized users (such as sub-accounts and anonymous users) cannot access objects by using URLs.
 
-After creating a Tencent Cloud sub-account, you can configure an access policy to authorize the sub-account. If you want to open up resources (buckets, objects, and directories) to non-Tencent Cloud users, you only need to set the permissions of the resources to Public Read.
+After creating a Tencent Cloud sub-account, you can configure an access policy to authorize it. If you want to open up resources (buckets, objects, and directories) to non-Tencent Cloud users, you can set the permissions of the resources to public read.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/d22047a7656e9524482def3ce67b61ed.png)
 
-## Access Policy Elements
+## Access Control Elements
 
-You can grant access permissions by specifying a person to perform a specified action on specified resources under a specified condition. Generally, the following four elements are used to describe an access policy: **principal, resource, action, and condition (optional)**.
+You can grant access permissions by specifying a user to perform a specified action on specified resources under a specified condition. Generally, the following four elements are used to describe an access policy: **principal, resource, action, and condition (optional)**.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/58d70d36503b2f1a61800b5b7a672442.png)
 
-## Description of Elements
+## Access Policy Elements
 
 #### Tencent Cloud identity (principal)
 
-When you apply for a Tencent Cloud account, the system will create a root account for logging in to Tencent Cloud services. The Tencent Cloud root account manages different types of users with different roles using the user management feature. User types include **collaborator, message recipient, sub-user, and role**. For more information, see [User Types](https://intl.cloud.tencent.com/document/product/598/32633) and [Glossary](https://intl.cloud.tencent.com/document/product/598/18564) of CAM.
+When you sign up for a Tencent Cloud account, the system creates a root account identity for you to log in to Tencent Cloud services. With the root account, you can use the user management feature to manage different user types, such as **collaborator, message recipient, sub-user, and role**. For more information, see [User Types](https://www.tencentcloud.com/document/product/598/32633) and [Glossary](https://intl.cloud.tencent.com/document/product/598/18564) of CAM.
 
->?Assume that you are to authorize an employee in your enterprise, you need to create a sub-account in the [CAM console](https://console.cloud.tencent.com/cam) and then set specific permissions for the sub-account by using one or more of the following methods: [Bucket Policy](https://intl.cloud.tencent.com/document/product/436/45235), [ACL](https://intl.cloud.tencent.com/document/product/436/30583), and [User Policy](https://intl.cloud.tencent.com/document/product/436/45236).
+>? Suppose you want to authorize a colleague, you first need to create a sub-user in the [CAM console](https://console.cloud.tencent.com/cam), select a [bucket policy](https://intl.cloud.tencent.com/document/product/436/45235), [ACL](https://intl.cloud.tencent.com/document/product/436/30583), and/or [user policy](https://intl.cloud.tencent.com/document/product/436/45236) to set specific permissions for the sub-user.
+>
 
 #### COS resources
 
-Buckets and objects are basic resources of the COS service. Folders are a special type of object. You can authorize objects in folders by authorizing the folders. For more information, see [Setting Folder Permissions](https://intl.cloud.tencent.com/document/product/436/35261).
+Buckets and objects are basic resources of the COS service. Folders are a special type of object. You can authorize objects in a folder by authorizing the folder. For more information, see [Setting Folder Permissions](https://intl.cloud.tencent.com/document/product/436/35261).
 
 Buckets and objects have subresources associated with them.
 
-The subresources associated with a bucket include:
+Subresources associated with a bucket include:
 
-- acl and policy: access control list of a bucket
-- website: static website hosting configuration of a bucket
-- tagging: tag information of a bucket
-- cors: cross-origin resource sharing (CORS) configuration of a bucket
-- lifecycle: lifecycle configuration of a bucket
+- acl and policy: Access control list of a bucket
+- website: Static website hosting configuration of a bucket
+- tagging: Tag information of a bucket
+- cors: Cross-origin resource sharing (CORS) configuration of a bucket
+- lifecycle: Lifecycle configuration of a bucket
 
-The subresources associated with an object include:
+Subresources associated with an object include:
 
-- acl: access control information of an object
-- restore: restoration configuration of an archive object
+- acl: Access control information of an object
+- restore: Restoration configuration of an archived object
 
 #### COS operations (actions)
 
@@ -43,54 +44,55 @@ COS provides a range of API operations on various resources. For more informatio
 
 #### COS conditions (optional)
 
-COS conditions refer to conditions for permissions to take effect, such as VPC and VIP. For more information, see [Condition](https://intl.cloud.tencent.com/document/product/598/10608).
+COS conditions refer to conditions for permissions to take effect, such as VPC and VIP. For more information, see [Conditions](https://www.tencentcloud.com/document/product/598/10608).
 
 ## Private Principle
 
->?Tencent Cloud COS resources are private by default.
+>? COS resources are private by default.
+>
 
 - The resource owner (the Tencent Cloud root account creating a bucket resource) has the highest permission on the resource, and can grant access permissions to others or anonymous users by writing or modifying an access policy.
-- When a Tencent Cloud [CAM](https://intl.cloud.tencent.com/document/product/598/10583) account is used to create a bucket or upload an object, its parent root account is the resource owner.
-- The root account of the bucket owner can authorize other Tencent Cloud root accounts to upload objects (i.e. cross-account upload). In this case, the object owner is still the root account of the bucket owner.
+- When a [CAM](https://intl.cloud.tencent.com/document/product/598/10583) account is used to create a bucket or upload an object, its parent root account is the resource owner.
+- The root account of a bucket owner can authorize other Tencent Cloud root accounts to upload objects (i.e. cross-account upload). In this case, the object owner is still the root account of the bucket owner.
 
 ## Access Control Methods
 
-COS provides multiple permission setting methods to implement access control, including bucket policies, user policies (CAM policies), bucket ACLs, and object ACLs.
+COS provides multiple permission setting methods to implement access control, including bucket policy, user policy (CAM policy), bucket ACL, and object ACL.
 
-These methods can be classified into resource-based authorization and user-based authorization according to the starting point of policy setting, and classified into policy-based authorization and ACL-based authorization according to the authorization mode.
+These methods can be categorized into resource-based authorization and user-based authorization based on the starting point of policy setting, or categorized into policy-based authorization and ACL-based authorization based on the authorization mode.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/ca32b98c546c2b039cd29ba842dc9755.png)
 
-**Classification method 1: resource-based authorization vs user-based authorization**
+**Categorization option 1: Resource-based authorization vs. user-based authorization**
 ![](https://qcloudimg.tencent-cloud.cn/raw/f92521c28d8a4841f71f267ca9964dcc.png)
-- Resource-based authorization: resource policies associate permissions with specific resources, including bucket policies, bucket ACLs, and object ACLs. Resource policies can be configured by using the COS console or APIs.
-- User-based authorization: user policies (CAM policies) associate permissions with users. When configuring a user-based policy, you do not need to specify users. Instead, you only need to specify resources, operations, conditions, and so on. User policies can be configured in the [CAM console](https://console.cloud.tencent.com/cam).
+- Resource-based authorization: Resource policies associate permissions with specific resources, including bucket policies, bucket ACLs, and object ACLs. Resource policies can be configured in the COS console or through APIs.
+- User-based authorization: User policies (CAM policies) associate permissions with users. When configuring a user-based policy, you don't need to specify users. Instead, you only need to specify resources, actions, conditions, and so on. User policies can be configured in the [CAM console](https://console.cloud.tencent.com/cam).
 
-**Classification method 2: policy-based authorization vs ACL-based authorization**
+**Categorization option 2: Policy-based authorization vs. ACL-based authorization**
 ![](https://qcloudimg.tencent-cloud.cn/raw/e861ab92e54560071e26ac27a180c54b.png)
-- Policy-based authorization: both user policies (CAM policies) and bucket policies implement authorization based on complete policy syntax. They authorize refined actions specific to each API and allow specifying the `allow` or `deny` effect.
-- ACL-based authorization: bucket ACLs and object ACLs are implemented based on ACLs. An ACL is a list of specified grantees and permissions granted, and is associated with resources and corresponds to organized and abstracted permissions. ACLs allow specifying only the `allow` effect.
+- Policy-based authorization: Both user policies (CAM policies) and bucket policies implement authorization based on complete policy syntax. They authorize refined actions specific to each API and allow specifying the `allow` or `deny` effect.
+- ACL-based authorization: Bucket ACLs and object ACLs are implemented based on ACLs. An ACL is a list of specified grantees and granted permissions, which is associated with resources and corresponds to organized and abstracted permissions. ACLs allow specifying only the `allow` effect.
 
 
 ### Resource-based policy
 
-Resource-based policies are classified into three types: bucket policies, bucket ACLs, and object ACLs. COS supports access control at both the **bucket** and **object** dimensions, as detailed below:
+Resource-based policies are categorized into three types: bucket policy, bucket ACL, and object ACL. COS supports access control at both the **bucket** and **object** levels as detailed below:
 
 | Dimension | Type | Language | Supported Identity | Supported Resource Granularity | Supported Action | Supported Effect |
 | ------ | ---------------------- | -------- | ------------------------------------------------ | -------------------- | ------------------ | ------------- |
 | Bucket | Access policy language (Policy) | JSON | Sub-accounts, roles, Tencent Cloud services, other root accounts, anonymous users, etc. | Buckets, objects, prefixes, etc. | Each specific action | Allow/Deny |
-| Bucket | Access Control List (ACL) | XML | Other root accounts, anonymous users, etc. | Buckets | Read and write actions | Allow |
-| Object | Access Control List (ACL) | XML | Other root accounts, anonymous users, etc. | Objects | Read and write actions | Allow |
+| Bucket | Access control list (ACL) | XML | Other root accounts, sub-accounts, anonymous users, etc. | Buckets | Read and write actions | Allow |
+| Object | Access control list (ACL) | XML | Other root accounts, sub-accounts, anonymous users, etc. | Objects | Read and write actions | Allow |
 
-<span id="Bucket policy"></span>
+<span id="BucketPolicy"></span>
 #### Bucket policy
 
-A bucket policy is described in JSON language, and supports granting anonymous identities or any Tencent Cloud [CAM](https://intl.cloud.tencent.com/document/product/598/10583) account the permissions to access and perform operations on buckets and objects. In Tencent Cloud COS, the bucket policy can be used to manage almost all operations in the bucket. It is recommended that you use a bucket policy to manage access policies that cannot be described using ACLs. For more information, see [Bucket Policy](https://intl.cloud.tencent.com/document/product/436/45235).
+A bucket policy is described in JSON language and supports granting anonymous identities or any Tencent Cloud [CAM](https://intl.cloud.tencent.com/document/product/598/10583) accounts the permissions to access and manipulate buckets and objects. In COS, a bucket policy can be used to manage almost all operations in the bucket. We recommend you use a bucket policy to manage access policies that cannot be described by ACLs. For more information, see [Bucket Policy](https://intl.cloud.tencent.com/document/product/436/45235).
 
->!A Tencent Cloud root account has the highest permission on its resources (including buckets). Even if you can set limits on almost all operations in the bucket policy, the root account always has the permission for the PUT Bucket Policy operation, and can call this operation without checking the bucket policy.
+>!A Tencent Cloud root account has the highest permission on its resources (including buckets). Although you can set limits on almost all operations in a bucket policy, the root account always has the permission for the `PUT Bucket Policy` operation and can call this operation without checking the bucket policy.
 
 
-The following policy allows anonymous users to access all objects in the bucket `examplebucket-1250000000` in Guangzhou, and to download all objects (via `GetObject`) in the bucket without signature verification. In this case, any anonymous user who knows the URLs can download the objects (similar to Public Read):
+The following policy allows anonymous users to access all objects in the bucket `examplebucket-1250000000` in Guangzhou and to download all objects (via `GetObject`) in the bucket without signature verification. In this case, any anonymous user who knows the URLs can download the objects (similar to public read):
 
 ```json
 {
@@ -106,15 +108,15 @@ The following policy allows anonymous users to access all objects in the bucket 
 }
 ```
 
-<span id="ACL"></span>
+<span id="ACLPolicy"></span>
 #### ACL
 
-An ACL is described in the XML language. It is a list of specified grantees and permissions granted, which is associated with resources. Each bucket and object has an associated ACL to grant basic read and write permissions to anonymous users or other Tencent Clouds root accounts. For more information, see [ACL](https://intl.cloud.tencent.com/document/product/436/30583).
+An ACL is described in XML language. It is a list of specified grantees and granted permissions. Each bucket or object has an associated ACL, which allows granting basis read/write permissions to anonymous users or other Tencent Cloud root accounts. For more information, see [ACL](https://intl.cloud.tencent.com/document/product/436/30583).
 
->!The resource owner always has the FULL_CONTROL permission on the resource, regardless of whether this is described in the issued ACL.
+>! The resource owner always has the FULL_CONTROL permission on the resource, regardless of whether this is described in the distributed ACL.
 >
 
-The bucket ACL in this example describes the full control permission of the bucket owner (UIN: 100000000001):
+The bucket ACL in the following example describes the full control permission of the bucket owner (UIN: 100000000001):
 
 ```xml
 <AccessControlPolicy>
@@ -132,7 +134,7 @@ The bucket ACL in this example describes the full control permission of the buck
 </AccessControlPolicy>
 ```
 
-The object ACL in this example describes the full control permission of the object owner (UIN: 100000000001) and grants the read permission to all users (the public-read permission to anonymous users):
+The object ACL in the following example describes the full control permission of the object owner (UIN: 100000000001) and grants the read permission to all users (the public-read permission to anonymous users):
 
 ```xml
 <AccessControlPolicy>
@@ -157,16 +159,16 @@ The object ACL in this example describes the full control permission of the obje
 ```
 
 
-<span id="User policy"></span>
+<span id="UserPolicy"></span>
 #### User policy
 
-In [CAM](https://intl.cloud.tencent.com/document/product/598/10583), you can grant different permissions to different types of users under the root account.
+In [CAM](https://intl.cloud.tencent.com/document/product/598/10583), you can grant different permissions to different types of users under a root account.
 
-The biggest difference between a user policy and a bucket policy is that the user policy only describes effect, action, resource, and condition (optional), but not principal. Therefore, you have to write a user policy first, and then associate it manually with a sub-user, a user group or a role. Besides, the user policy cannot grant anonymous users access to resources or operations.
+The biggest difference between a user policy and a bucket policy is that the former only describes the effect, action, resource, and condition (optional) but not the principal. Therefore, you have to write a user policy first, and then associate it manually with a sub-user, user group, or role. Besides, a user policy cannot grant anonymous users access to resources or operations.
 
-You can [associate a preset policy for authorization](https://intl.cloud.tencent.com/document/product/598/10602), or [write a user policy](https://intl.cloud.tencent.com/document/product/598/10603) and associate it with a specified identity to manage access for your users. For more information, see [User Policy](https://intl.cloud.tencent.com/document/product/436/45236).
+You can associate a preset policy for authorization as described in [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602), or write a user policy by referring to [Element Reference](https://intl.cloud.tencent.com/document/product/598/10603) and associate it with a specified identity to manage user access. For more information, see [User Policy](https://intl.cloud.tencent.com/document/product/436/45236).
 
-The following policy example grants the permission to perform all COS operations on the bucket `examplebucket-1250000000` in Guangzhou. You need to save the policy and then associate it with a [CAM](https://intl.cloud.tencent.com/document/product/598/10583) sub-user, a user group or a role before it takes effect.
+The following sample policy grants the permission to perform all COS operations on the bucket `examplebucket-1250000000` in Guangzhou. You need to save the policy and then associate it with a [CAM](https://intl.cloud.tencent.com/document/product/598/10583) sub-user, user group, or role before it can take effect.
 
 ```json
 {

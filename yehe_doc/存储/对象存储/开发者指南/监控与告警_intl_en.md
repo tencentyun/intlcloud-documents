@@ -1,12 +1,14 @@
 ## Overview
 
-COS data (such as traffic and the number of read/write requests) is collected and displayed according to [Cloud Monitor](https://intl.cloud.tencent.com/document/product/248). Therefore, you can go to the COS or [Cloud Monitor console](https://console.cloud.tencent.com/monitor) to view COS monitoring data in detail.
+COS statistics such as read and write requests and traffic are collected and displayed based on [Cloud Monitor (CM)](https://www.tencentcloud.com/document/product/248). You can view detailed monitoring data of COS in the COS or [CM](https://console.cloud.tencent.com/monitor) console.
 
->?This document describes how to obtain statistics in the COS console. You can call Cloud Monitor APIs to obtain more detailed data. For more information, see [Documentation of Cloud Monitor](https://intl.cloud.tencent.com/document/product/248).
+>?
+>- This document describes how to get statistics in the COS console. You can call CM APIs to get more detailed data. For more information, see the [CM documentation](https://www.tencentcloud.com/document/product/248).
+>- Currently, all the metrics reported to CM support all COS regions. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 
 ## Basic Features
 
-Cloud Monitor provides the following modules for COS to implement monitoring and alarming.
+CM provides the following modules for COS to implement monitoring and alarming.
 
 | Module | Capability | Main Feature |
 | ---------- | ---------------------------------------- | ------------------------------------------------------------ |
@@ -17,24 +19,24 @@ Cloud Monitor provides the following modules for COS to implement monitoring and
 
 ## Use Cases
 
-- **Daily management**: You can log in to the Cloud Monitor console to view the running status of COS in real time.
+- **Daily management**: You can log in to the CM console to view the running status of COS in real time.
 - **Troubleshooting**: You can receive alarm notifications when the data of a monitoring metric reaches the threshold. It allows you to quickly notify the exceptions, find out the causes, and fix the issues.
 
 ## Setting and Querying via Console
 
-You can create an alarm policy for COS in the [Cloud Monitor console](https://console.cloud.tencent.com/monitor). If the data of a monitoring metric reaches the specified threshold, you will receive an alarm notification. For detailed directions, see [Setting Monitoring Alarms](https://intl.cloud.tencent.com/document/product/436/39104).
+You can create an alarm policy for COS in the [CM console](https://console.cloud.tencent.com/monitor). If the data of a monitoring metric reaches the specified threshold, you will receive an alarm notification. For detailed directions, see [Setting Alarm Policies](https://intl.cloud.tencent.com/document/product/436/39104).
 
-You can go to **Cloud Product Monitoring > [Cloud Object Storage](https://console.cloud.tencent.com/monitor/product/COS)** to view the COS monitoring data (including the monitoring data of all buckets, health status, number of alarm policies, and more). Alternatively, you can go to the COS console to view the data. For detailed directions, see [Viewing Data Overview](https://intl.cloud.tencent.com/document/product/436/36542) and [Querying Monitoring Data](https://intl.cloud.tencent.com/document/product/436/31634).
+You can go to **Cloud Product Monitoring > [Cloud Object Storage](https://console.cloud.tencent.com/monitor/product/COS)** to view the COS monitoring data (including the monitoring data of all buckets, health status, number of alarm policies, and more). Alternatively, you can go to the COS console to view the data. For detailed directions, see [Viewing Statistics](https://intl.cloud.tencent.com/document/product/436/36542) and [Querying Monitoring Data](https://intl.cloud.tencent.com/document/product/436/31634).
 
 ## Querying Monitoring Data via APIs
 
-You can call the corresponding APIs to view the COS monitoring data. The monitoring metrics are described below. For more information about the monitoring APIs, see [COS Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/37269).
+You can call the corresponding APIs to view the COS monitoring data. The monitoring metrics are described below. For more information on monitoring APIs, see [COS](https://intl.cloud.tencent.com/document/product/248/37269).
 
 ## Monitoring Metrics
 
-> ?COS uses a generic region. Therefore, select "Guangzhou" for `Region` when you pull COS monitoring metric data, regardless of where the bucket resides.
-> - When pulling data using [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics), select "ap-guangzhou" for the `Region` field.
-> - When pulling data using an SDK, enter "ap-guangzhou" for the `Region` field.
+> ?COS uses a generic region. Therefore, select **Guangzhou** for **Region** when you pull COS monitoring metric data, regardless of where the bucket resides.
+> - When pulling data by using [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics), select **ap-guangzhou** for the `Region` field.
+> - When pulling data by using an SDK, enter "ap-guangzhou" for the `Region` field.
 
 ### Request metrics
 
@@ -110,7 +112,7 @@ You can call the corresponding APIs to view the COS monitoring data. The monitor
 | 503ResponseRate | Proportion of 503 status code | Proportion of the requests with a 503 status code returned in the total requests | % | appid, bucket |
 
 > ?
-> 1. For more information about 3xx, 4xx, and 5xx status codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+> 1. For more information on 3xx, 4xx, and 5xx status codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 > 2. The statistical granularity (`period`) may vary by metric. You can call the [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API to obtain the `period` supported by each metric.
 
 ### Data retrieval metrics
@@ -118,7 +120,7 @@ You can call the corresponding APIs to view the COS monitoring data. The monitor
 | Metric | Meaning | Description | Unit | Dimension |
 | ------------ | -------------- | ------------------------------------------------------------ | ---- | ------------- |
 | StdRetrieval | STANDARD data retrieval | Traffic generated by the retrieval of STANDARD data, which is the sum of the public network downstream traffic, private network downstream traffic, and CDN origin-pull traffic in the  STANDARD storage class | B | appid, bucket |
-| IaRetrieval | STANDARD_IA data retrieval | Traffic generated by the retrieval of STANDARD_IA data, which is the sum of the public network downstream traffic, private network downstream traffic, and CDN origin-pull traffic in the  STANDARD_IA storage class | B | appid, bucket |
+| IaRetrieval | STANDARD_IA data retrieval | Traffic generated by the retrieval of STANDARD_IA data, which is the sum of the public network downstream traffic, private network downstream traffic, and CDN origin-pull traffic in the STANDARD_IA storage class | B | appid, bucket |
 
 
 ### Data processing metrics
@@ -131,9 +133,9 @@ You can call the corresponding APIs to view the CI monitoring data. For more inf
 
 | Parameter | Dimension | Description | Format |
 | ------------------------------- | -------- | ----------------------- | -------------------------------------------------- |
-| &Instances.N.Dimensions.0.Name | appid | Dimension name of the root account `APPID` | Enter a string-type dimension name, such as appid |
+| &Instances.N.Dimensions.0.Name | appid | Dimension name of the root account `APPID` | Enter a string-type dimension name: appid |
 | &Instances.N.Dimensions.0.Value | appid    | Specific root account APPID      | Enter a root account APPID, such as `1250000000`                 |
-| &Instances.N.Dimensions.1.Name | bucket | Dimension name of the bucket | Enter a string-type dimension name, such as bucket |
+| &Instances.N.Dimensions.1.Name | bucket | Dimension name of the bucket | Enter a string-type dimension name: bucket |
 | &Instances.N.Dimensions.1.Value | bucket   | Specific bucket name          | Enter a specific bucket name, such as `examplebucket-1250000000` |
 
 
@@ -151,10 +153,10 @@ To query COS monitoring data, the values of the input parameters are as follows:
 
 ## Monitoring Description
 
-- **Monitoring interval**: Cloud Monitor supports multiple monitoring intervals, including monitoring data in real time, in the past 24 hours, in the past 7 days, and in the user-specified period, with time granularity of 1 minute, 5 minutes, 1 hour, and 1 day.
-- **Data storage**: 1-minute monitoring data can be stored for 15 days, 5-minute monitoring data for 31 days, 1-hour data for 93 days, and 1-day monitoring data for 186 days.
-- **Alarm display**: Cloud Monitor integrates the monitoring data of COS and displays the data in graphs. Alarm notifications can be sent to you according to the predefined alarm metrics of your product. In this way, you can stay informed of the overall running status.
-- **Alarm settings**: You can set the threshold for the monitoring metrics. When the monitoring data meets the alarm condition that is set, Cloud Monitor will send the alarm notifications to the specified users. For more information, see [Cloud Monitor Overview](https://intl.cloud.tencent.com/document/product/248/6126) and [Setting Monitoring Alarms](https://intl.cloud.tencent.com/document/product/436/39104).
+- **Monitoring interval**: CM supports multiple monitoring intervals, including real time, last 24 hours, last 7 days, and user-specified period, with time granularities of 1 minute, 5 minutes, 1 hour, and 1 day.
+- **Data storage**: 1-minute monitoring data can be stored for 15 days, 5-minute data for 31 days, 1-hour data for 93 days, and 1-day data for 186 days.
+- **Alarm display**: CM integrates the monitoring data of COS and displays the data in graphs. Alarm notifications can be sent to you according to the predefined alarm metrics of your product. In this way, you can stay informed of the overall running status.
+- **Alarm settings**: You can set the threshold for the monitoring metrics. When the monitoring data meets the alarm condition that is set, CM will send the alarm notifications to the specified users. For more information, see [Alarm Overview](https://www.tencentcloud.com/document/product/248/6126) and [Setting Alarm Policies](https://intl.cloud.tencent.com/document/product/436/39104).
 
 
 
