@@ -1,5 +1,5 @@
 ## Message Class
-In the Tencent Cloud IM SDK, the message class is `Message` ([c#](https://comm.qq.com/im/doc/unity/en/types/MessageAttributes/Message.html)), which will be frequently used for message sending and receiving.
+In the Tencent Cloud IM SDK, the message class is `Message` ([Details](https://comm.qq.com/im/doc/unity/en/types/MessageAttributes/Message.html)), which will be frequently used for message sending and receiving.
 
 ## Descriptions of Message Fields
 

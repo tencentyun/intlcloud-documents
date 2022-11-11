@@ -8,7 +8,7 @@ If the last message is deleted, the `lastMessage` in the conversation will becom
 
 ### Deleting a local message
 
-Call `MsgDelete` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgDelete.html)) to delete a local message.
+Call `MsgDelete` ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgDelete.html)) to delete a local message.
 
 > ?
 > 1. After a historical local message is deleted, the message will be marked as deleted locally by the SDK and can no longer be pulled through `MsgGetMsgList`.
@@ -35,7 +35,7 @@ public static void MsgDelete()
 
 ### Deleting a message from the cloud
 
-Call `MsgDelete` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgDelete.html)) to delete messages from the cloud.
+Call `MsgDelete` ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgDelete.html)) to delete messages from the cloud.
 
 This API deletes messages both locally and from the cloud, which cannot be recovered.
 

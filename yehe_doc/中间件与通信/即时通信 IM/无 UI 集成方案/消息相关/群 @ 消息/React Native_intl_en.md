@@ -18,8 +18,8 @@ Figure 3: If the user is mentioned, the user receives the conversation update, a
 ## Sending a Group @ Message
 
 1. The sender listens for the text input box on the chat UI and launches the group member selection UI. After group members are selected, the ID and nickname information of the members is called back. The ID is used to create the `V2TimMessage` object, while the nickname is to be displayed in the text box.
-2. The sender calls the `createTextAtMessage` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createTextAtMessage.html)) to create a text @ message, get the `V2TIMMessage` object, and specify the target group members.
-3. The sender calls the `sendMessage` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the created @ message.
+2. The sender calls the `createTextAtMessage` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createTextAtMessage.html)) to create a text @ message, get the `V2TIMMessage` object, and specify the target group members.
+3. The sender calls the `sendMessage` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the created @ message.
 
 Below is the sample code:
 
@@ -39,8 +39,8 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(
 
 ## Receiving a Group @ Message
 
-1. When the conversation is loaded and updated, call the `groupAtInfolist` API ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#groupatinfolist)) of `V2TimConversation` to get the @ data list of the conversation.
-2. Call the `atType` API ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupAtInfo.html#attype)) of the `V2TimGroupAtInfo` object in the list to get the @ data type and update it to the @ information of the conversation.
+1. When the conversation is loaded and updated, call the `groupAtInfolist` API ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#groupatinfolist)) of `V2TimConversation` to get the @ data list of the conversation.
+2. Call the `atType` API ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupAtInfo.html#attype)) of the `V2TimGroupAtInfo` object in the list to get the @ data type and update it to the @ information of the conversation.
 
 Below is the sample code:
 

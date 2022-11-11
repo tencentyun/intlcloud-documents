@@ -12,7 +12,7 @@ The group attribute has the following features:
 4. The `getGroupAttributes` API can be called by a logged-in user up to 20 times every 5 seconds in the SDK.
 
 ### Initializing the group attributes
-Call the `initGroupAttributes` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/initGroupAttributes.html)) to initialize the group attributes, and the original group attributes, if any, will be cleared first.
+Call the `initGroupAttributes` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/initGroupAttributes.html)) to initialize the group attributes, and the original group attributes, if any, will be cleared first.
 
 Sample code:
 
@@ -28,7 +28,7 @@ groupManager.initGroupAttributes(groupID: "groupID", attributes: {
 
 ### Setting the group attributes
 
-Call the `setGroupAttributes` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupAttributes.html)) to set the group attributes. If a group attribute doesn't exist, it will be automatically added.
+Call the `setGroupAttributes` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupAttributes.html)) to set the group attributes. If a group attribute doesn't exist, it will be automatically added.
 
 Sample code:
 
@@ -44,7 +44,7 @@ groupManager.setGroupAttributes(groupID: "groupID", attributes: {
 
 ### Deleting the group attributes
 
-Call the `deleteGroupAttributes` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/deleteGroupAttributes.html)) to delete a specified group attribute. If `keys` is `null`/`nil`, all the group attributes will be cleared.
+Call the `deleteGroupAttributes` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/deleteGroupAttributes.html)) to delete a specified group attribute. If `keys` is `null`/`nil`, all the group attributes will be cleared.
 
 Sample code:
 
@@ -58,7 +58,7 @@ groupManager.deleteGroupAttributes(groupID: "groupID", keys: ['attr1','attr2']);
 
 ### Getting the group attributes
 
-Call the `getGroupAttributes` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupAttributes.html)) to get a specified group attribute. If `keys` is `null`/`nil`, all the group attributes will be obtained.
+Call the `getGroupAttributes` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupAttributes.html)) to get a specified group attribute. If `keys` is `null`/`nil`, all the group attributes will be obtained.
 
 Sample code:
 
@@ -72,7 +72,7 @@ V2TimValueCallback<Map<String, String>> attrs = await groupManager.getGroupAttri
 
 ### Updating the group attributes
 
-If you have called `addGroupListener` to add a group event listener, all the group attributes will be called back through `onGroupAttributeChanged` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupAttributeChangedCallback.html)) when a group attribute is changed.
+If you have called `addGroupListener` to add a group event listener, all the group attributes will be called back through `onGroupAttributeChanged` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupAttributeChangedCallback.html)) when a group attribute is changed.
 
 Sample code:
 

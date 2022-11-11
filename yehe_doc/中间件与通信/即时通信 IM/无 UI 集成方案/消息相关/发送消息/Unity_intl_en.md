@@ -2,7 +2,7 @@
 * It supports sending text, custom, and rich media messages, all of which belong to the `Message` type.
 
 ## Key API Description
-The `MsgSendMessage` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) is one of the core APIs for message sending. It supports sending messages of all types.
+The `MsgSendMessage` API ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) is one of the core APIs for message sending. It supports sending messages of all types.
 
 The API is as described below:
 

@@ -11,7 +11,7 @@ A targeted group message is a message sent to specified members in a group, whic
 ## Sending a Targeted Group Message
 A targeted group message is a message sent to specified members in a group, which cannot be received by unspecified group members. It can be implemented in the following steps:
 1. Call the `createXXXMessage` API (here, `XXX` indicates the message type) to create an original message object `V2TIMMessage`.
-2. Call the `createTargetedGroupMessage` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createTargetedGroupMessage.html)) to create a targeted message object `V2TimMessage` based on the original message object and specify the list of group members to receive the message.
+2. Call the `createTargetedGroupMessage` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createTargetedGroupMessage.html)) to create a targeted message object `V2TimMessage` based on the original message object and specify the list of group members to receive the message.
 3. Call the `sendMessage` API to send the targeted message.
 
 Sample code:

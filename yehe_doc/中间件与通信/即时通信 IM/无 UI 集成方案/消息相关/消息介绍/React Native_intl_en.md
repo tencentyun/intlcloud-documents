@@ -1,6 +1,6 @@
 ## Message Class
 
-In the Tencent Cloud IM SDK, the message class is `V2TimMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimMessage.html)), which will be frequently used for message sending and receiving.
+In the Tencent Cloud IM SDK, the message class is `V2TimMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimMessage.html)), which will be frequently used for message sending and receiving.
 
 The `V2TimMessage` class defines the following content:
 

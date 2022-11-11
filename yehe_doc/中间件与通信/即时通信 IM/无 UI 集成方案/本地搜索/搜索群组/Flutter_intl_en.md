@@ -4,7 +4,7 @@ Only locally stored groups can be searched for, such as the list of joined group
 > ? This feature is supported by the SDK for Flutter on v3.8.0 or later.
 
 ## Searching a Local Group
-Call the `searchGroups` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/searchGroups.html)) to search a local group.
+Call the `searchGroups` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/searchGroups.html)) to search a local group.
 You can set the search keyword `keywordList` and specify the search scope to set whether to search by the `userID` and `groupName` fields of a group.
 
 Sample code:

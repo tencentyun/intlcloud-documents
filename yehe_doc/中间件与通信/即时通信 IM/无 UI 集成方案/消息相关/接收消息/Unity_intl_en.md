@@ -4,10 +4,10 @@
 
 ## Setting a Message Listener
 ### Adding a listener
-The receiver calls the `AddRecvNewMsgCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to add a message listener. We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
+The receiver calls the `AddRecvNewMsgCallback` ([Details](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to add a message listener. We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
 
 ### Removing a listener
-To stop receiving messages, the receiver can call `RemoveRecvNewMsgCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to remove the message listener.
+To stop receiving messages, the receiver can call `RemoveRecvNewMsgCallback` ([Details](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to remove the message listener.
 
 ## Receiving a Text Message
 
@@ -266,7 +266,7 @@ Group tip messages are tips received by users in addition to ordinary messages i
 
 > ? Group tip messages will be received by only group members but not one-to-one chat parties.
 
-There are many types of group tip messages. For more information, see the definition of `GroupTipsElem` ([c#](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupTipsElem.html)).
+There are many types of group tip messages. For more information, see the definition of `GroupTipsElem` ([Details](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupTipsElem.html)).
 
 After receiving a group tip message, the receiver generally needs to:
 1. Parse each field in `GroupTipsElem`.

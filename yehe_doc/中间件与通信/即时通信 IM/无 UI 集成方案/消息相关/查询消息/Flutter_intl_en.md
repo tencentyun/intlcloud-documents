@@ -4,7 +4,7 @@ You can call `findMessages` to query a local message by `messageID`.
 2. Audio-video group (AVChatRoom) messages cannot be queried, as they are not saved locally.
 
 ## Querying a Local Message
-Call the `findMessages` API ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/findMessages.html)) to query a local message.
+Call the `findMessages` API ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/findMessages.html)) to query a local message.
 
 Sample code:
 

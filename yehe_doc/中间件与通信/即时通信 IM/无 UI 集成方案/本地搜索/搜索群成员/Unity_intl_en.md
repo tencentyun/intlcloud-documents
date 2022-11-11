@@ -3,10 +3,10 @@ Only locally stored group members can be searched for, such as the list of group
 
 > ?This feature cannot be used for audio-video groups (AVChatRoom) as the group members are not stored locally.
 ## Searching a Local Group
-Call the `GroupSearchGroupMembers` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupSearchGroupMembers.html)) to search for a local group member.
+Call the `GroupSearchGroupMembers` API ([Details](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupSearchGroupMembers.html)) to search for a local group member.
 You can set the search keyword `group_search_member_params_keyword_list` and specify the search scope to set whether to search by the `memberUserID`, `memberNickName`, `memberRemark`, and `memberNameCard` fields of a group member.
 
-Depending on whether `group_search_member_params_groupid_list` of the `GroupMemberSearchParam` ([c#](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupMemberSearchParam.html)) in `GroupSearchGroupMembers` is empty (`null`), there are two cases:
+Depending on whether `group_search_member_params_groupid_list` of the `GroupMemberSearchParam` ([Details](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupMemberSearchParam.html)) in `GroupSearchGroupMembers` is empty (`null`), there are two cases:
 - If `group_search_member_params_groupid_list` is left empty, members in all the groups will be searched for and returned by `groupID`.
 - If `group_search_member_params_groupid_list` is not left empty, members in the specified group will be searched for.
 

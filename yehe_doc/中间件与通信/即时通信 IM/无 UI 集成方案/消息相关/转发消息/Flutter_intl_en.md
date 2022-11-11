@@ -15,7 +15,7 @@ The title and digest are needed to display the merged message, as shown below:
 ### Creating and sending a merged message
 
 A merged message can be created by setting the message list along with the merged message title and digest. The process is as follows:
-1. Call the `createMergerMessage` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createMergerMessage.html)) to create a merged message. The list of original messages as well as the merged message title and digest also need to be set.
+1. Call the `createMergerMessage` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createMergerMessage.html)) to create a merged message. The list of original messages as well as the merged message title and digest also need to be set.
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
@@ -54,7 +54,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createMergerMessageResult =
 ### Receiving a merged message
 
 #### Adding a listener
-The receiver calls `addAdvancedMsgListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) to add the advanced message listener.
+The receiver calls `addAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) to add the advanced message listener.
 We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
 
 Sample code:
@@ -69,8 +69,8 @@ TencentImSDKPlugin.v2TIMManager
 
 #### Parsing a message
 After the listener is added, the receiver will receive the merged message `V2TimMessage` in `onRecvNewMessage`.
-You can use the merged message element `V2TimMergerElem` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMergerElem.html)) to get the `title` and `abstractList` for UI display.
-Then, when the user clicks the merged message, you can call the `downloadMergerMessage` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/downloadMergerMessage.html)) to download the merged message list for UI display.
+You can use the merged message element `V2TimMergerElem` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMergerElem.html)) to get the `title` and `abstractList` for UI display.
+Then, when the user clicks the merged message, you can call the `downloadMergerMessage` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/downloadMergerMessage.html)) to download the merged message list for UI display.
 
 Sample code:
 
@@ -90,7 +90,7 @@ if(message.elemType == MessageElemType.V2TIM_ELEM_TYPE_MERGER){
 
 
 ## Forwarding Messages One by One
-To forward a single message, create a message identical to the original message through the `createForwardMessage` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createForwardMessage.html)) first, and then call the `sendMessage` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+To forward a single message, create a message identical to the original message through the `createForwardMessage` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createForwardMessage.html)) first, and then call the `sendMessage` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 

@@ -6,7 +6,7 @@ When sending a message, the user may want to switch to another chat window befor
 > 2. A draft will be stored only in the local database and not on the server. Therefore, it cannot be synced across devices and will not be available after the application is uninstalled and reinstalled.
 
 ## Setting a Conversation Draft
-Call the `ConvSetDraft` API ([c#](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvSetDraft.html)) to set a conversation draft.
+Call the `ConvSetDraft` API ([Details](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvSetDraft.html)) to set a conversation draft.
 
 Sample code:
 

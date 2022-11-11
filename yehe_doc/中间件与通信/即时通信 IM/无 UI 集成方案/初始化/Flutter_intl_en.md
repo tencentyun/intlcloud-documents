@@ -23,7 +23,7 @@ In the [IM console](https://console.cloud.tencent.com/im), you can view all your
 [](id:SDKConfig)
 ### Setting the LogLevelEnum
 
-Before initializing the SDK, you need to initialize the `LogLevelEnum` object ([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Enum/LogLevelEnum.html)), which is used to set the SDK log level.
+Before initializing the SDK, you need to initialize the `LogLevelEnum` object ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Enum/LogLevelEnum.html)), which is used to set the SDK log level.
 
 #### Setting the log level
 The IM SDK supports the following log levels:
@@ -51,7 +51,7 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 
 ### Setting the SDK event listener
 After the initialization, the SDK will report such events as connection status and login ticket expiration through `V2TimSDKListener`.
-We recommend you pass in `V2TimSDKListener` ([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimSDKListener.html)) when calling `initSDK` to add the SDK event listener and perform logic processing in the callback.
+We recommend you pass in `V2TimSDKListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimSDKListener.html)) when calling `initSDK` to add the SDK event listener and perform logic processing in the callback.
 
 `V2TimSDKListener` callbacks are as follows:
 
@@ -70,7 +70,7 @@ We recommend you pass in `V2TimSDKListener` ([Dart](https://comm.qq.com/im/doc/f
 
 
 ### Calling the initialization API
-After performing the above steps, you can call `initSDK` ([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/initSDK.html)) to initialize the SDK.
+After performing the above steps, you can call `initSDK` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/initSDK.html)) to initialize the SDK.
 
 Sample code:
 
@@ -99,7 +99,7 @@ TencentImSDKPlugin.v2TIMManager.initSDK(
 Generally, if your application's lifecycle is the same as the IM SDK's lifecycle, you don't need to uninitialize the IM SDK before exiting the application.
 However, you can uninitialize the IM SDK in special cases, for example, only after you enter a specific UI and no longer use it after exiting the UI.
 
-You can perform the uninitialization by calling the uninitialization API `unInitSDK` ([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/unInitSDK.html)).
+You can perform the uninitialization by calling the uninitialization API `unInitSDK` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/unInitSDK.html)).
 
 Sample code:
 

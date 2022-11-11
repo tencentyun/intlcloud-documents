@@ -21,7 +21,7 @@ Locally stored historical messages are not subject to time limits, but those sto
 
 ## Pulling Historical One-to-One Messages
 
-Call the `getC2CHistoryMessageList` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getC2CHistoryMessageList.html)) to get historical one-to-one messages.
+Call the `getC2CHistoryMessageList` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getC2CHistoryMessageList.html)) to get historical one-to-one messages.
 When the network is normal, the latest cloud data will be pulled; when it is abnormal, the SDK will return the locally stored historical messages.
 If you want to pull only local historical messages, see [Advanced API](#advance).
 
@@ -45,7 +45,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ## Pulling Historical Group Messages
 
-Call the `getGroupHistoryMessageList` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getGroupHistoryMessageList.html)) to get historical group messages.
+Call the `getGroupHistoryMessageList` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getGroupHistoryMessageList.html)) to get historical group messages.
 When the network is normal, the latest cloud data will be pulled; when it is abnormal, the SDK will return the locally stored historical messages.
 If you want to pull only local historical messages, see [Advanced API](#advance).
 
@@ -76,7 +76,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ### Advanced API
 
-If the ordinary API mentioned above cannot meet your needs to pull historical messages, you can use the advanced API `getHistoryMessageList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getHistoryMessageList.html)).
+If the ordinary API mentioned above cannot meet your needs to pull historical messages, you can use the advanced API `getHistoryMessageList` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/getHistoryMessageList.html)).
 
 In addition to pulling historical one-to-one and group messages, this API supports the following advanced features:
 
@@ -224,7 +224,7 @@ We recommend you fix this issue as instructed in [question 1](#qa1). If the issu
 - When messages are generated, the SDK will update the current group member information such as the group name card and role and store it in the local database.
 - When historical group messages are pulled, the SDK will directly return the group member information when the messages were generated and will not update it in real time.
 
-If you want to get the latest group member information, you can use `getGroupMembersInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMembersInfo.html)).
+If you want to get the latest group member information, you can use `getGroupMembersInfo` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMembersInfo.html)).
 
 [](id:qa4)
 

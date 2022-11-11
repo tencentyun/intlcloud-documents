@@ -5,7 +5,7 @@ In the Tencent Cloud IM SDK, the conversation class is `TencentImSDKPlugin.v2TIM
 
 ## Conversation Class
 
-The conversation class is `V2TIMConversation` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html)), which defines the following content:
+The conversation class is `V2TIMConversation` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html)), which defines the following content:
 
 | Attribute       | Description                                     | Remarks                                                                                                                                                                                                                                                                                                           |
 | --------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

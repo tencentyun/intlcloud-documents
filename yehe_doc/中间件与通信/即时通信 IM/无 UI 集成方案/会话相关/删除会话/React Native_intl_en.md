@@ -8,7 +8,7 @@ Multi-client sync is disabled for conversation deletion by default and can be en
 
 ## Deleting a Conversation
 
-Call the `deleteConversation` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/deleteConversation.html)) to delete a specified conversation.
+Call the `deleteConversation` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/deleteConversation.html)) to delete a specified conversation.
 
 Below is the sample code:
 
