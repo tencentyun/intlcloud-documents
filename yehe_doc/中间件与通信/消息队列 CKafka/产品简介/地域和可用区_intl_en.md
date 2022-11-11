@@ -44,7 +44,7 @@ A region is the physical location of an IDC. Availability Zone (AZ) refers to th
 <tr>
 <td>Central China</td>
 <td>Changshan</td>
-<td>changsha</td>
+<td>ap-changsha</td>
 </tr>
 <tr>
 <td rowspan="2">Southwest China</td>
