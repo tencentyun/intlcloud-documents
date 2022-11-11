@@ -73,9 +73,9 @@ bash kafka-console-producer.sh --broker-list XXXX:port --topic XXXX --producer.c
 </dx-alert>
 
    输入消息内容之后按回车，即可看到消费端也几乎同时收到消息。
-   生产消息：
+<ul><li>生产消息：
    <img src = "https://qcloudimg.tencent-cloud.cn/raw/30f5a8207a552023b2954b1e599c7f88.png"> 
-   消费消息：
+   <li>消费消息：
    <img src = "https://qcloudimg.tencent-cloud.cn/raw/2a09bee955acd0cd238977ec5bc250e5.png"> 	 
 3. 在 CKafka 控制台消息查询页面，查询刚刚发送的消息内容。
    ![](https://main.qcloudimg.com/raw/80db39a21f7eb35de16f37b1c8670650.png)
