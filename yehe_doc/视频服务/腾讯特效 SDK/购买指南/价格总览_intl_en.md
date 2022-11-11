@@ -1,11 +1,10 @@
-﻿<style> .markdown-text-box table td, .markdown-text-box table th { padding: 8px 8px; text-align:center}
-</style>
-
-The Tencent Effect SDK comes in 14 editions, which fall into three categories: **basic editions (A series)**, **advanced editions (S series)**, and **avatar editions (V series)**. They differ in features. You can choose one that best fits your needs. For the features of different editions, see [Feature Description](https://intl.cloud.tencent.com/document/product/1143/45376).
+﻿The Tencent Effect SDK comes in 14 editions, which fall into three categories: **basic editions (A series)**, **advanced editions (S series)**, and **avatar editions (V series)**. They differ in features. You can choose one that best fits your needs.
 
 - [Basic A series packages](#setA) offer basic beautification features and are suitable for customers that do not have high requirements for facial beautification.
 - [Advanced S series packages](#setS) offer advanced beautification features (including stickers and makeup effects) and are suitable for customers with high requirements for facial beautification.
 - [Avatar V series packages](#setV) offer virtual avatars, avatar customization, and facial expression mirroring. They are designed for applications such as avatar-based socializing and live streaming.
+
+  In addition, to give you greater flexibility and scalability, the [X series](#pluginX) offers Tencent Effect services at the capability level. You can integrate the specific capabilities you need. For details, see [Feature Description](https://intl.cloud.tencent.com/document/product/1143/45376).
 
 You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different licenses (packages) to use different editions of the Tencent Effect SDK.
 
@@ -13,6 +12,7 @@ You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different
 ## Pricing[](id:price)
 
 ### Basic A series packages[](id:setA)
+
 <table>
 <thead>
 <tr>
@@ -58,7 +58,7 @@ You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Filters</b><br>10 general filters by default</td>
+<td><b>Filters</b><br>20 general filters by default</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -118,10 +118,11 @@ You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different
 <td>31,000 USD/year</td>
 <td>44,000 USD/year</td>
 <td>41,000 USD/year</td>
-<td>70,000 USD/year</td>
+<td>61,000 USD/year</td>
 <td>44,000 USD/year</td>
 </tr>
 </tbody></table>
+
 
 
 
@@ -168,7 +169,7 @@ You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Filters</b><br>10 general filters by default</td>
+<td><b>Filters</b><br>20 general filters by default</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -226,7 +227,9 @@ You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different
 </tr>
 </tbody></table>
 
+
 ### Avatar V series packages[](id:setV)
+
 <table>
 <thead>
 <tr>
@@ -267,8 +270,45 @@ You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different
 </tr>
 </tbody></table>
 
+
+
+### X series capabilities[](id:pluginX)
+
+<table>
+<thead>
+<tr>
+<th rowspan=2>Capability</th>
+<th colspan=3>No.</th>
+</tr>
+<tr>
+<th>X1 - 01</th>
+<th>X1 - 02</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capability</td>
+<td>Keying</td>
+<td>Facial keypoint detection</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Accurately removes the background in real time and applies a virtual background (customizable)</td>
+<td>Detects when a face is partially captured or concealed or when there are multiple faces; recognizes 256 facial keypoints</td>
+</tr>
+<tr>
+<td>Price</td>
+<td >30,000 USD/year</td>
+<td >50,000 USD/year</td>
+</tr>
+</tbody></table>
+
+
+
 [](id:material)
+
 ### Materials
+
 | Type | Description | Price (Valid for One Year) | Quantity|
 | -------- | ---------------------------------- | ------------------ | ---------------- |
 | Filters | High-quality, high-performance filters with real-time image coloring | 16,000 USD | 10 (minimum order quantity) |
@@ -279,7 +319,9 @@ You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different
 | Keying stickers | Precise and real-time keying and virtual backgrounds | 32,000 USD  | 10             |
 
 [](id:illustrate)
+
 ## Billing Details
+
 - Each license can be bound to only one bundle ID and one package name. You cannot change the bundle ID or package name bound to an official license. If you want to use the SDK in more than one application, you need to purchase multiple Tencent Effect packages.
 - A license is valid for one year. After it expires, you need to purchase a new license; otherwise, the corresponding features will become unavailable.
 - **Shadow packages**: You can use two shadow packages for free if you purchase a Tencent Effect package that’s priced 65,000 USD or higher. Please contact sales for the shadow packages. You need to provide the bundle ID/package name for both your official application and shadow applications. If you want to have more than two shadow applications, please purchase additional shadow packages (5,000 USD each).
@@ -288,10 +330,13 @@ You need to [purchase](https://buy.cloud.tencent.com/vcube?type=magic) different
 
 
 [](id:example)
+
 ## Billing Example
-Suppose you purchased the basic A series package A1 - 02 and, after passing the review, were issued a license (license A) on January 1, 2022  You later purchased the advanced S series package S1 - 01 and were issued a license (license B) on June 1, 2022 . On the same day, you unbound license A and bound license B to your application.
+
+Suppose you purchased the basic A series package A1 - 02 and, after passing the review, you were issued a license (license A) on January 1, 2022. You later purchased the advanced S series package S1 - 01 and were issued a license (license B) on June 1, 2022. On the same day, you unbound license A and bound license B to your application.
+
 - License A is valid until 00:00:00 on January 2, 2023. With it, you can use the features of package A1 - 02, including basic beauty filters, image settings, basic beautification, filters, and stickers.
-- License B is valid until 00:00:00 on June 2, 2023. With it, you can use features of package S1 - 01, including basic beauty filters, image settings, advanced beautification, filters, stickers, advanced stickers, and makeup effects.
+- License B is valid until 00:00:00 on June 2, 2023. With it, you can use the features of package S1 - 01, including basic beauty filters, image settings, advanced beautification, filters, stickers, advanced stickers, and makeup effects.
 
 That means from January 1, 2022 to June 1, 2022, **before you unbound license A**, your application can use the features of package A1 - 02 (basic beauty filters, image settings, basic beautification, filters, and stickers). From June 1, 2022 to 00:00:00 on June 2, 2023, **after you bound license B**, your application can use the features of package S1 - 01 (basic beauty filters, image settings, advanced beautification, filters, stickers, advanced stickers, and makeup effects).
 
