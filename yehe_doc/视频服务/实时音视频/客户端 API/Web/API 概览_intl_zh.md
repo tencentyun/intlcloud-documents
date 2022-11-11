@@ -302,7 +302,7 @@ TRTC Web SDK 基于 WebRTC 实现，目前支持桌面端和移动端的主流�
 | 通话前环境与设备检测| [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-23-advanced-support-detection.html) |
 | 通话前的网络质量检测| [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html) |
 | 检测设备插拔行为| [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-25-advanced-device-change.html)|
-| 实现推流到 CDN| [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html) |
+| 实现推流到 CDN| - |
 | 开启大小流传输| [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html) |
 | 开启美颜| [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html) |
 | 开启水印| [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-29-advance-water-mark.html) |
