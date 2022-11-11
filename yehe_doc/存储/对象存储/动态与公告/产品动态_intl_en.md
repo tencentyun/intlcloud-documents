@@ -46,7 +46,7 @@
 
 | Update | Description | Release Date | Documentation |
 | :--------------- | :----------------------------------------------------------- | :--------- | :----------------------------------------------------------- |
-| Reduced the STANDARD_IA storage capacity unit price | COS' published prices of STANDARD_IA storage capacity are reduced from 0.018 USD/GB/month to 0.015 USD/GB/month in Mumbai, Seoul, Bangkok, Silicon Valley, Moscow, Jakarta, and São Paulo regions. | 2022-07-01 | [Pricing | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos) |
+| Reduced the STANDARD_IA storage capacity unit price | COS' published prices of STANDARD_IA storage capacity are reduced from 0.018 USD/GB/month to 0.015 USD/GB/month in Mumbai, Seoul, Bangkok, Silicon Valley, Moscow, Jakarta, and São Paulo regions. | 2022-07-01 | [Pricing(Cloud Object Storage)](https://buy.intl.cloud.tencent.com/price/cos) |
 
 ## May 2022
 
