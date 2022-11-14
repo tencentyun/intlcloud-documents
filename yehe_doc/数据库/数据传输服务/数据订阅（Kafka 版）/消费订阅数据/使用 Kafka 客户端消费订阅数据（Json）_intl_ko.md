@@ -13,7 +13,7 @@
 - 현재 사용을 위한 Kafka에 대한 데이터 구독은 Tencent Cloud 사설망을 통해 구현할 수 있지만 공중망에서는 구현할 수 없습니다. 또한 구독된 데이터베이스 인스턴스와 데이터 소비자는 동일한 리전에 있어야 합니다.
 - DTS에 내장된 Kafka는 개별 메시지 처리에는 일정한 상한선이 있습니다. 원본 데이터베이스의 단일 데이터 행이 10MB를 초과하면 이 행이 삭제될 수 있습니다.
 - DTS에서 Kafka 메시지 구독의 전달 의미는 적어도 한 번(at least once) 메시지를 전달하는 것입니다. 따라서 특별한 경우에 소비된 데이터가 중복될 수 있습니다. 예를 들어 구독 작업이 다시 시작되면 다시 시작한 후 중단 오프셋 전에 원본 Binlog가 당겨져 메시지가 반복적으로 전달됩니다. 등록된 객체 수정 및 비정상 작업 복원과 같은 콘솔 작업은 중복 메시지를 유발할 수 있습니다. 비즈니스가 중복 데이터에 민감한 경우 소비 Demo에서 비즈니스 데이터를 기반으로 중복 제거 로직을 추가해야 합니다.
-- 如果您使用过或者熟悉开源订阅工具 Canal，可以选择将这里消费出来的 Json 格式数据转换成 Canal 工具兼容的数据格式，再进行后续处理，我们的 Demo 中已经提供了相关支持，在启动 Demo 的参数中添加参数 trans2canal 即可实现。目前该功能仅限 Java 语言支持。  
+- 오픈 소스 구독 툴 Canal을 사용했거나 익숙한 경우 사용된 Json 데이터를 후속 처리를 위해 Canal 호환 데이터 형식으로 변환하도록 선택할 수 있습니다. Demo는 이미 이 기능을 지원하며 Demo 시작 매개변수에 trans2canal 매개변수를 추가하여 구현할 수 있습니다. 현재 이 기능은 Java에서만 지원됩니다.  
 
 
 ## 소비자 Demo 다운로드
@@ -27,18 +27,18 @@
 컴파일 환경: Maven 및 JDK 8. 원하는 패키지 관리 툴을 선택할 수 있습니다. 다음은 Maven을 예로 들어 설명합니다.
 실행 환경: Tencent CVM(구독 인스턴스와 같은 리전이어야만 Kafka 서버의 내부 네트워크 주소에 액세스 가능), JRE8 설치.
 작업 순서:
-1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독 Kafka 버전](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
+1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독(Kafka 버전)](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
 2. 하나 이상의 소비자 그룹을 생성합니다. 자세한 내용은 [소비자 그룹 추가](https://intl.cloud.tencent.com/document/product/571/39534)를 참조하십시오.
 3. Java Demo를 다운로드하고 파일의 압축을 해제합니다.
 4. 압축을 푼 디렉터리에 액세스합니다. Maven 모델 및 pom.xml 파일은 필요에 따라 사용할 수 있도록 디렉터리에 배치됩니다.
     Maven을 사용한 패키징: mvn clean package.
 5. Demo 실행.
-    Maven을 사용하여 패키징 후 대상 폴더 target으로 이동하여 다음 코드를 실행합니다.
+    Maven으로 프로젝트를 패키징한 후 대상 폴더 target으로 이동하여 다음 코드를 실행합니다.
     `java -jar consumerDemo-json-1.0-SNAPSHOT.jar --brokers xxx --topic xxx --group xxx --user xxx --password xxx --trans2sql --trans2canal`.
  - 'broker'는 Kafka 데이터 구독을 위한 사설망 액세스 주소이고, 'topic'은 구독 topic이며, [구독 상세 조회](https://intl.cloud.tencent.com/document/product/571/42660)의 안내에 따라 구독 상세페이지에서 확인할 수 있습니다.
- - `group`, `user`, `password`는 소비자 그룹의 이름, 계정, 비밀번호로, [소비자 그룹 관리](https://intl.cloud.tencent.com/document/product/571/39535)의 안내에 따라 소비 관리 페이지에서 확인할 수 있으며,
+ - `group`, `user`, `password`는 소비자 그룹의 이름, 계정, 비밀번호로, [소비자 그룹 관리](https://intl.cloud.tencent.com/document/product/571/39535)의 안내에 따라 소비 관리 페이지에서 확인할 수 있습니다.
  - `trans2sql`은 SQL 문으로의 변환 여부를 나타냅니다. java 코드에서 이 매개변수가 전달되면 변환이 활성화됩니다.
- - `trans2canal` 表示是否转换为 Canal 格式打印出来，携带该参数表示转换为 Canal 格式，不携带则不转换。 
+ - `trans2canal`은 데이터를 Canal 형식으로 출력할지 여부를 나타냅니다. 이 매개변수가 전달되면 변환이 활성화됩니다. 
 6. 소비 상황을 관찰합니다.
 ![](https://main.qcloudimg.com/raw/fffa3de2a6e38b3752512183e1ffe785.png)
 
@@ -46,7 +46,7 @@
 컴파일 환경: Golang 1.12 버전 이상, Go Module 환경 설정.
 실행 환경: Tencent CVM(구독 인스턴스와 같은 리전이어야만 Kafka 서버의 내부 네트워크 주소에 액세스 가능).
 작업 순서:
-1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독 Kafka 버전](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
+1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독(Kafka 버전)](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
 2. 하나 이상의 소비자 그룹을 생성합니다. 자세한 내용은 [소비자 그룹 추가](https://intl.cloud.tencent.com/document/product/571/39534)를 참조하십시오.
 3. Golang Demo를 다운로드하고 파일의 압축을 해제합니다.
 4. 압축을 해제한 디렉터리로 들어가 `go build -o subscribe ./main/main.go`을 실행하여 subscribe 실행 파일을 생성합니다.
@@ -65,7 +65,7 @@ pip install flag
 pip install kafka-python
 ```
 작업 순서:
-1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독 Kafka 버전](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
+1. 신규 데이터 구독 작업을 생성합니다. 자세한 내용은 [데이터 구독(Kafka 버전)](https://intl.cloud.tencent.com/document/product/571/47354)을 참고하십시오.
 2. 하나 이상의 소비자 그룹을 생성합니다. 자세한 내용은 [소비자 그룹 추가](https://intl.cloud.tencent.com/document/product/571/39534)를 참조하십시오.
 3. Python3 Demo를 다운로드하고 파일의 압축을 해제합니다.
 4. `python main.py --brokers=xxx --topic=xxx --group=xxx --user=xxx --password=xxx --trans2sql=1`을 실행합니다.
@@ -76,10 +76,10 @@ pip install kafka-python
 ![](https://main.qcloudimg.com/raw/6055041985904335b43d7df8f4e75561.png)
 
 ## [프로토콜 파일 설명](id:dgxljjj)
-Demo 中我们采用 Json 进行序列化，各语言 Demo 中均附带有 Record 定义文件。
-Java Demo 中的定义文件路径为 `consumerDemo-json-java\src\main\java\json\FlatRecord.java`。
+각 프로그래밍 언어에 대한 Demo는 직렬화를 위해 Json을 사용하며 Record 정의 파일을 포함합니다.
+Java용 Demo에서 정의 파일의 경로는 `consumerDemo-json-java\src\main\java\json\FlatRecord.java`입니다.
 
-### Record 中字段类型
+### Record의 필드
 
 | Record 필드      | 설명                                                   |
 | ------------------------ | ------------------------------------------------------------ |
@@ -100,8 +100,8 @@ Java Demo 中的定义文件路径为 `consumerDemo-json-java\src\main\java\json
 | tableName                | 테이블 이름.                                                       |
 | objectName               | 데이터베이스 이름. 테이블 이름의 값.                                                  |
 | columns                  | 열 메타데이터.                                                   |
-| oldColumns               | DML 前的列值。输出字符串。如果是 binary、geometry 等类型，则输出16进制。 |
-| newColumns               | DML 后的列值。输出字符串。如果是 binary、geometry 等类型，则输出16进制。 |
+| oldColumns               | 문자열로 출력되는 DML 문 실행 전의 컬럼 값. binary, geometry 데이터 유형의 경우 16진수 값이 출력됩니다. |
+| newColumns               | 문자열로 출력되는 DML 문 실행 후의 열 값. binary, geometry 데이터 유형의 경우 16진수 값이 출력됩니다. |
 | sql                      | SQL 문.                                                   |
 | executionTime            | DDL 실행 기간.                                                |
 | heartbeatTimestamp       | heartbeat 이벤트에서만 유효한 하트비트 메시지의 타임스탬프.                  |
@@ -114,18 +114,18 @@ Java Demo 中的定义文件路径为 `consumerDemo-json-java\src\main\java\json
 | total                    | 메시지가 분할된 경우 총 메시지 세그먼트 수. 이 필드는 현재 버전(version=1)에서 유효하지 않으며 확장을 위해 예약되어 있습니다. |
 | index                    | 메시지가 분할된 경우 총 메시지 세그먼트 수. 이 필드는 현재 버전(version=1)에서 유효하지 않으며 확장을 위해 예약되어 있습니다. |
 
-### Record 中 MySQL 列属性
+### Record의 MySQL 열 속성
 - name: 열 이름.
 - dataTypeNumber: binlog에 기록된 데이터의 유형. 값은 [MySQL](https://dev.mysql.com/doc/internals/en/com-query-response.html)을 참고하십시오.
 - isKey: 현재 키가 기본 키인지 여부.
 - originalType: DDL에 정의된 유형.
 
-### MySQL 数据类型转换逻辑
-在 Json 协议中，将 MySQL 类型全部转换成了字符串。
-- 对于 varchar 等字符串类型，全部转成了 UTF8 编码。
-- 对于数值类型，全部转成了与值相同的字符串，如 "3.0"。
-- 对于时间类型，格式为：yyyy-dd-mm hh:MM:ss.milli。
-- 对于时间戳类型，输出为毫秒数。
-- 对于 binary、blob 等二进制类型，输出为与16进制值相同的字符串，如 "0xfff"。
+### MySQL 데이터 유형 변환 로직
+Json 프로토콜에서 모든 MySQL 데이터 유형은 문자열로 변환됩니다.
+- varchar와 같은 문자열 유형은 모두 UTF8 인코딩으로 변환됩니다.
+- 숫자 유형은 모두 "3.0"과 같이 값과 동일한 문자열로 변환됩니다.
+- 시간 유형은 yyyy-dd-mm hh:MM:ss.milli 형식으로 출력됩니다.
+- 타임스탬프 유형은 밀리초 단위로 출력됩니다.
+- binary 및 blob과 같은 바이너리 유형은 "0xfff"와 같은 16진수 값과 동일한 문자열로 출력됩니다.
 
 
