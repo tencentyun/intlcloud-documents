@@ -1,4 +1,4 @@
-您可直接使用 [CVM 价格计算器](https://intl.cloud.tencent.com/pricing/cvm/calculator) 查看您所需的各个产品的组合价格，估算资源成本。将所需产品添加至购买预算清单，更可实现一键购买。
+您可直接使用 [CVM 价格计算器](https://buy.intl.cloud.tencent.com/price/cvm/calculator) 查看您所需的各个产品的组合价格，估算资源成本。将所需产品添加至购买预算清单，更可实现一键购买。
 
 <dx-alert infotype="notice" title="">
 为保证获取到的价格的准确性，请您登录后查看。
@@ -8,7 +8,7 @@
 
 ## 计费模式
 
-腾讯云提供三种类型的云服务器购买方式：按量计费、竞价实例和预留实例，分别适用于不同场景下的用户需求，详情可参考 [计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
+腾讯云提供三种类型的云服务器购买方式：预留实例、按量计费和竞价实例，分别适用于不同场景下的用户需求，详情可参考 [计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
 
 ## 实例
 
@@ -23,7 +23,7 @@
 - 按使用场景不同，分为系统盘和数据盘。
 - 按架构模式不同，分为云硬盘、本地盘和对象存储。
 
-目前腾讯云提供两种云硬盘类型：高性能云硬盘和 SSD 云硬盘。计费模式为按量计费。
+目前腾讯云提供两种云硬盘类型：高性能云硬盘和 SSD 云硬盘。计费模式分为按量计费。
 关于硬盘价格的详细信息，可参考 [硬盘价格总览](https://intl.cloud.tencent.com/document/product/213/2255)。
 
 ## 网络带宽
@@ -34,3 +34,41 @@
 
 关于各种网络带宽计费模式的详细信息，可参考 [公网计费模式](https://intl.cloud.tencent.com/document/product/213/10578)。
 
+
+## 镜像[](id:mirrorBilling)
+使用镜像可能会产生一定的费用，各类型镜像费用说明如下：
+<table>
+<tr>
+<th width="16%">镜像类型</th><th>说明</th>
+</tr>
+<tr>
+<td>公共镜像</td>
+<td>包含开源镜像及商业镜像。
+<ul style="margin:0px">
+<li>开源镜像均免费提供服务。</li>
+<li>商业镜像会产生一定的 License 许可费用，不同实例规格及地域的 License 许可费用不同，实际价格以 <a href="https://buy.intl.cloud.tencent.com/price/cvm/calculator">定价中心</a> 的价格为准。在使用 Windows 镜像时，境内地域可享有免除 License 许可费用的优惠，境外地域 License 许可费用包含在“实例”计费项中，您可参考 <a href="#ep">计费示例</a> 了解如何查看具体费用。</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>自定义镜像</td>
+<td>
+计费包含以下两部分：
+<ul style="margin:0px">
+<li>快照费用：由于镜像底层使用了云硬盘快照服务，保留自定义镜像会产生一定的快照费用。国内地域提供80GB的 <a href="https://intl.cloud.tencent.com/document/product/362/32415">赠送额度</a>，超额后将按容量计费，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/362/32415">快照计费概述</a>。</li>
+<li>镜像费用：若自定义镜像的最终来源为付费镜像，且您使用了该自定义镜像，则需要收取镜像费用。</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>共享镜像</td>
+<td>共享镜像是将创建好的自定义镜像分享给其他腾讯云账户的镜像。若该镜像最终来源为付费镜像且使用了该共享镜像，则收取镜像费用。</td>
+</tr>
+</table>
+
+
+#### 计费示例[](id:ep)
+
+示例背景：新加坡一区，实例为标准型 S5.MEDIUM2，选择按量计费模式。
+- Windows 实例费用为0.05美元/小时，“镜像”项不单独计费，即显示为0元。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/af8b0002847ce5f1542a90a1990e27ce.png)

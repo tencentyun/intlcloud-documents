@@ -10,13 +10,10 @@ Images use the CBS snapshot service for data storage:
 
 
 
-## Notes
+## Note
 
 - Each region supports a maximum of 10 custom images.
-- The following directories and files will be cleared.
- - `/var/log/`  
- - `/root/.bash_history` and `/home/ubuntu/.bash_history` (for the Ubuntu operating system)
-- When the Linux instance has a data disk mounted, and you only create an image on the system disk, make sure `/etc/fstab` does not include data disk configuration. Otherwise, instances created with this image cannot be started normally.
+- When the Linux instance has a data disk attached, and you only create an image on the system disk, make sure `/etc/fstab` does not include data disk configuration. Otherwise, instances created with this image cannot be started normally.
 - The creation process takes ten minutes or longer, which depends on the data size of the instance. Please prepare in advance to avoid business impacts.
 - You can not create an image by using a CBM instance in the console or via API. You can use CVM to create them.
 - If your Windows instance needs to enter a domain and uses a domain account, please execute Sysprep before creating a custom image to ensure that the SID is unique after the instance enters the domain. For more information, please see [Ensuring Unique SIDs for CVMs Using Sysprep](https://intl.cloud.Tencent.com/document/product/213/35876).
@@ -48,10 +45,9 @@ For CVMs created based on public images after July 2018, you can create images w
 2. In the **Create a custom image** popup window, complete the configuration.
   - **Image name** and **Image description**: Custom name and description.
   - **Tag**: You can add tags for the instance as needed, which are used to categorize, search for, and aggregate cloud resources. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/651/13334).
-  - **Create only system disk image**: To use the feature, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to apply for it. 
-    If your instance only has a system disk, this option will not appear. If your instance has a data disk, select it as needed.
-     - If checked, only a system disk image of the instance will be created.
-     - If unchecked, a data disk snapshot will be created at the same time when the instance has a data disk mounted.
+<dx-alert infotype="explain" title="">
+To create custom images that include system disks and data disks, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category). 
+</dx-alert>
 3. Click **Create image**.
 You can click **[Image](https://console.cloud.Tencent.com/CVM/image)** on the left sidebar to view the creation progress in the **Image** page.
 
