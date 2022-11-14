@@ -1,5 +1,5 @@
 ## Overview
-The HDFS TO COS tool is used to copy data from HDFS to Tencent Cloud COS.
+The HDFS TO COS tool is used to copy data from HDFS to Tencent Cloud COS（Cloud Object Storage）.
 
 ## Operating Environments
 #### Operating system
