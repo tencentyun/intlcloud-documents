@@ -14,7 +14,7 @@ Blocked events are divided into **Inbound**, **Lateral movements**, and **Outbou
 ::: ① Batch resolve events
 You can click **Block all**, **Block**, or **Ignore** for selected events.
 
->?These buttons are only available when one or more events are selected.
+<dx-alert infotype="notice">These buttons are only available when one or more events are selected.</dx-alert>
 
 :::
 ::: ② Filter events by conditions
