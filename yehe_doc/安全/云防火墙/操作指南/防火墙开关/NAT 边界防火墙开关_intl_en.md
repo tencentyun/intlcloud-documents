@@ -27,9 +27,7 @@ NAT Firewall Toggle allows you to manage traffic and protect assets in the priva
 ### **Network topology**
 Cloud Firewall provides a dashboard displaying the access relation of NAT firewalls. You can check the VPC instances in the VPC.
 1. On the [NAT firewall toggle](https://console.cloud.tencent.com/cfw/switch/nat) page, click **Network topology** to view the access relation of NAT firewalls.
-![](https://qcloudimg.tencent-cloud.cn/raw/3bd7a141bec8096a232ba34611059e78.png)
 2. Click a VPC node to view subnets. You can turn on or off the firewall toggle only for the current subnet.
-![](https://main.qcloudimg.com/raw/3038c664f8b44abb950378f396e84acf.png)
 
 ### Firewall toggle
 On the [Firewall toggle](https://console.cloud.tencent.com/cfw/switch/nat?tab=switch) page, you can enable or disable NAT edge protection. CFW automatically syncs cloud assets on a regular basis, so you don't have to worry about the firewall configuration after an asset change (for example, if a subnet is changed, the firewall will automatically sync in a short period of time).

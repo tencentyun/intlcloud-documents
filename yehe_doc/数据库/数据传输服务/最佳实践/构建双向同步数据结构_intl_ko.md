@@ -15,9 +15,7 @@ DTS는 다중 사이트 활성-활성 시나리오에 적용할 수 있는 두 �
 
 ## [일반적인 사용 사례를 위한 권장 구성](id:tjpz)
 양방향 동기화 작업은 양방향 토폴로지를 설정하기 위한 두 개의 단방향 동기화 작업으로 구성됩니다. 각 단방향 동기화 작업의 생성 단계는 일반 단방향 동기화 작업의 생성 단계와 유사합니다. 다음 동기화 옵션 설정에서만 다릅니다.
-<dx-fold-block title="동기화 옵션 설정 차이">
-<img src="https://main.qcloudimg.com/raw/10c3fba21fc4933a679f4779a4c15695.png" style="zoom:80%;" />
-</dx-fold-block>
+
 
 <br>
 다음 구성은 참고용으로 일반적인 사용 사례에 권장됩니다.
@@ -41,7 +39,7 @@ DTS는 다중 사이트 활성-활성 시나리오에 적용할 수 있는 두 �
 ## 작업 단계
 본문은 상하이 리전의 자체 구축 MySQL 데이터베이스 A와 베이징 리전의 TencentDB MySQL 데이터베이스 B간의 양방향 동기화 생성을 예로 들어 설명합니다. 처음에 A에는 데이터베이스/테이블 구조와 데이터가 있고 B는 비어 있습니다. 기본 키 충돌이 발생하면 A의 데이터 업데이트가 우선합니다. A > B 동기화의 경우 기본 키 충돌 해결 정책은 덮어쓰기이며 DDL + DML 문이 동기화됩니다. B > A 동기화의 경우 정책은 무시이며 DML 문만 동기화됩니다.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/8e09a21b2d0140abcecf7e56b1da465a.png" style="zoom:30%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/7bae9e8811984139f9341009c9ed8644.jpg" style="zoom:90%;" />
 
 ### 동기화 작업1 생성: 정방향 동기화 A > B
 1. [데이터 동기화 구매 페이지](https://buy.intl.cloud.tencent.com/replication)에 로그인하여 알맞은 설정을 선택하고 **구매하기**를 클릭합니다.

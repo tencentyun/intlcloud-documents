@@ -1,3 +1,15 @@
+
+## 2022년 07월
+<table>
+<thead><tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=15%>배포일</th><th width=15%>관련 문서</th></tr></thead>
+<tbody>
+<tr>
+<td>비밀번호 복잡성 지원</td>
+<td>TencentDB for MySQL은 데이터베이스 액세스 비밀번호의 강도를 높이고 데이터베이스 보안을 보장하기 위해 비밀번호 복잡성 기능을 지원합니다.</td>
+<td>2022-07-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/49197" target="_blank">Setting Password Complexity</a></td></tr>
+</tbody></table>
+
 ## 2022년 06월
 <table>
 <thead><tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=15%>배포일</th><th width=15%>관련 문서</th></tr></thead>

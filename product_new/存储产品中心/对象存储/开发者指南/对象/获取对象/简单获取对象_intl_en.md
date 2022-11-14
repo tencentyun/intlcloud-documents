@@ -1,6 +1,6 @@
 ## Use Cases
 
-You can initiate a request to download objects in COS. You have the following options when downloading an object:
+You can initiate a request to download objects in COS（Cloud Object Storage）. You have the following options when downloading an object:
 
 - Download a complete object: Download the complete object data by initiating a GET request.
 - Download a part of an object: Use the Range request header in a GET request to retrieve a specific range of bytes of an object. Retrieving multiple ranges is not supported.

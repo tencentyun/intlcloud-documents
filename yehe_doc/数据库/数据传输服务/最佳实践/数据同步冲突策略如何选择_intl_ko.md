@@ -15,7 +15,7 @@ DTS는 다대일, 일대다, 계단식 단방향, 양방향 및 계단식 양방
 
 ID를 기본 키로 사용하는 A > B 단방향 동기화가 생성됩니다. A의 INSERT 문이 데이터 동기화 중에 B의 데이터와 기본 키 충돌이 있는 경우 DTS는 구성된 충돌 해결 정책에 따라 충돌을 처리합니다.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/4442109fe39774e4c567a4653130f668.png" style="zoom:45%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ad3c26330751e80c14d2b97e9b42d614.jpg" style="zoom:90%;" />
 
 서로 다른 정책에 따라 B의 각 동기화 결과는 아래와 같습니다.
 - 충돌 보고: 작업에서 오류를 보고하고 B의 데이터는 변경되지 않은 상태로 유지됩니다(ID=1, Price=10).
@@ -26,7 +26,7 @@ ID를 기본 키로 사용하는 A > B 단방향 동기화가 생성됩니다. A
 
 일부 시나리오에서는 기본 키를 수정하여 기본 키 충돌을 일으킬 수 있습니다. 예를 들어 A의 기본 키가 UPDATE되고(ID=1 -> ID=2), 기본 키 ID가 B의 2인 데이터와 충돌합니다.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ab72bbd65c897e915a04837bc6052576.png" style="zoom:33%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1b9f3b06cadc856b7cf237dbfaf9a703.jpg" style="zoom:90%;" />
 
 서로 다른 정책에 따라 B의 각 동기화 결과는 아래와 같습니다.
 
@@ -39,6 +39,6 @@ ID를 기본 키로 사용하는 A > B 단방향 동기화가 생성됩니다. A
 2리전 3데이터센터 및 다중 사이트 활성-활성 아키텍처와 같은 복잡한 데이터 아키텍처에서 데이터는 동시에 3개 이상의 노드에 기록되어야 할 수 있으며 여러 노드에서 데이터 일관성을 보장하는 것이 중요합니다. 많은 사용자는 기본 키 충돌 해결 정책을 사용하여 지정된 노드의 데이터를 다른 노드와 동기화할 수 있다고 생각하지만 실제로는 작동하지 않습니다.
 
 다음 양방향 동기화 시나리오에서 덮어쓰기 정책은 A > B 및 B > A 동기화 모두에 대해 설정됩니다. 기본 키가 1인 다른 데이터 레코드가 노드 A와 B에 동시에 삽입되면 결국 A와 B 사이에서 서로 교환됩니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/83aa82449a752e49824793cb713cb2f1.png" style="zoom:45%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1b9f3b06cadc856b7cf237dbfaf9a703.jpg" style="zoom:90%;" />
 
 실제 시나리오에서 노드 간에 데이터 일관성을 구현하려면 일반적으로 기본 키로 데이터베이스를 분할하고, 버전 번호로 데이터 덮어쓰기와 같은 추가 조정 메커니즘을 도입하고, 충돌 해결 정책 외에 다른 방법을 사용해야 합니다. 

@@ -25,7 +25,7 @@ Different SDK versions allow you to extend the storage time of historical messag
 
 IM supports the storage of unread messages; that is, messages sent to users when they are offline will be pulled upon next login.
 
-For one-to-one chat, unread messages in up to 100 conversations are saved for each user for 7 days by default, with up to 100 unread messages in each conversation. Excessive messages will not be counted as unread messages, but they will still be saved in message roaming. For group chat, there are no such limits.
+For one-to-one chat, unread messages in up to 100 conversations are saved for each user for 7 days by default, with up to 250 unread messages in each conversation. Excessive messages will not be counted as unread messages, but they will still be saved in message roaming. For group chat, there are no such limits.
 
 ## Recent Contacts
 

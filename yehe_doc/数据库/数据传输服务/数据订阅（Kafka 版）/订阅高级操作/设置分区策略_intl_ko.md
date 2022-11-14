@@ -16,12 +16,12 @@
 
 원본 데이터베이스에 데이터가 변경되면 변경된 데이터가 구독 Topic에 기록됩니다. **테이블 이름 기준**을 선택하면 동일한 테이블 이름의 구독 데이터가 동일한 Kafka 파티션에 기록됩니다. 데이터 소비 중에는 동일한 테이블의 데이터 변경 사항을 항상 순차적으로 가져오도록 보장할 수 있습니다.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/808946984e2c89dc3509771720349853.png" style="zoom:70%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ad7151b23eccd03f01a7bffe8e913737.jpg" style="zoom:70%;" />
 
 #### 테이블 이름+기본 키 기준
 
 테이블 이름 기준을 선택하면 자주 액세스하는 테이블의 데이터가 동일한 Kafka 파티션에 기록되므로 파티션에 큰 부담이 됩니다. **테이블 이름+기본 키 기준**을 선택하여 이러한 데이터를 다른 파티션에 배포하여 동시 소비 효율성을 높일 수 있습니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/72e0850f0cbfd203bb279a2b2ba86e46.png" style="zoom:70%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c01be686a5742cc07e5f0b6789c7e006.jpg" style="zoom:70%;" />
 
 ## 사용자 지정 파티션 정책
 
@@ -38,17 +38,17 @@
 
 데이터베이스 이름 매칭에 `^A$`를 입력하고 테이블 이름 매칭에 `^test$`를 입력합니다. **테이블 이름 기준**을 선택하면 데이터베이스 `A`에 있는 `test` 테이블의 구독 데이터가 동일한 파티션에 기록됩니다. 매칭되지 않는 다른 테이블의 데이터는 Kafka 파티션 정책에 설정된 정책에 따라 작성됩니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/59cce1a9687a81650c4a9e8a2a864a84.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f5fe94bbb3c46ce6c2118ea2a9326809.jpg)
 
 #### 테이블 이름+기본 키 기준
 
 데이터베이스 이름 매칭에 `^A$`를 입력하고 테이블 이름 매칭에 `^test$`를 입력합니다. **테이블 이름+기본 키 기준**을 선택하면 데이터베이스 `A`에 있는 `test` 테이블의 구독 데이터가 기본 키로 다른 파티션에 무작위로 기록되고 동일한 기본 키를 가진 데이터 레코드가 결국 동일한 파티션에 기록됩니다. 다른 매칭되지 않는 테이블의 데이터는 Kafka 파티션 정책에 설정된 정책에 따라 작성됩니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/2467ca7289a9c6ce6c278afda5b803e1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/082cba7b8c76ebd84bd7e271cdf45c41.jpg)
 
 #### 열 기준
 
 데이터베이스 이름 매칭에 `^A$`, 테이블 이름 매칭에 `^test$`, 사용자 지정 파티션 열에 `class`를 입력합니다. **열 기준**을 선택하면 데이터베이스 `A`에 있는 `test` 테이블의 `class` 열에 등록된 데이터가 무작위로 다른 파티션에 기록됩니다. 다른 매칭되지 않는 열/테이블의 데이터는 Kafka 파티션 정책에 설정된 정책에 따라 작성됩니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/eb193883cc0e6ad85e7630bd3e206a20.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d911a938187be1f83679186080a9da02.jpg)
 
