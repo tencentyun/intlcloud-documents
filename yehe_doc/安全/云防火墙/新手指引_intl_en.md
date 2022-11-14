@@ -25,14 +25,14 @@ After you purchase Cloud Firewall, you can use it in the following ways:
 
 | If you want to | See |
 |---------|---------|
-| Configure firewall toggles for your public IPs and the associated cloud assets. | [Edge Firewall Toggle](https://intl.cloud.tencent.com/document/product/1160/49809) |
+| Configure firewall toggles for your public IPs and the associated cloud assets. | - |
 |Manage traffic and protect assets in the private network, or forward network traffic based on SNAT and DNAT. |[NAT Firewall Toggle](https://intl.cloud.tencent.com/document/product/1160/49810)|
 |Automatically detect VPC information and connections, and set a Cloud Firewall toggle for each pair of connected VPCs. |[Inter-VPC Firewall Toggle](https://intl.cloud.tencent.com/document/product/1160/49811)|
-|View and manage the data and information of each asset in the Cloud Firewall console. |[Asset Management](https://intl.cloud.tencent.com/document/product/1160/49812)|
+|View and manage the data and information of each asset in the Cloud Firewall console. |-|
 |View and process security event alerts and blocked access. |[Alert Management](https://intl.cloud.tencent.com/document/product/1160/49837)|
 |View the traffic access and bandwidth visually within a specified time frame. |[Traffic Monitoring](https://intl.cloud.tencent.com/document/product/1160/49822)|
-|Filter domain names, or filter traffic by geographic location. |[Access Control Rule](https://intl.cloud.tencent.com/document/product/1160/49844)|
-|Use the security baseline feature for product security and stability.|[Security Baseline](https://intl.cloud.tencent.com/document/product/1160/49855)|
+|Filter domain names, or filter traffic by geographic location. |-|
+|Use the security baseline feature for product security and stability.|-|
 |Identify unknown risks beyond access control rules, monitor the north-south traffic of public IP addresses based on intrusion defense rules, and prevent CVM vulnerabilities from being exposed to the Internet. |[Intrusion Defense](https://intl.cloud.tencent.com/document/product/1160/49856)|
 |View the Cloud Firewall logs.|[Log Audit](https://intl.cloud.tencent.com/document/product/1160/49861)|
 |View the details of all the traffic logs stored in Cloud Firewall for the past 6 months based on account, retrieve and query logs with search statements, and use reporting and statistical analysis services. |[Log Analysis](https://intl.cloud.tencent.com/document/product/1160/49862)|
