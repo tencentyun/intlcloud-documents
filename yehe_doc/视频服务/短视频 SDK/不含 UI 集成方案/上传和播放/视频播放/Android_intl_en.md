@@ -6,7 +6,7 @@ If the Player component cannot meet your custom requirements and you have develo
 
 
 ## Prerequisites
-1. To try out all features of the player, we recommend you activate [VOD](https://cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://cloud.tencent.com/login) for one first. If you don't use the VOD service, you can skip this step; however, you will only be able to use basic player features after integration.
+1. To try out all features of the player, we recommend you activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://intlcloud.tencent.com/login) for one first. If you don't use the VOD service, you can skip this step; however, you will only be able to use basic player features after integration.
 2. Download and install [Android Studio](https://developer.android.com/studio). If you have already done so, skip this step.
 
 ## Content Summary
@@ -106,7 +106,7 @@ ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-   If you haven't used the download cache feature (APIs in [TXVodDownloadManager](https://cloud.tencent.com/document/product/881/67113#txvoddownloadmanager)) of the SDK v9.4 or earlier and don't need to play back the downloaded files in the SDK v9.5 or later, you don't need to use the SO file of the feature, which helps reduce the size of the installation package. For example, if you have downloaded a cached file by using the `setDownloadPath` and `startDownloadUrl` functions of the `TXVodDownloadManager` class in the SDK v9.4 or earlier, and the `getPlayPath` path called back by `TXVodDownloadManager` is stored in the application for subsequent playback, you will need `libijkhlscache-master.so` to play back the file at the `getPlayPath` path; otherwise, you won't need it. You can add the following to `app/build.gradle`:
+   If you haven't used the download cache feature (APIs in [TXVodDownloadManager](https://www.tencentcloud.com/document/product/266/47849#txvoddownloadmanager)) of the SDK v9.4 or earlier and don't need to play back the downloaded files in the SDK v9.5 or later, you don't need to use the SO file of the feature, which helps reduce the size of the installation package. For example, if you have downloaded a cached file by using the `setDownloadPath` and `startDownloadUrl` functions of the `TXVodDownloadManager` class in the SDK v9.4 or earlier, and the `getPlayPath` path called back by `TXVodDownloadManager` is stored in the application for subsequent playback, you will need `libijkhlscache-master.so` to play back the file at the `getPlayPath` path; otherwise, you won't need it. You can add the following to `app/build.gradle`:
 ```xml
 packagingOptions{
 	exclude "lib/armeabi/libijkhlscache-master.so"
