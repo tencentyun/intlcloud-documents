@@ -225,6 +225,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 55.[Audio Moderation System](https://www.tencentcloud.com/document/product/1139/51141).
 56.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51138).
 57.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51135).
+58.[Tencent Cloud Mesh](https://www.tencentcloud.com/document/product/1152/51394).
 
 ## 10.Jurisdiction-specific Requirements
 
