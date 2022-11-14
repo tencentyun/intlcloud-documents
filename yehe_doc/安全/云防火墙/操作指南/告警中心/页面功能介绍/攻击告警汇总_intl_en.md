@@ -10,12 +10,12 @@ In this module, you can analyze alert events under different **① event types**
 ::: ① Alert event type
 Click the tabs in the area marked "①" to view the details of the alerts of different types.
 
->? The relevant security event types are displayed only after you configure the security policies required by CFW in [Intrusion defense](https://www.tencentcloud.com/document/product/1160/49856), and [Security baseline](https://console.cloud.tencent.com/cfw/secline).
+<dx-alert infotype="notice">The relevant security event types are displayed only after you configure the security policies required by CFW in [Intrusion defense](https://www.tencentcloud.com/document/product/1160/49856), and [Security baseline](https://console.cloud.tencent.com/cfw/secline).</dx-alert>
 
 :::
 ::: ② Batch resolve events
 You can click **Block all** for all selected events, or **Allow** or **Ignore** them in batch mode.
->?These buttons are only available when one or more events are selected.
+<dx-alert infotype="notice">These buttons are only available when one or more events are selected.</dx-alert>
 
 :::
 ::: ③ Filter events by conditions
