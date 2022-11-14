@@ -11,12 +11,12 @@
 ::: ①告警事件类型
 单击“图中①处按钮”来查看不同分类下的告警信息详情。
 
->? 当在 [入侵防御](https://www.tencentcloud.com/document/product/1160/49856) 以及 [安全基线](https://console.cloud.tencent.com/cfw/secline) 模块配置好云防火墙所需的相关安全策略后，才会显示对应的安全事件类型。
+<dx-alert infotype="notice">当在 [入侵防御](https://www.tencentcloud.com/document/product/1160/49856) 以及 [安全基线](https://console.cloud.tencent.com/cfw/secline) 模块配置好云防火墙所需的相关安全策略后，才会显示对应的安全事件类型。</dx-alert>
 
 :::
 ::: ②批量处理
 基于复选框可以选择单击**一键拦截**，以及批量**放通**或**忽略**。
->?没有复选情况下不可选择。
+<dx-alert infotype="notice">没有复选情况下不可选择。</dx-alert>
 
 :::
 ::: ③条件筛选
@@ -41,7 +41,7 @@
 - 单击右侧**封禁**、**放通**或**忽略**，可以单独处理某条事件告警。
 >?
 >- 以下操作同时适用于批量处理和其他类型 IP。
->-  如果用户需要修改操作，可在**[入侵防御](https://console.cloud.tencent.com/cfw/ips)** > **封禁列表**中恢复操作。
+>-  如果用户需要修改操作，可在[入侵防御](https://console.cloud.tencent.com/cfw/ips) > **封禁列表**中恢复操作。
 
  - **封禁**：针对危险等级较高或告警次数较多的安全事件，可以单击**封禁**，将该 IP 地址添加至 [入侵防御](https://console.cloud.tencent.com/cfw/ips) 模块的封禁列表（黑名单），云防火墙会在一定时间范围内，自动拦截该 IP 地址对用户全部资产的访问。
   - **放通**：针对告警中存在重复或可能的误报，可以单击**放通**，将该 IP 地址加入 [入侵防御](https://console.cloud.tencent.com/cfw/ips) 模块的忽略列表（白名单），云防火墙会在一定时间范围内，将该 IP 地址绕过入侵防御模块检测，从而放行该 IP 地址的流量。
