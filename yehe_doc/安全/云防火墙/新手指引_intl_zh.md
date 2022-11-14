@@ -25,14 +25,14 @@
 
 | 如果您想 | 您可以阅读 |
 |---------|---------|
-| 对所持有的公网 IP 以及关联的云上资产，配置对应的防火墙开关。 | [互联网边界防火墙开关](https://intl.cloud.tencent.com/document/product/1160/49809) |
+| 对所持有的公网 IP 以及关联的云上资产，配置对应的防火墙开关。 | - |
 |对内网资产进行流量管控与安全防护，或基于 SNAT、DNAT 进行的网络流量转发。|[NAT 边界防火墙开关](https://intl.cloud.tencent.com/document/product/1160/49810)|
 |自动探测 VPC 信息与互通关系，并在每一对互通的 VPC 间，建立云防火墙开关。|[VPC 间防火墙开关](https://intl.cloud.tencent.com/document/product/1160/49811)|
-|在云防火墙控制台查看和管理各资产的相关数据及信息。|[资产中心](https://intl.cloud.tencent.com/document/product/1160/49812)|
+|在云防火墙控制台查看和管理各资产的相关数据及信息。|-|
 |查看并处置安全事件告警及被阻断的访问。|[告警中心](https://intl.cloud.tencent.com/document/product/1160/49837)|
 |直观的查看一定时间范围内的流量访问情况和带宽情况。|[流量中心](https://intl.cloud.tencent.com/document/product/1160/49822)|
-|对域名过滤，或对地理位置要求的流量过滤。|[访问控制规则](https://intl.cloud.tencent.com/document/product/1160/49844)|
-|使用安全基线功能，维护产品健康稳定。|[安全基线](https://intl.cloud.tencent.com/document/product/1160/49855)|
+|对域名过滤，或对地理位置要求的流量过滤。|-|
+|使用安全基线功能，维护产品健康稳定。|-|
 |识别访问控制规则以外的未知风险，并对公网 IP 的南北向流量进行入侵防御规则检测，同时避免云服务器中的漏洞暴露在互联网中。|[入侵防御](https://intl.cloud.tencent.com/document/product/1160/49856)|
 |查看云防火墙相关日志。|[日志审计](https://intl.cloud.tencent.com/document/product/1160/49861)|
 |查看基于登录账号的云防火墙在过去6个月所存储的全部流量日志详情，同时基于检索语句的日志检索与查询，使用报表与统计分析服务。|[日志分析](https://intl.cloud.tencent.com/document/product/1160/49862)|
