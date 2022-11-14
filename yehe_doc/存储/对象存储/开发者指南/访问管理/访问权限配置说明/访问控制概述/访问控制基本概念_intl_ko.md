@@ -14,9 +14,10 @@ Tencent Cloud 서브 계정을 생성한 후 액세스 정책을 통해 서브 �
 
 #### Tencent Cloud 자격(Principal)
 
-사용자가 Tencent Cloud 계정을 신청하면 시스템에서는 Tencent Cloud 서비스에 로그인할 수 있는 루트 계정 자격을 생성합니다. Tencent Cloud 루트 계정은 사용자 관리 기능을 통해 다양한 유형의 사용자를 분류하여 관리합니다. 사용자 유형은 **협업 파트너, 정보 수신자, 서브 계정, 역할** 등으로 나뉘며, 자세한 정의는 CAM의 [사용자 유형](https://intl.cloud.tencent.com/document/product/598/32633) 및 [용어집](https://intl.cloud.tencent.com/document/product/598/18564) 문서를 참고하십시오.
+사용자가 Tencent Cloud 계정을 신청하면 시스템에서는 Tencent Cloud 서비스에 로그인할 수 있는 루트 계정 자격을 생성합니다. Tencent Cloud 루트 계정은 사용자 관리 기능을 통해 다양한 유형의 사용자를 분류하여 관리합니다. 사용자 유형은 **협업 파트너, 정보 수신자, 서브 계정, 역할** 등으로 나뉘며, 자세한 정의는 CAM의 [User Types](https://www.tencentcloud.com/document/product/598/32633) 및 [Glossary](https://intl.cloud.tencent.com/document/product/598/18564) 문서를 참고하십시오.
 
->?기업의 동료에게 권한을 부여하려면 먼저 [CAM 콘솔](https://console.cloud.tencent.com/cam)에서 서브 계정을 생성하고 [버킷 정책](https://intl.cloud.tencent.com/document/product/436/45235)), [ACL](https://intl.cloud.tencent.com/document/product/436/30583) 또는 [사용자 정책](https://intl.cloud.tencent.com/document/product/436/45236)의 방법 중 하나 이상을 선택하여 서브 계정에 대한 특정 권한을 설정합니다.
+>? 사내 직원에게 권한을 부여하려면 [CAM 콘솔](https://console.cloud.tencent.com/cam)에서 서브 계정을 생성한 후 [버킷 정책](https://intl.cloud.tencent.com/document/product/436/45235), [ACL](https://intl.cloud.tencent.com/document/product/436/30583) 또는 [사용자 정책](https://intl.cloud.tencent.com/document/product/436/45236) 중 하나 이상을 사용하여 서브 계정에 대한 특정 권한을 설정해야 합니다.
+>
 
 #### COS 리소스(Resource)
 
@@ -39,15 +40,16 @@ Bucket과 Object는 COS의 기본 리소스이며, 그 중 폴더는 특별한 �
 
 #### COS 작업(Action)
 
-COS는 리소스에 대한 다양한 API 작업을 제공합니다. 자세한 내용은 [작업 리스트](https://intl.cloud.tencent.com/document/product/436/10111) 문서를 참고하십시오.
+COS는 리소스에 대한 다양한 API 작업을 제공합니다. 자세한 내용은 [Operation List](https://intl.cloud.tencent.com/document/product/436/10111) 문서를 참고하십시오.
 
 #### COS 조건(Condition, 옵션)
 
-옵션 항목, 예시로 vpc, vip 등은 권한이 적용되기 위한 조건입니다. 자세한 사항은 CAM의 [적용 조건](https://intl.cloud.tencent.com/document/product/598/10608)을 참고하십시오.
+COS 조건은 vpc, vip와 같이 권한이 적용되는 조건을 나타냅니다. 자세한 내용은 [Conditions](https://www.tencentcloud.com/document/product/598/10608)를 참고하십시오.
 
 ## 개인 소유 원칙
 
->?Tencent Cloud COS의 리소스는 기본적으로 모두 비공개로 지정되어 있습니다.
+>? Tencent Cloud COS 리소스는 기본적으로 비공개입니다.
+>
 
 - 리소스 소유자(버킷 리소스를 생성하는 Tencent Cloud 루트 계정)는 해당 리소스에 대한 최고 권한을 가지고 액세스 정책을 편집 및 수정할 수 있으며, 기타 사용자 또는 익명 사용자에게 액세스 권한을 부여할 수 있습니다.
 - Tencent Cloud [CAM(Cloud Access Management)](https://intl.cloud.tencent.com/document/product/598/10583) 계정을 이용해 버킷을 생성하거나 객체를 업로드할 경우, 그 상위 루트 계정이 리소스 소유자가 됩니다.
@@ -58,8 +60,8 @@ COS는 리소스에 대한 다양한 API 작업을 제공합니다. 자세한 �
 COS는 버킷 ​​정책, 사용자 정책(CAM 정책), 버킷 ACL 및 객체 ACL을 포함하여 액세스 제어를 구현하기 위한 여러 권한 설정 방법을 제공합니다.
 
 정책 설정의 시작점에 따라 리소스 기반과 사용자 기반의 두 가지 방법으로 나눌 수 있으며, 권한 부여 방법에 따라 정책과 ACL의 두 가지 방법으로 나눌 수 있습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/ca32b98c546c2b039cd29ba842dc9755.png)
 
+![](https://qcloudimg.tencent-cloud.cn/raw/ca32b98c546c2b039cd29ba842dc9755.png)
 
 **분류 방법1: 리소스 기반 vs 사용자 기반**
 ![](https://qcloudimg.tencent-cloud.cn/raw/f92521c28d8a4841f71f267ca9964dcc.png)
@@ -79,13 +81,13 @@ COS는 버킷 ​​정책, 사용자 정책(CAM 정책), 버킷 ACL 및 객체 
 | 규모   | 유형                   | 설명 방식 | 지원 자격                                       | 지원 리소스 데이터 분할 정도       | 지원 작업         | 지원 효력    |
 | ------ | ---------------------- | -------- | ------------------------------------------------ | -------------------- | ------------------ | ------------- |
 | Bucket | 액세스 정책 언어(Policy) | JSON     | 서브 계정, 역할, Tencent Cloud 서비스, 기타 루트 계정, 익명 사용자 등 | 버킷, 객체, 접두사 등 | 각각의 구체적인 작업   | 허용/명시적 거부 |
-| Bucket | 액세스 제어 리스트(ACL)    | XML      | 기타 루트 계정, 익명 사용자                             | 버킷               | 정리된 읽기/쓰기 권한 | 허용만 가능        |
-| Object | 액세스 제어 리스트(ACL)    | XML      | 기타 루트 계정, 익명 사용자                             | 객체                 | 정리된 읽기/쓰기 권한 | 허용만 가능        |
+| Bucket | 액세스 제어 리스트(ACL)    | XML      | 기타 루트 계정, 서브 계정, 익명 사용자                             | 버킷               | 정리된 읽기/쓰기 권한 | 허용만 가능        |
+| Object | 액세스 제어 리스트(ACL)    | XML      | 기타 루트 계정, 서브 계정, 익명 사용자                             | 객체                 | 정리된 읽기/쓰기 권한 | 허용만 가능        |
 
 <span id="BucketPolicy"></span>
 #### 버킷 정책(Bucket Policy)
 
-버킷 정책(Bucket Policy)은 JSON 언어를 사용하며 익명 자격이나 Tencent Cloud의 [CAM](https://intl.cloud.tencent.com/document/product/598/10583) 계정에 버킷, 버킷 작업, 객체, 객체 작업에 대한 권한을 부여할 수 있습니다. Tencent Cloud COS의 버킷 정책은 버킷의 거의 모든 작업을 관리할 수 있습니다. 버킷 정책을 사용해 ACL로 나타낼 수 없는 액세스 정책을 관리하십시오. 자세한 내용은 [버킷 정책](https://intl.cloud.tencent.com/document/product/436/45235) 문서를 참고하십시오.
+버킷 정책(Bucket Policy)은 JSON 언어로 설명되며 익명 ID 또는 Tencent Cloud의 [CAM](https://intl.cloud.tencent.com/document/product/598/10583) 계정에 버킷 및 객체에 대한 액세스 및 작업 수행 권한 부여를 지원합니다. Tencent Cloud COS에서는 버킷 정책을 사용하여 버킷의 거의 모든 작업을 관리할 수 있습니다. ACL을 사용하여 설명할 수 없는 액세스 정책을 관리하려면 버킷 정책을 사용하는 것이 좋습니다. 자세한 내용은 [버킷 정책](https://intl.cloud.tencent.com/document/product/436/45235)을 참고하십시오.
 
 >!Tencent Cloud 루트 계정은 그에 속한 리소스(버킷 포함)에 대해 가장 큰 권한을 가집니다. 버킷 정책이 거의 모든 작업을 제한하더라도, 루트 계정은 PUT Bucket Policy 작업 권한을 계속 가지고 있으므로, 해당 작업을 호출하여 버킷 정책을 점검하지 않도록 할 수 있습니다.
 
@@ -94,7 +96,7 @@ COS는 버킷 ​​정책, 사용자 정책(CAM 정책), 버킷 ACL 및 객체 
 
 ```json
 {
-  "Statement": [
+  "Statement":[
     {
       "Principal": "*",
       "Effect": "Allow",
@@ -109,7 +111,7 @@ COS는 버킷 ​​정책, 사용자 정책(CAM 정책), 버킷 ACL 및 객체 
 <span id="ACLPolicy"></span>
 #### 액세스 제어 리스트(ACL)
 
-액세스 제어 리스트(ACL)는 XML 언어를 사용하며, 리소스와 관련된 권한 부여자 및 권한 수여자 리스트입니다. 각각의 버킷과 객체에는 모두 이와 관련된 ACL이 있으며, 익명 사용자나 다른 Tencent Cloud의 루트 계정에 기본적인 읽기 및 쓰기 권한을 부여합니다. 자세한 내용은 [ACL](https://intl.cloud.tencent.com/document/product/436/30583) 문서를 참고하십시오.
+ACL은 XML 언어로 설명됩니다. 리소스와 연결된 지정된 피부여자 및 부여된 권한 목록입니다. 각 버킷과 객체에는 익명 사용자 또는 다른 Tencent Clouds 루트 계정에 기본 읽기 및 쓰기 권한을 부여하는 연결된 ACL이 있습니다. 자세한 내용은 [ACL](https://intl.cloud.tencent.com/document/product/436/30583)을 참고하십시오.
 
 >! 리소스 소유자는 전달한 ACL 중 항목 설명 여부에 상관없이 항상 리소스에 대한 FULL_CONTROL 권한을 가집니다.
 >
@@ -164,17 +166,17 @@ COS는 버킷 ​​정책, 사용자 정책(CAM 정책), 버킷 ACL 및 객체 
 
 사용자 정책과 버킷 정책의 가장 큰 차이점은 사용자 정책은 효력(Effect), 작업(Action), 리소스(Resource), 조건(Conditon, 옵션)만 설명하며 자격(Principal)은 설명하지 않는다는 점입니다. 이 때문에 사용자 정책 작성이 완료되면 다시 서브 계정, 사용자 그룹 또는 역할 관련 작업을 실행해야 합니다. 사용자 정책은 익명 사용자에게 작업 또는 리소스 권한을 부여할 수 없습니다.
 
-[사전 설정 정책을 이용해 관련 권한 부여 진행](https://intl.cloud.tencent.com/document/product/598/10602)을 할 수 있으며 [사용자 정책 자체 기입](https://intl.cloud.tencent.com/document/product/598/10603)한 후, 지정된 자격에 연결하여 사용자의 CAM을 관리할 수 있습니다. 자세한 내용은 [사용자 정책](https://intl.cloud.tencent.com/document/product/436/45236) 문서를 참고하십시오.
+[사전 설정된 정책을 연결하여 권한 부여](https://intl.cloud.tencent.com/document/product/598/10602)하거나 [사용자 정책 작성](https://intl.cloud.tencent.com/document/product/598/10603) 후 지정된 ID와 연결하여 사용자 액세스를 관리할 수 있습니다. 자세한 내용은 [사용자 정책](https://intl.cloud.tencent.com/document/product/436/45236)을 참고하십시오.
 
 다음은 광저우에 위치한 버킷 examplebucket-1250000000의 모든 COS 작업에 권한 위임을 한 정책입니다. 정책을 저장한 후 [CAM](https://intl.cloud.tencent.com/document/product/598/10583)의 서브 계정, 사용자 그룹 또는 적용 가능한 역할과 연결해야 합니다.
 
 ```json
 {
-  "Statement": [
+  "Statement":[
     {
       "Effect": "Allow",
       "Action": ["cos:*"],
-      "Resource": [
+      "Resource":[
           "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*",
           "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/"
       ]

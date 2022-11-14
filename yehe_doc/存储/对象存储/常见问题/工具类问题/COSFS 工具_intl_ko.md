@@ -4,7 +4,7 @@
 
 임시 키(STS)를 사용하여 버킷을 마운트하는 방법은 다음 두 단계를 진행해야 합니다.
 
-1단계: COSFS 명령 옵션 -opasswd-file=\[path\]에 대해 /tmp/passwd-sts와 같은 임시 키 구성 파일을 생성하여 키 구성 파일을 지정합니다. 임시 키에 대한 자세한 내용은 [임시 키 생성 및 사용](https://intl.cloud.tencent.com/document/product//436/14048)을 참고하십시오. 다음은 임시 키 구성 파일의 예시입니다.
+1단계: 임시 키 구성 파일을 생성합니다. 예를 들어 /tmp/passwd-sts에 COSFS에 사용하는 명령어 선택 항목 -opasswd-file=\[path\]로 키 구성 파일을 지정합니다. 임시 키 관련 개념은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오. 임시 키 구성 파일 예시는 다음과 같습니다.
 ```shell
 COSAccessKeyId=AKIDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  #임시 키의 Id, Key, Token 필드는 아래와 같음
 COSSecretKey=GYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
@@ -109,7 +109,7 @@ COSFS 내부 로직에서 Head 요청을 사용하여 상위 디렉터리와 파
 
 
 ### COSFS로 스토리지 사용량을 보려면 어떻게 해야 합니까?
-COSFS는 스토리지 사용량 보기를 지원하지 않습니다. 버킷 사용량에 대한 통계가 필요하고 데이터 볼륨이 작은 경우 COS 콘솔에 로그인하여 사용량을 확인하십시오. 데이터 양이 많으면 [인벤토리](https://intl.cloud.tencent.com/document/product//436/30622) 기능을 활용할 수 있습니다.
+COSFS는 스토리지 사용량 직접 조회를 지원하지 않습니다. COS 버킷의 스토리지 용량을 계산하려면 데이터 볼륨이 비교적 작은 시나리오의 경우 COS 콘솔에 로그인하여 확인하시고, 데이터 볼륨이 큰 시나리오의 경우 [인벤토리](https://intl.cloud.tencent.com/document/product/436/30622) 기능을 사용하시기 바랍니다.
 
 ### 마운트된 디렉터리에 액세스한 프로세스를 어떻게 확인합니까?
 다음 명령을 실행하여 /mnt/cosfs와 같은 마운트된 디렉터리에 액세스한 프로세스를 확인하십시오.
@@ -129,7 +129,7 @@ umount -l /path/to/mnt_dir
 cosfs examplebucket-1250000000:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
-COSFS 프로세스 오류가 잘못된 동작으로 인한 것이 아닌 경우, 서버의 fuse 버전이 v2.9.4 이전인지 확인할 수 있습니다. v2.9.4 이전 버전의 libfuse는 COSFS 프로세스의 비정상적인 종료를 유발할 수 있습니다. 이 경우 [COSFS](https://intl.cloud.tencent.com/document/product//436/6883)에 설명된 대로 fuse 버전을 업데이트하거나 최신 버전의 COSFS를 설치하는 것이 좋습니다.
+COSFS 프로세스가 오작동으로 종료된 게 아닌 경우 기기 상의 fuse 버전이 2.9.4 이하인지 확인합니다. libfuse가 2.9.4 버전 이하인 경우 COSFS 프로세스에 오류가 발생하여 종료될 수 있습니다. 이 경우 [COSFS 툴](https://intl.cloud.tencent.com/document/product/436/6883) 문서를 참고하여 fuse 버전을 업데이트하거나 COSFS 최신 버전 설치를 권장합니다.
 
 ### COSFS를 통해 업로드된 파일의 Content-Type이 "application/octet-stream"으로 변경된 경우 어떻게 해야 하나요?
 
@@ -279,3 +279,5 @@ COSFS는 디스크 기반 파일 시스템이 아니므로 inode가 없습니다
 
 
 
+### COSFS의 CPU 사용률이 높고 매일 일정 시간 동안 COS에 많은 Head 및 List 요청을 보내는 경우 어떻게 해야 하나요?
+이는 일반적으로 서버에서 예약된 디스크 스캔 작업으로 인해 발생합니다. Linux의 일반적인 디스크 스캔 프로그램은 updatedb입니다. COSFS 마운트 대상 디렉터리를 updatedb의 구성 파일 /etc/updatedb.conf의 PRUNEPATHS 구성 항목에 추가하여 디스크 스캔을 방지할 수 있습니다.

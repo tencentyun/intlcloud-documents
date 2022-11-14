@@ -1,15 +1,15 @@
-### COS Python SDK 업그레이드 후 ‘파일 이동’ 작업을 실행할 수 없습니다. 어떻게 처리해야 합니까?
+### Python SDK를 업그레이드한 후 객체를 이동할 수 없으면 어떻게 해야 하나요?
 
-[PUT Object](https://intl.cloud.tencent.com/document/product/436/10881)와 [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) 인터페이스를 사용하여 실행할 수 있습니다. 삭제 작업을 실행하기 전에 데이터의 일관성 검증을 권장합니다. 자세한 내용은 [MD5 인증](https://intl.cloud.tencent.com/document/product/436/32467) 문서를 참고하십시오.
+[PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) 및 [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743)를 호출하여 객체를 이동할 수 있습니다. [MD5 검증](https://intl.cloud.tencent.com/document/product/436/32467)에 안내된 대로 객체를 삭제하기 전에 데이터 일관성을 확인하는 것이 좋습니다.
 
-### COS Python SDK는 파일 다운로드를 위한 임시 링크를 어떻게 가져옵니까?
+### Python SDK로 임시 다운로드 URL을 얻으려면 어떻게 해야 하나요?
 
-Python SDK는 서명 획득 및 사전 서명된 URL 요청 획득 인터페이스, 객체 다운로드의 사전 서명된 URL 획득 인터페이스를 제공합니다. 영구 키 또는 임시 키를 사용해 사전 서명된 URL을 획득하는 호출 방법과 동일하며, 임시 키 사용 시에는 header 또는 query_string에 x-cos-security-token을 추가해야 합니다. 자세한 내용은 [사전 서명된 URL](https://intl.cloud.tencent.com/document/product/436/31548) 문서를 참고하십시오.
+Python SDK는 요청 서명, 미리 서명된 URL 및 미리 서명된 다운로드 URL을 가져오기 위한 API를 제공합니다. 영구 키 또는 임시 키를 사용하여 미리 서명된 URL을 가져오는 호출 방법은 동일하지만 임시 키를 사용할 경우 헤더 또는 query_string에 x-cos-security-token을 추가해야 합니다. 자세한 내용은 [사전 서명된 URL 가져오기](https://intl.cloud.tencent.com/document/product/436/31548)를 참고하십시오.
 
-### COS Python SDK 사용 시 이상이 발생할 경우 어떻게 처리해야 합니까?
+### Python SDK가 예외를 보고하면 어떻게 해야 하나요?
 
-COS XML Python SDK는 작업 성공 시 dict 또는 None을 반환합니다. SDK 인터페이스를 호출하여 COS 서비스를 요청하는 데 실패하면 시스템에 CosClientError(클라이언트 오류) 또는 CosServiceError(서버 오류)가 발생합니다.
+XML Python SDK 작업이 성공하면 dict 또는 None이 반환됩니다. COS 서비스 요청을 위한 SDK API가 실패하면 시스템은 CosClientError 또는 CosServiceError를 리포트합니다.
 
-- 서버에서 반환된 오류: 요구 사항을 충족하지 않는 일부 클라이언트 요청을 처리할 때 서버에서 반환되는 오류를 가리킵니다. 예를 들어 존재하지 않는 파일에 대한 액세스, 파일에 대한 액세스 권한 없음 등이 있습니다. 서버에서 반환되는 오류 코드에 대한 자세한 내용은 [API 오류 코드](https://intl.cloud.tencent.com/document/product/436/7730)를 참고하십시오.
-- 클라이언트 오류: 주로 네트워크 오류, 파일 읽기 및 쓰기 IO 오류, 매개변수 확인 실패 등을 가리킵니다.
+- CosServiceError: 존재하지 않거나 권한이 없는 객체에 액세스하는 것과 같이 요구 사항을 충족하지 않는 클라이언트 요청으로 인해 반환된 오류입니다. 자세한 내용은 [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730)를 참고하십시오.
+- CosClientError: 네트워크 예외, 파일 읽기/쓰기 중 IO 오류, 매개변수 확인 실패 등.
 
