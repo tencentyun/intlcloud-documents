@@ -616,6 +616,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 54.[Audio Moderation System](https://www.tencentcloud.com/document/product/1139/51140).
 55.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51137).
 56.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51133).
+57.[Tencent Cloud Mesh](https://www.tencentcloud.com/document/product/1152/51393).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
