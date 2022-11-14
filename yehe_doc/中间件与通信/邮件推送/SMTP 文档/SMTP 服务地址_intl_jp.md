@@ -2,8 +2,8 @@ SMTPサービスアドレスは次のとおりです。
 
 | アドレス | 説明 | 
 |---------|---------|
-| SMTPサービスアドレス（中国香港） | smtp.qcloudmail.com | 
-| SMTPサービスアドレス（シンガポール） |sg-smtp.qcloudmail.com|
+| SMTPサービスアドレス（中国香港）です。Tencent Cloud中国サイトのお客様向けです。 | smtp.qcloudmail.com | 
+|SMTPサービスアドレス（シンガポール）です。Tencent Cloudグローバルサイトのお客様向けです。|sg-smtp.qcloudmail.com|
 
 SMTPポート番号は次のとおりです。
 
