@@ -1,3 +1,15 @@
+
+## 2022年07月
+<table>
+<thead><tr><th width=20%>ダイナミックネーム</th><th width=50%>動的記述</th><th width=15%>リリース時間</th><th width=15%>関連ドキュメント</th></tr></thead>
+<tbody>
+<tr>
+<td>パスワードの複雑さをサポートする</td>
+<td>TencentDB for MySQLはパスワードの複雑さをサポートし、データベースアクセスパスワードの強度を高め、データベースの安全性を保障します。</td>
+<td>2022-07-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/49197" target="_blank">パスワードの複雑さを設定する</a></td></tr>
+</tbody></table>
+
 ## 2022年6月
 <table>
 <thead><tr><th width=20%>ダイナミックネーム</th><th width=50%>動的記述</th><th width=15%>リリース時間</th><th width=15%>関連ドキュメント</th></tr></thead>
