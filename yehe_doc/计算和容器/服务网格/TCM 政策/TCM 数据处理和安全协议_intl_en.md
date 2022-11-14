@@ -31,12 +31,10 @@ We will store personal data processed in connection with the Feature as follows 
    <tr>
       <th>Personal Information</th>
       <th>Retention Policy</th>
-​        </tr>
-   <tr>
-      <td>Business Data </td>
-      <td>Deleted immediately after you terminate the service of the Feature. If you do not terminate the service of the Feature but incur an outstanding service fee for your use of the Feature, such data will be automatically deleted 30 days after such outstanding amount is due.</tr>
    </tr>
    <tr>
+      <td>Business Data</td>
+      <td>Deleted immediately after you terminate the service of the Feature. If you do not terminate the service of the Feature but incur an outstanding service fee for your use of the Feature, such data will be automatically deleted 30 days after such outstanding amount is due.</td>
 </table>
 
 You can request deletion of such personal data in accordance with the DPSA.
