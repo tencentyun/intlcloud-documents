@@ -1,3 +1,15 @@
+
+## July 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported password complexity</td>
+TencentDB for MySQL allows you to set the password complexity to improve the strength of database access passwords and ensure the database security.
+<td>2022-07-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/49197" target="_blank">Setting Password Complexity</a></td></tr>
+</tbody></table>
+
 ## June 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
