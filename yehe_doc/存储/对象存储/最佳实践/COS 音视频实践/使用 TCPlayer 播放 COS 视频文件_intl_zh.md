@@ -122,7 +122,7 @@ player.src("https://<BucketName-APPID>.cos.<Region>.myqcloud.com/xxx.m3u8"); // 
 ### 切换清晰度
 数据万象 [自适应码流](https://intl.cloud.tencent.com/document/product/1045/47745) 功能，可以将视频文件转码并打包生成自适应码流输出文件，帮助用户在不同网络情况下快速分发视频内容，播放器能够根据当前带宽，动态选择最合适的码率播放。
 操作步骤如下：
-1. 通过 数据万象 [自适应码流]() 功能，生成多码率自适应的 HLS 或 DASH 目标文件。
+1. 通过 数据万象 [自适应码流](https://www.tencentcloud.com/document/product/1045/47745) 功能，生成多码率自适应的 HLS 或 DASH 目标文件。
 2. 初始化播放器并传入视频对象地址。
 ```
 var player = TCPlayer("player-container-id", {}); // player-container-id 为播放器容器 ID，必须与 html 中一致
