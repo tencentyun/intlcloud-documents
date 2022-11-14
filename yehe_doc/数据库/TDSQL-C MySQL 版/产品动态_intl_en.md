@@ -18,9 +18,9 @@
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
 <tr>
 <td>Supported database proxy</td>
-<td>TDSQL-C for MySQL supports database proxy. Database proxy is a network proxy service between the TencentDB service and the application service. It is used to proxy all requests when the application service accesses the database. The cluster uses the proxy to relay access requests to the source and replica database nodes, so as to isolate read/write requests and reduce the load on the source database.</td>
+<td>TDSQL-C for MySQL supports database proxy between TencentDB services and user applications. With this feature, all database access requests from the applications are proxied, with writes and reads relayed separately to the source and replica databases to relieve the source database.</td>
 <td>2022-07-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1098/50004" target="_blank">Overview</a></td></tr>
+<td>-</td></tr>
 </table>
 
 ## May 2022
