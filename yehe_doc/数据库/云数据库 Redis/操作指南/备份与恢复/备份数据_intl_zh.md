@@ -10,8 +10,8 @@
 >?
 >- 备份周期默认全选，不能进行修改。
 >- 备份保留时长默认7天，如需修改请  [提交工单](https://console.cloud.tencent.com/workorder/category)。
-
-![](https://qcloudimg.tencent-cloud.cn/raw/ad9eac661c90d0132c92c5af08af16f4.png)
+>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ad9eac661c90d0132c92c5af08af16f4.png" style="zoom:60%;" />
 4. 备份将在指定时间段内开始执行，备份进行时可在任务中心查看任务状态，备份完成后，可在**备份与恢复**中查看已生成的备份。
 >?如果受相关进程影响，备份也可能会延迟开始。
 
@@ -19,8 +19,18 @@
 在实例详情页，单击右上角的**手动备份**，编辑备注信息，单击**确定**。
 
 ## 下载备份
-
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择**备份与恢复** > **备份列表**页，在**操作**列单击**下载**。
 3. 在弹出的对话框，复制下载地址或单击**本地下载**，下载备份文件，不支持跨可用区下载。
->?内网地址和本地下载地址有效期为12个小时，过期后请重新获取。
+ - 备份分片下载： 指下载备份文件的分片节点信息，由 `实例ID-node-分片ID` 组成，分片 ID 从0开始排序。
+ - 内网下载：单击**复制下载地址**，可复制内网地址，通过内网下载备份文件。
+ - 外网下载：单击**复制下载地址**，可复制外网地址，通过外网下载备份文件；单击**本地下载**，可直接下载备份文件在本地查看。
+>?内网地址和本地下载地址有效期为6个小时，过期后请重新获取。
+>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b6e96ffca354615ec58cc0863315b897.png" style="zoom:50%;" />
+
+## 相关 API
+
+| API 接口 | 接口含义 |
+|---------|---------|
+| [ManualBackupInstance](https://intl.cloud.tencent.com/document/product/239/32073) | 备份实例 |

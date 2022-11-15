@@ -34,7 +34,7 @@
 ### 实例使用阶段
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在左侧导航选择**参数模板**页面。
 2. 在参数模板列表，找到需要应用的模板，单击**操作**列的**应用到实例**，或单击**操作**列的**查看详情**进入详情页后，单击**应用到实例**。
-![](C:\Users\v_vwslwu\AppData\Roaming\Typora\typora-user-images\image-20211126165013163.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/60e53fbfc50fd72e1a0e75532ce0e29e.png)
 3. 在弹出的对话框，选择参数的执行方式和实例，检查参数修改无误后，单击**提交**。
  - **Redis 实例**：选择对应地域下，需要应用参数模板的实例。
  - **参数对比**：可查看所选实例参数修改前、后的配置。
@@ -43,9 +43,9 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/5ba226d16856effb3a19b4dcc765a608.png)
 
 ### 实例购买阶段
-您也可以在 [购买页](https://buy.intl.cloud.tencent.com/redis) 购买实例时，为实例选择默认或自定义的参数模板。
-- 参数模板已添加搜索框，单击**参数模板**，弹出的下拉菜单会加载控制台已有参数模板名称及参数模板 ID。
-- 搜索框支持根据参数模板 ID 和实例模板名称搜索。
+您也可以在 [购买页](https://buy.cloud.tencent.com/redis) 购买实例时，为实例选择默认或自定义的参数模板。
+- 参数模板已添加搜索框，单击**参数模板**，弹出的下拉菜单会加载控制台已有参数名称及参数 ID。
+- 搜索框支持根据参数名称和参数 ID 搜索。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/44bdb23e6fcc01e1efdbb2d041d567ef.png)
 
@@ -79,4 +79,19 @@
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在左侧导航选择**参数模板**页面。
 2. 在参数模板列表，在所需模板的**操作**列，单击**删除**。
 3. 在弹出的对话框，单击**确定**即可删除参数模板。
+
+
+## 相关 API
+
+|  API 接口                                                     | 接口含义             |
+| :----------------------------------------------------------- | :------------------- |
+| [ApplyParamsTemplate](https://www.tencentcloud.com/document/product/239/41922) | 应用参数模板         |
+| [CreateParamTemplate](https://www.tencentcloud.com/document/product/239/41921) | 创建参数模板         |
+| [DeleteParamTemplate](https://www.tencentcloud.com/document/product/239/41920) | 删除参数模板         |
+| [DescribeInstanceParamRecords](https://www.tencentcloud.com/document/product/239/32083) | 查询参数修改历史列表 |
+| [DescribeParamTemplates](https://www.tencentcloud.com/document/product/239/41919) | 查询参数模板列表     |
+| [ModifyInstanceParams](https://www.tencentcloud.com/document/product/239/32079) | 修改实例参数         |
+| [ModifyParamTemplate](https://www.tencentcloud.com/document/product/239/41918) | 修改参数模板         |
+
+
 
