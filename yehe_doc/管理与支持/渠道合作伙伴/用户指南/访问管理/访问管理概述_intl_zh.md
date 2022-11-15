@@ -10,6 +10,6 @@
 
 当使用 CAM 时，可以将策略与一个用户或一组用户关联起来，策略能够授权或者拒绝用户使用指定资源完成指定任务。
 
-有关 CAM 子用户的更多相关使用信息，请参照 [子用户](https://cloud.tencent.com/document/product/598/13674)。
+- 有关 CAM 子用户的更多相关使用信息，请参照 [子用户](https://intl.cloud.tencent.com/document/product/598/13674)。
 
-有关 CAM 策略的更多相关使用信息，请参照 [策略](https://cloud.tencent.com/document/product/598/10601)。
+- 有关 CAM 策略的更多相关使用信息，请参照 [策略](https://www.tencentcloud.com/document/product/598/32668)。
