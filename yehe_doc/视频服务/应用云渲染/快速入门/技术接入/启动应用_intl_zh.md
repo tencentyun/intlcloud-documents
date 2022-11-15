@@ -1,0 +1,21 @@
+## 启动应用
+本节主要介绍如何启动云应用。
+### 时序图
+![](https://qcloudimg.tencent-cloud.cn/raw/dec8b73715e1a2e80f62a298fffba0e0.jpg)
+
+其中：
+
+| 时序角色 | 说明 |
+| ------ | ------ |
+|腾讯云云渲染应用 SDK |应用云渲染终端 SDK 包括 [JS SDK](https://intl.cloud.tencent.com/document/product/1158/49627)、[Android SDK](https://intl.cloud.tencent.com/document/product/1158/49628)、[iOS SDK](https://intl.cloud.tencent.com/document/product/1158/49629) <br> （本文以 JS SDK 为例） |
+|业务客户端 |业务提供给用户使用的平台 |
+|业务后台 |业务后台服务 |
+|腾讯云云渲染应用后台 |应用云渲染提供 [云 API](https://www.tencentcloud.com/document/product/1158/49958) |
+|业务云端应用 |运行业务应用的云端服务 |
+
+### 步骤说明
+1. 业务客户端调用 [TCGSDK.init()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.init(params)) 接口完成初始化构建。初始化完成后，再调用 [TCGSDK.getClientSession()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.getClientSession()) 获取 Client 端的 ClientSession。
+2. [](id:step2)业务客户端通过传入 UserId 和 ClientSession 等参数向业务后台请求启动应用，其中 UserId 是由业务方自定义的唯一用户标识，在用户排队和重连应用时应保持不变。
+3. 业务后台通过云渲染 API 调用 [ApplyConcurrent()](https://intl.cloud.tencent.com/document/product/1158/49969) 申请锁定云渲染并发，如果返回没有空闲并发或者其他错误则跳转回 [步骤2](#step2) 重新请求。
+4. 业务后台通过云渲染 API 调用 [CreateSession()](https://intl.cloud.tencent.com/document/product/1158/49968)  创建会话，将返回的服务端 ServerSession 回传给业务客户端。
+5. 业务客户端调用 [TCGSDK.start()](https://intl.cloud.tencent.com/document/product/1158/49627#TCGSDK.start(serverSession)) 接口启动云渲染应用，SDK 完成应用连接后会触发回调 onConnectSuccess()，建议包括数据通道等其他功能都在这之后调用创建。
