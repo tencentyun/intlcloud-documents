@@ -21,7 +21,7 @@ Tencent Cloud GME(Game Multimedia Engine)는 고품질을 특징으로 하는 �
 
 ### 3. 데모 초기화
 
-<img src="https://main.qcloudimg.com/raw/33540519cd5c2bdde6139f8a4af537a6.png"  width="50%"><br>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e94ad80ce1466aff981b23abef5fe2c2.png"  width="50%"><br>
 데모를 초기화하려면 [GME 콘솔](https://console.cloud.tencent.com/gamegme/detail/1400391524)의 서비스 관리에서 찾을 수 있는 AppID와 권한 키를 입력해야 합니다.
 
 - appId: 콘솔에서 Appid를 입력합니다.
@@ -35,7 +35,7 @@ Tencent Cloud GME(Game Multimedia Engine)는 고품질을 특징으로 하는 �
 
 ### 4. 음성 채팅방 입장
 
-<img src="https://main.qcloudimg.com/raw/7393dbb31007299894586205cb8b6f9c.jpg"  width="50%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/85597502439e2434836bc827b121ceea.jpg"  width="50%">
 
 음성 채팅방 선택 페이지에서 방 ID를 입력할 수 있습니다. 다른 데모를 열면 동일한 방 ID를 입력하십시오.
 
@@ -44,7 +44,7 @@ Tencent Cloud GME(Game Multimedia Engine)는 고품질을 특징으로 하는 �
 
 ### 5. 게임 UI 개요
 
-<img src="https://main.qcloudimg.com/raw/0e451b80402caeb31cf6bd932acee127.png"  width="50%"/></img>
+
 
 아래 인터페이스 세부 정보를 참고하십시오.
 
@@ -59,16 +59,16 @@ Tencent Cloud GME(Game Multimedia Engine)는 고품질을 특징으로 하는 �
 
 ### 6. 로컬 연결 구성
 
-<img src="https://main.qcloudimg.com/raw/670b24a1133dc07bdc9892ffa12b159f.png" width="50%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6f8f1ad63609850c9f169326c1ca69dc.png" width="50%" /></img>
 
 >!이 데모에는 로컬 LAN 연결 기반이 필요합니다.
 
 - **방에 처음 입장하는 사람**
   방에 들어가는 첫 번째 사람은 네트워크 연결 Host입니다. **LAN Host(H)**를 클릭하면 코인 옆에 캐릭터가 생성됩니다.
-  <img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/master.gif"  width="50%"/></img>
+
 - **다음 사람**
   **LAN Client(C)**를 클릭하여 다음과 같은 사람이 Host에 연결되어야 하며 해당 캐릭터는 코인 옆에 표시됩니다. 이제 그들은 방에 들어오는 첫 번째 사람들을 볼 수 있습니다.
-  <img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/client.gif"  width="50%"/></img>
+
 - **연결 성공 여부 판단을 위한 정보**
   1. 게임 UI에서 상대방의 게임 캐릭터를 볼 수 있습니다. 
   2. UI 우측 하단의 로그에 상대방의 게임 캐릭터 userID의 방 입장 기록이 표시됩니다.
@@ -79,13 +79,13 @@ Tencent Cloud GME(Game Multimedia Engine)는 고품질을 특징으로 하는 �
 
 ### 8. 작업 방식
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/linaji.gif"  width="50%"/></img>
+
 
 키보드의 "W", "S", "A", "D"는 각각 ‘전’, ‘후’, ‘좌’, ‘우’에 해당합니다. 마우스를 사용하여 원근을 조절할 수 있습니다. 연결된 클라이언트는 다른 클라이언트가 운영하는 캐릭터를 참고하십시오.
 
 ### 9. 체험 방법
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/yuan.gif"  width="50%"/></img>
+
 
 로컬에서 2개의 인스턴스에서 데모를 열면 한 데모의 시점을 코인으로 이동하고 마이크를 활성화하고 다른 데모의 캐릭터가 가능한 한 멀리 도망가서 계속 말하게 할 수 있습니다. 이런 식으로 3D 음향 효과를 시험해 볼 수 있습니다. 캐릭터가 맵 경계에 있을 때 음성은 거의 들리지 않습니다.
 

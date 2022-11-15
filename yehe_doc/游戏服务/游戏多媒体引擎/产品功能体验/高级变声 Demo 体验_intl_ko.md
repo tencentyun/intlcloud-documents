@@ -16,7 +16,7 @@ Tencent Cloud GME(Game Multimedia Engine)는 고품질을 특징으로 하는 �
 
 UI는 다음과 같습니다.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b4e2a3c8ef86b7ce8a8750adbc21cae8.png" width=80%/><img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ced85aa2b117bad61fe538c2e3a1252e.png" width=80%/><img>
 
 ### 2. AppID 및 Key 입력
 
@@ -46,7 +46,7 @@ UI는 다음과 같습니다.
 
 구성 설명:
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/dc5f3b8312cc4cab666c2d43719f79cc.png" width=80%/><img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/791e556855f15dfb3005040a8c4d1d27.png" width=80%/><img>
 
 ### 7. 방 퇴장
 
