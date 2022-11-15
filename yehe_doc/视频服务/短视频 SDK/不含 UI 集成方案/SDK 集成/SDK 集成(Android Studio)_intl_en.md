@@ -105,7 +105,8 @@ defaultConfig {
    }
 }
 ```
->?Currently, the SDK supports armeabi-v7a and arm64-v8a.
+<dx-alert infotype="explain"> Currently, the SDK supports armeabi-v7a and arm64-v8a.</dx-alert>
+
 3. Click **Sync Now** to automatically download the SDKs and integrate them into your project.
 :::
 </dx-tabs>
@@ -423,10 +424,12 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
         android:layout_height="match_parent" />
 ```
 	2. Create an empty theme in `res/values/styles.xml` and inherit the default video importing theme of `UGCKit`.
+
 ```
 <style name="PickerActivityTheme" parent="UGCKitPickerStyle"/>
 ```
 	3. Create an activity, inherit `Activity`, get a `UGCKitVideoPicker` object, and set the callback.
+
 ``` java
 @Override
 public void onCreate(Bundle icicle) {
@@ -449,6 +452,7 @@ public void onCreate(Bundle icicle) {
 ![](https://main.qcloudimg.com/raw/cf043d198ce9bdbe32c3035b83afc18e.png)
 4. **Implement video clipping**[](id:v_cut)
 	1. Create an XML file and add the code below:
+
 ```xml
 <com.tencent.qcloud.ugckit.UGCKitVideoCut
         android:id="@+id/video_cutter"
@@ -456,10 +460,12 @@ public void onCreate(Bundle icicle) {
         android:layout_height="match_parent" />
 ```
 	2. Create an empty theme in `res/values/styles.xml` and inherit the default video editing theme of `UGCKit`.
+
 ```
 <style name="EditerActivityTheme" parent="UGCKitEditerStyle"/>
 ```
 	3. Create an activity, implement the `FragmentActivity` API, get a `UGCKitVideoCut` object, and set the callback.
+
 ```java
 @Override
 protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -498,6 +504,7 @@ protected void onResume() {
 ![](https://main.qcloudimg.com/raw/5ffcdda31393c6994a93297bd6f9b25c.png)
 5. Implement video special effect editing[](id:v_effect_edit)
 	1. In the XML file of the editing activity, add the code below:
+
 ``` xml
 <com.tencent.qcloud.ugckit.UGCKitVideoEdit
         android:id="@+id/video_edit"
@@ -505,6 +512,7 @@ protected void onResume() {
         android:layout_height="match_parent" />
 ```
 	2. Create an editing activity, inherit `FragmentActivity`, get a `UGCKitVideoEdit` object, and set the callback.
+
 ```java
 @Override
 protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -578,7 +586,7 @@ The latest version of `UGCKit` uses AndroidX. If you still use `UGCKit` based on
 ERROR: Unable to find method 'org.gradle.api.tasks.compile.CompileOptions.setBootClasspath(Ljava/lang/String;)V'.
 Possible causes for this unexpected error include:
 ```
--**Cause**: The problem occurs because the version of the Gradle plugin used for `UGCKit` is v2.2.3, but that of Gradle is v3.3.
+- **Cause**: The problem occurs because the version of the Gradle plugin used for `UGCKit` is v2.2.3, but that of Gradle is v3.3.
 - **Solution**: Check whether the versions of `Android Studio Gradle` and Gradle match. For details, see [Update the Android Gradle plugin](https://developer.android.google.cn/studio/releases/gradle-plugin.html#updating-plugin).
 
 [](id:que2_3)
