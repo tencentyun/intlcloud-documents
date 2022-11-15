@@ -2,7 +2,6 @@ Tencent Cloud Cloud Object Storage(COS)의 글로벌 가속 기능은, Tencent�
 
 > !
 > - 현재 글로벌 가속 기능은 모든 퍼블릭 클라우드 리전에서 공급 및 지원됩니다.
-> - 글로벌 가속은 현재 CI 기능을 지원하지 않습니다.
 > - 글로벌 가속 기능을 사용하면, 정보 요청이 Tencent Cloud 내부 네트워크 전용 회선을 통해 가속 전송되기 때문에 요금이 부과됩니다. 자세한 요금 정보는 [제품 가격](https://intl.cloud.tencent.com/pricing/cos)을 참고하십시오.
 
 
