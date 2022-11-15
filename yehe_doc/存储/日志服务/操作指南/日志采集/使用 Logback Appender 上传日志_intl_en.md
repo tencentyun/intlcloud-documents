@@ -25,7 +25,7 @@ Logback is an open source project of Apache. Logback allows you to deliver logs 
 <dependency>
     <groupId>com.tencentcloudapi.cls</groupId>
     <artifactId>tencentcloud-cls-logback-appender</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
