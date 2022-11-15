@@ -80,4 +80,4 @@ The image cannot be displayed when `http://www.fake.com/index.html` is accessed.
 ## About Wechat Mini Programs
 
 1. For network requests using Wechat Mini Programs, the referer value is fixed as `https://servicewechat.com/{appid}/{version}/page-frame.html`.
-2. If hotlink protection is enabled for your bucket, to allow Wechat Mini Programs to load COS images, add `servicewechat.com` to your hotlink allowlist on the [COS console](https://console.cloud.tencent.com/cos5).
+2. If hotlink protection is enabled for your bucket, to allow Wechat Mini Programs to load COS images, add `servicewechat.com` to your hotlink allowlist on the [Cloud Object Storage console](https://console.cloud.tencent.com/cos5).
