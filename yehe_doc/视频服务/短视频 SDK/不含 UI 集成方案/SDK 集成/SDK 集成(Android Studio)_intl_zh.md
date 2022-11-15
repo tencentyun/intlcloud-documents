@@ -105,7 +105,8 @@ defaultConfig {
    }
 }
 ```
->?目前 SDK 支持 armeabi-v7a 和 arm64-v8a。
+<dx-alert infotype="explain"> 目前 SDK 支持 armeabi-v7a 和 arm64-v8a。</dx-alert>
+
 3. 单击 **Sync Now**，自动下载 SDK 并集成到工程里。
 :::
 </dx-tabs>
@@ -416,6 +417,7 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
 ![](https://main.qcloudimg.com/raw/077aa281195ba33fcaa67da2a13b1b60.png)
 3. **视频导入**[](id:v_import)
 	1. 新建 xml，加入如下配置：
+
 ```xml
  <com.tencent.qcloud.ugckit.UGCKitVideoPicker
         android:id="@+id/video_picker"
@@ -423,10 +425,12 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
         android:layout_height="match_parent" />
 ```
 	2. 在 `res/values/styles.xml` 中新建空的主题，继承 UGCKit 默认视频导入主题。
+
 ```
 <style name="PickerActivityTheme" parent="UGCKitPickerStyle"/>
 ```
 	3. 新建 activity，继承 Activity，获取 UGCKitVideoPicker 对象，设置对象回调。
+
 ``` java
 @Override
 public void onCreate(Bundle icicle) {
@@ -449,6 +453,7 @@ public void onCreate(Bundle icicle) {
 ![](https://main.qcloudimg.com/raw/cf043d198ce9bdbe32c3035b83afc18e.png)
 4. **视频裁剪**[](id:v_cut)
 	1. 新建 xml ，加入如下配置：
+
 ```xml
 <com.tencent.qcloud.ugckit.UGCKitVideoCut
         android:id="@+id/video_cutter"
@@ -456,10 +461,12 @@ public void onCreate(Bundle icicle) {
         android:layout_height="match_parent" />
 ```
 	2. 在 `res/values/styles.xml` 中新建空的主题，继承 UGCKit 默认编辑主题。
+
 ```
 <style name="EditerActivityTheme" parent="UGCKitEditerStyle"/>
 ```
 	3. 新建 Activity ，实现接口 `FragmentActivity`，获取 UGCKitVideoCut 对象，并设置回调方法。
+
 ```java
 @Override
 protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -498,6 +505,7 @@ protected void onResume() {
 ![](https://main.qcloudimg.com/raw/5ffcdda31393c6994a93297bd6f9b25c.png)
 5. 视频特效编辑[](id:v_effect_edit)
 	1. 在编辑 activity 的 xml 中加入如下配置：
+
 ``` xml
 <com.tencent.qcloud.ugckit.UGCKitVideoEdit
         android:id="@+id/video_edit"
@@ -505,6 +513,7 @@ protected void onResume() {
         android:layout_height="match_parent" />
 ```
 	2. 新建编辑 Activity ，继承 `FragmentActivity`，获取 UGCKitVideoEdit 对象并设置回调方法 。
+
 ```java
 @Override
 protected void onCreate(@Nullable Bundle savedInstanceState) {
