@@ -1,0 +1,1 @@
+Tencent Cloud Flow Logs is in the trial period, and the log extraction service is free of charge. However, storing data in CLS will incur log storage fees. For detailed pricing, see CLS [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
