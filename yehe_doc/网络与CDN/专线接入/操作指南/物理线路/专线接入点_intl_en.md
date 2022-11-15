@@ -2,18 +2,18 @@ This document describes the approximate locations of Tencent Cloud access points
 >? The access points created after 00:00 on July 1, 2022 only support fiber optical port access, not electrical port access.
 >
 
-## China Regions
+## Regions in China
 <table>
 <tbody>
 <tr>
-<th colspan="2">Region</th>
-<th>Access Point</th>
-<th>Service Provider</th>
-<th>Supported Port</th>
+<th colspan=2 width="20%">Region</th>
+<th width="15%">Access point</th>
+<th width="12%">Provider</th>
+<th>Supported Port Types</th>
 <th>Address</th>
 </tr>
 <tr>
-<td rowspan=17>East China</td>
+<td rowspan=18>East China</td>
 <td rowspan=3>Hangzhou</td>
 <td>ap-hangzhou-a-dg</td>
 <td>CTCC</td>
@@ -33,7 +33,7 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>No. 4 Street, Xiasha Economic Development Zone, Qiantang New District, Hangzhou</td>
 </tr>
 <tr>
-<td rowspan=8>Shanghai</td>
+<td rowspan=9>Shanghai</td>
 <td>ap-shanghai-b-tz</td>
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
@@ -55,7 +55,13 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>ap-shanghai-f-yh</td>
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
-<td>No. V-58, Wenxiang Road, Songjiang Economic and Technological Development Zone, Shanghai</td>
+<td>No. 168, Dongxue Road, Songjiang District, Shanghai</td>
+</tr>
+<tr>
+<td>ap-shanghai-g-hq</td>
+<td>CUCC</td>
+<td>Fiber optic port and electrical port</td>
+<td>No. 192, Jinzhong Road, Huaqiao Town, Kunshan City, Suzhou CICC Data System Co., Ltd.</td>
 </tr>
 <tr>
 <td>ap-shanghai-h-wgq</td>
@@ -108,18 +114,18 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>2966 Chunhui Road, High-tech Zone, Jinan</td>
 </tr>
 <tr>
-<td>Fuzhou</td>
-<td>ap-fuzhou-a-ck</td>
-<td>CTCC</td>
-<td>Fiber optic port and electrical port</td>
-<td>No. 1 Gaochang Road, Cangshan Science and Technology Park, Fuzhou City, Fujian Province</td>
-</tr>
-<tr>
 <td>Hefei</td>
 <td>ap-hefei-a-td</td>
 <td>CTCC</td>
 <td>Fiber optic port and electrical port</td>
 <td>No. 204 Fanhua Avenue, Shushan District, Hefei</td>
+</tr>
+<tr>
+<td>Fuzhou</td>
+<td>ap-fuzhou-a-ck</td>
+<td>CTCC</td>
+<td>Fiber optic port and electrical port</td>
+<td>Fuzhou Yungu Cangke Data Center, No. 1 Gaochang Road, Cangshan Science and Technology Park, Cangshan District, Fuzhou City</td>
 </tr>
 <tr>
 <td rowspan=10>South China</td>
@@ -187,7 +193,7 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>Shenyu Science and Technology Park, Pingshan New District, Shenzhen</td>
 </tr>
 <tr>
-<td rowspan=17 >North China</td>
+<td rowspan=16>North China</td>
 <td rowspan=13>Beijing</td>
 <td>ap-beijing-a-kc</td>
 <td>CTCC, CMCC, and CUCC</td>
@@ -272,13 +278,6 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
 <td>Near the intersection of Menglong Street and Chongyin Road, Zhengding New District, Shijiazhuang City</td>
-</tr>
-<tr>
-<td>Harbin</td>
-<td>ap-haerbin-a-hn</td>
-<td>CMCC</td>
-<td>Fiber optic port and electrical port</td>
-<td>No. 13, Hanan 17th Road, Pingfang District, Harbin</td>
 </tr>
 <tr>
 <td>Shenyang</td>
@@ -367,91 +366,115 @@ This document describes the approximate locations of Tencent Cloud access points
 </tbody>
 </table>
 
-## International Regions
+## Regions Outside China
 <table>
 <tr>
-<td colspan=2 >Region</td>
-<td >Access Point</td>
-<td >Supported Port</td>
+<td colspan=2 width="20%">Region</td>
+<td width="15%">Access point</td>
+<td width="14%">Supported port types</td>
+<td >Address</td>
 </tr>
 <tr>
-<td rowspan=8 >Asia Pacific</td>
+<td rowspan=9 >Asia Pacific</td>
 <td rowspan=4>Singapore</td>
 <td >ap-singapore-a-ayer-rajah</td>
 <td>Fiber optic port and electrical port</td>
+<td>Tencent (Equinix SG3 Level-5 Hall-3) 26A Ayer Rajah Crescent</td>
 </tr>
 <tr>
 <td >ap-singapore-b-tai-seng</td>
 <td>Fiber optic port and electrical port</td>
+<td>15A Tai Seng Drive, Singapore 535 225</td>
 </tr>
 <tr>
 <td >ap-singapore-c-tagore</td>
 <td>Fiber optic port and electrical port</td>
+<td>71 Tagore Ln, Singapore 787496</td>
 </tr>
 <tr>
 <td >ap-singapore-d-loyang</td>
 <td>Fiber optic port and electrical port</td>
+<td>11 Loyang Close Singapore 506756</td>
 </tr>
 <tr>
 <td rowspan=2 >Japan</td>
 <td >ap-tokyo-b-ariake</td>
 <td>Fiber optic port and electrical port</td>
+<td>Chome 2-41, Ariake, Koto-ku, Tokyo</td>
 </tr>
 <tr>
 <td >ap-tokyo-a-otemachi</td>
 <td>Fiber optic port and electrical port</td>
+<td>South Tower Otemachi Financial City, 1-9-7 Otemachi, Chiyodaku, Tokyo 100-0004</td>
 </tr>
 <tr>
 <td>South Korea</td>
 <td >ap-seoul-a-yangcheon-gu</td>
 <td>Fiber optic port and electrical port</td>
+<td>KT Mokdong 2 IDC, 323 Mokdongdong-ro, Yangcheon-gu, Seoul, South Korea</td>
 </tr>
 <tr>
 <td>Thailand</td>
 <td >ap-thailand-b-huamak</td>
 <td>Fiber optic port and electrical port</td>
+<td>Ramkamhaeng Rd, Soi Ramkhamheng 28, Huamak, Bangkok 10240</td>
+</tr>
+<tr>
+<td >Indonesia</td>
+<td >ap-indonesia-c-cibitung</td>
+<td>Fiber optic port and electrical port</td>
+<td>Jl. Sumba Blok A-B Kav. B12-1 Kawasan Industri MM2100, Mekarwangi, Cikarang Barat – Bekasi, Jawa Barat 17530</td>
 </tr>
 <tr>
 <td rowspan=2>Europe</td>
 <td rowspan=2 >German</td>
 <td >ap-frankfurt-b-hanauer</td>
 <td>Fiber optic port and electrical port</td>
+<td>Tencent c/o Interxion Delivery Hanauer Landstrasse 322 D 60314 Frankfurt am Main Germany (Weismüllerstrasse 42,60314 Frankfurt am Main)</td>
 </tr>
 <tr>
 <td >ap-frankfurt-b-moerfelden</td>
 <td>Fiber optic port and electrical port</td>
+<td>Starkenburgstr 12, 64546 Moerfelden, Germany</td>
 </tr>
 <tr>
 <td rowspan=2 >Middle East</td>
 <td rowspan=2 >India</td>
 <td >ap-mumbai-b-saki-vihar</td>
 <td>Fiber optic port and electrical port</td>
+<td>Light Hall, D-Wing, Hiranandani Business Park, Saki Vihar Road, Saki Vihar, Mumbai-400072</td>
 </tr>
 <tr>
 <td >ap-mumbai-a-mahape</td>
 <td>Fiber optic port and electrical port</td>
+<td>GloryBird C/O CtrlS Mumbai PLOT NO-EL-72/1, P.N.WRITER COMPOUND, MAHAPE, MIDC, NEAR-NELOKO BUS STOP, Navi Mumbai 400701</td>
 </tr>
 <tr>
 <td rowspan=5>America</td>
 <td  rowspan=4 >United States</td>
 <td >ap-siliconvalley-a-sanjose</td>
 <td>Fiber optic port and electrical port</td>
+<td>SV10, 7 Great Oaks Blvd, San Jose, CA 95119, USA</td>
 </tr>
 <tr>
 <td >ap-siliconvalley-b-santaclara</td>
 <td>Fiber optic port and electrical port</td>
+<td>3105 Alfred, St.Santa Clara, CA 95054</td>
 </tr>
 <tr>
 <td >ap-virginia-a-ashburn</td>
 <td>Fiber optic port and electrical port</td>
+<td>44790 Performance Circle, Ashburn, VA 20147, USA.</td>
 </tr>
 <tr>
 <td >ap-virginia-b-stirling</td>
 <td>Fiber optic port and electrical port</td>
+<td>21350 Pacific Boulevard, Sterling, VA 20166</td>
 </tr>
 <tr>
 <td >Brazil</td>
 <td >ap-saopaulo-a-Santana-de-Parnaiba</td>
 <td>Fiber optic port and electrical port</td>
+<td>Estrada dos Romeiros, 943–Km 39, 2, Santana de Parnaiba, Sao Paulo, Brazil, 06513-001</td>
 </tr>
 </table>
