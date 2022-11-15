@@ -2,7 +2,6 @@ The global acceleration feature provided by Tencent Cloud Object Storage (COS) u
 
 > !
 > - The global acceleration feature is now generally available and supported in all public cloud regions.
-> - Global acceleration currently does not support the CI feature.
 > - Using this feature incurs fees as request data transfers are accelerated via Direct Connect lines in the Tencent Cloud private network. For more pricing information, see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
 
 
