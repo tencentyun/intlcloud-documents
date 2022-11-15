@@ -13,7 +13,7 @@ NAT Firewall Toggle allows you to manage traffic and protect assets in the priva
 ![](https://qcloudimg.tencent-cloud.cn/raw/93d5be2e75be6d3a272fc881edc47943.png)
 
 **Field description:**
-	- **Region**: Select a region for the instance to be created (all regions in China are available). The region cannot be modified after the instance is created.
+  - **Region**: Select a region for the instance to be created (all regions in China are available). The region cannot be modified after the instance is created.
 >? You can select one of the regions in China (including Hong Kong) where you have a VPC. Multiple firewall instances can be created for a single region, but the total bandwidth cannot exceed the quota.
  - **Zone**: Select an availability zone according to your needs.
  - **Instance name**: Enter the name of the instance.
@@ -79,7 +79,8 @@ On the right sidebar, you can view the DNAT port forwarding rules that you added
 >- In the "Private IP port", please enter an IP address that is available in the VPC segment of the current region.
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/52f2d934bc66501168733911b72faa97.png" style="zoom:67%;" />
-- **Bound egress**
+
+ - **Bound egress**
 In the **Create new** mode, when the rule list is empty, all VPC subnets will access the Internet via a random NAT gateway.
 >! Bound egress is not supported in the **Use existing** mode.
 
@@ -89,14 +90,16 @@ In the **Create new** mode, when the rule list is empty, all VPC subnets will ac
 >? You can set **Instance type** to **Subnet** or **VPC**. Then, from the **Subnet** or **VPC** drop-down list, select a subnet or VPC that is connected to the NAT firewall but is not bound to egress NAT rules.
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/6c026faf50f8bcdf3a3a518f752d52ea.png" style="zoom:67%;" />
-- **Access VPC and public IP**
+
+ - **Access VPC and public IP**
 On the **Access VPC and public IP** tab of the instance configuration page, add a VPC or select another one.
- - Add VPC
+   - Add VPC
  Click **Add VPC**, select the VPC, and click **OK**.
  <img src="https://qcloudimg.tencent-cloud.cn/raw/cbe802a5905b5436c882ef771268bb3e.png" style="zoom:67%;" />
- - Change VPC
+   - Change VPC
+ 
  Click **Select VPC again**, select a VPC, and click **OK**.
->? All subnet toggles and DNS traffic toggles of the current firewall instance must be turned off.
+ >? All subnet toggles and DNS traffic toggles of the current firewall instance must be turned off.
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/b764720300c2248c81029061dd4d86a2.png" style="zoom:67%;" /> 
 
@@ -105,6 +108,7 @@ On the **Access VPC and public IP** tab of the instance configuration page, add 
 >? If the connected VPC contains a subnet for which the firewall toggle is off, a significant delay may occur in DNS resolution. It is recommended to turn on all firewall toggles first.
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/8b679e41288f42a1d861e805ac251fb7.png" style="zoom:80%;" />
+
  - When the DNS traffic toggle is turned off, the original DNS addresses of all VPCs are restored. DNS traffic go through the original path but no the NAT firewall.
 
 - **Scenario**: The DNS address can be changed to NAT firewall IP to direct DNS traffic to the firewall. The firewall sends the request to a real DNS server and returns the DNS response to the specified server. This feature is supported in both modes of the NAT firewall.
@@ -163,9 +167,10 @@ On the [NAT firewall toggle](https://console.cloud.tencent.com/cfw/switch/nat) p
 >- After you click **Add VPC to associate**, the NAT firewall toggle of the current region is locked. The toggle will not be unlocked until you click **OK** in the dialog box. When the toggle is locked, if another user in the current region requests to turn on the toggle, a message appears, indicating that a user is re-connecting the VPC.
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/5eb55e53608609c62b32fcb3b2d5aba6.png" style="zoom:80%;" />
-- **Use existing**:
-	1. On the [NAT firewall toggle](https://console.cloud.tencent.com/cfw/switch/nat) page, click the **Firewall instances** tab. Click **More** and select **Add NAT** from the drop-down list.
-	2. In the **Add NAT to associate** dialog box, select a NAT, and click **OK**.
+
+ - **Use existing**:
+   1. On the [NAT firewall toggle](https://console.cloud.tencent.com/cfw/switch/nat) page, click the **Firewall instances** tab. Click **More** and select **Add NAT** from the drop-down list.
+   2. In the **Add NAT to associate** dialog box, select a NAT, and click **OK**.
 >?
 >- You can search for a NAT by keywords, such as a NAT instance ID, NAT instance name, bound EIP, VPC ID, and VPC name.
 >- Checkbox: The NAT gateways that are already connected to the current NAT firewall instance are selected by default and cannot be cleared.
