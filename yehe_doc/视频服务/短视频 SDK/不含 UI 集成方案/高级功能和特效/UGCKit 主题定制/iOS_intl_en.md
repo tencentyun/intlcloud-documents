@@ -6,21 +6,21 @@
 
 Below is an example of changing the Simplified Chinese animated effect names, which are in `UGCKit/UGCKitResources/zh-Hans.lproj/Localizable.strings`.
 ```swift
-"UGCKit.Edit.VideoEffect.DynamicLightWave" = "动感光波";
-"UGCKit.Edit.VideoEffect.DarkFantasy" = "暗黑幻境";
-"UGCKit.Edit.VideoEffect.SoulOut" = "灵魂出窍";
-"UGCKit.Edit.VideoEffect.ScreenSplit" = "画面分裂";
-"UGCKit.Edit.VideoEffect.Shutter" = "百叶窗";
-"UGCKit.Edit.VideoEffect.GhostShadow" = "鬼影";
-"UGCKit.Edit.VideoEffect.Phantom" = "幻影";
-"UGCKit.Edit.VideoEffect.Ghost" = "幽灵";
-"UGCKit.Edit.VideoEffect.Lightning" = "闪电";
-"UGCKit.Edit.VideoEffect.Mirror" = "镜像";
-"UGCKit.Edit.VideoEffect.Illusion" = "幻觉";
+"UGCKit.Edit.VideoEffect.DynamicLightWave" = "Rock light";
+"UGCKit.Edit.VideoEffect.DarkFantasy" = "Dark dream";
+"UGCKit.Edit.VideoEffect.SoulOut" = "Soul out";
+"UGCKit.Edit.VideoEffect.ScreenSplit" = "Split screen";
+"UGCKit.Edit.VideoEffect.Shutter" = "Blinds";
+"UGCKit.Edit.VideoEffect.GhostShadow" = "Shadow";
+"UGCKit.Edit.VideoEffect.Phantom" = "Phantom";
+"UGCKit.Edit.VideoEffect.Ghost" = "Ghost";
+"UGCKit.Edit.VideoEffect.Lightning" = "Lightning";
+"UGCKit.Edit.VideoEffect.Mirror" = "Mirror";
+"UGCKit.Edit.VideoEffect.Illusion" = "Illusion";
 ```
-To change "幻觉" to "幻像", you only need to modify the last line as follows:
+To change "Illusion" to "Phantasm", you only need to modify the last line as follows:
 ```swift
-"UGCKit.Edit.VideoEffect.Illusion" = "幻像";
+"UGCKit.Edit.VideoEffect.Illusion" = "Phantasm";
 ```
 
 [](id:color)
