@@ -1,0 +1,1 @@
+Currently, Tencent Cloud does not sign contracts with its distributors online. For more information on contract signing, contact your channel manager.
