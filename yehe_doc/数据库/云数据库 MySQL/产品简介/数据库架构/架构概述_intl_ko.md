@@ -30,7 +30,7 @@ TencentDB for MySQL은 단일 노드(클라우드 디스크 버전), 2노드(이
 <td>로컬 NVMe SSD</td><td>로컬 NVMe SSD</td><td>로컬 NVMe SSD</td><td>SSD 클라우드 디스크<br>인핸스드 SSD</td></tr>
 <tr>
 <td>성능</td>
-<td>최대 240,000 IOPS</td><td>최대 240,000 IOPS</td><td>-</td><td><li>SSD 클라우드 디스크 랜덤 IOPS 계산: <br>min{1800 + 30 × 용량(GB), 26000}<li>SSD 클라우드 디스크 처리량 계산(MB/s): <br>min{120 + 0.2 × 용량(GB), 260}<li>인핸스드 SSD 랜덤 IOPS 계산: <br>min{1800 + 50 × 용량(GB), 50000}<li>인핸스드 SSD 처리량 계산(MB/s): <br>min{120 + 0.5 × 용량(GB), 350}</td></tr>
+<td>최대 240,000 IOPS</td><td>최대 240,000 IOPS</td><td>대 240,000 IOPS</td><td><li>SSD 클라우드 디스크 랜덤 IOPS 계산: <br>min{1800 + 30 × 용량(GB), 26000}<li>SSD 클라우드 디스크 처리량 계산(MB/s): <br>min{120 + 0.2 × 용량(GB), 260}<li>인핸스드 SSD 랜덤 IOPS 계산: <br>min{1800 + 50 × 용량(GB), 50000}<li>인핸스드 SSD 처리량 계산(MB/s): <br>min{120 + 0.5 × 용량(GB), 350}</td></tr>
 <tr>
 <td>적용 시나리오</td>
 <td>게임, 인터넷, IoT, 소매, 전자 상거래, 물류, 보험, 증권 등</td>
