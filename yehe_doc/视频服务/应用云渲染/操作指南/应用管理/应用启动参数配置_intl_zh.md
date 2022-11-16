@@ -8,10 +8,10 @@
 3. 填写配置信息：
 ![](https://qcloudimg.tencent-cloud.cn/raw/c752b6496ae1730dbc20a485dd9e6656.jpg)
    例如有如下Demo应用：
-	![](https://qcloudimg.tencent-cloud.cn/raw/dfccf8ee97854b5ac916618bd3dc49b9.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/dfccf8ee97854b5ac916618bd3dc49b9.png)
 	
-	其基础启动参数应配置为：
-	![](https://qcloudimg.tencent-cloud.cn/raw/dfcab2df84c97dbebd4c46dc169a81dd.png)
+<br/>其基础启动参数应配置为：
+     ![](https://qcloudimg.tencent-cloud.cn/raw/c151c010311afb61c8f9125534275a62.png)
 
 * 	**启动路径** 为您应用启动程序 exe 文件的完整相对路径。**如您的应用已创建完成，可直接点击 [选择] 获取 exe 启动路径**，注意**不要选择**诸如`UnityCrashHandler64.exe`等非启动应用程序所需的 exe 启动路径。
 	
