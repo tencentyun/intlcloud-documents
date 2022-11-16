@@ -259,7 +259,7 @@
                </div>
             </div>
             <div class="section-content">
-               Audio calls, video calls, interactive classes, co-anchoring, remote work, <br/>group audio/video calls,<br/>audio/video conferences, audio chat, online healthcare
+               Audio calls, video calls, interactive classes, co-anchoring, remote work, <br/>group audio/video calls, audio/video conferences, audio chat, online healthcare
             </div>
          </div>
          <div class="doc-section">
