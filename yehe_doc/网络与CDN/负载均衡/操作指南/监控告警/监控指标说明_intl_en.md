@@ -1,6 +1,7 @@
 Cloud Monitor collects raw data from the running CLB instances and displays the data entries in intuitive graphs. Statistics will be kept for one month by default. You can observe the operations of instances in the month to stay informed of the status of application services.
 
 You can go to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/overview) to view CLB monitoring data. Click **Cloud Product Monitoring** > [**Cloud Load Balancer**](https://console.cloud.tencent.com/monitor/clb) and then click the CLB instance ID to enter the monitoring details page. You can view monitoring data of the CLB instance, and expand it to view the listener and real server monitoring information.
+>?
 >- Advanced CLB metrics include max connections utilization (ConcurConnVipRatio) and new connections utilization (NewConnVipRatio) at the instance level.
 >- Currently, only the ConcurConnVipRatio and NewConnVipRatio metrics of LCU-supported CLB instances report data once enabled, while shared CLB instances don't report data for the time being.
 >
