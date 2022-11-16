@@ -1,5 +1,4 @@
-With the [NS connection](https://intl.cloud.tencent.com/document/product/1145/45967#NS) method, you can modify the NS to transfer your site's DNS resolution permission to EdgeOne. This quickly enables the EdgeOne security/acceleration services while implementing a stable and professional DNS service.
->?The EdgeOne console is now only available to beta users. [Contact us](https://intl.cloud.tencent.com/contact-us) to join the beta.
+With the NS connection method, you can modify the NS to transfer your site's DNS resolution permission to EdgeOne. This quickly enables the EdgeOne security/acceleration services while implementing a stable and professional DNS service.
 
 ## NS Record[](id:record)
 EdgeOne DNS supports the smart DNS service for various record types to intelligently return the optimal split zone based on end users' geographical locations and ISPs.
@@ -197,19 +196,8 @@ EdgeOne DNS supports the smart DNS service for various record types to intellige
       - If the record value changes infrequently, select one hour or longer to speed up DNS resolution.
       - If the record value changes frequently, select a shorter TTL value such as one minute, which, however, may slightly slow down DNS resolution.
 >?
-> - In proxy acceleration, the TTL is **Automatic** by default and cannot be modified.
+>- In proxy acceleration, the TTL is **Automatic** by default and cannot be modified.
 >- In actual conditions, TTL is not necessarily applied to LDNS cache configuration, which usually makes the time it takes for the record update to take effect much longer than the TTL.
-
-
-## Switching to CNAME Connection[](id:change)
-On the NS connection page, you can click **Switch to CNAME access** in the top-right corner. For the first switch, you need to [verify the ownership of the site](https://intl.cloud.tencent.com/document/product/1145/45969). If the site has been verified, verification will be skipped for later switches. After the switch:
- - Original DNS records will be retained. A, AAAA, and CNAME records can be edited/deleted, while MX, NS, TXT, SRV and CAA records can be deleted only.
- - The proxy modes of all records will be inherited. After the switch, the "Only DNS" proxy mode set for records will become "Proxy disabled".
- - The EdgeOne universal certificate will be retained. However, it cannot be automatically updated in CNAME connection mode and will be automatically deleted upon expiration.
- - The custom certificates of all subdomains will be retained.
-
-![](https://qcloudimg.tencent-cloud.cn/raw/5380efeffaf42d7928e3456046e267ad.png)
-
 
 ## DNS Configuration
 Advanced configuration items such as DNSSEC, custom NS, and CNAME acceleration are supported.
