@@ -1,8 +1,12 @@
 云监控从运行状态下的负载均衡实例中收集原始数据，并将数据展示为易读的图标形式。统计数据默认保存一个月，您可以观察实例一个月的运行情况，从而更好地了解应用服务的运行情况。
 
 建议您通过 [云监控控制台](https://console.cloud.tencent.com/monitor/overview) 查看负载均衡的监控，选择**云产品监控** > [**负载均衡-CLB**](https://console.cloud.tencent.com/monitor/clb)，单击负载均衡实例 ID，进入监控详情页，查看该负载均衡实例的监控数据，展开实例即可查看监听器、后端服务器等的监控信息。
+>- CLB 的高级指标包括实例维度的最大连接数使用率（ConcurConnVipRatio）和新建连接数使用率（NewConnVipRatio）指标。
+>- 目前仅性能容量型负载均衡实例的最大连接数使用率、新建连接数使用率指标开通以后会上报数据，共享型负载均衡实例暂时不会上报数据。
+>
 
 ## 负载均衡实例维度
+
 | 指标英文名          | 指标中文名                 | 指标说明                                                     | 单位    | 统计粒度    |
 | ------------------- | -------------------------- | ------------------------------------------------------------ | ------- | ----------- |
 | ClientConnum        | 客户端到 LB 的活跃连接数   | 在统计粒度内的某一时刻，从客户端到负载均衡或监听器上的活跃连接数。 | 个      | 10、60、300 |
@@ -14,18 +18,18 @@
 | ClientAccIntraffic  | 客户端到 LB 的入流量       | 在统计粒度内，客户端流入到负载均衡的流量。                | MB      | 10、60、300 |
 | ClientAccOuttraffic | 客户端到 LB 的出流量       |在统计粒度内，负载均衡流出到客户端的流量。                    | MB      | 10、60、300 |
 | ClientOuttraffic    | 客户端到 LB 的出带宽       |在统计粒度内，负载均衡流出到客户端所用的带宽。                 | Mbps    | 10、60、300 |
-| ClientIntraffic     | 客户端到 LB 的入带宽       | 在统计粒度内，客户端流入到负载均衡所用的带宽。             | Mbps    | 10、60、300 |
+| ClientIntraffic     | 客户端到 LB 的入带宽       | 在统计粒度内，客户端流入到负载均衡所用的带宽。              | Mbps    | 10、60、300 |
 | OutTraffic          | LB 到后端的出带宽          | 在统计粒度内，后端 RS 流出到负载均衡所用的带宽。          | Mbps    | 60、300     |
 | InTraffic           | LB 到后端的入带宽          | 在统计粒度内，负载均衡流入到后端 RS 所用的带宽。               | Mbps    | 60、300     |
 | AccOuttraffic       | LB 到后端的出流量          | 在统计粒度内，负载均衡流入到后端 RS 的流量。<br/>此指标仅公网负载均衡实例支持，内网负载均衡不支持。                 | MB      | 10、60、300、3600 |
-| DropTotalConns      | 丢弃连接数                 | 在统计粒度内，负载均衡或监听器上丢弃的连接数。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。 | 个      | 10、60、300 |
-| InDropBits          | 丢弃入带宽                 | 在统计粒度内，客户端通过外网访问负载均衡时丢弃的带宽。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。 | 字节    | 10、60、300 |
-| OutDropBits         | 丢弃出带宽                 | 在统计粒度内，负载均衡访问外网时丢弃的带宽。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。 | 字节    | 10、60、300 |
-| InDropPkts          | 丢弃流入数据包             | 在统计粒度内，客户端通过外网访问负载均衡时丢弃的数据包。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。 | 个/秒   | 10、60、300 |
-| OutDropPkts         | 丢弃流出数据包             | 在统计粒度内，负载均衡访问外网时丢弃的数据包。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。 | 个/秒   | 10、60、300 |
-| DropQps      | 丢弃 QPS               | 在统计粒度内，负载均衡或监听器上丢弃的请求数。<br/>此指标为七层监听器独有指标，仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。 | 个      | 60、300 |
-| IntrafficVipRatio   | 入带宽利用率               | 在统计粒度内，客户端通过外网访问负载均衡所用的带宽利用率。 <br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。此指标处于内测阶段，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1071&queue=96&scene_code=34639&step=2)。 | %       | 10、60、300 |
-| OuttrafficVipRatio  | 出带宽利用率               | 在统计粒度内，负载均衡访问外网所用的带宽使用率。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。此指标处于内测阶段，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1071&queue=96&scene_code=34639&step=2)。 | ％      | 10、60、300 |
+| DropTotalConns      | 丢弃连接数                 | 在统计粒度内，负载均衡或监听器上丢弃的连接数。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://www.tencentcloud.com/document/product/684/15246)。 | 个      | 10、60、300 |
+| InDropBits          | 丢弃入带宽                 | 在统计粒度内，客户端通过外网访问负载均衡时丢弃的带宽。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://www.tencentcloud.com/document/product/684/15246)。 | 字节    | 10、60、300 |
+| OutDropBits         | 丢弃出带宽                 | 在统计粒度内，负载均衡访问外网时丢弃的带宽。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://www.tencentcloud.com/document/product/684/15246)。 | 字节    | 10、60、300 |
+| InDropPkts          | 丢弃流入数据包             | 在统计粒度内，客户端通过外网访问负载均衡时丢弃的数据包。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://www.tencentcloud.com/document/product/684/15246)。 | 个/秒   | 10、60、300 |
+| OutDropPkts         | 丢弃流出数据包             | 在统计粒度内，负载均衡访问外网时丢弃的数据包。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://www.tencentcloud.com/document/product/684/15246)。 | 个/秒   | 10、60、300 |
+| DropQps      | 丢弃 QPS               | 在统计粒度内，负载均衡或监听器上丢弃的请求数。<br/>此指标为七层监听器独有指标，仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://www.tencentcloud.com/document/product/684/15246)。 | 个      | 60、300 |
+| IntrafficVipRatio   | 入带宽利用率               | 在统计粒度内，客户端通过外网访问负载均衡所用的带宽利用率。 <br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://www.tencentcloud.com/document/product/684/15246)。此指标处于内测阶段，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1071&queue=96&scene_code=34639&step=2)。 | %       | 10、60、300 |
+| OuttrafficVipRatio  | 出带宽利用率               | 在统计粒度内，负载均衡访问外网所用的带宽使用率。<br/>此指标仅标准账户类型支持，传统账户类型不支持，账户类型判断方式请参见 [判断账户类型](https://www.tencentcloud.com/document/product/684/15246)。此指标处于内测阶段，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1071&queue=96&scene_code=34639&step=2)。 | ％      | 10、60、300 |
 | ReqAvg              | 平均请求时间               | 在统计粒度内，负载均衡的平均请求时间。<br/>此指标为七层监听器独有指标。 | 毫秒    | 60、300     |
 | ReqMax              | 最大请求时间               | 在统计粒度内，负载均衡的最大请求时间。 <br/>此指标为七层监听器独有指标。 | 毫秒    | 60、300     |
 | RspAvg              | 平均响应时间               | 在统计粒度内，负载均衡的平均响应时间。 <br/>此指标为七层监听器独有指标。 | 毫秒    | 60、300     |
@@ -50,9 +54,9 @@
 | Http502             | 502 状态码                 | 在统计粒度内，后端服务器返回 502 状态码的个数。<br/>此指标为七层监听器独有指标。 | 个/分钟 | 60、300     |
 | Http503             | 503 状态码                 | 在统计粒度内，后端服务器返回 503 状态码的个数。<br/>此指标为七层监听器独有指标。 | 个/分钟 | 60、300     |
 | Http504             | 504 状态码                 | 在统计粒度内，后端服务器返回 504 状态码的个数。<br/>此指标为七层监听器独有指标。 | 个/分钟 | 60、300     |
-| OverloadCurConn     | SNAT 并发连接数            | 在统计周期内，负载均衡的 SNAT IP 每分钟的并发连接数。<br/> 此指标处于内测阶段，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。 | 个/分钟 | 60          |
-| ConnRatio           | SNAT 端口使用率            | 在统计周期内，负载均衡的 SNAT IP 的端口使用率。 <br/>端口使用率 = SNAT 并发连接数 / (SNAT IP 数 × 55000 × RS 个数）。<br/> 此指标处于内测阶段，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。 | %       | 60          |
-| SnatFail            | SNAT 失败数                | 在统计周期内，负载均衡的 SNAT IP 与后端 RS 每分钟建立连接的失败次数。<br/> 此指标处于内测阶段，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。 | 个/分钟 | 60          |
+| OverloadCurConn     | SNAT 并发连接数            | 在统计周期内，负载均衡的 SNAT IP 每分钟的并发连接数。<br/> 此指标处于内测阶段，如需使用，请提交 [工单申请](https://console.tencentcloud.com/workorder/category)。 | 个/分钟 | 60          |
+| ConnRatio           | SNAT 端口使用率            | 在统计周期内，负载均衡的 SNAT IP 的端口使用率。 <br/>端口使用率 = SNAT 并发连接数 / (SNAT IP 数 × 55000 × RS 个数）。<br/> 此指标处于内测阶段，如需使用，请提交[工单申请](https://console.tencentcloud.com/workorder/category)。 | %       | 60          |
+| SnatFail            | SNAT 失败数                | 在统计周期内，负载均衡的 SNAT IP 与后端 RS 每分钟建立连接的失败次数。<br/> 此指标处于内测阶段，如需使用，请提交[工单申请](https://console.tencentcloud.com/workorder/category)。 | 个/分钟 | 60          |
 |UnhealthRsCount|	健康检查异常数	|在统计周期内，负载均衡的健康检查异常个数。|	个	|60、300|
 
 

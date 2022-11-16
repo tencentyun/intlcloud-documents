@@ -6,8 +6,8 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 
 >?
 >- Currently, access logs can be stored in CLS only for layer-7 protocols (HTTP/HTTPS) but not layer-4 protocols (TCP/UDP/TCP SSL).
-- Storing CLB access logs to CLS is now free of charge. You only need to pay for the CLS service.
-- This feature is only supported in CLS available regions. See [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940).
+>- Storing CLB access logs to CLS is now free of charge. You only need to pay for the CLS service.
+>- This feature is only supported in CLS available regions. See [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940).
 
 
 
@@ -17,13 +17,13 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 2. Click the CLB instance ID to open the **Instance Management** page.
 3. Click the pencil icon in the **Access Log (Layer-7)** module on the **Basic Information** page.
 ![](https://main.qcloudimg.com/raw/b3f9b4276b4ff2f28ac184478ce7964c.png)
-4. In the pop-up **Modify CLS Log Storage Location** window, enable logging and select the destination logset and log topic for access log storage, and then click **Submit**. If you haven't created a logset or log topic yet, please [create relevant resources](https://console.cloud.tencent.com/cls/logset) and then select them as the storage location.
+4. In the pop-up **Modify CLS Log Storage Location** window, enable logging and select the destination logset and log topic for access log storage, and then click **Submit**. If you haven't created a logset or log topic yet, [create relevant resources](https://console.cloud.tencent.com/cls/logset) and then select them as the storage location.
 ![](https://main.qcloudimg.com/raw/33386c84ae812881548d1b621fbe6a70.png)
->?You are recommended to use a log topic marked with "CLB" in the clb_logset logset. The differences between a log topic marked with "CLB" and a common one are:
->- CLB log topics can automatically create an index, while a common log topic requires manual index creation.
->- A dashboard is provided for CLB log topics by default, but needs to be manually configured for a common log topic.
-6. Click the logset or log topic to redirect to the log search page in CLS.
-7. (Optional) To disable logging, click the pencil icon to open **Modify CLS Log Storage Location** window, and disable it.
+>?We recommend you use a log topic marked with **CLB** in the clb_logset logset. The differences between a log topic marked with **CLB** and a common one are:
+>- **CLB** log topics can automatically create an index, while a common log topic requires manual index creation.
+>- A dashboard is provided for **CLB** log topics by default, but needs to be manually configured for a common log topic.
+5. Click the logset or log topic to redirect to the log search page in CLS.
+6. (Optional) To disable logging, click the pencil icon to open **Modify CLS Log Storage Location** window, and disable it.
 
 ### Step 2. Configure log topic indexes
 >?If the access log is configured for a single instance, you must configure the index for the log topic; otherwise, no logs can be found.
@@ -39,41 +39,46 @@ The recommended indexes are as follows:
 | vip_vpcid   | long     | -     |
 
 The steps are as follows:
-1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls), and click **Log Topic** on the left sidebar.
-2. Click the target log topic ID on the "Log Topic" page.
+1. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Log Topic** on the left sidebar.
+2. Click the target log topic ID on the **Log Topic** page.
 3. On the log topic details page, select the **Index Configuration** tab, and click **Edit** to add indexes. See [Configuring Index](https://intl.cloud.tencent.com/document/product/614/39594) for more information on index configuration.
 ![](https://main.qcloudimg.com/raw/38b22da412497a25ac9d6d304766d1ac.png)
 4. The result of index configuration is as shown below:
 ![](https://main.qcloudimg.com/raw/6e2393e34cd06c5d073faba88d34110f.png)
 
 ### Step 3. View access logs
-1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls) and click **Search and Analysis** on the left sidebar.
+1. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Search and Analysis** on the left sidebar.
 2. On the **Search Analysis** page, select a logset, log topic, and time range, and click **Search Analysis** to search for the access logs reported by CLB to CLS. See [Legacy CLS Search Syntax](https://intl.cloud.tencent.com/document/product/614/37882) for more information on search syntax.
 ![](https://main.qcloudimg.com/raw/e15271ea2d1ffac0e735eb254224a5e5.png)
 
 ## Method 2: Batch configure access logging
 
 ### Step 1. Create logsets and log topics[](id:step2)
-To configure access logs in CLS, you need to first creat a logset and log topic.
+To configure access logs in CLS, you need to first create a logset and log topic.
 You can directly jump to [Step 2](#step3) if you have created a logset and log topic.
-1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb) and select **Access Logs** on the left sidebar.
-2. On the **Access Logs** page, select a region for the logset, and then click **Create Logset** in the "Logset Information" section.
-3. In the pop-up **Create Logse**" dialog box, set the retention period and click **Save**.
+1. Log in to the [CLB console](https://console.cloud.tencent.com/clb) and select **Access Logs** on the left sidebar.
+2. On the **Access Logs** page, select a region for the logset, and then click **Create Logset** in the **Logset Information** section.
+3. In the pop-up **Create Logset** dialog box, set the retention period and click **Save**.
 >?You can only create a single logset named "clb_logset" in each region.
-4. Click **Create Log Topic** in the **Log Topic** section of the "Access Logs" page.
-5. In the pop-up window, select a CLB instance to add to the list on the right, and then click **Save**.
->?
->- When creating a log topic, you can add a CLB instance as needed. To add one, select a log topic in the list and click **Manage** in the operation column. Each CLB instance can only be added to one log topic.
->- A logset can contain multiple log topics. You can categorize CLB logs into various log topics which will be marked with "CLB".
 >
+4. Click **Create Log Topic** in the **Log Topic** section of the **Access Logs** page.
+5. In the pop-up window, select a storage class and log retention period, select a CLB instance to add to the list on the right, and then click **Save**.
+>?
+>- Storage Class: STANDARD or STANDARD_IA. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/614/42003).
+>- Logs can be retained permanently or for a specified time period.
+>- When creating a log topic, you can add a CLB instance as needed. To add one, select a log topic in the list and click **Manage** in the operation column. Each CLB instance can only be added to one log topic.
+>- A logset can contain multiple log topics. You can categorize CLB logs into various log topics which will be marked with **CLB**.
+>
+![]()
 6. (Optional) To disable logging, just click **Disable**.
 
 ### Step2. View access logs[](id:step3)
 Without any manual configurations, CLB has been automatically configured with index search by access log valuable. You can directly query access logs through search and analysis.
-1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb) and select **Access Logs** on the left sidebar.
-2. Select a log topic, and click **Search** in the operation column to redirect to the **Search Analysis** page in the [CLS Console](https://console.cloud.tencent.com/cls/search).
-3. On the **Search Analysis** page, enter the search syntax in the input box, select a time range, and then click **Search Analysis** to search for access logs reported by CLB to CLS.
->?See [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439) for more information on search syntax.
+1. Log in to the [CLB console](https://console.cloud.tencent.com/clb) and select **Access Logs** on the left sidebar.
+2. Select a log topic, and click **Search** in the operation column to redirect to the **Search Analysis** page in the [CLS console](https://console.cloud.tencent.com/cls/search).
+3. On the **Search and Analysis** page, enter the search statement in the input box, select a time range, and then click **Search and Analysis** to search for access logs reported by API Gateway to CLS.
+>?See [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/37803) for more information on search syntax.
+>
 
 
 ## Log Format and Variable Description
@@ -91,7 +96,7 @@ Currently, CLS supports the following three field types:
 | long   | Integer type (Int 64)   |
 | double | Floating point type (64 bit) |
 
-## Log variable description
+### Log variable description
 <table class="table"><thead><tr><th>Variable</th><th>Description</th></tr></thead>Field Type</th></tr></thead>
 <tbody><tr><td>stgw_request_id</td><td> Request ID. </td></tr>text</td></tr>
 <tr><td>time_local</td><td> Access time and time zone, such as "01/Jul/2019:11:11:00 +0800" where "+0800" represents UTC+8, i.e., Beijing time.</td><td>text</td></tr>
@@ -118,11 +123,19 @@ Currently, CLS supports the following three field types:
 <tr><td>tcpinfo_rtt</td><td> TCP connection RTT. </td><td>long</td></tr>
 <tr><td>connection</td><td> Connection ID. </td><td>long</td></tr>
 <tr><td>connection_requests</td><td> Number of requests on connection. </td><td>long</td></tr>
-<tr><td>ssl_handshake_time</td><td> The time that an SSL handshake takes. </td><td>double</td></tr>
+<tr><td>ssl_handshake_time</td><td>Time taken by each SSL handshake phase in the format of `x:x:x:x:x:x:x`.
+<ul><li>The first field indicates whether the SSL session is reused.</li>
+<li>The second field indicates the entire handshake time.</li>
+<li>The third to seventh fields indicate the time taken by each SSL handshake phase.</li>
+<li>The third field indicates the time from when CLB receives "client hello" to when it sends "server hello done".</li>
+<li>The fourth field indicates the time from when CLB starts sending the server certificate to when it finishes sending the server certificate.</li>
+<li>The fifth field indicates the time from when CLB calculates the signature to when it finishes sending "server key exchange".</li>
+<li>The sixth field indicates the time from when CLB starts receiving "client key exchange" to when it finishes receiving "client key exchange".</li>
+<li>The seventh field indicates the time from when CLB receives "client key exchange" to when it sends "server finished".</li></ul></td><td>text</td></tr>
 <tr><td>ssl_cipher</td><td> SSL cipher suite.</td><td>text</td></tr>
 <tr><td>ssl_protocol</td><td> SSL protocol version.</td><td>text</td></tr>
 <tr><td>vip_vpcid</td><td>VPC ID of a CLB VIP; the `vip_vpcid` of a public network CLB instance is `-1`.</td><td>long</td></tr>
-<tr><td>request</td><td> Request method. Only POST and GET requests are supported.</td><td>text</td></tr>
+<tr><td>request_method</td><td> Request method. Only POST and GET requests are supported.</td><td>text</td></tr>
 <tr><td>uri</td><td> Resource Identifier.</td><td>text</td></tr>
 <tr><td>server_protocol</td><td>Protocol used for CLB.</td><td>text</td></tr>
 </tbody></table>

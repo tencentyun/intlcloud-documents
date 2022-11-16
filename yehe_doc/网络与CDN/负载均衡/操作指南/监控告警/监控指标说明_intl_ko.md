@@ -1,12 +1,15 @@
 클라우드 모니터는 실행 중인 CLB 인스턴스에서 원시 데이터를 수집하고 직관적 인 그래프에 데이터 항목을 표시합니다. 통계 데이터는 기본적으로 한 달 동안 유지됩니다. 해당 월의 애플리케이션 서비스 상태에 대한 정보를 유지하기 위해 인스턴스 운영을 관찰 할 수 있습니다.
 
 [클라우드 모니터 콘솔](https://console.cloud.tencent.com/monitor/overview)로 이동하여 CLB 모니터링 데이터를 볼 수 있습니다. **클라우드 제품 모니터링** > [**CLB**](https://console.cloud.tencent.com/monitor/clb) 선택 후 CLB 인스턴스 ID를 클릭하여 모니터링 세부 정보 페이지로 이동합니다. CLB 인스턴스의 모니터링 데이터를 보고, 펼쳐 리스너 및 리얼 서버 모니터링 정보를 볼 수 있습니다.
+>- CLB 고급 메트릭에는 인스턴스 레벨에서 최대 연결 사용률(ConcurConnVipRatio) 및 새 연결 사용률(NewConnVipRatio)이 포함됩니다.
+>- 현재 LCU 지원 CLB 인스턴스의 ConcurConnVipRatio 및 NewConnVipRatio 메트릭만 활성화되면 데이터를 리포트하는 반면 공유 CLB 인스턴스는 당분간 데이터를 보고하지 않습니다.
+>
 
 ## CLB 인스턴스 레벨
 
 | 매개변수          | 메트릭 이름                 | 설명                                                     | 단위    | 통계 세분성    |
 | ------------------- | -------------------------- | ------------------------------------------------------------ | ------- | ----------- |
-| ClientConnum        | 클라이언트에서 LB 로의 활성 연결   | 통계 세분성 내에서 주어진 시간에 클라이언트에서 로드 밸런서 또는 리스너로의 활성 연결 수. | 개      | 10, 60, 300 |
+| ClientConnum        | 클라이언트에서 LB로의 활성 연결   | 통계 세분성 내에서 주어진 시간에 클라이언트에서 로드 밸런서 또는 리스너로의 활성 연결 수. | 개      | 10, 60, 300 |
 | ClientInactiveConn  | 클라이언트에서 LB로의 비활성 연결 | 통계 세분성 내에서 주어진 시간에 클라이언트에서 로드 밸런서 또는 리스너로의 비활성 연결 수. | 개      | 10, 60, 300 |
 | ClientConcurConn    | 클라이언트에서 LB 로의 동시 접속   | 통계 세분성 내에서 주어진 시간에 클라이언트에서 로드 밸런서 또는 리스너로의 동시 접속 수. | 개      | 10, 60, 300 |
 | ClientNewConn       | 클라이언트에서 LB 로의 새로운 연결   | 통계 세분성 내에서 클라이언트에서 로드 밸런서 또는 리스너의 초당 새로운 연결 수.     | 개/초   | 10, 60, 300 |
@@ -19,12 +22,14 @@
 | OutTraffic          | LB에서 리얼 서버로의 아웃바운드 대역폭          | 통계 세분성 내에서 RS에서 로드 밸런서로 유출에 사용하는 대역폭.          | Mbps    | 60, 300     |
 | InTraffic           | LB에서 리얼 서버로의 인바운드 대역폭          | 통계 세분성 내에서 로드 밸런서에서 RS로 유입에 사용하는 대역폭.               | Mbps    | 60, 300     |
 | AccOuttraffic       | LB에서 리얼 서버로의 아웃바운드 트래픽          | 통계 세분성 내에서 로드 밸런서에서 RS로 유입되는 트래픽. <br/>이 메트릭은 공중망 CLB 인스턴스에서만 지원됩니다.                 | MB      | 10, 60, 300, 3600 |
-| DropTotalConns      | 드롭된 연결 수                 | 통계 세분성 내에서 LB 또는 리스너에 의해 드롭된 연결 수.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246)을 참고하십시오. | 개      | 10, 60, 300 |
-| InDropBits          | 드롭된 인바운드 대역폭                 | 통계 세분성 내에서 공중망을 통해 로드 밸런서에 액세스할 때 클라이언트에 의해 드롭된 대역폭.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246)을 참고하십시오. | 바이트    | 10, 60, 300 |
-| OutDropBits         | 드롭된 아웃바운드 대역폭                 | 통계 세분성 내에서 공중망에 액세스할 때 로드 밸런서에 의해 드롭된 대역폭.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246)을 참고하십시오. | 바이트    | 10, 60, 300 |
-| InDropPkts          | 드롭된 인바운드 패킷             | 통계 세분성 내에서 공중망을 통해 로드 밸런서에 액세스할 때 클라이언트에 의해 드롭된 패킷.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246)을 참고하십시오. | 개/초   | 10, 60, 300 |
-| OutDropPkts         | 드롭된 아웃바운드 패킷             | 통계 세분성 내에서 공중망에 액세스할 때 로드 밸런서에 의해 드롭된 패킷.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246)을 참고하십시오. | 개/초   | 10, 60, 300 |
-| DropQps      | 드롭된 QPS               | 통계 세분성 내에서 로드 밸런서 또는 리스너에 의해 드롭된 요청.<br/>이 메트릭은 레이어 7 리스너 전용입니다. IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246)을 참고하십시오. | 개      | 60, 300 |
+| DropTotalConns      | 드롭된 연결 수                 | 통계 세분성 내에서 LB 또는 리스너에 의해 드롭된 연결 수.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://www.tencentcloud.com/document/product/684/15246)을 참고하십시오. | 개      | 10, 60, 300 |
+| InDropBits          | 드롭된 인바운드 대역폭                 | 통계 세분성 내에서 공중망을 통해 로드 밸런서에 액세스할 때 클라이언트에 의해 드롭된 대역폭.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://www.tencentcloud.com/document/product/684/15246)을 참고하십시오. | 바이트    | 10, 60, 300 |
+| OutDropBits         | 드롭된 아웃바운드 대역폭                 | 통계 세분성 내에서 공중망에 액세스할 때 로드 밸런서에 의해 드롭된 대역폭.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://www.tencentcloud.com/document/product/684/15246)을 참고하십시오. | 바이트    | 10, 60, 300 |
+| InDropPkts          | 드롭된 인바운드 패킷             | 통계 세분성 내에서 공중망을 통해 로드 밸런서에 액세스할 때 클라이언트에 의해 드롭된 패킷.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://www.tencentcloud.com/document/product/684/15246)을 참고하십시오. | 개/초   | 10, 60, 300 |
+| OutDropPkts         | 드롭된 아웃바운드 패킷             | 통계 세분성 내에서 공중망에 액세스할 때 로드 밸런서에 의해 드롭된 패킷.<br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://www.tencentcloud.com/document/product/684/15246)을 참고하십시오. | 개/초   | 10, 60, 300 |
+| DropQps      | 드롭된 QPS               | 통계 세분성 내에서 로드 밸런서 또는 리스너에 의해 드롭된 요청.<br/>이 메트릭은 레이어 7 리스너 전용입니다. IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://www.tencentcloud.com/document/product/684/15246)을 참고하십시오. | 개      | 60, 300 |
+| IntrafficVipRatio   | 인바운드 대역폭 사용률               | 클라이언트가 통계 단위 내에서 공중망을 통해 로드 밸런서에 액세스하는 데 사용하는 대역폭의 사용률입니다. <br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://www.tencentcloud.com/document/product/684/15246)을 참고하십시오. 이 메트릭은 현재 베타 버전입니다. 사용해 보려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1071&queue=96&scene_code=34639&step=2)하십시오. | %       | 10, 60, 300 |
+| OuttrafficVipRatio  | 아웃바운드 대역폭 사용률               | 로드 밸런서가 통계 단위 내에서 공중망에 액세스하는 데 사용하는 대역폭의 사용률 입니다. <br/>이 메트릭은 IP별 청구 계정에서만 지원되며 CVM별 청구 계정에서는 지원되지 않습니다. 계정 유형에 대한 자세한 내용은 [Checking Account Type](https://www.tencentcloud.com/document/product/684/15246)을 참고하십시오. 이 메트릭은 현재 베타 버전입니다. 사용해 보려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1071&queue=96&scene_code=34639&step=2)하십시오. | ％      | 10, 60, 300 |
 | ReqAvg              | 평균 요청 시간               | 통계 세분성 내에서 로드 밸런서의 평균 요청 시간.<br/>이 메트릭은 레이어 7 리스너 전용입니다. | 밀리초    | 60, 300     |
 | ReqMax              | 최대 요청 시간               | 통계 세분성 내에서 로드 밸런서의 최대 요청 시간. <br/>이 메트릭은 레이어 7 리스너 전용입니다. | 밀리초    | 60, 300     |
 | RspAvg              | 평균 응답 시간               | 통계 세분성 내에서 로드 밸런서의 평균 응답 시간. <br/>이 메트릭은 레이어 7 리스너 전용입니다. | 밀리초    | 60, 300     |
@@ -49,13 +54,16 @@
 | Http502             | 502 상태 코드                 | 통계 세분성 내에서 리얼 서버에서 반환된 502 상태 코드의 수.<br/>이 메트릭은 레이어 7 리스너 전용입니다. | 개/분 | 60, 300     |
 | Http503             | 503 상태 코드                 | 통계 세분성 내에서 리얼 서버에서 반환된 503 상태 코드의 수.<br/>이 메트릭은 레이어 7 리스너 전용입니다. | 개/분 | 60, 300     |
 | Http504             | 504 상태 코드                 | 통계 세분성 내에서 리얼 서버에서 반환된 504 상태 코드의 수.<br/>이 메트릭은 레이어 7 리스너 전용입니다. | 개/분 | 60, 300     |
+| OverloadCurConn     | SNAT 동시 접속 수            | 통계 단위 내에서 분당 로드 밸런서의 SNAT IP 동시 접속 수입니다.<br/> 이 메트릭은 현재 베타 버전입니다. 사용해 보려면 [티켓 제출](https://console.tencentcloud.com/workorder/category)하십시오. | 개/분 | 60          |
+| ConnRatio           | SNAT 포트 사용률            | 통계 단위 내에서 로드 밸런서의 SNAT IP의 포트 사용률입니다. <br/>포트 사용률 = SNAT 동시 접속 수 / (SNAT IP 수 × 55000 × RS 수). <br/> 이 메트릭은 현재 베타 버전입니다. 사용해 보려면 [티켓 제출](https://console.tencentcloud.com/workorder/category)하십시오 | %       | 60          |
+| SnatFail            | SNAT 연결 실패 수                | 통계 단위 내에서 로드 밸런서의 SNAT IP와 실제 서버 간의 분당 실패한 연결 수입니다. <br/> 이 메트릭은 현재 베타 버전입니다. 사용해 보려면 [티켓 제출](https://console.tencentcloud.com/workorder/category)하십시오. | 개/분 | 60          |
 |UnhealthRsCount|비정상 상태 확인 횟수|통계 세분성 내에서 로드 밸런서의 비정상 상태 확인 횟수.|개|60, 300|
 
 
 
 ## 레이어 4 리스너(TCP/UDP) 레벨
 레이어 4 리스너를 사용하면 세 가지 레벨에서 모니터링 메트릭을 볼 수 있습니다.
-- 리스너 레벨.
+- 리스너 레벨
 - 리얼 서버 레벨.
 - 리얼 서버 포트 레벨.
 
@@ -81,8 +89,8 @@
 
 
 ## 레이어 7 리스너(HTTP/HTTPS) 레벨
-레이어 7 리스너를 사용하면 5가지 레벨에서 모니터링 메트릭을 볼 수 있습니다.
-- 리스너 레벨.
+레이어 7 리스너를 사용하면 3가지 레벨에서 모니터링 메트릭을 볼 수 있습니다.
+- 리스너 레벨
 - 리얼 서버 레벨.
 - 리얼 서버 포트 레벨.
 
@@ -134,5 +142,5 @@
 
 
 
-## 관련 문서
+##  관련 문서
 [Public Network CLB](https://intl.cloud.tencent.com/document/product/248/10997)
