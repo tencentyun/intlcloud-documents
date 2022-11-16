@@ -1,6 +1,7 @@
 클라우드 모니터는 실행 중인 CLB 인스턴스에서 원시 데이터를 수집하고 직관적 인 그래프에 데이터 항목을 표시합니다. 통계 데이터는 기본적으로 한 달 동안 유지됩니다. 해당 월의 애플리케이션 서비스 상태에 대한 정보를 유지하기 위해 인스턴스 운영을 관찰 할 수 있습니다.
 
 [클라우드 모니터 콘솔](https://console.cloud.tencent.com/monitor/overview)로 이동하여 CLB 모니터링 데이터를 볼 수 있습니다. **클라우드 제품 모니터링** > [**CLB**](https://console.cloud.tencent.com/monitor/clb) 선택 후 CLB 인스턴스 ID를 클릭하여 모니터링 세부 정보 페이지로 이동합니다. CLB 인스턴스의 모니터링 데이터를 보고, 펼쳐 리스너 및 리얼 서버 모니터링 정보를 볼 수 있습니다.
+>?
 >- CLB 고급 메트릭에는 인스턴스 레벨에서 최대 연결 사용률(ConcurConnVipRatio) 및 새 연결 사용률(NewConnVipRatio)이 포함됩니다.
 >- 현재 LCU 지원 CLB 인스턴스의 ConcurConnVipRatio 및 NewConnVipRatio 메트릭만 활성화되면 데이터를 리포트하는 반면 공유 CLB 인스턴스는 당분간 데이터를 보고하지 않습니다.
 >
