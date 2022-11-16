@@ -8,10 +8,10 @@ In CAR, you can configure your own startup parameters for your applications. A n
 3. Complete the required information:
 ![](https://qcloudimg.tencent-cloud.cn/raw/c752b6496ae1730dbc20a485dd9e6656.jpg)
    For example, for the following application package:
-	![](https://qcloudimg.tencent-cloud.cn/raw/dfccf8ee97854b5ac916618bd3dc49b9.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/dfccf8ee97854b5ac916618bd3dc49b9.png)
 	
-	The basic startup parameters should be configured as follows:
-	![](https://qcloudimg.tencent-cloud.cn/raw/dfcab2df84c97dbebd4c46dc169a81dd.png)
+  <br/>The basic startup parameters should be configured as follows:
+       ![](https://qcloudimg.tencent-cloud.cn/raw/c151c010311afb61c8f9125534275a62.png)
 
 * **Startup path** is the full relative path to your startup application (.exe). If your application has already been created, click **Browse** to select the startup path of the .exe file. **Do not select** the startup path of processes that are not required to start the application, such as `UnityCrashHandler64.exe`.
 	
