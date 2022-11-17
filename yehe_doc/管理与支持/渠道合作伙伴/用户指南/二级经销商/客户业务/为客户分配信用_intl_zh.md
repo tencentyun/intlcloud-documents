@@ -19,7 +19,8 @@
 
 ### 2、回收信用
 如果分配客户的信用额度较高，您可输入负值，回收客户可用信用额度。最高【可回收客户信用额度】≤【客户可用信用额度】。
-![](https://qcloudimg.tencent-cloud.cn/raw/cc2b779dc1e86fc73e7c5d57ec42bb2b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1472a4cad4f61ab8179b4d10f9df0c74.png)
+
 >?
 >1、当客户可用信用额度为0时，不会触发客户停服，也不会影响客户新购产品。账户资产（信用+代金券）对新购和停服的影响，请查看[账户资产对新购&停服影响](https://www.tencentcloud.com/document/product/1085/48346)。
 >2、联系您的总经销商，可申请开通客户欠费停服规则缩短停服期，具体规则请参考[子客欠费停服规则](https://www.tencentcloud.com/document/product/1085/50550)说明。

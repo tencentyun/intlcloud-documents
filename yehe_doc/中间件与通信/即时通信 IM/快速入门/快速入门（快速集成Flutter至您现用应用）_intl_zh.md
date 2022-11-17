@@ -5,7 +5,7 @@
 
 **可在很大程度上，降低您的工作量，快速在双端原生APP中，植入IM通信能力。**
 
-![](https://qcloudimg.tencent-cloud.cn/raw/54adc2b0587f9f30d56e96eb6461b969.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0a54bc281851a147b0f034a74c6001e5.png)
 
 ## 环境要求
 
@@ -15,10 +15,6 @@
 |Android|Android Studio 3.5及以上版本，App 要求 Android 4.1及以上版本设备。|
 |iOS|Xcode 11.0及以上版本，请确保您的项目已设置有效的开发者签名。|
 |腾讯云IM SDK|[tencent_im_sdk_plugin](https://pub.dev/packages/tencent_im_sdk_plugin) 5.0 及以上版本， [tim_ui_kit](https://pub.dev/packages/tim_ui_kit) 0.2 及以上版本。|
-
-## 快速了解
-
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/3856-67266?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 >?
 >
@@ -224,13 +220,13 @@ flutter build ios-framework --output=some/path/MyApp/Flutter/
 
 使用多个Flutter引擎的优点是，每个实例都是独立的，并维护其自己的内部导航堆栈、UI和应用程序状态。这简化了整个应用程序代码的状态保持责任，并提高了模块化能力。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/912d986a5ff57606422455a273a033f3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/87cc37d846388fb3c66aab6743cfede2.png)
 
 在Android和iOS上添加多个Flutter引擎，主要基于一个FlutterEngineGroup类(Android API、iOS API)来构造并管理多个FlutterEngine（Flutter引擎）。
 
 在我们的项目中，我们基于一个统一的FlutterEngineGroup，来管理两个FlutterEngine（Flutter引擎），分别用于承载 Chat 和 Calling 模块。
 
-[![](https://qcloudimg.tencent-cloud.cn/raw/b622951f776a505e83f843de1f62fffc.png)](https://github.com/TencentCloud/tencentchat-add-flutter-to-app/tree/main/Multiple%20Flutter%20Engines)
+[![](https://github.com/TencentCloud/tencentchat-add-flutter-to-app/tree/main/Multiple%20Flutter%20Engines)
 
 ### Flutter Module 开发
 
@@ -498,7 +494,7 @@ void callMain() {
 
 #### 在 iOS 项目中，管理Flutter引擎
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e906c61c593195ca2310d08c1ac4a1f4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/039ec36a5696f2188f9fa8ab11071210.png)
 
 **创建一个 `FlutterEngineGroup` （Flutter 引擎组），统一管理多个引擎实例。**
 
@@ -616,11 +612,11 @@ class MyApplication : MultiDexApplication() {
 
 之所以这么做，是因为点击通知事件已在Native被拦截消费，Flutter层无法直接拿到，必须经由Native转发。
 
-> 由于不同厂商的离线推送接入步骤不一致，本文以OPPO为例，全部厂商接入方案，可查看[本文档](https://cloud.tencent.com/document/product/269/75428).
+>! 由于不同厂商的离线推送接入步骤不一致，本文以OPPO为例，全部厂商接入方案，可查看[本文档](https://cloud.tencent.com/document/product/269/75428).
 
 在腾讯云IM控制台中，新增OPPO的推送证书，`点击后续动作` 选择 `打开应用内指定页面`，`应用内页面` 以 `Activity` 方式，配置一个用于处理离线推送信息的页面，建议为应用首页。如，我们的Demo配置为：`com.tencent.chat.android.MainActivity`.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c0f8737ce6fa484479ffc9a1bec6c9c0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fd384ea1140199113d01a6650c0c8f3d.png)
 
 在上方控制台配置的用于离线推送的Activity文件中，新增如下代码。
 
@@ -637,11 +633,11 @@ class MyApplication : MultiDexApplication() {
 
 本方案，将Chat模块和Call模块，写在同一个Flutter引擎实例中。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c6c52a028f5b86c88babe3074805b295.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/115b917df15da5d84ea6794774a3b080.png)
 
 这两个模块只能同时出现同时隐藏，仅需维护一个Flutter引擎即可。
 
-[![](https://qcloudimg.tencent-cloud.cn/raw/b622951f776a505e83f843de1f62fffc.png)](https://github.com/TencentCloud/tencentchat-add-flutter-to-app/tree/main/Single%20Flutter%20Engines)
+![](https://github.com/TencentCloud/tencentchat-add-flutter-to-app/tree/main/Single%20Flutter%20Engines)
 
 ### Flutter Module 开发
 
@@ -851,7 +847,7 @@ class MyApplication : MultiDexApplication() {
 
 在腾讯云IM控制台中，新增OPPO的推送证书，`点击后续动作` 选择 `打开应用内指定页面`，`应用内页面` 以 `Activity` 方式，配置一个用于处理离线推送信息的页面，建议为应用首页。如，我们的Demo配置为：`com.tencent.chat.android.MainActivity`.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c0f8737ce6fa484479ffc9a1bec6c9c0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fd384ea1140199113d01a6650c0c8f3d.png)
 
 在上方控制台配置的用于离线推送的Activity文件中，新增如下代码。
 
@@ -917,7 +913,7 @@ _coreInstance.setDataFromNative(userId: chatInfo?.userID ?? "");
 ```
 **更详细代码，请查阅我们的Demo 源码。**
 
-[![](https://qcloudimg.tencent-cloud.cn/raw/b622951f776a505e83f843de1f62fffc.png)](https://github.com/TencentCloud/tencentchat-add-flutter-to-app/tree/main/Initialize%20from%20Native)
+[![](https://qcloudimg.tencent-cloud.cn/raw/9ab7dc1c98627885eea01ddfd1803bb3.png)](https://github.com/TencentCloud/tencentchat-add-flutter-to-app/tree/main/Initialize%20from%20Native)
 
 -----
 
@@ -926,8 +922,8 @@ _coreInstance.setDataFromNative(userId: chatInfo?.userID ?? "");
 您可以基于本文档给出的方案，快速在您现有的原生开发 Android/iOS APP 中，使用 Flutter SDK，使用同一套Flutter代码，快速植入 Chat 和 Call 模块能力。
 
 如果您还有任何疑问，欢迎随时联系我们。
-
-![](https://qcloudimg.tencent-cloud.cn/raw/eacb194c77a76b5361b2ae983ae63260.png)
+- [Telegram Group](https://t.me/+1doS9AUBmndhNGNl)
+- [WhatsApp Group](https://chat.whatsapp.com/Gfbxk7rQBqc8Rz4pzzP27A)
 
 
 ## Reference

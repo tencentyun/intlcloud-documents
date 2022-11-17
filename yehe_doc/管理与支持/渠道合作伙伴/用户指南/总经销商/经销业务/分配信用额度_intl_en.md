@@ -1,5 +1,5 @@
 As a distributor, you can query the list of all your resellers and view their basic information and available credits.
-Step 1. Contact your channel manager to apply for reseller credits. (Note: The credits here are different from your self-use credits. You need to inform your channel manager that the credits you apply for will be allocated to resellers.)
+Step 1. Contact your channel manager to apply for reseller credits. The credits here are different from your self-use credits. You need to inform your channel manager that the credits you apply for will be allocated to resellers.
 Step 2. Log in to [Tencent Cloud](https://intl.cloud.tencent.com/login) with your distributor account and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
 Step 3. On the left sidebar, select **Reseller Business** > **Reseller Management** and allocate credits to resellers as needed.
 ![](https://qcloudimg.tencent-cloud.cn/raw/950f2c4a1dc232ccd6f583866e8c09c6.png)
