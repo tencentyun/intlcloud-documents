@@ -17,10 +17,9 @@ Step 4. Adjust resellers’ credits
 >5. A credit will immediately take effect once set.
 
 ### 2. Repossessing Credit
-You can enter a negative value for the **Allocated amount** field to repossess a reseller’s available credit as needed. **The credit you can repossess** must be less than **the reseller’s available credit**.
+You can enter a negative value for the **Allocated amount** field to repossess a reseller’s available credit as needed. **The credit you can repossess** must be not greater than **the reseller’s available credit**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/13168e68d669d989c0a57e3098a0f6d5.png)
->?
-> When a reseller’s available credit becomes zero or negative, its customers still can use their service and make new purchases.
+>?When a reseller’s available credit becomes zero or negative, its customers still can use their service and make new purchases.
 
 ### 3. Viewing Allocation Records
 Click **Credit Allocation** > **Allocation Record** to query all your credit allocation records.
