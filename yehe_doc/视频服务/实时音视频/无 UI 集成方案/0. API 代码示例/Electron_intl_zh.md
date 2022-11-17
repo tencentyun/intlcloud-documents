@@ -4,62 +4,37 @@
 您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 
 ## 操作步骤
-[](id:step1)
+
 ### 步骤1：创建新的应用
-1. 登录实时音视频控制台，选择**开发辅助** > [**快速跑通Demo**](https://console.cloud.tencent.com/trtc/quickstart)。
-2. 单击**新建应用**输入应用名称，例如 `TestTRTC`；若您已创建应用可单击**选择已有应用**。
-3. 根据实际业务需求添加或编辑标签，单击**创建**。
-![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
->?
->- 应用名称只能包含数字、中英文字符和下划线，长度不能超过15个字符。
->- 标签用于标识和组织您在腾讯云的各种资源。例如：企业可能有多个业务部门，每个部门有1个或多个 TRTC 应用，这时，企业可以通过给 TRTC 应用添加标签来标记部门信息。标签并非必选项，您可根据实际业务需求添加或编辑。
 
-[](id:step2)
-### 步骤2：下载 SDK 和 TRTC-API-Example 源码
+1. 登录实时音视频控制台，选择【[应用管理](https://console.tencentcloud.com/trtc/app)】。
 
-1. TRTC-API-Example 源码。
-```shell script
+2. 单击【创建应用】输入应用名称，例如 `APIExample`；若您已创建过应用，可以勾选【选择已有应用】，然后单击【下一步】。
+![](https://qcloudimg.tencent-cloud.cn/raw/6704c9f7eb9e18e422c513cb9a2a3926.png)
+
+
+### 步骤2：下载示例代码
+
+1. 选择无 UI 集成后，然后您可以根据自己的业务平台，前往 [Github](https://github.com/tencentyun/TRTCSDK) 下载对应平台的示例代码。
+```
 git clone https://github.com/tencentyun/TRTCSDK
-cd Electron/TRTC-API-Example
 ```
+2. 下载完成后，单击【下一步】。
+![](https://qcloudimg.tencent-cloud.cn/raw/d28964ad85dddd85833a28310a62d514.png)
 
-[](id:step3)
-### 步骤3：配置 TRTC-API-Example 工程文件
 
-1. 找到并打开 `Electron/TRTC-API-Example/assets/debug/gen-test-user-sig.js` 文件。
-3. 设置 `gen-test-user-sig.js` 文件中的相关参数：
-	<ul><li/>SDKAPPID：默认为 0 ，请设置为实际的 SDKAppID。
-	<li/>SECRETKEY：默认为 '' ，请设置为实际的密钥信息。</ul>
- <img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
+### 步骤3：配置工程
+1. 在示例工程跑通阶段，选择【调试阶段】即可，然后记录下您的SDKAppID、Secret key。
+![](https://qcloudimg.tencent-cloud.cn/raw/82a45972f2d12763a6dc80eee6c952c0.png)
+2. 找到并打开 Electron/TRTC-API-Example/assets/debug/gen-test-user-sig.js 文件，修改为您的SDKAppID、Secret key，此时工程配置已经完成，您可以单击【下一步】，
 
->!
+>?
 >- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 TRTC-API-Example 和功能调试**。
->- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
+>- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://www.tencentcloud.com/document/product/647/35166)。
 
-### 步骤4：编译运行
-```shell
-npm install
-cd src/app/render/main-page
-npm install
 
-cd ../../..
-npm run start
-```
 
 ## 常见问题
-### 1. 查看密钥时只能获取公钥和私钥信息，该如何获取密钥？
-TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。如不升级，您也可以继续使用 [老版本算法 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)，如已升级，您按需切换为新旧算法。
 
-升级/切换操作：
- 1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
- 2. 在左侧导航栏选择**应用管理**，单击目标应用所在行的**应用信息**。
- 3. 选择**快速上手**页签，单击**第二步 获取签发UserSig的密钥**区域的**点此升级**、**非对称式加密**或**HMAC-SHA256**。
-  - 升级：
-
-  - 切换回老版本算法 ECDSA-SHA256：
-      ![](https://main.qcloudimg.com/raw/a8737123c1e3cc0f7eb34901ed2629f7.png)
-  - 切换为新版本算法 HMAC-SHA256：
-      ![](https://main.qcloudimg.com/raw/701fcde1a562bf9fbbb0d426948e311e.png)
-
-### 2. 防火墙有什么限制？
+### 1. 防火墙有什么限制？
 由于 SDK 使用 UDP 协议进行音视频传输，所以在对 UDP 有拦截的办公网络下无法使用。如遇到类似问题，请参见 [应对公司防火墙限制](https://intl.cloud.tencent.com/document/product/647/35164) 排查并解决。

@@ -1,13 +1,9 @@
-本文主要介绍如何快速运行腾讯云 TRTC Demo（Windows C++）。
+本文主要介绍如何快速运行腾讯云 TRTC-API-Example（Android）。
 
 ## 环境要求
-- Microsoft Visual Studio 2017 及以上版本，推荐使⽤ Microsoft Visual Studio 2019。
-- 下载并安装 [QT](https://download.qt.io/archive/qt/5.14/5.14.2/) 开发环境（QT 5.14.x版本）。
-- 下载并安装 [.vsix](https://download.qt.io/official_releases/vsaddin/2.7.2/) 插件⽂件，根据官⽹文件命名找对应插件版本安装即可。
-- 打开 VS 并在⼯具栏找到 `QT VS Tools -> Qt Options -> Qt Versions`，add 添加我们⾃⼰的 Qt 编译器 msvc。
-- 需要将 `SDK/CPlusPlus/Win64/lib` 下的所有的 `.dll` ⽂件拷⻉到⼯程⽬录下的 `debug` / `release` ⽂件夹下。
->! `debug/release` ⽂件夹均是在 VS 上的环境配置完后⾃动⽣成。如果是32位程序，则需要拷贝 `SDK/CPlusPlus/Win64/lib` 下的所有 `.dll`到 `debug` / `release` ⽂件夹下。
-
+- 最低兼容 Android 4.1（SDK API Level 16），建议使用 Android 5.0 （SDK API Level 21）及以上版本。
+- Android Studio 3.5 及以上版本。
+- App 要求 Android 4.1 及以上设备。
 
 ## 前提条件
 您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
@@ -39,14 +35,13 @@
 >- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://www.tencentcloud.com/document/product/647/35166)。
 
 ### 步骤4：编译运行
-配置完成后，使用 Microsoft Visual Studio（推荐使Microsoft Visual Studio 2019）打开TRTC-API-Example-Qt目录下的源码工程 `QTDemo.sln`，并配置QT环境，（推荐使用QT5.14版本）。单击【运行】即可体验。
+配置完成后，使用 Android Studio（3.5及以上的版本）打开源码工程 `TRTC-API-Example`，单击【运行】即可体验。
 
 
 ## 常见问题
 
-### 1. 两台设备同时运行 Demo，为什么看不到彼此的画面？
-请确保两台设备在运行 Demo 时使用的是不同的 UserID，TRTC 不支持同一个 UserID （除非 SDKAppID 不同）在两个设备同时使用。
-
+### 1. 两台手机同时运行 App，为什么看不到彼此的画面？
+请确保两台手机在运行 App 时使用的是不同的 UserID，TRTC 不支持同一个 UserID （除非 SDKAppID 不同）在两个终端同时使用。
 
 ### 2. 防火墙有什么限制？
-由于 SDK 使用 UDP 协议进行音视频传输，所以对 UDP 有拦截的办公网络下无法使用，如遇到类似问题，请参见 [应对公司防火墙限制](https://intl.cloud.tencent.com/document/product/647/35164)。
+由于 SDK 使用 UDP 协议进行音视频传输，所以在对 UDP 有拦截的办公网络下无法使用。如遇到类似问题，请参见 [应对公司防火墙限制](https://intl.cloud.tencent.com/document/product/647/35164) 排查并解决。
