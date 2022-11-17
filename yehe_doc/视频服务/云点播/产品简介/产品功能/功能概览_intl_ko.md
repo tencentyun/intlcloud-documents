@@ -8,10 +8,10 @@
 <td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49247" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49247" title="" >멀티 엔드 업로드</a></td>
 <td>VOD는 클라이언트에서 업로드(모바일 및 Web에서), 서버에서 업로드(다양한 프로그래밍 언어에 대한 SDK 제공), 콘솔을 통한 업로드, URL에서 풀링, 라이브 녹화 등 다양한 업로드 방법을 제공합니다.</td>
 </tr>
-<tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49149" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49149" title="" >업로드 가속</a></td>
+<tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49149" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49149" title="" >클라이언트 업로드 가속</a></td>
 <td>VOD는 Tencent Cloud의 전 세계적으로 배포된 가속 네트워크를 활용하여 최적의 액세스 포인트와 링크를 지능적으로 선택하여 미디어 업로드 속도와 성공률을 크게 높입니다. 또한 QUIC 기반 전송을 활성화하여 네트워크 혼잡을 크게 완화하고 대기 시간을 줄이며 열악한 네트워크 조건에서 업로드 품질을 개선할 수 있습니다.</td>
 </tr>
-<tr  ><td colspan="1" rowspan="4" >미디어 관리</td>
+<tr  ><td colspan="1" rowspan="5" >미디어 관리</td>
 <td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49249" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49249" title="" >속성 설정</a></td>
 <td>VOD를 사용하면 미디어 파일에 다양한 속성을 설정하여 미디어의 검색, 재생, 표시 및 스마트 관리 등을 용이하게 하여 관리 효율성과 시청 경험을 향상할 수 있습니다.</td>
 </tr>
@@ -24,12 +24,15 @@
 <tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49252" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49252" title="" >스마트 콜드 스토리지</a></td>
 <td>VOD를 사용하면 재생 횟수, 업로드 시간, 업로드 유형과 같은 다차원적인 조건을 기반으로 스마트 cold 스토리지 정책을 설정할 수 있습니다. 이러한 방식으로 미디어 파일은 정책에 따라 자동으로 콜드 스토리지 클래스로 전환될 수 있으므로 스토리지 비용이 절감됩니다.</td>
 </tr>
+<tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://www.tencentcloud.com/document/product/266/50446">스마트 비트레이트 조정</a></td>
+<td>재생 횟수가 높은 동영상을 자동으로 식별한 후 비트레이트를 줄여 대역폭 및 저장 비용을 절약할 수 있습니다.</td>
+</tr>
 <tr  ><td colspan="1" rowspan="7" >미디어 프로세싱</td>
 <td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49254" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49254" title="" >오디오/비디오 트랜스코딩</a></td>
 <td>VOD는 오디오/비디오를 트랜스코딩하고 인코딩 포맷, 프레임 레이트, 비트 레이트 및 해상도와 같은 출력 미디어의 매개변수를 지정할 수 있도록 하여 다양한 정의 및 포맷을 지원하는 다양한 장치에서 미디어를 재생할 수 있습니다. 또한 비디오에 워터마크와 오프닝 및 엔딩 크레딧을 추가할 수도 있습니다.</td>
 </tr>
-<tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49255" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49255" title="" >TSC Transcoding</a></td>
-<td>기존 트랜스코딩 서비스와 비교하여 TSC(Top Speed Coded) 트랜스코딩은 스마트 시나리오 인식, 동적 인코딩 기술 및 정확한 비트레이트 제어 모델을 사용하여 ‘더 낮은 비트레이트에서 더 높은 주관적인 이미지 품질’을 구현하여 네트워크 트래픽 및 스토리지 비용을 줄입니다.</td>
+<tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49255" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49255" title="" >TSC 트랜스코딩</a></td>
+<td>기존 트랜스코딩 서비스와 비교하여 TSC(Top Speed Coded) 트랜스코딩은 스마트 시나리오 인식, 동적 인코딩 기술 및 정확한 비트레이트 제어 모델을 사용하여 ‘더 낮은 비트레이트에서 더 높은 주관적인 이미지 품질’을 구현하여 네트워크 트래픽 및 저장 비용을 줄입니다.</td>
 </tr>
 <tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49256" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49256" title="" >이미지 자르기 및 스케일링</a></td>
 <td>VOD를 사용하면 이미지를 스케일 아웃/인하고 이미지를 원이나 사각형으로 잘라 다양한 디스플레이 요구 사항을 충족할 수 있는 새로운 이미지를 실시간으로 생성할 수 있습니다.</td>
@@ -61,7 +64,7 @@
 </tr>
 <tr  ><td colspan="1" rowspan="3" >미디어 인텔리전스</td>
 <td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49267" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49267" title="" >스마트 자막</a></td>
-<td>VOD는 AI를 사용하여 미디어의 음성을 자동으로 텍스트로 변환하고 .vtt 자막 파일을 출력합니다. 생성된 파일은 미디어와 직접 연결되어 미디어 재생 중에 자막으로 표시될 수 있습니다.</td>
+<td>VOD는 AI를 사용하여 미디어의 음성을 자동으로 텍스트로 변환하고 VTT, SRT 등의 자막 파일을 출력합니다. 생성된 파일은 미디어와 직접 연결되어 미디어 재생 중에 자막으로 표시될 수 있습니다.</td>
 </tr>
 <tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49268" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49268" title="" >태그</a></td>
 <td>VOD는 오디오/비디오 AI 기능을 활용하여 미디어 콘텐츠를 지능적으로 분석합니다. 이 기능은 뉴스, 엔터테인먼트, 게임, 기술, 음식과 같은 미디어 카테고리와 게임, 차량, 음악가, 경주용 자동차, 애완동물과 같은 미디어 태그 관리에 사용할 수 있습니다.</td>

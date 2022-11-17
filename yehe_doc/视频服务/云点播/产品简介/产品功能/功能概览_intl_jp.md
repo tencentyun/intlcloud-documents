@@ -8,10 +8,10 @@
 <td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49247" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49247" title="" >マルチ端末アップロード</a></td>
 <td>クライアントからのアップロード（モバイル端末、Web端末）、サーバーからのアップロード（多言語SDKを提供）、コンソールからのアップロード、URLからのプルアップロード、CSSレコーディングなどのさまざまなアップロード方式を提供します。</td>
 </tr>
-<tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49149" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49149" title="" >アップロードの高速化</a></td>
+<tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49149" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49149" title="" >クライアントからのアップロードの高速化</a></td>
 <td>Tencent Cloudのグローバルなデプロイを利用したアクセラレーションネットワークは、最適なアクセスポイントと最適なリンクをスマートに選択し、メディアのアップロード速度と成功率を顕著に向上させます。同時にQUIC伝送を有効化すると、大幅にネットワークの輻輳を減少させ、遅延を低減させ、脆弱なネットワーク環境でのアップロード品質を改善します。</td>
 </tr>
-<tr  ><td colspan="1" rowspan="4" >メディア管理</td>
+<tr  ><td colspan="1" rowspan="5" >メディア管理</td>
 <td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49249" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49249" title="" >属性設定</a></td>
 <td>メディアにさまざまな属性情報を設定し、メディア検索、再生表示、インテリジェント管理などに使用することをサポートし、運営管理の効率とユーザーの視聴体験を向上させます。</td>
 </tr>
@@ -23,6 +23,9 @@
 </tr>
 <tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49252" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49252" title="" >インテリジェントコールド化</a></td>
 <td>再生の人気度、アップロード時間、アップロードタイプなど多次元の条件に基づいてコールド化ポリシーの設定をサポートします。ポリシーに基づいてメディアファイルにストレージのコールド化を実行することで、ストレージコストを節約します。</td>
+</tr>
+<tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://www.tencentcloud.com/document/product/266/50446">インテリジェントビットレート低減</a></td>
+<td>再生人気度の高いビデオの自動認識に対応し、ビットレート低減操作を実行することで、ビデオビットレートを低減し、トラフィックおよびストレージのコストを削減します。</td>
 </tr>
 <tr  ><td colspan="1" rowspan="7" >メディア処理</td>
 <td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49254" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49254" title="" >オーディオビデオトランスコーディング</a></td>
@@ -61,7 +64,7 @@
 </tr>
 <tr  ><td colspan="1" rowspan="3" >メディアインテリジェント</td>
 <td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49267" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49267" title="" >インテリジェント字幕</a></td>
-<td>メディア内のオーディオコンテンツをサポートし、AI自動変換を利用して文字を出力し、VTTフォーマットの字幕ファイルを出力します。生成されたファイルは直接メディア内にバインドでき、再生時に字幕形式で表示されます。</td>
+<td>メディア内のオーディオコンテンツに対応し、AI自動変換を使用して文字を出力し、VTTやSRTなどの形式の字幕ファイルを出力します。生成されたファイルは直接メディア内にバインドでき、再生時に字幕形式で表示されます。</td>
 </tr>
 <tr  ><td><a data-sheets-hyperlink="{&quot;hyperlinkType&quot;:null}" href="https://intl.cloud.tencent.com/document/product/266/49268" data-sheet-href="https://intl.cloud.tencent.com/document/product/266/49268" title="" >タグタイプ</a></td>
 <td>オーディオビデオAI機能によってメディアコンテンツをインテリジェント分析し、メディア分類（ニュース、娯楽、ゲーム、テクノロジー、グルメなど）、タグ（ゲーム、交通機関、ミュージシャン、レース、ペットなど）管理するために用いられます。</td>
