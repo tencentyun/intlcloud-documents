@@ -18,7 +18,7 @@ You can refer to the “Pricing Overview” document to purchase a Tencent Effec
 
 ### What is the validity period of a license? How do I renew it?
 
-- **Trial license**: A trial license is valid for 28 days after issuance. For example, if you applied for a trial license on January 1, 2022, and were issued a license on January 2, 2022, the license would expire at 00:00:00 on January 31, 2022 .
+- **Trial license**: A trial license is valid for 28 days after issuance. For example, if you applied for a trial license on January 1, 2022, and it was issued to your account on January 2, 2022, the license would expire at 00:00:00 on January 31, 2022.
 - **Official license**: An official license is valid for one year (365 days) after you bind it in the console. For example, if you bound an official license on January 1, 2022, it would expire at 00:00:00 on January 2, 2023.
 - You renew an official license for an application by purchasing a new package and binding it to the application. For detailed directions, see [Renewing an official license](https://www.tencentcloud.com/document/product/1143/50266#.E6.9B.B4.E6.96.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license-.E6.9C.89.E6.95.88.E6.9C.9F).
 
@@ -43,3 +43,11 @@ You can bind one bundle ID and one package name to each license. There isn’t a
 The Tencent Effect SDK comes in 14 editions. To learn about their features, see [Pricing Overview](https://intl.cloud.tencent.com/document/product/1143/45371). If you want to change to a different SDK edition, wait till your current license expires and purchase and bind a different package to your application. You cannot change the SDK edition when a license is still valid.
 
 The package offered for trial is the full-featured S1 - 04. You can upgrade to an official license even before your trial license expires.
+
+### Why couldn’t I find Tencent Effect permissions when I tried to grant permissions to a sub-account?
+<img src="https://qcloudimg.tencent-cloud.cn/raw/281d3924082074812e3bcf3b33811685.png" style="zoom:50%;" />
+
+You can search “vcube” to grant Tencent Effect permissions.
+- If you want to grant a sub-account only the permission to view licenses, associate the `QcloudVCUBEReadOnlyAccess` policy.
+- If you want to grant a sub-account all license permissions, associate the `QcloudVCUBEFullAccess` policy.
+

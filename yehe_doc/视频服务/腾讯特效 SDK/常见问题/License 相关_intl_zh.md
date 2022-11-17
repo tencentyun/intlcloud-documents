@@ -43,3 +43,11 @@ SDK 是为了更好的使用整个服务所特定的软件包、软件框架、�
 腾讯特效 SDK 一共提供了 14 个版本，各版本功能差异请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1143/45371)。您可以在正式版 License 到期之后，选择购买切换为更符合您场景需求的版本。当前 License 仍在有效期内时，我们不支持 SDK 的升降级切换。
 
 测试版 License 是统一签发的套餐最高级版本 S1 - 04 的授权，您可以测试 SDK 的全功能。测试期结束前，您可以更换为与您使用场景匹配的正式版 SDK 和 License。
+
+### 为什么主账号对子账户授权搜不到腾讯特效相关权限？
+<img src="https://qcloudimg.tencent-cloud.cn/raw/281d3924082074812e3bcf3b33811685.png" style="zoom:50%;" />
+
+您可搜索vcube对腾讯特效相关操作授予权限。
+- 若您仅需要提供子账号查询 License 的权限，请授权 QcloudVCUBEReadOnlyAccess 策略。
+- 若您需要提供子账号所有 License 操作权限，请授权 QcloudVCUBEFullAccess 策略。
+
