@@ -19,9 +19,9 @@ Step 4. Adjust credits for customers.
 
 ### 2. Repossessing Credit
 You can enter a negative value for the **Allocated amount** field to repossess a customer’s available credit as needed. **The maximum credit you can repossess** must be not greater than **the customer’s available credit**.
-![](https://qcloudimg.tencent-cloud.cn/raw/cc2b779dc1e86fc73e7c5d57ec42bb2b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1472a4cad4f61ab8179b4d10f9df0c74.png)
 >?
->1. When the available credit of a customer becomes 0, the customer can still use its service and make new purchases. For the impact of account assets (credits and vouchers) on service purchase and suspension, see [Impact on Purchase](https://www.tencentcloud.com/document/product/1085/48346).
+>1. When the available credit of a customer becomes 0, the customer can still use its service and make new purchases. For the impact of account assets (credits and vouchers) on service purchase and suspension, see [Impact on Purchase and Service Suspension](https://www.tencentcloud.com/document/product/1085/48345).
 >2. You can contact your distributor to add you to the allowlist of the customer service suspension rule to shorten the service suspension period. For detailed rules, see [Customer Service Suspension Rules](https://www.tencentcloud.com/document/product/1085/50550).
 
 ### 3. Viewing Allocation Record
