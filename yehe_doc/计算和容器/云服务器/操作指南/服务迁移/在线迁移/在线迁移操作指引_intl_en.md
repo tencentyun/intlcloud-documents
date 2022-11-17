@@ -5,7 +5,8 @@ This document describes how to use the online migration feature in the CVM conso
 The online migration procedure is shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/0e290646e08b6af1b509ce324ea6e096.png)
 
-## Preparation[](id:prerequisites)
+[](id:prerequisites)
+## Considerations
 
 - Register on Tencent Cloud International.
 - If you want to migrate using a sub-account, ask the root account owner to assign the sub-account with the `QcloudCSMFullAccess` and `QcloudCVMFullAccess` permissions in [CAM console](https://console.cloud.tencent.com/cam/policy).
@@ -13,8 +14,8 @@ The online migration procedure is shown below:
 - [Download](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) the compressed migration tool package.
 - Stop all applications on the source server to prevent them from being affected by the migration.
 - Back up your data in the following ways before migrating:
- - Source server: You can use the source server snapshot feature or other methods to back up data.
- - Destination CVM: You can create a snapshot as instructed in [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) or use other methods to back up data.
+  - Source server: You can use the source server snapshot feature or other methods to back up data.
+  - Destination CVM: You can create a snapshot as instructed in [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) or use other methods to back up data.
 
 ## Migration Directions
 
@@ -71,9 +72,11 @@ Before migration, you need to check the following configuration based on the act
 </dx-alert>
 
 
-
-### Registering migration source[](id:registrationSource)
-
+[](id:registrationSource)
+### Registering migration source
+#### Importing migration source with migration tool
+<dx-tabs>
+::: Linux CVM instances
 1. Download or upload `go2tencentcloud.zip` to the source server and run the following command to enter the corresponding directory.
    i. Run the following commands in sequence to decompress `go2tencentcloud.zip` and enter the directory.
 ```shellsession
@@ -106,16 +109,31 @@ sudo ./go2tencentcloud_x64
 ![](https://qcloudimg.tencent-cloud.cn/raw/38ff9f9d8c143a4cb0df39cbeaf18713.png)
 If the information in the following figure is displayed in the window of the migration tool, the migration source has been imported to the console successfully, and you can go to the console to view it:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f9cf0fd99504aba51ebf82b0cab250b8.png"/>
-<br>You can log in to the <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">CVM console</a> and enter the online migration page to view the imported migration source, whose status is **Online** as shown below:
+:::
+
+::: Windows CVM instances
+1. Download or upload `go2tencentcloud.zip` to the source server, decompress the file to `go2tencentcloud` folder. Extract `go2tencentcloud-windows.zip` and decompress it. The directory obtained is as shown in the following figure:
+![](https://qcloudimg.tencent-cloud.cn/raw/3f2c9881d9c5323a14d096d0811814cd.png)    
+2. Run `go2tencentcloud_x64.exe` with one of the following methods.
+	- Method 1: Right-click `go2tencentcloud_x64.exe` and run it as admin. Enter `SecretId` and `SecretKey` in the pop-up window.
+	- Method 2: Start cmd or PowerShell command line as admin: cd /d "absolute path of the directory of go2tencentcloud_x64.exe", and run `go2tencentcloud_x64.exe`.
+3. Enter Tencent Cloud API key (`SecretId` and `SecretKey`) in the pop-up window.
+![](https://qcloudimg.tencent-cloud.cn/raw/b7af60919e710d7d148e791124fce1a0.png) ![](https://qcloudimg.tencent-cloud.cn/raw/8494a126134389796be195ccd268e03a.png)       
+
+4. If the information in the following figure is displayed in the window of the migration tool, the migration source has been imported to the console successfully, and you can go to the console to view it:
+![](https://qcloudimg.tencent-cloud.cn/raw/5ecd29f96415d0cb090fe165909272be.png)
+:::
+</dx-tabs>
+
+#### Viewing migration source in the console
+You can log in to the <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">CVM console</a> and enter the online migration page to view the imported migration source, whose status is **Online** as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/11b1e6cada0384dae292e89378629ddc.png"/>
 If "Import source server successfully" isn't displayed, the migration source failed to be imported, and you can view the log (which is the `logs/log` file in the migration tool directory by default) for troubleshooting. Then, run the migration tool to import the migration source again.
-<dx-alert infotype="notice" title="">
-After the migration source is imported successfully, don't close the migration tool in the instance until the migration task is completed; otherwise, the migration task can't be completed after the migration source becomes offline.
-</dx-alert>
+
+>! After the migration source is imported successfully, don't close the migration tool in the instance until the migration task is completed; otherwise, the migration task can't be completed after the migration source becomes offline.
 
 
-
-### Creating and starting migration task
+### Creating and starting a migration task
 
 1. Create a migration task
 Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, and click **Create Migration Task** on the right of the desired migration source. In the **Create Migration Task** pop-up window, configure the task as shown below:
@@ -137,7 +155,7 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
   <td>The Tencent Cloud region to which the source server is to be migrated. For information on regions, see<a href="https://intl.cloud.tencent.com/document/product/582/35772">Regions and AZs</a>.</td>
 </tr>
 <tr>
-<td>Task Name</td>
+<td>Task name</td>
 <td>Yes</td>
 <td>The migration task name.</td>
 </tr>
@@ -218,7 +236,6 @@ You can click <b>Start/Retry</b> on the right of the task to start it, click <b>
 
 
 ### Waiting for migration task to end
-
 
 After the migration task status becomes **Successful**, the migration is completed successfully as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
