@@ -384,21 +384,21 @@ tencent_chat_module/
 
 #### Call 模块
 
-该模块用于承载音视频通话能力，该能力由 [音视频通话插件](https://cloud.tencent.com/document/product/269/72485) 提供。
+该模块用于承载音视频通话能力，该能力由 [音视频通话插件](https://pub.dev/packages/tim_ui_kit_calling_plugin) 提供。
 
 该模块的核心是，监听收到新的通话邀请时，通过调用Native方法，自动弹出通话页面；并接受 Chat 模块经由Native转发来的通话请求，主动发起通话。
 
 **首先编写IM引擎。本模块所有代码及文件，均在 `lib/call` 目录下。**
 
 1. 新建全局状态管理Model，名为 `model.dart`。
-   该Model用于挂载初始化并管理 [音视频通话插件](https://cloud.tencent.com/document/product/269/72485)，全局状态管理，维护与Native间通信。
+   该Model用于挂载初始化并管理 [音视频通话插件](https://pub.dev/packages/tim_ui_kit_calling_plugin)，全局状态管理，维护与Native间通信。
    是整个Call模块的核心。
    详细代码可查看Demo源码。重点关注两个部分：
     - _onRtcListener = TUICallingListener(...): 定义了通话事件的监听器，通过 Method Channel 通知Native层，动态控制 Call 模块所属的 ViewController(iOS)/Activity(Android) 的前端展示与否。
     - Future<dynamic> _handleMessage(MethodCall call): 动态监听 Native 透传来的主动发起通话请求，来自 Call 模块的调用，主动发起通话。
 
 2. 新建 `call_main.dart` 文件，用于Call模块主入口。
-      该组件用于注入[音视频通话插件所需绑定的navigatorKey](https://cloud.tencent.com/document/product/269/72485#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.BC.95.E5.85.A5-navigatorkey)。
+      该组件用于注入[音视频通话插件所需绑定的navigatorKey](https://pub.dev/packages/tim_ui_kit_calling_plugin)。
       详细代码可查看Demo源码。
 
 
@@ -673,7 +673,7 @@ tencent_chat_module/
 
 #### main.dart
 
-修改 `main.dart` 文件，引入[TUIKit](https://cloud.tencent.com/document/product/269/70747), [离线推送插件](https://cloud.tencent.com/document/product/269/74605)及[音视频通话插件](https://cloud.tencent.com/document/product/269/72485)。
+修改 `main.dart` 文件，引入[TUIKit](https://cloud.tencent.com/document/product/269/70747), [离线推送插件](https://cloud.tencent.com/document/product/269/74605)及[音视频通话插件](https://pub.dev/packages/tim_ui_kit_calling_plugin)。
 
 全局状态，我们的IM SDK及Method Channel与Native通信状态，管理于 `ChatInfoModel` 中。
 
@@ -847,7 +847,7 @@ class MyApplication : MultiDexApplication() {
 
 之所以这么做，是因为点击通知事件已在Native被拦截消费，Flutter层无法直接拿到，必须经由Native转发。
 
-> 由于不同厂商的离线推送接入步骤不一致，本文以OPPO为例，全部厂商接入方案，可查看[本文档](https://cloud.tencent.com/document/product/269/75428).
+>! 由于不同厂商的离线推送接入步骤不一致，本文以OPPO为例，全部厂商接入方案，可查看[本文档](https://cloud.tencent.com/document/product/269/75428).
 
 在腾讯云IM控制台中，新增OPPO的推送证书，`点击后续动作` 选择 `打开应用内指定页面`，`应用内页面` 以 `Activity` 方式，配置一个用于处理离线推送信息的页面，建议为应用首页。如，我们的Demo配置为：`com.tencent.chat.android.MainActivity`.
 
