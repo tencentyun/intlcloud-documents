@@ -65,7 +65,7 @@ If your acceleration domain name is configured for global acceleration and you w
 #### Configuration examples
 
 Suppose the domain name `cloud.tencent.com` is configured for global acceleration, and a region-specific usage limit configuration (for regions outside the Chinese mainland) is added as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/77542f0fc0d7cfdc891193b6d1084fcc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3dcecb342ba6c4bc7b44d80be6028839.png)
 
 - Mutual independence of configurations for regions in and outside the Chinese mainland: If **Outside Chinese mainland** is selected for the region-specific configuration, the initial configuration will take effect in the Chinese mainland. After the traffic from the Chinese mainland reaches 4 GB during a statistical period (5 minutes), the 404 error will be returned for all requests from the Chinese mainland, without affecting the service outside the Chinese mainland; after the traffic from outside the Chinese mainland reaches 11 GB during a statistical period (before 24:00 of the day), the 404 error will be returned for all requests from outside the Chinese mainland, without affecting the service in the Chinese mainland.
 - Acceleration region switch: If the acceleration region of a domain name is switched from global to Chinese mainland, the usage limit configuration for outside the Chinese mainland will be disabled by default and cannot be edited.
