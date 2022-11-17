@@ -38,11 +38,11 @@
 1. 在示例工程跑通阶段，选择【调试阶段】即可，然后记录下您的 SDKAppID、Secret key。
    ![](https://qcloudimg.tencent-cloud.cn/raw/82a45972f2d12763a6dc80eee6c952c0.png)
 2. 打开下载完成的示例代码，找到并打开`/lib/debug/GenerateTestUserSig.dart`文件，设置`GenerateTestUserSig.dart`文件中的相关参数：
-   > - SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
-   > - SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的 Secret key。
+   - SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
+   - SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的 Secret key。
 3. 此时工程配置已经完成，您可以单击【下一步】，
 
->？
+>?
 >- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 TRTC-Simple-Demo 和功能调试**。
 >- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://www.tencentcloud.com/document/product/647/35166)。
 
