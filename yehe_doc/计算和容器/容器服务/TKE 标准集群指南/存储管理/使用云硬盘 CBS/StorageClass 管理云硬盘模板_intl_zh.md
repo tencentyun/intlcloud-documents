@@ -1,12 +1,10 @@
-
-
 集群管理员可使用 StorageClass 为容器服务集群定义不同的存储类型。容器服务已默认提供块存储类型的 StorageClass，您可通过 StorageClass 配合 PersistentVolumeClaim 动态创建需要的存储资源。本文介绍通过控制台、Kubectl 两种方式创建云硬盘 CBS 类型的 StorageClass，自定义云硬盘使用所需的模板。
 
 
 ## 控制台操作指引
 
 ### 创建 StorageClass[](id:create)
-1. 登录[ 容器服务控制台  ](https://console.cloud.tencent.com/tke2)，选择左侧栏中的**集群**。
+1. 登录[ 容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧栏中的**集群**。
 2. 在“集群管理”页中，单击需创建 StorageClass 的集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的**存储** > **StorageClass**。如下图所示：
 ![](https://main.qcloudimg.com/raw/9c08551ba5e4fe254cebf30eb34a01e1.png)
@@ -17,7 +15,7 @@
 	- **Provisioner**：选择**云硬盘CBS**。
 	- **地域**：当前集群所在地域。
 	- **可用区**：表示当前地域下支持使用云硬盘的可用区，请按需选择。
-	- **计费模式**：提供**按量计费**弹性计费模式，支持随时开通/销毁实例，按实例的实际使用量付费。支持删除和保留的回收策略。
+	- **计费模式**：提供**按量计费**的计费模式。**按量计费**是一种弹性计费模式，支持随时开通/销毁实例，按实例的实际使用量付费。支持删除和保留的回收策略
 	- **云盘类型**：通常提供**高性能云硬盘**、**SSD云硬盘**和**增强型SSD云硬盘**三种类型，不同可用区下提供情况有一定差异，详情请参见 [云硬盘类型说明 ](https://intl.cloud.tencent.com/document/product/213/33000)并结合控制台提示进行选择。
 	- **回收策略**：云盘的回收策略，通常提供**删除**和**保留**两种回收策略，具体选择情况与所选计费模式相关。出于数据安全考虑，推荐使用保留回收策略。
 	- **卷绑定模式**：提供**立即绑定**和**等待调度**两种卷绑定模式，不同模式所支持的卷绑定策略不同，请参考以下信息进行选择：
@@ -88,14 +86,16 @@ metadata:
    name: cloud-premium
 
 # 安装了 CBS-CSI 组件的TKE集群请填写 provisioner 为 com.tencent.cloud.csi.cbs
-# 未安装 CBS-CSI 组件请填写 provisioner 为 cloud.tencent.com/qcloud-cbs
+# 未安装 CBS-CSI 组件请填写 provisioner 为 cloud.tencent.com/qcloud-cbs （该能力在1.20及以后版本废弃）
 provisioner: com.tencent.cloud.csi.cbs 
 
 parameters:
    type: CLOUD_PREMIUM
    renewflag: NOTIFY_AND_AUTO_RENEW
-   paymode: PREPAID
+   paymode: POSTPAID_BY_HOUR
    aspid: asp-123
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
 ```
 支持参数如下表：
 <table>
@@ -109,7 +109,13 @@ parameters:
 <td>zone</td> <td>用于指定可用区。如果指定，则云硬盘将创建到此可用区。如果不指定，则拉取所有 Node 的可用区信息，进行随机选取。  腾讯云各地域标识符请参见 <a href="https://intl.cloud.tencent.com/document/product/213/6091">地域和可用区</a>。</td>
 </tr>
 <tr>
-<td>paymode</td> <td>云硬盘的计费模式，默认设置为 <code>POSTPAID</code> 模式，即按量计费，支持 Retain 保留和 Delete 删除策略，Retain 仅在高于1.8的集群版本生效。</td>
+<td>paymode</td> <td>云硬盘的计费模式，默认设置为 <code>POSTPAID_BY_HOUR</code> 模式，即按量计费，支持 Retain 保留和 Delete 删除策略，Retain 仅在高于1.8的集群版本生效。</td>
+</tr>
+<tr>
+<td>volumeBindingMode</td> <td>卷绑定模式，支持 Immediate（立即绑定）和 WaitForFirstConsumer（延迟调度）。</td>
+</tr>
+<tr>
+<td>reclaimPolicy</td> <td>回收策略，支持 Delete（删除）和 Retain（保留）。</td>
 </tr>
 <tr>
 <td>renewflag</td> <td>云硬盘的续费模式。默认为 <code>NOTIFY_AND_MANUAL_RENEW</code> 模式。<li><code>NOTIFY_AND_AUTO_RENEW</code> 模式代表所创建的云硬盘支持通知过期且按月自动续费。</li><li><code>NOTIFY_AND_MANUAL_RENEW</code> 模式代表所创建的云硬盘支持通知过期但不自动续费。</li><li> <code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code> 模式则代表所创建的云硬盘不通知过期也不自动续费。</li></td>

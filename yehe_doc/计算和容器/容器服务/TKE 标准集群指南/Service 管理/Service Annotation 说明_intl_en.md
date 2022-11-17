@@ -83,7 +83,7 @@ For the detailed usage, see [Service CLB Configuration](https://intl.cloud.tence
 This annotation is used to automatically create a `TkeServiceConfig`.
 
 **Use case:**
-For more information on how to use it, see [Service CLB Configuration](https://intl.cloud.tencent.com/document/product/457/36834#service-.E4.B8.8E-tkeserviceconfig-.E5.85.B3.E8.81.94.E8.A1.8C.E4.B8.BA).
+For more information on how to use it, please see [Service CLB Configuration](https://intl.cloud.tencent.com/document/product/457/36834#service-.E4.B8.8E-tkeserviceconfig-.E5.85.B3.E8.81.94.E8.A1.8C.E4.B8.BA).
  
 ---
 ### service.kubernetes.io/loadbalance-nat-ipv6
@@ -120,6 +120,9 @@ Refer to [Creating a CLB Instance](https://intl.cloud.tencent.com/document/produ
  service.kubernetes.io/service.extensiveParameters: '{"AddressIPVersion":"IPV6"}' 
 - Purchasing a CTCC CLB:
   service.kubernetes.io/service.extensiveParameters: '{"VipIsp":"CTCC"}'
+- Creating a CLB with a custom name:
+  service.kubernetes.io/service.extensiveParameters: '{"LoadBalancerName":"my_cutom_lb_name"}'
+
 
  
 ---
@@ -128,7 +131,7 @@ Refer to [Creating a CLB Instance](https://intl.cloud.tencent.com/document/produ
 This annotation is used to shut down CLB instances gracefully in direct access mode. If a deleted Pod contains `DeletionTimestamp` and is in **Terminating** status, the weight of the Pod on the CLB backend is adjusted to `0`.
 
 **Use case:**
-It is only supported in direct access mode and needs to be used together with `service.cloud.tencent.com/direct-access`. For more information on how to use it, see [Graceful Service Shutdown](https://intl.cloud.tencent.com/document/product/457/42070).
+It is only supported in direct access mode and needs to be used together with `service.cloud.tencent.com/direct-access`. For more information on how to use it, please see [Graceful Service Shutdown](https://intl.cloud.tencent.com/document/product/457/42070).
 
 
 ---
@@ -137,14 +140,14 @@ It is only supported in direct access mode and needs to be used together with `s
 This annotation is used to shut down CLB instances gracefully in direct access mode. If the endpoints in the Endpoint object are `not-ready`, the weights on the CLB backend are adjusted to `0`.
 
 **Use case:**
-It is only supported in direct access mode and needs to be used together with `service.cloud.tencent.com/direct-access`. For detailed directions, see [Graceful Service Shutdown](https://intl.cloud.tencent.com/document/product/457/42070).
+It is only supported in direct access mode and needs to be used together with `service.cloud.tencent.com/direct-access`. For more information on how to use it, please see [Graceful Service Shutdown](https://intl.cloud.tencent.com/document/product/457/42070).
 
  
 ---
-### kubernetes.io/service.internetChargeType
+### service.kubernetes.io/qcloud-loadbalancer-internet-charge-type
 **Note:**
 The billing type of CLB can only be configured at the time of creation, and cannot be modified after the creation.
-This annotation is used to specify the CLB payment mode when a CLB instance is created. You need to use it with `kubernetes.io/service.internetMaxBandwidthOut` annotation.
+This annotation is used to specify the CLB payment mode when a CLB is created. Please use it with `service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out` annotation.
 
 **Valid values:**
 <table>
@@ -163,16 +166,16 @@ This annotation is used to specify the CLB payment mode when a CLB instance is c
 `kubernetes.io/service.internetChargeType: "TRAFFIC_POSTPAID_BY_HOUR"`
  
 ---
-### kubernetes.io/service.internetMaxBandwidthOut
+### service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out
 **Note:**
 CLB bandwidth can only be configured at the time of creation, and cannot be modified after the creation.
-This annotation is used to specify the maximum outbound bandwidth of the CLB instance when a CLB instance is created, which applies only to public network CLB instances. You need to use it with `kubernetes.io/service.internetChargeType` annotation.
+This annotation is used to specify the maximum outbound bandwidth of the CLB when a CLB is created, which applies only to public network CLB instances. Please use it with `service.kubernetes.io/qcloud-loadbalancer-internet-charge-type` annotation.
 
 **Valid values:**
 Value range: 1-2,048 Mbps
 
 **Use case:**
-`kubernetes.io/service.internetMaxBandwidthOut: "2048"`
+`service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out: "2048"`
  
 
 
@@ -202,7 +205,7 @@ This annotation is used to configure the "Allow Traffic by Default" feature for 
 
 - For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/214/14733) of CLB security groups.
 - Usually, the feature of binding a security group is required. The annotation is `service.cloud.tencent.com/security-groups`.
-- When [Using Existing CLBs](https://intl.cloud.tencent.com/document/product/457/36835), logic conflicts may occur if different "Allow Traffic" configurations are configured for multiple Services.
+- When [Using Existing CLBs](https://intl.cloud.tencent.com/document/product/457/36835), logic conflicts may occur if different “Allow Traffic” configurations are configured for multiple Services.
 
 
 
