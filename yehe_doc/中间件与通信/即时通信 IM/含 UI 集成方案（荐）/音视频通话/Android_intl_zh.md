@@ -19,12 +19,10 @@ TUIKit 组件从 4.8.50 版本开始支持音视频通话功能，并且实现�
 
 [](id:step1)
 
-## 步骤1：开通音视频服务
+## 步骤1：开通音视频通话服务
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
-2. 在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击 **免费体验** 即可开通 TUICallKit 的 60 天免费试用服务。 
->= **友情提示**：单击免费体验以后，部分之前使用过 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 服务的用户会提示`[-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears`，
->
->因为新的 IM 音视频通话能力是整合了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础的 PaaS 服务，所以当 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 的免费额度（10000分钟）已经过期或者耗尽，就会导致开通此项服务失败，这里您可以单击 [ TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，找到对应 SDKAppID 的应用管理页，示例如图，开通后付费功能后，再次**启用应用**即可正常体验音视频通话能力。
+
+2. 在页面的右下角找到**腾讯实时音视频服务**功能区，单击下方 **音视频通话能力-免费体验** ，在弹出的**免费开通音视频通话能力体验版**对话框中，单击**免费开通**，即可开通 TUICallKit 的 **60 天免费试用**服务。
 
 [](id:step2)
 ## 步骤2：配置工程文件
@@ -134,7 +132,7 @@ api project(':tuicallkit')
 
 > ? 如果您在测试过程中发现手动开启了所有权限，依然无法自动拉起通话界面到前台，需要做兼容处理。
 
-下图展示 OPPO 手机的权限设置位置
+
 
 
 #### 如果您使用的是老版本 TUICalling，想单独升级 IM 相关组件（TUIChat/TUIConversation/TUIGroup/TUIContact/TUISearch/TUIOfflinePush），应该怎么处理？

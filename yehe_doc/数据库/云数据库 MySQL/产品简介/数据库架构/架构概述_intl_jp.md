@@ -30,7 +30,7 @@ TencentDB for MySQLは、単一ノード（クラウドディスクバージョ�
 <td>ローカルNVMe SSDディスク</td><td>ローカルNVMe SSDディスク</td><td>ローカルNVMe SSDディスク</td><td>SSD CBS<br>拡張型SSD CBS</td></tr>
 <tr>
 <td>性能</td>
-<td>IOPS最大240000</td><td>IOPS最大240000</td><td>-</td><td><li>SSD CBSランダムIOPS性能計算式：<br>min{1800 + 30 × 容量(GB), 26000}<li>SSD CBSスループット性能計算式(MB/s)：<br>min{120 + 0.2 × 容量(GB), 260}<li>拡張型SSD CBSランダムIOPS性能計算式：<br>min{1800 + 50 × 容量（GB）, 50000}<li>拡張型SSD CBSスループット性能計算式(MB/s)：<br>min{120 + 0.5 × 容量(GB), 350}</td></tr>
+<td>IOPS最大240000</td><td>IOPS最大240000</td><td>IOPS最大240000</td><td><li>SSD CBSランダムIOPS性能計算式：<br>min{1800 + 30 × 容量(GB), 26000}<li>SSD CBSスループット性能計算式(MB/s)：<br>min{120 + 0.2 × 容量(GB), 260}<li>拡張型SSD CBSランダムIOPS性能計算式：<br>min{1800 + 50 × 容量（GB）, 50000}<li>拡張型SSD CBSスループット性能計算式(MB/s)：<br>min{120 + 0.5 × 容量(GB), 350}</td></tr>
 <tr>
 <td>ユースケース</td>
 <td>ゲーム、インターネット、モノのインターネット、電子商取引、物流、保険、証券などの業界の応用</td>

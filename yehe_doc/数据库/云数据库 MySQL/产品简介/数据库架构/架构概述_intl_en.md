@@ -30,7 +30,7 @@ TencentDB for MySQL supports three types of architectures: single-node (Cloud Di
 <td>Local NVMe SSD</td><td>Local NVMe SSD</td><td>Local NVMe SSD</td><td>SSD cloud disk<br>Enhanced SSD</td></tr>
 <tr>
 <td>Performance</td>
-<td>Up to 240,000 IOPS</td><td>Up to 240,000 IOPS</td><td>-</td><td><li>Random IOPS calculation of SSD cloud disk:<br>min{1800 + 30 * capacity (GB), 26000}<li>Throughput calculation of SSD cloud disk (MB/s):<br>min{120 + 0.2 * capacity (GB), 260}<li>Random IOPS calculation of Enhanced SSD:<br>min{1800 + 50 * capacity (GB), 50000}<li>Throughput calculation of Enhanced SSD (MB/s):<br>min{120 + 0.5 * capacity (GB), 350}</td></tr>
+<td>Up to 240,000 IOPS</td><td>Up to 240,000 IOPS</td><td>Up to 240,000 IOPS</td><td><li>Random IOPS calculation of SSD cloud disk:<br>min{1800 + 30 * capacity (GB), 26000}<li>Throughput calculation of SSD cloud disk (MB/s):<br>min{120 + 0.2 * capacity (GB), 260}<li>Random IOPS calculation of Enhanced SSD:<br>min{1800 + 50 * capacity (GB), 50000}<li>Throughput calculation of Enhanced SSD (MB/s):<br>min{120 + 0.5 * capacity (GB), 350}</td></tr>
 <tr>
 <td>Use case</td>
 <td>Gaming, internet, IoT, retail, ecommerce, logistics, insurance, securities, etc.</td>

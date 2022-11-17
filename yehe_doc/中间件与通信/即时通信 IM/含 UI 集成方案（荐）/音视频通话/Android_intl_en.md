@@ -19,12 +19,10 @@ Audio/Video call UIs are shown as follows:
 
 [](id:step1)
 
-## Step 1: Activate the TRTC Service
-1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
-2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** in the lower-right corner of the page to activate the 60-day free trial service of TUICallKit. 
->= **Notes**: If you have used [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) before, after clicking **Free trial**, the following error may occur: `[-100013]:TRTC service is suspended. Please check if the package balance is 0 or the Tencent Cloud account is in arrears`.
->
->This is because the new IM audio/video call capability is based on two basic PaaS services: [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). If you have used up your free monthly minutes (10,000) for TRTC, you will fail to activate the capability. You can log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), go to the application management page of the corresponding SDKAppID, and activate the pay-as-you-go feature, as shown in the figure below. Then, next time when you **start the application**, you can experience the new audio/video call capability properly.
+## Step 1: Activate the Video Calls Service
+1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target application card to go to the basic configuration page.
+
+2. In the bottom-right corner of the page, click **Audio/Video call capability - free trial** in the **TRTC** section. In the **Activate free trial of audio/video call feature** pop-up window, click **Activate Now** to activate the **60-day free trial** of TUICallKit.
 
 [](id:step2)
 ## Step 2: Configure Project Files
@@ -134,7 +132,7 @@ Note that different vendors or even different Android versions from the same ven
 
 > ? If you manually enable all permissions during the test, the call UI cannot be automatically pulled up to the foreground, and compatibility processing is required.
 
-The following figure shows the path to permission setting on an OPPO phone.
+
 
 
 #### What should I do if I am using TUICalling of an earlier version and want to upgrade the IM-related components (TUIChat/TUIConversation/TUIGroup/TUIContact/TUISearch/TUIOfflinePush) separately?
