@@ -42,9 +42,9 @@ If the following message is displayed, the installation is completed:
 1. See [TKE Turbo Plugin Guide](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CFSTURBO.md) and [download the script](https://github.com/TencentCloud/kubernetes-csi-tencentcloud).
 2. Go to the `kubernetes-csi-tencentcloud/deploy/cfsturbo/kubernetes/` directory and upload `csi-node-rbac.yaml`, `csi-node.yaml`, and `csidriver-new.yaml` files to the kubectl management node.
 3. Go to the `kubernetes-csi-tencentcloud/deploy/cfsturbo/examples/` directory and download the `pv.yaml`, `pvc.yaml`, and `pod.yaml` sample files. 
-pod.yaml 这三个示例文件。
+
 4. Modify the `pv.yaml`, `pvc.yaml`, and `pod.yaml` files based on the PV, PVC, and Pod attributes, such as name and image address. 
-pod.yaml 文件。
+
 Below are the sample YAML files:
 ```
 apiVersion: v1
