@@ -7,7 +7,7 @@ This document describes how to create a file system and mount point on the file 
 ### 1. Sign up for a Tencent Cloud account
 
 If you already have a Tencent Cloud account, ignore this step.
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://www.tencentcloud.com/en/account/register" target="_blank"  style="color: white; font-size:16px;">Sign Up for Tencent Cloud</a></div>
+<div style="background-color:#00A4FF; width: 220px; height: 35px; line-height:35px; text-align:center;"><a href="https://www.tencentcloud.com/en/account/register" target="_blank"  style="color: white; font-size:16px;">Sign Up for Tencent Cloud</a></div>
 
 ### 2. Enter the file system page
 
