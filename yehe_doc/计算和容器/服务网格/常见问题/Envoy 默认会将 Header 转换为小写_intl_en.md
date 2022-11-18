@@ -53,7 +53,6 @@ spec:
   resolution: DNS
 ```
 
-For more ways to specify a protocol, see [Explicit Protocol Selection for a Service](https://imroc.cc/istio/best-practice/specify-protocol/).
 
 ## Best Practices 
 
