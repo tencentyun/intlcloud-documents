@@ -35,7 +35,7 @@
 3. 提交添加服务发现集群后，等待集群连接完成后，即可完成服务发现集群添加。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/0038fb53797ac76cedc77a3f361193d1.png)
 
->! 服务添加到网格内后，还需要为服务注入 Sidecar ，才能对服务进行流量管理、可视化观测等管理操作，相关指引请参考 [网格配置](https://intl.cloud.tencent.com/document/product/1152/47463)。
+>! 服务添加到网格内后，还需要为服务注入 Sidecar ，才能对服务进行流量管理、可视化观测等管理操作，相关指引请参考 [网格配置](https://intl.cloud.tencent.com/document/product/1152/47464)。
 
 #### 解关联服务发现集群
 
