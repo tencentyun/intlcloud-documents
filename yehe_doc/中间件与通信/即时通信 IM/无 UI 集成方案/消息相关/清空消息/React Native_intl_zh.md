@@ -9,7 +9,7 @@
 
 ### 清空单聊消息
 
-您可以调用 `clearC2CHistoryMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/clearC2CHistoryMessage.html)) 清空单聊消息。
+您可以调用 `clearC2CHistoryMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/clearC2CHistoryMessage.html)) 清空单聊消息。
 
 示例代码如下：
 
@@ -21,7 +21,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ### 清空群聊消息
 
-您可以调用 `clearGroupHistoryMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/clearGroupHistoryMessage.html)) 清空群聊消息。
+您可以调用 `clearGroupHistoryMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/clearGroupHistoryMessage.html)) 清空群聊消息。
 
 示例代码如下：
 

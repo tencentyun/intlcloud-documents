@@ -13,7 +13,7 @@
 
 ### 发送方撤回一条消息
 
-调用 `revokeMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/revokeMessage.html)) 撤回一条消息。
+调用 `revokeMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/revokeMessage.html)) 撤回一条消息。
 
 示例代码如下：
 
@@ -25,8 +25,8 @@ const revokeMessage = await TencentImSDKPlugin.v2TIMManager
 
 ### 接收方感知消息被撤回
 
-1. 调用 `addAdvancedMsgListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) 设置高级消息监听。
-2. 通过 `onRecvMessageRevoked` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvMessageRevoked.html)) 接收消息撤回通知。
+1. 调用 `addAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) 设置高级消息监听。
+2. 通过 `onRecvMessageRevoked` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvMessageRevoked.html)) 接收消息撤回通知。
 
 示例代码如下：
 

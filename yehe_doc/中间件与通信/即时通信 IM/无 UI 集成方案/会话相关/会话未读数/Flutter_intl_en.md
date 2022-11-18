@@ -15,7 +15,7 @@ When the total unread count changes, the SDK will notify you of the latest total
 Below are detailed steps.
 
 ### Getting the total unread count
-Call `getTotalUnreadMessageCount` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getTotalUnreadMessageCount.html)) to get the total unread count of all the conversations and update it on the UI.
+Call `getTotalUnreadMessageCount` ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/getTotalUnreadMessageCount.html)) to get the total unread count of all the conversations and update it on the UI.
 
 Sample code:
 
@@ -27,9 +27,9 @@ V2TimValueCallback<int> unread = await conversationManager.getTotalUnreadMessage
 
 
 ### Notification of a change in the total unread count
-Call `addConversationListener` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addConversationListener.html)) to add a conversation listener to receive notifications of a change in the total unread count.
+Call `addConversationListener` ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addConversationListener.html)) to add a conversation listener to receive notifications of a change in the total unread count.
 
-You can get the changed total unread count in `onTotalUnreadMessageCountChanged` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_callbacks/OnTotalUnreadMessageCountChanged.html)) of `V2TIMConversationListener`.
+You can get the changed total unread count in `onTotalUnreadMessageCountChanged` ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_callbacks/OnTotalUnreadMessageCountChanged.html)) of `V2TIMConversationListener`.
 
 Sample code:
 
@@ -53,7 +53,7 @@ Below are detailed steps.
 >? This feature is supported only by the SDK of the Enhanced edition on v5.8.1668 or later. 
 
 ### One-to-one chat
-Call `markC2CMessageAsRead` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/markC2CMessageAsRead.html)) to clear the unread count of a specified one-to-one conversation.
+Call `markC2CMessageAsRead` ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/markC2CMessageAsRead.html)) to clear the unread count of a specified one-to-one conversation.
 
 Sample code:
 
@@ -84,7 +84,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().addAdvancedMsgListener(liste
 
 
 ### Group chat
-Call `markGroupMessageAsRead` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/markGroupMessageAsRead.html)) to clear the unread count of a specified group conversation.
+Call `markGroupMessageAsRead` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/markGroupMessageAsRead.html)) to clear the unread count of a specified group conversation.
 
 Sample code:
 
@@ -107,7 +107,7 @@ conversationManager.addConversationListener(listener: V2TimConversationListener(
 
 
 ### All conversations
-Call `markAllMessageAsRead` ([dart](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/markAllMessageAsRead.html)) to clear the unread count of all the conversations.
+Call `markAllMessageAsRead` ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/markAllMessageAsRead.html)) to clear the unread count of all the conversations.
 
 Sample code:
 

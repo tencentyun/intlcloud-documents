@@ -14,8 +14,8 @@ Community groups are used to manage group members. All topics under the same com
 
 You need to perform two steps to create a community group that supports topics:
 
-1. Create the `V2TIMGroupInfo` object ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupInfo.html)) and set `groupType` to `Community` and `isSupportTopic` to `true`/`YES`.
-2. Call the `createGroup` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createGroup.html)) to create a community.
+1. Create the `V2TIMGroupInfo` object ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Group/V2TimGroupInfo.html)) and set `groupType` to `Community` and `isSupportTopic` to `true`/`YES`.
+2. Call the `createGroup` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createGroup.html)) to create a community.
 
 Sample code:
 
@@ -26,7 +26,7 @@ groupManager.createGroup(groupType: "Community", groupName: "Community",isSuppor
 
 ### Getting the list of community groups joined
 
-Call `getJoinedCommunityList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getJoinedCommunityList.html)) to get the list of joined topic-enabled communities.
+Call `getJoinedCommunityList` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getJoinedCommunityList.html)) to get the list of joined topic-enabled communities.
 
 Sample code:
 
@@ -94,8 +94,8 @@ Multiple topics can be created under the same community group. All the topics ar
 
 You need to perform two steps to create a topic:
 
-1. Create the `V2TIMTopicInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html)) object.
-2. Call the `createTopicInCommunity` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createTopicInCommunity.html)) to create a topic.
+1. Create the `V2TIMTopicInfo` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html)) object.
+2. Call the `createTopicInCommunity` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/createTopicInCommunity.html)) to create a topic.
 
 Sample code:
 
@@ -108,7 +108,7 @@ groupManager.createTopicInCommunity("groupID", {
 
 ### Deleting a topic
 
-Call the `deleteTopicFromCommunity` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/deleteTopicFromCommunity.html)) to delete a topic.
+Call the `deleteTopicFromCommunity` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/deleteTopicFromCommunity.html)) to delete a topic.
 
 Sample code:
 
@@ -121,8 +121,8 @@ groupManager.deleteTopicFromCommunity("groupID", ["topicID"]);
 
 You need to perform two steps to modify the information of a topic:
 
-1. Create the `V2TIMTopicInfo` object ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html)) and set the fields to be modified.
-2. Call the `setTopicInfo` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setTopicInfo.html)) to modify the information of a topic.
+1. Create the `V2TIMTopicInfo` object ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Topic/V2TimTopicInfo.html)) and set the fields to be modified.
+2. Call the `setTopicInfo` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setTopicInfo.html)) to modify the information of a topic.
 
 Sample code:
 
@@ -135,7 +135,7 @@ groupManager.setTopicInfo({
 
 ### [Getting the topic list](id:getTopicList)
 
-Call the `getTopicInfoList` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getTopicInfoList.html)) to get the topic list.
+Call the `getTopicInfoList` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getTopicInfoList.html)) to get the topic list.
 
 - If `topicIDList` is empty, the list of all topics of the community group will be got.
 - If `topicIDList` is the ID of specified topics, the list of the specified topics will be got.
@@ -235,7 +235,7 @@ Use the `customString` after [getting the topic list](#getTopicList).
 
 ### Listening for topic callbacks
 
-In `V2TIMGroupListener` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimGroupListener.html)), topic callback methods such as `onTopicCreated`, `onTopicDeleted`, and `onTopicInfoChanged` are added to listen for topic events.
+In `V2TIMGroupListener` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimGroupListener.html)), topic callback methods such as `onTopicCreated`, `onTopicDeleted`, and `onTopicInfoChanged` are added to listen for topic events.
 
 Sample code:
 

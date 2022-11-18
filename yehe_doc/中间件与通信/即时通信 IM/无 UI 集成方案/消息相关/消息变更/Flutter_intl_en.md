@@ -4,15 +4,15 @@ This feature enables any member in a conversation to modify a successfully sent 
 > ? This feature is supported only by the SDK for Flutter on v4.0.0 or later.
 
 ## Modifying a Message
-A conversation participant can call the `modifyMessage` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/modifyMessage.html)) to modify a sent message in the conversation.
+A conversation participant can call the `modifyMessage` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/modifyMessage.html)) to modify a sent message in the conversation.
 The IM SDK allows any conversation participant to modify a message in the conversation. You can add more restrictions at the business layer, for example, only allowing the message sender to modify the message.
 
 Currently, the following information of a message can be modified:
-1. `localCustomData` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#localcustomdata)) 
-2. `localCustomInt` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#localcustomint)) 
-3. `cloudCustomData` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#cloudcustomdata)) 
-4. `V2TIMTextElem` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimTextElem.html)) 
-5. `V2TIMCustomElem` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimCustomElem.html))
+1. `localCustomData` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#localcustomdata)) 
+2. `localCustomInt` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#localcustomint)) 
+3. `cloudCustomData` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMessage.html#cloudcustomdata)) 
+4. `V2TIMTextElem` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimTextElem.html)) 
+5. `V2TIMCustomElem` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimCustomElem.html))
 
 Sample code:
 
@@ -38,9 +38,9 @@ V2TimValueCallback<List<V2TimMessage>> msgListRes = await TencentImSDKPlugin.v2T
 
 
 ## Listening for a Message Modification Callback
-Conversation participants call `addAdvancedMsgListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) to add the advanced message listener.
+Conversation participants call `addAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) to add the advanced message listener.
 
-After a message in the conversation is modified, all the participants will receive the `onRecvMessageModified` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRecvMessageModified.html)), which contains the modified message object.
+After a message in the conversation is modified, all the participants will receive the `onRecvMessageModified` callback ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRecvMessageModified.html)), which contains the modified message object.
 
 Sample code:
 

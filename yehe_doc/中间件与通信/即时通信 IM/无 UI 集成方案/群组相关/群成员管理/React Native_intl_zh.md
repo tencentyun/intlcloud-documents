@@ -6,13 +6,13 @@
 
 ## 获取群成员列表
 
-您可以调用 `getGroupMemberList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMemberList.html)) 获取指定群的群成员列表。该列表中包含了各个群成员的资料信息，例如用户 ID（`userID`）、群名片（`nameCard`）、头像（`faceUrl`）、昵称（`nickName`）、进群时间（`joinTime`）等信息。
+您可以调用 `getGroupMemberList` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMemberList.html)) 获取指定群的群成员列表。该列表中包含了各个群成员的资料信息，例如用户 ID（`userID`）、群名片（`nameCard`）、头像（`faceUrl`）、昵称（`nickName`）、进群时间（`joinTime`）等信息。
 
 一个群中的成员人数可能很多（例如 5000+），群成员列表的拉取接口支持过滤器（`filter`）和分页拉取（`nextSeq`）两个高级特性。
 
 ### 过滤器（filter）
 
-在调用 `getGroupMemberList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMemberList.html)) 接口时，您可以指定 `filter` 确定是否仅拉取特定角色的信息列表。
+在调用 `getGroupMemberList` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupMemberList.html)) 接口时，您可以指定 `filter` 确定是否仅拉取特定角色的信息列表。
 
 | 过滤器                                                     | 过滤类型                   |
 | ---------------------------------------------------------- | -------------------------- |
@@ -67,15 +67,15 @@ groupManager.getGroupMemberList(groupID, filter, nextSeq, count, offset);
 
 ### 禁言指定群成员
 
-群主或管理员可以通过 `muteGroupMember` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/muteGroupMember.html)) 禁言某一个群成员并设置禁言时间。禁言时间单位为秒，禁言信息存储于群成员的 `muteUtil` 属性字段中。
+群主或管理员可以通过 `muteGroupMember` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/muteGroupMember.html)) 禁言某一个群成员并设置禁言时间。禁言时间单位为秒，禁言信息存储于群成员的 `muteUtil` 属性字段中。
 
-群成员被禁言后，全员（包括被禁言的群成员）都会收到 `onMemberInfoChanged` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnMemberInfoChanged.html)) 事件回调。
+群成员被禁言后，全员（包括被禁言的群成员）都会收到 `onMemberInfoChanged` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnMemberInfoChanged.html)) 事件回调。
 
 ### 禁言整个群
 
-群主或管理员也可以通过 `setGroupInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupInfo.html)) 接口对整个群进行禁言，将 `allMuted`属性字段设置为 `true` 即可。全群禁言没有时间限制，需通过将群资料 `setAllMuted(false)` 解除禁言。
+群主或管理员也可以通过 `setGroupInfo` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupInfo.html)) 接口对整个群进行禁言，将 `allMuted`属性字段设置为 `true` 即可。全群禁言没有时间限制，需通过将群资料 `setAllMuted(false)` 解除禁言。
 
-> ? 全员禁言后触发 `onGroupInfoChanged` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnGroupInfoChanged.html)) 事件回调，该功能默认是关闭的，可在控制台内自行开通。
+> ? 全员禁言后触发 `onGroupInfoChanged` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnGroupInfoChanged.html)) 事件回调，该功能默认是关闭的，可在控制台内自行开通。
 > 方式: [进入即时通信 IM 控制台群组配置模块](https://console.cloud.tencent.com/im/qun-setting)，选择群系统通知配置，为各种类型群，单击操作中**编辑**，修改“群禁言变更通知”，即可。
 > 只有群主能将管理员禁言。
 
@@ -109,11 +109,11 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
 
 ## 踢人
 
-群主或管理员调用 `kickGroupMember` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/kickGroupMember.html)) 接口可以将指定的普通群成员踢出群组。
+群主或管理员调用 `kickGroupMember` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/kickGroupMember.html)) 接口可以将指定的普通群成员踢出群组。
 
-普通群成员被踢后，全员（包括被踢人）会收到 `onMemberKicked` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnMemberKicked.html)) 回调。
+普通群成员被踢后，全员（包括被踢人）会收到 `onMemberKicked` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnMemberKicked.html)) 回调。
 
-由于直播群（AVChatRoom）对进群没有限制，因此直播群（AVChatRoom）没有支持踢人的接口，您可以使用 `muteGroupMember` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/muteGroupMember.html)) 禁言指定成员达到类似的成员管控的目的。禁言操作参见 [禁言](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/muteGroupMember.html)。
+由于直播群（AVChatRoom）对进群没有限制，因此直播群（AVChatRoom）没有支持踢人的接口，您可以使用 `muteGroupMember` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/muteGroupMember.html)) 禁言指定成员达到类似的成员管控的目的。禁言操作参见 [禁言](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/muteGroupMember.html)。
 
 > ? 只有群主能将管理员踢出群组。
 
@@ -125,7 +125,7 @@ groupManager.kickGroupMember("groupID", []);
 
 ## 设置管理员
 
-群主调用 `setGroupMemberRole` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupMemberRole.html)) 可以对陌生人社交群（Public）或临时会议群（Meeting）中的群成员进行管理员授权。
+群主调用 `setGroupMemberRole` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupMemberRole.html)) 可以对陌生人社交群（Public）或临时会议群（Meeting）中的群成员进行管理员授权。
 
 普通成员被授权后，拥有跟管理员同样的权限，例如支持以下操作：
 
@@ -136,9 +136,9 @@ groupManager.kickGroupMember("groupID", []);
 
 更多详情可参见 [群成员角色介绍](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
-普通成员被授权为管理员后，全员（包括被设置的成员）会收到 `onGrantAdministrator` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnGrantAdministrator.html)) 回调。
+普通成员被授权为管理员后，全员（包括被设置的成员）会收到 `onGrantAdministrator` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnGrantAdministrator.html)) 回调。
 
-普通成员被取消管理员授权后，全员（包括被设置的成员）会收到 `onRevokeAdministrator` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnRevokeAdministrator.html)) 回调。
+普通成员被取消管理员授权后，全员（包括被设置的成员）会收到 `onRevokeAdministrator` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRevokeAdministrator.html)) 回调。
 
 示例代码如下：
 
@@ -174,7 +174,7 @@ groupManager.transferGroupOwner("groupID", "userID");
 
 ## 获取群在线人数
 
-调用 `getGroupOnlineMemberCount` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupOnlineMemberCount.html)) 可以获取群在线人数。
+调用 `getGroupOnlineMemberCount` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupOnlineMemberCount.html)) 可以获取群在线人数。
 
 > ?
 >

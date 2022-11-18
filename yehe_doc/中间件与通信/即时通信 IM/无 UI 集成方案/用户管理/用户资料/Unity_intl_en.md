@@ -24,9 +24,9 @@ To stop receiving relationship chain events, call the same callback function and
 
 ## User Profile Management
 ### Querying and modifying your own profile
-Call the `ProfileGetUserProfileList` API ([c#](https://comm.qq.com/im/doc/unity/en/api/UserApi/ProfileGetUserProfileList.html)) and enter a user's `UserID` for the `friendship_getprofilelist_param_identifier_array` parameter to query the user's profile.
+Call the `ProfileGetUserProfileList` API ([Details](https://comm.qq.com/im/doc/unity/en/api/UserApi/ProfileGetUserProfileList.html)) and enter a user's `UserID` for the `friendship_getprofilelist_param_identifier_array` parameter to query the user's profile.
 
-Call the `ProfileModifySelfUserProfile` API ([c#](https://comm.qq.com/im/doc/unity/en/api/UserApi/ProfileModifySelfUserProfile.html)) to modify a user's profile.
+Call the `ProfileModifySelfUserProfile` API ([Details](https://comm.qq.com/im/doc/unity/en/api/UserApi/ProfileModifySelfUserProfile.html)) to modify a user's profile.
 
 Sample code:
 
@@ -56,12 +56,12 @@ TIMResult res = TencentIMSDK.ProfileGetUserProfileList(param, (int code, string 
 
 
 ### Querying the user profile of a non-friend
-Call the `ProfileGetUserProfileList` API ([c#](https://comm.qq.com/im/doc/unity/en/api/UserApi/ProfileGetUserProfileList.html)) and enter the `UserID` of a non-friend user for the `friendship_getprofilelist_param_identifier_array` parameter to query the profile of the non-friend user.
+Call the `ProfileGetUserProfileList` API ([Details](https://comm.qq.com/im/doc/unity/en/api/UserApi/ProfileGetUserProfileList.html)) and enter the `UserID` of a non-friend user for the `friendship_getprofilelist_param_identifier_array` parameter to query the profile of the non-friend user.
 
 > ? The profile of a non-friend user cannot be modified.
 
 ### Querying and modifying a friend's profile
-Call the `FriendshipGetFriendsInfo` API ([c#](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipGetFriendsInfo.html)) to query the profile of the specified friend. The relationship between the user and the friend can be obtained through the `friendship_friend_info_get_result_relation_type` field of the `FriendInfoGetResult` in the callback:
+Call the `FriendshipGetFriendsInfo` API ([Details](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipGetFriendsInfo.html)) to query the profile of the specified friend. The relationship between the user and the friend can be obtained through the `friendship_friend_info_get_result_relation_type` field of the `FriendInfoGetResult` in the callback:
 
 | relation                                                                 | Relationship                    |
 | ------------------------------------------------------------------------ | ------------------------------- |
@@ -80,7 +80,7 @@ TIMResult res = TencentIMSDK.FriendshipGetFriendsInfo(friend_userids, (int code,
 ```
 
 
-Call the `FriendshipModifyFriendProfile` API ([c#](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipModifyFriendProfile.html)) to modify the information of a friend such as remarks.
+Call the `FriendshipModifyFriendProfile` API ([Details](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipModifyFriendProfile.html)) to modify the information of a friend such as remarks.
 
 
 

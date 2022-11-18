@@ -8,7 +8,7 @@ If the last message is deleted, the `lastMessage` in the conversation will becom
 
 ### Deleting a local message
 
-Call `deleteMessageFromLocalStorage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/deleteMessageFromLocalStorage.html)) to delete a local message.
+Call `deleteMessageFromLocalStorage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/deleteMessageFromLocalStorage.html)) to delete a local message.
 
 > ?
 > 1. This API can only be used to delete a local historical message. After deleted, the message will be marked as deleted locally by the SDK and can no longer be pulled through `getHistoryMessage`.
@@ -25,7 +25,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().deleteMessageFromLocalStorag
 
 ### Deleting a message from the cloud
 
-Call `deleteMessages` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/deleteMessages.html)) to delete messages from the cloud.
+Call `deleteMessages` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/deleteMessages.html)) to delete messages from the cloud.
 
 This API deletes messages both locally and from the cloud, which cannot be recovered.
 

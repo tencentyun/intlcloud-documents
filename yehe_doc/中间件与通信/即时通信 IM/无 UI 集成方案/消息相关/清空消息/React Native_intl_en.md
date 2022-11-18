@@ -9,7 +9,7 @@ If the last message is deleted, the `lastMessage` in the conversation will becom
 
 ### Clearing one-to-one messages
 
-Call `clearC2CHistoryMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/clearC2CHistoryMessage.html)) to clear one-to-one messages.
+Call `clearC2CHistoryMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/clearC2CHistoryMessage.html)) to clear one-to-one messages.
 
 Below is the sample code:
 
@@ -21,7 +21,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ### Clearing group messages
 
-Call `clearGroupHistoryMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/clearGroupHistoryMessage.html)) to clear group messages.
+Call `clearGroupHistoryMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/clearGroupHistoryMessage.html)) to clear group messages.
 
 Below is the sample code:
 

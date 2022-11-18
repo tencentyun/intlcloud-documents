@@ -4,7 +4,7 @@
 > flutter sdk 3.8.0支持
 
 ## 搜索本地用户资料
-调用接口 `searchFriends` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/searchFriends.html)) 可以搜索本地用户资料。
+调用接口 `searchFriends` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/searchFriends.html)) 可以搜索本地用户资料。
 您可以设置搜索关键字 `keywordList`，并指定搜索的范围，即是否搜索用户的 `userID`、`nickName`、`remark` 字段。
 
 示例代码如下：

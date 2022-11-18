@@ -38,7 +38,7 @@ It is the storage path of the IM logs.
 >!The application needs read-write access to this path.
 
 ### Calling the initialization API
-After performing the above steps, you can call `InitSDK` ([c#](https://comm.qq.com/im/doc/unity/en/api/IMSDKInit/Init.html)) to initialize the SDK.
+After performing the above steps, you can call `InitSDK` ([Details](https://comm.qq.com/im/doc/unity/en/api/IMSDKInit/Init.html)) to initialize the SDK.
 
 Below is the sample code:
 
@@ -91,7 +91,7 @@ The callbacks are as described below:
 Generally, if your application's lifecycle is the same as the IM SDK's lifecycle, you don't need to uninitialize the IM SDK before exiting the application.
 However, you can uninitialize the IM SDK in special cases, for example, only after you enter a specific UI and no longer use it after exiting the UI.
 
-You can perform the uninitialization by calling the uninitialization API `unInitSDK` ([c#](https://comm.qq.com/im/doc/unity/en/api/IMSDKInit/Uninit.html)).
+You can perform the uninitialization by calling the uninitialization API `unInitSDK` ([Details](https://comm.qq.com/im/doc/unity/en/api/IMSDKInit/Uninit.html)).
 
 Below is the sample code:
 

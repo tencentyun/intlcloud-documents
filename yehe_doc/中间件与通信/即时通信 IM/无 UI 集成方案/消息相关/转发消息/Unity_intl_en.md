@@ -63,7 +63,7 @@ TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_Group,
 ### Receiving a merged message
 
 #### Adding a listener
-The receiver calls `AddRecvNewMsgCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to add a message listener.
+The receiver calls `AddRecvNewMsgCallback` ([Details](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/AddRecvNewMsgCallback.html)) to add a message listener.
 We recommend it be called early, such as after the chat page is initialized, to ensure timely message receiving in the application.
 
 Sample code:
@@ -88,7 +88,7 @@ TencentIMSDK.AddRecvNewMsgCallback((List<Message> messages, string user_data)=>{
 #### Parsing a message
 After the listener is added, the receiver will receive the merged message `Message` in `RecvNewMsgCallback`.
 You can use the merged message element to get the `merge_elem_title` and `merge_elem_abstract_array` for UI display.
-Then, when the user clicks the merged message, you can call the `MsgDownloadMergerMessage` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgDownloadMergerMessage.html)) to download the merged message list for UI display.
+Then, when the user clicks the merged message, you can call the `MsgDownloadMergerMessage` API ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgDownloadMergerMessage.html)) to download the merged message list for UI display.
 
 Sample code:
 
@@ -107,7 +107,7 @@ if(elem.TIMElemType == TIMElemType.kTIMElem_Merge){
 
 
 ## Forwarding Messages One by One
-To forward a single message, create a message identical to the original message first, and then call the `MsgSendMessage` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) to send the message.
+To forward a single message, create a message identical to the original message first, and then call the `MsgSendMessage` API ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) to send the message.
 
 
 

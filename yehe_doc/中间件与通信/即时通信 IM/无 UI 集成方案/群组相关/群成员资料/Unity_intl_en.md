@@ -5,7 +5,7 @@ The methods to manipulate the group member profile are in the `GroupGetMemberInf
 
 ## Getting the Profile of a Group Member
 
-Call `GroupGetMemberInfoList` ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetMemberInfoList.html)) to get the group member profile. This API supports passing in multiple `group_get_members_info_list_param_identifier_array` values at a time to batch get group member profiles and therefore improve the network transfer efficiency.
+Call `GroupGetMemberInfoList` ([Details](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetMemberInfoList.html)) to get the group member profile. This API supports passing in multiple `group_get_members_info_list_param_identifier_array` values at a time to batch get group member profiles and therefore improve the network transfer efficiency.
 
 Sample code:
 
@@ -30,7 +30,7 @@ TIMResult res = TencentIMSDK.GroupGetMemberInfoList(param, (int code, string des
 
 ## Modifying the Profile of a Group Member
 
-The group owner or admin can call the `GroupModifyMemberInfo` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyMemberInfo.html)) to modify the group name card (`group_modify_member_info_name_card`), custom field (`group_modify_member_info_custom_info`), and other information of a group member.
+The group owner or admin can call the `GroupModifyMemberInfo` API ([Details](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupModifyMemberInfo.html)) to modify the group name card (`group_modify_member_info_name_card`), custom field (`group_modify_member_info_custom_info`), and other information of a group member.
 
 Sample code:
 

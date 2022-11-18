@@ -4,7 +4,7 @@ You can call `MsgFindMessages` to query a local message by `messageID`.
 2. Audio-video group (AVChatRoom) messages cannot be queried, as they are not saved locally.
 
 ## Querying a Local Message
-Call the `MsgFindMessages` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgFindMessages.html)) to query a local message.
+Call the `MsgFindMessages` API ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgFindMessages.html)) to query a local message.
 
 Sample code:
 

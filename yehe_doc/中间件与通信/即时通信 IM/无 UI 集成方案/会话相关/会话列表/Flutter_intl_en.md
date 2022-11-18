@@ -7,7 +7,7 @@ The conversation list features include getting the conversation list and process
 This section describes how to implement such features.
 
 ## Getting the Conversation List
-You can call `getConversationList` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/getConversationList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `V2TIMConversationListener` callback.
+You can call `getConversationList` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/getConversationList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `V2TIMConversationListener` callback.
 
 User conversations are returned in a list that stores `V2TIMConversation` objects. Currently, the IM SDK sorts conversations according to the following rules:
 * Starting from the SDK for Flutter 3.8.0, the conversations obtained through this API are sorted based on the `orderKey` conversation object by default. The greater the `orderKey` value of a conversation, the higher position the conversation is in the list. The `orderKey` field is an integer that increases as the conversation is activated when a message is sent/received, a draft is set, or the conversation is pinned to the top.
@@ -64,7 +64,7 @@ You can get the updated conversation list in the following steps:
 3. Remove the conversation listener. This step is optional and can be performed as needed.
 
 ### Adding a conversation listener
-Call `addConversationListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/addConversationListener.html)) to add a conversation listener to receive conversation change events.
+Call `addConversationListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/addConversationListener.html)) to add a conversation listener to receive conversation change events.
 
 Sample code:
 
@@ -113,7 +113,7 @@ TencentImSDKPlugin.v2TIMManager.getConversationManager().addConversationListener
 
 
 ### Removing a conversation listener
-Call `removeConversationListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/removeConversationListener.html)) to remove a conversation listener to stop receiving conversation change events.
+Call `removeConversationListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/removeConversationListener.html)) to remove a conversation listener to stop receiving conversation change events.
 This step is optional and can be performed as needed.
 
 Sample code:
