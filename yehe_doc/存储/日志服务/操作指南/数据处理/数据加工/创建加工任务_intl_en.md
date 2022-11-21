@@ -9,11 +9,11 @@ If your business uses only processed logs, we recommend you configure the log re
 
 ## Billing
 Data processing incurs fees. For example, if you have a log topic in Guangzhou and 100 GB raw data that becomes 50 GB after being filtered, and the target topic is written (with index not enabled), you need to pay:  
-- Data processing fees: 100 GB * 0.15 CNY/GB = 15 CNY  
-- Write traffic fees of the target topic: 50 GB * 0.3 (compression ratio) * 0.18 CNY/GB = 2.7 CNY  
-- Storage fees of the target topic: 50 GB * 0.3 (compression ratio) * 0.0115 CNY/GB  = 0.17 CNY  
+- Data processing fees: 100 GB * 0.026 USD/GB = 2.6 USD 
+- Write traffic fees of the target topic: 50 GB * 0.3 (compression ratio) * 0.032 USD/GB = 0.48 USD  
+- Storage fees of the target topic: 50 GB * 0.3 (compression ratio) * 0.0024 USD/GB  = 0.036 USD  
 
-The total is 17.87 CNY, which is generally the case for regions in the Chinese mainland. For billing details in special regions, see [Product Pricing](https://intl.cloud.tencent.com/document/product/614/37510).
+The total is 3.116 USD, which is generally the case for regions in the Chinese mainland. For billing details in special regions, see [Product Pricing](https://intl.cloud.tencent.com/document/product/614/37510).
 
 ## Use cases
 
