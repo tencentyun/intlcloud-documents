@@ -65,17 +65,17 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------- | :-------- |
 | EventName          | Response | Fixed value: `TaskFinish`.    | String |
-| JobsDetail | Response | Job details |  container array |
+| JobsDetail | Response | Job details |  Container array |
 
 `JobsDetail` has the following sub-nodes:
-<a href="https://intl.cloud.tencent.com/document/product/1045/49947#jobsDetail" target="_blank">Same as `Response.JobsDetail` in the image processing job submitting API</a>
+<a href="https://intl.cloud.tencent.com/document/product/1045/49947" target="_blank">Same as `Response.JobsDetail` in the image processing job submitting API</a>
 
 **If the job is triggered by a workflow, `Response.JobsDetail.Input` will also contain a `CosHeaders` node of the container array type.**
 

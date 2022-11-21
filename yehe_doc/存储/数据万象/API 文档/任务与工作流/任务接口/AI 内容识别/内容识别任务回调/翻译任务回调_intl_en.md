@@ -1,10 +1,10 @@
-## Feature Overview
+## Feature Description
 
-CI supports user-defined callback URLs. After a job is completed, the system sends an HTTP POST request whose body contains notification content to a user-defined callback URL. You can use the configured callback URL to learn about the processing progress and status of the job so that you can perform other operations as needed.
+CI supports user-defined callback URLs. After a job is completed, the system sends an HTTP POST request with the body containing notification content to a user-defined callback URL. You can use the configured callback URL to learn about the processing progress and status of the job so that you can perform other operations as needed.
 
 ## Callback Content
 
-After the job is completed, the system sends the callback content to the callback URL that you configure. The response body is returned as **application/xml** data. The following contains all the nodes:
+After the job is completed, the system sends the callback content to the configured callback URL. The response body is returned as **application/xml** data. The following contains all the nodes:
 
 ```plaintext
 <Response>
@@ -42,21 +42,21 @@ After the job is completed, the system sends the callback content to the callbac
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------- | :-------- |
 | EventName          | Response | Fixed value: `TaskFinish`.    | String |
-| JobsDetail | Response | Job details |  Container |
+| JobsDetail | Response | Job details |  Container array |
 
 `JobsDetail` has the following sub-nodes:
-Same as the `Response.JobsDetail` in the <a href="https://intl.cloud.tencent.com/document/product/1045/49788" target="_blank">translation job submitting API</a>.
+<a href="https://intl.cloud.tencent.com/document/product/1045/49788" target="_blank">Same as `Response.JobsDetail` in the translation job submitting API.</a>
 
 **If the job is triggered by a workflow, `Response.JobsDetail.Input` will also contain a `CosHeaders` node of the container array type.**
 
@@ -78,7 +78,7 @@ Same as the `Response.JobsDetail` in the <a href="https://intl.cloud.tencent.com
 | WorkflowName       | Response.Workflow | Workflow name                      | String |
 | Name               | Response.Workflow | Workflow node name                   | String |
 
-## Examples
+## Samples
 
 ### Sample 1: Job callback triggered by a job API
 
@@ -118,16 +118,16 @@ Same as the `Response.JobsDetail` in the <a href="https://intl.cloud.tencent.com
 </Response>
 ```
 
-### Sample 2: Job callback in JSON format triggered by a job
+### Sample 2: Job callback in JSON format triggered by a job API
 
 ```plaintext
 {
     "EventName": "TaskFinish",
-    "JobsDetail": {
+    "JobsDetail": [{
         "Code": "Success",
         "CreationTime": "2022-07-25T16:35:39+0800",
         "EndTime": "2022-07-25T16:35:43+0800",
-        "Input":{
+        "Input": {
             "Object": "input/en.pdf",
             "Lang": "en",
             "Type": "pdf",
@@ -152,6 +152,6 @@ Same as the `Response.JobsDetail` in the <a href="https://intl.cloud.tencent.com
         "StartTime": "2022-07-25T16:35:39+0800",
         "State": "Success",
         "Tag": "Translation"
-    }
+    }]
 }
 ```

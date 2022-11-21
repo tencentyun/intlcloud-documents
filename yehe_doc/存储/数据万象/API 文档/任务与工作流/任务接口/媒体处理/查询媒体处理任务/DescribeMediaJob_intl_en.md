@@ -34,13 +34,13 @@ Authorization: <Auth String>
 
 >?
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/49351).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -51,7 +51,7 @@ This request does not have a request body.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49352).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -69,17 +69,17 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :----------------------------------------------------------- | :-------- |
-| JobsDetail | Response | Job details |  Container |
+| JobsDetail | Response | Job details |  Container array |
 | NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node will not be returned. |  String |
 
 The content of `JobsDetail` varies by job type. For more information, see the following documents:
-- <a href="https://intl.cloud.tencent.com/document/product/1045/48941" target="_blank">Submitting Video Transcoding Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/48941" target="_blank">Submitting Audio/Video Transcoding Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49782" target="_blank">Submitting Top Speed Codec Transcoding Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49569" target="_blank">Submitting Video-to-Animated Image Conversion Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/48938" target="_blank">Submitting Video Frame Capturing Job</a>
@@ -102,7 +102,7 @@ The content of `JobsDetail` varies by job type. For more information, see the fo
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/49353).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
 ## Samples
 

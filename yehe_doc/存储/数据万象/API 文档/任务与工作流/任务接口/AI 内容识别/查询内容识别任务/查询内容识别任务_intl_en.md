@@ -6,13 +6,13 @@ This API is used to query a specified job.
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer (recommended)
+                API Explorer is recommended.
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateAnimationTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
+                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
             </div>
         </div>
     </div>
@@ -33,13 +33,13 @@ Authorization: <Auth String>
 ```
 
 >?
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -50,7 +50,7 @@ This request does not have a request body.
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -63,30 +63,30 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :----------------------------------------------------------- | :-------- |
-| JobsDetail | Response | Job details |  Container |
-| NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node is not returned.               | String    |
+| JobsDetail | Response | Job details |  Container array |
+| NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node will not be returned. |  String |
 
 The content of `JobsDetail` varies by job type. For more information, see the following documents:
-- <a href="https://intl.cloud.tencent.com/document/product/1045/49788" target="_blank">Translation</a>
-- Speech Recognition
-- <a href="https://intl.cloud.tencent.com/document/product/1045/49790" target="_blank">Word Segmentation</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49788" target="_blank">Submitting Translation Job</a>
+- <a href="https://cloud.tencent.com/document/product/460/78951#jobsDetail" target="_blank">Submitting Speech Recognition Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49790" target="_blank">Submitting Word Segmentation Job</a>
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
 
-## Examples
+## Samples
 
 #### Request
 

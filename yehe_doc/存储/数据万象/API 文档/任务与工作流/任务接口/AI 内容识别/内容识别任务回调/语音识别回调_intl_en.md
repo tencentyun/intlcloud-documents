@@ -1,10 +1,10 @@
-## Feature Overview
+## Feature Description
 
-CI supports user-defined callback URLs. After a task is completed, the system sends an HTTP POST request whose body contains notification content to a user-defined callback URL. You can use the configured callback URL to learn about the processing progress and status of the task so that you can perform other operations as needed.
+CI supports user-defined callback URLs. After a job is completed, the system sends an HTTP POST request with the body containing notification content to a user-defined callback URL. You can use the configured callback URL to learn about the processing progress and status of the job so that you can perform other operations as needed.
 
 ## Callback Content
 
-After the task is completed, the system sends the callback content to the callback URL that you configure. The response body is returned as **application/xml** data. The following contains all the nodes:
+After the job is completed, the system sends the callback content to the configured callback URL. The response body is returned as **application/xml** data. The following contains all the nodes:
 
 ```plaintext
 <Response>
@@ -36,11 +36,11 @@ After the task is completed, the system sends the callback content to the callba
                 <AudioTime>19.7124</AudioTime>
                 <DetailObjectName>/example.txt.detail</DetailObjectName>
                 <ObjectName>/example.txt</ObjectName>
-                <Result>[0:3.320,0:19.712]  minnong, lishen, chuheridangwu, handihexiatu. shuizhipanzhongcan, lilijiexinku.</Result>
+                <Result>[0:3.320,0:19.712]  悯农，李绅，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。</Result>
                 <ResultDetail>
                     <EndMs>19712</EndMs>
-                    <FinalSentence>minnong, lishen, chuheridangwu, handihexiatu. shuizhipanzhongcan, lilijiexinku.</FinalSentence>
-                    <SliceSentence>min nong , li shen , chuhe ri dangwu , handi he xia tu . shuizhi panzhongcan , lili jie xinku .</SliceSentence>
+                    <FinalSentence>悯农，李绅，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。</FinalSentence>
+                    <SliceSentence>悯 农 ， 李 绅 ， 锄禾 日 当午 ， 汗滴 禾 下 土 。 谁知 盘中餐 ， 粒粒 皆 辛苦 。</SliceSentence>
                     <SpeakerId>0</SpeakerId>
                     <SpeechSpeed>2.4</SpeechSpeed>
                     <StartMs>3320</StartMs>
@@ -48,133 +48,133 @@ After the task is completed, the system sends the callback content to the callba
                         <OffsetEndMs>2190</OffsetEndMs>
                         <OffsetStartMs>0</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>min</Word>
+                        <Word>悯</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>2625</OffsetEndMs>
                         <OffsetStartMs>2190</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>nong</Word>
+                        <Word>农</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>2625</OffsetEndMs>
                         <OffsetStartMs>2190</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3060</OffsetEndMs>
                         <OffsetStartMs>2625</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>li</Word>
+                        <Word>李</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3825</OffsetEndMs>
                         <OffsetStartMs>3060</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>shen</Word>
+                        <Word>绅</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3825</OffsetEndMs>
                         <OffsetStartMs>3060</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>5040</OffsetEndMs>
                         <OffsetStartMs>3825</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>chuhe</Word>
+                        <Word>锄禾</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>5475</OffsetEndMs>
                         <OffsetStartMs>5040</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>ri</Word>
+                        <Word>日</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>6390</OffsetEndMs>
                         <OffsetStartMs>5475</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>dangwu</Word>
+                        <Word>当午</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>6390</OffsetEndMs>
                         <OffsetStartMs>5475</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>7365</OffsetEndMs>
                         <OffsetStartMs>6390</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>handi</Word>
+                        <Word>汗滴</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>7755</OffsetEndMs>
                         <OffsetStartMs>7365</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>he</Word>
+                        <Word>禾</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8130</OffsetEndMs>
                         <OffsetStartMs>7755</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>xia</Word>
+                        <Word>下</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8850</OffsetEndMs>
                         <OffsetStartMs>8130</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>tu</Word>
+                        <Word>土</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8850</OffsetEndMs>
                         <OffsetStartMs>8130</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>.</Word>
+                        <Word>。</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>9915</OffsetEndMs>
                         <OffsetStartMs>8850</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>shuizhi</Word>
+                        <Word>谁知</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>11130</OffsetEndMs>
                         <OffsetStartMs>9915</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>panzhongcan</Word>
+                        <Word>盘中餐</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>11130</OffsetEndMs>
                         <OffsetStartMs>9915</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>12045</OffsetEndMs>
                         <OffsetStartMs>11130</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>lili</Word>
+                        <Word>粒粒</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>12540</OffsetEndMs>
                         <OffsetStartMs>12045</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>jie</Word>
+                        <Word>皆</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>14745</OffsetEndMs>
                         <OffsetStartMs>12540</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>xinku</Word>
+                        <Word>辛苦</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>14745</OffsetEndMs>
                         <OffsetStartMs>12540</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>.</Word>
+                        <Word>。</Word>
                     </Words>
                     <WordsNum>22</WordsNum>
                 </ResultDetail>
@@ -186,21 +186,21 @@ After the task is completed, the system sends the callback content to the callba
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------- | :-------- |
 | EventName          | Response | Fixed value: `TaskFinish`.    | String |
-| JobsDetail | Response | Job details |  Container |
+| JobsDetail | Response | Job details |  Container array |
 
 `JobsDetail` has the following sub-nodes:
-Same as the `Response.JobsDetail` in the speech recognition job submitting API.
+<a href="https://cloud.tencent.com/document/product/460/78951#jobsDetail" target="_blank">Same as `Response.JobsDetail` in the speech recognition job submitting API.</a>
 
 **If the job is triggered by a workflow, `Response.JobsDetail.Input` will also contain a `CosHeaders` node of the container array type.**
 
@@ -222,7 +222,7 @@ Same as the `Response.JobsDetail` in the speech recognition job submitting API.
 | WorkflowName       | Response.Workflow | Workflow name                      | String |
 | Name               | Response.Workflow | Workflow node name                   | String |
 
-## Examples
+## Samples
 
 ### Sample 1: Job callback triggered by a job API
 
@@ -256,11 +256,11 @@ Same as the `Response.JobsDetail` in the speech recognition job submitting API.
                 <AudioTime>19.7124</AudioTime>
                 <DetailObjectName>/example.txt.detail</DetailObjectName>
                 <ObjectName>/example.txt</ObjectName>
-                <Result>[0:3.320,0:19.712]  minnong, lishen, chuheridangwu, handihexiatu. shuizhipanzhongcan, lilijiexinku.</Result>
+                <Result>[0:3.320,0:19.712]  悯农，李绅，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。</Result>
                 <ResultDetail>
                     <EndMs>19712</EndMs>
-                    <FinalSentence>minnong, lishen, chuheridangwu, handihexiatu. shuizhipanzhongcan, lilijiexinku.</FinalSentence>
-                    <SliceSentence>min nong , li shen , chuhe ri dangwu , handi he xia tu . shuizhi panzhongcan , lili jie xinku .</SliceSentence>
+                    <FinalSentence>悯农，李绅，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。</FinalSentence>
+                    <SliceSentence>悯 农 ， 李 绅 ， 锄禾 日 当午 ， 汗滴 禾 下 土 。 谁知 盘中餐 ， 粒粒 皆 辛苦 。</SliceSentence>
                     <SpeakerId>0</SpeakerId>
                     <SpeechSpeed>2.4</SpeechSpeed>
                     <StartMs>3320</StartMs>
@@ -268,133 +268,133 @@ Same as the `Response.JobsDetail` in the speech recognition job submitting API.
                         <OffsetEndMs>2190</OffsetEndMs>
                         <OffsetStartMs>0</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>min</Word>
+                        <Word>悯</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>2625</OffsetEndMs>
                         <OffsetStartMs>2190</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>nong</Word>
+                        <Word>农</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>2625</OffsetEndMs>
                         <OffsetStartMs>2190</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3060</OffsetEndMs>
                         <OffsetStartMs>2625</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>li</Word>
+                        <Word>李</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3825</OffsetEndMs>
                         <OffsetStartMs>3060</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>shen</Word>
+                        <Word>绅</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3825</OffsetEndMs>
                         <OffsetStartMs>3060</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>5040</OffsetEndMs>
                         <OffsetStartMs>3825</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>chuhe</Word>
+                        <Word>锄禾</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>5475</OffsetEndMs>
                         <OffsetStartMs>5040</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>ri</Word>
+                        <Word>日</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>6390</OffsetEndMs>
                         <OffsetStartMs>5475</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>dangwu</Word>
+                        <Word>当午</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>6390</OffsetEndMs>
                         <OffsetStartMs>5475</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>7365</OffsetEndMs>
                         <OffsetStartMs>6390</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>handi</Word>
+                        <Word>汗滴</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>7755</OffsetEndMs>
                         <OffsetStartMs>7365</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>he</Word>
+                        <Word>禾</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8130</OffsetEndMs>
                         <OffsetStartMs>7755</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>xia</Word>
+                        <Word>下</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8850</OffsetEndMs>
                         <OffsetStartMs>8130</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>tu</Word>
+                        <Word>土</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8850</OffsetEndMs>
                         <OffsetStartMs>8130</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>.</Word>
+                        <Word>。</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>9915</OffsetEndMs>
                         <OffsetStartMs>8850</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>shuizhi</Word>
+                        <Word>谁知</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>11130</OffsetEndMs>
                         <OffsetStartMs>9915</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>panzhongcan</Word>
+                        <Word>盘中餐</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>11130</OffsetEndMs>
                         <OffsetStartMs>9915</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>12045</OffsetEndMs>
                         <OffsetStartMs>11130</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>lili</Word>
+                        <Word>粒粒</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>12540</OffsetEndMs>
                         <OffsetStartMs>12045</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>jie</Word>
+                        <Word>皆</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>14745</OffsetEndMs>
                         <OffsetStartMs>12540</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>xinku</Word>
+                        <Word>辛苦</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>14745</OffsetEndMs>
                         <OffsetStartMs>12540</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>.</Word>
+                        <Word>。</Word>
                     </Words>
                     <WordsNum>22</WordsNum>
                 </ResultDetail>
@@ -450,11 +450,11 @@ Same as the `Response.JobsDetail` in the speech recognition job submitting API.
                 <AudioTime>19.7124</AudioTime>
                 <DetailObjectName>/example.txt.detail</DetailObjectName>
                 <ObjectName>/example.txt</ObjectName>
-                <Result>[0:3.320,0:19.712]  minnong, lishen, chuheridangwu, handihexiatu. shuizhipanzhongcan, lilijiexinku.</Result>
+                <Result>[0:3.320,0:19.712]  悯农，李绅，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。</Result>
                 <ResultDetail>
                     <EndMs>19712</EndMs>
-                    <FinalSentence>minnong, lishen, chuheridangwu, handihexiatu. shuizhipanzhongcan, lilijiexinku.</FinalSentence>
-                    <SliceSentence>min nong , li shen , chuhe ri dangwu , handi he xia tu . shuizhi panzhongcan , lili jie xinku .</SliceSentence>
+                    <FinalSentence>悯农，李绅，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。</FinalSentence>
+                    <SliceSentence>悯 农 ， 李 绅 ， 锄禾 日 当午 ， 汗滴 禾 下 土 。 谁知 盘中餐 ， 粒粒 皆 辛苦 。</SliceSentence>
                     <SpeakerId>0</SpeakerId>
                     <SpeechSpeed>2.4</SpeechSpeed>
                     <StartMs>3320</StartMs>
@@ -462,133 +462,133 @@ Same as the `Response.JobsDetail` in the speech recognition job submitting API.
                         <OffsetEndMs>2190</OffsetEndMs>
                         <OffsetStartMs>0</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>min</Word>
+                        <Word>悯</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>2625</OffsetEndMs>
                         <OffsetStartMs>2190</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>nong</Word>
+                        <Word>农</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>2625</OffsetEndMs>
                         <OffsetStartMs>2190</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3060</OffsetEndMs>
                         <OffsetStartMs>2625</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>li</Word>
+                        <Word>李</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3825</OffsetEndMs>
                         <OffsetStartMs>3060</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>shen</Word>
+                        <Word>绅</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>3825</OffsetEndMs>
                         <OffsetStartMs>3060</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>5040</OffsetEndMs>
                         <OffsetStartMs>3825</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>chuhe</Word>
+                        <Word>锄禾</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>5475</OffsetEndMs>
                         <OffsetStartMs>5040</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>ri</Word>
+                        <Word>日</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>6390</OffsetEndMs>
                         <OffsetStartMs>5475</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>dangwu</Word>
+                        <Word>当午</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>6390</OffsetEndMs>
                         <OffsetStartMs>5475</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>7365</OffsetEndMs>
                         <OffsetStartMs>6390</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>handi</Word>
+                        <Word>汗滴</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>7755</OffsetEndMs>
                         <OffsetStartMs>7365</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>he</Word>
+                        <Word>禾</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8130</OffsetEndMs>
                         <OffsetStartMs>7755</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>xia</Word>
+                        <Word>下</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8850</OffsetEndMs>
                         <OffsetStartMs>8130</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>tu</Word>
+                        <Word>土</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>8850</OffsetEndMs>
                         <OffsetStartMs>8130</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>.</Word>
+                        <Word>。</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>9915</OffsetEndMs>
                         <OffsetStartMs>8850</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>shuizhi</Word>
+                        <Word>谁知</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>11130</OffsetEndMs>
                         <OffsetStartMs>9915</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>panzhongcan</Word>
+                        <Word>盘中餐</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>11130</OffsetEndMs>
                         <OffsetStartMs>9915</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>,</Word>
+                        <Word>，</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>12045</OffsetEndMs>
                         <OffsetStartMs>11130</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>lili</Word>
+                        <Word>粒粒</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>12540</OffsetEndMs>
                         <OffsetStartMs>12045</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>jie</Word>
+                        <Word>皆</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>14745</OffsetEndMs>
                         <OffsetStartMs>12540</OffsetStartMs>
                         <VoiceType>0</VoiceType>
-                        <Word>xinku</Word>
+                        <Word>辛苦</Word>
                     </Words>
                     <Words>
                         <OffsetEndMs>14745</OffsetEndMs>
                         <OffsetStartMs>12540</OffsetStartMs>
                         <VoiceType>1</VoiceType>
-                        <Word>.</Word>
+                        <Word>。</Word>
                     </Words>
                     <WordsNum>22</WordsNum>
                 </ResultDetail>
@@ -614,203 +614,203 @@ Same as the `Response.JobsDetail` in the speech recognition job submitting API.
 
 ```plaintext
 {
-	"EventName": "TaskFinish",
-	"JobsDetail": {
-		"Code": "Success",
-		"CreationTime": "2022-09-02T10:25:38+0800",
-		"EndTime": "2022-09-02T10:25:46+0800",
-		"Input":{
-			"BucketId": "test-1234567890",
-			"Object": "minnong.mp3",
-			"Region": "ap-chongqing",
-			"CosHeaders": [{
-					"Key": "Content-Type",
-					"Value": "Audio/mp3"
-				},
-				{
-					"Key": "x-cos-request-id",
-					"Value": "NjJiZDYwYTFfNjUzYTYyNjRfZjEwZl8xMmZhYzY5"
-				},
-				{
-					"Key": "EventName",
-					"Value": "cos:ObjectCreated:Put"
-				},
-				{
-					"Key": "Size",
-					"Value": "1424687"
-				}
-			]
-		},
-		"JobId": "s886c0a7c2a6611ed847a618901112dcf",
-		"Operation": {
-			"UserData": "This is my SpeechRecognition job.",
-			"JobLevel": "0",
-			"Output":{
-				"Bucket": "test-1234567890",
-				"Object": "/example.txt",
-				"Region": "ap-chongqing"
-			},
-			"SpeechRecognitionResult": {
-				"AudioTime": "19.7124",
-				"DetailObjectName": "/example.txt.detail",
-				"ObjectName": "/example.txt",
-				"Result": "[0:3.320,0:19.712]  minnong, lishen, chuheridangwu, handihexiatu. shuizhipanzhongcan, lilijiexinku.",
-				"ResultDetail": {
-					"EndMs": "19712",
-					"FinalSentence": "minnong, lishen, chuheridangwu, handihexiatu. shuizhipanzhongcan, lilijiexinku.",
-					"SliceSentence": "min nong , li shen , chuhe ri dangwu , handi he xia tu . shuizhi panzhongcan , lili jie xinku .",
-					"SpeakerId": "0",
-					"SpeechSpeed": "2.4",
-					"StartMs": "3320",
-					"Words": [{
-							"OffsetEndMs": "2190",
-							"OffsetStartMs": "0",
-							"VoiceType": "0",
-							"Word": "min"
-						},
-						{
-							"OffsetEndMs": "2625",
-							"OffsetStartMs": "2190",
-							"VoiceType": "0",
-							"Word": "nong"
-						},
-						{
-							"OffsetEndMs": "2625",
-							"OffsetStartMs": "2190",
-							"VoiceType": "1",
-							"Word": ","
-						},
-						{
-							"OffsetEndMs": "3060",
-							"OffsetStartMs": "2625",
-							"VoiceType": "0",
-							"Word": "li"
-						},
-						{
-							"OffsetEndMs": "3825",
-							"OffsetStartMs": "3060",
-							"VoiceType": "0",
-							"Word": "shen"
-						},
-						{
-							"OffsetEndMs": "3825",
-							"OffsetStartMs": "3060",
-							"VoiceType": "1",
-							"Word": ","
-						},
-						{
-							"OffsetEndMs": "5040",
-							"OffsetStartMs": "3825",
-							"VoiceType": "0",
-							"Word": "chuhe"
-						},
-						{
-							"OffsetEndMs": "5475",
-							"OffsetStartMs": "5040",
-							"VoiceType": "0",
-							"Word": "ri"
-						},
-						{
-							"OffsetEndMs": "6390",
-							"OffsetStartMs": "5475",
-							"VoiceType": "0",
-							"Word": "dangwu"
-						},
-						{
-							"OffsetEndMs": "6390",
-							"OffsetStartMs": "5475",
-							"VoiceType": "1",
-							"Word": ","
-						},
-						{
-							"OffsetEndMs": "7365",
-							"OffsetStartMs": "6390",
-							"VoiceType": "0",
-							"Word": "handi"
-						},
-						{
-							"OffsetEndMs": "7755",
-							"OffsetStartMs": "7365",
-							"VoiceType": "0",
-							"Word": "he"
-						},
-						{
-							"OffsetEndMs": "8130",
-							"OffsetStartMs": "7755",
-							"VoiceType": "0",
-							"Word": "xia"
-						},
-						{
-							"OffsetEndMs": "8850",
-							"OffsetStartMs": "8130",
-							"VoiceType": "0",
-							"Word": "tu"
-						},
-						{
-							"OffsetEndMs": "8850",
-							"OffsetStartMs": "8130",
-							"VoiceType": "1",
-							"Word": "."
-						},
-						{
-							"OffsetEndMs": "9915",
-							"OffsetStartMs": "8850",
-							"VoiceType": "0",
-							"Word": "shuizhi"
-						},
-						{
-							"OffsetEndMs": "11130",
-							"OffsetStartMs": "9915",
-							"VoiceType": "0",
-							"Word": "panzhongcan"
-						},
-						{
-							"OffsetEndMs": "11130",
-							"OffsetStartMs": "9915",
-							"VoiceType": "1",
-							"Word": ","
-						},
-						{
-							"OffsetEndMs": "12045",
-							"OffsetStartMs": "11130",
-							"VoiceType": "0",
-							"Word": "lili"
-						},
-						{
-							"OffsetEndMs": "12540",
-							"OffsetStartMs": "12045",
-							"VoiceType": "0",
-							"Word": "jie"
-						},
-						{
-							"OffsetEndMs": "14745",
-							"OffsetStartMs": "12540",
-							"VoiceType": "0",
-							"Word": "xinku"
-						},
-						{
-							"OffsetEndMs": "14745",
-							"OffsetStartMs": "12540",
-							"VoiceType": "1",
-							"Word": "."
-						}
-					],
-					"WordsNum": "22"
-				}
-			},
-			"TemplateId": "t14aea553bb55c468b963fafa472afc538",
-			"TemplateName": "test"
-		},
-		"QueueId": "p2242ab62c7c94486915508540933a2c6",
-		"StartTime": "2022-09-02T10:25:39+0800",
-		"State": "Success",
-		"Tag": "SpeechRecognition",
-		"Workflow": {
-			"Name": "SpeechRecognition_1581665960537",
-			"RunId": "ic90edd59f84f11ec9d4f525400a3c59f",
-			"WorkflowId": "web6ac56c1ef54dbfa44d7f4103203be9",
-			"WorkflowName": "workflow-test"
-		}
-	}
+    "EventName": "TaskFinish",
+    "JobsDetail": [{
+        "Code": "Success",
+        "CreationTime": "2022-09-02T10:25:38+0800",
+        "EndTime": "2022-09-02T10:25:46+0800",
+        "Input": {
+            "BucketId": "test-1234567890",
+            "Object": "minnong.mp3",
+            "Region": "ap-chongqing",
+            "CosHeaders": [{
+                    "Key": "Content-Type",
+                    "Value": "Audio/mp3"
+                },
+                {
+                    "Key": "x-cos-request-id",
+                    "Value": "NjJiZDYwYTFfNjUzYTYyNjRfZjEwZl8xMmZhYzY5"
+                },
+                {
+                    "Key": "EventName",
+                    "Value": "cos:ObjectCreated:Put"
+                },
+                {
+                    "Key": "Size",
+                    "Value": "1424687"
+                }
+            ]
+        },
+        "JobId": "s886c0a7c2a6611ed847a618901112dcf",
+        "Operation": {
+            "UserData": "This is my SpeechRecognition job.",
+            "JobLevel": "0",
+            "Output": {
+                "Bucket": "test-1234567890",
+                "Object": "/example.txt",
+                "Region": "ap-chongqing"
+            },
+            "SpeechRecognitionResult": {
+                "AudioTime": "19.7124",
+                "DetailObjectName": "/example.txt.detail",
+                "ObjectName": "/example.txt",
+                "Result": "[0:3.320,0:19.712]  悯农，李绅，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。",
+                "ResultDetail": {
+                    "EndMs": "19712",
+                    "FinalSentence": "悯农，李绅，锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。",
+                    "SliceSentence": "悯 农 ， 李 绅 ， 锄禾 日 当午 ， 汗滴 禾 下 土 。 谁知 盘中餐 ， 粒粒 皆 辛苦 。",
+                    "SpeakerId": "0",
+                    "SpeechSpeed": "2.4",
+                    "StartMs": "3320",
+                    "Words": [{
+                            "OffsetEndMs": "2190",
+                            "OffsetStartMs": "0",
+                            "VoiceType": "0",
+                            "Word": "悯"
+                        },
+                        {
+                            "OffsetEndMs": "2625",
+                            "OffsetStartMs": "2190",
+                            "VoiceType": "0",
+                            "Word": "农"
+                        },
+                        {
+                            "OffsetEndMs": "2625",
+                            "OffsetStartMs": "2190",
+                            "VoiceType": "1",
+                            "Word": "，"
+                        },
+                        {
+                            "OffsetEndMs": "3060",
+                            "OffsetStartMs": "2625",
+                            "VoiceType": "0",
+                            "Word": "李"
+                        },
+                        {
+                            "OffsetEndMs": "3825",
+                            "OffsetStartMs": "3060",
+                            "VoiceType": "0",
+                            "Word": "绅"
+                        },
+                        {
+                            "OffsetEndMs": "3825",
+                            "OffsetStartMs": "3060",
+                            "VoiceType": "1",
+                            "Word": "，"
+                        },
+                        {
+                            "OffsetEndMs": "5040",
+                            "OffsetStartMs": "3825",
+                            "VoiceType": "0",
+                            "Word": "锄禾"
+                        },
+                        {
+                            "OffsetEndMs": "5475",
+                            "OffsetStartMs": "5040",
+                            "VoiceType": "0",
+                            "Word": "日"
+                        },
+                        {
+                            "OffsetEndMs": "6390",
+                            "OffsetStartMs": "5475",
+                            "VoiceType": "0",
+                            "Word": "当午"
+                        },
+                        {
+                            "OffsetEndMs": "6390",
+                            "OffsetStartMs": "5475",
+                            "VoiceType": "1",
+                            "Word": "，"
+                        },
+                        {
+                            "OffsetEndMs": "7365",
+                            "OffsetStartMs": "6390",
+                            "VoiceType": "0",
+                            "Word": "汗滴"
+                        },
+                        {
+                            "OffsetEndMs": "7755",
+                            "OffsetStartMs": "7365",
+                            "VoiceType": "0",
+                            "Word": "禾"
+                        },
+                        {
+                            "OffsetEndMs": "8130",
+                            "OffsetStartMs": "7755",
+                            "VoiceType": "0",
+                            "Word": "下"
+                        },
+                        {
+                            "OffsetEndMs": "8850",
+                            "OffsetStartMs": "8130",
+                            "VoiceType": "0",
+                            "Word": "土"
+                        },
+                        {
+                            "OffsetEndMs": "8850",
+                            "OffsetStartMs": "8130",
+                            "VoiceType": "1",
+                            "Word": "。"
+                        },
+                        {
+                            "OffsetEndMs": "9915",
+                            "OffsetStartMs": "8850",
+                            "VoiceType": "0",
+                            "Word": "谁知"
+                        },
+                        {
+                            "OffsetEndMs": "11130",
+                            "OffsetStartMs": "9915",
+                            "VoiceType": "0",
+                            "Word": "盘中餐"
+                        },
+                        {
+                            "OffsetEndMs": "11130",
+                            "OffsetStartMs": "9915",
+                            "VoiceType": "1",
+                            "Word": "，"
+                        },
+                        {
+                            "OffsetEndMs": "12045",
+                            "OffsetStartMs": "11130",
+                            "VoiceType": "0",
+                            "Word": "粒粒"
+                        },
+                        {
+                            "OffsetEndMs": "12540",
+                            "OffsetStartMs": "12045",
+                            "VoiceType": "0",
+                            "Word": "皆"
+                        },
+                        {
+                            "OffsetEndMs": "14745",
+                            "OffsetStartMs": "12540",
+                            "VoiceType": "0",
+                            "Word": "辛苦"
+                        },
+                        {
+                            "OffsetEndMs": "14745",
+                            "OffsetStartMs": "12540",
+                            "VoiceType": "1",
+                            "Word": "。"
+                        }
+                    ],
+                    "WordsNum": "22"
+                }
+            },
+            "TemplateId": "t14aea553bb55c468b963fafa472afc538",
+            "TemplateName": "test"
+        },
+        "QueueId": "p2242ab62c7c94486915508540933a2c6",
+        "StartTime": "2022-09-02T10:25:39+0800",
+        "State": "Success",
+        "Tag": "SpeechRecognition",
+        "Workflow": {
+            "Name": "SpeechRecognition_1581665960537",
+            "RunId": "ic90edd59f84f11ec9d4f525400a3c59f",
+            "WorkflowId": "web6ac56c1ef54dbfa44d7f4103203be9",
+            "WorkflowName": "workflow-test"
+        }
+    }]
 }
 ```
