@@ -1,54 +1,122 @@
 ## Overview
 
-If the verification and authentication method provided by the API Gateway cannot meet your requirements, you can use custom verification plugin to verify and authenticate a request.
+If the verification and authentication method provided by API Gateway cannot meet your requirements, you can use the custom authentication plugin with custom code.
 
-Custom verification plugin applies during the request process. The API Gateway will forward the request to the verification function after receiving it from the Client. Then, the request will be forwarded to the service backend only if it passes the verification by the function, otherwise the request will be denied.
-<img  src="https://qcloudimg.tencent-cloud.cn/raw/eaad1bafed794ebf70d0fbbd3d0e01bf.png" width="600px">
+The custom verification plugin applies during the request process. API Gateway will forward the request to the verification function after receiving it from the client. You can deploy the verification function in SCF, on the public network, or in a VPC. Then, the request will be forwarded to the service backend only if it passes the verification; otherwise, the request will be denied.
 
+![](https://qcloudimg.tencent-cloud.cn/raw/4e4a0585335d1e7ef6d6c271af68b948.jpg)
 
 ## Prerequisites
 
-- You have activated [SCF](https://console.cloud.tencent.com/scf/list).
+For verification services deployed in SCF, you need to enable the [SCF](https://console.cloud.tencent.com/scf/list) service.
 
 ## Directions
 
 ### Step 1. Create a verification function
+For verification functions deployed on the public network or in a VPC, you can skip this step.
 
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list).
-2. Click **Function Service** on the left sidebar to open the function list page.
-3. Click **Create** in the top-left corner of the page to create a verification function.
-
-> ?
-> - You need to write the verification function. For more information, see [Template of Custom Verification Function](https://github.com/tencentyun/serverless-demo/blob/master/Python3.6-APIGWCustomAuth/src/index.py).
-> - Custom verification plugin requires to return the value of api-auth in the Body of the response body that is returned to the gateway. When the value is `true`, it means the verification is passed; when the value is `false` or `null`, it means the verification is failed.
+2. Click **Functions** on the left sidebar to enter the function list page.
+3. Click **Create** at the upper-left corner of the page to create a verification SCF.
 
 
 ### Step 2. Create a custom verification plugin
 
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
-2. On the left sidebar, click **Plugin - Custom Plugin** to open the custom plugin list page.
-3. Create **Create** in the top-left corner of the page to create a custom verification plugin. You need to enter the following parameters:
+2. On the left sidebar, click **Plugin** > **Custom Plugin** to enter the custom plugin list page.
+3. Click **Create** in the top-left corner of the page to create a custom verification plugin.
+	- For verification services deployed in SCF, you need to enter the following data when creating the custom verification plugin:
+<table>
+<tr>
+<th style="width:12%">Parameter</th>
+<th style="width:10%">Required</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Function</td>
+<td>Yes</td>
+<td>Select the namespace, name, and version of the verification function.</td>
+</tr>
+<tr>
+<td>Backend timeout</td>
+<td>Yes</td>
+<td>Set the backend timeout that API Gateway forwards the request to the verification function. The maximum time limit is 30 minutes. When no response is returned before the timeout after API Gateway calls the function, API Gateway will end the call and return an error message.</td>
+</tr>
+<tr>
+<td>Whether to send the Body</td>
+<td>Yes</td>
+<td><ul><li>When the value is `Yes`, the Header, Body, and Query requested by the client will be sent to the function.</li>
+<li>When the value is `No`, the requested Body will not be sent.</li></ul>
+</td>
+</tr>
+<tr>
+<td>Verification Parameters</td>
+<td>No</td>
+<td>Set the request parameters for verification. When **Cache Period** is not `0`, this parameter must be set. When caching is enabled, the verification result will be queried with this parameter as the search criterion.</td>
+</tr>
+<tr>
+<td>Cache Period</td>
+<td>Yes</td>
+<td>Set the cache validity period for the verification result. `0` indicates that caching is not enabled. The cache validity period can be up to 3,600 seconds.</td>
+</tr>
+</table>
+	- For verification services deployed on the public network, you need to enter the following data when creating the custom verification plugin:
+<table>
+<tr>
+<th style="width:12%">Parameter</th>
+<th style="width:10%">Required</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Request method</td>
+<td>Yes</td>
+<td>Request method of the custom verification function, which can be GET, POST, PUT, DELETE, HEAD, and ANY.</td>
+</tr>
+<tr>
+<td>Public network service</td>
+<td>Yes</td>
+<td>Access address of the custom verification service, which can be an HTTP or HTTPS address.</td>
+</tr>
+<tr>
+<td>Path match mode</td>
+<td>Yes</td>
+<td>It can be backend path or full path match.
+<ul><li>Backend path match: The configured path is used to request the service.</li>
+<li>Full path match: The overlapping part is used to request the service. For example, if the configured API path is `/a/` and the request path is `/a/b`, then the path transferred to the service will be `/b` after full path match is enabled.</li></ul>
+</td>
+</tr>
+</table>
 
-| Parameter | Required | Description |
-| ------------ | -------- | ------------------------------------------------------------ |
-| Function | Required | You need to select the namespace, name and version of the verification function. |
-| Backend timeout    | Required | This sets the backend timeout that the API Gateway forwards the request to the verification function. The maximum time limit is 30 minutes. When no response is returned before the timeout after the API Gateway calls the function, the API Gateway will end the call and returns an error message. |
-| Whether to send Body | Required | When the value is "Yes", the Header, Body and Query requested by the Client will be sent to the function; when the value is "No", the Body requested will not be sent. |
-| Verification parameter | Optional | It sets the request parameters for verification. When caching time is not `0`, this parameter must be set. When caching is enabled, the verification result will be queried with this parameter as the search condition. |
-| Caching time | Required | It sets the caching time for the verification result. `0` indicates that caching is not enabled. Caching time can be up to 3,600 seconds. |
+	- For verification services deployed in a VPC, you need to enter the following data when creating the custom verification plugin:
+<table>
+<tr>
+<th style="width:12%">Parameter</th>
+<th style="width:10%">Required</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>VPC</td>
+<td>Yes</td>
+<td>Select the VPC of the verification service.</td>
+</tr>
+<tr>
+<td>Request method</td>
+<td>Yes</td>
+<td>Request method of the custom verification function, which can be GET, POST, PUT, DELETE, HEAD, and ANY.</td>
+</tr>
+<tr>
+<td>Backend address</td>
+<td>Yes</td>
+<td>Access address of the custom verification service, which can be an HTTP or HTTPS address.</td>
+</tr>
+</table>
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1bdab422c46bae1be216a2dca590a75d.png)
-
-> ? After caching is enabled, the API Gateway will record the relationship between the value of authentication parameter and the value of api-auth. If there is subsequent request during caching time, and the value of authentication parameter is the same as the value of the first request, the request will not be forwarded to the function and will be processed according to the value of api-auth for the first request.
-
-4. Click **Save** to complete the process.
 
 
 ### Step 3. Bind the API
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
-2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/e9e674392e0070e320d38c1c00fc1ba2.png)
+2. In the **Bind API** pop-up window, select the service, environment, and the target API.
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 
@@ -58,10 +126,10 @@ Custom verification plugin applies during the request process. The API Gateway w
 {
     "cache_time":10,   // Verification result caching duration in seconds. Value range: 0–3600
     "endpoint_timeout":15, // Backend timeout period in seconds. Value range: 0–60
-    "func_name":"test_name", // Custom function name
-    "func_namespace":"test_namespace", // Custom function namespace
-    "func_qualifier":"$LATEST", // Custom function version
-    "is_send_body":true, // Whether to send the request Body to the function
+    "func_name":"test_name", // Custom SCF name
+    "func_namespace":"test_namespace", // Custom SCF namespace
+    "func_qualifier":"$LATEST", // Custom SCF version
+    "is_send_body":true, // Whether to send the request Body to the SCF
     "header_auth_parameters":[ // Verification parameter in Header location. The plugin caches the verification result based on the parameter value
         "Header1"
     ],
@@ -76,6 +144,6 @@ Custom verification plugin applies during the request process. The API Gateway w
 ## Notes
 
 - When you enable caching and configure the verification parameter, the API Gateway will conduct parameter verification. If the request does not transfer the verification parameter, the API Gateway will report an error message "xxx parameter is missing". The values are case insensitive for parameter verification and cache hitting conducted by the API Gateway.
-- Binding a custom plugin to the API means creating a trigger for the function to trigger the API. Deleting the trigger on the SCF side means unbinding the plugin from the API.
+- Binding a custom plugin to the API means creating a trigger for the SCF to trigger the API. Deleting the trigger on the SCF side means unbinding the plugin from the API.
 - For now, the custom verification plugin only supports event-triggered function and does not support HTTP-triggered function.
-- The custom verification plugin can coexist with the verification method provided by the API Gateway. The latter takes priority. We recommend you set the API where the custom verification plugin bound to "free from verification".
+- The custom verification plugin can coexist with the verification method provided by the API Gateway. The latter takes priority. We recommend that you set the API where the custom verification plugin bound to "free from verification".

@@ -74,11 +74,27 @@ The nodes are described as follows:
 | ------------------ | ------- | -------------------------------------------- | ------ | -------- | ------------------------------------------------------------ |
 | Tag                | Request | Template tag: Tts                                          | String    | Yes   | Tts |
 | Name               | Request | Template name, which can contain letters, digits, underscores (_), hyphens (-), and asterisks (\*). | String    | Yes       | None                             |
-| Mode               | Request | Processing mode, which is `Asyc` by default. | String   | No    | Asyc (async synthesis); Sync (sync synthesis).</br>When `Asyc` is selected, the codec can only be `pcm`. |
-| Codec              | Request | Audio format, which is wav (sync)/pcm (async) by default. | String | No | wav, mp3, pcm |
-| VoiceType          | Request | Voice, which is `ruxue` by default. | String | No | ruxue, aixiaonan, aixiaoxing |
-| Volume             | Request | Volume, which is 0 by default. | String | No | [-10,10] |
-| Speed              | Request | Speech rate, which is 100 by default. | String | No | [50,200] |
+| Mode               | Request | Processing mode, which is `Asyc` by default. | String   | No    | `Asyc` (async synthesis); `Sync` (sync synthesis).</br>When `Asyc` is selected, the codec can only be `pcm`. |
+| Codec              | Request | Audio format, which is `wav` (sync) or `pcm` (async) by default. | String | No | `wav`, `mp3`, `pcm` |
+| VoiceType          | Request | Voice, which is `ruxue` by default. | String | No | See the table below |
+| Volume             | Request | Volume, which is `0` by default. | String | No | [-10,10] |
+| Speed              | Request | Speech rate, which is `100` by default. | String | No | [50,200] |
+
+Supported voices
+
+| Name | Voice Parameter Value | Async Synthesis | Sync Synthesis |
+|---------|---------|---------|---------|
+| Ruxue   | ruxue       | Supported | Supported  |
+| Aixiaonan | aixiaonan   | Not supported  | Supported |
+| Aixiaoxing | aixiaoxing  | Supported | Supported |
+| Aixiaocheng | aixiaocheng | Supported | Supported |
+| Aixiaoxue | aixiaoxue   | Supported | Supported |
+| Aixiaolu | aixiaolu    | Supported | Supported |
+| Aixiaodong | aixiaodong  | Supported | Supported |
+| Aixiaoliao | aixiaoliao  | Not supported | Supported |
+| Aixiaoqian | aixiaoqian  | Supported | Supported |
+| Aixiaoyang | aixiaoyang  | Supported | Supported |
+| Alice | alice        | Supported | Supported |
 
 Voice description
 
@@ -86,13 +102,25 @@ Voice description
 |---------|---------|---------|---------|---------|---------|
 | Ruxue | ruxue | Standard female voice | General | Chinese, Chinese-English mix | Standard |
 | Aixiaonan | aixiaonan | Sweet female voice | General, social | Chinese, Chinese-English mix | Premium |
-| Aixiaoxing | aixiaoxing | Commentary male voice | General, commentary | Chinese, Chinese-English mix | Premium |
+| Aixiaoxing | aixiaoxing | Vigorous male voice | General, commentary | Chinese, Chinese-English mix | Premium |
+| Aixiaocheng | aixiaocheng | Standard male voice | General | Chinese, Chinese-English mix | Standard |
+| Aixiaoxue | aixiaoxue   | Standard female voice | General, customer service | Chinese, Chinese-English mix | Standard |
+| Aixiaolu | aixiaolu    | Reading female voice | General, audiobook | Chinese, Chinese-English mix | Standard |
+| Aixiaodong | aixiaodong  | News male voice | General, news broadcasting | Chinese, Chinese-English mix | Standard |
+| Aixiaoliao | aixiaoliao  | Sentimental female voice | General, social | Chinese, Chinese-English mix | Premium |
+| Aixiaoqian | aixiaoqian  | Vigorous female voice | General, social | Chinese, Chinese-English mix | Premium |
+| Aixiaoyang | aixiaoyang  | Broadcasting male voice | General, news broadcasting | Chinese, Chinese-English mix | Standard |
+| Alice | alice        | English female voice | General | English | Standard |
 
 Multi-sentiment voice description
 
 | Name | Voice Parameter Value | Sentiment Category |
 |---------|---------|---------|
-| Aixiaoxing | aixiaoxing | Neutral, broadcasting, calm, excited |
+| Aixiaoxing | aixiaoxing | Neutral, excited |
+| Aixiaocheng | aixiaocheng | Neutral, broadcasting |
+| Aixiaoxue | aixiaoxue   | Neutral, broadcasting, customer service |
+| Aixiaolu | aixiaolu    | Neutral, story telling, customer service |
+
 
 ## Response
 
@@ -129,7 +157,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :----------------------------------------------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 <span id="Response"></span>
 `Response` has the following sub-nodes:
@@ -139,8 +167,8 @@ The nodes are as described below:
 | TemplateId         | Response.Template | Template ID                        | String    |
 | Name               | Response.Template | Template name                       | String    |
 | BucketId           | Response.Template | Template bucket                 | String    |
-| Category           | Response.Template | Template category: Custom or Official | String    |
-| Tag                | Response.Template | Template type: Tts                                                | String    |
+| Category           | Response.Template | Template category: `Custom` or `Official` | String    |
+| Tag                | Response.Template | Template tag: Tts                                                | String    |
 | UpdateTime         | Response.Template | Update time                       | String    |
 | CreateTime         | Response.Template | Creation time                       | String    |
 | TtsTpl    | Response.Template     | Template parameters                                                | Container |
