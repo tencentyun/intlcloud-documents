@@ -1098,7 +1098,7 @@ Details
        <td class="tg-cly1 select">MP4, MP3, HLS, DASH</td>
     </tr>
     <tr>
-       <td class="tg-cly1"><a href="https://cloud.tencent.com/product/leb">Live Event Broadcasting (LEB)</a></td>
+       <td class="tg-cly1">Live Event Broadcasting (LEB)</td>
        <td class="tg-cly1 select">Live and VOD playback</td>
        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1 select">×</td>
