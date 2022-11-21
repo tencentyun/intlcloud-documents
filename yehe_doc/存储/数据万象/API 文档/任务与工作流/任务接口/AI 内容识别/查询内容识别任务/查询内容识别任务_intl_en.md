@@ -78,7 +78,7 @@ The nodes are as described below:
 
 The content of `JobsDetail` varies by job type. For more information, see the following documents:
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49788" target="_blank">Submitting Translation Job</a>
-- <a href="https://cloud.tencent.com/document/product/460/78951#jobsDetail" target="_blank">Submitting Speech Recognition Job</a>
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49789" target="_blank">Submitting Speech Recognition Job</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49790" target="_blank">Submitting Word Segmentation Job</a>
 
 #### Error codes

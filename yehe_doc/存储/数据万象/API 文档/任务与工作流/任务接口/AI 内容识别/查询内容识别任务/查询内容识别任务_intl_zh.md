@@ -73,12 +73,12 @@ Container 节点 Response 的内容：
 
 | 节点名称（关键字） | 父节点   | 描述                                                         | 类型      |
 | :----------------- | :------- | :----------------------------------------------------------- | :-------- |
-| JobsDetail         | Response | 任务的详细信息                                            | Container |
+| JobsDetail         | Response | 任务的详细信息                                            | Container 数组 |
 | NonExistJobIds     | Response | 查询的 ID 中不存在任务，所有任务都存在时不返回               | String    |
 
 对于不同的任务类型，JobsDetail 的内容不同，请参照以下链接：
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49788" target="_blank">翻译</a>
-- 语言识别
+- <a href="https://intl.cloud.tencent.com/document/product/1045/49789" target="_blank">语言识别</a>
 - <a href="https://intl.cloud.tencent.com/document/product/1045/49790" target="_blank">分词</a>
 
 #### 错误码
