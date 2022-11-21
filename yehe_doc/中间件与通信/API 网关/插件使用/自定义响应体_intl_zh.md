@@ -4,7 +4,7 @@ API 网关响应给客户端响应体中包含很多字段，如果您需要修�
 
 自定义请求体插件作用在响应过程中， 响应内容改写服务可部署在云函数、公网、或内网 VPC 上。业务后端处理完请求报文后，会将响应体传递给 API 网关。API 网关接收到响应内容后，API 网关会将响应内容转发到响应体修改服务中，响应体内容修改完成后，将修改后的响应体响应给 API 网关，API 网关再将修改后的响应体转发给业务后端。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/491bf20a919a7caa1589aa974ccbe13f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c1f6d2d82dd9e3a19bd83f5a21acbee2.jpg)
 
 ## 前提条件
 
@@ -77,7 +77,7 @@ API 网关响应给客户端响应体中包含很多字段，如果您需要修�
 </td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/dc03d3acb6b928083b26876438d8b2d7.png"> 
+
 	- 对于部署在内网 VPC 的认证服务，创建自定义响应插件时需要填写的数据如下：
 <table>
 <tr>
@@ -101,14 +101,12 @@ API 网关响应给客户端响应体中包含很多字段，如果您需要修�
 <td>响应体改写体改写服务访问地址，支持 HTTP 和 HTTPS 协议。</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/a68f03c1c851b9ab255524338105121b.png"> 
 
 
 ### 步骤3：绑定 API
 
 1. 在插件列表中选中 [步骤2](#step2) 创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## pluginData
