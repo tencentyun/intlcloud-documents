@@ -3,7 +3,7 @@ When a user creates a one-to-one or group chat, a conversation will be created.
 In the Tencent Cloud IM SDK, the conversation class is `TencentImSDKPlugin.v2TIMManager.getConversationManager()`. You can use the conversation management class APIs to display/update the conversation list, update the unread count, pin a conversation to the top, make a conversation draft, and mute message notifications.
 
 ## Conversation Class
-The conversation class is `V2TIMConversation` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html)), which defines the following content:
+The conversation class is `V2TIMConversation` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html)), which defines the following content:
 
 | Attribute       | Definition                                      | Description                                                                                                                                                                                                                                                                                                       |
 | --------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

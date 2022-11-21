@@ -15,7 +15,7 @@ The group attribute has the following features:
 
 ### Initializing group attributes
 
-You can call the `initGroupAttributes` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/initGroupAttributes.html)) to initialize the group attributes, and the original group attributes, if any, will be cleared.
+You can call the `initGroupAttributes` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/initGroupAttributes.html)) to initialize the group attributes, and the original group attributes, if any, will be cleared.
 
 Below is the sample code:
 
@@ -28,7 +28,7 @@ groupManager.initGroupAttributes("groupID", {
 
 ### Setting group attributes
 
-You can call the `setGroupAttributes` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupAttributes.html)) to set the group attributes. If a group attribute does not exist, it will be automatically added.
+You can call the `setGroupAttributes` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupAttributes.html)) to set the group attributes. If a group attribute does not exist, it will be automatically added.
 
 Below is the sample code:
 
@@ -41,7 +41,7 @@ groupManager.setGroupAttributes("groupID", {
 
 ### Deleting group attributes
 
-You can call the `deleteGroupAttributes` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/deleteGroupAttributes.html)) to delete specified group attributes. If `keys` is `null`/`nil`, all the group attributes will be cleared.
+You can call the `deleteGroupAttributes` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/deleteGroupAttributes.html)) to delete specified group attributes. If `keys` is `null`/`nil`, all the group attributes will be cleared.
 
 Below is the sample code:
 
@@ -52,7 +52,7 @@ groupManager.deleteGroupAttributes("groupID", ["attr1", "attr2"]);
 
 ### Getting group attributes
 
-You can call the `getGroupAttributes` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupAttributes.html)) to get specified group attributes. If `keys` is `null`/`nil`, all the group attributes will be obtained.
+You can call the `getGroupAttributes` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupAttributes.html)) to get specified group attributes. If `keys` is `null`/`nil`, all the group attributes will be obtained.
 
 Below is the sample code:
 
@@ -63,7 +63,7 @@ const attrs = await groupManager.getGroupAttributes("groupID");
 
 ### Updating group attributes
 
-If you have called `addGroupListener` to add a group event listener, all the group attributes will be called back through `onGroupAttributeChanged` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnGroupAttributeChanged.html)) when a group attribute is changed.
+If you have called `addGroupListener` to add a group event listener, all the group attributes will be called back through `onGroupAttributeChanged` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnGroupAttributeChanged.html)) when a group attribute is changed.
 
 Below is the sample code:
 

@@ -13,8 +13,8 @@ Community groups are used to manage group members. All topics under the same com
 
 You need to perform two steps to create a community group that supports topics:
 
-1. Create the `V2TIMGroupInfo` object ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html?h=V2TIMGroupInfo)) and set `groupType` to `Community` and `isSupportTopic` to `true`/`YES`.
-2. Call the `createGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createGroup.html?h=createGroup)) API to create the community group.
+1. Create the `V2TIMGroupInfo` object ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html?h=V2TIMGroupInfo)) and set `groupType` to `Community` and `isSupportTopic` to `true`/`YES`.
+2. Call the `createGroup` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createGroup.html?h=createGroup)) API to create the community group.
 
 Sample code:
 
@@ -25,7 +25,7 @@ groupManager.createGroup(groupType: "Community", groupName: "Community",isSuppor
 
 
 ### Getting the list of community groups joined
-You can call `getJoinedCommunityList`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedCommunityList.html?h=getJoinedCommunityList)) to get the list of community groups joined.
+You can call `getJoinedCommunityList`([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getJoinedCommunityList.html?h=getJoinedCommunityList)) to get the list of community groups joined.
 
 Sample code:
 
@@ -92,8 +92,8 @@ Multiple topics can be created under the same community group. All the topics ar
 ### Creating a topic
 
 You need to perform two steps to create a topic:
-1. Create a `V2TIMTopicInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html)) object.
-2. Call the `createTopicInCommunity` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createTopicInCommunity.html)) API to create a topic.
+1. Create a `V2TIMTopicInfo` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html)) object.
+2. Call the `createTopicInCommunity` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/createTopicInCommunity.html)) API to create a topic.
 
 Sample code:
 
@@ -107,7 +107,7 @@ groupManager.createTopicInCommunity(groupID: "groupID", topicInfo: V2TimTopicInf
 
 
 ### Deleting a topic
-You can call the `deleteTopicFromCommunity`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/deleteTopicFromCommunity.html)) API to delete a topic.
+You can call the `deleteTopicFromCommunity`([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/deleteTopicFromCommunity.html)) API to delete a topic.
 
 Sample code:
 
@@ -121,8 +121,8 @@ groupManager.deleteTopicFromCommunity(groupID: "",topicIDList:["topicID"]);
 ### Modifying topic information
 You need to perform two steps to modify the information of a topic:
 
-1. Create a `V2TIMTopicInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html)) object and modify fields as needed.
-2. Call the `setTopicInfo` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setTopicInfo.html)) API to modify topic information.
+1. Create a `V2TIMTopicInfo` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Topic/V2TimTopicInfo.html)) object and modify fields as needed.
+2. Call the `setTopicInfo` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setTopicInfo.html)) API to modify topic information.
 
 Sample code:
 
@@ -136,7 +136,7 @@ groupManager.setTopicInfo(topicInfo:V2TimTopicInfo.fromJson({
 
 
 ### Getting the topic list[](id:getTopicList)
-You can call the `getTopicInfoList` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getTopicInfoList.html)) API to get the topic list.
+You can call the `getTopicInfoList` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getTopicInfoList.html)) API to get the topic list.
 - If `topicIDList` is an empty array, the list of all topics of the community group will be got.
 - If `topicIDList` is the ID of specified topics, the list of the specified topics will be got.
 
@@ -238,7 +238,7 @@ addCategoryForTopic(String groupID, String categoryName) {
 Use the `customString` after [getting the topic list](#getTopicList).
 
 ### Listening for topic callbacks
-In `V2TIMGroupListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimGroupListener.html)), topic related callback methods `onTopicCreated`, `onTopicDeleted`, and `onTopicInfoChanged` are added for topic event listening. 
+In `V2TIMGroupListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimGroupListener.html)), topic related callback methods `onTopicCreated`, `onTopicDeleted`, and `onTopicInfoChanged` are added for topic event listening. 
 
 Sample code:
 

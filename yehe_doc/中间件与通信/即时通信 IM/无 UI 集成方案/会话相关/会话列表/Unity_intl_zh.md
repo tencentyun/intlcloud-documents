@@ -7,7 +7,7 @@
 本文将为您介绍具体的实现细节。
 
 ## 获取会话列表
-您可以调用 `ConvGetConvList`([c#](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvList.html)) 获取会话列表。该接口拉取的是本地缓存的会话，如果服务器会话有更新，SDK 内部会自动同步，然后在 `TIMConvEventCallback` 回调告知客户。
+您可以调用 `ConvGetConvList`([Details](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvList.html)) 获取会话列表。该接口拉取的是本地缓存的会话，如果服务器会话有更新，SDK 内部会自动同步，然后在 `TIMConvEventCallback` 回调告知客户。
 
 用户的会话以列表的形式返回，列表中存储的是 `ConvInfo` 对象。
 
@@ -29,7 +29,7 @@ IM SDK 会在登录成功后、用户上线后、以及断线重连后，自动�
 3. 移除会话监听器。非必须，可按照业务逻辑按需调用。
 
 ### 添加会话监听器
-您可以调用 `SetConvEventCallback`([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) 添加会话监听器。添加监听器后，您才能接收到会话变更事件。
+您可以调用 `SetConvEventCallback`([Details](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) 添加会话监听器。添加监听器后，您才能接收到会话变更事件。
 
 示例代码如下：
 
@@ -40,7 +40,7 @@ TencentIMSDK.SetConvEventCallback((TIMConvEvent conv_event, List<ConvInfo> conv_
 ```
 
 
-您可以监听 `TIMConvEvent`([c#](https://comm.qq.com/im/doc/unity/en/enums/TIMConvEvent.html)) 中的事件，获取会话列表变更的通知。
+您可以监听 `TIMConvEvent`([Details](https://comm.qq.com/im/doc/unity/en/enums/TIMConvEvent.html)) 中的事件，获取会话列表变更的通知。
 
 目前 IM SDK 支持的会话变更事件有：
 
@@ -54,7 +54,7 @@ TencentIMSDK.SetConvEventCallback((TIMConvEvent conv_event, List<ConvInfo> conv_
 
 
 ### 移除会话监听器
-您可以给 `SetConvEventCallback`([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) 传入 `null` 移除会话监听器。移除后，您将无法再接收到会话变更事件。
+您可以给 `SetConvEventCallback`([Details](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) 传入 `null` 移除会话监听器。移除后，您将无法再接收到会话变更事件。
 该步骤不是必须的，您可以按照自己的业务逻辑按需调用。
 
 示例代码如下：

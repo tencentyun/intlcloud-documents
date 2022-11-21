@@ -6,7 +6,7 @@ The group profile refers to the information about the group, which can be obtain
 
 ## Getting the Group Profile
 
-You can call `getGroupsInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupsInfo.html)) to get the group profile. This API supports passing in multiple `groupID` values at a time to batch get group profiles.
+You can call `getGroupsInfo` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupsInfo.html)) to get the group profile. This API supports passing in multiple `groupID` values at a time to batch get group profiles.
 
 Below is the sample code:
 
@@ -19,9 +19,9 @@ const groupinfos = await groupManager.getGroupsInfo(["groupid1"]);
 
 ## Modifying the Group Profile
 
-Call `setGroupInfo` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupInfo.html)) to modify the group profile.
+Call `setGroupInfo` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/setGroupInfo.html)) to modify the group profile.
 
-If you have called `addGroupListener` to add a group event listener in advance, after the group profile is modified, all the group members will receive the `onGroupInfoChanged` callback ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnGroupInfoChanged.html)).
+If you have called `addGroupListener` to add a group event listener in advance, after the group profile is modified, all the group members will receive the `onGroupInfoChanged` callback ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnGroupInfoChanged.html)).
 
 Member roles that can modify the group profile vary by group type as follows:
 
@@ -50,7 +50,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
 
 ## Setting the Group Message Receiving Option
 
-Any group member can call the `setGroupReceiveMessageOpt` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/setGroupReceiveMessageOpt.html)) to modify the group message receiving option.
+Any group member can call the `setGroupReceiveMessageOpt` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/setGroupReceiveMessageOpt.html)) to modify the group message receiving option.
 
 `V2TIMReceiveMessageOpt` has the following options:
 
@@ -68,8 +68,8 @@ With the group message receiving option set to `V2TIM_NOT_RECEIVE_MESSAGE`, no g
 **Group messages will be received but will not be notified to the user, and a badge without the unread count will be displayed on the conversation list UI.**
 
 1. The group message receiving option is set to `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE`.
-2. When the receiver receives a new group message and needs to update the conversation list, it can get the unread count through `unreadCount` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#unreadcount)) in `V2TIMConversation`.
-3. The receiver displays a badge rather than the unread count when identifying the group message receiving option as `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE` based on the `recvOpt` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#recvopt)) of `V2TIMConversation`.
+2. When the receiver receives a new group message and needs to update the conversation list, it can get the unread count through `unreadCount` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#unreadcount)) in `V2TIMConversation`.
+3. The receiver displays a badge rather than the unread count when identifying the group message receiving option as `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE` based on the `recvOpt` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#recvopt)) of `V2TIMConversation`.
 
 > ? As this method requires the unread count feature, it applies only to work groups (Work) and public groups (Public).
 

@@ -6,7 +6,7 @@
 
 ### 新建好友分组
 
-您可以调用 `createFriendGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/createFriendGroup.html)) 接口新建好友分组。
+您可以调用 `createFriendGroup` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/createFriendGroup.html)) 接口新建好友分组。
 
 示例代码如下：
 
@@ -22,7 +22,7 @@ const friendgroups = await friendshipManager.createFriendGroup(
 
 ### 删除好友分组
 
-您可以调用 `deleteFriendGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/deleteFriendGroup.html)) 接口删除好友分组。
+您可以调用 `deleteFriendGroup` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/deleteFriendGroup.html)) 接口删除好友分组。
 
 示例代码如下：
 
@@ -33,7 +33,7 @@ const deleteFriendsgroup = await friendshipManager.deleteFriendGroup(["分组1"]
 
 ### 重命名好友分组
 
-您可以调用 `renameFriendGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/renameFriendGroup.html)) 接口重命名好友分组。
+您可以调用 `renameFriendGroup` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/renameFriendGroup.html)) 接口重命名好友分组。
 
 示例代码如下：
 
@@ -44,7 +44,7 @@ const rename = await friendshipManager.renameFriendGroup("新分组1", "分组1"
 
 ### 获取好友分组
 
-您可以调用 `getFriendGroups` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/getFriendGroups.html)) 接口获取好友分组列表。
+您可以调用 `getFriendGroups` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/getFriendGroups.html)) 接口获取好友分组列表。
 
 示例代码如下：
 
@@ -55,7 +55,7 @@ const friendGrous = await friendshipManager.getFriendGroups(["分组1"]);
 
 ### 添加好友到一个分组
 
-您可以调用 `addFriendsToFriendGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/addFriendsToFriendGroup.html)) 接口添加好友到一个分组。
+您可以调用 `addFriendsToFriendGroup` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/addFriendsToFriendGroup.html)) 接口添加好友到一个分组。
 
 示例代码如下：
 
@@ -71,7 +71,7 @@ const addToFrindgroups = await friendshipManager.addFriendsToFriendGroup(
 
 ### 从分组中删除某好友
 
-您可以调用 `deleteFriendsFromFriendGroup` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/deleteFriendsFromFriendGroup.html)) 从分组中删除某好友。
+您可以调用 `deleteFriendsFromFriendGroup` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriendshipManager/deleteFriendsFromFriendGroup.html)) 从分组中删除某好友。
 
 示例代码如下：
 

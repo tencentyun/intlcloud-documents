@@ -8,7 +8,7 @@
 
 #### Adding a listener
 
-The receiver calls the `addAdvancedMsgListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) API to add the advanced message listener. It is recommended to call the API early (such as after the chat page is initialized) to ensure timely message receiving in the application.
+The receiver calls the `addAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) API to add the advanced message listener. It is recommended to call the API early (such as after the chat page is initialized) to ensure timely message receiving in the application.
 
 Sample code:
 
@@ -29,7 +29,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().addAdvancedMsgListener(
 
 #### Removing a listener
 
-To stop receiving messages, the receiver calls `removeAdvancedMsgListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/removeAdvancedMsgListener.html)) to remove the advanced message listener.
+To stop receiving messages, the receiver calls `removeAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/removeAdvancedMsgListener.html)) to remove the advanced message listener.
 
 Sample code:
 
@@ -58,7 +58,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().removeAdvancedMsgListener(li
 The receiver can receive a one-to-one or group text message with the advanced message listener in the following steps:
 
 1. Call `addAdvancedMsgListener` to set the event listener.
-2. Listen for the `onRecvNewMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback that contains the text message.
+2. Listen for the `onRecvNewMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback that contains the text message.
 3. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
 Sample code:
@@ -89,7 +89,7 @@ TencentImSDKPlugin.v2TIMManager
 The receiver can receive a custom one-to-one or group message with the advanced message listener in the following steps:
 
 1. Call `addAdvancedMsgListener` to set the event listener.
-2. Listen for the `onRecvNewMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback that contains the custom message.
+2. Listen for the `onRecvNewMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback that contains the custom message.
 3. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
 Sample code:
@@ -122,7 +122,7 @@ TencentImSDKPlugin.v2TIMManager
 The receiver can receive a rich media message **only with** the advanced message listener in the following steps:
 
 1. Call the `addAdvancedMsgListener` API to set the advanced message listener.
-2. Listen for the `onRecvNewMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback to get the `V2TimMessage` message.
+2. Listen for the `onRecvNewMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback to get the `V2TimMessage` message.
 3. Parse the `elemType` attribute in the `V2TIMMessage` message, and then parse the message again according to the type to get the specific content of the elements in the message.
 4. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
@@ -241,7 +241,7 @@ if (message.elemType == MessageElemType.V2TIM_ELEM_TYPE_LOCATION) {
 
 ### Emoji message
 
-The SDK only provides a message passthrough channel for an emoji message. For message content fields, see `faceElem` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimFaceElem.html)), where the contents of `index` and `data` are customized by the user.
+The SDK only provides a message passthrough channel for an emoji message. For message content fields, see `faceElem` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimFaceElem.html)), where the contents of `index` and `data` are customized by the user.
 
 For example, the sender can set `index` to `1` and `data` to `x12345` to indicate the smile emoji.
 The receiver parses the received emoji message as `1` and `x12345` and displays the message as the smile emoji according to the preset rules.
@@ -261,7 +261,7 @@ Group tip messages are tips received by users other than ordinary messages in a 
 
 > ? Group tip messages apply to group members only.
 
-There are several types of group tip messages, as stated in `V2TIMGroupTipsElem` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimGroupTipsElem.html)).
+There are several types of group tip messages, as stated in `V2TIMGroupTipsElem` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimGroupTipsElem.html)).
 
 After receiving a group tip message, the receiver generally needs to:
 

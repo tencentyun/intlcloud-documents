@@ -3,7 +3,7 @@
 
 ### Istio
 
-一个开源的服务网格实现项目，TCM是基于Istio项目的服务网格产品，关于Istio的详细介绍，请见[Istio](https://istio.io/latest/zh/docs/concepts/what-is-istio/)。
+一个开源的服务网格实现项目，TCM是基于Istio项目的服务网格产品。
 
 ### Envoy
 

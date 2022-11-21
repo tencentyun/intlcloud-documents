@@ -12,7 +12,7 @@ The group attribute has the following features:
 4. The `GroupGetGroupAttributes` API can be called by a logged-in user 20 times every 5 seconds in the SDK.
 
 ### Initializing the group attributes
-Call the `GroupInitGroupAttributes` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupInitGroupAttributes.html)) to initialize the group attributes, and the original group attributes, if any, will be cleared first.
+Call the `GroupInitGroupAttributes` API ([Details](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupInitGroupAttributes.html)) to initialize the group attributes, and the original group attributes, if any, will be cleared first.
 
 Sample code:
 
@@ -33,7 +33,7 @@ TIMResult res = TencentIMSDK.GroupInitGroupAttributes(group_id, attributes, (int
 
 ### Deleting the group attributes
 
-Call the `GroupDeleteGroupAttributes` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupDeleteGroupAttributes.html)) to delete a specified group attribute. If `keys` is `null`/`nil`, all the group attributes will be cleared.
+Call the `GroupDeleteGroupAttributes` API ([Details](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupDeleteGroupAttributes.html)) to delete a specified group attribute. If `keys` is `null`/`nil`, all the group attributes will be cleared.
 
 Sample code:
 
@@ -53,7 +53,7 @@ TIMResult res = TencentIMSDK.GroupDeleteGroupAttributes(group_id, attributes, (i
 
 ### Getting the group attributes
 
-Call the `GroupGetGroupAttributes` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetGroupAttributes.html)) to get a specified group attribute. If `keys` is `null`, all the group attributes will be obtained.
+Call the `GroupGetGroupAttributes` API ([Details](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetGroupAttributes.html)) to get a specified group attribute. If `keys` is `null`, all the group attributes will be obtained.
 
 Sample code:
 
@@ -73,7 +73,7 @@ TIMResult res = TencentIMSDK.GroupGetGroupAttributes(group_id, attributes, (int 
 
 ### Updating the group attributes
 
-If you have called `SetGroupAttributeChangedCallback` to add a group event listener, all the group attributes will be called back through `GroupAttributeChangedCallback` ([c#](https://comm.qq.com/im/doc/unity/en/callback/GroupAttributeChangedCallback.html)) when a group attribute is changed.
+If you have called `SetGroupAttributeChangedCallback` to add a group event listener, all the group attributes will be called back through `GroupAttributeChangedCallback` ([Details](https://comm.qq.com/im/doc/unity/en/callback/GroupAttributeChangedCallback.html)) when a group attribute is changed.
 
 Sample code:
 

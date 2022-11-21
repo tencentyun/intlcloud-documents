@@ -9,7 +9,7 @@ This document describes how to implement such features.
 
 ## Getting the Conversation List
 
-You can call `getConversationList` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/getConversationList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `V2TIMConversationListener` callback.
+You can call `getConversationList` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/getConversationList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `V2TIMConversationListener` callback.
 
 User conversations are returned in a list that stores `V2TIMConversation` objects. Currently, the IM SDK sorts conversations according to the following rules:
 
@@ -76,7 +76,7 @@ You can get the updated conversation list in the following steps:
 
 ### Adding a conversation listener
 
-Call `addConversationListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/addConversationListener.html)) to add a conversation listener to receive conversation change events.
+Call `addConversationListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/addConversationListener.html)) to add a conversation listener to receive conversation change events.
 
 Below is the sample code:
 
@@ -91,7 +91,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ### Getting the notification of a conversation change
 
-You can listen for the event in `V2TIMConversationListener` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimConversationListener.html)) to get the notification of a conversation list change.
+You can listen for the event in `V2TIMConversationListener` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimConversationListener.html)) to get the notification of a conversation list change.
 
 Currently, the IM SDK supports the following conversation change events:
 
@@ -122,7 +122,7 @@ TencentImSDKPlugin.v2TIMManager
 
 ### Removing a conversation listener
 
-Call `removeConversationListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/removeConversationListener.html)) to remove a conversation listener to stop receiving conversation change events.
+Call `removeConversationListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/removeConversationListener.html)) to remove a conversation listener to stop receiving conversation change events.
 This step is optional and can be performed as needed.
 
 Below is the sample code:

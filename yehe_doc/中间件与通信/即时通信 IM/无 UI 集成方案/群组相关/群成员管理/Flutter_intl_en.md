@@ -5,12 +5,12 @@ Group member management includes pulling the member list, muting group members, 
 
 ## Getting the Group Member List
 
-Call `getGroupMemberList` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html)) to get the list of members in a specified group. This list contains the profile information of each member, such as user ID (`userID`), group name card (`nameCard`), profile photo (`faceUrl`), nickname (`nickName`), and time for joining the group (`joinTime`).
+Call `getGroupMemberList` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html)) to get the list of members in a specified group. This list contains the profile information of each member, such as user ID (`userID`), group name card (`nameCard`), profile photo (`faceUrl`), nickname (`nickName`), and time for joining the group (`joinTime`).
 
 A group may have a large number of members (for example, more than 5,000). In this case, you can use the filter (`filter`) and paged pull (`nextSeq`) advanced features of the API for pulling the group member list.
 
 ### Filter (`filter`)
-When calling the `getGroupMemberList` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html)), you can specify `filter` to pull the list of the information of specified roles.
+When calling the `getGroupMemberList` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html)), you can specify `filter` to pull the list of the information of specified roles.
 
 | Filter                                                     | Type                                                       |
 | ---------------------------------------------------------- | ---------------------------------------------------------- |
@@ -57,14 +57,14 @@ groupManager.getGroupMemberList(count: 10,filter: GroupMemberFilterTypeEnum.V2TI
 ## Muting
 
 ### Muting a specified group member
-The group owner or admin can call `muteGroupMember` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html)) to mute a specified group member and set the muting period in seconds. The muting information is stored in the `muteUtil` attribute of the group member.
+The group owner or admin can call `muteGroupMember` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html)) to mute a specified group member and set the muting period in seconds. The muting information is stored in the `muteUtil` attribute of the group member.
 
-After a group member is muted, all the group members (including the muted member) will receive the `onMemberInfoChanged` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberInfoChangedCallback.html)).
+After a group member is muted, all the group members (including the muted member) will receive the `onMemberInfoChanged` callback ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberInfoChangedCallback.html)).
 
 ### Muting the entire group
-The group owner or admin can also call the `setGroupInfo` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html)) to mute the entire group by setting the `allMuted` attribute to `true`. The entire group can be muted for an unlimited period of time and needs to be unmuted through `setAllMuted(false)` of the group profile.
+The group owner or admin can also call the `setGroupInfo` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html)) to mute the entire group by setting the `allMuted` attribute to `true`. The entire group can be muted for an unlimited period of time and needs to be unmuted through `setAllMuted(false)` of the group profile.
 
-> ? Muting all the group members will trigger the `onGroupInfoChanged` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupInfoChangedCallback.html)). This feature is disabled by default and can be enabled in the console.
+> ? Muting all the group members will trigger the `onGroupInfoChanged` callback ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGroupInfoChangedCallback.html)). This feature is disabled by default and can be enabled in the console.
 > Directions: Go to the [**Group configuration**](https://console.cloud.tencent.com/im/qun-setting) module in the IM console, select **Group system notification configuration**, click **Edit** in the **Operation** column, and modify **Notification of muting all change**.
 > ![](https://qcloudimg.tencent-cloud.cn/raw/20551501844d85d1d375c5d1b63a9282.png)
 
@@ -93,11 +93,11 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 [](id:kickGroupMember)
 ## Removing a Group Member
-The group owner or admin can call the `kickGroupMember` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/kickGroupMember.html)) to remove a specified ordinary group member from the group.
+The group owner or admin can call the `kickGroupMember` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/kickGroupMember.html)) to remove a specified ordinary group member from the group.
 
-After the ordinary group member is removed, all the members (including the removed member) will receive the `onMemberKicked` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberKickedCallback.html)).
+After the ordinary group member is removed, all the members (including the removed member) will receive the `onMemberKicked` callback ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnMemberKickedCallback.html)).
 
-As an audio-video group (AVChatRoom) can be joined freely, there is no API for removing a group member from an audio-video group (AVChatRoom). You can use `muteGroupMember` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html) to mute a specified member to implement similar controls. For detailed directions, see [here](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html).
+As an audio-video group (AVChatRoom) can be joined freely, there is no API for removing a group member from an audio-video group (AVChatRoom). You can use `muteGroupMember` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html) to mute a specified member to implement similar controls. For detailed directions, see [here](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/muteGroupMember.html).
 
 > ? Only the group owner can remove the admin from the group.
 
@@ -111,7 +111,7 @@ groupManager.kickGroupMember(groupID: '',memberList: []);
 
 
 ## Setting an Admin
-The group owner can call `setGroupMemberRole` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberRole.html)) to set a group member in a public group (Public) or meeting group (Meeting) as the admin.
+The group owner can call `setGroupMemberRole` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/setGroupMemberRole.html)) to set a group member in a public group (Public) or meeting group (Meeting) as the admin.
 
 An ordinary member set as the admin has the admin permission to perform the following operations:
 * Modify the basic group profile
@@ -121,9 +121,9 @@ An ordinary member set as the admin has the admin permission to perform the foll
 
 For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
-After an ordinary member is set as the admin, all the members (including the ordinary member) will receive the `onGrantAdministrator` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGrantAdministratorCallback.html)).
+After an ordinary member is set as the admin, all the members (including the ordinary member) will receive the `onGrantAdministrator` callback ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnGrantAdministratorCallback.html)).
 
-After the ordinary member is unset as the admin, all the members (including the ordinary member) will receive the `onRevokeAdministrator` callback ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRevokeAdministratorCallback.html)).
+After the ordinary member is unset as the admin, all the members (including the ordinary member) will receive the `onRevokeAdministrator` callback ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Callback/OnRevokeAdministratorCallback.html)).
 
 Sample code:
 
@@ -161,7 +161,7 @@ groupManager.transferGroupOwner(groupID: "", userID: "userID");
 
 
 ## Getting the Number of Online Group Members
-Call `getGroupOnlineMemberCount` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupOnlineMemberCount.html)) to get the number of online group members.
+Call `getGroupOnlineMemberCount` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupOnlineMemberCount.html)) to get the number of online group members.
 
 > ? 
 > 1. Currently, only the number of online members in an audio-video group (AVChatRoom) can be obtained.

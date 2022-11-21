@@ -15,7 +15,7 @@
 ### 创建并发送合并转发消息
 
 我们在创建一条合并消息的时候不仅要设置合并消息列表，还要设置标题和摘要信息，实现流程如下：
-1. 调用 `createMergerMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createMergerMessage.html)) 接口创建一条合并消息，创建合并消息的时候需要设置原始消息列表，合并消息标题、合并消息摘要等信息。
+1. 调用 `createMergerMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createMergerMessage.html)) 接口创建一条合并消息，创建合并消息的时候需要设置原始消息列表，合并消息标题、合并消息摘要等信息。
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
@@ -54,7 +54,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createMergerMessageResult =
 ### 接收合并转发消息
 
 #### 添加监听器
-接收方调用 `addAdvancedMsgListener` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) 添加高级消息监听器。
+接收方调用 `addAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) 添加高级消息监听器。
 一般建议在比较靠前的时间点调用，例如例如聊天消息界面初始化后，确保 App 能及时收到消息。
 
 示例代码如下：
@@ -69,8 +69,8 @@ TencentImSDKPlugin.v2TIMManager
 
 #### 解析消息
 添加监听器后，接收方会在 `onRecvNewMessage` 中收到合并消息 `V2TimMessage`。
-可以先通过合并消息元素 `V2TimMergerElem` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMergerElem.html)) 获取 `title` 和  `abstractList`  UI 展示。
-当用户点击合并消息的时候再调用 `downloadMergerMessage`([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/downloadMergerMessage.html)) 接口下载合并消息列表 UI 展示。
+可以先通过合并消息元素 `V2TimMergerElem` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimMergerElem.html)) 获取 `title` 和  `abstractList`  UI 展示。
+当用户点击合并消息的时候再调用 `downloadMergerMessage`([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/downloadMergerMessage.html)) 接口下载合并消息列表 UI 展示。
 
 示例代码如下：
 
@@ -90,7 +90,7 @@ if(message.elemType == MessageElemType.V2TIM_ELEM_TYPE_MERGER){
 
 
 ## 逐条转发消息
-如果您需要转发单条消息，可以先通过 `createForwardMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createForwardMessage.html)) 接口创建一条和原消息内容完全一样的转发消息，再调用 `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) 接口把转发消息发送出去。
+如果您需要转发单条消息，可以先通过 `createForwardMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createForwardMessage.html)) 接口创建一条和原消息内容完全一样的转发消息，再调用 `sendMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) 接口把转发消息发送出去。
 
 示例代码如下：
 

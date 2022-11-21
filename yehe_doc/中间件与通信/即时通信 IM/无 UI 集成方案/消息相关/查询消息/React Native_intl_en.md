@@ -7,7 +7,7 @@
 
 ## Querying a Local Message
 
-Call the `findMessages` API ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#findMessages)) to query a local message.
+Call the `findMessages` API ([Details](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#findMessages)) to query a local message.
 
 Below is the sample code:
 

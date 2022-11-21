@@ -13,7 +13,7 @@ Message recall can be implemented through the receiver UI code: When a message i
 
 ### Recalling a message (by the sender)
 
-Call `revokeMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/revokeMessage.html)) to recall a message.
+Call `revokeMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/revokeMessage.html)) to recall a message.
 
 Below is the sample code:
 
@@ -25,8 +25,8 @@ const revokeMessage = await TencentImSDKPlugin.v2TIMManager
 
 ### Noticing a message recall (by the receiver)
 
-1. Call `addAdvancedMsgListener` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) to set the advanced message listener.
-2. Receive a message recall notification through `onRecvMessageRevoked` ([TS](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvMessageRevoked.html)).
+1. Call `addAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) to set the advanced message listener.
+2. Receive a message recall notification through `onRecvMessageRevoked` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvMessageRevoked.html)).
 
 Below is the sample code:
 

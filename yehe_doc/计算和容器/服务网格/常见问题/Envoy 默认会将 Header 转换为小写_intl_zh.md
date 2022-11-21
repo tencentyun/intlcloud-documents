@@ -53,7 +53,6 @@ spec:
   resolution: DNS
 ```
 
-更多协议指定方式请参见 [为服务显式指定协议](https://imroc.cc/istio/best-practice/specify-protocol/)。
 
 ## 最佳实践 
 

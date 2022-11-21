@@ -9,7 +9,7 @@ A targeted group message is a message sent to specified members in a group, whic
 
 ## Sending a Targeted Group Message
 A targeted group message is a message sent to specified members in a group, which cannot be received by unspecified group members. It can be implemented in the following steps:
-Call the `MsgSendMessage` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) to specify the list of group members to receive the message and send the message.
+Call the `MsgSendMessage` API ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) to specify the list of group members to receive the message and send the message.
 
 Sample code:
 

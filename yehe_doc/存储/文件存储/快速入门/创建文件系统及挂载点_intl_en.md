@@ -7,7 +7,7 @@ This document describes how to create a file system and mount point on the file 
 ### 1. Sign up for a Tencent Cloud account
 
 If you already have a Tencent Cloud account, ignore this step.
-<div style="background-color:#00A4FF; width: 320px; height: 35px; line-height:35px; text-align:center;"><a href="https://www.tencentcloud.com/en/account/register"_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 220px; height: 35px; line-height:35px; text-align:center;"><a href="https://www.tencentcloud.com/en/account/register" target="_blank"  style="color: white; font-size:16px;">Sign Up for Tencent Cloud</a></div>
 
 ### 2. Enter the file system page
 
@@ -15,9 +15,9 @@ Log in to the [CFS console](https://console.cloud.tencent.com/cfs) and click **F
 
 ### 3. Determine the type of file system to create based on your business needs
 
-For more information on CFS storage types, see [Storage Types and Performance](https://intl.cloud.tencent.com/document/product/582/33745).
+For more information about CFS storage types, see [Storage Types and Performance](https://intl.cloud.tencent.com/document/product/582/33745).
 
-### 4. Create a file system and mount target
+### 4. Create a file system
 
 1. Click **Create**.
 2. Configure the following information on the **Create File System** page.
@@ -25,10 +25,6 @@ For more information on CFS storage types, see [Storage Types and Performance](h
   <tr>
     <th nowrap="nowrap">Field</th>
     <th>Description</th>
-  </tr>
-  <tr>
-    <td>Billing Mode</td>
-    <td>Select the desired billing mode. Two billing modes are supported: pay-as-you-go and prepaid.</br><b>Note: </b>Only some products support the prepaid mode.</td>
   </tr>
 	<tr>
     <td>File System Name</td>
@@ -51,13 +47,18 @@ For more information on CFS storage types, see [Storage Types and Performance](h
     <td>Each file system must be bound to a permission group. The permission group specifies an allowlist that can access the file system and lists the read and write permissions.
     </td>
   </tr>
+  <tr>
+    <td>Network</td>
+    <td>Specify the VPC of the file system. The file system can be mounted to instances in the VPC for access.
+    </td>
+  </tr>
 	 <tr>
     <td>Storage Capacity</td>
     <td>Required only for the Turbo series. The Turbo series is an exclusive cluster and has restrictions on the minimum cluster scale and expansion step. For Standard Turbo, the minimum initial cluster scale is 40 TiB, and the expansion step is 20 TiB. For High-Performance Turbo, the minimum initial cluster scale is 20 TiB, and the expansion step is 10 TiB.
   </tr>
 	 <tr>
     <td>CCN</td>
-    <td>Required only for the Turbo series. Select an existing CCN or create a new one. For more information, see <a href="https://www.tencentcloud.com/products/ccn">Cloud Connect Network</a>. 
+    <td>Required only for the Turbo series. Select an existing CCN instance or create a new one. For more information, see <a href="https://www.tencentcloud.com/products/ccn">Cloud Connect Network</a>. 
   </tr>
 	<tr>
     <td>IP Range</td>
@@ -65,7 +66,7 @@ For more information on CFS storage types, see [Storage Types and Performance](h
     </td>
 	 </tr>
 	<tr>
-    <td>Tag</td>
+    <td>Label</td>
     <td>
 		<ul  style="margin: 0;">
       <li>If you already have a tag, you can add it to the new file system here.</li>

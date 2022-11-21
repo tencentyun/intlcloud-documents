@@ -1,6 +1,6 @@
 <dx-alert infotype="notice" title="">
 - The image update date provided here is the time when images in all regions are updated. The actual update time may vary with regions.
-- Tencent Cloud public images will follow the official maintenance periods, as detailed in [Appendix: Official Maintenance Time](#OfficialMaintenanceTime).
+- Tencent Cloud public images will follow the official maintenance periods.
 </dx-alert>
 
 
@@ -201,13 +201,22 @@ For update logs of OpenCloudOS, see [OpenCloudOS Image Update History](https://i
         <th style="width: 14%;">Update Date</th>
         <th style="width: 26%;">Updates</th>
     </tr>
+		<tr>
+			<td>Debian 11.4</td>
+			<td>Image ID: 
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-btz2mndd">	
+		img-btz2mndd</a>
+			<br />Current kernel version: 5.10.0-16-amd64</td>
+			<td>2022-09-03</td>
+			<td>Updates the system with the latest patch.</td>
+  </tr>
 	  <tr>
 	<td>Debian 11.1</td>
 	<td>Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-4cmp1f33">	
 img-4cmp1f33</a>
-	<br />Current kernel version: 5.10.0-12-amd64</td>
-	<td>2022-04-01</td>
+	<br />Current kernel version: 5.10.0-15-amd64</td>
+	<td>2022-07-25</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
   <tr>
@@ -258,15 +267,33 @@ img-4ogcw28j</a>
         <th style="width: 35%;">Image Details</th>
         <th style="width: 14%;">Update Date</th>
         <th style="width: 26%;">Updates</th>
-    </tr>
+</tr>
+		<tr>
+			<td>FreeBSD 13.1</td>
+			<td>Image ID: 
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-ng3lehjp">
+			img-ng3lehjp</a>
+			<br />Current kernel version: 13.1-RELEASE</td>
+			<td>2022-09-08</td>
+			<td>Releases an image.</td>
+  </tr>	
 	<tr>
-	<td>FreeBSD 12.3</td>
-	<td>Image ID: 
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-j9m732cx">	
-img-j9m732cx</a>
-	<br />Current kernel version: 12.3-RELEAS</td>
-	<td>2022-01-20</td>
-	<td>Releases an image.</td>
+			<td>FreeBSD 13.0</td>
+			<td>Image ID: 
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1lkqxofp">
+			img-1lkqxofp</a>
+			<br />Current kernel version: 13.0-RELEASE</td>
+			<td>2022-09-02</td>
+			<td>Releases an image.</td>
+  </tr>
+			<tr>
+			<td>FreeBSD 12.3</td>
+			<td>Image ID: 
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-j9m732cx">	
+		img-j9m732cx</a>
+			<br />Current kernel version: 12.3-RELEAS</td>
+			<td>2022-01-20</td>
+			<td>Releases an image.</td>
   </tr>
 	<tr>
 	<td>FreeBSD 12.2</td>
@@ -280,7 +307,7 @@ img-pi37fg9j</a>
 </table>
 
 
-## Rocky
+## Rocky Linux
 <table>
 <tr>
         <th style="width: 20%;">Image Tag</th>
@@ -288,8 +315,17 @@ img-pi37fg9j</a>
         <th style="width: 14%;">Update Date</th>
         <th style="width: 26%;">Updates</th>
     </tr>
+	<tr>
+			<td>Rocky Linux 9.0</td>
+			<td>Image ID: 
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-k1g1wwy9">	
+		img-k1g1wwy9</a>
+			<br />Current kernel version: 5.14.0-70.13.1.el9_0.x86_64</td>
+			<td>2022-09-08</td>
+			<td>Releases an image.</td>
+  </tr>
 	  <tr>
-	<td>Rocky 8.5</td>
+	<td>Rocky Linux 8.5</td>
 	<td>Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">	
 img-qd4bf0jb</a>
@@ -309,6 +345,14 @@ img-qd4bf0jb</a>
         <th style="width: 14%;">Update Date</th>
         <th style="width: 26%;">Updates</th>
     </tr>
+	 <tr>
+			<td>OpenSUSE Leap 15.4</td>
+			<td>Image ID: 
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-aaa4d8d1">img-aaa4d8d1</a>
+			<br />Current kernel version: 5.14.21-150400.22-default</td>
+			<td>2022-08-31</td>
+			<td>Releases an image.</td>
+  </tr>
   <tr>
 	<td>OpenSUSE Leap 15.3</td>
 	<td>Image ID: 
@@ -403,24 +447,3 @@ img-4orfgj3l</a>
 	<td>Updates the system with the latest patch.</td>
   </tr>
 </table>
-
-
-
-## [Appendix: Official Maintenance Time](id:OfficialMaintenanceTime)
-
-
-#### CentOS
-For the published CentOS End of Lifetime (EOL) dates, see [CentOS Product Specifications](https://wiki.centos.org/zh/About/Product#fnref-f049f6268e56bd37228bb469075b54ae8645fa40).
-
-
-#### Ubuntu
-For the published Ubuntu Long Term Support dates, see [Long term support and interim releases](https://ubuntu.com/about/release-cycle).
-
-
-#### Debian
-For the published Debian Long Term Support dates, see [Debian Long Term Support](https://wiki.debian.org/LTS).
-
-
-<style>
-	.params{margin-bottom:0px !important;}
-</style>

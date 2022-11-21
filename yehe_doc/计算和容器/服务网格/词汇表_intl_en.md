@@ -3,7 +3,7 @@ A service mesh is a layer of infrastructure that is uncoupled from the service l
 
 ### Istio
 
-Istio is an open-source service mesh implementation project. Tencent Cloud Mesh is a service mesh product developed based on the Istio project. For details about Istio, see [Istio](https://istio.io/latest/zh/docs/concepts/what-is-istio/).
+Istio is an open-source service mesh implementation project. Tencent Cloud Mesh is a service mesh product developed based on the Istio project.
 
 ### Envoy
 

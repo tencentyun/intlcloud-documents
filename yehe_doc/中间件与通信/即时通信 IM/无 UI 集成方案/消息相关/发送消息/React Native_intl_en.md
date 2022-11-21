@@ -6,7 +6,7 @@
 
 ## Key APIs
 
-The `sendMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) API is the core API for sending a message. It supports sending all types of messages.
+The `sendMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) API is the core API for sending a message. It supports sending all types of messages.
 
 > ? The advanced message sending API mentioned below refers to `sendMessage`.
 
@@ -144,8 +144,8 @@ The ordinary API is as described below, while the advanced API is `sendMessage` 
 
 Take the following two steps to send a one-to-one text message with the advanced API:
 
-1. Call `createTextMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
-2. Call `sendMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+1. Call `createTextMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
+2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 
@@ -171,8 +171,8 @@ const createTextMessage = await TencentImSDKPlugin.v2TIMManager.getMessageManage
 
 Take the following two steps to send a group text message with the advanced API:
 
-1. Call `createTextMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
-2. Call `sendMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+1. Call `createTextMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
+2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 
@@ -196,7 +196,7 @@ const createTextAtMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageM
 ## Sending Custom Messages
 
 Custom messages include one-to-one messages and group messages, which are different in terms of APIs and parameters. Custom messages can be sent with ordinary and advanced APIs.
-The advanced API is `sendMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) mentioned above, which supports more sending parameters (such as priority and offline push message) than the ordinary API.
+The advanced API is `sendMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) mentioned above, which supports more sending parameters (such as priority and offline push message) than the ordinary API.
 
 ### Custom one-to-one message
 
@@ -204,8 +204,8 @@ The advanced API is `sendMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2T
 
 Take the following two steps to send a custom one-to-one message with the advanced API:
 
-1. Call `createCustomMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
-2. Call `sendMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+1. Call `createCustomMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
+2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 
@@ -234,8 +234,8 @@ const createCustomMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageM
 
 Take the following two steps to send a custom group message with the advanced API:
 
-1. Call `createCustomMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
-2. Call `sendMessage` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+1. Call `createCustomMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
+2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 
@@ -264,7 +264,7 @@ const createCustomMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageM
 A rich media message can be sent only with the advanced API in the following steps:
 
 1. Call `createXxxMessage` to create a rich media message object of a specified type, where `Xxx` indicates the specific message type.
-2. Call `sendMessage`([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+2. Call `sendMessage`([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 3. Get the callback for message sending success or failure.
 
 ### Image message

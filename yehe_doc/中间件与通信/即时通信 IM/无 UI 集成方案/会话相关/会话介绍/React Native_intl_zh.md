@@ -5,7 +5,7 @@
 
 ## 会话类介绍
 
-会话类为 `V2TIMConversation` ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html))。`V2TIMConversation` 定义了以下内容：
+会话类为 `V2TIMConversation` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html))。`V2TIMConversation` 定义了以下内容：
 
 | 属性            | 含义              | 说明                                                                                                                                                                 |
 | --------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

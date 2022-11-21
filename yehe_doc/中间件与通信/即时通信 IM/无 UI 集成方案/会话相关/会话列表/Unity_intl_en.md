@@ -7,7 +7,7 @@ The conversation list features include getting the conversation list and process
 This section describes how to implement such features.
 
 ## Getting the Conversation List
-You can call `ConvGetConvList` ([c#](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `TIMConvEventCallback` callback.
+You can call `ConvGetConvList` ([Details](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvList.html)) to get the conversation list. This API pulls locally cached conversations. If any server conversation is updated, the SDK will automatically sync the update and notify you in the `TIMConvEventCallback` callback.
 
 User conversations are returned in a list that stores `ConvInfo` objects.
 
@@ -29,7 +29,7 @@ You can get the updated conversation list in the following steps:
 3. Remove the conversation listener. This step is optional and can be performed as needed.
 
 ### Adding a conversation listener
-Call `SetConvEventCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) to add a conversation listener to receive conversation change events.
+Call `SetConvEventCallback` ([Details](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) to add a conversation listener to receive conversation change events.
 
 Sample code:
 
@@ -40,7 +40,7 @@ TencentIMSDK.SetConvEventCallback((TIMConvEvent conv_event, List<ConvInfo> conv_
 ```
 
 
-You can listen for the event in `TIMConvEvent` ([c#](https://comm.qq.com/im/doc/unity/en/enums/TIMConvEvent.html)) to get the notification of a conversation list change.
+You can listen for the event in `TIMConvEvent` ([Details](https://comm.qq.com/im/doc/unity/en/enums/TIMConvEvent.html)) to get the notification of a conversation list change.
 
 Currently, the IM SDK supports the following conversation change events:
 
@@ -54,7 +54,7 @@ Currently, the IM SDK supports the following conversation change events:
 
 
 ### Removing a conversation listener
-Pass in `null` for `SetConvEventCallback` ([c#](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) to remove a conversation listener to stop receiving conversation change events.
+Pass in `null` for `SetConvEventCallback` ([Details](https://comm.qq.com/im/doc/unity/en/api/SDKRegisteringCallback/SetConvEventCallback.html)) to remove a conversation listener to stop receiving conversation change events.
 This step is optional and can be performed as needed.
 
 Sample code:

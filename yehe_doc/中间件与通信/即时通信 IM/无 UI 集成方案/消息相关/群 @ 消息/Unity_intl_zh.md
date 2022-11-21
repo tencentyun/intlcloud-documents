@@ -6,8 +6,8 @@
 
 ## 功能演示
 
-| 监听 @ 字符选择群成员                                                    | 编辑群 @ 消息发送                                                        | 收到群 @ 消息                                                            |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| 监听 @ 字符选择群成员                                                            | 编辑群 @ 消息发送                                                                | 收到群 @ 消息                                                                    |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | ![](https://qcloudimg.tencent-cloud.cn/raw/ed60cac72b215f6e7128cf2533bab2f7.jpg) | ![](https://qcloudimg.tencent-cloud.cn/raw/fbabe9cac382a7944676565242b29b59.jpg) | ![](https://qcloudimg.tencent-cloud.cn/raw/b20c30564c78b9fec9ab25260110641f.jpg) |
 
 图一：在聊天界面监听到输入框输入 "@" 字符后，可以跳转到群成员选择界面，选择需要 @ 的群成员。
@@ -17,7 +17,7 @@
 ## 发送群 @ 消息
 
 1. 发送方监听聊天界面的文本输入框，启动群成员选择界面。选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 `Message`，昵称用来在文本框显示。
-2. 发送方调用 `MsgSendMessage` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) 接口创建一条 @ 文本消息，创建消息对象 `Message`，并在其中指定需要 @ 的成员，然后将刚才创建的 @ 消息对象发送出去。
+2. 发送方调用 `MsgSendMessage` ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) 接口创建一条 @ 文本消息，创建消息对象 `Message`，并在其中指定需要 @ 的成员，然后将刚才创建的 @ 消息对象发送出去。
 
 示例代码如下：
 
@@ -45,8 +45,8 @@ TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_Group,
 
 ## 接收群 @ 消息
 
-1. 在加载和更新会话处，需要调用 `ConvInfo` 的 `conv_group_at_info_array` ([c#](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convgroupatinfoarray)) 接口获取会话的 @ 数据列表。
-2. 通过列表中 `GroupAtInfo` 对象的 `conv_group_at_info_at_type` ([c#](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupAtInfo.html)) 接口获取 @ 数据类型，并更新到当前会话的 @ 信息。
+1. 在加载和更新会话处，需要调用 `ConvInfo` 的 `conv_group_at_info_array` ([Details](https://comm.qq.com/im/doc/unity/en/types/ConvAttributes/ConvInfo.html#convgroupatinfoarray)) 接口获取会话的 @ 数据列表。
+2. 通过列表中 `GroupAtInfo` 对象的 `conv_group_at_info_at_type` ([Details](https://comm.qq.com/im/doc/unity/en/types/GroupsAttributes/GroupAtInfo.html)) 接口获取 @ 数据类型，并更新到当前会话的 @ 信息。
 
 示例代码如下：
 

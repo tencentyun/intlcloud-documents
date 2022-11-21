@@ -7,7 +7,7 @@
 
 ## 查询本地消息
 
-查询本地消息的接口为 `findMessages` ([TS](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#findMessages)) 。
+查询本地消息的接口为 `findMessages` ([Details](https://comm.qq.com/im-react-native-doc/classes/MessageManager__________.V2TIMMessageManager.html#findMessages)) 。
 
 示例代码如下：
 

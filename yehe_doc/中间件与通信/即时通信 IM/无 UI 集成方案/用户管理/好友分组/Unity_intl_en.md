@@ -4,7 +4,7 @@ To group friends into categories such as "Classmates at university" and "Coworke
 ## Friend List
 
 ### Creating a friend list
-Call the `FriendshipCreateFriendGroup` API ([c#](https://comm.qq.com/im/doc/unity/en/ api/FriendshipApi/FriendshipCreateFriendGroup.html)) to create a friend list.
+Call the `FriendshipCreateFriendGroup` API ([Details](https://comm.qq.com/im/doc/unity/en/ api/FriendshipApi/FriendshipCreateFriendGroup.html)) to create a friend list.
 
 Sample code:
 
@@ -29,7 +29,7 @@ TIMResult res = TencentIMSDK.FriendshipCreateFriendGroup(param, (int code, strin
 
 
 ### Deleting a friend list
-Call the `FriendshipDeleteFriendGroup` API ([c#](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipDeleteFriendGroup.html)) to delete a friend list.
+Call the `FriendshipDeleteFriendGroup` API ([Details](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipDeleteFriendGroup.html)) to delete a friend list.
 
 Sample code:
 
@@ -47,7 +47,7 @@ TIMResult res = TencentIMSDK.FriendshipDeleteFriendGroup(param, (int code, strin
 
 
 ### Renaming a friend list
-Call the `FriendshipModifyFriendGroup` API ([c#](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipModifyFriendGroup.html)) to rename a friend list.
+Call the `FriendshipModifyFriendGroup` API ([Details](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipModifyFriendGroup.html)) to rename a friend list.
 
 Sample code:
 
@@ -66,7 +66,7 @@ TIMResult res = TencentIMSDK.FriendshipModifyFriendGroup(param, (int code, strin
 
 
 ### Getting a friend list
-Call the `FriendshipGetFriendGroupList` API ([c#](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipGetFriendGroupList.html)) to get a friend list.
+Call the `FriendshipGetFriendGroupList` API ([Details](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipGetFriendGroupList.html)) to get a friend list.
 
 Sample code:
 
@@ -84,7 +84,7 @@ TIMResult res = TencentIMSDK.FriendshipGetFriendGroupList(param, (int code, stri
 
 
 ### Adding a friend to a list
-Call the `FriendshipModifyFriendGroup` API ([c#](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipModifyFriendGroup.html)) to add a friend to a list.
+Call the `FriendshipModifyFriendGroup` API ([Details](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipModifyFriendGroup.html)) to add a friend to a list.
 
 Sample code:
 
@@ -106,7 +106,7 @@ TIMResult res = TencentIMSDK.FriendshipModifyFriendGroup(param, (int code, strin
 
 
 ### Removing a friend from a list
-Call `FriendshipModifyFriendGroup` ([c#](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipModifyFriendGroup.html)) to remove a friend from a list.
+Call `FriendshipModifyFriendGroup` ([Details](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipModifyFriendGroup.html)) to remove a friend from a list.
 
 Sample code:
 

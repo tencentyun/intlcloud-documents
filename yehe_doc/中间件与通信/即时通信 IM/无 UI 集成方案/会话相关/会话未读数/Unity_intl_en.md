@@ -14,7 +14,7 @@ When the total unread count changes, the SDK will notify you of the latest total
 Below are detailed steps.
 
 ### Getting the total unread count
-Call `ConvGetTotalUnreadMessageCount` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvGetTotalUnreadMessageCount_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_GetTotalUnreadNumberResult__)) to get the total unread count of all the conversations and update it on the UI.
+Call `ConvGetTotalUnreadMessageCount` ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_ConvGetTotalUnreadMessageCount_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_GetTotalUnreadNumberResult__)) to get the total unread count of all the conversations and update it on the UI.
 
 Sample code:
 
@@ -29,7 +29,7 @@ TIMResult res = TencentIMSDK.ConvGetTotalUnreadMessageCount((int code, string de
 
 ### Notification of a change in the total unread count
 
-Call `SetConvTotalUnreadMessageCountChangedCallback` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetConvTotalUnreadMessageCountChangedCallback_com_tencent_imsdk_unity_callback_ConvTotalUnreadMessageCountChangedCallback_)) to add a conversation listener to receive notifications of a change in the total unread count.
+Call `SetConvTotalUnreadMessageCountChangedCallback` ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetConvTotalUnreadMessageCountChangedCallback_com_tencent_imsdk_unity_callback_ConvTotalUnreadMessageCountChangedCallback_)) to add a conversation listener to receive notifications of a change in the total unread count.
 
 Sample code:
 
@@ -50,7 +50,7 @@ The IM SDK provides three APIs to clear the unread count for different conversat
 
 Below are detailed steps.
 ### One-to-one chat
-Call `MsgReportReaded` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgReportReaded_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_com_tencent_imsdk_unity_callback_NullValueCallback_)) to clear the unread count of a specified one-to-one conversation.
+Call `MsgReportReaded` ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgReportReaded_System_String_com_tencent_imsdk_unity_enums_TIMConvType_com_tencent_imsdk_unity_types_Message_com_tencent_imsdk_unity_callback_NullValueCallback_)) to clear the unread count of a specified one-to-one conversation.
 
 Sample code:
 
@@ -68,7 +68,7 @@ After `MsgReportReaded` is called successfully:
 
 
 ### Group chat
-Call `MsgSendMessageReadReceipts` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessageReadReceipts_System_Collections_Generic_List_com_tencent_imsdk_unity_types_Message__com_tencent_imsdk_unity_callback_NullValueCallback_)) to clear the unread count of a specified group conversation.
+Call `MsgSendMessageReadReceipts` ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgSendMessageReadReceipts_System_Collections_Generic_List_com_tencent_imsdk_unity_types_Message__com_tencent_imsdk_unity_callback_NullValueCallback_)) to clear the unread count of a specified group conversation.
 
 Sample code:
 
@@ -84,7 +84,7 @@ After `MsgReportReaded` is called successfully:
 2. The sender will receive the `MsgReadedReceiptCallback` callback that contains the timestamp when the conversation unread count is cleared.
 
 ### All conversations
-Call `MsgMarkAllMessageAsRead` ([c#](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgMarkAllMessageAsRead_com_tencent_imsdk_unity_callback_NullValueCallback_)) to clear the unread count of all the conversations.
+Call `MsgMarkAllMessageAsRead` ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_MsgMarkAllMessageAsRead_com_tencent_imsdk_unity_callback_NullValueCallback_)) to clear the unread count of all the conversations.
 
 
 Sample code:

@@ -4,7 +4,7 @@ Only locally stored users can be searched for, such as contacts or user profiles
 > This feature is supported by the SDK for Flutter on v3.8.0 or later.
 
 ## Searching for the Local User Profile
-Call the `searchFriends` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/searchFriends.html)) to search for the local user profile.
+Call the `searchFriends` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/searchFriends.html)) to search for the local user profile.
 You can set the search keyword `keywordList` and specify the search scope to set whether to search by the `userID`, `nickName`, and `remark` fields of a user.
 
 Sample code:

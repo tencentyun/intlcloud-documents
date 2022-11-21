@@ -1,5 +1,5 @@
 ## Feature Description
-* The API for pulling historical messages is `MsgGetMsgList` ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgGetMsgList.html)).
+* The API for pulling historical messages is `MsgGetMsgList` ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgGetMsgList.html)).
 * It supports pulling historical one-to-one and group messages.
 * Both local and cloud historical messages can be pulled.
 
@@ -18,7 +18,7 @@ Locally stored historical messages are not subject to time limits, but those sto
 
 ## Pulling Historical One-to-One Messages
 
-Call the `MsgGetMsgList` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgGetMsgList.html)) to get historical one-to-one messages.
+Call the `MsgGetMsgList` API ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgGetMsgList.html)) to get historical one-to-one messages.
 When the network is normal, the latest cloud data will be pulled; when it is abnormal, the SDK will return the locally stored historical messages.
 
 This API supports pulling by page. For more information, see [Pulling by page](#advance_page).
@@ -44,7 +44,7 @@ TIMResult res = TencentIMSDK.MsgGetMsgList(conv_id, TIMConvType.kTIMConv_C2C, ge
 [](id:group)
 ## Pulling Historical Group Messages
 
-Call the `MsgGetMsgList` API ([c#](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgGetMsgList.html)) to get historical group messages.
+Call the `MsgGetMsgList` API ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgGetMsgList.html)) to get historical group messages.
 When the network is normal, the latest cloud data will be pulled; when it is abnormal, the SDK will return the locally stored historical messages.
 
 This API supports pulling by page. For more information, see [Pulling by page](#advance_page).
@@ -124,7 +124,7 @@ We recommend you fix this issue as instructed in [question 1](#qa1). If the issu
 * When messages are generated, the SDK will update the current group member information such as the group name card and role and store it in the local database.
 * When historical group messages are pulled, the SDK will directly return the group member information when the messages were generated and will not update it in real time.
 
-If you want to get the latest group member information, you can use the `GroupGetMemberInfoList` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetMemberInfoList.html)).
+If you want to get the latest group member information, you can use the `GroupGetMemberInfoList` API ([Details](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupGetMemberInfoList.html)).
 
 
 [](id:qa4)

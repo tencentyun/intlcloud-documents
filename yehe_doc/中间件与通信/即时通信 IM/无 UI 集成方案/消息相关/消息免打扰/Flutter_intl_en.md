@@ -14,14 +14,14 @@ After the message receiving option is set to `V2TIM_NOT_RECEIVE_MESSAGE`, no one
 
 **Messages will be received but will not be notified to the user, and a badge without the unread count will be displayed on the conversation list UI.**
 1. The message receiving option is set to `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE`.
-2. When the receiver receives a one-to-one or group message and needs to update the conversation list, it can get the unread count through the `unreadCount` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#unreadcount)) in the `V2TIMConversation` of the conversation.
-3. The receiver displays a badge rather than the unread count when identifying the message receiving option as `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE` based on the `recvOpt` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#recvopt)) in `V2TIMConversation`.
+2. When the receiver receives a one-to-one or group message and needs to update the conversation list, it can get the unread count through the `unreadCount` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#unreadcount)) in the `V2TIMConversation` of the conversation.
+3. The receiver displays a badge rather than the unread count when identifying the message receiving option as `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE` based on the `recvOpt` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Message/V2TimConversation.html#recvopt)) in `V2TIMConversation`.
 
 > ? As this method requires the unread count feature, it applies only to work groups (Work) and public groups (Public). For more information on group types, see Group Overview.
 
 
 ## Setting the Message Receiving Option for a One-to-One Chat
-Call the `setC2CReceiveMessageOpt` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/setC2CReceiveMessageOpt.html)) to set the message receiving option for a one-to-one chat.
+Call the `setC2CReceiveMessageOpt` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/setC2CReceiveMessageOpt.html)) to set the message receiving option for a one-to-one chat.
 You can use the `userIDList` parameter to specify up to 30 users at a time.
 
 > ! This API can be called up to 5 times every second.
@@ -37,7 +37,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().setC2CReceiveMessageOpt(user
 
 
 ## Getting the Message Receiving Option for a One-to-One Chat
-Call the `getC2CReceiveMessageOpt` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getC2CReceiveMessageOpt.html)) to get the message receiving option for a one-to-one chat.
+Call the `getC2CReceiveMessageOpt` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getC2CReceiveMessageOpt.html)) to get the message receiving option for a one-to-one chat.
 
 Sample code:
 
@@ -54,7 +54,7 @@ V2TimValueCallback<List<V2TimReceiveMessageOptInfo>> messageOpt = await TencentI
 
 
 ## Setting the Message Receiving Option for a Group Chat
-Call the `setGroupReceiveMessageOpt` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/setGroupReceiveMessageOpt.html)) to set the message receiving option for a group chat.
+Call the `setGroupReceiveMessageOpt` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/setGroupReceiveMessageOpt.html)) to set the message receiving option for a group chat.
 
 Sample code:
 
@@ -65,7 +65,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().setGroupReceiveMessageOpt(gr
 
 
 ## Getting the Message Receiving Option for a Group Chat
-Call the `getGroupsInfo` API ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupsInfo.html)) to get the `V2TIMGroupInfo` group profile object list. Here, the `recvOpt` field indicates the message receiving option for the group chat.
+Call the `getGroupsInfo` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupsInfo.html)) to get the `V2TIMGroupInfo` group profile object list. Here, the `recvOpt` field indicates the message receiving option for the group chat.
 
 Sample code:
 

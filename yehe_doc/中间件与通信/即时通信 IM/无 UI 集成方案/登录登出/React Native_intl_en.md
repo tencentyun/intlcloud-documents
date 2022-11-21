@@ -9,7 +9,7 @@ Only the conversation acquisition API can be called immediately after you call t
 ## Login
 
 You don't need to sign up on your first login, as you will automatically sign up if the login is successful.
-Call the `login` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/login.html)) to login in.
+Call the `login` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/login.html)) to login in.
 
 Key parameters of the `login` API are as follows:
 
@@ -22,8 +22,8 @@ You can call the `login` API in the following scenarios:
 
 - You use the features of the IM SDK for the first time after your application is started.
 - Your ticket expires on login: The callback of the `login` API returns the `ERR_USER_SIG_EXPIRED (6206)` or `ERR_SVR_ACCOUNT_USERSIG_EXPIRED (70001)` error code. In this case, you need to generate a new `userSig` to log in again.
-- Your ticket expires when the user is online: You may receive the `onUserSigExpired` callback ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimSDKListener.html#onusersigexpired)) when users are online. In this case, you need to generate a new `userSig` to log in again.
-- A user is kicked offline: When a user is kicked offline, the IM SDK will notify you through the `onKickedOffline` callback ([TS](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimSDKListener.html#onkickedoffline)). In this case, you can prompt the user and call `login` to log in again.
+- Your ticket expires when the user is online: You may receive the `onUserSigExpired` callback ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimSDKListener.html#onusersigexpired)) when users are online. In this case, you need to generate a new `userSig` to log in again.
+- A user is kicked offline: When a user is kicked offline, the IM SDK will notify you through the `onKickedOffline` callback ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimSDKListener.html#onkickedoffline)). In this case, you can prompt the user and call `login` to log in again.
 
 You don't need to call the `login` API in the following scenarios:
 
@@ -51,7 +51,7 @@ if (res.code == 0) {
 
 ### Getting the UserID
 
-After logging in successfully, call `getLoginUser` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/getLoginUser.html)) to get the `UserID`.
+After logging in successfully, call `getLoginUser` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/getLoginUser.html)) to get the `UserID`.
 If the login fails, the `UserID` will be empty.
 
 Below is the sample code:
@@ -68,7 +68,7 @@ if (getLoginUserRes.code == 0) {
 
 ### Getting the login status
 
-Call `getLoginStatus` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/getLoginStatus.html)) to get the login status. If a user is logged in or logging in, don't call the login API frequently. The IM SDK supports the following login statuses:
+Call `getLoginStatus` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/getLoginStatus.html)) to get the login status. If a user is logged in or logging in, don't call the login API frequently. The IM SDK supports the following login statuses:
 
 | Login Status              | Description   |
 | ------------------------- | ------------- |
@@ -105,13 +105,13 @@ You can configure the **Max Login Instances per User per Platform** for the IM S
 This feature is available only for the Ultimate edition. A user can be concurrently online on up to ten clients on the web platform or on up to three clients on the Android, iPhone, iPad, Windows, or macOS platform (the maximum number of clients that can be concurrently online on Flutter is subject to the actual compilation result).
 For more information on the configuration, see [Feature Configuration](https://intl.cloud.tencent.com/document/product/1047/34419).
 
-When you call the `login` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/login.html)) to log in, if the limit specified by the multi-client login policy for your account is exceeded, a newly logged in instance will kick out an earlier one.
-The one kicked out will receive `onKickedOffline`([TS](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimSDKListener.html#onkickedoffline)).
+When you call the `login` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/login.html)) to log in, if the limit specified by the multi-client login policy for your account is exceeded, a newly logged in instance will kick out an earlier one.
+The one kicked out will receive `onKickedOffline`([Details](https://comm.qq.com/im/doc/RN/en/Interface/Listener/V2TimSDKListener.html#onkickedoffline)).
 
 ## Logout
 
 Generally, if your application's lifecycle is the same as the IM SDK's lifecycle, there is no need to log out before exiting the application.
-In special cases, for example, if you use the IM SDK only after entering a specific UI and no longer use it after exiting the UI, you can call the `logout` API ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/logout.html)) to log out of the SDK, after which you will no longer receive new messages. Note that in this case, you also need to call `unInitSDK` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/unInitSDK.html)) after the logout to uninitialize the SDK.
+In special cases, for example, if you use the IM SDK only after entering a specific UI and no longer use it after exiting the UI, you can call the `logout` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/logout.html)) to log out of the SDK, after which you will no longer receive new messages. Note that in this case, you also need to call `unInitSDK` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/unInitSDK.html)) after the logout to uninitialize the SDK.
 
 Below is the sample code:
 
@@ -125,7 +125,7 @@ if (logoutRes.code == 0) {
 
 ## Account Switch
 
-Call `login` ([TS](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/login.html)) to switch between accounts in the application.
+Call `login` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/login.html)) to switch between accounts in the application.
 
 For example, to switch the logged-in user from `alice` to `bob`, just [log](#login_code) bob in. You don't need to explicitly call `logout alice`, as this operation will be handled automatically inside the IM SDK.
 

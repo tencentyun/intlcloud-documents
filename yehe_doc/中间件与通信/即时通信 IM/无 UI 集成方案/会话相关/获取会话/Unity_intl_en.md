@@ -1,6 +1,6 @@
 ## Feature Description
 The IM SDK provides an API for getting conversations, which you can use to get the `ConvInfo` object information of one or multiple specified conversations.
-Call `ConvGetConvInfo` ([c#](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvInfo.html)) to get the information of one or multiple conversations.
+Call `ConvGetConvInfo` ([Details](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvGetConvInfo.html)) to get the information of one or multiple conversations.
 
 
 Sample code:

@@ -3,7 +3,7 @@ Only locally stored groups can be searched for, such as the list of joined group
 
 
 ## Searching a Local Group
-Call the `GroupSearchGroups` API ([c#](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupSearchGroups.html)) to search a local group.
+Call the `GroupSearchGroups` API ([Details](https://comm.qq.com/im/doc/unity/en/api/GroupApi/GroupSearchGroups.html)) to search a local group.
 You can set the search keyword `group_search_params_keyword_list` and specify the search scope to set whether to search by the `userID` and `groupName` fields of a group.
 
 Sample code:

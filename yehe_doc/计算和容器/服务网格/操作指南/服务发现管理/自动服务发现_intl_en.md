@@ -35,7 +35,7 @@ On the mesh details page, you can view the service discovery clusters associated
 3. After the request for adding a Kubernetes service discovery cluster is submitted, wait for the cluster to be connected. After the cluster is connected, addition of the Kubernetes service discovery cluster is complete.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0038fb53797ac76cedc77a3f361193d1.png)
 
->! After the service is added to the mesh, you need to inject a sidecar into the service and then perform management operations on the service, such as traffic management and visual observation. For related guidelines, see [Mesh Configuration](https://intl.cloud.tencent.com/document/product/1152/47463).
+>! After the service is added to the mesh, you need to inject a sidecar into the service and then perform management operations on the service, such as traffic management and visual observation. For related guidelines, see [Mesh Configuration](https://intl.cloud.tencent.com/document/product/1152/47464).
 
 #### Disassociating a service discovery cluster
 
