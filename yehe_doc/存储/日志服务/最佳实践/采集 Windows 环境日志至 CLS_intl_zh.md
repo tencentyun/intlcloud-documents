@@ -5,7 +5,7 @@
 ## 前提条件
 
 - 已开通日志服务（Cloud Log Service，CLS），并创建对应资源（如日志集和日志主题）。
-- 已在 [腾讯云控制台](https://console.cloud.tencent.com/cam/capi) 获取到 SecurityId 和 SecurityKey。
+- 已在 [腾讯云控制台](https://console.cloud.tencent.com/cam/capi) 获取到 SecretId 和 SecretKey。
 
 ## 操作步骤
 
@@ -57,7 +57,7 @@ output.kafka:
 | hosts | 初始连接的集群地址，详细请参见 [服务入口](#hosts)。 |
 | topic | 配置为日志主题 ID，例如 76c63473-c496-466b-XXXX-XXXXXXXXXXXX。 |
 | username | 配置为日志集 ID，例如 0f8e4b82-8adb-47b1-XXXX-XXXXXXXXXXXX。 |
-| password | 格式为 ${SecurityId}#${SecurityKey}，例如 XXXXXXXXXXXXXX#YYYYYYYY。 |
+| password | 格式为 ${SecurityId}#${SecurityKey}，例如 XXXXXXXXXXXXXX#YYYYYYYY。 |
 
 ### 使用 Filebeat 采集 Windows 文件日志
 
@@ -121,7 +121,7 @@ output.kafka:
 | hosts | 初始连接的集群地址，详细请参见 [服务入口](#hosts)。 |
 | topic | 配置为日志主题 ID，例如 76c63473-c496-466b-XXXX-XXXXXXXXXXXX。 |
 | username | 配置为日志集 ID，例如 0f8e4b82-8adb-47b1-XXXX-XXXXXXXXXXXX。 |
-| password | 格式为 ${SecurityId}#${SecurityKey}，例如 XXXXXXXXXXXXXX#YYYYYYYY。 |
+| password | 格式为 ${SecurityId}#${SecurityKey}，例如 XXXXXXXXXXXXXX#YYYYYYYY。 |
 
 <span id="hosts"></span>
 ## 服务入口 
