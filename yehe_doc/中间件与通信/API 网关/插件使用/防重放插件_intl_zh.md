@@ -23,7 +23,6 @@
 <td>防重放有效时间，默认900，单位s，范围 1-1800。</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/c52a519362aad9e81e2e61d5c2ea75a1.png"> 
 
 ### 步骤2：绑定 API 并生效
 1. 在列表中选中刚刚创建好的插件，单击操作列的绑定 API。
