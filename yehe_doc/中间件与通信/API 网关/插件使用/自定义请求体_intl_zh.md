@@ -4,7 +4,7 @@
 
 自定义请求体插件作用在请求过程中， 请求体改写服务可部署在云函数、公网、或内网 VPC 上。客户端请求 API 网关后，API 网关会将请求内容转发到请求体改写服务中，请求体内容修改完成后，将修改后的请求体响应给 API 网关，API 网关再将修改后的请求体转发给业务后端。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/8aedabdaec35a1c52df74f4f0f1925c7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/584435971261510d21bcf2549042570d.jpg)
 
 ## 前提条件
 
@@ -79,7 +79,7 @@
 </td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/d9949dc29680fa9f537591c31f25ce79.png"> 
+
 	- 对于部署在内网 VPC 的认证服务，创建自定义认证插件时需要填写的数据如下：
 <table>
 <tr>
@@ -103,14 +103,12 @@
 <td>自定义请求体服务访问地址，支持 HTTP 和 HTTPS 协议。</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/778a19c16faf213034ec34ca27b3f155.png"> 
 
 
 ### 步骤3：绑定 API
 
 1. 在列表中选中 [步骤2](#step2) 创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## 自定义请求体云函数的编写方法[](id:scfdemo)
