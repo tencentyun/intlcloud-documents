@@ -136,7 +136,7 @@ var player = TCPlayer('player-container-id', {
 ![](https://qcloudimg.tencent-cloud.cn/raw/fec2838bedc7d8748931e535fbcbb8ad.png)
 
 ### Android端末
-[アクセスガイド](https://intl.cloud.tencent.com/document/product/266/49670#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE)の`FileId方式`の使用方法を参照して、DRMで暗号化されたビデオを再生してください。
+アクセスガイドの`FileId方式`の使用方法を参照して、DRMで暗号化されたビデオを再生してください。
 
 >? アクセスする前にチケットを提出して、DRM機能をサポートするSDKの取得について、弊社までご連絡ください。
 
