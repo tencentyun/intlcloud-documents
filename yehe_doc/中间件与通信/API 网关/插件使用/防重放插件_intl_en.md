@@ -23,7 +23,6 @@ The anti-replay plugin is provided by API Gateway to protect APIs from replay at
 <td>Valid anti-replay period, which is 900 seconds by default. Value range: 1–1800.</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/c52a519362aad9e81e2e61d5c2ea75a1.png"> 
 
 ### Step 2. Bind an API and make the plugin effective
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
