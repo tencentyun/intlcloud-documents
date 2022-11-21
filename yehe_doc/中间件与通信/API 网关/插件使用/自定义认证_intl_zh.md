@@ -4,7 +4,7 @@
 
 自定义认证插件作用在请求过程中，客户端请求 API 网关后，API 网关会将请求内容转发到认证函数中。您可以将认证函数部署在云函数上，公网、或内网 VPC 上，认证通过后请求才会被转发给业务后端，否则将拒绝请求。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/14de216be4c6fd3341bd1d260779f3d4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4e4a0585335d1e7ef6d6c271af68b948.jpg)
 
 ## 前提条件
 
@@ -86,7 +86,7 @@
 </td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/ed0d1da4947eec16a8c49b6990bf29b6.png"> 
+
 	- 对于部署在内网 VPC 的认证服务，创建自定义认证插件时需要填写的数据如下：
 <table>
 <tr>
@@ -110,7 +110,6 @@
 <td>自定义认证服务访问地址，支持 HTTP 和 HTTPS 协议。</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/ad1af755730f533eddc3b870f9399166.png"> 
 
 
 
@@ -118,7 +117,6 @@
 
 1. 在列表中选中刚刚创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 
