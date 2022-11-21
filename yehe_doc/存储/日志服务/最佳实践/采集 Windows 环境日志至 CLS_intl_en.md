@@ -5,7 +5,7 @@ This document describes how to use Winlogbeat or Filebeat to collect and upload 
 ## Prerequisites
 
 - You have activated CLS and created relevant resources such as logset and log topic.
-- You have obtained the `SecurityId` and `SecurityKey` in the [Tencent Cloud console](https://console.cloud.tencent.com/cam/capi).
+- You have obtained the `SecretId` and `SecretKey` in the [Tencent Cloud console](https://console.cloud.tencent.com/cam/capi).
 
 ## Directions
 
