@@ -4,7 +4,7 @@ The response body sent to the Client by API Gateway contains many fields. If you
 
 The custom response body plugin applies during the response process, and the response content rewriting service can be deployed in SCF, on the public network, or in a VPC. The service backend will send the response body to API Gateway after processing the request message. API Gateway will forward the response content to the response body modification service after receiving it. The modification service will send the modified content of the response body to API Gateway after modifying it. Then, API Gateway will forward the modified response body to the service backend.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/491bf20a919a7caa1589aa974ccbe13f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c1f6d2d82dd9e3a19bd83f5a21acbee2.jpg)
 
 ## Prerequisites
 
@@ -77,7 +77,7 @@ The custom response body plugin applies during the response process, and the res
 </td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/dc03d3acb6b928083b26876438d8b2d7.png"> 
+
 	- For verification services deployed in a VPC, you need to enter the following data when creating the custom response plugin:
 <table>
 <tr>
@@ -101,14 +101,12 @@ The custom response body plugin applies during the response process, and the res
 <td>Access address of the response body rewriting service, which can be an HTTP or HTTPS address.</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/a68f03c1c851b9ab255524338105121b.png"> 
 
 
 ### Step 3. Bind the API
 
 1. Select the plugin created in [step 2](#step2) from the plugin list. Click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the target API.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## pluginData
