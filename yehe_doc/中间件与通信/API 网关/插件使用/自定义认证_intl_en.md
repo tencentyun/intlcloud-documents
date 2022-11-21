@@ -4,7 +4,7 @@ If the verification and authentication method provided by API Gateway cannot mee
 
 The custom verification plugin applies during the request process. API Gateway will forward the request to the verification function after receiving it from the client. You can deploy the verification function in SCF, on the public network, or in a VPC. Then, the request will be forwarded to the service backend only if it passes the verification; otherwise, the request will be denied.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/14de216be4c6fd3341bd1d260779f3d4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4e4a0585335d1e7ef6d6c271af68b948.jpg)
 
 ## Prerequisites
 
@@ -86,7 +86,7 @@ For verification functions deployed on the public network or in a VPC, you can s
 </td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/ed0d1da4947eec16a8c49b6990bf29b6.png"> 
+
 	- For verification services deployed in a VPC, you need to enter the following data when creating the custom verification plugin:
 <table>
 <tr>
@@ -110,7 +110,6 @@ For verification functions deployed on the public network or in a VPC, you can s
 <td>Access address of the custom verification service, which can be an HTTP or HTTPS address.</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/ad1af755730f533eddc3b870f9399166.png"> 
 
 
 
@@ -118,7 +117,6 @@ For verification functions deployed on the public network or in a VPC, you can s
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the target API.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 
