@@ -136,7 +136,7 @@ iOS에서 `FileId를 통해` 방식으로 DRM으로 암호화된 동영상을 �
 ![](https://qcloudimg.tencent-cloud.cn/raw/fec2838bedc7d8748931e535fbcbb8ad.png)
 
 ### Android
-Android에서 `FileId를 통해` 방식으로 DRM으로 암호화된 동영상을 재생하려면 [통합 가이드](https://intl.cloud.tencent.com/document/product/266/49670#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E5.90.AF.E5.8A.A8.E6.92.AD.E6.94.BE)를 참고하십시오.
+Android에서 `FileId를 통해` 방식으로 DRM으로 암호화된 동영상을 재생하려면 통합 가이드 를 참고하십시오.
 
 >? DRM을 지원하는 플레이어 SDK에 대한 티켓을 제출하십시오.
 
