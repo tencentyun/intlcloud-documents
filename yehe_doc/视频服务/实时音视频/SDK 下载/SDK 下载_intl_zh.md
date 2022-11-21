@@ -1098,7 +1098,7 @@
        <td class="tg-cly1 select">MP4、MP3、HLS、DASH</td>
     </tr>
     <tr>
-       <td class="tg-cly1"><a href="https://cloud.tencent.com/product/leb">快直播</a></td>
+       <td class="tg-cly1">快直播</td>
        <td class="tg-cly1 select">同时支持点播播放和直播播放能力</td>
        <td class="tg-cly1 select">✓</td>
        <td class="tg-cly1 select">×</td>
