@@ -1,65 +1,80 @@
-## Directions
+## Prerequisites
 
-### Developer environment requirements
+### Environment requirements
 
-- Xcode 11 or later: Download on App Store or [here](https://intl.cloud.tencent.com/document/product/1143/45374).
+- Xcode 11 or later (download from App Store or [here](https://developer.apple.com/xcode/resources/)).
 - Recommended runtime environment:
   - Device requirements: iPhone 5 or later. iPhone 6 and older models support up to 720p for front camera.
   - System requirements: iOS 10.0 or later.
 
-### C/C++ layer development environment
+### Importing the SDK
 
-Xcode uses the C++ environment by default.
+You can use CocoaPods or download and import the SDK manually into your project.
+<dx-tabs>
+::: CocoaPods
+1. **Install CocoaPods**
+Enter the following command in a terminal window (you need to install Ruby on your Mac first):
+```
+sudo gem install cocoapods
+```
+2. **Create a Podfile**
+Go to the directory of your project and enter the following command to create a Podfile in the directory.
+```
+pod init
+```
+3. **Edit the Podfile**
+Choose an edition for your project and edit the Podfile:
+  - **XMagic Standard**
+Edit the Podfile as follows:
+```
+platform :ios, '8.0'
 
-<table>
-<tr><th>Type</th><th>Dependency Library</th></tr>
-<tr>
-<td>System dependent library</td>
-<td><ul style="margin:0">
-<li/>CoreTelephony
-<li/>JavaScriptCore
-<li/>libc++.tbd
-<li/>MetalPerformanceShaders
-<li/>VideoToolbox
-</ul></td>
-</tr>
-<tr>
-<td>Built-in library</td>
-<td><ul style="margin:0">
-<li/>YTCommon (static authentication library)
-<li/>XMagic (static beauty filter library)
-<li/>libpag (dynamic video decoding library)
-<li/>Masonry (control layout library)
-<li/>SSZipArchive (file decompression library)
-</ul></td>
-</tr>
-</table>
+target 'App' do
+pod 'XMagic'
+end
+```
+  - **XMagic Lite**
+The installation package of XMagic Lite is smaller than XMagic Standard. It supports only Basic A1- 00, Basic A1 - 01, and Advanced S1 - 00. Edit the Podfile as follows:
+```
+platform :ios, '8.0'
 
+target 'App' do
+pod 'XMagic_Smart'
+end
+```
+4. **Update the local repository and install the SDK**
+Enter the following command in a terminal window to update the local repository and install the SDK:
+```
+pod install
+```
+An XCWORKSPACE project file integrated with the SDK will be generated. Double-click to open it.
+5. **Add effect resources to your project**
+Download the [SDK and effect resources](https://www.tencentcloud.com/document/product/1143/45377) for the Tencent Effect package you use, decompress the file, and add **all the bundle files** except **LightCore.bundle**, **Light3DPlugin.bundle**, **LightBodyPlugin.bundle**, **LightHandPlugin.bundle**, and **LightSegmentPlugin.bundle** to your project.
+6. Change the bundle ID to the bundle ID bound to your license.
+:::
+::: Manual import
+1. Download the [SDK and effect resources](https://www.tencentcloud.com/document/product/1143/45377) and decompress the file. The SDK is in the `frameworks` folder, and the bundle resources are in `resources`.
+2. Open your Xcode project and add the frameworks in the `frameworks` folder to your project: Choose the target to run, select the **General** tab, expand **Frameworks, Libraries, and Embedded Content**, and click **+** to add the frameworks downloaded, including `XMagic.framework`, `YTCommonXMagic.framework`, and `libpag.framework`, as well as `MetalPerformanceShaders.framework`, `CoreTelephony.framework`, `JavaScriptCore.framework`, `VideoToolbox.framework`, and `libc++.tbd`. You can also add `Masonry.framework` (control layout) and `SSZipArchive` (file decompression) if necessary.
+![](https://qcloudimg.tencent-cloud.cn/raw/64aacf4305d7adf3a2bbe025920be517.png)
+3. Add the effect resources in the `resources` folder to your project.
+4. Change the bundle ID to the bundle ID bound to your license.
+:::
+::: Dynamic download and integration
+To reduce the SDK package size, you can dynamically download the necessary module resources and animated effect resources (`MotionRes`, not available in some basic editions of the SDK) from a URL and, after download, pass the path of the resources to the SDK.
 
-## Resource Import
-### Objects
-- Required resource package: `LightCore.bundle`
-- Keying feature package: `LightSegmentPlugin.bundle`
-- Gesture feature package: `LightHandPlugin.bundle`
-- 3D feature package: `Light3DPlugin.bundle`
+You can use your existing download service, but we recommend you use the download logic of the demo. For detailed directions on implementing dynamic download, see [Reducing SDK Size](https://www.tencentcloud.com/document/product/1143/48644).
+:::
+</dx-tabs>
 
-### Method to import
-- **Method 1**: Add the resources as project resources.
-- **Method 2**: If you need to specify the path `initWithRenderSize:assetsDict: (XMagic)`, you can configure each resource path through `assetsDict`.
+### Configuring permissions
+Add permission descriptions in the `Info.plist` file. If you don’t do so, the application will crash on iOS 10. Grant the application camera access in **Privacy - Camera Usage Description**.
 
-### Permission configuration
-Add permission descriptions in the `Info.plist` file; otherwise, the app will crash on iOS 10. Grant the camera access in **Privacy - Camera Usage Description** to allow the app to use the camera.
+## Directions
 
-## Integration steps
-
-[](id:step1)
-### Step 1. Prepare the signature
-For the framework signature, select **General** >**Masonry.framework** and set **libpag.framework** to **Embed & Sign**.
-[](id:step2)
-### Step 2. Authenticate
+### Step 1. Authenticate
 1. Apply for a license and get the `LicenseURL` and `LicenseKEY`.
-> ! Under normal circumstances, the authentication process can be completed by connecting your app to the internet one time, so you **don't need** to put the license file in the project directory. However, if your app needs to use the SDK features without ever connecting to the internet, you can download the license file and put it in the project directory. In this case, the license file must be named `v_cube.license`.
-2. Set the `URL` and `KEY` in the initialization code of the relevant business module to trigger the license download. Avoid downloading it just before use. You can also trigger the download in the `didFinishLaunchingWithOptions` method of the `AppDelegate`. Here, `LicenseURL` and `LicenseKey` are the information generated in the console when the license is bound.
+>! Under normal circumstances, the authentication process can be completed by connecting your application to the internet one time, so you **don't need** to put the license file in the project directory. However, if your application needs to use the SDK features without ever connecting to the internet, you can download the license file and put it in the project directory. In this case, the license file must be named `v_cube.license`.
+2. Set the URL and key in the initialization code of a business module to download the license. Avoid downloading it just before use. You can also trigger the download in the `didFinishLaunchingWithOptions` method of `AppDelegate` (the values of `LicenseURL` and `LicenseKey` are generated when you bound the license in the console).
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
 	if (authresult == TELicenseCheckOk) {
@@ -69,7 +84,7 @@ For the framework signature, select **General** >**Masonry.framework** and set *
 	}
 }];
 ```
-**Authentication `errorCode` description:**
+**Authentication error codes:**
 <table>
 <thead>
 <tr>
@@ -79,7 +94,7 @@ For the framework signature, select **General** >**Masonry.framework** and set *
 </thead>
 <tbody><tr>
 <td>0</td>
-<td>Success.</td>
+<td>Successful</td>
 </tr>
 <tr>
 <td>-1</td>
@@ -89,60 +104,60 @@ For the framework signature, select **General** >**Masonry.framework** and set *
 <td>Download failed. Check the network settings.</td>
 </tr><tr>
 <td>-4</td>
-<td>The Tencent Effect SDK authorization information read from the local system is empty, which may be caused by an I/O failure.</td>
+<td>Unable to obtain any Tencent Effect authentication information from the local system, which may be caused by an I/O failure.</td>
 </tr><tr>
 <td>-5</td>
-<td>The content of read VCUBE TEMP license file is empty, which may be caused by an I/O failure.</td>
+<td>The VCUBE TEMP license file is empty, which may be caused by an I/O failure.</td>
 </tr><tr>
 <td>-6</td>
-<td>The JSON field in the `v_cube.license` file is incorrect. Contact Tencent Cloud for assistance.</td>
+<td>The JSON field in the `v_cube.license` file is incorrect. Please contact Tencent Cloud team for help.</td>
 </tr><tr>
 <td>-7</td>
-<td>Signature verification failed. Contact Tencent Cloud for assistance.</td>
+<td>Signature verification failed. Please contact Tencent Cloud team for help.</td>
 </tr><tr>
 <td>-8</td>
-<td>Decryption failed. Contact Tencent Cloud for assistance.</td>
+<td>Decryption failed. Please contact Tencent Cloud team for help.</td>
 </tr><tr>
 <td>-9</td>
-<td>The JSON field in the `TELicense` field is incorrect. Contact Tencent Cloud for assistance.</td>
+<td>The JSON field in `TELicense` is incorrect. Please contact Tencent Cloud team for help.</td>
 </tr><tr>
 <td>-10</td>
-<td>The Tencent Effect SDK authorization information parsed online is empty. Contact Tencent Cloud for assistance.</td>
+<td>The Tencent Effect authentication information parsed online is empty. Please contact Tencent Cloud team for help.</td>
 </tr><tr>
 <td>-11</td>
-<td>Failed to write the Tencent Effect SDK authorization information to the local file, which may be caused by an I/O failure.</td>
+<td>Failed to write Tencent Effect SDK authentication information to the local file, which may be caused by an I/O failure.</td>
 </tr><tr>
 <td>-12</td>
-<td>Failed to download and failed to parse local assets.</td>
+<td>Download failed, and failed to parse local assets.</td>
 </tr><tr>
 <td>-13</td>
 <td>Authentication failed.</td>
 </tr><tr>
-<td>Other</td>
-<td>Contact Tencent Cloud for assistance.</td>
+<td>Others</td>
+<td>Please contact Tencent Cloud team for help.</td>
 </tr>
 </tbody></table>
 
 [](id:step3)
-### Step 3. Load the SDK (XMagic.framework)
-The following is the lifecycle of using Tencent Effect SDK:
-1. Load beauty filter resources.
+### Step 2. Load the SDK (`XMagic.framework`)
+The following is the process of using the Tencent Effect SDK:
+1. Load effect resources.
 ```
 NSDictionary *assetsDict = @{@"core_name":@"LightCore.bundle",
 	@"root_path":[[NSBundle mainBundle] bundlePath]
 };
 ```
-2. Initialize Tencent Effect SDK.
+2. Initialize the Tencent Effect SDK.
 ```
 initWithRenderSize:assetsDict: (XMagic)
 self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:assetsDict];
 ```
-3. Tencent Effect SDK processes each frame of data and returns the processing results.
+3. The SDK processes each frame of data and returns the results.
 ```
 process: (XMagic)
 ```
 ```
-// Pass in frame data at the camera callback
+// Pass in frame data via the camera callback
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection;
 
 // Get the raw data and process the rendering information for each frame
@@ -154,15 +169,15 @@ process: (XMagic)
 // Use the GPU to process the data
 - (YTProcessOutput*)processDataWithGpuFuc:(CMSampleBufferRef)inputSampleBuffer;
 
-// Data processing API of Tencent Effect SDK
+// The data processing API of the Tencent Effect SDK
 /// @param input: Input the data to be processed
 /// @return: Output the processed data
 - (YTProcessOutput* _Nonnull)process:(YTProcessInput * _Nonnull)input;
 ```
-4. Release Tencent Effect SDK.
+4. Release the Tencent Effect SDK.
 ```
 deinit (XMagic)
-// Make a call where SDK resources need to be released
+// Call this API when you need to release the resources of the SDK
 [self.beautyKit deinit]
 ```
 
@@ -177,17 +192,17 @@ deinit (XMagic)
 2. For Xcode 13.0++, you need to select **File** > **Workspace Settings** > **Do not show a diagnostic issue about build system deprecation**.
 
 [](id:que2)
-### Question 2. What should I do if "Building for iOS Simulator, but the linked and embedded framework '.framework'..." is reported during compilation by Xcode 12.X after resources are imported on iOS?
+### Question 2. What should I do if the error "Xcode 12.X compilation: Building for iOS Simulator, but the linked and embedded framework '.framework'..." occurs when I compile my iOS project after importing the resources?
 
 Go to **Build Settings** > **Build Options**, change **Validate Workspace** to **Yes**, and click **Run**.
-> ?  Note that the execution will also be normal if you change **Validate Workspace** from **Yes** to **No** after the compilation is completed.
+>? If you change **Validate Workspace** back to **No** after compilation, you can still run your project successfully.
 
 [](id:que3)
 ### Question 3. What should I do if the filter settings don't take effect?
-Check whether the value is set properly (value range: 0–100). You may have set too small a value so the effect is not obvious.
+Check the value you set (value range: 0-100). The effect may not be obvious if the value is too small.
 
 [](id:que4)
-### Question 4. What should I do if an error is reported when `dSYM` is generated during demo compilation on iOS?
+### Question 4. What should I do if a `dSYM` generation error occurs when I compile the iOS demo project?
 ```
 PhaseScriptExecution CMake\ PostBuild\ Rules build/XMagicDemo.build/Debug-iphoneos/XMagicDemo.build/Script-81731F743E244CF2B089C1BF.sh
     cd /Users/zhenli/Downloads/xmagic_s106
@@ -197,9 +212,9 @@ Command /bin/sh failed with exit code 1
 ```
 - Cause: Failed to sign `libpag.framework` and `Masonary.framework` again.
 - Solution:
-	1. Open `demo/copy_framework.sh`.
-	2. Use the following command to check the absolute path of the local `cmake`. Replace `$(which cmake)` with the absolute path of `cmake`.
+  1. Open `demo/copy_framework.sh`.
+  2. Use the following command to check the absolute path of the local `cmake`. Replace `$(which cmake)` with the absolute path of `cmake`.
 ```
 which cmake
 ```
-	3. Replace all `Apple Development: ......` with your own signature.
+  3. Replace all `Apple Development: ......` with your own signature.
