@@ -4,7 +4,7 @@ The request body sent to service backend by the Client contains many fields. If 
 
 The custom request body plugin applies during the request process. The request body rewriting service can be deployed in SCF, on the public network, or in a VPC. API Gateway will forward the request content to the request body rewriting service after receiving it from the client. The rewriting service will send the content of the request body to API Gateway after modifying it. Then, API Gateway will forward the modified request body to the service backend.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/8aedabdaec35a1c52df74f4f0f1925c7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/584435971261510d21bcf2549042570d.jpg)
 
 ## Prerequisites
 
@@ -79,7 +79,7 @@ For verification functions deployed on the public network or in a VPC, you can s
 </td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/d9949dc29680fa9f537591c31f25ce79.png"> 
+
 	- For verification services deployed in a VPC, you need to enter the following data when creating the custom verification plugin:
 <table>
 <tr>
@@ -103,14 +103,12 @@ For verification functions deployed on the public network or in a VPC, you can s
 <td>Access address of the custom request body service, which can be an HTTP or HTTPS address.</td>
 </tr>
 </table>
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/778a19c16faf213034ec34ca27b3f155.png"> 
 
 
 ### Step 3. Bind the API
 
 1. Select the plugin created in [step 2](#step2) from the list. Click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the target API.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## How to Write Custom Request Body Function[](id:scfdemo)
