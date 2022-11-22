@@ -22,10 +22,10 @@ TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messagi
 
 
 >? **참고:** **무료 평가판**을 클릭하면 이전에 [TRTC](https://www.tencentcloud.com/document/product/647/35078) 서비스를 사용한 적이 있는 일부 사용자에게 다음 메시지가 표시됩니다.
-```java
+>```java
 [-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears
-```
-새로운 IM 음성 및 영상 통화 기능은 [TRTC](https://www.tencentcloud.com/document/product/647/35078) 및 [IM](https://www.tencentcloud.com/document/product/1047)의 두 가지 기본 PaaS 서비스가 통합되어 있으므로, [TRTC](https://www.tencentcloud.com/document/product/647/35078)의 무료 할당량(10000분)이 만료되거나 소진되면 이 서비스를 활성화할 수 없습니다. 예시 이미지와 같이 [TRTC 콘솔](https://console.tencentcloud.com/trtc/app)을 클릭하여 SDKAppID에 해당하는 애플리케이션 관리 페이지에서 후불 기능을 활성화한 후 다시 **애플리케이션을 활성화**하면 음성 및 영상 통화 기능을 정상적으로 체험할 수 있습니다.
+>```
+>새로운 IM 음성 및 영상 통화 기능은 [TRTC](https://www.tencentcloud.com/document/product/647/35078) 및 [IM](https://www.tencentcloud.com/document/product/1047)의 두 가지 기본 PaaS 서비스가 통합되어 있으므로, [TRTC](https://www.tencentcloud.com/document/product/647/35078)의 무료 할당량(10000분)이 만료되거나 소진되면 이 서비스를 활성화할 수 없습니다. 예시 이미지와 같이 [TRTC 콘솔](https://console.tencentcloud.com/trtc/app)을 클릭하여 SDKAppID에 해당하는 애플리케이션 관리 페이지에서 후불 기능을 활성화한 후 다시 **애플리케이션을 활성화**하면 음성 및 영상 통화 기능을 정상적으로 체험할 수 있습니다.
 
 
 [](id:step2)
