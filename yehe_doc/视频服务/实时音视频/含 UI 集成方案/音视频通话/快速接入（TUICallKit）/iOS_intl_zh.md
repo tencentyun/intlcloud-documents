@@ -22,10 +22,10 @@ TUICallKit 是基于腾讯云 [即时通信 IM](https://www.tencentcloud.com/doc
 
 
 >? **友情提示：** 单击**免费体验**以后，部分之前使用过 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 服务的用户会提示：
-```java
+>```java
 [-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears
-```
-因为新的 IM 音视频通话能力是整合了腾讯云[实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 和 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 两个基础的 PaaS 服务，所以当 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 的免费额度（10000分钟）已经过期或者耗尽，就会导致开通此项服务失败，这里您可以单击 [TRTC 控制台](https://console.tencentcloud.com/trtc/app)，找到对应 SDKAppID 的应用管理页，示例如图，开通后付费功能后，再次**启用应用**即可正常体验音视频通话能力。
+>```
+>因为新的 IM 音视频通话能力是整合了腾讯云[实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 和 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 两个基础的 PaaS 服务，所以当 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 的免费额度（10000分钟）已经过期或者耗尽，就会导致开通此项服务失败，这里您可以单击 [TRTC 控制台](https://console.tencentcloud.com/trtc/app)，找到对应 SDKAppID 的应用管理页，开通后付费功能后，再次**启用应用**即可正常体验音视频通话能力。
 
 
 [](id:step2)
