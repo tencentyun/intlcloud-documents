@@ -4,9 +4,9 @@
 
 Step 1. Use your partner account to log in to [Tencent Cloud](https://www.tencentcloud.com/login) and enter the [Partner Center](https://console.tencentcloud.com/partners).
 
-Step 2.Click **Customer Bills Management** on the left sidebar to enter the customer bills management page.
+Step 2.Click **Customer Business>Customer Bills** on the left sidebar to enter the customer bills management page.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d00e8c2085c02f9b0d45035eeffa30f8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d1adae0671f6cf184d1ddcc78a0955c9.png)
 
 Step 3. Select a bill month and a customer UIN/name to display the credit of the specified customer in the specified month.
 
