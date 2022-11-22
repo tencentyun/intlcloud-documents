@@ -23,7 +23,7 @@ Windows、Linux 、macOSシステムをサポートします。
 #### インストールおよび設定
 
 - 環境のインストールと設定操作の詳細については、[Pythonのインストールと設定](https://intl.cloud.tencent.com/document/product/436/10866)をご参照ください。
-- pip環境のインストールと設定操作の詳細については、[公式サイトpipのインストールの説明](https://pip.pypa.io/en/stable/installing/)をご参照ください。
+- pip環境のインストールと設定操作の詳細については、[公式サイトpipのインストールの説明](https://pip.pypa.io/en/stable/installation//)をご参照ください。
 
 
 ### ダウンロードとインストール
