@@ -7,13 +7,13 @@
 [](id:step1)
 ## 步骤一：开通服务
 
-TUICallKit 是基于腾讯云 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 和 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 两项付费 PaaS 服务构建出的音视频通信组件。您可以按照如下步骤开通相关的服务并体验 7 天的免费试用服务：
+TUICallKit 是基于腾讯云 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 和 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 两项付费 PaaS 服务构建出的音视频通信组件。您可以按照如下步骤开通相关的服务并体验 60 天的免费试用服务：
 
 1. 登录到 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击**创建新应用**，在弹出的对话框中输入您的应用名称，并单击**确定**。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/ce2e34f7cd1cd14679fc5decffb469af.png)
 
-2. 单击刚刚创建出的应用，进入**基本配置**页面，并在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击**免费体验**即可开通 TUICallKit 的 7 天免费试用服务。
-![img](https://qcloudimg.tencent-cloud.cn/raw/a5cf318d4d8d680e0d885fe79af61f4e.png)
+2. 单击刚刚创建出的应用，进入**基本配置**页面，并在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击下方 音视频通话能力-免费体验 ，在弹出的免费开通音视频通话能力体验版对话框中，单击免费开通，即可开通 TUICallKit 的 60 天免费试用服务。
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 3. 在同一页面找到 **SDKAppID** 和**密钥**并记录下来，它们会在后续中被用到。
 	![img](https://qcloudimg.tencent-cloud.cn/raw/8349ac97b261279606316331488784c3.png)
