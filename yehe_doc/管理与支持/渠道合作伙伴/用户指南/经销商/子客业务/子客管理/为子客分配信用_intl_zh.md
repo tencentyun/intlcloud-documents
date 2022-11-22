@@ -6,9 +6,9 @@
 
 第二步：使用合作伙伴账号登录[腾讯云](https://intl.cloud.tencent.com/login)，进入[伙伴中心](https://console.intl.cloud.tencent.com/partners)。
 
-第三步：左侧导航栏中选择【客户管理】，选择【我的客户】页签，在客户列表为子客分配信用。
+第三步：左侧导航栏中选择【客户业务>客户管理】，选择【我的客户】页签，在客户列表为子客分配信用。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e8fcd3e63abe98306cbd5e46468835a4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a0f15839310ef21c7ae2a5a6f8797ca7.png)
 
 第四步：为客户调整信用。
 
@@ -18,7 +18,7 @@
 
 （2）设置【信用额度】，点击【确认】，系统提示分配成功信息。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/81428596bc99d1bcef2357140cf6b0fd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c52a9ac01c4d5ec8d11037218210eb1c.png)
 
 >?
 >1、信用额度，为客户消费信用限额，按腾讯云官网计算，不包含代金券已抵扣部分；
@@ -31,7 +31,7 @@
 
 如果分配子客的信用额度较高，您可输入负值，回收子客可用信用额度。最高【可回收子客信用额度】≤【子客可用信用额度】。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/4731f3b699d024dd6a89f9d3c5267949.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/88083150d16edc81b61103a44fefe200.png)
 
 >?
 >1、当子客可用信用额度为0时，不会触发子客停服，也不会影响子客新购产品。账户资产（信用+代金券）对新购和停服的影响，请查看[账户资产对新购&停服影响](https://intl.cloud.tencent.com/document/product/1085/48346)。
@@ -41,4 +41,4 @@
 
 点击【信用分配页面-分配记录】，可查询经销商对子客全部的信用分配记录。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1fb15ebd885ae683f7406d71f99a8a2c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ffe2f101c0a05cb3189d20f06c553fcf.png)
