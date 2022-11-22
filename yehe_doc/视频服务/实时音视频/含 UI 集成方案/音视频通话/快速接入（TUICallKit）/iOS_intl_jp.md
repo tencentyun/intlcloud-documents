@@ -231,15 +231,10 @@ TUICallKit.createInstance().setCallingBell(filePath: filePath)
 
 
 ## よくあるご質問
-### 1、「The package you purchased does not support this ability」というエラーが表示されました。
+### 「The package you purchased does not support this ability」というエラーが表示されました。
 
 上記のエラーが表示された場合は、現在のアプリケーションのオーディオビデオ通話機能パッケージが期限切れまたはアクティブ化されていないことを表します。[ステップ1](#step1)を参照してオーディオビデオ通話機能を取得またはアクティブ化し、引き続きTUICallKitコンポーネントをご利用ください。
 
-### 2、パッケージを購入するにはどうすればよいですか。
-
-購入リンク[オーディオビデオ通話SDK価格一覧](https://www.tencentcloud.com/document/product/647/50553)をご参照ください。その他にご質問がありましたらページ右側をクリックし、パッケージのご購入前にお問い合わせください。もしくはQQグループ：**592465424**に参加し、問い合わせとフィードバックを行うことができます。
-
->? その他のヘルプ情報についての詳細は、[iOSについてのよくあるご質問](https://www.tencentcloud.com/document/product/647/51023)をご参照ください。
 
 ## ご意見とフィードバック
 
