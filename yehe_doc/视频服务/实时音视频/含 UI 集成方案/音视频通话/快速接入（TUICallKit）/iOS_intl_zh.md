@@ -7,12 +7,12 @@ iOS 9.0 (API level 16) 及更高。
 [](id:step1)
 ## 步骤一：开通服务
 
-TUICallKit 是基于腾讯云 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 和 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647) 两项付费 PaaS 服务构建出的音视频通信组件。您可以按照如下步骤开通相关的服务并体验 7 天的免费试用服务：
+TUICallKit 是基于腾讯云 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 和 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647) 两项付费 PaaS 服务构建出的音视频通信组件。您可以按照如下步骤开通相关的服务并体验 60 天的免费试用服务：
 
 1. 登录到 [即时通信 IM 控制台](https://console.tencentcloud.com/im)，单击**创建新应用**，在弹出的对话框中输入您的应用名称，并单击**确定**。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/c9a076ece348019d689c6c562b6a3c78.png)
 
-2. 单击刚刚创建出的应用，进入基本配置页面，并在页面的右下角找到开通腾讯实时音视频服务功能区，单击免费体验即可开通 TUICallKit 的 7 天免费试用服务。如果需要正式应用上线，可以[联系我们](https://intl.cloud.tencent.com/contact-us)。
+2. 单击刚刚创建出的应用，进入基本配置页面，并在页面的右下角找到开通腾讯实时音视频服务功能区，单击下方 音视频通话能力-免费体验 ，在弹出的免费开通音视频通话能力体验版对话框中，单击免费开通，即可开通 TUICallKit 的 60 天免费试用服务。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/4ee28e98dd28c9ae91078832f0105092.png)
 
 >! IM 音视频通话能力针对不同的业务需求提供了差异化的付费版本供您选择，您可以在[联系我们](https://intl.cloud.tencent.com/contact-us)了解包含功能并选购您适合的版本。
