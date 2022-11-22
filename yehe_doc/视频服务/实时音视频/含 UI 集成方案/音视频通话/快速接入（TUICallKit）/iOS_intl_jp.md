@@ -13,7 +13,7 @@ TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/
 ![img](https://qcloudimg.tencent-cloud.cn/raw/c9a076ece348019d689c6c562b6a3c78.png)
 
 2. 作成したアプリケーションをクリックし、基本設定ページに進み、ページ右下隅のTRTCサービスのアクティブ化機能エリアで無料体験をクリックすると、TUICallKitの7日間無料トライアルサービスをアクティブ化することができます。正式アプリケーションのリリースが必要な場合は、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)ください。
-![img](https://qcloudimg.tencent-cloud.cn/raw/4ee28e98dd28c9ae91078832f0105092.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! IMのオーディオビデオ通話機能は業務ニーズに応じて差別化した有料バージョンをご提供しています。[お問い合わせ](https://intl.cloud.tencent.com/contact-us)いただくことで、含まれる機能をご確認の上、ご自身に合ったバージョンを選択してご購入いただけます。
 
