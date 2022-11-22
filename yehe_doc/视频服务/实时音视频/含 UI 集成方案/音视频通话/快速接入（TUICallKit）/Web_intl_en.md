@@ -12,7 +12,7 @@ Before integration, check whether your desktop browser supports the audio/video 
 1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click **Create Application**. In the pop-up window, enter your application name and click **OK**.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/ce2e34f7cd1cd14679fc5decffb469af.png)
 
-2. Click the application you just created to enter the **Basic Configuration** page. In the **Tencent Real-Time Communication** area at the bottom right of the page, click **Try now**. In the pop-up window, click **Activate now** to activate a 60-day free trial of `TUICallKit`.
+2. Click the application you just created to enter the **Basic Configuration** page. In the **Tencent Real-Time Communication** area at the bottom right of the page, click **Try now**. In the pop-up window, click **Activate now** to activate a **60-day free trial** of `TUICallKit`.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 3. On the same page, find and record the **SDKAppID** and **Key**, which will be used in subsequent steps.
