@@ -23,7 +23,7 @@ Windows, Linux, and macOS
 #### Installation and configuration
 
 - For more information about the installation and configuration of the environment, see [Python](https://intl.cloud.tencent.com/document/product/436/10866).
-- For more information about the installation and configuration of pip, see [Installation](https://pip.pypa.io/en/stable/installing/).
+- For more information about the installation and configuration of pip, see [Installation](https://pip.pypa.io/en/stable/installation/).
 
 
 ## Download and Installation
