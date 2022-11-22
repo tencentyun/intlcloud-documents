@@ -94,7 +94,7 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
   ```
 >? userSig 可在[步骤三](#step3)中获取
 
-	2.3 在需要拨打电话的地方，执行：
+  2.3 在需要拨打电话的地方，执行：
 	```
 		import { TUICallKitServer } from './src/components/TUICallKit/Web/src/index';
 		TUICallKitServer.call({ userID, type }); // 双人通话
@@ -124,7 +124,7 @@ function afterCalling() {
 
 - [TUICallKit API](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/API.md)
 - [TUICallKit demo 快速跑通](https://github.com/tencentyun/TUICallKit/blob/main/Web/demos/basic/README.md)
-- [TUICallKit 界面定制指引](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI Customization.md)
+- [TUICallKit 界面定制指引](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI%20Customization.md)
 - [TUICallKit (Web) 常见问题](https://www.tencentcloud.com/document/product/647/51024)
 
 
