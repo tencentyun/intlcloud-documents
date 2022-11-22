@@ -16,8 +16,8 @@ Mobile phone on Android 4.1 or later.
 1. Log in to the [IM console](https://console.tencentcloud.com/im) and click **Create Application**. In the pop-up window, enter your application name and click **OK**.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/571d5bed98a46752933169fbf4136271.png)
 
-2. Click the application just created to enter the **Basic Configuration** page. In the Activate free trial of audio/video call feature pop-up window, click Activate Now to activate the 60-day free trial of TUICallKit.
-![img](https://qcloudimg.tencent-cloud.cn/raw/0860fe4f282d2d918d3911127d85120a.png)
+2. Click the application you just created to enter the **Basic Configuration** page. In the **Tencent Real-Time Communication** area at the bottom right of the page, click **Try now**. In the pop-up window, click **Activate now** to activate a 60-day free trial of `TUICallKit`.
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! Different paid editions of the IM audio/video call capability are available for different business needs. You can learn more about the available features and purchase an the edition you want on the IM purchase page.
 
