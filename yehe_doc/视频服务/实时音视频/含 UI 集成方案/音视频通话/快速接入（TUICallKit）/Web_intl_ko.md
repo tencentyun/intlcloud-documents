@@ -94,7 +94,7 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
   ```
 >? userSig는 [3단계](#step3)에서 가져올 수 있습니다.
 
-	2.3 호출을 구현해야 하는 경우 다음 코드를 실행합니다.
+  2.3 호출을 구현해야 하는 경우 다음 코드를 실행합니다.
 	```
 		import { TUICallKitServer } from './src/components/TUICallKit/Web/src/index';
 		TUICallKitServer.call({ userID, type }); // 일대일 통화
@@ -124,7 +124,7 @@ function afterCalling() {
 
 - [TUICallKit API](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/API.md)
 - [TUICallKit 기본 demo](https://github.com/tencentyun/TUICallKit/blob/main/Web/demos/basic/README.md)
-- [TUICallKit UI 사용자 정의 가이드](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI Customization.md)
+- [TUICallKit UI 사용자 정의 가이드](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI%20Customization.md)
 - [TUICallKit (Web) FAQs](https://www.tencentcloud.com/document/product/647/51024)
 
 
