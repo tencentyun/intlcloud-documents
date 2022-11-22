@@ -230,15 +230,9 @@ TUICallKit.createInstance().setCallingBell(filePath: filePath)
 
 
 ## FAQs
-### 1. What should I do if I receive the error message "The package you purchased does not support this ability"?
+###  What should I do if I receive the error message "The package you purchased does not support this ability"?
 
 The error message indicates that your application's audio/video call capability package has expired or is not activated. You can claim or activate the audio/video call capability as instructed in [step 1](#step1) to continue using `TUICallKit`.
-
-### 2. How do I purchase a plan?
-
-For more information, see [Billing Overview](https://www.tencentcloud.com/document/product/647/50553). If you have any questions, please contact us.
-
->? For more information, see [FAQs (iOS)](https://www.tencentcloud.com/document/product/647/51023).
 
 ## Exchange and Feedback
 
