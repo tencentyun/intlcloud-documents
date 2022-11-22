@@ -11,12 +11,12 @@ Mobile phone on Android 4.1 or later.
 [](id:step1)
 ## Step 1. Activate the service
 
-`TUICallKit` is an audio/video call component developed based on two paid PaaS services: [IM](https://www.tencentcloud.com/document/product/1047) and [TRTC](https://www.tencentcloud.com/document/product/647). You can activate the services and enjoy a 7-day free trial as follows:
+`TUICallKit` is an audio/video call component developed based on two paid PaaS services: [IM](https://www.tencentcloud.com/document/product/1047) and [TRTC](https://www.tencentcloud.com/document/product/647). You can activate the services and enjoy a 60-day free trial as follows:
 
 1. Log in to the [IM console](https://console.tencentcloud.com/im) and click **Create Application**. In the pop-up window, enter your application name and click **OK**.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/571d5bed98a46752933169fbf4136271.png)
 
-2. Click the application just created to enter the **Basic Configuration** page. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** in the bottom-right corner of the page for a 7-day free trial of `TUICallKit`. To officially release the application, click **Buy** to enter the purchase page.
+2. Click the application just created to enter the **Basic Configuration** page. In the Activate free trial of audio/video call feature pop-up window, click Activate Now to activate the 60-day free trial of TUICallKit.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/0860fe4f282d2d918d3911127d85120a.png)
 
 >! Different paid editions of the IM audio/video call capability are available for different business needs. You can learn more about the available features and purchase an the edition you want on the IM purchase page.
