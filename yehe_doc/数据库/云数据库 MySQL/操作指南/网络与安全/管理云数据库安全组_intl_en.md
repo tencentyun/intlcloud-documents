@@ -3,11 +3,8 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 
 >?
 >- TencentDB for MySQL security groups currently only support network access control for VPCs and public networks but not the classic network.
->- Security groups associated with TencentDB instances in the Frankfurt, Silicon Valley, and Singapore regions currently do not support public network access control.
 >- As TencentDB does not have active outbound traffic, outbound rules are not applicable to TencentDB.
 >- Security groups are supported for source, read-only, and disaster recovery TencentDB for MySQL instances.
->- Security groups are not supported for basic single-node TencentDB for MySQL instances.
-
 
 ## Configuring Security Groups for TencentDB
 ### Step 1. Create a security group
