@@ -4,9 +4,9 @@
 
 第一步：使用合作伙伴账号登录[腾讯云](https://www.tencentcloud.com/login)，进入[伙伴中心](https://console.tencentcloud.com/partners)。
 
-第二步：点击左侧菜单【Customer Bills Management】进入子客账单页面。
+第二步：点击左侧菜单【客户业务>客户账单】进入子客账单页面。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d00e8c2085c02f9b0d45035eeffa30f8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d1adae0671f6cf184d1ddcc78a0955c9.png)
 
 第三步：选择账单月份及子客UIN/子客名称展示该月份指定子客的信用。
 
