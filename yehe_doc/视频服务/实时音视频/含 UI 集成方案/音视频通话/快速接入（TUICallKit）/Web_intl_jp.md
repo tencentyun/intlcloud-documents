@@ -94,7 +94,7 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
   ```
 >? userSigは[ステップ3](#step3)で取得できます
 
-	2.3 電話をかけたい場所で、次を実行します。
+  2.3 電話をかけたい場所で、次を実行します。
 	```
 		import { TUICallKitServer } from './src/components/TUICallKit/Web/src/index';
 		TUICallKitServer.call({ userID, type }); // 2人通話
@@ -124,7 +124,7 @@ function afterCalling() {
 
 - [TUICallKit API](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/API.md)
 - [TUICallKit demoクイックスタート](https://github.com/tencentyun/TUICallKit/blob/main/Web/demos/basic/README.md)
-- [TUICallKitインターフェースカスタマイズガイド](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI Customization.md)
+- [TUICallKitインターフェースカスタマイズガイド](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI%20Customization.md)
 - [TUICallKit (Web) に関するよくあるご質問](https://www.tencentcloud.com/document/product/647/51024)
 
 
