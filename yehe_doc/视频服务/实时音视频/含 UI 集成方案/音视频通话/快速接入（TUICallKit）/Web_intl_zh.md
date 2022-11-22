@@ -12,7 +12,7 @@ TUICallKit 是基于腾讯云 [即时通信 IM](https://intl.cloud.tencent.com/d
 1. 登录到 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击**创建新应用**，在弹出的对话框中输入您的应用名称，并单击**确定**。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/ce2e34f7cd1cd14679fc5decffb469af.png)
 
-2. 单击刚刚创建出的应用，进入**基本配置**页面，并在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击下方 音视频通话能力-免费体验 ，在弹出的免费开通音视频通话能力体验版对话框中，单击免费开通，即可开通 TUICallKit 的 60 天免费试用服务。
+2. 单击刚刚创建出的应用，进入基本配置页面，并在页面的右下角找到开通**腾讯实时音视频服务**功能区，单击下方 **音视频通话能力-免费体验** ，在弹出的**免费开通音视频通话能力体验版**对话框中，单击**免费开通**，即可开通 TUICallKit 的 **60天免费试用**服务。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 3. 在同一页面找到 **SDKAppID** 和**密钥**并记录下来，它们会在后续中被用到。
