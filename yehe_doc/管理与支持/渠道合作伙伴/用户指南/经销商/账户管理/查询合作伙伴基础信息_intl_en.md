@@ -11,20 +11,20 @@ Step 2. Select **Company Info** on the left sidebar.
 
 Click **Company Info** to query your company's basic information.
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/4ffc31b25a655f3badd42ec223c8c859.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b7e3069d78741a34370c76cabb1633b0.png)
 
 Click **Edit** in the **Basic Information** section to edit the basic information.
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/a981a778236a107c58438f23adf4fff9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b3a80a793352ec95692804b4a0df9a0e.png)
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/48c91ccb4c1b04ab198c4976f5a167d0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/147f68f3b543fbcde1c60aecc3b7367f.png)
 
 
 ### 2. Query bank information
 
 Click **Company Info** to query your company's bank information.
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/8fd2e22ccee882b19a9564223ea7962d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1af6eb46358a969952b0d1cb9edbe2ee.png)
 
 >? Bank information cannot be edited online currently. If you need to modify it, contact your sales rep.
 
@@ -33,9 +33,9 @@ Click **Company Info** to query your company's bank information.
 
 Click **Company Info** to query your company's contact information.
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/6ac06e2112c6fab1611b6cd230f518e8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c1c31d2d95981c25f37e97c0ba86def3.png)
 
 Click **Edit** in the **Basic Information** to edit the contact information.
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/0b3b21f204f33215cecfcc7db8226a9b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f034c42cefc6b8c3b66cf2ebf278884.png)
 
