@@ -230,15 +230,10 @@ TUICallKit.createInstance().setCallingBell(filePath: filePath)
 
 
 ## 常见问题
-### 1、错误提示“The package you purchased does not support this ability”？
+### 错误提示“The package you purchased does not support this ability”？
 
 如遇以上错误提示，是由于您当前应用的音视频通话能力包过期或未开通，请参见 [步骤一](#step1)，领取或者开通音视频通话能力，进而继续使用 TUICallKit 组件。
 
-### 2、如何购买套餐？
-
-请参考购买链接 [音视频通话 SDK 价格总览](https://www.tencentcloud.com/document/product/647/50553)，如有其他问题，请单击页面右侧，进行售前套餐咨询，或者加入 QQ 群：**592465424**，进行咨询和反馈。
-
->? 更多帮助信息，详情请参见 [iOS 常见问题](https://www.tencentcloud.com/document/product/647/51023)。
 
 ## 交流与反馈
 
