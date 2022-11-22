@@ -7,7 +7,7 @@ iOS 9.0 (API level 16) 이상.
 [](id:step1)
 ##  1단계: 서비스 활성화
 
-TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messaging(IM)](https://www.tencentcloud.com/document/product/1047) 및 [Tencent Real-Time Communication(TRTC)](https://www.tencentcloud.com/document/product/647)을 기반으로 하는 오디오/비디오 통신 컴포넌트입니다. 아래 단계에 따라 관련 서비스를 활성화하고 7일 무료 베타 서비스를 체험할 수 있습니다.
+TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messaging(IM)](https://www.tencentcloud.com/document/product/1047) 및 [Tencent Real-Time Communication(TRTC)](https://www.tencentcloud.com/document/product/647)을 기반으로 하는 오디오/비디오 통신 컴포넌트입니다. 아래 단계에 따라 관련 서비스를 활성화하고 60일 무료 베타 서비스를 체험할 수 있습니다.
 
 1. [IM 콘솔](https://console.tencentcloud.com/im)에 로그인하고 **애플리케이션 생성**을 클릭하고 팝업 대화 상자에 애플리케이션 이름을 입력하고 **확인**을 클릭합니다.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/c9a076ece348019d689c6c562b6a3c78.png)
