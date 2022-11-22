@@ -230,15 +230,9 @@ TUICallKit.createInstance().setCallingBell(filePath: filePath)
 
 
 ## FAQ
-### 1. ‘The package you purchased does not support this ability’라는 오류 메시지가 표시되면 어떻게 해야 합니까?
+### ‘The package you purchased does not support this ability’라는 오류 메시지가 표시되면 어떻게 해야 합니까?
 
 오류 메시지는 애플리케이션의 오디오/비디오 통화 기능 패키지가 만료되었거나 활성화되지 않았음을 나타냅니다. TUICallKit을 계속 사용하려면 [1단계](#step1)의 지침에 따라 음성/영상 통화 기능을 요청하거나 활성화할 수 있습니다.
-
-### 2. 플랜은 어떻게 구매하나요?
-
-자세한 내용은 [가격 개요](https://www.tencentcloud.com/document/product/647/50553)를 참고하십시오. 기타 궁금한 사항이 있으시면 페이지 우측의 프리세일 패키지 상담을 클릭하시거나 QQ그룹 **592465424**에 가입하여 상담 및 피드백 부탁드립니다.
-
->? 자세한 내용은 [FAQ (iOS)](https://www.tencentcloud.com/document/product/647/51023)를 참고하십시오.
 
 ## 교류 및 피드백
 
