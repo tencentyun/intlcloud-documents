@@ -94,7 +94,7 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
   ```
 >? `userSig` can be obtained in [step 3](#step3).
 
-	2.3 Run the following code where call making needs to be implemented:
+  2.3 Run the following code where call making needs to be implemented:
 	```
 		import { TUICallKitServer } from './src/components/TUICallKit/Web/src/index';
 		TUICallKitServer.call({ userID, type }); // One-to-one call
@@ -124,7 +124,7 @@ function afterCalling() {
 
 - [API Introduction](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/API.md)
 - [TUICallKit basic demo](https://github.com/tencentyun/TUICallKit/blob/main/Web/demos/basic/README.md)
-- [TUICallKit UI Customization Guide](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI Customization.md)
+- [TUICallKit UI Customization Guide](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI%20Customization.md)
 - [FAQs (Web)](https://www.tencentcloud.com/document/product/647/51024)
 
 
