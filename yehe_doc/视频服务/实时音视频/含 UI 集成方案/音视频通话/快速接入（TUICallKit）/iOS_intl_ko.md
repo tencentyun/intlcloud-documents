@@ -13,7 +13,7 @@ TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messagi
 ![img](https://qcloudimg.tencent-cloud.cn/raw/c9a076ece348019d689c6c562b6a3c78.png)
 
 2. 방금 만든 애플리케이션을 클릭하여 기본 구성 페이지로 들어갑니다. TUICallKit의 7일 무료 평가판을 보려면 페이지 오른쪽 하단 모서리에 있는 TRTC 활성화에서 무료 평가판을 클릭하십시오. 애플리케이션을 공식 릴리스하려면 [문의](https://intl.cloud.tencent.com/contact-us) 하십시오.
-![img](https://qcloudimg.tencent-cloud.cn/raw/4ee28e98dd28c9ae91078832f0105092.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! 다양한 비즈니스 요구 사항에 따라 IM 음성/영상 통화 기능의 다양한 유료 버전을 사용할 수 있습니다. 사용 가능한 기능에 대해 자세히 알아보고 적합한 버전을 구입하려면 [문의](https://intl.cloud.tencent.com/contact-us)하십시오.
 
