@@ -54,6 +54,7 @@ api project(':tuicallkit')
 >? TUICallKit 프로젝트에는 기본 종속성인 `TRTC SDK`, `IM SDK`, `tuicallengine` 및 공용 라이브러리 `tuicore`가 있으며 개발자가 별도로 구성할 필요가 없습니다. 버전을 업그레이드하려면 `tuicallkit/build.gradle` 파일을 수정하기만 하면 됩니다.
 
 3. SDK 내에서 Java의 리플렉션 특성을 사용하기 때문에 SDK의 일부 클래스를 난독화 방지 목록에 추가해야 하므로 `proguard-rules.pro` 파일에 다음 코드를 추가해야 합니다.
+
 ```bash
 -keep class com.tencent.** { *; }
 ```
@@ -108,11 +109,10 @@ TUILogin.login(context,
 자세한 내용은 [UserSig 계산 방법](https://www.tencentcloud.com/document/product/647/35166)을 참고하십시오.
 
 >? **이 단계는 지금까지 개발자들로부터 가장 많은 피드백을 받은 단계이기도 합니다. 자주 발생하는 문제는 다음과 같습니다.**
-- SDKAppID 설정 오류. 중국 사이트의 SDKAppID는 일반적으로 140으로 시작하는 10자리 정수입니다.
-- UserSig가 암호화 키(SecretKey)와 일치하지 않는 경우 SecretKey를 UserSig로 직접 구성하지 않고 SDKAppID, UserID, 만료 시간 등의 정보를 SecretKey로 암호화하여 UserSig를 얻습니다.
-- UserID는 ‘1’, ‘123’, ‘111’ 등의 간단한 문자열로 설정됩니다. **TRTC는 동일한 UserID의 다중 단말 로그인을 지원하지 않기 때문에**, 여러 사람이 공동으로 개발할 경우,‘1’, ‘123’, ‘111’과 같은 UserID는 동료에 의해 쉽게 점유되어 로그인 실패의 원인이 될 수 있으므로 디버깅할 때 인식도가 높은 UserID를 설정하는 것이 좋습니다.
-
->! Github의 예시 코드는 genTestUserSig 함수를 사용하여 현재 액세스 프로세스를 더 빠르게 실행할 수 있도록 로컬에서 UserSig를 계산하지만 이 솔루션은 App 코드에 SecretKey를 노출하므로 SecretKey를 업그레이드하고 보호하려면 UserSig의 계산 로직을 서버에 두는 것을 강력히 권장합니다. app은 TUICallKit 컴포넌트가 사용될 때마다 서버에서 실시간으로 계산된 UserSig를 요청합니다.
+>- SDKAppID 설정 오류. 중국 사이트의 SDKAppID는 일반적으로 140으로 시작하는 10자리 정수입니다.
+>- UserSig가 암호화 키(SecretKey)와 일치하지 않는 경우 SecretKey를 UserSig로 직접 구성하지 않고 SDKAppID, UserID, 만료 시간 등의 정보를 SecretKey로 암호화하여 UserSig를 얻습니다.
+>- UserID는 ‘1’, ‘123’, ‘111’ 등의 간단한 문자열로 설정됩니다. **TRTC는 동일한 UserID의 다중 단말 로그인을 지원하지 않기 때문에**, 여러 사람이 공동으로 개발할 경우,‘1’, ‘123’, ‘111’과 같은 UserID는 동료에 의해 쉽게 점유되어 로그인 실패의 원인이 될 수 있으므로 디버깅할 때 인식도가 높은 UserID를 설정하는 것이 좋습니다.
+> Github의 예시 코드는 genTestUserSig 함수를 사용하여 현재 액세스 프로세스를 더 빠르게 실행할 수 있도록 로컬에서 UserSig를 계산하지만 이 솔루션은 App 코드에 SecretKey를 노출하므로 SecretKey를 업그레이드하고 보호하려면 UserSig의 계산 로직을 서버에 두는 것을 강력히 권장합니다. app은 TUICallKit 컴포넌트가 사용될 때마다 서버에서 실시간으로 계산된 UserSig를 요청합니다.
 
 [](id:step5)
 ## 5단계: 전화 걸기
