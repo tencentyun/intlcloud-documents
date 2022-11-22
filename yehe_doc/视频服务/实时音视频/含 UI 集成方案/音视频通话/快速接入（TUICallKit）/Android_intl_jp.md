@@ -11,13 +11,13 @@ Android 4.1およびそれ以降のスマートフォンデバイス。
 [](id:step1)
 ##  ステップ1：サービスのアクティブ化
 
-TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/1047)と、[TRTC](https://www.tencentcloud.com/document/product/647)という2つの有料PaaSサービスをベースに構築したオーディオビデオ通信コンポーネントです。以下の手順で関連のサービスをアクティブ化し、7日間の無料トライアルサービスを体験することができます。
+TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/1047)と、[TRTC](https://www.tencentcloud.com/document/product/647)という2つの有料PaaSサービスをベースに構築したオーディオビデオ通信コンポーネントです。以下の手順で関連のサービスをアクティブ化し、60日間の無料トライアルサービスを体験することができます。
 
 1. [IMコンソール](https://console.tencentcloud.com/im)にログインし、**新しいアプリケーションの作成**をクリックし、ポップアップしたダイアログボックスにアプリケーション名を入力して**OK**をクリックします。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/571d5bed98a46752933169fbf4136271.png)
 
 2. 作成したアプリケーションをクリックし、基本設定ページに進み、ページ右下隅のTRTCサービスのアクティブ化機能エリアで無料体験をクリックすると、TUICallKitの7日間無料トライアルサービスをアクティブ化することができます。正式アプリケーションのリリースが必要な場合は、追加購入をクリックすると購入ページに進むことができます。
-![img](https://qcloudimg.tencent-cloud.cn/raw/0860fe4f282d2d918d3911127d85120a.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! IMのオーディオビデオ通話機能は業務ニーズに応じて差別化した有料バージョンをご提供しています。含まれる機能をIM購入ページでご確認の上、ご自身に合ったバージョンを選択してご購入いただけます。
 
