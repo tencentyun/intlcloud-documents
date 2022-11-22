@@ -22,10 +22,10 @@ iOS 9.0 (API level 16) or later.
 
 
 >? **Note:** After you click **Free trial**, the following message will be displayed for some users who have used [TRTC](https://www.tencentcloud.com/document/product/647/35078) before:
-```java
+>```java
 [-100013]:TRTC service is suspended. Please check if the package balance is 0 or the Tencent Cloud account is in arrears
-```
-This is because the new IM audio/video call capability is based on two basic PaaS services: [TRTC](https://www.tencentcloud.com/document/product/647/35078) and [IM](https://www.tencentcloud.com/document/product/1047). If you have used up your free monthly quota (10,000 minutes) for TRTC, you will fail to activate the capability. You can log in to the [TRTC console](https://console.tencentcloud.com/trtc/app), go to the **Application Management** page of the corresponding `SDKAppID`, and activate the pay-as-you-go feature. Then, next time you **start the application**, you can experience the new audio/video call capability properly.
+>```
+>This is because the new IM audio/video call capability is based on two basic PaaS services: [TRTC](https://www.tencentcloud.com/document/product/647/35078) and [IM](https://www.tencentcloud.com/document/product/1047). If you have used up your free monthly quota (10,000 minutes) for TRTC, you will fail to activate the capability. You can log in to the [TRTC console](https://console.tencentcloud.com/trtc/app), go to the **Application Management** page of the corresponding `SDKAppID`, and activate the pay-as-you-go feature. Then, next time you **start the application**, you can experience the new audio/video call capability properly.
 
 
 [](id:step2)
