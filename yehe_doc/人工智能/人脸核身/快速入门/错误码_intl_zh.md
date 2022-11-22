@@ -1,15 +1,20 @@
 # PaaS类错误码
 
+| 错误码                                 | 错误码含义                     | 是否计费 |
+| -------------------------------------- | ------------------------------ | -------- |
+| Success                                | 检测通过                       | 是       |
+| FailedOperation.CompareLowSimilarity   | 比对相似度未达到通过标准       | 是       |
+| InvalidParameter                       | 参数错误                       | 否       |
+| InvalidParameterValue                  | 参数值错误                     | 否       |
+| FailedOperation.DownLoadError          | 下载异常                       | 否       |
+| FailedOperation.UnKnown                | 未知错误                       | 否       |
+| FailedOperation.IdPhotoPoorQuality     | 证件图片分辨率太低，请重新上传 | 否       |
+| FailedOperation.LifePhotoDetectFaces   | 检测到多个面部                 | 否       |
+| FailedOperation.LifePhotoDetectFake    | 真人比对失败                   | 否       |
+| FailedOperation.LifePhotoDetectNoFaces | 未能检测到完整人脸             | 否       |
+| FailedOperation.CompareFail            | 比对失败                       | 否       |
+| FailedOperation.LivessSystemError      | 调用活体引擎出错               | 否       |
 
-| 错误码|含义 |
-| ------- | ------- |
-|Success |检测通过 |
-|FailedOperation.IdPhotoPoorQuality |证件图片分辨率太低，请重新上传。 |
-|FailedOperation.LifePhotoDetectFaces |检测到多张人脸。 |
-|FailedOperation.LifePhotoDetectFake |实人比对没通过。 |
-|FailedOperation.LifePhotoDetectNoFaces |未能检测到完整人脸。 |
-|FailedOperation.CompareFail |比对失败。 |
-|FailedOperation.CompareLowSimilarity |比对相似度未达到通过标准。 |
 
 # SaaS类错误码
 
