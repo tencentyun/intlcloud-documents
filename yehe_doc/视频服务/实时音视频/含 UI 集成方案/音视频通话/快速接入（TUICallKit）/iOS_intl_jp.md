@@ -22,10 +22,10 @@ TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/
 
 
 >? お知らせ：**無料体験**をクリックすると、それまでに[TRTC](https://www.tencentcloud.com/document/product/647/35078)サービスを使用したことがある一部のユーザーには、次のような内容が表示されることがあります。
-```java
+>```java
 [-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears
-```
-新しいIMオーディオビデオ通話機能は、Tencent Cloudの[TRTC](https://www.tencentcloud.com/document/product/647/35078)と[IM](https://www.tencentcloud.com/document/product/1047)という2つの基本PaaSサービスを統合したもののため、[TRTC](https://www.tencentcloud.com/document/product/647/35078)の無料利用枠（10000分）が期限切れまたは使用済みの場合、このサービスをアクティブ化しようとすると失敗します。その場合は、[TRTCコンソール](https://console.tencentcloud.com/trtc/app)をクリックし、SDKAppIDに対応するアプリケーション管理ページを見つけ、図のように後払い機能をアクティブ化してから**アプリケーションを有効にする**ことで、オーディオビデオ通話機能を正常に体験することができるようになります。
+>```
+>新しいIMオーディオビデオ通話機能は、Tencent Cloudの[TRTC](https://www.tencentcloud.com/document/product/647/35078)と[IM](https://www.tencentcloud.com/document/product/1047)という2つの基本PaaSサービスを統合したもののため、[TRTC](https://www.tencentcloud.com/document/product/647/35078)の無料利用枠（10000分）が期限切れまたは使用済みの場合、このサービスをアクティブ化しようとすると失敗します。その場合は、[TRTCコンソール](https://console.tencentcloud.com/trtc/app)をクリックし、SDKAppIDに対応するアプリケーション管理ページを見つけ、図のように後払い機能をアクティブ化してから**アプリケーションを有効にする**ことで、オーディオビデオ通話機能を正常に体験することができるようになります。
 
 
 [](id:step2)
