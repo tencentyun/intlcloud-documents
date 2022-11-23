@@ -8,6 +8,7 @@
 |Payer Account ID|	支付者账号ID，用户在腾讯云的唯一账号标识，此处是经销商的ID|
 |Owner Account ID|	资源归属者账号ID，此处是子客的ID|
 |Operator Account ID|	操作者账号ID，下单购买或开通产品的用户，此处是子客的ID|
+|Reseller Account ID|	管理者账号ID，为资源归属者的直接管理经销商ID。|
 |Billing Mode|	资源的计费模式，包年包月或按量计费|
 |Project Name|	资源所属项目，由用户为资源自助分配，未分配则为默认项目|
 |Region|	资源所属地域，如华南地区（广州）|
