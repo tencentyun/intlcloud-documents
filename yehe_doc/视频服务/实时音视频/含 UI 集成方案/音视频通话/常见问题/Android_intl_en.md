@@ -51,7 +51,7 @@ java.lang.UnsatisfiedLinkError: No implementation found for void com.tencent.lit
 
 There are several cases depending on what status the application is in when the invitee goes online:
 
-![img](https://qcloudimg.tencent-cloud.cn/image/document/f4b8ab415785fb5274e2f6cc709254fc.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/1b82ef1bcc5dbc5b0a2d7bf6e4c9d772.jpg)
 
 If the incoming call view is not displayed after an invitee goes back online, search for `onReceiveNewInvitation` in your logs and check if historical messages are obtained. If you cannot find the log data, please [contact us](https://intl.cloud.tencent.com/contact-us) for help.
 
