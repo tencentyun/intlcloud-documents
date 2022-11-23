@@ -7,6 +7,7 @@
 |Payer Account ID|	Account ID of the payer, which is a user's unique ID at Tencent Cloud and is a reseller ID here. |
 |Owner Account ID|	Account ID of the resource owner, which is a customer ID here. |
 |Operator Account ID|	Account ID of the operator or the user who purchases or activates a product, which is a customer ID here. |
+|Reseller Account ID|	A reseller account ID is the ID of the reseller who directly manages the resource owner. |
 |Billing Mode|	Resource billing mode, which can be monthly subscription or pay-as-you-go. |
 |Project Name|	Project to which a resource belongs. This is user-designated. If a resource has not been assigned to a project, it will automatically belong to the default project.  |
 |Region|	Resource region, such as South China (Guangzhou). |
