@@ -209,11 +209,8 @@ TUICallKit.createInstance(context).setCallingBell(filePath);
 
 The error message indicates that your application's audio/video call capability package has expired or is not activated. You can claim or activate the audio/video call capability as instructed in [step 1](#step1) to continue using `TUICallKit`.
 
-### 2. How do I purchase a plan?
 
-For more information, see [Billing Overview](https://www.tencentcloud.com/document/product/647/50553). If you have any questions, please contact us.
-
-### 3. What should I do if `TUICallKit` crashes and outputs the log "No implementation found for xxxx"?
+### 2. What should I do if `TUICallKit` crashes and outputs the log "No implementation found for xxxx"?
 
 Below is the stack information:
 
