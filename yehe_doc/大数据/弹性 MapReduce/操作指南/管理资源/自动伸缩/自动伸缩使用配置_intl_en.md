@@ -8,7 +8,7 @@ The **Basic Settings** section allows you to set the node quantity range of the 
 - Release All: Clears all nodes added in an automatic scaling action with one click.
 - Release spot instances: Clears all spot instances added in an automatic scaling action with one click.
 - Release pay-as-you-go instances: Clears all pay-as-you-go instances added in an automatic scaling action with one click.
-![](https://qcloudimg.tencent-cloud.cn/raw/89500967d22a34b87ff850d95e7181fb.png)
+
 - Global Graceful Scale-In: This feature is disabled by default. It applies to all scale-in rules and can be disabled for individual scale-in rules.
 - Resource Type: HOST resources are billed on a pay-as-you-go or spot basis, whereas POD resources are billed on a pay-as-you-go basis and can only be used to assume the NodeManager role of YARN.
 >! When you switch the resource type, the corresponding scaling specification and instance selection policy will also be switched to take effect.
