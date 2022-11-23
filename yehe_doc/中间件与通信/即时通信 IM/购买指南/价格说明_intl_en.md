@@ -55,5 +55,5 @@ Value-added services are available only under the Pro and Ultimate editions. See
 </tr>
 <tr>
 <td>Audio/video call feature</td>
-<td colspan=3><b>It is currently in beta, with a 60-day free edition provided. </b>The official paid edition is expected to be released in December 2022. Please stay tuned.</td>
+<td colspan=3><b>It is currently in beta, with a 60-day free edition provided. </b></td>
 </tr></table>
