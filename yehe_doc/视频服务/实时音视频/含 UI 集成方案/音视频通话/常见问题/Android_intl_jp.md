@@ -50,8 +50,7 @@ java.lang.UnsatisfiedLinkError: No implementation found for void com.tencent.lit
 ### 通話招待のタイムアウト時間内に、被招待者がオフラインから再びオンラインとなった場合、通話画面をポップアップさせることはできますか。
 
 Appの起動タイプによって状況がそれぞれ異なります。
-
-![img](https://qcloudimg.tencent-cloud.cn/image/document/f4b8ab415785fb5274e2f6cc709254fc.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/1b82ef1bcc5dbc5b0a2d7bf6e4c9d772.jpg)
 
 オフラインから再びオンラインとなった際に通話画面がポップアップしなかった場合は、`onReceiveNewInvitation`ログをフィルタリングし、メッセージ履歴にプルしていないかどうかを確認してください。このログプリントがない場合は、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)ください。
 
