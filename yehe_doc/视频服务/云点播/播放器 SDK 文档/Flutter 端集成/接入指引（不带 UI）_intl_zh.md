@@ -17,7 +17,7 @@
 
 - **协议的支持**
   通常使用的点播协议如下，现在比较流行的是 HLS（以“http”打头，以“.m3u8”结尾）的点播地址：
-  ![](https://mc.qcloudimg.com/static/img/4b42a00bb7ce2f58f362f35397734177/image.jpg)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/5143d2e31ddbdcb77294fa72b045abb2.jpeg)
 
 ## 特别说明
 视频云 SDK **不会对播放地址的来源做限制**，即您可以用它来播放腾讯云或非腾讯云的播放地址。但视频云 SDK 中的播放器只支持 FLV 、RTMP 和 HLS（m3u8）三种格式的直播地址，以及 MP4、HLS（m3u8）和 FLV 三种格式的点播地址。
