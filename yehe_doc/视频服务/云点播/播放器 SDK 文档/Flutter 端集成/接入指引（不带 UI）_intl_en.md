@@ -17,7 +17,7 @@ In video on demand (VOD), the video source is a video file in the cloud, which c
 
 - **Supported protocols**
   Common VOD protocols are as listed below. Currently, VOD URLs in HLS format (starting with `http` and ending with `.m3u8`) are popular.
-  ![](https://mc.qcloudimg.com/static/img/4b42a00bb7ce2f58f362f35397734177/image.jpg)
+  ![](https://qcloudimg.tencent-cloud.cn/raw/5143d2e31ddbdcb77294fa72b045abb2.jpeg)
 
 ## Notes
 The Player SDK **does not impose any limits on the sources of playback URLs**, which means that you can use it to play back videos from both Tencent Cloud and non-Tencent Cloud URLs. However, players in the SDK support only live streaming URLs in FLV, RTMP, and HLS (M3U8) formats, as well as VOD URLs in MP4, HLS (M3U8), and FLV formats.
