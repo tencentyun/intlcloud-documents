@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit an audio noise cancellation job.
+This API is used to submit an audio noise reduction job.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
