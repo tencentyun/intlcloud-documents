@@ -144,8 +144,13 @@ The Tencent Cloud RT-Cube Player SDK demo provides complete product-grade intera
 ## Demos
 ### Player for web (TCPlayer)
 TCPlayer supports video playback in a browser on a PC or mobile device. It provides demo pages for you to compare and view the video playback features and code. You can modify the code samples to view the effect of modified features in the playback area in real time.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/6aef8503bffdc07df4d01117d66b6e2a.jpg)
+
 ### Mobile client
 Tencent Cloud RT-Cube app is the best trial solution that integrates multiple products and features developed by the Tencent Cloud Audio/Video team. You can scan the QR code to download the app and try out features as needed by using scenario-specific demos in **Tencent Cloud RT-Cube** > **Player**.
 * In **Superplayer**, you can experience common styles of long video playback as well as common video features such as video preview, video list, and custom thumbnails.
 * In **Short Video Playback**, you can experience an immersive short video playback scenario similar to WeSee.
 * In **Feed Stream Playback**, you can experience a feed stream playback scenario similar to Tencent News.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/c3123138f894795a237e3fc65a74ad95.png)
