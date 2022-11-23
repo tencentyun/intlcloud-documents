@@ -50,7 +50,7 @@ The nodes are as described below:
 | JobsDetail | Response | Job details |  Container |
 
 `JobsDetail` has the following sub-nodes:
-<a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">Same as `Response.JobsDetail` in the audio noise cancellation job submitting API.</a>
+<a href="https://intl.cloud.tencent.com/document/product/1045/48933" target="_blank">Same as `Response.JobsDetail` in the audio noise reduction job submitting API.</a>
 
 **If the job is triggered by a workflow, `Response.JobsDetail.Input` will also contain a `CosHeaders` node of the container array type.**
 
