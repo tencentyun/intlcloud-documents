@@ -2,13 +2,13 @@
 If you find that your customer’s account is abnormal or has overdue payments, you can freeze the accounts of all your customers.
 Step 1. Log in to [Tencent Cloud](https://www.tencentcloud.com/login) with your partner account and enter the [Partner Center](https://console.tencentcloud.com/partners).
 Step 2. Select **Customer Management** on the left sidebar, click the **My Customers** tab, and click **Freeze Account** in the **Operation** column to freeze the customer account.
-![](https://qcloudimg.tencent-cloud.cn/raw/e314f44c7dbd8eeb33cdce3b531124f9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c20d023a848b33daa5b838d0920195fd.png)
 Step 3. After the customer’s account is frozen, their account status will become **Frozen** and their pay-as-you-go services will be suspended.
 
 ### Impact of Customer Account Being Frozen
 After a customer’s account is frozen, they cannot purchase or renew services.
 The purchased prepaid services can still be normally used, but the activated pay-as-you-go services will be instantly suspended according to the customer service suspension rules.
-![](https://qcloudimg.tencent-cloud.cn/raw/52dcc86fa1235af532ae70b51f5966a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bf1d565271c30181e25a1e5edade82d0.png)
 
 >?
 >- Currently, you need to contact your channel manager to add you to the allowlist if you want to use the customer service suspension rules.
