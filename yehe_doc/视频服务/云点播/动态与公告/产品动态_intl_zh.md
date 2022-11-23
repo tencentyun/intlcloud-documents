@@ -1,3 +1,21 @@
+## 2022年10月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布智能降码功能</td>
+<td>云点播智能降码功能是基于客户配置的降码策略，自动对热文件转极速高清，使用转出的低码率文件，替换原有的普通转码文件，保持播放链接不变。您可以在无任何感知的情况下，实现对热文件的智能降码，获得更高的<b>净节省成本</b>。</td>
+<td>2022-10</td>
+<td><a href="https://www.tencentcloud.com/document/product/266/50446">智能降码</a></td>
+</tr>
+</tbody></table>
+
 ## 2022年08月
 <table>
 <thead>
@@ -78,8 +96,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/266/49085">功能体验</a></td>
 </tr>
 </tbody></table>
-
-
 
 
 ## 2021年8月

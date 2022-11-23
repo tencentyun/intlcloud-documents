@@ -1,12 +1,12 @@
 ## Product Overview
-The Tencent Cloud RT-Cube Player for Android is an open-source player component of Tencent Cloud. It integrates quality monitoring, video encryption, Top Speed Codec, definition switching, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to mainstream video applications.
+The Tencent Cloud RT-Cube Player for Android is an open-source player component of Tencent Cloud. It integrates quality monitoring, video encryption, Top Speed Codec, definition selection, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to mainstream video applications.
 
 If the Player component cannot meet your custom requirements and you have development experience, you can integrate the Player SDK to customize the player UI and playback features.
 
 
 
 ## Prerequisites
-1. To try out all features of the player, we recommend you activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://intl.cloud.tencent.com/login) first. If you don't use the VOD service, skip this step; however, you can use only basic player features after integration.
+1. To try out all features of the player, we recommend you activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://intl.cloud.tencent.com/login) for one first. If you don't use the VOD service, you can skip this step; however, you will only be able to use basic player features after integration.
 2. Download and install [Android Studio](https://developer.android.com/studio). If you have already done so, skip this step.
 
 ## Content Summary
@@ -16,15 +16,15 @@ If the Player component cannot meet your custom requirements and you have develo
 
 ## Directions
 ### Step 1. Download the player code package
-The Tencent Cloud RT-Cube Player for Android can be downloaded [here](https://github.com/LiteAVSDK/Player_Android).
+GitHub page: [LiteAVSDK/Player_Android](https://github.com/LiteAVSDK/Player_Android)
 
 You can download the Player for Android by **[downloading the player component ZIP package](#zip)** or **[running the Git command](#git)**.
 <dx-tabs>
 ::: Download the ZIP file[](id:zip)
-You can directly download the player component ZIP package by clicking **Code** > **Download ZIP**.
+Go to the Player GitHub page and click **Code > Download ZIP**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a38a9995bfe13d645bcd1d2e5242a297.png)
 :::
-::: Download using a Git command[](id:git)
+::: Download using Git command[](id:git)
 1. First, make sure that your computer has Git installed; if not, you can install it as instructed in [Git Installation Tutorial](https://git-scm.com/downloads).
 2. Run the following command to clone the code of the Player component to your local system.
 ```shell
@@ -46,7 +46,7 @@ After the project is downloaded, the directory generated after decompression of 
 | --------------------------- | ------------------------------------------------------------ |
 | LiteAVDemo(Player)          | The Player demo project, which can be run directly after being imported into Android Studio.   |
 | app                         | Homepage entry                                                   |
-| superplayerkit              | The Player component (SuperPlayerView), which provides common features such as playback, pause, and gesture control. |
+| superplayerkit              | The Player component (`SuperPlayerView`), which provides common features such as playback, pause, and gesture control. |
 | superplayerdemo             | The Player component demo code                                         |
 | common                      | Tool module                                                   |
 | SDK                         | Player SDK, including `LiteAVSDK_Player_x.x.x.aar` (SDK provided in AAR format) and `LiteAVSDK_Player_x.x.x.zip` (SDKs provided in lib and JAR formats) |
@@ -100,13 +100,13 @@ dependencies {
 	 implementation 'com.tencent.liteav:LiteAVSDK_Player:8.5.10033'
 }
 ```
-   2. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application (currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a, which you can configure as needed).
+   2. In the `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application (currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a, which you can configure as needed).
 ```xmsl
 ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-   If you haven't used the download cache feature (an API in `TXVodDownloadManager`) of the SDK v9.4 or earlier and don't need to play back the downloaded files in the SDK v9.5 or later, you don't need to use the SO file of the feature, which helps reduce the size of the installation package. For example, if you have downloaded a cached file by using the `setDownloadPath` and `startDownloadUrl` functions of the `TXVodDownloadManager` class in the SDK v9.4 or earlier, and the `getPlayPath` path called back by `TXVodDownloadManager` is stored in the app for subsequent playback, you will need `libijkhlscache-master.so` to play back the file at the `getPlayPath` path; otherwise, you won't need it. You can add the following to `app/build.gradle`:
+   If you haven't used the download cache feature (APIs in [TXVodDownloadManager](https://cloud.tencent.com/document/product/881/67113#txvoddownloadmanager)) of the SDK v9.4 or earlier and don't need to play back the downloaded files in the SDK v9.5 or later, you don't need to use the SO file of the feature, which helps reduce the size of the installation package. For example, if you have downloaded a cached file by using the `setDownloadPath` and `startDownloadUrl` functions of the `TXVodDownloadManager` class in the SDK v9.4 or earlier, and the `getPlayPath` path called back by `TXVodDownloadManager` is stored in the application for subsequent playback, you will need `libijkhlscache-master.so` to play back the file at the `getPlayPath` path; otherwise, you won't need it. You can add the following to `app/build.gradle`:
 ```xml
 packagingOptions{
 	exclude "lib/armeabi/libijkhlscache-master.so"
@@ -114,13 +114,13 @@ packagingOptions{
 	exclude "lib/arm64-v8a/libijkhlscache-master.so"
 }
 ```
-   3. Add the `mavenCentral` library to the `build.gradle` in your project directory.
+   3. Add the `mavenCentral` repository to the `build.gradle` in your project directory.
  ```
  repositories {
 		 mavenCentral()
  }
  ```
-4. Click ![](https://main.qcloudimg.com/raw/d6b018054b535424bb23e42d33744d03.png) **Sync Now** to sync the SDK. If mavenCentral can be connected to, the SDK will be automatically downloaded and integrated into the project very soon.
+4. Click ![](https://main.qcloudimg.com/raw/d6b018054b535424bb23e42d33744d03.png) **Sync Now** to sync the SDK. If `mavenCentral` can be connected to, the SDK will be automatically downloaded and integrated into the project very soon.
 :::
 ::: Manual download in Gradle (AAR)
 1. Download the SDK + demo package for Android [here](https://github.com/LiteAVSDK/Player_Android).
@@ -170,13 +170,13 @@ allprojects {
 	 }
 }
 ```
-7. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application (currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a).
+7. In the `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application (currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a).
 ```xmsl
 ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-If you haven't used the download cache feature (an API in `TXVodDownloadManager`) of the SDK v9.4 or earlier and don't need to play back the downloaded files in the SDK v9.5 or later, you don't need to use the SO file of the feature, which helps reduce the size of the installation package. For example, if you have downloaded a cached file by using the `setDownloadPath` and `startDownloadUrl` functions of the `TXVodDownloadManager` class in the SDK v9.4 or earlier, and the `getPlayPath` path called back by `TXVodDownloadManager` is stored in the app for subsequent playback, you will need `libijkhlscache-master.so` to play back the file at the `getPlayPath` path; otherwise, you won't need it. You can add the following to `app/build.gradle`:
+If you haven't used the download cache feature (APIs in [TXVodDownloadManager](https://cloud.tencent.com/document/product/881/67113#txvoddownloadmanager)) of the SDK v9.4 or earlier and don't need to play back the downloaded files in the SDK v9.5 or later, you don't need to use the SO file of the feature, which helps reduce the size of the installation package. For example, if you have downloaded a cached file by using the `setDownloadPath` and `startDownloadUrl` functions of the `TXVodDownloadManager` class in the SDK v9.4 or earlier, and the `getPlayPath` path called back by `TXVodDownloadManager` is stored in the application for subsequent playback, you will need `libijkhlscache-master.so` to play back the file at the `getPlayPath` path; otherwise, you won't need it. You can add the following to `app/build.gradle`:
 ```xml
 packagingOptions{
 	exclude "lib/armeabi/libijkhlscache-master.so"
@@ -189,8 +189,8 @@ packagingOptions{
 ::: SDK integration (jar + so)
 If you do not want to import the AAR library, you can also integrate LiteAVSDK by importing JAR and SO libraries.
 [](id:smallStep_1)
-1. Download the SDK + demo package for Android [here](https://github.com/LiteAVSDK/Player_Android) and decompress it. Find `SDK/LiteAVSDK_Player_XXX.zip` (`XXX` is the version number) in the SDK directory. After decompression, you can get the `libs` directory which contains the JAR files and SO folders as listed below:
- ![](https://qcloudimg.tencent-cloud.cn/raw/9ac0f5b1b9b5d15a005fa2226dd960b6.png)
+1. Download the SDK + demo package for Android [here](https://github.com/LiteAVSDK/Player_Android) and decompress it. Find `SDK/LiteAVSDK_Player_XXX.zip` (`XXX` is the version number) in the SDK directory. After decompression, you can get the `libs` directory, which contains the JAR file and folders of SO files as listed below:
+ ![](https://qcloudimg.tencent-cloud.cn/raw/ab928524839c7944f78d504c0e637586.png)
 2. Copy the `Demo/superplayerkit` module to your project and import `superplayerkit` into `setting.gradle` in your project directory.
 ```xml
 include ':superplayerkit'
@@ -216,7 +216,7 @@ sourceSets{
 		 }
  }
 ```
-   - Configure `repositories`, add `flatDir`, and specify the paths of the local repositories.
+   - Configure `repositories`, add `flatDir`, and specify the path of the local repository.
 ```xml
 repositories {
 	 flatDir {
@@ -224,7 +224,7 @@ repositories {
 	 }
 }
 ```
-5. In `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application (currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a).
+5. In the `defaultConfig` of `app/build.gradle`, specify the CPU architecture to be used by the application (currently, LiteAVSDK supports armeabi, armeabi-v7a, and arm64-v8a).
 ```xmsl
 ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
@@ -250,6 +250,7 @@ Configure permissions for your application in `AndroidManifest.xml`. LiteAVSDK n
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
+
 ### Step 4. Set obfuscation rules
 In the `proguard-rules.pro` file, add the classes related to the TRTC SDK to the "do not obfuscate" list:
 ```xml
@@ -268,12 +269,33 @@ The main class of the player is `SuperPlayerView`, and videos can be played back
     android:layout_width="match_parent"
     android:layout_height="200dp" />
 ```
+2. **License configuration**
+If you have the required license, you need to get the license URL and key in the [RT-Cube console](https://console.cloud.tencent.com/vcube).
+If you don't have the required license yet, you can get it as instructed in [Adding and Renewing a License](https://www.tencentcloud.com/document/product/266/51098).<br>
+After obtaining the license information, before calling relevant APIs of the SDK, initialize the license through the following API. We recommend you set the following in the `Application` class:
+```java
+public class MApplication extends Application {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        String licenceURL = ""; // The license URL obtained
+        String licenceKey = ""; // The license key obtained
+        TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
+        TXLiveBase.setListener(new TXLiveBaseListener() {
+            @Override
+            public void onLicenceLoaded(int result, String reason) {
+                Log.i(TAG, "onLicenceLoaded: result:" + result + ", reason:" + reason);
+            }
+        });
+    }
+}
+```
 
 3. **Video playback**[](id:playe)
 This step describes how to play back a video. The Tencent Cloud RT-Cube Player for Android can be used for VOD and live playback as follows:
 	- VOD playback: The Player component supports two VOD playback methods, namely, through [`FileId`](#fileid) or [URL](#url).
-	- Live playback: The Player component can use the [playback through URL](#url) method for live playback. A live audio/video stream can be pulled for playback simply by passing in its URL. For more information on how to generate a Tencent Cloud live streaming URL, see [Splicing Live Streaming URLs](https://intl.cloud.tencent.com/document/product/267/38393).
+	- Live playback: The Player component can use the [playback through URL](#url) method for live playback. A live audio/video stream can be pulled for playback simply by passing in its URL. For more information on how to generate a Tencent Cloud live streaming URL, see [Splicing Live Streaming URLs](https://www.tencentcloud.com/document/product/267/38393).
 <dx-tabs>
 ::: VOD and live playback through URL[](id:url)
 A URL can be the playback address of a VOD file or the pull address of a live stream. A video file can be played back simply by passing in its URL.
@@ -281,60 +303,69 @@ A URL can be the playback address of a VOD file or the pull address of a live st
 SuperPlayerModel model = new SuperPlayerModel();
 model.appId = 1400329073; // Configure `AppId`
 model.url = "http://your_video_url.mp4";   // Configure a URL for your video for playback
-mSuperPlayerView.playWithModel(model);
+mSuperPlayerView.playWithModelNeedLicence(model);
 ```
 :::
 ::: VOD playback through `FileId`[](id:fileid)
 A video file ID is returned by the server after the video is uploaded.
 1. After a video is published from a client, the server will return a file ID to the client.
-2. When the video is uploaded to the server, the corresponding `FileId` will be included in the notification of upload confirmation.
+2. After a video is uploaded to the server, the notification for successful upload will contain a file ID for the video.
 
 If the video you want to play is already saved with VOD, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media) to view its file ID.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
-<dx-alert infotype="notice">
-<li>For playback through `FileID`, you need to first use the Adaptive-HLS(10) transcoding template to transcode the video or use the Player component signature `psign` to specify the video to be played back; otherwise, the video may fail to be played back. For more information on how to transcode a video, see [Stage 1. Play back a video with Player](https://intl.cloud.tencent.com/document/product/266/38098). For more information on how to generate a `psign`, see [Player Signature](https://intl.cloud.tencent.com/document/product/266/38099).</li>
-<li>If a "no v4 play info" exception occurs during playback through `FileID`, the above problem may exist. In this case, we recommend you make adjustments as instructed above. You can also directly get the playback link of the source video for playback through [URL](#url).</li>
-<li>**We recommend you transcode videos for playback because untranscoded videos may experience compatibility issues during playback.**</li></dx-alert>
+
+>!
+>- To play by VOD file ID, you need to use the Adaptive-HLS template (ID: 10) to transcode the video or use the player signature `psign` to specify the video to play; otherwise, the playback may fail. For more information on how to transcode a video and generate `psign`, see [Play back a video with Player](https://intl.cloud.tencent.com/document/product/266/38098) and [Player Signature](https://intl.cloud.tencent.com/document/product/266/38099).
+>- If a "no v4 play info" exception occurs during playback through `FileId`, the above problem may exist. In this case, we recommend you make adjustments as instructed above. You can also directly get the playback link of the source video for playback through [URL](#url).
+>- **We recommend you transcode videos for playback because untranscoded videos may experience compatibility issues during playback.**
+
 <dx-codeblock>
 :::  java
 // If you haven’t enabled hotlink protection and a "no v4 play info" error occurs, please transcode your video using the Adaptive-HLS template (ID: 10) or get the playback URL of the video and play it by URL.
 
-SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
+```java
+SuperPlayerModel model = new SuperPlayerModel();
 model.appId = 1400329071;// Configure AppId
-model.videoId = [[SuperPlayerVideoId alloc] init];
-model.videoId.fileId = @"5285890799710173650"; // Configure `FileId`
-// If you enable hotlink protection, you need to enter a `psign` (Player component signature) for playback. For more information on the signature and how to generate it, visit https://intl.cloud.tencent.com/document/product/266/38099.
-//model.videoId.pSign = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU"; 
-[_playerView playWithModel:model];
+model.videoId = new SuperPlayerVideoId();
+model.videoId.fileId = "5285890799710173650"; // Configure `FileId`
+// `psign` is a player signature. For more information on the signature and how to generate it, visit: https://intl.cloud.tencent.com/document/product/266/38099
+model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU";
+mSuperPlayerView.playWithModelNeedLicence(model);
+```
+
 :::
 </dx-codeblock>
 :::
 </dx-tabs>
+
 3. **Playback exit**[](id:exitPlayer)
 If the player is no longer needed, call `resetPlayer` to reset the player and free up memory.
 ```java
 mSuperPlayerView.resetPlayer();
 ```
 
-At this point, you have integrated the player creation, video playback, and playback exiting capabilities of the Tencent Cloud RT-Cube Player for Android.
+At this point, you have learned how to create a player, use it to play videos, and stop playback.
 
 ## More Features[](id:moreFeature)
 
-This section describes several common player features. For more features, see [Demo](#demo). For features supported by the Player component, see [Features](https://www.tencentcloud.com/document/product/266/42965).
+This section describes several common player features. For more features, see [Demo](#demo). For features supported by the Player component, see [Feature Description](https://www.tencentcloud.com/document/product/266/42965).
 
 ### 1. Full screen playback
 
 The Player component supports full screen playback. In full screen mode, users can lock the screen, control volume and brightness with gestures, send on-screen comments, take screenshots, and switch the video definition. You can try out this feature in [**TCToolkit**](#qrcode) > **Player** > **Player Component**, and you can enter the full screen playback mode by clicking in the bottom-right corner.
 
 You can call the API below to go full screen from the windowed playback mode:
+
 ```java
 mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.FULLSCREEN);
 ```
 
+#### Features of full screen playback mode
 
 <dx-tabs>
 ::: Return to the window
-Click **Back** to return to the window playback mode.
+Tap **Back** to return to the window playback mode.
+
 ```java
 // API triggered after clicking
 mControllerCallback.onBackPressed(SuperPlayerDef.PlayerMode.FULLSCREEN);
@@ -358,7 +389,7 @@ toggleBarrage();
 ```
 :::
 ::: Screenshot[](id:screenshot)
-The Player component provides the feature of capturing the current video frame during playback, and you can save the screenshot for sharing. Click the button in image 4 to capture the screen, and you can save the captured screenshot in the `mSuperPlayer.snapshot` API.
+The Player component allows users to take and save a screenshot of a video during playback. Click the button in image 4 to capture the screen, and you can save the captured screenshot with the `mSuperPlayer.snapshot` API.
 ```java
 mSuperPlayer.snapshot(new TXLivePlayer.ITXSnapshotListener() {
   @Override
@@ -368,10 +399,10 @@ mSuperPlayer.snapshot(new TXLivePlayer.ITXSnapshotListener() {
 });
 ```
 :::
-::: Change resolution[](id:resolution)
+::: Definition switch[](id:resolution)
 Different video playback definitions can be selected as needed, such as HD, SD, and FHD.
 ```java
-// The API for displaying the definition view triggered after clicking
+// The API for displaying the definition selection view triggered after the button is tapped
 showQualityView();
 // The callback API for clicking the definition option is as follows
 mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -395,8 +426,9 @@ public void onQualityChange(VideoQuality quality) {
 
 ### 2. Floating window playback
 The Player component supports playback in a small floating window, which allows users to switch to another application without interrupting the video playback. You can try out this feature in [**TCToolkit App**](#qrcode) > **Player** > **Player Component** by clicking **Back** in the top-left corner.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" alt="img" style="zoom:45%;" />
 Floating window playback relies on the following permission in `AndroidManifest`:
+
 ```java
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 ```
@@ -409,9 +441,7 @@ mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.WINDOW);
 
 ### 3. Thumbnail
 
-The Player component supports customizing a video thumbnail for display before the callback for playing back the first video frame is received. You can try out this feature in [**TCToolkit App**](#qrcode) > **Player** > **Player Component** > **Thumbnail Customization Demo**.
-
-
+The Player component supports customizing a video thumbnail, which is displayed before the callback is received for playing back the first video frame. You can try out this feature in [**TCToolkit App**](#qrcode) > **Player** > **Player Component** > **Thumbnail Customization Demo**.
 
 * When the Player component is set to the automatic playback mode `PLAY_ACTION_AUTO_PLAY`, the video will be played back automatically, and the thumbnail will be displayed before the first video frame is loaded.
 * When the Player component is set to the manual playback mode `PLAY_ACTION_MANUAL_PLAY`, the video will be played back only after the user clicks **Play**. The thumbnail will be displayed until the first video frame is loaded.
@@ -427,12 +457,12 @@ model.videoId.fileId = "Your `fileId`";
 model.playAction = PLAY_ACTION_MANUAL_PLAY;
 // Specify the URL of an online file to use as the thumbnail. If `coverPictureUrl` is not set, the thumbnail configured in the VOD console will be used.
 model.coverPictureUrl = "http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/cc1e28208602268011087336518/MXUW1a5I9TsA.png" 
-mSuperPlayerView.playWithModel(model);
+mSuperPlayerView.playWithModelNeedLicence(model);
 ```
 
 ### 4. Video playlist loop
 
-The Player component supports looping video lists.
+The Player component supports looping a video playlist:
 
 * After a video ends, the next video in the list can be played automatically or users can manually start the next video.
 * After the last video in the list ends, the first video in the list will start automatically.
@@ -457,11 +487,11 @@ model.appid = 1252463788;
 model.videoId.fileId = "4564972819219071679";
 list.add(model);
 // Step 2. Call the loop API
-mSuperPlayerView.playWithModelList(list, true, 0);
+mSuperPlayerView.playWithModelListNeedLicence(list, true, 0);
 ```
 
 ```java
-public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
+public void playWithModelListNeedLicence(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
 ```
 
 API parameters:
@@ -487,7 +517,7 @@ The Player component supports the video preview feature, which allows non-member
  VipWatchModel vipWatchModel = new VipWatchModel("You can preview %ss and activate the VIP membership to watch the full video",15);
  mode.vipWatchMode = vipWatchModel;
  // Step 3. Call the method for playing back videos
- mSuperPlayerView.playWithModel(mode);
+ mSuperPlayerView.playWithModelNeedLicence(mode);
 
  Method 2:
  // Step 1. Create a preview information model
@@ -509,7 +539,7 @@ public VipWatchModel(String tipStr, long canWatchTime)
 
 ### 6. Dynamic watermark
 
-The Player component allows you to add an irregular moving text watermark on the playback screen to prevent unauthorized recording. Watermarks can be displayed both in full screen playback mode and window playback mode. You can modify the watermark text, size, and color. You can try out this feature in [**TCToolkit App**](#qrcode) > **Player** > **Player Component** > **Dynamic Watermark Demo**.
+The Player component allows you to add a randomly moving text watermark to protect your content against piracy. Watermarks are visible in both the full screen mode and windowed mode. The text, font size, and color of a watermark are customizable. You can find a demo for this feature in the [TCToolkit app](#qrcode): **Player** > **Player Component** > **Dynamic Watermark Demo**.
 
 
 
@@ -522,7 +552,7 @@ The Player component allows you to add an irregular moving text watermark on the
  DynamicWaterConfig dynamicWaterConfig = new DynamicWaterConfig("shipinyun", 30, Color.parseColor("#80FFFFFF"));
  mode.dynamicWaterConfig = dynamicWaterConfig;
  // Step 3. Call the method for playing back videos
- mSuperPlayerView.playWithModel(mode);
+ mSuperPlayerView.playWithModelNeedLicence(mode);
 
  Method 2:
  // Step 1. Create a watermark information model

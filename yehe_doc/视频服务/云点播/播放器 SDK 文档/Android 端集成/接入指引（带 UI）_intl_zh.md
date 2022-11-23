@@ -106,7 +106,7 @@ ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-   如果之前没有使用过9.4以及更早版本的 SDK 的 下载缓存功能（TXVodDownloadManager 中的相关接口），并且不需要在9.5及后续 SDK 版本播放9.4及之前缓存的下载文件，可以不需要该功能的 so 文件，达到减少安装包的体积，例如：在9.4及之前版本使用了 TXVodDownloadManager 类的 setDownloadPath 和 startDownloadUrl 函数下载了相应的缓存文件，并且应用内存储了 TXVodDownloadManager 回调的 getPlayPath 路径用于后续播放，这时候需要 libijkhlscache-master.so 播放该 getPlayPath 路径文件，否则不需要。可以在 app/build.gradle 中添加：
+   如果之前没有使用过9.4以及更早版本的 SDK 的 [下载缓存功能](https://www.tencentcloud.com/document/product/266/47849)（TXVodDownloadManager 中的相关接口），并且不需要在9.5及后续 SDK 版本播放9.4及之前缓存的下载文件，可以不需要该功能的 so 文件，达到减少安装包的体积，例如：在9.4及之前版本使用了 TXVodDownloadManager 类的 setDownloadPath 和 startDownloadUrl 函数下载了相应的缓存文件，并且应用内存储了 TXVodDownloadManager 回调的 getPlayPath 路径用于后续播放，这时候需要 libijkhlscache-master.so 播放该 getPlayPath 路径文件，否则不需要。可以在 app/build.gradle 中添加：
 ```xml
 packagingOptions {
 	exclude "lib/armeabi/libijkhlscache-master.so"
@@ -176,7 +176,7 @@ ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-如果之前没有使用过9.4以及更早版本的 SDK 的 下载缓存功能（TXVodDownloadManager 中的相关接口），并且不需要在9.5及后续 SDK 版本播放9.4及之前缓存的下载文件，可以不需要该功能的 so 文件，达到减少安装包的体积，例如：在9.4及之前版本使用了 TXVodDownloadManager 类的 setDownloadPath 和 startDownloadUrl 函数下载了相应的缓存文件，并且应用内存储了 TXVodDownloadManager 回调的 getPlayPath 路径用于后续播放，这时候需要 libijkhlscache-master.so 播放该 getPlayPath 路径文件，否则不需要。可以在 app/build.gradle 中添加：
+如果之前没有使用过9.4以及更早版本的 SDK 的 [下载缓存功能](https://www.tencentcloud.com/document/product/266/47849#13.E3.80.81.E7.A6.BB.E7.BA.BF.E7.BC.93.E5.AD.98)（TXVodDownloadManager 中的相关接口），并且不需要在9.5及后续 SDK 版本播放9.4及之前缓存的下载文件，可以不需要该功能的 so 文件，达到减少安装包的体积，例如：在9.4及之前版本使用了 TXVodDownloadManager 类的 setDownloadPath 和 startDownloadUrl 函数下载了相应的缓存文件，并且应用内存储了 TXVodDownloadManager 回调的 getPlayPath 路径用于后续播放，这时候需要 libijkhlscache-master.so 播放该 getPlayPath 路径文件，否则不需要。可以在 app/build.gradle 中添加：
 ```xml
 packagingOptions {
 	exclude "lib/armeabi/libijkhlscache-master.so"
@@ -190,7 +190,7 @@ packagingOptions {
 如果您不想集成 aar 库，也可以通过导入 jar 和 so 库的方式集成 LiteAVSDK：
 [](id:smallStep_1)
 1. 下载 SDK + Demo 开发包，项目地址为 [Android](https://github.com/LiteAVSDK/Player_Android)，下载完成后进行解压。在 SDK 目录找到SDK/LiteAVSDK_Player_XXX.zip（其中 XXX 为版本号），解压得到 libs 目录，里面包含 jar 文件和 so 文件夹，文件清单如下：
- ![](https://qcloudimg.tencent-cloud.cn/raw/9ac0f5b1b9b5d15a005fa2226dd960b6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/ab928524839c7944f78d504c0e637586.png)
 2. 把`Demo/superplayerkit`这个 module 复制到工程中，然后在工程目录下的 setting.gradle 导入`superplayerkit`。
 ```xml
 include ':superplayerkit'
@@ -250,6 +250,7 @@ ndk {
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
+
 ### 步骤4：设置混淆规则
 在 proguard-rules.pro 文件，将 TRTC SDK 相关类加入不混淆名单：
 ```xml
@@ -268,12 +269,33 @@ ndk {
     android:layout_width="match_parent"
     android:layout_height="200dp" />
 ```
+2. **配置 License 授权**
+若您已获得相关 License 授权，需在 [腾讯云视立方控制台](https://console.cloud.tencent.com/vcube) 获取 License URL 和 License Key。
+若您暂未获得 License 授权，需先参见 [视频播放 License](https://www.tencentcloud.com/document/product/266/51098) 获取相关授权。<br>
+获取到 License 信息后，在调用 SDK 的相关接口前，通过下面的接口初始化 License，建议在 Application 类中进行如下设置：
+```java
+public class MApplication extends Application {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        String licenceURL = ""; // 获取到的 licence url
+        String licenceKey = ""; // 获取到的 licence key
+        TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
+        TXLiveBase.setListener(new TXLiveBaseListener() {
+            @Override
+            public void onLicenceLoaded(int result, String reason) {
+                Log.i(TAG, "onLicenceLoaded: result:" + result + ", reason:" + reason);
+            }
+        });
+    }
+}
+```
 
 3. **播放视频**[](id:playe)
 本步骤用于指导用户播放视频。腾讯云视立方 Android 播放器组件可用于直播和点播两种播放场景，具体如下：
 	- 点播播放：播放器组件支持两种点播播放方式，可以 [通过 FileID 播放](#fileid) 腾讯云点播媒体资源，也可以直接使用 [URL 播放](#url) 地址进行播放。
-	- 直播播放：播放器组件可使用 [URL 播放 ](#url)的方式实现直播播放。通过传入 URL 地址，即可拉取直播音视频流进行直播播放。腾讯云直播URL生成方式可参见 [自主拼装直播 URL](https://intl.cloud.tencent.com/document/product/267/38393)。
+	- 直播播放：播放器组件可使用 [URL 播放 ](#url)的方式实现直播播放。通过传入 URL 地址，即可拉取直播音视频流进行直播播放。腾讯云直播URL生成方式可参见 [自主拼装直播 URL](https://www.tencentcloud.com/document/product/267/38393)。
 <dx-tabs>
 ::: 通过 URL 播放（直播、点播）[](id:url)
 URL可以是点播文件播放地址，也可以是直播拉流地址，传入相应 URL 即可播放相应视频文件。
@@ -281,35 +303,41 @@ URL可以是点播文件播放地址，也可以是直播拉流地址，传入�
 SuperPlayerModel model = new SuperPlayerModel();
 model.appId = 1400329073; // 配置 AppId
 model.url = "http://your_video_url.mp4";   // 配置您的播放视频url
-mSuperPlayerView.playWithModel(model);
+mSuperPlayerView.playWithModelNeedLicence(model);
 ```
 :::
 ::: 通过 FileID 播放（点播）[](id:fileid)
 视频 FileId 在一般是在视频上传后，由服务器返回：
 1. 客户端视频发布后，服务器会返回 FileId 到客户端。
-2. 服务端视频上传时，在 确认上传的通知中包含对应的 FileId。
+2. 服务端视频上传时，在 确认上传 的通知中包含对应的 FileId。
 
 如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。如下图所示，ID 即表示 FileId：
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
-<dx-alert infotype="notice">
-<li> 通过 FileID 播放时，需要首先使用 Adaptive-HLS(10) 转码模板对视频进行转码，或者使用播放组件签名 psign 指定播放的视频，否则可能导致视频播放失败。转码教程和说明可参见 [用播放器组件播放视频](https://intl.cloud.tencent.com/document/product/266/38098)，psign 生成教程可参见 [psign 教程](https://intl.cloud.tencent.com/document/product/266/38099)。</li>
-<li> 若您在通过 FileID 播放时出现“no v4 play info”异常，则说明您可能存在上述问题，建议您根据上述教程调整。同时您也可以直接获取源视频播放链接，[通过 URL 播放](#url) 的方式实现播放。</li>
-<li> **未经转码的源视频在播放时有可能出现不兼容的情况，建议您使用转码后的视频进行播放。**</li></dx-alert>
+
+>!
+>- 通过 FileID 播放时，需要首先使用 Adaptive-HLS(10) 转码模板对视频进行转码，或者使用播放器组件签名 psign 指定播放的视频，否则可能导致视频播放失败。转码教程和说明可参见 [用播放器组件播放视频](https://www.tencentcloud.com/document/product/266/38098)，psign 生成教程可参见 [psign 教程](https://www.tencentcloud.com/document/product/266/38099)。
+>- 若您在通过 FileID 播放时出现“no v4 play info”异常，则说明您可能存在上述问题，建议您根据上述教程调整。同时您也可以直接获取源视频播放链接，[通过 URL 播放](#url) 的方式实现播放。
+>- **未经转码的源视频在播放时有可能出现不兼容的情况，建议您使用转码后的视频进行播放。**
+
 <dx-codeblock>
 :::  java
 //在未开启防盗链进行播放的过程中，如果出现了“no v4 play info”异常，建议您使用Adaptive-HLS(10)转码模板对视频进行转码，或直接获取源视频播放链接通过url方式进行播放。
 
-SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
+```java
+SuperPlayerModel model = new SuperPlayerModel();
 model.appId = 1400329071;// 配置 AppId
-model.videoId = [[SuperPlayerVideoId alloc] init];
-model.videoId.fileId = @"5285890799710173650"; // 配置 FileId
-//私有加密播放需填写 psign， psign 即播放器组件签名，签名介绍和生成方式参见链接：https://intl.cloud.tencent.com/document/product/266/38099
-//model.videoId.pSign = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU"; 
-[_playerView playWithModel:model];
+model.videoId = new SuperPlayerVideoId();
+model.videoId.fileId = "5285890799710173650"; // 配置 FileId
+// psign 即播放器签名，签名介绍和生成方式参见链接：https://www.tencentcloud.com/document/product/266/38099
+model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU";
+mSuperPlayerView.playWithModelNeedLicence(model);
+```
+
 :::
 </dx-codeblock>
 :::
 </dx-tabs>
+
 3. **退出播放**[](id:exitPlayer)
 当不需要播放器时，调用`resetPlayer`清理播放器内部状态，释放内存。
 ```java
@@ -327,14 +355,17 @@ mSuperPlayerView.resetPlayer();
 播放器组件支持全屏播放，在全屏播放场景内，同时支持锁屏、手势控制音量和亮度、弹幕、截屏、清晰度切换等功能设置。功能效果可在 **[腾讯云视立方 App](#qrcode) > 播放器 > 播放器组件** 中体验，单击界面右下角即可进入全屏播放界面。
 
 在窗口播放模式下，可通过调用下述接口进入全屏播放模式：
+
 ```java
 mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.FULLSCREEN);
 ```
 
+#### 全屏播放界面功能介绍
 
 <dx-tabs>
 ::: 返回窗口
 单击**返回**，即可返回至窗口播放模式。
+
 ```java
 //单击后触发下面的接口
 mControllerCallback.onBackPressed(SuperPlayerDef.PlayerMode.FULLSCREEN);
@@ -395,8 +426,9 @@ public void onQualityChange(VideoQuality quality) {
 
 ### 2、悬浮窗播放
 播放器组件支持悬浮窗小窗口播放，可在切换到其它应用时，不打断视频播放功能。功能效果可在 [**腾讯云视立方 App**](#qrcode) > **播放器** > **播放器组件** 中体验，单击界面左上角**返回**，即可体验悬浮窗播放功能。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" alt="img" style="zoom:45%;" />
 悬浮窗播放依赖于 AndroidManifest 中的以下权限：
+
 ```java
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 ```
@@ -410,8 +442,6 @@ mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.WINDOW);
 ### 3、视频封面
 
 播放器组件支持用户自定义视频封面，用于在视频接收到首帧画面播放回调前展示。功能效果可在 [**腾讯云视立方 App** ](#qrcode)> **播放器** > **播放器组件** > **自定义封面演示** 视频中体验。
-
-
 
 * 当播放器组件设置为自动播放模式`PLAY_ACTION_AUTO_PLAY`时，视频自动播放，此时将在视频首帧加载出来之前展示封面；
 * 当播放器组件设置为手动播放模式`PLAY_ACTION_MANUAL_PLAY`时，需用户单击**播放**后视频才开始播放。在单击**播放**前将展示封面；在单击**播放**后到视频首帧加载出来前也将展示封面。
@@ -427,7 +457,7 @@ model.videoId.fileId = "您的fileId";
 model.playAction = PLAY_ACTION_MANUAL_PLAY;
 //设定封面的地址为网络url地址，如果coverPictureUrl不设定，那么就会自动使用云点播控制台设置的封面
 model.coverPictureUrl = "http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/cc1e28208602268011087336518/MXUW1a5I9TsA.png" 
-mSuperPlayerView.playWithModel(model);
+mSuperPlayerView.playWithModelNeedLicence(model);
 ```
 
 ### 4、视频列表轮播
@@ -457,11 +487,11 @@ model.appid = 1252463788;
 model.videoId.fileId = "4564972819219071679"；
 list.add(model);
 //步骤2：调用轮播接口
-mSuperPlayerView.playWithModelList(list, true, 0);
+mSuperPlayerView.playWithModelListNeedLicence(list, true, 0);
 ```
 
 ```java
-public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
+public void playWithModelListNeedLicence(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
 ```
 
 接口参数说明
@@ -487,7 +517,7 @@ public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayL
  VipWatchModel vipWatchModel = new VipWatchModel("可试看%ss，开通 VIP 观看完整视频",15);
  mode.vipWatchMode = vipWatchModel;
  //步骤3：调用播放视频方法
- mSuperPlayerView.playWithModel(mode);
+ mSuperPlayerView.playWithModelNeedLicence(mode);
 
  方法二：
  //步骤1：创建试看信息 mode
@@ -522,7 +552,7 @@ VipWatchModel 接口参数说明：
  DynamicWaterConfig dynamicWaterConfig = new DynamicWaterConfig("shipinyun", 30, Color.parseColor("#80FFFFFF"));
  mode.dynamicWaterConfig = dynamicWaterConfig;
  //步骤3：调用播放视频方法
- mSuperPlayerView.playWithModel(mode);
+ mSuperPlayerView.playWithModelNeedLicence(mode);
 
  方法二：
  //步骤1：创建水印信息mode
@@ -551,7 +581,7 @@ public DynamicWaterConfig(String dynamicWatermarkTip, int tipTextSize, int tipTe
 ### 运行工程 Demo
 
 1. 在 Android Studio 的导航栏选择 **File** > **Open**，在弹框中选择 **Demo** 工程目录： `$SuperPlayer_Android/Demo`，待成功导入 Demo 工程后，单击 **Run app**，即可成功运行 Demo 。
-2. 成功运行 Demo 后，进入**播放器** > **播放器组件**，可体验播放器功能。
+2. 成功运行 Demo 后如下图，进入**播放器** > **播放器组件**，可体验播放器功能。
 
 [](id:qrcode)
 ### 腾讯云视立方 App
