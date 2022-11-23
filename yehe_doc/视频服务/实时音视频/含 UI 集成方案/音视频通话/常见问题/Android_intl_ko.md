@@ -51,7 +51,7 @@ java.lang.UnsatisfiedLinkError: No implementation found for void com.tencent.lit
 
 초대받은 사람이 온라인 상태가 될 때 App의 상태에 따라 몇 가지 경우가 있습니다.
 
-![img](https://qcloudimg.tencent-cloud.cn/image/document/f4b8ab415785fb5274e2f6cc709254fc.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/1b82ef1bcc5dbc5b0a2d7bf6e4c9d772.jpg)
 
 초대받은 사람이 다시 온라인 상태가 된 후 수신 통화 보기가 표시되지 않으면 로그에서 'onReceiveNewInvitation'을 검색하고 기록 메시지를 가져왔는지 확인하십시오. 로그 데이터를 찾을 수 없는 경우 [문의하기](https://intl.cloud.tencent.com/contact-us)를 통해 도움을 받으십시오.
 
