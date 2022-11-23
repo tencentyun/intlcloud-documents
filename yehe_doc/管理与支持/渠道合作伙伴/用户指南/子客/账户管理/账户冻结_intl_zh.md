@@ -1,7 +1,7 @@
 ## 账户冻结
 ### 1. 账户冻结状态
 子客账户被经销商冻结后，您的账户首页将会出现账户冻结的提示。
-![](https://qcloudimg.tencent-cloud.cn/raw/ce6923ee53c3e5b05d31f73b607c6c0f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f4b3b47d826adf6761af5d7325791102.png)
 
 ### 2. 账户冻结影响
 账户将无法进行新购、续费等操作，已购买的预付费资源可以继续使用，已开通的后付费资源将按照[子客欠费停服规则](https://www.tencentcloud.com/document/product/1085/50550)立即停服，您的资源使用会收到影响。如需恢复服务，请尽快联系您的经销商恢复账户，避免产品立即停服对您客户业务造成影响。
