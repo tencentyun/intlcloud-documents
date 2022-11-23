@@ -144,8 +144,13 @@ Tencent Cloud View Cube·Player+ Demoは完全な製品レベルのインタラ�
 ## Demoデモンストレーション
 ### Web端末（TCPlayer）
 WebプレーヤーはPC端末およびモバイル端末のブラウザのビデオ再生をサポートしています。Web端末はビデオ再生機能の効果およびそれに付随するコードを確認し、比較することができるDemo体験ページを提供しています。サンプルコードを修正することによって、すぐに再生エリア内で修正した機能の効果を確認することができます。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/6aef8503bffdc07df4d01117d66b6e2a.jpg)
+
 ### モバイル端末
 Tencent Cloud View Cube AppはTencentオーディオビデオが開発した複数の製品および機能を一つに統合した最適な体験ソリューションです。コードをスキャンしてTencent Cloud View Cubeをダウンロードします。**Tencent Cloud View Cube** > **プレーヤー** では多くのシナリオ化されたDemoを提供し、必要に応じて対応する機能を選択し、体験することができます。
 * **Super Player**では、一般的な長編ビデオの再生シーンのスタイル、およびビデオのプレビュー、ビデオリスト、カスタムカバーなど一般的なビデオ機能を体験することができます。
 * **UGSV再生**では、「TencentWesee」に類似した没入型UGSV再生シナリオを体験することができます。
 * **Feedストリーム再生**では、「Tencentニュース」に類似したFeedストリームの再生シナリオを体験することができます。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/c3123138f894795a237e3fc65a74ad95.png)
