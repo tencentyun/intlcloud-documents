@@ -52,7 +52,7 @@ java.lang.UnsatisfiedLinkError: No implementation found for void com.tencent.lit
 
 根据 App 的启动类型，分别有不同的情况：
 
-![img](https://qcloudimg.tencent-cloud.cn/image/document/f4b8ab415785fb5274e2f6cc709254fc.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/1b82ef1bcc5dbc5b0a2d7bf6e4c9d772.jpg)
 
 如果离线再上线后没有弹出通话界面，请过滤`onReceiveNewInvitation`日志，检查是否拉取到历史消息，如果没有该日志的打印，请[联系我们](https://intl.cloud.tencent.com/contact-us)协助处理。
 
