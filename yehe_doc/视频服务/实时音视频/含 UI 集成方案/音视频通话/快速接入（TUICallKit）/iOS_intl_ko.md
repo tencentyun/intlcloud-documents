@@ -7,13 +7,13 @@ iOS 9.0 (API level 16) 이상.
 [](id:step1)
 ##  1단계: 서비스 활성화
 
-TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messaging(IM)](https://www.tencentcloud.com/document/product/1047) 및 [Tencent Real-Time Communication(TRTC)](https://www.tencentcloud.com/document/product/647)을 기반으로 하는 오디오/비디오 통신 컴포넌트입니다. 아래 단계에 따라 관련 서비스를 활성화하고 7일 무료 베타 서비스를 체험할 수 있습니다.
+TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messaging(IM)](https://www.tencentcloud.com/document/product/1047) 및 [Tencent Real-Time Communication(TRTC)](https://www.tencentcloud.com/document/product/647)을 기반으로 하는 오디오/비디오 통신 컴포넌트입니다. 아래 단계에 따라 관련 서비스를 활성화하고 60일 무료 베타 서비스를 체험할 수 있습니다.
 
 1. [IM 콘솔](https://console.tencentcloud.com/im)에 로그인하고 **애플리케이션 생성**을 클릭하고 팝업 대화 상자에 애플리케이션 이름을 입력하고 **확인**을 클릭합니다.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/c9a076ece348019d689c6c562b6a3c78.png)
 
 2. 방금 만든 애플리케이션을 클릭하여 기본 구성 페이지로 들어갑니다. TUICallKit의 7일 무료 평가판을 보려면 페이지 오른쪽 하단 모서리에 있는 TRTC 활성화에서 무료 평가판을 클릭하십시오. 애플리케이션을 공식 릴리스하려면 [문의](https://intl.cloud.tencent.com/contact-us) 하십시오.
-![img](https://qcloudimg.tencent-cloud.cn/raw/4ee28e98dd28c9ae91078832f0105092.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! 다양한 비즈니스 요구 사항에 따라 IM 음성/영상 통화 기능의 다양한 유료 버전을 사용할 수 있습니다. 사용 가능한 기능에 대해 자세히 알아보고 적합한 버전을 구입하려면 [문의](https://intl.cloud.tencent.com/contact-us)하십시오.
 
@@ -22,10 +22,10 @@ TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messagi
 
 
 >? **참고:** **무료 평가판**을 클릭하면 이전에 [TRTC](https://www.tencentcloud.com/document/product/647/35078) 서비스를 사용한 적이 있는 일부 사용자에게 다음 메시지가 표시됩니다.
-```java
+>```java
 [-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears
-```
-새로운 IM 음성 및 영상 통화 기능은 [TRTC](https://www.tencentcloud.com/document/product/647/35078) 및 [IM](https://www.tencentcloud.com/document/product/1047)의 두 가지 기본 PaaS 서비스가 통합되어 있으므로, [TRTC](https://www.tencentcloud.com/document/product/647/35078)의 무료 할당량(10000분)이 만료되거나 소진되면 이 서비스를 활성화할 수 없습니다. 예시 이미지와 같이 [TRTC 콘솔](https://console.tencentcloud.com/trtc/app)을 클릭하여 SDKAppID에 해당하는 애플리케이션 관리 페이지에서 후불 기능을 활성화한 후 다시 **애플리케이션을 활성화**하면 음성 및 영상 통화 기능을 정상적으로 체험할 수 있습니다.
+>```
+>새로운 IM 음성 및 영상 통화 기능은 [TRTC](https://www.tencentcloud.com/document/product/647/35078) 및 [IM](https://www.tencentcloud.com/document/product/1047)의 두 가지 기본 PaaS 서비스가 통합되어 있으므로, [TRTC](https://www.tencentcloud.com/document/product/647/35078)의 무료 할당량(10000분)이 만료되거나 소진되면 이 서비스를 활성화할 수 없습니다. 예시 이미지와 같이 [TRTC 콘솔](https://console.tencentcloud.com/trtc/app)을 클릭하여 SDKAppID에 해당하는 애플리케이션 관리 페이지에서 후불 기능을 활성화한 후 다시 **애플리케이션을 활성화**하면 음성 및 영상 통화 기능을 정상적으로 체험할 수 있습니다.
 
 
 [](id:step2)
@@ -230,15 +230,9 @@ TUICallKit.createInstance().setCallingBell(filePath: filePath)
 
 
 ## FAQ
-### 1. ‘The package you purchased does not support this ability’라는 오류 메시지가 표시되면 어떻게 해야 합니까?
+### ‘The package you purchased does not support this ability’라는 오류 메시지가 표시되면 어떻게 해야 합니까?
 
 오류 메시지는 애플리케이션의 오디오/비디오 통화 기능 패키지가 만료되었거나 활성화되지 않았음을 나타냅니다. TUICallKit을 계속 사용하려면 [1단계](#step1)의 지침에 따라 음성/영상 통화 기능을 요청하거나 활성화할 수 있습니다.
-
-### 2. 플랜은 어떻게 구매하나요?
-
-자세한 내용은 [가격 개요](https://www.tencentcloud.com/document/product/647/50553)를 참고하십시오. 기타 궁금한 사항이 있으시면 페이지 우측의 프리세일 패키지 상담을 클릭하시거나 QQ그룹 **592465424**에 가입하여 상담 및 피드백 부탁드립니다.
-
->? 자세한 내용은 [FAQ (iOS)](https://www.tencentcloud.com/document/product/647/51023)를 참고하십시오.
 
 ## 교류 및 피드백
 

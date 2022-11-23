@@ -7,13 +7,13 @@ iOS 9.0 (API level 16)およびそれ以上。
 [](id:step1)
 ##  ステップ1：サービスのアクティブ化
 
-TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/1047)と、[TRTC](https://www.tencentcloud.com/document/product/647)という2つの有料PaaSサービスをベースに構築したオーディオビデオ通信コンポーネントです。以下の手順で関連のサービスをアクティブ化し、7日間の無料トライアルサービスを体験することができます。
+TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/1047)と、[TRTC](https://www.tencentcloud.com/document/product/647)という2つの有料PaaSサービスをベースに構築したオーディオビデオ通信コンポーネントです。以下の手順で関連のサービスをアクティブ化し、60日間の無料トライアルサービスを体験することができます。
 
 1. [IMコンソール](https://console.tencentcloud.com/im)にログインし、**新しいアプリケーションの作成**をクリックし、ポップアップしたダイアログボックスにアプリケーション名を入力して**OK**をクリックします。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/c9a076ece348019d689c6c562b6a3c78.png)
 
 2. 作成したアプリケーションをクリックし、基本設定ページに進み、ページ右下隅のTRTCサービスのアクティブ化機能エリアで無料体験をクリックすると、TUICallKitの7日間無料トライアルサービスをアクティブ化することができます。正式アプリケーションのリリースが必要な場合は、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)ください。
-![img](https://qcloudimg.tencent-cloud.cn/raw/4ee28e98dd28c9ae91078832f0105092.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! IMのオーディオビデオ通話機能は業務ニーズに応じて差別化した有料バージョンをご提供しています。[お問い合わせ](https://intl.cloud.tencent.com/contact-us)いただくことで、含まれる機能をご確認の上、ご自身に合ったバージョンを選択してご購入いただけます。
 
@@ -22,10 +22,10 @@ TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/
 
 
 >? お知らせ：**無料体験**をクリックすると、それまでに[TRTC](https://www.tencentcloud.com/document/product/647/35078)サービスを使用したことがある一部のユーザーには、次のような内容が表示されることがあります。
-```java
+>```java
 [-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears
-```
-新しいIMオーディオビデオ通話機能は、Tencent Cloudの[TRTC](https://www.tencentcloud.com/document/product/647/35078)と[IM](https://www.tencentcloud.com/document/product/1047)という2つの基本PaaSサービスを統合したもののため、[TRTC](https://www.tencentcloud.com/document/product/647/35078)の無料利用枠（10000分）が期限切れまたは使用済みの場合、このサービスをアクティブ化しようとすると失敗します。その場合は、[TRTCコンソール](https://console.tencentcloud.com/trtc/app)をクリックし、SDKAppIDに対応するアプリケーション管理ページを見つけ、図のように後払い機能をアクティブ化してから**アプリケーションを有効にする**ことで、オーディオビデオ通話機能を正常に体験することができるようになります。
+>```
+>新しいIMオーディオビデオ通話機能は、Tencent Cloudの[TRTC](https://www.tencentcloud.com/document/product/647/35078)と[IM](https://www.tencentcloud.com/document/product/1047)という2つの基本PaaSサービスを統合したもののため、[TRTC](https://www.tencentcloud.com/document/product/647/35078)の無料利用枠（10000分）が期限切れまたは使用済みの場合、このサービスをアクティブ化しようとすると失敗します。その場合は、[TRTCコンソール](https://console.tencentcloud.com/trtc/app)をクリックし、SDKAppIDに対応するアプリケーション管理ページを見つけ、図のように後払い機能をアクティブ化してから**アプリケーションを有効にする**ことで、オーディオビデオ通話機能を正常に体験することができるようになります。
 
 
 [](id:step2)
@@ -231,15 +231,10 @@ TUICallKit.createInstance().setCallingBell(filePath: filePath)
 
 
 ## よくあるご質問
-### 1、「The package you purchased does not support this ability」というエラーが表示されました。
+### 「The package you purchased does not support this ability」というエラーが表示されました。
 
 上記のエラーが表示された場合は、現在のアプリケーションのオーディオビデオ通話機能パッケージが期限切れまたはアクティブ化されていないことを表します。[ステップ1](#step1)を参照してオーディオビデオ通話機能を取得またはアクティブ化し、引き続きTUICallKitコンポーネントをご利用ください。
 
-### 2、パッケージを購入するにはどうすればよいですか。
-
-購入リンク[オーディオビデオ通話SDK価格一覧](https://www.tencentcloud.com/document/product/647/50553)をご参照ください。その他にご質問がありましたらページ右側をクリックし、パッケージのご購入前にお問い合わせください。もしくはQQグループ：**592465424**に参加し、問い合わせとフィードバックを行うことができます。
-
->? その他のヘルプ情報についての詳細は、[iOSについてのよくあるご質問](https://www.tencentcloud.com/document/product/647/51023)をご参照ください。
 
 ## ご意見とフィードバック
 

@@ -11,13 +11,13 @@ Android 4.1およびそれ以降のスマートフォンデバイス。
 [](id:step1)
 ##  ステップ1：サービスのアクティブ化
 
-TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/1047)と、[TRTC](https://www.tencentcloud.com/document/product/647)という2つの有料PaaSサービスをベースに構築したオーディオビデオ通信コンポーネントです。以下の手順で関連のサービスをアクティブ化し、7日間の無料トライアルサービスを体験することができます。
+TUICallKitはTencent Cloudの[IM](https://www.tencentcloud.com/document/product/1047)と、[TRTC](https://www.tencentcloud.com/document/product/647)という2つの有料PaaSサービスをベースに構築したオーディオビデオ通信コンポーネントです。以下の手順で関連のサービスをアクティブ化し、60日間の無料トライアルサービスを体験することができます。
 
 1. [IMコンソール](https://console.tencentcloud.com/im)にログインし、**新しいアプリケーションの作成**をクリックし、ポップアップしたダイアログボックスにアプリケーション名を入力して**OK**をクリックします。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/571d5bed98a46752933169fbf4136271.png)
 
 2. 作成したアプリケーションをクリックし、基本設定ページに進み、ページ右下隅のTRTCサービスのアクティブ化機能エリアで無料体験をクリックすると、TUICallKitの7日間無料トライアルサービスをアクティブ化することができます。正式アプリケーションのリリースが必要な場合は、追加購入をクリックすると購入ページに進むことができます。
-![img](https://qcloudimg.tencent-cloud.cn/raw/0860fe4f282d2d918d3911127d85120a.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! IMのオーディオビデオ通話機能は業務ニーズに応じて差別化した有料バージョンをご提供しています。含まれる機能をIM購入ページでご確認の上、ご自身に合ったバージョンを選択してご購入いただけます。
 
@@ -54,6 +54,7 @@ api project(':tuicallkit')
 >? TUICallKitプロジェクトの内部はデフォルトで`TRTC SDK`、`IM SDK`、`tuicallengine`およびパブリックコーパスの`tuicore`に依存しており、開発者が単独で設定する必要はありません。バージョンアップが必要な場合は、`tuicallkit/build.gradle`ファイルを変更するだけで済みます。
 
 3. SDKの内部ではJavaのリフレクション機能を使用しているため、 SDK内の一部のクラスに非難読化リストを追加する必要があります。このため、`proguard-rules.pro`ファイルに次のコードを追加する必要があります。
+
 ```bash
 -keep class com.tencent.** { *; }
 ```
@@ -108,11 +109,10 @@ TUILogin.login(context,
 その他の情報については、[UserSigの計算、使用方法](https://www.tencentcloud.com/document/product/647/35166)をご参照ください。
 
 >? **この手順は、現在開発者から最も多くのフィードバックが寄せられる手順でもあります。よくみられる問題には次のようなものがあります。**
-- SDKAppIDの設定に誤りがある。国内サイトのSDKAppIDは一般的に140で始まる10桁の整数です。
-- UserSigを誤って暗号化鍵（SecretKey）に設定している。UserSigはSecretKeyを使用して、SDKAppID、UserIDおよび有効期限などの情報を暗号化するためのものであり、SecretKeyは直接UserSigに設定するものではありません。
-- UserIDが「1」、「123」、「111」などの簡単な文字列で設定されている。**TRTCは同一のUserIDによる複数端末へのログインをサポートしていない**ため、複数人によるコラボレーション開発の場合、「1」、「123」、「111」のようなUserIDは同僚に占有されていることが多く、ログイン失敗につながりやすいです。このため、デバッグの際に、識別度の高いUserIDを設定することをお勧めします。
-
->! GithubのサンプルコードでgenTestUserSig関数を使用してローカルでUserSigを計算すると、現在のアクセスフローをさらに速くスタートさせることができますが、この方法ではSecretKeyがAppのコード内で開示されてしまい、その後のアップグレードおよびSecretKeyの保護にとって不利益になります。そのため、UserSigの計算ロジックはサーバーに置いて実行し、またAppがTUICallKitコンポーネントを使用するたびに、リアルタイムに計算したUserSigをサーバーにリクエストするようにすることを強く推奨します。
+>- SDKAppIDの設定に誤りがある。国内サイトのSDKAppIDは一般的に140で始まる10桁の整数です。
+>- UserSigを誤って暗号化鍵（SecretKey）に設定している。UserSigはSecretKeyを使用して、SDKAppID、UserIDおよび有効期限などの情報を暗号化するためのものであり、SecretKeyは直接UserSigに設定するものではありません。
+>- UserIDが「1」、「123」、「111」などの簡単な文字列で設定されている。**TRTCは同一のUserIDによる複数端末へのログインをサポートしていない**ため、複数人によるコラボレーション開発の場合、「1」、「123」、「111」のようなUserIDは同僚に占有されていることが多く、ログイン失敗につながりやすいです。このため、デバッグの際に、識別度の高いUserIDを設定することをお勧めします。
+> GithubのサンプルコードでgenTestUserSig関数を使用してローカルでUserSigを計算すると、現在のアクセスフローをさらに速くスタートさせることができますが、この方法ではSecretKeyがAppのコード内で開示されてしまい、その後のアップグレードおよびSecretKeyの保護にとって不利益になります。そのため、UserSigの計算ロジックはサーバーに置いて実行し、またAppがTUICallKitコンポーネントを使用するたびに、リアルタイムに計算したUserSigをサーバーにリクエストするようにすることを強く推奨します。
 
 [](id:step5)
 ## ステップ5：通話する

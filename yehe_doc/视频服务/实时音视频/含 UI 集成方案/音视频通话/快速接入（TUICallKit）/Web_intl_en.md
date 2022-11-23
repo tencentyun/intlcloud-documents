@@ -7,13 +7,13 @@ Before integration, check whether your desktop browser supports the audio/video 
 [](id:step1)
 ## Step 1. Activate the service
 
-`TUICallKit` is an audio/video call component developed based on two paid PaaS services: [IM](https://intl.cloud.tencent.com/document/product/1047/35448) and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078). You can activate the services and enjoy a 7-day free trial as follows:
+`TUICallKit` is an audio/video call component developed based on two paid PaaS services: [IM](https://intl.cloud.tencent.com/document/product/1047/35448) and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078). You can activate the services and enjoy a 60-day free trial as follows:
 
 1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click **Create Application**. In the pop-up window, enter your application name and click **OK**.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/ce2e34f7cd1cd14679fc5decffb469af.png)
 
-2. Click the application just created to enter the **Basic Configuration** page. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** in the bottom-right corner of the page for a 7-day free trial of `TUICallKit`.
-![img](https://qcloudimg.tencent-cloud.cn/raw/a5cf318d4d8d680e0d885fe79af61f4e.png)
+2. Click the application you just created to enter the **Basic Configuration** page. In the **Tencent Real-Time Communication** area at the bottom right of the page, click **Try now**. In the pop-up window, click **Activate now** to activate a **60-day free trial** of `TUICallKit`.
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 3. On the same page, find and record the **SDKAppID** and **Key**, which will be used in subsequent steps.
 	![img](https://qcloudimg.tencent-cloud.cn/raw/8349ac97b261279606316331488784c3.png)
@@ -94,7 +94,7 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
   ```
 >? `userSig` can be obtained in [step 3](#step3).
 
-	2.3 Run the following code where call making needs to be implemented:
+  2.3 Run the following code where call making needs to be implemented:
 	```
 		import { TUICallKitServer } from './src/components/TUICallKit/Web/src/index';
 		TUICallKitServer.call({ userID, type }); // One-to-one call
@@ -124,7 +124,7 @@ function afterCalling() {
 
 - [API Introduction](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/API.md)
 - [TUICallKit basic demo](https://github.com/tencentyun/TUICallKit/blob/main/Web/demos/basic/README.md)
-- [TUICallKit UI Customization Guide](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI Customization.md)
+- [TUICallKit UI Customization Guide](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI%20Customization.md)
 - [FAQs (Web)](https://www.tencentcloud.com/document/product/647/51024)
 
 

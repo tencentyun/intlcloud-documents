@@ -5,15 +5,14 @@
 >?仅支持经销商注册新腾讯云账号，申请绑定成总经销商的经销商，经销商已有的腾讯云账号不可开展转售业务。
 >
 
-![]()
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/3371db219e7f86d5635807392f92a219.png)
+
+![](https://qcloudimg.tencent-cloud.cn/raw/08c29127e69e96339be9e7b07bafa486.png)
 
 ### 2、审核经销商
 经销商提交绑定申请后，需总经销商经销审核，确认是否可绑定。
-![]()
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/f12a3580ea8a8009e9cf3346b773d7c5.png)
 
-### 3、驳回记录
-经销商提交绑定申请后，如不符合要求，总经销商可驳回，可查看所有驳回记录。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/dbd3899a30addbedf80b897339a94ac8.png)
 
+![](https://qcloudimg.tencent-cloud.cn/raw/9aef344e71d6facc2c2beca72b1ef554.png)

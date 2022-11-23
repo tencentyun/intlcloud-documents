@@ -11,20 +11,20 @@
 
 单击【公司信息】，可查询公司基础信息。
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/4ffc31b25a655f3badd42ec223c8c859.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b7e3069d78741a34370c76cabb1633b0.png)
 
 单击基础信息的【编辑】，可编辑基础信息。
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/a981a778236a107c58438f23adf4fff9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b3a80a793352ec95692804b4a0df9a0e.png)
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/48c91ccb4c1b04ab198c4976f5a167d0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/147f68f3b543fbcde1c60aecc3b7367f.png)
 
 
 ### 2、查询银行信息
 
 单击【公司信息】，可查询公司银行信息。
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/8fd2e22ccee882b19a9564223ea7962d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1af6eb46358a969952b0d1cb9edbe2ee.png)
 
 >? 银行信息暂不支持线上修改，如需修改请联系销售经理。
 
@@ -33,9 +33,9 @@
 
 单击【公司信息】，可查询公司联系信息。
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/6ac06e2112c6fab1611b6cd230f518e8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c1c31d2d95981c25f37e97c0ba86def3.png)
 
 单击基础信息的【编辑】，可编辑联系信息。
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/0b3b21f204f33215cecfcc7db8226a9b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f034c42cefc6b8c3b66cf2ebf278884.png)
 

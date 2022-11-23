@@ -6,10 +6,6 @@
 
 If the above error occurs, it indicates that you haven’t activated TRTC or your TRTC package has expired. For directions on how to activate TRTC, see [Step 1. Activate services](https://www.tencentcloud.com/document/product/647/50991#step1). You can get a free trial package after activation.
 
-### How do I buy a TRTC package?
-
-For directions on how to buy a TRTC package, see [Billing Overview](https://www.tencentcloud.com/document/product/647/50553). If you have questions, please click the icon in the bottom right corner of the page to contact us.
-
 ### `TUICallKit` crashed, and the error message was "No implementation found for xxxx". What should I do?
 
 Below is the stack trace:

@@ -7,13 +7,13 @@
 [](id:step1)
 ##  1단계: 서비스 활성화
 
-TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448) 및 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078)을 기반으로 하는 오디오/비디오 통신 컴포넌트입니다. 아래 단계에 따라 관련 서비스를 활성화하고 7일 무료 베타 서비스를 체험할 수 있습니다.
+TUICallKit은 Tencent Cloud의 두 가지 유료 PaaS 서비스 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448) 및 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078)을 기반으로 하는 오디오/비디오 통신 컴포넌트입니다. 아래 단계에 따라 관련 서비스를 활성화하고 60일 무료 베타 서비스를 체험할 수 있습니다.
 
 1. [IM 콘솔](https://console.cloud.tencent.com/im)에 로그인하고 **애플리케이션 생성**을 클릭하고 팝업 대화 상자에 애플리케이션 이름을 입력하고 **확인**을 클릭합니다.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/ce2e34f7cd1cd14679fc5decffb469af.png)
 
 2. 방금 생성한 애플리케이션을 클릭하여 **기본 구성** 페이지로 이동하고 페이지 오른쪽 하단에서 **Tencent TRTC 서비스 활성화**의 **무료 체험**을 클릭하여 TUICallKit의 7일 무료 베타 서비스를 활성화합니다.
-![img](https://qcloudimg.tencent-cloud.cn/raw/a5cf318d4d8d680e0d885fe79af61f4e.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 3. 같은 페이지에서 **SDKAppID**와 **Key**를 찾아 기록해둡니다. 나중에 사용하게 됩니다.
 	![img](https://qcloudimg.tencent-cloud.cn/raw/8349ac97b261279606316331488784c3.png)
@@ -94,7 +94,7 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
   ```
 >? userSig는 [3단계](#step3)에서 가져올 수 있습니다.
 
-	2.3 호출을 구현해야 하는 경우 다음 코드를 실행합니다.
+  2.3 호출을 구현해야 하는 경우 다음 코드를 실행합니다.
 	```
 		import { TUICallKitServer } from './src/components/TUICallKit/Web/src/index';
 		TUICallKitServer.call({ userID, type }); // 일대일 통화
@@ -124,7 +124,7 @@ function afterCalling() {
 
 - [TUICallKit API](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/API.md)
 - [TUICallKit 기본 demo](https://github.com/tencentyun/TUICallKit/blob/main/Web/demos/basic/README.md)
-- [TUICallKit UI 사용자 정의 가이드](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI Customization.md)
+- [TUICallKit UI 사용자 정의 가이드](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI%20Customization.md)
 - [TUICallKit (Web) FAQs](https://www.tencentcloud.com/document/product/647/51024)
 
 

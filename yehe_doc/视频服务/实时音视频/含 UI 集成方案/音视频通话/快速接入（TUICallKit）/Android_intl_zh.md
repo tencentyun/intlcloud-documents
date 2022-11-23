@@ -11,13 +11,13 @@ Android 4.1 及以上的手机设备。
 [](id:step1)
 ## 步骤一：开通服务
 
-TUICallKit 是基于腾讯云 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 和 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647) 两项付费 PaaS 服务构建出的音视频通信组件。您可以按照如下步骤开通相关的服务并体验 7 天的免费试用服务：
+TUICallKit 是基于腾讯云 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 和 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647) 两项付费 PaaS 服务构建出的音视频通信组件。您可以按照如下步骤开通相关的服务并体验 60 天的免费试用服务：
 
 1. 登录到 [即时通信 IM 控制台](https://console.tencentcloud.com/im)，单击**创建新应用**，在弹出的对话框中输入您的应用名称，并单击**确定**。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/571d5bed98a46752933169fbf4136271.png)
 
-2. 单击刚刚创建出的应用，进入基本配置页面，并在页面的右下角找到开通腾讯实时音视频服务功能区，单击免费体验即可开通 TUICallKit 的 7 天免费试用服务。如果需要正式应用上线，可以单击 前往加购 即可进入购买页面。
-![img](https://qcloudimg.tencent-cloud.cn/raw/0860fe4f282d2d918d3911127d85120a.png)
+2. 单击刚刚创建出的应用，进入基本配置页面，并在页面的右下角找到开通**腾讯实时音视频服务**功能区，单击下方 **音视频通话能力-免费体验** ，在弹出的**免费开通音视频通话能力体验版**对话框中，单击**免费开通**，即可开通 TUICallKit 的 **60天免费试用**服务。
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! IM 音视频通话能力针对不同的业务需求提供了差异化的付费版本供您选择，您可以在 IM 购买页了解包含功能并选购您适合的版本。
 
@@ -55,6 +55,7 @@ api project(':tuicallkit')
 >? TUICallKit 工程内部已经默认依赖：`TRTC SDK`、`IM SDK`、`tuicallengine` 以及公共库 `tuicore`，不需要开发者单独配置。如需进行版本升级，则修改`tuicallkit/build.gradle`文件即可。
 
 3. 由于我们在 SDK 内部使用了Java 的反射特性，需要将 SDK 中的部分类加入不混淆名单，因此需要您在 `proguard-rules.pro` 文件中添加如下代码：
+
 ```bash
 -keep class com.tencent.** { *; }
 ```
@@ -109,11 +110,10 @@ TUILogin.login(context,
 更多信息请参见 [如何计算及使用 UserSig](https://www.tencentcloud.com/document/product/647/35166)。
 
 >? **这个步骤也是目前我们收到的开发者反馈最多的步骤，常见问题如下：**
-- SDKAppID 设置错误，国内站的 SDKAppID 一般是以140开头的10位整数。
-- UserSig 被错配成了加密密钥（SecretKey），UserSig 是用 SecretKey 把 SDKAppID、UserID 以及过期时间等信息加密得来的，而不是直接把 SecretKey 配置成 UserSig。
-- UserID 被设置成“1”、“123”、“111”等简单字符串，由于 **TRTC 不支持同一个 UserID 多端登录**，所以在多人协作开发时，形如 “1”、“123”、“111” 这样的 UserID 很容易被您的同事占用，导致登录失败，因此我们建议您在调试的时候设置一些辨识度高的 UserID。
-
->! Github 中的示例代码使用了 genTestUserSig 函数在本地计算 UserSig 是为了更快地让您跑通当前的接入流程，但该方案会将您的 SecretKey 暴露在 App 的代码当中，这并不利于您后续升级和保护您的 SecretKey，所以我们强烈建议您将 UserSig 的计算逻辑放在服务端进行，并由 app 在每次使用 TUICallKit 组件时向您的服务器请求实时计算出的 UserSig。
+>- SDKAppID 设置错误，国内站的 SDKAppID 一般是以140开头的10位整数。
+>- UserSig 被错配成了加密密钥（SecretKey），UserSig 是用 SecretKey 把 SDKAppID、UserID 以及过期时间等信息加密得来的，而不是直接把 SecretKey 配置成 UserSig。
+>- UserID 被设置成“1”、“123”、“111”等简单字符串，由于 **TRTC 不支持同一个 UserID 多端登录**，所以在多人协作开发时，形如 “1”、“123”、“111” 这样的 UserID 很容易被您的同事占用，导致登录失败，因此我们建议您在调试的时候设置一些辨识度高的 UserID。
+> Github 中的示例代码使用了 genTestUserSig 函数在本地计算 UserSig 是为了更快地让您跑通当前的接入流程，但该方案会将您的 SecretKey 暴露在 App 的代码当中，这并不利于您后续升级和保护您的 SecretKey，所以我们强烈建议您将 UserSig 的计算逻辑放在服务端进行，并由 app 在每次使用 TUICallKit 组件时向您的服务器请求实时计算出的 UserSig。
 
 [](id:step5)
 ## 步骤五：拨打通话

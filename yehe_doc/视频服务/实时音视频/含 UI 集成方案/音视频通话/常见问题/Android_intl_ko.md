@@ -6,10 +6,6 @@
 
 상기 오류가 발생하면 TRTC를 활성화하지 않았거나 TRTC 패키지가 만료되었음을 나타냅니다. TRTC 활성화 방법은 [1단계: 서비스 활성화](https://www.tencentcloud.com/document/product/647/50991#step1)를 참고하십시오. 활성화 후 무료 평가판 패키지를 받을 수 있습니다.
 
-### TRTC 패키지는 어떻게 구매하나요?
-
-TRTC 패키지 구매 방법은 [가격 개요](https://www.tencentcloud.com/document/product/647/50553)를 참고하십시오. 질문이 있으시면 페이지 오른쪽 하단의 아이콘을 클릭하여 문의하거나 또는 QQ 그룹: **592465424** 추가 후 문의해주시기 바랍니다.
-
 ### TUICallKit이 충돌했고 오류 메시지는 "No implementation found for xxxx"이었습니다. 어떻게 해야 하나요?
 
 스택 추적은 다음과 같습니다.

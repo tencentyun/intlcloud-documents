@@ -7,13 +7,13 @@ iOS 9.0 (API level 16) 及更高。
 [](id:step1)
 ## 步骤一：开通服务
 
-TUICallKit 是基于腾讯云 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 和 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647) 两项付费 PaaS 服务构建出的音视频通信组件。您可以按照如下步骤开通相关的服务并体验 7 天的免费试用服务：
+TUICallKit 是基于腾讯云 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 和 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647) 两项付费 PaaS 服务构建出的音视频通信组件。您可以按照如下步骤开通相关的服务并体验 60 天的免费试用服务：
 
 1. 登录到 [即时通信 IM 控制台](https://console.tencentcloud.com/im)，单击**创建新应用**，在弹出的对话框中输入您的应用名称，并单击**确定**。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/c9a076ece348019d689c6c562b6a3c78.png)
 
-2. 单击刚刚创建出的应用，进入基本配置页面，并在页面的右下角找到开通腾讯实时音视频服务功能区，单击免费体验即可开通 TUICallKit 的 7 天免费试用服务。如果需要正式应用上线，可以[联系我们](https://intl.cloud.tencent.com/contact-us)。
-![img](https://qcloudimg.tencent-cloud.cn/raw/4ee28e98dd28c9ae91078832f0105092.png)
+2. 单击刚刚创建出的应用，进入基本配置页面，并在页面的右下角找到开通**腾讯实时音视频服务**功能区，单击下方 **音视频通话能力-免费体验** ，在弹出的**免费开通音视频通话能力体验版**对话框中，单击**免费开通**，即可开通 TUICallKit 的 **60天免费试用**服务。
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 >! IM 音视频通话能力针对不同的业务需求提供了差异化的付费版本供您选择，您可以在[联系我们](https://intl.cloud.tencent.com/contact-us)了解包含功能并选购您适合的版本。
 
@@ -22,10 +22,10 @@ TUICallKit 是基于腾讯云 [即时通信 IM](https://www.tencentcloud.com/doc
 
 
 >? **友情提示：** 单击**免费体验**以后，部分之前使用过 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 服务的用户会提示：
-```java
+>```java
 [-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears
-```
-因为新的 IM 音视频通话能力是整合了腾讯云[实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 和 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 两个基础的 PaaS 服务，所以当 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 的免费额度（10000分钟）已经过期或者耗尽，就会导致开通此项服务失败，这里您可以单击 [TRTC 控制台](https://console.tencentcloud.com/trtc/app)，找到对应 SDKAppID 的应用管理页，示例如图，开通后付费功能后，再次**启用应用**即可正常体验音视频通话能力。
+>```
+>因为新的 IM 音视频通话能力是整合了腾讯云[实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 和 [即时通信 IM](https://www.tencentcloud.com/document/product/1047) 两个基础的 PaaS 服务，所以当 [实时音视频 TRTC](https://www.tencentcloud.com/document/product/647/35078) 的免费额度（10000分钟）已经过期或者耗尽，就会导致开通此项服务失败，这里您可以单击 [TRTC 控制台](https://console.tencentcloud.com/trtc/app)，找到对应 SDKAppID 的应用管理页，开通后付费功能后，再次**启用应用**即可正常体验音视频通话能力。
 
 
 [](id:step2)
@@ -230,15 +230,10 @@ TUICallKit.createInstance().setCallingBell(filePath: filePath)
 
 
 ## 常见问题
-### 1、错误提示“The package you purchased does not support this ability”？
+### 错误提示“The package you purchased does not support this ability”？
 
 如遇以上错误提示，是由于您当前应用的音视频通话能力包过期或未开通，请参见 [步骤一](#step1)，领取或者开通音视频通话能力，进而继续使用 TUICallKit 组件。
 
-### 2、如何购买套餐？
-
-请参考购买链接 [音视频通话 SDK 价格总览](https://www.tencentcloud.com/document/product/647/50553)，如有其他问题，请单击页面右侧，进行售前套餐咨询，或者加入 QQ 群：**592465424**，进行咨询和反馈。
-
->? 更多帮助信息，详情请参见 [iOS 常见问题](https://www.tencentcloud.com/document/product/647/51023)。
 
 ## 交流与反馈
 

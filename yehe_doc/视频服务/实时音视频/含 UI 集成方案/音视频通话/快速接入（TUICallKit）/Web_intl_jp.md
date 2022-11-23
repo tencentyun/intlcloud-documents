@@ -7,13 +7,13 @@
 [](id:step1)
 ##  ステップ1：サービスのアクティブ化
 
-TUICallKitはTencent Cloudの[IM](https://intl.cloud.tencent.com/document/product/1047/35448)と、[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)という2つの有料PaaSサービスをベースに構築したオーディオビデオ通信コンポーネントです。以下の手順で関連のサービスをアクティブ化し、7日間の無料トライアルサービスを体験することができます。
+TUICallKitはTencent Cloudの[IM](https://intl.cloud.tencent.com/document/product/1047/35448)と、[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)という2つの有料PaaSサービスをベースに構築したオーディオビデオ通信コンポーネントです。以下の手順で関連のサービスをアクティブ化し、60日間の無料トライアルサービスを体験することができます。
 
 1. [IMコンソール](https://console.cloud.tencent.com/im)にログインし、**新しいアプリケーションの作成**をクリックし、ポップアップしたダイアログボックスにアプリケーション名を入力して**OK**をクリックします。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/ce2e34f7cd1cd14679fc5decffb469af.png)
 
 2. 作成したアプリケーションをクリックし、**基本設定**ページに進み、ページ右下隅の**TRTCサービスのアクティブ化**機能エリアで**無料体験**をクリックすると、TUICallKitの7日間無料トライアルサービスをアクティブ化することができます。
-![img](https://qcloudimg.tencent-cloud.cn/raw/a5cf318d4d8d680e0d885fe79af61f4e.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 3. 同じページで**SDKAppID**と**キー**を見つけて記録します。これらは後ほど使用します。
 	![img](https://qcloudimg.tencent-cloud.cn/raw/8349ac97b261279606316331488784c3.png)
@@ -94,7 +94,7 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
   ```
 >? userSigは[ステップ3](#step3)で取得できます
 
-	2.3 電話をかけたい場所で、次を実行します。
+  2.3 電話をかけたい場所で、次を実行します。
 	```
 		import { TUICallKitServer } from './src/components/TUICallKit/Web/src/index';
 		TUICallKitServer.call({ userID, type }); // 2人通話
@@ -124,7 +124,7 @@ function afterCalling() {
 
 - [TUICallKit API](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/API.md)
 - [TUICallKit demoクイックスタート](https://github.com/tencentyun/TUICallKit/blob/main/Web/demos/basic/README.md)
-- [TUICallKitインターフェースカスタマイズガイド](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI Customization.md)
+- [TUICallKitインターフェースカスタマイズガイド](https://github.com/tencentyun/TUICallKit/blob/main/Web/docs/UI%20Customization.md)
 - [TUICallKit (Web) に関するよくあるご質問](https://www.tencentcloud.com/document/product/647/51024)
 
 

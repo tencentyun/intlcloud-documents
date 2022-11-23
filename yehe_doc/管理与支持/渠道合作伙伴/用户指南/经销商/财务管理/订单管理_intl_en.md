@@ -10,7 +10,7 @@ A customer order is an order generated after a customer purchases or activates a
 
 (1) Log in to the Tencent Cloud console with a reseller account.
 
-(2) Click **Partner Center** > **Order Management**.
+(2) Click **Customer Business** > **Order Management**.
 
 (3) Customer orders include monthly subscription orders and pay-as-you-go orders.
 

@@ -6,9 +6,9 @@ Step 1. Contact your sales rep to apply for customer credits. (Note: The credits
 
 Step 2. Use your partner account to log in to [Tencent Cloud](https://intl.cloud.tencent.com/login) and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
 
-Step 3. Select **Customer Management** on the left sidebar, click the **My Customers** tab, and allocate credits to your customers in the customer list.
+Step 3. Select **Customer Business>Customer Management** on the left sidebar, click the **My Customers** tab, and allocate credits to your customers in the customer list.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e8fcd3e63abe98306cbd5e46468835a4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a0f15839310ef21c7ae2a5a6f8797ca7.png)
 
 Step 4. Adjust credits for customers.
 
@@ -18,7 +18,7 @@ Step 4. Adjust credits for customers.
 
 (2) Set the **credit**, click **OK**, and the system will display a message of successful allocation.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/81428596bc99d1bcef2357140cf6b0fd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c52a9ac01c4d5ec8d11037218210eb1c.png)
 
 
 >?
@@ -35,7 +35,7 @@ Step 4. Adjust credits for customers.
 
 You can enter a negative value to withdraw the available credit of a customer. The maximum **withdrawable customer credit** must be less than or equal to the **available customer credit**.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/4731f3b699d024dd6a89f9d3c5267949.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/88083150d16edc81b61103a44fefe200.png)
 
 
 
@@ -49,4 +49,4 @@ You can enter a negative value to withdraw the available credit of a customer. T
 
 Click **Credit Allocation > Allocation Records** to query all credit allocation records:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1fb15ebd885ae683f7406d71f99a8a2c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ffe2f101c0a05cb3189d20f06c553fcf.png)

@@ -6,13 +6,13 @@
 
 可发送邀请链接给子客，成为经销商的子客。未注册或已注册腾讯云账号的客户，均可邀请绑定成经销商子客。（注：若已注册用户绑定前有未回款帐单，绑定前的未回款帐单只能通过绑定前的身份回款流程进行回款，如：绑定前为腾讯云客户，未回款帐单的回款流程只能通过腾讯云客户的回款方式进行回款。）
 
-![](https://qcloudimg.tencent-cloud.cn/raw/077bbcbeab290ae5ee0517a65bb5386d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4b56052c1e0b5a247fdf59a36fb66c6e.png)
 
 ### 2、审核子客
 
 子客提交绑定申请后，需经销商经销审核，确认是否可绑定。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/75704cad8640d93a2fce2bce9d3ca1d1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/df4e7fd01bc389d76bc44d977289591d.png)
 
 ### 3、驳回记录
 

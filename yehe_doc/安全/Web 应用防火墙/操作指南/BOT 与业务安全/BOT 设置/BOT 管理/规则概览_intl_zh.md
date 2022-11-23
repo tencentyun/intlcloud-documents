@@ -1,5 +1,5 @@
 ## 前提条件
-BOT 行为管理需要购买 WAF [对应实例的扩展包](https://intl.cloud.tencent.com/document/product/627/47799)。
+BOT 流量管理需要购买 WAF [对应实例的增值服务](https://intl.cloud.tencent.com/document/product/627/47799)。
 
 ## 操作步骤
 1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/tea-botconfig)，在左侧导航栏中，选择**配置中心** > **BOT 与业务安全**，进入 BOT 与业务安全页面。
@@ -8,7 +8,7 @@ BOT 行为管理需要购买 WAF [对应实例的扩展包](https://intl.cloud.t
 
 **字段说明**
  - BOT 管理规则开关： 默认关闭，可根据需要开启。
->?当且仅当域名 WAF 开关为开启时，BOT 流量分析功能生效。
+>?当且仅当域名 WAF 开关开启时，BOT 流量分析功能生效。
 
  - 启动模块：展示当前开启了多少个 BOT 分析的检测模块，检测模块包含：前端对抗、威胁情报、AI评估、智能统计。
  - 自定义规则： 展示当前开启了多少个BOT 的自定义规则，单击该规则可查看当前域名下的 BOT 自定义规则的配置。
