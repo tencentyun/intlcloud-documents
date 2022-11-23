@@ -28,7 +28,7 @@ FLV format: `http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+he
 M3U8 format: `http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`
 UDP format: webrtc://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
-- `domain`: Your playback domain name
+- `domain`: Your playback domain name.
 - `AppName`: The live streaming application name, which is `live` by default and is customizable.
 - `StreamName`: The stream ID, which uniquely identifies a stream and is customizable.
 - `txSecret`: The authentication string generated after playback authentication is enabled.
@@ -47,10 +47,10 @@ For example, if the original playback URL is `http://domain/AppName/StreamName.f
 ### Adaptive bitrate playback URL
 
 Only HLS and WebRTC are supported for adaptive bitrate playback. The URL formats for the two protocols are different.
-To get an HLS adaptive bitrate URL, append the template name (`_adaptive bitrate template name`) to the original playback URL.
-For example, if the original playback URL is `http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`, the HLS adaptive bitrate URL would be `http://domain/AppName/StreamName_autobitrate.m3u8?txSecret=Md5(key+StreamName_hd+hex(time))&txTime=hex(time)`.
-
-The format of a WebRTC adaptive bitrate URL is `Playback domain (`domain) + Application name (`AppName`, which is `live` by default)`, Stream ID (`StreamName`) + Authentication information + Adaptive bitrate stream names + Name of the initially played stream + Bitrate control mode`. The adaptive stream names are listed in descending order by bitrate.
+- To get an **HLS adaptive bitrate URL**, add the template name (`_adaptive bitrate template name`) after `StreamName` of the original playback URL.
+For example, suppose the original playback URL is `http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)` and the name of the adaptive bitrate template bound is `autobitrate`.
+The HLS adaptive bitrate URL would be `http://domain/AppName/StreamName_autobitrate.m3u8?txSecret=Md5(key+StreamName_autobitrate+hex(time))&txTime=hex(time)`.
+- The format of a **WebRTC adaptive bitrate URL** is `Playback domain (`domain) + Application name (`AppName`, which is `live` by default)`, Stream ID (`StreamName`) + Authentication information + Adaptive bitrate stream names + Name of the initially played stream + Bitrate control mode`. The adaptive stream names are listed in descending order by bitrate.
 Suppose the adaptive bitrate template bound has three streams. Their names are "test 1", "test 2", and "test 3", and their bitrates are 200 Kbps, 300 Kbps, and 400 Kbps respectively.
 The WebRTC adaptive bitrate URL would be `webrtc://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)&tabr_bitrates=test3,test2,test1&tabr_start_bitrate=test1&tabr_control=auto`.
 

@@ -1,28 +1,21 @@
 With the adaptive bitrate feature, the playback bitrate of a live stream can change smoothly based on network conditions. This ensures a smooth playback experience under changing network conditions.
 
 ## Notes
-1. After creating a template, you can bind it with a playback domain. The template will take effect after 5-10 minutes.
-2. A playback domain can be bound with **multiple adaptive bitrate templates**, and an adaptive bitrate template can be bound to **multiple playback domains**.
-3. Each adaptive bitrate template can have up to 15 streams.
-4. For the adaptive bitrate feature to work, the player needs to support adaptive bitrate.
-5. The GOP for the streams of an adaptive bitrate template must be identical.
-6. The codec for the streams of an adaptive bitrate template must be the same.
-
-
+- After creating a template, you can bind it with a playback domain name. The binding takes effect in 5-10 minutes.
+- A playback domain can be bound with **multiple adaptive bitrate templates**, and an adaptive bitrate template can be bound to **multiple playback domains**.
+- Each adaptive bitrate template can have up to 15 streams.
+- For the adaptive bitrate feature to work, the player needs to support adaptive bitrate.
+- The GOP for the streams of an adaptive bitrate template must be identical.
+- The codec for the streams of an adaptive bitrate template must be the same.
 
 ## Creating an Adaptive Bitrate Template
-1. Log in to the CSS console. Select **Feature Configuration > Adaptive Bitrate** on the left sidebar.
-
+1. Log in to the [CSS console](https://console.cloud.tencent.com/live/livestat) and select **Feature Configuration > Adaptive Bitrate** on the left sidebar.
 2. Click **Create template** and complete the following settings:
-
   - Basic information: The template name and description. For details, see [Basic Information](#C_trans_normal).
   - Stream information: See [Stream Information](#C_trans_high).
-
-3. Click **Add stream** to add a new stream to the template. You can add up to 15 streams for each template.
-
+3. Click **Add stream** to add a new stream to the template. You can add up to 15 streams for a template.
 4. Click **Save**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/afadb4460bc1e5e275b38785f003158a.png)
-
 <table id="C_trans_normal">
 <tr><th width="20%">Basic Information</th><th>Required</th><th>Description</th></tr>
 <tr>
@@ -54,7 +47,10 @@ With the adaptive bitrate feature, the playback bitrate of a live stream can cha
 </tr><tr>
 <td>Video resolution (px)</td>
 <td>Yes</td>
-<td><li>You can set either the <b>height</b> (default) or <b>short side</b> of the output video.</li><li>Value range: 2-3000. The value must be a multiple of 2. The other side will be auto-scaled.</li></td>
+<td>By default, you set the <b>height</b> of the output video.<ul style="margin:0">
+	<li>You can also <b>set the short side length</b>.
+	<li>The value must be in the range of 2-3000 and must be multiple of two. The other side will be scaled proportionally.
+</ul></td>
 </tr><tr>
 <td>Codec</td>
 <td>No</td>
@@ -73,11 +69,7 @@ With the adaptive bitrate feature, the playback bitrate of a live stream can cha
 <td>Parameter limits are disabled by default.<br>After a limit is enabled, if you enter a value higher than the original, the original will be used. This can avoid video quality issues caused by using high video quality settings to transcode videos of low quality.</td>
 </tr></table>
 
-
-
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/9756cb539071adaad4a918ab2e01c551.png)
-
 
 [](id:related)
 ## Binding a Domain Name
@@ -91,8 +83,6 @@ With the adaptive bitrate feature, the playback bitrate of a live stream can cha
 ![](https://qcloudimg.tencent-cloud.cn/raw/1db512981db33ae4c7c8454005d29e99.png)
 >? You can click **Add** to bind a template to multiple playback domains.
 
-
-
 [](id:untie)
 ## Unbinding a Domain Name
 1. Log in to the CSS console. Select **Feature Configuration > Adaptive Bitrate** on the left sidebar.
@@ -101,24 +91,20 @@ With the adaptive bitrate feature, the playback bitrate of a live stream can cha
 3. In the pop-up window, click **Confirm**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7ce4c285ca40ab72dd62d75e855ea78e.png)
 
-
-
 [](id:modify)
 ## Modifying a Template
 1. Log in to the CSS console. Select **Feature Configuration > Adaptive Bitrate** on the left sidebar.
 2. Select the target template and click **Edit** on the right to modify it.
 3. After modification, click **Save**.
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/05ca4a09ac9b73bcaaecdd504c8b4e7e.png)
-
 
 
 [](id:delect)
 ## Deleting a Template
->! If a template has been bound with a domain name, you need to [unbind](#untie) it before deleting the template. 
+>! If a template has been bound to domains, you need to [unbind](#untie) them before you can delete the template. 
 
 1. Log in to the CSS console. Select **Feature Configuration > Adaptive Bitrate** on the left sidebar.
-2. Select the target template (make sure it’s not bound with a domain), and click **Delete**.
+2. Select the target template (make sure it’s not bound to a domain), and click **Delete**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ed74cfb664fd83e67d567a933e848f2f.png)
 3. In the pop-up window, click **Confirm**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f1b8df196cb97c8787bfd4598dffce5a.png)

@@ -70,23 +70,19 @@ In addition to key and remote token authentication, you can also encrypt HLS TS 
 
 - **Use case**: You can use this solution if you use the HLS protocol for playback and want to prevent hackers from stealing your content to protect the copyright of your content or keep your content confidential or private.
 - **How it works**: HLS TS segments are encrypted using the AES-128 method.
-![img](https://qcloudimg.tencent-cloud.cn/raw/2e69e93db5f10616d3676543e7c18ed9.jpg)        
+![img](https://qcloudimg.tencent-cloud.cn/raw/2e69e93db5f10616d3676543e7c18ed9.jpg)   
 - **Implementation**: Enable key authentication and remote authentication. For detailed directions, please contact sales or submit a ticket.
 - **Pros**: This solution is easy to implement. The combination of key and remote token authentication offers extra protection. What's more, because AES-128 is a standard encryption method for HLS, any player that supports HLS also supports AES-128. The decryption capability is built into players. There are also well-established key management services for this solution.
 - **Cons**: This solution is only applicable to HLS playback.
 
-
-
 ### DRM scheme
-CSS supports internationally recognized DRM solutions, including Apple’s FairPlay DRM and Google’s Widevine DRM. To use these DRM solutions, you need to request a certificate which you use to manage identity information and the key used to encrypt/decrypt content, as well as set limits for the use of keys.
+You can encrypt your content using DRM solutions recognized in and outside China, such as Apple’s FairPlay DRM, Google’s Widevine DRM, and ChinaDRM. To use these DRM solutions, you need to request a certificate, which is used to manage identity information and the key used to encrypt/decrypt content, as well as set limits for the use of keys.
 
 - **Use case**: You can choose this scheme if the copyright owner specifically requires that their content be encrypted using recognized DRM solutions.
 - **How it works**: Currently, CSS only supports Apple’s FairPlay DRM and Google’s Widevine DRM. More solutions will be supported in the future.
 - **Implementation**: For detailed directions, please contact sales or submit a ticket.
 - **Pros**: The protection level is relatively high because decryption relies on the operating system or hardware. What’s more, the solutions offer flexible access control. For example, you can limit playback to the first 10 minutes of a video.
 - **Cons**: The solutions are only applicable to HLS or DASH playback. The implementation process is somewhat complicated. You need to request a certificate and integrate a DRM component into your player. What’s more, the solutions have limited browser support. FairPlay supports only HLS and playback is only possible on iOS and macOS. Widevine may support browsers that are not based on Chromium, such as Firefox, but a CDM module needs to be loaded separately, which compromises playback smoothness. Parts of the implementation process (license requesting and encryption/decryption) are carried out in black box, making it difficult to debug and improve compatibility.
-
-
 
 ### Tencent Cloud’s proprietary encryption scheme
 
@@ -99,8 +95,6 @@ The process is as follows:
 - **Implementation**: For detailed directions, please contact sales or submit a ticket.
 - **Pros**: You have control over the entire process, and there are key management services and encryption/decryption tools to support this solution. Tencent Cloud’s Player SDK is easy to integrate.
 - **Cons**: You need to integrate an SDK into your project in order to use this solution. What’s more, this solution does not work for browsers. You need to use your own player.
-
-
 
 ## Comparison
 
@@ -172,5 +166,3 @@ The process is as follows:
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/3acfa03933355c32db2a4aa6ca0dba42.png" alt=""></td>
 </tr>
 </tbody></table>
-
-

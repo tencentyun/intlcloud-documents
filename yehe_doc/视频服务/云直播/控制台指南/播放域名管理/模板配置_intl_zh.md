@@ -8,76 +8,77 @@
 - 一个域名可关联多个转码模板，关联后，播放码率将会按照设置的对应转码模板进行转码。
 - 转码模板设置数量上限为**50个**。
 
-
-
 ## 前提条件
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)，并成功添加 [播放域名](https://intl.cloud.tencent.com/document/product/267/35970)。
-- 已 [创建转码模板](https://intl.cloud.tencent.com/document/product/267/31071)或[自适应码率模板](https://cloud.tencent.com/document/product/267/78369)。
+- 已 [创建转码模板](https://intl.cloud.tencent.com/document/product/267/31071) 或 [自适应码率模板](www.tencentcloud.com/document/product/267/50271)。
 
+## 转码模板
 [](id:conect)
-## 关联转码模板
+### 关联转码模板
 1. 进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的**管理**进入域名详情页。
 2. 选择**模板配置**页签，单击**转码配置**标签右上角的**编辑**。
 3. 选择不同的转码配置模板，为该域名下播放地址指定模板设置的编译方式和码率。
-4. 单击**保存**即可。
+4. 单击**确定**即可。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/2d8cb5be76debfbd04d60329891c5830.png)
 
 [](id:descript)
-## 转码播放地址说明
+### 转码播放地址说明
 配置转码模板后，播放 URL 需增加转码模板名称，拼接方式为：**播放地址_转码模板名称**。若未拼接转码模板名称，则播放的为原始直播流内容。更多播放地址相关内容，请参见 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058)。
 
 **例如：**播放域名关联的转码模板名称为 **hd**，原始播放地址为：
-<pre>
+<pre style="color:white">
 http://domain/AppName/StreamName.flv?txSecret=Md5(key+<b style="color:yellow;">StreamName</b>+hex(time))&txTime=hex(time) 
 </pre>
 若您需获取播放转码后的视频，则需重新生成的新的播放地址，如下：
-<pre>
+<pre style="color:white">
 http://domain/AppName/<b style="color:yellow;">StreamName_hd</b>.flv?txSecret=Md5(key+<b style="color:yellow;">StreamName_hd</b>+hex(time))&txTime=hex(time)
 </pre>
 [](id:Untie)
 
-## 解绑转码模板
+### 解绑转码模板
 1. 进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的播放域名或右侧的**管理**，进入域名详情页。
 2. 选择**模板配置**页签，选择**转码配置**。
 3. 单击右侧的**编辑**，取消相应模板的勾选。
-4. 然后单击**保存**，即可取消模板与域名的关联。
+4. 然后单击**确定**，即可取消模板与域名的关联。
 ![](https://qcloudimg.tencent-cloud.cn/raw/ff6e5f8038124c95fb29d0ffb5745890.png)
 
->? 若需删除模板，可在解绑模板后，进入**功能模板** > [**转码配置**](https://console.cloud.tencent.com/live/config/transcode)进行删除操作，具体请参见 [删除模板](https://intl.cloud.tencent.com/document/product/267/31071#delect)。
+>? 需删除模板，可在解绑模板后，进入**功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode) 进行删除操作，具体请参见 [删除模板](https://intl.cloud.tencent.com/document/product/267/31071#delect)。
 
 
-## 关联自适应码率模板
+## 自适应码率模板
+### 关联自适应码率模板
 
 1. 进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的**管理**进入域名详情页。
 2. 选择**模板配置**页签，单击**自适应码率配置**标签右上角的**编辑**。
 3. 选择不同的自适应码率配置模板，为该域名下播放地址指定自适应码率模板设置的子流信息。
-4. 单击**保存**即可。
+4. 单击**确定**即可。
 ![](https://qcloudimg.tencent-cloud.cn/raw/df2db1fd5b8f9beb5eda4eb989557c51.png)
 
-## 自适应码率播放地址说明
+### 自适应码率播放地址说明
 配置自适应码率模板后，自适应码率目前只支持HLS和WebRTC协议，并且两个协议的自适应码率地址拼接方式不同。请参见 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058)。
 **HLS自适应码率地址拼接方式：**
 **例如：**播放域名关联的转码模板名称为 **autobitrate**，原始播放地址为：
 
-<pre>
+<pre style="color:white">
 http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+<b style="color:yellow;">StreamName</b>+hex(time))&txTime=hex(time) 
 </pre>
 若您需获取播放转码后的视频，则需重新生成的新的播放地址，如下：
-<pre>
+<pre style="color:white">
 http://domain/AppName/<b style="color:yellow;">StreamName_autobitrate</b>.m3u8?txSecret=Md5(key+<b style="color:yellow;">StreamName_autobitrate</b>+hex(time))&txTime=hex(time)
 </pre>
 **WebRTC 自适应码率地址拼接方式：**
 **例如：**一个自适应码率模板中，子模板1名称为：test1，码率200；子模板2名称为：test2，码率300；子模版3名称为：test3，码率400。
 则 WebRTC 自适应码率播放地址为：
-
+<pre style="color:white">
 webrtc://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)&tabr_bitrates=test3,test2,test1&tabr_start_bitrate=test1&tabr_control=auto。
+</pre>
 
-## 解绑自适应码率模板
+### 解绑自适应码率模板
 1. 进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的播放域名或右侧的**管理**，进入域名详情页。
 2. 选择**模板配置**页签，选择**自适应码率配置**。
 3. 单击右侧的**编辑**，取消相应模板的勾选。
-4. 然后单击**保存**，即可取消模板与域名的关联。
+4. 然后单击**确定**，即可取消模板与域名的关联。
 ![](https://qcloudimg.tencent-cloud.cn/raw/872b71589554e8d89abf50db40f75777.png)
 
 >? 若需删除模板，可在解绑模板后，进入**功能模板** > [**转码配置**](https://console.cloud.tencent.com/live/config/transcode)进行删除操作，具体请参见 [删除模板](https://intl.cloud.tencent.com/document/product/267/31071#delect)。

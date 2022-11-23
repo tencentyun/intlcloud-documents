@@ -34,8 +34,8 @@
 >? [](id:key)key 为 **事件中心>[直播回调](https://console.cloud.tencent.com/live/config/callback)** 中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
 ![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
-[](id:message)
 
+[](id:message)
 ### 回调消息参数
 
 | 字段名称     | 类型   | 说明   |
@@ -46,60 +46,74 @@
 | stream_id    | string | 直播流名称 |
 | channel_id   | string | 同直播流名称 |
 | file_id      | string | 点播 file ID，在 [云点播平台](https://intl.cloud.tencent.com/document/product/266/33895) 可以唯一定位一个点播视频文件 |
+| record_file_id | string | 点播文件ID |
 | file_format  | string | FLV，HLS，MP4，AAC |
 | task_id      | string | 录制任务 ID，仅 API 创建的录制任务有意义，即 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309) 返回的任务 ID |
 | start_time   | int64  | 录制任务开始写文件的时间；不能以该值作为录制内容的开始时间，录制内容的开始时间 = end_time – duration |
 | end_time     | int64  | 录制任务结束写文件的时间 |
+| start_time_usec | int | 录制任务开始写文件的时间，微秒部分 |
+| end_time_usec | int | 录制任务结束写文件的时间，微秒部分 |
 | duration     | int64  | 录制文件时长，单位秒 |
-| file_size    | uint64 | 录制文件大小，单位字节 |
+| file_size | uint64 | 录制文件大小，单位字节 |
 | stream_param | string | 用户推流 URL 所带参数（自定义） |
 | video_url    | string | 录制文件下载 URL |
+| media_start_time | int | 录制开始拉流收到的首帧 pts （并不一定是文件首帧 pts）          |
+| record_bps | int | 录制从转码拉流录制对应的码率（单位 kbps） |
+| callback_ext | string，json对象字符串 | json对象包含多个字段，其中：<br/>video_codec 为推流视频codec名称<br/>resolution 为推流视频分辨率<br/>以上均为录制回调扩展字段，仅供业务参考。不建议业务逻辑强依赖这些字段。 |
 
 
 
 [](id:example)
+
 ### 回调消息示例
 <dx-codeblock>
 ::: JSON JSON
 {
-"event_type":100,
+	"event_type": 100,
 
-"appid":12345678,
-
-"app":yourapp,
-
-"appname":yourappname,
-
-"stream_id":"stream_test",
-
-"channel_id":"stream_test",
-
-"file_id":"1234567890",
-
-"file_format":"hls",
-
-"task_id":"UpTbk5RSVhRQ********************0xTSlNTQltlRVRLU1JAWW9EUb",
-
-"start_time":1545047010,
-
-"end_time":1545049971,
-
-"duration":2962,
-
-"file_size":277941079,
-
-"stream_param":"stream_param=test",
-
-"video_url":"http://12345678.vod2.myqcloud.com/xxxx/yyyy/zzzz.m3u8",
-
-"sign":"ca3e25e**********09a9ae7281e300d",
-
-"t":1545030873
+	"appid": 12345678,
+	
+	"app": "yourapp",
+	
+	"callback_ext": "{\"video_codec\":\"h264\",\"resolution\":\"640x480\"}",
+	
+	"appname": "yourappname",
+	
+	"stream_id":"stream_test",
+	
+	"channel_id":"stream_test",
+	
+	"file_id":"1234567890",
+	
+	"record_file_id": "1234567890",
+	
+	"file_format":"hls",
+	
+	"task_id":"UpTbk5RSVhRQ********************0xTSlNTQltlRVRLU1JAWW9EUb",
+	
+	"start_time":1642089445,
+	
+	"end_time":1642089598,
+	
+	"start_time_usec": 316441,
+	
+	"end_time_usec": 618577,
+	
+	"duration":154,
+	
+	"file_size":277941079,
+	
+	"stream_param":"stream_param=test",
+	
+	"video_url":"http://12345678.vod2.myqcloud.com/xxxx/yyyy/zzzz.m3u8",
+	
+	"media_start_time": 135802,
+	
+	"record_bps": 0,
+	
+	"sign":"ca3e25e**********09a9ae7281e300d",
+	
+	"t":1545030873
 }
 :::
 </dx-codeblock>
-
-
-
- 
-
