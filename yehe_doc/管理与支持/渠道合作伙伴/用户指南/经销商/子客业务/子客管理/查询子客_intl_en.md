@@ -1,16 +1,16 @@
 ## Querying Reseller's Customer
 
-You can query all your customers under your account and view their basic information and available credit.
+A partner can query all its customers and view their basic information, available credits, and credit deduction details.
 
 Step 1. Use your partner account to log in to [Tencent Cloud](https://intl.cloud.tencent.com/login) and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
 
-Step 2. Select **Customer Management** on the left sidebar.
+Step 2. Select **Customer Business>Customer Management** on the left sidebar.
 
 Step 3. Manage customers.
 
 ### 1. Query customers
 
-You can query your customers based on account ID and account name.
+A partner can search for a customer fuzzily by account ID/name and exactly by email.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/2eb0d7a0c85eaedff0ef76d2f68671ec.png)
 
