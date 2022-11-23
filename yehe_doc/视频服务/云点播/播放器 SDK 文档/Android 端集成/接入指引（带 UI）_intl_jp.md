@@ -6,58 +6,58 @@ Tencent Cloud View Cube Androidプレーヤーコンポーネントは、Tencent
 
 
 ## 準備作業
-1. より完全で全面的なプレーヤー機能を体験していただくために、[VOD](https://intl.cloud.tencent.com/product/vod) 関連サービスをアクティブ化することをお勧めします。アカウント登録がないユーザーは、アカウントを登録して[トライアル](https://intl.cloud.tencent.com/login)を行うことができます。VODサービスをご利用にならない場合はこの手順を省略できますが、統合後に使用できるのはプレーヤーの基本機能のみとなります。
-2. Android Studioをダウンロードします。[Android Studio公式サイト](https://developer.android.com/studio)でダウンロードとインストールを行うことができます。ダウンロード済みの場合はこの手順を省略できます。
+1. より完全で包括的なプレーヤー機能を体験するには、[VOD](https://intl.cloud.tencent.com/product/vod)関連サービスを有効化することをお勧めします。未登録のユーザーはアカウントを登録し、[試用](https://intl.cloud.tencent.com/login)できます。VODサービスを使用しない場合は、この手順をスキップできますが、統合後にプレーヤーの基本機能のみを利用できます。
+2. Android Studioをダウンロードします。[Android Studio公式サイト](https://developer.android.com/studio)にアクセスし、ダウンロードしてインストールすることができます。すでにダウンロードしている場合は、この手順をスキップできます。
 
-## ここでは次の内容について知ることができます
+## このドキュメントから把握できること
 1. Tencent Cloud View Cube Androidプレーヤーコンポーネントの統合方法
-2. プレーヤーの作成および使用方法
+2. プレイヤーの作成・使用方法
 
 
 ## 統合の準備
-### ステップ1：プロジェクトのダウンロード
+### 手順1：プロジェクトのダウンロード
 Tencent Cloud View Cube Androidプレーヤーコンポーネントのプロジェクトアドレスは[SuperPlayer_Android](https://github.com/LiteAVSDK/Player_Android)です。
 
 **Tencent Cloud View Cube Androidプレーヤーコンポーネントプロジェクトのダウンロードは、**[プレーヤーコンポーネントZIPパッケージのダウンロード](#zip)**、または**[Gitコマンドでのダウンロード](#git)**のいずれかの方法で行えます。
 <dx-tabs>
 ::: プレーヤーコンポーネントZIPパッケージのダウンロード[](id:zip)
-次のプレーヤーコンポーネントZIPパッケージを直接ダウンロードできます。ページの**Code** > **Download ZIP**をクリックしてダウンロードしてください。
+画面の**Code** > **Download ZIP**をクリックして、プレーヤーコンポーネントZIPパッケージを直接ダウンロードすることができます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a38a9995bfe13d645bcd1d2e5242a297.png)
 :::
-::: Gitコマンドでのダウンロード[](id:git)
-1. 初めに、コンピュータにGitがインストールされていることをご確認ください。インストールされていない場合は、[Gitインストールチュートリアル](https://git-scm.com/downloads)を参照してインストールすることができます。
+::: Gitコマンドのダウンロード[](id:git)
+1. まず、Gitがコンピュータにインストールされていることを確認します。インストールされていない場合は、[Gitのインストールチュートリアル](https://git-scm.com/downloads)を参照し、インストールしてください。
 2. 次のコマンドを実行し、プレーヤーコンポーネントのプロジェクトコードをローカルにcloneします。
 ```shell
 git clone git@github.com:tencentyun/SuperPlayer_Android.git
 ```
-次のメッセージが表示されると、プロジェクトコードのローカルへのcloneは成功です。
+以下のメッセージが表示されたら、プロジェクトコードがローカルにcloneされました。
 ```shell
-'SuperPlayer_Android'にクローンしています...
+'SuperPlayer_Android'に複製中...
 remote: Enumerating objects: 2637, done.
 remote: Counting objects: 100% (644/644), done.
 remote: Compressing objects: 100% (333/333), done.
 remote: Total 2637 (delta 227), reused 524 (delta 170), pack-reused 1993
-オブジェクト受信のうち、100% (2637/2637), 571.20 MiB | 3.94 MiB/s, が完了しました
-delta処理中: 100% (1019/1019), が完了しました
+オブジェクトの受信中：100% (2637/2637)、571.20 MiB | 3.94 MiB/s、完了。
+deltaの処理中：100% (1019/1019)、完了。
 ```
-プロジェクトのダウンロード後、ソースコードの解凍後のディレクトリは次のようになります。
+プロジェクトをダウンロードして、ソースコードを解凍した後のディレクトリは以下のとおりです。
 
-| ファイル名                      | 役割                                                         |
+| ファイル名                      | 機能                                                         |
 | --------------------------- | ------------------------------------------------------------ |
 | LiteAVDemo(Player)          | プレーヤーコンポーネントDemoプロジェクト。Android Studioにインポートして直接実行できます   |
-| app                         | メインインターフェースポータル                                                   |
+| app                         | メインインターフェースエントリー                                                   |
 | superplayerkit              | プレーヤーコンポーネント（SuperPlayerView）。再生、一時停止、ジェスチャー制御などの一般的な機能を備えています |
 | superplayerdemo             | プレーヤーコンポーネントDemoコード                                         |
-| common                      | ツールクラスモジュール                                                   |
-| SDK                         | View Cube Player+。LiteAVSDK_Player_x.x.x.aar、aar形式のSDK、LiteAVSDK_Player_x.x.x.zip、lib、jar形式のSDKが含まれます |
+| common                      | ツールタイプのモジュール                                                   |
+| SDK                         | View Cube Player SDKには、LiteAVSDK_Player_x.x.x.aar、aar形式で提供されるSDKおよびLiteAVSDK_Player_x.x.x.zip、lib、jar形式で提供されるSDKが含まれます |
 | Playerr説明ドキュメント(Android).pdf | プレーヤーコンポーネント使用ドキュメント                                           |
 :::
 </dx-tabs>
 
-### ステップ2：ガイドの統合
-この手順ではプレーヤーの統合方法についてご説明します。Gradleによる自動でのロード方法、aarを手動でダウンロードしてから現在のプロジェクトにインポートする方法、またはjarおよびsoライブラリをインポートする方法を選択してプロジェクトの統合を行うことができます。
+### 手順2：統合ガイド
+この手順では、プレーヤーを統合する方法について説明します。プロジェクトを統合するには、Gradleを使用して自動的に読み込むか、手動でaarをダウンロードし、現在のプロジェクトまたはjar、soライブラリにインポートするという2つの方法を選択できます。
 <dx-tabs>
-::: Gradle自動ロード（AAR）
+::: Gradle 自動読み込み（AAR）
 1. SDK+Demo開発パッケージをダウンロードします。プロジェクトアドレスは、[Android](https://github.com/LiteAVSDK/Player_Android)です。
 2. moduleの`Demo/superplayerkit`をプロジェクトにコピーしてから、以下の設定を行います。
    - プロジェクトディレクトリのsetting.gradleに`superplayerkit`をインポートします。
@@ -75,38 +75,38 @@ delta処理中: 100% (1019/1019), が完了しました
        minSdkVersion 19
    }
    
-   dependencies {
-       //過去のバージョンを統合したい場合は、latest.releaseを対応するバージョンに変更します（例：8.5.290009）。
+   dependencies{
+       //過去のバージョンを統合する場合は、latest.releaseを対応するバージョン（例：8.5.290009）に変更できます。
        implementation 'com.tencent.liteav:LiteAVSDK_Player:latest.release'
    }
    ```
-   上記の手順を参照し、`common`モジュールをプロジェクトにインポートし、設定してください。
+   上記の手順を参照して、`common`モジュールをプロジェクトにインポートし、構成します。
 3. gradleにmavenCentralライブラリを設定することで、LiteAVSDKの更新を自動的にダウンロードし、`app/build.gradle`を開き、以下の設定を行います。
    ![](https://main.qcloudimg.com/raw/65439d399ec584871a7a9bc88ccaef46.png)
    
    1. dependenciesにLiteAVSDK_Playerの依存を追加します。
 ```xml
-dependencies {
+dependencies{
 	 implementation 'com.tencent.liteav:LiteAVSDK_Player:latest.release'
 	 implementation project(':superplayerkit')
 	 // プレーヤーコンポーネントに弾幕を統合するサードパーティライブラリ
 	 implementation 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
 }
 ```
-   過去のバージョンのLiteAVSDK_Player SDKを統合したい場合は、[MavenCentral](https://repo1.maven.org/maven2/com/tencent/liteav/LiteAVSDK_Player/)で過去のバージョンを確認した後、次の方法によって統合することができます。 
+   LiteAVSDK_Player SDKの過去のバージョンを統合する必要がある場合は、[MavenCentral](https://repo1.maven.org/maven2/com/tencent/liteav/LiteAVSDK_Player/)で過去のバージョンを表示してから、以下の方法で統合できます。 
 ```xml
-dependencies {
-	 // バージョン8.5.10033のLiteAVSDK_Player SDKを統合
+dependencies{
+	 // バージョン8.5.10033のLiteAVSDK_Player SDKを統合します
 	 implementation 'com.tencent.liteav:LiteAVSDK_Player:8.5.10033'
 }
 ```
-   2.  `app/build.gradle`defaultConfigで、Appが使用するCPUアーキテクチャを指定します（現在LiteAVSDKはarmeabi、armeabi-v7aおよびarm64-v8aをサポートしています。プロジェクトのニーズに応じて設定することができます）。
+   2. `app/build.gradle`defaultConfigで、Appが使用するCPUアーキテクチャを指定します（現在LiteAVSDKはarmeabi、armeabi-v7aおよびarm64-v8aをサポートしています。プロジェクトのニーズに応じて設定することができます）。
 ```xmsl
 ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-   これまでに9.4およびそれ以前のバージョンのSDKのダウンロードキャッシュ機能（TXVodDownloadManager内の関連インターフェース）を使用したことがなく、なおかつ9.5およびそれ以降のSDKバージョンで9.4およびそれ以前にキャッシュしたダウンロードファイルを再生する必要がない場合は、この機能のsoファイルをダウンロードしなくてよいため、インストールパッケージのボリュームを減らすことができます。 例えば、9.4およびそれ以前のバージョンでTXVodDownloadManagerクラスのsetDownloadPathとstartDownloadUrl関数を使用して該当のキャッシュファイルをダウンロードしており、なおかつアプリケーション内にTXVodDownloadManagerからコールバックされたgetPlayPathパスを保存してその後の再生に使用しているような場合は、このgetPlayPathパスファイルの再生にlibijkhlscache-master.soが必要ですが、そうでない場合は不要です。app/build.gradleに次を追加します。
+   これまでに9.4およびそれ以前のバージョンのSDKの[ダウンロードキャッシュ機能](https://www.tencentcloud.com/document/product/266/47849)（TXVodDownloadManager内の関連インターフェース）を使用したことがなく、なおかつ9.5およびそれ以降のSDKバージョンで9.4およびそれ以前にキャッシュしたダウンロードファイルを再生する必要がない場合は、この機能のsoファイルをダウンロードしなくてよいため、インストールパッケージのボリュームを減らすことができます。 例えば、9.4およびそれ以前のバージョンでTXVodDownloadManagerクラスのsetDownloadPathとstartDownloadUrl関数を使用して該当のキャッシュファイルをダウンロードしており、なおかつアプリケーション内にTXVodDownloadManagerからコールバックされたgetPlayPathパスを保存してその後の再生に使用しているような場合は、このgetPlayPathパスファイルの再生にlibijkhlscache-master.soが必要ですが、そうでない場合は不要です。app/build.gradleに次を追加します。
 ```xml
 packagingOptions {
 	exclude "lib/armeabi/libijkhlscache-master.so"
@@ -114,17 +114,17 @@ packagingOptions {
 	exclude "lib/arm64-v8a/libijkhlscache-master.so"
 }
 ```
-   3. プロジェクトディレクトリのbuild.gradleにmavenCentralリポジトリを追加します。
+   3. プロジェクトディレクトリのbuild.gradleにmavenCentralライブラリを追加します。
  ```
  repositories {
 		 mavenCentral()
  }
  ```
-4. ![](https://main.qcloudimg.com/raw/d6b018054b535424bb23e42d33744d03.png)Sync Nowボタンをクリックし、SDKを同期させます。mavenCentralへのネットワーク接続に問題がなければ、SDKが自動的にダウンロードされプロジェクトに統合されます。
+4. ![](https://main.qcloudimg.com/raw/d6b018054b535424bb23e42d33744d03.png)Sync Nowボタンをクリックし、SDKを同期させます。mavenCentralへのネットワーク接続に問題がなければ、SDKが直ちに自動的にダウンロードされ、プロジェクトに統合されます。
 :::
-::: Gradle手動ダウンロード（AAR）
+::: Gradleの手動ダウンロード（AAR）
 1. SDK+Demo開発パッケージをダウンロードします。プロジェクトアドレスは、[Android](https://github.com/LiteAVSDK/Player_Android)です。
-2. `SDK/LiteAVSDK_Player_XXX.aar`（XXXはバージョン番号）をappのlibsフォルダにインポートし、moduleの`Demo/superplayerkit`をプロジェクトにコピーします。
+2. `SDK/LiteAVSDK_Player_XXX.aar`（XXXはバージョン番号）をappのlibsフォルダにインポートし、`Demo/superplayerkit`というmoduleをプロジェクトにコピーします。
 3. プロジェクトディレクトリのsetting.gradleに`superplayerkit`をインポートします。
 ```
 include ':superplayerkit'
@@ -140,11 +140,11 @@ defaultConfig {
 	 minSdkVersion 19
 }
 
-dependencies {
+dependencies{
 	 implementation(name:'LiteAVSDK_Player_8.9.10349', ext:'aar')
 }
 ```
-上記の手順を参照し、`common`モジュールをプロジェクトにインポートし、設定してください。
+上記の手順を参照して、`common`モジュールをプロジェクトにインポートし、構成します。
    - repositoriesの設定
 ```xml
 repositories {
@@ -176,7 +176,7 @@ ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-これまでに9.4およびそれ以前のバージョンのSDKのダウンロードキャッシュ機能（TXVodDownloadManager内の関連インターフェース）を使用したことがなく、なおかつ9.5およびそれ以降のSDKバージョンで9.4およびそれ以前にキャッシュしたダウンロードファイルを再生する必要がない場合は、この機能のsoファイルをダウンロードしなくてよいため、インストールパッケージのボリュームを減らすことができます。 例えば、9.4およびそれ以前のバージョンでTXVodDownloadManagerクラスのsetDownloadPathとstartDownloadUrl関数を使用して該当のキャッシュファイルをダウンロードしており、なおかつアプリケーション内にTXVodDownloadManagerからコールバックされたgetPlayPathパスを保存してその後の再生に使用しているような場合は、このgetPlayPathパスファイルの再生にlibijkhlscache-master.soが必要ですが、そうでない場合は不要です。app/build.gradleに次を追加します。
+これまでに9.4およびそれ以前のバージョンのSDKの[ダウンロードキャッシュ機能](https://www.tencentcloud.com/document/product/266/47849#13.E3.80.81.E7.A6.BB.E7.BA.BF.E7.BC.93.E5.AD.98)（TXVodDownloadManager内の関連インターフェース）を使用したことがなく、なおかつ9.5およびそれ以降のSDKバージョンで9.4およびそれ以前にキャッシュしたダウンロードファイルを再生する必要がない場合は、この機能のsoファイルをダウンロードしなくてよいため、インストールパッケージのボリュームを減らすことができます。 例えば、9.4およびそれ以前のバージョンでTXVodDownloadManagerクラスのsetDownloadPathとstartDownloadUrl関数を使用して該当のキャッシュファイルをダウンロードしており、なおかつアプリケーション内にTXVodDownloadManagerからコールバックされたgetPlayPathパスを保存してその後の再生に使用しているような場合は、このgetPlayPathパスファイルの再生にlibijkhlscache-master.soが必要ですが、そうでない場合は不要です。app/build.gradleに次を追加します。
 ```xml
 packagingOptions {
 	exclude "lib/armeabi/libijkhlscache-master.so"
@@ -186,16 +186,16 @@ packagingOptions {
 ```
 8. Sync Nowボタンをクリックし、SDKを同期させ、プレーヤーコンポーネントの統合作業を完了します。
 :::
-::: SDK（jar+so）を統合
+::: SDKの統合（jar+so）
 aarライブラリを統合したくない場合は、jarおよびsoライブラリの方式をインポートしてLiteAVSDKを統合することもできます。
 [](id:smallStep_1)
 1. プロジェクトアドレス[Android](https://github.com/LiteAVSDK/Player_Android)で、SDK+Demo開発パッケージをダウンロードし、ダウンロードが完了したら解凍します。SDKディレクトリでSDK/LiteAVSDK_Player_XXX.zip（XXXはバージョン番号）を見つけて解凍し、jarファイルとsoフォルダを含むlibsディレクトリを取得します。ファイルリストは次のとおりです。
- ![](https://qcloudimg.tencent-cloud.cn/raw/9ac0f5b1b9b5d15a005fa2226dd960b6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/ab928524839c7944f78d504c0e637586.png)
 2. moduleの`Demo/superplayerkit`をプロジェクトにコピーし、その後、プロジェクトディレクトリのsetting.gradleに`superplayerkit`をインポートします。
 ```xml
 include ':superplayerkit'
 ```
-3. [ステップ1](#smallStep_1)で解凍して取得したlibsフォルダを`superplayerkit`プロジェクトルートディレクトリにコピーします。
+3. [手順1](#smallStep_1)で解凍して取得したlibsフォルダを`superplayerkit`プロジェクトのルートディレクトリにコピーします。
 4. `superplayerkit/build.gradle`ファイルを修正します。
 ![](https://main.qcloudimg.com/raw/ed66e7d887bc5c28c2eff45807037c23.png)
 ```xml
@@ -207,7 +207,7 @@ defaultConfig {
 	 minSdkVersion 19
 }
 ```
-上記の手順を参照し、`common`モジュールをプロジェクトにインポートし、設定してください。
+上記の手順を参照して、`common`モジュールをプロジェクトにインポートし、構成します。
    - sourceSetsを設定し、soライブラリ参照コードを追加します。
 ```xml
 sourceSets{
@@ -235,7 +235,7 @@ ndk {
 </dx-tabs>
 Tencent Cloud View Cube Androidプレーヤーコンポーネントプロジェクトの統合手順はこれで完了です。
 
-### ステップ3： App権限の設定
+### 手順3： App権限の設定
 AndroidManifest.xmlにAppの権限を設定するには、LiteAVSDKに以下の権限が必要です。
 
 ```java
@@ -250,17 +250,18 @@ AndroidManifest.xmlにAppの権限を設定するには、LiteAVSDKに以下の�
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-### ステップ4：難読化ルールの設定
-proguard-rules.pro ファイルでは、 TRTC SDK 関連を非混同リストに追加します。
+
+### 手順4：混同ルールの設定
+proguard-rules.pro ファイルで、 TRTC SDK関連のクラスを非混同リストに追加します。
 ```xml
 -keep class com.tencent.** { *; }
 ```
 Tencent Cloud View Cube Androidプレーヤーコンポーネントapp権限設定手順はこれで完了です。
 
-### ステップ5：プレーヤー機能の使用
-このステップは、プレーヤーの作成および使用、ならびにプレーヤーを使用してビデオ再生を行う方法についてユーザーにご説明するためのものです。
+### 手順5：プレーヤー機能の使用
+この手順は、ユーザーがプレーヤーを作成・使用し、プレーヤーでビデオを再生できるようにガイドするのに使用されます。
 1. **プレーヤーの作成**[](id:usePlayer)
-プレーヤーのメインクラスは`SuperPlayerView`です。作成後すぐにビデオを再生できます。 FileIDまたはURLによる再生の統合をサポートしています。レイアウトファイルにSuperPlayerViewを作成します。
+プレーヤーのメインクラスは、`SuperPlayerView`です。作成後すぐにビデオを再生できます。FileIDまたはURLに統合して再生することをサポートします。レイアウトファイルにおけるSuperPlayerViewの作成：
 ```xml
 <!-- プレーヤーコンポーネント-->
 <com.tencent.liteav.demo.superplayer.SuperPlayerView
@@ -268,48 +269,75 @@ Tencent Cloud View Cube Androidプレーヤーコンポーネントapp権限設�
     android:layout_width="match_parent"
     android:layout_height="200dp" />
 ```
+2. **License権限承認の設定**
+すでに関連するLicense権限承認を取得している場合は、[Tencent Cloud View Cubeコンソール](https://console.cloud.tencent.com/vcube)にて、License URLおよびLicense Keyを取得する必要があります。
+License権限承認を取得していない場合は、先に[ビデオ再生License](https://www.tencentcloud.com/document/product/266/51098)をご参照の上、関連の権限承認を取得する必要があります。<br>
+License情報を取得後、SDKの関連インターフェースを呼び出す前に、以下のインターフェースでLicenseを初期化します。Application類で以下の設定を行うことをお勧めします。
+```java
+public class MApplication extends Application {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        String licenceURL = ""; // 取得したlicence url
+        String licenｃeKey = ""; // 取得したlicence key
+        TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
+        TXLiveBase.setListener(new TXLiveBaseListener() {
+            @Override
+            public void onLicenceLoaded(int result, String reason) {
+                Log.i(TAG, "onLicenceLoaded: result:" + result + ", reason:" + reason);
+            }
+        });
+    }
+}
+```
 
 3. **ビデオの再生**[](id:playe)
 この手順は、ビデオの再生方法についてユーザーにご説明するためのものです。Tencent Cloud View Cube AndroidプレーヤーコンポーネントはライブストリーミングとVODの両方の再生に使用できます。具体的には次のとおりです。
 	- VOD再生：プレーヤーコンポーネントは2種類のVOD再生方式をサポートしています。Tencent CloudのVODメディアリソースを[FileIDで再生](#fileid)することも、[URL再生](#url)アドレスから直接再生することもできます。
-	- ライブストリーミング再生：プレーヤーコンポーネントは[URL再生](#url)方式でライブストリーミング再生を実現できます。URLアドレスを渡すと、ライブストリーミングオーディオビデオストリームをプルしてライブストリーミングを再生することができます。Tencent Cloud CSSのURL生成方法については、[自身でのライブストリーミングURLの結合](https://intl.cloud.tencent.com/document/product/267/38393)をご参照ください。
+	- ライブストリーミング再生：プレーヤーコンポーネントは[URL再生](#url)方式でライブストリーミング再生を実現できます。URLアドレスを渡すと、ライブストリーミングオーディオビデオストリームをプルしてライブストリーミングを再生することができます。Tencent Cloud CSSのURL生成方法については、[自身でのライブストリーミングURLの結合](https://www.tencentcloud.com/document/product/267/38393)をご参照ください。
 <dx-tabs>
-::: URLによる再生（ライブストリーミング、VOD）[](id:url)
-URLはVODファイルの再生アドレスと、ライブストリーミングのプルストリーミングアドレスのどちらでもかまいません。該当のURLを渡すと、該当のビデオファイルを再生することができます。
+::: URLによる再生（ライブストリーミング、オン・デマンド）[](id:url)
+URLは、オン・デマンドファイルの再生アドレスまたはライブストリーミングのプルアドレスにすることができます。対応するURLをインポートすることで、対応するビデオファイルを再生できます。
 ```java
 SuperPlayerModel model = new SuperPlayerModel();
-model.appId = 1400329073; // AppIdを設定
-model.url = "http://your_video_url.mp4";   // ビデオ再生URLを設定
-mSuperPlayerView.playWithModel(model);
+model.appId = 1400329073;// AppIdを設定
+model.url = "http://your_video_url.mp4";   // 再生するビデオのurlを構成します
+mSuperPlayerView.playWithModelNeedLicence(model);
 ```
 :::
-::: FileIDからの再生（VOD）[](id:fileid)
+::: FileIDによる再生（オン・デマンド）[](id:fileid)
 ビデオFileIdは、通常、ビデオのアップロード後にサーバーから返されます。
 1. クライアントからビデオが公開されると、サーバーがFileIdをクライアントに返します。
 2. サーバーからのビデオアップロード時、アップロード確認の通知に対応するFileIdが含まれています。
 
 ファイルがすでにTencent Cloudに存在する場合は、[メディア資産管理](https://console.cloud.tencent.com/vod/media)にアクセスし、該当するファイルをさがして、FileIdを確認できます。下図のように、IDのところにFileIdが表示されます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
-<dx-alert infotype="notice">
-<li> FileID経由で再生する場合は、初めにAdaptive-HLS(10)トランスコードテンプレートを使用してビデオのトランスコードを行うか、または再生コンポーネントの署名psignを使用して再生するビデオを指定する必要があります。これらを行わないと、ビデオ再生が失敗する可能性があります。トランスコードのチュートリアルおよび説明については [プレーヤーコンポーネントを使用したビデオ再生](https://intl.cloud.tencent.com/document/product/266/38098)を、psign生成のチュートリアルについては[psignチュートリアル](https://intl.cloud.tencent.com/document/product/266/38099)をそれぞれご参照ください。</li>
-<li> FileID経由での再生の際に「no v4 play info」エラーが表示された場合は、上記の問題が存在する可能性があることを示しているため、上記のチュートリアルに従って調整することをお勧めします。また、ソースビデオの再生リンクを直接取得し、[URLによる再生](#url) 方式で再生することもできます。</li>
-<li> **トランスコードを行っていないソースビデオを再生すると、互換性がない場合がありますので、トランスコードをご使用後にビデオを再生することをお勧めします。**</li></dx-alert>
+
+>!
+>- FileIDを使用して再生する場合は、初めにAdaptive-HLS(10)トランスコードテンプレートを使用してビデオのトランスコードを行うか、またはプレーヤーコンポーネントの署名psignを使用して再生するビデオを指定する必要があります。これらを行わないと、ビデオ再生が失敗する可能性があります。トランスコードのチュートリアルおよび説明については [プレーヤーコンポーネントを使用したビデオ再生](https://www.tencentcloud.com/document/product/266/38098)を、psign生成のチュートリアルについては[psignチュートリアル](https://www.tencentcloud.com/document/product/266/38099)をそれぞれご参照ください。
+>- FileIDを使用して再生したときに「no v4 play info」エラーが発生した場合は、上記の問題が発生している可能性があるので、上記のチュートリアルに従って調整することをお勧めします。同時に、ソースビデオの再生リンクを直接取得し、[URLによる再生](#url)という方法で再生を実現することもできます。
+>- **トランスコーディングを実行していないソースビデオは、再生中に互換性がないという問題が発生する可能性があります。トランスコーディングを実行したビデオを使用して再生することをお勧めします。**
+
 <dx-codeblock>
 :::  java
-//リンク不正アクセス防止を有効にせずに再生を行い、その途中で「no v4 play info」エラーが表示された場合は、Adaptive-HLS(10)トランスコードテンプレートを使用してビデオのトランスコードを行うか、またはソースビデオの再生リンクを直接取得し、url方式で再生することをお勧めします。
+//リンク不正アクセス防止を有効にせずに再生している間に「no v4 play info」エラーが発生した場合は、Adaptive-HLS(10)トランスコーディングテンプレートを使用してビデオをトランスコーディングするか、ソースビデオの再生リンクを直接取得し、urlを介して再生することをお勧めします。
 
-SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
+```java
+SuperPlayerModel model = new SuperPlayerModel();
 model.appId = 1400329071;// AppIdを設定
-model.videoId = [[SuperPlayerVideoId alloc] init];
-model.videoId.fileId = @"5285890799710173650"; // FileIdを設定
-//プライベートの暗号化再生にはpsignの入力が必要です。psignはプレーヤーコンポーネントの署名です。署名についての紹介および生成方法については、以下のリンクをご参照ください。https://intl.cloud.tencent.com/document/product/266/38099
-//model.videoId.pSign = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU"; 
-[_playerView playWithModel:model];
+model.videoId = new SuperPlayerVideoId();
+model.videoId.fileId = "5285890799710173650"; // FileIdを設定
+// psignはプレーヤーの署名です。署名についての紹介および生成方法は、以下のリンクをご参照ください。https://www.tencentcloud.com/document/product/266/38099
+model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU";
+mSuperPlayerView.playWithModelNeedLicence(model);
+```
+
 :::
 </dx-codeblock>
 :::
 </dx-tabs>
+
 3. **再生の終了**[](id:exitPlayer)
 プレーヤーが不要な時には、`resetPlayer`を呼び出してプレーヤー内部の状態を消去し、メモリを解放します。
 ```java
@@ -322,38 +350,41 @@ mSuperPlayerView.resetPlayer();
 
 この章では、いくつかの一般的なプレーヤー機能の使用方式をご紹介します。より完全な機能の使用方式は[Demo体験](#demo)を、プレーヤーコンポーネントがサポートする機能は[機能リスト](https://www.tencentcloud.com/document/product/266/42965)をそれぞれご参照ください。
 
-### 1、全画面再生
+### 1. 全画面再生
 
 プレーヤーコンポーネントは全画面再生をサポートしています。全画面再生のシーンでは、同時に画面ロック、ジェスチャーによる音量と明るさの制御、弾幕、スクリーンショット、解像度の切り替えなどの機能設定がサポートされます。機能の効果は**[Tencent Cloud View Cube App](#qrcode) > プレーヤー > プレーヤーコンポーネント**で体験できます。画面右下隅をクリックすると、全画面再生画面に進むことができます。
 
-ウィンドウ再生モードでは、次のインターフェースを呼び出して全画面再生モードに進むことができます。
+ウィンドウ再生モードでは、次のインターフェースを呼び出すことで全画面再生モードに入ることができます。
+
 ```java
 mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.FULLSCREEN);
 ```
 
+#### 全画面再生インターフェースの機能概要
 
 <dx-tabs>
 ::: ウィンドウに戻る
-**戻る**をクリックすると、ウィンドウ再生モードに戻ることができます。
+**戻る**をクリックすると、ウィンドウ再生モードに戻ります。
+
 ```java
-//クリックすると、次のインターフェースがトリガーされます。
+//クリックすると、以下のインターフェースがトリガーされます
 mControllerCallback.onBackPressed(SuperPlayerDef.PlayerMode.FULLSCREEN);
 onSwitchPlayMode(SuperPlayerDef.PlayerMode.WINDOW);
 ```
 :::
 ::: 画面ロック[](id:lockscreen)
-画面ロック操作はユーザーが再生に集中したい場合に使用できます。
+画面ロック操作により、ユーザーは没入的な再生状態に入ることができます。
 ```java
-// クリックするとトリガーされるインターフェース
+//クリックした後にトリガーされるインターフェース
 toggleLockState();
 ```
 :::
 ::: 弾幕[](id:barrage)
-弾幕機能をオンにすると、画面上にユーザーの送信した文字を流すことができます。
+弾幕機能をオンにすると、ユーザーが送信したテキストが画面に表示されます。
 ```java
-// ステップ1：弾幕Viewに弾幕を追加する
+// 手順1：弾幕Viewへの1つの弾幕の追加
 addDanmaku(String content, boolean withBorder);
-// ステップ2：弾幕をオンまたはオフにする
+// 手順2：弾幕の表示または非表示
 toggleBarrage();
 ```
 :::
@@ -363,17 +394,17 @@ toggleBarrage();
 mSuperPlayer.snapshot(new TXLivePlayer.ITXSnapshotListener() {
   @Override
   public void onSnapshot(Bitmap bitmap) {
-        //画像はここに保存できます
+        //スクリーンショットをここに保存できます
   }
 });
 ```
 :::
 ::: 解像度の切り替え[](id:resolution)
-ユーザーはニーズに応じて、HD、SD、FHDなどのビデオ再生の解像度を選択することができます。
+ユーザーは、HD、SD、UHDなど、ニーズに応じて異なるビデオ再生の解像度を選択できます。
 ```java
-// クリックするとトリガーされる解像度表示viewコードインターフェース
+//クリックした後にトリガーされる表示解像度viewのコードインターフェース
 showQualityView();
-//解像度オプションをクリックした際のコールバックインターフェース
+//以下の項目を選択して、解像度オプションのコールバックインターフェースを選択します
 mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
   @Override
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -382,7 +413,7 @@ mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     mCallback.onQualitySelect(quality);
   }
 });
-//最後に解像度のコールバックを変更
+//最後に解像度を変更するコールバック
 @Override
 public void onQualityChange(VideoQuality quality) {
    mFullScreenPlayer.updateVideoQuality(quality);
@@ -393,86 +424,85 @@ public void onQualityChange(VideoQuality quality) {
 </dx-tabs>
 
 
-### 2、フローティングウィンドウ再生
+### 2. フローティングウィンドウによる再生
 プレーヤーコンポーネントはフローティングウィンドウによるミニウィンドウ再生をサポートしています。他のアプリケーションに切り替えてもビデオ再生が中断しない機能です。機能の効果は[**Tencent Cloud View Cube App**](#qrcode) > **プレーヤー** > **プレーヤーコンポーネント**で体験できます。画面左上隅の**戻る**をクリックすると、フローティングウィンドウ再生機能を体験できます。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
-フローティングウィンドウ再生はAndroidManifest内の以下の権限に依存しています。
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" alt="img" style="zoom:45%;" />
+フローティングウィンドウによる再生はAndroidManifestの以下の権限に依存しています。
+
 ```java
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 ```
 ```java
-// フローティングウィンドウに切り替えるとトリガーされるコードインターフェース
+// フローティングウィンドウの切り替えによってトリガーされるコードインターフェース
 mSuperPlayerView.switchPlayMode(SuperPlayerDef.PlayerMode.FLOAT);
-//フローティングウィンドウの戻るウィンドウをクリックするとトリガーされるコードインターフェース
+//フローティングウィンドウをクリックして、ウィンドウによってトリガーされたコードインターフェースに戻ります
 mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.WINDOW);
 ```
 
-### 3、ビデオカバー
+### 3. ビデオカバー
 
 プレーヤーコンポーネントはユーザーによるビデオカバーのカスタマイズをサポートしています。これはユーザーがビデオの最初のフレーム画面の再生コールバックを受信する前の表示に用いられます。機能の効果は[**Tencent Cloud View Cube App**](#qrcode) > **プレーヤー** > **プレーヤーコンポーネント** > **カバーカスタマイズのデモンストレーション**ビデオで体験できます。
-
-
 
 * プレーヤーコンポーネントを自動再生モード`PLAY_ACTION_AUTO_PLAY`に設定すると、ビデオが自動再生されます。このとき、ビデオの最初のフレームをロードするまでの間はカバーが表示されます。
 * プレーヤーコンポーネントを手動再生モード`PLAY_ACTION_MANUAL_PLAY`に設定すると、ユーザーが**再生**をクリックしなければ再生が開始されません。**再生**をクリックするまでの間はカバーが表示されます。**再生**をクリックした後、ビデオの最初のフレームをロードするまでの間もカバーが表示されます。
 
-ビデオカバーはネットワークURLアドレスまたはローカルFileアドレスの使用をサポートしています。使用方法については下記のガイドをご参照ください。FileID方式でビデオを再生する場合は、VOD内で直接ビデオカバーを設定することができます。
+ビデオカバーは、ネットワークURLアドレスまたはローカルFileアドレスの使用をサポートしています。使用方法については、下記のガイドをご参照ください。FileIDでビデオを再生する場合は、VODでビデオカバーを直接構成できます。
 
 ```java
 SuperPlayerModel model = new SuperPlayerModel();
-model.appId = "お客様のappid"
+model.appId = 「あなたのappid";
 model.videoId = new SuperPlayerVideoId();
-model.videoId.fileId = "お客様のfileId" 
-//再生モードは、自動再生モード`PLAY_ACTION_AUTO_PLAY`または手動再生モード`PLAY_ACTION_MANUAL_PLAY`に設定することができます。
+model.videoId.fileId = "あなたのfileId"; 
+//再生モードは、自動再生モード：PLAY_ACTION_AUTO_PLAYまたは手動再生モード：PLAY_ACTION_MANUAL_PLAYに設定できます
 model.playAction = PLAY_ACTION_MANUAL_PLAY;
-//カバーのアドレスをネットワークのurlアドレスに設定する場合、coverPictureUrlを設定しなければ、VODコンソールが設定したカバーが自動的に使用されます
+//カバーのアドレスをネットワークurlアドレスに設定します。coverPictureUrlが設定されていない場合、VODコンソールで設定したカバーが自動的に使用されます。
 model.coverPictureUrl = "http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/cc1e28208602268011087336518/MXUW1a5I9TsA.png" 
-mSuperPlayerView.playWithModel(model);
+mSuperPlayerView.playWithModelNeedLicence(model);
 ```
 
-### 4、ビデオリストの繰り返し再生
+### 4. ビデオリストによるカルーセル
 
 プレーヤーコンポーネントはビデオリストの繰り返し再生をサポートしています。ビデオリストを指定すると、次のようになります。
 
-* 再生リスト内のビデオを順序に従って繰り返し再生できます。再生中は次のビデオの自動再生と、次のビデオへの手動切り替えのどちらも行うことができます。
-* リスト内の最後のビデオの再生が完了すると、リスト内の最初のビデオの再生を自動的に開始します。
+* リスト内のビデオを順番に繰り返し再生することをサポートし、再生プロセス中に次のビデオを自動的に再生すること、および次のビデオに手動で切り替えることをサポートします。
+* リストにある最後のビデオの再生が終了すると、リスト内にある最初のビデオは自動的に再生されます。
 
 機能の効果は[**Tencent Cloud View Cube App**](#qrcode) > **プレーヤー** > **プレーヤーコンポーネント** > **ビデオリストの繰り返し再生のデモンストレーション**ビデオで体験できます。
 
 
 
 ```java
-//ステップ1:繰り返し再生List<SuperPlayerModel>を作成する
+//手順1：カルーセルListの構成<SuperPlayerModel>
 ArrayList<SuperPlayerModel> list = new ArrayList<>();
 SuperPlayerModel model = new VideoModel();
 model = new SuperPlayerModel();
 model.videoId = new SuperPlayerVideoId();
 model.appid = 1252463788;
-model.videoId.fileId = "4564972819219071568"; 
+model.videoId.fileId = "4564972819219071568"；
 list.add(model);
 
 model = new SuperPlayerModel();
 model.videoId = new SuperPlayerVideoId();
 model.appid = 1252463788;
-model.videoId.fileId = "4564972819219071679"; 
+model.videoId.fileId = "4564972819219071679"；
 list.add(model);
-//ステップ2：繰り返し再生インターフェースを呼び出す
-mSuperPlayerView.playWithModelList(list, true, 0);
+//手順2：カルーセルインターフェースの呼び出し
+mSuperPlayerView.playWithModelListNeedLicence(list, true, 0);
 ```
 
 ```java
-public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
+public void playWithModelListNeedLicence(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
 ```
 
 インターフェースパラメータの説明
 
-| パラメータ名         | タイプ                   | 説明                           |
+| パラメータ名     | タイプ   | 説明                                                         |
 | -------------- | ---------------------- | ------------------------------ |
-| models         | List<SuperPlayerModel> | 繰り返し再生データリスト                   |
+| models         | List<SuperPlayerModel> | データリストのカルーセル                   |
 | isLoopPlayList | boolean                | 繰り返すかどうか                       |
-| index          | int                    | 再生を開始するSuperPlayerModelのインデックス |
+| index          | int                    | 再生を開始したSuperPlayerModelのインデックス |
 
-### 5、ビデオのプレビュー
+### 5. ビデオのトライアル視聴
 
 プレーヤーコンポーネントはビデオプレビュー機能をサポートしています。これは非VIPプレビューなどのシーンに適用でき、開発者は異なるパラメータを渡してビデオのプレビュー時間、プロンプト情報、プレビュー終了画面などを制御することができます。機能の効果は[**Tencent Cloud View Cube App**](#qrcode) > **プレーヤー** > **プレーヤーコンポーネント** > **プレビュー機能のデモンストレーション**ビデオで体験できます。
 
@@ -480,19 +510,19 @@ public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayL
 
 ```java
  方法1：
- //ステップ1：ビデオmodeの作成
+ //手順1：ビデオmodeの作成
  SuperPlayerModel mode = new SuperPlayerModel();
- //...ビデオソース情報を追加
- //ステップ2：プレビュー情報modeの作成
- VipWatchModel vipWatchModel = new VipWatchModel("%ssプレビュー可能、VIPをアクティブ化するとビデオ全体を視聴可能"、15);
+ //...ビデオソース情報の追加
+ //手順2：トライアル視聴情報modeの作成
+ VipWatchModel vipWatchModel = new VipWatchModel（"%ssトライアル視聴できます。VIPを有効化してビデオの完全版を視聴しましょう"。15)；
  mode.vipWatchMode = vipWatchModel;
- //ステップ3：ビデオ再生メソッドを呼び出す
- mSuperPlayerView.playWithModel(mode);
+ //手順3：ビデオの呼び出し・再生方法
+ mSuperPlayerView.playWithModelNeedLicence(mode);
 
  方法2：
- //ステップ1：プレビュー情報modeの作成
- VipWatchModel vipWatchModel = new VipWatchModel("%ssプレビュー可能、VIPをアクティブ化するとビデオ全体を視聴可能"、15);
-  //ステップ2：プレビュー機能設定メソッドを呼び出す
+ //手順1：トライアル視聴情報modeの作成
+ VipWatchModel vipWatchModel = new VipWatchModel（"%ssトライアル視聴できます。VIPを有効化してビデオの完全版を視聴しましょう"。15)；
+  //手順2：トライアル視聴機能の呼び出しと設定
  mSuperPlayerView.setVipWatchModel(vipWatchModel);
 ```
 
@@ -500,14 +530,14 @@ public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayL
 public VipWatchModel(String tipStr, long canWatchTime)
 ```
 
-VipWatchModelインターフェースパラメータの説明：
+VipWatchModel インターフェースパラメータの説明：
 
-| パラメータ名          | タイプ     | 説明        |
+| パラメータ名         | タイプ   | 説明                                   |
 | ------------ | ------ | --------- |
-| tipStr       | String | プレビュープロンプト情報    |
-| canWatchTime | Long   | プレビュー時間。単位は秒 |
+| tipStr       | String | トライアル視聴のヒント情報    |
+| canWatchTime | Long   | トライアル視聴時間の長さ（単位：秒） |
 
-### 6、動的ウォーターマーク
+### 6. ダイナミックウォーターマーク
 
 プレーヤーコンポーネントは再生画面での、不規則に動くテキストウォーターマークの追加をサポートし、不正録画を効果的に防止します。ウォーターマークは全画面再生モードおよびウィンドウ再生モードのどちらでも表示でき、開発者はウォーターマークのテキスト、文字サイズ、色を変更することができます。機能の効果は[**Tencent Cloud View Cube App**](#qrcode) > **プレーヤー** > **プレーヤーコンポーネント** > **動的ウォーターマーク**のデモンストレーションビデオで体験できます。
 
@@ -515,19 +545,19 @@ VipWatchModelインターフェースパラメータの説明：
 
 ```java
  方法1：
- //ステップ1：ビデオmodeの作成
+ //手順1：ビデオmodeの作成
  SuperPlayerModel mode = new SuperPlayerModel();
- //...ビデオソース情報を追加
- //ステップ2：ウォーターマーク情報modeの作成
+ //...ビデオソース情報の追加
+ //手順2：ウォーターマーク情報modeの作成
  DynamicWaterConfig dynamicWaterConfig = new DynamicWaterConfig("shipinyun", 30, Color.parseColor("#80FFFFFF"));
  mode.dynamicWaterConfig = dynamicWaterConfig;
- //ステップ3：ビデオ再生メソッドを呼び出す
- mSuperPlayerView.playWithModel(mode);
+ //手順3：ビデオの呼び出し・再生方法
+ mSuperPlayerView.playWithModelNeedLicence(mode);
 
  方法2：
- //ステップ1：ウォーターマーク情報modeの作成
+ //手順1：ウォーターマーク情報modeの作成
  DynamicWaterConfig dynamicWaterConfig = new DynamicWaterConfig("shipinyun", 30, Color.parseColor("#80FFFFFF"));
-  //ステップ2：動的ウォーターマーク機能設定メソッドを呼び出す
+  //手順2：ダイナミックウォーターマーク機能の呼び出し・設定方法
  mSuperPlayerView.setDynamicWatermarkConfig(dynamicWaterConfig);
 ```
 
@@ -537,21 +567,21 @@ public DynamicWaterConfig(String dynamicWatermarkTip, int tipTextSize, int tipTe
 
 インターフェースパラメータの説明
 
-| パラメータ名                 | タイプ     | 説明     |
+| パラメータ名         | タイプ   | 説明                                   |
 | ------------------- | ------ | ------ |
 | dynamicWatermarkTip | String | ウォーターマークのテキスト情報 |
-| tipTextSize         | int    | 文字サイズ   |
-| tipTextColor        | int    | 文字の色   |
+| tipTextSize         | int    | テキストサイズ   |
+| tipTextColor        | int    | テキストの色   |
 
 [](id:demo)
 ## Demo体験
 
-さらに完全な機能は、プロジェクトのDemoを直接実行するか、または2次元コードをスキャンしてモバイル端末Demoをダウンロードし、Tencent Cloud View Cube Appで体験することができます。
+より完全な機能を体験するには、プロジェクトDemoを直接実行するか、QRコードをスキャンしてモバイルDemoであるTencent Cloud View Cube　Appをダウンロードしてください。
 
 ### プロジェクトDemoの実行
 
-1. Android Studioのナビゲーションバーで**File** > **Open**を選択し、ポップアップボックスで**Demo**プロジェクトディレクトリ： `$SuperPlayer_Android/Demo`を選択します。Demoプロジェクトへのインポートに成功後、**Run app**をクリックすると、Demoを正常に実行できます。
-2. Demoが正常に実行された後、**プレーヤー** > **プレーヤーコンポーネント**と進むと、プレーヤーの機能を体験できます。
+1. Android Studioのナビゲーションバーで**File**>**Open**を選択し、ポップアップボックスで**Demo**プロジェクトディレクトリ：`$SuperPlayer_Android/Demo`を選択します。Demoプロジェクトを正常にインポートした後、**Run app**をクリックすると、Demoを正常に実行できます。
+2. 下図のようにDemoが正常に実行された後、**プレーヤー** > **プレーヤーコンポーネント**と進むと、プレーヤーの機能を体験できます。
 
 [](id:qrcode)
 ### Tencent Cloud View Cube App
