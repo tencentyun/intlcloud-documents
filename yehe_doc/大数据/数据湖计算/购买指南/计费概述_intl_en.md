@@ -37,7 +37,7 @@ When you use Data Lake Compute, data stored to COS will be billed according to t
 ## Pricing
 ### Public engine
 A public engine is billed by scanned data volume in successful query tasks, with a bill generated every clock-hour. You can view specific bills in the [Billing Center](https://console.cloud.tencent.com/expense/overview).
-**Public engine fees = hourly scanned data volume * unit price**
+<b>Public engine fees = hourly scanned data volume * unit price</b>
 
 | Billable Item | Price (USD/GB) | 
 |---------|---------|
@@ -55,15 +55,15 @@ When you use a public engine, since Data Lake Compute adopts serverless architec
 #### Pay-as-you-go
 A data engine is pay-as-you-go and elastically scalable. When you purchase it, the system will freeze the fees for 1-hour usage of the minimum cluster specification. A bill will be generated every clock-hour. You can view specific bills in the [Billing Center](https://console.cloud.tencent.com/expense/overview).
 
-**Private engine fees = hourly number of used CUs * unit price**
+<b>Private engine fees = hourly number of used CUs * unit price</b>
 >! In pay-as-you-go billing mode, the engine will keep running at the purchased minimum cluster count. You can suspend the engine when you don't need to use clusters in order to avoid fees.
 
 #### Monthly subscription
 In monthly subscription billing mode, the engine will keep running at the purchased minimum cluster count. If elastic scaling is triggered, added cluster resources will be pay-as-you-go. You can view specific bills in the [Billing Center](https://console.cloud.tencent.com/expense/overview). A monthly subscribed engine won't incur pay-as-you-go fees if it is not scaled.
 
-**Monthly subscription fees = cluster specification * minimum cluster count * number of purchase months * monthly subscription unit price**
+<b>Monthly subscription fees = cluster specification * minimum cluster count * number of purchase months * monthly subscription unit price</b>
 
-**Monthly subscription scaling fees = cluster specification * number of added clusters * pay-as-you-go unit price**
+<b>Monthly subscription scaling fees = cluster specification * number of added clusters * pay-as-you-go unit price</b>
 
 Example: If you purchase a monthly subscribed private data engine with a specification of 16 CUs, a minimum cluster count of 2, and a maximum cluster count of 5 for one month, the monthly subscription fees will be 16 * 2 * 1 * 22 = 704 USD, and the engine will run for one month with two 16-CU clusters without incurring additional fees. If the engine is scaled out to five clusters for one hour, then three added 16-CU clusters will incur pay-as-you-go fees of 16 * (5 - 2) * 1 * 0.05 = 2.4 USD.
 
