@@ -100,7 +100,8 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
 		TUICallKitServer.call({ userID, type }); // 2人通話
 		TUICallKitServer.groupCall({ userIDList, groupID, type }); // 多人数通話
 	```
-	完了するとすぐに最初の電話をかけることができます。より詳細なインターフェースパラメータについては、[インターフェースドキュメント](https://www.tencentcloud.com/document/product/647/51015)をご参照ください。
+	
+完了するとすぐに最初の電話をかけることができます。より詳細なインターフェースパラメータについては、[インターフェースドキュメント](https://www.tencentcloud.com/document/product/647/51015)をご参照ください。
 
 3. 発展インターフェース
 	このコンポーネントでは`beforeCalling`および`afterCalling`という2つのコールバックを提供しており、業務側に現在の通話状態を通知するために用いられます。
