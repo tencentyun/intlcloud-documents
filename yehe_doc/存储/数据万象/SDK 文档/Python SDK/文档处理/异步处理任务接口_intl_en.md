@@ -56,7 +56,7 @@ def ci_create_doc_jobs():
 | StartPage | Starts conversion from page X. A spreadsheet file may be split into multiple pages, with multiple images generated, and `StartPage` indicates to start the conversion from page X of the specified `SheetId`. Default value: `1`. | Int |
 | EndPage | Ends conversion on page X. A spreadsheet file may be split into multiple pages, with multiple images generated, and `EndPage` indicates to end the conversion on page X of the specified `SheetId`. Default value: `-1` (converting all pages). | Int |
 | SheetId |  Sheet parameter, indicating to convert the xth sheet. Default value: `1`. If this value is set to `0`, all sheets will be converted.                | Int  |
-| PaperDirection | Paper orientation of the spreadsheet. 0: Vertical; other values: Horizontal. Default value: `0`.                | Int  |
+| PaperDirection | Paper orientation of the spreadsheet. `0`: Vertical; other values: Horizontal. Default value: `0`.                | Int  |
 | PaperSize      | Page (canvas) size. Valid values: `0` (A4), `1` (A2), `2` (A0). Default value: `0`. | Int  |
 | DocPassword | Password to open the Office file. If you need to convert a password-protected file, set this field. | String |
 | Comments | Whether to hide comments and apply track changes. 0: Hide comments and apply track changes; 1: Show comments and track changes. Default value: `0`. | Int |
@@ -65,7 +65,7 @@ def ci_create_doc_jobs():
 | Quality | Quality of the generated preview image. Value range: [1-100]. Default value: `100`. For example, if the value is 100, the quality of the generated image will be 100%. | Int |
 | Zoom                | Zooming parameter of the preview image. Value range: [10-200]. Default value: `100`. For example, if the value is 200, the image will be zoomed in (enlarged) by 200%. | Int |
 | ImageDpi       | Renders the image according to the specified DPI. This parameter works together with `Zoom`. Value range: 96–600. Default value: `96`. The width of the output image must be less than 65500 px. | Int |
-| PicPagination  | Whether to convert to a single long image. When this parameter is set to 1, up to 20 standard pages can be converted to a single long image, and more pages will cause an error. The page range can be controlled by `StartPage` and `EndPage`. The default value is 0, indicating to output images by page. This parameter will take effect only if `TgtType` is `png` or `jpg`. | Int |
+| PicPagination  | Whether to convert to a single long image. When this parameter is set to `1`, up to 20 standard pages can be converted to a single long image, and more pages will cause an error. The page range can be controlled by `StartPage` and `EndPage`. The default value is `0`, indicating to output images by page. This parameter will take effect only if `TgtType` is `png` or `jpg`. | Int |
 
 #### Response description
 
@@ -246,10 +246,10 @@ def ci_list_doc_jobs():
 | ----------------- | ------------------------------------------------------------ | ------ |
 | Bucket    | Bucket of the job | String    |
 | QueueId           | ID of the queue from which jobs are pulled                                     | String |
-| OrderByTime       | `Desc` (default) or `Asc`                                 | String |
+| OrderByTime       | Valid values: `Desc` (default) or `Asc`.                                 | String |
 | NextToken         | Context token for pagination                       | String |
-| Size              | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100.                      | Int    |
-| States            | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default value), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | String |
+| Size              | Maximum number of jobs that can be pulled. The default value is `10`. The maximum value is `100`.                      | Int    |
+| States            | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | String |
 | StartCreationTime | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`.  | String |
 | EndCreationTime   | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`.  | String |
 

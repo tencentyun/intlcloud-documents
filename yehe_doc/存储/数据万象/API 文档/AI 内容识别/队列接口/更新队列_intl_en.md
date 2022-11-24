@@ -71,7 +71,7 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | :--------------- | :------- | :------------------------------ | :-------- | -------- | ------ | ----- |
 | Name             | Request | Queue name, which can contain up to 128 bytes.             | String    | Yes       | None     |  None   |
-| State            | Request | 1. Active: Jobs in the queue will be scheduled and executed by the media processing service. <br>2. Paused: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will not be affected. | String      | Yes | None | None |
+| State            | Request | 1. `Active`: Jobs in the queue will be scheduled and executed by the media processing service. <br>2. `Paused`: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will not be affected. | String      | Yes | None | None |
 | NotifyConfig     | Request | Callback configuration                          | Container | Yes       | None     |  None   |
 
 

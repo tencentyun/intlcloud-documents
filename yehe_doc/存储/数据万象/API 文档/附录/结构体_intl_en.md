@@ -17,11 +17,11 @@
 | Node Name (Keyword) | Description | Type | Required | Default Value | Constraints |
 | ------------------  | -------- | ------ | -------- | ------ | ------------------------------------------------------------ |
 | Url                 | Callback address | String | Yes   | None | The callback address cannot be a private network address.                                               |
-| Type                | Callback type | String | Yes   | None |  <ul  style="margin: 0;"><li>Url: URL callback </li><li>TDMQ: TDMQ message callback</li></ul> |
-| Event               | Callback information | String | Yes       | None     | <ul  style="margin: 0;"><li>TaskFinish: Job completed </li><li>WorkflowFinish: Workflow completed </li><li>You can configure multiple events separated by comma. |
+| Type                | Callback type | String | Yes   | None |  <ul  style="margin: 0;"><li>`Url`: URL callback </li><li>`TDMQ`: TDMQ message callback</li></ul> |
+| Event               | Callback information | String | Yes       | None     | <ul  style="margin: 0;"><li>`TaskFinish`: Job completed </li><li>`WorkflowFinish`: Workflow completed </li><li>You can configure multiple events separated by comma. |
 | ResultFormat        | Callback format | String | No       | XML    | <ul  style="margin: 0;"><li>XML </li><li>JSON</li></ul>                      |
 | MqRegion            | TDMQ region | String | No  | None    | Yes if the callback type is TDMQ. For supported regions, see <a href="https://intl.cloud.tencent.com/document/product/406/12667">Request Domain Description</a>. |
-| MqMode              | TDMQ mode | String | No  | None    | Yes if the callback type is TDMQ. <ul  style="margin: 0;"><li>Topic: Topic subscription </li><li>Queue: Queue service </li></ul>           |
+| MqMode              | TDMQ mode | String | No  | None    | Yes if the callback type is TDMQ. <ul  style="margin: 0;"><li>`Topic`: Topic subscription </li><li>`Queue`: Queue service </li></ul>           |
 | MqName              | TDMQ topic name | String | No  | None    | Yes if the callback type is TDMQ.                      |
 
 <span id="MediaWorkflow_Topology_Nodes_Start_Input_ExtFilter"></span>
@@ -268,7 +268,7 @@
 | Node Name (Keyword) | Description | Type | Required | Constraints |
 | ------------------ | ----------------------------------------------------------- | --------- | -------- | ------------------------ |
 | VideoStreamName    | Video substream name                                              | String | Yes   | It must be consistent with the existing video node. |
-| BandWidth          | Video substream bandwidth limit. Unit: b/s. Value range: [0, 2000000000], where 0 indicates no limit. | String | No   | The value must be equal to or greater than 0. The default value is 0.     |
+| BandWidth          | Video substream bandwidth limit. Unit: b/s. Value range: [0, 2000000000], where 0 indicates no limit. | String | No   | The value must be equal to or greater than 0. The default value is `0`.     |
 
 ## AudioMix
 <span id="AudioMix"></span>
@@ -298,7 +298,7 @@
 | Node Name (Keyword) | Description | Type | Required |
 | ------------------ | ---------------- | ------ | -------- |
 | MqRegion           | Message queue region. Valid values: `sh` (Shanghai), `bj` (Beijing), `gz` (Guangzhou), `cd` (Chengdu), `hk` (Hong Kong, China). | String | Yes |
-| MqMode             | Message queue mode. Default value: `Queue`. <br/>Topic: Topic subscription <br/>Queue: Queue service </td> | String | Yes |
+| MqMode             | Message queue mode. Default value: `Queue`. <br/>`Topic`: Topic subscription <br/>`Queue`: Queue service </td> | String | Yes |
 | MqName             | TDMQ topic name                                                                        | String | Yes |
 
 

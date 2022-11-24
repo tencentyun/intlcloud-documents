@@ -5,9 +5,9 @@ This document provides an overview of APIs and SDK code samples for speech recog
 
 | API | Operation | Description |
 | ------------------- | -------------- | --------------------- |
-| Submitting a speech recognition job | Submits a speech recognition job | This API is used to submit a speech recognition job. |
-| Querying the specified speech recognition job | Queries the specified speech recognition job | This API is used to query the specified speech recognition job. |
-| Pulling eligible speech recognition jobs | Pulls eligible speech recognition jobs | This API is used to pull speech recognition jobs that meet specified conditions. |
+| Submitting a speech recognition job | Submits a speech recognition job | Submiting a speech recognition job. |
+| Querying the specified speech recognition job | Queries the specified speech recognition job | Querying the specified speech recognition job. |
+| Pulling eligible speech recognition jobs | Pulls eligible speech recognition jobs | Pulling speech recognition jobs that meet specified conditions. |
 
 
 ## Submitting Speech Recognition Job
@@ -69,7 +69,7 @@ def ci_create_asr_jobs():
 | OutputBucket   | Result storage bucket                                             | String |
 | OutputObject      | Output file path                   | String |
 | TemplateId        | Template ID                        | String    |
-| SpeechRecognition | Speech recognition parameter. For more information, see `SpeechRecognition` in [Submitting Speech Recognition Job](https://intl.cloud.tencent.com/document/product/1045/49789). | dict |
+| SpeechRecognition | Speech recognition parameter. For more information, see `SpeechRecognition` in [Submitting Speech Recognition Job](https://cloud.tencent.com/document/product/460/78951). | dict |
 | CallBack          | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | string    |
 | CallBackFormat    | Job callback format, which can be `JSON` or `XML` (default). It has a higher priority than that of the queue. | string    |
 | CallBackType      | Job callback type, which can be `Url` (default) or `TDMQ`. It has a higher priority than that of the queue.                    | string    |
@@ -215,8 +215,8 @@ def ci_list_asr_jobs():
 | QueueId           | ID of the queue from which jobs are pulled                                     | String |
 | OrderByTime       | `Desc` (default) or `Asc`                                 | String |
 | NextToken         | Context token for pagination                       | String |
-| Size              | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100.                      | Int    |
-| States            | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default value), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | String |
+| Size              | Maximum number of jobs that can be pulled. The default value is `10`. The maximum value is `100`.                      | Int    |
+| States            | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | String |
 | StartCreationTime | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`.  | String |
 | EndCreationTime   | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`.  | String |
 

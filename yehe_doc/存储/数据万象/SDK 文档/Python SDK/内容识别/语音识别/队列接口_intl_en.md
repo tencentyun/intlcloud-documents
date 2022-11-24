@@ -5,8 +5,8 @@ This document provides an overview of APIs and SDK code samples for speech recog
 
 | API | Operation | Description |
 | --------------- | ------------ | -------- |
-| Querying a speech recognition queue  |     Queries a speech recognition queue     | This API is used to query a speech recognition queue. |
-| Updating a speech recognition queue   |   Updates a speech recognition queue       | This API is used to update a speech recognition queue. |
+| Querying a speech recognition queue  |     Queries a speech recognition queue     | Querying a speech recognition queue |
+| Updating a speech recognition queue   |   Updates a speech recognition queue       | Updating a speech recognition queue |
 
 
 ## Querying Speech Recognition Queue
@@ -39,7 +39,7 @@ def ci_get_asr_queue():
 | ----| ---- | ---- |
 | Bucket | Bucket of the queue. | String             |
 | QueueIds | Queue ID. If you enter multiple IDs, separate them by comma. | String             |
-| State | 1. Active: Jobs in the queue will be scheduled and executed by the file preview service. <br>2. Paused: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will continue without being affected. | String      |
+| State | 1. `Active`: Jobs in the queue will be scheduled and executed by the file preview service. <br>2. `Paused`: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will continue without being affected. | String      |
 | PageNumber | Page number. | int |
 | PageSize | Number of entries per page. | int |
 
@@ -179,7 +179,7 @@ def ci_put_asr_queue():
 | Parameter | Description | Type |
 | --------- | ------------------------------------------------------------ | ------ |
 | RequestId | Unique ID of the request                                                | dict |
-| Queue     | Queue information. For more information, see `QueueList` in Querying Speech Recognition Queue. | dict |
+| Queue     | Queue information. For more information, see `QueueList` in [Querying Speech Recognition Queue](https://www.tencentcloud.com/document/product/1045/49552). | dict |
 
 
 

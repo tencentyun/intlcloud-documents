@@ -39,7 +39,7 @@ def ci_get_doc_queue():
 | ----| ---- | ---- |
 | Bucket | Bucket of the queue. | String             |
 | QueueIds | Queue ID. If you enter multiple IDs, separate them by comma. | String             |
-| State | 1. Active: Jobs in the queue will be scheduled and executed by the file preview service. <br>2. Paused: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will continue without being affected. | String      |
+| State | 1. `Active`: Jobs in the queue will be scheduled and executed by the file preview service. <br>2. `Paused`: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will continue without being affected. | String      |
 | PageNumber | Page number. | int |
 | PageSize | Number of entries per page. | int |
 
