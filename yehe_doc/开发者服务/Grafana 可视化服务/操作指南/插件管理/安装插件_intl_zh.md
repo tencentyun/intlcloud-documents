@@ -10,4 +10,4 @@
 2. 在实例列表中，选择对应的 Grafana 实例。
 3. 在左侧菜单栏中单击**插件**。
 4. 在列表中勾选对应的插件，勾选完后，单击**安装**。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/418ddf40be6c74b59b827361de07e127.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/a368777c4504df28e4f581e2b19c07eb.png)
