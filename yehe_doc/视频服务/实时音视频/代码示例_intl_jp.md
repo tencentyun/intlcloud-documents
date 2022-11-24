@@ -280,4 +280,4 @@
 
 ## 問い合わせとフィードバック
 アクセスと利用中に何か不明点などがありましたら、Telegram Groupに参加し、エンジニアに連絡してください。[リンクをクリック](https://t.me/+EPk6TMZEZMM5OGY1)して、または、QRコードをスキャンしてください。
-![](https://qcloudimg.tencent-cloud.cn/raw/acf42c4f1a472f9f77da9412a045995a.jpg)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/acf42c4f1a472f9f77da9412a045995a.jpg" style="zoom:50%;" />
