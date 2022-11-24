@@ -235,7 +235,7 @@ void onUserVoiceVolumeChanged(Map<String, Integer> volumeMap);
 
 | 参数      | 类型                 | 含义                                                         |
 | --------- | -------------------- | ------------------------------------------------------------ |
-| volumeMap | Map<String, Integer> | 音量表，根据每个 userId 可以获取对应用户的音量大小，音量最小值为0，音量最大值为100 |
+| volumeMap | Map< String, Integer> | 音量表，根据每个 userId 可以获取对应用户的音量大小，音量最小值为0，音量最大值为100 |
 
 ### onUserNetworkQualityChanged
 
