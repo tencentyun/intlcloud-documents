@@ -68,7 +68,7 @@ The structure of the `conf` directory is as follows:
 - workers: worker server IP configuration file
 - goosefs-site.properties: GooseFS configuration file
 - libexec: library file on which GooseFS-FUSE depends to run
-- goosefs-fuse-1.3.0: GooseFS-FUSE JAR package to run in the background
+- goosefs-fuse-1.4.0: GooseFS-FUSE JAR package to run in the background
 - log: log directory
 
 ## Configuration Options
