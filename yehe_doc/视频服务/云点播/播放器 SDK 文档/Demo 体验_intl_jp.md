@@ -95,7 +95,7 @@ Tencent Cloud View Cube·Player+ Demoは完全な製品レベルのインタラ�
            機能デモ · サンプルコード
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://tcplayer.vcube.tencent.com/');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">今すぐ体験する</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://tcplayer.vcube.tencent.com/intl/index.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">今すぐ体験する</div>
         </div>
 				<div class="demo-item-link-web">
 				<a href="https://intl.cloud.tencent.com/document/product/266/33977">統合ガイド</a>
