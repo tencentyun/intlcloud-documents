@@ -1205,7 +1205,7 @@ Future<void> initialize({bool? onlyAudio}) async;
 
 **注意**
 
-バージョン10.7より、startPlayはstartLivePlayに変更され、正常に再生を行うには{@link SuperPlayerPlugin#setGlobalLicense}でのLicenceの設定が必要になりました。これを行わなければ再生が失敗します（ブラックスクリーン）。設定はグローバルで1回行うだけです。ライブストリーミングLicence、UGSV Licenceおよびビデオ再生Licenceがすべて使用できます。上記のLicenceをまだ取得していない場合は、[テスト版Licenceを無料でクイック申請](https://www.tencentcloud.com/document/product/266/51098)すれば正常に再生できますが、正式版Licenseは[購入](https://www.tencentcloud.com/document/product/266/510988#.E8.B4.AD.E4.B9.B0.E5.B9.B6.E6.96.B0.E5.BB.BA.E6.AD.A3.E5.BC.8F.E7.89.88-license)する必要があります。
+バージョン10.7より、startPlayはstartLivePlayに変更され、正常に再生を行うには{@link SuperPlayerPlugin#setGlobalLicense}でのLicenceの設定が必要になりました。これを行わなければ再生が失敗します（ブラックスクリーン）。設定はグローバルで1回行うだけです。ライブストリーミングLicence、UGSV Licenceおよびビデオ再生Licenceがすべて使用できます。上記のLicenceをまだ取得していない場合は、[テスト版Licenceを無料でクイック申請](https://www.tencentcloud.com/document/product/266/51098)すれば正常に再生できますが、正式版Licenseは[購入](https://www.tencentcloud.com/document/product/266/51098#.E8.B4.AD.E4.B9.B0.E5.B9.B6.E6.96.B0.E5.BB.BA.E6.AD.A3.E5.BC.8F.E7.89.88-license)する必要があります。
 
 **説明**
 
