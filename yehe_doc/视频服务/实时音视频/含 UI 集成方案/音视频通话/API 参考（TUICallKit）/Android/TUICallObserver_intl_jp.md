@@ -235,7 +235,7 @@ void onUserVoiceVolumeChanged(Map<String, Integer> volumeMap);
 
 | パラメータ      | タイプ                 | 意味                                                         |
 | --------- | -------------------- | ------------------------------------------------------------ |
-| volumeMap | Map<String, Integer> | ボリュームメーター。各useridにつき、対応するユーザーの音量レベルを取得できます。音量の最小値は0、最大値は100です |
+| volumeMap | Map< String, Integer> | ボリュームメーター。各useridにつき、対応するユーザーの音量レベルを取得できます。音量の最小値は0、最大値は100です |
 
 ### onUserNetworkQualityChanged
 
