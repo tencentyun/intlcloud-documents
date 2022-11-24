@@ -95,7 +95,7 @@ The Tencent Cloud RT-Cube Player SDK demo provides complete product-grade intera
            Feature Demo  Code Sample
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://tcplayer.vcube.tencent.com/');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">Try Now</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://tcplayer.vcube.tencent.com/intl/index.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">Try Now</div>
         </div>
 				<div class="demo-item-link-web">
 				<a href="https://intl.cloud.tencent.com/document/product/266/33977">Integration Guide</a>
