@@ -10,7 +10,7 @@ You can click to download the demo to try out the [3D sound effect](https://intl
 
 ## Prerequisites
 
-- **Activated Voice Chat Service**: please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782)**.
+- **Activated Voice Chat Service**: please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 - **Accessed to GME SDK**: includes access of core APIs and Voice Chat APIs. For details, please see [Native SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/40858), [Unity SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/44544), [Unreal SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/44545).
 
 ## Directions
@@ -18,7 +18,7 @@ You can click to download the demo to try out the [3D sound effect](https://intl
 ### Implementation flowchart
 
 The 3D sound effect implementation flowchart is as follows. The blue part is new connection steps compared with general voice chat for room entry:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/81f702b4e423cb048603bb5a6105f41e.png" width="500px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/af3b21c8c6ff552c887ee369f9c217c6.jpg" width="500px">
 
 ### Initializing the 3D sound effect engine
 

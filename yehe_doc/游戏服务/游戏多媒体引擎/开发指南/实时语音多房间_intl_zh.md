@@ -208,7 +208,7 @@ ITMGContext public abstract int Uninit()
 | GetRoomType    | 获取用户房间音频类型 |
 
 ### 多房间调用流程图
-<img src="https://qcloudimg.tencent-cloud.cn/raw/7e13766f5c8fcc2c314f650f67cee420.png" width="70%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/da14cd0db1c7efde6659120ba07e1e9c.jpg" width="70%"/>
 
 
 ### 鉴权信息
