@@ -100,7 +100,8 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
 		TUICallKitServer.call({ userID, type }); // 双人通话
 		TUICallKitServer.groupCall({ userIDList, groupID, type }); // 多人通话
 	```
-	完成后即可成功拨打您的第一通电话，更详解接口参数请参见 [接口文档](https://www.tencentcloud.com/document/product/647/51015)。
+	
+完成后即可成功拨打您的第一通电话，更详解接口参数请参见 [接口文档](https://www.tencentcloud.com/document/product/647/51015)。
 
 3. 进阶接口
 	本组件提供了 `beforeCalling` 和 `afterCalling` 两个回调，可以用于通知业务侧当前通话状态。
