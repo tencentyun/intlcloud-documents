@@ -235,7 +235,7 @@ void onUserVoiceVolumeChanged(Map<String, Integer> volumeMap);
 
 | 매개변수      | 유형                 | 의미                                                         |
 | --------- | -------------------- | ------------------------------------------------------------ |
-| volumeMap | Map<String, Integer> | 각 사용자의 볼륨을 포함하는 볼륨 테이블(`userId`), 값 범위: 0-100 |
+| volumeMap | Map< String, Integer> | 각 사용자의 볼륨을 포함하는 볼륨 테이블(`userId`), 값 범위: 0-100 |
 
 ### onUserNetworkQualityChanged
 
