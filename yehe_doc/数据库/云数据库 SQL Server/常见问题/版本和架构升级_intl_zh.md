@@ -3,8 +3,8 @@
 需要购买新的双机高可用版实例后，[使用 DTS 迁移数据](https://intl.cloud.tencent.com/document/product/238/39006)。
 
 ### 云数据库 SQL Server 是否支持双机高可用版变更到基础版？
-云数据库 SQL Server 目前不支持双机高可用版变更到基础版，如需架构调整，
-需要购买新的基础版实例后，[使用 DTS 迁移数据](https://intl.cloud.tencent.com/document/product/238/39006)。
+云数据库 SQL Server 目前不支持高可用版或集群版变更到基础版，如需架构调整，
+需要购买新的基础版实例后，[使用备份恢复迁移数据](https://www.tencentcloud.com/document/product/238/39005)。
 
 ### 云数据库 SQL Server 是否支持高可用版升级到集群版？
 云数据库 SQL Server 支持双机高可用版升级到集群版，请参见 [调整实例架构](https://intl.cloud.tencent.com/document/product/238/44353)。
