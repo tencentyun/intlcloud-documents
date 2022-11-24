@@ -68,7 +68,7 @@ conf 디렉터리:
 - worker: worker 서버의 IP 구성 파일
 - goosefs-site.properties: goosefs 구성 파일
 - libexec: goosefs-fuse 종속 lib 파일 실행
-- goosefs-fuse-1.3.0: goosefs-fuse 백엔드에서 실행되는 jar 패키지
+- goosefs-fuse-1.4.0: goosefs-fuse 백엔드에서 실행되는 jar 패키지
 - log: 로그 디렉터리
 
 ## 설정 옵션
