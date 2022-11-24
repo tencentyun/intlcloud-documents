@@ -10,4 +10,4 @@ You have created a [Grafana instance](https://intl.cloud.tencent.com/document/pr
 2. Select the Grafana instance from the instance list.
 3. Click **Plugin** on the left sidebar.
 4. Select the desired plugin in the list and click **Install**.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/418ddf40be6c74b59b827361de07e127.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/a368777c4504df28e4f581e2b19c07eb.png)
