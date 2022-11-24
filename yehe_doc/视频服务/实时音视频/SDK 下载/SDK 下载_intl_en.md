@@ -722,7 +722,7 @@ Advanced Features
                <p class="titlename">Flutter</p>
             </div>
             <div class="card-content">
-               <a class="with-box" href="https://pub.dev/packages/live_flutter_plugin/versions&quot;">ZIP file</a>
+               <a class="with-box" href="https://pub.dev/packages/live_flutter_plugin/versions">ZIP file</a>
                <a target="_blank" style="margin-left:10px" href="https://github.com/LiteAVSDK/Live_Flutter">GitHub</a>
                <a target="_blank" style="margin-left:10px"
                   href="https://cloud.tencent.com/document/product/454/71666">Integration guide</a>
