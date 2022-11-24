@@ -11,7 +11,7 @@ TencentDB for SQL Server supports private and public network addresses. By defau
 
 ## Prerequisites
 - The network of the instance is a VPC.
-- The instance is in Guangzhou, Shanghai, Beijing, Chengdu, or Chongqing region.
+- The instance is in Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Nanjing or Hongkong region.
 
 ## Private/Public network address description
 
