@@ -1,6 +1,6 @@
 This document describes how to access and debug GME APIs for the commanding voice mode.
 
-## Use Cases
+## Overview
 
 In commanding game scenarios, GME provides the host and listener roles. If a user sets the role to host before room entry, the user can enable the mic to speak and enable the speaker to hear others talking in the room after room entry. If the user enters the room as a listener, the user cannot speak in the room after room entry even the mic is enabled.
 
@@ -10,7 +10,7 @@ In commanding game scenarios, GME provides the host and listener roles. If a use
 - You have **activated the real-time voice service of GME** as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
 - You have **integrated the GME SDK** as instructed in [Native SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/40858).
 
-## Integration Steps
+## Access directions
 
 Below is the process of connecting to the commanding voice mode:
 
@@ -29,7 +29,7 @@ Below is the process of connecting to the commanding voice mode:
 For more information on how to call and integrate the GME SDK, see [Native SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/40858), [Quick Integration of SDK for Unity](https://intl.cloud.tencent.com/document/product/607/44544), and [Quick Integration of SDK for Unreal Engine](https://intl.cloud.tencent.com/document/product/607/44545).
 
 [](id:config)
-### Step 2. Setting the role
+### Step 2. Set the role
 
 Before calling the `EnterRoom` API, you need to call the `SetAudioRole` API to set the role of the current user in the commanding voice mode.
 
@@ -64,7 +64,7 @@ Call the `EnterRoom` API to enter a voice chat room.
 In the room, you can call `SetAudioRole` to change the role.
 - If the role is not set, the new role will be used.
 - If the role is set, the new role will be used.
-- If no role is set or the role is host and you are speaking with the mic enabled, after the role is changed to listener, you cannot speak in the room even if the mic is enabled. In this case, we recommend you change the mic UI status at the business layer.
+- If no role is set or the role is host and you are speaking with the mic enabled, but the mic is still enabled after the role is changed to listener, we recommend you call the `EnableMic` API at the business layer to change the mic status and the mic UI status.
 
 [](id:usage)
 ### Step 6. Exit the room 

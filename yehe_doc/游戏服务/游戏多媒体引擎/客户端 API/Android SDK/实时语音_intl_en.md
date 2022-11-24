@@ -1,4 +1,4 @@
-This document describes how to access and debug GME client APIs for the voice chat feature for Windows.
+This document describes how to access and debug GME client APIs for the voice chat feature for Android.
 
 ## Key Considerations for Using GME
 
@@ -32,19 +32,15 @@ Key processes involved in SDK connection are as follows:
 -<dx-tag-link link="#UnInit" tag="API: UnInit">Uninitializing GME</dx-tag-link>
 </dx-steps>
 
-
-### C++ classes
+### Voice chat for Android class
 
 | Class | Description |
 | ------------------- | :----------------: |
 | ITMGContext | Key APIs |
-| ITMGDelegate         |      Callback APIs      |
 | ITMGRoom | Room APIs |
-| ITMGRoomManager     |   Room management APIs as described in [Integrating GME Chat Room Management](https://intl.cloud.tencent.com/document/product/607/51115)    |
+| ITMGRoomManager | Room management APIs |
 | ITMGAudioCtrl | Audio APIs |
 | ITMGAudioEffectCtrl | Sound effect and accompaniment APIs |
-| ITMGPTT     | Voice message and speech-to-text conversion APIs |
-
 
 ## Key APIs
 
@@ -56,111 +52,140 @@ Key processes involved in SDK connection are as follows:
 | Resume | Resumes the system |
 | Uninit | Uninitializes GME |
 
-### Imported header files
 
-You need to import the header file `tmg_sdk.h` first before you can access GME. The classes in the header file inherit `ITMGDelegate` for message delivery and callback.
 
-#### Sample code  
+<dx-alert infotype="notice" title="">
+If you need to switch the account, please call `UnInit` to uninitialize the SDK. No fee is incurred for calling Init API.
+</dx-alert>
 
-```
-#include "auth_buffer.h"
-#include "tmg_sdk.h"
-#include "AdvanceHeaders/tmg_sdk_adv.h"
-#include <vector>
-```
 
-### Callback
 
-#### Setting callback sample
 
-```
-// When initializing the SDK
-m_pTmgContext = ITMGContextGetInstance();
-m_pTmgContext->SetTMGDelegate(this);
 
-// In the destructor
-CTMGSDK_For_AudioDlg::~CTMGSDK_For_AudioDlg()
-{
-			ITMGContextGetInstance()->SetTMGDelegate(NULL);
-}
-
-```
-
-#### Message delivery
-
-The API class uses the `Delegate` method to send callback notifications to the application. `ITMG_MAIN_EVENT_TYPE` indicates the message type. The data on Windows is in json string format. For the key-value pairs, please see the relevant documentation.
-
-```
-// Declaration in the header file
-virtual void OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data);
-// Sample code
-void CTMGSDK_For_AudioDlg::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* data)
-{
-			switch(eventType)
-			{
-			case ITMG_MAIN_EVENT_TYPE_XXXX_XXXX:
-				{
-					// Process the callback
-				}
-				break;
-			}
-}
-```
 
 ### Getting singleton
-The GME SDK is provided in the form of a singleton, all calls begin with `ITMGContext`, and callbacks are passed to the application through `ITMGDelegate`, which should be configured first.
+
+To use the voice feature, get the `ITMGContext` object first.
 
 #### Sample code  
 
+```java
+import com.tencent.TMG.ITMGContext; 
+ITMGContext.getInstance(this);
 ```
-ITMGContext* m_pTmgContext;
-m_pTmgContext->Init(AppID, OpenID);
+
+### Registering callback
+
+The API class uses the `Delegate` method to send callback notifications to the application. Register the callback function to the SDK for receiving callback messages.
+
+#### API prototype
+
+```java
+static public abstract class ITMGDelegate {
+    public void OnEvent(ITMG_MAIN_EVENT_TYPE type, Intent data){}
+}
+```
+
+Override this callback function in the constructor to process the parameters of the callback.
+
+| Parameter | Type | Description |
+| ---- | :------------------------------: | ------------------------ |
+| type | ITMGContext.ITMG_MAIN_EVENT_TYPE | Event type in the callback response |
+| data | Intent message type | Callback message, i.e., event data |
+
+
+
+#### Sample code  
+
+```java
+private ITMGContext.ITMGDelegate itmgDelegate = null;
+itmgDelegate = new ITMGContext.ITMGDelegate() {
+    @Override
+    public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+        if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ENTER_ROOM == type)
+        {
+            // Analyze the returned data
+            int nErrCode = data.getIntExtra("result" , -1);
+            String strErrMsg = data.getStringExtra("error_info");
+				}
+		}
+}
+```
+
+Register the callback function to the SDK before room entry.
+
+#### API prototype
+
+```java
+public abstract int SetTMGDelegate(ITMGDelegate delegate);
+```
+
+| Parameter | Type | Description |
+| -------- | :----------: | ------------ |
+| delegate | ITMGDelegate | SDK callback function |
+
+#### Sample code  
+
+```java
+ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 ```
 
 
 ### [Initializing SDK](id:Init)
 
-**You need to initialize the SDK through the `Init` API** before you can use the real-time voice, voice message, and speech-to-text services. The `Init` API must be called in the same thread as other APIs. We recommend you call all APIs in the main thread.
+**You need to initialize the SDK through the `Init` API** before you can use the real-time voice, voice message, and speech-to-text services. **After the SDK is started, it will collect the user's personal information.** The `Init` API must be called in the same thread as other APIs. We recommend you call all APIs in the main thread.
+
+<dx-alert infotype="alarm" title="Note">
+After making sure that the user has read and consented to the application's privacy policy, call the `Init` function to initialize the SDK at an appropriate time based on the application features. If the user does not consent to the privacy policy, the `Init` function cannot be called.
+</dx-alert>
 
 #### API prototype
 
-```
-ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
+```java
+public abstract int Init(String sdkAppId, String openId);
 ```
 
 | Parameter | Type | Description |
-| -------- | :---------: | ------------------------------------------------------------ |
-| sdkAppId | const char* | `AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme), which can be obtained as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0). |
-| openID   | const char* | `openID` can only be in `Int64` type, which is passed in after being converted to a `const char*`. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application.         |
+| -------- | :----: | ------------------------------------------------------------ |
+| sdkAppId | String | `AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme), which can be obtained as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0). |
+| OpenId   | String | `openID` can only be in `Int64` type, which is passed in after being converted to a `const char*`. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application.         |
 
 #### Returned values
 
 | Returned Value | Description |
 | ------------------------------- | --------------------------------------------- |
-| AV_OK = 0                  | Initialized SDK successfully. |
+| QAVError.OK= 0 | Initialized SDK successfully |
 | AV_ERR_SDK_NOT_FULL_UPDATE=7015 | Checks whether the SDK file is complete. It is recommended to delete it and then import the SDK again. |
 
 <dx-alert infotype="notice" title="Notes on 7015 error code">
-
 - The 7015 error code is judged by md5. If this error is reported during integration, please check the integrity and version of the SDK file as prompted.
 - The returned value `AV_ERR_SDK_NOT_FULL_UPDATE` is **only a reminder** but will not cause an initialization failure.
 - Due to the third-party reinforcement, Unity packaging mechanism and other factors, the md5 of the library file will be affected, resulting in misjudgment. **Please ignore this error in the logic for official release**, and try to avoid displaying it in the UI.
-  </dx-alert>
+</dx-alert>
+
 
 #### Sample code 
 
-```
-#define SDKAPPID3RD "14000xxxxx"
-cosnt char* openId="10001";
-ITMGContext* context = ITMGContextGetInstance();
-context->Init(SDKAPPID3RD, openId);
+```java
+String sdkAppID = "14000xxxxx";
+String openID = "100";
+int ret = 0;
+// After the user consents to the application's privacy policy, initialize the SDK at an appropriate time based on the application features
+//ret = 0: The user consents to the application's privacy policy
+//ret = 1: The user does not consent to the application's privacy policy
+// If the user does not consent to the privacy policy, change `ret` to a value other than 0 
+if(ret != 0){
+    Log.e(TAG,"The user does not consent to the application's privacy policy");
+}else{
+		ITMGContext.GetInstance(this).Init(sdkAppId, openId);
+}
 ```
 
-[](id:Poll)
-### Triggering event callback
+
+### [Triggering event callback](id:Poll)
 
 Event callbacks can be triggered by periodically calling the `Poll` API in `update`. `Poll` is the message pump of GME, and the `Poll` API should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
-You can refer to the `EnginePollHelper.cpp` file in the demo.
+Refer to the EnginePollHelper.java file in [Demo](https://intl.cloud.tencent.com/document/product/607/18521).
 
 <dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
 The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
@@ -168,26 +193,14 @@ The `Poll` API must be called periodically and in the main thread to avoid abnor
 
 #### API prototype
 
-```
-class ITMGContext {
-protected:
-    virtual ~ITMGContext() {}
-
-public:        
-    virtual void Poll()= 0;
-}
+```java
+public abstract int Poll();
 ```
 
 #### Sample code
 
-```
-// Declaration in the header file
-
-// Code implementation
-void TMGTestScene::update(float delta)
-{
-    ITMGContextGetInstance()->Poll();
-}
+```java
+private Handler mhandler = new Handler();private Runnable mRunnable = new Runnable() {    @Override    public void run() {        if (s_pollEnabled) {            if (ITMGContext.GetInstance(null) != null)                ITMGContext.GetInstance(null).Poll();        }        mhandler.postDelayed(mRunnable, 33);    }};
 ```
 
 ### Pausing the system
@@ -196,8 +209,8 @@ When a `Pause` event occurs in the system, the engine should also be notified fo
 
 #### API prototype
 
-```
-ITMGContext int Pause()
+```java
+public abstract int Pause();
 ```
 
 ### Resuming the system
@@ -206,19 +219,26 @@ When a `Resume` event occurs in the system, the engine should also be notified f
 
 #### API prototype
 
-```
-ITMGContext int Resume()
+```java
+public abstract int Resume();
 ```
 
-[](id:UnInit)
-### Uninitializing SDK
+### [Uninitializing SDK](id:UnInit)
 
 This API is used to uninitialize the SDK to make it uninitialized. **If the game business account is bound to `openid`, switching game account requires uninitializing GME and then using the new `openid` to initialize again.**
 
+
+<dx-alert infotype="notice" title="Note">
+If the end user revokes the permission granted to the SDK to process the personal information, you can call the `Uninit` API to stop using the SDK features and stop collecting and close the user data used by the features.
+</dx-alert>
+
+
+
+
 #### API prototype
 
-```
-ITMGContext int Uninit()
+```java
+public abstract int Uninit();
 ```
 
 ## Voice Chat Room APIs
@@ -235,6 +255,7 @@ If you have any questions when using the service, please see [FAQs About Voice C
 | ExitRoom      |       Exits the room       |
 | IsRoomEntered | Determines whether room entry is successful |
 | SwitchRoom    |     Switches the room quickly     |
+|StartRoomSharing | Starts cross-room co-anchoring |
 
 ### Local authentication key calculation
 
@@ -242,33 +263,30 @@ Generate `AuthBuffer` for encryption and authentication of relevant features. Fo
 
 #### API prototype
 
-```
-int  QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int dwSdkAppID, const char* strRoomID, const char* strOpenID,
-	const char* strKey, unsigned char* strAuthBuffer, unsigned int bufferLength);
+```java
+AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String openId, String key)
 ```
 
 | Parameter | Type | Description |
-| ------------- | :---: | ------------------------------------------------------------ |
-| dwSdkAppID    |  unsigned int  | `AppId` from the Tencent Cloud console                              |
-| strRoomID     | const char* | Room ID, which can contain up to 127 characters.                                      |
-| strOpenID     | const char* | User ID, which is the same as `openID` during initialization.                        |
-| strKey        | const char* | Permission key from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme) |
-| strAuthBuffer | const char* | Returned `authbuff`                                              |
-| bufferLength  |  int  | Length of the `authbuff` passed in. 500 is recommended.                             |
+| ------ | :----: | ------------------------------------------------------------ |
+| appId | int | `AppId` from the Tencent Cloud console.|
+| roomId | string | Room ID, which can contain up to 127 characters. |
+| openId | string | User ID, which is the same as `OpenId` during initialization. |
+| key | string | Permission key from the Tencent Cloud [console](https://console.cloud.tencent.com/gamegme). |
+
+
 
 #### Sample code  
 
-```
-unsigned int bufferLen = 512;
-unsigned char retAuthBuff[512] = {0};
-QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retAuthBuff,bufferLen);
+```java
+import com.tencent.av.sig.AuthBuffer;// Header file
+byte[] authBuffer = AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), strRoomID,openId, key);
 ```
 
 [](id:EnterRoom)
 ### Entering a room
 
 This API is used to enter a room with the generated authentication information. The mic and speaker are not enabled by default after room entry.
-
 <dx-alert infotype="notice" title="Note">
 - If the room entry callback result is `0`, the room entry is successful. If `0` is returned from the `EnterRoom` API, it doesn't necessarily mean that the room entry is successful.
 - The audio type of the room is determined by the first user entering the room. After that, if a member in the room changes the room type, it will take effect for all members there. For example, if the first user entering the room uses the smooth sound quality, and the second user entering the room uses the HD sound quality, the room audio type of the second user will change to the smooth sound quality. Only after a member in the room calls the `ChangeRoomType` API will the audio type of the room be changed.
@@ -276,25 +294,24 @@ This API is used to enter a room with the generated authentication information. 
 
 #### API prototype
 
-```
-ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)
+```java
+public abstract int EnterRoom(String roomID, int roomType, byte[] authBuffer);
 ```
 
 | Parameter | Type | Description |
-| ---------- | :------------: | ----------------------- |
-| roomID     |    const char*      | Room ID, which can contain up to 127 characters. |
-| roomType   | ITMG_ROOM_TYPE | Room type. We recommend you select `ITMG_ROOM_TYPE_FLUENCY` for games. For more information on room audio types, see [Sound Quality](https://intl.cloud.tencent.com/document/product/607/18522).            |
-| authBuffer |    const char*      | Authentication key                  |
-| buffLen    |      int       | Authentication key length              |
+| ---------- | :----: | ----------------------- |
+| roomId | String | Room ID, which can contain up to 127 characters |
+| roomType   |  int   | Room type. We recommend you enter `ITMG_ROOM_TYPE_FLUENCY`. For more information on room audio types, see [Sound Quality](https://intl.cloud.tencent.com/document/product/607/18522).            |
+| authBuffer | byte[] | Authentication code |
+
 
 #### Sample code  
 
-```
-ITMGContext* context = ITMGContextGetInstance();
-context->EnterRoom(roomID, ITMG_ROOM_TYPE_FLUENCY, (char*)retAuthBuff,bufferLen);
+```java
+ITMGContext.GetInstance(this).EnterRoom(roomId,roomType, authBuffer);    
 ```
 
-### Callback for room entry
+#### Callback for room entry
 
 After the user enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` will be sent and identified in the `OnEvent` function for callback and processing. A successful callback means that the room entry is successful, and the billing starts.
 
@@ -304,22 +321,49 @@ After the user enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` wi
 [Will Voice Chat still be charged when client is offlined?](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
+#### Function prototype
+
+```java
+private ITMGContext.ITMGDelegate itmgDelegate = null;
+itmgDelegate= new ITMGContext.ITMGDelegate() {
+            @Override
+ 			public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+                }
+};
+```
+
+
+
 #### Sample code  
 
-```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-					switch (eventType) {
-						case ITMG_MAIN_EVENT_TYPE_ENTER_ROOM:
-						{
-							ListMicDevices();
-							ListSpeakerDevices();
+Sample code for processing the callback, including room entry and network disconnection events.
 
-							std::string strText = "EnterRoom complete: ret=";
-							strText += data;
-							m_EditMonitor.SetWindowText(MByteToWChar(strText).c_str());
-							}
-					}
-}
+```java
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ENTER_ROOM == type)
+        {
+           	// Analyze the returned data
+            int nErrCode = data.getIntExtra("result" , -1);
+            String strErrMsg = data.getStringExtra("error_info");
+
+            if (nErrCode == AVError.AV_OK)
+            {
+                //If you receive a success response for room entry, you can proceed with your operation
+                ScrollView_ShowLog("EnterRoom success");
+                Log.i(TAG,"EnterRoom success!");
+            }
+            else
+            {
+                //If you fail to enter the room, you need to analyze the returned error message
+                ScrollView_ShowLog("EnterRoom fail :" + strErrMsg);
+                Log.i(TAG,"EnterRoom fail!");
+            }  
+        }
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT == type)
+        {
+			//waiting timeout, please check your network
+		}
+	}
 ```
 
 #### Data details
@@ -349,15 +393,14 @@ This API is used to exit the current room. It is an async API. The returned valu
 
 #### API prototype  
 
-```
-ITMGContext virtual int ExitRoom()
+```java
+public abstract int ExitRoom();
 ```
 
 #### Sample code  
 
-```
-ITMGContext* context = ITMGContextGetInstance();
-context->ExitRoom();
+```java
+ITMGContext.GetInstance(this).ExitRoom();
 ```
 
 #### Callback for room exit
@@ -366,15 +409,12 @@ After the user exits a room, a callback will be returned with the message being 
 
 #### Sample code  
 
-```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-            case ITMG_MAIN_EVENT_TYPE_EXIT_ROOM:
-		{
-		// Process
-		break;
-		}
-	}
+```java
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_EXIT_ROOM == type)
+        {
+            // Receive the event of successful room exit
+        }
 }
 ```
 #### Data details
@@ -389,16 +429,14 @@ This API is used to determine whether the user has entered a room. A value in bo
 
 #### API prototype  
 
-```
-ITMGContext virtual bool IsRoomEntered()
+```java
+public abstract boolean IsRoomEntered();
 ```
 
 #### Sample code  
 
-```
-ITMGContext* context = ITMGContextGetInstance();
-context->IsRoomEntered();
-
+```java
+ITMGContext.GetInstance(this).IsRoomEntered();
 ```
 
 ### Switching room
@@ -408,17 +446,78 @@ The callback for quickly switching rooms is `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVEN
 
 #### API prototype
 
-```
-ITMGContext virtual int SwitchRoom(const char* targetRoomID, const char* authBuff, int buffLen);
+```java
+public abstract int SwitchRoom(String targetRoomID, byte[] authBuffer);
 ```
 
 #### Type descriptions
 
 | Parameter | Type | Description |
 | ------------ | ------ | ------------------------------ |
-| targetRoomID | const char* | ID of the room to enter               |
-| authBuffer   | const char* | Generates a new authentication key with the ID of the room to enter |
-| buffLen   | int | Authentication key length  |
+| targetRoomID | String | ID of the room to enter |
+| authBuffer | byte[] | Generates a new authentication with the ID of the room to enter |
+
+#### Callback sample code
+
+```java
+if(ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_SWITCH_ROOM == type) {    
+int result = data.getIntExtra("result", 1);    
+String errorInfo = data.getStringExtra("error_info");         
+if (result == 0) {              
+			Toast.makeText(getActivity(), "switch room success.", Toast.LENGTH_SHORT).show();     
+			} 
+else {              
+			Toast.makeText(getActivity(), "switch room failed.. error info=" + errorInfo, Toast.LENGTH_SHORT).show();         
+			}
+}
+```
+
+
+### Cross-room mic connection
+
+Call this API to connect the microphones across rooms after the room entry. After the call, the local user can communicate with the target OpenID user in the target room. The target room should be of the same type as the local room.
+
+#### Example
+User a is in room A, user b is in room B, and user a can talk with b through the cross-room API. When user c in room A speaks, users b and d in room B cannot hear. User c in room A can hear only the voice in room A and the voice of user b in room B but not other users in room B.
+
+#### API prototype
+
+```java
+/// <summary> Enable the room sharing, and connect the mic of the OpenID in another room.</summary>
+public abstract int StartRoomSharing(String targetRoomID, String targetOpenID, byte[] authBuffer);
+/// <summary> Stop the enabled room sharing.</summary>
+public abstract int StopRoomSharing();
+```
+
+#### Type descriptions
+
+| Parameter | Type | Description |
+| ------------ | ------ | ----------------------- |
+| targetRoomID | String | ID of the room to connect mic |
+| targetOpenID | String | The target OpenID to connect mic |
+| authBuffer | byte[] | Reserved flag. You just need to enter NULL. |
+
+#### Sample code
+
+```java
+if (mSwtichRoomShareStart.isChecked())
+    {
+        String strRoomID = mEditRoomShareRoomID.getText().toString();
+        String strOpenID = mEditRoomShareOpenID.getText().toString();
+        int nRet = ITMGContext.GetInstance(getActivity()).GetRoom().StartRoomSharing(strRoomID, strOpenID, null);
+        if (nRet != 0)
+            {
+                Toast.makeText(getActivity(), String.format("StartRoomSharing failed nRet=" + nRet), Toast.LENGTH_SHORT).show();
+            }else
+            {
+                int nRet = ITMGContext.GetInstance(getActivity()).GetRoom().StopRoomSharing();
+                    if (nRet != 0)
+                        {
+                            Toast.makeText(getActivity(), String.format("StopRoomSharing failed nRet=" + nRet), Toast.LENGTH_SHORT).show();
+                        }
+                }
+}
+```
 
 ## Room Status Maintenance
 
@@ -432,7 +531,7 @@ APIs in this section are used to display speaking members and members entering o
 | AddAudioBlackList                | Mutes a member in the room |
 | RemoveAudioBlackList             |     Unmutes a user     |
 
-### Notification events of member room entry and speaking status
+### Notifications of member room entry and speaking status
 
 
 This API is used to obtain the user speaking in the room and display it in the UI, and to send a notification when someone entering or exiting the room.
@@ -447,35 +546,41 @@ Notifications for audio events are subject to a threshold, and a notification wi
 | ITMG_EVENT_ID_USER_NO_AUDIO  |                     Return the `openid` of the member stopping sending audio packets in the room.                     | Chat member list |
 
 #### Sample code
-```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-            case ITMG_MAIN_EVNET_TYPE_USER_UPDATE:
-		{
-		// Process
-		// Parse the parameter to get `eventID` and `user_list`
-		    switch (eventID)
+
+```java
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVNET_TYPE_USER_UPDATE == type)
+        {
+		// Update member status
+		int nEventID = data.getIntExtra("event_id", 0);
+		String[] openIdList =data.getStringArrayExtra("user_list");
+		 switch (nEventID)
  		    {
- 		    case ITMG_EVENT_ID_USER_ENTER:
+					case ITMG_EVENT_ID_USER_ENTER:
   			    // A member enters the room
   			    break;
- 		    case ITMG_EVENT_ID_USER_EXIT:
+					case ITMG_EVENT_ID_USER_EXIT:
   			    // A member exits the room
-			    break;
-		    case ITMG_EVENT_ID_USER_HAS_AUDIO:
-			    // A member sends audio packets
-			    break;
-		    case ITMG_EVENT_ID_USER_NO_AUDIO:
-			    // A member stops sending audio packets
-			    break;
- 		    default:
-			    break;
-		    }
-		break;
+						break;
+					case ITMG_EVENT_ID_USER_HAS_AUDIO:
+						// A member sends audio packets
+						break;
+					case ITMG_EVENT_ID_USER_NO_AUDIO:
+						// A member stops sending audio packets
+						break;
+					default:
+						break;
+ 		    }
 		}
-	}
 }
 ```
+
+#### Data details
+
+| Message | Data | Sample |
+| -------------------------------- | :-----------------: | ----------------------------- |
+| ITMG_MAIN_EVNET_TYPE_USER_UPDATE | event_id; user_list | {"event_id":0,"user_list":""} |
+
 
 ### Muting a member in the room
 
@@ -489,18 +594,18 @@ This API is suitable for scenarios where a user is muted in a room.
 
 #### API prototype  
 
-```
-ITMGContext ITMGAudioCtrl int AddAudioBlackList(const char* openId)
+```java
+public abstract int AddAudioBlackList(String openId);
 ```
 
 | Parameter | Type | Description |
-| ------ | :---: | ------------------ |
-| openId | char* | `openid` of the user to be blocked |
+| ------ | :----: | ----------------- |
+| openId | String | ID to be blocked openid |
 
 #### Sample code  
 
-```
-ITMGContextGetInstance()->GetAudioCtrl()->AddAudioBlackList(openId);
+```java
+ITMGContext.GetInstance(this).GetAudioCtrl().AddAudioBlackList(openId);
 ```
 
 ### Unmuting
@@ -509,18 +614,18 @@ This API is used to remove an ID from the audio data blacklist. A returned value
 
 #### API prototype  
 
-```
-ITMGContext ITMGAudioCtrl int RemoveAudioBlackList(const char* openId)
+```java
+public abstract int RemoveAudioBlackList(String openId);
 ```
 
 | Parameter | Type | Description |
-| ------ | :---: | ----------------- |
-| openId | char* | ID to be unblocked |
+| ------ | :----: | ----------------- |
+| openId | String | ID to be unblocked openid |
 
 #### Sample code  
 
-```
-ITMGContextGetInstance()->GetAudioCtrl()->RemoveAudioBlackList(openId);
+```java
+ITMGContext.GetInstance(this).GetAudioCtrl().RemoveAudioBlackList(openId);
 ```
 
 
@@ -529,7 +634,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->RemoveAudioBlackList(openId);
 
 - The voice chat APIs can only be called after SDK initialization and room entry.
 - When the user clicks the button of enabling/disabling the mic or speaker on the UI, we recommend you call the `EnableMic` or `EnableSpeaker` API.
-- To enable the user to press the mic button on the UI to speak and release it to stop speaking, we recommend you call `EnableAudioCaptureDevice` once during room entry and call `EnableAudioSend` to enable the user to speak while pressing the button.
+- When the user enters a voice chat room, enabling/disabling a capturing device will restart both capturing and playback devices. If the application is playing back background music, it will also be interrupted. Playback won't be interrupted if the mic is enabled/disabled through control of upstreaming/downstreaming. **Calling method: Call `EnableAudioCaptureDevice(true)` and `EnableAudioPlayDevice(true)` once after room entry, and call `EnableAudioSend/Recv` to send/receive audio streams when Enable/Disable Mic is clicked.**
 
 
 | API | Description |
@@ -550,22 +655,23 @@ ITMGContextGetInstance()->GetAudioCtrl()->RemoveAudioBlackList(openId);
 ### Enabling or disabling mic
 
 This API is used to enable/disable the mic. The mic and speaker are not enabled by default after room entry. **EnableMic = EnableAudioCaptureDevice + EnableAudioSend**
+**If accompaniment is used, please call this API as instructed in [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/document/product/607/31504).**
 
 #### API prototype  
 
-```
-ITMGAudioCtrl virtual int EnableMic(bool bEnabled)
+```java
+public abstract int EnableMic(boolean isEnabled);
 ```
 
 | Parameter    | Type   | Description                                                                                                                    |
-| -------- | :--: | ------------------------------------------------------------ |
-| bEnabled | bool | To enable the mic, set this parameter to `true`, otherwise, set it to `false`. |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | To enable the mic, set this parameter to `true`; otherwise, set it to `false`. |
 
 #### Sample code  
 
 ```
 // Enable mic
-ITMGContextGetInstance()->GetAudioCtrl()->EnableMic(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableMic(true);
 ```
 
 ### Getting the mic status
@@ -575,13 +681,13 @@ This API is used to get the mic status. The returned value 0 indicates that the 
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int GetMicState()
+public abstract int GetMicState();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetMicState();
+int micState = ITMGContext.GetInstance(this).GetAudioCtrl().GetMicState();
 ```
 
 ### Enabling or disabling capturing device
@@ -594,18 +700,18 @@ This API is used to enable/disable a capturing device. The device is not enabled
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int EnableAudioCaptureDevice(bool enable)
+public abstract int EnableAudioCaptureDevice(boolean isEnabled);
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
-| --------- | :--: | ------------------------------------------------------------ |
-| enable | bool | To enable the capturing device, set this parameter to `true`, otherwise, set it to `false`. |
+| Parameter | Type | Description |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | To enable a capturing device, set this parameter to `true`; otherwise, set it to `false`. |
 
 #### Sample code
 
 ```
 // Enable capturing device
-ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioCaptureDevice(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioCaptureDevice(true);
 ```
 
 ### Getting the capturing device status
@@ -615,13 +721,13 @@ This API is used to get the status of a capturing device.
 #### API prototype
 
 ```
-ITMGContext virtual bool IsAudioCaptureDeviceEnabled()
+public abstract boolean IsAudioCaptureDeviceEnabled();
 ```
 
 #### Sample code
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->IsAudioCaptureDeviceEnabled();
+bool IsAudioCaptureDevice = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioCaptureDeviceEnabled();
 ```
 
 ### Enabling or disabling audio upstreaming
@@ -631,17 +737,17 @@ This API is used to enable/disable audio upstreaming. If a capturing device is a
 #### API prototype
 
 ```
-ITMGContext  virtual int EnableAudioSend(bool bEnable)
+public abstract int EnableAudioSend(boolean isEnabled);
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
-| --------- | :--: | ------------------------------------------------------------ |
-| bEnable | bool | To enable audio upstreaming, set this parameter to `true`; otherwise, set it to `false`. |
+| Parameter | Type | Description |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled |boolean | To enable audio upstreaming, set this parameter to `true`; otherwise, set it to `false`. |
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioSend(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioSend(true);
 ```
 
 ### Getting audio upstreaming status
@@ -651,13 +757,13 @@ This API is used to get the status of audio upstreaming.
 #### API prototype  
 
 ```
-ITMGContext virtual bool IsAudioSendEnabled()
+public abstract boolean IsAudioSendEnabled();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->IsAudioSendEnabled();
+bool IsAudioSend = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioSendEnabled();
 ```
 
 ### Getting the real-time mic volume
@@ -669,13 +775,13 @@ This API is used to get the real-time mic volume. An int-type value in the range
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int GetMicLevel()
+public abstract int GetMicLevel();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetMicLevel();
+int micLevel = ITMGContext.GetInstance(this).GetAudioCtrl().GetMicLevel();
 ```
 
 ### Getting the real-time audio upstreaming volume
@@ -687,13 +793,13 @@ This API is used to get the local real-time audio upstreaming volume. An int-typ
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int GetSendStreamLevel()
+ITMGContext TMGAudioCtrl int GetSendStreamLevel()
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetSendStreamLevel();
+int Level = ITMGContext.GetInstance(this).GetAudioCtrl().GetSendStreamLevel();
 ```
 
 ### Setting the mic software volume
@@ -705,18 +811,17 @@ This API is used to set the mic volume level. The corresponding parameter is `vo
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int SetMicVolume(int vol)
+public abstract int SetMicVolume(int volume);
 ```
 
 | Parameter | Type | Description |
 | ------ | :--: | ------------------------------------------------------------ |
-| vol  | int  | Value range: 0–200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
+| volume | int  | Value range: 0–200. Default value: `100`. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
 
 #### Sample code  
 
 ```
-int micVol = (int)(value * 100);
-ITMGContextGetInstance()->GetAudioCtrl()->SetMicVolume(vol);
+ITMGContext.GetInstance(this).GetAudioCtrl().SetMicVolume(volume);
 ```
 
 ### Getting the mic software volume
@@ -728,13 +833,13 @@ This API is used to obtain the microphone volume. An "int" value is returned. Va
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int GetMicVolume()
+public abstract int GetMicVolume();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetMicVolume();
+ITMGContext.GetInstance(this).GetAudioCtrl().GetMicVolume();
 ```
 
 ## Voice Chat Playback APIs
@@ -752,27 +857,26 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetMicVolume();
 | SetSpeakerVolume         |         Sets the speaker volume level         |
 | GetSpeakerVolume         |         Gets the speaker volume level         |
 
-
-[](id:EnableSpeaker)	
-### Enabling or disabling speaker
+### [Enabling or disabling the speaker](id:EnableSpeaker)
 
 This API is used to enable/disable the speaker. **EnableSpeaker = EnableAudioPlayDevice + EnableAudioRecv**
+**If accompaniment is used, please call this API as instructed in [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/document/product/607/31504).**
 
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int EnableSpeaker(bool enable)
+public abstract int EnableSpeaker(boolean isEnabled);
 ```
 
 | Parameter    | Type   | Description                                                                                                                    |
-| --------- | :--: | ------------------------------------------------------------ |
-| enable | bool | To disable the speaker, set this parameter to `false`; otherwise, set it to `true`. |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | To disable the speaker, set this parameter to `false`; otherwise, set it to `true`. |
 
 #### Sample code  
 
 ```
 // Enable the speaker
-ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableSpeaker(true);
 ```
 
 ### Getting the speaker status
@@ -782,13 +886,13 @@ This API is used to get the speaker status. 0 indicates that the speaker is off,
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int GetSpeakerState()
+public abstract int GetSpeakerState();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerState();
+int micState = ITMGContext.GetInstance(this).GetAudioCtrl().GetSpeakerState();
 ```
 
 
@@ -800,17 +904,18 @@ This API is used to enable/disable a playback device.
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int EnableAudioPlayDevice(bool enable) 
+public abstract int EnableAudioPlayDevice(boolean isEnabled);
 ```
 
 | Parameter    | Type   | Description                                                                                                                    |
-| --------- | :--: | ------------------------------------------------------------ |
-| enable | bool | To disable the playback device, set this parameter to `false`; otherwise, set it to `true`. |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | To disable a playback device, set this parameter to `false`; otherwise, set it to `true`. |
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioPlayDevice(true);
+// Enable the playback device
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioPlayDevice(true);
 ```
 
 ### Getting the playback device status
@@ -820,13 +925,13 @@ This API is used to get the status of a playback device.
 #### API prototype
 
 ```
-ITMGAudioCtrl virtual bool IsAudioPlayDeviceEnabled()
+public abstract boolean IsAudioPlayDeviceEnabled();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->IsAudioPlayDeviceEnabled();
+bool IsAudioPlayDevice = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioPlayDeviceEnabled();
 ```
 
 ### Enabling or disabling audio downstreaming
@@ -836,17 +941,17 @@ This API is used to enable/disable audio downstreaming. If a playback device is 
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int EnableAudioRecv(bool enable)
+public abstract int EnableAudioRecv(boolean isEnabled);
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
-| --------- | :--: | ------------------------------------------------------------ |
-| enable | bool | To enable audio downstreaming, set this parameter to `true`; otherwise, set it to `false`. |
+| Parameter | Type | Description |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | To enable audio downstreaming, set this parameter to `true`; otherwise, set it to `false`. |
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioRecv(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioRecv(true);
 ```
 
 
@@ -858,13 +963,13 @@ This API is used to get the status of audio downstreaming.
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual bool IsAudioRecvEnabled() 
+public abstract boolean IsAudioRecvEnabled();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->IsAudioRecvEnabled();
+bool IsAudioRecv = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioRecvEnabled();
 ```
 
 ### Getting the real-time speaker volume
@@ -874,13 +979,13 @@ This API is used to get the real-time speaker volume. An int-type value will be 
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int GetSpeakerLevel()
+public abstract int GetSpeakerLevel();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerLevel();
+int SpeakLevel = ITMGContext.GetInstance(this).GetAudioCtrl().GetSpeakerLevel();
 ```
 
 ### Getting the real-time downstreaming audio levels of other members in room
@@ -890,17 +995,17 @@ This API is used to get the real-time audio downstreaming volume of other member
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int GetRecvStreamLevel(const char* openId)
+public abstract int GetRecvStreamLevel(String openId);
 ```
 
 | Parameter | Type | Description |
-| ------ | :----: | --------------------- |
-| openId | char* | `openId` of other members in the room |
+| ------ | :----: | -------------------- |
+| openId | string | `openId` of another member in the room |
 
 #### Sample code  
 
 ```
-iter->second.level = ITMGContextGetInstance()->GetAudioCtrl()->GetRecvStreamLevel(iter->second.openid.c_str());
+int Level = ITMGContext.GetInstance(this).GetAudioCtrl().GetRecvStreamLevel(openId);
 ```
 
 ### Dynamically setting the volume of a member of the room
@@ -910,29 +1015,46 @@ This API is used to set the volume of a member in the room. It takes effect only
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int SetSpeakerVolumeByOpenID(const char* openId, int vol) = 0;
+public abstract int SetSpeakerVolumeByOpenID(String openId, int volume);
 ```
 
 | Parameter | Type | Description |
 |----------|-------|-------|
-|openId       |const char*   | `OpenID` of the user whose volume level needs to be set |
-|vol  |int        | Percentage. Recommended value range: 0–200. Default value: `100`. |
+|openId       |String *   |OpenID needs to set volume|
+|volume  |int        |Percentage. It is recommended to set between [0-200], where 100 is by default||
 
+#### Sample code
 
+**Executed statements**
+
+```
+// Lower the volume of 123333 to 80%
+String strOpenID = "1233333";
+int nOpenVolume = Integer.valueOf(80);
+int nRet = ITMGContext.GetInstance(getActivity()).GetAudioCtrl().SetSpeakerVolumeByOpenID(strOpenID, nOpenVolume);
+if (nRet != 0)
+{
+  // Toast error occured
+}
+else
+{
+  // Toast set successfully
+}
+```
 
 ### Getting volume percentage
 
-This API is used to get the volume level set by `SetSpeakerVolumeByOpenID`.
+Call this API to get the volume set by SetSpeakerVolumeByOpenID
 
 #### API prototype
 
 ```
-ITMGAudioCtrl virtual int GetSpeakerVolumeByOpenID(const char* openId) = 0;
+public abstract int GetSpeakerVolumeByOpenID(String openId);
 ```
 
 | Parameter | Type | Description |
 |----------|-------|-------|
-|openId       |const char*| `OpenID` of the user whose volume level needs to be set |
+|openId       |String *   |OpenID needs to set volume|
 
 
 #### Returned values
@@ -946,18 +1068,17 @@ This API is used to set the speaker volume.
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int SetSpeakerVolume(int vol)
+public abstract int SetSpeakerVolume(int volume);
 ```
 
 | Parameter | Type | Description |
-| ------ | :--: | ------------------------------------------------------------ |
-| vol  | int  | Volume level. Value range: 0–200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
+| ------ | :--: | -------------------- |
+| volume | int  | Value range: 0–200. Default value: `100`. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
 
 #### Sample code  
 
 ```
-int vol = 100;
-ITMGContextGetInstance()->GetAudioCtrl()->SetSpeakerVolume(vol);
+int speVol = (int)(value * 100);ITMGContext.GetInstance(this).GetAudioCtrl().SetSpeakerVolume(volume);
 ```
 
 ### Getting the speaker volume
@@ -968,13 +1089,13 @@ This API is used to get the speaker volume. An int-type value will be returned t
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int GetSpeakerVolume()
+public abstract int GetSpeakerVolume();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerVolume();
+ITMGContext.GetInstance(this).GetAudioCtrl().GetSpeakerVolume();
 ```
 
 
@@ -989,17 +1110,17 @@ This API is used to enable in-ear monitoring. You need to call `EnableLoopBack+E
 #### API prototype  
 
 ```
-ITMGAudioCtrl virtual int EnableLoopBack(bool enable)
+public abstract int EnableLoopBack(boolean enable);
 ```
 
 | Parameter | Type | Description |
-| ------ | :--: | ------------ |
-| enable | bool | Specifies whether to enable |
+| ------ | :-----: | ------------ |
+| enable | boolean | Specifies whether to enable in-ear monitoring. |
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableLoopBack(true);
 ```
 
 ### Getting user's room audio type
@@ -1008,36 +1129,25 @@ This API is used to get a user's room audio type. The returned value is the room
 
 #### API prototype  
 
-```
-class ITMGRoom {
-public:
-	virtual ~ITMGRoom() {} ;
-	virtual int GetRoomType() = 0;
-
-};
-
+```java
+public abstract int GetRoomType();
 ```
 
 #### Sample code  
 
-```
-ITMGContext* context = ITMGContextGetInstance();
-ITMGContextGetInstance()->GetRoom()->GetRoomType();
+```java
+ITMGContext.GetInstance(this).GetRoom().GetRoomType();
 ```
 
 ### Getting the room ID
-This API is used to get the voice chat room ID and can be called only after a successful room entry.
+This API is used to get the voice chat room ID and can be called only after a successful room entry. A string will be returned.
 
 #### API prototype  
 
 ```
-ITMGRoom virtual int GetRoomID(char* pBuffer, int nLength) = 0;
+public abstract String GetRoomID();
 ```
 
-| Parameter | Type | Description |
-| ------ | :--: | ------------ |
-| pBuffer | char* | It is used to receive the returned `roomid`. |
-| nLength | int |  `pBuffer` length. Value range: 128–256. |
 
 
 ### Modifying user's room audio type
@@ -1046,28 +1156,19 @@ This API is used to modify a user's room audio type. For the result, please see 
 
 #### API prototype  
 
-```
-IITMGContext TMGRoom public int ChangeRoomType((ITMG_ROOM_TYPE roomType)
+```java
+public abstract int ChangeRoomType(int nRoomType);
 ```
 
-| Parameter | Type | Description |
-| -------- | :------------: | ----------------------------------------------------- |
-| roomType | ITMG_ROOM_TYPE | Room type to be switched to the target type. For room audio types, please see the `EnterRoom` API. |
+| Parameter    | Type   | Description                                                                                                                    |
+| --------- | :--: | ----------------------------------------------------- |
+| nRoomType | int | Target room type to be switched to. For room audio types, please see the `EnterRoom` API. |
 
 #### Sample code  
 
+```java
+ITMGContext.GetInstance(this).GetRoom().ChangeRoomType(nRoomType);
 ```
-ITMGContext* context = ITMGContextGetInstance();
-ITMGContextGetInstance()->GetRoom()->ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
-```
-
-
-
-#### Data details
-
-| Message | Data | Sample |
-| ------------------------------------- | :-------------------------------: | ---------------------------------------------- |
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | result; error_info; new_room_type | {"error_info":"","new_room_type":0,"result":0} |
 
 ### Callback for modifying the room type
 
@@ -1083,15 +1184,14 @@ After the room type is set, the event message `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_
 #### Sample code  
 
 ```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE == type)
-        {
-		// Process room type events
-	 }
-}
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE == type)        {// Process the room type events }}
 ```
 
+#### Data details
 
+| Message | Data | Sample |
+| ------------------------------------- | :------------------------------------------: | ------------------------------------------------------------ |
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | result;error_info;new_room_type;subEventType | {"error_info":"","new_room_type":0,"subEventType":0,"result":0} |
 
 ### The monitoring event of room call quality
 
@@ -1110,16 +1210,39 @@ This API is used to get the SDK version number for analysis.
 #### API prototype
 
 ```
-ITMGContext virtual const char* GetSDKVersion()
+public abstract String GetSDKVersion();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetSDKVersion();
+ITMGContext.GetInstance(this).GetSDKVersion();
 ```
 
+### Checking mic permission
 
+This API is used to return the mic permission status.
+
+#### Function prototype
+
+```
+public abstract ITMG_RECORD_PERMISSION  CheckMicPermission();
+```
+
+#### Parameter description
+
+| Parameter | Value | Description |
+| ----------------------------- | ---- | ---------------------------- |
+| ITMG_PERMISSION_GRANTED | 0 | Mic permission is granted. |
+| ITMG_PERMISSION_Denied | 1 | Mic is disabled. |
+| ITMG_PERMISSION_NotDetermined | 2 | No authorization box has been popped up to request the permission. |
+| ITMG_PERMISSION_ERROR | 3 | An error occurred while calling the API. |
+
+#### Sample code  
+
+```
+ITMGContext.GetInstance(this).CheckMicPermission();
+```
 
 ### Checking mic status
 
@@ -1127,7 +1250,7 @@ ITMGContextGetInstance()->GetSDKVersion();
 #### Function prototype
 
 ```
-ITMGContext virtual ITMG_CHECK_MIC_STATUS CheckMic() = 0;
+public abstract ITMG_CHECK_MIC_STATUS CheckMic();
 ```
 
 #### Returned value handling
@@ -1146,7 +1269,7 @@ This API is used to set the level of logs to be printed, and needs to be called 
 #### API prototype
 
 ```
-ITMGContext int SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
+public abstract int SetLogLevel(int levelWrite, int levelPrint);
 ```
 
 #### Parameter description
@@ -1169,51 +1292,30 @@ ITMGContext int SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->SetLogLevel(TMG_LOG_LEVEL_INFO,TMG_LOG_LEVEL_INFO);
+ITMGContext.GetInstance(this).SetLogLevel(TMG_LOG_LEVEL_INFO,TMG_LOG_LEVEL_INFO);
 ```
 
 
 
 ### Setting the log printing path
 
-This API is used to set the log printing path. The default path is as follows. It needs to be called before Init.
-
-| OS | Path |
-| ------- | ------------------------------------------------------------ |
-| Windows | %appdata%\Tencent\GME\ProcessName |
-| iOS | Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents |
-| Android | /sdcard/Android/data/xxx.xxx.xxx/files |
-| Mac | /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents |
+This API is used to set the log printing path, and needs to be called before initialization. The default path is /sdcard/Android/data/xxx.xxx.xxx/files.
 
 #### API prototype
 
 ```
-ITMGContext virtual int SetLogPath(const char* logDir) 
+public abstract int SetLogPath(String logDir);
 ```
 
 | Parameter | Type | Description |
 | ------ | :----: | ---- |
-| logDir | const char* | Path |
+| logDir | String | Path |
 
 #### Sample code  
 
 ```
-cosnt char* logDir = ""// Set a path by yourself
-
-ITMGContext* context = ITMGContextGetInstance();
-context->SetLogPath(logDir);
-
+ITMGContext.GetInstance(this).SetLogPath(path);
 ```
-
-### Getting the printed log path
-This API is used to get the log path. Its returned value is a string of `const char*` type.
-
-#### API prototype
-
-```
-ITMGContext virtual const char* GetLogPath() = 0; 
-```
-
 
 ### Getting the diagnostic messages
 
@@ -1222,14 +1324,13 @@ This API is used to get information on the quality of real-time audio/video call
 #### API prototype  
 
 ```
-ITMGRoom virtual const char* GetQualityTips()
+public abstract String GetQualityTips();
 ```
 
 #### Sample code  
 
 ```
-ITMGContextGetInstance()->GetRoom()->GetQualityTips();
-
+ITMGContext.GetInstance(this).GetRoom().GetQualityTips();
 ```
 ## Callback Messages
 

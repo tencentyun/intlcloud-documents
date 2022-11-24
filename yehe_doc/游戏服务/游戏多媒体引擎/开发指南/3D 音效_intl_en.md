@@ -1,6 +1,6 @@
-This document describes how to access and debug GME APIs for 3D sound effect.
+This document describes how to access and debug the GME APIs for 3D sound effect.
 
-## Use Cases
+## Overview
 
 In general voice chat for room entry, the player voice has no 3D sound effects, and players can only have simple interactions with each other. With the 3D sound effect, players can expose their direction and position information while speaking, and their voice can change in real time along with the distance. The 3D sound effect feature delivers players a more real and immersive communication and battle experience in battle royale games.
 
@@ -10,10 +10,10 @@ You can click to download the demo to try out the [3D sound effect](https://intl
 
 ## Prerequisites
 
-- **Activated the real-time voice service**: See [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
+- **Activated Voice Chat Service**: please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782)**.
 - **Accessed to GME SDK**: includes access of core APIs and Voice Chat APIs. For details, please see [Native SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/40858), [Unity SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/44544), [Unreal SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/44545).
 
-## Implementation Process
+## Directions
 
 ### Implementation flowchart
 
@@ -81,7 +81,7 @@ public abstract bool IsEnableSpatializer()
 
 The 3D sound effect attenuation range needs to be set. We recommend you set it to `100`.
 
-#### The relationship between distance and sound attenuation
+#### Relationship between distance and sound attenuation
 
 In the 3D sound effect, the sound will begin to attenuate to almost zero as the distance to the sound source exceeds a specified threshold (range/10).
 
@@ -90,7 +90,7 @@ In the 3D sound effect, the sound will begin to attenuate to almost zero as the 
 | 0 < N < range/10     | 1.0 (no attenuation) |
 | N ≥ range/10 | range/10/N         |
 
-![](https://main.qcloudimg.com/raw/987fb4e8ec7f39a94717f90584acceab.png)
+![](https://main.qcloudimg.com/raw/50e745c853ab0e3f9f3bbef9d9cfc401.jpg)
 
 #### Function prototype
 
@@ -179,21 +179,18 @@ Currently, the 3D sound effect feature will take effect for all users in the roo
 
 ```
 virtual int AddSpatializerBlacklist(const char* openId); 
-
 ```
 
 To remove the `openid` from the blocklist, you need to call the following API:
 
 ```
 virtual int RemoveSpatializerBlacklist(const char* openId); 
-
 ```
 
 To clear the blocklist, you need to call the following API:
 
 ```
 virtual int ClearSpatializerBlacklist(); 
-
 ```
 
 ## Troubleshooting
@@ -206,4 +203,7 @@ If the voice has no 3D sound effects after this feature is connected, you can tr
 4. Check whether the value of `UpdateAudioRecvRange` is too small.
 5. Check whether the `UpdateSelfPosition` API is called periodically.
 6. Troubleshoot the problem as instructed in [Error Codes](https://intl.cloud.tencent.com/document/product/607/33223).
+
+
+
 

@@ -1,4 +1,4 @@
-为方便 Windows 开发者调试和接入腾讯云游戏多媒体引擎客户端 API，本文为您介绍适用于 Windows 实时语音功能的开发接入技术文档。
+为方便 Android 开发者调试和接入腾讯云游戏多媒体引擎客户端 API，本文为您介绍适用于 Android 实时语音功能的开发接入技术文档。
 
 ## 使用 GME 重要事项
 
@@ -32,19 +32,15 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 -<dx-tag-link link="#UnInit" tag="接口：UnInit">反初始化 GME</dx-tag-link>
 </dx-steps>
 
-
-### C++ 类
+### 实时语音功能 Android 类
 
 | 类                  |        含义        |
 | ------------------- | :----------------: |
 | ITMGContext         |      核心接口      |
-| ITMGDelegate         |      回调相关      |
 | ITMGRoom            |    房间相关接口    |
-| ITMGRoomManager     |   [ 房间管理接口](https://intl.cloud.tencent.com/document/product/607/51115)    |
+| ITMGRoomManager     |    房间管理接口    |
 | ITMGAudioCtrl       |    音频相关接口    |
 | ITMGAudioEffectCtrl | 音效及伴奏相关接口 |
-| ITMGPTT | 语音消息、转文本相关接口|
-
 
 ## 核心接口
 
@@ -56,111 +52,140 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 | Resume |   系统恢复   |
 | Uninit | 反初始化 GME |
 
-### 引用头文件
 
-接入 GME 首先需要引入头文件 tmg_sdk.h，头文件类继承 ITMGDelegate 以进行消息的传递及回调。
 
-#### 示例代码  
+<dx-alert infotype="notice" title="">
+如果切换账号，请调用 UnInit 反初始化 SDK。Init 接口调用不会产生计费。
+</dx-alert>
 
-```
-#include "auth_buffer.h"
-#include "tmg_sdk.h"
-#include "AdvanceHeaders/tmg_sdk_adv.h"
-#include <vector>
-```
 
-### 回调
 
-#### 设置回调示例代码
 
-```
-//在初始化 SDK 时候
-m_pTmgContext = ITMGContextGetInstance();
-m_pTmgContext->SetTMGDelegate(this);
 
-//在析构函数中
-CTMGSDK_For_AudioDlg::~CTMGSDK_For_AudioDlg()
-{
-			ITMGContextGetInstance()->SetTMGDelegate(NULL);
-}
-
-```
-
-#### 消息传递
-
-接口类采用 Delegate 方法用于向应用程序发送回调通知，消息类型参考 ITMG_MAIN_EVENT_TYPE，data 在 Windows 平台下是 json 字符串格式， 具体 key-value 参见说明文档。
-
-```
-//头文件中声明
-virtual void OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data);
-//示例代码
-void CTMGSDK_For_AudioDlg::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* data)
-{
-			switch(eventType)
-			{
-			case ITMG_MAIN_EVENT_TYPE_XXXX_XXXX:
-				{
-					//对回调进行处理
-				}
-				break;
-			}
-}
-```
 
 ### 获取单例
-GME SDK 以单例的形式提供，所有调用都从 ITMGContext 开始，通过 ITMGDelegate 回调回传给应用，必须首先设置。
+
+在使用语音功能时，需要首先获取 ITMGContext 对象。
 
 #### 示例代码  
 
+```java
+import com.tencent.TMG.ITMGContext; 
+ITMGContext.getInstance(this);
 ```
-ITMGContext* m_pTmgContext;
-m_pTmgContext->Init(AppID, OpenID);
+
+### 注册回调
+
+接口类采用 Delegate 方法用于向应用程序发送回调通知。将回调函数注册给 SDK，用于接收回调的信息。
+
+#### 接口原型
+
+```java
+static public abstract class ITMGDelegate {
+    public void OnEvent(ITMG_MAIN_EVENT_TYPE type, Intent data){}
+}
+```
+
+在构造函数中重写这个回调函数，对回调的参数进行处理。
+
+| 参数 |               类型               | 含义                     |
+| ---- | :------------------------------: | ------------------------ |
+| type | ITMGContext.ITMG_MAIN_EVENT_TYPE | 回调的事件类型           |
+| data |         Intent 消息类型          | 回调的相关信息，事件数据 |
+
+
+
+#### 示例代码  
+
+```java
+private ITMGContext.ITMGDelegate itmgDelegate = null;
+itmgDelegate = new ITMGContext.ITMGDelegate() {
+    @Override
+    public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+        if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ENTER_ROOM == type)
+        {
+            //对事件返回的 Data 进行解析
+            int nErrCode = data.getIntExtra("result" , -1);
+            String strErrMsg = data.getStringExtra("error_info");
+				}
+		}
+}
+```
+
+将回调函数注册给 SDK，要在进房之前设置。
+
+#### 接口原型
+
+```java
+public abstract int SetTMGDelegate(ITMGDelegate delegate);
+```
+
+| 参数     |     类型     | 含义         |
+| -------- | :----------: | ------------ |
+| delegate | ITMGDelegate | SDK 回调函数 |
+
+#### 示例代码  
+
+```java
+ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 ```
 
 
 ### [初始化 SDK](id:Init)
 
-未初始化前，SDK 处于未初始化阶段，**需要通过接口 Init 初始化 SDK**，才可以使用实时语音服务、语音消息服务及转文本服务。调用 Init 接口的线程必须于其他接口在同一线程,建议都在主线程调用接口。
+未初始化前，SDK 处于未初始化阶段，**需要通过接口 Init 初始化 SDK**，才可以使用实时语音服务、语音消息服务及转文本服务，**启动后会收集个人信息**。调用 Init 接口的线程必须于其他接口在同一线程,建议都在主线程调用接口。
+
+<dx-alert infotype="alarm" title="注意">
+确保在用户阅读 APP 隐私政策并取得用户授权之后，按 APP 功能需要在合适时机调用正式初始化函数 Init 初始化 SDK。反之，如果用户不同意《隐私政策》授权，则不能调用正式初始化函数。
+</dx-alert>
 
 #### 接口原型
 
-```
-ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
+```java
+public abstract int Init(String sdkAppId, String openId);
 ```
 
 | 参数     |  类型  | 含义                                                         |
-| -------- | :---------: | ------------------------------------------------------------ |
-| sdkAppId | const char* | 来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0) |
-| openID   | const char* | openID 只支持 Int64 类型（转为 const char* 传入）。 规则由 App 开发者自行制定，App 内不重复即可。如需使用字符串作为 Openid 传入，可[通过工单](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)联系开发者。         |
+| -------- | :----: | ------------------------------------------------------------ |
+| sdkAppId | String |来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0) |
+| OpenId   | String |openID 只支持 Int64 类型（转为 const char* 传入）。 规则由 App 开发者自行制定，App 内不重复即可。如需使用字符串作为 Openid 传入，可 [通过工单](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) 联系开发者。         |
 
 #### 返回值
 
 | 返回值                          | 处理                                          |
 | ------------------------------- | --------------------------------------------- |
-| AV_OK = 0                       | 初始化 SDK 成功                               |
+| QAVError.OK= 0                  | 初始化 SDK 成功                               |
 | AV_ERR_SDK_NOT_FULL_UPDATE=7015 | 检查 SDK 文件是否完整，建议删除后重新导入 SDK |
 
 <dx-alert infotype="notice" title="关于7015错误提示">
-
 - 7015错误码是通过 md5 进行判断，在接入过程中若出现此错误，请根据提示检查 SDK 文件是否完整、SDK 文件版本是否一致。
 - 出现返回值 AV_ERR_SDK_NOT_FULL_UPDATE 时，此返回值**只有提示作用**，并不会造成初始化失败。
 - 由于第三方加固、Unity 打包机制等因素会影响库文件 md5，造成误判，所以**正式发布请在逻辑中忽略此错误**，并尽量不在 UI 中提示。
-  </dx-alert>
+</dx-alert>
+
 
 #### 示例代码 
 
-```
-#define SDKAPPID3RD "14000xxxxx"
-cosnt char* openId="10001";
-ITMGContext* context = ITMGContextGetInstance();
-context->Init(SDKAPPID3RD, openId);
+```java
+String sdkAppID = "14000xxxxx";
+String openID = "100";
+int ret = 0;
+//在用户同意APP隐私政策之后，按APP功能需要在合适时机再正式初始化SDK
+//ret = 0，表示用户同意APP隐私合规政策
+//ret = 1，表示用户不同意APP隐私合规政策
+//如果用户不授权隐私策略，则 ret 修改为非 0 
+if(ret != 0){
+    Log.e(TAG,"用户不同意APP隐私合规政策");
+}else{
+		ITMGContext.GetInstance(this).Init(sdkAppId, openId);
+}
 ```
 
-[](id:Poll)
-### 触发事件回调
+
+### [触发事件回调](id:Poll)
 
 通过在 update 里面周期的调用 Poll 可以触发事件回调。Poll 是 GME 的消息泵，GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。
-可参考 Demo 中的 EnginePollHelper.cpp 文件。
+可参考 [Demo](https://intl.cloud.tencent.com/document/product/607/18521) 中的 EnginePollHelper.java 文件。
 
 <dx-alert infotype="alarm" title="务必周期性调用 Poll 接口">
 务必周期性调用 Poll 接口且在主线程调用，以免接口回调异常。
@@ -168,26 +193,14 @@ context->Init(SDKAPPID3RD, openId);
 
 #### 接口原型
 
-```
-class ITMGContext {
-protected:
-    virtual ~ITMGContext() {}
-
-public:        
-    virtual void Poll()= 0;
-}
+```java
+public abstract int Poll();
 ```
 
 #### 示例代码
 
-```
-//头文件中的声明
-
-//代码实现
-void TMGTestScene::update(float delta)
-{
-    ITMGContextGetInstance()->Poll();
-}
+```java
+private Handler mhandler = new Handler();private Runnable mRunnable = new Runnable() {    @Override    public void run() {        if (s_pollEnabled) {            if (ITMGContext.GetInstance(null) != null)                ITMGContext.GetInstance(null).Poll();        }        mhandler.postDelayed(mRunnable, 33);    }};
 ```
 
 ### 系统暂停
@@ -196,8 +209,8 @@ void TMGTestScene::update(float delta)
 
 #### 接口原型
 
-```
-ITMGContext int Pause()
+```java
+public abstract int Pause();
 ```
 
 ### 系统恢复
@@ -206,19 +219,26 @@ ITMGContext int Pause()
 
 #### 接口原型
 
-```
-ITMGContext int Resume()
+```java
+public abstract int Resume();
 ```
 
-[](id:UnInit)
-### 反初始化 SDK
+### [反初始化 SDK](id:UnInit)
 
 反初始化 SDK，进入未初始化状态。**如果游戏业务侧账号与 openid 是绑定的，那切换游戏账号需要反初始化 GME，再用新的 openid 初始化**。
 
+
+<dx-alert infotype="notice" title="注意">
+终端用户撤销同意处理其个人信息的授权时，您可通过调用 Uninit 接口停止使用SDK功能并停止采集与关闭功能相应的用户数据。
+</dx-alert>
+
+
+
+
 #### 接口原型
 
-```
-ITMGContext int Uninit()
+```java
+public abstract int Uninit();
 ```
 
 ## 实时语音房间相关接口
@@ -235,6 +255,7 @@ ITMGContext int Uninit()
 | ExitRoom      |       退出房间       |
 | IsRoomEntered | 判断是否已经进入房间 |
 | SwitchRoom    |     快速切换房间     |
+|StartRoomSharing |跨房连麦|
 
 ### 本地鉴权计算
 
@@ -242,33 +263,30 @@ ITMGContext int Uninit()
 
 #### 接口原型
 
-```
-int  QAVSDK_AuthBuffer_GenAuthBuffer(unsigned int dwSdkAppID, const char* strRoomID, const char* strOpenID,
-	const char* strKey, unsigned char* strAuthBuffer, unsigned int bufferLength);
+```java
+AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String openId, String key)
 ```
 
 | 参数          | 类型  | 含义                                                         |
-| ------------- | :---: | ------------------------------------------------------------ |
-| dwSdkAppID    |  unsigned int  | 来自腾讯云控制台的 AppId 号码                                |
-| strRoomID     | const char* | 房间号，最大支持127字符                                      |
-| strOpenID     | const char* | 用户标识。与 Init 时候的 openID相同。                        |
-| strKey        | const char* | 来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥 |
-| strAuthBuffer | const char* | 返回的 authbuff                                              |
-| bufferLength  |  int  | 传入的 authbuff 长度，建议为 500                             |
+| ------ | :----: | ------------------------------------------------------------ |
+| appId  |  int   | 来自腾讯云控制台的 AppId 号码。                              |
+| roomId | string | 房间号，最大支持127字符。                                    |
+| openId | string | 用户标识。与 Init 时候的 OpenId相同。                        |
+| key    | string | 来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥。 |
+
+
 
 #### 示例代码  
 
-```
-unsigned int bufferLen = 512;
-unsigned char retAuthBuff[512] = {0};
-QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retAuthBuff,bufferLen);
+```java
+import com.tencent.av.sig.AuthBuffer;//头文件
+byte[] authBuffer = AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), strRoomID,openId, key);
 ```
 
 [](id:EnterRoom)
 ### 加入房间
 
 用生成的鉴权信息进房，加入房间默认不打开麦克风及扬声器。
-
 <dx-alert infotype="notice" title="注意">
 - 加入房间事件回调结果 result 为 0 代表进房成功，进房接口 EnterRoom 返回值为 0 不代表进房成功。
 - 房间的音频类型由第一个进房的人确定，此后房间里有成员修改房间类型，将对此房间所有成员生效。例如第一个进入房间的人使用的房间音频类型是流畅音质，第二个进房的是即使进房时候调用接口的音频类型参数是高清音质，进入房间之后也会变成流畅音质。需要有成员调用 ChangeRoomType 才会修改房间的音频类型。
@@ -276,25 +294,24 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retA
 
 #### 接口原型
 
-```
-ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)
+```java
+public abstract int EnterRoom(String roomID, int roomType, byte[] authBuffer);
 ```
 
-| 参数       |     类型     | 含义                                       |
-| ---------- | :------------: | ----------------------- |
-| roomID     |    const char*      | 房间号，最大支持127字符 |
-| roomType   | ITMG_ROOM_TYPE | 房间类型，游戏建议使用  ITMG_ROOM_TYPE_FLUENCY。房间音频类型请参考 [音质选择](https://intl.cloud.tencent.com/document/product/607/18522)。            |
-| authBuffer |    const char*      | 鉴权码                  |
-| buffLen    |      int       | 鉴权码长度              |
+| 参数       |  类型  | 含义                    |
+| ---------- | :----: | ----------------------- |
+| roomId     | String | 房间号，最大支持127字符 |
+| roomType   |  int   | 房间类型，建议填 ITMG_ROOM_TYPE_FLUENCY 。房间音频类型请参考 [音质选择](https://intl.cloud.tencent.com/document/product/607/18522)。             |
+| authBuffer | byte[] | 鉴权码                  |
+
 
 #### 示例代码  
 
-```
-ITMGContext* context = ITMGContextGetInstance();
-context->EnterRoom(roomID, ITMG_ROOM_TYPE_FLUENCY, (char*)retAuthBuff,bufferLen);
+```java
+ITMGContext.GetInstance(this).EnterRoom(roomId,roomType, authBuffer);    
 ```
 
-#### 加入房间事件回调
+#### 加入房间的事件回调
 
 加入房间完成后会发送信息 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM，在 OnEvent 函数中进行判断回调后处理。如果回调为成功，即此时进房成功，开始进行**计费**。
 
@@ -304,22 +321,49 @@ context->EnterRoom(roomID, ITMG_ROOM_TYPE_FLUENCY, (char*)retAuthBuff,bufferLen)
 [使用实时语音后，如果客户端掉线了，是否还会继续计费？](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
+#### 函数原型
+
+```java
+private ITMGContext.ITMGDelegate itmgDelegate = null;
+itmgDelegate= new ITMGContext.ITMGDelegate() {
+            @Override
+ 			public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+                }
+};
+```
+
+
+
 #### 示例代码  
 
-```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-					switch (eventType) {
-						case ITMG_MAIN_EVENT_TYPE_ENTER_ROOM:
-						{
-							ListMicDevices();
-							ListSpeakerDevices();
+回调处理相关参考代码，包括加入房间事件以及断网事件。
 
-							std::string strText = "EnterRoom complete: ret=";
-							strText += data;
-							m_EditMonitor.SetWindowText(MByteToWChar(strText).c_str());
-							}
-					}
-}
+```java
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ENTER_ROOM == type)
+        {
+           	//对事件返回的 Data 进行解析
+            int nErrCode = data.getIntExtra("result" , -1);
+            String strErrMsg = data.getStringExtra("error_info");
+
+            if (nErrCode == AVError.AV_OK)
+            {
+                //收到进房信令，进房成功，可以操作设备
+                ScrollView_ShowLog("EnterRoom success");
+                Log.i(TAG,"EnterRoom success!");
+            }
+            else
+            {
+                //进房失败，需分析返回的错误信息
+                ScrollView_ShowLog("EnterRoom fail :" + strErrMsg);
+                Log.i(TAG,"EnterRoom fail!");
+            }  
+        }
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT == type)
+        {
+			//waiting timeout, please check your network
+		}
+	}
 ```
 
 #### Data 详情
@@ -349,15 +393,14 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 #### 接口原型  
 
-```
-ITMGContext virtual int ExitRoom()
+```java
+public abstract int ExitRoom();
 ```
 
 #### 示例代码  
 
-```
-ITMGContext* context = ITMGContextGetInstance();
-context->ExitRoom();
+```java
+ITMGContext.GetInstance(this).ExitRoom();
 ```
 
 #### 退出房间事件回调
@@ -366,15 +409,12 @@ context->ExitRoom();
 
 #### 示例代码  
 
-```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-            case ITMG_MAIN_EVENT_TYPE_EXIT_ROOM:
-		{
-		//进行处理
-		break;
-		}
-	}
+```java
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_EXIT_ROOM == type)
+        {
+            //收到退房成功事件
+        }
 }
 ```
 #### Data详情
@@ -389,16 +429,14 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 #### 接口原型  
 
-```
-ITMGContext virtual bool IsRoomEntered()
+```java
+public abstract boolean IsRoomEntered();
 ```
 
 #### 示例代码  
 
-```
-ITMGContext* context = ITMGContextGetInstance();
-context->IsRoomEntered();
-
+```java
+ITMGContext.GetInstance(this).IsRoomEntered();
 ```
 
 ### 快速切换房间
@@ -408,17 +446,78 @@ context->IsRoomEntered();
 
 #### 接口原型
 
-```
-ITMGContext virtual int SwitchRoom(const char* targetRoomID, const char* authBuff, int buffLen);
+```java
+public abstract int SwitchRoom(String targetRoomID, byte[] authBuffer);
 ```
 
 #### 类型说明
 
 | 参数         | 类型   | 含义                           |
 | ------------ | ------ | ------------------------------ |
-| targetRoomID | const char* | 将要进入的房间号               |
-| authBuffer   | const char* | 用将要进入的房间号生成的新鉴权 |
-| buffLen   | int | 鉴权码长度  |
+| targetRoomID | String | 将要进入的房间号               |
+| authBuffer   | byte[] | 用将要进入的房间号生成的新鉴权 |
+
+#### 回调示例代码
+
+```java
+if(ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_SWITCH_ROOM == type) {    
+int result = data.getIntExtra("result", 1);    
+String errorInfo = data.getStringExtra("error_info");         
+if (result == 0) {              
+			Toast.makeText(getActivity(), "switch room success.", Toast.LENGTH_SHORT).show();     
+			} 
+else {              
+			Toast.makeText(getActivity(), "switch room failed.. error info=" + errorInfo, Toast.LENGTH_SHORT).show();         
+			}
+}
+```
+
+
+### 跨房连麦
+
+调用此接口进行跨房连麦，此接口在进房后调用。调用接口后，本端可以与目标房间的目标 OpenID 用户进行连麦交流。目标房间与本端房间类型相同才能成功。
+
+#### 场景示例
+a 用户在 A 房间中，b 用户在 B 房间中，a 用户可以通过跨房接口与 b 进行通话，A 房间中的用户 c 说话，B 房间的 b 与 d 无法听到；A 房间中的用户 c 只能听到 A 房间的声音以及 B 房间中 b 的声音，B 房间其他人说话 c 无法听到。
+
+#### 接口原型
+
+```java
+/// <summary> 开启房间共享，与另外的房间中的OpenID进行连麦</summary>
+public abstract int StartRoomSharing(String targetRoomID, String targetOpenID, byte[] authBuffer);
+/// <summary> 结束已经开启的房间共享</summary>
+public abstract int StopRoomSharing();
+```
+
+#### 类型说明
+
+| 参数         | 类型   | 含义                    |
+| ------------ | ------ | ----------------------- |
+| targetRoomID | String | 将要连麦的房间号        |
+| targetOpenID | String | 将要连麦的目标 OpenID   |
+| authBuffer   | byte[] | 保留标志位，只需填 NULL |
+
+#### 示例代码
+
+```java
+if (mSwtichRoomShareStart.isChecked())
+    {
+        String strRoomID = mEditRoomShareRoomID.getText().toString();
+        String strOpenID = mEditRoomShareOpenID.getText().toString();
+        int nRet = ITMGContext.GetInstance(getActivity()).GetRoom().StartRoomSharing(strRoomID, strOpenID, null);
+        if (nRet != 0)
+            {
+                Toast.makeText(getActivity(), String.format("StartRoomSharing failed nRet=" + nRet), Toast.LENGTH_SHORT).show();
+            }else
+            {
+                int nRet = ITMGContext.GetInstance(getActivity()).GetRoom().StopRoomSharing();
+                    if (nRet != 0)
+                        {
+                            Toast.makeText(getActivity(), String.format("StopRoomSharing failed nRet=" + nRet), Toast.LENGTH_SHORT).show();
+                        }
+                }
+}
+```
 
 ## 房间内状态维护
 
@@ -432,7 +531,7 @@ ITMGContext virtual int SwitchRoom(const char* targetRoomID, const char* authBuf
 | AddAudioBlackList                | 房间中禁言某成员 |
 | RemoveAudioBlackList             |     移除禁言     |
 
-### 成员进房、说话状态通知事件
+### 成员进房、说话状态通知
 
 
 此接口适用于获取房间中说话的人并在 UI 中展示，以及有人进入、退出语音房间的一个通知。
@@ -447,35 +546,41 @@ ITMGContext virtual int SwitchRoom(const char* targetRoomID, const char* authBuf
 | ITMG_EVENT_ID_USER_NO_AUDIO  |                     有成员停止发送音频包，返回此时房间内停止说话的 openid                     | 应用侧维护通话成员列表 |
 
 #### 示例代码
-```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
-	switch (eventType) {
-            case ITMG_MAIN_EVNET_TYPE_USER_UPDATE:
-		{
-		//进行处理
-		//开发者对参数进行解析，得到信息 eventID 及 user_list
-		    switch (eventID)
+
+```java
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
+	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVNET_TYPE_USER_UPDATE == type)
+        {
+		//更新成员状态
+		int nEventID = data.getIntExtra("event_id", 0);
+		String[] openIdList =data.getStringArrayExtra("user_list");
+		 switch (nEventID)
  		    {
- 		    case ITMG_EVENT_ID_USER_ENTER:
+					case ITMG_EVENT_ID_USER_ENTER:
   			    //有成员进入房间
   			    break;
- 		    case ITMG_EVENT_ID_USER_EXIT:
+					case ITMG_EVENT_ID_USER_EXIT:
   			    //有成员退出房间
-			    break;
-		    case ITMG_EVENT_ID_USER_HAS_AUDIO:
-			    //有成员发送音频包
-			    break;
-		    case ITMG_EVENT_ID_USER_NO_AUDIO:
-			    //有成员停止发送音频包
-			    break;
- 		    default:
-			    break;
-		    }
-		break;
+						break;
+					case ITMG_EVENT_ID_USER_HAS_AUDIO:
+						//有成员发送音频包
+						break;
+					case ITMG_EVENT_ID_USER_NO_AUDIO:
+						//有成员停止发送音频包
+						break;
+					default:
+						break;
+ 		    }
 		}
-	}
 }
 ```
+
+#### Data 详情
+
+| 消息                             |        Data         | 例子                          |
+| -------------------------------- | :-----------------: | ----------------------------- |
+| ITMG_MAIN_EVNET_TYPE_USER_UPDATE | event_id; user_list | {"event_id":0,"user_list":""} |
+
 
 ### 房间中禁言某成员
 
@@ -489,18 +594,18 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 #### 接口原型  
 
-```
-ITMGContext ITMGAudioCtrl int AddAudioBlackList(const char* openId)
+```java
+public abstract int AddAudioBlackList(String openId);
 ```
 
-| 参数   | 类型  | 含义               |
-| ------ | :---: | ------------------ |
-| openId | char* | 需添加黑名单的用户 openid |
+| 参数   |  类型  | 含义              |
+| ------ | :----: | ----------------- |
+| openId | String | 需添加黑名单的用户 openid |
 
 #### 示例代码  
 
-```
-ITMGContextGetInstance()->GetAudioCtrl()->AddAudioBlackList(openId);
+```java
+ITMGContext.GetInstance(this).GetAudioCtrl().AddAudioBlackList(openId);
 ```
 
 ### 移除禁言
@@ -509,18 +614,18 @@ ITMGContextGetInstance()->GetAudioCtrl()->AddAudioBlackList(openId);
 
 #### 接口原型  
 
-```
-ITMGContext ITMGAudioCtrl int RemoveAudioBlackList(const char* openId)
+```java
+public abstract int RemoveAudioBlackList(String openId);
 ```
 
 | 参数   | 类型  | 含义              |
-| ------ | :---: | ----------------- |
-| openId | char* | 需移除黑名单的 ID |
+| ------ | :----: | ----------------- |
+| openId | String | 需移除黑名单的用户 openid |
 
 #### 示例代码  
 
-```
-ITMGContextGetInstance()->GetAudioCtrl()->RemoveAudioBlackList(openId);
+```java
+ITMGContext.GetInstance(this).GetAudioCtrl().RemoveAudioBlackList(openId);
 ```
 
 
@@ -529,7 +634,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->RemoveAudioBlackList(openId);
 
 - 初始化 SDK 之后进房，在房间中，才可以调用实时音频语音相关接口。
 - 当用户界面单击打开/关闭麦克风/扬声器按钮时，建议采用 EnableMic 以及 EnableSpeaker 接口进行调用。
-- 当用户界面按住麦克风按钮时发言，放开按钮不发言，建议采用进房时候调用 EnableAudioCaptureDevice 一次，后续按住发言调用 EnableAudioSend 来实现。
+- 当用户进入实时语音房间，打开或者关闭采集设备，会伴随整个设备（采集及播放）重启，如果此时 App 正在播放背景音乐，那么背景音乐的播放也会被中断。利用控制上下行的方式来实现开关麦克风效果，不会中断播放设备。**具体调用方式为：在进房的时候调用 EnableAudioCaptureDevice(true) && EnableAudioPlayDevice(true) 一次，单击开关麦克风时只调用 EnableAudioSend/Recv 来控制音频流是否发送/接收**。
 
 
 | 接口                        |       接口含义       |
@@ -550,22 +655,23 @@ ITMGContextGetInstance()->GetAudioCtrl()->RemoveAudioBlackList(openId);
 ### 开启或关闭麦克风
 
 此接口用来开启关闭麦克风。加入房间默认不打开麦克风及扬声器。**EnableMic = EnableAudioCaptureDevice + EnableAudioSend**
+**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/document/product/607/31504) 进行调用。**
 
 #### 接口原型  
 
-```
-ITMGAudioCtrl virtual int EnableMic(bool bEnabled)
+```java
+public abstract int EnableMic(boolean isEnabled);
 ```
 
 | 参数     | 类型 | 含义                                                         |
-| -------- | :--: | ------------------------------------------------------------ |
-| bEnabled | bool | 如果需要打开麦克风，则传入的参数为 true，如果关闭麦克风，则参数为 false |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | 如果需要打开麦克风，则传入的参数为 true，如果关闭麦克风，则参数为 false |
 
 #### 示例代码  
 
 ```
 //打开麦克风
-ITMGContextGetInstance()->GetAudioCtrl()->EnableMic(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableMic(true);
 ```
 
 ### 麦克风状态获取
@@ -575,13 +681,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableMic(true);
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int GetMicState()
+public abstract int GetMicState();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetMicState();
+int micState = ITMGContext.GetInstance(this).GetAudioCtrl().GetMicState();
 ```
 
 ### 开启或关闭采集设备
@@ -594,18 +700,18 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetMicState();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int EnableAudioCaptureDevice(bool enable)
+public abstract int EnableAudioCaptureDevice(boolean isEnabled);
 ```
 
-| 参数      | 类型 | 含义                                                         |
-| --------- | :--: | ------------------------------------------------------------ |
-| enable | bool | 如果需要打开采集设备，则传入的参数为 true，如果关闭采集设备，则参数为 false |
+| 参数      |  类型   | 含义                                                         |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | 如果需要打开采集设备，则传入的参数为 true，如果关闭采集设备，则参数为 false |
 
 #### 示例代码
 
 ```
 //打开采集设备
-ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioCaptureDevice(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioCaptureDevice(true);
 ```
 
 ### 采集设备状态获取
@@ -615,13 +721,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioCaptureDevice(true);
 #### 接口原型
 
 ```
-ITMGContext virtual bool IsAudioCaptureDeviceEnabled()
+public abstract boolean IsAudioCaptureDeviceEnabled();
 ```
 
 #### 示例代码
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->IsAudioCaptureDeviceEnabled();
+bool IsAudioCaptureDevice = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioCaptureDeviceEnabled();
 ```
 
 ### 打开或关闭音频上行
@@ -631,17 +737,17 @@ ITMGContextGetInstance()->GetAudioCtrl()->IsAudioCaptureDeviceEnabled();
 #### 接口原型
 
 ```
-ITMGContext  virtual int EnableAudioSend(bool bEnable)
+public abstract int EnableAudioSend(boolean isEnabled);
 ```
 
-| 参数      | 类型 | 含义                                                         |
-| --------- | :--: | ------------------------------------------------------------ |
-| bEnable | bool | 如果需要打开音频上行，则传入的参数为 true，如果关闭音频上行，则参数为 false |
+| 参数      |  类型   | 含义                                                         |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | 如果需要打开音频上行，则传入的参数为 true，如果关闭音频上行，则参数为 false |
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioSend(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioSend(true);
 ```
 
 ### 音频上行状态获取
@@ -651,13 +757,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioSend(true);
 #### 接口原型  
 
 ```
-ITMGContext virtual bool IsAudioSendEnabled()
+public abstract boolean IsAudioSendEnabled();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->IsAudioSendEnabled();
+bool IsAudioSend = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioSendEnabled();
 ```
 
 ### 获取麦克风实时音量
@@ -669,13 +775,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->IsAudioSendEnabled();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int GetMicLevel()
+public abstract int GetMicLevel();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetMicLevel();
+int micLevel = ITMGContext.GetInstance(this).GetAudioCtrl().GetMicLevel();
 ```
 
 ### 获取音频上行实时音量
@@ -687,13 +793,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetMicLevel();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int GetSendStreamLevel()
+ITMGContext TMGAudioCtrl int GetSendStreamLevel()
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetSendStreamLevel();
+int Level = ITMGContext.GetInstance(this).GetAudioCtrl().GetSendStreamLevel();
 ```
 
 ### 设置麦克风软件音量
@@ -705,18 +811,17 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetSendStreamLevel();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int SetMicVolume(int vol)
+public abstract int SetMicVolume(int volume);
 ```
 
 | 参数   | 类型 | 含义                                                         |
 | ------ | :--: | ------------------------------------------------------------ |
-| vol  | int  | 取值范围为 0-200，数值为0的时候表示静音，当数值为100的时候表示音量不增不减，默认数值为100。 |
+| volume  | int  | 取值范围为 0-200，数值为0的时候表示静音，当数值为100的时候表示音量不增不减，默认数值为100。 |
 
 #### 示例代码  
 
 ```
-int micVol = (int)(value * 100);
-ITMGContextGetInstance()->GetAudioCtrl()->SetMicVolume(vol);
+ITMGContext.GetInstance(this).GetAudioCtrl().SetMicVolume(volume);
 ```
 
 ### 获取麦克风软件音量
@@ -728,13 +833,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->SetMicVolume(vol);
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int GetMicVolume()
+public abstract int GetMicVolume();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetMicVolume();
+ITMGContext.GetInstance(this).GetAudioCtrl().GetMicVolume();
 ```
 
 ## 实时语音播放相关接口
@@ -752,27 +857,26 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetMicVolume();
 | SetSpeakerVolume         |         设置扬声器音量         |
 | GetSpeakerVolume         |         获取扬声器音量         |
 
-
-[](id:EnableSpeaker)	
-### 开启或关闭扬声器
+### [开启或关闭扬声器](id:EnableSpeaker)
 
 此接口用于开启关闭扬声器。**EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv**
+**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/document/product/607/31504) 进行调用。**
 
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int EnableSpeaker(bool enable)
+public abstract int EnableSpeaker(boolean isEnabled);
 ```
 
 | 参数      | 类型 | 含义                                                         |
-| --------- | :--: | ------------------------------------------------------------ |
-| enable | bool | 如果需要关闭扬声器，则传入的参数为 false，如果打开扬声器，则参数为 true |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | 如果需要关闭扬声器，则传入的参数为 false，如果打开扬声器，则参数为 true |
 
 #### 示例代码  
 
 ```
 //打开扬声器
-ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableSpeaker(true);
 ```
 
 ### 扬声器状态获取
@@ -782,13 +886,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int GetSpeakerState()
+public abstract int GetSpeakerState();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerState();
+int micState = ITMGContext.GetInstance(this).GetAudioCtrl().GetSpeakerState();
 ```
 
 
@@ -800,17 +904,18 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerState();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int EnableAudioPlayDevice(bool enable) 
+public abstract int EnableAudioPlayDevice(boolean isEnabled);
 ```
 
 | 参数      | 类型 | 含义                                                         |
-| --------- | :--: | ------------------------------------------------------------ |
-| enable | bool | 如果需要关闭播放设备，则传入的参数为 false，如果打开播放设备，则参数为 true |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | 如果需要关闭播放设备，则传入的参数为 false，如果打开播放设备，则参数为 true |
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioPlayDevice(true);
+//打开播放设备
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioPlayDevice(true);
 ```
 
 ### 播放设备状态获取
@@ -820,13 +925,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioPlayDevice(true);
 #### 接口原型
 
 ```
-ITMGAudioCtrl virtual bool IsAudioPlayDeviceEnabled()
+public abstract boolean IsAudioPlayDeviceEnabled();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->IsAudioPlayDeviceEnabled();
+bool IsAudioPlayDevice = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioPlayDeviceEnabled();
 ```
 
 ### 打开或关闭音频下行
@@ -836,17 +941,17 @@ ITMGContextGetInstance()->GetAudioCtrl()->IsAudioPlayDeviceEnabled();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int EnableAudioRecv(bool enable)
+public abstract int EnableAudioRecv(boolean isEnabled);
 ```
 
-| 参数      | 类型 | 含义                                                         |
-| --------- | :--: | ------------------------------------------------------------ |
-| enable | bool | 如果需要打开音频下行，则传入的参数为 true，如果关闭音频下行，则参数为 false |
+| 参数      |  类型   | 含义                                                         |
+| --------- | :-----: | ------------------------------------------------------------ |
+| isEnabled | boolean | 如果需要打开音频下行，则传入的参数为 true，如果关闭音频下行，则参数为 false |
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioRecv(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableAudioRecv(true);
 ```
 
 
@@ -858,13 +963,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableAudioRecv(true);
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual bool IsAudioRecvEnabled() 
+public abstract boolean IsAudioRecvEnabled();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->IsAudioRecvEnabled();
+bool IsAudioRecv = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioRecvEnabled();
 ```
 
 ### 获取扬声器实时音量
@@ -874,13 +979,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->IsAudioRecvEnabled();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int GetSpeakerLevel()
+public abstract int GetSpeakerLevel();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerLevel();
+int SpeakLevel = ITMGContext.GetInstance(this).GetAudioCtrl().GetSpeakerLevel();
 ```
 
 ### 获取房间内其他成员下行实时音量
@@ -890,17 +995,17 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerLevel();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int GetRecvStreamLevel(const char* openId)
+public abstract int GetRecvStreamLevel(String openId);
 ```
 
-| 参数   |  类型  | 含义                  |
-| ------ | :----: | --------------------- |
-| openId | char* | 房间其他成员的openId |
+| 参数   |  类型  | 含义                 |
+| ------ | :----: | -------------------- |
+| openId | string | 房间其他成员的 openId |
 
 #### 示例代码  
 
 ```
-iter->second.level = ITMGContextGetInstance()->GetAudioCtrl()->GetRecvStreamLevel(iter->second.openid.c_str());
+int Level = ITMGContext.GetInstance(this).GetAudioCtrl().GetRecvStreamLevel(openId);
 ```
 
 ### 动态设置房间内某成员音量
@@ -910,29 +1015,46 @@ iter->second.level = ITMGContextGetInstance()->GetAudioCtrl()->GetRecvStreamLeve
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int SetSpeakerVolumeByOpenID(const char* openId, int vol) = 0;
+public abstract int SetSpeakerVolumeByOpenID(String openId, int volume);
 ```
 
 |参数   |类型   |含义   |
 |----------|-------|-------|
-|openId       |const char*   |需要调节音量大小的OpenID|
-|vol  |int        |百分比，建议[0-200]，其中100为默认值|
+|openId       |String *   |需要调节音量大小的OpenID|
+|volume  |int        |百分比，建议[0-200]，其中100为默认值|
 
+#### 示例代码
 
+**执行语句**
+
+```
+// 将123333的声音压低到现在声音的80%
+String strOpenID = "1233333";
+int nOpenVolume = Integer.valueOf(80);
+int nRet = ITMGContext.GetInstance(getActivity()).GetAudioCtrl().SetSpeakerVolumeByOpenID(strOpenID, nOpenVolume);
+if (nRet != 0)
+{
+  // Toast error occured
+}
+else
+{
+  // Toast set successfully
+}
+```
 
 ### 获取设置的声音百分比
 
-调用此接口获取 SetSpeakerVolumeByOpenID 设置的能量值
+调用此接口获取SetSpeakerVolumeByOpenID设置的能量值
 
 #### 接口原型
 
 ```
-ITMGAudioCtrl virtual int GetSpeakerVolumeByOpenID(const char* openId) = 0;
+public abstract int GetSpeakerVolumeByOpenID(String openId);
 ```
 
 |参数   |类型   |含义   |
 |----------|-------|-------|
-|openId       |const char*|需要调节音量大小的OpenID|
+|openId       |String *   |需要调节音量大小的OpenID|
 
 
 #### 返回值
@@ -946,18 +1068,17 @@ ITMGAudioCtrl virtual int GetSpeakerVolumeByOpenID(const char* openId) = 0;
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int SetSpeakerVolume(int vol)
+public abstract int SetSpeakerVolume(int volume);
 ```
 
-| 参数   | 类型 | 含义                                                         |
-| ------ | :--: | ------------------------------------------------------------ |
-| vol  | int  | 设置音量，范围0 - 200，当数值为0时，表示静音，当数值为100时，表示音量不增不减，默认数值为100。 |
+| 参数   | 类型 | 含义                 |
+| ------ | :--: | -------------------- |
+| volume | int  | 设置音量，范围0 - 200，当数值为0时，表示静音，当数值为100时，表示音量不增不减，默认数值为100。|
 
 #### 示例代码  
 
 ```
-int vol = 100;
-ITMGContextGetInstance()->GetAudioCtrl()->SetSpeakerVolume(vol);
+int speVol = (int)(value * 100);ITMGContext.GetInstance(this).GetAudioCtrl().SetSpeakerVolume(volume);
 ```
 
 ### 获取扬声器的音量
@@ -968,13 +1089,13 @@ Level 是实时音量，Volume 是扬声器的音量，最终声音音量 =  Lev
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int GetSpeakerVolume()
+public abstract int GetSpeakerVolume();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerVolume();
+ITMGContext.GetInstance(this).GetAudioCtrl().GetSpeakerVolume();
 ```
 
 
@@ -989,17 +1110,17 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerVolume();
 #### 接口原型  
 
 ```
-ITMGAudioCtrl virtual int EnableLoopBack(bool enable)
+public abstract int EnableLoopBack(boolean enable);
 ```
 
-| 参数   | 类型 | 含义         |
-| ------ | :--: | ------------ |
-| enable | bool | 设置是否启动 |
+| 参数   |  类型   | 含义         |
+| ------ | :-----: | ------------ |
+| enable | boolean | 设置是否启动 |
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
+ITMGContext.GetInstance(this).GetAudioCtrl().EnableLoopBack(true);
 ```
 
 ### 获取用户房间音频类型
@@ -1008,36 +1129,25 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
 
 #### 接口原型  
 
-```
-class ITMGRoom {
-public:
-	virtual ~ITMGRoom() {} ;
-	virtual int GetRoomType() = 0;
-
-};
-
+```java
+public abstract int GetRoomType();
 ```
 
 #### 示例代码  
 
-```
-ITMGContext* context = ITMGContextGetInstance();
-ITMGContextGetInstance()->GetRoom()->GetRoomType();
+```java
+ITMGContext.GetInstance(this).GetRoom().GetRoomType();
 ```
 
 ### 获取房间号
-此接口用于获取实时语音房间号，只能在进房成功之后使用。
+此接口用于获取实时语音房间号，只能在进房成功之后使用。返回值为 string 字符串。
 
 #### 接口原型  
 
 ```
-ITMGRoom virtual int GetRoomID(char* pBuffer, int nLength) = 0;
+public abstract String GetRoomID();
 ```
 
-| 参数   | 类型 | 含义         |
-| ------ | :--: | ------------ |
-| pBuffer | char* | 用于接收返回的 roomid |
-| nLength | int |  pBuffer 长度，在 128 - 256 之间 |
 
 
 ### 修改用户房间音频类型
@@ -1046,28 +1156,19 @@ ITMGRoom virtual int GetRoomID(char* pBuffer, int nLength) = 0;
 
 #### 接口原型  
 
-```
-IITMGContext TMGRoom public int ChangeRoomType((ITMG_ROOM_TYPE roomType)
+```java
+public abstract int ChangeRoomType(int nRoomType);
 ```
 
-| 参数     |      类型      | 含义                                                  |
-| -------- | :------------: | ----------------------------------------------------- |
-| roomType | ITMG_ROOM_TYPE | 房间切换成的目标类型，房间音频类型参考 EnterRoom 接口 |
+| 参数      | 类型 | 含义                                                  |
+| --------- | :--: | ----------------------------------------------------- |
+| nRoomType | int  | 房间切换成的目标类型，房间音频类型参考 EnterRoom 接口 |
 
 #### 示例代码  
 
+```java
+ITMGContext.GetInstance(this).GetRoom().ChangeRoomType(nRoomType);
 ```
-ITMGContext* context = ITMGContextGetInstance();
-ITMGContextGetInstance()->GetRoom()->ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
-```
-
-
-
-#### Data 详情
-
-| 消息                                  |               Data                | 例子                                           |
-| ------------------------------------- | :-------------------------------: | ---------------------------------------------- |
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | result; error_info; new_room_type | {"error_info":"","new_room_type":0,"result":0} |
 
 ### 房间类型修改回调
 
@@ -1083,15 +1184,14 @@ ITMGContextGetInstance()->GetRoom()->ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
 #### 示例代码  
 
 ```
-void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data) {
-	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE == type)
-        {
-		//对房间类型事件进行处理
-	 }
-}
+public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {	if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE == type)        {		//对房间类型事件进行处理	 }}
 ```
 
+#### Data 详情
 
+| 消息                                  |                     Data                     | 例子                                                         |
+| ------------------------------------- | :------------------------------------------: | ------------------------------------------------------------ |
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | result;error_info;new_room_type;subEventType | {"error_info":"","new_room_type":0,"subEventType":0,"result":0} |
 
 ### 房间通话质量监控事件
 
@@ -1110,16 +1210,39 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data) {
 #### 接口原型
 
 ```
-ITMGContext virtual const char* GetSDKVersion()
+public abstract String GetSDKVersion();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetSDKVersion();
+ITMGContext.GetInstance(this).GetSDKVersion();
 ```
 
+### 检查麦克风权限
 
+返回麦克风权限状态。
+
+#### 函数原型
+
+```
+public abstract ITMG_RECORD_PERMISSION  CheckMicPermission();
+```
+
+#### 参数含义
+
+| 参数                          | 数值 | 含义                         |
+| ----------------------------- | ---- | ---------------------------- |
+| ITMG_PERMISSION_GRANTED       | 0    | 麦克风已授权                 |
+| ITMG_PERMISSION_Denied        | 1    | 麦克风被禁用                 |
+| ITMG_PERMISSION_NotDetermined | 2    | 尚未弹出权限框向用户申请权限 |
+| ITMG_PERMISSION_ERROR         | 3    | 接口调用错误                 |
+
+#### 示例代码  
+
+```
+ITMGContext.GetInstance(this).CheckMicPermission();
+```
 
 ### 检查麦克风设备状态
 
@@ -1127,7 +1250,7 @@ ITMGContextGetInstance()->GetSDKVersion();
 #### 函数原型
 
 ```
-ITMGContext virtual ITMG_CHECK_MIC_STATUS CheckMic() = 0;
+public abstract ITMG_CHECK_MIC_STATUS CheckMic();
 ```
 
 #### 返回值处理
@@ -1146,7 +1269,7 @@ ITMGContext virtual ITMG_CHECK_MIC_STATUS CheckMic() = 0;
 #### 接口原型
 
 ```
-ITMGContext int SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
+public abstract int SetLogLevel(int levelWrite, int levelPrint);
 ```
 
 #### 参数含义
@@ -1169,51 +1292,30 @@ ITMG_LOG_LEVEL 说明如下：
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->SetLogLevel(TMG_LOG_LEVEL_INFO,TMG_LOG_LEVEL_INFO);
+ITMGContext.GetInstance(this).SetLogLevel(TMG_LOG_LEVEL_INFO,TMG_LOG_LEVEL_INFO);
 ```
 
 
 
 ### 设置打印日志路径
 
-用于设置打印日志路径。默认路径如下。需要在 Init 之前调用。
-
-| 平台    | 路径                                                         |
-| ------- | ------------------------------------------------------------ |
-| Windows | %appdata%\Tencent\GME\ProcessName                            |
-| iOS     | Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents   |
-| Android | /sdcard/Android/data/xxx.xxx.xxx/files                       |
-| Mac     | /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents |
+用于设置打印日志路径。默认路径为： /sdcard/Android/data/xxx.xxx.xxx/files。 需要在 Init 之前调用。
 
 #### 接口原型
 
 ```
-ITMGContext virtual int SetLogPath(const char* logDir) 
+public abstract int SetLogPath(String logDir);
 ```
 
 | 参数   |  类型  | 含义 |
 | ------ | :----: | ---- |
-| logDir | const char* | 路径 |
+| logDir | String | 路径 |
 
 #### 示例代码  
 
 ```
-cosnt char* logDir = ""//自行设置路径
-
-ITMGContext* context = ITMGContextGetInstance();
-context->SetLogPath(logDir);
-
+ITMGContext.GetInstance(this).SetLogPath(path);
 ```
-
-### 获取打印日志路径
-通过接口获取日志路径，返回值为 const char* 类型字符串。
-
-#### 接口原型
-
-```
-ITMGContext virtual const char* GetLogPath() = 0; 
-```
-
 
 ### 获取诊断信息
 
@@ -1222,14 +1324,13 @@ ITMGContext virtual const char* GetLogPath() = 0;
 #### 接口原型  
 
 ```
-ITMGRoom virtual const char* GetQualityTips()
+public abstract String GetQualityTips();
 ```
 
 #### 示例代码  
 
 ```
-ITMGContextGetInstance()->GetRoom()->GetQualityTips();
-
+ITMGContext.GetInstance(this).GetRoom().GetQualityTips();
 ```
 ## 回调消息
 

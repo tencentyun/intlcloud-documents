@@ -47,7 +47,6 @@ CheckDeviceMuteState();
 返回值为 0 代表关闭物理静音键，返回值为 1 代表打开物理静音键。
 
 
-
 ### 设置 Android 蓝牙设备适配
 
 <dx-alert infotype="explain" title="说明">
@@ -116,7 +115,7 @@ public int StopTrackingVolume();
 目前 GME SDK 只支持数字以字符串形式传入 SDK，如果需要 openid 支持以字符串形式传入，需要在调用 Init 接口之前调用一次以下接口：
 ```
 SetAdvanceParams("StringOpenID", "1");
-```
+``` 
 
 ### 修复打印日志大小
 

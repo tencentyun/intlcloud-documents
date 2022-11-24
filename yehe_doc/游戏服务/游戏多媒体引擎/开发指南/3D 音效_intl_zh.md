@@ -90,7 +90,7 @@ public abstract bool IsEnableSpatializer()
 | 0 < N < range/10     | 衰减系数：1.0 （音量无衰减） |
 | N ≥ range/10         | 衰减系数：range/10/N         |
 
-![](https://main.qcloudimg.com/raw/987fb4e8ec7f39a94717f90584acceab.png)
+![](https://main.qcloudimg.com/raw/50e745c853ab0e3f9f3bbef9d9cfc401.jpg)
 
 #### 函数原型
 
@@ -179,21 +179,18 @@ public abstract int UpdateOtherPosition(int position[3])
 
 ```
 virtual int AddSpatializerBlacklist(const char* openId); 
-
 ```
 
 如果需要将此 openid 从黑名单中移除，需要调用以下接口：
 
 ```
 virtual int RemoveSpatializerBlacklist(const char* openId); 
-
 ```
 
 如果需要清空黑名单，需要调用以下接口：
 
 ```
 virtual int ClearSpatializerBlacklist(); 
-
 ```
 
 ## 问题排查
@@ -206,4 +203,7 @@ virtual int ClearSpatializerBlacklist();
 4. UpdateAudioRecvRange 设置是否过小？
 5. 是否有周期性的调用 UpdateSelfPosition 接口？
 6. 通过 [错误码文档](https://intl.cloud.tencent.com/document/product/607/33223) 进行判断并解决。
+
+
+
 
