@@ -280,4 +280,4 @@
 
 ## 기술 교류&피드백
 Telegram Group에서 액세스 및 사용 관련 문제에 대해 엔지니어와 직접 소통할 수 있습니다. [링크를 클릭](https://t.me/+EPk6TMZEZMM5OGY1)하거나 QR 코드를 스캔하십시오.
-![](https://qcloudimg.tencent-cloud.cn/raw/acf42c4f1a472f9f77da9412a045995a.jpg)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/acf42c4f1a472f9f77da9412a045995a.jpg" style="zoom:50%;" />
