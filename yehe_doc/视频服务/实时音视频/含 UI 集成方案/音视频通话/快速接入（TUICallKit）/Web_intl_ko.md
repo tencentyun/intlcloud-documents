@@ -100,7 +100,8 @@ import { TUICallKit } from "./src/components/TUICallKit/Web";
 		TUICallKitServer.call({ userID, type }); // 일대일 통화
 		TUICallKitServer.groupCall({ userIDList, groupID, type }); // 그룹 통화
 	```
-	상기 단계를 완료하면 첫 번째 전화를 성공적으로 걸 수 있습니다. API 매개변수에 대한 자세한 내용은 [API 문서](https://www.tencentcloud.com/document/product/647/51015)를 참고하십시오.
+	
+상기 단계를 완료하면 첫 번째 전화를 성공적으로 걸 수 있습니다. API 매개변수에 대한 자세한 내용은 [API 문서](https://www.tencentcloud.com/document/product/647/51015)를 참고하십시오.
 
 3. 고급 API
 	이 컴포넌트는 현재 통화 상태를 알려주는 데 사용할 수 있는 `beforeCalling` 및 `afterCalling` 콜백을 제공합니다.
