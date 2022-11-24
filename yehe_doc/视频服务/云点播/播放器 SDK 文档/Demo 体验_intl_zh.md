@@ -95,7 +95,7 @@
            功能演示 · 示例代码
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://tcplayer.vcube.tencent.com/');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">立即体验</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://tcplayer.vcube.tencent.com/intl/index.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">立即体验</div>
         </div>
 				<div class="demo-item-link-web">
 				<a href="https://intl.cloud.tencent.com/document/product/266/33977">集成指引</a>
