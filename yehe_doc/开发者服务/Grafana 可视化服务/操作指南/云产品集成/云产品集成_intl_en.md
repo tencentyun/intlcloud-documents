@@ -10,7 +10,7 @@ You can perform the following operations on the Tencent Cloud service integratio
 
 ## Viewing Available Integrations
 On the **Tencent Cloud Service Integration** page, you can view and search for the available integrations of the current instance and install and connect them. After they are connected successfully, their monitoring data will be displayed on the Grafana dashboard.
-![](https://qcloudimg.tencent-cloud.cn/raw/97c03d65b8a1d30429c5c3336bbaaf6a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8ecdb34a3df8bc0c3f86108ea0a738a3.png)
 
 
 ### Prometheus
