@@ -7,4 +7,4 @@
 2. 在实例列表中，选择对应的 Grafana 实例。
 3. 在左侧菜单栏中单击**插件** 。
 4. 在已安装插件列表中，找到需要卸载的插件。并单击插件右侧的 **×** ，在弹框中单击**卸载** > **确认**，等待实例重建完成，即卸载成功。
-![](https://qcloudimg.tencent-cloud.cn/raw/a368777c4504df28e4f581e2b19c07eb.png)    
+![](https://qcloudimg.tencent-cloud.cn/raw/b608dcc6eb4f66ae95f79d1d0c614ffe.png)    
