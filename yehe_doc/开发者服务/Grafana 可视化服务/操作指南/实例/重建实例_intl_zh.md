@@ -7,7 +7,7 @@
 - Grafana ini 配置。
 - LDAP 配置。
 - 环境变量。
-![](https://qcloudimg.tencent-cloud.cn/raw/e0a5b465781c6bd3533fca849a319742.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2b16b07042b9bc1b0590d1c97c1fd315.png)
 
 ## 相关说明
 1. 实例重建耗时约为一分钟。
