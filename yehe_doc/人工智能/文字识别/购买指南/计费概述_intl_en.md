@@ -12,10 +12,10 @@ By default, all OCR services are billed on a pay-as-you-go basis.
          <th>Service</th>  
          <th>API</th>  
          <th>Billable API</th>
-				 <th> 0 < Calls ≤ 10,000 </th>
-				  <th> 10,000 < Calls ≤ 100,000 </th>
-					<th> 100,000 < Calls ≤ 1 Million </th>
-					<th> Calls > 1 Million </th>
+				 <th> 0 ≤ Calls < 10,000 </th>
+				  <th> 10,000 ≤ Calls < 100,000 </th>
+					<th> 100,000 ≤ Calls < 1 Million </th>
+					<th> Calls ≥ 1 Million </th>
 <tr>      
       <td rowspan="2">General character recognition</td>   
       <td>General print recognition</td>
