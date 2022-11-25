@@ -14,4 +14,4 @@
 1. 登录 [Grafana 可视化服务控制台](https://console.cloud.tencent.com/monitor/grafana/list)。
 2. 在实例列表中，选择需要被销毁/退还的 Grafana 实例，单击右侧的**更多** > **实例状态**  > **销毁/退还**。
 3. 由于销毁、退还操作属于高危操作，在弹出的“销毁/退还”窗口中，完成销毁/退还的三个操作步骤后，单击**确定**即可。
-![](https://qcloudimg.tencent-cloud.cn/raw/1edcf310396cb87ba4f2bb55c8d2bc6d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fa7ec3fc57f936b05c97d7e74b581bd0.png)
