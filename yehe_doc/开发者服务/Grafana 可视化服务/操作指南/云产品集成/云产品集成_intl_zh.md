@@ -10,7 +10,7 @@
 
 ## 查看可用的集成
 在“云产品集成”页面，您可以查看并搜索当前实例可用的集成，可对可用的集成进行安装、接入。成功接入后将会在 Grafana 面板展示集成的监控数据。
-![](https://qcloudimg.tencent-cloud.cn/raw/97c03d65b8a1d30429c5c3336bbaaf6a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8ecdb34a3df8bc0c3f86108ea0a738a3.png)
 
 
 ### Prometheus
