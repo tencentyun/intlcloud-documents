@@ -40,6 +40,7 @@ Use the following APIs for the sending and receiving of text and signaling (cust
 | [reject](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#ad9510bf8a333189fd1a0c1eafbde2266) | Rejects an invitation. |
 | [getSignalingInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#ab303f20f53de134e6f6ebe5f9f9bcad0) | Gets the signaling information. |
 | [addInvitedSignaling](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#ac50301e05e1672b771dc2c92fadff8de) | Adds invitation signaling (can be used for invitation signaling triggered by offline push messages for group invitations). |
+| [modifyInvitation](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#a5f3eba1a04cfd667b409e0b90478c895) | Modifies the invitation signaling. |
 
 ## Advanced Message APIs
 If you need to send/receive rich media messages (such as image, video, and file messages) and use advanced features such as recalling messages, marking messages as read, and querying message history, use the following set of advanced message APIs. Do not use simple message APIs and advanced message APIs at the same time.
@@ -52,7 +53,7 @@ If you need to send/receive rich media messages (such as image, video, and file 
 | [createTextAtMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a09a259ceb314754dd267533597138391) | Creates an @ text message. |
 | [createCustomMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a313b1ea616f082f535946c83edd2cc7f) | Creates a custom message. |
 | [createImageMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#adef5bc7a67b9a69f70f6417fd810d4b1) | Creates an image message. |
-| [createSoundMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7e661ce2b4eba1535bd04f3b6539b9dc) | Creates a voice message. |
+| [createSoundMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7e661ce2b4eba1535bd04f3b6539b9dc) | Creates an audio message. |
 | [createVideoMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ada17dbc78e9876a8f3a9fd24a73752b5) | Creates a video message. |
 | [createFileMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a39e4b6609321fd188a2e156a00bb3135) | Creates a file message. |
 | [createLocationMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a67cebe27192392080fc80a86c80a4321) | Creates a location message. |
@@ -83,13 +84,16 @@ If you need to send/receive rich media messages (such as image, video, and file 
 | [sendMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a66ec09cb444ddca989e9518d5118275d) | Sends message read receipts. |
 | [getMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a50e3bc679e196866057415a7c192abf6) | Gets message read receipts. |
 | [getGroupMessageReadMemberList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a93c48782f3e127e8a50aef1bf8829099) | Gets the list of group members who have read group messages. |
+| [setMessageExtensions](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a155f6219c2bbf7bc510beec9e905d5db) | Sets message extensions |
+| [getMessageExtensions](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a832534327c08326d045c44b02f7ddbb7) | Gets message extensions. |
+| [deleteMessageExtensions](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a25c02e90cd0940d34fe3bbfd803cc278) | Deletes message extensions |
 
 ## Group APIs
 Tencent Cloud IM SDK supports five preset group types, each of which pertains to different scenarios.
-- Work group (Work): users can join the group only after being invited by group members. This group type is the same as private group (Private) in earlier versions.
-- Public group (Public): Users can join a public group through requests, which need to be approved by the group owner or group admin.
+- Work group (Work): similar to a WeChat group. Users can join the group only after being invited by group members. This group type is the same as private group (Private) in earlier versions.
+- Public group (Public): Similar to a QQ group. Users can join the group through requests, which need to be approved by the group owner or group admin.
 - Meeting group (Meeting): Used together with [TRTC](https://intl.cloud.tencent.com/product/trtc) to support scenarios such as video conferencing and online education. Users can join and leave the group freely and view the message history before they join. Same as chat room (ChatRoom) in earlier versions.
-- Community: A user can join and leave a community freely. It is suitable for chat scenarios with a super large number of community members, such as knowledge sharing and game discussion. This feature is supported by the native SDK of the Enhanced edition on v5.8.1668 or later and the SDK for web on v2.17.0 or later. To use it, you need to [purchase the Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577), go to the **[console](https://console.cloud.tencent.com/im)**, select **Feature Configuration** > **Group configuration** > **Group feature configuration**, and enable **Community**.
+- Community: A user can join and leave a community freely. It is suitable for chat scenarios with a super large number of community members, such as knowledge sharing and game discussion. This feature is supported by the native SDK of the Enhanced edition on v5.8.1668 or later and the SDK for web on v2.17.0 or later. To use it, you need to [purchase the Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577), go to the **[console](https://console.cloud.tencent.com/im)**, select **Feature Configuration** > **Group configuration** > **Group feature configuration** > **Community**, and enable the community feature.
 - Audio-video group (AVChatRoom): An audio-video group allows users to join and leave freely and is suitable for scenarios such as live streaming and chat rooms with on-screen comments. There is no limit on the number of group members.
 
 | API | Description |
@@ -100,7 +104,7 @@ Tencent Cloud IM SDK supports five preset group types, each of which pertains to
 | [createGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af836e4912f668dddf6cc679233cfb0bb) | Creates a (simple) group. |
 | [createGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a121d53137a38d0fc0bc8a8e0a9c55647) | Creates an (advanced) group. The group information and the initial group members can be set during group creation. |
 | [joinGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564) | Joins a group. |
-| [quitGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a6d140dbeb44906de9cb69f69c2ce5919) | Quits a group. |
+| [quitGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a6d140dbeb44906de9cb69f69c2ce5919) | Leaves a group. |
 | [dismissGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd0221c0c842a6dcfa0acc657e50caeb) | Deletes a group. Only the group owner and group admin can delete a group. |
 | [getJoinedGroupList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a0199b7cacc6919938d8342474bd252da) | Gets the list of groups the current user has joined, excluding audio-video groups. |
 | [getGroupsInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ada614335043d548c11f121500e279154) | Pulls the profiles of groups. |
@@ -119,7 +123,7 @@ Tencent Cloud IM SDK supports five preset group types, each of which pertains to
 | [kickGroupMember](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6da6755c6e0c46e96cb02575074a5333) | Removes a member from a group. |
 | [setGroupMemberRole](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a34ebf60528d02626834f022b4ebabfa8) | Sets the role of a group member. |
 | [markGroupMemberList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#abdd5f157904dd50012c7a93f66f85dba) | Marks group members. |
-| [transferGroupOwner](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ac16d66c8e293c2ee95c7b673e5ad80c4) | Changes the group owner. |
+| [transferGroupOwner](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ac16d66c8e293c2ee95c7b673e5ad80c4) | Transfers the group ownership. |
 | [inviteUserToGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#afd219107653b877e446c149531d65e92) | Invites users to a group. |
 | [getGroupApplicationList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a240db7bdc023ad6fc63e9ee9b72714c4) | Gets the list of requests to join a group. |
 | [acceptGroupApplication](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad743008d30c909ef0be0f8aa91102e07) | Approves a request to join a group. |
@@ -204,4 +208,4 @@ By default, Tencent Cloud IM does not check your relationship with a user when r
 | [deleteFriendGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#ac9f06f447ee4452aa12e078b48023cee) | Deletes friend lists. |
 | [renameFriendGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a5345957f4d75d8e57ea3b4cff9adee13) | Modifies the name of a friend list. |
 | [addFriendsToFriendGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a6de9168d476ac14e21025ec5c26251df) | Adds friends to a friend list. |
-| [deleteFriendsFromFriendGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#ae367dfec88522e96d96c5ab942e50653) | Deletes friends from a friend list. |
+| [deleteFriendsFromFriendGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#ae367dfec88522e96d96c5ab942e50653) | Removes friends from a friend list. |

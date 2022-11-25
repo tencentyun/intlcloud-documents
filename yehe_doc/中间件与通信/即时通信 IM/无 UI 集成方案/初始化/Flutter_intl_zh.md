@@ -23,7 +23,7 @@ SDKAppID 是腾讯云 IM 服务用于区分客户帐号的唯一标识。我们�
 [](id:SDKConfig)
 ### 设置 LogLevelEnum
 
-初始化 SDK 前，您需要初始化一个 `LogLevelEnum`([Details](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/enum_log_level_enum/LogLevelEnum.html)) 对象。该对象用于对 SDK 进行日志级别设置。
+初始化 SDK 前，您需要初始化一个 `LogLevelEnum`([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Enum/LogLevelEnum.html)) 对象。该对象用于对 SDK 进行日志级别设置。
 
 #### 设置日志级别
 IM SDK 支持多种日志级别，如下表所示：
@@ -42,7 +42,7 @@ SDK 日志存储规则如下：
   
 
 从 4.7.1 版本开始，IM SDK 的日志开始采用微信团队的 xlog 模块进行输出。xlog 日志默认是压缩的，需要使用 Python 脚本进行解压。
- - 获取解压脚本：若使用 Python 2.7，则单击 [Decode Log 27](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/tools/xlog_decoder_python27.py) 获取解压脚本；若使用 Python 3.0，则单击 [Decode Log 30](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/tools/xlog_decoder_python30.py) 获取解压脚本。
+ - 获取解压脚本：若使用 Python 2.7，则单击 [Decode Log 27](https://imsdk-1252463788.cos.ap-guangenou.myqcloud.com/tools/xlog_decoder_python27.py) 获取解压脚本；若使用 Python 3.0，则单击 [Decode Log 30](https://imsdk-1252463788.cos.ap-guangenou.myqcloud.com/tools/xlog_decoder_python30.py) 获取解压脚本。
  - 在 Windows 或者 Mac 控制台输入如下命令即可对 log 文件进行解压，解压后的文件以 xlog.log 结尾，可以直接使用文本编辑器打开。
 ```
 python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
@@ -51,7 +51,7 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 
 ### 设置 SDK 事件监听器
 SDK 初始化后，会通过 `V2TimSDKListener` 抛出一些事件，例如连接状态、登录票据过期等。
-我们建议您在调用initSDK时传入 `V2TimSDKListener`([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimSDKListener.html)) 接口添加 SDK 事件监听器，在对应回调中做一些逻辑处理。
+我们建议您在调用initSDK时传入 `V2TimSDKListener`([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimSDKListener.html)) 接口添加 SDK 事件监听器，在对应回调中做一些逻辑处理。
 
 `V2TimSDKListener` 相关回调如下表所示：
 
@@ -70,36 +70,61 @@ SDK 初始化后，会通过 `V2TimSDKListener` 抛出一些事件，例如连�
 
 
 ### 调用初始化接口
-操作完上述步骤后，您可以调用 `initSDK`([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/initSDK.html)) 进行 SDK 初始化。
+操作完上述步骤后，您可以调用 `initSDK`([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/initSDK.html)) 进行 SDK 初始化。
 
 示例代码如下：
 
 ```dart
-// 1. 从即时通信 IM 控制台获取应用 SDKAppID。
-int sdkAppID = 0;
-// 2. 添加 V2TimSDKListener 的事件监听器，sdkListener 是 V2TimSDKListener 的实现类
-V2TimSDKListener sdkListener = V2TimSDKListener(
-      onConnectFailed: (code, error) {},
-      onConnectSuccess: () {},
-      onConnecting: () {},
-      onKickedOffline: () {},
-      onSelfInfoUpdated: (V2TimUserFullInfo info) {},
-      onUserSigExpired: () {},
-);
-
-// 3.初始化，成功之后可以注册事件。
-TencentImSDKPlugin.v2TIMManager.initSDK(
-      sdkAppID: sdkAppID,
-      loglevel: LogLevelEnum.V2TIM_LOG_ALL,
-      listener: sdkListener,
-);
+    // 1. 从即时通信 IM 控制台获取应用 SDKAppID。
+    int sdkAppID = 0;
+    // 2. 添加 V2TimSDKListener 的事件监听器，sdkListener 是 V2TimSDKListener 的实现类
+    V2TimSDKListener sdkListener = V2TimSDKListener(
+      onConnectFailed: (int code, String error) {
+        // 连接失败的回调函数
+        // code 错误码
+        // error 错误信息
+      },
+      onConnectSuccess: () {
+        // SDK 已经成功连接到腾讯云服务器
+      },
+      onConnecting: () {
+        // SDK 正在连接到腾讯云服务器
+      },
+      onKickedOffline: () {
+        // 当前用户被踢下线，此时可以 UI 提示用户，并再次调用 V2TIMManager 的 login() 函数重新登录。
+      },
+      onSelfInfoUpdated: (V2TimUserFullInfo info) {
+        // 登录用户的资料发生了更新
+        // info登录用户的资料
+      },
+      onUserSigExpired: () {
+        // 在线时票据过期：此时您需要生成新的 userSig 并再次调用 V2TIMManager 的 login() 函数重新登录。
+      },
+      onUserStatusChanged: (List<V2TimUserStatus> userStatusList) {
+        //用户状态变更通知
+        //userStatusList 用户状态变化的用户列表
+        //收到通知的情况：订阅过的用户发生了状态变更（包括在线状态和自定义状态），会触发该回调
+        //在 IM 控制台打开了好友状态通知开关，即使未主动订阅，当好友状态发生变更时，也会触发该回调
+        //同一个账号多设备登录，当其中一台设备修改了自定义状态，所有设备都会收到该回调
+      },
+    );
+    // 3.初始化SDK
+    V2TimValueCallback<bool> initSDKRes =
+        await TencentImSDKPlugin.v2TIMManager.initSDK(
+      sdkAppID: sdkAppID, // SDKAppID
+      loglevel: LogLevelEnum.V2TIM_LOG_ALL, // 日志登记等级
+      listener: sdkListener, // 事件监听器
+    );
+    if (initSDKRes.code == 0) {
+      //初始化成功
+    }
 
 ```
 ### 反初始化
 普通情况下，如果您的应用生命周期跟 IM SDK 生命周期一致，退出应用前可以不进行反初始化。
 但有些特殊场景，例如您只在进入特定界面后才初始化 IM SDK，退出界面后不再使用，可以对 IM SDK 进行反初始化。
 
-反初始化需要操作一个步骤：调用反初始化接口 `unInitSDK`([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/unInitSDK.html))
+反初始化需要操作一个步骤：调用反初始化接口 `unInitSDK`([Dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/unInitSDK.html))
 
 示例代码如下：
 
@@ -115,5 +140,4 @@ TencentImSDKPlugin.v2TIMManager.unInitSDK();
 
 ### 1. 在调用登录等其他接口时，发生错误，返回错误码是 6013 和错误描述是 "not initialized" 的信息。
 在使用 IM SDK 登录、消息、群组、会话、关系链和资料、信令的功能前，必须先进行初始化。
-
 

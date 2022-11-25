@@ -4,11 +4,11 @@
 * `V2TimMessage` can contain different sub-types to indicate different types of messages.
 
 ## Key API Description
-The `sendMessage` API ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) is one of core APIs for message sending. It supports sending messages of all types.
+The `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) API is the core API for sending a message. It supports sending all types of messages.
 
 > ? The advanced message sending API mentioned below refers to `sendMessage`.
 
-The API is as described below:
+The API is detailed as follows:
 ```dart
 Future<V2TimValueCallback<V2TimMessage>> sendMessage(
 {
@@ -27,7 +27,7 @@ Future<V2TimValueCallback<V2TimMessage>> sendMessage(
 )
 ```
 
-Parameter description:
+Parameters:
 <table>
    <tr>
       <th width="0px" style="text-align:center">Parameter</td>
@@ -118,7 +118,7 @@ Parameter description:
 >?If both `groupID` and `receiver` are set, targeted group messages are sent to `receiver`. For more information, see [Targeted Group Message](https://intl.cloud.tencent.com/document/product/1047/48028).
 
 
-## Sending a Text Message
+## Sending Text Messages
 Text messages include one-to-one messages and group messages, which are different in terms of API and parameters.
 
 The ordinary and advanced APIs can be used to send text messages. The latter supports more sending parameters (such as priority and offline push message).
@@ -130,25 +130,46 @@ The ordinary API is as described below, while the advanced API is `sendMessage` 
 #### Advanced API
 
 The advanced API can be called to send a one-to-one text message in two steps:
-1. Call `createTextMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
-2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+1. Call `createTextMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 ```dart
-// Create a text message
-V2TimValueCallback<V2TimMsgCreateInfoResult> createTextAtMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageManager().createTextAtMessage(
-    text: "test",
-    atUserList: [],
-  );
- if(createTextAtMessageRes.code == 0){
-    String id =  createTextAtMessageRes.data.id;
-   	
-   	// Send the text message
-    V2TimValueCallback<V2TimMessage> sendMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(id: id, receiver: "userID", groupID: "");
-    if(sendMessageRes.code == 0){
-      // The message sent successfully
+    // Create a text message
+    V2TimValueCallback<V2TimMsgCreateInfoResult> createTextMessageRes =
+        await TencentImSDKPlugin.v2TIMManager
+            .getMessageManager()
+            .createTextMessage(
+              text: "test", // Text message
+            );
+    if (createTextMessageRes.code == 0) {
+      // Text message created successfully
+      String? id = createTextMessageRes.data?.id;
+      // Send the text message
+      // During the call of `sendMessage`: If only `receiver` is entered, the message is sent to the specified recipient as a one-to-one message;
+      // if only `groupID` is entered, the message is sent as a group message;
+      // if `receiver` and `groupID` are entered, the message is sent to the specified member in the specified group and is displayed in the group chat and visible only to the specified recipient.
+      V2TimValueCallback<V2TimMessage> sendMessageRes =
+          await TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(
+              id: id!, // ID of the created message
+              receiver: "userID", // ID of the recipient
+              groupID: "groupID", // ID of the receiving group
+              priority: MessagePriorityEnum.V2TIM_PRIORITY_DEFAULT, // Message priority
+              onlineUserOnly:
+                  false, // Whether the message can be received only by online users. If this field is set to true, the message cannot be pulled in recipient historical message pulling. This field is often used to implement weak notification features such as "The other party is typing" or unimportant notifications in the group. This field is not supported by audio-video groups (AVChatRoom).
+              isExcludedFromUnreadCount: false, // Whether the sent message is included in the unread message count of the conversation
+              isExcludedFromLastMessage: false, // Whether the sent message is included in the `lastMessage` of the conversation
+              needReadReceipt:
+                  false, // Whether the message requires a read receipt (to use this feature, you need to purchase the Ultimate edition on v6.1 or later).
+              offlinePushInfo: OfflinePushInfo(), // Title and content for offline push
+              cloudCustomData: "", // Cloud message data. Extra data of the message that is stored in the cloud and can be accessed by the receiver.
+              localCustomData:
+                  "" // Local message data. Extra data of the message that is stored locally. It cannot be accessed by the receiver and will be lost after the application is uninstalled.
+              );
+      if (sendMessageRes.code == 0) {
+        // Sent successfully
+      }
     }
-  }
 ```
 
 
@@ -159,32 +180,53 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createTextAtMessageRes = await Tenc
 #### Advanced API
 
 The advanced API can be called to send a group text message in two steps:
-1. Call `createTextMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
-2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+1. Call `createTextMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createTextMessage.html)) to create a text message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 ```dart
-// Create a text message
-V2TimValueCallback<V2TimMsgCreateInfoResult> createTextAtMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageManager().createTextAtMessage(
-    text: "test",
-    atUserList: [],
-  );
- if(createTextAtMessageRes.code == 0){
-    String id =  createTextAtMessageRes.data.id;
-   	
-   	// Send the text message
-    V2TimValueCallback<V2TimMessage> sendMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(id: id, receiver: "", groupID: "groupID");
-    if(sendMessageRes.code == 0){
-      // The message sent successfully
+    // Create a text message
+    V2TimValueCallback<V2TimMsgCreateInfoResult> createTextMessageRes =
+        await TencentImSDKPlugin.v2TIMManager
+            .getMessageManager()
+            .createTextMessage(
+              text: "test", // Text message
+            );
+    if (createTextMessageRes.code == 0) {
+      // Text message created successfully
+      String? id = createTextMessageRes.data?.id;
+      // Send the text message
+      // During the call of `sendMessage`: If only `receiver` is entered, the message is sent to the specified recipient as a one-to-one message;
+      // if only `groupID` is entered, the message is sent as a group message;
+      // if `receiver` and `groupID` are entered, the message is sent to the specified member in the specified group and is displayed in the group chat and visible only to the specified recipient.
+      V2TimValueCallback<V2TimMessage> sendMessageRes =
+          await TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(
+              id: id!, // ID of the created message
+              receiver: "userID", // ID of the recipient
+              groupID: "groupID", // ID of the receiving group
+              priority: MessagePriorityEnum.V2TIM_PRIORITY_DEFAULT, // Message priority
+              onlineUserOnly:
+                  false, // Whether the message can be received only by online users. If this field is set to true, the message cannot be pulled in recipient historical message pulling. This field is often used to implement weak notification features such as "The other party is typing" or unimportant notifications in the group. This field is not supported by audio-video groups (AVChatRoom).
+              isExcludedFromUnreadCount: false, // Whether the sent message is included in the unread message count of the conversation
+              isExcludedFromLastMessage: false, // Whether the sent message is included in the `lastMessage` of the conversation
+              needReadReceipt:
+                  false, // Whether the message requires a read receipt (to use this feature, you need to purchase the Ultimate edition on v6.1 or later).
+              offlinePushInfo: OfflinePushInfo(), // Title and content for offline push
+              cloudCustomData: "", // Cloud message data. Extra data of the message that is stored in the cloud and can be accessed by the receiver.
+              localCustomData:
+                  "" // Local message data. Extra data of the message that is stored locally. It cannot be accessed by the receiver and will be lost after the application is uninstalled.
+              );
+      if (sendMessageRes.code == 0) {
+        // Sent successfully
+      }
     }
-  }
 ```
 
 
-## Sending a Custom Message
+## Sending Custom Messages
 
 Custom messages include one-to-one messages and group messages, which are different in terms of API and parameters. The ordinary and advanced APIs can be used to send custom messages.
-The advanced API is the `sendMessage` mentioned above ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)), which supports more sending parameters (such as priority and offline push message) than the ordinary API.
+The advanced API is `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) mentioned above, which supports more sending parameters (such as priority and offline push message) than the ordinary API.
 
 
 ### Custom one-to-one message
@@ -193,8 +235,8 @@ The advanced API is the `sendMessage` mentioned above ([Details](https://comm.qq
 #### Advanced API
 
 The advanced API can be called to send a custom one-to-one message in two steps:
-1. Call `createCustomMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
-2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+1. Call `createCustomMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 ```java
@@ -209,7 +251,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes = await Tenc
     // Send the custom message
     V2TimValueCallback<V2TimMessage> sendMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(id: id, receiver: "userID", groupID: "");
     if(sendMessageRes.code == 0){
-      // The message sent successfully
+      // Sent successfully
     }
   }
 ```
@@ -222,8 +264,8 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes = await Tenc
 #### Advanced API
 
 The advanced API can be called to send a custom group message in two steps:
-1. Call `createCustomMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
-2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+1. Call `createCustomMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/createCustomMessage.html)) to create a custom message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 
 Sample code:
 ```java
@@ -238,7 +280,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes = await Tenc
     // Send the custom message
     V2TimValueCallback<V2TimMessage> sendMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(id: id, receiver: "", groupID: "groupID");
     if(sendMessageRes.code == 0){
-      // The message sent successfully
+      // Sent successfully
     }
   }
 ```
@@ -246,18 +288,20 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes = await Tenc
 
 
 
-## Sending a Rich Media Message
+## Sending Rich Media Messages
 
 A rich media message can be sent only by using the advanced API in the following steps:
 
 1. Call `createXxxMessage` to create a rich media message object of a specified type. Here, `Xxx` indicates the specific message type.
-2. Call `sendMessage` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
+2. Call `sendMessage` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/sendMessage.html)) to send the message.
 3. Get the callback for message sending success or failure.
 
 ### Image message
 
 To create an image message, you need to get the local image path first.
 During message sending, the image is uploaded to the server, and the upload progress is called back. The message is sent after the image is uploaded successfully.
+
+If your project requires web support, the image sending mode is different from that on a mobile device. For details, see [the web compatibility description section](#web).
 
 Sample code:
 ```dart
@@ -271,13 +315,13 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createImageMessageRes = await Tence
         .getMessageManager()
         .sendMessage(id: id, receiver: "userID", groupID: "groupID");
     if (sendMessageRes.code == 0) {
-      // The message sent successfully
+      // Sent successfully
     }
   }
 ```
 
 
-### Audio message
+### Voice message
 
 To create an audio message, you need to get the local audio file path and audio duration first, the latter of which can be used for display on the receiver UI.
 During message sending, the audio is uploaded to the server, and the upload progress is called back. The message is sent after the audio is uploaded successfully.
@@ -296,7 +340,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createSoundMessageRes =
         .getMessageManager()
         .sendMessage(id: id, receiver: "userID", groupID: "groupID");
     if (sendMessageRes.code == 0) {
-      // The message sent successfully
+      // Sent successfully
     }
   }
 ```
@@ -306,6 +350,8 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createSoundMessageRes =
 
 To create a video message, you need to get the local video file path, video duration, and video thumbnail first, the latter two of which can be used for display on the receiver UI.
 During message sending, the video is uploaded to the server, and the upload progress is called back. The message is sent after the video is uploaded successfully.
+
+If your project requires web support, the video sending mode is different from that on a mobile device. For details, see [the web compatibility description section](#web).
 
 Sample code:
 ```dart
@@ -325,7 +371,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createVideoMessageRes =
         .getMessageManager()
         .sendMessage(id: id, receiver: "userID", groupID: "groupID");
     if (sendMessageRes.code == 0) {
-      // The message sent successfully
+      // Sent successfully
     }
   }
 ```
@@ -337,6 +383,8 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createVideoMessageRes =
 To create a file message, you need to get the local file path first.
 During message sending, the file is uploaded to the server, and the upload progress is called back. The message is sent after the file is uploaded successfully.
 
+If your project requires web support, the file sending mode is different from that on a mobile device. For details, see [the web compatibility description section](#web).
+
 Sample code:
 ```dart
 V2TimValueCallback<V2TimMsgCreateInfoResult> createFileMessageRes =
@@ -344,7 +392,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createFileMessageRes =
           .getMessageManager()
           .createFileMessage(
             filePath: "Absolute path of the local file",
-            fileName: "Filename",
+            fileName: "File name",
           );
   if (createFileMessageRes.code == 0) {
     String id = createFileMessageRes.data.id;
@@ -353,7 +401,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createFileMessageRes =
         .getMessageManager()
         .sendMessage(id: id, receiver: "userID", groupID: "groupID");
     if (sendMessageRes.code == 0) {
-      // The message sent successfully
+      // Sent successfully
     }
   }
 ```
@@ -381,7 +429,7 @@ Sample code:
         .getMessageManager()
         .sendMessage(id: id, receiver: "userID", groupID: "groupID");
     if (sendMessageRes.code == 0) {
-      // The message sent successfully
+      // Sent successfully
     }
   }
 ```
@@ -407,10 +455,121 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createFaceMessageRes =
         .getMessageManager()
         .sendMessage(id: id, receiver: "userID", groupID: "groupID");
     if (sendMessageRes.code == 0) {
-      // The message sent successfully
+      // Sent successfully
     }
   }
 ```
 
+## Support for the Flutter for Web[](id:web)
 
+IM SDK (tencent_im_sdk_plugin) 4.1.1+2 or later version provides full compatibility with web. The steps for sending a media or file message in the web SDK are different from those of the Android SDK and iOS SDK:
+
+Due to web characteristics, when you create a media or file message, the path cannot be directly passed in to the SDK. You need to get the DOM node for the input based on the element ID and pass in the input DOM after selecting the file.
+
+- For media selection, you are advised to use the [image_picker](https://pub.dev/packages/image_picker) package.
+- For file selection, you are advised to use the [file_picker](https://pub.dev/packages/file_picker) package.
+- If the value of `getElementById` in the sample code is different from the input ID that you see in the F12 console, the actual value prevails.
+
+### Sending an image
+```dart
+final ImagePicker _picker = ImagePicker();
+
+_sendImageFileOnWeb() async {
+  final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+  final imageContent = await pickedFile!.readAsBytes();
+  fileName = pickedFile.name;
+  tempFile = File(pickedFile.path);
+  fileContent = imageContent;
+
+  html.Node? inputElem;
+  inputElem = html.document
+      .getElementById("__image_picker_web-file-input")
+      ?.querySelector("input");
+  final convID = widget.conversationID;
+  final convType =
+  widget.conversationType == 1 ? ConvType.c2c : ConvType.group;
+  final createImageMessageRes = await TencentImSDKPlugin.v2TIMManager
+    .getMessageManager()
+    .createImageMessage(inputElement: inputElement);
+  if (createImageMessageRes.code == 0) {
+    String id = createImageMessageRes.data.id;
+    V2TimValueCallback<V2TimMessage> sendMessageRes = await TencentImSDKPlugin
+        .v2TIMManager
+        .getMessageManager()
+        .sendMessage(id: id, receiver: "userID", groupID: "groupID");
+    if (sendMessageRes.code == 0) {
+      // Sent successfully
+    }
+  }
+}
+```
+
+### Sending a video
+```dart
+final ImagePicker _picker = ImagePicker();
+
+_sendVideoFileOnWeb() async {
+  final pickedFile = await _picker.pickVideo(source: ImageSource.gallery);
+  final videoContent = await pickedFile!.readAsBytes();
+  fileName = pickedFile.name ?? "";
+  tempFile = File(pickedFile.path);
+  fileContent = videoContent;
+
+  if(fileName!.split(".")[fileName!.split(".").length - 1] != "mp4"){
+    Toast.showToast("The video message must be in mp4 format.", context);
+    return;
+  }
+
+  html.Node? inputElem;
+  inputElem = html.document
+      .getElementById("__image_picker_web-file-input")
+      ?.querySelector("input");
+  final convID = widget.conversationID;
+  final convType =
+  widget.conversationType == 1 ? ConvType.c2c : ConvType.group;
+  final createVideoMessageRes = await TencentImSDKPlugin.v2TIMManager
+    .getMessageManager()
+    .createVideoMessage(inputElement: inputElement, videoFilePath: "", type: "", duration: 0, snapshotPath: "");
+  if (createVideoMessageRes.code == 0) {
+    String id = createVideoMessageRes.data.id;
+    V2TimValueCallback<V2TimMessage> sendMessageRes = await TencentImSDKPlugin
+        .v2TIMManager
+        .getMessageManager()
+        .sendMessage(id: id, receiver: "userID", groupID: "groupID");
+    if (sendMessageRes.code == 0) {
+      // Sent successfully
+    }
+  }
+}
+```
+
+### Sending a file
+```dart
+_sendFileOnWeb(){
+  final convID = widget.conversationID;
+  final convType =
+      widget.conversationType == 1 ? ConvType.c2c : ConvType.group;
+  FilePickerResult? result = await FilePicker.platform.pickFiles();
+  if (result != null && result.files.isNotEmpty) {
+    html.Node? inputElem;
+    inputElem = html.document
+        .getElementById("__file_picker_web-file-input")
+        ?.querySelector("input");
+    fileName = result.files.single.name;
+    final createFileMessageRes = await TencentImSDKPlugin.v2TIMManager
+        .getMessageManager()
+        .createFileMessage(inputElement: inputElement, filePath: "", fileName: fileName);
+    if (createFileMessageRes.code == 0) {
+    String id = createFileMessageRes.data.id;
+    V2TimValueCallback<V2TimMessage> sendMessageRes = await TencentImSDKPlugin
+        .v2TIMManager
+        .getMessageManager()
+        .sendMessage(id: id, receiver: "userID", groupID: "groupID");
+    if (sendMessageRes.code == 0) {
+      // Sent successfully
+    }
+  }
+  }
+}
+```
 

@@ -10,15 +10,15 @@ Before integrating the TUIOfflinePush component, [register your application on t
 
 >!
 >- If you want to integrate the TUIOfflinePush component as easily as possible, you need to log in and log out using the login and logout APIs provided by [TUILogin](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUICore/tuicore/src/main/java/com/tencent/qcloud/tuicore/TUILogin.java) of the TUICore component, and the TUIOfflinePush component automatically senses the login and logout events. If you don't want to use the APIs provided by TUILogin, you need to manually call the `registerPush` and `unRegisterPush` APIs provided by [TUIOfflinePushManager](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUIOfflinePush/tuiofflinepush/src/main/java/com/tencent/qcloud/tim/tuiofflinepush/TUIOfflinePushManager.java) after login and logout respectively.
->- This plugin is supported by the following vendors: Mi, Huawei, OPPO, vivo, Meizu, and Google.
+>- This plugin is supported by the following vendors: Mi, Huawei, Honor, OPPO, vivo, Meizu, and Google.
 
 ### Step 1. Integrate the TUIOfflinePush component
 ```
 api project(':tuiofflinepush')
 ```
 
-- **Adaptation to vivo**
-According to vivo's vendor integration guide, you need to add the `APPID` and `APPKEY` to the list file; otherwise, a compilation problem will occur.
+-  **vivo and Honor**
+According to vendor integration guides of vivo and Honor, you need to add the `APPID` and `APPKEY` to the list file; otherwise, a compilation problem will occur.
 <dx-tabs>
 ::: Method 1
 <table> 
@@ -31,6 +31,7 @@ android {
         manifestPlaceholders = [
                 "VIVO_APPKEY" : "`APPKEY` of the certificate assigned to your application",
                 "VIVO_APPID" : "`APPID` of the certificate assigned to your application"
+                "HONOR_APPID" : "`APPID` of the certificate assigned to your application"
         ]
     }
 }
@@ -42,6 +43,7 @@ android {
 <table> 
 <tr> 
 ```
+// vivo start
 <receiver android:name="com.tencent.qcloud.tim.demo.thirdpush.VIVOPushMessageReceiverImpl">
     <intent-filter>
         <!-- Receive push message -->
@@ -55,6 +57,21 @@ android {
 <meta-data tools:replace="android:value"
     android:name="com.vivo.push.app_id"
     android:value="`APPID` of the certificate assigned to your application" />
+// vivo end
+
+// Honor start
+<service
+    android:name="com.tencent.qcloud.tim.tuiofflinepush.oempush.MyHonorMessageService"
+    android:exported="false">
+    <intent-filter>
+        <action android:name="com.hihonor.push.action.MESSAGING_EVENT" />
+    </intent-filter>
+ </service>
+				
+<meta-data tools:replace="android:value"
+    android:name="com.hihonor.push.app_id"
+    android:value="`APPID` of the certificate assigned to your application" />
+// Honor end
 ```
 </tr> 
 </table>
@@ -62,7 +79,7 @@ android {
 </dx-tabs>
 
 -  **Adaptation to Huawei and Google FCM**
-For Huawei and Google FCM, you need to integrate the corresponding plugin and json configuration files by the vendor's methods.
+For Huawei and Google FCM, you need to integrate the corresponding plugin and JSON configuration files by the vendor's methods.
 
  1. Download the configuration file and place it under the root directory of the project.
  <dx-tabs>
@@ -95,9 +112,11 @@ dependencies {
     classpath 'com.google.gms:google-services:4.2.0'
     classpath 'com.huawei.agconnect:agcp:1.4.1.300'
 }
+
 ```
 
 3. Add the following configuration in the app-level `build.gradle` file.
+
 ```
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.huawei.agconnect'
@@ -110,6 +129,7 @@ After a push certificate is added successfully as instructed, the IM console wil
 ![](https://qcloudimg.tencent-cloud.cn/raw/772536e8a3f474572f5b85bfb2597fe1.png)
 
 **Parameters to be filled in:**
+
 ```
    public class PrivateConstants {
    /****** Mi offline push parameters start ******/
@@ -120,7 +140,9 @@ After a push certificate is added successfully as instructed, the IM console wil
    public static final String XM_PUSH_APPKEY = "`APPKEY` of the certificate assigned to your application";
    /****** Mi offline push parameters end ******/
    }
+
 ```
+ 
  After the above steps are performed, offline push notifications can be received.
 
 ### Step 3. Set offline push parameters when sending messages
@@ -139,13 +161,16 @@ SDK v6.1.2155 or a later version supports customizing alert tones on devices of 
 ### How do I troubleshoot if I cannot receive offline push messages?
 #### 1. OPPO devices
 This generally occurs for the following reasons:
-- As required by OPPO, `ChannelID` must be configured for OPPO Android 8.0 or later; otherwise, push messages cannot be displayed. For configuration directions, see [setAndroidOPPOChannelID](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a32d340e95395bb64cc3e8f62321aafe1).
+- As required by OPPO, `ChannelID` must be configured for OPPO Android 8.0 or later; otherwise, push messages cannot be displayed. For configuration directions, see [setAndroidOPPOChannelID](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a32d340e95395bb64cc3e8f62321aafe1).
 - The notification bar display feature is disabled by default for applications installed on the OPPO device. If this is the case, check the switch status.
 
-#### 2. Sending custom messages
-The offline push for custom messages is different from that for ordinary messages. As we cannot parse the content of custom messages and determine the push content, custom messages are not pushed offline by default. If you need offline push for custom messages, set the [desc](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) field in [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) when you call [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe), and the `desc` information will be displayed by default in the push message.
+#### 2. Google FCM
+If push messages cannot be received, check whether the certificates are successfully uploaded to the IM console by referring to "[IM console configuration](https://intl.cloud.tencent.com/document/product/1047/39156) - Google FCM".
 
-#### 3. Notification bar settings of the device
+#### 3. Sending custom messages
+The offline push for custom messages is different from that for ordinary messages. As we cannot parse the content of custom messages, the push content cannot be determined. Therefore, by default, custom messages are not pushed offline. If you need offline push for custom messages, you need to set the [desc](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) field in [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) during [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe), and the `desc` information will be displayed by default during push.
+
+#### 4. Notification bar settings of the device
 The offline push message can be intuitively displayed in the notification bar, so, just as other notifications, it is subject to the notification settings of the device. Take a Huawei device as an example.
 
 - "Settings - Notifications - Notifications (Lock Screen) - Hide or Do not Disturb" will affect the display of offline push notifications when the screen is locked.
@@ -153,7 +178,7 @@ The offline push message can be intuitively displayed in the notification bar, s
 - "Settings - Notifications - Application Notifications - Allow Notifications" will directly affect the display of offline push notifications.
 - "Settings - Notifications - Application Notifications - Notification Sound" and "Settings - Notifications - Application Notifications - Notification Mute" will affect the offline push notification sound.
 
-#### 4. The failure still exists after integration as instructed
+#### 5. The failure still exists after integration as instructed
 - First, test whether messages can be properly pushed offline by using the [offline test tool](https://console.cloud.tencent.com/im/tool-push-check) in the IM console.
 If offline push does not work properly, and the device status is exceptional, check the parameters in the IM console and then check the code initialization and registration logic, including the vendor push service registration and IM offline push configuration.
 If offline push does not work properly but the device status is normal, check whether the ChannelID is correct or whether the backend service is working properly.
@@ -173,24 +198,22 @@ Page redirection is implemented as follows: The backend delivers the redirection
 1. All vendors in China have adopted message classification mechanisms, and different push policies are assigned for different types of messages. To make the push timely and reliable, you need to set the push message type of your app as the system message or important message with a high priority based on the vendor's rules. Otherwise, offline push messages are affected by the vendor's push message classification and may vary from your expectations.
 2. In addition, some vendors set limits on the daily volumes of app push messages. You can check such limits in the vendor's console.
 If offline push messages are not pushed timely or cannot be received, consider the following:
-- Huawei: Push messages are classified into service & communication messages and news & marketing messages with different push effects and policies. In addition, message classification is associated with the self-help message classification permission.
-  - If there is no self-help message classification permission, the vendor will perform secondary intelligent message classification on push messages.
-  - If you have applied for the self-help message classification permission, push messages will be classified based on the custom classification and then pushed.
+   - Huawei: Push messages are classified into service & communication messages and news & marketing messages with different push effects and policies. In addition, message classification is associated with the self-help message classification permission.
+     - If there is no self-help message classification permission, the vendor will perform secondary intelligent message classification on push messages.
+     - If you have applied for the self-help message classification permission, push messages will be classified based on the custom classification and then pushed.
 For more information, see [Message Classification Criteria](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835).
-- vivo: Push messages are classified into system messages and operational messages with different push effects and policies. The system messages are further subject to the vendor's intelligent classification for correction. A message that cannot be intelligently identified as a system message will be automatically corrected as an operational message. If the judgment is incorrect, you can give a feedback by email. In addition, the total number of push messages is subject to a daily limit determined based on the app subscription statistics by the vendor. 
+   - vivo: Push messages are classified into system messages and operational messages with different push effects and policies. The system messages are further subject to the vendor's intelligent classification for correction. A message that cannot be intelligently identified as a system message will be automatically corrected as an operational message. If the judgment is incorrect, you can give a feedback by email. In addition, the total number of push messages is subject to a daily limit determined based on the app subscription statistics by the vendor. 
 See [vendor description 1](https://dev.vivo.com.cn/documentCenter/doc/359) or [vendor description 2](https://dev.vivo.com.cn/documentCenter/doc/156) for details.
-- OPPO: Push messages are classified into private messages and public messages with different push effects and policies. Private messages are those that a user pays certain attention to and wants to receive in time. The private message channel permission needs to be applied for via email. The public message channel is subject to a number limit.
+   - OPPO: Push messages are classified into private messages and public messages with different push effects and policies. Private messages are those that a user pays certain attention to and wants to receive in time. The private message channel permission needs to be applied for via email. The public message channel is subject to a number limit.
 See [vendor description 1](https://open.oppomobile.com/wiki/doc#id=11227) or [vendor description 2](https://open.oppomobile.com/wiki/doc#id=11210) for details.
-- Mi: Push messages are classified into important messages and general messages with different push effects and policies. In particular, only instant messages, reminders of attracted events, agenda reminders, order status change, financial reminders, personal status change, resource changes, and device reminders fall into the important message category. The important message channel can be applied for in the vendor's console. General push messages are subject to a number limit.
+   - Mi: Push messages are classified into important messages and general messages with different push effects and policies. In particular, only instant messages, reminders of attracted events, agenda reminders, order status change, financial reminders, personal status change, resource changes, and device reminders fall into the important message category. The important message channel can be applied for in the vendor's console. General push messages are subject to a number limit.
 See [vendor description 1](https://dev.mi.com/console/doc/detail?pId=2422) or [vendor description 2](https://dev.mi.com/console/doc/detail?pId=2086) for details.
-- Meizu: Push messages are subject to a number limit.
+   - Meizu: Push messages are subject to a number limit.
 See [vendor description](http://open.res.flyme.cn/fileserver/upload/file/202201/85079f02ac0841da859c1da0ef351970.pdf) for details.
-- FCM: Upstream message push is subject to a frequency limit.
-See [vendor description](https://firebase.google.com/docs/cloud-messaging/concept-options?hl=zh-cn#upstream_throttling) for details.
+   - FCM: Upstream message push is subject to a frequency limit.
+See [vendor description](https://firebase.google.com/docs/cloud-messaging/concept-options?hl=en#upstream_throttling) for details.
 
 
-## Exchange and Feedback
-If you have any questions or feedback, welcome to join our QQ group.
-<img src="https://sdk-im-1252463788.cos.ap-hongkong.myqcloud.com/tools/resource/officialwebsite/pictures/doc_tuikit_qq_group.jpg" style="zoom:50%;"/>
+
 
 ```
