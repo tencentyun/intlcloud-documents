@@ -9,13 +9,13 @@ After you authorize your Grafana instance with a service role, it can access cor
 ## Directions
 
 Click the **service role editing** icon in the top-right corner of the **Tencent Cloud Service Integration** page to configure a service role for the current instance.
-![](https://qcloudimg.tencent-cloud.cn/raw/982b1bb97a7f5828c7f0f893053e9e51.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6db484aa599d544337be516691776007.png)
 
 ### Selecting service role
 1. Click the **Service Role** drop-down list, and eligible service roles will be automatically loaded.
 2. Select a preconfigured or self-created service role. Different Tencent Cloud services have different requirements for service role permissions, and you can create service roles as needed.
 3. Click **Save**, and the instance will be rebooted.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/18e64f18a68c79eba2da09770182c63b.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/743cd3716f41ebed9ee89911627b40ad.png)
 
 ### Creating service role
 For demonstration purposes, this section uses the preconfigured `ReadOnlyAccess` policy as an example. You can view the policies required by Tencent Cloud services at the end of this document and configure read-only access as needed.
@@ -23,7 +23,7 @@ For demonstration purposes, this section uses the preconfigured `ReadOnlyAccess`
 2. Click **Create Role** in the top-right corner and select **Tencent Cloud Product Service** in the pop-up window.
 3. In the **Enter role entity info** step, select **Cloud Virtual Machine (CVM)** and click **Next**.
 4. In the **Configure role policy** step, search for and select **ReadOnlyAccess** and click **Next**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/4b00c3c0d4cfb0685c29b8260ab6bd9a.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/149a16795b761a113008410c18317588.png)
 5. Preview the custom role, name it, and click **Complete**.
 
 ### Policies required by Tencent Cloud services
