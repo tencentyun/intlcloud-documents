@@ -9,13 +9,13 @@
 ## 操作步骤
 
 您可以单击云产品集成页面右上角**服务角色**编辑图标，设置当前实例的服务角色。
-![](https://qcloudimg.tencent-cloud.cn/raw/982b1bb97a7f5828c7f0f893053e9e51.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6db484aa599d544337be516691776007.png)
 
 ### 选择服务角色
 1. 单击“服务角色”下拉框，将自动加载符合条件的服务角色。
 2. 您可以选择预设服务角色或用户自建的服务角色，对于不同的云产品会有不同的服务角色权限要求，您可以按需新建服务角色。
 3. 选择服务角色并单击**保存**后，实例将进行重建。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/18e64f18a68c79eba2da09770182c63b.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/743cd3716f41ebed9ee89911627b40ad.png)
 
 ### 新建服务角色
 为了方便演示，本段使用 ReadOnlyAccess 全局读权限预设策略作为示范，您可以查阅本文尾部的各产品所需的策略，按需设置只读权限。
@@ -23,7 +23,7 @@
 2. 单击右上角的**新建角色**，在弹框中选择“腾讯云产品服务”。
 3. 在“输入角色载体信息”步骤中，勾选“云服务器（cvm）”，完成后单击**下一步**。
 4. 在“配置角色策略”步骤中，搜索并勾选 “ReadOnlyAccess”，完成后单击**下一步**。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/4b00c3c0d4cfb0685c29b8260ab6bd9a.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/149a16795b761a113008410c18317588.png)
 5. 预览自定义角色，并为角色取名，单击**完成**。
 
 ### 云产品所需策略
