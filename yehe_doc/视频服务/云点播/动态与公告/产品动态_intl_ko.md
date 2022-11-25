@@ -1,3 +1,21 @@
+## 2022년 10월
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+ <th width="15%">배포일</th> 
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>스마트 비트레이트 축소 기능 출시</td>
+<td>VOD 스마트 비트레이트 축소 기능은 재생 횟수가 많은 파일에 대해 TSC 트랜스코딩을 자동으로 수행하고 파일의 기존 트랜스코딩 출력을 생성된 낮은 비트레이트 파일로 대체하도록 정책을 구성할 수 있습니다. <b>순 비용 절감 효과</b>를 높일 수 있으며, 전체 프로세스를 자동으로 실행할 수 있습니다.</td>
+<td>2022-10</td>
+<td><a href="https://www.tencentcloud.com/document/product/266/50446">스마트 비트레이트 조정</a></td>
+</tr>
+</tbody></table>
+
 ## 2022년 08월
 <table>
 <thead>
@@ -78,8 +96,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/266/49085">기능 체험</a></td>
 </tr>
 </tbody></table>
-
-
 
 
 ## 2021년 8월

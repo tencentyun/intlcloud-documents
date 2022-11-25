@@ -6,7 +6,7 @@ Player 컴포넌트가 커스텀 니즈를 충족할 수 없고 개발 경험이
 
 
 ## 준비 작업
-1. 완전한 Player 기능을 사용하려면 [VOD](https://intl.cloud.tencent.com/product/vod)를 활성화하는 것이 좋습니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login)하십시오. VOD 서비스를 사용하지 않는 경우 이 단계를 건너뛰십시오. 그러나 통합 후에는 기본 Player 기능만 사용할 수 있습니다.
+1. 완전한 플레이어 기능을 사용하려면 [VOD](https://intl.cloud.tencent.com/product/vod)를 활성화하는 것이 좋습니다. 계정을 등록하지 않으셨다면 먼저 [Sign in](https://intl.cloud.tencent.com/login) 하십시오. VOD 서비스를 사용하지 않는 경우 이 단계를 건너뛰십시오. 그러나 통합 후에는 기본 플레이어 기능만 사용할 수 있습니다.
 2. [Android Studio 공식 웹 사이트](https://developer.android.com/studio)에서 Android Studio를 다운로드하고 설치합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 
 ## 내용 요약
@@ -53,10 +53,11 @@ delta 처리 중: 100% (1019/1019), 완료.
 | Player 문서(Android).pdf | Player 컴포넌트 사용자 가이드                                           |
 :::
 </dx-tabs>
+
 ### 2단계: 프로젝트 통합
 이 단계에서는 Player를 통합하는 방법을 설명합니다. 자동 로딩을 위해 Gradle을 사용하거나 aar을 수동으로 다운로드하여 현재 프로젝트로 가져오거나 jar 및 so 라이브러리를 가져와 프로젝트를 통합할 수 있습니다.
 <dx-tabs>
-::: Gradle(AAR)에서 자동 로드
+::: Gradle(AAR)에서 자동 로딩
 1. SDK + Demo 개발 패키지를 다운로드합니다. 프로젝트 주소는 [Android](https://github.com/LiteAVSDK/Player_Android)입니다.
 2. `Demo/superplayerkit` module을 프로젝트에 복사하고 다음과 같이 구성합니다.
    - `superplayerkit`을 프로젝트 디렉터리의 setting.gradle로 가져옵니다.
@@ -105,7 +106,7 @@ ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-   SDK v9.4 이하의 다운로드 캐시 기능(TXVodDownloadManager의 API)을 사용하지 않았고 SDK v9.5 이상에서 다운로드한 파일을 재생할 필요가 없다면 설치 패키지의 크기를 줄이는 데 도움이 되는 기능의 so 파일을 사용합니다. 예를 들어 SDK v9.4 또는 이전 버전에서 TXVodDownloadManager 클래스의 setDownloadPath 및 startDownloadUrl 함수를 사용하여 캐시된 파일을 다운로드했고 TXVodDownloadManager에서 다시 호출한 getPlayPath 경로가 후속 재생을 위해 앱에 저장되어 있는 경우 다음이 필요합니다. libijkhlscache-master.so는 getPlayPath 경로에서 파일을 재생합니다. 그렇지 않으면 필요하지 않습니다. app/build.gradle에 다음을 추가할 수 있습니다.
+   SDK v9.4 이하의 [다운로드 캐시 기능](https://www.tencentcloud.com/document/product/266/47849)(TXVodDownloadManager의 API)을 사용하지 않았고 SDK v9.5 이상에서 다운로드한 파일을 재생할 필요가 없다면 설치 패키지의 크기를 줄이는 데 도움이 되는 기능의 so 파일을 사용합니다. 예를 들어 SDK v9.4 또는 이전 버전에서 TXVodDownloadManager 클래스의 setDownloadPath 및 startDownloadUrl 함수를 사용하여 캐시된 파일을 다운로드했고 TXVodDownloadManager에서 다시 호출한 getPlayPath 경로가 후속 재생을 위해 앱에 저장되어 있는 경우 getPlayPath 경로에서 파일을 재생하기 위해 libijkhlscache-master.so가 필요합니다. 그렇지 않으면 필요하지 않습니다. app/build.gradle에 다음을 추가할 수 있습니다:
 ```xml
 packagingOptions {
 	exclude "lib/armeabi/libijkhlscache-master.so"
@@ -175,7 +176,7 @@ ndk {
 	 abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
 }
 ```
-SDK v9.4 이하의 다운로드 캐시 기능(TXVodDownloadManager의 API)을 사용하지 않았고 SDK v9.5 이상에서 다운로드한 파일을 재생할 필요가 없다면 설치 패키지의 크기를 줄이는 데 도움이 되는 기능의 so 파일을 사용합니다. 예를 들어 SDK v9.4 또는 이전 버전에서 TXVodDownloadManager 클래스의 setDownloadPath 및 startDownloadUrl 함수를 사용하여 캐시된 파일을 다운로드했고 TXVodDownloadManager에서 다시 호출한 getPlayPath 경로가 후속 재생을 위해 앱에 저장되어 있는 경우 다음이 필요합니다. libijkhlscache-master.so는 getPlayPath 경로에서 파일을 재생합니다. 그렇지 않으면 필요하지 않습니다. app/build.gradle에 다음을 추가할 수 있습니다.
+SDK v9.4 이하의 [다운로드 캐시 기능](https://www.tencentcloud.com/document/product/266/47849#13.E3.80.81.E7.A6.BB.E7.BA.BF.E7.BC.93.E5.AD.98)(TXVodDownloadManager 관련 API)을 사용하지 않았고 SDK v9.5 이상에서 다운로드한 파일을 재생할 필요가 없다면 설치 패키지의 크기를 줄이는 데 도움이 되는 기능의 so 파일을 사용합니다. 예를 들어 SDK v9.4 또는 이전 버전에서 TXVodDownloadManager 클래스의 setDownloadPath 및 startDownloadUrl 함수를 사용하여 캐시된 파일을 다운로드했고 TXVodDownloadManager에서 다시 호출한 getPlayPath 경로가 후속 재생을 위해 앱에 저장되어 있는 경우 getPlayPath 경로에서 파일을 재생하기 위해 libijkhlscache-master.so가 필요합니다. 그렇지 않으면 필요하지 않습니다. app/build.gradle에 다음을 추가할 수 있습니다:
 ```xml
 packagingOptions {
 	exclude "lib/armeabi/libijkhlscache-master.so"
@@ -189,7 +190,7 @@ packagingOptions {
 aar 라이브러리를 통합하지 않으려면 jar 및 so 라이브러리를 가져와서 LiteAVSDK를 통합하도록 선택할 수 있습니다.
 [](id:smallStep_1)
 1. 여기에서 [Android](https://github.com/LiteAVSDK/Player_Android)용 SDK + Demo 개발 키트를 다운로드하고 압축을 풉니다. SDK 디렉터리에서 SDK/LiteAVSDK_Player_XXX.zip(XXX는 버전 번호)을 찾습니다. 압축 해제 후 아래와 같이 jar 파일과 so 폴더가 포함된 libs 디렉터리를 얻을 수 있습니다.
- ![](https://qcloudimg.tencent-cloud.cn/raw/9ac0f5b1b9b5d15a005fa2226dd960b6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/ab928524839c7944f78d504c0e637586.png)
 2. `Demo/superplayerkit` module을 프로젝트에 복사하고 `superplayerkit`을 프로젝트 디렉터리의 setting.gradle로 가져옵니다.
 ```xml
 include ':superplayerkit'
@@ -249,6 +250,7 @@ AndroidManifest.xml에서 App 권한을 구성합니다. LiteAVSDK에는 다음 
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
+
 ### 4단계: 난독화 규칙 설정
 proguard-rules.pro 파일에서 TRTC SDK 관련 사항을 비난독화 리스트에 추가합니다.
 ```xml
@@ -267,12 +269,33 @@ Player의 메인 클래스는 `SuperPlayerView`이며, 동영상을 생성한 �
     android:layout_width="match_parent"
     android:layout_height="200dp" />
 ```
+2. **License 권한 구성**
+이미 관련 License 권한을 획득한 경우, [Tencent Cloud RT-Cube 콘솔](https://console.cloud.tencent.com/vcube)에서 License URL과 License Key를 획득해야 합니다.
+아직 라이선스가 없다면 먼저 [Adding and Renewing a License](https://www.tencentcloud.com/document/product/266/51098)의 안내에 따라 라이선스를 받아야 합니다.<br>
+License 정보를 획득한 후 SDK의 해당 인터페이스를 호출하기 전에 다음 인터페이스를 통해 License를 초기화하고 Application 클래스에서 다음을 설정하는 것을 권장합니다.
+```java
+public class MApplication extends Application {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        String licenceURL = ""; // 획득한 licence url
+        String licenceKey = ""; // 획득한 licence key
+        TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
+        TXLiveBase.setListener(new TXLiveBaseListener() {
+            @Override
+            public void onLicenceLoaded(int result, String reason) {
+                Log.i(TAG, "onLicenceLoaded: result:" + result + ", reason:" + reason);
+            }
+        });
+    }
+}
+```
 
 3. **비디오 재생**[](id:playe)
 이 단계에서는 비디오를 재생하는 방법을 설명합니다. Android용 Tencent Cloud RT-Cube Player 컴포넌트는 다음과 같이 VOD 및 라이브 재생에 사용할 수 있습니다.
 	- VOD 재생: Player 컴포넌트는 [FileId](#fileid) 또는 [URL](#url)을 통한 두 가지 VOD 재생 방법을 지원합니다.
-	- 라이브 재생: Player 컴포넌트는 라이브 재생을 위해 [URL을 통한 재생](#url) 방법을 사용할 수 있습니다. 라이브 오디오/비디오 스트림은 URL을 전달하기만 하면 재생을 위해 풀링할 수 있습니다. Tencent Cloud 라이브 스트리밍 URL 생성 방법에 대한 자세한 내용은 [라이브 스트리밍 URL 스플라이싱](https://intl.cloud.tencent.com/document/product/267/38393)을 참고하십시오.
+	- 라이브 재생: Player 컴포넌트는 라이브 재생을 위해 [URL을 통한 재생](#url) 방법을 사용할 수 있습니다. 라이브 오디오/비디오 스트림은 URL을 전달하기만 하면 재생을 위해 풀링할 수 있습니다. Tencent Cloud 라이브 스트리밍 URL 생성 방법에 대한 자세한 내용은 [라이브 스트리밍 URL 스플라이싱](https://www.tencentcloud.com/document/product/267/38393)을 참고하십시오.
 <dx-tabs>
 ::: URL을 통한 VOD 및 라이브 재생[](id:url)
 URL은 VOD 파일의 재생 주소 또는 라이브 스트림의 풀 주소일 수 있습니다. 동영상 파일은 URL을 전달하기만 하면 재생할 수 있습니다.
@@ -280,35 +303,41 @@ URL은 VOD 파일의 재생 주소 또는 라이브 스트림의 풀 주소일 �
 SuperPlayerModel model = new SuperPlayerModel();
 model.appId = 1400329073; // AppId 설정
 model.url = "http://your_video_url.mp4";   // 재생할 동영상의 url 구성
-mSuperPlayerView.playWithModel(model);
+mSuperPlayerView.playWithModelNeedLicence(model);
 ```
 :::
 ::: FileID를 통한 VOD 재생[](id:fileid)
 비디오 FileId는 일반적으로 비디오 업로딩 후 서버에서 반환됩니다.
 1. 클라이언트에서 비디오 배포 후 서버가 FileId를 클라이언트로 반환합니다.
-2. 비디오가 서버에 업로드되면 업로드 확인 알림에 해당 FileId가 포함됩니다.
+2. 비디오가 서버에 업로딩되면 해당 FileId가 업로딩 확인 알림에 포함됩니다.
 
 Tencent Cloud에 이미 파일이 존재하는 경우에는 [미디어 자산 관리](https://console.cloud.tencent.com/vod/media)에서 해당 파일을 찾아 FileId를 조회할 수 있습니다. 아래 이미지와 같이 ID는 FileId를 나타냅니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
-<dx-alert infotype="notice">
-<li> FileID를 통해 재생하려면 먼저 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 Player 컴포넌트 서명 psign을 사용하여 재생할 비디오를 지정해야 합니다. 그렇지 않으면 비디오가 재생되지 않을 수 있습니다. 비디오를 트랜스 코딩하는 방법에 대한 자세한 내용은 [Player 컴포넌트로 비디오 재생](https://intl.cloud.tencent.com/document/product/266/38098)을 참고하십시오. psign을 생성하는 방법에 대한 자세한 내용은 [Superplayer 서명](https://intl.cloud.tencent.com/document/product/266/38099)을 참고하십시오.</li>
-<li> FileID를 통한 재생 중 ‘no v4 play info’ 예외가 발생하면 위와 같은 문제가 있을 수 있습니다. 이 경우 상기 지침에 따라 조정하는 것이 좋습니다. [URL](#url)을 통해 재생할 원본 비디오의 재생 링크를 직접 얻을 수도 있습니다.</li>
-<li> **트랜스 코딩되지 않은 원본 비디오는 재생 중에 호환성 문제가 발생할 수 있으므로 재생을 위해 비디오를 트랜스 코딩하는 것이 좋습니다.**</li></dx-alert>
+
+>!
+>- FileID를 통해 재생하려면 먼저 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 Player 컴포넌트 서명 psign을 사용하여 재생할 비디오를 지정해야 합니다. 그렇지 않으면 비디오가 재생되지 않을 수 있습니다. 비디오를 트랜스 코딩하는 방법에 대한 자세한 내용은 [Player로 비디오 재생](https://www.tencentcloud.com/document/product/266/38098)을 참고하십시오. psign을 생성하는 방법에 대한 자세한 내용은 [Player 서명](https://www.tencentcloud.com/document/product/266/38099)을 참고하십시오.
+>- FileID를 통한 재생 중 ‘no v4 play info’ 예외가 발생하면 위와 같은 문제가 있을 수 있습니다. 이 경우 상기 지침에 따라 조정하는 것이 좋습니다. [URL](#url)을 통해 재생할 원본 비디오의 재생 링크를 직접 얻을 수도 있습니다.
+>- **트랜스 코딩되지 않은 원본 비디오는 재생 중에 호환성 문제가 발생할 수 있으므로 재생을 위해 비디오를 트랜스 코딩하는 것이 좋습니다.**
+
 <dx-codeblock>
 :::  java
 //링크 도용 방지가 비활성화된 재생 중에 ‘no v4 play info’ 예외가 발생하면 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 URL을 통해 재생할 원본 비디오의 재생 링크를 직접 가져오는 것이 좋습니다.
 
-SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
+```java
+SuperPlayerModel model = new SuperPlayerModel();
 model.appId = 1400329071;// AppId 설정
-model.videoId = [[SuperPlayerVideoId alloc] init];
-model.videoId.fileId = @"5285890799710173650"; // FileId 설정
-//비공개 암호화 재생을 위해서는 Player 컴포넌트의 서명인 psign을 입력해야 합니다. 서명 및 생성 방법에 관한 내용은 다음 링크를 참고하십시오. https://intl.cloud.tencent.com/document/product/266/38099
-//model.videoId.pSign = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU"; 
-[_playerView playWithModel:model];
+model.videoId = new SuperPlayerVideoId();
+model.videoId.fileId = "5285890799710173650"; // FileId 설정
+// psign은 Player 서명입니다. 서명 소개 및 생성 방식에 관한 내용은 다음 링크를 참고하십시오. https://www.tencentcloud.com/document/product/266/38099
+model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU";
+mSuperPlayerView.playWithModelNeedLicence(model);
+```
+
 :::
 </dx-codeblock>
 :::
 </dx-tabs>
+
 3. **재생 종료**[](id:exitPlayer)
 Player가 필요하지 않은 경우 `resetPlayer`을 호출하여 Player 내부를 정리하고 메모리를 확보합니다.
 ```java
@@ -319,21 +348,24 @@ mSuperPlayerView.resetPlayer();
 
 ## 기능 사용[](id:moreFeature)
 
-이 장에서는 Player 기능을 사용하는 몇 가지 일반적인 방법을 소개합니다. 더 완전한 기능은 [Demo 경험](#demo)을 참고하십시오. Player 컴포넌트에서 지원하는 기능은 [기능 리스트](https://www.tencentcloud.com/document/product/266/42965)를 참고하십시오.
+이 섹션에서는 몇 가지 일반적인 플레이어 기능에 대해 설명합니다. 자세한 기능은 [Demo](#demo)를 참고하십시오. Player 컴포넌트가 지원하는 기능은 [기능 설명](https://www.tencentcloud.com/document/product/266/42965)을 참고하십시오.
 
 ### 1. 전체 화면 재생
 
 Player 컴포넌트는 전체 화면 재생을 지원하며 제스처, 댓글 자막, 화면 캡처 및 해상도 전환을 통해 화면 잠금, 볼륨 및 밝기 제어를 설정할 수 있습니다. 이 기능은 **[Tencent Cloud RT-Cube App](#qrcode) > Player > Player 컴포넌트**에서 체험해볼 수 있으며, 전체 화면 아이콘을 탭하면 전체 화면 재생 모드로 이동할 수 있습니다.
 
 창 재생 모드에서 다음 API를 호출하여 전체 화면 재생 모드로 들어갈 수 있습니다.
+
 ```java
 mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.FULLSCREEN);
 ```
 
+#### 전체 화면 재생 인터페이스 기능 소개
 
 <dx-tabs>
 ::: 창으로 돌아가기
 **Back**을 탭하여 창 재생 모드로 돌아갑니다.
+
 ```java
 //탭 후 트리거되는 API
 mControllerCallback.onBackPressed(SuperPlayerDef.PlayerMode.FULLSCREEN);
@@ -394,8 +426,9 @@ public void onQualityChange(VideoQuality quality) {
 
 ### 2. 플로팅 창 재생
 Player 컴포넌트는 사용자가 비디오 재생을 중단하지 않고 다른 앱으로 전환할 수 있도록 하는 작은 플로팅 창에서 재생을 지원합니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Player 컴포넌트**에서 왼쪽 상단 모서리에 있는 **Back**을 탭하여 사용해 볼 수 있습니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" alt="img" style="zoom:45%;" />
 플로팅 창 재생은 AndroidManifest의 다음 권한에 의존합니다.
+
 ```java
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 ```
@@ -409,8 +442,6 @@ mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.WINDOW);
 ### 3. 비디오 썸네일
 
 Player 컴포넌트는 첫 번째 비디오 프레임을 재생 콜백 수신 이전에 표시할 비디오 썸네일의 사용자 정의를 지원합니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode)> **Player** > **Player 컴포넌트** > **썸네일 사용자 정의 데모**에서 사용해 볼 수 있습니다.
-
-
 
 * Player 컴포넌트가 자동 재생 모드 `PLAY_ACTION_AUTO_PLAY`로 설정되면 비디오가 자동으로 재생되고 첫 번째 비디오 프레임이 로딩되기 전에 미리보기 이미지가 표시됩니다;
 * Player 컴포넌트가 수동 재생 모드 `PLAY_ACTION_MANUAL_PLAY`로 설정된 경우 사용자가 **재생**을 탭한 후에만 비디오 재생이 시작됩니다. 썸네일은 첫 번째 비디오 프레임이 로딩될 때까지 표시됩니다.
@@ -426,7 +457,7 @@ model.videoId.fileId = "귀하의 fileId";
 model.playAction = PLAY_ACTION_MANUAL_PLAY;
 //썸네일 url을 설정합니다. coverPictureUrl이 설정되지 않은 경우 VOD 콘솔에서 구성한 썸네일이 자동으로 사용됩니다.
 model.coverPictureUrl = "http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/cc1e28208602268011087336518/MXUW1a5I9TsA.png" 
-mSuperPlayerView.playWithModel(model);
+mSuperPlayerView.playWithModelNeedLicence(model);
 ```
 
 ### 4. 비디오 목록 루프
@@ -456,11 +487,11 @@ model.appid = 1252463788;
 model.videoId.fileId = "4564972819219071679"；
 list.add(model);
 //2단계: 루프 API 호출
-mSuperPlayerView.playWithModelList(list, true, 0);
+mSuperPlayerView.playWithModelListNeedLicence(list, true, 0);
 ```
 
 ```java
-public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
+public void playWithModelListNeedLicence(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
 ```
 
 API 매개변수 설명
@@ -475,8 +506,6 @@ API 매개변수 설명
 
 Player 컴포넌트는 비VIP 회원 미리보기에 적합한 비디오 미리보기 기능을 지원합니다. 비디오 미리보기 지속 시간, 프롬프트 메시지 및 미리보기 최종 화면을 제어하기 위해 다른 매개변수를 전달할 수 있습니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Player 컴포넌트** > **미리보기 기능 데모**에서 사용해 볼 수 있습니다.
 
-
-
 ```java
  방법1:
  //1단계: 비디오 mode 생성
@@ -486,7 +515,7 @@ Player 컴포넌트는 비VIP 회원 미리보기에 적합한 비디오 미리�
  VipWatchModel vipWatchModel = new VipWatchModel("%ss을(를) 미리 보고 VIP 멤버십을 활성화하여 전체 비디오를 볼 수 있습니다",15);
  mode.vipWatchMode = vipWatchModel;
  //3단계: 동영상 재생 메소드 호출
- mSuperPlayerView.playWithModel(mode);
+ mSuperPlayerView.playWithModelNeedLicence(mode);
 
  방법2:
  //1단계: 미리보기 정보 mode 생성
@@ -510,8 +539,6 @@ VipWatchModel API 매개변수 설명:
 
 Player 컴포넌트를 사용하면 무단 녹음을 방지하기 위해 재생 화면에 불규칙하게 움직이는 텍스트 워터마크를 추가할 수 있습니다. 워터마크는 전체 화면 재생 모드와 창 재생 모드에서 모두 표시할 수 있습니다. 워터마크 텍스트, 크기 및 색상을 수정할 수 있습니다. 이 기능은 [**Tencent Cloud RT-Cube App** ](#qrcode)> **Player** > **Player 컴포넌트** > **동적 워터마크** 데모에서 사용해 볼 수 있습니다.
 
-
-
 ```java
  방법1:
  //1단계: 비디오 mode 생성
@@ -521,7 +548,7 @@ Player 컴포넌트를 사용하면 무단 녹음을 방지하기 위해 재생 
  DynamicWaterConfig dynamicWaterConfig = new DynamicWaterConfig("shipinyun", 30, Color.parseColor("#80FFFFFF"));
  mode.dynamicWaterConfig = dynamicWaterConfig;
  //3단계: 동영상 재생 메소드 호출
- mSuperPlayerView.playWithModel(mode);
+ mSuperPlayerView.playWithModelNeedLicence(mode);
 
  방법2:
  //1단계: 워터마크 정보 mode 생성
@@ -550,7 +577,7 @@ API 매개변수 설명
 ### 프로젝트 Demo 실행
 
 1. Android Studio의 탐색 모음에서 **File** > **Open**을 선택합니다. 팝업 창에서 **Demo** 프로젝트의 `$SuperPlayer_Android/Demo` 디렉터리를 선택합니다. Demo 프로젝트를 성공적으로 가져온 후 **Run app**을 클릭하여 Demo를 실행합니다.
-2. Demo를 성공적으로 실행한 후 **Player** > **Player 컴포넌트**로 이동하여 Player 기능을 사용해 보십시오.
+2. 아래와 같이 Demo를 성공적으로 실행한 후 **Player** > **Player 컴포넌트**로 이동하여 Player 기능을 사용해 보십시오.
 
 [](id:qrcode)
 ### Tencent Cloud RT-Cube App
