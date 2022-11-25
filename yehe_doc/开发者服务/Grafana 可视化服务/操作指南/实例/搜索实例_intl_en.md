@@ -4,7 +4,7 @@ By default, Grafana instances in the current region are displayed in the TCMG co
 
 1. Log in to the [TCMG console](https://console.cloud.tencent.com/monitor/grafana/list).
 2. Enter the conditions in the search box as needed and click <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin: 0;"></img>.
-![](https://qcloudimg.tencent-cloud.cn/raw/db551315be993f2e250d40ec27a13def.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/11aa1eed531e453b9fe624cf05532c83.png)
 3. You can filter instances by different conditions. Currently, the following dimensions are supported:
    - Instance ID: you can directly enter multiple instance IDs for quick filtering. Each instance ID supports only full match-based filtering.
    - Instance name: you can enter only one instance name for filtering. Fuzzy match-based filtering is supported.
