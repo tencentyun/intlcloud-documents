@@ -5,24 +5,24 @@ Currently supported versions include all EMR versions containing the above compo
 - Dependent: The current cluster is using components of other existing clusters.
 - Shared: One or more components of the current cluster are added to other newly created clusters.
 
->! Kerberos and Ranger can be shared with other EMR clusters, so they don't need to be deployed for new clusters again. This increases the Ops configuration efficiency. Dependencies cannot be canceled once configured; therefore, proceed with caution based on your business conditions.
+>! Shared components such as ZooKeeper, Kerberos, and Ranger are no longer deployed in dependent clusters separately, and dependencies cannot be canceled once set. When a cluster with shared components deployed is terminated, all its dependent clusters need to be terminated first. Note that if your account has any overdue payment, dependent clusters won't work properly.
 
 ## Use Limits
 1. Your account must have the management permissions of one existing cluster.
 2. When Kerberos is enabled, other clusters under the current account must have Kerberos deployed before you can enable the dependency.
-3. If a dependent component involves user identity management, you need to manually sync the users in the sharing cluster to the new cluster after creating it or adding a user. Note that as the current cluster doesn't have Kerberos deployed, krb5 users cannot be created.
+3. If a dependent component involves user identity management, you need to manually sync the users in the shared cluster to the new cluster after creating it or adding a user. Note that as the current cluster doesn't have Kerberos deployed, krb5 users cannot be created.
 
 ## Product Architecture
 <img src="https://qcloudimg.tencent-cloud.cn/raw/5868e6ecbdbae430d2200892a2951724.png" style="zoom:80%;" />
 
 ## Directions
-### Purchasing cluster
+### Purchasing a cluster
 1. Go to the [purchase page](https://buy.cloud.tencent.com/emr) and select multiple components under Hadoop.
-2. Click **Enable** and select the sharing cluster.
+2. Click **Enable** and select the shared cluster.
 3. After the new cluster is successfully purchased, relevant components will automatically depend on the selected cluster.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6ba1bb2fa17934df2638a5136dfc7200.png)
 
-### Adding component
+### Adding a component
 1. Select **Cluster Service** > **Add Component** on the cluster details page in the [console](https://console.cloud.tencent.com/emr)
 2. Select the components to be added.
 3. Click **Enable** and select the dependent components and cluster.

@@ -1,17 +1,23 @@
 ## 添加 maven 依赖
 ```xml
 <dependency>
-      <groupId>org.apache.phoenix</groupId>
-      <artifactId>phoenix-core</artifactId>
-      <version>4.8.1-HBase-1.2</version>
- </dependency>
+     <groupId>org.apache.phoenix</groupId>
+     <artifactId>phoenix-core</artifactId>
+     <version>${phoenix.version}</version>
+</dependency>
 ```
+其中，phoenix.version 与集群中 phoenix 版本保持一致。
+
+
 ## 创建 JDBC 连接对象
 ```c++
 Class.forName("org.apache.phoenix.jdbc.PhoenixDriver");
         // Connect to the database
     connection = DriverManager.getConnection("jdbc:phoenix:10.0.0.3:2181,10.0.0.5:2181,10.0.0.8:2181");
 ```
+
+
+
 ## 执行查询
 ```c++
 private static void instertPhoenix(Connection connection)throws Exception{

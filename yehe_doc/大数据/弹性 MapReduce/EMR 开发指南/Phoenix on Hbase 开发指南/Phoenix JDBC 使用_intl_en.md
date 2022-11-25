@@ -1,18 +1,24 @@
-## Add Maven dependencies
+## Adding Maven dependencies
 ```xml
 <dependency>
-      <groupId>org.apache.phoenix</groupId>
-      <artifactId>phoenix-core</artifactId>
-      <version>4.8.1-HBase-1.2</version>
- </dependency>
+     <groupId>org.apache.phoenix</groupId>
+     <artifactId>phoenix-core</artifactId>
+     <version>${phoenix.version}</version>
+</dependency>
 ```
-## Create a JDBC object
+Here, `phoenix.version` should be consistent with the Phoenix version in the cluster.
+
+
+## Creating a JDBC object
 ```c++
 Class.forName("org.apache.phoenix.jdbc.PhoenixDriver");
         // Connect to the database
     connection = DriverManager.getConnection("jdbc:phoenix:10.0.0.3:2181,10.0.0.5:2181,10.0.0.8:2181");
 ```
-## Run a query
+
+
+
+## Running a query
 ```c++
 private static void instertPhoenix(Connection connection)throws Exception{
      String sql="upsert into album_subscribe_log(id,album_id,user_id,op_time,sub_flag,is_optimize,type_parent_id,type_id,host_id,is_pay,user_type,identtity_typ)"
