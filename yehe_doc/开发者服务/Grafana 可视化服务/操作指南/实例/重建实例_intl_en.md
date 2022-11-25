@@ -7,7 +7,7 @@ Instance rebooting will be triggered when you modify the following Grafana confi
 - Grafana INI configuration.
 - LDAP configuration.
 - Environment variable.
-![](https://qcloudimg.tencent-cloud.cn/raw/e0a5b465781c6bd3533fca849a319742.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2b16b07042b9bc1b0590d1c97c1fd315.png)
 
 ## Notes
 1. The instance rebooting process takes about one minute.
