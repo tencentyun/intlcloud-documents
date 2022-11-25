@@ -4,7 +4,7 @@
 
 1. 登录 [Grafana 可视化服务控制台](https://console.cloud.tencent.com/monitor/grafana/list)。
 2. 在搜索框中，根据实际需求，输入需搜索的内容，单击 <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin: 0;"></img> 进行搜索。
-![](https://qcloudimg.tencent-cloud.cn/raw/db551315be993f2e250d40ec27a13def.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/11aa1eed531e453b9fe624cf05532c83.png)
 3. 支持用户根据不同的维度来过滤实例列表，目前支持几种维度搜索：
    - 实例 ID：支持多个实例 ID 过滤，每个实例 ID 仅支持完全匹配过滤，支持直接输入实例 ID 来快速过滤。
    - 实例名称：不支持多个名称过滤，支持模糊匹配过滤。
