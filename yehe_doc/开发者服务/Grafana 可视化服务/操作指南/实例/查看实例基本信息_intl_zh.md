@@ -5,7 +5,7 @@
 
 1. 登录 [Grafana 可视化服务控制台](https://console.cloud.tencent.com/monitor/grafana/list)。
 2. 在实例列表中，找到对应的实例，单击**实例 ID** 或者右侧的**管理**，即可查看实例基本信息。
-![](https://qcloudimg.tencent-cloud.cn/raw/aa3a9b55b0e73b09f4e8346f38ed6f38.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7957e21b61ed79460b6cddc00e044bd1.png)
 3. 在基本信息页支持如下操作：
  - 修改实例名称。
  - 编辑实例对应的标签。
