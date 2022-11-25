@@ -5,7 +5,7 @@ This document describes how to view the basic information of an instance.
 
 1. Log in to the [TCMG console](https://console.cloud.tencent.com/monitor/grafana/list).
 2. In the instance list, find the target instance and click its **instance ID** or **Management** on the right to view its basic information.
-![](https://qcloudimg.tencent-cloud.cn/raw/aa3a9b55b0e73b09f4e8346f38ed6f38.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7957e21b61ed79460b6cddc00e044bd1.png)
 3. You can perform the following operations on the basic information page:
  - Rename the instance.
  - Edit instance tags.
