@@ -5,7 +5,7 @@
 1. 登录 [Grafana 可视化服务控制台](https://console.cloud.tencent.com/monitor/grafana/list)。
 2. 在实例列表中，选择需要被销毁或退还的 Grafana 实例，单击右侧的**更多 > 实例状态 > 升级**。
 3. 在弹出窗口中选择支持升级的版本，进行升级。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/6ecaabcc084baad3beae8ec289bd7dab.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/0a03f4796bd9c025b83db7ee5f44bd55.png)
 4. 完成所有步骤后，实例将进行升级重建。
 
 ## 相关说明
