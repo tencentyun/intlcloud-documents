@@ -5,7 +5,7 @@ This document describes how to upgrade a Grafana instance.
 1. Log in to the [TCMG console](https://console.cloud.tencent.com/monitor/grafana/list).
 2. In the instance list, select the Grafana instance to be upgraded and click **More** > **Instance Status** > **Upgrade** on the right.
 3. In the pop-up window, select the target version to upgrade to.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/6ecaabcc084baad3beae8ec289bd7dab.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/0a03f4796bd9c025b83db7ee5f44bd55.png)
 4. After all steps are completed, the instance will be upgraded and rebooted.
 
 ## Notes
