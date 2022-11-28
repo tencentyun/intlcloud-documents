@@ -69,11 +69,11 @@ from rocketmq.client import Producer, Message
 </thead>
 <tbody><tr>
 <td align="left">groupName</td>
-<td align="left">Producer group name, which can be obtained under the <code>Group</code> tab on the **Cluster** page in the console.</td>
+<td align="left">Producer group name, which can be obtained under the <code>Group</code> tab on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new virtual or exclusive clusters can be copied from the <strong>Namespace</strong> list. <img src="https://qcloudimg.tencent-cloud.cn/raw/424026465647068a89a2e1d1a9a67c4a.png" alt=""></td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new virtual or exclusive clusters can be copied from the <strong>Namespace</strong> list. <img src="https://qcloudimg.tencent-cloud.cn/raw/424026465647068a89a2e1d1a9a67c4a.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -86,8 +86,8 @@ from rocketmq.client import Producer, Message
 <tr>
         <td>topicName</td>
         <td>`topicName` is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
-				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code> and can be copied under the **Namespace** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>Topic name, which can be copied under the **Namespace** tab on the cluster details page in the console.
+				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code> and can be copied under the <strong>Namespace</strong> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>Topic name, which can be copied under the <strong>Namespace</strong> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" style="width: 100%">
 						</li>
 						</ul>
@@ -158,7 +158,7 @@ import time
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new virtual or exclusive clusters can be copied from the <strong>Namespace</strong> list. <img src="https://qcloudimg.tencent-cloud.cn/raw/36a804b55313aebf8e1c7e3968904a03.png" alt=""></td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console. Namespace access addresses in new virtual or exclusive clusters can be copied from the <strong>Namespace</strong> list. <img src="https://qcloudimg.tencent-cloud.cn/raw/36a804b55313aebf8e1c7e3968904a03.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -170,7 +170,7 @@ import time
 </tr>
 <tr>
 <td align="left">topicName</td>
-<td align="left">`topicName` is in the format of <code>namespace name</code>+<code>%</code>+<code>topic name</code>. <li>The namespace name can be copied under the <code>Topic</code> tab on the **Cluster** page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" alt=""> </li> <li>The topic name can be copied under the <code>Topic</code> tab on the **Cluster** page in the console.<img src="https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" alt=""></li></td>
+<td align="left">`topicName` is in the format of <code>namespace name</code>+<code>%</code>+<code>topic name</code>. <li>The namespace name can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console, which is in the format of <strong>cluster ID + | + namespace</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" alt=""> </li> <li>The topic name can be copied under the <code>Topic</code> tab on the <strong>Cluster</strong> page in the console.<img src="https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" alt=""></li></td>
 </tr>
 <tr>
 <td align="left">TAGS</td>
