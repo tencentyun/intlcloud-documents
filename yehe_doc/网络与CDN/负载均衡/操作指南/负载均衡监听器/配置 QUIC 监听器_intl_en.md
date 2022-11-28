@@ -10,7 +10,6 @@ QUIC (Quick UDP Internet Connection) is a transport layer network protocol desig
 A QUIC listener supports connection migration. When your network changes, such as frequent switches between 4G and Wi-Fi networks, it can smoothly migrate the connections without interruption. This is suitable for audio/video services, game services, etc.
 
 ## Restrictions
-- The QUIC listener is in beta test. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - QUIC listener is supported only for CLB but not classic CLB.
 - QUIC listener is supported only for CLB instances in VPCs but not the classic network.
 - Only IPv4 and IPv6 NAT64 CLB instances support the QUIC listener.
@@ -56,7 +55,7 @@ You need to [create a CLB instance](https://intl.cloud.tencent.com/document/prod
 </tr>
 <tr>
 <td>Balancing method</td>
-<td>For TCP SSL listeners, CLB supports two scheduling algorithms: weighted round robin (WRR) and weighted least connections (WLC). <br><ul><li>WRR: Requests are sequentially delivered to different real servers according to their weights. Scheduling is done based on the <strong>number of new connections</strong>, where servers with higher weights will undergo more polls (i.e., a higher probability), while servers with the same weight process the same number of connections.</li><li>WLC: Loads of servers are estimated according to the number of active connections to the servers. Scheduling is done based on server loads and weights. If their weights are the same, servers with fewer active connections will undergo more polls (i.e., a higher probability).</li></ul></td>
+<td>For QUIC listeners, CLB supports two scheduling algorithms: weighted round robin (WRR) and weighted least connections (WLC). <br><ul><li>WRR: Requests are sequentially delivered to different real servers according to their weights. Scheduling is done based on the <strong>number of new connections</strong>, where servers with higher weights will undergo more polls (i.e., a higher probability), while servers with the same weight process the same number of connections.</li><li>WLC: Loads of servers are estimated according to the number of active connections to the servers. Scheduling is done based on server loads and weights. If their weights are the same, servers with fewer active connections will undergo more polls (i.e., a higher probability).</li></ul></td>
 <td>WRR</td>
 </tr>
 </tbody></table>
