@@ -13,7 +13,7 @@
 
 ### 步骤1：准备环境
 
-Rocketmq-client Python 基于 [rocketmq-client-cpp](https://github.com/apache/rocketmq-client-cpp) 进行包装，因此需要先安装 <strong>`librocketmq`</strong>。
+Rocketmq-client Python 基于 [rocketmq-client-cpp](https://github.com/apache/rocketmq-client-cpp) 进行包装，因此需要先安装 **`librocketmq`**。
 
 1. 安装 librocketmq （版本2.0.0及以上）， 安装教程参见 [librocketmq 安装](https://github.com/apache/rocketmq-client-python)。
 2. 执行如下命令安装 rocketmq-client-python。
@@ -84,8 +84,14 @@ from rocketmq.client import Producer, Message
 <td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/07ea422573eee1705f90227fe2f608b2.png" alt="img"></td>
 </tr>
 <tr>
-<td align="left">topicName</td>
-<td align="left">topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。<li> 命名空间全称在控制台集群管理中 <code>Topic</code> 页签中页面复制，格式是**集群 ID +</li></td>
+        <td>topicName</td>
+        <td>topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。
+				<ul style = "margin-bottom: 0px;"><li>命名空间全称可在控制台集群管理命名空间页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理命名空间页签中复制具体 Topic 名称。
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" style="width: 100%">
+						</li>
+						</ul>
+        </td>
 </tr>
 <tr>
 <td align="left">TAGS</td>
