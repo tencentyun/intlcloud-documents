@@ -1,6 +1,6 @@
 This document describes the cross-region backup feature of TencentDB for MySQL. This feature allows you to store backup files in another region, which enhances the regulatory compliance and disaster recovery capabilities and improves the data reliability.
 
->?To use the cross-region backup feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+
 
 ## Background
 Data is an important part of enterprise operations. Although the information technology brings convenience, electronic data and stored information are very vulnerable to damage or loss. Any incident, such as natural disaster, system failure, maloperation, or virus, can cause business interruptions or even disastrous losses. Therefore, ensuring the security and integrity of core data is a top priority of every enterprise.
