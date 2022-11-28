@@ -10,7 +10,7 @@
 
 本文主要介绍使用**双读双写**和**分批发布**方案迁移消息服务的方法。迁移过程中，生产者集群和消费者集群可并行在原 RocketMQ 集群和新 RocketMQ 集群上同时生产或消费消息，不会因迁移产生数据积压，业务可平滑过渡。具体方案和操作流程，请参见下图。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d4d922b8a9f62dd6612443e0aac063c6.png)        
+![](https://qcloudimg.tencent-cloud.cn/raw/77a4e14062559c92222bad3faf8a23c7.png)        
 
 具体步骤如下：
 
@@ -31,7 +31,7 @@
 
 ### 迁移整体交互流程图
 
-![](https://qcloudimg.tencent-cloud.cn/raw/077675eecb90f3f379833441f7967401.png)        
+![](https://qcloudimg.tencent-cloud.cn/raw/9eb8e8efc1ad2dcaee6686b5b7394501.png)        
 
 
 ## 可能存在的问题
