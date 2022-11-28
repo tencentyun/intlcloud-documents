@@ -28,8 +28,6 @@ After the above steps, you can create a topic in the namespace to produce and co
 
 On the **Namespace** list page, you can get the namespace access addresses in the **VPC Access Address** and **Public Network Access Address** columns.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/a97c9f964ab66e1a74a3209c05a7ab0e.png)
-
 ### Modifying a namespace
 
 You can modify a namespace in the following steps:

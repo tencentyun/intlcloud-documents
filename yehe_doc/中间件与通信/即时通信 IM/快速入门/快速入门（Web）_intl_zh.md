@@ -1,65 +1,97 @@
-Web Demo 是基于 IM TUIKit 实现，TUIKit 中包含会话、聊天、群组、个人资料管理等功能，基于 TUIKit 您可以像搭积木一样快速搭建起自己的业务逻辑。
+# [快速入门（Web）](https://www.tencentcloud.com/document/product/1047/45912)
+>Chat UIKit 是基于腾讯云 IM SDK 的一款 UI 组件库，它提供了一些通用的 UI 组件，包含会话、聊天、关系链、群组、音视频通话等功能。
+基于 UI 组件您可以像搭积木一样快速搭建起自己的业务逻辑。
+Chat UIKit  中的组件在实现 UI 功能的同时，会调用 IM SDK 相应的接口实现 IM 相关逻辑和数据的处理，因而开发者在使用 Chat UIKit  时只需关注自身业务或个性化扩展即可。
 
-## 效果展示
+<img align="right" src="https://qcloudimg.tencent-cloud.cn/raw/4562be8179a1534efb17d33428239c82.png?auto=format,enhance" width="50%" />
 
-### 会话管理
+### Quick Links
+- [Demo App](https://web.sdk.qcloud.com/im/demo/intl/index.html)
+- [Client API](https://www.tencentcloud.com/document/product/1047/33999)
+- [Free Demos](https://www.tencentcloud.com/document/product/1047/34279)
+- [FAQ](https://www.tencentcloud.com/document/product/1047/34455)
+- [GitHub Source](https://github.com/TencentCloud/chat-uikit-react)
+- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
+## Example App
+我们已经构建了用于展示聊天功能的实例演示程序，您可以在我们的网站上预览这些 [demo](https://web.sdk.qcloud.com/im/demo/intl/index.html)，另外在 GitHub 中也提供相关的[开源代码](https://github.com/TencentCloud/chat-uikit-react)。
 
-| 发起会话 | 会话列表 | 会话列表管理 |
-| --- | --- | --- |
-| ![](https://qcloudimg.tencent-cloud.cn/raw/562deec9715ae2c50f65e8d40c4d7cac.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/990204616a1c551c36ff5bdc57caa66c.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/695589f54d4ac0b9bb9bc24eb97c7e6d.png) |
+![img.png](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/home.png)
 
-### 聊天管理
+## 跑通demo
 
-| 消息列表 | 消息发送 | 群聊管理 |
-| --- | --- | --- |
-| ![](https://qcloudimg.tencent-cloud.cn/raw/8cb4fd0813a7ce0f3cab8468098dd896.png) |![](https://qcloudimg.tencent-cloud.cn/raw/f931993108c14ba3b2e628e4ed50a316.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/bb9b0449eb712f9e6fececfdb199418a.png) |
+### 步骤一：下载源码
+```
+# Run the code in CLI
+$ git clone https://github.com/TencentCloud/chat-uikit-react
+# Go to the project  
+$ cd chat-uikit-react
+# Install dependencies of the demo
+$ npm install && cd examples/sample-chat && npm install
+```
+### 步骤二：配置 demo
+1. 打开`examples/sample-chat`项目，通过路径`./examples/sample-chat/src/debug/GenerateTestUserSig.js`找到`GenerateTestUserSig.js`文件。
+2. 在`GenerateTestUserSig.js`文件中设置 `SDKAPPID` 和 `SECRETKEY` ，其值可以在[IM控制台](https://console.tencentcloud.com/im)中获取。 点击目标应用卡片，进入其配置页面。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
+3. 在 **Basic Information** 区域，点击  **Display key**，将密钥信息复制并保存到 GenerateTestUserSig 文件中。
+>!
+>- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试。**
+>- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://www.tencentcloud.com/document/product/1047/34385)。
 
-| 功能  | 说明  |
-| --- | --- |
-| 会话管理 | 1. 用于用户发起单人/多人会话<br/>2. 用于展示用户的会话列表<br/>3. 用于用户会话列表的管理 |
-| 聊天管理 | 1. 用于消息列表的展示<br/>2. 用于消息发送<br/>3. 用于群聊管理 |
-
-
-## 跑通步骤
-
-### 步骤1：下载源码
-
-根据您的实际业务需求，下载 SDK 及配套的 [Demo 源码](https://github.com/TencentCloud/TIMSDK)。
-
-```shell
-# 命令行执行
-git clone https://github.com/TencentCloud/TIMSDK.git
-
-# 进入 Web 项目
-
-cd TIMSDK/Web/Demo
-
-# 安装 demo 依赖
-npm install
-
-cd TIMSDK/Web/Demo/src/TUIKit
-
-# 安装 TUIKit 依赖
-npm install
+### 步骤三：启动项目
+```
+# Launch the project
+$ cd examples/sample-chat
+$ npm run start
 ```
 
-### 步骤2：初始化
-1. 打开终端目录的工程，找到对应的 GenerateTestUserSig 文件，路径为：/debug/GenerateTestUserSig.js。
-2. 设置 GenerateTestUserSig 文件中的相关参数，其中 SDKAppID 和密钥等信息，可通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 获取，单击目标应用卡片，进入应用的基础配置页面。
-3. ![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
-3. 在**基本信息**区域，单击**显示密钥**，复制并保存密钥信息至 GenerateTestUserSig 文件。
+### 步骤四：发送您的第一条消息
+1. 项目启动成功后，点击“+”图标，进行创建会话。
+2. 在输入框中搜索另一个用户的 userID。
+3. 点击用户头像发起会话。
+4. 在输入框输入消息，按下"enter"键发送。
+   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat.gif)
 
+## 集成 chat-uikit-react
 
-
-> !本文提到的获取 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
-
-### 步骤3：启动项目
-
-```shell
-# 启动项目
-npm run serve
+### 步骤一：Installation
 ```
+$ npm install @tencentcloud/chat-uikit-react
+```
+### 步骤二：Usage
+```tsx
+import React, { useEffect, useState } from 'react';
+import { TUIKit } from '@tencentcloud/chat-uikit-react';
+import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
+import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
+import TIMUploadPlugin from 'tim-upload-plugin';
 
-- [SDK API 手册](https://web.sdk.qcloud.com/im/doc/en/SDK.html)
-- [SDK 更新日志](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [Demo 源码](https://github.com/TencentCloud/TIMSDK/tree/master/Web/Demo)
+// 生成tim实例对象并完成登陆
+const init = async () => {
+   return new Promise((resolve, reject) => {
+      const tim = TIM.create({ SDKAppID: 000 });
+      tim?.registerPlugin({ 'tim-upload-plugin': TIMUploadPlugin });
+      const onReady = () => { resolve(tim); };
+      tim.on(TIM.EVENT.SDK_READY, onReady);
+      tim.login({
+         userID: 'xxx',
+         userSig: 'xxx',
+      });
+   });
+}
+
+export function SampleChat() {
+   const [tim, setTim] = useState<ChatSDK>();
+   useEffect(() => {
+      (async ()=>{
+         const tim = await init()
+         setTim(tim)
+      })()
+   }, [])
+
+   return (
+           <div style={{height: '100vh',width: '100vw'}}>
+              <TUIKit tim={tim}></TUIKit>
+           </div>
+   );
+}
+```
