@@ -16,7 +16,7 @@ IM SDK 支持三种类型的消息接收选项，消息接收选项在 `V2TIMRec
 **接收消息但不提醒，在会话列表界面显示小圆点（不显示未读数）**
 
 1. 消息接收选项设置为 `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE`。
-2. 当单聊/群聊收到新消息，会话列表需要更新时，可以通过会话 `V2TIMConversation` 中的 `unreadCount` ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_V2_tim_topic_info/V2TimTopicInfo/unreadCount.html)) 获取到消息未读数。
+2. 当单聊/群聊收到新消息，会话列表需要更新时，可以通过会话 `V2TIMConversation` 中的 `unreadCount` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#unreadcount) 获取到消息未读数。
 3. 根据 `V2TIMConversation` 的 `recvOpt` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#recvopt)) 判断获取到的消息接收选项为 `V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE` 时显示小红点而非消息未读数。
 
 > ? 此方式需使用未读计数功能，因此仅适用于好友工作群（Work）和陌生人社交群（Public）。群组类型详见 群组介绍。
