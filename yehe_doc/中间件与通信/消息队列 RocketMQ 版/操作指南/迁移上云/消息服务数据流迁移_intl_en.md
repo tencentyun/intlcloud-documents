@@ -10,7 +10,7 @@ In a [metadata migration task](https://www.tencentcloud.com/document/product/111
 
 This document describes the **double-read double-write** and **batch release** schemes of the message migration service. During migration, the producer and consumer clusters can produce or consume messages in the old RocketMQ and new TDMQ for RocketMQ clusters in parallel. Data will not be heaped because of the migration, so the business can transition smoothly.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d4d922b8a9f62dd6612443e0aac063c6.png)        
+![](https://qcloudimg.tencent-cloud.cn/raw/77a4e14062559c92222bad3faf8a23c7.png)        
 
 The detailed directions are as follows:
 
@@ -31,7 +31,7 @@ The detailed directions are as follows:
 
 ### Migration process diagram
 
-![](https://qcloudimg.tencent-cloud.cn/raw/077675eecb90f3f379833441f7967401.png)        
+![](https://qcloudimg.tencent-cloud.cn/raw/9eb8e8efc1ad2dcaee6686b5b7394501.png)        
 
 
 ## Possible Issues
