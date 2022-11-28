@@ -31,8 +31,5 @@
      - 不填写消息ID：属于**模糊查询**。根据 Group ID 和死信消息产生的时间范围，批量查询该Group ID在某段时间内产生的所有死信消息。
      - 填写消息 ID：属于**精确查询**。根据Group ID与Message ID精确定位到任意一条消息。
 3. 单击**查询**，下方列表会展示所有查询到的结果并分页展示。
-![](https://qcloudimg.tencent-cloud.cn/raw/6462120fe9853a5e648e3e078d80d3c0.png)
-4. 找到您希望查看内容或参数的消息，单击操作列的**查看详情**，即可查看消息的基本信息、内容（消息体）以及参数。
-![](https://qcloudimg.tencent-cloud.cn/raw/d6b775e76dfde82e48e64d50d3352751.png)      
+4. 找到您希望查看内容或参数的消息，单击操作列的**查看详情**，即可查看消息的基本信息、内容（消息体）以及参数。    
 5. 单击操作列的**查看消息轨迹**，或者在详情页单击 Tab 栏的**消息轨迹**，即可查看该消息的消息轨迹（详细说明请参见 [消息轨迹查询结果说明](https://www.tencentcloud.com/document/product/1113/51216)。
-![](https://qcloudimg.tencent-cloud.cn/raw/1578c4fc6c451017b48644038be302c9.png)
