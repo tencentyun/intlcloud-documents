@@ -48,7 +48,7 @@
 <td>支持配置云监控告警</td>
 <td>支持在云监控控制台对消息生产流量/速率阈值，生产者在线数量和消息堆积等指标进行告警配置。</td>
 <td>2021-12-22</td>
-<td><a href="">配置告警</a></td> 
+<td><a href="https://www.tencentcloud.com/document/product/1113/46521">配置告警</a></td> 
 </tr><tr>
 <td>支持用户自由配置 Topic 分区数</td>
 <td>支持用户自由配置 Topic 分区数，最大可支持32分区。</td>
@@ -58,7 +58,7 @@
 <td>提供多语言 Demo</td>
 <td>-</td>
 <td>2021-12-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1113/45956">SDK 文档</a></td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/1113/45953">SDK 文档</a></td> 
 </tr></table>
 
 
