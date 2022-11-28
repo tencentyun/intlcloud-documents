@@ -25,7 +25,7 @@ The dead letter message query feature for virtual clusters will be supported lat
 <td>After querying a specific message, you can push it to a specified online client to check whether the client consumes it logically as expected.
 </td>
 <td>2022-10-20</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1113/45952">Message Query and Trace</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1113/45952">Querying Message</a></td>
 </tr></table>
 
 
@@ -48,7 +48,7 @@ The dead letter message query feature for virtual clusters will be supported lat
 <td>Supported the configuration of Cloud Monitor(CM) alarms</td>
 <td>You can configure alarms for metrics such as message production traffic/speed threshold, the number of online producers, and message heap in the CM console.</td>
 <td>2021-12-22</td>
-<td><a href="">Configuring Alarms</a></td> 
+<td><a href="https://www.tencentcloud.com/document/product/1113/46521">Configuring Alarms</a></td> 
 </tr><tr>
 <td>Supported configuring the topic partition count as needed</td>
 <td>You can configure up to 32 topic partitions as needed.</td>
