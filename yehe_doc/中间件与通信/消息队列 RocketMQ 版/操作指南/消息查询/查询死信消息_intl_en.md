@@ -31,8 +31,5 @@ You can query messages in the last 3 days.
      - If you don't enter the message ID, a **fuzzy query** will be performed, which will batch query all dead letter messages by group ID in the selected time range.
      - If you enter the message ID, an **exact query** will be performed, which will locate the message by group ID and message ID.
 3. Click **Query**, and the paginated results will be displayed in the list.
-![](https://qcloudimg.tencent-cloud.cn/raw/6462120fe9853a5e648e3e078d80d3c0.png)
-4. Click **View Details** in the **Operation** column of the target message to view its basic information, content (message body), and parameters.
-![](https://qcloudimg.tencent-cloud.cn/raw/d6b775e76dfde82e48e64d50d3352751.png)      
+4. Click **View Details** in the **Operation** column of the target message to view its basic information, content (message body), and parameters.     
 5. Click **View Message Trace** in the **Operation** column or select the **Message Trace** tab on the details page to view the trace of the message. For more information, see [Message Trace Description](https://www.tencentcloud.com/document/product/1113/51216).
-![](https://qcloudimg.tencent-cloud.cn/raw/1578c4fc6c451017b48644038be302c9.png)
