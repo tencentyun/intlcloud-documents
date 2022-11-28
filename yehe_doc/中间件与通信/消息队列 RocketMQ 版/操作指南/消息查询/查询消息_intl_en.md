@@ -78,10 +78,8 @@ pullConsumer.setCustomizedTraceTopic(null);
     - **By message ID:** A fast exact query method.
     - **By message key:** A fuzzy query method that is used when you have only set the message key.
 3. Click **Query**, and the paginated results will be displayed in the list.
-![](https://qcloudimg.tencent-cloud.cn/raw/2052f64fb1cc50f222fcd3232dbf65f3.png)
 4. Click **View Details** in the **Operation** column of the target message to view its basic information, content (message body), and parameters.
 5. Click **View Message Trace** in the **Operation** column or select the **Message Trace** tab on the details page to view the trace of the message. For more information, see [Message Trace Description](https://www.tencentcloud.com/document/product/1113/51216).
-   ![](https://qcloudimg.tencent-cloud.cn/raw/26e01a17a960deb774f23a832d22003c.png)
 
 
 
@@ -90,5 +88,3 @@ pullConsumer.setCustomizedTraceTopic(null);
 After a message is found, you can click **Verify Consumption** in the **Operation** column to send the message to the specified client for verification. **This feature may lead to message repetition.**
 
 > ? Currently, the consumption verification feature is only available to exclusive clusters. It only verifies the client consumption logic to make sure it is normal without affecting message receiving. Therefore, the verification causes no changes in any message information such as message consumption status.
-
-![](https://qcloudimg.tencent-cloud.cn/raw/7c01f6c0b7b7d3e331ab9c535ee1e670.png)
