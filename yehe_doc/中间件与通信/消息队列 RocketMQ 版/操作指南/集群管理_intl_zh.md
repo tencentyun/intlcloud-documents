@@ -22,7 +22,7 @@
   - 计费模式：专享集群使用**包年包月**计费模式，虚拟集群使用**按量计费**模式。
   - 地域：选择与您的业务最靠近的地域，处于不同地域的云产品内网不通，购买后不能更换，请您谨慎选择。例如，广州地域的云服务器无法通过内网访问上海地域的集群。若需要跨地域内网通信，请参见 [对等连接](https://intl.cloud.tencent.com/document/product/553/18836)。
   - 集群规格：根据您的业务需求选择合适的集群规格。
-  - 网络配置：默认不开通公网访问，如需开通请 [提交申请](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory%3Flevel1_id%3D876%26level2_id%3D1772%26source%3D0%26data_title%3D%25E6%25B6%2588%25E6%2581%25AF%25E9%2598%259F%25E5%2588%2597%2520TDMQ%26step%3D1)。
+  - 网络配置：默认不开通公网访问，如需开通请 [提交申请](https://console.cloud.tencent.com/workorder/category)。
   - 集群名称：填写集群名称， 3-64个字符，只能包含数字、字母、“-”和“\_”。
   - 标签：标签用于从不同维度对资源分类管理。使用方法请参见 [使用标签管理资源](https://intl.cloud.tencent.com/document/product/1113/43129)。
 3. 单击**立即购买**，完成集群创建。
@@ -81,11 +81,6 @@
 
 2022年8月8日部分地区上线新的虚拟集群 RocketMQ 服务，新版集群在命名空间列表获取相应的接入地址，之前创建的集群或未升级的集群仍在集群操作列的**接入地址**处获取。
 
-- 新版集群：
-![](https://qcloudimg.tencent-cloud.cn/raw/91e590fce98e38121b3efa7243864128.png)
-- 旧版集群：
-![](https://qcloudimg.tencent-cloud.cn/raw/73da10eea086f8d28c77409e2b323407.png)
-
 ### 升级集群规格
 
 如当前的集群规格不满足您的业务需求，您可以在控制台上提升您的节点数量。
@@ -94,8 +89,6 @@
 
 1. 在**集群管理**列表页，单击操作列的**升配**。
 2. 修改节点数量后，单击**确认调整**。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/d5fb531836f8c35b845dac6073d21e67.png)
-
 
 ### 编辑集群
 
