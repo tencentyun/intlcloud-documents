@@ -22,7 +22,7 @@ Clusters are divided into virtual clusters and exclusive clusters:
   - Billing Mode: Exclusive clusters are **monthly subscribed**, while virtual clusters are **pay-as-you-go**.
   - Region: Select a region closest to your business. Tencent Cloud products in different regions cannot communicate with each other over the private network. For example, CVM instances in Guangzhou region cannot access clusters in Shanghai region over the private network. Select a region with caution, as it cannot be changed after purchase. If you need cross-region communication over the private network, see [Creating Intra-account Peering Connection](https://intl.cloud.tencent.com/document/product/553/18836).
   - Cluster Specification: Select an appropriate cluster specification as needed.
-  - Network Configuration: Public network access is not enabled by default. To enable it, [submit a ticket](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory%3Flevel1_id%3D876%26level2_id%3D1772%26source%3D0%26data_title%3D%25E6%25B6%2588%25E6%2581%25AF%25E9%2598%259F%25E5%2588%2597%2520TDMQ%26step%3D1) for application.
+  - Network Configuration: Public network access is not enabled by default. To enable it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
   - Cluster Name: Enter the cluster name, which can contain 3–64 digits, letters, hyphens, and underscores.
   - Tag: Tags are used to manage resources by category in different dimensions. For detailed directions, see [Managing Resource with Tag](https://intl.cloud.tencent.com/document/product/1113/43129).
 3. Click **Buy Now**.
@@ -81,11 +81,6 @@ On the **Cluster** list page, click **View Details** in the **Operation** column
 
 On August 8, 2022, TDMQ for RocketMQ launched the virtual cluster feature in certain regions. The access addresses of new virtual clusters can be obtained in the namespace list. The access addresses of clusters created previously or not upgraded can still be obtained in **Access Address** in the **Operation** column.
 
-- Clusters on the new version:
-![](https://qcloudimg.tencent-cloud.cn/raw/91e590fce98e38121b3efa7243864128.png)
-- Clusters on the old version:
-![](https://qcloudimg.tencent-cloud.cn/raw/73da10eea086f8d28c77409e2b323407.png)
-
 ### Upgrading the cluster specification
 
 If the current cluster specifications cannot meet your business needs, you can increase the number of nodes in the console.
@@ -94,8 +89,6 @@ If the current cluster specifications cannot meet your business needs, you can i
 
 1. On the **Cluster** list page, click **Upgrade Configuration** in the **Operation** column.
 2. Modify the number of nodes and click **Confirm Adjustment**.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/d5fb531836f8c35b845dac6073d21e67.png)
-
 
 ### Editing a cluster
 
