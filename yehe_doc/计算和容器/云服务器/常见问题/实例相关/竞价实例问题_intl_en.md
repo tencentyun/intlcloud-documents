@@ -3,7 +3,7 @@
 An important feature of spot instances is that the system will repossess assigned instances based on prices or the supply-demand relationship. If the market price is higher than your bid or if the CVM resource pool corresponding to your spot instances is in short supply, the process will be interrupted by the system.
 
 ### Is it possible to avoid being repossessed by the system through bidding?
-No. Because repossession trigged by insufficient inventory is unavoidable. You need to accept that instance repossession may occur when you deploy businesses on the spot instance.
+No. Because repossession triggered by insufficient inventory is unavoidable. You need to accept that instance repossession may occur when you deploy businesses on the spot instance.
 
 ### How do I know that an instance is about to be interrupted?
 Two minutes before the interruption, we will notify you in the form of metadata that the instance is about to be interrupted and repossessed.
