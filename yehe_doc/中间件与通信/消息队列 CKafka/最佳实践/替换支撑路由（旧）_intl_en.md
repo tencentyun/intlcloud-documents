@@ -12,7 +12,6 @@ Because it is necessary to update the bootstrap-server addresses of producers an
 ## Directions
 
 1. Create a supportive route.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/a9ae889fa4deda39ebbd6392558758b6.png)
 2. Switch the CKafka bootstrap-server addresses of all producers and consumers to the newly created supportive route. The switch order does not matter as long as they are all switched.
 3. Restart producers and consumers based on the business conditions. The restart order does not matter.
 4. Observe whether the business is stable for at least 3 hours (recommended).
