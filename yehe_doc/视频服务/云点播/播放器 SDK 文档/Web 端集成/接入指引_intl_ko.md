@@ -424,7 +424,7 @@ var player = TCPlayer('player-container-id', { // player-container-id는 플레�
 :::
 </dx-codeblock>
 
->!소스 비디오가 브라우저에서 정상적으로 재생되지 않을 수 있기 때문에 재생할 비디오는 Tencent Cloud 트랜스 코딩 사용을 권장합니다.
+<dx-alert infotype="notice">소스 비디오가 브라우저에서 정상적으로 재생되지 않을 수 있기 때문에 재생할 비디오는 Tencent Cloud 트랜스 코딩 사용을 권장합니다.</dx-alert>
 :::
 </dx-tabs>
 
