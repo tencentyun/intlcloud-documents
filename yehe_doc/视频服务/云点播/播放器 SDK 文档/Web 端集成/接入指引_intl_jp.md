@@ -353,20 +353,20 @@ WebプレーヤーはHTML5の`<video>`タグおよびFlashを介してビデオ�
 
 ローカルプロジェクトにindex.htmlファイルを新規作成し、htmlページ内にプレーヤースタイルファイルとスクリプトファイルをインポートします。
 ```html
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
+ <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/tcplayer.min.css" rel="stylesheet"/>
  <!--ChromeやFirefoxなどの最新ブラウザでH5を介してWebrtcのビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にTXLivePlayer-x.x.x.min.jsをインポートする必要があります。-->
  <!--中にはWebrtcに対応していないブラウザ環境もあり、プレーヤーはWebrtcのストリームアドレスをHLS形式のアドレスに自動変換するため、ライブイベントストリーミングのシナリオでは同様に、hls.min.x.xx.xm.jsをインポートする必要があります。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/libs/TXLivePlayer-1.2.3.min.js"></script>
  <!--ChromeやFirefoxなどの最新ブラウザでH5を介してChromeやFirefoxなどのモダンブラウザでHLSプロトコルのビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にhls.min.x.xx.xm.jsをインポートする必要があります。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/libs/hls.min.1.1.5.js"></script>
  <!--ChromeやFirefoxなどの最新ブラウザでH5を介してChromeやFirefoxなどのモダンブラウザでFLV形式のビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にflv.min.x.jsをインポートする必要があります。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/libs/flv.min.1.6.3.js"></script>
   <!--ChromeやFirefoxなどの最新ブラウザでH5を介してDASHビデオを再生したい場合は、tcplayer.vx.x.x.min.jsの前にdash.min.x.x.x.jsを導入する必要があります。-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/libs/dash.all.min.4.4.1.js"></script>
  <!--プレーヤースクリプトファイル-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/tcplayer.v4.6.0.min.js"></script>
 ```
-プレーヤーSDKを使用する場合は、ご自身でリソースをデプロイすることをお勧めします。[クリックしてプレーヤーリソースをダウンロード](https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/release.zip)します。
+プレーヤーSDKを使用する場合は、ご自身でリソースをデプロイすることをお勧めします。[クリックしてプレーヤーリソースをダウンロード](https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/release.zip)します。
 デプロイし解凍した後のフォルダについては、リソースの相互引用の異常を回避するため、フォルダ内のディレクトリを調整することができません。
 デプロイするアドレスが`aaa.xxx.ccc`である場合は、適切な場所にプレーヤースタイルファイルとスクリプトファイルを導入します。
 ```html
