@@ -424,7 +424,7 @@ var player = TCPlayer('player-container-id', { // player-container-id is the pla
 :::
 </dx-codeblock>
 
->! Not all videos can be played successfully in a browser. We recommend you use Tencent Cloud’s services to transcode a video before playing it.
+<dx-alert infotype="notice">Not all videos can be played successfully in a browser. We recommend you use Tencent Cloud’s services to transcode a video before playing it.</dx-alert>
 :::
 </dx-tabs>
 
