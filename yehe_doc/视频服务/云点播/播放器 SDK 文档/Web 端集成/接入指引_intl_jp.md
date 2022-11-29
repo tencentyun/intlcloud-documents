@@ -424,7 +424,7 @@ var player = TCPlayer('player-container-id', { // player-container-idはプレ�
 :::
 </dx-codeblock>
 
->!再生したいビデオは、Tencent Cloudを使用してトランスコードすることをお勧めします。ブラウザでのオリジナルビデオの正常な再生を保証することはできません。
+<dx-alert infotype="notice">再生したいビデオは、Tencent Cloudを使用してトランスコードすることをお勧めします。ブラウザでのオリジナルビデオの正常な再生を保証することはできません。</dx-alert>
 :::
 </dx-tabs>
 
