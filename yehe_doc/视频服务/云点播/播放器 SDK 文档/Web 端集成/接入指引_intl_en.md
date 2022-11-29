@@ -353,20 +353,20 @@ You can add a video player to your webpage in the following steps:
 
 Create the `index.html` file in your project and import the player style file and script file to the HTML page:
 ```html
- <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
+ <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/tcplayer.min.css" rel="stylesheet"/>
  <!--If you want to play back WebRTC videos through HTML5 in a modern browser such as Chrome and Firefox, you need to import `TXLivePlayer-x.x.x.min.js` before importing `tcplayer.vx.x.x.min.js`.-->
  <!--Some browser environments don't support WebRTC. In such cases, the player will automatically convert a WebRTC URL to an HLS URL. Therefore, you also need to import `hls.min.x.xx.xm.js` in WebRTC live streaming scenarios.-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/TXLivePlayer-1.2.3.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/libs/TXLivePlayer-1.2.3.min.js"></script>
  <!--If you want to play back HLS videos through HTML5 in a browser such as Chrome and Firefox, you need to import `hls.min.x.xx.xm.js` before importing `tcplayer.vx.x.x.min.js`.-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/hls.min.1.1.5.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/libs/hls.min.1.1.5.js"></script>
  <!--If you want to play back FLV videos through HTML5 in a modern browser such as Chrome and Firefox, you need to import `flv.min.x.x.x.js` before importing `tcplayer.vx.x.x.min.js`.-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/flv.min.1.6.3.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/libs/flv.min.1.6.3.js"></script>
   <!--If you want to play back DASH videos through HTML5 in a modern browser such as Chrome and Firefox, you need to import `dash.min.x.x.x.js` before importing `tcplayer.vx.x.x.min.js`.-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/libs/dash.all.min.4.4.1.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/libs/dash.all.min.4.4.1.js"></script>
  <!--Player script file-->
- <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.v4.5.4.min.js"></script>
+ <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/tcplayer.v4.6.0.min.js"></script>
 ```
-We recommend you deploy the resources on your own when using the Player SDK. You can download the player resources [here](https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/release.zip).
+We recommend you deploy the resources on your own when using the Player SDK. You can download the player resources [here](https://web.sdk.qcloud.com/player/tcplayer/release/v4.6.0/release.zip).
 To avoid reference errors, do not rearrange the directories in the folder after decompression.
 Suppose the address of your deployment is `aaa.xxx.ccc`. Follow the steps below to import the style and script files:
 ```html
