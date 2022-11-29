@@ -1,12 +1,12 @@
-[Beats](https://www.elastic.co/beats) platform hosts various single-purpose data shippers which can be used as lightweight agents after installation to send collected data from hundreds or thousands of machines to the target.
+[Beats](https://www.elastic.co/beats) platform hosts various single-purpose data shippers that can be used as lightweight agents after installation to send collected data from hundreds or thousands of machines to the target.
 ![](https://main.qcloudimg.com/raw/e48ad4b5a9d1d4576bbb5f574125b8aa.png)
 Beats offers a wide variety of shippers, and you can download the one which best suits your needs. This document uses Filebeat, a lightweight log shipper, as an example to describe how to connect Filebeat to CKafka and handle common problems that may occur after the connection.
 
 ## Prerequisites
 
-- Download and install Filebeat (for more information, please see [Installing Logstash](https://www.elastic.co/guide/en/logstash/7.6/installing-logstash.html))
-- Download and install JDK 8 (for more information, please see [Java SE Development Kit 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html))
-- You have [created a CKafka instance](https://intl.cloud.tencent.com/document/product/597/39718)
+- You have downloaded and installed Filebeat. For more information, see [Installing Logstash](https://www.elastic.co/guide/en/logstash/7.6/installing-logstash.html).
+- You have downloaded and installed JDK 8. For more information, see [Java Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
+- You have created a CKafka instance. For more information, see [Creating Instance](https://intl.cloud.tencent.com/document/product/597/39718).
 
 ## Directions
 
@@ -14,12 +14,12 @@ Beats offers a wide variety of shippers, and you can download the one which best
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of the target instance to enter its basic information page.
-3. On the instance basic information page, get the instance access address in the **Access Mode** module.
+3. On the instance's basic information page, get the instance access address in the **Access Mode** module.
      ![](https://main.qcloudimg.com/raw/fea1f55c3cf311d1393347853cf183fc.png)
 
 ### Step 2. Create a topic
 
-1. On the instance's basic information page, select the **Topic Management** tab on the top.
+1. On the instance's basic information page, select the **Topic Management** tab at the top.
 2. On the topic management page, click **Create** to create a topic named `test`.
     ![](https://main.qcloudimg.com/raw/bd8fb967eb2e46f14cee52c3a34014e2.png)
 
@@ -41,7 +41,7 @@ filebeat.prospectors:
 
 #------------------ kafka -------------------------------------
 output.kafka:
-  version:0.10.2 //Set the value to the open-source version of the CKafka instance.
+  version:0.10.2 // Set the value to the open-source version of the CKafka instance.
   # Set to the access address of the CKafka instance
   hosts: ["xx.xx.xx.xx:xxxx"]
   # Set the name of the target topic
@@ -118,7 +118,16 @@ Check the version configuration in the configuration file:
 <dx-codeblock>
 :::  yaml
 output.kafka:
-  version:0.10.2 //Set the value to the open-source version of the CKafka instance.
+  version:0.10.2 // Set the value to the open-source version of the CKafka instance.
 :::
 </dx-codeblock>
+
+
+## Notes and Precautions
+- When data is sent to CKafka, `compression.codec` cannot be set.
+- Gzip compression is not supported by default. To use it, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+As Gzip compression causes high CPU consumption, if it is used, all messages will become `InValid`.
+- The program cannot run properly when the LZ4 compression method is used. Possible causes include:
+The message format is incorrect. The default message version of CKafka is v0.10.2. You need to use the message format v1.
+- Setting method for SDK varies by Kafka client. You can query the setting method in the open-source community (e.g., [C/C++ Client Descriptions](https://github.com/edenhill/librdkafka/blob/master/INTRODUCTION.md#compression)) to set the version of the message format.
 

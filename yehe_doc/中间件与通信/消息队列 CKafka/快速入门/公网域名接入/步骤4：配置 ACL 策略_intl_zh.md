@@ -8,7 +8,6 @@
 
 ## 操作步骤
 
-1. 在实例详情页，选择**用户管理**，单击**新建**，添加一个用户，设置好用户名和密码。
-   ![img](https://main.qcloudimg.com/raw/55c1509c27709c8b9b57eda9a4fc0b0e.png)
-2. 在**ACL策略管理**页面，选择 [步骤3](https://intl.cloud.tencent.com/document/product/597/40046) 创建的 Topic 操作列的**编辑ACL策略**，为用户添加读写权限。
-	 ![](https://main.qcloudimg.com/raw/11c2739ba52c416a4d3cd608142b7982.png)
+1. 在实例详情页，选择 **ACL 策略管理** > **用户管理**，单击**新建**，添加一个用户，设置好用户名和密码。
+    ![img](https://main.qcloudimg.com/raw/55c1509c27709c8b9b57eda9a4fc0b0e.png)
+2. 选择**策略列表**页签，单击**资源**页签，选择 [步骤3](https://intl.cloud.tencent.com/document/product/597/40046) 创建的 Topic 操作列的**编辑 ACL 策略**，为用户添加读写权限。

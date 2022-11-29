@@ -1,3 +1,68 @@
+## 2022年11月
+
+<table>
+<tr>
+<th width="20%">动态名称</th>
+<th width="45%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+<tr>
+<td>1.1.1版本的 Broker 支持 Topic 限流规则</td>
+<td>-</td>
+<td>2022-11-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47588">设置 Topic 限流规则</a></td>
+</tr>
+</table>
+
+
+## 2022年10月
+
+<table>
+<tr>
+<th width="20%">动态名称</th>
+<th width="45%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+<tr>
+<td>支持实例级别设置默认消息大小</td>
+<td>支持实例级别设置默认消息大小，作为新建 Topic 的默认初始值，可以后期单独针对 Topic 进行修改。</td>
+<td>2022-10-24</td>
+<td><a href="https://cloud.tencent.com/document/product/597/81978">配置消息大小</a></td> 
+</tr><tr>
+<td>支持在控制台删除 Consumer Group 关联的 Topic 订阅关系</td>
+<td>当 Consumer Group 状态为 Empty 时，支持删除关联的某个 Topic 的订阅关系。</td>
+<td>2022-10-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40037">删除 Consumer Group</a></td> 
+  </tr><tr>
+<td>支持在控制台展示所需要放通的 VIP 列表</td>
+<td>支持在控制台展示所需要放通的 VIP 列表，配置安全组时，需要放通所有端口。</td>
+<td>2022-10-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32555">添加路由策略</a></td>
+</tr><tr>
+<td>支持展示计费项详情与折扣</td>
+<td>购买实例时，支持在总价格上展示各计费项详情与折扣。</td>
+<td>2022-10-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/39718">创建实例</a></td>
+</tr><tr>
+<td>支持存量标准版实例升级到专业版</td>
+<td>2021年09月09日前购买的标准版实例，支持升级到专业版实例，同时可以在原来的标准版规格体系内继续升配。</td>
+<td>2022-10-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40650">升配实例</a></td>
+</tr><tr>
+<td>支持下载消息</td>
+<td>查询消息时，支持下载消息，下载内容包含 header，key 和 value。</td>
+<td>2022-10-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/39719">查询消息</a></td>
+</tr>
+</table>
+
+
+
+
+
+
 
 
 ## 2022年06月
@@ -33,7 +98,7 @@
 <td>支持智能运维</td>
   <td><li>一键诊断支持设置自动诊断，每天在指定时间主动触发一次诊断。</li><li>弹性伸缩支持自动化分区均衡功能，自动检查 Topic 的分区分布，在指定时间自动发起分区均衡。</li></td>
 <td>2022-06-16</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/597/43841">一键诊断</a></li><li><a href="https://cloud.tencent.com/document/product/597/75575">弹性伸缩</a></li></td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/597/43841">一键诊断</a></li><li><a href="https://www.tencentcloud.com/document/product/597/47889">弹性伸缩</a></li></td>
 </tr><tr>
 <td>专业版实例支持三可用区部署</td>
 <td>在拥有三个或三个以上可用区的地域购买 CKafka 专业版实例时，可以最多选择三个可用区购买跨可用区实例，该实例分区副本会强制分布在各个可用区节点上。</td>
@@ -41,6 +106,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40243">跨可用区部署</a></td>
 </tr>
 </table>
+
 
 
 
@@ -76,6 +142,7 @@
 
 
 
+
 ## 2022年03月
 
 <table>
@@ -99,9 +166,10 @@
 <td>支持 Topic 级别的限流</td>
 <td>您可以针对 Topic 进行限流，避免单个 Topic 流量过大而影响其他 Topic。</td>
 <td>2022-03-23</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47588">设置 Topic 限流规则</a></td>
 </tr>
 </table>
+
 
 
 
@@ -156,6 +224,7 @@
 
 
 
+
 ## 2022年01月
 
 <table>
@@ -169,12 +238,12 @@
 <td>Topic 展示字段增加</td>
 <td>新建 Topic 时支持设置标签，支持查看生产者端连接关系。</td>
 <td>2022-01-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/597/47583">Topic 管理</a></td>
 </tr><tr>
 <td>支持控制台直接创建 Consumer Group 和发送消息</td>
 <td>支持用户在 CKafka 控制台直接创建 Consumer Group 和发送消息，无需在本地客户端操作。</td>
 <td>2022-01-07</td>
-  <td><li><a href="https://intl.cloud.tencent.com/document/product/597/44994">创建 Consumer Group</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></li></td>
+  <td><li><a href="https://intl.cloud.tencent.com/document/product/597/44994">创建 Consumer Group</a></li><li><a href="https://www.tencentcloud.com/document/product/597/47583">Topic 管理</a></li></td>
 </tr><tr>
 <td>专业版实例支持展示实例连接信息</td>
 <td>CKafka 专业版 Dashboard 展示实例连接数信息，在实例连接数将满时，便于用户查看各个机器的连接数情况。</td>
@@ -192,6 +261,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/42386">公网带宽管理</a></td>
 </tr>
 </table>
+
 
 
 
@@ -244,7 +314,7 @@
 <td>Topic 高级设置支持retention.bytes</td>
 <td>支持在 Topic 的高级设置上设置 retention.bytes，与 retention.ms 配合使用。</td>
 <td>2021-11-24</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/597/47583">Topic 管理</a></td>
 </tr><tr>
 <td>可售卖上限提升至20000MB/s</td>
 <td>可售卖上限提升至20000MB/s，满足部分用户大促活动业务流量峰值期间的大量升配诉求。</td>
@@ -252,6 +322,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></td>
 </tr>
 </table>
+
 
 
 
@@ -309,6 +380,7 @@
 
 
 
+
 ## 2021年09月
 
 <table><tr>
@@ -327,6 +399,7 @@
 <td>2021-09-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></td>
 </tr></table>
+
 
 
 
@@ -369,7 +442,7 @@
 <td>增加查看 Topic 详情和未同步副本</td>
 <td>支持在控制台查 Topic 和未同步副本的详情。</td>
 <td>2021-08-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 管理</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/597/47583">Topic 管理</a></td>
 </tr><tr>
 <td>实例命名支持正则表达式</td>
 <td>购买多个实例时，支持创建实例后缀数字自动升序以及指定模式串功能。</td>
@@ -381,6 +454,7 @@
 <td>2021-08-03</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40964">CKafka 版本选择建议</a></td>
 </tr></table>
+
 
 
 
@@ -432,6 +506,7 @@
 
 
 
+
 ## 2021年05月
 
 <table><tr>
@@ -445,6 +520,7 @@
 <td>2021-05-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></td>
 </tr></table>
+
 
 
 
@@ -501,6 +577,7 @@
 
 
 
+
 ## 2021年03月
 
 <table><tr>
@@ -524,6 +601,7 @@
 <td>2021-03-18</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40037">消费者组管理</a></td>
 </tr></table>
+
 
 
 
@@ -567,6 +645,7 @@
 
 
 
+
 ## 2020年12月
 
 <table><tr>
@@ -580,6 +659,7 @@
 <td>2020-12-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/32555">添加路由策略</a></td>
 </tr></table>
+
 
 
 
@@ -619,6 +699,7 @@
 
 
 
+
 ## 2020年08月
 
 <table><tr>
@@ -632,6 +713,7 @@
 <td>2020-08-31</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">产品规格</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></li></td>
 </tr></table>
+
 
 
 
@@ -671,6 +753,7 @@
 
 
 
+
 ## 2020年03月
 
 <table><tr>
@@ -684,6 +767,7 @@
 <td>2020-03-24</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">产品规格</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></li></td>
 </tr></table>
+
 
 
 
@@ -738,6 +822,7 @@
 
 
 
+
 ## 2019年12月
 
 <table><tr>
@@ -751,6 +836,7 @@
 <td>2019-12-25</td>
 <td>-</td>
 </tr></table>
+
 
 
 
@@ -796,6 +882,7 @@
 
 
 
+
 ## 2019年09月
 
 <table><tr>
@@ -823,6 +910,7 @@
 
 
 
+
 ## 2019年08月
 
 <table><tr>
@@ -836,6 +924,7 @@
 <td>2019-08-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/31586">CKafka 数据可靠性说明</a></td>
 </tr></table>
+
 
 
 
@@ -880,6 +969,7 @@
 
 
 
+
 ## 2019年04月
 
 <table><tr>
@@ -893,6 +983,7 @@
 <td>2019-04-18</td>
 <td>-</td>
 </tr></table>
+
 
 
 
@@ -938,6 +1029,7 @@
 
 
 
+
 ## 2018年12月
 
 <table><tr>
@@ -949,8 +1041,9 @@
 <td>支持 Topic 高级参数配置</td>
 <td>您可以通过 CKafka 控制台，对实例下的 Topic 进行细粒度的参数配置。</td>
 <td>2018-12-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic 高级配置参数说明</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/597/47583">Topic 高级配置参数说明</a></td>
 </tr></table>
+
 
 
 
@@ -977,6 +1070,7 @@
 <td>2018-10-28</td>
 <td>-</td>
 </tr></table>
+
 
 
 
