@@ -33,12 +33,12 @@ This document describes how to configure a routing rule in the CKafka console to
 5. Click **Submit** to add the VPC network.
 6. Click **View All IPs and Ports** in the **Operation** column to view the list of IPs and ports that should be opened.
 
->? As broker scaling and migration will cause port changes, do not add only the current listed ports; otherwise, message read/write may become abnormal after scaling and migration. If your server is configured with access restrictions (security groups), you should open the following port ranges on the server:
->- Port range that should be opened for the VPC route: 9092–60000
->- Port range that should be opened for the public network route: 50000–53000
->- Port range that should be opened for the supportive route: 6000–12000
-
-![](https://qcloudimg.tencent-cloud.cn/raw/50155761eff6298b4598aa674161e05c.png)
+<dx-alert infotype="explain" title="">
+As broker scaling and migration will cause port changes, do not add only the current listed ports; otherwise, message read/write may become abnormal after scaling and migration. If your server is configured with access restrictions (security groups), you should open the following port ranges on the server:
+- Port range that should be opened for the VPC route: 9092–60000
+- Port range that should be opened for the public network route: 50000–53000
+- Port range that should be opened for the supportive route: 6000–12000
+</dx-alert>
 
 ::: 
 
@@ -56,14 +56,13 @@ This document describes how to configure a routing rule in the CKafka console to
     ![](https://main.qcloudimg.com/raw/c4d1852255a63b38bfc199d3b6d1711b.png)
 5. Click **Submit** to add the public network routing policy.
 6. Click **View All IPs and Ports** in the **Operation** column to view the list of IPs and ports that should be opened.
-    <dx-alert infotype="explain" title="">
-  - As broker scaling and migration will cause port changes, do not add only the current listed ports; otherwise, message read/write may become abnormal after scaling and migration. If your server is configured with access restrictions (security groups), you should open the following port ranges on the server:
+<dx-alert infotype="explain" title="">
+- As broker scaling and migration will cause port changes, do not add only the current listed ports; otherwise, message read/write may become abnormal after scaling and migration. If your server is configured with access restrictions (security groups), you should open the following port ranges on the server:
     - Port range that should be opened for the VPC route: 9092–60000
     - Port range that should be opened for the public network route: 50000–53000
     - Port range that should be opened for the supportive route: 6000–12000
-  - CKafka provides 3 Mbps public network bandwidth free of charge by default, which can be increased for Pro Edition instances. For detailed directions, see [Public Network Bandwidth Management](https://intl.cloud.tencent.com/document/product/597/42386).
-    </dx-alert>
-    ![](https://qcloudimg.tencent-cloud.cn/raw/50155761eff6298b4598aa674161e05c.png)
+- CKafka provides 3 Mbps public network bandwidth free of charge by default, which can be increased for Pro Edition instances. For detailed directions, see [Public Network Bandwidth Management](https://intl.cloud.tencent.com/document/product/597/42386).
+</dx-alert>
     
     :::
     </dx-tabs>
