@@ -424,7 +424,7 @@ var player = TCPlayer('player-container-id', { // player-container-id 为播放�
 :::
 </dx-codeblock>
 
->!要播放的视频建议使用腾讯云转码，原始视频无法保证在浏览器中正常播放。
+<dx-alert infotype="notice">要播放的视频建议使用腾讯云转码，原始视频无法保证在浏览器中正常播放。</dx-alert>
 :::
 </dx-tabs>
 
