@@ -12,7 +12,6 @@ You can set topic traffic throttling policies only for instances with a broker o
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, select **Topic Management**.
 4. In the **Operation** column, click **More** > **Traffic Throttling** and set the threshold.
-  ![](https://qcloudimg.tencent-cloud.cn/raw/3963798dd53c757c0a4f72f24e66d34b.png)
   - Max Topic Production Traffic: This value excludes replica traffic and ranges from 1 MB/s to the maximum bandwidth purchased for the instance / number of replicas of the topic.
   - Max Topic Consumption Traffic: This value ranges from 1 MB/s to the maximum bandwidth purchased for the instance.
 
