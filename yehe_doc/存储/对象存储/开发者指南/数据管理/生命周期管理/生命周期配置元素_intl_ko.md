@@ -139,7 +139,7 @@ Tencent Cloud COS(Cloud Object Storage)는 AND의 로직을 통해 다중 필터
 미리 정의된 기간 내에 성공적으로 완료되지 않은 경우 특정 UploadId가 있는 멀티파트 업로드 작업을 삭제하려면 AbortIncompleteMultipartUpload 작업을 지정하십시오. 이 경우 이러한 작업도 재개하거나 인덱싱할 수 없습니다. 예를 들어, 7일 이내에 성공적으로 완료되지 않은 멀티파트 업로드 작업을 중단합니다.
 ```xml
 <AbortIncompleteMultipartUpload>
-	<Days>7</Days>
+   <DaysAfterInitiation>7</DaysAfterInitiation>
 </AbortIncompleteMultipartUpload>
 ```
 
