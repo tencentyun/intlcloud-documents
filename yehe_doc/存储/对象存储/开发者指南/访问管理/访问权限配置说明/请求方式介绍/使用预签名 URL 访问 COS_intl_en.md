@@ -1,15 +1,18 @@
 COS supports object upload and download using pre-signed URLs, which are signed links with signatures embedded. You can control the effective time of a pre-signed URL based on the validity period of the corresponding signature.
 
-You can use pre-signed URLs to download objects, obtain temporary URLs for sharing files and folders temporarily, or set a long signature validity period to obtain long-term URLs for sharing files for a long time. For more information, see [Sharing Files](https://intl.cloud.tencent.com/document/product/436/45243?!editLang=zh&!preview#sharing-a-folder).
+You can use pre-signed URLs to download objects, obtain temporary URLs for sharing files and folders temporarily, or set a long signature validity period to obtain long-term URLs for sharing files for a long time. For more information, see [Sharing Files](#Sharing Files).
 
-You can also use pre-signed URLs to upload objects. For more information, see [Uploading Files](https://intl.cloud.tencent.com/document/product/436/45243?!editLang=zh&!preview#uploading-files).
+You can also use pre-signed URLs to upload objects. For more information, see [Uploading Files](#Uploading Files).
 
 <span id="Sharing Files"></span>
 ## Sharing Files (Downloading Files)
 
 COS supports object sharing. You can use pre-signed URLs to share files and folders with other users for a limited time. A pre-signed URL is in fact an object URL concatenated with a signature. For the signature generation algorithm, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
-A bucket is set to Private Read by default. If you download an object by using the object URL directly, an access failure message will be displayed. Instead, you can concatenate a valid signature to the object URL to obtain a **pre-signed URL**. The signature carry identity information, and therefore, you can successfully download the object by using the pre-signed URL.
+A bucket is set to Private Read by default. If you download an object by using the object URL directly, an access failure message will be displayed. Instead, you can concatenate a valid signature to the object URL to obtain a **pre-signed URL**. The signature carries identity information, and therefore, you can successfully download the object by using the pre-signed URL.
+
+>?If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key only to uploads and downloads to avoid risks. In addition, the validity period of the generated URL must be set to the shortest period required to complete the current upload or download operation. This is because the request will be interrupted when the validity period of the specified pre-signed URL expires. In addition, the checkpoint restart is not supported, and therefore the failed request needs to be re-executed after a new URL is applied for.
+
 ```
 // Object URL
 https://test-12345678.cos.ap-beijing.myqcloud.com/test.png
@@ -27,9 +30,9 @@ You can quickly obtain temporary links of objects via the console or COSBrowser.
 #### Console (web page)
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), click a desired bucket name, go to the file list page, and click **Details** corresponding to a target object.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/aff68724b740f962e39cf1167ac2cb5b.png)
 2. On the object details page, copy the temporary link, which is valid for 1 hour.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6b6b17a56e82af5c5af9143338806fc3.png)
 
 #### COSBrowser (client)
 
@@ -65,8 +68,8 @@ A permanent key does not expire. The validity period of a pre-signed URL depends
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
+<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
+<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
@@ -78,7 +81,7 @@ A permanent key does not expire. The validity period of a pre-signed URL depends
 <td><a href="https://intl.cloud.tencent.com/document/product/436/32455">Node.js SDK</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31544">PHP SDK</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31548">Python SDK</a></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31711">Mini Program</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/35854">Mini Program</a></td>
 </tr>
 </table>
 
@@ -101,8 +104,8 @@ To use a temporary key to generate a pre-signed URL, perform the following steps
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
+<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
+<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
@@ -114,7 +117,7 @@ To use a temporary key to generate a pre-signed URL, perform the following steps
 <td><a href="https://intl.cloud.tencent.com/document/product/436/32455">Node.js SDK</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31544">PHP SDK</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31548">Python SDK</a></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31711">Mini Program</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/35854">Mini Program</a></td>
 </tr>
 </table>
 
@@ -125,6 +128,8 @@ Folders are a special type of object. You can share a folder via the console or 
 
 ## Uploading Files
 If you want any third party to be able to upload an object to your bucket, but you don't want them to use CAM accounts or temporary keys, signatures can be provided by pre-signed URLs for temporary upload operations. Anyone who receives a valid pre-signed URL can upload an object.
+
+>?If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key only to uploads and downloads to avoid risks. In addition, the validity period of the generated URL must be set to the shortest period required to complete the current upload or download operation. This is because the request will be interrupted when the validity period of the specified pre-signed URL expires. In addition, the checkpoint restart is not supported, and therefore the failed request needs to be re-executed after a new URL is applied for.
 
 - Method 1. Generating a pre-signed URL via SDK
 SDKs in various programming languages provide pre-signed URL generation methods. For more information about the methods, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114). Select a method according to the programming language that you are familiar with.
