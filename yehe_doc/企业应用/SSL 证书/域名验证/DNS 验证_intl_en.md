@@ -15,7 +15,7 @@ This document describes how to validate a domain when you apply for a certificat
 >!The following operations apply only to domain names hosted with Tencent Cloud. For domain names hosted with other platforms, go to the corresponding **DNS service provider** for DNS. To query DNS service providers, go to [DNS.TECH](https://dns.tech/).
 >
 1. Obtain the host record and record value, which can be obtained on the **Validate Domain** page, as described in step 1.
-2. Log in to the [DNSPod console](https://console.cloud.tencent.com/cns) to view the domain name for which a certificate has been applied, and then click **DNS** in the **Operation** column to go to the **Record Management** page. See the figure below.
+2. Log in to the [DNSPod console](https://www.dnspod.com/) to view the domain name for which a certificate has been applied, and then click **DNS** in the **Operation** column to go to the **Record Management** page. See the figure below.
 ![](https://qcloudimg.tencent-cloud.cn/raw/e713a12f2ccae8d85a411d772802a6f3.png)
 3. Click **Add Record** and add a DNS record depending on the certificate type.
 >?Only the CNAME and TXT types of DNS records are supported, and they are applicable for certificates of different brands. Please select the DNS record type as needed.

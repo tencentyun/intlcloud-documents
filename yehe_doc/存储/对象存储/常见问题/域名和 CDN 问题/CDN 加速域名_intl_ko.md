@@ -1,6 +1,6 @@
 ### COS에서 CDN은 어떻게 활성화하나요?
 
-자세한 내용은 [기본 CDN 가속 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31505) 및 [사용자 정의 CDN 가속 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31506)를 참조하십시오.
+자세한 내용은 [사용자 정의 CDN 가속 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31506)를 참조하십시오.
 
 ### COS에서 CDN HTTPS Origin-pull COS를 지원하나요?
 
@@ -39,5 +39,5 @@ CDN의 가속 도메인을 사용자 정의 도메인으로 파일 업로드 시
 
 ### COS 자체에 CDN 기능이 있나요?
 
-COS 자체에는 CDN 기능이 없으며 사용자가 직접 설정해야 합니다. 자세한 내용은 [기본 CDN 가속 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31505) 및 [사용자 정의 CDN 가속 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31506)를 참조하십시오.
+COS 자체에는 CDN 기능이 없으며 사용자가 직접 설정해야 합니다. 자세한 내용은 [사용자 정의 CDN 가속 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31506)를 참조하십시오.
 

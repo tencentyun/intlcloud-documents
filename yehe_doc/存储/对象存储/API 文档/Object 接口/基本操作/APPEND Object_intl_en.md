@@ -23,7 +23,7 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
@@ -63,7 +63,7 @@ You can use the `x-cos-acl` header of the POST request to set the object access 
 
 | Header | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
-| x-cos-acl                | Defines the ACL attribute of an object. Valid values: `private`, `public-read-write`, and `public-read`.<br>Default: `private` | String | No   |
+| x-cos-acl                | Defines the ACL attribute of an object. Valid values: `private`, `public-read-write`, `public-read`.<br>Default: `private` | String | No   |
 | x-cos-grant-read         | Grants user the read permission, formatted as `x-cos-grant-read: id=" ",id=" "`.<br><li>Granting permission to a sub-account: `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>Granting permission to the root account: `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"` | String | No   |
 | x-cos-grant-write        | Grants user the write permission, formatted as `x-cos-grant-write: id=" ",id=" "`. <br><li>Granting permission to a sub-account: `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>Granting permission to the root account:　`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"` | String | No   |
 | x-cos-grant-full-control | Grants user the read/write permission, formatted as `x-cos-grant-full-control: id=" ",id=" "`.<br><li>Granting permission to a sub-account: `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br> <li>Granting permission to the root account: `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"` | String | No   |
@@ -110,7 +110,7 @@ The operation is not valid for the current state of the object.
 3. If the request does not contain the `Content-Length` header, the "411 Length Required" error will be returned. The error message is as follows:
 You must provide the Content-Length HTTP header.
 
-For more information about COS error codes or the complete list of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+For more information about COS error codes or the complete list of error codes, see Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Examples
 

@@ -58,7 +58,7 @@ Operation name: grayscale.
 | Parameter | Description |
 | --------------------- | ------------------------------------------------------------ |
 | ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
-| /grayscale/&lt;value> | Whether to set an image to be a grayscale image. <br>Valid values of the `value` field: 0 (no), 1 (yes). |
+| /grayscale/&lt;value> | Whether to set an image to be a grayscale image. <br>Valid values of the `value` field: `0` (no), `1` (yes). |
 | /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 ## Samples

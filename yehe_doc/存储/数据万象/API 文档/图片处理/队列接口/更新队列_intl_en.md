@@ -86,7 +86,7 @@ The nodes are as described below:
 | ResultFormat | Request.NotifyConfig | Callback format         | String | No | XML   | JSON/XML |
 | Type         | Request.NotifyConfig | Callback type         | String | Yes if `State` is `On` | None   | `Url` or `TDMQ` |
 | Url          | Request.NotifyConfig | Callback address         | String | Yes if `State` is `On` and `Type` is `Url` | None   | The callback address cannot be a private network address. |
-| MqMode       | Request.NotifyConfig | TDMQ queue mode    | String | Yes if `State` is `On` and `Type` is `TDMQ` | Queue | Topic: Topic subscription <br/>Queue: Queue service </td> |
+| MqMode       | Request.NotifyConfig | TDMQ queue mode    | String | Yes if `State` is `On` and `Type` is `TDMQ` | Queue | `Topic`: Topic subscription <br/>`Queue`: Queue service </td> |
 | MqRegion     | Request.NotifyConfig | TDMQ region    | String | Yes if `State` is `On` and `Type` is `TDMQ` | None   | Valid values: `sh` (Shanghai), `bj` (Beijing), `gz` (Guangzhou), `cd` (Chengdu), `hk` (Hong Kong, China). |
 | MqName       | Request.NotifyConfig | TDMQ topic name    | String | Yes if `State` is `On` and `Type` is `TDMQ` | None   | None |
 

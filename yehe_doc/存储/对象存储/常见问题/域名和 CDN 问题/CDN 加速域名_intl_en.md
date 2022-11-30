@@ -1,6 +1,6 @@
 ### How do I enable CDN for COS?
 
-For more information, see [Enabling Default CDN Acceleration Domain Name](https://intl.cloud.tencent.com/document/product/436/31505) and [Enabling Custom CDN Acceleration Domain Name](https://intl.cloud.tencent.com/document/product/436/31506).
+For more information, see [Enabling Custom CDN Acceleration Domain Name](https://intl.cloud.tencent.com/document/product/436/31506).
 
 ### Does COS support CDN origin-pull with HTTPS?
 
@@ -39,5 +39,5 @@ It is recommended that you do not use a CDN acceleration domain name as a custom
 
 ### Does COS come with the CDN feature?
 
-No. You need to configure the CDN feature yourself. For more information, see [Enabling Default CDN Acceleration Domain Names](https://intl.cloud.tencent.com/document/product/436/31505) and [Enabling Custom CDN Acceleration Domain Name](https://intl.cloud.tencent.com/document/product/436/31506).
+No. You need to configure the CDN feature yourself. For more information, see [Enabling Custom CDN Acceleration Domain Name](https://intl.cloud.tencent.com/document/product/436/31506).
 

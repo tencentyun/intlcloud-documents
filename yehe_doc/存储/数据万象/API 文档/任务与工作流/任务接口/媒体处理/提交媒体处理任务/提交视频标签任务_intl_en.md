@@ -81,10 +81,10 @@ The nodes are described as follows:
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It has a higher priority than that of the queue. | String | No |
-| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
+| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default). It has a higher priority than that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default) or `TDMQ`. It has a higher priority than that of the queue.                    | String | No |
 | CallBack           | Request | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
-| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure > CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -98,7 +98,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | ------------------------ | --------- | -------- |
 | VideoTag            | Request.Operation | `VideoTag` job parameter                                             | Container | Yes  |
-| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0` (default), `1`, `2`. | String | No |
 | UserData           | Response.JobsDetail.Operation | The user information passed through.                      | String | No |
 
 `VideoTag` has the following sub-nodes:

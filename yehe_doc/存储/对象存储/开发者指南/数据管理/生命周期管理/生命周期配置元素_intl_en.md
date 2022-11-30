@@ -139,7 +139,7 @@ Specify the `Expiration` action to delete expired objects. For a versioning-disa
 Specify the `AbortIncompleteMultipartUpload` action to delete multipart upload tasks with the specified `UploadId` if they are not successfully completed within the predefined time period. Then, these tasks cannot be resumed or indexed. For example, you can abort multipart upload tasks not successfully completed within 7 days:
 ```xml
 <AbortIncompleteMultipartUpload>
-	<Days>7</Days>
+   <DaysAfterInitiation>7</DaysAfterInitiation>
 </AbortIncompleteMultipartUpload>
 ```
 

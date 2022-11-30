@@ -53,7 +53,7 @@ The request body of this request is empty.
 | Parameter (Keyword) | Description | Type | Required |
 | :----------------- | :------------------------- | :----- | :------- |
 | queueIds   | Queue ID. If you enter multiple IDs, separate them by comma. | String | No       |
-| state              | 1. Active: Jobs in the queue will be scheduled and executed by the media processing service. <br>2. Paused: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will not be affected. | String | No     |
+| state              | 1. `Active`: Jobs in the queue will be scheduled and executed by the media processing service. <br>2. `Paused`: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Paused` status, while jobs being executed will not be affected. | String | No     |
 | pageNumber         | Page number. Default value: `1`.   | String | No     |
 | pageSize           | Number of entries per page. Default value: `10`. | String | No     |
 

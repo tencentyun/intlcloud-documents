@@ -58,7 +58,7 @@ The nodes are as described below:
 | inputObject | None     | Name of the input file for this job, which currently supports only exact match. | String | No |
 | orderByTime | None | `Desc` (default) or `Asc` | String | No |
 | nextToken | None | Context token for pagination | String | No |
-| size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
+| size | None | Maximum number of jobs that can be pulled. The default value is `10`. The maximum value is `100`. | Integer | No |
 | states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | String | No |
 | startCreationTime | None | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T00:00:00+0800` | String | No |
 | endCreationTime | None | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T23:59:59+0800`  | String | No |

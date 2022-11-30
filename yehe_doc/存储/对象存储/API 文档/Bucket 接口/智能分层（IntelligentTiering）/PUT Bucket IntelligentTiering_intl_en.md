@@ -21,7 +21,7 @@ Content-Length: Int
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
@@ -50,9 +50,9 @@ The nodes are described as follows:
 | Name                            | Parent Node                                     | Description                                                         | Type      | Required |
 | ------------------------------- | ------------------------------------------ | ------------------------------------------------------------ | --------- | -------- |
 | IntelligentTieringConfiguration | No                                         | Detailed configuration of INTELLIGENT TIERING                                   | Container | Yes       |
-| Status                          | IntelligentTieringConfiguration            | Whether to enable INTELLIGENT TIERING. Enumerated values: `Enabled`     | Enum      | Yes       |
+| Status                          | IntelligentTieringConfiguration            | Whether to enable INTELLIGENT TIERING. Enumerated value: `Enabled`     | Enum      | Yes       |
 | Transition                      | IntelligentTieringConfiguration            | Transition configuration for INTELLIGENT TIERING                 | Container | Yes       |
-| Days                            | IntelligentTieringConfiguration</br>.Transition | The number of consecutive days used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is 30 (days). | Int       | Yes       |
+| Days                            | IntelligentTieringConfiguration</br>.Transition | The number of consecutive days used to determine whether to move objects from STANDARD to STANDARD_IA. Valid values: `30`, `60`, `90`. Default value: `30`. | Int       | Yes       |
 |  RequestFrequent                | IntelligentTieringConfiguration</br>.Transition | The limit of access times used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is `1`. It can achieve object transition when used with `Days`. For example, if this parameter is set to `1` and `Days` is set to `30`, objects accessed less than once in 30 consecutive days will be moved from STANDARD to STANDARD_IA.  |  Int  |  Yes  |
 
 ## Response
@@ -67,7 +67,7 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Examples
 

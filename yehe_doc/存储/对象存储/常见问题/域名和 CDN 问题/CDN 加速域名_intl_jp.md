@@ -1,6 +1,6 @@
 ### COSでCDNをアクティブ化するにはどうすればよいですか。
 
-詳細については、[デフォルトのCDNアクセラレーションドメイン名の有効化](https://intl.cloud.tencent.com/document/product/436/31505)および[カスタムCDNアクセラレーションドメイン名の有効化](https://intl.cloud.tencent.com/document/product/436/31506)をご参照ください。
+詳細については、[カスタムCDNアクセラレーションドメイン名の有効化](https://intl.cloud.tencent.com/document/product/436/31506)をご参照ください。
 
 ### COSはCDNのCOSへのHTTPS back-to-originをサポートしていますか。
 
@@ -39,5 +39,5 @@ CDNのアクセラレーションドメイン名をカスタムドメイン名�
 
 ### COSにはCDN機能が付帯していますか。
 
-COS自体にはCDN機能は付帯していないため、ユーザーがご自身で設定する必要があります。詳細については、[デフォルトのCDNアクセラレーションドメイン名の有効化](https://intl.cloud.tencent.com/document/product/436/31505)および[カスタムCDNアクセラレーションドメイン名の有効化](https://intl.cloud.tencent.com/document/product/436/31506)をご参照ください。
+COS自体にはCDN機能は付帯していないため、ユーザーがご自身で設定する必要があります。詳細については、[カスタムCDNアクセラレーションドメイン名の有効化](https://intl.cloud.tencent.com/document/product/436/31506)をご参照ください。
 

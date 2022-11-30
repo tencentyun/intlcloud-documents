@@ -4,6 +4,8 @@ If you have configured a moderation callback address, after image moderation is 
 
 The callback content is divided into simple callback (Simple) and detailed callback (Detail).
 
+![](https://qcloudimg.tencent-cloud.cn/raw/b3e99f1b4436ff487601671962732bd4.jpeg)
+
 ## Callback Content Description
 
 ### Simple callback (Simple)
@@ -34,12 +36,12 @@ The response body returns **application/json** data. The following contains all 
 }
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Parameter | Description | Type | Required |
 | :------- | :----------------------------------------------------------- | :------ | :------- |
 | code | Error code. 0: moderation succeeded; other values: moderation failed. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700). | Integer | Yes |
-| message | Error message. | String | Yes |
+| message  | Error description.                                                   | String  | Yes       |
 | data | Details of the image moderation result. | Object | Yes |
 
 `data` is as described below:
@@ -49,7 +51,7 @@ The nodes are as described below:
 | trace_id | Unique ID. | String | Yes |
 | url | Full URL of the moderated image. | String | Yes |
 | event | Triggered event, which is fixed at `ReviewImage` here. | String | Yes |
-| result | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer | Yes |
+| result | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. Valid values: `0` (normal), `1` (sensitive), `2` (suspiciously sensitive, with human review recommended). | Integer | Yes |
 | forbidden_status | If you set automatic freezing, this field indicates the frozen status of the image. 0: not frozen, 1: frozen, 2: file moved. | Integer | Yes |
 | cos_headers      | The custom header content set when the resource is uploaded. If it is not set, it will not be returned.       | Object  | No       |
 | porn_info        | The moderation result of the **pornographic information** moderation scene.                           | Object  | No       |
@@ -59,8 +61,8 @@ The nodes are as described below:
 
 | Parameter | Description | Type | Required |
 | :------- | :----------------------------------------------------------- | :------ | :------- |
-| hit_flag | The moderation result returned for the moderation scene. Returned values: <ul  style="margin: 0;"><li>0: Normal. </li><li>1: Confirmed as a violation of the current scene. </li><li>2: Suspected as a violation of the current scene. </li></ul> | Integer | Yes |
-| score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. Generally, a value in the range of 0–60, 61–90, or 91–100 means the image is normal, suspiciously sensitive, or sensitive respectively. <br/>For example, `Porn 99` means that the content is very likely to be pornographic. | Integer | Yes |
+| hit_flag | The moderation result returned for the moderation scene. Returned values: **0** (normal), **1** (confirmed as a violation of the current scene), and **2** (suspected as a violation of the current scene).     | Integer | Yes       |
+| score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. Generally, a value in the range of 0–60, 61–90, or 91–100 means that the image is normal, suspiciously sensitive, or sensitive respectively. For example, `Porn 99` means that the content is very likely to be pornographic. | Integer | Yes |
 | label | Hit tag name. | String | Yes |
 
 ### Detail callback (Detail)
@@ -108,9 +110,9 @@ The response body returns **application/json** data. The following contains all 
 }
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
-| Node Name (Keyword) | Description | Type |
+| Node Name (Keyword) | Description                        | Type   |
 | :----------------- | :-------------------------- | :----- |
 | JobsDetail         | Job result details.         | Object |
 | EventName          | Job type: ReviewImage. | String |
@@ -119,7 +121,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :------ |
-| Code               | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
+| Code               | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700). | String |
 | Message            | Error message, which will be returned only if `State` is `Failed`. | String |
 | JobId              | Moderation job ID. | String |
 | State              | Status of the moderation job. Valid values: `Submitted`, `Success`, `Failed`, `Auditing`. | String |
@@ -128,10 +130,10 @@ The nodes are as described below:
 | Object             | The name of the image file to be moderated, which will be returned if `Object` is selected during job creation. | String |
 | Url             | The URL of the image file to be moderated, which will be returned if `Url` is selected during job creation. | String |
 | Label              | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. Returned values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
-| Result             | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
-| Score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. Generally, a value in the range of 0–60, 61–90, or 91–100 means the image is normal, suspiciously sensitive, or sensitive respectively. <br/>For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
+| Result             | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. Valid values: `0` (normal), `1` (sensitive), `2` (suspiciously sensitive, with human review recommended). | Integer |
+| Score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. Generally, a value in the range of 0–60, 61–90, or 91–100 means that the image is normal, suspiciously sensitive, or sensitive respectively. For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
 | Category | This field is a subset of `Label`, indicating the specific moderation category hit; for example, `Sexy` presents the sexy category in the `Porn` tag. | String |
-| SubLabel           | This field indicates the specific sub-tag hit by the moderation job; for example, `SexBehavior` is a sub-tag under the `Porn` tag.<br/>Note: This field may return null, indicating that no specific sub-tags are hit. | String |
+| SubLabel           | This field indicates the specific sub-tag hit by the moderation job; for example, `SexBehavior` is a sub-tag under the `Porn` tag.</br>Note: This field may return null, indicating that no specific sub-tags are hit. | String |
 | Text | The specific text content recognized by OCR in the image, which will be returned if OCR is enabled in the moderation policy. | String |
 | PornInfo           | The moderation result of the **pornographic information** moderation scene.                           | Object  |
 | AdsInfo            | The moderation result of the **advertising information** moderation scene.                       | Object  |
@@ -144,12 +146,20 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :------ |
-| HitFlag            | The moderation result returned for the moderation scene. Returned values: <ul  style="margin: 0;"><li>0: Normal. </li><li>1: Confirmed as a violation of the current scene. </li><li>2: Suspected as a violation of the current scene. </li></ul> | Integer |
-| Score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. Generally, a value in the range of 0–60, 61–90, or 91–100 means the image is normal, suspiciously sensitive, or sensitive respectively. <br/>For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
+| HitFlag | The moderation result returned for the moderation scene. Returned values: **0** (normal), **1** (confirmed as a violation of the current scene), and **2** (suspected as a violation of the current scene).     | Integer |
+| Score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. Generally, a value in the range of 0–60, 61–90, or 91–100 means that the image is normal, suspiciously sensitive, or sensitive respectively. For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
 | Label | This field indicates the overall result tag of the screenshot, which may be `SubLabel`, a person name, etc. | String |
-| Category | This field is a subset of `Label`, indicating the specific moderation category hit; for example, `Sexy` presents the sexy category in the `Porn` tag. | String |
-| SubLabel           | This field indicates the specific sub-tag hit by the moderation job; for example, `SexBehavior` is a sub-tag under the `Porn` tag.<br/>Note: This field may return null, indicating that no specific sub-tags are hit. | String |
+| Category           | The specific moderation category hit; for example, `Sexy` presents the sexy category in the `Porn` tag. This field may return null, indicating that no categories are hit or there is no related category. | String  |
+| SubLabel           | This field indicates the specific sub-tag hit by the moderation job; for example, `SexBehavior` is a sub-tag under the `Porn` tag. </br>Note: This field may return null, indicating that no specific sub-tags are hit. | String |
 | OcrResults | This field represents the detailed OCR result, including the text recognition result and hit keyword. It will be returned if there is non-compliant content. | Array |
+| LibResults         | This field returns results based on recognition against the risk library. </br>Note: This field will not be returned if no samples in the risk library are hit. | Container Array |
+
+`LibResults` has the following sub-nodes:
+
+| Node Name (Keyword) | Description | Type |
+| :----------------- | :----------------------------------------------------------- | :----- |
+| ImageId            | This field represents the hit image sample ID in the risk library.                       | String  |
+| Score              | This field returns the confidence under the current tag. Value range: 0–100.  The higher the value, the more likely the image hits a sample in the risk library. For example, `Porn 99` means that the content is very likely to hit a pornographic sample in the library. | Integer |
 
 `OcrResults` has the following sub-nodes:
 
@@ -176,7 +186,7 @@ The nodes are as described below:
 | Width              | This parameter is used to return the **width of the detection frame** (the length starting from the top-left corner and extending to the right on the X axis). It can be combined with other parameters to uniquely determine the size and position of the detection frame. | Float |
 | Rotate             | This parameter is used to return the **rotation angle of the detection frame**. Valid values: **0–360** (**degrees**), and the direction is **counterclockwise rotation**. This parameter can be combined with the `X` and `Y` coordinate parameters to uniquely determine the specific position of the detection frame. | Float |
 
-## Samples
+## Examples
 
 #### Sample 1: Simple callback (Simple)
 
@@ -203,7 +213,6 @@ The nodes are as described below:
 ```
 
 #### Sample 2: Detailed callback (Detail)
-
 
 ```plaintext
 {
@@ -243,3 +252,4 @@ The nodes are as described below:
   }
 }
 ```
+

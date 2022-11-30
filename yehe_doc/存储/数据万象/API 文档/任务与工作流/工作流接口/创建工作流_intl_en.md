@@ -309,7 +309,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------- | -------- | --------- | -------- | ----- |
 | Type         | Request.MediaWorkflow.<br>Topology.Nodes.Start | Node type | String    | Yes   | Start |
-| Input        | Request.MediaWorkflow.<br>Topology.Nodes.Start | Input information. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes   | None |
+| Input        | Request.MediaWorkflow.<br>Topology.Nodes.Start | Input information. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Start_Input](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes   | None |
 
 
 Animation\_\*\*\* has the following sub-nodes:
@@ -317,7 +317,7 @@ Animation\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Animation\_\*\*\* | Node type | String    | Yes       | Animation |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Animation\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Animation\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Animation_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 Snapshot\_\*\*\* has the following sub-nodes:
@@ -325,7 +325,7 @@ Snapshot\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Snapshot\_\*\*\* | Node type | String    | Yes       | Snapshot |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Snapshot\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Snapshot\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Snapshot_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 SmartCover\_\*\*\* has the following sub-nodes:
@@ -333,7 +333,7 @@ SmartCover\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SmartCover\_\*\*\* | Node type | String    | Yes       | SmartCover |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SmartCover\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SmartCover\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SmartCover_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 Transcode\_\*\*\* has the following sub-nodes:
@@ -341,7 +341,7 @@ Transcode\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Transcode\_\*\*\* | Node type | String    | Yes       | Transcode |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Transcode\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Transcode\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Transcode_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 Concat\_\*\*\* has the following sub-nodes:
@@ -349,7 +349,7 @@ Concat\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Concat\_\*\*\* | Node type | String    | Yes       | Concat |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Concat\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Concat\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Concat_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 VoiceSeparate\_\*\*\* has the following sub-nodes:
@@ -357,7 +357,7 @@ VoiceSeparate\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.VoiceSeparate\_\*\*\* | Node type | String    | Yes       | VoiceSeparate |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VoiceSeparate\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VoiceSeparate\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VoiceSeparate_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 VideoMontage\_\*\*\* has the following sub-nodes:
@@ -365,7 +365,7 @@ VideoMontage\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.VideoMontage\_\*\*\* | Node type | String    | Yes       | VideoMontage |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoMontage\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoMontage\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VideoMontage_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 StreamPackConfig\_\*\*\* has the following sub-nodes:
@@ -373,7 +373,7 @@ StreamPackConfig\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.StreamPackConfig\_\*\*\* | Node type | String    | Yes       | StreamPackConfig |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.StreamPackConfig\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.StreamPackConfig\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_StreamPackConfig_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 VideoStream\_\*\*\* has the following sub-nodes:
@@ -381,7 +381,7 @@ VideoStream\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.VideoStream\_\*\*\* | Node type | String    | Yes       | VideoStream |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoStream\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoStream\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VideoStream_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 StreamPack\_\*\*\* has the following sub-nodes:
@@ -389,7 +389,7 @@ StreamPack\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.StreamPack\_\*\*\* | Node type | String    | Yes       | StreamPack |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.StreamPack\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.StreamPack\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VideoStream_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 SDRtoHDR\_\*\*\* has the following sub-nodes:
@@ -397,7 +397,7 @@ SDRtoHDR\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SDRtoHDR\_\*\*\* | Node type | String    | Yes       | SDRtoHDR |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SDRtoHDR\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SDRtoHDR\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SDRtoHDR_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 VideoProcess\_\*\*\* has the following sub-nodes:
@@ -405,7 +405,7 @@ VideoProcess\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.VideoProcess\_\*\*\* | Node type | String    | Yes       | VideoProcess |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoProcess\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoProcess\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VideoProcess_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 SCF\_\*\*\* has the following sub-nodes:
@@ -413,7 +413,7 @@ SCF\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SCF\_\*\*\* | Node type | String    | Yes   | SCF  |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SCF\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SCF\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SCF_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 SuperResolution\_\*\*\* has the following sub-nodes:
@@ -421,7 +421,7 @@ SuperResolution\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SuperResolution\_\*\*\* | Node type | String    | Yes | SuperResolution |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SuperResolution\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SuperResolution\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SuperResolution_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 Segment\_\*\*\* has the following sub-nodes:
@@ -429,7 +429,7 @@ Segment\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Segment\_\*\*\* | Node type | String    | Yes       | Segment |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Segment\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Segment\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Segment_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 PicProcess\_\*\*\* has the following sub-nodes:
@@ -437,7 +437,7 @@ PicProcess\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.PicProcess\_\*\*\* | Node type | String    | Yes       | PicProcess |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.PicProcess\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.PicProcess\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_PicProcess_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 Tts\_\*\*\* has the following sub-nodes:
@@ -445,7 +445,7 @@ Tts\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Tts\_\*\*\* | Node type | String    | Yes       | Tts |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Tts\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Tts\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Tts_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 
 SpeechRecognition\_\*\*\* has the following sub-nodes:
@@ -453,7 +453,7 @@ SpeechRecognition\_\*\*\* has the following sub-nodes:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SpeechRecognition\_\*\*\* | Node type | String    | Yes       | SpeechRecognition |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SpeechRecognition\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SpeechRecognition\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SpeechRecognition_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 AIRecognition\_\*\*\* has the following sub-nodes:
 
