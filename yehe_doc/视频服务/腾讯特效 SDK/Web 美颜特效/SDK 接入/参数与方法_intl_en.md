@@ -23,7 +23,7 @@ type AuthConfig = {
   authFunc:() => Promise<{
     signature:string,
     timestamp:string
-  }> // See <a href="https://cloud.tencent.com/document/product/616/71370">Configuring and Using a License</a>
+  }> // See documentation about the configuration and use of licenses</a>
 }
 </pre></td>
 <td>Yes</td></tr><tr>
@@ -83,6 +83,7 @@ type loadingConfig = {
 </tbody>
 </table>
 
+
 ## Callbacks
 ```javascript
 let effectList = [];
@@ -103,7 +104,7 @@ sdk.on('created', () => {
 sdk.on('cameraReady', async () => {
 	// By getting the output stream in the `cameraReady` callback, you can display a video image sooner, but the initialization parameters have not taken effect at this point.
 	// You can choose this method if you want to display a video image as soon as possible but do not need to apply effects to the video the moment it is displayed.
-	// You don’t need to update the stream after the effects start to work.
+	// You don’t need to update the stream after the effects start working.
 	const arStream = await ar.getOutput();
 	// Play the stream locally
 	// localVideo.srcObject = arStream
@@ -149,9 +150,9 @@ sdk.on('ready', () => {
 <th>　　　　Description　　　　</th></tr></thead>
 <tbody><tr>
 <td>async getOutput(fps)</td>
-<td>- fps (optional): The output frame rate.</td>
+<td>fps (optional): The output frame rate.</td>
 <td>MediaStream|String</td>
-<td>This API is only available in the web SDK.</td>
+<td>-</td>
 </tr>
 <tr>
 <td>setBeautify(options)</td>
@@ -167,7 +168,7 @@ type BeautifyOptions = {
 }</pre>
 </td>
 <td>-</td>
-<td>To configure beautification effects, you need to enable the effect module.</td>
+<td>To configure beautification effects, you need to enable the effect module (`beautify`).</td>
 </tr>
 <tr>
 <td>setEffect(effects, callback)</td>
@@ -181,8 +182,23 @@ effect:{
 }</pre>
 	<li>callback: The callback for successful configuration.</ul></td>
 <td>-</td>
-<td>To configure special effects, you need to enable the effect module.</td>
+<td>To configure special effects, you need to enable the effect module (`beautify`).</td>
 </tr>
+<tr>
+<td>setAvatar(params)</td>
+<td><pre style="color:white;margin:0">
+{
+	mode: 'AR' | 'VR',
+	effectId?: string, // Pass through `effectId` to use a built-in model
+	url?: string, // Pass through `url` to use a custom model
+	backgroundUrl?: string, // The URL of the background image. This parameter is valid only in the VR mode.
+}
+</pre>
+</td>
+<td>-</td>
+<td>Use an animoji or virtual avatar.</td>
+</tr>
+<tr>
 <tr>
 <td>setBackground(options)</td>
 <td><pre style="color:white;margin:0">
@@ -192,7 +208,7 @@ effect:{
 }</pre>
 </td>
 <td>-</td>
-<td>To configure the background, you need to enable the keying module.</td>
+<td>To configure the background, you need to enable the keying module (`segmentation`).</td>
 </tr>
 <tr>
 <td>setFilter(id, intensity, callback)</td>
@@ -201,7 +217,7 @@ effect:{
    <li>intensity: The filter strength. Value range: 0-1.
    <li>callback: The callback for successful configuration.</td>
 <td>-</td>
-<td>This API is used to set the filter.</td>
+<td>Set the filter.</td>
 </tr>
 <tr>
 <td>getEffectList(params)</td>
@@ -215,47 +231,55 @@ effect:{
 }</pre>
 </td>
 <td>A list of effects.</td>
-<td>This API is used to get a list of effects.</td>
+<td>Get a list of effects.</td>
+</tr>
+<tr>
+<td>getAvatarList(type)</td>
+<td><pre style="color:white;margin:0">
+type = 'AR' | 'VR'
+</pre>
+</td>
+<td>A list of virtual avatars</td>
+<td>Get a list of virtual avatars.</td>
 </tr>
 <tr>
 <td>getEffect(effectId)</td>
 <td>effectId: The effect ID.</td>
 <td>The information of the effect queried.</td>
-<td>This API is used to get the information of a specific effect.</td>
+<td>Get the information of a specific effect.</td>
 </tr>
 <tr>
 <td>getCommonFilter()</td>
 <td>-</td>
 <td>A list of the built-in filters.</td>
-<td>This API is used to get the built-in filters.</td>
+<td>Get the built-in filters.</td>
 </tr>
 <tr>
 <td>async updateInputStream(src:MediaStream) <br><b>(supported since v0.1.19)</b></td>
 <td>src: The new input stream (`MediaStream`).</td>
 <td>-</td>
-<td>This API is used to update the input stream.</td>
+<td>Update the input stream.</td>
 </tr>
 <tr>
 <td>disable()</td>
 <td>-</td>
 <td></td>
-<td>This API is used to disable facial detection, which can reduce CPU usage. After it’s disabled, the original stream will be returned.</td>
+<td>Disable face detection, which can reduce CPU usage. After it’s disabled, the original stream will be returned.</td>
 </tr>
 <tr>
 <td>enable()</td>
 <td>-</td>
 <td></td>
-<td>This API is used to enable facial detection. After it’s enabled, the stream returned will have been processed.</td>
+<td>Enable face detection. After it’s enabled, the stream returned will have been processed.</td>
 </tr>
 <tr>
 <td>destroy()</td>
 <td>-</td>
 <td>-
 </td>
-<td>This API is used to terminate the SDK instance and clear its texture resources.</td>
+<td>Terminate the SDK instance and clear its texture resources.</td>
 </tr>
 </tbody></table>
-
 
 ## Error Handling
 The error object returned by the error callback includes the error code and error message, which facilitate troubleshooting.
@@ -278,9 +302,10 @@ sdk.on('error', (error) => {
 | 10001103 | Invalid effect strength.   | - |
 | 10001201 | Failed to start the camera.   | - |
 | 10001202 | The camera stopped.   | - |
-| 20002001 | Missing authentication parameter. | - |
+| 20002001 | Missing authentication parameters. | - |
 | 20001001 | Authentication failed.   | Make sure you have created a license and the signature is correct. |
-| 20001002 | API request failed. | The error callback will return the data returned by the API. For details, see [API Error Codes](https://intl.cloud.tencent.com/document/product/1143/50107). |
+| 20001002 | API request failed. | The error callback will return the data returned by the API. For details, see [API Error Codes](https://www.tencentcloud.com/document/product/1143/50107). |
+| 40000001 | Some effects cannot work because the SDK version is too old. Please update your SDK. | - |
 
 ### Handling the missing render context error
 On some computers, if the SDK is in the background for a long time, the `contextlost` error may occur. In such cases, you can call `ArSdk.prototype.resetCore(input: MediaStream)` to resume rendering.

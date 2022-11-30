@@ -1,9 +1,11 @@
-﻿<style> .markdown-text-box table td, .markdown-text-box table th { padding: 8px 8px; text-align:center} </style>
+<style> .markdown-text-box table td, .markdown-text-box table th { padding: 8px 8px; text-align:center} </style>
 
-The Tencent Effect SDK comes in 14 editions, which fall into three categories: basic editions (A series), advanced editions (S series), and avatar editions (V series). They differ in features. The table below lists the features of different editions. For more information, see [SDK Download](https://intl.cloud.tencent.com/document/product/1143/45377).
+Tencent Effect is offered as packages as well as capabilities. There are 14 packages, which fall into three categories: the [basic A series](#setA), the [advanced S series](#setS), and the [avatar V series](#setV). They come with different capabilities. In addition, to give you greater flexibility and scalability, we also provide specific capabilities.
+
+The table below lists the packages and capabilities we offer and what you can achieve with them. For more information about the SDK, see [SDK Download](https://intl.cloud.tencent.com/document/product/1143/45377).
 
 ### Basic A series[](id:setA)
-Basic A editions offer common beautification features for customers with basic requirements for facial beautification.
+Basic A editions offer common beautification features and are for customers who do not have high requirements on face editing.
 
 <table>
 <thead>
@@ -50,7 +52,7 @@ Basic A editions offer common beautification features for customers with basic r
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Filters</b><br>10 general filters by default</td>
+<td><b>Filters</b><br>20 general filters by default</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -110,9 +112,10 @@ Basic A editions offer common beautification features for customers with basic r
 </tr>
 </tbody></table>
 
+
 ### Advanced S series[](id:setS)
 
-Advanced S editions offer advanced beautification features (including stickers and makeup styles) for customers with high requirements for facial beautification.
+Advanced S editions offer enhanced beautification features (including stickers and makeup looks) and are for customers with high requirements on face editing.
 
 <table>
 <thead>
@@ -155,7 +158,7 @@ Advanced S editions offer advanced beautification features (including stickers a
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>Filters</b><br>(10 general filters by default)</td>
+<td><b>Filters</b><br>(20 general filters by default)</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -209,6 +212,7 @@ Advanced S editions offer advanced beautification features (including stickers a
 </tr>
 </tbody></table>
 
+
 ### Avatar V series[](id:setV)
 Avatar V series editions offer virtual avatars, avatar customization, and facial expression mirroring. They are designed for applications such as avatar-based socializing and live streaming.
 
@@ -247,6 +251,39 @@ Avatar V series editions offer virtual avatars, avatar customization, and facial
 <tr>
 <td>SDK download</td>
 <td>iOS & Android</td>
-<td colspan=3>Please contact sales or technical support.</td>
+<td colspan=3><a href="https://intl.cloud.tencent.com/document/product/1143/45377#Avatar">Download</a></td>
+</tr>
+ </tbody></table>
+
+
+### X series capabilities[](id:pluginX)
+
+The X series offers specific capabilities, giving you greater flexibility and scalability.
+
+<table>
+<thead>
+<tr>
+<th rowspan=2>Capability</th>
+<th colspan=3>No.</th>
+</tr>
+<tr>
+<th>X1 - 01</th>
+<th>X1 - 02</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td width=15%>Capability</td>
+<td>Keying</td>
+<td>Facial keypoint detection</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Accurately removes the background in real time and applies a virtual background (customizable)</td>
+<td>Detects when a face is partially captured or concealed or when there are multiple faces; recognizes 256 facial keypoints</td>
+</tr>
+<tr>
+<td>SDK download</td>
+<td colspan=3><a href="https://intl.cloud.tencent.com/document/product/1143/45377#base">Download</a></td>
 </tr>
 </tbody></table>
