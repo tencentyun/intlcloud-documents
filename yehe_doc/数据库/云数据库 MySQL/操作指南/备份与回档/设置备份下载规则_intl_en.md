@@ -3,9 +3,7 @@ By default, you can download backup files of TencentDB for MySQL instances over 
 >?
 >- Backup download settings are supported in the following regions:
 >Guangzhou, Shanghai, Beijing, Shenzhen, Chengdu, Chongqing, Nanjing, Hong Kong (China), Beijing Finance, Shanghai Finance, Shenzhen Finance, Toronto, Singapore, Silicon Valley, Frankfurt, Seoul, Mumbai, Bangkok, Moscow, and Tokyo.
->- How to enable backup download settings:
->  - Before November 9, 2021, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable this feature.
->  - Starting from November 9, 2021, this feature is available in the console.
+
 
 ## Setting Backup Download Rules
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), select **Database Backup** on the left sidebar, and select a region at the top.
