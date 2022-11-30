@@ -4,7 +4,7 @@
 
 回调内容分为简洁回调（Simple）和详细回调（Detail）。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/bd0a1ed5fc2eb71df212baf7f18b52cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b3e99f1b4436ff487601671962732bd4.jpeg)
 
 ## 回调内容说明
 
