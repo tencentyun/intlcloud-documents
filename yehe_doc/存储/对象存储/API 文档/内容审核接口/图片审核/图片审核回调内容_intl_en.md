@@ -4,7 +4,7 @@ If you have configured a moderation callback address, after image moderation is 
 
 The callback content is divided into simple callback (Simple) and detailed callback (Detail).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/bd0a1ed5fc2eb71df212baf7f18b52cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b3e99f1b4436ff487601671962732bd4.jpeg)
 
 ## Callback Content Description
 
