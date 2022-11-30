@@ -53,7 +53,7 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:--- |:---|:---|:---|
 | nextToken | None | Context token for pagination. | String | No |
-| size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
+| size | None | Maximum number of jobs that can be pulled. The default value is `10`. The maximum value is `100`. | Integer | No |
 | type | None | Type of the batch jobs to be obtained. Valid values: `Workflow`, `Job`. | String  | No |
 | orderByTime | None | `Desc` (default) or `Asc` | String | No |
 | States | None | Status of the jobs to pull. If you enter multiple job statuses, separate them by comma. <br>Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. | String | No |
