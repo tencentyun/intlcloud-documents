@@ -139,7 +139,7 @@ Expirationアクションを指定すると、ルールに該当するオブジ�
 AbortIncompleteMultipartUploadアクションを指定すると、マルチパートアップロードの指定されたUploadIdタスクを一定期間保持した後に削除することを許可し、それについてはアップロード再開または検索可能な特性の提供も行われないようにすることができます。例えば、未完了のマルチパートアップロードタスクを7日後に消去するよう設定する場合は次のようになります。
 ```xml
 <AbortIncompleteMultipartUpload>
-	<Days>7</Days>
+   <DaysAfterInitiation>7</DaysAfterInitiation>
 </AbortIncompleteMultipartUpload>
 ```
 
