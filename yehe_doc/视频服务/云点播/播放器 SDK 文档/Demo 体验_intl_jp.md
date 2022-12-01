@@ -116,7 +116,7 @@ Tencent Cloud View Cube·Player+ Demoは完全な製品レベルのインタラ�
         </div>
 								<div class="demo-item-link">
 				<a href="https://github.com/LiteAVSDK/Player_iOS">Demoソースコード</a>
-				 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/42005">統合ガイド</a>
+				 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/266/49669">統合ガイド</a>
         </div>
     </div>
     <div class="preview-demo-item style-qrcode" style="margin-left:0">
@@ -134,7 +134,7 @@ Tencent Cloud View Cube·Player+ Demoは完全な製品レベルのインタラ�
         </div>
 					<div class="demo-item-link">
 				<a href="https://github.com/LiteAVSDK/Player_Android">Demoソースコード</a>
-				 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/41755">統合ガイド</a>
+				 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/266/49670">統合ガイド</a>
         </div>
 				 </div>		
     </div>
