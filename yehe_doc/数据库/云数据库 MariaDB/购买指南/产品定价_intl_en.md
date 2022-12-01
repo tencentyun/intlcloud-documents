@@ -34,8 +34,7 @@
 </tbody></table>
 
 ## Pricing for Monthly Subscription Single Node
->? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
->
+
 <table>
 <thead>
 <tr>
@@ -83,7 +82,7 @@
 
 <table>
 <thead>
-<tbody><tr>
+<tr>
         <th rowspan=2>Region</th>
         <th  colspan = "3">Memory Price (USD/GB/Hr)</th>
         <th rowspan=2>Disk Price (USD/GB/Hr)</th>
@@ -94,6 +93,7 @@
         <th>Tier 3</th>
     </tr>
 </thead>
+<tbody>
     <tr>
         <td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing,Qingyuan</td>
         <td>0.0262</td>
