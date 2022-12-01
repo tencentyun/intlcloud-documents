@@ -1,6 +1,6 @@
 ## Overview
 
-In a [metadata migration task](https://www.tencentcloud.com/document/product/1113/51219), you can sync the metadata of a self-built RocketMQ cluster to TDMQ for RocketMQ. After the sync, you need to modify the access information of the producer and consumer clusters in order to migrate them from the self-built cluster to TDMQ for RocketMQ for message sending and receiving.
+In a [metadata migration task](https://www.tencentcloud.com/document/product/1113/50206), you can sync the metadata of a self-built RocketMQ cluster to TDMQ for RocketMQ. After the sync, you need to modify the access information of the producer and consumer clusters in order to migrate them from the self-built cluster to TDMQ for RocketMQ for message sending and receiving.
 
 >?Currently, the message migration service migrates only message production and consumption linkages but not message data in the old RocketMQ cluster. It applies only to exclusive clusters as the destination and will be supported for virtual clusters after the beta test ends.
 
