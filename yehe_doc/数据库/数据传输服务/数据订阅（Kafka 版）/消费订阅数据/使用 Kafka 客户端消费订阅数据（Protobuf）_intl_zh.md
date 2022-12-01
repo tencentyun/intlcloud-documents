@@ -87,8 +87,6 @@ message Entry { //Entry 是单个订阅事件结构，一个事件相当于 MySQ
     Header header = 1;  //事件头
     Event event   = 2;  //事件体
 }
-
-
 message Header {
     int32       version        = 1;   //Entry 协议版本
     SourceType  sourceType     = 2;   //源库的类型信息，包括 MySQL，Oracle 等类型
@@ -105,8 +103,6 @@ message Header {
     bool   isLast              = 13;  //当前 event 是否 event 分片的最后一块，是则为 true，当前版本无意义，留待后续扩展用
     repeated KVPair properties = 15;
 }
-
-
 message Event {
     BeginEvent      beginEvent      = 1;  //binlog 中的 begin 事件
     DMLEvent        dmlEvent        = 2;  //binlog 中的 dml 事件
