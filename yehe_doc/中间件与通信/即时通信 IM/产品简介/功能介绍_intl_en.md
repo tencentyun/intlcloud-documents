@@ -325,7 +325,7 @@ You can log in to Tencent Cloud [IM console](https://console.cloud.tencent.com/i
 | SDK Download | Download the client SDK. |
 | App configuration | Configure the app. |
 | Statistics | View operations data. |
-| Callback configuration | Perform third-party callbacks. |
+| Webhook configuration | Configure webhooks. |
 | Feature configuration | Add custom fields and online instances. |
 | Group management    | Add, modify, and delete groups; manage group members; send messages. |
 | Developer tool | Generate UserSig on the webpage. |
