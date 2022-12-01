@@ -79,7 +79,7 @@
 
 <table>
 <thead>
-<tbody><tr>
+<tr>
         <th rowspan=2>地域</th>
         <th  colspan = "3">内存价格（USD/GB/小时）</th>
         <th rowspan=2>磁盘价格（USD/GB/小时）</th>
@@ -90,7 +90,8 @@
         <th>第三阶梯</th>
     </tr>
 </thead>
-    <tr>
+<tbody> 
+   <tr>
         <td>广州、 北京、上海</td>
         <td>0.02619</td>
         <td>0.01965</td>
