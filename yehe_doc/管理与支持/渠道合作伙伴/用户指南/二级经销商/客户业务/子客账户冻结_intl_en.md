@@ -1,0 +1,2 @@
+If you need to freeze a customer account, you must have been added to the allowlist for this operation. Your distributor needs to contact Tencent Cloud to add itself to the allowlist first, and then you’ll be automatically added to the allowlist.
+For information on how to freeze a customer account, see [Freezing Customer Account](https://www.tencentcloud.com/document/product/1085/51212).
