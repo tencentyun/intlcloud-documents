@@ -116,7 +116,7 @@ The Tencent Cloud RT-Cube Player SDK demo provides complete product-grade intera
         </div>
 								<div class="demo-item-link">
 				<a href="https://github.com/LiteAVSDK/Player_iOS">Demo source code</a>
-				 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/42005">Integration Guide</a>
+				 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/266/49669">Integration Guide</a>
         </div>
     </div>
     <div class="preview-demo-item style-qrcode" style="margin-left:0">
@@ -134,7 +134,7 @@ The Tencent Cloud RT-Cube Player SDK demo provides complete product-grade intera
         </div>
 					<div class="demo-item-link">
 				<a href="https://github.com/LiteAVSDK/Player_Android">Demo source code</a>
-				 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/41755">Integration Guide</a>
+				 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/266/49670">Integration Guide</a>
         </div>
 				 </div>		
     </div>
