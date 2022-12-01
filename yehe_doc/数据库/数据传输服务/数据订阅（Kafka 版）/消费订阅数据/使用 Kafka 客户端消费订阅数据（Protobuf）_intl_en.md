@@ -87,8 +87,6 @@ message Entry { // An `Entry` is the structure of an individual subscription eve
     Header header = 1;  // The event header
     Event event   = 2;  // The event body
 }
-
-
 message Header {
     int32       version        = 1;   // The protocol version of the `Entry`
     SourceType  sourceType     = 2;   // The source database type, such as MySQL and Oracle
@@ -105,8 +103,6 @@ message Header {
     bool   isLast              = 13;  // Whether the current shard is the last shard of a sharded event; if so, the value is `true`. This parameter is meaningless on the current version and is reserved for future use.
     repeated KVPair properties = 15;
 }
-
-
 message Event {
     BeginEvent      beginEvent      = 1;  // The begin event in the binlog
     DMLEvent        dmlEvent        = 2;  // The DML event in the binlog
