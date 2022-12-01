@@ -1,6 +1,5 @@
 ## 과금 방식
->? 해당 제품의 정액 과금제는 현재 베타 서비스 중입니다. 구매를 원하시면 [영업팀에 문의](https://intl.cloud.tencent.com/contact-sales)하십시오.
->
+
 TDSQL for MySQL은 2가지 과금 방식을 제공합니다.
 
 | 과금 방식 | 결제 모드                                   | 적용 시나리오                                      |
