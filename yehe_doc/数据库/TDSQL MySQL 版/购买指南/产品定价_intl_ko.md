@@ -34,8 +34,7 @@
 </tbody></table>
 
 ## 노드 정액 과금제(USD)
->? 해당 제품의 월간 구독 모드는 현재 베타 버전입니다. 여기에 게시된 가격은 참고용입니다. 최종 가격은 청구서를 참고하십시오. 이 청구 옵션을 사용하려면 [영업팀에 문의](https://intl.cloud.tencent.com/contact-sales)하시기 바랍니다.
->
+
 
 <table>
 <thead>
@@ -81,7 +80,7 @@
 
 <table>
 <thead>
-<tbody><tr>
+<tr>
         <th rowspan=2>리전</th>
         <th  colspan = "3">메모리 가격(USD/GB/시간)</th>
         <th rowspan=2>디스크 가격(USD/GB/시간)</th>
@@ -92,6 +91,7 @@
         <th>3단계</th>
     </tr>
 </thead>
+<tbody>
     <tr>
         <td>광저우, 베이징, 상하이</td>
         <td>0.02619</td>
