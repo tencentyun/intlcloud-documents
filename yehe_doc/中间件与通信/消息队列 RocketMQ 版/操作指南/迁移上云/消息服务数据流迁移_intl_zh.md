@@ -1,6 +1,6 @@
 ## 操作背景
 
-通过 [元数据迁移任务](https://www.tencentcloud.com/document/product/1113/51219)，客户可以将自建的 RocketMQ 集群的元数据同步到 TDMQ RocketMQ上。在元数据迁移完成之后，客户需要修改生产者集群和消费者集群的接入信息，将生产者集群和消费者集群从旧自建的 RocketMQ 迁移到 TDMQ RocketMQ 版上，最终实现所有的消息收发业务都在新的 RocketMQ 集群上进行。
+通过 [元数据迁移任务](https://www.tencentcloud.com/document/product/1113/50206)，客户可以将自建的 RocketMQ 集群的元数据同步到 TDMQ RocketMQ上。在元数据迁移完成之后，客户需要修改生产者集群和消费者集群的接入信息，将生产者集群和消费者集群从旧自建的 RocketMQ 迁移到 TDMQ RocketMQ 版上，最终实现所有的消息收发业务都在新的 RocketMQ 集群上进行。
 
 >?迁移消息服务只迁移消息生产和消费链路，并不会迁移原 RocketMQ 集群上的消息数据。目前仅适用于迁移到专享集群，共享集群会在公测结束后开始支持。
 
