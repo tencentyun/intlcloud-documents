@@ -116,7 +116,7 @@ Tencent Cloud RT-Cube Player SDK Demo는 완전한 제품 수준의 인터랙티
         </div>
 								<div class="demo-item-link">
 				<a href="https://github.com/LiteAVSDK/Player_iOS">Demo 소스 코드</a>
-				 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/42005">통합 가이드</a>
+				 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/266/49669">통합 가이드</a>
         </div>
     </div>
     <div class="preview-demo-item style-qrcode" style="margin-left:0">
@@ -134,7 +134,7 @@ Tencent Cloud RT-Cube Player SDK Demo는 완전한 제품 수준의 인터랙티
         </div>
 					<div class="demo-item-link">
 				<a href="https://github.com/LiteAVSDK/Player_Android">Demo 소스 코드</a>
-				 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/41755">통합 가이드</a>
+				 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/266/49670">통합 가이드</a>
         </div>
 				 </div>		
     </div>
