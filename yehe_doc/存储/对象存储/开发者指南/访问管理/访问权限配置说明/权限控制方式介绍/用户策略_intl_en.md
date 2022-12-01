@@ -71,9 +71,7 @@ CAM provides [preset policies and custom policies](https://intl.cloud.tencent.co
 2. Choose **Policy** > **Create Custom Policy** > **Create by Policy Syntax** to go to the policy creation page.
 3. You can select **Blank Template** to customize a permission policy as needed or select a COS-associated **system template**. The following uses **Blank Template** as an example.
 
-4. Select **Blank Template** and enter your policy syntax.
-
-The policy syntax must contain the following elements:
+4. Select **Blank Template** and enter your policy syntax.The policy syntax must contain the following elements:
  - **resource: resource to authorize access to**
      - All resources (`"*"`)
      - Specified bucket (`"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"`)
@@ -92,10 +90,10 @@ The policy syntax must contain the following elements:
 
 <span id="Preset Policy"></span>
 ## Preset Policy
-CAM provides some preset policies. You can view them (filtered by "COS") in **Policy** > **Preset Policy** in the [CAM console](https://console.cloud.tencent.com/cam).
+1. CAM provides some preset policies. You can view them (filtered by "COS") in **Policy** > **Preset Policy** in the [CAM console](https://console.cloud.tencent.com/cam).
 
 
-Click a policy name and choose **Policy Syntax** > **JSON** to view the policy context. In a preset policy, `resource` is set to `"*"` (indicating all resources in COS) and its value cannot be modified. If you want to grant permissions on certain COS buckets or objects, you can copy the JSON preset policy to create a [Custom Policy](https://intl.cloud.tencent.com/document/product/436/45236?lang=en&pg=#directions).
+2. Click a policy name and choose **Policy Syntax** > **JSON** to view the policy context. In a preset policy, `resource` is set to `"*"` (indicating all resources in COS) and its value cannot be modified. If you want to grant permissions on certain COS buckets or objects, you can copy the JSON preset policy to create a [Custom Policy](https://intl.cloud.tencent.com/document/product/436/45236?lang=en&pg=#directions).
 
 
 
