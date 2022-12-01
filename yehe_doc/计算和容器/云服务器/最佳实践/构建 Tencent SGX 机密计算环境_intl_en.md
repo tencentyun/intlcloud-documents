@@ -45,13 +45,16 @@ yum install sgx-linux-x64-sdk
 <dx-alert infotype="explain" title="">
 The default installation directory of the Intel SGX SDK is `/opt/intel/sgxsdk`. You can develop an SGX program as instructed in [Intel® Software Guard Extensions (Intel® SGX) SDK for Linux OS Developer Reference](https://download.01.org/intel-sgx/sgx-linux/2.13/docs/Intel_SGX_Developer_Reference_Linux_2.13_Open_Source.pdf?spm=a2c4g.11186623.0.0.2f8d31b8PMoC1w&file=Intel_SGX_Developer_Reference_Linux_2.13_Open_Source.pdf).
 </dx-alert>
-4. After installing the SGX runtime and Intel SGX SDK, restart the instance as instructed in [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928).
+
+4. After installing the SGX runtime and Intel SGX SDK, restart the instance as instructed in [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928) .
+
 5. Configure the Tencent Cloud SGX remote attestation service.
 The Tencent Cloud SGX remote attestation service is deployed at the regional level. You can access the service in the region where your SGX CVM instance resides to get the optimal experience. After you install the Intel SGX SDK, the default configuration file `/etc/sgx_default_qcnl.conf` of the service will be generated automatically. Manually modify the file in the following steps to adapt to the service in the region of your SGX CVM instance.
 <dx-alert infotype="explain" title="">
 - Currently, the SGX remote attestation service is available only in the Beijing, Shanghai, and Guangzhou regions.
 - Intel Ice Lake supports only the remote attestation method based on Intel SGX DCAP rather than Intel EPID.
 </dx-alert>
+
 Use the Vim editor to modify `/etc/sgx_default_qcnl.conf` as follows:
 ```
 # PCCS server address
