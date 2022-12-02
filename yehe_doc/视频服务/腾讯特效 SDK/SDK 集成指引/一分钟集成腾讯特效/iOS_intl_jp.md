@@ -4,61 +4,76 @@
 
 - 開発ツールXCode11以降：App Storeまたは[Demoのダウンロード](https://intl.cloud.tencent.com/document/product/1143/45374)をクリックします。
 - 推奨実行環境：
-  - デバイス要件：iPhone 5以上。iPhone 6以下はフロントカメラのサポートは最大720pとし、1080pはサポートしていません。
-  - システム要件：iOS 10.0以降のバージョン。
+  - デバイス要件：iPhone 5およびそれ以上。iPhone 6およびそれ以下はフロントカメラのサポートは最大720pとし、1080pはサポートしていません。
+  - システム要件：iOS 10.0およびそれ以降のバージョン。
 
-### C/C++レイヤー開発環境
+### SDKのインポート
 
-XCodeはデフォルトではC++環境となります。
+CocoaPodsスキームを使用するか、SDKをローカルにダウンロードして、現在のプロジェクトに手動でインポートするかを選択できます。
+<dx-tabs>
+::: CocoaPodsの使用
+1. **CocoaPodsのインストール**
+端末のウィンドウに次のコマンドを入力します（事前にMac にRuby環境をインストールしておく必要があります ）。
+```
+sudo gem install cocoapods
+```
+2. **Podfileファイルの作成**
+プロジェクトが存在するパスに入り、次のコマンドラインを入力するとプロジェクトパスの下にPodfile ファイルが現れます。
+```
+pod init
+```
+3. **Profileファイルの編集**
+プロジェクトのニーズに応じて適切なバージョンを選択し、Podfileを編集します：
+	- **XMagicスタンダード版**
+次の方法でProfileファイルの編集を行ってください。
+```
+platform :ios, '8.0'
 
-<table>
-<tr><th>タイプ</th><th>依存ライブラリ</th></tr>
-<tr>
-<td>システム依存ライブラリ</td>
-<td><ul style="margin:0">
-<li/>CoreTelephony
-<li/>JavaScriptCore
-<li/>libc++.tbd
-<li/>MetalPerformanceShaders
-<li/>VideoToolbox
-</ul></td>
-</tr>
-<tr>
-<td>付属ライブラリ</td>
-<td><ul style="margin:0">
-<li/>YTCommon（認証静的ライブラリ）
-<li/>XMagic（美顔静的ライブラリ）
-<li/>libpag（ビデオデコード動的ライブラリ）
-<li/>Masonry（コントロールレイアウトライブラリ）
-<li/>SSZipArchive（ファイル解凍ライブラリ）
-</ul></td>
-</tr>
-</table>
+target 'App' do
+pod 'XMagic'
+end
+```
+  - **XMagic簡易版**
+インストールパッケージのボリュームがスタンダード版より小さく、ベーシック版A1-00、ベーシック版A1-01、プレミアム版S1-00のみをサポートしています。次の方法でPodfileファイルの編集を行ってください。
+```
+platform :ios, '8.0'
 
+target 'App' do
+pod 'XMagic_Smart'
+end
+```
+4. **SDKの更新およびインストール**
+端末ウィンドウに次のコマンドを入力し、ローカルライブラリファイルを更新し、SDKをインストールします。
+```
+pod install
+```
+pod コマンドの実行が完了すると、SDKが統合された.xcworkspace という拡張子のプログラムファイルが生成されますので、これをダブルクリックして開きます。
+5. **実際のプロジェクトへの美顔リソースの追加**
+対応するパッケージの[SDKおよび美顔リソース](https://www.tencentcloud.com/document/product/1143/45377)をダウンロードして解凍し、**resources**フォルダ下の**LightCore.bundle**、**Light3DPlugin.bundle**、**LightBodyPlugin.bundle**、**LightHandPlugin.bundle**、**LightSegmentPlugin.bundle**以外の**その他のbundleリソース**を実際のプロジェクトに追加します。
+6. Bundle Identifierを、テスト用に申請した権限と同じものに変更します。
+:::
+::: SDKのダウンロードと手動でのインポート
+1. [SDKおよび美顔リソース](https://www.tencentcloud.com/document/product/1143/45377)をダウンロードして解凍します。frameworksフォルダ内にあるのがsdk、resourcesフォルダ内にあるのが美顔のbundleリソースです。
+2. ご自身のXcodeプロジェクトを開き、frameworksフォルダ内のframeworkを実際のプロジェクトに追加します。実行したいtargetを選択し、**General**の項目を選び、**Frameworks,Libraries,and Embedded Content**の項目をクリックして展開し、下部の「+」アイコンをクリックして依存ライブラリを追加します。ダウンロードした`XMagic.framework`、`YTCommonXMagic.framework`、`libpag.framework`およびそれらに必要な依存ライブラリ`MetalPerformanceShaders.framework`、`CoreTelephony.framework`、`JavaScriptCore.framework`、`VideoToolbox.framework`、`libc++.tbd`を順に追加します。必要に応じてその他のツールライブラリ、`Masonry.framework`（ウィジェットレイアウトライブラリ）、`SSZipArchive`（ファイル解凍ライブラリ）を追加します。
+![](https://qcloudimg.tencent-cloud.cn/raw/64aacf4305d7adf3a2bbe025920be517.png)
+3. resourcesフォルダ内の美顔リソースを実際のプロジェクトに追加します。
+4. Bundle Identifierを、テスト用に申請した権限と同じものに変更します。
+:::
+::: 動的ダウンロードと統合
+パッケージのサイズを抑えるため、SDKが必要とするモデルリソースとモーションリソースMotionRes（一部のベーシック版SDKにはモーションリソースがありません）をオンラインダウンロードに変更してください。ダウンロード後に、上記のファイルのパスをSDKに設定します。
 
-## リソースのインポート
-### リソース
-- 必須リソースパック：`LightCore.bundle`
-- 分割機能パッケージ：`LightSegmentPlugin.bundle`
-- ジェスチャー機能パッケージ：`LightHandPlugin.bundle`
-- 3D機能パッケージ：`Light3DPlugin.bundle`
-
-### インポート方法
-- **方法1**：プロジェクトのリソースに追加するだけです。
-- **方法2**：パス`initWithRenderSize:assetsDict: (XMagic)`を指定する必要がある場合は、ここの`assetsDict`によって各リソースパスを設定することができます。
+Demoのダウンロードロジックを再利用することをお勧めします。もちろん、既存のダウンロードサービスを使用することもできます。動的ダウンロードの詳細なガイドについては、[SDKパッケージのスリム化（iOS）](https://www.tencentcloud.com/document/product/1143/48644)をご参照ください。
+:::
+</dx-tabs>
 
 ### 権限の設定
 info.plistファイルに対応する権限の説明を追加します。これを行わなければ、iOS 10システム上でプログラムがクラッシュする場合があります。Privacy - Camera Usage Descriptionでカメラの権限を有効にし、Appによるカメラの使用を許可してください。
 
 ## 統合の手順
 
-[](id:step1)
-### 手順1：署名の準備
-frameworkの署名は、直接**General**>**Masonry.framework**および**libpag.frameworkで**Embed & Signを選択できます**。
-[](id:step2)
-### 手順2：認証
+### 手順1：認証
 1. 権限の承認を申請し、LicenseURLとLicenseKEYを取得します。
-> ! 正常な状況では、appのネットワーク接続が一度成功すれば認証フローは完了するため、Licenseファイルをプロジェクトのプロジェクトディレクトリに保存する**必要はありません**。ただし、appがネットワークに未接続の状態でSDKの関連機能を使用する必要がある場合は、licenseファイルをダウンロードしてプロジェクトディレクトリに保存し、最低保証プランとすることができます。この場合、licenseファイル名は必ず`v_cube.license`としてください。
+>! 正常な状況では、Appのネットワーク接続が一度成功すれば認証フローは完了するため、Licenseファイルをプロジェクトのプロジェクトディレクトリに保存する**必要はありません**。ただし、Appがネットワークに未接続の状態でSDKの関連機能を使用する必要がある場合は、Licenseファイルをダウンロードしてプロジェクトディレクトリに保存し、最低保証プランとすることができます。この場合、Licenseファイル名は必ず`v_cube.license`としなければなりません。
 2. 関連業務モジュールの初期化コードの中でURLとKEYを設定し、licenseのダウンロードをトリガーします。使用する直前になってダウンロードすることは避けてください。あるいはAppDelegateのdidFinishLaunchingWithOptionsメソッドでダウンロードをトリガーすることもできます。このうち、LicenseURLとLicenseKeyはコンソールでLicenseをバインドした際に生成された権限承認情報です。
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
@@ -124,7 +139,7 @@ frameworkの署名は、直接**General**>**Masonry.framework**および**libpag
 </tbody></table>
 
 [](id:step3)
-### 手順3：SDKのロード（XMagic.framework）
+### ステップ2：SDKのロード（XMagic.framework）
 Tencent Effect SDK使用のライフサイクルはおおむね次のとおりです。
 1. 美顔関連リソースをロードします。
 ```
@@ -166,7 +181,7 @@ deinit (XMagic)
 [self.beautyKit deinit]
 ```
 
-> ? 上記の手順が完了すると、ユーザーは自身の実際のニーズに応じて表示のタイミングおよびその他のデバイスの関連環境を制御できるようになります。
+>? 上記の手順が完了すると、ユーザーは自身の実際のニーズに応じて表示のタイミングおよびその他のデバイスの関連環境を制御できるようになります。
 
 ## よくあるご質問
 
@@ -180,7 +195,7 @@ deinit (XMagic)
 ### 質問2：iOSでのリソースインポート実行後のエラー：「Xcode 12.XバージョンのコンパイルでBuilding for iOS Simulator, but the linked and embedded framework '.framework'...と表示される」が発生しました。
 
 **Buil Settings** > **Build Options** > **Validate Workspace** をYesに変更し、再度**実行**をクリックします。
-> ?  Validate WorkspaceをYesに変更するとコンパイルが完了します。再びNoに変更しても正常に実行できます。そのため、ここではこの問題が発生した場合にのみ注意してください。
+>?  Validate WorkspaceをYesに変更するとコンパイルが完了します。再びNoに変更しても正常に実行できます。そのため、ここではこの問題が発生した場合にのみ注意してください。
 
 [](id:que3)
 ### 質問3：フィルター設定が反応しません。
@@ -195,12 +210,11 @@ PhaseScriptExecution CMake\ PostBuild\ Rules build/XMagicDemo.build/Debug-iphone
 
 Command /bin/sh failed with exit code 1
 ```
-- 問題の原因：`libpag.frameworkとMasonary.framework`の再署名に失敗したことが原因です。
-- 解決方法：
-1. `demo/copy_framework.sh`を開きます。
-2. 次のコマンドを使用してローカルマシンのcmakeのパスを確認し、`$(which cmake)`をローカルcmakeの絶対パスに変更します。
+ - 問題の原因：`libpag.frameworkとMasonary.framework`の再署名に失敗したことが原因です。
+ - 解決方法：
+  1. `demo/copy_framework.sh`を開きます。
+  2. 次のコマンドを使用してローカルマシンのcmakeのパスを確認し、`$(which cmake)`をローカルcmakeの絶対パスに変更します。
 ```
 which cmake
 ```
-
-3. `Apple Development: ......`をすべてご自身の署名に置き換えます。
+  3. `Apple Development: ......`をすべてご自身の署名に置き換えます。
