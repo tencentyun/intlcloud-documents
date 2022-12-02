@@ -17,15 +17,16 @@ Apache Kudu is a distributed and horizontally scalable columnar storage system. 
 - Cross-region real-time data backup and query.
 
 ## Basic Kudu Architecture
-![](https://main.qcloudimg.com/raw/fb48d41fecde3f4ca1c2202170f5cbe2.png)
+
 Kudu contains the following two types of components:
 - Master, which is mainly responsible for managing metadata information, listening on servers, and reassigning tablets in case of server failures.
 - Tablet server, which is mainly responsible for tablet storage and data CRUD.
 
+![](https://main.qcloudimg.com/raw/fb48d41fecde3f4ca1c2202170f5cbe2.png)
 ## Kudu Usage
 EMR 2.4.0 supports the Kudu component. If you check the Kudu component when creating a Hadoop cluster, a Kudu cluster will be created. By default, it contains 3 Kudu masters, and high availability is enabled for it. 
 >?All IPs used below are private IPs.
->
+
 - Integrate Impala with Kudu
 
 ```
