@@ -1,11 +1,6 @@
 Tencent Effect is one of Tencent Cloud’s media SDKs (RT-Cube). The Tencent Effect web SDK offers a comprehensive web-based AR effect solution.
 You can use the SDK and the material customization and management tool we provide to implement AR effects including AI-based beautification, filters, makeup, stickers, animojis, and virtual avatars on a desktop or mobile webpage with ease.
 
-## Free Trial
-We are promoting the Tencent Effect web SDK at this stage, and you can [apply for](https://www.tencentcloud.com/document/product/1143/50806) a free trial. We will review your application within one business day.
-
-The **pricing of client SDKs** on our website is not applicable to the Tencent Effect web SDK. How and when the web SDK will be billed are to be determined. **Currently, an official license obtained for free is valid for six months by default.** When we start billing the web SDK, we will make sure that existing licenses are not affected. Before then, if your license expires, we will automatically renew it and notify you of the renewal details.
-
 ## Workflow
 ![](https://qcloudimg.tencent-cloud.cn/raw/9caf2ac546d1a3447a605919912e7d4f.jpeg)
 
