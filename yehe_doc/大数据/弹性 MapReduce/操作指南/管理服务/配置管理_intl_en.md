@@ -6,7 +6,7 @@ Configuration management supports modifying key configuration parameters of comm
 
 ## Directions
 ### Editing a configuration item
-1. Log in to the [EMR console](https://console.cloud.tencent.com/emr), select the target cluster in the **Cluster list**, and click **Service** to enter the cluster service list.
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr), select the target cluster in the **Cluster list**, and click **Cluster Service** to enter the cluster service list.
 2. In the cluster service list, select **Operation** > **Configuration Management** in the top-right corner of the target service panel.
 ![](https://main.qcloudimg.com/raw/f5ffa451824dc44731119181a0b3ad12.png)
 3. On the **Configuration Management** page, select the **Level** as needed. By default, **Cluster level** is selected.
