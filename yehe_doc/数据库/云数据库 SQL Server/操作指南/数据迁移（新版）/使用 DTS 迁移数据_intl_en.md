@@ -50,13 +50,13 @@ The SQL service of the source database is running, and the login identity's **bu
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. In this scenario, select **SQL Server**.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. In this scenario, select <b>SQL Server</b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. In this scenario, select **SQL Server**.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. In this scenario, select <b>SQL Server</b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -85,14 +85,14 @@ The SQL service of the source database is running, and the login identity's **bu
 <td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, **Database** is selected as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, <b>Database</b> is selected as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product//213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
 <li>VPN Access: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1037">VPN Connections</a>.</li>
 <li>Database: The source database is a TencentDB instance.</li>
 <li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li>
-</ul>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions.</td></tr>
+</ul>For a third-party cloud database, you can select <b>Public Network</b> generally or select <b>VPN Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the source database.</td></tr>
 <tr>
@@ -105,7 +105,7 @@ The SQL service of the source database is running, and the login identity's **bu
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Database**.</td></tr>
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 <tr>
@@ -122,7 +122,7 @@ The SQL service of the source database is running, and the login identity's **bu
 <td>Select a type based on your scenario. <ul><li>Full migration: The entire database will be migrated. The migrated data will only be existing content of the source database when the task is initiated but not include the incremental data written to the source database after the task is initiated. </li><li>Full + Incremental migration: The migrated data will include the existing content of the source database when the task is initiated as well as the incremental data written to the source database after the task is initiated. If there are data writes to the source database during migration, and you want to smoothly migrate the data in a non-stop manner, select this option.</li></ul></td></tr>
 <tr>
 <td>Specified objects</td>
-<td>Only database-level migration is supported; that is, all objects in the specified database must be migrated together. Select the database to be migrated in **Source Database Object** and move it to the **Selected Object** box.</td></tr>
+<td>Only database-level migration is supported; that is, all objects in the specified database must be migrated together. Select the database to be migrated in <b>Source Database Object</b> and move it to the <b>Selected Object</b> box.</td></tr>
 </tbody></table>
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
     If the verification failed, fix the problem as instructed in [Database Connection Check](https://intl.cloud.tencent.com/document/product/571/42552) and initiate the verification task again.
