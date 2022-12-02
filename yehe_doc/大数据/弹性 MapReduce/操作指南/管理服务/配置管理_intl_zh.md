@@ -6,7 +6,7 @@
 
 ## 操作步骤
 ### 编辑配置项
-1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在集群列表中选择对应的集群单击**服务**进入集群服务列表。
+1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在集群列表中选择对应的集群单击**集群服务**进入集群服务列表。
 2. 在集群服务列表中，选择待修改配置服务面板右上角**操作 > 配置管理**。
 ![](https://main.qcloudimg.com/raw/f5ffa451824dc44731119181a0b3ad12.png)
 3. 进入配置管理页后，根据需要选择配置维度范围，默认选择集群维度。
