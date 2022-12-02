@@ -22,7 +22,7 @@ TRTCCloudが提供するインターフェース**startPublishMediaStream**を�
 以下のコードは、現在のユーザーのオーディオビデオストリームをライブストリーミングCDNに公開する機能を実装します。
 
 <dx-codeblock>
-::: Java Java
+::: Java
 ```
 // 現在のユーザーのオーディオビデオストリームをライブストリーミングCDNに公開します
 TRTCCloudDef.TRTCPublishTarget target = new TRTCCloudDef.TRTCPublishTarget();
@@ -36,7 +36,7 @@ target.cdnUrlList.add(cdnUrl);
 mTRTCCloud.startPublishMediaStream(target, null, null);
 ```
 :::
-::: ObjC ObjC
+::: ObjC
 ```
 // 現在のユーザーのオーディオビデオストリームをライブストリーミングCDNに公開します
 TRTCPublishTarget* target = [[TRTCPublishTarget alloc] init];
@@ -53,7 +53,7 @@ target.cdnUrlList = cdnUrlList;
 [_trtcCloud startPublishMediaStream:target encoderParam:nil mixingConfig:nil];
 ```
 :::
-::: C++ C++
+::: C++
 ```
 // 現在のユーザーのオーディオビデオストリームをライブストリーミングCDNに公開します
 TRTCPublishTarget target;
@@ -126,7 +126,7 @@ TRTCルーム内の複数のユーザーのオーディオビデオストリー�
 以下のコードは、ルーム内の複数のユーザーのオーディオビデオストリームを合成してライブストリーミングCDNに公開する機能を備えています。
 
 <dx-codeblock>
-::: Java Java
+::: Java
 ```
 // 公開モードをTRTC_PublishMixedStream_ToCdnに指定します
 TRTCCloudDef.TRTCPublishTarget target = new TRTCCloudDef.TRTCPublishTarget();
@@ -193,7 +193,7 @@ mixingConfig.audioMixUserList = null;
 mTRTCCloud.startPublishMediaStream(target, encoderParam, mixingConfig);
 ```
 :::
-::: ObjC ObjC
+::: ObjC
 ```
 // 公開モードにTRTCPublishMixStreamToCdnを指定します
 TRTCPublishTarget* target = [[TRTCPublishTarget alloc] init];
@@ -253,7 +253,7 @@ config.audioMixUserList = nil;
 [_trtcCloud startPublishMediaStream:target encoderParam:encoderParam mixingConfig:config];
 ```
 :::
-::: C++ C++
+::: C++
 ```
 // 公開モードにTRTCPublishMixStreamToCdnを指定します
 TRTCPublishTarget target;
