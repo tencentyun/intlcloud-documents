@@ -1,6 +1,5 @@
 ## 计费方式
->? 此产品的包年包月售卖模式正在内测中，如有需要，请[联系商务](https://intl.cloud.tencent.com/contact-sales)。
->
+
 TDSQL MySQL版 提供如下两种计费模式：
 
 | 计费模式 | 付费模式                                   | 适用场景                                      |

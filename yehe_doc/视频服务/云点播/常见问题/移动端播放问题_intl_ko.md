@@ -19,7 +19,7 @@ SurfaceView 또는 TextureView가 TXVodPlayer 객체에 바인딩되어 있는�
 
 ### 패키지를 축소하려면 어떻게 해야 합니까?
 
-- SDK v9.4 이하의 [다운로드 캐시 기능](https://intl.cloud.tencent.com/document/product/266/47847)(TXVodDownloadManager의 API)을 사용하지 않았고 SDK v9.5 이상에서 다운로드한 파일을 재생할 필요가 없다면 설치 패키지의 크기를 줄이는 데 도움이 되는 기능의 so 파일을 사용합니다. 예를 들어 SDK v9.4 또는 이전 버전에서 TXVodDownloadManager 클래스의 setDownloadPath 및 startDownloadUrl 함수를 사용하여 캐시된 파일을 다운로드했고 TXVodDownloadManager에서 다시 호출한 getPlayPath 경로가 후속 재생을 위해 앱에 저장되어 있는 경우 getPlayPath 경로에서 파일을 재생하기 위해 libijkhlscache-master.so가 필요합니다. 그렇지 않으면 필요하지 않습니다. app/build.gradle에 다음을 추가할 수 있습니다:
+- SDK v9.4 이하의 [다운로드 캐시 기능](https://www.tencentcloud.com/document/product/266/47849)(TXVodDownloadManager의 API)을 사용하지 않았고 SDK v9.5 이상에서 다운로드한 파일을 재생할 필요가 없다면 설치 패키지의 크기를 줄이는 데 도움이 되는 기능의 so 파일을 사용합니다. 예를 들어 SDK v9.4 또는 이전 버전에서 TXVodDownloadManager 클래스의 setDownloadPath 및 startDownloadUrl 함수를 사용하여 캐시된 파일을 다운로드했고 TXVodDownloadManager에서 다시 호출한 getPlayPath 경로가 후속 재생을 위해 앱에 저장되어 있는 경우 getPlayPath 경로에서 파일을 재생하기 위해 libijkhlscache-master.so가 필요합니다. 그렇지 않으면 필요하지 않습니다. app/build.gradle에 다음을 추가할 수 있습니다:
   ```xml
   packagingOptions {
       exclude "lib/armeabi/libijkhlscache-master.so"

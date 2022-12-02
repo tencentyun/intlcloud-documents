@@ -116,7 +116,7 @@
         </div>
 								<div class="demo-item-link">
 				<a href="https://github.com/LiteAVSDK/Player_iOS">Demo 源码</a>
-				 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/42005">集成指引</a>
+				 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/266/49669">集成指引</a>
         </div>
     </div>
     <div class="preview-demo-item style-qrcode" style="margin-left:0">
@@ -134,7 +134,7 @@
         </div>
 					<div class="demo-item-link">
 				<a href="https://github.com/LiteAVSDK/Player_Android">Demo 源码</a>
-				 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/266/41755">集成指引</a>
+				 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/266/49670">集成指引</a>
         </div>
 				 </div>		
     </div>

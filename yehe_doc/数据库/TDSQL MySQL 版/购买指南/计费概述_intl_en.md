@@ -1,4 +1,5 @@
 ## Billing Modes
+
 TDSQL provides 2 billing options:
 
 | Billing Mode | Payment Mode                                   | Application Scenario                                      |
@@ -8,11 +9,11 @@ TDSQL provides 2 billing options:
 
 The memory prices for pay-as-you-go adopts a tiered model based on the usage duration.
 
-| Usage Duration              | Tiered Price             |
+| Usage Duration              | Tiered Price           |
 | ---------------------- | -------------------- |
-| 0 hours<duration≤96 hours   | Tier 1 pay-as-you-go price applies |
-| 96 hours<duration≤360 hours | Tier 2 pay-as-you-go price applies |
-| Duration>360 hours          | Tier 3 pay-as-you-go price applies |
+| 0 hours < duration ≤ 96 hours   | Tier 1 pay-as-you-go price applies |
+| 96 hours < duration ≤ 360 hours | Tier 2 pay-as-you-go price applies |
+| Duration>  360 hours          | Tier 3 pay-as-you-go price applies |
 
 
 ## Node Specifications

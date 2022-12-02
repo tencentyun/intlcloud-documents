@@ -2,7 +2,7 @@ DataX is an open-source CLI that supports importing full or incremental data fro
 
 **DataX installation:**
 1. Download the source code [here](https://github.com/HashDataInc/DataX) and compile it.
-2. Directly use [datax-v1.0.4-hashdata.tar.gz](https://packagedown-online-1256722404.cos.ap-guangzhou.myqcloud.com/datax/datax-v1.0.4-hashdata.tar.gz), an already compiled version.
+2. Directly use [datax-v1.0.4-hashdata.tar.gz](https://www.tencentcloud.com/document/product/1138/45015), an already compiled version.
 
 The following section introduces [DataX](https://github.com/HashDataInc/DataX) modified by HashData, which is more efficient to import data to CDWPG. Tests show that it can import more than 100,000 entries per second. The following is the configuration file to import data from MySQL to CDWPG:
 ```

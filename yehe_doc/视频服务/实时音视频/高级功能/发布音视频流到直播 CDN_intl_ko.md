@@ -22,7 +22,7 @@ TRTC 서버는 오디오/비디오 데이터를 CDN 서버로 직접 보냅니�
 아래 코드는 로컬 사용자의 스트림을 라이브 스트리밍 CDN에 게시합니다:
 
 <dx-codeblock>
-::: Java Java
+::: Java
 ```
 // 로컬 사용자의 스트림을 CDN에 게시
 TRTCCloudDef.TRTCPublishTarget target = new TRTCCloudDef.TRTCPublishTarget();
@@ -36,7 +36,7 @@ target.cdnUrlList.add(cdnUrl);
 mTRTCCloud.startPublishMediaStream(target, null, null);
 ```
 :::
-::: ObjC ObjC
+::: ObjC
 ```
 // 로컬 사용자의 스트림을 CDN에 게시
 TRTCPublishTarget* target = [[TRTCPublishTarget alloc] init];
@@ -53,7 +53,7 @@ target.cdnUrlList = cdnUrlList;
 [_trtcCloud startPublishMediaStream:target encoderParam:nil mixingConfig:nil];
 ```
 :::
-::: C++ C++
+::: C++
 ```
 // 로컬 사용자의 스트림을 CDN에 게시
 TRTCPublishTarget target;
@@ -126,7 +126,7 @@ delete[] cdn_url_list;
 아래 코드는 한 방에 있는 여러 사용자의 스트림을 믹싱하고 그 결과를 CDN에 게시합니다.
 
 <dx-codeblock>
-::: Java Java
+::: Java
 ```
 // 게시 모드를 TRTC_PublishMixedStream_ToCdn으로 지정
 TRTCCloudDef.TRTCPublishTarget target = new TRTCCloudDef.TRTCPublishTarget();
@@ -193,7 +193,7 @@ mixingConfig.audioMixUserList = null;
 mTRTCCloud.startPublishMediaStream(target, encoderParam, mixingConfig);
 ```
 :::
-::: ObjC ObjC
+::: ObjC
 ```
 // 게시 모드를 TRTCPublishMixStreamToCdn으로 지정
 TRTCPublishTarget* target = [[TRTCPublishTarget alloc] init];
@@ -253,7 +253,7 @@ config.audioMixUserList = nil;
 [_trtcCloud startPublishMediaStream:target encoderParam:encoderParam mixingConfig:config];
 ```
 :::
-::: C++ C++
+::: C++
 ```
 // 게시 모드를 TRTCPublishMixStreamToCdn으로 지정
 TRTCPublishTarget target;

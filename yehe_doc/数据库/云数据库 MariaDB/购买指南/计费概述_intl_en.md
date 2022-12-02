@@ -1,6 +1,6 @@
->Beginning from May 1, 2020, TencentDB for MariaDB has reverted back to the original pricing mode where fees are calculated according to the number of nodes. The tiered pricing model also applies. This pricing adjustment might result in price changes for some instances. Please contact your sales rep if you have any questions. 
 
 ## Billing Modes
+
 TencentDB for MariaDB provides two billing options.
 
 | Billing Mode | Payment Mode                                   | Application Scenario                                      |
@@ -12,9 +12,9 @@ The memory prices for pay-as-you-go adopts a tiered model based on the usage dur
 
 | Usage Duration               | Tiered Price             |
 | ---------------------- | -------------------- |
-| 0 hours<duration≤96 hours   | Tier 1 pay-as-you-go price applies |
-| 96 hours<duration≤360 hours | Tier 2 pay-as-you-go price applies |
-| Duration>360 hours          | Tier 3 pay-as-you-go price applies |
+| 0 hours < duration ≤ 96 hours   | Tier 1 pay-as-you-go price applies |
+| 96 hours < duration ≤ 360 hours | Tier 2 pay-as-you-go price applies |
+| Duration > 360 hours          | Tier 3 pay-as-you-go price applies |
 
 
 ## Node Specifications
