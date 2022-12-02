@@ -22,7 +22,7 @@
 如下这段代码的功能是发布当前用户的音视频流到直播CDN：
 
 <dx-codeblock>
-::: Java Java
+::: Java
 ```
 // 发布当前用户的音视频流到直播CDN
 TRTCCloudDef.TRTCPublishTarget target = new TRTCCloudDef.TRTCPublishTarget();
@@ -36,7 +36,7 @@ target.cdnUrlList.add(cdnUrl);
 mTRTCCloud.startPublishMediaStream(target, null, null);
 ```
 :::
-::: ObjC ObjC
+::: ObjC
 ```
 // 发布当前用户的音视频流到直播CDN
 TRTCPublishTarget* target = [[TRTCPublishTarget alloc] init];
@@ -53,7 +53,7 @@ target.cdnUrlList = cdnUrlList;
 [_trtcCloud startPublishMediaStream:target encoderParam:nil mixingConfig:nil];
 ```
 :::
-::: C++ C++
+::: C++
 ```
 // 发布当前用户的音视频流到直播CDN
 TRTCPublishTarget target;
@@ -126,7 +126,7 @@ delete[] cdn_url_list;
 如下这段代码的功能是将房间中多个用户的音视频流混合并发布到直播 CDN 上：
 
 <dx-codeblock>
-::: Java Java
+::: Java
 ```
 // 指定发布模式为 TRTC_PublishMixedStream_ToCdn
 TRTCCloudDef.TRTCPublishTarget target = new TRTCCloudDef.TRTCPublishTarget();
@@ -193,7 +193,7 @@ mixingConfig.audioMixUserList = null;
 mTRTCCloud.startPublishMediaStream(target, encoderParam, mixingConfig);
 ```
 :::
-::: ObjC ObjC
+::: ObjC
 ```
 // 指定发布模式为 TRTCPublishMixStreamToCdn
 TRTCPublishTarget* target = [[TRTCPublishTarget alloc] init];
@@ -253,7 +253,7 @@ config.audioMixUserList = nil;
 [_trtcCloud startPublishMediaStream:target encoderParam:encoderParam mixingConfig:config];
 ```
 :::
-::: C++ C++
+::: C++
 ```
 // 指定发布模式为 TRTCPublishMixStreamToCdn
 TRTCPublishTarget target;
