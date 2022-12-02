@@ -44,3 +44,4 @@ SDK 호출을 통해 즉각적으로 멀티파트 작업을 진행할 수 있습
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/43881)
