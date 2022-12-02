@@ -65,21 +65,21 @@ Fetched 1 row(s) in 0.20s
 ```
 
 - 其他命令
- - 集群健康检测
+  i. 集群健康检测
 
 ```
 [hadoop@172 root]$ /usr/local/service/kudu/bin/kudu cluster ksck 172.30.0.240,172.30.1.167,172.30.0.96,172.30.0.94,172.30.0.214
 ```
- - 创建表
+  ii. 创建表
 ```
  [hadoop@172 root]$ /usr/local/**service**/**kudu**/bin/kudu table create '172.30.0.240,172.30.1.167,172.30.0.96,172.30.0.94,172.30.0.214' '{"table_name":"test","schema":{"columns":[{"column_name":"id","column_type":"INT32","default_value":"1"},{"column_name":"key","column_type":"INT64","is_nullable":false,"comment":"range key"},{"column_name":"name","column_type":"STRING","is_nullable":false,"comment":"user name"}],"key_column_names":["id","key"]},"partition":{"hash_partitions":[{"columns":["id"],"num_buckets":2,"seed":100}],"range_partition":{"columns":["key"],"range_bounds":[{"upper_bound":{"bound_type":"inclusive","bound_values":["2"]}},{"lower_bound":{"bound_type":"exclusive","bound_values":["2"]},"upper_bound":{"bound_type":"inclusive","bound_values":["3"]}}]}},"extra_configs":{"configs":{"kudu.table.history_max_age_sec":"3600"}},"num_replicas":1}'
 ```
- - 查询创建的 test 表
+  iii. 查询创建的 test 表
 ```
 [hadoop@172 root]$ /usr/local/service/kudu/bin/kudu table list  172.30.0.240,172.30.1.167,172.30.0.96,172.30.0.94,172.30.0.214
 test
 ```
- - 查看表结构
+  iv. 查看表结构
 ```
 [hadoop@172 root]$ /usr/local/service/kudu/bin/kudu table describe  172.30.0.240,172.30.1.167,172.30.0.96,172.30.0.94,172.30.0.214 test
 TABLE test (
