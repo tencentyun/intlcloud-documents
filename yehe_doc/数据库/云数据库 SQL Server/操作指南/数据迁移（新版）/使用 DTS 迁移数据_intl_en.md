@@ -5,16 +5,16 @@ This document describes how to use the data migration feature of DTS to migrate 
 - Full migration is implemented with tables locked, during which write operations will be blocked for seconds.
 
 ## Prerequisites
-- You have [created a TencentDB for SQL Server instance](https://intl.cloud.tencent.com/document/product/238/31571).
+- You have created a TencentDB for SQL Server instance. For more information, see [Creating TencentDB for SQL Server Instance](https://intl.cloud.tencent.com/document/product/238/31571).
 - The source and target databases must meet the requirements for the migration feature and version as instructed in [Databases Supported by Data Migration](https://intl.cloud.tencent.com/document/product/571/42647).
-- You have completed all the preparations as instructed in [Overview](https://intl.cloud.tencent.com/document/product/571/42652).
+- You have completed all the preparations as instructed in [Preparations Overview](https://intl.cloud.tencent.com/document/product/571/42652).
 - The service where the source database is located must open the file sharing port 445.
 - The source database must be set to "full recovery mode", and we recommend you make a full backup before migration.
 - The local disk space of the source database must be large enough, so that the remaining free space can fit the size of the database to be migrated. 
 - If the source instance is not a TencentDB for SQL Server or TencentDB for SQL Server Basic Edition instance (such as a public network/CVM-based self-built instance or instance on another cloud), an account with the `sysadmin` permission needs to be used in the target database for migration, and the `xp_cmdshell` stored procedure must be able to run. If the source instance is a TencentDB for SQL Server High-Availability Edition or Cluster Edition instance, there is no permission restriction on the target database account.
-- You need to change to the built-in account **Local System** for SQL service startup in the source database. The source database account is unrestricted but needs to have the sysadmin permissions.
+- You need to change to the built-in account "Local System" for SQL service startup in the source database. The source database account is unrestricted but needs to have the sysadmin permissions.
 ![](https://qcloudimg.tencent-cloud.cn/raw/8867fbfd1341a9b6e3fa92a4b1bfe3cc.png)
-The SQL service of the source database is running, and **Built-in account** needs to be selected for **Log on as** in the startup configuration and changed to **Local System**.
+The SQL service of the source database is running, and the login identity's **built-in account** in the startup configuration needs to be changed to **Local System**.
 >!The SQL Server service needs to be restarted after the account is changed.
 
 ## Application restrictions
@@ -23,11 +23,11 @@ The SQL service of the source database is running, and **Built-in account** need
 - Only database-level migration is supported (i.e., all objects in the database must be migrated together), while single-table migration is not supported.
 - Logins, job agents, triggers, and database links (link server) at the instance level cannot be migrated.
 
-## Operation limits
+## Operation restrictions
 - Do not modify or delete user information (including username, password, and permissions) in the source and target databases and port numbers during migration; otherwise, the migration task will fail.
 - Do not perform transaction log backup during incremental sync; otherwise, the transaction log will be truncated and become discontinuous.
-- If you only perform full data migration, do not write new data into the source instance during migration; otherwise, the data in the source and target databases will be inconsistent. In scenarios with data writes, to ensure the data consistency in real time, we recommend you select full + incremental data migration.
-- For full + incremental data migration, after you click **Complete** and the task status becomes **Completed**, do not write new data to the source database. We recommend you stop writing for two minutes; otherwise, the data in the source and target databases may be inconsistent.
+- If you only perform full data migration, do not write new data into the source instance during migration; otherwise, the data in the source and target instances will be inconsistent. In scenarios with data writes, to ensure the data consistency in real time, we recommend you select full + incremental data migration.
+- For full + incremental data migration, after you click **Complete** and the task status becomes **Completed**, do not write new data to the source database. We recommend you stop writing for at least two minutes; otherwise, the data in the source and target databases may be inconsistent.
 
 ## Supported SQL operations
 | Operation Type | Supported SQL Operations                                              |
@@ -87,7 +87,7 @@ The SQL service of the source database is running, and **Built-in account** need
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
 <td>Access Type</td><td>Select a type based on your scenario. In this scenario, **Database** is selected as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
-<li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
+<li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product//213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
 <li>VPN Access: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1037">VPN Connections</a>.</li>
 <li>Database: The source database is a TencentDB instance.</li>
@@ -127,7 +127,7 @@ The SQL service of the source database is running, and **Built-in account** need
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
     If the verification failed, fix the problem as instructed in [Database Connection Check](https://intl.cloud.tencent.com/document/product/571/42552) and initiate the verification task again.
  - Failed: It indicates that a check item fails and the task is blocked. You need to fix the problem and run the verification task again.
- - Alarm: It indicates that a check item doesn't completely meet the requirements, and the task can be continued, but the business will be affected. You need to assess whether to ignore the alarm or fix the problem and continue the task based on the alarm message.
+ - Alarm: It indicates that a check item doesn't completely meet the requirements, and the task can be continued, but the business will be affected. Before continuing the task, you need to assess whether to ignore the alarm or fix the problem as prompted.
 ![](https://qcloudimg.tencent-cloud.cn/raw/acb446cee2725f999c8ced3614e85f2d.png)
 6. Return to the data migration task list, and you can see that the task has entered the **Preparing** status. After 1–2 minutes, the data migration task will be started.
    - Select **Full migration**: Once completed, the task will be stopped automatically.
