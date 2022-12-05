@@ -1,4 +1,4 @@
-﻿### Associated resource
+### Associated resource
 
 An associated resource is a resource associated with the current resource; for example:
 1. The current resource is contained in the associated resource; for example, a CVM instance is contained in a VPC.
