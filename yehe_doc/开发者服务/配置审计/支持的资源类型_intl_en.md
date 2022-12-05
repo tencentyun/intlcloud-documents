@@ -69,11 +69,11 @@ Config supports the following Tencent Cloud resource types. If you want more res
 <td>VPC - Subnet <br/>QCS::VPC::Subnet</td>
 </tr>
 <tr><td>VPC - Security group <br/>QCS::VPC::SecurityGroup</td>
-<td> is associated with</td>
+<td> is associated with</td>
 <td>CVM - Instance <br/>QCS::CVM::Instance</td>
 </tr>
 <tr><td>VPC - Subnet <br/>QCS::VPC::Subnet</td>
-<td> is contained in</td>
+<td> is contained in</td>
 <td>VPC - VPC <br/>QCS::VPC::Vpc</td>
 </tr>
 <tr>
