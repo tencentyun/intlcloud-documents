@@ -1,4 +1,4 @@
-﻿| Feature | Description | 
+| Feature | Description | 
 |---------|---------|
 | Setting the scope of resource types to be monitored | Config regularly scans the resources and monitors resource changes under your account to get the resource configuration information. You can set the scope of resource types to adjust the resource types to be monitored. |
 | Monitoring the global resource configuration list | After resource monitoring is enabled, Config continuously records the resource configuration information in different regions under your account. Then, it displays a global list to facilitate general queries. |
