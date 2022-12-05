@@ -1,4 +1,4 @@
-﻿## What is Config?
+## What is Config?
 
 Config helps you audit and govern cloud resources in a centralized manner. It continuously records and evaluates the configuration information and change operations of different types of cloud resources in different regions under your account. This helps you efficiently monitor resources and regulate Ops.
 
