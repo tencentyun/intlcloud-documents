@@ -1,4 +1,4 @@
-﻿## Which Tencent Cloud services and resource types does Config support?
+## Which Tencent Cloud services and resource types does Config support?
 For more information, see [Supported Resource Types](https://www.tencentcloud.com/document/product/1164/51495).
 
 ## Why aren't some resources displayed in the resource list?
