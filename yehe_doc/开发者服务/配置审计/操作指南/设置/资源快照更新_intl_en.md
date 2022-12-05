@@ -1,0 +1,2 @@
+﻿Click **Update** on **Settings** > **Resource snapshot update** page, and the system will immediately pull the latest resource snapshot data to update the resource list and timeline.
+![](https://qcloudimg.tencent-cloud.cn/raw/74096b965024bd834c86ae0b059f49e5.png)

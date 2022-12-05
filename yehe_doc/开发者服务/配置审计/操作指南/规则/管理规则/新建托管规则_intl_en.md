@@ -1,0 +1,4 @@
+﻿Click **Rule** in the left sidebar to go to the **Rule management** page. On the page, click **Create managed rule** in the upper-left corner, select the managed rule template to use, and set the rule basics, associated resources, trigger type, and function parameters to complete the rule creation.
+![](https://qcloudimg.tencent-cloud.cn/raw/941391be02f630f8efd592d784fbf805.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/231e2cc98501f524f6a80e1aaa0d9e70.png)
+In addition, when **creating** or **editing** a conformance pack, if you select a rule that has been added to a conformance pack from the managed rule list, conformance pack template list, or rule list, the system will automatically copy and create a rule and add it to the current conformance pack.
