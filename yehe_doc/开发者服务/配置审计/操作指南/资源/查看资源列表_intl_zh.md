@@ -1,4 +1,4 @@
-﻿### 查看资源列表
+### 查看资源列表
 1、登录[配置审计控制台](https://console.intl.cloud.tencent.com/cfa?target=_blank)，单击资源菜单，可进入资源列表，查看配置审计最近一次更新的资源清单。
 ![](https://qcloudimg.tencent-cloud.cn/raw/8036df426ae58ae86bdab66f462ecf84.png)
 2、所有资源支持跨地域检索。您也可以通过资源id、资源名称、资源类型、资源状态、标签、地域等进一步检索资源信息。
