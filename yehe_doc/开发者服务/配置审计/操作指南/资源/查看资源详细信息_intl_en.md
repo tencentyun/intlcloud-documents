@@ -1,4 +1,4 @@
-﻿### Detailed resource information
+### Detailed resource information
 
 In the resource list, click a **Resource name** to enter the **Resource details** page, which contains three tabs.
 
