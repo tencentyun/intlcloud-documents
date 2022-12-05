@@ -1,4 +1,4 @@
-﻿### Delivering configuration histories on resource timelines
+### Delivering configuration histories on resource timelines
 
 Click **Settings** > **Delivery service**. On the displayed page, toggle on to **enable** and create a delivery service to deliver the scheduled configuration histories on the resource timelines to the specified COS bucket, so that you can analyze resource configuration information more precisely and retain it for a longer time.
 ![](https://qcloudimg.tencent-cloud.cn/raw/85f4b40754ca9e992eacc3fa63d60afb.png)
