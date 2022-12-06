@@ -14,12 +14,12 @@ Before using a CVM instance, you need to perform the following operations:
 For accounts that are making purchases for the first time, the **Quick Configuration** page appears by default. For accounts that have made purchases before, the **Custom Configuration** page appears by default. If you have never purchased a CVM instance, select **Custom Configuration**.
 </dx-alert>
 
-1. Configure the following information as prompted by the page:
+1. Configure the following information.
 <table>
   <tr>
-	<th style="width: 20%">Type</th>
+	<th style="width: 20%">Item</th>
 	<th style="width: 12%">Required</th>
-	<th>Configuration Description</th>
+	<th>Description</th>
   </tr>
   <tr>
 	<td>
@@ -97,9 +97,9 @@ For accounts that are making purchases for the first time, the **Quick Configura
 1. Configure the following information as prompted by the page:
 <table>
   <tr>
-	<th style="width: 20%">Type</th>
+	<th style="width: 20%">Item</th>
 	<th style="width: 12%">Required</th>
-	<th>Configuration Description</th>
+	<th>Description</th>
   </tr>
 	 <tr>
 	<td>Network</td>
