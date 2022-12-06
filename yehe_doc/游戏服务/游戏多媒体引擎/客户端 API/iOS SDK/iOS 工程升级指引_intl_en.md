@@ -1,6 +1,6 @@
 ## Overview
 
-The GME SDK for iOS has been upgraded to v2.9. To implement this upgrade, perform the following steps in your project:
+The GME SDK has been upgraded to v2.9. To implement this upgrade, perform the following steps in your Xcode project:
 
 
 
