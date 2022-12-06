@@ -34,7 +34,7 @@ If the following error occurs during compilation, please complete the library fi
 <img src="https://main.qcloudimg.com/raw/335c9d806cd2d5fe11b5f6a04a6fad80.png"  width="25%" /></img>
 The list of library files is as follows:
 ```
-libc+.tbd
+libc++.tbd
 CoreMedia.framework
 libresolv.tbd
 AVFoundation.framework
