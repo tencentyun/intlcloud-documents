@@ -1,15 +1,14 @@
-Compared with using quick configuration to create a Tencent Cloud Virtual Machine (CVM), custom configuration provides more image platforms and advanced configurations for storage, bandwidth, and security group. You can select the configuration method as needed. This document uses custom configuration as an example.
+Besides the quick configuration template, you can also create CVMs with custom configurations as needed. 
 
 
-## Registration and verification
+## Registration
 
 Before using a CVM instance, you need to perform the following operations:
-1. Sign up for a Tencent Cloud account and complete identity verification.
-A new user needs to [sign up](https://www.tencentcloud.com/account/register) for an account on the Tencent Cloud website. For detailed directions, see [Signing Up](https://www.tencentcloud.com/document/product/378/17985).
+1. A new user needs to [sign up](https://www.tencentcloud.com/account/register) for an account on the Tencent Cloud website. For detailed directions, see [Signing Up](https://www.tencentcloud.com/document/product/378/17985).
 2. Visit the [Tencent Cloud CVM introduction page](https://www.tencentcloud.com/products/cvm) and click **Buy Now**.
 
 
-## Selecting basic configuration[](id:SelectType)
+## Basic Configuration[](id:SelectType)
 
 <dx-alert infotype="notice" title="">
 For accounts that are making purchases for the first time, the **Quick Configuration** page appears by default. For accounts that have made purchases before, the **Custom Configuration** page appears by default. If you have never purchased a CVM instance, select **Custom Configuration**.
@@ -33,7 +32,6 @@ For accounts that are making purchases for the first time, the **Quick Configura
 	  <b>Pay-as-you-go</b>: It is an elastic billing method of CVM applicable to scenarios such as e-commerce flash sales, where demand will fluctuate significantly in an instant.</li>
 	  <li>
 	  <b>Spot instance</b>: It is a new instance operation mode applicable to scenarios such as big data computing and online website service using load balancing. Its general price range is 10%–20% of a pay-as-you-go instance.</li>
-	  - 20%。</li>
 	</ul></td>
   </tr>
   <tr>
@@ -95,7 +93,7 @@ For accounts that are making purchases for the first time, the **Quick Configura
 
 
 
-## Setting the network and CVM
+## Network and CVM
 1. Configure the following information as prompted by the page:
 <table>
   <tr>
@@ -216,7 +214,7 @@ For accounts that are making purchases for the first time, the **Quick Configura
 
 
 
-## Confirming the configuration information
+## Confirming the Configuration
 1. Check the configuration items and billing details of the CVM instance to be purchased.
 2. Read and indicate your consent to the **Tencent Cloud Terms of Service**.
 3. You can perform the following operations as needed:
@@ -226,7 +224,7 @@ For accounts that are making purchases for the first time, the **Quick Configura
 After making the payment, you can log in to the [CVM console](https://console.cloud.tencent.com/cvm) to check your CVM instance.
 Information such as the instance name, public IP address, private IP address, login username, and initial login password of the CVM will be sent to your account through the [Message Center](https://console.cloud.tencent.com/message). You can use this information to log in to and manage your instances. To ensure the security of your CVM, please change your CVM login password as soon as possible.
 
-## Logging in to and connecting the instance
+## Logging in to the Instance
 
 After completing CVM operations, you can log in to your CVM on the Tencent Cloud console and perform operations such as building a site as needed.
 Select a method for logging in to the CVM on the Tencent Cloud console as needed:
@@ -234,7 +232,7 @@ Select a method for logging in to the CVM on the Tencent Cloud console as needed
 - [Log in to a Linux instance using the RDP file](https://intl.cloud.tencent.com/document/product/213/5435)
 - [Log in to a Windows instance using remote desktop](https://intl.cloud.tencent.com/document/product/213/32498)
 
-## Formatting and partitioning the data disk
+## Disk Formatting and Partitioning
 
 If you added a data disk when [selecting the instance type](#SelectType), you need to format and partition the data disk after logging in to the CVM instance. **If you have not added any data disks, skip this step.**
 Select the appropriate operations guide according to the disk capacity and the CVM operating system.
