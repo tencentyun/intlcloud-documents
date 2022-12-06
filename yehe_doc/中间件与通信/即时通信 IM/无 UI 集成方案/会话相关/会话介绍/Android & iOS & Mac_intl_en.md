@@ -3,7 +3,7 @@ When a user creates a one-to-one or group chat, and a message is sent or receive
 In the Tencent Cloud IM SDK, the conversation management class is `V2TIMConversationManager(Android)` or `V2TIMManager(Conversation)(iOS and macOS)`. You can use the conversation management class APIs to display/update the conversation list, update the unread count, pin a conversation to the top, make a conversation draft, and mute message notifications.
 
 ## Conversation Class
-The conversation class is `V2TIMConversation` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html)), which defines the following content:
+The conversation class is `V2TIMConversation` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html) / [Windows](https://im.sdk.qcloud.com/doc/en/structV2TIMConversation.html)), which defines the following content:
 
 | Attribute | Definition | Description |
 | --- |  --- | --- |
