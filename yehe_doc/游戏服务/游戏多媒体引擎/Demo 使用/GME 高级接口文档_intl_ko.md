@@ -46,26 +46,6 @@ CheckDeviceMuteState();
 
 반환 값이 0이면 벨소리/무음 스위치 꺼짐을 나타내고, 1이면 켜짐을 나타냅니다.
 
-### 마이크 상태 확인
-
-<dx-alert infotype="explain" title="설명">
-이 API는 GME SDK 2.8.4 이상 버전에서 적용됩니다.
-</dx-alert>
-
-#### 함수 프로토타입
-
-```
-TestMic();
-```
-
-#### 반환 값 처리
-
-| 반환 값                               | 설명                | 처리                                                         |
-| ------------------------------------ | ------------------- | ------------------------------------------------------------ |
-| ITMG_TEST_MIC_STATUS_AVAILABLE = 0   | 정상적으로 사용 가능            | 처리가 필요하지 않음                                                     |
-| ITMG_TEST_MIC_STATUS_NO_GRANTED = 2  | 액세스 권한을 얻지 못함/거부됨 | 마이크가 활성화되기 전에 액세스 권한을 얻어야 함                               |
-| ITMG_TEST_MIC_STATUS_INVALID_MIC = 3 | 사용 가능한 디바이스 없음      | 일반적으로 이 오류는 사용 가능한 마이크가 없는 PC에서 보고되며, 이어폰이나 마이크를 삽입하라는 메시지가 표시됨 |
-| ITMG_TEST_MIC_STATUS_NOT_INIT = 5    | 초기화되지 않음          | Init 후 EnableMic 호출                                |
 
 ### Android Bluetooth 장치 적용 설정
 
@@ -124,7 +104,7 @@ public int TrackingVolume(float fTrackingTimeS)
 public int StopTrackingVolume();
 ```
 
-| 매개변수              | 유형  | 의미                                                         |
+| 매개변수            | 유형  | 의미                        |
 | -------------- | ----- | --------------------------- |
 | fTrackingTimeS | float | 리스닝 시간(초). 0.5f 권장 |
 
@@ -249,7 +229,7 @@ ITMGContext.GetInstance().GetPttCtrl().OnTranslateTextComplete-= OnTranslateText
 virtual int TextToSpeech(const char* text, const char* voiceName,const char* languageCode, float speakingRate) = 0;
 ```
 
-| 매개변수        | 유형        | 의미                                           |
+| 매개변수              | 유형        | 의미                                                         |
 | ------------ | ----------- | ---------------------------------------------- |
 | text         | const char* | 소스 텍스트. 비워둘 수 없으며 최대 5,000자까지 허용            |
 | voiceName    | const char* | 음성 유형. 영어와 표준 중국어로 된 샘플이 제공되며 다른 언어 샘플은 [티켓 제출](https://console.cloud.tencent.com/workorder/category)하여 신청 |
