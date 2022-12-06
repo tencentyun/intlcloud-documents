@@ -1,4 +1,144 @@
+
 Tencent Cloud’s media SDKs (RT-Cube) include the TRTC SDK, MLVB SDK, Player SDK, and UGSV SDK. You can choose one of the SDKs to build your application or use the All-in-One SDK.
+
+## Version 10.8 Released on October 27, 2022
+
+
+### MLVB
+
+
+#### New features
+
+Android: Added support for sending the system audio when publishing streams using V2TXLivePusher.
+
+#### Improvements
+
+- All platforms: Increased the success rate of playback in the LEB scenario.
+- Android: Improved instant streaming performance.
+
+#### Bug fixing
+
+- All platforms: Fixed the issue where, when using V2TXLivePusher to publish streams, the 1101 warning code is not returned under poor network conditions.
+- All platforms: Fixed the issue where manual focus fails to work with TXLivePusher\V2TXLivePushe.
+
+### UGSV
+
+
+#### Improvements
+
+Android & iOS: Reduced stuttering in the playback of background music during editing.
+
+#### Bug fixing
+
+- Android: Fixed the occasional no audio issue if background music is changed multiple times during editing.
+- Android: Fixed the black screen issue for image transitions on HUAWEI Mate 50.
+- iOS: Fixed the issue where the video bitrate of the generated video increases in iOS 14.
+
+### TRTC
+
+
+#### New features
+
+All platforms: Added the DJ scratch effect and improved the karaoke experience. For details, see `TXAudioEffectManager.setMusicScratchSpeedRate`.
+
+#### Improvements
+
+Android: Sped up video decoding, which reduces the time to first frame to as short as 50 ms.
+All platforms: Improved the accuracy of NTP time. For details, see `TXLiveBase.updateNetworkTime`.
+
+#### Bug fixing
+
+- All platforms: Fixed the occasional issue where, when the streams of a room are mixed and pushed to another TRTC room that does not have upstream audio or video, playback fails and callbacks stop working.
+- All platforms: Fixed the occasional issue where, after an audience member changes their role upon room entry, they fail to publish audio and video due to network type change.
+- All platforms: Fixed the issue where, after a disconnection, audio quality cannot be changed during reconnection.
+- All platforms: Fixed the issue where, after a disconnection, there is sometimes no audio in the published stream during reconnection.
+- Android & iOS: Fixed the issue where `muteRemoteVideoStream` removes the last video frame.
+
+### Player
+
+
+#### Improvements
+
+- Android & iOS: Added the `VOD_PLAY_EVT_LOOP_ONCE_COMPLETE` event, which indicates that one loop of the playlist is finished.
+- Android: Fixed the issue where `NetworkInfo.getExtraInfo` is called twice when the SDK is started, improving compliance.
+
+#### Bug fixing
+
+- Android & iOS: Fixed the issue where videos encrypted using VOD’s private protocol fail to be played in certain scenarios.
+- Android & iOS: Fixed failure to play some GZIP-compressed videos.
+- Android & iOS: Fixed the issue where the duration indicated by the progress bar does not match the actual video length after playback ends.
+- iOS: Fixed the issue where, when a video is played by `appid` and `fileid` using the v2 protocol, an error occurs when the SDK gets the original video URL.
+
+## Version 10.7 Released on September 20, 2022
+
+
+### MLVB
+
+
+#### New features
+
+iOS & Android: The `startPlay` API of TXLivePlayer\V2TXLivePlayer was renamed `startLivePlay`, and license verification is required. For how to get a license, see “Video Playback License.”
+
+#### Improvements
+
+All platforms: Optimized the buffering policy of `AudioJitterBuffer`.
+
+#### Bug fixing
+
+- All platforms: Fixed the issue where playback of HEv2 audio using V2TXLivePlayer is abnormal in the LEB scenario.
+- All platforms: Fixed the issue where, when an IP address is used to publish RTMP streams with TXLivePusher\V2TXLivePusher, publishing fails.
+- Windows: Fixed compilation failure on C# because the `V2TXLivePlayerStatistics` constructor is not found.
+- iOS: Fixed the issue of low capturing volume on some iPad devices.
+- Android: Fixed the occasional issue where Bluetooth earphones are connected, but audio is played from the device’s speaker.
+
+### UGSV
+
+
+#### Improvements
+
+Android & iOS: Optimized the shooting module to solve the no audio issue, enhancing user experience.
+
+#### Bug fixing
+
+- Android: Fixed the issue where the SDK crashes when the user exits during video preprocessing.
+- Android: Fixed failure to apply stickers if a video is not previewed.
+- Android: Fixed failure to apply effects when a video is played backwards.
+- Android: Fixed the issue where the video processing callback configured for video editing fails to work.
+- iOS: Fixed the issue where audio and video are out of sync in saved videos.
+- iOS: Fixed failure to splice videos without audio.
+- Android & iOS: Fixed the issue of noise in case of repeated shooting.
+
+### TRTC
+
+
+#### New features
+
+- All platforms: You can now independently adjust the audio volume of each stream in On-Cloud MixTranscoding. For details, see `TRTCMixUser.soundLevel`.
+- All platforms: Added the `onRemoteAudioStatusUpdated` API, which is used to monitor the audio status of remote streams.
+
+#### Improvements
+
+- All platforms: Upgraded the encoding engine, improving the video quality of screen sharing streams.
+- All platforms: Improved rate control for encoding under poor network conditions.
+
+#### Bug fixing
+
+- iOS: Fixed the issue of low capturing volume on some iPad devices.
+- Android: Fixed the occasional issue where Bluetooth earphones are connected, but audio is played from the device’s speaker.
+- All platforms: Fixed the issue where the SDK occasionally crashes if a user enters and leaves the room repeatedly.
+
+### Player
+
+
+#### Improvements
+
+- Android & iOS: The `startPlay` API for VOD playback was renamed `startVodPlay`.
+- Android & iOS: The `startPlay` API for live playback was renamed `startLivePlay`.
+- iOS: Fixed the issue where, if the player is switched to the foreground after remaining in the background for a long time, playback fails.
+- Android: Fixed failure to play some videos in old Android versions.
+
+
+
 
 ## Version 10.6 Released on September 9, 2022
 
@@ -23,7 +163,7 @@ iOS & Android & macOS: TXLivePlayer and V2TXLivePlayer in the All-in-One SDK sup
 ### UGSV
 
 #### Bug fixing
-- Android: Fixed the issue where short videos are encoded at high bitrates when saved.
+- Android: Short videos are now encoded using the High Profile.
 - Android: A message is now shown if the format of a background music file is not supported.
 - iOS: Fixed the issue of noise when videos are played in slow motion.
 
