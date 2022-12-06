@@ -193,8 +193,8 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>Shenyu Science and Technology Park, Pingshan New District, Shenzhen</td>
 </tr>
 <tr>
-<td rowspan=16>North China</td>
-<td rowspan=13>Beijing</td>
+<td rowspan=15>North China</td>
+<td rowspan=12>Beijing</td>
 <td>ap-beijing-a-kc</td>
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
@@ -253,12 +253,6 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
 <td>TravelSky High-tech Industrial Park, Houshayu Town, Shunyi District, Beijing</td>
-</tr>
-<tr>
-<td>ap-beijing-m-hldy</td>
-<td>CTCC, CMCC, and CUCC</td>
-<td>Fiber optic port and electrical port</td>
-<td>Donghuayuan Town, Huailai County, Zhangjiakou City</td>
 </tr>
 <tr>
 <td>ap-financialcloud-a-yf</td>

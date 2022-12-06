@@ -3,7 +3,7 @@
 在腾讯云 IM SDK 中，会话管理类为 `V2TIMConversationManager(Android)` 和 `V2TIMManager(Conversation)(iOS & Mac)`。您可以使用会话管理类中的 API 实现会话列表展示/更新、会话未读数更新、置顶会话、会话草稿、会话免打扰等功能。
 
 ## 会话类介绍
-会话类为 `V2TIMConversation` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html))。`V2TIMConversation` 定义了以下内容：
+会话类为 `V2TIMConversation` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html) / [Windows](https://im.sdk.qcloud.com/doc/en/structV2TIMConversation.html))。`V2TIMConversation` 定义了以下内容：
 
 | 属性 |  含义 | 说明 |
 | --- |  --- | --- |
@@ -18,9 +18,9 @@
 | recvOpt | 消息接收选项 | 参考 `V2TIMReceiveMessageOpt` 定义。具体使用请参考 [消息免打扰](https://intl.cloud.tencent.com/document/product/1047/48032)。|
 | lastMessage | 会话最后一条消息 | 具体使用请参考 [会话列表](https://intl.cloud.tencent.com/document/product/1047/48326)。|
 | groupAtInfolist | 群会话 @ 信息列表 | 通常用于展示 “有人@我” 或 “@所有人” 这两种提醒状态。|
-| draftText | 草稿信息 | 设置草稿信息请调用 `setConversationDraft` 接口，具体实现请参考 [会话草稿](https://intl.cloud.tencent.com/document/product/1047/48311)。|
+| draftText | 草稿信息 | 设置草稿信息请调用 `setConversationDraft` 接口，具体实现请参考会话草稿。|
 | draftTimestamp | 草稿编辑时间 | 草稿设置的时候自动生成。|
-| isPinned | 会话是否置顶 | 具体使用请参考 [置顶会话](https://intl.cloud.tencent.com/document/product/1047/48317)。|
+| isPinned | 会话是否置顶 | 具体使用请参考 置顶会话。|
 | orderKey | 会话排序字段 | 具体使用请参考 [会话列表](https://intl.cloud.tencent.com/document/product/1047/48326)。|
 
 

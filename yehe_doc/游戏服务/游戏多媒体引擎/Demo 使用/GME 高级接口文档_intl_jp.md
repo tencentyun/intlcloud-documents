@@ -21,7 +21,7 @@
 
 #### Key 
 
-異なるキーは異なる機能を表します。パラメータKeyに入力できるフィールドは次のとおりです。
+異なるキーは異なる機能を表します。パラメータKeyに入力できるフィールドは次のとおりです：
 
 - **OptionMixWithOthers**
   リミックスタブ。オンにすると、バックグラウンドで再生されている音楽とフォアグラウンドで通話している音声を同時に再生できます。
@@ -29,16 +29,16 @@
   バックグラウンドサウンドを下げます。OptionMixWithOthersが有効な場合、この機能をオンにすると、スピーカーをオンにして音声を再生するときに、他のバックグラウンドサウンドが下げられます。
 - **ReleaseAudioFoucus**
   オーディオフォーカスをリリースします。
-- オンにすると、退室後にオーディオフォーカスがリリースされ、システムはバックグラウンドで他のオーディオ関連アプリケーションをリカバーします。たとえばQQ音楽。
+- オンにすると、退室後にオーディオフォーカスがリリースされ、システムはバックグラウンドで他のオーディオ関連アプリケーションをリカバーします。たとえばQQ音楽です。
 - オフにすると、退室後に他のオーディオ関連アプリケーションがリカバーされません。
 
 ### iPhoneのミュートキーがオンになっているかどうかの確認
 
-<dx-alert infotype="explain" title="説明">
+<dx-alert infotype="explain" title="说明">
 このインターフェースは、GME2.8.4以降のSDKで有効になります。
 </dx-alert>
 
-####  関数のプロトタイプ
+#### 関数のプロトタイプ
 
 ```
 CheckDeviceMuteState();
@@ -46,37 +46,17 @@ CheckDeviceMuteState();
 
 戻り値0は物理ミュートキーがオフであることを意味し、戻り値1は物理ミュートキーがオンであることを意味します。
 
-### マイクデバイスのステータスの確認
-
-<dx-alert infotype="explain" title="説明">
-このインターフェースは、GME2.8.4以降のSDKで有効になります。
-</dx-alert>
-
-####  関数のプロトタイプ
-
-```
-TestMic();
-```
-
-#### 戻り値の処理
-
-| 戻り値                               | 意味                | 処理                                                         |
-| ------------------------------------ | ------------------- | ------------------------------------------------------------ |
-| ITMG_TEST_MIC_STATUS_AVAILABLE = 0   | 通常利用可能            | 処理不要                                                     |
-| ITMG_TEST_MIC_STATUS_NO_GRANTED = 2  | 承認権限を未取得/拒否 | マイクをオンにする前に権限を取得してください                               |
-| ITMG_TEST_MIC_STATUS_INVALID_MIC = 3 | 利用可能なデバイスなし      | 通常、PCデバイスでは、利用可能なマイクデバイスがない場合にこのエラーが表示されます。ヘッドセットまたはマイクを挿入するように提示してください。 |
-| ITMG_TEST_MIC_STATUS_NOT_INIT = 5    | 未初期化          | Init後にEnableMicインターフェースを呼び出します                                |
 
 ### Android Bluetoothデバイスアダプテーションの設定
 
-<dx-alert infotype="explain" title="説明">
+<dx-alert infotype="explain" title="说明">
 このインターフェースは、GME2.8.4以降のSDKで有効になります。
 </dx-alert>
 
 このインターフェースを呼び出すことで、Bluetoothヘッドセットがマイクのオン/オフを切り替えるときに音漏れする問題や、Bluetoothヘッドセットを接続した後にAndroidデバイスが接続状態を切り替えることによって発生するスピーカーからの再生の問題を解決できます。
 
 ```
-SetAdvanceParams(「BluetoothUseMedia」, 「1」);
+SetAdvanceParams(“BluetoothUseMedia”, “1”);
 ```
 
 ### リミックスの最大チャネル数の設定
@@ -139,7 +119,7 @@ SetAdvanceParams("StringOpenID", "1");
 
 ### 印刷ログのサイズを変更する
 
-<dx-alert infotype="explain" title="説明">
+<dx-alert infotype="explain" title="说明">
 このインターフェースは、GME2.8.4以降のSDKで有効になります。
 </dx-alert>
 
@@ -160,7 +140,7 @@ SetAdvanceParams（const char* key, const char* object）
 入力されたobjectが値の範囲の上限を超えた場合は上限値に設定され、入力されたobjectが値の範囲の下限を下回った場合は下限値に設定されます。
 </dx-alert>
 
-####  サンプルコード
+#### サンプルコード
 
 ```
 SetAdvanceParams("MAX_LOG_FILE_SIZE_MB", "5");
@@ -175,7 +155,7 @@ SetAdvanceParams("MAX_LOG_FILE_COUNT", "1");
 
 >!このインターフェースは、ホワイトリストに登録されたユーザーのみが利用でき、SDK291以降でのみ使用できます。必要に応じて、[チケットを提出](https://console.cloud.tencent.com/workorder/category)して、サービスのお申し込みはスタッフにお問い合わせください。
 
-#### 関数のプロトタイプ
+####  関数のプロトタイプ
 
 ```
 virtual int TranslateText(const char* text, const char* sourceLanguage, const char* translateLanguage) = 0;
@@ -243,7 +223,7 @@ ITMGContext.GetInstance().GetPttCtrl().OnTranslateTextComplete-= OnTranslateText
 
 >!このインターフェースは、ホワイトリストに登録されたユーザーのみが利用でき、SDK291以降でのみ使用できます。必要に応じて、[チケットを提出](https://console.cloud.tencent.com/workorder/category)して、サービスのお申し込みはスタッフにお問い合わせください。
 
-####  関数のプロトタイプ
+#### 関数のプロトタイプ
 
 ```
 virtual int TextToSpeech(const char* text, const char* voiceName,const char* languageCode, float speakingRate) = 0;

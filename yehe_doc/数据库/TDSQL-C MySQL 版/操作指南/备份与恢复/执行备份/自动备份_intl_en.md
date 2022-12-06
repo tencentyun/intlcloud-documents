@@ -29,7 +29,6 @@ This document describes how to configure automatic backup in the console.
 <tr>
 <td>Binlog Backup Retention</td><td>Binlog backup files can be retained for 7–1,830 days, which cannot be shorter than the data backup retention period.</td></tr>
 </tbody></table>
->?Automatic backup files are retained for 7 days by default. The feature of modifying the backup retention period is currently in beta test. To try it out, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 5. The name of an automatic backup file is automatically generated. You can click the edit icon after the alias in the backup list to modify it.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6bde18ff67e4f42f8b89e21088ae118e.png)
 The settings window is as follows:

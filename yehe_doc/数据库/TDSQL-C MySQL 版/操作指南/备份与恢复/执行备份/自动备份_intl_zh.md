@@ -29,7 +29,6 @@ TDSQL-C MySQL 版支持自动备份和手动备份两种方式来备份数据，
 <tr>
 <td>binlog 备份保留</td><td>binlog 备份可以保留7天 - 1830天，且不得小于数据备份保留天数。</td></tr>
 </tbody></table>
->?自动备份设置中，备份保留时间默认为7天，修改备份保留时间功能为公测阶段，如需使用，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 开通。
 5. 自动备份的文件名是自动生成，您可在备份列表单击备注名后的编辑图标进行设置和修改。
 ![](https://qcloudimg.tencent-cloud.cn/raw/6bde18ff67e4f42f8b89e21088ae118e.png)
 设置窗口如下：
