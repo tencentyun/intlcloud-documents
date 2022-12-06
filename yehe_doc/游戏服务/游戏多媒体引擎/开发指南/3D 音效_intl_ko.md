@@ -18,7 +18,7 @@
 ### 구현 순서도
 
 3D 음향 효과 구현 순서도는 다음과 같습니다. 파란색 부분은 채팅방 내 일반 음성 채팅과 비교했을 때 추가되는 연결 단계입니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/81f702b4e423cb048603bb5a6105f41e.png" width="500px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/af3b21c8c6ff552c887ee369f9c217c6.jpg" width="500px">
 
 ### 3D 음향 효과 엔진 초기화
 
