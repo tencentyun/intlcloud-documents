@@ -18,7 +18,7 @@
 ### 実装フローチャート
 
 次の図は3D効果音を実装するフローチャートです。青い部分は通常の入室リアルタイム音声と比較した導入ステップです。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/81f702b4e423cb048603bb5a6105f41e.png" width="500px">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/af3b21c8c6ff552c887ee369f9c217c6.jpg" width="500px">
 
 ### 3D効果音エンジンの初期化
 
