@@ -221,8 +221,7 @@ COS adopts the pay-as-you-go (postpaid) billing mode.
   - Daily settled resources: Fees incurred from 00:00 to 23:59 on January 31 will be deducted on February 1. The record will be posted to the bill for February by deduction cycle and to the bill for January by billing cycle.
   - Monthly settled resources: Fees incurred from 00:00 on January 1 to 23:59 on January 31 will be deducted on February 1. The record will be posted to the bill for February by deduction cycle and to the bill for January by billing cycle.
 
-
-关于账单统计周期的更多说明，请参见 [账单统计周期](https://www.tencentcloud.com/document/product/555/7430)。
+For more information about the billing cycle, please refer to [Billing cycle](https://www.tencentcloud.com/document/product/555/7430)。
 
 [](id:costMore)
 ### Why did the amount of the bill (by deduction cycle) of the first month “increase” after the upgrade from monthly to daily settlement?
