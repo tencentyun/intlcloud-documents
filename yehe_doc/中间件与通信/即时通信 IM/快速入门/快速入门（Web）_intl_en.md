@@ -1,19 +1,11 @@
-- [Web](https://intl.cloud.tencent.com/document/product/1047/45911)
->Chat UIKit is a UI component library based on Tencent Cloud IM SDK. It provides universal UI components to offer features such as conversation, chat, relationship chain, group, and audio/video call features.
+# [chat-uikit-react](https://www.tencentcloud.com/document/product/1047/34279/)
+>!chat-uikit-react is a UI component library based on Tencent Cloud IM SDK. It provides universal UI components to offer features such as conversation, chat, relationship chain, group, and audio/video call features.
 With these UI components, you can quickly build your own business logic.
-When implementing UI features, components in Chat UIKit will also call the corresponding APIs of the IM SDK to implement IM-related logic and data processing, allowing developers to focus on their own business needs or custom extensions.
+When implementing UI features, components in chat-uikit-react will also call the corresponding APIs of the IM SDK to implement IM-related logic and data processing, allowing developers to focus on their own business needs or custom extensions.
 
-<img align="right" src="https://qcloudimg.tencent-cloud.cn/raw/4562be8179a1534efb17d33428239c82.png?auto=format,enhance" width="50%" />
 
-### Quick Links
-- [Demo App](https://web.sdk.qcloud.com/im/demo/intl/index.html)
-- [Client API](https://www.tencentcloud.com/document/product/1047/33999)
-- [Free Demos](https://www.tencentcloud.com/document/product/1047/34279)
-- [FAQ](https://www.tencentcloud.com/document/product/1047/34455)
-- [GitHub Source](https://github.com/TencentCloud/chat-uikit-react)
-- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
 ## Demos
-We have build demo programs to show chat features. You can preview features and try out on the [demos](https://web.sdk.qcloud.com/im/demo/intl/index.html). You can also find [demo source code](https://github.com/TencentCloud/chat-uikit-react) from Github.
+We have built demos to illustrate the chatting feature. You can preview these [demos](https://web.sdk.qcloud.com/im/demo/intl/index.html) on our website and obtain their [open source code](https://github.com/TencentCloud/chat-uikit-react) in GitHub.
 
 ![img.png](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/home.png)
 
@@ -28,54 +20,13 @@ $ cd chat-uikit-react
 # Install dependencies of the demo
 $ npm install && cd examples/sample-chat && npm install
 ```
-### Step 2. Configure the demo 
-1. Open `examples/sample-chat` project and find `GenerateTestUserSig.js` file in `./examples/sample-chat/src/debug/GenerateTestUserSig.js` path.
-2. Set the `SDKAPPID`and `SECRETKEY` in `GenerateTestUserSig.js` file. You can go to the [IM console](https://console.tencentcloud.com/im) and enter the configuration page by clicking the target app card to obtain the `SDKAPPID`and `SECRETKEY`. 
+### Step 2. Configure demo
+1. Open the `examples/sample-chat` project and locate the `GenerateTestUserSig.js` file in `./examples/sample-chat/src/debug/GenerateTestUserSig.js`.
+2. In the `GenerateTestUserSig.js` file, set `SDKAPPID` and `SECRETKEY`, whose values can be obtained in the [IM console](https://console.tencentcloud.com/im). Click the card of the target app to go to its configuration page.
    ![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
-3. Copy and save the key obtained by clicking **Display key** in the Basic Information section to `GenerateTestUserSig` file.
+3. In the **Basic Information** area, click **Display key**, and copy and save the key information to the `GenerateTestUserSig` file.
 >!
->- In this document, the method to obtain `UserSig` is to configure the SECRETKEY in the client code. In this method, the SECRETKEY is vulnerable to decompilation and reverse engineering. Once your secret key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and debugging**.
->- The best practice is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to your server for a dynamic `UserSig`. For more information, see [How do I calculate `UserSig` during production?](https://www.tencentcloud.com/document/product/1047/34385).
-
-### Step 3. Launch the project
-```
-# Launch the project- [Web](https://intl.cloud.tencent.com/document/product/1047/45911)
->!Chat UIKit is a UI component library based on Tencent Cloud IM SDK. It provides universal UI components to offer features such as conversation, chat, relationship chain, group, and audio/video call features.
-With these UI components, you can quickly build your own business logic.
-When implementing UI features, components in Chat UIKit will also call the corresponding APIs of the IM SDK to implement IM-related logic and data processing, allowing developers to focus on their own business needs or custom extensions.
-
-<img align="right" src="https://qcloudimg.tencent-cloud.cn/raw/4562be8179a1534efb17d33428239c82.png?auto=format,enhance" width="50%" />
-
-### Quick Links
-- [Demo App](https://web.sdk.qcloud.com/im/demo/intl/index.html)
-- [Client API](https://www.tencentcloud.com/document/product/1047/33999)
-- [Free Demos](https://www.tencentcloud.com/document/product/1047/34279)
-- [FAQ](https://www.tencentcloud.com/document/product/1047/34455)
-- [GitHub Source](https://github.com/TencentCloud/chat-uikit-react)
-- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
-## Demos
-We have build demo programs to show chat features. You can preview features and try out on the [demos](https://web.sdk.qcloud.com/im/demo/intl/index.html). You can also find [demo source code](https://github.com/TencentCloud/chat-uikit-react) from Github.
-
-![img.png](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/home.png)
-
-## Running Demo
-
-### Step 1. Download the source code
-```
-# Run the code in CLI
-$ git clone https://github.com/TencentCloud/chat-uikit-react
-# Go to the project  
-$ cd chat-uikit-react
-# Install dependencies of the demo
-$ npm install && cd examples/sample-chat && npm install
-```
-### Step 2. Configure the demo 
-1. Open `examples/sample-chat` project and find `GenerateTestUserSig.js` file in `./examples/sample-chat/src/debug/GenerateTestUserSig.js` path.
-2. Set the `SDKAPPID`and `SECRETKEY` in `GenerateTestUserSig.js` file. You can go to the [IM console](https://console.tencentcloud.com/im) and enter the configuration page by clicking the target app card to obtain the `SDKAPPID`and `SECRETKEY`. 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
-3. Copy and save the key obtained by clicking **Display key** in the Basic Information section to `GenerateTestUserSig` file.
->!
->- In this document, the method to obtain `UserSig` is to configure the SECRETKEY in the client code. In this method, the SECRETKEY is vulnerable to decompilation and reverse engineering. Once your secret key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and debugging**.
+>- In this document, the method to obtain `UserSig` is to configure the secret key in the client code. In this method, the secret key is vulnerable to decompilation and reverse engineering. Once your secret key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and debugging.**
 >- The best practice is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to your server for a dynamic `UserSig`. For more information, see [How do I calculate `UserSig` during production?](https://www.tencentcloud.com/document/product/1047/34385).
 
 ### Step 3. Launch the project
@@ -86,109 +37,17 @@ $ npm run start
 ```
 
 ### Step 4. Send your first message
-1. After the project is launched, click the “+” icon to create a conversation.
-2. Enter a different userID in the search box.
-3. Click the profile photo of the user to start a chat.
-4. Enter the messages and press Enter to send.
-   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat.gif)
+1. After the product is launched, click the **+** icon to create a conversation.
+2. Search for another user's userID in the input box.
+3. Click the user's profile photo to initiate a conversation.
+4. Enter a message in the input box and press **Enter** to send it.
+   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat-English.gif)
 
-## Integrating chat-uikit-react
 
-### Step 1: Installation
-```
-$ npm install @tencentcloud/chat-uikit-react
-```
-### Step 2: Usage
-```tsx
-import React, { useEffect, useState } from 'react';
-import { TUIKit } from '@tencentcloud/chat-uikit-react';
-import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
-import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
-import TIMUploadPlugin from 'tim-upload-plugin';
-
-// Generate a tim instance object and complete login
-const init = async () => {
-   return new Promise((resolve, reject) => {
-      const tim = TIM.create({ SDKAppID: 000 });
-      tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
-      const onReady = () => { resolve(tim); };
-      tim.on(TIM.EVENT.SDK_READY, onReady);
-      tim.login({
-         userID: 'xxx',
-         userSig: 'xxx',
-      });
-   });
-}
-
-export function SampleChat() {
-   const [tim, setTim] = useState<ChatSDK>();
-   useEffect(() => {
-      (async () => {
-         const tim = await init()
-         setTim(tim)
-      })()
-   }, [])
-
-   return (
-           <div style={{height: '100vh',width: '100vw'}}>
-              <TUIKit tim={tim}></TUIKit>
-           </div>
-   );
-}
-```
-
-$ cd examples/sample-chat
-$ npm run start
-```
-
-### Step 4. Send your first message
-1. After the project is launched, click the “+” icon to create a conversation.
-2. Enter a different userID in the search box.
-3. Click the profile photo of the user to start a chat.
-4. Enter the messages and press Enter to send.
-   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat.gif)
-
-## Integrating chat-uikit-react
-
-### Step 1: Installation
-```
-$ npm install @tencentcloud/chat-uikit-react
-```
-### Step 2: Usage
-```tsx
-import React, { useEffect, useState } from 'react';
-import { TUIKit } from '@tencentcloud/chat-uikit-react';
-import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
-import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
-import TIMUploadPlugin from 'tim-upload-plugin';
-
-// Generate a tim instance object and complete login
-const init = async () => {
-   return new Promise((resolve, reject) => {
-      const tim = TIM.create({ SDKAppID: 000 });
-      tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
-      const onReady = () => { resolve(tim); };
-      tim.on(TIM.EVENT.SDK_READY, onReady);
-      tim.login({
-         userID: 'xxx',
-         userSig: 'xxx',
-      });
-   });
-}
-
-export function SampleChat() {
-   const [tim, setTim] = useState<ChatSDK>();
-   useEffect(() => {
-      (async () => {
-         const tim = await init()
-         setTim(tim)
-      })()
-   }, [])
-
-   return (
-           <div style={{height: '100vh',width: '100vw'}}>
-              <TUIKit tim={tim}></TUIKit>
-           </div>
-   );
-}
-```
+### Quick links
+- [Web demo](https://web.sdk.qcloud.com/im/demo/intl/index.html)
+- [Client APIs](https://www.tencentcloud.com/document/product/1047/33999)
+- [Free demo download](https://www.tencentcloud.com/document/product/1047/34279)
+- [FAQs](https://www.tencentcloud.com/document/product/1047/34455)
+- [Source code in GitHub](https://github.com/TencentCloud/chat-uikit-react)
+- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
