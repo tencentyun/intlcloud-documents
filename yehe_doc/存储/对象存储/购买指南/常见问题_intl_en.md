@@ -26,7 +26,7 @@
 [What are billing by deduction cycle and billing by billing cycle?](https://intl.cloud.tencent.com/document/product/436/10373)
 [What is the relationship between the billing mode and billing statistical period?](https://intl.cloud.tencent.com/document/product/436/10373)
 [Why did the amount of the bill (by deduction cycle) of the first month “increase” after the upgrade from monthly to daily settlement?](https://intl.cloud.tencent.com/document/product/436/10373)
-[Why was the storage usage in the bill details (L3) (by deduction cycle) different from that in the usage details after the upgrade from monthly to daily settlement?](https://intl.cloud.tencent.com/document/product/436/10373)
+
 
 
 ### Overdue Payment and Service Suspension
