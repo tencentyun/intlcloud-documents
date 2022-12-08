@@ -706,4 +706,5 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 52.[音频内容安全](https://www.tencentcloud.com/document/product/1139/51140)。
 53.[图片内容安全](https://www.tencentcloud.com/document/product/1122/51137)。
 54.[文本内容安全](https://www.tencentcloud.com/document/product/1121/51133)。
+55.[数据湖计算](https://www.tencentcloud.com/document/product/1155/51968)。
 
