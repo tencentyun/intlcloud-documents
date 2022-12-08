@@ -4,7 +4,7 @@
 
 - **公共镜像**：公共镜像是由腾讯云官方提供的镜像，包含基础操作系统和腾讯云提供的初始化组件，所有用户均可使用。
 - **自定义镜像**：由用户通过镜像制作功能制作，或通过镜像导入功能导入的镜像。仅创建者与共享者可以使用。自定义镜像属于非标环境，腾讯云不提供官方支持以及持续维护。
-- **市场镜像**：针对特定使用场景 提供的镜像，例如 [qGPU 共享场景](https://intl.cloud.tencent.com/document/product/457/42973)。所有用户均可使用，除操作系统外还集成了某些特定应用程序。
+
 
 
 ## 注意事项
@@ -34,13 +34,29 @@ TKE 为您提供以下**公共镜像**，请根据实际情况进行选择。
   </tr>
 </thead>
 <tbody>
+    <tr>
+    <td><a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9axl1k53">img-9axl1k53</a></td>
+    <td>tlinux2.4(tkernel4)x86_64</td>
+    <td>TencentOS Server 2.4(TK4)</td>
+    <td>Tencent OS Server</td>
+    <td>全量发布</td>
+    <td><li>内核版本：5.4.119</li><li>不支持自动安装 GPU 驱动，您需要自行安装 GPU 驱动</li></td>
+  </tr>
+  <tr>
+    <td><a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-3la7wgnt">img-3la7wgnt</a></td>
+    <td>centos7.8.0_x64</td>
+    <td>CentOS 7.8</td>
+    <td>CentOS</td>
+    <td>全量发布</td>
+    <td>Centos 7.8 公版内核</td>
+  </tr>
   <tr>
     <td><a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&id=img-eb30mz89">img-eb30mz89</a></td>
     <td>tlinux3.1x86_64</td>
-    <td>TencentOS Server 3.1 (TK4)</td>
+    <td>TencentOS Server 3.1(TK4)</td>
     <td>Tencent OS Server</td>
     <td>全量发布</td>
-    <td>推荐使用 Tencent OS Server 最新发行版<br>内核版本：5.4.119<br>不支持自动安装 GPU 驱动，您需要自行安装 GPU 驱动</td>
+    <td><li>推荐使用 Tencent OS Server 最新发行版</li><li>内核版本：5.4.119</li><li>不支持自动安装 GPU 驱动，您需要自行安装 GPU 驱动</li></td>
   </tr>
   <tr>
     <td><a href="https://console.cloud.tencent.com/cvm/image/detail?rid=4&id=img-hdt9xxkt">img-hdt9xxkt</a></td>
@@ -55,7 +71,7 @@ TKE 为您提供以下**公共镜像**，请根据实际情况进行选择。
     <td>ubuntu20.04x86_64</td>
     <td>Ubuntu Server 20.04.1 LTS 64bit</td>
     <td>Ubuntu</td>
-    <td>内测中，请 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单</a> 进行申请</td>
+    <td>内测中，请 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a> 进行申请</td>
     <td>Ubuntu 20.04.1 公版内核</td>
   </tr>
   <tr>
@@ -71,7 +87,7 @@ TKE 为您提供以下**公共镜像**，请根据实际情况进行选择。
     <td>centos8.0x86_64</td>
     <td>CentOS 8.0</td>
     <td>CentOS</td>
-    <td>内测中，请 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单</a> 进行申请</td>
+    <td>内测中，请 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a> 进行申请</td>
     <td>Centos 8.0 公版内核</td>
   </tr>
   <tr>

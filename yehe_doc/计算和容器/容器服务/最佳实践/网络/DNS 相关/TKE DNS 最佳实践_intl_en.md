@@ -4,7 +4,7 @@ As DNS is the first step in service access in a Kubernetes cluster, its stabilit
 
 ## Selecting the Most Appropriate CoreDNS Version
 
-Compatible CoreDNS versions of different TKE versions are as listed below:
+The following table lists the default CoreDNS versions deployed in TKE clusters on different versions.
 
 | TKE Version | CoreDNS Version |
 | :------------------: | :------------------: |
@@ -14,8 +14,7 @@ Compatible CoreDNS versions of different TKE versions are as listed below:
 | v1.16 |  [v1.6.2](https://github.com/coredns/coredns/releases/tag/v1.6.2) |
 | v1.14 |  [v1.6.2](https://github.com/coredns/coredns/releases/tag/v1.6.2) |
 
-Currently, TKE clusters on all versions are installed with [v1.6.2](https://github.com/coredns/coredns/releases/tag/v1.6.2), but CoreDNS versions will be installed based on the above mapping relationships from now on. If the current CoreDNS version doesn't meet your requirements, you can upgrade it by referring to the following guides:
-
+Due to historical reasons, CoreDNS 1.6.2 may still be deployed in clusters on v1.18 or later. If the current CoreDNS version doesn't meet your requirements, you can manually upgrade it as follows:
 - [Upgrading to v1.7.0](#1.7.0)
 - [Upgrading to v1.8.4](#1.8.4)
 
@@ -24,7 +23,7 @@ Currently, TKE clusters on all versions are installed with [v1.6.2](https://gith
 2. If your cluster has more than 80 nodes, we recommend you install NodeLocal DNSCache as instructed in [Using NodeLocal DNS Cache in a TKE Cluster](https://intl.cloud.tencent.com/document/product/457/34061).
 3. Generally, you can determine the number of CoreDNS replicas based on the QPS of business access to DNS, number of nodes, or total number of CPU cores. After you install NodeLocal DNSCache, we recommend you use up to 10 CoreDNS replicas. You can configure the number of replicas as follows:
    Number of replicas = min ( max ( ceil (QPS/10000), ceil (number of cluster nodes/8) ), 10 )
-	 Examples:
+	 Sample:
 	- If the cluster has ten nodes and the QPS of DNS service requests is 22,000, configure the number of replicas to 3.
 	- If the cluster has 30 nodes and the QPS of DNS service requests is 15,000, configure the number of replicas to 4.
 	- If the cluster has 100 nodes and the QPS of DNS service requests is 50,000, configure the number of replicas to 10 (NodeLocal DNSCache has been deployed).
@@ -84,7 +83,7 @@ ipvsadm -L --timeout
 Timeout (tcp tcpfin udp): 900 120 10
 ```
 
->! After completing the configuration, you need to wait for five minutes before proceeding to the subsequent steps. If your business uses the UDP service, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
+>! After completing the configuration, you need to wait for five minutes before proceeding to the subsequent steps. If your business uses the UDP service, [submit a ticket](https://console.tencentcloud.com/workorder/category) for assistance.
 
 
 ### Configuring graceful shutdown for CoreDNS
@@ -383,6 +382,5 @@ Single-replica CoreDNS with a running node specification of two vCPUs and 7.5 GB
 |:-------------:|:--------------:|:----------------------:|:----------------------:|
 | external    |  6733 | 12.02 |  +5                  |
 | internal    | 33669            | 2.608              | +5                  |
-
 :::
 </dx-tabs>
