@@ -552,6 +552,104 @@ Informasi pribadi Anda, jika perlu diungkapkan kepada lembaga penegak hukum, oto
 
 Anda berhak untuk mengakses, mengoreksi, dan menghapus informasi pribadi yang kami miliki tentang Anda. Anda juga berhak menarik persetujuan Anda untuk mengumpulkan, menyimpan, memproses, menggunakan, dan mengungkapkan informasi pribadi Anda yang diberikan sebelumnya dan meminta kami untuk berhenti menyediakan informasi pribadi Anda kepada pihak ketiga.
 
+### Adendum RRT
+
+Ketentuan Adendum ini berlaku untuk pemrosesan informasi pribadi Anda jika Anda memilih Tiongkok Daratan (tidak termasuk Hong Kong SAR, Makau SAR, dan Taiwan, sesuai dengan di bawah) sebagai Wilayah Layanan saat menggunakan Layanan. Silakan merujuk pada Kebijakan Privasi Tencent Cloud International untuk detail lebih lanjut tentang ketentuan umum penggunaan Layanan di luar wilayah Tiongkok Daratan. Tencent Cloud Computing (Beijing) Co., Ltd. (“<b>Tencent Cloud (RRT)</b>”, “**kami**”, **“kita”**, dan **“milik kami”** untuk tujuan Adendum ini) menyediakan Layanan di wilayah Tiongkok Daratan. Kami akan memproses informasi pribadi Anda sesuai dengan hukum dan peraturan Tiongkok Daratan dan persyaratan yang relevan dari otoritas pemerintah.
+
+Dalam Adendum ini, “**Layanan**” mengacu pada layanan Tencent Cloud yang ditawarkan oleh Tencent Cloud (RRT) saat Tiongkok Daratan dipilih sebagai Wilayah Layanan. 
+
+Dengan menggunakan Layanan, Anda (a) harus memastikan bahwa setiap informasi pribadi yang dikumpulkan dan digunakan oleh Anda dilakukan sesuai dengan hukum dan bahwa Anda tidak dan tidak menyalahi hak hukum orang atau entitas mana pun dengan cara apa pun; (b) menjamin bahwa Anda memiliki hak untuk menggunakan Layanan untuk menyimpan, mengirimkan, menganalisis, mendistribusikan, atau memproses informasi pribadi; (c) memahami dan menyetujui bahwa RRT mungkin memiliki peraturan yang relevan tentang penyimpanan dan ekspor data dan sebelum Anda menggunakan Layanan untuk menyimpan atau mengirimkan informasi pribadi, Anda harus mematuhi hukum dan peraturan RRT yang berlaku untuk melakukan penilaian dan persetujuan penuh dan diperlukan untuk memastikan kepatuhan terhadap peraturan yang relevan; dan (d) menyetujui pemrosesan informasi pribadi Anda oleh Tencent Cloud (RRT) sesuai dengan ketentuan Adendum ini.
+
+*Informasi Pribadi Anda*
+
+**Kami dapat mengumpulkan informasi pribadi Anda dengan cara berikut:**
+
+(1) ketika Anda secara sukarela menyediakan, atau menyediakan atas nama orang yang Anda memiliki wewenang atasnya, informasi kepada kami saat menggunakan Layanan, seperti dengan mengisi formulir atau mengunggah informasi ke Layanan;
+
+(2) melalui karyawan atau mitra kami (seperti penyedia layanan Anda) ketika mereka mengirimkan informasi yang Anda berikan dan kirimkan kepada kami atas nama Anda, misalnya, ketika Anda melibatkan penyedia layanan tertentu untuk mengisi dan mengunggah informasi Anda di sistem Tencent Cloud (RRT); dan
+
+(3) secara otomatis melalui interaksi Anda dengan kami dan penggunaan Layanan oleh Anda, misalnya, kami mencatat waktu login ketika Anda masuk ke akun Tencent Cloud Anda dan catatan operasional dan penggunaan Anda saat Anda menggunakan Layanan tertentu.
+
+**Jenis informasi pribadi yang kami kumpulkan:**
+
+(1) Informasi pribadi yang Anda sediakan untuk tujuan autentikasi nama asli. Tergantung pada jenis autentikasi nama asli yang Anda pilih, informasi pribadi yang dikumpulkan dapat mencakup nama Anda, kartu ID, izin usaha, nomor rekening bank perusahaan, alamat surat, informasi industri, nomor ponsel, informasi pengenalan wajah, dan informasi kontak. Autentikasi nama asli diperlukan untuk kami melakukan penilaian terhadap kepemilikan akun Anda. Demi keamanan akun Anda, pastikan Anda memilih metode autentikasi dengan berhati-hati dan mengirimkan informasi yang sah, nyata, dan valid. Layanan di Tiongkok Daratan hanya tersedia untuk pengguna yang diautentikasi dengan nama asli. Jika Anda tidak diautentikasi, Anda tidak akan dapat menggunakan Layanan dengan memilih Tiongkok Daratan sebagai Wilayah Layanan. 
+
+(2) Informasi yang terkait dengan login, penggunaan, dan interaksi Anda dengan Layanan, termasuk: 
+
+- Catatan operasi. Kami mengumpulkan catatan operasi penggunaan Layanan oleh Anda dan informasi terkait, seperti ID pengguna, waktu operasi, informasi objek (ID sumber daya yang dihasilkan dari produk yang Anda gunakan, wilayah, produk/layanan Tencent Cloud (RRT) yang relevan), alamat IP, jenis browser, bahasa yang digunakan, model perangkat, versi sistem operasi, serta penelusuran web dan catatan pengambilan hanya sehubungan dengan penggunaan Layanan oleh Anda, dll.
+
+- Informasi kontrak. Jika Anda perlu mengajukan permohonan pengiriman produk secara offline atau jika Anda perlu melakukan pengujian produk, kami perlu mengumpulkan informasi seperti narahubung, informasi kontak, alamat, informasi tagihan, informasi pesanan, dll., untuk memenuhi kontrak.
+
+- Informasi lain, seperti catatan perintah kerja yang berkaitan dengan Layanan, catatan konsultasi, dan komunikasi dengan tim dukungan pelanggan kami.
+
+Informasi di atas dikumpulkan agar kami dapat menyediakan Layanan dan untuk memastikan kualitasnya.
+
+**Kami memproses informasi pribadi untuk tujuan berikut, serta sesuai dengan hukum dan peraturan yang relevan:**
+
+Untuk menyediakan Layanan pada Anda, kami menggunakan informasi yang dikumpulkan untuk tujuan berikut, tunduk pada undang-undang dan peraturan yang relevan:
+
+(1) menyediakan Layanan pada Anda;
+
+(2) memenuhi kebutuhan Anda yang dipersonalisasi sesuai instruksi Anda saat menggunakan Layanan. Misalnya, pengaturan bahasa, pengaturan lokasi, layanan dan instruksi bantuan yang dipersonalisasi, atau menanggapi Anda dan pengguna lain;
+
+(3) optimalisasi dan pengembangan layanan. Misalnya, kami dapat mengoptimalkan Layanan kami sebagai respons untuk meningkatkan kualitas Layanan yang disediakan kepada Anda;
+
+(4) melindungi keamanan dan integritas Layanan, serta kepentingan Tencent Cloud (RRT), pengguna Tencent Cloud (RRT) lainnya, dan mitra Tencent Cloud (RRT). Misalnya, kami akan menggunakan informasi Anda untuk verifikasi identitas, pencegahan insiden keamanan, pemantauan dan pendeteksian penipuan, dan penilaian status keamanan akun Anda. Misalnya, ketika Anda menggunakan fitur keamanan atau layanan serupa lainnya, kami akan mendeteksi program atau virus berbahaya, atau mengidentifikasi informasi penipuan untuk Anda. Misalnya, ketika berhadapan dengan perselisihan dan keluhan terkait, kami menyediakan informasi yang relevan kepada pihak-pihak terkait untuk memfasilitasi penanganan dan penyelesaian perselisihan, serta keluhan dengan lebih baik, dll.;
+
+(5) mendorong berita bisnis yang relevan (seperti berita keuangan, berita produk, berita Tencent Cloud (RRT), dll.) dan iklan komersial untuk Anda. Misalnya, Tencent Cloud International dapat mendorong iklan komersial kepada Anda melalui SMS, telepon, email, dan cara lain apa pun ke nomor ponsel, alamat email, dan informasi kontak lain milik Anda untuk memublikasikan dan mempromosikan layanan Tencent Cloud (RRT) atau layanan lain di platform Tencent Cloud (RRT), hanya dengan persetujuan Anda;
+
+(6) memberi Anda Layanan yang lebih relevan untuk Anda. Misalnya, berdasarkan statistik dan analisis informasi Anda yang kami lakukan atau statistik dan analisis data pengguna Tencent Cloud lainnya, kami akan menyediakan Anda fungsi atau layanan serupa yang mungkin menarik bagi Anda, dll.;
+
+(7) mengundang Anda untuk berpartisipasi dalam survei tentang produk dan layanan kami, hanya dengan persetujuan Anda;
+
+(8) menganalisis data penggunaan Layanan oleh pengguna Tencent Cloud (RRT) untuk membentuk laporan pengguna statistik, analisis bisnis, dan informasi lainnya (secara kolektif disebut "Statistik"), serta membagikan, menerbitkan, dan menampilkannya di dalam atau di luar Tencent Cloud (RRT). Kami akan memastikan bahwa Statistik dikumpulkan, dianonimkan, dan tidak akan melibatkan informasi yang dapat mengidentifikasi pengguna tertentu.
+
+Kecuali sebagaimana ditentukan di atas sebaliknya, kami memproses informasi pribadi Anda dengan mengandalkan kebutuhan kontrak sebagai dasar hukum.
+
+*Transfer, Lokasi, dan Retensi Informasi Pribadi*
+
+Kami tidak akan membagikan informasi pribadi Anda pada pihak ketiga yang tidak terkait tanpa persetujuan Anda, kecuali dalam keadaan yang ditentukan di bagian “Cara Kami Membagikan dan Menyimpan Informasi Pribadi Anda” di dalam Kebijakan Privasi ini. 
+
+Kami tidak akan mengungkapkan informasi pribadi Anda secara publik, dan jika kami harus membuat pengungkapan publik, kami akan menginformasikan pada Anda tentang tujuan yang dimaksud, jenis informasi yang diungkapkan dan informasi sensitif yang mungkin diungkapkan, serta mendapatkan pernyataan persetujuan Anda. 
+
+Selain itu, sesuai dengan undang-undang dan peraturan serta standar nasional yang relevan di Tiongkok Daratan, kami dapat membagikan, mentransfer, dan mengungkapkan informasi pribadi secara publik tanpa persetujuan resmi dari Anda dalam kasus berikut: 
+
+- hal itu secara langsung berkaitan dengan keamanan nasional, keamanan pertahanan nasional; 
+
+- hal itu secara langsung berkaitan dengan keselamatan publik, kesehatan masyarakat, dan kepentingan publik yang signifikan; 
+
+- hal itu secara langsung berkaitan dengan penyelidikan kejahatan, investigasi, persidangan dan penegakan putusan, dll.; 
+
+- untuk tujuan melindungi kehidupan, properti, serta hak dan kepentingan sah signifikan lainnya dari subjek informasi pribadi atau individu lain, tetapi kesulitan untuk mendapatkan persetujuan dari individu; 
+
+- di mana subjek informasi pribadi mengungkapkan informasi pribadi kepada publik sendiri; dan
+
+- di mana informasi pribadi dikumpulkan dari informasi yang tersedia untuk umum secara sah, seperti laporan berita yang sah, pengungkapan informasi pemerintah, dan sumber lainnya.
+
+Untuk meningkatkan pengalaman pengguna Anda, seperti untuk mengoptimalkan efek iklan, kami perlu membagikan informasi yang telah dianonimkan atau telah dihilangkan identifikasinya dengan mitra pihak ketiga, dll., dan kami mengharuskan mitra tersebut untuk secara ketat mematuhi langkah-langkah dan persyaratan kami mengenai perlindungan privasi data, termasuk, tetapi tidak terbatas pada pemrosesan sesuai dengan perjanjian perlindungan data, usaha dan kebijakan pemrosesan data yang relevan, untuk menghindari identifikasi individu dan untuk menjaga privasi. 
+
+Server kami yang digunakan untuk menyimpan informasi pribadi Anda sehubungan dengan Layanan yang terletak di Tiongkok Daratan.
+
+*Retensi Informasi Pribadi*
+
+Kami secara umum menyimpan informasi Anda hanya selama durasi Layanan yang diberikan kepada Anda, dan periode penyimpanan tidak melebihi periode yang diperlukan untuk memenuhi tujuan penggunaan yang relevan. Namun, kami mungkin perlu menyimpan informasi Anda atau sebagian darinya untuk jangka waktu yang lebih lama dalam keadaan berikut, dan hanya untuk tujuan sebagai berikut:
+
+- untuk mematuhi hukum dan peraturan yang berlaku, serta ketentuan terkait lain; 
+
+- untuk mematuhi keputusan pengadilan, putusan atau persyaratan proses hukum lain; 
+
+- untuk mematuhi persyaratan dari otoritas administratif, yudisial, atau otoritas kompeten lain yang relevan; dan 
+
+- sebagaimana diperlukan secara wajar untuk menegakkan perjanjian layanan yang relevan atau pernyataan ini, untuk menangani keluhan/perselisihan, atau untuk melindungi keselamatan pribadi dan properti atau kepentingan sah orang lain.
+
+*Hak Subjek Data*
+
+Anda dapat, secara mandiri melalui menu kontrol atau menghubungi kami di informasi kontak yang diungkapkan dalam Adendum ini untuk, mengakses, mengubah, dan menghapus informasi pribadi Anda. Namun, tunduk pada logika teknis, persyaratan hukum dan peraturan, keamanan informasi dan alasan sah lainnya, beberapa informasi Anda mungkin tidak diakses, dimodifikasi, dan dihapus. Kami akan mengumpulkan, menggunakan, dan menyimpan informasi Anda sesuai dengan persyaratan hukum dan peraturan. Jika kami mengumpulkan, menggunakan, atau menyimpan informasi Anda yang melanggar hukum dan peraturan, kami akan memperbaiki atau menghapusnya. Jika informasi yang kami kumpulkan dan simpan tentang Anda tidak benar dan Anda tidak dapat memperbaikinya sendiri, Anda dapat meminta kami untuk memperbaikinya.
+
+*Hubungi Kami*
+
+Jika Anda memiliki pertanyaan tentang Adendum ini atau apa pun yang berkaitan dengan pemrosesan informasi pribadi, Anda dapat menghubungi kami di [dataprivacy@tencent.com](mailto:dataprivacy@tencent.com) atau alamat di Departemen Perlindungan Privasi Data, Tencent Building Binhai, 33 Haitian 2nd Road, Distrik Nanshan, Shenzhen, Provinsi Guangdong 518054, Tiongkok. Kami akan meninjau masalah yang ada sesegera mungkin dan memberikan tanggapan dalam waktu lima belas hari sejak diterimanya pertanyaan Anda.
+
 <span id="8"></span>
 ### MODUL
 Pembaruan terakhir: [2020-08-17]
