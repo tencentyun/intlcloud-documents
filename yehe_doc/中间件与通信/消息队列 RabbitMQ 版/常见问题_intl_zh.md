@@ -14,4 +14,4 @@ TDMQ RabbitMQ 版按照售卖形式分为专享集群和虚拟集群：
 - 专享集群目前已经商业化并正式对外开放。
 - 虚拟集群当前处于公测阶段，价格免费。虚拟集群将于2023年1月1日停止提供服务，您可以迁移至专享集群。如果有任何问题，可 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询。
 
-详情参见 [购买指南](https://intl.cloud.tencent.com/document/product/1112/43067)。
+详情参见 [购买指南](https://www.tencentcloud.com/document/product/1112/51072)。
