@@ -1,6 +1,6 @@
 ## Overview 
 
-This document describes three types of images supported by TKE and their respective use cases and instructions. For more information, see [Image Types](https://intl.cloud.tencent.com/document/product/213/4941).
+This document describes two types of images supported by TKE and their respective use cases and instructions. For more information, see [Image Types](https://intl.cloud.tencent.com/document/product/213/4941).
 
 - **Public image**: They are images officially provided by Tencent Cloud. Each image contains an operating system and initialization components provided by Tencent Cloud, and is available to all users.
 - **Custom image**: It is created by using the image creation feature or imported by using the image import feature. A custom image is only available to the creator and the people they share it with. It is a non-standard environment that doesn't come with official support and ongoing maintenance from Tencent Cloud.
