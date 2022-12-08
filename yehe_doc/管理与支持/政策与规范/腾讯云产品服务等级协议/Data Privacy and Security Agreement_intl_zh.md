@@ -156,6 +156,7 @@
 53.[音频内容安全](https://www.tencentcloud.com/document/product/1139/51141)。
 54.[图片内容安全](https://www.tencentcloud.com/document/product/1122/51138)。
 55.[文本内容安全](https://www.tencentcloud.com/document/product/1121/51135)。
+56.[数据湖计算](https://www.tencentcloud.com/document/product/1155/51969)。
 
 ## 特定司法管辖区要求
 

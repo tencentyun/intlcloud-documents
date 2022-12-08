@@ -227,6 +227,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 57.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51135).
 58.[Tencent Cloud Mesh](https://www.tencentcloud.com/document/product/1152/51394).
 59.[Cloud Data Warehouse for PostgreSQL](https://www.tencentcloud.com/document/product/1138/51757).
+60.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51969).
 
 ## 10.Jurisdiction-specific Requirements
 

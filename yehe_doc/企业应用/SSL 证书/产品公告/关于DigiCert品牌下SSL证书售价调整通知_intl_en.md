@@ -1,0 +1,2 @@
+Dear user,
+In accordance with DigiCert’s price increase notice, we will increase the price of DigiCert SSL certificates starting January 5, 2023 (Beijing time). This price change involves GeoTrust, SecureSite, and code signing certificates. For more information, [visit ](https://www.tencentcloud.com/pricing/ssl?lang=en&pg=).

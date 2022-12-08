@@ -26,7 +26,7 @@
 [什么是按扣费周期出账、什么是按计费周期出账？](https://intl.cloud.tencent.com/document/product/436/10373)
 [计费模式与账单统计周期的关系是什么？](https://intl.cloud.tencent.com/document/product/436/10373)
 [COS 由按月结算升级为按日结算后，为什么升级后第一个月的账单（按扣费周期出账）费用比升级前费用“上涨”？](https://intl.cloud.tencent.com/document/product/436/10373)
-[COS 由按月结算升级为按日结算后，为什么升级后的L3-明细账单（按扣费周期出账）与用量明细账单中的存储容量“不同”？](https://intl.cloud.tencent.com/document/product/436/10373)
+
 
 
 ### 欠费停服相关

@@ -1,5 +1,5 @@
-﻿
 ## Billing Formula
+
 **Total fees = Instance fees + Backup capacity fees (free of charge for now) + Traffic fees (free of charge for now)**
 **Instance fees = Node price x Number of nodes x Number of shards = (Node memory size x Memory price + Node disk size x Disk price) x Number of nodes x Number of shards**
 
@@ -25,7 +25,7 @@
 </tr>
 <tr>
 <td colspan = "2">Backup capacity fees</td>
-<td>Fees for the backup capacity. The backup capacity mainly stores key logs (binlogs, error logs, slow logs, etc.) and backup files. 50% of the instance capacity is gifted as the backup capacity, and usage exceeding this complimentary capacity is free of charge for now.</td>
+<td>Fees for the backup capacity. The backup capacity mainly stores key logs (binlogs, error logs, slow logs, etc.) and backup files. 100% of the instance capacity is gifted as the backup capacity, and usage exceeding this complimentary capacity is free of charge for now.</td>
 </tr>
 <tr>
 <td colspan = "2">Traffic fees</td>

@@ -1,5 +1,5 @@
 ### 在接入之前需要做哪些准备?
-具体请参见 [接入准备文档](https://intl.cloud.tencent.com/document/product/1158/49607)。
+具体请参见 [快速入门](https://www.tencentcloud.com/document/product/1158/49612)和[接入Demo](https://www.tencentcloud.com/document/product/1158/49646)。
 
 ### 应用云渲染云 API 的 Region 参数指的是并发资源地区吗？
 不是。Region 是云 API 的公共参数，在应用云渲染的云 API 中是不需要填的。应用云渲染服务会根据 UserIP 选择最优接入区域，不需要业务指定。

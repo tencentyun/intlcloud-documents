@@ -1,5 +1,5 @@
 ### What preparations should I make before integration?
-Please see [Integration Preparations](https://intl.cloud.tencent.com/document/product/1158/49607).
+Please see [Getting Started](https://www.tencentcloud.com/document/product/1158/49612) and [Integration Demo](https://www.tencentcloud.com/document/product/1158/49646).
 
 ### Does the `Region` parameter in CAR TencentCloud APIs indicate the concurrency pack region?
 No. `Region` is a common parameter of CAR TencentCloud APIs and doesn't need to be specified, as CAR will select the optimal access region based on `UserIP`.

@@ -610,3 +610,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 52.[Audio Moderation System](https://www.tencentcloud.com/document/product/1139/51140).
 53.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51137).
 54.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51133).
+55.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51968).

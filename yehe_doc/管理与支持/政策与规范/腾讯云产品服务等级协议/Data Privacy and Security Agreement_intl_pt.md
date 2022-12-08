@@ -156,6 +156,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 53.[Audio Moderation System](https://www.tencentcloud.com/document/product/1139/51141).
 54.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51138).
 55.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51135).
+56.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51969).
 
 ## Requisitos específicos da jurisdição
 

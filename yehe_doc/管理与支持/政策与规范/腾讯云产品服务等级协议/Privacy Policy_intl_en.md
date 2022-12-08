@@ -556,6 +556,104 @@ Your personal information, if required to be disclosed to the law enforcement ag
 
 You have the right to access, correct, and erase the personal information we hold about you. You also have the right to withdraw your earlier provided consent to collect, store, process, use and disclose your personal information and to request us to stop providing your personal information to a third party.
 
+### PRC Addendum
+
+The terms of this Addendum apply to the processing of your personal information if you select China Mainland (excluding Hong Kong SAR, Macau SAR and Taiwan, the same below) as a Service Region when using the Services. Please refer to the Tencent Cloud International Privacy Policy for more details on the general conditions of using the Services outside of China Mainland. Tencent Cloud Computing (Beijing) Co., Ltd. (“<b>Tencent Cloud (PRC)</b>”, “**we**”, “**us**” and “**our**” for the purposes of this Addendum) provides the Services in the China Mainland region. We will process your personal information in accordance with the laws and regulations of China Mainland and relevant requirements of government authorities.
+
+In this Addendum, “**Services**” refers to the Tencent Cloud services offered by Tencent Cloud (PRC) when China Mainland is selected as the Service Region. 
+
+By using the Services, you (a) shall ensure that any personal information collected and used by you is done so in accordance with the law and that you do not and have not infringed the legal rights of any person or entity in any way; (b) guarantee that you have the right to use the Services to store, transmit, analyze, distribute or otherwise process personal information; (c) understand and agree that the PRC may have relevant regulations on data storage and export and before you use the Services to store or transmit personal information, you should comply with the applicable laws and regulations of the PRC to conduct full and necessary assessment and approval to ensure compliance with relevant regulations; and (d) consent to the processing of your personal information by Tencent Cloud (PRC) in accordance with the terms of this Addendum.
+
+*Your Personal Information*
+
+**We may collect your personal information by the following means:**
+
+(1) when you voluntarily provide, or provide on behalf of your authorized persons, information to us when using the Services, such as by filling out a form or uploading information to the Services;
+
+(2) through our employees or partners (such as your service provider) when they submit information that is provided by you and submitted to us on your behalf, for example, when you engage a specific service provider to fill in and upload your information in the Tencent Cloud (PRC) system; and
+
+(3) automatically through your interactions with us and your use of the Services, for example, we record your login time when you log in to your Tencent Cloud account and your operational and usage records when you use specific Services.
+
+**The types of personal information we collect:**
+
+(1) Personal information that you provide for real-name authentication purposes. Depending on the type of real-name authentication that you choose, personal information collected may include your name, ID card, business license, corporate bank account number, mailing address, industry information, cell phone number, facial recognition information and contact information. Real-name authentication is necessary for our assessment of your account ownership. For the safety of your account, please make sure that you choose the authentication method carefully and submit legal, real and valid information. The Services in China Mainland are available for real-name authenticated users only. If you are not authenticated, you will not be able to use the Services with China Mainland selected as the Service Region.  
+
+(2) Information related to your login, use of and interaction with the Services, including: 
+
+- Operation records. We collect operation records of your use of the Services and related information, such as user ID, operation time, object information (resource ID generated from the product(s) you use, region, relevant Tencent Cloud (PRC) product/service), IP address, browser type, language used, device model, operating system version and web browsing and retrieval records only in relation to your use of the Service, etc.
+
+- Contract information. If you need to apply for offline delivery of a product or if you need to conduct product testing, we need to collect information such as contact person, contact information, address, invoicing information, order information, etc., to fulfill the contract.
+
+- Other information, such as work order records relating to the Services, consultation and communication records with our customer support teams.
+
+The above information is collected in order for us to provide the Services and to ensure its quality.
+
+**We process personal information for the following purposes and in accordance with relevant laws and regulations:**
+
+In order to provide you with the Services, we use the collected information for the following purposes, subject to the relevant laws and regulations:
+
+(1) providing the Services to you;
+
+(2) meeting your personalized needs as per your instructions when using the Services. For example, language settings, location settings, personalized help services and instructions, or otherwise respond to you and other users;
+
+(3) service optimization and development. For example, we may optimize our Services in response to improve the quality of the Services provided to you;
+
+(4) protecting the security and integrity of the Services and the interests of Tencent Cloud (PRC), other Tencent Cloud (PRC) users and Tencent Cloud (PRC)'s partners. For example, we will use your information for identity verification, security incident prevention, fraud monitoring and detection, and assessment of the security status of your account. For example, when you use security features or other similar services, we will detect malicious programs or viruses, or identify fraudulent information for you. For example, when dealing with related disputes and complaints, we provide relevant information to the relevant parties in order to better facilitate the handling and resolution of disputes and complaints, etc.;
+
+(5) pushing relevant business news (such as financial news, product news, Tencent Cloud (PRC) news, etc.) and commercial advertisements to you. For example, Tencent Cloud International may push commercial advertisements to you by SMS, telephone, email and any other means at your cell phone number, email address and other contact information to publicize and promote Tencent Cloud (PRC) services or other services on the Tencent Cloud (PRC) platform, only with your consent;
+
+(6) providing you with Services that are more relevant to you. For example, based on the statistics and analysis of your information which we conduct or the statistics and analysis of other Tencent Cloud user data, we will provide you with similar functions or services that may be of interest to you, etc.;
+
+(7) inviting you to participate in surveys about our products and services, only with your consent;
+
+(8) analyzing the data of Tencent Cloud (PRC) users' use of the Services in order to form statistic user reports, business analysis and other information (collectively, "Statistics"), and share, publish and display them within or outside Tencent Cloud (PRC). We will ensure that the Statistics are aggregated, anonymized and will not involve information that can identify specific users.
+
+Except as specified above otherwise, we process your personal information by relying on contract necessity as a legal basis.
+
+*Transfer, Location and Retention of Personal Information*
+
+We will not share your personal information with any unrelated third party without your consent, except in the circumstances specified in the section “How We Share and Store Your Personal Information” in this Privacy Policy. 
+
+We will not publicly disclose your personal information, and if we have to make public disclosure thereof, we will inform you of the purpose of the same, the type of information disclosed and the sensitive information that may be disclosed, and obtain your express consent. 
+
+In addition, in accordance with relevant laws and regulations and national standards in China Mainland, we may share, transfer, and publicly disclose personal information without your prior authorized consent in the following cases: 
+
+- it directly relates to national security, national defense security; 
+
+- it directly relates to public safety, public health, and significant public interests; 
+
+- it directly relates to crime investigation, prosecution, trial and enforcement of judgments, etc.; 
+
+- for the purpose of safeguarding the life, property and other significant legitimate rights and interests of the subject of personal information or other individuals but where it is difficult to obtain the consent of the individual; 
+
+- where the subject of personal information discloses personal information to the public by himself/herself; and
+
+- where personal information is collected from lawfully publicly available information, such as lawful news reports, government information disclosure and other sources.
+
+In order to enhance your user experience, such as to optimize advertising effects, we need to share information that has been anonymized or de-identified with third-party partners, etc., and  we require such partners to strictly comply with our measures and requirements regarding data privacy protection, including but not limited to processing in accordance with data protection agreements, undertakings and relevant data processing policies, to avoid identification of individuals and to safeguard privacy. 
+
+Our server for storing your personal information in respect of the Services is located in China Mainland.
+
+*Retention of Personal Information*
+
+We generally retain your information only for the duration of the Services provided to you, and the retention period does not exceed the period necessary to fulfill the relevant purpose of use. However, we may need to retain your information or part of it for a longer period of time in the following circumstances, and only for the following purposes:
+
+- to comply with applicable laws and regulations and other relevant provisions;
+
+- to comply with court decisions, rulings or other legal process requirements;
+
+- to comply with the requirements of the relevant administrative, judicial or other competent authorities; and
+
+- as reasonably necessary to enforce the relevant service agreement or this statement, to deal with complaints/disputes, or to protect the personal and property safety or legitimate interests of others.
+
+*Data Subject Rights*
+
+You may, by yourself at the control menu, or contact us at the contact information disclosed in this Addendum to, access, modify and delete your personal information. However, subject to technical logic, legal and regulatory requirements, information security and other legitimate reasons, some of your information may not be accessed, modified and deleted. We will collect, use and store your information in accordance with the requirements of laws and regulations. If we collect, use or store your information in violation of laws and regulations, we will correct or delete it. If the information we collect and store about you is incorrect and you are unable to correct it yourself, you may request us to correct it.
+
+*Contact Us*
+
+If you have any question about this Addendum or anything relating to processing of personal information, you may contact us at [dataprivacy@tencent.com](mailto:dataprivacy@tencent.com) or the address at Data Privacy Protection Department, Tencent Building of Binhai , 33 Haitian 2nd Road, Nanshan District, Shenzhen, Guangdong Province 518054, China. We will review the issue as soon as possible and respond within fifteen days of receipt of your question.
+
 <span id="8"></span>
 ### MODULES
 Last updated: [2020-08-17]
@@ -618,6 +716,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 56.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51133).
 57.[Tencent Cloud Mesh](https://www.tencentcloud.com/document/product/1152/51393).
 58.[Cloud Data Warehouse for PostgreSQL](https://www.tencentcloud.com/document/product/1138/51756).
+59.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51968).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)

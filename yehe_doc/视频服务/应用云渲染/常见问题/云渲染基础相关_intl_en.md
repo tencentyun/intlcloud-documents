@@ -7,7 +7,7 @@ Connect to TencentCloud APIs on the backend and integrate the SDK on the busines
 ![](https://qcloudimg.tencent-cloud.cn/raw/6db9536d93dfad8c4a3113229b9144ce.jpg)
 
 ### Does CAR support on-premises deployment?
-No, on-premises deployment ins't supported.
+No, on-premises deployment isn't supported.
 
 ## Billing
 
