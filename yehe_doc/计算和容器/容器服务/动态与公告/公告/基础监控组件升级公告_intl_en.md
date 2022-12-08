@@ -1,10 +1,26 @@
-TKE plans to upgrade the `tke-monitor-agent` add-on. The upgrade is taken in two periods, July 27 to 29, 10:00-23:00 (UTC +8), and August 1 to 4, 10:00-23:00 (UTC +8). Your business will not be affected by the upgrade. If you do not want to upgrade, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
 
-Upgrade details:
+## September 2022
+TKE's basic monitoring add-on `tke-monitor-agent` will be connected to the cluster add-on management module from 10:00 AM to 22:00 PM on September 27 and 28, 2022, after which you can maintain its lifecycle in the module. This change won't affect your businesses.
 
-1. Fix the issue that the pod CPU utilization (both Request and Limit) goes negative.
+#### Change content 
+- Connect the `tke-monitor-agent` add-on to the add-on management module to support version upgrades in the console. For detailed directions, see [Add-On Lifecycle Management](https://intl.cloud.tencent.com/document/product/457/38705).
+- Create a secret named `sh.helm.release.v1.monitoragent.v1` in the `kube-system` namespace.
 
-2. Fix the incorrect configuration of GPU data source, which may cause GPU metric collection failure.
 
-3. Fix the reporting issues of node CPU utilization and MEM utilization
 
+## July 2022
+TKE's monitoring add-on will be upgraded to a new version from 10:00 AM to 23:00 PM on July 27–29 and August 1–4, 2022. This upgrade will fix some of the known issues and support the collection and reporting of some basic metrics. This change won't affect your businesses. If you don't want to have this change, [contact us](https://intl.cloud.tencent.com/document/product/457/46720) for assistance.
+
+#### Change content
+
+
+- Fix the issue where the CPU utilization (usage/request) and CPU utilization (usage/limit) of the Pod are negative values.
+- Fix the data source configuration issue where the data source of the GPU metric is incorrectly configured, affecting GPU metric pull in GPU scenarios.
+- Fix the issue of reporting node CPU and memory utilization metrics.
+- Support the collection of some metrics:
+	- Support the collection of the node CPU/memory packing rate.
+	- Support the collection of metrics for calculating the recommended CPU/memory value and optimizable CPU/memory resources, which will be collected and reported only when the request recommendation add-on is installed.
+
+
+## Troubleshooting
+If you encounter any problems during the upgrade, [contact us](https://intl.cloud.tencent.com/document/product/457/46720) for assistance. 

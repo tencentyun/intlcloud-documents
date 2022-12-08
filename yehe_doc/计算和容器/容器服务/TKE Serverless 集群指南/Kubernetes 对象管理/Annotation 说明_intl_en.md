@@ -1,6 +1,6 @@
 
 
-This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE general cluster and TKE serverless clusters.
+This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE general and serverless clusters.
 
 ## Annotation Usage
 ### Adding a Pod annotation to a workload
@@ -61,11 +61,11 @@ eks.tke.cloud.tencent.com/mem: '16Gi' # The memory needs to be measured in Gi. I
 
 ### Specifying system disk size
 
-A Pod running on a super node provides 20 GB of free system disk size by default. The lifecycle of the system disk is the same as that of the Pod. If you need more system disk size, specify the size via the annotation. Note that the part of the size exceeding 20 GB is billed according to the list price of a pay-as-you-go CBS Premium Cloud Storage cloud disk. For billing details, see [Cloud Block Storage Pricing](https://intl.cloud.tencent.com/pricing/cbs). See below for the annotation example:
+A Pod running on a super node provides 20 GB of free system disk size by default. The system disk has the same lifecycle as the Pod, meeting the requirements for system disk resources in general scenarios. If you need a larger system disk size, you can use the annotation to declare the desired size. Note that the excessive part will be billed based on the pay-as-you-go published price of a CBS Premium Cloud Storage cloud disk. For billing details, see [Pricing | Cloud Block Storage](https://buy.intl.cloud.tencent.com/price/cbs). Below is a sample annotation of the system disk size:
 ```yaml
 eks.tke.cloud.tencent.com/root-cbs-size: '50'  # Specify the system disk size. Additional charges are applied for the part of the size exceeding 20 Gi
 ```
-
+>? For detailed instructions on how to adjust the disk size when using the image cache, see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
 
 ### Automatically upgrading the specification
 
@@ -116,7 +116,7 @@ eks.tke.cloud.tencent.com/retain-ip-hours: '48' # The maximum IP retention perio
 To bind an EIP, add the following annotation to the Pod:
 
 ```yaml
-eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # The value can be an empty string, indicating that the EIP is enabled and the default configuration is used. You can also use the JSON parameter used to create the EIP API. For more information on the parameter list, visit https://cloud.tencent.com/document/api/215/16699#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0. In this example, the parameter indicates that the EIP is pay-as-you-go and the bandwidth cap is 50 Mbps.
+eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # The value can be an empty string, indicating that the EIP is enabled and the default configuration is used. You can also use the JSON parameter used to create the EIP API. For more information on the parameter list, visit https://www.tencentcloud.com/document/api/215/16699. In this example, the parameter indicates that the EIP is pay-as-you-go and the bandwidth cap is 50 Mbps.
 ```
 
 >! An EIP cannot be bound for non-bill-by-IP accounts (traditional accounts). If you are using a non-bill-by-IP account, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for account upgrade.
@@ -183,7 +183,7 @@ eks.tke.cloud.tencent.com/use-image-cache: 'auto'
 Specify the type of cloud disk created with the image cache:
 
 ```yaml
-eks.tke.cloud.tencent.com/image-cache-disk-type: 'CLOUD_SSD'  # Specify the type of cloud disk created with the image cache. Valid values: `CLOUD_BASIC` (HDD cloud disk), `CLOUD_PREMIUM` (Premium Cloud Storage, it is the default value), `CLOUD_SSD` (SSD), `CLOUD_HSSD` (Enhanced SSD), `CLOUD_TSSD` (Tremendous SSD).
+eks.tke.cloud.tencent.com/image-cache-disk-type: 'CLOUD_SSD'  # Specify the type of cloud disk created with the image cache. Valid values: `CLOUD_BASIC` (HDD cloud disk), `CLOUD_PREMIUM` (Premium Cloud Disk, it is the default value), `CLOUD_SSD` (SSD), `CLOUD_HSSD` (Enhanced SSD), `CLOUD_TSSD` (ulTra SSD).
 ```
 
 

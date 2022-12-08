@@ -7,20 +7,20 @@ You can use the feature for sharing the same CLB among multiple Services to supp
 
 ## Notes 
 - **For TKE clusters created before Aug. 17, 2020, the CLBs created by their Services support the sharing of the same CLB by default.**
-For a cluster where the CLB sharing feature is enabled, the CLBs created by its Services are configured with the `<serviceUUID>:tke-lb-serviceId` and `<serviceUUID>_<lb_listener_id>:<lb_listener_id>` tags by default. Each CLB has its own key and value, so there are many tags. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to request that we disable the CLB sharing feature for this kind of cluster and clear the tags.
 - **For TKE clusters created after Aug. 17, 2020, the feature of multiple Services sharing the same CLB is disabled by default.**
-For a cluster where the CLB sharing feature is disabled, the CLBs created by its Services are configured with the `tke-lb-serviceuuid:<serviceUUID>` tag by default. All Services use the same batch of tag keys, and the number of tag keys can be controlled. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to request that we enable the CLB sharing feature.
-- **If it is an TKE Serverless cluster, the CLB sharing is enabled by default. Notes:**
-	1. The shared CLB must be manually purchased by the user instead of automatically purchased by EKS.
+For clusters with reuse disabled, CLB instances created by the Service will be configured with `tke-lb-serviceuuid:<serviceUUID>`, `tke-createdBy-flag:yes`, and `tke-clusterId:cluster ID` tags by default. All Services use the same batch of tag keys, the number of which is controllable. If you need to reuse CLB instances for Services, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for application.
+- **If your cluster is a TKE serverless cluster, CLB reuse is enabled by default, but you need to keep the following in mind:**
+	1. Only CLB instances purchased manually can be reused, and those purchased automatically by a serverless cluster cannot. If those purchased automatically are reused, an error will be reported. This is to protect them from being repossessed by the serverless cluster.
 	2. The following two annotations must be added to the Service once the CLB is purchased:
 		- service.kubernetes.io/qcloud-share-existed-lb:"true"
 		- service.kubernetes.io/tke-existed-lbid:lb-xxx
+- The management and sync of configurations between Service and CLB instances are based on the resource object of the `LoadBalancerResource` type named the CLB ID. Do not perform any operations on this CRD; otherwise, the Service may fail.
 
 
-
-## Usage Limits
-- In a scenario where multiple Services share the same CLB, the number of listeners managed by a single CLB cannot exceed 10.
+## Use limits
+- In Service reuse scenarios, the number of listeners managed by a CLB instance is subject to the `TOTAL_LISTENER_QUOTA` of the CLB instance. For more information, see [DescribeQuota](https://intl.cloud.tencent.com/document/product/214/38187).
 - In scenarios where a Service is reused, only the user-created Cloud Load Balancer (CLB) can be used. This is because when the CLB created in the TKE cluster is reused, CLB resources may not be released, leading to a resource leak.
+
 >! After reusing CLB resources created by the current TKE, you need to manually manage the CLB resources, because the CLB's life cycle will not be controlled by the TKE due to the lack of the tag.
 
 

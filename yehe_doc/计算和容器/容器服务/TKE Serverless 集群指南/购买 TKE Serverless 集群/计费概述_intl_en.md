@@ -1,12 +1,12 @@
+## Overview
+
+TKE serverless clusters sustain resources with **pay-as-you-go** super nodes. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055).
+
 ## Billing Mode
 
-Elastic Kubernetes Service (EKS) is a pay-as-you-go service. The fees are calculated based on the configured amount of resources and the actual period of using them. 
-
-## Billing Method
-
-EKS calculates fees based on the specifications of the CPU, GPU, and memory for a workload and the running time of the workload. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055).
+In TKE serverless clusters, pay-as-you-go super nodes are billed based on the specifications and execution duration of Pods scheduled to them. For billing details, see [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055).
 
 ## Other Fees
-If you use EKS with other paid products such as [CLB](https://intl.cloud.tencent.com/product/clb), [CBS](https://intl.cloud.tencent.com/product/cbs), and [CFS](https://intl.cloud.tencent.com/product/cfs), these products are billed according to their own billing rules. For more information, see the purchase guide for the specific product.
 
+If you use TKE serverless clusters with other paid products such as [CLB](https://www.tencentcloud.com//products/clb), [CBS](https://www.tencentcloud.com//products/cbs), and [CFS](https://www.tencentcloud.com//products/cfs), these products will be billed according to their own billing rules. For more information, see the purchase guide for each product.
 

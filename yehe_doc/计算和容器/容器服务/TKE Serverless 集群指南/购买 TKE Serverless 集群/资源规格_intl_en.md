@@ -1,7 +1,7 @@
-## Overview
-TKE Serverless Cluster frees you from managing cluster nodes. However, to properly allocate resources and accurately calculate fees, you need to specify resource specifications for Pods when deploying a workload. Tencent Cloud allocates computing resources to the workload and calculates the corresponding fees based on the specified specifications.
+## Overview 
+TKE serverless clusters free you from managing cluster nodes. However, to reasonably allocate resources and accurately calculate fees, you need to specify resource specifications for Pods when deploying a workload. Tencent Cloud allocates computing resources to the workload and calculates the fees based on the specified specifications.
 
-When you use the Kubernetes API or Kubectl to create a workload for TKE Serverless cluster, you can use annotations to specify resource specifications. If annotations are not used, TKE Serverless cluster will calculate the specifications based on the container parameters set for the workload, such as Request and Limit. For more information, see [Specifying Resource Specifications](https://intl.cloud.tencent.com/document/product/457/36161).
+When you use the Kubernetes API or kubectl to create a workload for a TKE serverless cluster, you can use annotations to specify resource specifications. If no specifications are specified, the TKE serverless cluster will calculate the specifications based on the container parameters set for the workload, such as Request and Limit. For more information, see [Specifying resource specifications](https://intl.cloud.tencent.com/document/product/457/36161).
 
 >!
 > - The resource specifications indicate the maximum amount of resources available for containers in a Pod.
@@ -12,7 +12,7 @@ When you use the Kubernetes API or Kubectl to create a workload for TKE Serverle
 
 ## CPU Specifications
 
-The following table lists CPU specifications that TKE Serverless cluster provides for Pods in all regions where CPU resources are supported. TKE Serverless cluster also provides a set of CPU options. Different CPU sizes correspond to different memory ranges. Select the CPU specification as needed when creating a workload.
+The following table lists CPU specifications that TKE serverless clusters provide for Pods in all regions where CPU resources are supported. TKE serverless clusters also provide a set of CPU options. Different CPU sizes correspond to different memory ranges. Select the CPU specification as needed when creating a workload.
 
 #### Intel
 | CPU (Cores) | Memory Range (GiB) | Granularity of Memory Range (GiB) |
@@ -39,22 +39,31 @@ The AMD processor provides high performance with high reliability, security, and
 
 ## GPU Specifications
 
-The following table lists the GPU specifications that TKE Serverless cluster provides for Pods. Different GPU card models and sizes map to different CPU and memory options. Select the GPU specification as needed when creating a workload.
+The following table lists the GPU specifications that TKE serverless clusters provide for Pods. Different GPU card models and sizes correspond to different CPU and memory options. Select the GPU specification as needed when creating a workload.
 >!If you create, manage, and use GPU workloads using a YAML file, see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
 
-| GPU Model | GPU (Cards) | CPU (Cores) | Memory (GiB) |
-| ------- | ------- | ------- | ------- |
-| Tesla V100-NVLINK-32G | 1 | 8 | 40 |
-| Tesla V100-NVLINK-32G | 2 | 18 | 80 |
-| Tesla V100-NVLINK-32G | 4 | 36 | 160 |
-| Tesla V100-NVLINK-32G | 8 | 72 | 320 |
-| 1/4 NVIDIA T4 | 1 | 4 | 20 |
-| 1/2 NVIDIA T4 | 1 | 10 | 40 |
-| NVIDIA T4 | 1 | 8 | 32 |
-| NVIDIA T4 | 1 | 20 | 80 |
-| NVIDIA T4 | 1 | 32 | 128 |
-| NVIDIA T4 | 2 | 40 | 160 |
-| NVIDIA T4 | 4 | 80 | 320 |
+| GPU Model                   | GPU/Card | CPU/Core | Memory/GiB |
+| :------------------------- | :----- | :----- | :------- |
+| NVIDIA Tesla V100 - 1    | 1      | 8      | 40       |
+| NVIDIA Tesla V100 - 2    | 2      | 18     | 80       |
+| NVIDIA Tesla V100 - 4    | 4      | 36     | 160      |
+| NVIDIA Tesla V100 - 8    | 8      | 72     | 320      |
+| 1/4 NVIDIA T4 - 1/4      | 1      | 4      | 20       |
+| 1/2 NVIDIA T4 - 1/2      | 1      | 10     | 40       |
+| NVIDIA T4 - 1            | 1      | 8      | 32       |
+| NVIDIA T4 - 1            | 1      | 20     | 80       |
+| NVIDIA T4 - 1            | 1      | 32     | 128      |
+| NVIDIA T4 - 2            | 2      | 40     | 160      |
+| NVIDIA T4 - 4            | 4      | 80     | 320      |
+| NVIDIA A10 - PNV4 - 1    | 1      | 28     | 116      |
+| NVIDIA A10 - PNV4 - 2    | 2      | 56     | 232      |
+| NVIDIA A10 - PNV4 - 4    | 4      | 112    | 466      |
+| NVIDIA A10 - PNV4 - 8    | 8      | 224    | 932      |
+| NVIDIA A10 - GNV4 - 1    | 1      | 12     | 44       |
+| NVIDIA A10 - GNV4v - 1/4 | 1      | 6      | 24       |
+| NVIDIA A10 - GNV4v - 1/2 | 1      | 14     | 58       |
+| NVIDIA A10 - GNV4v - 1   | 1      | 28     | 116      |
+
 
 
 
