@@ -552,6 +552,104 @@ Caso seja necessário que suas Informações Pessoais sejam divulgadas às agên
 
 O usuário tem o direito de acessar, corrigir e eliminar suas informações pessoais que detemos sobre você. Você também tem o direito de retirar o consentimento fornecido anteriormente para que coletemos, armazenemos, processemos, usemos e divulguemos suas informações pessoais e solicitar que nos abstenhamos de processar ou fornecer suas informações pessoais a terceiros.
 
+### Adendo da PRC
+
+Os termos deste Adendo são aplicáveis ao processamento de suas informações pessoais caso você selecione a China Continental (excluindo a Região Administrativa Especial de Hong Kong, a RAE de Macau e Taiwan) como Região de Serviço de escolha para o seu uso dos Serviços. Consulte a Política de Privacidade da Tencent Cloud International para saber mais detalhes sobre as condições gerais de uso dos Serviços além da China Continental. Tencent Cloud Computing (Pequim) Co., Ltd. (doravante também denominada como “<b>Tencent Cloud (PRC)</b>”, “**nós**”, “**nos**” e "**nosso**" para os fins deste Adendo) fornece os Serviços na região da China Continental. Processaremos suas informações pessoais de acordo com as leis e regulamentos da China Continental e os requisitos relevantes das autoridades governamentais.
+
+Neste Adendo, o termo "**Serviços**" se refere aos serviços da Tencent Cloud que são oferecidos pela Tencent Cloud (PRC) quando a China Continental é selecionada como Região de Serviço. 
+
+Ao usar os Serviços, você (a) deve garantir que qualquer informação pessoal coletada e que seja usada por você seja feita de acordo com a lei, sem infringir os direitos legais de qualquer pessoa ou entidade de qualquer forma; (b) afirma que você tem o direito de usar os Serviços para armazenar, transmitir, analisar, distribuir ou processar informações pessoais; (c) compreende e concorda que a PRC pode ter regulamentos relevantes sobre armazenamento e exportação de dados e, antes de usar os Serviços para armazenar ou transmitir informações pessoais, você deve pesquisar e compreender as leis e regulamentos aplicáveis da PRC para cumpri-las, garantindo a conformidade com os regulamentos relevantes; e (d) consente com o processamento de suas informações pessoais pela Tencent Cloud (PRC) de acordo com os termos deste Adendo.
+
+*Suas Informações Pessoais*
+
+**Podemos coletar suas informações pessoais para os seguintes fins:**
+
+(1) quando você fornece voluntariamente, ou quando possui autorização para fornecer em nome de outras pessoas, informações para nós através do uso dos Serviços, incluindo mas não se limitando aos seguintes exemplos: ao preencher um formulário ou carregar informações para os Serviços;
+
+(2) por meio de nossos funcionários ou parceiros (como seu provedor de serviços) quando estes, ao representar você, enviam as informações que você forneceu para nós, incluindo mas não se limitando aos seguintes exemplos: quando você contrata um provedor de serviços específico para preencher e carregar suas informações no sistema Tencent Cloud (PRC); e
+
+(3) automaticamente por meio de suas interações conosco e seu uso dos Serviços, incluindo mas não se limitando aos seguintes exemplos: nós registramos o horário que você inicia a sessão da sua conta Tencent Cloud, além de seus registros operacionais e de uso quando você usa Serviços específicos.
+
+**Os tipos de informações pessoais que coletamos:**
+
+(1) Informações pessoais que você fornece para utilizar o recurso de autenticação de nome real. Dependendo do tipo de autenticação de nome real que você escolher, as informações pessoais coletadas podem incluir seu nome, carteira de identidade, licença comercial, número da conta bancária corporativa, endereço de correspondência, informações do setor, número de telefone celular, informações de reconhecimento facial e informações de contato. A autenticação de nome real é necessária para avaliarmos a propriedade da sua conta. Para manter a segurança da sua conta, certifique-se de escolher o método de autenticação cuidadosamente e envie informações verídicas, reais e válidas. Os Serviços na China Continental estão disponíveis apenas para usuários com autenticação de nome real. Se você não possuir autenticação, não poderá usar os Serviços ao escolher a China Continental como Região de Serviço. 
+
+(2) Informações relacionadas ao seu login, uso e interação com os Serviços, incluindo: 
+
+- Registros de operação. Coletamos os registros de operação do seu uso dos Serviços e informações relacionadas, como ID de usuário, tempo de operação, informações de objeto [ID de recurso gerado a partir do(s) produto(s) que você usa, região, produto/serviço relevante da Tencent Cloud (PRC)], endereço IP, tipo de navegador, idioma usado, modelo do dispositivo, versão do sistema operacional e registros de navegação e recuperação da Web somente em relação ao seu uso do Serviço etc.
+
+- Informações de contratos. Se você precisar solicitar a entrega off-line de um produto ou se precisar realizar testes de produtos, precisamos coletar informações como pessoa para contato, informações de contato, endereço, informações de faturamento, informações de pedido etc., para cumprir o contrato.
+
+- Outras informações, como registros de ordens de serviço relacionados aos Serviços, registros de consulta e comunicação com nossas equipes de suporte ao cliente.
+
+As informações acima são coletadas para que possamos fornecer os Serviços e garantir sua qualidade.
+
+**Processamos informações pessoais para os seguintes fins e de acordo com as leis e regulamentos relevantes:**
+
+Para fornecer a você os Serviços, usamos as informações coletadas para os seguintes fins, sujeitos às leis e regulamentos relevantes:
+
+(1) fornecer os Serviços a você;
+
+(2) atender às suas necessidades particulares, de acordo com as instruções que você forneceu para usar os Serviços. Por exemplo, configurações de idioma, configurações de localização, serviços de ajuda personalizados e instruções, ou para responder a você e a outros usuários;
+
+(3) otimização e desenvolvimento de serviços. Por exemplo, podemos otimizar e melhorar a qualidade dos Serviços fornecidos a você de acordo com as suas opções de personalização;
+
+(4) proteger a segurança e a integridade dos Serviços e os interesses da Tencent Cloud (PRC), de outros usuários da Tencent Cloud (PRC) e dos parceiros da Tencent Cloud (PRC). Por exemplo, usaremos suas informações para fins de verificação de identidade, prevenção de incidentes de segurança, monitoramento e detecção de fraudes e avaliação do status de segurança da sua conta. Por exemplo, quando você usa recursos de segurança ou outros serviços semelhantes, iremos fazer a detecção de programas mal-intencionados ou vírus, ou identificaremos informações fraudulentas para você. Por exemplo, ao lidar com disputas e reclamações relacionadas, fornecemos as informações aplicáveis às partes relevantes, a fim de facilitar melhor a administração e a resolução de disputas e reclamações etc.;
+
+(5) impulsionar notícias de negócios relevantes [como notícias financeiras, notícias de produtos, notícias da Tencent Cloud (PRC) etc.] e anúncios comerciais para você. Por exemplo, a Tencent Cloud International pode enviar anúncios comerciais para você por SMS, telefone, e-mail e qualquer outro meio para o seu número de telefone celular, endereço de e-mail e outros tipos de contato para divulgar e promover os serviços da Tencent Cloud (PRC) ou outros serviços da plataforma Tencent Cloud (PRC), somente com o seu consentimento;
+
+(6) fornecer-lhe Serviços que sejam mais relevantes para você. Por exemplo, ao realizar análises com base nas estatísticas de suas informações ou nas estatísticas de outros dados de usuários da Tencent Cloud, podemos fornecer a você funções ou serviços semelhantes que talvez sejam do seu interesse etc.;
+
+(7) convidar você a participar em pesquisas sobre os nossos produtos e serviços, apenas com o seu consentimento;
+
+(8) analisar os dados de uso dos Serviços pelos usuários da Tencent Cloud (PRC) para gerar relatórios estatísticos sobre os usuários, análises de negócios e outras informações (doravante denominado coletivamente de "Estatísticas"), e compartilhá-los, publicá-los e exibi-los dentro ou fora da Tencent Cloud (PRC). Garantiremos que as Estatísticas sejam agregadas, anonimizadas e não envolvam informações que possam identificar usuários específicos.
+
+Exceto conforme especificado acima, processamos suas informações pessoais com base na necessidade contratual.
+
+*Transferência, localização e retenção de informações pessoais*
+
+Não compartilharemos suas informações pessoais com terceiros não relacionados sem o seu consentimento, exceto nas circunstâncias especificadas na seção "Como compartilhamos e armazenamos seus dados pessoais" nesta Política de Privacidade. 
+
+Não divulgaremos publicamente suas informações pessoais e, se tivermos que torná-las públicas, informaremos você sobre o propósito das mesmas, o tipo de informação divulgada e as informações confidenciais que podem ser divulgadas com o objetivo de obter o seu consentimento expresso. 
+
+Além disso, de acordo com as leis e regulamentos relevantes e com os padrões nacionais da China Continental, podemos compartilhar, transferir e divulgar publicamente informações pessoais sem o seu consentimento prévio e autorização nos seguintes casos: 
+
+- se estiver diretamente relacionada com a segurança nacional ou defesa da segurança nacional; 
+
+- se estiver diretamente relacionada com a segurança pública, a saúde pública e interesses públicos significativos; 
+
+- se estiver diretamente relacionada com a investigação criminal, ação penal, julgamento e execução de sentenças etc.; 
+
+- para efeitos de salvaguarda da vida, da propriedade e de outros direitos e interesses legítimos significativos do titular das informações pessoais ou de outras pessoas quando a obtenção do consentimento da pessoa for impossibilitada; 
+
+- quando o detentor das informações pessoais divulga informações pessoais ao público por si mesmo; e
+
+- quando as informações pessoais são coletadas de informações legalmente disponíveis publicamente, como relatórios de notícias legais, divulgação de informações governamentais e outras fontes.
+
+Para melhorar sua experiência de usuário. Por exemplo, para otimizar os efeitos da publicidade, precisamos compartilhar informações que foram anonimizadas ou que tiveram suas identificações removidas com terceiros etc. Para isso, exigimos que esses terceiros cumpram rigorosamente nossas medidas e requisitos em relação à proteção de privacidade de dados, incluindo, entre outros, o processamento de acordo com os acordos de proteção de dados, empresas e políticas de tratamento de dados pertinentes, para evitar a identificação de indivíduos e salvaguardar a privacidade dos mesmos. 
+
+Nosso servidor que armazena suas informações pessoais que estão relacionadas aos Serviços está localizado na China Continental.
+
+*Retenção de informações pessoais*
+
+Geralmente, retemos suas informações apenas durante a duração dos Serviços fornecidos a você, e o período de retenção não excede o período necessário para cumprir o propósito relevante de uso. No entanto, em alguns casos, é necessário reter suas informações ou parte delas por um longo período de tempo apenas para os seguintes propósitos:
+
+- para cumprir as leis e regulamentos aplicáveis e outras disposições relevantes;
+
+- para cumprir decisões judiciais, mandatos ou outros requisitos de processos legais;
+
+- cumprir requisitos de autoridades administrativas, judiciais ou outras autoridades competentes relevantes; e
+
+- conforme razoavelmente necessário para cumprir o contrato de serviço relevante ou esta declaração, para lidar com reclamações/disputas ou para proteger a segurança pessoal e patrimonial ou interesses legítimos de terceiros.
+
+*Direitos dos titulares de dados*
+
+Você pode acessar, modificar e excluir suas informações pessoais ao acessar o menu de controle ou ao entrar em contato conosco através das informações de contato divulgadas neste Adendo. No entanto, de acordo com requisitos técnicos, legais, regulamentares, de segurança da informação e/ou outras razões legítimas, algumas de suas informações não podem ser acessadas, modificadas e excluídas. Coletaremos, usaremos e armazenaremos suas informações de acordo com os requisitos das leis e regulamentos. Se coletarmos, usarmos ou armazenarmos suas informações através da violação de leis e regulamentos, iremos corrigi-las ou excluí-las. Se as informações que coletamos e armazenamos sobre você estiverem incorretas e você não puder corrigi-las por conta própria, você pode abrir uma solicitação e nós iremos corrigi-las para você.
+
+*Entre em contato conosco*
+
+Se você tiver alguma dúvida sobre este Adendo ou qualquer questão relacionada ao processamento de informações pessoais, entre em contato conosco pelo e-mail [dataprivacy@tencent.com](mailto:dataprivacy@tencent.com) ou pelo seguinte endereço: Data Privacy Protection Department, Tencent Building of Binhai, 33 Haitian 2nd Road, Nanshan District, Shenzhen, Guangdong Province 518054, China. Analisaremos o problema o mais rápido possível e responderemos no prazo de 15 dias, contados a partir do recebimento da sua pergunta.
+
 <span id="8"></span>
 ### MÓDULOS
 Última atualização: [2020-08-17]
