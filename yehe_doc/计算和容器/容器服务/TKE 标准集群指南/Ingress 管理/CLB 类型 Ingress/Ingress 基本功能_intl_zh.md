@@ -1,9 +1,8 @@
-## 简介
+## 简介 
 Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过配置转发规则，实现不同 URL 可以访问到集群内不同的 Service。
 为了使 Ingress 资源正常工作，集群必须运行 Ingress-controller。TKE 服务在集群内默认启用了基于腾讯云负载均衡器实现的 `l7-lb-controller`，支持 HTTP、HTTPS，同时也支持在集群内自建其他 Ingress 控制器，您可以根据您的业务需要选择不同的 Ingress 类型。
 
-<span id="annotations"></span>   
-## 注意事项
+## 注意事项[](id:annotations)   
 - 确保您的容器业务不和 CVM 业务共用一个 CLB。
 - 不支持您在 CLB 控制台操作 TKE 管理的 CLB 的监听器、转发路径、证书和后端绑定的服务器，您的更改会被 TKE 自动覆盖。
 - 使用已有的 CLB 时：
@@ -11,15 +10,18 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
   - 不支持多个 Ingress 复用 CLB。
   - 不支持 Ingress 和 Service 共用 CLB。
   - 删除 Ingress 后，复用 CLB 绑定的后端云服务器需要自行解绑，同时会保留一个 `tag tke-clusterId: cls-xxxx`，需自行清理。
+  - 默认 CLB 的转发规则的限制是50个，如果您 Ingress 的转发规则超过50时，可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 提升负载均衡 CLB 的配额。
+  - Ingress 和 CLB 之间配置的管理和同步是由以 CLB ID 为名字的 LoadBalancerResource 类型的资源对象，请勿对该 CRD 进行任何操作，否则容易导致 Ingress 失效。
+
 
 ## Ingress 控制台操作指引
 
 ### 创建 Ingress
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
+1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击**集群**进入集群管理页面。
 3. 单击需要创建 Ingress 的集群 ID，进入待创建 Ingress 的集群管理页面。
-4. 选择**服务**>**Ingress**，进入 Ingress 信息页面。
+4. 选择**服务** > **Ingress**，进入 Ingress 信息页面。
 5. 单击**新建**，进入“新建Ingress”页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/f2fd4c00a82da4e564b964c87b7e7bcb.png)
 6. 根据实际需求，设置 Ingress 参数。关键参数信息如下：
@@ -31,7 +33,7 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
  - 监听端口：默认为**Http:80**，请根据实际情况进行选择。
    如果勾选**Https:443**则需绑定服务器证书，以保证访问安全。如下图所示：
    ![](https://main.qcloudimg.com/raw/6d6ff3f162e6880ee6dc669cc312ebfd.png)
-   详情请参见 [SSL 证书格式要求及格式转换说明](https://intl.cloud.tencent.com/document/product/214/5369)。
+   详情请参见 [SSL 证书格式要求及格式转换说明](https://intl.cloud.tencent.com/document/product/214/6155)。
  - 转发配置：根据实际需求进行设置。
 7. 单击**创建Ingress**，完成创建。
 
@@ -39,10 +41,10 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 
 #### 更新 YAML
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
+1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击**集群**，进入集群管理页面。
 3. 单击需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
-4. 选择**服务**>**Ingress**，进入 Ingress 信息页面。如下图所示：
+4. 选择**服务** > **Ingress**，进入 Ingress 信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/9d8befd5a41b4c922999f3337a71f2ab.png)
 5. 在需要更新 YAML 的 Ingress 行中，单击**编辑YAML**，进入更新 Ingress 页面。
 6. 在 “更新Ingress” 页面，编辑 YAML，单击**完成**，即可更新 YAML。
@@ -50,7 +52,7 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 #### 更新转发规则
 
 1. 集群管理页面，单击需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
-2. 选择**服务**>**Ingress**，进入 Ingress 信息页面。如下图所示：
+2. 选择**服务** > **Ingress**，进入 Ingress 信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/6fdbb1dacd69b382e93204a3ead2cbbb.png)
 3. 在需要更新转发规则的 Ingress 行中，单击**更新转发配置**，进入更新转发配置页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/ac813654063e6349790d10216d3eab47.png)
@@ -58,8 +60,8 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 
 ## Kubectl 操作 Ingress 指引
 
-<span id="YAMLSample"></span>
-### YAML 示例
+
+### YAML 示例[](id:YAMLSample)
 ```Yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -118,7 +120,7 @@ metadata:
     kubernetes.io/ingress.internetChargeType: TRAFFIC_POSTPAID_BY_HOUR
     kubernetes.io/ingress.internetMaxBandwidthOut: "10"
 ```
-关于 **IP 带宽包** 的更多详细信息，欢迎查看文档 [共享带宽包产品类别](https://intl.cloud.tencent.com/document/product/684/15246)。
+
 
 ### 创建 Ingress
 

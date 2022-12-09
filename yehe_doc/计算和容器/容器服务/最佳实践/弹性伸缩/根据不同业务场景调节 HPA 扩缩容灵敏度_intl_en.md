@@ -1,171 +1,250 @@
-## Overview
 
-Before K8s v1.18, HPA scaling does not support adjusting sensitivity.
+## Support for Scaling Speed Adjustment by HPA v2beta2 and Later
 
-- For scale down, the scale down stabilization window is controlled by the `--horizontal-pod-autoscaler-downscale-stabilization-window` parameter of `kube-controller-manager`. The default value is 5 minutes, that is, it will take at least 5 minutes to scale down after the load is reduced.
-- For scale up, the scale up velocity is controlled by fixed algorithm and hardcoding constant factor of HPA Controller, which cannot be customized.
+Sensitivity adjustment for HPA scale-out is not supported by versions earlier than K8s 1.18.
 
-The K8s design logic makes it impossible for users to customize the scaling sensitivity of HPA. But different applications have different requirements for scaling sensitivity, for example:
+- The `--horizontal-pod-autoscaler-downscale-stabilization-window` parameter of `kube-controller-manager` controls the scale-in time window, which is five minutes by default, that is, a scale-in can be performed at least five minutes after the workload reduction.
+- The fixed algorithm of the HPA controller and the constant factor of hardware encoding control the scale-out speed, which cannot be customized.
 
-- Key applications that may have traffic spikes. They should scale up as fast as possible (to avoid traffic bottleneck), and scale down very slowly (waiting for another traffic spike).
-- Offline applications that process a large amount of data. They should scale up as fast as possible during the peak hours to reduce the data processing time, and scale down as soon as possible after the peak hours to reduce the costs.
-- Applications that process regular data/web traffic. They may scale up and down in a usual way to minimize jitter.
+In this design logic, users cannot customize the speed of HPA scaling. However, different business scenarios may have different requirements for scaling sensitivity:
 
->? After the update of K8s 1.18 HPA, the scaling sensitivity is available for the previous v2beta2 version, and the version number remains unchanged as v2beta2.
+1. For key businesses with traffic surges, a scale-out needs to be fast (if needed), and a scale-in needs to be slow (to avoid another traffic peak).
+2. Applications processing key data should be scaled out as soon as possible when the data volume surges, so as to speed up data processing. When the data volume decreases, they should be scaled in as soon as possible to reduce costs. Unnecessary and frequent scaling operations are acceptable when the data volume jitters momentarily.
+3. Businesses processing general data/network traffic can be scaled in a general way to reduce jitters.
 
-This document provides scaling examples in the common use cases, and introduces how to use the new HPA feature of K8s 1.18 to control the scaling sensitivity, so as to better meet the requirements for scaling velocity in various scenarios.
+HPA is updated on K8s 1.18, where scaling sensitivity control is added to v2beta2, but the version number of v2beta2 remains unchanged.
+## Principles and Misunderstandings
 
+During HPA scaling, the fixed algorithm is first used to calculate the desired number of replicas:
 
-## Examples
-
-K8s 1.18 adds a new `behavior` field under HPA Spec, which provides two fields `scaleUp` and `scaleDown` to control the scale up and scale down behaviors respectively. 
-
+Desired number of replicas = ceil[current number of replicas * (current metric / desired metric)]
 
 
-### Scaling up as fast as possible
+Here, if "current metric / desired metric" is close to 1 (which is within the default tolerance of 0.1, that is, the ratio ranges between 0.9 and 1.1), no scaling is performed; otherwise, jitters may cause frequent scaling.
 
-When you want to scale up quickly, you can create an HPA with the following configuration:
+>? Tolerance is determined by the `--horizontal-pod-autoscaler-tolerance` parameter of `kube-controller-manager`. It defaults to 0.1, that is, 10%.
 
+Scaling speed adjustment described in this document doesn't mean adjusting the algorithm for calculating the desired number of replicas. It doesn't increase/decrease the scaling ratio or quantity, but only controls the scaling speed. The implementation should deliver the following effect: controlling the maximum custom ratio/number of Pods that can be added/released in a custom time period allowed by HPA.
+
+## How to Use
+
+In this update, the `behavior` field is added to HPA Spec, which contains the `scaleUp` and `scaleDown` fields for scaling control. For more information, see [HPAScalingRules v2beta2 autoscaling](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#hpascalingrules-v2beta2-autoscaling).
+
+#### Sample code
 ```yaml
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-    name: web
+  name: web
 spec:
-    minReplicas: 1
-    maxReplicas: 1000
-    metrics:
-    - pods:
-        metric:
-          name: k8s_pod_rate_cpu_core_used_limit
-        target:
-          averageValue: "80"
-          type: AverageValue
-      type: Pods
-    scaleTargetRef:
-      apiVersion: apps/v1
-      kind: Deployment
-      name: web
-    behavior: # essential
-      scaleUp:
-        policies:
-        - type: Percent
-          value: 900
-          periodSeconds: 15
+  minReplicas: 1
+  maxReplicas: 1000
+  metrics:
+  - pods:
+      metric:
+        name: k8s_pod_rate_cpu_core_used_limit
+      target:
+        averageValue: "80"
+        type: AverageValue
+    type: Pods
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: web
+  behavior: # This is the key point.
+    scaleDown:
+      stabilizationWindowSeconds: 300 # When a scale-in is needed, observe for five minutes first. If it is still needed, perform the scale-in.
+      policies:
+      - type: Percent
+        value: 100 # Allow for releasing all
+        periodSeconds: 15
+    scaleUp:
+      stabilizationWindowSeconds: 0 # Perform a scale-out when needed
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15 # Up to one time the current number of Pods can be added every 15 seconds.
+      - type: Pods
+        value: 4
+        periodSeconds: 15 # Up to four Pods can be added every 15 seconds.
+      selectPolicy: Max # Use the larger value of the two calculated based on the above two scale-out policies
 ```
 
-The example indicates that 9 times the current number of pods can be added, effectively making the number of replicas 10 times the current size. The number of Pods cannot exceed the limit of `maxReplicas`.
+#### Notes
+- The above `behavior` configuration is default, which means it will be added by default if not specified.
+- You can configure one or more policies for `scaleUp` and `scaleDown`. `selectPolicy` determines which policy to use for scaling.
+- `selectPolicy` is `Max` by default, that is, different calculation results are evaluated and the largest number of Pods is selected for scaling.
+- `stabilizationWindowSeconds` is the stable window period, that is, scaling is performed only when the metric is below or above the threshold for the stable window period. This is to avoid frequent scaling caused by jitters. For a scale-out, the stable window defaults to 0, indicating to perform the scale-out immediately; for a scale-in, it defaults to five minutes.
+- `policies` defines the scaling policy. `type` can be `Pods` or `Percent`, indicating the maximum number or ratio of replicas that can be added every `periodSeconds`.
 
-For example, if the application is started with 1 pod, when it experiences traffic spikes, it will scale up as soon as possible with the following number of pods:
 
+## Scenarios and Samples
+
+
+### Fast scale-out
+
+If you need to quickly scale out your application, you can use the following HPA configuration:
+
+```yaml
+behavior:
+  scaleUp:
+    policies:
+    - type: Percent
+      value: 900
+      periodSeconds: 15 # Up to nine times the current number of replicas can be added every 15 seconds.
 ```
+
+The above configuration indicates that nine times the current number of replicas are added immediately, that is, a scale-out to ten times the current number of Pods, within the `maxReplicas` limit though.
+Suppose there is only one Pod, the traffic surges, and the metric constantly exceeds nine times the threshold, a scale-out will be performed quickly, during which the number of Pods will change as follows:
+
+```txt
 1 -> 10 -> 100 -> 1000
 ```
 
-If the scale down policy is not configured, it will wait for the default scale down stabilization window (`--horizontal-pod-autoscaler-downscale-stabilization-window`, default value: 5 minutes), and then start scale down.
+If no scale-in policy is configured, a scale-in will be performed after the global default time window (which is five minutes by default).
 
+### Fast scale-out and slow scale-in
 
-
-
-### Scaling up as fast as possible, scaling down very gradually
-
-When an application experiences a sharp drops of the amount of concurrency after a traffic peak hour, the default scale down policy will be used, and the number of Pods will drop sharply after a few minutes. If the Pod experiences another traffic peak after the scale down, the application can still quickly scale up at this time. But the scale up process will take a certain time, and the traffic peak may last for a long time. During this time, the backend processing capacity of the application may reach a bottleneck, which may cause some request failures. You can configure the following `behavior` for HPA to gradually scale down after quickly scale up. Examples are as follows:
+When the traffic peak is over and the concurrent volume drops significantly, if the default scale-in policy is used, the number of Pods will drop a few minutes later. If another traffic peak comes unexpectedly after the scale-in, the scale-out will be fast but still take some time. If the traffic surges to a really high level, the backend may fail to keep up, causing some requests to fail. In this case, you can add a scale-in policy for HPA by configuring `behavior` as follows:
 
 ```yaml
 behavior:
-    scaleUp:
-      policies:
-      - type: percent
-        value: 900%
-    scaleDown:
-      policies:
-      - type: pods
-        value: 1
-        periodSeconds: 600 # Scale down 1 pod every 10 minutes
+  scaleUp:
+    policies:
+    - type: Percent
+      value: 900
+      periodSeconds: 15 # Up to nine times the current number of replicas can be added every 15 seconds.
+  scaleDown:
+    policies:
+    - type: Pods
+      value: 1
+      periodSeconds: 600 # Only one Pod can be released every ten minutes.
 ```
 
-The `scaleDown` is configured in the example. It specifies that 1 Pod will be reduced every 10 minutes during scale down, which greatly reduces the scale down velocity. The number of Pods changed during scale down is as follows:
+In the above sample, the `scaleDown` configuration is added, specifying that only one Pod can be released every ten minutes. This greatly slows down the scale-in, during which the number of Pods will change as follows:
 
+```txt
+1000 -> ... (10 minutes later) -> 999
 ```
-1000 -> … (10 min later) -> 999
-```
 
-With this configuration, the key applications can process scaling and avoid request failures during a peak traffic hour.
+In this way, key businesses will be able to handle traffic surges, and the requests won't fail.
 
+### Slow scale-out
 
-
-
-### Scaling up very gradually
-
-
-For the non-critical applications that do not need quickly scale up, you can add the following `behavior` to HPA for gradual scale up. Examples are as follows:
+If you want to make scale-outs slow and stable for general applications, add the following `behavior` configuration to HPA:
 
 ```yaml
 behavior:
-    scaleUp:
-      policies:
-      - type: pods
-        value: 1 # Add 1 Pod for each scale up
+  scaleUp:
+    policies:
+    - type: Pods
+      value: 1 
+      periodSeconds: 300 # Only one Pod can be added every five minutes.
 ```
 
-For example, if the application has 1 pod by default, it will scale up as follows:
-```
+Suppose there is only one Pod and the metric constantly exceeds the threshold, the number of Pods will change as follows during the scale-out:
+
+```txt
 1 -> 2 -> 3 -> 4
 ```
 
-### Disabling automatic scale down
+### Disabling automatic scale-in
 
-For the key applications that do not need automatic scale down after scale up, manual intervention or other self-developed controllers are required to determine the scaling conditions. You can configure the following `behavior` policy to disable automatic scaling. Examples are as follows:
-
-```yaml
-behavior:
-    scaleDown:
-      policies:
-      - type: pods
-        value: 0
-```
-
-### Extending scale down stabilization window
-
-The default scale down stabilization window is 5 minutes (`--horizontal-pod-autoscaler-downscale-stabilization-window`). If you want to extend the stabilization window to avoid exceptions caused by some traffic glitches, you can specify the scale down stabilization window through the following `behavior` policy. Examples are as follows:
+If you want to prevent key applications from an automatic scale-in after a scale-out and need to determine the scale-in conditions by manual intervention or a self-developed controller, you can use the following `behavior` configuration to disable automatic scale-in:
 
 ```yaml
 behavior:
-    scaleDown:
-      stabilizationWindowSeconds: 600 # Wait 600 seconds (10 minutes) before starting scale down
-      policies:
-      - type: pods
-        value: 5 # Scale down 5 pods each time
+  scaleDown:
+    selectPolicy: Disabled
 ```
 
-The example indicates that when the load is reduced, it will wait 600 seconds (10 minutes) before starting scale down, and only scale down 5 Pods each time.
+### Extending the time window for scale-in
 
+By default, the time window for scale-in is five minutes. If you need to extend the time window to avoid exceptions caused by traffic peaks, you can specify the time window for scale-in by configuring `behavior` as follows:
 
-
-### Extending scale up stabilization window
-
-
-
-
-Some applications often frequently scale up due to data glitches. Actually Pods do not need scale up in a short period of time, and the scale up may cause waste of resources. For example, in the scenario of a data processing pipeline, the scale up metric is the number of events in the queue. When a large number of events heaps in the queue, scale up is performed only when the load continues to exceed the scale up threshold. If events heaps only for a short period of time, events can be processed quickly without scaling up the queue.
-
-The default scale up algorithm will scale up in a short time. For the above scenarios, you can configure the following `behavior` policy to add a stabilization window for scale up to avoid resource waste caused by glitches. Examples are as follows:
-
-``` yaml
+```yaml
 behavior:
-    scaleUp:
-      stabilizationWindowSeconds: 300 # Stabilization window for waiting 5 minutes before scaling up
-      policies:
-      - type: pods
-        value: 20 # Scale up 20 Pods each time
+  scaleDown:
+    stabilizationWindowSeconds: 600 # Perform a scale-in ten minutes later
+    policies:
+    - type: Pods
+      value: 5 
+      periodSeconds: 600 # Up to five Pods can be released every ten minutes.
 ```
 
-The example indicates that you need to wait for a stabilization window for 5 minutes before scaling up. If the load drops during this period, no scale up is performed. The scale up is performed only when the load continues to exceed the scale up threshold, and 20 Pods are added for each time.
+In the above sample, when the load drops, a scale-in will be performed 600 seconds (ten minutes) later, and up to five Pods can be released every ten minutes.
 
+### Extending the time window for scale-out
 
+Some applications often undergo frequent scale-outs due to data spikes, and the added Pods may be a waste of resources. In data processing pipelines, the desired number of replicas depends on the number of events in the queue. When a large number of events are heaped in the queue, a fast but not too sensitive scale-out is desired, as the heap may last only a short time and disappear even if no scale-out is performed.
 
+The default scale-out algorithm executes a scale-out after a short period of time. You can add a time window to avoid resource waste after a scale-out caused by spikes. Below is the sample `behavior` configuration:
+
+```yaml
+behavior:
+  scaleUp:
+    stabilizationWindowSeconds: 300 # A scale-out is performed after a 5-minute time window.
+    policies:
+    - type: Pods
+      value: 20 
+      periodSeconds: 60 # Up to 20 Pods can be added every minute.
+```
+
+In the above sample, a scale-out is performed after a 5-minute time window. If the metric falls below the threshold during this window, no scale-out is performed. If the metric constantly exceeds the threshold, a scale-out is performed, and up to 20 Pods can be added every minute.
+
+## FAQs
+
+### Why is YAML on v1 or v2beta1 obtained after a HPA is created by using v2beta2?
+![](https://qcloudimg.tencent-cloud.cn/raw/2e380e3078195ab287d3a1d957d58322.png)
+This is because HPA has many API versions:
+
+```bash
+kubectl api-versions | grep autoscaling
+autoscaling/v1
+autoscaling/v2beta1
+autoscaling/v2beta2
+```
+
+The version number is irrelevant to the version for creation (which is automatically converted).
+
+If kubectl is used, during API discovery, various types of resources and version information returned by the API server will be cached. Some resources are available in multiple versions; if the version to get is not specified, the default version will be used, which is v1 for HPA. If the operation is performed on some platform UIs, the result will depend on the platform implementation method. In the TKE console, the default version is v2beta1:
+
+![](https://qcloudimg.tencent-cloud.cn/raw/c7ff3863d0e7be7a3caf557d9bfca51a.png)
+
+### How do I use the v2beta2 version to get or edit?
+Just specify the complete resource name containing the version information:
+
+```bash
+kubectl get horizontalpodautoscaler.v2beta2.autoscaling php-apache -o yaml
+# kubectl edit horizontalpodautoscaler.v2beta2.autoscaling php-apache
+```
+
+### Why is a scale-out slow when it is configured to be fast?
+
+Add the following configuration:
+
+```yaml
+behavior:
+  scaleUp:
+    policies:
+    - type: Percent
+      value: 900
+      periodSeconds: 10
+```
+
+It indicates that up to nine times the current number of Pods can be added every ten seconds. In actual tests, it happens that the scale-out is slow when the threshold is greatly exceeded.
+
+Generally, it's due to the calculation period and metric latency:
+- There is a period for calculating the desired number of replicas, which defaults to 15 seconds (determined by the `--horizontal-pod-autoscaler-sync-period` parameter of `kube-controller-manager`).
+- During each calculation, the corresponding metric API is used to get the current monitoring metric value, which is usually not returned in real time. For the TKE service, monitoring data is reported once every minute. For self-built Prometheus and Prometheus Adapter, monitoring data is updated according to the monitoring data scrape interval, and the `--metrics-relist-interval` parameter in Prometheus Adapter determines the monitoring metric refresh period (which can be queried in Prometheus); the sum of the two is the longest period for a monitoring data update.
+
+Generally, extreme HPA sensitivity is not necessary, and a certain latency is acceptable. In highly sensitive scenarios, you can use Prometheus to shorten the monitoring metric scrape interval and `--metrics-relist-interval` of the Prometheus Adapter.
+
+## Summary
+
+This document describes how to use new HPA features to control the scaling speed so as to meet the requirements in different scenarios. It also provides some common scenarios and configuration samples that can be used as needed.
 
 ## References
 
-- [HPA Introduction](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
-- [Configurable Scale Up/Down Velocity for HPA](https://github.com/kubernetes/enhancements/tree/master/keps/sig-autoscaling/853-configurable-hpa-scale-velocity)
+- [Horizontal Pod Autoscaling](https://kubernetes.io/zh-cn/docs/tasks/run-application/horizontal-pod-autoscale/)
+- [Configurable scale up/down velocity for HPA](https://github.com/kubernetes/enhancements/tree/master/keps/sig-autoscaling/853-configurable-hpa-scale-velocity)

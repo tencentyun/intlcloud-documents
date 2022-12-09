@@ -10,7 +10,6 @@ This document describes how to connect to IM offline push. The plugin has been e
 
 If offline push is not required by your application or supported in your business scenarios, see [Online Push - Creating a Local Message Notification](#online_push).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/58f36a132a9fa46b84b12070777b8e9b.png)
 
 If vendor offline push has been configured for your application, you only need to enter the vendor information in the console as instructed in [step 1](#step_1) and [step 5](#step_5) and report the certificate ID after logging in to the application.
 
@@ -45,17 +44,17 @@ You need to apply for a vendor developer account (enterprise verification is usu
 1. [Apply for an Apple push certificate](https://intl.cloud.tencent.com/document/product/1047/34346).
 2. Host the obtained production and development environment certificates in the IM console.
 3. Go to the [IM console > Basic Configuration](https://console.cloud.tencent.com/im/detail) and click **Add iOS Certificate** on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/ad46b861cc6fa4ee40abd4a96b51f6ec.png)
+
 
 ### Android
 #### Google FCM
 1. Go to the [Google Firebase console](https://console.firebase.google.com/) and create a project. You don't need to enable Google Analytics.
-![](https://qcloudimg.tencent-cloud.cn/raw/80c3108f8685752170721ac51052aead.png)
+
 2. Click the **Your apps** card to enter the application configuration page.
 3. Click <img src="https://main.qcloudimg.com/raw/0d062411405553c9fae29f8e0daf02ad.png"  style="margin:0;"> on the right of **Project Overview**, select **Project settings** > **Service accounts**, and click **Generate new private key** to download the private key file.
-![](https://qcloudimg.tencent-cloud.cn/raw/36e05b4e490b467e88ad67d14691fd60.png)
+
 4. Host the private key file in the IM console. Go to the [IM console > Basic Configuration](https://console.cloud.tencent.com/im/detail) and click **Add Certificate** on the right to pop up the **Add Android Certificate** window. Then select **Google** and **Upload certificate**.
-![](https://qcloudimg.tencent-cloud.cn/raw/49fa763a1be0f9ffe645d88b9710e595.png)
+
 
 #### OPPO
 
@@ -63,7 +62,7 @@ You need to apply for a vendor developer account (enterprise verification is usu
 Register a developer account, create an application, and activate the OPPO PUSH service. For operation details, see [How to enable OPPO PUSH](https://open.oppomobile.com/wiki/doc#id=10195).
 
 On the [OPPO PUSH Platform](https://push.oppo.com/), select **Configuration Management** > **Application Configuration** to view the application details and record the `AppId`, `AppKey`, `AppSecret`, and `MasterSecret`.
-![](https://qcloudimg.tencent-cloud.cn/raw/698b834d09e9baf6c19c6537a8763d0f.png)
+
 
 ##### Creating a message channel
 
@@ -73,14 +72,14 @@ Create a channel in **Configuration Management > Create Channel**. **ChannelID**
 
 >?OPPO imposes daily limits on public channels. For communication messages, we recommend you apply for private channels as instructed in [OPPO documentation](https://open.oppomobile.com/new/developmentDoc/info?id=11227).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/30fb8bb209c0201bdc769a17a8e4997a.png)
+
 
 ##### Uploading a certificate to the console
 
 1. Go to the [IM console > Basic Configuration](https://console.cloud.tencent.com/im/detail) and click **Add Certificate** on the right to pop up the **Add Android Certificate** window. Select **OPPO** and enter other information.
 2. Enter the dedicated channel ID applied for communication in the OPPO console for `ChannelID`. A private channel is recommended to avoid exceeding the daily push limit.
 3. Select **Open specified in-app page** > **activity** for the opening method and enter `com.tencent.flutter.tim_ui_kit_push_plugin.pushActivity.OPPOMessageActivity`.
-![](https://qcloudimg.tencent-cloud.cn/raw/ff66657822e2701362abe7a5be334ae5.png)
+
 
 #### Mi
 ##### Activating the service
@@ -89,18 +88,18 @@ Visit the [Mi open platform website](https://dev.mi.com/console/), register an a
  >?The verification process takes about two days. Please read the [Mi Push Service Activation Guide](https://dev.mi.com/console/doc/detail?pId=68) in advance to avoid any effect on your connection progress.
 
 On the Mi Developer platform, create an application and select **Application Services** > **PUSH Service**.
-![](https://qcloudimg.tencent-cloud.cn/raw/2aa17cf6aea8514de9763a33b4fa7b03.png)
+
 
 Once the app is created, you can view detailed app information under the app details.
 
 Record the **primary package name**, **AppID**, **AppSecret** information.
-![](https://qcloudimg.tencent-cloud.cn/raw/8c4835627da4f38349e15d67e6e3c80f.png)
+
 
 ##### Uploading a certificate to the console
 
 Go to the [IM console > Basic Configuration](https://console.cloud.tencent.com/im/detail) and click **Add Certificate** on the right to pop up the **Add Android Certificate** window. Select **Mi**, enter other information, and set **Response after Click** to **Open application**.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/b109fae4ecba8b0aa38d992198580731.png)
+
 
 #### vivo
 
@@ -112,7 +111,7 @@ Visit the [vivo open platform official website](https://dev.vivo.com.cn/home) an
 1. Log in to the vivo Developers platform, go to the management center, click **Message Push** > **Create** > **Test Push**, and create a Vpush application.
 
 2. View the application details and record the `APP ID`, `APP key`, and `App secret`.
-![](https://qcloudimg.tencent-cloud.cn/raw/99c58bfb762f5096f45ed374e70928c2.png)
+
 
 >?Vpush can only be used after the application launch. If you need to debug vivo devices during development, enable the test mode as instructed in [Debugging on vivo](#vivotest).
 
@@ -122,7 +121,7 @@ Go to the [IM console > Basic Configuration](https://console.cloud.tencent.com/i
 
 - **Response after Click**: Select **Open specified in-app page**.
 - **In-app page**: Set it to `tencent_im_push://${your package name}/message?#Intent;scheme=tencent_im_push;launchFlags=0x4000000;end`.
-![](https://qcloudimg.tencent-cloud.cn/raw/8ed0028457a4440244962fbdf6d42026.png)
+
 
 #### Huawei
 
@@ -130,11 +129,11 @@ Go to the [IM console > Basic Configuration](https://console.cloud.tencent.com/i
 
 1. Go to the [Huawei Developer Platform](http://developer.huawei.com). Register a developer account and log in to the platform. For more information, see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). If you are registering a new account, identity verification is required.
 2. Create an application on the Huawei Push platform. For more information, see [Creating an App](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app). Note down the **AppID** and **AppSecret**.
-![](https://main.qcloudimg.com/raw/2c02a68f87c37e5ac3680ab5d832b910.png)
+
 
 
 >?If you cannot find `SecretKey` in **App information** > **My apps**, go to **Project settings** > **General information** to view `Client secret`.
-> ![](https://qcloudimg.tencent-cloud.cn/raw/b3a98c7f70f5f82f26d339d49d1cec47.png)
+
 
 ##### Configuring the SHA-256 certificate fingerprint
 
@@ -151,16 +150,16 @@ Get the SHA-256 certificate fingerprint as instructed in [Generating a Signing C
 ##### Getting the Huawei Push configuration file
 
 Log in to the Huawei Developer platform, go to **My Projects** > select a project > **Project Settings**, and download the latest configuration file `agconnect-services.json` of your Huawei application to the `android/app` directory.
-![](https://main.qcloudimg.com/raw/9929b0d6d8e6843f7d0109f0d5723128.png)
+
 
 
 ##### Enabling the push service
 
 On the Huawei Push platform, choose **All services** > **Push Kit** to go to the **Push Kit** page.
-![](https://main.qcloudimg.com/raw/6e1ba602c237ca5766e4f029f4a5f93d.png)
+
 
 On the **Push Kit** page, click **Enable now**. For more information, see [Enabling Services](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
-![](https://main.qcloudimg.com/raw/ab5255522ecb0030aea10d870553566a.png)
+
 
 ##### Uploading a certificate to the console
 
@@ -171,23 +170,23 @@ Set **Badge Parameter** to the `Activity` class of the Android application entry
 
 Set **Response after Click** to **Open application**.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/b73898900f7f5184c2f8fc088d9a3a0c.png)
+
 
 #### Meizu
 
 ##### Activating the service
 1. Go to the [Meizu Flyme platform](https://open.flyme.cn) and perform registration and developer verification.
- >?The verification process takes about three days. Read the [Meizu Flyme Push Connection Document](https://open-wiki.flyme.cn/doc-wiki/index#id?129) in advance to avoid any effect on your connection progress.
+ >?The verification process takes about three days. Read the [Meizu Flyme Push Connection Document](https://open.flyme.cn/docs?id=129) in advance to avoid any effect on your connection progress.
 
 2. Log in to the console of the Meizu Flyme platform, select **Service** > **Integrate Push Service** > **Push Backend**, and create a Meizu push application.
 3. View the application details and record the `App package name`, `App ID`, and `App Secret`.
 
- ![](https://main.qcloudimg.com/raw/d4ec7742c13579814761eb099dbfc8ea.png)
+
 
 ##### Uploading a certificate to the console
 1. Go to the [IM console > Basic Configuration](https://console.cloud.tencent.com/im/detail) and click **Add Certificate** on the right to pop up the **Add Android Certificate** window.
 2. Select **Meizu**, enter other information, and set **Response after Click** to **Open application**.
-![](https://qcloudimg.tencent-cloud.cn/raw/a24df4cdf8391853e589324a05c45c48.png)
+
 
 ## Using the Plugin to Run the Offline Push (Overview + Android)
 Install the IM for Flutter offline push plugin in your project:
@@ -195,11 +194,11 @@ Install the IM for Flutter offline push plugin in your project:
 flutter pub add tim_ui_kit_push_plugin
 ```
 
-Enable the push plugin in the plugin marketplace as instructed [here](https://intl.cloud.tencent.com/document/product/1047/48568).
+Enable the push plugin in the plugin marketplace.
 
 ### Step 1. Aggregate the class of constants[](id:step_1)
 1. After configuring the [connection preparations (vendor registration)](#firstone), go to the IM console > **Basic Configuration** to view the certificate ID allocated for your vendor channel application on the backend on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/d490ff0743604effa7f43f35c14668de.png)
+
 2. Instantiate the information and vendor channel account information into a static `PushAppInfo` class, which needs to be passed in later.
 3. You can configure the information of all the vendor push models that need to be connected in the class. You don't need to enter a complete constructor field. If you want to use a vendor platform, you need to enter the relevant field of the platform.
  ```Dart
@@ -264,7 +263,7 @@ dart pub global activate flutterfire_cli
 flutterfire configure
 ```
 4. The project will be associated with that created in Google Firebase:
-![](https://qcloudimg.tencent-cloud.cn/raw/21aa8a7fc710746e7fafd28178f1e047.png)
+
 Initialize the FirebaseAPP in the `main()` method.
 ```Dart
 WidgetsFlutterBinding.ensureInitialized();
@@ -326,7 +325,7 @@ allprojects {
 ```
 
 4. Log in to the Huawei Developer platform, go to **My Projects** > select a project > **Project Settings**, and download the latest configuration file `agconnect-services.json` of your Huawei application to the `android/app` directory.
-![](https://main.qcloudimg.com/raw/9929b0d6d8e6843f7d0109f0d5723128.png)
+
 
 ##### Importing the HMS SDK Gradle plugin at the application layer
 
@@ -539,7 +538,6 @@ We recommend you use the `setBadgeNum( int badgeNum )` method in the plugin befo
 
 #### Sending messages
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e760f7b686930d6de4662eeb630f052f.png)
 
 ##### Sending a message through the SDK
 If you connect to the IM SDK on your own, configure the `OfflinePushInfo offlinePushInfo` field when sending a message.
@@ -665,7 +663,7 @@ Steps not mentioned here are the same as those for Android.
 ### Step 2. Add the iOS project configuration to the code
 1. Use Xcode to open your project and configure the **Signing Profile** that supports **Push** in **Runner**>**Target**.
 2. Add the `Push Notification` capability in the top-left corner.
-![](https://qcloudimg.tencent-cloud.cn/raw/e1be71c63e505281aed6c7eb61c587ac.png)
+
 3. Run `flutter pub get` to install the plugin, enter the iOS directory, and run `pod install` to install the dependency library.
 4. Add the following code to the `didFinishLaunchingWithOptions` method of the `ios/Runner/AppDelegate.swift` file in the iOS project.
 Objective-C:
@@ -700,7 +698,7 @@ cPush.init(
 
 ### Step 6. Configure offline push upon message sending and redirect upon notification click
 #### Sending messages
-![](https://qcloudimg.tencent-cloud.cn/raw/46f036ed57228b9c5df5b05bfa125e2c.png)
+
 
 ##### Sending a message through the SDK
   If you connect to the IM SDK on your own, configure the `OfflinePushInfo offlinePushInfo` field when sending a message.
@@ -729,19 +727,19 @@ TIMUIKitChat(
 ### Offline push check
 
 You can use the [Push Message Tool](https://console.cloud.tencent.com/im/tool-push-check) to detect the terminal status/certificate reporting and send test messages.
-![](https://qcloudimg.tencent-cloud.cn/raw/0ef072fe382b3b84e8602ae9d637d773.png)
+
 ### Debugging on vivo[](id:vivotest)
 vivo requires that an application not have the permission to use its push capabilities before launch on vivo APP STORE. For more information, see [here](https://dev.vivo.com.cn/documentCenter/doc/151).
 During development, you need to perform debugging in the following steps:
 1. Get the `regId` (or device token) of the test device (vivo phone).
 2. Add the device as the test device in the vivo console.
-![](https://qcloudimg.tencent-cloud.cn/raw/c2db1213278de5d43558046efc8e4b23.png)
+
 3. Push test messages to the device as instructed [here](https://dev.vivo.com.cn/documentCenter/doc/363#w2-98542835).
 4. As you cannot change the push mode to the test mode for the test push in the IM console or the message push through the IM SDK, you need to use our JavaScript script that can trigger test messages, which can be downloaded [here](https://tuikit-1251787278.cos.ap-guangzhou.myqcloud.com/testvivo.js).
 5. After the download, enter the vivo parameters based on the five comment rows at the top. By default, `ext` is `conversationID`. If you need other fields when processing the callback for notification click (see [step 6](#step_6)), you can modify the JavaScript code.
-![](https://qcloudimg.tencent-cloud.cn/raw/3f564ffd8f34feda3c87f065b9d2dfa0.png)
+
 6. Run `npm install axios`, `npm install js-md5`, and then `node testvivo`, and the push result will be displayed in the last row of the log.
-![](https://qcloudimg.tencent-cloud.cn/raw/27913289ee4d2e14f697923176775cc0.png)
+
 7. At this point, the test terminal can receive the test message push. After the message is clicked, the callback at the Dart layer will be triggered.
 
 ## Vendor's Push Restrictions
@@ -813,7 +811,7 @@ Install the IM for Flutter push plugin in your project:
 flutter pub add tim_ui_kit_push_plugin
 ```
 
-Enable the push plugin in the plugin marketplace as instructed [here](https://intl.cloud.tencent.com/document/product/1047/48568).
+
 
 #### Android
 
@@ -900,7 +898,7 @@ cPush.createNotificationChannel(
 
 This API requires `title`, `body`, and `ext` for the redirect. You can parse the `V2TimMessage` as needed to generated them.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c9156e701df6aabebc78a3823c985ed5.png)
+
 
 To facilitate the redirect, view the `displayDefaultNotificationForMessage` code for the `ext` generation rule.
 

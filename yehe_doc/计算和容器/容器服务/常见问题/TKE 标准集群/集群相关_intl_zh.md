@@ -18,8 +18,9 @@
 
 
 ### 容器服务如何设置节点的自定义 Kubelet 参数？
-- 该功能白名单形式开放，您可以通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请使用。
-- 在 [**新增节点**](https://intl.cloud.tencent.com/document/product/457/30652) 页面、**添加已有节点**页面、**[新增节点池](https://intl.cloud.tencent.com/document/product/457/35901)** 页面设置节点的自定义 Kubelet 参数。
+- 该功能白名单形式开放，您可以通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请使用。
+- 在 [**新增节点**](https://intl.cloud.tencent.com/document/product/457/30652) 页面、**添加已有节点**页面、**[新增节点池](https://intl.cloud.tencent.com/document/product/457/35901)** 页面设置节点的自定义 Kubelet 参数。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/d676341888ade202530b6df9e6d1deaa.png)
 
 
 ### 容器服务创建集群如何设置自定义 Kubernetes 组件参数？
@@ -33,8 +34,8 @@ TKE 为您提供集群完全自主可控的 Master 独立部署模式。该模�
  
 
 
-### TKE 弹性集群创建后支持修改可用区吗？	
-容器服务 TKE 的弹性集群创建成功后，是不支持更换或者在添加其他可用区的。
+### TKE  Serverless 集群创建后支持修改可用区吗？	
+容器服务 TKE 的 Serverless 集群创建成功后，是不支持更换或者在添加其他可用区的。
 
 
 ### TKE 集群支持获取客户端 ipv6 地址吗？
@@ -45,21 +46,13 @@ TKE 为您提供集群完全自主可控的 Master 独立部署模式。该模�
 
 TKE 容器服务器不支持将您现在的集群进行导出。
 
-
-
-
-
 ### TKE 集群创建提示需完成节点异常检测 plus 参数设置
 
 创建集群提示需要完成节点异常检测 plus 参数设置，需要您检查下是否有勾选 NodeProblemDetectorPlus 组件，如已勾选，则需要配置相关参数。组件详情见 [NodeProblemDetectorPlus 说明](https://intl.cloud.tencent.com/document/product/457/38784)。
->? 如暂无法评估是否需要使用此组件，可以取消勾选，直接创建集群。后续如需使用相关功能，在组件管理中再次操作安装即可。
-
- 
+>? 如暂无法评估是否需要使用此组件，可以取消勾选，直接创建集群。后续如需使用相关功能，在组件管理中再次操作安装即可。 
 
 ### TKE 集群如何启用 IPVS?
-具体操作可参考 [集群启用 IPVS](https://intl.cloud.tencent.com/document/product/457/30641)。
-
- 
+具体操作可参考 [集群启用 IPVS](https://intl.cloud.tencent.com/document/product/457/30641)。 
 
 ### 容器服务如何查看集群访问凭证？
 
@@ -67,27 +60,31 @@ TKE 容器服务器不支持将您现在的集群进行导出。
 2. 单击需要连接的集群 ID/名称，进入集群详情页。
 3. 选择左侧导航栏中的**基本信息**，即可在“基本信息”页面中查看“集群 APIServer 信息”模块中该集群的访问地址、外网/内网访问状态、Kubeconfig 访问凭证内容等信息。
 
-
-
 ### 容器服务怎么才能添加其他账号名下的服务器到集群？	
 目前不支持将其他账号下的云服务器添加到集群，当前仅支持添加同一 VPC 下的云服务器。
 
 
+### 使用 K8S 官方 SDK 连接集群 API Server 报错 certificate verify failed: self signed certificate 如何处理？
 
-
-
-
-
+K8S 集群的 apiserver 所使用的 tls 证书一般都是自签名证书，在 python 的低版本 request 库和 nodejs 的默认设置中，不信任自签名的证书，因此会报错，可通过如下方案解决：
+1. 新增跳过服务端校验的配置。
+若使用 nodejs sdk，需设置环境变量：
+```
+export NODE_TLS_REJECT_UNAUTHORIZED=“0”；
+```
+若使用 python sdk，需在 kubeconfig 里设置 
+```
+clusters:
+- cluster:
+    insecure-skip-tls-verify: true
+```
+2. 将自签名证书颁发机构根证书的公钥放到系统的受信根证书列表中。
 
 ## 集群网络常见问题
 
 
 ### 自定义 Webhook 开发时，针对集群网络需要注意什么？
 在进行自定义 Webhook 开发时，不要拦截 kube-system namespace 下 Pod，否则会导致集群网络使用异常。
-
-
-
-
 
 ## 扩展云服务器常见问题
 

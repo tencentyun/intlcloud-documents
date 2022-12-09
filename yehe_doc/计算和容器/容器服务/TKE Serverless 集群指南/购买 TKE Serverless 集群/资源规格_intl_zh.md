@@ -1,7 +1,7 @@
-## 概述
+## 概述 
 使用 TKE Serverless 集群，您无需关心集群节点，但为了合理分配资源和准确核算，您需在部署工作负载时指定 Pod 申请的资源规格。腾讯云会根据您指定的规格为工作负载分配计算资源，也会根据此规格进行费用核算。
 
-当您使用 Kubernetes API 或 Kubectl 创建 TKE Serverless 集群工作负载时，可以通过 Annotation 指定资源规格。如果不指定，EKS 会根据工作负载设置的容器 Request、Limit 等参数进行计算。详情请参考 [指定资源规格](https://intl.cloud.tencent.com/document/product/457/36161)。
+当您使用 Kubernetes API 或 Kubectl 创建 TKE Serverless 集群工作负载时，可以通过 Annotation 指定资源规格。如果不指定，TKE Serverless 集群会根据工作负载设置的容器 Request、Limit 等参数进行计算。详情请参考 [指定资源规格](https://intl.cloud.tencent.com/document/product/457/36161)。
 
 >!
 > - 资源规格是 Pod 内容器可使用的最大资源量。
@@ -42,19 +42,27 @@ TKE Serverless 集群在所有支持 CPU 资源类型的地域提供以下 CPU P
 TKE Serverless 集群提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对应不同的 CPU、内存选项，请在创建工作负载时根据您的实际需求选择最合适规格，并进行资源分配。
 >!如果您需要通过 yaml 来创建、管理和使用 GPU 的工作负载，请参考 [Annotation 说明](https://intl.cloud.tencent.com/document/product/457/36162)。
 
-| GPU 型号 | GPU/卡 | CPU/核 | 内存/GiB |
-| ------- | ------- | ------- | ------- |
-| Tesla V100-NVLINK-32G | 1 | 8 | 40 |
-| Tesla V100-NVLINK-32G | 2 | 18 | 80 |
-| Tesla V100-NVLINK-32G | 4 | 36 | 160 |
-| Tesla V100-NVLINK-32G | 8 | 72 | 320 |
-| 1/4 NVIDIA T4 | 1 | 4 | 20 |
-| 1/2 NVIDIA T4 | 1 | 10 | 40 |
-| NVIDIA T4 | 1 | 8 | 32 |
-| NVIDIA T4 | 1 | 20 | 80 |
-| NVIDIA T4 | 1 | 32 | 128 |
-| NVIDIA T4 | 2 | 40 | 160 |
-| NVIDIA T4 | 4 | 80 | 320 |
+| GPU 型号                   | GPU/卡 | CPU/核 | 内存/GiB |
+| :------------------------- | :----- | :----- | :------- |
+| NVIDIA Tesla V100 - 1颗    | 1      | 8      | 40       |
+| NVIDIA Tesla V100 - 2颗    | 2      | 18     | 80       |
+| NVIDIA Tesla V100 - 4颗    | 4      | 36     | 160      |
+| NVIDIA Tesla V100 - 8颗    | 8      | 72     | 320      |
+| 1/4 NVIDIA T4 - 1/4颗      | 1      | 4      | 20       |
+| 1/2 NVIDIA T4 - 1/2颗      | 1      | 10     | 40       |
+| NVIDIA T4 - 1颗            | 1      | 8      | 32       |
+| NVIDIA T4 - 1颗            | 1      | 20     | 80       |
+| NVIDIA T4 - 1颗            | 1      | 32     | 128      |
+| NVIDIA T4 - 2颗            | 2      | 40     | 160      |
+| NVIDIA T4 - 4颗            | 4      | 80     | 320      |
+| NVIDIA A10 - PNV4 - 1颗    | 1      | 28     | 116      |
+| NVIDIA A10 - PNV4 - 2颗    | 2      | 56     | 232      |
+| NVIDIA A10 - PNV4 - 4颗    | 4      | 112    | 466      |
+| NVIDIA A10 - PNV4 - 8颗    | 8      | 224    | 932      |
+| NVIDIA A10 - GNV4 - 1颗    | 1      | 12     | 44       |
+| NVIDIA A10 - GNV4v - 1/4颗 | 1      | 6      | 24       |
+| NVIDIA A10 - GNV4v - 1/2颗 | 1      | 14     | 58       |
+| NVIDIA A10 - GNV4v - 1颗   | 1      | 28     | 116      |
 
 
 

@@ -1,10 +1,10 @@
-## Installing NginxIngress Add-On[](id:Nginx-ingress)
+## Installing NginxIngress Component[](id:Nginx-ingress)
 
 
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and click **Cluster** on the left sidebar.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and click **Cluster** in the left sidebar.
 2. On the **Cluster management** page, click the ID of the target cluster to go to the cluster details page.
-3. On the left sidebar, click **Add-On Management**.
+3. In the left sidebar, click **Add-on management** to go to the “Add-on list” page.
 4. On the **Add-On List** page, select **Create**. On the **Create Add-on** page, select NginxIngress.
 5. Click **Done**. You can view the **Addon Details** in **Services and Routes** > **NginxIngress**.
 
@@ -14,8 +14,6 @@ You can use the following installation methods to install Nginx-ingress in TKE b
 - [Use DaemonSet to deploy Nginx-ingress in the specified node pool](#DaemonSet)
 - [Use Deployment + HPA mode and specify the scheduling rule for deployment](#Deployment+HPA)
 - [Connect the Nginx frontend to a load balancer for deployment](#LB)
-
-
 
 
 ### Using DaemonSet to deploy Nginx-ingress in specified node pool (recommended)[](id:DaemonSet)
@@ -32,8 +30,14 @@ Install Nginx-ingress in the following steps:
 ![](https://qcloudimg.tencent-cloud.cn/raw/315acb32b566355751c3797e698fd081.png)
 4. In the pop-up window, select **Specify DaemonSet node pool for deployment** from the deployment options and set other parameters as needed as shown below:
 ![](https://main.qcloudimg.com/raw/fa11343e51e9643bc1fe90d4e2fbb100.png)
- - Node Pool: Configure a node pool.
- - Nginx Configuration: You need to set **Request** to a value lower than the model configuration of the node pool (as the nodes have reserved resources). **Limit** is optional.
+ - Node Pool: configure a node pool.
+ - Nginx Configuration: you need to set **Request** to a value lower than the model configuration of the node pool (as the nodes have reserved resources). **Limit** is optional.
+ - Image Tag:
+     - For Kubernetes clusters on v1.20 or earlier, the Nginx Ingress add-on is on v1.0.0, and the Nginx instance image can only be on v41.0.
+     - For Kubernetes clusters on v1.20 or earlier, the Nginx Ingress add-on is on v1.1.0, and the Nginx instance image can only be on v41.0 or v49.3.
+     - For Kubernetes clusters on v1.22 or later, the Nginx Ingress add-on can only be on v1.1.0, and the Nginx instance image can only be on v1.1.3.
+>? For more information on Nginx instance versions, visit [GitHub](https://github.com/kubernetes/ingress-nginx). For detailed directions on how to upgrade a cluster, see [Upgrading a Cluster](https://intl.cloud.tencent.com/document/product/457/30640). For detailed directions on how to upgrade the Nginx Ingress add-on, see [Add-On Lifecycle Management](https://intl.cloud.tencent.com/document/product/457/38705).
+>
 4. Click **OK**.
 
 
@@ -47,10 +51,16 @@ If you use the Deployment + HPA mode to deploy Nginx-ingress, you can configure 
 1. Set labels for the nodes where Nginx is to be deployed in the cluster. For detailed directions, see [Setting a Node Label](https://intl.cloud.tencent.com/document/product/457/30657).
 2. [Install the Nginx-ingress component](#Nginx-ingress) in the cluster.
 3. On the details page of the newly created Nginx-ingress component, click **Add Nginx Ingress Instance** (a cluster can have multiple Nginx instances).
-4. In the pop-up window, select **Custom Deployment + HPA** for **Deploy Modes** and set other parameters as needed.
+4. In the pop-up window, select **Custom Deployment + HPA** for **Deploy Modes** and set other parameters as needed as shown below:
 ![](https://main.qcloudimg.com/raw/fa11343e51e9643bc1fe90d4e2fbb100.png)
- - Node Scheduling Policy: Specify a policy as needed.
- - Nginx Configuration: You need to set **Request** to a value lower than the model configuration of the node pool (as the nodes have reserved resources). **Limit** is optional.
+ - Node Scheduling Policy: specify a policy as needed.
+ - Nginx Configuration: you need to set **Request** to a value lower than the model configuration of the node pool (as the nodes have reserved resources). **Limit** is optional.
+ - Image Tag:
+     - For Kubernetes clusters on v1.20 or earlier, the Nginx Ingress add-on is on v1.0.0, and the Nginx instance image can only be on v41.0.
+     - For Kubernetes clusters on v1.20 or earlier, the Nginx Ingress add-on is on v1.1.0, and the Nginx instance image can only be on v41.0 or v49.3.
+     - For Kubernetes clusters on v1.22 or later, the Nginx Ingress add-on can only be on v1.1.0, and the Nginx instance image can only be on v1.1.3.
+>? For more information on Nginx instance versions, visit [GitHub](https://github.com/kubernetes/ingress-nginx). For detailed directions on how to upgrade a cluster, see [Upgrading a Cluster](https://intl.cloud.tencent.com/document/product/457/30640). For detailed directions on how to upgrade the Nginx Ingress add-on, see [Add-On Lifecycle Management](https://intl.cloud.tencent.com/document/product/457/38705).
+>
 5. Click **OK**.
 
 
@@ -73,7 +83,7 @@ Currently, Services in LoadBalancer mode in TKE are implemented based on NodePor
 - The forwarding path is relatively long: After reaching NodePort, traffic goes through the load balancer within Kubernetes and is then forwarded through iptables or IPVS to Nginx. This increases the network time.
 - Passing through NodePort will necessarily cause SNAT. If traffic is too concentrated, port exhaustion or conntrack insertion conflicts can easily occur, leading to packet loss and causing some traffic exceptions.
 - The NodePort of each node also serves as a load balancer. If CLB is bound to the NodePorts of a large number of nodes, the load balancing status will be distributed among each node, which can easily cause a global load imbalance.
-- CLB carries out health check on NodePort, and health check packets are ultimately forwarded to the Pods of Nginx-ingress. If the CLB is bound to too many nodes, and the Nginx-ingress instance has a small number of Pods, the health check packets will put immense pressure on Nginx-ingress.
+- CLB carries out a health check on NodePort, and health check packets are ultimately forwarded to the Pods of Nginx-ingress. If the CLB is bound to too many nodes, and the Nginx-ingress instance has a small number of Pods, the health check packets will put immense pressure on the Nginx-ingress.
 
 
 
@@ -90,12 +100,13 @@ Note that when you use HostNetwork, to avoid port listening conflicts, Nginx-ing
 
 ### Nginx-ingress parameter setting method
 
-In the details page of Nginx-ingress add-on, you can select an Nginx-ingress instance to edit YAML in **Nginx Configuration** tab.
+In the details page of Nginx-ingress addon, you can select an Nginx-ingress instance to edit YAML in **Nginx Configuration** tab.
 >! By default, Nginx won't restart after parameter configuration, and it will take a short while for the parameters to take effect.
+>
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and click **Cluster** on the left sidebar.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and click **Cluster** in the left sidebar.
 2. On the **Cluster management** page, click the ID of the target cluster to go to the cluster details page.
-3. On the left sidebar, click **Add-On Management**.
+3. In the left sidebar, click **Add-on management** to go to the “Add-on list” page.
 4. Click **Update Nginx Configuration** on the right of the target component to enter the **Nginx Configuration** page.
 5. Select the target Nginx-ingress instance and click **Edit YAML**.
 6. On the **Update ConfigMap** page, edit the YAML file and click **Done**.
@@ -122,7 +133,6 @@ data:
 >- Do not modify `access-log-path `, `error-log-path`, and `log-format-upstream`; otherwise, CLS log collection will be affected.
 >- You can configure different parameters based on your business needs as instructed in [ConfigMaps](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/).
 >
-
 
 
 

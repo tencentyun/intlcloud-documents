@@ -1,6 +1,6 @@
 
 
-本文介绍超级节点特有的 Annotation 与示例，该 Annotation 针对 TKE 标准集群和 TKEServerless 集群内超级节点上运行的 Pod 生效。
+本文介绍超级节点特有的 Annotation 与示例，该 Annotation 针对 TKE 标准集群和 TKE Serverless 集群内超级节点上运行的 Pod 生效。
 
 ## Annotation 使用方法
 ### 工作负载里添加 Pod 注解
@@ -61,11 +61,11 @@ eks.tke.cloud.tencent.com/mem: '16Gi' # 内存一定要以 Gi 为单位，以 G 
 
 ### 指定系统盘大小
 
-超级节点上运行的 Pod 默认免费提供20G系统盘，系统盘生命周期与 Pod 的生命周期一致，可满足通用场景的系统盘资源诉求，若特殊场景下用户需要额外扩容系统盘大小，支持通过 Annotation 来声明所需系统盘的大小，注意，此时超过20G的部分将按照 CBS 高性能云盘按量计费的刊例价进行计费，计费详情见 [云硬盘定价说明](https://intl.cloud.tencent.com/pricing/cbs)。系统盘大小注解示例如下：
+超级节点上运行的 Pod 默认免费提供20G系统盘，系统盘生命周期与 Pod 的生命周期一致，可满足通用场景的系统盘资源诉求，若特殊场景下用户需要额外扩容系统盘大小，支持通过 Annotation 来声明所需系统盘的大小，注意，此时超过20G的部分将按照 CBS 高性能云盘按量计费的刊例价进行计费，计费详情见 [云硬盘定价说明](https://buy.intl.cloud.tencent.com/price/cbs)。系统盘大小注解示例如下：
 ```yaml
 eks.tke.cloud.tencent.com/root-cbs-size: '50'  # 指定系统盘大小，超过20 Gi 额外计费
 ```
-
+>? 若使用镜像缓存时需要调整盘大小，请参考 [镜像缓存Annotation](https://intl.cloud.tencent.com/document/product/457/36162)。
 
 ### 规格自动升配
 
@@ -116,7 +116,7 @@ eks.tke.cloud.tencent.com/retain-ip-hours: '48' # 保留 IP 的最大时长（�
 如需绑定 EIP，可在 Pod 上添加如下注解：
 
 ```yaml
-eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # 值可以为空串，表示启用 EIP 并使用默认配置；也可以用创建 EIP 接口的 json 参数，详细参数列表参考 https://cloud.tencent.com/document/api/215/16699#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0，本例中的参数表示 EIP 是按量付费，且带宽上限为 50M。
+eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # 值可以为空串，表示启用 EIP 并使用默认配置；也可以用创建 EIP 接口的 json 参数，详细参数列表参考 https://www.tencentcloud.com/document/api/215/16699，本例中的参数表示 EIP 是按量付费，且带宽上限为 50M。
 ```
 
 >! 非带宽上移的账号（传统账户），不支持绑定 EIP，若为非带宽上移账户，可 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进行账户升级。

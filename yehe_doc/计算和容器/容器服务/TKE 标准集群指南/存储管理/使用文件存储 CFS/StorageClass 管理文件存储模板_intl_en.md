@@ -17,13 +17,13 @@ When creating a StorageClass, you need to set the CFS subnet to ensure that ever
 When creating a StorageClass, you need to configure a suitable permission group for the file system. We recommend you create a permission group in advance as instructed in [Managing Permissions](https://intl.cloud.tencent.com/document/product/582/10951).
 
 #### 4. Get the file system FSID
-1. In the [CFS console](https://console.cloud.tencent.com/cfs/fs?rid=1), click the ID of the target file system to enter its details page.
-2. Select the **Mount Target Info** tab and get the file system `FSID` next to **Mount under Linux**, such as `2qray8xj`.
+1. In the [CFS console](https://console.cloud.tencent.com/cfs/fs?rid=1), click the ID of the file system for which you want to obtain the FSID. The details page of the file system appears.
+2. Select the **Mount target info** tab and get the file system FSID next to **Mount to Linux** such as `a43qadkl` as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/3d1a7cbdcae37e2b4f168a8898203c36.png)
 >? For better stability, when you create a PV by YAML and use the NFSv3 protocol for mounting, you need to specify the FSID of the file system to be mounted.
 
 
-## Console Operation Guide
+## Console
 
 [](id:create)
 ### Creating a StorageClass
@@ -50,19 +50,19 @@ When creating a StorageClass, you need to configure a suitable permission group 
   </tr>
   <tr>   
     <td>Provisioner</td>
-    <td>**Provisioner** can be <b>CBS (CSI)</b> or <b>Cloud File Storage</b>. Here, <b>Cloud File Storage</b> is selected.</td>
+    <td><b>Provisioner</b> can be <b>CBS (CSI)</b> or <b>Cloud File Storage</b>. Here, <b>Cloud File Storage</b> is selected.</td>
   </tr>
   <tr>
     <td>Instance creation mode</td>
     <td>It can be <b>New instance</b> or <b>Shared instance</b>.<ul><li>New instance: During mounting, a CFS instance is created for each PVC by default.</li><li>Shared instance: During mounting, PVCs correspond to different sub-directories of the same CFS instance. The shared CFS instance and its sub-directories are created automatically by the system.</li>
 		<dx-alert infotype="explain" title="">The <b>shared instance</b> mode is supported by the CFS-CSI add-on on v1.0.1 or later. Upgrade your add-on in time. Use instructions are as follows:
-<li>For a StorageClass in shared instance mode, the **Reclaim policy** is **Retain**.</li>
+<li>For a StorageClass in shared instance mode, the <b>Reclaim policy</b> is <b>Retain</b>.</li>
 <li>When the StorageClass is used to dynamically create a PVC for the first time, a CFS instance will be created by default, along with its sub-directories to implement isolated mounting of PVCs.</li>
 <li>CFS instances created by different StorageClasses in shared instance mode are different. We recommend you limit the number of instances.</li></ul>
 </dx-alert></td>
   </tr>
   <tr>
-    <td>Availability zone</td>
+    <td>AZ</td>
     <td>In the current region, select an AZ that supports CFS. Different AZs in the same region support different storage classes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/582/45916">Recommended Regions</a><a href="https://intl.cloud.tencent.com/document/product/582/45916"> </a>.</td>
   </tr>
   <tr>
@@ -70,38 +70,39 @@ When creating a StorageClass, you need to configure a suitable permission group 
     <td>Set the subnet range of the CFS in the current AZ.</td>
   </tr>
   <tr>
-    <td>Storage type</td>
+    <td>Storage Type</td>
     <td>CFS provides <b>Standard Storage</b> and <b>Performance Storage</b>. Different AZs in the same region support different storage types. Select one as needed. <ul><li>Standard Storage: It features cost-effectiveness and large capacity, making it suitable for scenarios such as data backup, file sharing, and log storage.</li><li>Performance Storage: It features high throughput and IOPS, making it suitable for IO-intensive workloads such as high-performance computing, media asset rendering, machine learning, DevOps, and OA.</li></ul></td>
   </tr>
   <tr>
     <td>File service protocol</td>
-    <td>It is **NFS** by default to allow for pass-through access to files and file systems on the server.</td>
+    <td>It is <b>NFS</b> by default to allow for pass-through access to files and file systems on the server.</td>
   </tr>
   <tr>
     <td>Protocol version</td>
     <td>We recommend you use NFSv3 for better performance. If your application relies on file locking (that is, multiple CVM instances are needed to edit a file), use NFSv4 for mounting.</td>
   </tr>
   <tr>
-    <td>Permission group</td>
-    <td>Configure a permission group for the file system, which is used to manage the access and read/write permissions of clients that access the file system on the same network. Select a permission group as needed. If no such permission group is available, create one on the <a href="https://console.cloud.tencent.com/cfs/permission">Permission Group</a> page.</td>
+    <td>Permission Group</td>
+    <td>Configure a permission group for the file system, which is used to manage the access and read/write permissions of clients that access the file system over the same network. Select a permission group as needed. If no such permission group is available, create one on the <a href="https://console.cloud.tencent.com/cfs/permission">Permission Group</a> page.</td>
   </tr>
   <tr>
     <td>Reclaim policy</td>
     <td>It can be <b>Delete</b> or <b>Retain</b>. The latter is recommended out of data security considerations. <ul><li>Delete: If a PV is dynamically created through a PVC, the PV and storage instance bound to the PVC will be automatically terminated when the PVC is terminated.</li><li>Retain: If a PV is dynamically created through a PVC, the PV and storage instance bound to the PVC will be retained when the PVC is terminated.</li></ul></td>
   </tr>
   <tr>
-    <td>Tag</td>
-    <td>Select the cloud tag to be bound to the CFS instance. The tag will be automatically inherited by the CFS instance that is created dynamically by a StorageClass. After a StorageClass is created, the parameters of the bound tag cannot be modified. If the existing tags are not suitable, create one in the <a href="https://console.cloud.tencent.com/tag/taglist">Tag console</a>.</td>
+    <td>Label</td>
+    <td>Select the cloud tag to be bound to the CFS instance. The tag will be automatically inherited by the CFS instance that is created dynamically by a StorageClass. After creation, the parameters of the bound tag cannot be modified. If the existing tags are not suitable, create one in the <a href="https://console.cloud.tencent.com/tag/taglist">Tag console</a>.</td>
   </tr>
 </tbody>
 </table>
+
 5. Click **Create StorageClass** to complete the process.
 
 
 ### Creating a PVC by using the specified StorageClass[](id:createPVC)
 1. On the **Cluster management** page, select the ID of the cluster for which a PVC needs to be created.
 2. On the cluster details page, select **Storage** > **PersistentVolumeClaim** on the left sidebar.
-3. Click **Create** to enter the **Create PersistentVolumeClaim** page and configure key parameters of the PVC.
+3. Click **Create** to enter the **Create PersistentVolumeClaim** page, where you can set key PVC parameters.
 ![](https://main.qcloudimg.com/raw/044c043388d7920b6aef791d673b07d9.png)
 <table>
 <thead>
@@ -116,23 +117,23 @@ When creating a StorageClass, you need to configure a suitable permission group 
     <td>Enter the `PersistentVolumeClaim` name, for example, `cfs-pvc`.</td>
   </tr>
   <tr>
-    <td>Namespace</td>
+    <td>Namespaces</td>
     <td>A namespace is used to assign cluster resources. Here, <b>default</b> is selected.</td>
   </tr>
   <tr>
     <td>Provisioner</td>
-    <td>Select **Cloud File Storage**.</td>
+    <td>Select <b>Cloud File Storage</b>.</td>
   </tr>
   <tr>
-    <td>R/W permission</td>
-    <td>CFS only supports **Multi-computer read and write**.</td>
+    <td>Read/write permission</td>
+    <td>CFS only supports <b>Multi-computer read and write</b>.</td>
   </tr>
   <tr>
     <td>StorageClass</td>
     <td>Specify the StorageClass as needed. Here, <b>Specify</b> is selected. `cfs-storageclass` created in the <a href="https://intl.cloud.tencent.com/document/product/457/36154">Creating a StorageClass</a> step is used as an example.
 		<dx-alert infotype="explain" title="">
 <ul><li>The PVC and PV will be bound to the same StorageClass.</li>
-<li>If you select <b>Do not specify</b>, the value of `StorageClass` for the corresponding PVC is empty, and the value of the `storageClassName` field in the corresponding YAML file is an empty string.</li></ul>
+<li>If you select <b>Do not specify</b>, the value of `StorageClass` for the corresponding PVC is null, and the value of the `storageClassName` field in the corresponding YAML file is a null string.</li></ul>
 </dx-alert>
 		</td>
   </tr>
@@ -140,14 +141,15 @@ When creating a StorageClass, you need to configure a suitable permission group 
     <td>PersistentVolume</td>
     <td>Specify the PersistentVolume as needed. Here, <b>Do not specify</b> is selected.
 		<dx-alert infotype="explain" title=""><ul>
-<li>The system first searches the current cluster for PVs that meet the binding rules. If there is no such PV, the system dynamically creates a PV to be bound based on the PVC and StorageClass.</li>
-<li>Either StorageClass or PersistVolume should be specified.</li>
-<li>For more information on <b>Do not specify</b> for **PersistentVolume**, see <a href="https://intl.cloud.tencent.com/document/product/457/37770">PV and PVC binding rules</a>.</li></ul>
+<li>The system first searches the current cluster for PVs that meet the binding rules. If there are no such PVs, the system dynamically creates a PV to be bound based on the PVC and StorageClass parameters.</li>
+<li>Either the StorageClass or PersistVolume should be specified.</li>
+<li>For more information on <b>Do not specify</b> for <b>PersistentVolume</b>, see <a href="https://intl.cloud.tencent.com/document/product/457/37770">PV and PVC binding rules</a>.</li></ul>
 </dx-alert>
 </td>
   </tr>
 </tbody>
 </table>
+
 4. Click **Create PersistentVolumeClaim**.
 
 ### Creating a workload to use a PVC volume
@@ -167,7 +169,7 @@ When creating a StorageClass, you need to configure a suitable permission group 
 3. Click **Create Workload** to complete the process.
 >! If you use the PVC mount method of CFS, the volume can be mounted to multiple nodes.
 
-## kubectl Operation Guide
+## kubectl
 
 ### Creating a StorageClass
 ```yaml
@@ -190,14 +192,14 @@ The following parameters can be configured:
 
 | Parameter | Required | Description |
 |---------|---------|---------|
-| zone | No |It defines the region of the file storage.|
-| pgroupid | No | It defines the permission group for the file storage. |
-|storagetype|No|It defaults to Standard Storage (SD). Valid values: <br>SD (Standard Storage)<br>HP (Performance Storage)|
+| zone | No | It defines the region for the CFS instance. |
+| pgroupid | No | It defines the permission group for the CFS instance. |
+|storagetype| No | It defaults to Standard Storage (SD). Valid values: <br>SD (Standard Storage)<br>HP (High-Performance Storage). |
 |subdir-share|Yes|It indicates the shared instance mode for instance creation by StorageClass.|
 | vpcid | Yes | It indicates the ID of the VPC where the file is stored. |
 | subnetid | Yes | It indicates the ID of the subnet where the file is stored. |
 | vers | Yes | It indicates the version of the protocol used by the add-on to connect to the file system. The dynamically created PVs inherit this parameter. The versions "3" and "4" are supported. |
-| resourcetags | Yes | It indicates the cloud tag of the file system. A corresponding Tencent Cloud tag is applied on the generated file system. Multiple tags are separated by commas. For example, "a:b,c:d". |
+| resourcetags | Yes | It indicates the cloud tag of the file system. A corresponding Tencent Cloud tag is applied on the generated file system. Multiple tags are separated by comma. For example, "a:b,c:d". |
 
 ### Creating a PVC
 ```yaml
@@ -214,7 +216,7 @@ spec:
       storage: 10Gi
   storageClassName: cfs
   volumeMode: Filesystem
-  volumeName: XXX
+  volumeName: XXX  # You don't need to specify it for dynamic creation. For static creation, you need to specify the PV instance ID. 
 ```
 
 | Parameter | Required | Description |

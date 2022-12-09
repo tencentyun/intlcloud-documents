@@ -1,4 +1,7 @@
-## 操作场景
+
+<dx-alert infotype="notice" title="">
+TMP 将于2022年10月27日调整免费指标的免费存储时长为15天。存储时长超过15天的实例，将按照超出的天数，收取免费指标的存储费用。
+</dx-alert>
 
 本文档介绍如何精简 Prometheus 监控服务的**采集指标**，避免不必要的费用支出。
 
@@ -15,7 +18,7 @@
 
 Prometheus 监控服务提供了一百多个免费的基础监控指标，完整的指标列表可查看 [按量付费免费指标](https://intl.cloud.tencent.com/document/product/457/46735)。
 
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的 **[Prometheus 监控](https://console.cloud.tencent.com/tke2/prometheus2)**。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的 **[Prometheus 监控](https://console.cloud.tencent.com/tke2/prometheus2)**。
 2. 在监控实例列表页，选择需要配置数据采集规则的实例名称，进入该实例详情页。
 3. 在“集群监控”页面，单击集群右侧的**数据采集配置**，进入采集配置列表页。
 4. 基础指标支持通过产品化的页面增加/减少采集对象，单击右侧的“指标详情”：
@@ -32,7 +35,7 @@ TMP 目前收费模式为按监控数据的点数收费，为了最大程度减�
 1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的 **[Prometheus 监控](https://console.cloud.tencent.com/tke2/prometheus2)**。
 2. 在监控实例列表页，选择需要配置数据采集规则的实例名称，进入该实例详情页。
 3. 在“集群监控”页面，单击集群右侧的**数据采集配置**，进入采集配置列表页。
-4. 单击实例右侧查看指标详情。
+4. 单击实例右侧的**编辑**查看指标详情。
     ![](https://qcloudimg.tencent-cloud.cn/raw/086b82da019fd9b39c1efdca7c6524d0.png)
     <dx-tabs>
     ::: ServiceMonitor 和 PodMonitor
@@ -127,9 +130,6 @@ scrape_configs:
 </dx-tabs>
 
 5. 单击**确定**。
-
-
-
 
 
 ### 屏蔽部分采集对象

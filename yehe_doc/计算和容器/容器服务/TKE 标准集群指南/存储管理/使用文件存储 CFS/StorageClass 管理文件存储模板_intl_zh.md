@@ -18,7 +18,7 @@
 
 #### 4. 获取文件系统 FSID
 1. 在 [文件系统控制台](https://console.cloud.tencent.com/cfs/fs?rid=1)，单击需获取 FSID 的文件系统 ID，进入该文件系统详情页。
-2. 选择**挂载点信息**页签，从 “Linux 下挂载” 获取该文件系统的 FSID。如下图所示， `2qray8xj`为该文件系统的 FSID。
+2. 选择**挂载点信息**页签，从 “Linux 下挂载” 获取该文件系统的 FSID。如下图所示， `a43qadkl`为该文件系统的 FSID。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3d1a7cbdcae37e2b4f168a8898203c36.png)
 >? 为了获取更好的稳定性，在通过 YAML 创建 PV 并使用 NFSV3 协议挂载时，需要指定待挂载文件系统对应的 FSID。
 
@@ -214,7 +214,7 @@ spec:
       storage: 10Gi
   storageClassName: cfs
   volumeMode: Filesystem
-  volumeName: XXX
+  volumeName: XXX  #动态创建无需填写，静态创建需要在该字段中指定 pv 实例 id 
 ```
 
 | 参数 | 是否可选 | 描述 |
