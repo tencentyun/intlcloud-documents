@@ -10,7 +10,7 @@
 
 如果您的应用不需要离线推送，或场景不满足离线推送的需求，请直接看本文最后一节 [“在线推送-在本地创建新消息通知”](#online_push) 在线推送部分。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/58f36a132a9fa46b84b12070777b8e9b.png)
+
 
 如果您的应用已经自行完成厂商离线推送，仅需查看本教程 [第一步](#step_1) 和 [第五步](#step_5)，在控制台内录入厂商信息，并在应用登录后，上报证书 ID 即可。
 
@@ -45,17 +45,16 @@
 1. 请根据该教程，完成 [Apple 推送证书申请](https://intl.cloud.tencent.com/document/product/1047/34346)。
 2. 分别将申请到的生产环境和开发环境证书托管至即时通信 IM 控制台。
 3. 打开[ IM 控制台-基础配置](https://console.cloud.tencent.com/im/detail) 右侧，添加 iOS 证书。
-![](https://qcloudimg.tencent-cloud.cn/raw/ad46b861cc6fa4ee40abd4a96b51f6ec.png)
+
 
 ### Android
 #### Google FCM
 1. 前往 [Google Firebase控制台](https://console.firebase.google.com/) 创建一个项目，无需启用 Google Analysis。
-![](https://qcloudimg.tencent-cloud.cn/raw/80c3108f8685752170721ac51052aead.png)
+
 2. 单击您的应用卡片，进入**应用配置**页面。
 3. 单击 Project Overview 右侧的 <img src="https://main.qcloudimg.com/raw/0d062411405553c9fae29f8e0daf02ad.png"  style="margin:0;">，选择**项目设置**>**服务帐号**，单击**生成新的私钥**下载私钥文件。
-![](https://qcloudimg.tencent-cloud.cn/raw/36e05b4e490b467e88ad67d14691fd60.png)
+
 4. 将该私钥文件托管至即时通信 IM 控制台。在 [IM 控制台-基础配置](https://console.cloud.tencent.com/im/detail) 右侧，添加 Android 证书。选择 Google 后，请选择上传证书。
-![](https://qcloudimg.tencent-cloud.cn/raw/49fa763a1be0f9ffe645d88b9710e595.png)
 
 #### OPPO
 
@@ -63,7 +62,7 @@
 请参见 [OPPO PUSH 服务开启指南](https://open.oppomobile.com/wiki/doc#id=10195) 注册开发者账号，创建应用，并开通 PUSH 服务。
 
 在 [OPPO 推送平台](https://push.oppo.com/) >**配置管理**>**应用配置**页面，您可以查看详细的应用信息。记录 AppId、AppKey、AppSecret 和 MasterSecret 信息。
-![](https://qcloudimg.tencent-cloud.cn/raw/698b834d09e9baf6c19c6537a8763d0f.png)
+
 
 ##### 创建消息通道
 
@@ -73,14 +72,13 @@
 
 >?OPPO 对于公信通道有每日上限，对于通讯类型消息，建议参见 [OPPO 官方文档](https://open.oppomobile.com/new/developmentDoc/info?id=11227) 申请私信通道。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/30fb8bb209c0201bdc769a17a8e4997a.png)
 
 ##### 上传证书至控制台
 
 1. 在 [IM 控制台-基础配置](https://console.cloud.tencent.com/im/detail) 右侧，添加 Android 证书。选择 OPPO 后，请填写相关信息。
 2. ChannelID 请填写此前在 OPPO 控制台为通讯能力申请的专用通道，最好是私信，以免到达每日推送上限。
 3. 打开方式请选择**打开应用内指定页面** > **activity**，填写`com.tencent.flutter.tim_ui_kit_push_plugin.pushActivity.OPPOMessageActivity`。
-![](https://qcloudimg.tencent-cloud.cn/raw/ff66657822e2701362abe7a5be334ae5.png)
+
 
 #### 小米
 ##### 开通服务
@@ -89,18 +87,18 @@
  >?认证过程大约需要2天左右，请务必提前阅读 [小米推送服务启用指南](https://dev.mi.com/console/doc/detail?pId=68)，以免影响您的接入进度。
 
 在小米开放平台创建应用，并选择**应用服务**>**PUSH服务**，创建推送服务应用。
-![](https://qcloudimg.tencent-cloud.cn/raw/2aa17cf6aea8514de9763a33b4fa7b03.png)
+
 
 小米推送服务应用创建完成后，在应用详情中，您可以查看详细的应用信息。
 
 记录**主包名**、**AppID**、**AppSecret** 信息。
-![](https://qcloudimg.tencent-cloud.cn/raw/8c4835627da4f38349e15d67e6e3c80f.png)
+
 
 ##### 上传证书至控制台
 
 在 [IM 控制台-基础配置](https://console.cloud.tencent.com/im/detail) 右侧，添加 Android 证书。选择小米后，请填写相关信息，行为请选择打开应用。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/b109fae4ecba8b0aa38d992198580731.png)
+
 
 #### vivo
 
@@ -112,7 +110,6 @@
 1. 登录 vivo 开放平台的管理中心，选择**消息推送**>**创建**>**测试推送**，创建 vivo 推送服务应用。
 
 2. vivo 推送服务应用创建完成后，在应用详情中，您可以查看详细的应用信息。记录 APP ID、APP key 和 App secret信息。
-![](https://qcloudimg.tencent-cloud.cn/raw/99c58bfb762f5096f45ed374e70928c2.png)
 
 >?vivo 要求应用在上架后，才能使用正式推送服务。如果您需要在开发中调试 vivo 机器，请参见本文最后一节 [vivo 调试](#vivotest) 内容，开启测试模式。
 
@@ -122,7 +119,7 @@
 
 - **单击后续动作**请选择为：打开应用内指定页面。
 - **应用内页面** 配置为：`tencent_im_push://${替换成您的包名}/message?#Intent;scheme=tencent_im_push;launchFlags=0x4000000;end`
-![](https://qcloudimg.tencent-cloud.cn/raw/8ed0028457a4440244962fbdf6d42026.png)
+
 
 #### 华为
 
@@ -130,11 +127,11 @@
 
 1. 进入 [华为开放平台](https://developer.huawei.com/cn/)，注册和登录开发者账号，详情参见 [账号注册认证](https://developer.huawei.com/consumer/cn/devservice/doc/20300)（如果您是新注册账号，需进行实名认证）。
 2. 在华为推送平台中新建应用，详情参见 [创建应用](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app)。记录**AppID**、**AppSecret** 信息。
-![](https://main.qcloudimg.com/raw/2c02a68f87c37e5ac3680ab5d832b910.png)
+
 
 
 >?若在**应用信息**>**我的应用**中无法找到 SecretKey，可前往项目**设置**>**常规**中查看 Client Secret。
-> ![](https://qcloudimg.tencent-cloud.cn/raw/b3a98c7f70f5f82f26d339d49d1cec47.png)
+
 
 ##### 配置 SHA256 证书指纹
 
@@ -151,16 +148,16 @@
 ##### 获取华为推送配置文件
 
 登录华为开放平台，进入**我的项目**> 选择项目 > **项目设置**，下载华为应用最新配置文件 agconnect-services.json。放置于`android/app`目录下。
-![](https://main.qcloudimg.com/raw/9929b0d6d8e6843f7d0109f0d5723128.png)
+
 
 
 ##### 打开推送服务开关
 
 在华为推送平台，单击**全部服务**>**推送服务**，进入推送服务页面。
-![](https://main.qcloudimg.com/raw/6e1ba602c237ca5766e4f029f4a5f93d.png)
+
 
 在**推送服务**页面，单击**立即开通**，详情请参见 [打开推送服务开关](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service)。
-![](https://main.qcloudimg.com/raw/ab5255522ecb0030aea10d870553566a.png)
+
 
 ##### 上传证书至控制台
 
@@ -171,23 +168,23 @@
 
 `点击后续动作`请选择打开应用。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/b73898900f7f5184c2f8fc088d9a3a0c.png)
+
 
 #### 魅族
 
 ##### 开通服务
 1. 打开 [魅族开放平台官网](https://open.flyme.cn) 进行注册并通过开发者认证。
- >?认证过程大约需要3天左右，请务必提前阅读 [魅族 Flyme 推送接入文档](https://open-wiki.flyme.cn/doc-wiki/index#id?129)，以免影响您的接入进度。
+ >?认证过程大约需要3天左右，请务必提前阅读 [魅族 Flyme 推送接入文档](https://open.flyme.cn/docs?id=129)，以免影响您的接入进度。
 
 2. 登录魅族开放平台的管理控制台，选择**服务**>**集成推送服务**>**推送后台**，创建魅族推送服务应用。
 3. 魅族推送服务应用创建完成后，在应用详情中，您可以查看详细的应用信息。记录**应用包名**、**App ID**、**App Secret**信息。
 
- ![](https://main.qcloudimg.com/raw/d4ec7742c13579814761eb099dbfc8ea.png)
+
 
 ##### 上传证书至控制台
 1. 在 [IM 控制台-基础配置](https://console.cloud.tencent.com/im/detail) 右侧，添加 Android 证书。
 2. 选择魅族后，请填写相关信息。**单击后续动作**请选择：**打开应用**。
-![](https://qcloudimg.tencent-cloud.cn/raw/a24df4cdf8391853e589324a05c45c48.png)
+
 
 ## 使用插件跑通离线推送（全览 + Android）
 在您的项目中安装 IM Flutter 离线推送插件：
@@ -195,11 +192,11 @@
 flutter pub add tim_ui_kit_push_plugin
 ```
 
-[并根据该指南](https://intl.cloud.tencent.com/document/product/1047/48568)，在插件市场，启用推送插件。
+在插件市场，启用推送插件。
 
 ### 步骤1: 汇总常量类[](id:step_1)
 1. 完成 [接入准备（注册厂商）](#firstone)的配置后，可在即时通信 IM 的控制台首页右侧，查看我们后台为您的厂商渠道 App 信息分配的证书 ID。
-![](https://qcloudimg.tencent-cloud.cn/raw/d490ff0743604effa7f43f35c14668de.png)
+
 2. 请将这些信息，配上厂商渠道的账号信息，实例化一个静态的`PushAppInfo`类，汇总起来。后续步骤需要传入此对象。
 3. 该类支持配置所有您需要接入厂商推送机型的信息。无需完整填写构造函数字段。若需要使用某个厂商平台，请完整填写该平台相关字段。
  ```Dart
@@ -263,8 +260,7 @@ dart pub global activate flutterfire_cli
 // 生成配置文件
 flutterfire configure
 ```
-4. 执行该步骤后，会将此项目与您在 Google Firebase 创建的项目关联起来，执行结果可以参见下图：
-![](https://qcloudimg.tencent-cloud.cn/raw/21aa8a7fc710746e7fafd28178f1e047.png)
+4. 执行该步骤后，会将此项目与您在 Google Firebase 创建的项目关联起来。
 `main()`方法中初始化 FirebaseAPP。
 ```Dart
 WidgetsFlutterBinding.ensureInitialized();
@@ -326,7 +322,7 @@ allprojects {
 ```
 
 4. 登录华为开放平台，进入**我的项目**> 选择项目 > **项目设置**，下载华为应用最新配置文件 agconnect-services.json。放置于`android/app`目录下。
-![](https://main.qcloudimg.com/raw/9929b0d6d8e6843f7d0109f0d5723128.png)
+
 
 ##### 应用层引入 HMS SDK gradle 插件
 
@@ -539,7 +535,6 @@ final bool isUploadSuccess = await cPush.uploadToken(PushConfig.appInfo);
 
 #### 发送消息
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e760f7b686930d6de4662eeb630f052f.png)
 
 ##### 直接通过 SDK 发送
 如您自行接入腾讯云 IM SDK，请在发消息时配置`OfflinePushInfo offlinePushInfo`字段。
@@ -665,7 +660,7 @@ _calling?.call(widget.selectedConversation.userID!, CallingScenes.Audio, offline
 ### 步骤2: 代码中添加 iOS 工程配置
 1. 使用 Xcode 打开您的项目，在 **Runner**>**Target** 中，配置支持 **Push** 的 **Signing Profile**。
 2. 并在左上角新增`Push Notification`的 Capability。
-![](https://qcloudimg.tencent-cloud.cn/raw/e1be71c63e505281aed6c7eb61c587ac.png)
+
 3. 执行`flutter pub get`安装好插件后进入 iOS 目录，执行：`pod install`安装依赖库。
 4. 将以下代码添加到 iOS 工程下`ios/Runner/AppDelegate.swift`文件`didFinishLaunchingWithOptions`方法中。
 Objective-C：
@@ -700,7 +695,7 @@ cPush.init(
 
 ### 步骤6: 发消息配置及单击通知跳转
 #### 发送消息
-![](https://qcloudimg.tencent-cloud.cn/raw/46f036ed57228b9c5df5b05bfa125e2c.png)
+
 
 ##### 直接通过 SDK 发送
   如您自行接入腾讯云 IM SDK，请在发消息时配置`OfflinePushInfo offlinePushInfo`字段。
@@ -729,19 +724,19 @@ TIMUIKitChat(
 ### 离线推送自查
 
 您可使用 [离线推送自查](https://console.cloud.tencent.com/im/tool-push-check) 工具，检测终端状态/证书上报及发送测试消息。
-![](https://qcloudimg.tencent-cloud.cn/raw/0ef072fe382b3b84e8602ae9d637d773.png)
+
 ### vivo 调试[](id:vivotest)
 由于 vivo 官方限制，应用在 vivo 应用市场上架前，不允许使用正式 PUSH 能力，[详见此文档](https://dev.vivo.com.cn/documentCenter/doc/151)。
 开发过程中，需要调试，请参见本步骤：
 1. 获取测试设备（vivo 真机）的 regId（我们称做 Device Token）。
 2. 在 vivo 控制台内，添加该设备为测试设备。
-![](https://qcloudimg.tencent-cloud.cn/raw/c2db1213278de5d43558046efc8e4b23.png)
+
 3. 此时可推送测试消息至测试设备。可参见 [vivo 单播推送文档](https://dev.vivo.com.cn/documentCenter/doc/363#w2-98542835)。
 4. 由于腾讯云 IM 控制台的测试推送，和直接使用 IM SDK 发送聊天消息的推送，均不能修改推送模式为测试。因此请使用我们提供的，可触发测试消息的JS脚本，[单击此处下载](https://tuikit-1251787278.cos.ap-guangzhou.myqcloud.com/testvivo.js)
 5. 下载后，请根据顶部五行注释，填入vivo相关参数。默认ext为`conversationID`，如果在处理单击回调跳转（可参见 [步骤6](#step_6)）时需要其他字段，请自行修改JS代码。
-![](https://qcloudimg.tencent-cloud.cn/raw/3f564ffd8f34feda3c87f065b9d2dfa0.png)
+
 6. 执行脚本。`npm install axios` `npm install js-md5` 后`node testvivo`。推送结果会显示在 log 最后一行。
-![](https://qcloudimg.tencent-cloud.cn/raw/27913289ee4d2e14f697923176775cc0.png)
+
 7. 此时测试终端可收到测试消息推送，单击消息后，可触发 Dart 层回调。
 
 ## 厂商推送限制
@@ -813,7 +808,7 @@ OPPO 手机收不到推送一般有以下几种情况：
 flutter pub add tim_ui_kit_push_plugin
 ```
 
-[并根据该指南](https://intl.cloud.tencent.com/document/product/1047/48568)，在插件市场，启用推送插件。
+
 
 #### Android
 
@@ -900,7 +895,7 @@ cPush.createNotificationChannel(
 
 本 API 需要您提供 `title`, `body`, 及 `ext` 用于点击跳转信息，三个参数。您可以根据需要自行解析收到的 `V2TimMessage`，生成这三个字段。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c9156e701df6aabebc78a3823c985ed5.png)
+
 
 为便于跳转，此处 ext 的生成规则可查看 `displayDefaultNotificationForMessage` 的代码。
 
