@@ -4,6 +4,8 @@ If you have configured a moderation callback address, the backend will call back
 
 The callback content is divided into simple callback (Simple) and detailed callback (Detail).
 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/NSJC438_PRELIM__%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-2.jpeg)
+
 ## Callback Content Description
 
 ### Simple callback (Simple)
@@ -38,7 +40,7 @@ The nodes are as described below:
 
 | Parameter | Description | Type | Required |
 | :------- | :----------------------------------------------------------- | :------ | :------- |
-| code | Error code. 0: moderation succeeded; other values: moderation failed. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700). | Integer | Yes |
+| code | Error code. 0: Moderation succeeded; other values: Moderation failed. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700). | Integer | Yes |
 | message | Error message. | String | Yes |
 | data | Details of the live stream moderation result. | Object | Yes |
 
@@ -151,7 +153,7 @@ The nodes are as described below:
 
 | Node Name (Keyword)         | Description                               | Type   |
 | :----------------- | :----------------------------------------------------------- | :-------- |
-| Code               | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
+| Code               | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700). | String |
 | Message            | Error message, which will be returned only if `State` is `Failed`. | String |
 | JobId              | Moderation job ID. | String |
 | DataId             | The original content will be returned if the `DataId` parameter is set when the job is submitted, which can contain up to 512 bytes. | String  |
@@ -177,7 +179,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :------------------------------------------------------ | :------ |
-| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), `2` (suspected). | Integer |
+| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), and `2` (suspected). | Integer |
 | Count              | The number of screenshots that hit this moderation scene.                              | Integer |
 
 `Snapshot` has the following sub-nodes:
@@ -196,7 +198,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :-------------- |
-| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), `2` (suspected). | Integer |
+| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), and `2` (suspected). | Integer |
 | Score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. <br/>For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
 | Label | This field indicates the overall result tag of the screenshot, which may be `SubLabel`, a person name, etc. | String |
 | Category           | This field indicates the specific hit moderation type. <br/>Note: This field may return null.      | String          |
@@ -253,7 +255,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :-------------- |
-| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), `2` (suspected). | Integer |
+| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), and `2` (suspected). | Integer |
 | Score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. <br/>For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
 | Category           | This field indicates the specific hit moderation type. <br/>Note: This field may return null.      | String          |
 | Keywords           | Keywords hit by the current moderation scene. Nothing will be returned if there is none.  | Array  |
