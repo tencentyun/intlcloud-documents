@@ -228,6 +228,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 58.[Tencent Cloud Mesh](https://www.tencentcloud.com/document/product/1152/51394).
 59.[Cloud Data Warehouse for PostgreSQL](https://www.tencentcloud.com/document/product/1138/51757).
 60.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51969).
+61.[Tencent Cloud Firewall](https://www.tencentcloud.com/document/product/1160/52114).
 
 ## 10.Jurisdiction-specific Requirements
 
