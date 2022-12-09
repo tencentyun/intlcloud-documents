@@ -4,6 +4,8 @@
 
 回调内容分为简洁回调（Simple）和详细回调（Detail）。
 
+![](https://qcloudimg.tencent-cloud.cn/raw/bd0a1ed5fc2eb71df212baf7f18b52cd.png)
+
 ## 回调内容说明
 
 ### 简洁回调（Simple）
@@ -151,7 +153,7 @@ JobsDetail 的具体内容如下：
 
 | 节点名称（关键字） | 描述                                                         | 类型      |
 | :----------------- | :----------------------------------------------------------- | :-------- |
-| Code               | 错误码，只有 State 为 Failed 时返回。详情请查看 [错误码列表](https://intl.cloud.tencent.com/document/product/1045/43611)。 | String    |
+| Code               | 错误码，只有 State 为 Failed 时返回。详情请查看 [错误码列表](https://intl.cloud.tencent.com/document/product/1045/33700)。 | String    |
 | Message            | 错误描述，只有 State 为 Failed 时返回。                      | String    |
 | JobId              | 审核任务的 ID。                                              | String    |
 | DataId             | 提交任务时设置了DataId参数时返回，返回原始内容，长度限制为512字节。 | String    |
