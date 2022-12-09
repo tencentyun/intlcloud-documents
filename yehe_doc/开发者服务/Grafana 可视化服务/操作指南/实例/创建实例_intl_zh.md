@@ -1,11 +1,10 @@
 本文将指导您如何新建 Grafana 实例。
 
->?目前处于内测阶段，每个主账号可以申请一个实例。
+
 
 ## 操作步骤
 
-1. 登录 [Grafana 可视化服务控制台](https://console.cloud.tencent.com/monitor/grafana)。
-2. 单击**新建**，根据页面提示，配置以下信息：
+1. 登录 [ Grafana 可视化服购买页 ](https://buy.intl.cloud.tencent.com/grafana) ，根据实际需求选择各项配置信息。
 <table>
     <tr>
         <th style = "width:10%">
@@ -26,23 +25,11 @@
             必选
         </td>
         <td>
-            目前仅支持试用版。
+            目前仅支持包年包月模式。
         </td>
     </tr>
-    <tr>
         <td>
-            实例名称
-        </td>
-        <td>
-            必选
-        </td>
-        <td>
-            用户自定义 Grafana 实例名称。
-        </td>
-    </tr>
-    <tr>
-        <td>
-            可用区域
+            地域和可用区
         </td>
         <td>
             必选
@@ -59,15 +46,38 @@
             必选
         </td>
         <td>
-            表示在腾讯云上构建的逻辑隔离的网络空间，一个私有网络由至少一个子网组成。系统会为您在每个地域提供的默认私有网络和子网。如现有的私有网络/子网不符合您的要求，可参见
-            <a href="https://intl.cloud.tencent.com/zh/document/product/215/31805">
+            目前只支持部分可用区子网，详情请参见   <a href="https://intl.cloud.tencent.com/document/product/1124/43953">
+						支持可用区</a> 。表示在腾讯云上构建的逻辑隔离的网络空间，一个私有网络由至少一个子网组成。系统会为您在每个地域提供的默认私有网络和子网。如现有的私有网络/子网不符合您的要求，可参见
+            <a href="https://intl.cloud.tencent.com/document/product/215/31805">
                 新建私有网络
             </a>
             和
-            <a href="https://intl.cloud.tencent.com/zh/document/product/215/31806">
+            <a href="https://intl.cloud.tencent.com/document/product/215/31806">
                 新建子网
             </a>
             进行创建。
+        </td>
+    </tr>
+		<tr>
+        <td>
+           套餐选择
+        </td>
+        <td>
+            必选
+        </td>
+        <td>
+         支持三种套餐，基础版、高级版和专家版，每个版本仅是支持的用户账号不同，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/1124/49506" >包年包月计费说明</a>。
+        </td>
+    </tr>
+		 <tr>
+        <td>
+          实例名称
+        </td>
+        <td>
+必选
+        </td>
+        <td>
+          用户自定义 Grafana 实例名称。
         </td>
     </tr>
     <tr>
@@ -94,17 +104,6 @@
     </tr>
     <tr>
         <td>
-            外网访问
-        </td>
-        <td>
-            必选
-        </td>
-        <td>
-            定义是否允许外网访问 Grafana。
-        </td>
-    </tr>
-    <tr>
-        <td>
             标签
         </td>
         <td>
@@ -112,11 +111,22 @@
         </td>
         <td>
             设置标签之后可以用于从不同维度对资源分类管理。具体可参见
-            <a href="https://intl.cloud.tencent.com/zh/document/product/213/19548">
+            <a href="https://intl.cloud.tencent.com/document/product/213/19548">
                 标签说明</a>。
         </td>
     </tr>
+		    <tr>
+        <td>
+          自动续费
+        </td>
+        <td>
+            选填
+        </td>
+        <td>
+         当您账户余额充足时，设备到期后将会按月为您自动续费。
+    </tr>
 </table>
 
+ ![](https://qcloudimg.tencent-cloud.cn/raw/106d44c3450d78e4d216bd3d67ebd9eb.png)
+2. 确认无误后，单击 **立即购买**并完成支付即可。
 
-3. 填写完成后，单击**立即购买**即可。
