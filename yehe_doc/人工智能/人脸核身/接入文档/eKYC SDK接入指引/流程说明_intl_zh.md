@@ -1,7 +1,6 @@
 ## 接入准备
 - 注册腾讯云账号并进入慧眼控制台[开通服务](https://console.intl.cloud.tencent.com/faceid) 
-- 下载最新的[SDK](https://console.intl.cloud.tencent.com/faceid) 
-- 下载[license](https://console.intl.cloud.tencent.com/faceid) 
+- [联系我们](https://www.tencentcloud.com/document/product/1061/52144)下载最新的[SDK](https://console.intl.cloud.tencent.com/faceid) 及[license](https://console.intl.cloud.tencent.com/faceid) 
 
 ## 名词介绍
 
