@@ -19,5 +19,5 @@ A personal meeting ID is your dedicated fixed meeting ID, through which you can 
 
 
 ### On mobile client
-1. Tap *Start** and select **Use Personal Meeting ID**.
+1. Tap **Start** and select **Use Personal Meeting ID**.
 2. Tap **Enter** to enter the meeting.
