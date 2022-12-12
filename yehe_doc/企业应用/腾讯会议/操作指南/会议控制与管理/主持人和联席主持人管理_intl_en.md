@@ -7,7 +7,7 @@ A co-host can help the host manage attendees and their permissions such as renam
 
 ## Notes
 1. Attendees not logged in cannot be made host.
- - Free Edition: you can set one co-host at most. If you have set a co-host, the Make Co-host option won't be displayed when you try to set another in attendees list.
+ - Free Edition: No longer provides the ability to set co-hosts.
  - Enterprise Edition: you can set up to 10 co-hosts. If the current meeting already has 10 co-hosts and the meeting creator enters the meeting, the creator can become the 11th co-host, but no more co-hosts can be set.
 2. A meeting can have only one host, and only the host can make other attendees co-hosts.
 3. A co-host has fewer permissions than a host. Their main difference is that the host can assign roles to other attendees, while the co-host cannot.

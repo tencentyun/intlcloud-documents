@@ -12,7 +12,7 @@ You can retain your own meeting records and find the chat content in meetings on
  - Deleted meeting
  - Canceled meeting
  - Scheduled meeting ended more than 30 days ago
-- You can query meeting records such as chats, recordings, annotations, and files generated in meetings.
+- You can query meeting records such as chats in meetings.
 
 ## Querying Past Meeting Details
 ### On client

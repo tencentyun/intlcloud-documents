@@ -37,7 +37,7 @@ In "PC Audio" mode, you can directly use the PC mic and speaker (headset) as the
 - You can also click the arrow on the right of **Mute/Unmute** in the toolbar of the meeting window and select **PC Audio**.
 - You can also select **Use PC Audio by Default** on the **PC Audio** tab in the **Select a Method to Connect to Meeting Audio** pop-up window, so that you don't need to select the audio connection method again when joining a meeting next time, and PC audio will be used by default.
 
-### Call in
+### PSTN Call in
 In "Call In" mode, you can use a landline or mobile phone to dial the corresponding number to join a meeting, and the phone rather than the PC mic and speaker will be used as your meeting audio source, which has a more stable call audio quality. However, in this connection method, your carrier will charge you for the local or international call according to applicable billing rules.
 - After you enter a meeting, the **Select a Method to Connect to Meeting Audio** window will pop up.
 - Click **Call In** in the pop-up window.
@@ -50,3 +50,5 @@ In "Call In" mode, you can use a landline or mobile phone to dial the correspond
 
 - If you use a mobile phone to dial the number, you can press and hold `0` to enter the **+** sign; on a VoIP phone, press and hold " " to enter **+**; on a general landline phone, enter **0086** to indicate the **+86** code. Then, enter the attendee ID and press **#** for confirmation as prompted.
 - After you enter the attendee ID, the landline or mobile phone rather than the PC mic and speaker will be used as the meeting audio source, which has a more stable call audio quality. If you don't enter the attendee ID but directly press **#** to join the meeting, you will enter the meeting as an independent attendee, and howling may occur on the phone and your original device in the meeting.
+
+>Warning：Pstn is currently reclaimed as a paid function, which can only be used by corporate accounts and purchased Pstn capabilities。

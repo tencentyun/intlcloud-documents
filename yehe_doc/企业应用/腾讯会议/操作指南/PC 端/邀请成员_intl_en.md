@@ -2,7 +2,7 @@
 
 **Role:** Organizer/Co-Host/Attendee
 
- ![](https://main.qcloudimg.com/raw/4f495bd5dba7575c1de654ab2c3eb597.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/1561cd93441014c20f097e13f6298e89.png)
 
 ### Invite Attendees
 
@@ -24,7 +24,7 @@
  - a. Click **Invite** and **Copy All** or **Copy Meeting ID and Link**.
  
  - b. Send the invitation details via email, WeChat, SMS or other tools.
-![](https://main.qcloudimg.com/raw/45074c78c4af050c928483b5fb709f62.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e5f76850055c84b73303a3d225546d2e.png)
 
  
 

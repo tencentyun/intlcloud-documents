@@ -6,6 +6,39 @@
 	<th style="width: 25%;"><center>版本</center></th>
 	<th style="width: 50%;"><center>更新内容</center></th>
 	<th style="width: 25%;"><center>更新时间</center></th>
+	<tr>
+	<td><center> v3.11.0</center></td>
+	<td>
+1. 新增休息一下小工具.<br>
+2. 企业版自定义布局支持自动填充成员.<br>
+3. Windows支持头饰功能.<br>
+4. 联席主持人支持管理分组会议.
+</td>
+<td><center>2022-09-06</center></td>
+	<tr>
+	<td><center> v3.9.0</center></td>
+	<td>
+1. 支持离会指定主持人，会议进程更可控.<br>
+2. 常用功能支持快捷键，快速开启，便捷切换.<br>
+3. 支持主持人/联席主持人请求成员开启/停止视频，会控更便捷.<br>
+</td>
+<td><center>2022-07-05</center></td>
+	<tr>
+	<td><center> v3.7.0</center></td>
+	<td>
+1. 周期性会议支持自定义会议周期，预定会议更灵活.<br>
+2. 云会议支持绘制多张白板，协作不受限.<br>
+3. 举手功能优化，参会者举手标识更显著.<br>
+</td>
+<td><center>2022-04-29</center></td>
+	<tr>
+	<td><center> v3.3.0</center></td>
+	<td>
+1. 支持用户使用Email注册登录.<br>
+2. 网络研讨会支持开启准备模式，主持人及嘉宾可提前彩排.<br>
+3. 网络研讨会支持会中分享，信息流转更高效.<br>
+</td>
+<td><center>2022-03-30</center></td>
 	</tr>
 		<tr>
 	<td><center> V2.19.0</center></td>

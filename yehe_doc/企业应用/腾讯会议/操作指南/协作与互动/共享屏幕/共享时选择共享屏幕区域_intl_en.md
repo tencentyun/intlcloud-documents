@@ -19,8 +19,8 @@ You can share partial screen, such as part of the application window or specific
 
 2. Click **Advanced**, select and double-click **Partial Sharing** or select **Partial Sharing** and click **Share** to select the shared area.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/3ca73a93f2a2d4d325ac3e11f4073600.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9febfddcb3cc1997702a1e7ce8cf2e19.png)
 
 3. After the shared area is selected, the **Cancel** and **Share** buttons will be displayed. You can click **Share** to start sharing the selected area or click **Cancel** to exit sharing.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/08931a35bfd6f80ef42d90cabba12956.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/9febfddcb3cc1997702a1e7ce8cf2e19.png)

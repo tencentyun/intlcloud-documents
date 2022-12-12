@@ -9,6 +9,7 @@ VooV Meeting allows you to join a meeting on phone without installing the client
 ## Notes
 - In "Call In" mode, you can use a landline or mobile phone to dial the corresponding number instead of using the VooV Meeting client to join a meeting, which has a more stable call audio quality. However, in this connection method, your carrier will charge you for the local or international call according to applicable billing rules.
 - After you enter the attendee ID, the landline or mobile phone rather than the PC mic and speaker will be used as the meeting audio source, which has a more stable call audio quality. If you don't enter the attendee ID but directly press **#** to join the meeting, you will enter the meeting as an independent attendee. In the scenario in this document, you don't need to enter the attendee ID and can directly enter **#** to join the meeting.
+- Pstn is currently reclaimed as a paid function, which can only be used by corporate accounts and purchased Pstn capabilities.
 
 
 ## How to Use

@@ -11,7 +11,7 @@ Users with host or co-host controls can control the meeting.
 
 ## Guide
 ### As host
-Supported operations: Rename, Mute All, Unmute All, Lock Meeting, Enable Waiting Room, Mute Attendees upon Entry, Allow Attendees to Unmute Themselves, Play Chime When Attendees Join, Merge to Main Window, Attendee Restriction, and Export Attendees.
+Supported operations: Rename, Mute All, Unmute All, Lock Meeting, Enable Waiting Room, Mute Attendees upon Entry, Allow Attendees to Unmute Themselves, Play Chime When Attendees Join, Merge to Main Window, Attendee Restriction.
 - Supported operations on general attendees: Rename, Mute/Unmute, Stop Video, Make Co-host, Make Host, Move to Waiting Room, and Remove.
 - Supported operations on co-hosts: Private Chat, Mute/Unmute, Stop Video, Revoke Co-host, and Make Host.
 
@@ -23,5 +23,5 @@ Supported operations: Rename, Mute All, Unmute All, Lock Meeting, Enable Waiting
 Attendees can only rename themselves.
 
 ### As meeting creator with co-host role
-Supported operations: Rename, Mute All, Unmute All, Lock Meeting, Enable Waiting Room, Mute Attendees upon Entry, Allow Attendees to Unmute Themselves, Play Chime When Attendees Join, Reclaim Host, Attendee Restriction, and Export Attendees.
+Supported operations: Rename, Mute All, Unmute All, Lock Meeting, Enable Waiting Room, Mute Attendees upon Entry, Allow Attendees to Unmute Themselves, Play Chime When Attendees Join, Reclaim Host, Attendee Restriction.
 

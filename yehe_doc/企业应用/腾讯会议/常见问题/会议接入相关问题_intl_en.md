@@ -27,6 +27,3 @@ Click **Settings** after joining the video conference and enable audio mode to r
 
 After you log in to VooV Meeting, click **Start** on the home page. You will start a video conference immediately. There is no need to enter any additional information. You cannot start and host video conferences without logging in to VooV Meeting.
 
-**How many co-hosts can I set?**
-
-You can set a maximum of 10 co-hosts. To set co-hosts, click **Attendees**, select attendees from the attendee list, and click **More**. In the displayed dialog box, select **Make Co-host**.
