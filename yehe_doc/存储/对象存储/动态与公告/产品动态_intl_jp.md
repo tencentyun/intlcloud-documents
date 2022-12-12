@@ -1,22 +1,83 @@
 
+## 2022年10月
 
-## 2022年7月
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+<th width="15%">発表時間</th>
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>バケットごとの請求書発行およびタグごとの請求書分割機能をリリース</td>
+<td>COSはバケットごとの請求書発行およびタグごとの請求書分割機能をサポートしており、この機能はホワイトリストによって開放されます。2022年12月1日より、COSはバケットごとの請求書発行およびタグごとの請求書分割機能をフルリリースします。L2-リソースID請求書またはL3-請求明細書で各バケットの課金項目使用量および料金を確認することができ、請求書分割タグを設定することで異なるバケットの所有権を区別することができます。</td>
+<td> 2022-10-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/10373">バケットごとの請求書発行、タグごとの請求書分割とは何ですか。</a></td>
+</tr>
+</tbody></table>
+
+
+
+## 2022年09月
+
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+<th width="15%">発表時間</th>
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>課金項目の月次決済から日次決済への変更を開始</td>
+<td>2022年7月1日より、COSストレージ容量、リクエストおよびデータ取得課金項目は月次決済から日次決済へと順次アップグレードされ、2022年9月1日にフルリリースを完了しました。</td>
+<td> 2022-09-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/47593">COSストレージ容量、リクエストおよびデータ取得の日次決済のリリースに関するお知らせ</a></td>
+</tr>
+</tbody></table>
+
+
+## 2022年07月
 
 | ダイナミックネーム         | 動的記述                                                     | リリース時間   | 関連ドキュメント                                                     |
 | :--------------- | :----------------------------------------------------------- | :--------- | :----------------------------------------------------------- |
 | 低頻度ストレージ容量単価値下げ | COSの一部リージョンの低頻度ストレージ容量単価について、公表価格の値下げ調整を実施します。今回値下げ対象となるのはムンバイ、ソウル、バンコク、シリコンバレー、モスクワ、ジャカルタ、サンパウロの低頻度ストレージ容量単価のみであり、0.018米ドル/GB/月から0.015米ドル/GB/月に調整されます。その他のリージョンおよび課金項目の単価に変更はありません。 | 2022-07-01 | [製品価格](https://buy.intl.cloud.tencent.com/price/cos) |
 
-
-
-
-## 2022年4月
+## 2022年05月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ドキュメントプレビューの最適化</td>
+<td>ドキュメントのHTML変換で、ダウンロードリンクからJSONパラメータを渡すことによってページを直接調整できる高度な設定をサポートし、印刷防止機能を追加しました。</td>
+<td> 2022-05-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/49414">ドキュメントHTML変換クイックスタート</a></td>
+</tr>
+</tbody></table>
+
+
+
+## 2022年04月
+
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -25,20 +86,20 @@
 <td>シンガポールリージョンでディープアーカイブストレージをリリース</td>
 <td>シンガポールリージョンのバケットへのディープアーカイブストレージタイプのオブジェクトのアップロードをサポートしました。</td>
 <td> 2022-04-25</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">オブジェクトのアップロード</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">上传对象</a></td>
 </tr>
 </tbody></table>
 
 
 
-## 2022年3月
+## 2022年03月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -56,14 +117,14 @@
 </tr>
 </tbody></table>
 
-## 2022年2月
+## 2022年02月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -92,9 +153,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -103,20 +164,20 @@
 <td>メディア処理-オーディオビデオセグメンテーション機能をリリース</td>
 <td>オーディオビデオセグメンテーション機能は、オーディオビデオを指定された長さのセグメントに分割することができる機能です。分割の際にオーディオビデオセグメントのコンテナ形式を変更することもできます。</td>
 <td> 2021-10-14</td>
-<td>オーディオビデオセグメンテーション</a>
+<td>オーディオビデオセグメンテーション 
 </tr>
 </tbody></table>
 
 
 
-## 2021年9月
+## 2021年09月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -136,14 +197,14 @@
 </tbody></table>
 
 
-## 2021年8月
+## 2021年08月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -152,7 +213,7 @@
 <td>ファイルプレビュー/編集機能をリリース</td>
 <td>ユーザーがコンソール上でバケット内のファイルを素早くプレビューし、テキストファイルの編集操作を行うことができるようになりました。</td>
 <td> 2021-08-05</td>
-<td>オブジェクトのプレビューまたは編集
+<td>オブジェクトのプレビューまたは編集 
 </tr>
 <tr>
 <td>フォルダ共有機能をリリース</td>
@@ -176,20 +237,20 @@
 <td>メディア処理-ビデオ暗号化機能をリリース</td>
 <td>HLS標準暗号化機能を追加しました。お客様のビデオデータのセキュリティをしっかり保護します。</td>
 <td> 2021-08-03</td>
-<td>HLS暗号化によるビデオ漏洩防止
+<td>HLS暗号化によるビデオ漏洩防止 
 </tr>
 </tbody></table>
 
 
 
-## 2021年7月
+## 2021年07月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -198,20 +259,20 @@
 <td>重慶リージョンでディープアーカイブストレージをリリース</td>
 <td>重慶リージョンのバケットへのディープアーカイブストレージタイプのオブジェクトのアップロードをサポートしました。</td>
 <td> 2021-07-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">オブジェクトのアップロード</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">上传对象</a></td>
 </tr>
 </tbody></table>
 
 
 
-## 2021年6月
+## 2021年06月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -244,20 +305,20 @@
 <td>メディア処理-HLSアダプティブパッケージ機能をリリース</td>
 <td>マルチビットレートのアダプティブなビデオファイルをワンステップで生成でき、異なる種類のビデオプレーヤー、ブラウザ、配信プラットフォームに対応します。</td>
 <td> 2021-06-26</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/46408">ワークフローの設定</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46408">配置工作流</a>
 </tr>
 </tbody></table>
 
 
 
-## 2021年5月
+## 2021年05月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -277,14 +338,14 @@
 </tbody></table>
 
 
-## 2021年4月
+## 2021年04月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -293,13 +354,13 @@
 <td>東京リージョンでディープアーカイブストレージをリリース</td>
 <td>東京リージョンのバケットへのディープアーカイブストレージタイプのオブジェクトのアップロードをサポートしました。</td>
 <td> 2021-04-29</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">オブジェクトのアップロード</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">上传对象</a></td>
 </tr>
 <tr>
 <td>ログのクリーンアップ機能をリリース</td>
 <td>ログのクリーンアップはTencent Cloud COSがServerless Cloud Function（SCF）をベースにしてご提供するログファイル処理ソリューションです。ユーザーがログ管理サービスを有効化するか、またはご自身でログファイルをアップロードすると、COSがあらかじめ設定したSCFが自動的にトリガーされ、関数内であらかじめ指定したSQLによってステートメントを検索し、ファイル内のログ情報を自動的にフィルタリングしてクリーンアップします。</td>
 <td> 2021-04-02</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/39925">ログのクリーンアップ</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/39925">日志清洗</a>
 </tr>
 <tr>
 <td>CKafkaメッセージのバックアップ機能をリリース</td>
@@ -311,14 +372,14 @@
 
 
 
-## 2021年3月
+## 2021年03月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -327,7 +388,7 @@
 <td>データワークフローをリリース</td>
 <td>データワークフローはCOSが新たにリリースしたデータ処理サービスです。その中にはワークフローとタスクという2つの機能があり、新規データと既存データについてそれぞれメディア処理を行うことができます。メディア処理には、オーディオビデオトランスコード、ビデオフレームキャプチャ、ビデオのアニメーション画像生成、インテリジェントカバー、オーディオビデオスプライシングなどがあります。</td>
 <td>2021-03-20</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/46387">データワークフローの概要</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46387">数据工作流概述</a>
 </tr>
 <tr>
 <td>ディープアーカイブタイプの南京リージョンでのサポートを開始</td>
@@ -338,15 +399,15 @@
 </tbody></table>
 
 
-## 2021年2月
+## 2021年02月
 
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -362,14 +423,14 @@
 
 
 
-## 2021年1月
+## 2021年01月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -389,9 +450,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -400,13 +461,13 @@
 <td>back-to-origin障害復旧機能をリリース</td>
 <td>ユーザーがCOSのback-to-originを設定する際に、バックアップオリジンサーバーを設定できるようになりました。back-to-originが失敗したケースで、back-to-originアドレスが無効になった場合に速やかにバックアップback-to-originアドレスに切り替えることで、業務の連続性を保障することができます。</td>
 <td> 2020-12-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">back-to-origin設定</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">设置回源</a>
 </tr>
 <tr>
 <td>back-to-originの同期機能をリリース</td>
 <td>back-to-originの同期を有効にすると、COSはオリジンサーバーからデータを直接プルしてリアルタイムにリクエスト側に返し、リダイレクトのステータスコード3XXを返さなくなります。</td>
 <td> 2020-12-17</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">back-to-origin設定</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">设置回源</a>
 </tr>
 <tr>
 <td>COSバッチ処理機能の最適化アップグレード</td>
@@ -416,14 +477,14 @@
 </tr>
 </tbody></table>
 
-## 2020年11月
+##  2020年11月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -438,7 +499,7 @@
 <td>INTELLIGENT_TIERINGストレージをリリース</td>
 <td>INTELLIGENT_TIERINGストレージタイプはコールドデータとホットデータの階層分離メカニズムをご提供します。ユーザーデータへのアクセスパターンに応じて、データのホット階層とコールド階層を自動的に切り替えることで、ユーザーデータのストレージコストを削減することができます。</td>
 <td> 2020-11-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38305">INTELLIGENT_TIERINGストレージの概要</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38305">智能分层存储简介</a>
 </tr>
 </tbody></table>
 
@@ -447,16 +508,16 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>高度な画像圧縮機能をリリース </td>
-<td>高度な画像圧縮機能では、画像をより効率的にTPGやHEIFなどの高圧縮率形式に変換し、画像伝送リンクとロード時間を効果的に短縮し、帯域幅とトラフィックコストを削減することができます。</td>
+<td>高度な画像圧縮機能では、画像をより効率的にTPGやHEIFなどの高圧縮率形式に変換し、画像伝送リンクとロード時間を効果的に短縮し、帯域幅とトラフィックコストを削減することができます。
 <td> 2020-10-16</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/40117">高度な画像圧縮の設定</a></td>
 </tr>
@@ -468,14 +529,14 @@
 </tr>
 </tbody></table>
 
-## 2020年9月
+## 2020年09月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -484,7 +545,7 @@
 <td>ライフサイクル機能のイテレーションおよびバケット概要ページのリリース</td>
 <td>1. ライフサイクル機能は、過去バージョンのファイルの他のストレージタイプへの移行をサポートしました。<br>2. COSコンソールは単一のバケットに対し、使用量、バケットの基本情報、機能、アラート設定の状況などを確認できるグローバル概要機能をサポートしました。</td>
 <td> 2020-09-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/14605">ライフサイクルの設定</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/14605">设置生命周期</a>
 <br><a href="https://intl.cloud.tencent.com/document/product/436/38493">バケットの概要</a></td>
 </tr>
 <tr>
@@ -495,14 +556,14 @@
 </tr>
 </tbody></table>
 
-## 2020年8月
+## 2020年08月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -517,14 +578,14 @@
 </tr>
 </tbody></table>
 
-## 2020年7月
+## 2020年07月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -538,25 +599,25 @@
 </tbody></table>
 
 
-## 2020年3月
+## 2020年03月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>オブジェクトタグおよびファイル解凍機能をリリース<br>ならびにコンソールのバージョンアップによる最適化</td>
-<td>1. コンソール概要ページをリニューアルし、CMアラート設定との連携、製品公開動向の提供および製品表示位置のバインドを行いました。
+<td>1. コンソール概要ページをリニューアルし、BCMアラート設定との連携、製品公開動向の提供および製品表示位置のバインドを行いました。
 <br>2. ファイル解凍機能を提供しました。
 <br>3. オブジェクトタグ機能を提供し、タグのグループ化によって COSに保存されたオブジェクトを管理できるようになりました。
 <br>4. バケットリストの並べ替え、リージョンのフィルタリング、リストのエクスポートをサポートしました。</td>
 <td >2020-03-30</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/35665">オブジェクトタグの概要</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/35665">对象标签概述</a>
 <br><a href="https://intl.cloud.tencent.com/document/product/436/35663">ファイル解凍</a>
 <br><a href="https://intl.cloud.tencent.com/document/product/436/16871">課金概要</a>
 </td>
@@ -583,9 +644,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -610,9 +671,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -631,14 +692,14 @@
 </tbody></table>
 
 
-## 2019年8月
+## 2019年08月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -650,13 +711,13 @@
 </tbody></table>
 
 
-## 2019年6月
+## 2019年06月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -688,14 +749,14 @@
 
 
 
-## 2019年5月
+## 2019年05月
 
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -708,13 +769,13 @@
 </tbody></table>
 
 
-## 2019年4月
+## 2019年04月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -732,9 +793,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -758,9 +819,9 @@
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -774,13 +835,13 @@
 
 
 
-## 2018年8月
+## 2018年08月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -806,13 +867,13 @@
 </tbody></table>
 
 
-## 2018年6月
+## 2018年06月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -834,13 +895,13 @@ COSへのCDN経由のアクセスをサポートしました。パブリック�
 
 
 
-## 2018年5月
+## 2018年05月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -854,13 +915,13 @@ COSへのCDN経由のアクセスをサポートしました。パブリック�
 
 
 
-## 2018年4月
+## 2018年04月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -883,9 +944,9 @@ COSへのCDN経由のアクセスをサポートしました。パブリック�
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
@@ -897,13 +958,13 @@ COSへのCDN経由のアクセスをサポートしました。パブリック�
 </tbody></table>
 
 
-## 2017年9月
+## 2017年09月
 <table>
 <thead>
 <tr>
-<th width="20%">ダイナミックネーム</th>
+<th width="20%">動的名称</th>
 <th width="50%">動的記述</th>
-<th width="15%">リリース時間</th>
+<th width="15%">発表時間</th>
 <th width="15%">関連ドキュメント</th>
 </tr>
 </thead>
