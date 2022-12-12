@@ -721,3 +721,4 @@ The following Modules shall apply and form part of this privacy policy if you us
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
+[Privacy Policy](https://www.tencentcloud.com/document/product/301/43520)(version2.0)
