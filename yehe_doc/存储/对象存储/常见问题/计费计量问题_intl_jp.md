@@ -200,9 +200,8 @@ COSではバケットごとの請求書発行およびタグごとの請求書�
 [](id:period)
 ### 請求書の統計周期を確認するにはどうすればよいですか。
 
-Tencent Cloudコンソールにログインし、料金センターの[請求書概要](https://console.cloud.tencent.com/expense/bill/overview)でアカウントの請求書統計周期を確認できます。請求書の統計周期が課金周期か引き落とし周期かは、下記の赤枠の場所に表示されます。
+Tencent Cloudコンソールにログインし、料金センターの[請求書概要](https://console.cloud.tencent.com/expense/bill/overview)でアカウントの請求書統計周期を確認できます。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/f449d9e55ee31e54bd873bb8342a67b8.png)
 
 [](id:charge)
 ### 引き落とし周期に基づく請求書発行とは何ですか、課金周期に基づく請求書発行とは何ですか。
