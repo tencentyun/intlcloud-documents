@@ -28,7 +28,7 @@ You can view more statistics on this page as shown below:
 
 ### Aggregated exception search
 On the **Aggregated Exception Search** tab, you can set filters to view the cause and object distribution trends of exceptions over a specified period of time. You can also search for exceptions in the list below the trend diagrams to quickly locate problems as shown below:
-![](https://main.qcloudimg.com/raw/8f917f9874c2a39ce1aae7071618ba53.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/HfQB934_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221212111210.png)
 
 ### Global search
 The global search dashboard with the built-in CLS search and analysis page makes it convenient for you to quickly search for all events in the TKE console as shown below:

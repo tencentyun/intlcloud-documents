@@ -28,7 +28,7 @@
 
 ### 异常事件聚合检索
 在“异常事件聚合检索”页面设置过滤条件，查看某个时间段内各类异常事件的 reason 和 object 分布趋势。在趋势下方展示了可供搜索的异常事件列表，帮助您快速定位到问题。如下图所示：
-![](https://main.qcloudimg.com/raw/8f917f9874c2a39ce1aae7071618ba53.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/HfQB934_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221212111210.png)
 
 ### 全局检索
 全局检索仪表盘中内嵌了 CLS 的检索分析页面，方便用户在容器服务控制台 也能快速检索全部事件。如下图所示：
