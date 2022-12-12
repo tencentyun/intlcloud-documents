@@ -202,7 +202,7 @@ COS는 버킷별 청구 및 태그별 비용 할당을 지원합니다.
 
 Tencent Cloud 콘솔에 로그인하여 과금 센터의 [청구서 개요](https://console.cloud.tencent.com/expense/bill/overview)를 선택하면 다음 이미지의 빨간색 상자와 같이 계정의 청구 통계 기간이 표시되며 이는 청구 주기 또는 차감 주기가 될 수 있습니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/f449d9e55ee31e54bd873bb8342a67b8.png)
+
 
 [](id:charge)
 ### 차감 주기별 청구와 과금 주기별 청구란 무엇인가요?
