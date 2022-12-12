@@ -1,7 +1,9 @@
 This document introduces how to create a connection in the Tencent Cloud console.
 
-## Flowchart
+## Process
 ![](https://qcloudimg.tencent-cloud.cn/raw/9308b979285e8de12b92cbb31e8701ed.jpg)
+>?After creating a connection, contact your Tencent Cloud sales rep promptly to further configure it. If you don't have a sales rep, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+>
 1. [Create a connection](#buzhou1): Synchronize your connection application in the console. Then, the connection status will become **Applying**.
 2. [Review resources and design solutions](#buzhou2): Tencent Cloud will review resources after receiving your connection application. The connection status becomes **Evaluating**. Then, the connection manager will confirm the connection design with you synchronously. After confirmation, the connection status turns to be **Pending paid**.
 3. [Complete the payment](#buzhou3): After the payment is completed in the console, the connection status will be changed to **Constructing**. You also need to contact the carrier and Tencent Cloud to complete the connection construction and acceptance, and confirm the acceptance in the console. The accepted connection will be in **Running** status.
@@ -9,7 +11,7 @@ This document introduces how to create a connection in the Tencent Cloud console
 > 
 
 ## Directions
-### Step 1: Create a connection[](id:buzhou1)
+### Step 1. Create a connection[](id:buzhou1)
 After the application is submitted, the connection status will become **Applying**. Tencent Cloud will assess resources and provide solutions within three business days.
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc) and click **+New** on the **Connections** page.
 2. Complete the following configurations and click **OK**.
@@ -28,11 +30,11 @@ After the application is submitted, the connection status will become **Applying
 <tr>
 <td>Region</td>
 <td>Select the geographic area of a physical data center. Tencent Cloud regions are completely isolated from each other to ensure maximum stability and fault tolerance between different regions.</td>
-<td>To reduce the access delay and improve the download speed, it is recommended that you choose the nearest region.</td>
+<td>To reduce the access delay and improve the download speed, we recommend you choose the nearest region.</td>
 </tr>
 <tr>
 <td>Access point</td>
-<td>Select the network service provider of Tencent Cloud connection. It is recommended that you choose the nearest access point. For details, see <a href="https://intl.cloud.tencent.com/document/product/216/41429"> Connection Access Point</a>.</td>
+<td>Select the network service provider of Tencent Cloud connection. We recommend you choose the nearest access point. For details, see <a href="https://intl.cloud.tencent.com/document/product/216/41429"> Connection Access Point</a>.</td>
 <td>A region supported by Tencent Cloud generally has more than two access points, which can realize two-line disaster recovery.</td>
 </tr>
  <tr>
@@ -43,7 +45,7 @@ After the application is submitted, the connection status will become **Applying
 <tr>
 <td>Cloud port</td>
 <td>Supported specifications: 1G, 10G and 100G.</td>
-<td>To use 100G ports, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+<td>To use 100G ports, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>Port type</td>
@@ -77,14 +79,14 @@ After the application is submitted, the connection status will become **Applying
 </tr>
 </table>
 
-### Step 2: Review Resources and Design Solutions[](id:buzhou2)
-After your application for a connection is submitted, Tencent Cloud’s Direct Connect representative will comprehensively assess Direct Connect resources and then check with you the service details over the phone. After the connection is confirmed to be accessible, its status becomes **Pending paid**. Your connection application may be rejected for any of the following reasons:
-- Inaccurate information: the access information you entered is incomplete. Please modify your application according to the feedback of the Direct Connect representative, and submit again.
-- Insufficient resources: the access port or uplink bandwidth resources are insufficient. Please submit a new application after the Direct Connect representative confirms the resource availability.
-- Ineligibility: the connection is only available to large-scale organizational customers. After you are eligible, resubmit an application.
+### Step 2. Review resources and design solutions[](id:buzhou2)
+After your application for a connection is submitted, Tencent Cloud's Direct Connect representative will comprehensively assess Direct Connect resources and then check with you the service details over the phone. After the connection is confirmed to be accessible, its status becomes **Pending paid**. Your connection application may be rejected for any of the following reasons:
+- Inaccurate information: The access information you entered is incomplete. Modify your application according to the feedback of the Direct Connect representative, and submit again.
+- Insufficient resources: The access port or uplink bandwidth resources are insufficient. Submit a new application after the Direct Connect representative confirms the resource availability.
+- Ineligibility: The connection is only available to large-scale organizational customers. After you are eligible, resubmit an application.
 
 
-### Step 3: Complete the Payment[](id:buzhou3)
+### Step 3. Complete the payment[](id:buzhou3)
 After your application is approved, you need to complete the payment on the console. Then the Direct Connect representative will accept the access request and coordinate resources for the connection construction. After the connection is completed and accepted, the connection status becomes **Running**. Perform the following steps to make the payment:
 
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc).
@@ -92,7 +94,7 @@ After your application is approved, you need to complete the payment on the cons
 3. Confirm the Direct Connect information in the pop-up window, and click **OK**.
 4. Access the billing platform to complete the payment.
 
-### Step 4: Configure the alarm recipient
+### Step 4. Configure the alarm recipient
 After a connection is created, Tencent Cloud automatically configures the following metric alarm for its bandwidth utilization, helping you monitor and manage your connection.
 <table>
 <tr>
@@ -105,17 +107,17 @@ After a connection is created, Tencent Cloud automatically configures the follow
 </tr>
 <tr>
 <td>dc_band_rate</td>
-<td>1 minute</td>
+<td>One minute</td>
 <td>>=</td>
 <td>80%</td>
-<td>At 5 consecutive data points</td>
+<td>At five consecutive data points</td>
 <td>Alarm once a day</td>
 </tr>
 </table>
 
 The automatically created default alarm policy is not configured with recipient information, and only supports console alarms. You can configure alarm recipients by yourself. For details, see [Configuring Alarm Policies](https://intl.cloud.tencent.com/document/product/216/38402).
 
-## See Also
+## Subsequent Operations
 After the carrier completes the connection construction, you need to test and accept it by creating a direct connect gateway and a dedicated tunnel. The accepted connection will be in **Running** status.
 - [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256)
 - [Creating a Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/19250)
