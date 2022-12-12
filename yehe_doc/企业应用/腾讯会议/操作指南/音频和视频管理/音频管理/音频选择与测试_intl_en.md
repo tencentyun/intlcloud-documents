@@ -28,7 +28,8 @@ When you join a meeting on PC client, we recommend you test whether your audio d
 - Click **Audio** on the **Settings** page or click the arrow next to **Mute/Unmute** on the toolbar and select **Audio Options** to enter the **Audio** page.
 - Select the devices to be used in the **Speaker** and **Mic** drop-down lists.
 - After selection, click **Test** to test the speaker and mic respectively.
->!If you don't select an audio connection method, you cannot speak or hear other attendees during the meeting.
+
+>! If you don't select an audio connection method, you cannot speak or hear other attendees during the meeting.
 
 ## How to Use
 ### PC audio
@@ -46,9 +47,7 @@ In "Call In" mode, you can use a landline or mobile phone to dial the correspond
 - After the call is connected, enter the meeting ID and press **#** for confirmation as prompted.
 - Enter your attendee ID and press **#** for confirmation.
 - If **You have joined the meeting, and x attendees are in the meeting currently** is prompted, you have joined the meeting successfully.
-
-
 - If you use a mobile phone to dial the number, you can press and hold `0` to enter the **+** sign; on a VoIP phone, press and hold " " to enter **+**; on a general landline phone, enter **0086** to indicate the **+86** code. Then, enter the attendee ID and press **#** for confirmation as prompted.
 - After you enter the attendee ID, the landline or mobile phone rather than the PC mic and speaker will be used as the meeting audio source, which has a more stable call audio quality. If you don't enter the attendee ID but directly press **#** to join the meeting, you will enter the meeting as an independent attendee, and howling may occur on the phone and your original device in the meeting.
 
->Warning：Pstn is currently reclaimed as a paid function, which can only be used by corporate accounts and purchased Pstn capabilities。
+>! Pstn is currently reclaimed as a paid function, which can only be used by corporate accounts and purchased Pstn capabilities。
