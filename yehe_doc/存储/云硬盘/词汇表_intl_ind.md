@@ -14,7 +14,7 @@ Disk cloud non-elastis dibuat bersamaan dengan Cloud Virtual Machine (CVM) dan m
 
 ### GPT
 
-Silakan lihat [GPT](https://intl.cloud.tencent.com/document/product/362/18555).
+Silakan lihat [GPT](https://www.tencentcloud.com/pt/document/product/362/18555#gpt2).
 
 
 
@@ -40,7 +40,7 @@ Rantai snapshot adalah rantai hubungan yang terdiri atas semua snapshot dari dis
 
 ### MBR
 
-Lihat [MBR](https://intl.cloud.tencent.com/document/product/362/18555)
+Lihat [MBR](https://www.tencentcloud.com/document/product/362/18555#mbr2)
 
 
 
