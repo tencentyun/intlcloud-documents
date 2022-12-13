@@ -38,10 +38,10 @@
 
 ## 步骤2：添加别称域名指向目标域名的 CNAME 记录
 1. 别称域名添加成功后，状态默认为未生效，如下所示：
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/hQxf732_3-en.png" width=800px>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/gknM234_3-pro-en.png" width=800px>
 2. 需要前往别称域名所在的 DNS 解析商，添加一条别称域名指向目标域名的 CNAME 记录才可生效。  
 3. EdgeOne 会自动完成检测并将别称域名的状态调整为**已生效**。
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/tpzz987_5-en.png" width=800px>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/784p027_5-pro-en.png" width=800px>
 
 ## 步骤3：申请免费证书（可选）
 若已在域名解析商将别称域名的 CNAME 指向目标域名，您可以在 EdgeOne 申请免费证书。   
@@ -52,9 +52,9 @@
 
 ## 步骤4：验证效果
 1. 验证目标域名。      
-   对目标域名发起浏览器访问和 Curl 请求的结果分别如下：<br><img src="https://staticintl.cloudcachetci.com/yehe/backend-news/D9tU946_8-en.png" width=800px><br>
+   对目标域名发起浏览器访问和 Curl 请求的结果分别如下：<br><img src="https://staticintl.cloudcachetci.com/yehe/backend-news/BGZb893_1.png" width=800px><br>
 	 <img src="https://qcloudimg.tencent-cloud.cn/raw/24167e0f207e7657e4c54cff5ee59bde.png" width=800px>
 2. 验证别称域名。      
-   获取目标域名请求结果后，对别称域名发起浏览器访问和 Curl 请求，验证返回结果是否一致：<br><img src="https://staticintl.cloudcachetci.com/yehe/backend-news/cGhD794_%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221213101049.png" width=900px><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f8369022667d2b3b258fc092b202b430.png" width=800px>
+   获取目标域名请求结果后，对别称域名发起浏览器访问和 Curl 请求，验证返回结果是否一致：<br><img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Wb7z933_2.png" width=900px><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f8369022667d2b3b258fc092b202b430.png" width=800px>
 
 如上所示，对别称域名和目标域名发起请求获取到了相同的响应内容，说明别称域名已按预期生效。
