@@ -2,7 +2,7 @@
 
 **Role:** Organizer/Co-Host/Attendee
 
- ![](https://main.qcloudimg.com/raw/d2a9ed4564cd61b476b7ecf868e7fab3.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/301866a9244c587d8547182d7f3d13da.png)
 
 ### Inviting Attendees
 
@@ -22,7 +22,8 @@ An invitation will be generated once you complete the steps below. You can **Cop
  - a.    Tap the ellipsis icon highlighted in the orange box at the bottom menu and select **Invite**.
  
  - b.    Invite attendees via email, WeChat, SMS or other tools.
-![](https://main.qcloudimg.com/raw/e9cedc4ee5854a1970aced8cf7e0afa4.png)
+
+![](https://qcloudimg.tencent-cloud.cn/raw/b244a0c8c5b130238768cd85db7606ce.png)
 
  
 

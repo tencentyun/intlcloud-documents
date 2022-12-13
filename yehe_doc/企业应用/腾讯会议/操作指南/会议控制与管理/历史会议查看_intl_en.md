@@ -12,7 +12,7 @@ You can retain your own meeting records and find the chat content in meetings on
  - Deleted meeting
  - Canceled meeting
  - Scheduled meeting ended more than 30 days ago
-- You can query meeting records such as chats, recordings, annotations, and files generated in meetings.
+- You can query meeting records such as chats in meetings.
 
 ## Querying Past Meeting Details
 ### On client
@@ -20,6 +20,6 @@ You can retain your own meeting records and find the chat content in meetings on
 2. Select the name of the target meeting and click **View Details**.
 
 ### On web
-1. Go to official website, log in and find [Account Center] (https://intl.cloud.tencent.com/zh/document/product/1054).
+1. Go to official website, log in and find [Account Center](https://www.tencentcloud.com/document/product/1054).
 2. Click **Meeting List** on the left sidebar and click **Past Meetings** in the top-left corner.
 3. Select the name of the target meeting to view the meeting details.

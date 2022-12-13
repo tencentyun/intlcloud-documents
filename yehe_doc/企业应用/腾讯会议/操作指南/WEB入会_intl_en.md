@@ -1,4 +1,4 @@
-# **Overview**
+## Overview
 
 VooV meeting lets you join a meeting from browser: 
 
@@ -8,17 +8,16 @@ VooV meeting lets you join a meeting from browser:
 This document describes how to join a meeting from browser. 
 
 
-
-# **Prerequisites**
+## Prerequisites
 
 1. Log in to VooV Meeting on the web portal before joining a meeting from browser.
 2. We recommend Google Chrome browser.
 
 
 
-# **Joining a Meeting from Browser**
+## Joining a Meeting from Browser
 
-## **Joining a Meeting**
+#### Joining a Meeting
 
 There are two ways to join a meeting from browser:
 
@@ -26,18 +25,21 @@ There are two ways to join a meeting from browser:
 2. Open the link [https://voovmeeting.com/user-center/join](https://voovmeeting.com/user-center/join) in browser, enter meeting ID and click **Join Meeting**.
 
 
-## **During a Meeting**
+## During a Meeting
 
 1. Toolbar: 
+
 - In the bottom of the page, you can mute or unmute, turn on or off video, add invitees, rename yourself and mute or unmute attendees in attendees list.
 - In the lower-right corner of the page:
   As a host or co-host, you can click **End Meeting** to leave or end meeting.
   As attendees, you can click **Leave Meeting** to leave meeting.
 
 2. Active Speaker 
+
 In the upper middle part of the page displays active speaker, and you can drag and drop the box to anywhere in the screen.
 
 3. Layout
+
 - When all attendees turn off video or do not share screen: 
   Thumbnails and name of all attendees are displayed.
 
@@ -45,26 +47,26 @@ In the upper middle part of the page displays active speaker, and you can drag a
   - The video is in the large display and a trip of thumbnails are displayed in the right side. Click other attendees’ video in the right side to switch the video display.
   - For attendees with video off, only thumbnails are displayed.
 
-## **Meeting Management**
+## Meeting Management
 
-### **Role:** Host
+#### Role: Host
 
 1. You can rename yourself and mute or unmute all attendees.
 2. You can mute or unmute all attendees.
 3. You can mute or unmute selected attendee, set or revoke co-host, set or reclaim host, stop video, stop sharing and remove attendee from meeting.
 4. You can set or revoke co-host, stop video and stop sharing.
 
-### **Role:** Co-host
+#### Role: Co-host
 
 1. You can rename yourself. 
 2. You can mute or unmute all attendees.
 3. You can mute or unmute selected attendee, stop video, stop sharing and remove the attendee from meeting.
 
-### **Role:** Attendee
+#### Role: Attendee
 
 1. You can mute or unmute yourself, rename yourself and leave meeting.
 
-### **Role:** Meeting creator as co-host
+#### Role: Meeting creator as co-host
 
 1. You can rename yourself, mute or unmute all attendees and revoke host privileges.
 2. You can mute or unmute all attendees.
@@ -72,13 +74,13 @@ In the upper middle part of the page displays active speaker, and you can drag a
 
 
 
-## **Leaving a Meeting** or **Ending a Meeting**
+## Leaving a Meeting  or  Ending a Meeting 
 
-### **Role:** Host/Co-host
+#### Role: Host/Co-host
 
 1. Click **End Meeting** at the lower right corner and click **Leave Meeting** in the pop-up window to leave the meeting.
 2. Click **End Meeting** at the lower right corner and click **End Meeting** in the pop-up window to end the meeting.
 
-### **Role:** Attendee
+#### Role: Attendee
 
 1. Click **End Meeting** at the lower right corner and click **Leave Meeting** in the pop-up window to leave the meeting.

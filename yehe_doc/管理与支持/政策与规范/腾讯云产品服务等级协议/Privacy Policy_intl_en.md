@@ -717,6 +717,8 @@ The following Modules shall apply and form part of this privacy policy if you us
 57.[Tencent Cloud Mesh](https://www.tencentcloud.com/document/product/1152/51393).
 58.[Cloud Data Warehouse for PostgreSQL](https://www.tencentcloud.com/document/product/1138/51756).
 59.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51968).
+60.[Tencent Cloud Firewall](https://www.tencentcloud.com/document/product/1160/52113).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
+[Privacy Policy](https://www.tencentcloud.com/document/product/301/43520)(version2.0)

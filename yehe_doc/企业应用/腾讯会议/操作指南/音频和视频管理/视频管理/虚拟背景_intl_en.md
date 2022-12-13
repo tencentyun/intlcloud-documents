@@ -4,7 +4,7 @@
 Background is an application of the portrait segmentation technology. During a video meeting, VooV Meeting can automatically recognize the attendees and replace their backgrounds with the specified image or video. On one hand, the virtual background can protect the attendees' privacy; on the other hand, it can replace a real exhibition background to facilitate themed promotion of the meeting and reduce the meeting costs. To get a better virtual background experience, we recommend you use this feature in a simple scenario with even lighting. If you have a green screen, you can use the green screen feature to further improve the virtual background effect.
 
 ## Prerequisites
-- **Logged-in user:** Free or Enterprise Edition user
+- **Logged-in user:** Enterprise Edition user
 - **Logged-in device:** Windows, macOS, iOS, or Android
 - **Version:** v1.3.0 or later
 - **Hardware requirements:**

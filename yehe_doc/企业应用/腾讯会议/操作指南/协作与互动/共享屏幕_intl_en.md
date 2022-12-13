@@ -6,7 +6,7 @@ The screen sharing feature of VooV Meeting enables you to selectively share the 
 
 ## Prerequisites
 
-- You are a Free, Pro, or Enterprise Edition user
+- You are a Free, Enterprise Edition user
 
 - Windows/macOS/iOS/Android
 

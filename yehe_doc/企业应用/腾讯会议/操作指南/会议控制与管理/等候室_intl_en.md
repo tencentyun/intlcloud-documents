@@ -6,7 +6,7 @@ The waiting room can be used to keeping order when joining meeting and guarantee
 
 ## Prerequisites
 
-- You are a Free, Pro, or Enterprise Edition user
+- You are a Free, Enterprise Edition user
 
 - Windows/macOS/iOS/Android
 

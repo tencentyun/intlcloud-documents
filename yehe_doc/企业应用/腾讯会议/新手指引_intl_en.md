@@ -11,8 +11,7 @@ You can refer to the following documents to learn more about VooV Meeting:
 
 ## Signup and Login
 You can sign up for and log in to VooV Meeting on PC or mobile client.
-- [Signup and Login on PC client](https://intl.cloud.tencent.com/document/product/1054/35560)
-- [Signup and Login on Mobile client](https://intl.cloud.tencent.com/document/product/1054/35557)
+- [Signup and Login on PC & mobile client](https://www.tencentcloud.com/document/product/1054/35553?lang=en&pg=)
 
 
 ## Creating a Meeting
@@ -23,30 +22,26 @@ You can create a meeting in two ways: **Schedule a meeting** and **Start a meeti
 | Schedule a meeting | You need to enter the meeting information. The scheduled meeting will be retained for 30 days, during which you can join the meeting at any time. |
 | Start a meeting    | You don't need to enter the meeting information. The meeting will be retained for only one hour, after which the system will end the meeting if there are no attendees in it. |
 
-When scheduling a meeting, you can choose to schedule a public, private, or recurring meeting. For their differences and creation methods, see below:
+When scheduling a meeting, you can choose to schedule a public or recurring meeting. For their differences and creation methods, see below:
 - [Scheduling a Public Meeting](https://intl.cloud.tencent.com/document/product/1054/35557)
-- Scheduling a Private Meeting
 - [Scheduling a Recurring Meeting](https://intl.cloud.tencent.com/document/product/1054/35557)
-- Starting a Meeting
+
 
 ## Joining a Meeting
 VooV Meeting provides multiple meeting join methods for you to quickly and accurately enter meetings.
-- Join a Meeting
+- [Join a Meeting](https://www.tencentcloud.com/document/product/1054/44921)
 
 
 ## Relevant Information
 
 | Operation                             | Guide                                                        |
 | ------------------------------------- | :----------------------------------------------------------- |
-| Manage the attendee list              | Attendee List Management                                     |
+| Manage the attendee list              | [Attendee List Management](https://www.tencentcloud.com/document/product/1054/35559) |
 | Share the screen with other attendees | [Screen Sharing](https://intl.cloud.tencent.com/document/product/1054/40879) |
-| Record meetings                       | Local Recording                                              |
-| Chats and Settings                    | In-Meeting Chat                                              |
-| Enable the background                 | Background                                                   |
-| Create and import documents           | Document Creation and Import                                 |
+| Record meetings                       | [Local Recording](https://www.tencentcloud.com/document/product/1054/46123) |
+| Chats and Settings                    | [In-Meeting Chat](https://www.tencentcloud.com/document/product/1054/43790) |
+| Enable the background                 | [Background](https://www.tencentcloud.com/document/product/1054/46120) |
 
-## Developer Tools
-VooV Meeting RESTful APIs are a set of tools provided for partner developers in the VooV Meeting ecosystem to connect and access VooV Meeting resources. They serve as the entry to the VooV Meeting SaaS service. Partners can further develop these APIs, such as meeting creation, modification, and query.
 
 ## Feedback and Suggestions
 If you have any questions or suggestions about VooV Meeting, you can send your feedback through the following channels, and we will get back to you accordingly:

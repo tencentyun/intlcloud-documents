@@ -6,7 +6,7 @@
 
 ## 前提条件
 
-- 免费版、商业版、企业版用户
+- 免费版、企业版用户
 
 - Windows/macOS/iOS/Android；
 

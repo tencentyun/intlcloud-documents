@@ -21,4 +21,9 @@ Tencent Cloud EventBridge is a secure, stable, and standardized serverless event
 **Custom event bus**: It is an event bus created and managed by yourself. Events of your applications can be published only to your custom event buses.
 
 ### How is EventBridge billed?
-For billing details, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1108/43288).
+EventBridge is a pay-as-you-go service. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1108/46994).
+
+
+### What permissions do I need to use EventBridge?
+Tencent Cloud EventBridge uses [Tencent Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598) to manage permissions. CAM is a permission and access management service that helps you securely manage the access permissions to resources under your Tencent Cloud account. With CAM, you can create, manage and terminate users and user groups and use identity and policy management to control user access to Tencent Cloud resources. Before using EventBridge, you need to activate it as instructed in [Activating EventBridge](https://intl.cloud.tencent.com/document/product/1108/42272). 
+

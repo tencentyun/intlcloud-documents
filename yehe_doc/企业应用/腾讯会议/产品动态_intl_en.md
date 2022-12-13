@@ -6,6 +6,39 @@
 	<th style="width: 25%;"><center>Version</center></th>
 	<th style="width: 50%;"><center>Update</center></th>
 	<th style="width: 25%;"><center>Update Time</center></th>
+	<tr>
+	<td><center> v3.11.0</center></td>
+	<td>
+1. Users can now use the Break app to take a break during meetings.<br>
+2. ABusiness and Enterprise edition users can now display all attendees or specified certain members in your custom layouts.<br>
+3. You can now use stickers during video meetings in Windows clients.<br>
+4. Co-hosts can now manage breakout rooms during meetings..
+</td>
+<td><center>2022-09-06</center></td>
+	<tr>
+	<td><center> v.3.9.0</center></td>
+	<td>
+1. Users can now assign the host control to another user when leaving a meeting.<br>
+2. Users can now use keyboard shortcuts to navigate the meeting settings.<br>
+3. Hosts/co-hosts can now request members to turn on/off camera.<br>
+</td>
+<td><center>2022-07-05</center></td>
+	<tr>
+	<td><center> v3.7.0</center></td>
+	<td>
+1. Users can now enter a custom time period when scheduling recurring meetings.<br>
+2. Users can now add more than one whiteboard page.<br>
+3. The hand raising feature is enhanced so that users can see the hand icon more clearly.<br>
+</td>
+<td><center>2022-04-29</center></td>
+	<tr>
+	<td><center> v3.3.0</center></td>
+	<td>
+1. Users can now sign up and log in with email address.<br>
+2. Webinar practice sessions are now supported to allow hosts and panelists to prepare before starting the live session.<br>
+3. Attendees can now share the webinar link with others during webinars.<br>
+</td>
+<td><center>2022-03-30</center></td>
 	</tr>
 		<tr>
 	<td><center> v2.19.0</center></td>
@@ -21,7 +54,7 @@
 	<td><center> v2.18.0</center></td>
 	<td>
 1. Past Meetings Synchronization: past meetings now can be synchronized to different clients.<br>
-2. Registration for Meetings: you can now enable registration when scheduling meetings for attendees to register. 
+2. Registration for Meetings: you  can now enable registration when scheduling meetings for attendees to register. 
 </td>
 <td><center>2021-09-13</center></td>
 </tr>

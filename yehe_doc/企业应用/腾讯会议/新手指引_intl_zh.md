@@ -1,18 +1,17 @@
-本文将帮助您快速了解如何登录腾讯会议，并预定和开启一场线上会议。
+本文将帮助您快速了解如何登录VooV Meeting，并预定和开启一场线上会议。
 
 ## 产品简介
-腾讯会议拥有卓越的音视频性能，丰富的会议协作能力，坚实的会议安全保障，提升协作效率，满足大中小会议全场景需求。
+VooV Meeting 拥有卓越的音视频性能，丰富的会议协作能力，坚实的会议安全保障，提升协作效率，满足大中小会议全场景需求。
 
 ## 快速了解
-您可依次查阅以下文档，进一步了解腾讯会议：
-- [腾讯会议具有哪些优势？](https://intl.cloud.tencent.com/document/product/1054/35551)
-- 腾讯会议功能更新动态有哪些
-- [常见问题](https://intl.cloud.tencent.com/document/product/1054/35566)
+您可依次查阅以下文档，进一步了解VooV Meeting：
+- [产品优势？](https://www.tencentcloud.com/zh/document/product/1054/35551)
+- [功能更新动态](https://www.tencentcloud.com/zh/document/product/1054/43773?lang=zh&pg=)
+- [常见问题](https://www.tencentcloud.com/zh/document/product/1054/43792)
 
 ## 注册和登录
-腾讯会议支持在 PC 端或者移动端进行注册和登录。
-- [PC 端注册登录](https://intl.cloud.tencent.com/document/product/1054/35553)
-- [移动端注册登录](https://intl.cloud.tencent.com/document/product/1054/35553)
+VooV Meeting支持在 PC 端或者移动端进行注册和登录。
+- [PC&移动端注册登录](https://intl.cloud.tencent.com/document/product/1054/35553)
 
 
 ## 创建会议
@@ -25,32 +24,30 @@
 
 其中，在预定会议时，可选择预定常规会议、特邀会议或者周期性会议，具体区别以及创建方式请通过以下链接查看：
 - [预定常规会议](https://intl.cloud.tencent.com/zh/document/product/1054/35557)
-- 预定特邀会议
 - [预定周期性会议](https://intl.cloud.tencent.com/zh/document/product/1054/35557)
-- 快速会议
+
 
 ## 加入会议
 腾讯会议为您提供多种入会方式，以便您快速准确地进入会议中。
-- [入会方式]()
+- [入会方式](https://www.tencentcloud.com/zh/document/product/1054/44921?lang=zh&pg=)
 
 
 ## 相关信息
 
 |相关操作                                   | 具体指引                                                  |
 | ------------------------------------------ | :----------------------------------------------------------- |
-| 管理成员列表                 | 管理成员列表 |
-| 将屏幕共享给其他成员             | [共享屏幕](https://intl.cloud.tencent.com/document/product/1054/40879) |
-| 对会议进行录制                             | 本地录制 |
-| 聊天及其设置                 | 会中聊天 |
-| 开启虚拟背景     | 虚拟背景 |
-| 文档的创建及导入        | 文档创建及导入 |
+| 管理成员列表              | [管理成员列表](https://www.tencentcloud.com/zh/document/product/1054/51833) |
+| 将屏幕共享给其他人 | [共享屏幕](https://www.tencentcloud.com/zh/document/product/1054/46127) |
+| 会议录制                       | [本地录制](https://www.tencentcloud.com/zh/document/product/1054/46123?lang=zh&pg=) |
+| 聊天及其设置                    | [会中聊天](https://www.tencentcloud.com/zh/document/product/1054/43790?lang=zh&pg=) |
+| 开启虚拟背景                 | [虚拟背景](https://www.tencentcloud.com/zh/document/product/1054/46120?lang=zh&pg=) |
 
-## 开发者工具
-腾讯会议（Tencent Meeting）Rest API 是为参与腾讯会议生态系统建设的合作方开发者接入并访问腾讯会议资源提供的一组工具，是访问腾讯会议 SaaS 服务的入口。合作伙伴可以通过腾讯会议 API 进行二次开发，例如：创建会议、修改会议、查询会议信息等，您可以参考使用 API 快速入门，并通过REST APIs了解对应功能的接口。
+
+
 
 ## 反馈与建议
 使用腾讯云云服务器产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题。
-- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧**文档反馈**或选中存在问题的内容进行反馈。
+- 如果发现产品文档的问题，如链接、内容错误等，您可以单击文档页右侧**文档反馈**或选中存在问题的内容进行反馈。
 - 如果遇到产品相关问题，您可咨询 [在线支持](https://intl.cloud.tencent.com/support) 寻求帮助。
 - 您也可以直接联系客服人员，寻求相应的帮助：
  - 客服咨询：4009100100（7 × 24小时）。

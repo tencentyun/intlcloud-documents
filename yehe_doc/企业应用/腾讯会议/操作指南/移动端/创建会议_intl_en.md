@@ -13,7 +13,8 @@ Follow the steps to schedule a meeting:
 3. Enable **Mute Attendees upon Entry**.
 
 4. Enable **Screen Sharing Watermark** to ensure data security.
-![](https://main.qcloudimg.com/raw/7ae6cfd86bd6a791cccce5aef93f265b.png)
+
+![](https://qcloudimg.tencent-cloud.cn/raw/87380922b92ca9d62a4afb0deea2d16f.png)
 
 5. Once a meeting is scheduled successfully, it will appear on your meeting list.
 
@@ -27,7 +28,8 @@ Co-hosts can mute, unmute, and rename attendees. They can also help hosts manage
 1. Tap **Attendees** and select the attendee you want to set as a co-host.
  
 2. Tap the attendee and select **Make Co-host**.
-![](https://main.qcloudimg.com/raw/5ef343df9fb2719179e12c15f07621c1.png)
+
+![](https://qcloudimg.tencent-cloud.cn/raw/33343167de4bc9d298dc86d77d3496da.png)
 
 
 
