@@ -14,7 +14,7 @@ Um disco em nuvem não elástico é criado junto com um Cloud Virtual Machine (C
 
 ### GPT
 
-Consulte [GPT](https://intl.cloud.tencent.com/document/product/362/18555).
+Consulte [GPT](https://www.tencentcloud.com/pt/document/product/362/18555#gpt2).
 
 
 
@@ -40,7 +40,7 @@ A cadeia de snapshots é uma cadeia de relação composta por todos os snapshots
 
 ### MBR
 
-Consulte [MBR](https://intl.cloud.tencent.com/document/product/362/18555)
+Consulte [MBR](https://www.tencentcloud.com/document/product/362/18555#mbr2)
 
 
 
