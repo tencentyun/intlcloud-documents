@@ -11,7 +11,7 @@ A condition defines the standard for identifying a request, including:<li>Matchi
 | URL Full        | Complete request URL                | `https://www.example.com/foo`    |
 | Query string      | Query string in the request URL          | Parameter name: `key` <br/>Parameter value: `value`   |
 | File extension        | File extension of the request content | jpg, png, css                      |
-| Filename        | Filename of the request content               | foo                              |
+| Filename        | Filename of the request content               | foo.txt                             |
 | HTTP request header     | HTTP request header                    | Header name: `name`<br/>Header value: `value` |
 | Country/Region of the client | Country/Region of the client IP          | US                             |
 | All            | Any site request                     | -                                |
