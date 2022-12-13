@@ -38,10 +38,10 @@ Below is the target domain name in this example:
 
 ## Step 2. Add the CNAME record of the domain alias that points to the target domain name
 1. After the domain alias is added successfully, it is **not activated** by default as shown below:
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/hQxf732_3-en.png" width=800px>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/gknM234_3-pro-en.png" width=800px>
 2. Go to your DNS service provider and add a CNAME record that points to the target domain name to activate the domain alias. 
 3. EdgeOne will automatically perform a check and change the status of the domain alias to **Activated**.
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/tpzz987_5-en.png" width=800px>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/784p027_5-pro-en.png" width=800px>
 
 ## Step 3. Apply for a free certificate (optional)
 If you have pointed the CNAME record of the domain alias to the target domain name at your DNS service provider, you can apply for a free certificate in EdgeOne.   
@@ -52,9 +52,9 @@ If you have pointed the CNAME record of the domain alias to the target domain na
 
 ## Step 4. Verify the effect
 1. Verify the target domain name.      
-   Access the target domain name through the browser and send a curl request to it. The results are as shown below:<br><img src="https://staticintl.cloudcachetci.com/yehe/backend-news/D9tU946_8-en.png" width=800px><br>
+   Access the target domain name through the browser and send a curl request to it. The results are as shown below:<br><img src="https://staticintl.cloudcachetci.com/yehe/backend-news/BGZb893_1.png" width=800px><br>
 	 <img src="https://qcloudimg.tencent-cloud.cn/raw/24167e0f207e7657e4c54cff5ee59bde.png" width=800px>
 2. Verify the domain alias.      
-   After getting the result of the request to the target domain name, access the domain alias through the browser and send a curl request to it. Check whether the results are the same:<br><img src="https://staticintl.cloudcachetci.com/yehe/backend-news/cGhD794_%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221213101049.png" width=900px><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f8369022667d2b3b258fc092b202b430.png" width=800px>
+   After getting the result of the request to the target domain name, access the domain alias through the browser and send a curl request to it. Check whether the results are the same:<br><img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Wb7z933_2.png" width=900px><br><img src="https://qcloudimg.tencent-cloud.cn/raw/f8369022667d2b3b258fc092b202b430.png" width=800px>
 
 As shown above, the same response is obtained for the requests to the domain alias and target domain name, indicating that the domain alias has taken effect as expected.

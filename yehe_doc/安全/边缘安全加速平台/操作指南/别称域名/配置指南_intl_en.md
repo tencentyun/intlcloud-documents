@@ -32,7 +32,7 @@ You have [purchased](https://console.cloud.tencent.com/edgeone) the EdgeOne Ente
 
 ### Step 2. Add the CNAME record of the domain alias that points to the target domain name
 1. After the domain alias is added successfully, it is **not activated** by default as shown below:
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/DW7n261_2-en.png" width=800px>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/va6E018_2-pro-en.png" width=800px>
 2. Go to your DNS service provider and add a CNAME record that points to the target domain name to activate the domain alias. 
 3. EdgeOne will automatically perform a check and change the status of the domain alias to **Activated**.
 
