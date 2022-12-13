@@ -5,18 +5,13 @@ Smart Compression can automatically compress the resources to Gzip/Brotli files 
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Site Acceleration** > **File Optimization** on the left sidebar.
 2. On the page that appears, select a site, and toggle on/off Smart Compression.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ba7b8cd394825462e164d68982918a43.png)
-
 **Parameter description:**
  - **On** (default): Smart compression is enabled.
-
->! To use smart compression, the client request must include the "Accept-Encoding: gzip (or br)" header. If both compression methods are enabled, Brotli compression takes priority.
-
  - **Off**: Smart compression is disabled.
 
-
-## Supports and Limits
-- File size: 256 B – 30 MB
-- File formats (compress based on Content-Type):
+## Notes
+1. Smart compression supports files of 256 B to 30 MB.
+2. By default, smart compression compresses resources by `Content-Type` and supports the following types:
 ```js.
 text/html
 text/xml
@@ -67,4 +62,9 @@ application/javascript-binast
 application/manifest+json 
 application/ld+json
 ```
-
+3. If both Gzip compression and Brotli compression are enabled, and the client request header `Accept-Encoding` carries both `br` and `gzip`:
+ - If the node has cached resources compressed in Brotli and Gzip, Brotli compressed resources are returned first.
+ - If the node has cached resources compressed only in Brotli, Brotli compressed resources are returned first.
+ - If the node has cached resources compressed only in Gzip, Gzip compressed resources are returned first.
+4. If only Brotli compression or Gzip compression is enabled and the request header carries `gzip` or `br`, the compression will not take effect, and the original resource will be returned.
+5. If the origin server has the compression feature enabled, and the server carries the response header `Content-Encoding`, the smart compression feature will no longer take effect.

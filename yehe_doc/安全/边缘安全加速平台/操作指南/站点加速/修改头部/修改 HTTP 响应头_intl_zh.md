@@ -4,10 +4,8 @@
 
 ## 操作步骤
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone) ，在左侧菜单栏中，单击**规则引擎**。
-2. 在规则引擎页面，选择所需站点，单击![](https://qcloudimg.tencent-cloud.cn/raw/fe4d4900f8ad69d506adc49bdb70fa32.png)可按需配置修改 HTTP 响应头规则。
->! 目前仅支持匹配条件为全部（任意请求） 或 Host 时配置修改 HTTP 响应头操作。
-
-参数说明：
+2. 在规则引擎页面，选择所需站点，可按需配置修改 HTTP 响应头规则。如何使用规则引擎，请参见 [规则引擎](https://intl.cloud.tencent.com/document/product/1145/46151)。
+配置项说明：
 <table>
 <thead>
 <tr>
@@ -16,7 +14,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>变更</td>
+<td>设置</td>
 <td>变更指定头部参数的取值为设置后的值<br>注意：<ul><li>若指定头部不存在，则会增加该头部</li><li>若头部已存在（即使有多个重复的头部），则会覆盖原有头部且唯一（合并多个重复的头部为1个头部）</td>
 </tr>
 <tr>
@@ -35,6 +33,7 @@
   - 参数值：1 - 1000个字符，不支持中文。
 - 一个修改 HTTP 请求头操作中，可添加多条不同类型操作，最多30条，执行顺序为从上至下。
 - 部分标准头部不支持修改，清单如下：
+
 ```js.
 Date
 Expires
@@ -83,16 +82,16 @@ Error
 <td>全匹配：<br>响应添加头部： <code>Access-Control-Allow-Origin:*</code>，允许被所有域请求。</td>
 </tr>
 <tr>
-<td><code>http://cloud.tencent.com</code>, <code>https://cloud.tencent.com</code>,<code>http://www.b.com</code></td>
-<td>固定匹配：<ul><li>来源 <code>https://cloud.tencent.com</code>，命中列表，则响应添加头部： <code>Access-Control-Allow-Origin: https://cloud.tencent.com</code>。</li><li>来源为 <code>https://www.qq.com</code>，未命中列表，响应无变化。</li></td>
+<td><code>http://intl.cloud.tencent.com</code>, <code>https://intl.cloud.tencent.com</code>,<code>http://www.b.com</code></td>
+<td>固定匹配：<ul><li>来源 <code>https://intl.cloud.tencent.com</code>，命中列表，则响应添加头部： <code>Access-Control-Allow-Origin: https://intl.cloud.tencent.com</code>。</li><li>来源为 <code>https://www.qq.com</code>，未命中列表，响应无变化。</li></td>
 </tr>
 <tr>
 <td><code>https://*.tencent.com</code></td>
-<td>二级泛域名匹配：<ul><li>来源 <code>https://cloud.tencent.com</code>，命中列表，则响应添加头部： <code>Access-Control-Allow-Origin: https://cloud.tencent.com</code>。</li><li>来源为 <code>https://cloud.qq.com</code>，未命中列表，响应无变化。</li></td>
+<td>二级泛域名匹配：<ul><li>来源 <code>https://intl.cloud.tencent.com</code>，命中列表，则响应添加头部： <code>Access-Control-Allow-Origin: https://intl.cloud.tencent.com</code>。</li><li>来源为 <code>https://intl.cloud.qq.com</code>，未命中列表，响应无变化。</li></td>
 </tr>
 <tr>
 <td><code>https://cloud.tencent.com:8080</code></td>
-<td>端口匹配：<ul><li>来源为 <code>https://cloud.tencent.com:8080</code>，命中列表，则响应添加头部： <code>Access-Control-Allow-Origin:https://cloud.tencent.com:8080</code>。</li><li>来源为 <code>https://cloud.tencent.com</code>，未命中列表，响应无变化。</li>注意：若存在特殊端口，则需要在列表中填写相关信息，不支持任意端口匹配，必须指定。</td>
+<td>端口匹配：<ul><li>来源为 <code>https://cloud.tencent.com:8080</code>，命中列表，则响应添加头部： <code>Access-Control-Allow-Origin:https://cloud.tencent.com:8080</code>。</li><li>来源为 <code>https://intl.cloud.tencent.com</code>，未命中列表，响应无变化。</li>注意：若存在特殊端口，则需要在列表中填写相关信息，不支持任意端口匹配，必须指定。</td>
 </tr>
 </tbody></table>
 
@@ -110,3 +109,24 @@ Error
 
 - 头部名称：Content-Disposition。
 - 头部值：常见配置示例如：`attachment;filename=FileName.txt`。
+
+### Access-Control-Allow-Methods
+设置跨域允许的 HTTP 请求方法。
+
+- 头部名称：Access-Control-Allow-Methods。
+- 头部值：可同时设置多个，例如 POST,GET,POTIONS。
+
+
+### Access-Control-Max-Age
+指定预检请求的结果在多少秒内有效。
+>? 非简单的跨域请求，在正式通信之前，需要增加一次 HTTP 查询请求，称为“预请求”，用来查明这个跨域请求是不是安全可以接受的，如下请求会被视为非简单的跨域请求：
+以 GET、HEAD 或者 POST 以外的方式发起，或者使用 POST，但是请求数据类型为 application / x-www-form-urlencoded、 multipart / form-data、text / plain 以外的数据类型，如 application / xml 或者 text / xml。
+
+- 头部名称：Access-Control-Max-Age。
+- 头部值：输入秒数，例如1728000。
+
+
+### Content-Language
+指定访问页面所使用的语言。
+- 头部名称：Content-Language。
+- 头部值：例如 zh-CN 或 en-US。
