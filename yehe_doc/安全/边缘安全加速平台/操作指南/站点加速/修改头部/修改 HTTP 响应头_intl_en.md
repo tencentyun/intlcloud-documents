@@ -1,22 +1,20 @@
 ## Overview
-You can change/add/delete the HTTP response header (in responding to client users from nodes) without affecting node caching.
+You can change, add, and delete HTTP response headers (in responding to client users from nodes) without affecting node caching.
 
 
 ## Directions
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Rule Engine** on the left sidebar.
-2. On the rule engine page, select the target site and click ![](https://qcloudimg.tencent-cloud.cn/raw/fe4d4900f8ad69d506adc49bdb70fa32.png) to modify HTTP response header rules as needed.
->! Currently, you can configure and modify HTTP response headers only if the match condition is **All (any request)** or **Host**.
-
-Parameters:
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Rule engine** on the left sidebar.
+2. On the **Rule engine** page, select the target site and modify HTTP response header rules as needed. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/1145/46151).
+Configuration item description:
 <table>
 <thead>
 <tr>
-<th>Type</th>
+<th>API Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Change</td>
+<td>Set</td>
 <td>It changes the specified header parameter to the set value.<br>Note:<ul><li>If the specified header doesn't exist, it will be added.</li><li>If the header already exists (even if there are multiple duplicate headers), the original header will be overwritten, and multiple duplicate headers will be merged into one for uniqueness.</td>
 </tr>
 <tr>
@@ -35,6 +33,7 @@ Parameters:
   - Parameter value: It can contain 1–1000 characters.
 - During one HTTP request header modification operation, you can add up to 30 headers of different types, which will be executed in sequence from top to bottom.
 - The following standard headers cannot be modified:
+
 ```js.
 Date
 Expires
@@ -64,7 +63,7 @@ Allow
 Error
 ```
 
-## Configuration Samples
+## Sample Configuration
 ### Access-Control-Allow-Origin
 This header is used to solve the cross-origin permission problem of the resource, so as to implement cross-origin access.
 
@@ -83,16 +82,16 @@ This header is used to solve the cross-origin permission problem of the resource
 <td>Full match: <br>The header <code>Access-Control-Allow-Origin:*</code> is added to the response to allow requests from all origins.</td>
 </tr>
 <tr>
-<td><code>http://cloud.tencent.com</code>, <code>https://cloud.tencent.com</code>,<code>http://www.b.com</code></td>
-<td>Fixed match: <ul><li>The origin <code>https://cloud.tencent.com</code> hits the list, so the following header will be added to the response: <code>Access-Control-Allow-Origin: https://cloud.tencent.com</code>. </li><li>The origin <code>https://www.qq.com</code> doesn't hit the list, so the response will not change.</li></td>
+<td><code>http://intl.cloud.tencent.com</code>, <code>https://intl.cloud.tencent.com</code>,<code>http://www.b.com</code></td>
+<td>Fixed match: <ul><li>The origin <code>https://intl.cloud.tencent.com</code> hits the list, so the following header will be added to the response: <code>Access-Control-Allow-Origin: https://intl.cloud.tencent.com</code>. </li><li>The origin <code>https://www.qq.com</code> doesn't hit the list, so the response will not change.</li></td>
 </tr>
 <tr>
 <td><code>https://*.tencent.com</code></td>
-<td>Second-level wildcard domain name match: <ul><li>The origin <code>https://cloud.tencent.com</code> hits the list, so the following header will be added to the response: <code>Access-Control-Allow-Origin: https://cloud.tencent.com</code>.</li><li>The origin <code>https://cloud.qq.com</code> doesn't hit the list, so the response will not change.</li></td>
+<td>Second-level wildcard domain name match: <ul><li>The origin <code>https://intl.cloud.tencent.com</code> hits the list, so the following header will be added to the response: <code>Access-Control-Allow-Origin: https://intl.cloud.tencent.com</code>.</li><li>The origin <code>https://intl.cloud.qq.com</code> doesn't hit the list, so the response will not change.</li></td>
 </tr>
 <tr>
 <td><code>https://cloud.tencent.com:8080</code></td>
-<td>Port match: <ul><li>The origin <code>https://cloud.tencent.com:8080</code> hits the list, so the following header will be added to the response: <code>Access-Control-Allow-Origin:https://cloud.tencent.com:8080</code>.</li><li>The origin <code>https://cloud.tencent.com</code> doesn't hit the list, so the response will not change.</li>Note: If there are special ports, you need to enter the relevant information in the list. Arbitrary port match is not supported, and you must specify the ports.</td>
+<td>Port match: <ul><li>The origin <code>https://cloud.tencent.com:8080</code> hits the list, so the following header will be added to the response: <code>Access-Control-Allow-Origin:https://cloud.tencent.com:8080</code>.</li><li>The origin <code>https://intl.cloud.tencent.com</code> doesn't hit the list, so the response will not change.</li>Note: If there are special ports, you need to enter the relevant information in the list. Arbitrary port match is not supported, and you must specify the ports.</td>
 </tr>
 </tbody></table>
 
@@ -110,3 +109,24 @@ When the server sends a file to the client browser, if it is in a type supported
 
 - Header name: `Content-Disposition`.
 - Header value: A common configuration is `attachment;filename=FileName.txt` for example.
+
+### Access-Control-Allow-Methods
+This header specifies the HTTP request methods allowed for cross-origin access.
+
+- Header name: `Access-Control-Allow-Methods`.
+- Header value: Multiple values can be set, such as `POST`, `GET`, and `POTIONS`.
+
+
+### Access-Control-Max-Age
+This header specifies the validity period of the result of a preflight request in seconds.
+>? For a non-simple cross-origin request, before the formal communication, an HTTP query request called "preflight request" needs to be sent to check whether the cross-origin request is secure and acceptable. The following requests are considered as non-simple cross-origin requests:
+The request is initiated in a method other than `GET`, `HEAD`, and `POST` or is initiated by using `POST` with a data type other than `application / x-www-form-urlencoded`, `multipart / form-data`, and `text / plain` (such as `application / xml` or `text / xml`).
+
+- Header name: `Access-Control-Max-Age`.
+- Header value: Enter the number of seconds, for example, `1728000`.
+
+
+### Content-Language
+This header specifies the language to be used by the accessed page.
+- Header name: `Content-Language`.
+- Header value: `zh-CN` or `en-US`.

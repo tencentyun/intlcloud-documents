@@ -5,18 +5,13 @@
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**站点加速** > **文件优化**。
 2. 在文件优化页面，选择所需站点，单击智能压缩模块的“开关”，开启或关闭智能压缩功能。
 ![](https://qcloudimg.tencent-cloud.cn/raw/ba7b8cd394825462e164d68982918a43.png)
-
 **参数说明：**
  - 开启状态（默认）：启用智能压缩。
-
->! 智能压缩生效前提：客户端用户携带请求头 Accept-Encoding: gzip 或 br。若同时开启了 Gzip 和 Brotli 压缩，优先响应 Brotil 压缩。
-
  - 关闭状态：不支持智能压缩。
 
-
 ## 注意事项
-- 智能压缩支持的文件大小范围：256B - 30MB。
-- 智能压缩默认根据 Content-Type 压缩，支持以下类型：
+1. 智能压缩支持的文件大小范围：256B - 30MB。
+2. 智能压缩默认根据 Content-Type 压缩，支持以下类型：
 ```js.
 text/html
 text/xml
@@ -67,4 +62,9 @@ application/javascript-binast
 application/manifest+json 
 application/ld+json
 ```
-
+3. 同时开启 Gzip 压缩和 Brotli 压缩，且客户端请求头 Accept-Encoding 同时携带 br 和 gzip 时：
+ - 若节点同时有 br 和 gzip 压缩的缓存内容，则优先响应 Brotli 压缩。
+ - 若节点仅有 br 压缩的缓存内容，则优先响应 Brotli 压缩。
+ - 若节点仅有 gzip 压缩的缓存内容，则优先响应 Gzip 压缩。
+4. 仅开启 Brotli 压缩时，若请求压缩头为 gzip，则压缩不会生效，将返回原始资源；仅开启 Gzip 压缩时，若请求压缩头为 br，则压缩不会生效，将返回原始资源。
+5. 若源站开启了压缩功能，且服务端携带响应头：Content-Encoding，则智能压缩功能将不再生效。
