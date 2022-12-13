@@ -14,7 +14,7 @@
 
 ### GPT
 
-参见 [全局分区表](https://intl.cloud.tencent.com/document/product/362/18555)
+参见 [全局分区表](https://www.tencentcloud.com/document/product/362/18555#.E5.85.A8.E5.B1.80.E5.88.86.E5.8C.BA.E8.A1.A8)
 
 
 
@@ -40,7 +40,7 @@ IOPS（Input/Output Per Second）即每秒的输入输出量（或读写次数�
 
 ### MBR
 
-参见 [主启动记录分区](https://intl.cloud.tencent.com/document/product/362/18555)
+参见 [主启动记录分区](https://www.tencentcloud.com/document/product/362/18555#.E4.B8.BB.E5.90.AF.E5.8A.A8.E8.AE.B0.E5.BD.95.E5.88.86.E5.8C.BA)
 
 
 
