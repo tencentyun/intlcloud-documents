@@ -32,7 +32,7 @@
 
 ### 步骤2：添加别称域名指向目标域名的 CNAME 记录
 1. 别称域名添加成功后，状态默认为**不生效**，如下所示：
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/DW7n261_2-en.png" width=800px>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/va6E018_2-pro-en.png" width=800px>
 2. 前往别称域名解析商添加指向目标域名的 CNAME 记录即可触发别称域名生效。
 3. EdgeOne 会自动完成检测并将别称域名的状态调整为**已生效**。
 
