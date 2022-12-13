@@ -5,7 +5,7 @@ App admins and conversation members can configure message extension for common o
 >
 > - To use this feature, you need to [purchase the Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577) and enable the **Set message extension** feature on the **Login and Message** page in the IM console.
 > - Up to 300 key-value pairs can be set for each one-to-one message.
-> - For one-to-one messages for which key-value pairs are set, they need to be specified to support message extension when being sent. For operation details, see [Sending One-to-One Messages to One Use](https://intl.cloud.tencent.com/document/product/1047/34919).
+> - For one-to-one messages for which key-value pairs are set, they need to be specified to support message extension when being sent. For operation details, see [Sending One-to-One Messages to One User](https://intl.cloud.tencent.com/document/product/1047/34919).
 
 ### Sample request URL
 ```
