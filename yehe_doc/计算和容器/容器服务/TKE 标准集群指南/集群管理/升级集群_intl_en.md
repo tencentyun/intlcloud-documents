@@ -7,7 +7,7 @@ Tencent Cloud TKE allows you to upgrade the Kubernetes version. You can use this
 ## Upgrade Notice[](id:UpgradeNotice)
 
 - **The upgrading action is irreversible. Perform this operation with caution.**
-- Before upgrading the cluster, check whether the cluster is healthy. If the cluster is abnormal, you can fix it yourself or [submit a ticket](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) to contact us.
+- Before upgrading the cluster, check whether the cluster is healthy. If the cluster is abnormal, you can fix it yourself or [consult online](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1).
 - **Upgrade sequence**: when upgrading a cluster, you must first upgrade the Master, and then upgrade the node as quickly as possible. During the upgrade process, we recommend that you do not perform any operations in the cluster.
 - **Only upgrading to the next Kubernetes version offered by TKE is supported.** Upgrading across multiple versions (such as upgrading from 1.8 to 1.12, skipping 1.10) is not supported. You can upgrade to the next version only if the Master and node versions are consistent.
 - **Incompatibility of CSI-CFS add-on**: as for the CSI add-ons: COS CSI and CFS CSI, the CSI add-on versions adapted to different Kubernetes versions have the following differences. Therefore, we recommend that you reinstall the CSI add-on in add-on management page when you upgrade the cluster to TKE 1.14 and later version. The rebuilding of the add-on does not affect COS and CFS storage already in use.
@@ -18,11 +18,11 @@ Tencent Cloud TKE allows you to upgrade the Kubernetes version. You can use this
 ```
 kubectl patch hpa test -p '{"spec":{"scaleTargetRef":{"apiVersion":"apps/v1"}}}'
 ```
+- **The failure of Helm applications**: each application, including those installed through the application marketplace or third parties, supports different versions of Kubernetes. Before upgrading a cluster, you are advised to view the list of applications installed in the cluster and check the range of cluster versions supported by the applications. Some applications are adaptable to higher versions of Kubernetes, and you may need to upgrade them. Some applications may not be adaptable to higher versions of Kubernetes, and in which case, upgrade the cluster with caution.
 
 
 
-
-## Directions
+## How It Works
 
 Upgrading a cluster involves two steps. The first step is to [upgrade the Master Kubernetes version](#Master) and the second is to [upgrade the node Kubernetes version](#Node). See below for details:
 ![](https://main.qcloudimg.com/raw/9a86b7ebd520700999af9b6e62fe5bd4.png)
@@ -35,16 +35,16 @@ Upgrading a cluster involves two steps. The first step is to [upgrade the Master
 
 Currently, the upgrade of Master supports the **major version upgrade** (for example, from 1.14 to 1.16), and the **minor version upgrade** (for example, from 1.14.3 to 1.14.6, or from v1.18.4-tke.5 to v1.18.4-tke.6). We strongly recommend that you check the corresponding feature release records before upgrading:
 - Before upgrading the major version of kubernetes, we recommend that you check the [Update Notes of TKE Kubernetes Major Versions](https://intl.cloud.tencent.com/document/product/457/38179).
-- Before upgrading the minor version of kubernetes, we recommend that you check the [TKE Kubernetes Revision Version History](https://intl.cloud.tencent.com/document/product/457/38179).
+- Before upgrading the minor version of kubernetes, we recommend that you check the [TKE Kubernetes Revision Version History](https://intl.cloud.tencent.com/document/product/457/9315).
 
-<dx-alert infotype="explain" title="">
+<dx-alert infotype="explain" title=" ">
 <li>For major version upgrades (for example, from 1.12 to 1.14), the original custom parameters will not be retained, you need to reconfigure them for the new version. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/38139">Custom Kubernetes Component Launch Parameters</a>.</li>
 <li>For minor version upgrades, the custom parameters will be retained, and you do not need to reconfigure them.</li>
 </dx-alert>
 
 
 
-#### Considerations
+#### Details
 
 - **Before upgrading, read the [Upgrade Notice](#UpgradeNotice).**
 - For TKE clusters of the v1.7.8, the network mode is bridge. Upgrading the cluster does not automatically switch the network mode to cni.
@@ -70,7 +70,7 @@ The master node upgrade involves 3 steps: pre-dependent component upgrade, Maste
 
 #### Master upgrade
 
-1. Log in to the TKE console and click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. On the **Cluster Management** page, select the ID of the desired cluster, and enter the cluster details page.
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the cluster information module on the cluster’s **Basic Information** page, click **Upgrade** to the right of the Master version, as shown in the figure below:
@@ -90,14 +90,14 @@ After the cluster’s Master Kubernetes version is upgraded, the cluster list pa
 
 
 
-#### Considerations
+#### Details
 
  - **Before upgrading, read the [Upgrade Notice](#UpgradeNotice).**
  - You can upgrade the node when it’s running.
 
 #### Selecting an upgrade method
 
-You can upgrade the node Kubernetes version in two ways: [reinstall and rolling upgrade](#chongzhuang) and [in-place rolling upgrade](#yuandi). 
+You can upgrade the node Kubernetes version in two ways: [reinstall and rolling upgrade](#chongzhuang) and [in-place rolling upgrade](#yuandi).
 
 - **Reinstall and rolling upgrade**: reinstall the node to upgrade the node version. This method only supports major version upgrades, such as upgrades from version 1.10 to version 1.12.
 - **In-place rolling upgrade**: upgrade directly without re-installation. This only replaces components such as Kubelet and kube-proxy. Currently, this method supports both major and minor upgrades, such as from version 1.10 to version 1.12, or from version 1.14.3 to version 1.14.8.
@@ -126,7 +126,7 @@ Rolling upgrade based on the reinstalled node. Only one node is upgraded at a ti
 
 #### Reinstall and rolling upgrade (node Kubernetes version)
 
-1. Log in to the TKE console and click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. On the **Cluster Management** page, select the ID of the cluster for node Kubernetes version upgrade to enter the cluster details page.
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the cluster information module, click **Upgrade** to the right of the Node Kubernetes version, as shown in the figure below:
@@ -154,7 +154,7 @@ The steps are described as follows:
 
 #### In-place rolling upgrade
 
-1. Log in to the TKE console and click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. On the **Cluster Management** page, select the ID of the desired cluster and enter the cluster details page.
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the cluster information module, click **Upgrade** to the right of the Node Kubernetes version, as shown in the figure below:

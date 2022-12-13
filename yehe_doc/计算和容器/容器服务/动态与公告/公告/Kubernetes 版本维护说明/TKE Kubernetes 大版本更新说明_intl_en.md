@@ -1,3 +1,77 @@
+## Kubernetes 1.22 Changes Since 1.20
+### Major updates
+#### PodSecurityPolicy deprecated
+PodSecurityPolicy is deprecated in 1.21 and will be removed in 1.25. You can evaluate and migrate it to Pod Security Admission or third-party admission plug-ins.
+
+#### GA of immutable Secret and ConfigMap volumes
+After Secret and ConfigMap volumes are set as immutable (`immutable: true`), kubelet no longer watches the changes of these objects and mounts them to the container again to reduce the load of apiserver. This feature enters GA in 1.21.
+
+#### CronJobs GA
+CronJobs enters GA (batch/v1) in 1.21, and the new version controller CronJobControllerV2 with higher performance is enabled by default.
+
+#### Beta of IPv4/IPv6 addresses in dual-stack networks
+Dual-stack networks allow Pods, services, and nodes to obtain IPv4 and IPv6 addresses. In 1.21, the dual-stack network feature is upgraded from alpha to beta and the feature is enabled by default.
+
+#### Graceful node shutdown
+This feature enters beta in 1.21. It allows kubelet to listen for node shutdown events and gracefully terminates Pods on nodes.
+
+#### Persistent volume health monitoring
+This alpha feature is introduced in 1.21. It monitors the running status of persistent volumes (PVs) and marks PVs when they become unhealthy so that workloads can be adjusted accordingly to avoid data from being written to or read from unhealthy PVs.
+
+#### Server-side Apply GA
+Server-side Apply helps users and controllers manage resources through declarative configuration, such as creating or modifying objects declaratively. Server-side Apply entered GA in 1.22.
+
+#### External credential GA
+External credentials enters GA in 1.22, providing better support for interactive login process plug-ins. For more information, see [sample-exec-plugin](https://github.com/ankeesler/sample-exec-plugin).
+
+#### Etcd updated to 3.5.0
+Etcd 3.5.0 is used by default in 1.22. Etcd 3.5.0 has improved security, performance, monitoring, and developer experience, fixed multiple bugs, and added important new features such as structured log records and built-in log rotation.
+
+#### MemoryQoS
+The alpha MemoryQoS feature is supported starting from 1.22. When it is enabled, the Cgroups v2 API will be used to manage and control memory allocation and isolation, ensuring memory usage for workloads and improving the availability of workloads and nodes in the case of memory resource competition. This feature was proposed by Tencent Cloud and contributed to the Kubernetes community.
+
+#### Cluster's default seccomp configuration
+Kubelet introduces the `SeccompDefault` alpha feature in 1.22. According to the `--seccomp-default` parameter and setting, kubelet will use the `RuntimeDefault` seccomp setting instead of `Unconfined`, improving the security of workloads.
+
+### Other updates
+- GA features:
+	- 1.21: EndpointSlice,Sysctls,PodDisruptionBudget
+	- 1.22: CSIServiceAccountToken
+- Features graduating to beta:
+	- 1.21: TTLAfterFinished
+	- 1.22: SuspendJob,PodDeletionCost,NetworkPolicyEndPort
+- 1.22: Introduces the new scheduler scoring plug-in `NodeResourcesFit`, which is used to replace three plug-ins: `NodeResourcesLeastAllocated`, `NodeResourcesMostAllocated`, and `RequestedToCapacityRatio`.
+- 1.22: When the alpha feature `APIServerTracing` is enabled, apiserver supports distributed tracing and allows users to use the `--service-account-issuer` parameter to set multiple issuers. In addition, apiserver can provide uninterrupted service when issuers are changed.
+
+### Deprecations and removals
+#### Removed parameters and features
+1. `Service TopologyKeys` is deprecated and replaced with `Topology Aware Hints`.
+2. kube-proxy
+	- Starting from 1.21, `net.ipv4.conf.all.route_localnet=1` will not be automatically set in IPVS mode. For upgraded nodes, `net.ipv4.conf.all.route_localnet=1` will be retained. But for new nodes, the default system value (usually `0`) is inherited.
+	- The `--cleanup-ipvs` parameter is deleted and can be replaced with the `--cleanup` parameter.
+3. kube-controller-manager
+	- Starting from 1.22, the `--horizontal-pod-autoscaler-use-rest-clients` parameter is removed.
+	- The `--port` and `--address` parameters become invalid and will be removed in 1.24.
+4. kube-scheduler: The `--hard-pod-affinity-symmetric-weight` and `--scheduler-name` parameters are removed in 1.22, and instead, these information can be configured in the `config` file.
+5. Kubelet: The `DynamicKubeletConfig` feature is deprecated and is disabled by default. If the `--dynamic-config-dir` parameter is set when kubelet is started, an alarm will be reported.
+
+#### Removed or deprecated versions
+1. Starting from 1.21, CronJob batch/v2alpha1 is removed.
+2. Starting from 1.22, the following beta APIs are removed: (Find details in [Kubernetes official documentation](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-22).)
+	- rbac.authorization.k8s.io/v1beta1
+	- admissionregistration.k8s.io/v1beta1
+	- apiextensions.k8s.io/v1beta1
+	- apiregistration.k8s.io/v1beta1
+	- authentication.k8s.io/v1beta1
+	- authorization.k8s.io/v1beta1
+	- certificates.k8s.io/v1beta1
+	- coordination.k8s.io/v1beta1
+	- extensions/v1beta1 and networking.k8s.io/v1beta1 ingress API
+
+### Change logs
+- [kubernetes1.22changelog](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.22.md#whats-new-major-themes)
+- [kubernetes1.21changelog](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.21.md#whats-new-major-themes)
+
 
 ## Kubernetes 1.20 Changes Since 1.18
 ### Major updates
@@ -7,7 +81,7 @@ Kubernetes 1.20 introduces the new version of the CronJob controller, which uses
 #### Dockershim deprecation
 Dockershim is being deprecated. Support for Docker is deprecated and will be removed from a future release. Docker-produced images will continue to work in your cluster with all CRI compliant runtimes as Docker images follow the Open Container Initiative (OCI) image specification.
 For more information, see [Don't Panic: Kubernetes and Docker](https://kubernetes.io/blog/2020/12/02/dont-panic-kubernetes-and-docker/) and [Dockershim Deprecation FAQ](https://blog.k8s.io/2020/12/02/dockershim-faq/).
-#### Structured log
+#### Structured logs
 The log message and Kubernetes object reference structures are standardized to make log parsing, processing, storage, query, and analysis easier. Two methods are added to klog to support structured logs: `InfoS` and `ErrorS`.
 The `--logging-format` parameter is added to all components, and its default value is `text` in the previous format. You can set it to `json` to support structured logs, and the following parameters will become invalid: `--add_dir_header`, `--alsologtostderr`, `--log_backtrace_at`, `--log_dir`, `--log_file`, `--log_file_max_size`, `--logtostderr`, `--skip_headers`, `--skip_log_headers`, `--stderrthreshold`, `--vmodule`, and `--log-flush-frequency`.
 #### Exec probe timeout handling
@@ -32,7 +106,7 @@ Introduced on Kubernetes 1.18, the API priority and fairness feature is now enab
  `SupportNodePidsLimit` (node-to-Pod PID isolation) and `SupportPodPidsLimit` (ability to limit PIDs per Pod) move to GA.
  
 #### Alpha feature: Graceful node shutdown
-Users and cluster admins expect that Pods will adhere to expected Pod lifecycle, including Pod termination. Currently, when a node shuts down, Pods do not follow the expected Pod termination lifecycle and are not terminated gracefully, which may cause issues for some workloads. The `GracefulNodeShutdown` feature is now in alpha on Kubernetes 1.20. It makes the kubelet aware of node system shutdowns, enabling graceful termination of Pods during a system shutdown.
+Users and cluster admins expect that Pods will adhere to the expected Pod lifecycle, including Pod termination. Currently, when a node shuts down, Pods do not follow the expected Pod termination lifecycle and are not terminated gracefully, which may cause issues for some workloads. The `GracefulNodeShutdown` feature is now in alpha on Kubernetes 1.20. It makes the kubelet aware of node system shutdowns, enabling graceful termination of Pods during a system shutdown.
 
 #### Graduation of CSIVolumeFSGroupPolicy to beta
 CSIDrivers can use the `fsGroupPolicy` field to control whether ownership and permissions (`ReadWriteOnceWithFSType`, `File`, and `None`) can be modified during mounting.
@@ -61,7 +135,7 @@ securityContext:
     type: RuntimeDefault|Localhost|Unconfined ## choose one of the three
     localhostProfile: my-profiles/profile-allow.json ## only necessary if type == Localhost
 ```
-  Kubernetes converts annotations and fields automatically, so no additional operations are required.
+  K8S converts annotations and fields automatically, so no additional operations are required.
   - [Kubelet Client TLS Certificate Rotation](https://github.com/kubernetes/enhancements/issues/266)
   - [Limit node access to API](https://github.com/kubernetes/enhancements/issues/279)
   Node authentication mode features are all implemented.
@@ -113,7 +187,7 @@ After this API is deprecated, etcd health is included in the kube-apiserver heal
 
 #### kubelet
 1. The following parameters are removed:
-	- `-seccomp-profile-root` 
+	-  `--seccomp-profile-root` 
 	- `--cloud-provider` and `--cloud-config`, which are replaced with `config`
 	- `--really-crash-for-testing` and `--chaos-chance`
 2. The deprecated `metrics/resource/v1alpha1` endpoint is removed and replaced with `metrics/resource`.
@@ -204,7 +278,7 @@ The following built-in cluster roles are removed:
  - `system:csi-external-provisioner` 
  - `system:csi-external-attacher`
 
-#### Deprecated features and parameters
+#### Deprecated feature switches and parameters
 - The default service IP CIDR block (`10.0.0.0/24`) is deprecated. It must be set through the `--service-cluster-ip-range` parameter on kube-apiserver.
 - The `rbac.authorization.k8s.io/v1alpha1` and `rbac.authorization.k8s.io/v1beta1` API groups are deprecated and will be removed on Kubernetes 1.20. Therefore, migrate your resources to `rbac.authorization.k8s.io/v1`.
 - The `CSINodeInfo` feature gate is deprecated. This feature has graduated to GA and is enabled by default.
@@ -307,8 +381,8 @@ Using the `--log-file` parameter is known to be problematic on Kubernetes 1.15. 
 - **Cluster**
     - The following labels can no longer be added to new nodes: `beta.kubernetes.io/metadata-proxy-ready`, `beta.kubernetes.io/metadata-proxy-ready` and `beta.kubernetes.io/kube-proxy-ds-ready`.
         * `ip-mask-agent` uses `node.kubernetes.io/masq-agent-ds-ready` as the node selector and no longer uses `beta.kubernetes.io/masq-agent-ds-ready`.
-        * `kube-proxy` uses `node.kubernetes.io/kube-proxy-ds-ready` as the node selector and no longer uses `beta.kubernetes.io/kube-proxy-ds-ready`. 
-        * `metadata-proxy` uses `cloud.google.com/metadata-proxy-ready` as the node selector and no longer uses `beta.kubernetes.io/metadata-proxy-ready`. 
+        * `kube-proxy` uses `node.kubernetes.io/kube-proxy-ds-ready` as the node selector and no longer uses `beta.kubernetes.io/kube-proxy-ds-ready`.  
+        * `metadata-proxy` uses `cloud.google.com/metadata-proxy-ready` as the node selector and no longer uses `beta.kubernetes.io/metadata-proxy-ready`.  
 - **API Machinery**
 `k8s.io/kubernetes` and other published components (such as `k8s.io/client-go` and `k8s.io/api`) now contain Go module files, including version information of the dependent library. For more information on consuming `k8s.io/client-go` using Go modules, see [Installing client-go](http://git.k8s.io/client-go/INSTALL.md#go-modules) and [add go module support, manage vendor directory using go mod vendor](https://github.com/kubernetes/kubernetes/pull/74877).
 - **Apps**
@@ -322,7 +396,7 @@ Using the `--log-file` parameter is known to be problematic on Kubernetes 1.15. 
     - The `StorageObjectInUseProtection` admission [plugin](https://github.com/kubernetes/kubernetes/pull/74610) is enabled by default. If you previously had not enabled it, your cluster behavior may change.
     - When `PodInfoOnMount` is enabled for a CSI driver, the new `csi.storage.k8s.io/ephemeral` parameter in the volume context allows a driver's `NodePublishVolume` implementation to determine on a case-by-case basis whether the volume is ephemeral or a normal persistent volume. For more information, see [persistent and ephemeral csi volumes](https://github.com/kubernetes/kubernetes/pull/79983).
     - The `VolumePVCDataSource` (storage volume cloning feature) is promoted to beta. For more information, see [Promote VolumePVCDataSource to beta for 1.16](https://github.com/kubernetes/kubernetes/pull/81792).
-    - Limits for in-tree and CSI volumes are integrated into one scheduler predicate. For more information, see [Volume Scheduling Limits](https://github.com/kubernetes/kubernetes/pull/77595). 
+    - Limits for in-tree and CSI volumes are integrated into one scheduler predicate. For more information, see [Volume Scheduling Limits](https://github.com/kubernetes/kubernetes/pull/77595).  
 - **kube-apiserver**
     - The `--enable-logs-handler` parameter is deprecated and will be removed on Kubernetes 1.19.
     - The `--basic-auth-file` flag and authentication mode are deprecated and will be removed from a future release.
@@ -367,7 +441,7 @@ The `v1beta1` Event API is used. Any tool targeting scheduler events needs to us
 * [Bump CSI Spec to 1.0.0 and gRPC to 1.13.0](https://github.com/kubernetes/kubernetes/pull/71020).
 * [Make CoreDNS default in kubeup and update CoreDNS version/manifest in kubeup and kubeadm](https://github.com/kubernetes/kubernetes/pull/69883).
 * kubeadm is used to simplify cluster management.
-* [Support Windows Server Containers for K8s](https://github.com/kubernetes/enhancements/issues/116).
+* [Support Windows Server Containers for K8S](https://github.com/kubernetes/enhancements/issues/116).
 * [Durable (non-shared) local storage management](https://github.com/kubernetes/enhancements/issues/121#issuecomment-457396290).
 * [Support total process ID limiting for nodes](http://github.com/kubernetes/kubernetes/pull/73651).
 * [Add pod priority and preemption](https://github.com/kubernetes/enhancements/issues/564).
@@ -413,7 +487,7 @@ The `--insecure-experimental-approve-all-kubelet-csrs-for-group` parameter is de
 * <b> kube-scheduler</b>
  `componentconfig/v1alpha1` is no longer supported.
 * **kubectl**
-The `run-container` command is no longer supported. 
+The `run-container` command is no longer supported.  
 * **taints**
 `node.alpha.kubernetes.io/notReady` and `node.alpha.kubernetes.io/unreachable` are no longer supported and are replaced with `node.kubernetes.io/not-ready` and `node.kubernetes.io/unreachable` respectively.
 
@@ -421,7 +495,7 @@ The `run-container` command is no longer supported.
 [Kubernetes 1.14 changelog](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.14.md#kubernetes-v114-release-notes)
 [Kubernetes 1.13 changelog](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.13.md#kubernetes-113-release-notes)
 
-## Kubernetes 1.12 Changes Since 1.10
+## 1.12 Changes Since 1.10
 ### Major updates
 #### API 
 - Subresources for `CustomResources` are now beta and enabled by default. With this, updates to the `/status` subresource will disallow updates to all fields other than `.status` (not just `.spec` and `.metadata` as before). Also, `required` and `description` can be used at the root of the CRD OpenAPI validation schema when the `/status` subresource is enabled. In addition, you can now create multiple versions of CustomResourceDefinitions, but without any kind of automatic conversion, and CustomResourceDefinitions now allow specification of additional columns for `kubectl get` output via the `spec.additionalPrinterColumns` field.
@@ -437,7 +511,7 @@ The `run-container` command is no longer supported.
 #### CLI
 CLI implements a new plugin mechanism, providing a library with common CLI tooling for plugin authors and further refactorings of the code.
 
-#### Network
+#### Internet
 - The IPVS mode graduates to GA.
 - CoreDNS graduates to GA to replace `kube-dns`.
 

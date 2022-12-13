@@ -12,17 +12,17 @@ By default, the AccessLog and Nginx Controller logs will be mixed into the stand
 
 
 ## Prerequisites 
-You have enabled log collection in **[Feature Management](https://console.cloud.tencent.com/tke2/ops/list?rid=8)** in the TKE console. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/document/product/457/32419).
+You have enabled Log Collection in **[Feature Management](https://console.cloud.tencent.com/tke2/ops/list?rid=8)** in the TKE console. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/document/product/457/32419).
 
 
 
 ## TKE Nginx-ingress Log Collection
 ### Log collection directions
-1. Install [Nginx-ingress Addon](https://intl.cloud.tencent.com/document/product/457/38981#Nginx-ingress) for the target cluster.
-2. In **Add-On Management** page, select an installed addon to go to its details page.
-3. In **Log/Monitoring** page, click **Reset** on the right side of **Log Configuration**.
+1. Install [Nginx-ingress Addon](https://intl.cloud.tencent.com/document/product/457/38981) for the target cluster.
+2. On **Add-On Management** page, select an installed add-on to go to its details page.
+3. On the **Log Monitoring** page, click **Reset** in the upper-right corner of the **Log Configuration** area.
 ![](https://main.qcloudimg.com/raw/830bd637a0ee296071fca62cf808a6d9.png)
-4. Select or create a logset in the pop-up window.
+4. Select or create a logset in the pop-up window, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/8981c5e3146a6e01378b9e6b0cca9c6d.png)
 5. Click **Enable**.
 >! For information on CLS billing rules and billing standards, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
@@ -80,4 +80,11 @@ spec:
 
 ### Nginx-ingress log dashboard
 
-TKE will automatically create a standard log dashboard once Nginx-ingress log collection enabled. You can also configure the chart on the CLS console based on your business needs.
+TKE will automatically create a standard log dashboard once Nginx-ingress log collection enabled. You can also configure the chart on the CLS console based on your business needs, as shown in the figure below:
+![](https://qcloudimg.tencent-cloud.cn/raw/2f546f555ccfe3aefb5bd94849b1c502.png)
+
+
+
+## References
+
+If you need to customize log collection rules and indexes, see [Custom Nginx Ingress Log](https://intl.cloud.tencent.com/document/product/457/49396).
