@@ -1,6 +1,6 @@
 ## 功能描述
 
-本接口用于提交一个文档审核任务。文档审核功能为异步任务方式，您可以通过提交文档审核任务审核您的文档文件，然后通过 [查询文档审核任务接口](https://cloud.tencent.com/document/product/460/59383) 或 [文档审核回调](https://cloud.tencent.com/document/product/460/62385) 查询审核结果。
+本接口用于提交一个文档审核任务。文档审核功能为异步任务方式，您可以通过提交文档审核任务审核您的文档文件，然后通过 [查询文档审核任务接口](https://intl.cloud.tencent.com/document/product/1045/52122) 或 [文档审核回调](https://intl.cloud.tencent.com/document/product/1045/52123) 查询审核结果。
 
 >?
 >- 支持审核腾讯云 COS 上的文档文件。
