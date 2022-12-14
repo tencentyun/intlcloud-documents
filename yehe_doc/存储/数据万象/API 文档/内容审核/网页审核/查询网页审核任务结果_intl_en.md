@@ -142,7 +142,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------------------------------- | :----------------------------------------------------------- | :------ |
-| HitFlag            | Response.JobsDetail.Labels.*Info | Response.JobsDetail.Labels.\*Info | The moderation result returned for the moderation scene. Returned values: `0` (normal); `1` (confirmed as a violation of the current scene); `2` (suspected as a violation of the current scene).   | Integer |
+| HitFlag            | Response.JobsDetail.Labels.*Info | The moderation result returned for the moderation scene. Returned values: `0` (normal); `1` (confirmed as a violation of the current scene); `2` (suspected as a violation of the current scene).   | Integer |
 | Score              | Response.JobsDetail.Labels.*Info | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. For example, `Porn 99` means that the content is very likely to be pornographic.  | Integer |
 
 `ImageResults` has the following sub-nodes:
@@ -166,7 +166,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :--------------------------------------------- | :----------------------------------------------------------- | :-------------- |
-| HitFlag            | Response.JobsDetail.ImageResults.Results.*Info | Response.JobsDetail.Labels.\*Info | The moderation result returned for the moderation scene. Returned values: `0` (normal); `1` (confirmed as a violation of the current scene); `2` (suspected as a violation of the current scene).   | Integer |
+| HitFlag            | Response.JobsDetail.ImageResults.Results.*Info | The moderation result returned for the moderation scene. Returned values: `0` (normal); `1` (confirmed as a violation of the current scene); `2` (suspected as a violation of the current scene).   | Integer |
 | Score              | Response.JobsDetail.ImageResults.Results.*Info | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. For example, `Porn 99` means that the content is very likely to be pornographic.  | Integer         |
 | Category           | Response.JobsDetail.ImageResults.Results.*Info | This field indicates the specific moderation category hit; for example, `Sexy` presents the sexy category in the `Porn` tag. It may be null, indicating that no category is hit or there is no relevant category. | String |
 | SubLabel           | Response.JobsDetail.ImageResults.Results.*Info | This field indicates the specific sub-tag hit by the moderation job; for example, `SexBehavior` is a sub-tag under the `Porn` tag. </br>Note: This field may return null, indicating that no specific sub-tags are hit. | String          |
