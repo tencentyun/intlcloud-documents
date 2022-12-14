@@ -2,7 +2,7 @@
 
 **各个平台的下载链接：**
 
-- Windows 平台 [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/Windows)，Windows 快速开始 [集成 IM SDK](https://intl.cloud.tencent.com/document/product/1047/34310) 和 [一分钟跑通 Demo](https://intl.cloud.tencent.com/document/product/1047/45914)。支持32位/64位系统。
+- Windows 平台 [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/Windows)。
 - iOS 平台 [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/iOS/IMSDK)。
 - Mac 平台 [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/Mac/IMSDK)。
 - Android 平台 [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/Android/IMSDK)。
