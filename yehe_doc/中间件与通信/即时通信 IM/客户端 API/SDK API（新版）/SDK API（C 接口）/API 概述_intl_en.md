@@ -2,7 +2,7 @@ Tencent Cloud IM Cross-platform C APIs
 
 **Download link for each platform:**
 
-- [IM SDK for Windows](https://github.com/tencentyun/TIMSDK/tree/master/Windows), [Quick Integration with IM SDK for Windows](https://intl.cloud.tencent.com/document/product/1047/34310), and [Demo Quick Start](https://intl.cloud.tencent.com/document/product/1047/45914). IM SDK for Windows supports 32-bit and 64-bit operating systems.
+- [IM SDK for Windows](https://github.com/tencentyun/TIMSDK/tree/master/Windows).
 - [IM SDK for iOS](https://github.com/tencentyun/TIMSDK/tree/master/iOS/IMSDK)
 - [IM SDK for macOS](https://github.com/tencentyun/TIMSDK/tree/master/Mac/IMSDK)
 - [IM SDK for Android](https://github.com/tencentyun/TIMSDK/tree/master/Android/IMSDK)
