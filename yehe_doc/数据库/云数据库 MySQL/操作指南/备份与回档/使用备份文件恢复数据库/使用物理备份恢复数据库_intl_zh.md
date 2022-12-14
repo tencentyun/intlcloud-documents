@@ -40,7 +40,7 @@ wget -c 'https://mysql-database-backup-sh-1218.cos.ap-nanjing.myqcloud.com/12427
 
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例管理页面，选择**备份恢复** > **数据备份列表**页， 选择需要下载的备份对应的解密密钥，在**操作**列单击**下载密钥**。
-![](https://qcloudimg.tencent-cloud.cn/raw/743b8d691a006b99cb25591bb2100b07.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/A8BA028_1.png)
 
 ## 步骤3：恢复数据
 ### 3.1 解包备份文件
@@ -53,7 +53,7 @@ xbstream -x --decrypt=AES256 --encrypt-key-file=<备份密钥文件> --parallel=
 >- `/data/test.xb` 替换为您的备份文件。
 >
 解包结果如下图所示：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/K4wr727_f981522847f38b10bfe0a59c7234b7ba.png">
 
 ### 3.2 解压备份文件
 1. 通过如下命令下载 qpress 工具。
@@ -108,7 +108,7 @@ vi /data/mysql/backup-my.cnf
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/EeLm919_6.png)
 
 ## 步骤4：启动 mysqld 进程并登录验证
 1. 启动 mysqld 进程。
