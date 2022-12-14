@@ -7,7 +7,7 @@
 
 ## 连接方式
 >!无论通过内网还是外网连接云数据库 MySQL，均须放通 MySQL 实例端口。您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 单击实例 ID 进入详情页查看端口。
->![](https://qcloudimg.tencent-cloud.cn/raw/5669570dd781fa66c04a843231a0770f.png)
+>![](https://staticintl.cloudcachetci.com/yehe/backend-news/b2QI771_8.png)
 >
 >- MySQL 内网默认端口为3306，同时支持自定义端口，若修改过默认端口号，安全组中需放通 MySQL 新端口信息。
 >- MySQL 外网端口由系统自动分配，不支持自定义，外网开启后将受到安全组网络访问策略的控制，配置安全策略时需放通内网访问端口3306。
@@ -92,7 +92,7 @@ mysql -h hostname -P port -u username -p
 若遇到无法连接实例相关问题，建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927) 进行排查，根据检查报告提示，在 [无法连接实例](https://intl.cloud.tencent.com/document/product/236/40333) 查找相应解决方案。
 
 ## 附录2：网络连通性验证方法
-建议您使用 telnet 命令来快速排查和定位网络连通性问题，请参见 [telnet 命令](https://cloud.tencent.com/document/product/236/34375#.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88)。
+建议您使用 telnet 命令来快速排查和定位网络连通性问题，请参见 [telnet 命令](https://www.tencentcloud.com/document/product/236/31929)。
 
 若 telnet 验证云数据库网络访问正常后，如在云服务器上通过命令行登录云数据库报错，请参见 [连接实例相关问题](https://intl.cloud.tencent.com/document/product/236/37783)。
 
@@ -101,7 +101,7 @@ mysql -h hostname -P port -u username -p
 2. 在实例详情页下的**外网地址**处，单击**开启**。
 >?若有外网地址和外网端口信息，说明已开启外网地址。
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/3e53616ba958f931a84470745bd0a585.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/7F5X882_18.png)
 3. 在弹出的对话框，单击**确定**。
 >?
 >- 开启成功后，即可在基本信息中查看到外网地址。
