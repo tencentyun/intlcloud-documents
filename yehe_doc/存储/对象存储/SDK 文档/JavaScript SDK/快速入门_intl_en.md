@@ -507,7 +507,7 @@ document.getElementById('submitBtn').onclick = function (e) {
 
 ### Downloading object
 
-> Object download is implemented by generating a pre-signed URL and triggering download in the browser.
+Object download is implemented by generating a pre-signed URL and triggering download in the browser.
 
 [//]: # ".cssg-snippet-get-object"
 ```js
