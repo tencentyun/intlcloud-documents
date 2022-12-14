@@ -97,7 +97,6 @@ We recommend you troubleshoot and locate network connectivity problems quickly w
 If the verification with `telnet` found that the network access of the TencentDB instance was good, but an error was reported when you tried to log in to it via the command line in the CVM instance, see [Connection](https://intl.cloud.tencent.com/document/product/236/37783).
 
 ## [Appendix 3. Enabling public network access](id:waiwang)
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/3483-61427?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Basic Info** section, click **Enable** next to **Public Network Address**.
