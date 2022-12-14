@@ -346,6 +346,62 @@ new COS({
 })
 ```
 
+### How to use
+
+#### Callback method
+The callback method is used by default in the documentation. Below is the sample code:
+
+```js
+// The initialization process and upload parameters are omitted here.
+var cos = new COS({ ... });
+cos.uploadFile({ ... }, function(err, data) {
+  if (err) {
+    console.log('Upload failed', err);
+  } else {
+    console.log('Uploaded successfully', data);
+  }
+});
+```
+
+#### Promise
+The SDK also supports calling through the promise method. For example, the code of the callback method above is equivalent to the following code:
+
+```js
+// The initialization process and upload parameters are omitted here.
+var cos = new COS({ ... });
+cos.uploadFile({ ... }).then(data => {
+  console.log('Uploaded successfully', data);
+}).catch(err => {
+  console.log('Upload failed', err);
+});
+```
+
+#### Sync method
+The sync method is based on JavaScript's async and await (keep browser compatibility in mind when using it). The code of the callback method above is equivalent to the following code:
+
+```js
+async function upload() {
+  // The initialization process and upload parameters are omitted here.
+  var cos = new COS({ ... });
+  try {
+    var data = await cos.uploadFile({ ... });
+    return { err: null, data: data }
+  } catch (err) {
+    return { err: err, data: null };
+  }
+}
+// The returned value of the request can be obtained synchronously. Here is only an example. The format of the actual returned data can be customized.
+var uploadResult = await upload();
+if (uploadResult.err) {
+  console.log('Upload failed', uploadResult.err);
+} else {
+  console.log('Uploaded successfully', uploadResult.data);
+}
+```
+
+>! `cos.getObjectUrl` currently only supports the callback method.
+>
+
 ### Tips
 
 In most cases, you only need to create a COS SDK instance and use it directly where SDK methods need to be called.
