@@ -23,7 +23,7 @@ type AuthConfig = {
   authFunc:() => Promise<{
     signature:string,
     timestamp:string
-  }> // License設定の使用 をご参照ください。
+  }> // Licenseの設定と使用をご参照ください</a>
 }
 </pre></td>
 <td>はい</td></tr><tr>
@@ -82,6 +82,7 @@ type loadingConfig = {
 </tr>
 </tbody>
 </table>
+
 
 ## コールバックイベント
 ```javascript
@@ -149,7 +150,7 @@ sdk.on('ready', () => {
 <th>　　　　説明　　　　</th></tr></thead>
 <tbody><tr>
 <td>async getOutput(fps)</td>
-<td>- fps：出力するメディアストリームのフレームレートを設定します。デフォルトでは設定する必要はありません</td>
+<td>fps：出力するメディアストリームのフレームレートを設定します。デフォルトでは設定する必要はありません</td>
 <td>MediaStream|String</td>
 <td>Web端末でのみ提供</td>
 </tr>
@@ -184,6 +185,21 @@ effect:{
 <td>エフェクトを設定するには、美顔モジュールを起動する必要があります</td>
 </tr>
 <tr>
+<td>setAvatar(params)</td>
+<td><pre style="color:white;margin:0">
+{
+	mode: 'AR' | 'VR',
+	effectId?: string, // effectIdをパススルーして内蔵モデルを使用します
+	url?: string, // urlをパススルーしてカスタムモデルを使用します
+	backgroundUrl?: string, // 背景画像リンク。VRモードの場合のみ有効です
+}
+</pre>
+</td>
+<td>-</td>
+<td>Animoji表情またはバーチャルキャラクターの設定</td>
+</tr>
+<tr>
+<tr>
 <td>setBackground(options)</td>
 <td><pre style="color:white;margin:0">
 {
@@ -216,6 +232,15 @@ effect:{
 </td>
 <td>エフェクトリスト</td>
 <td>エフェクトリストのプル</td>
+</tr>
+<tr>
+<td>getAvatarList(type)</td>
+<td><pre style="color:white;margin:0">
+type = 'AR' | 'VR'
+</pre>
+</td>
+<td>バーチャルキャラクターリスト</td>
+<td>バーチャルキャラクターリストのプル</td>
 </tr>
 <tr>
 <td>getEffect(effectId)</td>
@@ -256,7 +281,6 @@ effect:{
 </tr>
 </tbody></table>
 
-
 ## エラー処理
 error コールバックで返されるオブジェクトにはエラーコードとエラー情報が含まれ、エラー処理をしやすくします。
 ```javascript
@@ -280,7 +304,8 @@ sdk.on('error', (error) => {
 | 10001202 | カメラ中断   | - |
 | 20002001 | 認証パラメータがありません | - |
 | 20001001 | 認証失敗   | Licenseが作成されているかどうか、署名が正確かどうかを確認してください |
-| 20001002 | インターフェースリクエストに失敗しました | コールバックはインターフェースがから返されたデータを転送します。具体的な情報については[インターフェースエラーコード](https://intl.cloud.tencent.com/document/product/1143/50107) をご参照ください|
+| 20001002 | インターフェースリクエストに失敗しました | コールバックはインターフェースがから返されたデータを転送します。具体的な情報については[インターフェースエラーコード](https://www.tencentcloud.com/document/product/1143/50107) をご参照ください|
+| 40000001 | 現在のSDKバージョンが低すぎるため、一部のエフェクトが正しく表示されません。SDKをバージョンアップしてください | - |
 
 ### 現在のレンダリングコンテキストを処理すると失われます
 一部のPCは長時間バックエンドをカットされるシナリオでcontextlost処理エラーがトリガーされる可能性があります。`ArSdk.prototype.resetCore(input: MediaStream)`を呼び出してレンダリングコンテキストを復元することができます。

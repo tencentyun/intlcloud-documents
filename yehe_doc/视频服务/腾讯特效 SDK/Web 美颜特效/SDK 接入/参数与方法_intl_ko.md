@@ -23,7 +23,7 @@ type AuthConfig = {
   authFunc:() => Promise<{
     signature:string,
     timestamp:string
-  }> // License 구성 및 사용  참고
+  }> // License 구성 및 사용에 대한 문서를 참고하십시오.</a>
 }
 </pre></td>
 <td>Yes</td></tr><tr>
@@ -83,6 +83,7 @@ type loadingConfig = {
 </tbody>
 </table>
 
+
 ## 콜백 이벤트
 ```javascript
 let effectList = [];
@@ -103,7 +104,7 @@ sdk.on('created', () => {
 sdk.on('cameraReady', async () => {
 	// cameraReady 콜백에서 출력 스트림을 가져오면 비디오 이미지를 더 빨리 표시할 수 있지만 초기화 매개변수는 이 시점에서 적용되지 않습니다.
 	// 비디오 이미지를 가능한 한 빨리 표시하지만 비디오가 표시되는 순간에 효과를 적용할 필요가 없는 경우 이 방법을 선택할 수 있습니다.
-	// 뷰티 필터 적용 후 stream을 업데이트할 필요가 없습니다.
+	// 뷰티 효과가 작동하기 시작한 후에는 stream을 업데이트할 필요가 없습니다.
 	const arStream = await ar.getOutput();
 	// 로컬 재생
 	// localVideo.srcObject = arStream
@@ -117,7 +118,7 @@ sdk.on('ready', () => {
 	// 로컬 재생
 	// localVideo.srcObject = arStream
 
-	// ready 콜백에서 setBeautify/setEffect/setFilter 호출
+	// ready 콜백에서 setBeautify/setEffect/setFilter를 호출합니다.
 	sdk.setBeautify({
 		whiten: 0.3
 	});
@@ -149,7 +150,7 @@ sdk.on('ready', () => {
 <th>　　　　설명　　　　</th></tr></thead>
 <tbody><tr>
 <td>async getOutput(fps)</td>
-<td>- fps(선택 사항): 출력 프레임 레이트</td>
+<td>fps(선택 사항): 출력 프레임 레이트</td>
 <td>MediaStream|String</td>
 <td>이 API는 Web SDK에서만 사용할 수 있습니다.</td>
 </tr>
@@ -184,6 +185,21 @@ effect:{
 <td>특수 효과를 구성하려면 뷰티 필터 모듈을 활성화해야 합니다.</td>
 </tr>
 <tr>
+<td>setAvatar(params)</td>
+<td><pre style="color:white;margin:0">
+{
+	mode: 'AR' | 'VR',
+	effectId?: string, // 내장 모델을 사용하려면 effectId를 패스스루합니다.
+	url?: string, // 사용자 정의 모델을 사용하려면 url을 패스스루합니다.
+	backgroundUrl?: string, // 배경 이미지의 URL입니다. 이 매개변수는 VR 모드에서만 유효합니다.
+}
+</pre>
+</td>
+<td>-</td>
+<td>Animoji 또는 가상 아바타를 사용합니다.</td>
+</tr>
+<tr>
+<tr>
 <td>setBackground(options)</td>
 <td><pre style="color:white;margin:0">
 {
@@ -216,6 +232,15 @@ effect:{
 </td>
 <td>효과 목록</td>
 <td>이 API는 효과의 목록 풀링에 사용됩니다.</td>
+</tr>
+<tr>
+<td>getAvatarList(type)</td>
+<td><pre style="color:white;margin:0">
+type = 'AR' | 'VR'
+</pre>
+</td>
+<td>가상 아바타 목록</td>
+<td>가상 아바타 목록을 풀링합니다.</td>
 </tr>
 <tr>
 <td>getEffect(effectId)</td>
@@ -256,7 +281,6 @@ effect:{
 </tr>
 </tbody></table>
 
-
 ## 오류 처리
 error 콜백에 의해 반환된 오류 객체에는 문제 해결을 용이하게 하는 오류 코드와 오류 메시지가 포함됩니다.
 ```javascript
@@ -280,7 +304,8 @@ sdk.on('error', (error) => {
 | 10001202 | 카메라 중단   | - |
 | 20002001 | 인증 매개변수 누락 | - |
 | 20001001 | 인증 실패   | License를 생성했고 서명이 올바른지 확인하십시오 |
-| 20001002 | API 요청 실패 | 오류 콜백은 API에서 반환한 데이터를 반환합니다. 자세한 내용은 [API Error Codes](https://intl.cloud.tencent.com/document/product/1143/50107)를 참고하십시오. |
+| 20001002 | API 요청 실패 | 오류 콜백은 API에서 반환한 데이터를 반환합니다. 자세한 내용은 [API 에러 코드](https://www.tencentcloud.com/document/product/1143/50107)를 참고하십시오. |
+| 40000001 | SDK 버전이 너무 오래되어 일부 효과가 작동하지 않습니다. SDK를 업데이트하십시오. | - |
 
 ### 누락된 렌더링 컨텍스트 오류 처리
 일부 PC에서는 SDK가 오랫동안 백그라운드에 있으면 contextlost 오류가 발생할 수 있습니다. 이러한 경우 `ArSdk.prototype.resetCore(input: MediaStream)`를 호출하여 렌더링을 재개할 수 있습니다.
