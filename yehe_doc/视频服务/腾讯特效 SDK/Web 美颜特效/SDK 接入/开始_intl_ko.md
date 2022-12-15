@@ -56,7 +56,3 @@ if(isWebGLSupported()) {
 	// 브라우저 차단 로직
 }
 ```
-
-
-## 코드 예시
-[데모 프로젝트 실행](https://cloud.tencent.com/document/product/616/71371)을 참고하십시오.
