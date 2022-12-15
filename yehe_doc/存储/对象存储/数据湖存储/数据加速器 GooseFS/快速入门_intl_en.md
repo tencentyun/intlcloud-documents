@@ -143,12 +143,14 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 The following describes how to create a namespace to mount COS or CHDFS.
 
 1. Create a namespace and mount COS:
+
 ```shell
 $ goosefs ns create myNamespace cosn://bucketName-1250000000/ \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
 --secret fs.cosn.userinfo.secretKey=XXXXXXXXXXXX \
 --attribute fs.cosn.bucket.region=ap-xxx \
 ```
+
 >! 
 > - When creating the namespace that mounts COSN, you must use the `–-secret` parameter to specify the key, and use `--attribute` to specify all required parameters of Hadoop-COS (COSN). For the required parameters, see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
 > - When you create the namespace, if there is no read/write policy (rPolicy/wPolicy) specified, the read/write type set in the configuration file, or the default value (CACHE/CACHE_THROUGH) will be used.
@@ -256,13 +258,16 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. Run the `copyFromLocal` command to copy a local file to GooseFS:
+
 ```shell
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
+
 4. Run the `cat` command to view the file content:
+
 ```shell
 $ goosefs fs cat /LICENSE                                                                         
 Apache License
@@ -271,6 +276,7 @@ http://www.apache.org/licenses/
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 ...
 ```
+
 5. By default, GooseFS uses the local disk as the underlying file system. The default file system path is `./underFSStorage`. You can run the `persist` command to store files to the local system persistently as follows:
 ```shell
 $ goosefs fs persist /LICENSE
@@ -280,11 +286,14 @@ persisted file /LICENSE with size 26847
 ## Using GooseFS to Accelerate Uploads/Downloads
 
 1. Check the file status to determine whether a file is cached. The file status `PERSISTED` indicates that the file is in the memory, and `NOT_PERSISTED` indicates not.
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
+
 2. Count how many times "tencent" appeared in the file and calculate the time consumed:
+
 ```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
@@ -293,6 +302,7 @@ user	0m7.557s
 sys	0m1.181s
 ```
 3. Caching data in memory can effectively speed up queries. An example is as follows:
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
