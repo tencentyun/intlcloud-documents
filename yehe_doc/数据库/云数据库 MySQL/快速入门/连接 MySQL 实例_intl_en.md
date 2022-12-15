@@ -92,7 +92,7 @@ Below takes `show databases;` as an example:
 If you encounter connection errors, we recommend you use [One-Click Connectivity Checker](https://intl.cloud.tencent.com/document/product/236/31927) to troubleshoot the problem first and then find the corresponding solution in [Instance Connection Failure](https://intl.cloud.tencent.com/document/product/236/40333) according to the check report.
 
 ## Appendix 2. Network connectivity verification method
-We recommend you troubleshoot and locate network connectivity problems quickly with the `telnet` command. For more information, see [Prohibition of Ping Command](https://www.tencentcloud.com/document/product/236/31929).
+We recommend you troubleshoot and locate network connectivity problems quickly with the `telnet` command. For more information, see [Prohibition of Ping Command](https://cloud.tencent.com/document/product/236/34375#.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88).
 
 If the verification with `telnet` found that the network access of the TencentDB instance was good, but an error was reported when you tried to log in to it via the command line in the CVM instance, see [Connection](https://intl.cloud.tencent.com/document/product/236/37783).
 
