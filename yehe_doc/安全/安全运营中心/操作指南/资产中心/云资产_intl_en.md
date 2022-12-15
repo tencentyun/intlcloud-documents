@@ -28,7 +28,9 @@ The Security Operation Center provides the Asset Management feature to help you 
   Click on the Export button <img src= "https://main.qcloudimg.com/raw/5d6f28083f0484b4f0cb46b9c32717b5.png" style="margin:0;"> to export all asset information in the cloud asset list by default. You can also export partial cloud asset information.
 - **Toggle full screen**
   Click <img src= "https://main.qcloudimg.com/raw/8e4e975a89de9d70be4768661a6f535b.png" style="margin:0;"> to toggle the cloud asset list to the full screen mode. Click on this button again to exit the full screen mode.
-- **Filter/Sort** 1. To filter cloud assets, click the header "Asset Type", "Project", or "Region" of the cloud asset list. 2. Click the header "Configuration Risk", "Threat Alert", "Vulnerability", or "Discovery Time" to sort the cloud asset list in ascending or descending order. Click the **number of threat alerts** in the list to go to the details page.
+- **Filter/Sort** 
+    1. To filter cloud assets, click the header "Asset Type", "Project", or "Region" of the cloud asset list. 
+    2. Click the header "Configuration Risk", "Threat Alert", "Vulnerability", or "Discovery Time" to sort the cloud asset list in ascending or descending order. Click the **number of threat alerts** in the list to go to the details page.
   
   > ? By default, the cloud asset list is sorted in descending order by the sum of the numbers of configuration risks, threat alerts, and vulnerabilities.
 
