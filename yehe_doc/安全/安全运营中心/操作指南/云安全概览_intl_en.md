@@ -121,7 +121,7 @@ These risks are evaluated on a 100-point scale, ranging from 20 to 100 points. I
 </tbody></table>
 
 >?
->-Each risk item has an upper limit of penalty points. If the total points deducted for all deduction items under this risk exceed the upper limit of penalty points, the points deducted for this risk should be equal to the upper limit.
+>- Each risk item has an upper limit of penalty points. If the total points deducted for all deduction items under this risk exceed the upper limit of penalty points, the points deducted for this risk should be equal to the upper limit.
 >- Security score:
 >   - A security score less than 60 points indicates poor security. The system displays the score in red.
 >   - A security score that is greater than or equal to 60 points yet less than 90 points indicates controllable risks. The system displays the score in orange.
