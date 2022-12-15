@@ -1,19 +1,24 @@
-This document describes how to customize the UI of `TUICallKit` and provides two schemes for customization: slight UI adjustment and custom UI implementation.
+# TUICallKit UI Customization Guide
 
-## Scheme 1. Slight UI Adjustment
+This document describes how to customize the UI of `TUICallKit`. We provide two schemes. You can either make minor modifications to the UI source code we provide or implement your own UI.
 
-You can adjust the UI of `TUICallKit` by directly modifying the UI source code in the `Web/` folder in [tencentyun/TUICallKit](https://github.com/tencentyun/TUICallKit).
+## Scheme 1: Using our UI source code
+
+You can modify the UI source code to make minor changes to the ready-made UI we provide. The UI source code is in the `Web/` directory of the [TUICallKit project](https://github.com/tencentyun/TUICallKit).
 
 ### Replacing icons
 
-You can directly replace the icons in the `src/icons` folder to customize the color tone and style of all the icons in your application. When you replace an icon, make sure the filename is the same as the original icon. To preview icons, go to `src/assets`.
-![img](https://qcloudimg.tencent-cloud.cn/image/document/63512402ae3cee72786afcc919a988ce.png)
+You can replace the icons in the `src/icons` folder to customize the color tone and style of the icons in your application. Make sure you do not change the filenames. To preview icons, go to `src/assets`.
 
-### Adjusting the UI layout
+<!-- <img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/a8bd4a66f3a8071ea94eb5b270387386.png"/> -->
 
-You can modify UIs in the `src/components/` folder to modify the audio/video call UI.
+<img style="width:600px; max-width: inherit;" src="https://user-images.githubusercontent.com/57169560/194735399-64e56ca4-b25b-4eba-8470-92bb55013acc.png"/>
 
-```bash
+### Changing the layout
+
+You can modify the views in the `src/components/` folder to change the call UI.
+
+```
 - components/
     - Calling-C2CVideo.vue          One-to-one video call
     - Calling-Group.Vue             Group audio/video call
@@ -24,10 +29,13 @@ You can modify UIs in the `src/components/` folder to modify the audio/video cal
     - TUICallKit.vue                The overall `TUICallKit` component
 ```
 
-### Modifying the style
+### Changing the style
 
 The style file is `src/style.css`. You can adjust it to implement your desired UI style.
 
-## Scheme 2. Custom UI Implementation
+## Scheme 2: Implementing your own UI
 
-The entire call feature of `TUICallKit` is implemented based on the UI-less SDK `TUICallEngine`. You can implement your own UIs based entirely on `TUICallEngine`. For more information, see [TUICallEngine](https://www.tencentcloud.com/document/product/647/51016).
+The features of `TUICallKit` are implemented based on the `TUICallEngine` SDK, which does not include UI elements. You can use `TUICallEngine` to implement your own UI. For detailed directions, refer to the documents below:
+
+- [TUICallEngine integration guide](https://www.npmjs.com/package/tuicall-engine-webrtc)
+- [TUICallEngine APIs](https://www.tencentcloud.com/document/product/647/51016)
