@@ -20,7 +20,7 @@ func (s *BucketService) PutLifecycle(ctx context.Context, opt *BucketPutLifecycl
 ```
 
 #### 请求示例
-[//]: # ".cssg-snippet-put-bucket-lifecycle"
+[//]: # (.cssg-snippet-put-bucket-lifecycle)
 ```go
 package main
 
@@ -34,7 +34,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -138,7 +138,7 @@ type BucketLifecycleAbortIncompleteMultipartUpload struct {
 | NoncurrentVersionExpiration    | LifecycleConfiguration.Rule                                  | 指明非当前版本对象何时过期                                   | Container | 否       |
 | NoncurrentVersionTransition    | LifecycleConfiguration.Rule                                  | 指明非当前版本对象何时进行存储类型的转换和转换的存储类型     | Container | 否       |
 | NoncurrentDays                 | LifecycleConfiguration.Rule .NoncurrentVersionExpiration 或 NoncurrentVersionTransition | 指明规则对应的动作在对象变成非当前版本多少天后执行 如果是 Transition，该字段有效值是非负整数 如果是 Expiration，该字段有效值为正整数，最大支持3650天 | Integer   | 否       |
-| StorageClass                   | LifecycleConfiguration.Rule .Transition 或 NoncurrentVersionTransition | 指定 Object 沉降后的存储类型，枚举值： STANDARD_IA，INTELLIGENT_TIERING，ARCHIVE，DEEP_ARCHIVE。关于存储类型的介绍，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String    | 是       |
+| StorageClass                   | LifecycleConfiguration.Rule .Transition 或 NoncurrentVersionTransition | 指定 Object 沉降后的存储类型，枚举值： STANDARD_IA，MAZ_STANDARD_IA，INTELLIGENT_TIERING，MAZ_INTELLIGENT_TIERING，ARCHIVE，DEEP_ARCHIVE。关于存储类型的介绍，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String    | 是       |
 
 
 
@@ -155,7 +155,7 @@ func (s *BucketService) GetLifecycle(ctx context.Context) (*BucketGetLifecycleRe
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-get-bucket-lifecycle"
+[//]: # (.cssg-snippet-get-bucket-lifecycle)
 ```go
 package main
 
@@ -169,7 +169,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -243,7 +243,7 @@ func (s *BucketService) DeleteLifecycle(ctx context.Context) (*Response, error)
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-delete-bucket-lifecycle"
+[//]: # (.cssg-snippet-delete-bucket-lifecycle)
 ```go
 package main
 
@@ -257,7 +257,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{

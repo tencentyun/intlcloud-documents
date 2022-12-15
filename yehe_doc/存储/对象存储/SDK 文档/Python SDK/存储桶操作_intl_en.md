@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to basic bucket operations.
+This document provides an overview of APIs and SDK code samples for basic bucket operations.
 
 
 | API | Operation |  Description |
@@ -8,12 +8,12 @@ This document provides an overview of APIs and SDK code samples related to basic
 | [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | Querying a bucket list | Queries the list of all buckets under the specified account |
 | [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under a specified account |
 | [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Checking a bucket and its permissions | Checks whether a bucket exists and whether you have permission to access it |
-| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket from a specified account |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket under a specified account |
 
 
 ## Querying a Bucket List
 
-#### Description
+#### Feature description
 
 This API (GET Service) is used to query the list of all buckets in an account.
 
@@ -39,8 +39,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -72,12 +72,12 @@ Query a bucket list in Dict format.
 }
 ```
 
-| Parameter | Description | Type |
+| Parameter | Description | Type | 
 | -------------- | -------------- |---------- |
 | Buckets   | A buckets list  | Dict |
 | Bucket   | A buckets list | List |
 | Name   |  Bucket name  | String|
-| Location   | Name of bucket region | String|                                     
+| Location   | Name of bucket region | String|
 | CreationDate   |  Time of Bucket creation | String|
 | Owner   |  Bucket owner information  | Dict|
 | DisplayName | Bucket owner name | String |
@@ -86,14 +86,14 @@ Query a bucket list in Dict format.
 
 ## Creating a Bucket
 
-#### Description
+#### Feature description
 
 This API (PUT Bucket) is used to create a bucket under a specified account.
 
 #### Method prototype
 
 ```
-create_bucket(Bucket, **kwargs)
+create_bucket(Bucket, BucketAZConfig=None, **kwargs)
 ```
 #### Sample request
 
@@ -111,13 +111,14 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
+# The bucket name does not support uppercase letters, and the COS backend will automatically convert uppercase letters passed in to lowercase when creating the bucket.
 response = client.create_bucket(
     Bucket='examplebucket-1250000000'
 )
@@ -127,6 +128,7 @@ response = client.create_bucket(
 ```python
 response = client.create_bucket(
     Bucket='examplebucket-1250000000',
+    BucketAZConfig='string',
     ACL='private'|'public-read'|'public-read-write',
     GrantFullControl='string',
     GrantRead='string',
@@ -135,9 +137,10 @@ response = client.create_bucket(
 ```
 #### Parameter description
 
-| Parameter | Description | Type | Required |
+| Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | The name of a bucket to create, must be in the format: BucketName-APPID | String | Yes |
+|Bucket| Name of the bucket to be created in the format of `BucketName-APPID`. <br>The bucket name does not support uppercase letters, and the COS backend will automatically convert uppercase letters passed in to lowercase when creating the bucket. | String | Yes |
+|BucketAZConfig| AZ configuration of the bucket. To create an MAZ bucket, specify 'MAZ'. |String| No |
 | ACL | Sets the bucket ACL, such as 'private', 'public-read', 'public-read-write' | String | No |
 | GrantFullControl | Grants a specified account full Read/Write permission for a bucket in the format of `id="OwnerUin"`| String | No |
 |GrantRead | Grants a specified account Read permission for a bucket in the format of `id="OwnerUin"`| String | No |
@@ -149,7 +152,7 @@ This API returns `None`.
 
 ## Checking a Bucket and Its Permissions
 
-#### Description
+#### Feature description
 
 This API is used to verify whether a bucket exists and you have permission to access it.
 
@@ -174,8 +177,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -187,7 +190,7 @@ response = client.head_bucket(
 ```
 #### Parameter description
 
-| Parameter | Description | Type | Required |
+| Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | The name of a bucket to query. Format: BucketName-APPID | String | Yes |
 
@@ -197,7 +200,7 @@ This API returns `None`.
 
 ## Deleting a Bucket
 
-#### Description
+#### Feature description
 
 This API (DELETE Bucket) is used to delete an empty bucket under a specified account.
 
@@ -222,8 +225,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -235,7 +238,7 @@ response = client.delete_bucket(
 ```
 #### Parameter description
 
-| Parameter | Description | Type | Required |
+| Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | The name of a bucket to delete, must be in the format: BucketName-APPID | String | Yes |
 
@@ -243,9 +246,9 @@ response = client.delete_bucket(
 This API returns `None`.
 
 
-## Checking Whether a Bucket Exists
+## Checking whether a bucket exists
 
-#### Description
+#### Feature description
 
 Checking Whether Buckets Exist
 
@@ -270,8 +273,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -279,12 +282,12 @@ client = CosS3Client(config)
 
 response = client.bucket_exists(
     Bucket='examplebucket-1250000000'
-print(response)
 )
+print(response)
 ```
 #### Parameter description
 
-| Parameter | Description | Type | Required |
+| Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 

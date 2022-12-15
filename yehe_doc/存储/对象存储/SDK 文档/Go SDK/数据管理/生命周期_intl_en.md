@@ -10,7 +10,7 @@ This document provides an overview of APIs and SDK code samples related to lifec
 
 ## Setting a Lifecycle Configuration
 
-#### Description
+#### Feature description
 
 This API (PUT Bucket lifecycle) is used to set the lifecycle configuration for a bucket.
 
@@ -20,7 +20,7 @@ func (s *BucketService) PutLifecycle(ctx context.Context, opt *BucketPutLifecycl
 ```
 
 #### Sample request
-[//]: # ".cssg-snippet-put-bucket-lifecycle"
+[//]: # (.cssg-snippet-put-bucket-lifecycle)
 ```go
 package main
 
@@ -32,17 +32,17 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
             SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
             SecretKey: os.Getenv("SECRETKEY"),
         },
     })
@@ -70,7 +70,7 @@ func main() {
         },
     }
     _, err := client.Bucket.PutLifecycle(context.Background(), lc)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
@@ -79,7 +79,7 @@ func main() {
 #### Parameter description
 ```go
 type BucketPutLifecycleOptions struct {
-    XMLName xml.Name
+    XMLName                xml.Name
     Rules   []BucketLifecycleRule
 }
 type BucketLifecycleRule struct {
@@ -93,14 +93,14 @@ type BucketLifecycleRule struct {
     NoncurrentVersionExpiration    *BucketLifecycleNoncurrentVersion
 }
 type BucketLifecycleFilter struct {
-    Prefix string
+    Prefix     string
     Tag    *BucketTaggingTag
     And    *BucketLifecycleAndOperator
 }
 type BucketLifecycleTransition struct {
 	Date         string 
 	Days         int    
-	StorageClass string
+	StorageClass   string
 }
 type BucketLifecycleExpiration struct {
     Date                      string
@@ -138,13 +138,13 @@ type BucketLifecycleAbortIncompleteMultipartUpload struct {
 | NoncurrentVersionExpiration | LifecycleConfiguration.Rule | Specifies when noncurrent object versions shall expire. | Container | No |
 | NoncurrentVersionTransition | LifecycleConfiguration.Rule | Specifies when to transition objects of noncurrent versions and the target storage class. | Container | No |
 | NoncurrentDays                 | LifecycleConfiguration.Rule .NoncurrentVersionExpiration or NoncurrentVersionTransition | Specifies the number of days between the date when an object becomes noncurrent and the date when the operation corresponding to a rule is performed. If it is a `Transition` operation, this value should be a non-negative integer. If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer   | No       |
-| StorageClass | LifecycleConfiguration.Rule .Transition or NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information about storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | Yes |
+| StorageClass | LifecycleConfiguration.Rule .Transition or NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `MAZ_STANDARD_IA`, `INTELLIGENT_TIERING`, `MAZ_INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information about storage classes, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | Yes |
 
 
 
 ## Querying a Lifecycle Configuration
 
-#### Description
+#### Feature description
 
 This API (GET Bucket lifecycle) is used to query the lifecycle configuration of a bucket.
 
@@ -155,7 +155,7 @@ func (s *BucketService) GetLifecycle(ctx context.Context) (*BucketGetLifecycleRe
 
 #### Sample request
 
-[//]: # ".cssg-snippet-get-bucket-lifecycle"
+[//]: # (.cssg-snippet-get-bucket-lifecycle)
 ```go
 package main
 
@@ -167,22 +167,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
             SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
             SecretKey: os.Getenv("SECRETKEY"),
         },
     })
     _, _, err := client.Bucket.GetLifecycle(context.Background())
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
@@ -207,7 +207,7 @@ type BucketLifecycleFilter struct {
 type BucketLifecycleTransition struct {
 	Date         string 
 	Days         int    
-	StorageClass string
+	StorageClass   string
 }
 type BucketLifecycleExpiration struct {
 	Date string 
@@ -231,7 +231,7 @@ type BucketLifecycleAbortIncompleteMultipartUpload struct {
 
 ## Deleting a Lifecycle Configuration
 
-#### Description
+#### Feature description
 
 This API (DELETE Bucket lifecycle) is used to delete the lifecycle configuration from a bucket.
 
@@ -243,7 +243,7 @@ func (s *BucketService) DeleteLifecycle(ctx context.Context) (*Response, error)
 
 #### Sample request
 
-[//]: # ".cssg-snippet-delete-bucket-lifecycle"
+[//]: # (.cssg-snippet-delete-bucket-lifecycle)
 ```go
 package main
 
@@ -255,22 +255,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
             SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
             SecretKey: os.Getenv("SECRETKEY"),
         },
     })
     _, err := client.Bucket.DeleteLifecycle(context.Background())
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }

@@ -39,8 +39,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -72,7 +72,7 @@ response = client.list_buckets(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 |
+| 参数名称   | 参数描述   |类型 | 
 | -------------- | -------------- |---------- |
 | Buckets   | 存储桶列表  | Dict |
 | Bucket   | 存储桶列表 | List |
@@ -93,7 +93,7 @@ response = client.list_buckets(
 #### 方法原型
 
 ```
-create_bucket(Bucket, **kwargs)
+create_bucket(Bucket, BucketAZConfig=None, **kwargs)
 ```
 #### 请求示例
 
@@ -111,13 +111,14 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
+# 存储桶名称不支持大写字母，COS 后端会将用户传入的大写字母自动转换为小写字母用于创建存储桶
 response = client.create_bucket(
     Bucket='examplebucket-1250000000'
 )
@@ -127,6 +128,7 @@ response = client.create_bucket(
 ```python
 response = client.create_bucket(
     Bucket='examplebucket-1250000000',
+    BucketAZConfig='string',
     ACL='private'|'public-read'|'public-read-write',
     GrantFullControl='string',
     GrantRead='string',
@@ -135,9 +137,10 @@ response = client.create_bucket(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 |
+| 参数名称   | 参数描述   |类型 | 是否必填 | 
 | -------------- | -------------- |---------- | ----------- |
-|Bucket|待创建的存储桶名称，由 BucketName-APPID 构成|String| 是|
+|Bucket|待创建的存储桶名称，由 BucketName-APPID 构成. <br> 存储桶名称不支持大写字母，COS 后端会将用户传入的大写字母自动转换为小写字母用于创建存储桶|String| 是|
+|BucketAZConfig|存储桶 AZ 配置，指定为 'MAZ' 以创建多 AZ 存储桶|String|否|
 | ACL |设置存储桶的 ACL，例如 'private'，'public-read'，'public-read-write' |String| 否|
 | GrantFullControl |赋予指定账户对存储桶的读写权限，格式为`id="OwnerUin"`|String|否|
 |GrantRead |赋予指定账户对存储桶的读权限，格式为`id="OwnerUin"`|String|否|
@@ -174,8 +177,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -187,7 +190,7 @@ response = client.head_bucket(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 |
+| 参数名称   | 参数描述   |类型 | 是否必填 | 
 | -------------- | -------------- |---------- | ----------- |
 |Bucket |待查询的存储桶名称，由 BucketName-APPID 构成|String|是|
 
@@ -222,8 +225,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -235,7 +238,7 @@ response = client.delete_bucket(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 |
+| 参数名称   | 参数描述   |类型 | 是否必填 | 
 | -------------- | -------------- |---------- | ----------- |
 |Bucket |待删除的存储桶名称，由 BucketName-APPID 构成|String|是|
 
@@ -270,8 +273,8 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -279,12 +282,12 @@ client = CosS3Client(config)
 
 response = client.bucket_exists(
     Bucket='examplebucket-1250000000'
-print(response)
 )
+print(response)
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 |
+| 参数名称   | 参数描述   |类型 | 是否必填 | 
 | -------------- | -------------- |---------- | ----------- |
 |Bucket |存储桶名称，由 BucketName-APPID 构成|String|是|
 

@@ -1,9 +1,9 @@
-## Overview
+## Feature Description
 
 This API is used to upload an object within 5 GB to a bucket using an HTML form. To call this API, you need to have permission to write to the bucket.
 
 > !
->- This API requires a signature different from the standard COS request signatures. For more information, please see [Signature protection](#id1) and the description of related fields.
+>- This API requires a signature different from the standard COS request signatures. For more information, see [Signature protection](#id1) and the description of related fields.
 > - If you upload an object whose name is the same as another object that is already stored in the bucket with versioning disabled, the old object will be overwritten and the response will be returned normally as specified upon successful upload.
 > 
 
@@ -11,13 +11,13 @@ This API is used to upload an object within 5 GB to a bucket using an HTML form.
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PostObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@ Content-Length: Content Length
 [Multipart Form Data]
 ```
 
->? Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+>? Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > 
 
 #### Request form
@@ -60,12 +60,12 @@ The request body of this API is encoded with multipart/form-data. When sending t
 | Cache-Control | Cache directives defined in RFC 2616. It will be stored as object metadata. | string | No |
 | Content-Disposition | Filename defined in RFC 2616. It will be stored as object metadata. | string | No |
 | Content-Encoding | Encoding format defined in RFC 2616. It will be stored as object metadata. | string | No |
-| Content-Type | HTTP content type (MIME) defined in RFC 2616. It will be stored as object metadata<br>**Note:** If a file is uploaded via an HTML form, the browser will automatically carry the file’s MIME type in the request. However, COS will not use this MIME type carried. Therefore, you need to use the `Content-Type` field to specify the content type of the object. | string | No |
+| Content-Type | HTTP content type (MIME) defined in RFC 2616. It will be stored as object metadata<br>**Note:** If a file is uploaded via an HTML form, the browser will automatically carry the file's MIME type in the request. However, COS will not use this MIME type carried. Therefore, you need to use the `Content-Type` field to specify the content type of the object. | string | No |
 | Expires | Cache expiration time defined in RFC 2616. It will be stored as object metadata. | string | No |
-| success_action_redirect | Redirection target URL if the upload succeeds. If this field is set, HTTP status code “303 (Redirect)” and the `Location` response header will be returned. `Location` will include the URL specified in this field as well as the bucket, key, and ETag parameters (see [Example 8](#step8)). | string | No |
+| success_action_redirect | Redirection target URL if the upload succeeds. If this field is set, HTTP status code "303 (Redirect)" and the `Location` response header will be returned. `Location` will include the URL specified in this field as well as the bucket, key, and ETag parameters (see [Example 8](#step8)). | string | No |
 | success_action_status | HTTP status code to return for a successful upload. Valid values: `200`, `201`, `204` (default). If `success_action_redirect` is specified, this field will be ignored (see [Example 9](#step9)). | number | No |
 | x-cos-meta-\* | User-defined metadata and header suffixes. It will be stored as object metadata. Maximum size: 2 KB. <br>**Note**: User-defined metadata can contain underscores (_), but header suffixes can contain minus signs (−) but not underscores. | string | No |
-| x-cos-storage-class | Object storage class. For the enumerated values, such as `STANDARD` (default), `INTELLIGENT_TIERING`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
+| x-cos-storage-class | Object storage class. For the enumerated values, such as `STANDARD` (default), `INTELLIGENT_TIERING`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
 | x-cos-traffic-limit | Limits the speed (in bit/s) for the current upload for traffic control. Valid range: 819200−838860800 (i.e., 100 KB/s−100 MB/s). If the speed exceeds the limit, a 400 error will be returned. | integer | No |
 | Content-MD5 | MD5 checksum of the Base64-encoded file content. It is used for integrity check, i.e., whether the file content has changed during the upload. | string | No |
 | file | File information and content. When the file is uploaded via an HTML form, the browser automatically sets the value of this parameter to the correct format. <br>**Note**: This field must be placed at the end of the form. | file | Yes |
@@ -74,13 +74,13 @@ The request body of this API is encoded with multipart/form-data. When sending t
 
 You can configure access permissions for the object by specifying the following form fields during upload:
 
-| Field  | Description | Type | Required |
+| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| acl | Defines the ACL attribute of the object. For the enumerated values, such as `default` (default), `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). <br>**Note**: If you do not need to set an ACL for the object, set this parameter to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
-| x-cos-grant-read | Grants a user permission to read the object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
-| x-cos-grant-read-acp | Grants a user permission to read the ACL of an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
-| x-cos-grant-write-acp | Grants a user permission to write to the ACL of an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
-| x-cos-grant-full-control | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| acl | Defines the ACL attribute of the object. For the enumerated values, such as `default` (default), `private`, and `public-read`, see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). <br>**Note**: If you do not need to set an ACL for the object, set this parameter to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
+| x-cos-grant-read | Grants a user permission to read the object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| x-cos-grant-read-acp | Grants a user permission to read the ACL of an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| x-cos-grant-write-acp | Grants a user permission to write to the ACL of an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| x-cos-grant-full-control | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 
 **SSE-related form fields**
 
@@ -90,7 +90,7 @@ You can use server-side encryption by specifying the following form fields durin
 | ----------------------------------------------- | ------------------------------------------------------------ | ------ | ------------------------------------------ |
 | x-cos-server-side-encryption | Server-side encryption algorithm. `AES256` and `cos/kms` are supported. | string | Required if SSE-COS or SSE-KMS is used |
 | x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm. AES256 is supported. | string | Required if SSE-C is used |
-| x-cos-server-side-encryption-cos-kms-key-id | Customer master key (CMK) of KMS if `x-cos-server-side-encryption` is set to `cos/kms`. If this field is not specified, the default CMK created by COS will be used. For more information, please see [SSE-KMS Encryption](https://intl.cloud.tencent.com/document/product/436/18145). | string | No |
+| x-cos-server-side-encryption-cos-kms-key-id | Customer master key (CMK) of KMS if `x-cos-server-side-encryption` is set to `cos/kms`. If this field is not specified, the default CMK created by COS will be used. For more information, see [SSE-KMS Encryption](https://intl.cloud.tencent.com/document/product/436/18145). | string | No |
 | x-cos-server-side-encryption-context | Base64-encoded encryption context (key-value pairs in JSON format) if `x-cos-server-side-encryption` is set to `cos/kms`. <br>Example: `eyJhIjoiYXNkZmEiLCJiIjoiMTIzMzIxIn0=` | string | No |
 | x-cos-server-side-encryption-customer-key | Base64-encoded server-side encryption key <br/>Example: `MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=` | string | Required if SSE-C is used |
 | x-cos-server-side-encryption-customer-key-MD5 | Base64-encoded MD5 checksum of the server-side encryption key <br/>Example: `U5L61r7jcwdNvT7frmUG8g==` | string | Required if SSE-C is used |
@@ -109,7 +109,7 @@ Log in to the CAM console and go to [Manage API Key](https://console.cloud.tence
 
 #### 2. Generate KeyTime
 
-a. Get the Unix `StartTimestamp` of the current time. It is the total number of seconds elapsed from January 1, 1970, 00:00:00 UTC (January 1, 1970, 08:00:00 Beijing time) till the current time.
+a. Get the Unix `StartTimestamp` of the current time. It is the total number of seconds elapsed from January 1, 1970, 00:00:00 UTC till the current time.
 b. Calculate the Unix `EndTimestamp` for the signature to expire according to `StartTimestamp` and the expected validity period of the signature.
 c. Generate `KeyTime` by splicing the two timestamps above in `StartTimestamp;EndTimestamp` format.
 
@@ -134,10 +134,10 @@ A policy is a text in JSON format. A typical policy is as follows:
 }
 ```
 
-Where,
+On the **Stream Interruption Records** page:
 
-- `expiration`: the policy’s expiration time, which is a string in ISO 8601 format.
-- `conditions`: an array of conditions for the policy. The conditions are described below.
+- `expiration`: The policy's expiration time, which is a string in ISO 8601 format.
+- `conditions`: An array of conditions for the policy. The conditions are described below.
 
 | Type | Description |
 | -------- | ------------------------------------------------------------ |
@@ -147,7 +147,7 @@ Where,
 
 Form fields that can be limited are as follows:
 
-| Field | Description | Match Type  | Required |
+| Field | Description | Match Type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------------- | -------- |
 | acl | ACL attribute of the object | Exact/Prefix | No |
 | bucket | Bucket for upload | Exact | No |
@@ -164,7 +164,7 @@ Form fields that can be limited are as follows:
 
 > ! 
 >- Except for `bucket`, fields that are used for limitation in the policy must be used in the form fields. For example, if `{ "acl": "default" }` is used, `acl` must be used and set to `default` in the form.
->- For security reasons, you are advised to use all limitable form fields.
+>- For security reasons, we recommend you use all limitable form fields.
 
 #### 4. Generate SignKey
 
@@ -184,7 +184,7 @@ Attach the policy and signature-related information above to the form as describ
 
 | Parameter |  Description | Type |Required |
 | -------------------- | ------------------------------------------------------------ | ------ | ------------------------------------------ |
-| x-cos-security-token | Security token when a temporary security token is used. For more information, please see [Temporary security credentials](https://intl.cloud.tencent.com/document/product/436/30613). | string | No <br>(Required when a temp key is used) |
+| x-cos-security-token | Security token when a temporary security token is used. For more information, see [Temporary security credentials](https://intl.cloud.tencent.com/document/product/436/30613). | string | No <br>(Required when a temp key is used) |
 | policy | Base64-encoded policy | string | Yes |
 | q-sign-algorithm | Signature hash algorithm. Fixed at `sha1` | string | Yes |
 | q-ak | `SecretId` mentioned above | string | Yes |
@@ -231,19 +231,7 @@ Log in to the CAM console and go to the [Manage API Key](https://console.cloud.t
 
 **Signature form fields**
 
-- policy = `ewogICAgImV4cGlyYXRpb24iOiAiMjAxOS0wOC0zMFQwOTozODoxMi40MTRaIiwKI
-CAgICJjb25kaXRpb25zIjogWwogI
-CAgICAgIHsgImFjbCI6ICJkZWZhdWx0IiB9LAogICAgICAgIHsgImJ1Y2tldCI6ICJleGFtcGxlYn
-Vja2V0LTEyNTAwMDAwMDAiIH0sCiAgI
-CAgICAgWyAic3RhcnRzLXdpdGgiLCAiJGtleSIsICJmb2xkZXIvc3ViZm9sZGVyLyIgXSwKICAgICAgI
-CBbICJzdGFydHMtd2l0aCIsICIkQ29ud
-GVudC1UeXBlIiwgImltYWdlLyIgXSwKICAgICAgICBbICJzdGFydHMtd2l0aCIsICIkc3VjY2Vzc19hY3
-Rpb25fcmVkaXJlY3QiLCAiaHR0cHM6Ly9te
-S53ZWJzaXRlLyIgXSwKICAgICAgICBbICJlcSIsICIkeC1jb3Mtc2VydmVyLXNpZGUtZW5jcnlwdGlvbiIsI
-CJBRVMyNTYiIF0sCiAgICAgICAgeyAic
-S1zaWduLWFsZ29yaXRobSI6ICJzaGExIiB9LAogICAgICAgIHsgInEtYWsiOiAiQUtJRFFqejNsdG9tc
-FZqQm5pNUxpdGtXSEZsRnB3a245VTVxIi
-B9LAogICAgICAgIHsgInEtc2lnbi10aW1lIjogIjE1NjcxNTA2OTI7MTU2NzE1Nzg5MiIgfQogICAgXQp9`
+- policy = `ewogICAgImV4cGlyYXRpb24iOiAiMjAxOS0wOC0zMFQwOTozODoxMi40MTRaIiwKICAgICJjb25kaXRpb25zIjogWwogICAgICAgIHsgImFjbCI6ICJkZWZhdWx0IiB9LAogICAgICAgIHsgImJ1Y2tldCI6ICJleGFtcGxlYnVja2V0LTEyNTAwMDAwMDAiIH0sCiAgICAgICAgWyAic3RhcnRzLXdpdGgiLCAiJGtleSIsICJmb2xkZXIvc3ViZm9sZGVyLyIgXSwKICAgICAgICBbICJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgImltYWdlLyIgXSwKICAgICAgICBbICJzdGFydHMtd2l0aCIsICIkc3VjY2Vzc19hY3Rpb25fcmVkaXJlY3QiLCAiaHR0cHM6Ly9teS53ZWJzaXRlLyIgXSwKICAgICAgICBbICJlcSIsICIkeC1jb3Mtc2VydmVyLXNpZGUtZW5jcnlwdGlvbiIsICJBRVMyNTYiIF0sCiAgICAgICAgeyAicS1zaWduLWFsZ29yaXRobSI6ICJzaGExIiB9LAogICAgICAgIHsgInEtYWsiOiAiQUtJRFFqejNsdG9tcFZqQm5pNUxpdGtXSEZsRnB3a245VTVxIiB9LAogICAgICAgIHsgInEtc2lnbi10aW1lIjogIjE1NjcxNTA2OTI7MTU2NzE1Nzg5MiIgfQogICAgXQp9`
 - q-sign-algorithm = `sha1`
 - q-ak = `AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q`
 - q-key-time = `1567150692;1567157892`
@@ -253,13 +241,13 @@ B9LAogICAgICAgIHsgInEtc2lnbi10aW1lIjogIjE1NjcxNTA2OTI7MTU2NzE1Nzg5MiIgfQogICAgXQ
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 | Header | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
 | Location | <li>If `success_action_redirect` is used, the value is the URL specified in `success_action_redirect` as well as the bucket, key, and ETag parameters (see [Example 8](#step8)).<br><li>If `success_action_redirect` is not used, the value is the full access URL of the object (see [Example 1](#step1)). | string |
 
-**Versioning-related headers**
+**Versioning-Related Headers**
 
 If the object is uploaded to a versioning-enabled bucket, the following response headers will be returned:
 
@@ -269,7 +257,7 @@ If the object is uploaded to a versioning-enabled bucket, the following response
 
 **SSE-related headers**
 
-If server-side encryption is used during object upload, this API will return headers used specifically for server-side encryption. For more information, please see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used during object upload, this API will return headers used specifically for server-side encryption. For more information, see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
@@ -277,13 +265,13 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Samples
 
 <span id="step1"></span>
 
-#### Example 1: simple use case (with versioning disabled)
+#### Sample 1: Simple use case (with versioning disabled)
 
 #### Request
 
@@ -344,7 +332,7 @@ x-cos-request-id: NWQ2NzgxMzZfMmViMDJhMDlfY2NjOF84NGQz****
 
 <span id="step2"></span>
 
-#### Example 2: specifying metadata and ACL using form fields
+#### Sample 2: Specifying metadata and ACL using form fields
 
 #### Request
 
@@ -429,7 +417,7 @@ x-cos-request-id: NWQ2NzgxMzdfM2NhZjJhMDlfMTQzYV84Nzhh****
 
 <span id="step3"></span>
 
-#### Example 3: using server-side encryption SSE-COS
+#### Sample 3: Using server-side encryption SSE-COS
 
 #### Request
 
@@ -495,7 +483,7 @@ x-cos-server-side-encryption: AES256
 
 <span id="step4"></span>
 
-#### Example 4: using server-side encryption SSE-C
+#### Sample 4: Using server-side encryption SSE-C
 
 #### Request
 
@@ -570,7 +558,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 
 <span id="step5"></span>
 
-#### Example 5: versioning-enabled
+#### Sample 5: Versioning-enabled
 
 #### Request
 
@@ -632,7 +620,7 @@ x-cos-version-id: MTg0NDUxNzcwMDkzMDE3NDQ0MDU
 
 <span id="step6"></span>
 
-#### Example 6: versioning-suspended
+#### Sample 6: Versioning-suspended
 
 #### Request
 
@@ -693,7 +681,7 @@ x-cos-request-id: NWQ2NzgxNzZfMjFjOTBiMDlfMWY3YTFfNjY2****
 
 <span id="step7"></span>
 
-#### Example 7: using the `${filename}` wildcard in the object key (`key` form field)
+#### Sample 7: Using the `${filename}` wildcard in the object key (`key` form field)
 
 #### Request
 
@@ -754,7 +742,7 @@ x-cos-request-id: NWQ2N2M2N2NfNWZhZjJhMDlfNmUzMV84OTg4****
 
 <span id="step8"></span>
 
-#### Example 8: specifying the `success_action_redirect` form field
+#### Sample 8: Specifying the `success_action_redirect` form field
 
 #### Request
 
@@ -819,7 +807,7 @@ x-cos-request-id: NWQ2Nzg2OTVfMTRiYjI0MDlfZGFkOV85MDA4****
 
 <span id="step9"></span>
 
-#### Example 9: specifying the `success_action_status` form field
+#### Sample 9: Specifying the `success_action_status` form field
 
 #### Request
 

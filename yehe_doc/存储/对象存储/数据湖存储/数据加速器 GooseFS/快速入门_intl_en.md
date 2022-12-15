@@ -5,44 +5,72 @@ This document describes how to quickly deploy GooseFS on a local device, perform
 
 Before using GooseFS, you need to:
 
-1. Create a bucket in COS as remote storage. For detailed directions, please see [Getting Started With the Console](https://intl.cloud.tencent.com/document/product/436/32955).
+1. Create a bucket in COS as remote storage. For detailed directions, see [Getting Started With the Console](https://intl.cloud.tencent.com/document/product/436/32955).
 2. Install [Java 8 or a later version](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
 3. Install [SSH](https://www.ssh.com/ssh/), ensure that you can connect to the LocalHost using SSH, and log in remotely.
+4. Purchase a CVM instance as instructed in Customizing Linux CVM Configurations and make sure that the disk has been mounted to the instance.
 
 ## Downloading and Configuring GooseFS
 
-1. Download the GooseFS installation package from the repository at [goosefs-1.3.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.3.0/release/goosefs-1.3.0-bin.tar.gz)。
-2. Run the following command to decompress the installation package:
-```shell
-tar -zxvf goosefs-1.3.0-bin.tar.gz
-cd goosefs-1.3.0
+1. Create and enter a local directory (you can also choose another directory as needed), and then download [goosefs-1.4.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz).
 ```
-
- After the decompression, the home directory of GooseFS `goosefs-1.2.0` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
-3. Create the `conf/goosefs-site.properties` configuration file in `${GOOSEFS_HOME}/conf`. You can use a built-in configuration template.
+$ cd /usr/local
+$ mkdir /service
+$ cd /service
+$ wget https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz
+```
+2. Run the following command to decompress the installation package and enter the extracted directory:
+```shell
+$ tar -zxvf goosefs-1.4.0-bin.tar.gz
+$ cd goosefs-1.4.0
+```
+After the decompression, the home directory of GooseFS `goosefs-1.4.0` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
+3. Create the `conf/goosefs-site.properties` configuration file in `${GOOSEFS_HOME}/conf`. You can use a built-in configuration template. Then, enter the editing mode to modify the configuration:
 ```shell
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+$ vim conf/goosefs-site.properties
 ```
-4. Set `goosefs.master.hostname` to `localhost` in `conf/goosefs-site.properties`.
+4. Modify the following configuration items in the configuration file `conf/goosefs-site.properties`:
 ```shell
-$ echo"goosefs.master.hostname=localhost">> conf/goosefs-site.properties
+# Common properties
+# Modify the master node's host information
+goosefs.master.hostname=localhost
+goosefs.master.mount.table.root.ufs=${goosefs.work.dir}/underFSStorage
+
+# Security properties
+# Modify the permission configuration
+goosefs.security.authorization.permission.enabled=true
+goosefs.security.authentication.type=SIMPLE
+
+# Worker properties
+# Modify the worker node configuration to specify the local cache medium, cache path, and cache size
+goosefs.worker.ramdisk.size=1GB
+goosefs.worker.tieredstore.levels=1
+goosefs.worker.tieredstore.level0.alias=SSD
+goosefs.worker.tieredstore.level0.dirs.path=/data
+goosefs.worker.tieredstore.level0.dirs.quota=80G
+
+
+# User properties
+# Specify the cache policies for file reads and writes
+goosefs.user.file.readtype.default=CACHE
+goosefs.user.file.writetype.default=MUST_CACHE
 ```
+
+>!Before configuring the path parameter `goosefs.worker.tieredstore.level0.dirs.path`, you need to create the path first.
 
 ## Running GooseFS
 
-1. Before running GooseFS, run the following command to check the local system environment to ensure that GooseFS can run properly:
+1. Before starting GooseFS, you need to enter the GooseFS directory and run the startup command:
 ```shell
-$ goosefs validateEnv local
+$ cd /usr/local/service/goosefs-1.4.0
+$ ./bin/goosefs-start.sh all
 ```
-2. Run the command below to format GooseFS before you run it. This command clears the logs of GooseFS and files stored in the `worker` directory.
-```shell
-$ goosefs format
-```
-3. Run the command below to run GooseFS. By default, a master and a worker will be enabled.
-```shell
-$ ./bin/goosefs-start.sh local SudoMount
-```
- After the command above is executed, you can access http://localhost:9201 and http://localhost:9204 to view the running status of the master and the worker, respectively.
+After running this command, you can see the following page:
+
+<img width="881" alt="image" src="https://qcloudimg.tencent-cloud.cn/raw/7b7f7f6ea02d36853ed7851023cfb8af.png">
+
+After the command above is executed, you can access `http://localhost:9201` and `http://localhost:9204` to view the running status of the master and the worker, respectively.
 
 ## Mounting COS or Tencent Cloud HDFS to GooseFS
 
@@ -57,12 +85,10 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 </property>
 
 
-
 <property>
    <name>fs.AbstractFileSystem.cosn.impl</name>
    <value>com.qcloud.cos.goosefs.CosN</value>
 </property>
-
 
 
 <property>
@@ -71,19 +97,16 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 </property>
 
 
-
 <property>
     <name>fs.cosn.userinfo.secretKey</name>
     <value></value>
 </property>
 
 
-
 <property>
     <name>fs.cosn.bucket.region</name>
     <value></value>
 </property>
-
 
 
 <!-- CHDFS related configurations -->
@@ -93,19 +116,16 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 </property>
 
 
-
 <property>
    <name>fs.ofs.impl</name>
    <value>com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter</value>
 </property>
 
 
-
 <property>
    <name>fs.ofs.tmp.cache.dir</name>
    <value>/data/chdfs_tmp_cache</value>
 </property>
-
 
 
 <!--appId-->      
@@ -117,31 +137,29 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 ```
 
 >?
->- For the complete configuration of COSN, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
->- For the complete configuration of CHDFS, please see [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965).
+>- For the complete configuration of COSN, see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
+>- For the complete configuration of CHDFS, see [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965).
 
 The following describes how to create a namespace to mount COS or CHDFS.
 
 1. Create a namespace and mount COS:
-
 ```shell
-$ goosefs ns create myNamespace cosn://bucketName-1250000000/3TB \
+$ goosefs ns create myNamespace cosn://bucketName-1250000000/ \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
 --secret fs.cosn.userinfo.secretKey=XXXXXXXXXXXX \
 --attribute fs.cosn.bucket.region=ap-xxx \
 ```
-
 >! 
-> - When creating the namespace that mounts COSN, you must use the `–-secret` parameter to specify the key, and use `--attribute` to specify all required parameters of Hadoop-COS (COSN). For the required parameters, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
+> - When creating the namespace that mounts COSN, you must use the `–-secret` parameter to specify the key, and use `--attribute` to specify all required parameters of Hadoop-COS (COSN). For the required parameters, see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
 > - When you create the namespace, if there is no read/write policy (rPolicy/wPolicy) specified, the read/write type set in the configuration file, or the default value (CACHE/CACHE_THROUGH) will be used.
 >
 Likewise, create a namespace to mount Tencent Cloud HDFS:
 ```shell
-goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB \
+goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/ \
 --attribute fs.ofs.user.appid=1250000000
 --attribute fs.ofs.tmp.cache.dir=/tmp/chdfs
 ```
-2. After the namespaces are created, run the `list` command to list all namespaces created in the cluster:
+2. After the namespaces are created, run the `ls` command to list all namespaces created in the cluster:
 ```shell
 $ goosefs ns ls
 namespace      mountPoint       ufsPath                      creationTime                wPolicy      rPolicy     TTL   ttlAction
@@ -176,6 +194,7 @@ Information recorded in the metadata is as follows:
 | 15   | mode | POSIX permission of the namespace |
 | 16   | writePolicy | Write policy for the namespace |
 | 17   | readPolicy | Read policy for the namespace |
+
 
 ## Loading Table Data to GooseFS
 
@@ -237,16 +256,13 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. Run the `copyFromLocal` command to copy a local file to GooseFS:
-
 ```shell
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
-
 4. Run the `cat` command to view the file content:
-
 ```shell
 $ goosefs fs cat /LICENSE                                                                         
 Apache License
@@ -255,9 +271,7 @@ http://www.apache.org/licenses/
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 ...
 ```
-
 5. By default, GooseFS uses the local disk as the underlying file system. The default file system path is `./underFSStorage`. You can run the `persist` command to store files to the local system persistently as follows:
-
 ```shell
 $ goosefs fs persist /LICENSE
 persisted file /LICENSE with size 26847
@@ -266,14 +280,11 @@ persisted file /LICENSE with size 26847
 ## Using GooseFS to Accelerate Uploads/Downloads
 
 1. Check the file status to determine whether a file is cached. The file status `PERSISTED` indicates that the file is in the memory, and `NOT_PERSISTED` indicates not.
-
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
-
-2. Count how many times “tencent” appeared in the file and calculate the time consumed:
-
+2. Count how many times "tencent" appeared in the file and calculate the time consumed:
 ```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
@@ -281,9 +292,7 @@ real	0m22.857s
 user	0m7.557s
 sys	0m1.181s
 ```
-
 3. Caching data in memory can effectively speed up queries. An example is as follows:
-
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
@@ -294,7 +303,6 @@ real	0m1.917s
 user	0m2.306s
 sys	    0m0.243s
 ```
-
  The data above shows that the system delay is reduced from 1.181s to 0.243s, achieving a 10-times improvement.
 
 ## Shutting Down GooseFS
