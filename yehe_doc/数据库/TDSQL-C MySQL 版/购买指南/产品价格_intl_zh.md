@@ -18,7 +18,7 @@ TDSQL-C MySQL 版采用计算和存储分离的架构，单个集群支持购买
 <table>
 <thead><tr>
 <th rowspan=2 >计算节点规格</th>
-<th colspan=2>广州、上海、北京、南京</th><th colspan=2>中国香港、中国台北</th><th colspan=2>北京金融</th><th colspan=2>硅谷、法兰克福、弗吉尼亚</th><th colspan=2>新加坡</th><th colspan=2>东京</th></tr>
+<th colspan=2>广州、上海、北京、南京</th><th colspan=2>中国香港、中国台北</th><th colspan=2>北京金融</th><th colspan=2>硅谷、法兰克福、弗吉尼亚</th><th colspan=2>新加坡、首尔</th><th colspan=2>东京</th></tr>
 <tr>
 <th>按量计费价格（美元/小时）</th><th>包年包月价格（美元/月）</th>
 <th>按量计费价格（美元/小时）</th><th>包年包月价格（美元/月）</th>
@@ -152,7 +152,7 @@ TDSQL-C MySQL 版采用计算和存储分离的架构，单个集群支持购买
 ## [存储空间价格](id:cckjjg)
 <table>
 <thead><tr>
-<th colspan=2>广州、上海、北京、南京、北京金融</th><th colspan=2>中国香港、中国台北、新加坡、硅谷、法兰克福、东京、弗吉尼亚</th></tr>
+<th colspan=2>广州、上海、北京、南京、北京金融</th><th colspan=2>中国香港、中国台北、新加坡、首尔、硅谷、法兰克福、东京、弗吉尼亚</th></tr>
 <tr>
 <th>按量计费价格（美元/GB/小时）</th><th>包年包月价格（美元/GB/月）</th>
 <th>按量计费价格（美元/GB/小时）</th><th>包年包月价格（美元/GB/月）</th>

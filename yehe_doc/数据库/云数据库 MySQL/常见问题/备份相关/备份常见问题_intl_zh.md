@@ -40,6 +40,7 @@
 | 测试业务             | 建议数据备份保留时间设置为7天，根据实际业务需求手动备份数据，用完及时删除 |
 
 [](id:bfwt3)
+
 ### 如何设置自动备份?
 您可在 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 实例的备份恢复页进行设置。
 ![](https://qcloudimg.tencent-cloud.cn/raw/053719ca0c4898c87bad068cbf70651c.png)
@@ -52,19 +53,16 @@
 - [登录 phpMyAdmin](https://intl.cloud.tencent.com/document/product/236/39353)，通过上方导航的**导出**备份数据。
 
 [](id:bfwt5)
-
 ### 单节点 - 基础型实例备份怎么恢复或迁移？
 单节点 - 基础型实例仅支持快照备份，您可以参考 [命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464) 迁移数据。
 
 [](id:bfwt6)
-
 ### 为什么下载数据备份文件会报错？
 使用 `wget -c '备份文件下载地址' -O 自定义文件名.xb` 命令下载备份时，需注意用2个英文单引号`'`将下载地址包起来，便于程序识别地址，防止出错。
 
 [](id:bfwt7)
-
 ### 下载的备份能恢复到另一个云数据库 MySQL 实例上吗？
-暂不支持此操作。建议您使用 [DTS 迁移 MySQL 实例数据](https://intl.cloud.tencent.com/document/product/571/34103) 到另一个 MySQL 实例上。
+支持通过下载的备份文件恢复到另一个数据库，详细操作请参见 [使用逻辑备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31909)。
 
 [](id:bfwt8)
 ### 备份可以手动删除吗？
@@ -109,6 +107,6 @@
 [](id:bfwt16)
 ### 如何下载 xbstream 和 qpress 的工具？
 - xbstream 为 Percona 的 xtrabackup 备份工具下的一个子程序，要使用 xbstream，需要先安装 Percona 的 xtrabackup，可以使用 yum 安装和二进制安装两种方式来安装 xtrabackup。
-- 下载 qpress之后通过 tar 命令解出 qpress 二进制文件。
+- 下载 qpress 之后通过 tar 命令解出 qpress 二进制文件。
 具体 xtrabackup 和 qpress 的安装方式请参见 [使用物理备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31910)。
 

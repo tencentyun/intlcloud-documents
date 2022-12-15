@@ -142,7 +142,7 @@ Container 节点 PornInfo，AdsInfo 的内容：
 
 | 节点名称（关键字） | 父节点                           | 描述                                                         | 类型    |
 | :----------------- | :------------------------------- | :----------------------------------------------------------- | :------ |
-| HitFlag            | Response.JobsDetail.Labels.*Info | Response.JobsDetail.Labels.\*Info | 用于返回该审核场景的审核结果，返回值：0：正常1：确认为当前场景的违规内容2：疑似为当前场景的违规内容。      | Integer |
+| HitFlag            | Response.JobsDetail.Labels.\*Info | 用于返回该审核场景的审核结果，返回值：0：正常1：确认为当前场景的违规内容2：疑似为当前场景的违规内容。      | Integer |
 | Score              | Response.JobsDetail.Labels.*Info | 该字段表示审核结果命中审核信息的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表该内容越有可能属于当前返回审核信息例如：色情 99，则表明该内容非常有可能属于色情内容。 | Integer |
 
 Container 节点 ImageResults 的内容：
@@ -166,7 +166,7 @@ Container 节点 PornInfo，AdsInfo的内容：
 
 | 节点名称（关键字） | 父节点                                         | 描述                                                         | 类型            |
 | :----------------- | :--------------------------------------------- | :----------------------------------------------------------- | :-------------- |
-| HitFlag            | Response.JobsDetail.ImageResults.Results.*Info | Response.JobsDetail.Labels.\*Info | 用于返回该审核场景的审核结果，返回值：0：正常1：确认为当前场景的违规内容2：疑似为当前场景的违规内容。      | Integer         |
+| HitFlag            | Response.JobsDetail.ImageResults.Results.*Info | 用于返回该审核场景的审核结果，返回值：0：正常1：确认为当前场景的违规内容2：疑似为当前场景的违规内容。      | Integer         |
 | Score              | Response.JobsDetail.ImageResults.Results.*Info | 该字段表示审核结果命中审核信息的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表该内容越有可能属于当前返回审核信息。例如：色情 99，则表明该内容非常有可能属于色情内容。 | Integer         |
 | Category           | Response.JobsDetail.ImageResults.Results.*Info | 表示命中的具体审核类别。例如 Sexy，表示色情标签中的性感类别。该字段可能为空，表示未命中或暂无相关的类别。     | String          |
 | SubLabel           | Response.JobsDetail.ImageResults.Results.*Info | 该字段表示审核命中的具体子标签，例如：Porn 下的 SexBehavior 子标签。</br>注意：该字段可能返回空，表示未命中具体的子标签。 | String          |
@@ -227,7 +227,7 @@ Container 节点 PornInfo，AdsInfo 的内容：
 | :----------------- | :-------------------------------------------- | :----------------------------------------------------------- | :------ |
 | HitFlag            | Response.JobsDetail.TextResults.Results.*Info | 用于返回该审核场景的审核结果，返回值：0：正常1：确认为当前场景的违规内容2：疑似为当前场景的违规内容。      | Integer |
 | Score              | Response.JobsDetail.TextResults.Results.*Info | 该字段表示审核结果命中审核信息的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表该内容越有可能属于当前返回审核信息。 | Integer |
-| Keywords           | Response.JobsDetail.TextResults.Results.*Info | 在当前审核场景下命中的关键词，多关键词以```,```分隔。        | String  |
+| Keywords           | Response.JobsDetail.TextResults.Results.*Info | 在当前审核场景下命中的关键词，多关键词以 <b>,</b>分隔。        | String  |
 | LibResults         | Response.JobsDetail.TextResults.Results.*Info | 该字段用于返回基于风险库识别的结果。</br>注意：未命中风险库中样本时，此字段不返回。 | Container Array |
 
 Container 节点 LibResults 的内容：

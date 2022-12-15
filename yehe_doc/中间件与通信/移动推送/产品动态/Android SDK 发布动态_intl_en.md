@@ -1,4 +1,28 @@
 
+## November 2022
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.3.6.2 release</td>
+	<td>
+		<li>Upgraded the Mi Push SDK to v5.1.0.</li>
+		<li>Upgraded the Huawei Push SDK to v6.7.0.300.</li>
+		</td>
+        <td>November 3, 2022</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+</td>
+    </tr>
+<tr>
+</table>
+
+
 ## September 2022
 
 <table>
@@ -18,11 +42,12 @@
 		<li>Optimized the compatibility with Android 13.</li>
 		<li>Fixed the issue where an additional notification channel was created when a custom notification ringtone was used.</li>
 		</td>
-        <td>September 1, 2022</td>
-	<td><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+        <td>September 1, 2022</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
+<tr>
 </table>
 
 
@@ -42,8 +67,8 @@
 		<li>Optimized the internal communication mechanism of the SDK to improve the communication efficiency.</li>
 		<li>Optimized the internal reporting mechanism of the SDK to reduce the traffic usage.</li>
 		</td>
-        <td>July 6, 2022</td>
-	<td><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+        <td>July 6, 2022</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
 </tr>
@@ -84,7 +109,7 @@
 	<td>
 		<li>Supported configuring small icon for default notification in the metadata.</li>
 		<li>Optimized the use and display of `PendingIntent`.</li>
-		li>Fixed the issue where the device was detected to check the existence of a light sensor.</li>
+		<li>Fixed the issue where the device was detected to check the existence of a light sensor.</li>
 		<li>Fixed other known issues.</li>
 		</td>
         <td>May 31, 2022</td><td>

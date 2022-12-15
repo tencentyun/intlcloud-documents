@@ -14,7 +14,7 @@ A non-elastic cloud disk is created along with a Cloud Virtual Machine (CVM) and
 
 ### GPT
 
-Please see [GPT](https://intl.cloud.tencent.com/document/product/362/18555).
+Please see [GPT](https://www.tencentcloud.com/document/product/362/18555#gpt2).
 
 
 
@@ -40,7 +40,7 @@ The snapshot chain is a relationship chain composed of all snapshots of the same
 
 ### MBR
 
-See [MBR](https://intl.cloud.tencent.com/document/product/362/18555)
+See [MBR](https://www.tencentcloud.com/document/product/362/18555#mbr2)
 
 
 

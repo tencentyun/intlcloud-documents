@@ -5,7 +5,7 @@ The text moderation feature can check text content for **pornographic**, **illeg
 After you enable text moderation, new text files uploaded to a bucket will be automatically moderated, and the identified non-compliant content can be automatically blocked (by denying public read access to the content).
 
 >?
-> - Text moderation is a paid feature. For billing details, see [Content Moderation Fees](https://cloud.tencent.com/document/product/436/58965.
+> - Text moderation is a paid feature.
 > - Text moderation is billed by moderation times. Every 10,000 UTF-8 characters is counted as one moderation operation, and less than 10,000 characters are counted as 10,000 characters. 
 > - Currently, the text moderation feature supports TXT files and files without extensions, and the file size cannot exceed 1 MB.
 > - Text moderation can recognize Mandarin and English.
@@ -27,12 +27,10 @@ After you enable text moderation, new text files uploaded to a bucket will be au
 >!You can add multiple moderation configurations, but the paths cannot be duplicate or have inclusion relationships. If you have configured to moderate the entire bucket, you cannot add a moderation configuration for a specific path in the bucket.
 >
  - **Moderation Suffix**: Options include **TXT**, **HTML**, and **Without suffix**.
- - **Moderation Policy**: Select a moderation policy. You can create different policies for refined moderation. Moderation scene options include **Pornographic**, **Illegal**, and **Advertisement**, and you can select one or multiple options. For detailed directions on how to configure a moderation policy, see [Setting Moderation Policy](https://cloud.tencent.com/document/product/460/56345).
+ - **Moderation Policy**: Select a moderation policy. You can create different policies for refined moderation. Moderation scene options include **Pornographic**, **Illegal**, and **Advertisement**, and you can select one or multiple options. 
  - **Moderation Scene**: Moderation scene options include **Pornographic**, **Illegal**, **Advertisement**, and **Abuse**, and you can select one or multiple options.
  - **Restricted File Block**: You can enable this service to authorize CI to perform automatic or manual moderation and block the identified non-compliant files by denying public read access to them.
  - **Block Type**: You can select a block type and mechanism. **Machine moderation and block** is selected by default. If you select **Manual review freeze**, TenDI's professional team will review suspiciously sensitive text files identified during machine moderation.
->!The unit price of manual moderation and blocking is 70 CNY/1,000 times. Every 10,000 UTF-8 characters is counted as one moderation operation, and less than 10,000 characters are counted as 10,000 characters. For more information, see [Content Moderation Fees](https://cloud.tencent.com/document/product/436/58965).
->
  - **Callback**: After callback is enabled, you will receive moderation results. You need to select the moderation type and callback content and set the callback URL. For more information, see [Callback Content](#1).
 6. After completing the configuration, click **Save**. Text files uploaded subsequently will be moderated.
 

@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit a file moderation job. The file moderation feature is async. You can submit a job to moderate your files, and then use the API for [querying file moderation job result](https://cloud.tencent.com/document/product/460/59383) or [file moderation callback content](https://cloud.tencent.com/document/product/460/62385) to query the moderation results.
+This API is used to submit a file moderation job. The file moderation feature is async. You can submit a job to moderate your files, and then use the API for [querying file moderation job result](https://intl.cloud.tencent.com/document/product/1045/52122) or [file moderation callback content](https://intl.cloud.tencent.com/document/product/1045/52123) to query the moderation results.
 
 >?
 > - Moderate files stored in COS.

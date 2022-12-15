@@ -36,6 +36,7 @@ This API (`PUT Object`) is used to upload an object to a bucket. To call this AP
 
 > !
 > - The key (filename) cannot end with `/`; otherwise, it will be identified as a folder.
+> - The uploaded file will overwrite the existing file in the cloud with the same key (filename). If you don't want to overwrite the existing file when versioning is not enabled, make sure that the uploaded file has a different key.
 > - Each root account (`APPID`) can have up to 1,000 bucket ACLs and an unlimited number of object ACLs. Do not configure ACLs for an object during upload if you don't need to control the access to it, in which case the object will inherit the permissions of its bucket by default.
 > - After an object is uploaded, you can use the same key to generate a pre-signed URL, which can be shared with other clients for downloading. To download the object, use the `GET` method. The detailed API description is as follows. If your file is set to private-read, note that the pre-signed URL will only be valid for a certain period of time.
 > - The upload progress `onProgress` depends on the native `xhr.upload.onprogress` method. If you find that the upload progress is inaccurate, check whether a library (such as nuysoft/Mock) that intercepts XHR methods is referenced in your project.
@@ -162,7 +163,7 @@ cos.putObject({
 | Bucket | Bucket name in the format of `BucketName-APPID`. | String  | Yes   |
 | Region  | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key     | Object key (object name), which is the unique identifier of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
-| Body | Content of the file to be uploaded, which can be a string, file, or `BLOB` object. | String/File/Blob | Yes |
+| Body | Content of the file to be uploaded, which can be a string, file, or `BLOB` object. | String/File/Blob/ArrayBuffer | Yes |
 | CacheControl           | The cache policy as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
 | ContentDisposition     | The filename as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
 | ContentEncoding        | The encoding format as defined in RFC 2616, which is saved as part of the object metadata.              | String   | No   |
@@ -286,7 +287,7 @@ cos.headObject({
 | Bucket | Bucket name in the format of `BucketName-APPID`. | String  | Yes   |
 | Region  | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key     | Object key (object name), which is the unique identifier of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
-| Body | Content of the file to be uploaded, which can be a string, file, or `BLOB` object. | String/File/Blob | Yes |
+| Body | Content of the file to be uploaded, which can be a string, file, or `BLOB` object. | String/File/Blob/ArrayBuffer | Yes |
 | Position | Starting point for the append operation (in bytes). For the first append, the value of this parameter is `0`. For subsequent appends, the value is the `content-length` of the current object. | Number | Yes |
 | CacheControl           | The cache policy as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
 | ContentDisposition     | The filename as defined in RFC 2616, which is saved as part of the object metadata.             | String   | No   |
@@ -495,7 +496,7 @@ cos.multipartUpload({
 | ContentLength          | The length of the content of an HTTP request in bytes as defined in RFC 2616                   | String           | Yes   |
 | PartNumber    | Part number                                                   | Number           | Yes   |
 | UploadId      | ID of the current multipart upload task                                       | String           | Yes   |
-| Body | Content of the file to be uploaded, which can be a string, file, or `BLOB` object. | String/File/Blob | Yes |
+| Body | Content of the file to be uploaded, which can be a string, file, or `BLOB` object. | String/File/Blob/ArrayBuffer | Yes |
 | Expect | The length of the content of an HTTP request in bytes as defined in RFC 2616. If `Expect: 100-continue` is used, the request content will be sent only after the confirmation from the server is received. | String | No |
 | ContentMD5     | The Base64-encoded 128-bit MD5 checksum as defined in RFC 1864. This header is used to verify whether the file content has changed. | String | No   |
 

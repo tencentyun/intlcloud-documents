@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to submit a video moderation job. The video moderation feature is async. You can submit a job to moderate your video files, and then use the API for [Querying Video Moderation Job Result](https://cloud.tencent.com/document/product/460/46926) or [Video Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48251) to query the moderation results.
+This API is used to submit a video moderation job. The video moderation feature is async. You can submit a job to moderate your video files, and then use the API for [Video Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48251) to query the moderation results.
 
 The API supports the following operations:
 >? 
@@ -8,7 +8,7 @@ The API supports the following operations:
 > - Moderate videos at URLs of a third-party cloud storage vendor.
 >
 - Automatically detect video files and recognize non-compliant content in OCR, object detection (such as object, advertising logo, and QR code), image recognition, and audio moderation dimensions based on the deep learning technology.
-- Get the detection results by setting the callback address `Callback` or calling the API for [Querying Video Moderation Job Result](https://cloud.tencent.com/document/product/460/46926).
+- Get the detection results by setting the callback address `Callback` or calling the API for Querying Video Moderation Job Result.
 - Recognize various non-compliant scenes, including pornographic, illegal, and adverting information.
 <span id=1></span>
 - Customize moderation policies based on different business scenarios as instructed in [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/1045/52107).

@@ -12,20 +12,20 @@ Nginx Controller 需要搜集以下日志并提供给用户：
 
 
 ## 前提条件 
-已在容器服务控制台的**[功能管理](https://console.cloud.tencent.com/tke2/ops/list?rid=8)**中开启日志采集，详情参见 [开启日志采集](https://intl.cloud.tencent.com/document/product/457/32419)。
+已在容器服务控制台的 **[功能管理](https://console.cloud.tencent.com/tke2/ops/list?rid=8)** 中开启日志采集，详情参见 [开启日志采集](https://intl.cloud.tencent.com/document/product/457/32419)。
 
 
 
 ## TKE Nginx-ingress 采集日志
 ### 采集日志步骤
-1. 为目标集群 [安装 Nginx-ingress](https://intl.cloud.tencent.com/document/product/457/38981#Nginx-ingress) 组件。
+1. 为目标集群 [安装 Nginx-ingress](https://intl.cloud.tencent.com/document/product/457/38981) 组件。
 2. 在“组件管理”页面选择已安装的组件名称，进入组件详情页。
-3. 在**日志监控**页面中，选择日志配置右侧的**重新设置**。
+3. 在**日志监控**页面中，选择日志配置右侧的**重新设置**。如下图所示：
 ![](https://main.qcloudimg.com/raw/830bd637a0ee296071fca62cf808a6d9.png)
-4. 在弹出的窗口中选择指定的日志集，如不制定将创建新的日志集。
+4. 在弹出的窗口中选择指定的日志集，如不制定将创建新的日志集。如下图所示：
 ![](https://main.qcloudimg.com/raw/8981c5e3146a6e01378b9e6b0cca9c6d.png)
 5. 单击**立即启用**即可完成日志采集配置。
->! 日志服务具体计费规则和收费标准请参见 [CLS 计费概述](https://intl.cloud.tencent.com/document/product/614/37509)。
+>! 日志服务具体计费规则和收费标准请参见 [CLS 计费概述 ](https://intl.cloud.tencent.com/document/product/614/37509)。
 
 
 ### 采集日志指标
@@ -80,4 +80,11 @@ spec:
 
 ### Nginx-ingress 日志仪表盘
 
-TKE Nginx-ingress 开启日志采集功能将会自动为您创建一个标准的日志仪表盘，您也可以根据业务需要自行在 CLS 控制台配置图表。
+TKE Nginx-ingress 开启日志采集功能将会自动为您创建一个标准的日志仪表盘，您也可以根据业务需要自行在 CLS 控制台配置图表。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/2f546f555ccfe3aefb5bd94849b1c502.png)
+
+
+
+## 相关文档
+
+如果需要自定义日志采集规则和索引，请参考 [NginxIngress 自定义日志](https://intl.cloud.tencent.com/document/product/457/49396)。

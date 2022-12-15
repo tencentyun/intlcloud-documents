@@ -5,7 +5,7 @@ The incremental image moderation feature can check image content for **pornograp
 
 After you configure image moderation, new images uploaded to a bucket will be automatically moderated **during upload**, and the identified non-compliant content can be automatically blocked (by denying public read access to the content).
 
-You can also scan **historical** image files in COS to detect pornographic, illegal, and advertising content. For more information, see [Setting Historical Data Moderation Task](https://cloud.tencent.com/document/product/436/54405) and [Moderating Image](https://cloud.tencent.com/document/product/460/37318).
+You can also scan **historical** image files in COS to detect pornographic, illegal, and advertising content. For more information, see Setting Historical Data Moderation Task and [Moderating Image](https://intl.cloud.tencent.com/document/product/1045/49320).
 
 >? 
 > - Supported image formats: PNG, JPEG, JPG, BMP, WEBP, GIF.
@@ -14,7 +14,7 @@ You can also scan **historical** image files in COS to detect pornographic, ille
 >
 
 ## Operation Process
-<img style="width:418px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b7c31c91d128f77552e443f93b95c167.png" />
+<img style="width:418px; max-width: inherit;" src="https://staticintl.cloudcachetci.com/yehe/backend-news/3YaP402_PRELIM__%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-1.png" />
 
 
 ## Directions
@@ -33,8 +33,8 @@ You can also scan **historical** image files in COS to detect pornographic, ille
  - **Moderation Scene**: It displays the default scene or the scene that you configure in the moderation policy. You can select the target scene as needed.
  - **Restricted File Block**: You can enable this service to authorize CI to perform automatic or manual moderation and block the identified non-compliant files by denying public read access to them.
  - **Block Type**: You can select a block type and mechanism. **Machine moderation and block** is selected by default. If you select **Manual review freeze**, TenDI's professional team will review suspiciously sensitive images identified during machine moderation. You can select the image score range for blocking (by specifying an integer between 60 and 100; the greater the score, the more sensitive the image).
->!The unit price of manual moderation and blocking is 70 CNY/1,000 times. For more information, see [Content Moderation Fees](https://cloud.tencent.com/document/product/436/58965).
->
+
+
  - **Callback**: After callback is enabled, you will receive image moderation results. You need to select the moderation type, callback content, callback URL, and image domain name. If you select **Custom Callback Threshold**, you need to set the score range of the images for callback. After the callback URL is set, CI will send the default callback message to the set URL to check whether it can receive callback messages normally. For more information on callback, see [Viewing Image Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48540).
 4. After completing the configuration, click **Save**. Images uploaded subsequently will be moderated.
 

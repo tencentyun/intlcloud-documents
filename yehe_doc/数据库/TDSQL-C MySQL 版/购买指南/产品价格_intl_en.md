@@ -18,7 +18,7 @@ TDSQL-C for MySQL adopts a computing-storage separation architecture. You can pu
 <table>
 <thead><tr>
 <th rowspan=2 >Compute Node Specification</th>
-<th colspan=2>Guangzhou, Shanghai, Beijing, and Nanjing</th><th colspan=2>Hong Kong (China) and Taipei (China)</th><th colspan=2>Beijing Finance</th><th colspan=2>Silicon Valley, Frankfurt, and Virginia</th><th colspan=2>Singapore</th><th colspan=2>Tokyo</th></tr>
+<th colspan=2>Guangzhou, Shanghai, Beijing, and Nanjing</th><th colspan=2>Hong Kong (China) and Taipei (China)</th><th colspan=2>Beijing Finance</th><th colspan=2>Silicon Valley, Frankfurt, and Virginia</th><th colspan=2>Singapore, Seoul</th><th colspan=2>Tokyo</th></tr>
 <tr>
 <th>Pay-as-You-Go Price (USD/Hour)</th><th>Monthly Subscription Price (USD/Month)</th>
 <th>Pay-as-You-Go Price (USD/Hour)</th><th>Monthly Subscription Price (USD/Month)</th>
@@ -152,7 +152,7 @@ TDSQL-C for MySQL adopts a computing-storage separation architecture. You can pu
 ## [Storage Space Pricing](id:cckjjg)
 <table>
 <thead><tr>
-<th colspan=2>Guangzhou, Shanghai, Beijing, Nanjing, and Beijing Finance</th><th colspan=2>Hong Kong (China), Taipei (China), Singapore, Silicon Valley, Frankfurt, Tokyo, and Virginia</th></tr>
+<th colspan=2>Guangzhou, Shanghai, Beijing, Nanjing, and Beijing Finance</th><th colspan=2>Hong Kong (China), Taipei (China), Singapore，Seoul, Silicon Valley, Frankfurt, Tokyo, and Virginia</th></tr>
 <tr>
 <th>Pay-as-You-Go Price (USD/GB/Hour)</th><th>Monthly Subscription Price (USD/GB/Month)</th>
 <th>Pay-as-You-Go Price (USD/GB/Hour)</th><th>Monthly Subscription Price (USD/GB/Month)</th>

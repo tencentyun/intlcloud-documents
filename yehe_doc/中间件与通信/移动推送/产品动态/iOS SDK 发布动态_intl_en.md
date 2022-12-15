@@ -1,3 +1,23 @@
+## September 2022
+
+<table>
+ <tr>
+ <th width=20%>Update</th>
+ <th width=44%>Description</th>
+ <th width=16%>Release Date</th>
+ <th width=20%>Documentation</th>
+ </tr>
+<tr>
+ <td>SDK v1.3.9.2 release</td>
+ <td>  
+  <li>Fixed known issues.</li>
+  <li>Separated the registration dependencies of vendor channels and Tencent Push Notification Service channel to shorten the registration process.</li>
+ </td>
+ <td>September 23, 2022</td>
+ <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+ </tr>
+</table>
+
 ## July 2022
 
 <table>
@@ -10,10 +30,10 @@
 <tr>
  <td>SDK v1.3.9.1 release</td>
  <td>  
-  <li> Fixes some known issues.</li>
+  <li>Fixed known issues.</li>
   <li> Replaces the reporting domain name to reduce the reporting bandwidth usage.</li>
  </td>
- <td>2022-07-06</td>
+ <td>July 6, 2022</td>
  <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
  </tr>
 </table>
@@ -31,10 +51,10 @@
 <tr>
  <td>SDK v1.3.9.0 release</td>
  <td>  
-  <li> Fixes some known issues.</li>
+  <li>Fixed known issues.</li>
   <li> Improves the performance of business APIs.</li>
  </td>
- <td>2022-05-25</td>
+ <td>May 25, 2022</td>
  <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
  </tr>
 </table>
@@ -73,7 +93,7 @@
 	 <td>SDK v1.3.4.0 release</td>
 	 <td>  
 		 <li> Fixes the issue where the network connection occasionally fails after a persistent connection is reconnected many times.</li>
-		 <li> Fixes the occasional issue of inaccurate Tencent Push Notification Service online status caused by app redirection.</li>
+		 <li> Fixes the occasional issue of inaccurate online status of Tencent Push Notification Service caused by app redirection.</li>
 		 <li> Adds support for supplementary push via in-app messages. </li>
 	 </td>
 	 <td>August 26, 2021</td>
@@ -121,7 +141,7 @@
 	 <tr>
 	 <td>SDK v1.3.2.1 release</td>
 	 <td>  
-			<li>Fixes the compatibility issue of referencing `TPNSInAppMessage.framework` under Xcode v12.5.</li>
+			<li>Fixes the compatibility issue of referencing Tencent Push Notification Service's `InAppMessage.framework` under Xcode v12.5.</li>
 			<li>Fixes the issue where two devices have the same Tencent Push Notification Service token during iCloud backup and restoration.</li>
 			<li>Optimizes the logic to make sure that after a user switches access points, the logs of the original access point will not be reported.</li>
 			<li>Adds the API for binding mobile numbers to send ordinary and intelligent SMS messages.</li>
@@ -187,7 +207,7 @@
 <li>Reduces unnecessary MQTT network timeout detection.
 <li>Supports a higher performance report mode for arrival.
 <li>Reduces the size of the in-app message plugin package.
-<li>Encrypts the request that obtains the Tencent Push Notification Service token.
+<li>Encrypts requests that obtain Tencent Push Notification Service tokens.
 <li>Adds parameter checking logic and error callback for account, tag, and user attributes.
 <li>Deletes account type enumeration and makes it customizable. 
 </td>
@@ -210,14 +230,14 @@
  <td>SDK v1.2.9.0 release</td>
  <td> <li>Fixes the image download issue for rich media push.
  <li>Fixes the Tencent Push Notification Service channel online issue when the app runs in the background.
- <li>Fixes Tencent Push Notification Service token repeated issue that might occur in v1.2.5.2 or earlier.
+ <li>Fixes repeated Tencent Push Notification Service tokens that might occur in v1.2.5.2 or earlier.
  <li>Fixes persistent connection establishment issues.
  <li>Fixes conflicting names between "in-app message" and some SDKs.
  <li>Optimizes local cache performance.
  <li>Optimizes the report time of the app notification switch status.
  <li>Optimizes the persistent connection processing mechanism in weak network scenarios.
  <li>Optimizes account APIs.
- <li>Optimizes Tencent Push Notification Service demo code.
+ <li>Adds Tencent Push Notification Service demo code samples.
  <li>Adds the local notification feature.
  <li>Supports IPv6.
  <li>Deletes the compatible code of the free version. </td>
@@ -238,7 +258,7 @@
  </tr>
  <tr>
  <td>SDK v1.2.8.1 release</td>
- <td>Fixed known issues. </td>
+ <td>Fixes known issues. </td>
  <td>October 29, 2020</td>
  <td>- </td>
  </tr>
@@ -332,7 +352,7 @@
         <td>SDK v1.2.5.3 release</td>
         <td><li>Supports unregistering free Tencent Push Notification Service clusters to avoid repeated pushes.</li><li>Supports replacing repeated messages in the notification extension.</li></td>
         <td>March 19, 2020</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/30727#ending-tpns-service">Ending Tencent Push Notification Service</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/30727">Terminating Tencent Push Notification Service</a></td>
     </tr>
     <tr>
         <td>SDK v1.2.5.2 release</td>
@@ -487,7 +507,7 @@
     <tr>
         <td>SDK v1.2.2.1 release</td>
         <td>Fixes the network connection issue that occurs when an API is called during the SDK launch.</li></td>
-        <td>September 29, 2019</td>
+        <td>2019-09-29</td>
         <td>-</td>
     </tr>
 </table>
@@ -516,8 +536,8 @@
     </tr>
     <tr>
         <td>SDK v1.2.1.0 release</td>
-        <td><li>Adds APIs to query Tencent Push Notification Service-generated tokens.</li><li>Fixes the single-account binding issue.</li></td>
-        <td>2019-08-08</td>
+        <td><li>Adds APIs to query tokens generated by Tencent Push Notification Service.</li><li>Fixes the single-account binding issue.</li></td>
+        <td>August 8, 2019</td>
         <td>-</td>
     </tr>
 </table>
@@ -563,4 +583,3 @@
         <td>-</td>
     </tr>
 </table>
-

@@ -2,7 +2,7 @@
 
 The video moderation feature can check video content for **pornographic**, **illegal**, and **advertising** information.
 
-After you enable video moderation, **new** videos uploaded to a bucket will be automatically moderated, and the identified non-compliant content can be automatically blocked (by denying public read access to the content). **By calling the API for [submitting a video moderation job](https://cloud.tencent.com/document/product/460/46427), you can moderate **existing** videos stored in COS.
+After you enable video moderation, **new** videos uploaded to a bucket will be automatically moderated, and the identified non-compliant content can be automatically blocked (by denying public read access to the content). **By calling the API for submitting a video moderation job, you can moderate **existing** videos stored in COS.
 
 
 >?
@@ -12,7 +12,7 @@ After you enable video moderation, **new** videos uploaded to a bucket will be a
 
 
 ## Operation Process
-<img style="width:418px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b7c31c91d128f77552e443f93b95c167.png" />
+<img style="width:418px; max-width: inherit;" src="https://staticintl.cloudcachetci.com/yehe/backend-news/3YaP402_PRELIM__%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-1.png" />
 
 ## Directions
 
@@ -24,7 +24,7 @@ After you enable video moderation, **new** videos uploaded to a bucket will be a
 >!You can add multiple moderation configurations, but the paths cannot be duplicate or have inclusion relationships. If you have configured to moderate the entire bucket, you cannot add a moderation configuration for a specific path in the bucket.
 >
    - **Moderation Suffix**: Supported video formats are MP4 (including other formats under the same MP4 format source: MPG, MPEG, MPE, DAT, VOB, 3GP), WMV (including other formats under the same WMV format source: ASF), RMVB (including other formats under the same RMVB format source: RM), and FLV (including other formats under the same FLV format source: F4V). If you select the **Without suffix** option, the system will check the Content-Type header of files without extensions to determine whether they are videos. Multiple options can be selected.
-   - **Moderation Policy**: Select a moderation policy. You can create different policies for refined moderation. Moderation scene options include **Pornographic**, **Illegal**, and **Advertisement**, and you can select one or multiple options. For detailed directions on how to configure a moderation policy, see [Setting Moderation Policy](https://cloud.tencent.com/document/product/460/56345).
+   - **Moderation Policy**: Select a moderation policy. You can create different policies for refined moderation. Moderation scene options include **Pornographic**, **Illegal**, and **Advertisement**, and you can select one or multiple options. For detailed directions on how to configure a moderation policy, see [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/1045/52107).
    - **Moderate**: Video image and video sound can be moderated. To moderate video sound, you need to select it in the moderation policy.
 >!The **Moderate** option should be used together with the moderation policy. If video sound is not set in the policy, you cannot select **Video sound** here.
    - **Moderation Scene**: Moderation scene options include **Pornographic**, **Illegal**, and **Advertisement**, and you can select one or multiple options.
@@ -34,7 +34,7 @@ After you enable video moderation, **new** videos uploaded to a bucket will be a
      - Fixed Quantity: This option indicates to moderate a fixed number of captured images for the entire video according to the average percentage.
  - **Restricted File Block**: You can enable this service to authorize CI to perform automatic or manual moderation and block the identified non-compliant files by denying public read access to them. After enabling this service, you need to select the block type.
  - **Block Type**: You can select a block type and mechanism. **Machine moderation and block** is selected by default. If you select **Manual review freeze**, TenDI's professional team will review suspiciously sensitive videos identified during machine moderation.
- - **Callback**: After callback is enabled, you will receive video moderation results. You need to select the moderation type and callback content and set the callback URL. For more information, see [Callback Content](https://cloud.tencent.com/document/product/460/60766).
+ - **Callback**: After callback is enabled, you will receive video moderation results. You need to select the moderation type and callback content and set the callback URL. For more information, see Callback Content.
 4. After completing the configuration, click **Save**. Videos uploaded subsequently will be moderated.
 
 
