@@ -17,7 +17,9 @@ The Security Operation Center provides the Asset Management feature to help you 
   In the upper-right corner of the cloud asset list, you can search assets, refresh the asset list, set the columns to display, export the list, and toggle full screen.
 - **Search cloud assets**
   In the upper-right corner of the cloud asset list, click the search box, select a resource attribute, enter keywords, and then press **Enter** to search eligible cloud assets.
-  > ! Multiple keywords for the same "filter tag" (that is, resource attribute) are separated by vertical bars "|". Multiple "filter tags" (that is, resource attribute) are separated by pressing **Enter**.
+  
+  >! Multiple keywords for the same "filter tag" (that is, resource attribute) are separated by vertical bars "|". Multiple "filter tags" (that is, resource attribute) are separated by pressing **Enter**.
+
 - **Refresh the cloud asset list**
   To refresh the cloud asset list, click on the Refresh icon <img src= "https://main.qcloudimg.com/raw/7ebc758b02bd8690c885af3f7355e8d7.png" style="margin:0;">
 - **Set the columns to display**
@@ -27,8 +29,23 @@ The Security Operation Center provides the Asset Management feature to help you 
 - **Toggle full screen**
   Click <img src= "https://main.qcloudimg.com/raw/8e4e975a89de9d70be4768661a6f535b.png" style="margin:0;"> to toggle the cloud asset list to the full screen mode. Click on this button again to exit the full screen mode.
 - **Filter/Sort** 1. To filter cloud assets, click the header "Asset Type", "Project", or "Region" of the cloud asset list. 2. Click the header "Configuration Risk", "Threat Alert", "Vulnerability", or "Discovery Time" to sort the cloud asset list in ascending or descending order. Click the **number of threat alerts** in the list to go to the details page.
+  
   > ? By default, the cloud asset list is sorted in descending order by the sum of the numbers of configuration risks, threat alerts, and vulnerabilities.
+
 - **View asset details**
-  In the cloud asset list, click the asset name to open the asset details page. The asset details page displays different items depending on the asset type. - The asset details page of CVMs displays basic information, fingerprint information, configuration risks, attack surface, vulnerabilities, threat alerts, and configuration history. - The asset details page of LoadBalancer displays basic information, configuration risks, attack surface, threat alerts, and configuration history. - The asset details pages of COS, TencentDB for MySQL, TencentDB for PostgreSQL, TencentDB for MariaDB, TencentDB for Redis, TencentDB for MongoDB, SSL Certificates, Container Image Registry, and CBS display basic information, configuration risks, and configuration history. - The asset details pages of non-Tencent Cloud servers display basic information, configuration risks, threat alerts, and vulnerabilities.
-  **The fields in the asset details page are defined as follows**: - **Basic information**: The "Basic information" section displays different content for different asset types. For example, the basic information of a CVM includes asset ID, asset type, project, region, instance type, network, subnet, IPv4 address (public and private IP addresses), IPv6 address, status, discovery time, tag, risk tag, and group. - **Fingerprint information**: You can view the fingerprint information of CVM assets from the dimensions of ports, processes, components, accounts, and account change history. - **Attack surface**: You can view the services, ports, and components exposed by CVM and LB assets in Internet attack surface mapping. - **Configuration risks**: You can view the configuration risks of all asset types from the dimensions of risk types and check results. - **Vulnerabilities**: You can view the vulnerability information of CVM assets from the dimensions of system component vulnerabilities, Web application vulnerabilities, and security baselines. - **Threat alerts**: You can view the threat alerts of CVM assets from the dimensions of alert categories, alert actions, attack results, and alert status. - **Configuration history**: You can view the configuration history of all asset types, and search configuration history by specifying a time range or keywords. You can also view configuration history details and click "Ignore" to ignore unimportant configuration history. If you need to unignore it, click "Retrieve" on the right side of the search box.
-  > ?The current configuration history is for trial. This is available to users who already [Enable Security Operation Center Premium](https://buy.cloud.tencent.com/soc) for free.
+In the cloud asset list, click the asset name to open the asset details page. The asset details page displays different items depending on the asset type. 
+    - The asset details page of CVMs displays basic information, fingerprint information, configuration risks, attack surface, vulnerabilities, threat alerts, and configuration history. 
+    - The asset details page of LoadBalancer displays basic information, configuration risks, attack surface, threat alerts, and configuration history. 
+    - The asset details pages of COS, TencentDB for MySQL, TencentDB for PostgreSQL, TencentDB for MariaDB, TencentDB for Redis, TencentDB for MongoDB, SSL Certificates, Container Image Registry, and CBS display basic information, configuration risks, and configuration history. 
+    - The asset details pages of non-Tencent Cloud servers display basic information, configuration risks, threat alerts, and vulnerabilities.
+
+**The fields in the asset details page are defined as follows**: 
+   - **Basic information**: The "Basic information" section displays different content for different asset types. For example, the basic information of a CVM includes asset ID, asset type, project, region, instance type, network, subnet, IPv4 address (public and private IP addresses), IPv6 address, status, discovery time, tag, risk tag, and group. 
+   - **Fingerprint information**: You can view the fingerprint information of CVM assets from the dimensions of ports, processes, components, accounts, and account change history. 
+   - **Attack surface**: You can view the services, ports, and components exposed by CVM and LB assets in Internet attack surface mapping. 
+   - **Configuration risks**: You can view the configuration risks of all asset types from the dimensions of risk types and check results. 
+   - **Vulnerabilities**: You can view the vulnerability information of CVM assets from the dimensions of system component vulnerabilities, Web application vulnerabilities, and security baselines. 
+   - **Threat alerts**: You can view the threat alerts of CVM assets from the dimensions of alert categories, alert actions, attack results, and alert status. 
+   - **Configuration history**: You can view the configuration history of all asset types, and search configuration history by specifying a time range or keywords. You can also view configuration history details and click "Ignore" to ignore unimportant configuration history. If you need to unignore it, click "Retrieve" on the right side of the search box.
+
+  >? The current configuration history is for trial. This is available to users who already [Enable Security Operation Center Premium](https://buy.cloud.tencent.com/soc) for free.
