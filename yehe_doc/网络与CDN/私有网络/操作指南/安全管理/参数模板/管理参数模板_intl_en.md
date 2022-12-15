@@ -89,11 +89,10 @@ You can view all security group instances that import a parameter template in th
 ## Importing a Parameter Template
 To batch add parameter template configurations, do the following: 
 1. Click **Import** on the right of the created parameter template.
-![](https://qcloudimg.tencent-cloud.cn/raw/168b2bb3a0b33e520d62a6003dd41a55.png)
+![]()
 2. Upload a local file.
-![](https://qcloudimg.tencent-cloud.cn/raw/e9d4e909a47eef27fea79cb1fe86ffdc.png)
-
+![]()
 
 ## Exporting a Parameter Template
 To back up the parameter templates to local, click **Export** on the right of the created parameter template.
-![](https://qcloudimg.tencent-cloud.cn/raw/b2e852df8702ef005582c3dcc19549e8.png)
+![]()
