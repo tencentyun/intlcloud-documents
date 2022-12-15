@@ -10,11 +10,10 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
 
 1.  Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/vulner). In the left navigation pane, click **Vulnerability Management**.
 2.  On the Vulnerability Management page, click **Pending Vulnerabilities Dashboard**.
-3.  On the Pending Vulnerabilities Dashboard, you can find the name, CVE number, vulnerability level, and other information of a type of vulnerability. - **Search**
+3.  On the Pending Vulnerabilities Dashboard, you can find the name, CVE number, vulnerability level, and other information of a type of vulnerability. 
+    - **Search**
     At the top of the Pending Vulnerabilities Dashboard, locate a vulnerability by entering its name or CVE number or using filters such as Vulnerability Type and Risk Level.
-
-       - **View details of a pending vulnerability**
-
+    - **View details of a pending vulnerability**
     On the Pending Vulnerabilities Dashboard, click **Vulnerability Name**. On the Vulnerability Details page that appears, view the basic information and asset information of the vulnerability. Click **Number of Assets Not Fixed**. On the Vulnerability List page, you can view the records of assets not fixed.
 
 ### Vulnerability List
