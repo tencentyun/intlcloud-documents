@@ -143,12 +143,14 @@ $ ./bin/goosefs-start.sh all
 下面将介绍一下如何通过创建 Namespace 来挂载 COS 或 CHDFS 的方法和步骤。
 
 1. 创建一个命名空间 namespace 并挂载 COS：
+
 ```shell
 $ goosefs ns create myNamespace cosn://bucketName-1250000000/ \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
 --secret fs.cosn.userinfo.secretKey=XXXXXXXXXXXX \
 --attribute fs.cosn.bucket.region=ap-xxx \
 ```
+
 >! 
 > - 创建挂载 COSN 的 namespace 时，必须使用 `–-secret` 参数指定访问密钥，并且使用 `--attribute` 指定 Hadoop-COS（COSN）所有必选参数，具体的必选参数可参考 [Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884)。
 > - 创建 Namespace 时，如果没有指定读写策略（rPolicy/wPolicy），默认会使用配置文件中指定的 read/write type，或使用默认值（CACHE/CACHE_THROUGH）。
@@ -256,13 +258,16 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. 可以通过 `copyFromLocal` 命令将数据从本地拷贝到 GooseFS 中：
+
 ```shell
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
+
 4. 可以通过 `cat` 命令查看文件内容：
+
 ```shell
 $ goosefs fs cat /LICENSE                                                                         
 Apache License
@@ -280,10 +285,12 @@ persisted file /LICENSE with size 26847
 ## 使用 GooseFS 加速文件上传和下载操作
 
 1. 检查文件存储状态，确认文件是否已被缓存。文件状态 `PERSISTED` 代表文件已在内存中，文件状态 `NOT_PERSISTED` 则代表文件不在内存中：
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
+
 2. 统计文件中有多少单词 “tencent”，并计算操作耗时：
 ```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
@@ -293,6 +300,7 @@ user	0m7.557s
 sys	0m1.181s
 ```
 3. 将该数据缓存到内存中可以有效提升查询速度，详细示例如下：
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
