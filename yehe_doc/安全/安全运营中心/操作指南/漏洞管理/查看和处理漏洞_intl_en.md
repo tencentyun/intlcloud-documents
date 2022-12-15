@@ -45,7 +45,9 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
   > - Mark as "Fixing": You can mark vulnerabilities as "Fixing" when they are being processed based on the description and fixing instructions on the Vulnerability Details page.
   > - Ignore vulnerabilities: Fill in scenario-specific comments when ignoring the scanned vulnerabilities. Once ignored, CWP (Cloud Workload Protection) or Vulnerability Scan will no longer detect the selected vulnerabilities.
 
-- **Redetection** - **Method 1**: In the list of vulnerability details, select the target vulnerabilities, and then click **Redetect** at the top of the list to redetect vulnerabilities in batches. - **Method 2**: In the list of vulnerability details, click **Redetect** in the operation column on the right of the target vulnerability.
+- **Redetection** 
+   - **Method 1**: In the list of vulnerability details, select the target vulnerabilities, and then click **Redetect** at the top of the list to redetect vulnerabilities in batches. 
+   - **Method 2**: In the list of vulnerability details, click **Redetect** in the operation column on the right of the target vulnerability.
 
   > ? "Pending" and "Fixing" vulnerabilities also can be redetected.
 
