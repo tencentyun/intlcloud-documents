@@ -3,17 +3,15 @@
 >?To save the storage space, physical and logical backups in TencentDB for MySQL will be compressed with qpress and then packed with xbstream offered by Percona.
 >
 The open-source Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a physical backup file of TencentDB for MySQL instance to a CVM-based self-built database.
->!If you use the TDE or Instant DDL feature, you cannot restore data from a physical backup in a self-built system.
->
 - XtraBackup only supports Linux but not Windows.
-- For more information about how to restore data in Windows, see [Offline Data Migration > Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464).
+- For more information about how to restore data in Windows, see [Offline Migration of Data > Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464).
 
 ## Prerequisites
 - Download and install XtraBackup.
  - For MySQL 5.6 and 5.7, download Percona XtraBackup 2.4.6 or later at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). For more information on installation, see [Installing Percona XtraBackup on Red Hat Enterprise Linux and CentOS](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
  - For MySQL 8.0, download Percona XtraBackup 8.0.22-15 or later at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). For more information on installation, see [Installing Percona XtraBackup on Red Hat Enterprise Linux and CentOS](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html).
-- Supported instance architectures: two-node or three-node MySQL
-- Instances with TDE enabled cannot be restored from a physical backup.
+- Supported instance architectures: Two-node or three-node MySQL.
+- Instances with transparent data encryption (TDE) enabled cannot be restored from a physical backup.
 
 >?This document takes a CVM instance on CentOS and a MySQL 5.7 instance as an example.
 >
@@ -24,7 +22,7 @@ You can download data backups and log backups of TencentDB for MySQL instances i
 
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the **Backup and Restoration** > **Data Backup List** tab, locate the backup file to be downloaded and click **Download** in the **Operation** column.
-3. Copy the download address in the pop-up dialog box, log in to the Linux CVM in the same VPC as the TencentDB instance as instructed in [Customizing Linux CVM Configurations](https://www.tencentcloud.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), and run `wget` to download the file over the high-speed private network.
+3. Copy the download address in the pop-up dialog box, log in to the Linux CVM in the same VPC as the TencentDB instance as instructed in [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517), and run `wget` to download the file over the high-speed private network.
 >?
 >- You can also click **Download** to download it directly. However, this may take longer.
 >- `wget` command format: wget -c 'backup file download address' -O custom filename.xb 
@@ -35,12 +33,13 @@ wget -c 'https://mysql-database-backup-sh-1218.cos.ap-nanjing.myqcloud.com/12427
 ```
 
 ## Step 2. Download the backup decryption key (required only if the backup encryption feature is enabled)
-You can download data backups and decryption keys of TencentDB for MySQL instances in the console.
+You can download the data backups and decryption key of TencentDB for MySQL instances in the console.
 >?A decryption key is generated for each database backup separately. If the backup encryption feature is enabled, you need to download and save the backup file together with the decryption key.
 
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
-2. On the **Backup and Restoration** > **Data Backup List** tab, locate the decryption key of the backup file to be downloaded and click **Download Key** in the **Operation** column.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/A8BA028_1.png)
+2. On the **Backup and Restoration** > **Data Backup List** tab, locate the decryption key corresponding to the backup file to be downloaded and click **Download Key** in the **Operation** column.
+![](https://qcloudimg.tencent-cloud.cn/raw/743b8d691a006b99cb25591bb2100b07.png)
+3. In the pop-up window, select the file path where to save the key and click **Download**.
 
 ## Step 3. Restore data
 ### 3.1 Unpack the backup file
@@ -53,7 +52,7 @@ xbstream -x --decrypt=AES256 --encrypt-key-file=<backup key file> --parallel=2  
 >- Replace `/data/test.xb` with your backup file.
 >
 The unpacking result is as shown below:
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/K4wr727_f981522847f38b10bfe0a59c7234b7ba.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
 
 ### 3.2 Decompress the backup file
 1. Download qpress by running the following command.
@@ -108,7 +107,7 @@ Modify file attributes and check whether files are owned by the `mysql` user.
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/EeLm919_6.png)
+![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
 
 ## Step 4. Start the mysqld process and log in for verification
 1. Start the mysqld process.

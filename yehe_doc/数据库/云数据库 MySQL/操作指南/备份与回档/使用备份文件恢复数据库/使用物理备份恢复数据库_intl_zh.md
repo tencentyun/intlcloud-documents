@@ -3,8 +3,6 @@
 >?为节约存储空间，云数据库 MySQL 的物理备份和逻辑备份文件，都会先经过 qpress 压缩，后经过 xbstream 打包（xbstream 为 Percona 的一种打包/解包工具）进行压缩与打包。
 >
 开源软件 Percona Xtrabackup 可以用于对数据库进行备份恢复，本文为您介绍使用 XtraBackup 工具，将 MySQL 物理备份文件恢复至其他主机上的自建数据库。
->!如果使用透明加密或 Instant DDL 功能，则无法使用物理备份在自建系统上进行恢复。
->
 - XtraBackup 只支持 Linux 平台，不支持 Windows 平台。
 - Windows 平台恢复数据请参考 [命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)。
 
@@ -24,7 +22,7 @@
 
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例管理页面，选择**备份恢复** > **数据备份列表**页， 选择需要下载的备份，在**操作**列单击**下载**。
-3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统） ](https://www.tencentcloud.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网高速下载，更高效。
+3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统） ](https://intl.cloud.tencent.com/document/product/213/10517)中，运用 wget 命令进行内网高速下载，更高效。
 >?
 >- 您也可以选择**本地下载**直接下载，但耗时较多。
 >- wget 命令格式：wget -c '备份文件下载地址' -O 自定义文件名.xb 
@@ -40,7 +38,8 @@ wget -c 'https://mysql-database-backup-sh-1218.cos.ap-nanjing.myqcloud.com/12427
 
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例管理页面，选择**备份恢复** > **数据备份列表**页， 选择需要下载的备份对应的解密密钥，在**操作**列单击**下载密钥**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/A8BA028_1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/743b8d691a006b99cb25591bb2100b07.png)
+3. 在弹出的对话框，选择需要保存密钥的文件路径，单击**下载**。
 
 ## 步骤3：恢复数据
 ### 3.1 解包备份文件
@@ -53,7 +52,7 @@ xbstream -x --decrypt=AES256 --encrypt-key-file=<备份密钥文件> --parallel=
 >- `/data/test.xb` 替换为您的备份文件。
 >
 解包结果如下图所示：
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/K4wr727_f981522847f38b10bfe0a59c7234b7ba.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
 
 ### 3.2 解压备份文件
 1. 通过如下命令下载 qpress 工具。
@@ -108,7 +107,7 @@ vi /data/mysql/backup-my.cnf
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/EeLm919_6.png)
+![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
 
 ## 步骤4：启动 mysqld 进程并登录验证
 1. 启动 mysqld 进程。
