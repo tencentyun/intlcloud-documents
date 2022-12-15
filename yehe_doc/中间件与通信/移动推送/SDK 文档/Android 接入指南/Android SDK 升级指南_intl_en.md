@@ -7,34 +7,34 @@ If your project is integrated by pulling dependencies remotely and doesn't invol
 > - If your currently used version is largely different from the latest version, be sure to modify the configurations by referring to the version changes below.
 > - Generally, we recommend you also upgrade and modify the vendor push dependencies from the Tencent Push Notification Service SDK.
 
-For example, if the current version is 1.3.3.3 and the latest version is 1.3.6.1, you need to change your SDK dependency version from 1.3.3.3 to 1.3.6.1:
+For example, if the current version is 1.3.3.3 and the latest version is 1.3.6.2, you need to change your SDK dependency version from 1.3.3.3 to 1.3.6.2:
 ```
 dependencies {
     // Tencent Push Notification Service main package
-    implementation "com.tencent.tpns:tpns:1.3.6.1-release"
+    implementation "com.tencent.tpns:tpns:1.3.6.2-release"
 
     // Mi push dependency package
-    implementation "com.tencent.tpns:xiaomi:1.3.6.1-release"
+    implementation "com.tencent.tpns:xiaomi:1.3.6.2-release"
 
     // Meizu push dependency package
-    implementation "com.tencent.tpns:meizu:1.3.6.1-release"
+    implementation "com.tencent.tpns:meizu:1.3.6.2-release"
     
     // Huawei push dependency package
-    implementation "com.tencent.tpns:huawei:1.3.6.1-release"
+    implementation "com.tencent.tpns:huawei:1.3.6.2-release"
     // Dependency package for the HMS Core Push module of Huawei push
-    implementation 'com.huawei.hms:push:6.5.0.300'       
+    implementation 'com.huawei.hms:push:6.7.0.300'       
 
     // OPPO push dependency package
-    implementation "com.tencent.tpns:oppo:1.3.5.0-release"
+    implementation "com.tencent.tpns:oppo:1.3.6.2-release"
     // For SDK v1.3.2.0 or later, you need to add the following dependency statements. Otherwise, the registration of OPPO PUSH will fail.
     implementation 'com.google.code.gson:gson:2.6.2'
     implementation 'commons-codec:commons-codec:1.15'
 
     // vivo push dependency package
-    implementation "com.tencent.tpns:vivo:1.3.6.1-release"
+    implementation "com.tencent.tpns:vivo:1.3.6.2-release"
 
-    // Honor push dependency package
-    implementation "com.tencent.tpns:honor:1.3.6.1-release"
+    // HONOR push dependency package
+    implementation "com.tencent.tpns:honor:1.3.6.2-release"
 }
 ```
 
@@ -51,6 +51,15 @@ If your project is integrated by importing JAR files manually and doesn't involv
 
 ### Integration via other toolkits
 If your project is integrated via other third-party toolkits such as MSDK and GCloud, refer to their respective upgrade guides first.
+
+## Android SDK 1.3.6.2
+SDK v1.3.6.2 has upgraded the versions of Huawei and Mi push dependencies. The original versions of vendor push SDKs currently in use are as follows:
+- Huawei: 6.7.0.300
+- Mi: 5.1.0
+- Meizu: 4.1.0
+- OPPO: 3.1.0
+- vivo: 3.0.0.4
+
 
 ## Android SDK 1.3.6.1
 SDK v1.3.6.1 has upgraded the versions of Mi and OPPO push dependencies. The original versions of vendor push SDKs currently in use are as follows:
@@ -199,7 +208,7 @@ If your project is integrated by importing JAR files manually, note the followin
          android:exported="false"
          android:process=":xg_vip_service">
          <intent-filter android:priority="0x7fffffff" tools:node="replace" >
-            <!-- **(Required)** The internal broadcast of the SDK -->
+            <!-- **(Required)** The internal broadcast of the Tencent Push Notification Service SDK -->
             <action android:name="com.tencent.android.xg.vip.action.SDK" />
             <action android:name="com.tencent.android.xg.vip.action.INTERNAL_PUSH_MESSAGE" />
             <action android:name="com.tencent.android.xg.vip.action.ACTION_SDK_KEEPALIVE" />
