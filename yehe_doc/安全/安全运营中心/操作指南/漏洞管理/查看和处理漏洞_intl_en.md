@@ -27,7 +27,7 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
   - **Overview of pending vulnerabilities**: displays the total number of pending vulnerabilities and the numbers of high-, medium-, and low-risk pending vulnerabilities.
   - **Overview of vulnerabilities under fixing**: displays the total number of vulnerabilities under fixing and the numbers of high-, medium-, and low-risk vulnerabilities under fixing.
   - **Overview of handled vulnerabilities**: displays the total number of handled vulnerabilities and the numbers of high-, medium-, and low-risk handled vulnerabilities.
-- \*_Trend graph of pending vulnerabilities_
+- **Trend graph of pending vulnerabilities**
   This trend graph shows the trend of pending vulnerabilities in the past 24 hours, 7 days, 30 days, and 90 days.
 
 - **Search**
