@@ -52,7 +52,9 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
   > ? "Pending" and "Fixing" vulnerabilities also can be redetected.
 
 - **Ignored Records**
-  On the Vulnerability Management page, you can click "Ignored Records" to view the records of ignored vulnerabilities. In the list of ignored records, you can unignore them. Unignoring resumes detection of that asset for that vulnerability. - Method 1: In the list of ignored records, select the target vulnerabilities, and click **Unignore** at the top of the list to unignore records in batches. - Method 2: In the list of ignored records, click **Unignore** in the operation column on the right of the target vulnerability to remove the ignored record.
+  On the Vulnerability Management page, you can click "Ignored Records" to view the records of ignored vulnerabilities. In the list of ignored records, you can unignore them. Unignoring resumes detection of that asset for that vulnerability. 
+    - Method 1: In the list of ignored records, select the target vulnerabilities, and click **Unignore** at the top of the list to unignore records in batches. 
+    - Method 2: In the list of ignored records, click **Unignore** in the operation column on the right of the target vulnerability to remove the ignored record.
 
 - **Vulnerability details**
   In the vulnerability details list, click **View Details** in the operation column on the right of the target vulnerability. On the Vulnerability Details page that appears, you can view the basic information of the vulnerability.
