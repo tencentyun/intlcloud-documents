@@ -6,9 +6,9 @@ In CNAME access mode, you can add a record to connect site subdomain names to th
 
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Domain Name Service** on the left sidebar.
 2. On the page that appears, select the target site and click **Add domain name**.
-![](https://qcloudimg.tencent-cloud.cn/raw/4867bc46bd8a05f228f2630b7b41a285.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/vePh814_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_c1a06409-5016-47ba-8bcd-3959a02e0240.png)
 3. Enter the relevant parameters and click **Save**.
-![](https://qcloudimg.tencent-cloud.cn/raw/8d0753634031df6bb467227f4567c40a.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Knm7963_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_5b09d140-e69c-4edc-b934-c7398fe3ad64.png)
 **Parameter description:**
   - Acceleration domain name: Enter the subdomain name to be accelerated. Only the prefix of the subdomain name is required.
   - Origin type: Select "IPv4", "IPv6", or "domain name" as needed.
@@ -43,5 +43,5 @@ In CNAME access mode, you can add a record to connect site subdomain names to th
  - HTTPS certificate: When CNAME access is used, EdgeOne does not provide a universal certificate. In this case, you need to associate each subdomain name with a certificate manually before you can use the HTTPS service normally.
 4. After saving the record, EdgeOne will assign a CNAME record to your subdomain name. You need to configure the CNAME record at your DNS service provider before you can direct user access to EdgeOne nodes and make the acceleration take effect.
 5. After the configuration, if a green icon appears in the CNAME column, the CNAME record has taken effect, and the subdomain name is accelerated.
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/3CAT513_3.png" style="zoom:150%;" />
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/3uIu516_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_ada06b1c-7d8c-494a-950e-c8e20435fff0.png" style="zoom:150%;" />
 
