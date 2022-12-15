@@ -1,11 +1,11 @@
 ## View statistics
 
-1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/config). In the left navigation pane, click **Cloud Security Configuration Management** -> **Configuration Check Results** to go to the Configuration Check Results page.
-2. On the Configuration Check Results page, select ** Configuration Check Policy** to view the enabled check policies, statistics of check results based on the selected policies, and details list. By default, the check results based on all configuration check policies are displayed.
+1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/config). In the left navigation pane, click **Cloud Security Configuration Management** > **Configuration Check Results** to go to the Configuration Check Results page.
+2. On the Configuration Check Results page, select **Configuration Check Policy** to view the enabled check policies, statistics of check results based on the selected policies, and details list. By default, the check results based on all configuration check policies are displayed.
 
 - View the number of enabled configuration check policies
 
-> ? To enable or disable the configuration check policies, please go to [Configuration Check Policies](https://www.tencentcloud.com/document/product/1008/51774).
+>? To enable or disable the configuration check policies, please go to [Configuration Check Policies](https://www.tencentcloud.com/document/product/1008/51774).
 
 - View statistics of configuration check results
   The statistics of the cloud security configuration check results include the numbers of four check results (shown in different colors) and the total number of all check results. Move the pointer over the donut chart of check results. The number of the corresponding check results appears.
