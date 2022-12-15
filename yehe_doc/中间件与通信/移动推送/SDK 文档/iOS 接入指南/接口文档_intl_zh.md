@@ -1,6 +1,6 @@
 ## 说明
 
-本文档中账号功能、标签功能及用户属性功能适用于 **SDK 1.2.9.0或更高版本**，**1.2.7.2**及之前版本请参见 [接口文档](https://intl.cloud.tencent.com/document/product/1024/30727)。
+本文档中账号功能、标签功能及用户属性功能适用于 **SDK 1.2.9.0或更高版本**，**1.2.7.2**及之前版本请参见 [接口文档](https://www.tencentcloud.com/document/product/1024/30727)。
 
 ## 启动腾讯移动推送服务
 
@@ -249,7 +249,7 @@ NSSet *accountsKeys = [[NSSet alloc] initWithObjects:@(accountType), nil];
 >?
 > - 此接口为追加方式。
 > - 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
-> - 单个应用最多可以有10000个自定义 tag， 每个设备 Token 最多可绑定100个自定义 tag，如需提高该限制，请联系 [在线客服](https://intl.cloud.tencent.com/support)，每个自定义 tag 可绑定的设备 Token 数量无限制。
+> - 单个应用最多可以有10000个自定义 tag， 每个设备 Token 最多可绑定100个自定义 tag，如需提高该限制，请 [提交工单](https://console.tencentcloud.com/workorder/category)，每个自定义 tag 可绑定的设备 Token 数量无限制。
 > 
 
 #### 参数说明
@@ -495,12 +495,24 @@ badgeNumber：应用的角标数。
 #### 示例代码
 
 ```Objective-C
-/// TPNS网络连接成功
-/// _launchTag清零标识，比如冷启动/热启动时将此tag设置为YES
+/// 冷启动调用时机
+- (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken xgToken:(nullable NSString *)xgToken error:(nullable NSError *)error {
+    /// 在注册完成后上报角标数目
+    if (!error) {
+     /// 重置应用角标，-1不清空通知栏，0清空通知栏
+     [XGPush defaultManager].xgApplicationBadgeNumber = -1;
+        /// 重置服务端自动+1基数
+        [[XGPush defaultManager] setBadge:0];
+    }
+}
+
+/// 热启动调用时机
+/// _launchTag热启动标识，业务自行管理
 - (void)xgPushNetworkConnected {
     if (_launchTag) {
-        /// -1不清空通知栏，0清空通知栏
+        /// 重置应用角标，-1不清空通知栏，0清空通知栏
         [XGPush defaultManager].xgApplicationBadgeNumber = -1;
+        /// 重置服务端自动+1基数
         [[XGPush defaultManager] setBadge:0];
         _launchTag = NO;
     }
@@ -580,7 +592,7 @@ handler：查询结果的返回方法。
 
 #### 接口说明
 
-开发者如果发现推送相关功能异常，可以调用该接口，触发本地 push 日志的上报，通过联系 [在线客服](https://intl.cloud.tencent.com/support) 反馈问题时，请将文件地址提供给我们，便于排查问题。
+开发者如果发现推送相关功能异常，可以调用该接口，触发本地 push 日志的上报，通过联系 [提交工单](https://console.tencentcloud.com/workorder/category) 反馈问题时，请将文件地址提供给我们，便于排查问题。
 
 ```
 /// @note TPNS SDK1.2.4.1+

@@ -1,10 +1,10 @@
-For Android phones, the opened badge capabilities vary by vendor. TPNS' support for push badge is as detailed below for your reference.
+For Android phones, the opened badge capabilities vary by vendor. The support of Tencent Push Notification Service for push badge is as detailed below for your reference.
 
 ## Overview
 
 | Vendor | Support for Display of Badge/Red Dot | Require Configuration | Badge/Red Dot Display Rule                                                     |
 | ---- | --------------------- | ------------ | ------------------------------------------------------------ |
-| Huawei | Badge              | Yes           | See [Huawei Phone Badge Adaptation Guide](#huawei).                               |
+| Huawei/HONOR | Badge              | Yes           | See [Huawei Phone Badge Adaptation Guide](#huawei).                               |
 | Mi | Badge              | No           | Compliant with the default system logic. Perceive the number of notifications in the notification bar and automatically increase or decrease the badge number by 1 accordingly.          |
 | Meizu | Red dot              | No           | Compliant with the default system logic. Supports only red dot display. If there is a notification, a red dot will be displayed, and vice versa.   |
 | OPPO | Red dot              | No           | Display of red dot needs to be manually enabled in notification settings, which is compliant with the default system logic. If there is a notification, a red dot will be displayed, and vice versa.<br>Display of the notification number is available only to specified applications such as QQ and WeChat and requires permission application. No adaption instructions are provided currently. |
@@ -14,18 +14,18 @@ For Android phones, the opened badge capabilities vary by vendor. TPNS' support 
 
 ## Configuring the Server Delivery Badge
 
-You can configure the server delivery badge in the TPNS console or through the push API.
+You can configure the server delivery badge in the Tencent Push Notification Service console or through the push API.
 
 <dx-tabs>
 ::: Method 1: Configure on the push page in the console
-1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
-2. Locate the target Android product and click **Push Management** in the **Operation** column of the product to go to the **Push Management** page.
+1. Log in to the [Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns).
+2. Locate the target Android product and click **Push Management** in the **Operation** column of the product to go to the push **Task List** page.
 3. Click the push to configure to go to the push configuration page.
-4. In the **Advanced Configuration** area, enable badge number.
-![]()
-:::
-::: Method 2: Configure through the push API
-  In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
+4. In the **Advanced settings** area, enable badge number.
+  ![]()
+  :::
+  ::: Method 2: Configure through the push API
+    In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
 <table>
 <thead>
 <tr>
@@ -136,8 +136,8 @@ Limited by the openness of Huawei phone badge capabilities, the badge feature va
 |   Push Form    |                           Badge Capability                           |             Implementation Method             |
 | :-----------: | :----------------------------------------------------------: | :------------------------------: |
 | Notification through the Huawei channel  | The badge number can be auto increased by 1, directly configured, or unchanged; can be auto decreased by 1 for notification click; but cannot be auto decreased by 1 for notification dismissal. | Configure in the console or through the push API keyword. |
-| Notification through the TPNS channel | The badge number can be auto increased by 1, directly configured, or unchanged; can be auto decreased by 1 for notification click or dismissal. | Configure in the console or through the push API keyword. |
-|   In-app message    |                 You can process the badge number configuration, increase, and decrease logic by yourself.                 |      Call the open API of the TPNS SDK.      |
+| Notification through the Tencent Push Notification Service channel | The badge number can be auto increased by 1, directly configured, or unchanged; can be auto decreased by 1 for notification click or dismissal. | Configure in the console or through the push API keyword. |
+|   In-app message    |                 You can process the badge number configuration, increase, and decrease logic by yourself.                 |      Call the open API of the Tencent Push Notification Service SDK.      |
 
 ### Configuration
 
@@ -147,18 +147,17 @@ To implement the correct badge modification effect, please first add the Huawei 
 
 ```xml
 <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
-<!-- Compatible on Honor phones -->
+<!-- Compatible on HONOR phones -->
 <uses-permission android:name="com.hihonor.android.launcher.permission.CHANGE_BADGE" />
 ```
 
 #### Setting the notification delivery badge
 
-Be sure to enable the Huawei channel in the console and enter the `Activity` class, such as `com.test.badge.MainActivity`, of the application entry corresponding to the desktop icon in the parameter configuration area. Otherwise, the badge settings will not take effect. 
-![]()
+Be sure to enable the Huawei channel in the console and enter the `Activity` class, such as `com.test.badge.MainActivity`, of the application entry corresponding to the desktop icon in the parameter configuration area. Otherwise, the badge settings will not take effect. ![]()
 
 #### Getting startup class name:
-In the `AndroidManifest.xml` file under the app module directory, search the keyword `android.intent.action.MAIN`, where the `activity` node is the startup class required, and enter the full class name (with the complete package name).
-![](https://qcloudimg.tencent-cloud.cn/raw/dddbcc3d3f6c6a8cb7a150beda956bd9.png)
+Drag and drop the packaged APK file into AndroidStudio. Enter the `AndroidManifest.xml` file in the package and search for the keywords "android.intent.category.LAUNCHER" in the file. The `activity.name` attribute found is the startup class name.
+![](https://qcloudimg.tencent-cloud.cn/raw/5703361b634478552045b0f0f706263f.png)
 
 
 #### Setting badge number auto increase/decrease for Huawei phones
@@ -184,13 +183,13 @@ Example: when an in-app message is received, call `XGPushConfig.changeHuaweiBadg
 
 ### Use limits
 
-Limited by the openness of vivo phone badge capabilities, the badge number currently can only be directly configured but cannot be auto increased or decreased. The badge feature supports only notifications delivered through the TPNS channel.
+Limited by the openness of vivo phone badge capabilities, the badge number currently can only be directly configured but cannot be auto increased or decreased. The badge feature supports only notifications delivered through the Tencent Push Notification Service channel.
 
 |   Push Form    |                           Badge Capability                          |             Implementation Method             |
 | :-----------: | :------------------------------------: | :------------------------------: |
 | Notification through the vivo channel |                 Not supported                |              Not supported              |
-| Notification through the TPNS channel | The badge number can be directly configured or unchanged, but cannot be auto increased or decreased. | Configure in the console or through the push API keyword. |
-|   In-app message    |         You can process the badge number configuration logic by yourself.         |      Call the open API of the TPNS SDK.      |
+| Notification through the Tencent Push Notification Service channel | The badge number can be directly configured or unchanged, but cannot be auto increased or decreased. | Configure in the console or through the push API keyword. |
+|   In-app message    |                 You can process and configure the logic by yourself.                 |      Call the open API of the Tencent Push Notification Service SDK.      |
 
 ### Configuration
 
