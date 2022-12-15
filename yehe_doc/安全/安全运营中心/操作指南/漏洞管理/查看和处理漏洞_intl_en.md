@@ -35,7 +35,9 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
 
 - **Set all as processed**
   After all vulnerabilities are fixed as instructed, you can click **Set all as processed** in the upper-left corner of the list. Then the vulnerabilities in "Pending" or "Fixing" status will be changed to the "Processed" status.
-- **Status change** - **Method 1**: In the list of vulnerability details, select the target vulnerabilities, choose the required status from the **Status Change** dropdown list at the top of the list to batch change the status. - **Method 2**: In the list of vulnerability details, choose the required status from the **Status Change** dropdown list in the operation column on the right of the target vulnerability to change the status.
+- **Status change** 
+   - **Method 1**: In the list of vulnerability details, select the target vulnerabilities, choose the required status from the **Status Change** dropdown list at the top of the list to batch change the status. 
+   - **Method 2**: In the list of vulnerability details, choose the required status from the **Status Change** dropdown list in the operation column on the right of the target vulnerability to change the status.
 
   > ?
   >
