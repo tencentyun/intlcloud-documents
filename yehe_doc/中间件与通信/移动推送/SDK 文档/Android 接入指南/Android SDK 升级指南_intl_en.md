@@ -319,14 +319,16 @@ Add the following data:
             android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
             android:authorities="application package name.XG_SETTINGS_PROVIDER" />
 ```
+
 4. Add the following to the ProGuard obfuscation configuration:
-```
--keep public class * extends android.app.Service
--keep public class * extends android.content.BroadcastReceiver
--keep class com.tencent.android.tpush.** {*;}
--keep class com.tencent.tpns.baseapi.** {*;} 
--keep class com.tencent.tpns.mqttchannel.** {*;}
--keep class com.tencent.tpns.dataacquisition.** {*;}
+
+```java
+- keep public class * extends android.app.Service
+- keep public class * extends android.content.BroadcastReceiver
+- keep class com.tencent.android.tpush.** {*;}
+- keep class com.tencent.tpns.baseapi.** {*;} 
+- keep class com.tencent.tpns.mqttchannel.** {*;}
+- keep class com.tencent.tpns.dataacquisition.** {*;}
 ```
 
 #### OPPO push
@@ -375,8 +377,10 @@ Add the following data:
    </intent-filter>
 </service>
 ```
+
 4. Add the following to the ProGuard obfuscation configuration:
-```
+
+```java
 -keep public class * extends android.app.Service
 -keep class com.heytap.mcssdk.** {*;}
 -keep class com.heytap.msp.push.** { *;}
