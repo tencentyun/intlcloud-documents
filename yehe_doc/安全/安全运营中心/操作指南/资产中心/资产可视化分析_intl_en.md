@@ -32,8 +32,9 @@ To use the visual analysis of assets feature, you must have enabled [Security Op
   In the network security topological graph, click the target subnet node ![](https://qcloudimg.tencent-cloud.cn/raw/5e5cf362e93f6a0003d9549b598e41d7.png) to go to the corresponding subnet topological graph.
 - **View CVM asset information**
   In the network security topological graph, move the pointer over a CVM leaf node ![](https://qcloudimg.tencent-cloud.cn/raw/83a9b67d8d327142743316cb311bf2c5.png) to view the CVM asset information.
-- **View CVM asset details** 1. In the network security topological graph, click the target CVM leaf node ![](https://qcloudimg.tencent-cloud.cn/raw/02bc8ef83b241bd6227bb7fe02a25ccd.png) to go to the Asset Details page of the CVM. 2. On the Asset Details page, you can view the basic information, security risks, and network information of the asset.
-  > ?
-  >
-  > - The Security Risks tab displays fingerprint information, threat alerts, configuration risks, attack surface, vulnerabilities, and configuration history of the asset, and you can perform relevant operations.
-  > - The Network Information tab displays the security group information bound to the asset and LAN and WAN bandwidth monitoring data.
+- **View CVM asset details** 
+    1. In the network security topological graph, click the target CVM leaf node ![](https://qcloudimg.tencent-cloud.cn/raw/02bc8ef83b241bd6227bb7fe02a25ccd.png) to go to the Asset Details page of the CVM. 
+    2. On the Asset Details page, you can view the basic information, security risks, and network information of the asset.
+  >?
+  >- The Security Risks tab displays fingerprint information, threat alerts, configuration risks, attack surface, vulnerabilities, and configuration history of the asset, and you can perform relevant operations.
+  >- The Network Information tab displays the security group information bound to the asset and LAN and WAN bandwidth monitoring data.
