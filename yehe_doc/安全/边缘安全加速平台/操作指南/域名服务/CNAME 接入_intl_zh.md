@@ -6,9 +6,9 @@
 
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**域名服务**。
 2. 在域名服务页面，选择所需站点，单击**添加域名**。
-![](https://qcloudimg.tencent-cloud.cn/raw/4867bc46bd8a05f228f2630b7b41a285.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/vePh814_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_c1a06409-5016-47ba-8bcd-3959a02e0240.png)
 3. 填写相关参数，单击**保存**。
-![](https://qcloudimg.tencent-cloud.cn/raw/8d0753634031df6bb467227f4567c40a.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Knm7963_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_5b09d140-e69c-4edc-b934-c7398fe3ad64.png)
 **参数说明：**
   - 加速域名：填写需开启加速的子域名，仅需输入子域名的前缀。
   - 源站类型：可选择 IPv4/IPv6/域名。
@@ -43,5 +43,5 @@
  - HTTPS 证书：在 CNAME 接入方式下，系统不提供 EdgeOne 通用证书。需要手动为每个子域名关联证书，方可正常使用 HTTPS 服务。
 4. 保存记录之后，EdgeOne 会给您的子域名分配一个 CNAME，您还需要前往您的 DNS 解析服务商完成 CNAME 配置，才可以将用户的访问指向 EdgeOne 节点，使加速生效。
 5. 配置完成之后，域名服务列表中，CNAME 列出现绿色的 icon 则表示该 CNAME 记录已生效，该子域名正常加速中。
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/3CAT513_3.png" style="zoom:150%;" />
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/3uIu516_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_ada06b1c-7d8c-494a-950e-c8e20435fff0.png" style="zoom:150%;" />
 
