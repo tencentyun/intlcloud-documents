@@ -1,14 +1,57 @@
 ## Basic Monitoring
-### Features
+### Description
 ClickHouse provides 46 service and performance monitoring metrics for you to stay up to date with cluster status. You can configure metrics to get real-time alarms for fast response to problems.
 
 
 ### Cluster monitoring
-Log in to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/cdwch), click a **Cluster ID/Name** in the **Cluster List** to enter the cluster details page, and switch to the **Cluster Monitoring** tab to view performance metrics.
-![](https://qcloudimg.tencent-cloud.cn/raw/3e7d23cf9cd4d7b414e21dfcab996626.png)
+Log in to the [CDW console](https://console.cloud.tencent.com/cdwch), click a **Cluster ID/Name** in the **Cluster List** to enter the cluster details page, and switch to **Cluster Monitoring** to view performance metrics.
+
 
 >?You can configure an alarm threshold and export monitoring data for specific metrics. Metrics are collected once every 10 seconds, the minimum time granularity for data display is 1 minute, and the maximum value of data points collected within 1 minute is displayed.
 
+### Cluster alarm configuration
+1. On the cluster monitoring page, select a metric and configure its threshold for alarming.
+2. On the CM console window that pops up, filter the instance objects (by ClickHouse cluster name) and configure the metric thresholds as instructed in the configuration template. The configuration items for an alarm policy are as displayed below:
+<table>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Policy name</td>
+<td>Name of the alarm policy</td>
+</tr>
+<tr>
+<td>Monitor Type</td>
+<td>Default: Cloud Product Monitoring</td>
+</tr>
+<tr>
+<td>Policy type</td>
+<td>Default: CDWCH/CK alarm</td>
+</tr>
+<tr>
+<td rowspan="2">Alarm Object</td>
+<td>Default: Instance ID</td>
+</tr>
+<tr>
+<td>Select a ClickHouse cluster in the drop-down list</td>
+</tr>
+<tr>
+<td rowspan="2">Trigger Condition</td>
+<td>Default: Manual Configuration</td>
+</tr>
+<tr>
+<td>Thresholds and alarm policies configured in <b>Metric alarm</b></td>
+</tr>
+<tr>
+<td>Notification template</td>
+<td>Select an existing notification template or create one</td>
+</tr>
+</table>
+
+>?Do not modify the default values.
+
+3. Click **Complete** to submit the alarm policy. For more CM alarm policies, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
 
 ## Monitoring Metrics
 ### Node metrics
@@ -69,6 +112,6 @@ Log in to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/c
 
 For metric descriptions, see [system.metrics](https://clickhouse.tech/docs/en/operations/system-tables/metrics/).
 
-#### Notes
+#### Details
 1. ZooKeeper monitoring metrics are available for HA clusters on v21.3.9.84 or later.
-
+2. When advanced Grafana monitoring is enabled, the basic monitoring page will be updated to the advanced monitoring page.
