@@ -2,7 +2,7 @@
 
 TUICallKit 是腾讯云推出一款新的音视频通话 UI 组件，是 TRTCCalling 的升级版本，支持群组通话、AI 降噪等更多功能特性、支持全平台间互通呼叫，功能更加稳定，欢迎您使用新的 TUICallKit 组件，在升级前您需要了解到：
 - TRTCCalling 和 TUICallKit 支持相互呼叫，升级前后，请保持 SDKAppID 不变，否则会影响相互通信。
-- TUICallKit 需要搭配 IM 音视频通话能力套餐，可以单击 [IM 控制台](https://console.cloud.tencent.com/im)，进入对应 SDKAppID 应用的 基本配置 页面，并在页面的右下角找到 开通腾讯实时音视频服务 功能区，单击 免费体验 即可开通 TUICallKit 的 60 天免费试用服务。如果需要正式应用上线，可以单击 [前往加购](https://buy.cloud.tencent.com/avc) 即可进入购买页面。
+- TUICallKit 需要搭配 IM 音视频通话能力套餐，可以单击 [IM 控制台](https://console.cloud.tencent.com/im)，进入对应 SDKAppID 应用的 基本配置 页面，并在页面的右下角找到 开通腾讯实时音视频服务 功能区，单击 免费体验 即可开通 TUICallKit 的 60 天免费试用服务。
 
 <img width="568" alt="image" src="https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png">
 
