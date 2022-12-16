@@ -1,6 +1,5 @@
 ## Overview
 CDW provides a visual UI for you to create RBAC accounts and configure their permissions, quotas, settings profiles, and row policies. This helps you control account permissions in a CDW cluster more easily and efficiently.
-对账户做配额、配置文件、行策略等限制，从而实现对云数据仓库集群更便捷、高效的账户权限管控。
 
 ## Account
 CDW allows you to create and delete accounts and view and reset passwords.
