@@ -17,7 +17,7 @@ Tencent Cloud Firewall (CFW) is a SaaS firewall based on the public cloud enviro
 Paid editions of Tencent Cloud Firewall include IPS Edition, Premium Edition, Enterprise Edition, and Ultimate Edition. You can purchase one of them on the [Purchase Cloud Firewall page](https://buy.cloud.tencent.com/cfw). For more information, please see [Purchase Method](https://intl.cloud.tencent.com/document/product/1160/49871).
 #### 3.3 Using Cloud Firewall
 After you purchase Cloud Firewall, you can use it in the following ways:
-- Method 1: Log in to the [Cloud Firewall console](https://console.cloud.tencent.com/cfw) to perform operations. For more information, please see [Operation Guide](https://intl.cloud.tencent.com/document/product/1160/49809).
+- Method 1: Log in to the [Cloud Firewall console](https://console.cloud.tencent.com/cfw) to perform operations.
 - Method 2: Use CFW with APIs. For more information, please see [API Documentation](https://www.tencentcloud.com/document/product/1160/51320).
 
 
