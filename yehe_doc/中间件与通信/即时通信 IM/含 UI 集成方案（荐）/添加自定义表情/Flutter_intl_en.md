@@ -20,7 +20,7 @@ Now, let's start integrating Emoji and Sticker to your app with TUIKit.
 ## STEP 1: Customize Image Emoji and Sticker
 
 >? **This step is optional:**
-> This step is necessary only if image stickers, except default QQ emoji one, includes both small and big, are needed.
+> This step is necessary only if image stickers, includes default QQ emoji one, includes both small and big, are needed.
 > QQ Emoji set is provided by default, and is unnecessary to import in this step.
 
 ### Import Image File to Project
