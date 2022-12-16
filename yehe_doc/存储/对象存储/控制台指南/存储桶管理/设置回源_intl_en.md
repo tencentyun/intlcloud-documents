@@ -3,7 +3,7 @@
 You can configure origin-pull rules for buckets in the COS console. If the object you request does not exist in the bucket, or a specific request needs to be redirected, you can configure origin-pull rules to access corresponding data via COS. Origin-pull configurations are mainly used for hot data migration, redirecting specific requests, and other relevant scenarios.
 
 >?
->-The success rate of data origin-pull depends on your network environment.
+> - The success rate of data origin-pull depends on your network environment.
 >
 
 <img src="https://main.qcloudimg.com/raw/f63a74cf70a9f6582e52e13a2b16e72a.png" width="90%">
@@ -62,69 +62,77 @@ x-cos-meta-*
  - **Passthrough specifies the request header**: Specify the request headers you want to pass through to the origin. If you select **Redirect** as the origin-pull mode, do not set this parameter.
  - **New request header**: You can add additional request headers to be carried during origin-pull. If you select **Redirect** as the origin-pull mode, do not set this parameter.
 6. Configure the following information based on the selected origin-pull mode and click **Next**:
+
 <dx-tabs>
 ::: Async origin-pull
 
  - **Origin-Pull Address**: Enter the domain name or IP address without the `http://` or `https://` prefix. You can also add the port number after the domain name or IP address.
 Example of a correct address:
+
 ```shell
 abc.example.com
 abc.example.com:8080
 202.96.128.86
 202.96.128.86:8080
 ```
+
  - **Standby forwarding address**: You can enter a domain name or IP address as configured below:
     - **Fixed file**: Specifies a fixed file to which all requests are redirected when the origin-pull rule is triggered.
     - **Specified prefix**: Specifies the prefix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the prefix is specified as `test`, the request is redirected to `<origin-pull address>/test/prefix123. jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`, and the origin-pull rule is triggered.
     - **Specified suffix**: Specifies the suffix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the suffix is specified as `.jpg`, the request is redirected to `<origin-pull address>/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123`, and the origin-pull rule is triggered.
->!
->- If you select `Fixed file`, the other fields cannot be used.
->- `Specified prefix` and `Specified suffix` can be used at the same time.
->
- - **3xx Following Policy**: If this policy is enabled, when your origin returns a 3xx redirect, COS will follow it to pull data from another origin.
+
+<b>Note</b>
+         - If you select `Fixed file`, the other fields cannot be used.
+         - `Specified prefix` and `Specified suffix` can be used at the same time.
+    -  **3xx Following Policy**: If this policy is enabled, when your origin returns a 3xx redirect, COS will follow it to pull data from another origin.
 :::
 ::: Sync origin-pull
 
  - **Origin-Pull Address**: Enter the domain name or IP address without the `http://` or `https://` prefix. You can also add the port number after the domain name or IP address.
 Example of a correct address:
+
 ```shell
 abc.example.com
 abc.example.com:8080
 202.96.128.86
 202.96.128.86:8080
 ```
+
  - **Standby forwarding address**: You can enter a domain name or IP address as configured below:
     - **Fixed file**: Specifies a fixed file to which all requests are redirected when the origin-pull rule is triggered.
     - **Specified prefix**: Specifies the prefix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the prefix is specified as `test`, the request is redirected to `<origin-pull address>/test/prefix123. jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`, and the origin-pull rule is triggered.
     - **Specified suffix**: Specifies the suffix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the suffix is specified as `.jpg`, the request is redirected to `<origin-pull address>/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123`, and the origin-pull rule is triggered.
->!
->- If you select `Fixed file`, the other fields cannot be used.
->- `Specified prefix` and `Specified suffix` can be used at the same time.
->
- - **3xx Following Policy**: If this policy is enabled, when your origin returns a 3xx redirect, COS will follow it to pull data from another origin.
- - **Packet of origin site**: After this feature is enabled, the packet from the origin will be directly returned, including the status code and other information.
+
+<b>Note</b>
+         - If you select `Fixed file`, the other fields cannot be used.
+         - `Specified prefix` and `Specified suffix` can be used at the same time.
+    - **3xx Following Policy**: If this policy is enabled, when your origin returns a 3xx redirect, COS will follow it to pull data from another origin.
+    - **Packet of origin site**: After this feature is enabled, the packet from the origin will be directly returned, including the status code and other information.
 :::
 ::: Redirect
 
  - **Origin-Pull Address**: Enter the domain name or IP address without the `http://` or `https://` prefix. You can also add the port number after the domain name or IP address.
 Example of a correct address:
+
 ```shell
 abc.example.com
 abc.example.com:8080
 202.96.128.86
 202.96.128.86:8080
 ```
+
  - **Standby forwarding address**: You can enter a domain name or IP address as configured below:
     - **Fixed file**: Specifies a fixed file to which all requests are redirected when the origin-pull rule is triggered.
     - **Specified prefix**: Specifies the prefix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the prefix is specified as `test`, the request is redirected to `<origin-pull address>/test/prefix123. jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`, and the origin-pull rule is triggered.
     - **Specified suffix**: Specifies the suffix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the suffix is specified as `.jpg`, the request is redirected to `<origin-pull address>/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123`, and the origin-pull rule is triggered.
->!
->- If you select `Fixed file`, the other fields cannot be used.
->- `Specified prefix` and `Specified suffix` can be used at the same time.
->
- - **Redirect Code**: You can select 301 (default value), 302, or 307.
+
+<b>Note</b>
+         -  If you select `Fixed file`, the other fields cannot be used.
+         - `Specified prefix` and `Specified suffix` can be used at the same time.
+    - **Redirect Code**: You can select 301 (default value), 302, or 307.
 :::
 </dx-tabs>
+
 7. Confirm that the configured origin-pull rule is correct and click **OK**.
 By default, COS always gives the highest priority to the most recent rule, by which it performs origin-pull. To change the priority manually, you can click the "Edit" icon under the "Priority" column in the rule list.
 ![](https://main.qcloudimg.com/raw/3fa148b2e43f30fb891adee75ff255db.png)
