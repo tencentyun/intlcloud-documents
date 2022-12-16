@@ -8,41 +8,69 @@
 1. 在 COS 服务上创建一个存储桶以作为远端存储，操作指引请参见 [控制台快速入门](https://intl.cloud.tencent.com/document/product/436/32955)。
 2. 安装 [Java 8 或者更高的版本](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)。
 3. 安装 [SSH](https://www.ssh.com/ssh/)，确保能通过 SSH 连接到 LocalHost，并远程登录。
+4. 在 CVM 服务上购买一台实例，操作指引详见购买云服务器，并确保磁盘已经挂载到实例上。
 
 ## 下载并配置 GooseFS
 
-1. 从官方仓库下载 GooseFS 安装包到本地。官方仓库下载链接：[goosefs-1.3.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.3.0/release/goosefs-1.3.0-bin.tar.gz)。
-2. 执行如下命令，对安装包进行解压。
-```shell
-tar -zxvf goosefs-1.3.0-bin.tar.gz
-cd goosefs-1.3.0
-
+1. 新建本地目录并进入该目录下(您也可以按需选择其他目录)，从官方仓库下载 GooseFS 安装包到本地。安装包 Github 地址：[goosefs-1.4.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz)。
 ```
- 解压后，得到 goosefs-1.2.0，即 GooseFS 的主目录。下文将以 `${GOOSEFS_HOME}` 代指该目录的绝对路径。
-3. 在 `${GOOSEFS_HOME}/conf` 的目录下，创建 `conf/goosefs-site.properties` 的配置文件，可以使用内置的配置模板：
+$ cd /usr/local
+$ mkdir /service
+$ cd /service
+$ wget https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz
+```
+2. 执行如下命令，对安装包进行解压，解压后进入安装包目录下。
+```shell
+$ tar -zxvf goosefs-1.4.0-bin.tar.gz
+$ cd goosefs-1.4.0
+```
+解压后，得到 goosefs-1.4.0，即 GooseFS 的主目录。下文将以 `${GOOSEFS_HOME}` 代指该目录的绝对路径。
+3. 在 `${GOOSEFS_HOME}/conf` 的目录下，创建 `conf/goosefs-site.properties` 的配置文件，可以使用内置的配置模板，然后进入编辑模式修改配置：
 ```shell
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+$ vim conf/goosefs-site.properties
 ```
-4. 在配置文件 `conf/goosefs-site.properties` 中，将 goosefs.master.hostname 设置为`localhost`：
+4. 在配置文件 `conf/goosefs-site.properties` 中，调整如下配置项：
 ```shell
-$ echo"goosefs.master.hostname=localhost">> conf/goosefs-site.properties
+# Common properties
+# 调整Master节点host信息
+goosefs.master.hostname=localhost
+goosefs.master.mount.table.root.ufs=${goosefs.work.dir}/underFSStorage
+
+# Security properties
+# 调整权限配置
+goosefs.security.authorization.permission.enabled=true
+goosefs.security.authentication.type=SIMPLE
+
+# Worker properties
+# 调整worker节点配置，指定本地缓存介质、缓存路径和缓存容量大小
+goosefs.worker.ramdisk.size=1GB
+goosefs.worker.tieredstore.levels=1
+goosefs.worker.tieredstore.level0.alias=SSD
+goosefs.worker.tieredstore.level0.dirs.path=/data
+goosefs.worker.tieredstore.level0.dirs.quota=80G
+
+
+# User properties
+# 指定文件读写缓存策略
+goosefs.user.file.readtype.default=CACHE
+goosefs.user.file.writetype.default=MUST_CACHE
 ```
+
+>!配置`goosefs.worker.tieredstore.level0.dirs.path`该路径参数前，需要先新建这一路径。
 
 ## 启用 GooseFS
 
-1. 启用 GooseFS 前，检查系统环境，确保 GooseFS 可以在本地环境中正确运行：
+1. 启用 GooseFS 前，需要进入到 GooseFS 目录下执行启动指令：
 ```shell
-$ goosefs validateEnv local
+$ cd /usr/local/service/goosefs-1.4.0
+$ ./bin/goosefs-start.sh all
 ```
-2. 启用 GooseFS 前，执行如下命令，对 GooseFS 进行格式化。该命令将清除 GooseFS 的日志和 `worker` 存储目录下的内容：
-```shell
-$ goosefs format
-```
-3. 执行如下命令，启用 GooseFS。在系统默认配置下，GooseFS 会启动一个  Master 和一个 Worker。
-```shell
-$ ./bin/goosefs-start.sh local SudoMount
-```
- 该命令执行完毕后，可以访问 http://localhost:9201 和 http://localhost:9204，分别查看  Master 和 Worker 的运行状态。
+执行该指令后，可以看到如下页面：
+
+<img width="881" alt="image" src="https://qcloudimg.tencent-cloud.cn/raw/7b7f7f6ea02d36853ed7851023cfb8af.png">
+
+该命令执行完毕后，可以访问 `http://localhost:9201` 和 `http://localhost:9204`，分别查看  Master 和 Worker 的运行状态。
 
 ## 使用 GooseFS 挂载 COS（COSN） 或腾讯云 HDFS（CHDFS）
 
@@ -57,12 +85,10 @@ $ ./bin/goosefs-start.sh local SudoMount
 </property>
 
 
-
 <property>
    <name>fs.AbstractFileSystem.cosn.impl</name>
    <value>com.qcloud.cos.goosefs.CosN</value>
 </property>
-
 
 
 <property>
@@ -71,19 +97,16 @@ $ ./bin/goosefs-start.sh local SudoMount
 </property>
 
 
-
 <property>
     <name>fs.cosn.userinfo.secretKey</name>
     <value></value>
 </property>
 
 
-
 <property>
     <name>fs.cosn.bucket.region</name>
     <value></value>
 </property>
-
 
 
 <!-- CHDFS related configurations -->
@@ -93,19 +116,16 @@ $ ./bin/goosefs-start.sh local SudoMount
 </property>
 
 
-
 <property>
    <name>fs.ofs.impl</name>
    <value>com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter</value>
 </property>
 
 
-
 <property>
    <name>fs.ofs.tmp.cache.dir</name>
    <value>/data/chdfs_tmp_cache</value>
 </property>
-
 
 
 <!--appId-->      
@@ -125,7 +145,7 @@ $ ./bin/goosefs-start.sh local SudoMount
 1. 创建一个命名空间 namespace 并挂载 COS：
 
 ```shell
-$ goosefs ns create myNamespace cosn://bucketName-1250000000/3TB \
+$ goosefs ns create myNamespace cosn://bucketName-1250000000/ \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
 --secret fs.cosn.userinfo.secretKey=XXXXXXXXXXXX \
 --attribute fs.cosn.bucket.region=ap-xxx \
@@ -136,24 +156,19 @@ $ goosefs ns create myNamespace cosn://bucketName-1250000000/3TB \
 > - 创建 Namespace 时，如果没有指定读写策略（rPolicy/wPolicy），默认会使用配置文件中指定的 read/write type，或使用默认值（CACHE/CACHE_THROUGH）。
 >
 同理，也可以创建一个命名空间 namespace 用于挂载腾讯云 HDFS：
-
 ```shell
-goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB \
+goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/ \
 --attribute fs.ofs.user.appid=1250000000
 --attribute fs.ofs.tmp.cache.dir=/tmp/chdfs
 ```
-
 2. 创建成功后，可以通过 `ls` 命令列出集群中创建的所有 namespace：
-
 ```shell
 $ goosefs ns ls
 namespace	      mountPoint	       ufsPath                     	 creationTime                wPolicy      	rPolicy	     TTL	   ttlAction
 myNamespace    /myNamespace   cosn://bucketName-125xxxxxx/3TB  03-11-2021 11:43:06:239      CACHE_THROUGH   CACHE        -1      DELETE
 myNamespaceCHDFS /myNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB 03-11-2021 11:45:12:336 CACHE_THROUGH   CACHE  -1  DELETE
 ```
-
 3. 执行如下命令，指定 namespace 的详细信息。
-
 ```shell
 $ goosefs ns stat myNamespace
 
@@ -186,16 +201,13 @@ NamespaceStatus{name=myNamespace, path=/myNamespace, ttlTime=-1, ttlAction=DELET
 ## 使用 GooseFS 预热 Table 中的数据
 
 1. GooseFS 支持将 Hive Table 中的数据预热到  GooseFS 中，在预热之前需要先将相关的 DB 关联到 GooseFS 上，相关命令如下：
-
 ```shell
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
-
 >! 命令中的 thrift 需要填写实际的 Hive Metastore 的地址。
 >
 2. 添加完 DB 后，可以通过 ls 命令查看当前关联的 DB 和 Table 的信息：
-
 ```shell
 $ goosefs table ls test_db web_page
 
@@ -228,7 +240,6 @@ PARTITION LIST (
    }
 )
 ```
-
 3. 通过 load 命令预热 Table 中的数据：
 ```shell
 $ goosefs table load test_db web_page
@@ -265,9 +276,7 @@ http://www.apache.org/licenses/
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 ...
 ```
-
 5. GooseFS 默认使用本地磁盘作为底层文件系统，默认文件系统路径为 `./underFSStorage`，可以通过 `persist` 命令将文件持久化存储到本地文件系统中：
-
 ```shell
 $ goosefs fs persist /LICENSE
 persisted file /LICENSE with size 26847
@@ -283,7 +292,6 @@ $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 ```
 
 2. 统计文件中有多少单词 “tencent”，并计算操作耗时：
-
 ```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
@@ -291,7 +299,6 @@ real	0m22.857s
 user	0m7.557s
 sys	0m1.181s
 ```
-
 3. 将该数据缓存到内存中可以有效提升查询速度，详细示例如下：
 
 ```shell
@@ -304,7 +311,6 @@ real	0m1.917s
 user	0m2.306s
 sys	 0m0.243s
 ```
-
  可见，系统处理延迟从1.181s减少到了0.243s，得到了10倍的提升。
 
 ## 关闭 GooseFS

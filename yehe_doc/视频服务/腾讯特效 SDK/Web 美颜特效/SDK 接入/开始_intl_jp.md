@@ -56,7 +56,3 @@ if(isWebGLSupported()) {
 	// ロジックをブロックします
 }
 ```
-
-
-## コード例
-[クイックマスター](https://cloud.tencent.com/document/product/616/71371)をご参照ください。

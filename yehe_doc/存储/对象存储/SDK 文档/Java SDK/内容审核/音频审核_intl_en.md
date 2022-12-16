@@ -60,10 +60,10 @@ AudioAuditingResponse response = client.createAudioAuditingJobs(request);
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------- | :----------------------------------------------------------- | :----- | :------- |
-| BizType            | Request.Conf | Moderation policy. If this parameter is not specified, the default policy will be used. The policy can be configured in the console. For more information, see [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/1045/52107). | String | No |
-| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography), `Ads` (advertising), `Illegal` (illegal), and `Abuse` (abusive). You can pass in multiple types and separate them by comma, such as `Porn,Ads`. | String | No |
+| BizType            | Request.Conf | Moderation policy. If this parameter is not specified, the default policy will be used. The policy can be configured in the console. | String | No |
+| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). This parameter will no longer be maintained in the future. You can pass in multiple types and separate them by comma, such as `Porn,Ads`. If you need to moderate more scenes, use the `BizType` parameter. | String | No |
 | Callback | Request.Conf | The moderation result can be sent to your callback address in the form of a callback. Addresses starting with `http://` or `https://` are supported, such as `http://www.callback.com`.  | String | No |
-| CallbackVersion | Request.Conf | Structure of the callback content. Valid values: `Simple` (the callback content contains basic information), `Detail` (the callback content contains detailed information). Default value: `Simple`. | string | No |
+| CallbackVersion | Request.Conf | Structure of the callback content. Valid values: Simple (the callback content contains basic information), Detail (the callback content contains detailed information). Default value: Simple. | string | No |
 
 #### Response description
 

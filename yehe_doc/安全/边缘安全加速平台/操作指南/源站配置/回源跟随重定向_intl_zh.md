@@ -14,10 +14,8 @@
 若 Host `www.example.com` 的回源跟随重定向配置如下：
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/XZI8315_QQ20221116-121052.png)
 则用户 A 请求：`http://www.example.com/a`，在节点未命中缓存，则节点回源获取所需资源。若源站返回的 HTTP Response 状态码为302，指向重定向地址为 `http://www.example.com/b`，则：
-<dx-steps>
 
 1. 节点直接向重定向指向的地址`http://www.example.com/b`发起请求。
 2. 重定向3次内若获取到所需资源，见3；重定向3次内若未获取到所需资源，见4。
 3. 缓存资源至节点，并返回给用户 A；此时用户 B 也向`http://www.example.com/a`发起请求，则会在节点直接命中并返回给用户 B 。
 4. 直接返回301/302给用户，由客户端继续重定向。
-   </dx-steps>

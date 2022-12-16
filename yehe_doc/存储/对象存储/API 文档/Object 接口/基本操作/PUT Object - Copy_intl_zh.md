@@ -10,6 +10,9 @@ PUT Object - Copy 接口请求创建一个已存在 COS 的对象的副本，即
 
 > ! 
 > - 当 COS 收到复制请求或 COS 正在复制对象时可能会返回错误。如果在复制操作开始之前发生错误，则会收到标准的错误返回。如果在复制操作执行期间发生错误，则依然会返回 HTTP 200 OK，并将错误作为响应体返回。这意味着 HTTP 200 OK 响应既可以包含成功也可以包含错误，在使用此接口时应当进一步根据响应体的内容来判断复制请求的成功与失败并正确的处理结果。
+> - 标准存储（多 AZ）类型目前仅支持复制为标准存储（多 AZ）类型，不支持复制为标准存储、低频和归档存储类型。
+> - 低频存储（多 AZ）类型目前仅支持复制为低频存储（多 AZ）类型，不支持复制为标准存储、低频和归档存储类型。
+> 
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -46,7 +49,10 @@ Content-Length: 0
 Authorization: Auth String
 ```
 
-> ? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://www.tencentcloud.com/document/product/436/6224) 文档。
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> 
 
 #### 请求参数
 
@@ -64,7 +70,7 @@ Authorization: Auth String
 | x-cos-copy-source-If-Unmodified-Since | 当对象在指定时间后未被修改，则执行复制操作，否则返回 HTTP 状态码为412（Precondition Failed） | string | 否       |
 | x-cos-copy-source-If-Match            | 当对象的 ETag 与指定的值一致，则执行复制操作，否则返回 HTTP 状态码为412（Precondition Failed） | string | 否       |
 | x-cos-copy-source-If-None-Match       | 当对象的 ETag 与指定的值不一致，则执行复制操作，否则返回 HTTP 状态码为412（Precondition Failed） | string | 否       |
-| x-cos-storage-class                   | 目标对象的存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。默认值：STANDARD | Enum   | 否       |
+| x-cos-storage-class                   | 目标对象的存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 INTELLIGENT_TIERING，MAZ_INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。默认值：STANDARD | Enum   | 否       |
 | x-cos-tagging                         | 对象的标签集合，最多可设置10个标签（例如，Key1=Value1&Key2=Value2）。 标签集合中的 Key 和 Value 必须先进行 URL 编码 | string | 否       |
 |  x-cos-tagging-directive  |  是否复制源对象的标签信息，枚举值：Copy，Replaced，默认为 Copy。<br><li>如果标记为 Copy，则复制源对象的标签信息。<br><li>如果标记为 Replaced，则按本次请求的请求头中的标签信息作为目标对象的标签信息<br>当目标对象和源对象为同一对象时，即用户试图修改对象标签时，则标记必须为 Replaced  |  Enum   | 否     |
 
@@ -97,7 +103,7 @@ Authorization: Auth String
 
 如果源对象使用了服务端加密且加密方式为 SSE-C 时，则需要指定下列请求头部来解密源对象：
 
-| 名称                                                        | 描述                                                         | 类型   | 是否必选|
+| 名称                                                        | 描述                                                         | 类型   | 是否必选&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------ |
 | x-cos-copy-source-server-side-encryption-customer-algorithm | 服务端加密算法，目前仅支持 AES256                            | string | 源对象使用 SSE-C 时，此头部是必选项                          |
 | x-cos-copy-source-server-side-encryption-customer-key       | 服务端加密密钥的 Base64 编码，例如<code>MDEyMzQ1Njc4OUFCQ<br>0RFRjAxMjM0NTY3ODlBQkNERUY=</code> | string | 源对象使用 SSE-C 时，此头部是必选项                          |
@@ -153,7 +159,7 @@ Authorization: Auth String
 
 | 节点名称（关键字） | 父节点           | 描述                                                         | 类型   |
 | ------------------ | ---------------- | ------------------------------------------------------------ | ------ |
-| ETag               | CopyObjectResult | 对象的实体标签（Entity Tag），是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化。<br>例如`8e0b617ca298a564c3331da28dcb50df`，此头部并不一定返回对象的 MD5 值，而是根据对象上传和加密方式而有所不同。 | string |
+| ETag               | CopyObjectResult | 对象的实体标签（Entity Tag），是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化。<br>例如`8e0b617ca298a564c3331da28dcb50df`，此头部并不一定返回对象的 MD5 值，而是根据对象上传和加密方式而有所不同 | string |
 | CRC64              | CopyObjectResult | 对象的 CRC64 值，详情请参见 [CRC64 校验](https://intl.cloud.tencent.com/document/product/436/34078) 文档 | number |
 | LastModified       | CopyObjectResult | 对象最后修改时间，为 ISO8601 格式，例如`2019-05-24T10:56:40Z` | date   |
 | VersionId          | CopyObjectResult | 对象的版本 ID，仅当目标存储桶启用了版本控制时才返回该元素    | string |
@@ -546,3 +552,4 @@ x-cos-request-id: NWU5MjAzYmNfNjRiMDJhMDlfOTE3N18yYWI4****
 			<VersionId>MTg0NDUxNTc0NDYxOTI4MzU0MDI</VersionId>
 </CopyObjectResult>
 ```
+

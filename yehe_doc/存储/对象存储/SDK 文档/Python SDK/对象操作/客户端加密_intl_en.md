@@ -2,7 +2,7 @@
 
 This document provides SDK code samples related to client encryption.
 
-## Description
+## Feature Overview
 
 The SDK for Python allows client-side encryption, which encrypts files before upload and decrypts them at the time of download. There are two types of client-side encryption: AES (symmetric) and RSA (asymmetric).
 They are only used for the encryption of the random keys generated. File data is always encrypted using the symmetric method AES256.
@@ -36,15 +36,16 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
 
 conf = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)
 
-# Method 1: initializing the encryption client using the key value
+# Option 1: Initializing the encryption client using the key value
+# Note: According to the requirements of the AES algorithm, `aes_key_value` needs to be Base64-encoded.
 aes_provider = AESProvider(aes_key='aes_key_value')
 
-# Method 2: initializing the encryption client using the key path
+# Option 2: Initializing the encryption client using the key path
 aes_key_pair = AESProvider(aes_key_path='aes_key_path')
 
 client_for_aes = CosEncryptionClient(conf, aes_provider)
@@ -111,15 +112,15 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
 
 conf = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)
 
-# Method 1: initializing the encryption client using the key value
+# Option 1: Initializing the encryption client using the key value
 rsa_key_pair = RSAProvider.get_rsa_key_pair('public_key_value', 'private_key_value')
 
-# Method 2: initializing the encryption client using the key path
+# Option 2: Initializing the encryption client using the key path
 rsa_key_pair = RSAProvider.get_rsa_key_pair_path('public_key_path', 'private_key_path')
 
 rsa_provider = RSAProvider(key_pair_info=rsa_key_pair)

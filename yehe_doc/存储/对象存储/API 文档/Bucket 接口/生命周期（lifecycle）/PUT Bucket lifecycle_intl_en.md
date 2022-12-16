@@ -1,23 +1,23 @@
-## Overview
+## Feature Description
 
 COS introduces the lifecycle feature for you to manage the lifecycle of objects in buckets. The lifecycle configuration contains one or more rules that apply to a set of objects. Each rule defines one operation.
 There are two types of operations:
 
-- **Transition**: defines when an object is transitioned to another storage class. For example, you can transition an object to STANDARD_IA (suitable for infrequently accessed objects) 30 days after its creation. You can also transition the object to INTELLIGENT TIERING (suitable for objects with irregular access patterns) or ARCHIVE (offering lower costs). For specific parameters, please see `Transition` in the sample request description.
-- **Expiration**: specifies when an object shall expire. COS will automatically delete expired objects.
+- **Transition**: Defines when an object is transitioned to another storage class. For example, you can transition an object to STANDARD_IA (suitable for infrequently accessed objects) 30 days after its creation. You can also transition the object to INTELLIGENT TIERING (suitable for objects with irregular access patterns) or ARCHIVE (offering lower costs). For specific parameters, see `Transition` in the sample request description.
+- **Expiration**: Specifies when an object shall expire. COS will automatically delete expired objects.
 
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutBucketLifecycle&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -28,7 +28,8 @@ There are two types of operations:
 This API is used to create a new lifecycle configuration for a bucket. If a lifecycle configuration has already been set for the bucket, the new configuration created with this API will overwrite the existing one.
 
 > !
-> - `Days` and `Date` cannot be both specified in the same lifecycle rule. Please pass them to two separate rules. For details, please see the following [Sample](#.E5.AE.9E.E9.99.85.E6.A1.88.E4.BE.8B).
+> - `Days` and `Date` cannot be both specified in the same lifecycle rule. Pass them to two separate rules. For details, see the following [Sample](#.E5.AE.9E.E9.99.85.E6.A1.88.E4.BE.8B).
+> - Objects in buckets with [MAZ configuration](https://intl.cloud.tencent.com/document/product/436/35208) enabled cannot be transitioned to an OAZ bucket.
 >- Up to 1,000 lifecycle rules can be added for each bucket.
 
 ## Request
@@ -45,7 +46,7 @@ Content-MD5: MD5
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
@@ -123,8 +124,8 @@ The nodes are described as follows:
 | Prefix | LifecycleConfiguration.Rule<br>.Filter.And | Matching prefix for the rule. It specifies objects that the lifecycle rule applies to. There can be one `Prefix` at most. | String | No |
 | Tag | LifecycleConfiguration.Rule<br>.Filter.And | A set of tags. Up to 10 tags are supported. | Container | No |
 | Key | LifecycleConfiguration.Rule<br>.Filter.And.Tag | Key of the tag. It can be up to 128 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. | String | No |
-|  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag  | Value of the tag. It can be up to 256 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. |   String |  No  | 
-|Status | LifecycleConfiguration.Rule                                  | Whether to enable the rule. Enumerated values: `Enabled`, `Disabled`    | String    | Yes |
+|  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag | Value of the tag. It can be up to 256 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. | String | No |
+| Status | LifecycleConfiguration.Rule | Indicates whether the rule is enabled. Enumerated values: `Enabled`, `Disabled` | String | Yes |
 | Expiration | LifecycleConfiguration.Rule | Expiration attributes of the rule | Container | No |
 | Transition | LifecycleConfiguration.Rule    | Specifies when to transition the object and the target storage class. | Container | No  |
 | Days | LifecycleConfiguration.Rule<br>.Transition or Expiration | Specifies the number of days between the date an object was last modified and the date when the operation corresponding to the rule is performed. <br><li>If it is a `Transition` operation, this value should be a non-negative integer. <br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
@@ -135,7 +136,7 @@ The nodes are described as follows:
 | NoncurrentVersionExpiration | LifecycleConfiguration.Rule | Specifies when noncurrent object versions shall expire. | Container | No |
 | NoncurrentVersionTransition | LifecycleConfiguration.Rule | Specifies when to transition objects of noncurrent versions and the target storage class. | Container | No |
 | NoncurrentDays | LifecycleConfiguration.Rule<br>.NoncurrentVersionExpiration <br>or NoncurrentVersionTransition | Specifies the number of days between the date when an object becomes noncurrent and the date when the operation corresponding to a rule is performed.<br><li>If it is a `Transition` operation, this value should be a non-negative integer.<br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
-| StorageClass | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information about storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | Yes |
+| StorageClass | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `MAZ_STANDARD_IA`, `INTELLIGENT_TIERING`, `MAZ_INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information about storage classes, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | Yes |
 
 ## Response
 
@@ -149,7 +150,7 @@ The response body is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Samples
 

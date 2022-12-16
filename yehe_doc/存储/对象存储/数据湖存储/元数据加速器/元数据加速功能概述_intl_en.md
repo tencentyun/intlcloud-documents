@@ -1,19 +1,19 @@
 
-Metadata acceleration is a high-performance file system feature offered by COS. Metadata acceleration leverages the powerful metadata management feature of Cloud HDFS (CHDFS) at the underlying layer to allow you to access COS over file system semantics. The system design metrics can reach a bandwidth of up to 2.4 GB/s, over 100,000 queries per second (QPS), and a latency of milliseconds. Buckets with metadata acceleration enabled can be widely used in scenarios such as big data, high-performance computing, machine learning, and AI.
+Metadata acceleration is a high-performance file system feature offered by COS. Metadata acceleration leverages the powerful metadata management feature of Cloud HDFS (CHDFS) at the underlying layer to allow you to access COS over file system semantics. The system design metrics can reach a bandwidth of up to 100 GB/s, over 100,000 queries per second (QPS), and a latency of milliseconds. Buckets with metadata acceleration enabled can be widely used in scenarios such as big data, high-performance computing, machine learning, and AI.
 
-If you haven't enabled metadata acceleration for a bucket, it cannot accelerate metadata access by default and does not support access over POSIX file semantics, making it less favorable in terms of file `LIST` and unable to support `RENAME`. After enabling metadata acceleration, you can use POSIX file semantics to access objects in buckets through native COS APIs, the Hadoop tool deployed on the client side, the console, or SDKs.
+If you haven't enabled metadata acceleration for a bucket, it cannot accelerate metadata access by default and does not support access with POSIX file semantics, making it less favorable in terms of file `LIST` and not support `RENAME`. After enabling metadata acceleration, you can use POSIX file semantics to access objects in buckets through native COS APIs or the Hadoop tool deployed on the client side, the console, or SDKs.
 
->! Metadata acceleration can only be enabled upon bucket creation and cannot be disabled afterwards. **Think twice** before enabling it.
+>! Metadata acceleration can only be enabled upon bucket creation and cannot be disabled once enabled. **Think twice** before enabling it.
 >
 
 ## Use Limits
 
-The following table compares the supported product features before and after metadata acceleration is enabled:
+The following table compares the product feature support between enabling and not enabling metadata acceleration:
 
 | Metric | Metadata Acceleration Enabled  | Metadata Acceleration Disabled |
 | ------------ | -------------------- | ---------------- |
-| Bucket creation/query/deletion | Supported | Supported         |
-| Object upload/download/deletion | Supported                | Supported  |
+| Creating/Querying/Deleting buckets | Supported | Supported         |
+| Uploading/Downloading/Deleting objects | Supported                | Supported  |
 | Bucket permissions  | Supported     | Supported    |
 | Object permissions | Inheriting bucket permissions by default | Supported |
 | Intra-region disaster recovery | Supported | Supported         |
@@ -33,6 +33,6 @@ The following table compares the supported product features before and after met
 | CI | N/A | Supported |
 
 
-## Billing
+## Billing Details
 
 Currently, metadata acceleration is in free beta test. If billing is required in the future, we will notify you by [Message Center](https://console.cloud.tencent.com/message), email, or SMS. You can check the Message Center or see [Billing Overview](https://intl.cloud.tencent.com/document/product/436/16871) to stay up to date with the latest billing plan.

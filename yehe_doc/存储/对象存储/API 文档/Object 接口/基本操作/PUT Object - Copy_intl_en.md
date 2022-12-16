@@ -1,6 +1,6 @@
-## Overview
+## Feature Description
 
-This API is used to create a copy of an object that already exists in COS, i.e., copying an object from the source path (object key) to the destination path (object key). The recommended object size is from 1 MB to 5 GB. For objects larger than 5 GB, please use [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287).
+This API is used to create a copy of an object that already exists in COS, i.e., copying an object from the source path (object key) to the destination path (object key). The recommended object size is from 1 MB to 5 GB. For objects larger than 5 GB, use [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287).
 
 You can specify how metadata is processed during the copy process. By default, the metadata will be copied to the destination object. You can also choose not to copy the metadata of the source object and specify new metadata in the API request. However, unless the storage class, access control list (ACL), and server-side encryption (SSE) are explicitly specified in the request, the storage class of the destination object will be STANDARD, the ACL of the destination bucket will be inherited, and SSE will not be used by default, regardless of the processing method.
 
@@ -10,18 +10,21 @@ To call this API, you need to have permission to read the object you want to cop
 
 > ! 
 > - An error may be returned when COS receives the copy request or is copying the object. If an error occurs before the copy begins, a standard error response will be returned. If an error occurs during the copy, `HTTP 200 OK` will be returned with the error as the response body, meaning that the `HTTP 200 OK` response can include both success and error information. When using this API, pay attention to the content of the response body to determine whether the copy request was successful and process the result accordingly.
+> - The `MAZ_STANDARD` storage class only supports replication into the exact same class rather than standard storage, low frequency, or archive storage classes.
+> - The MAZ_STANDARD_IA storage class only supports replication into the exact same class rather than STANDARD, STANDARD_IA, and ARCHIVE storage classes.
+> 
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutObjectCopy&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -33,7 +36,7 @@ To call this API, you need to have permission to read the object you want to cop
 - If versioning is enabled for the bucket where the source object resides, the latest version of the source object is copied by default. You can specify the `versionId` parameter in the `x-cos-copy-source` request header to copy a specified version.
 - If versioning is enabled for the destination bucket, COS will automatically generate a unique version ID for the destination object.
 
-## Requests
+## Request
 
 #### Sample request
 
@@ -46,7 +49,10 @@ Content-Length: 0
 Authorization: Auth String
 ```
 
-> ? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> 
 
 #### Request parameters
 
@@ -54,7 +60,7 @@ This API has no request parameter.
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 | Header | Description | Type | Required |
 | ------------------------------------- | ------------------------------------------------------------ | ------ | -------- |
@@ -64,7 +70,7 @@ In addition to common request headers, this API also supports the following requ
 | x-cos-copy-source-If-Unmodified-Since | If the object is not modified after the specified time, the copy operation will be executed; otherwise, an HTTP 412 status code (Precondition Failed) is returned. | string | No |
 | x-cos-copy-source-If-Match | If the `ETag` of the object is the same as the specified value, the copy operation will be executed; otherwise, an HTTP 412 status code (Precondition Failed) is returned. | string | No |
 | x-cos-copy-source-If-None-Match | If the `ETag` of the object is not the same as the specified value, the copy operation will be executed; otherwise, an HTTP 412 status code (Precondition Failed) is returned. | string | No |
-| x-cos-storage-class | Storage class of the destination object. For the enumerated values, such as `INTELLIGENT_TIERING`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
+| x-cos-storage-class | Storage class of the destination object. For the enumerated values, such as `INTELLIGENT_TIERING`, `MAZ_INTELLIGENT_TIERING`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
 | x-cos-tagging | A set of up to 10 object tags (for example, `Key1=Value1&Key2=Value2`). Tag key and tag value in the set must be URL-encoded. | string  | No |
 |  x-cos-tagging-directive  | Specifies whether to copy the tags of the source object. Enumerated values: `Copy` (default), `Replaced`.<br><li>If this parameter is set to `Copy`, tags of the source object will be copied.<br><li>If this parameter is set to `Replaced`, tags specified in the request header will be used for the destination object.<br>When the source and destination object is the same, that is, you want to modify the object tag, this parameter must be set to `Replaced`. | Enum | No |
 
@@ -87,7 +93,7 @@ When copying an object, you can configure the access permissions of the destinat
 
 | Header | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the ACL attribute of the destination object. For the enumerated values, such as `default` (default), `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). <br>**Note**: If you do not need to set an ACL for the object, set this parameter to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
+| x-cos-acl | Defines the ACL attribute of the destination object. For the enumerated values, such as `default` (default), `private`, and `public-read`, see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). <br>**Note**: If you do not need to set an ACL for the object, set this parameter to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
 | x-cos-grant-read | Grants a user permission to read the destination object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-read-acp | Grants a user permission to read the ACL of the destination object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-write-acp | Grants a user permission to write to the ACL of the destination object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
@@ -97,7 +103,7 @@ When copying an object, you can configure the access permissions of the destinat
 
 If the source object uses the server-side encryption method, `SSE-C`, you need to specify the following request headers to decrypt the source object:
 
-| Header | Description | Type | Required  |
+| Header | Description | Type | Required &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------ |
 | x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm. Currently, only AES256 is supported. | string | Required if the source object uses SSE-C. |
 | x-cos-server-side-encryption-customer-key | Base64-encoded server-side encryption key, such as <code>MDEyMzQ1Njc4OUFCQ<br>0RFRjAxMjM0NTY3ODlBQkNERUY=</code> | string | Required if the source object uses SSE-C. |
@@ -105,7 +111,7 @@ If the source object uses the server-side encryption method, `SSE-C`, you need t
 
 **Headers related to SSE of the destination object**
 
-Server-side encryption can be used during object copying. For more information, please see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+Server-side encryption can be used during object copying. For more information, see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Request body
 
@@ -115,9 +121,9 @@ This API does not have a request body.
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-**Versioning-related headers**
+**Versioning-Related Headers**
 
 When the version ID of the source object is specified, the following response headers are returned:
 
@@ -125,9 +131,9 @@ When the version ID of the source object is specified, the following response he
 | ---------------------------- | --------------- | ------ |
 | x-cos-copy-source-version-id | Version ID of the source object | string |
 
-**Headers related to SSE**
+**SSE-related headers**
 
-If server-side encryption is used during object copying, this API will return headers used specifically for server-side encryption. For more information, please see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used during object copying, this API will return headers used specifically for server-side encryption. For more information, see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
@@ -154,19 +160,19 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ---------------- | ------------------------------------------------------------ | ------ |
 | ETag | CopyObjectResult | Entity tag of the object. It indicates the content of the object when it is created and can be used to verify whether the object content is changed. <br>Example: "8e0b617ca298a564c3331da28dcb50df"<br>The value of `ETag` is not necessarily the MD5 checksum of the object. The value will be different if the uploaded object is encrypted. | string |
-| CRC64 | CopyObjectResult | CRC64 checksum of the object. For more information, please see [CRC64 Check](https://intl.cloud.tencent.com/document/product/436/34078). | number |
+| CRC64 | CopyObjectResult | CRC64 checksum of the object. For more information, see [CRC64 Check](https://intl.cloud.tencent.com/document/product/436/34078). | number |
 | LastModified | CopyObjectResult | Last modified time of the object in ISO 8601 format, such as `2019-05-24T10:56:40Z` | date |
 | VersionId | CopyObjectResult | Version ID of the object. This node is returned only if versioning is enabled for the destination bucket. | string |
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Samples
 
-The response of this API uses `Transfer-Encoding: chunked` encoding by default. Note that for the convenience of reading, use cases in this document are displayed without Transfer-Encoding. During use, different languages and libraries can automatically process this encoding form. For more information, refer to language- and library-related documents.
+This API uses `Transfer-Encoding: chunked` in the response by default. For readability, samples in this document are displayed without `Transfer-Encoding`. During use, different languages and libraries can automatically process this encoding form. For more information, see the language- and library-related documents.
 
-#### Sample 1: simple use case
+#### Sample 1: Simple use case
 
 #### Request
 
@@ -201,7 +207,7 @@ x-cos-request-id: NWU5MGI4ZWVfNzljMDBiMDlfMWM3MjlfMWQ1****
 </CopyObjectResult>
 ```
 
-#### Sample 2: replacing metadata during copying
+#### Sample 2: Replacing metadata during copying
 
 #### Request
 
@@ -239,7 +245,7 @@ x-cos-request-id: NWU5MGI4ZjlfYTZjMDBiMDlfN2Y1YV8xYjI4****
 </CopyObjectResult>
 ```
 
-#### Sample 3: modifying object metadata
+#### Sample 3: Modifying object metadata
 
 #### Request
 
@@ -277,7 +283,7 @@ x-cos-request-id: NWU5MGI5MDRfNmRjMDJhMDlfZGNmYl8yMDVh****
 </CopyObjectResult>
 ```
 
-#### Sample 4: modifying the storage class of an object
+#### Sample 4: Modifying the storage class of an object
 
 This sample shows how to change the storage class of an object from STANDARD to ARCHIVE. This method is also suitable for switching between STANDARD and STANDARD_IA. If you want to change the storage class of an object stored in ARCHIVE/DEEP ARCHIVE to other storage classes, you need to call [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) to restore the object before calling this API.
 
@@ -316,7 +322,7 @@ x-cos-request-id: NWU5MGI5MGVfN2RiNDBiMDlfMTk1MjhfMWZm****
 </CopyObjectResult>
 ```
 
-#### Sample 5: copying an unencrypted object to a destination object encrypted with SSE-COS
+#### Sample 5: Copying an unencrypted object to a destination object encrypted with SSE-COS
 
 #### Request
 
@@ -353,7 +359,7 @@ x-cos-server-side-encryption: AES256
 </CopyObjectResult>
 ```
 
-#### Sample 6: copying an unencrypted object to a destination object encrypted with SSE-KMS
+#### Sample 6: Copying an unencrypted object to a destination object encrypted with SSE-KMS
 
 #### Request
 
@@ -393,7 +399,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 </CopyObjectResult>
 ```
 
-#### Sample 7: copying an object encrypted with SSE-C and replacing the key
+#### Sample 7: Copying an object encrypted with SSE-C and replacing the key
 
 #### Request
 
@@ -436,7 +442,7 @@ x-cos-server-side-encryption-customer-key-MD5: hRasmdxgYDKV3nvbahU1MA==
 </CopyObjectResult>
 ```
 
-#### Sample 8: modifying an object encrypted with SSE-C to non-encrypted
+#### Sample 8: Modifying an object encrypted with SSE-C to non-encrypted
 
 #### Request
 
@@ -475,7 +481,7 @@ x-cos-request-id: NWU5MGI5NGRfOWFjOTJhMDlfMjg2NDdfMTA0****
 </CopyObjectResult>
 ```
 
-#### Sample 9: specifying the version of the source object
+#### Sample 9: Specifying the version of the source object
 
 #### Request
 
@@ -511,7 +517,7 @@ x-cos-request-id: NWU5MjAzYTdfMWZjMDJhMDlfNTE4N18zNGU2****
 </CopyObjectResult>
 ```
 
-#### Sample 10: copying an object to a versioning-enabled bucket
+#### Sample 10: Copying an object to a versioning-enabled bucket
 
 #### Request
 
@@ -546,3 +552,4 @@ x-cos-request-id: NWU5MjAzYmNfNjRiMDJhMDlfOTE3N18yYWI4****
 			<VersionId>MTg0NDUxNTc0NDYxOTI4MzU0MDI</VersionId>
 </CopyObjectResult>
 ```
+

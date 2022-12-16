@@ -4,13 +4,13 @@ This document provides an overview of APIs and SDK code samples for persistent i
 
 | API | Description    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Persistent image processing](https://intl.cloud.tencent.com/document/product/436/40592) | Processes an image during upload, or processes an image stored in COS and saves the processing result to COS. |
+| [Persistent image processing](https://intl.cloud.tencent.com/document/product/436/40592) | Processes an image during upload, or processes an image stored in COS and saves the processing result to COS.Currently, images within 32 MB can be processed. |
 
 ## Processing During Upload
 
 #### Feature description
 
-CI allows you to process images during upload. To enable this, add `Pic-Operations` to the request header and set relevant parameters. You can also save the input images and processing results to COS. Currently, images within 20 MB can be processed.
+CI allows you to process images during upload. To enable this, add `Pic-Operations` to the request header and set relevant parameters. You can also save the input images and processing results to COS. 
 
 #### Method prototype
 
