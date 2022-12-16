@@ -49,5 +49,3 @@ In the cloud asset list, click the asset name to open the asset details page. Th
    - **Vulnerabilities**: You can view the vulnerability information of CVM assets from the dimensions of system component vulnerabilities, Web application vulnerabilities, and security baselines. 
    - **Threat alerts**: You can view the threat alerts of CVM assets from the dimensions of alert categories, alert actions, attack results, and alert status. 
    - **Configuration history**: You can view the configuration history of all asset types, and search configuration history by specifying a time range or keywords. You can also view configuration history details and click "Ignore" to ignore unimportant configuration history. If you need to unignore it, click "Retrieve" on the right side of the search box.
-
-  >? The current configuration history is for trial. This is available to users who already [Enable Security Operation Center Premium](https://buy.cloud.tencent.com/soc) for free.
