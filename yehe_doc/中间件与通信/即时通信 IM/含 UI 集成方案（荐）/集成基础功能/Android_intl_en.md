@@ -1,12 +1,20 @@
-## Environment Requirements
-- Android Studio 3.6.1
-- Gradle 5.1.1
-- Android Gradle Plugin Version 3.4.0
+TUIKit supports modular integration starting from version 5.7.1435. You can integrate modules for integration according to your needs.
+Starting from version 6.9.3557, TUIKit provides a new set of minimalist version UI components. The previous version UI components are still retained, which are called the classic version UI components. You can choose either the classic or minimalist version as needed.
 
+For more information about TUIKit components, see [here](https://www.tencentcloud.com/document/product/1047/50062).
+
+The following describes how to integrate TUIKit components. 
+
+## Environment Requirements
+- Android Studio-Chipmunk 
+- Gradle-6.7.1
+- Android Gradle Plugin Version-4.2.0
+- kotlin-gradle-plugin-1.5.31
+  
 ## Integrating Module Source Code
 1. Download the TUIKit source code from [GitHub](https://github.com/tencentyun/TIMSDK/tree/master/Android). Ensure that the TUIKit folder is at the same level as your project folder, for example:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/00bc0470857b850436663d9bf2ef9164.png" width="500"/>
-2. According to your business requirements, add the corresponding TUI components in `settings.gradle`. For example, you can add TUIChat to implement the chat feature, add TUIConversation to implement the conversation list feature, and add TUICallKit to implement the audio/video call feature. TUI components are independent of each other, and adding or removing them does not affect project compilation.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/00bc0470857b850436663d9bf2ef9164.png" width="500"/> 
+1. Add the corresponding TUIKit components to `settings.gradle` according to your business requirements. TUIKit components are independent of each other, and adding or removing them does not affect project compilation.
 ```groovy
 // Include the upper-layer app module
 include ':app'
@@ -39,6 +47,10 @@ project(':tuigroup').projectDir = new File(settingsDir, '../TUIKit/TUIGroup/tuig
 include ':tuiofflinepush'
 project(':tuiofflinepush').projectDir = new File(settingsDir, '../TUIKit/TUIOfflinePush/tuiofflinepush')
 
+// Include the community topic feature module (To use this module, you need to purchase the Ultimate edition)
+include ':tuicommunity'
+project(':tuicommunity').projectDir = new File(settingsDir, '../TUIKit/TUICommunity/tuicommunity')
+
 // Include the audio/video call feature module
 include ':tuicallkit'
 project(':tuicallkit').projectDir = new File(settingsDir, '../TUIKit/TUICallKit/tuicallkit')
@@ -52,6 +64,7 @@ dependencies {
     api project(':tuisearch')
     api project(':tuigroup')
     api project(':tuiofflinepush')
+    api project(':tuicommunity')
     api project(':tuicallkit')  
 }
 ```
@@ -59,17 +72,28 @@ dependencies {
 ```properties
 android.enableJetifier=true
 ```
-5. Add the following to the `build.gradle` file of the root project to add the Maven repository:
+[](id:buildStep5)
+5. Add the following to the `build.gradle` file (in the same level as `settings.gradle`) of the root project to add the Maven repository and Kotlin support:
 ```groovy
-allprojects {
+buildscript {
+    ext.kotlin_version = '1.5.31'
     repositories {
         mavenCentral()
         maven { url "https://mirrors.tencent.com/nexus/repository/maven-public/" }
     }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
 ```
 6. Sync the project, and compile and run it. The expected project structure is shown in the following figure:<br>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/454abb6051a7a94a08559d8404e5aec7.png" width="400"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/454abb6051a7a94a08559d8404e5aec7.png" width="400"/> 
+7. (Optional) Delete unnecessary UI files
+The classic and minimalist versions of UIs do not affect each other, and they can run independently. The classic and minimalist version UI files are in separate folders within each TUIKit component. Take TUIChat as an example:
+<img src="https://qcloudimg.tencent-cloud.cn/raw/179a15bb72b24a09cf7440c50e5c3442.png" width="400"/> 
+The `classicui` folder stores the classic version UI files, and the `minimalistui` folder stores the minimalist version UI files. If you are to integrate the minimalist version UIs, directly delete the `classicui` folder and delete `Activity` and `Service` corresponding to the classic version UIs in the `AndroidManifest.xml` file.
+> ? The classic and minimalist versions of UI components cannot be used together. If you integrate multiple components, all the integrated components must be of the same version: classic or minimalist.
 
 ## Quick Build
 Instant messaging software usually consists of several basic UIs such as the conversation list, chat window, contacts, and audio/video call UIs. It only takes a few lines of code to build these UIs in your project. The process is as follows:
@@ -106,9 +130,7 @@ TUILogin.login(context, sdkAppID, userID, userSig, new TUICallback() {
     android:layout_weight = "1"/>
 </LinearLayout>
 ```
-
 2. Create `FragmentAdapter.java` to work with ViewPager2 to display the conversation and contacts UIs.
-
 ```java
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -159,56 +181,84 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
 The getting, synchronization, display, and interaction of the conversation list `TUIConversationFragment` and contact list `TUIContactFragment` UI data are already encapsulated in TUI components, and UIs can be used as easily as common Android fragments.
 
-Add the following to the `onCreate` method in `MainActivity.java`:
+Add the following code to the `onCreate` method in `MainActivity.java`:
+
+<dx-tabs>
+::: Classic version
 ```java
 List<Fragment> fragments = new ArrayList<>();
-// Conversation UI provided by TUIConversation
+// Add the classic version of conversation UI provided by TUIConversation
 fragments.add(new TUIConversationFragment());
-// Contacts UI provided by TUIContact
+
+// Add the classic version of contacts UI provided by TUIContact
 fragments.add(new TUIContactFragment());
+
 ViewPager2 mainViewPager = findViewById(R.id.view_pager);
 FragmentAdapter fragmentAdapter = new FragmentAdapter(this);
 fragmentAdapter.setFragmentList(fragments);
 mainViewPager.setOffscreenPageLimit(2);
 mainViewPager.setAdapter(fragmentAdapter);
 mainViewPager.setCurrentItem(0, false);
+
 ```
+:::
+
+::: Minimalist version
+```java
+List<Fragment> fragments = new ArrayList<>();
+// Add the minimalist version of conversation UI provided by TUIConversation
+fragments.add(new TUIConversationMinimalistFragment());
+
+// Add the minimalist version of contacts UI provided by TUIContact
+fragments.add(new TUIContactMinimalistFragment());
+
+ViewPager2 mainViewPager = findViewById(R.id.view_pager);
+FragmentAdapter fragmentAdapter = new FragmentAdapter(this);
+fragmentAdapter.setFragmentList(fragments);
+mainViewPager.setOffscreenPageLimit(2);
+mainViewPager.setAdapter(fragmentAdapter);
+mainViewPager.setCurrentItem(0, false);
+
+```
+:::
+
+</dx-tabs>
+
+
 
 ### Step 4. Build the audio/video call feature
 TUI components allow users to start audio/video calls in chat UIs and can be quickly integrated with a few steps:
 
-<table style="text-align:center;vertical-align:middle;width: 800px">
+<table style="text-align:center;vertical-align:middle;width: 700px">
   <tr>
     <th style="text-align:center;" ><b>Video Call<br></b></th>
     <th style="text-align:center;"><b>Audio Call</b><br></th>
   </tr>
   <tr>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/b9f362503d25179db6f75fc91cfd000a.jpg"/></td>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2f037d7de8270c0edef68c0b829465ec.png"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/44d4c8a412752abda898341665a90016.png"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/5eb84936666da81b0331a28c3c779b77.png"/></td>
 	 </tr>
 </table>
 
+
 1. **Activate the TRTC service**
 	1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
-	2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 60 day free trial service of TUICallKit.
+	2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 7-day free trial service of TUICallKit.
 	3. Click **Confirm** in the pop-up dialog box. A TRTC app with the same SDKAppID as the IM app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
 2. **Integrate the TUICallKit component**
-Add the `tuicallkit` dependency to the `build.gradle` file in App:
+Add the `TUICallKit` dependency to the `build.gradle` file in App:
 ```groovy
 api project(':tuicallkit')
 ```
 3. **Start and answer a video or audio call**
-<table style="text-align:center;vertical-align:middle;width: 800px">
+<table style="text-align:center;vertical-align:middle;width: 600px">
   <tr>
-    <th style="text-align:center;" ><b>Starting a Call via a Message Page<br></b></th>
-    <th style="text-align:center;" ><b>Starting a Call via a Contact Profile Page<br></b></th>
+    <th style="text-align:center;" ><b>Starting a Call via a Message Page / Starting a Call via a Contact Profile Page<br></b></th>
   </tr>
   <tr>
-        <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/b34f84493214ca44bef32d0257d66693.png"  />    </td>
-    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/65d76fa2bea287a22c11b1f972996397.png"  />    </td>
+        <td><img style="width:600px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"  />    </td>
      </tr>
 </table>
-
 <ul>
 <li>After integrating the TUICallKit component, the chat UI and contact profile UI display the <b>Video Call</b> and <b>Audio Call</b> buttons by default. When a user clicks either of the buttons, TUIKit automatically displays the call invitation UI and sends the call invitation request to the callee.</li>
 <li>When an <strong>online</strong> user receives a call invitation with <strong>the app running in the foreground</strong>, TUIKit automatically displays the call receiving UI, where the user can answer or reject the call.</li>
@@ -254,10 +304,7 @@ For example:
 ```
 
 #### What should I do when I receive the message "NDK at /Users/***/Library/Android/sdk/ndk-bundle did not have a source.properties file"?
-The possible cause is that the versions of the Gradle and Gradle plugin in use are higher than expected. You can use the recommended versions shown as follows:
-<img style="width:600px" src="https://qcloudimg.tencent-cloud.cn/raw/ae3416874722fb086abcdfc8e2ed8a39.png" />
-
-Alternatively, you can keep using your current Gradle version by adding your NDK path to the `local.properties` file. For example:
+You only need to add you NDK path to the `local.properties` file. For example:
 `ndk.dir=/Users/***/Library/Android/sdk/ndk/16.1.4479499`
 
 #### What should I do when I receive the message "Cannot fit requested classes in a single dex file"?
@@ -266,8 +313,8 @@ The possible cause is that your API level is lower than expected. You need to en
 android {
     defaultConfig {
         ...
-        minSdkVersion 15
-        targetSdkVersion 28
+        minSdkVersion 19
+        targetSdkVersion 30
         multiDexEnabled true
     }
     ...
@@ -287,6 +334,6 @@ public class MyApplication extends SomeOtherApplication {
 }
 ```
 
-#### What should I do if the resource file cannot be found during TUIKit compilation, for example, when `getString(R.string.sure)` is invoked in the code and a message indicating the failure to find the `sure` symbol is reported during the compilation?
-For Android Studio of the latest version and Gradle Android of later versions, `android.nonTransitiveRClass=true` is added to the `gradle.properties` file by default when you create a project, and you only need to change it to `android.nonTransitiveRClass=false`.
+#### What should I do when I receive the message "Plugin with id 'kotlin-android' not found."?
+Because TUIChat uses Kotlin code, you need to add the Kotlin build plug-in. For details, see [step 5 in the "Integrating Module Source Code" section](#buildStep5).
 

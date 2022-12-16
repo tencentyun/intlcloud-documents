@@ -1,6 +1,6 @@
 ## First login to the page
 
-1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/config). In the left navigation pane, click **Cloud Security Configuration Management** -> **Configuration Check Policies** to go to the Configuration Check Policy page.
+1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/config). In the left navigation pane, click **Cloud Security Configuration Management** > **Configuration Check Policies** to go to the Configuration Check Policy page.
 2. Initially, two cloud security configuration check policies are available:
    - Default security specification check policy on Tencent Cloud: The check policy that is built in the system and enabled by default. In this policy, all assets are checked based on all configuration check items.
    - Configuration check policy for migration for the previous version: The custom configuration check policy that is used for migration by users of the previous version. This policy is enabled by default, while the default security specification check policy on Tencent Cloud is disabled. The policy period is the same as the check time configured for the previous version. All configuration check items are enabled.

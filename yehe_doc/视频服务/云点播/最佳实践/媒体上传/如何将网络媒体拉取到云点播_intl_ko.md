@@ -58,21 +58,24 @@ Tencent Cloud API 요청 스크립트는 다음 요구 사항을 충족하는 CV
 CVM 구매 방법은 [운영 가이드 - 인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855)을 참고하십시오. 시스템 재설치 방법은 [운영 가이드 - 시스템 재설치](https://intl.cloud.tencent.com/document/product/213/4933)를 참고하십시오.
 
 >!상기 조건에 부합하는 Tencent Cloud CVM이 없을 경우, 다른 공인 네트워크의 Linux(예: CentOS, Debian 등) 또는 Mac 디바이스에서도 스크립트를 실행할 수 있으나 운영 체제에 따라 스크립트의 개별 명령을 수정해야 합니다. 자세한 수정 방법은 개발자가 직접 검색하시기 바랍니다.
+
 <span id="p22"></span>
 ### 2단계: API 키 가져오기
 
 Tencent Cloud API 요청에는 API 키(즉, SecretId 및 SecretKey)가 필요합니다. API 키를 아직 생성하지 않은 경우 [키 문서 생성](https://intl.cloud.tencent.com/document/product/598/34228)에 따라 생성하십시오. 이미 키를 생성한 경우 [키 문서 보기](https://intl.cloud.tencent.com/document/product/598/34228)에 따라 키를 받으십시오.
+
 <span id="p23"></span>
 ### 3단계: VOD 활성화
 
 [시작하기 - 1단계](https://intl.cloud.tencent.com/document/product/266/8757)를 참고하여 VOD 서비스를 활성화하십시오.
+
 <span id="p24"></span>
 ### 4단계: 풀링 작업 시작
 
 [1단계](#p21)에서 준비한 CVM(로그인 방식은 [운영 가이드 - Linux 로그인](https://intl.cloud.tencent.com/document/product/213/5436)참고)에 로그인하여, 원격 터미널에 다음 명령어를 입력하고 실행합니다.
 
 ```
-ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/pull_upload_api.sh
+ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/pull_upload_api_en.sh
 ```
 
 >?[2단계](#p22)에서 얻은 값을 명령어의 SECRET_ID와 SECRET_KEY에 할당하십시오.

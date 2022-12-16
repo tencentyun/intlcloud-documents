@@ -21,7 +21,7 @@ The descriptions and values ​​of parameters are as follows (parameter names 
 | Parameter  | Description  | Value  |
 |---------|---------|---------|
 | https    |Request protocol      | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx  |   Exclusive domain name | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
+| xxxxxx  |   Exclusive domain name | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com`<li>Silicon Valley: `adminapiusa.im.qcloud.com` |
 | ver  | Protocol version number | Always `v4`.  |
 | servicename | Internal service name. Different values of `servicename` correspond to different service types. | Example:<br>For `v4/im_open_login_svc/account_import`, `im_open_login_svc` is the `servicename`.<br/>For more information, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621). |
 | command | Command word. This parameter is used with the `servicename` parameter to identify a specific service feature. | Example:<br>For `v4/im_open_login_svc/account_import`, `account_import` is the `command`.<br/>For more information, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621). |

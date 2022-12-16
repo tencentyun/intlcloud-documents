@@ -10,11 +10,10 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
 
 1.  Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/vulner). In the left navigation pane, click **Vulnerability Management**.
 2.  On the Vulnerability Management page, click **Pending Vulnerabilities Dashboard**.
-3.  On the Pending Vulnerabilities Dashboard, you can find the name, CVE number, vulnerability level, and other information of a type of vulnerability. - **Search**
+3.  On the Pending Vulnerabilities Dashboard, you can find the name, CVE number, vulnerability level, and other information of a type of vulnerability. 
+    - **Search**
     At the top of the Pending Vulnerabilities Dashboard, locate a vulnerability by entering its name or CVE number or using filters such as Vulnerability Type and Risk Level.
-
-       - **View details of a pending vulnerability**
-
+    - **View details of a pending vulnerability**
     On the Pending Vulnerabilities Dashboard, click **Vulnerability Name**. On the Vulnerability Details page that appears, view the basic information and asset information of the vulnerability. Click **Number of Assets Not Fixed**. On the Vulnerability List page, you can view the records of assets not fixed.
 
 ### Vulnerability List
@@ -28,7 +27,7 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
   - **Overview of pending vulnerabilities**: displays the total number of pending vulnerabilities and the numbers of high-, medium-, and low-risk pending vulnerabilities.
   - **Overview of vulnerabilities under fixing**: displays the total number of vulnerabilities under fixing and the numbers of high-, medium-, and low-risk vulnerabilities under fixing.
   - **Overview of handled vulnerabilities**: displays the total number of handled vulnerabilities and the numbers of high-, medium-, and low-risk handled vulnerabilities.
-- \*_Trend graph of pending vulnerabilities_
+- **Trend graph of pending vulnerabilities**
   This trend graph shows the trend of pending vulnerabilities in the past 24 hours, 7 days, 30 days, and 90 days.
 
 - **Search**
@@ -36,7 +35,9 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
 
 - **Set all as processed**
   After all vulnerabilities are fixed as instructed, you can click **Set all as processed** in the upper-left corner of the list. Then the vulnerabilities in "Pending" or "Fixing" status will be changed to the "Processed" status.
-- **Status change** - **Method 1**: In the list of vulnerability details, select the target vulnerabilities, choose the required status from the **Status Change** dropdown list at the top of the list to batch change the status. - **Method 2**: In the list of vulnerability details, choose the required status from the **Status Change** dropdown list in the operation column on the right of the target vulnerability to change the status.
+- **Status change** 
+   - **Method 1**: In the list of vulnerability details, select the target vulnerabilities, choose the required status from the **Status Change** dropdown list at the top of the list to batch change the status. 
+   - **Method 2**: In the list of vulnerability details, choose the required status from the **Status Change** dropdown list in the operation column on the right of the target vulnerability to change the status.
 
   > ?
   >
@@ -44,12 +45,16 @@ The Pending Vulnerabilities Dashboard presents the general information of the cu
   > - Mark as "Fixing": You can mark vulnerabilities as "Fixing" when they are being processed based on the description and fixing instructions on the Vulnerability Details page.
   > - Ignore vulnerabilities: Fill in scenario-specific comments when ignoring the scanned vulnerabilities. Once ignored, CWP (Cloud Workload Protection) or Vulnerability Scan will no longer detect the selected vulnerabilities.
 
-- **Redetection** - **Method 1**: In the list of vulnerability details, select the target vulnerabilities, and then click **Redetect** at the top of the list to redetect vulnerabilities in batches. - **Method 2**: In the list of vulnerability details, click **Redetect** in the operation column on the right of the target vulnerability.
+- **Redetection** 
+   - **Method 1**: In the list of vulnerability details, select the target vulnerabilities, and then click **Redetect** at the top of the list to redetect vulnerabilities in batches. 
+   - **Method 2**: In the list of vulnerability details, click **Redetect** in the operation column on the right of the target vulnerability.
 
   > ? "Pending" and "Fixing" vulnerabilities also can be redetected.
 
 - **Ignored Records**
-  On the Vulnerability Management page, you can click "Ignored Records" to view the records of ignored vulnerabilities. In the list of ignored records, you can unignore them. Unignoring resumes detection of that asset for that vulnerability. - Method 1: In the list of ignored records, select the target vulnerabilities, and click **Unignore** at the top of the list to unignore records in batches. - Method 2: In the list of ignored records, click **Unignore** in the operation column on the right of the target vulnerability to remove the ignored record.
+  On the Vulnerability Management page, you can click "Ignored Records" to view the records of ignored vulnerabilities. In the list of ignored records, you can unignore them. Unignoring resumes detection of that asset for that vulnerability. 
+    - Method 1: In the list of ignored records, select the target vulnerabilities, and click **Unignore** at the top of the list to unignore records in batches. 
+    - Method 2: In the list of ignored records, click **Unignore** in the operation column on the right of the target vulnerability to remove the ignored record.
 
 - **Vulnerability details**
   In the vulnerability details list, click **View Details** in the operation column on the right of the target vulnerability. On the Vulnerability Details page that appears, you can view the basic information of the vulnerability.

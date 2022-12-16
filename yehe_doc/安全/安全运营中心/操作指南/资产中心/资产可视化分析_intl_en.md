@@ -11,7 +11,7 @@ To use the visual analysis of assets feature, you must have enabled [Security Op
 
 ## Directions
 
-1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/assets). In the left navigation pane, select **Asset Center** -> **Visual Analysis of Assets** to go to the Visual Analysis of Assets page.
+1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/assets). In the left navigation pane, select **Asset Center** > **Visual Analysis of Assets** to go to the Visual Analysis of Assets page.
 2. On the Visual Analysis of Assets page, you can view the network security topological graph that shows the relationship among VPCs, subnets, and CVMs. You can click on the leaf node ![](https://qcloudimg.tencent-cloud.cn/raw/fde4d5ae51c28caa5435e76c12662f78.png) to view the asset details of the corresponding CVM.
    > ? The leaf nodes in the network security topological graph are CVMs. Red indicates that the CVM is at risk, and green indicates that the CVM is risk free.
 3. On the Visual Analysis of Assets page, you can perform the following operations.

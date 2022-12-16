@@ -14,11 +14,9 @@ You can enable redirect following during origin-pull. Then, when the 301/302 sta
 If the host `www.example.com` is configured with the redirect following rule during origin-pull as follows:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/XZI8315_QQ20221116-121052.png)
 Then, if user A requests a resource `http://www.example.com/a` not cached on the node, the node will request it from the origin server. If the HTTP response status code returned by the origin server is 302, and the redirect address is `http://www.example.com/b`, then:
-<dx-steps>
 
 1. The node sends a request to the `http://www.example.com/b` redirect address.
 2. If the requested resource is obtained within three redirects, see 3; otherwise, see 4.
 3. The resource is cached on the node and sent to user A. At this time, user B also sends a request for `http://www.example.com/a`, which will be directly hit on the node and returned to user B.
 4. The 301/302 status code is returned to the user, and the client is redirected once more.
-   </dx-steps>
 

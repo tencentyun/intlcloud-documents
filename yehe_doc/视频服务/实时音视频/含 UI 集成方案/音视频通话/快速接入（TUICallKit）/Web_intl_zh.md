@@ -7,17 +7,17 @@
 在接入前请检查您的桌面浏览器是否支持音视频服务，详细要求可参考[环境要求](#3-环境要求)。
 
 ## 目录
-* [步骤一：开通服务](#步骤一：开通服务)
-* [步骤二：引入 TUICallKit 组件](步骤二：引入-TUICallKit-组件)
-* [步骤三：调用 TUICallKit 组件](#步骤三：调用-TUICallKit-组件)
-* [其他文档](#其他文档)
-* [常见问题](#常见问题)
+* [步骤一：开通服务](#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E5.BC.80.E9.80.9A.E6.9C.8D.E5.8A.A1)
+* [步骤二：引入 TUICallKit 组件](#.E6.AD.A5.E9.AA.A4.E4.BA.8C.EF.BC.9A.E5.BC.95.E5.85.A5-tuicallkit-.E7.BB.84.E4.BB.B6)
+* [步骤三：调用 TUICallKit 组件](#.E6.AD.A5.E9.AA.A4.E4.B8.89.EF.BC.9A.E8.B0.83.E7.94.A8-tuicallkit-.E7.BB.84.E4.BB.B6)
+* [其他文档](#.E5.85.B6.E4.BB.96.E6.96.87.E6.A1.A3)
+* [常见问题](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)
   + [1. 如何生成 UserSig？](#1-如何生成-UserSig？)
   + [2. vite 引入问题](#2-vite-引入问题)
   + [3. 环境要求](#3-环境要求)
-    - [(1) 对浏览器版本要求](#(1)-对浏览器版本要求)
-    - [(2) 对网络环境的要求](#(2)-对网络环境的要求)
-    - [(3) 对网站域名协议的要求](#(3)-对网站域名协议的要求)
+    - (1) 对浏览器版本要求
+    - (2) 对网络环境的要求
+    - (3) 对网站域名协议的要求
 
 ## 步骤一：开通服务
 
@@ -25,29 +25,23 @@ TUICallKit 是基于腾讯云 [即时通信 IM](https://intl.cloud.tencent.com/d
 
 1. 登录到 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击**创建新应用**，在弹出的对话框中输入您的应用名称，并单击**确定**。
 
-<!-- <img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/1105c3c339be4f71d72800fe2839b113.png"/>  -->
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/ce2e34f7cd1cd14679fc5decffb469af.png)
 
 2. 单击刚刚创建出的应用，进入**基本配置**页面，并在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击**免费体验**即可开通 TUICallKit 的 7 天免费试用服务。
-
-<div align="center">
-<!-- <img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/667633f7addfd0c589bb086b1fc17d30.png"/>  -->
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
 3. 在同一页面找到 **SDKAppID** 和**密钥**并记录下来，它们会在后续中被用到。
 
-<!-- <img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/e435332cda8d9ec7fea21bd95f7a0cba.png"/>  -->
-
-<div align="center">
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/8349ac97b261279606316331488784c3.png)
+
 
  - SDKAppID：IM 的应用 ID，用于业务隔离，即不同的 SDKAppID 的通话彼此不能互通；
  - Secretkey：IM 的应用密钥，需要和 SDKAppID 配对使用，用于签出合法使用 IM 服务的鉴权用票据 UserSig，我们会在接下来的步骤五中用到这个 Key。
 
+
 ## 步骤二：引入 TUICallKit 组件
+
 
 ### 方式1：npm 集成
 
@@ -62,6 +56,7 @@ mkdir -p ./src/components/TUICallKit/Web && cp -r ./node_modules/@tencentcloud/c
 yarn add @tencentcloud/call-uikit-vue  # 如果你没装过 yarn, 可以先运行: npm install -g yarn
 xcopy .\node_modules\@tencentcloud\call-uikit-vue  .\src\components\TUICallKit\Web /i /e
 ```
+
 
 ### 方式2：源码集成
 
@@ -80,9 +75,11 @@ cd ./src/components/TUICallKit/Web
 yarn         # 如果你没装过 yarn, 可以先运行: npm install -g yarn
 ```
 
+
 ## 步骤三：调用 TUICallKit 组件
 
 在需要展示的页面，调用 TUICallKit 的组件即可展示通话页面。
+
 
 1. TUICallKit UI 引入，例如：
 
@@ -95,6 +92,7 @@ import { TUICallKit } from "./components/TUICallKit/Web";
   <TUICallKit />
 </template>
 ```
+
 
 2. 登录用户与拨打电话
 
@@ -112,15 +110,17 @@ import { TUICallKit } from "./components/TUICallKit/Web";
    TUICallKitServer.init({ SDKAppID, userID, userSig }); 
    ```
 
-   >? 
-   >- SDKAppID, SecretKey 的获取可见步骤一
-   >userSig 可**临时**使用 `GenerateTestUserSig.js` 中 `genTestUserSig(userID)` 函数来计算 ，例如：
-   >```javascript
-   >import * as GenerateTestUserSig from "./components/TUICallKit/Web/demos/basic/public/debug/GenerateTestUserSig.js";
-   >const { userSig } = GenerateTestUserSig.genTestUserSig(userID, SDKAppID, SecretKey);
-   >```
-   >- 若您使用 vite 作为启动工具，还需注意 [vite 引入问题](#2-vite-引入问题)
-   
+>?
+>- 若您使用 vite 作为启动工具，还需注意 [vite 引入问题](#2-vite-引入问题)
+>- SDKAppID, SecretKey 的获取可见步骤一
+>userSig 可**临时**使用 `GenerateTestUserSig.js` 中 `genTestUserSig(userID)` 函数来计算 ，例如：
+>```javascript
+import * as GenerateTestUserSig from "./components/TUICallKit/Web/demos/basic/public/debug/GenerateTestUserSig.js";
+const { userSig } = GenerateTestUserSig.genTestUserSig(userID, SDKAppID, SecretKey);
+>```
+
+
+
    >! 本文提到的获取 UserSig 的方案是在前端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通功能调试**。 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
    
     2.3 在需要拨打电话的地方，执行：
@@ -132,6 +132,7 @@ import { TUICallKit } from "./components/TUICallKit/Web";
     ```
 
     之后就可以成功拨打您的第一通电话了～更详解接口参数可参考[接口文档](https://www.tencentcloud.com/document/product/647/51015)
+
 
 3. 进阶接口
 
@@ -155,12 +156,14 @@ function afterCalling() {
 <TUICallKit :beforeCalling="beforeCalling" :afterCalling="afterCalling"/>
 ```
 
+
 ## 其他文档
 
 - [TUICallKit API](https://www.tencentcloud.com/document/product/647/51015)
 - [TUICallKit demo 快速跑通](https://github.com/tencentyun/TUICallKit/blob/main/Web/demos/basic/README.md)
 - [TUICallKit 界面定制指引](https://www.tencentcloud.com/document/product/647/50997)
 - [TUICallKit (Web) 常见问题](https://www.tencentcloud.com/document/product/647/51024)
+
 
 ## 常见问题
 ### 1. 如何生成 UserSig？
@@ -224,6 +227,7 @@ UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并
 <td>80+</td>
 </tr>
 </tbody></table>
+
 
 >? 详细兼容性查询，具体请参见 [浏览器支持情况](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)。同时，您可通过 [TRTC 检测页面](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 在线检测。
 

@@ -342,7 +342,7 @@ XGPushManager.createNotificationChannel(context, "default_message", "Default not
 
 Push messages are content delivered to an application by Tencent Push Notification Service. The application needs to inherit the `XGPushBaseReceiver` API to implement and handle all the operations on its own. In other words, delivered messages are not displayed on the notification bar by default, and Tencent Push Notification Service is responsible only for delivering messages from the Tencent Push Notification Service server to the application, but not processing the messages. The messages need to be processed by the application.
 
-Message refers to the text message delivered by you through console or backend scripts. Tencent Push Notification Service is only responsible for delivering the message to the application, while the application is fully responsible for handling the message body on its own.
+- Message refers to the text message delivered by you through console or backend scripts. Tencent Push Notification Service is only responsible for delivering the message to the application, while the application is fully responsible for handling the message body on its own.
 - Because the message is flexible and highly customizable, it is suitable for applications to handle custom business needs on their own, such as delivering application configuration information and customizing message retention and display.
 
 <span id="Message configuration"></span>
@@ -392,8 +392,9 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 ## In-App Message Display
 Starting with SDK v1.2.7.0, you can set whether to allow the display of in-app message windows. For example, you can enable the display of in-app message windows in one Activity page, while disable it in another Activity page.
 
->! In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the Tencent Push Notification Service SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
->```java
+<dx-alert infotype="notice">
+In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the Tencent Push Notification Service SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
+```java
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
     // Starting with Android 9, you need to set different WebView data directories for the WebView instances of apps’ non-main processes.
     String processName = getProcessName()
@@ -403,7 +404,9 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
     }
 }
 ```
-> Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs) (Google Developers).
+Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs) (Google Developers).
+</dx-alert>
+
 ### Setting whether to allow the display of in-app message windows
 ```java
 XGPushConfig.enableShowInMsg(Context context, boolean flag);

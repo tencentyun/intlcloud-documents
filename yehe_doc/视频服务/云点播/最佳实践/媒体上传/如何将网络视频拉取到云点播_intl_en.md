@@ -65,13 +65,14 @@ Your API key (i.e., `SecretId` and `SecretKey`) is required for TencentCloud API
 ### Step 3. Activate VOD
 
 Activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
+
 <span id="p24"></span>
 ### Step 4. Initiate a pull task
 
 Log in to the CVM instance prepared in [step 1](#p21) as instructed in [Logging into Linux Instance in Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436) and enter and run the following command on the remote terminal:
 
 ```
-ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/pull_upload_api.sh
+ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/pull_upload_api_en.sh
 ```
 
 >?Please assign the corresponding values obtained in [step 2](#p22) to `SECRET_ID` and `SECRET_KEY` in the command.

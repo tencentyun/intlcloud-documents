@@ -5,7 +5,9 @@ Asset Center provides the asset group feature to facilitate the security control
 1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/assets/group). In the left navigation pane, click **Asset Center** to go to the Asset Group page.
 2. On the Asset Group page, you can add, edit, and delete groups.
 
-- **Add a group** 1. In the upper-left corner of the Asset Group page, click **Add Group**. An "Add Group" pop-up window appears. 2. In the "Add Group" pop-up window, fill in the name and description of the asset group, select "Add assets manually" or "Batch add assets", and then click **OK**.
+- **Add a group** 
+   1. In the upper-left corner of the Asset Group page, click **Add Group**. An "Add Group" pop-up window appears. 
+   2. In the "Add Group" pop-up window, fill in the name and description of the asset group, select "Add assets manually" or "Batch add assets", and then click **OK**.
   > ? You can add up to 5 groups to one asset.
 - **Edit a group**
   1. In the operation pane to the right of the asset group to edit, click **Edit** to go to the Edit Group page.

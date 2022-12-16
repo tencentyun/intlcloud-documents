@@ -182,7 +182,7 @@ See [Getting Started - Step 2. Upload a video](https://intl.cloud.tencent.com/do
 
 Log in to the [CVM instance prepared in step 1](#p21) as instructed in [Logging In to Linux Instance in Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436) and enter and run the following command on the remote terminal:
 ```
-ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/transcode_api.sh
+ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/transcode_api_en.sh
 ```
 >?Please assign the corresponding values obtained in [step 2](#p22) to `SECRET_ID` and `SECRET_KEY` in the command.
 

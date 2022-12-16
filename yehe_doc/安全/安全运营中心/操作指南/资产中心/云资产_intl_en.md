@@ -2,7 +2,7 @@ The Security Operation Center provides the Asset Management feature to help you 
 
 ## Directions
 
-1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/assets). In the left navigation pane, select **Asset Center** -> **Cloud Assets** to go to the Cloud Assets page.
+1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/assets). In the left navigation pane, select **Asset Center** > **Cloud Assets** to go to the Cloud Assets page.
 2. If you have not created a preset role for the service and granted permissions to the Security Operation Center, on the Cloud Assets page, click **Go to access manager**. On the Role Manager page that appears, click **Agree to grant permissions**. If you have granted such permissions, skip this step.
 3. The upper half of the Cloud Assets page shows the following statistical charts.
 

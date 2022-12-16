@@ -12,9 +12,11 @@ The Security Operation Center provides the Historical Assets feature for storing
 - **Custom list management**
   In the upper-right corner of the historical asset list, click on the button <img src= "https://main.qcloudimg.com/raw/28f2bfe46373d488d335fa9af4599747.png" style="margin:0;"> to go to the Custom List Management page. You can select the list details fields as required.
 
-- **Edit a tag** 1. In the **Historical Assets** list, click the check box beside the target asset, select the asset to edit, and then click **Edit Tag**. A "Tag Manager" pop-up window appears. 2. In the "Tag Manager" pop-up window, you can tag an asset with existing tags. Alternatively, you can enter a new tag in the "New Tag" input box, and click "Create & Add" to create tags for the asset.
+- **Edit a tag** 
+    1. In the **Historical Assets** list, click the check box beside the target asset, select the asset to edit, and then click **Edit Tag**. A "Tag Manager" pop-up window appears. 
+    2. In the "Tag Manager" pop-up window, you can tag an asset with existing tags. Alternatively, you can enter a new tag in the "New Tag" input box, and click "Create & Add" to create tags for the asset.
 
-  > ? Tags are exclusively used to tag assets and can be viewed in asset details.
+  >? Tags are exclusively used to tag assets and can be viewed in asset details.
 
 - **Export**
   On the Historical Assets page, click on the button <img src= "https://main.qcloudimg.com/raw/5d6f28083f0484b4f0cb46b9c32717b5.png" style="margin:0;"> to export all data in the list by default. You can also select the "Export partial data" option.

@@ -66,7 +66,7 @@ Your API key (i.e., `SecretId` and `SecretKey`) and `APPID` are required for dep
 Log in to the [CVM instance prepared in step 1](#p1) as instructed in [Logging into Linux Instance in Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436) and enter and run the following command on the remote terminal:
 
 ```
-ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;export APPID=125xxxxxxx;export ANTI_LEECH_KEY=xxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/anti_leech_sign_scf.sh
+ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;export APPID=125xxxxxxx;export ANTI_LEECH_KEY=xxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/ anti_leech_sign_scf_en.sh
 ```
 
 >?Please assign the corresponding values obtained in [step 3](#p3) to `SECRET_ID`, `SECRET_KEY`, and `APPID` in the command and assign the hotlink protection key obtained in [step 2](#p2) to `ANTI_LEECH_KEY`.
