@@ -23,7 +23,7 @@ Inter-VPC firewall rules provide multiple access control lists (ACLs), each of w
 	- Observe: Allow the matched traffic and record the hit count, access control logs, and traffic logs.
 	- Block: Block the matched traffic and record the hit count and access control logs, but not traffic logs. 
  **Description**: The rule description with up to 50 characters. You can use a pair of # to insert special settings. Your current CFW edition supports #long connection#.
- - **Inter-VPC wildcard rules**: For more information about the IP address ranges that support wildcard, please see the wildcard rules in [Edge Firewall Rules](https://intl.cloud.tencent.com/document/product/1160/49844).	
+ - **Inter-VPC wildcard rules**: For more information about the IP address ranges that support wildcard, please see the wildcard rules in Edge Firewall Rules.	
 >!
 >- The CIDR blocks of the local and peer VPCs cannot be the same or overlap. Otherwise, the firewall cannot be enabled.
 >- In the inter-VPC access control rules, the access source and access destination can only be an IP in the CIDR block of the local/peer VPC or a sub-network range of it. As the CIDR blocks of the local and peer VPCs cannot be the same, the direction of the traffic controlled by a rule can be distinguished by the "Access source" or "Access destination".
@@ -56,7 +56,7 @@ Inter-VPC firewall rules provide multiple access control lists (ACLs), each of w
 <img src="https://qcloudimg.tencent-cloud.cn/raw/fd02dc26b0c96f4f10908dafb520471b.png" style="zoom:67%;" />
 
 ## More information
-- For the information about how to control the inbound and outbound traffic over the edge firewall on the Cloud Firewall console, please see [Edge Firewall Rules](https://intl.cloud.tencent.com/document/product/1160/49844).
+- For the information about how to control the inbound and outbound traffic over the edge firewall on the Cloud Firewall console, please see Edge Firewall Rules.
 For the information about how to control the inbound and outbound traffic over the NAT firewall on the Cloud Firewall console, please see [NAT Firewall Rules](https://intl.cloud.tencent.com/document/product/1160/49845).
 - For the special scenarios of the Cloud Firewall access control feature, please see [Special Scenarios](https://intl.cloud.tencent.com/document/product/1160/49850).
 - For questions about inter-VPC firewall rules, please see [Inter-VPC Firewall](https://intl.cloud.tencent.com/document/product/1160/49830).
