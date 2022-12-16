@@ -7,6 +7,7 @@ CDW allows you to create and delete accounts and view and reset passwords.
  <img src="https://qcloudimg.tencent-cloud.cn/raw/43de011143bffa6e347231c765e462c7.png" style="zoom: 67%;" />
 2. You can add and delete accounts and change their passwords.
  <img src="https://qcloudimg.tencent-cloud.cn/raw/825125b1667df568d49e64dfcb74f3f5.png" style="zoom: 67%;" />
+
 >? 
 >- Account name rule: It can contain 2–16 lowercase letters, digits, and underscores and must start with a letter and end with a letter or digit.
 >- Password rule: It must contain 8–30 (preferably more than 12) characters in at least three of the following types: lowercase letters, uppercase letters, digits, and symbols `()!@#$%^&*|?><`, and cannot start with `/`.
@@ -16,19 +17,19 @@ CDW allows you to create and delete accounts and view and reset passwords.
 ## Authorization
 1. Log in to the [CDW console](https://console.cloud.tencent.com/cdwch), click the target **ID/Name** in the cluster list to enter the cluster details page, and switch to **Account Management**. Click **Authorize Now** to enter the **Account Authorization** tab and authorize the account (by selecting a V-cluster and granting permissions of databases and tables):
 <img src="https://qcloudimg.tencent-cloud.cn/raw/c69ada62b8540bd095c02ccb459a566d.png" style="zoom:67%;" />
-	- Access Scope: You can grant the permissions of all or certain databases and tables.
-	- **General Permissions**:
-		- Query (enabled by default): SELECT, which is used to query databases, tables, and views.
-		- Configuration: ALTER, which is used to modify table structures.
-		- Insertion: INSERT, which is used to insert table data.
-	- **High-Risk Permissions**:
-		-  Table permissions
-			- Table creation: CREATE TABLE, CREATE VIEW, and CREATE DICTIONARY, which are used to create tables, views, and dictionaries respectively.
-			- Clearing: TRUNCATE and OPTIMIZE, which are used to clear and merge the table data respectively.
-			- Table deletion: DROP TABLE, DROP VIEW, and DROP DICTIONARY, which are used to delete tables, views, and dictionaries respectively.
-		-  Database permissions
- 			- Database creation: CREATE DATABASE, which is used to create databases. This option takes effect globally. If it is selected, you can see all databases.
- 			- Database deletion: DROP DATABASE, which takes effect only for specific databases.
+- Access Scope: You can grant the permissions of all or certain databases and tables.
+- **General Permissions**:
+	- Query (enabled by default): SELECT, which is used to query databases, tables, and views.
+	- Configuration: ALTER, which is used to modify table structures.
+	- Insertion: INSERT, which is used to insert table data.
+- **High-Risk Permissions**:
+	- Table permissions
+		- Table creation: CREATE TABLE, CREATE VIEW, and CREATE DICTIONARY, which are used to create tables, views, and dictionaries respectively.
+		- Clearing: TRUNCATE and OPTIMIZE, which are used to clear and merge the table data respectively.
+		- Table deletion: DROP TABLE, DROP VIEW, and DROP DICTIONARY, which are used to delete tables, views, and dictionaries respectively.
+	- Database permissions
+ 		- Database creation: CREATE DATABASE, which is used to create databases. This option takes effect globally. If it is selected, you can see all databases.
+ 		- Database deletion: DROP DATABASE, which takes effect only for specific databases.
 
 2. Authorize certain databases and tables.
 >? 
