@@ -56,7 +56,7 @@
 <td>Launched the domain alias feature</td>
 <td>For business scenarios with many domain names and the same configuration, such as SaaS site construction, only one target domain name needs to be connected, and all other bound domain aliases can enjoy the EdgeOne acceleration and security services.</td>
 <td>2022-09</td>
-<td>For more information, <a href="https://cloud.tencent.com/online-service/console?noTopNav=true&amp;noFooter=true&amp;noFloatBar=true&amp;from=edgeone#">contact us</a>.</td>
+<td>For more information, <a href="https://intl.cloud.tencent.com/contact-us">contact us</a>.</td>
 </tr>
 <tr>
 <td>Launched Edge Functions</td>
