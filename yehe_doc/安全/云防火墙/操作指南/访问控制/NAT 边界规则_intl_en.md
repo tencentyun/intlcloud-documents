@@ -109,7 +109,7 @@ Access control rules can filter specific domain names or filter traffic by geogr
 ![](https://qcloudimg.tencent-cloud.cn/raw/1c510076b8ea7926fa00ce1f85d49cd4.png)
 
 ## More information
-- For the information about how to control the inbound and outbound traffic over the edge firewall on the Cloud Firewall console, please see [Edge Firewall Rules](https://intl.cloud.tencent.com/document/product/1160/49844).
+- For the information about how to control the inbound and outbound traffic over the edge firewall on the Cloud Firewall console, please see Edge Firewall Rules.
 - For information about how to set inter-VPC firewall rules on the Cloud Firewall console, please see [Inter-VPC Firewall Rules](https://intl.cloud.tencent.com/document/product/1160/49846).
 - For the special scenarios of the Cloud Firewall access control feature, please see [Special Scenarios](https://intl.cloud.tencent.com/document/product/1160/49850).
 - For questions about NAT firewall rules, please see [NAT Firewall](https://intl.cloud.tencent.com/document/product/1160/49810).
