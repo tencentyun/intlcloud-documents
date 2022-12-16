@@ -18,7 +18,7 @@ The following table describes the modified parameters when this API is called. F
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | https | The request protocol is HTTPS, and the request method is POST. |
-| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>Chinese mainland: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
+| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>Chinese mainland: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com`<li>Silicon Valley: `adminapiusa.im.qcloud.com` |
 | v4/openim_msg_ext_http_svc/set_key_values | Request API                             |
 | sdkappid | SDKAppID assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
