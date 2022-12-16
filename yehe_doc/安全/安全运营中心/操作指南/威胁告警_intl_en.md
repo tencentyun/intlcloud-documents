@@ -13,7 +13,7 @@ You can perform various actions on alerts in the Alert Details page. All histori
    - Click on the icon ![](https://qcloudimg.tencent-cloud.cn/raw/6019d894f526e6f160f654d5d6905f36.png) next to **Not Recommended** to view the specific instructions.
    - Click **Download the Threat Operation Instruction Manual** to download the manual.
    - Clicking **Download later** indicates not to download this manual. When you reopen the Threat Alerts page, the "Threat Operation Instructions" prompt box will not appear. But you can view this manual by clicking **Threat Operation Instructions** in the "Usage Description" section.
-3. At the top of the Threat Alerts page, Usage Description is displayed by default. Click **View full description** to view the full documentation. Click ** Threat Operation Instructions**. A "Threat Operation Instructions" prompt box appears. For more information, see [Step 2](#2). To view the list of threat alerts and other actions, click **Hide** in the upper-right corner to hide this area. You can also click **Usage Description** to show this area.
+3. At the top of the Threat Alerts page, Usage Description is displayed by default. Click **View full description** to view the full documentation. Click **Threat Operation Instructions**. A "Threat Operation Instructions" prompt box appears. For more information, see [Step 2](#2). To view the list of threat alerts and other actions, click **Hide** in the upper-right corner to hide this area. You can also click **Usage Description** to show this area.
 
 ### Quick filter area
 
