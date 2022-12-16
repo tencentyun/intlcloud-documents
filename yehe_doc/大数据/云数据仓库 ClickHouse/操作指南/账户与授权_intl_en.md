@@ -17,6 +17,7 @@ CDW allows you to create and delete accounts and view and reset passwords.
 ## Authorization
 1. Log in to the [CDW console](https://console.cloud.tencent.com/cdwch), click the target **ID/Name** in the cluster list to enter the cluster details page, and switch to **Account Management**. Click **Authorize Now** to enter the **Account Authorization** tab and authorize the account (by selecting a V-cluster and granting permissions of databases and tables):
 <img src="https://qcloudimg.tencent-cloud.cn/raw/c69ada62b8540bd095c02ccb459a566d.png" style="zoom:67%;" />
+
 - Access Scope: You can grant the permissions of all or certain databases and tables.
 - **General Permissions**:
 	- Query (enabled by default): SELECT, which is used to query databases, tables, and views.
