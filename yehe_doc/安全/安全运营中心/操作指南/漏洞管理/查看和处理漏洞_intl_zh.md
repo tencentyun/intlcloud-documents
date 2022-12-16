@@ -1,6 +1,6 @@
 ## 前提条件
 
-如需查看或处理漏洞，需已开通 [主机安全](https://buy.cloud.tencent.com/yunjing) 及 [漏洞扫描服务](https://buy.cloud.tencent.com/vss)。
+如需查看或处理漏洞，需已开通 [主机安全](https://buy.cloud.tencent.com/yunjing) 及 [漏洞扫描服务](https://console.tencentcloud.com/vss)。
 
 ## 操作步骤
 
