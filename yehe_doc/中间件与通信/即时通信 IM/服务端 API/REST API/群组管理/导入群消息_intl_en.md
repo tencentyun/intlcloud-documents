@@ -28,7 +28,7 @@ The following table describes only the modified parameters when this API is call
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | https | The request protocol is HTTPS, and the request method is POST. |
-| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>Chinese mainland: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
+| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>Chinese mainland: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com`<li>Silicon Valley: `adminapiusa.im.qcloud.com` |
 | v4/group_open_http_svc/import_group_msg | Request API |
 | sdkappid | SDKAppID assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
@@ -101,7 +101,7 @@ The messages must be imported in ascending order by timestamp, and the timestamp
 | MsgBody | Array | Yes | TIM message. For more information, see the definition of `TIMMsgElement` in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | MsgType | String | Yes | TIM message object type. Valid values: `TIMTextElem` (text message), `TIMFaceElem` (emoji message), `TIMLocationElem` (location message), `TIMCustomElem` (custom message) |
 | MsgContent | Object | Yes | TIM message object. For more information, see the definition of `TIMMsgElement` in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| TopicId | String | Optional | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
+| TopicId | String | No | The ID of the topic. This option is only avaiable for the community that supports the topic feature.|
 
 ### Sample response
 
