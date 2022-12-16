@@ -1,6 +1,6 @@
 ## Prerequisites
 
-To view or handle vulnerabilities, you must have enabled [CWP](https://buy.cloud.tencent.com/yunjing) and [Vulnerability Scan](https://buy.cloud.tencent.com/vss).
+To view or handle vulnerabilities, you must have enabled [CWP](https://buy.cloud.tencent.com/yunjing) and [Vulnerability Scan](https://console.tencentcloud.com/vss).
 
 ## Directions
 
