@@ -17,7 +17,7 @@
 腾讯云防火墙共提供四种收费版本，分别是 IPS 版、高级版、企业版和旗舰版，您可以在 [云防火墙购买页](https://buy.cloud.tencent.com/cfw) 选购产品，详情请参见 [购买方式](https://intl.cloud.tencent.com/document/product/1160/49871)。
 #### 3.3 使用云防火墙
 当您成功购买云防火墙后，可通过如下方式进行使用：
-- 方式1：登录 [云防火墙控制台](https://console.cloud.tencent.com/cfw) 进行操作，详情请参见 [操作指南](https://intl.cloud.tencent.com/document/product/1160/49809)。
+- 方式1：登录 [云防火墙控制台](https://console.cloud.tencent.com/cfw) 进行操作。
 - 方式2：通过 API 接入使用，详情请参见 [API 文档](https://www.tencentcloud.com/document/product/1160/51320)。
 
 
