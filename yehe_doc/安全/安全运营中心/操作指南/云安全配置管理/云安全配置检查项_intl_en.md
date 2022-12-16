@@ -1,4 +1,4 @@
-1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/config). In the left navigation pane, click **Cloud Security Configuration Management** -> **Cloud Security Configuration Check Items** to go to the Cloud Security Configuration Check Items page.
+1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/config). In the left navigation pane, click **Cloud Security Configuration Management** > **Cloud Security Configuration Check Items** to go to the Cloud Security Configuration Check Items page.
 2. In the Cloud Security Configuration Check Items page, you can search or filter to retrieve the required check items.
 
 - **Search**
