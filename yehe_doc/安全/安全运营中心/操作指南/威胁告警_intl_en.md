@@ -78,10 +78,7 @@ In the alert list, click ![](https://qcloudimg.tencent-cloud.cn/raw/63006f19ade6
 1. In the alert list, click the alert name or "Attack IP" or "Victim IP" in the "Concern" column to go to the Alert Details tab.
 2. In the Alert Details tab, you can view the details of affected assets, alert situation, alert details (you can switch between **List Mode** and **JSON Mode**), and alert concerns.
 3. In the Alert Concerns tab, you can click **Isolate** to isolate the affected assets from the server.
-   > ?
-   >
-   > - To view threat intelligence of alert concerns, you must have [Security Operation Center Premium](https://buy.cloud.tencent.com/soc?type=new) enabled.
-   > - Server isolation mainly serves as a mitigation means to prevent a compromised server from infiltrating internally after a major security issue occurs. This handling method may suspend the business. We recommend that you communicate with business personnel before handling.
+ >? Server isolation mainly serves as a mitigation means to prevent a compromised server from infiltrating internally after a major security issue occurs. This handling method may suspend the business. We recommend that you communicate with business personnel before handling.
 
 #### Custom list management
 
