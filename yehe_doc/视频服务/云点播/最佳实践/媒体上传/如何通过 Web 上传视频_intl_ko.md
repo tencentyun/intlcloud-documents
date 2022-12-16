@@ -52,6 +52,7 @@ CVM 구매 방법은 [운영 가이드 - 인스턴스 생성](https://intl.cloud
 ### 2단계: VOD 활성화
 
 [시작하기 - 1단계](https://intl.cloud.tencent.com/document/product/266/8757)에 따라 VOD 서비스를 활성화하십시오.
+
 <span id="p3"></span>
 ### 3단계: API 키 및 APPID 가져오기
 
@@ -64,8 +65,9 @@ Web 업로드 Demo 서비스를 배포하고 실행하려면 API 키(예: Secret
 [1단계에서 준비된 CVM](#p1)(로그인 방식은 [운영 가이드 - Linux 로그인](https://intl.cloud.tencent.com/document/product/213/5436)참고)에 로그인하여, 원격 터미널에 다음 명령어를 입력하고 실행합니다.
 
 ```
-ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;export APPID=125xxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/web_upload_scf.sh
+ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;export APPID=125xxxxxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/web_upload_scf_en.sh
 ```
+
 >?명령에서 SECRET_ID, SECRET_KEY, APPID [3단계](#p3)에서 얻은 값을 할당하십시오.
 
 해당 명령은 Github로부터 Demo 소스 코드를 다운로드하고 설치 스크립트를 자동 실행합니다. 설치 프로세스는 수 분(실제 시간은 CVM 네트워크 상태에 따라 다름)이 소요되며, 원격 터미널에서 다음과 같은 정보를 인쇄합니다.
