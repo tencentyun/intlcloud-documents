@@ -19,7 +19,7 @@
 
 **注意**
 
-- 升级至该版本需注意：[升级指引](./Updated%20Guidline.md)。
+- 升级至该版本需注意：[升级指引](https://www.tencentcloud.com/document/product/647)。
 
 **新增**
 
