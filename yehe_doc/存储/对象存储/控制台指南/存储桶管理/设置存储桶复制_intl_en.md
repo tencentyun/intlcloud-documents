@@ -30,6 +30,8 @@ The configuration items are described as follows:
 	<tr><td>Destination Storage Class</td><td>Storage class of the replicas. The storage class will be the same as that of the source objects by default. You can also select a different storage class.</td></tr>
 	<tr><td>Sync Delete Marker</td><td>If you try to delete an object from a versioning-enabled bucket without specifying a version ID, COS will add a delete marker to the object. If you select this option, cross-bucket replication will copy this delete marker to the destination bucket. Regardless of whether the delete marker is copied, the object will not be deleted from the destination bucket. You can always access a noncurrent version of the object by specifying its version ID. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/19883">Overview</a>.</td></tr>
 </table>
+
+
 >!
 > - Once the rule is created, you can enable/disable it under **Status**, or edit it under **Operation**.
 > - If you set **Applied to** to **The whole bucket** in your first rule, you will be unable to add any new rules. In this case, you may choose to edit it, or simply delete it and add a new one.
