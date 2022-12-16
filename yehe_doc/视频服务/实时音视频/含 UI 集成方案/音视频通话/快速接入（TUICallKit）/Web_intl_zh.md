@@ -25,23 +25,13 @@ TUICallKit 是基于腾讯云 [即时通信 IM](https://intl.cloud.tencent.com/d
 
 1. 登录到 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击**创建新应用**，在弹出的对话框中输入您的应用名称，并单击**确定**。
 
-<!-- <img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/1105c3c339be4f71d72800fe2839b113.png"/>  -->
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/ce2e34f7cd1cd14679fc5decffb469af.png)
 
 2. 单击刚刚创建出的应用，进入**基本配置**页面，并在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击**免费体验**即可开通 TUICallKit 的 7 天免费试用服务。
 
-<div align="center">
-<!-- <img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/667633f7addfd0c589bb086b1fc17d30.png"/>  -->
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/796e49d9f55174aacb62bb8eb848feaf.png)
 
-
 3. 在同一页面找到 **SDKAppID** 和**密钥**并记录下来，它们会在后续中被用到。
-
-<!-- <img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/e435332cda8d9ec7fea21bd95f7a0cba.png"/>  -->
-
-<div align="center">
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/8349ac97b261279606316331488784c3.png)
 
@@ -120,16 +110,16 @@ import { TUICallKit } from "./components/TUICallKit/Web";
    TUICallKitServer.init({ SDKAppID, userID, userSig }); 
    ```
 
+>?
+>- 若您使用 vite 作为启动工具，还需注意 [vite 引入问题](#2-vite-引入问题)
+>- SDKAppID, SecretKey 的获取可见步骤一
+>userSig 可**临时**使用 `GenerateTestUserSig.js` 中 `genTestUserSig(userID)` 函数来计算 ，例如：
+>```javascript
+import * as GenerateTestUserSig from "./components/TUICallKit/Web/demos/basic/public/debug/GenerateTestUserSig.js";
+const { userSig } = GenerateTestUserSig.genTestUserSig(userID, SDKAppID, SecretKey);
+>```
 
-   >? 
-   >- SDKAppID, SecretKey 的获取可见步骤一
-   >userSig 可**临时**使用 `GenerateTestUserSig.js` 中 `genTestUserSig(userID)` 函数来计算 ，例如：
-   >```javascript
-   >import * as GenerateTestUserSig from "./components/TUICallKit/Web/demos/basic/public/debug/GenerateTestUserSig.js";
-   >const { userSig } = GenerateTestUserSig.genTestUserSig(userID, SDKAppID, SecretKey);
-   >```
-   >- 若您使用 vite 作为启动工具，还需注意 [vite 引入问题](#2-vite-引入问题)
-   
+
 
    >! 本文提到的获取 UserSig 的方案是在前端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通功能调试**。 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
    
