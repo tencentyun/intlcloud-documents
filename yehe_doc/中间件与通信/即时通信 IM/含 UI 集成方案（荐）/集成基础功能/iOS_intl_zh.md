@@ -95,7 +95,8 @@ pod init
   ```
 :::
 </dx-tabs>
-> ?1、如果您直接 `pod 'TUIChat'`，不指定经典版或简约版，默认会集成两套版本 UI 组件。 
+
+>?1、如果您直接 `pod 'TUIChat'`，不指定经典版或简约版，默认会集成两套版本 UI 组件。 
 > 2、经典版和简约版 UI 不能混用，集成多个组件时，您必须同时全部选择经典版 UI 或简约版 UI。
 > 例如，经典版 TUIChat 组件必须与经典版 TUIConversation、TUIContact、TUIGroup组件搭配使用。同理，简约版 TUIChat 组件必须与简约版 TUIConversation、TUIContact、TUIGroup 组件搭配使用。
 > 3、如果您使用的是 Swift，请开启 use_modular_headers!，并将头文件引用改成 @import 模块名形式引用。
@@ -217,7 +218,9 @@ SDKAppID 需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com
 }
 @end
 ```
+
 >? `TUIC2CChatViewController` 会自动拉取该用户的历史消息并展示出来。
+
 :::
 
 ::: 简约版
@@ -390,6 +393,7 @@ pod 'TUICallKit'
 ```
 use_frameworks! :linkage => :static
 ```
+
 如果您使用的是 swift，请将头文件引用改成 @import 模块名形式引用。
 
 #### TUICallKit 和自己集成的音视频库冲突了？
