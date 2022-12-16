@@ -7,7 +7,8 @@
  <img src="https://qcloudimg.tencent-cloud.cn/raw/43de011143bffa6e347231c765e462c7.png" style="zoom: 67%;" />
 2. 用户可对实例实施账户管理，包括新增账户、修改密码和删除账户：
  <img src="https://qcloudimg.tencent-cloud.cn/raw/825125b1667df568d49e64dfcb74f3f5.png" style="zoom: 67%;" />
->? 
+
+>?
 >- 账户命名规则：由⼩写字⺟、数字和下划线组成，以字⺟开头，以字⺟或数字结尾，⻓度为2-16字符。
 >- 密码设置规则：包含⼩写字⺟、⼤写字⺟、数字以及特殊字符（(、)、!、@、#、$、%、^、&、*、|、?、>、<）其中三项，不能以“/”开头，在8 - 30 位字符数以内（推荐12位以上）。
 >- xml 账户是在 user.xml 配置文件里头定义的用户，rbac 账户表示用户管控界面创建的账户，两者是无关联的，建议不要出现重名账户，否则可能会出现账户权限不一致问题。
@@ -16,19 +17,20 @@
 ## 授权
 1. 登录 [云数据仓库控制台](https://console.cloud.tencent.com/cdwch) ，在集群列表中单击目标 **ID/名称**，在集群详情页切换到**账户管理**页签，单击**前往授权**或直接切换到**授权**页签，对账户进行授权（选择V-cluster、授予库、表等权限）：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/c69ada62b8540bd095c02ccb459a566d.png" style="zoom:67%;" />
-	- 授权访问范围：⽀持授予账户所有数据库和表授权，也可按需授予账户部分数据库和表操作权限。
-	- 普通权限：
-		- 查询（默认打开）：SELECT —— 库表、视图、字典的查询。
-		- 设置：ALTER —— 表结构修改。
-		- 插⼊：INSERT ——  表数据插⼊。
-	- ⾼危权限：
-		-  表权限
-			- 建表：CREATE TABLE、CREATE VIEW、CREATE DICTIONARY —— 数据表、视图、字典的创建。
-			- 清理：TRUNCATE,OPTIMIZE —— 清理表数据，包括清空和合并数据。
-			- 删表：DROP TABLE、DROP VIEW、DROP DICTIONARY ——  数据表、视图、字典的删除。
-		-  库权限
- 			- 建库：CREATE DATABASE —— 创建数据库，作⽤于全局，因此选中了此权限，能看到所有数据库。
- 			- 删库：DROP DATABASE —— 删除数据库，作⽤于具体库。
+
+- 授权访问范围：⽀持授予账户所有数据库和表授权，也可按需授予账户部分数据库和表操作权限。
+- 普通权限：
+	- 查询（默认打开）：SELECT —— 库表、视图、字典的查询。
+	- 设置：ALTER —— 表结构修改。
+	- 插⼊：INSERT ——  表数据插⼊。
+- ⾼危权限：
+	-  表权限
+		- 建表：CREATE TABLE、CREATE VIEW、CREATE DICTIONARY —— 数据表、视图、字典的创建。
+		- 清理：TRUNCATE,OPTIMIZE —— 清理表数据，包括清空和合并数据。
+		- 删表：DROP TABLE、DROP VIEW、DROP DICTIONARY ——  数据表、视图、字典的删除。
+	-  库权限
+ 		- 建库：CREATE DATABASE —— 创建数据库，作⽤于全局，因此选中了此权限，能看到所有数据库。
+ 		- 删库：DROP DATABASE —— 删除数据库，作⽤于具体库。
 
 2. 部分数据库和表授权
 
