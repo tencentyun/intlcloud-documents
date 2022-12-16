@@ -56,13 +56,13 @@
 <td>别称域名上线</td>
 <td>对于域名多，配置相同的业务场景，如 SaaS 建站，支持仅接入一个目标域名，绑定的其它别称域名均可享受到 EdgeOne 的加速和安全服务。</td>
 <td>2022-09</td>
-<td>了解更多详情请 <a href="https://cloud.tencent.com/online-service/console?noTopNav=true&amp;noFooter=true&amp;noFloatBar=true&amp;from=edgeone#">联系我们</a></td>
+<td>了解更多详情请 <a href="https://intl.cloud.tencent.com/contact-us">联系我们</a></td>
 </tr>
 <tr>
 <td>边缘函数发布</td>
 <td>边缘函数（Edge Functions）是腾讯云为企业和开发者们提供的 Serverless 代码执行环境，只需编写业务函数代码并设置触发规则部署至边缘节点，即可快速满足个性化需求。</td>
 <td>2022-09</td>
-<td>了解更多详情请 <a href="https://cloud.tencent.com/online-service/console?noTopNav=true&amp;noFooter=true&amp;noFloatBar=true&amp;from=edgeone#">联系我们</a></td>
+<td>了解更多详情请 <a href="https://intl.cloud.tencent.com/contact-us">联系我们</a></td>
 </tr>
 <tr>
 <td>站点归属支持文件校验</td>
