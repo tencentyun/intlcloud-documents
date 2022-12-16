@@ -132,7 +132,7 @@
 </tr>
 <tr>
 <td>Added match conditions to the rule engine</td>
-<td>Match conditions **URL Full** and **Filename** are added to support more custom configuration scenarios.</td>
+<td>Match conditions URL Full and Filename are added to support more custom configuration scenarios.</td>
 <td> 2022-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1145/46151">Overview</a></td>
 </tr>
