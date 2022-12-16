@@ -58,7 +58,7 @@ The preceding fields are described as follows:
   - Not Compromised: means that SOC confirmed that the alert did not cause any damage to the attack target.
   - Unknown: The current detection technology cannot determine whether this alert indicates that an asset has compromised. Whether an asset has compromised must be further determined by human.
 - Event Investigation: Options include No Event Generated, Investigating, and Investigation Complete.
-- Investigation Complete: means that an analysis result has been generated for the current event. Click **View Details** in the Event Investigation column or click **Alert Name** -> **Event Investigation Results** to view the basic information, affected assets information, attack chain process of attack techniques and tactics, details of intrusion timeline, list of alerts triggered by the event, and list of concerns of the event, and perform related actions.
+- Investigation Complete: means that an analysis result has been generated for the current event. Click **View Details** in the Event Investigation column or click **Alert Name** > **Event Investigation Results** to view the basic information, affected assets information, attack chain process of attack techniques and tactics, details of intrusion timeline, list of alerts triggered by the event, and list of concerns of the event, and perform related actions.
   - Investigating: means that the current event is under investigation, without conclusion reached.
   - No Event Generated: means that this alert has no relation with any event.
   - Alert Status: Options include "Open" and "Close".
