@@ -91,7 +91,9 @@ buildscript {
 <img src="https://qcloudimg.tencent-cloud.cn/raw/454abb6051a7a94a08559d8404e5aec7.png" width="400"/> 
 7. (Optional) Delete unnecessary UI files
 The classic and minimalist versions of UIs do not affect each other, and they can run independently. The classic and minimalist version UI files are in separate folders within each TUIKit component. Take TUIChat as an example:
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/179a15bb72b24a09cf7440c50e5c3442.png" width="400"/> 
+
 The `classicui` folder stores the classic version UI files, and the `minimalistui` folder stores the minimalist version UI files. If you are to integrate the minimalist version UIs, directly delete the `classicui` folder and delete `Activity` and `Service` corresponding to the classic version UIs in the `AndroidManifest.xml` file.
 > ? The classic and minimalist versions of UI components cannot be used together. If you integrate multiple components, all the integrated components must be of the same version: classic or minimalist.
 
@@ -116,6 +118,7 @@ TUILogin.login(context, sdkAppID, userID, userSig, new TUICallback() {
 
 ### Step 2. Create viewPager
 1. Add the UI layout in `activity_main.xml`:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -130,7 +133,9 @@ TUILogin.login(context, sdkAppID, userID, userSig, new TUICallback() {
     android:layout_weight = "1"/>
 </LinearLayout>
 ```
+
 2. Create `FragmentAdapter.java` to work with ViewPager2 to display the conversation and contacts UIs.
+
 ```java
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -243,7 +248,7 @@ TUI components allow users to start audio/video calls in chat UIs and can be qui
 
 1. **Activate the TRTC service**
 	1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
-	2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 7-day free trial service of TUICallKit.
+	2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 60-day free trial service of TUICallKit.
 	3. Click **Confirm** in the pop-up dialog box. A TRTC app with the same SDKAppID as the IM app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
 2. **Integrate the TUICallKit component**
 Add the `TUICallKit` dependency to the `build.gradle` file in App:
