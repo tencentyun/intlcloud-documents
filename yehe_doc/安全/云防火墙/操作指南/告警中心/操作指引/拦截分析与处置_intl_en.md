@@ -47,7 +47,7 @@ In the **Asset view**, place the pointer over the value of **Access destination*
 ## Viewing the blocked attacks for an asset
 - Method 1: Select the specified asset in the upper-left corner to filter the records.
 ![](https://qcloudimg.tencent-cloud.cn/raw/999eec2bf6aa857bca54481a0c95b1e3.png)
-- Method 2: Select the target asset by clicking **Event details** -> **Asset name** to view its records of blocked attacks. For more information, please see [Assets Management](https://intl.cloud.tencent.com/document/product/1160/49812).
+- Method 2: Select the target asset by clicking **Event details** -> **Asset name** to view its records of blocked attacks.
 
 ## Viewing recently blocked attacks
 The **Blocked attacks** page is automatically refreshed. Click ![](https://qcloudimg.tencent-cloud.cn/raw/fc22474131de711ae3b7747da1e5cf60.png) in the upper part of the page, select **Last blocked* for **Blocking history ranking**, and then click OK** to view the recently blocked attacks.
