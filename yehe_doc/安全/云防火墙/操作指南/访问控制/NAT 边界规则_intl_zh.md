@@ -109,7 +109,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/1c510076b8ea7926fa00ce1f85d49cd4.png)
 
 ## 相关信息
-- 如需在云防火墙控制台对互联网边界的入向与出向流量进行管控，请参见 [互联网边界规则](https://intl.cloud.tencent.com/document/product/1160/49844)。
+- 如需在云防火墙控制台对互联网边界的入向与出向流量进行管控，请参见 互联网边界规则。
 - 如需在云防火墙控制台设置 VPC 间规则，请参见 [VPC 间规则](https://intl.cloud.tencent.com/document/product/1160/49846)。
 - 如需了解云防火墙的访问控制功能的特殊应用场景，请参见 [特殊应用场景](https://intl.cloud.tencent.com/document/product/1160/49850)。
 - 如遇到 NAT 边界规则相关问题，可参见 [NAT 边界防火墙](https://intl.cloud.tencent.com/document/product/1160/49810)。
