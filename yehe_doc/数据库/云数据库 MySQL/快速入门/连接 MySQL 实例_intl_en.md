@@ -2,12 +2,12 @@ This document describes how to connect to an initialized TencentDB for MySQL ins
 
 ## Preparations
 - You have initialized a TencentDB for MySQL instance. For more information, see [Creating MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37785).
-- You have created a database account and authorized specific IPs or IP ranges to access the TencentDB for MySQL instance. For more information, see [Creating Account](https://intl.cloud.tencent.com/document/product/236/31900) and [Modifying Host Addresses with Access Permissions](https://intl.cloud.tencent.com/document/product/236/31903). Or, you can use the root account.
+- You have created a database account and authorized specific IPs or IP ranges to access the TencentDB for MySQL instance. Or, you can use the root account to do so. For more information, see [Creating Account](https://intl.cloud.tencent.com/document/product/236/31900) and [Modifying Host Addresses with Access Permissions](https://intl.cloud.tencent.com/document/product/236/31903).
 - You have configured security group rules for the CVM instance and the TencentDB for MySQL instance to allow specific IPs or IP ranges to access the TencentDB for MySQL instance. For more information, see [TencentDB Security Group Management](https://intl.cloud.tencent.com/document/product/236/14470).
 
 ## Connection methods
 >!To connect to a TencentDB for MySQL instance, no matter whether over the private or public network, you must open its port. You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and view its port number on the instance details page.
->![](https://staticintl.cloudcachetci.com/yehe/backend-news/b2QI771_8.png)
+>![](https://qcloudimg.tencent-cloud.cn/raw/5669570dd781fa66c04a843231a0770f.png)
 >
 >- TencentDB for MySQL uses private network port 3306 by default and supports customizing the port. If the default port is changed, the new port should be opened in the security group.
 >- The TencentDB for MySQL public port is automatically assigned by the system and cannot be customized. After the public network access is enabled, it will be controlled by the ACL of the security group. When configuring the security policy, you need to open the private port 3306.
@@ -63,7 +63,7 @@ If `Complete!` is displayed, the MySQL client is installed successfully.
 ```
 mysql -h hostname -u username -p
 ```
-      - hostname: replace it with the private network address of the target TencentDB for MySQL instance, which can be viewed on the instance details page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
+      - hostname: Replace it with the private network address of the target TencentDB for MySQL instance, which can be viewed on the instance details page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
 >?
 >- The default port number of MySQL is 3306.
 >- If the port number is 3306, you only need to replace `hostname` with the IP address. For example, if the private network address is 10.16.0.11:3306, set `hostname` to `10.16.0.11`.
@@ -78,9 +78,9 @@ mysql -h hostname -u username -p
 ```
 mysql -h hostname -P port -u username -p
 ```
-      - hostname: replace it with the public network address of the target TencentDB for MySQL instance, which can be viewed together with the port on the instance details page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). If the public network address has not been enabled, enable it as instructed in [Enabling Public Network Address](#waiwang).
+      - hostname: Replace it with the public network address of the target TencentDB for MySQL instance, which can be viewed together with the port on the instance details page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). If the public network address has not been enabled, enable it as instructed in [Enabling Public Network Address](#waiwang).
       - port: Replace it with the public network port number.
-      - username: replace it with the public network connection username. We recommend you [create a separate account](https://intl.cloud.tencent.com/document/product/236/31900) for easier connection control.
+      - username: Replace it with the public network connection username. We recommend that you create a separate account for easier connection control. For more information, see [Creating Account](https://intl.cloud.tencent.com/document/product/236/31900).
     2. Enter the password corresponding to the public network connection username after `Enter password:` is prompted. If you forgot the password, reset it as instructed in [Resetting Password](https://intl.cloud.tencent.com/document/product/236/31901).
     In this example, `hostname` is 59281c4exxx.myqcloud.com and public network port is 15311.
 ![](https://main.qcloudimg.com/raw/16839344da3a588be93d814de224277a.png)
@@ -92,17 +92,18 @@ Below takes `show databases;` as an example:
 If you encounter connection errors, we recommend you use [One-Click Connectivity Checker](https://intl.cloud.tencent.com/document/product/236/31927) to troubleshoot the problem first and then find the corresponding solution in [Instance Connection Failure](https://intl.cloud.tencent.com/document/product/236/40333) according to the check report.
 
 ## Appendix 2. Network connectivity verification method
-We recommend you troubleshoot and locate network connectivity problems quickly with the `telnet` command. For more information, see [Prohibition of Ping Command](https://cloud.tencent.com/document/product/236/34375#.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88).
+We recommend that you troubleshoot and locate network connectivity problems quickly with the `telnet` command. For more information, see [Prohibition of Ping Command](https://www.tencentcloud.com/document/product/236/31929).
 
-If the verification with `telnet` found that the network access of the TencentDB instance was good, but an error was reported when you tried to log in to it via the command line in the CVM instance, see [Connection](https://intl.cloud.tencent.com/document/product/236/37783).
+If the verification with `telnet` found that the network access of the TencentDB instance was normal, but an error was reported when you tried to log in to it via the command line in the CVM instance, see [Connection](https://intl.cloud.tencent.com/document/product/236/37783).
 
 ## [Appendix 3. Enabling public network access](id:waiwang)
+<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/3483-61427?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Basic Info** section, click **Enable** next to **Public Network Address**.
 >?If the **Basic Info** section displays the public IP and port, the public network address has been enabled.
 >
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/7F5X882_18.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3e53616ba958f931a84470745bd0a585.png)
 3. In the pop-up window, click **OK**.
 >?
 >- After the public network address is enabled successfully, it can be viewed in the basic information.
