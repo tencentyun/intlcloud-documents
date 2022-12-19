@@ -709,3 +709,4 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 53.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51137).
 54.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51133).
 55.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51968).
+56.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52288).
