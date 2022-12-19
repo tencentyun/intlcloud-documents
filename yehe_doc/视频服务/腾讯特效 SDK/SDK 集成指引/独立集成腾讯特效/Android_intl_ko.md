@@ -39,12 +39,14 @@ dependencies{
     compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])//추가 *.aar
 }
 ```
->! Google의 Gson 라이브러리가 프로젝트에 통합되지 않은 경우 다음 종속성을 추가해야 합니다.
+
+<dx-alert infotype="notice">Google의 Gson 라이브러리가 프로젝트에 통합되지 않은 경우 다음 종속성을 추가해야 합니다.
 ```groovy
 dependencies{
     implementation 'com.google.code.gson:gson:2.8.2'
 }
 ```
+</dx-alert>
 :::
 ::: Maven 통합
 Tencent Effect SDK를 mavenCentral에 이미 배포했다면 gradle 자동 다운로드 설정을 통해 업데이트할 수 있습니다.
@@ -64,7 +66,7 @@ defaultConfig {
 	}
 }
 ```
->? 현재 Effect SDK는 armeabi-v7a 및 arm64-v8a를 지원합니다.
+<dx-alert infotype="explain"> 현재 Effect SDK는 armeabi-v7a 및 arm64-v8a를 지원합니다.</dx-alert>
 
 3. ![img](https://main.qcloudimg.com/raw/d6b018054b535424bb23e42d33744d03.png)**Sync Now**를 클릭하여 SDK를 자동으로 다운로드하고 프로젝트에 통합합니다.
 4. 패키지에 애니메이션 효과 및 필터 기능이 포함된 경우 [SDK 다운로드 페이지](https://intl.cloud.tencent.com/document/product/1143/45377)에서 해당 리소스를 다운로드하고 애니메이션 효과 및 필터 자료를 프로젝트 아래의 다음 디렉터리에 배치해야 합니다.
