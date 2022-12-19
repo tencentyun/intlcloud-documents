@@ -15,8 +15,8 @@ You can achieve disaster recovery in COS by:
 3. Using the [MAZ configuration](https://intl.cloud.tencent.com/document/product/436/35208), which provides IDC-level disaster recovery capabilities for your data.
 
 >?
-1. Currently, the MAZ configuration of COS is supported only in Guangzhou, Shanghai, and Beijing regions and will be available in other public cloud regions in the future.
-2. Using the MAZ configuration incurs high storage usage fees. For more information, see [Pricing | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=).
+> 1. Currently, the MAZ configuration of COS is supported only in Guangzhou, Shanghai, and Beijing regions and will be available in other public cloud regions in the future.
+> 2. Using the MAZ configuration incurs high storage usage fees. For more information, see [Pricing | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=).
 
 ### How can I delete noncurrent object versions after I enable versioning for a bucket?
 
@@ -67,8 +67,8 @@ In a source bucket with cross-bucket replication enabled, COS will replicate the
 - Object operations, such as adding an object of the same name (equivalent to adding a new object) and deleting an object.
 
 >?
-- If you specify an object version to delete in the source bucket by specifying a version ID, COS will not replicate this delete operation.
-- If you add a bucket-level configuration such as a lifecycle rule to the source bucket, COS will not replicate any resulting object operations.
+> - If you specify an object version to delete in the source bucket by specifying a version ID, COS will not replicate this delete operation.
+> - If you add a bucket-level configuration such as a lifecycle rule to the source bucket, COS will not replicate any resulting object operations.
 
 For more information, see [Cross-Bucket Replication Actions](https://intl.cloud.tencent.com/document/product/436/19923).
 
