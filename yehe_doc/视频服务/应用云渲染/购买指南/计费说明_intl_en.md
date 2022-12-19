@@ -1,8 +1,8 @@
-CAR is billed by application rendering **concurrency**. A concurrency represents the collection of virtual computing resources, including CPU, bandwidth, disk, and GPU, required for one user to render your application content. **Each concurrency supports access by only one user at a time**; that is, if 100 concurrencies are purchased, 100 users can access the cloud rendering environment at the same time, and excessive users need to queue up to wait for a concurrency to become available.
+CAR is billed by application rendering **concurrency**. A concurrency represents the collection of virtual computing resources, including CPU, bandwidth, disk, and GPU, required for one user to render your application content. **Each concurrency supports access by only one user at a time**; that is, if 100 concurrencies are purchased, 100 users can access the cloud rendering environment at the same time, and additional users need to queue up to wait for a concurrency to become available.
 
 ## CAR concurrency scales
 
-| Concurrency Scale | CPU        | Memory      | GPU         | Video Memory    | Bandwidth    | Minimum quantity for sale |
+| Concurrency Scale | CPU        | Memory      | GPU         | Video Memory    | Bandwidth    | Minimum quantity |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- |---------------------- |
 | S - For rendering small applications    | 4-core vCPU or above  | 8 GB or above  | 2 TF SP/30T INT or above   | 4 GB or above  | Up to 8 Mbps | 1 concurrency (1 concurrent user) |
 | M - For rendering medium-sized applications    | 4-core vCPU or above  | 16 GB or above | 4 TF SP/30T INT or above   | 6 GB or above  | Up to 8 Mbps |1 concurrency (1 concurrent user) |
@@ -28,7 +28,7 @@ CAR is billed by application rendering **concurrency**. A concurrency represents
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan=3>Prepaid - Monthly subscription</td>
+<td rowspan=3>Prepaid - Monthly</td>
 <td>S - For rendering small applications</td>
 <td rowspan=3>Monthly</td>
 <td>398</td>
@@ -48,7 +48,7 @@ CAR is billed by application rendering **concurrency**. A concurrency represents
 <td>1064</td>
 </tr>
 <tr>
-<td rowspan=3>Prepaid - Daily subscription</td>
+<td rowspan=3>Prepaid - Daily</td>
 <td>S - For rendering small applications</td>
 <td rowspan=3>Daily</td>
 <td>40</td>
