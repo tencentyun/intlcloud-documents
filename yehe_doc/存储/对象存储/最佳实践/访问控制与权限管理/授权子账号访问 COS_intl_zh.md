@@ -96,7 +96,7 @@ coscmd config -u 1250000000 -a AKIDasdfmRxHPa9oLhJp**** -s e8Sdeasdfas2238Vi****
 
 （2）腾讯云控制台
 
-子用户被授予权限后，可在 [子用户登录界面](https://cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fdeveloper) 输入主账号 ID、子用户名和子用户密码登录控制台，并在**云产品**中选择单击**对象存储**，即可访问主账号下的存储资源。
+子用户被授予权限后，可在 [子用户登录界面](https://www.tencentcloud.com/account/login/subAccount) 输入主账号 ID、子用户名和子用户密码登录控制台，并在**云产品**中选择单击**对象存储**，即可访问主账号下的存储资源。
 
 <span id="策略示例"></span>
 ## 策略示例
