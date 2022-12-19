@@ -108,7 +108,7 @@ vi /data/mysql/backup-my.cnf
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/EeLm919_6.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/dk6k301_EeLm919_6.png)
 
 ## 步骤4：启动 mysqld 进程并登录验证
 1. 启动 mysqld 进程。

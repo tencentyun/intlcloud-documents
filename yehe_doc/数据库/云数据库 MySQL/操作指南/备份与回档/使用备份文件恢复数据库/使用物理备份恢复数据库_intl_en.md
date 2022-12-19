@@ -40,9 +40,7 @@ You can download data backups and decryption keys of TencentDB for MySQL instanc
 
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the **Backup and Restoration** > **Data Backup List** tab, locate the decryption key of the backup file to be downloaded and click **Download Key** in the **Operation** column.
-![](https://qcloudimg.tencent-cloud.cn/raw/743b8d691a006b99cb25591bb2100b07.png)
-3. In the pop-up window, select the file path where to save the key and click **Download**.
-![](https://qcloudimg.tencent-cloud.cn/raw/ae4c7fa80df097a6886a3129232db918.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/A8BA028_1.png)
 
 ## Step 3. Restore data
 ### 3.1 Unpack the backup file
@@ -55,7 +53,7 @@ xbstream -x --decrypt=AES256 --encrypt-key-file=<backup key file> --parallel=2  
 >- Replace `/data/test.xb` with your backup file.
 >
 The unpacking result is as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/K4wr727_f981522847f38b10bfe0a59c7234b7ba.png">
 
 ### 3.2 Decompress the backup file
 1. Download qpress by running the following command.
@@ -110,7 +108,7 @@ Modify file attributes and check whether files are owned by the `mysql` user.
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/dk6k301_EeLm919_6.png)
 
 ## Step 4. Start the mysqld process and log in for verification
 1. Start the mysqld process.

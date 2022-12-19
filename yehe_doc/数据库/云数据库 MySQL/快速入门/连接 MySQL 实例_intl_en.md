@@ -7,7 +7,7 @@ This document describes how to connect to an initialized TencentDB for MySQL ins
 
 ## Connection methods
 >!To connect to a TencentDB for MySQL instance, no matter whether over the private or public network, you must open its port. You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and view its port number on the instance details page.
->![](https://qcloudimg.tencent-cloud.cn/raw/5669570dd781fa66c04a843231a0770f.png)
+>![](https://staticintl.cloudcachetci.com/yehe/backend-news/b2QI771_8.png)
 >
 >- TencentDB for MySQL uses private network port 3306 by default and supports customizing the port. If the default port is changed, the new port should be opened in the security group.
 >- The TencentDB for MySQL public port is automatically assigned by the system and cannot be customized. After the public network access is enabled, it will be controlled by the ACL of the security group. When configuring the security policy, you need to open the private port 3306.
@@ -97,13 +97,12 @@ We recommend that you troubleshoot and locate network connectivity problems quic
 If the verification with `telnet` found that the network access of the TencentDB instance was normal, but an error was reported when you tried to log in to it via the command line in the CVM instance, see [Connection](https://intl.cloud.tencent.com/document/product/236/37783).
 
 ## [Appendix 3. Enabling public network access](id:waiwang)
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/3483-61427?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Basic Info** section, click **Enable** next to **Public Network Address**.
 >?If the **Basic Info** section displays the public IP and port, the public network address has been enabled.
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/3e53616ba958f931a84470745bd0a585.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/7F5X882_18.png)
 3. In the pop-up window, click **OK**.
 >?
 >- After the public network address is enabled successfully, it can be viewed in the basic information.
