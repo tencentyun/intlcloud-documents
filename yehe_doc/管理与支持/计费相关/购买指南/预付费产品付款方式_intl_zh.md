@@ -5,6 +5,7 @@
 1.单击**付款卡支付**，跳转到**支付页面**，可通过选择**已绑定的付款卡**付款
 2.支付页面支持绑定新付款卡，该次绑定仅用于支付该笔订单，不会用户后续自动扣款
 3.支付环节针对部分账户需要进行3D验证，若验证失败或未验证会导致该笔交易支付失败
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/VHew725_2.png)
 4.支付完成后可前往 [收支明细](https://console.tencentcloud.com/expense/transactions)  进行充值明细查询。
 
 ## 信用额度付款
