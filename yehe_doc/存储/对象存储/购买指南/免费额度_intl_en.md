@@ -1,17 +1,21 @@
 ## Overview
-COS offers a limited free tier resource pack to all new users (i.e., users activating COS for the first time) to deduct the fees incurred by data stored in the **STANDARD** storage class, as detailed below: 
+
+COS offers a limited free tier resource pack to all new users (i.e., enterprise and individual users activating COS for the first time) to deduct the fees incurred by data stored in the **STANDARD** storage class, as detailed below: 
 
 | Object | Free Tier | Validity |
 | -------- | ----------------- | ------ |
-| New user | 50 GB STANDARD storage usage | 6 months (180 days) |
+| Individual user | 50 GB STANDARD storage usage | 6 months (180 days) |
+| Enterprise user | 1 TB STANDARD storage usage | 6 months (180 days) |
 
->?The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
+>? The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
+>
 
-## Applicable Regions
+
+## Free Tier
 
 The free tier is only applicable to **public cloud regions**. For more information on regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 
-The free tier offered by COS can be used to deduct only **STANDARD storage usage** as detailed below. For more information, see [Traffic Fees](https://intl.cloud.tencent.com/document/product/436/33776).
+The free tier offered by COS can be used to deduct only **STANDARD storage usage** as detailed below. For more information, see [Billable Items](https://www.tencentcloud.com/document/product/436/40096).
 
 >!
 > - The free tier cannot be used to deduct billable items **other than STANDARD storage usage**, such as STANDARD_IA storage usage, ARCHIVE storage usage, requests, and traffic. For more information, see [Billable Items](https://www.tencentcloud.com/document/product/436/40096).
@@ -25,44 +29,46 @@ The free tier offered by COS can be used to deduct only **STANDARD storage usage
       <th>Available Free Tier</th>
    </tr>
    <tr>
-      <td rowspan="5">Storage usage fees</td>
+      <td rowspan="6">Storage capacity fees</td>
       <td>STANDARD storage usage</td>
-      <td>Yes.<br>New users are entitled to a free tier of 50 GB STANDARD storage usage for 6 months (180 days).</td>
+      <td>Yes.<ul  style="margin: 0;"><li>Individual users are entitled to a free tier of 50 GB STANDARD storage usage for 6 months (180 days).</li><li>Enterprise users are entitled to a free tier of 1 TB STANDARD storage usage for 6 months (180 days).</li></ul></td>
    </tr>
    <tr>
-      <td>STANDARD_IA storage usage</td>
-      <td rowspan="8">No.<br>The free tier cannot be used to deduct billable items other than <strong>STANDARD storage usage</strong>.</br></td>
+      <td>MAZ_STANDARD storage usage</td>
+      <td rowspan="9">No.<br>The free tier cannot be used to deduct billable items other than <strong>STANDARD storage usage</strong>.</br></td>
    </tr>
    <tr>
-      <td>INTELLIGENT TIERING storage usage</td>
+      <td>STANDARD_IA/MAZ_STANDARD_IA storage capacity</td>
+   </tr>
+   <tr>
+      <td>INTELLIGENT TIERING/MAZ_INTELLIGENT TIERING storage capacity</td>
    </tr>
    <tr>
       <td>ARCHIVE storage usage</td>
+   <tr>
+      <td>DEEP ARCHIVE storage usage</td>
    </tr>
    <tr>
-      <td>DEEP ARCHIVE storage usage</td>	   
-   </tr>
-   <tr>
-      <td>Request fees</td>
       <td>Requests</td>
+      <td>Number of requests</td>
    </tr>
    <tr>
-      <td>Data retrieval fees</td>
-      <td>Data retrieval</td>
+      <td>Data retrievals</td>
+      <td>Amount of retrieved data</td>
    </tr>
    <tr>
       <td rowspan="1">Traffic fees</td>
-      <td>Public network downstream traffic, CDN origin-pull traffic, cross-region replication traffic, and global acceleration traffic</td>
+      <td>Public network downstream traffic, CDN origin-pull traffic, cross-region replication traffic, global acceleration traffic
    </tr>
    <tr>
 	     <td rowspan="1">Management feature fees</td>
-       <td>Inventory, extraction, batch operation, and object tagging</td>
+       <td>Inventory feature, COS select feature, batch operation feature, object tagging feature</td>
    </tr>
 </table>
 
 
 
-## Examples
+## Samples
 
 > ?
 > - For more information on billing after the free tier term ends, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
@@ -70,7 +76,7 @@ The free tier offered by COS can be used to deduct only **STANDARD storage usage
 > 
 
 
-Assume that user A activated the COS service on March 10, 2019, uploaded 50 GB of files to the STANDARD storage class in Beijing region on March 16 generating 100 requests, and downloaded 10 GB of data over the public network on March 20 generating 100 requests. Apart from these operations, user A did not perform any other operations before the end of September.
+Assume that individual user A activated the COS service on March 10, 2019, uploaded 50 GB of files to the STANDARD storage class in Beijing region on March 16 generating 100 requests, and downloaded 10 GB of data over the public network on March 20 generating 100 requests. Apart from these operations, user A did not perform any other operations before the end of September.
 
 
 | Time | Description | Unit Price | Volume | Fees (USD) |
@@ -84,9 +90,13 @@ Assume that user A activated the COS service on March 10, 2019, uploaded 50 GB o
 
 
 
-## Claim and Query
+## Access and Query
 
 After you sign up for a Tencent Cloud account as instructed in [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985) and log in to the [COS console](https://console.cloud.tencent.com/cos5) to activate the COS service, the system will automatically issue the free tier to your account.
+
+
+
+
 
 ## Validity Period
 
@@ -98,11 +108,12 @@ For example, if you activated COS at 17:13:14 on March 10, 2019, and assume that
 
 During the free tier term, you may still be charged for other fees, such as request fees and traffic fees. Therefore, the billing sequence varies by scenario.
 
-- By default, the system adopts the **pay-as-you-go** billing mode for bill settlement.
+- By default, COS bills are settled in a pay-as-you-go manner.
 - If you are eligible for the free tier of STANDARD storage usage, then your bills will be settled in the order of **free tier** > **pay-as-you-go billing**, that is, you will be charged in a pay-as-you-go manner for the usage in excess of the free tier.
 
 
 
-## Questions
 
-If you have any questions about the free tier or your bills, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373) or [contact us](https://www.tencentcloud.com/contact-us).
+## Troubleshooting
+
+If you have any questions about the free tier or your bills, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373) or [contact us](https://intl.cloud.tencent.com/contact-sales).

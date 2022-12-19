@@ -1,7 +1,7 @@
 流量是用户在使用和访问对象存储（Cloud Object Storage，COS）时，产生的数据流量的累计值，流量分为外网上行流量、外网下行流量、内网上行流量、内网下行流量、CDN 回源流量等。COS 会根据用户实际消耗的流量累计值进行收费。
 
 
->?关于存储类型的更多介绍，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)。
+>? 关于存储类型的更多介绍，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)。
 > 
 
 
@@ -14,7 +14,7 @@
    </tr>
    <tr>
       <td>外网下行流量</td>
-      <td rowspan="7" nowrap="nowrap">智能分层存储<br>标准存储<br>低频存储<br>归档存储<br>深度归档存储</td>
+      <td rowspan="7" nowrap="nowrap">标准存储（多 AZ）<br>低频存储（多 AZ）<br>智能分层存储（多 AZ）<br>智能分层存储<br>标准存储<br>低频存储<br>归档存储<br>深度归档存储</td>
       <td>数据通过普通网络（公共互联网）从 COS 下载到用户本地或客户端所产生的流量</td>
       <td><ul  style="margin: 0;"><li>按量计费：外网下行流量（GB）x 每 GB 单价</li></ul></td>
    </tr>
@@ -50,7 +50,8 @@
    </tr> 
 </table>
 
-> ?如果使用全球加速域名下载数据，会同时产生**全球加速下行流量费用**和**外网下行流量费用**；如果使用全球加速域名作为 CDN 回源的源站域名，会同时产生**全球加速下行流量费用**和 **CDN 回源流量费用**。
+>? 如果使用全球加速域名下载数据，会同时产生**全球加速下行流量费用**和**外网下行流量费用**；如果使用全球加速域名作为 CDN 回源的源站域名，会同时产生**全球加速下行流量费用**和 **CDN 回源流量费用**。
+>
 
 ## 计费限制
 
@@ -72,7 +73,7 @@
 | COS 请求费用 | 当用户将 COS 作为 CDN 源站进行使用时，数据从 COS 传输到腾讯云 CDN 边缘节点时，会产生 COS 请求次数，请求费用按照发送到 COS 的请求指令次数进行计算 |
 
 
->?CDN 流量费用由腾讯云 CDN 收取，详情请参见 [CDN 定价](https://buy.intl.cloud.tencent.com/price/cdn?lang=en&pg=)。
+>? CDN 流量费用由腾讯云 CDN 收取，详情请参见 [CDN 定价](https://buy.intl.cloud.tencent.com/price/cdn?lang=en&pg=)。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/7eb9d36850a4d0b338eda9e472a71e38.jpg)
 
@@ -83,9 +84,14 @@
 |       按量计费         |   <ul  style="margin: 0;"><li>外网下行流量费用</li><li>CDN 回源流量费用</li><li>跨地域复制流量费用 </li><li> 全球加速流量费用</li></ul>        |<ul  style="margin: 0;"><li>按日结算</li><li>流量费用 = 每 GB 单价 x 日累计流量</li></ul>|
 
 
+
 ## 流量定价
 
 关于流量单价，请查看 [产品定价](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=)。
+
+
+
+
 ## 计费案例
 
 >?
@@ -109,5 +115,4 @@
 
 
 综合上面分析得出，整个11月用户 A 总花费0.24 + 0.00006 + 2 = 2.24006美元。
-
 
