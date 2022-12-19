@@ -96,7 +96,7 @@ coscmd config -u 1250000000 -a AKIDasdfmRxHPa9oLhJp**** -s e8Sdeasdfas2238Vi****
 
 (2) Tencent Cloud console access
 
-After the sub-user is granted permissions, they can enter the root account ID, sub-user name, and sub-user password on the [Sub-user Login](https://cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fdeveloper) page to log in to the console. Then, they can click **Cloud Object Storage** in **Products** to access storage resources under the root account.
+After the sub-user is granted permissions, they can enter the root account ID, sub-user name, and sub-user password on the [Sub-user Login](https://www.tencentcloud.com/account/login/subAccount) page to log in to the console. Then, they can click **Cloud Object Storage** in **Products** to access storage resources under the root account.
 
 <span id="Sample policies"></span>
 ## Sample Policies
