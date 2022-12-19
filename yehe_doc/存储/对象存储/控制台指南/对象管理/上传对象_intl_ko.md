@@ -3,6 +3,7 @@
 COS 콘솔로 버킷의 파일 리스트 페이지에 객체를 업로드할 수 있습니다. 객체 관련 설명은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오.
 
 >?
+> - 현재 MAZ(다중 AZ) 구성은 베이징, 상하이, 광저우 및 싱가포르 리전에서만 사용할 수 있습니다. MAZ_STANDARD와 같은 MAZ 스토리지 클래스에 객체를 업로드하려면 먼저 리전의 버킷에 대해 [Multi-AZ Feature](https://intl.cloud.tencent.com/document/product/436/35208)를 활성화하십시오.
 > - 현재 INTELLIGENT TIERING 유형은 베이징, 난징, 상하이, 광저우, 청두, 충칭, 도쿄, 싱가포르 리전만 지원합니다. 해당 유형을 업로드하려면 우선 해당 리전의 버킷 [INTELLIGENT TIERING 설정](https://intl.cloud.tencent.com/document/product/436/38306)을 활성화하십시오.
 > - 현재 DEEP ARCHIVE 유형은 베이징, 난징, 상하이, 광저우, 청두, 충칭, 도쿄 및 싱가포르 리전에서만 사용할 수 있습니다. 이 스토리지 유형에 객체를 업로드하려면 먼저 리전에서 버킷을 선택하십시오.
 > 
@@ -25,7 +26,9 @@ COS 콘솔로 버킷의 파일 리스트 페이지에 객체를 업로드할 수
 6. (옵션) **매개변수 설정**을 클릭하고 파일 업로드 창에서 객체 속성을 설정합니다.
  ![](https://main.qcloudimg.com/raw/0b7c7b6297a1098fe43074f85a138fbf.png)
 설정은 다음 내용을 참고하십시오.
- - **스토리지 유형**: 비즈니스 시나리오에 따라 객체의 스토리지 유형을 선택합니다. 기본적으로 스탠다드 스토리지로 설정되어 있습니다. 자세한 내용은 [제품 개요](https://intl.cloud.tencent.com/document/product/436/6222)를 참고하십시오.
+ - **스토리지 유형**: 비즈니스 시나리오에 따라 객체의 스토리지 유형을 선택합니다. 기본적으로 STANDARD로 설정되어 있습니다. 자세한 내용은 [제품 개요](https://intl.cloud.tencent.com/document/product/436/6222)를 참고하십시오.
+>! 버킷에 MAZ 구성이 활성화된 경우 **스토리지 유형**은 MAZ_STANDARD와 같은 MAZ 활성화 스토리지 클래스만 선택할 수 있습니다. INTELLIGENT TIERING 구성도 활성화된 경우 INTELLIGENT TIERING(MAZ)을 선택할 수도 있습니다.
+>
  - **액세스 권한**: 필요에 따라 객체에 대한 액세스 권한을 선택합니다. 이 필드는 기본적으로 상속으로 설정됩니다(즉, 버킷의 권한 상속). 자세한 내용은 [액세스 제어 기본 개념](https://intl.cloud.tencent.com/document/product/436/30581)을 참고하십시오.
  - **서버 측 암호화**: 업로드하려는 객체에 대한 서버 측 암호화를 구성합니다. COS는 기록된 데이터를 자동으로 암호화하고 액세스할 때 암호를 해독합니다. 현재 COS는 SSE-KMS(베이징, 상하이, 광저우 리전에서만 사용 가능)와 SSE-COS의 두 가지 암호화 방법을 제공합니다. 자세한 내용은 [서버 암호화 개요](https://intl.cloud.tencent.com/document/product/436/18145)를 참고하십시오.
  - **객체 태그**: 객체 태그는 태그 키(tagKey), 태그 값(tagValue) 및 등호’=’로 구성됩니다(예: group = IT). 지정된 객체의 태그를 설정, 쿼리 및 삭제할 수 있습니다.
