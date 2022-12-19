@@ -267,6 +267,57 @@ rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm --force
 
 COSFS는 루트 디렉터리에 대한 GetBucket 권한이 필요합니다. 따라서 루트 디렉터리에 대한 GetBucket 권한과 해당 디렉터리에 대한 읽기 권한을 추가해야 합니다. 그런 식으로 다른 디렉터리를 나열할 수 있지만 작업 권한은 없습니다.
 
+### COSFS는 매일 일정 시간대에 CPU 사용률이 높고, COS에 대량의 Head, List 요청을 전송하여 요청 횟수 요금이 많이 발생합니다. 어떻게 처리해야 하나요?
+
+이는 일반적으로 시스템에 예약된 디스크 스캔 작업이 있기 때문입니다. Linux 시스템의 일반적인 디스크 스캔 프로그램은 updatedb입니다. COSFS 마운트 포인트 디렉터리를 updatedb의 구성 파일의 /etc/updatedb.conf 파일에 있는 PRUNEPATHS 구성 항목에 추가하여 프로그램의 디스크 스캔 동작을 방지할 수 있습니다. 또한 Linux 툴 auditd를 사용하여 COSFS 마운트 포인트에 액세스하는 프로그램을 찾을 수 있습니다.
+
+작업 순서는 다음과 같습니다.
+
+1단계: auditd 설치
+
+Ubuntu:
+
+```
+ap-get install auditd -y
+```
+
+CentOS：
+
+```
+ yum install audit audit-libs
+```
+
+2단계: auditd 서비스 실행
+
+```
+systemctl start auditd
+systemctl enable auditd
+```
+
+3단계: 마운트 디렉터리 모니터링
+
+>?`-w`는 COSFS 마운트 디렉터리를 지정하며, `-k`는 audit 로그의 key 출력입니다.
+
+```
+auditctl -w /usr/local/service/mnt/ -k cosfs_mnt
+```
+
+4단계: 로그에 따라 액세스 프로그램 결정
+
+audit 로그 디렉터리: /var/log/audit, 쿼리 명령은 다음과 같습니다.
+
+```
+ausearch -i|grep 'cosfs_mnt'
+```
+
+5단계: auditd 서비스 중지
+auditd 서비스를 중지해야 하는 경우 다음 명령을 사용할 수 있습니다.
+
+```
+/sbin/service auditd stop
+```
+
+>!마운트 포인트에 액세스하는 프로그램이 실행 중이면 새로 시작된 auditd는 프로그램의 액세스 동작을 모니터링하지 않으며 프로그램의 마운트 디렉터리에 대한 다중 호출은 처음에만 기록됩니다.
 
 ### df를 실행한 후 Size 및 Available 값이 256T인 이유는 무엇입니까?
 COS 버킷은 무제한 저장 용량을 제공합니다. 표시된 256T는 df의 출력으로만 사용됩니다.
@@ -277,7 +328,3 @@ COSFS는 로컬 저장소를 차지하지 않습니다. df와 같은 툴과의 �
 ### df -i를 실행한 후 Inode/IUsed/IFree의 값이 0인 이유는 무엇입니까?
 COSFS는 디스크 기반 파일 시스템이 아니므로 inode가 없습니다.
 
-
-
-### COSFS의 CPU 사용률이 높고 매일 일정 시간 동안 COS에 많은 Head 및 List 요청을 보내는 경우 어떻게 해야 하나요?
-이는 일반적으로 서버에서 예약된 디스크 스캔 작업으로 인해 발생합니다. Linux의 일반적인 디스크 스캔 프로그램은 updatedb입니다. COSFS 마운트 대상 디렉터리를 updatedb의 구성 파일 /etc/updatedb.conf의 PRUNEPATHS 구성 항목에 추가하여 디스크 스캔을 방지할 수 있습니다.

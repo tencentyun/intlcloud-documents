@@ -5,12 +5,16 @@
 - 条件オペレーター：発効条件の判断方法を表します。
 - 条件値：条件キーの値です。
 
-詳細については[CAM発効条件](https://intl.cloud.tencent.com/document/product/598/10608)をご参照ください。
+詳細については[CAM発効条件](https://www.tencentcloud.com/document/product/598/10608)をご参照ください。
+
+>? 
+>- 条件キーを使用してポリシーを作成する際は、必ず最小権限の原則を遵守し、適用可能なリクエスト（action）にのみ該当する条件キーを追加してください。アクション（action）を指定する際にワイルドカード「\*」を使用すると、リクエストが失敗しますので避けてください。
+>- Cloud Access Management（CAM）コンソールを使用してポリシーを作成する際は、構文形式にご注意ください。version、principal、statement、effect、action、resource、conditionの構文要素はアルファベットの先頭の文字を大文字にするか、またはすべて小文字にする必要があります。
 
 
 ## 発効条件の例
 
-次のバケットポリシーの例における発効条件（Condition）は、ユーザーが10.217.182.3/24または111.21.33.72/24ネットワークセグメントに属している場合にのみ、`cos:PutObject`アクションの権限付与が完了することを表します。このうち、
+次のバケットポリシーの例における発効条件（condition）は、ユーザーが10.217.182.3/24または111.21.33.72/24ネットワークセグメントに属している場合にのみ、`cos:PutObject`アクションの権限付与が完了することを表します。このうち、
 - **条件キー**は`qcs:ip`であり、発効条件の種類がIPであることを表します。
 - **条件オペレーター**は`ip_equal`であり、発効条件の判断方法がIPアドレスの同一性であることを表します。
 - **条件値は**配列`["10.217.182.3/24","111.21.33.72/24"]`であり、発効条件判断の規定値を表します。ユーザーが配列の中の任意のIPがあるネットワークセグメントに属している場合、条件判断はすべてtrueとなります。
@@ -20,19 +24,19 @@
     "version":"2.0",
     "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "ip_equal":{
                     "qcs:ip":[
                         "10.217.182.3/24",
@@ -47,9 +51,6 @@
 
 ## COSのサポートする条件キー
 
-
->? これら3つの条件キー`qcs:ip`、`vpc:requester_vpc`、`cos:content-type`はすべてのリージョンでの使用をサポートしています。それ以外の条件キーは成都、広州、上海、ジャカルタ、サンパウロ、バージニア、東京、ソウルリージョンでのみサポートしており、他のリージョンでも順次サポートされる予定です。
->
 
 
 Cloud Object Storage（COS）のサポートする条件キーには2種類あり、1つはIP、VPC、HTTPSを含むすべてのリクエストに適用可能なもので、もう1つはリクエストヘッダーおよびリクエストパラメータによる条件キーであり、一般的にこのリクエストヘッダーまたはリクエストパラメータを持つリクエストにのみ適用できます。これらの条件キーに関する説明および実際の使用例については、[条件キーの説明およびユースケース](https://intl.cloud.tencent.com/document/product/436/46206)のドキュメントをご参照ください。
@@ -81,7 +82,7 @@ COSが現在サポートしている、リクエストヘッダーおよびリ�
 |条件キー   |適用リクエスト | リクエストヘッダー/リクエストパラメータの確認 |タイプ|
 |:----------|:----------|:----------|:----------|
 |[cos:x-cos-storage-class](https://intl.cloud.tencent.com/document/product/436/46206#x-cos-storage-class) |PutObject<br>PostObject<br>InitiateMultipartUpload<br>AppendObject |リクエストヘッダー：x-cos-storage-class |String|
-|[cos:versionid](https://intl.cloud.tencent.com/document/product/436/46206#versionid) |GetObject<br>DeleteObject<br>PostObjectRestore<br>PutObjectTagging<br>GetObjectTagging<br>DeleteObjectTagging<br>HeadObject |リクエストパラメータ：versionId |String|
+|[cos:versionid](https://intl.cloud.tencent.com/document/product/436/46206#versionid) |GetObject<br>DeleteObject<br>PostObjectRestore<br>PutObjectTagging<br>GetObjectTagging<br>DeleteObjectTagging<br>HeadObject |リクエストパラメータ：versionid |String|
 |[cos:prefix](https://intl.cloud.tencent.com/document/product/436/46206#prefix) |GetBucket（List Objects）<br>GET Bucket Object versions<br>List Multipart Uploads<br>ListLiveChannels |リクエストパラメータ：prefix |String|
 |[cos:x-cos-acl](https://intl.cloud.tencent.com/document/product/436/46206#x-cos-acl) |PutObject<br>PostObject<br>PutObjectACL<br>PutBucket<br>PutBucketACL<br>AppendObject<br>Initiate Multipart Upload |リクエストヘッダー：x-cos-acl |String|
 |[cos:content-length](https://intl.cloud.tencent.com/document/product/436/46206#content-length) |このリクエストは適用範囲が広いため、リクエストボディ付きのリクエストなどの代表的なリクエストに注目 |リクエストヘッダー：Content-Length |Numeric|
@@ -125,23 +126,23 @@ COSの条件キーは次の条件オペレーターをサポートしており�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -149,9 +150,9 @@ COSの条件キーは次の条件オペレーターをサポートしており�
 }
 ```
 
-条件オペレーターが`string_equal`または`string_equal_if_exist`の場合、Conditionのヒット状況およびリクエストが承認されるかどうかは下表のとおりとなります。
+条件オペレーターが`string_equal`または`string_equal_if_exist`の場合、conditionのヒット状況およびリクエストが承認されるかどうかは下表のとおりとなります。
 
-|条件オペレーター  |リクエスト |Conditionにヒットするか |リクエストが承認されるか |
+|条件オペレーター  |リクエスト |conditionにヒットするか |リクエストが承認されるか |
 |:----------|:----------|:----------|:----------|
 |string_equal |versionidなし |FALSE |不承認 |
 |string_equal_if_exist |versionidなし |TRUE |承認 |
@@ -167,23 +168,23 @@ COSの条件キーは次の条件オペレーターをサポートしており�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -191,9 +192,9 @@ COSの条件キーは次の条件オペレーターをサポートしており�
 }
 ```
 
-条件オペレーターが`string_equal`または`string_equal_if_exist`の場合、Conditionのヒット状況およびリクエストが拒否されるかどうかは下表のとおりとなります。
+条件オペレーターが`string_equal`または`string_equal_if_exist`の場合、conditionのヒット状況およびリクエストが拒否されるかどうかは下表のとおりとなります。
 
-| 条件オペレーター |リクエスト |Conditionにヒットするか |リクエストが拒否される/拒否されない |
+| 条件オペレーター |リクエスト |conditionにヒットするか |リクエストが拒否される/拒否されない |
 |:----------|:----------|:----------|:----------|
 |string_equal |versionidなし |FALSE |拒否されない |
 |string_equal_if_exist |versionidなし |TRUE |拒否される |
@@ -220,40 +221,40 @@ allow + string_equalはリクエストにこの条件キーがない場合、デ
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
@@ -274,40 +275,40 @@ allow + string_equal_if_existはリクエスト内にこの条件キーがない
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
@@ -329,38 +330,38 @@ allow + string_equal_if_existはリクエスト内にこの条件キーがない
     "version":"2.0",
     "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/1250000000:uin/1250000001"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }

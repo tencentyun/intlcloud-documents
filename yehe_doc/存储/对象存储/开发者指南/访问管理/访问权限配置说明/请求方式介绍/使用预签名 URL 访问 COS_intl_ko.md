@@ -10,6 +10,9 @@ COS(Cloud Object Storage)는 사전 서명된 URL을 사용하여 객체를 업�
 COS는 객체 공유를 지원하며 사전 서명된 URL을 사용하여 제한된 시간 동안 다른 사용자와 파일 및 폴더를 공유할 수 있습니다. 사전 서명된 URL의 원리는 객체 URL 뒤에 서명을 접합하는 것입니다. 서명 생성 알고리즘은 [서명 요청](https://intl.cloud.tencent.com/document/product/436/7778)을 참고하십시오.
 
 버킷은 기본적으로 개인 읽기이며 객체 URL을 통해 직접 다운로드하면 액세스 실패 메시지가 표시됩니다. 객체 url 뒤에 유효한 서명 접합 후 **사전 서명된 URL**을 얻습니다. 서명은 신분 정보를 전달하므로 사전 서명된 URL을 사용하여 객체를 다운로드할 수 있습니다.
+
+>?사전 서명을 생성하기 위해 영구 키를 사용해야 하는 경우 위험을 방지하기 위해 영구 키의 권한 범위를 업로드 또는 다운로드 작업으로 제한하는 것이 좋습니다. 그리고 생성된 서명의 유효 기간은 업로드 또는 다운로드 작업을 완료하는 데 필요한 가장 짧은 기간으로 설정합니다. 지정된 사전 서명된 URL의 유효 기간이 만료되면 요청이 중단되기 때문에 새 서명을 신청한 후 실패한 요청은 다시 실행해야 하며, 체크포인트 재시작을 지원하지 않습니다.
+
 ```
 // 객체 URL
 https://test-12345678.cos.ap-beijing.myqcloud.com/test.png
@@ -27,9 +30,9 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 #### 콘솔(Web 페이지)
 
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인하여 버킷 이름을 클릭하고 ‘파일 리스트’를 입력한 다음 **세부 사항** 객체를 클릭합니다.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/aff68724b740f962e39cf1167ac2cb5b.png)
 2. 객체 세부 정보 페이지로 이동하여 유효한 1시간 동안 임시 링크를 복사합니다.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6b6b17a56e82af5c5af9143338806fc3.png)
 
 #### COSBrowser(클라이언트)
 
@@ -52,7 +55,7 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 
 **시나리오에 적합: 임시 링크 일괄 가져오기, 프로그래밍 기반의 사용자**
 
-콘솔과 COSBrowser에서 얻은 임시 링크는 유효 기간이 짧으며, 더 긴 임시 링크가 필요한 경우 SDK를 사용하여 사전 서명된 URL을 생성할 수도 있습니다. 이는 서명 기간을 제어하여 구현할 수 있습니다. 생성 방법은 [사전 서명 인증 다운로드](https://intl.cloud.tencent.com/document/product/436/14116)를 참고하여 익숙한 개발 언어를 선택하십시오.
+콘솔과 COSBrowser에서 얻은 임시 링크는 유효 기간이 짧으며, 더 긴 임시 링크가 필요한 경우 SDK를 사용하여 사전 서명된 URL을 생성할 수도 있습니다. 이는 서명 기간을 제어하여 구현할 수 있습니다. 생성 방법은 [사전 서명된 URL을 통해 다운로드](https://intl.cloud.tencent.com/document/product/436/14116)를 참고하여 익숙한 개발 언어를 선택하십시오.
 
 임시 키 또는 영구 키를 사용하여 사전 서명된 URL을 생성할 수 있습니다. 둘의 차이점은 임시 키는 최대 유효 기간이 36시간을 넘지 않고 영구 키는 만료되지 않는다는 점으로 이는 사전 서명된 URL의 유효 기간에 간접적인 영향을 미칩니다. 
 
@@ -65,8 +68,8 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
+<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
+<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
@@ -85,10 +88,10 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 
 **임시 키로 사전 서명된 URL 생성(36시간 이내)**
 
-프런트 엔드 다이렉트 시나리오에서는 임시 키를 사용해야 하는 경우가 많습니다. 임시 키에 대한 설명 및 생성 가이드는 다음을 참고하십시오.
-- [임시 키로 COS에 액세스](https://intl.cloud.tencent.com/document/product/436/45242)
+프런트 엔드 다이렉트 업로드 시나리오에서는 임시 키를 사용해야 하는 경우가 많습니다. 임시 키에 대한 설명 및 생성 가이드는 다음을 참고하십시오.
+- [임시 키를 사용한 COS 액세스](https://intl.cloud.tencent.com/document/product/436/45242)
 - [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)
-- [프런트 엔드의 COS 다이렉트 업로드에 쓰이는 임시 키 보안 가이드](https://intl.cloud.tencent.com/document/product/436/35265)
+- [프런트엔드에서 COS로 다이렉트 업로드 시 임시 자격 증명 사용 보안 가이드](https://intl.cloud.tencent.com/document/product/436/35265)
 
 임시 키의 최대 유효 기간은 36시간이며, 사전 서명된 URL의 유효 기간은 귀하가 설정한 서명의 유효 기간과 임시 키의 유효 기간의 최소값입니다. 서명의 유효 기간을 X로 설정하고 임시 키의 유효 기간을 Y로, 링크의 실제 유효 시간을 T라고 가정합니다.
 ```
@@ -101,8 +104,8 @@ T=min(X,Y); X<=36 이므로 T<=36.
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
+<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
+<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
@@ -126,7 +129,9 @@ T=min(X,Y); X<=36 이므로 T<=36.
 ## 파일 업로드
 기본적으로 버킷과 객체는 개인 소유입니다. 3rd party가 버킷에 객체를 업로드할 수 있지만 CAM 계정 혹은 임시 키 사용을 원치 않는 경우 임시 업로드 작업을 완료하기 위해 URL 사전 서명을 사용해 3rd party에게 서명을 제출합니다. 유효한 서명 URL을 받은 계정은 모두 객체 업로드를 진행할 수 있습니다.
 
+>?사전 서명을 생성하기 위해 영구 키를 사용해야 하는 경우 위험을 방지하기 위해 영구 키의 권한 범위를 업로드 또는 다운로드 작업으로 제한하는 것이 좋습니다. 그리고 생성된 서명의 유효 기간은 업로드 또는 다운로드 작업을 완료하는 데 필요한 가장 짧은 기간으로 설정합니다. 지정된 사전 서명된 URL의 유효 기간이 만료되면 요청이 중단되기 때문에 새 서명을 신청한 후 실패한 요청은 다시 실행해야 하며, 체크포인트 재시작을 지원하지 않습니다.
+
 - 방법1: SDK를 사용하여 사전 서명된 URL 생성
-각 언어 SDK는 사전 서명된 URL을 생성하고 업로드하는 방법을 제공하며, 생성 방법은 [사전 서명된 인증 업로드](https://intl.cloud.tencent.com/document/product/436/14114)를 참고하여 익숙한 개발 언어를 선택하십시오.
+각 언어 SDK는 사전 서명된 URL을 생성하고 업로드하는 방법을 제공하며, 생성 방법은 [사전 서명된 URL을 통해 업로드](https://intl.cloud.tencent.com/document/product/436/14114)를 참고하여 익숙한 개발 언어를 선택하십시오.
 - 방법2: 서명 링크 자체 접합
 사전 서명된 URL은 실제로 객체 URL 뒤에 접합된 서명이므로 SDK, 서명 생성 툴 등을 통해 직접 서명을 생성하고 객체 업로드를 위해 URL과 서명을 서명된 링크에 접합합니다. 그러나 서명 생성 알고리즘의 복잡성으로 인해 이 사용 방법은 일반적으로 권장되지 않습니다.

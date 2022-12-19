@@ -10,6 +10,9 @@ Cloud Object Storage（COS）は署名付きURLを使用したオブジェクト
 COSはオブジェクトの共有をサポートしています。署名付きURLを使用することで、ファイルやフォルダを他のユーザーと期限付きで共有することができます。署名付きURLの原理は、署名をオブジェクトURLに埋め込んで結合するものです。その後の署名生成アルゴリズムについては、[リクエスト署名](https://intl.cloud.tencent.com/document/product/436/7778)をご参照ください。
 
 バケットはデフォルトではプライベート読み取りであり、オブジェクトのURLから直接ダウンロードしようとするとアクセスエラーが表示されます。オブジェクトURLの後に有効な署名を結合すると、**署名付きURL**を取得できます。署名にはID情報が含まれるため、署名付きURLはオブジェクトのダウンロードに用いることができます。
+
+>?やむを得ずパーマネントキーを使用して署名付きURLを生成する場合は、リスク回避のため、パーマネントキーの権限の範囲をアップロードまたはダウンロード操作のみに限定することをお勧めします。また、生成した署名の有効期間を、今回のアップロードまたはダウンロード操作に必要な最短の期限までに設定し、指定した署名付きURLの有効期限が過ぎるとリクエストが中断するようにします。失敗したリクエストは新しい署名を申請後に再度実行する必要があります。中断からの再開はサポートしていません。
+
 ```
 // オブジェクトURL
 https://test-12345678.cos.ap-beijing.myqcloud.com/test.png
@@ -27,9 +30,9 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 #### コンソール（Webページ）
 
 1. [COSコンソール](https://console.cloud.tencent.com/cos5)にログインし、バケット名をクリックし、「ファイルリスト」に進み、オブジェクトの**詳細**をクリックします。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/aff68724b740f962e39cf1167ac2cb5b.png)
 2. オブジェクトの詳細ページに進み、一時リンクをコピーします。有効期間は1時間です。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/6b6b17a56e82af5c5af9143338806fc3.png)
 
 #### COSBrowser（クライアント）
 
@@ -65,8 +68,8 @@ https://test-12345678.cos.ap-beijing.myqcloud.com/test.png?q-sign-algorithm=sha1
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
+<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
+<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
@@ -101,8 +104,8 @@ T=min(X,Y)。X<=36のため、T<=36です。
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37680">Android SDK</a>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31520">C SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31524">C++ SDK</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38068">.NET SDK</a>
+<td><a href="https://cloud.tencent.com/document/product/436/35163">C++ SDK</td>
+<td><a href="https://cloud.tencent.com/document/product/436/32873">.NET SDK</a>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31528">Go SDK</a>
@@ -125,6 +128,8 @@ T=min(X,Y)。X<=36のため、T<=36です。
 
 ## ファイルのアップロード
 第三者がオブジェクトをバケットにアップロードできるようにし、なおかつ相手にCAMアカウントまたは一時キーなどの方法を使用させたくない場合は、署名付きURLを使用して署名を第三者に渡し、一時的なアップロード操作を完了させることができます。有効な署名付きURLを受領した人は誰でもオブジェクトをアップロードできます。
+
+>?やむを得ずパーマネントキーを使用して署名付きURLを生成する場合は、リスク回避のため、パーマネントキーの権限の範囲をアップロードまたはダウンロード操作のみに限定することをお勧めします。また、生成した署名の有効期間を、今回のアップロードまたはダウンロード操作に必要な最短の期限までに設定し、指定した署名付きURLの有効期限が過ぎるとリクエストが中断するようにします。失敗したリクエストは新しい署名を申請後に再度実行する必要があります。中断からの再開はサポートしていません。
 
 - 手段1：SDKを使用した署名付きURLの生成
 各言語のSDKがアップロード署名付きURLの生成メソッドを提供しています。生成メソッドについては、[署名付きURLによるアップロード権限承認](https://intl.cloud.tencent.com/document/product/436/14114)を参照し、使いやすい開発言語を選択してください。

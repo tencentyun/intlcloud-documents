@@ -5,7 +5,7 @@
 - 조건 연산자: 조건 결정 방법을 지정합니다.
 - 조건 값: 조건 키의 값을 지정합니다.
 
-자세한 내용은 [Conditions](https://intl.cloud.tencent.com/document/product/598/10608)를 참고하십시오.
+자세한 내용은 [Conditions](https://www.tencentcloud.com/document/product/598/10608)를 참고하십시오.
 
 >? 
 >- 버킷 정책을 작성 시 조건 키를 사용할 때 최소 권한 원칙을 준수하고, 해당 조건 키를 해당 요청(action)에만 추가하며, 작업 지정(action) 시 “\*” 와일드 카드를 사용하지 마십시오. 와일드카드를 사용하면 요청이 실패합니다.
@@ -51,9 +51,6 @@
 
 ## COS에서 지원하는 조건 키
 
-
->? 조건 키 `qcs:ip`, `vpc:requester_vpc` 및 `cos:content-type`은 모든 리전에서 사용할 수 있습니다. 나머지 조건 키는 현재 청두, 광저우, 상하이, 자카르타, 상파울루, 버지니아, 도쿄, 서울 리전에서만 사용할 수 있으며 향후 다른 리전에서도 지원될 예정입니다.
->
 
 
 COS는 IP, VPC 및 HTTPS를 포함한 모든 요청에 적용 가능한 조건 키와 요청 헤더 및 요청 매개변수의 조건 키, 일반적으로 요청 헤더 또는 요청 매개변수를 전달해야 하는 요청에만 적용할 수 있는 두 가지 유형의 조건 키를 지원합니다. 이러한 조건 키에 대한 설명 및 사용 사례는 [Descriptions and Use Cases of Condition Keys](https://intl.cloud.tencent.com/document/product/436/46206)를 참고하십시오.

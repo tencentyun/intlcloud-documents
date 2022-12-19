@@ -7,7 +7,7 @@ COSFSツールは、Cloud Object Storage(COS)バケットのローカルへの�
 - ローカルデータをCOSにアップロードするには、[COS Migrationツール](https://intl.cloud.tencent.com/document/product/436/15392)または[COSCMDツール](https://intl.cloud.tencent.com/document/product/436/10976)の使用をお勧めします。
 
 ## 制限事項
-**COSFSはS3FSをベースとして構築されており、読み込み・書き込み操作はディスクを介して転送されます。マウント後のファイルの簡単な管理にのみ適していますが、ローカルファイルシステムの一部機能はサポートされておらず、性能面でもCloud Block Storage(CBS)やCloud File Storage(CFS)に取って代わることはできません。** 以下の例のような適用されないシナリオにご注意ください。
+**COSFSはS3FSをベースとして構築されており、読み取り書き込み操作はディスクを介して転送されます。マウント後のファイルの簡単な管理にのみ適していますが、ローカルファイルシステムの一部機能の使用方法はサポートされていないため、Tencent Cloud Storage Gatewayを使用してCOSにアクセスすることをお勧めします。Tencent CSGはCOSバケットを、ネットワークファイルシステムによって複数のサーバーにマウントすることができ、ユーザーはPOSIXファイルプロトコルを使用して、マウントポイントを通じてCOS上のオブジェクトの読み取りと書き込みを行うことができます。**COSFSツールを使用する場合、次のような適しないケースがあることに注意する必要があります。
 
 - ファイルをランダムにまたは追加で書き込むと、ファイル全体がダウンロードおよび再アップロードされます。Bucketと同じリージョンのCVMを使用すれば、ファイルのアップロード・ダウンロードを高速化できます。
 - 複数のクライアントが同じCOSバケットをマウントする場合、ユーザーに依存して各クライアントの動作の調整が行われます。例えば、複数のクライアントが同じファイルに書き込むことを避けるなどです。
@@ -46,7 +46,7 @@ CDNダウンロードアドレス：
 [cosfs_1.0.20-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu14.04_amd64.deb)
 [cosfs_1.0.20-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu16.04_amd64.deb)
 [cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu18.04_amd64.deb)
-[cosfs_1.0.20-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb)
+[cosfs_1.0.20-ubuntu20.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.20/cosfs_1.0.20-ubuntu20.04_amd64.deb)
 
 2. インストール。Ubuntu16.04を例とします。
 ```shell
@@ -174,7 +174,7 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig #前のコマンド�
 ```
 
 
-## 使用方法
+## 利用方法
 
 ### 1. キーファイルの設定
 ファイル`/etc/passwd-cosfs`に、バケット名（形式はBucketName-APPID）と、そのバケットに対応する&lt;SecretId&gtと&lt;SecretKey&gtをセミコロンで区切って記述してください。キーの漏洩を防ぐため、COSFSではキーファイルの権限値を640に設定する必要があります。`/ etc / passwd-cosfs`キーファイルを設定するためのコマンド形式は次のとおりです。
