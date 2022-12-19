@@ -39,12 +39,14 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])//Add *.aar
 }
 ```
->! If your project is not integrated with Google’s Gson, you also need to add the following dependency.
+
+<dx-alert infotype="notice">If your project is not integrated with Google’s Gson, you also need to add the following dependency.
 ```groovy
 dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
 }
 ```
+</dx-alert>
 :::
 ::: Maven
 The Tencent Effect SDK has been released to Maven Central Repository. You can use Gradle to download the updates automatically.
@@ -64,7 +66,7 @@ defaultConfig {
 	}
 }
 ```
->? Currently, the SDK supports armeabi-v7a, and arm64-v8a.
+<dx-alert infotype="explain"> Currently, the SDK supports armeabi-v7a, and arm64-v8a.</dx-alert>
 
 3. Click ![](https://main.qcloudimg.com/raw/d6b018054b535424bb23e42d33744d03.png) to automatically download the SDK and integrate it into your project.
 4. If your SDK edition includes animated effects and filters, you need to [download](https://intl.cloud.tencent.com/document/product/1143/45377) the corresponding SDK package and add the resources for animated effects and filters to the following directories of your project:
