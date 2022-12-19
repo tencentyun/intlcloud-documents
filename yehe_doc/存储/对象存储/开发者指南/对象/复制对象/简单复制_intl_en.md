@@ -1,4 +1,4 @@
-## Overview
+## Use Cases
 
 The copy operation creates a copy of a COS object of up to 5 GB in a single request. To copy an object over 5 GB, use the multipart upload API. With the copy operation, you can:
 
@@ -11,16 +11,17 @@ The copy operation creates a copy of a COS object of up to 5 GB in a single requ
 In the copy operation, the metadata of the source object is inherited by default, while the creation date is subject to the creation date of the target object.
 
 >?
->- Copy and paste are not supported for objects in the ARCHIVE storage class.
+>- Copy and paste is not supported for objects in the ARCHIVE storage class.
+>- Objects in MAZ buckets cannot be replicated to an OAZ bucket.
 >- A sub-account should be granted the `PutObject`, `GetObject`, and `GetObjectACL` permissions to copy objects.
 
-## Directions
+## How to Use
 
 ### Using COS console
 
 Copy objects in the COS console. For more information, see [Copying Objects](https://intl.cloud.tencent.com/document/product/436/33456) in Console Guide.
 
-### Using REST APIs
+### Using the REST API
 
 Use REST APIs to initiate an object copy request. For more information, see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881).
 

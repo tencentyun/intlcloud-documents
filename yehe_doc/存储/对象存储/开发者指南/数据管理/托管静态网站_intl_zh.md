@@ -4,7 +4,7 @@
 
 ## 示例
 
-用户创建了名为 examplebucket-1250000000 的存储桶，上传了如下文件：
+用户创建了名为 examplebucket-1250000000 的存储桶，上传了如下文件： 
 
 ```shell
 index.html
@@ -84,7 +84,10 @@ https://examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com/webpage.h
 
 #### 配置前缀匹配
 
+>!前缀匹配不支持通配符。如您希望对前缀为 index1/、index2/ 的两个文件夹进行重定向，不能使用 `index*/` 作为匹配规则，需要分别创建对应的匹配规则。
+
 1. 当您将文件夹从`docs/`重命名为`documents/`后，用户在访问`docs/`文件夹会产生错误。所以，您可以将前缀`docs/`的请求重定向至` documents/`。
 ![](https://main.qcloudimg.com/raw/9e8bbe91d902b46146c207a61e092e1d.png)
 2. 当您删除了`images/`文件夹（即删除了具有前缀`images/`的所有对象）。您可以添加重定向规则，将具有前缀`images/`的任何对象的请求重定向至`test.html`页面。
 ![](https://main.qcloudimg.com/raw/ceb0d796e1330c1b203578a1472532e6.png)
+

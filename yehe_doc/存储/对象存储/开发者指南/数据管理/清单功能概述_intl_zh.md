@@ -9,7 +9,6 @@
 
 >!
 >- 用户可以在一个存储桶中配置多个清单任务，清单任务执行过程中并不会直接读取对象内容，仅扫描对象元数据等属性信息。
->- 目前暂不支持金融云地域。
 >
 
 ## 清单参数
@@ -34,7 +33,7 @@
 | ETag                | 实体标签是对象的哈希。ETag 仅反映对对象的内容的更改，而不反映对对象的元数据的更改。ETag 可能是也可能不是对象数据的 MD5 摘要。是与不是取决于对象的创建方式和加密方式 |
 | StorageClass        | 用于存储对象的存储类，有关更多信息，请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) |
 | IsMultipartUploaded | 如果对象以分块上传形式上传，则设置为 True，有关更多信息，请参见 [分块上传](https://intl.cloud.tencent.com/document/product/436/14112) |
-| Replicationstatus   | 设置为 PENDING、COMPLETED、FAILED 或 REPLICA。有关更多信息，请参见 [复制行为说明](https://intl.cloud.tencent.com/document/product/436/19923)|
+| Replicationstatus   | 用于标记对象复制中源端文件和副本文件的状态。源端文件标记：PENDING（待复制）、COMPLETED（复制完成）、FAILED（复制失败）；副本文件标记：REPLICA（已完成复制，生成副本文件）。有关更多信息，请参见 [复制行为说明](https://intl.cloud.tencent.com/document/product/436/19923)  |
 | Tag | 对象的标签 |
 
 ## 如何配置清单
@@ -68,7 +67,8 @@
 - 选择清单加密：不加密或者 SSE-COS。如您选择了 SSE-COS 加密，我们将会对生成的清单报告进行加密。
 - 配置清单的输出位置：您需要指定清单报告需要存储的存储桶。
 
-> !目标存储桶必须和源存储桶位于同一地域，两者可以是同一存储桶。
+>! 目标存储桶必须和源存储桶位于同一地域，两者可以是同一存储桶。
+>
 
 
 ## 使用方法
@@ -101,13 +101,13 @@ policyDocument 为：
 	}]
 }
 ```
+
 #### 2. COS 角色绑定权限
 角色权限绑定权限，具体接口信息参见 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562)。
 其中，policyName 为：QcloudCOSFullAccess，roleName 为第1步中的 COS_QcsRole，也可以使用创建 roleName 时返回的 roleID。
 
 #### 3. 开启清单功能
-调用接口，开启清单功能，具体接口信息请参见 [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625)，其中，要求存放清单文件的目标存储桶和源存储桶在同一地域。
-
+调用接口，开启清单功能，具体接口信息请参见 [PUT Bucket inventory](https://www.tencentcloud.com/document/product/436/30625)，其中，要求存放清单文件的目标存储桶和源存储桶在同一地域。
 
 
 ## 清单报告存储路径
@@ -146,6 +146,7 @@ destination-prefix/appid/source-bucket/config-ID/YYYYMMDD/manifest.checksum
 >   - 时间戳，包含生成清单报告时开始扫描存储桶的日期与时间。
 >   - 清单文件的格式与架构。
 >   - 目标存储桶中清单报告的对象键，大小及 md5Checksum。
+>   
 
 以下是 CSV 格式清单的 manifest.json 文件中的 Manifest 示例：
 

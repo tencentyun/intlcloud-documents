@@ -4,7 +4,7 @@ COS offers the Object Lock feature to help you lock your objects to prevent them
 
 >? 
 >- With this feature, COS can meet stringent requirements (including SEC Rule 17a-4 (f), FINRA 4511, and CFTC 1.31) on retaining electronic records.
->- SEC Rule 17a-4 is a regulation issued by the U.S. Securities and Exchange Commission under the US Securities Exchange Act of 1934. The rule outlines requirements for data retention, indexing, and accessibility for companies that deal in the trade or brokering of financial securities such as stocks, bonds, and futures. According to the rule, records of numerous types of transactions must be retained and cannot be rewritten or erased with immediate access for a period of at least six years.
+>- SEC Rule 17a-4 is a regulation issued by the U.S. Securities and Exchange Commission under the US Securities Exchange Act of 1934. The rule outlines requirements for data retention, indexing, and accessibility for companies that deal in the trade or brokering of financial securities such as stocks, bonds, and futures. According to the rule, records of numerous types of transactions must be retained and cannot be rewritten or erased with immediate access for a period of two years and non-immediate access for at least six years.
 
 Object Lock is a bucket-level feature, which means that each bucket can only have one time-based Object Lock rule. After this feature is enabled, a retention term is required, which can range from 1 day to 100 years. Permanent retention is not allowed.
 
@@ -17,7 +17,7 @@ During the retention period:
 A time-based Object Lock rule has only one status, that is, once the rule is submitted, it takes effect. The rule cannot be modified or deleted. You can only extend the retention period.
 
 
-## Directions
+## How to Use
 
 You can configure Object Lock by using the console or APIs.
 
@@ -29,17 +29,17 @@ For information on how to lock an object in the COS console, see [Setting Object
 
 You can directly call the following APIs to manage Object Lock:
 
-- [PUT Bucket ObjectLockConfiguration](https://www.tencentcloud.com/document/product/436/40133)
-- [GET Bucket ObjectLockConfiguration](https://www.tencentcloud.com/document/product/436/40134)
+- [PUT Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40133)
+- [GET Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40134)
 - [GET Object Retention](https://www.tencentcloud.com/document/product/436/40135) 
 
 
-## Use Limits
+## Restrictions
 
 1. Object Lock is now only available to customers in the allowlist. To use this feature, [contact us](https://intl.cloud.tencent.com/contact-sales).
 2. Once enabled, the Object Lock configuration will take effect on a bucket within five seconds.
 3. Object Lock can be set for both existing buckets and objects, as shown below:
-Assume that you created a bucket named `examplebucket` on July 1, 2012, and uploaded three objects (test1.txt, test2.txt, and test3.txt) at different time points (the upload dates are shown in the following table). Then, on September 1, 2013, you created an Object Lock rule for this bucket to retain objects for 5 years. In this case, the expiration dates of each object’s lock rule are as follows:
+Assume that you created a bucket named `examplebucket` on July 1, 2012, and uploaded three objects (test1.txt, test2.txt, and test3.txt) at different time points (the upload dates are shown in the following table). Then, on September 1, 2013, you created an Object Lock rule for this bucket to retain objects for 5 years. In this case, the expiration dates of each object's lock rule are as follows:
 <table>
 	<tr><th>Object</th><th>Upload Date</th><th>Expiration Date of Object Lock Rule</th></tr>
 	<tr><td>test1.txt</td><td>July 1, 2012</td><td>June 30, 2017</td></tr>

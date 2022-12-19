@@ -18,7 +18,7 @@ COS 为广大企业和个人用户提供数据管理、异地容灾、数据访�
 - [对象（Object）](https://intl.cloud.tencent.com/document/product/436/13324)：是 COS 的基本单元，可理解为任何格式类型的数据，例如图片、文档和音视频文件等。
 - [地域（Region）](https://intl.cloud.tencent.com/document/product/436/6224)：是腾讯云托管机房的分布地区，COS 的数据存放在这些地域的存储桶中。
 - [访问域名（Endpoint）](https://intl.cloud.tencent.com/document/product/436/6224)：对象被存放到存储桶中，用户可通过访问域名访问和下载对象。
-- [存储类型（StorageClass）](https://intl.cloud.tencent.com/document/product/436/30925)：指对象在 COS 中的存储级别和活跃程度。COS 提供多种存储类型：标准存储、低频存储、智能分层存储、智能分层存储、标准存储、低频存储、归档存储、深度归档存储。每种存储类型适用于不同的业务场景，拥有不同的特性（例如对象访问频度、访问时延等）。关于不同存储类型的详细介绍，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)。
+- [存储类型（StorageClass）](https://intl.cloud.tencent.com/document/product/436/30925)：指对象在 COS 中的存储级别和活跃程度。COS 提供多种存储类型：标准存储（多 AZ）、低频存储（多 AZ）、智能分层存储（多 AZ）、智能分层存储、标准存储、低频存储、归档存储、深度归档存储。每种存储类型适用于不同的业务场景，拥有不同的特性（例如对象访问频度、访问时延等）。关于不同存储类型的详细介绍，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)。
 
 
 
@@ -26,7 +26,7 @@ COS 为广大企业和个人用户提供数据管理、异地容灾、数据访�
 
 ### 新手入门
 
-COS 为您提供了一个丰富且完善的学习路径，相关工具、视频指南应有尽有，帮助您更好的了解和使用 COS。
+COS 为您提供了一个丰富且完善的学习路径，相关工具、视频指南应有尽有，帮助您更好的了解和使用 COS。详情请参见 [COS 新手入门](https://www.tencentcloud.com/products/cos)。
 
 
 ### 使用方式
@@ -50,7 +50,7 @@ COS 为用户提供多种使用方式，具体介绍请见下表：
 <td align="left" width="70%">本工具支持用户通过可视化界面，方便地进行数据的上传、下载、生成访问链接等操作。</td>
 </tr>
 <tr>
-<td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/10976">COSCMD 工具</a></td>
+<td align="left" width="30%"><a href="https://cloud.tencent.com/doc/product/436/10976">COSCMD 工具</a></td>
 <td align="left" width="70%">本工具支持用户使用简单的命令行指令实现对对象的批量上传、下载、删除等操作。</td>
 </tr>
 <tr>

@@ -16,7 +16,7 @@ Authorization: Auth String
 ```
 
 >? 
-> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://www.tencentcloud.com/document/product/436/6224) 文档。
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > 
 
@@ -38,7 +38,8 @@ Authorization: Auth String
 <ServerSideEncryptionConfiguration>
       <Rule>
          <ApplyServerSideEncryptionByDefault>
-             <SSEAlgorithm>AES256</SSEAlgorithm>
+             <SSEAlgorithm>AES256|KMS</SSEAlgorithm>
+             <KMSMasterKeyID>String</KMSMasterKeyID>
          </ApplyServerSideEncryptionByDefault>
       </Rule>
 </ServerSideEncryptionConfiguration>
@@ -50,8 +51,9 @@ Authorization: Auth String
 | ---------------------------------- | ---------------------------------- | -------------------------------------- | --------- | -------- |
 | ServerSideEncryptionConfiguration  | 无                                 | 包含默认加密的配置参数                 | Container | 是       |
 | Rule                              | ServerSideEncryptionConfiguration  | 默认的服务端加密配置规则               | Container | 是       |
-| ApplyServerSideEncryptionByDefault | Rule                              | 服务端加密的默认配置信息               | Container | 是       |
-| SSEAlgorithm                       | ApplyServerSideEncryptionByDefault | 要使用的服务端加密算法，枚举值：AES256 | String    | 是       |
+| ApplyServerSideEncryptionByDefault | ServerSideEncryptionConfiguration.Rule                              | 服务端加密的默认配置信息               | Container | 是       |
+| SSEAlgorithm                       | ServerSideEncryptionConfiguration.Rule.<br>ApplyServerSideEncryptionByDefault | 支持枚举值 AES256、KMS，AES256 代表使用 SSE-COS 模式，加密算法为 AES256；KMS 代表 SSE-KMS 模式 | String    | 是       |
+|KMSMasterKeyID                       | ServerSideEncryptionConfiguration.Rule.<br>ApplyServerSideEncryptionByDefault | 当 SSEAlgorithm 的值为 KMS 时，用于指定 KMS 的用户主密钥 CMK，如不指定，则使用 COS 默认创建的 CMK，更多详细信息可参见 SSE-KMS 加密 | String    | 是       |
 
 ## 响应
 

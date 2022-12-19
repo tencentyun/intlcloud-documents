@@ -2,7 +2,7 @@
 
 A static website is a website that contains static content (such as HTML) or client scripts. You can configure static websites for buckets with a custom domain name through the console. A dynamic website contains server scripts such as PHP, JSP, or ASP.NET, and needs to be processed on a server. You can host static websites on Tencent Cloud COS, but cannot write server scripts. For deployment of a dynamic website, we recommend you use a CVM for server code deployment.
 
-#### Samples
+## Samples
 
 A user created a bucket named examplebucket-1250000000 and uploaded the following files: 
 
@@ -55,7 +55,7 @@ http://www.examplebucket.com/
 http://www.examplebucket.com
 ```
 
-> !If folders are created in the bucket, the index document needs to be added at each folder level.
+> !If a folder is created in the bucket, the index file needs to be added at each level of the folder.
 
 ### Error document
 
@@ -84,7 +84,10 @@ If you do not configure a 403.html document, the browser will return an error do
 
 #### Configure prefix match
 
+>!Prefix match does not support wildcards. If you want to redirect two folders prefixed with `index1/` and `index2/`, you cannot use `index*/` as the match rule; instead, you should create corresponding match rules separately.
+
 1. When you rename a folder from `docs/` to `documents/`, the user will get an error when accessing the `docs/` folder. So, you can redirect the request with the prefix `docs/` to `documents/`.
 ![](https://main.qcloudimg.com/raw/9e8bbe91d902b46146c207a61e092e1d.png)
 2. When you delete the `images/` folder (i.e., deleting all objects with the prefix `images/`), you can add a redirection rule to redirect requests for any object with the prefix `images/` to `test.html`.
 ![](https://main.qcloudimg.com/raw/ceb0d796e1330c1b203578a1472532e6.png)
+

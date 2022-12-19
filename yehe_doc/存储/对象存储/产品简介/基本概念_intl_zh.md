@@ -13,7 +13,6 @@
 相关文档请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324)。
 
 
-
 ### APPID
 
 APPID 是您在成功申请腾讯云账户后所得到的账号，由系统自动分配，具有固定性和唯一性，可在 [账号信息](https://console.cloud.tencent.com/developer) 中查看。腾讯云账号的 APPID，是与账号 ID 有唯一对应关系的应用 ID。
@@ -78,6 +77,9 @@ SecretId 和 SecretKey 合称为云 API 密钥，是用户访问腾讯云 API �
 经由 CDN 加速节点加速的域名，系统默认生成，用户可选择开启或关闭。详情请参见 [域名管理概述](https://intl.cloud.tencent.com/document/product/436/18424)。
 
 
+### 自定义 CDN 加速域名
+用户可以为存储桶，绑定已备案的自定义域名至腾讯云国内 CDN 加速平台，通过自定义域名访问存储桶中的对象。详情请参见 [域名管理概述](https://intl.cloud.tencent.com/document/product/436/18424)。
+
 
 ### 自定义源站域名
 用户可以将已备案的自定义域名，绑定至当前存储桶，通过自定义域名访问存储桶内对象。详情请参见 [域名管理概述](https://intl.cloud.tencent.com/document/product/436/18424)。
@@ -87,9 +89,19 @@ SecretId 和 SecretKey 合称为云 API 密钥，是用户访问腾讯云 API �
 低频存储和归档存储类型为冷数据存储类型。对于低频数据来说，当您读取或下载该数据时，后台需要先取回数据后才可以读取或下载。对于归档数据来说，不可读取和下载，此时数据取回也可以称之为数据解冻（即把归档数据恢复至标准数据这一过程）。
 
 
+### 多 AZ
+
+多 AZ（Available Zone）是指由腾讯云对象存储推出的多 AZ 存储架构。客户数据分散存储在城市中多个不同的数据中心，当某个数据中心因为自然灾害、断电等极端情况导致整体故障时，多 AZ 存储架构依然可以为客户提供稳定可靠的存储服务。
+
+相关文档请参见 [多 AZ 特性概述](https://intl.cloud.tencent.com/document/product/436/35208)。
+
+
 ### Region
 
 
 即地域，是腾讯云托管机房的分布地区，对象存储的数据存放在这些地域的存储桶中。
 
 相关文档请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
+
+
+

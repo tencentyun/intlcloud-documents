@@ -19,10 +19,11 @@ The `cp` command is used to upload, download, or copy objects.
 |  None  | --include   | Includes specific objects.  |
 |  None  | --exclude   | Excludes specific objects.    |
 | -r        | --recursive | Specifies whether to traverse all objects in the directory recursively  |
-|   None  | --storage-class | Specifies the storage class for the object to upload. Default value: `STANDARD` |
-|   None       | --part-size     | Part size. Default value: `32 MB`      |
-|   None       | --thread-num    | Number of concurrent threads. Default value: `5`      |
-|   None       | --rate-limiting | Speed limit for a single URL. Value range: 0.1-100 MB/s       |
+|   None  | --storage-class | Specifies the storage class for the object to upload. Default value: STANDARD |
+|   None       | --part-size     | Part size in MB. Default value: 32 MB     |
+|   None       | --thread-num    | Number of concurrent threads. Default value: 5      |
+|   None       | --rate-limiting | Speed limit for a single URL in MB/s. Value range: 0.1–100 MB/s       |
+| None | --meta | Metadata of the uploaded file, including certain HTTP standard attributes (HTTP Header) and custom metadata prefixed with `x-cos-meta-` (User Meta). The file metadata is in the format of `header:value#header:value`, such as `Expires:2022-10-12T00:00:00.000Z#Cache-Control:no-cache#Content-Encoding:gzip#x-cos-meta-x:x`. |
 
 
 >?
@@ -30,13 +31,13 @@ The `cp` command is used to upload, download, or copy objects.
 > - If an object is larger than `--part-size`, COSCLI will split the object into multiple parts according to `--part-size` and use `--thread-num` threads to concurrently upload/download the object.
 > - Each thread maintains a URL. For each URL, you can use the `--rate-limiting` parameter to limit the speed of a single URL. When concurrent upload/download is enabled, the total rate is `--thread-num * --rate-limiting`.
 > - If an object is uploaded/downloaded in parts, checkpoint restart will be enabled by default.
-> - `--include` and `--exclude` support standard regular expression syntax, so you can use them to filter files that meet specific criteria.
+> - `--include` and `--exclude` support standard regular expression syntax, so you can use them to filter out objects that meet specific criteria.
 > - When using `zsh`, you may need to add double quotes at both ends of the `pattern` string.
-```
-./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.mp4"
+```plaintext
+./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.txt" --meta=x-cos-meta-a:a#ContentType:text#Expires:2022-10-12T00:00:00.000Z
 ```
 
-## Examples
+## Samples
 
 ### Upload
 
@@ -75,6 +76,13 @@ The `cp` command is used to upload, download, or copy objects.
 ```plaintext
 ./coscli cp ~/test/ cos://bucket1/example/ -r --storage-class ARCHIVE
 ```
+
+#### Uploading the local `file.txt` file to the `bucket1` bucket and setting the single-URL speed limit to 1.3 MB/s
+
+```plaintext
+./coscli cp ~/file.txt cos://bucket1/file.txt --rate-limiting 1.3
+```
+
 
 ### Download
 
@@ -122,7 +130,7 @@ The `cp` command is used to upload, download, or copy objects.
 ./coscli cp cos://bucket1/example1/ cos://bucket2/example2/ -r
 ```
 
-#### Uploading all MP4 objects in the `example1` directory in `bucket1` to the `example2` directory in `bucket2`
+#### Copying all MP4 objects in the `example1` directory in `bucket1` to the `example2` directory in `bucket2`
 
 ```plaintext
 ./coscli cp cos://bucket1/example1/ cos://bucket2/example2/ -r --include .*.mp4

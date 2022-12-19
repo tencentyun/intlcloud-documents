@@ -21,16 +21,16 @@
     </tr>
     	 <tr>
         <td rowspan="5">存储类型</td>
-    			<td>标准存储限制</td>
+    			<td>标准存储（多 AZ）/标准存储限制</td>
     			<td>计费限制：<br>存储时间、存储单元无限制。<br>标准存储具体定价，请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">产品定价</a>。</td>
     </tr>
     	 <tr>
-        <td>低频存储限制</td>
+        <td>低频存储（多 AZ）/低频存储限制</td>
     			<td>计费限制：<ul  style="margin: 0;"><li>存储时间不足30天，按30天计算。</li>
 					<li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>低频存储具体定价，请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">产品定价</a>。</li></ul></td>
     </tr>
     	 <tr>
-        <td>智能分层存储限制</td>
+        <td>智能分层存储（多 AZ）/智能分层存储限制</td>
     			<td>计费限制：<br>小于64KB的对象会持续存储在高频访问层。单个存储文件不论大小，均按实际数据大小计算。<br>智能分层存储具体定价，请参见 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">产品定价</a>。</td>
     </tr>
     	 <tr>
@@ -75,6 +75,7 @@
 						<ul  style="margin: 0;"><li>简单上传：单个对象最大5GB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14113">简单上传</a>。</li>
 						<li> 分块上传：单个对象最大48.82TB，块大小1MB - 5GB，最后一个块可小于1MB，分块数1 - 10000，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14112">分块上传</a>。</li></ul>
 					</li>
+					<li> 目前开启了多 AZ 配置的存储桶可以上传 多 AZ 特性的存储类型，例如标准存储（多 AZ）、低频存储（多 AZ）存储类型等。若同时存储桶还开启了智能分层配置，则还可上传智能分层存储（多 AZ）类型。</li>
 					<li>目前仅在存储桶启用智能分层存储配置的情况下，才可上传智能分层存储类型的对象。对象在不同存储层间的转换将由智能分层存储配置中的参数决定。</li></ul></td>
     		</tr>
     		<tr>
@@ -85,6 +86,7 @@
 						<ul  style="margin: 0;"><li>简单复制：复制单个对象最大5GB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14117">简单复制</a>。</li>
 						<li>大于5GB 必须用分块复制，复制单个对象最大48.82TB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14118">分块复制</a>。</li></ul>
 					</li>
+					<li>开启了多 AZ 配置的存储桶，不支持将多 AZ 存储类型复制为单 AZ 存储类型。</li>
 					<li>暂不支持将标准存储、低频存储、智能分层存储类型复制为智能分层存储类型。</li></ul></td>
     		</tr>
     		<tr>
@@ -107,7 +109,7 @@
     		</tr>
     		<tr>
     			<td >存储类型转化</td>
-    			<td >标准转低频：最小1天。<br>标准/低频转归档或深度归档：最小1天。<br>注意：<br>1. 生命周期不会对小于64KB的对象执行转换操作。</td>
+    			<td >标准转低频：最小1天。<br>标准/低频转归档或深度归档：最小1天。<br>注意：<br>1. 标准存储（多 AZ）和低频存储（多 AZ）暂不支持沉降为低频存储、归档存储和深度归档存储类型。<br>2. 生命周期不会对小于64KB的对象执行转换操作。</td>
     		</tr>
     		 <tr>
     			<td >过期删除</td>

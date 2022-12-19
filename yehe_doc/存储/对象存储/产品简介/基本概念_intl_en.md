@@ -1,100 +1,107 @@
 
 ### Bucket
 
-A bucket is an entity for objects, which can be considered as a "container" for stored objects. You can manage buckets and configure their attributes through various methods such as the Tencent Cloud console, APIs, and SDKs. For example, you can configure a bucket for static website hosting or access permission.
+A bucket is a carrier of objects, which can be considered as a "container" for storing objects. You can manage buckets and configure attributes for buckets through various methods such as the Tencent Cloud console, APIs, and SDKs. For example, you can set a bucket to be used for static website hosting or set access permission for a bucket.
 
 For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
 
 ### Object
 
-An object is the basic unit of COS and is stored in a bucket just like a photo stored in an album. You can manage objects in different ways including Tencent Cloud console, APIs, and SDKs. An object is named in the format of `<ObjectKey>` in API and SDK examples.
+An object is the basic unit of COS and is stored in a bucket just like a photo stored in an album. You can manage objects in different ways including Tencent Cloud console, APIs, and SDKs. An object is named in the format of &lt;ObjectKey>.
 
 For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 
 
-
 ### APPID
 
-APPID is an application ID which you get after you successfully signed up to Tencent Cloud, and which has a unique one-to-one correspondence with your account ID. It is automatically assigned to you as a permanent unique ID, which can be viewed in [Account Information](https://console.cloud.tencent.com/developer).
+APPID is a fixed unique application ID automatically assigned to you after you sign up for a Tencent Cloud account. You can view your APPID on the [Account Information](https://console.cloud.tencent.com/developer) page.
 
-APPID is usually used in bucket names in a format of “custom string-APPID”, for example, `examplebucket-1250000000`.
+APPID is usually used in bucket names. A complete bucket name consists of a custom string and APPID separated by hyphen, such as `examplebucket-1250000000`, where `1250000000` is the APPID.
 
 ### UID
 
-APPID is also used to generate temporary keys, specify bucket policies, or specify a resource range for policy configuration in CAM. In these cases, APPID is also referred to as UID that shares the same value as APPID.
+APPID can also be used to generate temporary keys, specify bucket policies, or specify resources in CAM policy settings. In such cases, APPID is also referred to as UID, both of which have the same value.
 
-For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312), [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023), and [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
+For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312), [Overview](https://intl.cloud.tencent.com/document/product/436/18023), and [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
 
 
 ### UIN
 
-Account ID, a permanent unique ID that has a unique one-to-one correspondence with your APPID, and can be viewed in [Account Information](https://console.cloud.tencent.com/developer). In COS services, it is used to generate temporary keys, specify bucket policies, or specify a resource range for policy configuration in CAM, in ways similar to those for UID, but with a notable difference in their prefixes.
+A UIN is an account ID. It is fixed, unique, and in one-to-one correspondence to an APPID and can be viewed in [Account Information](https://console.cloud.tencent.com/developer). In COS, it can be used to generate temporary keys, specify bucket policies, or specify resources in CAM policy settings. In such cases, UIN and UID are used in the same way, but they have different prefixes.
 
-For more information, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023) and [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
+For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/18023) and [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
 
 ### ACL
 
-An access control list (ACL) is a resource-based option for access management, and is used to describe an access permission action.
-In COS, you can use ACLs to manage the access to your buckets and objects by granting Read and Write permissions to other root accounts, sub-accounts, and user groups.
+An access control list (ACL) is a resource-based access management option and describes an access permission.
+In COS, an ACL can be used to manage the access to buckets and objects. You can use it to grant other root accounts, sub-accounts, and user groups basic read and write permissions.
 
-For more information, see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581) and [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
+For more information, see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581) and [ACL](https://intl.cloud.tencent.com/document/product/436/30583).
 
 ### CORS
 
-Cross-Origin Resource Sharing (CORS), which means that a resource in one domain initiates an HTTP request to a resource from another domain.
+Cross-origin resource sharing (CORS) refers to HTTP requests where the origin of the resource that initiates the request is different from the origin of the destination resource.
 
 
 ### SecretKey
 
-SecretId and SecretKey are collectively referred to as cloud API key, which is the security credential used for authentication when a user accesses a Tencent Cloud API, and obtained in [API Key Management](https://console.cloud.tencent.com/cam/capi). SecretKey is the key used to encrypt the signature string and the server-side authentication signature string. Multiple cloud API keys can be created under an APPID.
+`SecretId` and `SecretKey`, collectively referred to as the API key, are the security credential used for authentication when you access a TencentCloud API and can be viewed on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) key. `SecretKey` is used to encrypt signature strings and verify them on the server. You can create multiple API keys for one APPID.
 
 
 ### SecretId
 
-SecretId and SecretKey are collectively referred to as the cloud API key, which is the security credential used for authentication when a user accesses a Tencent Cloud API, and obtained in [API Key Management](https://console.cloud.tencent.com/cam/capi). SecretId is used to identify the API caller. Multiple cloud API keys can be created under an APPID.
+`SecretId` and `SecretKey`, collectively referred to as the API key, are the security credential used for authentication when you access a TencentCloud API and can be viewed on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) key. `SecretId` is used to identify the API caller. You can create multiple API keys for one APPID.
 
 
 
 ### Policy
 
-A policy is comprised of several elements used to describe permission details. For more information, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
+A policy consists of several elements and is used to describe specific information about authorization. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/18023).
 
 
 ### Public network downstream traffic
 
-Traffic of data transfer from COS to a client over the internet. It includes the traffic generated when you download objects using object URLs or browse objects through your static website origin.
+Public network downstream traffic is the traffic generated by data transfer from COS to the client over the internet, including the traffic generated by downloading an object directly through an object link or by browsing an object at a static website endpoint.
 
 ### CDN origin-pull traffic
-Traffic generated by data transfer from COS to Tencent Cloud CDN edge node</td>
+CDN origin-pull traffic is the traffic generated by data transfer from COS to CDN edge node.
 
 
-### Default domain name
-Domain name of COS origin. It is automatically generated based on your bucket name and region when you create a bucket, and should be distinguished from the default acceleration domain name. For more information, see [Domain Name Management Overview](https://intl.cloud.tencent.com/document/product/436/18424).
+### Default endpoint
+The default endpoint is COS origin's domain name, which is automatically generated based on the bucket name and region when you create a bucket. It's important to distinguish it from the default acceleration domain name. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/18424).
 
 
 ### Default CDN acceleration domain name
 
-A domain name accelerated by CDN cache nodes. It is generated by default, and you can choose to enable or disable it. For more information, see [Domain Name Management Overview](https://intl.cloud.tencent.com/document/product/436/18424).
+It is the domain name passing through CDN cache nodes, which is generated by default and you can choose to enable or disable. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/18424).
 
 
 ### Custom CDN acceleration domain name
-A custom domain name that you bind for your bucket to the Tencent Cloud CDN acceleration platform, and use to access objects in your bucket. For more information, see [Domain Name Management Overview](https://intl.cloud.tencent.com/document/product/436/18424).
+You can bind for your bucket a custom domain name to CDN and access objects in your bucket using this domain name. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/18424).
 
 
 ### Custom origin domain name
-A custom domain name that you bind to your bucket and use to access objects in it. For more information, see [Domain Name Management Overview](https://intl.cloud.tencent.com/document/product/436/18424).
+You can bind your own domain name as a custom endpoint to the bucket for access to the objects in it. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/18424).
 
 
 ### Data retrieval
-STANDARD_IA and ARCHIVE are two COS storage classes that store cold data. To read or download infrequently-accessed data, COS needs to retrieve it first. Archived data cannot be read or downloaded until you unfreeze (retrieve) it, that is, restore it to STANDARD storage class first.
+Storage classes suitable for cold data include **STANDARD_IA** and **ARCHIVE**. To read or download data in STANDARD_IA, the backend needs to retrieve it first. ARCHIVED data cannot be read or downloaded until it is restored to the STANDARD storage class.
 
+
+### MAZ
+
+MAZ refers to the multi-AZ storage architecture provided by COS. Your data is distributed among multiple IDCs in a region. When an IDC fails in extreme cases such as natural disasters or power outages, the multi-AZ storage architecture can still provide stable and reliable storage services.
+
+For more information, see [Overview of Multi-AZ Feature](https://intl.cloud.tencent.com/document/product/436/35208).
 
 
 ### Region
 
 
-A region where Tencent Cloud data centers are hosted, and where you store your COS data in your bucket.
+A region is a physical location where data centers are hosted on Tencent Cloud. COS data is stored in the buckets in these regions.
 
 For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+
+
 

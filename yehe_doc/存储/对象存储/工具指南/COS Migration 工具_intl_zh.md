@@ -10,7 +10,7 @@ COS Migration 是一个集成了 COS 数据迁移功能的一体化工具。通�
 >- COS Migration 的编码格式只支持 UTF-8 格式。
 >- 使用该工具上传同名文件，默认会覆盖较旧的同名文件，需要额外设置以跳过同名文件。
 >- 除本地数据迁移之外的场景请优先使用迁移服务平台。
->
+>- COS Migration 是用来做**一次性**迁移服务的，不适合于持续同步的场景。例如本地每天新增文件，需要持续同步至 COS 中，COS Migration 为了避免重复迁移任务，会保存迁移成功的记录，持续同步后，扫描记录时间会持续增大。此种场景建议使用 [文件同步](https://intl.cloud.tencent.com/document/product/436/32565)。
 
 ## 使用环境
 #### 系统环境
@@ -56,8 +56,8 @@ COS_Migrate_tool
 ```
 
 >?
-> - db 目录主要记录工具迁移成功的文件标识，每次迁移任务会优先对比 db 中的记录，若当前文件标识已被记录，则会跳过当前文件，否则进行文件迁移。
-> - log 目录记录着工具迁移时的所有日志，若在迁移过程中出现错误，请先查看该目录下的 error.log。
+ - db 目录主要记录工具迁移成功的文件标识，每次迁移任务会优先对比 db 中的记录，若当前文件标识已被记录，则会跳过当前文件，否则进行文件迁移。
+ - log 目录记录着工具迁移时的所有日志，若在迁移过程中出现错误，请先查看该目录下的 error.log。
 
 ### 3. 修改 config.ini 配置文件
 在执行迁移启动脚本之前，需先进行 config.ini 配置文件修改（路径：`./conf/config.ini`），config.ini 内容可以分为以下几部分：
@@ -108,7 +108,7 @@ skipSamePath=false
 | secretKey| 用户密钥 SecretKey，请将`COS_SECRETKEY`替换为您的真实密钥信息。可前往 [访问管理控制台](https://console.cloud.tencent.com/cam/capi) 中的云 API 密钥页面查看获取|-|
 | bucketName| 目的 Bucket 的名称, 命名格式为 `<BucketName-APPID>`，即 Bucket 名必须包含 APPID，例如 examplebucket-1250000000 |  -  |
 | region| 目的 Bucket 的 Region 信息。COS 的地域简称请参照 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) |-|
-| storageClass|   数据迁移后的存储类型，可选值为 Standard（标准存储）、Standard_IA（低频存储）、Archive（归档存储），相关介绍请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)    |Standard|
+| storageClass|   数据迁移后的存储类型，可选值为 Standard（标准存储）、Standard_IA（低频存储）、Archive（归档存储）、Maz_Standard（标准存储多 AZ）、Maz_Standard_IA（低频存储多 AZ），相关介绍请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)    |Standard|
 | cosPath|要迁移到的 COS 路径。`/`表示迁移到 Bucket 的根路径下，`/folder/doc/` 表示要迁移到 Bucket的`/folder/doc/` 下，若 `/folder/doc/` 不存在，则会自动创建路径|/|
 | https| 是否使用 HTTPS 传输：on 表示开启，off 表示关闭。开启传输速度较慢，适用于对传输安全要求高的场景|off|
 | tmpFolder|从其他云存储迁移至 COS 的过程中，用于存储临时文件的目录，迁移完成后会删除。要求格式为绝对路径：<br>Linux 下分隔符为单斜杠，例如`/a/b/c` <br>Windows 下分隔符为两个反斜杠，例如`E:\\a\\b\\c`<br>默认为工具所在路径下的 tmp 目录|./tmp|
@@ -139,7 +139,7 @@ ignoreModifiedTimeLessThanSeconds=
 
 | 配置项 | 描述 |
 | ------| ------ |
-|localPath|本地目录，要求格式为绝对路径：<ul  style="margin: 0;"><li>Linux 下分隔符为单斜杠，例如`/a/b/c` </li><li>Windows 下分隔符为两个反斜杠，例如`E:\\a\\b\\c`</li></ul>|
+|localPath|本地目录，要求格式为绝对路径：<ul  style="margin: 0;"><li>Linux 下分隔符为单斜杠，例如`/a/b/c` </li><li>Windows 下分隔符为两个反斜杠，例如`E:\\a\\b\\c`</li> </ul>注意：此参数只能填目录的路径，不能填具体文件的路径，否则会导致目标对象名解析错误，在 cosPath=/ 情况下，还会错误地解析成创桶请求|
 |excludes| 要排除的目录或者文件的绝对路径，表示将 localPath 下面某些目录或者文件不进行迁移，多个绝对路径之前用分号分割，不填表示 localPath 下面的全部迁移|
 |ignoreModifiedTimeLessThanSeconds| 排除更新时间与当前时间相差不足一定时间段的文件，单位为秒，默认不设置，表示不根据 lastmodified 时间进行筛选，适用于客户在更新文件的同时又在运行迁移工具，并要求不把正在更新的文件迁移上传到 COS，例如设置为300，表示只上传更新了5分钟以上的文件|
 

@@ -6,7 +6,7 @@ To call this API, you must have the `PutBucketEncryption` permission. By default
 
 ## Request
 
-**Request sample**
+**Sample request**
 
 ```sh
 PUT /?encryption HTTP 1.1
@@ -16,7 +16,7 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
@@ -38,7 +38,8 @@ The following request body sets SSE-COS as the default encryption:
 <ServerSideEncryptionConfiguration>
       <Rule>
          <ApplyServerSideEncryptionByDefault>
-             <SSEAlgorithm>AES256</SSEAlgorithm>
+             <SSEAlgorithm>AES256|KMS</SSEAlgorithm>
+             <KMSMasterKeyID>String</KMSMasterKeyID>
          </ApplyServerSideEncryptionByDefault>
       </Rule>
 </ServerSideEncryptionConfiguration>
@@ -50,8 +51,9 @@ The nodes are described as follows:
 | ---------------------------------- | ---------------------------------- | -------------------------------------- | --------- | -------- |
 | ServerSideEncryptionConfiguration | None | Default encryption configurations | Container | Yes |
 | Rule | ServerSideEncryptionConfiguration | Default server-side encryption rule | Container | Yes |
-| ApplyServerSideEncryptionByDefault | Rule | Default configuration for server-side encryption | Container | Yes |
-| SSEAlgorithm | ApplyServerSideEncryptionByDefault | Server-side encryption algorithm. Enumerated value: `AES256` | String | Yes |
+| ApplyServerSideEncryptionByDefault | ServerSideEncryptionConfiguration.Rule                              | Default configuration for server-side encryption | Container | Yes |
+| SSEAlgorithm                       | ServerSideEncryptionConfiguration.Rule.<br>ApplyServerSideEncryptionByDefault | Valid values: `AES256` (SSE-COS mode with AES256 algorithm), `KMS` (SSE-KMS mode) | String    | Yes       |
+|KMSMasterKeyID                       | ServerSideEncryptionConfiguration.Rule.<br>ApplyServerSideEncryptionByDefault | Customer master key (CMK) of KMS if `SSEAlgorithm` is set to `KMS`. If this field is not specified, the default CMK created by COS will be used. For more information, see SSE-KMS Encryption.  | String    | Yes       |
 
 ## Response
 
@@ -65,9 +67,9 @@ The response body is empty.
 
 **Error Code**
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Samples
 
 **Request**
 

@@ -13,7 +13,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td>Object operations</td>
-      <td>Storage classes. You can choose a storage class from INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, or DEEP ARCHIVE provided by COS according to the access frequency and disaster recovery degree of your objects. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30925">Overview</a>.<br>Objects/Folders: Can be uploaded, queried, downloaded, copied, and deleted. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/436/13321">Uploading Objects</a>.</td>
+      <td>Storage classes. You can choose a storage class from MAZ_STANDARD, MAZ_STANDARD_IA, INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, or DEEP ARCHIVE provided by COS according to the access frequency and disaster recovery degree of your objects. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30925">Overview</a>.<br>Objects/Folders: Can be uploaded, queried, downloaded, copied, and deleted. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/436/13321">Uploading Object</a>.</td>
    </tr>
 </table>	 
 
@@ -53,8 +53,8 @@ COS offers the following features:
       <td>This feature is used to log the access details of a source bucket; these logs are then stored in a destination bucket for better bucket management. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/16920">Logging Overview</a>.</td>
    </tr>
    <tr>
-      <td>Object tagging</td>
-      <td>This feature is designed to help group and manage objects in your bucket by adding a key-value pair as an object tag. An object tag consists of a `tagKey`, an equal sign `=`, and a `tagValue`, for example, `group = IT`. You can set, query, and delete tags for a specified object. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35665">Object Tag Overview</a>.</td>
+      <td>Number of object tags</td>
+      <td>This feature is designed to help group and manage objects in your bucket by adding a key-value pair as an object tag. An object tag consists of a `tagKey`, an equal sign `=`, and a `tagValue`, for example, `group = IT`. You can set, query, and delete tags for a specified object. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35665">Object Tagging Overview</a>.</td>
    </tr>
    <tr>
       <td>CSG</td>
@@ -78,8 +78,12 @@ COS offers the following features:
       <td>By configuring a cross-bucket replication rule, incremental objects can be automatically and asynchronously replicated between buckets for disaster recovery and data backup. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/19237">Overview</a>.</td>
    </tr>
    <tr>
+      <td nowrap="nowrap">MAZ configuration</td>
+      <td>MAZ refers to the multi-AZ storage architecture offered by COS, which can provide IDC-level disaster recovery capabilities for your data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35208">Overview of Multi-AZ Feature</a>.</td>
+   </tr>
+   <tr>
       <td nowrap="nowrap">Cloud database backup</td>
-      <td>Cloud database backup is a database backup feature provided by COS based on SCF. It helps you transfer backup files in TencentDB to COS for persistent storage to avoid data loss or corruption. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/41112">MySQL Data Backup</a>.</td>
+      <td>Cloud database backup is a database backup feature provided by COS based on SCF. It helps you transfer backup files in TencentDB to COS for persistent storage to avoid data loss or corruption. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/41112">MySQL Backup</a>.</td>
    </tr>
 </table>
 
@@ -108,7 +112,7 @@ COS offers the following features:
       <th>Description</td>
    </tr>
    <tr>
-      <td>CORS</td>
+      <td>Cross-Origin Access</td>
       <td>With COS, you can set HTML5 CORS configurations to enable access among different origins. COS can respond to CORS OPTIONS requests and return specified rules to the browser as configured by you. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/436/13318">Setting CORS</a>.</td>
    </tr>
    <tr>
@@ -133,7 +137,7 @@ COS offers the following features:
       <th>Description</td>
    </tr>
    <tr>
-      <td>CDN acceleration</td>
+      <td>CDN Acceleration</td>
       <td>COS has integrated the CDN acceleration feature to download and deliver large amounts of data from COS buckets. It is most useful in scenarios where the same data is downloaded repeatedly. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/18669">CDN Acceleration Overview</a>.</td>
    </tr>
    <tr>
@@ -247,7 +251,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td>CDN cache purging</td>
-      <td>This COS feature is provided through SCF to help you automatically purge data that is cached on CDN edge nodes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/37273">Setting CDN Cache Purge</a>.</td>
+      <td>This COS feature is provided through SCF to help you automatically purge data that is cached on CDN edge nodes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/37273"> CDN Cache Purging</a>.</td>
    </tr>
 </table>
 
@@ -286,6 +290,6 @@ COS offers the following features:
    </tr>
    <tr>
       <td>Various protocols</td>
-      <td>COS supports HTTP 1.0, HTTP 1.1 transfer protocols. It also supports TLS 1.0, TLS 1.1, and TLS 1.2 encryption protocols.  </td>
+      <td>COS supports HTTP 1.0 and HTTP 1.1 transfer protocols as well as TLS 1.0, TLS 1.1, and TLS 1.2 encryption protocols.</td>
    </tr>
 </table>

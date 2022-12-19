@@ -13,7 +13,7 @@
    </tr>
    <tr>
       <td>对象操作</td>
-      <td>多种存储类型：根据访问频度的高低和容灾程度高低，COS 提供多种对象的存储类型，包括智能分层存储、标准存储、低频存储、归档存储和深度归档存储，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/30925">存储类型</a><br>对象/文件夹：上传、查询、下载、复制和删除操作，具体操作请参见 <a href="https://intl.cloud.tencent.com/document/product/436/13321">对象管理</a> 目录下的文档。</td>
+      <td>多种存储类型：根据访问频度的高低和容灾程度高低，COS 提供多种对象的存储类型，包括标准存储（多 AZ）、低频存储（多 AZ）、智能分层存储、标准存储、低频存储、归档存储和深度归档存储，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/30925">存储类型</a><br>对象/文件夹：上传、查询、下载、复制和删除操作，具体操作请参见 <a href="https://intl.cloud.tencent.com/document/product/436/13321">对象管理</a> 目录下的文档。</td>
    </tr>
 </table>	 
 
@@ -76,6 +76,10 @@
    <tr>
       <td nowrap="nowrap">存储桶复制</td>
       <td>用户可以通过配置存储桶复制规则，在不同存储桶中自动、异步地复制增量对象，实现数据的容灾与备份，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/19237">存储桶复制概述</a>。</td>
+   </tr>
+   <tr>
+      <td nowrap="nowrap">多 AZ 特性</td>
+      <td>COS 推出多 AZ 存储架构，这一存储架构能够为用户数据提供数据中心级别的容灾能力，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/35208">多 AZ 特性概述</a>。</td>
    </tr>
    <tr>
       <td nowrap="nowrap">云数据库备份</td>
