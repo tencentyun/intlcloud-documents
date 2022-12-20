@@ -2,7 +2,7 @@ If your live streaming source does not have the capability to push streams or if
 ![](https://main.qcloudimg.com/raw/8f0b044ce2104efdc1ed835287b9b683.png)
 
 ## Prerequisites
-- You have activated [CSS](https://cloud.tencent.com/product/css) and logged in to the CSS console.
+- You have activated [CSS](https://intl.cloud.tencent.com/product/css) and logged in to the CSS console.
 - You have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970) in the console.
 
 ## Use Limits
