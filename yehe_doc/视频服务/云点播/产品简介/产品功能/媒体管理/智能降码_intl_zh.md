@@ -1,7 +1,7 @@
 ## 简介
 云点播 [极速高清](https://www.tencentcloud.com/document/product/266/49255)  能实现**高画质低码率**，节约网络流量和存储成本。但是，极速高清的转码费用比普通转码高，因此需要考虑如何使用极速高清，能获得最大的**净节省成本**（**节省的流量和存储成本**减去**增加的转码成本**）。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/eb6398ca9b2c0ffe556b0787ebb24158.jpg" width="600" />
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/FsKK054_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16715089128415.png" width="600" />
 
 云点播的智能降码功能基于客户配置的降码策略，自动对热文件转极速高清，使用转出的低码率文件，替换原有的普通转码文件，保持播放链接不变。这样，您可以在无任何感知的情况下，实现对热文件的智能降码，获得更高的**净节省成本**。
 
