@@ -2,7 +2,7 @@ If your live streaming source does not have the capability to push streams or if
 ![](https://main.qcloudimg.com/raw/8f0b044ce2104efdc1ed835287b9b683.png)
 
 ## Prerequisites
-- You have activated [CSS](https://cloud.tencent.com/product/css) and logged in to the CSS console.
+- You have activated [CSS](https://intl.cloud.tencent.com/product/css) and logged in to the CSS console.
 - You have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970) in the console.
 
 ## Use Limits
@@ -60,9 +60,9 @@ If your live streaming source does not have the capability to push streams or if
 >? 
 >- The system will stop the relay task either when the playback count reaches the specified value or when the task reaches its end time.
 >- After modifying a task:
-     - If you change only the playback count, after the new value is applied, the count will start from 2.
-     - If you change both the source URL and playback count, after the new configuration takes effect (whether immediately or after the current playback ends), the count will start from 1.
-	  - If you change the destination URL, the playback count will be reset.
+    - If you change only the playback count, after the new value is applied, the count will start from 2.
+    - If you change both the source URL and playback count, after the new configuration takes effect (whether immediately or after the current playback ends), the count will start from 1.
+    - If you change the destination URL, the playback count will be reset.
 >- Relaying a locally cached MP4 file will incur additional fees, which are based on the duration of the file relayed.
 
 5. Enter a destination URL for receiving the content.
@@ -85,6 +85,7 @@ If your live streaming source does not have the capability to push streams or if
 >? 
 >- If the source is an image, watermark configuration is not supported.
 >- Using watermarks will incur [transcoding fees](https://intl.cloud.tencent.com/document/product/267/39604).
+
 7. Click **Save**.
 
 ## Managing Tasks
