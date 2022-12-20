@@ -1,7 +1,7 @@
 ## 소개
 VOD의 [TSC 트랜스코딩](https://www.tencentcloud.com/document/product/266/49255) 기능은 **낮은 비트레이트에서 높은 비디오 품질**을 구현하여 트래픽 및 저장 비용을 줄이는 데 도움이 됩니다. 그러나 TSC 트랜스코딩 요금은 일반 트랜스코딩 요금보다 높습니다. 그러므로 어떻게 TSC 기술을 사용하여 **순 비용 절감**(**트래픽 및 저장 절감 비용**에서 **증가된 트랜스코딩 비용을 뺀 값**) 효과를 극대화할 수 있는지 생각해봐야 합니다.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/eb6398ca9b2c0ffe556b0787ebb24158.jpg" width="600" />
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/FsKK054_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16715089128415.png" width="600" />
 
 VOD의 스마트 비트레이트 조정 기능을 사용하면 재생 횟수가 많은 파일에 대해 TSC 트랜스코딩을 자동으로 수행하고 파일의 기존 트랜스코딩 출력을 생성된 낮은 비트레이트 파일로 대체하도록 정책을 구성할 수 있습니다. 이는 **순 비용 절감** 효과를 높일 수 있으며, 전체 프로세스를 자동으로 실행할 수 있습니다.
 
