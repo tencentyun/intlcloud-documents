@@ -1,6 +1,6 @@
 ## 소개
 
-Ckafka 메시지 백업은 Tencent Cloud COS가 [Serverless Cloud Function(SCF)](https://intl.cloud.tencent.com/document/product/583)을 기반으로 제공하는 기능으로, Ckafka 메시지를 COS에 저장합니다. Ckafka 메시지를 저장하면 편리하게 데이터 분석 및 다운로드 등의 작업을 진행할 수 있습니다.
+Ckafka 메시지 백업은 Tencent Cloud COS가 [Serverless Cloud Function(SCF)](https://www.tencentcloud.com/document/product/583)을 기반으로 제공하는 기능으로, Ckafka 메시지를 COS에 저장합니다. Ckafka 메시지를 저장하면 편리하게 데이터 분석 및 다운로드 등의 작업을 진행할 수 있습니다.
 
 Ckafka는 오픈 소스인 Apache Kafka 메시지 큐 엔진을 기반으로, 처리 성능이 뛰어나고 확장성이 높은 메시지 큐 서비스를 제공합니다. 자세한 내용은 [Ckafka 제품 개요](https://intl.cloud.tencent.com/document/product/597/10066)를 참고하십시오.
 
@@ -9,15 +9,15 @@ Ckafka는 오픈 소스인 Apache Kafka 메시지 큐 엔진을 기반으로, �
 ## 주의 사항
 
 - COS 콘솔에서 버킷에 Ckafka 메시지 백업 규칙을 추가한 적이 있는 경우 [SCF 콘솔](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)에서 기존에 생성한 Ckafka 메시지 백업 함수를 확인할 수 있습니다. 이 함수를 삭제하지 **마십시오.** 삭제할 경우 규칙이 적용되지 않을 수 있습니다.
-- 광저우, 상하이, 중국홍콩, 베이징, 청두, 싱가포르, 뭄바이, 토론토, 실리콘밸리 등 SCF를 런칭한 리전은 Ckafka 메시지 백업을 지원합니다. 지원 리전에 대한 자세한 내용은 [SCF 제품 문서](https://intl.cloud.tencent.com/document/product/583)를 참고하십시오.
+- 광저우, 상하이, 중국홍콩, 베이징, 청두, 싱가포르, 뭄바이, 토론토, 실리콘밸리 등 SCF를 런칭한 리전은 Ckafka 메시지 백업을 지원합니다. 지원 리전에 대한 자세한 내용은 [SCF 제품 문서](https://www.tencentcloud.com/document/product/583)를 참고하십시오.
 
 ## 작업 단계
 
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인합니다.
-2. 왼쪽 사이드바에서 **애플리케이션 통합**을 클릭하고 **Ckafka 메시지 백업**을 찾습니다.
+2. 왼쪽 사이드바에서 **애플리케이션 통합 > 데이터 백업**을 클릭하고 **Ckafka 메시지 백업**을 찾습니다.
 3. **백업 규칙 설정**을 클릭하여 규칙 설정 페이지로 이동합니다.
 4. **함수 추가**를 클릭합니다.
->! SCF 서비스가 활성화되지 않은 경우 [SCF 콘솔](https://console.cloud.tencent.com/scf)에서 SCF 서비스를 활성화하고 안내에 따라 서비스 라이선스를 완료하십시오.
+>! SCF 서비스가 활성화되지 않은 경우 [SCF 콘솔](https://console.cloud.tencent.com/scf)에서 SCF 서비스를 활성화하고 안내에 따라 서비스 권한 부여를 완료하십시오.
 >
 5. 팝업 창에서 다음과 같이 정보를 설정합니다.
 
@@ -37,9 +37,8 @@ Ckafka는 오픈 소스인 Apache Kafka 메시지 큐 엔진을 기반으로, �
 
 **전송 경로**: 백업 파일의 전송 경로 접두사로, 입력하지 않은 경우 기본적으로 버킷의 루트 경로에 저장되며, 접두사를 지정하는 경우 반드시 슬래시 /로 끝나야 합니다.
 8. 설정을 추가한 후 **확인**을 클릭하면 추가된 함수를 확인할 수 있습니다.
-
 새로 생성한 함수에 다음과 같은 작업을 진행할 수 있습니다.
- - **로그 조회**를 클릭해 Ckafka 메시지 백업 기록을 조회합니다. 백업 시 오류가 보고된 경우 **로그 조회**를 클릭하고 빠르게 SCF 콘솔에 리디렉션하여 로그 오류 상세 내용을 조회할 수 있습니다.
- - **편집**을 클릭하여 Ckafka 메시지 백업 규칙을 수정합니다.
- - **삭제**를 클릭하여 사용하지 않는 Ckafka 메시지 백업 규칙을 삭제합니다.
+ - **로그**를 클릭해 Ckafka 메시지 백업 기록을 조회합니다. 백업 시 오류가 보고된 경우 **로그**를 클릭하고 빠르게 SCF 콘솔에 리디렉션하여 로그 오류 상세 내용을 조회할 수 있습니다.
+ - **더 보기 > 편집**을 클릭하여 Ckafka 메시지 백업 규칙을 수정합니다.
+ - **더 보기 > 삭제**를 클릭하여 사용하지 않는 Ckafka 메시지 백업 규칙을 삭제합니다.
 

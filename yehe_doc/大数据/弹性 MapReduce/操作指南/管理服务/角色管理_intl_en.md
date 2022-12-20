@@ -8,7 +8,7 @@ Role management provides Ops and operation features at the service role level. Y
 
 ## Directions
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page.
-2. On the cluster details page, select **Cluster Service** and click **Operation** > **Role Management** in the top-right corner of the target component block. The following uses Hive as an example.
+2. On the cluster details page, select **Cluster Service** and click **Operation** > **Role Management** in the top-right corner of the target component block. The following uses HDFS as an example.
 3. The **Role Management** list displays the current service role's health status, operation status, configuration group, node type, maintenance status, server IP, and last restarted time. You can select a role and **restart, maintain, start, or pause** it.
 >? The **Health Status** column displays the running status of the current role. The **Operation Status** column displays user operations. The **Maintenance Status** column displays whether the role is under maintenance.
 
@@ -21,8 +21,3 @@ Role management provides Ops and operation features at the service role level. Y
 | Unavailable | Port check is not responded to within 10s. |
 | Not checked | Roles in the maintenance mode or in Stopped operation status are not checked. |
 | Unknown | The checker is abnormal or down. |
-
-
-​	
-​	
-​	

@@ -39,12 +39,14 @@ dependencies{
     compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])//添加 *.aar
 }
 ```
->! 如果项目中没有集成 Google 的 Gson 库则还需添加如下依赖：
+
+<dx-alert infotype="notice">如果项目中没有集成 Google 的 Gson 库则还需添加如下依赖：
 ```groovy
 dependencies{
     implementation 'com.google.code.gson:gson:2.8.2'
 }
 ```
+</dx-alert>
 :::
 ::: Maven 集成
 腾讯特效 SDK 已经发布到 mavenCentral 库，您可以通过配置 gradle 自动下载更新。
@@ -64,7 +66,7 @@ defaultConfig {
 	}
 }
 ```
->? 目前 特效 SDK 支持 armeabi-v7a 和 arm64-v8a。
+<dx-alert infotype="explain"> 目前 特效 SDK 支持 armeabi-v7a 和 arm64-v8a。</dx-alert>
 
 3. 单击![img](https://main.qcloudimg.com/raw/d6b018054b535424bb23e42d33744d03.png)**Sync Now**，自动下载 SDK 并集成到工程里。
 4. 如果您的套餐包含动效和滤镜功能，那么需要在 [SDK 下载页面](https://intl.cloud.tencent.com/document/product/1143/45377) 下载对应的资源，将动效和滤镜素材放置在您工程下的如下目录：

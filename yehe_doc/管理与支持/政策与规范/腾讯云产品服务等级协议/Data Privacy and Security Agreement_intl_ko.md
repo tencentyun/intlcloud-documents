@@ -166,6 +166,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 54.[Image Moderation System](https://www.tencentcloud.com/document/product/1122/51138).
 55.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51135).
 56.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51969).
+57.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52287).
 
 ## 관할권별 요구 사항
 

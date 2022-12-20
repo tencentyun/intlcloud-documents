@@ -4,9 +4,6 @@ The following features are free of charge:
 - Basic features: VPC, subnet, and route table.
 - Other features: ENI, security group, network ACL, parameter template, [HAVIP](https://intl.cloud.tencent.com/document/product/215/31817), network probe, Classiclink, multicast, and broadcast.
 
->?Tencent Cloud's private network communication traffic across AZs in the same region is free of charge until December 1, 2022.
->
-
 ## Product Billing
 You may need to pay for the following products used in combination with a VPC:
 
