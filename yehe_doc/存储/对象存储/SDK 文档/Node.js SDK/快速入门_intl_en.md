@@ -102,7 +102,7 @@ Below are some common API samples. For more detailed initialization methods, see
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` in milliseconds. Default value: `1000`. | Number | No |
 | Protocol | The protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` will be used when the current page is determined to be in `http:`; otherwise, `https:` will be used. | String | No |
 | ServiceDomain | The request domain name when the `getService` method is called, such as `service.cos.myqcloud.com`. | String | No |
-| Domain | The custom request domain name used to call an API to manipulate a bucket or object. A template can be used, such as `"{Bucket}.cos.{Region}.myqcloud.com"`, which will use the bucket and region passed in the parameters for replacement when an API is called. | String | No |
+| Domain | The custom request domain name used to call an API to manipulate a bucket or object. <br>A template can be used, such as `"{Bucket}.cos.{Region}.myqcloud.com"`, which will use the bucket and region passed in the parameters for replacement when an API is called. | String | No |
 | UploadQueueSize | The maximum size of the upload queue. Excessive tasks that have failed or been completed or canceled will be cleared. Default value: `1000`. | Number | No |
 | ForcePathStyle | Whether to forcibly use a suffix when sending requests. The suffixed bucket will be placed in the pathname after the domain name, and the bucket will be added to the signature pathname for calculation. Default value: `false`. | Boolean | No |
 | UploadCheckContentMd5  | Whether to forcibly verify `Content-MD5` for file uploads, which will calculate the MD5 checksum of the file request body and place it in the `Content-MD5` field of the header. Default value: `false`. | Boolean | No |
@@ -174,6 +174,62 @@ There are three ways to get the authentication credentials for your instance by 
 1. During instantiation, pass in your `SecretId` and `SecretKey`. Each time a signature is required, it will be internally calculated by the instance.
 2. During instantiation, pass in the `getAuthorization` callback function. Each time a signature is required, it will be calculated and returned to the instance through this callback.
 3. During instantiation, pass in the `getSTS` callback. Each time a temporary key is required, it will be returned to the instance for signature calculation within the instance during each request.
+
+### How to use
+
+#### Callback method
+The callback method is used by default in the documentation. Below is the sample code:
+
+```js
+// The initialization process and upload parameters are omitted here.
+var cos = new COS({ ... });
+cos.uploadFile({ ... }, function(err, data) {
+  if (err) {
+    console.log('Upload failed', err);
+  } else {
+    console.log('Uploaded successfully', data);
+  }
+});
+```
+
+#### Promise
+The SDK also supports calling through the promise method. For example, the code of the callback method above is equivalent to the following code:
+
+```js
+// The initialization process and upload parameters are omitted here.
+var cos = new COS({ ... });
+cos.uploadFile({ ... }).then(data => {
+  console.log('Uploaded successfully', data);
+}).catch(err => {
+  console.log('Upload failed', err);
+});
+```
+
+#### Sync method
+The sync method is based on JavaScript's async and await. The code of the callback method above is equivalent to the following code:
+
+```js
+async function upload() {
+  // The initialization process and upload parameters are omitted here.
+  var cos = new COS({ ... });
+  try {
+    var data = await cos.uploadFile({ ... });
+    return { err: null, data: data }
+  } catch (err) {
+    return { err: err, data: null };
+  }
+}
+// The returned value of the request can be obtained synchronously. Here is only an example. The format of the actual returned data can be customized.
+var uploadResult = await upload();
+if (uploadResult.err) {
+  console.log('Upload failed', uploadResult.err);
+} else {
+  console.log('Uploaded successfully', uploadResult.data);
+}
+```
+
+>! `cos.getObjectUrl` currently only supports the callback method.
+>
 
 ### Tips
 
