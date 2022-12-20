@@ -1,7 +1,7 @@
 ## Overview
 VOD’s [Top Speed Codec (TSC)](https://www.tencentcloud.com/document/product/266/49255) feature can achieve **high video quality at lower bitrates** and help you reduce your traffic and storage costs. However, TSC transcoding fees are higher than general transcoding fees. This raises the question of how the TSC technology can be used to maximize your **net cost savings** (**the reduction in traffic and storage costs minus the increase in transcoding costs**).
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/eb6398ca9b2c0ffe556b0787ebb24158.jpg" width="600" />
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/FsKK054_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16715089128415.png" width="600" />
 
 With VOD’s smart bitrate reduction feature, you can configure policies to automatically perform TSC transcoding on files whose playback count is high and replace the original transcoding outputs of the files with the low-bitrate files that are generated. This can increase your **net cost savings**. The whole process can be executed automatically.
 
