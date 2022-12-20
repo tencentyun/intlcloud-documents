@@ -1,10 +1,5 @@
-Player 서명은 App 재생 서비스가 클라이언트에 재생 권한을 부여하는 데 사용됩니다. App 재생 서비스를 통해 클라이언트가 재생할 수 있는 경우 아래 5단계와 같이 유효한 서명을 클라이언트에 배포합니다. 클라이언트는 서명의 유효 기간 내에서 비디오를 재생할 수 있습니다.
+Player 서명은 App 재생 서비스가 클라이언트에 재생 권한을 부여하는 데 사용됩니다. App 재생 서비스를 통해 클라이언트가 재생할 수 있는 경우 아래 6단계와 같이 유효한 서명을 클라이언트에 배포합니다. 클라이언트는 서명의 유효 기간 내에서 비디오를 재생할 수 있습니다.
 <img src="https://main.qcloudimg.com/raw/e5ae52f1b5f15f289b6f54aa28917da4.png" width="700" />
-
->! 다음과 같은 경우 App 클라이언트는 비디오를 재생하기 위해 Player 서명이 필요합니다.
->- 도메인 이름에 [KEY 링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986)가 활성화되어 있습니다.
->- default 이외의 [Player 구성](https://intl.cloud.tencent.com/document/product/266/38296)이 사용됩니다.
->- [암호화](https://intl.cloud.tencent.com/document/product/266/38294)된 비디오가 재생됩니다.
 
 Player 서명 매개변수 및 생성 규칙은 다음과 같습니다.
 
@@ -12,25 +7,53 @@ Player 서명 매개변수 및 생성 규칙은 다음과 같습니다.
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 | -- | -- | -- | -- |
-| appId | Yes | Integer | 계정 appId|
-| fileId | Yes | String | 파일 ID|
+| appId | Yes | Integer | 계정 appId.|
+| fileId | Yes | String | VOD 파일 ID.|
+| contentInfo | Yes | Object | 유형이 [ContentInfo](#p1)인 지정된 파일 ID의 내용입니다. 세 가지 유형의 콘텐츠가 지원됩니다. <li> [어댑티브 비트레이트 스트리밍](https://intl.cloud.tencent.com/document/product/266/33942) 오디오/비디오(암호화되거나 암호화되지 않은) </li><li>[트랜스코딩](https://intl.cloud.tencent.com/document/product/266/33938) 오디오/비디오. </li><li>[업로드](https://intl.cloud.tencent.com/document/product/266/9760) 원본 오디오/비디오. </li>|
 | currentTimeStamp | Yes | Integer | 서명의 현재 Unix 타임스탬프입니다.|
 | expireTimeStamp | No | Integer | 서명의 만료 Unix 타임스탬프입니다. 이 매개변수가 비어 있으면 서명이 만료되지 않습니다. |
-| pcfg | No | String | 사용할 Player 설정 이름입니다. default 설정을 사용하려면 이 매개변수를 비워둡니다.|
-| urlAccessInfo | No | Object | [UrlAccessInfo 유형](#p1)에 있는 재생 링크의 링크 도용 방지 설정 매개변수입니다. |
-| drmLicenseInfo | No | Object | [DrmLicenseInfo 유형](#p2)에 있는 암호화된 콘텐츠의 주요 설정 매개변수입니다. |
+| urlAccessInfo | No | Object | [Key 링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986) 매개변수, 재생 도메인 및 프로토콜을 포함한 재생 URL 액세스 매개변수. 유형은 [UrlAccessInfo ](#p4)입니다. |
+| drmLicenseInfo | No | Object | [DrmLicenseInfo](#p5)에 있는 암호화된 콘텐츠의 키입니다. |
 
-#### UrlAccessInfo 유형[](id:p1)
+#### ContentInfo[](id:p1)
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 | -- | -- | -- | -- |
-| t | No | String | <ul style="margin:0;"><li>링크 만료 시간을 나타내는 16진수 문자열.</li><li>특정 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 t 매개변수를 참고하십시오.</li><li>이 매개변수를 비워두면 링크가 만료되지 않습니다.</li>|
-| exper | No | Integer | <ul style="margin:0;"> <li>미리보기 시간(초 단위, 십진수). </li><li>미리보기 시간을 지정하려면 30초 이상이어야 합니다.</li><li>특정 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 exper 매개변수를 참고하십시오.</li> |
-| rlimit | No | Integer | <ul style="margin:0;"><li>재생에 허용되는 서로 다른 IP를 가진 클라이언트의 최대 십진수</li><li>구체적인 설명과 유효 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 rlimit 매개변수를 참고하십시오.</li> |
-| us | No | String | <ul style="margin:0;"><li>링크를 고유하게 식별할 수 있는 링크 ID</li><li>구체적인 설명과 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 us 매개변수를 참고하십시오.</li> |
-| uid | No | String | <ul style="margin:0;"><li>비디오를 재생하는 사용자의 ID로, 8자리의 16진법을 포함해야 합니다. 이 매개변수는 [디지털 워터마크](https://intl.cloud.tencent.com/document/product/266/47920) 기능에 사용됩니다.</li><li>구체적인 설명 및 값 범위는 [링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 uid 매개변수를 참고하십시오.</li> |
+| audioVideoType | Yes | String | 재생되는 오디오/비디오 유형입니다. 유효한 값: <li>RawAdaptive: 암호화되지 않은 [어댑티브 비트레이트 스트리밍](https://intl.cloud.tencent.com/document/product/266/33942) 출력. </li><li>ProtectedAdaptive: 개인 프로토콜 또는 DRM으로 암호화된 [어댑티브 비트레이트 스트리밍](https://intl.cloud.tencent.com/document/product/266/33942) 출력. <li>Transcode: [트랜스코딩](https://intl.cloud.tencent.com/document/product/266/33938) 출력. </li><li>Original: [업로드](https://intl.cloud.tencent.com/document/product/266/9760) 원본 오디오/비디오. </li> |
+| rawAdaptiveDefinition | No | Integer | 암호화되지 않은 [ABS 트랜스 코딩 템플릿](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) ID가 허용됩니다. 이 매개변수는 audioVideoType이 RawAdaptive인 경우 유효하며 필수입니다. |
+| drmAdaptiveInfo | No | Object | 암호화된 [ABS 트랜스 코딩 템플릿](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) ID가 허용됩니다. 이 매개변수는 audioVideoType이 ProtectedAdaptive인 경우 유효하며 필수입니다. 유형은 [DRMAdaptiveInfo](#p2)입니다. |
+| transcodeDefinition | No | Integer | [트랜스코딩](https://intl.cloud.tencent.com/document/product/266/33938#.3Ca-id.3D.22zm.22.3E.3C.2Fa.3E.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF) 템플릿의 ID가 허용됩니다. 이 매개변수는 audioVideoType이 Transcode인 경우 유효하며 필수입니다. |
+| imageSpriteDefinition | No | Integer | 썸네일 미리보기를 생성하는 데 사용되는 [스프라이트 이미지](https://intl.cloud.tencent.com/document/product/266/33940) 템플릿의 ID입니다. |
+| resolutionNames | No | Array of Object | [ResolutionNameInfo](#p3) 배열인 플레이어에 표시되는 여러 스트림(해상도가 다름)의 이름입니다. 기본: </br>MinEdgeLength: 240, Name: 240P. </br>MinEdgeLength: 480, Name: 480P. </br>MinEdgeLength: 720, Name: 720P. </br>MinEdgeLength: 1080, Name: 1080P. </br>MinEdgeLength: 1440, Name: 2K. </br>MinEdgeLength: 2160, Name: 4K. </br>MinEdgeLength: 4320, Name: 8K. |
 
-#### DrmLicenseInfo 유형[](id:p2)
+
+#### DRMAdaptiveInfo[](id:p2)
+
+| 매개변수 이름 | 필수 여부 | 유형 | 설명 |
+| -- | -- | -- | -- |
+| privateEncryptionDefinition | No | Integer | [DrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate)이 SimpleAES인 경우 [ABS 트랜스 코딩 템플릿](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) ID입니다. |
+| widevineDefinition | No | Integer |  [DrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate)이 Widevine일 때 [ABS 트랜스 코딩 템플릿](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF) ID입니다. |
+| fairPlayDefinition | No | Integer |  [DrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate)이 FairPlay일 때 [ABS 트랜스 코딩 템플릿](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF)ID입니다. |
+
+#### ResolutionNameInfo[](id:p3)
+
+| 매개변수 이름 | 필수 여부 | 유형 | 설명 |
+| -- | -- | -- | -- |
+| MinEdgeLength | Yes | Integer | 비디오 짧은 면. 단위: 픽셀(px).|
+| Name | Yes | String | 스트림 이름. |
+
+#### UrlAccessInfo 유형[](id:p4)
+
+| 매개변수 이름 | 필수 여부 | 유형 | 설명 |
+| -- | -- | -- | -- |
+| t | No | String | <ul style="margin:0;"><li>링크 만료 시간을 나타내는 16진수 문자열.</li><li>특정 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 t 매개변수를 참고하십시오.</li><li>이 매개변수를 비워두면 링크가 만료되지 않습니다.</li></ul>|
+| exper | No | Integer | <ul style="margin:0;"> <li>미리보기 시간(초 단위, 십진수). </li><li>미리보기 시간을 지정하려면 30초 이상이어야 합니다.</li><li>특정 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 exper 매개변수를 참고하십시오.</li></ul> |
+| rlimit | No | Integer | <ul style="margin:0;"><li>재생에 허용되는 최대 IP 주소 수(10진수)입니다. </li><li>구체적인 설명과 유효 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 rlimit 매개변수를 참고하십시오.</li></ul> |
+| us | No | String | <ul style="margin:0;"><li>링크를 고유하게 식별할 수 있는 URL ID입니다. </li><li>구체적인 설명과 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 us 매개변수를 참고하십시오. </li></ul> |
+| domain | No | String | 재생 도메인. 지정되지 않거나 Default가 전달되면 [기본 배포 설정](https://intl.cloud.tencent.com/document/product/266/35768)의 도메인 사용. |
+| scheme | No | String | 재생 Scheme. 지정되지 않거나 Default가 전달되면 [기본 배포 설정](https://intl.cloud.tencent.com/document/product/266/35768)의 Scheme 사용. 기타 유효 값: <ul style="margin:0;"><li>HTTP. </li><li>HTTPS. </li></ul>|
+
+#### DrmLicenseInfo 유형[](id:p5)
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 | -- | -- | -- | -- |
@@ -39,7 +62,6 @@ Player 서명 매개변수 및 생성 규칙은 다음과 같습니다.
 >?
 >- [서브 애플리케이션](https://intl.cloud.tencent.com/document/product/266/33987)을 사용한 경우 서브 애플리케이션의 AppId를 appId 매개변수로 설정합니다.
 >- 서명 매개변수의 `t`, `exper`, `rlimit`, `us` 및 `uid`의 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 설명과 동일합니다.
-
 ## 서명 계산
 
 VOD Player는 Header, PayLoad 및 Key를 기반으로 계산 및 형성되는 디지털 토큰인 [JWT](https://tools.ietf.org/html/rfc7519)(JSON Web Token)를 사용합니다.
@@ -63,10 +85,15 @@ PayLoad는 JSON 형식이며 Player 서명 매개변수를 나타냅니다. 예�
 {
   "appId": 1255566655,
   "fileId": "4564972818519602447",
-  "currentTimeStamp": 1546300,
-  "expireTimeStamp": 1546344000,
+  "contentInfo": {
+    "audioVideoType": "RawAdaptive",
+    "rawAdaptiveDefinition": 10,
+    "imageSpriteDefinition": 10
+  },
+  "currentTimeStamp": 1663064276,
+  "expireTimeStamp": 1663294210,
   "urlAccessInfo": {
-    "t": "5c2b5640",
+    "t": "6323e6b0",
     "rlimit": 3,
     "us": "72d4cd1101",
     "uid": "1234abcd"
@@ -76,53 +103,55 @@ PayLoad는 JSON 형식이며 Player 서명 매개변수를 나타냅니다. 예�
 
 ### Key
 
-Key는 서명 계산 중에 사용되는 키이며 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 KEY 매개변수와 동일합니다.
+Key는 서명을 계산하는 데 사용됩니다. 아래 예시에서는 [기본 배포 설정](https://intl.cloud.tencent.com/document/product/266/35768)의 `재생 키`가 사용됩니다.
 
 ### 계산 공식
 
 1. Signature 계산:
-`Signature = HMACSHA256(base64UrlEncode(Header) + "." + base64UrlEncode(Payload), KEY)`
+`Signature = HMACSHA256(base64UrlEncode(Header) + "." + base64UrlEncode(Payload), Key)`
 2. Token 계산:
 `Token = base64UrlEncode(Header) + '.' + base64UrlEncode(Payload) + '.' + base64UrlEncode(Signature)`
-최종 Token, 즉 VOD Player 서명입니다.
+생성된 Token은 VOD Player 서명입니다.
 
 >?HMACSHA256에 대한 자세한 내용은 [RFC - HMACSHA256](https://tools.ietf.org/html/rfc4868#page-3)을 참고하십시오. base64UrlEncode에 대한 자세한 내용은 [RFC - base64UrlEncode](https://tools.ietf.org/html/rfc4648#page-7)를 참고하십시오.
+VOD는 서명 생성 도구와 서명 확인 도구를 제공합니다.
+* [Player 서명 툴](https://console.cloud.tencent.com/vod/distribute-play/signature) .
 
-VOD는 편리한 서명 계산 및 확인을 위해 온라인 서명 생성 및 확인 툴을 제공합니다.
-* [Player SDK - 서명 생성 도구](https://vods.cloud.tencent.com/signature/super-player-sign.html)를 사용하여 서명을 빠르게 생성합니다.
-* [Player SDK - 서명 확인 도구](https://vods.cloud.tencent.com/signature/super-player-check-sign.html)를 사용하여 서명을 빠르게 확인합니다.
+### 계산 예시
 
-### 과금 예시
+appId가 `1255566655`이고, fileId가 `4564972818519602447`인 비디오에 대한 플레이어 서명을 생성하려고 한다고 가정합니다. 다른 매개변수는 다음과 같습니다.
 
-예를 들어, appId가 `1255566655`이고, fileId가 `4564972818519602447`이며, 다음 속성을 가진 사용자의 비디오에 대해 Player 서명이 생성됩니다.
+* 재생 키는 `TxtyhLlgo7J3iOADIron`입니다.
+* 플레이어 서명의 배포 시간은 2022-09-13 18:17:56이며 Unix 타임스탬프로 변환된 시간은 `1663064276`입니다.
+* 플레이어 서명의 만료 시간은 2022-09-16 10:10:10이며 Unix 타임스탬프로 변환된 시간은 `1663294210`입니다.
+* 링크 도용 방지 만료 시간은 2022-09-16 11:00:00이며 Unix 타임스탬프로 변환된 시간은 `6323e6b0`입니다.
+* 재생 URL을 사용하여 동영상 재생 시 최대 3개의 IP 주소가 허용됩니다.
+* URL ID에 대해 생성된 임의의 문자열은 `72d4cd1101`입니다.
 
-* 활성화된 링크 도용 방지 KEY는 `24FEQmTzro4V5u3D5epW`입니다.
-* 사용자 정의 Player 설정이 사용되며 이름은 `MyCfg`입니다.
-* 플레이어 서명의 배포 시간은 2019/1/1 19:00:00이며 해당 Unix 시간은 `1546300`입니다.
-* 플레이어 서명의 만료 시간은 2019/1/1 20:00:00이며 해당 Unix 시간은 `1546344000`입니다.
-* 링크 도용 방지 만료 시간은 2019/1/1 20:00:00이며 해당 Unix 시간은 `5c2b5640`입니다.
-* 최대 3개의 다른 IP를 허용하는 재생 URL입니다.
-* 생성된 랜덤 문자열은 `72d4cd1101`입니다.
-
-서명은 다음과 같이 생성됩니다.
-1. 다음은 Header의 내용입니다.
+다음과 같이 서명을 계산합니다.
+1. Header의 내용을 결정합니다.
 ```
 {
   "alg": "HS256",
   "typ": "JWT"
 }
 ```
-base64UrlEncode를 통해 처리된 결과는 다음과 같습니다.
+base64UrlEncode 이후에 생성된 결과는 다음과 같습니다.
 `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9`.
-2. 다음은 Payload의 내용입니다.
+2. Payload의 내용을 결정합니다.
 ```
 {
   "appId": 1255566655,
   "fileId": "4564972818519602447",
-  "currentTimeStamp": 1546300,
-  "expireTimeStamp": 1546344000,
+  "contentInfo": {
+    "audioVideoType": "RawAdaptive",
+    "rawAdaptiveDefinition": 10,
+    "imageSpriteDefinition": 10
+  },
+  "currentTimeStamp": 1663064276,
+  "expireTimeStamp": 1663294210,
   "urlAccessInfo": {
-    "t": "5c2b5640",
+    "t": "6323e6b0",
     "rlimit": 3,
     "us": "72d4cd1101",
     "uid": "1234abcd"
@@ -130,11 +159,11 @@ base64UrlEncode를 통해 처리된 결과는 다음과 같습니다.
 }
 ```
 base64UrlEncode를 통해 처리된 결과는 다음과 같습니다.
-`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19`.
-3. `24FEQmTzro4V5u3D5epW`를 KEY로 사용하여 HMAC 계산을 수행하면 Signature는 다음과 같습니다.
-`j3WJ9W3V4ve_N_Z157_B9AKkT0GhSmGAEdhv6YtoZSY`.
-4. 최종 Token은 다음과 같습니다.
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19.j3WJ9W3V4ve_N_Z157_B9AKkT0GhSmGAEdhv6YtoZSY`.
+`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19`.
+3.  재생 Key(`TxtyhLlgo7J3iOADIron`)를 사용하여 HMAC Signature를 생성합니다.
+`_FR39nKwArkQ6TOy7KAdvLvEjyVZ9ty4mqzDcJpGJiU`。
+4. 생성된 Token은 다음과 같습니다.
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19._FR39nKwArkQ6TOy7KAdvLvEjyVZ9ty4mqzDcJpGJiU`.
 
 ## 코드 예시
 

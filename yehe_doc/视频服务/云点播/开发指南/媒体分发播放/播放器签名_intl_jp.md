@@ -1,45 +1,67 @@
-プレーヤーの署名は、App再生サービスによる端末の再生を承認するために使用されます。下図の手順5に示すとおり、 App再生サービスが端末での再生を承認すると、有効な署名が配布されます。端末では、署名の有効時間内にビデオコンテンツを再生することができます。
+プレーヤー署名は、App再生サービスが端末の再生権限を承認するために使用されます。下図の手順6に示すとおり、 App再生サービスが端末での再生を承認すると、有効な署名が配布されます。端末では、署名の有効時間内にビデオコンテンツを再生することができます。
 <img src="https://main.qcloudimg.com/raw/e5ae52f1b5f15f289b6f54aa28917da4.png" width="700" />
-
->! 次のいずれかの状況が発生した場合、アプリ端末で再生するにはプレーヤー署名が必要です。
->- ドメイン名で[Keyリンク不正アクセス防止](https://intl.cloud.tencent.com/document/product/266/33986)を有効にしている場合。
->- default以外の [プレーヤー設定](https://intl.cloud.tencent.com/document/product/266/38296)を使用している場合。
->- [暗号化](https://intl.cloud.tencent.com/document/product/266/38294)したビデオコンテンツを再生する場合。
 
 以下で、プレーヤー署名のパラメータと生成規則について説明します。
 
 ## 署名パラメータ
 
-| パラメータ名 | 入力必須 | タイプ | 説明 |
+| パラメータ名 | 記入必須 | タイプ | 説明 |
 | -- | -- | -- | -- |
-| appId |はい| Integer | アカウントappId|
-| fileId |はい| String | ドキュメントID|
-| currentTimeStamp |はい| Integer | 配布された署名のUnixタイムスタンプ|
-| expireTimeStamp | いいえ | Integer | 配付された署名の有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します |
-| pcfg | いいえ | String | 使用される再生の設定名。 defaultの場合は空のままにします|
-| urlAccessInfo | いいえ | Object | 再生リンクのリンク不正アクセス防止設定パラメータ、 [UrlAccessInfo タイプ](#p1) |
-| drmLicenseInfo | いいえ | Object | 暗号化コンテンツのキー設定パラメータ、 [DrmLicenseInfo タイプ](#p2) |
+| appId | はい | Integer | アカウントappId。|
+| fileId |はい| String | VODファイルID。|
+| contentInfo | はい | Object | VODファイルIDで再生する具体的なコンテンツ。[ContentInfoタイプ](#p1)です。下記の3種類のうち1種類を再生できます。<li> [アダプティブビットレートストリーミングへのトランスコード](https://intl.cloud.tencent.com/document/product/266/33942)で出力されたオーディオビデオ。暗号化は行っても行わなくても構いません。</li><li>[トランスコード](https://intl.cloud.tencent.com/document/product/266/33938)で出力されたオーディオビデオ。</li><li>[アップロード](https://intl.cloud.tencent.com/document/product/266/9760)されたオリジナルオーディオビデオ。</li>|
+| currentTimeStamp |はい| Integer | 配布された署名の Unixタイムスタンプ。 |
+| expireTimeStamp | いいえ | Integer | 配付された署名の有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します。 |
+| urlAccessInfo | いいえ | Object | 再生リンクアクセス設定パラメータ。[Keyリンク不正アクセス防止](https://intl.cloud.tencent.com/document/product/266/33986)設定、再生ドメイン名およびプロトコルパラメータが含まれます。[UrlAccessInfoタイプ](#p4)です。 |
+| drmLicenseInfo | いいえ | Object | 暗号化コンテンツのキー設定パラメータ。[DrmLicenseInfo タイプ](#p5)です。 |
 
-#### UrlAccessInfoタイプ[](id:p1)
+#### ContentInfoタイプ[](id:p1)
 
-| パラメータ名 | 入力必須 | タイプ | 説明 |
+| パラメータ名 | 記入必須 | タイプ | 説明 |
 | -- | -- | -- | -- |
-| t | いいえ | String | <ul style="margin:0;"><li>16進文字列、リンクの有効期限を表します</li><li>具体的な意味と値については [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) の t パラメータをご参照ください</li><li>空のままは有効期限内であることを表します</li>|
-| exper | いいえ | Integer | <ul style="margin:0;"> <li>プレビュー時間、単位は秒、10進法で表示します</li><li>プレビュー時間を指定する場合、時間は30秒未満とする必要があります</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のexperパラメータをご参照ください</li> |
-| rlimit | いいえ | Integer |<ul style="margin:0;"><li>異なるIPの端末で許可される最大再生数、10進法で表示します</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のrlimitパラメータをご参照ください</li>|
-| us | いいえ |String |<ul style="margin:0;"><li>リンクを一意に識別できるリンクID</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のusパラメータをご参照ください</li>|
-| uid | いいえ |String | <ul style="margin:0;"><li>再生者のIDで、16進数の全8桁で表します。このパラメータは[トレーサビリティウォーターマーク](https://intl.cloud.tencent.com/document/product/266/47920)のユースケースで使用します</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)のuidパラメータをご参照ください</li> |
+| audioVideoType | はい | String | 再生するオーディオビデオのタイプ。オプション値：<li>RawAdaptive：暗号化されていない[アダプティブビットレートストリーミングへのトランスコード](https://intl.cloud.tencent.com/document/product/266/33942)による出力。</li><li>ProtectedAdaptive：プライベート暗号化またはDRMで保護された[アダプティブビットレートストリーミングへのトランスコード](https://intl.cloud.tencent.com/document/product/266/33942)による出力。<li>Transcode：[トランスコード](https://intl.cloud.tencent.com/document/product/266/33938)後の出力。</li><li>Original：[アップロード](https://intl.cloud.tencent.com/document/product/266/9760)されたオリジナルオーディオビデオ。</li> |
+| rawAdaptiveDefinition | いいえ | Integer | 出力が許可される、暗号化されていない[ABS生成テンプレート](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF)のID。audioVideoTypeがRawAdaptiveの場合のみ、このパラメータが入力必須かつ有効になります。 |
+| drmAdaptiveInfo | いいえ | Object | 出力が許可される、暗号化によって保護された[ABS生成テンプレート](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF)のID。audioVideoTypeがProtectedAdaptiveの場合のみ、このパラメータが入力必須かつ有効になります。[DRMAdaptiveInfoタイプ](#p2)です。 |
+| transcodeDefinition | いいえ | Integer | 出力が許可される[トランスコードテンプレート](https://intl.cloud.tencent.com/document/product/266/33938#.3Ca-id.3D.22zm.22.3E.3C.2Fa.3E.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)のID。audioVideoTypeがTranscodeの場合のみ、このパラメータが入力必須かつ有効になります。 |
+| imageSpriteDefinition | いいえ | Integer | プログレスバープレビュー用の[スプライトイメージテンプレート](https://intl.cloud.tencent.com/document/product/266/33940)のID。 |
+| resolutionNames | いいえ | Array of Object | プレーヤーが解像度のそれぞれ異なるサブストリームに表示する名前であり、[ResolutionNameInfoタイプ](#p3)の配列です。入力しない場合またはnull配列を入力した場合はデフォルトの設定を使用します。</br>MinEdgeLength：240，Name：240P。</br>MinEdgeLength：480，Name：480P。</br>MinEdgeLength：720，Name：720P。</br>MinEdgeLength：1080，Name：1080P。</br>MinEdgeLength：1440，Name：2K。</br>MinEdgeLength：2160，Name：4K。</br>MinEdgeLength：4320，Name：8K。|
 
-#### DrmLicenseInfoタイプ[](id:p2)
 
-| パラメータ名 | 入力必須 | タイプ | 説明 |
+#### DRMAdaptiveInfoタイプ[](id:p2)
+
+| パラメータ名 | 記入必須 | タイプ | 説明 |
 | -- | -- | -- | -- |
-| expireTimeStamp | いいえ | Integer | キーの有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します |
+| privateEncryptionDefinition | いいえ | Integer | [保護タイプDrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate)がSimpleAESである[ABS生成テンプレート](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF)のID。 |
+| widevineDefinition | いいえ | Integer | [保護タイプDrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate)がWidevineである[ABS生成テンプレート](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF)のID。 |
+| fairPlayDefinition | いいえ | Integer | [保護タイプDrmType](https://www.tencentcloud.com/document/product/266/34187#AdaptiveDynamicStreamingTemplate)がFairPlayである[ABS生成テンプレート](https://intl.cloud.tencent.com/document/product/266/33942#.3Ca-id.3D.22zsy.22.3E.3C.2Fa.3E.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF)のID。 |
+
+#### ResolutionNameInfoタイプ[](id:p3)
+
+| パラメータ名 | 記入必須 | タイプ | 説明 |
+| -- | -- | -- | -- |
+| MinEdgeLength | はい | Integer | ビデオ短辺の長さ。単位：ピクセル。|
+| Name | はい | String | 表示名。 |
+
+#### UrlAccessInfoタイプ[](id:p4)
+
+| パラメータ名 | 記入必須 | タイプ | 説明 |
+| -- | -- | -- | -- |
+| t | いいえ | String |<ul style="margin:0;"><li>16進文字列で、リンクの有効期限を表します。</li><li>具体的な意味と値については [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のtパラメータをご参照ください。</li><li>入力しない場合は有効期間内であることを表します。</li></ul>|
+| exper | いいえ | Integer |<ul style="margin:0;"> <li>プレビュー時間。単位は秒で、10進法で表示します。</li><li>プレビュー時間を指定する場合、時間は30秒未満とする必要があります。</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のexperパラメータをご参照ください。</li></ul> |
+| rlimit | いいえ | Integer | <ul style="margin:0;"><li>異なるIPの端末で許可される最大再生数。10進法で表示します。</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のrlimitパラメータをご参照ください。</li></ul> |
+| us | いいえ | String | <ul style="margin:0;"><li>リンクを一意に識別できるリンクID。</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のusパラメータをご参照ください。</li></ul> |
+| domain | いいえ | String | 再生時に使用するドメイン名。入力しない場合またはDefaultを入力した場合は、[デフォルト配信設定](https://intl.cloud.tencent.com/document/product/266/35768)のドメイン名を使用することを表します。 |
+| scheme | いいえ | String | 再生時に使用するScheme。入力しない場合またはDefaultを入力した場合は、[デフォルト配信設定](https://intl.cloud.tencent.com/document/product/266/35768)のSchemeを使用することを表します。その他のオプション値：<ul style="margin:0;"><li>HTTP。</li><li>HTTPS。</li></ul>|
+
+#### DrmLicenseInfoタイプ[](id:p5)
+
+| パラメータ名 | 記入必須 | タイプ | 説明 |
+| -- | -- | -- | -- |
+| expireTimeStamp ｜ いいえ ｜ Integer | キーの有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します |
 
 >?
 >- [サブアプリケーション](https://intl.cloud.tencent.com/document/product/266/33987) を使用する場合、appIdパラメータとしてサブアプリケーションAppIdを設定する必要があります。
 >- 署名パラメータの`t`、`exper`、`rlimit`、`us`、`uid`の説明と値は、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) の同名パラメータと完全に一致します。
-
 ## 署名計算
 
 VODプレーヤーの署名には、Header、PayLoad、Key によって計算され組み合わせられたデジタルトークンである [JWT](https://tools.ietf.org/html/rfc7519)（JSON Web Token）を採用します。
@@ -63,10 +85,15 @@ Payload はJSON形式であり、次に例示するようにプレーヤーの�
 {
   "appId": 1255566655,
   "fileId": "4564972818519602447",
-  "currentTimeStamp": 1546300,
-  "expireTimeStamp": 1546344000,
+  "contentInfo": {
+    "audioVideoType": "RawAdaptive",
+    "rawAdaptiveDefinition": 10,
+    "imageSpriteDefinition": 10
+  },
+  "currentTimeStamp": 1663064276,
+  "expireTimeStamp": 1663294210,
   "urlAccessInfo": {
-    "t": "5c2b5640",
+    "t": "6323e6b0",
     "rlimit": 3,
     "us": "72d4cd1101",
     "uid": "1234abcd"
@@ -76,31 +103,28 @@ Payload はJSON形式であり、次に例示するようにプレーヤーの�
 
 ### Key
 
-Keyは署名計算時に使用するキーであり、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) の`KEY`パラメータと一致します。
+Keyは署名の計算時に使用するキーです。ここでは[デフォルト配信設定](https://intl.cloud.tencent.com/document/product/266/35768)の`再生キー`を使用します。
 
 ### 計算式
 
-1. Signatureの計算：
-`Signature = HMACSHA256(base64UrlEncode(Header) + "." + base64UrlEncode(Payload), KEY)`
-2. Tokenの計算：
+1.  Signatureの計算：
+`Signature = HMACSHA256(base64UrlEncode(Header) + "." + base64UrlEncode(Payload), Key)`
+2.  Tokenの計算：
 `Token = base64UrlEncode(Header) + '.' + base64UrlEncode(Payload) + '.' + base64UrlEncode(Signature)`
 最終的に得られたTokenが、VODプレーヤー署名となります。
 
->?HMACSHA256については、[RFC - HMACSHA256](https://tools.ietf.org/html/rfc4868#page-3) をご参照ください。base64UrlEncodeについては [RFC - base64UrlEncode](https://tools.ietf.org/html/rfc4648#page-7) をご参照ください。
-
-署名の計算および署名の検証を容易にするため、VODはオンライン署名発行、検証ツールを提供します。
-* [Player+ - 署名発行ツール](https://vods.cloud.tencent.com/signature/super-player-sign.html)により高速で署名を発行します。
-* [Player+ - 署名検証ツール](https://vods.cloud.tencent.com/signature/super-player-check-sign.html)により高速で署名を検証します。
+>?HMACSHA256については  [RFC - HMACSHA256](https://tools.ietf.org/html/rfc4868#page-3) をご参照ください。base64UrlEncodeについては [RFC - base64UrlEncode](https://tools.ietf.org/html/rfc4648#page-7) をご参照ください。
+署名の計算および署名の検証を容易にするため、VODコンソールでは署名発行ツールおよび検証ツールを提供しています。
+* [プレーヤー署名ツール](https://console.cloud.tencent.com/vod/distribute-play/signature) 。
 
 ### 計算例
 
-例えば、ユーザーのappIdが`1255566655`、fileIdが`4564972818519602447`のビデオについてプレーヤー署名が生成され、かつ:
+例えばあるユーザーの、appIdが`1255566655`、fileIdが`4564972818519602447`のビデオについてプレーヤー署名を生成する場合で、かつ以下のようであったとします。
 
-* 有効なリンク不正アクセス防止KEYが`24FEQmTzro4V5u3D5epW`。
-* カスタムプレーヤー設定を使用し、カスタム設定名が`MyCfg`。
-* プレーヤー署名の配布時間が2019/1/1 19:00:00、対応するUnix時間が`1546300`。
-* プレーヤー署名の有効期限が2019/1/1 20:00:00、対応するUnix時間が`1546344000`。
-* リンク不正アクセス防止の有効期限が2019/1/1 20:00:00、対応するUnix時間が`5c2b5640`。
+* 再生キーが`TxtyhLlgo7J3iOADIron`。
+* プレーヤー署名の配布時間が2022-09-13 18:17:56、対応するUnix時間が`1663064276`。
+* プレーヤー署名の有効期限が2022-09-16 10:10:10、対応するUnix時間が`1663294210`。
+* リンク不正アクセス防止の有効期限が2022-09-16 11:00:00、対応するUnix時間が`6323e6b0`。
 * URLでの再生を最大3つの異なるIPで許可。
 * 生成されたランダムな文字列が`72d4cd1101`。
 
@@ -119,10 +143,15 @@ base64UrlEncode で処理した後の結果：
 {
   "appId": 1255566655,
   "fileId": "4564972818519602447",
-  "currentTimeStamp": 1546300,
-  "expireTimeStamp": 1546344000,
+  "contentInfo": {
+    "audioVideoType": "RawAdaptive",
+    "rawAdaptiveDefinition": 10,
+    "imageSpriteDefinition": 10
+  },
+  "currentTimeStamp": 1663064276,
+  "expireTimeStamp": 1663294210,
   "urlAccessInfo": {
-    "t": "5c2b5640",
+    "t": "6323e6b0",
     "rlimit": 3,
     "us": "72d4cd1101",
     "uid": "1234abcd"
@@ -130,12 +159,12 @@ base64UrlEncode で処理した後の結果：
 }
 ```
 base64UrlEncode で処理した後の結果：
-`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19`。
-3. `24FEQmTzro4V5u3D5epW`をKEYとしてHMAC計算を実行した場合、Signature は次のようになります。
-`j3WJ9W3V4ve_N_Z157_B9AKkT0GhSmGAEdhv6YtoZSY`。
+`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19`。
+3.  再生キーをKey（`TxtyhLlgo7J3iOADIron`）としてHMAC計算を実行した場合、Signature は次のようになります。
+`_FR39nKwArkQ6TOy7KAdvLvEjyVZ9ty4mqzDcJpGJiU`。
 4. 最終的に Token はこのようになります。
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19.j3WJ9W3V4ve_N_Z157_B9AKkT0GhSmGAEdhv6YtoZSY`。
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19._FR39nKwArkQ6TOy7KAdvLvEjyVZ9ty4mqzDcJpGJiU`。
 
-## コード例
+## サンプルコード
 
 VODはPython、Java、Go、C#、PHPおよびNode.jsなどの言語用に複数のプレーヤーのサンプルコードを提供しています。詳細については[プレーヤー署名 - 署名の例](https://intl.cloud.tencent.com/document/product/266/38096)をご参照ください。

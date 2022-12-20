@@ -9,14 +9,22 @@ import jwt
 
 AppId = 1255566655
 FileId = "4564972818519602447"
+AudioVideoType = "RawAdaptive"
+RawAdaptiveDefinition = 10
+ImageSpriteDefinition = 10
 CurrentTime = 1546340400
 PsignExpire = 1546344000
 UrlTimeExpire = "5c2b5640"
-Key = "24FEQmTzro4V5u3D5epW"
+PlayKey = "TxtyhLlgo7J3iOADIron"
 
 Original = {
     "appId": AppId,
     "fileId": FileId,
+    "contentInfo": {
+        "audioVideoType": AudioVideoType,
+        "rawAdaptiveDefinition": RawAdaptiveDefinition,
+        "imageSpriteDefinition": ImageSpriteDefinition
+    },
     "currentTimeStamp": CurrentTime,
     "expireTimeStamp": PsignExpire,
     "urlAccessInfo": {
@@ -24,7 +32,7 @@ Original = {
     }
 }
 
-Signature = jwt.encode(Original, Key, algorithm='HS256')
+Signature = jwt.encode(Original, PlayKey, algorithm='HS256')
 
 print("Original: ", Original)
 print("Signature: ", Signature)
@@ -43,16 +51,24 @@ class Main {
     public static void main(String[] args) {
         Integer AppId = 1255566655;
         String FileId = "4564972818519602447";
+        String AudioVideoType = "RawAdaptive";
+        Integer RawAdaptiveDefinition = 10;
+        Integer ImageSpriteDefinition = 10;
         Integer CurrentTime = 1589448067;
         Integer PsignExpire = 1589548067;
         String UrlTimeExpire = "5ebe9423‬";
-        String Key = "24FEQmTzro4V5u3D5epW";
+        String PlayKey = "TxtyhLlgo7J3iOADIron";
         HashMap<String, String> urlAccessInfo = new HashMap<String, String>();
         urlAccessInfo.put("t", UrlTimeExpire);
+        HashMap<String, Object> contentInfo = new HashMap<String, Object>();
+        contentInfo.put("audioVideoType", AudioVideoType);
+        contentInfo.put("rawAdaptiveDefinition", RawAdaptiveDefinition);
+        contentInfo.put("imageSpriteDefinition", ImageSpriteDefinition);
 
         try {
-            Algorithm algorithm = Algorithm.HMAC256(Key);
+            Algorithm algorithm = Algorithm.HMAC256(PlayKey);
             String token = JWT.create().withClaim("appId", AppId).withClaim("fileId", FileId)
+                    .withClaim("contentInfo", contentInfo)
                     .withClaim("currentTimeStamp", CurrentTime).withClaim("expireTimeStamp", PsignExpire)
                     .withClaim("urlAccessInfo", urlAccessInfo).sign(algorithm);
             System.out.println("token:" + token);
@@ -78,19 +94,27 @@ import (
         "github.com/dgrijalva/jwt-go"
 )
 
-func main() {
+func main(){
         appId := 1255566655 // ユーザー appid
         fileId := "4564972818519602447" // ターゲット FileId
+        audioVideoType := "RawAdaptive" // 再生するオーディオビデオのタイプ
+        rawAdaptiveDefinition := 10 // 出力が許可される、暗号化されていないABSテンプレートID
+        imageSpriteDefinition := 10 // プログレスバープレビュー用のスプライトイメージテンプレートID
         currentTime := time.Now().Unix()
         psignExpire := currentTime + 3600 // 有効期限は、1hなど任意に設定できます
         urlTimeExpire := strconv.FormatInt(psignExpire, 16) // 有効期限は、1hなどの16進文字列で任意に設定できます
-        key := []byte("24FEQmTzro4V5u3D5epW")
+        playKey := []byte("TxtyhLlgo7J3iOADIron")
 
         // Create a new token object, specifying signing method and the claims
         // you would like it to contain.
         token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
                 "appId":            appId,
                 "fileId":           fileId,
+                "contentInfo": {
+                        "audioVideoType": audioVideoType,
+                        "rawAdaptiveDefinition": rawAdaptiveDefinition,
+                        "imageSpriteDefinition": imageSpriteDefinition,
+                },
                 "currentTimeStamp": currentTime,
                 "expireTimeStamp":  psignExpire,
                 "urlAccessInfo": map[string]string{
@@ -99,7 +123,7 @@ func main() {
         })
 
         // Sign and get the complete encoded token as a string using the secret
-        tokenString, err := token.SignedString(key)
+        tokenString, err := token.SignedString(playKey)
 
         fmt.Println(tokenString, err)
 }
@@ -122,24 +146,34 @@ public class Program
         {
                 var appId = 1255566655; // ユーザー appid
                 var fileId = "4564972818519602447"; // ターゲット FileId
+                var audioVideoType = "RawAdaptive"; // 再生するオーディオビデオのタイプ
+                var rawAdaptiveDefinition = 10; // 出力が許可される、暗号化されていないABSテンプレートID
+                var imageSpriteDefinition = 10; // プログレスバープレビュー用のスプライトイメージテンプレートID
                 var currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 var psignExpire = currentTime + 3600; // 有効期限は、1hなど任意に設定できます
                 var urlTimeExpire = psignExpire.ToString("X4"); // 有効期限は、1hなどの16進文字列で任意に設定できます
-                var key = "24FEQmTzro4V5u3D5epW";
-                var keyBytes = Encoding.ASCII.GetBytes(key);
+                var playKey = "TxtyhLlgo7J3iOADIron";
+                var playKeyBytes = Encoding.ASCII.GetBytes(playKey);
                 var payload = new Dictionary<string, object>()
                 {
-                        {"appId", appId}, 
-                        {"fileId", fileId}, 
-                        {"currentTimeStamp", currentTime}, 
-                        {"expireTimeStamp", psignExpire}, 
+                        {"appId", appId},
+                        {"fileId", fileId},
+                        {"contentInfo": new Dictionary<string, object>()
+                                {
+                                        {"audioVideoType": audioVideoType},
+                                        {"rawAdaptiveDefinition": rawAdaptiveDefinition},
+                                        {"imageSpriteDefinition": imageSpriteDefinition}
+                                }
+                        },
+                        {"currentTimeStamp", currentTime},
+                        {"expireTimeStamp", psignExpire},
                         {"urlAccessInfo", new Dictionary<string, object>()
                                 {
                                         {"t", urlTimeExpire}
                                 }
                         }
                 };
-                string token = Jose.JWT.Encode(payload, keyBytes, JwsAlgorithm.HS256);
+                string token = Jose.JWT.Encode(payload, playKeyBytes, JwsAlgorithm.HS256);
                 Console.WriteLine(token);
         }
 }
@@ -157,14 +191,22 @@ use \Firebase\JWT\JWT;
 
 $appId = 1255566655; // ユーザー appid
 $fileId = "4564972818519602447"; // ターゲット FileId
+$audioVideoType = "RawAdaptive"; // 再生するオーディオビデオのタイプ
+$rawAdaptiveDefinition = 10; // 出力が許可される、暗号化されていないABSテンプレートID
+$imageSpriteDefinition = 10; // プログレスバープレビュー用のスプライトイメージテンプレートID
 $currentTime = time();
 $psignExpire = $currentTime + 3600; // 有効期限は、1hなど任意に設定できます
 $urlTimeExpire = dechex($psignExpire); // 有効期限は、1hなどの16進文字列で任意に設定できます
-$key = "24FEQmTzro4V5u3D5epW";
+$playKey = "TxtyhLlgo7J3iOADIron";
 
 $payload = array(
     "appId" => $appId,
     "fileId" => $fileId,
+    "contentInfo" => array(
+        "audioVideoType": $audioVideoType,
+				"rawAdaptiveDefinition": $rawAdaptiveDefinition,
+				"imageSpriteDefinition": $imageSpriteDefinition
+    ),
     "currentTimeStamp" => $currentTime,
     "expireTimeStamp" => $psignExpire,
     "urlAccessInfo" => array(
@@ -172,7 +214,7 @@ $payload = array(
     )
 );
 
-$jwt = JWT::encode($payload, $key, 'HS256');
+$jwt = JWT::encode($payload, $playKey, 'HS256');
 print_r($jwt);
 ?>
 ```
@@ -181,28 +223,33 @@ print_r($jwt);
 
 
 [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) を使用して署名を計算します。コマンド`npm install jsonwebtoken`を使用してインストールしてください。
-```node
+```javascript
 var jwt = require('jsonwebtoken');
 
 var appId = 1255566655 // ユーザー appid
 var fileId = "4564972818519602447" // ターゲット FileId
+var audioVideoType = "RawAdaptive" // 再生するオーディオビデオのタイプ
+var rawAdaptiveDefinition = 10 // 出力が許可される、暗号化されていないABSテンプレートID
+var imageSpriteDefinition = 10 // プログレスバープレビュー用のスプライトイメージテンプレートID
 var currentTime = Math.floor(Date.now()/1000)
 var psignExpire = currentTime + 3600 // 有効期限は、1hなど任意に設定できます
 var urlTimeExpire = psignExpire.toString(16) // 有効期限は、1hなどの16進文字列で任意に設定できます
-var key = '24FEQmTzro4V5u3D5epW'
+var playKey = 'TxtyhLlgo7J3iOADIron'
 
 var payload = {
         appId: appId,
         fileId: fileId,
+        contentInfo: {
+                audioVideoType: audioVideoType,
+                rawAdaptiveDefinition: rawAdaptiveDefinition,
+                imageSpriteDefinition: imageSpriteDefinition
+        },
         currentTimeStamp: currentTime,
         expireTimeStamp: psignExpire,
         urlAccessInfo: {
                 t: urlTimeExpire
         }
 }
-var token = jwt.sign(payload, key);
+var token = jwt.sign(payload, playKey);
 console.log(token);
 ```
-
-
-
