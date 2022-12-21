@@ -1,7 +1,7 @@
 Anti-DDoS Pro provides Tencent Cloud public IPs with higher anti-DDoS capability. It supports Tencent Cloud services such as CVM, CLB, NAT, and WAF. It is easy to access and requires no IP changes.
 
 ## Prerequisites
-You have [purchased an Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/36115) before you can bind it to the IP addresses you want to protect.
+You have purchased an [Anti-DDoS Pro](https://www.tencentcloud.com/document/product/1029/36114) before you can bind it to the IP addresses you want to protect.
 
 ## Directions
 1. Log in to the [Anti-DDoS Pro (New) Console](https://console.cloud.tencent.com/ddos/antiddos-native/package) and click **Service Packs** on the left sidebar.
