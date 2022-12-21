@@ -48,7 +48,7 @@ CSS 콘솔은 주소 생성기 기능을 제공하여, 작성된 주소로 정�
 
 [](id:pushurl)
 ### 푸시 URL 형식
-푸시 스트림은 RTMP, WebRTC, SRT 프로토콜을 지원하며, 주소 생성기 기능을 통해 접두사가 'rtmp://', ​​'webrtc://' 및 'srt://'인 푸시 스트림 주소를 생성할 수 있습니다.
+푸시 스트림은 RTMP, WebRTC, SRT, RTMP over SRT 프로토콜을 지원하며, 주소 생성기 기능을 통해 접두사가 'rtmp://', 'webrtc://', `srt://` 및 `rtmp://`인 푸시 스트림 주소를 생성할 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d866991901d2c780112da709d4e0ba3c.png)
 
 
