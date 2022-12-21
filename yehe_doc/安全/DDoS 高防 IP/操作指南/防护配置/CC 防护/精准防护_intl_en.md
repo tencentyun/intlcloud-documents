@@ -31,11 +31,7 @@ The match conditions define the request characteristics to be checked, i.e., the
     <tr>
         <td>Accept</td>
         <td>The data type to be received by the client that initiates the access request.</td>
-				<td>Equals to, includes, or does not include.</td>
-    <tr>
-        <td>Method</td>
-        <td>Request methods, such as HEAD, GET, POST, DELETE, and PUT.</td>
-				<td>Equals to, includes, or does not include.</td>	    
+				<td>Equals to, includes, or does not include.</td>   
     </tr>
 </table>
 
