@@ -48,7 +48,7 @@ CSSコンソールはアドレスジェネレーター機能を提供し、ユ�
 
 [](id:pushurl)
 ## プッシュアドレスの説明
-プッシュはRTMP、WebRTC、SRTプロトコルをサポートし、アドレスジェネレーター機能によって、プレフィックスが`rtmp://`、`webrtc://`、`srt://`のプッシュアドレスを生成できます。
+プッシュはRTMP、WebRTC、SRT、RTMP over SRTプロトコルをサポートし、アドレスジェネレーター機能によって、プレフィックスが`rtmp://`、`webrtc://`、`srt://`、`rtmp://`のプッシュアドレスを生成できます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d866991901d2c780112da709d4e0ba3c.png)
 
 
