@@ -159,7 +159,7 @@ Live transcoding (including both video transcoding and audio transcoding) is the
 
 ## Top Speed Codec Transcoding
 
-Based on years of experience in audio/video encoding, intelligent scenario recognition, dynamic encoding, three-level (CTU/line/frame) precise bitrate control model, and other technologies, the Top Speed Codec (TSC) transcoding feature provides higher-definition streaming at lower bitrates (30% less on average) for live streaming and video on-demand.
+Based on years of experience in audio/video encoding, intelligent scenario recognition, dynamic encoding, three-level (CTU/line/frame) precise bitrate control model, and other technologies, the Top Speed Codec (TSC) transcoding feature provides higher-definition streaming at lower bitrates (50% less on average) for live streaming and video on-demand.
 
 ### Use cases
 
