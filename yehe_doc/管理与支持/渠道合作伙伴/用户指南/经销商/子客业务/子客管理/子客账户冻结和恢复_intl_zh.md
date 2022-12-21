@@ -8,9 +8,8 @@
 
 ### 子客账户冻结
 子客账户冻结后，子客新购、续费、升配、付费模式互转操作将受到限制。
-已购买的预付费未到期可继续使用，到期后进入立即停服。已开通的后付费产品立即停服。
-具体停服规则请参考[子客停服规则](https://www.tencentcloud.com/document/product/1085/50550)文档说明。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/CGMn301_120702.png)
+已购买的预付费未到期可继续使用，已开通的后付费产品立即停服。
+具体停服规则请参考[子客欠费停服规则](https://www.tencentcloud.com/document/product/1085/50550)文档说明。
 
 ### 子客账户恢复
 子客账户冻结关闭时，如账户仍欠费，需账户冲正后才能正常关闭冻结。

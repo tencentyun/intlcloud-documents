@@ -8,9 +8,9 @@ Step 3. After the customer’s account is frozen, their account status will beco
 
 ### Freezing Customer Account
 After a customer’s account is frozen, the customer cannot normally purchase, renew, or upgrade resources, or change the billing mode.
-The purchased prepaid services can still be used if they haven’t expired and will be instantly suspended upon expiration. The activated pay-as-you-go services will be instantly suspended.
+The purchased prepaid services can still be used if they haven’t expired . The activated pay-as-you-go services will be instantly suspended.
 For service suspension rules, see [Customer Service Suspension Rules](https://www.tencentcloud.com/document/product/1085/50550).
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/CGMn301_120702.png)
+
 
 ### Unfreezing Customer Account
 If you want to unfreeze an account with overdue payments, top it up first.
