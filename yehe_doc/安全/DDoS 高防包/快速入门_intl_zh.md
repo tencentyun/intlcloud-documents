@@ -1,7 +1,7 @@
 DDoS 高防包为腾讯云公网 IP 提供更高的 DDoS 防护能力，可支持防护 CVM、CLB、NAT、WAF 等产品和服务。DDoS 高防包接入便捷，无需变更业务 IP，可快速完成防护配置。
 
 ## 前提条件
-在绑定防护 IP 前，您需要成功 [购买 DDoS 高防包实例](https://intl.cloud.tencent.com/document/product/1029/36115)。
+在绑定防护 IP 前，您需要成功购买 [DDoS 高防包](https://www.tencentcloud.com/document/product/1029/36114)。
 
 ## 操作步骤
 1. 登录 [DDoS 高防包（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-native/package)，在左侧导航中，单击**高防包**。
