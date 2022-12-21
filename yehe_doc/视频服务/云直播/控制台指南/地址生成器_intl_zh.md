@@ -48,7 +48,7 @@
 
 [](id:pushurl)
 ### 推流地址说明
-推流支持 RTMP 、WebRTC、SRT协议，可通过地址生成器功能生成前缀为 `rtmp://`、`webrtc://` 和 `srt://` 的推流地址。
+推流支持 RTMP 、WebRTC、SRT和RTMP over SRT协议，可通过地址生成器功能生成前缀为 `rtmp://`、`webrtc://` 、 `srt://`和`rtmp://` 的推流地址。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d866991901d2c780112da709d4e0ba3c.png)
 
 
