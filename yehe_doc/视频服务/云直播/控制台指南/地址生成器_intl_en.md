@@ -48,7 +48,7 @@ You have logged in to the [CSS console](https://console.tencentcloud.com/live/li
 
 [](id:pushurl)
 ### Push URL format
-CSS supports RTMP, WebRTC, and SRT for push. As a result, the push URLs generated will start with `rtmp://`, `webrtc://`, or `srt://`.
+CSS supports RTMP, WebRTC, SRT and RTMP over SRT for push. As a result, the push URLs generated will start with `rtmp://`, `webrtc://`, `srt://` or `rtmp://`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d866991901d2c780112da709d4e0ba3c.png)
 
 
