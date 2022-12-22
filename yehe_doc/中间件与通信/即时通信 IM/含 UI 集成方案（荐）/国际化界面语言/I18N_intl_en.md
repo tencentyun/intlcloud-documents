@@ -3,7 +3,7 @@ English, Simplified Chinese, Traditional Chinese, Japanese and Korean have been 
 
 Adding other interface languages or modifying the current language items are available for you, according to the instructions of this tutorial.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/2df62f8a62453c063c396cb656dd07bc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cfdebbe4f935fe73bc8fafd205faa4a9.png)
 
 ## Using the default languages
 
