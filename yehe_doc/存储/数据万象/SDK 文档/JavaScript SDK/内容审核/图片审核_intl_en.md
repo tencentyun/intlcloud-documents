@@ -6,7 +6,7 @@ This document describes how to use the content moderation feature provided by [C
 - For sub-accounts, see [Authorizing Sub-Accounts to Access CI Services](https://intl.cloud.tencent.com/document/product/1045/33450).
 
 This document provides an overview of APIs and SDK code samples for image moderation.
->! The COS Node.js SDK version must be at least v2.11.2.
+>! The COS JavaScript SDK version must be at least v1.3.1.
 >
 
 | API | Description |
@@ -22,7 +22,6 @@ This document provides an overview of APIs and SDK code samples for image modera
 The existing data scan feature of image moderation leverages CI's persistent processing API to scan existing data stored in COS for pornographic, illegal, and advertising images.
 
 #### Sample code
-
 ```js
 var config = {
   // Replace with your own bucket information
@@ -62,7 +61,7 @@ function getImageAuditing() {
 | biz-type    | Query| Moderation policy. If this parameter is not specified, the default policy will be used. The policy can be configured in the console. For more information, see [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/1045/52107). | String | No |
 | detect-type | Query | Moderation type. Valid values: `porn`, `ads`. You can specify multiple types and separate them by comma. | String    | No |
 | object-key | Query | Location of the image in the bucket. | String    | Yes   |
-| detect-url  | Query| You can enter a `detect-url` value to moderate an image accessible over the public network. <ul  style="margin: 0;"><li>If `detect-url` is not specified, the backend will moderate by `ObjectKey` by default. </li><li>If `detect-url` is specified, the backend will moderate by `detect-url`, and there is no need to enter `ObjectKey`. Sample `detect-url`: http://www.example.com/abc.jpg.</li></ul> | String | No       |
+| detect-url  | Query| You can enter a `detect-url` value to moderate an image accessible over the public network. <li>If `detect-url` is not specified, the backend will moderate by `ObjectKey` by default. </li><li>If `detect-url` is specified, the backend will moderate by `detect-url`, and there will be no need to enter `ObjectKey`. <br>Sample `detect-url`: http://www.example.com/abc.jpg</li> | String | No       |
 | interval   | Query | For GIF image moderation, you can use this parameter to configure the frame capturing interval. The default value is `5`, indicating to capture a frame every five frames starting from the first frame (included). | Int    | No       |
 | max-frames | Query | The maximum number of frames to be captured for GIF image moderation, which must be greater than 0. The default value is `5`, indicating to capture five frames at most. | Int    | No       |
 | large-image-detect    | Query| Whether to compress the image that exceeds the size limit before moderation. Valid values: `0` (no), `1` (yes). Default value: `0`. <br>Note: Images up to 32 MB in size can be compressed, and compression fees will be charged. | String | No       |

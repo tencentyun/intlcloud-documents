@@ -5,22 +5,21 @@ This document describes how to use the content moderation feature provided by [C
 - For root accounts, click [here](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) for role authorization.
 - For sub-accounts, see [Authorizing Sub-Accounts to Access CI Services](https://intl.cloud.tencent.com/document/product/1045/33450).
 
-This document provides an overview of APIs and SDK code samples for file moderation.
-
->! The COS Node.js SDK version must be at least v2.11.2.
+This document provides an overview of APIs and SDK code samples for audio moderation.
+>! The COS JavaScript SDK version must be at least v1.3.1.
 >
 
 | API | Description |
 | :----------------------------------------------------------- | :------------------------- |
-|[Submitting file moderation job](https://intl.cloud.tencent.com/document/product/436/48258) | Submits file moderation job.   |
-|[Querying file moderation job result](https://intl.cloud.tencent.com/document/product/436/48259)  | Queries the result of specified file moderation job. |
+|[Submitting audio moderation job](https://intl.cloud.tencent.com/document/product/436/48262) | Submits audio moderation job.   |
+|[Querying audio moderation job result](https://intl.cloud.tencent.com/document/product/436/48263)  | Queries the result of specified audio moderation job. |
 
 
-## Submitting File Moderation Job
+## Submitting Audio Moderation Job
 
 #### Feature description
 
-This API is used to submit a file moderation job.
+This API is used to submit an audio moderation job.
 
 #### Sample request
 
@@ -30,13 +29,13 @@ var config = {
   Bucket: 'examplebucket-1250000000', /* Bucket (required) */
   Region: 'COS_REGION', /* Bucket region (required) */
 };
-function postDocumentAuditing() {
+function postAudioAuditing() {
   var host = config.Bucket + '.ci.' + config.Region + '.myqcloud.com';
-  var url = 'https://' + host + '/document/auditing';
+  var url = 'https://' + host + '/audio/auditing';
   var body = COS.util.json2xml({
     Request: {
       Input: {
-        Object: 'test.xlsx', /* Path of the file to be moderated in the bucket */
+        Object: '1.mp3', /* Path of the audio file to be moderated in the bucket */
       },
       Conf: {
         BizType: '',
@@ -49,7 +48,7 @@ function postDocumentAuditing() {
       Region: config.Region,
       Method: 'POST',
       Url: url,
-      Key: '/document/auditing', /** Fixed value (required) */
+      Key: '/audio/auditing', /** Fixed value (required) */
       ContentType: 'application/xml', /** Fixed value (required) */
       Body: body
   },
@@ -73,28 +72,27 @@ function postDocumentAuditing() {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------------ | :----------------------------------------------------------- | :----- | :------- |
-| Url                | Request.Input | Full URL of the file, such as `http://www.example.com/doctest.doc`.             | String | Yes       |
-| Type | Request.Input | File type. If this parameter is not specified, the file extension will be used as the type by default, such as DOC, DOCX, PPT, and PPTX. <br>If the file has no extension, this field must be specified; otherwise, moderation will fail. | String | No |
+| Object | Request.Input | Name of the audio file stored in the COS bucket; for example, if the file is `audio.mp3` in the `test` directory, then the filename is `test/audio.mp3`. Either `Object` or `Url` can be selected at a time. | String | No |
+| Url | Request.Input | Full URL of the audio file, such as `http://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/audio.mp3`. Either `Object` or `Url` can be selected at a time. | String | No |
 
 `Conf` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------- | :----------------------------------------------------------- | :----- | :------- |
-| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). You can pass in multiple types and separate them by comma, such as `Porn,Ads`. | String | No |
+| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography), `Ads` (advertising), `Illegal` (illegal), and `Abuse` (abusive). You can pass in multiple types and separate them by comma, such as `Porn,Ads`. | String | No |
 | Callback | Request.Conf | The moderation result can be sent to your callback address in the form of a callback. Addresses starting with `http://` or `https://` are supported, such as `http://www.callback.com`.  | String | No |
+| CallbackVersion | Request.Conf | Structure of the callback content. Valid values: `Simple` (the callback content contains basic information), `Detail` (the callback content contains detailed information). Default value: `Simple`. | string | No |
 | BizType            | Request.Conf | Moderation policy. If this parameter is not specified, the default policy will be used. The policy can be configured in the console. For more information, see [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/436/52095). | String | No |
-
 
 #### Response description
 
-For more information, see [Submitting File Moderation Job](https://intl.cloud.tencent.com/document/product/436/48258#.E5.93.8D.E5.BA.94).
+For more information, see [Submitting Audio Moderation Job](https://intl.cloud.tencent.com/document/product/436/48262#.E5.93.8D.E5.BA.94).
 
 
-
-## Querying File Moderation Job
+## Querying Audio Moderation Job
 
 #### Feature description
-This API is used to query the status and result of a file moderation job.
+This API is used to query the status and result of an audio moderation job.
 
 #### Sample request
 
@@ -104,15 +102,15 @@ var config = {
   Bucket: 'examplebucket-1250000000', /* Bucket (required) */
   Region: 'COS_REGION', /* Bucket region (required) */
 };
-function getDocumentAuditingResult() {
-  var jobId = 'sd7815c21caff611eca12f525400d88xxx'; // `jobId`, which is returned after a file moderation job is submitted.
+function getAudioAuditingResult() {
+  var jobId = 'sa0c28d41daff411ecb23352540078cxxx'; // `jobId`, which is returned after an audio moderation job is submitted.
   var host = config.Bucket + '.ci.' + config.Region + '.myqcloud.com';
-  var url = 'https://' + host + '/document/auditing/' + jobId;
+  var url = 'https://' + host + '/audio/auditing/' + jobId;
   cos.request({
       Bucket: config.Bucket,
       Region: config.Region,
       Method: 'GET',
-      Key: '/document/auditing/' + jobId,
+      Key: '/audio/auditing/' + jobId,
       Url: url,
   },
   function(err, data){
@@ -129,4 +127,5 @@ function getDocumentAuditingResult() {
 
 #### Response description
 
-For more information, see [Querying File Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48259#.E5.93.8D.E5.BA.94).
+For more information, see [Querying Audio Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48263#.E5.93.8D.E5.BA.94).
+

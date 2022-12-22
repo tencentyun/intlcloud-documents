@@ -5,22 +5,21 @@
 - 主账号请 [单击此处](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) 进行角色授权。
 - 子账号请参见 [授权子账号接入数据万象服务](https://intl.cloud.tencent.com/document/product/1045/33450) 文档。
 
-本文档提供关于文档审核的 API 概览和 SDK 示例代码。
-
->! COS Node.js SDK 版本需要大于等于 v2.11.2。
+本文档提供关于音频审核的 API 概览和 SDK 示例代码。
+>! COS Javascript SDK 版本需要大于等于 v1.3.1。
 >
 
 | API                                                          | 操作描述                   |
 | :----------------------------------------------------------- | :------------------------- |
-|[提交文档审核任务](https://intl.cloud.tencent.com/document/product/436/48258) | 用于提交一个文档审核任务   |
-|[查询文档审核任务结果](https://intl.cloud.tencent.com/document/product/436/48259)  | 用于查询指定的文档审核任务 |
+|[提交音频审核任务](https://intl.cloud.tencent.com/document/product/436/48262) | 用于提交一个音频审核任务   |
+|[查询音频审核任务结果](https://intl.cloud.tencent.com/document/product/436/48263)  | 用于查询指定的音频审核任务 |
 
 
-## 提交文档审核任务
+## 提交音频审核任务
 
 #### 功能说明
 
-用于提交一个文档审核任务。
+用于提交一个音频审核任务。
 
 #### 请求示例
 
@@ -30,13 +29,13 @@ var config = {
   Bucket: 'examplebucket-1250000000', /* 存储桶，必须 */
   Region: 'COS_REGION', /* 存储桶所在地域，必须字段 */
 };
-function postDocumentAuditing() {
+function postAudioAuditing() {
   var host = config.Bucket + '.ci.' + config.Region + '.myqcloud.com';
-  var url = 'https://' + host + '/document/auditing';
+  var url = 'https://' + host + '/audio/auditing';
   var body = COS.util.json2xml({
     Request: {
       Input: {
-        Object: 'test.xlsx', /* 需要审核的文档文件，存储桶里的路径 */
+        Object: '1.mp3', /* 需要审核的音频文件，存储桶里的路径 */
       },
       Conf: {
         BizType: '',
@@ -49,7 +48,7 @@ function postDocumentAuditing() {
       Region: config.Region,
       Method: 'POST',
       Url: url,
-      Key: '/document/auditing', /** 固定值，必须 */
+      Key: '/audio/auditing', /** 固定值，必须 */
       ContentType: 'application/xml', /** 固定值，必须 */
       Body: body
   },
@@ -73,28 +72,27 @@ Container 类型 Input 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点        | 描述                                                         | 类型   | 是否必选 |
 | :----------------- | :------------ | :----------------------------------------------------------- | :----- | :------- |
-| Url                | Request.Input | 文档文件的链接地址，例如 http://www.example.com/doctest.doc。     | String | 是       |
-| Type               | Request.Input | 指定文档文件的类型，如未指定则默认以文件的后缀为类型。<br>如果文件没有后缀，该字段必须指定，否则会审核失败。例如：doc、docx、ppt、pptx 等。 | String | 否       |
+| Object             | Request.Input | 存储在 COS 存储桶中的音频文件名称，例如在目录 test 中的文件 audio.mp3，则文件名称为 test/audio.mp3。Object 和 Url 只能选择其中一种。 | String | 否       |
+| Url                | Request.Input | 音频文件的链接地址，例如 http://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/audio.mp3。Object 和 Url 只能选择其中一种。 | String | 否       |
 
 Container 类型 Conf 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点       | 描述                                                         | 类型   | 是否必选 |
 | :----------------- | :----------- | :----------------------------------------------------------- | :----- | :------- |
-| DetectType         | Request.Conf | 审核的场景类型，有效值：Porn（涉黄）、Ads（广告），可以传入多种类型，不同类型以逗号分隔，例如：Porn,Ads。 | String | 否       |
-| Callback           | Request.Conf | 审核结果可以回调形式发送至您的回调地址，支持以 `http://` 或者 `https://` 开头的地址，例如：`http://www.callback.com`。 | String | 否       |
-| BizType            | Request.Conf | 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见 [设置审核策略](https://intl.cloud.tencent.com/document/product/436/52095)。 | String | 否       |
-
+| DetectType         | Request.Conf | 审核的场景类型，有效值：Porn（涉黄）、Ads（广告）、Illegal（违法）、Abuse（谩骂），可以传入多种类型，不同类型以逗号分隔，例如：Porn,Ads。 | String | 否       |
+| Callback           | Request.Conf | 审核结果以回调形式发送至您的回调地址，支持以 `http://` 或者 `https://` 开头的地址，例如：`http://www.callback.com`。 | String | 否       |
+| CallbackVersion    | Request.Conf | 回调内容的结构，有效值：Simple（回调内容包含基本信息）、Detail（回调内容包含详细信息）。默认为 Simple。 | string | 否       |
+| BizType            | Request.Conf | 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见 [设置公共审核策略](https://intl.cloud.tencent.com/document/product/436/52095)。 | String       | 否         |
 
 #### 返回结果说明
 
-详情请参见 [提交文档审核任务](https://intl.cloud.tencent.com/document/product/436/48258#.E5.93.8D.E5.BA.94)。
+详情请参见 [提交音频审核任务](https://intl.cloud.tencent.com/document/product/436/48262#.E5.93.8D.E5.BA.94)。
 
 
-
-## 查询文档审核任务
+## 查询音频审核任务
 
 #### 功能说明
-用于查询文档审核任务执行情况和结果。
+用于查询音频审核任务执行情况和结果。
 
 #### 请求示例
 
@@ -104,15 +102,15 @@ var config = {
   Bucket: 'examplebucket-1250000000', /* 存储桶，必须 */
   Region: 'COS_REGION', /* 存储桶所在地域，必须字段 */
 };
-function getDocumentAuditingResult() {
-  var jobId = 'sd7815c21caff611eca12f525400d88xxx'; // jobId可以通过提交文档审核任务返回
+function getAudioAuditingResult() {
+  var jobId = 'sa0c28d41daff411ecb23352540078cxxx'; // jobId可以通过提交音频审核任务返回
   var host = config.Bucket + '.ci.' + config.Region + '.myqcloud.com';
-  var url = 'https://' + host + '/document/auditing/' + jobId;
+  var url = 'https://' + host + '/audio/auditing/' + jobId;
   cos.request({
       Bucket: config.Bucket,
       Region: config.Region,
       Method: 'GET',
-      Key: '/document/auditing/' + jobId,
+      Key: '/audio/auditing/' + jobId,
       Url: url,
   },
   function(err, data){
@@ -125,8 +123,9 @@ function getDocumentAuditingResult() {
 
 | 参数名称   | 描述                                                         | 类型   | 是否必选|
 | ---------- | ------------------------------------------------------------ | ------ |-----|
-| jobId | 需要查询的任务 ID。 | String |是|
+| jobId | 需要查询的任务 ID | String |是|
 
 #### 返回结果说明
 
-详情请参见 [查询文档审核任务结果](https://intl.cloud.tencent.com/document/product/436/48259#.E5.93.8D.E5.BA.94)。
+详情请参见 [查询音频审核任务结果](https://intl.cloud.tencent.com/document/product/436/48263#.E5.93.8D.E5.BA.94)。
+

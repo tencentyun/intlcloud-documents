@@ -6,7 +6,7 @@
 - 子账号请参见 [授权子账号接入数据万象服务](https://intl.cloud.tencent.com/document/product/1045/33450) 文档。
 
 本文档提供关于网页审核的 API 概览和 SDK 示例代码。
->! COS Node.js SDK 版本需要大于等于 v2.11.2。
+>! COS Javascript SDK 版本需要大于等于 v1.3.1。
 >
 
 | API                                                          | 操作描述                   |
@@ -144,7 +144,7 @@ function getWebpageAuditingResult() {
 
 | 参数名称   | 描述                                                         | 类型   | 是否必选|
 | ---------- | ------------------------------------------------------------ | ------ |-----|
-| jobId | 需要查询的任务 ID。 | String |是|
+| jobId | 需要查询的任务 ID | String |是|
 
 #### 返回结果说明
 

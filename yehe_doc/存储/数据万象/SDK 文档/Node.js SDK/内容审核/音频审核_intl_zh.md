@@ -1,4 +1,9 @@
 ## 简介
+内容审核功能是由 [数据万象](https://www.tencentcloud.com/document/product/1045)（Cloud Infinite，CI）提供的，数据万象将处理能力与 COS SDK 完全结合，您可以直接按照本篇文档指引进行使用。
+
+>?使用内容审核服务需拥有数据万象使用权限：
+- 主账号请 [单击此处](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) 进行角色授权。
+- 子账号请参见 [授权子账号接入数据万象服务](https://intl.cloud.tencent.com/document/product/1045/33450) 文档。
 
 本文档提供关于音频审核的 API 概览和 SDK 示例代码。
 >! COS Node.js SDK 版本需要大于等于 v2.11.2。
@@ -77,11 +82,11 @@ Container 类型 Conf 的具体数据描述如下：
 | DetectType         | Request.Conf | 审核的场景类型，有效值：Porn（涉黄）、Ads（广告）、Illegal（违法）、Abuse（谩骂），可以传入多种类型，不同类型以逗号分隔，例如：Porn,Ads。 | String | 否       |
 | Callback           | Request.Conf | 审核结果以回调形式发送至您的回调地址，支持以 `http://` 或者 `https://` 开头的地址，例如：`http://www.callback.com`。 | String | 否       |
 | CallbackVersion    | Request.Conf | 回调内容的结构，有效值：Simple（回调内容包含基本信息）、Detail（回调内容包含详细信息）。默认为 Simple。 | string | 否       |
-| BizType            | Request.Conf | 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见设置公共审核策略。 | String       | 否         |
+| BizType            | Request.Conf | 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见 [设置公共审核策略](https://intl.cloud.tencent.com/document/product/436/52095)。 | String       | 否         |
 
 #### 返回结果说明
 
-详情请参见 [提交音频审核任务](https://intl.cloud.tencent.com/document/product/436/48262)。
+详情请参见 [提交音频审核任务](https://intl.cloud.tencent.com/document/product/436/48262#.E5.93.8D.E5.BA.94)。
 
 
 ## 查询音频审核任务
@@ -122,5 +127,5 @@ function getAudioAuditingResult() {
 
 #### 返回结果说明
 
-详情请参见 [查询音频审核任务结果](https://intl.cloud.tencent.com/document/product/436/48263)。
+详情请参见 [查询音频审核任务结果](https://intl.cloud.tencent.com/document/product/436/48263#.E5.93.8D.E5.BA.94)。
 

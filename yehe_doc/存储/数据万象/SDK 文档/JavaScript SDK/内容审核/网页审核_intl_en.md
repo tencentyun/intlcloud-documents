@@ -6,7 +6,7 @@ This document describes how to use the content moderation feature provided by [C
 - For sub-accounts, see [Authorizing Sub-Accounts to Access CI Services](https://intl.cloud.tencent.com/document/product/1045/33450).
 
 This document provides an overview of APIs and SDK code samples for webpage moderation.
->! The COS Node.js SDK version must be at least v2.11.2.
+>! The COS JavaScript SDK version must be at least v1.3.1.
 >
 
 | API | Description |

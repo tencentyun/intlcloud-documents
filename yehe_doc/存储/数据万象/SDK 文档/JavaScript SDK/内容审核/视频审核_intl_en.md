@@ -6,7 +6,7 @@ This document describes how to use the content moderation feature provided by [C
 - For sub-accounts, see [Authorizing Sub-Accounts to Access CI Services](https://intl.cloud.tencent.com/document/product/1045/33450).
 
 This document provides an overview of APIs and SDK code samples for video moderation.
->! The COS Node.js SDK version must be at least v2.11.2.
+>! The COS JavaScript SDK version must be at least v1.3.1.
 >
 
 | API | Description |
@@ -94,7 +94,7 @@ function postVideoAuditing() {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :-------------------- | ------------------------------------------------------------ | --------- | -------- |
-| Mode               | Request.Conf.Snapshot | Frame capturing mode. Valid values: `Interval` (interval mode), `Average` (average mode), `Fps` (fixed frame rate mode). <ul  style="margin: 0;"><li>`Interval` mode: The `TimeInterval` and `Count` parameters take effect. If `Count` is set but `TimeInterval` is not, all frames will be captured to generate a total of `Count` images. </li><li>`Average` mode: The `Count` parameter takes effect, indicating to capture a total of `Count` images at an average interval in the entire video. </li><li>`Fps` mode: `TimeInterval` indicates how many frames to capture per second, and `Count` indicates how many frames to capture in total.</li></ul> | String | No |
+| Mode               | Request.Conf.Snapshot | Frame capturing mode. Valid values: `Interval` (interval mode), `Average` (average mode), `Fps` (fixed frame rate mode). </br><li>`Interval` mode: The `TimeInterval` and `Count` parameters take effect. If `Count` is set but `TimeInterval` is not, all frames will be captured to generate a total of `Count` images. </br><li>`Average` mode: The `Count` parameter takes effect, indicating to capture a total of `Count` images at an average interval in the entire video. </br><li>`Fps` mode: `TimeInterval` indicates how many frames to capture per second, and `Count` indicates how many frames to capture in total.</li> | String | No |
 | Count              | Request.Conf.Snapshot | The number of captured frames. Value range: (0, 10000]. | String | No       |
 | TimeInterval       | Request.Conf.Snapshot | Video frame capturing frequency. Value range: (0.000, 60.000] seconds. The value supports the float format, accurate to the millisecond. | Float  | No |
 
