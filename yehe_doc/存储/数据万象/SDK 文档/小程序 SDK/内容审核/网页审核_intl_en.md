@@ -1,16 +1,21 @@
 ## Overview
+This document describes how to use the content moderation feature provided by [Cloud Infinite (CI)](https://www.tencentcloud.com/document/product/1045). CI fully integrates the processing capabilities with the COS SDK.
+
+>?To use the content moderation service, you need to have the permission to use CI:
+- For root accounts, click [here](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) for role authorization.
+- For sub-accounts, see [Authorizing Sub-Accounts to Access CI Services](https://intl.cloud.tencent.com/document/product/1045/33450).
 
 This document provides an overview of APIs and SDK code samples for webpage moderation.
->! The COS Mini Program SDK version must be at least v1.1.1.
+>! The COS Mini Program SDK version should be or later than v1.1.1.
 >
 
-| API | Description |
+| API | Description    |
 | :----------------------------------------------------------- | :------------------------- |
-|[Submitting webpage moderation job](https://intl.cloud.tencent.com/document/product/436/48282)  | Submits webpage moderation job.   |
-|[Querying webpage moderation job result](https://intl.cloud.tencent.com/document/product/436/48283)  | Queries the result of specified webpage moderation job. |
+|[Submitting webpage moderation job](https://intl.cloud.tencent.com/document/product/436/48282)  | Submits a webpage moderation job.   |
+|[Querying webpage moderation job result](https://intl.cloud.tencent.com/document/product/436/48283)  | Queries the result of a specified webpage moderation job. |
 
 
-## Submitting Webpage Moderation Job
+## Submitting a Webpage Moderation Job
 
 #### Feature description
 
@@ -21,8 +26,8 @@ This API is used to submit a webpage moderation job.
 ```js
 var config = {
   // Replace with your own bucket information
-  Bucket: 'examplebucket-1250000000', /* Bucket (required) */
-  Region: 'COS_REGION', /* Bucket region (required) */
+  Bucket: 'examplebucket-1250000000', /* Bucket. Required */
+  Region: 'COS_REGION',     /* Bucket region. Required */
 };
 function postWebpageAuditing() {
   var host = config.Bucket + '.ci.' + config.Region + '.myqcloud.com';
@@ -66,7 +71,7 @@ function postWebpageAuditing() {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------ | :------------------- | :-------- | :------- |
-| Input | Request | Webpage to be moderated. | Container | Yes |
+| Input              | Request | Webpage to be moderated.                   | Container | Yes       |
 | Conf | Request | Moderation rule configuration. | Container | Yes |
 
 `Input` has the following sub-nodes:
@@ -94,14 +99,14 @@ function postWebpageAuditing() {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :------------------ | :----------- | :----------------------------------------------------------- | :------ | :------- |
-| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). You can pass in multiple types and separate them by commas, such as `Porn,Ads`. | String | Yes |
+| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). You can pass in multiple types and separate them by comma, such as `Porn,Ads`. | String | Yes |
 | Callback           | Request.Conf | Callback address, which must start with `http://` or `https://`.              | String    | No       |
 | ReturnHighlightHtml | Request.Conf | This parameter specifies whether to highlight the non-compliant text on the webpage. When the result is queried or called back, this parameter decides whether to return the highlighted HTML content. Valid values: `true`, `false`. Default value: `false`. | Boolean | No |
 
 
 #### Response description
 
-For more information, see [Submitting Webpage Moderation Job](https://intl.cloud.tencent.com/document/product/436/48282).
+For more information, see [Submitting Webpage Moderation Job](https://intl.cloud.tencent.com/document/product/436/48282#.E5.93.8D.E5.BA.94).
 
 
 
@@ -115,8 +120,8 @@ This API is used to query the status and result of a webpage moderation job.
 ```js
 var config = {
   // Replace with your own bucket information
-  Bucket: 'examplebucket-1250000000', /* Bucket (required) */
-  Region: 'COS_REGION', /* Bucket region (required) */
+  Bucket: 'examplebucket-1250000000', /* Bucket. Required */
+  Region: 'COS_REGION',     /* Bucket region. Required */
 };
 function getWebpageAuditingResult() {
   var jobId = 'shce868019aff611ecb1155254009a4xxx'; // `jobId`, which is returned after a webpage moderation job is submitted.
@@ -143,4 +148,4 @@ function getWebpageAuditingResult() {
 
 #### Response description
 
-For more information, see [Querying Webpage Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48283).
+For more information, see [Querying Webpage Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48283#.E5.93.8D.E5.BA.94).
