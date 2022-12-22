@@ -31,10 +31,6 @@ DDoS 高防支持对已接入防护的网站业务配置精准防护策略。开
     <tr>
         <td>Accept</td>
         <td>发起访问请求的客户端希望接受的数据类型</td>
-				<td>等于、包含、不包含</td>
-    <tr>
-        <td>Method</td>
-        <td>访问请求的方法，具体包括 HEAD、GET、POST、DELTET、PUT</td>
 				<td>等于、包含、不包含</td>	    
     </tr>
 </table>

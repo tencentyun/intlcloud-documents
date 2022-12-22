@@ -1,4 +1,9 @@
 ## 简介
+内容审核功能是由 [数据万象](https://www.tencentcloud.com/document/product/1045)（Cloud Infinite，CI）提供的，数据万象将处理能力与 COS SDK 完全结合，您可以直接按照本篇文档指引进行使用。
+
+>?使用内容审核服务需拥有数据万象使用权限：
+- 主账号请 [单击此处](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) 进行角色授权。
+- 子账号请参见 [授权子账号接入数据万象服务](https://intl.cloud.tencent.com/document/product/1045/33450) 文档。
 
 本文档提供关于图片审核的 API 概览和 SDK 示例代码。
 >! COS Node.js SDK 版本需要大于等于 v2.11.2。
@@ -54,7 +59,7 @@ Query 中的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点  | 描述                                                     | 类型      | 是否必选 |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| biz-type    | Query| 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见设置公共审核策略。 | String | 否       |
+| biz-type    | Query| 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见 [设置公共审核策略](https://intl.cloud.tencent.com/document/product/1045/52107)。 | String | 否       |
 | detect-type | Query | 审核类型审核类型，porn（涉黄识别）、ads（广告识别）。可选择多种识别类型用 `,` 连接。 | String    | 否   |
 | object-key | Query | 图片文件在 bucket 中的位置。 | String    | 是   |
 | detect-url  | Query| 您可以通过填写 `detect-url` 审核任意公网可访问的图片链接。<ul  style="margin: 0;"><li>不填写 `detect-url` 时，后台会默认审核 `ObjectKey`。</li><li>填写 `detect-url` 时，后台会审核 `detect-url` 链接，无需再填写 `ObjectKey`、`detect-url`。示例：http://www.example.com/abc.jpg。</li></ul> | String | 否       |
@@ -144,7 +149,7 @@ Container 类型 Conf 的具体数据描述如下：
 | 节点名称（关键字） | 父节点       | 描述                                                         | 类型   | 是否必选 |
 | :----------------- | :----------- | :----------------------------------------------------------- | :----- | :--- |
 | DetectType         | Request.Conf | 审核的场景类型，有效值：Porn（涉黄）、Ads（广告），可以传入多种类型，不同类型以 `,` 分隔，例如：Porn,Ads。 | String | 是   |
-| BizType            | Request.Conf | 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见设置公共审核策略。 | String | 否   |
+| BizType            | Request.Conf | 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见 [设置公共审核策略](https://intl.cloud.tencent.com/document/product/436/52095)。 | String | 否   |
 
 
 >!

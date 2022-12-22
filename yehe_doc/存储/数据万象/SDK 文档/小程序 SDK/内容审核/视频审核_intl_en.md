@@ -1,16 +1,21 @@
 ## Overview
+This document describes how to use the content moderation feature provided by [Cloud Infinite (CI)](https://www.tencentcloud.com/document/product/1045). CI fully integrates the processing capabilities with the COS SDK.
+
+>?To use the content moderation service, you need to have the permission to use CI:
+- For root accounts, click [here](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) for role authorization.
+- For sub-accounts, see [Authorizing Sub-Accounts to Access CI Services](https://intl.cloud.tencent.com/document/product/1045/33450).
 
 This document provides an overview of APIs and SDK code samples for video moderation.
->! The COS Mini Program SDK version must be at least v1.1.1.
+>! The COS Mini Program SDK version should be or later than v1.1.1.
 >
 
-| API | Description |
+| API | Description    |
 | :----------------------------------------------------------- | :------------------------- |
-|[Submitting video moderation job](https://intl.cloud.tencent.com/document/product/436/48249) | Submits video moderation job.   |
-|[Querying video moderation job result](https://intl.cloud.tencent.com/document/product/436/48250)  | Queries the result of specified video moderation job. |
+|[Submitting video moderation job](https://intl.cloud.tencent.com/document/product/436/48249) | Submits a video moderation job.   |
+|[Querying video moderation job result](https://intl.cloud.tencent.com/document/product/436/48250)  | Queries the result of a specified video moderation job. |
 
 
-## Submitting Video Moderation Job
+## Submitting a Video Moderation Job
 
 #### Feature description
 
@@ -21,8 +26,8 @@ This API is used to submit a video moderation job.
 ```js
 var config = {
   // Replace with your own bucket information
-  Bucket: 'examplebucket-1250000000', /* Bucket (required) */
-  Region: 'COS_REGION', /* Bucket region (required) */
+  Bucket: 'examplebucket-1250000000', /* Bucket. Required */
+  Region: 'COS_REGION',     /* Bucket region. Required */
 };
 function postVideoAuditing() {
   var host = config.Bucket + '.ci.' + config.Region + '.myqcloud.com';
@@ -38,7 +43,7 @@ function postVideoAuditing() {
         Snapshot: {
           Count: 1000, // Number of frames captured
         },
-        DetectContent: 1, // Whether to moderate the video sound. Valid values: `0` (moderates video image only); `1` (moderates both video image and sound)
+        DetectContent: 1, // Whether to moderate the video sound. Valid values: `0` (moderates video image only), `1` (moderates both video image and sound)
       }
     }
   });
@@ -64,7 +69,7 @@ function postVideoAuditing() {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ---------------- | --------- | -------- |
-| Input | Request | Video to be moderated. | Container | Yes |
+| Input              | Request | Video to be moderated.                   | Container | Yes       |
 | Conf | Request | Moderation rule configuration. | Container | Yes |
 
 `Input` has the following sub-nodes:
@@ -78,7 +83,7 @@ function postVideoAuditing() {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------------ | ------------------------------------------------------------ | --------- | -------- |
-| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). You can pass in multiple types and separate them by commas, such as `Porn,Ads`. | String | No |
+| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). You can pass in multiple types and separate them by comma, such as `Porn,Ads`. | String | No |
 | Snapshot           | Request.Conf | Video image moderation is implemented by taking a certain number of screenshots based on the video frame capturing capability and then moderating the screenshots one by one. This parameter is used to specify the configuration of video frame capturing. | Container | Yes |
 | Callback           | Request.Conf | Callback address, which must start with `http://` or `https://`.              | String    | No       |
 | CallbackVersion | Request.Conf | Structure of the callback content. Valid values: `Simple` (the callback content contains basic information), `Detail` (the callback content contains detailed information). Default value: `Simple`. | String | No |
@@ -108,8 +113,8 @@ This API is used to query the status and result of a video moderation job.
 ```js
 var config = {
   // Replace with your own bucket information
-  Bucket: 'examplebucket-1250000000', /* Bucket (required) */
-  Region: 'COS_REGION', /* Bucket region (required) */
+  Bucket: 'examplebucket-1250000000', /* Bucket. Required */
+  Region: 'COS_REGION',     /* Bucket region. Required */
 };
 function getVideoAuditingResult() {
   var jobId = 'av14d9ca15af3a11eca0d6525400d88xxx'; // `jobId`, which is returned after a video moderation job is submitted.

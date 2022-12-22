@@ -1,13 +1,18 @@
 ## Overview
+This document describes how to use the content moderation feature provided by [Cloud Infinite (CI)](https://www.tencentcloud.com/document/product/1045). CI fully integrates the processing capabilities with the COS SDK.
+
+>?To use the content moderation service, you need to have the permission to use CI:
+- For root accounts, click [here](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) for role authorization.
+- For sub-accounts, see [Authorizing Sub-Accounts to Access CI Services](https://intl.cloud.tencent.com/document/product/1045/33450).
 
 This document provides an overview of APIs and SDK code samples for image moderation.
->! The COS Mini Program SDK version must be at least v1.1.1.
+>! The COS Mini Program SDK version should be or later than v1.1.1.
 >
 
 | API | Description |
 | ------------- |  ---------------------- |
 | [Single image moderation](https://intl.cloud.tencent.com/document/product/436/48537) |  Scans existing data stored in COS for pornographic, illegal, and advertising images. |
-| [Batch image moderation](https://intl.cloud.tencent.com/document/product/436/48538) |  Moderates multiple images in batches. |
+| [Batch image moderation](https://intl.cloud.tencent.com/document/product/436/48538) | Moderates multiple images in batches. |
 
 
 ## Single Image Moderation
@@ -20,8 +25,8 @@ The existing data scan feature of image moderation leverages CI's persistent pro
 ```js
 var config = {
   // Replace with your own bucket information
-  Bucket: 'examplebucket-1250000000', /* Bucket (required) */
-  Region: 'COS_REGION', /* Bucket region (required) */
+  Bucket: 'examplebucket-1250000000', /* Bucket. Required */
+  Region: 'COS_REGION',     /* Bucket region. Required */
 };
 function getImageAuditing() {
   cos.request({
@@ -53,7 +58,7 @@ function getImageAuditing() {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| biz-type    | Query| Moderation policy. If this parameter is not specified, the default policy will be used. The policy can be configured in the console. | String | No |
+| biz-type    | Query| Moderation policy. If this parameter is not specified, the default policy will be used. The policy can be configured in the console. For more information, see [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/1045/52107). | String | No |
 | detect-type | Query | Moderation type. Valid values: `porn`, `ads`. You can specify multiple types and separate them by comma. | String    | No |
 | object-key | Query | Location of the image in the bucket. | String    | Yes   |
 | detect-url  | Query| You can enter a `detect-url` value to moderate an image accessible over the public network. <ul  style="margin: 0;"><li>If `detect-url` is not specified, the backend will moderate by `ObjectKey` by default. </li><li>If `detect-url` is specified, the backend will moderate by `detect-url`, and there is no need to enter `ObjectKey`. Sample `detect-url`: http://www.example.com/abc.jpg.</li></ul> | String | No       |
@@ -78,8 +83,8 @@ The batch image moderation API adopts a sync POST request method. You can use th
 ```js
 var config = {
   // Replace with your own bucket information
-  Bucket: 'examplebucket-1250000000', /* Bucket (required) */
-  Region: 'COS_REGION', /* Bucket region (required) */
+  Bucket: 'examplebucket-1250000000', /* Bucket. Required */
+  Region: 'COS_REGION',     /* Bucket region. Required */
 };
 function postImagesAuditing() {
   var host = config.Bucket + '.ci.' + config.Region + '.myqcloud.com';
@@ -128,7 +133,7 @@ function postImagesAuditing() {
 | Input | Request | Content to be moderated. If there are multiple images, pass in multiple `Input` structures. | Container Array | Yes |
 | Conf | Request | Moderation rule configuration. | Container | Yes |
 
-`Input` has the following sub-nodes:
+`Input` has the following sub-nodes, and you need to use only one of these sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------------ | :----------------------------------------------------------- | :----- | :--- |
@@ -143,7 +148,7 @@ function postImagesAuditing() {
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------- | :----------------------------------------------------------- | :----- | :--- |
 | DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). You can pass in multiple types and separate them by comma, such as `Porn,Ads`. | String | Yes |
-| BizType            | Request.Conf | Moderation policy. If this parameter is not specified, the default policy will be used. The policy can be configured in the console. | String | No |
+| BizType            | Request.Conf | Moderation policy. If this parameter is not specified, the default policy will be used. The policy can be configured in the console. For more information, see [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/436/52095). | String | No |
 
 
 >!
