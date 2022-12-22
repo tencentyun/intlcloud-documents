@@ -184,7 +184,8 @@ key 具体取什么值，与当前这个材质使用的 shader 有关。上面�
 	<img src="https://qcloudimg.tencent-cloud.cn/raw/736b84897bb2e784ac0a3d0085591829.png" width=300>
 	<br>因此当我们想要 changeColor 时，就需要明确指出 change 的是哪一个材质的 color。subMeshIndex 和 materialIndex 就是用于定位具体的材质。要确定这两个 index 的值，需要打开素材工程目录下的 template.json，找到当前的 mesh，查看 subMeshConfigs 属性，例如我们搜索“hair”，定位到 hair 的配置，可以看到如下的 subMesh 配置：
 	<img src="https://qcloudimg.tencent-cloud.cn/raw/85e39b3f3492b2aed27a67bbd3394c60.png" width=500>
-	<br>然后通过 subMeshIndex 和 materialIndex 的组合就能定位到具体的材质了。
+	
+<br>然后通过 subMeshIndex 和 materialIndex 的组合就能定位到具体的材质了。
 	:::
 	::: action 等于 changeTexture 场景
 	[](id:changeTexture)
@@ -208,12 +209,13 @@ key 具体取什么值，与当前这个材质使用的 shader 有关。上面�
          }
 }
 ```
+
 - **switchKey 和 switchValue**：必填。控制是否显示贴图。当 switchValue 为 false 时，表示不设置贴图纹理，此时可以不用填其他字段。switchKey 的取值和 key 的取值要搭配使用。
 - **key 和 value**：当 switchValue 为 true 时，这两个字段必填。value 取值为贴图文件与素材根目录的相对路径（如配置示例所示），或者在手机上的绝对路径。
 >? 与 [action ==  changeColor](#changeColor) 时的 key 的取值说明类似，switchKey 和 key 与 material 使用的 shader 有关，例如 TEStudio 里内置 shader 的“颜色纹理”开关及值，对应的就是这里的 baseColorEnableTexture 和 baseColorMap。类似地，还有 AO 纹理、法线纹理等字段。在我们的官方捏脸素材中，我们还自定义了 shader，添加了口红贴图开关、面部贴纸开关等等。
->您可以直接以文本形式打开材质文件，在里面看到各个贴图的 switchKey 和 key 值，比如我们 Demo 素材里 face_main 使用的材质文件 face.fmaterial，打开后可以看到如下内容：
+>-您可以直接以文本形式打开材质文件，在里面看到各个贴图的 switchKey 和 key 值，比如我们 Demo 素材里 face_main 使用的材质文件 face.fmaterial，打开后可以看到如下内容：
 ><img src="https://qcloudimg.tencent-cloud.cn/raw/0fa0653a62172412aba16b64d1bc172f.png" width=500>
-><br>要修改哪个贴图，就在 switchKey 和 key 两个字段中填入该贴图对应的值。
+>- 要修改哪个贴图，就在 switchKey 和 key 两个字段中填入该贴图对应的值。
 
 - **subMeshIndex 和 materialIndex**：非必填。如果不填该字段，则 SD K内取默认值0。详细说明请参见 [action ==  changeColor](#subMeshIndex) 说明。
 - **textureOptions**：非必填。贴图解析参数。决定贴图的展开和渲染样式。如无特殊配置需求，不建议填写此字段。
@@ -261,6 +263,7 @@ action == replace 时的 value 字段描述了子模型的3D变换信息、模�
 ```
 - **position、rotation、scale**：分别描述了模型的位置、旋转、缩放属性。非必填。如果不填，则使用默认值。position 的默认值是0,0,0，rotation 的默认值是0,0,0，scale 的默认值是1,1,1。
 >! rotation 的单位是角度，例如45度就填45。它对应的是素材 template.json 里的 eEuler 字段的值。
+
 - **meshResourceKey**：必填。描述了模型 mesh 文件的路径。路径可以是 mesh 文件与素材根目录的相对路径（如配置示例所示），也可以是文件在手机上的绝对路径。
 -  **subMeshConfigs**：必填。如对 [subMeshIndex 和 materialIndex](#subMeshIndex) 的说明，一个mesh可以包含多个 subMesh，一个 subMesh 可以包含多个材质。 subMeshConfigs 字段配置的就是 mesh 与材质的关联关系。materialResourceKeys 里的取值可以是 material 文件与素材根目录的相对路径（如配置示例所示），也可以是文件在手机上的绝对路径。
 :::
