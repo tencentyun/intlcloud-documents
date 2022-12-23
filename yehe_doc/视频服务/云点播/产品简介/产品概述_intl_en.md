@@ -3,7 +3,7 @@ Tencent Cloud Video on Demand (VOD) provides one-stop VPaaS (Video Platform as a
 
 
 ## Product Architecture
-<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/8fQI183_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16717824542449.png" width="750"><br><br>><br>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/8fQI183_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16717824542449.png" width="750"><br><br><br>
 Cloud video storage, video transcoding service, and video playback acceleration are the core components of Tencent Cloud video solutions.
 
 - **Cloud media storage**
