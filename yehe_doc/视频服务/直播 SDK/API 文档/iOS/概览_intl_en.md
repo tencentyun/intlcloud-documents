@@ -137,7 +137,7 @@ It has the following capabilities:
 
 | API | Description |
 | --------------- | --------------- |
-| [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a4fb05ae6b5face276ace62558731280a) | Gets the beauty filter management object [TXBeautyManager](https://cloud.tencent.com/document/product/454/39382), which is used to set beauty filters. |
+| [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a4fb05ae6b5face276ace62558731280a) | Gets the beauty filter management object TXBeautyManager, which is used to set beauty filters. |
 
 ### Audio APIs
 
