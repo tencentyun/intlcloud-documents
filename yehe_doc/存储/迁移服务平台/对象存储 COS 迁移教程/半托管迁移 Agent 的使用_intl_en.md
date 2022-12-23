@@ -42,7 +42,7 @@ Here, `pl_config.yaml` configures main parameters for process execution, `app_lo
 
 You can basically use the default log parameter settings. However, be careful about the log rotation configuration: if the disk space is limited but the task size is large, you need to adjust the log configuration to reduce the disk usage (during migration, the disk is used to store only storage logs but not migrated files).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/16464c28d210bf69eadcfd65ff8e6c7f.png)             
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/CYQa700_28.png)             
 
 #### Master configuration
 
@@ -54,7 +54,7 @@ You can basically use the default log parameter settings. However, be careful ab
 | fragMaxNum         | Maximum number of files of an assigned task fragment     | To reduce the pressure on master-worker communication, the master packages multiple file paths into a **fragment** and assigns it to a worker as a subtask. `fragMaxNum` is the maximum number of files in each fragment. If the value is too small, the pressure on master-worker communication will get higher, and server resources will be wasted; if it is too large, workers will become too slow to report the completion of fragment migration and have imbalanced loads. The default value is 1,000. When `fragMaxSize` or `fragMaxNum` reaches the limit during packaging, the system will stop adding more files. |
 | secretId           | The `SecretId` used to request TencentCloud APIs for MSP   | As the master process needs to request TencentCloud APIs for MSP to get the tasks created in the console, you need to enter the `secretId` of your key. **Note that the key here refers to your key used to create MSP tasks, not the keys of source and target buckets.** |
 | secretKey          | The `SecretKey` used to request TencentCloud APIs for MSP   | As the master process needs to request TencentCloud APIs for MSP to get the tasks created in the console, you need to enter the `secretKey` of your key. **Note that the key here refers to your key used to create MSP tasks, not the keys of source and target buckets.** |
-| listerIp           | Private IP of the server where the master process is deployed     | You may create multiple tasks and want to run them in different clusters. In this case, you need to enter the private IP of the server where the master process is deployed, so that the master will run only tasks whose **master node private IP** is set to this IP during task creation in the console. ![](https://qcloudimg.tencent-cloud.cn/raw/9120edae88ad48d18df39e655b70a5b6.png) |
+| listerIp           | Private IP of the server where the master process is deployed     | You may create multiple tasks and want to run them in different clusters. In this case, you need to enter the private IP of the server where the master process is deployed, so that the master will run only tasks whose **master node private IP** is set to this IP during task creation in the console.  |
 
 
 

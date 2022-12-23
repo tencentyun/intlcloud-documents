@@ -42,7 +42,7 @@ master 和 worker 目录下都有相同的 configs 结构：
 
 日志部分基本采用默认的参数即可。但需要注意日志滚动部分配置：如果磁盘空间有限而任务规模巨大，则需要调节一下日志配置以节省磁盘空间（迁移只有存储日志部分使用到磁盘，实际的文件迁移是不使用磁盘的）。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/16464c28d210bf69eadcfd65ff8e6c7f.png)             
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/CYQa700_28.png)             
 
 #### Master 配置
 
@@ -54,7 +54,7 @@ master 和 worker 目录下都有相同的 configs 结构：
 | fragMaxNum         | 分发任务单个分片最大包含文件个数 | 为了降低主从通信压力，master 派发给 worker 的子任务是将多个文件路径打包成一个**分片**后派发，此处 fragMaxNum 即为单个分片能打包的文件最大个数。此处设置太小会使主从通信压力加大，浪费服务器资源，太大会使 worker 上报分片完成时间拉长，不够及时，同时会造成 worker 负载不均衡。默认值是1000。打包时满足 fragMaxSize 或者 fragMaxNum 其中一个即停止加更多文件。 |
 | secretId           | 用于请求 MSP 云 API 的密钥SecretId   | Master进程需要请求 msp 云 API，以获取用户在控制台创建的任务，因此此处需要填入用户的密钥，此处填密钥中的 secretId。**注意此处密钥是指创建 MSP 任务的用户密钥，与源桶和目标桶的密钥完全无关。** |
 | secretKey          | 用于请求 MSP 云 API 的密钥 SecretKey  | Master进程需要请求msp云API，以获取用户在控制台创建的任务，因此此处需要填入用户的密钥，此处填密钥中的 secretKey。**注意此处密钥是指创建 MSP 任务的用户密钥，与源桶和目标桶的密钥完全无关。** |
-| listerIp           | 部署 Master 进程的服务器内网 IP     | 客户可能创建多个任务，而且希望多个任务运行到不同集群，因此此处需要填入部署 Master 进程的服务器的内网 IP，这样此 Master 就只会运行在控制台创建任务时分配到这个服务器 IP 的任务。控制台创建任务时**主节点内网 IP** 表单即输入与本配置相同的 IP。![](https://qcloudimg.tencent-cloud.cn/raw/9120edae88ad48d18df39e655b70a5b6.png) |
+| listerIp           | 部署 Master 进程的服务器内网 IP     | 客户可能创建多个任务，而且希望多个任务运行到不同集群，因此此处需要填入部署 Master 进程的服务器的内网 IP，这样此 Master 就只会运行在控制台创建任务时分配到这个服务器 IP 的任务。控制台创建任务时**主节点内网 IP** 表单即输入与本配置相同的 IP。 |
 
 
 
