@@ -7,7 +7,7 @@ Asset Center provides the visual analysis of assets feature, which performs inte
 
 ## Prerequisites
 
-To use the visual analysis of assets feature, you must have enabled [Security Operation Center Premium](https://buy.cloud.tencent.com/soc).
+To use the visual analysis of assets feature, you must have enabled Security Operation Center Premium.
 
 ## Directions
 
