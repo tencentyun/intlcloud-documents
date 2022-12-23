@@ -102,6 +102,7 @@ ErrorType을 기반으로 로컬 또는 원격 IO 오류를 식별할 수 있습
 </dx-tabs>
 
 3. **프록시 시작**:
+
 ```c++
 std::error_code start(const std::string &local_url, const std::string &remote_url, void * config=nullptr)
 ```
@@ -146,6 +147,7 @@ option_.trans_mode = tmio::SrtTransMode::SRT_TRANS_BACKUP;
  proxy_->start(local_url, remote_url, &option_);
 ```
 3. **중지**:
+
 ```c++
 /*
 void stop();
@@ -156,7 +158,7 @@ proxy_.stop();
 [](id:internal)
 ### 내부 통합
 #### Tmio SDK의 내부 통합
-![](https://qcloudimg.tencent-cloud.cn/raw/ffad74f4bebbc9cea6eb780a937dc0b9.jpeg)
+![](https://qcloudimg.tencent-cloud.cn/raw/4b7d4a5180a9450c2d815161bf060cb2.jpeg)
 
 #### 통합 프로세스
 1. **Tmio 인스턴스 생성&매개변수 구성**(예시 코드):
@@ -202,6 +204,7 @@ if (err) {
 	LOGE("open failed, %d, %s", err.value(), err.message().c_str());
 }
 ```
+
   - 다중 연결 bonding(현재 SRT 프로토콜만 지원)
 	 - SRT bonding 기능에 대한 config를 설정하려면 `tmio.h` 파일의 SrtFeatureConfig 구조 정의를 참고하십시오.
 ```C++
@@ -210,6 +213,7 @@ option_.protocol = tmio::Protocol::SRT;
 option_.trans_mode = tmio::SrtTransMode::SRT_TRANS_BACKUP;
 option_.addAvailableNet(net_name, local_addr, remote_url, 0, weight, -1);
 ```
+
 ```C++
 //다중 연결 bonding
 auto err = tmio_->open(TMIO_SRT_URL, &option_);
@@ -217,6 +221,7 @@ if (err) {
 	LOGE("open failed, %d, %s", err.value(), err.message().c_str());
 }
 ```
+
   -  다중 연결 bonding open API를 사용하여 데이터 전송을 위해 group에 새 연결을 추가할 수 있습니다.
 3. **데이터 전송**:
 
@@ -273,11 +278,13 @@ tmio_->recvLoop([file](const uint8_t *buf, int len,
 });
 ```
 5. **Tmio 인스턴스 종료**:
+
 ```C++
 tmio_->close();
 ```
 6. **기타**:
 이 API는 현재 연결 상태를 가져오는 데 사용됩니다(애플리케이션은 상태에 따라 스트림 푸시 정책을 조정할 수 있음).
+
 ```C++
 tmio::PerfStats stats_;
 tmio_->control(tmio::ControlCmd::GET_STATS, &stats_);
