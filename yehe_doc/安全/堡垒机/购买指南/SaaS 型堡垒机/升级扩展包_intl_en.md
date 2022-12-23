@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to upgrade the extension pack when the number of BH authorizations becomes insufficient and is far less than that to support the next specification level.
 
 ## Directions
