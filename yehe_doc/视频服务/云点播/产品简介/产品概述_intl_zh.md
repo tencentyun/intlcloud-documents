@@ -3,7 +3,7 @@
 
 
 ## 产品架构
-<img src="https://main.qcloudimg.com/raw/6eca7588b39959a7ca3242491a57e503.png" width="750"><br><br>><br>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/8fQI183_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16717824542449.png" width="750"><br><br>><br>
 音视频存储管理（Cloud Video Storage）、音视频转码处理（Video Transcoding Service）、音视频加速播放（Video Playback Acceleration）是腾讯云视频解决方案的核心组件。
 
 - **音视频存储管理**
