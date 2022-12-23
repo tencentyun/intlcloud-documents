@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 Bastion Host (BH) is a centralized Ops management system integrating account, authorization, and authentication management and comprehensive audit. It provides IT asset access proxy and smart operation audit services and establishes a comprehensive security management system covering pre-event prevention, mid-event monitoring, and post-event audit. In addition, it can promptly trigger alarms for abnormal behaviors to prevent internal data leakage and help enterprises pass the CCP evaluation.
 
 BH features:
