@@ -1,4 +1,4 @@
-﻿### Do I have to install BHLoader?
+### Do I have to install BHLoader?
 Yes. Ops engineers have to install BHLoader, as it is used to invoke local applications, create connections through them, and access the target resources.
 
 ### After installing BHLoader, do I have to install connection tools such as SecureCRT and Xshell?
