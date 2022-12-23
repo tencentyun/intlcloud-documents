@@ -1,4 +1,4 @@
-﻿## Billing
+## Billing
 You can select an appropriate BH specification based on the number of your CVM instances.
 <table>
 <thead>
