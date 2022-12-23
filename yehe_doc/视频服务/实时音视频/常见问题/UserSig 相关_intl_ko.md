@@ -13,7 +13,7 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 ```
 >?
 >- 'currtime'은 현재 시스템 시간이고 'expire'는 서명 만료 시간입니다.
->- 상기 개략도는 UserSig의 계산 원리를 설명하기 위한 것으로, UserSig 스플라이싱 코드의 구체적인 구현은 [클라이언트 계산 UserSig](#Client) 및 [서버 계산 UserSig](#Server)를 참고하십시오.
+>- 상기 그림은 UserSig를 계산하는 방법만을 보여줍니다. UserSig 연결 코드를 구현하는 방법에 대한 자세한 내용은 [클라이언트 계산 UserSig](#Client) 및 [서버 계산 UserSig](#Server)를 참고하십시오.
 
 [](id:Key)
 ## 디버깅 및 실행 단계에서 UserSig를 계산하는 방법은 무엇입니까?
@@ -26,13 +26,12 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 [](id:client)
 ### UserSig를 계산하기 위한 클라이언트 샘플 코드
 1. **SDKAPPID 및 키 가져오기**:
-    1. **TRTC 콘솔** > **[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)**에 로그인합니다.
-    2. 조회하고자 하는 SDKAppID에 해당하는 **애플리케이션 정보**를 클릭한 후 다시 **퀵 스타트** 탭을 클릭하여 이동합니다.
-    3. **2단계: UserSig 발급 키 획득** 탭을 조회하면 UserSig 계산에 사용하는 암호화 키를 획득할 수 있습니다.
-    4. **키 복사**를 클릭하면 키를 클립보드에 복사할 수 있습니다.
- ![](https://main.qcloudimg.com/raw/b8575d1c97952ad8b1b28df16d69a8cb.png)
+    1. **TRTC 콘솔** 로그인 > [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)로 이동합니다.
+    2. 애플리케이션 구성을 클릭하면 SDKAppID에 해당하는 애플리케이션 정보를 볼 수 있습니다.
+    3. 기본 정보에서 SDKSecretKey를 확인하여 UserSig 발급을 위한 암호화 키를 가져옵니다.
+    4. Copy Secret Key를 클릭하여 키를 클립보드에 복사합니다.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/29502e1be216eb514d706cc701c17df3.png)
 
->? 키 조회 시 공개키와 개인키 정보만 얻을 수 있다면 [키 획득 방법](#getusersig)을 참고하십시오.
 2. **UserSig 계산:**
 클라이언트 사용을 용이하게 하기 위해 각 플랫폼에서 UserSig를 계산하기 위한 소스 파일을 제공합니다. 계산을 직접 다운로드할 수 있습니다.
 <table>
@@ -50,11 +49,11 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 <td><a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java">Github</a></td>
 <td>TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
 </tr><tr>
-<td>Windows（C++）</td>
+<td>Windows(C++)</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-C%2B%2B/TRTC-API-Example-Qt/src/Util/defs.h">Github</a></td>
 <td>TRTC-API-Example-C++/TRTC-API-Example-Qt/src/Util/defs.h</td>
 </tr><tr>
-<td>Windows（C#）</td>
+<td>Windows(C#)</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs">Github</a></td>
 <td>TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs</td>
 </tr><tr>
@@ -71,26 +70,13 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 TRTC SDK의 예시 코드에 `GenerateTestUserSig`라는 오픈 소스 모듈을 제공하였습니다. 이 중 SDKAPPID, EXPIRETIME 및 SECRETKEY 등 3가지 멤버 변수를 자체 설정으로 변경하면 `genTestUserSig()` 함수를 호출하여 계산된 UserSig를 획득해 SDK 관련 기능을 빠르게 실행할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
 
-[](id:getusersig)
-#### 키 조회 시 공개키와 개인키 정보만 획득할 수 있습니다. 키는 어떻게 획득합니까?
-TRTC SDK 6.6 버전(2019년 08월)부터 새로운 서명 알고리즘 HMAC-SHA256이 적용되었습니다. 이전에 생성된 애플리케이션은 서명 알고리즘을 업데이트해야 새로운 암호화 키를 획득할 수 있습니다. 업데이트하지 않을 경우 [기존 버전 알고리즘 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)을 계속 사용할 수 있으며, 이미 업데이트한 경우 필요에 따라 기존/신규 알고리즘을 전환하십시오.
-
-**업데이트/전환 작업:**
-1. [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에 로그인합니다.
-2. 왼쪽 사이드바에서 **애플리케이션 관리**를 선택한 후 대상 애플리케이션이 속한 행의 **애플리케이션 정보**를 클릭합니다.
-3. **퀵 스타트** 탭을 선택하고 **2단계: UserSig 발급 키 획득**에서 **업데이트**, **비대칭 암호화** 또는 **HMAC-SHA256**을 클릭합니다.
-  - 업데이트
-  - 기존 버전 알고리즘 ECDSA-SHA256으로 전환:
-      ![](https://main.qcloudimg.com/raw/73ff89d39c00a0925621928de4aa03bf.png)
-  - 신규 버전 알고리즘 HMAC-SHA256으로 전환:
-      ![](https://main.qcloudimg.com/raw/98261eaa1fc6d9e4a6796f277a9dcb09.png)
-
 
 [](id:console)
 ### 콘솔에서 UserSig 가져오기
-1. **TRTC 콘솔**에 로그인하여 **개발 지원** > **[UserSig 생성&검증](https://console.cloud.tencent.com/trtc/usersigtool)**으로 이동합니다.
-2. 서명(UserSig) 생성 툴에서 해당 SDKAppID 및 UserID를 선택합니다.
-3. **서명 생성(UserSig)**을 클릭하여 해당 UserSig를 계산합니다.
+1. TRTC 콘솔에 로그인하고 왼쪽 사이드바에서 **애플리케이션 관리**>**UserSig 생성**을 클릭합니다.
+2. 드롭다운 목록을 클릭하여 생성한 애플리케이션(SDKAppID)을 선택하면 자동으로 해당 키(Key)가 생성됩니다.
+3. 사용자 이름(UserID)을 입력합니다.
+4. **서명(UserSig) 생성**을 클릭하면 해당하는 UserSig 서명이 생성됩니다.
 
 
 [](id:formal)
@@ -110,7 +96,7 @@ TRTC SDK 6.6 버전(2019년 08월)부터 새로운 서명 알고리즘 HMAC-SHA2
 
 과정을 간소화하기 위해 다국어 버전의 UserSig 계산 소스 코드(현재 버전 서명 알고리즘)를 제공합니다.
 
-| 언어 버전 | 서명 알고리즘 | 핵심 함수 | 다운로드 링크 |
+| 언어 버전 | 서명 알고리즘    | 핵심 함수 | 다운로드 링크 |
 | -------- | ----------- | ----------- | ----------- |
 | Java     | HMAC-SHA256 | [genSig](https://github.com/tencentyun/tls-sig-api-v2-java/blob/master/src/main/java/com/tencentyun/TLSSigAPIv2.java) | [Github](https://github.com/tencentyun/tls-sig-api-v2-java)  |
 | GO       | HMAC-SHA256 | [GenSig](https://github.com/tencentyun/tls-sig-api-v2-golang/blob/master/tencentyun/TLSSigAPI.go) | [Github](https://github.com/tencentyun/tls-sig-api-v2-golang) |

@@ -26,13 +26,12 @@ Demoクイックスタートを実行し、TRTC SDKの関連機能を理解し�
 [](id:client)
 ### クライアントサンプルコードによるUserSigの計算
 1. **SDKAPPIDとキーの取得**：
-    1. **TRTCコンソール**>**[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)**にログインします。
-    2. 確認したいSDKAppIDに対応する**アプリケーション情報**をクリックし、さらに**クイックマスター**タブをクリックします。
-    3. **ステップ2 UserSigを発行するためのキーを取得**のタグを開けば、UserSig計算用の暗号化鍵が取得できます。
-    4. **キーのコピー**をクリックします。これでキーがクリップボードにコピーされます。
- ![](https://main.qcloudimg.com/raw/b8575d1c97952ad8b1b28df16d69a8cb.png)
+    1. **TRTCコンソール**>[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)にログインします。
+    2. アプリケーション設定をクリックし、SDKAppIDに対応するアプリケーション情報を確認します。
+    3. 基本情報のSDKSecretKeyを確認することで、UserSig計算用の暗号化鍵が取得できます。
+    4. キーのコピーをクリックします。これでキーがクリップボードにコピーされます。
+ ![](https://qcloudimg.tencent-cloud.cn/raw/29502e1be216eb514d706cc701c17df3.png)
 
->? キーを照会するとき、公開鍵および秘密鍵の情報しか取得できない場合は、[キーの取得方法](#getusersig)をご参照ください。
 2. **UserSigの計算：**
 クライアントが利用しやすいように、各プラットフォームのUserSig計算用のソースコードファイルを提供しています。直接ダウンロードして計算することができます。
 <table>
@@ -50,11 +49,11 @@ Demoクイックスタートを実行し、TRTC SDKの関連機能を理解し�
 <td><a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java">Github</a></td>
 <td>TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
 </tr><tr>
-<td>Windows（C++）</td>
+<td>Windows(C++)</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-C%2B%2B/TRTC-API-Example-Qt/src/Util/defs.h">Github</a></td>
 <td>TRTC-API-Example-C++/TRTC-API-Example-Qt/src/Util/defs.h</td>
 </tr><tr>
-<td>Windows（C#）</td>
+<td>Windows(C#)</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs">Github</a></td>
 <td>TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs</td>
 </tr><tr>
@@ -71,26 +70,13 @@ Demoクイックスタートを実行し、TRTC SDKの関連機能を理解し�
 TRTC SDKのサンプルコードの中で`GenerateTestUserSig`という名前のオープンソースモジュールを提供しています。その中のSDKAPPID、EXPIRETIME、 SECRETKEYの3つのメンバー変数をご自分の設定に修正するだけで、`genTestUserSig()` 関数を呼び出して、算出されたUserSigを取得することでき、それによってSDKの関連機能をすばやくスタートさせることができます。
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
 
-[](id:getusersig)
-#### キーを照会するとき、公開鍵および秘密鍵の情報しか取得できませんが、キーはどうしたら取得できますか。
-TRTC SDK 6.6バージョン（2019年08月）では、新しい署名アルゴリズムのHMAC-SHA256の使用を開始しました。それ以前に作成されたアプリケーションの場合、新しい暗号化鍵を取得するために、署名アルゴリズムをアップグレードする必要があります。アップグレードしない場合でも、[旧バージョンアルゴリズム ECDSA-SHA256]（https://intl.cloud.tencent.com/document/product/647/35166)は引き続き使用できます。アップグレード済みなら、必要に応じてアルゴリズムの新旧バージョンを切り替えます。
-
-**アップグレード/切替の操作：**
-1. [TRTCコンソール](https://console.cloud.tencent.com/trtc)にログインします。
-2.  左側ナビゲーションバーで**アプリケーション管理**を選択し、ターゲットアプリケーションのある行の**アプリケーション情報**をクリックします。
-3. **クイックマスター**タブを選択して**ステップ2 UserSigを発行するためのキーを取得**エリアの**ここをクリックしてアップグレード**、**非対称暗号化**または**HMAC-SHA256**をクリックします。
-  - アップグレード
-  - 旧バージョンアルゴリズムの ECDSA-SHA256に切り替えます。
-      ![](https://main.qcloudimg.com/raw/73ff89d39c00a0925621928de4aa03bf.png)
-  - 新バージョンアルゴリズムのHMAC-SHA256に切り替えます。
-      ![](https://main.qcloudimg.com/raw/98261eaa1fc6d9e4a6796f277a9dcb09.png)
-
 
 [](id:console)
 ### コンソールによるUserSigの取得
-1. **TRTCコンソール**にログインし、**開発支援**>**[UserSig生成&検証](https://console.cloud.tencent.com/trtc/usersigtool)**に進みます。
-2. 署名（UserSig）生成ツールで、対応するSDKAppIDとUserIDを選択します。
-3. **署名（UserSig）生成**をクリックして、対応するUserSigを計算します。
+1. TRTCコンソールに進み、左側バーの**アプリケーション管理**>**UserSig生成**を選択し、署名(UserSig)生成ツールモジュールを確認します。
+2. ドロップダウンリストをクリックして作成済のアプリケーション（SDKAppID）を選択します。完了すると対応するキー（Key）が自動生成されます。
+3. ユーザー名（UserID）を入力します。
+4. **署名（UserSig）生成**をクリックして、対応する署名（UserSig）を生成します。
 
 
 [](id:formal)
