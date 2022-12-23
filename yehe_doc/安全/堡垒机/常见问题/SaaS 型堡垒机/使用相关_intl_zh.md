@@ -1,4 +1,4 @@
-﻿### BHLoader 是必须要安装的吗？
+### BHLoader 是必须要安装的吗？
 BHLoader 的主要功能是拉起本地应用程序，并通过本地应用程序创建连接，访问连接相关的目标资源，因此 BHLoader 是运维人员必须要安装的。
 
 ### 安装 BHLoader 后，是否还需要安装 SecureCRT，Xshell 等连接工具软件？
