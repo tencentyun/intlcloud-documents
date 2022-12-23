@@ -1,0 +1,1 @@
+﻿A purchased BH is not unconditionally refundable. If you have any questions or need any help when using the service, [contact us](https://intl.cloud.tencent.com/contact-us).
