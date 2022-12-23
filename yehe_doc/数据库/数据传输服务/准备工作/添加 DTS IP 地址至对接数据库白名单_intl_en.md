@@ -5,16 +5,6 @@ If you don’t add the DTS IP address to the database allowlists, the connectivi
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/631f9a6a9910f954516bdf69bda71736.png)
 
-## Principle
-
-Add the IP addresses for each region to the source or target database allowlist. For IP address information, see [DTS IP Addresses](#1).
-
-> ?If the source or target database is TencentDB for MySQL or TencentDB for PostgreSQL, the DTS IP address will be automatically added to the database's security group rule; otherwise, it must be added to the allowlist manually.
-
-Example 1: If the source database is self-built MySQL in Beijing region and the target database is TencentDB for MySQL in Guangzhou region, you need to get the IP address for Beijing region from [DTS IP Addresses](#1) and add it to the source database allowlist. As the target database is TencentDB for MySQL, the DTS IP address is automatically added to the target database allowlist.
-
-Example 2: If the source database is self-built MongoDB in Beijing region and the target database is TencentDB for MongoDB in Guangzhou region, you need to get the IP addresses for both regions from [DTS IP Addresses](#1) and add them to the database allowlists, respectively.
-
 ## Directions
 
 Get the IP address for the database region from [DTS IP Addresses](#1), and add it to the source or target database allowlist.
@@ -63,9 +53,7 @@ Get the IP address for the database region from [DTS IP Addresses](#1), and add 
 
 #### VPN access /Direct Connect/CCN/Self-built on CVM/VPC/Database
 
-If the source or target database is TencentDB for MySQL or TencentDB for PostgreSQL, no action is required. Otherwise, you need to manually add the following DTS IP address to the allowlist.
-
 | Region     | DTS IP Address                                           |
 | ------ | ------------------------------------------------------------ |
-| All regions | 10.0.1.1/16,10.1.1.1/16,172.19.1.1/16,169.254.1.1/16,10.200.1.1/16,172.20.1.1/16,<br>10.159.1.1/16,10.45.1.1/16,192.168.1.1/16,172.16.1.1/16,172.30.1.1/16,172.31.1.1/16,<br/>10.26.1.1/16,10.162.1.1/16,10.203.1.1/16,10.206.1.1/16,9.145.1.1/16,9.146.1.1/16,<br/>10.209.1.1/16,10.6.1.1/16 |
+| All regions | 10.0.1.1/16,10.1.1.1/16,172.19.1.1/16,169.254.1.1/16,10.200.1.1/16,172.20.1.1/16,<br>10.159.1.1/16,10.45.1.1/16,192.168.1.1/16,172.16.1.1/16,172.30.1.1/16,172.31.1.1/16,<br/>10.26.1.1/16,10.162.1.1/16,10.203.1.1/16,10.206.1.1/16,9.145.1.1/16,9.146.1.1/16,<br/>10.209.1.1/16,10.6.1.1/16,11.163.1.1/16 |
 
