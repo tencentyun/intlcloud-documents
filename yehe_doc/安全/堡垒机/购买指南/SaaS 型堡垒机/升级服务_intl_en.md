@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to upgrade the BH service when the currently supported assets become insufficient.
 
 ## Directions
