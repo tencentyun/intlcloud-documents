@@ -28,9 +28,9 @@
 
    - **入站规则导入地址模板**
 		1. 在 [互联网边界规则](https://console.cloud.tencent.com/cfw/ac/internet) 页面，选择**入站规则** > **添加规则**。
-		2. 在“添加入站规则”弹窗中，“访问目的类型”选择“地址模板”，单击“访问源”的下拉框，选择已有的地址模板配置规则，其他参数说明，请参见 [互联网边界规则](https://intl.cloud.tencent.com/document/product/1160/49844#add) 文档。
+		2. 在“添加入站规则”弹窗中，“访问目的类型”选择“地址模板”，单击“访问源”的下拉框，选择已有的地址模板配置规则。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d270e51ad25b72ae863f2d583a439ff2.png)
  - **出站规则导入地址模板**
 		1. 在 [互联网边界规则](https://console.cloud.tencent.com/cfw/ac/internet) 页面，选择**出站规则** > **添加规则**。
-		2. 在“添加出站规则”弹窗中，“访问目的类型”选择“地址模板”，单击“访问目的”的下拉框，选择已有的地址模板配置规则，其他参数说明，请参见 [互联网边界规则](https://intl.cloud.tencent.com/document/product/1160/49844#add) 文档。
+		2. 在“添加出站规则”弹窗中，“访问目的类型”选择“地址模板”，单击“访问目的”的下拉框，选择已有的地址模板配置规则。
 ![](https://qcloudimg.tencent-cloud.cn/raw/9eafcac1eec9a8ebb067cb7192adf2eb.png)
