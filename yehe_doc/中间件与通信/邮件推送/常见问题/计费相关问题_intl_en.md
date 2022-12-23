@@ -7,5 +7,4 @@ We offer two billing modes: prepaid and postpaid. For more details, see [Pricing
 
 [](id:que2) 
 ### Does SES have postpaid plans?
-No postpaid plan is offered. In the postpaid mode, emails will be automatically charged on a pay-as-you-go basis. If you want to purchase a plan, see [here](http://buy.intl.cloud.tencent.com/ses).
-
+No postpaid plan is offered. In the postpaid mode, emails will be automatically charged on a pay-as-you-go basis. 
