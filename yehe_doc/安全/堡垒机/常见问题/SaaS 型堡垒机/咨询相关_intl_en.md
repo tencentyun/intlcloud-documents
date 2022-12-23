@@ -1,4 +1,4 @@
-﻿### How do I choose between BH Standard and Pro Editions?
+### How do I choose between BH Standard and Pro Editions?
 - Pro Edition: Suitable for enterprises with database asset management or Ops efficiency improvement needs.
 - Standard Edition: Suitable for SMEs with basic CVM Ops and audit needs.
 - For more information on their differences, see [Differences Between BH Standard and Pro Editions](https://intl.cloud.tencent.com/document/product/1151/47154).
