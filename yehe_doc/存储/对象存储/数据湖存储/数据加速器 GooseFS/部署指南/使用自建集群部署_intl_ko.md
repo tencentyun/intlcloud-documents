@@ -44,7 +44,7 @@
 
 ### 배포
 
-1. 먼저 [GooseFS 바이너리 배포 패키지를 다운로드].(https://downloads.tencentgoosefs.cn/goosefs/1.3.0/release/goosefs-1.3.0-bin.tar.gz)합니다.
+1. 먼저 [GooseFS 바이너리 배포 패키지를 다운로드](https://downloads.tencentgoosefs.cn/goosefs/1.3.0/release/goosefs-1.3.0-bin.tar.gz)합니다.
 2. 배포 패키지 다운로드 후 압축 해제하여 GooseFS의 디렉터리로 이동하고 아래의 작업을 실행합니다. 
 - conf/goosefs-site.properties.template 복사를 통해 conf/goosefs-site.properties 구성 파일을 생성합니다. 
 ```bash
@@ -124,7 +124,7 @@ Standalone 아키텍처는 단일 Master 노드, 다중 Worker 노드의 클러�
 ```bash
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
 ```
-(2) `goosefs-site.properties` 구성 파일에서 아래와 같은 설정을 지정합니다.
+ (2) `goosefs-site.properties` 구성 파일에서 아래와 같은 설정을 지정합니다.
 ```properties
 goosefs.master.hostname=<MASTER_HOSTNAME>
 goosefs.master.mount.table.root.ufs=<STORAGE_URI>
