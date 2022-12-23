@@ -98,7 +98,7 @@
 
 ## 腾讯实时音视频服务
 
-### 开通实时音视频通话服务
+### 开通实时音视频服务
 
 如果您需要在当前 IM 应用中实现语音通话、视频通话、互动直播等功能，可通过单击**腾讯实时音视频服务**区域右上角的**立即开通**，快速开通 [实时音视频服务](https://www.tencentcloud.com/document/product/647?lang=en&pg=)。系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
 
