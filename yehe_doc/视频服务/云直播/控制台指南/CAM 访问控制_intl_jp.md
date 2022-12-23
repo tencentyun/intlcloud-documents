@@ -1,5 +1,4 @@
 CSSはCAMアクセス制御を介して権限管理を実行し、アカウントのCSSドメイン名、設定、データ情報の管理に寄与します。またユーザー（グループ）を作成、管理または破棄し、サブユーザー（グループ）に各種のインターフェース権限を付与して、ID管理とポリシー制御を実現できます。
-
 CAMを使用する場合は、ポリシーを1人のユーザーまたは1組のユーザーグループと関連付けて、指定されたリソースを使用して指定されたタスクを完了することを許可または拒否できます。
 
 ## 基本概念
@@ -7,71 +6,67 @@ CAMを使用する場合は、ポリシーを1人のユーザーまたは1組の
 - ルートアカウント：登録したTencent Cloudアカウント。
 - サブユーザー：ルートアカウントを介して作成され、完全にルートアカウントに帰属します。
 - コラボレーター：ルートアカウントのIDを持ち、現在のルートアカウントのコラボレーターとして追加された、現在のルートアカウントのサブアカウントの1つです。
-- ユーザーグループ：同一機能のユーザーのために作成されたグループであり、ポリシーによって関連付けられ、統一的な一括承認管理に役立てることができます。
+- ユーザーグループ：同一機能のユーザーのために作成されたグループであり、ポリシーによって関連付けられ、統一的な一括承認管理を行うことができます。wooko
 
-詳細な定義と権限については、[CAMユーザー](https://intl.cloud.tencent.com/document/product/598/32633)をご参照ください。
+>? 詳細な定義と権限については、 [CAMユーザー](https://intl.cloud.tencent.com/document/product/598/13665)をご参照ください。
 
 ## 操作手順
 ### 手順1：サブユーザー/ユーザーグループの新規作成
 
 ルートアカウントは、特定のロールとポリシーを割り当てるために1つまたは複数のサブユーザーを作成できます。サブユーザーは、確定されたIDとID資格情報を持ち、コンソールにログインして設定を完了できると同時に、APIアクセス権限を持ちます。次の図に示すように、Tencent Cloudコンソールにログインし、[CAM](https://console.cloud.tencent.com/cam/) ページに移動し、ユーザーを作成できます。
-![](https://main.qcloudimg.com/raw/c1c92bdd08c8cf19ac17ba80cd4a11be.png)
-詳細な手順については、CAM [サブユーザー](https://intl.cloud.tencent.com/document/product/598/13674) と [ユーザーグループ](https://intl.cloud.tencent.com/document/product/598/33380)をご参照ください。
+![](https://main.qcloudimg.com/raw/809314273b9a8a01dfd9e686775df4bd.png)
+
+>? 詳細な手順については、CAM[サブユーザー](https://intl.cloud.tencent.com/document/product/598/13674) と[ユーザーグループ](https://intl.cloud.tencent.com/document/product/598/33380)をご参照ください。
 
 ### 手順2：ユーザー/ユーザーグループにポリシーを追加
 
-ユーザー/ユーザーグループ管理とポリシー管理ページのいずれにおいてもポリシーの追加と承認を完了できます。概要は次のとおりです。詳細については、 [承認管理](https://intl.cloud.tencent.com/document/product/598/10602)を参照してください。
-
+ユーザー/ユーザーグループ管理とポリシー管理ページのいずれにおいてもポリシーの追加と承認を完了できます。概要は次のとおりです。詳細については、 [承認管理](https://intl.cloud.tencent.com/document/product/598/10602)をご参照ください。
 <dx-tabs>
 ::: 方法1：ユーザー/ユーザーグループにポリシーを追加
 ユーザー/ユーザーグループページに入り、ポリシーを追加したいユーザー/ユーザーグループを選択します。
-- 左側の**ユーザー**>**ユーザーリスト**をクリックし、ポリシーを追加したいユーザー/ユーザーグループを選択して、その右側の**承認**をクリックします。対応するライブストリーミングポリシーを選択して、**OK**をクリックすれば追加が完了します。
-  
-  ![](https://main.qcloudimg.com/raw/9da12095cfa57813a373ab9ffeabc9a4.png)
-
-  ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
-
+- 左側の「**ユーザー**」>「**ユーザーリスト**」をクリックして、ポリシーを追加するユーザー/ユーザーグループを選択します。右側の「**承認**」をクリックして、適切なライブストリーミングポリシーを選択し、「**OK**」をクリックして、正常に追加できます。
+![](https://main.qcloudimg.com/raw/e90b74bc2279512a5c075a57296ea2f1.png)
 - 左側の**ユーザー**>**ユーザーリスト**または**ユーザーグループ**をクリックし、ポリシーを追加したいユーザー/ユーザーグループ名をクリックして詳細ページに進みます。**ポリシーの関連付け**をクリックし、対応するライブストリーミングポリシーを選択して、**OK**をクリックすれば追加が完了します。
-![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
+![](https://main.qcloudimg.com/raw/5b5e0dc032934846e39e7aee740ae34b.png)
 :::
 ::: 方法2：ポリシーにユーザー/ユーザーグループを関連づけて追加
 左側の**ポリシー**をクリックし、追加したいポリシーを選択して、操作リストの**ユーザー/グループの関連づけ**をクリックします。承認する必要があるユーザーを選択して、**OK**をクリックすれば追加が完了します。
-![](https://main.qcloudimg.com/raw/5b5e0dc032934846e39e7aee740ae34b.png)
-
+![](https://main.qcloudimg.com/raw/c7948939b954b8f84a7a2ee9e5041ef4.png)
 :::
 </dx-tabs>
 
 #### 追加可能なポリシー
 - **システムのプリセットポリシーの追加**：左側のサイドバーからポリシーページに入ると、現在のすべてのポリシーの情報を確認できます。
    - CSSシステムプリセットポリシーは [QcloudLIVEFullAccess](https://console.cloud.tencent.com/cam/policy/detail/9545933&QcloudLIVEFullAccess&2)（全読み取り書き込みポリシー）と [QcloudLIVEReadOnlyAccess](https://console.cloud.tencent.com/cam/policy/detail/13346800&QcloudLIVEReadOnlyAccess&2)（読み取り専用ポリシー）です。
-   - タグを使用する必要がある場合は、[QcloudTAGFullAccess](https://console.cloud.tencent.com/cam/policy/detail/1592575&QcloudTAGFullAccess&2) （タグ（TAG）すべての読み取り/書き込みアクセスポリシー）を承認する必要があります。
-   - リアルタイムログを使用する必要がある場合は、 [QcloudCamFullAccess](https://console.cloud.tencent.com/cam/policy/detail/596169&QcloudCamFullAccess&2) （ユーザーと権限（CAM）のすべての読み取り書き込みアクセスポリシー）を承認する必要があります。
+   - タグを使用する必要がある場合は、[QcloudTAGFullAccess](https://console.cloud.tencent.com/cam/policy/detail/1592575&QcloudTAGFullAccess&2) （タグ（TAG）すべての読み取り/書き込みアクセスポリシー）を承認してください。
+   - リアルタイムログを使用する必要がある場合は、 [QcloudCamFullAccess](https://console.cloud.tencent.com/cam/policy/detail/596169&QcloudCamFullAccess&2) （ユーザーと権限（CAM）のすべての読み取り書き込みアクセスポリシー）を承認してください。
+   - スクリーンキャプチャ・ポルノ検出を使用する場合、[QcloudAccessFoLVBRoleInSaveLiveScreenshottoCOS](https://console.cloud.tencent.com/cam/policy/detail/115867019&QcloudAccessFoLVBRoleInSaveLiveScreenshottoCOS&2)承認が必要です（このポリシーはCSSがCOSリソースにアクセスするため、CSSサービス対象との関連付けに使用されます）。
+
 - **カスタムポリシーの追加**：ポリシーページに入り、**カスタムポリシーの新規作成**をクリックして、**ポリシージェネレーターによる作成**を選択します。詳細については、[カスタムポリシー](https://intl.cloud.tencent.com/document/product/598/10601)をご参照ください。
 >? 現在CSSの一部のインターフェースは、リソースレベルの承認を既にサポートしています。
 
 **操作例：**DescribeLiveDomainsドメイン名リストの照会**インターフェースをサブユーザーに承認する必要があり、かつ指定ドメイン名にのみ使用できるようにする場合は、下記の手順で設定します。
-
-1. このインターフェースへのアクセスを許可するドメイン名レベルのポリシーを新規作成し、ポリシージェネレーターのポリシー作成ページに移動して、各入力項目を記入します。
-
+	
+1. このインターフェースへのアクセスを許可するドメイン名レベルのポリシーを新規作成し、ポリシージェネレーターのポリシー作成ページに移動して、各入力項目を記入します：
 <table>
 <tr><th>設定項目</th><th>入力必須の有無</th><th>説明</th></tr>
 <tr>
-<td>効果</td><td>はい</td><td><b>許可</b></td>を選択する。
+<td>効果</td><td>はい</td><td><b>許可</b></td>を選択する
 </tr><tr>
-<td>サービス</td><td>はい</td><td><b>CSS</b></td>を選択する。
+<td>サービス</td><td>はい</td><td><b>CSS</b></td>を選択する
 </tr><tr>
-<td>操作</td><td>はい</td><td><b>DescribeLiveDomainsドメイン名リストの照会</b></td>を選択する。
+<td>操作</td><td>はい</td><td><b>DescribeLiveDomainsドメイン名リストの照会</b></td>を選択する
 </tr><tr>
 <td>リソース</td><td>はい</td>
 <td>全リソースまたは承認したい特定のリソースを選択<ul style="margin:0"><li>承認粒度が操作レベル、サービスレベルのクラウド製品<b>は、具体的なリソースの六段式の入力をサポートしていません。全リソースを選択します</b>。</li><li>承認粒度がリソースレベルのクラウド製品は、特定のリソースを選択できます。リソース説明の方式については、<a href="https://intl.cloud.tencent.com/document/product/598/10588">CAMをサポートする製品</a>の中の対応する製品のCAMガイドドキュメントをご参照ください。クラウド製品でサポートする承認粒度については、<a href="https://intl.cloud.tencent.com/document/product/598/10588">CAMをサポートする製品</a>の中の承認粒度</li></ul></td>をご参照ください。
 </tr><tr>
 <td>条件</td><td>いいえ</td>
-<td>上記の承認有効化の条件を設定し、承認する必要があるソースIPを入力すると、指定IPアドレス範囲内からのリクエストの時のみ指定操作へのアクセスが許可されます。またその他の条件を追加してポリシーにさらに制約を加えることも可能です。詳細については、<a href="https://intl.cloud.tencent.com/document/product/598/10608">有効化の条件</a>をご参照ください。</td>
+<td>上記の承認有効化の条件を設定し、承認する必要があるソースIPを入力すると、指定IPアドレス範囲内からのリクエストの時のみ指定操作へのアクセスが許可されます。またその他の条件を追加してポリシーにさらに制約を加えることも可能です。詳細については、<a href="www.tencentcloud.com/document/product/598/10608">有効化条件</a>をご参照ください。</td>
 </tr></table>
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/da4b1d1379c74e8d5eeb3f79908191e6.png">
 
-> ! 複数のサービス手段をサポートしたい場合は、**権限の追加**をクリックすれば、複数の承認のステートメントを引き続き追加でき、他のサービスに対しても承認ポリシーを設定できます。
+>! 複数のサービス手段をサポートしたい場合は、**権限の追加**をクリックすれば、複数の承認のステートメントを引き続き追加でき、他のサービスに対しても承認ポリシーを設定できます。
 
 2. **次へ**をクリックすると、当該ポリシーを生成できます。ポリシーの生成後に、上記の2つの方法でユーザー/ユーザーグループと関連付けすればOKです。
 
@@ -80,4 +75,3 @@ CAMを使用する場合は、ポリシーを1人のユーザーまたは1組の
 
 ### 手順3：サブアカウントの使用
 サブアカウントID（ルートアカウントによって作成されたサブアカウントIDとパスワード）を使用し、承認されたAPIインターフェース（例：「ドメイン名リストのクエリー」など）を呼び出せば、対応するCSS情報（例：このアカウントのすべてのドメイン名）を取得できます。
-
