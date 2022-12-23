@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to renew the BH service that will expire soon.
 ## Directions
 1. Log in to the [BH console](https://console.intl.cloud.tencent.com/bh).

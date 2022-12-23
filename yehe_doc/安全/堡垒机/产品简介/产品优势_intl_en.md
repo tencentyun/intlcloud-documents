@@ -1,4 +1,4 @@
-﻿## Comprehensive Asset Management
+## Comprehensive Asset Management
 BH supports the unified management of both offline and cross-cloud assets on mainstream Linux, Windows, and MySQL versions to effectively assist admins with security Ops.
 
 ## Fine-Grained Permission Control

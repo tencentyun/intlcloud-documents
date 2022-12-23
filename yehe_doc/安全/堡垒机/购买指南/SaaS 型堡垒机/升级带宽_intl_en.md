@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to upgrade the BH bandwidth when it becomes insufficient.
 
 ## Directions

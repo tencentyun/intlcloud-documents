@@ -1,4 +1,4 @@
-﻿## Expiration Alert
+## Expiration Alert
 From seven days before your BH service expires, the system will send alerts for expiration to your Tencent Cloud account creator, global resource collaborators, and financial collaborators by email and SMS.
 ## Alert for Overdue Payment
 On the day of and after BH service expiration, the system will send alerts for isolation to your Tencent Cloud account creator and all collaborators by email and SMS.

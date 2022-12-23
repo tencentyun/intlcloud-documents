@@ -1,4 +1,4 @@
-﻿## Internet+ Business
+## Internet+ Business
 As there are many internet+ business resources in the cloud, and a large number of Ops services are exposed to the public network, these services are highly public and prone to external attacks.
 To secure the remote Ops of business resources, BH hides the real Ops port and management account. It also provides the routine audit of cloud server Ops and sorts out bad Ops habits through the Ops rule library to reduce Ops incidents, allowing business systems to run stably in the long term.
 
