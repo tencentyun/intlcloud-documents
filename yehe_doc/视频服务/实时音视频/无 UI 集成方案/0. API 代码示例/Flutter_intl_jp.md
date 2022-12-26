@@ -38,11 +38,11 @@
 1. サンプルプロジェクトのクイックスタート段階で【デバッグ段階】を選択します。その後、ご自身のSDKAppID、Secret keyを記録しておきます。
    ![](https://qcloudimg.tencent-cloud.cn/raw/82a45972f2d12763a6dc80eee6c952c0.png)
 2. ダウンロードしたサンプルコードを開き、`/lib/debug/GenerateTestUserSig.dart`ファイルを見つけて開き、`GenerateTestUserSig.dart`ファイル内の関連パラメータを設定します。
-   > - SDKAPPID：デフォルトはPLACEHOLDERです。実際のSDKAppIDを設定してください。
-   > - SECRETKEY：デフォルトはPLACEHOLDERです。実際のSecret keyを設定してください。
+   - SDKAPPID：デフォルトはPLACEHOLDERです。実際のSDKAppIDを設定してください。
+   - SECRETKEY：デフォルトはPLACEHOLDERです。実際のSecret keyを設定してください。
 3. プロジェクトの設定はこれで完了です。【次のステップ】をクリックしてください。
 
->？
+>?
 >- ここで言及したUserSigの発行方法は、クライアントコードにSECRETKEYを設定しますが、この手法のSECRETKEYは逆コンパイルによって逆クラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのTRTC-Simple-Demoクイックスタートおよび機能デバッグにのみ適しています**。
 >- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供する方法となります。 UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://www.tencentcloud.com/document/product/647/35166)をご参照ください。
 

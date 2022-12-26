@@ -38,11 +38,11 @@
 1. 데모 프로젝트를 실행 중인 경우 [테스트]를 선택합니다. SDKAppID와 Secret key를 기록해 둡니다
    ![](https://qcloudimg.tencent-cloud.cn/raw/82a45972f2d12763a6dc80eee6c952c0.png)
 2. 이전에 다운로드한 파일을 열고 `/lib/debug/GenerateTestUserSig.dart`를 찾아 열고 다음 매개변수를 설정합니다.
-   > - SDKAPPID: PLACEHOLDER로 기본 설정되어 있으며, 실제 SDKAppID로 설정하십시오.
-   > - SECRETKEY: PLACEHOLDER로 기본 설정되어 있으며, 실제 Secret key로 설정하십시오.
+  - SDKAPPID: PLACEHOLDER로 기본 설정되어 있으며, 실제 SDKAppID로 설정하십시오.
+  - SECRETKEY: PLACEHOLDER로 기본 설정되어 있으며, 실제 Secret key로 설정하십시오.
 3. [다음]을 클릭합니다.
 
->？
+>?
 >- 이 문서에서 설명하는 UserSig를 생성하는 방법은 클라이언트 코드에서 SECRETKEY를 구성하는 것입니다. 이 방법에서 SECRETKEY는 쉽게 디컴파일되고 역전될 수 있으며, 키가 공개되면 해커가 Tencent Cloud 트래픽을 도용할 수 있습니다. 따라서 **이 방법은 TRTC-Simple-Demo의 로컬 실행 및 디버깅에만 적합합니다**.
 >- UserSig의 계산 코드를 서버에 통합하고 App 지향 API를 제공하는 것이 가장 좋습니다. UserSig가 필요할 때 App은 동적 UserSig에 대한 요청을 서버에 보낼 수 있습니다. 자세한 내용은 [서버에서 UserSig 생성](https://www.tencentcloud.com/document/product/647/35166)을 참고하십시오.
 
