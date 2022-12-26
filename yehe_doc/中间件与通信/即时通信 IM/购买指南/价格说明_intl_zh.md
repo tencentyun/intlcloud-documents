@@ -1,4 +1,4 @@
-﻿>!
+> !
 >- 即时通信 IM 原计费方案已于2022年12月26日下线。
 >- 2022年12月26日前创建过 IM 应用的客户默认使用原计费方案，请参考[旧版价格说明](https://www.tencentcloud.com/document/product/1047/34350)，如果您想迁移到当前计费方案，请[联系销售](https://www.tencentcloud.com/contact-us)或[提交工单](https://console.tencentcloud.com/workorder)。迁移后不可恢复，请谨慎选择。
 ## IM 基础功能包
@@ -46,7 +46,7 @@
 >?
 >- MAU 的计算方式为调用 IM SDK Login 操作与 IM 后台建立长链接后，MAU 将会加1，即单个用户当月登录即时通信 IM 计为1个 MAU，同一用户重复登录时，MAU 不累加。请根据业务场景合理使用 IM SDK Login 操作，避免出现 MAU 过高的情况。
 
-## 增值服务资费[](id:zz)
+### 增值服务资费[](id:jc)
 
 <table>
 <tr>
