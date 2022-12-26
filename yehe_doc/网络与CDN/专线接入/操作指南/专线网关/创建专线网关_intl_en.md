@@ -6,7 +6,6 @@ This document describes how to create a direct connect gateway and provides info
 
 ## Use Limits
 A standard direct connect gateway supports propagating secondary CIDR blocks. Note the following limits:
-- 金融云地域的标准型专线网关不支持传递辅助 CIDR。
 - Up to 10 secondary CIDR blocks can be propagated.
 - This feature is unavailable to a NAT direct connect gateway.
 
