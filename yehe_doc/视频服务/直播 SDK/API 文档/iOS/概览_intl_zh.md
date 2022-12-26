@@ -137,7 +137,7 @@
 
 | API   | 描述                            |
 | --------------- | --------------- |
-| [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a4fb05ae6b5face276ace62558731280a) | 获取美颜管理对象 [TXBeautyManager](https://cloud.tencent.com/document/product/454/39382)，美颜的设置通过 TXBeautyManager 来设置。 |
+| [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a4fb05ae6b5face276ace62558731280a) | 获取美颜管理对象 TXBeautyManager，美颜的设置通过 TXBeautyManager 来设置。 |
 
 ### 音频相关接口
 

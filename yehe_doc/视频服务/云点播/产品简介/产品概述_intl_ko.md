@@ -3,7 +3,7 @@ Tencent의 오디오/비디오 기술 및 첨단 인프라에 대한 다년간�
 
 
 ## 제품 아키텍처
-<img src="https://main.qcloudimg.com/raw/6eca7588b39959a7ca3242491a57e503.png" width="750"><br><br><br>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/8fQI183_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16717824542449.png" width="750"><br><br><br>
 클라우드 비디오 스토리지(Cloud Video Storage), 비디오 트랜스코딩 서비스(Video Transcoding Service) 및 비디오 재생 가속(Video Playback Acceleration)은 Tencent Cloud 비디오 솔루션의 핵심 컴포넌트입니다.
 
 - **클라우드 비디오 스토리지**

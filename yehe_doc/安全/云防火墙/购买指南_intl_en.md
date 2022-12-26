@@ -99,5 +99,5 @@ Cloud Firewall is subject to Tencent Cloud's Cloud Service Refund Policy and off
 
 ## Next steps
 After you purchase Cloud Firewall, you can use it in the following ways:
-- Method 1: Log in to the [Cloud Firewall console](https://console.cloud.tencent.com/cfw) to perform operations. For more information, please see [Operation Guide](https://intl.cloud.tencent.com/document/product/1160/49809).
+- Method 1: Log in to the [Cloud Firewall console](https://console.cloud.tencent.com/cfw) to perform operations.
 - Method 2: Use CFW with APIs. For more information, please see [API Documentation](https://www.tencentcloud.com/document/product/1160/51320).

@@ -28,9 +28,9 @@ After [creating an address template](#new), you can go to the [Edge firewall rul
 
    - **Import an address template for inbound rules**
 		1. On the [Edge firewall rules](https://console.cloud.tencent.com/cfw/ac/internet) page, select **Inbound rules** -> **Add rule**.
-		2. In the "Add inbound rule" window displayed, select "Address template" for "Access destination type", and click the "Access source" drop-down list to select an existing address template for configuring rules. For information about other parameters, please see [Edge Firewall Rules](https://intl.cloud.tencent.com/document/product/1160/49844#add).
+		2. In the "Add inbound rule" window displayed, select "Address template" for "Access destination type", and click the "Access source" drop-down list to select an existing address template for configuring rules. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/d270e51ad25b72ae863f2d583a439ff2.png)
  - **Import an address template for outbound rules**
 		1. On the [Edge firewall rules](https://console.cloud.tencent.com/cfw/ac/internet) page, select **Outbound rules** -> **Add rule**.
-		2. In the "Add outbound rule" window displayed, select "Address template" for "Access destination type", and click the "Access destination" drop-down list to select an existing address template for configuring rules. For information about other parameters, please see [Edge Firewall Rules](https://intl.cloud.tencent.com/document/product/1160/49844#add).
+		2. In the "Add outbound rule" window displayed, select "Address template" for "Access destination type", and click the "Access destination" drop-down list to select an existing address template for configuring rules.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9eafcac1eec9a8ebb067cb7192adf2eb.png)
