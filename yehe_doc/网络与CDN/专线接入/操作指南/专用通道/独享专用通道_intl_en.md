@@ -1,11 +1,11 @@
-## Preparations
-- You have applied for a connection as instructed in [Applying for a Connection](https://intl.cloud.tencent.com/document/product/216/19244).
-- You have created a direct connect gateway as instructed in [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
+## Prerequisites
+- Apply for a connection. See [Applying for a Connection](https://intl.cloud.tencent.com/document/product/216/19244).
+- Create a direct connect gateway. See [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
 
 ## Directions
 ### Step 1: Apply for a dedicated tunnel
 1. Log in to the [Direct Connect - Dedicated Tunnel console](https://console.cloud.tencent.com/dc/dcConn).
-2. On the **Dedicated Tunnels** page, click **+ New**, complete basic configurations such as name, connection type, access network, gateway region and associated direct connect gateway, and click **Next**.
+2. On the left sidebar, click **Dedicated tunnels > Exclusive virtual interface**, click **+ New**, complete basic configurations such as name, connection type, access network, gateway region and associated direct connect gateway, and click **Next**.
 ![]()
 <table>
 <tr>
@@ -44,27 +44,30 @@
 </tr>
 </table>
 3. Configure the following parameters on the **Advanced Configuration** page.
-![]()
+<img src="" width="85%"> 
 <table>
 <tr>
- <th width="15%">Field</th>
+<th width="15%">Field</th>
 <th width="85%">Description</th>
 </tr>
 <tr>
 <td>VLAN ID</td>
-<td>One VLAN corresponds to one tunnel. Valid range: 0-3000.
-<ul><li>If the value is 0, only 1 tunnel can be created. Use physical layer 3 interfaces for the connection.</li><li>If the value is between 1 and 2999, multiple tunnels can be created. Use layer 3 sub-interfaces for the connection. When only the layer 2 connection is supported, please disable the STP protocol under the interface at the IDC side. In the case of multiple dedicated tunnels, when the MSTP connection passes through multiple VLANs, the carrier line needs to enable the Trunk mode./li></ul></td>
+<td>One VLAN corresponds to one tunnel. Valid range: [0，3000).<ul><li>If the value is 0, only 1 tunnel can be created. Use physical layer 3 interfaces for the connection.</li><li>If the value is between 1 and 2999, multiple tunnels can be created. Use layer 3 sub-interfaces for the connection. When only the layer 2 connection is supported, please disable the STP protocol under the interface at the IDC side. In the case of multiple dedicated tunnels, when the MSTP connection passes through multiple VLANs, the carrier line needs to enable the Trunk mode./li></ul></td>
 </tr>
 <tr>
 <td>Bandwidth</td>
 <td>Specify the bandwidth cap of the dedicated tunnel, which cannot exceed the maximum bandwidth of the associated connection. If the billing mode is pay-as-you-go by monthly 95th percentile, this parameter does not mean the billable bandwidth.</td>
 </tr>
 <tr>
-<td>Tencent Cloud Primary IP</td>
-<td>Enter the connection IP address on the Tencent Cloud side. DO NOT use the following IP ranges or addresses: <code>169.254.0.0/16</code>, <code>127.0.0.0/8</code>, <code>255.255.255.255</code>, <code>224.0.0.0</code> - <code>239.255.255.255</code>, and <code>240.0.0.0</code> - <code>255.255.255.254</code>.</td>
+<td>Interconnection Method</td>
+<td><ul><li>By default, <b>Manual allocation</b> is selected for 2.0 tunnels.</li><li>Both <b>Manual allocation</b> and <b>Automatic Assignment</b> are supported for 1.0 tunnels. If <b>Automatic Assignment</b> is selected, there is no need to configure <b>Tencent Cloud Primary Edge IP</b> and <b>CPE Peer IP</b>.</li></ul></td>
 </tr>
 <tr>
-<td>Tencent Cloud Secondary IP</td>
+<td>Tencent Cloud Primary IP</td>
+<td>Enter the connection IP address on the Tencent Cloud side. Do not use the following IP ranges or IP addresses: 169.254.0.0/16, 127.0.0.0/8, 255.255.255.255, 224.0.0.0 - 239.255.255.255, 240.0.0.0 - 255.255.255.254.</td>
+</tr>
+<tr>
+<td>Tencent Cloud Primary IP</td>
 <td>Enter the secondary IP address of the connection on the Tencent Cloud side. The secondary IP will be automatically used to ensure the normal operation of your business when the Tencent Cloud primary IP fails and becomes unavailable. This field is not supported when the mask of the secondary IP address is 30 or 31.</td>
 </tr>
 <tr>
@@ -73,7 +76,23 @@
 </tr>
 <tr>
 <td>Routing Mode</td>
-<td>Select:<br><ul><li>BGP Routing: Applicable to the exchange of routing information and network accessibility across autonomous systems (AS).</li><li>Static Routing: Applicable to a simper network environment.</li></ul></td>
+<td>Select:<ul><li>BGP Routing: Applicable to the exchange of routing information and network accessibility across autonomous systems (AS).</li><li>Static Routing: Applicable to a simper network environment.</li></ul></td>
+</tr>
+<tr>
+<td>Health Check</td>
+<td>Health check is enabled by default. BFD and NQA modes are provided. For details, see <a href="https://intl.cloud.tencent.com/document/product/216/46292">Dedicated tunnel health check</a>.</td>
+</tr>
+<tr>
+<td>Check mode</td>
+<td>BFD and NQA modes are provided</td>
+</tr>
+<tr>
+<td>Health Check Interval</td>
+<td>The interval between two health checks.</td>
+</tr>
+<tr>
+<td>Number of Failed Health Checks</td>
+<td>Switch the route after the configured consecutive failed health checks.</td>
 </tr>
 <tr>
 <td>BGP ASN</td>
@@ -82,10 +101,6 @@
 <tr>
 <td>BGP Key</td>
 <td>Enter the MD5 value of the BGP neighbor, which defaults to "tencent". If it is left empty, no BGP key is required. It cannot contain 6 special characters including ?, &, space, ", \, and +.</td>
-</tr>
-<tr>
-<td>CPE IP Range</td>
-<td>Enter the IP ranges of your IDC, with one IP range per line.</br>If the new tunnel and existing tunnel are redundant, it is recommended to publish other IP ranges for <b>CPE IP Range</b>, and complete test for new tunnel with the IDC devices. And then publish the final service IP range via <b>Change Tunnel</b>, to prevent effects against traffic in running redundant tunnel.</td>
 </tr>
 </table>
 <dx-alert infotype="explain" title="">
@@ -99,9 +114,7 @@
  - `172.16.0.0/12` is split into `172.16.0.0/13` + `172.24.0.0/13`.
  - `192.168.0.0/16` is split into `192.168.0.0/17` + `192.168.128.0/17`.
 </dx-alert>
-
-
-4. Configure IDC devices. You can click **Download Configuration Guide** to download related files and complete the configurations as instructed in the guide.<p><img src=""></img></p>
+4. Configure IDC devices. You can click **Download configuration guide** to download related files and complete the configurations as instructed in the guide. <p><img src=""></img></p>
 <table>
 <tr>
 <th width="20%">Parameter</th>
@@ -118,14 +131,13 @@
 
 ### Step 2: Set the alarm recipient
 After a dedicated tunnel is created, Tencent Cloud automatically configures four event alarms such as `DirectConnectTunnelDown`, `DirectConnectTunnelBFDDown`, `DirectConnectTunnelBGPSessionDown`, and `DirectConnectTunnelRouteTableOverload`, helping you monitor and manage your dedicated tunnels. For more information on the event alarms, see [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
-The automatically created default alarm policy is not configured with recipient information, and only supports console alarms. You can configure alarm recipients by yourself. For details, see [**Configuring Alarm Policies**](https://intl.cloud.tencent.com/document/product/216/38402).
+The automatically created default alarm policy is not configured with recipient information, and only supports console alarms. You can configure alarm recipients by yourself. For details, see [**Configuring Alarm Policies**](https://intl.cloud.tencent.com/ document/product/216/38402).
 
 ## Connection Status
 After the dedicated tunnel is created, it will be displayed on the **Dedicated Tunnels** page in the **Applying** status.
 ![]()
 The possible connection statuses of a dedicated channel include:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d7a7d15a93d8de373f186870a3b23f42.jpg)
-
 - **Applying**
   The system has received your application for a new dedicated tunnel and is ready to start the creation.
 - **Configuring**
