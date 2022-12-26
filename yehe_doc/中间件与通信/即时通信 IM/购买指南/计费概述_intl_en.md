@@ -1,6 +1,6 @@
 > !
 >- The original billing mode of IM was disused on December 26, 2022.
->- Customers who created IM applications before December 26, 2022 use the original billing mode ([details](https://www.tencentcloud.com/document/product/1047/34349)) by default. If you want to migrate to the current billing mode, [contact sales](https://www.tencentcloud.com/contact-us) or [submit a ticket](https://console.tencentcloud.com/workorder). Once migrated, the billing mode cannot be restored.
+>- Customers who created IM applications before December 26, 2022 use the original billing mode ([details](https://www.tencentcloud.com/document/product/1047/52474)) by default. If you want to migrate to the current billing mode, [contact sales](https://www.tencentcloud.com/contact-us) or [submit a ticket](https://console.tencentcloud.com/workorder). Once migrated, the billing mode cannot be restored.
 
 ## Billing Overview
 IM is billed on a monthly billing cycle:
