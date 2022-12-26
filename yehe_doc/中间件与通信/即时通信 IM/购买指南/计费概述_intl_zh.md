@@ -1,4 +1,4 @@
-﻿>!
+> !
 >- 即时通信 IM 原计费方案已于2022年12月26日下线。
 >- 2022年12月26日前创建过 IM 应用的客户默认使用原计费方案，请参考[旧版计费概述](https://www.tencentcloud.com/document/product/1047/34349)，如果您想迁移到当前计费方案，请[联系销售](https://www.tencentcloud.com/contact-us)或[提交工单](https://console.tencentcloud.com/workorder)。迁移后不可恢复，请谨慎选择。
 
@@ -85,8 +85,7 @@
   - 音视频通话能力基于即时通信和实时音视频服务实现，因此开通音视频通话能力将为您默认开通实时音视频服务并创建应用。
   - 音视频通话能力体验版**仅为您免费提供体验版功能的使用权，您在使用此功能过程中产生的通话时长用量将按 [实时音视频音视频时长后付费](https://www.tencentcloud.com/zh/document/product/647/42734) 计费，即时通信费用按 [即时通信计费说明](https://www.tencentcloud.com/zh/document/product/1047/34349) 计费**。
     </dx-alert>
-		
-## 相关文档
 
+## 相关文档
 - [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)
-- [操作指引](https://www.tencentcloud.com/document/product/1047/36021)
+- [购买指引](https://www.tencentcloud.com/document/product/1047/36021)		
