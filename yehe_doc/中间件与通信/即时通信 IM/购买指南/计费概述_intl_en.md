@@ -1,4 +1,4 @@
-﻿>!
+> !
 >- The original billing mode of IM was disused on December 26, 2022.
 >- Customers who created IM applications before December 26, 2022 use the original billing mode ([details](https://www.tencentcloud.com/document/product/1047/34349)) by default. If you want to migrate to the current billing mode, [contact sales](https://www.tencentcloud.com/contact-us) or [submit a ticket](https://console.tencentcloud.com/workorder). Once migrated, the billing mode cannot be restored.
 
@@ -85,8 +85,7 @@ The following table compares the features of different plans:
   - It is implemented based on IM and TRTC services. Therefore, the TRTC service will be activated and applications created for you by default if you enable this feature.
   - Its free edition **only grants you the right to use the free edition free of charge. Your calls launched via this feature will be charged as stated in [Billing of TRTC Basic Services](https://www.tencentcloud.com/zh/document/product/647/42734), and relevant IM services will be charged as stated in [Billing Overview](https://www.tencentcloud.com/zh/document/product/1047/34349) of IM**.
     </dx-alert>
-		
-## References
 
+## References
 - [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)
-- [Operation Guide](https://www.tencentcloud.com/document/product/1047/36021)
+- [Purchase Guide](https://www.tencentcloud.com/document/product/1047/36021)		
