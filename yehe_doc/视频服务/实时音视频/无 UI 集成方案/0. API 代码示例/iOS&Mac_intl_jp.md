@@ -1,4 +1,9 @@
-ここでは、主にTencent CloudのTRTC-API-Example（Electron）を素早く実行する方法をご紹介します。
+ここでは、主にTRTC-API-Example（iOS&Mac）を素早く実行する方法をご紹介します。
+
+## 環境要件
+- Xcode 11.0およびそれ以降のバージョン。
+- プロジェクトが有効な開発者による署名を設定済みであることを確認してください。
+- Qt Creator 4.13.3（Mac）およびそれ以降のバージョン。
 
 ##  前提条件
 [Tencent Cloudの登録](https://intl.cloud.tencent.com/document/product/378/17985)によりアカウントを登録している。
@@ -15,10 +20,7 @@
 
 ### ステップ2：サンプルコードのダウンロード
 
-1. UIなしの統合を選択後、ご自身の業務プラットフォームに合わせて、[Github](https://github.com/tencentyun/TRTCSDK)で、対応するプラットフォームのサンプルコードをダウンロードします。
-```
-git clone https://github.com/tencentyun/TRTCSDK
-```
+1. UIなしの統合を選択後、ご自身の業務プラットフォームに合わせて、Githubで対応するプラットフォームのサンプルコードをダウンロードします。
 2. ダウンロード完了後、【次のステップ】をクリックします。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d28964ad85dddd85833a28310a62d514.png)
 
@@ -26,15 +28,20 @@ git clone https://github.com/tencentyun/TRTCSDK
 ### ステップ3：プロジェクトの設定
 1. サンプルプロジェクトのクイックスタート段階で【デバッグ段階】を選択します。その後、ご自身のSDKAppID、Secret keyを記録しておきます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/82a45972f2d12763a6dc80eee6c952c0.png)
-2. Electron/TRTC-API-Example/assets/debug/gen-test-user-sig.jsファイルを見つけて開き、ご自身のSDKAppID、Secret keyに変更します。プロジェクトの設定はこれで完了です。【次のステップ】をクリックしてください。
+2. ダウンロードしたサンプルコードを開き、図の指示に従って対応するファイルの場所を探し、ご自身のSDKAppID、Secret keyに変更します。プロジェクトの設定はこれで完了です。【次のステップ】をクリックしてください。
 
 >?
 >- ここで言及したUserSigの作成法は、クライアントコードにSECRETKEYを設定しますが、この手法のSECRETKEYは逆コンパイルによって逆クラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのTRTC-API-Exampleクイックスタートおよび機能デバッグにのみ適しています**。
 >- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供する方法となります。 UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://www.tencentcloud.com/document/product/647/35166)をご参照ください。
 
+### 手順4：コンパイルと実行
+XCode（11.0およびそれ以降のバージョン）を使用してソースディレクトリ配下の TRTC-API-Example-OC.xcworkspace プロジェクトを開き、 TRTC-API-Exampleプロジェクトをコンパイルして実行します。
 
 
 ## よくあるご質問
 
-### 1. ファイアウォールにはどのような制限がありますか。
+### 1. 2台の携帯電話で同時にプロジェクトを実行しているのに、お互いの画面が表示されないのはなぜですか。
+2台の携帯電話でプロジェクトを実行するとき、UserIDが異なるものを使用してください。TRTCでは、同一のUserID（SDKAppIDが異なる場合を除く）が2つの端末で同時に使用することをサポートしていません。
+
+### 2. ファイアウォールにはどのような制限がありますか。
 SDK が UDP プロトコルを使用してオーディオビデオ伝送を行っていることから、 UDPに対してブロックがあるオフィスネットワークでは使用することができません。類似した問題がおありの際は、 [企業ファイアウォール制限の対応](https://intl.cloud.tencent.com/document/product/647/35164)をご参照の上、問題及び原因解決にお役立てください。
