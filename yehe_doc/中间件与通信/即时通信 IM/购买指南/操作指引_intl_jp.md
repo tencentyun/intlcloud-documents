@@ -1,4 +1,4 @@
-﻿> !
+> !
 >- Instant Messaging (IM)の元の料金プランは、2022年12月26日にサービス終了になりました。
 >- 2022年12月26日より前にIMアプリケーションを作成したユーザーの場合、デフォルトで元の料金プランが使用されます。[旧バージョンの操作ガイド](https://www.tencentcloud.com/document/product/1047/52473)をご参照ください。現在の料金プランに移行する場合は、[営業担当者に連絡](https://www.tencentcloud.com/contact-us)するか、[チケットを提出](https://console.tencentcloud.com/workorder)してください。移行すると、復元できなくなります。慎重に選択してください。
 
