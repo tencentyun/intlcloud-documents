@@ -1,4 +1,4 @@
-﻿> !
+> !
 >- IM의 기존 과금 모드는 2022년 12월 26일에 종료되었습니다.
 >- 2022년 12월 26일 이전에 IM 애플리케이션을 생성한 고객은 기본적으로 기존 과금 모드([세부정보](https://www.tencentcloud.com/document/product/1047/52474))를 사용합니다. 현재의 과금 모드로 마이그레이션하려면 [문의하기](https://www.tencentcloud.com/contact-us) 또는 [티켓 제출](https://console.tencentcloud.com/workorder)하십시오. 마이그레이션한 후에는 과금 모드를 복원할 수 없습니다.
 
@@ -85,7 +85,7 @@ IM 과금 방식은 월별 청구 주기에 따라 사용한 만큼만 지불하
   - IM 및 TRTC 서비스를 기반으로 구현됩니다. 따라서 이 기능을 활성화하면 기본적으로 TRTC 서비스가 활성화되고 애플리케이션이 생성됩니다.
   - 무료 체험판은 **체험판 기능 무료 사용 권한만 제공합니다. 이 기능을 사용하는 과정 중 발생한 통화 시간 사용량은 [TRTC 과금](https://www.tencentcloud.com/zh/document/product/647/42734)에 명시된 대로 요금이 부과되며 관련 IM 서비스는 IM [과금 개요](https://www.tencentcloud.com/zh/document/product/1047/34349)에 명시된 대로 요금이 부과됩니다**.
     </dx-alert>
-		
+
 ## 관련 문서
 - [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)
-- [운영 가이드](https://www.tencentcloud.com/document/product/1047/36021)		
+- [운영 가이드](https://www.tencentcloud.com/document/product/1047/36021)					
