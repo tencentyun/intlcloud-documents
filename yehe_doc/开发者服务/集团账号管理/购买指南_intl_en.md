@@ -1,0 +1,1 @@
+TCO is free of charge, and you only need to pay for the Tencent Cloud resources used under your account. For example, you need to pay standard fees for any CVM instances you use.
