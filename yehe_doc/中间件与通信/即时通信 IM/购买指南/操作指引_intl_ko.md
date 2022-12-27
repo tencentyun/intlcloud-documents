@@ -1,4 +1,4 @@
-﻿> !
+> !
 >- IM의 기존 과금 모드는 2022년 12월 26일에 종료되었습니다.
 >- 2022년 12월 26일 이전에 IM 애플리케이션을 생성한 고객은 기본적으로 기존 과금 모드([세부정보](https://www.tencentcloud.com/document/product/1047/52473))를 사용합니다. 현재 과금 모드로 마이그레이션하려면 [문의하기](https://www.tencentcloud.com/contact-us) 또는 [티켓 제출](https://console.tencentcloud.com/workorder)하십시오. 마이그레이션한 후에는 과금 모드를 복원할 수 없습니다.
 
