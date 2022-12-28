@@ -12,5 +12,5 @@ You can delete a created folder in the COS console.
 3. Locate the bucket where the folder to delete resides, and click the bucket name to go to the bucket management page.
 4. In the left sidebar, choose **File List** to go to the file list page.
 5. Locate the folder to delete, and click **Delete** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/3cf181e8093b8bd37feafbbc253b50b0.png)
+
 6. In the pop-up window, click **OK**.
