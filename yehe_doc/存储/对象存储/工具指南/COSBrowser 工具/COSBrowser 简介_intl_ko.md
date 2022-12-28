@@ -69,8 +69,8 @@ COSBrowser 데스크톱 버전은 다음과 같은 기능을 지원합니다.
 | [권한 관리](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 버킷, 객체 관련 권한 수정 지원                               |
 | [버전 관리 설정](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 버킷 버전 관리 활성화 및 일시 중지 지원                                 |
 | [액세스 경로 추가](https://intl.cloud.tencent.com/document/product/436/32565#addaccess) | 액세스 경로 추가 지원                                             |
-| [파일/폴더 업로드](https://intl.cloud.tencent.com/document/product/436/32565#upload) | 파일/폴더를 버킷에 단일 업로드, 일괄 업로드, 증분 업로드 지원 <br><br>참고: <br>1. 파일 일괄 업로드는 10만개를 초과할 수 없음 <br>2. 체크포인트 재시작 미지원 <br>3. 데이터를 마이그레이션하거나 일괄로 업로드하려면 [마이그레이션 서비스 플랫폼 MSP](https://www.tencentcloud.com/products/msp)를 사용하십시오.     |
-| [파일/폴더 다운로드](https://intl.cloud.tencent.com/document/product/436/32565#download) | 파일/폴더를 로컬에 단일 다운로드, 일괄 다운로드, 증분 다운로드 지원 <br><br>참고: <br>1. 파일 일괄 다운로드는 10만개를 초과할 수 없음<br>2. 체크포인트 재시작 미지원           |
+| [파일/폴더 업로드](https://intl.cloud.tencent.com/document/product/436/32565#upload) | 파일/폴더를 버킷에 단일 업로드, 일괄 업로드, 증분 업로드 지원      |
+| [파일/폴더 다운로드](https://intl.cloud.tencent.com/document/product/436/32565#download) | 파일/폴더를 로컬에 단일 다운로드, 일괄 다운로드, 증분 다운로드 지원            |
 | [파일/폴더 삭제](https://intl.cloud.tencent.com/document/product/436/32565#delete) | 버킷에 있는 파일 또는 폴더 단일 삭제, 일괄 삭제 지원                 |
 | [파일 동기화](https://intl.cloud.tencent.com/document/product/436/32565#synchronization) | 로컬 파일을 버킷에 실시간 동기화 지원                             |
 | [파일 복사 및 붙여넣기](https://intl.cloud.tencent.com/document/product/436/32565#copy) | 한 디렉터리에 있는 파일 또는 폴더를 다른 디렉터리로 단일 복사, 일괄 복사 지원   |
