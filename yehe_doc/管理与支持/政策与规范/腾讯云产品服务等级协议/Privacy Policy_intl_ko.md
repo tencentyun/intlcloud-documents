@@ -717,6 +717,7 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 56.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51133).
 57.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51968).
 58.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52288).
+59.[Tencent Cloud Firewall](https://www.tencentcloud.com/document/product/1160/52113).
 
 ### 개정 기록
 [개인정보 처리방침](https://intl.cloud.tencent.com/document/product/301/43505)(버전1.0)
