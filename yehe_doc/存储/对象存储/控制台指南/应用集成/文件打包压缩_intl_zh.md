@@ -1,42 +1,226 @@
-## 简介
+## 准备工作
 
-ZIP 多文件打包压缩是腾讯云对象存储（Cloud Object Storage，COS）基于 [云函数（Serverless Cloud Function，SCF）](https://www.tencentcloud.com/document/product/583) 为用户提供的数据处理解决方案。用户为存储桶添加多文件打包压缩规则后，指定需要打包压缩文件的 URLs，再通过触发 SCF 函数来执行打包压缩的动作，并将最终的压缩包投递至存储桶的指定路径下。
+1. 文件打包压缩功能通过云函数（Serverless Cloud Function，SCF）实现，使用前需在对象存储控制台上创建 **ZIP 多文件打包** 函数。创建指引请参见  [文件打包压缩](https://www.tencentcloud.com/document/product/436/41625)。
+2. 函数创建后，根据函数列表操作栏的 **使用引导**，完成函数参数配置。具体函数所需参数配置请参考下文，格式为 **JSON 字符串**。
+ - 对于选择云函数鉴权的函数，需要调用 SCF 提供的运行函数（Invoke）接口来运行云函数，其中的 ClientContext 参数以 json 格式传入，请参见 [函数参数配置示例](#1)。
+ - 对于选择免鉴权的函数，则可以直接向对应的 API 网关发起 HTTP 请求来调用函数。
 
 
-## 注意事项
+<span id=1></span>
 
-- ZIP 多文件打包压缩最终生成的压缩包不能大于50GB。
-- 若您此前在对象存储控制台上为存储桶添加了 ZIP 多文件打包压缩规则，可以在 [云函数控制台](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) 上看到您所创建的 ZIP 多文件打包缩函数，请**不要**删除该函数，否则可能导致您的规则不生效。
-- 已上线云函数的地域均已支持 ZIP 多文件打包压缩，包括有广州、上海、北京、成都、中国香港、新加坡、孟买、多伦多、硅谷等，更多支持地域可查看 [云函数产品文档](https://www.tencentcloud.com/document/product/583)。
-- 如果在打包压缩的过程中出现报错，您可以单击所创建的函数右侧的**查看日志**，跳转到云函数控制台查看日志错误详情。
-- 归档存储和深度归档存储类型文件不支持打包压缩，如您需要打包压缩此类型的对象，请先恢复后再进行，恢复操作请参见 [恢复归档对象](https://intl.cloud.tencent.com/document/product/436/30961)。
-- 对象存储打包压缩功能依赖于云函数服务，云函数服务为用户提供了 [免费额度](https://intl.cloud.tencent.com/document/product/583/12282)，超出免费额度的部分需要按照 [云函数产品定价](https://intl.cloud.tencent.com/document/product/583/12281) 收费。当您使用打包压缩功能时，如果您打包的文件越多，文件越大，将消耗更多的资源使用量；如果您打包压缩的次数越多，则将消耗更多的调用次数。
+## 函数参数配置示例
 
-## 操作步骤
-
-1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
-2. 在左侧导航中，单击**应用集成 > 拓展功能**，找到 **ZIP 多文件打包**。
-3. 单击**配置 API 访问**，进入该配置页面。
->! 若您尚未开通云函数，请前往 [云函数控制台](https://console.cloud.tencent.com/scf) 开通云函数服务，按照提示完成服务授权即可。
+>? 实际使用当中，需将代码中的注释去掉。
 >
-4. 单击**添加函数**，并在弹出的窗口中配置如下信息：
- - **函数名称**：函数名称作为函数的唯一标识名称，创建后不可修改。您可以在 [云函数控制台](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) 上查看该函数。
- - **执行配置**：选择该函数的执行方式，选择同步执行，函数会在执行完压缩任务后才会响应，并返回运行结果。如果选择异步执行，函数会直接响应，并在后台持续执行压缩任务。
- - **鉴权方式**：选择该函数的鉴权方式。
-    - 如果选择云函数鉴权，需要通过拥有该函数调用权限的身份来触发函数。
 
-    - 如果选择免鉴权，需要选择合适的 API 网关来接收请求。如果您在该地域下没有 API 网关，请选择**新建 API 网关服务**，我们会在您所选的地域下配置符合该函数需求的 API 网关。
+```plaintext
+{
+    "bucket": "examplebucket-1250000000",    // 最终投递 ZIP 文件的存储桶
+    "region": "ap-guangzhou",         // 最终投递 ZIP 文件的存储桶所在地域
+    "key": "mypack.zip",              // 最终投递 ZIP 文件的名称
+    "flatten": false,                 // 是否需要对源文件路径进行扁平化处理
 
- - **API 路径/请求方法**：如需获取更多关于 API 网关的配置说明，请参见 [API 网关产品概述](https://intl.cloud.tencent.com/document/product/628/11755)。
- - **SCF 授权**：打包压缩文件需要授权云函数从您的存储桶中读取对应文件，并将打包压缩后的压缩包上传到您指定的位置，需要勾选该项为 SCF 服务进行授权。
-5. 添加配置后，单击**确认**，等待一段时间后，即可看到函数已添加完成。
+    /**
+     * sourceList 用于指定需打包的源文件列表，格式为 JSON 数组
+     * 每一项包含源文件 url，重命名的路径 renamePath 等
+     * 
+     * 如果源文件列表过长，可将 sourceList 参数 JSON 字符串化
+     * 写入 .json 文件，上传到 COS，并通过 sourceConfigList 参数指定
+     * 
+     * sourceList 和 sourceConfigList 参数仅需指定一种即可
+     */
+    "sourceList": [
+        {
+            "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir1/file1.jpg",
+            "renamePath": "dir1_rename/file1.jpg"
+        },
+        {
+            "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir2/file2.mp4",
+            "renamePath": "file2.mp4"
+        },
+        {
+            "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/file3.md"
+        }
+    ],
+    "sourceConfigList": [
+        {
+             "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceList.json"
+        }
+    ]
+}
+```
 
-6. 单击**使用引导**，查看该函数所需要配置的参数字段说明。其中，ClientContext 参数以 json 格式传入，配置示例请参见 [通过 API 进行多文件打包压缩](https://intl.cloud.tencent.com/document/product/436/41619)。
+参数说明如下：
 
-7. 单击**下一步**，进入调用测试页面。
-8. 单击**点击调用**，控制台会根据上一步配置的参数，对该函数发起调用，您可在**响应结果**中查看函数响应结果。
+| 参数名                  | 参数描述                                                     | 类型    | 是否必填 |
+| ----------------------- | ------------------------------------------------------------ | ------- | -------- |
+| bucket                  | 最终投递 ZIP 文件的存储桶，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式，例如：examplebucket-1250000000 | String  | 是       |
+| region                  | 最终投递 ZIP 文件的存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String  | 是       |
+| key                     | 最终投递 ZIP 文件的名称（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String  | 是       |
+| flatten                 | 是否需要路径扁平化（去除源目录结构），例如：源文件 URL 为 https://domain/source/test.mp4, 则源文件路径为 source/test.mp4，如果为 true，则 ZIP 包中该文件路径为 test.mp4，否则 ZIP 包中该文件路径为 source/test.mp4。默认为 false | Boolean | 否       |
+| sourceList              | 源文件列表，**sourceList 和 sourceConfigList 不能同时为空**  | Array   | 是       |
+| sourceList[].url        | 源文件的 URL                                                 | String  | 是       |
+| sourceList[].renamePath | 带路径的重命名，即源文件在 ZIP 包中的文件路径。例如，将 dir1/file1.jpg 重命名为 dir1_rename/file1.jpg。<br>注意：renamePath 的优先级高于 flatten，重命名后的路径不受扁平化影响 | String  | 否       |
+| sourceConfigList        | sourceList 的配置文件列表，如果您不希望在请求时携带整个 sourceList，可以将 sourceList 参数 JSON 字符串处理，生成 json 配置文件，上传到 COS，并在 sourceConfigList 中指定该文件的 URL，支持指定多个配置文件，**sourceList 和 sourceConfigList 不能同时为空** | Array   | 否       |
+| sourceConfigList[].url  | sourceList 配置文件的 URL                                    | String  | 否       |
 
-9. 您还可以对新创建的函数进行如下操作：
- - 单击**日志**，查看打包压缩函数的历史运行情况。当函数出现报错时，您还可以通过此操作，快速跳转到云函数控制台查看日志错误详情。
- - 单击**更多 > 编辑**，修改文件打包压缩规则。
- - 单击**更多 > 删除**，删除不再需要的文件打包压缩函数。
+## 函数响应结果示例
+```plaintext
+{
+  code: 0,
+  data: {
+    Bucket: "examplebucket-1250000000",
+    ETag: "\"35bb5e5f050e22bed8f443d8da5dbfb8-1\"",
+    Key: "mypack.zip",
+    Location: "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/mypack.zip"
+  },
+  error: null,
+  message: "cos zip file success"
+}
+```
+
+响应参数说明如下：
+
+| 参数名  | 参数描述                                               | 类型             |
+| ------- | ------------------------------------------------------ | ---------------- |
+| code    | 业务错误码，如果为 0 则说明执行成功，否则为执行失败    | Number           |
+| message | 执行结果的文字说明，可能为 null                        | String           |
+| data    | 执行成功的信息，如果执行成功，则包含 ZIP 包的 url 信息 | Object           |
+| error   | 执行的错误信息，如执行成功则为 null                    | Object or String |
+
+## 实际案例
+
+### 案例一：简单案例
+
+#### 参数配置
+```plaintext
+{
+  "bucket": "examplebucket-1250000000",
+  "region": "ap-guangzhou",
+  "key": "mypack.zip",
+  "flatten": false,
+  "sourceList": [
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir1/file1.jpg"
+      },
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir2/file2.mp4"
+      },
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/file3.md"
+      }
+  ]
+}
+```
+
+#### 最终 ZIP 压缩包结构
+
+```plaintext
+mypack.zip
+    ├── dir1/file1.jpg
+    ├── dir2/file2.mp4
+    └── file3.md
+```
+
+### 案例二：源文件路径扁平化
+
+#### 参数配置
+```plaintext
+{
+  "bucket": "examplebucket-1250000000",
+  "region": "ap-guangzhou",
+  "key": "mypack.zip",
+  "flatten": true,                  // flatten 为 true，对源文件路径进行扁平化处理
+  "sourceList": [
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir1/file1.jpg"
+      },
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir2/file2.mp4"
+      },
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/file3.md"
+      }
+  ]
+}
+```
+
+#### 最终 ZIP 压缩包结构
+
+```plaintext
+mypack.zip
+    ├── file1.jpg
+    ├── file2.mp4
+    └── file3.md
+```
+
+
+### 案例三：源文件路径重命名
+
+#### 参数配置
+```plaintext
+{
+  "bucket": "examplebucket-1250000000",
+  "region": "ap-guangzhou",
+  "key": "mypack.zip",
+  "flatten": false,
+  "sourceList": [
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir1/file1.jpg",
+          // 将 dir1/file1.jpg 路径重命名为 dir1_rename/file1.jpg
+          "renamePath": "dir1_rename/file1.jpg"
+      },
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir2/file2.mp4",
+          // 将 dir2/file2.mp4 重命名为 file2.mp4
+          "renamePath": "file2.mp4"
+      },
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/file3.md"
+      }
+  ]
+}
+```
+
+#### 最终 ZIP 压缩包结构
+
+```plaintext
+mypack.zip
+    ├── dir1_rename/file1.jpg
+    ├── file2.mp4
+    └── file3.md
+```
+
+### 案例四：源文件路径重命名 + 扁平化
+
+#### 参数配置
+```plaintext
+{
+  "bucket": "examplebucket-1250000000",
+  "region": "ap-guangzhou",
+  "key": "mypack.zip",
+  "flatten": true,         // flatten 为 true，对源文件路径进行扁平化处理
+  "sourceList": [
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir1/file1.jpg"
+      },
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/dir2/file2.mp4"
+      },
+      {
+          "url": "https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/file3.md",
+          // 将 file3.md 重命名为 dir3/file3.md，renamePath 优先级比 flatten 高，因此重命名后的路径不会被扁平化
+          "renamePath": "dir3/file3.md"
+      }
+  ]
+}
+```
+
+#### 最终 ZIP 压缩包结构
+
+```plaintext
+mypack.zip
+    ├── file1.jpg
+    ├── file2.mp4
+    └── dir3/file3.md
+```
