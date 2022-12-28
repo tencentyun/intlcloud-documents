@@ -28,8 +28,7 @@ For more information on environment installation and configuration, see [Java](h
 ```
 ./hdfs_to_cos_cmd -h
 ```
-The execution result is as shown below:
-![](https://main.qcloudimg.com/raw/9f83bc3b2446e27254936e7fe6d7d281.png)
+
 
 ### Copying a file
 
