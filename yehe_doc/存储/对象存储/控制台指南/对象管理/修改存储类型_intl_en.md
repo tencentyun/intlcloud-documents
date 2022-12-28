@@ -14,7 +14,7 @@ You can modify the storage class of your object uploaded to COS through the cons
 3. Locate the bucket where the object resides and click the bucket name.
 4. Click **File List** on the left sidebar.
 5. Find the target object and click **More** > **Modify Storage Class** in the **Operation** column on the right.
-![](https://main.qcloudimg.com/raw/da4233ef18fa8d9820c97450341092d3.png)
+
 To batch modify the storage class of multiple objects, select multiple objects and click **More Actions** > **Modify Storage Class** at the top.
 
 6. Select the target storage class and click **OK** in the pop-up window.

@@ -1,6 +1,6 @@
 ## Preparations
 
-1. Multi-File Zipping is implemented with Tencent Cloud Serverless Cloud Function (SCF). You need to log in to the COS console and go to [Application Integration > Multi-File Zipping](https://console.cloud.tencent.com/cos5/application/cosZip) to create a **multi-file zipping** function.
+1. Multi-File Zipping is implemented with Tencent Cloud Serverless Cloud Function (SCF). You need to log in to the COS console and create a **multi-file zipping** function.For the creation guide, see [Multi-File Zipping](https://www.tencentcloud.com/document/product/436/41625).
 2. After creating the function, click **Instructions** on the right of the function to configure it. The configurations are a **JSON string**, which will be described in detail in this document.
  - If your function needs SCF authentication, you need to call the `Invoke` API provided by SCF to run your cloud function, where the `ClientContext` parameter is passed in JSON format (see [Parameter Configuration Sample](#1) for details).
  - For authentication-free functions, you can directly make HTTP requests to the corresponding API gateway to call the function.

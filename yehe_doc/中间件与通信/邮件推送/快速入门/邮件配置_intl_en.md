@@ -10,8 +10,7 @@
 Log in to the [SES console](https://console.cloud.tencent.com/ses). If you do not have a Tencent Cloud account yet, then sign up for one first as instructed in [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985).
 If you are prompted to verify your identity, complete identity verification in the [Account Center](https://console.cloud.tencent.com/developer). For detailed directions, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 ### 2. Activating the SES service
-Click **Activate SES**. After successful activation, you will get a free tier of 1,000 emails.
-After the free tier is used up, your plans will be used automatically. If no plans are available, you will be charged on a pay-as-you-go basis.
+Click **Activate SES**. 
 
 ## Directions
 ### Step 1. Configure the sender domain[](id:Step1)

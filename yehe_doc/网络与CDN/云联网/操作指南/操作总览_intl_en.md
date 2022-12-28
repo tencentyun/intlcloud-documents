@@ -3,6 +3,7 @@ This document guides you through an index of instructions on various CCN operati
 ### Instance Management
 - [Creating a CCN Instance](https://intl.cloud.tencent.com/document/product/1003/30062)
 - [Associating a Network Instance](https://intl.cloud.tencent.com/document/product/1003/30064)
+- [Checking Associated Network Instances](https://www.tencentcloud.com/document/product/1003/47890)
 - [Deleting a CCN Instance](https://intl.cloud.tencent.com/document/product/1003/30063)
 - [Disassociating a Network Instance](https://intl.cloud.tencent.com/document/product/1003/30065)
 - [Publishing an IP Range Through Direct Connect Gateway to CCN](https://intl.cloud.tencent.com/document/product/1003/30075)

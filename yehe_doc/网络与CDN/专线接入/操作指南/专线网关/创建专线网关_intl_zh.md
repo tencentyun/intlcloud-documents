@@ -1,22 +1,21 @@
 本文将介绍如何创建专线网关，以及入方向路由说明。
 
 ## 前提条件
-- 您已申请物理专线，具体操作请参见[ 申请物理专线](https://intl.cloud.tencent.com/document/product/216/19244)。
+- 您已申请物理专线，具体操作请参见[ 申请接入物理专线](https://intl.cloud.tencent.com/document/product/216/19244)。
 - 您已创建腾讯云 VPC，具体操作请参见[ 快速搭建 IPv4 私有网络](https://intl.cloud.tencent.com/document/product/215/31891)。
 
 ## 使用限制
 标准型专线网关支持传递辅助 CIDR，但需要遵循如下限制：
-- 金融云地域的标准型专线网关不支持传递辅助 CIDR。
 - 标准型专线网关支持传递10个辅助 CIDR。
 - NAT 型专线网关不支持传递辅助 CIDR。
 
 
 ## 操作步骤
-1. 登录 [专线接入控制台](https://console.cloud.tencent.com/dc/dc) ，并在左侧导航栏单击【专线网关】。
-2. 在“专线网关”页面上方选择地域和私有网络，然后单击【+新建】。
-   ![](https://main.qcloudimg.com/raw/89ddf380778948849f709ba4518198db.png)
-3. 在“创建专线网关”对话框中配置网关详情，完成后单击【确定】。
-   ![](https://main.qcloudimg.com/raw/d74dd96faabff1924720444e732330a9.png)
+1. 登录 [专线接入控制台](https://console.cloud.tencent.com/dc/dc) ，并在左侧导航栏单击**专线网关**。
+2. 在“专线网关”页面上方选择地域和私有网络，然后单击**+新建**。
+![](https://main.qcloudimg.com/raw/89ddf380778948849f709ba4518198db.png)
+3. 在**新建专线网关**对话框中配置网关详情，完成后单击**确定**。
+![](https://main.qcloudimg.com/raw/d74dd96faabff1924720444e732330a9.png)
 <table>
 <tr>
 <th width="15%">字段</th>
@@ -24,15 +23,15 @@
 </tr>
 <tr>
 <td>名称</td>
-<td>专线网关的名称</td>
+<td>专线网关的名称。</td>
+</tr>
+<tr>
+<td>可用区</td>
+<td>选择地域所在可用区。</td>
 </tr>
 <tr>
 <td>关联网络</td>
 <td>选择云联网类型或私有网络类型的专线网关。</td>
-</tr>
-<tr>
-<td>云联网实例</td>
-<td>若创建云联网类型的专线网关，则需关联至云联网实例。若当前没有创建云联网实例，可选择暂不关联。</td>
 </tr>
 <tr>
 <td>所在网络</td>
@@ -86,5 +85,5 @@
 </tbody></table>
 
 ## 后续操作
-- 若您创建的云联网专线网关，则还需在专线网关添加 IDC 网段才可以实现网络通信，详情请参见[ 专线网关添加 IDC 网段](https://intl.cloud.tencent.com/document/product/216/39083)。
+- 若您创建的云联网专线网关，则还需在专线网关添加 IDC 网段才可以实现网络通信，详情请参见[ 发布网段至云联网](https://intl.cloud.tencent.com/document/product/216/39083)。
 - 若您创建的 VPC 专线网关，还需配置 VPC 路由表信息，才能实现网络通信，详情请参见[ 配置路由表](https://intl.cloud.tencent.com/document/product/216/19259)。

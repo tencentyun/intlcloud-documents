@@ -43,9 +43,9 @@ You can grant such permissions by using a **policy template** or **custom access
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) as the root account and select **Users** > **User List** to enter the user list page.
 2. Find the target sub-account and click **Authorize** in the **Operation** column on the right.
-![](https://main.qcloudimg.com/raw/03804c04df5e91fc0472e8d0297f694d.png)
+
 3. Search for and select the `QcloudMonitorFullAccess` policy in the pop-up window and click **OK** to associate it with the sub-account. Then, the sub-account can access monitoring reports.
-![](https://main.qcloudimg.com/raw/c2e07335d2e68e2f077138ff9d73837f.png)
+
 >! This policy template grants the sub-account the **full access** to CM. To protect the security of your account, you can customize an access policy to grant only read permissions to the sub-account.
 >
 
@@ -54,8 +54,8 @@ You can grant such permissions by using a **policy template** or **custom access
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) as the root account.
 2. On the left sidebar, click **Policies** > **Create Custom Policy** > **Create by Policy Syntax**.
 3. Select **Blank Template** and click **Next**.
-![](https://main.qcloudimg.com/raw/4a61be28b1ab0146eca948215aad0f2e.png)
-4. Copy and paste the following policy syntax into the **Edit Policy Content** input box.
+
+4. Copy and paste the following policy syntax into the **Policy Content** input box.
 You can rename the policy as needed.
 Policy syntax:
 ```shell
@@ -73,5 +73,5 @@ Policy syntax:
 }
 ```
 ![](https://main.qcloudimg.com/raw/f6a4b0d8573745139beb03cdb3a1b3ec.png)
-4. Click **Create Policy**.
+4. Click **OK**.
 After the policy is created successfully, you can associate it with the sub-account as instructed in [Authorizing by policy template](#celie).

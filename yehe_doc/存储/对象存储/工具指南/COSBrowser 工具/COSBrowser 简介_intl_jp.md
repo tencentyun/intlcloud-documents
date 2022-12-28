@@ -69,8 +69,8 @@ COSBrowserデスクトップは、以下の機能をサポートします。
 | [権限管理](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | バケットやオブジェクトに関する権限の変更をサポートします                               |
 | [バージョン管理の設定](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | バケットのバージョン管理の有効化と一時停止をサポートします                                 |
 | [アクセスパスの追加](https://intl.cloud.tencent.com/document/product/436/32565#addaccess) | アクセスパスの追加をサポートします                                             |
-| [ファイル/フォルダのアップロード](https://intl.cloud.tencent.com/document/product/436/32565#upload) | ファイルまたはフォルダのバケットへの単一アップロード、一括アップロード、増分アップロードをサポートします<br><br>注意：<br>1. 一括アップロードするファイルは10万個以内とします<br>2. 中断からの再開はサポートしていません<br>3. データ移行またはデータの一括アップロードを行う場合は、[Migration Service Platform（MSP）](https://www.tencentcloud.com/products/msp)をご利用ください     |
-| [ファイル/フォルダのダウンロード](https://intl.cloud.tencent.com/document/product/436/32565#upload) | ファイルまたはフォルダのローカルへの個別ダウンロード、一括ダウンロード、差分ダウンロードをサポートします <br><br>注意：<br>1. 一括ダウンロードするファイルは10万個以内とします<br>2. 中断からの再開はサポートしていません          |
+| [ファイル/フォルダのアップロード](https://intl.cloud.tencent.com/document/product/436/32565#upload) | ファイルまたはフォルダのバケットへの単一アップロード、一括アップロード、増分アップロードをサポートします     |
+| [ファイル/フォルダのダウンロード](https://intl.cloud.tencent.com/document/product/436/32565#upload) | ファイルまたはフォルダのローカルへの個別ダウンロード、一括ダウンロード、差分ダウンロードをサポートします          |
 | [ファイル/フォルダの削除](https://intl.cloud.tencent.com/document/product/436/32565#delete) | バケット内のファイルやフォルダの個別削除、一括削除をサポートします                 |
 | [ファイルの同期](https://intl.cloud.tencent.com/document/product/436/32565#synchronization) | ローカルファイルのバケットへのリアルタイム同期をサポートします                             |
 | [ファイルのコピーと貼り付け](https://intl.cloud.tencent.com/document/product/436/32565#copy) | 1つのディレクトリから別のディレクトリへのファイルまたはフォルダへの個別コピー、一括コピーをサポートします    |

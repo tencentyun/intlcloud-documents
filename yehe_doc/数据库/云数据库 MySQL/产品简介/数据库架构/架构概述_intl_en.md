@@ -1,5 +1,5 @@
 TencentDB for MySQL supports three types of architectures: single-node (Cloud Disk Edition), two-node (formerly High-Availability Edition), and three-node (formerly Finance Edition).
->?The single-node architecture of the cloud disk edition is currently supported in Shanghai region and will be available in more regions in the future.
+>?The single-node architecture of the cloud disk edition is currently supported in Shanghai, Chengdu, Guangzhou, Beijing, Hong Kong region and will be available in more regions in the future.
 >
 ## Viewing the instance architecture
 - For instances to be purchased, enter the [TencentDB for MySQL purchase page](https://buy.intl.cloud.tencent.com/cdb) and select the architecture in the **Architecture** section.

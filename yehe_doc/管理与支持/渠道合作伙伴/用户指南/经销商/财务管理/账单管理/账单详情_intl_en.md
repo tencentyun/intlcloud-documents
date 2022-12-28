@@ -3,10 +3,8 @@
 | Field | Description |
 | ------------------------------------------- | ------------------------------------------------------------ |
 | Payer Account ID                            | Payer account, which is the reseller account.|
-| Customer Name                               | Customer name                                                     |
 | Owner Account ID                            | Resource owner account, which is customer account.                       |
 | Operator Account ID                         | Operator account, which can be customer account, customer’s CAM sub-user, or customer’s collaborator.                                               |
-| Reseller Account ID                     | A reseller account ID is the ID of the reseller who directly manages the resource owner.  |
 | ProductName                                 | Product name                                                     |
 | BillingMode                                 | Billing mode. Valid values: Monthly subscription (monthly subscription), Pay-as-You-Go resources (pay-as-you-go billing), Standard RI (reserved instances) |
 | ProjectName                                 | Project name                                                     |

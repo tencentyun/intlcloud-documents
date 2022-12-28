@@ -16,9 +16,9 @@ Folder permission is essentially access permission at the object level, which ta
 3. Locate the bucket where the folder is located and click the bucket name to go to the bucket management page.
 4. In the left sidebar, choose **File List** to go to the file list page.
 5. Locate the folder for permission setting, and click **Permission**.
-![](https://main.qcloudimg.com/raw/2d5efff0532cec0e1fbec063f983e611.png)
+
 6. In the pop-up window, set folder permissions as required.
-![](https://main.qcloudimg.com/raw/be31a82ce94421adf25ff8e0a69db359.png)
+
 Permission settings are described as follows:
 <table>
    <tr>
@@ -69,6 +69,10 @@ Permission settings are described as follows:
       <td>Includes the Reads, Write, Read ACL, and Write ACL permissions. <b>Exercise caution with this configuration because it grants a wide range of permissions.</b></td>
    </tr>
 </table>
+
+
+
+
 5. Click **Save** in the **Operation** column.
 6. Click **Close**.
 
