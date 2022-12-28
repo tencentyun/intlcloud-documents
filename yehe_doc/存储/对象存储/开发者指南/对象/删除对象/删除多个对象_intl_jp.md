@@ -31,3 +31,4 @@ SDKの複数オブジェクト削除メソッドを直接呼び出すことが�
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/43884)
