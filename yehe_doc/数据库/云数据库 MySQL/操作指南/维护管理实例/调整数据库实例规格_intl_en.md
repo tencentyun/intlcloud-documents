@@ -14,7 +14,6 @@ By default, the instance configuration is adjusted in the normal mode, which req
 - **QuickChange mode**: The instance configuration can be adjusted without migrating data or switching to another physical machine. As no migration preparation is needed, the overall adjustment process is much shorter.
 >!
 >- If the local resources are sufficient and meet the conditions of the QuickChange mode, this mode will be used by default. If you don't need to use it, you can disable it by toggling it off on the configuration adjustment page.
->- In the QuickChange mode, the instance may be restarted and unavailable for a short time during configuration adjustment.
 
 ## Notes
 - A read-only instance with an exclusive VIP enabled does not support QuickChange.
