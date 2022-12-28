@@ -158,6 +158,7 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 55.[Text Moderation System](https://www.tencentcloud.com/document/product/1121/51135).
 56.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51969).
 57.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52287).
+58.[Tencent Cloud Firewall](https://www.tencentcloud.com/document/product/1160/52114).
 
 ## Persyaratan khusus yurisdiksi
 
