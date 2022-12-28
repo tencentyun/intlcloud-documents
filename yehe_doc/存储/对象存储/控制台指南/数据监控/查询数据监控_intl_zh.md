@@ -43,9 +43,9 @@
 
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，选择**用户 > 用户列表**，进入用户列表页面。
 2. 找到需要授权的子账号，在其右侧操作栏下，单击**授权**。
-![](https://qcloudimg.tencent-cloud.cn/raw/7089e69bdc2c4d8ff28b846a5f53f6a1.png)
+
 3. 在弹出的窗口中，搜索 QcloudMonitorFullAccess 策略并勾选该策略，单击**确定**，将策略添加至该子账号中，即可使用该子账号查看监控报表。
-![](https://qcloudimg.tencent-cloud.cn/raw/7261c13b1539340a9f7169eae49e25bd.png)
+
 >! 策略模板将授予访问云监控的**所有权限**，如您需要保护账号安全，可自定义配置子账户读权限的访问策略。
 >
 
@@ -54,8 +54,8 @@
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)。
 2. 在左侧导航栏中，单击**策略 > 新建自定义策略 > 按策略语法创建**。
 3. 选择空白模板，单击**下一步**。
-![](https://qcloudimg.tencent-cloud.cn/raw/35d01a9fcd69b241fead95ea115cc86e.png)
-4. 将以下策略语法输入到**编辑策略内容**输入框内，如下图所示。
+
+4. 将以下策略语法输入到**策略内容**输入框内，如下图所示。
 您可以根据自己业务需要，将策略名称修改为易于查找的名称。
 策略语法：
 ```shell
@@ -73,5 +73,5 @@
 }
 ```
 ![](https://qcloudimg.tencent-cloud.cn/raw/36aeff8aa2093ebb7d267639a65c485b.png)
-4. 单击**创建策略**。
+4. 单击**完成**。
 策略创建成功后，您可对子账户授权该策略。操作步骤请参见 [通过策略模板配置](#celie)。
