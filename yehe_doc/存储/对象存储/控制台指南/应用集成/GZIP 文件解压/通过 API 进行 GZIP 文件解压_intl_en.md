@@ -1,6 +1,6 @@
 ## Prerequisites
 
-1. The GZIP decompression feature is implemented via the Serverless Cloud Function (SCF) service. Before use, you need to go to [**App Integration** > **GZIP Decompression**](https://console.cloud.tencent.com/cos5/application/cosGunzipApi) in the COS console to create a **GZIP Decompression** function. For detailed directions on how to create a function, see [Using Console to Configure Auto GZIP File Decompression](https://intl.cloud.tencent.com/document/product/436/46202).
+1. The GZIP decompression feature is implemented via the Serverless Cloud Function (SCF) service. Before use, you need to create a **GZIP Decompression** function in the COS console. For detailed directions on how to create a function, see [Using Console to Configure Auto GZIP File Decompression](https://intl.cloud.tencent.com/document/product/436/46202).
 2. After creating the function, click **Instructions** on the right of the function to configure it. The configuration items are a **JSON string**, which will be as described in detail in this document.
  - If your function needs SCF authentication, you need to call the `Invoke` API provided by SCF to run your cloud function, where the `ClientContext` parameter is passed in JSON format (see [Sample Function Parameter Configuration](#1) for details).
  - If you configure the function to be authentication free, you can directly send HTTP requests to the corresponding API gateway to call the function.
