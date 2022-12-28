@@ -28,8 +28,7 @@ JDK 1.7 또는 1.8
 ```
 ./hdfs_to_cos_cmd -h
 ```
-실행 결과는 다음 이미지와 같습니다.
-![](https://main.qcloudimg.com/raw/9f83bc3b2446e27254936e7fe6d7d281.png)
+
 
 ### 파일 복사
 
