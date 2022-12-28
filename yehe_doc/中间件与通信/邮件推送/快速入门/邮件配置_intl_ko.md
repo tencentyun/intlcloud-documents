@@ -10,8 +10,7 @@
 [SES 콘솔](https://console.cloud.tencent.com/ses)에 로그인합니다. 아직 Tencent Cloud 계정이 없는 경우 [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985)을 참고하여 계정을 만드십시오.
 인터페이스에 실명 인증을 수행하라는 메시지가 표시되면 [계정 센터](https://console.cloud.tencent.com/developer) 로 이동하여 본인 확인을 진행하십시오. 자세한 내용은 [실명 인증 가이드](https://intl.cloud.tencent.com/document/product/378/3629)를 참고하십시오.
 ### 2. SES 서비스 활성화
-**SES 서비스 활성화**를 클릭합니다. 서비스 활성화 후 1000개의 무료 전송 할당량이 제공됩니다.
-프리 티어가 소진되면 플랜이 자동으로 사용됩니다. 사용 가능한 요금제가 없는 경우 종량제 기준으로 요금이 청구됩니다.
+**SES 서비스 활성화**를 클릭합니다. 
 
 ## 작업 단계
 ### 1단계: 발신자 도메인 구성[](id:Step1)
