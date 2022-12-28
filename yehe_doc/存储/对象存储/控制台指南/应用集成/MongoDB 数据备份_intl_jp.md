@@ -17,7 +17,7 @@ MongoDBデータのバックアップは、Tencent CloudのCloud Object Storage(
 >! SCFサービスをアクティブ化していない場合は、[SCFコンソール](https://console.cloud.tencent.com/scf)に移動してSCFサービスをアクティブ化し、プロンプトに従ってサービス権限承認を行えば完了です。
 >
 5. ポップアップしたウィンドウで、以下の情報を設定します。
-![](https://main.qcloudimg.com/raw/f4591a75200593b0ee91cc27ccb589f6.png)
+
  - **関数名**：関数の一意の識別名として、作成後に変更することはできません。[SCFコンソール](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)でこの関数を確認できます。
  - **関連バケット**：MongoDBバックアップファイルを格納するバケットです。
  - **トリガーサイクル**：MongoDBデータのバックアップ関数は、時限式トリガーでバックアップ・ダンプ操作をトリガーします。トリガーサイクルは、日次・週次・カスタムサイクルに対応します。
