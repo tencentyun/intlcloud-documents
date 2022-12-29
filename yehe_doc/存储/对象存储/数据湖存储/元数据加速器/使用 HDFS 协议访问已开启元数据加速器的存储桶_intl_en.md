@@ -10,7 +10,7 @@ In the past, big data access based on COS was mainly implemented through the Had
 
 ## Creating Bucket and Configuring the HDFS Protocol
 
-1. Create a COS bucket and enable metadata acceleration for it.
+1. [Create a COS bucket](https://www.tencentcloud.com/document/product/436/13309) and enable metadata acceleration for it.
 
 After the bucket is created, go to the **File List** page of the bucket, where you can upload and download files.
 
@@ -22,7 +22,7 @@ When you create a bucket that **requires metadata acceleration to be enabled**, 
 3. In the **HDFS Permission Configuration** column, click **Add Permission Configuration**.
 
 4. Select the VPC where the computing cluster resides in the **VPC Name** column, enter the IP address or range that needs to be opened in the **Node IP** column, select **Can edit** or **Can view** as the access type, and click **Save**.
->? The HDFS permission configuration is different from the native COS permission system. If you use HDFS to access a COS bucket, we recommend you configure HDFS permission to authorize servers in a specified VPC to access the COS bucket and enjoy the same permission experience as that of native HDFS.
+>? **The HDFS permission configuration** is different from the native COS permission system. If you use HDFS to access a COS bucket, we recommend you configure HDFS permission to authorize servers in a specified VPC to access the COS bucket and enjoy the same permission experience as that of native HDFS.
 
 ## Configuring Computing Cluster to Access COS
 
@@ -38,19 +38,15 @@ When you create a bucket that **requires metadata acceleration to be enabled**, 
 The [EMR environment](https://console.cloud.tencent.com/emr) has already been seamlessly integrated with COS, and you only need to complete the following steps:
 
 1. Find an EMR server and run the following command on it to check whether the package versions in the folders of the services required by the EMR environment meet the requirements for environment dependencies.
-```
+```plaintext
 find / -name "chdfs*" 
-find / -name "hadoop-cos*" 
-find / -name "cos_api*"
+find / -name "temrfs_hadoop*" 
 ```
+![](https://qcloudimg.tencent-cloud.cn/raw/cb73bf879c1b7c0aa3304392c6845c2d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/654573077995cb16701af9635d7db351.png)
 
- <img src="https://qcloudimg.tencent-cloud.cn/raw/f85fede17c83b0c5c0d01184b7a79aad.png" alt="Enable metadata acceleration" style="zoom:50%;" />
 
- <img src="https://qcloudimg.tencent-cloud.cn/raw/7c1224b404150b827855bcd83b007837.png" alt="Enable metadata acceleration" style="zoom:50%;" />
-
- <img src="https://qcloudimg.tencent-cloud.cn/raw/39db31b625e627e92c9e5374f25678aa.png" alt="Enable metadata acceleration" style="zoom:50%;" />
-
-Make sure that the versions of three JAR packages in the search results meet the above requirements for environment dependencies.
+Make sure that the versions of two JAR packages in the search results meet the above requirements for environment dependencies.
 
 2. If the chdfs-hadoop-plugin needs to be updated, perform the following steps:
 

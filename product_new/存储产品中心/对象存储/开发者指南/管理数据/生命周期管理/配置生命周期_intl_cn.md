@@ -35,4 +35,5 @@
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35806)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35860)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/35002)
-- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547)
+- [Python SDK](https://www.tencentcloud.com/document/product/436/31547)
+- [小程序 SDK](https://www.tencentcloud.com/document/product/436/35851)

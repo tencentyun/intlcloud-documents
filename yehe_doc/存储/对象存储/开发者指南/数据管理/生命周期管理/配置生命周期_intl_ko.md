@@ -36,3 +36,4 @@ SDK의 라이프사이클을 직접 호출할 수 있습니다. 자세한 내용
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35860)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/35002)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547)
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/35851)

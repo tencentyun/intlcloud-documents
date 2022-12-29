@@ -53,7 +53,7 @@ Here is a list of actions supported in bucket ACLs:
 
 | Action Set | Description | Allowed Actions |
 | ------------ | -------------------- | ------------------------------------------------------------ |
-| READ | Lists objects | GetBucket, HeadBucket, GetBucketObjectVersions, ListMultipartUploads |
+| READ | Lists objects | HeadBucket, GetBucketObjectVersions, ListMultipartUploads |
 | WRITE | Uploads, overwrites and deletes objects | PutObject, PutObjectCopy, PostObject, InitiateMultipartUpload, UploadPart, UploadPartCopy, CompleteMultipartUpload, DeleteObject |
 | READ_ACP | Reads bucket ACLs | GetBucketAcl |
 | WRITE_ACP | Writes to bucket ACLs | PutBucketAcl |

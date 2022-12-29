@@ -40,3 +40,4 @@ Directly call the object download method in the SDK. For more information, see t
 - [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/31469#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/43882)

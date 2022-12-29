@@ -12,7 +12,7 @@ Tencent Cloud COS provides hotlink protection to help users avoid unnecessary lo
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Locate the bucket for which you want to set hotlink protection, and click its name to enter the bucket management page.
 3. Choose **Security Management** > **Hotlink Protection** and click **Edit**.
-   ![](https://main.qcloudimg.com/raw/235d3158684e32b4b92daf0e81bd6db6.png)
+
 4. Switch the status to Enabled, select a list type (blocklist or allowlist), enter the applicable domain names, and then click **Save**. The configuration items are described as follows:
    ![](https://main.qcloudimg.com/raw/6a02d7abf3ec8630ca9a89959554e2cd.png)
 
