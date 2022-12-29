@@ -13,6 +13,7 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 This API (`GET Object`) is used to get the content, in string format, of a specified file in a bucket.
 
+Download the file locally, see [Generating Pre-Signed URL](https://www.tencentcloud.com/document/product/436/31540) 
 ### Downloading a single object
 
 #### Sample code
