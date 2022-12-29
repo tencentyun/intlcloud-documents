@@ -39,3 +39,4 @@ SDK의 객체 다운로드 방식을 호출할 수 있습니다. 자세한 내�
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/43882)
