@@ -230,6 +230,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 60.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51969).
 61.[Tencent Cloud Firewall](https://www.tencentcloud.com/document/product/1160/52114).
 62.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52287).
+63.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52520).
 
 ## 10.Jurisdiction-specific Requirements
 
