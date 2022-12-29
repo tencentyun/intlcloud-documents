@@ -51,9 +51,9 @@ Tencent Cloud COSがリソースのACLにおいてサポートする操作は、
 
 次の表に、バケットACLで設定可能な操作のリストを列記しています。
 
-| 操作セット       | 説明&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                | 許可される行為                                                   |
+| 操作セット       | 説明             | 許可される行為                                                   |
 | ------------ | -------------------- | ------------------------------------------------------------ |
-| READ         | オブジェクトのリストアップ             | GetBucket，HeadBucket，GetBucketObjectVersions，ListMultipartUploads |
+| READ         | オブジェクトのリストアップ             | HeadBucket，GetBucketObjectVersions，ListMultipartUploads |
 | WRITE        | オブジェクトのアップロード、上書き、削除 | PutObject，PutObjectCopy，PostObject，InitiateMultipartUpload， UploadPart，UploadPartCopy，CompleteMultipartUpload， DeleteObject |
 | READ_ACP     | バケットのACLの読み取り     | GetBucketAcl                                                 |
 | WRITE_ACP    | バケットのACLの書き込み     | PutBucketAcl                                                 |
