@@ -12,6 +12,7 @@
 #### 功能说明
 
 GET Object 接口请求可以获取存储桶里指定文件的内容，得到文件内容是字符串格式。
+下载文件到本地请参见 [预签名 URL](https://www.tencentcloud.com/document/product/436/31540) 。
 
 ### 下载单个对象
 
