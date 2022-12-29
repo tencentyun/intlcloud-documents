@@ -53,7 +53,7 @@
 
 | 操作集       | 描述&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                | 许可的行为                                                   |
 | ------------ | -------------------- | ------------------------------------------------------------ |
-| READ         | 列出对象             | GetBucket，HeadBucket，GetBucketObjectVersions，ListMultipartUploads |
+| READ         | 列出对象             | HeadBucket，GetBucketObjectVersions，ListMultipartUploads |
 | WRITE        | 上传、覆盖和删除对象 | PutObject，PutObjectCopy，PostObject，InitiateMultipartUpload， UploadPart，UploadPartCopy，CompleteMultipartUpload， DeleteObject |
 | READ_ACP     | 读取存储桶的 ACL     | GetBucketAcl                                                 |
 | WRITE_ACP    | 写入存储桶的 ACL     | PutBucketAcl                                                 |
