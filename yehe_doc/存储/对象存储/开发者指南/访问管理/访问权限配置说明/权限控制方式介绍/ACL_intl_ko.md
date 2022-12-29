@@ -51,9 +51,9 @@ Tencent Cloud COS가 리소스 ACL에서 지원하는 작업은 사실상 일련
 
 아래 표는 버킷 ACL에서 설정을 지원하는 작업 리스트입니다.
 
-| 작업 그룹       | 설명&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                | 허용된 동작                                                   |
+| 작업 그룹       | 설명            | 허용된 동작                                                   |
 | ------------ | -------------------- | ------------------------------------------------------------ |
-| READ         | 객체 나열         | GetBucket, HeadBucket, GetBucketObjectVersions, ListMultipartUploads |
+| READ         | 객체 나열         |  HeadBucket, GetBucketObjectVersions, ListMultipartUploads |
 | WRITE        | 객체 업로드, 덮어쓰기 및 삭제 | PutObject, PutObjectCopy, PostObject, InitiateMultipartUpload, UploadPart, UploadPartCopy, CompleteMultipartUpload, DeleteObject |
 | READ_ACP     | 버킷의 ACL 읽기     | GetBucketAcl                                                 |
 | WRITE_ACP    | 버킷의 ACL 쓰기     | PutBucketAcl                                                 |
