@@ -20,14 +20,14 @@
 #### 작업 순서
 
 1. **서브 계정**으로 COS 콘솔에 로그인하여 [액세스 경로 리스트](https://console.cloud.tencent.com/cos5/access_path) 페이지로 이동한 뒤 [액세스 경로 추가]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/6fbc8c24673e0e7719d0a4e907c2c15e.png)
+
 2. **액세스 경로 추가** 알림창에서 버킷이 속한 리전을 선택한 뒤 액세스 경로를 입력합니다. 설정과 관련한 설명은 다음과 같습니다.
  - **리전**: 액세스 권한을 부여받은 버킷의 소속 리전을 선택합니다.
- - **액세스 경로**: 액세스 권한을 부여받은 버킷 이름(예: examplebucket-1250000000)을 입력합니다. `examplebucket-1250000000/exampleobject.txt`와 같이 객체의 버킷 내 경로를 입력해도 됩니다.
-![](https://main.qcloudimg.com/raw/1fe816fae295dc4a087354d701fcd941.png)
-3. 리전과 액세스 경로를 정확히 입력한 뒤 [확인]을 클릭하면, 권한을 부여받은 버킷이나 버킷 내 객체의 경로가 추가됩니다.
-![](https://main.qcloudimg.com/raw/1bef930d904b582ad4629603a390b6f6.png)
-4. 오른쪽의 [파일 리스트]를 클릭하면 루트 계정으로부터 권한을 부여받은 서브 계정의 객체를 확인할 수 있습니다.
+ - **액세스 경로**: 액세스 권한을 부여받은 버킷 이름(예: examplebucket-1250000000)을 입력합니다. `examplebucket-1250000000/doc/exampleobject.txt`와 같이 객체의 버킷 내 경로를 입력해도 됩니다.
+
+3. 리전과 액세스 경로를 정확히 입력한 뒤 **확인**을 클릭하면, 권한을 부여받은 버킷이나 버킷 내 객체의 경로가 추가됩니다.
+
+4. 오른쪽의 **파일 리스트**를 클릭하면 루트 계정으로부터 권한을 부여받은 서브 계정의 객체를 확인할 수 있습니다.
 
 
 ## 사전 설정 정책 추가
@@ -40,11 +40,11 @@
 
 
 1. 루트 계정으로 [CAM 콘솔](https://console.cloud.tencent.com/cam)에 로그인한 뒤 사용자 리스트 페이지로 이동합니다.
-2. 정책을 추가할 서브 계정을 찾아 오른쪽의 [라이선스]를 클릭한 뒤 정책 연결 페이지로 이동합니다.
-![](https://main.qcloudimg.com/raw/bd701b29b255102c37ca17ca5974099a.png)
-3. 정책 리스트에서 사전 설정 정책 [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2)(COS 내 버킷 리스트 액세스 권한)를 검색하여 추가합니다. 이미 해당 정책을 추가한 경우, Null로 표시됩니다.
-![](https://main.qcloudimg.com/raw/24fe0ed1f9360395dd995a77e9f30449.png)
-4. [확인]을 클릭하여 정책 연결을 완료합니다.
+2. 정책을 추가할 서브 계정을 찾아 오른쪽의 **라이선스**를 클릭한 뒤 정책 연결 페이지로 이동합니다.
+
+3. 정책 리스트에서 사전 설정 정책 [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2)(COS 내 버킷 리스트 액세스 권한).
+
+4. **확인**을 클릭하여 정책 연결을 완료합니다.
 5. 서브 계정명을 클릭하여 서브 계정 상세 페이지로 이동합니다. 상세 페이지에서 이미 추가한 정책을 확인할 수 있습니다. 추가한 정책을 사용하지 않으려면 바인딩을 해제합니다.
-![](https://main.qcloudimg.com/raw/7c3a9b54e0c7fa582ae9c458135a5b16.png)
+
 >?위 내용에 따라 루트 계정에서 서브 계정에 사전 설정 정책을 추가했다면, 서브 계정으로 COS 콘솔에 로그인하여 버킷 리스트 및 통계 데이터 개요를 정상적으로 조회할 수 있습니다.
