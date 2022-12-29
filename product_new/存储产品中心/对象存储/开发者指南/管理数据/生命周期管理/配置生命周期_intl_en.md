@@ -36,3 +36,4 @@ Directly call the lifecycle method in the SDK. For more information, see the SDK
 - [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/35860)
 - [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/35002)
 - [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31547)
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/35851)
