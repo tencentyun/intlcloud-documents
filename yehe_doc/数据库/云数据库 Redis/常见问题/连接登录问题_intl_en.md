@@ -15,7 +15,7 @@ The CVM and TencentDB instances must be under the same account and in the same V
 2. You can check whether they are in the same VPC or both in the classic network in the following ways:
  - You can log in to the [CVM console](https://console.cloud.tencent.com/cvm/instance), and view the network information of a CVM instance in the instance list or on the instance details page.
  - You can log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), and view the network information of a Redis instance in the instance list or on the instance details page.
- For more information, see [Viewing network type and VPC information](https://cloud.tencent.com/document/product/239/58020#wllxvpdff).
+ For more information, see [Viewing network type and VPC information](https://www.tencentcloud.com/document/product/239/41811#wllxvpdff).
 
 ### What should I do if my CVM and TencentDB for Redis instances are in different VPCs?
 You can connect to instances through CCN.
