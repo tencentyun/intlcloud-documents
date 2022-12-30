@@ -33,11 +33,11 @@ FairPlay DRM(FPS) 기술을 사용하려면 Apple FPS 배포 패키지에 요청
 1. 아래 명령을 실행하여 프라이빗 키 파일(`privatekey.pem`)을 생성합니다.
 
    ```shell
-openssl genrsa -aes256 -out privatekey.pem 1024
+openssl genrsa -aes256 -out privatekey.pem 2048
    ```
    프라이빗 키에 대한 암호(32자 이하 권장)를 설정해야 합니다. 나중에 사용할 수 있도록 암호를 기록해 두십시오.
    
-   ![image-20220421115813168](https://qcloudimg.tencent-cloud.cn/raw/ce0f6e159601c772694e79c69648e343.png)
+   ![image-20220421115813168](https://staticintl.cloudcachetci.com/yehe/backend-news/ksBs652_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16723902163742.png)
    
 2. 아래 명령을 실행하여 CSR 파일(`certreq.csr`)을 생성합니다.
 
