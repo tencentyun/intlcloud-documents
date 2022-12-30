@@ -1,7 +1,7 @@
 ## 自适应分辨率
 本节主要介绍云端应用如何支持自适应分辨率。当业务需要适配不同用户客户端的分辨率时，可以使用自适应分辨率的能力。
 ### 时序图
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/VGvx889_PRELIM__%E5%BA%94%E7%94%A8%E4%BA%91%E6%B8%B2%E6%9F%93_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/sinj239_PRELIM__%E5%BA%94%E7%94%A8%E4%BA%91%E6%B8%B2%E6%9F%93_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US%20%281%29.png)
 
 ### 步骤说明
 1. [](id:step1)业务需要在 [应用管理](https://console.tencentcloud.com/car/application) 中将应用配置为仅捕捉应用窗口模式，具体操作可参考使用[捕捉应用窗口模式](https://www.tencentcloud.com/document/product/1158/50549)。
