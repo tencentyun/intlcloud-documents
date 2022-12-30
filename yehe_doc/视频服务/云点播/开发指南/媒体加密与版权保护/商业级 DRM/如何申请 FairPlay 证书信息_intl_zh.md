@@ -33,11 +33,11 @@
 1. 创建私钥文件（`privatekey.pem`），执行以下命令：
 
    ```shell
-openssl genrsa -aes256 -out privatekey.pem 1024
+openssl genrsa -aes256 -out privatekey.pem 2048
    ```
    在创建过程中，需要指定私钥密码，务必将私钥密码记录下来，后续步骤需要使用到。另外，建议私钥密码不要超过32个字符。
    
-   ![image-20220421115813168](https://qcloudimg.tencent-cloud.cn/raw/ce0f6e159601c772694e79c69648e343.png)
+   ![image-20220421115813168](https://staticintl.cloudcachetci.com/yehe/backend-news/ksBs652_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16723902163742.png)
    
 2. 创建证书签名请求（`certreq.csr`），执行以下命令：
 
