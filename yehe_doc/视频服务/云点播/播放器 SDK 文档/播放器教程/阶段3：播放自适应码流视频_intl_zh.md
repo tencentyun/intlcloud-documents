@@ -1,0 +1,163 @@
+## 学习目标
+学习本阶段教程，您将了解如何播放自适应码流视频，包括：
+
+* 播放子流规格中最小分辨率为480p，最大分辨率1080p。
+* 使用视频中间部分的截图作为视频封面。
+* 进度条上的缩略图预览，调整为20%的间隔。
+
+阅读之前，请先确保已经学习播放器指引的 [阶段1：播放原始视频](https://www.tencentcloud.com/document/product/266/51564) 篇部分，本教程使用了 [阶段1](https://intl.cloud.tencent.com/document/product/266/38098) 篇开通的账号以及上传的视频。
+
+## 步骤1：创建自适应码流模板
+1. 登录云点播控制台，选择【视频处理设置】>[【模板设置】](https://console.cloud.tencent.com/vod/video-process/template)，单击“转自适应码流模板”页签下的【创建转自适应码流模板】。
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/PEXG353_1.png" width="800" />
+
+2. 进入“模板设置”页面后，单击【添加子流】，新建子流1、子流2和子流3，填写参数如下：
+	- **基本信息模块**：
+	  - 【模板名称】：填写 MyTestTemplate
+	  - 【打包格式】：选择 【HLS】
+	  - 【加密类型】：选择【不加密】
+	  - 【低分辨率转高分辨率】：不开启
+	  - 【转码方式】：选择【普通转码】
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/9InI915_2.png" width="622" />
+
+ - **子流信息模块**：
+<table>
+<thead>
+<tr>
+<th>子流编号</th>
+<th>视频码率</th>
+<th>分辨率</th>
+<th>帧率</th>
+<th>音频码率</th>
+<th>声道</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>子流1</td>
+<td>512kbps</td>
+<td>视频长边0px，视频短边480px</td>
+<td>24fps</td>
+<td>48kbps</td>
+<td>双声道</td>
+</tr>
+<tr>
+<td>子流2</td>
+<td>512kbps</td>
+<td>视频长边0px，视频短边720px</td>
+<td>24fps</td>
+<td>48kbps</td>
+<td>双声道</td>
+</tr>
+<tr>
+<td>子流3</td>
+<td>1024kbps</td>
+<td>视频长边0px，视频短边1080px</td>
+<td>24fps</td>
+<td>48kbps</td>
+<td>双声道</td>
+</tr>
+</tbody></table>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/MxKn964_3.jpg" width="700" />
+
+3. 单击【创建】，则生成了一个包含3个子流的自适应码流模板，模板 ID 为 `1429212`。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/1b1ffba4a8c37c8d81132e8f93c801b6.png)
+
+## 步骤2：创建雪碧图模板
+1. 登录云点播控制台，选择【视频处理设置】>[【模板设置】](https://console.cloud.tencent.com/vod/video-process/template)，单击“截图模板”页签下的【创建截图模板】。
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/hrUE650_5.png" width="700" />
+
+2. 进入“模板设置”页面后，填写模板参数：
+ * 【模板名称】：填写 MyTestTemplate。
+ * 【模板类型】：选择【雪碧图截图】。
+ * 【小图尺寸】：726px × 240px。
+ * 【采样间隔】：20%。
+ * 【小图行数】：10。
+ * 【小图列数】：10。
+
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/LIw5399_6.png)
+
+3. 单击【创建】，则生成了一个模板 ID 为 `131342` 的雪碧图模板。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/4cf44757d6dbb339aa29c3c29fc480d7.png)
+
+## 步骤3：创建任务流并发起处理
+创建新的转自适应码流模板（ID 为 1429212）和雪碧图模板（ID 为 131342）后，还需要创建一个新的任务流。
+
+1. 登录云点播控制台，选择【视频处理设置】>[【任务流设置】](https://console.cloud.tencent.com/vod/video-process/taskflow)，单击【创建任务流】：
+ * 【任务流名称】：填写 MyTestProcedure。
+ * 【任务类型配置】：勾选【自适应码流】、【截图】和【截取封面】：
+	 *  在【自适应码流任务配置】选项卡，单击【添加自适应码流模板】，在“自适应码流模板/ID”栏选择**步骤1**创建的自定义转自适应码流模板 MyTestTemplate(1429212)。
+	 *  在【截图任务配置】选项卡，单击【添加截图模板】，“截图方式”栏选择【雪碧图】，“截图模板”栏选择**步骤2**创建的自定义雪碧图模板 MyTestTemplate(131342)。
+	 *  在【截取封面图任务配置】选项卡，单击【添加截图模板】，“截图模板”栏选择【TimepointScreenshot】，“时间点选取”栏选择【百分比】，填写50%。
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Q6nQ449_8.png" width="900" />
+
+2. 单击【提交】，生成了一个名为 MyTestProcedure 的任务流。
+
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/y7xz109_9.jpg)
+
+3. 在控制台选择【媒资管理】>[【音视频管理】](https://console.cloud.tencent.com/vod/media)，勾选要处理的视频（FileId 为 387xxxxx8142975036），单击【视频处理】。
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Mpj9208_10.jpg" width="622" />
+
+4. 在视频处理弹框：
+
+ * 【处理类型】选择【任务流】。
+ * 【任务流模板】选择【MyTestProcedure】。
+
+ <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/ctNZ059_11.png" width="500" />
+
+5. 单击**确定**，等待 [任务管理](https://console.cloud.tencent.com/vod/task) 列表中的“任务状态”从“处理中”变为“已完成”，表示视频已处理完毕：
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/IuU9256_12.jpg" width="800" />
+
+6. 进入媒资管理>[**音视频管理**](https://console.cloud.tencent.com/vod/media)，单击发起转自适应码流的视频条目右侧 **管理**，进入管理页面：
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/UBpg014_13.png" width="800" />
+
+选择 **基本信息** 页签：
+ - 可以看到生成的封面，以及自适应码流输出（模板 ID 为 1429212）。
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/gtLx554_14.jpg" width="522" />
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/358v600_15.jpg" width="700" />
+
+ 选择 **截图信息** 页签：
+ - 可以看到生成的雪碧图（模板 ID 为 131342）。
+
+ <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/KiVV307_16.jpg" width="700" />
+
+## 步骤4：生成播放器签名
+本步骤，我们使用签名工具快速生成播放器签名，用于播放器播放视频。
+选择 **分发播放设置**>[**播放器签名工具**](https://console.cloud.tencent.com/vod/distribute-play/signature)，填写如下信息：
+ - **视频 fileId** 填写 **步骤3** 的  FileId（387xxxxx8142975036）
+ - **签名过期时间戳** 播放器签名过期时间，不填表示签名不过期
+ - **可播放的视频类型** 选择 **转自适应码流(不加密)**
+ - **可播放的自适应码流模板** 选择 `MyTestTemplate (1429212)`
+ - **用于缩略图预览的雪碧图** 选择 `MyTestTemplate (131342)`
+
+点击 **生成签名结果**，得到签名结果字符串。
+
+## 步骤5：播放视频
+经过步骤4，我们得到播放视频所需的三个参数：`appId`、`fileId` 以及播放器签名（`psign`），下面将展示 Web 端播放视频。
+
+### Web 端播放示例
+打开 [Web端播放器体验](https://tcplayer.vcube.tencent.com/)，配置如下：
+ - **播放器功能** 选择 **视频播放**
+ - 点击 **FileID 播放** 标签页
+ - **fileID** 填写上一步的 FileId（387xxxxx8142975036）
+ - **appID**  填写文件所属的 appId（即上一步生成播放器签名页面的 appID）
+ - **psign** 填写上一步生成的签名结果字符串
+
+点击 **预览** 即可播放视频。
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/V98D696_18.png" width="800" />
+
+### 多端播放器 Demo
+获取播放器签名后，您可以分别使用 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/LiteAVSDK/Player_Android) 和 [iOS](https://github.com/LiteAVSDK/Player_iOS)  三端的播放器 Demo 进行验证，具体请参考 Demo 的源码。
+
+## 总结
+学习本教程后，您已经掌握如何播放自适应码流视频。
+如果您希望对视频进行加密，并播放加密后的视频，请参考 [阶段4：播放加密视频](https://www.tencentcloud.com/document/product/266/51556)。

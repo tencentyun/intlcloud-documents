@@ -3,17 +3,17 @@
 
 以下で、プレーヤー署名のパラメータと生成規則について説明します。
 
-## 署名パラメータ
+## 署名パラメータ[](id:p0)
 
 | パラメータ名 | 記入必須 | タイプ | 説明 |
 | -- | -- | -- | -- |
 | appId | はい | Integer | アカウントappId。|
-| fileId |はい| String | VODファイルID。|
+| fileId | はい|  String | VODファイルID。|
 | contentInfo | はい | Object | VODファイルIDで再生する具体的なコンテンツ。[ContentInfoタイプ](#p1)です。下記の3種類のうち1種類を再生できます。<li> [アダプティブビットレートストリーミングへのトランスコード](https://intl.cloud.tencent.com/document/product/266/33942)で出力されたオーディオビデオ。暗号化は行っても行わなくても構いません。</li><li>[トランスコード](https://intl.cloud.tencent.com/document/product/266/33938)で出力されたオーディオビデオ。</li><li>[アップロード](https://intl.cloud.tencent.com/document/product/266/9760)されたオリジナルオーディオビデオ。</li>|
-| currentTimeStamp |はい| Integer | 配布された署名の Unixタイムスタンプ。 |
-| expireTimeStamp | いいえ | Integer | 配付された署名の有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します。 |
+| currentTimeStamp | はい|  Integer | 配布された署名の Unixタイムスタンプ|
+| expireTimeStamp |  いいえ |  Integer |  配付された署名の有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します |
 | urlAccessInfo | いいえ | Object | 再生リンクアクセス設定パラメータ。[Keyリンク不正アクセス防止](https://intl.cloud.tencent.com/document/product/266/33986)設定、再生ドメイン名およびプロトコルパラメータが含まれます。[UrlAccessInfoタイプ](#p4)です。 |
-| drmLicenseInfo | いいえ | Object | 暗号化コンテンツのキー設定パラメータ。[DrmLicenseInfo タイプ](#p5)です。 |
+| drmLicenseInfo |  いいえ |  Object | 暗号化コンテンツのキー設定パラメータ。[DrmLicenseInfo タイプ](#p5)です。 |
 
 #### ContentInfoタイプ[](id:p1)
 
@@ -47,7 +47,7 @@
 | パラメータ名 | 記入必須 | タイプ | 説明 |
 | -- | -- | -- | -- |
 | t | いいえ | String |<ul style="margin:0;"><li>16進文字列で、リンクの有効期限を表します。</li><li>具体的な意味と値については [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のtパラメータをご参照ください。</li><li>入力しない場合は有効期間内であることを表します。</li></ul>|
-| exper | いいえ | Integer |<ul style="margin:0;"> <li>プレビュー時間。単位は秒で、10進法で表示します。</li><li>プレビュー時間を指定する場合、時間は30秒未満とする必要があります。</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のexperパラメータをご参照ください。</li></ul> |
+| exper | いいえ | Integer | <ul style="margin:0;"> <li>プレビュー時間。単位は秒で、10進法で表示します。</li><li>プレビュー時間を指定する場合、時間は30秒未満とする必要があります。</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のexperパラメータをご参照ください。</li></ul> |
 | rlimit | いいえ | Integer | <ul style="margin:0;"><li>異なるIPの端末で許可される最大再生数。10進法で表示します。</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のrlimitパラメータをご参照ください。</li></ul> |
 | us | いいえ | String | <ul style="margin:0;"><li>リンクを一意に識別できるリンクID。</li><li>具体的な意味と値については、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) のusパラメータをご参照ください。</li></ul> |
 | domain | いいえ | String | 再生時に使用するドメイン名。入力しない場合またはDefaultを入力した場合は、[デフォルト配信設定](https://intl.cloud.tencent.com/document/product/266/35768)のドメイン名を使用することを表します。 |
@@ -57,13 +57,12 @@
 
 | パラメータ名 | 記入必須 | タイプ | 説明 |
 | -- | -- | -- | -- |
-| expireTimeStamp ｜ いいえ ｜ Integer | キーの有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します |
+| expireTimeStamp | いいえ | Integer | キーの有効期限のUnixタイムスタンプ、空のままは有効期限内であることを表します |
 
 >?
 >- [サブアプリケーション](https://intl.cloud.tencent.com/document/product/266/33987) を使用する場合、appIdパラメータとしてサブアプリケーションAppIdを設定する必要があります。
->- 署名パラメータの`t`、`exper`、`rlimit`、`us`、`uid`の説明と値は、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) の同名パラメータと完全に一致します。
+>- 署名パラメータの`t`、`exper`、`rlimit`、`us`の説明と値は、 [リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) の同名パラメータと完全に一致します。
 ## 署名計算
-
 VODプレーヤーの署名には、Header、PayLoad、Key によって計算され組み合わせられたデジタルトークンである [JWT](https://tools.ietf.org/html/rfc7519)（JSON Web Token）を採用します。
 
 ### Header
@@ -95,13 +94,12 @@ Payload はJSON形式であり、次に例示するようにプレーヤーの�
   "urlAccessInfo": {
     "t": "6323e6b0",
     "rlimit": 3,
-    "us": "72d4cd1101",
-    "uid": "1234abcd"
+    "us": "72d4cd1101"
   }
 }
 ```
 
-### Key
+### Key[](id:p6)
 
 Keyは署名の計算時に使用するキーです。ここでは[デフォルト配信設定](https://intl.cloud.tencent.com/document/product/266/35768)の`再生キー`を使用します。
 
@@ -114,9 +112,9 @@ Keyは署名の計算時に使用するキーです。ここでは[デフォル�
 最終的に得られたTokenが、VODプレーヤー署名となります。
 
 >?HMACSHA256については  [RFC - HMACSHA256](https://tools.ietf.org/html/rfc4868#page-3) をご参照ください。base64UrlEncodeについては [RFC - base64UrlEncode](https://tools.ietf.org/html/rfc4648#page-7) をご参照ください。
+
 署名の計算および署名の検証を容易にするため、VODコンソールでは署名発行ツールおよび検証ツールを提供しています。
 * [プレーヤー署名ツール](https://console.cloud.tencent.com/vod/distribute-play/signature) 。
-
 ### 計算例
 
 例えばあるユーザーの、appIdが`1255566655`、fileIdが`4564972818519602447`のビデオについてプレーヤー署名を生成する場合で、かつ以下のようであったとします。
@@ -153,18 +151,24 @@ base64UrlEncode で処理した後の結果：
   "urlAccessInfo": {
     "t": "6323e6b0",
     "rlimit": 3,
-    "us": "72d4cd1101",
-    "uid": "1234abcd"
+    "us": "72d4cd1101"
   }
 }
 ```
 base64UrlEncode で処理した後の結果：
-`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19`。
+`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ`。
 3.  再生キーをKey（`TxtyhLlgo7J3iOADIron`）としてHMAC計算を実行した場合、Signature は次のようになります。
-`_FR39nKwArkQ6TOy7KAdvLvEjyVZ9ty4mqzDcJpGJiU`。
+`QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`。
 4. 最終的に Token はこのようになります。
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19._FR39nKwArkQ6TOy7KAdvLvEjyVZ9ty4mqzDcJpGJiU`。
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`。
 
 ## サンプルコード
 
 VODはPython、Java、Go、C#、PHPおよびNode.jsなどの言語用に複数のプレーヤーのサンプルコードを提供しています。詳細については[プレーヤー署名 - 署名の例](https://intl.cloud.tencent.com/document/product/266/38096)をご参照ください。
+
+## よくあるエラー
+プレーヤー署名を使用した際、Player SDKがエラーコードを返した場合、よくある原因は次のとおりです。
+- **署名の計算 [KEY](#p6) が間違っている**。 [デフォルト配信設定](https://intl.cloud.tencent.com/document/product/266/35768) 内の`再生キー`を使用する必要があります。KEY[リンク不正アクセス防止パラメータ](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) 内の`KEY`パラメータを誤って使用しているかどうかをチェックすることができます。
+- **[署名パラメータ](#p0) 入力ミス**。例：
+ - **パラメータタイプのエラー** 例えばappIdが整数で、誤って `appId:"125000123"`（文字列型）と入力している。または`contentInfo`内のトランスコードテンプレートパラメータが整数で、誤って`transcodeDefinition: "14011"`（文字列型）と入力している
+ - **パラメータ値が有効範囲を超えている** 例えば`contentInfo`内の再生するオーディオビデオタイプのパラメータを、誤って`audioVideoType: "Transocde"`（スペルミス、有効な列挙値ではない）と入力している

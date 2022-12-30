@@ -3,7 +3,7 @@ A player signature is used to authorize a playback device to play videos. If you
 
 This document describes the parameters of a player signature and how to generate a signature.
 
-## Signature Parameters
+## Signature Parameters[](id:p0)
 
 | Parameter | Required | Type | Description |
 | -- | -- | -- | -- |
@@ -61,9 +61,8 @@ This document describes the parameters of a player signature and how to generate
 
 >?
 >- If you use a [subapplication](https://intl.cloud.tencent.com/document/product/266/33987), set the `AppId` of the subapplication as the value of the `appId` parameter.
->- The meanings and valid values of the signature parameters `t`, `exper`, `rlimit` , and `us` are the same as those of the [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).
+>- The description and valid values of `t`, `exper`, `rlimit`, and `us` in signature parameters are the same as those in [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F).
 ## Signature Calculation
-
 The VOD player signature is a [JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519), which consists of a header, a payload, and a key.
 
 ### Header
@@ -100,7 +99,7 @@ The payload is in JSON format and includes the player signature parameters. Belo
 }
 ```
 
-### Key
+### Key[](id:p6)
 
 The key is what’s used to calculate the signature. In the example below, the [default playback key](https://intl.cloud.tencent.com/document/product/266/35768) is used.
 
@@ -113,9 +112,9 @@ The key is what’s used to calculate the signature. In the example below, the [
 The token generated is the VOD player signature.
 
 >?For more information about the HMACSHA256 algorithm, see [RFC 4868 - Using HMAC-SHA-256, HMAC-SHA-384, and HMAC-SHA-512 with IPsec](https://tools.ietf.org/html/rfc4868#page-3). For more information about `base64UrlEncode`, see [Base 64 Encoding with URL and Filename Safe Alphabet](https://tools.ietf.org/html/rfc4648#page-7).
+
 VOD offers a signature generation tool and a signature verification tool:
 * [Player signature tools](https://console.cloud.tencent.com/vod/distribute-play/signature)
-
 ### Calculation example
 
 Suppose your `appId` is `1255566655` and you want to generate a player signature for a video whose file ID is `4564972818519602447`. The other parameters are as follows:
@@ -157,12 +156,19 @@ The result generated after `base64UrlEncode` is:
 }
 ```
 The result generated after `base64UrlEncode` is:
-`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ`。
+`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ`.
 3. Use the playback key (`TxtyhLlgo7J3iOADIron`) to generate an HMAC signature:
-`QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`。
+`QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`.
 4. The token generated is:
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`。
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`.
 
 ## Sample Code
 
 VOD provides Python, Java, Go, C#, PHP, and Node.js sample code for calculating player signatures. For details, see [Sample Player Signature](https://intl.cloud.tencent.com/document/product/266/38096).
+
+## Common Errors
+If you use the player signature and the player SDK returns an error code, common causes include:
+- **Incorrect signature calculation [key](#p6)**. The **playback key** in the [default distribution configuration](https://intl.cloud.tencent.com/document/product/266/35768) rather than the `KEY` parameter in the [key hotlink protection configuration](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) should be used.
+- **Incorrect [signature parameters](#p0)**; for example:
+ - **Incorrect parameter type**; for example, `appId` is an integer, but the entered value is `appId:"125000123"` (string); or, the transcoding template parameter in `contentInfo` is an integer, but the entered value is `transcodeDefinition: "14011"` (string type).
+ - **Incorrect parameter value**; for example, `audioVideoType: "Transocde"` (typo) is entered for the audio/video type parameter in `contentInfo`.

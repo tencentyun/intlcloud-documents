@@ -3,12 +3,12 @@ The Player SDK provides video playback capabilities for live and video-on-demand
 <tbody>
 <tr  ><th style="width:5%">Feature Module</td>
 <th style="width:20%">Feature</td>
-<th style="width:70%">Description</td>
-<th style="width:1%">Web</td>
-<th style="width:1%">iOS and Android</td>
-<th style="width:1%">Flutter</td>
+<th style="width:60%">Description</td>
+<th style="width:5%">Web</td>
+<th style="width:3%">iOS and Android</td>
+<th style="width:3%">Flutter</td>
 </tr>
-<tr  ><td colspan="1" rowspan="14" >Playback protocol/format</td>
+<tr  ><td colspan="1" rowspan="15" >Playback protocol/format</td>
 <td>Video-on-demand and live playback</td>
 <td>Supports both video-on-demand and live playback capabilities.</td>
 <td>&#10003;</td>
@@ -69,6 +69,12 @@ The Player SDK provides video playback capabilities for live and video-on-demand
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
+<tr  ><td>AV1</td>
+<td>Play back AV1 videos.</td>
+<td>Partially <br>supported</td>
+<td>Partially <br>supported</td>
+<td>Partially <br>supported</td>
+</tr>
 <tr  ><td>Dual-channel audio</td>
 <td>Support dual-channel audio playback.</td>
 <td>×</td>
@@ -93,7 +99,7 @@ The Player SDK provides video playback capabilities for live and video-on-demand
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
-<tr  ><td colspan="1" rowspan="6" >Playback performance</td>
+<tr  ><td colspan="1" rowspan="7" >Playback performance</td>
 <td>Predownloading</td>
 <td>Preownload the content of a video file in advance and configure the size and resolution of the files to be predownloaded. Predownload can greatly reduce the time to first frame (TTFF) and is optimized to reduce the energy consumption of the playback device and deliver a higher performance.</td>
 <td>&#10003;</td>
@@ -112,6 +118,12 @@ The Player SDK provides video playback capabilities for live and video-on-demand
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
+<tr  ><td>Adaptive bitrate</td>
+<td>Play back adaptive bitrate streaming videos in HLS, DASH, or WebRTC format at the optimal bitrate automatically selected according to the bandwidth.
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
 <tr  ><td>Real-time network download speed</td>
 <td>Get the real-time download speed to display it to end users when lag occurs. This is also a prerequisite for implementing the bandwidth prediction module of adaptive bitrate streaming.</td>
 <td>&#10003;</td>
@@ -119,7 +131,7 @@ The Player SDK provides video playback capabilities for live and video-on-demand
 <td>&#10003;</td>
 </tr>
 <tr  ><td>Multiple instances</td>
-<td>Add multiple players on the same page to play videos at the same time</td>
+<td>Add multiple players on the same page to play videos at the same time.</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -156,18 +168,18 @@ The Player SDK provides video playback capabilities for live and video-on-demand
 <td>&#10003;</td>
 </tr>
 <tr  ><td>Picture-in-picture (PiP)</td>
-<td>Play back media in a small window in PiP mode. For a mobile application integrating the SDK, PiP is supported both within and out of the application.</td>
+<td>Play back media in a small window in PiP mode. For a mobile application integrating the SDK, PiP is supported both within the application and out of the application.</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
 <tr  ><td>Seeking within cache</td>
-<td>Do not clear the cached content during seeking and support fast seeking.</td>
+<td>Support fast seeking without clearing the cached content during seeking.</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
-<tr  ><td>Live streaming time shifting</td>
+<tr  ><td>Live stream time shifting</td>
 <td>Support time shifting for live streaming, which allows users to drag the progress bar and play back a live stream from a previous point.</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -210,13 +222,13 @@ The Player SDK provides video playback capabilities for live and video-on-demand
 <td>&#10003;</td>
 </tr>
 <tr  ><td>Custom playback start time</td>
-<td>Specify the start time for playback</td>
+<td>Specify the start time for playback.</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
 <tr  ><td>Adjustable-speed playback</td>
-<td>Play back media at 0.5x–3x speed. Retain the original tone of the audio when the audio playback speed is adjusted.</td>
+<td>Play back media at 0.5x–3x speed without affecting the tone of the audio.</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>

@@ -13,6 +13,7 @@ The complex compositing feature can be used to produce audios/videos with comple
 | Clipping | Clips segments of audio or video within the specified time period. |
 | Splicing | Splices videos/audios/images together in chronological order. |
 | Transition | Adds transition effects between segments when splicing multiple videos/images together. |
+| Speed adjustment | Adjusts the playback speed of the video or audio material. |
 
 ## Use Cases
 
@@ -22,6 +23,7 @@ The complex compositing feature can be used to produce audios/videos with comple
 | News media | When preparing a news release, news media outlets need to produce news videos that combine various collected materials.  |
 | TV series promotion | When a TV series is released, promotional videos generally need to be prepared to attract more viewers.  |
 | Social media video | Travel, food, and parenting vloggers produce vlogs and other content.  |
+| Live camera broadcasting | Plays back hours of security surveillance and scenic spot video footages recorded by cameras in one minute. |
 
 ## Directions
 

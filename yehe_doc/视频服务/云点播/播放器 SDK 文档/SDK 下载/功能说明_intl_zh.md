@@ -3,12 +3,12 @@
 <tbody>
 <tr  ><th style="width:5%">功能模块</td>
 <th style="width:20%">功能项</td>
-<th style="width:70%">功能简介</td>
-<th style="width:1%">Web</td>
-<th style="width:1%">iOS & Android</td>
-<th style="width:1%">Flutter</td>
+<th style="width:60%">功能简介</td>
+<th style="width:5%">Web</td>
+<th style="width:3%">iOS & Android</td>
+<th style="width:3%">Flutter</td>
 </tr>
-<tr  ><td colspan="1" rowspan="14" >播放协议/格式</td>
+<tr  ><td colspan="1" rowspan="15" >播放协议/格式</td>
 <td>点播或直播支持</td>
 <td>同时支持点播播放和直播播放能力</td>
 <td>&#10003;</td>
@@ -69,6 +69,12 @@
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
+<tr  ><td>AV1</td>
+<td>支持播放 AV1 编码格式的视频</td>
+<td>部分<br>支持</td>
+<td>部分<br>支持</td>
+<td>部分<br>支持</td>
+</tr>
 <tr  ><td>双声道音频</td>
 <td>支持播放双声道音频</td>
 <td>×</td>
@@ -93,7 +99,7 @@
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
-<tr  ><td colspan="1" rowspan="6" >播放性能</td>
+<tr  ><td colspan="1" rowspan="7" >播放性能</td>
 <td>预下载</td>
 <td>支持提前下载指定视频文件内容，并支持配置预下载视频文件的大小及分辨率；可大幅减少首帧耗时，另外包含对低能耗的针对性优化，性能更佳</td>
 <td>&#10003;</td>
@@ -108,6 +114,12 @@
 </tr>
 <tr  ><td>精准 seek</td>
 <td>支持在进度条上跳转到指定位置进行播放，移动端可精确到帧级别，Web 端精准到毫秒级</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>自适应码率</td>
+<td>支持播放 HLS、DASH 和 WebRTC 的自适应码流，可根据网络带宽自动选择合适的码率进行播放
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -161,7 +173,7 @@
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
-<tr  ><td>cache 内 seek</td>
+<tr  ><td>缓存内 seek</td>
 <td>支持已经缓存的视频内容在 seek 时不清除缓存内容并快速 seek</td>
 <td>&#10003;</td>
 <td>&#10003;</td>

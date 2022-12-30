@@ -1,63 +1,70 @@
 ## 学習目標
+この段階のチュートリアルを学習するとビデオを暗号化し、プレーヤーを使用して暗号化したビデオを再生する方法を理解、把握することができます。
+お読みになる前に、プレーヤーガイドの [第1段階：オリジナルビデオの再生](https://www.tencentcloud.com/document/product/266/51564)の部分をすでに学習しているか確認してください。このチュートリアルでは、 [第1段階](https://intl.cloud.tencent.com/document/product/266/38098)でアクティブ化したアカウントとアップロードしたビデオを使用します。
 
-本段階のチュートリアルを学習すると、ビデオを暗号化し、プレーヤーを使用して暗号化後のビデオを再生する方法を理解、把握することができます。
-
-お読みになる前に、プレーヤーガイドの[第1段階：プレーヤーを使用したビデオ再生](https://intl.cloud.tencent.com/document/product/266/38098)と[第2段階：リンク不正アクセス防止後のビデオ再生の有効化](https://intl.cloud.tencent.com/document/product/266/38292)の部分をすでに学習しているか確認してください。このチュートリアルでは、[第1段階](https://intl.cloud.tencent.com/document/product/266/38098)でアクティブ化したアカウントとアップロードしたビデオを使用して、[第2段階](https://intl.cloud.tencent.com/document/product/266/38292)に従ってリンク不正アクセス防止を有効にする必要があります。
-
-[](id:step1)
 ## 手順1：ビデオの暗号化
-1. VODコンソールにログインし、**メディア資産管理**>[**ビデオ管理**](https://console.cloud.tencent.com/vod/media)を選択し、処理するビデオ（FileId：528xxx3757278095）にチェックを入れて、**ビデオ処理**をクリックします。
-2. ビデオ処理の画面で：
+1. VODコンソールにログインし、 **メディア資産管理**>[**オーディオビデオ管理**](https://console.cloud.tencent.com/vod/media)を選択し、処理するビデオ（FileIdは387xxxxx8142975036）にチェックを入れ、**タスクフロー**をクリックしてください。
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/7ut4367_1.jpg" width="622" />
+
+2. **メディア処理**インターフェースで
  - **処理タイプ**は**タスクストリーミング**を選択します。
  - **タスクフローのテンプレート**は**SimpleAesEncryptPreset**を選択します。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/810b84b193ad96be992810e3877b1ac7.png" width="" style="zoom:80%;" /><span>
+
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/GkuI523_2.jpg" width="" style="zoom:100%;" /><span>
+
 >?
 >- SimpleAesEncryptPresetはプリセットのタスクフローです。テンプレート12のアダプティブビットレートストリーム、テンプレート10のスクリーンキャプチャによるタイトル画像作成、テンプレート10のキャプチャしたスプライトイメージを使用します。
 >- テンプレート12のアダプティブビットレートストリーミングはトランスコーディングして暗号化したマルチビットレートによる出力です。
+
 3. **OK**をクリックし、[オーディオビデオ処理](https://console.cloud.tencent.com/vod/task)リストの「タスクステータス」が「処理中」から「完了」に変われば、ビデオの処理が完了したことを表します。
-![](https://qcloudimg.tencent-cloud.cn/raw/da5e02a95cf19cae9146e009874ccf55.png)
-4. ビデオの「操作」欄の下の**管理**をクリックし、管理画面に入ります：
- - 「基本情報」タブを選択すると、生成したカバー画像、および暗号化したアダプティブビットレートストリーミングの出力（テンプレートID：12）が表示されます。
- - 「スクリーンキャプチャ情報」タグを選択すると、生成したスプライトイメージ（テンプレートID：10）を見ることができます。
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/hUM7408_3.png" style="zoom:80%;" />
 
-[](id:step2)
-##  手順2：プレビューによる再生体験
+4. メディア資産管理>[**オーディオビデオ管理**](https://console.cloud.tencent.com/vod/media)と進み、暗号化を開始したビデオエントリー右側の**管理**をクリックし、管理ページに進みます。
 
-前の手順で、ビデオをすでにアップロードし、ビデオに対する処理を行いました。ここでは、3種類の端末のプレーヤーを使用して、再生結果を素早く体験します。
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/ETsG597_4.jpg" width="800" />
 
-1. **メディア資産管理**>[**メディア資産管理**](https://console.cloud.tencent.com/vod/media)を選択し、**ステップ1**でアップロードして処理したビデオを探し、「操作」バーの下にある**管理**をクリックし、**プレーヤープレビュー**を選択します。
-2. **プレーヤー設定**はbasicDrmPresetを選択します。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/60418fcab52a70fc2fbcf7056f7929f2.png" width="622" />
->? basicDrmPresetはプリセットのプレーヤー設定で、テンプレート12を再生してアダプティブビットレートストリーミングに変換して出力する際や、テンプレート10でスプライトイメージをキャプチャして出力する際に使用します。
-3. デフォルトの配信ドメイン名がリンク不正アクセス防止を有効にしているため、**再生制御**のタブは、プレビュー時のリンク不正アクセス防止の有効期限、トライアル視聴時間の長さなどの選定をサポートしています。ここではデフォルトのパラメータを維持できます（再生リンク不正アクセス防止の有効期限はデフォルトで1日で、トライアル視聴時間の長さ、最大再生可能IP数は記入不要です）。
- <img src="https://qcloudimg.tencent-cloud.cn/raw/5968a5d6428bff9c3e3e0e1d4ce7431e.png" width="622" />
-4. **Webプレーヤー**の中で、プレーヤーの中央のボタンをクリックすると、Web端末での再生が体験できます。
-<img src="https://main.qcloudimg.com/raw/976ec23a988bcb494c4b225e635a5dba.png" width="522" />
-5. **モバイルプレイヤー**の中で、**QRコードをスキャンしてダウンロードする**をクリックして、「Tencent Cloud Toolkit」をインストールします。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f0e72b414ee3dc8084dda39d8a5d5c91.png" width="522" />
-6. 携帯電話でTencent Cloudツールキットを開き、**プレーヤー**を選択し、右上隅のスキャンコードをクリックすると、モバイル端末で再生を体験できます。
- <img src="https://qcloudimg.tencent-cloud.cn/raw/06e77f14c2e1020e8936ce1ab30a6ca3.png" width="422" />
+**基本情報** タブを選択します。
+ - 生成したタイトル画像、および暗号化されたアダプティブビットレートストリーミングの出力を見ることができます（テンプレートID：12）。
 
-[](id:step3)
-## 手順3： Demoを使用して検証
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/KBkV486_5.jpg" width="622" />
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/5NsV447_6.jpg" width="700" />
 
-暗号化したビデオを再生できるようにするには、プレーヤーで有効期間内の署名を使用する必要があります。以下、署名ツールを使用して素早く署名を発行する方法をご紹介します。
+ **スクリーンキャプチャ情報** タブを選択します。
+ - 生成したスプライトイメージを見ることができます（テンプレートID：10）。
 
-1. [プレーヤー - 署名発行ツール](https://vods.cloud.tencent.com/signature/super-player-sign.html)のページを開き、パラメータを入力します。
- - **ユーザーappId**：ビデオが属するappId：1400xxx357を入力します（サブアプリケーションが使用される場合は、サブアプリケーションのappIdを入力します）。
- - **ビデオfileId**：ビデオのFileId：528xxx3757278095を入力します。
- - **現在のUnixタイムスタンプ**：ツールが現在のUnix時間（1591756516）を自動的に生成しているため、記入不要です。
- -  **プレーヤー設定**：プリセットのプレーヤー設定名：basicDrmPresetを入力します。
- - **署名期限切れUnixタイムスタンプ**：署名自身の有効期限（未記入可、デフォルトでは1日後に期限切れ）。
- - **リンクの有効期限**：Keyリンク不正アクセス防止の有効期限。6時間後の16進数Unix時間：5ee09b44を入力します。
- - **リンク不正アクセス防止Key**：前に取得したリンク不正アクセス防止Key：2WExxx48eWを入力します。
->! basicDrmPresetはプリセットのプレーヤー設定で、テンプレート12を再生してアダプティブビットレートストリーミングに変換して出力する際や、テンプレート10でスプライトイメージをキャプチャして出力する際に使用します。
-2. **署名の生成**をクリックします。生成した署名が**署名生成結果**のテキストボックスに表示されます。
+ <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/XTu8560_7.jpg" width="700" />
 
+### ステップ2：プレーヤー署名の生成
+このステップでは、署名ツールを使用して速やかにプレーヤー署名を生成し、プレーヤーのビデオ再生に使用します。
+**配信と再生の設定**>[**プレーヤー署名ツール**](https://console.cloud.tencent.com/vod/distribute-play/signature)を選択し、以下の情報を入力します。
+ - **ビデオfileId**に**ステップ1**のFileId（387xxxxx8142975036）を入力します
+ - **署名期限タイムスタンプ** プレーヤー署名の有効期間です。入力がなければ署名の有効期限が切れていないことを意味します
+ - **再生可能なビデオタイプ**は**アダプティブビットレートストリーミング変換(暗号化)**を選択します
+ - **暗号化タイプ**は**プライベート暗号化（SimpleAES）**を選択します
+ - **再生可能なABSテンプレート**は`Adpative-HLS-Encrypt (12)`を選択します
+ - **サムネイルプレビューに使用するスプライトイメージ** `SpriteScreenshot (10)`を選択します
+
+**署名生成結果**をクリックし、署名結果文字列を取得します。
+
+## ステップ3：ビデオ再生
+ステップ2で、ビデオ再生に必要な3つのパラメータである`appId`、`fileId` 、プレーヤー署名（`psign`）を取得しています。Web端末ビデオ再生は以下のとおりです。
+
+### Web端末再生の例
+[Web端末プレーヤー体験](https://tcplayer.vcube.tencent.com/)を開き、以下のとおり設定します。
+ - **プレーヤー機能**は**ビデオ再生**を選択します
+ - **FileID再生**タブをクリックします
+ - **fileID**に前のFileId（387xxxxx8142975036）を入力します
+ - **appID**にファイルが所属するappId（前のステップで生成したプレーヤー署名ページのappID）を入力します
+ - **psign**に前のステップで生成した署名結果文字列を入力します
+
+**プレビュー** をクリックするとビデオを再生できます。
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Eapx633_9.png" width="800" />
+
+### マルチプレーヤーDemo
 プレーヤーの署名を取得した後、それぞれ、[Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/LiteAVSDK/Player_Android)、[iOS](https://github.com/LiteAVSDK/Player_iOS)という3つの端末のプレーヤーDemoで検証を行えます。詳細については、Demoのソースコードをご参照ください。
->?コンソールの**メディア資産管理** >[**ビデオ管理**](https://console.cloud.tencent.com/vod/media)> **プレーヤープレビュー**では、プレビュービデオに対応するWebプレーヤーのソースコードを取得し、直接参照、使用することができます。
-<img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
+
 
 ## まとめ
 
-このチュートリアルの学習を終えると、ビデオの暗号化の方法、およびプレーヤーを使用して暗号化後のビデオを再生する方法を理解できたことになります。
+このチュートリアルの学習を終えると、ビデオの暗号化の方法、プレーヤーで再生する方法について理解できたことになります。
