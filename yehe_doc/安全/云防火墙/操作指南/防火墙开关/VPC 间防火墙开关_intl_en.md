@@ -174,6 +174,6 @@ Cloud Firewall provides a dashboard displaying the access relation of VPC firewa
 
 
 ## More information
-- For more information about how to configure firewall toggles for your public IPs and the associated cloud assets that you own, please see [Edge Firewall Toggle](https://intl.cloud.tencent.com/document/product/1160/49809).
+- For more information about how to configure firewall toggles for your public IPs and the associated cloud assets that you own, please see Edge Firewall Toggle.
 - For more information about how to manage traffic and protect assets in the private network or forward network traffic based on SNAT and DNAT, please see [NAT Edge Firewall Toggle](https://intl.cloud.tencent.com/document/product/1160/49810).
 - For more information about the inter-VPC firewall, please see [Inter-VPC Firewall](https://intl.cloud.tencent.com/document/product/1160/49830).
