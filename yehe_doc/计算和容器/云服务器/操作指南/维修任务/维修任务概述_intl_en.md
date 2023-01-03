@@ -1,6 +1,6 @@
 Maintenance Task is designed to provide users with standardized CVM troubleshooting and authorized maintenance services.
 
-To improve the running performance and stability of instances, and ensure the safe and efficient operation of the underlying platform, we regularly maintain and upgrade the underlying CDH and platform architecture without CVM shutdown. During the upgrade and maintenance, your CVM instances can operate stably without the need to interrupt the business applications.
+To improve the running performance and stability of instances, and ensure the safe and efficient operation of the underlying platform, we regularly maintain and upgrade the underlying host and platform architecture without CVM shutdown. During the upgrade and maintenance, your CVM instances can operate stably without the need to interrupt the business applications.
 
 Maintenance Task helps users learn and handle all kinds of issues of CVM instances in real time, prevent potential downtime risks in advance, improve maintenance efficiency and reduce maintenance costs. You can back up data of abnormal instances to ensure stable operation of your business. Also, you can configure preset authorization policies or use APIs as needed for automatic Ops of CVM failures and risks.
 
@@ -12,7 +12,7 @@ Maintenance Task is now fully available for free. After you create and use a CVM
 
 #### Full coverage of exceptions and risks
 
-All kinds of sudden exceptions (such as sudden abnormal downtime of underlying CDH, causing the CVM to abnormally restart), running risks (predict the risks of various software and hardware failures of the underlying CDH), disk exceptions/warnings (instance disk usage exceptions/ early warnings) and scheduled maintenance and upgrade tasks are covered.
+All kinds of sudden exceptions (such as sudden abnormal downtime of underlying host, causing the CVM to abnormally restart), running risks (predict the risks of various software and hardware failures of the underlying host), disk exceptions/warnings (instance disk usage exceptions/ early warnings) and scheduled maintenance and upgrade tasks are covered.
 
 #### Elastic configuration
 
@@ -30,7 +30,7 @@ Users are notified with all kinds of CVM instance exceptions. Corresponding main
 
 #### Real-time monitoring of risks on instances and avoid in advance
 
-When the CVM instances are currently running normally, but the platform detects that there are software and hardware risks on the underlying CDH, or there are maintenance tasks planned by the platform for the CVM instances, users can receive relevant information in real time, make maintenance plans, and authorize for maintenance during low-peak business periods to avoid failures in advance and eliminate potential downtime risks.
+When the CVM instances are currently running normally, but the platform detects that there are software and hardware risks on the underlying host, or there are maintenance tasks planned by the platform for the CVM instances, users can receive relevant information in real time, make maintenance plans, and authorize for maintenance during low-peak business periods to avoid failures in advance and eliminate potential downtime risks.
 
 #### Automatic Ops for CVM exceptions
 
