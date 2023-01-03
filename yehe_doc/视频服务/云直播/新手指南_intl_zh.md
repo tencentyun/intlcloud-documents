@@ -7,9 +7,9 @@
 
 ## 二、云直播计费
 
-标准直播服务计费说明请参见请参见[标准直播价格总览](https://intl.cloud.tencent.com/document/product/267/2819)
+标准直播服务计费说明请参见 [标准直播价格总览](https://intl.cloud.tencent.com/document/product/267/2819)
 
-> ?若您需查看个人账单信息，请参见  [账单查询](https://intl.cloud.tencent.com/document/product/267/36278)。
+> ?若您需查看个人账单信息，请参见 [账单查询](https://intl.cloud.tencent.com/document/product/267/36278)。
 
 
 ## 三、控制台概览
