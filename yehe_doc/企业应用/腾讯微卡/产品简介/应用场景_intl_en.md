@@ -1,4 +1,4 @@
-## Shopping
+## Payment
 
 Users can use the QR code to shop in canteens, cafes, and supermarkets, and their payments can be automatically deducted from corporate subsidies, vouchers, etc. If the balance in their corporate wallet is insufficient, the payment can be deducted from their personal wallet.
 
