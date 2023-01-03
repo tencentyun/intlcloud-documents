@@ -34,7 +34,7 @@ When exceptions that affect instance availability and performance are detected, 
 </tr>
 <tr>
 <td>Instance running risk</td>
-<td>The instance is currently running normally, but there are risks on software and hardware of the CDH or the underlying platform, which may cause the fluctuation of the instance performance or the abnormal downtime.</td>
+<td>The instance is currently running normally, but there are risks on software and hardware of the host or the underlying platform, which may cause the fluctuation of the instance performance or the abnormal downtime.</td>
 <td>To complete the maintenance as soon as possible to avoid risks of the underlying software and hardware and potential downtime, it is recommended to back up your business data in advance and go to the Maintenance Task console to perform the following operations:
 <ol style="margin-bottom:0px">
 <li>(Optional) Back up the instance data.</li>
