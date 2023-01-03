@@ -6,7 +6,7 @@ A message tag is used to categorize messages under a topic. When a producer in T
 
 If a consumer configures no tags when subscribing to a topic, all messages in the topic will be delivered to the consumer for consumption.
 
-> !Message tag is a subscription dimension. The same subscription cannot subscribe to messages with different tags; that is, messages with different tags need to be placed in different subscriptions.
+> !A single consumer can use multiple tags for a subscription, and the relationship between these tags is OR. Different consumers must use the same tag.
 
 ## Use Cases
 
@@ -33,7 +33,7 @@ Tagged messages are passed in through `Properties` and can be obtained as follow
 <dependency>
     <groupId>org.apache.pulsar</groupId>
     <artifactId>pulsar-client</artifactId>
-    <version>2.x.x</version> <!-- The specific version is to be added -->
+    <version>2.10.1</version> <!-- Recommended -->
 </dependency>
 :::
 </dx-codeblock>
@@ -43,7 +43,7 @@ Tagged messages are passed in through `Properties` and can be obtained as follow
 
 :::Go
 
-The latest master version of SDK for Go is required.
+v0.8.0 or later is recommended.
 
 <dx-codeblock>
 :::  go
@@ -83,7 +83,7 @@ go get -u github.com/apache/pulsar-client-go@master
 
 <dx-codeblock>
 :::  Java
-     // Send the messages
+     // Send the message
      MessageId msgId = producer.newMessage()
          .property("tag1", "TAGS")
          .value(value.getBytes(StandardCharsets.UTF_8))
@@ -106,7 +106,7 @@ go get -u github.com/apache/pulsar-client-go@master
           .subscriptionInitialPosition(SubscriptionInitialPosition.Earliest).subscribe();
 :::
 :::  Go
-	   // Send the messages
+	   // Send the message
 	   if msgId, err := producer.Send(ctx, &pulsar.ProducerMessage{
 	              Payload: []byte(fmt.Sprintf("hello-%d", i)),
 	     Properties: map[string]string{
@@ -130,7 +130,7 @@ go get -u github.com/apache/pulsar-client-go@master
 ::: Specify multiple tags
 <dx-codeblock>
 :::  Java
-	  // Send the messages
+	  // Send the message
 		MessageId msgId = producer.newMessage()
 		    .property("tag1", "TAGS")
 		    .property("tag2", "TAGS")
@@ -183,7 +183,7 @@ go get -u github.com/apache/pulsar-client-go@master
 ::: Mix tags and properties
 <dx-codeblock>
 :::  Java
-   	// Send the messages
+   	// Send the message
    	MessageId msgId = producer.newMessage()
    	    .property("tag1", "TAGS")
    	    .property("tag2", "TAGS")
