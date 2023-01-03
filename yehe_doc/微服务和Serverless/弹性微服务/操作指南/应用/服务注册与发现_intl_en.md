@@ -63,21 +63,6 @@ metadata:
 </dx-codeblock>
 :::
 
-::: eureka
-Suppose the requested Eureka address is `10.0.1.31:8083`:
-<dx-codeblock>
-:::  bash
-apiVersion: v1
-data:
-  tse-default-spring-cloud-config.properties: |
-    eureka.client.serviceUrl.defaultZone=http://10.0.1.37:8761/eureka/
-    eureka.instance.prefer-ip-address=true
-kind: ConfigMap
-metadata:
-  name: tse-config
-:::
-</dx-codeblock>
-:::
 ::: nacos
 Suppose the requested Nacos address is `10.0.120.11:8848`:
 <dx-codeblock>
@@ -117,13 +102,6 @@ You can also set this by directly adding the JVM launch parameters as follows:
 # Suppose the requested ZooKeeper address is `10.0.1.30:2181`
 -Dspring.cloud.zookeeper.connectString=10.0.1.30:2181 
 -Dspring.cloud.zookeeper.discovery.preferIpAddress=true
-```
-:::
-::: eureka
-```bash
-# Suppose the requested Eureka address is `10.0.1.31:8083`
--Deureka.client.serviceUrl.defaultZone=http://10.0.1.31:8083/eureka/ 
--Deureka.instance.preferIpAddress=true
 ```
 :::
 ::: nacos
