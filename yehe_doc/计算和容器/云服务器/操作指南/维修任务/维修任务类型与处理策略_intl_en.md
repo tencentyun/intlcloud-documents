@@ -23,7 +23,7 @@ When exceptions that affect instance availability and performance are detected, 
 </thead>
 <tbody><tr>
 <td>Instance running exception</td>
-<td>Sudden software and hardware failures or system errors of the underlying CDH of the instance, which cause abnormal downtime or restart of the instance.</td>
+<td>Sudden software and hardware failures or system errors of the underlying host of the instance, which cause abnormal downtime or restart of the instance.</td>
 <td>When a maintenance task of abnormal instance running is triggered, the platform immediately performs relevant maintenance and tries to restart the abnormal instance.<br/>It is recommended to wait for the completion of instance restarting, and check the update progress of maintenance task.</td>
 <td>Choose the policy based on the current status of the maintenance task:
 <ul style="margin-bottom:0px">
@@ -97,7 +97,7 @@ When exceptions that affect instance availability and performance are detected, 
 </td>
 <tr>
 <td>Instance maintenance and upgrade</td>
-<td>Maintenance without CVM shutdown is initiated due to reasons such as underlying CDH architecture and software upgrades to improve instance performance and security.</td>
+<td>Maintenance without CVM shutdown is initiated due to reasons such as underlying host architecture and software upgrades to improve instance performance and security.</td>
 <td>To complete maintenance as soon as possible to improve instance performance and security, it is recommended to back up your business data in advance, and go to the Maintenance Task console to perform the following operations:
 <ol style="margin-bottom:0px">
 <li>(Optional) Back up the instance data.</li>
