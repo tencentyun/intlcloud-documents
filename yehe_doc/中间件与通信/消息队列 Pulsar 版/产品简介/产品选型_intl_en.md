@@ -7,13 +7,13 @@ To meet diverse requirements in different scenarios, TDMQ for Pulsar provides pr
 
 TDMQ for Pulsar product portfolio is as shown below.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/26b2a5a2b1f25c47025f03d20fee0a28.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/3mS4348_PRELIM__%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%20Pulsar%20%E7%89%88_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-1.jpg)
 
 ## Product Selection Process
 
 We recommend you select a product type based on the following process.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/34a865a0f5bdd41ff8865a9aae77b112.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/a7Gg310_PRELIM__%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%20Pulsar%20%E7%89%88_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-2.jpg)
 
 ## Product Selection Analysis
 
