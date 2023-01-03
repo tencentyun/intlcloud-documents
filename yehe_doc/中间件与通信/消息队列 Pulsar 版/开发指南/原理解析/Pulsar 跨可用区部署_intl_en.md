@@ -3,7 +3,7 @@
 
 Pulsar supports multi-AZ deployment, which means when you purchase a Pulsar cluster in a region with at least three AZs, you can select up to three AZs for multi-AZ deployment. Partition replicas of this cluster will be forcibly distributed across the nodes in all AZs, which ensures that your cluster can normally provide services even if it is unavailable in a single AZ.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c641db94fbacd0a1a8a2a12b927f6c71.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/wSbv048_PRELIM__%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%20Pulsar%20%E7%89%88_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.jpg)
 
 ### How multi-AZ deployment works
 
