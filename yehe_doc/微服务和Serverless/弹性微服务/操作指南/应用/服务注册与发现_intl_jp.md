@@ -63,21 +63,6 @@ metadata:
 </dx-codeblock>
 :::
 
-::: eureka
-申請するeurekaのアドレスを10.0.1.31:8083と仮定します。
-<dx-codeblock>
-:::  bash
-apiVersion: v1
-data:
-  tse-default-spring-cloud-config.properties: |
-    eureka.client.serviceUrl.defaultZone=http://10.0.1.37:8761/eureka/
-    eureka.instance.prefer-ip-address=true
-kind: ConfigMap
-metadata:
-  name: tse-config
-:::
-</dx-codeblock>
-:::
 ::: nacos
 申請するnacosのアドレスを10.0.120.11:8848と仮定します。
 <dx-codeblock>
@@ -117,13 +102,6 @@ JVM起動パラメータを直接追加して設定することもできます�
 # 申請するzookeeperのアドレスを10.0.1.30:2181と仮定します
 -Dspring.cloud.zookeeper.connectString=10.0.1.30:2181 
 -Dspring.cloud.zookeeper.discovery.preferIpAddress=true
-```
-:::
-::: eureka
-```bash
-# 申請するeurekaのアドレスを10.0.1.31:8083と仮定します
--Deureka.client.serviceUrl.defaultZone=http://10.0.1.31:8083/eureka/ 
--Deureka.instance.preferIpAddress=true
 ```
 :::
 ::: nacos
