@@ -19,6 +19,23 @@
 
 >?请根据 [CAM 自定义创建子用户](https://intl.cloud.tencent.com/document/product/598/13674) 的操作指引完成**设置用户权限**之前的步骤。
 
+3、在“设置用户权限”页面：
+
+    1.搜索并勾选预设策略 'Intlpartnersmgt' 。
+    2.单击**下一步**。
+
+4、在“审阅信息和权限”分栏下单击**完成**，完成子用户的创建，在成功页面下载并保管好该子用户的登录链接和安全凭证，其中包含的信息如下表：
+
+|信息|	来源|	作用	|是否必须保存|
+| -------------- |-------------- |-------------- |-------------- |
+|登录链接|	在页面中复制|	方便登录控制台，省略填写主帐号的步骤|	否|
+|用户名|	安全凭证 CSV 文件|	登录控制台时填写|	是|
+|密码|	安全凭证 CSV 文件|	登录控制台时填写|	是|
+|SecretId|	安全凭证 CSV 文件|	调用服务端 API 时使用，详见 [访问密钥](https://www.tencentcloud.com/document/product/598/32675)|	是|
+|SecretKey|	安全凭证 CSV 文件|	调用服务端 API 时使用，详见 [访问密钥](https://www.tencentcloud.com/document/product/598/32675)|	是|
+
+5、将上述登录链接和安全凭证提供给被授权方，后者即可使用该子用户对渠道合作伙伴做所有操作，包括访问渠道合作伙伴控制台、请求渠道合作伙伴服务端 API 等。
+
 #### 将渠道合作伙伴权限授予已存在的子帐号
 
 1、以腾讯云 [主帐号](https://www.tencentcloud.com/document/product/598/32633) 的身份访问 CAM 控制台的 [用户列表](https://console.cloud.tencent.com/cam)，单击想要进行授权的子帐号。
@@ -32,4 +49,3 @@
 1、以腾讯云[主帐号](https://www.tencentcloud.com/document/product/598/32633)的身份访问 CAM 控制台的[用户列表](https://console.cloud.tencent.com/cam)，单击想要解除授权的子帐号。
 
 2、在**用户详情**页面权限栏找到预设策略 "Intlpartnersmgt"，单击右侧的**解除**。按页面提示完成解除授权流程即可。
-
