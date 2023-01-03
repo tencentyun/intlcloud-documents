@@ -1,7 +1,3 @@
->!
->- The free beta test of TDMQ for Pulsar virtual cluster has ended on December 1, 2021, and billing has officially started since then.
->- To reward you for activating TDMQ for Pulsar before December 1, 2021, we will offer you a 1-month free trial, and you can use the service free of charge between December 1, 2021 and December 31, 2021.
-
 This document describes TDMQ for Pulsar's billing mode and billable items.
 
 ## Billing Modes
