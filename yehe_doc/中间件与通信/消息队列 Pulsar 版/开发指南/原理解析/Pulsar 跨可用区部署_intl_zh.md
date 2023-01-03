@@ -3,7 +3,7 @@
 
 Pulsar 支持跨可用区部署，即在有 3 个或 3 个以上可用区的地域购买 Pulsar 集群时，可以最多选择 3 个可用区购买跨可用区实例。该实例分区副本会强制分布在各个可用区节点上，这种部署方式能够让您的实例在单个可用区不可用情况下仍能正常提供服务。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c641db94fbacd0a1a8a2a12b927f6c71.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/wSbv048_PRELIM__%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%20Pulsar%20%E7%89%88_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.jpg)
 
 ### 跨可用区部署原理
 
@@ -18,7 +18,7 @@ Pulsar 跨可用区容灾是通过机架感知原理实现，即将不同组件�
 
 #### NetworkTopology
 
-网络拓扑用一个树状的分层结构来表示一个集群中的 Bookie 节点信息。一个 Bookie 集群可以由很多的 date center（region）组成。在一个 data center 内部包含了分布在不同 rack 上的机器，在树状结构中，叶子节点表示 bookie 信息。
+网络拓扑用一个树状的分层结构来表示一个集群中的 Bookie 节点信息。一个 Bookie 集群可以由很多的 data center（region）组成。在一个 data center 内部包含了分布在不同 rack 上的机器，在树状结构中，叶子节点表示 bookie 信息。
 
 - **示例1：**Region A 有三个 bookie， bk1 , bk2 and bk3 , 它们的网络位置是， /region-a/rack-1/bk1 , /region-a/rack-1/bk2 , /region-a/rack-2/bk3 , 网络拓扑结构就是如下所示：
 ```
