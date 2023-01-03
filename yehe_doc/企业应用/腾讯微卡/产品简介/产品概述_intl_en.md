@@ -1,0 +1,3 @@
+Tencent Cloud Ecard leverages QR codes to help schools and enterprises go paperless at zero costs. It interconnects various card pass scenarios such as canteen, access control, attendance, and check-in and makes it easier to manage temporary visitors.
+
+It is widely suitable for education, transportation, manufacturing, healthcare, industrial park, and many other use cases, helping achieve refined management of offline/online personnel, even across multiple regions. It can be integrated with many apps and mobile payment services and help quickly aggregate internal services and office applications in different industries.
