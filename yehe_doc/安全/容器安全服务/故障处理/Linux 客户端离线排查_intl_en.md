@@ -29,9 +29,9 @@ If the processes exist, but TCSS is offline, the cause is network disconnection 
   **Normally**, the returned result is as shown below:
 ![](https://main.qcloudimg.com/raw/93a2f6f05867b88aa41e753e4c4e83c0.png)
   **If it is inaccessible**:
-	 i. Change the `dns nameserver` field: `vim /etc/resolv.conf`. Comment out the original `nameserver` field first, and then add the `nameserver` field. For more information on the nameserver IP, see [Private Network Access](https://www.tencentcloud.com/document/product/213/5225).
-	 ii. Then, run `telnet s.yd.qcloud.com 5574` again to check whether you can connect to it.
-	 iii. If it can be connected, wait for a few minutes (the time length depends on the network conditions), and then you will see that the server is online again.
+	i. Change the `dns nameserver` field: `vim /etc/resolv.conf`. Comment out the original `nameserver` field first, and then add the `nameserver` field. For more information on the nameserver IP, see [Private Network Access](https://www.tencentcloud.com/document/product/213/5225).
+	ii. Then, run `telnet s.yd.qcloud.com 5574` again to check whether you can connect to it.
+	iii. If it can be connected, wait for a few minutes (the time length depends on the network conditions), and then you will see that the server is online again.
 
 2. Make sure your firewall policies allow the TCP ports 5574, 8080, 80, and 9080.
 3. If the TCSS processes exist and the offline status of the agent is not caused by network issues, package the agent logs (log path: `/usr/local/qcloud/YunJing/log`) and [contact us](https://www.tencentcloud.com/contact-us) for assistance.
