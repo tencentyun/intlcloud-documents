@@ -14,7 +14,8 @@ Financial services such as securities trading highly require real-time performan
 
 ## Security Service
 Security cleansing service providers, games, and large website applications are often under various high-traffic attacks such as Syn Flood and ICMP Flood. An ordinary public IP is generally published in a single region, so all attack traffic flows through the single ingress/egress. With AIA, an IP can be simultaneously published in multiple regions without the need to change the DNS configuration, and the attack traffic is diverted to nearby ingresses for processing.
->Anti-DDoS Basic is enabled for AIA by default, which gives an AIA IP the same basic DDoS attack prevention capabilities enjoyed by a BGP IP. If you need a higher level of protection, please purchase [Anti-DDoS Pro](https://www.tencentcloud.com/document/product/1029).
+
+>?Anti-DDoS Basic is enabled for AIA by default, which gives an AIA IP the same basic DDoS attack prevention capabilities enjoyed by a BGP IP. If you need a higher level of protection, please purchase [Anti-DDoS Pro](https://www.tencentcloud.com/document/product/1029).
 >
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/RsuE490_PRELIM__Anycast%20%E5%85%AC%E7%BD%91%E5%8A%A0%E9%80%9F_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-4.svg)
 
