@@ -80,7 +80,7 @@ This API returns common error responses and error codes. For more information, p
 
 #### Request
 
-The following request adds the `{age:18}` and `{name:xiaoming}` tags to the `exampleobject.txt` object in the `examplebucket-1250000000` bucket. COS configures the tags and returns 204 (success).
+The following request adds the `{age:18}` and `{name:xiaoming}` tags to the `exampleobject.txt` object in the `examplebucket-1250000000` bucket. COS configures the tags and returns 200 (success).
 
 ```plaintext
 PUT /exampleobject.txt?tagging HTTP/1.1
@@ -109,7 +109,7 @@ Content-Type: application/xml
 #### Response
 
 ```plaintext
-HTTP/1.1 204 No Content
+HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 0
 Connection: keep-alive
