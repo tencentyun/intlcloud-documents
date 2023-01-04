@@ -11,7 +11,7 @@
 使用腾讯云搭建直播间首先要在 [控制台](https://console.cloud.tencent.com/im) 创建一个即时通信 IM 应用，如下图所示：
 ![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081650.png)
 
-### 创建TRTC或直播应用
+### 创建 TRTC  或直播应用
 
 直播间的功能，除了依赖即时通信 IM 的功能外，还依赖直播功能，直播功能可以用 [腾讯云 TRTC](https://console.cloud.tencent.com/trtc) 或者 [云直播](https://console.cloud.tencent.com/live/livestat) 来实现。TRTC 应用在创建完即时通信 IM 应用后开通即可，如下图所示：
 ![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081714.png)
@@ -44,7 +44,7 @@
 
 ### 集成客户端 SDK
 
-在准备工作都完成好后，需要将即时通信 IM 以及实时音视频 TRTC 的客户端 SDK 集成到用户项目中去。开发者可以根据自己业务需要，选择不同的集成方案。可参见 [快速集成系列文档](https://intl.cloud.tencent.com/document/product/1047/34547)。
+在准备工作都完成好后，需要将即时通信 IM 以及实时音视频 TRTC 的客户端 SDK 集成到用户项目中去。开发者可以根据自己业务需要，选择不同的集成方案。
 
 接下来文章梳理了直播间中常见的功能点，提供最佳实践方案供开发者参见，并附上相关实现代码。
 
@@ -93,7 +93,7 @@
 </tr><tr  ><td>业务后台维护直播间状态，使用 IM 服务端 API 发送 <a href="https://intl.cloud.tencent.com/document/product/1047/34959">群自定义消息</a> 通知群内用户。</td>
 <td>需要频繁多次获取直播间状态时，相比于将直播间状态存 IM 群资料，直播间状态存业务后台可以减少 IM SDK 的调用频率。<br>提供在未集成 IM SDK 地方提供获取直播间状态的可能。</td>
 <td>需要业务后台额外提供读写直播间状态模块。<br>增加获取直播间数据异常概率，直播间数据来自业务后台和 IM 群资料两部分。<br>发送自定义消息有丢失的可能，当消息量特别大时，低优先级消息会优先被丢弃从而影响直播间状态的显示。因此这里建议使用高优先自定义消息。</td>
-</tr><tr  ><td>通过群自定义字段或者群属性存储直播间状态，通过客户端 SDK <a href="https://cloud.tencent.com/document/product/269/75406">群属性更改回调</a> 通知群内用户。</td>
+</tr><tr  ><td>通过群自定义字段或者群属性存储直播间状态，通过客户端 SDK <a href="https://intl.cloud.tencent.com/document/product/1047/48175">群属性更改回调</a> 通知群内用户。</td>
 <td>开发者不需要提供额外的读写直播间状态模块。<br>群属性变更回调理论上不存在丢失可能。<br>直播间数据都从群资料中获取，统一数据源，减少异常。</td>
 <td>在高曝光模块需要频繁获取群资料，增大 IM 压力。<br>在未集成 IM SDK 模块，需要通过业务后台调用 IM 服务端 SDK 获取群资料。且调用频率有限制。</td>
 </tr></tbody>
@@ -104,7 +104,7 @@
 
 1. 在直播间内，使用 方案一获取直播间状态
 2. 在直播间外、使用方案二获取直播间状态
-3. 业务后台直播间状态更改后及时通过 [IM 服务端接口](https://intl.cloud.tencent.com/document/product/1047/34621) 同步数据到 IM 群资料（[群属性](https://intl.cloud.tencent.com/document/product/1047/34962)、[群自定义字段](https://intl.cloud.tencent.com/document/product/1047/34962)）
+3. 业务后台直播间状态更改后及时通过 [IM 服务端接口](https://intl.cloud.tencent.com/document/product/1047/34621) 同步数据到 IM 群资料（[群属性](https://intl.cloud.tencent.com/document/product/1047/44188)、[群自定义字段](https://intl.cloud.tencent.com/document/product/1047/34962)）
 
 ### 群类型选择
 
@@ -123,7 +123,7 @@
 - 支持向全体在线用户推送消息（群系统通知）。
 - 申请加群后，无需管理员审批，直接加入。
 
->? IM Web &小程序 SDK 限制同一用户在同一时间内，只能进入一个 AVChatRoom，在 IM 的多端登录场景，如果用户登录终端一在直播间 A 观看直播，在 [控制台配置](https://console.cloud.tencent.com/im/login-message) 允许多端登录情况下，该用户登录终端二进入直播间 B 观看，这时终端一的直播间 A 会被退群。
+>? IM Web SDK 限制同一用户在同一时间内，只能进入一个 AVChatRoom，在 IM 的多端登录场景，如果用户登录终端一在直播间 A 观看直播，在 [控制台配置](https://console.cloud.tencent.com/im/login-message) 允许多端登录情况下，该用户登录终端二进入直播间 B 观看，这时终端一的直播间 A 会被退群。
 
 ### 直播间公告
 
@@ -352,7 +352,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createTextAtMessageRes = await Tenc
 
 :::
 
-::: Web&
+::: Web
 
 ```js
 // 发送文本消息
@@ -571,14 +571,71 @@ promise.then(function(imResponse) {
 
 直播间实时展示在线人数在直播场景也是一个十分常见的需求，实现方案分为两种，但两种也是各有优劣。
 
-1. 通过客户端SDK提供的 [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API 定时轮训的方式拉取群在线人数。
+1. 通过客户端SDK提供的 [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API 定时轮训的方式拉取群在线人数。
 2. 通过用户进退群的后台回调统计，并通过服务端 API 如 [群系统通知](https://intl.cloud.tencent.com/document/product/1047/34958) 或 [群自定义消息](https://intl.cloud.tencent.com/document/product/1047/34959) 下发给群内所有成员。
 
 通过客户端 SDK 提供的接口拉取在线人数的方式获取在线人数对于单直播间模式的用户来说基本可以满足用户需求。但对于 App 有多个直播间且需要在大量曝光位置展示直播间在线人数的需求，建议使用第二种方案来统计在线人数。
 
 >? 开发者服务端在向客户端发送在线人数统计消息时，可采用定时发送的方式，如每五秒发一次。但这种方式，在直播间人数变化不大时有额外的网络开销。建议开发者按照群人数变化率监测的方式来进行更新。
 >
-> 直播间在线人数的准确性与实时性的优先级，开发者可以根据自身的业务来设置。
+>直播间在线人数的准确性与实时性的优先级，开发者可以根据自身的业务来设置。
+
+获取直播间在线人数代码如下：
+
+<dx-tabs>
+::: Android
+
+```java
+2TIMManager.getGroupManager().getGroupOnlineMemberCount("group_avchatroom", new V2TIMValueCallback<Integer>() {
+  @Override
+  public void onSuccess(Integer integer) {
+      // 获取直播群在线人数成功
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+      // 获取直播群在线人数失败
+  }
+});
+```
+
+::: 
+
+::: iOS&Mac
+
+```swift
+[[V2TIMManager sharedInstance] getGroupOnlineMemberCount:@"group_avchatroom" succ:^(NSInteger count) {
+    // 获取直播群在线人数成功
+} fail:^(int code, NSString *desc) {
+    // 获取直播群在线人数失败
+}];
+```
+
+::: 
+
+::: Flutter
+
+```dart
+groupManager.getGroupOnlineMemberCount(groupID: '');
+```
+
+::: 
+
+::: Web
+
+```js
+// v2.8.0 起，支持查询直播群在线人数
+let promise = tim.getGroupOnlineMemberCount('group1');
+promise.then(function(imResponse) {
+  console.log(imResponse.data.memberCount);
+}).catch(function(imError) {
+  console.warn('getGroupOnlineMemberCount error:', imError); // 获取直播群在线人数失败的相关信息
+});
+```
+
+::: 
+
+</dx-tabs>
 
 ### 直播间禁言
 
@@ -594,18 +651,58 @@ promise.then(function(imResponse) {
 ::: Android
 
 ```java
-V2TIMGroupListener groupListener = new V2TIMGroupListener() {
-  // 群成员相关通知、群生命周期相关通知、加群申请相关通知、话题事件监听回调等，不一一列举
+// 禁言群成员 userB 1分钟
+V2TIMManager.getGroupManager().muteGroupMember("groupA", "userB", 60, new V2TIMCallback() {
   @Override
-  public void onGroupInfoChanged(String groupID, List< V2TIMGroupChangeInfo > changeInfos) {
-    // 群资料更改
+  public void onSuccess() {
+      // 禁言群成员成功
   }
+
   @Override
-  public void onMemberInfoChanged (String groupID, List< V2TIMGroupMemberChangeInfo > v2TIMGroupMemberChangeInfoList) {
-    // 群成员资料更改
+  public void onError(int code, String desc) {
+      // 禁言群成员失败
   }
-  
-};
+});
+
+// 全员禁言
+V2TIMGroupInfo info = new V2TIMGroupInfo();
+info.setGroupID("groupA");
+info.setAllMuted(true);
+V2TIMManager.getGroupManager().setGroupInfo(info, new V2TIMCallback() {
+  @Override
+  public void onSuccess() {
+      // 全员禁言成功
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+      // 全员禁言失败
+  }
+});
+
+V2TIMManager.getInstance().addGroupListener(new V2TIMGroupListener() {
+  @Override
+  public void onMemberInfoChanged(String groupID, List<V2TIMGroupMemberChangeInfo> v2TIMGroupMemberChangeInfoList) {
+    // 禁言群成员监听
+    for (V2TIMGroupMemberChangeInfo memberChangeInfo : v2TIMGroupMemberChangeInfoList) {
+      // 被禁言用户 ID
+      String userID = memberChangeInfo.getUserID();
+      // 禁言时间
+      long muteTime = memberChangeInfo.getMuteTime();
+    }
+  }
+
+  @Override
+  public void onGroupInfoChanged(String groupID, List<V2TIMGroupChangeInfo> changeInfos) {
+    // 全员禁言监听
+    for (V2TIMGroupChangeInfo groupChangeInfo : changeInfos) {
+      if (groupChangeInfo.getType() == V2TIMGroupChangeInfo.V2TIM_GROUP_INFO_CHANGE_TYPE_SHUT_UP_ALL) {
+        // 是否全员禁言
+        boolean isMuteAll = groupChangeInfo.getBoolValue();
+      }
+    }
+  }
+});
 ```
 
 ::: 
@@ -613,18 +710,43 @@ V2TIMGroupListener groupListener = new V2TIMGroupListener() {
 ::: iOS&Mac
 
 ```swift
-V2TIMManager.getInstance().addGroupListener(groupListener);
+// 禁言群成员 user1 1分钟
+[[V2TIMManager sharedInstance] muteGroupMember:@"groupA" member:@"user1" muteTime:60 succ:^{
+    // 禁言群成员成功
+} fail:^(int code, NSString *desc) {
+    // 禁言群成员失败
+}];
+
+// 全员禁言
+V2TIMGroupInfo *info = [[V2TIMGroupInfo alloc] init];
+info.groupID = @"groupA";
+info.allMuted = YES;
+[[V2TIMManager sharedInstance] muteGroupMember:@"groupA" member:@"user1" muteTime:60 succ:^{
+    // 全员禁言成功
+} fail:^(int code, NSString *desc) {
+    // 全员禁言失败
+}];
+
 [[V2TIMManager sharedInstance] addGroupListener:self];
-
-// 群成员相关通知、群生命周期相关通知、加群申请相关通知、话题事件监听回调等，不一一列举
-- (void)onGroupInfoChanged:(NSString *)groupID memberList:(NSArray<V2TIMGroupMemberInfo *>*)memberList {
-    // 有群资料更改
+- (void)onMemberInfoChanged:(NSString *)groupID changeInfoList:(NSArray <V2TIMGroupMemberChangeInfo *> *)changeInfoList {
+    // 禁言群成员监听
+    for (V2TIMGroupMemberChangeInfo *memberChangeInfo in changeInfoList) {
+      // 被禁言用户 ID
+      NSString *userID = memberChangeInfo.userID;
+      // 禁言时间
+        uint32_t muteTime = memberChangeInfo.muteTime;
+    }
 }
 
-- (void)onMemberInfoChanged:(NSString *)groupID member:(V2TIMGroupMemberInfo *)member {
-    // 群成员资料更改
+- (void)onGroupInfoChanged:(NSString *)groupID changeInfoList:(NSArray <V2TIMGroupChangeInfo *> *)changeInfoList {
+    // 全员禁言监听
+    for (V2TIMGroupChangeInfo groupChangeInfo in changeInfoList) {
+      if (groupChangeInfo.type == V2TIM_GROUP_INFO_CHANGE_TYPE_SHUT_UP_ALL) {
+        // 是否全员禁言
+        BOOL isMuteAll = groupChangeInfo.boolValue;
+      }
+    }
 }
-
 ```
 
 ::: 
@@ -632,12 +754,19 @@ V2TIMManager.getInstance().addGroupListener(groupListener);
 ::: Flutter
 
 ```dart
-// 监听加入群组事件
- TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(onGroupInfoChanged: ((groupID, memberList) {
-    // 有群资料更改
-},onMemberInfoChanged: ((groupID, memberList) {
-    // 群成员资料更改
-})));
+// 禁言群成员 userB 10分钟
+groupManager.muteGroupMember(groupID: '',userID: 'userB',seconds: 10);
+
+// 全员禁言
+groupManager.setGroupInfo(info: V2TimGroupInfo(isAllMuted: true,groupID: '',groupType: 'Public'));
+
+TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(onMemberInfoChanged: (groupID, v2TIMGroupMemberChangeInfoList) {
+    //群成员信息更改
+  },
+  onGroupInfoChanged: (groupID,info){
+    // 群信息修改
+  }
+  ));
 ```
 
 ::: 
@@ -645,10 +774,40 @@ V2TIMManager.getInstance().addGroupListener(groupListener);
 ::: Web
 
 ```js
-let onGroupListUpdated = function(event) {
-   console.log(event.data);// 包含 Group 实例的数组
-};
-tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
+tim.setGroupMemberMuteTime(options);
+let promise = tim.setGroupMemberMuteTime({
+  groupID: 'group1',
+  userID: 'user1',
+  muteTime: 600 // 禁言10分钟；设为0，则表示取消禁言
+});
+promise.then(function(imResponse) {
+  console.log(imResponse.data.group); // 修改后的群资料
+  console.log(imResponse.data.member); // 修改后的群成员资料
+}).catch(function(imError) {
+  console.warn('setGroupMemberMuteTime error:', imError); // 禁言失败的相关信息
+});
+// 设置群成员在话题中的禁言时间
+let promise = tim.setGroupMemberMuteTime({
+  groupID: 'topicID',
+  userID: 'user1',
+  muteTime: 600 // 禁言10分钟；设为0，则表示取消禁言
+});
+promise.then(function(imResponse) {
+  console.log(imResponse.data.group); // 修改后的群资料
+  console.log(imResponse.data.member); // 修改后的群成员资料
+}).catch(function(imError) {
+  console.warn('setGroupMemberMuteTime error:', imError); // 禁言失败的相关信息
+});
+// v2.6.2 起，提供了全体禁言和取消禁言的功能。目前群全体禁言后，不支持下发群提示消息。
+let promise = tim.updateGroupProfile({
+  groupID: 'group1',
+  muteAllMembers: true, // true 表示全体禁言，false表示取消全体禁言
+});
+promise.then(function(imResponse) {
+  console.log(imResponse.data.group) // 修改成功后的群组详细资料
+}).catch(function(imError) {
+  console.warn('updateGroupProfile error:', imError); // 修改群组资料失败的相关信息
+});
 ```
 
 ::: 
@@ -657,9 +816,9 @@ tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
 [群组监听其他 SDK 版本代码示例](https://intl.cloud.tencent.com/document/product/1047/48466)
 
 需要注意的是，群成员禁言状态的变更默认不会下发通知给客户端，需要到 [控制台进行配置](https://console.cloud.tencent.com/im/qun-setting)：
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090219.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/07c6f6e757a2c05358e7d79ac83b7c68.png)
 
->?由于目前 AVChatRoom 不支持资料变更通知的下发，所以针对与 AvChatRoom，开发者可以发送[自定义消息](https://intl.cloud.tencent.com/document/product/1047/34959)进行通知。
+>?客户端 SDK 暂时不支持直播间禁言，可使用服务端 API 进行 [封禁](https://intl.cloud.tencent.com/document/product/1047/50296) 以及 [解封](https://intl.cloud.tencent.com/document/product/1047/50297)。
 
 ### 直播间踢人
 
@@ -672,10 +831,78 @@ tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
 3. 客户端收到自定义消息并解析 userID 中包含自己 userID 时主动调用退群接口
 4. 配置用户进群前回调，检测当前进群用户是否在步骤2的黑名单中。
 
-[控制台相关配置](https://console.cloud.tencent.com/im/callback-setting)如图所示：
+[控制台相关配置](https://console.cloud.tencent.com/im/callback-setting) 如图所示：
 
 ![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090320.png)
 
+
+>!**在客户端 SDK6.6.X 之后以及 Flutter SDK4.1.1之后，支持直播间踢人**
+
+可参考代码如下：
+
+<dx-tabs>
+::: Android
+
+```java
+List<String> userIDList = new ArrayList<>();
+userIDList.add("userB");
+V2TIMManager.getGroupManager().kickGroupMember("groupA", userIDList, "", new V2TIMValueCallback<List<V2TIMGroupMemberOperationResult>>() {
+  @Override
+  public void onSuccess(List<V2TIMGroupMemberOperationResult> v2TIMGroupMemberOperationResults) {
+      // 踢人成功
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+      // 踢人失败
+  }
+});
+
+V2TIMManager.getInstance().addGroupListener(new V2TIMGroupListener() {
+  @Override
+  public void onMemberKicked(String groupID, V2TIMGroupMemberInfo opUser,
+  List<V2TIMGroupMemberInfo> memberList) {
+      // 群成员被踢通知
+  }
+});
+```
+
+::: 
+
+::: iOS&Mac
+
+```swift
+[[V2TIMManager sharedInstance] kickGroupMember:@"groupA" memberList:@[@"user1"] reason:@"" succ:^(NSArray<V2TIMGroupMemberOperationResult *> *resultList) {
+    // 踢人成功
+} fail:^(int code, NSString *desc) {
+    // 踢人失败
+}];
+
+[[V2TIMManager sharedInstance] addGroupListener:self];
+- (void)onMemberKicked:(NSString *)groupID opUser:(V2TIMGroupMemberInfo *)opUser memberList:(NSArray<V2TIMGroupMemberInfo *>*)memberList {
+    // 群成员被踢通知
+}
+```
+
+::: 
+
+::: Flutter
+
+```dart
+groupManager.kickGroupMember(groupID: '',memberList: []);
+```
+
+::: 
+
+::: Web
+
+```js
+tim.deleteGroupMember(options);
+```
+
+::: 
+
+</dx-tabs>
 
 #### 直播间敏感内容过滤
 
@@ -749,13 +976,67 @@ tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
 
 如果是非旗舰版，开发者也可通过`getGroupMemberList`与群监听中的 onGroupMemberEnter 和 onGroupMemberQuit 回调，在客户端维护当前在线群成员列表。但此方案用户退出直播间重新进入后，也只能获取最新的30位群成员。
 
+<dx-tabs>
+::: Android
+
+```java
+// 通过 filter 参数指定只拉取群主的资料
+int role = V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_OWNER;
+V2TIMManager.getGroupManager().getGroupMemberList("testGroup", role, 0, 
+    new V2TIMValueCallback<V2TIMGroupMemberInfoResult>() {
+    @Override
+    public void onError(int code, String desc) {
+        // 拉取失败
+    }
+
+    @Override
+    public void onSuccess(V2TIMGroupMemberInfoResult v2TIMGroupMemberInfoResult) {
+        // 拉取成功
+    }
+});
+```
+
+::: 
+
+::: iOS&Mac
+
+```swift
+[[V2TIMManager sharedInstance] getGroupMemberList:@"groupA" filter:V2TIM_GROUP_MEMBER_FILTER_OWNER nextSeq:0 succ:^(uint64_t nextSeq, NSArray<V2TIMGroupMemberFullInfo *> *memberList) {
+    // 拉取成功
+} fail:^(int code, NSString *desc) {
+    // 拉取失败
+}];
+```
+
+::: 
+
+::: Flutter
+
+```dart
+// 通过 filter 参数指定只拉取群主的资料 ，可指定ALL拉取全部群成员
+groupManager.getGroupMemberList(count: 10,filter: GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ADMIN,nextSeq: '0',offset: 0,groupID: "",);
+```
+
+::: 
+
+::: Web
+
+```js
+tim.getGroupMemberList(options);
+
+```
+
+::: 
+
+</dx-tabs>
+
 ### 直播间弹幕抽奖
 
 直播抽奖与消息统计类似，都需要用到发消息后回调，通过检测消息内容，将命中抽奖关键词的用户加入抽奖池。在此不做过多的补充。
 
 ### 直播弹幕
  AVChatRoom 支持弹幕、 送礼和点赞等多消息类型，轻松打造良好的直播聊天互动体验。
-![](https://qcloudimg.tencent-cloud.cn/raw/5c854b6e5754167b6fd394072d4bc42a.png)
+![](https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/product/im-new/css/img/scenes/function2.gif)
 
 ### 直播间大喇叭
 
@@ -776,19 +1057,19 @@ tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
 
   1. 客户端推流可使用 [OBS 工具推流](https://intl.cloud.tencent.com/document/product/267/31569)
   2. Web 端可使用 [Web 推流](https://console.cloud.tencent.com/live/tools/webpush)
-  3. App 端可使用 [移动直播 SDK 推流](https://www.tencentcloud.com/document/product/1071/38158)
+  3. App 端可使用 [移动直播 SDK 推流](https://intl.cloud.tencent.com/document/product/1071/38158)
   
->? 主播端推流前需要配置推流地址，请参见在 [推流配置](https://intl.cloud.tencent.com/document/product/267/31059) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址。
-
+  >? 主播端推流前需要配置推流地址，请参见在 [推流配置](https://intl.cloud.tencent.com/document/product/267/31059) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址。
+  
 - ### 用户端（拉流）
 
   用户端获取直播流的方式也有不同的方式如：
 
   1. PC 端可使用 [VLC 工具播放](https://intl.cloud.tencent.com/document/product/267/32483)
   2. Web 端可使用 [播放器 SDK 播放](https://www.tencentcloud.com/document/product/1071/41881)
-  3. App 端可使用 [播放器 SDK 播放](https://www.tencentcloud.com/document/product/1071/38158)
-  
->? 在拉流前也需要配置播放地址，请参见在 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址。
+  3. App 端可使用 [播放器 SDK 播放](https://intl.cloud.tencent.com/document/product/1071/38160)
+
+  >? 在拉流前也需要配置播放地址，请参见在 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址。
 
 - ### 导播台
 
@@ -802,15 +1083,13 @@ tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
   6. 添加直播弹幕
   7. 直播流监控
 
-
 - ### 实时音视频 TRTC 直播
 
   使用实时音视频 TRTC 同样可以实现直播的功能，相比于云直播，TRTC 有更多高级功能如：
 
   1. [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618)
-  2. [云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426)
+  2. [云端录制与回放](https://www.tencentcloud.com/zh/document/product/647/35426)
   3. [低延迟实时CDN观看](https://intl.cloud.tencent.com/document/product/647/35242)
-  4. ...
 
 ## 四、常见问题
 ### 1. 自己发消息时，消息发送状态，`Message.nick` 与 `Message.avatar` 字段都为空，该怎么处理才能在界面上正常展示昵称和头像？
@@ -833,8 +1112,7 @@ TRTC 直播延时小，与主播互动实现更加方便，但价格更加贵一
 
 有的，且代码开源，详情请参考 [腾讯云 Web 直播互动组件](https://github.com/tencentyun/TWebLive)。
 
-
-## 五、联系我们
+### 5. 联系我们
 
 加入腾讯云即时通信 IM 技术交流群，您将获得：
 
@@ -843,4 +1121,3 @@ TRTC 直播延时小，与主播互动实现更加方便，但价格更加贵一
 - 紧密的行业交流
 
 Telegram交流群：[点击加入](https://t.me/tencent_imsdk)
-

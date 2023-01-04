@@ -123,7 +123,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 >!通过服务端集成的 Rest API 接口发送语音消息时，必须填入语音的 Url、UUID、Download_Flag 字段。需保证通过 Url 能下载到对应语音。UUID 字段需填写全局唯一的 String 值，一般填入语音文件的 MD5 值。消息接收者可以通过 V2TIMSoundElem.getUUID() 拿到设置的 UUID 字段，业务 App 可以用这个字段做语音的区分。Download_Flag 字段必须填2。
 
-4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素的格式如下：
+4.X 及以上版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素的格式如下：
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -146,20 +146,21 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | Download_Flag | Number | 语音下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载语音。 |
 
 >?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
->```
+```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
         "UUID": "305c0201", //语音的唯一标识，类型为 String。客户端用于索引语音的键值。无法通过该字段下载相应的语音。若需要获取该语音，请升级 IM SDK 版本至4.X。
         "Size": 62351,      //语音数据大小，类型为 Number，单位：字节。
         "Second": 1         //语音时长，类型为 Number，单位：秒。
-   }
+    }
 }
->```   
+```
 
 
 ### 图像消息元素
->!通过服务端集成的 Rest API 接口发送图像消息时，必须填入图像的以下字段：URL、UUID、Width、Height。需保证通过 URL 能下载到对应图像。Width 和 Height 分别为图片的宽度和高度，单位为像素。UUID 字段需填写>全局唯一的 String 值，一般填入图片的 MD5 值。消息接收者通过调用 V2TIMImageElem.getImageList() 拿到 V2TIMImage 对象，然后通过调用V2TIMImage.getUUID() 拿到设置的 UUID 字段，业务 App 可以用这个字段做图>片的区分。
+
+>!通过服务端集成的 Rest API 接口发送图像消息时，必须填入图像的以下字段：URL、UUID、Width、Height。需保证通过 URL 能下载到对应图像。可据此 [获取图片基本信息](https://intl.cloud.tencent.com/document/product/1045/33722) 并 [处理图片](https://intl.cloud.tencent.com/document/product/1045/33726)。Width 和 Height 分别为图片的宽度和高度，单位为像素。UUID 字段需填写全局唯一的 String 值，一般填入图片的 MD5 值。消息接收者通过调用 V2TIMImageElem.getImageList() 拿到 V2TIMImage 对象，然后通过调用V2TIMImage.getUUID() 拿到设置的 UUID 字段，业务 App 可以用这个字段做图片的区分。
 
 ```
 {
@@ -209,7 +210,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 >!通过服务端集成的 Rest API 接口发送文件消息时，需要填入文件的 Url、UUID、Download_Flag 字段。需保证通过该 Url 能下载到对应文件。UUID 字段需填写全局唯一的 String 值，一般填入文件的 MD5 值。消息接收者可以通过调用 V2TIMFileElem.getUUID() 拿到设置的 UUID 字段，业务 App 可以用这个字段做文件的区分。Download_Flag字段必须填2。
 
-4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素的格式如下：
+4.X 及以上版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素的格式如下：
 ```
 {
     "MsgType": "TIMFileElem",
@@ -234,21 +235,20 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 >?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素如下：
 >```
 {
-"MsgType": "TIMFileElem",
-"MsgContent": {
-  "UUID": "305c02010", //文件的唯一标识，类型为 String。客户端用于索引文件的键值。无法通过该字段下载相应的文件。若需要获取该文件，请升级 IM SDK 版本至4.X。
-  "FileSize": 1773552, //文件数据大小，类型为 Number，单位：字节。
-  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //文件名称，类型为 String。
+    "MsgType": "TIMFileElem",
+    "MsgContent": {
+        "UUID": "305c02010", //文件的唯一标识，类型为 String。客户端用于索引文件的键值。无法通过该字段下载相应的文件。若需要获取该文件，请升级 IM SDK 版本至4.X。
+        "FileSize": 1773552, //文件数据大小，类型为 Number，单位：字节。
+        "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //文件名称，类型为 String。
+    }
 }
-}
->```
-
+```
 
 ### 视频消息元素
 
 >!通过服务端集成的 Rest API 接口发送视频消息时，必须填入 VideoUrl、VideoUUID、ThumbUrl、ThumbUUID、ThumbWidth、ThumbHeight、VideoDownloadFlag 和 ThumbDownloadFlag字段。需保证通过 VideoUrl 能下载到对应视频，通过 ThumbUrl 能下载到对应的视频缩略图。VideoUUID 和 ThumbUUID 字段需填写全局唯一的 String 值，一般填入对应视频和视频缩略图的 MD5 值。消息接收者可以通过调用 V2TIMVideoElem.getVideoUUID() 和 V2TIMVideoElem.getSnapshotUUID() 分别拿到设置的 UUID 字段，业务 App 可以用这个字段做视频的区分。VideoDownloadFlag 和 ThumbDownloadFlag 字段必须填2。
 
-4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素的格式如下：
+4.X 及以上版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素的格式如下：
 ```
 {
     "MsgType": "TIMVideoFileElem",
@@ -275,7 +275,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | VideoUrl | String | 视频下载地址。可通过该 URL 地址直接下载相应视频。 |
 | VideoUUID | String | 视频的唯一标识，客户端用于索引视频的键值。 |
 | VideoSize | Number | 视频数据大小，单位：字节。 |
-| VideoSecond | Number | 视频时长，单位：秒。 |
+| VideoSecond | Number | 视频时长，单位：秒。Web 端不支持获取视频时长，值为0。 |
 | VideoFormat | String | 视频格式，例如 mp4。 |
 | VideoDownloadFlag | Number | 视频下载方式标记。目前 VideoDownloadFlag 取值只能为2，表示可通过`VideoUrl`字段值的 URL 地址直接下载视频。 |
 | ThumbUrl | String | 视频缩略图下载地址。可通过该 URL 地址直接下载相应视频缩略图。 |
@@ -303,7 +303,79 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 		"ThumbFormat": "JPG"  //缩略图格式，类型为 String，例如 JPG、BMP 等。
     }
 }
->```
+```
+
+### 合并转发消息元素
+>!终端 5.2.210 及以上版本，web 2.10.1 及以上版本才支持收发合并转发消息。
+
+```json
+{
+  "MsgType": "TIMRelayElem",
+  "MsgContent": {
+    "Title": "群聊的聊天记录",
+    "MsgNum": 2,
+    "CompatibleText": "该SDK版本不支持合并转发消息，请升级到新版本。",
+    "AbstractList": [
+      "A:大家觉得这个怎么样？",
+      "B:我觉得挺好的"
+    ],
+    "MsgList": [
+      {
+        "From_Account": "A",
+        "GroupId": "group1",
+        "MsgSeq": 85,
+        "MsgRandom": 3998651049,
+        "MsgTimeStamp": 1664437702,
+        "MsgBody": [
+          {
+            "MsgContent": {
+              "Text": "大家觉得这个怎么样？"
+            },
+            "MsgType": "TIMTextElem"
+          }
+        ]
+      },
+      {
+        "From_Account": "B",
+        "GroupId": "group1",
+        "MsgSeq": 86,
+        "MsgRandom": 965790,
+        "MsgTimeStamp": 1664437703,
+        "MsgBody": [
+          {
+            "MsgContent": {
+              "Text": "我觉得挺好的"
+            },
+            "MsgType": "TIMTextElem"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+| 字段 | 类型 | 说明 |
+|---------|---------|---------|
+| Title | String | 合并转发消息的标题。 |
+| MsgNum | Integer | 被转发的消息条数。 |
+| CompatibleText | String | 兼容文本。当不支持合并转发消息的老版本 SDK 收到此类消息时，IM 后台会将该消息转化成兼容文本再下发。 |
+| AbstractList | Array | 合并消息的摘要列表，是一个 String 数组。 |
+| MsgList | Array | 消息列表。当被转发的消息长度之和小于等于 8K 时才会有此字段，此时不会有 JsonMsgKey 字段。|
+| JsonMsgKey | String | 合并转发的消息列表 Key。当被转发的消息长度之和大于 8K 时才会有此字段，此时不会有 MsgList 字段。 |
+
+MsgList 中每条消息的结构如下：
+
+| 字段 | 类型 | 说明 |
+|---------|---------|---------|
+| From_Account | String | 消息发送方 UserID。被转发的消息为单聊或群聊时都有此字段。 |
+| To_Account | String | 消息接收方 UserID。被转发的消息为单聊才有此字段。 |
+| GroupId | String | 群ID。被转发的消息为群聊才有此字段。 |
+| MsgSeq | Integer | 消息序列号（32位无符号整数）。 |
+| MsgRandom | Integer | 消息随机数（32位无符号整数）。 |
+| MsgTimeStamp | Integer | 消息的秒级时间戳。|
+| MsgBody | Array | 消息内容，具体格式请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)（注意，一条消息可包括多种消息元素，MsgBody 为 Array 类型）。  |
+| CloudCustomData | String | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）。|
 
 ## MsgBody 消息内容实例
 
@@ -311,7 +383,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 单条消息中只包括一个中文本消息元素，文本内容为 hello world。
 
-```
+```json
 {
     "MsgBody": [
         {
@@ -327,7 +399,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 ### 组合消息
 
 下述的单条消息中包括两个文本消息元素和一个表情元素，消息元素顺序是文本+表情+文本。
-```
+```json
 {
     "MsgBody": [
         {
@@ -361,7 +433,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 CloudCustomData 会跟该条消息的 MsgBody 一起保存在云端，CloudCustomData 会发送到对端，程序卸载重装后还能拉取到。
 
 CloudCustomData 与 MsgBody 的格式示例如下：
-```
+```json
 {
     "MsgBody": [
         {
@@ -386,7 +458,7 @@ CloudCustomData 与 MsgBody 的格式示例如下：
 
 - **组合消息展示格式**
 对于组合消息，按顺序叠加各个消息元素的推送文本作为展示文本。下述为已设置帐户昵称的单聊消息，推送文本为"helloworld"。注意 helloworld 中间没有空格，后台按照顺序叠加，各个消息元素推送文本之间不添加任何字符。如需要在各个不同的消息元素间添加空格或其他字符，需调用方自己控制。
-<pre>
+```json
 {
     "MsgBody": [
         {
@@ -406,8 +478,8 @@ CloudCustomData 与 MsgBody 的格式示例如下：
         }
     ] 
 }
-</pre>
-![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.png)
+```
+![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.pngg)
 
 各类消息元素推送文本字段汇总。
 
@@ -504,7 +576,7 @@ OfflinePushInfo 的格式示例如下：
 |---------|---------|---------|---------|
 | PushFlag | Integer | 选填 | 0表示推送，1表示不离线推送。  |
 | Title | String | 选填 | 离线推送标题。该字段为 iOS 和 Android 共用。|
-| Desc | String | 选填 | 离线推送内容。该字段会覆盖上面各种消息元素 [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527) 的离线推送展示文本。<br>若发送的消息只有一个 [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527) 自定义消息元素，该 Desc 字段会覆盖 TIMCustomElem 中的 Desc 字段。如果两个 Desc 字段都不填，将收不到该自定义消息的离线推送。|
+| Desc | String | 选填 | 离线推送内容。该字段会覆盖上面各种消息元素 [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的离线推送展示文本。<br>若发送的消息只有一个 [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0) 自定义消息元素，该 Desc 字段会覆盖 TIMCustomElem 中的 Desc 字段。如果两个 Desc 字段都不填，将收不到该自定义消息的离线推送。|
 | Ext | String | 选填 | 离线推送透传内容。由于国内各 Android 手机厂商的推送平台要求各不一样，请保证此字段为 JSON 格式，否则可能会导致收不到某些厂商的离线推送。 |
 | AndroidInfo.Sound | String | 选填 | Android 离线推送声音文件路径。 |
 | AndroidInfo.HuaWeiChannelID | String | 选填 | 华为手机 EMUI 10.0 及以上的通知渠道字段。该字段不为空时，会覆盖控制台配置的 ChannelID 值；该字段为空时，不会覆盖控制台配置的 ChannelID 值。|
@@ -525,4 +597,4 @@ OfflinePushInfo 的格式示例如下：
 ## 参考
 
 Apple Push Notification Service(APNs) [苹果推送开发文档](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-iOS 离线消息推送配置：[离线推送(iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347)。
+iOS 离线消息推送配置：[离线推送(iOS)](https://www.tencentcloud.com/zh/document/product/1047/34347)。

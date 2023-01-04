@@ -44,7 +44,7 @@ IM 계정 시스템에서 사용자 로그인에 필요한 암호는 IM에서 �
 
 ### 클라이언트 SDK 통합
 
-준비가 끝나면 IM 및 TRTC 클라이언트 SDK를 프로젝트에 통합해야 합니다. 필요에 따라 다른 통합 옵션을 선택할 수 있습니다. 자세한 지침은 [TUIKit Introduction](https://intl.cloud.tencent.com/document/product/1047/34547)을 참고하십시오.
+준비가 끝나면 IM 및 TRTC 클라이언트 SDK를 프로젝트에 통합해야 합니다. 필요에 따라 다른 통합 옵션을 선택할 수 있습니다.
 
 다음은 라이브 룸의 일반적인 기능을 설명하고 구현 코드와 함께 모범 사례를 제공합니다.
 
@@ -93,7 +93,7 @@ IM 계정 시스템에서 사용자 로그인에 필요한 암호는 IM에서 �
 </tr><tr  ><td>비즈니스 백엔드는 라이브 룸 상태를 유지하고 IM 서버 API를 사용하여 사용자에게 상태를 알리기 위해 <a href="https://intl.cloud.tencent.com/document/product/1047/34959">Sending Ordinary Messages in a Group</a> 합니다.</td>
 <td>라이브 룸 상태를 자주 가져와야 하는 경우 비즈니스 백엔드에 상태를 저장하면 IM 그룹 프로필에 상태를 저장하는 것보다 IM SDK를 호출하는 빈도가 줄어듭니다. <br>이 구현 스키마를 사용하면 IM SDK가 통합되지 않은 경우 라이브 룸 상태를 얻을 수 있습니다.</td>
 <td>비즈니스 백엔드는 라이브 룸 상태를 읽고 쓰기 위한 추가 모듈을 제공해야 합니다. <br>데이터는 비즈니스 백엔드와 IM 그룹 프로필 모두에서 가져오기 때문에 라이브 룸 데이터를 가져올 때 예외가 발생할 가능성이 더 큽니다. <br>사용자 정의 메시지를 보낼 때 손실될 수 있습니다. 많은 수의 메시지가 있는 경우 우선순위가 낮은 메시지가 먼저 삭제되어 라이브 룸 상태 표시에 영향을 줍니다. 따라서 우선순위가 높은 사용자 정의 메시지를 사용하는 것이 좋습니다.</td>
-</tr><tr  ><td>사용자 정의 그룹 필드 또는 그룹 속성을 통해 라이브 룸 상태를 저장하고 클라이언트 SDK의 <a href="https://cloud.tencent.com/document/product/269/75406">그룹 속성 변경 콜백</a>을 통해 그룹 사용자에게 알릴 수 있습니다.</td>
+</tr><tr  ><td>사용자 정의 그룹 필드 또는 그룹 속성을 통해 라이브 룸 상태를 저장하고 클라이언트 SDK의 <a href="https://intl.cloud.tencent.com/document/product/1047/48175">그룹 속성 변경 콜백</a>을 통해 그룹 사용자에게 알릴 수 있습니다.</td>
 <td>라이브 룸 상태를 읽고 쓰기 위한 추가 모듈을 제공할 필요가 없습니다. <br>이론적으로 그룹 속성 변경에 대한 콜백은 손실되지 않습니다. <br>라이브 룸 데이터는 예외를 줄이는 통합 데이터 소스 역할을 하는 그룹 프로필에서 가져옵니다.</td>
 <td>고노출 모듈에서 그룹 프로필을 자주 가져와야 하므로 IM에 대한 부담이 커집니다. <br>IM SDK 모듈이 통합되지 않은 경우 비즈니스 백엔드에서 IM 서버 SDK를 호출하여 그룹 프로필을 가져와야 하며 호출 수가 제한됩니다.</td>
 </tr></tbody>
@@ -104,7 +104,7 @@ IM 계정 시스템에서 사용자 로그인에 필요한 암호는 IM에서 �
 
 1. 라이브 룸에서 스키마1을 사용하여 라이브 룸 상태를 가져옵니다.
 2. 라이브 룸 외부에서 스키마2를 사용하여 라이브 룸 상태를 가져옵니다.
-3. 비즈니스 백엔드에서 라이브 룸 상태가 변경된 후 [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34621)를 사용하여 데이터를 IM 그룹 프로필([그룹 속성](https://intl.cloud.tencent.com/document/product/1047/34962) 및 [사용자 정의 그룹 필드](https://intl.cloud.tencent.com/document/product/1047/34962))에 즉시 동기화합니다.
+3. 비즈니스 백엔드에서 라이브 룸 상태가 변경된 후 [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34621)를 사용하여 데이터를 IM 그룹 프로필([그룹 속성](https://intl.cloud.tencent.com/document/product/1047/44188) 및 [사용자 정의 그룹 필드](https://intl.cloud.tencent.com/document/product/1047/34962))에 즉시 동기화합니다.
 
 ### 그룹 유형 선택
 
@@ -123,7 +123,7 @@ IM 라이브 방송 그룹(AVChatRoom)은 다음과 같은 특징이 있습니�
 - 모든 온라인 사용자 대상 푸시 메시지(그룹 시스템 알림)를 지원합니다.
 - 그룹 참여 신청 후 관리자의 승인 없이 바로 참여할 수 있습니다.
 
->? Web & 미니 프로그램용 IM SDK를 사용하면 사용자가 한 번에 하나의 오디오/비디오 그룹(AVChatRoom)에만 참여할 수 있습니다. 사용자가 클라이언트에 로그인하여 라이브 룸 A에 입장하면 [콘솔](https://console.cloud.tencent.com/im/login-message)에서 멀티 클라이언트 로그인이 활성화되고 사용자가 다른 클라이언트에 로그인하여 라이브 룸 B에 입장하면 해당 사용자는 라이브 룸 A에서 제거됩니다.
+>? Web용 IM SDK를 사용하면 사용자가 한 번에 하나의 오디오/비디오 그룹(AVChatRoom)에만 참여할 수 있습니다. 사용자가 클라이언트에 로그인하여 라이브 룸 A에 입장하면 [콘솔](https://console.cloud.tencent.com/im/login-message)에서 멀티 클라이언트 로그인이 활성화되고 사용자가 다른 클라이언트에 로그인하여 라이브 룸 B에 입장하면 해당 사용자는 라이브 룸 A에서 제거됩니다.
 
 ### 라이브 룸 공지
 
@@ -228,7 +228,7 @@ let promise = tim.updateGroupProfile({
   groupCustomField: [{ key: 'group_level', value: 'high'}] // 그룹 사용자 정의 필드 수정
 });
 promise.then(function(imResponse) {
-  console.log(imResponse.data.group) // 세부 그룹 프로필 수정 완료
+  console.log(imResponse.data.group) // 수정 완료 후 세부 그룹 프로필
 }).catch(function(imError) {
   console.warn('updateGroupProfile error:', imError); // 그룹 프로필 수정 실패 정보
 });
@@ -285,7 +285,7 @@ promise.then(function(imResponse) {
 ```java
 // 사용자 정의 메시지 생성
 V2TIMMessage v2TIMMessage = V2TIMManager.getMessageManager().createCustomMessage("사용자 정의 일대일 메시지".getBytes());
-// 메시지 우선순위를 높음으로 설정
+// 메시지 우선순위를 높은 우선순위 메시지로 설정
 v2TIMMessage.setPriority(V2TIMMessage.V2TIM_PRIORITY_HIGH)
 // 메시지 발송
 V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "receiver_userID", null, V2TIMMessage.V2TIM_PRIORITY_NORMAL, false, null, new V2TIMSendCallback<V2TIMMessage>() {
@@ -352,7 +352,7 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createTextAtMessageRes = await Tenc
 
 :::
 
-::: Web&
+::: Web
 
 ```js
 // 텍스트 메시지 발송
@@ -511,7 +511,7 @@ V2TIMManager.getMessageManager().getHistoryMessageList(option, new V2TIMValueCal
 
 ::: 
 
-::: iOS&Mac
+:::  iOS&Mac
 
 ```swift
 // 일대일 메시지 기록 풀링
@@ -571,14 +571,71 @@ promise.then(function(imResponse) {
 
 라이브 룸의 온라인 사용자 수를 표시하는 것은 일반적인 기능입니다. 각각 장단점이 있는 두 가지 구현 스키마가 있습니다.
 
-1. 클라이언트 SDK에서 제공하는 [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API를 통해 스케쥴된 풀링 방식으로 그룹의 온라인 사용자 수를 가져옵니다.
+1. 클라이언트 SDK에서 제공하는 [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API를 통해 스케쥴된 풀링 방식으로 그룹의 온라인 사용자 수를 가져옵니다.
 2. 백엔드에서 그룹에 가입하거나 탈퇴하는 콜백을 기반으로 [Sending System Messages in a Group](https://intl.cloud.tencent.com/document/product/1047/34958) 또는 [Sending Ordinary Messages in a Group](https://intl.cloud.tencent.com/document/product/1047/34959)과 같은 서버 API를 통해 모든 그룹 구성원에게 데이터를 전달합니다.
 
 라이브 룸이 하나뿐이라면 클라이언트 SDK의 API를 통해 온라인 사용자 수를 풀링하기에 충분합니다. 온라인 사용자 수를 표시하기 위해 많은 노출 위치가 필요한 라이브 룸이 여러 개 있는 경우 두 번째 스키마를 권장합니다.
 
 >? 서버는 예를 들어 5초마다 한 번씩 스케쥴된 방식으로 온라인 사용자 수 통계 메시지를 클라이언트에 보낼 수 있습니다. 그러나 라이브 룸의 온라인 사용자 수가 급격히 변경되지 않으면 추가 네트워크 오버헤드가 발생합니다. 변경률을 모니터링하여 숫자를 업데이트하는 것이 좋습니다.
 >
-> 필요에 따라 라이브 룸의 온라인 사용자 수의 정확성과 실시간성의 우선순위를 결정할 수 있습니다.
+>필요에 따라 라이브 룸의 온라인 사용자 수의 정확성과 실시간성의 우선순위를 결정할 수 있습니다.
+
+라이브 룸의 온라인 사용자 수를 가져오는 코드는 다음과 같습니다.
+
+<dx-tabs>
+::: Android
+
+```java
+2TIMManager.getGroupManager().getGroupOnlineMemberCount("group_avchatroom", new V2TIMValueCallback<Integer>() {
+  @Override
+  public void onSuccess(Integer integer) {
+      // 오디오/비디오 그룹(AVChatRoom)의 온라인 구성원 수 가져오기 성공
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+      // 오디오/비디오 그룹(AVChatRoom)의 온라인 구성원 수 가져오기 실패
+  }
+});
+```
+
+::: 
+
+:::  iOS&Mac
+
+```swift
+[[V2TIMManager sharedInstance] getGroupOnlineMemberCount:@"group_avchatroom" succ:^(NSInteger count) {
+    // 오디오/비디오 그룹(AVChatRoom)의 온라인 구성원 수 가져오기 성공
+} fail:^(int code, NSString *desc) {
+    // 오디오/비디오 그룹(AVChatRoom)의 온라인 구성원 수 가져오기 실패
+}];
+```
+
+::: 
+
+::: Flutter
+
+```dart
+groupManager.getGroupOnlineMemberCount(groupID: '');
+```
+
+::: 
+
+::: Web
+
+```js
+// 오디오/비디오 그룹의 온라인 사용자 수 가져오기(v2.8.0부터 지원)
+let promise = tim.getGroupOnlineMemberCount('group1');
+promise.then(function(imResponse) {
+  console.log(imResponse.data.memberCount);
+}).catch(function(imError) {
+  console.warn('getGroupOnlineMemberCount error:', imError); // 오디오/비디오 그룹(AVChatRoom)의 온라인 구성원 수 가져오기 실패 관련 오류 정보
+});
+```
+
+::: 
+
+</dx-tabs>
 
 ### 라이브 룸에서 사용자 음소거
 
@@ -594,37 +651,102 @@ promise.then(function(imResponse) {
 ::: Android
 
 ```java
-V2TIMGroupListener groupListener = new V2TIMGroupListener() {
-  // 그룹 구성원 알림, 그룹 라이프사이클 알림, 그룹 가입 요청 알림, 주제 이벤트 수신 콜백 등
+// 1분 동안 그룹 구성원 userB 음소거
+V2TIMManager.getGroupManager().muteGroupMember("groupA", "userB", 60, new V2TIMCallback() {
   @Override
-  public void onGroupInfoChanged(String groupID, List< V2TIMGroupChangeInfo > changeInfos) {
-    // 그룹 프로필 변경
+  public void onSuccess() {
+      // 그룹 구성원 음소거 성공
   }
+
   @Override
-  public void onMemberInfoChanged (String groupID, List< V2TIMGroupMemberChangeInfo > v2TIMGroupMemberChangeInfoList) {
-    // 그룹 구성원 프로필 변경
+  public void onError(int code, String desc) {
+      // 그룹 구성원 음소거 실패
   }
-  
-};
+});
+
+// 모든 구성원 음소거
+V2TIMGroupInfo info = new V2TIMGroupInfo();
+info.setGroupID("groupA");
+info.setAllMuted(true);
+V2TIMManager.getGroupManager().setGroupInfo(info, new V2TIMCallback() {
+  @Override
+  public void onSuccess() {
+      // 모든 구성원 음소거 성공
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+      // 모든 구성원 음소거 실패
+  }
+});
+
+V2TIMManager.getInstance().addGroupListener(new V2TIMGroupListener() {
+  @Override
+  public void onMemberInfoChanged(String groupID, List<V2TIMGroupMemberChangeInfo> v2TIMGroupMemberChangeInfoList) {
+    // 그룹 구성원의 음소거 수신
+    for (V2TIMGroupMemberChangeInfo memberChangeInfo : v2TIMGroupMemberChangeInfoList) {
+      // 음소거된 사용자의 ID
+      String userID = memberChangeInfo.getUserID();
+      // 음소거 지속 시간
+      long muteTime = memberChangeInfo.getMuteTime();
+    }
+  }
+
+  @Override
+  public void onGroupInfoChanged(String groupID, List<V2TIMGroupChangeInfo> changeInfos) {
+    // 모든 구성원 음소거 수신
+    for (V2TIMGroupChangeInfo groupChangeInfo : changeInfos) {
+      if (groupChangeInfo.getType() == V2TIMGroupChangeInfo.V2TIM_GROUP_INFO_CHANGE_TYPE_SHUT_UP_ALL) {
+        // 모든 구성원 음소거 여부
+        boolean isMuteAll = groupChangeInfo.getBoolValue();
+      }
+    }
+  }
+});
 ```
 
 ::: 
 
-::: iOS&Mac
+:::  iOS&Mac
 
 ```swift
-V2TIMManager.getInstance().addGroupListener(groupListener);
+// 1분 동안 그룹 구성원 user1 음소거
+[[V2TIMManager sharedInstance] muteGroupMember:@"groupA" member:@"user1" muteTime:60 succ:^{
+    // 그룹 구성원 음소거 성공
+} fail:^(int code, NSString *desc) {
+    // 그룹 구성원 음소거 실패
+}];
+
+// 모든 구성원 음소거
+V2TIMGroupInfo *info = [[V2TIMGroupInfo alloc] init];
+info.groupID = @"groupA";
+info.allMuted = YES;
+[[V2TIMManager sharedInstance] muteGroupMember:@"groupA" member:@"user1" muteTime:60 succ:^{
+    // 모든 구성원 음소거 성공
+} fail:^(int code, NSString *desc) {
+    // 모든 구성원 음소거 실패
+}];
+
 [[V2TIMManager sharedInstance] addGroupListener:self];
-
-// 그룹 구성원 알림, 그룹 라이프사이클 알림, 그룹 가입 요청 알림, 주제 이벤트 수신 콜백 등
-- (void)onGroupInfoChanged:(NSString *)groupID memberList:(NSArray<V2TIMGroupMemberInfo *>*)memberList {
-    // 그룹 프로필 변경
+- (void)onMemberInfoChanged:(NSString *)groupID changeInfoList:(NSArray <V2TIMGroupMemberChangeInfo *> *)changeInfoList {
+    // 그룹 구성원의 음소거 수신
+    for (V2TIMGroupMemberChangeInfo *memberChangeInfo in changeInfoList) {
+      // 음소거된 사용자의 ID
+      NSString *userID = memberChangeInfo.userID;
+      // 음소거 지속 시간
+        uint32_t muteTime = memberChangeInfo.muteTime;
+    }
 }
 
-- (void)onMemberInfoChanged:(NSString *)groupID member:(V2TIMGroupMemberInfo *)member {
-    // 그룹 구성원 프로필 변경
+- (void)onGroupInfoChanged:(NSString *)groupID changeInfoList:(NSArray <V2TIMGroupChangeInfo *> *)changeInfoList {
+    // 모든 구성원 음소거 수신
+    for (V2TIMGroupChangeInfo groupChangeInfo in changeInfoList) {
+      if (groupChangeInfo.type == V2TIM_GROUP_INFO_CHANGE_TYPE_SHUT_UP_ALL) {
+        // 모든 구성원 음소거 여부
+        BOOL isMuteAll = groupChangeInfo.boolValue;
+      }
+    }
 }
-
 ```
 
 ::: 
@@ -632,12 +754,19 @@ V2TIMManager.getInstance().addGroupListener(groupListener);
 ::: Flutter
 
 ```dart
-// 그룹 입장 이벤트 수신
- TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(onGroupInfoChanged: ((groupID, memberList) {
-    // 그룹 프로필 변경
-},onMemberInfoChanged: ((groupID, memberList) {
-    // 그룹 구성원 프로필 변경
-})));
+// 10분 동안 그룹 구성원 userB 음소거
+groupManager.muteGroupMember(groupID: '',userID: 'userB',seconds: 10);
+
+// 모든 구성원 음소거
+groupManager.setGroupInfo(info: V2TimGroupInfo(isAllMuted: true,groupID: '',groupType: 'Public'));
+
+TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(onMemberInfoChanged: (groupID, v2TIMGroupMemberChangeInfoList) {
+    // 그룹 구성원 정보 변경
+  },
+  onGroupInfoChanged: (groupID,info){
+    // 그룹 프로필 수정
+  }
+  ));
 ```
 
 ::: 
@@ -645,10 +774,40 @@ V2TIMManager.getInstance().addGroupListener(groupListener);
 ::: Web
 
 ```js
-let onGroupListUpdated = function(event) {
-   console.log(event.data);// Group 인스턴스를 저장하는 배열
-};
-tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
+tim.setGroupMemberMuteTime(options);
+let promise = tim.setGroupMemberMuteTime({
+  groupID: 'group1',
+  userID: 'user1',
+  muteTime: 600 // 10분 동안 사용자 음소거; 값이 0으로 설정되면 사용자 음소거 해제
+});
+promise.then(function(imResponse) {
+  console.log(imResponse.data.group) // 새 그룹 프로필
+  console.log(imResponse.data.member); // 새 그룹 구성원 프로필
+}).catch(function(imError) {
+  console.warn('setGroupMemberMuteTime error:', imError); // 음소거 실패 관련 오류 정보
+});
+// 주제 내 그룹 구성원 음소거 지속 시간 설정
+let promise = tim.setGroupMemberMuteTime({
+  groupID: 'topicID',
+  userID: 'user1',
+  muteTime: 600 // 10분 동안 사용자 음소거; 0으로 설정되면 사용자 음소거 해제
+});
+promise.then(function(imResponse) {
+  console.log(imResponse.data.group) // 새 그룹 프로필
+  console.log(imResponse.data.member); // 새 그룹 구성원 프로필
+}).catch(function(imError) {
+  console.warn('setGroupMemberMuteTime error:', imError); // 음소거 실패 관련 오류 정보
+});
+// v2.6.2부터 SDK는 모두 음소거 및 음소거 해제를 지원합니다. 현재 그룹 내 모든 구성원이 음소거 상태인 경우 그룹 팁을 전달할 수 없습니다.
+let promise = tim.updateGroupProfile({
+  groupID: 'group1',
+  muteAllMembers: true, // true: 전원 음소거, false: 전원 음소거 해제
+});
+promise.then(function(imResponse) {
+  console.log(imResponse.data.group) // 수정 완료 후 세부 그룹 프로필
+}).catch(function(imError) {
+  console.warn('updateGroupProfile error:', imError); // 그룹 프로필 수정 실패 정보
+});
 ```
 
 ::: 
@@ -657,9 +816,9 @@ tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
 [다른 SDK의 그룹 수신 예시 코드](https://intl.cloud.tencent.com/document/product/1047/48466)
 
 그룹 구성원 음소거 상태의 변경 사항은 기본적으로 클라이언트에 전달되지 않으며 [콘솔](https://console.cloud.tencent.com/im/qun-setting)에서 구성해야 합니다.
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090219.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/07c6f6e757a2c05358e7d79ac83b7c68.png)
 
->?현재 오디오/비디오 그룹(AVChatRoom)은 프로필 변경 알림 전달을 지원하지 않지만 구현을 위해 [사용자 정의 메시지](https://intl.cloud.tencent.com/document/product/1047/34959)를 보낼 수 있습니다.
+>?Client SDK는 현재 라이브 룸에서 사용자 음소거를 지원하지 않습니다. 해당 서버 API를 사용하여 [Banning Group Members](https://intl.cloud.tencent.com/document/product/1047/50296) 및 [Unbanning Group Members](https://intl.cloud.tencent.com/document/product/1047/50297)할 수 있습니다.
 
 ### 라이브 룸에서 사용자 내보내기
 
@@ -676,6 +835,74 @@ tim.on(TIM.EVENT.GROUP_LIST_UPDATED, onGroupListUpdated);
 
 ![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090320.png)
 
+
+>!**라이브 룸에서 사용자 제거는 클라이언트 SDK 6.6.X 이상 및 Flutter SDK 4.1.1 이상에서 지원**
+
+샘플 코드:
+
+<dx-tabs>
+::: Android
+
+```java
+List<String> userIDList = new ArrayList<>();
+userIDList.add("userB");
+V2TIMManager.getGroupManager().kickGroupMember("groupA", userIDList, "", new V2TIMValueCallback<List<V2TIMGroupMemberOperationResult>>() {
+  @Override
+  public void onSuccess(List<V2TIMGroupMemberOperationResult> v2TIMGroupMemberOperationResults) {
+      // 구성원 제거 성공
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+      // 구성원 제거 실패
+  }
+});
+
+V2TIMManager.getInstance().addGroupListener(new V2TIMGroupListener() {
+  @Override
+  public void onMemberKicked(String groupID, V2TIMGroupMemberInfo opUser,
+  List<V2TIMGroupMemberInfo> memberList) {
+      // 그룹 구성원 제거됨
+  }
+});
+```
+
+::: 
+
+:::  iOS&Mac
+
+```swift
+[[V2TIMManager sharedInstance] kickGroupMember:@"groupA" memberList:@[@"user1"] reason:@"" succ:^(NSArray<V2TIMGroupMemberOperationResult *> *resultList) {
+    // 구성원 제거 성공
+} fail:^(int code, NSString *desc) {
+    // 구성원 제거 실패
+}];
+
+[[V2TIMManager sharedInstance] addGroupListener:self];
+- (void)onMemberKicked:(NSString *)groupID opUser:(V2TIMGroupMemberInfo *)opUser memberList:(NSArray<V2TIMGroupMemberInfo *>*)memberList {
+    // 그룹 구성원 제거됨
+}
+```
+
+::: 
+
+::: Flutter
+
+```dart
+groupManager.kickGroupMember(groupID: '',memberList: []);
+```
+
+::: 
+
+::: Web
+
+```js
+tim.deleteGroupMember(options);
+```
+
+::: 
+
+</dx-tabs>
 
 #### 라이브 룸에서 민감한 콘텐츠 필터링
 
@@ -749,13 +976,67 @@ MsgBody의 MsgType 필드를 기반으로 메시지 유형을 식별할 수 있�
 
 플래그십 에디션 사용자가 아닌 경우 `getGroupMemberList`와 그룹 수신의 onGroupMemberEnter 및 onGroupMemberQuit 콜백을 통해 클라이언트의 온라인 그룹 구성원 목록을 유지할 수 있습니다. 단, 사용자가 라이브룸을 나간 후 다시 입장한 후에는 최근 30명의 그룹 구성원만 풀링할 수 있습니다.
 
+<dx-tabs>
+::: Android
+
+```java
+// 그룹 소유자의 프로필만 가져오도록 지정하려면 filter 매개변수 사용
+int role = V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_OWNER;
+V2TIMManager.getGroupManager().getGroupMemberList("testGroup", role, 0, 
+    new V2TIMValueCallback<V2TIMGroupMemberInfoResult>() {
+    @Override
+    public void onError(int code, String desc) {
+        // 메시지 가져오기 실패
+    }
+
+    @Override
+    public void onSuccess(V2TIMGroupMemberInfoResult v2TIMGroupMemberInfoResult) {
+        // 대화 가져오기 성공
+    }
+});
+```
+
+::: 
+
+:::  iOS&Mac
+
+```swift
+[[V2TIMManager sharedInstance] getGroupMemberList:@"groupA" filter:V2TIM_GROUP_MEMBER_FILTER_OWNER nextSeq:0 succ:^(uint64_t nextSeq, NSArray<V2TIMGroupMemberFullInfo *> *memberList) {
+    // 대화 가져오기 성공
+} fail:^(int code, NSString *desc) {
+    // 메시지 가져오기 실패
+}];
+```
+
+::: 
+
+::: Flutter
+
+```dart
+// filter 매개변수를 사용하여 그룹 소유자의 프로필만 가져오도록 지정합니다. filter를 All로 설정하여 모든 그룹 구성원의 프로필을 가져올 수도 있습니다.
+groupManager.getGroupMemberList(count: 10,filter: GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ADMIN,nextSeq: '0',offset: 0,groupID: "",);
+```
+
+::: 
+
+::: Web
+
+```js
+tim.getGroupMemberList(options);
+
+```
+
+::: 
+
+</dx-tabs>
+
 ### 라이브 룸의 화면 댓글을 기반으로 한 경품 추첨
 
 메시지 통계와 마찬가지로 라이브 스트리밍의 경품 추첨도 메시지를 보낸 후 콜백이 필요합니다. 구체적으로, 메시지 내용이 감지되고 경품 추첨의 키워드에 도달한 사용자가 풀에 추가됩니다.
 
 ### 실시간 화면 댓글
  AVChatRoom(오디오/비디오 그룹)은 댓글 자막, 선물하기, 좋아요 등 다양한 메시지 유형을 지원하며 친근한 인터랙션 환경을 구축합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/5c854b6e5754167b6fd394072d4bc42a.png)
+![](https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/product/im-new/css/img/scenes/function2.gif)
 
 ### 라이브 룸에서 방송
 
@@ -776,19 +1057,19 @@ MsgBody의 MsgType 필드를 기반으로 메시지 유형을 식별할 수 있�
 
   1. 클라이언트에서 [OBS 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31569)
   2. Web에서 [Web 푸시](https://console.cloud.tencent.com/live/tools/webpush)
-  3. App에서 [MLVB SDK](https://www.tencentcloud.com/document/product/1071/38158)
+  3. App에서 [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38158)
   
->? 앵커가 스트림을 푸시할 푸시 주소를 구성해야 하며, 이는 [푸시 스트림 설정](https://intl.cloud.tencent.com/document/product/267/31059)에 따라 생성하거나 [주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 통해 생성할 수 있습니다.
-
+  >? 앵커가 스트림을 푸시할 푸시 주소를 구성해야 하며, 이는 [푸시 스트림 설정](https://intl.cloud.tencent.com/document/product/267/31059)에 따라 생성하거나 [주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 통해 생성할 수 있습니다.
+  
 - ### 클라이언트(풀 스트림)
 
   클라이언트는 다양한 방법으로 라이브 스트림을 얻을 수 있습니다.
 
   1. PC에서 [VCL 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/32483)
   2. Web용 [TXLivePusher SDK](https://www.tencentcloud.com/document/product/1071/41881)
-  3. App용 [MLVB SDK](https://www.tencentcloud.com/document/product/1071/38158)
-  
->? 스트림을 가져오려면 재생 주소를 구성해야 하며, 이는 [재생 설정](https://intl.cloud.tencent.com/document/product/267/31058)을 따라 생성하거나 [주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 통해 생성할 수 있습니다.
+  3. App용 [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38160)
+
+  >? 스트림을 가져오려면 재생 주소를 구성해야 하며, 이는 [재생 설정](https://intl.cloud.tencent.com/document/product/267/31058)을 따라 생성하거나 [주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 통해 생성할 수 있습니다.
 
 - ### 라이브 디렉터
 
@@ -802,15 +1083,13 @@ MsgBody의 MsgType 필드를 기반으로 메시지 유형을 식별할 수 있�
   6. 실시간 화면 댓글 추가
   7. 라이브 스트림 모니터링
 
-
 - ### Tencent Real-Time Communication(TRTC) 라이브 스트리밍
 
   TRTC를 사용하여 라이브 스트리밍을 구현할 수도 있습니다. 다음과 같이 CSS보다 더 많은 고급 기능을 제공합니다.
 
   1. [클라우드 믹스 트랜스코딩](https://intl.cloud.tencent.com/document/product/647/34618)
-  2. [클라우드 녹화 및 재생](https://intl.cloud.tencent.com/document/product/647/35426)
+  2. [클라우드 녹화 및 재생](https://www.tencentcloud.com/zh/document/product/647/35426)
   3. [CDN 라이브 방송 시청 실행](https://intl.cloud.tencent.com/document/product/647/35242)
-  4. ...
 
 ## 4. FAQ
 ### 1. 메시지 전송 중 메시지 전송 상태, `Message.nick`, `Message.avatar` 필드가 비어 있는 경우 UI에 닉네임과 프로필 사진을 표시하려면 어떻게 해야 하나요?
@@ -833,8 +1112,7 @@ TRTC의 라이브 스트리밍은 앵커와의 인터랙션을 용이하게 하�
 
 있습니다. 코드 또한 오픈 소스입니다. 자세한 사항은 [Tencent Cloud TWebLive](https://github.com/tencentyun/TWebLive)를 참고하십시오.
 
-
-## 5. 고객센터
+### 5. 문의하기
 
 Tencent Cloud IM 기술 교류 그룹 가입 혜택:
 
@@ -843,4 +1121,3 @@ Tencent Cloud IM 기술 교류 그룹 가입 혜택:
 - 긴밀한 업계 교류
 
 Telegram 그룹: [가입하기](https://t.me/tencent_imsdk)
-

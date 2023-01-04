@@ -1,7 +1,7 @@
 ## メッセージ内容MsgBodyの説明
 MsgBodyに入力されたフィールドはメッセージの内容です。IMは、1つのメッセージにテキストメッセージ要素と顔絵文字メッセージ要素の両方を含むなど、メッセージ内へのさまざまなメッセージ要素タイプの包含をサポートします。従ってMsgBodyはArray型として定義され、必要に応じて複数のタイプのメッセージ要素を追加できます。メッセージ要素名はTIMMsgElementです。メッセージ要素TIMMsgElementによって構成されるMsgBodyの例については、[メッセージ内容MsgBodyインスタンス](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください。
 
-メッセージ要素TIMMsgElementの形式は次のように統一されています。
+メッセージ要素TIMMsgElementの形式は次のように統一されています：
 ```
 {
     "MsgType": "",
@@ -14,7 +14,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | MsgType | String | メッセージ要素タイプ。現在サポートされているメッセージオブジェクトには、TIMTextElem（テキストメッセージ）、TIMLocationElem（位置メッセージ）、TIMFaceElem（顔絵文字メッセージ）、TIMCustomElem（カスタムメッセージ）、TIMSoundElem（音声メッセージ）、TIMImageElem（画像メッセージ）、TIMFileElem（ファイルメッセージ）、TIMVideoFileElem（ビデオメッセージ）が含まれます。 |
 | MsgContent | Object |メッセージ要素の内容。MsgTypeが異なれば、MsgContent形式も異なります。詳細については、下記の文をご参照ください。|
 
-現在サポートされているメッセージタイプMsgTypeを次の表に示します。
+現在サポートされているメッセージタイプMsgTypeを次の表に示します：
 
 | MsgTypeの値 | タイプ |
 |---------|---------|
@@ -123,7 +123,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 >!サーバーに統合されたRest APIインターフェースを介して音声メッセージを送信する場合、必ず音声のUrl、UUID、Download_Flagフィールドに入力してください。対応する音声がUrl経由でダウンロードできることを確認する必要があります。UUIDフィールドは、グローバルに一意のString値を入力する必要があり、通常、音声ファイルのMD5値を入力します。メッセージ受信者はV2TIMSoundElem.getUUID()を介して設定されたUUIDフィールドを取得できます。ビジネスAppはこのフィールドを使用することで音声を区別できます。Download_Flagフィールドには、必ず2を入力してください。
 
-4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信される音声メッセージ要素の形式は次のとおりです。
+4.Xおよびそれ以降のバージョンIM SDK（Android、iOS、Mac 以及 Windows）によって送信される音声メッセージ要素の形式は次のとおりです：
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -145,8 +145,8 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | Second | Number | 音声の長さ。単位：秒。 |
 | Download_Flag | Number | 音声ダウンロード方法のフラグ。現在、Download_Flagの値は2のみです。これは、`Url`フィールド値のURLアドレスを介して音声を直接ダウンロードできることを意味します。 |
 
->?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信される音声メッセージ要素は次のとおりです。
->```
+>?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信される音声メッセージ要素は次のとおりです：
+```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
@@ -155,12 +155,12 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
         "Second": 1         //音声の長さ、タイプはNumber。単位：秒。
     }
 }
->```
+```
 
 
 ### 画像メッセージ要素
 
->!サーバーに統合されたRestAPIインターフェースを介して画像メッセージを送信する場合、必ず画像の以下のフィールド(URL、UUID、Width、Height)に入力してください。対応する画像がURLからダウンロードできることを確認する必要があります。WidthとHeightは、画像の幅と高さで、単位はピクセルです。UUIDフィールドは、グローバルに一意のString値を入力する必要があります。通常、画像のMD5値を入力します。メッセージ受信者は、V2TIMImageElem.getImageList()を呼び出してV2TIMImageオブジェクトを取得し、次にV2TIMImage.getUUID()を呼び出して設定されたUUIDフィールドを取得します。ビジネスAppはこのフィールドを使用することで画像を区別できます。
+>!サーバー側に統合されたRest APIインターフェースを介して画像メッセージを送信する場合、URL、UUID、幅、高さなどの、画像のフィールドに入力する必要があります。対応する画像がURLからダウンロードできることを確認する必要があります。それにより、[画像基本情報の取得](https://intl.cloud.tencent.com/document/product/1045/33722)および[画像処理](https://intl.cloud.tencent.com/document/product/1045/33726)ができるようになります。WidthとHeightは、それぞれ画像の幅と高さ（ピクセル単位）です。UUIDフィールドには、グローバルに一意の文字列値（通常は画像のMD5値）を入力する必要があります。メッセージ受信者は、V2TIMImageElem.getImageList()を呼び出してV2TIMImageオブジェクトを取得し、次にV2TIMImage.getUUID()を呼び出して設定されたUUIDフィールドを取得することで、業務Appはこのフィールドを使用して画像を区別できます。
 
 ```
 {
@@ -210,7 +210,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 >!サーバーに統合されたRest APIインターフェースを介してファイルメッセージを送信する場合、ファイルのUrl、UUID、Download_Flagフィールドに入力し、対応するファイルがこのUrl経由でダウンロードできることを確認する必要があります。UUIDフィールドは、グローバルに一意のString値を入力する必要があり、通常、ファイルのMD5値を入力します。メッセージ受信者はV2TIMFileElem.getUUID()を呼び出すことで設定されたUUIDフィールドを取得できます。ビジネスAppはこのフィールドを使用することでファイルを区別できます。Download_Flagフィールドには、必ず2を入力してください。
 
-4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信されるファイルメッセージ要素の形式は次のとおりです。
+4.Xおよびそれ以降のバージョンIM SDK（Android、iOS、Mac 以及 Windows）によって送信されるファイルメッセージ要素の形式は次のとおりです：
 ```
 {
     "MsgType": "TIMFileElem",
@@ -232,24 +232,23 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | FileName | String | ファイル名。 |
 | Download_Flag | Number | ファイルダウンロード方法のフラグ。現在、Download_Flagの値は2のみです。これは、`Url`フィールドの値のURLアドレスを介してファイルを直接ダウンロードできることを意味します。 |
 
->?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信されるファイルメッセージ要素は次のとおりです。
+>?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信されるファイルメッセージ要素は次のとおりです：
 >```
 {
-"MsgType": "TIMFileElem",
-"MsgContent": {
-  "UUID": "305c02010", //ファイルの一意の識別子。タイプはStringです。クライアントがファイルにインデックスを付けるために用いるキー値です。このフィールドからは、対応するファイルをダウンロードできません。このファイルを取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
-  "FileSize": 1773552、//ファイルデータサイズ。タイプはNumber、単位：バイト。
-  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //ファイル名。タイプはStringです。
+    "MsgType": "TIMFileElem",
+    "MsgContent": {
+        "UUID": "305c02010", //ファイルの一意の識別子。タイプはStringです。クライアントがファイルにインデックスを付けるために用いるキー値です。このフィールドからは、対応するファイルをダウンロードできません。このファイルを取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
+        "FileSize": 1773552、//ファイルデータサイズ。タイプはNumber、単位はバイトです。
+        "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //ファイル名。タイプはStringです。
+    }
 }
-}
->```
-
+```
 
 ### ビデオメッセージ要素
 
 >!サーバーに統合されたRestAPIインターフェースを介してビデオメッセージを送信する場合、必ずVideoUrl、VideoUUID、ThumbUrl、ThumbUUID、ThumbWidth、ThumbHeight、VideoDownloadFlagおよびThumbDownloadFlagフィールドに入力してください。対応するビデオがVideoUrlを介してダウンロードできること、および対応するビデオサムネイルがThumbUrlを介してダウンロードできることを確認する必要があります。VideoUUIDとThumbUUIDフィールドには、グローバルに一意のString値を入力する必要があります。通常、対応するビデオとビデオサムネイルのMD5値を入力します。メッセージ受信者は、V2TIMVideoElem.getVideoUUID()とV2TIMVideoElem.getSnapshotUUID()をそれぞれ呼び出すことで、設定されたUUIDフィールドを取得できます。ビジネスAppは、このフィールドを使用することでビデオを区別できます。VideoDownloadFlagとThumbDownloadFlagフィールドには、必ず2を入力してください。
 
-4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信されるビデオメッセージ要素の形式は次のとおりです。
+4.Xおよびそれ以降のバージョンIM SDK（Android、iOS、Mac 以及 Windows）によって送信されるビデオメッセージ要素の形式は次のとおりです：
 ```
 {
     "MsgType": "TIMVideoFileElem",
@@ -276,7 +275,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | VideoUrl | String | ビデオダウンロードアドレス。対応するビデオは、このURLアドレスから直接ダウンロードできます。 |
 | VideoUUID | String | ビデオの一意の識別子、クライアントがビデオにインデックスを付けるために用いるキー値。 |
 | VideoSize | Number | ビデオデータサイズ。単位：バイト。 |
-| VideoSecond | Number | ビデオの長さ。単位：秒。 |
+| VideoSecond | Number | ビデオ時間。単位：秒。Web端末は、ビデオ時間の取得をサポートしません。値は0です。|
 | VideoFormat | String | mp4などのビデオ形式。 |
 | VideoDownloadFlag | Number | ビデオダウンロード方法のフラグ。現在、`VideoDownloadFlagの値は2のみです。これは、``VideoUrl`フィールドの値のURLアドレスを介してビデオを直接ダウンロードできることを意味します。 |
 | ThumbUrl | String | ビデオサムネイルアドレス。対応するビデオサムネイルは、このURLアドレスから直接ダウンロードできます。 |
@@ -288,7 +287,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | ThumbDownloadFlag | Number | ビデオサムネイルダウンロード方法のフラグ。現在、`ThumbDownloadFlagの値は2のみです。これは、``ThumbUrl`フィールド値のURLアドレスを介してビデオサムネイルを直接ダウンロードできることを意味します。 |
 
 
->?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信されるビデオメッセージ要素は次のとおりです。
+>?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信されるビデオメッセージ要素は次のとおりです：
 >```
 {
     "MsgType": "TIMVideoFileElem",
@@ -304,7 +303,79 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 		"ThumbFormat": "JPG"  //サムネイル形式。タイプはJPG、BMPなどのStringです。
     }
 }
->```
+```
+
+### マージ転送メッセージの要素
+>!端末5.2.210およびそれ以降のバージョン。web 2.10.1およびそれ以降のバージョンのみ、マージ転送メッセージの送受信をサポートします。
+
+```json
+{
+  "MsgType": "TIMRelayElem",
+  "MsgContent": {
+    "Title": "グループチャットの記録",
+    "MsgNum": 2,
+    "CompatibleText": "このSDKバージョンはマージ転送メッセージをサポートしていません。新しいバージョンにアップグレードしてください。",
+    "AbstractList": [
+      "A:これについて、みなさんはどう思いますか？",
+      "B:とてもいいと思います"
+    ],
+    "MsgList": [
+      {
+        "From_Account": "A",
+        "GroupId": "group1",
+        "MsgSeq": 85,
+        "MsgRandom": 3998651049,
+        "MsgTimeStamp": 1664437702,
+        "MsgBody": [
+          {
+            "MsgContent": {
+              "Text": "これについて、みなさんはどう思いますか？"
+            },
+            "MsgType": "TIMTextElem"
+          }
+        ]
+      },
+      {
+        "From_Account": "B",
+        "GroupId": "group1",
+        "MsgSeq": 86,
+        "MsgRandom": 965790,
+        "MsgTimeStamp": 1664437703,
+        "MsgBody": [
+          {
+            "MsgContent": {
+              "Text": "とてもいいと思います"
+            },
+            "MsgType": "TIMTextElem"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+| フィールド | タイプ | 説明 |
+|---------|---------|---------|
+| Title | String | マージ転送メッセージのタイトル。|
+| MsgNum | Integer | 転送されたメッセージの数。|
+| CompatibleText | String | 互換性のあるテキスト。マージ転送メッセージをサポートしていない古いバージョンのSDKがそのようなメッセージを受信すると、IMバックグラウンドはこのメッセージを送信する前に互換性のあるテキストに変換します。|
+| AbstractList | Array | マージされたメッセージのダイジェストリスト。Stringの配列です。|
+| MsgList | Array | メッセージリスト。このフィールドは、転送されたメッセージの長さの合計が8K以下の場合にのみ表示され、現時点ではJsonMsgKeyフィールドはありません。|
+| JsonMsgKey | String | マージ転送されたメッセージリストKey。このフィールドは、転送されたメッセージの長さの合計が8Kよりも大きい場合にのみ表示され、現時点ではJsonMsgKeyフィールドはありません。|
+
+MsgList内の各メッセージの構造は次のとおりです：
+
+| フィールド | タイプ | 説明 |
+|---------|---------|---------|
+| From_Account | String | メッセージ送信側UserID。このフィールドは、転送されたメッセージがシングルチャットまたはグループチャットの場合に表示されます。|
+| To_Account | String | メッセージ受信側UserID。このフィールドは、転送されたメッセージがシングルチャットの場合にのみ表示されます。|
+| GroupId | String | グループID。このフィールドは、転送されたメッセージがグループチャットの場合にのみ表示されます。|
+| MsgSeq | Integer | メッセージのシーケンス番号（32ビットの符号なし整数）。|
+| MsgRandom | Integer | メッセージ乱数（32ビットの符号なし整数）。|
+| MsgTimeStamp | Integer | メッセージの秒レベルのタイムスタンプ。|
+| MsgBody | Array | メッセージ内容。具体的な形式については、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください（注：1つのメッセージには複数のメッセージ要素を含めることができます。MsgBodyはArrayタイプです）。  |
+| CloudCustomData | String | メッセージカスタムデータ（クラウドに保存され、反対側に送信され、プログラムをアンインストールして再インストールした後にプルできます）。|
 
 ## MsgBodyメッセージ内容インスタンス
 
@@ -312,7 +383,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 1つのメッセージに含まれる中国語のテキストメッセージ要素は1つだけで、テキストの内容はhello worldです。
 
-```
+```json
 {
     "MsgBody": [
         {
@@ -328,7 +399,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 ### 結合されたメッセージ
 
 次のシングルメッセージには、2つのテキストメッセージ要素と1つの顔絵文字要素が含まれています。メッセージ要素の順序は、テキスト+顔絵文字+テキストです。
-```
+```json
 {
     "MsgBody": [
         {
@@ -361,8 +432,8 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 CloudCustomDataは、メッセージのMsgBodyと一緒にクラウドに保存され、CloudCustomDataは対する相手側に送信されます。これは、プログラムをアンインストールして再インストールした後に取得できます。
 
-CloudCustomDataとMsgBodyの形式の例は次のとおりです。
-```
+CloudCustomDataとMsgBodyの形式の例は次のとおりです：
+```json
 {
     "MsgBody": [
         {
@@ -387,7 +458,7 @@ CloudCustomDataとMsgBodyの形式の例は次のとおりです。
 
 - **結合されたメッセージ表示形式**
 結合されたメッセージの場合、各メッセージ要素のプッシュテキストが表示テキストとして順番に重ねられます。 以下は、アカウントのニックネームが設定されたシングルチャットメッセージであり、プッシュテキストは「helloworld」です。helloworldにはスペースがなく、バックグラウンドが順番に重ね合わされ、各メッセージ要素のプッシュテキストの間にいかなる文字も追加されないことにご注意ください。それぞれの異なるメッセージ要素の間にスペースやその他の文字を追加する必要がある場合は、呼び出し元がそれを制御する必要があります。
-```
+```json
 {
     "MsgBody": [
         {
@@ -408,7 +479,7 @@ CloudCustomDataとMsgBodyの形式の例は次のとおりです。
     ] 
 }
 ```
-![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.png)
+![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.pngg)
 
 各タイプのメッセージ要素のテキストフィールドの概要をプッシュします。
 
@@ -451,7 +522,7 @@ CloudCustomDataとMsgBodyの形式の例は次のとおりです。
 
 ```
 
-クライアントはAPNsを受信し、JSON Payloadを次のようにプッシュします。
+クライアントはAPNsを受信し、JSON Payloadを次のようにプッシュします：
 
 ```
 {
@@ -471,7 +542,7 @@ OffsetPushInfoは、オフラインプッシュを設定するためのJSONオ�
 
 >!OfflinePushInfoが入力されている場合、TIMCustomElemのオフラインプッシュに関する情報の設定は無視されます。 現在、OfflinePushInfoは、APNsプッシュおよびAndroidメーカープッシュ（Xiaomi、Huawei、Meizu、OPPO、およびvivoプッシュ）に適しています。
 
-OffsetPushInfoの形式の例は次のとおりです。
+OffsetPushInfoの形式の例は次のとおりです：
 
 ```
 {
@@ -505,7 +576,7 @@ OffsetPushInfoの形式の例は次のとおりです。
 |---------|---------|---------|---------|
 | PushFlag | Integer | オプション | 「0」はプッシュを表し、「1」はオフラインプッシュでないことを表します。  |
 | Title | String | オプション | オフラインプッシュタイトル。このフィールドはiOSとAndroidで共有されています。|
-| Desc | String | オプション | オフラインプッシュ内容。このフィールドは、上記のさまざまなメッセージ要素[TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527)のオフラインプッシュ表示テキストをカバーします。<br>送信されるメッセージに[TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527)カスタムメッセージ要素が1つしかない場合、このDescフィールドはTIMCustomElemのDescフィールドを上書きします。Descフィールドの両方ともに入力されていない場合、カスタムメッセージのオフラインプッシュは受信できません。|
+| Desc | String | オプション | オフラインプッシュ内容。このフィールドは、上記のさまざまなメッセージ要素[TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement)のオフラインプッシュ表示テキストをカバーします。<br>送信されるメッセージに[TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0)カスタムメッセージ要素が1つしかない場合、このDescフィールドはTIMCustomElemのDescフィールドを上書きします。Descフィールドの両方ともに入力されていない場合、カスタムメッセージのオフラインプッシュは受信できません。|
 | Ext | String | オプション | オフラインプッシュ透過的コンテンツ。国内のAndroidスマホメーカーごとにプッシュプラットフォームの要件が異なるため、このフィールドがJSON形式であることを確認してください。JSON形式でない場合、一部のベンダーからオフラインプッシュを受信できなくなる可能性があります。 |
 | AndroidInfo.Sound | String | オプション | Androidオフラインプッシュ音声ファイルパス。 |
 | AndroidInfo.HuaWeiChannelID | String | オプション | HuaweiスマホEMUI 10.0以降の通知チャネルフィールド。 このフィールドがブランクでない場合、コンソールによって設定されたChannelID値は上書きされます。このフィールドが空の場合、コンソールによって設定されたChannelID値は上書きされません。|
@@ -526,4 +597,4 @@ OffsetPushInfoの形式の例は次のとおりです。
 ## 参考
 
 Apple Push Notification Service(APNs) [Appleプッシュ開発ドキュメント](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-iOSオフラインメッセージプッシュの設定：[オフラインプッシュ(iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347)。
+iOSオフラインメッセージプッシュの設定：[オフラインプッシュ(iOS)](https://www.tencentcloud.com/zh/document/product/1047/34347)。

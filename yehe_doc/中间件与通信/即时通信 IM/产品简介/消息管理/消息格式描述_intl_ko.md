@@ -123,7 +123,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 >!서버 통합 Rest API를 통해 음성 메시지를 보내려면 음성 Url, UUID, Download_Flag 필드를 입력해야 하며, 해당 음성을 다운로드할 수 있는 Url을 입력해야 합니다. UUID 필드는 전역적으로 고유한 String 값을 입력해야 하는데 일반적으로 음성 파일의 MD5 값을 입력합니다. 메시지 수신자는 V2TIMSoundElem.getUUID()를 통해 설정된 UUID 필드를 수신하며 서비스 App은 해당 필드를 사용하여 음성을 구분할 수 있습니다. Download_Flag 필드는 2를 입력해야 합니다.
 
-4. X버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 음성 메시지 요소를 발송합니다.
+4.X 이상 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 음성 메시지 요소를 발송합니다.
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -146,7 +146,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 | Download_Flag | Number | 음성 다운로드 메소드 플래그. 현재 Download_Flag 값은 2만 가능하며 `Url` 필드에 지정된 URL을 통해 바로 음성을 다운로드할 수 있음을 의미합니다. |
 
 >?2.X 및 3.X 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 음성 메시지 요소를 발송합니다.
->```
+```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
@@ -155,12 +155,12 @@ TIMMsgElement의 형식은 다음과 같습니다.
         "Second": 1         //Number 유형 음성 길이. 단위: 초.
     }
 }
->```
+```
 
 
 ### 이미지 메시지 요소
 
->!서버 통합 Rest API를 통해 이미지 메시지를 보내려면 이미지 URL, UUID, Width, Height 필드를 입력해야 하며, 해당 이미지를 다운로드할 수 있는 URL을 입력해야 합니다. Width와 Height는 이미지의 폭과 높이이며 단위는 픽셀입니다. UUID 필드는 전역적으로 고유한 String 값을 입력해야 하는데 일반적으로 이미지의 MD5 값을 입력합니다. 메시지 수신자는 V2TIMImageElem.getImageList()를 호출하여 V2TIMImage 객체를 받은 후, V2TIMImage.getUUID()를 호출하여 설정된 UUID 필드를 수신하며, 서비스 App은 이 필드를 사용하여 이미지를 구분할 수 있습니다.
+>!서버측 REST API를 통해 이미지 메시지를 보내려면 URL, UUID, Width, Height 필드를 입력해야 합니다. URL을 통해 이미지를 다운로드할 수 있는지 확인하여 [Obtaining Basic Image Information](https://intl.cloud.tencent.com/document/product/1045/33722) 및 [Image Processing](https://intl.cloud.tencent.com/document/product/1045/33726) 할 수 있습니다. Width와 Height는 이미지의 너비와 높이(단위: 픽셀)입니다. UUID는 전역적으로 고유한 String 값, 일반적으로 이미지의 MD5 값으로 설정해야 합니다. 메시지 수신자는 V2TIMImageElem.getImageList() 를 호출하여 V2TIMImage 객체를 얻은 다음 V2TIMImage.getUUID() 를 호출하여 지정된 UUID를 얻을 수 있습니다. App은 UUID를 사용하여 이미지를 식별할 수 있습니다.
 
 ```
 {
@@ -210,7 +210,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 >!서버 통합 Rest API를 통해 파일 메시지를 보내려면 파일의 Url, UUID, Download_Flag 필드를 입력해야 하며, 해당 파일을 다운로드 할 수 있는 URL을 입력해야 합니다. UUID 필드는 전역적으로 고유한 String 값을 입력해야 하는데 일반적으로 이미지의 MD5 값을 입력합니다. 메시지 수신자는 V2TIMFileElem.getUUID()를 호출하여 설정된 UUID 필드를 수신하며 서비스 App은 이 필드를 사용하여 파일을 구분할 수 있습니다. Download_Flag 필드는 2를 입력해야 합니다.
 
-4. X버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 파일 메시지 요소를 발송합니다.
+4.X 이상 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 파일 메시지 요소를 발송합니다.
 ```
 {
     "MsgType": "TIMFileElem",
@@ -235,21 +235,20 @@ TIMMsgElement의 형식은 다음과 같습니다.
 >?2.X 및 3.X 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 파일 메시지 요소를 발송합니다.
 >```
 {
-"MsgType": "TIMFileElem",
-"MsgContent": {
-  "UUID": "305c02010", //파일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 파일 인덱스에 사용하는 키 값이며 이 필드를 통해 파일을 다운로드할 수 없습니다. 파일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
-  "FileSize": 1773552, //Number 유형 파일 데이터 크기. 단위: 바이트.
-  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //파일 이름. 유형: String.
+    "MsgType": "TIMFileElem",
+    "MsgContent": {
+        "UUID": "305c02010", //파일의 유일한 식별자로 유형은 String입니다. 클라이언트에서 파일 인덱스에 사용하는 키 값이며 이 필드를 통해 파일을 다운로드할 수 없습니다. 파일을 가져오려면 IM SDK 버전을 4.X로 업데이트하십시오.
+        "FileSize": 1773552, //Number 유형 파일 데이터 크기. 단위: 바이트.
+        "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //파일 이름. 유형: String.
+    }
 }
-}
->```
-
+```
 
 ### 영상 메시지 요소
 
 >!서버 통합 Rest API를 통해 비디오 메시지를 보내려면 VideoUrl, VideoUUID, ThumbUrl, ThumbUUID, ThumbWidth, ThumbHeight, VideoDownloadFlag 및 ThumbDownloadFlag 필드를 입력해야 하며, 해당 비디오를 다운로드할 수 있는 VideoUrl, 해당 비디오 썸네일을 다운로드할 수 있는 ThumbUrl을 입력해야 합니다. VideoUUID와 ThumbUUID 필드는 전역적으로 고유한 String 값을 입력해야 하는데 일반적으로 해당 비디오와 썸네일의 MD5 값을 입력합니다. 메시지 수신자는 V2TIMVideoElem.getVideoUUID()와 V2TIMVideoElem.getSnapshotUUID()를 호출하여 설정한 UUID 필드를 수신하며 서비스 App은 이 필드를 사용하여 비디오를 구분할 수 있습니다. VideoDownloadFlag와 ThumbDownloadFlag 필드는 2를 입력해야 합니다.
 
-4. X버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 영상 메시지 요소를 발송합니다.
+4.X 이상 버전의 IM SDK(Android, iOS, Mac 및 Windows용)는 다음 형식으로 영상 메시지 요소를 발송합니다.
 ```
 {
     "MsgType": "TIMVideoFileElem",
@@ -276,7 +275,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 | VideoUrl | String | 비디오 다운로드 주소. 해당 URL을 통해 바로 영상을 다운로드 할 수 있습니다.  |
 | VideoUUID | String | 비디오의 유일한 식별자. 클라이언트에서 비디오 인덱스에 사용하는 키 값입니다. |
 | VideoSize | Number |  비디오 데이터 크기. 단위: 바이트. |
-| VideoSecond | Number |  비디오 길이. 단위: 초. |
+| VideoSecond | Number | 비디오 길이(초). Web 클라이언트의 경우 이 필드를 가져올 수 없으며 값 0이 사용됩니다. |
 | VideoFormat | String | mp4 같은 비디오 형식입니다. |
 | VideoDownloadFlag | Number | 비디오 다운로드 메소드 플래그. 현재 VideoDownloadFlag 값은 2만 가능하며 `VideoUrl` 필드 값의 URL을 통해 바로 비디오를 다운로드할 수 있음을 의미합니다. |
 | ThumbUrl | String | 비디오 썸네일 다운로드 주소. 해당 URL을 통해 바로 비디오 썸네일을 다운로드할 수 있습니다.  |
@@ -302,9 +301,81 @@ TIMMsgElement의 형식은 다음과 같습니다.
 		"ThumbWidth": 720,    //썸네일 폭. 유형: Number.
 		"ThumbHeight": 1280,  //썸네일 높이. 유형: Number.
 		"ThumbFormat": "JPG"  //썸네일 형식. 유형: String. 예: JPG, BMP 등.
-   }
+    }
 }
->```
+```
+
+### 결합된 메시지 요소
+>!기본 SDK 5.2.210 이상 및 web SDK 2.10.1 이상만 결합된 메시지의 송수신을 지원합니다.
+
+```json
+{
+  "MsgType": "TIMRelayElem",
+  "MsgContent": {
+    "Title": "그룹 채팅 기록",
+    "MsgNum": 2,
+    "CompatibleText": "SDK 버전은 결합된 메시지를 지원하지 않습니다. 최신 버전으로 업그레이드하십시오.",
+    "AbstractList": [
+      "A: 이에 대해 어떻게 생각하세요?",
+      "B: 좋은 것 같아요"
+    ],
+    "MsgList": [
+      {
+        "From_Account": "A",
+        "GroupId": "group1",
+        "MsgSeq": 85,
+        "MsgRandom": 3998651049,
+        "MsgTimeStamp": 1664437702,
+        "MsgBody": [
+          {
+            "MsgContent": {
+              "Text": "이에 대해 어떻게 생각하세요?"
+            },
+            "MsgType": "TIMTextElem"
+          }
+        ]
+      },
+      {
+        "From_Account": "B",
+        "GroupId": "group1",
+        "MsgSeq": 86,
+        "MsgRandom": 965790,
+        "MsgTimeStamp": 1664437703,
+        "MsgBody": [
+          {
+            "MsgContent": {
+              "Text": "좋은 것 같아요"
+            },
+            "MsgType": "TIMTextElem"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+| 필드 | 유형 | 설명|
+|---------|---------|---------|
+| Title | String | 결합된 메시지 제목. |
+| MsgNum | Integer | 결합/전달된 메시지 수. |
+| CompatibleText | String | 호환되는 텍스트. 결합된 메시지를 지원하지 않는 이전 버전의 SDK가 결합된 메시지를 수신하면 IM 백엔드는 메시지를 호환 가능한 텍스트로 변환하여 전달합니다. |
+| AbstractList | Array | String 배열 형식의 결합된 메시지 다이제스트 목록입니다. |
+| MsgList | Array | 메시지 목록. 이 필드는 결합된 메시지의 합계가 8K 이하인 경우에만 사용할 수 있으며 이 경우 JsonMsgKey 필드를 사용할 수 없습니다. |
+| JsonMsgKey | String | 결합된 메시지 목록의 키. 이 필드는 결합된 메시지의 합계가 8K보다 큰 경우에만 사용할 수 있으며 이 경우 MsgList 필드를 사용할 수 없습니다. |
+
+MsgList의 각 메시지 구조는 다음과 같습니다.
+
+| 필드 | 유형 | 설명|
+|---------|---------|---------|
+| From_Account | String | 메시지 발신자의 UserID. 이 필드는 결합된 메시지가 일대일 또는 그룹 메시지인 경우 사용할 수 있습니다. |
+| To_Account | String | 메시지 수신자의 UserID. 이 필드는 결합된 메시지가 일대일 메시지인 경우에만 사용할 수 있습니다. |
+| GroupId | String | 그룹 ID. 이 필드는 결합된 메시지가 그룹 메시지인 경우에만 사용할 수 있습니다. |
+| MsgSeq | Integer | 메시지의 시퀀스 번호(32비트 부호 없는 정수). |
+| MsgRandom | Integer | 메시지의 난수(32비트 부호 없는 정수). |
+| MsgTimeStamp | Integer | 메시지 타임스탬프(초). |
+| MsgBody | Array | 메시지 본문. 형식에 대한 자세한 내용은 [메시지 형식](https://intl.cloud.tencent.com/document/product/1047/33527)을 참고하십시오. (참고: 메시지에는 여러 메시지 요소가 포함될 수 있으며 이 경우 MsgBody는 Array입니다.)  |
+| CloudCustomData | String | 사용자 정의 메시지 데이터. 클라우드에 저장되고 피어 엔드로 전송됩니다. 이러한 데이터는 앱을 제거하고 다시 설치한 후에 가져올 수 있습니다. |
 
 ## MsgBody 메시지 콘텐츠 예시
 
@@ -312,7 +383,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 
 단일 메시지에 하나의 텍스트 메시지 요소만 포함됩니다. 텍스트 콘텐츠는 hello world 입니다.
 
-```
+```json
 {
     "MsgBody": [
         {
@@ -328,7 +399,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 ### 결합된 메시지
 
 다음과 같이 텍스트 메시지 요소와 이모티콘 요소 등 2가지 요소가 포함된 단일 메시지입니다. 메시지 요소 순서는 텍스트+이모티콘+텍스트입니다. 
-```
+```json
 {
     "MsgBody": [
         {
@@ -362,7 +433,7 @@ TIMMsgElement의 형식은 다음과 같습니다.
 CloudCustomData는 해당 메시지 MsgBody와 함께 클라우드에 저장됩니다. CloudCustomData는 피어에 발송되며 애플리케이션 삭제 및 재설치 후에도 계속 풀링할 수 있습니다. 
 
 CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다. 
-```
+```json
 {
     "MsgBody": [
         {
@@ -387,7 +458,7 @@ CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다.
 
 - **결합된 메시지가 표시되는 형식**
 결합된 메시지의 경우, 순서에 따라 각 메시지 요소의 푸시 텍스트가 순서대로 표시됩니다. 계정에 닉네임을 설정한 1:1 채팅 메시지의 경우 푸시 텍스트는 ‘helloworld’가 됩니다. 텍스트(예:helloworld)에는 공백이 포함되어 있지 않습니다. 백엔드에서 순서대로 각 메시지 요소를 순서대로 연결하며 텍스트 사이에 어떤 것도 추가하지 않습니다. 메시지 요소 사이에 빈 칸이나 다른 문자를 추가하려면 호출측에서 자체적으로 제어해야 합니다. 
-```
+```json
 {
     "MsgBody": [
         {
@@ -408,7 +479,7 @@ CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다.
     ] 
 }
 ```
-![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.png)
+![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.pngg)
 
 다음 표에는 다양한 메시지 요소의 푸시 텍스트 필드가 요약되어 있습니다.
 
@@ -505,7 +576,7 @@ OfflinePushInfo의 형식 예시는 다음과 같습니다.
 |---------|---------|---------|---------|
 | PushFlag | Integer | 옵션 | 0: 푸시 활성화, 1: 오프라인 푸시 비활성화  |
 | Title | String | 옵션| 오프라인 푸시 제목. 이 필드는 iOS 및 Android에 모두 적용됩니다.|
-| Desc | String | 옵션| 오프라인 푸시 콘텐츠. 이 필드는 위에서 언급한 [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527) 메시지 요소의 오프라인 푸시 텍스트를 덮어씁니다.<br> 발송된 메시지에 [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527)이 하나만 있는 경우, 이 Desc 필드는 TIMCustomElem의 Desc 필드를 덮어씁니다. 2개의 Desc 필드를 모두 입력하지 않으면 해당 사용자 정의 메시지에 대한 오프라인 푸시를 수신할 수 없습니다.|
+| Desc | String | 옵션| 오프라인 푸시 콘텐츠. 이 필드는 위에서 언급한 [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 메시지 요소의 오프라인 푸시 텍스트를 덮어씁니다.<br> 발송된 메시지에 [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0)이 하나만 있는 경우, 이 Desc 필드는 TIMCustomElem의 Desc 필드를 덮어씁니다. 2개의 Desc 필드를 모두 입력하지 않으면 해당 사용자 정의 메시지에 대한 오프라인 푸시를 수신할 수 없습니다.|
 | Ext | String | 옵션| 오프라인 푸시 패스스루 콘텐츠. 중국 내 Android 휴대폰 벤더의 푸시 플랫폼 요구 사항이 모두 다르기 때문에 해당 필드는 JSON 형식을 사용하기 바랍니다. 그렇지 않으면 일부 벤더의 오프라인 푸시를 수신할 수 없습니다. |
 | AndroidInfo.Sound | String | 옵션| Android 오프라인 푸시 알림음 파일 경로 |
 | AndroidInfo.HuaWeiChannelID | String | 옵션| EMUI 10.0 이후 버전이 설치된 Huawei 휴대폰의 알림 채널 필드. 해당 필드가 채워져 있으면 콘솔에서 설정한 ChannelID 값을 덮어쓰기합니다. 해당 필드가 공란일 경우, 콘솔에서 설정한 ChannelID 값을 덮어쓰지 않습니다. |
@@ -526,4 +597,4 @@ OfflinePushInfo의 형식 예시는 다음과 같습니다.
 ## 참고
 
 Apple Push Notification Service(APNs) [Apple 푸시 개발 문서](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1).
-iOS 오프라인 메시지 푸시 설정: [오프라인 푸시(iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347).
+iOS 오프라인 메시지 푸시 설정: [Offline Push (iOS)](https://www.tencentcloud.com/zh/document/product/1047/34347).
