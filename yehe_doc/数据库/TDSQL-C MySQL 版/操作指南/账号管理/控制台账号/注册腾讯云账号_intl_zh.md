@@ -1,7 +1,7 @@
 在开始使用腾讯云服务之前，您需要先注册一个腾讯云账号。拥有腾讯云账号后，您可以在腾讯云网站、控制台登录，从而选购和使用 TDSQL-C MySQL 版等产品。
 
 ## 步骤1：前往注册页面
-[单击前往注册页面](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)
+[单击前往注册页面](https://www.tencentcloud.com/account/register)
 
 ## 步骤2：注册账号
 腾讯云注册方式包括以下几种：
