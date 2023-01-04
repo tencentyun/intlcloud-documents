@@ -36,4 +36,5 @@
 >- 如出现 IP 地址段冲突，请返回 [步骤2](#steps2) 重新选择或新建一个不会冲突的 VPC 实例。   
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/6335d335ff39ead6c4a955ceeb918ac2.png" style="zoom:67%;" />
+
 3. 回到 [容器安全服务控制台](https://console.cloud.tencent.com/tcss)，参考[ 步骤1 ](#steps1)获取安装命令进行安装。您的非腾讯云机房需要放通对 [步骤1](#steps1) 中描述的 IP 的5574、8080、80、9080共4个端口的访问。
