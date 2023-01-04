@@ -1,0 +1,8 @@
+Runtime security identifies hacker attacks adaptively, monitors and protects container runtime security in real time, and utilizes diversified security features, including container escape, reverse shell, and virus scanning.
+
+- [Container escape](https://www.tencentcloud.com/document/product/1163/50905): A container escapes from its permissions and accesses the host and other containers on the host by exploiting system vulnerabilities. As containers share the operating system kernel with the host, to prevent them from getting the host's root privileges, they are usually not allowed to run in privileged mode. TCSS categorizes risk events into three types based on the sequence of container escapes performed by intruders: container in risk, program privilege escalation, and container escape.
+ - Containers in risk: Risks are found in the current container, such as sensitive path mount and privileged container, which may cause privilege escalation or escape.
+ - Program privilege escalation: Privilege escalation events are detected on the container.
+ - Container escape: The current container has escaped. In this case, you should immediately respond to the risky event with the recommended solution.
+- [Reverse shell](https://www.tencentcloud.com/document/product/1163/50907): Based on Tencent Cloud security technologies and multidimensional means, it recognizes and records reverse shell connections for real-time monitoring in the runtime container.
+- [Virus scanning](https://www.tencentcloud.com/document/product/1163/50909): It checks for risky files called by running containers in real time. You can also manually trigger a quick scan to check for malicious viruses, trojans, and web shells in the container.

@@ -1,0 +1,1 @@
+The security baseline combines CIS Benchmarks and Yunding Lab's best baseline configuration practices for containers, images, servers, and Kubernetes assets, displays multidimensional baseline compliance of container assets, and helps set up optimal baseline configurations in the container running environment to reduce the attack surface.
