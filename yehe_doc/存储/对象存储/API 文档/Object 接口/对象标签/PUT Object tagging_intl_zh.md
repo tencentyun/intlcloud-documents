@@ -59,8 +59,8 @@ Authorization: Auth String
 | Tagging            | 无                 | 标签集合                                                     | Container  | 是       |
 | TagSet             | Tagging            | 标签集合                                                     | Container  | 是       |
 | Tag                | Tagging.TagSet     | 标签集合，最多支持10个标签                                   | Containers | 是       |
-| Key                | Tagging.TagSet.Tag | 标签键，长度不超过128字节，支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | String     | 是       |
-| Value              | Tagging.TagSet.Tag | 标签值，长度不超过256字节，支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | String     | 是       |
+| Key                | Tagging.TagSet.Tag | 标签键，长度小于128字节，支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | String     | 是       |
+| Value              | Tagging.TagSet.Tag | 标签值，长度小于256字节，支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | String     | 是       |
 
 ## 响应
 
@@ -80,7 +80,7 @@ Authorization: Auth String
 
 #### 请求
 
-如下请求向存储桶`examplebucket-1250000000`中的对象`exampleobject.txt`写入了`{age:18}`和`{name:xiaoming}`两个标签。COS 配置标签成功并返回204成功请求。
+如下请求向存储桶`examplebucket-1250000000`中的对象`exampleobject.txt`写入了`{age:18}`和`{name:xiaoming}`两个标签。COS 配置标签成功并返回200成功请求。
 
 ```plaintext
 PUT /exampleobject.txt?tagging HTTP/1.1
@@ -109,7 +109,7 @@ Content-Type: application/xml
 #### 响应
 
 ```plaintext
-HTTP/1.1 204 No Content
+HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 0
 Connection: keep-alive
