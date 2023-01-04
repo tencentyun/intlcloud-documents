@@ -86,7 +86,7 @@
 | Gets the groups a user has joined. | [v4/group_open_http_svc/get_joined_group_list](https://intl.cloud.tencent.com/document/product/1047/34925) |
 | Queries the roles of users in a group. | [v4/group_open_http_svc/get_role_in_group](https://intl.cloud.tencent.com/document/product/1047/34963) |
 | Mutes and unmutes group members. | [v4/group_open_http_svc/forbid_send_msg](https://intl.cloud.tencent.com/document/product/1047/34951) |
-| Gets the list of muted group members. | [v4/group_open_http_svc/get_group_shutted_uin](https://intl.cloud.tencent.com/document/product/1047/34964) |
+| Gets the list of muted group members. | [v4/group_open_http_svc/get_group_muted_account](https://intl.cloud.tencent.com/document/product/1047/34964) |
 | Sends ordinary messages in a group. | [v4/group_open_http_svc/send_group_msg](https://intl.cloud.tencent.com/document/product/1047/34959) |
 | Sends system messages in a group. | [v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958) |
 | Recalls group messages. | [v4/group_open_http_svc/group_msg_recall](https://intl.cloud.tencent.com/document/product/1047/34965) |
@@ -99,7 +99,6 @@
 | Gets group message history. | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
 | Gets the number of online users in an audio-video group. | [v4/group_open_http_svc/get_online_member_num](https://intl.cloud.tencent.com/document/product/1047/38521)|
 | Gets custom attributes of a group. |[v4/group_open_attr_http_svc/get_group_attr](https://intl.cloud.tencent.com/document/product/1047/44187)|
-| Gets the list of banned group members. |[v4/group_open_http_svc/get_group_ban_member](https://www.tencentcloud.com/document/product/1047/50295)|
 | Bans group members. |[v4/group_open_http_svc/ban_group_member](https://www.tencentcloud.com/document/product/1047/50296)|
 | Unbans group members. |[v4/group_open_http_svc/unban_group_member](https://www.tencentcloud.com/document/product/1047/50297)|
 | Modifies custom attributes of a group. |[v4/group_open_http_svc/modify_group_attr](https://intl.cloud.tencent.com/document/product/1047/44188)|
@@ -123,6 +122,4 @@
 | Pulls operations data. |[v4/openconfigsvr/getappinfo](https://intl.cloud.tencent.com/document/product/1047/34886) |
 | Downloads recent messages.  |[v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |
 | Gets server IP addresses.  |[v4/ConfigSvc/GetIPList](https://intl.cloud.tencent.com/document/product/1047/36742) |
-| Blocks chat files. |[v4/im_cos_msg/forbid_illegal_object](https://www.tencentcloud.com/document/product/1047/50300)|
-| Unblocks chat files. |[v4/im_cos_msg/allow_banned_object](https://www.tencentcloud.com/document/product/1047/50299)|
-| Signed chat files. |[v4/im_cos_msg/get_cos_sig](https://www.tencentcloud.com/document/product/1047/50298)|
+
