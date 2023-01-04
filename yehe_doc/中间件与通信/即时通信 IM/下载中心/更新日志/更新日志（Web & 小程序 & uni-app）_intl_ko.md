@@ -653,7 +653,6 @@ C2C 메시지 수신 확인 지원(피어가 메시지를 읽음 여부 나타�
 **변경 사항**
 - [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)를 통해 업로드할 수 있는 최대 파일 크기가 20M에서 100M로 증가.
 - [그룹 프롬프트](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload)의 `msgMemberInfo` 및 `shutupTime`은 더 이상 사용되지 않음. 대신 `memberList` 및 `muteTime`을 사용하십시오.
-- 콘솔에 [IM 스마트 고객 지원 포털](https://cloud.tencent.com/act/event/smarty-service?from=im-doc)을 추가했습니다.
 
 **오류 수정**
 - [off](https://web.sdk.qcloud.com/im/doc/en/SDK.html#off) API를 호출하여 수신 이벤트를 취소할 수 없음.
