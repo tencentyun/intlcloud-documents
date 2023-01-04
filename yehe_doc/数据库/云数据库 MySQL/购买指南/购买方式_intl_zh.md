@@ -46,11 +46,13 @@
 2. 支付完成后，返回实例列表，会看到实例显示**发货中**（大概需要3min - 5min中，请耐心等待），待实例状态变为**运行中**，即可进行正常操作。
 
 ### 购买单节点实例
+>?单节点云盘版实例目前在内测阶段，如需购买，请 [提交工单](https://console.cloud.tencent.com/workorder/category)。
+>
 1. 登录 [MySQL 购买页](https://buy.intl.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击**立即购买**。
  - **计费模式**：支持包年包月和按量计费。
     - 若业务量有较稳定的长期需求，建议选择包年包月。
     - 若业务量有瞬间大幅波动场景，建议选择按量计费。
- - **地域**：选择您业务需要部署 MySQL 的地域，目前支持上海、成都、广州、北京、香港，其他地域后续陆续开放。建议您选择与云服务器同一个地域，不同地域的云产品内网不通，购买后不能更换。
+ - **地域**：选择您业务需要部署 MySQL 的地域，目前支持上海、成都、广州、北京，其他地域后续陆续开放。建议您选择与云服务器同一个地域，不同地域的云产品内网不通，购买后不能更换。
  - **数据库版本**：单节点架构下，云数据库 MySQL 目前支持以下版本：MySQL 8.0、MySQL 5.7，各个版本相关特性，请参见 [官方文档](https://dev.mysql.com/doc/refman/5.7/en/)。
  - **引擎**：默认为 InnoDB 引擎。是最常用的 OLTP 存储引擎，拥有完整的事务支持与强大的读写高并发能力。
  - **架构**：选择单节点。
@@ -59,10 +61,10 @@
  - **可用区**：选择实例部署可用区。处于同一私有网络下不同可用区的云产品内网互通；例如，相同私有网络下的上海二区的云服务器可以通过内网访问上海三区的 MySQL。
  - **实例规格**：根据业务需要选择对应规格。
  - **硬盘**：硬盘空间用于存放 MySQL 运行时所必须文件。支持选择硬盘为 SSD 云硬盘和增强型 SSD 云硬盘，了解硬盘类型请参见 [硬盘类型](https://intl.cloud.tencent.com/document/product/362/31636)。可选硬盘容量：20 - 32000GB。
- ![](https://staticintl.cloudcachetci.com/yehe/backend-news/QNGI948_29.png)
+ ![](https://staticintl.cloudcachetci.com/yehe/backend-news/pUPm663_29.png)
 >?后续的配置步骤与购买双节点、三节点实例一致，请参见 [后续步骤](https://intl.cloud.tencent.com/document/product/236/5160)。
 2. 支付完成后，返回实例列表，会看到实例显示**发货中**（大概需要3min - 5min中，请耐心等待），待实例状态变为**运行中**，即可进行正常操作。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/c89b026_30.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/N95A574_30.png)
 
 ## API 购买
 通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15865)。

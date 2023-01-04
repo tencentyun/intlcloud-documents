@@ -8,7 +8,7 @@
 
 - 对于单节点（云盘版）实例，云数据库 MySQL 会按照实例维度赠送一定的免费备份空间，一个单节点（云盘版）实例的免费备份空间大小为这个实例存储空间的200%。
 >?云盘版实例备份空间大小可在实例备份恢复页查看。
->![](https://staticintl.cloudcachetci.com/yehe/backend-news/Xh29037_24.png)
+>![](https://staticintl.cloudcachetci.com/yehe/backend-news/HMH5870_24.png)
 >
 
 ## 云盘与本地盘免费额度对比
