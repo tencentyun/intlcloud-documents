@@ -29,9 +29,9 @@
    **正常情况下**：返回如下图所示结果。
     ![](https://main.qcloudimg.com/raw/93a2f6f05867b88aa41e753e4c4e83c0.png)
    **如果无法访问**：
-		i. 可以尝试修改`dns nameserver`字段：`vim /etc/resolv.conf`，先把原有的`nameserver`字段注释，再新增`nameserver`字段，具体的 nameserver ip 相关内容，请参见 [内网服务](https://www.tencentcloud.com/document/product/213/5225)。
-		ii. 修改完成后，重新执行`telnet s.yd.qcloud.com 5574`检测能否连通。
-		iii. 如果可以连通，等待几分钟后（时间长短根据网络情况而定），控制台将能看到对应服务器重新上线。
+	 i. 可以尝试修改`dns nameserver`字段：`vim /etc/resolv.conf`，先把原有的`nameserver`字段注释，再新增`nameserver`字段，具体的 nameserver ip 相关内容，请参见 [内网服务](https://www.tencentcloud.com/document/product/213/5225)。
+	 ii. 修改完成后，重新执行`telnet s.yd.qcloud.com 5574`检测能否连通。
+	 iii. 如果可以连通，等待几分钟后（时间长短根据网络情况而定），控制台将能看到对应服务器重新上线。
 
 2. 防火墙策略限制，需要在 Linux 客户端开放 TCP 端口：5574、8080、80、9080。
 3. 如果容器安全服务进程存在，且不是由于网络原因导致的客户端离线，请打包客户端日志（日志路径：`/usr/local/qcloud/YunJing/log`）并 [联系我们](https://www.tencentcloud.com/contact-us) 进行反馈。
