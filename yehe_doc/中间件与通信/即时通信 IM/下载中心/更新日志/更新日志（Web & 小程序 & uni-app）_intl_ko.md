@@ -1,3 +1,97 @@
+### 2.24.0 @2022.11.3
+**새로운 기능**
+
+- WeChat 미니 게임 환경 통합 지원.
+- 로컬 비속어 플러그인 [tim-profanity-filter-plugin](https://www.npmjs.com/package/tim-profanity-filter-plugin), 로컬 비속어 기능 지원.
+- [getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile) 제품 경험을 개선하기 위해 친구 사용자 정의 필드 및 데이터 사용자 정의 필드 가져오기 지원.
+- [getGroupApplicationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupApplicationList) 전체 그룹 추가 요청 목록 풀링 지원.
+- RESTAPI는 친구의 사용자 정의 필드를 수정 및 SDK 푸시 지원.
+- 읽지 않은 것으로 계산되지 않는 토픽 메시지 전송 지원.
+- 읽지 않은 것으로 간주되지 않는 일반 커뮤니티 메시지 전송 지원.
+- 메시지를 보낼 때 voip push 지원.
+
+**오류 수정**
+- 친구 프로필 관련 문제.
+
+### 2.23.1 @2022.9.29
+**새로운 기능**
+- [createTextMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTextMessage) 등 그룹 지향 메시지 생성을 지원하는 인터페이스 추가(즉, 그룹의 일부 그룹 구성원에게 메시지를 전송하면 다른 그룹 구성원은 이러한 메시지를 받지 않습니다).
+- mov 형식의 비디오 전송 지원.
+- REST API [친구 업데이트](https://www.tencentcloud.com/zh/document/product/1047/34904)에서 SDK로의 푸시 지원.
+- [getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile)은 사용자 지정 친구 필드 및 사용자 지정 데이터 필드 풀링 지원.
+- [getConversationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationList) 인터페이스의 반환된 데이터 새 기능 필드가 SyncCompleted로, 클라우드에서 대화 목록의 동기화 완료 여부 식별에 사용.
+- 주제가 속한 커뮤니티 메시지에서 [MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED)를 통해 액세스측 알림 지원.
+- uni-app 오프라인 푸시 지원 개선.
+
+**오류 수정**
+
+- 그룹 목록이 상한인 5000개를 초과한 후 일부 그룹 대화가 로밍 메시지를 가져올 수 없는 문제
+- 해당 대화의 customData가 ’’ 세션 사용자 정의 필드를 설정하기 위해 setConversationCustomData를 호출한 후 다시 로그인하는 문제.
+
+### 2.23.0 @2022.9.16
+**새로운 기능**
+- SDK 해외 환경 지원.
+- [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount), 읽지 않은 세션의 총 수를 얻기 지원.
+- [TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED), 세션에서 읽지 않은 총 세션 수 변경 알림을 받기 위해 이벤트를 수신하는 액세스측 추가.
+- [markGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markGroupMemberList), 라이브 그룹 구성원의 태그 지정 지원(플래그십 버전에서만 지원).
+- 그룹 구성원이 그룹에서 추방되거나 그룹이 삭제될 때 그룹 대화가 있는 대화 그룹 동기적 업데이트 SDK 추가.
+- uni-app의 독립적인 샤딩 지원.
+- 지원되는 SDK는 메시지 신뢰성을 보장하기 위해 Web 다중 인스턴스 로그인 시나리오에서 네트워크 연결 해제 및 재연결 후 가장 최근 연락처의 메시지 기록을 자동 복구.
+
+**오류 수정**
+- Web 다중 인스턴스 로그인 시나리오에서 세션 lastMessage의 회수 상태가 동기화되지 않는 문제.
+- 최근 연락처를 동기화할 때 대화 상단 고정 문제.
+
+### 2.22.0 @2022.8.18
+**새로운 기능**
+- 오프라인 푸시를 위해 native app에 지원되는 uni-app 패키지. [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)을 참고하십시오.
+- 라이브 스트림 룸의 온라인 구성원 목록 가져오기 지원. [getGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberList)를 참고하십시오(플래그십 버전에서만 지원).
+- 라이브 방송 그룹 구성원 차단 지원. [deleteGroupMember](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteGroupMember)를 참고하십시오(플래그십 버전에서만 지원).
+- [setConversationCustomData](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setConversationCustomData) 대화 설정 사용자 지정 데이터 추가.
+- [markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation) 마크 대화 추가(플래그십 버전에서만 지원).
+- [getConversationGroupList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationGroupList) 대화 그룹 목록 가져오기 추가(플래그십 버전에서만 지원).
+- [createConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createConversationGroup) 대화 그룹 생성 추가(플래그십 버전에서만 지원).
+- [deleteConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversationGroup) 대화 그룹 삭제 추가(플래그십 버전에서만 지원).
+- [renameConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#renameConversationGroup) 대화 그룹 이름 바꾸기 추가(플래그십 버전에서만 지원).
+- [addConversationsToGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#addConversationsToGroup) 대화 그룹에 대화 추가 추가(플래그십 버전에서만 지원).
+- [deleteConversationsFromGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversationsFromGroup) 대화 그룹 대화 삭제 추가(플래그십 버전에서만 지원).
+
+**오류 수정**
+- 대화 메시지가 회수되었다는 알림을 받은 후 읽지 않은 대화 수가 업데이트되지 않는 문제.
+
+### 2.21.2 @2022.8.8
+**새로운 기능**
+- Web에서 음성 메시지 생성 및 전송 지원.
+- [createMergerMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createMergerMessage) 병합된 메시지 생성 및 병합된 메시지의 새 기능 ID 필드 추가.
+
+### 2.21.1 @2022.8.3
+**오류 수정**
+- resendMessage로 인해 발생할 수 있는 메시지 중복 문제.
+
+### 2.21.0 @2022.7.28
+**새로운 기능**
+- [setSelfStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setSelfStatus), 자신의 사용자 정의 상태 추가.
+- [getUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getUserStatus), 사용자 상태 가져오기 추가.
+- [subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#subscribeUserStatus), 구독 사용자 상태 추가.
+- [unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#unsubscribeUserStatus), 구독 취소 사용자 상태 추가.
+- [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType) 그룹 메시지 및 주제 메시지에 대한 DND 설정의 다중 터미널 및 다중 인스턴스 동기화 지원.
+- [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage) 모바일 WeChat 미니프로그램 및 QQ 미니프로그램 파일 메시지 보내기 지원.
+- [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) 모든 유형의 메시지에 대해 cloudCustomData 수정 지원.
+- [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html) isBroadcastMessage 필드 추가. 라이브 룸 방송 메시지 지원.
+- 그룹 추가 옵션으로 다중 터미널 및 다중 인스턴스 동기화 지원.
+- 일반 커뮤니티 및 주제 @모든 구성원 및 주제 lastMessage 지원.
+
+**변경 사항**
+- webworker는 브라우저가 webworker를 지원하는 경우 글로벌 웹 사이트 및 개인 환경에서 기본적으로 활성화됩니다.
+
+**오류 수정**
+- 대화 lastMessage를 업데이트하지 않는 메시지를 수신한 후 lastMessage.payload가 undefined로 설정되는 문제.
+- 온라인 메시지로 인한 그룹 메시지 보상이 시작되지 않는 문제.
+- 잦은 그룹 탈퇴 및 추가 후 풀 로밍 메시지 문제.
+- 페이징 풀 그룹 목록 랙으로 인해 풀 그룹 대화 로밍 메시지가 빈 배열 문제.
+- 알려진 문제를 수정.
+
+
 ### 2.20.1 @2022.6.27
 
 **변경 사항**
@@ -136,7 +230,7 @@ uni-app 패키지 Android app(일부 기기)에 액세스할 때 로그인 실�
 
 **변경 사항**
 
-- SDK [엄격 모드](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode) 사용.
+- SDK는 [엄격 모드](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Strict_mode)를 사용합니다.
 - 계정이 삭제된 대화는 대화 목록에서 필터링됨.
 - 로밍 메시지에 대한 `nick` 및 `avatar` 업데이트 타이밍 최적화.
 - 피어(친구) 프로필 업데이트 정보를 수신하면 SDK는 이에 따라 `conversation.userProfile` 업데이트.
@@ -579,7 +673,7 @@ C2C 메시지 수신 확인 지원(피어가 메시지를 읽음 여부 나타�
 
 ### 2.3.1 @2019.12.13
 **새로운 기능**
-- [createImageMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createImageMessage) 및 [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)는 [File](https://developer.mozilla.org/zh-CN/docs/Web/API/File) 객체 전달 지원.
+- [createImageMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createImageMessage) 및 [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)는 [File](https://developer.mozilla.org/en/docs/Web/API/File) 객체 전달 지원.
 - [createFaceMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFaceMessage) API가 이모지 메시지를 생성하기 위해 추가됨.
 - [TIM.TYPES.GRP_AVCHATROOM](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html#.GRP_AVCHATROOM) 그룹에 대한 메시지 알림 효율성은 사용자 경험을 개선하도록 최적화됨.
 

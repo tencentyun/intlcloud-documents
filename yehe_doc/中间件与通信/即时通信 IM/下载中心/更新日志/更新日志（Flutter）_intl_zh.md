@@ -1,4 +1,25 @@
+## 平台支持版本
+
+我们致力于打造一套支持 Flutter 全平台的即时通信 IM SDK 及 TUIKit，帮助您一套代码，全平台运行。
+
+| 平台                                                         | 无 UI SDK (tencent_im_sdk_plugin) | 含 UI 及基础业务逻辑 TUIKit (tim_ui_kit) |
+| ------------------------------------------------------------ | --------------------------------- | ---------------------------------------- |
+| iOS                                                          | 所有版本支持                      | 所有版本支持                             |
+| Android                                                      | 所有版本支持                      | 所有版本支持                             |
+| [Web](https://intl.cloud.tencent.com/document/product/1047/45907) | 4.1.1+2版本起支持                 | 0.1.5版本起支持                          |
+| [macOS](https://intl.cloud.tencent.com/document/product/1047/45907) | 4.1.8版本起支持                   | 即将上线                                 |
+| [Windows](https://intl.cloud.tencent.com/document/product/1047/45907) | 4.1.8版本起支持                   | 即将上线                                 |
+
+>? Web/macOS/Windows 平台需要简单的几步额外引入，详情请查看 [Web 兼容](https://intl.cloud.tencent.com/document/product/1047/45907) 和 [Desktop 兼容](https://intl.cloud.tencent.com/document/product/1047/45907) 指引。
+
+## 更新日志
+>?
+>
+>- IM Flutter SDK（无 UI）指代 [tencent_im_sdk_plugin](https://pub.dev/packages/tencent_im_sdk_plugin) 包，仅包括所有 IM 客户端 API 及监听回调。
+>- IM Flutter TUIKit（含 UI）指代 [tim_ui_kit](https://pub.dev/packages/tim_ui_kit) 包，在无 UI SDK 基础上，还包括完整 UI 组件库及业务逻辑。
+
 ## IM Flutter TUIKit 0.1.8 @2022.10.21
+
 - 优化：文件批量下载队列，允许一次点击多个文件消息。
 - 优化：群组列表小部件可以自动更新。
 - 优化：相机拍摄支持性能相对较低的设备，自动调整分辨率。
@@ -32,7 +53,7 @@
 - 优化：您现在可以选择禁用对话列表中 @消息 的显示
 - 优化：您现在可以在`TIMUIKitChatConfig`和`MessageItemBuilder`中返回`notificationExt/notificationBody`为`null`，在特定的情况下可以根据需要使用默认值，这意味着您可以根据提供的情况控制是否使用自定义设置，而不需要重新定义代码中与TUIKit相同的逻辑
 - 优化：支持文本消息多行
-- 优化：对`TIMUIKitChat`的体验进行改造和提升。另外，如需使用`TIMUIKitChatController`，需要传入`controler`，就像我们在[教程](https://www.tencentcloud.com/zh/document/product/1047/50054)中显示的那样
+- 优化：对`TIMUIKitChat`的体验进行改造和提升。另外，如需使用`TIMUIKitChatController`，需要传入`controler`，就像我们在[教程](https://www.tencentcloud.com/document/product/1047/50054)中显示的那样
 
 ## IM Flutter SDK 4.1.3 @2022.09.21
 - 解决一些 Web 端的问题

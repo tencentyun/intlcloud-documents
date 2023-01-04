@@ -1,3 +1,97 @@
+### 2.24.0 @2022.11.3
+**追加**
+
+- Wechatミニゲーム環境の統合をサポートします。
+- ローカルの検証プラグイン[tim-profanity-filter-plugin](https://www.npmjs.com/package/tim-profanity-filter-plugin)でローカルの検証機能をサポートします。
+- [getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile)はデフォルトで、友達のカスタムフィールドと資料のカスタムフィールドをプルし、製品のエクスペリエンスを向上させます。
+- [getGroupApplicationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupApplicationList)はグループ参加リストをすべてプルすることをサポートします。
+- RESTAPIで変更された友達のカスタムフィールドはSDKへのプッシュをサポートします。
+- 未読としてカウントされないトピックメッセージの送信をサポートします。
+- 未読としてカウントされない通常のコミュニティメッセージの送信をサポートします。
+- メッセージ送信がvoip pushをサポートします。
+
+**修正**
+- 友達資料に関する問題。
+
+### 2.23.1 @2022.9.29
+**追加**
+- [createTextMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTextMessage)などのインターフェースはグループ指向メッセージの作成をサポートします（メッセージは指定されたグループメンバーに送信される）。
+- mov形式のビデオの送信をサポートします。
+- REST APIの[友達の更新](https://www.tencentcloud.com/zh/document/product/1047/34904)はSDKへのプッシュをサポートします。
+- [getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile)はカスタム友達フィールドとカスタム資料フィールドのプルをサポートします。
+- [getConversationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationList)インターフェースから返されたデータに新しいフィールドisSyncCompletedを追加しました。クラウドからのセッションリストの同期が完了したかどうかを示すために使用されます。
+- トピックが属するコミュニティメッセージが[MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED)イベントを用いて導入側に通知することをサポートします。
+- uni-appのオフラインプッシュへのサポートを改善しました。
+
+**修正**
+
+- グループリストが上限5000を超えた後、一部のグループセッションがローミングメッセージをプルことができない問題。
+- setConversationCustomDataを呼び出してセッションのカスタムフィールドを設定した後に再ログインするとセッションのcustomDataが''になる問題。
+
+### 2.23.0 @2022.9.16
+**追加**
+- SDKの海外環境をサポートします。
+- セッション未読総数を取得する[getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount)。
+- [TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED)。導入側がこのイベントをリスニングするとセッション未読合計数の変更の通知を取得できます。
+- ライブストリーミンググループのグループメンバをタグつける[markGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markGroupMemberList)。
+- グループメンバーがグループから追放されるか、グループが解散されると、SDKがこのグループセッションが存在するセッションのサブグループを同期的に更新しました。
+- アプレットの独立パッケージングをサポートします。
+- Webマルチインスタンスのサインオンシーンで、ネットワークが切断されて再接続された後、SDKが最近使用した連絡先のメッセージ履歴を自動で回復し、メッセージの信頼性を保証します。
+
+**修正**
+- Webマルチインスタンスのサインオンシーンで発生する可能性のあるセッションlastMessageの撤回状態の非同期問題。
+- 最近使用した連絡先を同期するときのセッションのトップ表示問題。
+
+### 2.22.0 @2022.8.18
+**追加**
+- uni-appでnative appへのパッケージ化時にオフライン配信を使用することをサポートします。[registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)をご参照ください。
+- ライブストリーミンググループのオンラインメンバーリストを取得することをサポートします。[getGroupMemberList ](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberList)（Ultimate Editionが必要）をご参照ください。
+- ライブストリーミンググループのメンバーブロックをサポートします。[deleteGroupMember](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteGroupMember)（Ultimate Editionが必要）をご参照ください。
+- セッションのカスタムデータを設定する[setConversationCustomData](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setConversationCustomData)。
+- セッションをタグつける[markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation)（Ultimate Editionが必要）。
+- セッションのサブグループリストを取得する[getConversationGroupList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationGroupList)（Ultimate Editionが必要）。
+- セッションのサブグループを作成する[createConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createConversationGroup)（Ultimate Editionが必要）。
+- セッショングループを削除する[createConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversationGroup)（Ultimate Editionが必要）。
+- セッションのサブグループをリネームするする[renameConversationGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#renameConversationGroup)（Ultimate Editionが必要）。
+- セッションをセッションのサブグループに追加する[addConversationsToGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#addConversationsToGroup)（Ultimate Editionが必要）。
+- セッションのサブグループからセッションを削除する[deleteConversationsFromGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversationsFromGroup)（Ultimate Editionが必要）。
+
+**修正**
+- トピックメッセージが撤回されたとの通知を受けてもトピックの未読数が更新されない問題。
+
+### 2.21.2 @2022.8.8
+**追加**
+- Web側での音声メッセージの作成と送信をサポートします。
+- IDフィールドを追加したマージメッセージを作成する[createMergerMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createMergerMessage)。
+
+### 2.21.1 @2022.8.3
+**修正**
+- resendMessageのメッセージ重複問題。
+
+### 2.21.0 @2022.7.28
+**追加**
+- 自分のカスタマイズ状態を設定する[setSelfStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setSelfStatus)。
+- ユーザー状態を取得する[getUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getUserStatus)。
+- ユーザーの状態をサブスクリプションする[subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#subscribeUserStatus)。
+- ユーザーの状態のサブスクリプションを解除する[unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#unsubscribeUserStatus)。
+- グループメッセージやトピックメッセージの通知オフ設定を多端末と多インスタンスで同期する[setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType)。
+- スマホ側のWeChatミニプログラムとQQウィジェットによるファイルメッセージの送信をサポートする[createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)。
+- すべてのタイプのメッセージのcloudCustomDataの変更をサポートする[modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage)。
+- ライブストリーミンググループでメッセージをブロードキャストするため、[Message](https://web.sdk.qcloud.com/im/doc/en/Message.html)の新しいフィールドisBroadcastMessageを追加しました。
+- グループ参加オプションのマルチ端末とマルチインスタンス同期をサポートします。
+- 一般コミュニティとトピックの@全員およびトピックlastMessageをサポートします。
+
+**変更**
+- webworker対応のブラウザの国際サイトとプライベート環境でwebworkerがデフォルトでが有効になります。
+
+**修正**
+- セッションlastMessageを更新しないメッセージを受信した後、lastMessage.payloadがundefinedに設定される問題。
+- オンラインメッセージが原因でグループメッセージの補償が開始されない問題。
+- 頻繁にグループ脱退・グループ参加後にグループのローミングメッセージをプルすると異常が発生する問題。
+- ページごとにグループリストのプルが遅れて、プルしたグループセッションのローミングメッセージが空の配列になるという問題。
+- トピックが既知である問題。
+
+
 ### 2.20.1 @2022.6.27
 
 **変更**
@@ -17,14 +111,14 @@
 
 - [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage)は、メッセージの変更をサポートするようになりました。
 - [getMessageListHopping](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping)は、指定されたメッセージsequenceまたはメッセージ時間によってセッションのメッセージリストをプルすることをサポートするようになりました。
-- 単一または複数のC2Cメッセージの開封確認の送信をサポートするようになりました（Ultimate Editionを有効化する必要があります）。
+- 単一または複数のC2Cメッセージの開封確認の送信をサポートするようになりました（Ultimate Editionを有効化してください）。
 - C2CセッションlastMessageで、対向側がメッセージを開封したかどうかを識別するために使用されるフィールドisPeerReadを追加しました。
 - グループの通知メッセージを未読セッションとしてカウントされないことをサポートするようになりました。
 - REST API kickをサポートする[TIM.TYPES.KICKED_OUT_REST_API](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html#.KICKED_OUT_REST_API)型を追加しました。
 
 **変更**
 
-- [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList)によるローミングメッセージのプル体験を改善・最適化しました。
+- [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList)によるローミングメッセージのプル体験を改善、最適化しました。
 
 **修正**
 
@@ -82,16 +176,16 @@
 
 - [Community](https://intl.cloud.tencent.com/document/product/1047/33529)をサポートしました。
 - 最近の連絡先`Conversation.lastMessage`は、グループプロンプトメッセージをサポートしました。
-- `Message.payload.memberList`は、グループ参加またはグループ退出のグループメンバーのニックネーム、プロフィールフォトなどの情報の取得をサポートしました。
+- `Message.payload.memberList`は、グループ参加またはグループ退出のグループメンバーのニックネーム、プロファイルフォトなどの情報の取得をサポートしました。
 - 画像メッセージの送信は、webp形式の画像をサポートしました。
 - ビデオメッセージの送信は、ビデオカバー[snapshotUrl](https://web.sdk.qcloud.com/im/doc/en/Message.html#.VideoPayload)をサポートしました。
 - メッセージの転送効率、スロットリング[CONVERSATION_LIST_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.CONVERSATION_LIST_UPDATED)などのイベントを最適化しました。
 
 **修正**
 
-- カスタムデー(cloudCustomData)を含むメッセージが送信された後、再ログインすると、cloudCustomDataが空になるという問題。
+- カスタムデータ（cloudCustomData）を含むメッセージが送信された後、再ログインすると、cloudCustomDataが空になるという問題。
 - [login](https://web.sdk.qcloud.com/im/doc/en/SDK.html#login)に失敗した後、再ログインすると、「再ログインしないでください」という問題。
-- [getGroupProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupProfile)後、`Conversation.groupProfile`は最新のグループプロフィールと一致しないという問題。
+- [getGroupProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupProfile)後、`Conversation.groupProfile`は最新のグループプロファイルと一致しないという問題。
 
 ### 2.16.3 @2022.2.11
 
@@ -136,10 +230,10 @@ uni-appがAndroid app（一部のデバイス）をパッケージ化した後�
 
 **変更**
 
-- SDKは[strictモード](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)を使用します。
+- SDKが[厳格モード](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)を使用します。
 - セッションリストは、削除されたアカウントとのセッションをフィルタリングします。
 - ローミングメッセージの`nick`と`avatar`の更新タイミングを最適化しました。
-- 相手側（フレンド）のプロフィール更新を受け取った後、対応して`conversation.userProfile`を更新しました。
+- 相手側（フレンド）のプロファイル更新を受け取った後、対応して`conversation.userProfile`を更新しました。
 
 **修正**
 
@@ -192,7 +286,7 @@ uni-appがAndroid app（一部のデバイス）をパッケージ化した後�
 **修正**
 
 - C2Cセッションがローミングメッセージをプルするとき、メッセージを失うことがある問題。
-- グループ参加の追記(applyMessage)がない問題。
+- グループ参加の追記（applyMessage）がない問題。
 
 ### 2.13.1 @2021.8.27
 
@@ -276,7 +370,7 @@ adminの設定およびadminのキャンセル後、グループプロンプト�
 
 **修正**
 
-- [コンソール](https://console.cloud.tencent.com/im)でAVチャットルー(AVChatRoom)を作成し、グループマスターを指定します。グループマスターがグループに参加した後、[SendSystemNotification](https://intl.cloud.tencent.com/document/product/1047/34958)のREST APIを呼び出して、グループマスターがグループシステム通知を繰り返し受信する問題。
+- [コンソール](https://console.cloud.tencent.com/im)でAVチャットルーム（AVChatRoom）を作成し、グループマスターを指定します。グループマスターがグループに参加した後、[SendSystemNotification](https://intl.cloud.tencent.com/document/product/1047/34958)のREST APIを呼び出して、グループマスターがグループシステム通知を繰り返し受信する問題。
 - [createForwardMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createForwardMessage)で、ニックネームを失う問題。
 - [downloadMergerMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#downloadMergerMessage)で、偶発的なエラー。
 
@@ -413,7 +507,7 @@ SDKの容量を縮小しました。[tim-js-sdk](https://www.npmjs.com/package/t
 
 **修正**
 
-ライブストリーミンググループ(AVChatRoom)を長時間使用するとメッセージがプルできなくなることがある問題。
+ライブストリーミンググループ（AVChatRoom）を長時間使用するとメッセージがプルできなくなることがある問題。
 
 ### 2.7.5 @2020.7.2
 
@@ -438,7 +532,7 @@ C2Cメッセージの開封報告（相手側が送信メッセージを読ん�
 **修正**
 
 - チャットルーム(ChatRoom)参加後に作成したセッションのうち最新のメッセージが表示されない問題。
-- ログイン後、オーディオビデオチャットルーム(AVChatRoom)に参加していないのにオーディオビデオチャットルーム（AVChatRoom）にメッセージが送信可能である問題。
+- ログイン後、オーディオビデオチャットルーム(AVChatRoom)に参加していないのにオーディオビデオチャットルーム(AVChatRoom)にメッセージが送信可能である問題。
 
 
 ### 2.6.6 @2020.5.27
@@ -517,7 +611,7 @@ COSアップロードのサイン失効後にすみやかに更新しないと�
 
 **修正**
 
-オーディオビデオチャットルーム(AVChatRoom)の受信側が受信するメッセージの優先度と送信側で設定するメッセージ優先度が一致しない問題。
+オーディオビデオチャットルーム（AVChatRoom）の受信側が受信するメッセージの優先度と送信側で設定するメッセージ優先度が一致しない問題。
 
 ### 2.5.0 @2020.2.28
 **追加**
@@ -527,7 +621,7 @@ COSアップロードのサイン失効後にすみやかに更新しないと�
 [エラーコード](https://web.sdk.qcloud.com/im/doc/en/global.html)を減らし、最適化しました。
 
 **修正**
-- [コンソール](https://console.cloud.tencent.com/im)でオーディオビデオチャットルーム(AVChatRoom)を作成してグループマスターを指定したときに、グループマスターがこのグループに参加した後、グループ内の他のメンバーが送信した情報がグループマスター側で重複する問題。
+- [コンソール](https://console.cloud.tencent.com/im)でオーディオビデオチャットルーム（AVChatRoom）を作成してグループマスターを指定したときに、グループマスターがこのグループに参加した後、グループ内の他のメンバーが送信した情報がグループマスター側で重複する問題。
 - [コンソール](https://console.cloud.tencent.com/im)またはREST APIを使用してグループを頻繁に作成、廃棄すると、SDKが[TIM.EVENT.GROUP_SYSTEM_NOTICE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.GROUP_SYSTEM_NOTICE_RECEIVED) イベントを配信しなくなる問題。
 - [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList)で、グループメッセージリストがプルできなくなることがある問題。
 
@@ -572,14 +666,14 @@ COSアップロードのサイン失効後にすみやかに更新しないと�
 
 ### 2.3.2 @2019.12.18
 **変更**
-[getUserProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getUserProfile)および[updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile)で、[カスタムプロフィールフィールド](https://intl.cloud.tencent.com/document/product/1047/33520)をサポートしました。
+[getUserProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getUserProfile)および[updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile)で、[カスタムプロファイルフィールド](https://intl.cloud.tencent.com/document/product/1047/33520)をサポートしました。
 
 **修正**
 [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList)で取得した複合メッセージのメッセージが消失する問題。
 
 ### 2.3.1 @2019.12.13
 **追加**
-- [createImageMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createImageMessage)および[createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)インターフェースで、[File](https://developer.mozilla.org/zh-CN/docs/Web/API/File)オブジェクトを渡せるようになりました。
+- [createImageMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createImageMessage)および[createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)インターフェースで、[File](https://developer.mozilla.org/en/docs/Web/API/File)オブジェクトを渡せるようになりました。
 - 顔絵文字メッセージ作成インターフェース[createFaceMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFaceMessage)。
 - [TIM.TYPES.GRP_AVCHATROOM](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html#.GRP_AVCHATROOM)タイプのグループのメッセージ通知効率を最適化し、ユーザーエクスペリエンスを大幅に向上させました。
 
@@ -602,13 +696,13 @@ COSアップロードのサイン失効後にすみやかに更新しないと�
 グループローミングメッセージをプルするロジックを改善しました。
 
 **修正**
-- グループマスターがオーディオビデオチャットルームのグループプロフィールを修正した後、SDKが[2901エラーコード](https://web.sdk.qcloud.com/im/doc/en/global.html)を表示する問題。
+- グループマスターがオーディオビデオチャットルームのグループプロファイルを修正した後、SDKが[2901エラーコード](https://web.sdk.qcloud.com/im/doc/en/global.html)を表示する問題。
 - グループ管理者がグループ参加申請の処理を完了し、更新した後も、依然として処理済みの申請を受信している問題。
 
 ### 2.2.0 @2019.11.21
 **追加**
 - ミニプログラムで、ビデオメッセージ送信の作成[createVideoMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createVideoMessage)をサポートしました。全プラットフォームでビデオメッセージの相互通信が可能です（最新版の[TUIKitおよびSDK](https://intl.cloud.tencent.com/document/product/1047/33996)にアップグレードする必要があります）。
-- グループメンバープロフィールのクエリーのインターフェース[getGroupMemberProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberProfile)。
+- グループメンバープロファイルのクエリーのインターフェース[getGroupMemberProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberProfile)。
 Native IM v3.xから送信された音声、ファイルメッセージとの互換性をサポートしました。
 - 位置情報メッセージ[GeoPayload](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GeoPayload)の受信をサポートしました。
 
@@ -624,7 +718,7 @@ Native IM v3.xから送信された音声、ファイルメッセージとの互
 ### 2.1.4 @2019.11.7
 **変更**
 - SDK APIが返した`Promise`状態が`rejected`のとき、SDKが[TIM.EVENT.ERROR](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.ERROR)イベントを配信しないようにしました。
-- 自分のProfile（プロフィール）が更新されると、ローカルキャッシュにすみやかに書き込まれます。
+- 自分のProfile（プロファイル）が更新されると、ローカルキャッシュにすみやかに書き込まれます。
 
 **修正**
 - Angularアーキテクチャのzone.jsでプロトタイプチェーンを修正するとSDKの統合でエラーが発生する問題。
@@ -645,7 +739,7 @@ REST APIまたは旧版 IMで送信した複合メッセージ（1件のメッ�
 
 ### 2.1.2 @2019.10.25
 **追加**
- [getGroupList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupList)インターフェースで、グループマスターID、グループメンバー数などのグループ関連プロフィールのプルをサポートしました。
+ [getGroupList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupList)インターフェースで、グループマスターID、グループメンバー数などのグループ関連プロファイルのプルをサポートしました。
 
 **修正**
 - REST APIを使用してオーディオビデオチャットルームのグループカスタム通知を送信すると、SDKコードでエラーが報告される問題。
@@ -672,7 +766,7 @@ REST APIまたは旧版 IMで送信した複合メッセージ（1件のメッ�
 **修正**
 - [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList)インターフェースで削除済みのグループチャットセッションのメッセージのプルができない問題。
 - グループシステム通知にグループ名がない問題。
-- メッセージを受信した新規作成セッションにプロフィールがない問題。
+- メッセージを受信した新規作成セッションにプロファイルがない問題。
 
 ### 2.0.11 @2019.10.12
 
