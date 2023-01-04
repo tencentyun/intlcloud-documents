@@ -653,7 +653,6 @@ COSアップロードのサイン失効後にすみやかに更新しないと�
 **変更**
 - [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)で、アップロードするファイルサイズを20Mから100Mに変更しました。
 - [グループプロンプトメッセージ](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload)の`msgMemberInfo`および`shutupTime`はまもなく廃棄されます。代替として`memberList`および`muteTime`を使用してください。
-- コンソールで[IM AIBotエントリー](https://cloud.tencent.com/act/event/smarty-service?from=im-doc)を追加しました。
 
 **修正**
 - [off](https://web.sdk.qcloud.com/im/doc/en/SDK.html#off)インターフェースを呼び出してモニタリングイベントを取り消しできない問題。
