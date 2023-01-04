@@ -1,4 +1,4 @@
-﻿## September 2022
+## September 2022
 <table>
 <thead>
 <tr>
