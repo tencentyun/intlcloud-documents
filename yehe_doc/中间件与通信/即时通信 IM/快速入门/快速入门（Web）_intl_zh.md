@@ -1,9 +1,17 @@
-# [Chat UIKit React](https://www.tencentcloud.com/document/product/1047/34279/)
->!Chat UIKit 是基于腾讯云 IM SDK 的一款 UI 组件库，它提供了一些通用的 UI 组件，包含会话、聊天、关系链、群组、音视频通话等功能。
+# [快速入门（Web）](https://www.tencentcloud.com/document/product/1047/45912)
+>Chat UIKit 是基于腾讯云 IM SDK 的一款 UI 组件库，它提供了一些通用的 UI 组件，包含会话、聊天、关系链、群组、音视频通话等功能。
 基于 UI 组件您可以像搭积木一样快速搭建起自己的业务逻辑。
 Chat UIKit  中的组件在实现 UI 功能的同时，会调用 IM SDK 相应的接口实现 IM 相关逻辑和数据的处理，因而开发者在使用 Chat UIKit  时只需关注自身业务或个性化扩展即可。
 
+<img align="right" src="https://qcloudimg.tencent-cloud.cn/raw/4562be8179a1534efb17d33428239c82.png?auto=format,enhance" width="50%" />
 
+### Quick Links
+- [Demo App](https://web.sdk.qcloud.com/im/demo/intl/index.html)
+- [Client API](https://www.tencentcloud.com/document/product/1047/33999)
+- [Free Demos](https://www.tencentcloud.com/document/product/1047/34279)
+- [FAQ](https://www.tencentcloud.com/document/product/1047/34455)
+- [GitHub Source](https://github.com/TencentCloud/chat-uikit-react)
+- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
 ## Example App
 我们已经构建了用于展示聊天功能的实例演示程序，您可以在我们的网站上预览这些 [demo](https://web.sdk.qcloud.com/im/demo/intl/index.html)，另外在 GitHub 中也提供相关的[开源代码](https://github.com/TencentCloud/chat-uikit-react)。
 
@@ -41,13 +49,49 @@ $ npm run start
 2. 在输入框中搜索另一个用户的 userID。
 3. 点击用户头像发起会话。
 4. 在输入框输入消息，按下"enter"键发送。
-   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat-English.gif)
+   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat.gif)
 
+## 集成 chat-uikit-react
 
-### Quick Links
-- [Demo App](https://web.sdk.qcloud.com/im/demo/intl/index.html)
-- [Client API](https://www.tencentcloud.com/document/product/1047/33999)
-- [Free Demos](https://www.tencentcloud.com/document/product/1047/34279)
-- [FAQ](https://www.tencentcloud.com/document/product/1047/34455)
-- [GitHub Source](https://github.com/TencentCloud/chat-uikit-react)
-- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
+### 步骤一：Installation
+```
+$ npm install @tencentcloud/chat-uikit-react
+```
+### 步骤二：Usage
+```tsx
+import React, { useEffect, useState } from 'react';
+import { TUIKit } from '@tencentcloud/chat-uikit-react';
+import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
+import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
+import TIMUploadPlugin from 'tim-upload-plugin';
+
+// 生成tim实例对象并完成登陆
+const init = async () => {
+   return new Promise((resolve, reject) => {
+      const tim = TIM.create({ SDKAppID: 000 });
+      tim?.registerPlugin({ 'tim-upload-plugin': TIMUploadPlugin });
+      const onReady = () => { resolve(tim); };
+      tim.on(TIM.EVENT.SDK_READY, onReady);
+      tim.login({
+         userID: 'xxx',
+         userSig: 'xxx',
+      });
+   });
+}
+
+export function SampleChat() {
+   const [tim, setTim] = useState<ChatSDK>();
+   useEffect(() => {
+      (async ()=>{
+         const tim = await init()
+         setTim(tim)
+      })()
+   }, [])
+
+   return (
+           <div style={{height: '100vh',width: '100vw'}}>
+              <TUIKit tim={tim}></TUIKit>
+           </div>
+   );
+}
+```

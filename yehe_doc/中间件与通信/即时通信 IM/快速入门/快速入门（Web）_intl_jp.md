@@ -1,65 +1,97 @@
-Web DemoはIM TUIKitを基に実装され、TUIKitにはセッション、チャット、グループ、 個人プロファイル管理などの機能が含まれ、TUIKitを基に積み木のように独自のサービスロジックを素早く構築できます。
+# [クイックスタート(Web)](https://www.tencentcloud.com/document/product/1047/45912)
+>Chat UIKitはTencent Cloud IM SDKに基づいたUIコンポーネントライブラリで、会話、チャット、リレーショナルチェーン、グループ、オディオ・ビデオ通話などの機能を含む汎用的なUIコンポーネントを提供しています。
+UIコンポーネントに基づいて、独自のビジネスロジックを積み木のようにすばやく構築できます。
+Chat UIKitのコンポーネントはUI機能を実現すると同時に、IM SDKの対応するインターフェースを呼び出してIM関連のロジックとデータの処理を実現するため、開発者はChat UIKitを使用する際に自分の業務やパーソナライズされた拡張に注目すればよいです。
 
-## デモンストレーション
+<img align="right" src="https://qcloudimg.tencent-cloud.cn/raw/4562be8179a1534efb17d33428239c82.png?auto=format,enhance" width="50%" />
 
-### セッション管理
+### Quick Links
+- [Demo App](https://web.sdk.qcloud.com/im/demo/intl/index.html)
+- [Client API](https://www.tencentcloud.com/document/product/1047/33999)
+- [Free Demos](https://www.tencentcloud.com/document/product/1047/34279)
+- [FAQ](https://www.tencentcloud.com/document/product/1047/34455)
+- [GitHub Source](https://github.com/TencentCloud/chat-uikit-react)
+- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
+## Example App
+チャット機能を示すためのインスタンスデモプログラムを構築しています。これらの[demo](https://web.sdk.qcloud.com/im/demo/intl/index.html)は弊社のWebサイトでプレビューできます。また、関連する[オープンソース](https://github.com/TencentCloud/chat-uikit-react)もGitHubに用意されています。
 
-| セッションの開始 | セッションリスト | セッションリスト管理 |
-| --- | --- | --- |
-| ![](https://qcloudimg.tencent-cloud.cn/raw/562deec9715ae2c50f65e8d40c4d7cac.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/990204616a1c551c36ff5bdc57caa66c.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/695589f54d4ac0b9bb9bc24eb97c7e6d.png) |
+![img.png](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/home.png)
 
-### チャット管理
+## demoのクイックスタート
 
-| メッセージリスト | メッセージ送信 | グループチャット管理 |
-| --- | --- | --- |
-| ![](https://qcloudimg.tencent-cloud.cn/raw/8cb4fd0813a7ce0f3cab8468098dd896.png) |![](https://qcloudimg.tencent-cloud.cn/raw/f931993108c14ba3b2e628e4ed50a316.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/bb9b0449eb712f9e6fececfdb199418a.png) |
-
-
-
-| 機能  | 説明  |
-| --- | --- |
-| セッション管理 | 1. ユーザーによる1人/多人数のセッションの開始に使用<br/>2. ユーザーのセッションリストの表示に使用<br/>3. ユーザーのセッションリストの管理に使用 |
-| チャット管理 | 1. メッセージリストの表示に使用<br/>2. メッセージの送信に使用<br/>3. グループチャットの管理に使用 |
-
-
-## クイックスタートステップ
-
-### ステップ1：ソースコードのダウンロード
-
-実際のサービス要求に基づいて、SDKと付属の[Demoソースコード](https://github.com/TencentCloud/TIMSDK)をダウンロードします。
-
-```shell
-# コマンドラインの実行
-git clone https://github.com/TencentCloud/TIMSDK.git
-
-# Webプロジェクトに参加
-
-cd TIMSDK/Web/Demo
-
-# demo依存のインストール
-npm install
-
-cd TIMSDK/Web/Demo/src/TUIKit
-
-# TUIKit依存のインストール
-npm install
+### 手順1：ソースコードのダウンロード
 ```
-
-### ステップ2：初期化
-1. 端末のディレクトリのプロジェクトを開いて、対応するGenerateTestUserSigファイルを見つけてください。パス：/debug/GenerateTestUserSig.js。
-2. GenerateTestUserSigファイルの関連パラメータを設定します。そのうち、SDKAppIDとキーなどの情報は、[IMコンソール](https://console.cloud.tencent.com/im)から取得し、対象のアプリケーションカードをクリックして、アプリケーションの基本設定ページに移動します。 [![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)](https://camo.githubusercontent.com/20575292024f27b76db87d6688e57f16d38b579b249054466668b596975dd30e/68747470733a2f2f71636c6f7564696d672e74656e63656e742d636c6f75642e636e2f7261772f65343335333332636461386439656337666561323162643935663761306362612e706e67)
-3. **基本情報**のところで、**キーの表示**をクリックし、GenerateTestUserSigファイルにキー情報をコピーして保存します。
-
-
-> !ここで言及するUserSigの取得方法は、クライアントコードにSECRETKEYを設定しますが、この手法のSECRETKEYは逆コンパイルによって逆クラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適しています**。UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し、動的にUserSigを取得します。詳細については、[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/1047/34385)をご参照ください。
+# Run the code in CLI
+$ git clone https://github.com/TencentCloud/chat-uikit-react
+# Go to the project  
+$ cd chat-uikit-react
+# Install dependencies of the demo
+$ npm install && cd examples/sample-chat && npm install
+```
+### 手順2：demoの設定
+1. `examples/sample-chat`プロジェクトを開き、パス`./examples/sample-chat/src/debug/GenerateTestUserSig.js`で`GenerateTestUserSig.js`ファイルを探します。
+2.　`GenerateTestUserSig.js`ファイルに`SDKAPPID`と`SECRETKEY`を設定します。これらの値は[IMコンソール](https://console.tencentcloud.com/im)で取得できます。対象のアプリカードをクリックすると、設定ページに移動します。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
+3.　**Basic Information**領域で**Display key**をクリックし、キー情報をコピーしてGenerateTestUserSigファイルに保存します。
+>!
+>- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します。**
+>- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供する方法となります。UserSigが必要なときは、Appから業務サーバーにリクエストを送信し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://www.tencentcloud.com/document/product/1047/34385)をご参照ください。
 
 ### ステップ3：プロジェクトの起動
-
-```shell
-# プロジェクトの起動
-npm run serve
+```
+# Launch the project
+$ cd examples/sample-chat
+$ npm run start
 ```
 
-- [SDK APIマニュアル](https://web.sdk.qcloud.com/im/doc/en/SDK.html)
-- [SDK更新ログ](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [Demoソースコード](https://github.com/TencentCloud/TIMSDK/tree/master/Web/Demo)
+###　手順4：最初のメッセージを送信
+1.　プロジェクトの起動に成功したら、「+」アイコンをクリックして、セッションを作成します。
+2.　入力ボックスで別のユーザーのuserIDを検索します。
+3.　ユーザーのプロファイル画像をクリックしてセッションを開始します。
+4.　入力ボックスにメッセージを入力し、「enter」キーを押して送信します。
+   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat.gif)
+
+## chat-uikit-reactの統合
+
+### 手順1：Installation
+```
+$ npm install @tencentcloud/chat-uikit-react
+```
+### 手順2：Usage
+```tsx
+import React, { useEffect, useState } from 'react';
+import { TUIKit } from '@tencentcloud/chat-uikit-react';
+import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
+import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
+import TIMUploadPlugin from 'tim-upload-plugin';
+
+//　timインスタンスオブジェクトを生成してログインを完了
+const init = async () => {
+   return new Promise((resolve, reject) => {
+      const tim = TIM.create({ SDKAppID: 000 });
+      tim?.registerPlugin({ 'tim-upload-plugin': TIMUploadPlugin });
+      const onReady = () => { resolve(tim); };
+      tim.on(TIM.EVENT.SDK_READY, onReady);
+      tim.login({
+         userID: 'xxx',
+         userSig: 'xxx',
+      });
+   });
+}
+
+export function SampleChat() {
+   const [tim, setTim] = useState<ChatSDK>();
+   useEffect(() => {
+      (async ()=>{
+         const tim = await init()
+         setTim(tim)
+      })()
+   }, [])
+
+   return (
+           <div style={{height: '100vh',width: '100vw'}}>
+              <TUIKit tim={tim}></TUIKit>
+           </div>
+   );
+}
+```
