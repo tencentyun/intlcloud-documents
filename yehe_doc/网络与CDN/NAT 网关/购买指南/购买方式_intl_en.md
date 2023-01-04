@@ -36,6 +36,7 @@ This document describes how to purchase NAT gateways in the NAT Gateway console.
 <td>You can associate the NAT gateway with <strong>existing EIPs</strong> or <strong>create new EIPs</strong> for it.<ul><li>Using existing EIPs: Make sure that you have idle EIPs in the same region as the NAT gateway. </li><li>Creating new EIPs: Bill-by-traffic general BGP IPs are created automatically. You can configure the EIP quantity and the bandwidth cap as needed.</li></ul></td>
 </tr>
 </tbody></table>
+
 >?	
 >- The traffic going to the internet is limited by the bandwidth cap of both the NAT gateway and EIPs. The smaller bandwidth cap prevails. 
 >- For more information about NAT gateway-related operations, see [Getting Started](https://intl.cloud.tencent.com/document/product/1015/30251).
