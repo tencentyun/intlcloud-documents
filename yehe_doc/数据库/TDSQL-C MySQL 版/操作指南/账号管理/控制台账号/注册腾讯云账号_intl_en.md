@@ -1,7 +1,7 @@
 Before using TencentDB service, you need to sign up for a Tencent Cloud account. Then you can log in to the Tencent Cloud console with the account to purchase and use the TDSQL-C for MySQL product.
 
 ## Step 1: Go to the registration page
-[Click to enter the Tencent Cloud registration page](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F).
+[Click to enter the Tencent Cloud registration page](https://www.tencentcloud.com/account/register).
 
 ## Step 2: Register an account
 You can register for Tencent Cloud with the following options:
