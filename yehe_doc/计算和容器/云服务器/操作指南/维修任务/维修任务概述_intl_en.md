@@ -1,34 +1,41 @@
-The maintenance task feature aims to provide a standard authorized failure maintenance service. When the platform detects an exception that affects the instance running status (such as occasional sudden host failure or perceptible platform upgrade and maintenance), it will send you a notification, record the maintenance task, and perform specified maintenance operations at the specified maintenance time.
+Maintenance Task is designed to provide users with standardized CVM troubleshooting and authorized maintenance services.
 
-A maintenance task helps you stay on top of and handle sudden problems with instances, improve your system stability and maintenance efficiency, and reduce the maintenance costs. You can back up the data promptly before executing system events to get prepared at the application layer. In addition, you can query the processed maintenance tasks in the last month to get data such as failure processing and recovery time.
+To improve the running performance and stability of instances, and ensure the safe and efficient operation of the underlying platform, we regularly maintain and upgrade the underlying host and platform architecture without CVM shutdown. During the upgrade and maintenance, your CVM instances can operate stably without the need to interrupt the business applications.
 
+Maintenance Task helps users learn and handle all kinds of issues of CVM instances in real time, prevent potential downtime risks in advance, improve maintenance efficiency and reduce maintenance costs. You can back up data of abnormal instances to ensure stable operation of your business. Also, you can configure preset authorization policies or use APIs as needed for automatic Ops of CVM failures and risks.
 
-## Strengths
+## Advantages
 
 #### Free enablement
-You can enable this feature as needed without purchasing it additionally. After creating and using an instance, you can view the maintenance task list and handle the current risks.
 
-#### Comprehensive coverage
-This feature covers various instance exceptions such as instance running exception, running (risk) alarm, disk exception, and network connection exception.
+Maintenance Task is now fully available for free. After you create and use a CVM instance, you can go to [Task List](https://console.cloud.tencent.com/cvm/repair/list) to check all maintenance task records of your CVM instances.
+
+#### Full coverage of exceptions and risks
+
+All kinds of sudden exceptions (such as sudden abnormal downtime of underlying host, causing the CVM to abnormally restart), running risks (predict the risks of various software and hardware failures of the underlying host), disk exceptions/warnings (instance disk usage exceptions/ early warnings) and scheduled maintenance and upgrade tasks are covered.
 
 #### Elastic configuration
-This feature allows you to configure multiple preset processing policies, each of which can be associated with different computing product instances. After a preset processing policy is configured, it can be automatically associated with an instance through a tag during instance creation.
 
-#### Flexible service
-The authorization center provides a custom authorization service, which can be connected to through standard TencentCloud API 3.0 or the console.
+Multiple preset authorization policies can be configured based on your own business scenarios and Ops requirements. Each policy can be associated with different instance families, and can be quickly bound through CVM tags.
 
+#### Flexible authorization
+
+Users can authorize for maintenance through the Maintenance Task console, preset authorization policies and APIs.
 
 ## Use Cases
 
-#### Real-Time risk monitoring
-You can view the major risk events that occurred in instances during the operations of underlying platform infrastructure services in real time in the list in the authorization center.
+#### Real-time awareness of instance exceptions and quick recovery
 
-#### Custom authorization
-You can customize authorization policies. To configure custom authorization for an instance, you can set instance tags and preset authorization policies.
+Users are notified with all kinds of CVM instance exceptions. Corresponding maintenance tasks are created. You can log in to the Maintenance Task console to check the recovery of the affected instances and avoid risks in time.
 
-#### Prompt exception handling
-The risk and exception event information of instances are sent to the authorization center immediately, where you can prevent business risks and process authorization promptly.
+#### Real-time monitoring of risks on instances and avoid in advance
 
+When the CVM instances are currently running normally, but the platform detects that there are software and hardware risks on the underlying host, or there are maintenance tasks planned by the platform for the CVM instances, users can receive relevant information in real time, make maintenance plans, and authorize for maintenance during low-peak business periods to avoid failures in advance and eliminate potential downtime risks.
 
-## Usage Limits
-Currently, this feature is applicable to CVM, CVM Dedicated Host, and CPM 2.0 instances.
+#### Automatic Ops for CVM exceptions
+
+Users can authorize for automatic Ops through preset authorization policies and APIs. When a new maintenance task or alarm event is triggered, the failure can be healed with automatic Ops to improve Ops efficiency.
+
+## Use Limits
+
+Maintenance Task is currently applicable to CVMs, CDHs and CPMs.

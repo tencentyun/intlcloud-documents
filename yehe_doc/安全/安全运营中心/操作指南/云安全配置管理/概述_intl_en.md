@@ -2,7 +2,7 @@ Cloud Security Configuration Management provides the security configuration chec
 
 
 ## Prerequisites
-- To use the Cloud Security Configuration Management feature, you must have [Security Operation Center Premium](https://buy.cloud.tencent.com/soc) enabled.
+
 - If you have not created a preset role for the service and granted permissions to the Security Operation Center, on the [Cloud Security Configuration Manager](https://console.cloud.tencent.com/ssav2/config) page, click **Go to access manager**. On the Role Manager page that appears, click **Agree to grant permissions**. If you have granted such permissions, skip this step.
 
 ## Definitions

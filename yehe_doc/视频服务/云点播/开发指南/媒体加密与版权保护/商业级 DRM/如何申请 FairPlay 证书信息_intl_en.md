@@ -33,11 +33,11 @@ Unzip `FPS_Deployment_Package.zip` and create a password-protected private key f
 1. Run the command below to create a private key file (`privatekey.pem`):
 
    ```shell
-openssl genrsa -aes256 -out privatekey.pem 1024
+openssl genrsa -aes256 -out privatekey.pem 2048
    ```
    You need to set a password (preferably not longer than 32 characters) for the private key. Note the password for later use.
    
-   ![image-20220421115813168](https://qcloudimg.tencent-cloud.cn/raw/ce0f6e159601c772694e79c69648e343.png)
+   ![image-20220421115813168](https://staticintl.cloudcachetci.com/yehe/backend-news/ksBs652_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16723902163742.png)
    
 2. Run the command below to create a CSR file (`certreq.csr`):
 

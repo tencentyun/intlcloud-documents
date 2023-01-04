@@ -175,6 +175,6 @@
 
 
 ## 相关信息
-- 如需对所持有的公网 IP 以及关联的云上资产，配置对应的防火墙开关，可参见 [互联网边界防火墙开关](https://intl.cloud.tencent.com/document/product/1160/49809) 进行操作。
+- 如需对所持有的公网 IP 以及关联的云上资产，配置对应的防火墙开关，可参见 互联网边界防火墙开关进行操作。
 - 如需对内网资产进行流量管控与安全防护，或基于 SNAT、DNAT 进行的网络流量转发，可参见 [NAT 边界防火墙开关](https://intl.cloud.tencent.com/document/product/1160/49810) 进行操作。
 - 如遇到 VPC 间防火墙相关问题，可参见 [VPC 间防火墙](https://intl.cloud.tencent.com/document/product/1160/49830) 文档。

@@ -1,18 +1,24 @@
+## DBA
+See [Database administrator](https://intl.cloud.tencent.com/document/product/1098/40645).
 
-### Region
-Tencent Cloud data centers are hosted in multiple locations worldwide. These locations are known as regions. Each region is an independent geographic area containing multiple isolated availability zones (AZs).
+## Region
+A region refers to a geographical location where data centers hosted by Tencent Cloud are distributed. Each region has multiple availability zones.
+For example, the region of one hosted data center is Beijing, and the availability zone is Beijing Zone 1. Tencent Cloud services in the same region can communicate with each other over the private network, but those in different regions cannot. Therefore, we recommend you choose the region that is closest to your customers to minimize the access latency and improve the download speed.
 
-### AZ
-AZs refer to Tencent Cloud's physical data centers that are in the same region. Each AZ is independently powered and have its own network resources. They are designed to ensure that failures within one AZ can be isolated from other zones, thereby ensuring service availability and business stability, excepting the occurrences of large-scale disasters or major power failures. Users can protect their applications from being affected by failures that occur in a single location by selecting instances in independent AZs.
+## AZ
+An availability zone (AZ) is a physical IDC of Tencent Cloud with independent power supply and network in the same region. It can ensure business stability, as failures in one AZ are isolated without affecting other AZs in the same region.
 
-### QPS
-Queries per second (QPS) is a metric measuring how much traffic is processed by a particular query server within the specified time period.
+## Transactions per second
+Transactions per second (TPS) is the number of transactions a system can process per second. It is a key metric for evaluating the processing capabilities of a system.
 
-### TPS
-Transactions per second (TPS) is the number of transactions a system can process per second. It is a key metric for evaluating the system's processing capabilities.
+## QPS/Concurrency
+Queries per second (QPS) measures the requests processed concurrently per second. 1 QPS means that the API processed 1 request per second; 50 QPS means that the API processed 50 requests per second.
 
-### Instance
-A database instance is a standalone database environment that runs in the cloud. One compute node is called one instance.
+## Database administrator
+A database administrator (DBA) is a person responsible for managing the database by using specialized software to store and organize data. The responsibilities of this role may include capacity planning, installation, configuration, database design, migration, performance monitoring, security, troubleshooting, and backup and restoration.
 
-### Cluster
-A cluster consists of multiple instances, usually including one primary instance and multiple read-only instances.
+## TDSQL-C for MySQL
+TDSQL-C for MySQL is a new-generation enterprise-grade distributed cloud database developed by Tencent Cloud. It combines the strengths of traditional databases, cloud computing, and cutting-edge hardware technologies to deliver high performance and availability. It is fully compatible with MySQL and offers a throughput of over one million QPS and a petabyte-level distributed smart storage, ensuring data security and reliability.
+
+## TPS
+See [Transactions per second](https://intl.cloud.tencent.com/document/product/1098/40645).

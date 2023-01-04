@@ -1,7 +1,7 @@
 ## Adaptive Resolution
 This document describes how to support adaptive resolution for cloud applications. This feature can be used to adapt to different client resolutions. 
 ### Flowchart
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/VGvx889_PRELIM__%E5%BA%94%E7%94%A8%E4%BA%91%E6%B8%B2%E6%9F%93_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/sinj239_PRELIM__%E5%BA%94%E7%94%A8%E4%BA%91%E6%B8%B2%E6%9F%93_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US%20%281%29.png)
 
 ### Directions
 1. [](id:step1) Set the application to window capturing mode in [Application management](https://console.tencentcloud.com/car/application). For more information, see [Using Window Capturing Mode](https://www.tencentcloud.com/document/product/1158/50549).

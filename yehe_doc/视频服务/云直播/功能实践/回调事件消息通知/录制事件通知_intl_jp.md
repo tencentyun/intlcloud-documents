@@ -45,7 +45,7 @@ CSSレコーディングでは、プッシュドメイン名にバインドし�
 | appname      | string | プッシュパス |
 | stream_id    | string | CSSストリーム名                                           |
 | channel_id   | string | CSSストリーム名と同じ                                         |
-| file_id      | string | VOD file ID、 [VODプラットフォーム](https://intl.cloud.tencent.com/document/product/266/33895)で1つのVODビデオファイルを一意的に特定することができます |                                  |
+| file_id      | string | VOD file ID、 [VODプラットフォーム](https://intl.cloud.tencent.com/document/product/266/33895)で1つのVODビデオファイルを一意的に特定することができます |
 | record_file_id | string | VODファイルID |
 | file_format  | string | FLV，HLS，MP4，AAC |
 | task_id      | string | レコーディングタスクID。APIで作成したレコーディングタスクに対してのみ有効であり、すなわち[CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)によって返されるタスクID |
