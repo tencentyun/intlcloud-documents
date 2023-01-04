@@ -36,6 +36,7 @@
 <td>可选择通过<strong>已有弹性公网 IP</strong> 或 <strong>新建弹性公网 IP</strong> 来配置 NAT 网关上绑定的弹性公网 IP 资源。<ul><li>已有弹性公网 IP，选择此方式时，需要该账户下有与 NAT 网关同地域的闲置 EIP 资源，通过下拉选择已有 EIP，并根据需要配置 EIP 的带宽上限。</li><li>新建弹性公网，选择此方式时，系统将自动创建按流量计费的常规 BGP IP，可按需选择新建 EIP 的数量和 EIP 带宽上限。</li></ul></td>
 </tr>
 </tbody></table>
+
 >?	
 >- 访问公网流量同时受到 NAT 网关和弹性公网 IP 的带宽上限限制，最终以较小上限值为准，请合理配置二者的出带宽上限。
 >- 更多 NAT 网关相关操作，请参见 [快速入门](https://intl.cloud.tencent.com/document/product/1015/30251)。
