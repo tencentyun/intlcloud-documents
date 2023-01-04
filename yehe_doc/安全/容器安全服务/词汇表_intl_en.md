@@ -1,4 +1,4 @@
-﻿### Container
+### Container
 A container is a lightweight virtualization technology. It can run everywhere once built. A Docker container is in essence a host process featuring namespace-based resource isolation, cgroup-driven resource limitation, and efficient file operations through copy-on-write.
 ### TCSS
 TCSS is a one-stop security solution and platform that protects containers against all kinds of risks throughout their lifecycle. It implements a closed loop of security from container security prediction, defense, and check to response.
