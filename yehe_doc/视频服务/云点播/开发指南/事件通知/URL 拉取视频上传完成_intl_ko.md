@@ -86,7 +86,6 @@ App에 이벤트 알림이 설정된 경우, 동영상 풀링 업로드가 완�
                                 "SourceContext": ""
                             }, 
                             "Vid": ""
-                        }
                     }, 
                     "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
                     "ProcedureTaskId": "",
