@@ -58,7 +58,7 @@ class Main {
         Integer PsignExpire = 1589548067;
         String UrlTimeExpire = "5ebe9423‬";
         String PlayKey = "TxtyhLlgo7J3iOADIron";
-        HashMap<String, String> urlAccessInfo = new HashMap<String, String>();
+        HashMap<String, Object> urlAccessInfo = new HashMap<String, Object>();
         urlAccessInfo.put("t", UrlTimeExpire);
         HashMap<String, Object> contentInfo = new HashMap<String, Object>();
         contentInfo.put("audioVideoType", AudioVideoType);
@@ -111,9 +111,9 @@ func main() {
                 "appId":            appId,
                 "fileId":           fileId,
                 "contentInfo": {
-                        "audioVideoType": audioVideoType,
-                        "rawAdaptiveDefinition": rawAdaptiveDefinition,
-                        "imageSpriteDefinition": imageSpriteDefinition,
+                        "audioVideoType"=> audioVideoType,
+                        "rawAdaptiveDefinition"=> rawAdaptiveDefinition,
+                        "imageSpriteDefinition"=> imageSpriteDefinition,
                 },
                 "currentTimeStamp": currentTime,
                 "expireTimeStamp":  psignExpire,
