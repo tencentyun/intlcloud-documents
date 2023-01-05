@@ -41,7 +41,8 @@ App에 이벤트 알림이 설정된 경우 동영상 편집 완료 후 App 백�
             "FileId":"24961954183923290",
             "FileUrl":"http://125676836723.vod2.myqcloud.com/xxx/xxx/f0.mp4"
         },
-        "ProcedureTaskId":""
+        "ProcedureTaskId":"",
+        "ReviewAudioVideoTaskId":""
     }
 }
 ```
@@ -87,7 +88,8 @@ App에 이벤트 알림이 설정된 경우 동영상 편집 완료 후 App 백�
 						"FileId": "24961954183923290",
 						"FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/f0.mp4"
 					},
-        			"ProcedureTaskId": ""
+        			"ProcedureTaskId": "",
+				"ReviewAudioVideoTaskId": ""
 				}
 			}
 		],
