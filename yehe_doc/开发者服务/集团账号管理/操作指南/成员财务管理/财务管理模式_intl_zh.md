@@ -4,4 +4,4 @@
 
 由集团账号统一回款到集团账户，每个成员账号的消费自动从集团进行代付，不需要资金划拨。该模式下，针对同一个主体的用户，可以设置管理员为代付账号，自动代付名下成员的消费。如下图所示：
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/cbYy634_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221227151721.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/gwKG567_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230105183237.png)
