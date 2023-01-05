@@ -40,7 +40,8 @@ Appがイベント通知で構成されている場合、かつビデオをク�
             },
             "Vid":"5285890784273533167"
         },
-        "ProcedureTaskId":""
+        "ProcedureTaskId":"",
+        "ReviewAudioVideoTaskId":""
     }
 }
 ```
@@ -76,7 +77,8 @@ Appがイベント通知で構成されている場合、かつビデオをク�
 						},
 						"Vid": "5285890784273533167"
 					},
-					"ProcedureTaskId": ""
+					"ProcedureTaskId": "",
+					"ReviewAudioVideoTaskId":""
 				}
 			}
 		],
