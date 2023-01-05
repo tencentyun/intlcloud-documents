@@ -21,8 +21,6 @@ PullComplete
         "Status": "FINISH",
         "ErrCode": 0, 
         "Message": "SUCCESS", 
-        "FileId": "14508071098244959037", 
-        "MediaBasicInfo": {
             "FileId": "14508071098244959037", 
             "MediaBasicInfo": {
                 "Name": "动物世界", 
@@ -43,10 +41,10 @@ PullComplete
                     "SourceContext": ""
                 }, 
                 "Vid": ""
-            }
         }, 
         "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
         "ProcedureTaskId": "",
+        "ReviewAudioVideoTaskId":"",
         "SessionContext": "",
         "SessionId": ""
     }
@@ -68,8 +66,6 @@ PullComplete
                     "Status": "FINISH",
                     "ErrCode": 0, 
                     "Message": "SUCCESS", 
-                    "FileId": "14508071098244959037", 
-                    "MediaBasicInfo": {
                         "FileId": "14508071098244959037", 
                         "MediaBasicInfo": {
                             "Name": "动物世界", 
@@ -94,6 +90,7 @@ PullComplete
                     }, 
                     "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
                     "ProcedureTaskId": "",
+                    "ReviewAudioVideoTaskId":"",
                     "SessionContext": "",
                     "SessionId": ""
                 }
