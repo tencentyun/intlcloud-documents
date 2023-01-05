@@ -111,9 +111,9 @@ func main() {
                 "appId":            appId,
                 "fileId":           fileId,
                 "contentInfo": {
-                        "audioVideoType"=> audioVideoType,
-                        "rawAdaptiveDefinition"=> rawAdaptiveDefinition,
-                        "imageSpriteDefinition"=> imageSpriteDefinition,
+                        "audioVideoType": audioVideoType,
+                        "rawAdaptiveDefinition": rawAdaptiveDefinition,
+                        "imageSpriteDefinition": imageSpriteDefinition,
                 },
                 "currentTimeStamp": currentTime,
                 "expireTimeStamp":  psignExpire,
@@ -203,9 +203,9 @@ $payload = array(
     "appId" => $appId,
     "fileId" => $fileId,
     "contentInfo" => array(
-        "audioVideoType": $audioVideoType,
-				"rawAdaptiveDefinition": $rawAdaptiveDefinition,
-				"imageSpriteDefinition": $imageSpriteDefinition
+        "audioVideoType"=> $audioVideoType,
+				"rawAdaptiveDefinition"=> $rawAdaptiveDefinition,
+				"imageSpriteDefinition"=> $imageSpriteDefinition
     ),
     "currentTimeStamp" => $currentTime,
     "expireTimeStamp" => $psignExpire,
