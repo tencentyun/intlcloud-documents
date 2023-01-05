@@ -219,14 +219,14 @@ Paid-on-behalf bills can be viewed in the [TCO console](https://console.cloud.te
 Below are the bills from the perspectives of the admin account and member account respectively:
 <dx-tabs>
 ::: Admin account
-After logging in to the Tencent Cloud console, the admin account can go to [Billing Center -> Bills](https://console.cloud.tencent.com/expense/bill/summary) to view pay-on-behalf bills.![](https://staticintl.cloudcachetci.com/yehe/backend-news/M4w9052_%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
+After logging in to the Tencent Cloud console, the admin account can go to [Billing Center - Bills](https://console.cloud.tencent.com/expense/bill/summary) to view pay-on-behalf bills.![](https://staticintl.cloudcachetci.com/yehe/backend-news/M4w9052_%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
 
 
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/rIAQ772_%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%852.png)
 :::
 ::: Member account
-After logging in to the Tencent Cloud console, the member account can go to [Tencent Cloud Organization -> Pay-on-behalf order management](https://console.cloud.tencent.com/organization/agentdeal) to view pay-on-behalf bills.![](https://staticintl.cloudcachetci.com/yehe/backend-news/gbvZ135_%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
+After logging in to the Tencent Cloud console, the member account can go to [Tencent Cloud Organization - Pay-on-behalf order management](https://console.cloud.tencent.com/organization/agentdeal) to view pay-on-behalf bills.![](https://staticintl.cloudcachetci.com/yehe/backend-news/gbvZ135_%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
 :::
 </dx-tabs>
 
