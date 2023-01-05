@@ -1,6 +1,6 @@
-Retrieving data stored in the STANDARD_IA, ARCHIVE, or DEEP ARCHIVE storage class incurs data retrieval fees, which will be charged by the size of the retrieved data.
+Retrieving data stored in STANDARD_IA, ARCHIVE, or DEEP ARCHIVE incurs data retrieval fees, which will be charged according to the size of the data retrieved.
 
->? For more information on storage classes, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+>? For more information on storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 > 
 
 
@@ -26,13 +26,9 @@ Retrieving data stored in the STANDARD_IA, ARCHIVE, or DEEP ARCHIVE storage clas
       <th>Calculation Formula</td>
    </tr>
    <tr>
-      <td rowspan=2>Pay-as-you-go</td>
-      <td><li>STANDARD_IA data retrieval</li><li>ARCHIVE data retrieval</li></td>
-      <td><li>Daily billing cycle</li><li>Data retrieval fees = unit price per GB * daily amount of data retrieved</li></td>
-   </tr>
-   <tr>
-      <td>DEEP ARCHIVE data retrieval</td>
-      <td><li>Daily billing cycle</li><li>Data retrieval fees = unit price per GB * daily amount of data retrieved</li></td>
+      <td rowspan=1>Pay-as-you-go</td>
+      <td><ul style="margin: 0;"><li>MAZ_STANDARD_IA data retrieval</li><li>STANDARD_IA data retrieval</li><li>ARCHIVE data retrieval</li><li>DEEP ARCHIVE data retrieval</li></ul></td>
+      <td><ul style="margin: 0;"><li>Daily billing cycle</li><li>Data retrieval fees = unit price per GB * daily amount of data retrieved</li></ul></td>
    </tr>
 </table>
 
@@ -51,20 +47,21 @@ For the unit prices of data retrieval, see [Pricing | Cloud Object Storage](http
 > - The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
 > 
 
-### Example: STANDARD_IA storage usage fees + STANDARD_IA data retrieval fees + STANDARD_IA request fees + public network downstream traffic fees
+### Example: STANDARD_IA storage usage fees + STANDARD_IA data retrieval fees + STANDARD_IA request fees + Public downstream traffic fees
 
-Assume that on November 1, 2020, user B uploaded 5 GB of data to a bucket residing in Guangzhou region in the STANDARD_IA storage class, generating 100 requests. On November 2, user B read the data over the public network with CDN disabled, generating 100 requests. Apart from these operations, user B did not perform any other operations. As fees for a day were settled the next day:
+Assume that on November 1, 2020, user B uploaded 5 GB of data to a bucket residing in Guangzhou region in the STANDARD_IA storage class, generating 100 requests. On November 2, user B read the data over the public network with CDN disabled, generating 100 requests. Apart from these operations, user B did not perform any other operations. As fees for a day were settled the next day, then:
 
 - STANDARD_IA storage usage fees: Settled daily starting from November 2, 2020.
 - STANDARD_IA Data retrieval fees: Settled on November 2, 2020.
 - STANDARD_IA request fees: Settled on November 2 and 3, 2020.
 - Public network downstream traffic fees: Settled on November 3, 2020.
+
 Fees analysis:
 
-
  - STANDARD_IA storage usage fees = 0.018 USD/GB/month / 30 * 5 GB * 30 days = 0.09 USD
- - STANDARD_IA data retrieval fees = 0.002 USD/GB * 5 GB = 0.01 USD
+ - STANDARD_IA data retrieval fees = 0.002 USD/GB x 5 GB = 0.01 USD
  - STANDARD_IA request fees = 0.01 USD/10,000 requests * 100 requests / 10,0000 * 2 = 0.0002 USD
- - Public network downstream traffic fees = 0.1 USD/GB * 5 GB = 0.5 USD
+ - Public downstream traffic fees = 0.1 USD/GB x 5 GB = 0.5 USD
 
 In summary, the total bill for user B in November is calculated as follows: 0.09 + 0.01 + 0.0002 + 0.5 = 0.6002 USD.
+

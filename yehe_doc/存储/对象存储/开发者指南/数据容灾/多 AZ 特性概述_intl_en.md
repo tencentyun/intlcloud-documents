@@ -1,12 +1,14 @@
-Multi-AZ (availability zone) refers to the multi-AZ storage architecture offered by [Tencent Cloud COS](https://intl.cloud.tencent.com/product/cos), which can provide IDC-level disaster recovery capabilities for your data.
+
+
+MAZ refers to the multi-AZ storage architecture offered by [COS](https://www.tencentcloud.com/products/cos), which can provide IDC-level disaster recovery capabilities for your data.
 
 Your data is scattered among multiple IDCs in a region. When an IDC fails due to extreme situations such as natural disasters or power failures, the multi-AZ storage architecture can still provide stable and reliable storage services.
 
 Multi-AZ provides 99.9999999999% (12 nines) design data reliability and 99.995% design service availability. When you upload data objects to COS, you can store them in a multi-AZ region simply by specifying the storage class.
 
->
-> - Currently, the multi-AZ feature of COS is supported only in the Guangzhou region and will be available in other public cloud regions in the future.
-> - Multi-AZ storage is more costly. For more information, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
+> ?
+> - Currently, the MAZ configuration of COS is supported only in Beijing, Guangzhou, and Shanghai regions and will be available in other public cloud regions in the future.
+> - Using the MAZ configuration incurs high storage usage fees. For more information, see [Pricing | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=).
 
 ## Strengths of Multi-AZ
 
@@ -18,34 +20,55 @@ If you store your data in a multi-AZ region, the data will be divided into multi
 
 Multi-AZ storage and non-multi-AZ storage are compared below for their specifications and limitations:
 
-| Item         | Multi-AZ Storage           | Non-Multi-AZ Storage                                                 |
-| -------------- | -------------------- | ------------------------------------------------------------ |
-| Design data persistence | 99.9999999999% (12 nines)     | 99.999999999% (11 nines)                                                |
-| Design service availability | 99.995%              | 99.99%                                                       |
-| Supported region     | Guangzhou             | All regions. For more information, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) |
-| Supported storage class | Standard (MAZ-STANDARD) | Standard (STANDARD), Standard_IA (STANDARD-IA), and Archive (ARCHIVE)       |
+<table>
+<thead>
+<tr>
+<th>Comparison Item</th>
+<th>MAZ Storage</th>
+<th>Non-MAZ Storage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td nowrap="nowrap">Designed data durability</td>
+<td nowrap="nowrap">99.9999999999% (12 nines)</td>
+<td>99.999999999% (11 nines)</td>
+</tr>
+<tr>
+<td>Designed service availability</td>
+<td>99.995%</td>
+<td>99.99%</td>
+</tr>
+<tr>
+<td>Supported regions</td>
+<td colspan=2>See <a href="https://intl.cloud.tencent.com/document/product/436/30925">Storage Class Overview</a>.</td>
+</tr>
+<tr>
+<td nowrap="nowrap">Supported storage classes</td>
+<td>MAZ_STANDARD<br>MAZ_STANDARD_IA<br>MAZ_INTELLIGENT_TIERING</td>
+<td>STANDARD<br>STANDARD_IA<br>ARCHIVE<br>DEEP ARCHIVE<br>INTELLIGENT TIERING</td>
+</tr>
+</tbody></table>
 
 
+## How to Use
 
-## Directions
-
-You can enable multi-AZ for a bucket and set the object storage class to multi-AZ for objects uploaded to it. Currently, the multi-AZ storage architecture supports only the Standard storage class. When uploading an object, you can store it in the multi-AZ storage architecture by simply specifying the object storage class.
+You can enable MAZ for a bucket and set the object storage class to MAZ for objects uploaded to it. When uploading an object, you can store it in the MAZ storage architecture by simply specifying the object storage class.
 In short, you only need to perform the following two steps to store files in the multi-AZ architecture:
 
-1. Create a bucket and enable multi-AZ **during creation**. For more information on how to create a bucket, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
-2. Upload a file and specify the file storage class during upload. For more information on how to upload a file, please see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
+1. Create a bucket as instructed in [Creating Bucket](https://intl.cloud.tencent.com/document/product/436/13309) and enable the MAZ configuration **during creation**.
+2. Upload a file and specify the storage class during the upload. For more information about how to upload a file, see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 
->
->
+> ?
 > - Once multi-AZ is enabled for the bucket, it cannot be disabled, so please enable it with caution. Multi-AZ is not enabled for existing buckets by default, and it can be enabled only for new buckets.
-> - For buckets with multi-AZ enabled, objects can only be uploaded in the Multi-AZ Standard (MAZ_STANDARD) storage class. The Multi-AZ Standard_IA (MAZ_STANDARD_IA) and Multi-AZ Archive (MAZ_ARCHIVE) storage classes will be supported in the future.
-> - If you want to store existing data to a multi-AZ bucket, you can create a bucket with multi-AZ enabled and use the batch replication feature of COS Batch to replicate files in the existing bucket to the new bucket in batches. For more information on how to use COS Batch, please see [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956).
+> - For a bucket with MAZ configuration enabled, objects can be uploaded to MAZ storage classes (MAZ_STANDARD, MAZ_STANDARD_IA, or MAZ_INTELLIGENT TIERING). To upload an object to MAZ_INTELLIGENT TIERING, the intelligent tiering configuration must also be enabled for the bucket.
+> - If you want to store existing data in an MAZ bucket, you can create a bucket with MAZ enabled and use the batch replication feature of COS Batch to replicate files in the existing bucket to the new bucket in batches. For more information on how to use COS Batch, see [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956).
 
 ## Use Limits
 
-Currently, with the multi-AZ feature of COS, objects can only be uploaded in the Multi-AZ Standard storage class (MAZ_STANDARD). Therefore, there are limits on features related to storage class change as detailed below:
+Currently, COS allows you to upload objects to the MAZ_STANDARD, MAZ_STANDARD_IA, or MAZ_INTELLIGENT TIERING storage class. Therefore, there are also restrictions on features related to storage class changes as detailed below:
 
-- Storage class limit: currently, only the Multi-AZ Standard (MAZ_STANDARD) storage class is supported. The Multi-AZ Standard_IA (MAZ_STANDARD_IA) and Multi-AZ Archive (MAZ_ARCHIVE) storage classes will be supported in the future.
+- Storage class limit: Currently, objects can be uploaded only to MAZ storage classes (MAZ_STANDARD, MAZ_STANDARD_IA, or MAZ_INTELLIGENT TIERING). To upload an object to MAZ_INTELLIGENT TIERING, both the MAZ configuration and intelligent tiering configuration must be enabled for the bucket.
 - Operation limit: currently, objects can only be uploaded, downloaded, and deleted. Objects can be replicated to a multi-AZ bucket but not to a single-AZ bucket.
-- Lifecycle limit: currently, expired objects can only be deleted but not transitioned to other storage classes.
-- Cross-region replication limit: currently, multi-AZ is only supported in the Guangzhou region; therefore, cross-region replication is not supported.
+- Lifecycle limit: Currently, objects can be deleted only upon expiration but cannot be transitioned from an MAZ storage class to an OAZ storage class.
+- Cross-region replication limit: Objects cannot be replicated from an MAZ storage class to an OAZ storage class.
+
