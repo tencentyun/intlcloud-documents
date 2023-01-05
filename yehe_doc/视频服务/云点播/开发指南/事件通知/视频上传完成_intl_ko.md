@@ -40,7 +40,8 @@ App에 이벤트 알림이 설정된 경우 클라이언트 또는 서버에서 
             },
             "Vid":"5285890784273533167"
         },
-        "ProcedureTaskId":""
+        "ProcedureTaskId":"",
+        "ReviewAudioVideoTaskId":""
     }
 }
 ```
@@ -76,7 +77,8 @@ App에 이벤트 알림이 설정된 경우 클라이언트 또는 서버에서 
 						},
 						"Vid": "5285890784273533167"
 					},
-					"ProcedureTaskId": ""
+					"ProcedureTaskId": "",
+					"ReviewAudioVideoTaskId":""
 				}
 			}
 		],
