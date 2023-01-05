@@ -40,7 +40,8 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
             },
             "Vid":"5285890784273533167"
         },
-        "ProcedureTaskId":""
+        "ProcedureTaskId":"",
+        "ReviewAudioVideoTaskId":""
     }
 }
 ```
@@ -76,7 +77,8 @@ If you choose the reliable callback mode, after the [PullEvents](https://intl.cl
 						},
 						"Vid": "5285890784273533167"
 					},
-					"ProcedureTaskId": ""
+					"ProcedureTaskId": "",
+					"ReviewAudioVideoTaskId":""
 				}
 			}
 		],
