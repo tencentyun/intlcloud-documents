@@ -21,8 +21,6 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
         "Status": "FINISH",
         "ErrCode": 0, 
         "Message": "SUCCESS", 
-        "FileId": "14508071098244959037", 
-        "MediaBasicInfo": {
             "FileId": "14508071098244959037", 
             "MediaBasicInfo": {
                 "Name": "Animal World", 
@@ -43,10 +41,10 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
                     "SourceContext": ""
                 }, 
                 "Vid": ""
-            }
         }, 
         "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
         "ProcedureTaskId": "",
+        "ReviewAudioVideoTaskId":"",
         "SessionContext": "",
         "SessionId": ""
     }
@@ -68,8 +66,6 @@ If you choose the reliable callback mode, after the [event notification puling](
                     "Status": "FINISH",
                     "ErrCode": 0, 
                     "Message": "SUCCESS", 
-                    "FileId": "14508071098244959037", 
-                    "MediaBasicInfo": {
                         "FileId": "14508071098244959037", 
                         "MediaBasicInfo": {
                             "Name": "Animal World", 
@@ -94,6 +90,7 @@ If you choose the reliable callback mode, after the [event notification puling](
                     }, 
                     "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
                     "ProcedureTaskId": "",
+                    "ReviewAudioVideoTaskId":"",
                     "SessionContext": "",
                     "SessionId": ""
                 }
