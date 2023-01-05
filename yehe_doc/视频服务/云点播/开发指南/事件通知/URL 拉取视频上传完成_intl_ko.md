@@ -21,8 +21,6 @@ App에 이벤트 알림이 설정된 경우, 동영상 풀링 업로드가 완�
         "Status": "FINISH",
         "ErrCode": 0, 
         "Message": "SUCCESS", 
-        "FileId": "14508071098244959037", 
-        "MediaBasicInfo": {
             "FileId": "14508071098244959037", 
             "MediaBasicInfo": {
                 "Name": "동물의 세계", 
@@ -43,10 +41,10 @@ App에 이벤트 알림이 설정된 경우, 동영상 풀링 업로드가 완�
                     "SourceContext": ""
                 }, 
                 "Vid": ""
-            }
         }, 
         "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
         "ProcedureTaskId": "",
+        "ReviewAudioVideoTaskId":"",
         "SessionContext": "",
         "SessionId": ""
     }
@@ -68,8 +66,6 @@ App에 이벤트 알림이 설정된 경우, 동영상 풀링 업로드가 완�
                     "Status": "FINISH",
                     "ErrCode": 0, 
                     "Message": "SUCCESS", 
-                    "FileId": "14508071098244959037", 
-                    "MediaBasicInfo": {
                         "FileId": "14508071098244959037", 
                         "MediaBasicInfo": {
                             "Name": "동물의 세계", 
@@ -94,6 +90,7 @@ App에 이벤트 알림이 설정된 경우, 동영상 풀링 업로드가 완�
                     }, 
                     "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
                     "ProcedureTaskId": "",
+                    "ReviewAudioVideoTaskId":"",
                     "SessionContext": "",
                     "SessionId": ""
                 }
