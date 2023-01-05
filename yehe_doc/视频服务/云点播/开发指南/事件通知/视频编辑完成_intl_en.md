@@ -41,7 +41,8 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
             "FileId":"24961954183923290",
             "FileUrl":"http://125676836723.vod2.myqcloud.com/xxx/xxx/f0.mp4"
         },
-        "ProcedureTaskId":""
+        "ProcedureTaskId":"",
+        "ReviewAudioVideoTaskId":""
     }
 }
 ```
@@ -87,7 +88,8 @@ If you choose the reliable callback mode, after the [PullEvents](https://www.ten
 						"FileId": "24961954183923290",
 						"FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/f0.mp4"
 					},
-        			"ProcedureTaskId": ""
+        			"ProcedureTaskId": "",
+				"ReviewAudioVideoTaskId": ""
 				}
 			}
 		],
