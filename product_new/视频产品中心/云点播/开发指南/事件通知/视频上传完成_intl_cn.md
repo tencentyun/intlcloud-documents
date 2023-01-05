@@ -40,7 +40,8 @@ NewFileUpload
             },
             "Vid":"5285890784273533167"
         },
-        "ProcedureTaskId":""
+        "ProcedureTaskId":"",
+        "ReviewAudioVideoTaskId":""
     }
 }
 ```
@@ -76,7 +77,8 @@ NewFileUpload
 						},
 						"Vid": "5285890784273533167"
 					},
-					"ProcedureTaskId": ""
+					"ProcedureTaskId": "",
+					"ReviewAudioVideoTaskId":""
 				}
 			}
 		],
