@@ -21,8 +21,6 @@ Appがイベント通知で構成されている場合、かつビデオのプ�
         "Status": "FINISH",
         "ErrCode": 0, 
         "Message": "SUCCESS", 
-        "FileId": "14508071098244959037", 
-        "MediaBasicInfo": {
             "FileId": "14508071098244959037", 
             "MediaBasicInfo": {
                 "Name": "アニマルワールド", 
@@ -43,10 +41,10 @@ Appがイベント通知で構成されている場合、かつビデオのプ�
                     "SourceContext": ""
                 }, 
                 "Vid": ""
-            }
         }, 
         "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
         "ProcedureTaskId": "",
+        "ReviewAudioVideoTaskId":"",
         "SessionContext": "",
         "SessionId": ""
     }
@@ -68,8 +66,6 @@ Appがイベント通知で構成されている場合、かつビデオのプ�
                     "Status": "FINISH",
                     "ErrCode": 0, 
                     "Message": "SUCCESS", 
-                    "FileId": "14508071098244959037", 
-                    "MediaBasicInfo": {
                         "FileId": "14508071098244959037", 
                         "MediaBasicInfo": {
                             "Name": "アニマルワールド", 
@@ -94,6 +90,7 @@ Appがイベント通知で構成されている場合、かつビデオのプ�
                     }, 
                     "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
                     "ProcedureTaskId": "",
+                    "ReviewAudioVideoTaskId":"",
                     "SessionContext": "",
                     "SessionId": ""
                 }
