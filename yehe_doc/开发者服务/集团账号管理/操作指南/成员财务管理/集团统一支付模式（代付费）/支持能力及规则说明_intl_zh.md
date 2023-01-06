@@ -226,7 +226,7 @@
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/rIAQ772_%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%852.png)
 :::
 ::: 成员账号查看代付账单
-成员账单登陆控制台后，前往[集团账号管理-代付订单管理](https://console.cloud.tencent.com/organization/agentdeal)查看。![](https://staticintl.cloudcachetci.com/yehe/backend-news/gbvZ135_%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
+成员账单登陆控制台后，前往[集团账号管理-代付账单管理](https://console.cloud.tencent.com/organization/agentdeal)查看。![](https://staticintl.cloudcachetci.com/yehe/backend-news/gbvZ135_%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
 :::
 </dx-tabs>
 
