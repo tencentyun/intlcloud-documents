@@ -180,7 +180,6 @@ Definitions:
 | Product | Abbreviation in CAM | Authorization Granularity | Console | Authorization by Tag | Service Role |Reference Document |
 | ------------------------------------------------------------ | ----------- | -------- | ------ | ---------------- | -------- | ------------------------------------------------------------ |
 | [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647) | trtc        | Resource level   | ✓      | ✓                | -        | [Overview](https://intl.cloud.tencent.com/document/product/647/38319) |
-| [Cloud Streaming Services (CSS)](https://intl.cloud.tencent.com/document/product/267)     | consolelive | Resource level   | ✓      | ✓                | ✓        | [CAM-Based Access Control](https://intl.cloud.tencent.com/document/product/267/32468) |
 | [Video on Demand (VOD)](https://intl.cloud.tencent.com/document/product/266)     | consolevod  | Resource level   | ✓      | ✓                | ✓        | [Overview](https://intl.cloud.tencent.com/document/product/266/33970) |
 | [Media Processing Service (MPS)](https://intl.cloud.tencent.com/document/product/1041)   | mps         | Service level   | ✓      | -                | ✓        | -                                                            |
 
