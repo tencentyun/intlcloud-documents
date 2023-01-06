@@ -16,10 +16,10 @@ With the TCR service, you can enjoy secure and efficient image hosting and distr
 TCR provides the Enterprise Edition and Personal Edition:
 
 #### Enterprise Edition
-TCR Enterprise Edition provides an enterprise-class, exclusive, and secure image hosting service. It is suitable for individual or enterprise users who need to use the hosting service of cloud native artifacts in their businesses. TCR supports the preceding features and is constantly updated. TCR Enterprise Edition currently supports pay-as-you-go billing mode. You can go to [TCR Purchase Page](https://buy.cloud.tencent.com/tcr) to purchase an Enterprise Edition instance and start using it.
+TCR Enterprise Edition provides an enterprise-class, exclusive, and secure image hosting service. It is suitable for individual or enterprise users who need to use the hosting service of cloud native artifacts in their businesses. TCR supports the preceding features and is constantly updated. TCR Enterprise Edition currently supports pay-as-you-go billing mode.
 
 #### Personal Edition
-TCR Personal Edition provides basic on-cloud image hosting and distribution services. With limited usage quotas, it is only applicable to temporary R&D process testing of individual or enterprise users. TCR Personal Edition is a shared service in the cloud. That is, all TCR Personal Edition users share the service backend and data storage, and quotas are imposed on image hosting, uploading, and downloading. TCR Personal Edition is free of charge. You can visit [Tencent Kubernetes Engine > Image Repositories](https://console.cloud.tencent.com/tke2/registry) and start using it.
+TCR Personal Edition provides basic on-cloud image hosting and distribution services. With limited usage quotas, it is only applicable to temporary R&D process testing of individual or enterprise users. TCR Personal Edition is a shared service in the cloud. That is, all TCR Personal Edition users share the service backend and data storage, and quotas are imposed on image hosting, uploading, and downloading. TCR Personal Edition is free of charge. You can start using it directly .
 
 ## Specification
 The TCR specifications are as follows (**✓**: supported; **-**: not supported).
