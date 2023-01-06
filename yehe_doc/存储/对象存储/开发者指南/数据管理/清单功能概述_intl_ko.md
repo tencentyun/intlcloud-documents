@@ -20,7 +20,7 @@
 | AppID               | 계정 ID                                                |
 | Bucket              | 인벤토리 작업을 실행할 버킷 이름                                 |
 | fileFormat       |  파일 형식  |
-| listObjectCount | 나열된 객체 수량. 이 항목에 따라 요금이 부과되며, 자세한 사항은 [관리 기능 요금](https://intl.cloud.tencent.com/document/product /436/40098)의 인벤토리 기능 요금 부분을 참고하십시오. |
+| listObjectCount | 나열된 객체 수량. 이 항목에 따라 요금이 부과되며, 자세한 사항은 <a href="https://intl.cloud.tencent.com/document/product /436/40098">관리 기능 요금</a>의 인벤토리 기능 요금 부분을 참고하십시오. |
 | listStorageSize | 나열된 객체 크기 |
 |filterObjectCount  |선별된 객체 수|
 |filterStorageSize  |  선별된 객체 크기|
