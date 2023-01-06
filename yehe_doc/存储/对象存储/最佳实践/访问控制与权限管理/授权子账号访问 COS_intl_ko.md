@@ -96,7 +96,7 @@ coscmd config -u 1250000000 -a AKIDasdfmRxHPa9oLhJp**** -s e8Sdeasdfas2238Vi****
 
 (2) Tencent Cloud 콘솔 액세스
 
-서브 계정는 권한 부여 후 [서브 계정 로그인](https://cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fdeveloper) 페이지에서 루트 계정 아이디, 서브 계정 이름, 서브 계정 비밀번호를 입력하여 콘솔에 로그인할 수 있습니다. 그런 다음 **제품**에서 **Cloud Object Storage**를 클릭하여 루트 계정에서 스토리지 리소스에 액세스할 수 있습니다.
+서브 계정는 권한 부여 후 [서브 계정 로그인](https://www.tencentcloud.com/account/login/subAccount) 페이지에서 루트 계정 아이디, 서브 계정 이름, 서브 계정 비밀번호를 입력하여 콘솔에 로그인할 수 있습니다. 그런 다음 **제품**에서 **Cloud Object Storage**를 클릭하여 루트 계정에서 스토리지 리소스에 액세스할 수 있습니다.
 
 <span id="정책 예시"></span>
 ## 정책 예시
