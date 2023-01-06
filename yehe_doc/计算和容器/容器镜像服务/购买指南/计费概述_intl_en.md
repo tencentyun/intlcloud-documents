@@ -5,7 +5,7 @@ TCR provides the pay-as-you-go billing mode:
 
 |Billing Mode | Description | Billing Unit | 
 |---------|---------|---------|
-| Pay-as-you-go |The service is billed on an hourly basis. Upon activation of the service, a certain amount of your balance will be frozen. See [Prepay Account Freeze](https://intl.cloud.tencent.com/zh/document/product/555/12039).| USD/hour | 
+| Pay-as-you-go |The service is billed at an hourly basis. Upon activation of the service, a certain amount of your balance will be frozen. See [Prepay Account Freeze](https://intl.cloud.tencent.com/zh/document/product/555/12039).| USD/hour | 
 
 
 
@@ -20,6 +20,7 @@ TCR provides the pay-as-you-go billing mode:
 <tr>
 <td>Instance purchasing</td>
 <td>TCR Enterprise instances support pay-as-you-go billing mode. The managed service charges differ according to selected regions and specifications.</td>
+<td>Please refer to <a href="#price">TCR Enterprise Pricing</a> </td>
 </tr>
 <tr>
 <td>Storage fees</td>
