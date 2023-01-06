@@ -347,7 +347,7 @@
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
 <tbody><tr>
 <td>Supported configuring security groups</td>
-<td>A <a href="https://intl.cloud.tencent.com/document/product/213/500?from_cn_redirect=1">security group</a> is a stateful virtual firewall capable of filtering. As an important means for network security isolation, it can be used to set network access controls for one or more TencentDB instances.</td>
+<td>A <a href="https://www.tencentcloud.com/document/product/213/12452">security group</a> is a stateful virtual firewall capable of filtering. As an important means for network security isolation, it can be used to set network access controls for one or more TencentDB instances.</td>
 <td>2019-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/238/35789" target="_blank">Configuring Security Group</a></td></tr>
 <tr>
