@@ -1,17 +1,9 @@
-# [시작하기(Web)](https://www.tencentcloud.com/document/product/1047/45912)
+# [Chat UIKit React](https://www.tencentcloud.com/document/product/1047/34279/)
 >Chat UIKit은 Tencent Cloud IM SDK를 기반으로 하는 UI 컴포넌트 라이브러리로, 세션, 채팅, 관계 체인, 그룹, 음성/영상 통화 등의 기능을 포함한 일부 범용 UI 컴포넌트를 제공합니다.
 UI 컴포넌트를 기반으로 블록을 쌓는 것처럼 자신의 비즈니스 로직을 빠르게 구축할 수 있습니다.
 Chat UIKit의 컴포넌트는 UI 기능을 구현하는 동시에 IM SDK에 해당하는 인터페이스를 호출하여 IM 관련 로직과 데이터를 처리하므로 개발자는 Chat UIKit을 사용할 때 자신의 업무에만 집중하거나 필요에 따라 확장할 수 있습니다.
 
-<img align="right" src="https://qcloudimg.tencent-cloud.cn/raw/4562be8179a1534efb17d33428239c82.png?auto=format,enhance" width="50%" />
 
-### Quick Links
-- [Demo App](https://web.sdk.qcloud.com/im/demo/intl/index.html)
-- [Client API](https://www.tencentcloud.com/document/product/1047/33999)
-- [Free Demos](https://www.tencentcloud.com/document/product/1047/34279)
-- [FAQ](https://www.tencentcloud.com/document/product/1047/34455)
-- [GitHub Source](https://github.com/TencentCloud/chat-uikit-react)
-- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
 ## Example App
 당사는 채팅 기능을 보여주는 작동하는 데모를 만들었습니다. 당사 웹사이트에서 이러한 [demo](https://web.sdk.qcloud.com/im/demo/intl/index.html)와 GitHub의 관련 [오픈 소스 코드](https://github.com/TencentCloud/chat-uikit-react)를 미리 볼 수 있습니다.
 
@@ -35,7 +27,7 @@ $ npm install && cd examples/sample-chat && npm install
 3. **Basic Information** 영역에서 **Display key**를 클릭하여 키 정보를 복사하고 GenerateTestUserSig 파일에 저장합니다.
 >!
 >- 본 문서의 UserSig 생성 방법은 클라이언트 코드에서 SECRETKEY를 설정하는 것입니다. 이 방법에서 SECRETKEY는 디컴파일로 크래킹되기 쉬우므로, 키가 유출되면 해커가 귀하의 Tencent Cloud 트래픽을 도용할 수 있습니다. 따라서 **해당 방법은 로컬 Demo 실행 및 기능 디버깅용으로만 적합합니다.**
->- 올바른 UserSig 배포 방식은 UserSig 컴퓨팅 코드를 귀하의 서버에 통합하고, App 지향 인터페이스를 제공하는 것입니다. UserSig가 필요할 때, App은 비즈니스 서버에 동적 UserSig 가져오기 요청을 발송합니다. 자세한 내용은 [서버의 UserSig 생성](https://intl.cloud.tencent.com/document/product/1047/34385)을 참고하십시오.
+>- UserSig의 계산 코드를 서버에 통합하고 App 지향 API를 제공하는 것이 가장 좋습니다. UserSig가 필요할 때 App은 동적 UserSig에 대한 요청을 서버에 보낼 수 있습니다. 자세한 내용은 [서버에서 UserSig 생성](https://www.tencentcloud.com/document/product/1047/34385)을 참고하십시오.
 
 ### 3단계: 프로젝트 실행
 ```
@@ -49,49 +41,13 @@ $ npm run start
 2. 입력란에 다른 사용자의 userID를 검색합니다.
 3. 사용자 프로필 사진을 클릭하여 세션을 시작합니다.
 4. 입력란에 메시지를 입력하고 "Enter"키를 누르면 전송됩니다.
-   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat.gif)
+   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat-English.gif)
 
-## chat-uikit-react 통합
 
-### 1단계: Installation
-```
-$ npm install @tencentcloud/chat-uikit-react
-```
-### 2단계: Usage
-```tsx
-import React, { useEffect, useState } from 'react';
-import { TUIKit } from '@tencentcloud/chat-uikit-react';
-import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
-import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
-import TIMUploadPlugin from 'tim-upload-plugin';
-
-// tim 인스턴스 객체 생성 및 로그인 완료
-const init = async () => {
-   return new Promise((resolve, reject) => {
-      const tim = TIM.create({ SDKAppID: 000 });
-      tim?.registerPlugin({ 'tim-upload-plugin': TIMUploadPlugin });
-      const onReady = () => { resolve(tim); };
-      tim.on(TIM.EVENT.SDK_READY, onReady);
-      tim.login({
-         userID: 'xxx',
-         userSig: 'xxx',
-      });
-   });
-}
-
-export function SampleChat() {
-   const [tim, setTim] = useState<ChatSDK>();
-   useEffect(() => {
-      (async ()=>{
-         const tim = await init()
-         setTim(tim)
-      })()
-   }, [])
-
-   return (
-           <div style={{height: '100vh',width: '100vw'}}>
-              <TUIKit tim={tim}></TUIKit>
-           </div>
-   );
-}
-```
+### Quick Links
+- [Demo App](https://web.sdk.qcloud.com/im/demo/intl/index.html)
+- [Client API](https://www.tencentcloud.com/document/product/1047/33999)
+- [Free Demos](https://www.tencentcloud.com/document/product/1047/34279)
+- [FAQ](https://www.tencentcloud.com/document/product/1047/34455)
+- [GitHub Source](https://github.com/TencentCloud/chat-uikit-react)
+- [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385)
