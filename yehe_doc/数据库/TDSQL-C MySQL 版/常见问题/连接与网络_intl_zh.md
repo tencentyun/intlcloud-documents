@@ -2,15 +2,12 @@
 连接 TDSQL-C MySQL 版的方式如下：
 - 内网地址连接：通过内网地址连接 TDSQL-C MySQL 版，使用云服务器 CVM 直接连接云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。需注意，云服务器和数据库须是同一账号，且同一个 VPC 内（保障同一个地域）。
 - 外网地址连接：通过外网地址连接 TDSQL-C MySQL 版。外网地址需手动开启，可在控制台的实例详情页查看，不需要时也可关闭。
-- 通过 DMC 连接：通过数据管理平台（Database Management Console，DMC）访问 TDSQL-C MySQL 版。
+- 通过 DMC 连接：通过数据管理平台（Database Management Center，DMC）访问 TDSQL-C MySQL 版。
 
-详细操作请参见 [连接集群](https://intl.cloud.tencent.com/document/product/1098/40627)。
+详细操作请参见 [连接集群](https://www.tencentcloud.com/document/product/1098/51980)。
 
 ### TDSQL-C MySQL 版外网地址如何开通?
-TDSQL-C MySQL 版外网地址包含读写外网地址和只读外网地址，可通过控制台，在集群详情页对应位置后开通或关闭。详细操作请参见 [开启外网地址](https://intl.cloud.tencent.com/document/product/1098/44625)。
-
-### 轻量应用服务器如何访问 TDSQL-C MySQL 版？
-通过内网地址访问时，您可使用轻量应用服务器直接连接数据库的内网地址，这种连接方式使用内网高速网络，延迟低。轻量应用服务器和 TDSQL-C MySQL 版须是同一账号，且同一个地域内。
+TDSQL-C MySQL 版外网地址包含读写外网地址和只读外网地址，可通过控制台，在集群详情页对应位置后开通或关闭。详细操作请参见 [开启外网地址](https://www.tencentcloud.com/document/product/1098/51982)。
 
 ### TDSQL-C MySQL 版可以直接和其他服务商的服务器内网互通吗？
 TDSQL-C MySQL 版暂时是无法直接和其他服务商的服务器内网互通。
