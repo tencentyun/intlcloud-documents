@@ -179,7 +179,6 @@
 | 产品                                                         | CAM 中简称  | 授权粒度 | 控制台 | 根据标签进行授权 | 服务角色 | 参考文档                                                     |
 | ------------------------------------------------------------ | ----------- | -------- | ------ | ---------------- | -------- | ------------------------------------------------------------ |
 | [实时音视频](https://intl.cloud.tencent.com/document/product/647) | trtc        | 资源级   | ✓      | ✓                | -        | [访问管理指南](https://intl.cloud.tencent.com/document/product/647/38319) |
-| [云直播](https://intl.cloud.tencent.com/document/product/267)     | consolelive | 资源级   | ✓      | ✓                | ✓        | [访问管理指南](https://intl.cloud.tencent.com/document/product/267/32468) |
 | [云点播](https://intl.cloud.tencent.com/document/product/266)     | consolevod  | 资源级   | ✓      | ✓                | ✓        | [访问管理指南](https://intl.cloud.tencent.com/document/product/266/33970) |
 | [视频处理](https://intl.cloud.tencent.com/document/product/1041)   | mps         | 服务级   | ✓      | -                | ✓        | -                                                            |
 
