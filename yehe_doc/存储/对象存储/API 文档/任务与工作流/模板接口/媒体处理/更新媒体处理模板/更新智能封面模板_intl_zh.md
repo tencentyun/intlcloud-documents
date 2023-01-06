@@ -66,7 +66,7 @@ Content-Type: application/xml
 
 | 节点名称（关键字） | 父节点 | 描述           | 类型      | 必选 |
 | :----------------- | :----- | :------------- | :-------- | ---- |
-| Request            | 无     | <a href="https://cloud.tencent.com/document/product/460/80091#Request" target="_blank">同创建智能封面模板接口的 Request</a> | Container | 是   |
+| Request            | 无     | <a href="https://www.tencentcloud.com/document/product/1045/50614" target="_blank">同创建智能封面模板接口的 Request</a> | Container | 是   |
 
 ## 响应
 
@@ -103,7 +103,7 @@ Content-Type: application/xml
 
 | 节点名称（关键字） | 父节点 | 描述                                                | 类型      |
 | :----------------- | :----- | :-------------------------------------------------- | :-------- |
-| Response           | 无     | <a href="https://cloud.tencent.com/document/product/460/80091#Response" target="_blank">同创建智能封面模板接口的 Response</a> | Container |
+| Response           | 无     | <a href="https://www.tencentcloud.com/document/product/1045/50614" target="_blank">同创建智能封面模板接口的 Response</a> | Container |
 
 
 #### 错误码
