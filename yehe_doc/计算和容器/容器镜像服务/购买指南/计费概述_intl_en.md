@@ -128,7 +128,7 @@ When the instance is using the features of Standard or Advanced edition, it is n
 <td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>Submit a ticket to increase the quota.</td>
 </tr>
 <tr>
-<td rowspan="7">Data security</td>
+<td rowspan="8">Data security</td>
 <td>Encrypted storage of data</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
@@ -136,6 +136,9 @@ When the instance is using the features of Standard or Advanced edition, it is n
 <td>Image vulnerability scanning</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
+<td>Block Vulnerable Images</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+<tr>   
 <td>Image tag protection</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
