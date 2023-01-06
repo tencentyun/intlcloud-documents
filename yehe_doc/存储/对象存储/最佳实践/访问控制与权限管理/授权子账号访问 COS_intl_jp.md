@@ -96,7 +96,7 @@ coscmd config -u 1250000000 -a AKIDasdfmRxHPa9oLhJp**** -s e8Sdeasdfas2238Vi****
 
 （2）Tencent Cloudコンソール
 
-サブユーザーに権限を承認した後、[サブユーザーログイン画面](https://cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fdeveloper)でルートアカウントID、サブユーザー名、サブユーザーパスワードを入力してコンソールにログインし、**クラウド製品**の中の**Cloud Object Storage**を選択してクリックすると、ルートアカウント下のストレージリソースにアクセスすることができます。
+サブユーザーに権限を承認した後、[サブユーザーログイン画面](https://www.tencentcloud.com/account/login/subAccount)でルートアカウントID、サブユーザー名、サブユーザーパスワードを入力してコンソールにログインし、**クラウド製品**の中の**Cloud Object Storage**を選択してクリックすると、ルートアカウント下のストレージリソースにアクセスすることができます。
 
 <span id="ポリシーの例"></span>
 ## ポリシーの例
