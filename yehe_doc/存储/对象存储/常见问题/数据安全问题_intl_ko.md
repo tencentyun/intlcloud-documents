@@ -15,8 +15,8 @@ COS는 다음 방식을 통해 재해 복구를 지원합니다.
 3. 데이터에 대한 IDC 레벨의 재해 복구 기능을 제공하는 [Overview of Multi-AZ Feature](https://intl.cloud.tencent.com/document/product/436/35208)를 사용합니다.
 
 >?
-1. 현재 COS의 MAZ 구성은 광저우, 상하이, 베이징 리전에서만 지원되며 향후 다른 퍼블릭 클라우드 리전에서도 사용할 수 있습니다.
-2. MAZ 구성을 사용하면 높은 스토리지 요금이 발생합니다. 자세한 내용은 [가격 | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=)를 참고하십시오.
+>1. 현재 COS의 MAZ 구성은 광저우, 상하이, 베이징 리전에서만 지원되며 향후 다른 퍼블릭 클라우드 리전에서도 사용할 수 있습니다.
+>2. MAZ 구성을 사용하면 높은 스토리지 요금이 발생합니다. 자세한 내용은 [가격 | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=)를 참고하십시오.
 
 ### COS 버킷에 버전 관리를 활성화한 후 이전 버전 데이터를 삭제하는 방법은 무엇입니까?
 
