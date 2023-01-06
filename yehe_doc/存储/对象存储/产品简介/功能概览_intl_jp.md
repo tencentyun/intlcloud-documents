@@ -13,7 +13,7 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
    </tr>
    <tr>
       <td>オブジェクト操作</td>
-      <td>複数のストレージタイプ：アクセス頻度と障害復旧のレベルに応じて、COSは、複数のオブジェクトストレージタイプを提供しており、その中にはINTELLIGENT_TIERINGストレージ、標準ストレージ、低頻度ストレージ、アーカイブストレージ、ディープアーカイブストレージがあります。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/30925">ストレージタイプ</a>をご参照ください<br>オブジェクト/フォルダ：アップロード、照会、ダウンロード、コピー、削除操作。具体的な操作については<a href="https://intl.cloud.tencent.com/document/product/436/13321">オブジェクト管理</a>ディレクトリ下のドキュメントをご参照ください。
+      <td>複数のストレージタイプ：アクセス頻度と障害復旧のレベルに応じて、COSは、複数のオブジェクトストレージタイプを提供しており、その中には標準ストレージ（マルチAZ）、低頻度ストレージ（マルチAZ）、INTELLIGENT_TIERINGストレージ、標準ストレージ、低頻度ストレージ、アーカイブストレージ、ディープアーカイブストレージがあります。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/30925">ストレージタイプ</a>をご参照ください<br>オブジェクト/フォルダ：アップロード、照会、ダウンロード、コピー、削除操作。具体的な操作については<a href="https://intl.cloud.tencent.com/document/product/436/13321">オブジェクト管理</a>ディレクトリ下のドキュメントをご参照ください。
    </tr>
 </table>	 
 
@@ -76,6 +76,10 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
    <tr>
       <td nowrap="nowrap">バケットコピー</td>
       <td>ユーザーはバケットコピールールを設定することで、インクリメンタルオブジェクトを異なるバケットに自動的かつ非同期的にコピーし、データの障害復旧とバックアップを実現することができます。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/19237">バケットコピーの概要</a>をご参照ください。</td>
+   </tr>
+   <tr>
+      <td nowrap="nowrap">マルチAZの特性</td>
+      <td>COSはマルチAZストレージアーキテクチャをご提供しています。このストレージアーキテクチャはユーザーデータにデータセンターレベルの障害復旧機能を提供することが可能です。詳細については<a href="https://intl.cloud.tencent.com/document/product/436/35208">マルチAZの特徴の概要</a>をご参照ください。</td>
    </tr>
    <tr>
       <td nowrap="nowrap">クラウドデータベースバックアップ</td>
@@ -286,6 +290,6 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
    </tr>
    <tr>
       <td>複数の伝送プロトコル</td>
-      <td>COSは、HTTP1.0、HTTP1.1プロトコルを含む複数の伝送プロトコルのほか、TLS1.0、TLS1.1、TLS1.2暗号化プロトコルもサポートしています。</td>
+      <td>COSはHTTP1.0、HTTP1.1プロトコルを含む複数の伝送プロトコルをサポートしています。またTLS1.0、TLS1.1、TLS1.2暗号化プロトコルもサポートしています。</td>
    </tr>
 </table>

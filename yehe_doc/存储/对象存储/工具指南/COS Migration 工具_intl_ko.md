@@ -10,7 +10,7 @@ COS Migration은 COS의 데이터 마이그레이션 기능을 결합한 통합�
 >- COS Migration의 인코딩 포맷은 UTF-8 포맷만 지원합니다.
 >- 해당 툴을 사용해 동일한 이름의 파일을 업로드하면 기본적으로 더 오래된 파일을 덮어쓰며, 동일한 이름의 파일은 건너뛰도록 별도로 설정해야 합니다.
 >- 로컬 데이터 마이그레이션 이외의 시나리오의 경우 마이그레이션 서비스 플랫폼을 먼저 사용하십시오.
->
+>- COS Migration은 **일회성** 마이그레이션에 사용되지만 지속적인 동기화에는 적합하지 않습니다. 예를 들어, 파일이 매일 로컬에 추가되고 COS와 지속적으로 동기화되어야 하는 경우 반복되는 마이그레이션 작업을 피하기 위해 COS Migration은 성공적인 마이그레이션 기록을 저장합니다. 연속 동기화의 경우 레코드 스캔 시간이 계속 증가합니다. 이 시나리오에서는 [데스크톱 버전 사용 설명서](https://intl.cloud.tencent.com/document/product/436/32565)에 설명된 대로 COSBrowser를 사용하는 것이 좋습니다.
 
 ## 사용 환경
 #### 시스템 환경
@@ -108,7 +108,7 @@ skipSamePath=false
 | secretKey| 사용자 보안키 SecretKey. `COS_SECRETKEY`를 사용자의 실제 키 정보로 변경합니다. [CAM 콘솔](https://console.cloud.tencent.com/cam/capi)의 Tencent Cloud API 키 페이지에서 조회하여 획득할 수 있습니다.|-|
 | bucketName| 타깃 Bucket의 이름. 형식: `<BucketName-APPID>`. Bucket 이름에는 반드시 APPID가 포함됩니다. 예: examplebucket-1250000000 |  -  |
 | region| 타깃 Bucket의 Region 정보. COS의 리전 약칭은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. |-|
-| storageClass|   데이터 마이그레이션 이후의 스토리지 유형. 옵션 값은 Standard(스탠다드 스토리지), Standard_IA(스탠다드IA 스토리지), Archive(아카이브 스토리지)이며, 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오.    |Standard|
+| storageClass|   데이터 마이그레이션 이후의 스토리지 유형. 옵션 값: Standard(표준 스토리지), Standard_IA(표준IA 스토리지), Archive(아카이브 스토리지), Maz_Standard(표준 스토리지 다중AZ), Maz_Standard_IA(표준IA 스토리지 다중AZ)이며, 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오.    |Standard|
 | cosPath|마이그레이션할 COS 경로. `/`는 Bucket의 루트 경로에 마이그레이션하는 것을 의미하며, `/folder/doc/`는 Bucket의 `/folder/doc/`에 마이그레이션하는 것을 의미합니다. `/folder/doc/`가 존재하지 않는 경우 자동으로 경로를 생성합니다.|/|
 | https| HTTPS를 사용한 전송 여부: on - 활성화, off - 비활성화. 활성화할 경우 전송 속도가 비교적 느리며, 전송 보안 요건이 높은 시나리오에 적합합니다.|off|
 | tmpFolder|기타 클라우드 스토리지에서 COS로 마이그레이션 시 임시 파일을 저장하는 디렉터리로 마이그레이션 완료 후에는 삭제됩니다. 필요한 포맷은 절대 경로입니다.<br>Linux에서 세퍼레이터는 단일 슬래시입니다(예: `/a/b/c`). <br>Windows에서 세퍼레이터는 이중 백슬래시입니다(예: `E:\\a\\b\\c`). <br>기본적으로 툴 경로 아래의 tmp 디렉터리입니다.|./tmp|
@@ -139,7 +139,7 @@ ignoreModifiedTimeLessThanSeconds=
 
 | 설정 항목 | 설명 |
 | ------| ------ |
-|localPath|로컬 디렉터리, 필요한 포맷은 절대 경로입니다. <ul  style="margin: 0;"><li>Linux에서 세퍼레이터는 싱글 슬래시입니다(예: `/a/b/c`). </li><li>Windows에서 세퍼레이터는 이중 백슬래시입니다(예: `E:\\a\\b\\c`).</li></ul>|
+|localPath|로컬 디렉터리의 절대 경로: <ul  style="margin: 0;"><li>Linux에서 구분 기호로 슬래시(/)를 사용합니다(예: `/a/b/c`). </li><li>Windows는 두 개의 백래시(\\)를 구분 기호로 사용합니다(예: `E:\\a\\b\\c`). </li></ul>참고: 이 매개변수에 대한 파일 경로가 아닌 디렉터리 경로만 입력할 수 있습니다. 그렇지 않으면 대상 객체 이름을 구문 분석하는 동안 오류가 발생합니다. cosPath=/의 경우 요청이 버킷 생성 요청으로 잘못 구문 분석됩니다. |
 |excludes| 제외할 디렉터리 또는 파일의 절대 경로, localPath 아래에 있는 특정 디렉터리 또는 파일은 마이그레이션하지 않는다는 의미이며, 여러 절대 경로 사이는 세미콜론으로 구분합니다. 작성하지 않으면 localPath 아래 전체를 마이그레이션합니다.|
 |ignoreModifiedTimeLessThanSeconds| 업데이트 시간과 현재 시간의 차이가 일정 시간 이하인 파일 제외, 단위: 초, 기본적으로 설정하지 않으며, lastmodified 시간에 따라 필터링하지 않음을 의미합니다. 클라이언트에서 파일 업데이트와 동시에 마이그레이션 툴을 실행할 때 사용하며, 현재 업데이트 중인 파일은 COS에 마이그레이션하지 않습니다. 예를 들어, 300으로 설정하면 업데이트한 지 5분 이상 지난 파일만 업로드합니다.|
 
@@ -181,5 +181,5 @@ COS 마이그레이션 툴은 스테이트풀이며, 이미 마이그레이션 �
 ![](https://main.qcloudimg.com/raw/2534fd390218db29bb03f301ed2620c8.png)
 
 ## FAQ
-COS Migration 툴 사용 중 마이그레이션 실패, 실행 오류 등의 이상 상황이 발생하는 경우 [COS Migration 툴 관련 FAQ](https://intl.cloud.tencent.com/document/product/436/30585)를 통해 해결할 수 있습니다.
+COS Migration 툴 사용 중 마이그레이션 실패, 실행 오류 등의 이상 상황이 발생하는 경우 [COS Migration 툴](https://intl.cloud.tencent.com/document/product/436/30585)을 통해 해결할 수 있습니다.
 

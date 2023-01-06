@@ -13,7 +13,7 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    </tr>
    <tr>
       <td>객체 작업</td>
-      <td>다양한 스토리지 유형: COS는 액세스 빈도수와 재해 복구 정도에 따라 인텔리전트 티어링 스토리지, 스탠다드 스토리지, 스탠다드IA 스토리지, 아카이브 스토리지, 딥 아카이브를 포함한 다양한 객체 스토리지 유형을 제공합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/30925">스토리지 유형</a>을 참고하십시오. <br>객체/폴더 업로드, 조회, 다운로드, 복사, 삭제 작업에 대한 자세한 방법은 <a href="https://intl.cloud.tencent.com/document/product/436/13321">객체 관리</a> 문서를 참고하십시오.</td>
+      <td>스토리지 유형: 객체의 액세스 빈도 및 재해 복구 정도에 따라 COS에서 제공하는 MAZ(다중AZ)_STANDARD, MAZ_STANDARD_IA, INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE 또는 DEEP ARCHIVE 중에서 스토리지 클래스를 선택할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/30925">스토리지 유형 개요</a>를 참고하십시오. <br>객체/폴더: 업로드, 쿼리, 다운로드, 복사 및 삭제할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/13321">객체 업로드</a>를 참고하십시오.</td>
    </tr>
 </table>	 
 
@@ -76,6 +76,10 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    <tr>
       <td nowrap="nowrap">버킷 복사</td>
       <td>버킷 복사 규칙을 설정하여 다른 버킷에 자동으로 증분 객체를 비동기 복사해 데이터 재해 복구 및 백업을 실행할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/19237">버킷 복제 개요</a>를 참고하십시오.</td>
+   </tr>
+   <tr>
+      <td nowrap="nowrap">MAZ(다중AZ) 구성</td>
+      <td>MAZ는 COS에서 제공하는 다중 AZ 스토리지 아키텍처를 말하며 데이터에 대한 IDC 레벨의 재해 복구 기능을 제공할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/35208">Overview of Multi-AZ Feature</a>를 참고하십시오.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">클라우드 데이터베이스 백업</td>
@@ -286,6 +290,6 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
    </tr>
    <tr>
       <td>다양한 프로토콜</td>
-      <td>COS는 HTTP1.0, HTTP1.1를 포함한 다양한 전송 프로토콜을 지원합니다. 또한 TLS1.0, TLS1.1 및 TLS1.2 암호화 프로토콜이 지원됩니다. </td>
+      <td>COS는 HTTP1.0 및 HTTP1.1 전송 프로토콜과 TLS1.0, TLS1.1 및 TLS1.2 암호화 프로토콜을 지원합니다.</td>
    </tr>
 </table>

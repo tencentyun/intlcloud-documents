@@ -18,7 +18,7 @@ Tencent Cloud COSについてさらによく理解していただけるよう、
 - [オブジェクト（Object）](https://intl.cloud.tencent.com/document/product/436/13324)：COSの基本ユニットであり、画像、ドキュメント、オーディオビデオファイルなどのあらゆるフォーマットタイプのデータを理解することができます。
 - [リージョン（Region）](https://intl.cloud.tencent.com/document/product/436/6224)：Tencent Cloudのホスティングデータセンターが分布する地域です。COSのデータはこれらのリージョンのバケット内に保存されます。
 - [アクセスドメイン名（Endpoint）](https://intl.cloud.tencent.com/document/product/436/6224)：バケットに保存されたオブジェクトに、ユーザーはアクセスドメイン名を通じてアクセスし、オブジェクトをダウンロードすることができます。
-- [ストレージタイプ（StorageClass）](https://intl.cloud.tencent.com/document/product/436/30925)：COS内のオブジェクトのストレージレベルとアクティビティレベルのことです。COSは、標準ストレージ、低頻度ストレージ、INTELLIGENT_TIERINGストレージ、アーカイブストレージ、ディープアーカイブストレージという複数のストレージタイプを提供しています。それぞれのストレージタイプは異なるビジネスシーンに適しており、異なる特性（オブジェクトのアクセス頻度、アクセスレイテンシーなど）を持っています。各ストレージタイプの詳細については、[ストレージタイプの概要](https://intl.cloud.tencent.com/document/product/436/30925)をご参照ください。
+- [ストレージタイプ（StorageClass）](https://intl.cloud.tencent.com/document/product/436/30925)：COS内のオブジェクトのストレージレベルとアクティビティレベルのことです。COSは、標準ストレージ（マルチAZ）、低頻度ストレージ（マルチAZ）、INTELLIGENT_TIERINGストレージ（マルチAZ）、INTELLIGENT_TIERINGストレージ、標準ストレージ、低頻度ストレージ、アーカイブストレージ、ディープアーカイブストレージという複数のストレージタイプを提供しています。それぞれのストレージタイプは異なる業務シナリオに適しており、異なる特性（オブジェクトのアクセス頻度、アクセスレイテンシーなど）を持っています。各ストレージタイプの詳細については、[ストレージタイプの概要](https://intl.cloud.tencent.com/document/product/436/30925)をご参照ください。
 
 
 
@@ -26,7 +26,7 @@ Tencent Cloud COSについてさらによく理解していただけるよう、
 
 ### 初心者向け（入門編）
 
-COSでは、COSの理解や活用に役立つツールやビデオガイドなど、豊富で包括的なラーニングパスを提供しています。
+COSでは、COSの理解や活用に役立つツールやビデオガイドなど、豊富で包括的なラーニングパスを提供しています。詳細については[初心者向け（入門編）COS](https://www.tencentcloud.com/products/cos)をご参照ください。
 
 
 ### 利用方法
@@ -50,8 +50,8 @@ COSはユーザーに対し様々な利用方法をご提供しています。�
 <td align="left" width="70%">このツールは、ユーザーが視覚化インターフェースを通じて、データのアップロード、ダウンロード、アクセスリンク生成などの操作を便利に行えるようサポートするものです。</td>
 </tr>
 <tr>
-<td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/10976">COSCMDツール</a></td>
-<td align="left" width="70%">このツールは、ユーザーが簡単なコマンドラインを使用して、オブジェクトの一括アップロード・ダウンロード・削除などの操作を実行できるようサポートするものです。</td>
+<td align="left" width="30%"><a href="https://cloud.tencent.com/doc/product/436/10976">COSCMDツール</a></td>
+<td align="left" width="70%">このツールは、ユーザーが簡単なコマンド行を使用して、オブジェクトの一括アップロード、ダウンロード、削除などの操作を実現できるようサポートするものです。</td>
 </tr>
 <tr>
 <td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/7751">API方式</a></td>
@@ -71,7 +71,7 @@ COSはユーザーに対し様々な利用方法をご提供しています。�
 
 COSのデフォルトの課金方式は従量課金（後払い）となります。詳細については、[課金概要](https://intl.cloud.tencent.com/document/product/436/16871)のドキュメントをご参照ください。
 
-## 関連ドキュメント
+##  関連ドキュメント
 
 その他の紹介ドキュメントについては、[開発者ガイド](https://www.tencentcloud.com/document/product/436/14102)をご参照ください。
 

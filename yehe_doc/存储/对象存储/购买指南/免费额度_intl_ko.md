@@ -1,20 +1,24 @@
 ## 소개
-Cloud Object Storage(COS)는 신규 사용자(COS 서비스 최초 활성화 사용자)에게 일정 한도의 프리 티어 리소스 팩을 제공합니다. **STANDARD 스토리지 유형**에 저장된 데이터로 인해 발생하는 비용을 차감할 수 있습니다. 프리 티어 리소스 팩 관련 자세한 내용은 다음 표와 같습니다. 
+
+Cloud Object Storage(COS)는 신규 사용자(COS 서비스 최초 활성화 기업 및 개인 사용자)에게 제한된 프리 티어 리소스 팩을 제공하여 **STANDARD 스토리지 유형**에 저장된 데이터로 인해 발생하는 비용을 차감할 수 있습니다. 프리 티어 리소스 팩 관련 자세한 내용은 다음 표와 같습니다. 
 
 | 객체 | 프리 티어 리소스 팩          | 유효 기간 |
 | -------- | ----------------- | ------ |
-| 신규 사용자 | 50GB STANDARD 스토리지 용량 패키지 | 6개월(180일)  |
+| 개인 사용자 | 50GB STANDARD 스토리지 용량 패키지 | 6개월(180일)  |
+| 기업 사용자 | 1TB STANDARD 스토리지 용량 패키지 | 6개월(180일)  |
 
->?스토리지 용량은 이진법으로 계산합니다(예시 1TB = 1024GB).
+>? 스토리지 용량은 이진법으로 계산합니다(예시 1TB = 1024GB).
+>
+
 
 ## 무료 한도 제공 범위
 
 프리 티어 리소스 팩은 **공유 클라우드 리전**에만 적용됩니다. 리전 구분 사항은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
 
-COS에서 제공하는 프리 티어 리소스 팩은 아래에 설명된 대로 **STANDARD 스토리지 사용량**만 공제할 수 있습니다. 자세한 내용은 [과금 항목](https://intl.cloud.tencent.com/document/product/436/33776)을 참고하십시오.
+COS에서 제공하는 프리 티어 리소스 팩은 아래에 설명된 대로 **STANDARD 스토리지 사용량**만 차감할 수 있습니다. 자세한 내용은 [과금 항목](https://www.tencentcloud.com/document/product/436/40096)을 참고하십시오.
 
 >!
-> - 프리 티어 리소스 팩은 STANDARD_IA 스토리지 사용량, ARCHIVE 스토리지 사용량, 요청 및 트래픽과 같은 **STANDARD 스토리지 사용량 이외**의 과금 항목을 공제하는 데 사용할 수 없습니다. 자세한 내용은 [과금 항목](https://www.tencentcloud.com/document/product/436/40096)을 참고하십시오.
+> - 프리 티어 리소스 팩은 STANDARD_IA 스토리지 사용량, ARCHIVE 스토리지 사용량, 요청 및 트래픽과 같은 **STANDARD 스토리지 사용량 이외**의 과금 항목을 차감하는 데 사용할 수 없습니다. 자세한 내용은 [과금 항목](https://www.tencentcloud.com/document/product/436/40096)을 참고하십시오.
 > - 위반 또는 연체로 인해 서비스가 중단된 경우 서비스 재개 전 유효 기간 내라도 프리 티어 리소스 팩을 사용할 수 없습니다.
 > 
 
@@ -25,22 +29,24 @@ COS에서 제공하는 프리 티어 리소스 팩은 아래에 설명된 대로
       <th>프리 티어 리소스 팩 사용 가능 여부</th>
    </tr>
    <tr>
-      <td rowspan="5">스토리지 사용량 과금</td>
+      <td rowspan="6">스토리지 용량 과금</td>
       <td>STANDARD 스토리지 사용량</td>
-      <td>가능.<br>신규 사용자는 6개월(180일) 동안 50GB의 STANDARD 스토리지 사용량의 프리 티어를 사용할 수 있습니다.</td>
+      <td>Yes. <ul  style="margin: 0;"><li>개인 사용자는 6개월(180일) 동안 50GB의 STANDARD 스토리지 프리 티어를 사용할 수 있습니다. </li><li>기업 사용자는 6개월(180일) 동안 1TB의 STANDARD 스토리지 프리 티어를 사용할 수 있습니다.</li></ul></td>
    </tr>
    <tr>
-      <td>STANDARD_IA 스토리지 사용량</td>
-      <td rowspan="8">불가능.<br>프리 티어 리소스 팩은 <strong>STANDARD 스토리지 사용량 이외</strong>의 과금 항목을 공제하는 데 사용할 수 없습니다.</br></td>
+      <td>MAZ_STANDARD 스토리지 사용량</td>
+      <td rowspan="9">불가능.<br>프리 티어 리소스 팩은 <strong>STANDARD 스토리지 사용량 이외</strong>의 과금 항목을 차감하는 데 사용할 수 없습니다.</br></td>
    </tr>
    <tr>
-      <td>INTELLIGENT TIERING 스토리지 사용량</td>
+      <td>STANDARD_IA/MAZ_STANDARD_IA 스토리지 용량</td>
+   </tr>
+   <tr>
+      <td>INTELLIGENT TIERING/MAZ_INTELLIGENT TIERING 스토리지 용량</td>
    </tr>
    <tr>
       <td>ARCHIVE 스토리지 사용량</td>
-   </tr>
    <tr>
-      <td>DEEP ARCHIVE 스토리지 사용량</td>	   
+      <td>DEEP ARCHIVE 스토리지 사용량</td>
    </tr>
    <tr>
       <td>요청 요금</td>
@@ -70,7 +76,7 @@ COS에서 제공하는 프리 티어 리소스 팩은 아래에 설명된 대로
 > 
 
 
-사용자 A가 2019년 3월 10일 COS 서비스를 활성화하고 3월 16일 베이징 리전의 STANDARD 스토리지 클래스에 50GB의 파일을 업로드하여 100회의 요청을 생성하고 3월 20일에 공중망을 통해 10GB의 데이터를 다운로드하여 100회의 요청을 생성했다고 가정합니다. 이러한 작업 외에 사용자 A는 9월 말 이전에 다른 작업을 수행하지 않았습니다.
+개인 사용자 A가 2019년 3월 10일 COS 서비스를 활성화하고 3월 16일 베이징 리전의 STANDARD 스토리지 클래스에 50GB의 파일을 업로드하여 100회의 요청을 생성하고 3월 20일에 공중망을 통해 10GB의 데이터를 다운로드하여 100회의 요청을 생성했다고 가정합니다. 이러한 작업 외에 사용자 A는 9월 말 이전에 다른 작업을 수행하지 않았습니다.
 
 
 |시간  |   설명   |  과금 단가  |  사용량  |   요금(USD)   |
@@ -88,6 +94,10 @@ COS에서 제공하는 프리 티어 리소스 팩은 아래에 설명된 대로
 
 [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985)을 통해 가입하고, [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인한 뒤 COS 서비스를 활성화하면 시스템에서 자동으로 계정에 프리 티어를 발급합니다.
 
+
+
+
+
 ## 유효 기간 계산
 
 **프리 티어 유효 기간**은 COS 서비스 활성화 후 6개월(180일)입니다.
@@ -103,6 +113,7 @@ COS에서 제공하는 프리 티어 리소스 팩은 아래에 설명된 대로
 
 
 
+
 ## 질문이 있으십니까?
 
-프리 티어 또는 요금 청구서 관련 문의 사항은 [과금](https://intl.cloud.tencent.com/document/product/436/10373) 문서를 참고하시거나 또는 [문의하기](https://www.tencentcloud.com/contact-us)를 이용하십시오.
+프리 티어 또는 요금 청구서 관련 문의 사항은 [과금](https://intl.cloud.tencent.com/document/product/436/10373) 문서를 참고하시거나 또는 [문의하기](https://intl.cloud.tencent.com/contact-sales)를 이용하십시오.

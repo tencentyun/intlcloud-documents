@@ -9,7 +9,6 @@
 
 >!
 >- ユーザーは1つのバケット内に複数のリストタスクを設定することができます。リストタスクは、オブジェクトの内容を直接読み取るのではなく、オブジェクトのメタデータなどのプロパティ情報のスキャンのみを行います。
->- 現時点では金融クラウドリージョンをサポートしていません。
 >
 
 ## リストのパラメータ
@@ -34,7 +33,7 @@
 | ETag                | エンティティタグとはオブジェクトのハッシュです。ETagはオブジェクトの内容への変更のみを反映し、オブジェクトのメタデータへの変更は反映しません。ETagは、オブジェクトデータのMD5ダイジェストである場合も、そうではない場合もあります。どちらであるかは、オブジェクトの作成方法と暗号化方法によって決まります |
 | StorageClass        | オブジェクトの保存に用いるストレージクラスです。その他の情報に関しては、[ストレージタイプ](https://intl.cloud.tencent.com/document/product/436/30925)をご参照ください |
 | IsMultipartUploaded | オブジェクトをマルチパートアップロード形式でアップロードする場合は、Trueに設定します。その他の情報に関しては、[マルチパートアップロード](https://intl.cloud.tencent.com/document/product/436/14112)をご参照ください |
-| Replicationstatus   | PENDING、COMPLETED、FAILEDまたはREPLICAに設定します。その他の情報に関しては、[コピーアクションの説明](https://intl.cloud.tencent.com/document/product/436/19923)をご参照ください|
+| Replicationstatus   | オブジェクトのコピーにおいてソースファイルとレプリカファイルの状態をマークするために使用します。ソースファイルのマーカーはPENDING（コピー保留中）、COMPLETED（コピー完了）、FAILED（コピー失敗）、レプリカファイルのマーカーはREPLICA（コピー完了、レプリカファイル生成済み）となります。その他の情報に関しては、[コピーアクションの説明](https://intl.cloud.tencent.com/document/product/436/19923)をご参照ください  |
 | Tag | オブジェクトのタグ |
 
 ## リストの設定方法
@@ -68,7 +67,8 @@
 - リストの暗号化の選択：暗号化なしとSSE-COS暗号化から選択できます。SSE-COS暗号化を選択した場合、生成されるリストレポートは暗号化されます。
 - リストの出力位置の設定：リストレポートを保存したいバケットを設定する必要があります。
 
-> !ターゲットバケットは必ずソースバケットと同一のリージョンになければなりません。これらは同一のバケットとすることもできます。
+>! ターゲットバケットは必ずソースバケットと同一のリージョンになければなりません。これらは同一のバケットとすることもできます。
+>
 
 
 ## 利用方法
@@ -95,19 +95,19 @@ policyDocumentは次のとおりです。
 	"statement": [{
 		"action": "name/sts:AssumeRole",
 		"effect": "allow",
-		"principal": {
+		"principal":{
 			"service": "cos.cloud.tencent.com"
 		}
 	}]
 }
 ```
+
 #### 2. COSロールへの権限のバインド
 ロール権限に権限をバインドします。具体的なインターフェースの情報については、[AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562)をご参照ください。
-このうち、policyNameはQcloudCOSFullAccessとします。roleNameはステップ1のCOS_QcsRoleとします。roleNameの作成時に返されたroleIDを使用することもできます。
+このうち、policyNameはQcloudCOSFullAccessとします。roleNameは手順1のCOS_QcsRoleとします。roleNameの作成時に返されたroleIDを使用することもできます。
 
 #### 3. リスト機能の有効化
-インターフェースを呼び出してリスト機能を有効化します。具体的なインターフェースの情報については、[PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625)をご参照ください。リストファイルを保存するターゲットバケットはソースバケットと同一のリージョンにあることが必要です。
-
+インターフェースを呼び出してリスト機能を有効化します。具体的なインターフェースの情報については、[PUT Bucket inventory](https://www.tencentcloud.com/document/product/436/30625)をご参照ください。リストファイルを保存するターゲットバケットはソースバケットと同一のリージョンにあることが必要です。
 
 
 ## リストレポートのストレージパス
@@ -146,6 +146,7 @@ destination-prefix/appid/source-bucket/config-ID/YYYYMMDD/manifest.checksum
 >   - タイムスタンプ。リストレポートの生成時にバケットのスキャンを開始した日付および時間が含まれます。
 >   - リストファイルの形式とアーキテクチャ。
 >   - ターゲットバケット内のリストレポートのオブジェクトキー、サイズ、md5Checksum。
+>   
 
 CSV形式のリストのmanifest.jsonファイルにおけるManifestの例は次のとおりです。
 

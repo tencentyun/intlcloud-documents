@@ -4,7 +4,7 @@ Tencent CloudのCloud Object Storage（COS）はオブジェクトロック機�
 
 >? 
 >- オブジェクトロック機能に基づき、COSはSEC Rule 17a-4（f）、FINRA 4511、CFTC 1.31などのコンプライアンス要件を含む、厳格な電子記録保存要件を満たすことが可能となります。
->- SEC 17A-4は米国証券取引委員会が1934年の米国証券取引法に基づいて公布した法規制です。この法規制は、データ保存、インデックス、アクセシビリティの要件について概要を述べたもので、株式、債券、先物などの金融証券取引または仲介業務を行う会社に適用されます。この法規制に基づき、さまざまな種類の取引記録が保存必須かつ上書きおよび消去禁止となり、少なくとも6年間はすぐにアクセスできる状態であることが求められます。
+>- SEC 17A-4は米国証券取引委員会が1934年の米国証券取引法に基づいて公布した法規制です。この法規制は、データ保存、インデックス、アクセシビリティの要件について概要を述べたもので、株式、債券、先物などの金融証券取引または仲介業務を行う会社に適用されます。この法規制に基づき、さまざまな種類の取引記録が保存必須かつ上書きおよび消去禁止となり、2年間はすぐにアクセスできる状態、少なくとも6年間はアクセスできる状態であることが求められます。
 
 オブジェクトロック機能は現時点ではバケットレベルの機能であり、各バケットには時間ポリシーに基づいたオブジェクトロックのみを設定することが可能です。保持期間は1日～100年です。保持期間は必ず設定しなければならず、永久の期限は存在しません。
 
@@ -29,8 +29,8 @@ COSコンソールでオブジェクトロックを設定することができ�
 
 次のAPIによってオブジェクトロックを直接管理できます。
 
-- [PUT Bucket ObjectLockConfiguration](https://www.tencentcloud.com/document/product/436/40133)
-- [GET Bucket ObjectLockConfiguration](https://www.tencentcloud.com/document/product/436/40134)
+- [PUT Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40133)
+- [GET Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40134)
 - [GET Object Retention](https://www.tencentcloud.com/document/product/436/40135) 
 
 
