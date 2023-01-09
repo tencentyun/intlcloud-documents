@@ -333,7 +333,7 @@ At this point, you have learned how to create a player, use it to play videos, a
 
 ## More Features[](id:moreFeature)
 
-This section describes several common player features. For more features, see [Demo](#demo). For features supported by the Player component, see [Features](https://cloud.tencent.com/document/product/881/61375).
+This section describes several common player features. For more features, see [Demo](#demo). For features supported by the Player component, see [Features](https://www.tencentcloud.com/document/product/266/42965).
 
 ### 1. Full screen playback
 
