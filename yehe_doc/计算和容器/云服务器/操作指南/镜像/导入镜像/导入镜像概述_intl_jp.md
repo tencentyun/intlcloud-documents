@@ -9,7 +9,7 @@
 ::: Linuxシステムタイプのイメージ制限
 <table>
 <tr><th style="width:17%">イメージ属性</th><th>条件</th></tr>
-<tr><td>OS</td><td><ul><li> CentOS、Ubuntu、Debian、CoreOS、openSUSE、SUSEリリースバージョンに基づくイメージです。</li><li>32ビットと64ビットの両方のOSがサポートされています。</li></ul></td></tr>
+<tr><td>OS</td><td><ul><li> CentOS、CentOS Stream、Ubuntu、Debian、OpenSUSE、CoreOS、FreeBSD、AlmaLinux、Rocky Linux、Fedora、Kylin、UnionTech、TencentOSリリースバージョンに基づくイメージです。</li><li>32ビットと64ビットの両方のOSがサポートされています。</li></ul></td></tr>
 <tr><td>イメージ形式</td><td><ul><li>RAW、VHD、QCOW2、VMDKのイメージ形式をサポートします。</li><li><code>qemu-img info imageName &#124; grep 'file format'を利用して</code>イメージ形式を確認します。</li></ul></td></tr>
 <tr><td>ファイルシステムのタイプ</td><td>GPTパーティションはサポートされていません。</td></tr>
 <tr><td>イメージのサイズ</td><td><ul><li>イメージの実際のサイズは50Gを超えることはできません。<code>qemu-img info imageName &#124; grep 'disk size'</code>を利用して、イメージの実際のサイズを確認します。</li><li>イメージのvsizeは500Gを超えることはできません。<code>qemu-img info imageName &#124; grep 'virtual size'</code>を利用して、イメージのvsizeを確認します。</li></ul><b>注記：</b>イメージをインポートする時のサイズはQCOW2形式に変換したイメージ情報に準じます。</td></tr>
@@ -23,7 +23,7 @@
 ::: Windowsシステムタイプのイメージ制限
 <table>
 <tr><th style="width:16%">イメージ属性</th><th>条件</th></tr>
-<tr><td>OS</td><td><ul><li>Windows Server 2008関連バージョン、Windows Server 2012関連バージョン、Windows Server 2016関連バージョン</li><li>32ビットと64ビットの両方のOSがサポートされています</li></ul></td></tr>
+<tr><td>OS</td><td><ul><li>Windows Server 2008関連バージョン、Windows Server 2012関連バージョン、Windows Server 2016関連バージョン、Windows Server 2019関連バージョン、Windows Server 2022関連バージョン</li><li>32ビットと64ビットの両方のOSがサポートされています</li></ul></td></tr>
 <tr><td>イメージ形式</td><td><ul><li>RAW、VHD、QCOW2、VMDKのイメージ形式をサポートします。</li><li><code>qemu-img info imageName &#124; grep 'file format'を利用して</code>イメージ形式を確認します</li></ul></td></tr>
 <tr><td>ファイルシステムのタイプ</td><td><ul><li>MBRパーティションを使用するNTFSファイルシステムのみをサポートします。</li><li>GPTパーティションをサポートしません。</li><li>ロジックボリュームマネージャー（LVM）をサポートしません</li></ul></td></tr>
 <tr><td>イメージのサイズ</td><td><ul><li>イメージの実際のサイズは50Gを超えることはできません。<code>qemu-img info imageName &#124; grep 'disk size'</code>を利用して、イメージの実際のサイズを確認します。</li><li>イメージのvsizeは500Gを超えることはできません。<code>qemu-img info imageName &#124; grep 'virtual size'</code>を利用して、イメージのvsizeを確認します。</li></ul><b>注記：</b>イメージをインポートする時のサイズはQCOW2形式に変換したイメージ情報に準じます</td></tr>
