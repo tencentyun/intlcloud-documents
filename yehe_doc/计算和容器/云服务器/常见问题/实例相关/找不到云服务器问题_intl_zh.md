@@ -25,9 +25,8 @@
 ### 2. 选错产品控制台的解决方法
 您购买的资源可能不是云服务器 CVM，而是 [轻量应用服务器](https://console.cloud.tencent.com/lighthouse/instance) 或者其它产品，没有找到正确的产品控制台。
 - 方法1：在 [控制台总览](https://console.cloud.tencent.com/) > **最近订单**中查看近三个月购买了哪些预付费 / 后付费资源。如果购买时间较久，可单击 **[查看全部](https://console.cloud.tencent.com/expense/deal)** 进行确认。 
-	<img src="https://qcloudimg.tencent-cloud.cn/raw/435aaa01910882ffd0edf1a1dd94a1e0.png" width="500px"/>
-                                         
-	
+<img src="https://qcloudimg.tencent-cloud.cn/raw/435aaa01910882ffd0edf1a1dd94a1e0.png" width="500px"/>                                    
+
 - 方法2：在 [控制台总览](https://console.cloud.tencent.com/) > **我的资源** 中查看账号下的资源有哪些。  
 <img src="https://qcloudimg.tencent-cloud.cn/raw/0b159468504385294580b4485235f976.png" width="500px"/>              
 
