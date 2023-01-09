@@ -9,7 +9,7 @@
 ::: Linux 시스템 유형 이미지 제한
 <table>
 <tr><th style="width:17%">이미지 속성</th><th>조건</th></tr>
-<tr><td>운영 체제</td><td><ul><li>CentOS, Ubuntu, Debian, CoreOS, openSUSE, SUSE 버전을 기반으로 한 미러 이미지</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
+<tr><td>운영 체제</td><td><ul><li>CentOS、CentOS Stream、Ubuntu、Debian、OpenSUSE、CoreOS、FreeBSD、AlmaLinux、Rocky Linux、Fedora、Kylin、UnionTech、TencentOS 버전을 기반으로 한 미러 이미지</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
 <tr><td>미러 이미지 형식</td><td><ul><li>RAW, VHD, QCOW2, VMDK 미러 이미지 형식을 지원합니다.</li><li><code>qemu-img info imageName | grep 'file format'</code>을 사용하여 미러 이미지 형식을 조회합니다.</li></ul></td></tr>
 <tr><td>파일 시스템 유형</td><td>GPT 파티션은 지원되지 않습니다.</td></tr>
 <tr><td>미러 이미지 크기</td><td><ul><li>미러 이미지 실제 크기가 50G 이하인 경우 <code>qemu-img info imageName &#124; grep 'disk size'</code>를 사용해 실제 크기를 조회합니다.</li><li>미러 이미지 vsize가 500G 이하인 경우 <code>qemu-img info imageName &#124; grep 'virtual size'</code>를 사용해 미러 이미지 vsize를 조회합니다.</li></ul><b>주의 사항: </b>미러 이미지 가져오기 시 QCOW2 형식으로 전환한 후 미러 이미지 정보를 기준으로 심사합니다.</td></tr>
@@ -23,7 +23,7 @@
 ::: Windows 시스템 유형 미러 이미지 제한
 <table>
 <tr><th style="width:16%">이미지 속성</th><th>조건</th></tr>
-<tr><td>운영 체제</td><td><ul><li>Windows Server 2008 관련 버전, Windows Server 2012 관련 버전, Windows Server 2016 관련 버전</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
+<tr><td>운영 체제</td><td><ul><li>Windows Server 2008 관련 버전, Windows Server 2012 관련 버전, Windows Server 2016 관련 버전, Windows Server 2019 관련 버전, Windows Server 2022 관련 버전</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
 <tr><td>미러 이미지 형식</td><td><ul><li>RAW, VHD, QCOW2, VMDK 미러 이미지 형식을 지원합니다.</li><li><code>qemu-img info imageName | grep 'file format'</code>을 사용하여 미러 이미지 형식을 조회합니다.</li></ul></td></tr>
 <tr><td>파일 시스템 유형</td><td><ul><li>MBR 파티션을 사용한 NTFS 파일 시스템만 지원합니다.</li><li>GPT 파티션은 지원되지 않습니다.</li><li>논리 볼륨 관리(LVM)는 지원되지 않습니다.</li></ul></td></tr>
 <tr><td>미러 이미지 크기</td><td><ul><li>미러 이미지 실제 크기가 50G 이하인 경우 <code>qemu-img info imageName &#124; grep 'disk size'</code>를 사용해 실제 크기를 조회합니다.</li><li>미러 이미지 vsize가 500G 이하인 경우 <code>qemu-img info imageName &#124; grep 'virtual size'</code>를 사용해 미러 이미지 vsize를 조회합니다.</li></ul><b>주의 사항:</b> 미러 이미지 가져오기 시 qcow2 형식 전환 후 미러 이미지 정보를 기준으로 심사합니다.</td></tr>
@@ -128,10 +128,10 @@ COS 무효 링크에 대한 오류 보고를 받은 후, 서술된 원인에 따
 |오류 코드|오류 원인|권장 처리 방식|
 |-----|-----|-----|
 |InvalidUrl|COS 무효 링크|COS 링크와 가져온 미러 이미지 링크가 같은지 검사하십시오.|
-|InvalidFormatSize|형식 또는 크기가 조건에 부적합|미러 이미지가 [가져오기 준비](#가져오기 준비) 중 ‘미러 이미지 형식’과 ‘미러 이미지 크기’의 제한을 만족시켜야 합니다.|
-|VirtioNotInstall|virtio 드라이버 미설치|미러 이미지에 virtio 드라이버를 설치해야 합니다. [가져오기 준비](#가져오기 준비)의 ‘드라이버’ 부분을 참고하십시오.|
+|InvalidFormatSize|형식 또는 크기가 조건에 부적합|미러 이미지가 [가져오기 준비](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E) 중 ‘미러 이미지 형식’과 ‘미러 이미지 크기’의 제한을 만족시켜야 합니다.|
+|VirtioNotInstall|virtio 드라이버 미설치|미러 이미지에 virtio 드라이버를 설치해야 합니다. [가져오기 준비](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E)의 ‘드라이버’ 부분을 참고하십시오.|
 |PartitionNotPresent|파티션 정보 손상|잘못된 생성 방식으로 나타난 미러 이미지 손상됩니다.|
-|CloudInitNotInstalled|cloud-init 미설치|Linux 미러 이미지는 cloud-init 설치가 필요합니다. [가져오기 준비](#가져오기 준비) 중의 ‘드라이버’ 부분을 참고하십시오.|
+|CloudInitNotInstalled|cloud-init 미설치|Linux 미러 이미지는 cloud-init 설치가 필요합니다. [가져오기 준비](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E) 중의 ‘드라이버’ 부분을 참고하십시오.|
 |RootPartitionNotFound|루트 파티션 미점검|잘못된 생성 방식으로 나타난 미러 이미지 손상됩니다.|
 |InternalError|기타 오류|고객서비스에 연락해 주십시오.|
 

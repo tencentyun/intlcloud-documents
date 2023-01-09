@@ -15,7 +15,7 @@ CLS allows you to use various Kafka producer SDKs to collect logs and upload the
 - Supported Kafka protocol versions: 0.11.0.X, 1.0.X, 1.1.X, 2.0.X, 2.1.X, 2.2.X, 2.3.X, 2.4.X, 2.5.X, 2.6.X, 2.7.X, 2.8.X
 - Supported compression modes: Gzip, Snappy, LZ4
 - Current authentication mode: SASL_PLAINTEXT
-- Upload over Kafka requires the `RealtimeProducer` permission. For more information, see [Examples of Custom Access Policies](https://intl.cloud.tencent.com/document/product/614/45004).
+- Upload over Kafka requires the `RealtimeProducer` permission. For more information, see [Access Policy Templates](https://intl.cloud.tencent.com/document/product/614/45004).
 
 
 ## Configuration Methods

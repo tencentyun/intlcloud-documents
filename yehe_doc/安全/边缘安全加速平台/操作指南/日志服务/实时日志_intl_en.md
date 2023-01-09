@@ -6,7 +6,7 @@ You can access log data to view or analyze business conditions in multiple dimen
 
 
 ## Prerequisites
-Activate [CLS](https://console.cloud.tencent.com/cls) and grant EdgeOne access to create free logsets.
+Activate [CLS](https://console.cloud.tencent.com/cls) and grant EdgeOne access to create logsets.
 >? It’s recommended to enable real-time logging by using a root account. If you are a sub-account or collaborator, you need to obtain the required permission. 
 
 ## Creating a Push Task

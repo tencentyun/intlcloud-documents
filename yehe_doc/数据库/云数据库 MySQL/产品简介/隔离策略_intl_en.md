@@ -3,8 +3,7 @@ This document describes three resource isolation policies of TencentDB for MySQL
 
 >?
 >- The former "Basic Edition" has been renamed "basic single-node”, and the former "Single-node High IO Edition" has been renamed "general single-node".
->- Two-node and three-node instances support the general and dedicated policies. The dedicated policy is currently in beta; therefore, to purchase dedicated instances, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-
+>- Two-node and three-node instances support the general and dedicated policies.
 | Resource Isolation Policy | Description                                                         |
 | -------- | ------------------------------------------------------------ |
 | Basic   | Only single-node instances support this policy. A basic single-node instance (formerly Basic Edition) supports computation-storage separation and stores data on cloud disks. |

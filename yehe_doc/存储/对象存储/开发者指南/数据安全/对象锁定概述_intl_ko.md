@@ -4,7 +4,7 @@ Cloud Object Storage(COS)는 객체 잠금 기능을 제공합니다. 보존 중
 
 >? 
 >- 이 기능을 통해 COS는 전자 기록 보관에 대한 엄격한 요구 사항(SEC Rule 17a-4(f), FINRA 4511 및 CFTC 1.31 포함)을 충족할 수 있습니다.
->- SEC 규칙 17a-4는 1934년 미국 증권 거래법에 따라 미국 증권 거래 위원회에서 발행한 규정입니다. 이 규칙은 주식, 채권 및 선물과 같은 금융 유가 증권의 거래 또는 중개를 거래하는 회사의 데이터 보존, 인덱싱 및 접근성에 대한 요구 사항을 설명합니다. 이 규칙에 따르면 다양한 유형의 거래에 대한 기록을 보관해야 하며 최소 6년 동안 즉시 액세스하여 다시 작성하거나 삭제할 수 없습니다.
+>- SEC 규칙 17a-4는 1934년 미국 증권 거래법에 따라 미국 증권 거래 위원회에서 발행한 규정입니다. 이 규칙은 주식, 채권 및 선물과 같은 금융 유가 증권의 거래 또는 중개를 거래하는 회사의 데이터 보존, 인덱싱 및 접근성에 대한 요구 사항을 설명합니다. 이 규칙에 따르면 다양한 유형의 거래에 대한 기록을 보관해야 하며 즉시 액세스는 2년, 비즉시 액세스는 최소 6년 동안 재작성하거나 삭제할 수 없습니다.
 
 객체 잠금은 버킷 레벨 기능입니다. 즉, 각 버킷에는 시간 기반 객체 잠금 규칙이 하나만 있을 수 있습니다. 이 기능을 활성화한 후에는 1일 - 100년 사이의 보존 기간이 필요합니다. 영구 보존은 허용되지 않습니다.
 
@@ -23,20 +23,20 @@ Cloud Object Storage(COS)는 객체 잠금 기능을 제공합니다. 보존 중
 
 #### COS 콘솔 사용
 
-COS 콘솔에서 객체를 잠그는 방법에 대한 정보는 [객체 잠금 설정](https://intl.cloud.tencent.com/document/product/436/19235)을 참고하십시오.
+COS 콘솔에서 객체를 잠그는 방법에 대한 정보는 [버킷 복제 설정](https://intl.cloud.tencent.com/document/product/436/19235)을 참고하십시오.
 
 #### REST API 사용
 
 다음 API를 직접 호출하여 객체 잠금을 관리할 수 있습니다.
 
-- [PUT Bucket ObjectLockConfiguration](https://www.tencentcloud.com/document/product/436/40133)
-- [GET Bucket ObjectLockConfiguration](https://www.tencentcloud.com/document/product/436/40134)
+- [PUT Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40133)
+- [GET Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40134)
 - [GET Object Retention](https://www.tencentcloud.com/document/product/436/40135) 
 
 
 ## 제한 설명
 
-1. 이제 객체 잠금은 얼로우 리스트에 있는 고객만 사용할 수 있습니다. 이 기능을 사용하려면 당사에 [문의](https://intl.cloud.tencent.com/contact-sales)하십시오.
+1. 이제 객체 잠금은 얼로우 리스트에 있는 고객만 사용할 수 있습니다. 이 기능을 사용하려면 당사에 [문의하기](https://intl.cloud.tencent.com/contact-sales)하십시오.
 2. 활성화되면 객체 잠금 구성이 5초 이내에 버킷에 적용됩니다.
 3. 객체 잠금은 아래와 같이 기존 버킷과 객체 모두에 대해 설정할 수 있습니다.
 2012년 7월 1일에 examplebucket이라는 버킷을 생성하고 서로 다른 시점에 세 개의 객체(test1.txt, test2.txt, test3.txt)를 업로드했다고 가정합니다(업로드 날짜는 다음 표에 표시됨). 그런 다음 2013년 9월 1일에 이 버킷에 대한 객체 잠금 규칙을 생성하여 객체를 5년 동안 보관했습니다. 이 경우 각 객체의 잠금 규칙 만료 날짜는 다음과 같습니다.

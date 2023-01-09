@@ -129,7 +129,7 @@ def ci_delete_asr_template():
     'TemplateId': 't1c1287c04c147443da0b2cc7b8fbabf32'
 }
 ```
-For more information on response fields, see the response in [DeleteTemplate](https://cloud.tencent.com/document/product/460/78940).
+For more information on response fields, see the response in DeleteTemplate.
 
 ### Querying template list
 
@@ -198,7 +198,7 @@ def ci_get_asr_template():
     ]
 }
 ```
-For more information on response fields, see the response in [DescribeTemplates](https://cloud.tencent.com/document/product/460/78941).
+For more information on response fields, see the response in [DescribeTemplates](https://www.tencentcloud.com/document/product/1045/51271).
 
 ### Modifying template
 

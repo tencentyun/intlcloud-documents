@@ -135,7 +135,7 @@
 - [deleteTopicFromCommunity](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity) 删除话题。
 - [updateTopicProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile) 设置话题资料。
 - [getTopicList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList) 获取话题列表。
-- [Topic](https://web.sdk.qcloud.com/im/doc/en/Topic.html) 社群话题对象，用于描述话题具有的属性，如名称、公告、简介、未读数等信息。
+- [Topic](https://web.sdk.qcloud.com/im/doc/zh-cn/Topic.html) 社群话题对象，用于描述话题具有的属性，如名称、公告、简介、未读数等信息。
 - 事件 [TIM.EVENT.TOPIC_CREATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED) 创建话题时触发。
 - 事件 [TIM.EVENT.TOPIC_DELETED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED) 删除话题时触发。
 - 事件 [TIM.EVENT.TOPIC_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED) 话题资料更新时触发。

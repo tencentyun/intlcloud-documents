@@ -1,4 +1,4 @@
-JDK는 Java 소프트웨어 개발 툴 패키지입니다. 본 문서에서는 JDK 1.7 및 1.8 버전을 예시로 Windows와 Linux 시스템에서의 JDK 설치 및 환경 설정 방법을 소개합니다.
+JDK(Java Development Kit)는 Java용 SDK입니다. 본문은 JDK 1.8을 예로 들어 Windows 및 Linux에서 JDK를 설치하고 구성하는 방법을 설명합니다.
 
 ## Windows
 
@@ -10,18 +10,22 @@ JDK는 Java 소프트웨어 개발 툴 패키지입니다. 본 문서에서는 J
 
 안내에 따라 순서대로 설치합니다. 설치 과정에서 설치 디렉터리(기본적으로 C 디스크에 설치)를 사용자 정의할 수 있습니다. 본 문서에서는 `D:\Program Files\Java\jdk1.8.0_31`과 `D:\Program Files\Java\jre1.8.0_31`에 설치합니다.
 
+
 #### 3. 설정
 
-설치 완료 후, 마우스 오른쪽 버튼을 클릭하여 [내 컴퓨터]>[속성]>[고급 시스템 설정]>[환경 변수]>[시스템 변수]>[생성]을 클릭해 각 소프트웨어를 설정합니다.
+마우스 오른쪽 버튼을 클릭한 후 **PC > 속성 > 고급 시스템 설정 > 환경 변수 > 시스템 변수 > 생성**을 선택하고 프로그램을 구성합니다.
 변수 이름(N): **JAVA_HOME**   
 변수값(V): `D:\Program Files\Java\jdk1.8.0_31`(실제 설치 경로에 따라 설정)
 
 변수 이름(N): **CLASSPATH**   
 변수값(V): `.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;`(주의: 변수값 헤더에 `.` 존재)
+
 변수 이름(N): **Path**
 변수값(V): `%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;`
+
+
 #### 4. 테스트
-설정 완료 여부 테스트: [시작](또는 단축키: Win+R)>[실행](cmd 입력)>[확인](또는 엔터 키)을 클릭한 후, 명령어 javac를 입력하고 엔터 키를 누릅니다. 사용법 포맷, 명령어 매개변수 등의 정보가 표시되면 환경 변수 설정이 성공적으로 완료된 것입니다.
+구성 성공 여부 테스트: **시작(또는 단축키: Win+R)> 실행(cmd 입력)> 확인(또는 Enter 키 누르기)**을 클릭한 후, 명령어 javac를 입력하고 Enter 키를 눌러 테스트합니다. 다음과 같이 표시되면 환경 변수 구성이 완료된 것입니다.
 
 
 ## Linux
@@ -77,3 +81,4 @@ java version "1.8.0_151"
 Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)
 ```
+

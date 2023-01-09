@@ -1,6 +1,7 @@
+
 ## Overview
 
-This document describes how to install the cloud-init service. Cloud-init allows you to customize configurations during the first initialization of a CVM instance. If an image does not have the cloud-init service installed, instances launched by using the image cannot be initialized properly. 
+Cloud-init allows you to customize configurations during the first initialization of an instance. If the imported image does not have the cloud-init service installed, instances booted through the image cannot be initialized properly. As a result, the image will fail to be imported. This document describes how to install the cloud-init service.
 You can use either of the following methods to install cloud-init:
 - [Manually downloading the cloud-init source package](#ManualDown) 
 - [Using the cloud-init package from the software source](#SoftSources)
@@ -9,7 +10,7 @@ You can use either of the following methods to install cloud-init:
 Before importing a Linux image, ensure that you have properly installed the cloud-init service in the image.
 
 ## Prerequisites
-The server on which you want to install cloud-init is connected to the internet.
+A server with the cloud-init service installed can correctly access the public network.
 
 ## Directions
 <dx-tabs>
@@ -17,11 +18,9 @@ The server on which you want to install cloud-init is connected to the internet.
 
 ### Downloading the cloud-init source package
 
-
-
 <dx-alert infotype="explain" title="">
 - **cloud-init-17.1.tar.gz** is recommended. You can visit https://launchpad.net/cloud-init/+download to download other versions.
-- If the installation fails, you can try the [portable cloud-init package](#greeninitCloudInit)
+- If the installation fails, you can try the [portable cloud-init package](#greeninitCloudInit) 
 </dx-alert>
 
 
@@ -31,32 +30,32 @@ wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.g
 ```
 
 ### Installing cloud-init
-1. Run the following command to decompress the cloud-init installation package:
+1. Run the following command to decompress the cloud-init installation package.
 <dx-alert infotype="explain" title="">
-If you are using the Ubuntu operating system, run this command with the "root" account.
+If you are using the Ubuntu operating system, run this command with the “root” account.
 </dx-alert>
 ```shellsession
 tar -zxvf cloud-init-17.1.tar.gz 
 ```
-2. Run the following command to enter the directory of cloud-init installation package. **cloud-init-17.1** is used in this example.
+2. Run the following command to enter the decompressed cloud-init installation package directory; that is, the cloud-init-17.1 directory.
 ```shellsession
 cd cloud-init-17.1
 ```
 3. Install Python-pip according to the operating system version.
-  - For CentOS 6/7, run the following command:
-```shellsession
-yum install python3-pip -y
-```
-  - For Ubuntu, run the following command:
-```shellsession
-apt-get -y install python3-pip
-```
-During installation, if an error such as "failed to install" or "installation package not found" occurs, see [Resolving Python-pip installation failures](#updateSoftware).
+    - For CentOS 6/7, run the following command:
+    ```shellsession
+    yum install python3-pip -y
+    ```
+    - For Ubuntu, run the following command:
+    ```shellsession
+    apt-get -y install python3-pip
+    ```
+During installation, if an error such as “failed to install” or “installation package not found” occurs, see [resolving Python-pip installation failure](#updateSoftware) to troubleshoot it.
 4. Run the following command to upgrade pip.
 ```
-python3 -m pip install --upgrade pip 
+python3 -m pip install --upgrade pip
 ```
-5. Run the following command to install dependencies:
+5. Run the following command to install dependencies.
 <dx-alert infotype="notice" title="">
 Python 2.6 is not supported when cloud-init uses requests 2.20.0 or later. If the Python interpreter installed in the image environment is Python version 2.6 or earlier, run the `pip install 'requests&lt;2.20.0'` command to install requests 2.20.0 or later before installing the cloud-init dependencies.
 </dx-alert>
@@ -64,35 +63,38 @@ Python 2.6 is not supported when cloud-init uses requests 2.20.0 or later. If th
 pip3 install -r requirements.txt
 ```
 6. Install the cloud-utils components corresponding to your OS version.
-  - For CentOS 6, run the following command:
+    - For CentOS 6, run the following command:
+    ```shellsession
+    yum install cloud-utils-growpart dracut-modules-growroot -y
+    dracut -f
+    ```
+    - For CentOS 7, run the following command:
+    ```shellsession
+    yum install cloud-utils-growpart -y
+    ```
+    - For Ubuntu, run the following command:
+    ```shellsession
+    apt-get install cloud-guest-utils -y
+    ```
+7. Run the following commands to install cloud-init.
 ```shellsession
-yum install cloud-utils-growpart dracut-modules-growroot -y
-dracut -f
-```
-  - For CentOS 7, run the following command:
-```shellsession
-yum install cloud-utils-growpart -y
-```
-  - For Ubuntu, run the following command:
-```shellsession
-apt-get install cloud-guest-utils -y
-```
-7. Run the following command to install cloud-init:
-```shellsession
-python3 setup.py build 
+python3 setup.py build
 ```
 ```shellsession
 python3 setup.py install --init-system systemd
-``` <dx-alert infotype="notice" title="">
-Options of `--init-system` can be `systemd`, `sysvinit`, `sysvinit_deb`, `sysvinit_freebsd`, `sysvinit_openrc`, `sysvinit_suse` or `upstart` [default: None]. Configure parameters based on the auto-start service management method of the operating system. If incorrect parameters are configured, the cloud-init service cannot automatically start upon system startup. This document uses the `systemd` as an example.
+```
+
+<dx-alert infotype="notice" title="">
+The `--init-system` can be followed by any of systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse or upstart [default: None]. Please configure parameters based on the auto-start service management method of the operating system. If incorrect parameters are configured, the cloud-init service cannot automatically start upon system startup. This document uses the systemd auto-start service management method as an example.
 </dx-alert>
 
 
+[](id:cloud-init)
 ### Modifying the cloud-init configuration file
 
 1. Download cloud.cfg for your operating system.
-  - [Ubuntu](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg)
-  - [CentOS](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg)
+    - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
+    - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) to download cloud.cfg for CentOS.
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 
 
@@ -104,15 +106,17 @@ useradd syslog
 
 
 ### Configuring the auto-start of the cloud-init service on boot
-- **If your operating system uses the systemd auto-start service management method, run the following commands.**
+- **If your operating system uses the systemd auto-start service management method, run the following command.**
 <dx-alert infotype="explain" title="">
 To check whether the operating system uses systemd, run the `strings /sbin/init | grep "/lib/system"` command, and you will receive a return message.
 </dx-alert>
- 1. **Run the following command in Ubuntu or Debian:**
+
+-  **Run the following command in Ubuntu or Debian.**
 ```shellsession
  ln -s /usr/local/bin/cloud-init /usr/bin/cloud-init 
 ```
- 2. **Run the following commands in all operating systems:**
+
+- **Run the following commands in all operating systems.**
 ```shellsession
 systemctl enable cloud-init-local.service 
 systemctl start cloud-init-local.service
@@ -127,7 +131,8 @@ systemctl status cloud-init.service
 systemctl status cloud-config.service
 systemctl status cloud-final.service
 ```
- 3. **Run the following command in CentOS or Redhat.**
+
+-  **Run the following commands in CentOS or Redhat.**
  Replace the content of `/lib/systemd/system/cloud-init-local.service` with the following:
 ```shellsession
 [Unit]
@@ -199,22 +204,22 @@ Run the following command to install cloud-init:
 apt-get/yum install cloud-init
 ```
 <dx-alert infotype="explain" title="">
-When you run `apt-get` or `yum` to install cloud-init, the version of cloud-init defaults to the version in the software source configured for the operating system. Note that in this case, the instances launched with the image may not be initialized as expected. Therefore, we recommend that you install the cloud-init by [manually downloading the cloud-init source package](#ManualDown).
+By default, the cloud-init version installed by running `apt-get` or `yum` is the default cloud-init version in the software source configured for the operating system. Some configuration items of instances created by using the image whose cloud-init is installed this way may not be initialized as expected. Therefore, we recommend that you install the service by [manually downloading the cloud-init source package](#ManualDown).
 </dx-alert>
 
 
 
 ### Modifying the cloud-init configuration file
 1. Download cloud.cfg for your operating system.
- - [Ubuntu](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg)
- - [CentOS](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg)
+   - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
+   - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) to download cloud.cfg for CentOS.
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 :::
 </dx-tabs>
 
 
 
-## Related Operations
+## More
 
 
 <dx-alert infotype="notice" title="">
@@ -222,20 +227,20 @@ Do not restart the server after performing the following operations. Otherwise, 
 </dx-alert>
 
 
-1. Run the following commands to check whether the cloud-init configuration is successful.
+1. Run the following command to check whether the cloud-init configuration is successful.
 ```shellsession
 cloud-init init --local
 ```
 If the following information is returned, it indicates that the cloud-init has been successfully configured.
 ```shellsession
-Cloud-init v. 20.1 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000. Up 38.70 seconds.
+Cloud-init v. 17.1 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000. Up 38.70 seconds.
 ```
-2. Execute the following command to delete the cache records of cloud-init.
+2. Run the following command to delete the cache records of cloud-init.
 ```shellsession
 rm -rf /var/lib/cloud
 ```
-3. Run the following command in Ubuntu or Debian:
-``` shellsession
+3. Run the following command in Ubuntu or Debian.
+```shellsession
 rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 ```
 4. For Ubuntu or Debian, replace the content of `/etc/network/interfaces` with the following:
@@ -245,26 +250,31 @@ rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 source /etc/network/interfaces.d/*
 ```
 
-## See Also
-
-### Portable cloud-init package[](id:greeninitCloudInit)
+## Appendix
+[](id:greeninitCloudInit)
+### Manually downloading the portable cloud-init package
 If the cloud-init service fails to be installed by [manually downloading the cloud-init source package](#ManualDown), complete the following steps to install cloud-init:
-1. [Click here](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz) to obtain the portable cloud-init package.
-2. Run the following command to decompress the portable cloud-init package:
+1. Run the following command to switch to `/usr/local`.
+```shellsession
+cd /usr/local
+```
+2. [Click here](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz) to obtain the portable cloud-init package, and upload the package to be under `/usr/lcoal`.
+>!Note: The installation directory must be the system disk directory. It is recommended to install it under `/usr/local`.
+3. Run the following command to decompress the portable cloud-init package.
 ```shellsession
 tar xvf greeninit-x64-beta.tgz 
 ```
-3. Run the following command to enter the decompressed portable cloud-init package directory. **greeninit** is used here.
+4. Run the following command to enter the decompressed portable cloud-init package directory; that is, the greeninit directory.
 ```shellsession
 cd greeninit
 ```
-4. Run the following command to install cloud-init:
+5. Run the following command to install cloud-init.
 ```shellsession
 sh install.sh 
 ```
-
-### Python-pip installation failure[](id:updateSoftware)
-During installation, if an error such as "failed to install" or "installation package not found" occurs, troubleshoot it based on the operating system as follows:
+[](id:updateSoftware)
+### Resolving Python-pip installation failure
+During installation, if an error such as “failed to install” or “installation package not found” occurs, troubleshoot it based on the operating system as follows:
 <dx-tabs>
 ::: CentOS 6/7:
   1. Run the following command to configure the EPEL storage repository.
@@ -277,15 +287,15 @@ yum install python3-pip -y
 ```
 :::
 ::: Ubuntu:
-  1. Run the following command to clear the cache.
+  i. Run the following command to clear the cache.
 ```shellsession
 apt-get clean all
 ```
-  2. Run the following command to update the software package list.
+  ii. Run the following command to update the software package list.
 ```shellsession
 apt-get update -y
 ```
-  3. Run the following command to install Python-pip.
+  iii. Run the following command to install Python-pip.
 ```shellsession
 apt-get -y install python3-pip
 ```

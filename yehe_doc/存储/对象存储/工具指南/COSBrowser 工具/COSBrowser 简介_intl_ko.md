@@ -1,7 +1,7 @@
 COSBrowser는 Tencent Cloud에서 출시한 시각적 인터페이스 툴로 COS 리소스를 보다 쉽고 간단하게 보고, 전송하고, 관리하고, 상호 작용할 수 있습니다. 데이터를 마이그레이션하거나 일괄 업로드하려면 [마이그레이션 서비스 플랫폼(Migration Service Platform, MSP)](https://www.tencentcloud.com/products/msp)을 사용하십시오. 현재 COSBrowser는 데스크톱 및 모바일 장치에서 사용할 수 있습니다. 자세한 내용은 다음을 참고하십시오.
 
 - [데스크톱 버전 사용 설명서](https://intl.cloud.tencent.com/document/product/436/32565)
-- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/41616)
+- [모바일 버전 기능](https://intl.cloud.tencent.com/document/product/436/41616)
 
 ## 다운로드 주소
 
@@ -26,14 +26,19 @@ COSBrowser는 Tencent Cloud에서 출시한 시각적 인터페이스 툴로 COS
    <tr>
       <td>Linux</td>
       <td>그래픽 인터페이스가 있고 <a href="https://appimage.org">AppImage</a> 포맷을 지원해야 함<br>
-          주의사항: CentOS에서 클라이언트 실행 시 단말에서 <code>./cosbrowser.AppImage --no-sandbox</code>를 실행해야 함</td>
+          주의사항: CentOS에서 클라이언트 실행 시 단말에서 <code>./cosbrowser.AppImage --no-sandbox</code></td>를 실행해야 함
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
-      <td>모바일</td>
+      <td rowspan=2>모바일 버전</td>
       <td>Android</td>
       <td>Android 4.4 이상</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.apk">Android</a></td>
+   </tr>
+   <tr>
+      <td>iOS</td>
+      <td>iOS 11 이상</td>
+      <td><a href="https://apps.apple.com/cn/app/id1469323992">iOS</a></td>
    </tr>
    <tr>
       <td>웹 페이지 버전</td>
@@ -69,8 +74,8 @@ COSBrowser 데스크톱 버전은 다음과 같은 기능을 지원합니다.
 | [권한 관리](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 버킷, 객체 관련 권한 수정 지원                               |
 | [버전 관리 설정](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 버킷 버전 관리 활성화 및 일시 중지 지원                                 |
 | [액세스 경로 추가](https://intl.cloud.tencent.com/document/product/436/32565#addaccess) | 액세스 경로 추가 지원                                             |
-| [파일/폴더 업로드](https://intl.cloud.tencent.com/document/product/436/32565#upload) | 파일/폴더를 버킷에 단일 업로드, 일괄 업로드, 증분 업로드 지원      |
-| [파일/폴더 다운로드](https://intl.cloud.tencent.com/document/product/436/32565#download) | 파일/폴더를 로컬에 단일 다운로드, 일괄 다운로드, 증분 다운로드 지원            |
+| [파일/폴더 업로드](https://intl.cloud.tencent.com/document/product/436/32565#upload) | 파일/폴더를 버킷에 단일 업로드, 일괄 업로드, 증분 업로드 지원 <br><br>참고: <br>1. 파일 일괄 업로드는 10만개를 초과할 수 없음 <br>2. 체크포인트 재시작 미지원 <br>3. 데이터를 마이그레이션하거나 일괄로 업로드하려면 [마이그레이션 서비스 플랫폼 MSP](https://www.tencentcloud.com/products/msp)를 사용하십시오.     |
+| [파일/폴더 다운로드](https://intl.cloud.tencent.com/document/product/436/32565#download) | 파일/폴더를 로컬에 단일 다운로드, 일괄 다운로드, 증분 다운로드 지원 <br><br>참고: <br>1. 파일 일괄 다운로드는 10만개를 초과할 수 없음<br>2. 체크포인트 재시작 미지원           |
 | [파일/폴더 삭제](https://intl.cloud.tencent.com/document/product/436/32565#delete) | 버킷에 있는 파일 또는 폴더 단일 삭제, 일괄 삭제 지원                 |
 | [파일 동기화](https://intl.cloud.tencent.com/document/product/436/32565#synchronization) | 로컬 파일을 버킷에 실시간 동기화 지원                             |
 | [파일 복사 및 붙여넣기](https://intl.cloud.tencent.com/document/product/436/32565#copy) | 한 디렉터리에 있는 파일 또는 폴더를 다른 디렉터리로 단일 복사, 일괄 복사 지원   |

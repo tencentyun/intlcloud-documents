@@ -69,17 +69,14 @@ EIP는 클라우드 리소스의 라이프사이클에서 분리되어 독립적
 | 일일 구매(회) | 지역 EIP 할당량 \* 2회 |
 | EIP 바인딩 해제로 인해 할당된 공용 IP/일 | 10회 |
 
-> 기본적으로 EIP 할당량은 조정할 수 없습니다. [NAT Gateway](https://intl.cloud.tencent.com/product/nat), [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214)에서 IP 컨버전스로 일부 할당량을 확보할 수 있습니다.
-> - 할당량을 조정해야 하는 경우 티켓을 제출하거나 영업 담당자에게 문의하십시오.
-> - 요구되는 할당이 비교적 높을 경우 초과한 할당은 과금될 수 있습니다.
-> - 만약 조정 후 빈번하게 IP를 교체하거나 적용되는 법률 법규를 위반할 경우, Tencent Cloud는 할당을 철회할 권리가 있습니다.
->
+>? 기본적으로 EIP 할당량은 조정할 수 없습니다. [NAT Gateway](https://intl.cloud.tencent.com/product/nat), [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214)에서 IP 컨버전스로 일부 할당량을 확보할 수 있습니다.
+> - 조정이 필요한 특별한 상황이 있는 경우, 계정 번호는 해당 클라우드 서비스 리소스를 가지고 있으며 합리적으로 사용해야 합니다.
+
 
 
 ### CVM에 바인딩된 공용 IP에 대한 제한
 
-2019년 9월 18일(포함)부터 CPU 구성의 차이에 따라, 단일 CVM이 지원하는 바인딩 공용 네트워크 IP 수량 최댓값이 변경되었으며 구체적인 수치는 아래 표와 같습니다.
-> 2019년 9월 18일 00:00 이전에 구매한 CVM 인스턴스의 경우 각 인스턴스에 바인딩할 수 있는 공용 IP 수는 [내부 IP 수량](https://intl.cloud.tencent.com/document/product/576/18527)과 동일합니다.
+>? 2019년 9월 18일 00:00 이전에 구매한 CVM 인스턴스의 경우 각 인스턴스에 바인딩할 수 있는 공용 IP 수는 [내부 IP 수량](https://intl.cloud.tencent.com/document/product/576/18527)과 동일합니다.
 >
 
 | CPU 코어 | 공용 IP + EIP |

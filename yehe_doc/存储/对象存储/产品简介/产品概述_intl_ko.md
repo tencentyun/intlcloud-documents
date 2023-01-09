@@ -1,8 +1,8 @@
 
 
-Cloud Object Storage(COS)는 Tencent Cloud가 제공하는 대량 파일 저장용 분산형 스토리지 서비스로, 사용자는 네트워크를 통해 언제든지 데이터를 저장 및 조회할 수 있습니다. Tencent Cloud COS는 높은 확장성, 저렴한 가격, 높은 신뢰성 및 보안성을 갖춘 데이터 스토리지 서비스를 제공합니다.
+COS(Cloud Object Storage)는 저렴한 비용과 높은 확장성, 안정성 및 보안을 특징으로 하는 강력한 Tencent Cloud 분산 스토리지 서비스입니다. 대량의 파일을 저장하고 언제든지 클라우드에서 볼 수 있습니다.
 
-콘솔, API, SDK, 툴 등 다양한 방법으로 간편하고 빠르게 액세스할 수 있으며, 대량의 데이터를 저장하고 관리할 수 있습니다. COS를 사용하면 모든 포맷의 파일에 대한 업로드, 다운로드, 관리가 가능합니다. Tencent Cloud는 직관적인 Web 관리 인터페이스를 제공하며, 중국 전역에 분포되어 있는 CDN 노드에서 파일 다운로드를 가속할 수 있습니다.
+대규모 데이터를 저장하고 관리하기 위해 콘솔, API, SDK 또는 툴을 통해 쉽고 빠르게 COS에 액세스할 수 있습니다. COS의 사용자 친화적인 Web 관리 인터페이스를 활용하여 다양한 형식의 파일을 업로드, 다운로드 및 관리할 수 있습니다. 전 세계에 배포된 CDN 노드로 파일 다운로드 속도를 높입니다.
 
 
 
@@ -18,15 +18,15 @@ COS는 대기업 및 개인 사용자에게 다양한 시나리오가 포함된 
 - [객체(Object)](https://intl.cloud.tencent.com/document/product/436/13324): COS의 기본 단위로 이미지, 문서, 멀티미디어 파일 등 다양한 포맷의 데이터를 의미합니다.
 - [리전(Region)](https://intl.cloud.tencent.com/document/product/436/6224): Tencent Cloud의 호스팅 데이터 센터가 분포된 지역으로 COS 데이터를 리전의 버킷에 저장합니다.
 - [액세스 도메인(Endpoint)](https://intl.cloud.tencent.com/document/product/436/6224): 객체가 버킷에 저장되면 사용자가 액세스 도메인을 통해 객체에 액세스하여 다운로드할 수 있습니다.
-- [스토리지 유형(StorageClass)](https://intl.cloud.tencent.com/document/product/436/30925): COS는 INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE 및 DEEP ARCHIVE와 같은 객체 스토리지 클래스를 제공합니다. COS에서 객체가 얼마나 활성 상태인지 나타내며 액세스 빈도, 내구성, 가용성, 대기 시간 등이 서로 다릅니다. 사용 사례에 따라 데이터를 업로드할 스토리지 클래스를 선택할 수 있습니다. COS 스토리지 클래스 간의 비교는 [스토리지 클래스 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오.
+- [스토리지 유형(StorageClass)](https://intl.cloud.tencent.com/document/product/436/30925): COS는 STANDARD(다중 AZ), 활성 객체가 COS에 있는 방법을 나타내는 스토리지 레벨입니다. COS는 MAZ_STANDARD, MAZ_STANDARD_IA, MAZ_INTELLIGENT TIERING, STANDARD, STANDARD_IA, INTELLIGENT TIERING, ARCHIVE 및 DEEP ARCHIVE를 비롯한 여러 스토리지 클래스를 제공합니다. 서로 다른 스토리지 클래스는 서로 다른 사용 사례에 적합하며 객체 액세스 빈도 및 액세스 대기 시간과 같은 서로 다른 속성을 가집니다.
 
 
 
-## COS는 어떻게 사용하나요?
+## COS 시작하기
 
-### 신규 사용자 가이드
+### 시작하기
 
-COS는 COS를 더 잘 이해하고 사용하는 데 도움이 되는 관련 툴 및 영상 가이드와 함께 다양한 학습 경로를 제공합니다.
+COS는 서비스를 더 잘 이해하고 사용하는 데 도움이 되는 다양한 툴과 비디오 튜토리얼을 제공합니다. 자세한 내용은 [Cloud Object Storage](https://www.tencentcloud.com/products/cos)를 참고하십시오.
 
 
 ### 사용 방법
@@ -50,12 +50,12 @@ COS는 사용자에게 다양한 사용 방식을 제공합니다. 자세한 사
 <td align="left" width="70%">해당 툴은 데이터 업로드, 다운로드, 액세스 링크 생성 등의 작업을 보다 쉽게 하기 위한 시각화 인터페이스를 지원합니다.</td>
 </tr>
 <tr>
-<td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/10976">COSCMD 툴</a></td>
+<td align="left" width="30%"><a href="https://cloud.tencent.com/doc/product/436/10976">COSCMD 툴</a></td>
 <td align="left" width="70%">해당 툴은 객체 대량 업로드, 다운로드, 삭제 등의 작업을 위해 간단한 명령 라인을 사용한 명령을 지원합니다.</td>
 </tr>
 <tr>
 <td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/7751">API 방식</a></td>
-<td align="left" width="70%">COS는 미연결 상태의 경량급 인터페이스인 XML API를 사용합니다. 이 인터페이스를 호출하면 HTTP/HTTPS를 통한 요청 발송 및 응답 수신으로 Tencent Cloud COS 백그라운드와의 인터랙티브 작업이 가능합니다.</td>
+<td align="left" width="70%">COS는 경량, 비연결형 및 상태 비저장 XML API를 채택합니다. XML API를 호출하면 HTTP/HTTPS를 통해 직접 COS에 요청을 보내고 COS로부터 응답을 받을 수 있습니다.</td>
 </tr>
 <tr>
 <td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK 방식</a></td>

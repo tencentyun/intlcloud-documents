@@ -21,16 +21,16 @@
     </tr>
     	 <tr>
         <td rowspan="5">스토리지 유형</td>
-    			<td>STANDARD 제한</td>
+    			<td>MAZ(다중AZ)_STANDARD/STANDARD 제한</td>
     			<td>과금 제한: <br>저장 기간이나 객체 크기에는 제한이 없습니다. <br>STANDARD 청구에 대한 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>을 참고하십시오.</td>
     </tr>
     	 <tr>
-        <td>STANDARD_IA 제한</td>
+        <td>MAZ_STANDARD_IA/STANDARD_IA 제한</td>
     			<td>과금 제한: <ul  style="margin: 0;"><li>30일 미만 동안 저장된 객체는 30일 기준으로 청구됩니다.</li>
 					<li>64KB보다 작은 객체는 64KB로 청구됩니다. 객체 크기가 64KB 이상인 경우 실제 크기를 기준으로 요금이 청구됩니다. <br>STANDARD_IA 청구에 대한 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>을 참고하십시오.</li></ul></td>
     </tr>
     	 <tr>
-        <td>INTELLIGENT TIERING 제한</td>
+        <td>MAZ_INTELLIGENT TIERING/INTELLIGENT TIERING 제한</td>
     			<td>과금 제한: <br>64KB보다 작은 객체는 고빈도 액세스 티어에 저장됩니다. 객체는 실제 크기에 따라 요금이 청구됩니다. <br>INTELLIGENT TIERING 청구에 대한 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>을 참고하십시오.</td>
     </tr>
     	 <tr>
@@ -75,6 +75,7 @@
 						<ul  style="margin: 0;"><li>간편 업로드: 단일 객체는 최대 5GB입니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14113">간편 업로드</a>를 참고하십시오.</li>
 						<li> 멀티파트 업로드: 단일 객체는 최대 48.82TB까지 가능하며, 파트 크기는 1MB - 5GB이어야 하며, 마지막 파트는 1MB보다 작을 수 있습니다. 1 - 10000개의 파트가 있을 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14112">멀티파트 업로드</a>를 참고하십시오.</li></ul>
 					</li>
+					<li>현재 MAZ 구성이 활성화된 버킷의 경우 객체를 MAZ 스토리지 클래스(MAZ_STANDARD 또는 MAZ_STANDARD_IA)에 업로드할 수 있습니다. 버킷에 대해 INTELLIGENT TIERING 구성도 활성화된 경우 객체를 MAZ_INTELLIGENT TIERING 스토리지 클래스에 업로드할 수도 있습니다.</li>
 					<li>버킷에 대해 INTELLIGENT TIERING을 활성화한 경우에만 INTELLIGENT TIERING 스토리지 클래스에 객체를 업로드할 수 있습니다. 티어 간에 객체를 전환하는 방법은 INTELLIGENT TIERING 구성에 따라 다릅니다.</li></ul></td>
     		</tr>
     		<tr>
@@ -85,6 +86,7 @@
 						<ul  style="margin: 0;"><li>단순 복사: 복사할 수 있는 단일 객체 크기는 최대 5GB입니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14117">간편 복사</a>를 참고하십시오.</li>
 						<li>객체가 5GB보다 큰 경우 멀티파트 복사를 사용해야 합니다. 복사할 단일 객체는 최대 48.82TB입니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14118">멀티파트 복사</a>를 참고하십시오.</li></ul>
 					</li>
+					<li>MAZ 버킷의 객체는 OAZ 버킷에 복제할 수 없습니다.</li>
 					<li>현재 STANDARD, STANDARD_IA 또는 INTELLIGENT TIERING 객체를 INTELLIGENT TIERING 스토리지 클래스에 복사할 수 없습니다.</li></ul></td>
     		</tr>
     		<tr>
@@ -103,11 +105,11 @@
     		<tr>
     			<td rowspan="3">라이프사이클</td>
     			<td>규칙 수량</td>
-    			<td >버킷당 최대 1000개까지 설정할 수 있습니다.</td>
+    			<td >각 버킷에는 최대 1000개의 라이프 사이클 규칙이 있을 수 있습니다.</td>
     		</tr>
     		<tr>
     			<td >스토리지 유형 전환</td>
-    			<td >STANDARD - STANDARD_IA: 최소 1일.<br>STANDARD/STANDARD_IA - ARCHIVE/DEEP ARCHIVE: 최소 1일.<br>참고: <br>1. 64KB보다 작은 객체는 전환되지 않습니다.</td>
+    			<td >STANDARD에서 STANDARD_IA로 전환: 최소 1일. <br>STANDARD/STANDARD_IA에서 ARCHIVE/DEEP ARCHIVE로 전환: 최소 1일. <br>참고: <br>1. MAZ_STANDARD 또는 MAZ_STANDARD_IA 스토리지 유형의 객체는 STANDARD, STANDARD_IA 또는 ARCHIVE 스토리지 유형으로 전환할 수 없습니다. <br>2. 64KB보다 작은 객체는 전환할 수 없습니다.</td>
     		</tr>
     		 <tr>
     			<td >만료 삭제</td>

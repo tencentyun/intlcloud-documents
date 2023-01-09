@@ -1,3 +1,4 @@
+
 ## 操作场景
 
 Cloud-init 主要提供实例首次初始化时自定义配置的能力。如果导入的镜像没有安装 cloud-init 服务，基于该镜像启动的实例将无法被正常初始化，导致该镜像导入失败。本文档指导您安装 cloud-init 服务。
@@ -16,8 +17,6 @@ Cloud-init 主要提供实例首次初始化时自定义配置的能力。如果
 ::: 手工下载\scloud-init\s源码包方式[](id:ManualDown)
 
 ### 下载 cloud-init 源码包
-
-
 
 <dx-alert infotype="explain" title="">
 - 在正常安装的情况下，cloud-init-17.1 版本与腾讯云的兼容性最佳，可以保证使用该镜像创建的云服务器的所有配置项都可以正常初始化。建议选择 **cloud-init-17.1.tar.gz** 安装版本。您也可以 [点此获取](https://launchpad.net/cloud-init/+download) 其他版本的 cloud-init 源码包。本文以 cloud-init-17.1 版本为例。
@@ -43,56 +42,60 @@ tar -zxvf cloud-init-17.1.tar.gz
 cd cloud-init-17.1
 ```
 3. 根据操作系统版本，安装 Python-pip。
-  - CentOS 6/7系列，执行以下命令：
-```shellsession
-yum install python3-pip -y
-```
-  - Ubuntu 系列，执行以下命令：
-```shellsession
-apt-get -y install python3-pip
-```
+    - CentOS 6/7系列，执行以下命令：
+    ```shellsession
+    yum install python3-pip -y
+    ```
+    - Ubuntu 系列，执行以下命令：
+    ```shellsession
+    apt-get -y install python3-pip
+    ```
 若在安装时，出现无法安装或找不到安装包的错误，可参考 [解决无法安装 Python-pip 问题](#updateSoftware) 进行处理。
 4. 执行以下命令，升级 pip。
 ```
-python3 -m pip install --upgrade pip 
+python3 -m pip install --upgrade pip
 ```
-4. 执行以下命令，安装依赖包。
+5. 执行以下命令，安装依赖包。
 <dx-alert infotype="notice" title="">
 Cloud-init 依赖组件 requests 2.20.0版本后，已弃用 Python2.6。如果镜像环境的 Python 解释器为 Python2.6及以下，在安装 cloud-init 依赖包之前，请执行 `pip install 'requests&lt;2.20.0'` 命令，安装 requests 2.20.0 版本以下的版本。
 </dx-alert>
 ```shellsession
 pip3 install -r requirements.txt
 ```
-5. 根据操作系统版本，安装 cloud-utils 组件。
-  - CentOS 6系列，执行以下命令：
+
+6.  根据操作系统版本，安装 cloud-utils 组件。
+    - CentOS 6系列，执行以下命令：
+    ```shellsession
+    yum install cloud-utils-growpart dracut-modules-growroot -y
+    dracut -f
+    ```
+    - CentOS 7系列，执行以下命令：
+    ```shellsession
+    yum install cloud-utils-growpart -y
+    ```
+    - Ubuntu 系列，执行以下命令：
+    ```shellsession
+    apt-get install cloud-guest-utils -y
+    ```
+
+7.  执行以下命令，安装 cloud-init。
 ```shellsession
-yum install cloud-utils-growpart dracut-modules-growroot -y
-dracut -f
-```
-  - CentOS 7系列，执行以下命令：
-```shellsession
-yum install cloud-utils-growpart -y
-```
-  - Ubuntu 系列，执行以下命令：
-```shellsession
-apt-get install cloud-guest-utils -y
-```
-6. 执行以下命令，安装 cloud-init。
-```shellsession
-python3 setup.py build 
+python3 setup.py build
 ```
 ```shellsession
 python3 setup.py install --init-system systemd
-``` <dx-alert infotype="notice" title="">
+```
+<dx-alert infotype="notice" title="">
 --init-system 的可选参数有：(systemd, sysvinit,  sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart)  [default: None]。请根据当前操作系统使用的自启动服务管理方式，进行选择。若选择错误，cloud-init 服务会无法开机自启动。本文以 systemd 自启动服务管理为例。
 </dx-alert>
 
+[](id:cloud-init)
 
 ### 修改 cloud-init 配置文件
 
 1. 根据不同操作系统，下载 cloud.cfg。
-  - [点此下载](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) Ubuntu 操作系统的 cloud.cfg。
-  - [点此下载](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) CentOS 操作系统的 cloud.cfg。
+    - [点此下载](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) Ubuntu 操作系统的 cloud.cfg。
+    - [点此下载](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) CentOS 操作系统的 cloud.cfg。
 2. 将 `/etc/cloud/cloud.cfg` 的内容替换为已下载的 cloud.cfg 文件内容。
 
 
@@ -102,17 +105,17 @@ python3 setup.py install --init-system systemd
 useradd syslog
 ```
 
-
 ### 设置 cloud-init 服务开机自启动
 - **若操作系统是 systemd 自启动管理服务，则执行以下命令进行设置。**
 <dx-alert infotype="explain" title="">
 您可执行 `strings /sbin/init | grep "/lib/system"` 命令，若有返回信息，则操作系统是 systemd 自启动管理服务。
 </dx-alert>
- 1. **针对 Ubuntu 或 Debian 操作系统，需执行以下命令。**
+- **针对 Ubuntu 或 Debian 操作系统，需执行以下命令。**
 ```shellsession
  ln -s /usr/local/bin/cloud-init /usr/bin/cloud-init 
 ```
- 2. **所有操作系统都需执行以下命令。**
+
+ - **所有操作系统都需执行以下命令。**
 ```shellsession
 systemctl enable cloud-init-local.service 
 systemctl start cloud-init-local.service
@@ -127,7 +130,8 @@ systemctl status cloud-init.service
 systemctl status cloud-config.service
 systemctl status cloud-final.service
 ```
- 3. **针对 CentOS 和 Redhat 操作系统，需执行以下命令。**
+
+ - **针对 CentOS 和 Redhat 操作系统，需执行以下命令。**
  将 /lib/systemd/system/cloud-init-local.service 文件替换为如下内容：
 ```shellsession
 [Unit]
@@ -206,8 +210,8 @@ apt-get/yum install cloud-init
 
 ### 修改 cloud-init 配置文件
 1. 根据不同操作系统，下载 cloud.cfg。
- - [点此下载](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) Ubuntu 操作系统的 cloud.cfg。
- - [点此下载](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) CentOS 操作系统的 cloud.cfg。
+   - [点此下载](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) Ubuntu 操作系统的 cloud.cfg。
+   - [点此下载](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) CentOS 操作系统的 cloud.cfg。
 2. 将 `/etc/cloud/cloud.cfg` 的内容替换为已下载的 cloud.cfg 文件内容。
 :::
 </dx-tabs>
@@ -228,7 +232,7 @@ cloud-init init --local
 ```
 返回类似如下信息，则说明已成功配置 cloud-init。
 ```shellsession
-Cloud-init v. 20.1 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000. Up 38.70 seconds.
+Cloud-init v. 17.1 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000. Up 38.70 seconds.
 ```
 2. 执行以下命令，删除 cloudinit 的缓存记录。
 ```shellsession
@@ -246,24 +250,29 @@ source /etc/network/interfaces.d/*
 ```
 
 ## 附录
-
-### 手工下载绿色版 cloud-init 包方式[](id:greeninitCloudInit)
+[](id:greeninitCloudInit)
+### 手工下载绿色版 cloud-init 包方式
 若通过 [手工下载 cloud-init 源码包方式](#ManualDown) 安装不成功，可通过以下操作进行安装：
-1. [点此获取](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz) 绿色版 cloud-init 包。
-2. 执行以下命令，解压绿色版 cloud-init 包。
+1. 执行如下命令切换到 `/usr/local` 目录。
+```shellsession
+cd /usr/local
+```
+2. [点此获取](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz) 绿色版 cloud-init 包，下载的安装包上传到 `/usr/lcoal` 目录下。
+>!注意：安装目录必现是系统盘目录，不能跨文件系统，这里推荐安装到 `/usr/local` 目录
+3. 执行以下命令，解压绿色版 cloud-init 包。
 ```shellsession
 tar xvf greeninit-x64-beta.tgz 
 ```
-3. 执行以下命令，进入已解压的绿色版 cloud-init 包目录（即进入 greeninit 目录）。
+4. 执行以下命令，进入已解压的绿色版 cloud-init 包目录（即进入 greeninit 目录）。
 ```shellsession
 cd greeninit
 ```
-4. 执行以下命令，安装 cloud-init。
+5. 执行以下命令，安装 cloud-init。
 ```shellsession
 sh install.sh 
 ```
-
-### 解决无法安装 Python-pip 问题[](id:updateSoftware)
+[](id:updateSoftware)
+### 解决无法安装 Python-pip 问题
 若在安装 Python-pip 出现无此安装包或无法安装的错误，可对应实际使用的操作系统，参考以下步骤进行解决：
 <dx-tabs>
 ::: CentOS\s6/7系列
@@ -281,11 +290,11 @@ yum install python3-pip -y
 ```shellsession
 apt-get clean all
 ```
-  2. 执行以下命令，更新软件包列表。
+  1. 执行以下命令，更新软件包列表。
 ```shellsession
 apt-get update -y
 ```
-  3. 执行以下命令，安装 Python-pip。
+  2. 执行以下命令，安装 Python-pip。
 ```shellsession
 apt-get -y install python3-pip
 ```

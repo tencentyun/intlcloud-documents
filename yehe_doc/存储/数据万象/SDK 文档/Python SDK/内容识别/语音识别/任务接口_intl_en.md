@@ -69,7 +69,7 @@ def ci_create_asr_jobs():
 | OutputBucket   | Result storage bucket                                             | String |
 | OutputObject      | Output file path                   | String |
 | TemplateId        | Template ID                        | String    |
-| SpeechRecognition | Speech recognition parameter. For more information, see `SpeechRecognition` in [Submitting Speech Recognition Job](https://cloud.tencent.com/document/product/460/78951). | dict |
+| SpeechRecognition | Speech recognition parameter. For more information, see `SpeechRecognition` in [Submitting Speech Recognition Job](https://www.tencentcloud.com/document/product/1045/49789). | dict |
 | CallBack          | Job callback address, which has a higher priority than that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | string    |
 | CallBackFormat    | Job callback format, which can be `JSON` or `XML` (default). It has a higher priority than that of the queue. | string    |
 | CallBackType      | Job callback type, which can be `Url` (default) or `TDMQ`. It has a higher priority than that of the queue.                    | string    |

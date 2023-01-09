@@ -135,7 +135,7 @@
 - [deleteTopicFromCommunity](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity)では、トピックを削除できるようになりました。
 [updateTopicProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile)では、トピックデータを設定できるようになりました。
 - [getTopicList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList)では、トピックリストを取得できるようになりました。
-- [Topic](https://web.sdk.qcloud.com/im/doc/en/Topic.html)：コミュニティのトピック対象であり、名称、お知らせ、概要、未読数などの情報を含むトピックのプロパティを説明するためのものです。
+- [Topic](https://web.sdk.qcloud.com/im/doc/zh-cn/Topic.html)：コミュニティのトピック対象であり、名称、お知らせ、概要、未読数などの情報を含むトピックのプロパティを説明するためのものです。
 - イベント[TIM.EVENT.TOPIC_CREATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED)は、トピックの作成時にトリガーされます。
 - イベント[TIM.EVENT.TOPIC_DELETED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED)は、トピックの削除時にトリガーされます。
 - イベント[TIM.EVENT.TOPIC_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED)は、トピックデータの更新時にトリガーされます。

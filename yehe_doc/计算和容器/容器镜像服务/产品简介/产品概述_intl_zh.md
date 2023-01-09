@@ -88,7 +88,7 @@
 <td>Helm 仓库配额</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>（可申请提高配额）</td>
 </tr>
 <tr>
-<td rowspan="6">数据安全</td>
+<td rowspan="7">数据安全</td>
 <td>数据加密存储</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
@@ -96,6 +96,9 @@
 <td>镜像漏洞扫描</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
+<td>镜像部署阻断</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+<tr>    
 <td>公网访问控制</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>

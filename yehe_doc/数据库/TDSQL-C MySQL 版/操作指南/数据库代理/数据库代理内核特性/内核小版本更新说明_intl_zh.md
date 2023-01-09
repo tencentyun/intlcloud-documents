@@ -1,7 +1,7 @@
 本文为您介绍 TDSQL-C MySQL 版数据库代理的版本更新说明。
 
 ## 查看数据库代理版本
-您可通过实例的 [数据库代理](https://www.tencentcloud.com/document/product/1098/49999) 页的**概览** > **代理版本**处查看。
+您可通过实例的 [数据库代理](https://www.tencentcloud.com/document/product/1098/50004) 页的**概览** > **代理版本**处查看。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/QRQp279_6.png)
 
 ## 版本说明

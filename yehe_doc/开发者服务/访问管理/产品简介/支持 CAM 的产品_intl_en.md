@@ -52,6 +52,7 @@ Definitions:
 | [Cloud HDFS (CHDFS)](https://intl.cloud.tencent.com/document/product/1106)   | chdfs | Resource level   | &#10003; | &#10003;              | -        | [Authorizing Access with CAM](https://intl.cloud.tencent.com/document/product/1106/41966) |
 | [Cloud Log Service (CLS)](https://intl.cloud.tencent.com/document/product/614)   | cls | Resource level   | &#10003; | &#10003;                   | &#10003; | [Permission Management](https://intl.cloud.tencent.com/document/product/614/32853) |
 
+
 > ?<sup>1</sup> In COS, `GetService` and `PutBucket` do not support authorization by tag for the time being; therefore, they need to be authorized with a separate custom policy.
 
 
@@ -179,7 +180,6 @@ Definitions:
 | Product | Abbreviation in CAM | Authorization Granularity | Console | Authorization by Tag | Service Role |Reference Document |
 | ------------------------------------------------------------ | ----------- | -------- | ------ | ---------------- | -------- | ------------------------------------------------------------ |
 | [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647) | trtc        | Resource level   | ✓      | ✓                | -        | [Overview](https://intl.cloud.tencent.com/document/product/647/38319) |
-| [Cloud Streaming Services (CSS)](https://intl.cloud.tencent.com/document/product/267)     | consolelive | Resource level   | ✓      | ✓                | ✓        | [CAM-Based Access Control](https://intl.cloud.tencent.com/document/product/267/32468) |
 | [Video on Demand (VOD)](https://intl.cloud.tencent.com/document/product/266)     | consolevod  | Resource level   | ✓      | ✓                | ✓        | [Overview](https://intl.cloud.tencent.com/document/product/266/33970) |
 | [Media Processing Service (MPS)](https://intl.cloud.tencent.com/document/product/1041)   | mps         | Service level   | ✓      | -                | ✓        | -                                                            |
 

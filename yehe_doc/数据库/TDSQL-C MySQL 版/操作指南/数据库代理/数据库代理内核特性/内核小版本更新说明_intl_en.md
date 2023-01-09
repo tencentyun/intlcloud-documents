@@ -1,7 +1,7 @@
 This document describes the release notes of the TDSQL-C for MySQL database proxy.
 
 ## Viewing the database proxy version
-You can view the version in **Overview** > **Proxy Version** on the [Database Proxy](https://www.tencentcloud.com/document/product/1098/49999) tab.
+You can view the version in **Overview** > **Proxy Version** on the [Database Proxy](https://www.tencentcloud.com/document/product/1098/50004) tab.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/QRQp279_6.png)
 
 ## Version description

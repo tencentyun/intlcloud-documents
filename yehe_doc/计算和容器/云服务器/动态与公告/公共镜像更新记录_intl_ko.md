@@ -1,6 +1,6 @@
 <dx-alert infotype="notice" title="">
 - 리전별로 이미지 업데이트 시간이 다를 수 있습니다. 본 문서가 제공하는 이미지 업데이트 시간은 전체 리전의 이미지 업데이트 시간입니다.
-- Tencent Cloud가 제공하는 공용 이미지 유지보수 주기는 공식 유지보수 주기와 같습니다. 공식 유지보수 일정 관련 정보는 [부록: 공식 유지보수 일정](#OfficialMaintenanceTime)을 참고하십시오.
+- Tencent Cloud가 제공하는 공용 이미지 유지보수 주기는 공식 유지보수 주기와 같습니다. 
 </dx-alert>
 
 
@@ -201,13 +201,22 @@ OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](h
         <th style="width: 14%;">마지막 업데이트 시간</th>
         <th style="width: 26%;">마지막 업데이트 내용</th>
     </tr>
+		<tr>
+			<td>Debian 11.4</td>
+			<td>이미지 ID:
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-btz2mndd">	
+		img-btz2mndd</a>
+			<br />현재 커널 버전: 5.10.0-16-amd64</td>
+			<td>2022-09-03</td>
+			<td>최신 시스템 패치 업데이트.</td>
+  </tr>
 	  <tr>
 	<td>Debian 11.1</td>
 	<td>이미지 ID:
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-4cmp1f33">	
 img-4cmp1f33</a>
-	<br />현재 커널 버전: 5.10.0-12-amd64</td>
-	<td>2022-04-01</td>
+	<br />현재 커널 버전: 5.10.0-15-amd64</td>
+	<td>2022-07-25</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
   <tr>
@@ -258,15 +267,33 @@ img-4ogcw28j</a>
         <th style="width: 35%;">이미지 정보</th>
         <th style="width: 14%;">마지막 업데이트 시간</th>
         <th style="width: 26%;">마지막 업데이트 내용</th>
-    </tr>
+</tr>
+		<tr>
+			<td>FreeBSD 13.1</td>
+			<td>이미지 ID:
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-ng3lehjp">
+			img-ng3lehjp</a>
+			<br />현재 커널 버전: 13.1-RELEASE</td>
+			<td>2022-09-08</td>
+			<td>이미지 런칭.</td>
+  </tr>	
 	<tr>
-	<td>FreeBSD 12.3</td>
-	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-j9m732cx">	
-img-j9m732cx</a>
-	<br />현재 커널 버전: 12.3-RELEAS</td>
-	<td>2022-01-20</td>
-	<td>이미지 런칭.</td>
+			<td>FreeBSD 13.0</td>
+			<td>이미지 ID:
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1lkqxofp">
+			img-1lkqxofp</a>
+			<br />현재 커널 버전: 13.0-RELEASE</td>
+			<td>2022-09-02</td>
+			<td>이미지 런칭.</td>
+  </tr>
+			<tr>
+			<td>FreeBSD 12.3</td>
+			<td>이미지 ID:
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-j9m732cx">	
+		img-j9m732cx</a>
+			<br />현재 커널 버전: 12.3-RELEAS</td>
+			<td>2022-01-20</td>
+			<td>이미지 런칭.</td>
   </tr>
 	<tr>
 	<td>FreeBSD 12.2</td>
@@ -280,7 +307,7 @@ img-pi37fg9j</a>
 </table>
 
 
-## Rocky
+## Rocky Linux
 <table>
 <tr>
         <th style="width: 20%;">이미지 버전</th>
@@ -288,8 +315,17 @@ img-pi37fg9j</a>
         <th style="width: 14%;">마지막 업데이트 시간</th>
         <th style="width: 26%;">마지막 업데이트 내용</th>
     </tr>
+	<tr>
+			<td>Rocky Linux 9.0</td>
+			<td>이미지 ID:
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-k1g1wwy9">	
+		img-k1g1wwy9</a>
+			<br />현재 커널 버전: 5.14.0-70.13.1.el9_0.x86_64</td>
+			<td>2022-09-08</td>
+			<td>이미지 런칭.</td>
+  </tr>
 	  <tr>
-	<td>Rocky 8.5</td>
+	<td>Rocky Linux 8.5</td>
 	<td>이미지 ID:
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">	
 img-qd4bf0jb</a>
@@ -309,6 +345,14 @@ img-qd4bf0jb</a>
         <th style="width: 14%;">마지막 업데이트 시간</th>
         <th style="width: 26%;">마지막 업데이트 내용</th>
     </tr>
+	 <tr>
+			<td>OpenSUSE Leap 15.4</td>
+			<td>이미지 ID:
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-aaa4d8d1">img-aaa4d8d1</a>
+			<br />현재 커널 버전: 5.14.21-150400.22-default</td>
+			<td>2022-08-31</td>
+			<td>이미지 런칭.</td>
+  </tr>
   <tr>
 	<td>OpenSUSE Leap 15.3</td>
 	<td>이미지 ID:
@@ -403,24 +447,3 @@ img-4orfgj3l</a>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 </table>
-
-
-
-## [부록: 공식 유지보수 일정](id: OfficialMaintenanceTime)
-
-
-#### CentOS
-CentOS의 공식 지원 종료(EOL)일자 정보는 [CentOS 제품 사양](https://wiki.centos.org/zh/About/Product#fnref-f049f6268e56bd37228bb469075b54ae8645fa40)을 참고하십시오.
-
-
-#### Ubuntu
-Ubuntu의 공식 장기 지원 일정 정보는 [Long term support and interim releases](https://ubuntu.com/about/release-cycle)를 참고하십시오.
-
-
-#### Debian
-Debian의 공식 지원 관련 정보는 [Debian Long Term Support](https://wiki.debian.org/LTS)를 참고하십시오.
-
-
-<style>
-	.params{margin-bottom:0px !important;}
-</style>

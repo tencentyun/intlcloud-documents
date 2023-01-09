@@ -5,7 +5,7 @@ TCR provides the pay-as-you-go billing mode:
 
 |Billing Mode | Description | Billing Unit | 
 |---------|---------|---------|
-| Pay-as-you-go |The service is billed on an hourly basis. Upon activation of the service, a certain amount of your balance will be frozen. See [Prepay Account Freeze](https://intl.cloud.tencent.com/zh/document/product/555/12039).| USD/hour | 
+| Pay-as-you-go |The service is billed at an hourly basis. Upon activation of the service, a certain amount of your balance will be frozen. See [Prepay Account Freeze](https://intl.cloud.tencent.com/zh/document/product/555/12039).| USD/hour | 
 
 
 
@@ -20,6 +20,7 @@ TCR provides the pay-as-you-go billing mode:
 <tr>
 <td>Instance purchasing</td>
 <td>TCR Enterprise instances support pay-as-you-go billing mode. The managed service charges differ according to selected regions and specifications.</td>
+<td>Please refer to <a href="#price">TCR Enterprise Pricing</a> </td>
 </tr>
 <tr>
 <td>Storage fees</td>
@@ -127,7 +128,7 @@ When the instance is using the features of Standard or Advanced edition, it is n
 <td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>Submit a ticket to increase the quota.</td>
 </tr>
 <tr>
-<td rowspan="7">Data security</td>
+<td rowspan="8">Data security</td>
 <td>Encrypted storage of data</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
@@ -135,6 +136,9 @@ When the instance is using the features of Standard or Advanced edition, it is n
 <td>Image vulnerability scanning</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
+<td>Block Vulnerable Images</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+<tr>   
 <td>Image tag protection</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>

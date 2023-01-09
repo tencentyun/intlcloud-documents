@@ -66,7 +66,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :------------- | :-------- | ---- |
-| Request            | None     | <a href="https://cloud.tencent.com/document/product/460/80091#Request" target="_blank">Same as `Request` in the intelligent thumbnail template creation API.</a> | Container | Yes   |
+| Request            | None     | <a href="https://www.tencentcloud.com/document/product/1045/50614" target="_blank">Same as `Request` in the intelligent thumbnail template creation API.</a> | Container | Yes   |
 
 ## Response
 
@@ -103,7 +103,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :-------------------------------------------------- | :-------- |
-| Response           | None     | <a href="https://cloud.tencent.com/document/product/460/80091#Response" target="_blank">Same as `Response` in the intelligent thumbnail template creation API.</a> | Container |
+| Response           | None     | <a href="https://www.tencentcloud.com/document/product/1045/50614" target="_blank">Same as `Response` in the intelligent thumbnail template creation API.</a> | Container |
 
 
 #### Error codes

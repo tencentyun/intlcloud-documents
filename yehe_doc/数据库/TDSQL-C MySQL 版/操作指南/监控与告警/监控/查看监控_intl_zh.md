@@ -8,7 +8,7 @@ TDSQL-C MySQL 版提供丰富的性能监控指标，方便您细致的了解数
 |---------|---------|---------|
 | TDSQL-C MySQL 版控制台查看 | 便捷、可视化，快速定位问题，符合数据库运维习惯 | [通过控制台查看监控数据](https://www.tencentcloud.com/document/product/1098/50191) |
 | 创建云监控 Dashboard 查看 | 支持自定义创建监控指标分组、可视化 | [创建云监控 Dashboard 查看监控数据](https://www.tencentcloud.com/document/product/1098/50190) |
-| 云 API 拉取数据  | 灵活拉取监控指标进行分析处理或接入其他平台 | [使用云 API 拉取监控数据](https://www.tencentcloud.com/document/product/1098/50189) |
+| 云 API 拉取数据  | 灵活拉取监控指标进行分析处理或接入其他平台 |  |
 
 ## 在监控界面的可视化操作
 ### 查看标准监控视图

@@ -6,9 +6,9 @@
 
 | Group Type ID | RESTful API Support |
 |-----------|------------|
-| Private | No. Same as work groups (Work) in the new version. |
-| Public | No |
-| ChatRoom | No. Same as meeting group (Meeting) in the new version. |
+| Private | Yes. Same as work groups (Work) in the new version. |
+| Public | Yes |
+| ChatRoom | Yes. Same as meeting group (Meeting) in the new version. |
 | AVChatRoom | Yes |
 |Community| No |
 

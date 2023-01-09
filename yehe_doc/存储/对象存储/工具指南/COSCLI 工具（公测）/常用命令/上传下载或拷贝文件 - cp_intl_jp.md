@@ -7,22 +7,23 @@ cpコマンドは、ファイルをアップロード、ダウンロードまた
 ./coscli cp <source_path> <destination_path> [flags]
 ```
 
->? bucketAliasについては、[設定](https://intl.cloud.tencent.com/document/product/436/43265)をご参照ください。
+>? 
+>? bucketAliasについては、[ダウンロードとインストール設定](https://intl.cloud.tencent.com/document/product/436/43265)をご参照ください。
+>- このコマンドのその他の共通オプション（例えばバケットの切り替え、ユーザーアカウントの切り替えなど）に関しては、[共通オプション](https://intl.cloud.tencent.com/document/product/436/46273)のドキュメントをご参照ください。
 >
 
 cpコマンドには、以下のオプションflagが含まれます。
 
 | flagの略称 | flagの正式名称    | flagの用途                            |
 | --------- | --------------- | ------------------------------------ |
-| -h        | --help        | ヘルプ情報を出力                         |
-| -c        | --config-path   | 使用する設定ファイルパスを指定             |
 |    なし       | --include       | 特定のモードを含むファイル                   |
 |   なし       | --exclude       | 特定のモードを除外したファイル                   |
 | -r        | --recursive     | フォルダ内のすべてのファイルを再帰的にトラバーサル処理するかどうか       |
 |   なし       | --storage-class | アップロードするファイルのタイプを指定（デフォルトはSTANDARD） |
-|   なし       | --part-size     | ファイルチャンクサイズ（デフォルトは32MB）     |
+|   なし       | --part-size     | ファイルチャンクサイズ（デフォルトは32MB）、単位：MB     |
 |   なし       | --thread-num    | 同時実行スレッド数（デフォルトの同時実行は5）      |
-|   なし       | --rate-limiting | シングルリンクレート制限(0.1～100MB/s)       |
+|   なし       | --rate-limiting | シングルリンクレート制限(0.1～100MB/s)、単位：MB/s       |
+| なし | --meta | アップロードファイルのメタ情報。一部のHTTP標準属性（HTTP Header）および`x-cos-meta-`で始まるユーザーカスタムメタデータ（User Meta）が含まれます。ファイルメタ情報の形式は`header:value#header:value`であり、例えば`Expires:2022-10-12T00:00:00.000Z#Cache-Control:no-cache#Content-Encoding:gzip#x-cos-meta-x:x`のようになります。 |
 
 
 >?
@@ -32,8 +33,8 @@ cpコマンドには、以下のオプションflagが含まれます。
 > - ファイルをチャンクでアップロード/ダウンロードする場合、デフォルトで中断からの再開が有効になります。
 > - `--include`と`--exclude`は標準的な正規表現の構文をサポートしており、これを使えば特定の条件を満たすファイルをフィルタリングすることができます。
 > - zshを使用する場合、pattern文字列の両端に二重引用符を付ける必要がある場合があります。
-```
-./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.mp4"
+```plaintext
+./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.txt" --meta=x-cos-meta-a:a#ContentType:text#Expires:2022-10-12T00:00:00.000Z
 ```
 
 ## 操作事例
@@ -75,6 +76,13 @@ cpコマンドには、以下のオプションflagが含まれます。
 ```plaintext
 ./coscli cp ~/test/ cos://bucket1/example/ -r --storage-class ARCHIVE
 ```
+
+#### ローカルのfile.txtファイルをバケットbucket1にアップロードし、シングルリンクレート制限を1.3MB/sに設定します
+
+```plaintext
+./coscli cp ~/file.txt cos://bucket1/file.txt --rate-limiting 1.3
+```
+
 
 ### ダウンロード操作
 
