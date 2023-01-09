@@ -136,7 +136,7 @@ Import source server successfullyが表示されなかった場合、移行元�
 ### 移行タスクの作成と起動
 
 1. 移行タスクを作成します
-下図に示すように、「オンライン移行コンソール](https://console.cloud.tencent.com/cvm/csm/online?rid=1)にログインし、対象となる移行元が所在する行の右側の**移行タスクの作成**をクリックします。ポップアップした「移行タスクの作成」ウィンドウで、以下の情報を参考にして設定を行います：
+下図に示すように、[オンライン移行コンソール](https://console.cloud.tencent.com/cvm/csm/online?rid=1)にログインし、対象となる移行元が所在する行の右側の**移行タスクの作成**をクリックします。ポップアップした「移行タスクの作成」ウィンドウで、以下の情報を参考にして設定を行います：
 ![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
 [](id:jobSettings)移行タスクの詳細な設定の説明は下表のとおりです：
  - **基本オプション**：
