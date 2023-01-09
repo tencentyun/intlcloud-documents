@@ -2,7 +2,7 @@
 [](id:Q1)
 ### How do I view the operation logs of a CVM?
 You can view the operation logs of a CVM on the console as follows:
-1. Log in to the [CVM console](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) and select **Tool** > **Operation Log** in the top-right corner.
+1. Log in to the [CVM console](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=4) and select **Tool** > **Operation Log** in the top-right corner.
 2. Select **CVM** for the resource event and configure other filters as needed.
 3. Click **Query** to obtain the CVM operation logs.
 For more information about CloudAudit operation records, see [Viewing the Event Details of Operation Records](https://intl.cloud.tencent.com/document/product/1021/40499).

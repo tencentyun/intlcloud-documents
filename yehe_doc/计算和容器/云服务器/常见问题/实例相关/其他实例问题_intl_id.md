@@ -1,6 +1,6 @@
 ### Bagaimana cara melihat log operasi CVM?
 
-Anda dapat melihat log operasi CVM di sudut kanan atas [Konsol](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm).
+Anda dapat melihat log operasi CVM di sudut kanan atas [Konsol](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=4).
 
 ### Bagaimana jika saya tidak dapat menemukan CVM saya di konsol?
 

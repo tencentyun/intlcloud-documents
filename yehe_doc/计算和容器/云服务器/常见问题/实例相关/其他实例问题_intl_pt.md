@@ -1,6 +1,6 @@
 ### Como faço para exibir os logs de operação de uma CVM?
 
-Você pode exibir os logs de operação de uma CVM no canto superior direito do [Console](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm).
+Você pode exibir os logs de operação de uma CVM no canto superior direito do [Console](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=4).
 
 ### E se eu não conseguir localizar o meu CVM no console?
 
