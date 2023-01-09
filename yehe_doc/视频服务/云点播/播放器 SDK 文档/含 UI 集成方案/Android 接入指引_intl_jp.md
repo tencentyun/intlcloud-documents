@@ -256,7 +256,7 @@ Tencent Cloud View Cube Androidプレーヤーコンポーネントapp権限設�
 2. **License権限承認の設定**
 すでに関連するLicense権限承認を取得している場合は、[Tencent Cloud View Cubeコンソール](https://console.cloud.tencent.com/vcube)にて、License URLおよびLicense Keyを取得する必要があります。
 
-License権限承認を取得していない場合は、先に<a href="https://cloud.tencent.com/document/product/881/74588">ビデオ再生License</a>をご参照の上、関連の権限承認を取得する必要があります。<br>
+License権限承認を取得していない場合は、先に<a href="https://www.tencentcloud.com/document/product/266/51098">ビデオ再生License</a>をご参照の上、関連の権限承認を取得する必要があります。<br>
 License情報を取得後、SDKの関連インターフェースを呼び出す前に、以下のインターフェースでLicenseを初期化します。Application類で以下の設定を行うことをお勧めします。
 ```java
 public class MApplication extends Application {
