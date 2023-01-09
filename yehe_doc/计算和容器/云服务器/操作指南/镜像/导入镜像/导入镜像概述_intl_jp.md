@@ -128,10 +128,10 @@ InternalErrorが発生します。エラーメッセージ：イメージイン�
 |エラーコード|エラーの原因|推奨される解決策|
 |-----|-----|-----|
 |InvalidUrl|無効なCOSリンク|COSリンクはインポートされたイメージリンクと同じであるかどうかを確認します。|
-|InvalidFormatSize|形式またはサイズの条件は不適合です|イメージは[インポートの準備](#インポートの準備)中の`イメージの形式`と`イメージのサイズ`の制限を満たす必要があります。|
-|VirtioNotInstall|virtioドライバーがインストールされていません|イメージにvirtioドライバーをインストールする必要があります。[インポートの準備](#インポートの準備)中のドライバー`部分をご参照ください。|
+|InvalidFormatSize|形式またはサイズの条件は不適合です|イメージは[インポートの準備](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E)中の`イメージの形式`と`イメージのサイズ`の制限を満たす必要があります。|
+|VirtioNotInstall|virtioドライバーがインストールされていません|イメージにvirtioドライバーをインストールする必要があります。[インポートの準備](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E)中のドライバー`部分をご参照ください。|
 |PartitionNotPresent|パーティションの情報を見つかりません|イメージの作成方法が間違っているため、イメージが破損する可能性があります|
-|CloudInitNotInstalled|cloud-initがインストールされていません|Linuxイメージにcloud-initをインストールする必要があります。[インポートの準備](#インポートの準備)中の`ドライバー`部分をご参照ください。|
+|CloudInitNotInstalled|cloud-initがインストールされていません|Linuxイメージにcloud-initをインストールする必要があります。[インポートの準備](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E)中の`ドライバー`部分をご参照ください。|
 |RootPartitionNotFound|ルードパーティションが検出されていません|イメージの作成方法が間違っているため、イメージが破損する可能性があります|
 |InternalError|他のエラー|カスタマサービスにお問い合わせください|
 
