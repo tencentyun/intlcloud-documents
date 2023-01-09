@@ -3,9 +3,10 @@
 
 ## 마이그레이션 프로세스
 온라인 마이그레이션 절차는 다음과 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/c0b85e5806f44052ca86649c31d788c6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e290646e08b6af1b509ce324ea6e096.png)
 
-## 준비 사항[](id:prerequisites)
+[](id:prerequisites)
+## 준비 사항
 
 - Tencent Cloud 계정이 있어야 합니다.
 - 서브 계정으로 콘솔 마이그레이션하는 경우, 루트 계정을 사용하여 [CAM 콘솔](https://console.cloud.tencent.com/cam/policy)에 로그인하고 서브 계정에 'QcloudCSMFullAccess' 및 `QcloudCVMFullAccess` 권한을 부여해야 합니다.
@@ -13,8 +14,8 @@
 - 마이그레이션 툴 압축 패키지를 [다운로드](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)합니다.
 - 마이그레이션할 때, 현재 사용하고 있는 애플리케이션에 영향을 줄 수 있으므로, 원본 서버의 애플리케이션 사용을 잠시 중지할 것을 권장합니다.
 - 마이그레이션하기 전에 다음과 같은 방법으로 데이터를 백업하는 것이 좋습니다.
- - 원본 호스트: 원본 서버 스냅샷 기능 등의 방식을 선택해 데이터를 백업할 수 있습니다.
- - 대상 CVM: [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) 등의 방식을 선택해 대상 CVM 데이터를 백업할 수 있습니다.
+  - 원본 호스트: 원본 서버 스냅샷 기능 등의 방식을 선택해 데이터를 백업할 수 있습니다.
+  - 대상 CVM: [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) 등의 방식을 선택해 대상 CVM 데이터를 백업할 수 있습니다.
 
 ## 마이그레이션 과정
 
@@ -71,9 +72,11 @@
 </dx-alert>
 
 
-
-### 마이그레이션 소스 가입[](id:registrationSource)
-
+[](id:registrationSource)
+### 마이그레이션 소스 등록
+#### 마이그레이션 툴을 통해 마이그레이션 소스 가져오기
+<dx-tabs>
+::: Linux 서버
 1. 마이그레이션 툴 go2tencentcloud.zip을 원본 호스트에 다운로드하거나 업로드하고 다음 명령을 실행하여 해당 디렉터리로 들어갑니다.
    1. 다음 명령어를 순서대로 실행하여 go2tencentcloud.zip의 압축을 풀고 디렉터리로 들어갑니다.
 ```shellsession
@@ -92,7 +95,7 @@ cd go2tencentcloud-linux
 <dx-alert infotype="explain" title="">
 `go2tencentcloud` 디렉터리에 있는 파일은 마이그레이션되지 않으므로 이 디렉터리에 마이그레이션할 파일을 두지 마십시오.
 </dx-alert>
-2. (옵션)원본 CVM에서 마이그레이션하지 않을 파일 또는 디렉터리를 제외합니다.
+2. (옵션)원본 호스트에서 마이그레이션하지 않을 파일 또는 디렉터리를 제외합니다.
 Linux 원본 호스트에 마이그레이션할 필요가 없는 파일 또는 디렉터리가 있는 경우 [rsync_excludes_linux.txt 파일](https://intl.cloud.tencent.com/document/product/213/44340)에 추가합니다.
 3. 마이그레이션 소스를 가져옵니다.
    1. 64비트 Linux 소스 서버에서 root 사용자로 다음 명령을 순서대로 실행하여 툴을 실행합니다.
@@ -106,13 +109,28 @@ sudo ./go2tencentcloud_x64
 ![](https://qcloudimg.tencent-cloud.cn/raw/38ff9f9d8c143a4cb0df39cbeaf18713.png)
 마이그레이션 툴 인터페이스에 다음 이미지와 같은 정보가 나타나면 마이그레이션 소스를 콘솔로 성공적으로 가져온 것이므로 콘솔로 이동하여 마이그레이션 소스를 볼 수 있습니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f9cf0fd99504aba51ebf82b0cab250b8.png"/>
-<br><a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">온라인 마이그레이션 콘솔</a>에 로그인하여 가져온 마이그레이션 소스가 ‘온라인’ 상태임을 확인할 수 있습니다. 아래 이미지와 같습니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/11b1e6cada0384dae292e89378629ddc.png"/>
-Import source server successfully 메시지가 표시되지 않으면 마이그레이션 원본을 가져오지 못한 것이므로 문제 해결을 위해 로그(기본적으로 마이그레이션 도구 디렉터리에 있는 logs/log 파일)를 볼 수 있습니다. 그런 다음 마이그레이션 도구를 실행하여 마이그레이션 소스를 다시 가져옵니다.
-<dx-alert infotype="notice" title="">
-마이그레이션 소스를 성공적으로 가져온 후 마이그레이션 작업이 완료될 때까지 인스턴스에서 마이그레이션 툴을 닫지 마십시오. 그렇지 않으면 마이그레이션 소스가 오프라인되어 마이그레이션 작업을 완료할 수 없습니다.
-</dx-alert>
+:::
 
+::: Windows 서버
+1. 마이그레이션 도구 go2tencentcloud.zip을 소스 호스트에 다운로드하거나 업로드하고 압축을 해제하여 go2tencentcloud 폴더를 얻고 go2tencentcloud-windows.zip을 추출하여 계속 압축을 해제하여 아래 이미지와 같은 디렉터리를 얻을 수 있습니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/3f2c9881d9c5323a14d096d0811814cd.png)    
+2. 다음과 같은 방법으로 go2tencentcloud_x64.exe 응용 프로그램을 실행합니다.
+	- 방법1: go2tencentcloud_x64.exe 응용 프로그램을 관리자 권한으로 우클릭하여 실행하고, 팝업창에 SecretId와 SecretKey를 입력합니다.
+	- 방법2: 관리자 권한으로 cmd 또는 powershel 명령 라인 열기: cd /d "go2tencentcloud_x64.exe가 있는 디렉터리의 절대 경로" 및 go2tencentcloud_x64.exe 응용 프로그램을 실행합니다.
+3. 팝업 창에 Tencent Cloud API Keys(SecretId 및 SecretKey)를 입력합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/b7af60919e710d7d148e791124fce1a0.png) ![](https://qcloudimg.tencent-cloud.cn/raw/8494a126134389796be195ccd268e03a.png)       
+
+3. 마이그레이션 툴 인터페이스에 다음 이미지와 같은 정보가 나타나면 마이그레이션 소스를 콘솔로 성공적으로 가져온 것이므로 콘솔로 이동하여 마이그레이션 소스를 볼 수 있습니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/5ecd29f96415d0cb090fe165909272be.png)
+:::
+</dx-tabs>
+
+#### 콘솔을 통해 마이그레이션 소스 보기
+<a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">온라인 마이그레이션 콘솔</a>에 로그인하여 가져온 마이그레이션 소스가 ‘온라인’ 상태인 것을 볼 수 있습니다. 아래 이미지와 같습니다.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/11b1e6cada0384dae292e89378629ddc.png"/>
+Import source server successfully 메시지가 표시되지 않으면 마이그레이션 소스 가져오기가 실패했음을 의미합니다. 로그(기본적으로 마이그레이션 툴 디렉터리의 logs/log 파일) 조회를 통해 문제를 해결한 후, 마이그레이션 툴을 다시 실행하여 마이그레이션 소스를 가져올 수 있습니다.
+
+>! 마이그레이션 소스를 성공적으로 가져온 후 마이그레이션 작업이 완료될 때까지 인스턴스에서 마이그레이션 툴을 닫지 마십시오. 그렇지 않으면 마이그레이션 소스가 오프라인되어 마이그레이션 작업을 완료할 수 없습니다.
 
 
 ### 마이그레이션 작업 생성 및 실행
@@ -218,7 +236,6 @@ Import source server successfully 메시지가 표시되지 않으면 마이그�
 
 
 ### 마이그레이션 작업 종료 대기
-
 
 마이그레이션 작업의 상태가 ‘성공’이면 마이그레이션이 성공적으로 완료되었음을 나타냅니다. 아래 이미지와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
