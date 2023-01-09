@@ -7,7 +7,7 @@ The binary string type varbinary is different from the string type varchar.
 | --------------------------------------- | ------------------------------------- |
 |Concatenation function \|\|   |The result of `a || b` is `ab`.              |
 | length(binary) → bigint [](id:length)                | Returns a binary length.                    |
-| concat(binary1, …, binaryN) → varbinary [](id:concat)| Concatenates binary strings. This function provides the same functionality as \|
+| concat(binary1, …, binaryN) → varbinary [](id:concat)| Concatenates binary strings. This function provides the same functionality as \|\|.        |
 | to_base64(binary) → varchar  [](id:to_base64)           | Converts a binary string into a base64 string.          |
 | from_base64(string) → varbinary [](id:from_base64)        | Converts a base64 string into a binary string.          |
 | to_base64url(binary) → varchar   [](id:to_base64url)       | Converts a binary string into a base64 string with a URL safe alphabet.               |
