@@ -42,7 +42,7 @@ Policy execution results are described as follows.
 | QuerySyntaxError        | The analysis statement of the monitoring object has a syntax error. Please check whether the statement is correct. For more information on the syntax, please see [Overview](https://intl.cloud.tencent.com/document/product/614/37803). |
 | QueryError              | The analysis statement is not executed properly. Please check the analysis statement and the index configuration of the log topic.         |
 | QueryResultParseError   | Failed to parse the analysis result format.                                         |
-| ConditionSyntaxError    | The trigger condition expression has a syntax error. Please check the syntax format of the expression. |
+| ConditionSyntaxError    | The trigger condition expression has a syntax error. Please check [the syntax format of the expression](https://www.tencentcloud.com/document/product/614/39576). |
 | ConditionEvaluateError  | An error occurred while computing the trigger condition. Please check whether the imported variable exists in the analysis result     |
 | ConditionValueTypeError | The evaluation result of the trigger condition is not a Boolean value. Please check whether the trigger condition expression is correct.       |
 | EvalTimesLimited        | The trigger condition hasn't been met even after it has been computed more than 1,000 times.                 |
@@ -51,7 +51,7 @@ Policy execution results are described as follows.
 | TemplateUnmatched       | The alarm configuration information doesn't match the notification template. Specific causes include:<li>TypeUnmatched: the alarm notification type (alarm triggered or alarm cleared) doesn't match the notification template, so no alarm notification is sent.</li><li>TimeUnmatched: the alarm notification time period doesn't match the notification template, so no alarm notification is sent.</li><li>SendFail: the notification failed to be sent.</li> |
 | Matched                 | The alarm condition is met, and the alarm notification is sent successfully.                                 |
 
-Policy alarm states are described as follows.
+**Policy alarm states are described as follows.**
 
 | Alarm State | Description   |
 |-----------|---|
