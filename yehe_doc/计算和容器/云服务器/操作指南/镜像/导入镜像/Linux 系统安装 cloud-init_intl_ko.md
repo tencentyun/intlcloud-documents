@@ -78,7 +78,7 @@ pip3 install -r requirements.txt
     apt-get install cloud-guest-utils -y
     ```
 
-7 다음 명령어를 실행하여 cloud-init을 설치합니다.
+7. 다음 명령어를 실행하여 cloud-init을 설치합니다.
 ```shellsession
 python3 setup.py build
 ```
