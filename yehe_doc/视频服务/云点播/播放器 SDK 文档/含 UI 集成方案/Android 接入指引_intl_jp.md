@@ -333,7 +333,7 @@ mSuperPlayerView.resetPlayer();
 
 ## 機能の使用[](id:moreFeature)
 
-この章では、いくつかの一般的なプレーヤー機能の使用方式をご紹介します。より完全な機能の使用方式は[Demo体験](#demo)を、プレーヤーコンポーネントがサポートする機能は[機能リスト](https://cloud.tencent.com/document/product/881/61375)をそれぞれご参照ください。
+この章では、いくつかの一般的なプレーヤー機能の使用方式をご紹介します。より完全な機能の使用方式は[Demo体験](#demo)を、プレーヤーコンポーネントがサポートする機能は[機能リスト](https://www.tencentcloud.com/document/product/266/42965)をそれぞれご参照ください。
 
 ### 1. 全画面再生
 
