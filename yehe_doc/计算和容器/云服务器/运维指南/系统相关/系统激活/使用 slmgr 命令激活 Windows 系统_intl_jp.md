@@ -12,7 +12,7 @@
 
 ## 操作手順
 1. Windows CVMにログインします。詳細については、[標準方式を使用してWindowsインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/41018)をご参照ください。
-2. OSのデスクトップの左下部の<img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">を右クリックし、ポップアップメニューから**Windows PowerShell（管理者）を選択します。
+2. OSのデスクトップの左下部の<img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">を右クリックし、ポップアップメニューから**Windows PowerShell（管理者）を選択します** 。
 3. powershellウィンドウでは、次のコマンドを順番に実行して、OSを有効にします。
 ```
 slmgr /upk
@@ -66,7 +66,7 @@ slmgr.vbs /ato
 slmgr.vbs /rilc 
 ```
 2. コマンドを実行した後、`(Get-ItemProperty...`コマンドを繰り返し実行して確認することができます。戻り値は1960のままです。
-3. 次のコマンドを実行して、システムを有効にします。
+3. 次のコマンドを実行して、システムを有効にします、Cloud Virtual Machineのリスタート。
 ```
 slmgr.vbs /ato
 ```
@@ -75,7 +75,7 @@ slmgr.vbs /ato
 ::: 方法3
 1. あらゆるmsiプログラムをアンインストールします。
 2. `(Get-ItemProperty...`コマンドを繰り返し実行して確認します。戻り値が変わる可能性があります。ただし、システムをリスタートした後でも、メモリ制限は2GBのままです。
-2. 次のコマンドを実行して、システムを有効にします。
+2. 次のコマンドを実行して、システムを有効にします、Cloud Virtual Machineのリスタート。
 ```
 slmgr.vbs /ato
 ``` 
