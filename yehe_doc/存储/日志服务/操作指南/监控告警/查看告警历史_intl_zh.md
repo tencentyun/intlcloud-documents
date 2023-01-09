@@ -39,10 +39,10 @@
 | 执行结果                | 说明                                                         |
 | ----------------------- | ------------------------------------------------------------ |
 | AlarmConfigNotFound     | 缺少告警策略配置，请检查告警策略及监控对象配置是否正确；     |
-| QuerySyntaxError        | 监控对象的分析语句有语法错误，请检查语句是否正确，语法参考 [分析语句](https://intl.cloud.tencent.com/document/product/614/37803) |
+| QuerySyntaxError        | 监控对象的分析语句有语法错误，请检查语句是否正确，语法请参考 [分析语句](https://intl.cloud.tencent.com/document/product/614/37803) |
 | QueryError              | 分析语句执行异常，请检查分析语句和日志主题的索引配置         |
 | QueryResultParseError   | 分析结果格式解析失败                                         |
-| ConditionSyntaxError    | 触发条件表达式有语法错误，请检查表达式语法格式 |
+| ConditionSyntaxError    | 触发条件表达式有语法错误，请检查[表达式语法](https://www.tencentcloud.com/document/product/614/39576) |
 | ConditionEvaluateError  | 触发条件计算错误，请检查所引用的变量是否在分析结果中存在     |
 | ConditionValueTypeError | 触发条件计算结果非 bool 值，请检查触发条件表达式是否正确       |
 | EvalTimesLimited        | 触发条件计算次数超过1000次，仍不满足触发条件                 |
@@ -51,7 +51,7 @@
 | TemplateUnmatched       | 不符合通知模板的告警配置信息，具体原因包含：<li>TypeUnmatched：不符合通知模板的告警通知类型（告警通知、告警恢复），不发送告警通知</li><li>TimeUnmatched：不符合通知模板的告警通知时间段，不发送告警通知</li><li>SendFail：通知发送失败</li> |
 | Matched                 | 满足告警条件，且成功通知告警                                 |
 
-策略告警状态：
+**策略告警状态：**
 
 | 告警状态| 说明   |
 |-----------|---|
