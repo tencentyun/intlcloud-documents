@@ -9,7 +9,7 @@ Prepare an image file that meets the import requirements.
 ::: Linux images
 <table>
 <tr><th style="width:17%">Image Attribute</th><th>Requirements</th></tr>
-<tr><td>OS</td><td><ul><li>CentOS, Ubuntu, Debian, CoreOS, openSUSE, and SUSE</li><li>Both 32-bit and 64-bit OSs are supported</li></ul></td></tr>
+<tr><td>OS</td><td><ul><li>CentOS、CentOS Stream、Ubuntu、Debian、OpenSUSE、CoreOS、FreeBSD、AlmaLinux、Rocky Linux、Fedora、Kylin、UnionTech、TencentOS</li><li>Both 32-bit and 64-bit OSs are supported</li></ul></td></tr>
 <tr><td>Image format</td><td><ul><li>RAW, VHD, QCOW2, and VMDK</li><li>Run <code>qemu-img info imageName | grep 'file format'</code> to check the image format.</li></ul></td></tr>
 <tr><td>File system type</td><td>GPT partition is not supported</td></tr>
 <tr><td>Image size</td><td><ul><li>The actual image size cannot exceed 50 GB. Run <code>qemu-img info imageName | grep 'disk size'</code> to check the image size.</li><li>The image vsize cannot exceed 500 GB. Run <code>qemu-img info imageName | grep 'virtual size'</code> to check the image vsize.</li></ul><b>Note: </b>size of an image in QCOW2 format is used upon check during import.</td></tr>
@@ -23,7 +23,7 @@ Prepare an image file that meets the import requirements.
 ::: Windows images
 <table>
 <tr><th style="width:16%">Image Attribute</th><th>Requirements</th></tr>
-<tr><td>OS</td><td><ul><li>Windows Server 2008, Windows Server 2012, and Windows Server 2016 related versions</li><li>Both 32-bit and 64-bit OSs are supported.</li></ul></td></tr>
+<tr><td>OS</td><td><ul><li>Windows Server 2008, Windows Server 2012, Windows Server 2016 related versions, Windows Server 2019 related versions, and Windows Server 2022 related versions</li><li>Both 32-bit and 64-bit OSs are supported.</li></ul></td></tr>
 <tr><td>Image format</td><td><ul><li>RAW, VHD, QCOW2, and VMDK</li><li>Run <code>qemu-img info imageName | grep 'file format'</code> to check the image format.</li></ul></td></tr>
 <tr><td>File system type</td><td><ul><li>Only NTFS with MBR partition is supported.</li><li>GPT partition is not supported.</li><li>Logical Volume Manager (LVM) is not supported.</li></ul></td></tr>
 <tr><td>Image size</td><td><ul><li>The actual image size cannot exceed 50 GB. Run <code>qemu-img info imageName | grep 'disk size'</code> to check the image size.</li><li>The image vsize cannot exceed 500 GB. Run <code>qemu-img info imageName | grep 'virtual size'</code> to check the image vsize.</li></ul><b>Note: </b>size of an image in QCOW2 format is used upon check during import.</td></tr>
