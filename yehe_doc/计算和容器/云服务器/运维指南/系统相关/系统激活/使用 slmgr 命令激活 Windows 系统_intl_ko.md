@@ -12,7 +12,7 @@
 
 ## 작업 단계
 1. Windows CVM에 로그인합니다. 자세한 내용은 [표준 로그인 방식으로 Windows 인스턴스에 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/41018)을 참고하십시오.
-2. 운영 체제 데스크톱의 왼쪽 하단 모서리를 우클릭하고 <img src="https://qcloudimg.tencent-cloud.cn/raw/10c0728e4d194732be4eb6c1a95e0a8c.png" style="margin: -5px 0px;"/> 팝업 메뉴에서 **Windows PowerShell(관리자)**을 선택합니다.
+2. 운영 체제 데스크톱의 왼쪽 하단 모서리를 우클릭하고 <img src="https://qcloudimg.tencent-cloud.cn/raw/10c0728e4d194732be4eb6c1a95e0a8c.png" style="margin: -5px 0px;"/> 팝업 메뉴에서 **Windows PowerShell(관리자)** 을 선택합니다.
 3. powershell 창에서 다음 명령을 차례로 실행하여 운영 체제를 활성화합니다.
 ```
 slmgr /upk
@@ -66,7 +66,7 @@ slmgr.vbs /ato
 slmgr.vbs /rilc 
 ```
 2. 명령이 실행된 후 `(Get-ItemProperty...` 명령을 반복적으로 실행하여 인증할 수 있으며 반환 값은 여전히 ​​1960입니다.
-3. 다음 명령을 실행하여 시스템을 활성화합니다.
+3. 다음 명령을 실행하여 시스템을 활성화합니다.Cloud Virtual Machine 재시작.
 ```
 slmgr.vbs /ato
 ```
@@ -75,7 +75,7 @@ slmgr.vbs /ato
 ::: 방법3
 1. 모든 msi 프로그램을 언마운트합니다.
 2. `(Get-ItemProperty...` 명령을 반복적으로 실행하여 인증하면 반환 값이 변경될 수 있습니다. 그러나 시스템을 다시 시작한 후에도 메모리 제한은 여전히 ​​2GB입니다.
-2. 다음 명령을 실행하여 시스템을 활성화합니다.
+2. 다음 명령을 실행하여 시스템을 활성화합니다.Cloud Virtual Machine 재시작.
 ```
 slmgr.vbs /ato
 ``` 
