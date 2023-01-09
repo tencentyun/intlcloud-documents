@@ -1,3 +1,11 @@
+- [离线迁移相关问题](#OfflineMigration)
+- [在线迁移一般性问题](#OnlineMigration)
+- [控制台在线迁移相关问题](#ConsoleOnlineMigration)
+- [在线迁移工具相关问题](#OnlineMigrationTool)
+
+
+
+[](id:OfflineMigration)
 ## 离线迁移
 
 ### 上传 COS 和迁移为什么耗时太久？
@@ -20,10 +28,11 @@
 - 如果提示**“任务超时”**、**“系统错误”**、**“其他原因”**等，或者重试迁移任务却依然失败，可通过 [联系我们](https://intl.cloud.tencent.com/document/product/213/34837) 解决。
 
 
+[](id:OnlineMigration)
 ## 在线迁移一般性问题
 
 ### 在线迁移支持哪些操作系统和磁盘类型？
-- Linux 的主流操作系统（如 Centos 或 Ubuntu 等）均可。
+- Linux 和 Windows 的主流操作系统均可。
 - 与磁盘类型和用量无关。
 
 
@@ -45,7 +54,7 @@
 
 ### 迁移速度和费用是多少？
 - 速度：主要依赖于目标子机带宽，测试使用1核1G内存，按量计费带宽为12Mbps的子机，实际迁移速率大概是9Mbps。具体计算方法可参见 [迁移时间预估教程](https://intl.cloud.tencent.com/document/product/213/44342)。
-- 费用：迁移工具本身免费。迁移过程中会因为带宽等资源产生少量计费，产生的费用可根据流量和时长计费规则进行计算，具体请参见官网价格。
+- 费用：迁移工具本身免费。迁移过程中会因为带宽等资源产生少量计费，产生的费用可根据流量和时长计费规则进行计算。
 
 
 ### 是否支持多台子机同时迁移？
@@ -59,7 +68,7 @@
 ### 如何安装 Rsync？[](id:installRsync)
 可根据源服务器的操作系统，选择相应的命令安装 Rsync。
 - CentOS：`yum -y install rsync`
-- Ubuntu、Debian：`apt-get -y install rsync`
+- Ubuntu：`apt-get -y install rsync`
 - SUSE：`zypper install rsync`
  其他 Linux 发行版请参见对应发行版官网的安装文档。
 
@@ -68,6 +77,7 @@
 编辑 `/etc/selinux/config` 文件，并设置 `SELINUX=disabled`。
 
 
+[](id:ConsoleOnlineMigration)
 ## 控制台在线迁移相关问题
 
 ### 工具在哪里下载？
@@ -140,6 +150,7 @@
 登录 [在线迁移控制台](https://console.cloud.tencent.com/cvm/csm/online?rid=1)，重新使用迁移源新建并启动迁移任务。
 
 
+[](id:OnlineMigrationTool)
 ## 在线迁移工具相关问题
 
 
@@ -156,7 +167,7 @@
 迁移报错或失败的原因很多，通常有以下几种：
 - 目标云服务器安全组没有开放80、443端口。
 - 源端迁移时有数据盘，但是没有配置 user.json 里的 DataDisks 字段迁移源端数据盘，所有数据发往目标云服务器系统盘，导致磁盘容量不足。
-- 在 [内网迁移场景](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F) 下，没有执行第三阶段的迁移，使目标云服务器退出迁移模式。
+- 在 [内网迁移场景](https://intl.cloud.tencent.com/document/product/213/44340) 下，没有执行第三阶段的迁移，使目标云服务器退出迁移模式。
 
 如果您的问题仍未解决或者不属于以上几种，可以保留当时的迁移日志文件（默认是迁移工具目录下的 log 文件），并 [联系我们](https://intl.cloud.tencent.com/document/product/213/34837) 解决。
 

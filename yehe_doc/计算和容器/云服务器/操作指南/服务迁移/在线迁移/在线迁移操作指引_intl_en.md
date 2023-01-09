@@ -6,7 +6,7 @@ The online migration procedure is shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/0e290646e08b6af1b509ce324ea6e096.png)
 
 [](id:prerequisites)
-## Considerations
+## Preparations
 
 - Register on Tencent Cloud International.
 - If you want to migrate using a sub-account, ask the root account owner to assign the sub-account with the `QcloudCSMFullAccess` and `QcloudCVMFullAccess` permissions in [CAM console](https://console.cloud.tencent.com/cam/policy).
@@ -57,13 +57,14 @@ Before migration, you need to check the following configuration based on the act
 	  <ol style="margin: 0;">
 		<li>
 		Storage space: The cloud disks (including the system disk and data disk) of the destination CVM must offer sufficient storage space for saving data from the source server.</li>
-		<li>Security group: Port 443 and port 80 cannot be restricted in the security group.</li>
+		<li>Security group: Port 80, port 443 and port 3389 are opened.</li>
 		<li>
 		Bandwidth setting: It is recommended that you maximize bandwidths at the 2 ends to speed up the migration. During the process, the traffic consumed is approximately the amount of data migrated. Adjust the billing mode before the migration if necessary.</li>
 	  </ol>
 	</td>
   </tr>
 </table>
+
 
 
 <dx-alert infotype="explain" title="">
@@ -151,12 +152,12 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 <tbody>
 <tr>
 <td>Destination Region</td>
-<td>Yes</td>
+<td>Supported</td>
   <td>The Tencent Cloud region to which the source server is to be migrated. For information on regions, see<a href="https://intl.cloud.tencent.com/document/product/582/35772">Regions and AZs</a>.</td>
 </tr>
 <tr>
 <td>Task name</td>
-<td>Yes</td>
+<td>Supported</td>
 <td>The migration task name.</td>
 </tr>
 <tr>
@@ -166,7 +167,7 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 </tr>
 <tr>
 <td>Destination Type</td>
-<td>Yes</td>
+<td>Supported</td>
 <td>
   Set the destination type for the source server to be migrated to Tencent Cloud.
     <ul>
@@ -180,24 +181,9 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 </td>
 </tr>
 <tr>
-<td>Scheduled Execution Time</td>
-<td>No</td> 
-  <td>Set the time when the migration task will be automatically started after creation. It can be as early as <b>10</b> minutes after the current time.</td>
-</tr>
-</tbody></table>
- - **Advanced Options (optional)**:
-<table>
-<thead>
-<tr>
-<th width="18%">Configuration Item</th>
-<th width="10%">Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Network Mode</td>
-<td>No</td>
+<td>Supported</td>
 <td>
   Set the network type for transferring data in migration.
     <ul>
@@ -210,6 +196,31 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
   </ul>
 </td>
 </tr>	
+<tr>
+<td>Configure Incremental Sync</td>
+<td>No</td>
+<td>You can customize the incremental sync duration to continuously sync the data and flexibly control the migration time.
+	<ul>
+		<li><b>Not enable</b>: The migration tool automatically identifies and implements the incremental data migration. Generally, it is implemented for once.</li>
+		<li><b>Enable</b>: You can select the incremental sync duration. The migration tool will continuously sync the data to Tencent Cloud. You can also manually stop the incremental sync in the task list.</li>
+	</ul>
+</td>
+</tr>
+<td>Scheduled Execution Time</td>
+<td>No</td> 
+<td>Set the time when the migration task will be automatically started after creation. It can be as early as <b>10</b> minutes after the current time.</td>
+</tr>
+</tbody></table>
+ - **Advanced Options (optional)**:
+<table>
+<thead>
+<tr>
+<th width="18%">Configuration Item</th>
+<th width="10%">Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Transfer Restriction (KB/s)</td>
 <td>No</td>  
@@ -236,6 +247,7 @@ You can click <b>Start/Retry</b> on the right of the task to start it, click <b>
 
 
 ### Waiting for migration task to end
+
 
 After the migration task status becomes **Successful**, the migration is completed successfully as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)

@@ -1,3 +1,11 @@
+- [오프라인 마이그레이션 관련 문제](#OfflineMigration)
+- [온라인 마이그레이션의 일반적인 문제](#OnlineMigration)
+- [콘솔 온라인 마이그레이션 관련 문제](#ConsoleOnlineMigration)
+- [온라인 마이그레이션 툴 관련 문제](#OnlineMigrationTool)
+
+
+
+[](id:OfflineMigration)
 ## 오프라인 마이그레이션
 
 ### COS 업로드 및 마이그레이션에는 왜 이렇게 많은 시간이 소요되나요?
@@ -17,13 +25,14 @@
  - 타깃 디스크의 용량이 너무 작습니다.
  - 이미지 생성 중 오류가 발생했습니다.
  하나씩 진단하고 다시 시도하십시오.
-- **‘작업 시간 초과’**, **‘시스템 오류’**, **‘기타 원인’** 등의 메시지가 나타나거나 마이그레이션 작업을 다시 시도했는데도 여전히 실패하는 경우 [고객센터](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 문제를 해결할 수 있습니다.
+- **‘작업 시간 초과’**, **‘시스템 오류’**, **‘기타 원인’** 등의 메시지가 나타나거나 마이그레이션 작업을 다시 시도했는데도 여전히 실패하는 경우 [문의하기](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 문제를 해결할 수 있습니다.
 
 
+[](id:OnlineMigration)
 ## 온라인 마이그레이션의 일반적인 문제
 
 ### 온라인 마이그레이션은 어떤 운영 체제와 디스크 유형을 지원하나요?
-- Linux의 주요 운영 체제(예시: Centos 또는 Ubuntu 등)를 모두 지원합니다.
+- 주요 Linux 및 Windows의 운영 체제가 지원됩니다.
 - 디스크 유형 및 용량과는 무관합니다.
 
 
@@ -44,8 +53,8 @@
 
 
 ### 마이그레이션 속도와 요금은 어떻게 되나요?
-- 속도: 주로 대상 CVM의 대역폭에 종속되며, 테스트는 1코어 1G 메모리, 사용량 과금 대역폭은 12Mbps인 CVM을 사용하며 실제 마이그레이션 속도는 약 9Mbps입니다. 구체적인 계산 방법은 [마이그레이션 시간 예상 튜토리얼](https://intl.cloud.tencent.com/document/product/213/44342)을 참고하십시오.
-- 요금: 마이그레이션 툴 자체는 무료입니다. 마이그레이션 과정에서 대역폭 등 리소스로 인해 소량의 요금이 발생하게 되며, 요금은 트래픽 및 시간 과금 규정에 따라 산정됩니다. 자세한 내용은 공식 홈페이지에서 가격을 확인하십시오.
+- 속도: 주로 대상 CVM의 대역폭에 종속되며, 테스트는 1코어 1G 메모리, 사용량 과금 대역폭은 12Mbps인 CVM을 사용하며 실제 마이그레이션 속도는 약 9Mbps입니다. 구체적인 계산 방법은 [마이그레이션 소요 시간 추정 튜토리얼](https://intl.cloud.tencent.com/document/product/213/44342)을 참고하십시오.
+- 요금: 마이그레이션 툴 자체는 무료입니다. 마이그레이션 과정에서 대역폭 등 리소스로 인해 소량의 요금이 발생하게 되며, 요금은 트래픽 및 시간 과금 규정에 따라 산정됩니다.
 
 
 ### 여러 CVM의 동시 마이그레이션을 지원하나요?
@@ -53,13 +62,13 @@
 
 
 ### Virtio를 어떻게 확인하고 설치하나요?
-Virtio 확인 및 설치 작업에 대한 자세한 내용은 [Linux 시스템 Virtio 드라이버 확인](https://intl.cloud.tencent.com/document/product/213/9929)을 참고하십시오.
+Virtio 확인 및 설치 작업에 대한 자세한 내용은 [Linux 시스템 Virtio 드라이버 점검](https://intl.cloud.tencent.com/document/product/213/9929)을 참고하십시오.
 
 
 ### Rsync는 어떻게 설치하나요? [](id:installRsync)
 원본 서버의 운영 체제에 따라 해당 명령을 선택하여 Rsync를 설치합니다.
 - CentOS：`yum -y install rsync`
-- Ubuntu、Debian：`apt-get -y install rsync`
+- Ubuntu：`apt-get -y install rsync`
 - SUSE：`zypper install rsync`
  다른 Linux 릴리스 버전의 경우 해당 릴리스 버전의 공식 웹사이트에서 설치 문서를 참고하십시오.
 
@@ -68,6 +77,7 @@ Virtio 확인 및 설치 작업에 대한 자세한 내용은 [Linux 시스템 V
 `/etc/selinux/config` 파일을 편집하고 `SELINUX=disabled`를 설정합니다.
 
 
+[](id:ConsoleOnlineMigration)
 ## 콘솔 온라인 마이그레이션 관련 문제
 
 ### 툴은 어디서 다운받나요?
@@ -122,7 +132,7 @@ Virtio 확인 및 설치 작업에 대한 자세한 내용은 [Linux 시스템 V
 - 대상 Tencent Cloud 이미지로 마이그레이션한 후 전송 인스턴스 생성 시 오류가 보고됩니다. 예: ‘Failed create transit instance, maybe no available source in target region’.
 **해결 방법**: 마이그레이션 작업의 대상 리전에 사용 가능한 리소스가 없을 수 있으며, 이 경우 마이그레이션할 다른 리전을 선택하거나 지정된 CVM으로 마이그레이션을 사용하여 문제를 해결할 수 있습니다.
 
-여전히 문제를 해결할 수 없거나 위의 예시에 속하지 않는 경우, 현재 마이그레이션 로그 파일(기본적으로 마이그레이션 툴 디렉터리의 log 파일)을 보관하고 [고객센터](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 해결하십시오.
+여전히 문제를 해결할 수 없거나 위의 예시에 속하지 않는 경우, 현재 마이그레이션 로그 파일(기본적으로 마이그레이션 툴 디렉터리의 log 파일)을 보관하고 [문의하기](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 해결하십시오.
 
 
 
@@ -140,11 +150,12 @@ Virtio 확인 및 설치 작업에 대한 자세한 내용은 [Linux 시스템 V
 [온라인 마이그레이션 콘솔](https://console.cloud.tencent.com/cvm/csm/online?rid=1)에 로그인하여 마이그레이션 원본을 사용하여 마이그레이션 작업을 다시 생성하고 실행합니다.
 
 
+[](id:OnlineMigrationTool)
 ## 온라인 마이그레이션 툴 관련 문제
 
 
 ### 툴은 어디서 다운받나요?
-[여기](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)를 클릭하여 마이그레이션 툴 압축 패키지를 다운로드할 수 있습니다. [툴 마이그레이션 작업 사용 가이드](https://intl.cloud.tencent.com/document/product/213/35640)를 참고하여 작업하십시오.
+[여기](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)를 클릭하여 마이그레이션 툴 압축 패키지를 다운로드할 수 있습니다. [온라인 마이그레이션 툴 사용 가이드](https://intl.cloud.tencent.com/document/product/213/35640)를 참고하여 작업하십시오.
 
 
 ### 툴은 어떻게 사용하나요?
@@ -156,9 +167,9 @@ Virtio 확인 및 설치 작업에 대한 자세한 내용은 [Linux 시스템 V
 마이그레이션 시 오류가 발생하거나 실패하는 원인은 매우 다양하며, 일반적으로 다음의 몇 가지가 있습니다.
 - 대상 CVM 보안 그룹에 80, 443포트가 개방되지 않은 경우.
 - 원본에서 마이그레이션 시 데이터 디스크가 있으나, user.json의 DataDisks 필드에 원본 데이터 디스크 마이그레이션 설정을 하지 않아 모든 데이터를 대상 CVM 시스템 디스크로 발송할 때 디스크 용량 부족 현상이 발생하는 경우.
-- [내부 네트워크 마이그레이션 시나리오](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)에서 3단계 마이그레이션을 수행하지 않아 대상 CVM이 마이그레이션 모드를 종료한 경우.
+- [사설망 마이그레이션 모드](https://intl.cloud.tencent.com/document/product/213/44340)에서는 3단계 마이그레이션이 수행되지 않아 대상 CVM이 마이그레이션 모드를 종료합니다.
 
-여전히 문제를 해결할 수 없거나 위의 예시에 속하지 않는 경우, 현재 마이그레이션 로그 파일(기본적으로 마이그레이션 툴 디렉터리의 log 파일)을 보관하고 [고객센터](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 해결하십시오.
+여전히 문제를 해결할 수 없거나 위의 예시에 속하지 않는 경우, 현재 마이그레이션 로그 파일(기본적으로 마이그레이션 툴 디렉터리의 log 파일)을 보관하고 [문의하기](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 해결하십시오.
 
 
 

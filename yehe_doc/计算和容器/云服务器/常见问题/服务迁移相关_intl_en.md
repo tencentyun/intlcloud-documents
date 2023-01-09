@@ -1,3 +1,11 @@
+- [FAQs about Offline Migration](#OfflineMigration)
+- [General FAQs about Online Migration](#OnlineMigration)
+- [FAQs about Console-Based Online Migration](#ConsoleOnlineMigration)
+- [FAQs about Online Migration Tool](#OnlineMigrationTool)
+
+
+
+[](id:OfflineMigration)
 ## Offline Migration
 
 ### Why do COS upload and migration take so long?
@@ -6,7 +14,7 @@ The time it takes to upload images to COS is related to the image file size and 
 ### Why did the migration task fail?
  - Tencent Cloud's service migration supports images in QCOW2, VHD, VMDK and RAW formats. Make sure that your image is in one of these formats.
  - Make sure that your image file has been uploaded to COS, check COS permissions, and check that the temporary URL is valid and that the file is not corrupted.
- - Please make sure the CVM or cloud disk you want to migrate to does not expire; otherwise the migration may fail.
+ - Make sure that the target CVM or cloud disk are not expired.
 
 ### How do I troubleshoot the error occurred in a migration task? 
 - If **"failed to obtain the metadata of the image file"** is displayed, it is usually because the image file is damaged or the image file format is not supported. Please check and confirm the image is correctly created, exported and uploaded. You can also use an image file in QCOW2, VHD, VMDK, or RAW format and try again.
@@ -20,10 +28,11 @@ The time it takes to upload images to COS is related to the image file size and 
 - If messages such as **"task timeout"**, **"system error"**, and **"other reasons"** are displayed, or if you retried and still failed, [contact us](https://intl.cloud.tencent.com/document/product/213/34837).
 
 
+[](id:OnlineMigration)
 ## General FAQs about Online Migration
 
 ### Which types of operating systems and disks are supported by online migration?
-- Mainstream Linux operating systems such as CentOS and Ubuntu are supported.
+- Mainstream Linux and Windows operating systems are supported.
 - Migration is irrelevant to disk type and usage.
 
 
@@ -44,8 +53,8 @@ No. Once migration is completed, you can directly delete the tool on the source 
 
 
 ### What about migration speed and cost?
-- Speed: the speed is subject to the destination CVM instance bandwidth. In the test where a 1-core 1 GB memory pay-as-you-go instance with a bandwidth of 12 Mbps is used, the actual migration speed is about 9 Mbps. For the specific calculation method, see [Migration Time Estimation](https://intl.cloud.tencent.com/document/product/213/44342).
-- Cost: the migration tool is free of charge. You will be charged for bandwidth and other resources used during migration. For details, refer to the prices listed on the Tencent Cloud website.
+- Speed: The speed is subject to the destination CVM instance bandwidth. In the test where a 1CIG pay-as-you-go instance with a bandwidth of 12 Mbps is used, the actual migration speed is about 9 Mbps. For the specific calculation method, see [Migration Time Estimation](https://intl.cloud.tencent.com/document/product/213/44342).
+- Cost: The migration tool is free of charge. You will be charged for bandwidth and other resources used during migration. They will be billed by traffic and duration.
 
 
 ### Can I migrate multiple CVMs at the same time?
@@ -59,7 +68,7 @@ Check and install Virtio by referring to [Checking Virtio Drivers in Linux](http
 ### How do I install Rsync?[](id:installRsync)
 Select one of the following commands based on the operating system of the source server to install Rsync:
 - CentOS: `yum -y install rsync`
-- Ubuntu and Debian: `apt-get -y install rsync`
+- Ubuntu：`apt-get -y install rsync`
 - SUSE: `zypper install rsync`
  For the specific commands of other Linux distributions, see the installation document at the corresponding official website.
 
@@ -68,7 +77,8 @@ Select one of the following commands based on the operating system of the source
 Edit the `/etc/selinux/config` file and set `SELINUX=disabled`.
 
 
-## FAQs About Console-Based Online Migration
+[](id:ConsoleOnlineMigration)
+## FAQs about Console-Based Online Migration
 
 ### Where can I download the online migration tool?
 [Click here](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) to download the online migration tool package and use it as instructed in [Migration in Console](https://intl.cloud.tencent.com/document/product/213/44338).
@@ -119,7 +129,7 @@ Check the common errors below:
 **Solution**: modify the security group rules of the destination CVM instance to open ports 80 and 443.
 - During migration to the destination CVM instance, the disk capacity of the destination CVM instance is insufficient.
 **Solution**: select a CVM instance with a sufficient capacity, mount a disk with a sufficient capacity to it, and create a migration task again to start migration.
-- An error occurred when you create a relay instance during migration to the destination Tencent Cloud image; for example, a log error message "Failed create transit instance, maybe no available source in target region" is displayed.
+- An error occurred when you create a relay instance during migration to the destination Tencent Cloud image; for example, a log error message **Failed create transit instance, maybe no available source in target region** is displayed.
 **Solution**: there are no available resources in the destination region of the migration task. In this case, you can select another region or migrate the server to the specified CVM instance.
 
 If the problem persists or the reason is not identified, [contact us](https://intl.cloud.tencent.com/document/product/213/34837) and provide the migration log file (in the `log` directory of the migration tool by default).
@@ -127,9 +137,9 @@ If the problem persists or the reason is not identified, [contact us](https://in
 
 
 ### What can I get after migration?
-After a migration task is completed, the platform will generate a migration resource according to the destination type set in your migration task.
-- If you select **CVM image** as the destination type, a destination Tencent Cloud image will be generated for the migration source after migration. You can click the **CVM image ID** in the row of the migration task to view the image details on the [CVM image page](https://console.cloud.tencent.com/cvm/image/index), and use the image to quickly create CVM instances. After a CVM image is created successfully, a **CVM snapshot** associated with it will be created at the same time.
-- If you select **CVM instance** as the destination type, the migration source will be migrated to the destination CVM instance after migration.
+After a migration task is completed, a Tencent Cloud resource is generated according to your specified destination type.
+- Migrate to a **CVM image**: A destination Tencent Cloud image will be generated for the migration source after migration. You can click the **CVM image ID** in the row of the migration task to view the image details on the [CVM image page](https://console.cloud.tencent.com/cvm/image/index), and use the image to quickly create CVM instances. After a CVM image is created successfully, a **CVM snapshot** associated with it will be created at the same time.
+- Migrate to a **CVM instance**: The migration source will be migrated to the destination CVM instance after migration.
 
 
 ### How do I check the system after migrating a Linux server?
@@ -140,6 +150,7 @@ Check whether the target CVM instance starts up normally, whether data on the ta
 Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), and create and start a migration task for the migration source again.
 
 
+[](id:OnlineMigrationTool)
 ## FAQs about Online Migration Tool
 
 
@@ -148,7 +159,7 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 
 
 ### How do I use the online migration tool?
-You need to download or upload the migration tool to the source server and modify the configuration file based on the actual server conditions before running it. To perform batch migration, you can write a script to implement batch processing.
+You need to download the tool and upload it to the source server and modify the configuration file based on the actual server conditions before running it. To perform batch migration, you can write a script to implement batch processing.
 
 
 ### What should I do if an error or failure occurred during migration with the tool?
@@ -156,7 +167,7 @@ You need to download or upload the migration tool to the source server and modif
 Check the common errors below:
 - Ports 80 and 443 are not open in the security group of the destination CVM instance.
 - The `DataDisks` field in the `user.json` file is not configured for migrating the data disk of the source server. The system disk capacity of the destination CVM instance is insufficient to store all the data.
-- In [migration over the private network](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F), migration at the third stage is not performed, causing the destination CVM to exit the migration mode.
+- In the [private network migration mode](https://intl.cloud.tencent.com/document/product/213/44340), the migration stage 3 is not implemented, which causes the destination CVM to exit the migration mode.
 
 If the problem persists or the reason is not identified, [contact us](https://intl.cloud.tencent.com/document/product/213/34837) and provide the migration log file (in the `log` directory of the migration tool by default).
 
