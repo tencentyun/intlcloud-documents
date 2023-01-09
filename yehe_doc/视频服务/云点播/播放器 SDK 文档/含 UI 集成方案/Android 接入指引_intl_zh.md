@@ -333,7 +333,7 @@ mSuperPlayerView.resetPlayer();
 
 ## 功能使用[](id:moreFeature)
 
-本章将为您介绍几种常见的播放器功能使用方式，更为完整的功能使用方式可参见 [Demo 体验](#demo)，播放器组件支持的功能可参见 [能力清单](https://cloud.tencent.com/document/product/881/61375)。
+本章将为您介绍几种常见的播放器功能使用方式，更为完整的功能使用方式可参见 [Demo 体验](#demo)，播放器组件支持的功能可参见 [能力清单](https://www.tencentcloud.com/document/product/266/42965)。
 
 ### 1、全屏播放
 
