@@ -24,7 +24,7 @@ CVMコンソールで購入したインスタンスを見つかりません。
 
 ### 2. 製品コンソールが間違っているについてのソリューション
 購入したリソースはCVMではなく、[Tencent Cloud Lighthouse](https://console.cloud.tencent.com/lighthouse/instance)またはその他の製品である可能性があり、正しい製品コンソールが見つかりませんでした。
-- 方法1：[コンソールの概要](https://console.cloud.tencent.com/) > **最近の注文**で、過去3か月間に購入された前払い/後払いのリソースを確認します。購入時間が長い場合は、**[すべてを表示](https://console.cloud.tencent.com/expense/deal)**をクリックして確認できます。 
+- 方法1：[コンソールの概要](https://console.cloud.tencent.com/) > **最近の注文**で、過去3か月間に購入された前払い/後払いのリソースを確認します。購入時間が長い場合は、 **[すべてを表示](https://console.cloud.tencent.com/expense/deal)** をクリックして確認できます。 
 	<img src="https://qcloudimg.tencent-cloud.cn/raw/435aaa01910882ffd0edf1a1dd94a1e0.png" width="500px"/>
                                          
 	
