@@ -1,9 +1,5 @@
 Security Operation Center can detect the urgent vulnerabilities that are exposed to the Internet suddenly. The Urgent Vulnerability page displays the vulnerabilities recently exposed. You can use the urgent vulnerability detection feature provided by Vulnerability Management under Security Operation Center to detect your assets in real time to confirm whether any assets are affected.
 
-## Prerequisites
-
-To view and test the urgent vulnerabilities feature, you must have enabled [Security Operation Center Premium](https://buy.cloud.tencent.com/soc).
-
 ## Directions
 
 1. Log on to the [Security Operation Center Console](https://console.cloud.tencent.com/ssav2/vulner/urgent) and click **Vulnerability Management** in the left navigation pane.

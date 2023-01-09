@@ -5,7 +5,7 @@ To improve the user experience and avoid the influence from issues in legacy ver
 Log in to the [CLS console](https://console.cloud.tencent.com/cls/hosts) to try out more CLS features.
 
 
-New features supported on different LogListener versions are detailed as flows:
+**New features supported on different LogListener versions are detailed as flows:**
 
 | LogListener Version | Supported Feature | Feature Description | Documentation |
 | --------------- | ----------------------- | ------------------------------- | -------------------------------------- |

@@ -8,7 +8,7 @@ A machine group is a server object configured to collect logs by LogListener of 
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. Click **Machine Group** in the left sidebar.
-3. Select the region of your CLS, such as Guangzhou, and then click **Create Machine Group**.
+3. Select the region of your CLS, such as Shanghai, and then click **Create Machine Group**.
 4. Configure the following information in the pop-up:
 
  - Logset Name: enter `cls_test` for example.
