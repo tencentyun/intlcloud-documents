@@ -1,13 +1,13 @@
 ## 概述
 当您需要将日志服务 CLS 中的日志投递到 Hive 进行 OLAP 计算时，可以参考本文进行实践。您可以通过腾讯云数据湖计算 DLC（Data Lake Compute，DLC）提供的数据分析与计算服务，完成对日志的离线计算和分析。示意图如下所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/49cfebe438708b45edd6001625b55ab0.png)
+
 
 ## 操作步骤
 
 ### CLS 日志投递至 COS
 
 #### 创建投递任务
-1. 登录日志服务控制台，选择左侧导航栏中的 **投递任务管理** > **[投递至COS](https://console.cloud.tencent.com/cls/shipper/cos)**。
+1. 登录日志服务控制台，选择左侧导航栏中的 **投递任务管理 > [投递至COS](https://console.cloud.tencent.com/cls/shipper/cos)**。
 2. 在“投递至COS” 页面中，单击**添加投递配置**，在弹出的“投递至COS”窗口中，配置并创建投递任务。
 如下配置项需要注意：
 <table>
@@ -40,7 +40,7 @@
 #### 查看投递任务结果
 
 通常在启动投递任务15分钟后，可以在对象存储控制台查看到日志数据，如果在 log_data 日志集设置了按天分区，则目录结构类似下图，分区目录下包含具体的日志文件。
-![](https://qcloudimg.tencent-cloud.cn/raw/8422e00e0d7543384686805199b205db.png)
+
 
 
 
