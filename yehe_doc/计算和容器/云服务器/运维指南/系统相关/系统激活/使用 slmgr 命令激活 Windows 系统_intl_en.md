@@ -66,7 +66,7 @@ slmgr.vbs /ato
 slmgr.vbs /rilc 
 ```
 2. After the command is executed, run the `(Get-ItemProperty...` command again for verification, and the returned value is still 1960.
-3. Run the following command to activate the operating system.
+3. Run the following command to activate the operating system and restarting CVM.
 ```
 slmgr.vbs /ato
 ```
@@ -75,7 +75,7 @@ slmgr.vbs /ato
 ::: Method 3
 1. Uninstall any MSI program.
 2. Run the `(Get-ItemProperty...` command again for verification, and the returned value may change. However, after the system is restarted, the memory limit is still 2 GB.
-2. Run the following command to activate the operating system.
+2. Run the following command to activate the operating system and restarting CVM.
 ```
 slmgr.vbs /ato
 ``` 
