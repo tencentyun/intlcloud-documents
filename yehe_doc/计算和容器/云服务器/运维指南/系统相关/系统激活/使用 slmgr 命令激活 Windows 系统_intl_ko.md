@@ -11,7 +11,7 @@
 
 
 ## 작업 단계
-1. Windows CVM에 로그인합니다. 자세한 내용은 [표준 방식으로 Windows 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/41018)을 참고하십시오.
+1. Windows CVM에 로그인합니다. 자세한 내용은 [표준 로그인 방식으로 Windows 인스턴스에 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/41018)을 참고하십시오.
 2. 운영 체제 데스크톱의 왼쪽 하단 모서리를 우클릭하고 <img src="https://qcloudimg.tencent-cloud.cn/raw/10c0728e4d194732be4eb6c1a95e0a8c.png" style="margin: -5px 0px;"/> 팝업 메뉴에서 **Windows PowerShell(관리자)**을 선택합니다.
 3. powershell 창에서 다음 명령을 차례로 실행하여 운영 체제를 활성화합니다.
 ```
@@ -31,10 +31,12 @@ slmgr /ato
    - Windows Server 2012 R2 데이터센터 버전: `W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9`
    - Windows Server 2016: `CB7KF-BWN84-R7R2Y-793K2-8XDDG`
    - Windows Server 2019: `WMDGN-G9PQG-XVVXX-R3X43-63DFG`
+   - Windows Server 2022: `WX4NM-KYWYW-QJJR4-XV3QB-6VM33`
+ProductKey에 대한 자세한 내용은 [키 관리 서비스(KMS) 클라이언트 활성화 및 제품 키](https://docs.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys)를 참고하십시오.
 4. 설정을 적용하려면 CVM을 재시작합니다. 자세한 내용은 [인스턴스 재시작](https://intl.cloud.tencent.com/document/product/213/4928)을 참고하십시오.
 
 
-## 관련 문제
+## FAQ
 Windows 운영 체제가 활성화되지 않은 일부 시나리오에서 고급형 시스템의 시스템 메모리는 2GB로 제한되고 나머지 메모리는 ‘하드웨어용으로 보관된 메모리’ 형태로 제한됩니다. 그 이유는 `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ProductOptions` 레지스트리가 손상되었기 때문입니다. 다음 명령을 실행하여 시스템 재활성화 여부를 결정할 수 있습니다.
 ```
 (Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\ProductOptions\).ProductPolicy.count
@@ -76,7 +78,7 @@ slmgr.vbs /ato
 2. 다음 명령을 실행하여 시스템을 활성화합니다.
 ```
 slmgr.vbs /ato
-```
+``` 
 :::
 </dx-tabs>
 

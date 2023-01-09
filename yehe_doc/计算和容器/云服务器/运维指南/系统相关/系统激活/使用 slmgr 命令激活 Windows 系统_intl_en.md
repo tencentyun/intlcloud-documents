@@ -11,8 +11,8 @@ This document is intended only for Windows Server public images provided by Tenc
 
 
 ## Directions
-1. Log in to the Windows instance [in the standard login method](https://intl.cloud.tencent.com/document/product/213/41018).
-2. Right-click <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px"> in the bottom-left corner of the desktop and select **Windows PowerShell (Administrator)**.
+1. Log in to the Windows CVM instance. For more information, see [Logging in Using Standard Method (Recommended)](https://intl.cloud.tencent.com/document/product/213/41018).
+2. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select **Windows PowerShell (Admin)** from the pop-up menu.
 3. In the PowerShell window, run the following commands in sequence to activate the operating system.
 ```
 slmgr /upk
@@ -31,7 +31,9 @@ slmgr /ato
    - Windows Server 2012 R2 Datacenter: `W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9`
    - Windows Server 2016: `CB7KF-BWN84-R7R2Y-793K2-8XDDG`
    - Windows Server 2019: `WMDGN-G9PQG-XVVXX-R3X43-63DFG`
-4. Restart the CVM instance as instructed in [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928) for the configuration to take effect.
+   - Windows Server 2022：`WX4NM-KYWYW-QJJR4-XV3QB-6VM33`
+For more information, see [Key Management Services (KMS) client activation and product keys](https://docs.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys).
+4. Restart the CVM instance to make the settings take effect. For more information, see [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928).
 
 
 ## FAQs
@@ -51,7 +53,7 @@ slmgr.vbs /ipk <ProductKey>
 Replace `<ProductKey>` according to the actual operating system version as detailed in [ProductKey](#ProductKey).
 </dx-alert>
 2. After the command is executed, run the `(Get-ItemProperty...` command again for verification. The returned value is 56184.
-3. Restart the CVM instance as instructed in [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928) for the configuration to take effect.
+3. Restart the CVM instance to make the settings take effect. For more information, see [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928).
 4. Run the following command to activate the operating system.
 ```
 slmgr.vbs /ato
@@ -59,7 +61,7 @@ slmgr.vbs /ato
 
 :::
 ::: Method 2
-1. Run the following command to repair.
+1. Run the following command to fix it.
 ```
 slmgr.vbs /rilc 
 ```
@@ -76,7 +78,7 @@ slmgr.vbs /ato
 2. Run the following command to activate the operating system.
 ```
 slmgr.vbs /ato
-```
+``` 
 :::
 </dx-tabs>
 
