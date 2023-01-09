@@ -9,7 +9,7 @@
 ::: Linux 시스템 유형 이미지 제한
 <table>
 <tr><th style="width:17%">이미지 속성</th><th>조건</th></tr>
-<tr><td>운영 체제</td><td><ul><li>CentOS, Ubuntu, Debian, CoreOS, openSUSE, SUSE 버전을 기반으로 한 미러 이미지</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
+<tr><td>운영 체제</td><td><ul><li>CentOS、CentOS Stream、Ubuntu、Debian、OpenSUSE、CoreOS、FreeBSD、AlmaLinux、Rocky Linux、Fedora、Kylin、UnionTech、TencentOS 버전을 기반으로 한 미러 이미지</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
 <tr><td>미러 이미지 형식</td><td><ul><li>RAW, VHD, QCOW2, VMDK 미러 이미지 형식을 지원합니다.</li><li><code>qemu-img info imageName | grep 'file format'</code>을 사용하여 미러 이미지 형식을 조회합니다.</li></ul></td></tr>
 <tr><td>파일 시스템 유형</td><td>GPT 파티션은 지원되지 않습니다.</td></tr>
 <tr><td>미러 이미지 크기</td><td><ul><li>미러 이미지 실제 크기가 50G 이하인 경우 <code>qemu-img info imageName &#124; grep 'disk size'</code>를 사용해 실제 크기를 조회합니다.</li><li>미러 이미지 vsize가 500G 이하인 경우 <code>qemu-img info imageName &#124; grep 'virtual size'</code>를 사용해 미러 이미지 vsize를 조회합니다.</li></ul><b>주의 사항: </b>미러 이미지 가져오기 시 QCOW2 형식으로 전환한 후 미러 이미지 정보를 기준으로 심사합니다.</td></tr>
@@ -23,7 +23,7 @@
 ::: Windows 시스템 유형 미러 이미지 제한
 <table>
 <tr><th style="width:16%">이미지 속성</th><th>조건</th></tr>
-<tr><td>운영 체제</td><td><ul><li>Windows Server 2008 관련 버전, Windows Server 2012 관련 버전, Windows Server 2016 관련 버전</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
+<tr><td>운영 체제</td><td><ul><li>Windows Server 2008 관련 버전, Windows Server 2012 관련 버전, Windows Server 2016 관련 버전, Windows Server 2019 관련 버전, Windows Server 2022 관련 버전</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
 <tr><td>미러 이미지 형식</td><td><ul><li>RAW, VHD, QCOW2, VMDK 미러 이미지 형식을 지원합니다.</li><li><code>qemu-img info imageName | grep 'file format'</code>을 사용하여 미러 이미지 형식을 조회합니다.</li></ul></td></tr>
 <tr><td>파일 시스템 유형</td><td><ul><li>MBR 파티션을 사용한 NTFS 파일 시스템만 지원합니다.</li><li>GPT 파티션은 지원되지 않습니다.</li><li>논리 볼륨 관리(LVM)는 지원되지 않습니다.</li></ul></td></tr>
 <tr><td>미러 이미지 크기</td><td><ul><li>미러 이미지 실제 크기가 50G 이하인 경우 <code>qemu-img info imageName &#124; grep 'disk size'</code>를 사용해 실제 크기를 조회합니다.</li><li>미러 이미지 vsize가 500G 이하인 경우 <code>qemu-img info imageName &#124; grep 'virtual size'</code>를 사용해 미러 이미지 vsize를 조회합니다.</li></ul><b>주의 사항:</b> 미러 이미지 가져오기 시 qcow2 형식 전환 후 미러 이미지 정보를 기준으로 심사합니다.</td></tr>
