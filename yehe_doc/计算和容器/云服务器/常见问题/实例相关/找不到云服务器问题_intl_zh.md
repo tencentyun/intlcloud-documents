@@ -18,8 +18,6 @@
 在 [云服务器 CVM 实例页](https://console.cloud.tencent.com/cvm/instance) 上方切换地域。如其它地域有实例，则可直接切换至目标地域查看。 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9f3877ec56c7a19adf8c3e5594d5038f.png" width="500px"/>
 
-
-
 [](id:2)
 
 ### 2. 选错产品控制台的解决方法
