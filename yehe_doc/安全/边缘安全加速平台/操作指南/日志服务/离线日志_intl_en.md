@@ -6,14 +6,12 @@ Access logs are collected at an hourly granularity, which can be downloaded with
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Log Service** > **Offline Logs** on the left sidebar.
 2. On the page that displays, select a site or the log file of a subdomain name. You can also filter logs by time.
 ![](https://qcloudimg.tencent-cloud.cn/raw/281cfb26b8b14588d501770c5a09ff3a.png)
-> !
-> - The access logs are collected every hour by default. If the selected domain name is not requested during one hour, no logs will be generated for this hour.
-> - The access logs are compressed by gzip and marked with a .gz extension. Due to defects of the MacOS directory system, the .gz file may failed to be decompressed on MacOS by double-clicking it. In this case, you can run the following Terminal commands:
-> ```js.
-> gunzip {your_file_name}.log.gz 
-> ```
-> - EdgeOne nodes are distributed over the globe. To synchronize the time across time zones, logs are stored and queried in UTC+00:00 by default.
->- It normally takes around 30 minutes to generate log data as it is collected from all EdgeOne nodes. The log data will be complete within 24 hours after being generated.
+
+<dx-alert infotype="notice">
+- The access logs are packed every hour by default. If the selected domain name is not requested during one hour, no log pack will be generated for this hour.
+- Each log pack is compressed to a GZ file.
+ - Offline logs are stored and queried in UTC+00:00 by default.
+- Offline logs are collected from each EdgeOne node, so the delay may vary. Generally, querying and downloading of log packs can be delayed by about 30 minutes. Log packs will be added continuously and will stabilize after 2-3 hours.</dx-alert>
 
 
 ## Field Description
