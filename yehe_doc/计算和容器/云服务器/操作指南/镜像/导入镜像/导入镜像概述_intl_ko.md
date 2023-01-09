@@ -128,10 +128,10 @@ COS 무효 링크에 대한 오류 보고를 받은 후, 서술된 원인에 따
 |오류 코드|오류 원인|권장 처리 방식|
 |-----|-----|-----|
 |InvalidUrl|COS 무효 링크|COS 링크와 가져온 미러 이미지 링크가 같은지 검사하십시오.|
-|InvalidFormatSize|형식 또는 크기가 조건에 부적합|미러 이미지가 [가져오기 준비](#가져오기 준비) 중 ‘미러 이미지 형식’과 ‘미러 이미지 크기’의 제한을 만족시켜야 합니다.|
-|VirtioNotInstall|virtio 드라이버 미설치|미러 이미지에 virtio 드라이버를 설치해야 합니다. [가져오기 준비](#가져오기 준비)의 ‘드라이버’ 부분을 참고하십시오.|
+|InvalidFormatSize|형식 또는 크기가 조건에 부적합|미러 이미지가 [가져오기 준비](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E) 중 ‘미러 이미지 형식’과 ‘미러 이미지 크기’의 제한을 만족시켜야 합니다.|
+|VirtioNotInstall|virtio 드라이버 미설치|미러 이미지에 virtio 드라이버를 설치해야 합니다. [가져오기 준비](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E)의 ‘드라이버’ 부분을 참고하십시오.|
 |PartitionNotPresent|파티션 정보 손상|잘못된 생성 방식으로 나타난 미러 이미지 손상됩니다.|
-|CloudInitNotInstalled|cloud-init 미설치|Linux 미러 이미지는 cloud-init 설치가 필요합니다. [가져오기 준비](#가져오기 준비) 중의 ‘드라이버’ 부분을 참고하십시오.|
+|CloudInitNotInstalled|cloud-init 미설치|Linux 미러 이미지는 cloud-init 설치가 필요합니다. [가져오기 준비](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E) 중의 ‘드라이버’ 부분을 참고하십시오.|
 |RootPartitionNotFound|루트 파티션 미점검|잘못된 생성 방식으로 나타난 미러 이미지 손상됩니다.|
 |InternalError|기타 오류|고객서비스에 연락해 주십시오.|
 
