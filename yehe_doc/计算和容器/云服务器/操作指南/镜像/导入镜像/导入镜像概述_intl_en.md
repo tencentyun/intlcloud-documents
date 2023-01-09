@@ -128,10 +128,10 @@ The InternalError error indicates that the cause of error has not yet been recor
 | Error Code | Reason | Recommended Solution |
 |-----|-----|-----|
 | InvalidUrl | Invalid COS link. | Check whether the COS URL is the same as the imported image URL. |
-| InvalidFormatSize | Format or size does not meet requirements. | Images must meet the `image format` and `image size` requirements in [Preparations](#PreparationsforImport). |
-| VirtioNotInstall | Virtio driver not installed. | Install the Virtio driver in the image by referring to the `Driver` section in [Preparations](#PreparationsforImport). |
+| InvalidFormatSize | Format or size does not meet requirements. | Images must meet the `image format` and `image size` requirements in [Preparations](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E). |
+| VirtioNotInstall | Virtio driver not installed. | Install the Virtio driver in the image by referring to the `Driver` section in [Preparations](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E). |
 | PartitionNotPresent | Partition information not found. | Image is corrupted possibly due to incorrect image creation method. |
-| CloudInitNotInstalled | Cloud-init software not installed. | Install cloud-init in the Linux image by referring to the `Driver` section in [Preparations](#PreparationsforImport). |
+| CloudInitNotInstalled | Cloud-init software not installed. | Install cloud-init in the Linux image by referring to the `Driver` section in [Preparations](https://www.tencentcloud.com/document/product/213/4945#.E5.AF.BC.E5.85.A5.E5.87.86.E5.A4.87.3Ca-id.3D.22importpreparation.22.3E.3C.2Fa.3E). |
 | RootPartitionNotFound | Root partition not found. | Image is corrupted possibly due to incorrect image creation method. |
 | InternalError | Other errors. | Contact our customer service. |
 
