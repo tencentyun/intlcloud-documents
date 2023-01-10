@@ -1,5 +1,5 @@
 This document describes how to use a CVD instance as an end user.
-![](https://main.qcloudimg.com/raw/3cc80895b94d8217f8dbe31f240fa4fd.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Y6QX385_PRELIM__%E4%BA%91%E6%A1%8C%E9%9D%A2%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-3.png)
 
 ## Process description
 1. As an end user, you will receive an email or SMS message for account activation. Activate your account as instructed in [Activating CVD Account](https://www.tencentcloud.com/document/product/1167/51919).
