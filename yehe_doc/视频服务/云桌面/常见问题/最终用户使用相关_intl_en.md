@@ -16,7 +16,7 @@ The CVD access process for end users is as follows:
 2. You need to visit the CVD portal and log in to obtain CVD resources as instructed in [Logging in to the CVD Portal](https://www.tencentcloud.com/document/product/1167/51920).
 3. After obtaining the desktop list, you can select an appropriate access method based on your needs as instructed in [Opening CVD](https://www.tencentcloud.com/document/product/1167/51921).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/25cbe2a7a664c6dbcc77cabd7103d547.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Y6QX385_PRELIM__%E4%BA%91%E6%A1%8C%E9%9D%A2%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-3.png)
 
 ## CVD Access
 ### What is client access?
