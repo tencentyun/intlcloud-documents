@@ -121,11 +121,11 @@ Tencent Cloud mainly provides the following network services:
 <td >Provides IP-level capabilities of gateways (such as NAT gateways and VPN Connections) to monitor and control bandwidth between private IPs and gateways.</td>
 </tr>
 <tr >
-<td ><a href="https://intl.cloud.tencent.com/document/product/215/36390">Overview</a></td>
+<td ><a href="https://www.tencentcloud.com/document/product/215/36389">Traffic Mirroring</a></td>
 <td >Filters the traffic in the specified collection scope by different criteria and replicates and forwards it to CVM in a VPC, which is suitable for security audit, troubleshooting, and business analysis use cases.</td>
 </tr>
 <tr >
-<td ><a href="https://intl.cloud.tencent.com/document/product/215/46788">Overview</a></td>
+<td ><a href="https://www.tencentcloud.com/document/product/215/46787">Snapshot Policy</a></td>
 <td >Sets backup policies for associated objects (such as security groups) and performs data backups, which can be used for disaster recovery and other use cases.</td>
 </tr>
 </table>
