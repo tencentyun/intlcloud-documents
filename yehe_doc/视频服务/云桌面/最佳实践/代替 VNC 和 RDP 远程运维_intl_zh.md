@@ -2,7 +2,7 @@
 云桌面可提供随需快捷交付的虚拟远程桌面服务，通过加密的自适应传输协议，策略安全管控，构建云上业务安全访问入口，可代替 VNC、RDP 进行便捷运维及安全研发，提升业务访问的安全性和连续性。
 
 ### 云桌面便捷运维、安全研发链路图
-![](https://qcloudimg.tencent-cloud.cn/raw/0a5f13a927ff7ef648f1c2380635aaf2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/e7Kd435_PRELIM__%E4%BA%91%E6%A1%8C%E9%9D%A2%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-6.png)
 
 ### 云桌面与 VNC、RDP 和 WebRDP 功能对比
 云桌面可实现批量构建、安全管控、便捷访问等，对比现有的 VNC、RDP 和 WebRDP 功能如下。

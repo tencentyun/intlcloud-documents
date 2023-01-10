@@ -14,7 +14,7 @@ The specifications of a CVD instance include compute resources (vCPU and memory)
 >?More CVD compute specifications will be available in the future.
 
 ### Storage resources
-The storage of an instance is divided into system disk and data disk, each of which are sustained by a cloud disk. You can choose [SSD cloud disk](https://buy.cloud.tencent.com/cvd) or [premium cloud disk](https://buy.cloud.tencent.com/cvd) and customize the disk size as needed.
+The storage of an instance is divided into system disk and data disk, each of which are sustained by a cloud disk. You can choose [SSD cloud disk](https://buy.intl.cloud.tencent.com/cvd?lang=en) or [premium cloud disk](https://buy.intl.cloud.tencent.com/cvd?lang=en) and customize the disk size as needed.
 <table>
    <tr>
       <th width="100px" style="text-align:center">Category</td>

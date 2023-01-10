@@ -2,7 +2,7 @@
 CVD offers quick, on-demand virtual desktop solutions with security guaranteed by encrypted adaptive transfer protocols and policies. You can use CVD for convenient Ops and secure development in place of VNC and RDP and boost the security and continuity of your business access.
 
 ### Convenient Ops and secure R&D architecture of CVD
-![](https://qcloudimg.tencent-cloud.cn/raw/0a5f13a927ff7ef648f1c2380635aaf2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/e7Kd435_PRELIM__%E4%BA%91%E6%A1%8C%E9%9D%A2%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-6.png)
 
 ### Feature Comparison of CVD, VNC, RDP, and WebRDP
 CVD can implement various features such as batch creation, security control, and convenient access, as compared with VNC, RDP, and WebRDP:

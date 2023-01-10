@@ -1,6 +1,6 @@
 本文主要介绍如何从零开始，以最简单的方式创建云桌面实例并访问。
 ## 流程概览
-![](https://main.qcloudimg.com/raw/192c358da8f2adb678b18729383a2af7.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/TYN4253_PRELIM__%E4%BA%91%E6%A1%8C%E9%9D%A2%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-2.png)
 根据工作职责和使用需求的不同，云桌面的用户可以进行以下分类：
 
 | 人员类型    | 说明        |
