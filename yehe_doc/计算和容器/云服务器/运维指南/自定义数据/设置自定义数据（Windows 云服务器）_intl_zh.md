@@ -60,13 +60,12 @@ PHBvd2Vyc2hlbGw+CiJIZWxsbyBUZW5jZW50IENsb3VkLiIgfCBPdXQtRmlsZSAgQzpcdGVuY2VudGNs
 
 <dx-tabs>
 ::: 通过官网或控制台传递[](id:Consoletrans)
-
-1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买实例，并在 “2.设置主机” 中单击**高级设置**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/283fb3e0e1400d4ba5725c8b6a1ea279.png)
+1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买实例，并在 “2.设置网络和主机” 中单击**其他设置**中的**高级设置**。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/TKin326_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221208114658.png)
 2. 在 “高级设置” 中，根据实际需求，在 “自定义数据” 的文本框中输入准备的文本内容。
  - PowerShell 脚本：直接输入 [PowerShell 脚本](#PowerShellScript)。
- - Base64 编码脚本：需先勾选“输入为base64格式文本”，再输入 [Base64 编码脚本](#Base64Script)。如下图所示：
- ![](https://main.qcloudimg.com/raw/0b6b594f174568ca7d3312821c0571ed.png)
+ - Base64 编码脚本：需先勾选“以上输入已采用 Base64 编码”，再输入 [Base64 编码脚本](#Base64Script)。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/QkmS577_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221208114852.png)
 3. 按照界面信息逐步操作，完成创建云服务器。
 :::
 ::: 通过 API 传递[](id:APItrans)

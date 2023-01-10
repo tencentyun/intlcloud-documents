@@ -4,12 +4,12 @@ When creating a CVM, you can configure an instance by specifying **custom data**
 
 This document describes an example in which a PowerShell script is passed during the first launch of a Windows CVM.
 
-## Supports and Limits
+## Notes
 
 - Windows operating systems that support custom data include:
- - Windows Server 2019 IDC 64-bit Chinese/English version
- - Windows Server 2016 IDC 64-bit Chinese/English version
- - Windows Server 2012 R2 IDC 64-bit Chinese/English version
+ - Windows Server 2019 IDC 64-bit English version
+ - Windows Server 2016 IDC 64-bit English version
+ - Windows Server 2012 R2 IDC 64-bit English version
 - A command can be executed by passing text only when a CVM is launched for the first time.
 - Before Base64 encoding, the size of the custom data cannot exceed 16 KB.
 - Custom data is Base64 encoded and then passed. If you directly copy a non-Base64 script file, do not select “The entry is Base64-encoded text”.
@@ -60,13 +60,12 @@ We provide multiple methods to launch an instance, and here we introduce two of 
 
 <dx-tabs>
 ::: Console[](id:Consoletrans)
-
-1. Refer to [Creating an Instance](https://intl.cloud.tencent.com/document/product/213/4855) to purchase an instance, and click **Advanced settings** in **2. Complete configuration**.
-![](https://qcloudimg.tencent-cloud.cn/raw/283fb3e0e1400d4ba5725c8b6a1ea279.png)
+1. Refer to [Creating an Instance](https://intl.cloud.tencent.com/document/product/213/4855) to purchase an instance, and click **Advanced settings** under **Other settings** in **2. Configure network and host**.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/TKin326_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221208114658.png)
 2. In **Advanced settings**, enter the text content you have prepared in the **Custom data** text box.
  - PowerShell script: Directly enter [PowerShell script](#PowerShellScript).
- - Base64 encoded script: First select “The entry is Base64-encoded text”, and enter [Base64 encoded text](#Base64Script).
- ![](https://main.qcloudimg.com/raw/0b6b594f174568ca7d3312821c0571ed.png)
+ - Base64 encoded script: First select “The above input is encoded with base64”, and enter [Base64 encoded text](#Base64Script).
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/QkmS577_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221208114852.png)
 3. Follow the prompts on the interface to complete CVM creation.
 :::
 ::: API[](id:APItrans)
