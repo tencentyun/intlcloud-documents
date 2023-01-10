@@ -121,11 +121,11 @@
 <td >提供网关（如 NAT 网关、VPN 连接等）上 IP 粒度的 “监” 与 “控” 能力，可以对内网 IP 与网关之间的带宽进行监控和限制。</td>
 </tr>
 <tr >
-<td ><a href="https://intl.cloud.tencent.com/document/product/215/36390">流量镜像</a></td>
+<td ><a href="https://www.tencentcloud.com/document/product/215/36389">流量镜像</a></td>
 <td >将指定采集范围的流量按不同过滤条件过滤，复制转发至私有网络 VPC 下的 CVM 上，适用于安全审计、故障排障、业务分析等场景。</td>
 </tr>
 <tr >
-<td ><a href="https://intl.cloud.tencent.com/document/product/215/46788">快照策略</a></td>
+<td ><a href="https://www.tencentcloud.com/document/product/215/46787">快照策略</a></td>
 <td >对关联对象（如安全组）设置备份策略并进行数据备份，备份后的数据可用于故障恢复等场景。</td>
 </tr>
 </table>
