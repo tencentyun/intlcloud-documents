@@ -18,7 +18,7 @@ If you are dissatisfied after purchasing a monthly subscribed CVD instance, you 
 - You can return one monthly subscribed CVD instance unconditionally within five (included) days after purchase.
 - For an order that meets the five-day unconditional return policy, the refunded amount is the total amount paid at the time of purchase, including the cash amount, earnings amount, and free credit amount.
 - Tencent Cloud has the right to reject any suspected abnormal or malicious application for return.
-- For detailed refund rules, see [Five-Day Unconditional Refund](https://cloud.tencent.com/document/product/555/7440#.E4.BA.94.E5.A4.A9.E5.86.85.E6.97.A0.E7.90.86.E7.94.B1.E5.85.A8.E9.A2.9D.E9.80.80.E6.AC.BE).
+
 
 ## Standard Return
 For CVD orders that are not eligible for the five-day unconditional return policy, the refund policy is as follows:
