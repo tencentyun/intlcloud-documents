@@ -24,7 +24,7 @@ Usaremos as informações das seguintes formas e de acordo com as seguintes base
 
 ## **5. Como armazenamos informações pessoais**
 
-Como especificado na Política de privacidade. Também armazenaremos dados pessoais processados em conexão com o Recurso em Singapura e na República Popular da China.
+Como especificado na Política de privacidade. Também armazenaremos dados pessoais processados em conexão com o Recurso em Singapura.
 
 
 ## **6. Como compartilhamos informações pessoais**
