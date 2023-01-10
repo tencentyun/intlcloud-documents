@@ -25,7 +25,7 @@ We will use the information in the following ways and in accordance with the fol
 5.How We Store Personal Information
 =================================
 
-As specified in the Privacy Policy. We will also store personal data processed in connection with the Feature in Singapore and the People’s Republic of China.
+As specified in the Privacy Policy. We will also store personal data processed in connection with the Feature in Singapore.
 
 6.How We Share Personal Information
 =================================
