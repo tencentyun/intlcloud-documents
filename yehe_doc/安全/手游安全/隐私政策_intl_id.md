@@ -20,7 +20,7 @@ Kami akan menggunakan informasi dengan cara berikut dan sesuai dengan dasar huku
 
 ## 5.**Cara Kami Menyimpan Informasi Pribadi**
 
-Sebagaimana ditentukan dalam Kebijakan Privasi. Kami juga akan menyimpan data pribadi yang diproses sehubungan dengan Fitur di Singapura dan Republik Rakyat Tiongkok.
+Sebagaimana ditentukan dalam Kebijakan Privasi. Kami juga akan menyimpan data pribadi yang diproses sehubungan dengan Fitur di Singapura.
 
 ## 6.**Cara Kami Membagikan Informasi Pribadi**
 
