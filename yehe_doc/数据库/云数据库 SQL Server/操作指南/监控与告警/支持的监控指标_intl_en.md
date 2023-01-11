@@ -2,7 +2,7 @@ This document describes the common monitoring metrics supported by TencentDB for
 
 ## Monitoring metrics
 The monitoring of TencentDB for SQL Server supports 37 common metrics of SQL Server. You can collect statistics of other metrics by configuring the performance counters of SQL Server Management Studio (SSMS).
->?To view monitoring metrics at the system level, [contact us](https://cloud.tencent.com/online-service?from=connect-us). 
+>?To view monitoring metrics at the system level, [contact us](https://www.tencentcloud.com/zh/contact-us). 
 
 <table>
 <thead>
