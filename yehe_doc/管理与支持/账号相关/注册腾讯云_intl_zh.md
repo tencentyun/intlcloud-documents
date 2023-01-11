@@ -6,7 +6,7 @@
 
 2. 根据页面提示填写账号详细信息，并认真阅读服务协议和隐私协议，如同意并勾选，可进行下一步。
 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/34ed7d5d22bbd934b5d873e4a1a6fb81.png)
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/sMhD870_signup-step2.png)
 
    >? 当前一个手机号最多注册5个腾讯云账号，如达到限制，请修改原账号手机后重试，详情流程请参考 [安全手机验证与修改](https://intl.cloud.tencent.com/document/product/378/48918)。
 
