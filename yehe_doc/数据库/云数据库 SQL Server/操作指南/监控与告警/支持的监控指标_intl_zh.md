@@ -2,7 +2,7 @@
 
 ## 监控指标
 云数据库 SQL Server 监控支持 SQL Server 常见的37种参数，您可以通过配置 SSMS 的计数器，额外统计其他参数。
->?系统维度监控指标，如需查看，可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询。 
+>?系统维度监控指标，如需查看，可通过 [在线支持](https://cloud.tencent.com/online-service?from=connect-us) 咨询。 
 
 <table>
 <thead>
@@ -11,12 +11,20 @@
 <td>CPU</td>
 <td>CPU 利用率</td><td>Total  Processor Time</td><td>%</td><td>实际 CPU 消耗的百分比</td></tr>
 <tr>
-<td rowspan=3>内存</td>
+<td rowspan=5>内存</td>
 <td>内存使用</td><td>Server  memory</td><td>MB</td><td>总内存的占用大小</td></tr>
 <tr>
 <td>最大内存</td><td>Max memory</td><td>KB</td><td>最大内存</td></tr>
 <tr>
 <td>内存使用率</td><td>Memory Usage</td><td>%</td><td>内存的使用率</td></tr>
+<tr>
+<td>内部系统锁定内存</td><td>Total Allocated Memory</td><td>KBytes</td><td>内部系统的锁定内存<dx-alert infotype="notice" title="">
+仅2014及以上版本支持查看此项监控指标。
+</dx-alert></td></tr>
+<tr>
+<td>内部系统消耗内存</td><td>Total Used Memory</td><td>KBytes</td><td>内部系统的消耗内存<dx-alert infotype="notice" title="">
+仅2014及以上版本支持查看此项监控指标。
+</dx-alert></td></tr>
 <tr>
 <td rowspan=12>存储</td>
 <td>磁盘 IOPS</td><td>IOPS</td><td>次/秒</td><td>磁盘读写次数</td></tr>
@@ -91,3 +99,4 @@
 <td>其他</td>
 <td>用户错误数</td><td>User  Error/sec</td><td>次/秒</td><td>平均每秒错误数</td></tr>
 </tbody></table>
+
