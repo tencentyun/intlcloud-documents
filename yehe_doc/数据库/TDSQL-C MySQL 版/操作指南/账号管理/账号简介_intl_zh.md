@@ -10,10 +10,10 @@ TDSQL-C MySQL 版集群创建之后，系统会保留默认的账号，除此之
 
 | 系统默认账号 | 主机 | MySQL 5.7 | MySQL 8.0 | 说明 |
 |---------|---------|---------|---------|---------|
-| root | % | &#10003 | &#10003  | 管理员账号，具有所有权限，可执行所有操作 |
-| mysql.sys | localhost | &#10003 |&#10003 |用于管理和访问系统自带 sys 库的账号，通过 sys 库可以快速的了解系统的元数据信息。 |
-| mysql.session | localhost | - |&#10003  |内部插件访问服务器的账号。 |
-| mysql.infoschema | localhost | - |&#10003 |用于管理和访问系统自带 information_schema 库的账号。 |
+| root | % | &#10003 | &#10003  | 管理员账号，具有所有权限，可执行所有操作。 |
+| mysql.sys | localhost | &#10003 |&#10003 | 用于管理和访问系统自带 sys 库的账号，通过 sys 库可以快速了解系统的元数据信息。 |
+| mysql.session | localhost | - |&#10003  | 内部插件访问服务器的账号。 |
+| mysql.infoschema | localhost | - |&#10003 | 用于管理和访问系统自带 information_schema 库的账号。|
 
 <dx-alert infotype="alarm" title="">
 为避免造成数据库问题，建议不要删除默认账号。
