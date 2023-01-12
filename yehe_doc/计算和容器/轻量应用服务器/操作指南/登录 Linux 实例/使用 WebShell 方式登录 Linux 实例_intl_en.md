@@ -1,5 +1,5 @@
 ## Overview
-WebShell is a login method recommended by Tencent Cloud. You can use it to directly log in to a Linux instance quickly. It has the following strengths:
+OrcaTerm is a login method recommended by Tencent Cloud. You can use it to directly log in to a Linux instance quickly. It has the following strengths:
 - Supports copy and paste.
 - Supports scrolling with mouse wheel.
 
@@ -7,7 +7,7 @@ WebShell is a login method recommended by Tencent Cloud. You can use it to direc
 
 <dx-alert infotype="explain" title="">
 - When you create a Linux Lighthouse instance, it will be bound to a key by default. The username of the key is `lighthouse`, which has the root privileges.
-- When you use WebShell to log in to a Linux instance, the system will use the key of the `lighthouse` username for login by default.
+- When you use OrcaTerm to log in to a Linux instance, the system will use the key of the `lighthouse` username for login by default.
 </dx-alert>
 
 
@@ -32,43 +32,43 @@ Windows, Linux, or macOS.
    The page for successful login is as shown below:
    ![](https://qcloudimg.tencent-cloud.cn/raw/5b277158fec90436320b61bbc393233a.png)
     - After successful login, you can set up low-load lightweight applications with a moderate number of access requests, such as small and middle-sized websites, web applications, blogs, forums, mini games, ecommerce, cloud storage, image hosting, and cloud-based development, testing, and learning environments as instructed in [Best Practices](https://www.tencentcloud.com/document/product/1103/41255).
-    - The WebShell UI has a variety of features. You can use the virtual keyboard on the mobile client to change the WebShell appearance, upload/download files, start self-service instance detection, enable multi-session, split the screen, and get the prompts as instructed in [More WebShell features](#wedShellWork).
+    - The WebShell UI has a variety of features. You can use the virtual keyboard on the mobile client to change the OrcaTerm appearance, upload/download files, start self-service instance detection, enable multi-session, split the screen, and get the prompts as instructed in [More OrcaTerm features](#OrcaTermWork).
 
 ## Related Operations
-### Enabling/Disabling WebShell-based quick login
+### Enabling/Disabling OrcaTerm-based quick login
 
 
 <dx-alert infotype="explain" title="">
-After a Lighthouse instance is created successfully, the WebShell-based quick login feature will be enabled by default. You can disable or enable it again in the following steps:
+After a Lighthouse instance is created successfully, the OrcaTerm-based quick login feature will be enabled by default. You can disable or enable it again in the following steps:
 </dx-alert>
 
 
 1. Log in to the [Lighthouse console](https://console.cloud.tencent.com/lighthouse/instance/index).
 2. Find the target instance in the server list and enter the instance details page.
-3. In **Quick login** in **Remote login**, you can **enable** or **disable** WebShell-based quick login as needed:
+3. In **Quick login** in **Remote login**, you can **enable** or **disable** OrcaTerm-based quick login as needed:
  - **Close**: If you don't need to use quick login, you can disable it.
 <dx-alert infotype="notice" title="">
 - After quick login is disabled, you can still use the local SSH client to remotely log in to the instance. You can also enable quick login again.
 - After quick login is disabled, the public key (stored under the `lighthouse` user of the operating system by default) of the default system key won't be deleted at the same time. You can delete the public key by yourself. However, if it is deleted, quick login will not take effect after being enabled again.
 </dx-alert>
- - **Enable**: After quick login is enabled, you can use the default system key to quickly log in to the instance through WebShell in a browser.
+ - **Enable**: After quick login is enabled, you can use the default system key to quickly log in to the instance through OrcaTerm in a browser.
 <dx-alert infotype="notice" title="">
 Confirm that the public key (stored under the `lighthouse` user of the operating system by default) of the default system private key is not deleted; otherwise, the quick login feature won't work after being enabled.
 </dx-alert>
 
 
 
-### More WebShell features[](id:wedShellWork)
+### More OrcaTerm features[](id:OrcaTermWork)
 
-WebShell offers a variety of features to ensure a satisfactory user experience.
+OrcaTerm offers a variety of features to ensure a satisfactory user experience.
 
-WebShell features are described as follows:
+OrcaTerm features are described as follows:
 <dx-accordion>
 ::: Multiple keyboard shortcuts[](id:hotKey)
 
-WebShell supports multiple keyboard shortcuts, which can be viewed on the UI as instructed below:
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. On the WebShell UI, open the **Keyboard shortcuts** window to view the supported shortcuts.
+OrcaTerm supports multiple keyboard shortcuts, which can be viewed on the UI as instructed below:
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. On the OrcaTerm UI, open the **Keyboard shortcuts** window to view the supported shortcuts.
   - If your local computer uses macOS: Press `⌘ + /`.
   - If your local computer uses Windows: Press `Ctrl + /`.
     
@@ -77,19 +77,19 @@ WebShell supports multiple keyboard shortcuts, which can be viewed on the UI as 
 :::
 ::: Viewing instance monitoring data[](id:monitoringData)
 
-You can view the instance monitoring data in real time on the WebShell UI as instructed below. Currently, the data is refreshed once every 10 seconds.
+You can view the instance monitoring data in real time on the OrcaTerm UI as instructed below. Currently, the data is refreshed once every 10 seconds.
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. At the bottom of the WebShell UI, view the instance monitoring data.
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. At the bottom of the OrcaTerm UI, view the instance monitoring data.
 
 
 
 :::
 ::: Changing the username[](id:modifyUsername)
 
-You can specify the user to log in via WebShell as instructed below:
+You can specify the user to log in via OrcaTerm as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
 2. In the **Log in** pop-up window, the default username is `lighthouse`, which can be changed as needed.
 
 3. Then click **Log in**
@@ -100,45 +100,45 @@ You can specify the user to log in via WebShell as instructed below:
 ::: Quickly installing TencentCloud Automation Tools[](id:installTAT)
 
 
-You need to use TencentCloud Automation Tools to implement quick passwordless login via WebShell. If the tool is not installed for your instance, you can install it upon login as instructed below:
+You need to use TencentCloud Automation Tools to implement quick passwordless login via OrcaTerm. If the tool is not installed for your instance, you can install it upon login as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
 2. In the **Log in** pop-up window, select the installation method as needed if you are prompted that TencentCloud Automation Tools is not installed for your instance.
    - **Quick installation (reboot required)**: Read the notes, select **Installation requires your agreement to a forced shutdown**, and click **Quickly install TencentCloud Automation Tools**.
    - **Manual installation (no reboot required)**: Perform the installation as instructed in [Installing TAT Agent](https://intl.cloud.tencent.com/document/product/1147/46042).
-3. After the installation is completed, the instance can be quickly logged in to via WebShell.
+3. After the installation is completed, the instance can be quickly logged in to via OrcaTerm.
 
 :::
 ::: Using the command block mode[](id:block)
 
-You can use the command block mode on the WebShell UI. After the mode is enabled, every executed command will be displayed as a module for easy use of WebShell. You can also disable the mode as needed as instructed below:
+You can use the command block mode on the OrcaTerm UI. After the mode is enabled, every executed command will be displayed as a module for easy use of OrcaTerm. You can also disable the mode as needed as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. On the WebShell UI, enable or disable the command line mode.
-  - **Enable the command line mode**: Select <img src="https://qcloudimg.tencent-cloud.cn/raw/2a7a6b5795be349496600bda16a038c6.png" style="margin:-3px 0px"> on the toolbar of the WebShell UI to enable the command block mode. After it is enabled, a command will be executed as follows:
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. On the OrcaTerm UI, enable or disable the command line mode.
+  - **Enable the command line mode**: Select <img src="https://qcloudimg.tencent-cloud.cn/raw/2a7a6b5795be349496600bda16a038c6.png" style="margin:-3px 0px"> on the toolbar of the OrcaTerm UI to enable the command block mode. After it is enabled, a command will be executed as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/2b3752cb5644e4e06af15d037a7992cb.png)
-  - **Disable the command line mode**: Select <img src="https://qcloudimg.tencent-cloud.cn/raw/bb5426e4e2012fc77ff78561de913e15.png" style="margin:-3px 0px"> on the toolbar of the WebShell UI to disable the command block mode. After it is disabled, a command will be executed as follows:
+  - **Disable the command line mode**: Select <img src="https://qcloudimg.tencent-cloud.cn/raw/bb5426e4e2012fc77ff78561de913e15.png" style="margin:-3px 0px"> on the toolbar of the OrcaTerm UI to disable the command block mode. After it is disabled, a command will be executed as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/5862c7588022194f1a855f26e87b6f86.png)
 <dx-alert infotype="explain" title="">
-If the command block mode is disabled and enabled again, you need to reconnect to WebShell.
+If the command block mode is disabled and enabled again, you need to reconnect to OrcaTerm.
 </dx-alert>
 
 
 
 :::
 ::: Viewing the release note[](id:changelogs)
-You can view the latest release note of WebShell, including the new features, bugfixes, and features coming soon, as instructed below:
+You can view the latest release note of OrcaTerm, including the new features, bugfixes, and features coming soon, as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/4796538ba87024b0a264e8d512c4544b.png" style="margin:-3px 0px"> in the bottom-right corner of the WebShell UI.
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/4796538ba87024b0a264e8d512c4544b.png" style="margin:-3px 0px"> in the bottom-right corner of the OrcaTerm UI.
 3. View the latest release note in the pop-up window.
 
 :::
 ::: Selecting an instance to log in[](id:choose)
-You can select any instance to log in on the WebShell UI as instructed below:
+You can select any instance to log in on the OrcaTerm UI as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/5bb1db36d10fd49f34ecc27eda0e306a.png" style="margin:-3px 0px"> on the toolbar of the WebShell UI.
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/5bb1db36d10fd49f34ecc27eda0e306a.png" style="margin:-3px 0px"> on the toolbar of the OrcaTerm UI.
 3. For the first time, the **Select the instance to be displayed** window will pop up. Select the target instance and click **OK**.
 4. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/5bb1db36d10fd49f34ecc27eda0e306a.png" style="margin:-3px 0px"> > **Add instance** to add instances as needed.
 <dx-alert infotype="explain" title="">
@@ -155,8 +155,8 @@ Currently, up to ten instances can be added.
 
 You can upload local files to the instance or download files from the instance to your local file system as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/81fbdd2c2b7cb70f17c508073496f58e.png" style="margin:-3px 0px"> on the toolbar of the WebShell UI.
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/81fbdd2c2b7cb70f17c508073496f58e.png" style="margin:-3px 0px"> on the toolbar of the OrcaTerm UI.
 3. In the pop-up menu, select **Upload** or **Download**.
    The detailed steps are as follows:
     - **Upload a file**:
@@ -177,18 +177,18 @@ You can upload local files to the instance or download files from the instance t
 
 If you encounter any problem when logging in to or using the instance, you can perform self-service instance detection as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/2d3d7e693d09bb8a58d58557e4f25ff4.png" style="margin:-3px 0px"> on the toolbar of the WebShell UI.
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/2d3d7e693d09bb8a58d58557e4f25ff4.png" style="margin:-3px 0px"> on the toolbar of the OrcaTerm UI.
 3. In the **Self-service instance detection** pop-up window, click **OK**.
 
 
 :::
 ::: Enabling the multi-tag window[](id:multilabel)
 
-You can open multiple instance connection pages in the form of tags on the WebShell UI as instructed below:
+You can open multiple instance connection pages in the form of tags on the OrcaTerm UI as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/fc93655617db690aecdc7b1cea0baf39.png" style="margin:-3px 0px"> at the top of the WebShell UI.
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/fc93655617db690aecdc7b1cea0baf39.png" style="margin:-3px 0px"> at the top of the OrcaTerm UI.
 3. You can see that the `(1) instance ID` tag has been created.
 <dx-alert infotype="explain" title="">
 - Up to five tags can be opened at the same time.
@@ -199,10 +199,10 @@ You can open multiple instance connection pages in the form of tags on the WebSh
 :::
 ::: Enabling screen splitting[](id:splitScreen)
 
-You can split the screen on the WebShell UI to view and execute multiple operation tasks at the same time as instructed below:
+You can split the screen on the OrcaTerm UI to view and execute multiple operation tasks at the same time as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/bf17a1103ce6fa76150df87768987f79.png" style="margin:-3px 0px"> at the top of the WebShell UI.
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/bf17a1103ce6fa76150df87768987f79.png" style="margin:-3px 0px"> at the top of the OrcaTerm UI.
 3. You can see that the screen has been split into three sections named in the format of `(Incrementing number) instance ID`:
 <dx-alert infotype="explain" title="">
 - The screen can be split into up to four sections.
@@ -215,9 +215,9 @@ You can split the screen on the WebShell UI to view and execute multiple operati
 
 You can change the text size, font, and color on the WedShell UI as instructed below:
 
-1. Log in to the instance as instructed in [Logging in to Linux Instance via WebShell](https://intl.cloud.tencent.com/document/product/1103/41523).
-2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/183be38a53180ccd705dddbb859820e3.png" style="margin:-3px 0px"> on the toolbar of the WebShell UI.
-3. In the pop-up window, change the text size, font, or color of the WebShell as you like.
+1. Log in to the instance as instructed in [Logging in to Linux Instance via OrcaTerm](https://intl.cloud.tencent.com/document/product/1103/41523).
+2. Select <img src="https://qcloudimg.tencent-cloud.cn/raw/183be38a53180ccd705dddbb859820e3.png" style="margin:-3px 0px"> on the toolbar of the OrcaTerm UI.
+3. In the pop-up window, change the text size, font, or color of the OrcaTerm as you like.
 
 :::
 </dx-accordion>
