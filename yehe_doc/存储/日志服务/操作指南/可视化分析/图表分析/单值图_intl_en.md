@@ -29,7 +29,7 @@ An individual value plot describes a single metric, typically a key metric of bu
 | ------ | ------------------------------------------------------------ |
 | Individual value plot | Display: Control whether to display metric names on the individual value plot.<br />Value: If a metric has multiple statistical results, they need to be aggregated to one value or one of them needs to be selected for display on the individual value plot. By default, the latest non-null value will be used.<br />Metric: Set the target statistical metric, which is **Auto** by default, in which case the first metric field in the returned data will be selected.<br /> |
 
-Statistical method example:
+**Statistical method example:**
 Three data entries are returned, and the latest non-null value will be selected by default, that is, the last value `383` will be displayed. If you set **Value** to **Sum**, the sum of the three data entries will be displayed.
 
 
