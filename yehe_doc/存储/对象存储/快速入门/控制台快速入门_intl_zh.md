@@ -18,13 +18,12 @@
 ## 步骤1：注册腾讯云账号
 在使用腾讯云 COS 服务前，您需要先注册一个腾讯云账号。请单击下方按钮开始注册。（如果您已注册，请跳过该步骤。）
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/en/account/register" target="_blank"  style="color: white; font-size:13px;">开始注册</a></div>
+<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">开始注册</a></div>
 
 ## 步骤2：完成实名认证
 账号注册完成后，使用该账号登录 [腾讯云控制台](https://console.cloud.tencent.com/)，开始实名认证。详细操作指引请参见 [实名认证介绍](https://intl.cloud.tencent.com/document/product/378/3629)。（如果您已完成，请跳过该步骤。）
 
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:13px;"  hotrep="document.guide.3128.btn2">开始实名认证</a></div>
-
 
 
 ## 步骤3：开通 COS 服务
@@ -48,14 +47,15 @@
 从本地选择文件上传到存储桶：
 
 1. 单击存储桶名称，进入存储桶列表页。
-2. 选择**上传文件 > 选择文件**，选择需要上传至存储桶的文件，例如文件名为 exampleobjext.txt 的文件。
-3. 单击**上传**，即可将文件 exampleobjext.txt 上传至存储桶。
+2. 选择**上传文件 > 选择文件**，选择需要上传至存储桶的文件，例如文件名为 exampleobjext.zip 的文件。
+3. 单击**上传**，即可将文件 exampleobjext.zip 上传至存储桶。
 
 
 ## 步骤6：下载对象
 将云上数据下载到本地：
-1. 单击文件 exampleobjext.txt 右侧的**详情**，进入对象属性页。
+1. 单击文件 exampleobjext.zip 右侧的**详情**，进入对象属性页。
 2. 在基本信息配置项中，单击**下载对象**即可下载，或单击**复制临时链接**，将链接粘贴至浏览器地址栏并回车，即可下载该对象。
+>?默认情况下，如果下载的对象支持浏览器直接打开，那么通过访问临时链接的方式将直接预览对象，而不是下载。
 
 ## 更多功能
 如需了解控制台的更多功能，例如设置对象访问权限、设置防盗链、设置静态网站等，请参见 [控制台概述](https://intl.cloud.tencent.com/document/product/436/11365)。
@@ -76,7 +76,7 @@
 <td align="left" width="70%">本工具支持用户通过可视化界面，方便地进行数据的上传、下载、生成访问链接等操作。</td>
 </tr>
 <tr>
-<td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/10976">COSCMD 工具</a></td>
+<td align="left" width="30%"><a href="https://cloud.tencent.com/doc/product/436/10976">COSCMD 工具</a></td>
 <td align="left" width="70%">本工具支持用户使用简单的命令行指令实现对对象的批量上传、下载、删除等操作。</td>
 </tr>
 <tr>
@@ -94,3 +94,6 @@
 ## 遇到问题？
 
 非常抱歉您在使用时遇到问题，您可以 [联系我们](https://intl.cloud.tencent.com/contact-sales)。
+
+
+

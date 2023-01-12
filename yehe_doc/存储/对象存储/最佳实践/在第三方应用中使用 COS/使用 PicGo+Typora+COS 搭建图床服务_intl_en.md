@@ -10,7 +10,7 @@ The strengths of COS in the image hosting scenarios include:
 - **Unlimited capacity**: COS stores high numbers of files in a distributed manner for on-demand capacity use.
 
 
-## Practice Scenarios
+## Practice Scenario
 
 ### Scenario 1: Adding images to set up an image hosting service with COS
 
@@ -21,18 +21,19 @@ The following tools are used in this scenario:
 ### Directions
 
 1. Install PicGo and set relevant COS parameters.
->?PicGo 2.3.0 is used in this scenario. Note that the configuration process may vary by version.
+>?PicGo 2.3.1 is used in this scenario. Note that the configuration process may vary by version.
 >
-After downloading PicGo from [PicGo website](https://molunerfinn.com/PicGo/) and installing it, find **Tencent Cloud COS** in the image hosting service settings and configure the following parameters:
+After downloading PicGo from [PicGo website](https://molunerfinn.com/PicGo/) and installing it, find **Tencent Cloud** in **Picbeds Settings** and configure the following parameters:
 
-  - COS Version: Select COS v5.
-  - Set SecretId: It is a developer-owned secret ID used for the project, which can be created and obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
-  - Set SecretKey: It is a developer-owned secret key used for the project, which can be obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
-  - Set APPID: It is a unique user-level resource identifier for COS access, which can be obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
-  - Set Storage Space Name: It is a bucket, i.e., a container used for data storage. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
-  - Confirm Storage Region: It is the region information. For enumerated values such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
-  - Specify Storage Path: It is the path where the image is stored in the COS bucket.
-  - Set Custom Domain Name: This parameter is optional. If you have configured a custom origin domain name for the storage space specified above, you can enter it here. For more information, see [Enabling Custom Origin Domains](https://intl.cloud.tencent.com/document/product/436/31507).
+  - Choose COS version: Select COS v5.
+  - Set Secretld: A developer-owned secret ID used for the project. It can be created and obtained at [Manage API Key](https://console.cloud.tencent.com/capi).
+  - Set SecretKey: A developer-owned secret key used for the project. It can be obtained at [Manage API Key](https://console.cloud.tencent.com/capi).
+  - Set AppId: A unique user-level resource identifier for COS access. It can be obtained at [Manage API Key](https://console.cloud.tencent.com/capi).
+  - Set Bucket: A bucket is a container used for data storage. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
+  - Set Area: Region information. For more information about the enumerated values (such as ap-beijing, ap-hongkong, and eu-frankfurtplease), see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
+  - Set Path: It is the path where the image is stored in the COS bucket.
+  - Set Custom URL: This parameter is optional. If you have configured a custom origin domain name for the storage space specified above, you can enter it here. For more information, see [Enabling Custom Origin Domains](https://intl.cloud.tencent.com/document/product/436/31507).
+  - Set URL Suffix: Add a COS data processing parameter to the URL suffix to implement image compression, cropping, format conversion, and other operations. For more information, see [Image Processing](https://www.tencentcloud.com/document/product/436/40118).
 2. Configure Typora (optional).
 >? If your editing requirement does not involve Markdown, you can skip this step and just use the PicGo tool installed in the previous step as the image hosting tool.
 >
@@ -72,10 +73,16 @@ In the COS bucket you just created, click **Upload Folder** to upload the prepar
 #### Step 4. Globally replace the domain name
 
 On the bucket overview page in the COS console, copy the default domain name of the bucket (you can also associate a custom CDN acceleration domain name). Then, use a common code editor to search for and replace the invalid URL prefix globally with the default domain name of the COS bucket.
->?For more information on the default domain name, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+>? For more information on the default domain name, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 
 - Example search-and-replace with Visual Studio Code:
 ![](https://qcloudimg.tencent-cloud.cn/raw/6d0707a821a6c7f0a978f113afdf05b9.png)
 
 - Example search-and-replace with Sublime Text:
 ![](https://qcloudimg.tencent-cloud.cn/raw/97855e83ce68cd23254c98f4849e2d41.png)
+
+
+
+
+
+

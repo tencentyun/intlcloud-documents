@@ -26,7 +26,7 @@ COSBrowser is a visualization interface tool provided by Tencent Cloud COS. You 
    <tr>
       <td>Linux</td>
       <td>Includes a GUI that supports the <a href="https://appimage.org">AppImage</a> format<br>
-          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox</code> in the terminal.</td>
+          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox</code></td> in the terminal.
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
@@ -71,11 +71,11 @@ COSBrowser Desktop Version has the following features:
 | [Creating/Deleting a bucket](https://intl.cloud.tencent.com/document/product/436/32565#createordelete) | Creates or deletes a bucket |
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | Views the basic information of your bucket |
 | [Viewing statistics](https://intl.cloud.tencent.com/document/product/436/32565#count)           | Views the current storage capacity and number of objects in your bucket                         |
-| [Permission management](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                               | Modifies the permissions on your buckets and objects                                 |
-| [Setting versioning](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                                     | Enables/Suspends bucket versioning                                 |
+| [Permission management](https://intl.cloud.tencent.com/document/product/436/32565#acl)                               | Modifies the permissions on your buckets and objects                                 |
+| [Setting versioning](https://intl.cloud.tencent.com/document/product/436/32565#version)                                     | Enables/Suspends bucket versioning                                 |
 | [Adding an access path](https://intl.cloud.tencent.com/document/product/436/32565#addaccess)                                     | Adds an access path                                             |
-| [Uploading files/folders](https://intl.cloud.tencent.com/document/product/436/32565#upload) | Uploads files/folders to a bucket separately, in batches, or incrementally.     |
-| [Downloading files/folders](https://intl.cloud.tencent.com/document/product/436/32565#download) | Downloads files/folders to the local file system separately, in batches, or incrementally.    |
+| [Uploading files/folders](https://intl.cloud.tencent.com/document/product/436/32565#upload) | Uploads files/folders to a bucket separately, in batches, or incrementally. <br><br>Note: <br>1. Up to 100,000 files can be batch uploaded in one request. <br>2. Checkpoint restart is not supported. <br>3. To migrate or batch upload data, use [Migration Service Platform (MSP)](https://www.tencentcloud.com/products/msp).     |
+| [Downloading a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#download) | Downloads files/folders to the local file system separately, in batches, or incrementally <br><br>Note: <br>1. Up to 100,000 files can be batch uploaded in one request. <br>2. Checkpoint restart is not supported. |
 | [Deleting a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#delete) | Deletes files/folders from a bucket separately or in batches |
 | [Synchronizing files](https://intl.cloud.tencent.com/document/product/436/32565#synchronization)            |                                                     Synchronizes local files to your bucket in real time                  |
 | [Copying and pasting files](https://intl.cloud.tencent.com/document/product/436/32565#copy) | Copies files/folders separately or in batches from one directory to another |
@@ -112,9 +112,10 @@ The COSBrowser mobile version is mainly used to monitor COS resources (such as s
 
 ## Feedback and Suggestions
 
-If you have any questions or suggestions during your use of COSBrowser, feel free to give us your feedback:
+If you have any questions or suggestions during your use of COSBrowser, please feel free to give us your feedback:
 
 - Feedback on Desktop Version: [issues](https://github.com/tencentyun/cosbrowser/issues).
 - Feedback on Mobile Version: [issues_mobile](https://support.qq.com/embed/phone/67467).
   
-   
+
+

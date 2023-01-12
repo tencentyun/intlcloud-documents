@@ -1,8 +1,9 @@
->!When adding access policies to a sub-user or collaborator, please be sure to grant the minimum set of API access permissions needed to satisfy your business needs. There may be data security risks associated with granting excessive access to all of your resources `(resource:*)` or all operations `(action:*)`.
+>!When adding access policies to a sub-user or collaborator, be sure to grant the minimum set of API access permissions needed to satisfy your business needs. There may be data security risks associated with granting excessive access to all of your resources `(resource:*)` or all operations `(action:*)`.
+>
 
 ## Overview
 
-An access policy that employs the JSON-based access policy language is used to grant access to COS resources. You can authorize a specified principal to perform actions on a specified COS resource through the access policy language.
+An access policy that employs the JSON-based access policy language is used to grant access to Cloud Object Storage (COS) resources. You can authorize a specified principal to perform actions on a specified COS resource through the access policy language.
 
 The language describes the basic elements and usage of a bucket policy. For more information, see [CAM Policy Management](https://intl.cloud.tencent.com/document/product/598/10600).
 
@@ -24,8 +25,8 @@ The access policy language contains the following basic elements:
 A principal is used to specify the user, account, service, or another entity that is allowed or not allowed to access resources. It only works in buckets, and is not required in user policies because these policies are directly added to the specific user. The following example specifies a principal.
 
 ```json
-"principal": {
-"qcs": [
+"principal":{
+"qcs":[
 "qcs::cam::uin/100000000001:uin/100000000001"
 ]
 }
@@ -34,8 +35,8 @@ A principal is used to specify the user, account, service, or another entity tha
 Grant permissions to an anonymous user:
 
 ```json
-"principal": {
-"qcs": [
+"principal":{
+"qcs":[
 "qcs::cam::anonymous:anonymous"
 ]
 }
@@ -44,8 +45,8 @@ Grant permissions to an anonymous user:
 Grant permissions to a root account (UIN: 100000000001):
 
 ```json
-"principal": {
-"qcs": [
+"principal":{
+"qcs":[
 "qcs::cam::uin/100000000001:uin/100000000001"
 ]
 }
@@ -54,10 +55,11 @@ Grant permissions to a root account (UIN: 100000000001):
 Grant permissions to a sub-account (UIN: 100000000011) under the root account (UIN: 100000000001):
 
 >! Before performing the operation, make sure that the sub-account has been added to the sub-account list of the root account.
+>
 
 ```json
-"principal": {
-"qcs": [
+"principal":{
+"qcs":[
 "qcs::cam::uin/100000000001:uin/100000000011"
 ]
 }
@@ -78,7 +80,7 @@ COS defines actions that you can specify in a policy. The actions are exactly th
 #### Actions on buckets
 
 
-| Action | API |
+| Description | API |
 | --------------------- | ------------------------ |
 | name/cos:GetService | GET Service |
 | name/cos:GetBucket | GET Bucket (List Objects) |
@@ -87,7 +89,7 @@ COS defines actions that you can specify in a policy. The actions are exactly th
 
 #### Actions on objects
 
-| Action | API |
+| Description | API |
 | --------------------- | --------------- |
 | name/cos:GetObject | GET Object |
 | name/cos:PutObject | PUT Object |
@@ -97,7 +99,7 @@ COS defines actions that you can specify in a policy. The actions are exactly th
 The following example specifies an action that is allowed:
 
 ```json
-"action": [
+"action":[
 "name/cos:GetObject",
 "name/cos:HeadObject"
 ]
@@ -116,11 +118,11 @@ The parameters are described as follows:
 Parameter | Description | Required
 --|--|--
 qcs | Abbreviation of the qcloud service, which refers to Tencent Cloud services. | Yes
-project_id | Project information, which is only used to enable compatibility with legacy CAM logic. | No
-service_type | Abbreviation of the product such as COS. | Yes
-region | Region information. For more information, see [Regions & Endpoints](https://intl.cloud.tencent.com/document/product/436/6224) supported by Tencent Cloud COS. | Yes
-account | Root account information of the resource owner. Currently, `uin` or `uid` can be used to describe the resource owner. `uin` is the UIN of the root account. It is expressed in the format of `uin/${OwnerUin}`, for example, `uin/100000000001`. `uid` is the app ID of the root account. It is expressed in the format of `uid/${appid}`, for example, `uid/1250000000`. Currently, COS resource owners are all described using `uid`, i.e., the app ID of the root account. | Yes
-resource | Detailed resource information. In COS, a resource is described using the bucket XML API access domain name. | Yes
+project_id | Describes the project information, which is only used to enable compatibility with legacy CAM logic. | No
+service_type | Describes the abbreviation of the product such as COS. | Yes
+region | Describes the region information. For more information, see [Regions & Endpoints](https://intl.cloud.tencent.com/document/product/436/6224) supported by Tencent Cloud COS. | Yes
+account | Describes the root account information of the resource owner. Currently, `uin` or `uid` can be used to describe the resource owner. `uin` is the UIN of the root account. It is expressed in the format of `uin/${OwnerUin}`, for example, `uin/100000000001`. `uid` is the app ID of the root account. It is expressed in the format of `uid/${appid}`, for example, `uid/1250000000`. Currently, COS resource owners are all described using `uid`, i.e., the app ID of the root account. | Yes
+resource | Describes the detailed resource information. In COS, a resource is described using the bucket XML API access domain name. | Yes
 
 The following example specifies the bucket `examplebucket-1250000000`.
 
@@ -150,54 +152,54 @@ The access policy language allows you to specify conditions when granting permis
 | Ip_not_equal | IP is not equal to | qcs:ip | {"ip_not_equal":{"qcs:ip":["10.121.1.0/24","10.121.2.0/24"]}} |
 
 
-The following example allows access only to IPs in the `10.121.2.0/24` range.
+The following example allows access to only IPs in the `10.121.2.0/24` IP range.
 
 ```json
 "ip_equal":{"qcs:ip ":"10.121.2.0/24"}
 ```
 
-The following example allows access only to the IPs 101.226.\*\*\*.185 and 101.226.\*\*\*.186.
+The following example allows access to only the IPs 101.226.100.185 and 101.226.100.186.
 
 ```json
-"ip_equal": {
-"qcs:ip": [
-"101.226.***.185",
-"101.226.***.186"
-]
+"ip_equal":{
+    "qcs: ip": [
+        "101.226.100.185",
+        "101.226.100.186"
+    ]
 }
 ```
 
-## Sample
+## Examples
 
-If, when the access source IPs are 101.226.\*\*\*.185 and 101.226.\*\*\*.186, the root account allows anonymous users to perform GET (download) and HEAD actions on the objects in the bucket `examplebucket-1250000000` in South China, requiring no authentication. For more information, see [Cases of Permission Setting](https://intl.cloud.tencent.com/document/product/436/12514).
+If, when the access source IPs are 101.226.100.185 and 101.226.100.186, the root account allows anonymous users to perform GET (download) and HEAD actions on the objects in the bucket `examplebucket-1250000000` in South China, no authentication is required. For more information, see [Cases of Permission Setting](https://intl.cloud.tencent.com/document/product/436/12514).
 
 ```json
 {
-"version": "2.0",
-"principal": {
-"qcs": [
-"qcs::cam::anonymous:anonymous"
-]
-},
-"statement": [
-{
-"action": [
-"name/cos:GetObject",
-"name/cos:HeadObject"
-],
-"condition": {
-"ip_equal": {
-"qcs:ip": [
-"101.226.***.185",
-"101.226.***.186"
-]
-}
-},
-"effect": "allow",
-"resource": [
-"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000.ap-guangzhou.myqcloud.com/*"
-]
-}
-]
+    "version": "2.0",
+    "principal":{
+        "qcs":[
+            "qcs: : cam: : anonymous: anonymous"
+        ]
+    },
+    "statement": [
+        {
+            "action":[
+                "name/cos: GetObject",
+                "name/cos: HeadObject"
+            ],
+            "condition":{
+                "ip_equal":{
+                    "qcs: ip": [
+                        "101.226.100.185",
+                        "101.226.100.186"
+                    ]
+                }
+            },
+            "effect": "allow",
+            "resource": [
+                "qcs: : cos: ap-guangzhou: uid/1250000000: examplebucket-1250000000.ap-guangzhou.myqcloud.com/*"
+            ]
+        }
+    ]
 }
 ```

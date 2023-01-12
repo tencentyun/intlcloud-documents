@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 An HTTP header (metadata header) of an object is a string sent by the server over HTTP before it sends HTML data to the browser. By modifying HTTP headers (metadata headers), you can modify how the webpage responds as well as certain configurations, such as caching time. Modifying an object's HTTP headers does not modify the object itself.
 
 For example, if the `Content-Encoding` header is changed to `gzip`, but the file itself was not compressed using gzip, a decoding error will occur.
@@ -6,23 +6,19 @@ For example, if the `Content-Encoding` header is changed to `gzip`, but the file
 >?Custom headers are not supported for archived objects.
 >
 
-## Directions
+## How It Works
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
 3. Locate the bucket where the object resides and click the bucket name.
 4. Click **File List** on the left sidebar.
-5. Find the object for which to customize a header and click **More Actions** > **Custom Header** in the **Operation** column on its right.
-
-To customize headers for multiple objects, select multiple objects and click **More Actions** > **Custom Header** at the top.
-![](https://main.qcloudimg.com/raw/88779600818f3670df2f7df62fd1b3a0.png)
+5. Locate the object for which a header is to be customized and click **More Actions** > **Custom Header** in the **Operation** column on its right. To customize headers for multiple objects, select multiple objects and click **More Actions** > **Custom Header** at the top.
 6. In the pop-up window, select the parameter type of the metadata header to be set, enter the metadata value, and click **OK**.
 COS provides the following six types of object HTTP headers for configuration:
-
 <table>
    <tr>
       <th>HTTP Header</th>
-      <th>Description</th>
+      <th>Remarks</th>
       <th>Example</th>
    </tr>
    <tr>
@@ -58,26 +54,30 @@ COS provides the following six types of object HTTP headers for configuration:
 </table>
 
 
-## Examples
+## License request example
 
 Assume that a bucket named "examplebucket-1250000000" was created under account APPID 1250000000, and an object "exampleobject.txt" was uploaded to the bucket's root directory.
 
 The sample below shows the headers returned for a request to download this object through a browser or client if no custom HTTP headers are specified.
+
 #### Request
-```sh
-GET /exampleobject.txt HTTP/1.1
-Host: examplebucket-1250000000.file.myqcloud.com
-Accept: */*
+
+```plaintext
+GET /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 10 Apr 2020 09:35:16 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586511316;1586518516&q-key-time=1586511316;1586518516&q-header-list=date;host&q-url-param-list=&q-signature=1bd1898e241fb978df336dc68aaef4c0acae****
+Connection: close
 ```
 
 #### Response
-```http
+
+```plaintext
 HTTP/1.1 200 OK
-Content-Language:zh-CN
 Content-Type: text/plain
 Content-Disposition: attachment; filename*="UTF-8''exampleobject.txt"
 Access-Control-Allow-Origin: *
-Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT 
+Last-Modified: Fri, 10 Apr 2020 09:35:05 GMT 
 ```
 
 If you add custom headers as follows:
@@ -85,21 +85,24 @@ If you add custom headers as follows:
 then the headers returned for new requests will be as follows:
 
 #### Request
-```sh
-GET /exampleobject.txt HTTP/1.1
-Host: examplebucket-1250000000.file.myqcloud.com
-Accept: */*
+
+```plaintext
+GET /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 10 Apr 2020 09:35:16 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586511316;1586518516&q-key-time=1586511316;1586518516&q-header-list=date;host&q-url-param-list=&q-signature=1bd1898e241fb978df336dc68aaef4c0acae****
+Connection: close
 ```
 
 #### Response
-```http
+
+```plaintext
 HTTP/1.1 200 OK
-Content-Language:zh-CN
 Cache-Control: no-cache
 Content-Type: image/jpeg
 Content-Disposition: attachment; filename*="abc.txt"
 x-cos-meta-md5: 1234
 Access-Control-Allow-Origin: *
-Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT
+Last-Modified: Fri, 10 Apr 2020 09:35:05 GMT 
 ```
 

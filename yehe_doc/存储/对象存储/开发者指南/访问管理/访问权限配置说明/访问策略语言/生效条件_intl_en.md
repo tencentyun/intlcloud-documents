@@ -52,6 +52,9 @@ In the following bucket policy example, the condition specifies that the `cos:Pu
 ## Condition Keys Supported by COS
 
 
+>? Currently, the `tls-version` condition key is supported only in the Beijing region. It will be supported in other regions later. 
+>
+
 
 COS supports two types of condition keys: condition keys applicable to all requests, including IP, VPC, and HTTPS, and condition keys from request headers and request parameters and generally applicable only to requests that need to carry the request headers or request parameters. For the descriptions and use cases of these condition keys, see [Descriptions and Use Cases of Condition Keys](https://intl.cloud.tencent.com/document/product/436/46206).
 
@@ -67,7 +70,7 @@ Condition keys applicable to all requests are `qcs:ip`, `qcs:vpc`, and `cos:secu
 |[cos:secure-transport](https://intl.cloud.tencent.com/document/product/436/46206#secure-transport) | All requests | Whether the request uses HTTPS |  Boolean  |
 |[qcs:ip](https://intl.cloud.tencent.com/document/product/436/46206#RestrictUserAccessIP) | All requests | Source IP range of the request |  IP|
 |[qcs:vpc](https://intl.cloud.tencent.com/document/product/436/46206#requester_vpc) | All requests | Source VPC ID of the request  | String  |
-
+|[cos:tls-version](https://intl.cloud.tencent.com/document/product/436/46206#tls-version) |All HTTPS requests| TLS version used by HTTPS requests |Numeric|
 
 
 ### Condition keys from request headers and request parameters
@@ -88,7 +91,7 @@ The table below lists the condition keys from request headers and request parame
 |[cos:content-length](https://intl.cloud.tencent.com/document/product/436/46206#content-length) | This request header has a wide applicable scope, typically requests with request bodies. | Request header: `Content-Length` |Numeric|
 |[cos:content-type](https://intl.cloud.tencent.com/document/product/436/46206#content-type) | This request header has a wide applicable scope, typically requests with request bodies. | Request header: `Content-Type` |String|
 |[cos:response-content-type](https://intl.cloud.tencent.com/document/product/436/46206#response-content-type) |GetObject | Request parameter: `response-content-type` |String|
-
+|[qcs:request_tag](https://intl.cloud.tencent.com/document/product/436/46206#request_tag) |PutBucket<br>PutBucketTagging |Request header: x-cos-tagging<br>Request parameter: tagging|String|
 
 
 
@@ -100,6 +103,7 @@ COS supports the following condition operators, which are applicable to conditio
 |:----------|:----------|:----------|
 |string_equal | String equal to (case-sensitive) |String |
 |string_not_equal | String not equal to (case-sensitive) |String |
+|string_like |String similar to (case-sensitive). Currently, wildcards (*) can be prefixed or suffixed to the string, for example, `image/*`. |String |
 |ip_equal | IP equal to |IP |
 |ip_not_equal | IP not equal to |IP |
 |numeric_equal | Number equal to |Numeric |
@@ -116,7 +120,7 @@ You can add `_if_exist` to the end of all the preceding condition operators to f
 - For a condition operator without `_if_exist`, such as `string_equal`, it is considered that the condition is met (`False`) by default if the request does not contain the specified request header or parameter.
 - For a condition operator with `_if_exist`, such as `string_equal_if_exist`, it is considered that the condition is met (`True`) by default if the request does not contain the specified request header or parameter.
 
-## Examples
+## License request example
 
 
 ### Example 1: allow downloading objects of a specified version
@@ -370,3 +374,5 @@ Other requests are not affected by the policy in this example, and can be author
     ]
 }
 ```
+
+
