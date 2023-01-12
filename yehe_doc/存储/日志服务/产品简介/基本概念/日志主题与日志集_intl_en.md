@@ -1,4 +1,4 @@
-### Log topic
+## Log topic
 
 A log topic is a basic unit for log data collection, storage, search and analysis on the CLS platform. The massive amounts of logs collected are managed by log topic. For example, you can configure log collection rules and storage time, search for and analyze logs, and download, consume, and ship logs by log topic.
 
@@ -8,7 +8,7 @@ Log topics and applications/services are not strictly in one-to-one mapping rela
 
 
 
-### Logset
+## Logset
 
 A logset is a class of log topics and can contain multiple log topics. A logset itself does not store any log data, but just makes it easier for users to manage log topics.
 
