@@ -9,9 +9,8 @@ To create a VPC-based VPN gateway, you need to create a VPC in the same region a
 3. Click **+New**.
 4. Configure the following gateway parameters in the pop-up window.
 >?
->- 200 Mbps, 500 Mbps and 1,000 Mbps bandwidths are currently only available in North China (Beijing), East China (Shanghai), South China (Guangzhou), Southwest China (Chengdu),  Hong Kong, Macao and Taiwan regions of China(Hong Kong, China), East China (Nanjing) and other availability zones. To use them, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.
->- Only new gateways but not existing gateways are supported on 200 Mbps, 500 Mbps and 1,000 Mbps bandwidths.
->- If the VPN gateway uses 200 Mbps, 500 Mbps, or 1,000 Mbps bandwidths, AES128+MD5 is recommended for VPN tunnel encryption.
+>- Only new gateways but not existing gateways are supported on 200 Mbps, 500 Mbps, 1,000 Mbps and 3,000 Mbps bandwidths.
+>- If the VPN gateway uses 200 Mbps, 500 Mbps, 1,000 Mbps or 3,000 Mbps bandwidths, AES128+MD5 is recommended for VPN tunnel encryption.
 >
 ![]()
 <table>
@@ -36,6 +35,11 @@ To create a VPC-based VPN gateway, you need to create a VPC in the same region a
 <td>IPSec and SSL protocols are supported.</td>
 </tr>
 <tr>
+<td>Bandwidth cap</td>
+<td>Set a reasonable bandwidth cap for the VPN gateway according to the actual application scenarios.
+</td>
+</tr>
+<tr>
 <td>Associated Network</td>
 <td>This parameter indicates whether you create a CCN-based VPN/VPN gateway or a VPC-based VPN/VPN gateway.<ul><li>If you want to use a VPN connection to implement the interconnection with multiple VPCs or other Direct Connect networks, please create the <b>CCN</b> based VPN.
 <dx-alert infotype="notice" title="">
@@ -46,11 +50,6 @@ You cannot associate the CCN-based VPN gateway with a CCN instance during its cr
 <tr>
 <td>Network</td>
 <td>Specify the VPC to be associated with the VPN gateway only when the associated network is <b>VPC</b>.</td>
-</tr>
-<tr>
-<td>Bandwidth cap</td>
-<td>Set a reasonable bandwidth cap for the VPN gateway according to the actual application scenarios.
-</td>
 </tr>
 <tr>
 <td>Tag</td>
