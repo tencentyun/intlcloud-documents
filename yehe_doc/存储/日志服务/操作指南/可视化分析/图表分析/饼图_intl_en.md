@@ -21,7 +21,7 @@ A pie chart describes the proportions of different types. It measures the propor
 | ------ | ------------------------------------------------------------ |
 | Pie chart   | Display Mode: Control the pie chart style. A solid chart is a pie chart, and a hollow chart is a donut chart.<br />Sort By: Control the slice sorting order, which can be ascending and descending. Sorting is disabled by default.<br />Merge Slices: Merge slices other than top N slices into the "Others" slice. If there are too many slices, you can use this feature to focus on top N slices.<br />Label: Display pie chart labels. You can set name, value, and/or percentage as tags. |
 
-Label examples:
+**Label examples:**
 ![](https://qcloudimg.tencent-cloud.cn/raw/afa20ede15058bb180dfc771aa2189dc.png)
 
 
