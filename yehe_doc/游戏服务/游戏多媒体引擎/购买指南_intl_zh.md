@@ -40,30 +40,23 @@
 <table>
    <tr>
       <td>价格模型</td>
-      <td>服务模式</td>
       <td>Unit Price (USD/DAU/day)</td>
    </tr>
    <tr>
-      <td  rowspan="2">按语音消息 DAU 计费</td>
-      <td >标准模式</td>
+      <td>按语音消息 DAU 计费</td>
       <td>0.0019 </td>
-   </tr>
-   <tr>
-      <td >增强模式（自2022年9月5日起，语音消息增强模式将不再提供）</td>
-      <td>0.078 </td>
    </tr>
    </tr>
 </table>
 
 
 >?
+>
 >- 应用内用户收发语音消息即算作语音消息 DAU，语音消息 DAU 按照 openID 去重计算（openID 是应用内用户的唯一标识符，一个用户对应一个 openID）。
 
 
 
-<dx-alert infotype="notice" title="计费模式变更">
-从2022年9月5日起，语音消息服务与语音转文本服务将分别独立计费。
-</dx-alert>
+
 
 
 
@@ -84,9 +77,7 @@
    </tr>
 </table>
 
-<dx-alert infotype="notice" title="计费模式变更">
-从2022年9月5日起，语音转文本服务按此价格模型计费。
-</dx-alert>
+
 
 
 ## 文本翻译服务
