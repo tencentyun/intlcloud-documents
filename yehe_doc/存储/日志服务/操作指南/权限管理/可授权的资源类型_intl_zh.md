@@ -27,5 +27,5 @@
 - 针对支持按标签授权的资源类型及对应接口，为相关的资源绑定标签，然后通过标签的方式指定用户具备操作权限的资源范围。例如同时为日志主题、日志集及相关的仪表盘绑定标签，然后 [对指定标签的日志主题赋予管理权限](https://intl.cloud.tencent.com/document/product/614/45004)，[对指定标签的日志主题及仪表盘赋予管理权限](https://intl.cloud.tencent.com/document/product/614/45004)。这两条策略可以使用户同时具备这三类资源相关接口的操作权限。
 - 针对不支持按标签授权的资源类型及对应接口，为简化管理，可直接以`*`作为 CAM 权限策略中的资源范围，即所有资源。为避免普通用户误操作，可针对普通用户配置只读权限，针对管理用户配置管理权限，例如 [管理权限：对所有数据加工任务具备管理权限](https://intl.cloud.tencent.com/document/product/614/45004) 和 [只读权限：对所有数据加工任务具备只读权限](https://intl.cloud.tencent.com/document/product/614/45004)。
 
-更多使用场景，建议参考 [自定义权限策略示例](https://intl.cloud.tencent.com/document/product/614/45004)。
+>?更多使用场景，请参考 [自定义权限策略示例](https://intl.cloud.tencent.com/document/product/614/45004)。
 
