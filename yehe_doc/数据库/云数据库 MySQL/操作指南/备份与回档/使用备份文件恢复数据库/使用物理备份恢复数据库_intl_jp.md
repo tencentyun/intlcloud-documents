@@ -1,8 +1,10 @@
 
 ## ユースケース
->ストレージ容量を節約するために、TencentDB for MySQLの物理バックアップファイル及び論理バックアップファイルは、まずqpressで圧縮し、次にxbstreamでパッケージング（xbstreamはPerconaのパッケージング/アンパッケージングツール）して圧縮とパッケージングを実行します。
+>?ストレージ容量を節約するために、TencentDB for MySQLの物理バックアップファイル及び論理バックアップファイルは、まずqpressで圧縮し、次にxbstreamでパッケージング（xbstreamはPerconaのパッケージング/アンパッケージングツール）して圧縮とパッケージングを実行します。
 >
 オープンソースソフトウェアPercona Xtrabackupは、データベースのバックアップと復元に使用されます。このドキュメントでは、XtraBackupツールを使用して、MySQLの物理バックアップファイルを別のホスト上の自己構築データベースに復元する方法について説明します。
+>!透過的な暗号化またはInstant DDL機能を使用している場合は、物理バックアップを使用して自己構築システムでリカバリすることはできません。
+>
 - XtraBackupツールはLinuxプラットフォームのみに対応し、Windowsプラットフォームに対応していません。
 - Windowsでデータを復元する方法の詳細については、[コマンドラインツールによるデータの移行](https://intl.cloud.tencent.com/document/product/236/8464)をご参照ください。
 
@@ -13,7 +15,7 @@
 - サポートするインスタンスのバージョン：MySQL 2ノードおよび3ノード。
 - 透過的データ暗号化(TDE)機能が有効になっているインスタンスでは、物理バックアップを使用したデータベースの復元がサポートされていません。
 
->?ここではCentOS OSのCloud Virtual Machine (CVM)とMySQL 5.7バージョンを例として説明します。
+>?ここではCentOS OSのCloud Virtual Machine (CVM) とMySQL 5.7バージョンを例として説明します。
 >
 
 ## 手順1：[バックアップファイルのダウンロード](id:XZBFWJ)
@@ -22,7 +24,7 @@ MySQLインスタンスのデータバックアップ、ログバックアップ
 
 1. [MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、インスタンスリストのインスタンスIDまたは**操作**列の**管理**をクリックして、インスタンス管理ページに進みます。
 2. インスタンス管理画面で、**バックアップ・復元**>**データバックアップリスト**のページを選択し、ダウンロードしたいバックアップを選択して、**操作**列の**ダウンロード**をクリックします。
-3. ポップアップダイアログボックスで、ダウンロードアドレスをコピーして、[クラウドデータベースが存在するVPC内のCVM（Linuxシステム）にログイン ](https://intl.cloud.tencent.com/document/product/213/10517)し、wgetコマンドを実行して、より効率的なプライベートネットワークの高速ダウンロードを行うことをお勧めします。
+3. ポップアップのダイアログでは、ダウンロードアドレスをコピーして、[クラウドデータベースが所属するVPCののCVM（Linuxシステム）](https://www.tencentcloud.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)に[ログインした後、wgetコマンドを使ってプライベートネットワークで高速・高効率のダウンロードを行うことをお勧めします。
 >?
 >- **ローカルダウンロード**を選択して直接ダウンロードすることもできますが、時間がかかります。
 >- wgetコマンド形式：wget -c 'バックアップファイルのダウンロードアドレス' -O カスタムファイル名.xb 
@@ -38,8 +40,9 @@ wget -c 'https://mysql-database-backup-sh-1218.cos.ap-nanjing.myqcloud.com/12427
 
 1. [MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、インスタンスリストのインスタンスIDまたは**操作**列の**管理**をクリックして、インスタンス管理ページに進みます。
 2. インスタンス管理画面で、**バックアップ復元** > **データバックアップリスト**のページを選択し、ダウンロードしたいバックアップに対応する復号化キーを選択して、**操作**列の**キーをダウンロード**をクリックします。
-![](https://qcloudimg.tencent-cloud.cn/raw/743b8d691a006b99cb25591bb2100b07.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/A8BA028_1.png)
 3. 表示されたダイアログボックスで、キーを保存する必要があるファイルパスを選択し、**ダウンロード**をクリックします。
+
 
 ## 手順3：データの復元
 ### 3.1 バックアップファイルのアンパッケージング
@@ -52,7 +55,7 @@ xbstream -x --decrypt=AES256 --encrypt-key-file=<キーファイルのバック�
 >- `/data/test.xb`をバックアップファイルで置き換えます。
 >
 展開した結果は、次の図に示したとおりです：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/K4wr727_f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
 
 ### 3.2 バックアップファイルの解凍
 1. 次のコマンドを使用して、qpressツールをダウンロードします。
@@ -107,7 +110,7 @@ vi /data/mysql/backup-my.cnf
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/dk6k301_EeLm919_6.png)
 
 ## 步骤4：mysqldプロセスを起動し、ログイン検証を実行
 1.  mysqldプロセスを起動します。

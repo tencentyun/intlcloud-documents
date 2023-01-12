@@ -1,8 +1,10 @@
 
-## 작업 시나리오
+## 개요
 >?스토리지 공간을 절약하기 위해 TencentDB for MySQL의 물리적 및 논리적 백업은 qpress로 압축된 다음 Percona에서 제공하는 xbstream으로 압축됩니다.
 >
 오픈 소스 Percona XtraBackup을 사용하여 데이터베이스를 백업하고 복원할 수 있습니다. 이 문서는 XtraBackup을 사용하여 TencentDB for MySQL 인스턴스의 물리적 백업 파일을 CVM 기반 자체 구축 데이터베이스로 복원하는 방법을 설명합니다.
+>!TDE 또는 Instant DDL 기능을 사용하는 경우 자체 구축 시스템의 물리적 백업에서 데이터를 복원할 수 없습니다.
+>
 - XtraBackup은 Linux 플랫폼만 지원하며, Windows 플랫폼은 지원하지 않습니다.
 - Windows 플랫폼의 데이터 복구는 [TCCLI로 데이터 마이그레이션](https://intl.cloud.tencent.com/document/product/236/8464)을 참고하십시오.
 
@@ -20,9 +22,9 @@
 콘솔에서 TencentDB for MySQL 인스턴스의 데이터 백업 및 로그 백업을 다운로드할 수 있습니다.
 >?각 IP는 기본적으로 최대 10개의 다운로드 링크를 가질 수 있으며 다운로드 속도 제한은 각각 20Mpbs - 30Mpbs입니다.
 
-1. [TencentDB for MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인 후, 인스턴스 리스트에서 인스턴스 ID 또는 **작업**열의 **관리**를 클릭하여 인스턴스 관리 페이지로 이동합니다.
+1. [TencentDB for MySQL 콘솔](https://console.cloud.tencent.com/cdb) 로그인 후, 인스턴스 리스트에서 인스턴스 ID 또는 **작업**열의 **관리**를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. 인스턴스 관리 페이지에서 **백업 복구** > **데이터 백업 리스트** 페이지를 선택하고 다운로드할 백업을 선택한 후 **작업** 열에서 **다운로드**를 클릭합니다.
-3. 팝업창에서 다운로드 주소를 복사하고 [Linux CVM 커스텀 설정](https://intl.cloud.tencent.com/document/product/213/10517)에 따라 TencentDB 인스턴스와 동일한 VPC에서 Linux CVM에 로그인하고 `wget`을 실행합니다. 고속 사설망을 통해 파일을 다운로드합니다.
+3. 팝업창에서 권장 다운로드 주소를 복사하고 [CDB가 속한 VPC의 CVM(Linux 시스템)](https://www.tencentcloud.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)에 로그인한 후, wget 명령어로 내부 네트워크 고속 다운로드를 사용하면 보다 효율적입니다.
 >?
 >- 또한 **로컬 다운로드**를 선택하여 직접 다운로드할 수 있지만, 다소 긴 시간이 소요될 수 있습니다.
 >- wget 명령어 포맷: wget -c '백업 파일 다운로드 주소' -O 사용자 정의 파일명.xb 
@@ -38,8 +40,9 @@ wget -c 'https://mysql-database-backup-sh-1218.cos.ap-nanjing.myqcloud.com/12427
 
 1. [TencentDB for MySQL 콘솔](https://console.cloud.tencent.com/cdb) 로그인 후, 인스턴스 리스트에서 인스턴스 ID 또는 **작업**열의 **관리**를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. 인스턴스 관리 페이지에서 **백업 및 복구** > **데이터 백업 리스트** 탭에서 다운로드할 백업 파일에 해당하는 복호화 키를 찾은 후 **작업** 열에서 **키 다운로드**를 클릭합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/743b8d691a006b99cb25591bb2100b07.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/A8BA028_1.png)
 3. 팝업창에서 키를 저장할 파일 경로를 선택하고 **다운로드**를 클릭합니다.
+
 
 ## 3단계: 데이터 복구
 ### 3.1 백업 파일 압축 풀기
@@ -52,7 +55,7 @@ xbstream -x --decrypt=AES256 --encrypt-key-file=<백업 키 파일> --parallel=2
 >- `/data/test.xb`를 백업 파일로 변경합니다.
 >
 압축 해제 결과는 아래와 같습니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/K4wr727_f981522847f38b10bfe0a59c7234b7ba.png"  style="zoom:80%;">
 
 ### 3.2 백업 파일 압축 해제
 1. 다음 명령어를 사용해 qpress 툴을 다운로드합니다.
@@ -66,7 +69,7 @@ wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firef
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
 source /etc/profile
 ```
-3. 다음 명령어를 사용해 타깃 디렉터리에서 `.qp`로 끝나는 모든 파일을 압축 해제합니다.
+3. 그 다음 아래 명령을 실행하여 대상 디렉터리의 모든 `.qp` 파일의 압축을 해제합니다.
 ```
 xtrabackup --decompress --target-dir=/data/mysql
 ```
@@ -78,7 +81,7 @@ xtrabackup --decompress --target-dir=/data/mysql
 ![decompress.png](https://main.qcloudimg.com/raw/886e5463ffff0656ffe06d73ffbeb211.png)
 
 ### 3.3 Prepare 백업 파일
-백업을 압축 해제한 후 다음 명령어를 실행하여 apply log 작업을 하십시오.
+백업 파일의 압축을 해제한 후 다음 명령을 실행하여 apply log 작업을 수행합니다.
 ```
 xtrabackup --prepare  --target-dir=/data/mysql
 ```
@@ -86,7 +89,7 @@ xtrabackup --prepare  --target-dir=/data/mysql
 ![prepare.png](https://main.qcloudimg.com/raw/13c768fd980f99d7f5824e8f28100950.png)
 		
 ### 3.4 구성 파일 수정
-1. 다음 명령어를 실행하여 `backup-my.cnf` 파일을 엽니다.
+1. 다음 명령을 실행하여 `backup-my.cnf` 파일을 엽니다.
 ```
 vi /data/mysql/backup-my.cnf
 ```
@@ -107,7 +110,7 @@ vi /data/mysql/backup-my.cnf
 ```
 chown -R mysql:mysql /data/mysql
 ```
-![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/dk6k301_EeLm919_6.png)
 
 ## 4단계: mysqld 프로세스를 실행하고 확인을 위해 로그인
 1. mysqld 프로세스를 시작합니다.
