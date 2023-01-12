@@ -26,7 +26,7 @@ COSBrowser is a visualization interface tool provided by Tencent Cloud COS. You 
    <tr>
       <td>Linux</td>
       <td>Includes a GUI that supports the <a href="https://appimage.org">AppImage</a> format<br>
-          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox</code></td> in the terminal.
+          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox</code> in the terminal.</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
