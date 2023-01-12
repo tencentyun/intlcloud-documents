@@ -10,22 +10,22 @@ This API is equivalent to the `List Objects` API and can be used to list some or
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetBucket&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
 </div>
 
 
-## Request
+## Requests
 
-#### Sample request
+#### Request example
 
 ```shell
 GET / HTTP/1.1
@@ -35,17 +35,17 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
-#### Request parameters
+#### Request fields
 
-| Header | Description | Type | Required |
+| Field |  Description | Type | Required |
 | --- | --- | --- | --- |
-| prefix | Matching prefix for object keys. The response will contain only object keys with the specified prefix. | string | No |
-| delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the examples below | string | No |
-| encoding-type | Encoding type of the returned value. Valid value: `url`, meaning that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded to `%E8%85%BE%E8%AE%AF%E4%BA%91`. | string | No |
+| prefix | Key prefix to query objects by | String | No   |
+| delimiter | Character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the samples below. | String | No |
+| encoding-type | Encoding type of the returned value. Valid value: `url`, meaning that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded to `%E8%85%BE%E8%AE%AF%E4%BA%91`. | String | No |
 | marker | Marker for the starting object key. Object key entries will be returned in UTF-8 lexicographical order, starting from the first object key after the marker. | string | No |
 | max-keys | The maximum number (up to 1,000) of keys returned in the response. Defaults to `1000`. <br>**Note**: This parameter limits the maximum number of keys (the sum of `CommonPrefixes` and `Contents`) COS can return in each `List Objects` response. If not all objects are listed in a single response, COS will return the `NextMarker` node, the value of which can be used to specify `marker` so that the remaining objects can be listed in your next request. | integer | No |
 
@@ -65,7 +65,7 @@ In addition to common response headers, this API also returns the following resp
 
 | Header | Description | Type |
 | --- | --- | --- |
-| x-cos-bucket-region | Bucket region, such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
+| x-cos-bucket-region | Bucket region, such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | Enum |
 
 #### Response body
 
@@ -99,6 +99,7 @@ A successful query returns **application/xml** data, which contains information 
 				</Owner>
 				<StorageClass>Enum</StorageClass>
 				<StorageTier>Enum</StorageTier>
+				<RestoreStatus>Enum</RestoreStatus>
 			</Contents>
 			<Contents>
 				<Key>string</Key>
@@ -111,6 +112,7 @@ A successful query returns **application/xml** data, which contains information 
 				</Owner>
 				<StorageClass>Enum</StorageClass>
 				<StorageTier>Enum</StorageTier>
+				<RestoreStatus>Enum</RestoreStatus>
 			</Contents>
 </ListBucketResult>
 ```
@@ -153,6 +155,7 @@ The nodes are described as follows:
 | Owner | ListBucketResult.Contents | Information of the object owner | Container |
 | StorageClass | ListBucketResult.Contents | Object storage class, such as `STANDARD_IA` or `ARCHIVE`. For enumerated values, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | Enum |
 | StorageTier | ListBucketResult.Contents | Access tier (for INTELLIGENT TIERING) the object is currently stored in. Enumerated values: `FREQUENT`, `INFREQUENT`. This node is returned only when `StorageClass` is set to `INTELLIGENT_TIERING`. | Enum |
+|RestoreStatus | ListBucketResult.Contents | When the object storage class is `ARCHIVE` or `DEEP ARCHIVE`, this field indicates the restoration status of the object. Valid values: `ONGOING`, `DONE`, `FAILED`. If no restoration request is initiated to the object, this field is null. After a restoration request is initiated, the value is `ONGOING`, `DONE`, and `FAILED` respectively if the restoration is in progress, completed, or failed. This node is returned only when `StorageClass` is `ARCHIVE` or `DEEP_ARCHIVE`. | Enum |
 
 **Content of `Contents.Owner`:**
 
@@ -163,7 +166,7 @@ The nodes are described as follows:
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Examples
 
@@ -232,7 +235,19 @@ x-cos-request-id: NWZkMTk4MDVfNjViODJhMDlfNDZkYl8xNzU0****
 					<DisplayName>1250000000</DisplayName>
           </Owner>
           <StorageClass>STANDARD_IA</StorageClass>
-			</Contents>
+      </Contents>
+      <Contents>
+          <Key>example-object-2.jpg</Key>
+          <LastModified>2020-12-10T04:37:30.000Z</LastModified>
+          <ETag>&quot;51370fc64b79d0d3c7c609635be1c41f&quot;</ETag>
+          <Size>20</Size>
+          <Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+          </Owner>
+          <StorageClass>ARCHIVE</StorageClass>
+          <RestoreStatus>DONE</RestoreStatus>
+      </Contents>
 </ListBucketResult>
 ```
 

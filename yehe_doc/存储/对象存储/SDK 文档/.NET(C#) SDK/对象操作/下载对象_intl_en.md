@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------- | ------------------ |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
 
 ## SDK API References
 
@@ -21,9 +21,9 @@ The advanced version of the GET Object API uses more encapsulated logic to allow
 > - Advanced APIs support concurrent multipart downloads from v5.4.26. To download the latest version of SDK, go to [Releases](https://github.com/tencentyun/qcloud-sdk-dotnet/releases) or refer to [Getting Started](https://intl.cloud.tencent.com/document/product/436/30594).
 > 
 
-#### Sample 1. Downloading an object
+#### Sample 1: Downloading an object
 
-[//]: #".cssg-snippet-transfer-download-object"
+[//]: #	".cssg-snippet-transfer-download-object"
 
 ```cs
 using COSXML.Model.Object;
@@ -129,7 +129,7 @@ COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(request);
    transferManager.DownloadAsync(downloadTask);
    Console.WriteLine(result.GetResultInfo());
    string eTag = result.eTag;
- } catch (Exception e) {
+ } catch (Exception e){
    Console.WriteLine("CosException: " + e);
  }
 ```
@@ -302,6 +302,32 @@ namespace COSSnippet
 
 ```
 
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/GetObject.cs).
+>
+
+#### Sample 6: Suspending, resuming, or canceling a download
+
+To suspend a download, use the code below:
+
+[//]: # (.cssg-snippet-transfer-download-pause)
+```cs
+downloadTask.Pause();
+```
+
+To resume a suspended download, use the code below:
+
+[//]: # (.cssg-snippet-transfer-download-resume)
+```cs
+downloadTask.Resume();
+```
+
+To cancel an upload, use the code below:
+
+[//]: # (.cssg-snippet-transfer-download-cancel)
+```cs
+downloadTask.Cancel();
+```
+
 >? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).
 >
 
@@ -309,11 +335,11 @@ namespace COSSnippet
 
 ### Downloading an object
 
-#### Description
+#### Feature description
 
 This API is used to download an object to the local file system.
 
-#### Sample 1: simple download of a single object
+#### Sample 1: Simple download of a single object
 
 [//]: #	".cssg-snippet-get-object"
 
@@ -391,7 +417,7 @@ namespace COSSnippet
 >? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/GetObject.cs).
 >
 
-#### Sample 2: downloading an object to memory
+#### Sample 2: Downloading an object to memory
 
 [//]: #	".cssg-snippet-get-object"
 
