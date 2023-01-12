@@ -5,6 +5,9 @@ If you continue to send emails to Email Service Providers in spite of a low emai
 By default, the reputation level of a newly created sender domain in **Verification passed** status is level 1, which will be automatically raised immediately or lowered the next day based on the email delivery quality. The daily email sending limits for different reputation levels are listed as shown below. If you want to increase this limit, you can submit a ticket to us for application after your domain reputation level reaches level 20.
 
 You can view the reputation level of each sender domain and the corresponding daily email sending limit on the [**Sender Domain**](https://console.cloud.tencent.com/ses/domain) page in the SES console.
+>?
+>- Even the reputation level of 1 can be automatically upgraded to level 20 on the same day, meaning that the maximum number of emails sent per day can reach 1,000,000. Manual adjustments are not supported before level 20.
+>- As soon as the email delivery quality meets the upgrade requirements of the reputation level, the system will immediately increase the reputation level and the maximum number of emails sent per day. For more information, see "Level Raising and Lowering Rules" below.
 
 | Reputation Level | Daily Email Sending Limit (Emails)        |
 | ----- | ----------------- |
@@ -31,10 +34,10 @@ You can view the reputation level of each sender domain and the corresponding da
 | Higher  | Submit a ticket to us for application |
 
 ## Level Raising and Lowering Rules
-SES dynamically determines the reputation level of a sender domain based on the email delivery quality, which is measured against the **invalid address rate, spam bounce rate, spam complaint rate, and email open rate**.
+SES dynamically determines the reputation level of a sender domain based on the email delivery quality, which is measured against the **invalid address rate, deliverability, spam bounce rate, spam complaint rate, and email open rate**.
 
 **The level will be raised when any one of the following rules is satisfied, and the raised daily email sending limit will take effect immediately:**
-- The daily number of emails actually sent reaches 70% of the daily email sending limit for the current level, with a deliverability above 92%, a spam complaint rate below 0.1%, an invalid address rate below 5%, and a spam bounce rate below 2.5%.
+- The daily number of emails actually sent reaches 70% of the daily email sending limit for the current level, with an invalid address rate below 5%, a deliverability above 92%, a spam bounce rate below 2.5%, and a spam complaint rate below 0.1%.
 - The daily number of emails actually sent reaches 70% of the daily email sending limit for the current level, with a deliverability above 90%, a spam complaint rate below 0.1%, and an email open rate above 50%.
 
 **The level will be lowered when any one of the following rules is satisfied, and the lowered daily email sending limit will take effect the next day:**
@@ -58,5 +61,5 @@ When any one of the following rules is satisfied, email sending will be blocked 
 
 ## Allowed Email Types
 SES only allows sending emails to recipient addresses that are provided during member registration. You are not allowed to send unsolicited emails or send emails to addresses that are not provided by recipients themselves.
-- Emails cannot contain sensitive words or social media information such as WeChat account, QQ account, QR code, and group information.
+- Emails cannot contain sensitive words or social media information such as Weixin account, QQ account, QR code, and group information.
 - Emails should contain detailed compliance information. We recommend you add the Unsubscription link in emails.
