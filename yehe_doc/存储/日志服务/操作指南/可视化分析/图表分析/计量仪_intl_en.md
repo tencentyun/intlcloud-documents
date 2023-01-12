@@ -20,6 +20,6 @@ A gauge chart describes a single metric. Unlike an individual value plot, it is 
 | -------- | ------------------------------------------------------------ |
 | Threshold configuration | Threshold point: Set the threshold points. You can add multiple threshold intervals. You can click a threshold color to open the color picker to customize the color.<br />MAX/MIN: Control the maximum and minimum values on the gauge. Data outside the range will not be displayed on the chart. |
 
-Threshold configuration example:
+**Threshold configuration example:**
 ![](https://qcloudimg.tencent-cloud.cn/raw/1b5b032ad00abf7a9d273a164833b6af.png)
 
