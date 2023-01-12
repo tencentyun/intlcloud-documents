@@ -1,23 +1,22 @@
 ### What is COS?
-
 Tencent Cloud Cloud Object Storage (COS) is a cloud-based non-hierarchical distributed storage service that provides cost-effective, fast, and reliable data storage solutions. COS stores your data across multiple AZs, incorporating redundant storage to ensure data reliability, and allows multiple clients or application threads to read or write data at the same time.
 
 You can use web APIs to store and retrieve data through CVM instances or over the internet. You can also use the URL of a specified domain name to store and retrieve individual data object in COS through HTTP or HTTPS protocol.
 
-For more information about COS, see [COS Documentation](https://www.tencentcloud.com/document/product/436).
+For more information about COS, please see [COS Documentation](https://intl.cloud.tencent.com/document/product/436).
 
 
 ### What is the difference between Cloud Object Storage (COS) and Cloud File Storage (CFS)?
 
-[COS](https://www.tencentcloud.com/document/product/436) has no limit on directory hierarchy or data format and can store any amount of data. There is no upper limit on bucket storage capacity and no partitioning is required. It supports HA deployment to ensure the eventual consistency of data but does not support features such as file locking. COS APIs support data access using through HTTP or HTTPS protocol, and COS offers a variety of SDKs and tools that can be integrated into your business. Objects uploaded to COS can also be accessed or downloaded directly via a URL.
+[COS](https://intl.cloud.tencent.com/document/product/436) has no limit on directory hierarchy or data format and can store any amount of data. There is no upper limit on bucket storage capacity and no partitioning is required. It supports HA deployment to ensure the eventual consistency of data but does not support features such as file locking. COS APIs support data access using HTTP or HTTPS protocol, and COS offers a variety of SDKs and tools that can be integrated into your business. Objects uploaded to COS can also be accessed or downloaded directly via a URL.
 
-[Cloud File Storage (CFS)](https://www.tencentcloud.com/document/product/582) uses common network file transfer protocols, can create file systems and implement large-scale expansion, but needs to be mounted onto CVM. It can store data for a wide range of applications such as websites, online distributors, and archives. Featuring high computing throughput and extremely high availability and durability, it is also suitable for scenarios demanding high concurrence or shared storage.
+[Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582) uses common network file transfer protocols, can create file systems and implement large-scale expansion, but needs to be mounted onto CVM. It can store data for a wide range of applications such as websites, online distribution, and archiving. Featuring high computing throughput and extremely high availability and persistence, it is also suitable for scenarios demanding high concurrence or shared storage.
 
 ### What is the difference between COS and CBS?
 
-[COS](https://www.tencentcloud.com/document/product/436) has no limits on file systems, directory structure, file number, or storage capacity and needs to be managed and accessed via web APIs. COS offers various SDKs and tools for business integration, which can be used independently without CVM. COS supports access to massive amounts of data but is not suitable for scenarios involving millisecond-level response or random I/O.
+[COS](https://intl.cloud.tencent.com/document/product/436) has no limits on file systems, directory structure, file number, or storage capacity and needs to be managed and accessed via web APIs. COS offers various SDKs and tools for business integration, which can be used independently without CVM. COS supports access to massive amounts of data but is not suitable for scenarios involving millisecond-level response or random I/O.
 
-[Cloud Block Storage (CBS)](https://www.tencentcloud.com/document/product/362) needs to be used together with CVM and can only be mounted and used after the file system is partitioned or formatted. It comes in different types with various performance metrics such as IOPS and throughput for different scenarios.
+[Cloud Block Storage (CBS)](https://intl.cloud.tencent.com/document/product/362) needs to be used together with CVM and can only be mounted and used after the file system is partitioned or formatted. It comes in different types with various performance metrics such as IOPS and throughput for different scenarios.
 
 
 ### Why does the access link of a public-read file expire?
@@ -68,35 +67,23 @@ You can proactively delete files in the following ways:
 
 ### Does COS support statistics collection?
 
-COS is capable of monitoring stored data and displaying the details and trends of various metrics in the monitoring window. To view general data trends, go to the **Overview** page in the [COS console](https://console.cloud.tencent.com/cos5), and you can view data such as storage size, request number, and traffic for each storage class.
+COS is capable of monitoring stored data and displaying the details and trends of various metrics in the monitoring data window. To view general data trends, go to the **Overview** page in the [COS console](https://console.cloud.tencent.com/cos5), and you can view data such as storage size, number of requests, and traffic of each storage class.
 To view the statistics of a single bucket, see [Querying Monitoring Data](https://intl.cloud.tencent.com/document/product/436/31634).
 
 In addition to the COS Console, you can also view the monitoring information of different buckets on the [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) page where you can also configure different alarm policies to fit your business needs.
 
-### Does COS support image processing?
+### Does COS support image processing, image compression, thumbnail generation, or video transcoding?
 
-The COS console has integrated Cloud Infinite features, which enable you to scale, crop, and add watermarks to your images. For more information, see [Enabling Image Processing](https://intl.cloud.tencent.com/document/product/436/36569).
+CI is integrated in the COS console to implement data processing features such as image processing, image compression, thumbnail generation, and video transcoding. For more information, see [Data Processing](https://www.tencentcloud.com/document/product/436/35279).
 
 
-### Does COS support image compression?
+### Which audio/video formats does COS support?
 
-COS is a distributed storage service for unstructured data and cannot support image compression on its own. For more information on image compression, see [Cloud Infinite](https://www.tencentcloud.com/products/ci).
-
-### Does COS support thumbnails?
-
-COS is a distributed storage service for unstructured data and cannot support thumbnails on its own. For more information on thumbnails, see [Cloud Infinite](https://www.tencentcloud.com/products/ci).
-
-### Does COS support transcoding video files?
-
-COS is a distributed storage service for unstructured data and cannot support video transcoding on its own. For information on how to transcode video files, see [Cloud Infinite](https://www.tencentcloud.com/products/ci).
-
-### What formats of audio/video files can COS process?
-
-COS is a distributed storage service for unstructured data and cannot support audio/video file processing on its own. For information on how to process rich media files such as mp4, avi, ts, hls, mp3, and aac files, see [Cloud Infinite](https://www.tencentcloud.com/products/ci).
+COS is a distributed storage service for unstructured data and cannot support image compression or audio/video file processing on its own. For more information on rich media file processing (MP4, AVI, TS, HLS, MP3, AAC, etc.), see [Cloud Infinite](https://www.tencentcloud.com/zh/products/ci).
 
 ### Does COS support the auto decompression of uploaded files?
 
-COS is a distributed storage service for unstructured data and does not support file decompression; however, you can use the SCF service to decompress files. For more information, see [File Decompression](https://intl.cloud.tencent.com/document/product/436/35663).
+COS is a distributed storage service for unstructured data and does not support file decompression; however, you can use the SCF service to decompress files. For more information, see [Setting File Decompression](https://intl.cloud.tencent.com/document/product/436/35663).
 
 ### What are the specifications and limits of COS?
 
@@ -104,22 +91,17 @@ For more information, see [Specifications and Limits](https://intl.cloud.tencent
 
 ### What is a bucket?
 
-A bucket is a carrier of objects, which can be considered as a "container" for storing objects. You can manage buckets and configure attributes of buckets in various methods such as the Tencent Cloud console, APIs, and SDKs. For example, you can set a bucket for hosting a static website or set access permission on a bucket. For more information on buckets, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
+A bucket is a carrier of objects, which can be considered as a "container" for storing objects. You can manage buckets and configure attributes for buckets through various methods such as the Tencent Cloud console, APIs, and SDKs. For example, you can set a bucket to be used for static website hosting or set access permission for a bucket. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
 ### What is the length limit on a bucket name?
 
-The bucket length limit has been changed since the COS console update in September 2021. According to the new policy, the length of a bucket name is affected by the number of characters in the **region abbreviation** and **APPID**, as the combined full domain name can contain 60 characters at most. Note that previous bucket names will not be affected. If you need longer names to meet special requirements, [contact us](https://intl.cloud.tencent.com/contact-sales).
+The bucket length limit has been changed since the COS console update in September 2021. According to the new policy, the length of a bucket name is affected by the number of characters in the **region abbreviation** and **APPID**, as the combined full domain can contain 60 characters at most. Note that previous bucket names will not be affected. If you need longer names to meet special requirements, [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 
-### Which version of COS should I use, an earlier version or the current version?
-
-The implementation of earlier versions of COS is quite different than that of the current version. The current version has more features than earlier versions, and earlier versions are not updated with the latest features. **We recommend that you use the current version** for a better experience. If you are using an earlier version, please [contact us](https://intl.cloud.tencent.com/contact-sales) to activate the current version.
-
-The current version comes with different APIs and SDK APIs than those in earlier versions. JSON APIs are used in earlier versions and XML APIs are used in the current version. JSON APIs have the same underlying architecture as XML APIs. Their data is interoperable and can intersect, but they are ultimately not compatible with each other and have different domain names.
 
 ### How do I monitor error code information?
 
-You can use [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) to get different types of HTTP error code messages. For more information, see [Monitoring and Alarms](https://intl.cloud.tencent.com/document/product/436/31649). For information on how to use cloud monitoring and obtain relevant data, see Cloud Monitoring [Console Guide](https://intl.cloud.tencent.com/document/product/248/13517).  
+You can use [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) to get different types of HTTP error code messages. For more information, see [Monitoring and Alarms](https://intl.cloud.tencent.com/document/product/436/31649). For information on how to use cloud monitoring and obtain relevant data, see Cloud Monitor [Console Guide](https://intl.cloud.tencent.com/document/product/248/13517).  
 
 
 ### How do I calculate the availability of COS?
