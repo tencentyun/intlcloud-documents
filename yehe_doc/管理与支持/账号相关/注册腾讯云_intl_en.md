@@ -6,7 +6,7 @@
 
 2. Enter your account information, read the Terms of Service and Privacy Policy and, if you agree, select the boxes and click **Next**.
 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/34ed7d5d22bbd934b5d873e4a1a6fb81.png)
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/sMhD870_signup-step2.png)
 
    >? Each mobile number can be used for at most five accounts. When the limit is reached, you can modify the mobile number bound to an existing account and try again. For detailed directions, see [Verifying and Modifying Your Verification Mobile Number](https://intl.cloud.tencent.com/document/product/378/48918).
 

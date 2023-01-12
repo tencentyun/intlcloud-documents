@@ -52,6 +52,9 @@
 ## COS 支持的条件键
 
 
+>? 条件键`tls-version`当前仅支持北京地域，其他地域将陆续支持。
+>
+
 
 对象存储（Cloud Object Storage，COS）支持的条件键包括两类，一类是所有请求都适用的，包括 IP、VPC 和 HTTPS；一类是来自请求头部和请求参数的条件键，一般只适用于需要携带该请求头部或者请求参数的请求。关于这些条件键的说明和使用实例可参见 [条件键说明及使用示例](https://intl.cloud.tencent.com/document/product/436/46206) 文档。
 
@@ -67,7 +70,7 @@
 |[cos:secure-transport](https://intl.cloud.tencent.com/document/product/436/46206#secure-transport) |所有请求 |检查请求是否适用了 HTTPS 协议 |  Boolean  |
 |[qcs:ip](https://intl.cloud.tencent.com/document/product/436/46206#RestrictUserAccessIP) |所有请求 |请求来源的 IP 网段|  IP|
 |[qcs:vpc](https://intl.cloud.tencent.com/document/product/436/46206#requester_vpc) |所有请求 |请求来源的 VPC ID  | String  |
-
+|[cos:tls-version](https://intl.cloud.tencent.com/document/product/436/46206#tls-version) |所有 https 请求|https 请求使用的 TLS 版本 |Numeric|
 
 
 ### 来自请求头部和请求参数的条件键
@@ -88,7 +91,7 @@
 |[cos:content-length](https://intl.cloud.tencent.com/document/product/436/46206#content-length) |该请求头适用范围广，关注代表性请求，例如带请求体的请求 |请求头部：Content-Length |Numeric|
 |[cos:content-type](https://intl.cloud.tencent.com/document/product/436/46206#content-type) |该请求头适用范围广，关注代表性请求，例如带请求体的请求 |请求头部：Content-Type |String|
 |[cos:response-content-type](https://intl.cloud.tencent.com/document/product/436/46206#response-content-type) |GetObject |请求参数：response-content-type |String|
-
+|[qcs:request_tag](https://intl.cloud.tencent.com/document/product/436/46206#request_tag) |PutBucket<br>PutBucketTagging |请求头部：x-cos-tagging<br>请求参数：tagging|String|
 
 
 
@@ -100,6 +103,7 @@ COS 的条件键支持以下条件操作符，适用于字符串（String）、�
 |:----------|:----------|:----------|
 |string_equal |字符串等于（区分大小写） |String |
 |string_not_equal |字符串不等于（区分大小写） |String |
+|string_like |字符串相似（区分大小写），当前支持在字符串前后添加通配符`*`，例如`image/*` |String |
 |ip_equal |IP 等于 |IP |
 |ip_not_equal |IP 不等于 |IP |
 |numeric_equal |数值等于 |Numeric |
@@ -370,3 +374,5 @@ allow + string_equal_if_exist 在请求中缺失这一条件键时，默认按�
     ]
 }
 ```
+
+

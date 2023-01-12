@@ -4,20 +4,20 @@ This document describes the usage specifications and suggestions for TencentDB f
 - To standardize the management and maintenance of TencentDB for SQL Server to avoid unavailability and other issues caused by improper operations.
 - To provide guidance for database developers on how to write SQL statements to ensure optimal performance of TencentDB for SQL Server.
 
-## Suggestions for Instance Specification
+## Suggestions for instance specification
 - Do not use instances with the 1-core specification in the production environment, which is suitable for feature testing only.
 - Use instances with the 2-core or higher specification in the production environment. As SQL Server runs on Windows, the engine and the system require many resources. Therefore, the 1-core specification isn't suitable for sustaining the production business, and problems such as low system memory and system lags may occur after long-time operations on this specification.
 
-## Suggestions for Instance Selection
+## Suggestions for instance selection
 - Use Dual-Server High Availability or Cluster Edition primary/replica instances. Compared with a Basic Edition single-node instance, such instances can greatly improve the availability and reliability of the production business.
 - If your business has only a small number of write requests but a large number of read requests and you need to add read-only instances, use SQL Server 2017/2019 Enterprise Cluster Edition to sync data more efficiently and stably.
 - Select multi-AZ deployment for Dual-Server High Availability/Cluster Edition instances to implement AZ-level disaster recovery.
 
-## Suggestions for Database Connection
+## Suggestions for database connection
 - Use `ip,port` to connect to a TencentDB for SQL Server instance. Note that the IP and port are separated by a comma.
 - Do not use the server name for connection. Your application should better have a reconnection mechanism for database connection, so it can reconnect to databases in time through retries in case of database failure or disconnection.
 
-## Permission Management Specifications
+## Permission management specifications
 - To ensure the stability and security, permission restrictions are imposed on `sysadmin` and `shutdown` in TencentDB for SQL Server. The following errors may occur when you run certain statements:
  - `User does not have permission to perform this action.`
  - `You do not have permission to run the RECONFIGURE statement.`
@@ -27,11 +27,8 @@ Solution: Modify parameters, manage databases and users, and restore backups in 
 - Allow authorized users to access TencentDB for MySQL only from specific IPs or IP ranges. This can be achieved by configuring security groups in the console as prompted.
 - Separate management, development, and application accounts. Avoid using admin accounts for development or business operations.
 
-## Daily Operation Specifications and Suggestions
-- For performance considerations, we recommend you create databases in a TencentDB for SQL Server instance within the following limits:
- - Basic Edition: The number of databases that can be created is unlimited theoretically, but we recommend you keep it below 100.
- - Dual-Server High Availability/Cluster Edition: The number of databases that can be created is limited in the console. We recommend you keep it below 70.
- - The number of databases that a single instance can sustain is subject to the instance specifications. If there are too many databases, the instance performance will drop, and more resources such as worker threads will be used. If the limit on the number of created instances is exceeded, primary/replica sync exceptions may occur.
+## Daily operation specifications and suggestions
+- If there are too many databases, the TencentDB for SQL Server instance performance will drop, and more resources such as worker threads will be used. If the limit on the number of created instances is exceeded, primary/replica sync exceptions may occur. We recommend you keep the number of databases created in a single instance below the upper limit, which is subject to the CPU core quantity of the instance. For more information, see [Constraints and Limits > Database quantity](https://intl.cloud.tencent.com/document/product/238/2021).
 - The database name can contain up to 64 digits, letters, and underscores.
 - For enhanced instance security, do not use weak passwords. Perform account and database management operations in the console in general cases.
 - For login over the private network, make sure that the CVM instance of the client and the TencentDB for SQL Server instance are in the same VPC in the same region under the same account.
@@ -51,12 +48,12 @@ Solution: Modify parameters, manage databases and users, and restore backups in 
  Therefore, use the simple recovery model with caution.
 - Avoid performing DDL operations during peak hours.
 - Avoid performing batch operations during peak hours. To delete an entire table, use `TRUNCATE` or `DROP` during off-peak hours.
-- Avoid running an instance for multiple businesses so as to minimize the risk of mutual interference between businesses due to high coupling.
+- Avoid running an instance for multiple businesses to minimize the risk of mutual interference between businesses due to high coupling.
 - Avoid using automatic transaction committing and develop a habit of using `begin tran;` for online operations, which helps minimize the risk of data loss caused by maloperations. In case of a maloperation, you can use the rollback feature of TencentDB for SQL Server for data restoration. After a transaction begins, commit it in time to avoid instance blocking.
 - Perform database operations in the console rather than on the SSMS client.
-- Estimate the resources required in advance and optimize the instances for promotional campaigns of your business. In case of a great demand for resources, contact your Tencent Cloud rep timely.
+- Estimate the resources required in advance and optimize the instances for promotional campaigns of your business. In case of a great demand for resources, contact your Tencent Cloud sales rep timely.
 
-## Suggestions for Using DTS for Database Migration
+## Suggestions for using DTS for database migration
 **Check the following before migrating a database to the cloud:**
 - Version numbers of source and target databases. The target database must be on a version later than or equal to the source database. For example, if the source database is on v2016, the target database can only be on v2016, v2017, or v2019.
 - Architecture versions of source and target databases. If the source instance is a self-built database in a local IDC, CVM instance, or cloud server in another cloud vendor, or is a cloud SQL Server instance in another cloud vendor, you can migrate it to a TencentDB for SQL Server Basic/Dual-Server High Availability/Cluster Edition instance on any architecture version. If the source instance is a TencentDB for SQL Server Dual-Server High Availability/Cluster Edition instance, it cannot be migrated to a Basic Edition instance through DTS. If the source instance is a TencentDB for SQL Server Basic Edition instance, it can be migrated to a Dual-Server High Availability/Cluster Edition instance through DTS.
@@ -84,7 +81,7 @@ You need to keep the following operation limits in mind when migrating data to t
 - Reindexing. As the physical environment of the data files changes, database indexes will become invalid, and you need to create indexes again; otherwise, the database performance may be significantly compromised.
 - Instance-level objects such as logins, jobs, triggers, and database links (link server). You need to create them again after the migration is completed.
 
-## Database and Table Design Specifications
+## Database and table design specifications
 **Notes**
 - TencentDB for SQL Server versions earlier than 2014 don't support memory-optimized tables. If you need to use this type of tables, we recommend you use TencentDB for Redis and Memcached.
 - Follow the third normal form (3NF) when creating tables and specify the primary key for each table. Even if you can't select an appropriate column as the primary key, you still need to select one. 
@@ -98,10 +95,10 @@ You need to keep the following operation limits in mind when migrating data to t
 - Do not use the `TEXT` or `BLOB` type to store a large amount of text, binary data, images, files, and other contents in a database; instead, save such data as local disk files and only store their index information in the database.
 - Avoid using foreign keys. Implement the foreign key logic at the application layer. Foreign key and cascade update are not suitable for high-concurrency scenarios, because they may reduce the insertion performance and lead to deadlock in case of high concurrency.
 - Reduce the coupling of business logic and data storage, use databases mainly for storing data, implement business logic at the application layer, and minimize the use of instance-level triggers, link servers, jobs, and other advanced features due to their poor portability and scalability. If such objects exist in an instance, after data migration, you need to migrate them to the new instance manually.
-- If you won't have a substantial business volume in the near future, do not use partitioned tables, which are mainly used for archive management. Partitioned tables have no obvious improvement on the performance if most queries in your business don't involve partition fields.
+- If you don't have a significant increase in business volume in the near future, do not use partitioned tables, which are mainly used for archive management. Partitioned tables have no obvious improvement on the performance if most queries in your business don't involve partition fields.
 - Purchase read-only instances to implement read/write separation at the database level for business scenarios with a high read load and low requirement for consistency (where a data delay within seconds is acceptable).
 
-## Index Design Specifications
+## Index design specifications
 **Notes**
 - Do not create indexes on the columns that are updated frequently and have a lower selectivity. Record updates will change the B+ tree, so creating indexes on frequently updated fields may greatly reduce the database performance.
 - Put the column with the highest selectivity on the far left when creating a composite index; for example, in `select xxx where a = x and b = x;`, if a and b are used together to create a composite index and a has a higher selectivity, then the composite index should be created as `idx_ab(a,b)`. If `Not Equal To` and `Equal To` conditions are used at the same time, the column with the `Equal To` condition must be put first; for example, in `where a xxx and b = xxx`, b must be placed on the far left even if a has a higher selectivity, because a will not be used in the query.
@@ -112,7 +109,7 @@ You need to keep the following operation limits in mind when migrating data to t
 - Avoid using redundant indexes. If both index (a,b) and index (a) exist, (a) is considered a redundant index. If the query filtering is based on column a, the index (a,b) is sufficient.
 - Use `INCLUDE index` reasonably to reduce I/O overheads. Commonly used columns should be placed on the left, and columns that will not be used as query conditions can be placed in `INCLUDE`.
 
-## SQL Statement Writing Specifications
+## SQL statement writing specifications
 **Notes**
 - For `UPDATE` and `DELETE`, use `WHERE` for exact match. To delete a large amount of data, delete the data in batches during off-peak hours.
 - When using `INSERT INTO t_xxx VALUES(xxx)`, explicitly specify the column attributes to be inserted to prevent data errors caused by changes in the table structure.
@@ -135,4 +132,3 @@ Ensure query on demand and reject `select *` to avoid the following problems:
 - It is difficult to completely avoid the aforementioned issues. The solution is to set the aforementioned conditions as secondary filtering conditions for indexes rather than as primary filtering conditions.
 - If a large number of full-table scans is found in the monitoring data, you can download slow log files in the console for analysis.
 - Perform the required SQL audit before a business is released. In daily Ops work, download slow query logs regularly for targeted optimization.
-

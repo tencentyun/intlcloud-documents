@@ -16,18 +16,12 @@
 3. 找到对象所在的存储桶，单击其存储桶名称，进入存储桶管理页面。
 4. 在左侧导航栏中，选择**文件列表**，进入文件列表页面。
 5. 找到您要设置加密的对象，在其右侧操作栏中，单击**详情**。
-![](https://main.qcloudimg.com/raw/05c7a0e867badbd56242b93f6425561d.png)
-6. 在“服务端加密”栏中，选择对应的加密方式。
-
+6. 在“服务端加密”栏中，选择对应的加密方式，并单击**保存**即可。
 目前支持以下两种加密方式：
  - SSE-COS：由 COS 托管密钥的服务端加密方式，更多关于 SSE-COS 的信息，请参见 [服务端加密概述：SSE-COS](https://intl.cloud.tencent.com/document/product/436/18145#sse-cos-.E5.8A.A0.E5.AF.86)。
  - SSE-KMS：由腾讯云密钥管理系统 KMS 托管密钥的服务端加密方式，可选择使用默认密钥或自建密钥。关于密钥信息，可参见 [创建 KMS 密钥](https://intl.cloud.tencent.com/document/product/1030/31971)， 关于 SSE-KMS 的更多信息，请参见 [服务端加密概述：SSE-KMS](https://intl.cloud.tencent.com/document/product/436/18145#sse-kms-.E5.8A.A0.E5.AF.86)。
-7. 单击**保存**。
->!
-> - 如您首次使用 SSE-KMS 加密，需要 [开通 KMS 服务](https://buy.cloud.tencent.com/kms)。
+>?
+> - 如您首次使用 SSE-KMS 加密，需要 [开通 KMS 服务](https://intl.cloud.tencent.com/pricing/kms)。
 > - 目前 SSE-KMS 加密，仅支持北京、上海、广州地域。
-> 
-若您需要对多个对象进行批量设置加密，可勾选多个对象，并单击上方的**更多操作 > 修改加密方式**即可设置。
-
-
+> - 若您需要对多个对象进行批量设置加密，可勾选多个对象，并单击上方的**更多操作 > 修改加密方式**即可设置。
 

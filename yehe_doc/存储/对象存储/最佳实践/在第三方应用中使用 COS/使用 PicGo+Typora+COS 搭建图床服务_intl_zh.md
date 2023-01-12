@@ -21,7 +21,7 @@ COS 用于图床场景的优势有：
 ### 操作步骤
 
 1. 安装 PicGo 并设置腾讯云 COS 服务相关参数。
->?本次实践使用的是 PicGo 2.3.0版本，其他版本的配置过程可能存在一定差异，请注意相应调整。
+>?本次实践使用的是 PicGo 2.3.1版本，其他版本的配置过程可能存在一定差异，请注意相应调整。
 >
 在 [PicGo 官网](https://molunerfinn.com/PicGo/) 下载和安裝 PicGo 后，在图床设置里找到**腾讯云 COS**，并配置以下相关参数项：
 
@@ -33,6 +33,7 @@ COS 用于图床场景的优势有：
   - 确认存储区域：地域信息，枚举值可参见 [可用地域](https://intl.cloud.tencent.com/document/product/436/6224) 文档，例如：ap-beijing、ap-hongkong、eu-frankfurt 等。
   - 指定存储路径：图片存放到 COS 存储桶中的路径。
   - 设定自定义域名：可选，若您为上方的存储空间配置了自定义源站域名，则可填写。相关介绍可参见 [开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)。
+  - 设定网址后缀：通过在网址后缀添加 COS 数据处理参数实现图片压缩、裁剪、格式转换等操作，相关介绍可参见 [图片处理](https://www.tencentcloud.com/document/product/436/40118)。
 2. 设置 typora（可选）。
 >?如果您的编辑需求不是 Markdown 场景，可以忽略此步骤，仅使用上一步安装的 PicGo 作为图床工具。
 >
@@ -79,3 +80,9 @@ COS 用于图床场景的优势有：
 
 - sublime text 搜索替换示例：
 ![](https://qcloudimg.tencent-cloud.cn/raw/97855e83ce68cd23254c98f4849e2d41.png)
+
+
+
+
+
+

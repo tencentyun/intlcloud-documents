@@ -12,7 +12,7 @@ Note the following when using a VPN connection:
 ## VPN Gateway
  - VPN Connections is a region-level service, but you can also connect to your VPN gateway in any region over the internet.
  - You cannot specify a public IP or the ISP of the public IP for the VPN gateway. IPv6 and anycast IP addresses are also not supported.
- - To create a VPN gateway with a higher bandwidth cap, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+ - To create an SSL VPN gateway with 1Gbps bandwidth cap, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
 ## Customer Gateway
  - You must specify the IP address of the customer gateway. The public IP of the customer gateway cannot be the following IP addresses:
@@ -123,8 +123,7 @@ To ensure that all your clients can be assigned an IP address, we recommend you 
 <td>SSL VPN connections</td>
 <td><ul><li>A [5,100] Mbps SSL VPN gateway can sustain up to 100 SSL VPN connections.</li><li>A 200/500 Mbps SSL VPN gateway can sustain up to 500 SSL VPN connections.</li><li>A 1,000 Mbps SSL VPN gateway can sustain up to 1,000 SSL VPN connections.</li></ul>
 <dx-alert infotype="explain" title="">
-- The maximum number of SSL VPN connections is the number of connections to the client. Once it is configured, it cannot be modified. Therefore, plan an appropriate value before configuration.
-- To increase the bandwidth cap to 200, 500, or 1,000 Mbps, <a href="https://console.cloud.tencent.com/workorder/category" >submit a ticket</a> for application.
+The maximum number of SSL VPN connections is the number of connections to the client. Once it is configured, it cannot be modified. Therefore, plan an appropriate value before configuration.
 </dx-alert>
 </td>
 </tr>
@@ -133,6 +132,3 @@ To ensure that all your clients can be assigned an IP address, we recommend you 
 <td>The protocol port cannot be 123, 53, 22, 36000, 54000, 50051, 68, 500, or 4500.</td>
 </tr>
 </table>
-<dx-alert infotype="explain" title="">
-To increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
-</dx-alert>

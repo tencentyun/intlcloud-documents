@@ -1,3 +1,36 @@
+## November 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported archive backup</td>
+<td>TencentDB for SQL Server automatic backup supports setting archive backup retention and non-archive backup retention. You can use this feature to back up data by scheduling two cycles, which reduces the costs compared with a single-cycle backup policy.</td>
+<td>2022-11-22</td>
+<td><a href="https://www.tencentcloud.com/document/product/238/51892" target="_blank">Setting Archive Backup Retention</a></td></tr>
+</tbody></table>
+
+## October 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Added monitoring metrics.</td>
+<td>New metrics are available for TencentDB for SQL Server 2014 and later, including internally locked/used memory.</td>
+<td>2022-10-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46502" target="_blank">Monitoring Metrics</a></td></tr>
+</tbody></table>
+
+## September 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Optimized operations for security group binding</td>
+<td>TencentDB for SQL Server security groups can be unbound from projects and support multi-selection and fuzzy search capabilities.</td>
+<td>2022-09-16</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35789" target="_blank">Configuring Security Group</a></td></tr>
+</tbody></table>
+
 ## August 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>

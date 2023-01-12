@@ -18,26 +18,37 @@
 
 #### 示例：只允许指定 IP 来源的用户访问
 
-以下策略示例描述为：允许属于主账号 ID 为100000000001（APPID 为1250000000）下的子账号 ID 100000000002，对北京地域的存储桶 examplebucket-bj 和广州地域的存储桶 examplebucket-gz 下的对象 exampleobject，在访问 IP 为10.*.*.10/24网段时，拥有上传对象和下载对象的权限。
+以下策略示例描述为：允许属于主账号 ID 为100000000001（APPID 为1250000000）下的子账号 ID 100000000002，对北京地域的存储桶 examplebucket-bj 和广州地域的存储桶 examplebucket-gz 下的对象 exampleobject，在访问 IP 在`192.168.1.0/24`网段和 IP 为`101.226.100.185` 或 `101.226.100.186`时，拥有上传对象和下载对象的权限。
 
 ```
 {
-	"version": "2.0",
-	"principal": {
-		"qcs": ["qcs::cam::uin/100000000001:uin/100000000002"]
-	},
-	"statement": [{
-		"effect": "allow",
-		"action": ["name/cos:PutObject", "name/cos:GetObject"],
-		"resource": ["qcs::cos:ap-beijing:uid/1250000000:examplebucket-bj-1250000000/*",
-			"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
-		],
-		"condition": {
-			"ip_equal": {
-				"qcs:ip": "10.*.*.10/24"
-			}
-		}
-	}]
+    "version": "2.0",
+    "principal": {
+        "qcs": [
+            "qcs::cam::uin/100000000001:uin/100000000002"
+        ]
+    },
+    "statement": [
+        {
+            "effect": "allow",
+            "action": [
+                "name/cos:PutObject",
+                "name/cos:GetObject"
+            ],
+            "resource": [
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
+            ],
+            "condition": {
+                "ip_equal": {
+                    "qcs:ip": [
+                        "192.168.1.0/24",
+                        "101.226.100.185",
+                        "101.226.100.186"
+                    ]
+                }
+            }
+        }
+    ]
 }
 ```
 
@@ -620,7 +631,7 @@ GetObject 接口支持加入请求参数`response-content-type`，用于设置�
 
 您可以通过条件键`cos:x-cos-storage-class`限制请求头部`x-cos-storage-class`，进而限制可能修改存储类型的请求。
 
-COS 的存储类型字段包括：`STANDARD`, `STANDARD_IA`、`INTELLIGENT_TIERING`、`ARCHIVE`、`DEEP_ARCHIVE`。
+COS 的存储类型字段包括：`STANDARD`、`MAZ_STANDARD`, `STANDARD_IA`、`MAZ_STANDARD_IA`、`INTELLIGENT_TIERING`、`MAZ_INTELLIGENT_TIERING`、`ARCHIVE`、`DEEP_ARCHIVE`。
 
 #### 示例1：要求 PutObject 时必须将存储类型设置为标准类型
 
@@ -797,3 +808,205 @@ COS 的存储类型字段包括：`STANDARD`, `STANDARD_IA`、`INTELLIGENT_TIERI
     "version":"2.0"
 }
 ```
+
+<span id="tls-version"></span>
+### 只允许使用指定版本的 TLS 协议（cos:tls-version）
+
+#### 条件键 cos:tls-version
+
+您可以通过条件键`cos:tls-version`限制 HTTPS 请求的 TLS 版本，该条件键为 Numric 类型，支持输入浮点数，例如 1.0、1.1、1.2 等。
+
+
+#### 示例1：仅对 TLS 协议版本为1.2的 HTTPS 请求进行授权
+
+
+|请求场景   |预期|
+|---|---|
+|HTTPS 请求，TLS 版本为1.0|403，失败|
+|HTTPS 请求，TLS 版本为1.2|200，成功|
+
+策略示例如下：
+
+```
+{
+    "version":"2.0",
+    "Statement":[
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"allow",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_equal":{
+                    "cos:tls-version":1.2
+                }
+            }
+        }
+    ]
+}
+```
+
+
+#### 示例2：拒绝 TLS 协议版本小于1.2的 HTTPS 请求
+
+|请求场景  |  预期   |
+|---|---|
+|HTTPS 请求，TLS 版本为1.0|    403，失败   |
+|HTTPS 请求，TLS 版本为1.2|    200，成功   |
+
+
+策略示例如下：
+
+
+```
+{
+    "version":"2.0",
+    "Statement":[
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"allow",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_greater_than_equal":{
+                    "cos:tls-version":1.2
+                }
+            }
+        },
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"deny",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_less_than_if_exist":{
+                    "cos:tls-version":1.2
+                }
+            }
+        }
+    ]
+}
+```
+
+
+<span id="request_tag"></span>
+### 创建存储桶时强制设置指定存储桶标签（qcs:request_tag）
+
+#### 条件键 qcs:request_tag
+
+您可以通过条件键`qcs:request_tag` 限制用户发起请求 PutBucket、PutBucketTagging 必须携带指定的存储桶标签。
+
+#### 示例：限制用户创建存储桶时必须携带指定的存储桶标签
+
+许多用户会通过存储桶标签管理存储桶，下面的策略示例为：限制用户只有在创建存储桶时，必须设置指定的存储桶标签`<a,b>`和`<c,d>`，才能获得授权。
+
+存储桶标签可以设置多个，条件键中的存储桶标签数量和请求携带的存储桶标签数量都可能是一个集合。假设用户携带的多个参数值为集合 A，条件规定的多个参数值为集合 B。在使用该条件键，可以通过限定词 for_any_value、for_all_value 的不同组合表示不同的含义。
+- `for_any_value:string_equal`表示 A 和 B 存在交集时生效。
+- `for_all_value:string_equal`表示 A 是 B 的子集时生效。
+
+当使用`for_any_value:string_equal`时，对应的策略和请求表现如下：
+
+|请求场景     |预期|
+|---|---|
+|PutBucket，请求头部`x-cos-tagging: a=b&c=d`|200，成功|
+|PutBucket，请求头部`x-cos-tagging: a=b`|200，成功|
+|PutBucket，请求头部`x-cos-tagging: a=b&c=d&e=f`|200，成功|
+
+策略示例如下：
+
+```
+{
+    "version": "2.0",
+    "Statement": [
+        {
+            "Principal": {
+                "qcs": [
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect": "allow",
+            "Action": [
+                "name/cos:PutBucket"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "for_any_value:string_equal": {
+                    "qcs:request_tag": [
+                        "a&b",
+                        "c&d"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+
+当使用`for_all_value:string_equal`时，对应的策略和请求表现如下：
+
+
+
+|请求场景   |预期|
+|---|---|
+|PutBucket，请求头部`x-cos-tagging: a=b&c=d`|200，成功|
+|PutBucket，请求头部`x-cos-tagging: a=b`|200，成功|
+|PutBucket，请求头部`x-cos-tagging: a=b&c=d&e=f`|403，失败|
+
+
+策略示例如下：
+
+```
+{
+    "version": "2.0",
+    "Statement": [
+        {
+            "Principal": {
+                "qcs": [
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect": "allow",
+            "Action": [
+                "name/cos:PutBucket"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "for_all_value:string_equal": {
+                    "qcs:request_tag": [
+                        "a&b",
+                        "c&d"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+
+

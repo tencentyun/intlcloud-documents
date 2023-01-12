@@ -11,7 +11,7 @@ This document introduces the basic syntax and examples of logic functions.
 ### NULL-related logical operations
 The following truth tables demonstrate the processing of cases where `a` and `b` are TRUE, FALSE, and NULL:
 
-#### AND and OR truth table
+**AND and OR truth table**
 
 | a     | b     | a AND b | a OR b |
 | ----- | ----- | ------- | ------ |
@@ -25,7 +25,7 @@ The following truth tables demonstrate the processing of cases where `a` and `b`
 | NULL  | FALSE | FALSE   | NULL   |
 | NULL  | NULL  | NULL    | NULL   |
 
-#### NOT truth table
+**NOT truth table**
 
 | a     | NOT a |
 | ----- | ----- |

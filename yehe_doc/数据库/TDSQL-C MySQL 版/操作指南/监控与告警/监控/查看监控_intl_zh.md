@@ -8,28 +8,28 @@ TDSQL-C MySQL 版提供丰富的性能监控指标，方便您细致的了解数
 |---------|---------|---------|
 | TDSQL-C MySQL 版控制台查看 | 便捷、可视化，快速定位问题，符合数据库运维习惯 | [通过控制台查看监控数据](https://www.tencentcloud.com/document/product/1098/50191) |
 | 创建云监控 Dashboard 查看 | 支持自定义创建监控指标分组、可视化 | [创建云监控 Dashboard 查看监控数据](https://www.tencentcloud.com/document/product/1098/50190) |
-| 云 API 拉取数据  | 灵活拉取监控指标进行分析处理或接入其他平台 |  |
+| 云 API 拉取数据  | 灵活拉取监控指标进行分析处理或接入其他平台 | [使用云 API 拉取监控数据](https://www.tencentcloud.com/document/product/1098/50189) |
 
 ## 在监控界面的可视化操作
 ### 查看标准监控视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)。
 2. 在上方选择地域，找到目标集群，单击集群 ID 或**操作**列的**管理**，进入集群管理页。
 3. 在集群管理页选择**监控告警**，并在时间选择范围下方，单击下拉键选择目标实例（支持单选和多选），单击**确定**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/WSVW791_5.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/eHYk120_5.png)
 4. 在监控告警页，单击图标![](https://qcloudimg.tencent-cloud.cn/raw/a1567f0e8bda741fb886c32c55ec63d3.png)可切换监控视图的展示窗口。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/eJ8E960_7.png)
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/ajaF004_8.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Qwga114_7.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/wADs994_8.png)
 
 ### 大屏显示图表
 您可以将单个指标进行大屏显示，方便更清晰地预览指标数据。
 1. 在监控告警页，单击任意指标右侧的![](https://qcloudimg.tencent-cloud.cn/raw/5ad2d8ff9f3dfcf99cc82d10f0c718ae.png)图标，可全屏显示指标情况。
 2. 全大屏显示预览数据后，可筛选指标、针对筛选的指标选择时间范围及时间粒度查看指标情况，单击右上角的X，关闭大屏显示窗口。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/AiEV694_10.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/GYjK944_10.png)
 
 ### 选择监控时间范围
 您可以通过选择或自定义时间范围，对该时间段的监控情况进行查询。
 在监控告警页，可选择近1小时、近24小时、近7天、近30天或者单击时间框自定义起止时间范围查询监控情况。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/CD2F465_11.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Ts5n101_11.png)
 
 ### 添加时间对比
 您可以通过添加时间对比，对比多个时间范围的监控数据。
@@ -44,19 +44,19 @@ TDSQL-C MySQL 版提供丰富的性能监控指标，方便您细致的了解数
 2. 在上方选择地域，找到目标集群，单击集群 ID 或**操作**列的**管理**，进入集群管理页。
 3. 在集群管理页，选择**监控告警**页。
 4. 在监控告警页右侧自定义时间框下选择一个目标实例，单击**确定**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/sQAp801_12.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Js6j249_12.png)
 5. 在监控告警页右侧自定义时间框后单击**添加时间对比**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/8MBz104_13.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/eDaC391_13.png)
 6. 优先在第一个自定义时间框内选择需要查询的时间范围，单击**确定**，然后在第二个时间框内选择需要查询的起始时间，单击**确定**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/ntIK074_14.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/WT9y089_14.png)
 >?后添加的自定义时间框只需选择起始时间，其时间周期与第一个自定义时间框保持一致，如：第一个自定义时间框时间范围为3天，则后添加的时间范围自动为3天。
 7. 选择好对比时间后，即可在下方查询对应实例所选对比时间范围的监控指标详情，支持调整时间粒度进行查看。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/X8iS880_15.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/7TM5340_15.png)
 
 ### 设置监控粒度
 支持对监控数据设置查询的监控粒度，便于您在所选时间范围内查询不同统计粒度下的监控情况。
-在监控告警页，选择时间区间及时间范围后，单击**添加时间对比**后的下拉键，选择您需要查看的监控粒度。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/hLPQ756_16.png)
+在监控告警页，选择时间区间及时间范围后，单击**时间粒度**后的下拉键，选择您需要查看的监控粒度。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/j8yh684_16.png)
 **时间周期和图表时间粒度对照表**
 
 | 查询监控时间段 | 查询起始时间点距当前查询时间点的周期 |默认时间粒度 | 可选择时间粒度 |

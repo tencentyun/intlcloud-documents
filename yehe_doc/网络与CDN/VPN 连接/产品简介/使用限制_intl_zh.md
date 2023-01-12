@@ -12,7 +12,7 @@
 ## VPN 网关
  - VPN 是地域级服务，但您可以在任意地域通过互联网连接您的 VPN 网关。
  - 不支持指定 VPN 网关的公网 IP 或公网 IP 归属的运营商，不支持 IPv6 地址和 Anycast。
- - 如需创建更大规格带宽的 VPN 网关，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+ - 如需创建1Gbps规格带宽的 SSL VPN 网关，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
 
 ## 对端网关
  - 您必须指定对端网关的 IP 地址，对端网关的公网 IP 不支持如下 IP 地址：
@@ -26,7 +26,7 @@
    - IPv6 地址。
  - 若通过 IPsec VPN 实现两个 VPC 内的资源互访，两个 VPC 互为对方的对端网关，VPC 网段不应重叠。
 
-## SSL服务端
+## SSL 服务端
  - 服务端仅支持 UDP，不支持 TCP。
  - 修改端口、认证、加密算法等，您需要重新下载客户端配置。
  - 客户端网段与本端网段不能重叠。
@@ -40,7 +40,7 @@
 
 ## 资源限制
 
-### IPsec VPN限制
+### IPsec VPN 限制
 <table>
 <tr>
 <th>资源</th>
@@ -61,6 +61,7 @@
 <tr>
 <td>同一个对端网关支持的 VPN 通道数</td>
 <td>20
+
 <dx-alert infotype="explain" title="">
 - 同一个对端网关支持的 VPN 通道数为账户级配额。
 - 同一个对端网关与同一个 VPN 网关仅可建立一个 VPN 通道。
@@ -123,8 +124,8 @@
 <td>SSL 连接数限制</td>
 <td><ul><li>[5,100]Mbps SSL VPN 网关最大支持100个 SSL 连接数。</li><li>200/500Mbps SSL VPN 网关最大支持500个 SSL 连接数。</li><li>1000Mbps SSL VPN 网关最大支持1000个 SSL 连接数。</li></ul>
 <dx-alert infotype="explain" title="">
-- SSL 连接数为连接客户端的数量，SSL 连接数配置后暂不支持修改，配置时请提前做好规划。
-- 200Mbps、500Mbps和1000Mbps带宽如需使用请<a href="https://console.cloud.tencent.com/workorder/category" > 工单申请</a>。
+ SSL 连接数为连接客户端的数量，SSL 连接数配置后暂不支持修改，配置时请提前做好规划。
+
 </dx-alert>
 </td>
 </tr>
@@ -133,6 +134,4 @@
 <td>协议端口不支持123、53、22、36000、54000、50051、68、500、4500</td>
 </tr>
 </table>
-<dx-alert infotype="explain" title="">
-如果需要提高配额请 [提交工单](https://console.cloud.tencent.com/workorder/category)。
-</dx-alert>
+

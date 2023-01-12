@@ -20,18 +20,18 @@ Go to the [DragonDisk Download](http://download.dragondisk.com/download-s3-compa
 2. Open the tool, select **File** > **Accounts**, and click **New** in the pop-up window to add the account configuration information.
 3. Configure the following information in the pop-up window.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a8d83b57beafd32f916e7d530dd46416.png)
-The configuration items are as described below:
+The configuration items are described as follows:
  - Provider: Select **Other S3 compatible service**.
  - Service Endpoint: The format is `cos.<Region>.myqcloud.com`; for example, to access a bucket in Chengdu region, enter `cos.ap-chengdu.myqcloud.com`. For applicable region abbreviations, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
  - Account name: Enter a custom username.
- - Access key: Enter the `SecretId`, which can be created and obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
- - Secret key: Enter the `Secretkey`, which can be created and obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
+ - Access key: Enter the access key SecretId. You can go to the [API Keys](https://console.cloud.tencent.com/capi) page of the console to create and view access keys. |
+ - Secret key: Enter the access key SecretKey. You can go to the [API Keys](https://console.cloud.tencent.com/capi) page of the console to create and view access keys. |
 4. After adding the account information, select the configured username in **Root** to view the list of buckets under the username. At this point, the configuration is completed.
 ![](https://qcloudimg.tencent-cloud.cn/raw/aa2cf3f681233d692d58ddcc7f16a833.png)
 
 ## Managing COS File
 
-### Querying bucket list
+### Querying the bucket list
 
 Select the configured username in **Root** to view the list of buckets under the username.
 
@@ -42,16 +42,14 @@ Select the configured username in **Root** to view the list of buckets under the
 
 ### Creating a bucket
 
-1. Right-click the username and enter the full bucket name in the pop-up window such as `examplebucket-1250000000`.
+1. Right-click the username and select **Create bucket**, and enter the full bucket name in the pop-up window such as `examplebucket-1250000000`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/46fd8b1296908a39b2949b7895dd1a60.png)
 2. After confirming that everything is correct, click **OK**.
 For bucket naming conventions, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
 ### Deleting a bucket
 
-Right-click the target bucket in the bucket list and select **Delete** in the context menu.
-![](https://qcloudimg.tencent-cloud.cn/raw/c1e62d846d76f7fd5062d10ab243f085.png)
-
+Right-click the target bucket in the bucket list and select **Delete bucket** in the context menu.
 
 
 ### Uploading an object
@@ -62,7 +60,7 @@ In the bucket list, select the destination bucket or path, select the object to 
 ### Downloading an object
 
 Find the target bucket in the bucket list and drag and drop the object to a folder on the local computer on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/abfa0db54ecfef0e6dd658a964bed0a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/45fcab5119da7ab87d958853e8b6100a.png)
 
 
 ### Copying an object
@@ -87,18 +85,6 @@ Right-click the target object in the left window, select **Cut**, right-click un
 ### Other features
 
 In addition to the above features, DragonDisk also allows you to set object ACLs, view object metadata, customize headers, and get object URLs.
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

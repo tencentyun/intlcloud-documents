@@ -40,30 +40,21 @@ Voice Messaging is billed by the number of daily active users.
 <table>
    <tr>
       <td>Billing Mode</td>
-      <td>Service Mode</td>
       <td>Unit Price (USD/user/day)</td>
    </tr>
    <tr>
-      <td  rowspan="2">Billed by number of users</td>
-      <td >Standard</td>
+      <td>Billed by number of users</td>
       <td>0.0019 </td>
-   </tr>
-   <tr>
-      <td >Enhanced (Note that this mode was discontinued from September 5, 2022.)</td>
-      <td>0.078 </td>
    </tr>
    </tr>
 </table>
 
 
 >?
+>
 >- A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the deduplicated `openID`. `openID` is a unique identifier of a user in an application. One user corresponds to one `openID`.
 
 
-
-<dx-alert infotype="notice" title="Changes on Billing Mode">
-Starting from September 5, 2022, Voice Messaging and Voice-to-Text are billed separately.
-</dx-alert>
 
 
 
@@ -84,9 +75,7 @@ Voice-to-Text supports daily or monthly payment. Daily payment is set by default
    </tr>
 </table>
 
-<dx-alert infotype="notice" title="Changes on Billing Mode">
-The above billing plan takes effect from September 5, 2022.
-</dx-alert>
+
 
 
 ## Text Translation Service

@@ -55,5 +55,5 @@
 </tr>
 <tr>
 <td>音视频通话能力</td>
-<td colspan=3><b>目前处于内测期，每个 SDKAppID 提供2次免费体验机会，每次有效期均为60天</b>。</td>
+<td colspan=3><b>目前处于内测期，每个SDKAppID提供2次免费体验机会，每次有效期均为60天</b>。</td>
 </tr></table>

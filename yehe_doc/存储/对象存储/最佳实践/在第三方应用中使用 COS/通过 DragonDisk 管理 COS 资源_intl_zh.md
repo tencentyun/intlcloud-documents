@@ -42,16 +42,14 @@ DragonDisk 是一个免费的文件管理工具，提供类似 Windows 资源管
 
 ### 创建存储桶
 
-1. 选择用户名并右键单击，在弹窗中输入完整的存储桶名称，例如 examplebucket-1250000000。
+1. 选择用户名并右键单击 **Create bucket**，在弹窗中输入完整的存储桶名称，例如 examplebucket-1250000000。
 ![](https://qcloudimg.tencent-cloud.cn/raw/46fd8b1296908a39b2949b7895dd1a60.png)
 2. 输入无误后，单击 **OK** 即可创建完成。
 关于存储桶的命名规范，请参见 [存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312)。
 
 ### 删除存储桶
 
-在存储桶列表中选择需删除存储桶，并在右键单击的菜单中选择删除。
-![](https://qcloudimg.tencent-cloud.cn/raw/c1e62d846d76f7fd5062d10ab243f085.png)
-
+在存储桶列表中选择需删除存储桶，并右键单击 **Delete bucket** 即可。
 
 
 ### 上传对象
@@ -87,18 +85,6 @@ DragonDisk 是一个免费的文件管理工具，提供类似 Windows 资源管
 ### 其他功能
 
 除了以上功能，DragonDisk 还支持其他功能，例如设置对象 ACL、查看对象元数据、自定义 Headers、获取对象 URL 等。用户可根据实际需求进行操作。
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

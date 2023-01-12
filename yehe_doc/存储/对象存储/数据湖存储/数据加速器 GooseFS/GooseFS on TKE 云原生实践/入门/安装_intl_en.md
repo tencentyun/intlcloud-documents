@@ -9,16 +9,13 @@ $ kubectl create ns fluid-system
 
 ### 2. Download Fluid
 
-Download the [fluid-0.6.0.tgz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/fluid.tgz) installation package.
-
->! You can also go to the Fluid official website [Fluid Releases](https://github.com/fluid-cloudnative/fluid/releases) to download the latest version. However, certain machines may have problems accessing the website from inside China.
->
+You can go to the Fluid official website [Fluid Releases](https://github.com/fluid-cloudnative/fluid/releases) to download Fluid 0.6.0 or later. By default, the latest version is recommended.
 
 
 ### 3. Install Fluid with Helm
 
 ```shell
-$ helm install --set runtime.goosefs.enabled=true fluid fluid-0.6.0.tgz
+$ helm install --set runtime.goosefs.enabled=true fluid fluid-0.8.0.tgz
 ```
 
 ### 4. Check the running status of Fluid
@@ -38,7 +35,7 @@ Now, Fluid is successfully installed. If you want to customize an image and upgr
 
 ### 5. Customize an image
 
-Decompress `fluid-0.6.0.tgz` and modify the default `values.yaml` file:
+Decompress `fluid-0.8.0.tgz` and modify the default `values.yaml` file:
 ```yaml
 runtime:
   mountRoot: /runtime-mnt
@@ -47,18 +44,18 @@ runtime:
     portRange: 26000-32000
     enabled: false
     init:
-      image: fluidcloudnative/init-users:v0.6.0-116a5be
+      image: fluidcloudnative/init-users:v0.8.0-116a5be
     controller:
-      image: fluidcloudnative/goosefsruntime-controller:v0.6.0-116a5be
+      image: fluidcloudnative/goosefsruntime-controller:v0.8.0-116a5be
     runtime:
-      image: ccr.ccs.tencentyun.com/goosefs/goosefs:v1.0.1
+      image: ccr.ccs.tencentyun.com/qcloud/goosefs:v1.2.0
     fuse:
-      image: ccr.ccs.tencentyun.com/goosefs/goosefs-fuse:v1.0.1
+      image: ccr.ccs.tencentyun.com/qcloud/goosefs:v1.2.0
 ```
 
 You can modify the default `image` content related to GooseFS. For example, you can change the location of the image to your own repository. After modification, run `helm package fluid` again for packaging and run the following command to update the Fluid version:
 ```shell
-helm upgrade --install fluid fluid-0.6.0.tgz
+helm upgrade --install fluid fluid-0.8.0.tgz
 ```
 
 ### 6. Update the CRD
@@ -80,7 +77,7 @@ First, delete the existing CRD:
 kubectl delete crd goosefsruntimes.data.fluid.io
 ```
 
-Then, decompress `fluid-0.6.0.tgz`:
+Then, decompress `fluid-0.8.0.tgz`:
 
 ```shell
 $ ls -l fluid/

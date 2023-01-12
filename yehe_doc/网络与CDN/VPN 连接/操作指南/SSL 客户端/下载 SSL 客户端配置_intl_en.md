@@ -21,7 +21,7 @@ If identity verification is enabled when you create an SSL VPN server, the mobil
 
 ### Directions
 The following steps are performed by a mobile client user (such as an employee of your enterprise) on their own:
-1. Log in to the [Tencent Cloud Client VPN Self-Service Portal](http://self-service-test.vpn.woa.com/).
+1. Log in to the [Tencent Cloud Client VPN Self-Service Portal](https://self-service.vpnconnection.tencent.com/).
 >?We recommend you use the latest version of Chrome.
 >
   1. In the **SSL VPN server ID** input box, enter the ID distributed by the admin and click **Next** to access the login page.

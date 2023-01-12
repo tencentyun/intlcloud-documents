@@ -41,10 +41,10 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 | 28  | targetStorageClass | Destination storage class, recorded for replication requests | STANDARD, STANDARD_IA, ARCHIVE |
 | 29     | referer    | HTTP referer of the request            | `*.example.com` or 111.111.111.1       |
 | 30       | requestUri    | Request URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
-| 31       | vpcId    | Whether the request is a VPC request            | 0/1       |
+| 31       | vpcId    | VPC request ID            | "0" (non-VPC)/"12345" (VPC, a non-"0" string)       |
 
 >!
-> - Currently, COS offers the logging feature only in the Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Chengdu, Hong Kong (China), Singapore, Toronto, Silicon Valley, and Mumbai regions.
+> - Currently, COS offers the logging feature only in the Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Chengdu, Hong Kong (China), Singapore, Seoul, Toronto, Silicon Valley, and Mumbai regions.
 > - The destination bucket and source bucket must reside in the same region.
 > - The destination bucket that stores logs can be the source bucket itself (not recommended).
 > - Currently, logs will be generated only when the bucket is accessed through XML APIs and XML API-based SDKs or tools, not via JSON APIs or JSON API-based SDKs or tools.
@@ -52,7 +52,7 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 > 
 
 ## Enabling Logging
-### Using the console
+### Using the Console
 You can quickly enable logging in the console. For detailed directions, see [Setting Logging](https://intl.cloud.tencent.com/document/product/436/17040).
 
 ### Using APIs 
@@ -71,7 +71,7 @@ Here, `roleName` must be `CLS_QcsRole`.
 	"statement": [{
 		"action": "name/sts:AssumeRole",
 		"effect": "allow",
-		"principal": {
+		"principal":{
 			"service": "cls.cloud.tencent.com"
 		}
 	}]

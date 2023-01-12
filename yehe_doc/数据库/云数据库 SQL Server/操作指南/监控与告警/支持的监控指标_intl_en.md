@@ -1,22 +1,30 @@
 This document describes the common monitoring metrics supported by TencentDB for SQL Server.
 
-## Monitoring Metrics
+## Monitoring metrics
 The monitoring of TencentDB for SQL Server supports 37 common metrics of SQL Server. You can collect statistics of other metrics by configuring the performance counters of SQL Server Management Studio (SSMS).
->?To view monitoring metrics at the system level, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. 
+>?To view monitoring metrics at the system level, [contact us](https://www.tencentcloud.com/zh/contact-us). 
 
 <table>
 <thead>
-<tr><th>Category</th><th>Metric Name (in Chinese)</th><th>Metric name (in English)</th><th>Unit</th><th>Description</th></tr></thead>
+<tr><th>Category</th><th>Metric</th><th>Parameter</th><th>Unit</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>CPU</td>
 <td>Total processor time</td><td>Total Processor Time</td><td>%</td><td>Actual CPU utilization</td></tr>
 <tr>
-<td rowspan=3 >Memory</td>
+<td rowspan=5>Memory</td>
 <td>Memory usage</td><td>Server memory</td><td>MB</td><td>Used size of the total memory</td></tr>
 <tr>
 <td>Max memory</td><td>Max memory</td><td>KB</td><td>Maximum memory</td></tr>
 <tr>
 <td>Memory utilization</td><td>Memory Usage</td><td>%</td><td>Memory utilization</td></tr>
+<tr>
+<td>Internally locked memory</td><td>Total Allocated Memory</td><td>KBytes</td><td>Locked memory of internal systems<dx-alert infotype="notice" title="">
+This metric is available only for version 2014 and later.
+</dx-alert></td></tr>
+<tr>
+<td>Internally used memory</td><td>Total Used Memory</td><td>KBytes</td><td>Used memory of internal systems<dx-alert infotype="notice" title="">
+This metric is available only for version 2014 and later.
+</dx-alert></td></tr>
 <tr>
 <td rowspan=12>Storage</td>
 <td>Disk IOPS</td><td>IOPS</td><td>counts/sec</td><td>Number of disk reads/writes</td></tr>
@@ -88,6 +96,7 @@ The monitoring of TencentDB for SQL Server supports 37 common metrics of SQL Ser
 <td>Blocked process threshold</td><td>Blocked process threshold</td><td>sec</td>
 <td>This is the specified threshold for generating a blocked process report. If it is exceeded, a blocked process report will be generated. By default, no blocked process reports will be generated</td></tr>
 <tr>
-<td>Other</td>
+<td>Others</td>
 <td>User errors</td><td>User Error/sec</td><td>counts/sec</td><td>Average number of errors per second</td></tr>
 </tbody></table>
+
