@@ -7,8 +7,8 @@ Log in at the [Tencent Cloud official website](https://www.tencentcloud.com/acco
 1. Go to the [**Resource management**](https://console.cloud.tencent.com/apm/monitor/team) page in the APM console.
 2. On the **Resource management** page, select the target region, click **Create**, enter the business name, and select the retention period (the longer the retention period, the higher the fees). Then, indicate your consent to the agreement and click **OK**.   
 3. After creation, click **Enable billing** in the **Operation** column.
-<img  width="50%" height="70%" src=
-"https://staticintl.cloudcachetci.com/yehe/backend-news/sehQ931_2%E7%9A%84%E5%89%AF%E6%9C%AC.png"> 
+
+<img  width="50%" height="70%" src="https://staticintl.cloudcachetci.com/yehe/backend-news/sehQ931_2%E7%9A%84%E5%89%AF%E6%9C%AC.png"> 
 
 
 ## Step 3. Access an application[](id:step3)
