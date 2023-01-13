@@ -33,9 +33,9 @@ END
 | result    | 返回结果。   |
 
 ### 示例
-
-- 示例1：从 **http_user_agent** 字段值中提取浏览器信息，归为 Chrome、Safari 和 unknown 三种类型并计算三种类型对应的访问 PV。
-  - 查询和分析语句
+#### 示例1
+从 **http_user_agent** 字段值中提取浏览器信息，归为 Chrome、Safari 和 unknown 三种类型并计算三种类型对应的访问 PV。
+- 查询和分析语句
 ```
 * |
 SELECT
@@ -48,10 +48,11 @@ SELECT
 GROUP BY
   http_user_agent
 ```
-  - 查询和分析结果
+- 查询和分析结果
 
-- 示例2：统计不同请求时间的分布情况。
-  - 查询和分析语句
+#### 示例2
+统计不同请求时间的分布情况。
+- 查询和分析语句
 ```
 * |
 SELECT
