@@ -25,7 +25,7 @@ Log shipping generates private network read traffic fees (cross-region shipping 
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/31582">CSV shipping</a></td>
 <td>Log data is shipped to COS based on the specified separator, such as space, tab, comma, semicolon, and vertical bar.</td>
-<td><ul style="margin: 0;"><li>It can be used for computing in Data Lake Compute.</li><li>It can be used to <a href="https://cloud.tencent.com/document/product/614/33816">ship raw logs</a> (logs collected in a single line, in multiple lines, and with separators).</li></ul></td>
+<td><ul style="margin: 0;"><li>It can be used for computing in Data Lake Compute.</li><li>It can be used to <a href="https://www.tencentcloud.com/document/product/614/31584">ship raw logs</a> (logs collected in a single line, in multiple lines, and with separators).</li></ul></td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/31583">JSON shipping</a></td>
@@ -33,7 +33,7 @@ Log shipping generates private network read traffic fees (cross-region shipping 
 <td>It is a common data format and can be selected as needed.</td>
 </tr>
 <tr>
-<td><a href="https://cloud.tencent.com/document/product/614/33816">Parquet shipping</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/614/31584">Parquet shipping</a></td>
 <td>Log data is shipped to COS in Parquet format.</td>
 <td>Log data needs to be structured data. The data type can be converted (data not collected in a single line or multiple lines). This format is mainly used for Hive batch processing.</td>
 </tr>
