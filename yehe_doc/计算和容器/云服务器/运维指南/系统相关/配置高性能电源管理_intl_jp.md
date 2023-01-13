@@ -21,8 +21,8 @@ powercfg -L
 次の結果が返されます。
  ![](https://main.qcloudimg.com/raw/54ceb4faddc8745b30556621268ac318.png)
 
-4. OS画面で、 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"> >【コントロールパネル】> 【システムとセキュリティ 】>【電源オプション】をクリックすると、電源オプションウィンドウが表示されます。
-5. 下図に示すように、電源オプションウィンドウで【プラン設定の変更】をクリックします。
+4. OS画面で、 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"> >**コントロールパネル** > **システムとセキュリティ** > **電源オプション** をクリックすると、電源オプションウィンドウが表示されます。
+5. 下図に示すように、電源オプションウィンドウで**プラン設定の変更**をクリックします。
 ![](https://main.qcloudimg.com/raw/54183c1f9d914789b986781b8a4da6ec.png)
 6. 下図に示すように、表示されている「プラン設定の編集」画面でディスプレーとディスクのスリープ時間を変更します。
  ![](https://main.qcloudimg.com/raw/f0b7f447d90fe50ef829a10dab0029c6.png)
