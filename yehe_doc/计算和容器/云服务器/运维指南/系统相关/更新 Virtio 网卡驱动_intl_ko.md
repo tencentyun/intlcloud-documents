@@ -1,6 +1,6 @@
 ## 작업 시나리오
 
-Tencent Cloud CVM의 Windows Server 2012 R2, Windows Server 2016 및 Windows Server 2019 R2는 Virtio ENI 드라이버 설치를 통해 가상화 하드웨어의 네트워크 성능을 최적화합니다. Tencent Cloud는 ENI 드라이버를 계속 업데이트하여 성능 업그레이드 및 장애 해결에 사용하고자 합니다. 본 문서에서는 Virtio ENI 드라이버 업데이트 방법 및 드라이버 버전 조회 방법에 대해 설명합니다.
+Tencent Cloud CVM의 Windows Server 2008 R2, Windows Server 2012 R2, Windows Server 2016 및 Windows Server 2019 R2는 Virtio ENI 드라이버 설치를 통해 가상화 하드웨어의 네트워크 성능을 최적화합니다. Tencent Cloud는 ENI 드라이버를 계속 업데이트하여 성능 업그레이드 및 장애 해결에 사용하고자 합니다. 본 문서에서는 Virtio ENI 드라이버 업데이트 방법 및 드라이버 버전 조회 방법에 대해 설명합니다.
 
 ## 전제 조건
 
