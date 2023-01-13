@@ -8,7 +8,7 @@ You have enabled the database proxy. For more information, see [Enabling Databas
 - If the upgrade fails, the reason may be that the kernel minor version of the database is earlier than 20211031. You need to upgrade the kernel minor version of the database before upgrading the kernel version of the database proxy. For more information, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816)
 
 ## Directions
-1. Log in to the [TencentDB for MySQL console] (https://console.cloud.tencent.com/cdb). Select the region at the top and click the target instance ID to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). Select the region at the top and click the target instance ID to enter the instance management page.
 2. On the instance management page, select the **Database Proxy** tab.
 3. In **Overview** > **Basic Info** > **Proxy Version** on the **Database Proxy** tab, click **Upgrade Kernel Minor Version**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b3e4b48ccd4faff89c72e658aebc6925.png)
