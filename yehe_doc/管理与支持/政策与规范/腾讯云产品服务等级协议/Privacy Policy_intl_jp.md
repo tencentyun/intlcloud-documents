@@ -711,3 +711,4 @@ Tencent Cloud プライバシーポリシーの「*お客様の個人データ�
 55.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51968).
 56.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52288).
 57.[Tencent Cloud Firewall](https://www.tencentcloud.com/document/product/1160/52113).
+58.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52519).
