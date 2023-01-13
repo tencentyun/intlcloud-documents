@@ -4,10 +4,10 @@ The database proxy connection address is independent of the original database co
 After database proxy is enabled for TencentDB for MySQL, a database proxy connection address will be added by default, and you can also add, modify, or delete the connection address for database proxy.
 
 ## Prerequisites
-You have enabled the database proxy. For more information, see [Enabling Database Proxy] (https://www.tencentcloud.com/document/product/236/42052).
+You have enabled the database proxy. For more information, see <a href="https://www.tencentcloud.com/document/product/236/42052">Enabling Database Proxy</a>..
 
 ## Modifying Database Proxy Connection Address
-1. Log in to the [TencentDB for MySQL console] (https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column of the instance with the proxy enabled to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column of the instance with the proxy enabled to enter the instance management page.
 2. On the instance management page, select the **Database Proxy** tab and click the <img src="https://main.qcloudimg.com/raw/be716b5360d5256a9d5e816e29872ec1.png"  style="margin:0;"> icon next to **Private Network Access Address** on the **Connection Address** tab.
 ![](https://main.qcloudimg.com/raw/63015c402bdd31e04e2597af84013a74.png)
 3. In the pop-up dialog box, modify the proxy address and click **OK**.
@@ -20,7 +20,7 @@ You have enabled the database proxy. For more information, see [Enabling Databas
 >- The number of connection addresses is the same as that of database proxy nodes.
 >- An connection address will be created by default when the database proxy is enabled.
 >
-1. Log in to the [TencentDB for MySQL console] (https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column of the instance with the proxy enabled to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column of the instance with the proxy enabled to enter the instance management page.
 2. On the instance management page, select the **Database Proxy** tab, and click **Add Access Address** next to **Connection Address**.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/iVTk464_19.png)
 3. In the **Create Connection** window, set the following configuration items and click **OK**.
