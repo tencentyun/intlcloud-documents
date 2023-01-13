@@ -155,6 +155,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 56.[Data Lake Compute](https://www.tencentcloud.com/document/product/1155/51969).
 57.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52287).
 58.[Tencent Cloud Firewall](https://www.tencentcloud.com/document/product/1160/52114).
+59.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52520).
 
 
 ## 法域特定の要件
