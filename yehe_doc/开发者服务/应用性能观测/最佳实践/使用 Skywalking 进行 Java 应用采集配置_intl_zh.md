@@ -14,7 +14,7 @@
 
 1. 打开 agent/config/agent.config 文件，找到 `agent.sample_n_per_3_secs=${SW_AGENT_SAMPLE:-1}` 配置项。
 ![](https://qcloudimg.tencent-cloud.cn/raw/71f2f5691677913a07b36e20e499406a.png)
-2. 修改采样率。**`agent.sample_n_per_3_secs ` 表示设置每 3 秒可收集的链路数据（TraceSegment）的数量。负或零表示全部采样，默认全部采样。**
+2. 修改采样率。<b>`agent.sample_n_per_3_secs ` 表示设置每 3 秒可收集的链路数据（TraceSegment）的数量。负或零表示全部采样，默认全部采样。</b>
 
 **示例：**
 
