@@ -1,7 +1,7 @@
 This document describes how to manually upgrade the kernel minor version of the database proxy in the console.
 
 ## Prerequisite
-You have enabled the database proxy. For more information,see [Enabling Database Proxy](https://www.tencentcloud.com/document/product/1098/49999).
+You have enabled the database proxy. For more information,see [Enabling Database Proxy](https://www.tencentcloud.com/document/product/236/42052).
 
 ## Notes
 There will be a momentary disconnection when you upgrade the kernel minor version of the database proxy. Therefore, upgrade the version during off-peak hours and make sure that your application has an automatic reconnection mechanism.
