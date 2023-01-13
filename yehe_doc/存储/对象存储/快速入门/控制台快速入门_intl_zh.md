@@ -18,7 +18,7 @@
 ## 步骤1：注册腾讯云账号
 在使用腾讯云 COS 服务前，您需要先注册一个腾讯云账号。请单击下方按钮开始注册。（如果您已注册，请跳过该步骤。）
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">开始注册</a></div>
+<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://www.tencentcloud.com/en/account/register" target="_blank"  style="color: white; font-size:13px;">开始注册</a></div>
 
 ## 步骤2：完成实名认证
 账号注册完成后，使用该账号登录 [腾讯云控制台](https://console.cloud.tencent.com/)，开始实名认证。详细操作指引请参见 [实名认证介绍](https://intl.cloud.tencent.com/document/product/378/3629)。（如果您已完成，请跳过该步骤。）
