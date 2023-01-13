@@ -29,7 +29,7 @@ Tencent CloudのCOSサービスを利用する前に、Tencent Cloudアカウン
 ## 手順3：COSサービスのアクティブ化
 [Tencent Cloudコンソール](https://console.cloud.tencent.com/)で、**クラウド製品>COS**を選択し、COSコンソールに進み、インターフェースプロンプトに従ってCOSサービスをアクティブ化します（すでにアクティブ化している場合は、この手順をスキップしてください）。
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/cos5" target="_blank"  style="color: white; font-size:13px;">COSサービスのアクティブ化</a></div>
+<div style="background-color:#00A4FF; width: 225px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/cos5" target="_blank"  style="color: white; font-size:13px;">COSサービスのアクティブ化</a></div>
 
 
 ## 手順4：バケットの作成
