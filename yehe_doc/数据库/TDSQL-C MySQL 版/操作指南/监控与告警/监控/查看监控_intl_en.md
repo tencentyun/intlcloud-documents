@@ -8,7 +8,7 @@ This document describes how to view the monitoring data and perform visual opera
 |---------|---------|---------|
 | Viewing data in the TDSQL-C for MySQL console | The console is simple and visual, where you can quickly locate problems in a familiar way. | [Viewing Monitoring Data in the Console](https://www.tencentcloud.com/document/product/1098/50191) |
 | Creating a CM dashboard to view data | You can visually create customized monitoring metric groups. | [Creating Dashboard to View Monitoring Data](https://www.tencentcloud.com/document/product/1098/50190) |
-| Pulling data through TencentCloud API  | You can flexibly pull monitoring metric data to analyze and process it or connect it to other platforms. | [Pulling Monitoring Data Through TencentCloud API](https://www.tencentcloud.com/document/product/1098/50189) |
+| Pulling data through TencentCloud API  | You can flexibly pull monitoring metric data to analyze and process it or connect it to other platforms. | |
 
 ## Visual Operations on the Monitoring Page
 ### Selecting the standard monitoring view
