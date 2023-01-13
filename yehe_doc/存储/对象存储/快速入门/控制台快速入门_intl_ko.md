@@ -29,7 +29,7 @@ Tencent Cloud의 COS 서비스를 사용하려면 먼저 Tencent Cloud 계정을
 ## 3단계: COS 서비스 활성화
 [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에서 **클라우드 서비스 > COS**를 선택하여 COS 콘솔로 이동한 뒤 인터페이스 안내에 따라 COS 서비스를 활성화합니다. 이미 활성화한 경우에는 이 단계를 생략합니다.
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/cos5" target="_blank"  style="color: white; font-size:13px;">COS 서비스 활성화하기</a></div>
+<div style="background-color:#00A4FF; width: 225px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/cos5" target="_blank"  style="color: white; font-size:13px;">COS 서비스 활성화하기</a></div>
 
 
 ## 4단계: 버킷 생성
