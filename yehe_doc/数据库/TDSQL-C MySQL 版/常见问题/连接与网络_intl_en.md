@@ -4,7 +4,6 @@ You can connect to TDSQL-C for MySQL in the following ways:
 - Public network connection: You can connect to your TDSQL-C for MySQL cluster at its public network address. You need to manually enable the public network address, which you can view on the instance details page in the console and disable if no longer needed.
 - DMC connection: You can access TDSQL-C for MySQL through Database Management Center (DMC).
 
-For detailed directions, see [Connecting to Cluster](https://www.tencentcloud.com/document/product/1098/51980).
 
 ### How do I enable the public network addresses of a TDSQL-C for MySQL instance?
 TDSQL-C for MySQL public network addresses include public read-write address and public read-only address. You can enable/disable them on the **Cluster Details** page in the console as instructed in [Enabling/Disabling Public Network Address](https://www.tencentcloud.com/document/product/1098/51982).
