@@ -708,3 +708,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 54.[文本内容安全](https://www.tencentcloud.com/document/product/1121/51133)。
 55.[腾讯微卡](https://www.tencentcloud.com/document/product/1170/52288)。
 56.[云防火墙](https://www.tencentcloud.com/document/product/1160/52113)。
+57.[短视频 SDK](https://www.tencentcloud.com/document/product/1069/52519)。
