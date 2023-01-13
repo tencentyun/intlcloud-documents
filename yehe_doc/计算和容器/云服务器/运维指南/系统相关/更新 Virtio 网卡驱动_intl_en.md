@@ -1,6 +1,6 @@
 ## Overview
 
-For Tencent Cloud CVMs that using Windows Server 2012 R2, Windows Server 2016, and Windows Server 2019, Virtio ENI drivers are installed to optimize the network performance of virtualization hardware. This document describes how to update the Virtio ENI driver and check the driver version.
+For Tencent Cloud CVMs that using Windows Server 2008 R2, Windows Server 2012 R2, Windows Server 2016, and Windows Server 2019, Virtio ENI drivers are installed to optimize the network performance of virtualization hardware. This document describes how to update the Virtio ENI driver and check the driver version.
 
 ## Prerequisites
 
