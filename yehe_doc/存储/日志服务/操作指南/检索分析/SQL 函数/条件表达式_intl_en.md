@@ -33,9 +33,9 @@ END
 | result    | Return result   |
 
 ### Example
-
-- Example 1. Extract browser information from the `http_user_agent` field, classify the information into the Chrome, Safari, and unknown types, and calculate the PVs of the three types.
-  - Query and analysis statement
+#### Example 1. 
+Extract browser information from the `http_user_agent` field, classify the information into the Chrome, Safari, and unknown types, and calculate the PVs of the three types.
+- Query and analysis statement
 ```
 * |
 SELECT
@@ -50,8 +50,10 @@ GROUP BY
 ```
   - Query and analysis result
 ![image-20211108042836003](https://qcloudimg.tencent-cloud.cn/raw/fc5871dabac0087c4bcd90f89872f2b1.png)
-- Example 2. Get the statistics on the distribution of different request times.
-  - Query and analysis statement
+
+#### Example 2. 
+Get the statistics on the distribution of different request times.
+- Query and analysis statement
 ```
 * |
 SELECT
