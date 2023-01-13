@@ -18,26 +18,37 @@
 
 #### 例：指定IPからのユーザーアクセスのみを許可
 
-次のポリシーの記述例は、ルートアカウントID 100000000001（APPIDは1250000000）下のサブアカウントID 100000000002に対し、北京リージョンのバケットのexamplebucket-bjおよび広州リージョンのバケットのexamplebucket-gz下のオブジェクトexampleobjectについて、アクセスIPが10.*.*.10/24セグメントの場合に、オブジェクトのアップロードおよびオブジェクトのダウンロード権限を許可するものです。
+次のポリシーの記述例は、ルートアカウントID 100000000001（APPIDは1250000000）下のサブアカウントID 100000000002に対し、北京リージョンのバケットのexamplebucket-bjおよび広州リージョンのバケットのexamplebucket-gz下のオブジェクトexampleobjectについて、アクセスIPが`192.168.1.0/24`ネットワークセグメントにある場合およびIPが`101.226.100.185`または`101.226.100.186`である場合に、オブジェクトのアップロードおよびオブジェクトのダウンロード権限を許可するものです。
 
 ```
 {
-	"version": "2.0",
-	"principal": {
-		"qcs": ["qcs::cam::uin/100000000001:uin/100000000002"]
-	},
-	"statement": [{
-		"effect": "allow",
-		"action": ["name/cos:PutObject", "name/cos:GetObject"],
-		"resource": ["qcs::cos:ap-beijing:uid/1250000000:examplebucket-bj-1250000000/*",
-			"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
-		],
-		"condition": {
-			"ip_equal": {
-				"qcs:ip": "10.*.*.10/24"
-			}
-		}
-	}]
+    "version": "2.0",
+    "principal":{
+        "qcs": [
+            "qcs::cam::uin/100000000001:uin/100000000002"
+        ]
+    },
+    "statement":[
+        {
+            "effect": "allow",
+            "action":[
+                "name/cos:PutObject",
+                "name/cos:GetObject"
+            ],
+            "resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
+            ],
+            "condition":{
+                "ip_equal":{
+                    "qcs:ip":[
+                        "192.168.1.0/24",
+                        "101.226.100.185",
+                        "101.226.100.186"
+                    ]
+                }
+            }
+        }
+    ]
 }
 ```
 
@@ -54,25 +65,25 @@
 
 ```
 {
-  "statement": [
+  "statement":[
     {
-      "action": [
+      "action":[
         "name/cos:*"
       ],
-      "condition": {
-        "string_equal": {
+      "condition":{
+        "string_equal":{
           "vpc:requester_vpc": [
             "vpc-aqp5jrc1"
           ]
         }
       },
       "effect": "allow",
-      "principal": {
+      "principal":{
         "qcs": [
           "qcs::cam::uin/100000000001:uin/100000000002"
         ]
       },
-      "resource": [
+      "resource":[
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
       ]
     }
@@ -191,8 +202,8 @@
 1. versionidが含まれない場合は、デフォルトでtrueとして処理し、allow条件にヒットすれば、リクエストはallowされます。
 2. リクエストパラメータversionidが空、すなわち`“”`の場合も同様にallowポリシーにヒットし、最新バージョンのオブジェクト取得に対するリクエストのみ権限が承認されます。
 ```
-	"condition": {
-		"string_equal_if_exist": {
+	"condition":{
+		"string_equal_if_exist":{
 			"cos:versionid": ""
 		}
 	}
@@ -620,7 +631,7 @@ GetObjectインターフェースは、リクエストパラメータ`response-c
 
 条件キー`cos:x-cos-storage-class`によって、リクエストヘッダー`x-cos-storage-class`を制限し、それによりストレージタイプを変更する可能性のあるリクエストを制限することができます。
 
-COSのストレージタイプフィールドには、`STANDARD`, `STANDARD_IA`、`INTELLIGENT_TIERING`、`ARCHIVE`、`DEEP_ARCHIVE`があります。
+COSのストレージタイプフィールドには、`STANDARD`、`MAZ_STANDARD`, `STANDARD_IA`、`MAZ_STANDARD_IA`、`INTELLIGENT_TIERING`、`MAZ_INTELLIGENT_TIERING`、`ARCHIVE`、`DEEP_ARCHIVE`があります。
 
 #### 事例1：PutObjectの際にストレージタイプを必ず標準タイプに設定するよう要求する
 
@@ -797,3 +808,205 @@ COSのストレージタイプフィールドには、`STANDARD`, `STANDARD_IA`�
     "version":"2.0"
 }
 ```
+
+<span id="tls-version"></span>
+### 指定されたバージョンのTLSプロトコルの使用のみを許可（cos:tls-version）
+
+#### 条件キー cos:tls-version
+
+条件キー`cos:tls-version`によってHTTPSリクエストのTLSバージョンを制限することができます。この条件キーはNumricタイプであり、1.0、1.1、1.2などの浮動小数点数の入力が可能です。
+
+
+#### 事例1：TLSプロトコルのバージョンが1.2であるHTTPSリクエストにのみ権限を承認する
+
+
+|リクエストのシナリオ   |予測|
+|---|---|
+|HTTPSリクエスト、TLSバージョンは1.0|403、失敗|
+|HTTPSリクエスト、TLSバージョンは1.2|200、成功|
+
+ポリシーの例は次のとおりです。
+
+```
+{
+    "version":"2.0",
+    "Statement":[
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"allow",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_equal":{
+                    "cos:tls-version":1.2
+                }
+            }
+        }
+    ]
+}
+```
+
+
+#### 事例2：TLSプロトコルのバージョンが1.2より低いHTTPSリクエストを拒否する
+
+|リクエストのシナリオ  |  予測   |
+|---|---|
+|HTTPSリクエスト、TLSバージョンは1.0|    403、失敗   |
+|HTTPSリクエスト、TLSバージョンは1.2|    200、成功   |
+
+
+ポリシーの例は次のとおりです。
+
+
+```
+{
+    "version":"2.0",
+    "Statement":[
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"allow",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_greater_than_equal":{
+                    "cos:tls-version":1.2
+                }
+            }
+        },
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"deny",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_less_than_if_exist":{
+                    "cos:tls-version":1.2
+                }
+            }
+        }
+    ]
+}
+```
+
+
+<span id="request_tag"></span>
+### バケット作成時に指定のバケットタグを強制的に設定（qcs:request_tag）
+
+#### 条件キー qcs:request_tag
+
+条件キー`qcs:request_tag`によって、ユーザーがPutBucket、PutBucketTaggingリクエストを送信する際に、必ず指定したバケットタグを含めるよう制限することができます。
+
+#### 事例：ユーザーのバケット作成時に必ず指定したバケットタグを含めるよう制限する
+
+多くのユーザーはバケットタグによってバケットを管理しています。次のポリシーの例は、ユーザーがバケットを作成する際、指定のバケットタグ`<a,b>`および`<c,d>`を設定した場合にのみ権限を取得できるよう制限するものです。
+
+バケットタグは複数設定することができ、条件キー内のバケットタグの数とリクエストに含まれるバケットタグの数はすべて1つのセットである可能性があります。ユーザーの持つ複数のパラメータ値をセットA、条件で規定する複数のパラメータ値をセットBと仮定します。この条件キーを使用する際、限定語for_any_value、for_all_valueの組み合わせによって異なる意味を表すことができます。
+- `for_any_value:string_equal`はAとBに共通部分が存在する場合に発効することを表します。
+- `for_any_value:string_equal`はAがBのサブセットである場合に発効することを表します。
+
+`for_any_value:string_equal`を使用する場合、対応するポリシーとリクエストは次のように表されます。
+
+|リクエストのシナリオ     |予測|
+|---|---|
+|PutBucket、リクエストヘッダー`x-cos-tagging: a=b&c=d`|200、成功|
+|PutBucket、リクエストヘッダー`x-cos-tagging: a=b`|200、成功|
+|PutBucket、リクエストヘッダー`x-cos-tagging: a=b&c=d&e=f`|200、成功|
+
+ポリシーの例は次のとおりです。
+
+```
+{
+    "version": "2.0",
+    "Statement": [
+        {
+            "Principal": {
+                "qcs": [
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect": "allow",
+            "Action": [
+                "name/cos:PutBucket"
+            ],
+            "Resource": "*",
+            "Condition":{
+                "for_any_value:string_equal":{
+                    "qcs:request_tag": [
+                        "a&b",
+                        "c&d"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+
+`for_all_value:string_equal`を使用する場合、対応するポリシーとリクエストは次のように表されます。
+
+
+
+|リクエストのシナリオ   |予測|
+|---|---|
+|PutBucket、リクエストヘッダー`x-cos-tagging: a=b&c=d`|200、成功|
+|PutBucket、リクエストヘッダー`x-cos-tagging: a=b`|200、成功|
+|PutBucket、リクエストヘッダー`x-cos-tagging: a=b&c=d&e=f`|403、失敗|
+
+
+ポリシーの例は次のとおりです。
+
+```
+{
+    "version": "2.0",
+    "Statement": [
+        {
+            "Principal": {
+                "qcs": [
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect": "allow",
+            "Action": [
+                "name/cos:PutBucket"
+            ],
+            "Resource": "*",
+            "Condition":{
+                "for_all_value:string_equal": {
+                    "qcs:request_tag": [
+                        "a&b",
+                        "c&d"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+
+

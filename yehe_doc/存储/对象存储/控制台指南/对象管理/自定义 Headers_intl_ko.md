@@ -9,16 +9,12 @@
 ## 작업 단계
 
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인합니다.
-2. 왼쪽 메뉴에서 [버킷 리스트]를 클릭하여 버킷 리스트 페이지로 이동합니다.
-3. 객체가 속한 버킷을 찾아 해당 버킷 이름을 클릭하여 버킷 관리 페이지로 이동합니다.
-4. 왼쪽 메뉴에서 [파일 리스트]를 선택하여 파일 리스트 페이지로 이동합니다.
-5. 헤더를 사용자 정의해야 하는 단일 객체를 찾고 오른쪽 작업 열에서 [더 많은 작업]>[사용자 정의 헤더]를 클릭합니다.
-
-여러 객체의 헤더를 사용자 정의해야 하는 경우 여러 객체를 선택하고 상단의 [더 많은 작업]>[사용자 정의 헤더]를 클릭할 수 있습니다.
-
-6. 팝업 창에서 설정할 메타데이터 헤더 매개변수 유형을 선택하고 해당 메타데이터 값을 입력한 후 [확인]을 클릭합니다.
+2. 왼쪽 사이드바에서 **버킷 리스트**를 클릭합니다.
+3. 객체가 속한 버킷을 찾아 해당 버킷 이름을 클릭합니다.
+4. 왼쪽 사이드바에서 **파일 리스트**를 클릭합니다.
+5. 헤더를 사용자 지정할 객체를 찾고 오른쪽 작업 열에서 **추가 작업 > 사용자 지정 헤더**를 클릭합니다. 여러 객체의 헤더를 사용자 정의하려면 여러 객체를 선택하고 상단의 **추가 작업 > 사용자 지정 헤더**를 클릭합니다.
+6. 팝업 창에서 설정할 메타데이터 헤더 매개변수 유형을 선택하고 해당 메타데이터 값을 입력한 후 **확인**을 클릭합니다.
 COS는 설정을 위해 다음 6개의 객체 HTTP 헤더 식별자를 제공합니다. 헤더 설정 설명은 다음과 같습니다.
-
 <table>
    <tr>
       <th>HTTP 헤더</th>
@@ -58,26 +54,30 @@ COS는 설정을 위해 다음 6개의 객체 HTTP 헤더 식별자를 제공합
 </table>
 
 
-## 예시
+## License 요청 예시
 
 APPID 1250000000으로 examplebucket-1250000000이라는 이름의 버킷을 생성하고 객체 exampleobject.txt를 버킷 루트 디렉터리에 업로드하였다고 가정해봅니다.
 
 객체의 HTTP 헤더가 사용자 정의되지 않은 경우 브라우저나 클라이언트에 다운로드할 때 얻는 객체 헤더 예시는 아래와 같습니다.
+
 #### 요청
-```sh
-GET /exampleobject.txt HTTP/1.1
-Host: examplebucket-1250000000.file.myqcloud.com
-Accept: */*
+
+```plaintext
+GET /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 10 Apr 2020 09:35:16 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586511316;1586518516&q-key-time=1586511316;1586518516&q-header-list=date;host&q-url-param-list=&q-signature=1bd1898e241fb978df336dc68aaef4c0acae****
+Connection: close
 ```
 
 #### 응답
-```http
+
+```plaintext
 HTTP/1.1 200 OK
-Content-Language:zh-CN
 Content-Type: text/plain
 Content-Disposition: attachment; filename*="UTF-8''exampleobject.txt"
 Access-Control-Allow-Origin: *
-Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT 
+Last-Modified: Fri, 10 Apr 2020 09:35:05 GMT 
 ```
 
 아래 설정 추가:
@@ -85,21 +85,24 @@ Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT
 요청을 다시 보내는 경우 브라우저나 클라이언트에서 얻을 수 있는 객체 헤더 예시는 아래와 같습니다.
 
 #### 요청
-```sh
-GET /exampleobject.txt HTTP/1.1
-Host: examplebucket-1250000000.file.myqcloud.com
-Accept: */*
+
+```plaintext
+GET /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Fri, 10 Apr 2020 09:35:16 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586511316;1586518516&q-key-time=1586511316;1586518516&q-header-list=date;host&q-url-param-list=&q-signature=1bd1898e241fb978df336dc68aaef4c0acae****
+Connection: close
 ```
 
 #### 응답
-```http
+
+```plaintext
 HTTP/1.1 200 OK
-Content-Language:zh-CN
 Cache-Control: no-cache
 Content-Type: image/jpeg
 Content-Disposition: attachment; filename*="abc.txt"
 x-cos-meta-md5: 1234
 Access-Control-Allow-Origin: *
-Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT
+Last-Modified: Fri, 10 Apr 2020 09:35:05 GMT 
 ```
 

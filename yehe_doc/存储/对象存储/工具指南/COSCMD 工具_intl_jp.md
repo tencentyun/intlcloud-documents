@@ -23,7 +23,7 @@ Windows、Linux 、macOSシステムをサポートします。
 #### インストールおよび設定
 
 - 環境のインストールと設定操作の詳細については、[Pythonのインストールと設定](https://intl.cloud.tencent.com/document/product/436/10866)をご参照ください。
-- pip環境のインストールと設定操作の詳細については、[公式サイトpipのインストールの説明](https://pip.pypa.io/en/stable/installation//)をご参照ください。
+- pip環境のインストールと設定操作の詳細については、[公式サイトpipのインストールの説明](https://pip.pypa.io/en/stable/installation/)をご参照ください。
 
 
 ### ダウンロードとインストール
@@ -38,7 +38,6 @@ pip install coscmd
 ```
 インストールの成功後、ユーザーは`-v`または`--version`コマンドを使用して、現在のバージョン情報を確認することができます。
 >! Windowsでインストールした場合は、環境変数に`C:\python_install_dir;`と`C:\python_install_dir\Scripts`という2つのパスを追加する必要があります。 
->
 
 #### 1.2 pipの更新
 
@@ -58,12 +57,11 @@ python setup.py install
 ```
 
 >! Pythonバージョンが2.6で、pipの依存ライブラリへのインストールが失敗しやすい場合は、この方法でインストールすることをお勧めします。 
->
 
 #### 3. オフラインインストール
 
 >! 2台のマシンのPythonのバージョンが同じであることを確認してください。同じでない場合、インストールは失敗してしまいます。
->
+
 ```sh
 # パブリックネットワークを備えたマシンで次のコマンドを実行します
 mkdir coscmd-packages
@@ -150,7 +148,6 @@ coscmd upload -h  //コマンドの使用方法を確認します
 COSCMDツールは、実行前にまず実行時に必要な情報を設定ファイルから読み込みます。COSCMDは、デフォルトでは`~/.cos.conf`から設定項目を読み込みます。
 
 >? 設定する前に、COSコンソールでパラメータ設定用のバケットを作成し（例：configure-bucket-1250000000）、キー情報を作成する必要があります。
->
 
 設定ファイルの例を次に示します。
 ```plaintext
@@ -202,9 +199,9 @@ coscmd config [OPTION]...<FILE>...
 | -s               | Keyは[APIキーコンソール](https://console.cloud.tencent.com/cam/capi)に移動して取得します | 文字列 | はい       |
 | -t               | 一時キーtokenは、一時キーを使用するときに設定が必要で、x-cos-security-tokenヘッダーを設定します | 文字列 | いいえ       |
 | -b               | 指定されたバケット名。バケットの命名形式はBucketName-APPIDです。[命名ルール](https://intl.cloud.tencent.com/document/product/436/13312)をご参照ください。初回設定時に使用する場合、COSコンソールでバケットを作成し、設定ツールとして用いる必要があります | 文字列 | はい       |
-| -r               | バケットの所在リージョンです。[リージョンとアクセスドメイン名](https://intl.cloud.tencent.com/document/product/436/6224)をご参照ください。| 文字列 | はい       |
+| -r               | バケットの所在リージョンです。[リージョンとアクセスドメイン名](https://www.tencentcloud.com/document/product/436/6224)をご参照ください。| 文字列 | はい       |
 | -e               | リクエストのENDPOINTを設定します。ENDPOINTパラメータを設定すると、REGIONパラメータは無効になります。デフォルトのドメイン名を使用している場合、ここでの設定形式は、`cos.<region>.myqcloud.com`となります。グローバルアクセラレーションドメイン名を使用する場合、設定は`cos.accelerate.myqcloud.com`となります | 文字列 | いいえ       |
-| -m               | マルチスレッド操作の最大スレッド数（デフォルトは5、範囲は1～30）             | 数値     | いいえ       |
+| -m               | マルチスレッド操作の最大スレッド数（デフォルトは5、範囲は1～30）             | 数値｜いいえ       |
 | -p               | チャンク操作の1チャンクサイズ（MB単位、デフォルトは1MB、範囲は1～1000）     | 数値   | いいえ       |
 | --do-not-use-ssl | HTTPSではなく、HTTPプロトコルを使用します                              | 文字列 | いいえ       |
 | --anonymous      | 匿名操作（署名なし）                                       | 文字列 | いいえ       |
@@ -224,7 +221,6 @@ coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe****
 >?
 > - `-b <BucketName-APPID>`パラメータでバケット名を指定します。バケットの命名形式はBucketName-APPIDです。ここに入力するバケット名は、必ずこの形式である必要があります。
 > - `-r <region>`でRegionを指定すると、バケットの所属リージョンを指定することができます。 
->
 
 - コマンド形式
 ```plaintext
@@ -292,7 +288,6 @@ coscmd -s upload D:/picture.jpg /
 ### バケットの作成
 
 >? バケットを作成するコマンドを実行するときは、バケット名を指定するパラメータ`-b <BucketName-APPID>と所属リージョンを指定するパラメータ`-r <Region>`を付けてください。coscmd createbucketを直接実行した場合、バケット名と所属リージョンを指定しないと、既存のバケット（パラメータ設定時に入力したバケット）を作成したのと同じことになるため、エラーが発生します。
->
 
 - コマンド形式
 ```plaintext
@@ -306,7 +301,6 @@ coscmd -b examplebucket-1250000000 -r ap-beijing createbucket
 ### バケットの削除
 
 >? `coscmd deletebucket`の使用法は、パラメータを設定する際にストレージバケットに対してのみ有効です。`-b <BucketName-APPID>`でBucketを指定し、`-r <region>`でRegionを指定することをお勧めします。
->
 
 - コマンド形式
 ```plaintext
@@ -321,8 +315,6 @@ coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket
 coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 ```
 >! `-f`パラメータを使用すると、すべてのファイルやバージョン管理を有効にした後の履歴フォルダ、アップロードによって生成されたフラグメントを含むバケットが強制的に削除されますので、操作は慎重に行ってください。
->
-
 
 ## 一般的なオブジェクトコマンド
 
@@ -386,20 +378,29 @@ coscmd upload -rs --skipmd5 D:/doc doc
 ```plaintext
 coscmd upload -rs --delete D:/doc /
 ```
-- 操作事例 - Dドライブのdocフォルダにあるtxtと.docという拡張子を持つファイルのアップロードを無視することを選択します
+- 操作事例 - Dドライブのdocフォルダにある.txtおよび.doc拡張子を持つファイルのアップロードを無視することを選択します
 ```plaintext
 coscmd upload -rs D:/doc / --ignore *.txt,*.doc
 ```
->! フォルダをアップロードするときに、`--ignore`パラメータを使用すると、いずれかのタイプのファイルを無視することができます。`--include`パラメータを使用すると、いずれかのタイプのファイルをフィルタリングすることができます。shellワイルドカードルールや複数のルールをサポートし、カンマ`,`で区切ります。いずれかの種類の拡張子を無視する場合は、最後に`,`を入力するか、`""`を追加する必要があります。
+- 操作事例 - Dドライブのdocフォルダにある.txt拡張子を持つファイルのアップロードを無視することを選択します
+```plaintext
+coscmd upload -rs D:/doc / --ignore "*.txt"
+```
+>! 
+> - フォルダをアップロードするときに、`--ignore`パラメータを使用すると、いずれかのタイプのファイルを無視することができます。`--include`パラメータを使用すると、いずれかのタイプのファイルをフィルタリングすることができます。shellワイルドカードルールや複数のルールをサポートし、カンマ`,`で区切ります。いずれかの種類の拡張子を無視する場合は、最後に`,`を入力するか、`""`を追加する必要があります。`""`の中に複数のカンマ区切りルールが含まれる場合は、最初のルールに準じます。
+> - `--ignore`を使用して特定のフォルダ内のすべてのファイルをフィルタリングしたい場合は、絶対パスを使用し、パスの前後に`""`を追加する必要があります。例えば、`coscmd upload -rs D:/doc / --ignore "D:/doc/ignore_folder/*"`などとします。
 >
 - 操作事例 - Dドライブのdocフォルダにある.txtと.docという拡張子を持つファイルをアップロードします
 ```plaintext
 coscmd upload -rs D:/doc / --include *.txt,*.doc
 ```
-
+- 操作事例 - Dドライブのdocフォルダにある.txt拡張子を持つファイルをアップロードします
+```plaintext
+coscmd upload -rs D:/doc / --include "*.txt"
+```
 
 > !
-> - 10MB以上のファイルをアップロードする場合、COSCMDはマルチパートアップロード方法を採用します。コマンドの使用法は単純なアップロードと同じで、`coscmd upload <localpath> <cospath>`です。
+> - 10MB以上のファイルをアップロードする場合、COSCMDはマルチパートアップロード方式を採用します。コマンドの使用法は単純なアップロードと同じで、`coscmd upload <localpath> <cospath>`です。
 > - COSCMDは、大きなファイルのブレークポイントアップロード機能をサポートしています。大きなファイルのマルチパートアップロードが失敗した場合、このファイルの再アップロードでは失敗したチャンクのみがアップロードされ、最初からやり直すことはありません（再アップロードしたファイルのディレクトリとコンテンツがアップロードしたディレクトリと同じであることを確認してください）。
 > - COSCMDのマルチパートアップロードのときは、チャンクごとにMD5チェックが行われます。
 > - COSCMDのアップロードはデフォルトで`x-cos-meta-md5`というヘッダーが付きます。これはこのファイルのmd5値となりますが、--skipmd5パラメータがある場合、 このヘッダーは付きません。
@@ -430,12 +431,10 @@ coscmd list -v
 ```
 
 >?
-> - 「<>」のパラメータを、ファイルリストを照会する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。`<cospath>`は空で、デフォルトで現在のバケットルートディレクトリを照会します。
+> - 「<>」内のパラメータを、ファイルリストを照会する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。`<cospath>`が空の場合は、デフォルトで現在のバケットルートディレクトリを照会します。
 > - `-a`を使用してすべてのファイルを照会します。
 > - `-r`を使用して再帰的に照会すると、リストアップされたファイルの数とサイズの合計が末尾に返されます。
 > - `-n num`を使用して、照会の最大値を設定します。
-> 
-
 
 ### ファイル情報の確認
 
@@ -450,8 +449,7 @@ coscmd info <cospath>
 coscmd info doc/picture.jpg
 ```
 
->?「<>」のパラメータを、表示する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
->
+> - 「<>」内のパラメータを、表示させる必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
 
 
 ### ファイルまたはフォルダのダウンロード
@@ -486,7 +484,7 @@ coscmd download -r doc D:/folder/
 ```
 - 操作事例 - ルートディレクトリファイルをダウンロードしますが、ルートディレクトリ下のdocディレクトリはスキップします
 ```plaintext
-coscmd download -r / D:/ --ignore doc/*
+coscmd download -r / D:/ --ignore "doc/*"
 ```
 - 操作事例 - 現在のバケットのルートディレクトリにあるすべてのファイルを上書きしてダウンロードします
 ```plaintext
@@ -512,14 +510,23 @@ coscmd download -rs --delete / D:/examplefolder
 ```plaintext
 coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 ```
->! フォルダをダウンロードするときに、`--ignore`パラメータを使用すると、いずれかのタイプのファイルを無視することができます。`--include`パラメータを使用すると、いずれかのタイプのファイルをフィルタリングすることができます。shellワイルドカードルールや複数のルールをサポートし、カンマ`,`で区切ります。いずれかの種類の拡張子を無視する場合は、最後に`,`を入力するか、二重引用符`""`を追加する必要があります。
+- 操作事例 - .txt拡張子を持つファイルを無視します
+```plaintext
+coscmd download -rs / D:/examplefolder --ignore "*.txt"
+```
+>! 
+> - フォルダをアップロードするときに、`--ignore`パラメータを使用すると、いずれかのタイプのファイルを無視することができます。`--include`パラメータを使用すると、いずれかのタイプのファイルをフィルタリングすることができます。shellワイルドカードルールや複数のルールをサポートし、カンマ`,`で区切ります。いずれかの種類の拡張子を無視する場合は、最後に`,`を入力するか、`""`を追加する必要があります。`""`の中に複数のカンマ区切りルールが含まれる場合は、最初のルールに準じます。
+> - `--ignore`を使用して特定のディレクトリ内のすべてのファイルをフィルタリングしたい場合は、絶対パスを使用し、パスの前後に`""`を追加する必要があります。例えば、`coscmd upload -rs D:/doc / --ignore "D:/doc/ignore_folder/*"`などとします。
 >
 - 操作事例 - .txtと.docという拡張子を持つファイルをフィルタリングします
 ```plaintext
 coscmd download -rs / D:/examplefolder --include *.txt,*.doc
 ```
+- 操作事例 - .txt拡張子を持つファイルをフィルタリングします
+```plaintext
+coscmd download -rs / D:/examplefolder --include "*.txt"
+```
 >! 古いバージョンのmgetインターフェースは廃止されました。downloadインターフェースはチャンク化されたダウンロードを使いますので、downloadインターフェースを使用してください。
->
 
 
 ### 署名入りダウンロードURLの取得
@@ -540,7 +547,6 @@ coscmd signurl doc/picture.jpg -t 100
 >?
 > - 「<>」のパラメータを、ダウンロードURLを取得する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
 > - `-t time`を使用して、このURLの署名の有効期間（単位は秒）を設定します。デフォルトは10000sです。
->
 
 
 ### ファイルまたはフォルダの削除
@@ -549,8 +555,8 @@ coscmd signurl doc/picture.jpg -t 100
 ```plaintext
 coscmd delete <cospath>
 ```
-> - 「<>」のパラメータを、削除する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。ツールは、削除操作を確認するようユーザーに促します。
->
+> - 「<>」内のパラメータを、削除する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。ツールは、削除操作を確認するようユーザーに促します。
+
 - 操作事例 - doc/exampleobject.txtを削除します
 ```plaintext
 coscmd delete doc/exampleobject.txt
@@ -579,7 +585,6 @@ coscmd delete -r doc/ --versions
 >?
 >- 一括削除では`y`を入力して確定する必要がありますが、`-f`パラメータを使用すると確認をスキップして直接削除することができます。
 >- フォルダを削除するコマンドを実行すると、現在のフォルダとそのファイルが削除されますのでご注意ください。ただし、バージョン管理されたファイルを削除する場合は、バージョンIDを指定して削除する必要があります。
-
 
 ### マルチパートアップロードファイルのフラグメントの照会
 
@@ -636,15 +641,13 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 ```
 
 > ?
-> - 「<>」のパラメータを、コピーする必要のあるCOS上のファイルのパス(sourcepath)と、COSにコピーする必要のあるファイルのパス(cospath)に置き換えてください。
+> - 「<>」内のパラメータを、コピーする必要のあるCOS上のファイルのパス(sourcepath)と、COS上にコピーする必要のあるファイルのパス(cospath)に置き換えてください。
 > - sourcepathの形式は、`<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`です。
 > - -dパラメータを使用して`x-cos-metadata-directive`パラメータを設定します。オプション値はCopyとReplacedで、デフォルトはCopyです。
 > - -Hパラメータを使用してHTTP headerを設定する場合は、形式がJSONであることを確認してください。例：`coscmd copy -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`。その他のヘッダーについては、[PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881)のドキュメントをご参照ください。
-> 
 
 ### ファイルまたはフォルダの移動
 >! 移動コマンドの<sourcepath>`は`<cospath>`と同一にすることはできません。同一にした場合はファイルが削除されます。moveコマンドは先にコピーを行ってから削除するため、`<sourcepath>`パスのファイルが最終的に削除されることが原因です。
->
 #### ファイル移動のコマンド形式
 ```plaintext
 coscmd move <sourcepath> <cospath> 
@@ -675,13 +678,11 @@ coscmd move -r <sourcepath> <cospath>
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou move -r examplebucket2-1250000000.cos.ap-guangzhou.myqcloud.com/examplefolder doc/
 ```
 
-
 > ?
-> - 「<>」のパラメータを、移動させたいCOS上のファイルのパス(sourcepath)と、COSに移動する必要のあるファイルのパス(cospath)に置き換えてください。
+> - 「<>」内のパラメータを、移動させる必要のあるCOS上のファイルのパス(sourcepath)と、COSに移動する必要のあるファイルのパス(cospath)に置き換えてください。
 > - sourcepathの形式は、`<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`です。
 > - -dパラメータを使用して`x-cos-metadata-directive`パラメータを設定します。オプション値はCopyとReplacedで、デフォルトはCopyです。
 > - -Hパラメータを使用してHTTP headerを設定する場合は、形式がJSONであることを確認してください。例：`coscmd move -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`。その他のヘッダーについては、[PUT Object - copy](https://intl.cloud.tencent.com/document/product/436/10881)のドキュメントをご参照ください。
-> 
 
 ### オブジェクトのアクセス権限の設定
 
@@ -720,7 +721,6 @@ coscmd getbucketversioning
 > !
 > - 「<>」のパラメータを、ご希望のバージョン管理ステータス(status)に置き換えてください。
 >- 一度バージョン管理を有効にしたバケットは、バージョン管理を有効にしていない状態（初期ステータス）に戻すことはできません。ただし、このバケットのバージョン管理を一時停止することはでき、その後にアップロードされるオブジェクトでは複数のバージョンが生成されなくなります。
->
 
 ### アーカイブファイルのリカバリ
 
@@ -728,7 +728,7 @@ coscmd getbucketversioning
 ```plaintext
 coscmd restore <cospath>
 ```
-- 操作事例 - 超高速モードでpicture.jpgをリストアします。有効期間は3日間です
+- 操作事例 - 高速取得モードでpicture.jpgをリトリーブします。有効期間は3日間です
 ```plaintext
 coscmd restore -d 3 -t Expedited picture.jpg
 ```
@@ -736,7 +736,7 @@ coscmd restore -d 3 -t Expedited picture.jpg
 ```plaintext
 coscmd restore -r <cospath>
 ```
-- 操作事例 - 超高速モードでexamplefolder/ディレクトリをリストアします。有効期間は3日間です
+- 操作事例 - 高速取得モードでexamplefolder/ディレクトリをリトリーブします。有効期間は3日間です
 ```plaintext
 coscmd restore -r -d 3 -t Expedited examplefolder/
 ```
@@ -744,9 +744,10 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 >?
 > - 「<>」のパラメータを、ファイルリストを照会する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
 > - `-d <day>`を使用して、一時コピーの有効期限を設定します。デフォルト値は7です。
-> - `-t <tier>`を使用してリカバリモードを指定します。列挙値はExpedited （超高速モード）、Standard （標準モード）、Bulk（一括モード）であり、デフォルト値はStandardです。
->
+> - `-t <tier>`を使用してリカバリモードを指定します。列挙値はExpedited （高速取得モード）、Standard （標準取得モード）、Bulk（一括取得モード）であり、デフォルト値はStandardです。
 
 ## よくあるご質問
 
 COSCMDツールの使用に関するご質問は、[COSCMDツールに関するよくあるご質問](https://intl.cloud.tencent.com/document/product/436/30586)をご参照ください。
+
+

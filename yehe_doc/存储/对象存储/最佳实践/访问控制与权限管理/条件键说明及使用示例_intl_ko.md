@@ -18,26 +18,37 @@
 
 #### 예시: 지정 IP의 사용자의 액세스만 허용
 
-다음은 ID가 100000000001(APPID는 1250000000)인 루트 계정 아래의 ID가 100000000002인 서브 계정에 베이징 리전의 버킷 examplebucket-bj와 광저우 리전의 버킷 examplebucket-gz의 객체 exampleobject에 대해, 액세스 IP가 10.*.*.10/24 대역인 경우 객체 업로드 및 객체 다운로드 권한을 부여하는 정책 예시입니다.
+다음은 ID가 100000000001(APPID는 1250000000)인 루트 계정에 속하는 ID가 100000000002인 서브 계정이 베이징 리전의 버킷 examplebucket-bj와 광저우 리전의 버킷 examplebucket-gz의 객체 exampleobject에 대해, 액세스 IP가 IP 범위 `192.168.1.0/24`에 속하거나 액세스가 IP가 `101.226.100.185` 또는 `101.226.100.186` 대역인 경우 객체 업로드 및 객체 다운로드 권한을 부여하는 정책 예시입니다.
 
 ```
 {
-	"version": "2.0",
-	"principal":{
-		"qcs": ["qcs::cam::uin/100000000001:uin/100000000002"]
-	},
-	"statement": [{
-		"effect": "allow",
-		"action": ["name/cos:PutObject", "name/cos:GetObject"],
-		"resource": ["qcs::cos:ap-beijing:uid/1250000000:examplebucket-bj-1250000000/*",
-			"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
-		],
-		"condition":{
-			"ip_equal":{
-				"qcs:ip": "10.*.*.10/24"
-			}
-		}
-	}]
+    "version": "2.0",
+    "principal":{
+        "qcs":[
+            "qcs::cam::uin/100000000001:uin/100000000002"
+        ]
+    },
+    "statement": [
+        {
+            "effect": "allow",
+            "action":[
+                "name/cos:PutObject",
+                "name/cos:GetObject"
+            ],
+            "resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-gz-1250000000/exampleobject"
+            ],
+            "condition":{
+                "ip_equal":{
+                    "qcs:ip":[
+                        "192.168.1.0/24",
+                        "101.226.100.185",
+                        "101.226.100.186"
+                    ]
+                }
+            }
+        }
+    ]
 }
 ```
 
@@ -620,7 +631,7 @@ GetObject API를 사용하면 요청 매개변수인 `response-content-type`을 
 
 조건 키 `cos:x-cos-storage-class`를 사용하여 요청 헤더 `x-cos-storage-class`를 제한하여 스토리지 클래스 수정 요청을 제한할 수 있습니다.
 
-COS의 스토리지 클래스 필드에는 `STANDARD`, `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE` 및 `DEEP_ARCHIVE`가 있습니다.
+COS의 스토리지 클래스 필드에는 STANDARD, MAZ_STANDARD, STANDARD_IA, MAZ_STANDARD_IA, INTELLIGENT_TIERING, MAZ_INTELLIGENT_TIERING, ARCHIVE 및 DEEP_ARCHIVE가 있습니다.
 
 #### 예시1: PutObject 요청 시 스토리지 클래스를 반드시 STANDARD로 설정
 
@@ -797,5 +808,205 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
     "version":"2.0"
 }
 ```
+
+<span id="tls-version"></span>
+### 지정된 버전의 TLS 프로토콜만 사용 허용(cos:tls-version)
+
+#### 조건 키 cos:tls-version
+
+조건 키 `cos:tls-version`을 사용하여 HTTPS 요청의 TLS 버전을 제한할 수 있습니다. 해당 값은 Numric 유형이며 1.0, 1.1 또는 1.2와 같은 부동 소수점을 지원합니다.
+
+
+#### 예시1: TLS v1.2를 사용하는 HTTP 요청만 승인
+
+
+|요청 시나리오   |예상 결과|
+|---|---|
+|TLS v1.0을 사용한 HTTPS 요청|403, 실패|
+|TLS v1.2를 사용한 HTTPS 요청|200, 성공|
+
+정책 예시는 다음과 같습니다.
+
+```
+{
+    "version":"2.0",
+    "Statement":[
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"allow",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_equal":{
+                    "cos:tls-version":1.2
+                }
+            }
+        }
+    ]
+}
+```
+
+
+#### 예시2: v1.2 이전의 TLS를 사용하는 HTTP 요청 거부
+
+|요청 시나리오  |  예상 결과   |
+|---|---|
+|TLS v1.0을 사용한 HTTPS 요청|    403, 실패   |
+|TLS v1.2를 사용한 HTTPS 요청|    200, 성공   |
+
+
+정책 예시는 다음과 같습니다.
+
+
+```
+{
+    "version":"2.0",
+    "Statement":[
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"allow",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_greater_than_equal":{
+                    "cos:tls-version":1.2
+                }
+            }
+        },
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect":"deny",
+            "Action":[
+                "*"
+            ],
+            "Resource":[
+                "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
+            ],
+            "Condition":{
+                "numeric_less_than_if_exist":{
+                    "cos:tls-version":1.2
+                }
+            }
+        }
+    ]
+}
+```
+
+
+<span id="request_tag"></span>
+### 버킷 생성 시 지정된 버킷 태그 강제 설정(qcs:request_tag)
+
+#### 조건 키 qcs:request_tag
+
+조건 키 `qcs:request_tag`를 사용하여 PutBucket 또는 PutBucketTagging 요청을 시작할 때 사용자가 지정된 버킷 태그를 포함하도록 제한할 수 있습니다.
+
+#### 예시: 사용자가 버킷을 생성할 때 지정된 버킷 태그를 포함하도록 제한
+
+많은 사용자가 버킷 태그를 사용하여 버킷을 관리할 수 있습니다. 다음 정책 예시는 사용자가 버킷 생성 시 지정된 버킷 태그 `<a,b>` 및 `<c,d>`를 설정한 후에만 권한을 얻을 수 있음을 나타냅니다.
+
+여러 버킷 태그를 설정할 수 있습니다. 버킷 태그의 다른 키 값 및 수량은 다른 세트를 형성할 수 있습니다. 요청 양식 세트 A에서 사용자가 여러 매개변수 값을 가지고 있고 조건 양식 세트 B에 지정된 여러 매개변수 값을 가지고 있다고 가정합니다. 이 조건 키를 통해 사용자는 for_any_value 및 for_all_value 한정자의 다양한 조합을 사용하여 다른 의미를 나타낼 수 있습니다.
+- `for_any_value:string_equal`은 A와 B가 교차하는 경우 요청이 적용됨을 나타냅니다.
+- `for_all_value:string_equal`은 A가 B의 subset인 경우 요청이 적용됨을 나타냅니다.
+
+`for_any_value:string_equal`을 사용하는 경우 해당 정책 및 요청은 다음과 같습니다.
+
+|요청 시나리오     |예상 결과|
+|---|---|
+|PutBucket, 요청 헤더 `x-cos-tagging: a=b&c=d`|200, 성공|
+|PutBucket, 요청 헤더 `x-cos-tagging: a=b`|200, 성공|
+|PutBucket, 요청 헤더 `x-cos-tagging: a=b&c=d&e=f`|200, 성공|
+
+정책 예시는 다음과 같습니다.
+
+```
+{
+    "version": "2.0",
+    "Statement":[
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect": "allow",
+            "Action":[
+                "name/cos:PutBucket"
+            ],
+            "Resource": "*",
+            "Condition":{
+                "for_any_value:string_equal":{
+                    "qcs:request_tag": [
+                        "a&b",
+                        "c&d"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+
+`for_all_value:string_equal`을 사용하는 경우 해당 정책 및 요청은 다음과 같습니다.
+
+
+
+|요청 시나리오   |예상 결과|
+|---|---|
+|PutBucket, 요청 헤더 `x-cos-tagging: a=b&c=d`|200, 성공|
+|PutBucket, 요청 헤더 `x-cos-tagging: a=b`|200, 성공|
+|PutBucket, 요청 헤더 `x-cos-tagging: a=b&c=d&e=f`|403, 실패|
+
+
+정책 예시는 다음과 같습니다.
+
+```
+{
+    "version": "2.0",
+    "Statement":[
+        {
+            "Principal":{
+                "qcs":[
+                    "qcs::cam::uin/100000000001:uin/100000000002"
+                ]
+            },
+            "Effect": "allow",
+            "Action":[
+                "name/cos:PutBucket"
+            ],
+            "Resource": "*",
+            "Condition":{
+                "for_all_value:string_equal": {
+                    "qcs:request_tag": [
+                        "a&b",
+                        "c&d"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
 
 

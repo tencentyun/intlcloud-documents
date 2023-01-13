@@ -21,7 +21,7 @@
 ### 작업 단계
 
 1. PicGo를 설치하고 관련 COS 매개변수를 설정합니다.
->?이 시나리오에서는 PicGo 2.3.0이 사용됩니다. 구성 프로세스는 버전에 따라 다를 수 있습니다.
+>?이 시나리오에서는 PicGo 2.3.1이 사용됩니다. 구성 프로세스는 버전에 따라 다를 수 있습니다.
 >
 [PicGo 웹사이트](https://molunerfinn.com/PicGo/)에서 PicGo를 다운로드하여 설치한 후 이미지 호스팅 서비스 설정에서 **Tencent Cloud COS**를 찾아 다음 매개변수를 구성합니다.
 
@@ -33,6 +33,7 @@
   - 저장 리전 확인: 리전 정보, ap-beijing, ap-hongkong 및 eu-frankfurt와 같은 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
   - 저장 경로 지정: COS 버킷에서 이미지가 저장되는 경로입니다.
   - 사용자 정의 도메인 이름 설정: 이 매개변수는 선택사항입니다. 위에서 지정한 스토리지 공간에 대해 사용자 지정 원본 도메인 이름을 구성한 경우 여기에 입력할 수 있습니다. 자세한 내용은 [사용자 정의 원본 서버 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31507)를 참고하십시오.
+  - URL 접미사 설정: URL 접미사에 COS 데이터 처리 매개변수를 추가하여 이미지 압축, 크롭핑, 형식 변환 및 기타 작업을 구현합니다. 자세한 내용은 [이미지 처리](https://www.tencentcloud.com/document/product/436/40118)를 참고하십시오.
 2. typora를 구성합니다(선택 사항).
 >?편집 요구 사항에 Markdown이 포함되지 않은 경우 이 단계를 건너뛰고 이전 단계에서 설치된 PicGo 도구를 이미지 호스팅 도구로 사용할 수 있습니다.
 >
@@ -79,3 +80,9 @@ COS 콘솔의 버킷 개요 페이지에서 버킷의 기본 도메인 이름을
 
 - sublime text를 사용한 검색 및 교체 예시:
 ![](https://qcloudimg.tencent-cloud.cn/raw/97855e83ce68cd23254c98f4849e2d41.png)
+
+
+
+
+
+

@@ -2,7 +2,7 @@
 
 Cloud Object Storage(COS) 콘솔에서 버킷의 객체에 대해 교차 출처 리소스 공유(Cross-Origin Resource Sharing, CORS)를 설정할 수 있습니다. COS는 OPTIONS 요청에 응답하기 위해 여러 규칙 구성을 지원합니다. CORS는 HTTP 요청을 통해 한 출처의 리소스를 다른 출처에서 요청할 수 있도록 하는 메커니즘입니다. 프로토콜, 도메인 이름 또는 포트가 다른 한 origin은 서로 다른 것으로 간주됩니다.
 
-COS 서비스는 크로스 도메인 간 액세스를 위한 OPTIONS 요청 응답 기능을 지원하며, 개발자가 설정한 규칙에 따라 브라우저로 세부 설정 규칙을 반환합니다. 하지만 이후 실행되는 크로스 도메인 요청이 규칙에 부합하는지 여부는 서버에서 검사하지 않습니다. 자세한 내용은 [HTTP 액세스 제어에 관한 설명](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)과 [크로스 도메인 액세스 설정](https://intl.cloud.tencent.com/document/product/436/11488)의 모범 사례 문서를 참고하십시오.
+COS 서비스는 크로스 도메인 간 액세스를 위한 OPTIONS 요청 응답 기능을 지원하며, 개발자가 설정한 규칙에 따라 브라우저로 세부 설정 규칙을 반환합니다. 하지만 이후 실행되는 크로스 도메인 요청이 규칙에 부합하는지 여부는 서버에서 검사하지 않습니다. 자세한 내용은 [HTTP 액세스 제어에 관한 설명](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)과 [CORS 설정](https://intl.cloud.tencent.com/document/product/436/11488)의 모범 사례 문서를 참고하십시오.
 
 ## 작업 단계
 
@@ -30,5 +30,5 @@ COS 서비스는 크로스 도메인 간 액세스를 위한 OPTIONS 요청 응�
  - **Max-Age**: OPTIONS 요청으로 얻은 결과의 유효 기간(초). 값은 600과 같은 양의 정수여야 합니다.
  - **Vary: Origin 반환**: Vary: Origin Header 반환 여부를 설정합니다. 브라우저에 CORS와 비 CORS 요청이 동시에 있는 경우 이 옵션을 활성화하십시오. 그렇지 않으면 도메인 간 문제가 발생할 수 있습니다.
  >!'Vary: Origin'을 선택하면 브라우저 액세스 또는 CDN Origin-pull이 증가할 수 있습니다.
-6. 구성을 완료한 후 **제출**을 클릭하면 CORS 규칙이 추가된 것을 볼 수 있습니다. 수정하려면 **수정**을 클릭합니다.
+6. 구성을 완료한 후 **저장**을 클릭하면 CORS 규칙이 추가된 것을 볼 수 있습니다. 수정하려면 **수정**을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/c4399193611b4f81e57a549634ea865a.png)

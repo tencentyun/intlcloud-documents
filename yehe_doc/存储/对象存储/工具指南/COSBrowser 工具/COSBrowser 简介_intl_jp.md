@@ -71,8 +71,8 @@ COSBrowserデスクトップは、以下の機能をサポートします。
 | [バケットの作成/削除](https://intl.cloud.tencent.com/document/product/436/32565#createordelete) | バケットの作成と削除をサポートします                                         |
 | [バケットの詳細情報の表示](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | バケットの基本情報の表示をサポートします                                       |
 | [統計データの表示](https://intl.cloud.tencent.com/document/product/436/32565#count)           | バケットの現在のストレージ容量とオブジェクト総数の表示をサポートします                         |
-| [権限管理](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | バケットやオブジェクトに関する権限の変更をサポートします                               |
-| [バージョン管理の設定](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | バケットのバージョン管理の有効化と一時停止をサポートします                                 |
+| [権限管理](https://intl.cloud.tencent.com/document/product/436/32565#acl) | バケットやオブジェクトに関する権限の変更をサポートします                               |
+| [バージョン管理の設定](https://intl.cloud.tencent.com/document/product/436/32565#version) | バケットのバージョン管理の有効化と一時停止をサポートします                                 |
 | [アクセスパスの追加](https://intl.cloud.tencent.com/document/product/436/32565#addaccess) | アクセスパスの追加をサポートします                                             |
 | [ファイル/フォルダのアップロード](https://intl.cloud.tencent.com/document/product/436/32565#upload) | ファイルまたはフォルダのバケットへの単一アップロード、一括アップロード、増分アップロードをサポートします<br><br>注意：<br>1. 一括アップロードするファイルは10万個以内とします<br>2. 中断からの再開はサポートしていません<br>3. データ移行またはデータの一括アップロードを行う場合は、[Migration Service Platform（MSP）](https://www.tencentcloud.com/products/msp)をご利用ください     |
 | [ファイル/フォルダのダウンロード](https://intl.cloud.tencent.com/document/product/436/32565#upload) | ファイルまたはフォルダのローカルへの個別ダウンロード、一括ダウンロード、差分ダウンロードをサポートします <br><br>注意：<br>1. 一括ダウンロードするファイルは10万個以内とします<br>2. 中断からの再開はサポートしていません          |
@@ -117,4 +117,5 @@ COSBrowserの使用に関してご質問やご提案がございましたら、�
 - デスクトップのフィードバック：[issues](https://github.com/tencentyun/cosbrowser/issues)。
 - モバイル端末のフィードバック：[issues_mobile](https://support.qq.com/embed/phone/67467)。
   
-   
+
+

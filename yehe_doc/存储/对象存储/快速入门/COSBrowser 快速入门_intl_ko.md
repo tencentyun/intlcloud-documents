@@ -4,7 +4,7 @@ COSBrowser는 COS가 선보이는 시각화 인터페이스 툴입니다. Window
 Windows 플랫폼의 COSBrowser에서의 버킷 생성, 객체 업로드, 객체 다운로드 및 객체 공유 방법은 다음과 같습니다.
 
 
-##  전제 조건
+## 전제 조건
 
 1. Tencent Cloud 계정으로 COS 서비스를 활성화해야 합니다. COS 서비스를 비활성화한 경우, [COS 콘솔](https://console.cloud.tencent.com/cos5)에서 안내에 따라 활성화하십시오.
 2. COSBrowser 툴은 API 키로 로그인합니다. [API Keys](https://console.cloud.tencent.com/cam/capi) 관리 페이지에서 먼저 API 키를 생성하십시오.
@@ -27,12 +27,13 @@ Windows용 COSBrowser의 시스템 요구 사항: Windows 7 32/64비트 이상, 
 
 ## 3단계: 버킷 생성하기
 
-1. 로그인 성공 후 툴 인터페이스에서 왼쪽 상단의 **버킷 추가**를 클릭합니다.
+1. 로그인한 후 COSBrowser 페이지의 왼쪽 상단 모서리에 있는 **버킷 생성**을 클릭합니다.
 2. 팝업창에 버킷 정보를 입력합니다.
 ![](https://main.qcloudimg.com/raw/d5c11a8be17d9a3462c0ca73ee189c73.png)
- - 이름: 사용자 정의 버킷 이름, examplebucket을 입력합니다.
- - 소속 리전: 버킷이 속한 리전을 말하며, 가장 가까운 지역을 선택합니다. 예를 들어 선전에 있는 경우 리전으로 광저우, 즉 ap-guangzhou를 선택할 수 있습니다. 
+ - 버킷 이름: 사용자 정의 버킷 이름, examplebucket을 입력합니다.
+ - 리전: 버킷이 속한 리전을 말하며, 가장 가까운 지역을 선택합니다. 예를 들어 선전에 있는 경우 리전으로 광저우, 즉 ap-guangzhou를 선택할 수 있습니다. 
  - 액세스 권한: 버킷 액세스 권한, ‘개인 읽기 및 쓰기’를 선택합니다.
+ - 버킷 태그/MAZ 구성은 선택 사항입니다. 본 예시에서는 무시합니다.
 3. **확인**을 클릭하여 버킷을 생성합니다.
 
 
@@ -45,14 +46,14 @@ Windows용 COSBrowser의 시스템 요구 사항: Windows 7 32/64비트 이상, 
 
 ## 5단계: 객체 다운로드하기
 
-#### 방법 1
+#### 방법1
 
 
 1. COSBrowser 툴 오른쪽 상단의 <img src="https://main.qcloudimg.com/raw/b3de2bc7284b5aaba9b4f9af6c408205.jpg" style="margin:0;">을(를) 클릭하면 리스트 뷰로 전환됩니다. 리스트 뷰 화면에서는 이 절차를 생략해도 됩니다.
 2. 파일 오른쪽 작업 열의 <img src="https://main.qcloudimg.com/raw/0631f784902fb5e146ac0d0f6befe346.jpg"  style="margin:0;">을(를) 클릭하여 파일을 다운로드합니다.
 
 
-#### 방법 2
+#### 방법2
 
 1. 파일 우클릭 후, 드롭다운 메뉴에서 **고급 다운로드**를 클릭합니다.
 2. COSBrowser 툴의 고급 다운로드 팝업창에서 필요에 따라 ‘이름 변경’, ‘덮어쓰기’ 또는 ‘건너뛰기’를 선택합니다.
@@ -64,7 +65,7 @@ Windows용 COSBrowser의 시스템 요구 사항: Windows 7 32/64비트 이상, 
 
 COS에 저장된 모든 파일은 관련 링크를 통해 액세스할 수 있습니다. 파일이 개인 읽기 권한이라면 임시 서명을 요청하여 유효 시간이 부여된 임시 액세스 링크를 생성할 수 있습니다. 객체의 링크 생성 방법은 다음과 같은 두 가지입니다.
 
-#### 방법 1
+#### 방법1
 
 1. COSBrowser 툴 오른쪽 상단의 <img src="https://main.qcloudimg.com/raw/b3de2bc7284b5aaba9b4f9af6c408205.jpg" style="margin:0;">을(를) 클릭하면 리스트 뷰로 전환됩니다. 리스트 뷰 화면에서는 이 절차를 생략해도 됩니다.
 2. 파일 오른쪽 작업 열의 <img src="https://main.qcloudimg.com/raw/37acaeb370eb77e1bb0c792d542792e2.jpg"  style="margin:0;">을(를) 클릭합니다.
@@ -72,20 +73,20 @@ COS에 저장된 모든 파일은 관련 링크를 통해 액세스할 수 있�
 4. 해당 링크로 파일을 액세스합니다. 해당 방법으로 생성된 파일 링크의 유효 시간은 2시간이며, 유효 시간을 직접 입력할 경우, 방법2를 참고하십시오.
 
 
-#### 방법 2
+#### 방법2
 
 1. COSBrowser 툴 오른쪽 상단의 <img src="https://main.qcloudimg.com/raw/b3de2bc7284b5aaba9b4f9af6c408205.jpg" style="margin:0;">을(를) 클릭하면 리스트 뷰로 전환됩니다. 리스트 뷰 화면에서는 이 절차를 생략해도 됩니다.
-1. 파일 오른쪽 작업 열에서 **...**를 클릭한 뒤, 드롭다운 메뉴의 **공유**를 클릭합니다.
+2. 파일 오른쪽 작업 열에서 **...**를 클릭한 뒤, 드롭다운 메뉴의 **공유**를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/1ab8d2c4a61ae3e0b94c06c9d65ce3f7.png)
-2. 사용자 정의 복사 링크 팝업창에서 파일 링크를 설정합니다. 파일이 개인 읽기 및 쓰기 권한이라면 **서명을 보유한 임시 링크 복사....**를 선택합니다. 링크는 설정한 시간에 한해 유효합니다.
+3. 사용자 정의 복사 링크 팝업창에서 파일 링크를 설정합니다. 파일이 개인 읽기 및 쓰기 권한이라면 **서명을 보유한 임시 링크 복사....**를 선택합니다. 링크는 설정한 시간에 한해 유효합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/be35af7fe2e1a4138ec75e2fa90e5343.png)
-3. **복사**를 클릭하여 임시 파일 링크를 복사하면 해당 링크를 통해 파일에 액세스할 수 있습니다.
+4. **복사**를 클릭하여 임시 파일 링크를 복사하면 해당 링크를 통해 파일에 액세스할 수 있습니다.
 
 ## 추가 기능
 
-COSBrowser는 위 기능 외에도 버킷 액세스 권한 수정, 파일 미리보기 등 많은 기능을 보유하고 있습니다. 자세한 사항은 [데스크톱 기능 리스트](https://intl.cloud.tencent.com/document/product/436/11366#.E6.A1.8C.E9.9D.A2.E7.AB.AF.E5.8A.9F.E8.83.BD.E5.88.97.E8.A1.A8) 문서를 참고하십시오.
+COSBrowser는 위 기능 외에도 버킷 액세스 권한 수정, 파일 미리보기 등 많은 기능을 보유하고 있습니다. 자세한 사항은 [데스크톱 버전 기능 리스트](https://intl.cloud.tencent.com/document/product/436/11366#.E6.A1.8C.E9.9D.A2.E7.AB.AF.E5.8A.9F.E8.83.BD.E5.88.97.E8.A1.A8) 문서를 참고하십시오.
 
-## 문제 해결
+## 질문이 있으십니까?
 
 이용에 불편을 드려 대단히 죄송합니다. [고객센터](https://intl.cloud.tencent.com/contact-sales)를 통해 문의하시기 바랍니다.
 
@@ -94,5 +95,5 @@ COSBrowser는 위 기능 외에도 버킷 액세스 권한 수정, 파일 미리
 모바일 (iOS, Android)의 COSBrowser, 다음 문서를 참고하십시오.
 
 - [COSBrowser 소개](https://intl.cloud.tencent.com/document/product/436/11366)
-- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/32566)
+- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/41616)
 

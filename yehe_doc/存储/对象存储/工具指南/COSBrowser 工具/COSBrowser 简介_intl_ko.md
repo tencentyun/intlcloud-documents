@@ -1,7 +1,7 @@
 COSBrowser는 Tencent Cloud에서 출시한 시각적 인터페이스 툴로 COS 리소스를 보다 쉽고 간단하게 보고, 전송하고, 관리하고, 상호 작용할 수 있습니다. 데이터를 마이그레이션하거나 일괄 업로드하려면 [마이그레이션 서비스 플랫폼(Migration Service Platform, MSP)](https://www.tencentcloud.com/products/msp)을 사용하십시오. 현재 COSBrowser는 데스크톱 및 모바일 장치에서 사용할 수 있습니다. 자세한 내용은 다음을 참고하십시오.
 
 - [데스크톱 버전 사용 설명서](https://intl.cloud.tencent.com/document/product/436/32565)
-- [모바일 버전 기능](https://intl.cloud.tencent.com/document/product/436/41616)
+- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/41616)
 
 ## 다운로드 주소
 
@@ -71,8 +71,8 @@ COSBrowser 데스크톱 버전은 다음과 같은 기능을 지원합니다.
 | [버킷 생성/삭제](https://intl.cloud.tencent.com/document/product/436/32565#createordelete) | 버킷 생성 및 삭제 지원                                         |
 | [버킷 상세 정보 조회](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 버킷 기본 정보 조회 지원                                       |
 | [통계 데이터 조회](https://intl.cloud.tencent.com/document/product/436/32565#count)           | 버킷의 현재 스토리지 용량 및 객체 총 개수 조회 지원                         |
-| [권한 관리](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 버킷, 객체 관련 권한 수정 지원                               |
-| [버전 관리 설정](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | 버킷 버전 관리 활성화 및 일시 중지 지원                                 |
+| [권한 관리](https://intl.cloud.tencent.com/document/product/436/32565#acl) | 버킷, 객체 관련 권한 수정 지원                               |
+| [버전 제어 설정](https://intl.cloud.tencent.com/document/product/436/32565#version) | 버킷 버전 제어 활성화 및 일시 중지 지원                                 |
 | [액세스 경로 추가](https://intl.cloud.tencent.com/document/product/436/32565#addaccess) | 액세스 경로 추가 지원                                             |
 | [파일/폴더 업로드](https://intl.cloud.tencent.com/document/product/436/32565#upload) | 파일/폴더를 버킷에 단일 업로드, 일괄 업로드, 증분 업로드 지원 <br><br>참고: <br>1. 파일 일괄 업로드는 10만개를 초과할 수 없음 <br>2. 체크포인트 재시작 미지원 <br>3. 데이터를 마이그레이션하거나 일괄로 업로드하려면 [마이그레이션 서비스 플랫폼 MSP](https://www.tencentcloud.com/products/msp)를 사용하십시오.     |
 | [파일/폴더 다운로드](https://intl.cloud.tencent.com/document/product/436/32565#download) | 파일/폴더를 로컬에 단일 다운로드, 일괄 다운로드, 증분 다운로드 지원 <br><br>참고: <br>1. 파일 일괄 다운로드는 10만개를 초과할 수 없음<br>2. 체크포인트 재시작 미지원           |
@@ -117,4 +117,5 @@ COSBrowser 사용 중 문의사항 또는 의견이 있는 경우 피드백을 �
 - 데스크톱 버전 피드백: [issues](https://github.com/tencentyun/cosbrowser/issues).
 - 모바일 버전 피드백: [issues_mobile](https://support.qq.com/embed/phone/67467).
   
-   
+
+

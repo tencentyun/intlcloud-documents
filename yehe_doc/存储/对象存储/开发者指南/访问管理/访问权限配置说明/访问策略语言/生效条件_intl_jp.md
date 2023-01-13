@@ -52,6 +52,9 @@
 ## COSのサポートする条件キー
 
 
+>? 条件キー`tls-version`は現在北京リージョンでのみサポートしています。その他のリージョンでも順次サポート予定です。
+>
+
 
 Cloud Object Storage（COS）のサポートする条件キーには2種類あり、1つはIP、VPC、HTTPSを含むすべてのリクエストに適用可能なもので、もう1つはリクエストヘッダーおよびリクエストパラメータによる条件キーであり、一般的にこのリクエストヘッダーまたはリクエストパラメータを持つリクエストにのみ適用できます。これらの条件キーに関する説明および実際の使用例については、[条件キーの説明およびユースケース](https://intl.cloud.tencent.com/document/product/436/46206)のドキュメントをご参照ください。
 
@@ -67,7 +70,7 @@ Cloud Object Storage（COS）のサポートする条件キーには2種類あ�
 |[cos:secure-transport](https://intl.cloud.tencent.com/document/product/436/46206#secure-transport) |すべてのリクエスト |リクエストにHTTPSプロトコルが適用されているかどうか確認 |  Boolean  |
 |[qcs:ip](https://intl.cloud.tencent.com/document/product/436/46206#RestrictUserAccessIP) |すべてのリクエスト |リクエスト元のIPネットワークセグメント|  IP|
 |[qcs:vpc](https://intl.cloud.tencent.com/document/product/436/46206#requester_vpc) |すべてのリクエスト |リクエスト元のVPC ID  | String  |
-
+|[cos:tls-version](https://intl.cloud.tencent.com/document/product/436/46206#tls-version) |すべてのhttpsリクエスト|httpsリクエストに使用しているTLSバージョン |Numeric|
 
 
 ### リクエストヘッダーおよびリクエストパラメータによる条件キー
@@ -88,7 +91,7 @@ COSが現在サポートしている、リクエストヘッダーおよびリ�
 |[cos:content-length](https://intl.cloud.tencent.com/document/product/436/46206#content-length) |このリクエストは適用範囲が広いため、リクエストボディ付きのリクエストなどの代表的なリクエストに注目 |リクエストヘッダー：Content-Length |Numeric|
 |[cos:content-type](https://intl.cloud.tencent.com/document/product/436/46206#content-type) |このリクエストは適用範囲が広いため、リクエストボディ付きのリクエストなどの代表的なリクエストに注目 |リクエストヘッダー：Content-Type |String|
 |[cos:response-content-type](https://intl.cloud.tencent.com/document/product/436/46206#response-content-type) |GetObject |リクエストパラメータ：response-content-type |String|
-
+|[qcs:request_tag](https://intl.cloud.tencent.com/document/product/436/46206#request_tag) |PutBucket<br>PutBucketTagging |リクエストヘッダー：x-cos-tagging<br>リクエストパラメータ：tagging|String|
 
 
 
@@ -100,6 +103,7 @@ COSの条件キーは次の条件オペレーターをサポートしており�
 |:----------|:----------|:----------|
 |string_equal |文字列一致（大文字と小文字を区別） |String |
 |string_not_equal |文字列不一致（大文字と小文字を区別） |String |
+|string_like |文字列が類似（大文字と小文字を区別）。現在は文字列の前後へのワイルドカード`*`の追加をサポートしています（例：`image/*`） |String |
 |ip_equal |IP一致 |IP |
 |ip_not_equal |IP不一致 |IP |
 |numeric_equal |数値一致 |Numeric |
@@ -370,3 +374,5 @@ allow + string_equal_if_existはリクエスト内にこの条件キーがない
     ]
 }
 ```
+
+

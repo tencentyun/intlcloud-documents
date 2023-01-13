@@ -52,6 +52,9 @@
 ## COS에서 지원하는 조건 키
 
 
+>? 현재 `tls-version` 조건 키는 베이징 리전에서만 지원됩니다. 추후 다른 리전에서도 지원될 예정입니다.
+>
+
 
 COS는 IP, VPC 및 HTTPS를 포함한 모든 요청에 적용 가능한 조건 키와 요청 헤더 및 요청 매개변수의 조건 키, 일반적으로 요청 헤더 또는 요청 매개변수를 전달해야 하는 요청에만 적용할 수 있는 두 가지 유형의 조건 키를 지원합니다. 이러한 조건 키에 대한 설명 및 사용 사례는 [Descriptions and Use Cases of Condition Keys](https://intl.cloud.tencent.com/document/product/436/46206)를 참고하십시오.
 
@@ -67,7 +70,7 @@ COS는 IP, VPC 및 HTTPS를 포함한 모든 요청에 적용 가능한 조건 �
 |[cos:secure-transport](https://intl.cloud.tencent.com/document/product/436/46206#secure-transport) |모든 요청 |요청의 HTTPS 사용 여부 |  Boolean  |
 |[qcs:ip](https://intl.cloud.tencent.com/document/product/436/46206#RestrictUserAccessIP) |모든 요청 |요청의 소스 IP 범위|  IP|
 |[qcs:vpc](https://intl.cloud.tencent.com/document/product/436/46206#requester_vpc) |모든 요청 |요청의 소스 VPC ID  | String  |
-
+|[cos:tls-version](https://intl.cloud.tencent.com/document/product/436/46206#tls-version) |모든 https 요청|https 요청에 사용되는 TLS 버전 |Numeric|
 
 
 ### 요청 헤더 및 요청 매개변수의 조건 키
@@ -88,7 +91,7 @@ COS는 IP, VPC 및 HTTPS를 포함한 모든 요청에 적용 가능한 조건 �
 |[cos:content-length](https://intl.cloud.tencent.com/document/product/436/46206#content-length) |이 요청 헤더는 적용 가능한 범위가 넓으며 일반적으로 요청 본문이 있는 요청 |요청 헤더: Content-Length |Numeric|
 |[cos:content-type](https://intl.cloud.tencent.com/document/product/436/46206#content-type) |이 요청 헤더는 적용 가능한 범위가 넓으며 일반적으로 요청 본문이 있는 요청 |요청 헤더: Content-Type |String|
 |[cos:response-content-type](https://intl.cloud.tencent.com/document/product/436/46206#response-content-type) |GetObject |요청 매개변수: response-content-type |String|
-
+|[qcs:request_tag](https://intl.cloud.tencent.com/document/product/436/46206#request_tag) |PutBucket<br>PutBucketTagging |요청 헤더: x-cos-tagging<br>요청 매개변수: tagging|String|
 
 
 
@@ -100,6 +103,7 @@ COS는 문자열(String), 숫자(Numeric), 부울(Boolean) 및 IP 유형의 조�
 |:----------|:----------|:----------|
 |string_equal |같은 문자열(대소문자 구분) |String |
 |string_not_equal |같지 않은 문자열(대소문자 구분) |String |
+|string_like |유사한 문자열(대소문자 구분), 현재 와일드카드(`*`)를 문자열에 접두사 또는 접미사로 사용 가능, 예시 `image/*` |String |
 |ip_equal |IP 같음 |IP |
 |ip_not_equal |IP가 같지 않음 |IP |
 |numeric_equal |같은 숫자 |Numeric |
@@ -116,7 +120,7 @@ COS는 문자열(String), 숫자(Numeric), 부울(Boolean) 및 IP 유형의 조�
 - `string_equal`과 같이 `_if_exist`가 없는 조건 연산자의 경우 요청에 지정된 요청 헤더 또는 매개변수가 포함되어 있지 않으면 기본적으로 조건이 충족된(`False`) 것으로 간주됩니다.
 - `string_equal_if_exist`와 같이 `_if_exist`가 있는 조건 연산자의 경우 요청에 지정된 요청 헤더 또는 매개변수가 포함되어 있지 않으면 기본적으로 조건이 충족된(`True`) 것으로 간주됩니다.
 
-## 예시
+## License 요청 예시
 
 
 ### 예시1: 지정된 버전의 객체 다운로드 허용
@@ -370,3 +374,5 @@ allow + string_equal_if_exist의 경우 조건 키가 요청에 없으면 기본
     ]
 }
 ```
+
+

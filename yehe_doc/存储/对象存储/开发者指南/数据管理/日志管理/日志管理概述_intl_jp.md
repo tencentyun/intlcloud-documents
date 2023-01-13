@@ -41,10 +41,10 @@
 | 28       | targetStorageClass    | ターゲットバケットのタイプ。コピー操作のリクエストを送信すると、このフィールドが記録されます             | STANDARD，STANDARD_IA，ARCHIVE        |
 | 29     | referer    | リクエストのHTTP referer             | `*.example.com`または111.111.111.1       |
 | 30       | requestUri    | リクエストのURI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
-| 31       | vpcId    | リクエストがVPCリクエストかどうか            | 0/1       |
+| 31       | vpcId    | VPCリクエストのID            | "0"(VPCではない)/"12345"(VPC。「0」以外のstringとします)       |
 
 >!
-> - 現在、COSのログ管理機能は、北京、上海、広州、南京、重慶、成都、中国香港、シンガポール、トロント、シリコンバレー、ムンバイリージョンでサポートされています。
+> - 現在、COSのログ管理機能でサポートされているリージョンには、北京、上海、広州、南京、重慶、成都、中国香港、シンガポール、ソウル、トロント、シリコンバレー、ムンバイがあります。
 > - ログ管理機能を使用するには、ソースバケットとターゲットバケットが同一のリージョンにあることが必要です。
 > - ログを保存するターゲットバケットはソースバケットと同じにすることもできますが、推奨されません。
 > - 現時点では、XML APIおよびXML APIをベースにして実装したSDK、ツールなどによってバケットへのアクセスリクエストを行った場合にのみ、ログが記録されます。JSON APIおよびJSON APIをベースにして実装したSDK、ツールなどによるアクセスでは、ログは記録されません。
@@ -71,7 +71,7 @@ policyDocumentは次のとおりです。
 	"statement": [{
 		"action": "name/sts:AssumeRole",
 		"effect": "allow",
-		"principal": {
+		"principal":{
 			"service": "cls.cloud.tencent.com"
 		}
 	}]
@@ -79,7 +79,7 @@ policyDocumentは次のとおりです。
 ```
 #### 2. ログロールへの権限のバインド
 ロール権限に権限をバインドします。具体的なインターフェースの情報については、[AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562)をご参照ください。
-このうち、policyNameはQcloudCOSAccessForCLSRoleとします。roleNameはステップ1のCLS_QcsRoleとします。roleNameの作成時に返されたroleIDを使用することもできます。
+このうち、policyNameはQcloudCOSAccessForCLSRoleとします。roleNameは手順1のCLS_QcsRoleとします。roleNameの作成時に返されたroleIDを使用することもできます。
 
 #### 3. ログ管理の有効化
 インターフェースを呼び出してログ管理機能を有効化します。具体的なインターフェースの情報については、[PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054)をご参照ください。ログを保存するターゲットバケットはソースバケットと同一のリージョンにあることが必要です。

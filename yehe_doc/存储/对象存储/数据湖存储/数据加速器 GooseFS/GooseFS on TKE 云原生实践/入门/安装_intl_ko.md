@@ -9,19 +9,16 @@ $ kubectl create ns fluid-system
 
 ### 2. fluid 다운로드
 
-[fluid-0.6.0.tgz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/fluid.tgz) 설치 패키지를 다운로드합니다.
-
->!Fluid 공식 홈페이지 [Fluid Releases](https://github.com/fluid-cloudnative/fluid/releases)에서 최신 버전을 다운로드할 수 있습니다. 하지만 일부 디바이스의 경우, 중국 국내 접속 시 네트워크 문제가 발생할 수 있습니다.
->
+Fluid 공식 웹사이트 [Fluid Releases](https://github.com/fluid-cloudnative/fluid/releases)에서 Fluid 0.6.0 이상 버전을 다운로드할 수 있습니다. 기본적으로 최신 버전을 권장합니다.
 
 
-### 3. Helm을 사용하여 Fluid 설치
+### 3. Helm을 사용한 Fluid 설치
 
 ```shell
-$ helm install --set runtime.goosefs.enabled=true fluid fluid-0.6.0.tgz
+$ helm install --set runtime.goosefs.enabled=true fluid fluid-0.8.0.tgz
 ```
 
-### 4. Fluid의 실행 상태 조회
+### 4. Fluid의 실행 상태 확인
 
 ```shell
 $ kubectl get pod -n fluid-system
@@ -38,7 +35,7 @@ goosefsruntime-controller-654fb74447-cldsv     1/1     Running   0          108s
 
 ### 5. 사용자 정의 이미지
 
-`fluid-0.6.0.tgz`를 압축 해제하고 기본 `values.yaml` 파일을 수정합니다.
+`fluid-0.8.0.tgz`를 압축 해제하고 기본 `values.yaml` 파일을 수정합니다.
 ```yaml
 runtime:
   mountRoot: /runtime-mnt
@@ -47,18 +44,18 @@ runtime:
     portRange: 26000-32000
     enabled: false
     init:
-      image: fluidcloudnative/init-users:v0.6.0-116a5be
+      image: fluidcloudnative/init-users:v0.8.0-116a5be
     controller:
-      image: fluidcloudnative/goosefsruntime-controller:v0.6.0-116a5be
+      image: fluidcloudnative/goosefsruntime-controller:v0.8.0-116a5be
     runtime:
-      image: ccr.ccs.tencentyun.com/goosefs/goosefs:v1.0.1
+      image: ccr.ccs.tencentyun.com/qcloud/goosefs:v1.2.0
     fuse:
-      image: ccr.ccs.tencentyun.com/goosefs/goosefs-fuse:v1.0.1
+      image: ccr.ccs.tencentyun.com/qcloud/goosefs:v1.2.0
 ```
 
 `goosefs` 관련 기본 `image` 콘텐츠를 수정할 수 있습니다(예: 자신의 `repo`에 놓기 등). 수정이 완료되면 `helm package fluid`를 재사용하여 패키징하고, 다음 명령어를 사용하여 `fluid` 버전을 업데이트합니다.
 ```shell
-helm upgrade --install fluid fluid-0.6.0.tgz
+helm upgrade --install fluid fluid-0.8.0.tgz
 ```
 
 ### 6. crd 업데이트
@@ -80,7 +77,7 @@ goosefsruntimes.data.fluid.io                    2021-04-13T13:31:38Z
 kubectl delete crd goosefsruntimes.data.fluid.io
 ```
 
-그 다음 `fluid-0.6.0.tgz`를 압축 해제합니다.
+그 다음 `fluid-0.8.0.tgz`를 압축 해제합니다.
 
 ```shell
 $ ls -l fluid/
