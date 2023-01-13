@@ -10,7 +10,7 @@ You have enabled the database proxy. For more information, see [Enabling Databas
 When you add multiple access addresses for the database proxy, you can set and modify the network for each of them.
 
 ## Directions
-1. Log in to the [TencentDB for MySQL console] (https://console.cloud.tencent.com/cdb). Select a region on the top, and click the instance ID to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). Select a region on the top, and click the instance ID to enter the instance management page.
 2. On the instance management page, select the **Database Proxy** tab.
 3. On the **Database Proxy** tab, click ![](https://qcloudimg.tencent-cloud.cn/raw/0286958e4f0522141375f4080708ceec.png) under **Overview** > **Connection Address** > **Network**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ee84c770775763a4c4d20beee04a36ae.png)
