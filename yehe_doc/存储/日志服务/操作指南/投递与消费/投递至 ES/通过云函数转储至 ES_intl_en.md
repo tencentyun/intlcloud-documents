@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes how to use SCF to dump CLS logs to ES. CLS is mainly used for log collection, and SCF mainly provides node computing capabilities for data processing. For the data processing flowchart, please see [Function Processing Overview](https://intl.cloud.tencent.com/document/product/614/38883).
+This document describes how to use SCF to dump CLS logs to ES. CLS is mainly used for log collection, and SCF mainly provides node computing capabilities. For the data processing flowchart, please see [Function Processing Overview](https://intl.cloud.tencent.com/document/product/614/38883).
 
 ## Directions
 
@@ -22,9 +22,7 @@ This document describes how to use SCF to dump CLS logs to ES. CLS is mainly use
 
 ### Configuring CLS triggers
 
-1. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Logset** on the left sidebar.
-2. Locate the existing logset you want, and click **View** under **Operation** on the right to go to the logset details page.
-3. On the log topic details page, select **Function Processing** and click **Create**. Add the created function in the **Function Processing** pop-up window. See the figure below:
+On the log topic details page, select **Function Processing** and click **Create**. Add the created function in the **Function Processing** pop-up window. See the figure below:
 
 The main parameter information is as follows. Use the default values for the remaining configuration items.
    - **Namespace**: select the function namespace.
