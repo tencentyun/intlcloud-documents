@@ -12,13 +12,13 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 
 ### 接口调用流程图
 
-![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/c8758a24fe68fc084b8d12b09de5e27a.jpg)
 
 ### 接入步骤
 
 #### 集成SDK
 
-参考 [Unity SDK 集成文档](https://intl.cloud.tencent.com/zh/document/product/607/10783) 将 SDK 集成到工程中。
+参考 [Unity SDK 集成文档](https://intl.cloud.tencent.com/document/product/607/10783) 将 SDK 集成到工程中。
 
 #### 核心接口
 
@@ -43,18 +43,18 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 -<dx-tag-link link="#Stop" tag="接口：StopRecording">停止录制</dx-tag-link>
 </dx-steps>
 
-<dx-tag-link link="#Init" tag="接口：UnInit">反初始化 GME</dx-tag-link>
+- <dx-tag-link link="#Init" tag="接口：UnInit">反初始化 GME</dx-tag-link>
 
 ## 核心接口接入
 
 ### 1. 下载 SDK 
 
-进入下载指引页面，下载对应的 <dx-tag-link link="https://cloud.tencent.com/document/product/607/18521" tag="DownLoad">客户端 SDK</dx-tag-link>。
+进入下载指引页面，下载对应的 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/18521" tag="DownLoad">客户端 SDK</dx-tag-link>。
 
 ### 2. 引入头文件
 
 ```
-using TencentMobileGaming;
+using GME;
 ```
 
 ### 3. 获取 Context 实例
@@ -69,11 +69,9 @@ int ret = ITMGContext.GetInstance().Init(sdkAppId, openID);
 
 ### [4. 初始化 SDK](id:Init)
 
-- 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用。
-- **OpenId 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
-- **如果用户切换登录账号，需要调用Uninit后用新的 OpenId 重新 Init GME 服务**。
+未初始化前，SDK 处于未初始化阶段，**需要通过接口 Init 初始化 SDK**，才可以使用实时语音服务、语音消息服务及转文本服务。调用 Init 接口的线程必须于其他接口在同一线程,建议都在主线程调用接口。
 
-#### 函数原型
+#### 接口原型
 
 ```
 //class ITMGContext
@@ -82,8 +80,8 @@ public abstract int Init(string sdkAppID, string openID);
 
 | 参数     |  类型  | 含义                                                         |
 | -------- | :----: | ------------------------------------------------------------ |
-| sdkAppId | String | 来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppId。 |
-| OpenId   | String | OpenId 只支持 Int64 类型（转为 string 传入）。               |
+| sdkAppId | string | 来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782)。 |
+| openID   | string | openID 只支持 Int64 类型（转为 string 传入），规则由 App 开发者自行制定，App 内不重复即可。如需使用字符串作为 Openid 传入，可 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) 联系开发者。|
 
 #### 示例代码 
 
@@ -99,8 +97,7 @@ if (ret != QAVError.OK)
 
 ### [5. 触发事件回调](id:Poll)
 
-通过在 update 里面周期的调用 Poll 可以触发事件回调。GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。
-详情请参见 Demo 中的 EnginePollHelper 文件。
+通过在 update 里面周期的调用 Poll 可以触发事件回调。Poll 是 GME 的消息泵，GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。详情请参见 [Sample Project](https://intl.cloud.tencent.com/document/product/607/18521)  中的 EnginePollHelper 文件。
 
 #### 示例代码
 
@@ -131,12 +128,11 @@ public delegate void QAVExitRoomComplete();
 public abstract event QAVExitRoomComplete OnExitRoomCompleteEvent;
 ```
 
-### 7. 鉴权信息
+### 7. 本地鉴权计算
 
-生成 AuthBuffer，用于相关功能的加密和鉴权。    
-语音消息及转文本获取鉴权时，房间号参数必须填 null。
+生成 AuthBuffer，用于相关功能的加密和鉴权，如正式发布请使用后台部署密钥，后台部署请参考 [鉴权密钥](https://intl.cloud.tencent.com/document/product/607/12218)。    
 
-#### 函数原型
+#### 接口原型
 
 ```
 QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
@@ -162,11 +158,9 @@ public static byte[] GetAuthBuffer(string AppID, string RoomID,string OpenId, st
 
 ### [1. 加入房间](id:EnterRoom)
 
-用生成的鉴权信息进房。加入房间默认不打开麦克风及扬声器。接口返回值为 0 代表调用接口成功，不代表进房成功。
+用生成的鉴权信息进房，加入房间默认不打开麦克风及扬声器。返回值为 AV_OK 的时候代表调用成功，不代表进房成功。
 
-房间音频类型请参考 [音质选择](https://intl.cloud.tencent.com/zh/document/product/607/18522)。
-
-#### 函数原型
+#### 接口原型
 
 ```
 ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
@@ -175,7 +169,7 @@ ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 | 参数       |  类型  | 含义                    |
 | ---------- | :----: | ----------------------- |
 | roomId     | String | 房间号，最大支持127字符 |
-| roomType   |  int   | 房间音频类型            |
+| roomType   | ITMGRoomType | 只需填 ITMGRoomType.ITMG_ROOM_TYPE_FLUENCY |
 | authBuffer | byte[] | 鉴权码                  |
 
 #### 示例代码  
@@ -186,12 +180,12 @@ ITMGContext.GetInstance().EnterRoom(strRoomId, ITMGRoomType.ITMG_ROOM_TYPE_FLUEN
 
 #### 加入房间事件回调
 
-加入房间完成后会收到进房通知，在监听处理函数中进行判断后处理。如果回调 err = 0 为成功，即此时进房成功，开始进行**计费**；如果本日通话总时长 < 700 分钟则免费。
+加入房间完成后会通过回调返回进房结果，监听进房结果事件后进行处理。如果回调为成功，即此时进房成功，开始进行**计费**。
 
 <dx-fold-block title="计费问题参考">
-[购买指南。](https://intl.cloud.tencent.com/zh/document/product/607/36276)
-[计费相关问题。](https://intl.cloud.tencent.com/zh/document/product/607/30255)
-[使用实时语音后，如果客户端掉线了，是否还会继续计费？](https://intl.cloud.tencent.com/zh/document/product/607/30255)
+[购买指南。](https://intl.cloud.tencent.com/document/product/607/50009)
+[计费相关问题。](https://intl.cloud.tencent.com/document/product/607/30255)
+[使用实时语音后，如果客户端掉线了，是否还会继续计费？](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
 - **示例代码**  
@@ -325,7 +319,7 @@ void OnExitRoomComplete(){
 
 在初始化 SDK 之后调用鉴权初始化，authBuffer 的获取参见上文实时语音鉴权信息接口 genAuthBuffer。
 
-#### 函数原型  
+#### 接口原型  
 
 ```
 ITMGPTT int ApplyPTTAuthbuffer (byte[] authBuffer)
@@ -347,31 +341,32 @@ ITMGContext.GetInstance ().GetPttCtrl ().ApplyPTTAuthbuffer(authBuffer);
 
 ### [2. 启动流式语音识别](id:StartRWSR)
 
-此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。**停止录音调用 StopRecording**，停止之后才有回调。
+此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回。**停止录音调用 StopRecording**，停止之后才有回调。
 
-#### 函数原型  
+#### 接口原型  
 
 ```
 ITMGPTT int StartRecordingWithStreamingRecognition(string filePath)
-ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speechLanguage,string translateLanguage)
 ```
 
 | 参数              |  类型  | 含义                                                         |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath          | String | 存放的语音路径                                               |
-| speechLanguage    | String | 识别成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260) |
-| translateLanguage | String | 翻译成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260)（此参数暂不可用,请填写与 speechLanguage 相同的参数） |
+
 
 #### 示例代码  
 
 ```
 string recordPath = Application.persistentDataPath + string.Format("/{0}.silk", sUid++);
-int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath, "cmn-Hans-CN","cmn-Hans-CN");
+int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath);
 ```
 
 #### 流式语音识别回调
 
-启动流式语音识别后，需要在回调函数 OnEvent 中监听回调消息，事件消息分为 `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE` ，在停止录制并完成识别后才返回文字，相当于一段话说完才会返回识别的文字。
+启动流式语音识别后，需要通过在 OnStreamingSpeechComplete 或者 OnStreamingSpeechisRunning 通知中监听回调消息，事件消息分为以下两个：
+
+- `OnStreamingSpeechComplete` 是在停止录制并完成识别后才返回文字，相当于一段话说完才会返回识别的文字。
+- `OnStreamingSpeechisRunning` 是在录音过程中就会实时返回识别到的文字，相当于边说话边返回识别到的文字。
 
 根据需求在 OnEvent 函数中对相应事件消息进行判断。传递的参数包含以下4个信息。
 
@@ -438,7 +433,7 @@ void OnStreamingRecisRunning(int code, string fileid, string filePath, string re
 
 此接口用于停止录音。此接口为异步接口，停止录音后会有录音完成回调，成功之后录音文件才可用。
 
-#### 函数原型  
+#### 接口原型  
 
 ```
 ITMGPTT int StopRecording()
