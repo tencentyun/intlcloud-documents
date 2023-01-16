@@ -10,7 +10,7 @@ This can be achieved by the custom audio routing feature. Here, all five users e
 Audio rule distance: SetServerAudioRouteSendOperateType(AUDIO_ROUTE_SEND_WHITE_LIST,"two-player team list",ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE,"two-player team list");
 In this way, audio will be only sent to players in the list and will be only received from the three-player team.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/819dd334b2ba7af9f2813f2d6f28aea2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/KH6i143_819dd334b2ba7af9f2813f2d6f28aea2.png)
 
 
 ## Prerequisites

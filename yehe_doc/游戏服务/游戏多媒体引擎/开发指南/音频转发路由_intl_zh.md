@@ -10,7 +10,7 @@
 音频规则距离：SetServerAudioRouteSendOperateType(AUDIO_ROUTE_SEND_WHITE_LIST,"2人队伍的list",ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE,"2人队伍的list");
 这样声音就只发送给list里面的人，且只接收3人队伍的声音。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/819dd334b2ba7af9f2813f2d6f28aea2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/KH6i143_819dd334b2ba7af9f2813f2d6f28aea2.png)
 
 
 ## 前提条件
