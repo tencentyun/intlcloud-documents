@@ -1,0 +1,77 @@
+腾讯云游戏多媒体引擎（Game Multimedia Engine，GME）提供高质量的一站式语音解决方案，全面覆盖游戏行业应用场景。支持多人实时语音、3D 位置语音、语音消息、语音转文本和语音内容安全等功能。
+此 Demo 模拟简易的游戏场景，用于演示GME实时语音、3D语音、范围语音、变声功能。
+
+
+## 操作步骤
+### 步骤1：下载 Demo
+<table>
+ <tr>
+    <th style="text-align:center;" width="150px"><b>Android、iOS<br></b>使用摄像机扫码</th>
+    <th style="text-align:center;" width="150px"><b>Windows<br></b></th>
+ </tr>
+ <tr>
+    <td style="text-align: center;">
+		<img style="width:150px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/5b7f6119b87b2f2aadd3f123c94b6284.png" class="zoom-img-hover">
+	 </td>
+   <td style="text-align: center;">
+	 <a href="https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/pubilc/GmeDemo_x86_64_1.0.0.zip">点击下载</a>    
+	 </td>
+  </tr>
+</table>
+
+
+### 步骤2：安装 Demo
+
+下载安装完成后，打开名为 **GMEDemo** 的软件。
+
+
+### 步骤3：进入语音房间
+打开Demo后，进入语音房间选择界面。
+<img src="https://qcloudimg.tencent-cloud.cn/raw/50d395ffc49b18aaece3537240c6b12e.png"  width="60%">
+
+- UserId：Demo 中会自动生成，也可根据需要自行填入数字，务必保证唯一。
+- RoomType：选择房间音质，如果选择的RoomType一致，则会进入同一个房间。
+	- Smooth sound quality：流畅音质。
+	- Standard sound quality：标准音质。
+	- High sound quality：高清音质。
+- Background music：勾选是否播放背景音乐，如果勾选则进入房间后一直会有背景音乐。
+- 单击 **JoinRoom** 进入语音房间。
+
+
+
+### 步骤4：游戏主界面介绍
+进入语音房间后即为游戏主界面。
+<img src="https://qcloudimg.tencent-cloud.cn/raw/28deb2e315826fa13660698bf2b20a83.png"  width="60%"/></img>
+
+界面信息说明如下：
+- 返回按钮：单击左上角箭头返回到语音房间选择界面。
+- 打开/关闭麦克风：默认进房是关闭麦克风状态，需要打开麦克风才可以进行通话。
+- 打开/关闭扬声器：默认进房是关闭扬声器状态，需要打开扬声器才可以听到他人声音。
+- 设置：选择语言，3D语音、范围语音、变声的开启或关闭。
+- 指南：单击后打开使用指南界面。
+- 界面左下角：控制角色前后左右的摇杆。
+- 界面右下角：房间日志信息，显示进入和退出语音房间的用户。
+
+<dx-alert infotype="explain" title="判断连接成功的标志：">
+  1. 两个游戏界面可以互相看到对方游戏角色。
+  2. 在界面右下角的日志中，可以看到对方游戏角色对应的 userID 进房记录。
+</dx-alert>
+
+
+### 步骤5：游戏设置页面介绍
+点击设置按钮进入设置页面。
+
+
+- **语言**：可选择中文或英文。
+- **3D语音**：开启3D语音后，可根据角色的位置移动，感受到角色的说话声音带有方位的立体声效果，根据距离的远近声音也具有衰减效果；关闭后，其他玩家的声音将不带立体声效果。详情请参见：[3D 语音音效功能](https://intl.cloud.tencent.com/document/product/607/18218)。
+- **范围语音**：开启范围语音后，角色周围会显示范围圈，玩家可以与范围圈内的其他玩家进行实时语音通话，超出范围时则无法进行通话；关闭后，则不受范围影响。详情请参见：[范围语音](https://intl.cloud.tencent.com/document/product/607/17972)。
+- **变声**：开启变声后，可将实时语音调成所选的音色。详情请参见：[语音变声](https://intl.cloud.tencent.com/document/product/607/44995)。
+-  **变声模板**：可在下拉列表中选择喜欢的变声模板。
+
+
+### 步骤6：操作方式
+
+1. 打开麦克风与扬声器：单击麦克风与扬声器按钮可以打开麦克风与扬声器，此时可以与房间里面的人通话。
+2. 打开设置选择是否要开启3D语音、范围语音、变声功能。
+3. 移动端通过摇杆控制角色前后左右，通过手指转动屏幕调整视角；Windows端键盘上的"W"、"S"、"A"、"D"分别对应“前进”、“后退”、“左转”、“右转”，鼠标转动可以调整视角。
+4. 以两个玩家为例，一个玩家可围着另一个玩家跑圈，期间不停说话，便可以体验3D的语音效果；当其中一个角色跑远到超过3D语音设置的距离时，此时的声音会衰减到几乎听不到。
