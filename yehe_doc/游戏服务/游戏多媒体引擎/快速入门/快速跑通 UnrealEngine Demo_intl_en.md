@@ -20,7 +20,7 @@ Apply for the GME voice chat service and get the voice chat `Appid` and `Key` as
 
 Download the Unreal Engine demo as instructed in [SDK Download Guide](https://cloud.tencent.com/document/product/607/18521). As the demo configurations for UE5 and UE4 are different, you need to download the sample project for the corresponding engine version.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d31444d037de015a99b4bf3884aec906.png)
+
 
 
 ### 3. Configure the project
