@@ -12,17 +12,17 @@ IP geographic functions can be used to determine whether an IP address belongs t
 
 | Function                             | Description                                                         | Example                                                         |
 | ------------------------ | ------------------------------------------------------------ | ------------------------------------ |
-| ip_to_domain(KEY)        | Determines whether an IP address belongs to a private or public network. Valid values are `intranet` (private network IP address), `internet` (public network IP address), and `invalid` (invalid IP address). | `* | SELECT ip_to_domain(ip)`        |
-| ip_to_country(KEY)       | Analyzes the country or region to which an IP address belongs. The country's or region's name is returned. | `* | SELECT ip_to_country(ip)`       |
-| ip_to_country_code(KEY)  | Analyzes the code of the country or region to which an IP address belongs. The country's or region's code is returned. | `* | SELECT ip_to_country_code(ip)`  |
-| ip_to_country_geo(KEY)   | Analyzes the latitude and longitude of the country or region to which an IP address belongs. The country's or region's latitude and longitude are returned. | `* | SELECT ip_to_country_geo(ip`)   |
-| ip_to_province(KEY)      | Analyzes the province to which an IP address belongs. The province's name is returned.         | `* | SELECT ip_to_province(ip)`      |
-| ip_to_province_code(KEY) | Analyzes the code of the province to which an IP address belongs. The province's administrative zone code is returned. | `* | SELECT ip_to_province_code(ip)` |
-| ip_to_province_geo(KEY)  | Analyzes the latitude and longitude of the province to which an IP address belongs. The province's latitude and longitude are returned.   | `* | SELECT ip_to_province_geo(ip)`  |
-| ip_to_city               | Analyzes the city to which an IP address belongs. The city's name is returned. | `* | SELECT ip_to_city(ip)`          |
-| ip_to_city_code          | Analyzes the code of the city to which an IP address belongs. The city's administrative zone code is returned. Currently, cities in Taiwan (China) and outside China are not supported. | `* | SELECT ip_to_city_code(ip)`     |
-| ip_to_city_geo           | Analyzes the latitude and longitude of the city to which an IP address belongs. The city's latitude and longitude are returned. Currently, cities in Taiwan (China) and outside China are not supported. | `* | SELECT ip_to_city_geo(ip)`      |
-| ip_to_provider(KEY)      | Analyzes the ISP to which an IP address belongs. The ISP's name is returned. | `* | SELECT ip_to_provider(ip)`      |
+| ip_to_domain(KEY) [](id:ip_to_domain)         | Determines whether an IP address belongs to a private or public network. Valid values are `intranet` (private network IP address), `internet` (public network IP address), and `invalid` (invalid IP address). | `* \| SELECT ip_to_domain(ip)`        |
+| ip_to_country(KEY)[](id:ip_to_country)       | Analyzes the country or region to which an IP address belongs. The country's or region's name is returned. | `* \| SELECT ip_to_country(ip)`       |
+| ip_to_country_code(KEY)[](id:ip_to_country_code)   | Analyzes the code of the country or region to which an IP address belongs. The country's or region's code is returned. | `* \| SELECT ip_to_country_code(ip)`  |
+| ip_to_country_geo(KEY)[](id:ip_to_country_geo)   | Analyzes the latitude and longitude of the country or region to which an IP address belongs. The country's or region's latitude and longitude are returned. | `* \| SELECT ip_to_country_geo(ip`)   |
+| ip_to_province(KEY) [](id:ip_to_province)   | Analyzes the province to which an IP address belongs. The province's name is returned.         | `* \| SELECT ip_to_province(ip)`      |
+| ip_to_province_code(KEY)[](id:ip_to_province_code)  | Analyzes the code of the province to which an IP address belongs. The province's administrative zone code is returned. | `* \| SELECT ip_to_province_code(ip)` |
+| ip_to_province_geo(KEY)[](id:ip_to_province_geo)  | Analyzes the latitude and longitude of the province to which an IP address belongs. The province's latitude and longitude are returned.   | `* \| SELECT ip_to_province_geo(ip)`  |
+| ip_to_city [](id:ip_to_city)                | Analyzes the city to which an IP address belongs. The city's name is returned. | `* \| SELECT ip_to_city(ip)`          |
+| ip_to_city_code [](id:ip_to_city_code)          | Analyzes the code of the city to which an IP address belongs. The city's administrative zone code is returned. Currently, cities in Taiwan (China) and outside China are not supported. | `* \| SELECT ip_to_city_code(ip)`     |
+| ip_to_city_geo [](id:ip_to_city_geo)         | Analyzes the latitude and longitude of the city to which an IP address belongs. The city's latitude and longitude are returned. Currently, cities in Taiwan (China) and outside China are not supported. | `* \| SELECT ip_to_city_geo(ip)`      |
+| ip_to_provider(KEY) [](id:ip_to_provider)       | Analyzes the ISP to which an IP address belongs. The ISP's name is returned. | `* \| SELECT ip_to_provider(ip)`      |
 
 ## IP Range Function
 
@@ -33,12 +33,12 @@ IP geographic functions can be used to determine whether an IP address belongs t
 
 | Function                                  | Description                                                         | Example                                                         |
 | -------------------------- | ------------------------------------------------------------ | -------------------------------------------- |
-| ip_prefix(KEY,prefix_bits) | Gets the prefix of an IP address. An IP address with a subnet mask is returned, for example, `192.168.1.0/24`. | `* | SELECT ip_prefix(ip,24)`                 |
-| ip_subnet_min(KEY)         | Gets the smallest IP address in an IP range. The return value is an IP address, for example, `192.168.1.0`. | `* | SELECT ip_subnet_min(concat(ip,'/24'))`  |
-| ip_subnet_max(KEY)         | Gets the largest IP address in an IP range. The return value is an IP address, for example, `192.168.1.255`. | `* | SELECT ip_subnet_max(concat(ip,'/24'))`   |
-| ip_subnet_range(KEY)       | Gets the range of an IP range. The return value is an IP address of the Array type, for example, `[[192.168.1.0, 192.168.1.255]]`. | `* | SELECT ip_subnet_range(concat(ip,'/24'))` |
-|  is_subnet_of     | Determines whether an IP address is in a specified IP range. The return value is of the Boolean type. | `* | SELECT is_subnet_of('192.168.0.1/24', ip)` |
-|  is_prefix_subnet_of      | Determines whether an IP range is a subnet of a specified IP range. The return value is of the Boolean type. | `* | SELECT is_prefix_subnet_of('192.168.0.1/24',concat(ip, '/24'))` |
+| ip_prefix(KEY,prefix_bits)[](id:ip_prefix) | Gets the prefix of an IP address. An IP address with a subnet mask is returned, for example, `192.168.1.0/24`. | `* \| SELECT ip_prefix(ip,24)`                 |
+| ip_subnet_min(KEY)   [](id:ip_subnet_min)          | Gets the smallest IP address in an IP range. The return value is an IP address, for example, `192.168.1.0`. | `* \| SELECT ip_subnet_min(concat(ip,'/24'))`  |
+| ip_subnet_max(KEY)  [](id:ip_subnet_max)          | Gets the largest IP address in an IP range. The return value is an IP address, for example, `192.168.1.255`. | `* \| SELECT ip_subnet_max(concat(ip,'/24'))`   |
+| ip_subnet_range(KEY) [](id:ip_subnet_range)     | Gets the range of an IP range. The return value is an IP address of the Array type, for example, `[[192.168.1.0, 192.168.1.255]]`. | `* \| SELECT ip_subnet_range(concat(ip,'/24'))` |
+|  is_subnet_of [](id:is_subnet_of)    | Determines whether an IP address is in a specified IP range. The return value is of the Boolean type. | `* \| SELECT is_subnet_of('192.168.0.1/24', ip)` |
+|  is_prefix_subnet_of  [](id:is_prefix_subnet_of)     | Determines whether an IP range is a subnet of a specified IP range. The return value is of the Boolean type. | `* \| SELECT is_prefix_subnet_of('192.168.0.1/24',concat(ip, '/24'))` |
 
 
 
