@@ -4,14 +4,12 @@
 
 在普通的进房实时语音中，玩家的声音不具有 3D 音效的效果，玩家之间只能进行很简单的互动；而引入 3D 位置语音之后，玩家在喊话过程中会暴露自己的方位和位置信息，玩家的声音也会根据位置变化而实时改变。可以说，3D 音效让《大逃杀》这种玩家间的沟通和战斗体验更真实，感受更加沉浸式、更加身临其境的吃鸡玩法。
 
-点击下载应用，可体验 [3D 音效](https://intl.cloud.tencent.com/document/product/607/50219) 效果。
-
-
+点击 [下载demo](https://intl.cloud.tencent.com/document/product/607/50220) ，体验 3D 音效效果。
 
 ## 前提条件
 
 - **已开通实时语音服务**：可参见 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782)。
-- **已接入GME SDK**：包括核心接口和实时语音接口的接入，详情可参见 [Native SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/40858)、[Unity SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/44544)、[Unreal SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/44545)。
+- **已接入 GME SDK**：包括核心接口和实时语音接口的接入，详情可参见 [Native SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/40858)、[Unity SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/44544)、[Unreal SDK 快速接入](https://intl.cloud.tencent.com/document/product/607/44545)。
 
 ## 实现流程
 
@@ -90,7 +88,7 @@ public abstract bool IsEnableSpatializer()
 | 0 < N < range/10     | 衰减系数：1.0 （音量无衰减） |
 | N ≥ range/10         | 衰减系数：range/10/N         |
 
-![](https://main.qcloudimg.com/raw/50e745c853ab0e3f9f3bbef9d9cfc401.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/4aece18def3601de5380e62406af7f13.jpg)
 
 #### 函数原型
 
@@ -203,7 +201,5 @@ virtual int ClearSpatializerBlacklist();
 4. UpdateAudioRecvRange 设置是否过小？
 5. 是否有周期性的调用 UpdateSelfPosition 接口？
 6. 通过 [错误码文档](https://intl.cloud.tencent.com/document/product/607/33223) 进行判断并解决。
-
-
 
 

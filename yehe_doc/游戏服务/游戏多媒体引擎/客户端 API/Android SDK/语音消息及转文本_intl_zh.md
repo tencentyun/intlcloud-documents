@@ -11,6 +11,13 @@
 
 GME 分为两个部分，提供实时语音服务、语音消息及转文本服务，使用这两个服务都依赖 Init 和 Poll 等核心接口。
 
+<dx-alert infotype="notice" title="">
+语音转文本相关接口有默认频率限制，限额范围内计费方式请参见 [计费文档](https://intl.cloud.tencent.com/document/product/607/50009)；若需提升接口频率限额或了解超额计费方式，请联系商务或 [提交工单咨询](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。
+- 语音消息非流式转文本接口 ***SpeechToText()*** ：默认单账号限制并发数为10路
+- 语音消息流式转文本接口 ***StartRecordingWithStreamingRecognition()***：默认单账号限制并发数为50路
+- 实时语音流式转文本接口 ***StartRealTimeASR()***：默认单账号限制并发数为50路
+</dx-alert>
+
 <dx-alert infotype="notice" title="关于 Init 接口">
 例如使用了实时语音服务，同时也需要使用语音消息服务，**只需要调用一次 Init 初始化接口**。
 Init 之后不会开始计费，语音消息及转文本服务**收发语音消息**才算作语音消息 DAU。
@@ -36,7 +43,7 @@ Init 之后不会开始计费，语音消息及转文本服务**收发语音消�
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
-- 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
+- 错误码详情可参见 <dx-tag-link link="https://www.tencentcloud.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
 
 ### 语音消息 Android 类
 
@@ -52,7 +59,7 @@ Init 之后不会开始计费，语音消息及转文本服务**收发语音消�
 **在使用 GME 的任何接口之前，都需要先调用 Init 接口。**
 
 
-使用问题可参考 [一般性问题](https://intl.cloud.tencent.com/document/product/607/30254)。
+使用问题可参见 [一般性问题](https://intl.cloud.tencent.com/document/product/607/30254)。
 
 | 接口   |   接口含义   |
 | ------ | :----------: |
@@ -142,7 +149,7 @@ ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 ### [初始化 SDK](id:Init)
 
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用，调用此接口不会产生计费。
-- **参数 sdkAppID 获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**。
+- **参数 sdkAppID 获取请参见 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782)**。
 - **openID 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
 
 
@@ -192,7 +199,7 @@ if(ret != 0){
 可参考 Demo 中的 EnginePollHelper.java 文件。
 
 
-<dx-alert infotype="alarm" title="务必周期性调用 Poll 接口">
+<dx-alert infotype="notice" title="">
 务必周期性调用 Poll 接口且在主线程调用，以免接口回调异常。
 </dx-alert>
 
@@ -259,12 +266,11 @@ public abstract int Uninit();
 
 语音消息，录制并发送一段语音消息，同时可以将语音消息转成文字，也可以同时将文字进行翻译。下图演示的是语音消息及转文本服务：
 
-
+<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/IMB_DsvaLv.gif" width="50%">
 
 
 
 <dx-alert infotype="explain" title="">
-
 - 建议使用流式语音转文字服务。
 - 使用语音消息服务不需要进入实时语音房间。
 </dx-alert>
@@ -317,7 +323,7 @@ public abstract int Uninit();
 
 未初始化前，SDK 处于未初始化阶段，需要通过接口 Init 初始化 SDK，才可以使用实时语音及语音消息服务。
 
-使用问题可参考 [离线语音相关问题](https://intl.cloud.tencent.com/document/product/607/39716#.E7.A6.BB.E7.BA.BF.E8.AF.AD.E9.9F.B3.E7.9A.84.E6.96.87.E4.BB.B6.E8.83.BD.E5.90.A6.E8.87.AA.E8.A1.8C.E4.B8.8B.E8.BD.BD.EF.BC.9F)。
+使用问题可参考 [离线语音相关问题](https://intl.cloud.tencent.com/document/product/607/39716)。
 
 ### 鉴权信息
 
@@ -387,8 +393,8 @@ public abstract int StopRecording();
 | 参数              |  类型  | 含义                                                         |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath          | String | 存放的语音路径                                               |
-| speechLanguage    | String | 识别成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260) |
-| translateLanguage | String | 翻译成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)（此参数暂不可用,请填写与 speechLanguage 相同的参数） |
+| speechLanguage    | String | 识别成指定文字的语言参数，参数请参见 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260) |
+| translateLanguage | String | 翻译成指定文字的语言参数，参数请参见 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)（此参数暂不可用,请填写与 speechLanguage 相同的参数） |
 
 #### 示例代码  
 
@@ -738,7 +744,7 @@ public abstract int PlayRecordedFile(String filePath);public abstract int PlayRe
 | 参数             |  类型  | 含义                                                         |
 | ---------------- | :----: | ------------------------------------------------------------ |
 | downloadFilePath | String | 本地语音文件的路径                                           |
-| voicetype |  int   | 变声类型，请参考 [变声接入文档](https://intl.cloud.tencent.com/document/product/607/44995#.E8.AF.AD.E9.9F.B3.E6.B6.88.E6.81.AF.E5.8F.98.E5.A3.B0) |
+| voicetype |  int   | 变声类型，请参见 [变声接入文档](https://intl.cloud.tencent.com/document/product/607/44995) |
 
 #### 错误码
 
@@ -976,8 +982,8 @@ public abstract int SpeechToText(String fileID, String speechLanguage,String tra
 | 参数              |  类型  | 含义                                                         |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | fileID            | String | 语音文件 url，录音在服务器存放90天                           |
-| speechLanguage    | String | 识别出指定文字的语言参数，参数参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260) |
-| translatelanguage | String | 翻译成指定文字的语言参数，参数参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)（此参数暂时无效，填入参数应与 speechLanguage 一致） |
+| speechLanguage    | String | 识别出指定文字的语言参数，参数参见 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260) |
+| translatelanguage | String | 翻译成指定文字的语言参数，参数参见 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)（此参数暂时无效，填入参数应与 speechLanguage 一致） |
 
 #### 示例代码  
 
@@ -1121,13 +1127,13 @@ ITMGContext.GetInstance(this).SetLogPath(path);
 
 ### 消息列表
 
-|消息     | 消息代表的含义   
+|消息     | 消息代表的含义   |
 | ------------- |:-------------:|
 |ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE	|PTT 录音完成			|
 |ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE	|上传 PTT 完成			|
 |ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE	|下载 PTT 完成			|
 |ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE		|播放 PTT 完成			|
-|ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|语音转文字完成			|
+|ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|语音转文字完成|			|
 
 ### Data 列表
 

@@ -1,26 +1,26 @@
-This document describes how to quickly run GME Unreal Engine demo and connect the sample code to a project.
+This document describes how to quickly run GME Unreal Engine sample project and integrate the sample code to a project.
 
-## Running Unreal Engine Demo
+## Running Unreal Engine Sample Project 
 
 ### Environment requirements
 
-- Unreal Engine 4.22 or higher.
-- Microsoft Visual Studio.
-- A configuration environment that can run Unreal Engine projects.
+- Unreal Engine 4.22 or later
+- Microsoft Visual Studio
+- A configuration environment that can run Unreal Engine projects
 
 ### Prerequisites
 
-You have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/zh/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/zh/document/product/378/3629).
+You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ### 1. Apply for the GME service[](id:step1)
 
-Apply for the GME voice chat service and get the voice chat `Appid` and `Key`.
+Apply for the GME voice chat service and get the voice chat `Appid` and `Key` as instructed in [Activating Services](https://www.tencentcloud.com/document/product/607/10782).
 
 ### 2. Download the project
 
-Download the Unreal Engine demo through the [Download Guide](https://intl.cloud.tencent.com/zh/document/product/607/18521).
+Download the Unreal Engine demo as instructed in [SDK Download Guide](https://cloud.tencent.com/document/product/607/18521). As the demo configurations for UE5 and UE4 are different, you need to download the sample project for the corresponding engine version.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/dd0cabe700054b80607b80798fc87ad5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d31444d037de015a99b4bf3884aec906.png)
 
 
 ### 3. Configure the project
@@ -41,7 +41,7 @@ Click <img src="https://qcloudimg.tencent-cloud.cn/raw/302e95d032818ed9e463a0b3b
 
 - UserId: equivalent to `openid`, which must be unique on each terminal.
 - Voice Chat: voice chat feature UI.
-- Voice Message: voice message feature UI.
+- Voice Messaging: voice messaging feature UI.
 
 Click **Login** to initialize, and then click **Voice Chat** to enter the voice chat room configuration page.
 
@@ -49,10 +49,10 @@ Click **Login** to initialize, and then click **Voice Chat** to enter the voice 
 
 #### 3. Enter the voice chat room
 
-- RoomId: room ID. Users in the same room can communicate with each other by voice.
-- RoomType: use Fluency to enter the room.
-- JoinRoom: enter the voice room.
-- Back: go back to the previous page.
+- RoomId: Room ID. Users in the same room can communicate with each other by voice.
+- RoomType: Use Fluency to enter the room.
+- JoinRoom: Enter the voice room.
+- Back: Go back to the previous page.
 
 After configuring the voice chat room ID, click **JoinRoom** to enter the room.
 
@@ -61,23 +61,23 @@ After configuring the voice chat room ID, click **JoinRoom** to enter the room.
 #### 4. Use voice chat
 The page will display the `Roomid` for room entry and the local `openid`.
 
-- Mic: select to turn on the mic.
-- Speaker: select to turn on the speaker.
-- 3D Voice Effect: select to enable 3D sound effects.
-- Voice Change: select to enable voice changing effects.
+- Mic: Select to turn on the mic.
+- Speaker: Select to turn on the speaker.
+- 3D Voice Effect: Select to enable 3D sound effects.
+- Voice Change: Select to enable voice changing effects.
 
 After the mic and speaker are selected locally, repeat the above steps on another device to enter the same room and select the mic and speaker, so that communication can be implemented.
 If `3D Voice Effect` is selected on both terminals, use the A, S, D, and W keys to move around and experience the directional 3D stereo effect.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/3c34c7be421a1569cb47807990ae4d07.jpg)
 
-#### 5. Use voice message
+#### 5. Use voice messaging
 
-- Language: select the target language for text conversion. For example, if you speak Chinese, choose Mandarin.
-- Audio: click to listen after recording.
-- Audio-to-Text: text content of the voice message.
-- Push To Talk: press and hold to record.
-- Back: go back to the previous page.
+- Language: Select the target language for text conversion. For example, if you speak Chinese, choose Mandarin.
+- Audio: Click to listen after recording.
+- Audio-to-Text: Text content of the voice message.
+- Push To Talk: Press and hold to record.
+- Back: Go back to the previous page.
 
 Press and hold **Push to Talk** and speak into the mic. After you release the button, your voice message will be converted into text and displayed in the UI.
 
@@ -190,7 +190,7 @@ void UExperientialDemoViewController::onCheckSpeaker(bool isChecked) {
 
 ### 3D sound effect
 
-For the connection of 3D sound effect, see [3D Sound Effect](https://intl.cloud.tencent.com/zh/document/product/607/18218). In the demo, initialize the 3D sound effect feature first with the code in `ExperientialDemoViewController.cpp`.
+For the connection of 3D sound effect, see [3D Sound Effect](https://www.tencentcloud.com/document/product/607/18218). In the demo, initialize the 3D sound effect feature first with the code in `ExperientialDemoViewController.cpp`.
 
 ```
 void UExperientialDemoViewController::onCheckSpatializer(bool isChecked) {

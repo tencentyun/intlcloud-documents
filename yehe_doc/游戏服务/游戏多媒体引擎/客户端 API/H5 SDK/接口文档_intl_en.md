@@ -4,36 +4,50 @@ Only some GME features are supported by the SDK for HTML5. Please refer to this 
 </dx-alert>
 
 
-
-This document describes how to access and debug the GME APIs for HTML5.
-
-
 | API | Description |
 |--------------|-------------------|
 | Init | Initializes API |
 | SetTMGDelegate | Sets delegation |
 | EnterRoom | Enters audio room |
-| EnableMic | Enables/Disables the capturing device |
-| EnableSpeaker | Enables/Disables the playback device |
+| EnableMic | Turns on/off the capturing device |
+| EnableSpeaker | Turns on/off the playback device |
 | SetMicVolume | Sets mic volume |
 | ExitRoom | Exits audio room |
 
 
->?
->- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
->- Authentication is required for room entry in GME. For more information, please see the authentication section in relevant documentation.
->- Operation on devices should be performed after successful room entry.
->- Starting from Chrome 74, `navigator.mediaDevices` can only be used in an HTTPS environment; therefore, please use HTTPS.
+<dx-alert infotype="explain" title="">
+- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
+- Authentication is required for room entry in GME. For more information, see the authentication section in relevant documentation.
+- Operation on devices should be performed after successful room entry.
+- Starting from Chrome 74, `navigator.mediaDevices` can only be used in an HTTPS environment; therefore, please use HTTPS.
+</dx-alert>
+
+## Integrating JQ
+
+You need to integrate JQ to use the demo.
+
+```
+<!--Step 2: Add the audio container-->
+<!--Container, which is used to carry audio tags and cannot be omitted.-->
+<div id="gme-audio-wrap"></div>
+```
+
 
 
 ## Initialization APIs
 Before initialization, the SDK is in the uninitialized state. A room can be entered only after the initialization authentication is performed and the SDK is initialized.
 
 ### Initializing the SDK
-For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698).
+For more information on how to get parameters, see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API requires the `SDKAppID` from the Tencent Cloud console and the `openId` as parameters. The `openId` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
 
->!The SDK must be initialized so that a room can be entered.
+
+
+<dx-alert infotype="notice" title="">
+The SDK must be initialized before a user can enter a room.
+</dx-alert>
+
+
 
 ### Function prototype
 
@@ -62,6 +76,7 @@ The API class uses the `Delegate` method to send callback notifications to the a
 ```
 WebGMEAPI.fn.SetTMGDelegate = function (delegate){...}
 ```
+
 | Parameter | Description |
 | ------------- |-------------|
 | onEvent | SDK callback event |
@@ -80,18 +95,19 @@ You should initialize and call the SDK to enter a room before voice chat can sta
 
 
 ### Entering a room
-When a user enters a room with the generated authentication information, the `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` message will be received as a callback. Mic and speaker are not enabled by default after room entry.
+When a user enters a room with the generated authentication information, the `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` message will be received as a callback. Mic and speaker are not turned on by default after room entry.
 
 
 #### Function prototype
 ```
 WebGMEAPI.fn.EnterRoom = function (roomId, roomType, authBuffer) {...}
 ```
+
 | Parameter | Description |
 | ------------- |-------------|
 | roomId | Room ID, which can contain up to 127 characters |
 | roomType | Room audio type |
-| authBuffer | Authentication key. For more information on how to get it, please see [Project Configuration](https://intl.cloud.tencent.com/document/product/607/30261). |
+| authBuffer | Authentication key. For more information on how to get it, see [Project Configuration](https://intl.cloud.tencent.com/document/product/607/30261). |
 
 
 #### Sample code  
@@ -140,7 +156,7 @@ After the user enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` wi
         }
         else if (eventType === gmeAPI.event.ITMG_MAIN_EVENT_TYPE_USER_UPDATE)
         {
-            app._data.downStreamInfoList = result.PeerInfo;// Received peer information. For more information, please see the table below
+            app._data.downStreamInfoList = result.PeerInfo;// Received peer information. For more information, see the table below
             app._data.brSend = result.UploadBRSend;// Bitrate of the uploaded audio data
             app._data.rtt = result.UploadRTT;// Upload RTT
         }
@@ -177,16 +193,17 @@ WebGMEAPI.fn.ExitRoom = function (){...}
 gmeAPI.ExitRoom();
 ```
 
-### Enabling/Disabling the mic
-This API is used to enable/disable the mic. Mic and speaker are not enabled by default after room entry.
+### Turning on/off the mic
+This API is used to turn on/off the mic. Mic and speaker are not turned on by default after room entry.
 
 #### Function prototype  
 ```
 WebGMEAPI.fn.EnableMic = function (bEnable) {...}
 ```
+
 | Parameter | Description |
 | ------------- |------------|
-| isEnabled | To enable the microphone, set this parameter to `true`; otherwise, set it to `false`. |
+| isEnabled | To turn on the mic, set this parameter to `true`; otherwise, set it to `false`. |
 
 #### Sample code  
 ```
@@ -195,13 +212,14 @@ gmeAPI.EnableMic(false);
 
 
 
-### Setting the microphone volume
-This API is used to set the microphone volume. The corresponding parameter is `volume`. `0` indicates that the audio is mute, while `100` indicates that the volume remains unchanged. The default value is `100`.
+### Setting the mic volume
+This API is used to set the mic volume. The corresponding parameter is `volume`. 0 indicates that the audio is mute, while 100 indicates that the volume remains unchanged. The default value is 100.
 
 #### Function prototype  
 ```
 WebGMEAPI.fn.SetMicVolume = function (volume){...}
 ```
+
 | Parameter | Description |
 | -------------|-------------|
 | volume | Sets the volume. Value range: 0-100. |
@@ -212,15 +230,16 @@ gmeAPI.SetMicVolume(100);
 ```
 
 
-### Enabling/Disabling the speaker
-This API is used to enable/disable the speaker.
+### Turning on/off the speaker
+This API is used to turn on/off the speaker.
 #### Function prototype  
 ```
 WebGMEAPI.fn.EnableSpeaker = function (bEnable){...}
 ```
+
 | Parameter | Description |
 | ------------- |------------|
-| isEnabled | To disable the speaker, set this parameter to `false`; otherwise, set it to `true`. |
+| isEnabled | To turn off the speaker, set this parameter to `false`; otherwise, set it to `true`. |
 
 #### Sample code  
 ```

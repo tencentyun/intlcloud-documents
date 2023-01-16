@@ -1,6 +1,6 @@
-本文主要介绍如何快速运行 GME UnrealEngine Demo，并将工程示例代码接入到项目中。
+本文主要介绍如何快速运行 GME UnrealEngine Sample Project，并将工程示例代码接入到项目中。
 
-## 跑通 UnrealEngine Demo
+## 跑通 UnrealEngine Sample Project 
 
 ### 环境要求
 
@@ -10,17 +10,17 @@
 
 ### 前提条件
 
-已 [注册腾讯云](https://intl.cloud.tencent.com/zh/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/zh/document/product/378/3629)。
+已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 ### 1. 申请 GME 服务[](id:step1)
 
-申请 GME 实时语音服务，获取到实时语音 Appid 和 Key。
+参考 [语音服务开通指引](https://www.tencentcloud.com/document/product/607/10782)，申请 GME 实时语音服务，获取到实时语音 Appid 和 Key。
 
 ### 2. 下载工程
 
-通过 [下载指引](https://intl.cloud.tencent.com/zh/document/product/607/18521) 下载 UnrealEngine Demo。
+通过 [下载指引](https://cloud.tencent.com/document/product/607/18521) 下载 UnrealEngine Demo。由于 UE5 和 UE4 的 Demo 配置不同，需要下载相对应引擎版本的 Sample Project。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/dd0cabe700054b80607b80798fc87ad5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d31444d037de015a99b4bf3884aec906.png)
 
 
 ### 3. 配置工程
@@ -190,7 +190,7 @@ void UExperientialDemoViewController::onCheckSpeaker(bool isChecked) {
 
 ### 3D 音效相关
 
-3D 音效的接入可以参考 [3D 音效文档](https://intl.cloud.tencent.com/zh/document/product/607/18218)。在 Demo 中，首先初始化 3D 音效功能，相关代码在 ExperientialDemoViewController.cpp 中。
+3D 音效的接入可以参考 [3D 音效文档](https://www.tencentcloud.com/document/product/607/18218)。在 Demo 中，首先初始化 3D 音效功能，相关代码在 ExperientialDemoViewController.cpp 中。
 
 ```
 void UExperientialDemoViewController::onCheckSpatializer(bool isChecked) {

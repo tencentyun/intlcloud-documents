@@ -1,9 +1,9 @@
 This document describes how to configure a Unity project for the GME APIs for Unity.
 
 
-## Downloading SDK
+## SDK Download
 
-1. Download the applicable demo and SDK. For more information, please see [SDK Download Guide](https://intl.cloud.tencent.com/zh/document/product/607/18521).
+1. Download the applicable demo and SDK. For more information, see [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 2. Locate the SDK resources for Unity on the page.
 3. Click **Download**. After decompression, the downloaded SDK resources include the following files:
 <table>
@@ -11,7 +11,7 @@ This document describes how to configure a Unity project for the GME APIs for Un
 <tr>
 <th>File Name</th>
 <th align="center">Description</th>
-<th>Description</th>
+<th>Usage</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -25,10 +25,10 @@ This document describes how to configure a Unity project for the GME APIs for Un
 <td>Provides APIs</td>
 </tr>
 </tbody></table>
+4. To use HD sound quality, see [Using HD Sound Quality](https://www.tencentcloud.com/document/product/607/46016).
 
-
-<dx-alert infotype="explain" title="Platforms supported by SDK for Unity">
-SDK for Unity has integrated Windows, Mac, Android, and iOS platform architectures at the same time.
+<dx-alert infotype="explain" title="Supported Platforms">
+The SDK for Unity has integrated Windows, macOS, Android, iOS, PlayStation, Xbox, Switch, and WebGL platform architectures at the same time.
 </dx-alert>
 
 
@@ -38,7 +38,7 @@ SDK for Unity has integrated Windows, Mac, Android, and iOS platform architectur
 ### Step 1: import Plugins files
 
 Copy the files from the `Plugins` folder in the SDK to the folder under **Unity project** > **Assets** > **Plugins** as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ce8ba3561d43148971f1cbe9076be3a3.png"  width="100%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ce8ba3561d43148971f1cbe9076be3a3.png"  width="65%" /></img>
 
 
 
@@ -52,7 +52,7 @@ If you don't need to export executables in the Win32 architecture, delete the `x
 ### Step 2: import code files
 
 Copy the files in the `Scripts` folder in the SDK to the folder used to store code in your Unity project as shown below:  
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5ab4509590a5effa9e8aadeee2456492.png"  width="100%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/5ab4509590a5effa9e8aadeee2456492.png"  width="65%" /></img>
 
 
 
@@ -77,7 +77,8 @@ If the settings are as follows, Unity playback sound effect will be interrupted 
 
 ## Operations on macOS
 
-If you use Unity to access the GME SDK on macOS 10.15.x, an error shows that the file is corrupted during the execution due to the `com.apple.quarantine` attribute.
+If you use Unity to integrate the GME SDK on macOS 10.15.x, an error shows that the file is corrupted during the execution due to the `com.apple.quarantine` attribute.
+
 The most direct solution is to delete the `com.apple.quarantine` attribute, as shown below:
 1. Run the `cd` command in terminal to go to the `Unity_OpenSDK_Audio/Assets/Plugins/` folder in the project.
 2. Run the following command.
@@ -88,6 +89,7 @@ $ xattr -d com.apple.quarantine gmesdk.bundle
 
 
 <dx-alert infotype="explain" title="">
-This operation is risky. It is recommended to use a lower version of macOS for access.
+This operation is risky. We recommend you use an earlier version of macOS for access.
 </dx-alert>
+
 

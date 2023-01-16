@@ -4,7 +4,7 @@
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/c8816ff54a4c6551b57ce6da20ed07a3.png)
 
-日志场景中常见的正则举例，可以 [在线测试正则公式](https://c.runoob.com/front-end/854/)。
+日志场景中常见的正则举例，请参考 [在线测试正则公式](https://c.runoob.com/front-end/854/)。
 
 | 用途 | 日志原文 | 正则表达式 | 提取结果 |
 |---------|---------|---------|---------|

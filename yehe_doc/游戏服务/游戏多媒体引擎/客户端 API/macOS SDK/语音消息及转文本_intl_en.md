@@ -1,4 +1,4 @@
-This document describes how to access and debug the GME APIs for iOS.
+This document describes how to integrating with and debug the GME APIs for macOS.
 
 
 
@@ -9,10 +9,17 @@ This document applies to GME SDK version 2.9.
 
 ## Key Considerations for Using GME
 
-GME provides two services: voice chat service and voice message and speech-to-text service, both of which rely on key APIs such as Init and Poll.
+GME provides two services: Voice chat service and voice messaging and speech-to-text service, both of which rely on key APIs such as Init and Poll.
+
+<dx-alert infotype="notice" title="">
+There is a default call rate limit for speech-to-text APIs. For more information on how calls are billed within the limit, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009). If you want to increase the limit or learn more about how excessive calls are billed, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1).
+- Non-streaming speech-to-text API ***SpeechToText()***: There can be up to 10 concurrent requests per account.
+- Streaming speech-to-text API ***StartRecordingWithStreamingRecognition()***: There can be up to 50 concurrent requests per account.
+- Real-time streaming speech-to-text API ***StartRealTimeASR()***: There can be up to 50 concurrent requests per account.
+</dx-alert>
 
 <dx-alert infotype="notice" title="Note on Init API">
-If you need to use voice chat and voice message services at the same time, **you only need to call `Init` API once**.
+If you need to use voice chat and voice messaging services at the same time, **you only need to call `Init` API once**.
 The billing will not start after initialization. Receiving or sending a voice message in speech-to-text service is counted as a voice message DAU.
 </dx-alert>
 
@@ -36,18 +43,18 @@ The billing will not start after initialization. Receiving or sending a voice me
 - After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
 - The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
+- For detailed error code, see <dx-tag-link link="https://www.tencentcloud.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
 
 
 
-## Key APIs
+## Core APIs
 
 Before the initialization, the SDK is in the uninitialized status, and **you need to initialize it through the `Init` API** before you can use the voice chat and speech-to-text services.
 
-**You need to call the `Init` API before calling any APIs of GME.**
+**Call the `Init` API before calling any APIs of GME.**
 
 
-If you have any questions when using the service, please see [General Issues](https://intl.cloud.tencent.com/document/product/607/30254).
+If you have any questions when using the service, see [General](https://intl.cloud.tencent.com/document/product/607/30254).
 
 | API | Description |
 | ------------------------------- | :------------------: |
@@ -103,7 +110,7 @@ _context.TMGDelegate = [DispatchCenter getInstance];
 ```
 
 
-The API callback messages is processed in `OnEvent`. For the message type, please see `ITMG_MAIN_EVENT_TYPE`. The message content is a dictionary for parsing the API callback contents.
+The API callback messages is processed in `OnEvent`. For the message type, see `ITMG_MAIN_EVENT_TYPE`. The message content is a dictionary for parsing the API callback contents.
 
 #### Function prototype 
 
@@ -148,7 +155,7 @@ TMGRealTimeViewController ()< ITMGDelegate >
 ### [Initializing SDK](id:Init)
 
 - This API is used to initialize the GME service. It is recommended to call it when initializing the application. No fee is incurred for calling this API.
-- **For more information on how to get the `sdkAppID` parameter, please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**.
+- **For more information on how to get the `sdkAppID` parameter, see [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782)**.
 - **The openID uniquely identifies a user with the rules stipulated by the application developer and unique in the application (currently, only INT64 is supported)**.
 
 
@@ -165,7 +172,7 @@ The Init API must be called in the same thread with other APIs. It is recommende
 -(int)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID;
 ```
 
-| Parameter     |  Type  | Description                                                         |
+| Parameter | Type | Description |
 | -------- | :----: | ------------------------------------------------------------ |
 | sdkAppId | String | `AppId` provided by the GME service from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme) |
 | OpenId |String | `OpenId` can only be in Int64 type, which is passed after being converted to a string. |
@@ -192,11 +199,11 @@ _appId = _appIdText.text;
 ### [Triggering event callback](id:Poll)
 
 Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
-Refer to the EnginePollHelper.m file in [Demo](https://intl.cloud.tencent.com/document/product/607/18521).
+For more information, see the EnginePollHelper.m file in [Demo](https://intl.cloud.tencent.com/document/product/607/18521).
 
 
-<dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
-The `Poll` API must be called periodically in the main thread to avoid abnormal API callbacks.
+<dx-alert infotype="notice" title="">
+The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
 </dx-alert>
 
 
@@ -260,9 +267,9 @@ This API is used to uninitialize the SDK to make it uninitialized. **Switching a
 ```
 
 
-## Speech-to-Text
+## Voice Messaging and Speech-to-Text
 
-Voice message refers to recording and sending a voice message. At the same time, the voice message can be converted to text and translated, as shown below:
+Voice messaging refers to recording and sending a voice message. At the same time, the voice message can be converted to text and translated, as shown below:
 
 <img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/IMB_DsvaLv.gif" width="50%">
 
@@ -275,15 +282,15 @@ Voice message refers to recording and sending a voice message. At the same time,
 
 
 
-#### Voice message and speech-to-text conversion flowchart
+#### Voice messaging and speech-to-text conversion flowchart
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/39fb54637b7957509d00ed440f7ae0a9.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/13ee122408ae95995bfce4fc0edb370f.png" width="70%">
 
 
 
-## Accessing Voice Message and Speech-to-Text Service
+## Integrating Voice Messaging and Speech-to-Text Service
 
-### Voice message and speech-to-text APIs
+### Voice messaging and speech-to-text APIs
 
 | API | Description |
 | -------------------------------------- | :------------------: |
@@ -321,7 +328,7 @@ The maximum recording duration of a voice message is 58 seconds by default, and 
 
 Before the initialization, the SDK is in the uninitialized status, and you need to initialize it through the `Init` API before you can use the voice chat and voice message services.
 
-For more details, please see [Offline voice FAQs](https://intl.cloud.tencent.com/document/product/607/39716#.E7.A6.BB.E7.BA.BF.E8.AF.AD.E9.9F.B3.E7.9A.84.E6.96.87.E4.BB.B6.E8.83.BD.E5.90.A6.E8.87.AA.E8.A1.8C.E4.B8.8B.E8.BD.BD.EF.BC.9F).
+If you have any questions when using the service, see [Speech-to-text Conversion](https://intl.cloud.tencent.com/document/product/607/39716).
 
 ### Authentication information
 
@@ -338,7 +345,7 @@ To get authentication for voice message and speech-to-text, the room ID paramete
 
 ```
 
-| Parameter   |   Type   | Description                                                         |
+| Parameter | Type | Description |
 | ------ | :------: | ------------------------------------------------------------ |
 | appId  |   int    | `AppId` from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme).                              |
 | roomId | NSString | Enter `null`. |
@@ -358,7 +365,7 @@ NSData* authBuffer = [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:_r
 
 ### [Initializing authentication](id:ApplyPtt)
 
-Call authentication initialization after initializing the SDK. For more information on how to get the `authBuffer`, please see `genAuthBuffer` (the voice chat authentication information API).
+Call authentication initialization after initializing the SDK. For more information on how to get the `authBuffer`, see `genAuthBuffer` (the voice chat authentication information API).
 
 #### Function prototype  
 
@@ -367,7 +374,7 @@ public abstract int ApplyPTTAuthbuffer(byte[] authBuffer);
 
 ```
 
-| Parameter      |  Type   | Description |
+| Parameter       |  Type   | Description |
 | ---------- | :-----: | ---- |
 | authBuffer | NSData* | Authentication |
 
@@ -397,8 +404,8 @@ This API is used to start streaming speech recognition. Text obtained from speec
 | Parameter | Type | Description |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath | String | Path of stored audio file |
-| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) |
-| translateLanguage | String | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) (This parameter is currently unavailable. Enter the same value as that of `speechLanguage`) |
+| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) |
+| translateLanguage | String | The language into which the audio file will be translated. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) (This parameter is currently unavailable. Enter the same value as that of `speechLanguage`) |
 
 #### Sample code  
 
@@ -426,7 +433,7 @@ The event message will be identified in the `OnEvent function` based on the actu
 
 
 <dx-alert infotype="notice" title="">
-The file_id is empty when the 'ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRecognition_IS_RUNNING' message is monitored.
+The file_id is empty when the 'ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRecognition_IS_RUNNING' message is listened.
 </dx-alert>
 
 
@@ -514,7 +521,7 @@ This API is used to start recording. The recording file must be uploaded first b
 </dx-codeblock>
 
 
-| Parameter     |   Type   | Description           |
+| Parameter       |  Type   | Description |
 | -------- | :------: | -------------- |
 | filePath | NSString | Path of stored audio file |
 
@@ -567,7 +574,7 @@ The passed parameter includes `result` and `file_path`.
 | 4099 | Recording is in progress. | Ensure that the SDK recording feature is used at the right time. |
 | 4100 | Audio data is not captured. | Check whether the mic is working properly. |
 | 4101 | An error occurred while accessing the file during recording. | Ensure the existence of the file and the validity of the file path. |
-| 4102 | The mic is not authorized. | Mic permission is required for using the SDK. To add the permission, please see the SDK project configuration document for the corresponding engine or platform. |
+| 4102 | The mic is not authorized. | Mic permission is required for using the SDK. To add the permission, see the SDK project configuration document for the corresponding engine or platform. |
 | 4103 | The recording duration is too short. | The recording duration should be in ms and longer than 1,000 ms. |
 | 4104 | No recording operation is started. | Check whether the recording starting API has been called. |
 
@@ -649,7 +656,7 @@ This API is used to get the real-time mic volume. An int-type value will be retu
 
 
 <dx-alert infotype="explain" title="">
-This API is different from the voice chat API and is in `ITMGPTT.java`.
+This API is different from the voice chat API and is in `ITMGPTT`.
 </dx-alert>
 
 
@@ -675,7 +682,7 @@ This API is used to set the recording volume of voice message. Value range: 0-20
 
 
 <dx-alert infotype="explain" title="">
-This API is different from the voice chat API and is in `ITMGPTT.java`.
+This API is different from the voice chat API and is in `ITMGPTT`.
 </dx-alert>
 
 
@@ -701,7 +708,7 @@ This API is used to get the recording volume of voice message. An int-type value
 
 
 <dx-alert infotype="explain" title="">
-This API is different from the voice chat API and is in `ITMGPTT.java`.
+This API is different from the voice chat API and is in `ITMGPTT`.
 </dx-alert>
 
 
@@ -727,7 +734,7 @@ This API is used to get the real-time speaker volume. An int-type value will be 
 
 
 <dx-alert infotype="explain" title="">
-This API is different from the voice chat API and is in `ITMGPTT.java`.
+This API is different from the voice chat API and is in `ITMGPTT`.
 </dx-alert>
 
 
@@ -753,7 +760,7 @@ This API is used to set the playback volume of voice messaging. Value range: 0-2
 
 
 <dx-alert infotype="explain" title="">
-This API is different from the voice chat API and is in `ITMGPTT.java`.
+This API is different from the voice chat API and is in `ITMGPTT`.
 </dx-alert>
 
 
@@ -779,7 +786,7 @@ This API is used to get the playback volume of voice messaging. An int-type valu
 
 
 <dx-alert infotype="explain" title="">
-This API is different from the voice chat API and is in `ITMGPTT.java`.
+This API is different from the voice chat API and is in `ITMGPTT`.
 </dx-alert>
 
 
@@ -815,13 +822,13 @@ This API is used to play back audio.
 | Parameter | Type | Description |
 | ---------------- | :-------------: | ------------------------------------------------------------ |
 | downloadFilePath | NSString | Local audio file path |
-| type             | ITMG_VOICE_TYPE | Voice changing effect. See [Voice Changing](https://intl.cloud.tencent.com/document/product/607/44995#.E8.AF.AD.E9.9F.B3.E6.B6.88.E6.81.AF.E5.8F.98.E5.A3.B0)  |
+| type             | ITMG_VOICE_TYPE | Voice changer type. For more information, see [Voice Changing Effects](https://intl.cloud.tencent.com/document/product/607/44995). |
 
 #### Error codes
 
-| Code | Description | Solution |
+| Error Code Value | Cause | Suggested Solution |
 | -------- | ---------- | ------------------------------ |
-| 20485 | Playback is not started. | Make sure the file exists, and the path is correct.|
+| 20485 | Playback is not started. | Ensure the existence of the file and the validity of the file path. |
 
 #### Sample code  
 
@@ -893,7 +900,7 @@ This API is used to get the size of an audio file.
 
 ```
 
-| Parameter     |   Type   | Description                             |
+| Parameter | Type | Description |
 | -------- | :------: | -------------------------------- |
 | filePath | NSString | Path of audio file, which is a local path. |
 
@@ -915,7 +922,7 @@ This API is used to get the duration of an audio file in milliseconds.
 
 ```
 
-| Parameter     |   Type   | Description                             |
+| Parameter | Type | Description |
 | -------- | :------: | -------------------------------- |
 | filePath | NSString | Path of audio file, which is a local path. |
 
@@ -940,7 +947,7 @@ This API is used to upload an audio file.
 
 ```
 
-| Parameter     |   Type   | Description                             |
+| Parameter | Type | Description |
 | -------- | :------: | -------------------------------- |
 | filePath | NSString | Path of uploaded audio file, which is a local path. |
 
@@ -999,7 +1006,7 @@ This API is used to download an audio file.
 
 ```
 
-| Parameter             |   Type   | Description               |
+| Parameter | Type | Description |
 | ---------------- | :------: | ------------------ |
 | fileID | NSString | File URL path |
 | downloadFilePath | NSString | Local path of saved file |
@@ -1070,7 +1077,7 @@ This API is used to convert a specified audio file to text.
 
 ```
 
-| Parameter   |   Type   | Description         |
+| Parameter | Type | Description |
 | ------ | :------: | ------------ |
 | fileID | NSString | URL of audio file |
 
@@ -1097,8 +1104,8 @@ This API can specify a language for recognition or translate the information rec
 | Parameter | Type | Description |
 | ----------------- | :-------: | ------------------------------------------------------------ |
 | fileID | NSString* | URL of audio file, which will be retained on the server for 90 days |
-| speechLanguage | NSString* | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
-| translateLanguage | NSString* | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). This parameter is currently unavailable. Enter the same value as that of `speechLanguage`. |
+| speechLanguage | NSString* | The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
+| translateLanguage | NSString* | The language into which the audio file will be translated. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). This parameter is currently unavailable. Enter the same value as that of `speechLanguage`. |
 
 #### Sample code  
 
@@ -1238,7 +1245,7 @@ This API is used to set the level of logs to be printed, and needs to be called 
 
 ### Setting the log printing path
 
-This API is used to set the log printing path. It defaults to /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents. It must be called before Init.
+. This API is used to set the log printing path, which is /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents by default.. Call before Init.
 
 #### Function prototype
 
@@ -1247,7 +1254,7 @@ This API is used to set the log printing path. It defaults to /Users/username/Li
 
 ```
 
-| Parameter | Type | Description |
+| Parameter   |   Type   | Description                  |
 | ------ | :------: | ---- |
 | logDir | NSString | Path |
 

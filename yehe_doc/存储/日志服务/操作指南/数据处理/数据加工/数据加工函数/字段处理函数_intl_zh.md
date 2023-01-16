@@ -1,6 +1,6 @@
 ## 简介
 
-字段处理函数，顾名思义，就是对日志中的字段进行处理，如下图所示：
+字段处理函数，就是对日志中的字段进行处理，如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/0bdc568ee0be67a3f1ddc438e96028ce.png)
 
 ## v 函数
@@ -81,7 +81,7 @@ fields_drop("field")
 ```
 加工规则：
 ```
-//nest=True,表示该字段是嵌套字段，将contion.a和condition.c丢弃后，只剩下conditon.e字段。
+//nest=True,表示该字段是嵌套字段，将condition.a和condition.c丢弃后，只剩下condition.e字段。
 t_if(if_json(v("condition")), fields_drop("condition.a", "condition.c", nest=True))
 ```
 加工结果：
