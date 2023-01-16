@@ -9,7 +9,7 @@
 4. 在**仪表盘图表编辑**页面，选择**数据转换**页签，将**数据转换**设置为![](https://qcloudimg.tencent-cloud.cn/raw/90402f86446bf0509031d128da8dddc9.png)。
 ![](https://qcloudimg.tencent-cloud.cn/raw/58e29c15fa38a3d79381caf80f3be0e9.png)
 
-## 什么时候使用数据转换
+## 使用数据转换的情况
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/95ab3d34abcec2c538736fcc002ceb00.png)
 
