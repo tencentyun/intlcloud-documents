@@ -14,7 +14,7 @@ CLS's log analysis feature allows you to analyze logs by analyzing fields of int
 | abs(x) [](id:abs)                    | Returns the absolute value of `x`.               |
 | cbrt(x)   [](id:cbrt)                 | Returns the cube root of `x`.               |
 | sqrt(x)   [](id:sqrt)                 | Returns the square root of `x`.               |
-| cosine_similarity(x,y) [](id:cosine_similarity)    | Returns the cosine similarity between the vectors `x` and `y`.</br>For example, `* |
+| cosine_similarity(x,y) [](id:cosine_similarity)    | Returns the cosine similarity between the vectors `x` and `y`.</br>For example, `* \| SELECT cosine_similarity(MAP(ARRAY['x','y'], ARRAY[1.0,0.0]), MAP(ARRAY['x','y'], ARRAY[0.0,1.0]))` returns 0.       |
 | degrees(x)  [](id:degrees)               | Converts angle `x` in radians to degrees.                 |
 | radians(x)   [](id:radians)              | Converts angle `x` in degrees to radians.                 |
 | e()  [](id:e)                      | Returns the natural logarithm of the number.             |
@@ -48,8 +48,8 @@ CLS's log analysis feature allows you to analyze logs by analyzing fields of int
 | nan()   [](id:nan)             |  Returns a "Not a Number" (NaN) value.        ||
 | mod(x, y) [](id:mod)               | Returns the remainder when `x` is divided by `y`.         |
 | sign(x) [](id:sign)               | Returns the sign of `x` represented by 1, 0, or -1.         |
-| width_bucket(x, bound1, bound2, n) [](id:width_bucket_1)               |  Returns the bucket number of `x` in an equi-width histogram, with `n` buckets within bounds of bound1 and bound2. </br>For example, `* |
-| width_bucket(x, bins)[](id:width_bucket_2)                |  Returns the bin number of `x` with specific bins specified by the array `bins`. </br>For example, `* |
+| width_bucket(x, bound1, bound2, n) [](id:width_bucket_1)               |  Returns the bucket number of `x` in an equi-width histogram, with `n` buckets within bounds of bound1 and bound2. </br>For example, `* \| select timeCost,width_bucket(timeCost,10,1000,5)`        |
+| width_bucket(x, bins)[](id:width_bucket_2)                | Returns the bin number of `x` with specific bins specified by the array `bins`. </br>For example, `* \| select timeCost,width_bucket(timeCost,array[10,100,1000])`        |
 
 
 ## Examples
