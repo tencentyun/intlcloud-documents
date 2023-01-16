@@ -12,7 +12,7 @@ After you learn about [CLS billable items](https://intl.cloud.tencent.com/docume
    <tr>
       <th colspan="5"><center>Traffic Fee</center></th>
       <th colspan="4"><center>Storage Fee</center></th>
-      <th colspan="1"><center>Calculation Fee</center></th>
+      <th colspan="1"><center>Data Processing Fee</center></th>
       <th colspan="2"><center>Other Fee</center></th>
    </tr>
    <tr>
