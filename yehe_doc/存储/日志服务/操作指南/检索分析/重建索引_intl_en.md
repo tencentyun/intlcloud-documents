@@ -33,7 +33,7 @@ The index has been enabled, and the latest index configuration can meet future r
 
 >? Here, the write traffic and time of the log data to be reindexed is estimated according to the selected time range. If the write traffic is too high and the time is too long, we recommend you narrow down the time range accordingly.
 >
-After reindexing starts, you can view the task progress.
+
 6. After reindexing is completed, you can view the completed task in the list. You can also delete the specified task. Once a task is deleted, the index data before reindexing will be restored.
 
 
