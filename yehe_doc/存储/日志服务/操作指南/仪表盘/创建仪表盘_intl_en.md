@@ -14,7 +14,7 @@ After creating a dashboard, you can perform the following operations in the dash
 
 | Operation            | Description                                                         |
 | --------------- | ------------------------------------------------------------ |
-| Adding a chart        | A dashboard also provides an entry for creating statistical charts, supporting simple chart creation and custom chart creation. For more information, please see [Adding a Chart](https://intl.cloud.tencent.com/document/product/614/43560). |
+| Adding a chart        | A dashboard also provides an entry for creating statistical charts, supporting simple chart creation and custom chart creation. For more information, please see [Adding a Chart](https://cloud.tencent.com/document/product/614/63399). |
 | Deleting a chart        | You can delete an existing chart.                                             |
 | Editing a chart        | You can edit a chart on the chart editing page.                                             |
 | Copying a chart        | You can copy a chart to the current or another dashboard.                             |
@@ -23,7 +23,7 @@ After creating a dashboard, you can perform the following operations in the dash
 | Quickly adding an alarm    | You can quickly add search statements, log topics, and other information for the current chart on the alarm editing page. |
 | Full-screen browsing        | Full-screen browsing of a single chart or the entire dashboard is supported.                           |
 | Refreshing            | Automatically periodic data refreshing and manual data refreshing are supported.                               |
-| Adding a template variable    | Template variables allow you to define and modify data query and filtering parameters in the dashboard more flexibly, which improves the reuse rate of the dashboard and the granularity of analysis. For more information, please see [Template Variables](https://intl.cloud.tencent.com/document/product/614/43561). |
+| Adding a template variable    | Template variables allow you to define and modify data query and filtering parameters in the dashboard more flexibly, which improves the reuse rate of the dashboard and the granularity of analysis. For more information, please see [Template Variables](https://www.tencentcloud.com/document/product/614/43561). |
 | Viewing/Editing a dashboard | You can view a dashboard and edit the dashboard layout.                                   |
 
 
