@@ -8,23 +8,23 @@
 
 | 函数名称                       | 说明                                                         | 示例                                                         |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| current_date[](id:current_date)                   | 返回当前日期。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD，例如2021-05-21。</li><li>返回值类型：DATE </il></ul> | `* | select current_date`                                    |
-| current_time [](id:current_time)                  | 返回当前时间。<ul  style="margin: 0;"><li>返回值格式：HH:MM:SS.Ms Time zone，例如17:07:52.143+08:00。</li><li>返回值类型：TIME</li></ul> | `* | select current_time`                                    |
-| current_timestamp[](id:current_timestamp)              | 返回当前时间时间戳。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DDTHH:MM:SS.Ms Time zone，例如2021-07-15T17:10:56.735+08:00[Asia/Shanghai]。</li><li>返回值类型：TIMESTAMP</li></ul> | `* | select current_timestamp`                               |
-| current_timezone()[](id:current_timezone)             | 返回 IANA 定义的时区（America/Los_Angeles）或相对于 UTC 的偏移时差（+08:35）。<br/>返回值类型：VARCHAR，例如 Asia/Shanghai。 | `* | select current_timezone()`                              |
-| localtime [](id:localtime)                     | 返回本地时间。<ul  style="margin: 0;"><li>返回值格式：HH:MM:SS.Ms，例如：19:56:36。 </li><li>返回值类型：TIME</li></ul> | `* | select localtime`<br/>                                  |
-| localtimestamp[](id:localtimestamp)                 | 返回本地的日期和时间。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms，例如：2021-07-15 19:56:26.908。</li><li>返回值类型：TIMESTAMP</li></ul> | `* | select localtimestamp`                                  |
-| now()[](id:now)                          | 返回当前日期和时间，与 current_timestamp 函数同等用法。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DDTHH:MM:SS.Ms Time zone，例如2021-07-15T17:10:56.735+08:00[Asia/Shanghai]。</li><li>返回值类型：TIMESTAMP</li></ul> | `* | select now()`                                           |
-| last_day_of_month(x)[](id:last_day_of_month)           | 返回月份最后一天。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD，例如2021-05-31。</li><li>返回值类型：DATE</li></ul> | `* | select last_day_of_month(cast(__TIMESTAMP__ as timestamp))` |
-| from_iso8601_date(string) [](id:from_iso8601_date)     | 把 ISO8601 格式的日期表达式转化为 DATE 类型的日期表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD，例如2021-05-31。</li><li>返回值类型：DATE</li></ul> | `* | select from_iso8601_date('2021-03-21')`                 |
-| from_iso8601_timestamp(string)[](id:from_iso8601_timestamp) | 把 ISO8601 格式的日期时间表达式转化为具有时区的 Timestamp 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：HH:MM:SS.Ms Time zone，例如17:07:52.143+08:00。</li><li>返回值类型：TIMESTAMP</li></ul> | `* | select from_iso8601_timestamp('2020-05-13')`            |
-| from_unixtime(unixtime)[](id:from_unixtime_1)        | 把 Unix 时间戳转化为 TIMESTAMP 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms，例如：2017-05-17 01:41:15.000。</li><li>返回值类型：TIMESTAMP </li></ul> | 示例1：`* | select from_unixtime(1494985275) `</br>示例2：`* | select from_unixtime(__TIMESTAMP__/1000)`                      |
-| from_unixtime(unixtime, zone)[](id:from_unixtime_2)  | 把 Unix 时间戳转化为具有时区的 TIMESTAMP 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms Time zone，例如：2017-05-17T09:41:15+08:00[Asia/Shanghai]。</li><li>返回值类型：TIMESTAMP</li></ul> | 示例1：`* | select from_unixtime(1494985275, 'Asia/Shanghai')`</br>示例2：`* | select from_unixtime(__TIMESTAMP__/1000, 'Asia/Shanghai')`      |
-| to_unixtime(timestamp)[](id:to_unixtime)         | 把 TIMESTAMP 类型的日期时间表达式转化为 Unixtime 时间戳。</br>返回值类型：LONG。例如：1626347592.037。 | `* | select to_unixtime(cast(__TIMESTAMP__ as timestamp)) `  |
-| to_milliseconds(interval)[](id:to_milliseconds)      | 以毫秒为单位返回间隔的时间值。<br/>返回值类型：BIGINT。例如：300000。 | `* | select to_milliseconds(INTERVAL 5 MINUTE)`              |
-| to_iso8601(x)[](id:to_iso8601)  | 将 DATE 类型或 TIMESTAMP 类型的日期和时间表达式转换为 ISO8601 格式的日期和时间表达式。   | `* | select to_iso8601(current_timestamp)`   |
-| timezone_hour(timestamp)[](id:timezone_hour)  | 返回 TIMESTAMP 所属时区的小时偏移量。   | `* | SELECT current_timestamp, timezone_hour(current_timestamp)`   |
-|timezone_minute(timestamp)[](id:timezone_minute)   | 返回 TIMESTAMP 所属时区的分钟偏移量   | `* | SELECT current_timestamp, timezone_minute(current_timestamp)`   |
+| current_date[](id:current_date)                   | 返回当前日期。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD，例如2021-05-21。</li><li>返回值类型：DATE </il></ul> | `* \| select current_date`                                    |
+| current_time [](id:current_time)                  | 返回当前时间。<ul  style="margin: 0;"><li>返回值格式：HH:MM:SS.Ms Time zone，例如17:07:52.143+08:00。</li><li>返回值类型：TIME</li></ul> | `* \| select current_time`                                    |
+| current_timestamp[](id:current_timestamp)              | 返回当前时间时间戳。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DDTHH:MM:SS.Ms Time zone，例如2021-07-15T17:10:56.735+08:00[Asia/Shanghai]。</li><li>返回值类型：TIMESTAMP</li></ul> | `* \| select current_timestamp`                               |
+| current_timezone()[](id:current_timezone)             | 返回 IANA 定义的时区（America/Los_Angeles）或相对于 UTC 的偏移时差（+08:35）。<br/>返回值类型：VARCHAR，例如 Asia/Shanghai。 | `* \| select current_timezone()`                              |
+| localtime [](id:localtime)                     | 返回本地时间。<ul  style="margin: 0;"><li>返回值格式：HH:MM:SS.Ms，例如：19:56:36。 </li><li>返回值类型：TIME</li></ul> | `* \| select localtime`<br/>                                  |
+| localtimestamp[](id:localtimestamp)                 | 返回本地的日期和时间。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms，例如：2021-07-15 19:56:26.908。</li><li>返回值类型：TIMESTAMP</li></ul> | `* \| select localtimestamp`                                  |
+| now()[](id:now)                          | 返回当前日期和时间，与 current_timestamp 函数同等用法。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DDTHH:MM:SS.Ms Time zone，例如2021-07-15T17:10:56.735+08:00[Asia/Shanghai]。</li><li>返回值类型：TIMESTAMP</li></ul> | `* \| select now()`                                           |
+| last_day_of_month(x)[](id:last_day_of_month)           | 返回月份最后一天。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD，例如2021-05-31。</li><li>返回值类型：DATE</li></ul> | `* \| select last_day_of_month(cast(__TIMESTAMP__ as timestamp))` |
+| from_iso8601_date(string) [](id:from_iso8601_date)     | 把 ISO8601 格式的日期表达式转化为 DATE 类型的日期表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD，例如2021-05-31。</li><li>返回值类型：DATE</li></ul> | `* \| select from_iso8601_date('2021-03-21')`                 |
+| from_iso8601_timestamp(string)[](id:from_iso8601_timestamp) | 把 ISO8601 格式的日期时间表达式转化为具有时区的 Timestamp 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：HH:MM:SS.Ms Time zone，例如17:07:52.143+08:00。</li><li>返回值类型：TIMESTAMP</li></ul> | `* \| select from_iso8601_timestamp('2020-05-13')`            |
+| from_unixtime(unixtime)[](id:from_unixtime_1)        | 把 Unix 时间戳转化为 TIMESTAMP 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms，例如：2017-05-17 01:41:15.000。</li><li>返回值类型：TIMESTAMP </li></ul> | 示例1：`* \| select from_unixtime(1494985275) `</br>示例2：`* \| select from_unixtime(__TIMESTAMP__/1000)`                      |
+| from_unixtime(unixtime, zone)[](id:from_unixtime_2)  | 把 Unix 时间戳转化为具有时区的 TIMESTAMP 类型的日期时间表达式。<ul  style="margin: 0;"><li>返回值格式：YYYY-MM-DD HH:MM:SS.Ms Time zone，例如：2017-05-17T09:41:15+08:00[Asia/Shanghai]。</li><li>返回值类型：TIMESTAMP</li></ul> | 示例1：`* \| select from_unixtime(1494985275, 'Asia/Shanghai')`</br>示例2：`* \| select from_unixtime(__TIMESTAMP__/1000, 'Asia/Shanghai')`      |
+| to_unixtime(timestamp)[](id:to_unixtime)         | 把 TIMESTAMP 类型的日期时间表达式转化为 Unixtime 时间戳。</br>返回值类型：LONG。例如：1626347592.037。 | `* \| select to_unixtime(cast(__TIMESTAMP__ as timestamp)) `  |
+| to_milliseconds(interval)[](id:to_milliseconds)      | 以毫秒为单位返回间隔的时间值。<br/>返回值类型：BIGINT。例如：300000。 | `* \| select to_milliseconds(INTERVAL 5 MINUTE)`              |
+| to_iso8601(x)[](id:to_iso8601)  | 将 DATE 类型或 TIMESTAMP 类型的日期和时间表达式转换为 ISO8601 格式的日期和时间表达式。   | `* \| select to_iso8601(current_timestamp)`   |
+| timezone_hour(timestamp)[](id:timezone_hour)  | 返回 TIMESTAMP 所属时区的小时偏移量。   | `* \| SELECT current_timestamp, timezone_hour(current_timestamp)`   |
+|timezone_minute(timestamp)[](id:timezone_minute)   | 返回 TIMESTAMP 所属时区的分钟偏移量   | `* \| SELECT current_timestamp, timezone_minute(current_timestamp)`   |
 
 
 
@@ -95,7 +95,7 @@ date_trunc() 函数根据您指定的日期时间部分截断日期时间表达�
 
 | 函数名             | 说明                                         | 示例                                                         |
 | ------------------ | -------------------------------------------- | ------------------------------------------------------------ |
-| date_trunc(unit,x)[](id:date_trunc) | 将 x 截断至 unit 单位。x 为 timestamp 类型。 | `* | SELECT date_trunc('second', cast(__TIMESTAMP__ as timestamp))` |
+| date_trunc(unit,x)[](id:date_trunc) | 将 x 截断至 unit 单位。x 为 timestamp 类型。 | `* \| SELECT date_trunc('second', cast(__TIMESTAMP__ as timestamp))` |
 
 截断支持如下粒度：
 
@@ -116,7 +116,7 @@ date_trunc() 函数根据您指定的日期时间部分截断日期时间表达�
 
 | 函数名                | 说明                                                   | 示例                                                         |
 | --------------------- | ------------------------------------------------------ | ------------------------------------------------------------ |
-| extract(field FROM x)[](id:extract) | 从日期和时间表达式（x）中提取指定的时间部分（field）。 | ` * |select extract(hour from cast('2021-05-21 05:20:01.100' as timestamp))` |
+| extract(field FROM x)[](id:extract) | 从日期和时间表达式（x）中提取指定的时间部分（field）。 | ` * \|select extract(hour from cast('2021-05-21 05:20:01.100' as timestamp))` |
 
 field 支持如下取值：year、quarter、month、week、day、day_of_month、day_of_week、dow、day_of_year、doy、year_of_week、yow、hour、minute、second。
 
@@ -147,8 +147,8 @@ field 支持如下取值：year、quarter、month、week、day、day_of_month、
 
 | 函数名                                  | 说明                                                         | 示例                                                         |
 | --------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| date_add(unit,value,timestamp) [](id:date_add)         | 在 timestamp 上加上 N 个时间单位（unit）。value 为负数则为减法。 | `* | SELECT date_add('day', -1, TIMESTAMP '2020-03-03 03:01:00')`<br/>返回2020年3月3日1天前的日期和时间，即2020-03-02 03:01:00。 |
-| date_diff(unit, timestamp1, timestamp2)[](id:date_diff) | 返回两个时间表达式之间的时间差值，例如计算 timestamp1 和 timestamp2 之间相差几个时间单位（unit）。 | `* |SELECT date_diff('hour', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')`<br>返回2020年3月1日和3月2日之间相差的时间单位值，即相差1天。 |
+| date_add(unit,value,timestamp) [](id:date_add)         | 在 timestamp 上加上 N 个时间单位（unit）。value 为负数则为减法。 | `* \| SELECT date_add('day', -1, TIMESTAMP '2020-03-03 03:01:00')`<br/>返回2020年3月3日1天前的日期和时间，即2020-03-02 03:01:00。 |
+| date_diff(unit, timestamp1, timestamp2)[](id:date_diff) | 返回两个时间表达式之间的时间差值，例如计算 timestamp1 和 timestamp2 之间相差几个时间单位（unit）。 | `* \|SELECT date_diff('hour', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')`<br>返回2020年3月1日和3月2日之间相差的时间单位值，即相差1天。 |
 
 unit 取值如下：
 
@@ -179,8 +179,8 @@ unit 取值如下：
 
 | 函数名                         | 说明                                                         | 示例                                    |
 | ------------------------------ | ------------------------------------------------------------ | --------------------------------------- |
-| parse_duration(string)[](id:parse_duration)         | 将单元值字符串转换为时间段表达式。<br>返回值类型：INTERVAL。例如：0 00:00:00.043（D HH:MM:SS.Ms） | `* | SELECT parse_duration('3.81 d')`   |
-| human_readable_seconds(double)[](id:human_readable_seconds) | 将单元值字符串转换为时间段表达式。<br/>返回值类型：VARCHAR。例如：1 minutes, 36 seconds。 | `* | SELECT human_readable_seconds(96)` |
+| parse_duration(string)[](id:parse_duration)         | 将单元值字符串转换为时间段表达式。<br>返回值类型：INTERVAL。例如：0 00:00:00.043（D HH:MM:SS.Ms） | `* \| SELECT parse_duration('3.81 d')`   |
+| human_readable_seconds(double)[](id:human_readable_seconds) | 将单元值字符串转换为时间段表达式。<br/>返回值类型：VARCHAR。例如：1 minutes, 36 seconds。 | `* \| SELECT human_readable_seconds(96)` |
 
 支持粒度如下：
 
@@ -208,8 +208,8 @@ unit 取值如下：
 
 | 函数名                         | 说明                                                         | 示例                                                         |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| date_format(timestamp, format)[](id:date_format) | 把 TIMESTAMP 类型的日期时间转化为 Format 格式的字符串。 | `* | select date_format(cast(__TIMESTAMP__ as timestamp), '%Y-%m-%d')` |
-| date_parse(string, format)[](id:date_parse)     | 把 Format 格式的日期时间字符串转化为 TIMESTAMP 类型。 | `* | select date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')` |
+| date_format(timestamp, format)[](id:date_format) | 把 TIMESTAMP 类型的日期时间转化为 Format 格式的字符串。 | `* \| select date_format(cast(__TIMESTAMP__ as timestamp), '%Y-%m-%d')` |
+| date_parse(string, format)[](id:date_parse)     | 把 Format 格式的日期时间字符串转化为 TIMESTAMP 类型。 | `* \| select date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')` |
 
 Format 说明：
 
