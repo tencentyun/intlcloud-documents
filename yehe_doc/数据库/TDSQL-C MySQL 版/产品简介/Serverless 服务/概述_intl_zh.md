@@ -19,7 +19,6 @@ Serverless 服务是腾讯云自研的新一代云原生关系型数据库 TDSQL
 - 有不确定性、波动性、间歇性的业务场景。
 
 ## 相关文档
-- [Serverless 服务特性](https://www.tencentcloud.com/document/product/1098/52035)
 - [Serverless 服务计费说明](https://www.tencentcloud.com/document/product/1098/51974)
 - [Serverless 服务算力配置](https://www.tencentcloud.com/document/product/1098/51975)
 - [创建 Serverless 版集群](https://www.tencentcloud.com/document/product/1098/51976)

@@ -6,6 +6,6 @@
 
 ## 新版说明
 - 全新的 API 接口文档会更加规范和全面，统一的参数风格和公共错误码，统一的 SDK/CLI 版本与 API 文档严格一致，详细请参见 [API 3.0 文档](https://intl.cloud.tencent.com/document/product/236/15829)。
-- 云数据库 MySQL API 2.0 切换 3.0 的指引请参见 [指引文档](https://www.tencentcloud.com/document/product/236/51898)。
+- 云数据库 MySQL API 2.0 切换 3.0 的指引。
 
 腾讯云将持续为您提供优质服务，感谢您对腾讯云的信赖与支持！

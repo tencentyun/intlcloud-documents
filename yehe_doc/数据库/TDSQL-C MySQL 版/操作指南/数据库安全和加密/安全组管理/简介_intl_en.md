@@ -15,5 +15,5 @@ A [security group] (https://intl.cloud.tencent.com/document/product/213/12452) i
 
 ## TDSQL-C for MySQL Security Group Operations
 - [Creating and Managing TencentDB Security Groups](https://www.tencentcloud.com/document/product/1098/52007)
-- [Modifying/Adding Security Group Rules](https://www.tencentcloud.com/document/product/1098/52037)
+- [Modifying/Adding Security Group Rules](https://www.tencentcloud.com/document/product/1098/52744)
 - [Configuring Security Groups for TencentDB](https://www.tencentcloud.com/document/product/1098/44594)。

@@ -25,7 +25,7 @@
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/31582">按 CSV 格式投递</a></td>
 <td>按照用户指定的分隔符（空格、制表符、逗号、分号、单竖线） 格式投递到 COS</td>
-<td><ul style="margin: 0;"><li>可用于腾讯云DLC入湖计算</li><li>可以利用 CSV 投递实现 <a href="https://cloud.tencent.com/document/product/614/33816">投递日志原文</a>（单行，多行，分隔符采集的日志）</li></ul></td>
+<td><ul style="margin: 0;"><li>可用于腾讯云DLC入湖计算</li><li>可以利用 CSV 投递实现 <a href="https://www.tencentcloud.com/document/product/614/31584">投递日志原文</a>（单行，多行，分隔符采集的日志）</li></ul></td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/31583">按 JSON 格式投递</a></td>
@@ -33,7 +33,7 @@
 <td>常见数据格式，请用户参考自己业务场景选择</td>
 </tr>
 <tr>
-<td><a href="https://cloud.tencent.com/document/product/614/33816">按 Parquet 格式投递</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/614/31584">按 Parquet 格式投递</a></td>
 <td>日志数据按照 Parquet 格式投递到 COS</td>
 <td>日志数据需为结构化数据，支持数据类型转换（非单行、多行采集），多用于 Hive 批处理</td>
 </tr>

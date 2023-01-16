@@ -1,6 +1,6 @@
 ## 概要
 
-Tencent Cloud CVM Windows Server 2012 R2、Windows Server 2016およびWindows Server 2019は、Virtio ENIドライバーをインストールすることにより、仮想化ハードウェアのネットワークパフォーマンスを最適化します。Tencent Cloudは、パフォーマンスの向上とトラブルシューティングのため、ENIドライバーを継続的に改善します。ここでは、Virtio ENIドライバーを更新し、ドライバーのバージョンを確認する方法についてご説明します。
+Tencent Cloud CVM Windows Server 2008 R2、Windows Server 2012 R2、Windows Server 2016およびWindows Server 2019は、Virtio ENIドライバーをインストールすることにより、仮想化ハードウェアのネットワークパフォーマンスを最適化します。Tencent Cloudは、パフォーマンスの向上とトラブルシューティングのため、ENIドライバーを継続的に改善します。ここでは、Virtio ENIドライバーを更新し、ドライバーのバージョンを確認する方法についてご説明します。
 
 ##  前提条件
 

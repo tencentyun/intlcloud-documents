@@ -19,7 +19,6 @@ TDSQL-C for MySQL Serverless adopts Tencent Cloud's proprietary serverless archi
 - Business scenarios with uncertain and intermittent fluctuations.
 
 ## References
-- [Features](https://www.tencentcloud.com/document/product/1098/52035)
 - [Billing](https://www.tencentcloud.com/document/product/1098/51974)
 - [Compute Unit](https://www.tencentcloud.com/document/product/1098/51975)
 - [Creating Serverless Cluster](https://www.tencentcloud.com/document/product/1098/51976)

@@ -39,7 +39,7 @@ For any password set during account creation or reset in the TencentDB for MySQL
 </tbody></table>
 
 ### Enabling for existing instances in the console
-1. Log in to the [TencentDB for MySQL console] (https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance management page, select **Database Management**> **Account Management** and click **Password Complexity** (disabled by default).
 ![](https://qcloudimg.tencent-cloud.cn/raw/ae8c348798736f38a4ea1069e29c7b5f.png)
 3. Select **Enable** in the **Password Complexity** pop-up window, set the following parameters, and click **OK**.
@@ -61,7 +61,7 @@ For any password set during account creation or reset in the TencentDB for MySQL
 </tbody></table>
 
 ## Disabling Password Complexity
-1. Log in to the [TencentDB for MySQL console] (https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance management page, select **Database Management**> **Account Management** and click **Password Complexity**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ae613393746da572d25e4bc90e940895.png)
 3. Select **Disable** in the **Password Complexity** pop-up window and click **OK**.

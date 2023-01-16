@@ -6,6 +6,6 @@ TencentDB for MySQLのAPIバージョン3.0は、より低いインターフェ�
 
 ##　新しいバージョンの説明
 - 新しいAPIインターフェースドキュメントはより包括的で標準化されており、統一されたパラメータスタイルと一般エラーコード、統一されたSDK/CLIバージョンは、APIドキュメントと厳密に一致しています。詳細については、[API 3.0ドキュメント](https://intl.cloud.tencent.com/document/product/236/15829)をご参照ください。
-- TencentDB for MySQL API 2.0から3.0への切り替えに関するガイドについては、[ガイドドキュメント](https://www.tencentcloud.com/document/product/236/51898)をご参照ください。
+
 
 Tencent Cloudは引き続き高品質のサービスを提供します。皆様のTencent Cloudへの信頼とサポートに、心より感謝いたします。

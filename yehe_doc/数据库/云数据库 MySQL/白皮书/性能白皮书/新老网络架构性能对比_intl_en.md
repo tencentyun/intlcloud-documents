@@ -4,7 +4,7 @@ TencentDB for MySQL has upgraded the network architecture of database instances 
 >- **On December 31, 2022, all existing database instances will be switched to the new network architecture**, which will not affect your access.
 >- Single-node instances of cloud disk edition are already in the optimal network architecture, so their details page does not indicate whether the network architecture is new.
 >- The new network architecture cannot be used in the classic network. To use it, switch to VPC as instructed in [Network Switch](https://intl.cloud.tencent.com/document/product/236/31915) and wait for the network architecture to upgrade.
->- For more information, see [Network Architecture Upgrade](https://www.tencentcloud.com/document/product/236/51945).
+
 
 ## Test environment
 - Region/AZ: Beijing - Beijing Zone 6.

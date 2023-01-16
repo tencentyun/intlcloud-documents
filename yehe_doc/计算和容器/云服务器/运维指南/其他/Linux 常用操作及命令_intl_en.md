@@ -1,48 +1,48 @@
-## 1. What is the Linux server load average?
+### What is the Linux server load average?
 
 Load is used to measure the workload of a server; that is, the length of the queue of tasks to be executed by the CPU. The greater the value, the more processes that are currently running or waiting to be executed.
 
-## 2. How can I check the Linux server load?
+### How can I check the Linux server load?
 
 You can run the `w`, `top`, `uptime`, and `procinfo` commands or access the `/proc/loadavg` file to view the load.
 Please refer to "Installing Software in the Linux Environment" for instructions on how to install the procinfo tool. 
 
-## 3. What should I do when the server load is too high?
+### What should I do when the server load is too high?
 
 The server load/load average is displayed based on the length of the process queue. A high server load (we recommend referencing the 15-minute average) may be caused by insufficient CPU resources, I/O read/write bottlenecks, insufficient memory resources, or intensive computing tasks. We recommend you run the `vmstat`, `iostat`, and `top` commands to identify the reason for the high load and optimize the processes. 
 
-## 4. How do I check the server memory usage?
+### How do I check the server memory usage?
 
 You can check the server memory usage by running the `free`, `top` (after running, you can press `shift+m` to sort the memory), `vmstat`, and `procinfo` commands or by accessing the `/proc/meminfo` file. 
 
-## 5. How do I check the memory usage of a single process?
+### How do I check the memory usage of a single process?
 
 You can check the memory usage of a single process by running the `top -p PID`, `pmap -x PID`, and `ps aux|grep PID` commands or by accessing the `/proc/$process_id (process PID) /status` file (for example, the `/proc/7159/status` file). 
 
-## 6. How do I check the services and ports that are currently in use?
+### How do I check the services and ports that are currently in use?
 
 You can check the services and ports that are currently in use by running the `netstat -tunlp`, `netstat -antup`, and `lsof -i:PORT` commands. 
 
-## 7. How do I check the server process information?
+### How do I check the server process information?
 
 You can check the server process information by running the `ps auxww|grep PID`, `ps -ef`, `lsof -p PID`, and `top -p PID` commands. 
 
-## 8. How do I stop a process?
+### How do I stop a process?
 
 You can run `kill -9 PID` (PID indicates the process ID) and `killall program name` (for example, killall cron) to stop a process.
 To stop a zombie process, you need to kill the parent process by running `kill -9 ppid` (ppid indicates the parent process ID, which can be queried by running `ps -o ppid PID` (for example, ps -o ppid 32535)). 
 
-## 9. How do I locate a zombie process?
+### How do I locate a zombie process?
 
 You can run `top` to view the total of zombie processes, and run `ps -ef | grep defunct | grep -v grep` to locate a specific zombie process. 
 
-## 10. Why can't I enable the server port?
+### Why can't I enable the server port?
 
 You need to check the operating system and the application to ensure a port is enabled.
 Only the `root` user can enable ports below 1024 on the Linux operating system. Run `sudo su -` to obtain root permissions before enabling the server port.
 For application issues such as port conflicts or configuration problems, use the application startup logs to troubleshoot them. The Tencent server system uses port 36000. 
 
-## 11. What are the commands commonly used to check the performance of a Linux server?
+### What are the commands commonly used to check the performance of a Linux server?
 <table class="t">
 <tbody><tr>
 <th width="100"><b>Command Name</b>
@@ -98,7 +98,7 @@ For example:<br>
 
 Other commonly used commands and files: `free -m`, `du`, `uptime`, `w`, `/proc/stat`, `/proc/cpuinfo`, and `/proc/meminfo`. 
 
-## 12. What do I do when Cron doesn’t work?
+### What do I do when Cron doesn’t work?
 Follow the steps below to troubleshoot this problem:
 1. Verify whether crontab is running normally.
  1. Run `crontab -e` to add the following test item.
@@ -112,7 +112,7 @@ If there are any problems, run `ps aux|grep cron` to look for the pid of cron, r
 4. Check the execution permission of the script, the script directory, and the log file permission.
 5. We recommend that you run the script in the background by adding an "&" at the end of the script entry. For example, `\*/1 \* \* \* \* /bin/date >> /tmp/crontest 2>&1 &`.
 
-## 13. How do I set up a startup task for my CVM instance?
+### How do I set up a startup task for my CVM instance?
 
 The Linux kernel startup sequence is as follows:
 1. Start the `/sbin/init` process.
@@ -122,7 +122,7 @@ The Linux kernel startup sequence is as follows:
 
 >? The startup task can be configured in `/etc/rc.d/rc.local` or in the `S\*\*rclocal` file in `/etc/rc.d/rc\*.d`. 
 
-## 14. Why is the server disk read-only?
+### Why is the server disk read-only?
 
 Common reasons for a read-only server disk are as follows:
 - The disk space is full
@@ -131,14 +131,14 @@ You can run `df -m` to check the disk usage and then delete unnecessary files to
 You can run `df -i` to view and confirm relevant processes. 
 - There is a hardware failure
 
-If none of the above works, please call the hot line or submit a ticket. 
+If none of the above works, please [submit a ticket](https://console.tencentcloud.com/workorder/category). 
 
-## 15. How do I view Linux system logs?
+### How do I view Linux system logs?
 
 - The storage path for system-level log files is `/var/log`.
 - The commonly used system log is `/var/log/messages`.
 
-## 16. How do I find large files in the file system?
+### How do I find large files in the file system?
 
 You can find them by following the steps below:
 1. Run `df` to query the disk partition usage (for example, `df -m`).
@@ -146,26 +146,26 @@ You can find them by following the steps below:
 3. Run `ls` to list the files and file sizes (for example, `ls -lSh`).
 You can also directly check the size of files under a specific directory by using the `find` command (for example, `find / -type f -size +10M -exec ls -lrt {} \`).
 
-## 17. How do I check the version of a server’s operating system?
+### How do I check the version of a server’s operating system?
 
 You can run the following commands to check the version of a server’s operating system:
 - uname -a
 - cat /proc/version
 - cat /etc/issue 
 
-## 18. Why are Chinese characters displayed as unintelligible code in the Linux terminal?
+### Why are Chinese characters displayed as unintelligible code in the Linux terminal?
 
 The server itself does not impose restrictions on the display language. Therefore, this is most likely a client problem. If you are using secureCRT, try to change the settings in **Options** -> **Session Options** -> **Appearance**. If you are using other terminal software, please search on Google for solutions.
 If this problem appears in a pure Linux shell, run `export` to check the user environment variables such as LANG and LC_CTYPE.
 
-## 19. How do I configure a connection timeout using SecureCRT?
+### How do I configure a connection timeout using SecureCRT?
 
 You can configure the following settings so that the connection to your CVM instance remains stable when connecting to CVM via SecureCRT:
 1. Open SecureCRT and select **Options**.
 2. Select **Session Options** and click **Terminal**.
 3. Select **Send protocol NO-OP** in the **Anti-idle** box on the right and set the time to “every 120 seconds”. 
 
-## 20. Why isn't disk space on a Linux server freed after a file is deleted?
+### Why isn't disk space on a Linux server freed after a file is deleted?
 
 **Cause:**
 
@@ -177,7 +177,7 @@ After logging in to your Linux CVM instance and deleting a file using `rm`, you 
 2. Kill the process using `kill -9 PID`. 
 
 
-## 21. How do I delete files on a Linux server?
+### How do I delete files on a Linux server?
 You can run `rm` to delete files. Files deleted with this command cannot be recovered. Therefore, please use this command with caution.
 Format of `rm`: `rm (option) (parameter)`.
 - Options:

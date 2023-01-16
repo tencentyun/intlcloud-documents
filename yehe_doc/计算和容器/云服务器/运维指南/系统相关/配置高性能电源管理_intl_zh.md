@@ -21,8 +21,8 @@ powercfg -L
 返回如下结果：
  ![](https://main.qcloudimg.com/raw/54ceb4faddc8745b30556621268ac318.png)
 
-4. 在操作系统界面，单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"> >【控制面板】>【系统和安全】>【电源选项】，打开电源选项窗口。
-5. 在电源选项窗口中，单击【更改计划设置】。如下图所示：
+4. 在操作系统界面，单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"> >**控制面板**>**系统和安全**>**电源选项**，打开电源选项窗口。
+5. 在电源选项窗口中，单击**更改计划设置**。如下图所示：
 ![](https://main.qcloudimg.com/raw/54183c1f9d914789b986781b8a4da6ec.png)
 6. 在打开的 “编辑计划设置” 窗口中，修改显示器和硬盘的空闲关闭时间。如下图所示：
  ![](https://main.qcloudimg.com/raw/f0b7f447d90fe50ef829a10dab0029c6.png)

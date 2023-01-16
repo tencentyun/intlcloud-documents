@@ -131,7 +131,7 @@ Linux 内核启动顺序为：
 您可以通过执行 `df -i` 命令进行查看和确认相关的进程。 
 -  硬件故障。
 
-如果 hosting 应用通过上述方式仍无法确认原因，请拨打咨询热线或提交工单协助定位。 
+如果 hosting 应用通过上述方式仍无法确认原因，请[提交工单](https://console.tencentcloud.com/workorder/category)协助定位。 
 
 ### 如何查看 Linux 系统日志？
 

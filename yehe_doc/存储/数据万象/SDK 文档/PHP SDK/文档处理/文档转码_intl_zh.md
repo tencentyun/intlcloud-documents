@@ -322,4 +322,3 @@ NotifyConfig 中的具体数据描述如下：
 | State              | String |开关状态，On 或者 Off	                        | 
 | Type            | String  |回调类型，Url		 | 
 | Event | String  |触发回调的事件		  | 
-

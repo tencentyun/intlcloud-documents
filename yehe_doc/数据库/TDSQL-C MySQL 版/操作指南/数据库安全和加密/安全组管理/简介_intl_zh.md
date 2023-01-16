@@ -15,5 +15,5 @@
 
 ## TDSQL-C MySQL 版安全组相关操作
 - [创建和管理云数据库安全组](https://www.tencentcloud.com/document/product/1098/52007)。
-- [添加或修改安全组规则](https://www.tencentcloud.com/document/product/1098/52037)。
+- [添加或修改安全组规则](https://www.tencentcloud.com/document/product/1098/52744)。
 - [为云数据库配置安全组](https://www.tencentcloud.com/document/product/1098/44594)。
