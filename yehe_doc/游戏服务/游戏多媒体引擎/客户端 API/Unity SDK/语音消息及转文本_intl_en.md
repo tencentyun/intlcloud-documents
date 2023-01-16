@@ -1,24 +1,31 @@
-This document describes how to access and debug GME client APIs for the voice message and speech-to-text services for Unity.
+This document describes how to integrate with and debug GME client APIs for the voice message and speech-to-text services for Unity.
 
 ## Key Considerations for Using GME
 
-GME provides the real-time voice, voice message, and speech-to-text services, which all depend on core APIs such as `Init` and `Poll`.
+GME provides the real-time voice and voice messaging and speech-to-text services, which all depend on core APIs such as `Init` and `Poll`.
 
-#### Key notes
+#### Notes
 
-- You have created a GME application and obtained the `AppID` and `Key` of the SDK as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
-- You have **activated the real-time voice, voice message, and speech-to-text services of GME** as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
+- You have created a GME application and obtained the SDK AppID and key. For more information, see [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
+- You have activated **GME real-time voice, voice message, and speech-to-text services**. For more information, see [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
 - Configure your project before using GME; otherwise, the SDK will not take effect.
 - After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
 - The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
+- For detailed error code, see <dx-tag-link link="https://www.tencentcloud.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
 
-## Connecting to the SDK
+<dx-alert infotype="notice" title="">
+There is a default call rate limit for speech-to-text APIs. For more information on how calls are billed within the limit, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009). If you want to increase the limit or learn more about how excessive calls are billed, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1).
+- Non-streaming speech-to-text API ***SpeechToText()***: There can be up to 10 concurrent requests per account.
+- Streaming speech-to-text API ***StartRecordingWithStreamingRecognition()***: There can be up to 50 concurrent requests per account.
+- Real-time streaming speech-to-text API ***StartRealTimeASR()***: There can be up to 50 concurrent requests per account.
+</dx-alert>
+
+## Integrating the SDK
 
 ### Directions
 
-Key processes involved in SDK connection are as follows:
+Key processes involved in SDK integration are as follows:
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/c8758a24fe68fc084b8d12b09de5e27a.jpg"  width="70%" /></img>
 
@@ -35,8 +42,8 @@ Key processes involved in SDK connection are as follows:
 
 | Class | Description |
 | ----------- | :----------------------: |
-| ITMGContext | Key APIs |
-| ITMGPTT     | Voice message and speech-to-text conversion APIs |
+| ITMGContext | Core APIs |
+| ITMGPTT  |   Voice messaging and speech-to-text APIs   |
 
 ## Key APIs
 
@@ -48,7 +55,7 @@ Key processes involved in SDK connection are as follows:
 | Resume | Resumes the system |
 | Uninit | Uninitializes GME |
 
-### Importing the header file
+### Imported header files
 
 ```
 using TencentMobileGaming;
@@ -70,7 +77,7 @@ Get the `Context` instance by using the `ITMGContext` method instead of `QAVCont
 public abstract int Init(string sdkAppID, string openID);
 ```
 
-| Parameter     |  Type  | Description                                                         |
+| Parameter | Type | Description |
 | -------- | :----: | ------------------------------------------------------------ |
 | sdkAppId | string | `AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme), which can be obtained as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0). |
 | openID   | string | `openID` can only be in `Int64` type, which is passed in after being converted to a string. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application. |
@@ -102,11 +109,11 @@ if (ret != QAVError.OK)
 ```
 
 [](id:Poll)
-### Triggering an event callback
+### Triggering event callback
 
 Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run abnormally. For more information, see the `EnginePollHelper` file in [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
-<dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
+<dx-alert infotype="notice" title="">
 The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
 </dx-alert>
 
@@ -146,7 +153,7 @@ ITMGContext  public abstract int Resume()
 ```
 
 [](id:UnInit)
-### Uninitializing the SDK
+### Uninitializing SDK
 
 This API is used to uninitialize the SDK to make it uninitialized. **If the game business account is bound to `openid`, switching game account requires uninitializing GME and then using the new `openid` to initialize again.**
 
@@ -156,13 +163,13 @@ This API is used to uninitialize the SDK to make it uninitialized. **If the game
 ITMGContext public abstract int Uninit()
 ```
 
-## Voice Message and Speech-to-Text Services
+## Voice Messaging and Speech-to-Text Services
 
 <dx-alert infotype="explain" title="">
 
 - The speech-to-text service consists of fast recording-to-text conversion and streaming speech-to-text conversion.
 - You do not need to enter a voice chat room when using the voice message service.
-- The maximum recording duration of a voice message is 58 seconds by default, and the minimum recording duration cannot be less than one second. If you want to customize the recording duration, for example, to change the maximum recording duration to ten seconds, call the `SetMaxMessageLength` API to set it after initialization.
+- The maximum recording duration of a voice message is 58 seconds by default, and the minimum recording duration cannot be less than 1 second. If you want to customize the recording duration, for example, to modify the maximum recording duration to 10 seconds, call the `SetMaxMessageLength` API to set it after initialization.
   </dx-alert>
 
 ### Flowchart for using the voice message service
@@ -173,10 +180,10 @@ ITMGContext public abstract int Uninit()
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/8269f413756379d574a2969ac8da0158.jpg" width="80%">
 
-| API | Description |
+| API                        |            Description            |
 | ------------------- | :------------------: |
 |GenAuthBuffer| Generates the local authentication key |
-| ApplyPTTAuthbuffer  | Initializes authentication |
+| ApplyPTTAuthbuffer | Initializes authentication |
 | SetMaxMessageLength | Specifies the maximum length of voice message |
 
 
@@ -192,7 +199,7 @@ Generate `AuthBuffer` for encryption and authentication of relevant features. Fo
 QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 ```
 
-| Parameter   |  Type  | Description                                                         |
+| Parameter | Type | Description |
 | ------ | :----: | ------------------------------------------------------------ |
 | appId | int | `AppId` from the Tencent Cloud console.|
 | roomId | string | Enter `null` or an empty string                                      |
@@ -235,7 +242,7 @@ ITMGPTT int SetMaxMessageLength(int msTime)
 
 | Parameter   | Type | Description                                            |
 | ------ | :--: | ----------------------------------------------- |
-| msTime | int  | Audio duration in ms. Value range: 1000 < msTime <= 58000 |
+| msTime | int | Audio duration in ms. Value range: 1000 < msTime <= 58000 |
 
 #### Sample code  
 
@@ -247,12 +254,12 @@ ITMGContext.GetInstance().GetPttCtrl().SetMaxMessageLength(58000);
 
 
 
-### Voice message and speech-to-text APIs
+### Voice messaging and speech-to-text APIs
 
 | API | Description |
 | -------------------------------------- | :----------: |
 | StartRecordingWithStreamingRecognition | Starts streaming recording |
-| StopRecording                          |   Stops recording   |
+| StopRecording                          |          Stops recording          |
 
 
 [](id:StartRWSR)
@@ -271,7 +278,7 @@ ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speec
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath | String | Path of stored audio file |
 | speechLanguage    | String | The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
-| translateLanguage | String | The language into which the audio file is to be translated. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
+| translateLanguage | String | The language in which the audio file is to be translated to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
 
 #### Sample code  
 
@@ -280,7 +287,7 @@ string recordPath = Application.persistentDataPath + string.Format("/{0}.silk", 
 int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath, "cmn-Hans-CN","cmn-Hans-CN");
 ```
 
-> ! Translation incurs additional fees. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009).
+> !Translation incurs additional fees. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009).
 
 ### Callback for streaming speech recognition
 
@@ -289,13 +296,13 @@ After streaming speech recognition is started, you need to listen on callback me
 - `OnStreamingSpeechComplete` returns text after the recording is stopped and the recognition is completed, which is equivalent to returning the recognized text after a paragraph of speech.
 - `OnStreamingSpeechisRunning` returns the recognized text in real time during the recording, which is equivalent to returning the recognized text while speaking.
 
-The event message will be identified in the `OnEvent` notification as needed and contains the following four parameters:
+The event message will be identified in the `OnEvent` notification based on the actual needs. The passed parameters include the following four messages.
 
-| Parameter | Description |
+| Message Name | Description |
 | --------- | :---------------------------------------------: |
-| result | Return code used to determine whether the streaming speech recognition is successful |
+| result    |    Return code indicating whether streaming speech recognition is successful     |
 | text      |            Text converted from speech             |
-| file_path |               The local path of the stored recording file                |
+| file_path |             Local path of stored recording file              |
 | file_id | Backend URL address of recording file, which will be retained for 90 days |
 
 
@@ -316,7 +323,7 @@ The file_id is empty when the 'ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRecognition_IS_
 | 32787     | Speech-to-text conversion succeeded, but the text translation service was not activated.         | Activate the text translation service in the console.                                 |
 | 32788     | Speech-to-text conversion succeeded, but the language parameter of the text translation service was invalid.         | Check the parameter passed in.                                 |
 
-If the error code 4098 is reported, see [Speech-to-text Conversion](https://intl.cloud.tencent.com/document/product/607/39716) for solutions.
+If the error code 4098 is reported, see [FAQs](https://intl.cloud.tencent.com/document/product/607/39716) for solutions.
 
 #### Sample code  
 
@@ -350,18 +357,18 @@ If the error code 4098 is reported, see [Speech-to-text Conversion](https://intl
 
 ## Voice Message Recording
 
-**The recording process is as follows: Start recording > stop recording > return the recording callback > start the next recording.**
+**The recording process is as follows: start recording > stop recording > return recording callback > start the next recording.**
 
 
 
-### Voice message and speech-to-text APIs
+### Voice messaging and speech-to-text APIs
 
 | API | Description |
 | --------------- | :------: |
-| StartRecording  | Starts recording |
-| PauseRecording  | Pauses recording |
+| StartRecording | Starts recording |
+| PauseRecording | Pauses recording |
 | ResumeRecording | Resumes recording |
-| StopRecording   | Stops recording |
+| StopRecording | Stops recording |
 | CancelRecording | Cancels recording |
 
 
@@ -417,7 +424,7 @@ public delegate void QAVRecordFileCompleteCallback(int code, string filepath);
 public abstract event QAVRecordFileCompleteCallback OnRecordFileComplete;
 ```
 
-| Parameter     |  Type  | Description                                                         |
+| Parameter | Type | Description |
 | -------- | :----: | ------------------------------------------------------------ |
 | code | string | 0: Recording is completed |
 | filepath | string | Path of stored recording file, which must be accessible and cannot be the `fileid` |
@@ -504,11 +511,11 @@ ITMGContext.GetInstance().GetPttCtrl().CancelRecording();
 
 | API | Description |
 | -------------------- | :------------: |
-| UploadRecordedFile   |  Uploads an audio file  |
-| DownloadRecordedFile |  Downloads an audio file  |
-| PlayRecordedFile     |    Plays back an audio file    |
-| StopPlayFile         |  Stops playing back an audio file  |
-| GetFileSize          | Gets the audio file size |
+| UploadRecordedFile | Uploads the audio file |
+| DownloadRecordedFile | Downloads the audio file |
+| PlayRecordedFile | Plays back the audio file |
+| StopPlayFile | Stops playing back the audio file |
+| GetFileSize | Gets audio file size |
 | GetVoiceFileDuration | Gets the audio file duration |
 
 ### Uploading an audio file
@@ -603,7 +610,7 @@ public delegate void QAVDownloadFileCompleteCallback(int code, string filepath, 
 public abstract event QAVDownloadFileCompleteCallback OnDownloadFileComplete;
 ```
 
-| Parameter     |  Type  | Description                                    |
+| Parameter | Type | Description |
 | -------- | :----: | --------------------------------------- |
 | code | int | 0: recording is completed |
 | filepath | string | Path of stored recording file |
@@ -615,7 +622,7 @@ public abstract event QAVDownloadFileCompleteCallback OnDownloadFileComplete;
 | -------- | --------------------------------- | ------------------------------------------------------------ |
 | 12289 | An error occurred while accessing the file during download. | Check whether the file path is valid. |
 | 12290 | Signature verification failed. | Check whether the authentication key is correct and whether the voice message and speech-to-text feature is initialized. |
-| 12291    | Network storage system exception. | The server failed to get the audio file. Check whether the API parameter `fileid` is correct, whether the network is normal, and whether the file exists in COS. |
+| 12291 | Network storage system exception. | The server failed to get the audio file. Check whether the API parameter `fileid` is correct, whether the network is normal, and whether the file exists in COS. |
 | 12292 | Server file system error. | Check whether the device can access the internet and whether the file exists on the server. |
 | 12293 | The HTTP network failed during the process of getting the download parameters. | Check whether the device can access the internet. |
 | 12294 | The packet returned during the process of getting the download parameters is empty. | Check whether the device can access the internet. |
@@ -644,10 +651,10 @@ ITMGPTT PlayRecordedFile(string filePath)
 ITMGPTT PlayRecordedFile(string filePath,int voiceType);
 ```
 
-| Parameter      |  Type  | Description                                                         |
+| Parameter | Type | Description |
 | --------- | :----: | ------------------------------------------------------------ |
 | filePath | string | Local audio file path |
-| voicetype |  int   | Voice changing type, please see [Voice Changing Effects](https://intl.cloud.tencent.com/document/product/607/44995) |
+| voicetype | int | Voice changer type. For more information, see [Voice Changing Effects](https://intl.cloud.tencent.com/document/product/607/44995). |
 
 #### Error codes
 
@@ -716,7 +723,7 @@ ITMGContext.GetInstance().GetPttCtrl().StopPlayFile();
 ```
 
 
-### Getting the audio file size
+### Getting audio file size
 
 This API is used to get the size of an audio file.
 
@@ -736,7 +743,7 @@ ITMGPTT GetFileSize(string filePath)
 int fileSize = ITMGContext.GetInstance().GetPttCtrl().GetFileSize(filepath);
 ```
 
-### Getting the audio file duration
+### Getting audio file duration
 
 This API is used to get the duration of an audio file in milliseconds.
 
@@ -766,7 +773,7 @@ int fileDuration = ITMGContext.GetInstance().GetPttCtrl().GetVoiceFileDuration(f
 | ------------ | :------------: |
 | SpeechToText | Converts speech to text |
 
-### Converting an audio file to text
+### Converting audio file to text
 
 This API is used to convert a specified audio file to text.
 
@@ -788,7 +795,7 @@ ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID);
 
 
 
-### Translating an audio file into text in a specified language
+### Translating audio file into text in specified language
 
 This API can specify a language for recognition or translate the information recognized in speech into a specified language and return the translation.
 
@@ -805,7 +812,7 @@ ITMGPTT int SpeechToText(String fileID,String speechLanguage,String translatelan
 | ----------------- | :----: | ------------------------------------------------------------ |
 | fileID | String | URL of audio file, which will be retained on the server for 90 days |
 | speechLanguage    | String | The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
-| translatelanguage | String | The language into which the audio file is to be translated. For language parameters for translation, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
+| translatelanguage | String | The language in which the audio file is to be translated to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
 
 #### Sample code  
 
@@ -834,15 +841,15 @@ public abstract event QAVSpeechToTextCallback OnSpeechToTextComplete;
 
 #### Error codes
 
-| Error Code | Cause | Suggested Solution |
+| Error Code Value | Cause | Suggested Solution |
 | -------- | ---------------------------------- | ------------------------------------------------------------ |
 | 32769 | An internal error occurred. | Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
 | 32770  | Network failed. | Check whether the device can access the internet. |
 | 32772 | Failed to decode the returned packet. | Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
-| 32774 | No `appinfo` was set. | Check whether the authentication key is correct and whether the voice message and speech-to-text feature is initialized. |
+| 32774 | No `appinfo` is set. | Check whether the authentication key is correct and whether the voice messaging and speech-to-text feature is initialized. |
 | 32776 | `authbuffer` check failed. | Check whether `authbuffer` is correct. |
 | 32784  | Incorrect speech-to-text conversion parameter. | Check whether the API parameter `fileid` in the code is empty. |
-| 32785 | Speech-to-text translation returned an error. | Error with the backend of the voice message and speech-to-text feature. Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
+| 32785  | Speech-to-text translation returned an error. | Error with the backend of voice messaging and speech-to-text feature. Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
 | 32787     | Speech-to-text conversion succeeded, but the text translation service was not activated.         | Activate the text translation service in the console.                                 |
 | 32788     | Speech-to-text conversion succeeded, but the language parameter of the text translation service was invalid.         | Check the parameter passed in.                                 |
 
@@ -861,14 +868,14 @@ void OnSpeechToTextComplete(int code, string fileid, string result){
 
 | API | Description |
 | ---------------- | :----------------: |
-| GetMicLevel      | Gets the real-time mic volume level |
-| SetMicVolume     |    Sets the recording volume level    |
-| GetMicVolume     |    Gets the recording volume level    |
-| GetSpeakerLevel  | Gets the real-time speaker volume level |
+| GetMicLevel | Gets real-time mic volume level |
+| SetMicVolume | Sets recording volume level |
+| GetMicVolume | Gets recording volume level |
+| GetSpeakerLevel | Gets real-time speaker volume |
 | SetSpeakerVolume | Sets playback volume level |
 | GetSpeakerVolume | Gets playback volume level |
 
-### Getting the real-time mic volume of a voice message
+### Getting the real-time mic volume of voice message
 
 This API is used to get the real-time mic volume. An int-type value will be returned. Value range: 0-200.
 
@@ -884,7 +891,7 @@ ITMGPTT int GetMicLevel()
 ITMGContext.GetInstance().GetPttCtrl().GetMicLevel();
 ```
 
-### Setting the recording volume of a voice message
+### Setting the recording volume of voice message
 
 This API is used to set the recording volume of voice message. Value range: 0-200.
 
@@ -900,7 +907,7 @@ ITMGPTT int SetMicVolume(int vol)
 ITMGContext.GetInstance().GetPttCtrl().SetMicVolume(100);
 ```
 
-### Getting the recording volume of a voice message
+### Getting the recording volume of voice message
 
 This API is used to get the recording volume of voice message. An int-type value will be returned. Value range: 0-200.
 
@@ -916,7 +923,7 @@ ITMGPTT int GetMicVolume()
 ITMGContext.GetInstance().GetPttCtrl().GetMicVolume();
 ```
 
-### Getting the real-time speaker volume of a voice message
+### Getting the real-time speaker volume of voice message
 
 This API is used to get the real-time speaker volume. An int-type value will be returned. Value range: 0-200.
 
@@ -932,7 +939,7 @@ ITMGPTT int GetSpeakerLevel()
 ITMGContext.GetInstance().GetPttCtrl().GetSpeakerLevel();
 ```
 
-### Setting the playback volume of a voice message
+### Setting the playback volume of voice message
 
 This API is used to set the playback volume of voice message. Value range: 0-200.
 
@@ -948,7 +955,7 @@ ITMGPTT int SetSpeakerVolume(int vol)
 ITMGContext.GetInstance().GetPttCtrl().SetSpeakerVolume(100);
 ```
 
-### Getting the playback volume of a voice message
+### Getting the playback volume of voice message
 
 This API is used to get the playback volume of voice message. An int-type value will be returned. Value range: 0-200.
 
@@ -966,7 +973,7 @@ ITMGContext.GetInstance().GetPttCtrl().GetSpeakerVolume();
 
 ## Advanced APIs
 
-### Getting the version number
+### Getting version number
 
 This API is used to get the SDK version number for analysis.
 
@@ -983,7 +990,7 @@ ITMGContext.GetInstance().GetSDKVersion();
 ```
 
 
-### Setting the log printing level
+### Setting log printing level
 
 This API is used to set the level of logs to be printed, and needs to be called before the initialization. It is recommended to keep the default level.
 
@@ -1000,7 +1007,7 @@ ITMGContext  SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
 | levelWrite | ITMG_LOG_LEVEL | Sets the level of logs to be written. `TMG_LOG_LEVEL_NONE` indicates not to write. Default value: TMG_LOG_LEVEL_INFO |
 | levelPrint | ITMG_LOG_LEVEL | Sets the level of logs to be printed. `TMG_LOG_LEVEL_NONE` indicates not to print. Default value: TMG_LOG_LEVEL_ERROR |
 
-`ITMG_LOG_LEVEL` is as detailed below:
+`ITMG_LOG_LEVEL` description:
 
 | ITMG_LOG_LEVEL | Description |
 | --------------------- | -------------------- |

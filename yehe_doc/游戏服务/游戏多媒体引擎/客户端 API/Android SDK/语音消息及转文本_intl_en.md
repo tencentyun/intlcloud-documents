@@ -9,10 +9,17 @@ This document applies to GME SDK version 2.9.
 
 ## Key Considerations for Using GME
 
-GME provides two services: voice chat service and voice message and speech-to-text service, both of which rely on key APIs such as Init and Poll.
+GME provides two services: Voice chat service and voice messaging and speech-to-text service, both of which rely on key APIs such as Init and Poll.
+
+<dx-alert infotype="notice" title="">
+There is a default call rate limit for speech-to-text APIs. For more information on how calls are billed within the limit, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009). If you want to increase the limit or learn more about how excessive calls are billed, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1).
+- Non-streaming speech-to-text API ***SpeechToText()***: There can be up to 10 concurrent requests per account.
+- Streaming speech-to-text API ***StartRecordingWithStreamingRecognition()***: There can be up to 50 concurrent requests per account.
+- Real-time streaming speech-to-text API ***StartRealTimeASR()***: There can be up to 50 concurrent requests per account.
+</dx-alert>
 
 <dx-alert infotype="notice" title="Note on Init API">
-If you need to use voice chat and voice message services at the same time, **you only need to call `Init` API once**.
+If you need to use voice chat and voice messaging services at the same time, **you only need to call `Init` API once**.
 The billing will not start after initialization. Receiving or sending a voice message in speech-to-text service is counted as a voice message DAU.
 </dx-alert>
 
@@ -36,23 +43,23 @@ The billing will not start after initialization. Receiving or sending a voice me
 - After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
 - The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
+- For detailed error code, see <dx-tag-link link="https://www.tencentcloud.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
 
 ### Voice message for Android class
 
 | Class | Description |
 | ----------- | :----------------------: |
-| ITMGContext | Key APIs |
+| ITMGContext | Core APIs |
 | ITMGPTT | Speech-to-Text APIs |
 
-## Key APIs
+## Core APIs
 
 Before the initialization, the SDK is in the uninitialized status, and **you need to initialize it through the `Init` API** before you can use the voice chat and speech-to-text services.
 
-**You need to call the `Init` API before calling any APIs of GME.**
+**Call the `Init` API before calling any APIs of GME.**
 
 
-If you have any questions when using the service, please see [General Issues](https://intl.cloud.tencent.com/document/product/607/30254).
+If you have any questions when using the service, see [General](https://intl.cloud.tencent.com/document/product/607/30254).
 
 | API | Description |
 | ------ | :----------: |
@@ -96,7 +103,7 @@ static public abstract class ITMGDelegate {
 }
 ```
 
-| Parameter |               Type               | Description                     |
+| Parameter | Type | Description |
 | ---- | :------------------------------: | ------------------------ |
 | type | ITMGContext.ITMG_MAIN_EVENT_TYPE | Event type in the callback response |
 | data | Intent message type | Callback message, i.e., event data |
@@ -128,7 +135,7 @@ itmgDelegate = new ITMGContext.ITMGDelegate() {
 public abstract int SetTMGDelegate(ITMGDelegate delegate);
 ```
 
-| Parameter     |     Type     | Description         |
+| Parameter | Type | Description |
 | -------- | :----------: | ------------ |
 | delegate | ITMGDelegate | SDK callback function |
 
@@ -142,7 +149,7 @@ ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 ### [Initializing SDK](id:Init)
 
 - This API is used to initialize the GME service. It is recommended to call it when initializing the application. No fee is incurred for calling this API.
-- **For more information on how to get the `sdkAppID` parameter, please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**.
+- **For more information on how to get the `sdkAppID` parameter, see [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782)**.
 - **The openID uniquely identifies a user with the rules stipulated by the application developer and unique in the application (currently, only INT64 is supported)**.
 
 
@@ -159,7 +166,7 @@ The Init API must be called in the same thread with other APIs. It is recommende
 public abstract int Init(String sdkAppId, String openId);
 ```
 
-| Parameter     |  Type  | Description                                                         |
+| Parameter | Type | Description |
 | -------- | :----: | ------------------------------------------------------------ |
 | sdkAppId | String | `AppId` provided by the GME service from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme) |
 | OpenId |String | `OpenId` can only be in Int64 type, which is passed after being converted to a string. |
@@ -192,7 +199,7 @@ Event callbacks can be triggered by periodically calling the `Poll` API in `upda
 You can refer to the `EnginePollHelper.java` file in the demo.
 
 
-<dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
+<dx-alert infotype="notice" title="">
 The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
 </dx-alert>
 
@@ -257,14 +264,13 @@ public abstract int Uninit();
 
 ## Speech-to-Text
 
-Voice message refers to recording and sending a voice message. At the same time, the voice message can be converted to text and translated, as shown below:
+Voice messaging refers to recording and sending a voice message. At the same time, the voice message can be converted to text and translated, as shown below:
 
-
+<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/IMB_DsvaLv.gif" width="50%">
 
 
 
 <dx-alert infotype="explain" title="">
-
 - It is recommended to use the streaming speech-to-text service.
 - You do not need to enter a voice chat room when using the voice message service.
 </dx-alert>
@@ -277,9 +283,9 @@ Voice message refers to recording and sending a voice message. At the same time,
 
 
 
-## Accessing Voice Message and Speech-to-Text Service
+## Accessing Voice Messaging and Speech-to-Text Service
 
-### Voice message and speech-to-text APIs
+### Voice messaging and speech-to-text APIs
 
 | API | Description |
 | -------------------------------------- | :------------------: |
@@ -315,13 +321,13 @@ The maximum recording duration of a voice message is 58 seconds by default, and 
 
 ### Initializing the SDK
 
-Before the initialization, the SDK is in the uninitialized status, and you need to initialize it through the `Init` API before you can use the voice chat and voice message services.
+Before the initialization, the SDK is in the uninitialized status, and you need to initialize it through the `Init` API before you can use the voice chat and voice messaging services.
 
-For details, please see [Speech-to-text Conversion](https://intl.cloud.tencent.com/document/product/607/39716#.E7.A6.BB.E7.BA.BF.E8.AF.AD.E9.9F.B3.E7.9A.84.E6.96.87.E4.BB.B6.E8.83.BD.E5.90.A6.E8.87.AA.E8.A1.8C.E4.B8.8B.E8.BD.BD.EF.BC.9F).
+If you have any questions when using the service, please see [Speech-to-Text Conversion](https://intl.cloud.tencent.com/document/product/607/39716).
 
 ### Authentication information
 
-Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
+Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 To get authentication for voice message and speech-to-text, the room ID parameter must be set to `null`.
 
 #### Function prototype
@@ -330,7 +336,7 @@ To get authentication for voice message and speech-to-text, the room ID paramete
 AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String openId, String key)
 ```
 
-| Parameter   |  Type  | Description                                                         |
+| Parameter | Type | Description |
 | ------ | :----: | ------------------------------------------------------------ |
 | appId | int | `AppId` from the Tencent Cloud console.|
 | roomId | string | The room ID parameter must be set to `null`. |
@@ -349,7 +355,7 @@ byte[] authBuffer = AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkA
 
 ### [Initializing authentication](id:ApplyPtt)
 
-Call authentication initialization after initializing the SDK. For more information on how to get the `authBuffer`, please see `genAuthBuffer` (the voice chat authentication information API).
+Call authentication initialization after initializing the SDK. For more information on how to get the `authBuffer`, see `genAuthBuffer` (the voice chat authentication information API).
 
 #### Function prototype  
 
@@ -357,7 +363,7 @@ Call authentication initialization after initializing the SDK. For more informat
 public abstract int ApplyPTTAuthbuffer(byte[] authBuffer);
 ```
 
-| Parameter | Type | Description |
+| Parameter       |  Type  | Description                    |
 | ---------- | :----: | ---- |
 | authBuffer | String | Authentication |
 
@@ -387,8 +393,8 @@ public abstract int StopRecording();
 | Parameter | Type | Description |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath | String | Path of stored audio file |
-| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) |
-| translateLanguage | String | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) (This parameter is currently unavailable. Enter the same value as that of `speechLanguage`) |
+| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) |
+| translateLanguage | String | The language into which the audio file will be translated. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). (This parameter is currently unavailable. Enter the same value as that of `speechLanguage`.) |
 
 #### Sample code  
 
@@ -499,7 +505,7 @@ This API is used to start recording. The recording file must be uploaded first b
 public abstract int StartRecording(String filePath);
 ```
 
-| Parameter     |  Type  | Description           |
+| Parameter | Type | Description |
 | -------- | :----: | -------------- |
 | filePath | String | Path of stored audio file |
 
@@ -568,7 +574,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 ### Pausing recording
 
-This API is used to pause recording. If you want to resume recording, please call the `ResumeRecording` API.
+This API is used to pause recording. If you want to resume recording, call the `ResumeRecording` API.
 
 #### Function prototype  
 
@@ -738,7 +744,7 @@ public abstract int PlayRecordedFile(String filePath);public abstract int PlayRe
 | Parameter | Type | Description |
 | ---------------- | :----: | ------------------------------------------------------------ |
 | downloadFilePath | String | Local audio file path |
-| voicetype |  int   | voice changing type, please see [Voice Changing Effects](https://intl.cloud.tencent.com/document/product/607/44995#.E8.AF.AD.E9.9F.B3.E6.B6.88.E6.81.AF.E5.8F.98.E5.A3.B0) |
+| voicetype | int | Voice changer type. For more information, see [Voice Changing Effects](https://intl.cloud.tencent.com/document/product/607/44995). |
 
 #### Error codes
 
@@ -807,7 +813,7 @@ This API is used to get the size of an audio file.
 public abstract int GetFileSize(String filePath);
 ```
 
-| Parameter     |  Type  | Description                             |
+| Parameter | Type | Description |
 | -------- | :----: | -------------------------------- |
 | filePath | string | Path of audio file, which is a local path. |
 
@@ -827,7 +833,7 @@ This API is used to get the duration of an audio file in milliseconds.
 public abstract int GetVoiceFileDuration(String filePath);
 ```
 
-| Parameter     |  Type  | Description                             |
+| Parameter | Type | Description |
 | -------- | :----: | -------------------------------- |
 | filePath | string | Path of audio file, which is a local path. |
 
@@ -850,7 +856,7 @@ This API is used to upload an audio file.
 public abstract int UploadRecordedFile(String filePath);
 ```
 
-| Parameter     |  Type  | Description                             |
+| Parameter | Type | Description |
 | -------- | :----: | -------------------------------- |
 | filePath | String | Path of uploaded audio file, which is a local path. |
 
@@ -951,7 +957,7 @@ This API is used to convert a specified audio file to text.
 public abstract int SpeechToText(String fileID);
 ```
 
-| Parameter   |  Type  | Description         |
+| Parameter | Type | Description |
 | ------ | :----: | ------------ |
 | fileID | String | Audio file URL |
 
@@ -976,8 +982,8 @@ public abstract int SpeechToText(String fileID, String speechLanguage,String tra
 | Parameter | Type | Description |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | fileID | String | URL of audio file, which will be retained on the server for 90 days |
-| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
-| translatelanguage | String | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). This parameter is currently unavailable. Enter the same value as that of speechLanguage. |
+| speechLanguage    | String | The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). |
+| translatelanguage | String | The language into which the audio file will be translated. For parameters, see [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30260). (This parameter is currently unavailable. Enter the same value as that of `speechLanguage`.) |
 
 #### Sample code  
 
@@ -1121,13 +1127,13 @@ ITMGContext.GetInstance(this).SetLogPath(path);
 
 ### Message list
 
-| Message | Description |   
+| Message | Description |
 | ------------- |:-------------:|
 | ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE | Indicates that PTT recording is completed. |
 | ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE | Indicates that PTT upload is completed. |
 | ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE | Indicates that PTT download is completed. |
 | ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE | Indicates that PTT playback is completed. |
-| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE | Indicates that speech-to-text conversion is completed. |
+|ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	| Indicates that speech-to-text conversion is completed |			|
 
 ### Data list
 

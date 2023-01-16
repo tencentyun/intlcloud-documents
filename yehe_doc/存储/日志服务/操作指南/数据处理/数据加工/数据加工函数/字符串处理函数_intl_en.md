@@ -1,7 +1,7 @@
 ## Overview
 
 String functions support string length calculation, case conversion, string concatenation, substring replacement, substring deletion, character locating, prefix/suffix matching, and more.
-Note that regular expression functions and string functions are for difference use cases. **Regular expression functions are more suitable for** extracting fields and field values from unstructured log data. For example, to extract `log_time` and `log_level` from logs, a regular expression function is more suitable.  
+>! regular expression functions and string functions are for difference use cases. **Regular expression functions are more suitable for** extracting fields and field values from unstructured log data. For example, to extract `log_time` and `log_level` from logs, a regular expression function is more suitable.  
 ```
 {
     “Log content”: "2021-12-02 14:33:35.022 [1] INFO  org.apache.Load - Response:status: 200, resp msg: OK, resp content: {    \"TxnId\": 58322,    \"Label\": \"flink_connector_20211202_1de749d8c80015a8\",    \"Status\": \"Success\",    \"Message\": \"OK\",    \"TotalRows\": 1,    \"LoadedRows\": 1,    \"FilteredRows\": 0,  \"CommitAndPublishTimeMs\": 16}"

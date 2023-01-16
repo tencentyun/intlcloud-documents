@@ -1,13 +1,27 @@
 为方便 iOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 iOS 开发的接入技术文档。
 
-> ?此文档对应 GME sdk version：v2.8。
+
+
+<dx-alert infotype="explain" title="">
+此文档对应 GME sdk version：2.9。
+</dx-alert>
+
 
 ## 使用 GME 重要事项
 
-GME 分为两个部分，提供实时语音服务、语音消息及转文本服务，使用这两个服务都依赖 InitEngine 和 Poll 等核心接口。
+GME 分为两个部分，提供实时语音服务、语音消息及转文本服务，使用这两个服务都依赖 Init 和 Poll 等核心接口。
 
-<dx-alert infotype="notice" title="关于 InitEngine 接口">
-例如使用了实时语音服务，如果也需要使用语音消息服务，**只需要调用一次 InitEngine 初始化接口**。
+
+<dx-alert infotype="notice" title="">
+语音转文本相关接口有默认频率限制，限额范围内计费方式请参见 [计费文档](https://intl.cloud.tencent.com/document/product/607/50009)；若需提升接口频率限额或了解超额计费方式，请联系商务或 [提交工单咨询](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。
+- 语音消息非流式转文本接口 ***SpeechToText()*** ：默认单账号限制并发数为10路
+- 语音消息流式转文本接口 ***StartRecordingWithStreamingRecognition()***：默认单账号限制并发数为50路
+- 实时语音流式转文本接口 ***StartRealTimeASR()***：默认单账号限制并发数为50路
+</dx-alert>
+
+<dx-alert infotype="notice" title="关于 Init 接口">
+例如使用了实时语音服务，同时也需要使用语音消息服务，**只需要调用一次 Init 初始化接口**。
+Init 之后不会开始计费，语音消息及转文本服务**收发语音消息**才算作语音消息 DAU。
 </dx-alert>
 
 ![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
@@ -15,7 +29,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 ### 重要步骤
 
 <dx-steps>
--<dx-tag-link link="#Init" tag="接口：InitEngine">初始化 GME</dx-tag-link>
+-<dx-tag-link link="#Init" tag="接口：Init">初始化 GME</dx-tag-link>
 -<dx-tag-link link="#Poll" tag="接口：Poll">周期性调用 Poll 触发回调</dx-tag-link>
 -<dx-tag-link link="#ApplyPtt" tag="接口：ApplyPTTAuthbuffer">鉴权初始化</dx-tag-link>
 -<dx-tag-link link="#StartRWSR" tag="接口：StartRecordingWithStreamingRecognition">启动流式语音识别</dx-tag-link>
@@ -30,7 +44,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
-- 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
+- 错误码详情可参考 <dx-tag-link link="https://www.tencentcloud.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
 
 
 
@@ -41,7 +55,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 **在使用 GME 的任何接口之前，都需要先调用 Init 接口。**
 
 
-使用问题请参见 [一般性问题](https://intl.cloud.tencent.com/document/product/607/30254)。
+使用问题可参见 [一般性问题](https://intl.cloud.tencent.com/document/product/607/30254)。
 
 | 接口                            |       接口含义       |
 | ------------------------------- | :------------------: |
@@ -141,9 +155,17 @@ TMGRealTimeViewController ()< ITMGDelegate >
 
 ### [初始化 SDK](id:Init)
 
-- 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用。
-- **参数 sdkAppId 获取请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)**。
-- **OpenId 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
+- 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用，调用此接口不会产生计费。
+- **参数 sdkAppID 获取请参见 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782)**。
+- **openID 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
+
+
+
+<dx-alert infotype="notice" title="">
+调用 Init 接口的线程必须于其他接口在同一线程。建议都在主线程调用接口。
+</dx-alert>
+
+
 
 #### 函数原型
 
@@ -179,6 +201,14 @@ _appId = _appIdText.text;
 
 通过在 update 里面周期的调用 Poll 可以触发事件回调。GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll 的话，会导致整个 SDK 服务运行异常。
 可参考 [Demo](https://intl.cloud.tencent.com/document/product/607/18521) 中的 EnginePollHelper.m 文件。
+
+
+<dx-alert infotype="notice" title="">
+务必周期性调用 Poll 接口且在主线程调用，以免接口回调异常。
+</dx-alert>
+
+
+
 
 #### 函数原型
 
@@ -244,8 +274,12 @@ _appId = _appIdText.text;
 - 退后台时没有暂停音频引擎的采集和播放（即 PauseAudio）。
 - App 的 Info.plist 中，需要至少增加 key:Required background modes，string:App plays audio or streams audio/video using AirPlay。
 
->! 建议开发者调用此接口设置音频。
->
+
+
+<dx-alert infotype="notice" title="">
+ 建议开发者调用此接口设置音频。
+</dx-alert>
+
 
 #### 函数原型
 
@@ -272,11 +306,20 @@ _appId = _appIdText.text;
 
 ## 语音消息及转文字
 
-语音消息，录制并发送一段语音消息，同时可以将语音消息转成文字，也可以同时将文字进行翻译。
+语音消息，录制并发送一段语音消息，同时可以将语音消息转成文字，也可以同时将文字进行翻译。下图演示的是语音消息及转文本服务：
 
->?建议使用流式语音转文字服务
+<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/IMB_DsvaLv.gif" width="50%">
 
-### 语音消息及语音转文字流程图
+
+
+<dx-alert infotype="explain" title="">
+- 建议使用流式语音转文字服务。
+- 使用语音消息服务不需要进入实时语音房间。
+</dx-alert>
+
+
+
+#### 语音消息及语音转文字流程图
 
 <img src="https://main.qcloudimg.com/raw/13ee122408ae95995bfce4fc0edb370f.png" width="70%">
 
@@ -311,11 +354,18 @@ _appId = _appIdText.text;
 | SpeechToText                           |    语音识别成文字    |
 
 
+
+<dx-alert infotype="alarm" title="最大录制时长">
+语音消息最大录制时长默认为58秒，最短不能小于1秒。如果需要再加以限制，例如限制为最大录制时长为10秒，请在初始化之后调用 SetMaxMessageLength 接口进行设置。
+</dx-alert>
+
+
+
 ### 初始化 SDK
 
 未初始化前，SDK 处于未初始化阶段，需要通过接口 Init 初始化 SDK，才可以使用实时语音及语音消息服务。
 
-使用问题请参见 [语音转文本问题](https://intl.cloud.tencent.com/document/product/607/30258)。
+使用问题可参见 [离线语音相关问题](https://intl.cloud.tencent.com/document/product/607/39716)。
 
 ### 鉴权信息
 
@@ -415,16 +465,22 @@ recordfilePath = [docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 | result    |    用于判断流式语音识别是否成功的返回码     |
 | text      |            语音转文字识别的文本             |
 | file_path |             录音存放的本地地址              |
-| file_id   | 录音在后台的 url 地址，录音在服务器存放90天 |
+| file_id   | 录音在后台的 url 地址，录音在服务器存放 90 天。fileid 固定字段为 http://gme-v2- |
 
->!监听 `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING` 消息时，file_id 为空。
+
+
+<dx-alert infotype="notice" title="">
+监听 `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING` 消息时，file_id 为空。
+</dx-alert>
+
+
 
 #### 错误码
 
 |错误码     | 含义         |处理方式|
 | ------------- |:-------------:|:-------------:|
-|32775	|流式语音转文本失败，但是录音成功	|调用 UploadRecordedFile 接口上传录音，再调用 SpeechToText 接口进行语音转文字操作|
-|32777	|流式语音转文本失败，但是录音成功，上传成功	|返回的信息中有上传成功的后台 url 地址，调用 SpeechToText 接口进行语音转文字操作|
+|32775	|流式语音转文本失败，但是录音成功	|调用 UploadRecordedFile 接口上传录音，再调用 SpeechToText 接口进行语音转文字操作
+|32777	|流式语音转文本失败，但是录音成功，上传成功	|返回的信息中有上传成功的后台 url 地址，调用 SpeechToText 接口进行语音转文字操作
 |32786  |流式语音转文本失败|在流式录制状态当中，请等待流式录制接口执行结果返回|
 
 #### 示例代码  
@@ -462,7 +518,7 @@ recordfilePath = [docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 
 ## 语音消息录制
-
+**录制的流程为：录音->停止录音->录音回调返回->启动下一次录音。**
 ### 限制最大语音信息时长
 
 限制最大语音消息的长度，最大支持58秒。
@@ -538,10 +594,13 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 ### 启动录音的回调
 
+录音完成的回调，通过委托传递消息。
+
+
 **停止录音调用StopRecording**。停止录音后才有启动录音的回调。
 
 启动录音完成后的回调调用函数 OnEvent，事件消息为 ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE， 在 OnEvent 函数中对事件消息进行判断。
-传递的参数包含两个信息，result 和 file_path。
+传递的参数包含两个信息，一个是 result，另一个是 file_path。
 
 #### 错误码
 
@@ -587,7 +646,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 #### 示例代码  
 
 ```
-[[[ITMGContext GetInstance]GetPTT]PauseRecording;
+[[[ITMGContext GetInstance]GetPTT]PauseRecording];
 
 ```
 
@@ -605,7 +664,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 #### 示例代码  
 
 ```
-[[[ITMGContext GetInstance]GetPTT]ResumeRecording;
+[[[ITMGContext GetInstance]GetPTT]ResumeRecording];
 
 ```
 
@@ -631,7 +690,13 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 此接口用于获取麦克风实时音量，返回值为 int 类型，值域为0 - 200。
 
->?此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -651,7 +716,13 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 此接口用于设置离线语音录制音量，值域为0 - 200。
 
->?此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -671,7 +742,13 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 此接口用于获取离线语音录制音量。返回值为 int 类型，值域为0 - 200。
 
->?此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -691,7 +768,13 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 此接口用于获取扬声器实时音量。返回值为 int 类型，值域为0 - 200。
 
->?此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -711,9 +794,15 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 此接口用于设置语音消息播放音量，值域为0 - 200。
 
->?此接口不同于实时语音接口，此接口在 ITMGPTT 下。
->
->#### 函数原型  
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+</dx-alert>
+
+
+
+#### 函数原型  
 
 ```
 -(QAVResult)SetSpeakerVolume:(int)volume;
@@ -731,7 +820,13 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 此接口用于获取语音消息播放音量。返回值为 int 类型，值域为0 - 200。
 
->?此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+
+
+<dx-alert infotype="explain" title="">
+此接口不同于实时语音接口，此接口在 ITMGPTT 下。
+</dx-alert>
+
+
 
 #### 函数原型  
 
@@ -756,7 +851,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 #### 函数原型  
 
 ```
--(int)PlayRecordedFile:(NSString*)downloadFilePath;
+-(int)PlayRecordedFile:(NSString*)filePath;
 -(int)PlayRecordedFile:(NSString*)filePath VoiceType:(ITMG_VOICE_TYPE) type;
 
 ```
@@ -764,7 +859,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 | 参数             |      类型       | 含义                                                         |
 | ---------------- | :-------------: | ------------------------------------------------------------ |
 | downloadFilePath |    NSString     | 本地语音文件的路径                                           |
-| type             | ITMG_VOICE_TYPE | 变声类型，请参见 [变声特效](https://intl.cloud.tencent.com/document/product/607/31503) |
+| type             | ITMG_VOICE_TYPE | 变声类型，请参见 [变声接入文档](https://intl.cloud.tencent.com/document/product/607/44995)  |
 
 #### 错误码
 
@@ -1067,9 +1162,9 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 | 错误码值 | 原因                   | 建议方案                                                     |
 | -------- | ---------------------- | ------------------------------------------------------------ |
-| 32769    | 内部错误               | 分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决 |
+| 32769    | 内部错误               | 分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。 |
 | 32770    | 网络失败               | 检查设备网络是否可以正常访问外网环境                         |
-| 32772    | 回包解包失败           | 分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决 |
+| 32772    | 回包解包失败           | 分析日志，获取后台返回给客户端的真正错误码，并联系后台同事协助解决。 |
 | 32774    | 没有设置 appinfo       | 检查鉴权密钥是否正确，检查是否有初始化离线语音               |
 | 32776    | authbuffer 校验失败    | 检查 authbuffer 是否正确                                     |
 | 32784    | 语音转文本参数错误     | 检查代码中接口参数 fileid 是否为空                           |
@@ -1166,7 +1261,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 | levelWrite | ITMG_LOG_LEVEL | 设置写入日志的等级，TMG_LOG_LEVEL_NONE 表示不写入，默认为 TMG_LOG_LEVEL_INFO |
 | levelPrint | ITMG_LOG_LEVEL | 设置打印日志的等级，TMG_LOG_LEVEL_NONE 表示不打印，默认为 TMG_LOG_LEVEL_ERROR |
 
-
+#### ITMG_LOG_LEVEL 说明
 
 | ITMG_LOG_LEVEL        | 含义                 |
 | --------------------- | -------------------- |
@@ -1207,36 +1302,17 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 ```
 
-### 获取诊断信息
-
-获取音视频通话的实时通话质量的相关信息。该接口主要用来查看实时通话质量、排查问题等，业务侧可以忽略。
-
-#### 函数原型  
-
-```
--(NSString*)GetQualityTips;
-
-```
-
-#### 示例代码  
-
-```
-[[[ITMGContext GetInstance]GetRoom ] GetQualityTips];
-
-```
-
-
 ## 回调消息
 
 ### 消息列表
 
-|消息     | 消息代表的含义   |
+|消息     | 消息代表的含义   
 | ------------- |:-------------:|
 |ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE	|PTT 录音完成			|
 |ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE	|上传 PTT 完成			|
 |ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE	|下载 PTT 完成			|
 |ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE		|播放 PTT 完成			|
-|ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|语音转文字完成		|
+|ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE	|语音转文字完成			|
 
 ### Data 列表
 
@@ -1248,4 +1324,5 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 | ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE                 |        result; file_path        | {"file_path":"","result":0}                       |
 | ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE          |      result; text;file_id       | {"file_id":"","text":"","result":0}               |
 | ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE | result; file_path; text;file_id | {"file_id":"","file_path":","text":"","result":0} |
+
 

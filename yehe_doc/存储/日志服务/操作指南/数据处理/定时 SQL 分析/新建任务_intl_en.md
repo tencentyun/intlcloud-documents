@@ -10,7 +10,7 @@ This document describes how to create a scheduled SQL analysis task.
 ## Directions
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls/overview).
-2. Click **Data Processing** > **Scheduled SQL Analysis** on the left sidebar and click ![](https://qcloudimg.tencent-cloud.cn/raw/5829c3928eef93b45e7d92b840fc38cc.png) to create a task.
+2. Click **Data Processing** > **Scheduled SQL Task** on the left sidebar and click ![](https://qcloudimg.tencent-cloud.cn/raw/5829c3928eef93b45e7d92b840fc38cc.png) to create a task.
 
 3. On the basic configuration page, configure the following information and click **Next**:
 

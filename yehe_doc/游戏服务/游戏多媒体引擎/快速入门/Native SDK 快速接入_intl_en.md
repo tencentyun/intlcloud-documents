@@ -1,23 +1,22 @@
 This document provides a detailed description that makes it easy for Native project developers to debug and integrate the APIs for Game Multimedia Engine (GME).
 
-This document only provides the major APIs to help you get started with GME. You can refer to the Demo to debug and integrate the APIs.
-
+This document only provides the main APIs to help you get started with GME to debug and integrate the APIs.
 
 ## Key Considerations for Using GME
 
-GME provides two services: voice chat service and voice message and speech-to-text service, both of which rely on key APIs such as Init and Poll.
+GME provides two services: Voice chat service and voice messaging and speech-to-text service, both of which rely on key APIs such as Init and Poll.
 
 <dx-alert infotype="notice" title="Note on Init API">
-If you need to use voice chat and voice message services at the same time, **you only need to call `Init` API once**.
+If you need to use voice chat and voice messaging services at the same time, **you only need to call `Init` API once**.
 </dx-alert>
 
 ### API call flowchart
 
-![image](https://qcloudimg.tencent-cloud.cn/raw/20564e5a251c6a53a06fa2b660a93061.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/c8758a24fe68fc084b8d12b09de5e27a.jpg)
 
 ### Directions
 
-#### Key APIs
+#### Core APIs
 
 
 <dx-tag-link link="#Init" tag="API: Init">Initializing GME</dx-tag-link>
@@ -27,8 +26,8 @@ If you need to use voice chat and voice message services at the same time, **you
 
 <dx-steps>
 -<dx-tag-link link="#EnterRoom" tag="API: EnterRoom">Entering a voice chat room</dx-tag-link>
--<dx-tag-link link="#EnableMic" tag="API: EnableMic">Enabling or disabling the microphone</dx-tag-link>
--<dx-tag-link link="#EnableSpeaker" tag="API: EnableSpeaker">Enabling or disabling the speaker</dx-tag-link>
+-<dx-tag-link link="#EnableMic" tag="API: EnableMic">Turning on or off the microphone</dx-tag-link>
+-<dx-tag-link link="#EnableSpeaker" tag="API: EnableSpeaker">Turning on or off the speaker</dx-tag-link>
 -<dx-tag-link link="#ExitRoom" tag="API: ExitRoom">Exiting a voice room</dx-tag-link>
 </dx-steps>
 
@@ -40,13 +39,13 @@ If you need to use voice chat and voice message services at the same time, **you
 -<dx-tag-link link="#Stop" tag="API: StopRecording">Stop recording</dx-tag-link>
 </dx-steps>
 
-<dx-tag-link link="#Init" tag="API: UnInit">Uninitializing GME</dx-tag-link>
+- <dx-tag-link link="#Init" tag="API: UnInit">Uninitializing GME</dx-tag-link>
 
-## Key API Access
+## Core API Integration
 
-### Downloading demo 
+### 1. Download the SDK 
 
-In the SDK download guide page, download the client’s <dx-tag-link link="https://cloud.tencent.com/document/product/607/18521" tag="DownLoad"> Demo project codes</dx-tag-link>.
+On the SDK download guide page, download the appropriate <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/18521" tag="DownLoad">client SDK</dx-tag-link>.
 
 
 ### 2. Importing the header file
@@ -218,11 +217,9 @@ void CTMGSDK_For_AudioDlg::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* d
 
 ### [5. Initializing SDK](id:Init)
 
-- This API is used to initialize the GME service. It is recommended to call it when initializing the application.
-- **For more information on how to get the `sdkAppId` parameter, please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/39698)**.
-- **The openID uniquely identifies a user with the rules stipulated by the application developer and unique in the application (currently, only INT64 is supported)**.
+**You need to initialize the SDK through the `Init` API** before you can use the real-time voice, voice message, and speech-to-text services. The `Init` API must be called in the same thread as other APIs. We recommend you call all APIs in the main thread.
 
-#### Function prototype
+#### API prototype
 
 <dx-codeblock>
 ::: Java Java
@@ -239,8 +236,8 @@ ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
 
 | Parameter | Type | Description |
 | -------- | :----: | ------------------------------------------------------------ |
-| sdkAppId | String | `AppId` provided by the GME service from the [Tencent Cloud Console](https://console.cloud.tencent.com/gamegme) |
-| OpenId |String | `OpenId` can only be in Int64 type, which is passed after being converted to a string. |
+| sdkAppId | string | `AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme), which can be obtained as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782). |
+| openID   | string | `openID` can only be in `Int64` type, which is passed in after being converted to a string. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application. |
 
 #### Sample code 
 
@@ -252,7 +249,7 @@ if (nRet == AV_OK )
 {
     GMEAuthBufferHelper.getInstance().setGEMParams(appId, key, openId);
     // Step 4/11: Poll to trigger callback
-    //https://cloud.tencent.com/document/product/607/15210#.E8.A7.A6.E5.8F.91.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83
+    //https://www.tencentcloud.com/document/product/607/40860
     EnginePollHelper.createEnginePollHelper();
     showToast("Init success");
 }else if (nRet == AV_ERR_HAS_IN_THE_STATE) // SDK has been initialized. This operation is successful.
@@ -281,9 +278,7 @@ context->Init(SDKAPPID3RD, openId);
 
 ### [6. Triggering event callback](id:Poll)
 
-Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
-
-You can refer to the `EnginePollHelper.java` file in the demo.
+Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run abnormally. For more information, see the `EnginePollHelper` file in [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
 #### Sample code
 
@@ -304,7 +299,7 @@ private Handler mhandler = new Handler();
             mhandler.postDelayed(mRunnable, 33);
         }
     };
-// For the code of calling Poll periodically, please see EnginePollHelper.java.
+// For the code of calling Poll periodically, see EnginePollHelper.java.
 :::
 ::: Object-C objetctive-c
 //TMGSampleViewController.m
@@ -319,12 +314,11 @@ void TMGTestScene::update(float delta)
 :::
 </dx-codeblock>
 
-### 7. Authentication
+### 7. Calculating the local authentication key
 
-Generate `AuthBuffer` for encryption and authentication of relevant features.    
-To get authentication for voice message and speech-to-text, the room ID parameter must be set to `null`.
+Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 
-#### Function prototype
+#### API prototype
 
 <dx-codeblock>
 ::: Java Java
@@ -390,11 +384,9 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retA
 
 ###  [1. Entering a room](id:EnterRoom)
 
-When a user enters a room with the generated authentication information, the `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` message will be received as a callback. Mic and speaker are not enabled by default after room entry. The returned value of `AV_OK` indicates a success.
+This API is used to enter a room with the generated authentication information. The mic and speaker are not turned on by default after room entry. The returned value of `AV_OK` indicates successful API call but not successful room entry.
 
-For more information on how to choose a room audio type, please see [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
-
-#### Function prototype
+#### API prototype
 
 <dx-codeblock>
 ::: Java Java
@@ -411,7 +403,7 @@ ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, 
 | Parameter | Type | Description |
 | ---------- | :----: | ----------------------- |
 | roomId | String | Room ID, which can contain up to 127 characters |
-| roomType | int | Room audio type |
+| roomType | int | Use `FLUENCY` sound quality to enter the room |
 | authBuffer | byte[] | Authentication code |
 
 #### Sample code  
@@ -428,7 +420,7 @@ ITMGContext.GetInstance(this).EnterRoom(roomId, roomType, authBuffer);
 :::
 ::: C++ C++
 ITMGContext* context = ITMGContextGetInstance();
-context->EnterRoom(roomID, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen);
+context->EnterRoom(roomID, ITMG_ROOM_TYPE_FLUENCY, (char*)retAuthBuff,bufferLen);
 :::
 </dx-codeblock>
 
@@ -437,9 +429,9 @@ context->EnterRoom(roomID, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen
 After the user enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` will be sent and identified in the `OnEvent` function for callback and processing. A successful callback means that the room entry is successful, and the billing starts.
 
 <dx-fold-block title="Billing references">
-[Purchase Guide](https://intl.cloud.tencent.com/document/product/607/36276)
+[Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009)
 [Billing FAQs](https://intl.cloud.tencent.com/document/product/607/30255)
-[Will the billing continue if the client is disconnected when using the voice chat?](https://intl.cloud.tencent.com/document/product/607/30255)
+[Will Voice Chat still be charged when client is offlined?](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
 - **Sample code**  
@@ -535,9 +527,9 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 
 
-### [2. Enabling or disabling the microphone](id:EnableMic)
+### [2. Turning on or off the microphone](id:EnableMic)
 
-This API is used to enable/disable the mic. Mic and speaker are not enabled by default after room entry.
+This API is used to turn on or off the mic. Mic and speaker are not enabled by default after room entry.
 
 #### Sample code  
 
@@ -555,9 +547,9 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableMic(true);
 :::
 </dx-codeblock>
 
-### [3. Enabling or disabling the speaker](id:EnableSpeaker)
+### [3. Turning on or off the speaker](id:EnableSpeaker)
 
-This API is used to enable/disable the speaker.
+This API is used to turn on/off the speaker.
 
 #### Sample code  
 
@@ -578,7 +570,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 
 ### [4. Exiting the room](id:ExitRoom)
 
-This API is called to exit the current room. It is an async API. The returned value of `AV_OK` indicates a successful async delivery.
+This API is called to exit the current room. It needs to wait for and process the callback for exit.
 
 #### Sample code  
 
@@ -646,7 +638,7 @@ switch (eventType) {
 
 Call authentication initialization after initializing the SDK. For more information on how to get the `authBuffer`, please see `genAuthBuffer` (the voice chat authentication information API).
 
-#### Function prototype  
+#### API prototype  
 
 <dx-codeblock>
 ::: Java Java
@@ -660,7 +652,7 @@ ITMGPTT virtual int ApplyPTTAuthbuffer(const char* authBuffer, int authBufferLen
 :::
 </dx-codeblock>
 
-| Parameter | Type | Description |
+| Parameter       |  Type  | Description                    |
 | ---------- | :----: | ---- |
 | authBuffer | String | Authentication |
 
@@ -684,24 +676,24 @@ ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen)
 
 ### [2. Starting streaming speech recognition](id:StartRWSR)
 
-This API is used to start streaming speech recognition. Text obtained from speech-to-text conversion will be returned in real time in its callback. It can specify a language for recognition or translate the information recognized in speech into a specified language and return the translation. **To stop recording, call `StopRecording`**. The callback will be returned after the recording is stopped.
+This API is used to start streaming speech recognition. Text obtained from speech-to-text conversion will be returned in real time in its callback. **To stop recording, call `StopRecording`**. The callback will be returned after the recording is stopped.
 
-#### Function prototype  
+#### API prototype  
 
 <dx-codeblock>
 ::: Java Java
 public abstract int StartRecordingWithStreamingRecognition (String filePath);
-public abstract int StartRecordingWithStreamingRecognition (String filePath,String language,String translatelanguage);
+
 public abstract int StopRecording();
 :::
 ::: Object-C objetctive-c
 -(int)StartRecordingWithStreamingRecognition:(NSString *)filePath;
--(int)StartRecordingWithStreamingRecognition:(NSString *)filePath language:(NSString*)speechLanguage translatelanguage:(NSString*)translatelanguage;
+
 -(QAVResult)StopRecording;
 :::
 ::: C++ C++
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage)
+
 ITMGPTT virtual int StopRecording()
 :::
 </dx-codeblock>
@@ -710,19 +702,18 @@ ITMGPTT virtual int StopRecording()
 | Parameter | Type | Description |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath | String | Path of stored audio file |
-| speechLanguage | String | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) |
-| translateLanguage | String | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260) (This parameter is currently unavailable. Enter the same value as that of `speechLanguage`) |
+
 
 #### Sample code  
 
 <dx-codeblock>
 ::: Java Java
 //VoiceMessageRecognitionActivity.java
-ITMGContext.GetInstance(this).GetPTT().StartRecordingWithStreamingRecognition(recordfilePath,"cmn-Hans-CN");
+ITMGContext.GetInstance(this).GetPTT().StartRecordingWithStreamingRecognition(recordfilePath);
 :::
 ::: Object-C objetctive-c
 //TMGPTTViewController.m
-QAVResult ret = [[[ITMGContext GetInstance] GetPTT] StartRecordingWithStreamingRecognition:[self pttTestPath] language:@"cmn-Hans-CN"];
+QAVResult ret = [[[ITMGContext GetInstance] GetPTT] StartRecordingWithStreamingRecognition:[self pttTestPath]];
 if (ret == 0) {
     self.currentStatus = @"Start streaming recording";
 } else {
@@ -730,7 +721,7 @@ if (ret == 0) {
 }
 :::
 ::: C++ C++
-ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath,"cmn-Hans-CN","cmn-Hans-CN");
+ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath);
 :::
 </dx-codeblock>
 
@@ -864,7 +855,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 This API is used to stop recording. It is async, and a callback for recording completion will be returned after recording stops. A recording file will be available only after recording succeeds.
 
-#### Function prototype  
+#### API prototype  
 
 <dx-codeblock>
 ::: Java Java
@@ -891,7 +882,7 @@ ITMGContext.GetInstance(this).GetPTT().StopRecording();
 
 - (void)stopRecClick {
   // Step 3/12 stop recording,  need handle ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE event
-  // https://cloud.tencent.com/document/product/607/15221#.E5.81.9C.E6.AD.A2.E5.BD.95.E9.9F.B3
+  // https://www.tencentcloud.com/document/product/607/15221
   QAVResult ret =  [[[ITMGContext GetInstance] GetPTT] StopRecording];
    if (ret == 0) {
        self.currentStatus = @"Stop recording";
@@ -904,3 +895,5 @@ ITMGContext.GetInstance(this).GetPTT().StopRecording();
   ITMGContextGetInstance()->GetPTT()->StopRecording();
   :::
   </dx-codeblock>
+
+	

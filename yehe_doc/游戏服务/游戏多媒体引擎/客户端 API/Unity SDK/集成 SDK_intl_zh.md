@@ -3,7 +3,7 @@
 
 ## 下载 SDK
 
-1. 请先下载相关 Demo 及 SDK。详细下载链接请查看  [SDK 下载指引](https://intl.cloud.tencent.com/zh/document/product/607/18521)。
+1. 请先下载相关 Demo 及 SDK。详细下载链接请查看  [SDK 下载指引](https://intl.cloud.tencent.com/document/product/607/18521)。
 2. 在界面中找到 Unity 版本的 SDK 资源。
 3. 单击**下载**。下载完的 SDK 资源解压后有以下几个部分。文件说明如下表：
 <table>
@@ -25,10 +25,10 @@
 <td>提供 API 接口</td>
 </tr>
 </tbody></table>
+4. 如果使用到高清音质请参见 [Unity 配置高清音质文档](https://www.tencentcloud.com/document/product/607/46016) 进行解决。
 
-
-<dx-alert infotype="explain" title="Unity SDK 平台支持">
-Unity SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。
+<dx-alert infotype="explain" title="平台支持">
+Unity SDK 已同时集成 Windows、Mac、Android、iOS、PlayStation、Xbox、Switch、WebGL 平台架构。
 </dx-alert>
 
 
@@ -38,7 +38,7 @@ Unity SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。
 ### 步骤1：导入 Plugins 文件
 
 将开发工具包中 Plugins 文件夹中的文件复制在 **Unity 工程**>**Assets**>**Plugins** 文件夹中，如图所示。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ce8ba3561d43148971f1cbe9076be3a3.png"  width="100%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ce8ba3561d43148971f1cbe9076be3a3.png"  width="65%" /></img>
 
 
 
@@ -52,7 +52,7 @@ Unity SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。
 ### 步骤2：导入代码文件
 
 将开发工具包中 Scripts 文件夹中的文件复制在 Unity 工程中存放代码的文件夹中，如图所示：  
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5ab4509590a5effa9e8aadeee2456492.png"  width="100%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/5ab4509590a5effa9e8aadeee2456492.png"  width="65%" /></img>
 
 
 
@@ -78,6 +78,7 @@ Unity SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。
 ## MacOS 平台使用操作
 
 若在 MacOS 10.15.x 版本使用 Unity 集成 GME SDK，执行运行操作时报错显示文件已损坏，原因为 `com.apple.quarantine` 属性导致。
+
 最直接的解决方案是删除 `com.apple.quarantine` 属性，具体操作步骤如下。
 1. 通过终端执行 cd 命令快速定位到工程中的文件夹下：`Unity_OpenSDK_Audio/Assets/Plugins/`。
 2. 执行以下命令。
@@ -90,4 +91,5 @@ $ xattr -d com.apple.quarantine gmesdk.bundle
 <dx-alert infotype="explain" title="">
 此操作有风险，建议使用低版本的 MacOS 进行接入。
 </dx-alert>
+
 

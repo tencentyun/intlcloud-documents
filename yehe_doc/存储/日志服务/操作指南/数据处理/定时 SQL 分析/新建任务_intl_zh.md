@@ -5,12 +5,12 @@
 ## 前提条件
 
 - 已开通日志服务，并开启键值索引。
-- 确保当前操作账号拥有配置定时 SQL 分析的权限，详情请参见 [自定义权限策略示例](https://intl.cloud.tencent.com/document/product/614/45004)。
+- 确保当前操作账号拥有配置定时 SQL 分析的权限，详情请参考 [自定义权限策略示例](https://intl.cloud.tencent.com/document/product/614/45004)。
 
 ## 操作步骤
 
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls/overview)。
-2. 在左侧导航栏中，选择**数据处理 > 定时SQL分析**，单击 ![](https://qcloudimg.tencent-cloud.cn/raw/5829c3928eef93b45e7d92b840fc38cc.png)，新建任务。
+2. 在左侧导航栏中，选择**数据处理 > 定时 SQL 任务**，单击 ![](https://qcloudimg.tencent-cloud.cn/raw/5829c3928eef93b45e7d92b840fc38cc.png)，新建任务。
 
 3. 在基本配置页面，配置如下信息，单击**下一步**。
 
