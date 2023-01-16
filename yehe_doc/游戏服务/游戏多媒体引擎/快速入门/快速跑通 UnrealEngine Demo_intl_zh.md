@@ -20,7 +20,7 @@
 
 通过 [下载指引](https://cloud.tencent.com/document/product/607/18521) 下载 UnrealEngine Demo。由于 UE5 和 UE4 的 Demo 配置不同，需要下载相对应引擎版本的 Sample Project。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d31444d037de015a99b4bf3884aec906.png)
+
 
 
 ### 3. 配置工程
