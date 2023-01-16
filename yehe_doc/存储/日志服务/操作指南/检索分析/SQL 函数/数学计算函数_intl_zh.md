@@ -14,7 +14,7 @@
 | abs(x) [](id:abs)                    | 计算数字的绝对值。               |
 | cbrt(x)   [](id:cbrt)                 | 计算数字的立方根。               |
 | sqrt(x)   [](id:sqrt)                 | 计算数字的平方根。               |
-| cosine_similarity(x,y) [](id:cosine_similarity)    | 计算向量 x 和 y 之间的余弦相似度。</br>例如 `* | SELECT cosine_similarity(MAP(ARRAY['x','y'], ARRAY[1.0,0.0]), MAP(ARRAY['x','y'], ARRAY[0.0,1.0]))` 返回0。       |
+| cosine_similarity(x,y) [](id:cosine_similarity)    | 计算向量 x 和 y 之间的余弦相似度。</br>例如 `* \| SELECT cosine_similarity(MAP(ARRAY['x','y'], ARRAY[1.0,0.0]), MAP(ARRAY['x','y'], ARRAY[0.0,1.0]))` 返回0。       |
 | degrees(x)  [](id:degrees)               | 将弧度转换为度。                 |
 | radians(x)   [](id:radians)              | 将度转换为弧度。                 |
 | e()  [](id:e)                      | 计算数字的自然对数。             |
@@ -48,8 +48,8 @@
 | nan()   [](id:nan)             |  返回一个 NaN 值（Not a Number）。        |
 | mod(x, y) [](id:mod)               | 用于计算 x 与 y 相除的余数。         |
 | sign(x) [](id:sign)               | 返回 x 的符号，通过1、0、-1表示。         |
-| width_bucket(x, bound1, bound2, n) [](id:width_bucket_1)               |  将一段数值（bound1 - bound2）划分成大小相同的 n 个 Bucket，返回 x 所属的 Bucket。 </br>例如`* | select timeCost,width_bucket(timeCost,10,1000,5)`        |
-| width_bucket(x, bins)[](id:width_bucket_2)                |  使用数组（bins）指定 Bucket 的范围，返回 x 所属的 Bucket。 </br>例如`* | select timeCost,width_bucket(timeCost,array[10,100,1000])`        |
+| width_bucket(x, bound1, bound2, n) [](id:width_bucket_1)               |  将一段数值（bound1 - bound2）划分成大小相同的 n 个 Bucket，返回 x 所属的 Bucket。 </br>例如`* \| select timeCost,width_bucket(timeCost,10,1000,5)`        |
+| width_bucket(x, bins)[](id:width_bucket_2)                |  使用数组（bins）指定 Bucket 的范围，返回 x 所属的 Bucket。 </br>例如`* \| select timeCost,width_bucket(timeCost,array[10,100,1000])`        |
 
 ## 示例
 
