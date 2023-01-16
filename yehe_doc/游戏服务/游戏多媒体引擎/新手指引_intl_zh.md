@@ -181,7 +181,7 @@ GME 各个平台均提供了 SDK 以及 Sample Project。通过跑通 SampleProj
 
 举例：在使用 SDK 的过程中，调用 3D 音效相关接口后接口返回 7003 的错误，查看错误码文档可以得知出现此错误码的原因是没有调用 InitSpatializer，可根据此建议排查代码中是否有调用过 InitSpatializer，以及调用的顺序是否正确。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1394eb8f4947c28728a00c873b3ecb0c.png)
+
 
 ### 寻求帮助
 如果通过文档以及错误码无法解决问题，参见 [问题解决指南](https://www.tencentcloud.com/document/product/607/51562) 咨询开发人员。
