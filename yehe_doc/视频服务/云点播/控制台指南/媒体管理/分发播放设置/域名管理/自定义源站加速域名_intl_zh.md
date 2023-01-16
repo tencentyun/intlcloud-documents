@@ -8,14 +8,15 @@
 3. 默认进入**媒资管理**>**音视频管理**，“已上传”页面。
 4. 选择左侧导航栏**分发播放设置**>[**域名管理**](https://console.cloud.tencent.com/vod/distribute-play/domain)，进入**域名管理**页面。
 5. 单击顶部**自定义源站加速域名**，进入”自定有源站加速域名“列表页。
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_733809_BQj68x44F_6Suq8h_1673602703?w=1480&h=480)
+![img](https://qcloudimg.tencent-cloud.cn/raw/f0536b39ee6156173e7cd27b3642f791.png)
 6. 单击**添加域名**，根据实际需求完成域名配置和源站配置：
  - 域名配置
 填写域名名称和选择域名加速区域，相关内容请参见 [添加域名](https://www.tencentcloud.com/document/product/266/35572)。
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_637821_VGb4iPXqW3eJXnUP_1673602856?w=1363&h=204)
+![img](https://qcloudimg.tencent-cloud.cn/raw/ceb83e97ffdd3118c4890c13a68c6971.png)
  - 源站配置
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_50088_65AcmuvO-erFQP_H_1673602907?w=882&h=409)
- **源站类型**
+![img](https://qcloudimg.tencent-cloud.cn/raw/43279ccef236c0211c4b996f8ff92fd6.png)
+
+**源站类型**
 云点播提供自有源站和第三方对象存储的三种回源类型，用户可根据实际需求选择配置。
 <table>
    <tr>
@@ -66,7 +67,7 @@
 针对已添加的自定义域名，可根据用户实际需求进行调整修改。修改方式如下：
 1. [**域名管理**](https://console.cloud.tencent.com/vod/distribute-play/domain)>**自定义源站加速域名**页面下，选择需要修改自定义域名，单击**设置**，进入详情页面。
 2. 单击**修改**，可对原配置信息进行修改，修改结果生效需要5分钟。
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_862633_9Ssc4zeoNwq57qB1_1673604340?w=1301&h=268)
+![img](https://qcloudimg.tencent-cloud.cn/raw/5df5f46ec7dc7fdc55f9bc3b780f8ac7.png)
 
 >?
 >- 用户自定义源站切换至云点播源站时，需要先停用自定义源站域名并进行删除后，然后在点播加速域名中添加对应域名。

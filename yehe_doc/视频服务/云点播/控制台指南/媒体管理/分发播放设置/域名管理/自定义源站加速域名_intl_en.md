@@ -8,13 +8,14 @@ The Video-on-Demand open CDN hosting capability helps users distribute media res
 3.  By default, go to **Media Asset Management**>**Audio and Video Management**, "Uploaded" page.
 4.  Select **Distribution Playback Settings** > [Domain Management](https://console.tencentcloud.com/vod/distribute-play/domain) in the left navigation bar to enter the domain management page.
 5. Click the top **custom** **origin server** **domains** for accelerated source site to enter the "custom origin server domains " list page.
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_733809_BQj68x44F_6Suq8h_1673602703?w=1480&h=480)
+![img](https://qcloudimg.tencent-cloud.cn/raw/f0536b39ee6156173e7cd27b3642f791.png)
 6.  Click **Add Domain** to complete domain name configuration and origin server configuration according to your actual needs:
  - Domain configuration
 Fill in the domain name and select the domain name acceleration area. For related information, see [Adding a Domain Name](https://www.tencentcloud.com/document/product/266/35572).
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_637821_VGb4iPXqW3eJXnUP_1673602856?w=1363&h=204)
+![img](https://qcloudimg.tencent-cloud.cn/raw/ceb83e97ffdd3118c4890c13a68c6971.png)
  - Origin configuration
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_50088_65AcmuvO-erFQP_H_1673602907?w=882&h=409)
+![img](https://qcloudimg.tencent-cloud.cn/raw/43279ccef236c0211c4b996f8ff92fd6.png)
+
 **Origin type**
 Video-on-Demand provides three origin-pull types: self-owned origin site and third-party object storage, and users can choose configurations according to actual needs.
 <table>
@@ -70,7 +71,7 @@ The protocol used when the VOD acceleration node returns to the user's origin si
 For the added custom domain name, it can be adjusted and modified according to the actual needs of users. The modification method is as follows:
 1.  On the [Domain Management](https://console.tencentcloud.com/vod/distribute-play/domain) > **custom origin server domains** page, select the custom domain name to be modified, click Settings, and enter the details page.
 2. Click **Modify** to modify the original configuration information. It takes 5 minutes for the modified results to take effect.
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_862633_9Ssc4zeoNwq57qB1_1673604340?w=1301&h=268)
+![img](https://qcloudimg.tencent-cloud.cn/raw/5df5f46ec7dc7fdc55f9bc3b780f8ac7.png)
 
 >?
 >- When the user-defined origin site is switched to the Video-on-Demand origin site, the domain name of the custom origin site needs to be deactivated and deleted first, and then the corresponding domain name should be added to the VOD‘s acceleration domain name.

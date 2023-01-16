@@ -26,11 +26,11 @@
 
 1. 自定义源站回源功能开启后，登录云点播控制台，选择左侧导航栏中**分发播放设置** > [**域名管理**](https://console.cloud.tencent.com/vod/distribute-play/domain)，进入**域名管理**页面。
 2. 单击顶部**自定义源站加速域名**，进入**自定有源站加速域名**页面。
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_496822_PrkPl3xhE0MPoRyl_1673595982?w=1976&h=890)
+![img](https://qcloudimg.tencent-cloud.cn/raw/e68e04641c3ad616450a70c72d5d3dcd.png)
 3. 单击**添加域名**，填写已备案的域名并选择加速区域，具体操作请参见 [点播加速域名](https://www.tencentcloud.com/document/product/266/35572)。
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_647908_tCYpQPH7cqctptVA_1673596208?w=1401&h=238)
+![img](https://qcloudimg.tencent-cloud.cn/raw/0fbcc49821fd7eebffd9ad17a81072b1.png)
 4. 根据用户实际回源需求填写源站配置，目前支持**自有源**和**第三方对象存储**回源方式，具体配置说明如下：     
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_578401_ojCvcS9fd2MZRMKq_1673597051?w=772&h=377) 
+![img](https://qcloudimg.tencent-cloud.cn/raw/9ac80033d6fb055e299a2f355d0d1825.png) 
    **自有源站**
 若用户希望将稳定运行的业务服务器作为回源源站，借助云点播 CDN 对其上的媒体文件进行加速分发，则请按照以下方式进行源站配置：
 <table>
@@ -84,10 +84,9 @@
       <td>输入有效的存储桶访问地址作为源站（不可包含 http:// 或 http:// 协议头）</td>
    </tr>
 </table>
-
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_410171_Bny9OKoDjpKFSj_1_1673596412?w=1053&h=558)<br>
+![img](https://qcloudimg.tencent-cloud.cn/raw/f5ca4759794c94ffba9f6a960b9a8641.png)<br>
 若选择私有访问的第三方对象存储桶作为源站，需填写有效访问 ID 和 key 进行回源鉴权，鉴权通过后即开启私有存储桶访问。<br>
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_817388_09QNHrxX6X1qmSaH_1673597120?w=694&h=514)
+![img](https://qcloudimg.tencent-cloud.cn/raw/66864ace26867520f76172f2901ad138.png)
 
 ### 步骤2：自定义域名解析
 
@@ -95,9 +94,9 @@
 
 ### 步骤3：自定义源站回源配置结果查看与修改
 1. 前往域名管理，进入**自定义源站加速域名**下，选择已创建域名单击**设置**。
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_238871_hvqcOSzBJNF5-3ar_1673597406?w=1947&h=864)
+![img](https://qcloudimg.tencent-cloud.cn/raw/3522690fd01bd3c0f90eb1065dc87965.png)
 2. 单击**基础配置**，可查看当前自定义域名的回源配置信息并进行修改。
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_979899_tzCbGcP83UIMJRhJ_1673597546?w=1929&h=982)
+![img](https://qcloudimg.tencent-cloud.cn/raw/bb04aa08590e9f88680c29eb19a502b9.png)
 
 通过以上步骤操作，用户便可完成基于自有源站或者第三方对象存储的回源配置，能够通过云点播 CDN 对自定义源站上的媒体文件进行分发。具体分发流程说明如下：
 
@@ -108,4 +107,5 @@
 5. 用户向最佳接入 IP 节点发起对 `http://www.test.com/test.mp4` 的访问请求；
 6. 如果该 CDN 节点上缓存有 test.mp4，用户将获取数据，结束该请求。如果该 CDN 节点没有缓存该资源，此时该节点会向您配置的**业务源站**发起对 test.mp4 的请求，获取资源后，默认会缓存到当前节点中，并将资源返回给用户，此时便结束请求。
 
->? 用户使用自定义源站回源功能进行加速分发播放媒体文件时会产生**下行流量**费用和**回源源站流量**费用，其中下行流量费用由云点播收取，具体规则请参见 [流量计费](https://www.tencentcloud.com/document/product/266/14666#.E5.8A.A0.E9.80.9F.E6.9C.8D.E5.8A.A1.3Cspan-id.3D.22speed.22.3E.3C.2Fspan.3E) 和 [流量资源包]https://www.tencentcloud.com/document/product/266/52806#2.-.E6.B5.81.E9.87.8F.E8.B5.84.E6.BA.90.E5.8C.85)，回源源站的流量费用由源站收取。
+>? 用户使用自定义源站回源功能进行加速分发播放媒体文件时会产生**下行流量**费用和**回源源站流量**费用，其中下行流量费用由云点播收取，具体规则请参见 [流量计费](https://www.tencentcloud.com/document/product/266/14666#.E5.8A.A0.E9.80.9F.E6.9C.8D.E5.8A.A1.3Cspan-id.3D.22speed.22.3E.3C.2Fspan.3E) 和 [流量资源包](https://www.tencentcloud.com/document/product/266/52806#2.-.E6.B5.81.E9.87.8F.E8.B5.84.E6.BA.90.E5.8C.85)，回源源站的流量费用由源站收取。
+

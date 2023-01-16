@@ -25,12 +25,12 @@ The custom origin-pull feature relies on the Video-on-demand CDN capability. By 
 ### Step 1: Create a custom domain name and configure  origin-pull information
 
 1. After the custom origin-pull is enabled, log in to the VOD console, and select **Distribution Playback Settings** > [Domain Management](https://console.tencentcloud.com/vod/distribute-play/domain) in the left navigation bar to enter the **Domain Management** page.
-2. Click **Custom** **origin server** **domain****s** of the origin site acceleration at the top to enter the page of the **custom domain name** of the origin site acceleration.
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_496822_PrkPl3xhE0MPoRyl_1673595982?w=1976&h=890)
+2. Click **Custom** **origin server** **domains** of the origin site acceleration at the top to enter the page of the **custom domain name** of the origin site acceleration.
+![img](https://qcloudimg.tencent-cloud.cn/raw/e68e04641c3ad616450a70c72d5d3dcd.png)
 3. Click Add Domain, fill in the registered domain name and select the acceleration region. For details, see [Customizing Domain Names](https://www.tencentcloud.com/document/product/266/35572).
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_647908_tCYpQPH7cqctptVA_1673596208?w=1401&h=238)
+![img](https://qcloudimg.tencent-cloud.cn/raw/0fbcc49821fd7eebffd9ad17a81072b1.png)
 4. Fill in the origin station configuration according to the user's actual origin-pull requirements. Currently, **self-owned** **server** and **third-party storage** are supported. The specific configuration instructions are as follows:   
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_578401_ojCvcS9fd2MZRMKq_1673597051?w=772&h=377) 
+![img](https://qcloudimg.tencent-cloud.cn/raw/9ac80033d6fb055e299a2f355d0d1825.png) 
    **Own origin server**
 If the user wants to use a business server running stably as the  origin site to accelerate the distribution of media files on it with the help of Video-on-Demand CDN, please configure the origin site as follows:
 <table>
@@ -86,22 +86,21 @@ If you want to accelerate the distribution of media files stored in third-party 
       <td>Enter a valid bucket access address as the origin server (it cannot contain http:// or http:// protocol header)</td>
    </tr>
 </table>
-
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_410171_Bny9OKoDjpKFSj_1_1673596412?w=1053&h=558)<br>
+![img](https://qcloudimg.tencent-cloud.cn/raw/f5ca4759794c94ffba9f6a960b9a8641.png)<br>
 If you choose a privately accessed third-party object storage bucket as the origin site, you need to fill in a valid access ID and key for origin-pull authentication. After the authentication is passed, the private storage bucket access will be enabled.<br>
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_817388_09QNHrxX6X1qmSaH_1673597120?w=694&h=514)
+![img](https://qcloudimg.tencent-cloud.cn/raw/66864ace26867520f76172f2901ad138.png)
 
 #### **Step 2: Customize domain name resolution**
 
 For the added custom accelerated domain name, you need to configure a CNAME on the DNS service provider specified by the domain name so that users can access your media files through the accelerated domain name. For details, see [VOD Accelerated Domain Name - Domain Name Resolution](https://www.tencentcloud.com/document/product/266/42076).
 
-#### **Step 3: View and modify the configuration results of custom origin****-pull**
+#### **Step 3: View and modify the configuration results of custom origin-pull**
 
 1. Go to **domain management**, enter the **custom origin server domains**, select the created domain name and click **Settings**.
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_238871_hvqcOSzBJNF5-3ar_1673597406?w=1947&h=864)
+![img](https://qcloudimg.tencent-cloud.cn/raw/3522690fd01bd3c0f90eb1065dc87965.png)
 2. Click **Basic Configuration** to view the origin-pull configuration information of the current custom domain name and modify it.
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_979899_tzCbGcP83UIMJRhJ_1673597546?w=1929&h=982)
+![img](https://qcloudimg.tencent-cloud.cn/raw/bb04aa08590e9f88680c29eb19a502b9.png)
 
 Through the above steps, users can complete the origin-pull configuration based on their own origin site or third-party object storage, and can distribute media files on the custom origin site through the Video-on-demand CDN. The specific distribution process is described as follows:
 
