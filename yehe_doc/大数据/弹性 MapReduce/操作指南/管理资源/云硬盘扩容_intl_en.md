@@ -9,11 +9,11 @@ If the data storage space of a node becomes insufficient as your business grows,
 ## Expanding Cloud Disk
 ### Directions
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page.
-2. 	Go to the **Resource Management** page and click **Expand Cloud Data Disk** in the **Operation** column of the target node to enter the expansion configuration page.
+2. Go to the **Resource Management** page and click **Expand Cloud Data Disk** in the **Operation** column of the target node to enter the expansion configuration page.
 
-3. 	If multiple cloud data disks are mounted to the current node, you can batch expand them to the same capacity.
+3. If multiple cloud data disks are mounted to the current node, you can batch expand them to the same capacity.
 
-4. 	An expanded disk will be initialized automatically, and you don't need to manually update the disk information.
+4. An expanded disk will be initialized automatically, and you don't need to manually update the disk information.
 
 ## Mounting a Cloud Disk
 ### Prerequisites
