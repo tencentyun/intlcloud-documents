@@ -74,7 +74,7 @@ v2.9.6 正式版本更新如下：
 
 <dx-alert infotype="notice" title="更新注意">
 -  如果从旧版本升级到 2.9.6 版本，请参见 [更新指引](https://intl.cloud.tencent.com/document/product/607/32363) 进行解决。
-
+</dx-alert>
 
 
 
@@ -99,7 +99,7 @@ v2.9.6 正式版本更新如下：
 > ?
 > - GME SDK 也支持**主机平台**（PlayStation、Xbox、Nintendo Switch），如果需要请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系 GME 开发者。
 > - 所有平台 SDK 具体编译工具链可参见 [编译工具链文档](https://intl.cloud.tencent.com/document/product/607/46711)。
-> - 默认提供 ITMG_ROOM_TYPE_FLUENCY 音质，如需使用标准音质以及高清音质，请通过 [提交工单](https://www.tencentcloud.com/zh/document/product/607/18521#:~:text=%E6%97%A5%E5%BF%97%E5%90%8E%EF%BC%8C%E9%80%9A%E8%BF%87-,%E6%8F%90%E4%BA%A4%E5%B7%A5%E5%8D%95,-%E8%81%94%E7%B3%BB%20GME%20%E5%BC%80%E5%8F%91) 联系GME开发者。
+> - 默认提供 ITMG_ROOM_TYPE_FLUENCY 音质，如需使用标准音质以及高清音质，请通过 [提交工单](https://www.tencentcloud.com/document/product/607/18521#:~:text=%E6%97%A5%E5%BF%97%E5%90%8E%EF%BC%8C%E9%80%9A%E8%BF%87-,%E6%8F%90%E4%BA%A4%E5%B7%A5%E5%8D%95,-%E8%81%94%E7%B3%BB%20GME%20%E5%BC%80%E5%8F%91) 联系GME开发者。
 
 
 
