@@ -67,8 +67,8 @@ The v2.9.6 is updated as follows:
 <li >Optimized the startup time of hardware devices to shorten the room entry time.</li>
 </ul ></td>
 <td>2023-01-18</td> 
-<td><li ><a href="https://www.tencentcloud.com/zh/document/product/607/18218">3D Sound Effect</a></li>
-<li ><a href="https://www.tencentcloud.com/zh/document/product/607/51114">Commanding
+<td><li ><a href="https://www.tencentcloud.com/document/product/607/18218">3D Sound Effect</a></li>
+<li ><a href="https://www.tencentcloud.com/document/product/607/51114">Commanding
 </a></li>
 </tr>
 </tbody></table>
@@ -93,7 +93,8 @@ To upgrade to v2.9.x, see [SDK Version Upgrade Guide](https://intl.cloud.tencent
 | iOS           | January 18, 2023| [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.6.intl/iOS/GME_ios_audio_sdk_2.9.6.92a797e4.zip) | [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.6.intl/iOS/GME_ios_audio_example_2.9.6.92a797e4.zip) | [Quick Integration of Native SDK](https://intl.cloud.tencent.com/document/product/607/40858) |
 | Android       | January 18, 2023 | [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.6.intl/Android/GME_android_audio_sdk_2.9.6.92a797e4.zip) | [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.6.intl/Android/GME_android_audio_example_2.9.6.92a797e4.zip) | [Quick Integration of Native SDK](https://intl.cloud.tencent.com/document/product/607/40858) |
 | macOS         | January 18, 2023| [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.6.intl/Mac/GME_mac_audio_sdk_2.9.6.92a797e4.zip) | [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.6.intl/Mac/GME_mac_audio_demo_2.9.6.92a797e4.zip) | [Quick Integration of Native SDK](https://intl.cloud.tencent.com/document/product/607/40858) |
-| Web       | 2022-06-20 | [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/H5/intl/GME_intl_Web_SDK_2.8.1.53.zip) | [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/H5/intl/GME_intl_Web_Demo_2.8.1.53.zip) 
+| Web       | 2022-06-20 | [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/H5/intl/GME_intl_Web_SDK_2.8.1.53.zip) | [Download](https://dldir1v6.qq.com/hudongzhibo/QCloud_TGP/GME/H5/intl/GME_intl_Web_Demo_2.8.1.53.zip) |[API Documentation](https://intl.cloud.tencent.com/document/product/607/30263) |
+
 
 > ?
 >
