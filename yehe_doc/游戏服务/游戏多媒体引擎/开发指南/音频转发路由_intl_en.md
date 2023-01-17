@@ -10,7 +10,7 @@ This can be achieved by the custom audio routing feature. Here, all five users e
 Audio rule distance: SetServerAudioRouteSendOperateType(AUDIO_ROUTE_SEND_WHITE_LIST,"two-player team list",ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE,"two-player team list");
 In this way, audio will be only sent to players in the list and will be only received from the three-player team.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/819dd334b2ba7af9f2813f2d6f28aea2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/KH6i143_819dd334b2ba7af9f2813f2d6f28aea2.png)
 
 
 ## Prerequisites
@@ -68,10 +68,10 @@ Set audio sending rules. There will be different sending effects for the differe
 | AUDIO_ROUTE_SEND_BLACK_LIST    | The local audio is sent upstream and will not be forwarded to people in the blocklist, which is provided by the parameter OpenIDForSend. |
 | AUDIO_ROUTE_SEND_WHITE_LIST    | The local audio is sent upstream and is forwarded to people in the allowlist, which is provided by the parameter OpenIDForSend. |
 >?
-- If the passed type is AUDIO_ROUTE_NOT_SEND_TO_ANYONE or AUDIO_ROUTE_SEND_TO_ALL, then the parameter OpenIDForSend does not take effect. You just need to enter null.
-- If the passed type is AUDIO_ROUTE_SEND_BLACK_LIST, the parameter OpenIDForSend will be the blocklist. Up to 10 people are supported.
-- If the passed type is AUDIO_ROUTE_SEND_WHITE_LIST, the parameter OpenIDForSend will be the allowlist. Up to 10 people are supported.
->
+>- If the passed type is AUDIO_ROUTE_NOT_SEND_TO_ANYONE or AUDIO_ROUTE_SEND_TO_ALL, then the parameter OpenIDForSend does not take effect. You just need to enter null.
+>- If the passed type is AUDIO_ROUTE_SEND_BLACK_LIST, the parameter OpenIDForSend will be the blocklist. Up to 10 people are supported.
+>- If the passed type is AUDIO_ROUTE_SEND_WHITE_LIST, the parameter OpenIDForSend will be the allowlist. Up to 10 people are supported.
+
 
 **ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE**
 
@@ -85,10 +85,10 @@ Set audio receiving rules. There will be different receiving effects for the dif
 | AUDIO_ROUTE_RECV_WHITE_LIST    | The local will only receive the audio of people in the allowlist. The allowlist is provided by the parameter OpenIDForSend. |
 
 >?
-- If the passed type is AUDIO_ROUTE_NOT_RECV_FROM_ANYONE or AUDIO_ROUTE_RECV_FROM_ALL, the parameter OpenIDForSend does not take effect.
-- If the passed type is AUDIO_ROUTE_RECV_BLACK_LIST, the parameter OpenIDForSend will be the blocklist. Up to 10 people are supported.
-- If the passed type is AUDIO_ROUTE_RECV_WHITE_LIST, the parameter OpenIDForSend will be the allowlist. Up to 10 people are supported.
->
+>- If the passed type is AUDIO_ROUTE_NOT_RECV_FROM_ANYONE or AUDIO_ROUTE_RECV_FROM_ALL, the parameter OpenIDForSend does not take effect.
+>- If the passed type is AUDIO_ROUTE_RECV_BLACK_LIST, the parameter OpenIDForSend will be the blocklist. Up to 10 people are supported.
+>- If the passed type is AUDIO_ROUTE_RECV_WHITE_LIST, the parameter OpenIDForSend will be the allowlist. Up to 10 people are supported.
+
 
 #### Returned values
 

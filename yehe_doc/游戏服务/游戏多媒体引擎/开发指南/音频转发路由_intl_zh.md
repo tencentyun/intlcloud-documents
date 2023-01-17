@@ -10,7 +10,7 @@
 音频规则距离：SetServerAudioRouteSendOperateType(AUDIO_ROUTE_SEND_WHITE_LIST,"2人队伍的list",ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE,"2人队伍的list");
 这样声音就只发送给list里面的人，且只接收3人队伍的声音。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/819dd334b2ba7af9f2813f2d6f28aea2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/KH6i143_819dd334b2ba7af9f2813f2d6f28aea2.png)
 
 
 ## 前提条件
@@ -68,9 +68,9 @@ public abstract int SetServerAudioRoute(ITMGContext.ITMG_SERVER_AUDIO_ROUTE_SEND
 | AUDIO_ROUTE_SEND_BLACK_LIST    | 本端音频上行将不转发给黑名单的人，黑名单由参数 OpenIDForSend 提供 |
 | AUDIO_ROUTE_SEND_WHITE_LIST    | 本端音频上行将只转发给白名单的人，白名单由参数 OpenIDForSend 提供 |
 >?
-- 如果类型传入 AUDIO_ROUTE_NOT_SEND_TO_ANYONE 以及 AUDIO_ROUTE_SEND_TO_ALL ，此时的参数 OpenIDForSend 不生效，只需要填 null。
-- 如果类型传入 AUDIO_ROUTE_SEND_BLACK_LIST ，此时参数 OpenIDForSend 为黑名单列表，最多支持 10 个。
-- 如果类型传入 AUDIO_ROUTE_SEND_WHITE_LIST ，此时参数 OpenIDForSend 为白名单列表，最多支持 10 个。
+>- 如果类型传入 AUDIO_ROUTE_NOT_SEND_TO_ANYONE 以及 AUDIO_ROUTE_SEND_TO_ALL ，此时的参数 OpenIDForSend 不生效，只需要填 null。
+>- 如果类型传入 AUDIO_ROUTE_SEND_BLACK_LIST ，此时参数 OpenIDForSend 为黑名单列表，最多支持 10 个。
+>- 如果类型传入 AUDIO_ROUTE_SEND_WHITE_LIST ，此时参数 OpenIDForSend 为白名单列表，最多支持 10 个。
 >
 
 **ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE**
@@ -85,9 +85,9 @@ public abstract int SetServerAudioRoute(ITMGContext.ITMG_SERVER_AUDIO_ROUTE_SEND
 | AUDIO_ROUTE_RECV_WHITE_LIST      | 本端只接收白名单的人的音频声音，白名单由参数 OpenIDForSend 提供 |
 
 >?
-- 如果类型传入 AUDIO_ROUTE_NOT_RECV_FROM_ANYONE 以及 AUDIO_ROUTE_RECV_FROM_ALL OpenIDForSend 不生效。
-- 如果类型传入 AUDIO_ROUTE_RECV_BLACK_LIST ，此时参数 OpenIDForSend 为黑名单列表，最多支持 10 个。
-- 如果类型传入 AUDIO_ROUTE_RECV_WHITE_LIST ，此时参数 OpenIDForSend 为白名单列表，最多支持 10 个。
+>- 如果类型传入 AUDIO_ROUTE_NOT_RECV_FROM_ANYONE 以及 AUDIO_ROUTE_RECV_FROM_ALL OpenIDForSend 不生效。
+>- 如果类型传入 AUDIO_ROUTE_RECV_BLACK_LIST ，此时参数 OpenIDForSend 为黑名单列表，最多支持 10 个。
+>- 如果类型传入 AUDIO_ROUTE_RECV_WHITE_LIST ，此时参数 OpenIDForSend 为白名单列表，最多支持 10 个。
 >
 
 #### 返回值

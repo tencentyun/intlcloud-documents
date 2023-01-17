@@ -181,7 +181,7 @@ If a call error occurs, you can check the cause and solution based on the [error
 
 For example, when you use the SDK, if the 3D sound effect API returns error 7003, you can check the error code document to know that the cause is that `InitSpatializer` has not been called. Then, check whether `InitSpatializer` is called in your code in the correct sequence.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1394eb8f4947c28728a00c873b3ecb0c.png)
+
 
 ### Asking for help
 If the problem cannot be solved through the documentation and error code, contact us for assistance as instructed in [Troubleshooting Guide](https://www.tencentcloud.com/document/product/607/51562).
