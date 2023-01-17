@@ -78,10 +78,6 @@ APIs supporting resource-level authorization include:
 <td >Queries the refund amount of terminated node</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
-<td >DescribeModifyPayModeNodes</td>
-<td >Queries cluster resources changed from pay-as-you-go to monthly subscription</td>
-<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
-</tr><tr>
 <td >ModifySecurityGroup</td>
 <td >Modifies cluster security group</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
@@ -191,7 +187,7 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifyAutoScaleGlobalConf</td>
-<td >Updates the global configuration of automatic scaling</td>
+<td >Updates the global configuration of auto scaling</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeFlowStatusDetail</td>
@@ -223,15 +219,15 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleGlobalConf</td>
-<td >Gets the global configuration of automatic scaling</td>
+<td >Gets the global configuration of auto scaling</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleSpecs</td>
-<td >Gets automatic scaling specification</td>
+<td >Gets auto scaling specification</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifyAutoScaleSpecs</td>
-<td >Modifies automatic scaling specification</td>
+<td >Modifies auto scaling specification</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >AddMetricScaleStrategy</td>
@@ -239,15 +235,15 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DeleteAutoScaleSpec</td>
-<td >Deletes automatic scaling specification</td>
+<td >Deletes auto scaling specification</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleRecords</td>
-<td >Gets automatic scaling history</td>
+<td >Gets auto scaling history</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DeleteAutoScaleStrategy</td>
-<td >Deletes automatic scaling rule</td>
+<td >Deletes auto scaling rule</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifyStrategyPriority</td>
@@ -255,19 +251,19 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleMetaRange</td>
-<td >Gets automatic scaling metadata</td>
+<td >Gets auto scaling metadata</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeAutoScaleStrategies</td>
-<td >Gets automatic scaling rules</td>
+<td >Gets auto scaling rules</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifyAutoScaleStrategy</td>
-<td >Modifies automatic scaling rule</td>
+<td >Modifies auto scaling rule</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >AddAutoScaleSpec</td>
-<td >Adds automatic scaling specification</td>
+<td >Adds auto scaling specification</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >TerminateAutoScaleNodes</td>
@@ -299,7 +295,7 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >UnbindInstanceAndNodesTags</td>
-<td >Unbinds cluster from tags</td>
+<td >Unbinds cluster from labels</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeNodeResourceConfigFast</td>
@@ -557,9 +553,179 @@ APIs supporting resource-level authorization include:
 <td >	Gets the `AccessKey` of cluster</td>
 <td >	emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr>
+<tr>
+<td>DescribeAttachableDisks</td>
+<td>Queries the cloud disks that can be mounted to the node</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>InquirePriceRenewDisks</td>
+<td>Queries the price for cloud disk renewal</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>AttachDisks</td>
+<td>Mounts cloud disk</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeNodeDataDisks</td>
+<td>Queries the data disk information of node</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>InquirePriceResizeDisks</td>
+<td>Queries the price for cloud disk expansion</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ResizeDataDisks</td>
+<td>Expands cloud disk</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyAutoRenewFlag</td>
+<td>Automatic Renewal</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ScaleOutCluster</td>
+<td>Adds cluster nodes</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>StartStopServiceOrMonitor</td>
+<td>Starts or stops monitoring or service</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeClusterClients</td>
+<td>Views the client information on the page</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeDelayedServiceConfig</td>
+<td>Gets expired configuration (configuration management page)</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeFailedServiceConfig</td>
+<td>Gets failed configuration (configuration management page)</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeServiceConfDimensionDiff</td>
+<td>Compares the configurations at different levels (configuration management page)</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyEmrManagerAgent</td>
+<td>Updates EMR Manager Agent</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyServiceConfDiff</td>
+<td>Overwrites different configuration (configuration management)</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyYarnLabelState</td>
+<td>Delivers an instruction to add, delete, or bind a label</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeYarnScheduleHistory</td>
+<td>Views the YARN resource scheduling history</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeYarnDeployMessage</td>
+<td>Gets the prompt message</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyYarnDeploy</td>
+<td>Applies deployment</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeParentLabels</td>
+<td>Gets the list of labels of the parent queue</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeYarnLastestLabels</td>
+<td>Gets the latest label information</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyYarnLabels</td>
+<td>Syncs YARN node labels</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyYarnQueue</td>
+<td>Modifies the resource pool in resource scheduling</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyOldLabelConfig</td>
+<td>Cancels saving the edited content in YARN label management</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeNodeLabelWebUrl</td>
+<td>Gets the web URL of YARN node labels</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeNodeManagerHosts</td>
+<td>Gets the list of NodeManager IPs</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyGlobalScaleConf</td>
+<td>Modifies the scaling configuration of cluster, including whether to enable scaling and the scaling type</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeGlobalScaleConf</td>
+<td>Gets the scaling configuration of cluster, including whether to enable scaling and the scaling type</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>ModifyManagedScaleGlobalConf</td>
+<td>Updates the global configuration of managed scaling</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeManagedScaleGlobalConf</td>
+<td>Gets the global configuration of managed scaling</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeServiceComponentInfos</td>
+<td>Describes the role information of container cluster</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DescribeRssClusterList</td>
+<td>Gets the RSS clusters in the same EKS cluster as the current Spark cluster</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>CreateSparkLinkRss</td>
+<td>Associates RSS cluster with Spark cluster</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td>DeleteSparkLinkRss</td>
+<td>Disassociates RSS cluster from Spark cluster</td>
+<td>emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
 </tbody>
 </table>
-		
+
 
 ## List of APIs supporting API-level authorization
 <table>
@@ -665,7 +831,7 @@ APIs supporting resource-level authorization include:
 <td >Gets the information of spread placement group</td>
 </tr><tr>
 <td >DescribeTags</td>
-<td >Pulls all tags of cluster</td>
+<td >Pulls all labels of cluster</td>
 </tr><tr>
 <td >InquiryPriceCreateInstance</td>
 <td >Queries the price of created instance</td>
@@ -729,7 +895,10 @@ APIs supporting resource-level authorization include:
 </tr>
 <tr>
 <td >ModifyResourcesTags</td>
-<td >Forcibly modifies tag</td>
+<td >Forcibly modifies label</td>
+</tr><tr>
+<td >CreateCluster</td>
+<td >Creates cluster</td>
 </tr>
 </tbody>
 </table>
