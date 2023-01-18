@@ -27,16 +27,3 @@
 
 
 - API 方式：您可使用 API 接口创建音频降噪任务，使用详情请参见 [API 文档](https://intl.cloud.tencent.com/document/product/1045/48933)。
-
-
-### 通过工作流方式
-
-数据万象提供工作流服务，您可选择对某一存储桶或特定路径开启工作流，开启后上传至该存储桶或路径的文件将自动进行音频降噪相关操作，并将音质优化后的文件保存在指定位置。
-
-#### 创建工作流
-
-您可使用数据万象控制台创建工作流，详情请见 [工作流文档](https://intl.cloud.tencent.com/document/product/1045/43604)。
-
-#### API 创建、删除、查询、更新工作流
-
-您可使用 API 接口进行 [创建工作流](https://intl.cloud.tencent.com/document/product/1045/43733)、[删除工作流](https://intl.cloud.tencent.com/document/product/1045/43734)、[查询工作流](https://intl.cloud.tencent.com/document/product/1045/50339)、[更新工作流](https://intl.cloud.tencent.com/document/product/1045/43738) 操作。
