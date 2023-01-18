@@ -7,12 +7,15 @@ This Personal Information Protection Policy for CI SDK ("Policy") is intended to
 Please read this Policy carefully. If you are a developer, please acknowledge that you fully understand and agree to this Policy before integrating the SDK Product. If you do not consent to this Policy or agree to fulfill your obligations to protect end users' personal information in accordance with this Policy, you must immediately stop connecting to and using the SDK Product. You shall integrate the SDK Product and process end users' personal information only after obtaining their consent.
 
 ## Notes
+
 **If you are a developer,**
-1. 	**You shall comply with applicable laws and regulations in connection with your collection, use, and processing of end users' personal information, including but not limited to developing and publishing a privacy policy governing personal information protection.**
-2. 	**Before integrating the SDK Product, you shall inform end users of the collection, use, and processing of their personal information by the SDK Product and legally obtain their consent.**
-3. 	**Unless otherwise required by laws and regulations, you shall not collect end users' personal information before obtaining their consent.**
+
+1. **You shall comply with applicable laws and regulations in connection with your collection, use, and processing of end users' personal information, including but not limited to developing and publishing a privacy policy governing personal information protection.**
+2. **Before integrating the SDK Product, you shall inform end users of the collection, use, and processing of their personal information by the SDK Product and legally obtain their consent.**
+3. **Unless otherwise required by laws and regulations, you shall not collect end users' personal information before obtaining their consent.**
 4. **You shall provide an easy-to-use, legally compliant mechanism that allows end users to exercise their rights and explain to them how to query, copy, modify, delete, restrict the processing of, transfer, or get a copy of their personal information, withdraw their consent, and cancel their account.**
 5. **You shall comply with the requirements specified in this Policy.**
+
 
 If you have any questions or comments about the content of this Policy, feel free to contact us through the channels as provided in Article 7 of this Policy.
 
