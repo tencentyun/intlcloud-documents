@@ -25,6 +25,6 @@ Click **Submit** to start the prefetch. It will take around 10 minutes to comple
 2. Click **Operation Record** to enter the "Operation Record" page.
 3. This page displays your purge and prefetch records, including operation type, operation object, operation time, status, and progress. You can query by time or content.
 
-
+>? The current console only supports viewing the operation records of File ID cache refresh and content warming.
 
 

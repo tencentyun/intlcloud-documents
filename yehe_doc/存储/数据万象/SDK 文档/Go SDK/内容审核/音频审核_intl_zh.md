@@ -6,21 +6,21 @@
 - 主账号请 [单击此处](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) 进行角色授权。
 - 子账号请参见 [授权子账号接入数据万象服务](https://intl.cloud.tencent.com/document/product/1045/33450) 文档。
 
-本文档提供关于文档审核的相关的 API 概览以及 SDK 示例代码。
+本文档提供关于音频审核的相关的 API 概览以及 SDK 示例代码。
 
 | API           |  操作描述               |
 | :--------------- | :------------------ |
-| [创建任务](https://intl.cloud.tencent.com/document/product/436/48258) | 用于提交一个文档审核任务   |
-| [查询任务](https://intl.cloud.tencent.com/document/product/436/48259) | 用于查询指定的文档审核任务 |
+| [创建任务](https://intl.cloud.tencent.com/document/product/436/48262) | 用于提交一个音频审核任务   |
+| [查询任务](https://intl.cloud.tencent.com/document/product/436/48263) | 用于查询指定的音频审核任务 |
 
 ## 创建任务
 
-PutDocumentAuditingJob 接口用来提交一个文档审核任务。您可以通过主动设置回调地址接收审核信息，也可以通过 JobId 进行查询。
+PutAudioAuditingJob 接口用来提交一个音频审核任务。您可以通过主动设置回调地址接收审核信息，也可以通过 JobId 进行查询。
 
 #### 方法原型
 
 ```go
-func (s *CIService) PutDocumentAuditingJob(ctx context.Context, opt *PutDocumentAuditingJobOptions) (*PutDocumentAuditingJobResult, *Response, error)
+func (s *CIService) PutAudioAuditingJob(ctx context.Context, opt *PutAudioAuditingJobOptions) (*PutAudioAuditingJobResult, *Response, error)
 ```
 
 #### 请求示例
@@ -37,26 +37,24 @@ c := cos.NewClient(b, &http.Client{
 			SecretKey: os.Getenv("SECRETKEY"),
         }
 })
-opt := &cos.PutDocumentAuditingJobOptions{
-	InputUrl: "http://www.example.com/doctest.docx",
-	InputType: "docx",
-	Conf: &cos.DocumentAuditingJobConf{
+opt := &cos.PutAudioAuditingJobOptions{
+	InputObject: "test.mp3",
+	Conf: &cos.AudioAuditingJobConf{
 		DetectType: "Porn,Ads",
 	},
 }
-res, _, err := c.CI.PutDocumentAuditingJob(context.Background(), opt)
+res, _, err := c.CI.PutAudioAuditingJob(context.Background(), opt)
 ```
 
 #### 参数说明
 
 ```go
-type PutDocumentAuditingJobOptions struct {
+type PutAudioAuditingJobOptions struct {
     InputObject   string
     InputUrl      string
-    InputType     string
     InputDataId   string
     InputUserInfo *UserExtraInfo
-    Conf          *DocumentAuditingJobConf
+    Conf          *AudioAuditingJobConf
 }
 type UserExtraInfo struct {
 	TokenId  string
@@ -67,38 +65,38 @@ type UserExtraInfo struct {
 	IP       string
 	Type     string
 }
-type DocumentAuditingJobConf struct {
+type AudioAuditingJobConf struct {
     DetectType      string
     Callback        string
+	CallbackVersion string
 	BizType         string
 }
 ```
 
 | 参数名称    | 参数描述                                                     | 类型   |
 | ----------- | ------------------------------------------------------------ | ------ |
-| InputObject | 存储在 COS 存储桶中的文件名称，例如在目录 test 中的文件test.doc，则文件名称为 `test/test.doc`。Object 和 Url 只能选择其中一种。 | String |
-| InputUrl    | 文档文件的链接地址，例如 `http://www.example.com/doctest.doc`，Object 和 Url 只能选择其中一种。 | String |
-| InputType   | 指定文档文件的类型，如未指定则默认以文件的后缀为类型。如果文件没有后缀，该字段必须指定，否则会审核失败。例如：doc、docx、ppt、pptx 等。 | String |
-| InputDataId | 文档标识，该字段在结果中返回原始内容，长度限制为512字节。 | String |
+| InputObject | 存储在 COS 存储桶中的音频文件名称，例如在目录 test 中的文件 audio.mp3，则文件名称为 `test/audio.mp3`。Object 和 Url 只能选择其中一种。 | String |
+| InputUrl    | 音频文件的链接地址，例如 `http://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/audio.mp3`。Object 和 Url 只能选择其中一种。 | String |
+| InputDataId | 音频标识，该字段在结果中返回原始内容，长度限制为512字节。 | String |
 | InputUserInfo | 用户业务字段。 | Object |
-| Conf        | 审核规则配置。                                                 | Struct |
-| BizType     | 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见 [设置审核策略](https://intl.cloud.tencent.com/document/product/436/52095)。 | String |
+| Conf        | 审核规则配置。                                                | Struct |
+| BizType      | 审核策略，不填写则使用默认策略。可在控制台进行配置，详情请参见 [设置审核策略](https://intl.cloud.tencent.com/document/product/436/52095)。 | String |
 | DetectType  | 审核的场景类型，有效值：Porn（涉黄）、Ads（广告），可以传入多种类型，不同类型以逗号分隔，例如：Porn,Ads。如您有更多场景的审核需要，请使用 BizType 参数。 | String |
-| Callback    | 审核结果可以回调形式发送至您的回调地址，支持以 `http://` 或者 `https://` 开头的地址，例如：`http://www.callback.com`。 | String |
+| Callback    | 审核结果以回调形式发送至您的回调地址，支持以 `http://` 或者 `https://` 开头的地址，例如：`http://www.callback.com`。 | String |
+| CallbackVersion | 回调内容的结构，有效值：Simple（回调内容包含基本信息）、Detail（回调内容包含详细信息）。默认为 Simple。 | String |
 
 #### 结果说明
 
-调用 PutDocumentAuditingJob 函数，会解析 api 返回的 xml 内容到 PutDocumentAuditingJobResult 结构，具体返回参数可查看 [提交文档审核任务](https://intl.cloud.tencent.com/document/product/436/48258) 文档。
-
+调用 PutAudioAuditingJob 函数，会解析 api 返回的 xml 内容到 PutAudioAuditingJobResult 结构，具体返回参数可查看 [提交音频审核任务](https://intl.cloud.tencent.com/document/product/436/48262) 文档。
 
 ## 查询任务
 
-GetDocumentAuditingJob 接口用来查询指定的文档审核任务。您可以根据文档审核任务的 JobId 来查询文档审核结果。
+GetAudioAuditingJob 接口用来查询指定的音频审核任务。您可以根据音频审核任务的 JobId 来查询音频审核结果。
 
 #### 方法原型
 
 ```go
-func (s *CIService) GetDocumentAuditingJob(ctx context.Context, jobid string) (*GetDocumentAuditingJobResult, *Response, error)
+func (s *CIService) GetAudioAuditingJob(ctx context.Context, jobid string) (*GetAudioAuditingJobResult, *Response, error)
 ```
 
 #### 请求示例
@@ -115,8 +113,8 @@ c := cos.NewClient(b, &http.Client{
 			SecretKey: os.Getenv("SECRETKEY"),
         }
 })
-jobId := "sdce25f391a72e11eb99f********"
-res, _, err := c.CI.GetDocumentAuditingJob(context.Background(), jobId)
+jobId := "sace25f391a72e11eb99f********"
+res, _, err := c.CI.GetAudioAuditingJob(context.Background(), jobId)
 ```
 
 #### 参数说明
@@ -127,4 +125,4 @@ res, _, err := c.CI.GetDocumentAuditingJob(context.Background(), jobId)
 
 #### 结果说明
 
-调用 GetDocumentAuditingJob 函数，会解析 api 返回的 xml 内容到 GetDocumentAuditingJobResult 结构，具体返回参数可查看 [查询文档审核任务结果](https://intl.cloud.tencent.com/document/product/436/48259) 文档。
+调用 GetAudioAuditingJob 函数，会解析 api 返回的 xml 内容到 GetAudioAuditingJobResult 结构，具体返回参数可查看 [查询音频审核任务结果](https://intl.cloud.tencent.com/document/product/436/48263) 文档。

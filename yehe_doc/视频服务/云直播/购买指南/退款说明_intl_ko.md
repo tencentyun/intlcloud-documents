@@ -26,7 +26,7 @@
 - 티켓을 제출하여 환불을 신청하거나 콘솔에서 셀프 환불을 진행할 수 있습니다. 현재 셀프 환불은 [트래픽 패키지](#flow_back) 및 트랜스코딩 패키지(표준 및 TSC 트랜스코딩 패키지 포함)에만 사용할 수 있습니다.
 
 ### 티켓 제출
-1. [콘솔](https://console.cloud.tencent.com/) 로그인 후 우측 상단의 **티켓 > [티켓 제출](https://console.cloud.tencent.com/workorder/category)**을 클릭합니다.
+1. [콘솔](https://console.cloud.tencent.com/) 로그인 후 우측 상단의 티켓 > [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 클릭합니다.
 2. 검색 상자에 CSS를 입력하고 **CSS**를 선택합니다.
 3. 문제 유형으로 ‘**청구서 및 환불**’을 선택하고 **티켓 생성**을 클릭합니다.
 4. 양식을 작성하고 **티켓 제출**을 클릭합니다.

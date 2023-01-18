@@ -1,14 +1,19 @@
 
 ## Overview
+This document describes how to use the content moderation feature provided by [Cloud Infinite (CI)](https://www.tencentcloud.com/document/product/1045). CI fully integrates the processing capabilities with the COS SDK.
+
+>?To use the content moderation service, you need to have the permission to use CI:
+- For root accounts, click [here](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) for role authorization.
+- For sub-accounts, see [Authorizing Sub-Accounts to Access CI Services](https://intl.cloud.tencent.com/document/product/1045/33450).
 
 This document provides an overview of APIs and SDK code samples for webpage moderation.
 
 | API | Description |
 | :--------------- | :------------------ |
-|[Submitting webpage moderation job](https://intl.cloud.tencent.com/document/product/436/48282)  | Submits webpage moderation job.   |
-|[Querying webpage moderation job result](https://intl.cloud.tencent.com/document/product/436/48283)  | Queries the result of specified webpage moderation job. |
+|[Submitting webpage moderation job](https://intl.cloud.tencent.com/document/product/436/48282)  | Submits a webpage moderation job.   |
+|[Querying webpage moderation job result](https://intl.cloud.tencent.com/document/product/436/48283)  | Queries the result of a specified webpage moderation job. |
 
-## Creating Job
+## Creating a Job
 
 This API (`PutWebpageAuditingJob`) is used to submit a webpage moderation job. You can receive the moderation result by setting the callback address or querying by `JobId`.
 
@@ -21,7 +26,7 @@ func (s *CIService) PutWebpageAuditingJob(ctx context.Context, opt *PutWebpageAu
 #### Sample request
 
 ```go
-// Replace `examplebucket-1250000000` and `COS_REGION` with your actual information
+// Replace `examplebucket-1250000000` and `COS_REGION` with the actual information
 // For CI jobs, you need to provide the CIURL.
 bu, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 cu, _ := url.Parse("https://examplebucket-1250000000.ci.COS_REGION.myqcloud.com")
@@ -81,7 +86,7 @@ type WebpageAuditingJobConf struct {
 
 Calling the `PutWebpageAuditingJob` function will parse the XML content returned by the API into a `PutWebpageAuditingJobResult` structure. For specific response parameters, see [Submitting Webpage Moderation Job](https://intl.cloud.tencent.com/document/product/436/48282).
 
-## Querying Job
+## Querying a Job
 
 This API (`GetWebpageAuditingJob`) is used to query the result of the specified webpage moderation job by `JobId`.
 
@@ -94,7 +99,7 @@ func (s *CIService) GetWebpageAuditingJob(ctx context.Context, jobid string) (*G
 #### Sample request
 
 ```go
-// Replace `examplebucket-1250000000` and `COS_REGION` with your actual information
+// Replace `examplebucket-1250000000` and `COS_REGION` with the actual information
 // For CI jobs, you need to provide the CIURL.
 bu, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 cu, _ := url.Parse("https://examplebucket-1250000000.ci.COS_REGION.myqcloud.com")
