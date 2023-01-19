@@ -232,6 +232,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 62.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52287).
 63.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52520).
 64.[Application Performance Management](https://www.tencentcloud.com/document/product/1166/52837).
+65.[BM Cloud Physical Machine](https://www.tencentcloud.com/document/product/1171/52878).
 
 ## 10.Jurisdiction-specific Requirements
 
