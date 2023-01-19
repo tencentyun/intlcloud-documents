@@ -7,6 +7,6 @@
  - 方式1：单击界面左上方的**切换用户目录**，选择需要切换的目录。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/b88e8d6b042c01977863cc5942b5ac8f.png)
  - 方式2：单击界面右上方的**管理用户目录**，进入用户目录管理详情页面，选择需要切换的目录。
-![img](https://docimg2.docs.qq.com/image/AgAABiglyJ5Q-sqe_qBEtZOj71b8SknQ.png?w=1095&h=66)
+![img](https://qcloudimg.tencent-cloud.cn/raw/6642cc13fd71ecebcb7af67b437e999e.png)
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/b88e8d6b042c01977863cc5942b5ac8f.png)
