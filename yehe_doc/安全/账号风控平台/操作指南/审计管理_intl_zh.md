@@ -5,6 +5,6 @@
 1. 登录 [账号风控平台](https://console.tencentcloud.com/ciam)，在左侧导航栏，选择**审计管理** > **用户操作日志**，进入用户操作日志页面。
 2. 在用户操作日志页面，可以通过切换时间或者使用搜索框，来查看用户操作日志。
  - 单击切换“时间”，选择今天、昨天、近7天、近30天的日期进行日志查看。
- ![img](https://docimg5.docs.qq.com/image/AgAABiglyJ7cG0VW_jdP96b43kopQNiI.png?w=700&h=174)
+ ![img](https://qcloudimg.tencent-cloud.cn/raw/efa46e980d364c49644860732957a6e8.png)
  - 在搜索框中输入日志类型、日志结果、认证源、应用，单击![](https://main.qcloudimg.com/raw/af306b823b11c43d32888a04841864a1.png)进行日志搜索。
- ![img](https://docimg8.docs.qq.com/image/AgAABiglyJ4E5buRU7hOJZ3cJI9Atndw.png?w=1200&h=288)
+ ![img](https://qcloudimg.tencent-cloud.cn/raw/661df366a0eb2d0590698d0d53c5e3ca.png)
