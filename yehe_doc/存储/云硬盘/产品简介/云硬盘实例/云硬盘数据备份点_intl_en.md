@@ -28,6 +28,8 @@ For example, if you purchase a cloud disk on May 2 and configure the data backup
 ## Billing Details
 #### Pricing
 The billing of the data backup point quota is only related to the size of the cloud disk. The billing mode of the quota is the same as that of the cloud disk. For billing details, see [Price Overview](https://intl.cloud.tencent.com/document/product/362/2413).
+>?Cloud disk data backup points enjoy a 50% discount for a limited time. The discount period:September 12, 2022 to September 12, 2023.
+
 
 #### Fees after the adjustment
 When you increase or decrease the data backup point quota, you can find the billing rules and examples in [Fees After Adjustment of Data Backup Point Quota](https://intl.cloud.tencent.com/document/product/362/50027#description).
