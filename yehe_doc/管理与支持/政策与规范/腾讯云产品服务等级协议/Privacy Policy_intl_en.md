@@ -721,6 +721,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 61.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52288).
 62.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52519).
 63.[Application Performance Management](https://www.tencentcloud.com/document/product/1166/52836).
+64.[BM Cloud Physical Machine](https://www.tencentcloud.com/document/product/1171/52877).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
