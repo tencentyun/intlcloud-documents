@@ -29,14 +29,4 @@ You can create an audio noise reduction job through the console or API for exist
 - API: You can create an audio noise reduction job through API as instructed in [Submitting Audio Noise Reduction Job](https://intl.cloud.tencent.com/document/product/1045/48933) in the API documentation.
 
 
-### Through workflow
 
-CI provides the workflow service. You can enable a workflow for a bucket or a specific path. Then, audio noise reduction will be automatically performed on files uploaded to the bucket or path, and the muxed files will be saved in the specified location.
-
-#### Creating a workflow
-
-You can create a workflow using the CI console. For more information, see [Workflow](https://intl.cloud.tencent.com/document/product/1045/43604).
-
-#### Creating, deleting, querying, and updating a workflow through API
-
-You can [create a workflow](https://intl.cloud.tencent.com/document/product/1045/43733), [delete a workflow](https://intl.cloud.tencent.com/document/product/1045/43734), [query workflows](https://intl.cloud.tencent.com/document/product/1045/50339), and [update a workflow](https://intl.cloud.tencent.com/document/product/1045/43738) through APIs.
