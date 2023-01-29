@@ -1,7 +1,8 @@
-## 개요
-데이터베이스 관리 콘솔(Database Management Console)은 Tencent Cloud의 데이터베이스 관리 툴입니다. DB 테이블 레벨 작업, 실시간 모니터링, 인스턴스 세션 관리, SQL 창, 데이터 관리를 통합한 데이터베이스 관리 서비스를 제공합니다.
 
-현재 TencentDB for MySQL, TencentDB for MariaDB, TDSQL-C for MySQL, TencentDB for Redis, TDSQL MySQL 버전을 지원합니다.
+## 개요
+Database Management Center(DMC)는 Tencent Cloud의 데이터베이스 관리 툴입니다. DB 테이블 레벨 작업, 실시간 모니터링, 인스턴스 세션 관리, SQL 창, 데이터 관리를 통합한 데이터베이스 관리 서비스를 제공합니다.
+
+현재 TencentDB for MySQL, TencentDB for MariaDB, 클라우드 네이티브 데이터베이스 TDSQL-C(MySQL 버전과 호환), TencentDB for Redis, TDSQL for MySQL을 지원합니다.
 
 ## 기능 소개
 - **데이터 관리**
