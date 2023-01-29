@@ -158,7 +158,7 @@ $ goosefs fs ls /data/test.txt
 
 ### 3. Storing GooseFS data persistently
 
-Run the `persit` command to save the data to the remote UFS:
+Run the `persist` command to save the data to the remote UFS:
 
 ```plaintext
 $ goosefs fs persist /data/test.txt
