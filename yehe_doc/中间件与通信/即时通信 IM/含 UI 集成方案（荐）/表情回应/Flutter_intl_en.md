@@ -40,7 +40,7 @@ A field of the "Message Reaction" function switch **isUseMessageReaction** been 
 ```dart
 TIMUIKitChat(
   config: TIMUIKitChatConfig(
-    isUseMessageReaction: true 或 false, // Add this line
+    isUseMessageReaction: true  false, // Add this line
     // ... Other configurations
   ),
   // ... Other configurations
