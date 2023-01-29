@@ -4,7 +4,7 @@ GooseFS 基于开源 Alluxio 的架构，提供强大的分布式 Cache 能力�
 
 主要通过以下两套方式：
 
-- GooseFS NameSpace 远端存储: NS 存储空间底座来自于外部存储，可以跨越 COSN 和 HDFS，连接一个或者多个 NS 到同一个底层存储，可以持久化海量数据。选用 COSN 的存算分离方案，GooseFS NameSpace 借助 COSN 可以给大数据存储提供弹性扩展和高可用能力。
+- GooseFS NameSpace 远端存储：NS 存储空间底座来自于外部存储，可以跨越 COSN 和 HDFS，连接一个或者多个 NS 到同一个底层存储，可以持久化海量数据。选用 COSN 的存算分离方案，GooseFS NameSpace 借助 COSN 可以给大数据存储提供弹性扩展和高可用能力。
 - GooseFS 本地 Cache 存储：GooseFS 通过 master 和 worker 提供的分布式 Cache 能力，将应用层产生的数据持久化在应用节点本地的内存和磁盘上，主要存储热数据和暂态数据。每个本地存储节点都可由用户配置，NameSpace 对接的远端持久化层也会经过同一个 client 服务用户的读取操作。
 
 用户可以操作 Cache Policy，决定读写模式中使用本地 Cache 存储和 NameSpace 远端存储。
@@ -144,7 +144,7 @@ $ goosefs fs ls /data/test.txt
 
 ### 2. 往 GooseFS 中加载数据
 
-通过 load 指令可以从 GooseFS 中加在数据，如下示例展示了释放数据后，GooseFS 中数据的状态变成 100% ：
+通过 load 指令可以从 GooseFS 中加载数据，如下示例展示了释放数据后，GooseFS 中数据的状态变成 100% ：
 
 ```plaintext
 $ goosefs fs load /data/test.txt
@@ -158,7 +158,7 @@ $ goosefs fs ls /data/test.txt
 
 ### 3. 在 GooseFS 中持久化数据
 
-通过 persit 指令可以将数据持久化到远端存储系统 UFS 中：
+通过 persist 指令可以将数据持久化到远端存储系统 UFS 中：
 
 ```plaintext
 $ goosefs fs persist /data/test.txt
