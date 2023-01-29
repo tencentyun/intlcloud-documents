@@ -18,7 +18,7 @@ You can [set an alarm policy](https://intl.cloud.tencent.com/document/product/24
 You can query the logs shipped by the [logging](https://intl.cloud.tencent.com/document/product/436/16920) feature to view file deletion logs. After access logging is enabled, you can load log files to DLC to filter deletion logs. Below is a sample deletion log. You can search for the `DELETE` operation in the `reqMethod` field to get such logs:
 
 ```plaintext
-1.0 examplebucket-125000000 ap-chengdu 2020-02-10T13:07:00Z examplebucket-125000000.cos.ap-chengdu.myqcloud.com DELETEObject 110.110.110.110 AKIDSuCmiBvppcdxShtPrCjhEUPFpzSzmXEEhG2bFVgd7-J6AsmEPu8NYMOhgx3HLExh - 0 0 / DELETE tencentcloud-cos-console 200 - - 746 146 USER - 100009682373 - 100009682373:100009682373 NWU0MTU1NzRfNWNiMjU4NjRfM2JkMV8yNGFiNGEw - - - - DELETE /filepath HTTP/1.1
+1.0 examplebucket-125000000 ap-chengdu 2020-02-10T13:07:00Z examplebucket-125000000.cos.ap-chengdu.myqcloud.com DELETEObject 110.110.110.110 AKIDSuCmiBvppcdxShtPrCjhEUPF****-J6AsmEPu8NYMOhgx3HLExh - 0 0 / DELETE tencentcloud-cos-console 200 - - 746 146 USER - 100009682373 - 100009682373:100009682373 NWU0MTU1NzRfNWNiMjU4NjRfM2JkMV8yNGFiNGEw - - - - DELETE /filepath HTTP/1.1
 ```
 
 If you cannot find deletion logs among access logs, check whether rules of deletion upon expiration are set in the [lifecycle configuration](https://intl.cloud.tencent.com/document/product/436/14605).
