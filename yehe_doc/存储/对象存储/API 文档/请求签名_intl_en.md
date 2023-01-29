@@ -174,7 +174,7 @@ Where:
 - SHA1(HttpString) is the message digest (in lowercase hexadecimal format, such as `54ecfe22f59d3514fdc764b87a32d8133ea611e6`) calculated with [SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) and [HttpString](#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E7.94.9F.E6.88.90-httpstring).
 
 ### Step 7. Generate Signature
-Use [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) with [SignKey](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.94.9F.E6.88.90-signkey) (a string rather than the original binary) as the key and [StringToSign](#.E6.AD.A5.E9.AA.A46.EF.BC.9A.E7.94.9F.E6.88.90-stringtosign) as the message to calculate the message digest, which is `Signature`, for example, `01681b8c9d798a678e43b685a9f1bba0f6c0e012`.
+Use [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) with [SignKey](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.94.9F.E6.88.90-signkey) (a string rather than the original binary) as the key and [StringToSign](#.E6.AD.A5.E9.AA.A46.EF.BC.9A.E7.94.9F.E6.88.90-stringtosign) as the message to calculate the message digest, which is `Signature`, for example, `01681b8c9d798a678e43b685a9f1bba0f6c01234`.
 
 ### Step 8. Generate an actual signature
 Generate the actual signature based on [SecretId](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C), [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime), [HeaderList](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders), [UrlParamList](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters), and [Signature](#.E6.AD.A5.E9.AA.A47.EF.BC.9A.E7.94.9F.E6.88.90-signature) in the following format:
