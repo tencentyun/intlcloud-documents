@@ -61,7 +61,7 @@ COS 目前支持的各语言 [SDK](https://intl.cloud.tencent.com/document/produ
 | Java SDK       | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31536) |
 | JavaScript SDK | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31540) |
 | Node.js SDK    | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/32455) |
-| PHP SDK        | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/43312) |
+| PHP SDK        | 预签名 URL |
 | Python SDK     | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31548) |
 | 小程序 SDK     | [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31711) |
 
@@ -104,7 +104,7 @@ COS 目前支持的各语言 [SDK](https://intl.cloud.tencent.com/document/produ
 | +      | 43     | 2B       | {    | 123    | 7B       |
 | ,      | 44     | 2C       |  \|    | 124    | 7C       |
 | /      | 47     | 2F       | }    | 125    | 7D       |
-| :      | 58     | 3A       |      |        |          |
+| :      | 58     | 3A       |   无  |    无    |      无   |
 
 ## 签名步骤
 
@@ -174,7 +174,7 @@ x-cos-grant-read: uin="100000000011"
 - SHA1(HttpString) 为使用 [SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 对 [HttpString](#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E7.94.9F.E6.88.90-httpstring) 计算的消息摘要，16进制小写形式，例如：`54ecfe22f59d3514fdc764b87a32d8133ea611e6`。
 
 ### 步骤7：生成 Signature
-使用 [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 以 [SignKey](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.94.9F.E6.88.90-signkey) 为密钥（字符串形式，非原始二进制），以 [StringToSign](#.E6.AD.A5.E9.AA.A46.EF.BC.9A.E7.94.9F.E6.88.90-stringtosign) 为消息，计算消息摘要，即为 Signature，例如：`01681b8c9d798a678e43b685a9f1bba0f6c0e012`。
+使用 [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 以 [SignKey](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.94.9F.E6.88.90-signkey) 为密钥（字符串形式，非原始二进制），以 [StringToSign](#.E6.AD.A5.E9.AA.A46.EF.BC.9A.E7.94.9F.E6.88.90-stringtosign) 为消息，计算消息摘要，即为 Signature，例如：`01681b8c9d798a678e43b685a9f1bba0f6c01234`。
 
 ### 步骤8：生成签名
 根据 [SecretId](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C)、[KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime)、[HeaderList](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders)、[UrlParamList](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters) 和 [Signature](#.E6.AD.A5.E9.AA.A47.EF.BC.9A.E7.94.9F.E6.88.90-signature) 生成签名，格式为：
@@ -294,7 +294,7 @@ signKey := h.Sum(nil)
 
 | APPID      | SecretId                             | SecretKey                        |
 | ---------- | ------------------------------------ | -------------------------------- |
-| 1250000000 | AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q | BQYIM75p8x0iWVFSIgqEKwFprpRSVHlz |
+| 1250000000 | AKXXXXXXXXXXXXXXXXXXX | BQXXXXXXXXXXXXXXXXXXXX |
 
 ### 上传对象
 
@@ -323,7 +323,7 @@ ObjectContent
 - **HttpHeaders** = `content-length=13&content-md5=mQ%2FfVh815F3k6TAUm8m0eg%3D%3D&content-type=text%2Fplain&date=Thu%2C%2016%20May%202019%2006%3A45%3A51%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`
 - **HttpString** = `put\n/exampleobject(腾讯云)\n\ncontent-length=13&content-md5=mQ%2FfVh815F3k6TAUm8m0eg%3D%3D&content-type=text%2Fplain&date=Thu%2C%2016%20May%202019%2006%3A45%3A51%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22\n`
 - **StringToSign** = `sha1\n1557989151;1557996351\n8b2751e77f43a0995d6e9eb9477f4b685cca4172\n`
-- **Signature** = `3b8851a11a569213c17ba8fa7dcf2abec6935172`
+- **Signature** = `3b8851a11a569213c17ba8fa7dcf2abec6931234`
 
 其中，(empty string) 代表长度为0的空字符串，`\n`代表换行符。
 
@@ -338,10 +338,11 @@ Content-Length: 13
 Content-MD5: mQ/fVh815F3k6TAUm8m0eg==
 x-cos-acl: private
 x-cos-grant-read: uin="100000000011"
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q&q-sign-time=1557989151;1557996351&q-key-time=1557989151;1557996351&q-header-list=content-length;content-md5;content-type;date;host;x-cos-acl;x-cos-grant-read&q-url-param-list=&q-signature=3b8851a11a569213c17ba8fa7dcf2abec6935172
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn****&q-sign-time=1557989151;1557996351&q-key-time=1557989151;1557996351&q-header-list=content-length;content-md5;content-type;date;host;x-cos-acl;x-cos-grant-read&q-url-param-list=&q-signature=3b8851a11a569213c17ba8fa7dcf2abec693****
 
 ObjectContent
 ```
+
 
 ### 下载对象
 
@@ -363,7 +364,7 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 - **HttpHeaders** = `date=Thu%2C%2016%20May%202019%2006%3A55%3A53%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com`
 - **HttpString** = `get\n/exampleobject(腾讯云)\nresponse-cache-control=max-age%3D600&response-content-type=application%2Foctet-stream\ndate=Thu%2C%2016%20May%202019%2006%3A55%3A53%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com\n`
 - **StringToSign** = `sha1\n1557989753;1557996953\n54ecfe22f59d3514fdc764b87a32d8133ea611e6\n`
-- **Signature** = `01681b8c9d798a678e43b685a9f1bba0f6c0e012`
+- **Signature** = `01681b8c9d798a678e43b685a9f1bba0f6c01234`
 
 其中，`\n`代表换行符。
 
@@ -373,5 +374,6 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 GET /exampleobject(%E8%85%BE%E8%AE%AF%E4%BA%91)?response-content-type=application%2Foctet-stream&response-cache-control=max-age%3D600 HTTP/1.1
 Date: Thu, 16 May 2019 06:55:53 GMT
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q&q-sign-time=1557989753;1557996953&q-key-time=1557989753;1557996953&q-header-list=date;host&q-url-param-list=response-cache-control;response-content-type&q-signature=01681b8c9d798a678e43b685a9f1bba0f6c0e012
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn****&q-sign-time=1557989753;1557996953&q-key-time=1557989753;1557996953&q-header-list=date;host&q-url-param-list=response-cache-control;response-content-type&q-signature=01681b8c9d798a678e43b685a9f1bba0f6c0****
 ```
+
