@@ -18,7 +18,7 @@ COS의 [로그 관리](https://intl.cloud.tencent.com/document/product/436/16920
 [로그 관리](https://intl.cloud.tencent.com/document/product/436/16920) 기능으로 발송된 로그를 조회하여 파일 삭제 로그를 조회할 수 있습니다. 액세스 로그 관리 기능이 활성화되면 로그 파일을 DLC에 로딩하여 삭제 로그를 필터링할 수 있습니다. 아래는 삭제 로그 샘플입니다. `reqMethod` 필드에서 `DELETE` 작업을 검색하여 이러한 로그를 얻을 수 있습니다.
 
 ```plaintext
-1.0 examplebucket-125000000 ap-chengdu 2020-02-10T13:07:00Z examplebucket-125000000.cos.ap-chengdu.myqcloud.com DELETEObject 110.110.110.110 AKIDSuCmiBvppcdxShtPrCjhEUPFpzSzmXEEhG2bFVgd7-J6AsmEPu8NYMOhgx3HLExh - 0 0 / DELETE tencentcloud-cos-console 200 - - 746 146 USER - 100009682373 - 100009682373:100009682373 NWU0MTU1NzRfNWNiMjU4NjRfM2JkMV8yNGFiNGEw - - - - DELETE /filepath HTTP/1.1
+1.0 examplebucket-125000000 ap-chengdu 2020-02-10T13:07:00Z examplebucket-125000000.cos.ap-chengdu.myqcloud.com DELETEObject 110.110.110.110 AKIDSuCmiBvppcdxShtPrCjhEUPF****-J6AsmEPu8NYMOhgx3HLExh - 0 0 / DELETE tencentcloud-cos-console 200 - - 746 146 USER - 100009682373 - 100009682373:100009682373 NWU0MTU1NzRfNWNiMjU4NjRfM2JkMV8yNGFiNGEw - - - - DELETE /filepath HTTP/1.1
 ```
 
 액세스 로그 중 삭제 로그를 찾을 수 없는 경우 [라이프사이클 설정](https://intl.cloud.tencent.com/document/product/436/14605)에서 만료 시 삭제 규칙이 설정되어 있는지 확인하십시오.
