@@ -158,7 +158,7 @@ $ goosefs fs ls /data/test.txt
 
 ### 3. GooseFS에서의 데이터 영속화
 
-persit명령을 통해 데이터를 원격 스토리지 시스템 UFS에 영속화할 수 있습니다.
+persist 명령을 통해 데이터를 원격 스토리지 시스템 UFS에 영속화할 수 있습니다.
 
 ```plaintext
 $ goosefs fs persist /data/test.txt
