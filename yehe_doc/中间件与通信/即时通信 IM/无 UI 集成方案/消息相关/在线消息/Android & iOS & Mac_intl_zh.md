@@ -1,7 +1,6 @@
 ## 功能描述
 某些场景下，您可能希望发出去的消息只被对端在线时接收，即当接收者不在线时就不会感知到该消息。
 您只需在 `sendMessage` 时，将参数 `onlineUserOnly` 设置为 `true/YES`，此时发送出去的消息跟普通消息相比，会有如下差异点：
-
 1. 不支持离线存储。如果接收方不在线就无法收到。
 2. 不支持多端漫游。如果接收方在一台终端设备上一旦收到过该消息，无论是否已读，都不会在另一台终端上再次收到。
 3. 不支持本地存储。无法在本地的、云端的历史消息中找回。
@@ -10,7 +9,7 @@
 
 ### 实现“对方正在输入”功能
 
-在 C2C 单聊场景下，您可以通过 `sendMessage` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a28e01403acd422e53e999f21ec064795) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a681947465d6ab718da40f7f983740a21)) 发送指定的自定义在线消息，接收方收到该消息时判断是对端输入状态后，可以在 UI 界面展示 "对方正在输入"，
+在 C2C 单聊场景下，您可以通过 `sendMessage` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a28e01403acd422e53e999f21ec064795) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a681947465d6ab718da40f7f983740a21) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a42db237e7ae52cd2aa7edebf4f435c61)) 发送指定的自定义在线消息，接收方收到该消息时判断是对端输入状态后，可以在 UI 界面展示 "对方正在输入"，
 
 示例代码如下：
 <dx-tabs>
@@ -35,6 +34,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "userA", null, V2TIMM
 ```
 :::
 ::: iOS & Mac
+
 ```objectivec
 // 给 userA 发送 "自己正在输入" 的提示消息
 NSString *customStr = @"{\"command\": \"textInput\"}";
@@ -49,6 +49,60 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 }];
 ```
 :::
-</dx-tabs>
+::: Windows
+```cpp
+class SendCallback final : public V2TIMSendCallback {
+public:
+    using SuccessCallback = std::function<void(const V2TIMMessage&)>;
+    using ErrorCallback = std::function<void(int, const V2TIMString&)>;
+    using ProgressCallback = std::function<void(uint32_t)>;
 
+    SendCallback() = default;
+    ~SendCallback() override = default;
+
+    void SetCallback(SuccessCallback success_callback, ErrorCallback error_callback,
+                     ProgressCallback progress_callback) {
+        success_callback_ = std::move(success_callback);
+        error_callback_ = std::move(error_callback);
+        progress_callback_ = std::move(progress_callback);
+    }
+
+    void OnSuccess(const V2TIMMessage& message) override {
+        if (success_callback_) {
+            success_callback_(message);
+        }
+    }
+    void OnError(int error_code, const V2TIMString& error_message) override {
+        if (error_callback_) {
+            error_callback_(error_code, error_message);
+        }
+    }
+    void OnProgress(uint32_t progress) override {
+        if (progress_callback_) {
+            progress_callback_(progress);
+        }
+    }
+
+private:
+    SuccessCallback success_callback_;
+    ErrorCallback error_callback_;
+    ProgressCallback progress_callback_;
+};
+
+// 给 userA 发送 "正在输入" 的提示消息
+std::string str{u8"{\"command\": \"textInput\"}"};
+V2TIMBuffer data = {reinterpret_cast<const uint8_t*>(str.data()), str.size()};
+V2TIMMessage message =
+    V2TIMManager::GetInstance()->GetMessageManager()->CreateCustomMessage(data, description, extension);
+
+auto callback = new SendCallback{};
+callback->SetCallback([=](const V2TIMMessage& message) { delete callback; },
+                      [=](int error_code, const V2TIMString& error_message) { delete callback; },
+                      [=](uint32_t progress) {});
+
+V2TIMManager::GetInstance()->GetMessageManager()->SendMessage(
+    message, "userA", {}, V2TIMMessagePriority::V2TIM_PRIORITY_DEFAULT, true, {}, callback);
+```
+:::
+</dx-tabs>
 

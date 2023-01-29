@@ -1,18 +1,18 @@
-## Feature Description
+## Overview
 In some cases, you may need to mark a conversation, for example, as "favorite", "collapsed", "hidden", or "unread", which can be implemented through the following API.
 > ?
-- To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8).
-- This feature is supported only by the SDK of the Enhanced edition on v6.5.2803 or later.
+- To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577).
+- This feature is available only in SDK enhanced edition v6.5.2803 or later.
 
 ## Conversation Mark
 
 ### Marking a conversation
-Call the `markConversation` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#aa1dab66f08df9aef4acb0aad8cb77d72) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#a77c02a146f774979e1e04d7334cd2d06)) to mark or unmark a conversation.
+Call the `markConversation` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#aa1dab66f08df9aef4acb0aad8cb77d72) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#a77c02a146f774979e1e04d7334cd2d06) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ab8d1930cd9956457cd465bd23aa3bd63)) to mark or unmark a conversation.
 > ! When a user marks a conversation, the SDK records only the mark value and will not change the underlying logic of the conversation. For example, if a conversation is marked as `V2TIM_CONVERSATION_MARK_TYPE_UNREAD`, the unread count at the underlying layer will not change.
 
 Parameters of the API for marking a conversation are as described below:
 
-| Attribute | Definition | Description  |
+| Attribute | Definition | Description |
 | --- |  --- | --- |
 | conversationIDList | List of conversation IDs | Up to 100 conversations can be marked at a time. |
 | markType | Mark type| A conversation can be marked as a favorite, unread, collapsed, or hidden.|
@@ -62,10 +62,64 @@ BOOL enableMark = YES;
 }];
 ```
 :::
+::: Windows
+```cpp
+template <class T>
+class ValueCallback final : public V2TIMValueCallback<T> {
+public:
+    using SuccessCallback = std::function<void(const T&)>;
+    using ErrorCallback = std::function<void(int, const V2TIMString&)>;
+
+    ValueCallback() = default;
+    ~ValueCallback() override = default;
+
+    void SetCallback(SuccessCallback success_callback, ErrorCallback error_callback) {
+        success_callback_ = std::move(success_callback);
+        error_callback_ = std::move(error_callback);
+    }
+
+    void OnSuccess(const T& value) override {
+        if (success_callback_) {
+            success_callback_(value);
+        }
+    }
+    void OnError(int error_code, const V2TIMString& error_message) override {
+        if (error_callback_) {
+            error_callback_(error_code, error_message);
+        }
+    }
+
+private:
+    SuccessCallback success_callback_;
+    ErrorCallback error_callback_;
+};
+
+V2TIMStringVector conversationIDList;
+conversationIDList.PushBack(u8"c2c_user1");
+// Mark type
+uint64_t markType = V2TIMConversationMarkType::V2TIM_CONVERSATION_MARK_TYPE_STAR;
+// Extended mark type
+uint64_t markType = static_cast<uint64_t>(0x1) << 32;
+
+auto callback = new ValueCallback<V2TIMConversationOperationResultVector>{};
+callback->SetCallback(
+    [=](const V2TIMConversationOperationResultVector& conversationOperationResultList) {
+        // Marked the conversation successfully
+        delete callback;
+    },
+    [=](int error_code, const V2TIMString& error_message) {
+        // Failed to mark the conversation
+        delete callback;
+    });
+
+V2TIMManager::GetInstance()->GetConversationManager()->MarkConversation(conversationIDList, markType, true,
+                                                                        callback);
+```
+:::
 </dx-tabs>
 
 ### Listening for the notification of a conversation mark change
-After a conversation is marked or unmarked, the `markList` field ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#af8ed1769cee83f972be1727d35e10eb6) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a1778161ca64b919acb1a10c8520538e6)) in `V2TIMConversation` of the conversation will change. You can call the `addConversationListener` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a806534684e5d4d01b94126cd1397fee4) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#a39b4f352f1740171fb56143149201cd9)) to listen for such a change notification.
+After a conversation is marked or unmarked, the `markList` field ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#af8ed1769cee83f972be1727d35e10eb6) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a1778161ca64b919acb1a10c8520538e6) / [Windows](https://im.sdk.qcloud.com/doc/en/structV2TIMConversation.html#a729a11d417ac87cd427a3839e8fa6669)) in `V2TIMConversation` of the conversation will change. You can call the `addConversationListener` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a806534684e5d4d01b94126cd1397fee4) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#a39b4f352f1740171fb56143149201cd9) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#adb2c20ca824cac69d0703169f3a025a1)) to listen for such a change notification.
 
 Sample code:
 <dx-tabs>
@@ -96,11 +150,30 @@ V2TIMManager.getConversationManager().addConversationListener(listener);
 }
 ```
 :::
+::: Windows
+```cpp
+class ConversationListener final : public V2TIMConversationListener {
+public:
+    void OnConversationChanged(const V2TIMConversationVector& conversationList) override {
+        for (size_t i = 0; i < conversationList.Size(); ++i) {
+            const V2TIMConversation& conversation = conversationList[i];
+            // Get the new mark information of the conversation
+            const UInt64Vector& markList = conversation.markList;
+        }
+    }
+    // Other members …
+};
+
+// Add a conversation event listener. Keep `conversationListener` valid before the listener is removed to ensure event callbacks are received.
+ConversationListener conversationListener;
+V2TIMManager::GetInstance()->GetConversationManager()->AddConversationListener(&conversationListener);
+```
+:::
 </dx-tabs>
 
 
 ### Pulling a specified marked conversation
-Call the `getConversationListByFilter` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a806534684e5d4d01b94126cd1397fee4) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#a39b4f352f1740171fb56143149201cd9)) to pull a specified marked conversation.
+Call the `getConversationListByFilter` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a806534684e5d4d01b94126cd1397fee4) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#a39b4f352f1740171fb56143149201cd9) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ace956492c5ee80187ebd1795e52b0de8)) to pull a specified marked conversation.
 
 Sample code:
 <dx-tabs>
@@ -113,7 +186,7 @@ filter.setNextSeq(0);
 V2TIMManager.getConversationManager().getConversationListByFilter(filter, new V2TIMValueCallback<V2TIMConversationResult>() {
     @Override
     public void onSuccess(V2TIMConversationResult v2TIMConversationResult) {
-        // Obtained the conversation list successfully
+        // Conversation list obtained successfully
     }
 
     @Override
@@ -137,6 +210,56 @@ filter.nextSeq = 0;
 }];
 ```
 :::
-</dx-tabs>
+::: Windows
+```cpp
+template <class T>
+class ValueCallback final : public V2TIMValueCallback<T> {
+public:
+    using SuccessCallback = std::function<void(const T&)>;
+    using ErrorCallback = std::function<void(int, const V2TIMString&)>;
 
+    ValueCallback() = default;
+    ~ValueCallback() override = default;
+
+    void SetCallback(SuccessCallback success_callback, ErrorCallback error_callback) {
+        success_callback_ = std::move(success_callback);
+        error_callback_ = std::move(error_callback);
+    }
+
+    void OnSuccess(const T& value) override {
+        if (success_callback_) {
+            success_callback_(value);
+        }
+    }
+    void OnError(int error_code, const V2TIMString& error_message) override {
+        if (error_callback_) {
+            error_callback_(error_code, error_message);
+        }
+    }
+
+private:
+    SuccessCallback success_callback_;
+    ErrorCallback error_callback_;
+};
+
+V2TIMConversationListFilter filter;
+filter.nextSeq = 0;
+filter.count = 50;
+filter.markType = V2TIMConversationMarkType::V2TIM_CONVERSATION_MARK_TYPE_STAR;
+
+auto callback = new ValueCallback<V2TIMConversationResult>{};
+callback->SetCallback(
+    [=](const V2TIMConversationResult& conversationResult) {
+        // Conversation list obtained successfully
+        delete callback;
+    },
+    [=](int error_code, const V2TIMString& error_message) {
+        // Failed to obtain the conversation list
+        delete callback;
+    });
+
+V2TIMManager::GetInstance()->GetConversationManager()->GetConversationListByFilter(filter, callback);
+```
+:::
+</dx-tabs>
 
