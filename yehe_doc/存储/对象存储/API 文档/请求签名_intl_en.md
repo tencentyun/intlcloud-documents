@@ -61,7 +61,7 @@ Find the pre-signed URL document corresponding to your SDK language from the tab
 | Java SDK       | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31536) |
 | JavaScript SDK | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31540) |
 | Node.js SDK    | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/32455) |
-| PHP SDK        | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/43312) |
+| PHP SDK        | Pre-Signed URL|
 | Python SDK     | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31548) |
 | Mini Program SDK     | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31711) |
 
@@ -104,7 +104,7 @@ The HMAC-SHA1 and SHA1 functions take UTF-8 encoded strings as input, and output
 | +      | 43     | 2B       | {    | 123    | 7B       |
 | ,      | 44     | 2C       |  \|    | 124    | 7C       |
 | /      | 47     | 2F       | }    | 125    | 7D       |
-| :      | 58     | 3A       |      |        |          |
+| :      | 58     | 3A       |   None  |    None    |      None  |
 
 ## Generating a Signature
 
@@ -294,7 +294,7 @@ Log in to the CAM console and go to the [Manage API Key](https://console.cloud.t
 
 | APPID      | SecretId                             | SecretKey                        |
 | ---------- | ------------------------------------ | -------------------------------- |
-| 1250000000 | AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q | BQYIM75p8x0iWVFSIgqEKwFprpRSVHlz |
+| 1250000000 | AKXXXXXXXXXXXXXXXXXXX | BQXXXXXXXXXXXXXXXXXXXX |
 
 ### Uploading an object
 
@@ -323,7 +323,7 @@ ObjectContent
 - **HttpHeaders** = `content-length=13&content-md5=mQ%2FfVh815F3k6TAUm8m0eg%3D%3D&content-type=text%2Fplain&date=Thu%2C%2016%20May%202019%2006%3A45%3A51%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`
 - **HttpString** = `put\n/exampleobject(tencentcloud)\n\ncontent-length=13&content-md5=mQ%2FfVh815F3k6TAUm8m0eg%3D%3D&content-type=text%2Fplain&date=Thu%2C%2016%20May%202019%2006%3A45%3A51%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22\n`
 - **StringToSign** = `sha1\n1557989151;1557996351\n8b2751e77f43a0995d6e9eb9477f4b685cca4172\n`
-- **Signature** = `3b8851a11a569213c17ba8fa7dcf2abec6935172`
+- **Signature** = `3b8851a11a569213c17ba8fa7dcf2abec6931234`
 
 Here, (empty string) is a zero-byte string and `\n` is a line break.
 
@@ -338,10 +338,11 @@ Content-Length: 13
 Content-MD5: mQ/fVh815F3k6TAUm8m0eg==
 x-cos-acl: private
 x-cos-grant-read: uin="100000000011"
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q&q-sign-time=1557989151;1557996351&q-key-time=1557989151;1557996351&q-header-list=content-length;content-md5;content-type;date;host;x-cos-acl;x-cos-grant-read&q-url-param-list=&q-signature=3b8851a11a569213c17ba8fa7dcf2abec6935172
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn****&q-sign-time=1557989151;1557996351&q-key-time=1557989151;1557996351&q-header-list=content-length;content-md5;content-type;date;host;x-cos-acl;x-cos-grant-read&q-url-param-list=&q-signature=3b8851a11a569213c17ba8fa7dcf2abec693****
 
 ObjectContent
 ```
+
 
 ### Download an object
 
@@ -363,7 +364,7 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 - **HttpHeaders** = `date=Thu%2C%2016%20May%202019%2006%3A55%3A53%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com`
 - **HttpString** = `get\n/exampleobject(tencentcloud)\nresponse-cache-control=max-age%3D600&response-content-type=application%2Foctet-stream\ndate=Thu%2C%2016%20May%202019%2006%3A55%3A53%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com\n`
 - **StringToSign** = `sha1\n1557989753;1557996953\n54ecfe22f59d3514fdc764b87a32d8133ea611e6\n`
-- **Signature** = `01681b8c9d798a678e43b685a9f1bba0f6c0e012`
+- **Signature** = `01681b8c9d798a678e43b685a9f1bba0f6c01234`
 
 Here, `\n` is a line break.
 
@@ -373,5 +374,6 @@ Here, `\n` is a line break.
 GET /exampleobject(%E8%85%BE%E8%AE%AF%E4%BA%91)?response-content-type=application%2Foctet-stream&response-cache-control=max-age%3D600 HTTP/1.1
 Date: Thu, 16 May 2019 06:55:53 GMT
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q&q-sign-time=1557989753;1557996953&q-key-time=1557989753;1557996953&q-header-list=date;host&q-url-param-list=response-cache-control;response-content-type&q-signature=01681b8c9d798a678e43b685a9f1bba0f6c0e012
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn****&q-sign-time=1557989753;1557996953&q-key-time=1557989753;1557996953&q-header-list=date;host&q-url-param-list=response-cache-control;response-content-type&q-signature=01681b8c9d798a678e43b685a9f1bba0f6c0****
 ```
+
