@@ -243,7 +243,7 @@ ul.rno-tabs-operation {
            クリックすると体験できます
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/im/demo/en/index.html#/login');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">アプリ内チャット</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/im/demo/intl/index.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">アプリ内チャット</div>
         </div>
     </div>
     </div>
@@ -415,7 +415,7 @@ ul.rno-tabs-operation {
                                 <p class="titlename"> IM Demo (Web)</p>
                 <p style="color:#586376;">すべてのIM機能およびグループライブストリーミングのマイク接続によるボイスチャット機能を含みます</p>
                     <div style="margin-top: 13px;" >
-                    <a " href="https://github.com/tencentyun/TIMSDK/tree/master/Web">Githubダウンロード</a>
+                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Githubダウンロード</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">統合ガイド</a>
                     </div>
             </div>
