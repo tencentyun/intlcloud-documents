@@ -82,7 +82,7 @@ callback->SetCallback(
         delete callback;
     },
     [=](int error_code, const V2TIMString& error_message) {
-        // One-to-one messages cleared successfully
+        // Failed to clear one-to-one messages
         delete callback;
     });
 ```
