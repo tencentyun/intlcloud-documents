@@ -2,6 +2,11 @@
 
 本文档提供关于存储桶的基本操作和访问控制列表（ACL）的相关 API 概览以及 SDK 示例代码。
 
+>!
+> - 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+> - 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
 **基本操作**
 
 | API                                                          | 操作名     | 操作描述                   |
@@ -58,7 +63,7 @@ cos_status_t *cos_create_bucket(const cos_request_options_t *options,
 #include "cos_log.h"
 #include <unistd.h>
 
-// endpoint 是 COS 访问域名信息，详情请参见 https://intl.cloud.tencent.com/document/product/436/6224 文档
+// endpoint 是 COS 访问域名信息，详情请参见 https://cloud.tencent.com/document/product/436/6224 文档
 static char TEST_COS_ENDPOINT[] = "cos.ap-guangzhou.myqcloud.com";
 // 开发者拥有的项目身份ID/密钥，可在 https://console.cloud.tencent.com/cam/capi 页面获取
 static char *TEST_ACCESS_KEY_ID;                //your secret_id
@@ -183,7 +188,7 @@ cos_status_t *cos_delete_bucket(const cos_request_options_t *options,
 #include "cos_log.h"
 #include <unistd.h>
 
-// endpoint 是 COS 访问域名信息，详情请参见 https://intl.cloud.tencent.com/document/product/436/6224 文档
+// endpoint 是 COS 访问域名信息，详情请参见 https://cloud.tencent.com/document/product/436/6224 文档
 static char TEST_COS_ENDPOINT[] = "cos.ap-guangzhou.myqcloud.com";
 // 开发者拥有的项目身份ID/密钥，可在 https://console.cloud.tencent.com/cam/capi 页面获取
 static char *TEST_ACCESS_KEY_ID;                //your secret_id
@@ -311,7 +316,7 @@ cos_status_t *cos_check_bucket_exist(const cos_request_options_t *options,
 #include "cos_log.h"
 #include <unistd.h>
 
-// endpoint 是 COS 访问域名信息，详情请参见 https://intl.cloud.tencent.com/document/product/436/6224 文档
+// endpoint 是 COS 访问域名信息，详情请参见 https://cloud.tencent.com/document/product/436/6224 文档
 static char TEST_COS_ENDPOINT[] = "cos.ap-guangzhou.myqcloud.com";
 // 开发者拥有的项目身份ID/密钥，可在 https://console.cloud.tencent.com/cam/capi 页面获取
 static char *TEST_ACCESS_KEY_ID;                //your secret_id

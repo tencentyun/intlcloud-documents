@@ -106,7 +106,7 @@ cd bin && ./cos_demo #运行demo
 从 [CMake官网](https://cmake.org/download/) 下载 Windows 版本的 CMake 编译工具，并将 `${CMake的安装路径}\bin`配置在 Windows 的系统环境变量 Path 中。
 3. 编译 SDK 
  i. 下载 [XML Windows C++ SDK 源码](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev) 到您的开发环境。
- ii. 打开 Windows 的命令行，cd 到 C++ SDK 的源码目录下，执行以下命令：
+    ii. 打开 Windows 的命令行，cd 到 C++ SDK 的源码目录下，执行以下命令：
 ```shell
 mkdir build
 cd build
@@ -188,13 +188,19 @@ undefined reference to `qcloud_cos::CosConfig::CosConfig(std::__cxx11::basic_str
 
 ### 初始化
 
+>!
+>- 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+>- 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
+
 配置文件各字段介绍：
 
 ```
 {
 "SecretId":"********************************", // sercret_id替换为用户的 SecretId，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
 "SecretKey":"*******************************", // sercret_key替换为用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
-"Region":"ap-guangzhou",                // 存储桶地域, 替换为客户存储桶所在地域，可以在COS控制台指定存储桶的概览页查看存储桶地域信息，参考 https://console.cloud.tencent.com/cos5/bucket/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+"Region":"ap-guangzhou",                // 存储桶地域, 替换为客户存储桶所在地域，可以在COS控制台指定存储桶的概览页查看存储桶地域信息，参考 https://console.cloud.tencent.com/cos5/bucket/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
 "SignExpiredTime":360,              // 签名超时时间, 单位s
 "ConnectTimeoutInms":6000,          // connect超时时间, 单位ms
 "ReceiveTimeoutInms":60000,         // recv超时时间, 单位ms
@@ -275,7 +281,6 @@ int main(int argc, char *argv[]) {
         // 创建成功
     } else {
         // 创建存储桶失败，可以调用 CosResult 的成员函数输出错误信息，例如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -320,7 +325,6 @@ int main(int argc, char *argv[]) {
         // 查询存储桶列表成功
     } else {
         // 查询存储桶列表失败，可以调用 CosResult 的成员函数输出错误信息，比如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -358,7 +362,6 @@ int main(int argc, char *argv[]) {
         // 上传文件成功
     } else {
         // 上传文件失败，可以调用 CosResult 的成员函数输出错误信息，比如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -399,7 +402,6 @@ int main(int argc, char *argv[]) {
         // 查询对象列表成功
     } else {
         // 查询对象列表失败，可以调用 CosResult 的成员函数输出错误信息，例如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -438,7 +440,6 @@ int main(int argc, char *argv[]) {
         // 下载文件成功
     } else {
         // 下载文件失败，可以调用 CosResult 的成员函数输出错误信息，例如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -474,7 +475,6 @@ int main(int argc, char *argv[]) {
         // 删除对象成功
     } else {
         // 删除对象失败，可以调用 CosResult 的成员函数输出错误信息，例如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;

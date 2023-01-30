@@ -51,6 +51,12 @@ pip install cos-python-sdk-v5 --no-index -f cos-python-sdk-packages
 
 ### 初始化
 
+>!
+>- 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+>- 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
+
 下面介绍几种初始化 Python SDK Client 的方式，您可以根据具体场景选择其中一种。
 
 #### 通过 COS 默认域名初始化（默认方式）
@@ -71,7 +77,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
@@ -102,7 +108,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 proxies = {
     'http': '127.0.0.1:80',  # 替换为用户的 HTTP代理地址
@@ -134,7 +140,7 @@ region = None              # 通过Endpoint初始化不需要配置region
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
-endpoint = 'cos.accelerate.myqcloud.com' # 替换为用户的 endpoint 或者 cos全局加速域名，如果使用桶的全球加速域名，需要先开启桶的全球加速功能，请参见https://intl.cloud.tencent.com/document/product/436/33406
+endpoint = 'cos.accelerate.myqcloud.com' # 替换为用户的 endpoint 或者 cos全局加速域名，如果使用桶的全球加速域名，需要先开启桶的全球加速功能，请参见https://cloud.tencent.com/document/product/436/38864
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Endpoint=endpoint, Scheme=scheme)
 client = CosS3Client(config)
 ```
@@ -160,7 +166,7 @@ region = None              # 通过自定义域名初始化不需要配置region
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
-domain = 'user-define.example.com' # 用户自定义域名，需要先开启桶的自定义域名，具体请参见https://intl.cloud.tencent.com/document/product/436/31507
+domain = 'user-define.example.com' # 用户自定义域名，需要先开启桶的自定义域名，具体请参见https://cloud.tencent.com/document/product/436/36638
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Domain=domain, Scheme=scheme)
 client = CosS3Client(config)
 ```
@@ -186,7 +192,7 @@ region = None              # 通过Endpoint初始化不需要配置region
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
-endpoint = 'file.mycloud.com' # 替换为用户的 CDN 默认加速域名，需要开通 CDN 加速配置，参见https://intl.cloud.tencent.com/document/product/436/18670
+endpoint = 'file.mycloud.com' # 替换为用户的 CDN 默认加速域名，需要开通 CDN 加速配置，参见https://cloud.tencent.com/document/product/436/18670
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Endpoint=endpoint, Scheme=scheme)
 client = CosS3Client(config)
 ```
@@ -212,7 +218,7 @@ region = None              # 通过自定义域名初始化不需要配置region
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
-domain = 'user-define.example-cdn.com' # 用户自定义 CDN 域名，需要开通 CDN 自定义域名加速，参见https://intl.cloud.tencent.com/document/product/436/18670
+domain = 'user-define.example-cdn.com' # 用户自定义 CDN 域名，需要开通 CDN 自定义域名加速，参见https://cloud.tencent.com/document/product/436/18670
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Domain=domain, Scheme=scheme)
 client = CosS3Client(config)
 ```
@@ -233,7 +239,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
@@ -261,7 +267,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
@@ -274,7 +280,7 @@ response = client.list_buckets(
 
 ### 上传对象
 
->!简单上传不支持超过5G的文件，推荐使用下方高级上传接口。参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31546) 文档。
+>!简单上传不支持超过5G的文件，推荐使用下方高级上传接口。参数说明可参见 [对象操作](https://www.tencentcloud.com/document/product/436/43582) 文档。
 
 ```python
 # -*- coding=utf-8
@@ -290,7 +296,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
@@ -321,7 +327,7 @@ print(response['ETag'])
 
 #### chunk 简单上传
 import requests
-stream = requests.get('https://intl.cloud.tencent.com/document/product/436/7778')
+stream = requests.get('https://cloud.tencent.com/document/product/436/7778')
 
 # 网络流将以 Transfer-Encoding:chunked 的方式传输到 COS
 response = client.put_object(
@@ -360,7 +366,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
@@ -389,7 +395,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
@@ -425,7 +431,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
@@ -483,7 +489,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+                           # COS支持的所有region列表参见https://cloud.tencent.com/document/product/436/6224
 token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 

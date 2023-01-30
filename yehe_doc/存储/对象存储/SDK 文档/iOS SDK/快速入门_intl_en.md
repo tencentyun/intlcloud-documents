@@ -2,10 +2,10 @@
 
 - Download the iOS SDK source code [here](https://github.com/tencentyun/qcloud-sdk-ios.git).
 - Access the demo [here](https://github.com/tencentyun/qcloud-sdk-ios-samples.git).
-- For the SDK APIs and their parameters, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com).
-- For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/iOS).
-- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see [iOS SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38957).
+- For the SDK APIs and their parameters, see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com).
+- For the complete sample code, see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/iOS).
+- For the SDK changelog, see [Changelog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
+- For SDK FAQs, see [iOS SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38957).
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
 >
@@ -14,7 +14,7 @@
 
 1. Prepare an iOS application; this can be an existing project or a new empty project.
 2. Make sure that the application is built using an SDK running on iOS 8.0 or above.
-3. Prepare a remote address that can be used to obtain your Tencent Cloud temporary key. For more information on temporary keys, please see [Implementing Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
+3. You need a remote address where users can obtain your Tencent Cloud temporary key. For more information on temporary keys, see [Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
 
 ## Step 1. Install the SDK
 
@@ -106,6 +106,11 @@ import QCloudCOSXMLTransfer
 
 ### 2. Initialize the COS service and implement the signature protocol
 
+>!
+> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+
 #### Method 1: Obtaining a temporary key pair to authenticate requests (recommended)
 
 The SDK needs to get a temporary key to calculate the signature before sending a request. Therefore, you need to implement the 'QCloudSignatureProvider' protocol to obtain the key and call back the key to the SDK through the 'continueBlock' parameter.
@@ -164,7 +169,7 @@ For the detailed procedure, see the following sample code:
     // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // Temporary key token
-    // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+    // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://intl.cloud.tencent.com/document/product/436/14048
     credential.token = @"TOKEN";
     /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
     */
@@ -233,7 +238,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // Temporary key token
-        // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+        // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://intl.cloud.tencent.com/document/product/436/14048
         credential.token = "TOKEN";
         /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
         */
@@ -321,7 +326,7 @@ The following is the sample code:
     // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // Temporary key token
-    // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+    // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://intl.cloud.tencent.com/document/product/436/14048
     credential.token = @"TOKEN";
     /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
     */
@@ -410,7 +415,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // Temporary key token
-        // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+        // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://intl.cloud.tencent.com/document/product/436/14048
         credential.token = "TOKEN";
         /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
         */
@@ -441,8 +446,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 ```
 
 >!
-> - For more information on the abbreviations of the COS bucket regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
-> - We recommend requesting data over HTTPS. However, if you want to use HTTP protocol, you need to enable HTTP transfer for your application so that it can run on iOS 9.0 or above. For detailed directions, please see Apple's official documentation [Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
+> - For more information on the abbreviations of the COS bucket regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+> - We recommend requesting data over HTTPS. However, if you want to use HTTP protocol, you need to enable HTTP transfer for your application so that it can run on iOS 9.0 or above. For detailed directions, see Apple's official documentation [Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
 > 
 
 
@@ -479,7 +484,7 @@ When using a permanent key, you can choose not to implement the `QCloudCredentai
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
         initWithCredential:credential];
     // Note: Do not perform the copy or mutableCopy operation on `urlRequst`
-    QCloudSignature* signature = [creator signatureForData:urlRequst];
+    QCloudSignature* signature =  [creator signatureForData:urlRequst];
     continueBlock(signature, nil);
 }
 ```
@@ -556,7 +561,7 @@ The SDK allows you to upload local files and binary data in NSData format. The f
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // Local file path
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
-// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 put.bucket = @"examplebucket-1250000000";
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = @"exampleobject";
@@ -582,13 +587,13 @@ put.body =  url;
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 **Swift**
 
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
-// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 put.bucket = "examplebucket-1250000000";
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = "exampleobject";
@@ -625,7 +630,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 ### Downloading an object
 
@@ -634,7 +639,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```objective-c
 QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest new];
     
-// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
@@ -667,7 +672,7 @@ request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 ```swift
 let request : QCloudCOSXMLDownloadObjectRequest = QCloudCOSXMLDownloadObjectRequest();
         
-// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = "examplebucket-1250000000";
 // Object key
 request.object = "exampleobject";

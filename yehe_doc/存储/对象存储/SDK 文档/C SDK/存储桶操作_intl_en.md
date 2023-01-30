@@ -2,6 +2,11 @@
 
 This document provides an overview of APIs and SDK sample codes related to basic bucket operations and access control lists (ACL).
 
+>!
+> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+
 **Basic operations**
 
 | API | Operation | Description |
@@ -19,7 +24,7 @@ This document provides an overview of APIs and SDK sample codes related to basic
 
 ### Creating a bucket
 
-#### Description
+#### Feature description
 
 This API is used to create a bucket under a specified account.
 
@@ -32,7 +37,7 @@ cos_status_t *cos_create_bucket(const cos_request_options_t *options,
                                 cos_table_t **resp_headers);
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
@@ -61,10 +66,10 @@ cos_status_t *cos_create_bucket(const cos_request_options_t *options,
 // `endpoint` is the COS access domain name. For more information, see https://intl.cloud.tencent.com/document/product/436/6224.
 static char TEST_COS_ENDPOINT[] = "cos.ap-guangzhou.myqcloud.com";
 // A developer-owned secret ID/key used for the project. It can be obtained at https://console.cloud.tencent.com/cam/capi.
-static char *TEST_ACCESS_KEY_ID;                // Your SecretId
-static char *TEST_ACCESS_KEY_SECRET;            // Your SecretKey
-// A unique user-level resource identifier for COS access. It can be obtained at https://console.cloud.tencent.com/cam/capi.
-static char TEST_APPID[] = "<APPID>";    // Your APPID
+static char *TEST_ACCESS_KEY_ID;                //your secret_id
+static char *TEST_ACCESS_KEY_SECRET;            //your secret_key
+// The only user-level resource identifier for COS access. It can be obtained at https://console.cloud.tencent.com/cam/capi.
+static char TEST_APPID[] = "<APPID>";    //your appid
 // COS bucket name, in the format of [bucket]-[appid], for example `mybucket-1253666666`. It can be obtained at https://console.cloud.tencent.com/cos5/bucket.
 static char TEST_BUCKET_NAME[] = "<bucketname-appid>"; 
 
@@ -130,10 +135,10 @@ int main(int argc, char *argv[])
        exit(1);
     }
 
-    // Set the log level. Default value: `COS_LOG_WARN`
+    //set log level, default COS_LOG_WARN
     cos_log_set_level(COS_LOG_WARN);
 
-    // Set log output. Default value: `stderr`
+    //set log output, default stderr
     cos_log_set_output(NULL);
 
     test_create_bucket();
@@ -146,7 +151,7 @@ int main(int argc, char *argv[])
 
 ### Deleting a bucket
 
-#### Description
+#### Feature description
 
 This API is used to delete an empty bucket under a specified account.
 
@@ -158,7 +163,7 @@ cos_status_t *cos_delete_bucket(const cos_request_options_t *options,
                                 cos_table_t **resp_headers);
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
@@ -186,10 +191,10 @@ cos_status_t *cos_delete_bucket(const cos_request_options_t *options,
 // `endpoint` is the COS access domain name. For more information, see https://intl.cloud.tencent.com/document/product/436/6224.
 static char TEST_COS_ENDPOINT[] = "cos.ap-guangzhou.myqcloud.com";
 // A developer-owned secret ID/key used for the project. It can be obtained at https://console.cloud.tencent.com/cam/capi.
-static char *TEST_ACCESS_KEY_ID;                // Your SecretId
-static char *TEST_ACCESS_KEY_SECRET;            // Your SecretKey
-// A unique user-level resource identifier for COS access. It can be obtained at https://console.cloud.tencent.com/cam/capi.
-static char TEST_APPID[] = "<APPID>";    // Your APPID
+static char *TEST_ACCESS_KEY_ID;                //your secret_id
+static char *TEST_ACCESS_KEY_SECRET;            //your secret_key
+// The only user-level resource identifier for COS access. It can be obtained at https://console.cloud.tencent.com/cam/capi.
+static char TEST_APPID[] = "<APPID>";    //your appid
 // COS bucket name, in the format of [bucket]-[appid], for example `mybucket-1253666666`. It can be obtained at https://console.cloud.tencent.com/cos5/bucket.
 static char TEST_BUCKET_NAME[] = "<bucketname-appid>"; 
 
@@ -254,10 +259,10 @@ int main(int argc, char *argv[])
        exit(1);
     }
 
-    // Set the log level. Default value: `COS_LOG_WARN`
+    //set log level, default COS_LOG_WARN
     cos_log_set_level(COS_LOG_WARN);
 
-    // Set log output. Default value: `stderr`
+    //set log output, default stderr
     cos_log_set_output(NULL);
 
     test_delete_bucket();
@@ -270,7 +275,7 @@ int main(int argc, char *argv[])
 
 ### Checking whether a bucket exists
 
-#### Description
+#### Feature description
 
 This API is used to check whether a bucket exists. It actually calls the `HEAD Bucket` API to perform the action.
 
@@ -283,7 +288,7 @@ cos_status_t *cos_check_bucket_exist(const cos_request_options_t *options,
                                      cos_table_t **resp_headers)
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
@@ -314,10 +319,10 @@ cos_status_t *cos_check_bucket_exist(const cos_request_options_t *options,
 // `endpoint` is the COS access domain name. For more information, see https://intl.cloud.tencent.com/document/product/436/6224.
 static char TEST_COS_ENDPOINT[] = "cos.ap-guangzhou.myqcloud.com";
 // A developer-owned secret ID/key used for the project. It can be obtained at https://console.cloud.tencent.com/cam/capi.
-static char *TEST_ACCESS_KEY_ID;                // Your SecretId
-static char *TEST_ACCESS_KEY_SECRET;            // Your SecretKey
-// A unique user-level resource identifier for COS access. It can be obtained at https://console.cloud.tencent.com/cam/capi.
-static char TEST_APPID[] = "<APPID>";    // Your APPID
+static char *TEST_ACCESS_KEY_ID;                //your secret_id
+static char *TEST_ACCESS_KEY_SECRET;            //your secret_key
+// The only user-level resource identifier for COS access. It can be obtained at https://console.cloud.tencent.com/cam/capi.
+static char TEST_APPID[] = "<APPID>";    //your appid
 // COS bucket name, in the format of [bucket]-[appid], for example `mybucket-1253666666`. It can be obtained at https://console.cloud.tencent.com/cos5/bucket.
 static char TEST_BUCKET_NAME[] = "<bucketname-appid>"; 
 
@@ -388,10 +393,10 @@ int main(int argc, char *argv[])
        exit(1);
     }
 
-    // Set the log level. Default value: `COS_LOG_WARN`
+    //set log level, default COS_LOG_WARN
     cos_log_set_level(COS_LOG_WARN);
 
-    // Set log output. Default value: `stderr`
+    //set log output, default stderr
     cos_log_set_output(NULL);
 
     test_check_bucket_exist();

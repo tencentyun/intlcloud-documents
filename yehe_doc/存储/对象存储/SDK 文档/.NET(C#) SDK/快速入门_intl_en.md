@@ -2,13 +2,13 @@
 
 - Download the XML .NET SDK source code [here](https://github.com/tencentyun/qcloud-sdk-dotnet).
 - Download XML .NET SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-dotnet/latest/qcloud-sdk-dotnet.zip).
-- For the SDK APIs and their parameters, please see [SDK API](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com).
+- For the SDK APIs and their parameters, see [SDK API](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com).
 - Find the complete code [here](https://github.com/tencentyun/cos-snippets/tree/master/dotnet).
-- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see [.NET (C#) SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40773).
+- For the SDK changelog, see [Changelog](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/CHANGELOG.md).
+- For SDK FAQs, see [.NET (C#) SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40773).
 
 
->? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
+>? If you encounter errors such as non-existent functions or methods when using the SDK, you can update the SDK to the latest version and try again.
 >
 
 
@@ -45,10 +45,15 @@ In your Visual Studio project, click **Project** > **Add Reference** > **Browse*
 
 ## Step 2. Initialize COS Services
 
+>!
+> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+
 The section below describes how to perform basic COS operations with the .NET SDK, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object.
 
 
->? For the definition of terms such as SecretId, SecretKey, and Bucket, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+>? For the definition of terms such as SecretId, SecretKey, and Bucket, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 >
 
 Namespaces commonly used in this SDK include:
@@ -67,7 +72,7 @@ Before making any COS requests, always instantiate the following 3 objects: `Cos
 - `QCloudCredentialProvider` provides an API to set the key information.
 - `CosXmlServer` provides APIs for COS operations.
 
->? The initialization sample below uses a temporary key. For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>? The initialization sample below uses a temporary key. For more information about how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 >
 
 ### 1. Initialize a COS service
@@ -97,7 +102,7 @@ QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProv
   secretId, secretKey, durationSecond);
 ```
 
-**Type 2: rotating temporary key**
+**Type 2: updated temporary key**
 
 Since temporary keys are short term, you can obtain new ones using the following method:
 
@@ -198,17 +203,17 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ### Uploading an object
 ```cs
-// Initialize TransferConfig.
+// Initialize TransferConfig
 TransferConfig transferConfig = new TransferConfig();
 
-// Initialize TransferManager.
+// Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
 String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 String srcPath = @"temp-source-file";// Absolute path to the local file
 
-// Upload an object.
+// Upload an object
 COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, cosPath);
 uploadTask.SetSrcPath(srcPath);
 
@@ -217,12 +222,12 @@ uploadTask.progressCallback = delegate (long completed, long total)
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
 };
 
-try{
+try {
   COSXML.Transfer.COSXMLUploadTask.UploadTaskResult result = await 
     transferManager.UploadAsync(uploadTask);
   Console.WriteLine(result.GetResultInfo());
   string eTag = result.eTag;
-} catch (Exception e) {
+} catch (Exception e){
     Console.WriteLine("CosException: " + e);
 }
 ```
@@ -258,18 +263,18 @@ catch (COSXML.CosException.CosServerException serverEx)
 ### Downloading an object
 
 ```cs
-// Initialize TransferConfig.
+// Initialize TransferConfig
 TransferConfig transferConfig = new TransferConfig();
 
-// Initialize TransferManager.
+// Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
 String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 string localDir = System.IO.Path.GetTempPath();// Local file directory
 string localFileName = "my-local-temp-file"; // Filename of the local file
 
-// Download an object.
+// Download an object
 COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(bucket, cosPath, 
   localDir, localFileName);
 
@@ -278,12 +283,12 @@ downloadTask.progressCallback = delegate (long completed, long total)
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
 };
 
-try{
+try {
   COSXML.Transfer.COSXMLDownloadTask.DownloadTaskResult result = await 
     transferManager.DownloadAsync(downloadTask);
   Console.WriteLine(result.GetResultInfo());
   string eTag = result.eTag;
-} catch (Exception e) {
+} catch (Exception e){
     Console.WriteLine("CosException: " + e);
 }
 ```

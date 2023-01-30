@@ -6,7 +6,7 @@
 Linux/Windows/macOS: [ XML Linux C++ SDK](https://github.com/tencentyun/cos-cpp-sdk-v5)
 - Download [XML C++ SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-cpp-sdk-v5/latest/cos-cpp-sdk-v5.zip). 
 - Download the demo [here](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp)
-- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/CHANGELOG.md).
+- For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/CHANGELOG.md).
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
 >
@@ -106,7 +106,7 @@ Install the Visual Studio 2017 development environment.
 Download the Windows version of the CMake compiler from the [CMake official website](https://cmake.org/download/), and configure `${CMake installation path}\bin` in the `Path` environment variable.
 3. Compile the SDK. 
  i. Download [XML Windows C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev) to your development environment.
- ii. Open the Windows command-line tool, cd to the directory of the C++ SDK source code, and run the following command:
+    ii. Open the Windows command-line tool, cd to the directory of the C++ SDK source code, and run the following command:
 ```shell
 mkdir build
 cd build
@@ -183,10 +183,16 @@ This is usually caused by the inconsistency between the project's built-in GCC v
 
 The section below describes how to use the COS C++ SDK to perform basic operations, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object.
 
->? For the definition of terms such as SecretId, SecretKey, and Bucket, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+>? For the definition of terms such as SecretId, SecretKey, and Bucket, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 >
 
 ### Initialization
+
+>!
+>- We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+>- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+
 
 Fields in the configuration file are described as follows:
 
@@ -272,10 +278,9 @@ int main(int argc, char *argv[]) {
     
     // 4. Process the call result
     if (result.IsSucc()) {
-        // Room created successfully
+        // Group created successfully
     } else {
         // Failed to create the bucket. You can call the CosResult member functions to output the error information such as the requestID.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -320,7 +325,6 @@ int main(int argc, char *argv[]) {
         // Queried the bucket list successfully
     } else {
         // Failed to query the bucket list. You can call the CosResult member functions to output the error information such as requestID.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -358,7 +362,6 @@ int main(int argc, char *argv[]) {
         // File uploaded successfully
     } else {
         // Failed to upload the file. You can call the CosResult member functions to output the error information such as the requestID.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -399,7 +402,6 @@ int main(int argc, char *argv[]) {
         // Queried the object list successfully
     } else {
         // Failed to query the object list. You can call the CosResult member functions to output the error information such as requestID.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -410,7 +412,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Download an object
+### Downloading an object
 
 ```cpp
 #include "cos_api.h"
@@ -438,7 +440,6 @@ int main(int argc, char *argv[]) {
         // File downloaded successfully
     } else {
         // Failed to download the file. You can call the CosResult member functions to output the error information such as the requestID.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -474,7 +475,6 @@ int main(int argc, char *argv[]) {
         // Deleted the object successfully
     } else {
         // Failed to delete the object. You can call the CosResult member functions to output the error information such as requestID.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;

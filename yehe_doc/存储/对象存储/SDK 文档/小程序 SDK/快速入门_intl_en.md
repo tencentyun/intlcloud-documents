@@ -2,9 +2,9 @@
 
 #### Relevant resources
 
-- Download COS XML SDK source code for WeChat Mini Programs source code here [XML SDK for WeChat Mini Program](https://github.com/tencentyun/cos-wx-sdk-v5).
+- Download COS XML SDK source code for Weixin Mini Programs source code here [XML SDK for Weixin Mini Program](https://github.com/tencentyun/cos-wx-sdk-v5).
 - Download the XML mini program SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-wx-sdk-v5/latest/cos-wx-sdk-v5.zip).
-- Download the demo here [XML SDK for WeChat Mini Program Demo](https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo).
+- Download the demo here [XML SDK for Weixin Mini Program Demo](https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo).
 - For the complete sample code, see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/MiniProgram).
 - For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/CHANGELOG.md).
 - For SDK FAQs, see [Mini Program SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38958).
@@ -14,7 +14,7 @@
 
 #### Environmental dependencies
 
-1. This SDK is only applicable to WeChat Mini Programs.
+1. This SDK is only applicable to Weixin Mini Programs.
 2. Log in to the [COS console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region information](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
@@ -27,11 +27,11 @@
 
 #### Installing SDK
 
-There are two ways to install the SDK for WeChat Mini Programs: manual installation and installation through npm as detailed below.
+There are two ways to install the SDK for Weixin Mini Programs: manual installation and installation through npm as detailed below.
 
 #### Installing manually
 
-Copy the [cos-wx-sdk-v5.js](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/lib/cos-wx-sdk-v5.js) file in the source code directory to any path in the root directory of your WeChat Mini Program code and reference it using a relative path:
+Copy the [cos-wx-sdk-v5.js](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/lib/cos-wx-sdk-v5.js) file in the source code directory to any path in the root directory of your Weixin Mini Program code and reference it using a relative path:
 
 ```js
 var COS = require('./lib/cos-wx-sdk-v5.js')
@@ -39,7 +39,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 
 #### Installing through npm
 
-If the code of your WeChat Mini Program is packaged using webpack, install the dependencies via npm:
+If the code of your Weixin Mini Program is packaged using webpack, install the dependencies via npm:
 
 ```plaintext
 npm install cos-wx-sdk-v5
@@ -49,9 +49,9 @@ Here, the program code is referenced by using `var COS = require('cos-wx-sdk-v5'
 
 ## Getting Started
 
-### Configuring domain name allowlist for WeChat Mini Programs
+### Configuring domain name allowlist for Weixin Mini Programs
 
-To request COS in your WeChat Mini Program, you need to log in to the [WeChat Official Accounts Platform](https://mp.weixin.qq.com) and configure the domain name allowlist in **Development** > **Development Settings** > **Server Domain Name**. The SDK uses the following two APIs:
+To request COS in your Weixin Mini Program, you need to log in to the [Weixin Official Accounts Platform](https://mp.weixin.qq.com) and configure the domain name allowlist in **Development** > **Development Settings** > **Server Domain Name**. The SDK uses the following two APIs:
 
 1. For cos.postObject, use the wx.uploadFile API.
 2. For other methods, use the wx.request API.
@@ -60,9 +60,15 @@ For both methods, you need to configure the COS domain name. There are two forms
 
 1. For standard requests, you can configure the bucket domain name as the allowed domain name, for example:
    `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com`
-2. If multiple buckets are used in your WeChat Mini Program, you can choose to use suffixed COS requests by passing in `ForcePathStyle: true` when instantiating the SDK. In this case, you need to configure the region domain name as the allowed domain name, such as `cos.ap-guangzhou.myqcloud.com`.
+2. If multiple buckets are used in your Weixin Mini Program, you can choose to use suffixed COS requests by passing in `ForcePathStyle: true` when instantiating the SDK. In this case, you need to configure the region domain name as the allowed domain name, such as `cos.ap-guangzhou.myqcloud.com`.
 
 ### Initialization
+
+>!
+>- We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+>- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+
 
 ```js
 var COS = require('./lib/cos-wx-sdk-v5.js')
@@ -232,7 +238,7 @@ var cos = new COS({
 | CopyChunkSize  | Number of bytes in each part during a multipart copy operation with `sliceCopyFile`. Default value: `10485760` (10 MB) | Number | No |
 | CopySliceSize | When a file is copied using sliceCopyFile, if the file size is greater than the value of this parameter, multipart copy (sliceCopyFile) is used; otherwise, simple copy (putObjectCopy) is used. Default value: 10485760 (10 MB) | Number | No |
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` in milliseconds. Default value: 1000 | Number | No |
-| Protocol | Protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
+| Protocol | The protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
 | ServiceDomain | The request domain name when `getService` is called, such as `service.cos.myqcloud.com` | String | No |
 | Domain | The custom request domain name used to call a bucket or object API. You can use a template, such as `"{Bucket}.cos.{Region}.myqcloud.com"` which will use the bucket and region passed in the replacement parameters when an API is called. | String | No |
 | UploadQueueSize | The maximum size of the upload queue. Excess tasks will be cleared if their status is not waiting, checking, or uploading. Default value: 10000 | Number | No |
@@ -354,7 +360,7 @@ The sync method is based on JavaScript's async and await. The code of the callba
 async function upload() {
   // The initialization process and upload parameters are omitted here.
   var cos = new COS({ ... });
-  try{
+  try {
     var data = await cos.uploadFile({ ... });
     return { err: null, data: data }
   } catch (err) {
@@ -419,7 +425,7 @@ cos.putBucket({
 });
 ```
 
->! If you need to create a bucket via the WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as an allowed domain name. Instead, you can use suffixed calls. For more information, see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
+>! If you need to create a bucket via the Weixin Mini Program, but the bucket name is unknown, you cannot configure the bucket name as an allowed domain name. Instead, you can use suffixed calls. For more information, see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
 >
 
 ### Querying the bucket list
@@ -462,7 +468,7 @@ function handleFileInUploading(fileName, filePath) {
   });
 }
 
-/* Select a file to get the temporary path (with an image as an example here). For other types of files, see the official APIs of WeChat Mini Program. */
+/* Select a file to get the temporary path (with an image as an example here). For other types of files, see the official APIs of Weixin Mini Program. */
 wx.chooseImage({
     count: 1, // Default value: 9
     sizeType: ['original'], // You can specify whether to use the original or compressed image. The original is used by default value.
@@ -487,7 +493,7 @@ cos.getBucket({
 });
 ```
 
-### Download an object
+### Downloading an object
 
 >! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31711).
 >

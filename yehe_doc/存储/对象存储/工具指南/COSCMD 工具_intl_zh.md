@@ -173,6 +173,14 @@ anonymous = False
 
 ### 使用 config 命令生成配置文件
 
+
+
+>!
+>- 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+>- 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
+
 config 命令可以在 `~/.cos.conf` 自动生成配置文件，命令具体格式如下：
 ```plaintext
 coscmd config [OPTION]...<FILE>...
@@ -749,5 +757,6 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 ## 常见问题
 
 如您在使用 COSCMD 工具过程中，有相关的疑问，请参见 [COSCMD 工具类常见问题](https://intl.cloud.tencent.com/document/product/436/30586)。
+
 
 

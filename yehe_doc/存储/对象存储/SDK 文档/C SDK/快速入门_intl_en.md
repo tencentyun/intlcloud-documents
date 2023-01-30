@@ -1,21 +1,21 @@
 ## Download and Installation
 
-#### Related resources
+#### Relevant resources
 
 - Download COS XML C SDK source code: [XML C SDK](https://github.com/tencentyun/cos-c-sdk-v5).
 - Download demo: [XML C SDK Demo](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c).
-- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see C SDK FAQs.
+- For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/CHANGELOG.md).
+- For SDK FAQs, see [C SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40772).
 
 
->? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
+>? If you encounter errors such as non-existent functions or methods when using the SDK, you can update the SDK to the latest version and try again.
 >
 
-#### Environment dependencies
+#### Environmental dependencies
 
 Dependent library: libcurl apr apr-util minixml.
 
-#### Installing SDKs
+#### Installing SDK
 
 1. Download the CMake tool (v2.6.0 and higher recommended) [here](http://www.cmake.org/download/) and install it as shown below:
 ```bash
@@ -62,12 +62,17 @@ Below is the general process of using COS XML C SDK.
 2. Set the request option parameters. For the definitions of parameters such as APPID, SecretId, SecretKey, and Bucket, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
  - APPID is one of the account IDs assigned by the system after you register for a Tencent Cloud account.
  - `access_key_id` and `access_key_secret` are account API keys.
- - `endpoint` is the COS access domain name. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). For example, the endpoint of the Guangzhou region is `cos.ap-guangzhou.myqcloud.com`, and the endpoint of a global acceleration domain name is `cos.accelerate.myqcloud.com`. You can add "http" or "https" to the endpoints. The SDK accesses COS via HTTP by default. For example, the endpoint for accessing the Guangzhou region via HTTPS is `https://cos.ap-guangzhou.myqlcoud.com`.
+ - `endpoint` is the COS access domain name. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). For example, the endpoint of the Guangzhou region is `cos.ap-guangzhou.myqcloud.com`, and the endpoint of a global acceleration domain name is `cos.accelerate.myqcloud.com`. You can add "http" or "https" to the endpoints. The SDK accesses COS via HTTP by default. For example, the endpoint for accessing the Guangzhou region via HTTPS is `https://cos.ap-guangzhou.myqcloud.com`.
  - `is_cname` specifies whether an endpoint is a custom domain name. If `is_cname` is set to 1, the endpoint is a custom domain name.
 3. Set the parameters required for APIs.
 4. Call the SDK API to initiate a request and get the response.
 
 ### Initialization
+
+>!
+> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
 
 ```cpp
 int main(int argc, char *argv[])
@@ -128,7 +133,7 @@ cos_set_content_md5_enable(options->ctl, COS_FALSE);
 //cos_set_request_route(options->ctl, "192.168.12.34", 80);
 ```
 
->? For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>? For more information about how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 >
 
 
@@ -175,7 +180,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Querying an object list
+### Querying objects
 
 ```cpp
 cos_pool_t *p = NULL;

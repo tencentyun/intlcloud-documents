@@ -7,7 +7,7 @@
 - SDK 更新日志请参见：[ChangeLog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md)。
 - SDK 常见问题请参见：[iOS SDK 常见问题](https://intl.cloud.tencent.com/document/product/436/38957)。
 
->? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试)。
+>? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
 >
 
 ## 准备工作
@@ -106,6 +106,11 @@ import QCloudCOSXMLTransfer
 
 ### 2. 初始化 COS 服务并实现签名协议
 
+>!
+> - 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+> - 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
 #### 方式一：获取临时密钥对请求授权（推荐）
 
 SDK 在发出请求时，需要获取临时密钥计算签名，因此需要您实现 `QCloudSignatureProvider` 协议，在该协议中获取密钥后将密钥通过参数`continueBlock` 回调给 SDK。
@@ -164,7 +169,7 @@ SDK 在发出请求时，需要获取临时密钥计算签名，因此需要您�
     // sercret_key替换为用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // 临时密钥 Token
-    // 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
+    // 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
     credential.token = @"TOKEN";
     /** 强烈建议返回服务器时间作为签名的开始时间, 用来避免由于用户手机本地时间偏差过大导致的签名不正确(参数startTime和expiredTime单位为秒)
     */
@@ -233,7 +238,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         // sercret_key替换为用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // 临时密钥 Token
-        // 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
+        // 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
         credential.token = "TOKEN";
         /** 强烈建议返回服务器时间作为签名的开始时间, 用来避免由于用户手机本地时间偏差过大导致的签名不正确(参数startTime和expiredTime单位为秒)
         */
@@ -321,7 +326,7 @@ SDK 提供了一个 `QCloudCredentailFenceQueue` 的脚手架，实现对临时�
     // sercret_key替换为用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // 临时密钥 Token
-    // 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
+    // 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
     credential.token = @"TOKEN";
     /** 强烈建议返回服务器时间作为签名的开始时间, 用来避免由于用户手机本地时间偏差过大导致的签名不正确(参数startTime和expiredTime单位为秒)
     */
@@ -410,7 +415,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         // sercret_key替换为用户的 SecretKey，登录访问管理控制台查看密钥，https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // 临时密钥 Token
-        // 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://cloud.tencent.com/document/product/436/14048
+        // 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
         credential.token = "TOKEN";
         /** 强烈建议返回服务器时间作为签名的开始时间, 用来避免由于用户手机本地时间偏差过大导致的签名不正确(参数startTime和expiredTime单位为秒)
         */

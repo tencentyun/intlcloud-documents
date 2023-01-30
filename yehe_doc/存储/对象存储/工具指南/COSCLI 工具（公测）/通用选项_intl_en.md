@@ -3,6 +3,11 @@ You can view the common options supported by COSCLI with the `./coscli --help` o
 ## Option Description
 The following are common options for COSCLI, which can be used in all its commands:
 
+>!
+>- We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+>- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+
 | Option | Description |
 |  ----  | ----  |
 |-h, --help| Outputs help information. You can view the help information and usage of the tool with the `-h` or `--help` command. You can also enter `-h` after each command (with no parameter appended) to see how to use the command. For example, to view the specific usage of the bucket creation command, enter `coscli mb -h`. |

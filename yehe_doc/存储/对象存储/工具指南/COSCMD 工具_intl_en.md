@@ -173,6 +173,14 @@ anonymous = False
 
 ### Generating a configuration file via the `config` command
 
+
+
+>!
+>- We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+>- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+
+
 You can run the `config` command to automatically generate a configuration file in `~/.cos.conf`. The command format is as follows:
 ```plaintext
 coscmd config [OPTION]...<FILE>...
@@ -387,7 +395,7 @@ coscmd upload -rs D:/doc / --ignore *.txt,*.doc
 coscmd upload -rs D:/doc / --ignore "*.txt"
 ```
 >! 
-> - When uploading folders, you can ignore certain types of files by using the `--ignore` parameter, or filter certain types of files by using `--include`. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension. If `""` contains multiple comma-separated rules, the first rule applies.
+> - When uploading folders, you can ignore certain types of files by using the `--ignore` parameter, or filter certain types of files by using `--include`. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension. If `""` contains multiple comma-separated rules, the first rule prevails.
 > - If you want to use `--ignore` to filter all files in a particular folder, you need to use an absolute path and use `""` to enclose the path, for example, `coscmd upload -rs D:/doc / --ignore "D:/doc/ignore_folder/*"`.
 >
 - Sample: uploading .txt and .doc files in the "doc" folder in D drive
@@ -744,10 +752,11 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 >?
 > - Replace "cospath" enclosed in "<>" with the COS path of the file list to query.
 > - Use `-d <day>` to set the validity period of the temporary copy. Default value: `7`.
-> - Use `-t <tier>` to specify the restoration mode. Enumerated values: `Expedited` (expedited retrieval), `Standard` (standard retrieval), and `Bulk` (bulk retrieval). Default value: `Standard`.
+> - Use `-t <tier>` to specify the restoration mode. Enumerated values: `Expedited` (Expedited retrieval), `Standard` (Standard retrieval), and `Bulk` (bulk retrieval). Default value: `Standard`.
 
 ## FAQs
 
 If you have any questions about COSCMD, see [COSCMD](https://intl.cloud.tencent.com/document/product/436/30586).
+
 
 

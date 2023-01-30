@@ -24,6 +24,13 @@ go get -u github.com/tencentyun/cos-go-sdk-v5
 下面为您介绍如何使用 COS Go SDK 完成一个基础操作，如初始化客户端、创建存储桶、查询存储桶列表、上传对象、查询对象列表、下载对象和删除对象。
 
 ### 初始化
+
+>!
+>- 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+>- 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
+
 使用 COS 域名生成 COS GO 客户端 Client 结构。
 
 #### 方法原型
@@ -54,11 +61,11 @@ type BaseURL struct {
 
 #### 请求示例1：使用永久密钥
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```go
 // 将 examplebucket-1250000000 和 COS_REGION 修改为用户真实的信息
 // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 // 用于Get Service 查询，默认全地域 service.cos.myqcloud.com
 su, _ := url.Parse("https://cos.COS_REGION.myqcloud.com")
@@ -74,11 +81,11 @@ client := cos.NewClient(b, &http.Client{
 
 #### 请求示例2：使用临时密钥
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```go
 // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
 // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u}
 // 2.临时密钥
@@ -127,7 +134,7 @@ COS Go SDK 默认开启了文件上传 CRC64 检验。
 ```
 // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
 // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u}
 // 2.临时密钥
@@ -164,7 +171,7 @@ import (
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
@@ -239,7 +246,7 @@ import (
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
@@ -296,7 +303,7 @@ import (
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
@@ -343,7 +350,7 @@ import (
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
@@ -387,7 +394,7 @@ import (
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{

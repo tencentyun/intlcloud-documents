@@ -1,6 +1,11 @@
 ## 简介
 本文档提供关于创建存储桶的 API 概览以及 SDK 示例代码。
 
+>!
+> - 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+> - 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
 | API                                                          | 操作名             | 操作描述                           |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
 | [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | 创建存储桶         | 在指定账号下创建一个存储桶   |
@@ -33,7 +38,7 @@ import (
 
 func main() {
         // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-        // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
+        // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
         u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
         b := &cos.BaseURL{BucketURL: u}
         client := cos.NewClient(b, &http.Client{
@@ -55,6 +60,14 @@ func main() {
                 panic(err)
         }
 
+        // case2：创建 MAZ 存储桶
+        opt.CreateBucketConfiguration = &cos.CreateBucketConfiguration{
+                BucketAZConfig: "MAZ",
+        }
+        _, err = client.Bucket.Put(context.Background(), opt)
+        if err != nil {
+                panic(err)
+        }
 }
 ```
 
@@ -78,3 +91,4 @@ type CreateBucketConfiguration struct {
 | XCosGrantFullControl | 赋予指定账户对 Bucket 的读写权限。格式为`id=" ",id=" "`。当需要给子账户授权时，格式为`id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`，当需要给主账户授权时，格式为`id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`。例如`id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | 否   |
 | XCosGrantRead        | 赋予指定账户对 Bucket 的读权限。格式为`id=" ",id=" "`。当需要给子账户授权时，格式为`id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`，当需要给主账户授权时，格式为`id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`。例如`id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | 否   |
 | XCosGrantWrite       | 赋予指定账户对 Bucket 的写权限。格式为`id=" ",id=" "`。当需要给子账户授权时，格式为`id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`，当需要给主账户授权时，格式为`id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`。例如`id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | 否   |
+| BucketAZConfig | 存储桶 AZ 配置，指定为 MAZ 以创建多 AZ 存储桶。多 AZ 存储类型的适用地域，请参见 [多 AZ 特性概述](https://intl.cloud.tencent.com/document/product/436/35208) | Struct | 否   |
