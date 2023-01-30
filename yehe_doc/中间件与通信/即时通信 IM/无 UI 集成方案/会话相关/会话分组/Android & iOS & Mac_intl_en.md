@@ -168,7 +168,7 @@ callback->SetCallback(
         delete callback;
     },
     [=](int error_code, const V2TIMString& error_message) {
-        // Deleted the conversation group successfully
+        //  Failed to delete the conversation group
         delete callback;
     });
 
