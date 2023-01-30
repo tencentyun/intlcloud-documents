@@ -62,7 +62,6 @@
         <p class="titlename">Web & H5 SDK</p>
         <p style="color:#586376;">すべてのIM機能とグループライブストリーミングマイク接続機能が含まれています</p>
         <div style="margin-top: 13px;" >
-        <a  href="https://github.com/tencentyun/TIMSDK/tree/master/Web/IMSDK">Githubダウンロード</a>
         <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-js-sdk">NPMダウンロード</a>
         <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">統合ガイド</a>
         <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">ログのアップデート</a>
@@ -207,7 +206,7 @@
                                 <p class="titlename"> IM Demo （Web）</p>
                 <p style="color:#586376;">すべてのIM機能とグループライブストリーミングマイク接続機能が含まれています</p>
                     <div style="margin-top: 13px;" >
-                    <a " href="https://github.com/tencentyun/TIMSDK/tree/master/Web">Githubダウンロード</a>
+                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Githubダウンロード</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">統合ガイド</a>
                     </div>
             </div>
