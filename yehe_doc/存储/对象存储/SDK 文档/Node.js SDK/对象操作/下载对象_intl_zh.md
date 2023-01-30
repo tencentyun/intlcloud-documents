@@ -19,7 +19,7 @@ GET Object 接口请求可以获取存储桶里指定对象的内容并下载至
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -32,7 +32,7 @@ cos.getObject({
 
 指定 Range 获取文件内容：
 
-[//]: # ".cssg-snippet-get-object-range"
+[//]: # (.cssg-snippet-get-object-range)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -46,7 +46,7 @@ cos.getObject({
 
 下载文件到指定路径：
 
-[//]: # ".cssg-snippet-get-object-path"
+[//]: # (.cssg-snippet-get-object-path)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -60,7 +60,7 @@ cos.getObject({
 
 下载文件到指定写文件流：
 
-[//]: # ".cssg-snippet-get-object-stream"
+[//]: # (.cssg-snippet-get-object-stream)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -76,7 +76,7 @@ cos.getObject({
 
 >?关于下载对象的限速说明，请参见 [单链接限速](https://intl.cloud.tencent.com/document/product/436/34072)。
 
-[//]: # ".cssg-snippet-get-object-traffic-limit"
+[//]: # (.cssg-snippet-get-object-traffic-limit)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -148,7 +148,7 @@ function(err, data) { ... }
 
 按前缀下载多个对象（下载指定目录下的文件）：
 
-[//]: # ".cssg-snippet-get-objects"
+[//]: # (.cssg-snippet-get-objects)
 ```js
 var config = {
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
@@ -156,11 +156,12 @@ var config = {
 }
 
 // 递归创建目录举例，可自行实现
-function mkdirsSync(dirname) {
-  if(fs.existsSync(dirname)) {
+function mkdirsSync(dirname) {
+  if(fs.existsSync(dirname)) {
     return true;
   }else{
-    if(mkdirsSync(path.dirname(dirname))) {
+    if(mkdirsSync(path.dirname(dirname))) {
+
       fs.mkdirSync(dirname);
       return true;
     }
@@ -218,7 +219,7 @@ batchDownload();
 
 #### 功能说明
 
-分块下载接口，支持分块并发下载。
+分块下载接口，支持分块并发下载。(要求sdk版本至少在v2.9.14)
 
 #### 方法原型
 
