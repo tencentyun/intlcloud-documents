@@ -54,9 +54,9 @@
     ![](https://qcloudimg.tencent-cloud.cn/raw/b4d770775523fdd76b75f1d80f07c925.jpg)
 
 2. 单击 Unity Editor 运行按钮、启动该场景的运行。单击 Init（初始化SDK）、Login（登录到 IM），以及其他测试按钮进行测试。
+<img src="https://qcloudimg.tencent-cloud.cn/raw/40fb0f381096840418b66b804d403140.png" alt="image-20220616115353114" style="zoom:50%;" />
 
-  <img src="https://qcloudimg.tencent-cloud.cn/raw/40fb0f381096840418b66b804d403140.png" alt="image-20220616115353114" style="zoom:50%;" />
-	
+
 ## 常见问题
 
 ### 支持哪些平台？
