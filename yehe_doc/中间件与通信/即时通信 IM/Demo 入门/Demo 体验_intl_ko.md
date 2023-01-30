@@ -243,7 +243,7 @@ ul.rno-tabs-operation {
            체험하기
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/im/demo/en/index.html#/login');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">인앱 채팅</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/im/demo/intl/index.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">인앱 채팅</div>
         </div>
     </div>
     </div>
@@ -276,7 +276,7 @@ ul.rno-tabs-operation {
 :::
 ::: 채팅 관리
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/6be87bd426822b2e8868424c197a9bc9.png"/>
+    <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/C7Qm895_%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%402x.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -415,7 +415,7 @@ ul.rno-tabs-operation {
                                 <p class="titlename"> IM Demo (Web)</p>
                 <p style="color:#586376;">모든 IM 기능과 그룹의 라이브 스트림 공동 앵커 기능 포함</p>
                     <div style="margin-top: 13px;" >
-                    <a " href="https://github.com/tencentyun/TIMSDK/tree/master/Web">Github 다운로드</a>
+                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Github 다운로드</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">통합 가이드</a>
                     </div>
             </div>
