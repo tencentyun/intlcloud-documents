@@ -70,7 +70,7 @@ coscli version v0.12.0-beta
 ## 配置参数
 
 >!
->- 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+>- 建议用户通过 [临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 使用工具，通过临时授权的方式进一步提高工具 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
 >- 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
 
 
@@ -123,4 +123,4 @@ cos:
 
 COSCLI 支持多个存储桶，然而在初次配置时，COSCLI 只会要求您配置一个存储桶的信息，您后续可以使用 `./coscli config add` 命令添加存储桶配置。
 
->? 更多有关配置文件的操作，请参考 [config 命令](https://intl.cloud.tencent.com/document/product/436/43251)。
+>? 更多有关配置文件的操作，请参见 [config 命令](https://intl.cloud.tencent.com/document/product/436/43251)。
