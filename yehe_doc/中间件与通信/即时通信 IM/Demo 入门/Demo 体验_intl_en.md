@@ -243,7 +243,7 @@ ul.rno-tabs-operation {
            Try now
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/im/demo/en/index.html#/login');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">In-app Chat</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/im/demo/intl/index.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">In-app Chat</div>
         </div>
     </div>
     </div>
@@ -415,7 +415,7 @@ ul.rno-tabs-operation {
                                 <p class="titlename"> IM Demo (Web)</p>
                 <p style="color:#586376;">Includes all IM features and the capability to co-anchor in a live stream in a group</p>
                     <div style="margin-top: 13px;" >
-                    <a " href="https://github.com/tencentyun/TIMSDK/tree/master/Web">Download via GitHub</a>
+                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Download via GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">Integration Guide</a>
                     </div>
             </div>
