@@ -19,7 +19,7 @@ This API (GET Object) is used to download an object in a COS bucket to a local f
 
 #### Sample code
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -32,7 +32,7 @@ cos.getObject({
 
 Getting file content with `Range` specified
 
-[//]: # ".cssg-snippet-get-object-range"
+[//]: # (.cssg-snippet-get-object-range)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -46,7 +46,7 @@ cos.getObject({
 
 Download the file to a specified path:
 
-[//]: # ".cssg-snippet-get-object-path"
+[//]: # (.cssg-snippet-get-object-path)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -60,7 +60,7 @@ cos.getObject({
 
 Download the file to a specified write file stream:
 
-[//]: # ".cssg-snippet-get-object-stream"
+[//]: # (.cssg-snippet-get-object-stream)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -76,7 +76,7 @@ Downloading an object (limiting single-URL speed):
 
 >?For more information about the speed limits on object downloads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
 
-[//]: # ".cssg-snippet-get-object-traffic-limit"
+[//]: # (.cssg-snippet-get-object-traffic-limit)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -148,7 +148,7 @@ function(err, data) { ... }
 
 Download multiple objects with a specified prefix (download objects from a specified directory):
 
-[//]: # ".cssg-snippet-get-objects"
+[//]: # (.cssg-snippet-get-objects)
 ```js
 var config = {
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
@@ -218,7 +218,7 @@ batchDownload();
 
 #### Description
 
-This API is used to implement multipart download. It supports concurrent part download.
+This API is used to implement multipart download. It supports concurrent part download.(The sdk version is required to be at least v2.9.14)
 
 #### Method prototype
 
