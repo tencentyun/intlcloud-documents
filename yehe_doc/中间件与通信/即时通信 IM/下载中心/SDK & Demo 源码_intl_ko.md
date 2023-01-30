@@ -62,7 +62,6 @@ IM SDK 및 Demo의 최신 소스 코드를 다운로드할 수 있습니다.
         <p class="titlename">Web & H5 SDK</p>
         <p style="color:#586376;">모든 IM 기능과 그룹의 라이브 스트림 공동 앵커 기능 포함</p>
         <div style="margin-top: 13px;" >
-        <a  href="https://github.com/tencentyun/TIMSDK/tree/master/Web/IMSDK">Github 다운로드</a>
         <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-js-sdk">NPM 다운로드</a>
         <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">통합 가이드</a>
         <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34281">업데이트 로그</a>
@@ -207,7 +206,7 @@ IM SDK 및 Demo의 최신 소스 코드를 다운로드할 수 있습니다.
                                 <p class="titlename"> IM Demo (Web)</p>
                 <p style="color:#586376;">모든 IM 기능과 그룹의 라이브 스트림 공동 앵커 기능 포함</p>
                     <div style="margin-top: 13px;" >
-                    <a " href="https://github.com/tencentyun/TIMSDK/tree/master/Web">Github 다운로드</a>
+                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Github 다운로드</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">통합 가이드</a>
                     </div>
             </div>
