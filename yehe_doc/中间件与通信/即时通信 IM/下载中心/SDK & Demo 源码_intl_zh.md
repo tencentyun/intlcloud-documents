@@ -62,7 +62,6 @@
         <p class="titlename">Web & H5 SDK</p>
         <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
         <div style="margin-top: 13px;" >
-        <a  href="https://github.com/tencentyun/TIMSDK/tree/master/Web/IMSDK">Github 下载</a>
         <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-js-sdk">NPM 下载</a>
         <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">集成指引</a>
         <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a>
@@ -207,7 +206,7 @@
                                 <p class="titlename"> IM Demo （Web）</p>
                 <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
                     <div style="margin-top: 13px;" >
-                    <a " href="https://github.com/tencentyun/TIMSDK/tree/master/Web">Github 下载</a>
+                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Github 下载</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">集成指引</a>
                     </div>
             </div>
