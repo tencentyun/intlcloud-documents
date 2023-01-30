@@ -276,7 +276,7 @@ ul.rno-tabs-operation {
 :::
 ::: セッション管理
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/6be87bd426822b2e8868424c197a9bc9.png"/>
+    <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/C7Qm895_%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%402x.png"/>
 </div>
 <div class="tab-bottom">
     <div>
