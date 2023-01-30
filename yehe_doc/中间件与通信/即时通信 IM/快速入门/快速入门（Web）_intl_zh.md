@@ -52,7 +52,7 @@ $ npm run start
 4. 在输入框输入消息，按下"enter"键发送。
    ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat.gif)
 
-## 集成 chat-uikit-react
+### 集成 chat-uikit-react
 
 ### 步骤一：Installation
 ```
