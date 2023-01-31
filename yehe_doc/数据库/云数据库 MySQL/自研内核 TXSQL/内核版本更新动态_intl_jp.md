@@ -1,12 +1,11 @@
 このドキュメントではMySQLのカーネルバージョンの更新手順について説明します。
 >?
 >- TencentDB for MySQLのアップデートについて、[カーネルマイナーバージョンのアップデート](https://intl.cloud.tencent.com/document/product/236/36816)をご参照ください。
->- マイナーバージョンをアップデートするときに、一部のマイナーバージョンのメンテナンスで選択できない場合があります。コンソールで選択できるマイナーバージョンを優先してください。
+>- マイナーバージョンをアップデートする場合に、一部のマイナーバージョンのメンテナンスで選択できない場合があります。コンソールで選択できるマイナーバージョンを優先してください。
 >-　TencentDB for MySQLデータベースエージェントのマイナーバージョンの説明については、[データベースエージェントカーネルイマイナーバージョンの更新説明](https://intl.cloud.tencent.com/document/product/236/45626)および[データベースエージェントカーネルマイナーバージョンの更新説明（新しいバージョン）](https://www.tencentcloud.com/document/product/236/45626)をご参照ください。
 
 <dx-tabs>
 ::: MySQL 8.0カーネルマイナーバージョンの更新説明
-
 <table>
 <thead><tr><th>カーネルマイナーバージョン</th><th>の説明</th></tr></thead>
 <tbody>
@@ -33,7 +32,7 @@
 <li>writeset並列レプリケーションはデフォルトでオンになっています。</li>
 <li>I/O、メモリ使用率、SQLタイムアウトポリシーをユーザー単位で制御できる拡張リソースグループをサポートします。</li>
 <li>UNDO時間範囲内の任意の時点のデータを問い合せるフラッシュバック問合せ機能をサポートします。</li>
-<li>delete/insert/replace/updateのreturning構文をサポートし、このstatmentが操作するデータ行を返します。</li>
+<li>delete/insert/replace/updateのreturning構文をサポートし、このstatementが操作するデータ行を返します。</li>
 <li>rowモードのgtidレプリケーション機能拡張をサポートします。</li>
 <li>トランザクションロックの最適化機能をサポートします。</li>
 <li>ごみ箱が拡張され、truncate tableとごみ箱内のテーブルの自動クリーンアップをサポートします。</li>
@@ -81,7 +80,7 @@
 <li>非予約語の追加:TABLESAMPLE BERNOULLI。</li>
 <li>特定の入力フィールドのヒストグラムを作成するためのHISTOGRAM()関数を追加します。</li>
 <li>compressedヒストグラムをサポートします。</li>
-<li>SQLトラフィック制限機能をサポートします（DBbrianは2022年4月よりサポートする予定）。</li>
+<li>SQLトラフィック制限の機能をサポートします。</li>
 <li>MySQLクラスターロールの設定機能をサポートします。デフォルトのロールはCDB_ROLE_UNKNOWNです。</li>
 <li>show replicasのコマンド実行結果に、ロールを表示するためのRole列を新規追加します。</li>
 <li>proxyをサポートします。</li>
@@ -119,7 +118,7 @@
 <ul><li>新特性</li><ul>
 <li>プリロード行数制限機能をサポートしています。</li>
 <li>プランキャッシュチェックの最適化機能をサポートしています。</li>
-<li>ANALYZE構文（UPDATE HISTOGRAM c USING DATA 'json'）を拡張して、直接ヒストグラムを書き込む機能をサポートします。
+<li>ANALYZE構文(UPDATE HISTOGRAM c USING DATA 'json')を拡張して、直接ヒストグラムを書き込む機能をサポートします。
 </li>
 </ul>
 
@@ -200,7 +199,7 @@
 <td>20200630</td>
 <td>
 <ul><li>新特性</li><ul>
-<li>大規模なテーブルの非同期削除可能：ファイルを非同期かつ低速にクリーンアップすることで、大規模なテーブルの削除によるサービスパフォーマンスのジッター現象を回避します。この機能を有効化するには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>大規模なテーブルの非同期削除可能：ファイルを非同期かつ低速にクリーンアップすることで、大規模なテーブルの削除によるサービスパフォーマンスのジッター現象を回避します。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
 <li>アイドルタスクを自動的にkillしてリソースの競合を減らすことをサポートします。この機能を有効化するには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
 <li>透過的なデータ暗号化をサポートします。</li>
 </ul>
@@ -315,7 +314,7 @@
 <li>innodbの統計情報が、変更後にServer層に速やかに同期されない不具合を修正しました。</li>
 <li>統計サンプリングのブロックにより書き込み時間が長くなり、クラッシュが引き起こされる不具合を修正しました(Bug#31889883)。</li>
 <li>innodbの統計情報の更新処理で、一定の確率で0を読み込むことになる不具合を修正しました(BUG#105224)。</li>
-<li>MVCCに発生する可能性のある複雑さがO(N^2)の挙動を修正しました（Bug#28825617）。</li>
+<li>MVCCに発生する可能性のある複雑さがO(N^2)の挙動を修正しました(Bug#28825617)。</li>
 <li>接続が解放されたときに、一時テーブルを閉じることによって引き起こされるbinlog rotateによるcrashを修正しました。</li>
 </ul>
 </td>
@@ -535,7 +534,7 @@
 <ul><li>新特性</li><ul>
 <li>大規模なテーブルの非同期削除可能：ファイルを非同期かつ低速にクリーンアップすることで、大規模なテーブルの削除によるサービスパフォーマンスのジッター現象を回避します。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
 <li>CATSのロックスケジューラをサポートします。</li>
-<li>GTIDを有効にすると、トランザクション内の一時テーブルおよびCTS構文を作成・削除することができます。この機能を有効にするには<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
+<li>GTIDを有効にすると、トランザクション内の一時テーブルおよびCTS構文を作成・削除することができます。この機能を有効化するには<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 <li>暗黙的なプライマリキーをサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 <li>super権限以外のユーザーが他のユーザーのセッションを強制終了する機能をサポートします。cdb_kill_user_extraパラメータを使用して設定します。デフォルト値はroot@%です。</li>
 <li>エンタープライズクラスの暗号化関数をサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>

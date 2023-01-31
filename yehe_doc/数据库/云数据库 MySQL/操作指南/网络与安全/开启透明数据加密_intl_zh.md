@@ -2,6 +2,7 @@
 云数据库 MySQL 提供透明数据加密（Transparent Data Encryption，TDE）功能，透明加密指数据的加解密操作对用户透明，支持对数据文件进行实时 I/O 加密和解密，在数据写入磁盘前进行加密，从磁盘读入内存时进行解密，可满足静态数据加密的合规性要求。
 
 ## 限制条件
+- 实例架构须为双节点、三节点。
 - 实例类型须为 MySQL 5.7、MySQL 8.0。
 - 已开通密钥管理服务 KMS。如未开通，可在开通数据加密过程中根据引导开通 KMS。
 - 已授予 KMS 密钥权限。如未授予，可在开通数据加密过程中根据引导进行授权。
@@ -19,6 +20,7 @@
 - 如果主实例关联只读实例或灾备实例，只需主动开通主实例的数据加密功能即可，只读实例和灾备实例的数据加密会一并开通。
 - 开启 TDE 加密功能后，当账号处于欠费状态时，无法从 KMS 获取密钥，可能导致迁移、升级等任务无法正常进行。
 - 开启 TDE 加密功能后，会增加 CPU 资源的消耗，大约会影响5%左右的性能。
+- 开启 TDE 加密功能后，经过数据库身份验证的应用和用户可以透明地访问应用数据。
 
 
 ## 操作步骤
@@ -29,14 +31,14 @@
 >- 启用数据加密功能的实例，不支持使用物理备份恢复至其他主机上的自建数据库。
 >- 数据加密开通后不可关闭。
 >
-![](https://main.qcloudimg.com/raw/bc032cee3e68506b77c044622e8c029f.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Sy8E698_7.png)
 3. 在弹出的对话框，开通 KMS 服务和授予 KMS 密钥权限，选择密钥后，单击**加密**。
    - 选择**使用腾讯云自动生成的密钥**时，由腾讯云自动生成密钥。
-    ![](https://main.qcloudimg.com/raw/d54abe36c8e392c09b39045f0b7a5b95.png)
+    ![](https://staticintl.cloudcachetci.com/yehe/backend-news/ZAYi660_8.png)
    - 选择**使用已有自定义密钥**时，可选择自己创建的密钥。
 >?如无自定义密钥，需单击**前往创建**，在密钥管理系统控制台创建密钥，详情请参见 [创建密钥](https://intl.cloud.tencent.com/document/product/1030/31971)。
 >
-![](https://main.qcloudimg.com/raw/39d442d9620f36c1d57b55a409e6f9e2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/4xju767_9.png)
 
 
 ### 加密数据表
@@ -56,4 +58,3 @@ ALTER TABLE t1 ENCRYPTION=’Y’;
 ```
 ALTER TABLE t1 ENCRYPTION=’N’;
 ```
-

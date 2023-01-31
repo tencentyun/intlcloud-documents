@@ -2,11 +2,10 @@
 >?
 >- TencentDB for MySQL 인스턴스의 마이너 커널 버전 업그레이드 방법에 대한 자세한 내용은 [커널 마이너 버전 업그레이드](https://intl.cloud.tencent.com/document/product/236/36816)를 참고하십시오.
 >- 마이너 버전 업그레이드 시 일부 마이너 버전은 점검 중이라 선택이 불가할 수 있습니다. 콘솔에서 사용할 수 있는 마이너 버전이 우선됩니다.
->- TencentDB for MySQL 데이터베이스 프록시의 마이너 버전에 대한 자세한 내용은 [커널 마이너 버전 업데이트 설명](https://intl.cloud.tencent.com/document/product/236/45626) 및 [커널 마이너 버전 업데이트 설명(새 버전)](https://www.tencentcloud.com/document/product/236/45626)을 참고하십시오.
+>- TencentDB for MySQL 데이터베이스 프록시의 마이너 버전에 대한 자세한 내용은 [커널 마이너 버전 업데이트 설명](https://intl.cloud.tencent.com/document/product/236/45626) 및 [커널 마이너 버전 업데이트 설명](https://www.tencentcloud.com/document/product/236/45626)을 참고하십시오.
 
 <dx-tabs>
 ::: MySQL 8.0 커널 버전 릴리스 정보
-
 <table>
 <thead><tr><th>마이너 버전</th><th>설명</th></tr></thead>
 <tbody>
@@ -33,7 +32,7 @@
 <li>기본적으로 writeset 병렬 복제를 활성화했습니다.</li>
 <li>IO, 메모리 사용 비율 및 SQL 시간 초과 정책을 사용자 단위로 제어할 수 있는 확장된 리소스 그룹을 지원합니다.</li>
 <li>UNDO 시간 범위 내에서 언제든지 데이터를 쿼리할 수 있는 플래시백 쿼리 기능을 지원합니다.</li>
-<li>이 statment에 의해 작동되는 데이터 행을 반환할 수 있는 delete/insert/replace/update의 returning 구문을 지원합니다.</li>
+<li>이 statement에 의해 작동되는 데이터 행을 반환할 수 있는 delete/insert/replace/update의 returning 구문을 지원합니다.</li>
 <li>row 모드 gtid 복제 기능 확장을 지원합니다.</li>
 <li>트랜잭션 잠금 최적화를 지원합니다.</li>
 <li>휴지통 향상, 휴지통에서 truncate table과 테이블 자동 정리를 지원합니다.</li>
@@ -81,7 +80,7 @@
 <li>예약되지 않은 키워드 추가: TABLESAMPLE BERNOULLI.</li>
 <li>주어진 입력 필드에 대한 히스토그램을 작성하기 위해 HISTOGRAM() 함수를 추가했습니다.</li>
 <li>compressed 히스토그램을 지원합니다.</li>
-<li>SQL throttling 기능을 지원합니다(DBbrian의 경우 2022년 04월 지원 예정).</li>
+<li>SQL 스로틀링을 지원합니다.</li>
 <li>MySQL 클러스터 역할 구성 기능을 지원하며 기본 역할은 CDB_ROLE_UNKNOWN입니다.</li>
 <li>역할을 표시하기 위해 show replicas 명령의 표시 결과에 새로운 Role 열이 추가되었습니다.</li>
 <li>proxy를 지원합니다.</li>
@@ -156,7 +155,7 @@
 <li>지원되는 원본-복제 bp 풀 동기화: 고가용성(HA) 원본-복제 전환이 발생한 후 일반적으로 복제본을 warmup하는 데, 즉 핫스팟 데이터를 buffer pool에 로딩하는 데 오랜 시간이 걸립니다. 복제본의 워밍업을 가속화하기 위해 TXSQL은 이제 원본과 복제본 간의 bp 풀 동기화를 지원합니다.</li>
 <li>Sort Merge Join 기능을 지원합니다.</li>
 <li>FAST DDL 작업을 지원합니다.</li>
-<li>사용자측 character_set_client_handshake 매개변수 쿼리를 통한 현재 값 표시 기능을 지원합니다.</li>
+<li>character_set_client_handshake 매개변수 값 쿼리를 지원합니다.</li>
 </ul>
 
 <li>성능 최적화</li><ul>
@@ -175,7 +174,7 @@
 <td>
 <ul><li>새로운 기능</li><ul>
 <li>MySQL <a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html" target="_blank">8.0.19</a>, <a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-20.html" target="_blank">8.0.20</a>, <a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html" target="_blank">8.0.21</a>, <a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-22.html" target="_blank">8.0.22</a>의 공식 업데이트를 지원합니다.</li>
-<li>thread_handling 매개변수를 사용하여 스레드 풀링 모드 또는 연결 풀링 모드의 동적 설정을 지원합니다.</li>
+<li>thread_handling 매개변수를 사용하여 스레드 풀링 모드 또는 연결 풀링 모드의 동적 설정을 지원했습니다.</li>
 </ul>
 
 <li>성능 최적화</li><ul>
@@ -200,7 +199,7 @@
 <td>20200630</td>
 <td>
 <ul><li>새로운 기능</li><ul>
-<li>큰 테이블의 비동기 드롭을 지원했습니다. 큰 테이블 삭제로 인한 비즈니스 성능 변동을 피하기 위해 파일을 비동기식으로 천천히 지울 수 있습니다. 이 기능을 신청하려면 <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">티켓 제출</a>하십시오.</li>
+<li>큰 테이블의 비동기 드롭 지원: 큰 테이블 삭제로 인한 비즈니스 성능 변동을 피하기 위해 파일을 비동기식으로 천천히 지울 수 있습니다. 이 기능을 신청하려면 <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">티켓 제출</a>하십시오.</li>
 <li>리소스 충돌을 줄이기 위해 유휴 작업의 자동 kill을 지원합니다. 이 기능을 신청하려면 <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">티켓 제출</a>하십시오.</li>
 <li>투명한 데이터 암호화(TDE)를 지원합니다.</li>
 </ul>
@@ -208,8 +207,8 @@
 <li>bug 수정</li><ul>
 <li>relay_log_pos & master_log_pos 사이의 체크포인트가 일치하지 않아 전환이 실패하는 문제를 수정했습니다.</li>
 <li>디스크에 데이터를 비동기식으로 저장하여 발생하는 데이터 파일 오류를 수정했습니다.</li>
-<li>fsync에서 EIO를 반환하고 재시도가 반복되는 경우의 하드 오류를 수정했습니다.</li>
-<li>전체 텍스트 인덱스의 멀티바이트 문자 세트에서 phrase search로 인해 발생하는 크래쉬를 수정했습니다.</li>
+<li>fsync가 EIO를 반환하고 재시도가 반복되는 경우의 하드 오류를 수정했습니다.</li>
+<li>전체 텍스트 인덱스의 멀티바이트 문자 세트에서 구 검색(phrase search)으로 인한 충돌을 수정했습니다.</li>
 </ul>
 </td>
 </tr>
@@ -325,7 +324,7 @@
 <td>20210630</td>
 <td>
 <ul><li>새로운 기능</li><ul>
-<li>현재 복제본(slave)이 재생한 binlog 타임스탬프를 하기 위해 SHOW SLAVE DETAIL [FOR CHANNEL channel]명령이 추가되었습니다.</li>
+<li>현재 복제본(slave)이 재생한 binlog 타임스탬프를 하기 위해 SHOW SLAVE DETAIL [FOR CHANNEL channel] 명령이 추가되었습니다.</li>
 <li>transaction_read_only/transaction_isolation 매개변수를 지원합니다.</li>
 </ul>
 
@@ -404,7 +403,7 @@
 </ul>
 
 <li>bug 수정</li><ul>
-<li>performance_schema를 쿼리할 때 hang 문제를 수정했습니다.</li>
+<li>performance_schema 쿼리 시 hang 문제를 수정했습니다.</li>
 <li>digest_add_token 기능의 overflow를 수정했습니다.</li>
 <li>truncate table 문을 사용하여 ibuf에 액세스할 때 발생하는 crash를 수정했습니다.</li>
 <li>left join 문의 const가 예상보다 일찍 계산될 때 잘못된 쿼리를 수정했습니다.</li>
@@ -472,7 +471,7 @@
 <ul><li>새로운 기능</li><ul>
 <li>공식 MySQL 5.7.22 버전의 JSON 시리즈 기능을 추가했습니다.</li>
 <li>전자상거래 플래시 세일 시나리오를 위해 실시간 세션에 설명된 대로 <a href="https://intl.cloud.tencent.com/document/product/1035/48638" target="_blank">Hotspot update</a> 기능을 지원합니다.</li>
-<li>실시간 세션에 설명된 대로 <a href="https://intl.cloud.tencent.com/document/product/1035/48638" target="_blank">SQL throttling</a>기능을 지원합니다.</li>
+<li>실시간 세션에 설명된 대로 <a href="https://intl.cloud.tencent.com/document/product/1035/48638" target="_blank">SQL throttling</a> 기능을 지원합니다.</li>
 <li>사용자 지정 KMS 키로 암호화를 지원합니다.</li>
 </ul>
 
@@ -696,7 +695,7 @@
 <td>20200915</td>
 <td>
 <ul><li>새로운 기능</li><ul>
-<li>실시간 세션에 설명된 대로 <a href="https://intl.cloud.tencent.com/document/product/1035/48638" target="_blank">SQL throttling</a>기능을 지원합니다.</li>
+<li>실시간 세션에 설명된 대로 <a href="https://intl.cloud.tencent.com/document/product/1035/48638" target="_blank">SQL throttling</a> 기능을 지원합니다.</li>
 </ul>
 
 <li>성능 최적화</li><ul>

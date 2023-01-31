@@ -1,12 +1,11 @@
 This document describes the version updates of the TencentDB for MySQL kernel.
 >?
->- For more information on how to upgrade the minor kernel version of a TencentDB for MySQL instance, see [Upgrading Kernel Minor Version](https://www.tencentcloud.com/document/product/236/36816).
+>- For more information on how to upgrade the minor kernel version of a TencentDB for MySQL instance, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 >- When you upgrade the minor version, some minor versions may be under maintenance and cannot be selected. The minor versions available in the console shall prevail.
->- For more information on the minor versions of the TencentDB for MySQL database proxy, see [Kernel Minor Version Release Notes](https://intl.cloud.tencent.com/document/product/236/45626).
+>- For more information on the minor versions of the TencentDB for MySQL database proxy, see [Kernel Minor Version Release Notes](https://intl.cloud.tencent.com/document/product/236/45626) and [Kernel Minor Version Release Notes](https://www.tencentcloud.com/document/product/236/45626) (new version).
 
 <dx-tabs>
 ::: MySQL 8.0 Kernel Version Release Notes
-
 <table>
 <thead><tr><th>Minor Version</th><th>Description</th></tr></thead>
 <tbody>

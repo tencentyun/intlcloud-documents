@@ -6,7 +6,6 @@
 
 <dx-tabs>
 ::: MySQL 8.0 内核版本更新说明
-
 <table>
 <thead><tr><th>小版本</th><th>说明</th></tr></thead>
 <tbody>
@@ -33,7 +32,7 @@
 <li>默认打开 writeset 并行复制。</li>
 <li>支持扩展资源组，可对 IO、内存使用占比以及 SQL 超时策略以用户为单位进行控制。</li>
 <li>支持闪回查询能力，可以查询 UNDO 时间范围内的任意时间点数据。</li>
-<li>支持 delete/insert/replace/update 的 returning 语法，可以返回该 statment 所操作的数据行。</li>
+<li>支持 delete/insert/replace/update 的 returning 语法，可以返回该 statement 所操作的数据行。</li>
 <li>支持 row 模式 gtid 复制功能扩展。</li>
 <li>支持事务锁优化功能。</li>
 <li>回收站增强，支持 truncate table 和自动清理回收站中的表。</li>
@@ -81,7 +80,7 @@
 <li>新增非保留关键字:TABLESAMPLE BERNOULLI。</li>
 <li>新增 HISTOGRAM() 函数，对于给定输入字段构建直方图。</li>
 <li>支持 compressed 直方图。</li>
-<li>支持 SQL 限流功能（DBbrian 计划2022年4月支持）。</li>
+<li>支持 SQL 限流功能。</li>
 <li>支持 MySQL 集群角色设置功能，默认为角色为 CDB_ROLE_UNKNOWN。</li>
 <li>show replicas 命令展示结果新增Role列，用于展示角色。</li>
 <li>支持 proxy。</li>
