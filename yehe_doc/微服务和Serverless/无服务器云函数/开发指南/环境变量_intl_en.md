@@ -2,14 +2,18 @@ When creating or editing a function, you can add, delete, or modify environment 
 
 The configured environment variables will be configured into the OS environment when the function is executed. The function code can read the system environment variables to obtain the specific values and use them in the code.
 
-## Adding Environment Variable
-### Adding environment variable in console
+## Adding an environment variable
+
+### Adding an environment variable in the console
+
 1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
 2. When creating or editing a function, you can add environment variables in "Environment Variable".
-Environment variables usually appear as `key-value` pairs. Enter the required environment variable key in the first input box and the required value in the second one.
+   Environment variables usually appear as `key-value` pairs. Enter the required environment variable key in the first input box and the required value in the second one. Note that the value of `key` or `value` can contain 2–64 bytes of letters, digits, and underscores and must begin with a letter.
 
-### Adding environment variable locally
-For local development, you can configure the `Environment` environment variable directly under the function in `serverless.yml` and run the `sls deploy` command to deploy it to the cloud as shown below:
+## Adding an environment variable locally
+
+For local development, you can configure the `Environment` environment variable directly under the function in `serverless.yml` and run the `scf deploy` command to deploy it to the cloud as shown below:
+
 ```yaml
 component: scf # Component name, which is required. It is `scf` in this example
 name: scfdemo # Component instance name, which is required
@@ -34,27 +38,30 @@ inputs:
       TEST2: value2
 ```
 
-## Viewing Environment Variable
+## Viewing an environment variable
 
 After configuring environment variables for the function, you can query the specific configured environment variables by viewing the function configuration, which are displayed in the form of `key=value`.
 
 
-## Using Environment Variable
+## Using an environment variable
 
 The configured environment variables will be configured into the runtime environment when the function is executed. The code can read the system environment variables to get the specific values and use them in the code. It should be noted that **environment variables cannot be read locally**.
-Suppose the key of the configured environment variable for a function is `key`. The following is the sample code for reading and printing the value of this environment variable in different runtime environments.
-- In a Python runtime environment, the way to read the environment variables is as follows:
-```
+Assume that the key of the configured environment variable for a function is `key`. The following is the sample codes for reading and printing the value of this environment variable in different runtime environments.
+
+- **In a Python runtime environment**, the way to read the environment variables is as follows:
+```python
 import os
 value = os.environ.get('key')
 print(value)
 ```
-- In a Node.js runtime environment, the way to read the environment variables is as follows:
-```
+
+- **In a Node.js runtime environment**, the way to read the environment variables is as follows:
+```node.js
 var value = process.env.key
 console.log(value)
 ```
-- In a Java runtime environment, the way to read the environment variables varies by temporary authorized fields and other fields:
+
+- **In a Java runtime environment**, the way to read the environment variables varies by temporary authorized fields and other fields:
  - For temporary authorized fields (including `TENCENTCLOUD_SESSIONTOKEN`, `TENCENTCLOUD_SECRETID`, and `TENCENTCLOUD_SECRETKEY`), the way to read the environment variables is as follows:
 ```
 System.out.println("value: "+ System.getProperty("key"));
@@ -63,14 +70,16 @@ System.out.println("value: "+ System.getProperty("key"));
 ```
 System.out.println("value: "+ System.getenv("key"));
 ```
-- In a Go runtime environment, the way to read the environment variables is as follows:
-```
+
+- **In a Go runtime environment**, the way to read the environment variables is as follows:
+```go
 import "os"
 var value string
 value = os.Getenv("key")
 ```
-- In a PHP runtime environment, the way to read the environment variables is as follows:
-```
+
+- **In a PHP runtime environment**, the way to read the environment variables is as follows:
+```php
 $value = getenv('key');
 ```
 
@@ -81,15 +90,16 @@ $value = getenv('key');
 
 
 
-## Use Cases
+## Overview
 
-- **Variable value extraction**: values that may change in the business can be extracted into environment variables, eliminating the need to modify the code according to business changes.
-- **External storage of encrypted information**: keys related to authentication and encryption can be extracted from the code into environment variables, avoiding security risks caused by the presence of relevant keys hard-coded in the code.
-- **Environment differentiation**: the configuration and database information for different development stages can be extracted into the environment variables, so that in different stages of development and release, you only need to modify the environment variable values and execute the development environment database and release environment database separately.
+- **Variable value extraction**: Values that may change in the business can be extracted into environment variables, eliminating the need to modify the code according to business changes.
+- **External storage of encrypted information**: Keys related to authentication and encryption can be extracted from the code into environment variables, avoiding security risks caused by the presence of relevant keys hard-coded in the code.
+- **Environment differentiation**: The configuration and database information for different development stages can be extracted into the environment variables, so that in different stages of development and release, you only need to modify the environment variable values and execute the development environment database and release environment database separately.
 
 ## Use Limits
 
-The following use limits apply to the environment variables of functions: 
+The following Use Limits apply to the environment variables of functions: 
+
 - The key must begin with a letter (**[a-zA-Z]**) and can only contain alphanumeric characters and underscores (**[a-zA-Z0-9\_]**).
 - The keys of reserved environment variables cannot be modified, including:
  - Keys beginning with SCF\_, such as SCF\_RUNTIME.
@@ -102,6 +112,7 @@ The following use limits apply to the environment variables of functions:
 The `Key` and `Value` of built-in environment variables in the current runtime environment are as shown in the table below:
 
 
+
 <table>
 <thead>
 <tr>
@@ -110,123 +121,128 @@ The `Key` and `Value` of built-in environment variables in the current runtime e
 </tr>
 </thead>
 <tbody><tr>
-<td nowrap="nowrap"><code>TENCENTCLOUD_SESSIONTOKEN</code></td>
+<td nowrap="nowrap"> TENCENTCLOUD_SESSIONTOKEN </td>
 <td>{Temporary SESSION TOKEN}</td>
 </tr>
 <tr>
-<td><code>TENCENTCLOUD_SECRETID</code></td>
+<td> TENCENTCLOUD_SECRETID </td>
 <td>{Temporary SECRET ID}</td>
 </tr>
 <tr>
-<td><code>TENCENTCLOUD_SECRETKEY</code></td>
+<td> TENCENTCLOUD_SECRETKEY </td>
 <td>{Temporary SECRET KEY}</td>
 </tr>
 <tr>
-<td><code>_SCF_SERVER_PORT</code></td>
+<td> _SCF_SERVER_PORT </td>
 <td>28902</td>
 </tr>
 <tr>
-<td><code>TENCENTCLOUD_RUNENV</code></td>
+<td> TENCENTCLOUD_RUNENV </td>
 <td>SCF</td>
 </tr>
 <tr>
-<td><code>USER_CODE_ROOT</code></td>
+<td> USER_CODE_ROOT </td>
 <td>/var/user/</td>
 </tr>
 <tr>
-<td><code>TRIGGER_SRC</code></td>
+<td> TRIGGER_SRC </td>
 <td>Timer (if a timer trigger is used)</td>
 </tr>
 <tr>
-<td><code>PYTHONDONTWRITEBYTECODE</code></td>
+<td> PYTHONDONTWRITEBYTECODE </td>
 <td>x</td>
 </tr>
 <tr>
-<td><code>PYTHONPATH</code></td>
+<td> PYTHONPATH </td>
 <td>/var/user:/opt</td>
 </tr>
 <tr>
-<td><code>CLASSPATH</code></td>
-<td>/var/runtime/java8:/var/runtime/java8/lib/*:/opt</td>
+<td> CLASSPATH </td>
+<td>/var/runtime/java x:/var/runtime/java x/lib/*:/opt (`x` is 8 or 11)</td>
 </tr>
 <tr>
-<td><code>NODE_PATH</code></td>
-<td>/var/user:/var/user/node_modules:/var/lang/node6/lib/node_modules:/opt:/opt/node_modules</td>
+<td> NODE_PATH </td>
+<td>/var/user:/var/user/node_modules:/var/lang/node x/lib/node_modules:/opt:/opt/node_modules (`x` is 16, 14, 12, 10, 8, or 6)</td>
 </tr>
 <tr>
-<td><code>_</code></td>
-<td>/var/lang/python3/bin/python3</td>
+<td> PHP_INI_SCAN_DIR </td>
+<td>/var/user/php_extension:/opt/php_extension</td>
+</tr>  
+<tr>
+<td> _ </td>
+<td>/var/lang/python3/bin/python x (`x` is 37, 3, or 2)</td>
 </tr>
 <tr>
-<td><code>PWD</code></td>
+<td> PWD </td>
 <td>/var/user</td>
 </tr>
 <tr>
-<td><code>LOGNAME</code></td>
+<td> LOGNAME </td>
 <td>qcloud</td>
 </tr>
 <tr>
-<td><code>LANG</code></td>
+<td> LANG </td>
 <td>en_US.UTF8</td>
 </tr>
 <tr>
-<td><code>LC_ALL</code></td>
+<td> LC_ALL </td>
 <td>en_US.UTF8</td>
 </tr>
 <tr>
-<td><code>USER</code></td>
+<td> USER </td>
 <td>qcloud</td>
 </tr>
 <tr>
-<td><code>HOME</code></td>
+<td> HOME </td>
 <td>/home/qcloud</td>
 </tr>
 <tr>
-<td><code>PATH</code></td>
+<td> PATH </td>
 <td>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</td>
 </tr>
 <tr>
-<td><code>SHELL</code></td>
+<td> SHELL </td>
 <td>/bin/bash</td>
 </tr>
 <tr>
-<td><code>SHLVL</code></td>
+<td> SHLVL </td>
 <td>3</td>
 </tr>
 <tr>
-<td><code>LD_LIBRARY_PATH</code></td>
-<td>/var/runtime/java8:/var/user:/opt</td>
+<td> LD_LIBRARY_PATH </td>
+<td>/var/runtime/java x:/var/user:/opt (`x` is 8 or 11)</td>
 </tr>
 <tr>
-<td><code>HOSTNAME</code></td>
+<td> HOSTNAME </td>
 <td>{host id}</td>
 </tr>
 <tr>
-<td><code>SCF_RUNTIME</code></td>
+<td> SCF_RUNTIME </td>
 <td>Function runtime</td>
 </tr>
 <tr>
-<td><code>SCF_FUNCTIONNAME</code></td>
+<td> SCF_FUNCTIONNAME </td>
 <td>Function name</td>
 </tr>
 <tr>
-<td><code>SCF_FUNCTIONVERSION</code></td>
+<td> SCF_FUNCTIONVERSION </td>
 <td>Function version</td>
 </tr>
 <tr>
-<td><code>TENCENTCLOUD_REGION</code></td>
+<td> TENCENTCLOUD_REGION </td>
 <td>Region</td>
 </tr>
 <tr>
-<td><code>TENCENTCLOUD_APPID</code></td>
+<td> TENCENTCLOUD_APPID </td>
 <td>Account APPID</td>
 </tr>
 <tr>
-<td><code>TENCENTCLOUD_UIN</code></td>
+<td> TENCENTCLOUD_UIN </td>
 <td>Account UIN</td>
 </tr>
 <tr>
-<td><code>TENCENTCLOUD_TZ</code></td>
+<td> TENCENTCLOUD_TZ </td>
 <td>Time zone, which is UTC currently</td>
 </tr>
 </tbody></table>
+

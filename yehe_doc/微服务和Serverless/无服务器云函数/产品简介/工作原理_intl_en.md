@@ -4,7 +4,6 @@
 SCF will execute a function for you when the function receives a triggering request. Instance is the resource for SCF to execute the request. SCF will allocate resources based on the function configuration information (such as memory size) and launch one or multiple instances to process the function request. The SCF platform is responsible for the creation, management, and deletion of all function runtime instances, and you have no permissions to manage them.
 
 The lifecycle of an instance is as shown below:
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/0c2ad14f8d31b75b7adbe150b3154037.png)
 
 #### Starting instance 
@@ -16,12 +15,12 @@ The lifecycle of an instance is as shown below:
 
 Method to accelerate the three phases of instance startup:
 
-- **Code preparation**: the platform pulls the function code, layer, or image uploaded by you to prepare for function execution. The code preparation time is positively proportional to the sizes of code package, layer, and image. We recommend you reduce the code package size as much as possible and only keep the code files and dependencies necessary for function execution in order to minimize the code preparation time. This time will be reflected in the `PullCode` field in the `Init Report` or `Provisioned Report` line of the function execution log.
-- **Runtime initialization**: the platform prepares the runtime environment that function execution depends on according to your function configuration. This time will be reflected in the `InitRuntime` field in the `Init Report` or `Provisioned Report` line of the function execution log.
-- **Function code initialization**: the code initialization time is positively proportional to the complexity of the code logic. We recommend you optimize the code logic as much as possible to minimize the code initialization time. This time will be reflected in the `InitFunction` field in the `Init Report` or `Provisioned Report` line of the function execution log.
-  - Code deployment-based event-triggered function: the code logic before the [execution method](https://intl.cloud.tencent.com/document/product/583/19805) configured for the function will be executed during instance startup.
-  - Code deployment-based HTTP-triggered function: the bootstrap file `scf_bootstrap` and the code logic before listening port 9000 will be executed during instance startup.
-  - Image deployment-based function: for event-triggered functions, the code logic before the [execution method](https://intl.cloud.tencent.com/document/product/583/19805) configured for the function will be executed; for HTTP-triggered functions, the code logic before the bootstrap file `scf_bootstrap` and listening port 9000 will be executed.
+- **Code preparation**: The platform pulls the function code, layer, or image uploaded by you to prepare for function execution. The code preparation time is positively proportional to the sizes of code package, layer, and image. We recommend you reduce the code package size as much as possible and only keep the code files and dependencies necessary for function execution in order to minimize the code preparation time. This time will be reflected in the `PullCode` field in the `Init Report` or `Provisioned Report` line of the function execution log.
+- **Runtime initialization**: The platform prepares the runtime environment that function execution depends on according to your function configuration. This time will be reflected in the `InitRuntime` field in the `Init Report` or `Provisioned Report` line of the function execution log.
+- **Function code initialization**: The code initialization time is positively proportional to the complexity of the code logic. We recommend you optimize the code logic as much as possible to minimize the code initialization time. This time will be reflected in the `InitFunction` field in the `Init Report` or `Provisioned Report` line of the function execution log.
+  - Code deployment-based event-triggered function: The code logic before the [execution method](https://intl.cloud.tencent.com/document/product/583/19805) configured for the function will be executed during instance startup. For example, if the entry function is `main_handler`, all the code logic before `main_handler` will be executed.
+  - Code deployment-based HTTP-triggered function: The bootstrap file `scf_bootstrap` and the code logic before listening port 9000 will be executed during instance startup.
+  - Image deployment-based function: For event-triggered functions, the code logic before the [execution method](https://intl.cloud.tencent.com/document/product/583/19805) configured for the function will be executed; for HTTP-triggered functions, the code logic before the bootstrap file `scf_bootstrap` and listening port 9000 will be executed.
 
 #### Reusing instance
 In order to minimize the additional time caused by instance startup, the platform will try to reuse the instance for subsequent invocations. After the instance processes the function request, it will be stored for a period of time according to the actual situation of the platform for next invocations and will be used first during this period.
@@ -40,7 +39,7 @@ The platform will repossess instances that have not processed requests for a cer
 
 ## Temporary Disk Space
 
-Each function has a temporary disk space of 512 MB (`/tmp`) during execution. You can perform certain read and write operations on the space in the execution code or create subdirectories, but this part of data may **not** be retained after function execution is completed. Therefore, if you need to persistently store the data generated during execution, please use [COS](https://intl.cloud.tencent.com/zh/document/product/436) or external persistent storage services such as Redis/Memcached.
+Each function has a temporary disk space of 512 MB (`/tmp`) during execution. You can perform certain read and write operations on the space in the execution code or create subdirectories, but this part of data may **not** be retained after function execution is completed. Therefore, if you need to persistently store the data generated during execution, use [COS](https://www.tencentcloud.com/document/product/436) or external persistent storage services such as Redis/Memcached.
 
 ## Call Types
 
@@ -71,13 +70,8 @@ In the following call scenarios, you can freely define the call type of the func
 
 If you use another Tencent Cloud service as the event source, the invocation type of the cloud service is predefined.
 
-- Sync invocation: by [API Gateway trigger](https://intl.cloud.tencent.com/document/product/583/12513), [CLB trigger](https://intl.cloud.tencent.com/document/product/583/39849), and [CKafka trigger](https://intl.cloud.tencent.com/document/product/583/17530), for example.
-- Async invocation: by [COS trigger](https://intl.cloud.tencent.com/document/product/583/9707), [timer trigger](https://intl.cloud.tencent.com/document/product/583/9708), and [CMQ topic trigger](https://intl.cloud.tencent.com/document/product/583/11517), for example. For more information, see [Trigger Overview](https://intl.cloud.tencent.com/document/product/583/9705).
-
-
-
-
-
+- Sync invocation: By [API Gateway trigger](https://intl.cloud.tencent.com/document/product/583/12513), [CLB trigger](https://intl.cloud.tencent.com/document/product/583/39849), and [CKafka trigger](https://intl.cloud.tencent.com/document/product/583/17530), for example.
+- Async invocation: By [COS trigger](https://intl.cloud.tencent.com/document/product/583/9707), [timer trigger](https://intl.cloud.tencent.com/document/product/583/9708), and [CMQ topic trigger](https://intl.cloud.tencent.com/document/product/583/9705), for example. For more information, see [Trigger Overview](https://intl.cloud.tencent.com/document/product/583/9705).
 
 
 ## Usage Restrictions
@@ -100,8 +94,8 @@ For example, for a function that handles COS events, if the function takes an av
 Currently, SCF has a limit on the amount of concurrency for each function. You can view the limit for the current function in [Concurrency Overview](https://intl.cloud.tencent.com/document/product/583/37040).
 If an invocation causes the function concurrency to exceed the default limit, the invocation will be blocked and not executed by SCF. Restricted invocations are handled differently depending on the function invocation type:
 
-- Sync invocation: if the function is restricted when invoked synchronously, a [432 error](https://intl.cloud.tencent.com/document/product/583/40173) will be returned directly.
-- Async invocation: if the function is restricted when invoked asynchronously, SCF will [retry](https://intl.cloud.tencent.com/document/product/583/39851) the restricted event according to a certain policy.
+- Sync invocation: If the function is restricted when invoked synchronously, a [432 error](https://intl.cloud.tencent.com/document/product/583/35311) will be returned directly.
+- Async invocation: If the function is restricted when invoked asynchronously, SCF will [retry](https://intl.cloud.tencent.com/document/product/583/39851) the restricted event according to a certain policy.
 
 ## Execution Environment and Available Libraries
 
@@ -118,15 +112,15 @@ Based on different language environments, there are base libraries and additiona
 
 
 ## Deployment Mode
-Serverless Cloud Function (SCF) provides two deployment methods of code deployment and image deployment and supports two function types of event-triggered function and HTTP-triggered function. Different deployment methods and function types require different specifications during code development. This document describes the writing specifications and related concepts of code deployment-based event-triggered function. For more information on [image deployment](https://intl.cloud.tencent.com/document/product/583/41076) and [HTTP-triggered function](https://intl.cloud.tencent.com/document/product/583/40688), see the corresponding documents.
+Serverless Cloud Function (SCF) provides two deployment methods of code deployment and image deployment and supports two function types of event-triggered function and HTTP-triggered function. Different deployment methods and function types require different specifications during code development. This document describes the writing specifications and related concepts of event-triggered function in code deployment. For more information on [image deployment](https://intl.cloud.tencent.com/document/product/583/41076) and [HTTP-triggered function](https://intl.cloud.tencent.com/document/product/583/40688), see the corresponding documents.
 
 
 ### SCF event-triggered function
 An SCF event-triggered function involves three basic concepts: execution method, function input parameter, and function return.
 The above concepts correspond respectively to the following in general project development:
-- **Execution method**: corresponds to the main function of the project and is the starting point of program execution.
-- **Function input parameter**: refers to function input parameters in a normal sense. However, in the SCF environment, the input parameters of an entry function are fixed values. For more information, see [Function Input Parameters](#input).
-- **Function return**: corresponds to the returned value of the main function in the project. After the function returns, the code execution ends.
+- **Execution method**: Corresponds to the main function of the project and is the starting point of program execution.
+- **Function input parameter**: Refers to function input parameters in a normal sense. However, in the SCF environment, the input parameters of an entry function are fixed values. For more information, see [Function Input Parameters](#input).
+- **Function return**: Corresponds to the returned value of the main function in the project. After the function returns, the code execution ends.
 
 
 
@@ -140,7 +134,7 @@ In the execution method, you can process the input parameters of the entry funct
 
 #### Function input parameters[](id:input)
 
-Function input parameters refer to the content that is passed to the function when the function is triggered. Usually, there are two input parameters: `event` and `context`. However, the number of input parameters may vary by programming language and environment. For more information, see [Golang](https://intl.cloud.tencent.com/zh/document/product/583/18032).
+Function input parameters refer to the content that is passed to the function when the function is triggered. Usually, there are two input parameters: `event` and `context`. However, the number of input parameters may vary by programming language and environment. For more information, see [Code Development](https://www.tencentcloud.com/document/product/583/40190).
 <dx-tabs>
 ::: event
 
@@ -153,20 +147,20 @@ The `event` parameter is of `dict` type and contains the basic information that 
 There are two ways to trigger an SCF function:
 
 1. Trigger by calling [TencentCloud API](https://intl.cloud.tencent.com/document/product/583/17243).
-2. Trigger by binding a [trigger](https://intl.cloud.tencent.com/document/product/583/9705). 
+2. Trigger by binding a [trigger](https://intl.cloud.tencent.com/document/product/583/9705).   
 
 
 These two SCF trigger methods correspond to two event formats:
 
 - **TencentCloud API:**
   You can freely define a parameter of `dict` type between the invoker and the function code, where the invoker passes in the data in the format agreed upon, and the function code gets the data in the format.
-   **Sample:**
+ **Sample:**
   You can define a data structure `{"key":"XXX"}` of `dict` type, and when the invoker passes in the data `{"key":"abctest"}`, the function code can get the value `abctest` through `event [key]`.
 
 
 - **Trigger:**
   SCF can be connected with various Tencent Cloud services such as API Gateway, COS, and CKafka, so you can bind a corresponding Tencent Cloud service trigger to a function. When the function is triggered, the service will pass the event to SCF as the `event` parameter in a platform-predefined unchangeable format. You can write code based on this format and get information from the `event` parameter.
-   **Sample:**
+ **Sample:**
   When COS triggers a function, the specific information of the bucket and the file will be passed to the `event` parameter in <a href="https://intl.cloud.tencent.com/document/product/583/9707#cos-.E8.A7.A6.E5.8F.91.E5.99.A8.E7.9A.84.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF.E7.BB.93.E6.9E.84">JSON</a> format. The processing of the triggering event can be completed by parsing the `event` information in the function code.
   :::
   ::: context
@@ -191,16 +185,10 @@ The fields and descriptions of the `context` input parameter provided by SCF are
 <tr><td align="left"><code>tencentcloud_region</code></td><td align="left">Function region</td></tr>
 <tr><td align="left"><code>tencentcloud_appid</code> </td><td align="left">Function's Tencent Cloud APPID</td></tr><tr><td align="left"><code>tencentcloud_uin</code></td><td align="left">Function's Tencent Cloud account ID </td></tr>
 </tbody>
-</table>
-
-
-
-
-<dx-alert infotype="notice" title="">
+</table><dx-alert infotype="notice" title="">
 To ensure compatibility, the descriptions of the namespace at different stages of the SCF function are retained in the context.
  The content of the context structure may be increased as the SCF platform is iterated.
 </dx-alert>
-
 
 You can print the context information through the standard output statement in the function code. Take the `python` runtime environment as an example:
 
@@ -315,14 +303,14 @@ This document provides the following three ways to throw exceptions, and you can
 <dx-tabs>
 ::: Throw exceptions explicitly
 
-**Example**
+**Sample**
 
 ```python
 def always_failed_handler (event,context):
     raise Exception ('I failed!')
 ```
 
-**Note**
+**Description**
 This function will throw an exception during execution and return the following error message. The SCF platform will record this error message in the function log.
 
 ```
@@ -334,7 +322,7 @@ Exception: I failed!
 :::
 ::: Inherit the `Exception` class
 
-**Example**
+**Sample**
 
 ```python
 class UserNameAlreadyExistsException (Exception): pass
@@ -344,14 +332,14 @@ def create_user (event):
 		please change a name!')
 ```
 
-**Note**
+**Description**
 
 You can define how to handle errors in your code to ensure the robustness and scalability of your application.
 
 :::
 ::: Use the `Try` statement to capture errors
 
-**Example**
+**Sample**
 
 ```python
 def create_user (event):
@@ -360,7 +348,7 @@ def create_user (event):
     except UserNameAlreadyExistsException,e: //catch error and do something
 ```
 
-**Note**
+**Description**
 
 You can define how to handle errors in your code to ensure the robustness and scalability of your application.
 
@@ -387,5 +375,17 @@ The SCF platform stores all the records of function invocations and the outputs 
 ## Notes
 
 Because of the nature of SCF, you must write your function code in a **stateless** style. State characteristics in the lifecycle of a function such as local file storage will be destroyed after the function invocation ends.
-Therefore, you are recommended to store persistent states in TDSQL, COS, TencentDB for Memcached, or other cloud storage services.
+Therefore, we recommend you store persistent states in TDSQL, COS, TencentDB for Memcached, or other cloud storage services.
 
+## Development Process
+
+For more information on the function development process, see [User Guide](https://intl.cloud.tencent.com/document/product/583/45901).
+
+
+
+
+<style>
+	.params{
+		margin-bottom:0px !important;
+	}
+</style>

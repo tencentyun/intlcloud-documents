@@ -1,34 +1,18 @@
-
-
 ## Overview
-You can configure alarm policies for SCF through [CM](https://console.cloud.tencent.com/monitor/myalarm) to monitor the execution status of functions. Currently, the following monitoring metrics are supported for this:
-- Execution duration
-- Number of invocations
-- Number of errors
-
-For the full list of supported metrics, see [Descriptions of monitoring metrics](https://intl.cloud.tencent.com/document/product/583/32739). In addition, you can select user groups that will receive alarms through email, SMS, or WeChat.
+You can configure alarm policies for SCF through [Cloud Monitor](https://console.cloud.tencent.com/monitor/myalarm) to monitor the execution status of functions.
+Currently, the monitoring metrics that can be configured for SCF include runtime, invoke count, and error count. For the full list of supported metrics, see [Descriptions of monitoring metrics](https://intl.cloud.tencent.com/document/product/583/32739). In addition, you can select user groups that will receive alarms through email, SMS, or WeChat.
 
 ## Directions
 
-### Logging in to Console
-
-1. Log in to the [Tencent Cloud console](https://console.cloud.tencent.com/).
-2. Select "Cloud Products > Monitoring and Ops > Cloud Monitor" to enter the Cloud Monitor page.
-
-### Configuring alarm policy
-
-1. On the left sidebar, select "Alarm Management > Alarm Configuration > Alarm Policy" and click **Create** to add a new alarm as shown below:
-![](https://main.qcloudimg.com/raw/e14e7a494774e736d53d0ab7627e3b19.png)
-2. On the "Create a Policy" page, enter the policy name, select the policy type, and set the alarm objects based on your needs, as shown below:
-	- **Policy name**: Custom.
-	- **Policy type**: Select "SCF".
-	- **Alarm Object**: Set based on your needs. If you select "Select certain objects", the region will be set to Guangzhou by default. In different regions, you can view the corresponding functions. Please select the function to which you will apply the alarm policy.
-	![](https://main.qcloudimg.com/raw/c9c878ca72b247e98c0e2e2ca447b88d.png)
-3. Set "Trigger" and "Alarming Channel" based on your needs, as shown below:
-![](https://main.qcloudimg.com/raw/fcf6fd3b4002c03d15aa51278a049b89.png)
-4. Click **Complete**, and you can see the configured policy in **Alarm Policy** and choose to enable/disable it at any time.
-
->! For more information on detailed alarm policy configuration, see [Cloud Monitor > Alarm Policy](https://intl.cloud.tencent.com/zh/document/product/248).
-
-
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and select **Functions** on the left sidebar.
+2. On the **Functions** page, click the target function name to enter the function details page.
+3. Select **Monitoring information** on the left and click **Set alarm** on the details page as shown below:
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/mNL2280_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219161556.png)
+4. On the **Create alarm policy** page, configure a new alarm policy as detailed below:
+	- **Policy Name**: Custom.
+	- **Monitoring Type**: Select **Tencent Cloud services**.
+	- **Policy Type**: Select **Function/Version** or **Function/Alias**.
+	- **Alarm Object**: Select the functions for which to apply the policy as needed. If **Instance ID** is selected, the region will be set to Guangzhou by default. You can view corresponding functions in different regions.
+	For more information on detailed alarm policy configuration, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
+5. Click **Complete**, and you can see the configured policy in **Alarm Management** > **[Policy Management](https://console.cloud.tencent.com/monitor/alarm2/policy)** and choose to enable/disable it at any time.
 

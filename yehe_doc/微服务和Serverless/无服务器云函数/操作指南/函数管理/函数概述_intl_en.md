@@ -17,6 +17,9 @@ SCF supports two function types: event-triggered function and HTTP-triggered fun
   - Event-triggered functions are triggered by events in a specified format, such as scheduled triggering events and COS triggering events. For more information on the event structure, see [Trigger Overview](https://intl.cloud.tencent.com/document/product/583/9705).
   - HTTP-triggered functions focus on optimizing web services and can directly accept and process HTTP requests. For more information, see [Function Overview](https://intl.cloud.tencent.com/document/product/583/40688).
 
+#### Time zone
+SCF uses the UTC time by default, which you can modify by configuring the `TZ` environment variable. After you select a time zone, the `TZ` environment variable corresponding to the time zone will be added automatically.
+
 #### Runtime environment
 Execution environment of the function code. Currently, SCF supports [Python](https://intl.cloud.tencent.com/document/product/583/40323), [Node.js](https://intl.cloud.tencent.com/document/product/583/11060), [PHP](https://intl.cloud.tencent.com/document/product/583/17531), [Java](https://intl.cloud.tencent.com/document/product/583/12214), [Go](https://intl.cloud.tencent.com/document/product/583/18032), [Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129), and [image deployment](https://intl.cloud.tencent.com/document/product/583/41076).
 
@@ -25,16 +28,19 @@ The execution method specifies the starting file and function while invoking the
   - For Go programming, use the <b>"[FileName]"</b> format, such as `main`.
   - For Python, Node.js, or PHP programming, use the <b>"[FileName].[FunctionName]"</b> format, such as `index.main_handler`.
 <dx-alert infotype="explain" title="">
-Please note that FileName does not include the file name extension, and FunctionName is the name of the entry function. Make sure that the file name extension matches the programming language. For example, for Python programming, the file name extension is `.py`, and for Node.js programming, the file name extension is `.js`. 
+Note that FileName does not include the file name extension, and FunctionName is the name of the entry function. Make sure that the file name extension matches the programming language. For example, for Python programming, the file name extension is `.py`, and for Node.js programming, the file name extension is `.js`.   
 </dx-alert>
   - For Java programming, use the <b>"[package].[class]::[method]"</b> format, such as `example.Hello::mainHandler`.
-- Function description: Used to record information such as the purpose of the function, which is optional.
+
+
+#### Function description
+It is used to record information such as the purpose of the function, which is optional.
 
 
 ## Relevant Configurations of Function
 
 
-In addition to the above configuration items, you can also modify the following configuration items for function execution by editing the function configuration in the console or [updating function configuration](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806):
+In addition to the above configuration items, you can also modify the following configuration items for function execution by editing the function configuration in the console or [updating function configuration](https://intl.cloud.tencent.com/document/product/583/19806):
 
 
 #### Resource type
@@ -45,17 +51,17 @@ It sets the specifications of resources, such as different memory sizes for CPU 
 
 #### Initialization timeout period
 Maximum initialization duration of the function between 3 and 300 seconds (90 seconds for image deployment-based functions and 60 seconds for other functions by default).
-  <dx-alert infotype="notice" title="">
-
-- The function initialization phase includes the preparations of function code, image, layer, and other relevant resources and execution of the main process code of the function. If your function has a larger image or complex business logic, please increase the initialization timeout period appropriately.
+<dx-alert infotype="notice" title="">
+- The function initialization phase includes the preparations of function code, image, layer, and other relevant resources and execution of the main process code of the function. If your function has a larger image or complex business logic, increase the initialization timeout period appropriately.
 - The initialization timeout period only takes effect in the scenario where the triggered instance is cold started for invocation.
 - The client waiting time is better to be slightly larger than the sum of the initialization timeout period and the execution timeout period.
-  </dx-alert>
+</dx-alert>
+
 #### Execution timeout period
 Maximum execution duration of the function between 1 and 900 seconds (3 seconds by default).
 
 #### Environment variable
-It can be defined in the configuration and obtained from the environment when the function is executed.
+It can be defined in the configuration and obtained from the environment when the function is executed. For more information, see [Environment Variables](https://intl.cloud.tencent.com/document/product/583/32748).
 
 #### Execution role
 It grants the corresponding permissions of the policy contained in it to the function. For more information, see [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176). For example, to execute the action of writing an object into COS in the function code, you should configure an execution role with the permission to write COS.
@@ -70,7 +76,7 @@ It configures the function network access permissions. For more information, see
   - VPC: After it is enabled, the function can access resources in the same VPC.
 
 #### File system
-After it is enabled, the function can access resources of the mounted file system.
+After it is enabled, the function can access resources of the mounted file system. For more information, see [Mounting CFS File System](https://intl.cloud.tencent.com/document/product/583/37497).
 
 #### Execution configuration 
 The execution configuration includes async execution, status tracking, and async execution event management. For more information, see [Execution Configuration](https://intl.cloud.tencent.com/document/product/583/39466).
@@ -81,17 +87,27 @@ The execution configuration includes async execution, status tracking, and async
 #### Async invocation configuration
 [Async invocation configuration](https://intl.cloud.tencent.com/document/product/583/39851): You can use this configuration item to set the retry policy for async invocation. You can also configure the [dead letter queue](https://intl.cloud.tencent.com/document/product/583/39704) to collect error event information and analyze the failure cause.
 
-## Executable Operations for Function
+
+#### Application performance monitoring
+After it is enabled, SCF will report the basic execution duration of the function to the specified APM system. You can also instrument the function code for custom reporting. This helps you better track and monitor the execution of the function.
+
+#### DNS configuration
+In SCF use cases, DNS delays may cause function execution timeouts, affecting the normal business logic. In case of frequent function invocations, the resolution of the DNS server may exceed the frequency limit, which also leads to function execution failures. SCF provides the DNS cache configuration to solve these problems, which can improve the DNS efficiency and mitigate the impact of various factors such as network jitter on the DNS success rate. For more information, see [DNS Caching Configuration](https://intl.cloud.tencent.com/document/product/583/47182).
+
+
+
+
+## Executable Operations for a Function
 
 - [Creating function](https://intl.cloud.tencent.com/document/product/583/19806): Creates a function.
-- [Updating function](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806):
+- [Updating function](https://intl.cloud.tencent.com/document/product/583/19806):
   - Updating function configuration: Updates the configuration items of the function.
   - Updating function code: Updates the execution code of the function.
 - [Getting details](https://intl.cloud.tencent.com/document/product/583/19809): Gets function configuration, trigger, and code details.
 - [Testing function](https://intl.cloud.tencent.com/document/product/583/14572): Triggers the function in a sync or async manner as needed.
 - [Getting log](https://intl.cloud.tencent.com/document/product/583/19810): Gets the log of function execution and output.
 - [Deleting function](https://intl.cloud.tencent.com/document/product/583/19807): Deletes a function that is no longer needed.
-
+- Copying function: Copies a function to the specified region, name, and configuration.
 
 Function trigger-related operations include:
 

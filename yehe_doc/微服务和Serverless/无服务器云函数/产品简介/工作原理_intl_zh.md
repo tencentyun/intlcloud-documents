@@ -4,7 +4,6 @@
 云函数 SCF 将在函数接收到触发请求时为您执行函数。SCF 执行请求的资源为实例，根据函数的配置信息（如内存大小等）进行资源分配，并启动一个或多个实例处理函数请求。SCF 平台负责所有函数运行实例的创建、管理和删除清理操作，用户没有权限对其进行管理。
 
 实例的生命周期如下图所示：
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/0c2ad14f8d31b75b7adbe150b3154037.png)
 
 #### 实例启动 
@@ -16,10 +15,10 @@
 
 实例启动三个子阶段及耗时优化方法：
 
-- **代码准备**：平台拉取用户上传的函数代码、层或镜像，为函数执行做准备。代码准备耗时与代码包、层、镜像大小成正相关，建议尽可能的精简代码包大小，只保留函数执行必须的代码文件及依赖，以获取最短的代码准备耗时。代码准备耗时将体现在函数执行日志 `Init Report` 或 `Provisioned Report` 行中的 `PullCode` 字段中。
+- **代码准备**：平台拉取用户上传的函数代码、层或镜像，为函数执行做准备。代码准备耗时与代码包、层、镜像大小成正相关，建议尽可能的精简代码包大小，只保留函数执行必须的代码文件及依赖，以获取最短的代码准备耗时。代码准备耗时将体现在函数执行日志`Init Report` 或 `Provisioned Report` 行中的 `PullCode` 字段中。
 - **运行时初始化**：平台按照用户的函数配置准备函数执行依赖的运行环境。运行时初始化耗时将体现在函数执行日志`Init Report` 或 `Provisioned Report` 行中的 `InitRuntime` 字段中。
 - **函数代码初始化**：代码初始化耗时与代码逻辑复杂程度成正相关，建议尽可能优化代码逻辑，以获取最短的代码初始化耗时。函数代码初始化耗时将体现在函数执行日志`Init Report` 或 `Provisioned Report` 行中的 `InitFunction` 字段中。
-  - 代码部署的事件函数：实例启动阶段将会运行函数配置的 [执行方法](https://intl.cloud.tencent.com/document/product/583/19805) 之前的代码逻辑。
+  - 代码部署的事件函数：实例启动阶段将会运行函数配置的 [执行方法](https://intl.cloud.tencent.com/document/product/583/19805) 之前的代码逻辑（例如当入口函数为 main_handler ，将运行 main_handler 之前所有的代码逻辑）。
   - 代码部署的 Web 函数：实例启动阶段将会运行启动文件 `scf_bootstrap` 和监听 9000 端口之前的代码逻辑。
   - 镜像部署的函数：事件函数将会运行函数配置的 [执行方法](https://intl.cloud.tencent.com/document/product/583/19805) 之前的代码逻辑；Web 函数将会运行启动文件 `scf_bootstrap` 和监听 9000 端口之前的代码逻辑。
 
@@ -40,7 +39,7 @@
 
 ## 临时磁盘空间
 
-SCF 函数在执行过程中，都拥有一块 512MB 的临时磁盘空间 `/tmp`，用户可以在执行代码中对该空间进行一些读写操作，也可以创建子目录，但这部分数据可能**不会**在函数执行完成后保留。因此，如果您需要对执行过程中产生的数据进行持久化存储，请使用 [对象存储 COS](https://intl.cloud.tencent.com/zh/document/product/436) 或 Redis/Memcached 等外部持久化存储。
+SCF 函数在执行过程中，都拥有一块 512MB 的临时磁盘空间 `/tmp`，用户可以在执行代码中对该空间进行一些读写操作，也可以创建子目录，但这部分数据可能**不会**在函数执行完成后保留。因此，如果您需要对执行过程中产生的数据进行持久化存储，请使用 [对象存储 COS](https://www.tencentcloud.com/document/product/436) 或 Redis/Memcached 等外部持久化存储。
 
 ## 调用类型
 
@@ -72,12 +71,7 @@ SCF 平台支持同步和异步两种调用方式来调用云函数。
 当您使用腾讯云其他云服务作为事件源时，云服务的调用类型是预定义的：
 
 - 同步调用：例如 [API 网关触发器](https://intl.cloud.tencent.com/document/product/583/12513) 、[CLB 触发器](https://intl.cloud.tencent.com/document/product/583/39849)、[CKafka 触发器](https://intl.cloud.tencent.com/document/product/583/17530)。
-- 异步调用：例如 [COS 触发器](https://intl.cloud.tencent.com/document/product/583/9707)、[定时触发器](https://intl.cloud.tencent.com/document/product/583/9708)、[CMQ Topic 触发器](https://intl.cloud.tencent.com/document/product/583/11517) 等，详情请见 [触发器概述](https://intl.cloud.tencent.com/document/product/583/9705)。
-
-
-
-
-
+- 异步调用：例如 [COS 触发器](https://intl.cloud.tencent.com/document/product/583/9707)、[定时触发器](https://intl.cloud.tencent.com/document/product/583/9708)、[CMQ Topic 触发器](https://intl.cloud.tencent.com/document/product/583/9705) 等，详情请见 [触发器概述](https://intl.cloud.tencent.com/document/product/583/9705)。
 
 
 ## 用户限制
@@ -100,7 +94,7 @@ SCF 平台支持同步和异步两种调用方式来调用云函数。
 当前默认情况下，SCF 对每个函数的并发量有一定限制，您可以通过查看 [并发管理](https://intl.cloud.tencent.com/document/product/583/37040) 了解当前函数的并发量限制。
 如果调用导致函数的并发数目超过了默认限制，则该调用会被阻塞，SCF 将不会执行这次调用。根据函数的调用方式，受限制的调用的处理方式会有所不同：
 
-- 同步调用：如果函数被同步调用时受到限制，将会直接返回 [432 错误码](https://intl.cloud.tencent.com/document/product/583/40173)。
+- 同步调用：如果函数被同步调用时受到限制，将会直接返回 [432 错误码](https://intl.cloud.tencent.com/document/product/583/35311)。
 - 异步调用：如果函数被异步调用时受到限制，SCF 将以一定的策略 [重试](https://intl.cloud.tencent.com/document/product/583/39851) 受限制的事件。
 
 ## 执行环境和可用库
@@ -133,14 +127,14 @@ SCF 事件函数有三个基本概念：执行方法、函数入参和函数返�
 
 #### 执行方法
 
-SCF 平台在调用云函数时，首先会寻找执行方法作为入口，执行用户的代码。此时，用户需以**文件名。执行方法名**的形式进行设置。
+SCF 平台在调用云函数时，首先会寻找执行方法作为入口，执行用户的代码。此时，用户需以**文件名.执行方法名**的形式进行设置。
 例如，用户设置的执行方法为 `index.handler`，则 SCF 平台会首先寻找代码程序包中的 `index` 文件，并找到该文件中的 `handler` 方法开始执行。
 在执行方法中，用户可对入口函数入参进行处理，也可任意调用代码中的其他方法。SCF 的某个函数以入口函数执行完成或函数执行异常作为执行结束。
 
 
 #### 函数入参 [](id:input)
 
-函数入参，是指函数在被触发调用时所传递给函数的内容。通常情况下，函数入参包括**event**和**context**两部分，但根据开发语言和环境的不同，入参个数可能有所不同，详情请参见 [开发语言说明](https://intl.cloud.tencent.com/zh/document/product/583/18032)。
+函数入参，是指函数在被触发调用时所传递给函数的内容。通常情况下，函数入参包括**event**和**context**两部分，但根据开发语言和环境的不同，入参个数可能有所不同，详情请参见 [开发语言说明](https://www.tencentcloud.com/document/product/583/40190)。
 <dx-tabs>
 ::: event 入参
 
@@ -153,20 +147,20 @@ event 参数类型为 dict，event 中包含了触发函数执行的基本信息
 有两种方法可以触发云函数 SCF 执行：
 
 1. 通过调用 [云 API](https://intl.cloud.tencent.com/document/product/583/17243) 触发函数执行。
-2. 通过绑定 [触发器](https://intl.cloud.tencent.com/document/product/583/9705) 触发函数执行。 
+2. 通过绑定 [触发器](https://intl.cloud.tencent.com/document/product/583/9705) 触发函数执行。   
 
 
 SCF 两种触发方式对应两种 event 格式：
 
 - **云 API 触发函数执行：**
   可以在调用方和函数代码之间自定义一个 dict 类型的参数。调用方按照定义好的格式传入数据，函数代码按格式获取数据。
-   **示例**：
+ **示例**：
   定义一个 dict 类型的数据结构 {"key":"XXX"} ，当调用方传入数据 {"key":"abctest"} 时，函数代码可以通过 event [key] 来获得值 abctest。
 
 
 - **触发器触发函数执行：**
   SCF 和 API 网关、对象存储 COS、消息队列 Ckafka 等多种云服务打通，可以通过给函数绑定对应的云服务触发器触发函数执行。触发器触发函数时，event 会以一种平台预定义的、不可更改的格式作为 event 参数传给函数，您可以根据此格式编写代码并从 event 参数中获取信息。
-   **示例**：
+ **示例**：
   通过对象存储 COS 触发函数时会将对象存储桶及文件的具体信息以 <a href="https://intl.cloud.tencent.com/document/product/583/9707#cos-.E8.A7.A6.E5.8F.91.E5.99.A8.E7.9A.84.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF.E7.BB.93.E6.9E.84">JSON 格式 </a> 传递给 event 参数，在函数代码中通过解析 event 信息即可完成对触发事件的处理。
   :::
   ::: context 入参
@@ -191,16 +185,10 @@ SCF 提供的入参 context 包含的字段及含义如下：
 <tr><td align="left"><code>tencentcloud_region</code></td><td align="left"> 函数所在地域 </td></tr>
 <tr><td align="left"><code>tencentcloud_appid</code> </td><td align="left"> 函数所属腾讯云账号 APPID</td></tr><tr><td align="left"><code>tencentcloud_uin</code></td><td align="left"> 函数所属腾讯云账号 ID </td></tr>
 </tbody>
-</table>
-
-
-
-
-<dx-alert infotype="notice" title="">
+</table><dx-alert infotype="notice" title="">
 为保证兼容性，context 中保留了 SCF 不同阶段对命名空间的描述方式。
  context 结构内容将会随着 SCF 平台的开发迭代而增加。
 </dx-alert>
-
 
 您可以在函数代码中通过标准输出语句打印 context 信息，以 `python` 运行环境为例：
 
@@ -389,3 +377,15 @@ SCF 平台会将函数调用的所有记录及函数代码中的全部输出存�
 由于 SCF 的特点，您须以**无状态**的风格编写您的函数代码。本地文件存储等函数生命周期内的状态特征，在函数调用结束后将随之销毁。
 因此，持久状态建议存储在关系型数据库 TencentDB、对象存储 COS、云数据库 Memcached 或其他云存储服务中。
 
+## 开发流程
+
+了解更多云函数开发流程，请参见 [使用流程](https://intl.cloud.tencent.com/document/product/583/45901)。
+
+
+
+
+<style>
+	.params {
+		margin-bottom:0px !important;
+	}
+</style>

@@ -9,13 +9,13 @@
 
 ## 2. 了解云函数的计费
 
-腾讯云云函数服务用户每月可享受一定量的免费额度。云函数按照实际使用云资源收费付费，采用后付费模式，按小时进行结算，以美元为单位结算。您需要了解在使用云函数服务过程中产生的资源费用，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/583/17299)。
+腾讯云云函数新用户前三个月每月可享受一定量的免费额度。云函数有多种计费方式，包括按量计费（后付费）、套餐包计费（预付费），均以美元为单位结算。若您需要了解在使用云函数服务过程中产生的资源费用，请参见 [计费概述](https://intl.cloud.tencent.com/document/product/583/17299)。
 
 ## 3. 使用云函数
 
 #### 3.1 注册与认证
 
-在使用腾讯云云函数之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在使用腾讯云云函数之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/account/register) 并完成 [实名认证](https://www.tencentcloud.com/document/product/378/3629)。
 
 #### 3.2 角色授权
 
@@ -30,7 +30,7 @@
 
 #### 3.4 部署函数
 
-完成函数代码在线编辑后，单击**保存**，函数将被部署。代码部署到云端后，云函数可在配置好条件后执行函数。函数的执行条件被称为触发器，您可以配置定时、API 网关、COS 等多种触发器。配置触发器步骤详情见 [触发器管理](https://intl.cloud.tencent.com/zh/document/product/583/31441)。腾讯云云函数目前支持事件触发与 HTTP 请求触发两种触发模式，详情见 [触发器概述](https://intl.cloud.tencent.com/document/product/583/9705)。
+完成函数代码在线编辑后，单击**保存**，函数将被部署。代码部署到云端后，云函数可在配置好条件后执行函数。函数的执行条件被称为触发器，您可以配置定时、API 网关、COS 等多种触发器。配置触发器步骤详情见 [触发器管理](https://www.tencentcloud.com/document/product/583/31440)。腾讯云云函数目前支持事件触发与 HTTP 请求触发两种触发模式，详情见 [触发器概述](https://intl.cloud.tencent.com/document/product/583/9705)。
 
 #### 3.5 调试与测试云函数
 
@@ -38,8 +38,8 @@
 
 #### 3.6 管理函数
 
-- 查看日志：云函数支持以多种方式查看历史或实时的函数日志。详情见 [日志管理](https://intl.cloud.tencent.com/zh/document/product/583/39777)。
-- 查看监控及配置告警：您可通过查看监控指标，了解函数运行的状况。也可以为函数配置告警，当业务出现异常情况，及时收到告警信息。详情见 [监控与告警管理](https://intl.cloud.tencent.com/zh/document/product/583/32739)。
+- 查看日志：云函数支持以多种方式查看历史或实时的函数日志。详情见 [日志管理](https://www.tencentcloud.com/document/product/583/39776)。
+- 查看监控及配置告警：您可通过查看监控指标，了解函数运行的状况。也可以为函数配置告警，当业务出现异常情况，及时收到告警信息。详情见 [监控与告警管理](https://www.tencentcloud.com/document/product/583/32737)。
 
 
 ## 4. 入门必读
@@ -72,5 +72,6 @@ Web 函数作为一种全新的函数类型，打破现有事件型函数对于 
 使用腾讯云云函数产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧**文档反馈**或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可[提交工单](https://console.intl.cloud.tencent.com/workorder) 寻求帮助。
+- 如果遇到产品相关问题，您可通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 寻求帮助。
+
 

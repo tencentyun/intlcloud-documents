@@ -9,15 +9,15 @@ SCF allows you to develop, deploy, and test functions through the [SCF console](
 
 ## 2. SCF Billing
 
-SCF users are entitled to a certain free tier of resource usage and invocations each month as shown below. SCF is billed by the actual Tencent Cloud resource usage and settled hourly in USD. You need to understand the resource fees incurred during use of SCF. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/583/17299).
+New SCF users are entitled to a certain monthly free tier within three months of activation. SCF can be billed in a prepaid (subscription package) or postpaid (pay-as-you-go) manner in USD. To learn more about the resource fees incurred during use of SCF, see [Billing Overview](https://intl.cloud.tencent.com/document/product/583/17299).
 
 ## 3. Using SCF
 
-#### 3.1 Registering account and verifying identity
+#### 3.1 Register on Tencent Cloud
 
-Before using SCF, you need to sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629) first.
+Before using SCF, you need to sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/account/register) and complete the [identity verification](https://www.tencentcloud.com/document/product/378/3629) first.
 
-#### 3.2 Authorizing role
+#### 3.2 Role authorization
 
 You need to authorize the current service role and grant operation permissions for SCF before accessing your other Tencent Cloud service resources.
 Log in to the Tencent Cloud console, select **Products** > **Serverless Cloud Function** to enter the [SCF console](https://console.cloud.tencent.com/scf), and follow the prompts to authorize SCF. After completing service authorization to get the relevant resource operation permissions, you can start creating functions.
@@ -25,12 +25,12 @@ Log in to the Tencent Cloud console, select **Products** > **Serverless Cloud Fu
 
 #### 3.3 Creating function
 
-- SCF provides two function types: event-triggered function and HTTP-triggered function. For more information, see [Creating and Updating Function](https://intl.cloud.tencent.com/document/product/583/19806) and [Creating and Testing Function](https://intl.cloud.tencent.com/document/product/583/40689).
+- SCF provides two function types: Event-triggered function and HTTP-triggered function. For more information, see [Creating and Updating Function](https://intl.cloud.tencent.com/document/product/583/19806) and [Creating and Testing Function](https://intl.cloud.tencent.com/document/product/583/40689).
 - SCF provides two function creation methods. You can quickly create a function in the console as instructed in [Creating Event-Triggered Function in Console](https://intl.cloud.tencent.com/document/product/583/32742). You can also create a function through Serverless Cloud Framework as instructed in [Creating Function on CLI](https://intl.cloud.tencent.com/document/product/583/32743).
 
 #### 3.4 Deploying function
 
-After editing the function code online, click **Save**, and the function will be deployed. After the code is deployed in the cloud, SCF can execute the function after a trigger condition is configured. An execution condition of a function is called a trigger. You can configure various types of triggers, such as timer, API Gateway, and COS triggers. For detailed directions on how to configure a trigger, see [Creating Trigger](https://intl.cloud.tencent.com/zh/document/product/583/31441). SCF currently supports two trigger modes: event-triggered and HTTP-triggered. For more information, see [Trigger Overview](https://intl.cloud.tencent.com/document/product/583/9705).
+After editing the function code online, click **Save**, and the function will be deployed. After the code is deployed in the cloud, SCF can execute the function after a trigger condition is configured. An execution condition of a function is called a trigger. You can configure various types of triggers, such as timer, API Gateway, and COS triggers. For detailed directions on how to configure a trigger, see [Trigger Management](https://www.tencentcloud.com/document/product/583/31440). SCF currently supports two trigger modes: event-triggered and HTTP-triggered. For more information, see [Trigger Overview](https://intl.cloud.tencent.com/document/product/583/9705).
 
 #### 3.5 Invoking and testing function
 
@@ -38,15 +38,15 @@ You can directly invoke a function and simulate the triggering event sent by the
 
 #### 3.6 Managing function
 
-- View logs: SCF supports displaying historical or real-time function logs in various ways. For more information, see [Log Search Guide](https://intl.cloud.tencent.com/zh/document/product/583/39777).
-- View monitoring data and configure alarms: you can stay on top of the function running status by viewing monitoring metrics. You can also configure alarms for functions to promptly receive alarm messages when your business is exceptional. For more information, see [Descriptions of monitoring metrics](https://intl.cloud.tencent.com/zh/document/product/583/32739).
+- View logs: SCF supports displaying historical or real-time function logs in various ways. For more information, see [Log Management](https://www.tencentcloud.com/document/product/583/39776).
+- View monitoring data and configure alarms: You can stay on top of the function running status by viewing monitoring metrics. You can also configure alarms for functions to promptly receive alarm messages when your business is abnormal. For more information, see [Managing Monitors and Alarms](https://www.tencentcloud.com/document/product/583/32737).
 
 
-## 4. FAQs
+## 4. Beginner's Guide
 
 #### What are the differences between HTTP-triggered function and event-triggered function?
 
-As a new function type, HTTP-triggered function can be directly triggered by HTTP requests, breaking through the limit of JSON event format required by the current event-triggered function type. It has more flexible application scenarios and delivers a development experience much similar to that of native web services.
+As a new function type, HTTP-triggered can be directly triggered by HTTP requests, breaking through the limit of JSON event format required by the current event-triggered function type. It has more flexible application scenarios and delivers a development experience much similar to that of native web services.
 
 #### A function can run normally in the local system, but I am prompted that some dependencies cannot be found when I try to run it online. What should I do?
 
@@ -67,10 +67,11 @@ You can bind your independent domain name to the SCF service, so that the servic
 
 
 
-## 5. Feedback and Suggestions	
+## 5. Feedback and Suggestion	
 
 If you have any questions or suggestions about SCF, you can send your feedback through the following channels, and we will get back to you accordingly:
 
-- If you have any questions regarding the product documentation, such as links, content, or APIs, click **Send Feedback** on the right of the document page.
-- If you encounter problems when using the product, [submit a ticket](https://console.intl.cloud.tencent.com/workorder) for assistance.
+- For questions about the product documentation, such as links, content, or APIs, click **Send Feedback** on the right of the document page.
+- If you encounter any problems while using the product, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
+
 

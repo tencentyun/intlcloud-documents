@@ -22,9 +22,12 @@ Serverless Web IDE 支持：
 2. 在函数列表中，单击函数名，进入该函数的详情页面。
 3. 在“函数管理”页面中，选择**函数代码** > **在线编辑**，即可查看并编辑函数。
 
+>! Java、Go 运行时暂不支持在线编辑，仅支持上传已经开发完成编译打包后的 ZIP 包或二进制文件。SCF 环境暂不提供 Java、Go 的编译能力。具体请参见 [Golang 部署指南](https://intl.cloud.tencent.com/document/product/583/46776) 、[Java 部署指南](https://intl.cloud.tencent.com/document/product/583/46769)。
+
+
 ## 概览图
 
-本文将以 Serverless Web IDE 工具整体页面从左至右顺序依次介绍。如下图所示：
+本文将以 Serverless Web IDE 工具整体页面从左至右顺序依次介绍。如下图所示： 
 ![](https://main.qcloudimg.com/raw/7b1bf95f8cc2b1640fa3184784fafae5.png)
 
 1. **资源管理器**
@@ -35,7 +38,7 @@ Serverless Web IDE 支持：
 
 ## 函数操作
 
-在 Serverless Web IDE 中，可以完成函数代码编辑、部署、测试全流程操作。函数测试、部署、测试模板选择等常用操作统一设置在 IDE 右上角的操作区。如下图所示：
+在 Serverless Web IDE 中，可以完成函数代码编辑、部署、测试全流程操作。函数测试、部署、测试模板选择等常用操作统一设置在 IDE 右上角的操作区。如下图所示： 
 ![](https://main.qcloudimg.com/raw/c7ebb49e0b7a9ed4825c8d064704325c.png)
 
 ### 函数部署
@@ -62,7 +65,7 @@ Serverless Web IDE 提供手动部署和自动部署两种函数部署方式，�
 您可以单击 IDE 右上角操作区**测试**触发函数运行，并在输出中查看函数运行结果。
 
 - **选择测试模板**：单击 IDE 操作区的**测试模板**选择函数测试触发事件。
-- **新增测试模板**：如果现有的测试模板不能满足您的测试需求，可以在测试模板下拉列表中选择**新增测试模板**自定义测试事件，新增测试事件将以 JSON 文件的格式存储在函数根目录 /src 下的 scf\_test\_event 文件夹中，跟随函数一起部署到云端。如下图所示：
+- **新增测试模板**：如果现有的测试模板不能满足您的测试需求，可以在测试模板下拉列表中选择**新增测试模板**自定义测试事件，新增测试事件将以 JSON 文件的格式存储在函数根目录 /src 下的 scf\_test\_event 文件夹中，跟随函数一起部署到云端。如下图所示： 
   ![](https://main.qcloudimg.com/raw/83f22130739e5cc144a26180c010e4dd.png)
 
 
@@ -76,7 +79,7 @@ Serverless Web IDE 提供手动部署和自动部署两种函数部署方式，�
 
 在资源管理器函数文件上单击右键展开的列表中，包含了函数相关的全部操作。除部署、测试、新增测试模板等操作外，还提供以下内容：
 
-- **生成 serverless.yml**：将函数当前的配置写入配置文件 serverless.yml，可以使用 Serverless Framework 命令行工具进行二次开发；
+- **生成 serverless.yml**：将函数当前的配置写入配置文件 serverless.yml，可以使用 Serverless Cloud Framework 命令行工具进行二次开发；
 - **丢弃当前修改**：重新拉取云端已经部署的函数覆盖当前工作区。
 
 ## IDE 操作
@@ -209,7 +212,7 @@ Serverless Web IDE 中常用命令、运行环境和预置的扩展版本如下�
 <td style="text-align:center">1.9.5</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/583/36267">Serverless Framework CLI</a></td>
+<td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/583/36267">Serverless Cloud Framework</a></td>
 <td style="text-align:center">3.2.1</td>
 </tr>
 </tbody>
@@ -277,7 +280,7 @@ Serverless Web IDE 中常用命令、运行环境和预置的扩展版本如下�
 
 ## 配额限制
 
-- IDE 为每个用户提供5GB的存储空间，超出将无法执行写入操作，请及时清理。
+- IDE 为每个用户提供5GB的存储空间，超出将无法执行写入操作，请及时清理。（删除函数不会清空 IDE 的存储空间，请您备份工作空间更改后，手动进行“重置工作空间”操作。您也可以选择切换到旧版编辑器以规避此限制。）
 - 为保证体验，不建议在多个浏览器页面中同时打开3个以上的函数。
 
 ## 注意事项

@@ -4,14 +4,12 @@
 腾讯云 Serverless 云函数已上线并发管理能力升级版，该升级版提供3个维度的并发额度管理功能。通过该功能，可以获得更强的函数并发管理控制权限，无需再等待申请云函数配额即可自行根据业务需求快速调整。
 
 
->?目前 [函数并发](https://intl.cloud.tencent.com/document/product/583/37040) 管理功能已上线，函数可以配置 [最大独占配额](https://intl.cloud.tencent.com/document/product/583/39464)。另外 [预置并发](https://intl.cloud.tencent.com/document/product/583/37704) 功能目前处于内测阶段。
-
-
+>?目前 [函数并发](https://intl.cloud.tencent.com/document/product/583/37040) 管理功能已上线，函数可以配置 [最大独占配额](https://intl.cloud.tencent.com/document/product/583/39464)。另外 [预置并发](https://intl.cloud.tencent.com/document/product/583/37704) 功能目前处于内测阶段，如需体验您可以填写 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请开通此功能。
 
 
 未使用并发管理功能前，一个云函数默认具有300的并发数量上限。针对使用量较小的低频业务，300并发值已足够满足业务使用。但遇到业务量上涨、支撑大型运营活动等大并发场景，开发者则需提交工单申请提升函数并发额度，该解决方案存在以下3种情况：
 
-- 业务每遇到一次大并发，就需要联系腾讯云申请提升云函数配额，时效性弱。 
+- 业务每遇到一次大并发，就需要联系腾讯云申请提升云函数配额，时效性弱。   
 - 申请等待周期时会导致上涨的业务部分有损。
 - 在评估量级时，可能会因评估不足而未通过，导致需要再次申请，效率较低。
 
@@ -89,7 +87,7 @@
 
 
 - 解决方案1（推荐）：最大独占配额配置，通过将部分额度分配给具体函数，来保障具体函数的运行可靠性。
-- 解决方案2：通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请提升更高的账号额度，来满足业务量上涨带来的并发上涨。
+- 解决方案2：通过购买更高规格的 [套餐包](https://www.tencentcloud.com/document/product/583/52230) 来获得更高的并发额度，以满足业务量上涨带来的并发上涨。
 
 #### 最大独占配额配置示例
 

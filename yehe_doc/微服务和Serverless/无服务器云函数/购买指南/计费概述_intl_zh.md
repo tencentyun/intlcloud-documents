@@ -1,27 +1,28 @@
 
 ## 免费额度
 
-腾讯云云函数免费额度和计费方式将于2022年6月1日0:00（北京时间）起正式调整。届时新用户前三个月将获得更多用量的免费额度，第四个月开始不再享受免费额度，同时从第四个月开始，系统每月会自动发放基础套餐额度（调用次数50万次、资源使用量10万GBs、外网出流量2GB）并扣除基础套餐费用1.86美金。详情请参阅 [免费额度说明](https://intl.cloud.tencent.com/document/product/583/12282)。
+腾讯云云函数免费额度和计费方式将于2022年6月1日0:00（北京时间）起正式调整。届时新用户前三个月将获得更多用量的免费额度，第四个月开始不再享受免费额度，同时从第四个月开始，系统每月会自动发放基础套餐额度（调用次数50万次、资源使用量10万GBs、外网出流量2GB）并扣除基础套餐费用1.86美元。详情请参阅 [免费额度说明](https://intl.cloud.tencent.com/document/product/583/12282)。
 >? 
 >- 平台每个月1号会统计上个自然月用户函数调用情况，如果上个自然月的函数资源使用量、调用次数、外网出流量均为0时，本月将不会扣除**基础套餐费用**。如果本月产生函数任何一项用量，下个月将会继续扣除基础套餐费用。
 >- 免费额度不包含 Web 函数响应流量，Web 函数计费详情见 [Web 函数计费说明](https://intl.cloud.tencent.com/document/product/583/45902)。
 
 
 ## 计费项与计费方式
-### 计费项
-云函数的费用由以下部分组成，每部分根据自身统计结果和计算方式进行费用计算，结果以**美元**为单位，并保留小数点后两位：
-
-- **资源使用费用**：由函数配置内存，乘以函数运行时长得出资源使用量，单位为 GBs。
-- **调用次数费用**：函数的每次触发执行均记为一次调用，单位为次。
-- **外网出流量费用**：在函数代码中访问外网时产生的出流量记录为外网出流量，单位为 GB。
-- **预置并发闲置费用**：由已启动的预置实例数，减去实际运行的并发数得到闲置实例数，闲置实例数乘以配置内存，再乘以闲置时长得出闲置资源量，单位为 GBs。定价详情见 [预置并发功能定价](https://intl.cloud.tencent.com/document/product/583/44256)。
-- **基础套餐费用**：开通使用云函数三个月后的用户每月不再享受 [免费额度](https://intl.cloud.tencent.com/document/product/583/12282)，系统每月会发放基础套餐额度，同时自动扣除1.86美元（扣除方式为：均摊到每天扣除0.06美元）。单位为天。如果您购买了有效期内的套餐包或资源包（资源包有余量），系统则不会再扣除基础套餐费用。
-
-
->? 对于使用默认触发器的 Web 函数，会额外新增 Web 函数响应流量，免费额度不包含 Web 函数响应流量，Web 函数计费详情见 [Web 函数计费说明](https://intl.cloud.tencent.com/document/product/583/45902)。
->
 ### 计费方式
-云函数计费方式主要为 [**按量计费（后付费）**](https://intl.cloud.tencent.com/document/product/583/42969) 。
+云函数计费方式主要分为 [**按量计费（后付费）**](https://intl.cloud.tencent.com/document/product/583/42969) 和[**套餐包抵扣（预付费）**](https://www.tencentcloud.com/document/product/583/52230)两种方式。
+
+### 计费项
+云函数的计费项由后付费（按量付费）计费项、预付费计费项组成，每部分根据自身统计结果和计算方式进行费用计算，结果以**美元**为单位，并保留小数点后两位：
+- 后付费计费项包括：资源使用费用、调用次数费用、外网出流量费用、预置并发闲置费用、基础套餐费用、Web 函数响应流量费用。
+- 预付费计费项包括：套餐包。（抵扣顺序：**免费额度 > 命名空间套餐包 > 地域套餐包 >  按量计费（后付费）**）
+
+具体请参见 [**计费项说明**](https://intl.cloud.tencent.com/document/product/583/44254)。
+
+## 通过 SCF 使用其他产品计费说明
+
+>! SCF 运行日志由日志服务 CLS 提供支持，运行日志将默认投递到 CLS，日志投递详情请查看 [日志投递配置](https://intl.cloud.tencent.com/document/product/583/39778)。CLS 免费额度自2022年9月5日起调整，CLS 为开通三个月内的新用户提供一定 [免费额度](https://intl.cloud.tencent.com/document/product/614/37889)，到期或超出免费额度将会按照产品定价进行计费。
+
+通过 SCF 使用其他产品，如 [文件系统 CFS](https://intl.cloud.tencent.com/document/product/582/9553)、[对象存储 COS](https://intl.cloud.tencent.com/document/product/436/16871)、[日志服务 CLS](https://intl.cloud.tencent.com/document/product/614/11254) 等，将按照对应产品的计费规则进行计费。
 
 ## 产品定价
 
@@ -134,7 +135,3 @@ Web 函数与事件型函数计费价格相同，对于使用默认触发器的 
 </tbody></table>
 
 
-## 通过 SCF 使用其他产品计费说明
-通过 SCF 使用其他产品，如 [文件系统 CFS](https://intl.cloud.tencent.com/document/product/582/9553)、[对象存储 COS](https://intl.cloud.tencent.com/document/product/436/16871)、[日志服务 CLS](https://intl.cloud.tencent.com/document/product/614/11254) 等，将按照对应产品的计费规则进行计费。
-
-SCF 运行日志由日志服务 CLS 提供支持，运行日志将默认投递到 CLS，日志投递详情请查看 [日志投递配置](https://intl.cloud.tencent.com/document/product/583/39778)。CLS 免费额度自2022年9月5日起调整，CLS 为开通三个月内的新用户提供一定 [免费额度](https://intl.cloud.tencent.com/document/product/614/37889)，到期或超出免费额度将会按照产品定价进行计费。
