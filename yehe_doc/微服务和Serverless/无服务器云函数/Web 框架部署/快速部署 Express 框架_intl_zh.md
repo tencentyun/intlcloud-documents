@@ -8,31 +8,29 @@
 
 
 ## 前提条件
-在使用腾讯云云函数服务之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/account/register) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在使用腾讯云云函数服务之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/account/register) 并完成 [实名认证](https://www.tencentcloud.com/document/product/378/3629)。
 
 ## 操作步骤
 
 
-### 模板部署 -- 一键部署 Express 项目
+### 模板部署：一键部署 Express 项目
 
 
 1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的**函数服务**。
-2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
+2. 在主界面上方选择期望创建函数的地域和命名空间，并单击**新建**，进入函数创建流程。
 3. 选择使用**模板创建**来新建函数，在搜索框里输入 `WebFunc` 筛选所有 Web 函数模板，选择**Express 框架模板**并单击**下一步**。如下图所示： 
-![](https://qcloudimg.tencent-cloud.cn/raw/73472845db793c9a0c543cebb51b5b34.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/gLx2086_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219155013.png)
 4. 在**新建**页面，您可以查看模板项目的具体配置信息并进行修改。
 5. 单击**完成**即可创建函数。函数创建完成后，您可在**函数管理**页面查看 Web 函数的基本信息。
-6. 在“触发管理”页中，单击**创建触发器**。
-7. 在弹窗中确认触发器信息，单击**提交**。如下图所示： 
-![](https://qcloudimg.tencent-cloud.cn/raw/cdd0d4f3cd88b6414ef270115757d85f.png)
-8. 在“触发管理”页中，您可以通过访问路径 URL，访问您部署的 Express 项目。如下图所示： 
+6. 单击左侧菜单栏中的**触发管理**，查看访问路径 URL，访问您部署的 Express 项目。如下图所示： 
 ![](https://qcloudimg.tencent-cloud.cn/raw/ebf66a5d16ecfd1470c32e1942b691cd.png)
-9. 单击访问路径 URL，即可访问服务 Express 项目。
+7. 单击访问路径 URL，即可访问服务 Express 项目。如下图所示： 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/enhL062_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219154911.png)
 
 
 
 
-### 自定义部署 -- 快速迁移本地项目上云
+### 自定义部署：快速迁移本地项目上云
 
 
 #### 前提条件
@@ -93,7 +91,7 @@ chmod 777 scf_bootstrap
 5. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的**函数服务**。
 6. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
 7. 选择**从头开始**新建函数，根据页面提示配置相关选项。如下图所示： 
-	![](https://qcloudimg.tencent-cloud.cn/raw/0b74aad993d675acf5a96b8900f5d0f9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0b74aad993d675acf5a96b8900f5d0f9.png)
 	- **函数类型**：选择 “Web 函数”。
 	- **函数名称**：填写您自己的函数名称。
 	- **地域**：填写您的函数部署地域，默认为广州。
@@ -104,7 +102,6 @@ chmod 777 scf_bootstrap
 
 
 
-
-
 #### 开发管理
-部署完成后，即可在 SCF 控制台快速访问并测试您的 Web 服务，并且体验云函数多项特色功能，例如层绑定、日志管理等，享受 Serverless 架构带来的低成本、弹性扩缩容等优势。
+部署完成后，即可在 Serverless 控制台快速访问并测试您的 Web 服务，并且体验云函数多项特色功能，例如层绑定、日志管理等，享受 Serverless 架构带来的低成本、弹性扩缩容等优势。如下图所示： 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ebH5264_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219161310.png)

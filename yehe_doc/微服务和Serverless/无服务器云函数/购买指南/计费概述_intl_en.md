@@ -1,31 +1,32 @@
 
 ## Free Tier
 
-The free tier and billing mode of SCF will be adjusted as from 0:00, June 1, 2022 (Beijing time). By then, new users will get free tiers of more usage in the first three months after activation. As from the fourth month, users will no longer be entitled to free tiers, and the system will automatically grant a basic package tier (500,000 invocations, resource usage of 100,000 GBs, and public network outbound traffic of 2 GB) and deduct the basic package fees of 1.86 USD every month. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/583/12282).
+The free tier and billing mode of SCF will be adjusted as from 0:00, June 1, 2022 (Beijing time). By then, new users will get free tiers of more usage within three months of activation. As from the fourth month, users will no longer be entitled to free tiers, and the system will automatically grant a basic package tier (500,000 invocations, resource usage of 100,000 GBs, and public network outbound traffic of 2 GB) and deduct the basic package fees of 1.86 USD every month. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/583/12282).
 >? 
 >- The function invocations in a calendar month is counted on the first day of the next month. If there is no any function-related usage incurred, including the function resource usage, function invocations, and public network outbound traffic, the **basic package fees** will not be charged in the current month. If any function usage is generated in the current month, the basic package fees will be charged next month.
 >- HTTP-triggered function response traffic is not included in the free tier. For more information, see [HTTP-Triggered Function Billing](https://intl.cloud.tencent.com/document/product/583/45902).
 
 
 ## Billable Items and Billing Modes
-### Billable items
-SCF is billed by the following four parts. Each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**:
-
-- **Resource usage fees**: resource usage is calculated in GBs by multiplying the configured function memory size by the function execution duration.
-- **Invocation fees**: each function triggering and execution is calculated as an invocation.
-- **Public network outbound traffic fees**: the outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
-- **Idle provisioned concurrency fees**: The number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of started provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size. For pricing details, see [Provisioned Concurrency Pricing](https://intl.cloud.tencent.com/document/product/583/44256).
-- **Basic package fees:** After three months of activation of SCF, you will no longer be entitled to a [free tier](https://intl.cloud.tencent.com/document/product/583/12282), and the system will grant a basic package tier and automatically deduct 1.86 USD (by deducting 0.06 USD per day) every month. If you have valid packages or remaining resource packs, the system will not deduct the basic package fees.
-
-
->? For HTTP-triggered functions using the default trigger, HTTP-triggered function response traffic will be additionally generated, which is not included in the free tier. For more information, see [HTTP-Triggered Function Billing](https://intl.cloud.tencent.com/document/product/583/45902).
->
 ### Billing Mode
-SCF is a [**pay-as-you-go**](https://intl.cloud.tencent.com/document/product/583/42969) service.
+SCF can be [**postpaid (pay-as-you-go)**](https://intl.cloud.tencent.com/document/product/583/42969) or [**prepaid (subscription package)**](https://www.tencentcloud.com/document/product/583/52230).
+
+### Billable items
+SCF has prepaid and postpaid (pay-as-you-go) billable items. Each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**:
+- Postpaid billable items include resource usage, invocation, public network outbound traffic, idle provisioned concurrency, basic package, and HTTP-triggered function response traffic.
+- Prepaid billable items include subscription package (the deduction sequence is **free tier > namespace subscription package > region subscription package > pay-as-you-go (postpaid)**).
+
+For more information, see [**Billable Items**](https://intl.cloud.tencent.com/document/product/583/44254).
+
+## Billing of Other Products Used by SCF
+
+>! SCF execution logs are supported by and delivered to CLS by default. For more information on log delivery, see [Log Delivery Configuration](https://intl.cloud.tencent.com/document/product/583/39778). Starting from Sept 5, 2022, CLS provides a [free tier](https://intl.cloud.tencent.com/document/product/614/37889) for new CLS users, and any excess will be billed according to its pricing.
+
+Other products used by SCF, such as [CFS](https://intl.cloud.tencent.com/document/product/582/9553), [COS](https://intl.cloud.tencent.com/document/product/436/16871), and [CLS](https://intl.cloud.tencent.com/document/product/614/11254), will be billed according to their respective billing rules.
 
 ## Pricing
 
-The four billable items of SCF are priced as follows:
+The five billable items of SCF are priced as follows:
 
 - Resource usage: 0.0000167 USD/GBs (0.167 USD/10000 GBs)
 - Invocation: 0.002 USD/10,000 invocations
@@ -53,7 +54,7 @@ SCF is currently supported in the following regions:
     <td>ap-chengdu</td>
   </tr>
   <tr>
-    <td>	South China (Guangzhou)</td>
+    <td>South China (Guangzhou)</td>
     <td>ap-guangzhou</td>
   </tr>
   <tr>
@@ -134,7 +135,3 @@ For billing details, see the following documents:
 </tbody></table>
 
 
-## Billing of Other Products Used by SCF
-Other products used by SCF, such as [CFS](https://intl.cloud.tencent.com/document/product/582/9553), [COS](https://intl.cloud.tencent.com/document/product/436/16871), and [CLS](https://intl.cloud.tencent.com/document/product/614/11254), will be billed according to their respective billing rules.
-
-SCF execution logs are supported by and delivered to CLS by default. For more information on log delivery, see [Log Delivery Configuration](https://intl.cloud.tencent.com/document/product/583/39778). Starting from Sept 5, 2022, CLS provides a [free tier](https://intl.cloud.tencent.com/document/product/614/37889) for new CLS users, and any excess will be billed according to its pricing.

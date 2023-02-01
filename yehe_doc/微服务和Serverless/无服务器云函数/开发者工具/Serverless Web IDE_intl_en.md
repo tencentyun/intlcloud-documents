@@ -15,16 +15,19 @@ Serverless Web IDE supports:
 >- We recommend you use the latest version of Google Chrome to get the best IDE user experience.
 
 
-## Use Directions
+## Directions
 
 
-1. Log in to the [Serverless console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Functions** on the left sidebar.
 2. In the function list, click a function name to enter the function details page.
 3. On the **Function Management** page, select **Function Code** > **Online editing** to view and edit the function.
 
+>!Online editing is not supported for Java and Go runtime environments currently. When they are used, only developed, compiled, and packaged ZIP packages or binary files can be uploaded. The SCF environment does not provide Java and Go compiling capability. For more information, see Go [Deployment Methods](https://intl.cloud.tencent.com/document/product/583/46776) and Java [Deployment Methods](https://intl.cloud.tencent.com/document/product/583/46769).
+
+
 ## Overview
 
-This document describes the Serverless Web IDE tool in detail as shown below in order from left to right:
+This document describes the Serverless Web IDE tool in detail as shown below in order from left to right: 
 ![](https://main.qcloudimg.com/raw/7b1bf95f8cc2b1640fa3184784fafae5.png)
 
 1. **Resource Manager**
@@ -35,7 +38,7 @@ This document describes the Serverless Web IDE tool in detail as shown below in 
 
 ## Function Operations
 
-In Serverless Web IDE, you can edit, deploy, and test function code. Common operations such as function testing and deployment and testing template selection are configured in the operation section in the top-right corner of the IDE as shown below:
+In Serverless Web IDE, you can edit, deploy, and test function code. Common operations such as function testing and deployment and testing template selection are configured in the operation section in the top-right corner of the IDE as shown below: 
 ![](https://main.qcloudimg.com/raw/c7ebb49e0b7a9ed4825c8d064704325c.png)
 
 ### Function deployment
@@ -52,7 +55,7 @@ Serverless Web IDE enables you to deploy a function either manually or automatic
 >- The root directory of the function is `/src`, and the deployment operation will package and upload the files in the `/src` directory by default. Place the files that you want to deploy to the cloud in the `/src` directory.
 >- In automatic deployment mode, you can trigger function deployment to the cloud by saving the function. Therefore, we recommend you not enable automatic deployment for functions with traffic.
 
-You can switch between manual and automatic deployment and enable/disable online dependency installation by selecting from the drop-down list in the operation section in the top-right corner of the IDE. **Automatic Deployment: Disabled** indicates the manual deployment mode.
+You can switch between manual and **automatic deployment** and enable/disable online dependency installation by selecting from the drop-down list in the operation section in the top-right corner of the IDE. **Automatic deployment: Disabled** indicates the manual deployment mode.
 ![](https://main.qcloudimg.com/raw/9163631af3f336bf490092fc58f0f749.png)
 
 
@@ -61,27 +64,27 @@ You can switch between manual and automatic deployment and enable/disable online
 
 You can click **Test** in the operation section in the top-right corner of the IDE to trigger the function and view the result in the output.
 
-- **Select testing template**: Click **Testing Template** in the operation section of the IDE to select a function testing triggering event.
-- **Create testing template**: If existing testing templates cannot meet your testing requirements, you can select **Create testing template** from the testing template drop-down list to customize a test event, which will be stored in JSON format in the `scf\_test\_event` folder in the `/src` root directory of the function and deployed to the cloud with the function as shown below:
+- **Select a test template**: Click **Test templates** in the operation section of the IDE to select a function testing triggering event.
+- **Create a test template**: If existing test templates cannot meet your testing requirements, you can select **Create test template** from the test template drop-down list to customize a test event, which will be stored in JSON format in the scf\_test\_event folder in the `/src` root directory of the function and deployed to the cloud with the function as shown below: 
   ![](https://main.qcloudimg.com/raw/83f22130739e5cc144a26180c010e4dd.png)
 
 
-### Viewing log
+### Viewing logs
 
 You can view the function testing result in the output, including the returned data `Response`, the log `Output`, and the function execution summary `Summary`.
 ![](https://main.qcloudimg.com/raw/671a3995602c9dfd28ddf1cc0c963920.png)
 
 
-### More operations
+### More Operations
 
 In addition to operations such as function deployment and testing as well as testing template adding, the list expanded by right-clicking the function file in the Resource Manager contains all operations related to the function, including:
 
-- **Generating `serverless.yml`**: You can write the current configuration of the function into the `serverless.yml` configuration file and use the Serverless Framework command line tool for further development;
+- **Generating `serverless.yml`**: You can write the current configuration of the function into the `serverless.yml` configuration file and use the Serverless Cloud Framework command line tool for further development;
 - **Discarding current modifications**: You can re-pull the function deployed in the cloud to overwrite the current workspace.
 
 ## IDE Operations
 
-The common commands, runtime environments, and preset extensions in Serverless Web IDE and their versions are as listed below:
+The commonly used commands, runtime environments, and preconfigured extensions in Serverless Web IDE are as follows:
 
 ### Commands
 <table>
@@ -157,7 +160,7 @@ The common commands, runtime environments, and preset extensions in Serverless W
 <td style="text-align:center">8.1.2</td>
 </tr>
 <tr>
-<td style="text-align:center">Composer</td>
+<td style="text-align:center">composer</td>
 <td style="text-align:center">2.2.9</td>
 </tr>
 </tbody>
@@ -173,7 +176,7 @@ The common commands, runtime environments, and preset extensions in Serverless W
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">YARN</td>
+<td style="text-align:center">yarn</td>
 <td style="text-align:center">1.22.18</td>
 </tr>
 <tr>
@@ -201,15 +204,15 @@ The common commands, runtime environments, and preset extensions in Serverless W
 <td style="text-align:center">3.82</td>
 </tr>
 <tr>
-<td style="text-align:center">Jupyter</td>
+<td style="text-align:center">jupyter</td>
 <td style="text-align:center">4.6.3</td>
 </tr>
 <tr>
-<td style="text-align:center">Pylint</td>
+<td style="text-align:center">pylint</td>
 <td style="text-align:center">1.9.5</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/583/36267">Serverless Framework CLI</a></td>
+<td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/583/36267">Serverless Cloud Framework</a></td>
 <td style="text-align:center">3.2.1</td>
 </tr>
 </tbody>
@@ -227,11 +230,11 @@ The common commands, runtime environments, and preset extensions in Serverless W
 <tbody>
 <tr>
 <td style="text-align:center">Node.js</td>
-<td style="text-align:center">16.13, 14.18, 12.16, and 10.15</td>
+<td style="text-align:center">16.13, 14.18, 12.16, 10.15</td>
 </tr>
 <tr>
 <td style="text-align:center">Python</td>
-<td style="text-align:center">3.7, 3.6, and 2.7</td>
+<td style="text-align:center">3.7, 3.6, 2.7</td>
 </tr>
 <tr>
 <td style="text-align:center">PHP</td>
@@ -277,7 +280,7 @@ The common commands, runtime environments, and preset extensions in Serverless W
 
 ## Quota Limits
 
-- IDE provides 5 GB of storage space for each user. If it is used up, you will not be able to perform write operations. Clean it up in time.
+- The IDE provides 5 GB of storage space for each user. If it is used up, you will not be able to perform write operations; therefore, clean it up in time. (Deleting functions will not clear the storage space of the IDE. You can back up your workspace changes and manually **reset the workspace**. You can also choose to switch to the old editor to avoid this restriction.)
 - To ensure a smooth experience, we recommend you not open more than 3 functions on multiple browser pages at the same time.
 
 ## Notes

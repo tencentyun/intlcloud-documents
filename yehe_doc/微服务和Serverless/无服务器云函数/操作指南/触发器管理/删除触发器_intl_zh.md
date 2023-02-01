@@ -1,19 +1,10 @@
 可以通过删除触发器来解除云函数与事件源的关联。解除关联后，事件源将不会再触发云函数的执行。您可通过控制台完成云函数触发器删除。
 
 ## 通过控制台完成触发器删除
-1. 登录云函数控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)**。
-2. 在“函数服务”列表页面上方，选择期望删除触发器函数所在的地域及命名空间。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/21a2cfd16e25a71ae355ef9d002b4b18.png)
-函数列表中包括了函数名、监控、运行环境、创建时间、修改时间等，您可根据自身需求进行操作。
+1. 登录 Serverless 控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)**。
+2. 在“函数服务”列表页面上方，选择函数所在的地域及命名空间。如下图所示： 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/wnBG038_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219142236.png)
 3. 单击函数名，进入该函数的详情页面。
-函数详情页面包括了函数管理页、触发管理页、监控信息页、日志查询页和并发配额页等。
-4. 在该函数的详情页面，选择左侧的**触发管理**，进入触发器浏览及操作界面。
-5. 单击期望删除触发器右上角的**删除**，并在弹出窗口中确认删除即可。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/b3ecf81b09c772aca44ee875b21e985c.png)
-
-
-
-
-
-
-
+4. 选择左侧的**触发管理**，进入触发器浏览及操作界面，单击触发器右上角的**删除**。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/fXaP428_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219163934.png)
+在弹出窗口中确认删除即可。
