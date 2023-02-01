@@ -40,7 +40,7 @@ It is used to record information such as the purpose of the function, which is o
 ## Relevant Configurations of Function
 
 
-In addition to the above configuration items, you can also modify the following configuration items for function execution by editing the function configuration in the console or [updating function configuration](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806):
+In addition to the above configuration items, you can also modify the following configuration items for function execution by editing the function configuration in the console or [updating function configuration](https://intl.cloud.tencent.com/document/product/583/19806):
 
 
 #### Resource type
@@ -100,7 +100,7 @@ In SCF use cases, DNS delays may cause function execution timeouts, affecting th
 ## Executable Operations for a Function
 
 - [Creating function](https://intl.cloud.tencent.com/document/product/583/19806): Creates a function.
-- [Updating function](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806):
+- [Updating function](https://intl.cloud.tencent.com/document/product/583/19806):
   - Updating function configuration: Updates the configuration items of the function.
   - Updating function code: Updates the execution code of the function.
 - [Getting details](https://intl.cloud.tencent.com/document/product/583/19809): Gets function configuration, trigger, and code details.
