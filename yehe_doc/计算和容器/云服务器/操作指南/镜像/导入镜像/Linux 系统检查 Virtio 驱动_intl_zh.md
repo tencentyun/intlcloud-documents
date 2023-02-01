@@ -113,6 +113,7 @@ make menuconfig
  - 按 “Enter” 选择或执行光标所选项目。
  - 按空格键选中光标所选项目，“\*” 表示编译到内核，“M” 表示编译为模块。 
 </dx-alert>
+
 2. 按 “↓” 键将光标调到 “Virtualization”，并按空格键选中 “Virtualization”。
 3. 在 “Virtualization” 处按 “Enter”，进入 Virtualization 详情界面。
 4. 在 Virtualization 详情界面，确认是否勾选了 Kernel-based Virtual Machine （KVM）support 选项。如下图所示：
