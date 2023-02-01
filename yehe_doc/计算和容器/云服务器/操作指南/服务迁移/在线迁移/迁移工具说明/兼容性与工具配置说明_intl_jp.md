@@ -69,13 +69,26 @@
 </dx-alert>
 
 ### user.jsonファイルパラメータの説明[](id:userJsonState)
-
 user.json設定ファイルの説明は下表のとおりです：
-
 <table>
-	<tr><th>パラメータ名</th><th>タイプ</th><th>入力必須かどうか</th><th>説明</th></tr>
-	<tr><td>SecretId</td><td>String</td><td>はい</td><td>APIにアクセスするためにアカウントで使用されるSecretIdです。詳細については、<a href="https://intl.cloud.tencent.com/document/product/598/32675">アクセスキー</a>をご参照ください。</td></tr>　
-	<tr><td>SecretKey</td><td>String</td><td>はい</td><td>APIにアクセスするためにアカウントで使用されるSecretIdです。詳細については、<a href="https://intl.cloud.tencent.com/document/product/598/32675">アクセスキー</a>をご参照ください。</td></tr>
+ <tr>
+       <th>パラメータ名</th>
+       <th>タイプ</th>
+       <th>入力必須かどうか</th>
+       <th>説明</th>
+</tr>
+<tr>
+       <td>SecretId</td>
+       <td>String</td>
+       <td>はい</td>
+       <td>APIにアクセスするためにアカウントで使用されるSecretIdです。詳細については、<a href="https://intl.cloud.tencent.com/document/product/598/32675">アクセスキー</a>をご参照ください。</td>
+</tr>　
+<tr>
+      <td>SecretKey</td>
+      <td>String</td>
+      <td>はい</td>
+      <td>APIにアクセスするためにアカウントで使用されるSecretIdです。詳細については、<a href="https://intl.cloud.tencent.com/document/product/598/32675">アクセスキー</a>をご参照ください。</td>
+</tr>
 </table>
 
 ### client.json ファイルパラメータの説明[](id:clientJsonState)
