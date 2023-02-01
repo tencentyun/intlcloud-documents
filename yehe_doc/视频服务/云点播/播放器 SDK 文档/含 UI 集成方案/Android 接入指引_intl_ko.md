@@ -351,7 +351,7 @@ mSuperPlayerView.resetPlayer();
 
 ## 기능 사용[](id:moreFeature)
 
-이 장에서는 Player 기능을 사용하는 몇 가지 일반적인 방법을 소개합니다. 더 완전한 기능은 [Demo 경험](#demo)을 참고하십시오. Player 컴포넌트에서 지원하는 기능은 [기능 리스트](https://cloud.tencent.com/document/product/881/61375)를 참고하십시오.
+이 장에서는 Player 기능을 사용하는 몇 가지 일반적인 방법을 소개합니다. 더 완전한 기능은 [Demo 경험](#demo)을 참고하십시오. Player 컴포넌트에서 지원하는 기능은 [기능 리스트](https://www.tencentcloud.com/document/product/266/42965)를 참고하십시오.
 
 ### 1. 전체 화면 재생
 
