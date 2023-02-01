@@ -6,7 +6,7 @@
 
 ## 通过控制台完成触发器创建
 
-1. 登录 Serverless 控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)**。
+1. 登录 Serverless 控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)** 。
 2. 在“函数服务”列表页面上方，选择函数所在的地域及命名空间。如下图所示： 
 ![](https://main.qcloudimg.com/raw/e48bbf014e8c15fe22622fda5e2b8ffc.png)
 3. 单击函数名，进入该函数的详情页面。

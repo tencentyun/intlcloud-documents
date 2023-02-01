@@ -29,8 +29,8 @@ For other limits, see [CLS Specification Description](https://intl.cloud.tencent
 When creating a function, if you don't specify the destination topic for log delivery, the default log delivery capability will be used. For default log delivery, SCF will activate the CLS service for you and deliver the function invocation logs to the log topic under the SCF-specific logset. The SCF-specific logset and log topic are prefixed with `SCF_logset` and `SCF_logtopic` respectively, and will be created automatically if they do not exist. Function invocation logs will be retained for 7 days by default, and you can view and manage them on the [CLS console](https://console.cloud.tencent.com/cls/logset).
 
 >?
-- CLS is billed separately, and the SCF-specific log topic will consume the free tier of CLS. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
-- To ensure the proper display of logs in the SCF console, SCF-specific log topics do not support modifying the log index configuration. To customize the index configuration, configure the function log topic as instructed in **Custom delivery** below.
+>- CLS is billed separately, and the SCF-specific log topic will consume the free tier of CLS. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
+>- To ensure the proper display of logs in the SCF console, SCF-specific log topics do not support modifying the log index configuration. To customize the index configuration, configure the function log topic as instructed in **Custom delivery** below.
 
 #### Configuring CLS
 
@@ -161,6 +161,7 @@ Log search depends on the index configuration of the log topic. SCF will automat
 <td>Number of retries</td>
 </tr>
 </tbody></table>
+
 To ensure the display effect of the logs in the SCF console, toggle on **Enable Statistics** for the field in the key-value index configuration:
 5. After configuring the index, click **OK**.
 

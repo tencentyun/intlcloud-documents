@@ -29,8 +29,8 @@
 新建函数时，如不指定日志投递主题，将会使用默认投递日志能力。默认投递日志时，SCF 将会为您开通日志服务并将函数调用日志投递至 SCF 专用日志集下的日志主题中，SCF 专用日志集和日志主题分别以 `SCF_logset` 和 `SCF_logtopic` 为前缀命名，如不存在将自动创建。函数调用日志默认保留7天，您可在 [日志服务控制台](https://console.cloud.tencent.com/cls/logset) 查看及管理。
 
 >?
-- 日志服务为独立计费产品，SCF 专用日志主题会占用日志服务免费额度，详情可参见 [日志服务计费详情](https://intl.cloud.tencent.com/document/product/614/37509)。
-- 为保证 SCF 控制台日志正常展示，SCF 专用日志主题不支持修改索引配置。如需自定义日志索引配置，请参考下文自定义投递配置函数日志主题。
+>- 日志服务为独立计费产品，SCF 专用日志主题会占用日志服务免费额度，详情可参见 [日志服务计费详情](https://intl.cloud.tencent.com/document/product/614/37509)。
+>- 为保证 SCF 控制台日志正常展示，SCF 专用日志主题不支持修改索引配置。如需自定义日志索引配置，请参考下文自定义投递配置函数日志主题。
 
 #### 配置日志服务
 
@@ -64,7 +64,7 @@
 
 #### 配置日志服务
 
-1. 登录 Serverless 控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)**。
+1. 登录 Serverless 控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)** 。
 2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
 3. 在“日志配置”中，选择“自定义投递”，并选择已为该函数创建的日志主题，本文以 `SCF-test` 为例。如下图所示： 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/Jydh413_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219163220.png)
@@ -75,7 +75,7 @@
 
 日志检索依赖日志主题的索引配置，在函数创建时，SCF 会自动为您完成索引配置。如遇索引异常无法正常查看日志，请参考如下步骤配置索引：
 
-1. 登录 Serverless 控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)**。
+1. 登录 Serverless 控制台，选择左侧导航栏中的 **[函数服务](https://console.cloud.tencent.com/scf/list)** 。
 2. 在“函数服务”列表页面，选择日志索引异常的函数名，进入“函数管理”页面。
 3. 在“日志查询”页签中，选择“高级检索”中的“索引配置”。如下图所示： 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/t6yP097_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219163510.png)
