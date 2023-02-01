@@ -40,7 +40,7 @@ SCF 支持 `event` 函数和 `Web` 函数两种函数类型。
 ## 函数相关配置
 
 
-除上述配置外，还可通过控制台编辑函数配置或 [更新函数配置](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806) 修改以下内容，配置更多函数运行时的信息：
+除上述配置外，还可通过控制台编辑函数配置或 [更新函数配置](https://intl.cloud.tencent.com/document/product/583/19806) 修改以下内容，配置更多函数运行时的信息：
 
 
 #### 资源类型
@@ -100,7 +100,7 @@ SCF 支持 `event` 函数和 `Web` 函数两种函数类型。
 ## 函数可执行的操作
 
 - [创建函数](https://intl.cloud.tencent.com/document/product/583/19806)：创建一个新的函数。
-- [更新函数](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/19806)：
+- [更新函数](https://intl.cloud.tencent.com/document/product/583/19806)：
   - 更新函数配置：更新函数的各项配置。
   - 更新函数代码：更新函数的运行代码。
 - [获取详情](https://intl.cloud.tencent.com/document/product/583/19809)：获取函数配置、触发器及代码详情。
