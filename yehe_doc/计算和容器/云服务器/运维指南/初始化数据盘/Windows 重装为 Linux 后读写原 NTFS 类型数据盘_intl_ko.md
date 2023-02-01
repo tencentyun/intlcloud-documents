@@ -1,22 +1,22 @@
-## 작업 시나리오
+## 개요
 
-Windows 파일 시스템은 일반적으로 NTFS 또는 FAT32 형식을 사용하고, Linux 파일 시스템은 일반적으로 EXT 시리즈의 형식을 사용합니다. CVM의 운영 체제를 Windows에서 Linux로 재설치 했을 경우, 운영 체제 유형은 바뀌었지만 CVM 내 데이터 디스크는 여전히 기존 시스템의 것을 사용하기 때문에, 시스템 재설치 후 CVM에서 데이터 디스크 파일 시스템에 액세스 할 수 없는 상황이 발생할 수 있습니다. 본 파일에서는 시스템 재설치 후 Linux CVM에서 기존 Windows 시스템의 데이터 디스크 데이터를 읽는 방법을 안내합니다.
+Windows 파일 시스템은 일반적으로 NTFS 또는 FAT32 형식을 사용하는 반면 Linux 파일 시스템은 종종 EXT 시리즈 형식을 사용합니다. CVM의 운영 체제가 Windows에서 Linux로 재설치될 때 CVM의 데이터 디스크는 원래 운영 체제의 형식으로 유지됩니다. 결과적으로 시스템 재설치 후 CVM이 데이터 디스크 파일 시스템에 액세스하지 못할 수 있습니다. 본문은 운영 체제가 Windows에서 Linux로 재설치된 후 원래 Windows 시스템에서 데이터 디스크를 읽는 방법을 설명합니다.
 
 ## 작업 단계
 
-### Linux 시스템 설정 NTFS 지원 
+### Linux CVM에 NTFS 소프트웨어 설치
 
 1. 시스템 재설치 후 Linux CVM에 로그인합니다.
-2. 다음 명령어를 실행하여 ntfsprogs 소프트웨어를 설치하고, Linux CVM이 NTFS 파일 시스템에 액세스하도록 하세요.
+2. 다음 명령을 실행하여 Linux CVM이 NTFS 파일 시스템에 대한 액세스를 지원할 수 있도록 ntfsprogs 소프트웨어를 설치합니다.
 <dx-alert infotype="explain" title="">
-본 파일에서는 CentOS 시스템을 예로 들었습니다. 각 Linux 시스템 유형별로 설치 명령어가 다를 수 있으니 해당하는 설치 명령어를 사용하여 설치하시기 바랍니다.
+본문은 CentOS를 예로 들어 설명합니다. 다른 유형의 Linux 시스템에는 다른 설치 명령이 있습니다. 해당 설치 명령을 사용하십시오.
 </dx-alert>
 ```shellsession
-yum install ntfsprogs
+yum install  -y ntfsprogs
 ```
 
 
-###  Windows CVM의 데이터 디스크를 Linux CVM로 마운트 합니다
+###  Windows CVM에서 Linux CVM으로 데이터 디스크 연결
 
 
 
@@ -31,7 +31,7 @@ yum install ntfsprogs
 ![](https://qcloudimg.tencent-cloud.cn/raw/6acf53df9c1df0518502402d8bcadb6b.png)
 4. ‘인스턴스로 마운트’ 팝업 창에서 마운트할 Linux CVM을 선택하고 **확인**을 클릭합니다.
 5. 이미 Windows 데이터 디스크가 마운트되어 있는 Linux CVM에 로그인합니다.
-6. 다음의 명령어를 실행하여 Windows CVM에서 마운트된 데이터 디스크를 조회합니다.
+6. 다음의 명령을 실행하여 Windows CVM에서 마운트된 데이터 디스크를 쿼리합니다.
 ```shellsession
 parted -l
 ```
@@ -55,6 +55,7 @@ mount -t ntfs-3g 데이터 디스크 경로 마운트 포인트
 mount -t ntfs-3g /dev/vdb2 /mnt
 ```
 이때 파일 시스템이 인식 가능하므로 마운트된 데이터 디스크를 Linux 시스템에서 바로 읽기 및 쓰기 할 수 있습니다.
+
 
 
 
