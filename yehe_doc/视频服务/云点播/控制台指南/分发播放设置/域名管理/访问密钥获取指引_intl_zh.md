@@ -2,13 +2,13 @@
 
 1. 登录[阿里云控制台](https://home-intl.console.aliyun.com/?spm=a3c0i.7911826.6791778070.44.44193870NcDmuq)，点击右上角【 AceessKey 管理】
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_235189_QpR3p5p8VK1cC02m_1675165190?w=601&h=405)
+![img](https://qcloudimg.tencent-cloud.cn/raw/fce5a6308421d3dc5ca8527386f6db38.png)
 
 2. 在左侧导航栏选择【AceessKey Pair】，点击【创建 Access Key 】即可生成 AceessKey ID和 AceessKey Secret
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_638463_ynPkI9zDhEclio1t_1675165362?w=702&h=359)
+![img](https://qcloudimg.tencent-cloud.cn/raw/f08cb6fc9aacb90aac1d0cf464cbb734.png)
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_280350_VezfgXsHdXo6r9pv_1675165448?w=547&h=276)
+![img](https://qcloudimg.tencent-cloud.cn/raw/a327576c1d2ecac57c466a09e4f651b1.png)
 
 
 
@@ -23,25 +23,25 @@
 
 2. 在“AWS services”搜索框中搜索“access key”
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_772039_9_sV5oc4ylmUBmF2_1664527422?w=700&h=560)
+![img](https://qcloudimg.tencent-cloud.cn/raw/b66a0dd3553c02eb0d19201c25d2a6a6.png)
 
 3. 点击搜索跳出的选项：IAM
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_532381_Ub85YbWYvbYqp4ZR_1664527435?w=700&h=579)
+![img](https://qcloudimg.tencent-cloud.cn/raw/457b6e760b769da5d05e479abced4d3a.png)
 
 4. 点击“Rotate your access keys ”，点击Button：Manage User Access Keys
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_77171_1Ry56PZKBAeb76yu_1664527446?w=700&h=422)
+![img](https://qcloudimg.tencent-cloud.cn/raw/371563847e2a174dfb2fbe47f8ee956a.png)
 
 5. 选择Security credentials标签，点击Button “Create access key ”自动生成Access Key ID 和 Secret Access Key
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_93273_o2eD7Fi3_0W1z9kF_1664527463?w=700&h=446)
+![img](https://qcloudimg.tencent-cloud.cn/raw/9befceace4a4c367649ba283ea34a509.png)
 
 6. 弹框显示生成的Access Key ID 和 Secret Access Key，点击Button “Download.csv file”下载，这是唯一的机会可以保持Access Key ID 和 Secret Access Key，下发显示了Access Key ID 和 Secret Access Key，点击“Show”可查看Secret Access Key，内容与下载的
 
 accessKeys.csv 内容一致。如果以后无法找到Secret Access Key，可以删除重新创建一对。
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_997603_3DzOJTGpMqk_SuNO_1664527472?w=700&h=374)
+![img](https://qcloudimg.tencent-cloud.cn/raw/dc5350c516a96aca53da7f56d7f3abeb.png)
 
 | 配置项     | 描述                                                         |
 | ---------- | ------------------------------------------------------------ |

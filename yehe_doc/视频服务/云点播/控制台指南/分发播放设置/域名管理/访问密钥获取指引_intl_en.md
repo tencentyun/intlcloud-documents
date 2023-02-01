@@ -2,13 +2,13 @@
 
 1. Log in to [Alibaba Cloud Console](https://home-intl.console.aliyun.com/?spm=a3c0i.7911826.6791778070.44.44193870NcDmuq),Click [AceessKey Management] in the upper right corner
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_235189_QpR3p5p8VK1cC02m_1675165190?w=601&h=405)
+![img](https://qcloudimg.tencent-cloud.cn/raw/fce5a6308421d3dc5ca8527386f6db38.png)
 
 2. Select [AceessKey Pair] in the left navigation bar, click [Create Access Key] to generate AceessKey ID and AceessKey Secret
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_638463_ynPkI9zDhEclio1t_1675165362?w=702&h=359)
+![img](https://qcloudimg.tencent-cloud.cn/raw/f08cb6fc9aacb90aac1d0cf464cbb734.png)
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_280350_VezfgXsHdXo6r9pv_1675165448?w=547&h=276)
+![img](https://qcloudimg.tencent-cloud.cn/raw/a327576c1d2ecac57c466a09e4f651b1.png)
 
 
 
@@ -23,25 +23,25 @@
 
 2. Search for "access key" in the "AWS services" search box
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_772039_9_sV5oc4ylmUBmF2_1664527422?w=700&h=560)
+![img](https://qcloudimg.tencent-cloud.cn/raw/b66a0dd3553c02eb0d19201c25d2a6a6.png)
 
 3. Click on the option that pops up from the search: IAM
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_532381_Ub85YbWYvbYqp4ZR_1664527435?w=700&h=579)
+![img](https://qcloudimg.tencent-cloud.cn/raw/457b6e760b769da5d05e479abced4d3a.png)
 
 4. Click "Rotate your access keys", click Button: Manage User Access Keys
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_77171_1Ry56PZKBAeb76yu_1664527446?w=700&h=422)
+![img](https://qcloudimg.tencent-cloud.cn/raw/371563847e2a174dfb2fbe47f8ee956a.png)
 
 5. Select the Security credentials tab, click Button "Create access key" to automatically generate Access Key ID and Secret Access Key
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_93273_o2eD7Fi3_0W1z9kF_1664527463?w=700&h=446)
+![img](https://qcloudimg.tencent-cloud.cn/raw/9befceace4a4c367649ba283ea34a509.png)
 
 6. The pop-up box displays the generated Access Key ID and Secret Access Key, click the Button “Download.csv file” to download, this is the only chance to keep the Access Key ID and Secret Access Key, and the issued shows the Access Key ID and Secret Access Key, Click "Show" to view the Secret Access Key, content and downloaded
 
 The content of accessKeys.csv is the same. If you cannot find the Secret Access Key in the future, you can delete and create a new pair.
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDUzOTk2NzAxNw_997603_3DzOJTGpMqk_SuNO_1664527472?w=700&h=374)
+![img](https://qcloudimg.tencent-cloud.cn/raw/dc5350c516a96aca53da7f56d7f3abeb.png)
 
 
 
