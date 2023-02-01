@@ -113,6 +113,7 @@ Enter the “Linux Kernel vX.X.XX Configuration” interface as shown below:
  - Press "Enter" to select or execute the item selected by the cursor.
  - Press the space bar to select the item selected by the cursor. "\*" means compiling to the kernel, and "M" means compiling to a module. 
 </dx-alert>
+
 2. Press the "↓" key to move the cursor to "Virtualization" and press the space bar to select "Virtualization".
 3. Press "Enter" to enter the Virtualization details interface.
 4. In the Virtualization details interface, check whether the Kernel-based Virtual Machine (KVM) support option is selected as shown below:
