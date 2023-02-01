@@ -1,71 +1,3 @@
-## December 2022
-<table>
-<thead>
-<tr>
-<th width=20%>Update</th>
-<th width=45%>Description</th>
-<th width=15%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported Java-GC online analysis.</td>
-<td>Java-GC online log analysis is supported to help you troubleshoot process exceptions due to GC, collect and record GC logs in real time, and analyze the logs.</td>
-<td>2022-12-06</td>
-<td>Java-GC Online Analysis</td>
-</tr>
-<tr>
-<td>Supported role-level monitoring of Kafka.</td>
-<td>Kafka adds more than 70 role-level monitoring metrics and supports configuring alarms for core monitoring metrics.</td>
-<td>2022-12-06</td>
-<td>Kafka Monitoring Metrics</td>
-</tr>
-<tr>
-<td>Added more default event-related metrics.</td>
-<td>More event-related metrics are added, such as the UTC time and NTP time difference of the server, Kerberos response time, number of HDFS MissingBlocks, and safe mode for the HDFS NameNode.</td>
-<td>2022-12-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a></td>
-</tr>
-<tr>
-<td>Added more default alarm policies for Kudu.</td>
-<td>Kudu adds more alarm policies, such as the number of teservers, number of failed data directories, and number of full data directories.</td>
-<td>2022-12-06</td>
-<td>-</td>
-</tr>
-<tr>
-<td>Upgraded the configuration management feature.</td>
-<td><li>The configuration status is added, and you can view the details of expired configuration and failed configuration.<li>More configuration files, configuration items, configuration item descriptions, and configuration filters are added.</td>
-<td>2022-12-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31109" target="_blank">Configuration Management</a></td>
-</tr>
-<tr>
-<td>Upgraded the YARN resource scheduling feature.</td>
-<td>Label-based scheduling, queue deletion, and scheduling history viewing are supported.</td>
-<td>2022-12-06</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/52842" target="_blank">Configuring Capacity Scheduler</a></td>
-</tr>
-<tr>
-<td>Added client management.</td>
-<td>The client management entry is added, and you can view the client information.</td>
-<td>2022-12-06</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/52845" target="_blank">Client Management</a></td>
-</tr>
-<tr>
-<td>Supported cloud disk adjustment.</td>
-<td><li>You can adjust the cloud data disk models on nodes and expand and mount disks in the EMR console.<li>Heterogeneous capacity is supported by the heterogeneous capabilities of cloud disks.</td>
-<td>2022-12-06</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/52839" target="_blank">Cloud Disk Expansion</a></td>
-</tr>
-<tr>
-<td>Supported batch configuration adjustment.</td>
-<td>The configurations of nodes in the same billing mode and the same region can be batch adjusted.</td>
-<td>2022-12-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Adjusting Configuration</a></td>
-</tr>
-</tbody></table>
-
-
 ## November 2022
 <table>
 <thead>
@@ -1124,9 +1056,9 @@ If you encounter any security issues related to the operating system of an exist
 <td>-</td>
 </tr>
 <tr>
-<td>Released the feature of assigning labels to clusters and nodes.</td>
-<td>Added support for assigning labels to clusters and nodes.</td><td>November 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34532" target="_blank">Setting Label</a></td>
+<td>Released the feature of tagging clusters and nodes.</td>
+<td>Added support for tagging clusters and nodes.</td><td>November 2019</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34532" target="_blank">Setting Tag</a></td>
 </tr>
 <tr>
 <td>Released new models in Beijing, Shanghai, and Guangzhou regions.</td>

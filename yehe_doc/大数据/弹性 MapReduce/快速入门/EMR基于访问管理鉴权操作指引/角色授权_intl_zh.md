@@ -12,8 +12,8 @@
 1. 当您创建 EMR 容器版集群之前，需要检查是否存在 CVM_QCSRole 角色。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d85d2817e5aba173cbf28d5a53882eec.jpg)
 ![](https://qcloudimg.tencent-cloud.cn/raw/fa4d943dd9d035c7649fe878516e62b7.jpg)
-2. 如果不存在 CVM_QCSRole 角色则需要提前创建。在 [访问管理](https://console.cloud.tencent.com/cam/role/detail?roleId=4611686018428056826)中新建角色，选择腾讯云产品服务。
+2. 如果不存在 CVM_QCSRole 角色则需要提前创建。在 [访问管理](https://console.cloud.tencent.com/cam/role/detail?roleId=4611686018428056826)中新建角色，选择腾讯云产品服务。
 ![](https://qcloudimg.tencent-cloud.cn/raw/fdb3f045b5bceec298975d4d99c1cfeb.jpg)
-3. 选择云服务器 CVM，并关联策略 QcloudCOSDataWriteOnly和QcloudKMSAccessForCVMRole。
+3. 选择云服务器 CVM，输入角色名称，即可完成 CVM_QCSRole 角色创建。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5c092e9bddf48af31c5e2fd6445aa59a.jpg)
 ![](https://qcloudimg.tencent-cloud.cn/raw/a6802504d5cea34f8327d259b3b1e217.jpg)
