@@ -65,8 +65,9 @@ The destination ISP is set to CVM by default, and you need to enter the `SecretI
  >?
  >- You can batch migrate **instances from different regions** and add migration sources multiple times.
  >- Currently, you can batch migrate up to five instances.
- >  (4) Click **OK**. Then, the information of the target instance will be displayed in the migration source information list. You can click **Add destination information** in the **Operation** column to configure the migration destination information.
-  (5) In the **Add migration destination** pop-up window, select the region and migration destination type:
+
+ (4) Click **OK**. Then, the information of the target instance will be displayed in the migration source information list. You can click **Add destination information** in the **Operation** column to configure the migration destination information.
+ (5) In the **Add migration destination** pop-up window, select the region and migration destination type:
 
  <table>
 <thead>
