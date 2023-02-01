@@ -18,10 +18,10 @@ You can also use ENIs in the VPC where the CVMs reside to open Pods to external 
 3. Select **Add-On Management** on the left of the page and click **Create** on the add-on list page.
 4. On the **Create Add-On** page, select **EniNetwork (independent ENI add-on)** and click **Parameter Configurations** as shown below:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/u4y5540_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221215152903.png)
- - 4.1 In the **Independent ENI parameter settings** pop-up window, click **Access API key** to enter the key information page.
+   - 4.1 In the **Independent ENI parameter settings** pop-up window, click **Access API key** to enter the key information page.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/NLLQ837_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221215153236.png)
- - 4.2 Create a key and copy the `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
- - 4.3 In the **Independent ENI parameter settings** pop-up window, enter `SecretId` and `SecretKey` and click **Confirm**.
+   - 4.2 Create a key and copy the `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
+   - 4.3 In the **Independent ENI parameter settings** pop-up window, enter `SecretId` and `SecretKey` and click **Confirm**.
 5. On the **Create Add-On** page, click **Done** to enable the ENI.
 6. Select **Workload** > **Deployment** on the left of the page to enter the Deployment list page. If there is already a Deployment in the list, skip this step; otherwise, create one as instructed in [Deployment Management](https://intl.cloud.tencent.com/document/product/457/30662).
 7. Select **Node Management** > **Node** on the left of the page to enter the node list page. If there is already a CVM node in the list, skip this step; otherwise, create one.
@@ -50,7 +50,6 @@ You can also use ENIs in the VPC where the CVMs reside to open Pods to external 
    	             - cvm-2cxgi4ow # CVM node ID of the access target
     ```
    
-    ```
 
 [](id:closeEniNetwork)
 ### Disabling the independent ENI

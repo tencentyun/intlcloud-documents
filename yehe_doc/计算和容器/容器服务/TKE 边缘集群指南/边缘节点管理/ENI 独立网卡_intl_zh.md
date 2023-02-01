@@ -18,10 +18,10 @@
 3. 选择页面左侧**组件管理**，在组件列表页面单击**新建**。
 4. 在新建组件管理页面，勾选 “EniNetwork（Eni 独立网卡组件）”，并单击**参数配置**。如下图所示：
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/u4y5540_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221215152903.png)
- - 4.1 在 “ENI 独立网卡参数设置”弹窗中，单击**访问 API 密钥**，跳转至密钥信息页面。
+   - 4.1 在 “ENI 独立网卡参数设置”弹窗中，单击**访问 API 密钥**，跳转至密钥信息页面。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/NLLQ837_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221215153236.png)
- - 4.2 在 [API密钥管理](https://console.cloud.tencent.com/cam/capi) 页面中创建并复制 `SecretId` 和 `SecretKey`。
- - 4.3 在 “ENI 独立网卡参数设置”弹窗中，输入 `SecretId` 和 `SecretKey` 后，单击**确定**。
+   - 4.2 在 [API密钥管理](https://console.cloud.tencent.com/cam/capi) 页面中创建并复制 `SecretId` 和 `SecretKey`。
+   - 4.3 在 “ENI 独立网卡参数设置”弹窗中，输入 `SecretId` 和 `SecretKey` 后，单击**确定**。
 5. 在新建组件管理页面，单击**完成**，启用 ENI 网卡。
 6. 选择页面左侧**工作负载 > Deployment**，进入 deployment 列表页。若列表中已有 deployment，则跳过该步骤；否则，[新建 deployment](https://intl.cloud.tencent.com/document/product/457/30662)。
 7. 选择页面左侧**节点管理 > 节点**，进入节点列表页。若列表中已有 CVM 节点，则跳过该步骤；否则，新建 CVM 节点。
@@ -50,7 +50,6 @@
    	             - cvm-2cxgi4ow #访问目标的 cvm 节点 ID
     ```
    
-    ```
 
 [](id:closeEniNetwork)
 ### 关闭 ENI 独立网卡
