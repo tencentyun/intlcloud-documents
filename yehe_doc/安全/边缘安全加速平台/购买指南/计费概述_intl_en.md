@@ -228,7 +228,7 @@ Requests in excess of the value-added feature quota are charged on a tiered basi
 <td align="center">0.06</td>
 </tr>
 <tr>
-<td align="left">[92000,192000)</td>
+<td align="left">[92000,192000) * 10K</td>
 <td align="center">0.04</td>
 </tr>
 <tr>
