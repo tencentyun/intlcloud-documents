@@ -38,11 +38,11 @@ Other paid products may be used when you use the SCF service as listed below:
 
 ## Resource Usage Fee
 
-**Resource usage fees = (resource usage - free tier) * resource usage unit price**
+**Resource usage fees** = **(resource usage - free tier)** * **resource usage unit price**
 
 ### Resource Usage (GBs)
 
-**Resource usage = memory configured for function * execution duration**
+**Resource usage** = **memory configured for function** * **execution duration**
 
 Memory configured for the function is calculated in GB, and charged duration is calculated in seconds (converted from milliseconds). So resource usage is calculated in **GBs** (GB-second).
 
@@ -56,14 +56,14 @@ Resources used in each run are calculated on an hourly basis.
 
 ## Fee for Number of Calls
 
-**Invocation volume fees = (number of function invocations - free tier) * invocation unit price**
+**Invocation volume fees = (number of function invocations - free tier)** * **invocation unit price**
 
 Each function triggering and execution will be calculated as an invocation and aggregated in each hour as the hourly invocation volume. Fees will be charged per invocation.
 
 
 ## Fee for Public Network Outbound Traffic
 
-**Public network outbound traffic fees = public outbound traffic * traffic unit price**
+**Public network outbound traffic fees = public outbound traffic** * **traffic unit price**
 
 Outbound traffic will be generated when resources are accessed over the public network in a function, such as uploading a file to an external storage space:
 
@@ -75,7 +75,7 @@ Outbound traffic will be generated when resources are accessed over the public n
 
 ## Idle Provisioned Concurrency Fees
 
-**Idle provisioned concurrency fees = number of idle instances * configured memory size * idle duration * idle provisioned concurrency unit price**
+**Idle provisioned concurrency fees = number of idle instances** * **configured memory size** * **idle duration** * **idle provisioned concurrency unit price**
 
 - **Number of idle instances**: SCF counts the maximum concurrency of a version at a 10-second granularity. The number of idle instances is calculated by subtracting the maximum concurrency from the number of currently started provisioned instances. The calculation formula is as follows: number of idle instances = max(number of started provisioned instances - number of concurrent instances, 0).
 - **Configured memory size**: The memory size configured for the provisioned concurrency of the function.
@@ -87,8 +87,8 @@ Outbound traffic will be generated when resources are accessed over the public n
 The provisioned concurrency feature only charges small idle fees for the instances that have been configured and started but are not in use, **while no additional fees are charged for the instances that have been configured and are in use**. In other words, only when the number of provisioned instances is greater than the number of concurrent instances for the current version will idle fees be incurred. For examples, see [Billing Example](https://intl.cloud.tencent.com/document/product/583/44256).
 
 ## Basic Package Fees
-- **Monthly basic package fees = number of days in the month (for example, 31 days in May or 30 days in April) * basic package price**
-- **Daily basic package fees = 1 (day) * basic package price**
+- **Monthly basic package fees = number of days in the month (for example, 31 days in May or 30 days in April)** * **basic package price**
+- **Daily basic package fees = 1 (day)** * **basic package price**
 - **Days**: **1 day** by default.
 - **Basic package fee**: See [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
 
