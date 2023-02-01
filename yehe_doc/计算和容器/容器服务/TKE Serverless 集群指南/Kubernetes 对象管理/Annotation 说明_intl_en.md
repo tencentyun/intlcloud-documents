@@ -1,6 +1,4 @@
-
-
-This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE general and serverless clusters.
+This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE general and Serverless clusters.
 
 ## Annotation Usage
 ### Adding a Pod annotation to a workload
@@ -80,9 +78,10 @@ eks.tke.cloud.tencent.com/spec-auto-upgrade: 'true' # When resources are insuffi
 To specify the GPU, add the following annotation to the Pod:
 
 ```yaml
-eks.tke.cloud.tencent.com/gpu-count: '1' # Specify the number of GPU cards.
-eks.tke.cloud.tencent.com/gpu-type: 'T4,V100' # Specify the GPU model by priority.
+eks.tke.cloud.tencent.com/gpu-type: 'T4,V100' # Specify the GPU model by priority. If you use the 1/4 T4 vGPU, specify it as 1/4*T4.
 ```
+>? You need to set the number of cards and specification of the GPU in `Request` and `Limit` based on your GPU model. For more information, see [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057).
+
 
 ### Specifying the CPU type
 To specify the CPU type, add the following annotation to the Pod:
@@ -116,10 +115,10 @@ eks.tke.cloud.tencent.com/retain-ip-hours: '48' # The maximum IP retention perio
 To bind an EIP, add the following annotation to the Pod:
 
 ```yaml
-eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # The value can be an empty string, indicating that the EIP is enabled and the default configuration is used. You can also use the JSON parameter used to create the EIP API. For more information on the parameter list, visit https://www.tencentcloud.com/document/api/215/16699. In this example, the parameter indicates that the EIP is pay-as-you-go and the bandwidth cap is 50 Mbps.
+eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # The value can be an empty string, indicating that the EIP is enabled and the default configuration is used. You can also use the JSON parameter used to create the EIP API. For more information on the parameter list, visit https://cloud.tencent.com/document/api/215/16699#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0. In this example, the parameter indicates that the EIP is pay-as-you-go and the bandwidth cap is 50 Mbps.
 ```
 
->! An EIP cannot be bound for non-bill-by-IP accounts (traditional accounts). If you are using a non-bill-by-IP account, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for account upgrade.
+>! An EIP cannot be bound for non-bill-by-IP accounts (traditional accounts). If you are using a non-bill-by-IP account, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for account upgrade.
 
 
 

@@ -1,38 +1,36 @@
 ## 操作场景
-本文档旨在帮助大家了解如何快速创建一个容器集群内的 Nginx 服务。
+本文档旨在帮助您了解如何快速创建一个容器集群内的 Nginx 服务。
 
 ## 前提条件
-- 已 [注册腾讯云账户](https://intl.cloud.tencent.com/register)。
--  已创建集群。关于创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
+- 已 [注册腾讯云账户](https://www.tencentcloud.com/account/register)。
+- 已创建集群。操作详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 
 ## 操作步骤
 
 ### 创建 Nginx 服务
 1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
-2. 在“集群管理”页面，选择需创建服务的集群 ID，进入集群的工作负载 “Deployment” 页面。如下图所示：
-![](https://main.qcloudimg.com/raw/036baf23123e7291d5fcfb82a2572e53.png)
-3. 在 “Deployment” 页面，单击**新建**。参数详情见 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662)。
-4. 在“新建Workload” 页面，根据以下信息，设置工作负载基本信息。如下图所示：
+2. 在“集群管理”页面，选择需创建服务的集群 ID，进入集群的基本信息页面。
+3. 在**工作负载 > Deployment**页面，单击**新建**。参数详情见 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662)。
+4. 在“新建Deployment” 页面，根据以下信息，设置工作负载基本信息。如下图所示：
 ![](https://main.qcloudimg.com/raw/a1391e5768e6fd5cfe0e6b3c65417a50.png)
-  - **工作负载名**：本文以 nginx 为例。
+  - **工作负载名称**：本文以 nginx 为例。
   -  **描述**：填写工作负载的相关信息。
-  -  **标签**：本例中标签默认值为 k8s-app = **nginx**。
-  -  **命名空间**：根据实际需求进行选择。
-  -  **类型**：本例中以 “Deployment（可扩展的部署 Pod）”为例。
+  -  **标签**：本例中标签默认值为 `k8s-app = nginx`。
+  -  **命名空间**：根据实际需求进行选择。默认为 default。
   -  **数据卷**：根据实际需求设置工作负载的挂载卷，详情见 [存储卷使用说明](https://intl.cloud.tencent.com/document/product/457/30678)。
 5. 参考以下信息设置“实例内容器”。如下图所示：
 ![](https://main.qcloudimg.com/raw/2ec2c7c803ee61a2d218f17df785636e.png)
 主要参数信息如下：
   - **名称**：输入实例内容器名称，本文以 test 为例。
-  - **镜像**：单击**选择镜像**，在弹出框中选择**Docker Hub镜像** > **nginx** ，并单击**确定**。
+  - **镜像**：单击**选择镜像**，在弹框中选择**Docker Hub镜像** > **nginx** ，并单击**确定**。
   - **镜像版本（Tag）**：使用默认值 `latest`。
-  - **镜像拉取策略**：提供 Always、IfNotPresent、Never 三种策略，请按需选择，本文以不进行设置使用默认策略为例。
+  - **镜像拉取策略**：提供 Always、IfNotPresent、Never 三种策略，请按需选择，本文以**不进行设置使用默认策略**为例。
 6. 在“实例数量”中，根据以下信息设置服务的实例数量。本文以**手动调节**为例，实例数量设置为1。如下图所示：
 ![](https://main.qcloudimg.com/raw/51c4971952bbd697ca458a415fd1ce21.png)
 7. 根据以下提示，进行工作负载的访问设置。如下图所示：   
 ![](https://main.qcloudimg.com/raw/aedd2d73ab7e5f79218d8194c9b1c249.png)
  - **Service**：勾选“启用”。
- - **服务访问方式**：选择“提供公网访问”。
+ - **服务访问方式**：选择“公网LB访问”。
  - **负载均衡器**：根据实际需求进行选择。
  - **端口映射**：选择 TCP 协议，将容器端口和服务端口都设置为80 。
 >!服务所在集群的安全组需要放通节点网络及容器网络，同时需要放通30000 - 32768端口，否则可能会出现容器服务无法使用问题，详情请参见 [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
@@ -46,8 +44,8 @@
 #### 通过**负载均衡 IP** 访问 Nginx 服务
 
 1. 单击左侧导航栏中 **[集群](https://console.cloud.tencent.com/tke2/cluster)**，进入 “集群管理” 页面。
-2. 单击 Nginx 服务所在的集群 ID，选择**服务** > **Service**。
-3. 在服务管理页面，复制 Nginx 服务的负载均衡 IP，如下图所示：
+2. 单击 Nginx 服务所在的集群 ID，选择**服务与路由** > **Service**。
+3. 在 Service 列表页面，复制 Nginx 服务的负载均衡 IP，如下图所示：
 ![](https://main.qcloudimg.com/raw/bab54241805b352ae007ece3d130bb4a.png)
 4. 在浏览器地址栏输入负载均衡 IP，按 “**Enter**” 即可访问服务。
 

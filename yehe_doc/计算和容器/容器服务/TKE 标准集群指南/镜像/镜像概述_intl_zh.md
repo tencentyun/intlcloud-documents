@@ -1,7 +1,10 @@
 ## 概述 
 
 本文档介绍腾讯云容器服务 TKE 支持的镜像类型，对应的使用场景 以及使用须知。TKE 支持以下两种类型的镜像，镜像详细说明可参见 [镜像类型说明](https://intl.cloud.tencent.com/document/product/213/4941)。
-
+>?
+>- TKE 服务仅针对公共镜像提供 SLA 服务保障。
+>- 自定义镜像非标准操作环境，TKE 未经过兼容性适配，需要用户自行保证镜像在 kubernetes 环境下的可用性，针对该类镜像 TKE 原则上不提供 SLA 服务和技术保障。
+>
 - **公共镜像**：公共镜像是由腾讯云官方提供的镜像，包含基础操作系统和腾讯云提供的初始化组件，所有用户均可使用。
 - **自定义镜像**：由用户通过镜像制作功能制作，或通过镜像导入功能导入的镜像。仅创建者与共享者可以使用。自定义镜像属于非标环境，腾讯云不提供官方支持以及持续维护。
 
@@ -40,7 +43,7 @@ TKE 为您提供以下**公共镜像**，请根据实际情况进行选择。
     <td>TencentOS Server 2.4(TK4)</td>
     <td>Tencent OS Server</td>
     <td>全量发布</td>
-    <td><li>内核版本：5.4.119</li><li>不支持自动安装 GPU 驱动，您需要自行安装 GPU 驱动</li></td>
+    <td>内核版本：5.4.119</td>
   </tr>
   <tr>
     <td><a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-3la7wgnt">img-3la7wgnt</a></td>
@@ -56,7 +59,7 @@ TKE 为您提供以下**公共镜像**，请根据实际情况进行选择。
     <td>TencentOS Server 3.1(TK4)</td>
     <td>Tencent OS Server</td>
     <td>全量发布</td>
-    <td><li>推荐使用 Tencent OS Server 最新发行版</li><li>内核版本：5.4.119</li><li>不支持自动安装 GPU 驱动，您需要自行安装 GPU 驱动</li></td>
+    <td><li>推荐使用 Tencent OS Server 最新发行版</li><li>内核版本：5.4.119</li></td>
   </tr>
   <tr>
     <td><a href="https://console.cloud.tencent.com/cvm/image/detail?rid=4&id=img-hdt9xxkt">img-hdt9xxkt</a></td>
@@ -71,7 +74,7 @@ TKE 为您提供以下**公共镜像**，请根据实际情况进行选择。
     <td>ubuntu20.04x86_64</td>
     <td>Ubuntu Server 20.04.1 LTS 64bit</td>
     <td>Ubuntu</td>
-    <td>内测中，请 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a> 进行申请</td>
+    <td>内测中，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 进行申请</td>
     <td>Ubuntu 20.04.1 公版内核</td>
   </tr>
   <tr>
@@ -87,7 +90,7 @@ TKE 为您提供以下**公共镜像**，请根据实际情况进行选择。
     <td>centos8.0x86_64</td>
     <td>CentOS 8.0</td>
     <td>CentOS</td>
-    <td>内测中，请 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a> 进行申请</td>
+    <td>内测中，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 进行申请</td>
     <td>Centos 8.0 公版内核</td>
   </tr>
   <tr>

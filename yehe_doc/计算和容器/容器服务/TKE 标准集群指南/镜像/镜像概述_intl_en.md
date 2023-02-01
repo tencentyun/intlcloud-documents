@@ -1,13 +1,16 @@
 ## Overview 
 
 This document describes two types of images supported by TKE and their respective use cases and instructions. For more information, see [Image Types](https://intl.cloud.tencent.com/document/product/213/4941).
-
+>?
+>- TKE provides SLA guarantees only for public images.
+>- For custom images in non-standard operating environments without TKE's compatibility adaptation, you need to ensure the image availability in Kubernetes environments. In principle, TKE does not provide SLA and technical support for these images.
+>
 - **Public image**: They are images officially provided by Tencent Cloud. Each image contains an operating system and initialization components provided by Tencent Cloud, and is available to all users.
 - **Custom image**: It is created by using the image creation feature or imported by using the image import feature. A custom image is only available to the creator and the people they share it with. It is a non-standard environment that doesn't come with official support and ongoing maintenance from Tencent Cloud.
 
 
 
-## Note
+## Limits
 
 - There are two levels of operating systems, including **cluster level** and **node pool level**.
   - OS configured at the cluster level is used when creating a node, adding an existing node, and upgrading a node in a cluster.
@@ -40,7 +43,7 @@ TKE offers the following **public images** that you can choose as needed.
     <td>TencentOS Server 2.4(TK4)</td>
     <td>Tencent OS Server</td>
     <td>Full release</td>
-    <td><li>Kernel version: 5.4.119</li><li>Automatic installation of the GPU driver is not supported, and you need to install it yourself.</li></td>
+    <td>Kernel version: 5.4.119</td>
   </tr>
   <tr>
     <td><a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-3la7wgnt">img-3la7wgnt</a></td>
@@ -56,7 +59,7 @@ TKE offers the following **public images** that you can choose as needed.
     <td>TencentOS Server 3.1(TK4)</td>
     <td>Tencent OS Server</td>
     <td>Full release</td>
-    <td><li>We recommend you use the latest release of Tencent OS Server.</li><li>Kernel version: 5.4.119</li><li>Automatic installation of the GPU driver is not supported, and you need to install it yourself.</li></td>
+    <td><li>We recommend you use the latest release of TencentOS Server.</li><li>Kernel version: 5.4.119</li></td>
   </tr>
   <tr>
     <td><a href="https://console.cloud.tencent.com/cvm/image/detail?rid=4&id=img-hdt9xxkt">img-hdt9xxkt</a></td>
@@ -71,7 +74,7 @@ TKE offers the following **public images** that you can choose as needed.
     <td>ubuntu20.04x86_64</td>
     <td>Ubuntu Server 20.04.1 LTS 64bit</td>
     <td>Ubuntu</td>
-    <td>It is in beta test. To try it out, <a href="https://console.tencentcloud.com/workorder/category">submit a ticket</a> for application.</td>
+    <td>It is in beta. To join it, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> to apply.</td>
     <td>Ubuntu 20.04.1 public kernel</td>
   </tr>
   <tr>
@@ -87,7 +90,7 @@ TKE offers the following **public images** that you can choose as needed.
     <td>centos8.0x86_64</td>
     <td>CentOS 8.0</td>
     <td>CentOS</td>
-    <td>It is in beta test. To try it out, <a href="https://console.tencentcloud.com/workorder/category">submit a ticket</a> for application.</td>
+    <td>It is in beta. To join it, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> to apply.</td>
     <td>CentOS 8.0 public kernel</td>
   </tr>
   <tr>

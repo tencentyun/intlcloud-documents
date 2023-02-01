@@ -2,11 +2,10 @@
 
 
 ## 步骤1：注册腾讯云账号
-如果您已在腾讯云注册，可忽略此步骤。
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/account/register" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
+在使用腾讯云容器服务之前，您需要 [注册腾讯云账号](https://www.tencentcloud.com/account/register?s_url=https%3A%2F%2Fconsole.tencentcloud.com%2Ftke2%2Fcluster%3Frid%3D1) 并完成 [实名认证](https://www.tencentcloud.com/document/product/378/3629)。
 
 ## 步骤2：在线充值
-腾讯云容器服务 TKE 针对不同规格的托管集群，会收取相应的集群管理费用，以及用户实际使用的云资源费用。关于收费模式和具体价格，请参阅 [容器服务计费概述](https://intl.cloud.tencent.com/document/product/457/45157)。本文中我们创建的是“托管集群”，该模式下您依然要为集群的工作节点、持久化存储以及服务绑定的负载均衡等服务付费。购买前，需要在账号中进行充值。具体操作请参考 [在线充值](https://intl.cloud.tencent.com/document/product/555/7425) 文档。
+腾讯云容器服务 TKE 针对不同规格的托管集群，会收取相应的集群管理费用，以及用户实际使用的云资源费用。关于收费模式和具体价格，请参阅 [容器服务计费概述 ](https://intl.cloud.tencent.com/document/product/457/45157)。本文中我们创建的是“托管集群”，该模式下您依然要为集群的工作节点、持久化存储以及服务绑定的负载均衡等服务付费。购买前，需要在账号中进行充值。具体操作请参考 [在线充值](https://intl.cloud.tencent.com/document/product/555/7425) 文档。
 
 
 
@@ -34,12 +33,13 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/ef0eddd2e2a0ea044774c4ee65d0a2ef.png)
 
 - **节点来源**：提供**新增节点**和**已有节点**两个选项。这里我们选择 “新增节点”。
-- **Master 节点** ：提供**平台托管**和**独立部署**两种集群模式选择。这里我们选择 “平台托管”。
-- **计费模式**：提供**按量计费**一种计费模式。
+- **集群类型**：提供**托管集群**和**独立集群**两种集群模式选择。这里我们选择 “托管集群”。
+- **集群规格**：提供多种集群规格。这里我们选择 “L5”。
+- **计费模式**：提供**按量计费**的计费模式。
 - **Worker 配置**：该模块下只需选择可用区及对应的子网并确认节点的机型，其他设置项保持默认。
-  - **可用区** ：这里我们选择 “广州三区”。
+  - **可用区**：这里我们选择 “广州一区”。
   - **节点网络**：这里我们选择当前 VPC 网络下的子网。
-  - **机型**：这里我们选择 “S1.SMALL1(标准型S1,1核1GB)”。
+  - **机型**：这里我们选择 “SA2.MEDIUM2(标准型SA2,2核2GB)”。
 
 ### 云服务器配置
 在“云服务器配置”页面，选择登录方式，其他设置项保持默认，并单击**下一步**。如下图所示：
@@ -51,27 +51,26 @@
 在“组件配置”页面，组件包含存储、监控、镜像等，您可按需选择。若无需安装，可单击**下一步**。这里我们选择不安装组件，其他设置项保持默认。
 
 ### 信息确认
-在“信息确认”页面，确认集群的已选配置信息和费用，单击**完成**。如下图所示：
+在“信息确认”页面，确认集群的已选配置信息和费用。当您阅读并同意容器服务服务等级协议后，单击**完成**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/bebdbb0524ba191175daa935b9d7d986.png)
 
 
-当您付费完成后，即可创建您的第一个集群。接下来，您可以在 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=1) 查看您已创建的托管集群。
+当您付费完成后，即可创建您的第一个集群。接下来，您可以在 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=1) 查看您已创建的 TKE 标准集群。
 
 ## 步骤5：查看集群
-创建完成的集群将出现在 [集群列表](https://console.cloud.tencent.com/tke2/cluster?rid=1) 中。您可单击集群 ID 进入集群详情页面。在集群的“基本信息”页面中，您可查看集群信息、节点和网络信息等。如下图所示：
+创建完成的集群将出现在 [集群列表](https://console.cloud.tencent.com/tke2/cluster?rid=1) 中。您可单击集群 ID 进入集群详情页面。在集群的“基本信息”页面中，您可查看集群信息、节点和网络信息、集群 APIServer 信息等。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/0f36c74372186d3efdf1ba2f1751f228.png)
-
 
 
 
 ## 步骤6：删除集群
 集群启动后即开始消耗资源，为避免产生不必要的费用，此步骤向您介绍如何清除所有资源。
 
-1. 选择左侧导航栏中的**集群**，在“集群管理”页面选择需删除集群所在行右侧**更多** > **删除**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/9431c8e5c0038ec85e1e04edbc217b0c.png)
+1. 选择左侧导航栏中的**集群**，在“集群管理”页面选择需删除集群所在行右侧**更多 > 关闭集群删除保护**。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/iEGX674_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221215175257.png)
+2. 选择集群所在行右侧**更多 > 删除**。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Pt9T223_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221215175351.png)
 2. 在“删除集群”弹窗中确认信息后，单击**确定**即可删除集群。
-
-
 
 
 
@@ -85,4 +84,4 @@
 
 
 ## 遇到问题？
-非常抱歉您在使用时出现问题，您可以[提交工单](https://console.intl.cloud.tencent.com/workorder/category) 来寻求帮助。
+使用容器服务控制台创建标准集群的完整步骤请参考 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。如果您在使用时遇到问题，您可以 [联系我们](https://intl.cloud.tencent.com/document/product/457/46720) 来寻求帮助。

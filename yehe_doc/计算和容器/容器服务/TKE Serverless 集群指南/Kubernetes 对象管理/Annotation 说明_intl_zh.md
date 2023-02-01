@@ -1,5 +1,3 @@
-
-
 本文介绍超级节点特有的 Annotation 与示例，该 Annotation 针对 TKE 标准集群和 TKE Serverless 集群内超级节点上运行的 Pod 生效。
 
 ## Annotation 使用方法
@@ -80,9 +78,10 @@ eks.tke.cloud.tencent.com/spec-auto-upgrade: 'true' # 遇到资源不足时，�
 如需指定 GPU，可在 Pod 上添加如下注解：
 
 ```yaml
-eks.tke.cloud.tencent.com/gpu-count: '1' # 指定 GPU 卡数。
-eks.tke.cloud.tencent.com/gpu-type: 'T4,V100' # 指定 GPU 型号，支持优先级顺序写法。
+eks.tke.cloud.tencent.com/gpu-type: 'T4,V100' # 指定 GPU 型号，支持优先级顺序写法，若使用1/4卡的 T4 vGPU 则指定 GPU 型号为1/4*T4。
 ```
+>? GPU 的卡数和规格需要您在 Request 和 Limit 中自行设置，建议参考对应型号的 GPU 规格设置合适的值。GPU 规格详情可参考 [资源规格](https://intl.cloud.tencent.com/document/product/457/34057)。
+
 
 ### 指定 CPU 类型
 如需指定 CPU 类型，可在 Pod 上添加如下注解：
@@ -116,10 +115,10 @@ eks.tke.cloud.tencent.com/retain-ip-hours: '48' # 保留 IP 的最大时长（�
 如需绑定 EIP，可在 Pod 上添加如下注解：
 
 ```yaml
-eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # 值可以为空串，表示启用 EIP 并使用默认配置；也可以用创建 EIP 接口的 json 参数，详细参数列表参考 https://www.tencentcloud.com/document/api/215/16699，本例中的参数表示 EIP 是按量付费，且带宽上限为 50M。
+eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # 值可以为空串，表示启用 EIP 并使用默认配置；也可以用创建 EIP 接口的 json 参数，详细参数列表参考 https://cloud.tencent.com/document/api/215/16699#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0，本例中的参数表示 EIP 是按量付费，且带宽上限为 50M。
 ```
 
->! 非带宽上移的账号（传统账户），不支持绑定 EIP，若为非带宽上移账户，可 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进行账户升级。
+>! 非带宽上移的账号（传统账户），不支持绑定 EIP，若为非带宽上移账户，可 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行账户升级。
 
 
 
