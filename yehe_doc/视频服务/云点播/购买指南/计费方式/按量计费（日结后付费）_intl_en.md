@@ -88,21 +88,22 @@ VOD offers media processing capabilities including general transcoding, TSC tran
 
 General transcoding is charged based on the duration and short side (px) of the video generated after transcoding.
 
-| Codec    | Resolution                            |  Unit Price (USD/min) |
-| ---------  |:--------------------------------:|:---------------:|
-| H.264      | 4K (short side ≤ 2160 px）          | 0.0521           |
-| H.264      | 2K (short side ≤ 1440 px）           | 0.0242          |
-| H.264      | FHD (short side ≤ 1080 px）     | 0.0121          |
-| H.264      | HD (short side ≤ 720 px)        | 0.0061          |
-| H.264      | SD (short side ≤ 480 px)    | 0.003         |
-| H.265      | 4K (short side ≤ 2160 px）             |0.2521           |
-| H.265      | 2K (short side ≤ 1440 px）           | 0.126           |
-| H.265      | FHD (short side ≤ 1080 px）       | 0.063         |
-| H.265      | HD (short side ≤ 720 px)       |0.0315         |
-| H.265      | SD (short side ≤ 480 px)  | 0.0158          |
-|Remuxing| -|0.0028|
-|Audio transcoding|-|0.002|
+| Codec    | Resolution                            | Transcoding type number     |  Unit Price (USD/min) |
+| ---------  |:--------------------------------:|:---------------:|-----------------|
+| H.264 | SD (short side ≤ 480 px) | 1Transcoding type | 0.003 |
+| H.264 | HD (short side ≤ 720 px) | 2Transcoding type | 0.0061 |
+| H.264 | FHD (short side ≤ 1080 px） | 3Transcoding type | 0.0121 |
+| H.264 | 2K (short side ≤ 1440 px） | 4Transcoding type | 0.0242 |
+| H.264      | 4K (short side ≤ 2160 px）          | 5Transcoding type | 0.0521           |
+| H.265             |  SD (short side ≤ 480 px)   | 6Transcoding type       | 0.0158               |
+| H.265             |  HD (short side ≤ 720 px)   | 7Transcoding type       | 0.0315               |
+| H.265             | FHD (short side ≤ 1080 px） | 8Transcoding type       | 0.063                |
+| H.265             | 2K (short side ≤ 1440 px）  | 9Transcoding type       | 0.126                |
+| H.265      | 4K (short side ≤ 2160 px）             | 10Transcoding type |0.2521           |
+| Audio transcoding |              -              | 21Transcoding type      | 0.002                |
+| Remuxing          |              -              | 22Transcoding type      | 0.0028               |
 
+>? The transcoding type number corresponds to the component usage and unit fields of the sub-product "on-demand transcoding" in the billing bill. According to the transcoding type number, you can view the billed encoding method and resolution.
 
 #### Billing details
 
@@ -123,18 +124,18 @@ To learn more about TSC transcoding, see [Video Transcoding Service](https://int
 
 TSC transcoding is charged based on the duration and short side (px) of the video generated after transcoding.
 
-|Codec|Resolution|Unit Price (USD/min)|
-|----------|-----------|-----------|
-|H.264|4K (short side ≤ 2160 px)  |0.1721|
-|H.264|2K (short side ≤ 1440 px)|0.08|
-|H.264|FHD (short side ≤ 1080 px)|0.04|
-|H.264|HD (short side ≤ 720 px)|0.02|
-|H.264|HD (short side ≤ 480 px)  |0.01 |
-|H.265|4K (short side ≤ 2160 px)|0.8319 |
-|H.265|2K (short side ≤ 1440 px)|0.416|
-|H.265|FHD (short side ≤ 1080 px)   |0.208|
-|H.265|HD (short side ≤ 720 px)  |0.104|
-|H.265|SD (short side ≤ 480 px)|0.052|
+|Codec|Resolution|Transcoding type number|Unit Price (USD/min)|
+|----------|-----------|-----------|-----------|
+|H.264|HD (short side ≤ 480 px)|11Transcoding type|0.01|
+|H.264|HD (short side ≤ 720 px)|12Transcoding type|0.02|
+|H.264|FHD (short side ≤ 1080 px)|13Transcoding type|0.04|
+|H.264|2K (short side ≤ 1440 px)|14Transcoding type|0.08|
+|H.264|4K (short side ≤ 2160 px)  |15Transcoding type  |0.1721|
+| H.265 | SD (short side ≤ 480 px)   | 16Transcoding type      | 0.052                |
+| H.265 | HD (short side ≤ 720 px)   | 17Transcoding type      | 0.104                |
+| H.265 | FHD (short side ≤ 1080 px) | 18Transcoding type      | 0.208                |
+| H.265 | 2K (short side ≤ 1440 px)  | 19Transcoding type      | 0.416                |
+|H.265|4K (short side ≤ 2160 px)|20Transcoding type|0.8319 |
 
 
 >!
@@ -142,6 +143,7 @@ TSC transcoding is charged based on the duration and short side (px) of the vide
 >- Rules: TSC transcoding fees are based on the duration and specification of the video file generated after TSC transcoding. Video specification is determined by the codec used and short side (px) of the video generated.
 >- The prices above apply only to daily billing. If you are billed monthly, please contact your sales rep to learn about the billing details.
 >- The billing rules are the same as those for general transcoding.
+>- The transcoding type number corresponds to the component usage and unit fields of the sub-product "on-demand transcoding" in the billing bill. According to the transcoding type number, you can view the billed encoding method and resolution.
 
 
 
